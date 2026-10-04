@@ -78,8 +78,9 @@
     if (!content || content.querySelector('.read-aloud')) return;
     var bar = document.createElement('section');
     bar.className = 'read-aloud'; bar.setAttribute('aria-label', 'Chapter read aloud');
-    bar.innerHTML = '<button type="button" data-read>Read aloud</button> <button type="button" data-pause disabled>Pause</button> <button type="button" data-stop disabled>Stop</button> <label>Speed <select aria-label="Reading speed"><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label> <span role="status" aria-live="polite">Ready</span>';
-    content.prepend(bar);
+    bar.innerHTML = '<div class="read-aloud-copy"><span class="read-aloud-title">Listen to this chapter</span><span role="status" aria-live="polite">Read along at your own pace</span></div><div class="read-aloud-controls"><button type="button" data-read>Read aloud</button><button type="button" data-pause hidden>Pause</button><button type="button" data-stop hidden>Stop</button><label class="read-aloud-speed">Speed <select aria-label="Reading speed"><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label></div>';
+    var title = content.querySelector('h1');
+    if (title) title.after(bar); else content.prepend(bar);
     var play = bar.querySelector('[data-read]'), pause = bar.querySelector('[data-pause]'), stop = bar.querySelector('[data-stop]'), status = bar.querySelector('[role="status"]');
     if (!root.speechSynthesis || !root.SpeechSynthesisUtterance) {
       play.disabled = true; bar.querySelector('select').disabled = true;
@@ -87,9 +88,13 @@
     }
     var reader = createReader(root.speechSynthesis, root.SpeechSynthesisUtterance, function (state) {
       var busy = state === 'reading' || state === 'paused';
-      play.disabled = busy; pause.disabled = !busy; stop.disabled = !busy;
+      var moveFocus = busy ? document.activeElement === play : document.activeElement === pause || document.activeElement === stop;
+      bar.dataset.state = state;
+      play.hidden = busy; pause.hidden = !busy; stop.hidden = !busy;
+      pause.disabled = !busy; stop.disabled = !busy;
+      if (moveFocus) (busy ? pause : play).focus();
       pause.textContent = state === 'paused' ? 'Resume' : 'Pause';
-      status.textContent = ({idle: 'Ready', reading: 'Reading chapter', paused: 'Paused', error: 'Speech could not play. Try again or choose another browser.', empty: 'No readable chapter text.'})[state];
+      status.textContent = ({idle: 'Read along at your own pace', reading: 'Reading chapter', paused: 'Paused', error: 'Speech could not play. Try again or choose another browser.', empty: 'No readable chapter text.'})[state];
     });
     play.addEventListener('click', function () { reader.start(extractChapter(content)); });
     pause.addEventListener('click', reader.togglePause);

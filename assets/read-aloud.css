@@ -1,27 +1,48 @@
+/* A quiet listening strip between the chapter title and its first paragraph. */
 .read-aloud {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
-  padding: 12px;
-  margin: 0 0 24px;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px;
+  margin: 16px 0 28px;
   border: 1px solid var(--theme-border, #d1d5db);
-  border-radius: 8px;
+  border-inline-start: 3px solid var(--theme-link, #2563eb);
+  border-radius: 10px;
   background: var(--card-bg, #fff);
   color: var(--theme-text, #1f2937);
   font: 14px/1.5 var(--font-sans, sans-serif);
 }
+.read-aloud-copy { display: grid; gap: 2px; min-width: 0; }
+.read-aloud-title { font-weight: 650; }
+.read-aloud [role="status"] { color: var(--theme-text-muted, #4b5563); font-size: 13px; }
+.read-aloud-controls { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
 .read-aloud button, .read-aloud select {
   min-height: 44px;
-  padding: 6px 12px;
+  padding: 8px 14px;
   border: 1px solid var(--theme-border, #d1d5db);
-  border-radius: 6px;
+  border-radius: 7px;
   background: var(--nav-pill-bg, #f3f4f6);
   color: inherit;
   font: inherit;
 }
-.read-aloud button { cursor: pointer; }
+.read-aloud button { cursor: pointer; font-weight: 600; }
+.read-aloud [data-read], .read-aloud [data-pause] {
+  background: var(--theme-text, #1f2937);
+  color: var(--theme-bg, #fff);
+  border-color: transparent;
+}
+.read-aloud button:hover:not(:disabled) { filter: brightness(0.9); }
 .read-aloud button:disabled { opacity: 0.55; cursor: default; }
-.read-aloud button:focus-visible, .read-aloud select:focus-visible { outline: 3px solid var(--theme-link, #2563eb); outline-offset: 2px; }
-.read-aloud [role="status"] { flex-basis: 100%; color: var(--theme-text-muted, #4b5563); }
+.read-aloud [hidden] { display: none; }
+.read-aloud-speed { display: flex; align-items: center; gap: 8px; margin-inline-start: 4px; font-size: 13px; color: var(--theme-text-muted, #4b5563); }
+.read-aloud select { padding: 8px; color: var(--theme-text, #1f2937); }
+.read-aloud button:focus-visible, .read-aloud select:focus-visible {
+  outline: 3px solid var(--theme-link, #2563eb); outline-offset: 3px;
+}
+@media (max-width: 640px) {
+  .read-aloud { align-items: stretch; flex-direction: column; gap: 12px; padding: 14px; }
+  .read-aloud-controls { flex-wrap: wrap; }
+  .read-aloud-speed { margin-inline-start: auto; }
+}
 @media print { .read-aloud { display: none; } }

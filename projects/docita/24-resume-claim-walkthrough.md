@@ -83,21 +83,22 @@ The recorded production query contained 158 retained requests with partial cover
 
 The [local appointment-index benchmark](../../80-lanes-abroad-full-stack/personal/resume/benchmarks/README.md) remains a separate reproducible SQL exercise. It is no longer a bullet in the current application resume.
 
-## Bullet 6: Keep AI Assistance Inside Explicit Boundaries
-
-**Resume scope:** intake and clinical support with output validation, quotas, timeouts, kill switches and human decisions.
-
-Read [prescription safety](07-prescription-safety.md) and [clinical integrations](20-clinical-lab-and-medical-coding.md). Select one actual AI call path and inspect request data, authorization, provider invocation, output parsing, cancellation and fallback. Identify the particular controls implemented on that path; a helper existing elsewhere does not prove every call uses it.
-
-Schema validation constrains shape, not clinical truth. Show how the interface keeps a person responsible for the clinical decision. Discuss prompt injection, sensitive data disclosure, hallucinations, quota enforcement, ambiguous timeouts and degraded behavior. Describe proposed evaluation and missing evidence as future work, not a completed safety certification.
-
-## Bullet 7: Explain What a Release Check Actually Establishes
+## Bullet 5 Continued: Explain What a Release Check Actually Establishes
 
 **Resume scope:** Jest, Vitest, Playwright, GitHub Actions and delivery infrastructure.
 
 Read [deployment](10-deployment-infrastructure.md). Select one unit assertion, integration scenario and browser flow. Explain why each belongs at that layer and which dependencies are mocked or real. The previously executed focused unit run is a limited regression result, not a business-impact metric or full release certification.
 
 Trace a compatible API/worker/frontend release and migration. Explain secret boundaries, health/readiness, smoke checks, rollback and database restore. Configuration for Fly.io, RDS or Cloudflare establishes a configured integration; actual uptime, backup recovery and performance need dated operational results.
+
+## Optional AI Interview Story: Keep Assistance Inside Explicit Boundaries
+
+**Optional story scope:** intake and clinical support with output validation, quotas, timeouts, kill switches and human decisions. This is omitted from the general application résumé; use it for relevant roles.
+
+Read [prescription safety](07-prescription-safety.md) and [clinical integrations](20-clinical-lab-and-medical-coding.md). Select one actual AI call path and inspect request data, authorization, provider invocation, output parsing, cancellation and fallback. Identify the particular controls implemented on that path; a helper existing elsewhere does not prove every call uses it.
+
+Schema validation constrains shape, not clinical truth. Show how the interface keeps a person responsible for the clinical decision. Discuss prompt injection, sensitive data disclosure, hallucinations, quota enforcement, ambiguous timeouts and degraded behavior. Describe proposed evaluation and missing evidence as future work, not a completed safety certification.
+
 
 ## Rehearse One Complete Explanation
 

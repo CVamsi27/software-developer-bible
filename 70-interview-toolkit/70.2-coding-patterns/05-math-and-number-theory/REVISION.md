@@ -16,23 +16,23 @@ Source: [Number Theory & Combinatorics](70.2.5.01-number-theory-combinatorics.md
 
 **Q:** When does Fermat exponentiation provide a modular inverse?
 
-**A:** The modulus must be prime and the value nonzero modulo it. More generally an inverse exists only when the value and modulus are coprime.
+**A:** For prime modulus p, a value a that is not divisible by p has inverse a^(p−2) modulo p. The inverse is a value that multiplies with a to give remainder 1. More generally, an inverse exists when a and the modulus are coprime: their greatest common divisor is 1.
 
 **Q:** Why can reducing both operands still leave multiplication unsafe?
 
-**A:** Their product can exceed the language's exact integer range before the remainder is taken. Use a proven bounded-width case, wider intermediates, BigInteger/BigInt, or an overflow-safe multiplication algorithm.
+**A:** Reducing each operand does not guarantee that their product fits the numeric type. The multiplication happens before the remainder operation, so it can overflow or lose precision first. Check the largest intermediate product, or use BigInt, a wider integer type, or a multiplication algorithm that avoids overflow.
 
 **Q:** Why does a factorial-and-inverse nCr formula need n below a prime modulus?
 
-**A:** When n reaches the modulus, factorial contains a zero factor and cannot be inverted. Different methods are needed for larger n or composite moduli.
+**A:** The formula needs inverses of factorials. If n is at least the prime modulus p, n! includes p and has remainder 0, which has no inverse. The usual factorial table and inverse formula therefore stop working. Use a method designed for larger n or for a composite modulus.
 
 **Q:** Why divide by gcd before multiplying for lcm?
 
-**A:** It reduces the intermediate product, but does not guarantee the final result fits. Handle zero inputs and check overflow under the function's numeric contract.
+**A:** For positive integers, compute lcm as (a / gcd(a, b)) × b. Dividing first makes the intermediate values smaller than multiplying a × b first. The final result can still exceed the numeric range. Handle zero inputs separately and check whether the chosen type can represent the result.
 
 **Q:** What must a probability-as-counts argument establish?
 
-**A:** A well-defined sample space, equally likely outcomes or explicit weights, and correct counting without overlap. Independence is an assumption to justify before multiplying probabilities.
+**A:** List which outcomes are possible and why they are equally likely. If they are not, use their actual probabilities instead of counting alone. Count without including the same outcome twice. Before multiplying probabilities, justify that the events are independent or use the appropriate conditional probabilities.
 
 ## Summary
 

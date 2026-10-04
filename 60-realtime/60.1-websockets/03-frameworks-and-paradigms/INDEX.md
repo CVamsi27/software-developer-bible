@@ -22,7 +22,7 @@
 
 ## Why NestJS first
 
-The gateway pattern generalizes beyond NestJS: connection lifecycle hooks, per-connection auth via guards, and message validation via pipes are the same concepts every framework expresses differently. Learn it once here; port it anywhere.
+The gateway pattern applies beyond NestJS. Frameworks provide different ways to respond when connections open or close, check each connection's permissions through guards, and validate messages through pipes. Learn those responsibilities here, then map them to the corresponding tools in another framework.
 
 Subscriptions (02) build on that gateway foundation; WebRTC (03) needs signaling but no media servers; testing (04) closes the loop on everything above.
 

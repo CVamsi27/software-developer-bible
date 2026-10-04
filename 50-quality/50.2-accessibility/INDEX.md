@@ -1,6 +1,6 @@
 # Accessibility — Index
 
-> **Study time:** ≈ 1 h 52 m of reading (10 files, ~11 min average).
+> **Study time:** ≈ 1 h 53 m of reading (10 files, ~11 min average).
 > **10 files** — Web accessibility from WCAG and ARIA to keyboard navigation, accessible charts, design systems, testing, color & contrast, forms, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-10-blue)](../../INDEX.md)
@@ -86,7 +86,7 @@ Where accessibility scales (or dies): dashboards and shared components.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 08 | [Testing A11y](50.2.08-testing-a11y.md) | Automated tools (axe-core, Lighthouse), manual testing, screen readers (NVDA, VoiceOver, JAWS), keyboard-only testing | Essential | Foundational | 13 min |
+| 08 | [Testing A11y](50.2.08-testing-a11y.md) | Automated tools (axe-core, Lighthouse), manual testing, screen readers (NVDA, VoiceOver, JAWS), keyboard-only testing | Essential | Foundational | 14 min |
 | 09 | [Interview Questions](50.2.09-interview-questions.md) | 50+ curated questions with answers | Essential | Foundational | 5 min |
 
 ---

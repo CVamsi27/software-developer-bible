@@ -36,7 +36,7 @@ Source: [OOP Concepts — Encapsulation, Inheritance, Polymorphism, Abstraction]
 
 **Q:** Why can inheritance violate substitutability even when the code type-checks?
 
-**A:** The subtype may strengthen preconditions, weaken guarantees or break invariants clients rely on. Type compatibility alone does not prove behavioral compatibility.
+**A:** A subtype may demand stricter inputs, offer weaker guarantees, or break rules that callers rely on. A compatible type signature alone does not prove that replacing the original type preserves its behavior.
 
 ## UML Basics — Class & Sequence Diagrams
 

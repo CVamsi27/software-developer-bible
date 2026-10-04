@@ -1,6 +1,6 @@
 # Database — Index
 
-> **Study time:** ≈ 5 h 21 m of reading (29 files, ~11 min average).
+> **Study time:** ≈ 5 h 20 m of reading (29 files, ~11 min average).
 > **29 files** — Database fundamentals from PostgreSQL internals to indexing, transactions, MVCC, joins, locking, connection pooling, Prisma (plus the ORM/query-builder landscape), execution plans, SQL vs NoSQL, zero-downtime migrations, soft delete & tombstones, backups/PITR recovery, search infrastructure at scale, window functions, JSONB, replication, row-level security, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-29-blue)](../../INDEX.md)
@@ -125,7 +125,7 @@ Production concerns — keeping the database healthy at scale. Category INDEX: [
 5. Interview Questions (focus on the 20 harder Qs)
 
 ### Path C — Interview tomorrow
-- Skim all TL;DR boxes
+- Review each chapter’s definition, example and summary; focus on the topics listed above
 - Re-read MVCC + Transactions
 - Run through 50+ Interview Questions
 

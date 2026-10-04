@@ -11,7 +11,7 @@
 
 ## Reading Passes
 
-Begin with frontier order in DFS/BFS. Add weights with shortest paths, then separate connectivity from ordering through DSU and topological sort. Finish with tries and matrix simulation: both encode structure in coordinates or transitions, but answer different questions. For each chapter, decide what a visited, settled, terminal, or processed state actually guarantees.
+Begin with depth-first search (DFS) and breadth-first search (BFS): compare which waiting node each explores next. Add weighted edges with shortest paths. Then separate connectivity questions, handled by disjoint-set union (DSU), from dependency-order questions, handled by topological sort. Finish with tries for string prefixes and matrix simulation for grid movement. For each chapter, explain what marking an item visited, settled, terminal, or processed actually guarantees.
 
 ## The 6 patterns
 

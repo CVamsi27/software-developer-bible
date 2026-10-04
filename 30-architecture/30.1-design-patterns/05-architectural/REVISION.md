@@ -16,7 +16,7 @@ Source: [Repository Pattern](30.1.5.01-repository.md)
 
 **Q:** What abstraction should a Repository expose to domain code?
 
-**A:** Operations in the domain's collection or persistence language, rather than every database feature. Avoid wrapping an ORM mechanically without simplifying the dependency.
+**A:** Expose operations expressed in business terms, such as finding unpaid orders or saving an approved change, rather than every database feature. Merely wrapping an ORM—the tool that maps records to application objects—does not help unless the wrapper simplifies what callers need to know.
 
 ## CQRS & Dependency Injection
 
@@ -56,7 +56,7 @@ Source: [Anti-Corruption Layer (ACL)](30.1.5.06-anti-corruption-layer.md)
 
 **Q:** Why should an Anti-Corruption Layer translate meaning as well as field names?
 
-**A:** Its purpose is to protect the local domain model from the external model's assumptions. Renaming fields alone leaves semantic coupling intact.
+**A:** Its purpose is to protect the local domain model from the external model's assumptions. Renaming fields alone still leaves local code dependent on what those external fields mean and how they behave.
 
 ## Service Locator vs Dependency Injection
 

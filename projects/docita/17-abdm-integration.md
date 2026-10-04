@@ -7,7 +7,7 @@
 
 ## Definition
 
-The ABDM integration connects local patient identity and care-context records to external health-information workflows. Its current source includes local care contexts, consent requests, callback recording, a gateway client and an operational inbox. That is not evidence of a complete certified interoperability flow.
+The Ayushman Bharat Digital Mission (ABDM) integration connects local patient identity and care contexts—references to records from a care episode—to external health-information workflows. Its current source includes local care contexts, consent requests, callback recording, a gateway client and an operational inbox. These parts do not prove a complete certified exchange of health information.
 
 The concrete question is whether a received callback is authorized to change consent state or trigger an external push—not merely whether it names an existing care context.
 
@@ -23,7 +23,7 @@ Transactions retain type, direction, status and available request, transaction a
 
 The ledger uses more than a simple success/failure vocabulary: inbound callback recording uses ACKNOWLEDGED and local context generation uses INTERNAL direction. Fields are not populated identically on every path. A recorded RETRYABLE status does not schedule or complete a retry automatically.
 
-Care contexts use stable source-derived references. Creation checks clinic enablement, a verified ABHA patient, and source ownership, then obtains a patient FHIR bundle and stores the context. Source-specific permission and data minimization still matter: creating a context for one record must not imply consent to share the patient's entire available bundle.
+Care contexts use stable references derived from their source records. Creation checks clinic enablement, a patient with verified Ayushman Bharat Health Account (ABHA) identity, and source ownership. It then obtains a patient bundle in the Fast Healthcare Interoperability Resources (FHIR) health-data format and stores the context. Permission and limits on the data shared still matter: creating a context for one record must not imply consent to share the patient's entire available bundle.
 
 ## How Link, Share and Consent Requests Differ
 

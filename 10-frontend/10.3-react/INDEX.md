@@ -1,6 +1,6 @@
 # React — Index
 
-> **Study time:** ≈ 7 h 18 m of reading (27 files, ~16 min average).
+> **Study time:** ≈ 7 h 19 m of reading (27 files, ~16 min average).
 > **27 files** — React internals from Virtual DOM to Fiber, hooks, patterns, custom hooks, portals, compound components, external stores, React Router data routers, React 18/19 concurrent APIs, performance, state management, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-27-blue)](../../INDEX.md)
@@ -74,7 +74,7 @@ The patterns that solve real problems in production code.
 | --: | ------ | -------- | --- | --- | ----------: |
 | 11 | [Suspense](03-advanced-hooks-and-patterns/10.3.3.01-suspense.md) | Suspense boundaries, data fetching, useTransition, streaming SSR | Important | Specialized | 19 min |
 | 12 | [Error Boundary](03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.md) | Error boundaries, error recovery, logging, Sentry integration | Important | Important | 20 min |
-| 13 | [Custom Hooks](03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.md) | Composition patterns, useLocalStorage, useDebounce, useFetch, testing, best practices | Essential | Important | 36 min |
+| 13 | [Custom Hooks](03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.md) | Composition patterns, useLocalStorage, useDebounce, useFetch, testing, best practices | Essential | Important | 37 min |
 | 14 | [useSyncExternalStore](03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.md) | Tearing in concurrent rendering, subscribe/getSnapshot contract, snapshot caching, Zustand/Redux integration, infinite-loop mistakes | Important | Specialized | 16 min |
 | 15 | [Performance](03-advanced-hooks-and-patterns/10.3.3.05-performance.md) | Profiler, React.memo, virtualization, windowing, debouncing, Web Workers | Essential | Foundational | 9 min |
 | 16 | [State Management](03-advanced-hooks-and-patterns/10.3.3.06-state-management.md) | Redux Toolkit, Zustand, Jotai, Context vs external state, when to use which | Essential | Important | 15 min |
@@ -122,7 +122,7 @@ Reusable component patterns + 60+ interview Qs.
 4. Interview Questions (focus on the 20 harder Qs)
 
 ### Path C — Interview tomorrow
-- Skim all TL;DR boxes
+- Review each chapter’s definition, example and summary; focus on the topics listed above
 - Re-read Custom Hooks + State Management
 - Run through the 60+ Interview Questions
 

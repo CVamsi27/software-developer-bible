@@ -17,10 +17,10 @@ Source: [Pass by Value vs Pass by Reference](10.1.4.01-pass-by-value.md)
 **Definition**
 
 1. **Q:** What is the one rule JavaScript follows for every argument it passes?
-   **A:** Everything is copied by value; when the argument is an object, the thing copied is its reference — so two variables can end up addressing one heap object without either one "holding" it.
+   **A:** The parameter receives the argument's value in its own binding. If that value refers to an object, the caller and parameter refer to the same object. Passing it does not copy the object's contents or make the parameter another name for the caller's variable.
 
 2. **Q:** Why do objects give the *illusion* of being passed by reference?
-   **A:** The copied pointer reproduces the same address, so property writes through the parameter land in the shared object, while assigning to the parameter only repoints the callee's own slot.
+   **A:** A property write through the parameter changes the same object the caller uses. Reassigning the parameter changes only the parameter's binding, so it does not replace the caller's value. This describes observable behavior without requiring a particular pointer or memory layout.
 
 **How It Works**
 
@@ -41,7 +41,7 @@ Source: [Pass by Value vs Pass by Reference](10.1.4.01-pass-by-value.md)
 **Best Practices**
 
 7. **Q:** When is `Object.freeze` not enough to make data safe?
-   **A:** Freeze is shallow and only intercepts writes at the top level, so nested objects stay mutable; for deep protection clone first or use an immutable data library.
+   **A:** It protects the object's own properties, not all nested objects. Copying can create independent supported data, but copying alone does not prevent later mutation. Use an explicit recursive protection strategy or an immutable-data library when the contract requires deeper protection.
 
 ## Map, Set, WeakMap, WeakSet
 
@@ -177,7 +177,7 @@ Source: [Throttle](10.1.4.05-throttle.md)
    **A:** If at least one call landed during the window, one final invocation runs as the window closes using the most recent call's arguments — everything older in that window is already gone.
 
 4. **Q:** Why is `requestAnimationFrame` often a better throttle than a timer for scroll-driven work?
-   **A:** It fires once per display frame and is aligned to the browser's own paint cycle, so the work you do is never thrown away by the compositor and never falls between frame boundaries.
+   **A:** It schedules work at a browser rendering opportunity. Keep one pending callback to combine incoming events before it runs. This coordinates visual work with rendering, but does not guarantee a displayed frame, a fixed rate or that none of the work is wasted.
 
 **Code Examples**
 
@@ -225,12 +225,12 @@ Source: [Memory Leaks](10.1.4.06-memory-leaks.md)
    **A:** The local variable dies with the scope, so the node and its listener both become unreachable. It turns into a leak only when something that outlives the function — a document-level listener or a cache — keeps referencing the node.
 
 6. **Q:** Why does capturing `hugeData.length` instead of reading `hugeData` inside the closure change anything?
-   **A:** The inner function then mentions only a number, so engines leave the array out of the closure's scope entirely and it becomes collectable as soon as the allocating function returns.
+   **A:** Calculate the length first and let the callback use only that number. The callback then has no need to access the original array. The engine may reclaim the array once it is unreachable, but exact storage and collection timing remain implementation details.
 
 **Real-World Use Cases**
 
 7. **Q:** What does `AbortController` give a fetch effect that a boolean flag does not?
-   **A:** One teardown call that rejects the in-flight request, so the `.catch` path runs instead of a `setState` on an unmounted component — the flag would only stop *new* requests, not the one already pending.
+   **A:** It can ask a supported in-flight fetch or body read to stop. A flag can prevent an obsolete result from updating state, but does not cancel the underlying request. Use cleanup and a latest-result check together because cancellation can arrive after completion or be ignored by a custom loader.
 
 **Common Mistakes**
 

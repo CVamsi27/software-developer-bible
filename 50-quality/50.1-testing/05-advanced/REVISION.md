@@ -16,7 +16,7 @@ Source: [Performance & Load Testing](50.1.5.01-performance-load-testing.md)
 
 **Q:** Why can a fixed-VU test hide overload?
 
-**A:** Each user waits for responses before sending more work, so a slower service receives fewer requests. An arrival-rate model can keep offered load independent and expose capacity limits.
+**A:** In a fixed virtual-user (VU) test, each simulated user waits for a response before sending more work, so a slower service receives fewer requests. An arrival-rate model sends work at the intended rate independently of response time and can expose capacity limits.
 
 **Q:** Why run a soak after a short throughput test passes?
 

@@ -36,7 +36,7 @@ Docita ships neither `@nestjs/cqrs` nor `@nestjs/microservices` — both pattern
 | Query / read side | `apps/api/src/domains/analytics/core/factories/base-analytics.factory.ts` - cached analytics projections act as read models |
 | Domain events | `apps/api/src/shared/common/events/event.service.ts` - typed EventEmitter2 bus stands in for message-pattern transports |
 
-TCP/Redis/Kafka/gRPC transports not used; would introduce them when a domain extracts into its own deployable — the transactional outbox + Postgres queue already form the async spine.
+TCP/Redis/Kafka/gRPC transports are not used here. They could be introduced when a domain becomes a separate deployable service. The transactional outbox and PostgreSQL queue already carry asynchronous work between components.
 
 ---
 

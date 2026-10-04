@@ -1,6 +1,6 @@
 # Security — Index
 
-> **Study time:** ≈ 5 h 47 m of reading (24 files, ~14 min average).
+> **Study time:** ≈ 5 h 46 m of reading (24 files, ~14 min average).
 > **The senior security learning track.** Study in three passes: **I. Auth** (the [01-auth](01-auth/INDEX.md) deep-dive: fundamentals → Basic/API keys → sessions → tokens → OAuth → SSO/SAML → MFA/passkeys → authorization) → **II. Attacks & Defense** (XSS, CSRF, SQLi, API Top 10) → **III. Hardening & Operations** (headers/CSP, threat modeling, secrets). Finish with the interview banks.
 >
 > 24 files — from HTTP Basic auth to passkeys, and from XSS to STRIDE, secrets management, vulnerability management, and 50+ curated questions.
@@ -87,7 +87,7 @@ Stages 10 = the auth question bank below ([drills](01-auth/20.5.1.11-interview-q
 | 13 | [Web Security](03-hardening-and-operations/20.5.3.02-web-security.md) | HTTPS, HSTS, CORS, CSP, security headers, OWASP Top 10 | Essential | 19 min | 19 min |
 | 14 | [Threat Modeling — STRIDE](03-hardening-and-operations/20.5.3.03-threat-modeling-stride.md) | STRIDE, data-flow diagrams, trust boundaries, attack trees | Important | 9 min | 9 min |
 | 15 | [Secrets Management](03-hardening-and-operations/20.5.3.04-secrets-management.md) | Vault, AWS/GCP secret managers, rotation, KMS, dynamic credentials | Essential | 11 min | 11 min |
-| 16 | [Vulnerability Management & Patch Governance](03-hardening-and-operations/20.5.3.05-vulnerability-management-patch-governance.md) | CVE/CVSS + EPSS/KEV triage, SBOM (CycloneDX/SPDX), scanner roles, patch SLAs, emergency process, base-image refresh, risk acceptance, MTTR | Important | 11 min | 11 min |
+| 16 | [Vulnerability Management & Patch Governance](03-hardening-and-operations/20.5.3.05-vulnerability-management-patch-governance.md) | CVE/CVSS + EPSS/KEV triage, SBOM (CycloneDX/SPDX), scanner roles, patch SLAs, emergency process, base-image refresh, risk acceptance, MTTR | Important | 11 min | 12 min |
 
 ---
 
@@ -117,7 +117,7 @@ Stages 10 = the auth question bank below ([drills](01-auth/20.5.1.11-interview-q
 6. **Both interview banks** (3 hrs)
 
 ### Path C — Interview tomorrow
-- Skim all TL;DR boxes
+- Review each chapter’s definition, example and summary; focus on the topics listed above
 - Re-read JWT + Sessions (the most-tested)
 - Re-read the 20 hardest Auth + Security interview Qs
 

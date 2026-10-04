@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-TypeScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -111,7 +111,7 @@ Source: [Type Narrowing](10.2.1.03-type-narrowing.md)
    **A:** The value-returning function fails with `TS2366 Function lacks ending return statement`, but the `void` handler compiles cleanly and silently drops the event.
 
 7. **Q:** After `x = x.trim()` inside a branch that had already narrowed `x`, is the narrowed type kept?
-   **A:** No — reassignment resets control-flow analysis to the declared type (`string | null`), so you must re-narrow before using `x` again.
+   **A:** Yes. `trim()` returns a string, so this assignment leaves the current flow type as `string`. An assignment updates the flow type according to the assigned value; assigning a value that may be `null` can broaden it again. The declared type still limits which assignments are allowed.
 
 ## tsconfig & Compiler Options
 
@@ -141,7 +141,7 @@ Source: [tsconfig & Compiler Options](10.2.1.04-tsconfig-compiler-options.md)
 **Common Mistakes**
 
 6. **Q:** What class of bugs does `skipLibCheck` actually skip, and what does it never skip?
-   **A:** It skips checking `.d.ts` files (third-party declarations) — your own sources are still fully checked against them. The cost is that a lying declaration passes silently and the error surfaces later in your code.
+   **A:** It skips type checking inside `.d.ts` declaration files, including both dependency declarations and your own. Your ordinary source files are still checked against those declarations. An incorrect declaration can therefore escape checking and give source code a misleading description of the runtime behavior.
 
 **Best Practices**
 

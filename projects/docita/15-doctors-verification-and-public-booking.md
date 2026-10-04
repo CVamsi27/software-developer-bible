@@ -31,13 +31,13 @@ Verification is associated with a doctor identity, while practice permissions an
 
 ## How Credential Verification Works Today
 
-The service skips missing/non-doctor users. Without a registration number it records UNVERIFIED. Otherwise it writes PENDING, checks recorded license expiry, then tries configured HPR lookup, a configured HTTP provider, or manual administration.
+The service skips missing/non-doctor users. Without a registration number it records UNVERIFIED. Otherwise it writes PENDING, checks recorded license expiry, then tries a configured Healthcare Professionals Registry (HPR) lookup, a configured HTTP provider, or manual administration.
 
 A past recorded expiry produces REJECTED with LICENSE_CHECK source. HPR configuration is optional; lookup failure or no match falls through. If no general provider URL exists, the service remains PENDING with MANUAL_ADMIN source. It does not always call a live NMC registry.
 
 A successful provider payload can set VERIFIED and retain reference/data. Non-success responses produce FAILED or REJECTED according to the mapped result. These are implemented source mappings; they do not independently establish the authority, completeness or current legal sufficiency of a configured provider.
 
-The HTTP dependency is behind a client seam. Retained payloads support later explanation but also need access, minimization and retention policies. The PENDING write precedes the external call, and no attempt/version predicate protects a later result from overwriting a newer verification request or edited registration fields.
+The HTTP provider call sits behind a separate client interface. Retained responses support later explanation but also need access controls, limits on collected data, and retention policies. The PENDING write happens before the external call. No check of the attempt or record version prevents a later result from overwriting a newer verification request or edited registration fields.
 
 ## Reverification Is a Bounded Scan, Not Complete Freshness
 

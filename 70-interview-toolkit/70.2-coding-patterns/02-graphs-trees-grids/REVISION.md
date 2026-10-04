@@ -16,15 +16,15 @@ Source: [DFS & BFS](70.2.2.01-dfs-bfs.md)
 
 **Q:** Why mark an unweighted BFS node when enqueuing it?
 
-**A:** Its first discovery has shortest edge distance; marking then prevents multiple parents from repeatedly queueing the same node. Weighted algorithms need a different settlement rule.
+**A:** BFS explores an unweighted graph one distance level at a time. The first time it reaches a node, it has found a shortest path by number of edges. Mark the node when adding it to the queue so other neighbors do not add it again. This rule alone is not sufficient when edges have different weights.
 
 ## Shortest Paths: Dijkstra & Bellman-Ford
 
 Source: [Shortest Paths: Dijkstra & Bellman-Ford](70.2.2.02-shortest-paths-dijkstra-bellman-ford.md)
 
-**Q:** Why does non-negative weight matter to Dijkstra's settlement proof?
+**Q:** Why does Dijkstra require non-negative edge weights when finalizing a distance?
 
-**A:** Once the minimum candidate is chosen, any remaining path cannot improve it through a negative detour. Negative edges invalidate that greedy proof even if a reprocessing variant sometimes finds the answer.
+**A:** Dijkstra selects the unfinished node with the smallest known distance. With non-negative edges, reaching it later through a farther node cannot make the path shorter. A negative edge could reduce that later path, so the selected distance would no longer be safe to treat as final.
 
 ## Union-Find
 
@@ -32,15 +32,15 @@ Source: [Union-Find](70.2.2.03-union-find.md)
 
 **Q:** What do path compression and union by size change about Union-Find?
 
-**A:** They shorten future parent walks and prevent avoidable deep trees, giving amortized near-constant operations. They do not provide arbitrary graph paths or edge deletions.
+**A:** Path compression makes visited nodes point closer to their group representative. Union by size attaches the smaller tree under the larger one, limiting depth. Together, they make a sequence of find and union operations almost constant time per operation on average. Union-Find tracks connected groups; it does not return paths or directly support removing edges.
 
 ## Topological Sort
 
 Source: [Topological Sort](70.2.2.04-topological-sort.md)
 
-**Q:** What does an incomplete Kahn traversal establish?
+**Q:** What does it mean if Kahn's topological sort cannot process every vertex?
 
-**A:** If fewer vertices are emitted than exist, remaining vertices are blocked by a cycle under the dependency graph model. It does not necessarily identify every cycle's exact edges.
+**A:** Kahn's algorithm repeatedly processes vertices with no remaining prerequisites. If it stops while vertices remain, the graph contains a cycle. Some remaining vertices may depend on that cycle without belonging to it. The unfinished result does not identify the exact cycle edges.
 
 ## Trie
 
@@ -56,7 +56,7 @@ Source: [Matrix Traversal & Simulation](70.2.2.06-matrix-traversal-simulation.md
 
 **Q:** What must a matrix simulation make explicit before mutation?
 
-**A:** Bounds, traversal order, visited/state encoding, and which original values future steps still need. In-place markers are safe only when they cannot collide with legitimate input state.
+**A:** State the valid row and column limits, the order of visits, and how you mark visited cells. Also ask whether a later step needs an original value that you are about to overwrite. A marker stored in the matrix must be distinguishable from every valid input value.
 
 ## Summary
 

@@ -11,7 +11,7 @@
 
 ## Reading Passes
 
-Trace Euclid’s invariant before using divisibility formulas. Then connect modular multiplication, exponentiation, and inversion to their numeric and algebraic preconditions. Finish with a counting argument: distinguish order, repetition, and duplicate counting before selecting a formula.
+Follow why each step of Euclid’s algorithm preserves the greatest common divisor before using divisibility formulas. Then study when modular multiplication, exponentiation, and inversion are valid and whether their intermediate values fit the numeric type. Finish with a counting argument: distinguish order, repetition, and duplicate counting before selecting a formula.
 
 ## Files
 

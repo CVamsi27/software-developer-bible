@@ -16,7 +16,7 @@ Source: [Mocking](50.1.4.01-mocking.md)
 
 **Q:** Why does a network-level mock often provide more confidence than mocking a fetch wrapper?
 
-**A:** The application still executes its serialization, request construction, response handling, and error paths. The real external service remains outside that test's scope.
+**A:** The application still converts data into the request format, constructs requests, handles responses, and runs its error paths. The real external service remains outside that test's scope.
 
 **Q:** Why can a permissive mock hide a broken request?
 

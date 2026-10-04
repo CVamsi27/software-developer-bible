@@ -1,6 +1,6 @@
 # Next.js — Index
 
-> **Study time:** ≈ 6 h 38 m of reading (21 files, ~19 min average).
+> **Study time:** ≈ 6 h 39 m of reading (21 files, ~19 min average).
 > **21 files** — App Router, rendering strategies, server components, data fetching patterns, caching, streaming, ISR, authentication, static exports, deployment (Docker/Vercel/self-hosted), and interview questions.
 
 [![Files](https://img.shields.io/badge/files-21-blue)](../../INDEX.md)
@@ -68,7 +68,7 @@ The hardest part of Next.js — the 6 files every senior engineer must own.
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 08 | [Data Fetching Patterns](03-data-and-caching/10.4.3.01-data-fetching-patterns.md) | Server Component fetch, `unstable_cache`, Server Actions, React Query, Suspense, parallel fetches | Important | Important | 12 min |
-| 09 | [Server Actions](03-data-and-caching/10.4.3.02-server-actions.md) | Mutations, revalidation, progressive enhancement, form actions | Important | Important | 27 min |
+| 09 | [Server Actions](03-data-and-caching/10.4.3.02-server-actions.md) | Mutations, revalidation, progressive enhancement, form actions | Important | Important | 28 min |
 | 10 | [Caching](03-data-and-caching/10.4.3.03-caching.md) | Data cache, full route cache, revalidation, stale-while-revalidate, cache tags | Important | Important | 8 min |
 | 11 | [Streaming](03-data-and-caching/10.4.3.04-streaming.md) | Streaming SSR, Suspense boundaries, loading UI, parallel routes | Important | Specialized | 23 min |
 | 12 | [Incremental Static Regeneration](03-data-and-caching/10.4.3.05-incremental-static-regeneration.md) | SWR, on-demand revalidation, cache tags, `generateStaticParams`, fallback | Important | Specialized | 23 min |
@@ -112,7 +112,7 @@ Production concerns.
 4. Interview Questions (focus on RSC, caching, streaming)
 
 ### Path C — Interview tomorrow
-- Skim all TL;DR boxes
+- Review each chapter’s definition, example and summary; focus on the topics listed above
 - Re-read Caching + Server Components
 - Run through 60+ Interview Questions
 

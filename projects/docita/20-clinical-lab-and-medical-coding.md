@@ -15,7 +15,7 @@ A lab result can be ready before its payment flag is recorded, while a catalog s
 
 A release predicate can express policy clearly, but evaluating it before an external send does not prevent another request from evaluating it too. State authorization, notification attempt and patient delivery need separate identities and states.
 
-A local code catalog is a materialized view of an external source. A partial sync, changed description or fallback source can make it stale or semantically different. Source, code system and version are part of a code's identity—not merely its text.
+A local code catalog is a materialized view: a stored copy built from an external source. An incomplete synchronization, changed description or fallback source can make it stale or change what its entries mean. Source, code system and version are part of a code's identity, not merely its text.
 
 ## Why Lab Release Uses Two Preconditions
 
@@ -64,7 +64,7 @@ A separate authorized retrieve/re-notify operation can refresh access without re
 
 ## Coding Providers Must Preserve Code-system Identity
 
-The port exposes ICD/procedure search and batch-stream operations. The composite routes ICD to NLM and selects procedure source from configuration: NLM HCPCS or a configured licensed provider. The latter validates response shapes and uses cursor pagination, but can fall back to NLM on missing configuration or failure.
+The provider interface supports diagnosis-code search using the International Classification of Diseases (ICD), procedure-code search, and streamed batches. The composite provider routes ICD searches to the National Library of Medicine (NLM). Configuration selects the procedure source: NLM's Healthcare Common Procedure Coding System (HCPCS) data or a licensed provider. The latter validates response shapes and uses cursor pagination, but can fall back to NLM on missing configuration or failure.
 
 NLM's referenced endpoint supplies HCPCS **Level II**, which is distinct from CPT. Mapping that response into a model named CptCode does not turn it into CPT or establish jurisdiction/insurer suitability. Retain code system, source, version and applicable rights explicitly. [NLM HCPCS API documentation](https://clinicaltables.nlm.nih.gov/apidoc/hcpcs/v3/doc.html).
 

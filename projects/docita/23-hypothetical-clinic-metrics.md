@@ -61,7 +61,7 @@ Likewise, 200 rows every five seconds is an idealized relay selection rate of 40
 
 ## Use Outcome Metrics With Explicit Denominators
 
-The sample observations below are **invented before/after datasets**, not results of running Docita. Their purpose is to teach calculation and measurement design. No performance change, user study or availability observation has been executed for this chapter.
+The sample observations below are **invented before/after datasets**, not results of running Docita. Their purpose is to teach calculation and measurement design. In the table, p95 means the 95th percentile: the value at or below which about 95% of eligible observations fall. No performance change, user study or availability observation has been executed for this chapter.
 
 | Outcome | Synthetic before → after or proposed target | Calculation or definition | Evidence required for an actual claim |
 | -------------------------------- | -------------------------------------------------------- | ----------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |

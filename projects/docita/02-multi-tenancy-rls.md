@@ -11,7 +11,7 @@ This case study describes source inspected on 2 October 2026. Repository configu
 
 ## Definition
 
-Tenant isolation prevents one tenant’s operation from reading or changing another tenant’s protected state. Authentication establishes identity, application authorization evaluates the operation, and database policies can enforce a row boundary under a specified database role and session context.
+A tenant is a customer organization, such as a clinic, that shares the application with others. Tenant isolation prevents one tenant’s operation from reading or changing another tenant’s protected state. Authentication establishes identity; application authorization decides whether that identity may perform the operation. Row-level security (RLS) lets database policies restrict which rows the executing database role may access, using context supplied for its session or transaction.
 
 ## First Principles
 
@@ -42,7 +42,7 @@ The current `tenant.middleware.ts` stores clinic identity, user identity, a bypa
 
 Timers and promises created within an async scope can inherit that scope. They do not universally lose it when the HTTP request finishes. The more dangerous distinction is lifetime: a delayed operation can retain a reference to a transaction that has already ended. Independently scheduled workers need a separately validated job context; they cannot rely on a request store being present.
 
-Keep context provenance explicit. A clinic ID obtained from verified identity and checked membership is different from a client-supplied clinic ID. A bypass flag is a privileged decision, not a convenience default.
+Make the source of each context value explicit. A clinic ID obtained from verified identity and checked membership is different from a client-supplied clinic ID. A bypass flag is a privileged decision, not a convenience default.
 
 ## Keep the database setting and query on the same transaction
 

@@ -7,13 +7,13 @@
 
 ## Definition
 
-Inpatient management connects a patient's admission to a bed and tracks admission, transfer and discharge. The resource invariant is that one bed must not be assigned to two active admissions, and one patient must not acquire conflicting active admissions within the defined clinic policy.
+Inpatient management connects a patient's admission to a bed and tracks admission, transfer and discharge. Two rules must remain true: one bed must not be assigned to two active admissions, and one patient must not acquire conflicting active admissions within the defined clinic policy.
 
 The difficult case is concurrent staff activity: two requests can both read AVAILABLE before either occupies the bed.
 
 ## First Principles
 
-A multi-row transaction makes its writes commit or roll back together. It does not automatically serialize every earlier read or protect the absence of a row. Two transactions can both find no active admission and then create one unless a constraint, lock protocol or retryable isolation policy prevents it.
+A multi-row transaction makes its writes commit or roll back together. It does not automatically make earlier reads behave as though transactions ran one at a time, or reserve the fact that no row exists yet. Two transactions can both find no active admission and then create one unless a database constraint, locking rule, or suitable transaction-isolation policy with retries prevents it.
 
 Bed status and admission assignment encode related facts. Maintaining both makes reads convenient, but requires all writers to preserve their agreement.
 

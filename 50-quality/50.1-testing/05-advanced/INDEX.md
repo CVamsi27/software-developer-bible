@@ -11,7 +11,7 @@
 
 ## Why this category exists
 
-The pyramid answers "does it work for one user?" Staff/SRE interviews ask "does it work for ten thousand users while a dependency is on fire?" These two disciplines answer that.
+Unit, integration and end-to-end tests check behavior in selected scenarios. Load testing asks whether the system still works for many simultaneous users; chaos experiments ask what happens when a dependency fails. These two chapters help prepare those operational questions.
 
 ---
 
@@ -35,7 +35,7 @@ What if a dependency dies?       →    Chaos engineering
 Who fixes it when it does?       →    Game days
 ```
 
-Both chapters share one principle: measure a **steady-state metric** first (p95 latency, success rate), then perturb the system and compare.
+Both chapters begin by measuring normal behavior, such as p95 latency or success rate. Then change the load or inject a controlled failure and compare the measurements. This baseline is the experiment’s steady state.
 
 ---
 

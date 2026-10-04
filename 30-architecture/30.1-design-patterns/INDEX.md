@@ -8,7 +8,7 @@
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 [![GoF Coverage](https://img.shields.io/badge/GoF%20Coverage-23%2F23-success)](#)
 
-**Why patterns matter in interviews:** A senior engineer is expected to (1) recognize the pattern in unfamiliar code, (2) pick the right pattern for a given LLD problem, and (3) articulate tradeoffs vs alternatives. Memorizing the catalog is not enough — every pattern in this index is paired with anti-patterns, real-world examples, and "when NOT to use" guidance.
+**Why patterns matter in interviews:** A senior engineer is expected to (1) recognize the pattern in unfamiliar code, (2) choose a pattern for a low-level design (LLD) problem about classes and their interactions, and (3) explain its tradeoffs against alternatives. Memorizing the catalog is not enough: every pattern in this index is paired with common misuses, real-world examples, and guidance on when to avoid it.
 
 ---
 

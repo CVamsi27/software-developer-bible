@@ -16,7 +16,7 @@ Source: [Sliding Window](70.2.1.01-sliding-window.md)
 
 **Q:** What property permits moving a window's left boundary without revisiting discarded starts?
 
-**A:** The validity/optimality constraint must support monotone movement, and entering/leaving elements must update state efficiently. Arbitrary negative-sum constraints may break the usual shrinking proof.
+**A:** You need a reason why a discarded start cannot lead to an answer later. For example, in a minimum-length window with positive numbers, extending the right side cannot decrease the sum, so the left side can move forward when the target is reached. With negative numbers, that reasoning fails. Also check that adding and removing an element updates the window state efficiently.
 
 ## Two Pointers
 
@@ -32,7 +32,7 @@ Source: [Binary Search](70.2.1.03-binary-search.md)
 
 **Q:** How does a lower-bound search differ from stopping on equality?
 
-**A:** It preserves a search interval that can still contain an earlier match and moves the right boundary after equality. Verify the returned insertion position before treating it as a found value.
+**A:** A lower-bound search finds the first position whose value is at least the target. Finding an equal value is not enough: an earlier equal value may exist, so keep searching to the left. The result may be an insertion position rather than a match; check that it is inside the array and holds the target.
 
 ## Linked List Manipulation Patterns
 
@@ -40,7 +40,7 @@ Source: [Linked List Manipulation Patterns](70.2.1.04-linked-list-manipulation-p
 
 **Q:** Why save next before reversing a linked-list pointer?
 
-**A:** The original forward link is lost when next is overwritten. Saving it preserves access to the unreversed suffix while the prefix is reconnected.
+**A:** Reversing a node changes its next pointer to point backward. Save the original next node first, or you lose the link to the remaining list. Then move to the saved node and repeat.
 
 ## Intervals
 
@@ -48,7 +48,7 @@ Source: [Intervals](70.2.1.05-intervals.md)
 
 **Q:** Why can sorting intervals by start simplify merging?
 
-**A:** Potential overlaps become adjacent in traversal. Track the merged interval's maximum end, then emit it only when a later start lies outside the chosen closed/half-open convention.
+**A:** Sorting by start puts possible overlaps together. Keep the furthest end reached by the current merged interval. When the next start no longer overlaps, save that interval and begin another. Decide whether touching endpoints count as an overlap: [1, 3] and [3, 5] overlap as closed intervals, while [1, 3) and [3, 5) do not.
 
 ## Greedy & Prefix Sum
 
@@ -56,7 +56,7 @@ Source: [Greedy & Prefix Sum](70.2.1.06-greedy-prefix-sum.md)
 
 **Q:** Why does a prefix-sum hash map handle negative values where a simple sum window may fail?
 
-**A:** Each subarray sum is a difference of prefixes. Counting previous prefix values equal to current minus target does not depend on sums changing monotonically as endpoints move.
+**A:** A prefix sum is the total from the beginning up to a position. Subtracting an earlier prefix sum from the current one gives the sum between them. To find a target sum, look for earlier totals equal to current minus target. This works with negative numbers because it does not assume that extending a window increases its sum.
 
 ## String Search — KMP & Rabin-Karp
 
@@ -64,11 +64,11 @@ Source: [String Search — KMP & Rabin-Karp](70.2.1.07-string-search-kmp-rabin-k
 
 **Q:** What information lets KMP avoid comparing an already matched prefix again?
 
-**A:** The prefix-function/LPS table records the longest proper prefix that is also a suffix. It supplies the next viable matched length after a mismatch.
+**A:** For the characters matched so far, the LPS table records the longest beginning part that also matches an ending part, excluding the whole matched string. After a mismatch, that overlap tells KMP how much of the match it can keep. It need not compare those characters again.
 
 ## Summary
 
-Keep a boundary invariant for every window or search; state the endpoint convention for intervals. For strings and lists, preserve the suffix or prefix information needed after each movement.
+For each window or search, explain why moving a boundary cannot discard the answer. For intervals, state whether endpoints are included. For strings and lists, keep the information needed to continue after moving a pointer.
 
 ## See Also
 

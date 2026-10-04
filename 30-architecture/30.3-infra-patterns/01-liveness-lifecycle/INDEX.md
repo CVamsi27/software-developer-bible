@@ -11,7 +11,7 @@
 
 ## Why this category exists
 
-Every orchestrator (Kubernetes, ECS, Nomad) manages your process through two questions — "are you alive?" and "are you ready?" — plus one command: "shut down now." If your health endpoints lie or your process ignores SIGTERM, you get crash-loop restarts, dropped in-flight requests, and corrupted shutdowns. This category covers the mechanics once, properly.
+An orchestrator such as Kubernetes, ECS or Nomad starts and manages application processes. It checks whether a process is alive and ready to serve, and asks it to shut down. Incorrect health responses or ignored termination requests such as SIGTERM can cause repeated restarts, dropped ongoing requests, and incomplete cleanup. This category explains how those checks and shutdown steps work.
 
 ---
 
@@ -25,7 +25,7 @@ Every orchestrator (Kubernetes, ECS, Nomad) manages your process through two que
 
 ## Reading Path and Completion Check
 
-Read probe semantics before shutdown handling, then follow one request through traffic withdrawal, draining and forced termination.
+Read what each health probe checks before learning shutdown handling. Then follow one request as the platform stops sending new traffic, allows ongoing work to finish, and forcibly stops the process if it exceeds the shutdown deadline.
 
 Distinguish a dependency outage from a stuck process and show why the two produce different probe decisions. Then use [section revision](REVISION.md) without reopening the chapters. Interview banks, where present, are a separate drill after this check.
 

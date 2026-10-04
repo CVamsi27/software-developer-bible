@@ -48,7 +48,7 @@ Source: [Backup Strategy & Restore Drills](30.3.2.05-backup-strategy-restore-dri
 
 **Q:** What proves a backup can meet recovery objectives?
 
-**A:** A timed restore with semantic verification, application checks and cutover evidence. Successful upload or a checksum alone does not establish RTO or usable data.
+**A:** A timed restore that checks the recovered data’s meaning and consistency, verifies application behavior, and demonstrates switching service to the restored system. Successful upload or a checksum alone does not establish recovery time or usable data.
 
 ## Idempotency & Retry Patterns — Deep Dive
 

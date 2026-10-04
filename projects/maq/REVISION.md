@@ -33,7 +33,7 @@ Source: [Bottleneck investigation](01-product-engineering.md#bullet-2-show-how-y
 
 **Q:** In the 50-row practice list, why does running all status requests in parallel not remove N+1?
 
-**A:** It changes scheduling but leaves the per-row query pattern: 51 calls still compete for connections and database work. A scoped batch or suitable join changes the access pattern. Verify result cardinality and authorization as well as query count.
+**A:** It changes scheduling but leaves the per-row query pattern: 51 calls still compete for connections and database work. A batch limited to authorized records, or a suitable join, changes the access pattern. Verify the expected number of result rows and authorization as well as query count.
 
 **Q:** If batching takes the query count from 51 to two, can I quote a corresponding endpoint speedup?
 
@@ -41,7 +41,7 @@ Source: [Bottleneck investigation](01-product-engineering.md#bullet-2-show-how-y
 
 **Q:** How would I distinguish a slow query from a slow endpoint?
 
-**A:** Trace request stages, query counts/timings, external calls and application processing. A fast database query does not exclude serialization, connection waiting or downstream latency.
+**A:** Trace each request stage, the number and duration of queries, external calls, and application processing. A fast database query does not rule out time spent converting data into response formats, waiting for a connection, or waiting for another service.
 
 **Q:** Why can batching fix N+1 and still introduce a problem?
 

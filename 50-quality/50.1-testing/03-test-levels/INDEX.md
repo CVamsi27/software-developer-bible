@@ -19,7 +19,7 @@ A booking can fail inside a calculation, at the database boundary, or while the 
 
 ## Pass 2 — Exercise the Connection That Can Break
 
-[Integration Testing](50.1.3.02-integration-testing.md) crosses selected seams: HTTP routing, serialization, database constraints or provider protocols. State which components are real. A mocked payment response cannot verify a provider; an API test transaction cannot roll back writes made through an unrelated connection.
+[Integration Testing](50.1.3.02-integration-testing.md) checks selected connections between components: HTTP routing, conversion of values into request or response formats (serialization), database constraints or provider protocols. State which components are real. A mocked payment response cannot verify a provider; an API test transaction cannot roll back writes made through an unrelated connection.
 
 ## Pass 3 — Observe the User's Consequence
 

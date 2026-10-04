@@ -86,7 +86,7 @@ The daily aggregation service currently rolls up WhatsApp and AI usage. It sums 
 
 The repository increments quantity when the monthly record exists. Rerunning the same day can therefore add it again; an upsert alone does not make aggregation idempotent. On update it does not refresh included quota or overage units. Those stored fields must not be assumed to reflect the current cumulative quantity automatically.
 
-A safer design gives each daily contribution a unique period identity or recomputes an authoritative total with a defined watermark. Include late events, plan changes, reruns and timezone alignment in that policy.
+A safer design gives each daily contribution a unique period identity or recomputes the total from its source records. Define a watermark—a cutoff marking which events have been included—so reruns and late events have clear treatment. Include plan changes and timezone alignment in that policy.
 
 Monthly billing scans ACTIVE and TRIALING subscriptions, then invokes a separate overage meter. It uses a capped read and per-subscription settled promises; logged failures and a fulfilled outer cron call are not proof that every subscription was billed. Pagination, retry evidence and period-specific invoice identity matter.
 

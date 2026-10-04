@@ -90,21 +90,21 @@ Source: [Hoisting](10.1.1.04-hoisting.md)
 
 Source: [Lexical Environment](10.1.1.05-lexical-environment.md)
 
-**Q:** What job does an Environment Record perform inside the lexical-environment model?
+**Q:** What information does an Environment Record hold about variables?
 
-**A:** It describes bindings at a level, including existence and initialization state, and carries an outer-environment link. It is a specification mechanism, not an inspectable JavaScript object.
+**A:** It describes the names in one scope, whether their variables are ready to read, and whether their values can be reassigned. It also links to the surrounding scope. This is information described by the language rules, not an ordinary object that application code can access.
 
-**Q:** Why does an uninitialized inner let binding prevent reading the outer variable of the same name?
+**Q:** Why does reading an inner `let` variable before its declaration not return the outer variable's value?
 
-**A:** Lookup has found the inner binding and stops. Its uninitialized state raises ReferenceError; the outer binding is not a temporal-dead-zone fallback.
+**A:** JavaScript finds the inner variable and stops searching. That variable is not ready to read until its declaration runs, so the read throws a `ReferenceError`. JavaScript does not skip it and continue to the outer variable.
 
 **Q:** Are declarative, function, module, object and global records five parts of every environment?
 
-**A:** No. They are record kinds. Function and module records specialize declarative records; a global record combines declarative and object-backed bindings.
+**A:** No. They are different kinds of record for different situations. Function and module records add information to a declarative record. A global record combines declared variables with names stored as properties of the global object.
 
-**Q:** Does an environment-chain drawing establish allocation or lookup performance?
+**Q:** Does the scope-chain diagram show exactly how an engine stores variables or how fast lookup will be?
 
-**A:** No. It explains observable name resolution. Engines may optimize representation and lookup; actual performance and memory retention require measurement.
+**A:** No. It explains which variable a read should find. An engine can store variables and find them differently while keeping that behavior. Use performance and memory tools to check speed and what stays in memory.
 
 ## Closures
 

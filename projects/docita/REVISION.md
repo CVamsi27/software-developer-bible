@@ -19,7 +19,7 @@ Read the relevant case study first. Distinguish inspected source, executable che
 
 **Q:** Do timers always lose AsyncLocalStorage context after a request?
 
-**A:** No. Descendant work can inherit context; delayed work can instead retain an expired transaction reference. Independently scheduled work needs explicit validated scope.
+**A:** No. Work started inside an existing request can inherit its context, while delayed work can retain a reference to a transaction that has already ended. Independently scheduled work needs its own explicitly supplied and validated clinic or user scope.
 
 **Q:** What did the overlapping-query routing probe establish?
 
@@ -503,7 +503,7 @@ Source: [Enterprise contracts](18-enterprise-contracts.md).
 
 **Q:** Why can current estimates and true-up disagree?
 
-**A:** They use different stocks, events, rollups, membership windows and denominator semantics rather than one identical ledger calculation.
+**A:** They use different current quantities, accumulated events, usage summaries, membership periods and comparison baselines. They do not calculate from one identical ledger with the same definitions.
 
 **Q:** What must an enterprise exit snapshot retain?
 
@@ -659,7 +659,7 @@ Source: [Workload model and outcome definitions](23-hypothetical-clinic-metrics.
 
 **Q:** Can per-clinic p95 values simply be averaged into a platform p95?
 
-**A:** No. The combined quantile must represent eligible pooled observations or compatible mergeable distributions; averages of quantiles lose the distribution and population weighting.
+**A:** No. Calculate the combined percentile from all eligible observations, or from compatible summaries that can be merged while preserving the distribution. Averaging per-clinic percentiles loses the underlying values and gives clinics the wrong weight when their sample counts differ.
 
 **Q:** Why cannot a 90-second reduction in median booking time establish 650 saved staff-hours?
 

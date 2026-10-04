@@ -32,7 +32,7 @@ Source: [Vitest](50.1.2.02-vitest.md)
 
 **Q:** Why should a Jest-to-Vitest migration rerun behavior tests instead of only renaming globals?
 
-**A:** Mock hoisting, module resolution, isolation, fake timers, snapshots, and environment defaults can differ. Similar APIs do not establish identical execution semantics.
+**A:** Frameworks can differ in when they register mocks, how they locate imported modules, whether tests share state, how simulated timers and snapshots work, and which environment they use by default. Similar APIs do not guarantee that tests execute the same way.
 
 **Q:** Does transforming a TypeScript test establish type safety?
 

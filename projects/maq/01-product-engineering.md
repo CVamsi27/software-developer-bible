@@ -23,7 +23,7 @@ Choose an actual workflow you worked on and identify its users, initial friction
 
 Explain a concrete service boundary: request parsing belongs at an input boundary; business rules must remain enforceable independently of one UI; storage details should not leak into every caller. A reusable helper is valuable when it centralizes a stable rule, not merely because it decreases line count.
 
-For the historical delivery-time percentage, identify whether the denominator was lead time, cycle time or engineering effort; release frequency and ticket complexity are confounders. The current resume omits that unconfirmed figure. Discuss a concrete change and its observed qualitative effect when the original calculation cannot be recovered.
+For the historical delivery-time percentage, first identify what was measured: time from request to delivery (lead time), time from starting work to finishing it (cycle time), or engineering effort. Changes in release frequency and ticket complexity can also affect the result. The current resume omits that unconfirmed figure. Discuss a concrete change and its observed qualitative effect when the original calculation cannot be recovered.
 
 **Practice exercise:** build a synthetic approval workflow with a PENDING-to-approved transition, authorized roles and a conditional version check. Two competing requests must not silently overwrite each other. This demonstrates learning; do not describe it as the implementation of an unnamed MAQ system.
 

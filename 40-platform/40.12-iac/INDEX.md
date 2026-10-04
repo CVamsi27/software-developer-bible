@@ -15,7 +15,7 @@ Every other sub-stack in Platform assumes infrastructure *exists*. This one answ
 
 ## Learning flow (passes)
 
-**Pass 1 — The model (30 min):** Read [40.12.01-iac-fundamentals-terraform.md](40.12.01-iac-fundamentals-terraform.md) TL;DR → How It Works. You must be able to explain *state, drift, plan/apply, declarative vs imperative* in one sentence each.
+**Pass 1 — The model (30 min):** Read the definition and one Terraform example in [40.12.01-iac-fundamentals-terraform.md](40.12.01-iac-fundamentals-terraform.md), then trace its plan and apply steps. You must be able to explain *state, drift, plan/apply, declarative vs imperative* in one sentence each.
 
 **Pass 2 — Hands-on mental reps (30 min):** Trace the command lifecycle (`init → validate → plan → apply`) and the CI/CD workflow. Explain to yourself what happens when two engineers run `apply` without locking.
 

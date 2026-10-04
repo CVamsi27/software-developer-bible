@@ -11,7 +11,7 @@
 
 ## Why these belong together
 
-Isolation without structure produces brittle suites; structure without isolation produces slow ones. Senior-level testing is the combination: replace the *right* boundaries with doubles, and keep every test readable as three sentences.
+Replacing dependencies without clear test structure makes tests easy to break; keeping every real dependency makes them slow. Choose which dependencies to replace with test doubles, such as a fake service or mock, and keep each test easy to read as setup, action and expected result.
 
 ---
 

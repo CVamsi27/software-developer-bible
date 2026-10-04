@@ -11,7 +11,7 @@
 
 ## What this category covers
 
-Picking a framework is a team-level decision with long tail costs (config, plugins, CI time, migration pain). These four files give you working fluency in the dominant JS/TS options and the judgment to choose between them.
+Choosing a framework affects the whole team for a long time: configuration, plugins, continuous integration (CI) time and later migration work. These four chapters show how to use the main JavaScript and TypeScript options and decide which fits your project.
 
 ---
 

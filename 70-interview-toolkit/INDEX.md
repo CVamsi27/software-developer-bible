@@ -42,7 +42,7 @@
 
 For a planned interview, use the employer’s stated format to choose the relevant category, read its learning flow, and practice explanations from your own work. For an imminent interview, review familiar mechanisms, the results of your own stories, and a small traced example; adding a new topic at the last moment is not a substitute for understanding it.
 
-Naming an algorithm pattern is only a starting hypothesis. Confirm its invariant against the input constraints before treating it as a solution.
+Naming an algorithm pattern is only a starting hypothesis. Check its invariant—the condition that must remain true at each step—against the input constraints before treating it as a solution.
 
 ## Cross-References
 

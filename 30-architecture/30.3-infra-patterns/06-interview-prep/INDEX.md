@@ -11,7 +11,7 @@
 
 ## Why this category exists
 
-Every pattern in this stack is a contract, and interviews test whether you can state the contract, its enforcement mechanism, and its failure mode. This file drills exactly that: readiness vs liveness, why retries need idempotency keys, RPO/RTO as drilled numbers, fencing tokens, the database-scaling lever order, blue-green vs canary — with the follow-up traps ("we do canary, do we still need blue-green?") and the scenario answers that separate operators from syntax-reciters.
+For each pattern, state what it promises, which mechanism enforces that promise, and when it can fail. Practice readiness versus liveness, retry safety with idempotency keys, measured backup recovery, ownership checks using fencing tokens, database scaling choices, and blue-green versus canary deployments. Use the follow-up questions, such as “we do canary, do we still need blue-green?”, to explain operating decisions as well as syntax.
 
 ---
 

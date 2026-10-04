@@ -45,7 +45,7 @@ Definition CRUD does not itself prove that every patient write validates value t
 
 ## Inbound Webhooks: Authentication, Freshness and Completion Differ
 
-The shared verifier supports raw-body HMAC and shared-secret-header authentication, fails closed without a secret and compares secrets/signatures safely. It claims a replay hash in a database store with a ten-minute expiry before returning success.
+The shared verifier supports a hash-based message authentication code (HMAC) over the raw body, or authentication through a shared-secret header. It rejects requests when no secret is configured and compares secrets/signatures safely. Before returning success, it records a replay hash in the database for ten minutes so another request with the same hash can be rejected during that window.
 
 A five-minute freshness check applies only when a finite timestamp is provided. Generic HMAC covers the raw body; a separately supplied timestamp is not automatically covered by that MAC. Provider adapters must establish the authentic timestamp contract. Absence of a timestamp does not imply rejection by this generic helper.
 

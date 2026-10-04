@@ -40,7 +40,7 @@ Source: [Testing Real-Time Systems](60.1.3.04-testing-realtime-systems.md)
 
 **Q:** What should a socket smoke test assert besides connection success?
 
-**A:** An authorized message/response, ordering or cursor contract where required, rejection paths, and cleanup/disconnect. A handshake does not exercise business semantics.
+**A:** Test a message and response with the correct permissions, any required ordering or resume-cursor rules, rejected requests, and cleanup after disconnecting. Completing a handshake does not show that application operations behave correctly.
 
 **Q:** Why include slow consumers and reconnect churn in load scenarios?
 

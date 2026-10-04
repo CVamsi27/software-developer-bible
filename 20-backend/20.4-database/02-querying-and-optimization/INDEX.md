@@ -1,6 +1,6 @@
 # Querying & Optimization - Database
 
-> **Study time:** ≈ 1 h 16 m of reading (6 files, ~13 min average).
+> **Study time:** ≈ 1 h 15 m of reading (6 files, ~12 min average).
 > **6 files.** Making queries fast: index types (B-tree to BRIN), join algorithms, execution plans with `EXPLAIN ANALYZE`, window functions, and JSONB.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](../INDEX.md)

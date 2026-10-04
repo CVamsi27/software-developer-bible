@@ -56,7 +56,7 @@ Source: [Iterator Pattern](30.1.4.06-iterator.md)
 
 **Q:** What happens if a collection changes while an iterator is in use?
 
-**A:** It depends on the collection's contract: snapshot, fail-fast or live iteration. The Iterator pattern alone does not choose or guarantee mutation semantics.
+**A:** It depends on what the collection promises. Snapshot iteration reads a fixed view, fail-fast iteration reports prohibited changes, and live iteration may observe changes as it proceeds. The Iterator pattern alone does not choose or guarantee these rules.
 
 ## Mediator Pattern
 

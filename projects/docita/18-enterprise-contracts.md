@@ -7,7 +7,7 @@
 
 ## Definition
 
-An enterprise contract records commercial terms for a group of member clinics. It sits above clinic subscriptions: the contract owns group terms, while each clinic still has its own entitlement and usage records.
+An enterprise contract records commercial terms for a group of member clinics. It sits above clinic subscriptions: the contract owns group terms, while each clinic still records which features it may access and how much it has used.
 
 The difficult operation is changing membership without leaving a clinic on the wrong plan or billing the same agreement twice.
 
@@ -68,13 +68,13 @@ The setup minimum's error message says INR, while contracts carry currency. A fi
 
 The live estimate combines completed appointment counts filtered by updatedAt, current user/doctor counts, and usageEvent quantities for WhatsApp, storage, prescriptions and invoices. It applies `max(0, used − included) × rate` per meter.
 
-These are mixed stock and flow measures. UpdatedAt is not necessarily consultation completion time. A storage usage-event sum is not automatically current occupied storage. The result called projectedMonthTotalCents adds current platform/support fees and observed overages; it does not extrapolate a daily run rate.
+These measurements mix current quantities, such as user counts, with activity accumulated over a period, such as usage events. UpdatedAt is not necessarily consultation completion time. A storage usage-event sum is not automatically current occupied storage. The result called projectedMonthTotalCents adds current platform/support fees and observed overages; it does not estimate the rest of the month from the daily rate so far.
 
 The calendar-month helper uses process-local dates and ends at 23:59:59, leaving fractional-second boundary concerns. Prefer an explicit timezone and half-open `[start, nextStart)` window.
 
 True-up instead sums usageRecord overageChargeCents for currently active members since the later of contract start or local January 1. Its denominator is platform fee multiplied by calendar months counted, including the current month. It compares `(platform + overage) / platform` to the threshold; zero platform fee returns zero percent.
 
-This is a YTD platform-relative metric, not direct comparison against the full annual commitment or a guaranteed forecast. Membership changes, late rollups, different currencies and the period definition affect its interpretation. The estimate and true-up do not simply consume one identical ledger/helper.
+This year-to-date (YTD) metric compares charges against platform fees for the counted months. It does not directly compare them against the full annual commitment or guarantee a forecast. Membership changes, late usage aggregation, different currencies and the period definition affect its interpretation. The estimate and true-up do not simply consume one identical ledger/helper.
 
 ## Alerts Are Durable Records, Not Guaranteed Email
 

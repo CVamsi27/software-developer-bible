@@ -1,6 +1,6 @@
 # Architecture Stack
 
-> **Study time:** ≈ 26 h 18 m of reading (121 files, ~13 min average).
+> **Study time:** ≈ 26 h 16 m of reading (121 files, ~13 min average).
 > **System design + design patterns** — shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
 > The architecture stack is what you need for system design rounds. Do this after you've covered frontend and backend stacks (10-frontend, 20-backend).
@@ -22,7 +22,7 @@
 
 ## Design Patterns — Category Map
 
-The Design Patterns section is now organized by the **Gang of Four classification** + modern architectural patterns. Each category has its own INDEX with detailed descriptions, decision flowcharts, and comparisons.
+The Design Patterns section groups patterns using the **Gang of Four classification**: creating objects, combining objects, and coordinating their behavior. It also covers modern architectural patterns. Each category has its own INDEX with detailed descriptions, decision flowcharts, and comparisons.
 
 | Category | Subfolder | Count | Purpose |
 | -------------- | -------------------------------------------------------------------- | ----------: | ------------------------------------- |

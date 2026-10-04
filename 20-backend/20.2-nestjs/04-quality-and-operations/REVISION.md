@@ -14,81 +14,81 @@ Explain each mechanism before checking the answer. Revisit its source for the ex
 
 Source: [Configuration & Validation in NestJS](20.2.4.01-configuration-validation.md)
 
-**Q:** What core constraint explains why a missing env var discovered in production costs an incident; discovered at boot costs a failed deploy. governs configuration & validation in nestjs?
+**Q:** Why validate required environment variables during startup?
 
-**A:** Validating configuration against a schema (class-validator/Joi/zod) at startup converts latent runtime failures into immediate ones — fail fast applied to configuration.
+**A:** Startup validation with class-validator, Joi, or zod stops an application with missing or invalid settings before requests depend on them. This makes a deployment failure visible instead of leaving a later request to discover it.
 
-**Q:** What core constraint explains why typed config is the api between infra and code. governs configuration & validation in nestjs?
+**Q:** How do parsed and typed configuration values help their consumers?
 
-**A:** `ConfigService` with a parsed, validated, typed schema means every consumer gets compile-time-checked config — the same contract discipline as DTOs  for the environment.
+**A:** `ConfigService` can expose a parsed, validated schema through a typed wrapper. Consumers then use known configuration types, just as DTO consumers use validated request types.
 
-**Q:** What core constraint explains why config is per-environment data, not code governs configuration & validation in nestjs?
+**Q:** Why keep configuration schemas in code but deployment values outside it?
 
-**A:** : the schema lives in code, the values live outside — validation is the bridge that proves the outside world kept its end of the contract.
+**A:** The schema defines the requirements; deployment values supply the environment-specific settings. Validation checks whether those supplied values satisfy the schema.
 
 ## Testing NestJS Applications
 
 Source: [Testing NestJS Applications](20.2.4.02-testing.md)
 
-**Q:** What core constraint explains why the container is the test harness. governs testing nestjs applications?
+**Q:** How does TestingModule let a test choose provider implementations?
 
-**A:** `Test.createTestingModule` builds a real graph with substitutes bound at tokens — mocking is not a library feature but a consequence of injection by token . Integration tests are "real container, fake externals.".
+**A:** `Test.createTestingModule` builds the dependency graph with real or substitute providers bound to tokens. A test can keep the real container while replacing selected external dependencies.
 
-**Q:** What core constraint explains why the boundary of the test is a choice of truth. governs testing nestjs applications?
+**Q:** How should the behavior being tested determine which components are real or mocked?
 
-**A:** Unit tests mock providers (fast, brittle to refactors); e2e tests run the real HTTP stack with mocked externals (slower, testing the actual contract). The senior balance: e2e for the API contract, unit for business logic — never mocking what you own in e2e.
+**A:** Use unit tests to isolate business rules with mock collaborators. Use end-to-end tests for the real HTTP API behavior, replacing external systems where appropriate. Keep real the components whose interaction the test must prove.
 
-**Q:** What core constraint explains why supertest against the real app catches what unit tests cannot governs testing nestjs applications?
+**Q:** Which interactions can Supertest exercise that an isolated class test cannot?
 
-**A:** middleware order, guards, pipes, serialization — the lifecycle  is itself behavior worth testing.
+**A:** It exercises middleware ordering, guards, pipes, serialization, and the HTTP response together. These request-lifecycle interactions are behavior beyond an isolated service method.
 
 ## Lifecycle Hooks & Graceful Shutdown
 
 Source: [Lifecycle Hooks & Graceful Shutdown](20.2.4.03-lifecycle-hooks-graceful-shutdown.md)
 
-**Q:** What core constraint explains why in-flight work must finish; new work must stop. governs lifecycle hooks & graceful shutdown?
+**Q:** Why stop accepting work before closing pools during shutdown?
 
-**A:** Graceful shutdown is exactly two moves, in order: stop accepting (close listener → LB drains), then drain (finish requests, close pools, flush buffers). Kubernetes' terminationGracePeriod exists because this takes time.
+**A:** Stop accepting requests, allow the load balancer to stop routing, and finish accepted work before closing pools and flushing buffers. Kubernetes provides a termination grace period because that sequence takes time.
 
-**Q:** What core constraint explains why the hooks are the container telling you the phases. governs lifecycle hooks & graceful shutdown?
+**Q:** How do Nest hooks mark startup and shutdown phases?
 
-**A:** `onModuleInit` (deps ready — warm caches, seed), `onModuleDestroy`/`beforeApplicationShutdown` (drain in dependency order), `enableShutdownHooks` (wire signals). Order matters because teardown mirrors the construction graph.
+**A:** `onModuleInit` supports initialization after module dependencies are available. `onModuleDestroy` and `beforeApplicationShutdown` provide shutdown phases. `enableShutdownHooks` connects them to process signals; define resource ownership and order deliberately.
 
-**Q:** What core constraint explains why forced termination is the default to design against. governs lifecycle hooks & graceful shutdown?
+**Q:** Why must the application remain correct if graceful shutdown cannot run?
 
-**A:** SIGKILL is always possible (OOM, node crash) — which is why idempotent consumers  and transactional outbox  exist: correctness must survive abrupt death, gracefulness is only an optimization.
+**A:** SIGKILL, out-of-memory failures, or a node crash can prevent cleanup. Idempotent consumers tolerate repeated work, and the transactional outbox preserves pending events with database updates. Graceful shutdown reduces disruption but does not replace those guarantees.
 
 ## Scheduling & Background Jobs
 
 Source: [Scheduling & Background Jobs](20.2.4.04-scheduling-background-jobs.md)
 
-**Q:** What core constraint explains why "later" needs infrastructure. governs scheduling & background jobs?
+**Q:** When should work move outside the HTTP request path?
 
-**A:** Anything beyond ~30s  can't live in a request; a scheduler (@Cron) or queue (BullMQ) moves work out of the request path — the acceptance/completion split, implemented.
+**A:** Move work when its duration exceeds the application or proxy request timeout. A scheduler or queue separates acceptance from completion; roughly 30 seconds is an example threshold, not a universal limit.
 
-**Q:** What core constraint explains why cron semantics are "at least the trigger time," never exact. governs scheduling & background jobs?
+**Q:** Why can several application replicas run the same scheduled task?
 
-**A:** Clustered deployments multiply this (every instance fires!) — distributed locks  or leader election decide *who* runs it. The senior default: jobs are idempotent and lock-protected, because both duplication and loss will happen.
+**A:** Each replica has its own scheduler. Distributed locks or leader election can coordinate triggers, but handlers must remain duplicate-safe because coordination can fail.
 
-**Q:** What core constraint explains why queues trade latency for reliability governs scheduling & background jobs?
+**Q:** Which queue features support recovery, and why must handlers tolerate repeats?
 
-**A:** retries with backoff, dead-letter handling, visibility timeouts — each is the at-least-once contract  made operational. The handler must assume it will run twice.
+**A:** Retries with backoff delay repeated attempts. Dead-letter handling isolates exhausted work, and ownership timeouts allow another worker to recover it. Under at-least-once delivery, the same job may run again.
 
 ## Swagger & OpenAPI in NestJS
 
 Source: [Swagger & OpenAPI in NestJS](20.2.4.05-swagger-openapi-nestjs.md)
 
-**Q:** What core constraint explains why decorators are metadata; metadata can render a spec. governs swagger & openapi in nestjs?
+**Q:** How do decorators support generating an OpenAPI document?
 
-**A:** `@ApiProperty`, `@ApiOperation` read via reflection produce OpenAPI *from the handlers and DTOs* — the spec cannot drift from the code because it's generated from it.
+**A:** `@ApiProperty` and `@ApiOperation` describe DTOs and handlers. A generator reads this metadata to produce OpenAPI. Generation reduces duplicated documentation but does not prove the metadata matches runtime behavior.
 
-**Q:** What core constraint explains why the dto schema does double duty governs swagger & openapi in nestjs?
+**Q:** How can one DTO declaration support both validation and documentation?
 
-**A:** validation  and documentation from one declaration — when they're the same artifact, docs lie less. This is the same trick as Fastify's schema-serialization : one schema, three uses.
+**A:** Validation and documentation can describe the same DTO fields, reducing disagreement between the two. Fastify similarly uses schemas for validation and serialization; each use must still be configured correctly.
 
-**Q:** What core constraint explains why the gap-filling is where honesty matters governs swagger & openapi in nestjs?
+**Q:** What API details still need attention after generating OpenAPI?
 
-**A:** response types, error codes, and examples don't fall out of reflection — teams that skip them ship specs that overpromise. Generated ≠ complete.
+**A:** Response types, error codes, and examples need explicit documentation. A generated specification may still be incomplete or promise behavior the handler does not provide.
 
 ## Summary
 

@@ -15,7 +15,7 @@ This case describes source inspected on **2 October 2026**, with limitations dis
 
 ## First Principles
 
-A database transaction can commit related database writes atomically. It cannot generally include an external provider's side effect in the same atomic commit. A worker can crash after completing the effect but before recording completion, so recovery must allow repeated attempts and consumers must account for duplicates.
+A database transaction can commit related database writes atomically: all of those writes succeed together or none takes effect. It cannot generally include an external provider's action, such as sending a message, in that same commit. A worker can crash after completing the action but before recording completion, so recovery must allow repeated attempts and consumers must account for duplicates.
 
 There are therefore three separate responsibilities:
 

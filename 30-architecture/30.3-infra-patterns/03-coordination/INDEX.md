@@ -11,7 +11,7 @@
 
 ## Why this category exists
 
-Scale out to 5 replicas and suddenly scheduled jobs run 5 times, background workers double-process messages. The naive fixes (only deploy one instance, lock in Postgres without fencing) fail exactly when you need them most. This category covers leases, fencing tokens, and consensus-based election — the machinery that keeps duplicated workloads singletons.
+Running five application instances can cause a scheduled job to run five times or background workers to process the same message twice. Running only one instance limits availability and capacity. A database lock also needs protection against an old owner resuming after its ownership expires. This category explains time-limited ownership (leases), increasing ownership numbers that reject old owners (fencing tokens), and leader election through agreement between nodes (consensus).
 
 ---
 
@@ -25,7 +25,7 @@ Scale out to 5 replicas and suddenly scheduled jobs run 5 times, background work
 
 ## Reading Path and Completion Check
 
-Use the consensus theory link first, then compare production coordination primitives and inspect lease renewal and fencing at the resource.
+Read the consensus theory link first. Then compare the tools used to coordinate running processes, checking how ownership is renewed and how the protected resource rejects an old owner.
 
 Show a paused owner resuming after a successor acquires the lease and explain exactly which write the resource rejects. Then use [section revision](REVISION.md) without reopening the chapters. Interview banks, where present, are a separate drill after this check.
 

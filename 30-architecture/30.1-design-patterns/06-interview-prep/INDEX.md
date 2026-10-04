@@ -10,7 +10,7 @@
 
 ## What's here
 
-A curated Q&A bank covering the patterns in [creational](../02-creational/INDEX.md), [structural](../03-structural/INDEX.md), [behavioral](../04-behavioral/INDEX.md), and [architectural](../05-architectural/INDEX.md) — plus classic LLD design problems you solve by applying patterns.
+A curated Q&A bank covering the patterns in [creational](../02-creational/INDEX.md), [structural](../03-structural/INDEX.md), [behavioral](../04-behavioral/INDEX.md), and [architectural](../05-architectural/INDEX.md), plus low-level design (LLD) problems about classes and their interactions. Solve those problems by applying the patterns.
 
 ---
 

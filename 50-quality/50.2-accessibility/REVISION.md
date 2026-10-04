@@ -24,7 +24,7 @@ Source: [ARIA (Accessible Rich Internet Applications)](50.2.02-aria.md)
 
 **Q:** Why does role button not make a div behave like a native button?
 
-**A:** ARIA changes semantics, not keyboard behavior or focusability. A custom control needs activation, focus, disabled state, and interaction logic; prefer the native element.
+**A:** ARIA tells assistive technology what an element represents; it does not make the element keyboard-operable or able to receive focus. A custom control needs activation, focus, disabled-state handling, and interaction logic. Prefer the native element.
 
 ## Keyboard Navigation
 

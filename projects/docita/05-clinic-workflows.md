@@ -17,7 +17,7 @@ Source was inspected on **2 October 2026**. Earlier wait-time and attendance imp
 
 Checking a record and later changing it leaves a window for another operation. A local-time label identifies a calendar position, while a timestamp identifies an instant. A follow-up recommendation can exist before any future appointment is booked.
 
-The workflow therefore needs distinct state models, explicit time conversion and database enforcement at concurrent write boundaries. UI checks and domain validation provide feedback, but persistence must protect the invariant when callers overlap.
+The workflow therefore needs separate states for each kind of record, explicit time conversion, and database rules that remain enforced when requests write at the same time. UI checks and business-rule validation provide feedback, but the database must keep the required rules true when callers overlap.
 
 ## Why Appointment and Queue States Are Different
 

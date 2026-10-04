@@ -16,7 +16,7 @@ Source: [Unit Testing](50.1.3.01-unit-testing.md)
 
 **Q:** When is mocking an internal helper counterproductive?
 
-**A:** When the assertion depends on a helper-call sequence instead of the unit's contract. Mock an external boundary when control or isolation is necessary, and exercise real internal behavior.
+**A:** When the assertion checks which internal helpers were called and in what order, rather than the result the unit promises. Mock an external dependency when the test needs to control its responses or run without it, and exercise real internal behavior.
 
 ## Integration Testing
 
@@ -36,7 +36,7 @@ Source: [Integration Testing](50.1.3.02-integration-testing.md)
 
 **Q:** Why can a SQL fake return success while the real API returns an error?
 
-**A:** It can ignore column mapping, driver types, uniqueness or transaction semantics. Exercise the actual query/constraint through the database boundary and observe stored state.
+**A:** It can miss mistakes in how columns map to application fields, how the database driver represents values, whether uniqueness constraints hold, or which writes commit together. Exercise the actual query or constraint through the database connection and check the stored state.
 
 **Q:** When is TRUNCATE acceptable test cleanup?
 
@@ -72,7 +72,7 @@ Source: [E2E Testing](50.1.3.03-e2e-testing.md)
 
 ## Summary
 
-Choose the narrowest boundary that reveals the failure, then cross the necessary real seams. Separate browser state from server data and controlled-response evidence from provider compatibility.
+Choose the smallest test that can reveal the failure, then include the real dependencies needed to verify the result. Track browser state separately from server data. A test that supplies a controlled response verifies behavior under that response; checking compatibility with a provider requires testing its actual interface.
 
 ## See Also
 

@@ -25,7 +25,7 @@ Source: [This](10.1.2.01-this.md)
    **A:** The default binding applies: the global object in sloppy code, `undefined` in strict code, where the first property read throws.
 
 3. **Q:** When more than one binding rule could apply, which one wins?
-   **A:** Inspect the actual invocation and function kind. A bound function preserves its receiver under ordinary calls, but construction of a constructible bound target ignores that saved receiver. Arrows resolve enclosing `this` and are not constructors; a universal precedence slogan hides these boundaries.
+   **A:** Check how the function is called and what kind of function it is. An ordinary call to a bound function uses its saved `this`. If its target supports `new`, construction ignores that saved `this` but keeps the bound arguments. Arrows use the enclosing `this` and cannot be constructors. One fixed order of binding rules cannot explain all these cases.
 
 4. **Q:** What do `call`, `apply`, and `bind` share, and what sets them apart?
    **A:** For ordinary calls, `call` supplies a receiver and separate arguments, `apply` uses array-like arguments, and `bind` returns a function storing a receiver and optional leading arguments. They cannot replace an arrow's lexical `this`.

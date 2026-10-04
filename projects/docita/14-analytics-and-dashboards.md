@@ -17,7 +17,7 @@ This case describes source inspected on **2 October 2026**. Controlled source pr
 
 Source records change over time, calendars depend on timezone, caches can retain earlier results and independent queries can observe different states. Aggregating current prices can also differ from aggregating historical charged amounts.
 
-Metric correctness therefore needs a definition, complete scope, explicit temporal boundaries, numerical units and a known consistency model. Persisting a result preserves what was calculated, including any mistakes or stale inputs.
+A correct metric therefore needs a definition, the full set of records it covers, explicit start and end times, numerical units, and rules for how fresh and mutually consistent its inputs must be. Storing a result preserves what was calculated, including any mistakes or stale inputs.
 
 ## Why Split Metric Families?
 
@@ -71,7 +71,7 @@ The inspected group mappers skip malformed rows and default missing count shapes
 
 ## How Caching Trades Load for Freshness
 
-The overview cache uses **one hour**; dashboard home stats use **60 seconds**. Other methods use configured or method-specific TTLs. Keys must include every dimension that changes the result: tenant, period/range, timezone, permission-sensitive scope and metric version where applicable.
+The overview cache uses **one hour**; dashboard home stats use **60 seconds**. Other methods use configured or method-specific time-to-live (TTL) values, which determine how long an entry remains valid. Cache keys must include every input that changes the result: tenant, period/range, timezone, permission-sensitive scope and metric version where applicable.
 
 ```text
 first request → compute and cache

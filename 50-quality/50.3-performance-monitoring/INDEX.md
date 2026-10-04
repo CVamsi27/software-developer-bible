@@ -1,6 +1,6 @@
 # Performance Monitoring — Index
 
-> **Study time:** ≈ 1 h 49 m of reading (12 files, ~9 min average).
+> **Study time:** ≈ 1 h 50 m of reading (12 files, ~9 min average).
 > **12 files across 4 categories.** Web performance monitoring from Core Web Vitals, performance APIs, profiling tools, Lighthouse CI, bundle analysis, real-user monitoring, HTTP/2 & HTTP/3 protocol effects, and performance budgets to interview questions.
 
 [![Files](https://img.shields.io/badge/files-12-blue)](../../INDEX.md)

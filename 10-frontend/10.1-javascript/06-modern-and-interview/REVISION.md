@@ -43,12 +43,12 @@ Source: [ES2024+ Modern JavaScript Features (through ES2025)](10.1.6.01-es2024-f
 **Best Practices**
 
 7. **Q:** The chapter recommends feature-detecting before adopting these APIs — what is the concrete support floor for the ES2024 trio called out here?
-   **A:** `Object.groupBy`, `Promise.withResolvers`, and `ArrayBuffer.transfer` need roughly Node 21+, Chrome 117+, and Safari 17.4+, so `typeof Object.groupBy === "function"` (or a small polyfill) is the guard before shipping them to older runtimes.
+   **A:** Check `Object.groupBy`, `Promise.withResolvers` and `ArrayBuffer.transfer` separately against the deployed browser and Node versions. Their support did not arrive together merely because they share a specification year. A method check such as `typeof Object.groupBy === "function"` can select a tested fallback. New syntax instead needs a compatible build or parser target.
 
 **Performance Considerations**
 
 8. **Q:** Is `structuredClone` uniformly faster than the JSON round-trip, and if not why does it still win?
-   **A:** No — on plain JSON-shaped objects the JSON round-trip is the faster one (about 2× in a Node 23 check). `structuredClone` wins where it has to: it survives cycles and non-JSON types JSON cannot represent, and it copies a typed array in memory rather than serializing a million-element number array through a string.
+   **A:** No; measure the actual data and runtime. JSON serialization and structured cloning have different contracts. Structured cloning supports cycles and types such as Date, Map, Set and typed arrays that a JSON round-trip loses or changes. Choose the required behavior first, then compare timings for data supported by both.
 
 ## Web Workers
 
@@ -57,7 +57,7 @@ Source: [Web Workers](10.1.6.02-web-workers.md)
 **First Principles**
 
 1. **Q:** Why do workers get their own heap instead of sharing the page's objects?
-   **A:** Shared objects would mean shared mutable state, which forces locks and reintroduces every concurrency bug workers exist to avoid. With separate heaps the only crossing is `postMessage`, so the isolation itself *is* the concurrency model: copy (structured clone) or hand off (transferable), nothing else.
+   **A:** Separate JavaScript object graphs avoid automatic shared mutation across the page and worker. Ordinary messages clone supported data or transfer supported resources. `SharedArrayBuffer` is a separate opt-in way to share bytes; it needs synchronization and the required browser isolation settings. Workers do not share arbitrary objects or DOM nodes.
 
 **Why It Matters**
 
@@ -67,7 +67,7 @@ Source: [Web Workers](10.1.6.02-web-workers.md)
 **Dedicated Worker**
 
 3. **Q:** What does `worker.postMessage({ buffer }, [buffer])` do to the sender's copy of the buffer?
-   **A:** Ownership moves instead of bytes being copied: the worker receives the same 100 MB untouched, and on the main thread `buffer.byteLength` drops to 0 — the sender can never read it again, which is exactly the point of transferring rather than cloning.
+   **A:** It transfers ownership and detaches the sender's ArrayBuffer. Its `byteLength` becomes 0 and existing views can no longer use that backing data normally. The worker receives the transferred data. This does not guarantee that the engine physically moves bytes without copying.
 
 **Shared Worker**
 
@@ -111,10 +111,10 @@ Source: [DOM Events & Delegation](10.1.6.03-dom-events-delegation.md)
 **How It Works**
 
 3. **Q:** Between `event.target` and `event.currentTarget`, which stays constant as the event climbs, and which changes?
-   **A:** `target` stays the deepest element that initiated the event at every hop; `currentTarget` is whichever node's listener is executing right now, so it differs at each level of the tree.
+   **A:** `currentTarget` identifies the node whose listener is executing. `target` identifies the dispatch target as exposed to that listener; shadow DOM can retarget it across a boundary. Do not assume it is always the same deepest element for every listener.
 
 4. **Q:** Why can't you delegate `focus` with a plain container-level listener, and what is the workaround?
-   **A:** `focus` does not bubble, so the event never reaches an ancestor listener at all — you either attach directly or switch to `focusin`, which does bubble. That is exactly why React maps `onFocus` onto `focusin`.
+   **A:** `focus` does not bubble, so an ordinary ancestor bubble listener misses it. An ancestor capture listener can observe it, or you can use the bubbling `focusin` event. React's `onFocus` uses `focusin`.
 
 **Real-World Use Cases**
 
@@ -166,7 +166,7 @@ Source: [Cross-Tab Communication](10.1.6.04-cross-tab-communication.md)
 **Common Mistakes**
 
 6. **Q:** Why is `if (acquireLock("checkout")) chargeCard()` a double-charge waiting to happen?
-   **A:** Read-then-write over `localStorage` has a race window: both tabs can read "free" before either writes, so both proceed. Treat that lock as UX only — correctness needs idempotency keys (or Web Locks, which the browser serializes atomically).
+   **A:** A localStorage check followed by a write is not atomic: both tabs can read "free" before either writes. Web Locks can serialize cooperating local contexts, but cannot prove that a payment request reached the server only once. Use a server-side idempotency contract for the charge and local coordination for the UI.
 
 **Performance Considerations**
 

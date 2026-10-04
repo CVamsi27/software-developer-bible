@@ -49,7 +49,7 @@ DRILL IT
 | 01 | [Health Checks & Graceful Shutdown](01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.md) | Liveness/readiness probes, SIGTERM draining, shutdown hooks | Essential | 11 min | 11 min |
 | 02 | [Resilience Patterns — Overview](02-failure-and-recovery/30.3.2.01-resilience-patterns.md) | Timeout/bulkhead/circuit-breaker landscape; details in [20.6](../../20-backend/20.6-microservices/INDEX.md) | Important | 16 min | 16 min |
 | 03 | [Retry Patterns](02-failure-and-recovery/30.3.2.02-retry-patterns.md) | Exponential backoff, jitter, retry budgets, retry storms | Essential | 11 min | 11 min |
-| 04 | [Idempotency Keys](02-failure-and-recovery/30.3.2.03-idempotency-keys.md) | Exactly-once effects over at-least-once delivery | Essential | 6 min | 6 min |
+| 04 | [Idempotency Keys](02-failure-and-recovery/30.3.2.03-idempotency-keys.md) | Stable operation identity, retry replay, and effect boundaries | Essential | 6 min | 6 min |
 | 05 | [Feature Flags & Kill Switches](02-failure-and-recovery/30.3.2.04-feature-flags-kill-switches.md) | Flag types, targeting rules, kill-switch SLA, flag debt cleanup | Important | 10 min | 10 min |
 | 06 | [Backup Strategy & Restore Drills](02-failure-and-recovery/30.3.2.05-backup-strategy-restore-drills.md) | Backup taxonomy, 3-2-1(-1-0), RPO/RTO math, restore game days, verification | Important | 10 min | 9 min |
 | 07 | [Leader Election & Consensus](03-coordination/30.3.3.01-leader-election-consensus.md) | Fencing tokens, leases, cron coordination | Important | 7 min | 7 min |

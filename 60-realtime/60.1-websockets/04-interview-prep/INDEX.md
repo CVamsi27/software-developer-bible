@@ -29,7 +29,7 @@
 
 ## How to use it
 
-Real-time rounds reward design fluency more than API recall: practice sketching the fan-out architecture (LB → gateway fleet → Redis adapter → persistence) from memory before drilling answers.
+Real-time rounds reward the ability to explain a design as well as recall APIs. Before drilling answers, draw how one event reaches many clients: load balancer → WebSocket gateway instances → Redis adapter that shares events between instances → persistent storage.
 
 ---
 

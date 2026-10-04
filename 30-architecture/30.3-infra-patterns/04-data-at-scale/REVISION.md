@@ -20,7 +20,7 @@ Source: [Database Scaling — Partitioning, Replication, Connection Pooling, Que
 
 **Q:** Which measurement distinguishes connection saturation from a slow query?
 
-**A:** Measure pool borrow wait, active connections and query execution/wait events separately. Increasing pool size can worsen database saturation rather than remove it.
+**A:** Measure how long requests wait to obtain a pooled connection, how many connections are active, and how much time queries spend executing or waiting inside the database. Increasing pool size can overload the database further rather than remove the bottleneck.
 
 ## Data Pipelines — ETL, Stream Processing, Data Lake
 

@@ -1,6 +1,6 @@
 # System Design — Case Studies
 
-> **Study time:** ≈ 12 h 5 m of reading (32 files, ~23 min average).
+> **Study time:** ≈ 12 h 6 m of reading (32 files, ~23 min average).
 > **32 files** — Applied examples of system design interviews. Read [../01-theory/](../01-theory/INDEX.md) first, then work through these in any order.
 
 [![Files](https://img.shields.io/badge/files-32-blue)](../../../INDEX.md)
@@ -89,7 +89,7 @@ The 27 case studies classify into 4 tiers. Do Tier 1 cold before touching the ot
 
 Choose a compact case first, such as the URL shortener. Move to a scarce-resource case, then a delivery/streaming case and a coordination case. Reuse theory links rather than relearning each mechanism.
 
-For each case, explain one critical invariant, its atomic boundary, the largest scaling pressure and one failure-recovery path. Then use [section revision](REVISION.md) without reopening the chapters. Interview banks, where present, are a separate drill after this check.
+For each case, explain one rule that must always hold, which changes must succeed or fail together to preserve it, the largest source of scaling pressure, and one path for recovering from failure. Then use [section revision](REVISION.md) without reopening the chapters. Interview banks, where present, are a separate drill after this check.
 
 ## Navigation
 

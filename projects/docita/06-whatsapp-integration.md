@@ -19,7 +19,7 @@ Incoming replies introduce another boundary: a phone number and free text do not
 
 ## Why Sender Identity Matters
 
-The application supports SHARED, BYO and MANAGED sender modes. These are configuration modes, not guarantees of provider pricing, number ownership or branding.
+The application supports three sender configurations: SHARED uses the platform sender, BYO means bring your own clinic sender, and MANAGED uses managed clinic sender configuration. These modes do not guarantee provider pricing, number ownership or branding.
 
 | Mode | Source behavior |
 | ----------------------------- | ------------------------------------------------------------------- |
@@ -83,7 +83,7 @@ The response record, status update, patient confirmation and staff notification 
 
 ## Real-world Decisions: Duplicate Ingress and Missing Receipts
 
-Incoming ingress prefers interactive button IDs over display text. It records a clinic conversation message, then resolves an appointment and delegates response handling.
+Incoming provider-event handling prefers interactive button IDs over display text. It records a clinic conversation message, then resolves the related appointment and delegates response handling.
 
 The conversation transaction checks for an existing inbound ID and upserts the message. Sequential duplicates can skip downstream processing, but conversation unread count is incremented before the duplicate check. Two concurrent transactions can also both observe absence before upserting. A check followed by an upsert does not prove exactly-once effects.
 
@@ -134,7 +134,7 @@ The recommended design is a proposal, not an implemented or production-verified 
 
 ## Summary
 
-Trace provider send, local persistence, webhook receipt and business processing as separate steps. Stable identity helps retries but does not close every failure gap. Resolve reply context before acting, and describe the stale-delivery sweep as telemetry rather than status recovery.
+Trace the provider send, local database write, webhook receipt and business processing as separate steps. Stable identity helps retries but does not close every failure gap. Determine which conversation and appointment a reply belongs to before acting. Describe the stale-delivery sweep as status monitoring rather than recovery of delivery status.
 
 ## See Also
 

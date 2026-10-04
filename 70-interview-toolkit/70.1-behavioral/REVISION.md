@@ -32,7 +32,7 @@ Source: [Judgment Calls & Ambiguity: Deciding Under Incomplete Data](70.1.03-jud
 
 **Q:** How do you explain a decision made with incomplete information?
 
-**A:** Name the missing information, reversible/irreversible consequences, a bounded decision rule, feedback signals, and the point at which you would revise it.
+**A:** State what information is missing, which consequences can or cannot be reversed, how you will decide with the available evidence, what feedback you will monitor, and when you would revise the decision.
 
 ## Technical Decision Stories: From Constraint to Verified Outcome
 

@@ -11,7 +11,7 @@
 
 ## Reading Passes
 
-Read the heap for changing priorities, then the monotonic stack for candidates whose answers become final during a scan. Use the stack/queue chapter for ordering and cache designs. Finish with mutable range aggregates and selection/sampling, where the key question changes from arrival order to query operations or sample guarantees.
+Read the heap for changing priorities, then the monotonic stack for candidates whose answers become final during a scan. Use the stack/queue chapter for ordering and cache designs. Finish with values calculated over ranges that can change, such as range sums, then selection and sampling. At that point, ask which queries must be efficient or what makes a sample valid, rather than only which item arrives next.
 
 ## The 5 patterns
 

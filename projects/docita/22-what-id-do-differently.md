@@ -15,7 +15,7 @@ This is an improvement framework informed by case-source review on **2 October 2
 
 ## First Principles
 
-Engineering time is limited, and a correct-looking local operation can fail when requests race, versions overlap or a process crashes. An improvement earns priority when it closes a concrete invariant gap with observable verification.
+Engineering time is limited, and a correct-looking local operation can fail when requests race, versions overlap or a process crashes. Prioritize an improvement when it protects a specific invariant—a rule that must remain true—and a meaningful check can demonstrate that protection.
 
 Prioritize consequence and likelihood, then consider implementation and operational cost. More layers, events, dashboards or caching do not inherently improve correctness.
 

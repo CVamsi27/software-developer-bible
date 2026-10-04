@@ -7,7 +7,7 @@
 
 ## Definition
 
-Deployment changes running application versions and their configuration. In Docita, the API and worker run as separate Fly applications, while the React SPA and API proxy use Cloudflare Workers with static assets.
+Deployment changes running application versions and their configuration. In Docita, the API and worker run as separate Fly applications. The React single-page application (SPA) loads its interface in the browser, while an API proxy forwards browser API requests to the backend. Cloudflare Workers serve that proxy and the static application assets.
 
 Consider a release that adds an invoice field and changes a PDF job payload. A successful build is only the start: old API instances, new workers, existing jobs and the database can overlap during rollout. The release must preserve their contracts and provide evidence that the new version works.
 
@@ -105,9 +105,9 @@ Applying a migration before new code is insufficient if it breaks old instances.
 
 The checked-in production deploy and database-migration workflows have their `on:` triggers commented out. They therefore describe a **paused configuration**, not an active automatic deployment pipeline. Comments also mention GitHub-level disabling, but that external setting was not checked here.
 
-Within the configured jobs, change detection maps source paths to affected deploy targets, including shared packages and root build/configuration files. API and worker deployment depend on successful migration verification. The API additionally has a startup smoke gate and is configured for **blue-green** deployment.
+Within the configured jobs, change detection maps source paths to affected deploy targets, including shared packages and root build/configuration files. API and worker deployment depend on successful migration verification. The API also has a short startup check and uses **blue-green** deployment: start the new version separately, then switch traffic from the old version to it.
 
-The worker script performs a canary deployment, checks that the selected machine remains `started` for a settling window—**90 seconds** in the workflow—then promotes through a rolling deployment. Machine state is a process-liveness signal; it does not prove that jobs, tenant isolation or external effects are correct. The script itself distinguishes this from live worker health and scheduler heartbeat evidence.
+The worker script first deploys the new version to a selected machine as a canary—a limited trial before wider rollout. It checks that the machine remains `started` for a settling window—**90 seconds** in the workflow—then updates the remaining machines in stages through a rolling deployment. Machine state shows that the process remains running; it does not prove that jobs, tenant isolation or external effects are correct. The script itself distinguishes this from live worker health and scheduler heartbeat evidence.
 
 Selective deployment reduces unnecessary changes only when the dependency map includes all affected consumers. Test that map against shared-contract changes; do not reduce it to “only deploy the folder that changed.”
 

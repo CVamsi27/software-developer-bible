@@ -29,7 +29,7 @@
 
 ## Why this is its own category
 
-Everything downstream (Performance APIs, profiling, RUM, budgets) exists to move these three numbers. If you can state the metrics, thresholds, and one concrete fix for each, you pass the screening question; the rest of this stack is how you go deeper.
+The later chapters explain how browser timing APIs, profiling tools, real-user monitoring (RUM), and performance budgets help diagnose and improve these three metrics. First learn each metric, its threshold, and one concrete way to improve it; then use the rest of this stack to investigate its causes in a real page.
 
 ---
 

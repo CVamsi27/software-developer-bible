@@ -28,7 +28,7 @@ Shipping is not `git push` to prod. Users are mid-request while you deploy; sche
 
 ## Reading Path and Completion Check
 
-Start with deployment compatibility and rollback, then prioritize debt by observed cost. Follow resource cost and retention decisions through operational ownership.
+Start with keeping old and new versions compatible during deployment and deciding how to roll back. Then prioritize technical debt by the time, failures or cost it causes. For resource costs and data retention, identify who makes the decision and who checks that it is carried out.
 
 Describe a reversible release, an evidence-backed debt decision and an expiry path constrained by retention and holds. Then use [section revision](REVISION.md) without reopening the chapters. Interview banks, where present, are a separate drill after this check.
 

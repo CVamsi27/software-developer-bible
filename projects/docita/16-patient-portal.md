@@ -7,13 +7,13 @@
 
 ## Definition
 
-The patient portal gives an authenticated patient access to selected records and a medication-dose reporting surface. Its security boundary is the mapping from authenticated user to patient and clinic, followed by ownership checks for each requested resource.
+The patient portal gives an authenticated patient access to selected records and a way to report medication doses. To protect those records, the application maps the authenticated user to a patient and clinic, then checks ownership of each requested resource.
 
 The concrete failure to prevent is simple: a patient changes a prescription ID in the URL and receives someone else's record.
 
 ## First Principles
 
-A phone OTP proves temporary control of a delivery channel, not an immutable patient identity. Shared phones, recycled numbers and guardian access require an explicit account-linking policy.
+A phone one-time password (OTP) shows temporary control of the phone channel that received the code. It does not establish a permanent patient identity. Shared phones, recycled numbers and guardian access require an explicit account-linking policy.
 
 A short code also has a small search space. Limiting guesses per challenge helps online attacks; limiting challenge issuance prevents an attacker from continuously obtaining fresh attempts or exhausting messaging capacity. Neither control makes guessing mathematically impossible.
 
@@ -59,7 +59,7 @@ Trace token audience, patient role, refresh rotation, logout/revocation and brow
 
 `PatientPortalContextService.getPatientContext(userId)` resolves a patient from the authenticated user and returns patientId plus clinicId. Missing linkage is unauthorized. Controllers declare patient-session metadata, JWT guard and PATIENT role requirements.
 
-Prescription detail still accepts a resource ID. The service and repository must combine that ID with the derived ownership scope. Deriving a patient ID centrally is a useful design choice, but a new endpoint can still omit or misuse it. Tenant isolation and IDOR resistance require checks on every read, write, file URL and nested relation.
+Prescription detail still accepts a resource ID. The service and repository must combine that ID with the patient and clinic determined from the session. Resolving a patient ID centrally is useful, but a new endpoint can still omit or misuse it. Checking ownership prevents insecure direct object references (IDOR), where changing an ID grants access to another person's record. Tenant isolation requires these checks on every read, write, file URL and nested relation.
 
 The current mapping treats one user as one patient context. A parent or caregiver managing several patients needs an explicit, revocable delegation relation with scope and audit evidence. Do not weaken patient ownership by allowing an arbitrary request patientId.
 

@@ -1,6 +1,6 @@
 # NestJS — Index
 
-> **Study time:** ≈ 6 h of reading (24 files, ~15 min average).
+> **Study time:** ≈ 6 h 1 m of reading (24 files, ~15 min average).
 > **24 files** — NestJS framework from modules and controllers to guards, pipes, interceptors, CQRS, microservices, testing, configuration, lifecycle/shutdown, scheduling, OpenAPI docs, custom decorators, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-24-blue)](../../INDEX.md)
@@ -62,7 +62,7 @@ The order of execution for every request — **every NestJS interview tests this
 | 01 | [Middleware](02-request-lifecycle/20.2.2.01-middleware.md) | Functional middleware, class middleware, consumer configuration, `NestModule` | Essential | Important | 17 min |
 | 02 | [Guards](02-request-lifecycle/20.2.2.02-guards.md) | Auth guards, role-based access, custom guards, `CanActivate`, execution context | Essential | Important | 23 min |
 | 03 | [Pipes](02-request-lifecycle/20.2.2.03-pipes.md) | Validation pipes, transformation pipes, built-in pipes, custom pipes | Essential | Important | 24 min |
-| 04 | [Interceptors](02-request-lifecycle/20.2.2.04-interceptors.md) | Request/response transformation, logging, caching, mapping, async interceptors | Essential | Important | 15 min |
+| 04 | [Interceptors](02-request-lifecycle/20.2.2.04-interceptors.md) | Request/response transformation, logging, caching, mapping, async interceptors | Essential | Important | 16 min |
 | 05 | [Exception Filters](02-request-lifecycle/20.2.2.05-exception-filters.md) | Built-in exceptions, custom exception filters, catch-all filters, `@Catch()` | Essential | Important | 20 min |
 
 ---

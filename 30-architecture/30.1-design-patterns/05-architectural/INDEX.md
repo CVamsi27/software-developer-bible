@@ -96,7 +96,7 @@ If a junior engineer is proposing CQRS + Event Sourcing for a CRUD blog, that is
 
 Start with Repository and explicit dependencies, then domain boundaries. Read CQRS and event sourcing before saga coordination; finish by comparing presentation boundaries.
 
-Explain where an invariant commits, where events become durable and which cross-boundary failures require compensation. Then use [section revision](REVISION.md) without reopening the chapters. Interview banks, where present, are a separate drill after this check.
+Explain which changes must succeed together to preserve a rule, when events are safely stored, and which failures across service boundaries require an action that reverses or offsets earlier work. Then use [section revision](REVISION.md) without reopening the chapters. Interview banks, where present, are a separate drill after this check.
 
 ## Cross-References
 

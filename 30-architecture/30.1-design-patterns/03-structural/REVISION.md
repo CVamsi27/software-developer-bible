@@ -72,7 +72,7 @@ Source: [Flyweight Pattern](30.1.3.08-flyweight.md)
 
 **Q:** Which state belongs outside a shared Flyweight?
 
-**A:** Extrinsic state that varies by usage, such as a glyph's position. Shared intrinsic state should be safely reusable, usually immutable.
+**A:** Keep usage-specific state, called extrinsic state, outside the shared object—for example, a glyph’s position. State shared by every use, called intrinsic state, must be safely reusable and is usually immutable.
 
 ## Summary
 

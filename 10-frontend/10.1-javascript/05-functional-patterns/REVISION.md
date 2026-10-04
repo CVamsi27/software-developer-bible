@@ -95,7 +95,7 @@ Source: [Generators](10.1.5.03-generators.md)
 **First Principles**
 
 1. **Q:** Why can a generator remember local variables between values while an ordinary function cannot?
-   **A:** A normal function's frame is destroyed when it returns, but a generator's frame is suspended at the `yield` instead of popped — the engine keeps it allocated, so the next `next()` resumes with the same locals still in place.
+   **A:** `yield` pauses the generator without finishing it. The generator object keeps the state needed for the next `next()` call to continue. An ordinary synchronous function returns or throws instead of pausing at an intermediate value. This is a behavioral rule, not a required physical frame layout.
 
 **How It Works**
 
@@ -126,7 +126,7 @@ Source: [Generators](10.1.5.03-generators.md)
 **Performance Considerations**
 
 8. **Q:** What does lazy evaluation change about space, and what does it leave alone?
-   **A:** A generator holds only its one live frame instead of materializing the whole sequence — O(1) space where an array of the same values costs O(n) — but the time to produce each value is exactly what it always was.
+   **A:** Producing values on demand can avoid storing a whole output array. Space still depends on the generator's retained local state and the consumer's buffers, so not every generator uses O(1) memory. The work needed to calculate each requested value remains.
 
 ## Currying & Function Composition
 
@@ -181,7 +181,7 @@ Source: [Recursion & Tail Call Optimization](10.1.5.05-recursion-tail-call.md)
    **A:** In the first form the multiplication still has to run *after* the inner call returns, so the frame's locals must survive; in the second nothing is left to do, so the engine is free to reuse the frame instead of allocating a new one.
 
 3. **Q:** What is the trampoline loop actually executing in `safeFactorial`, and what does it buy you?
-   **A:** The thunk form never calls itself — it returns `() => factorialThunk(...)`, so `while (typeof r === 'function') r = r()` converts 100,000 nested calls into 100,000 iterations inside a single frame. You get unlimited depth; magnitude is a separate problem, since `100000!` still comes back as `Infinity`.
+   **A:** Each step returns a function for the next step instead of making a nested recursive call. The loop `while (typeof r === 'function') r = r()` runs those steps iteratively. This avoids growing the call stack, but time and memory remain limited. Numeric range is separate: `100000!` still overflows Number to `Infinity`.
 
 **Code Examples**
 
@@ -201,7 +201,7 @@ Source: [Recursion & Tail Call Optimization](10.1.5.05-recursion-tail-call.md)
 **Best Practices**
 
 7. **Q:** At what point should you stop trusting recursion and convert to iteration?
-   **A:** Once input depth can reach the order of ten thousand frames — engines only admit that many simple frames, and the exact ceiling moves with frame size and engine version — so any structure that big deserves an explicit stack or a plain loop.
+   **A:** When valid input can exceed the depth you have tested and bounded for the deployed runtime. The safe depth depends on the engine and call shape; there is no universal ten-thousand-call budget. Use a loop or explicit stack when input depth is unbounded.
 
 **Performance & TCO Support**
 

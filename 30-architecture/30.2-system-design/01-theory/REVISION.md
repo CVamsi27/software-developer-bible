@@ -16,7 +16,7 @@ Source: [CAP Theorem & PACELC](30.2.1.01-cap-theorem.md)
 
 **Q:** During a partition, what conflict does CAP identify for a replicated register?
 
-**A:** An implementation cannot guarantee both linearizable operations and eventual responses to every request on non-failing nodes under the theorem's partition assumptions. It is not a universal choose-two menu in normal operation.
+**A:** Under the theorem's network-partition assumptions, an implementation cannot guarantee both linearizable operations—operations that appear to take effect one at a time between their start and completion—and an eventual response to every request on a non-failing node. It is not a universal choose-two menu in normal operation.
 
 ## Data Consistency Models
 

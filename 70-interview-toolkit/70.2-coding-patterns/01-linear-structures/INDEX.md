@@ -11,7 +11,7 @@
 
 ## Reading Passes
 
-Start with window and pointer movement, then binary-search interval invariants. Continue into linked-list rewiring and interval endpoint conventions. Finish by contrasting greedy elimination with stored prefix state, then use KMP/rolling hashes to retain work across string alignments. Keep the same habit throughout: draw the retained state and name the input contract before tracing code.
+Start with moving a window or two pointers through a sequence. Then study which candidate interval binary search must preserve. Continue into changing linked-list pointers and deciding whether interval endpoints are included. Finish with greedy decisions and stored prefix sums, then string search that reuses earlier comparisons or rolling hashes. Before tracing code, draw what the algorithm keeps and state what it assumes about the input.
 
 ## The 7 patterns
 

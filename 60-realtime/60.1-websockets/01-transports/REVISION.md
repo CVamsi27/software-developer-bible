@@ -36,7 +36,7 @@ Source: [Socket.io](60.1.1.03-socket-io.md)
 
 **Q:** What do acknowledgments still leave unspecified?
 
-**A:** Retry limits, durable storage, deduplication, reconnect recovery, and whether the acknowledged business operation committed. Define those semantics at the application boundary.
+**A:** Define limits on retries, where messages are stored safely, how duplicates are recognized, how clients recover after reconnecting, and whether an acknowledgment means the business operation committed. The application must state these rules explicitly.
 
 ## WebTransport
 

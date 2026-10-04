@@ -13,7 +13,7 @@ The concrete engineering problem is two staff tabs editing the same claim: one a
 
 ## First Principles
 
-A status enum lists possible states but does not constrain transitions. A transition rule can reject a move in memory but still lose a race before the database write. A stored history row can also diverge from the status if they commit separately.
+A status enum—a fixed set of named values—lists possible states but does not constrain which state changes are allowed. A transition rule can reject a move in memory but still lose a race before the database write. A stored history row can also diverge from the status if they commit separately.
 
 The design therefore needs three cooperating mechanisms: transition validation, a conditional write against the version read by the caller, and a transaction containing both the accepted state change and its event.
 
@@ -116,7 +116,7 @@ Paths are in the inspected Docita checkout, not production outcome evidence.
 
 ## Summary
 
-Combine transition validation, optimistic concurrency and transactional events. Keep local workflow state separate from insurer evidence, and check the exact ownership, retry and history guarantees instead of inferring them from class names.
+Combine checks of allowed state changes, version checks that reject stale writes (optimistic concurrency), and events saved in the same transaction as the change. Keep local workflow state separate from insurer evidence, and check the exact ownership, retry and history guarantees instead of inferring them from class names.
 
 ## See Also
 

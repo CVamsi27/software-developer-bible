@@ -7,7 +7,7 @@
 
 ## Definition
 
-A file workflow connects permission to upload, durable object storage, database ownership and permission to read. Docita uses a storage-provider abstraction, upload-session secrets and URL resolution to connect those parts.
+A file workflow connects upload permission, object storage that retains files, database records identifying each file's owner, and read permission. Docita connects these parts through an interface for storage providers, upload-session secrets, and code that resolves file URLs.
 
 Consider a doctor opening an upload link without a normal staff session. The link must grant a narrow upload capability, validate the file, associate the result with the intended record and prevent competing uploads from consuming that capability twice. Generating a secret solves only the first part.
 
@@ -15,7 +15,7 @@ This case describes source inspected on **2 October 2026**. Sequential checks an
 
 ## First Principles
 
-The database and object store commit independently. A secret proves possession, not the identity or clinical authority of its holder. A presigned URL delegates access until its authorization expires; it does not recheck application roles on each request.
+The database and object store commit independently. A secret proves possession, not the identity or clinical authority of its holder. A presigned URL contains a signature granting a particular storage operation until expiry. Anyone holding it can use that permission; it does not recheck application roles on each request.
 
 A correct design therefore needs explicit capability scope, atomic ownership transitions, file validation, durable object identity and recovery when a storage write and database write diverge.
 
@@ -30,7 +30,7 @@ A correct design therefore needs explicit capability scope, atomic ownership tra
 
 The module selects local storage outside production. In production it selects R2 when the provider and required configuration are present; otherwise this factory logs a warning and falls back to local storage. The warning says startup validation should block that situation, but a warning is not proof that boot was blocked.
 
-Local ephemeral instance storage is unsuitable as an automatic substitute for durable production storage. Multi-instance reads can miss files on another instance. Provider substitution also requires moving existing bytes, checking metadata and resolving stored identities; switching configuration alone does not migrate objects.
+Local storage tied to an application instance can disappear when that instance is replaced, so it is unsuitable as an automatic substitute for durable production storage. With several instances, a read can also miss files stored on another instance. Changing storage providers requires moving existing bytes, checking metadata and resolving stored identities; switching configuration alone does not migrate objects.
 
 ## How an Upload Session Grants a Narrow Capability
 

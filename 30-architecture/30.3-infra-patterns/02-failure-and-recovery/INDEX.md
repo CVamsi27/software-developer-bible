@@ -21,7 +21,7 @@ Networks partition, dependencies time out, deploys hiccup. Naive code turns each
 | --   : | ------ | -------- | --- | --- | ----------: |
 | 01 | [Resilience Patterns — Overview](30.3.2.01-resilience-patterns.md) | Timeout, bulkhead, circuit-breaker landscape; deep-dive implementations live in [20.6-microservices](../../../20-backend/20.6-microservices/INDEX.md) | Important | 16 min | 16 min |
 | 02 | [Retry Patterns](30.3.2.02-retry-patterns.md) | Exponential backoff, jitter, retry budgets, retry storms, when NOT to retry | Essential | 11 min | 11 min |
-| 03 | [Idempotency Keys](30.3.2.03-idempotency-keys.md) | Exactly-once effects over at-least-once delivery, key design, dedupe windows, storage strategies | Essential | 6 min | 6 min |
+| 03 | [Idempotency Keys](30.3.2.03-idempotency-keys.md) | Stable operation identity, atomic local effects, retry replay, remote deduplication limits | Essential | 6 min | 6 min |
 | 04 | [Feature Flags & Kill Switches](30.3.2.04-feature-flags-kill-switches.md) | Release/experiment/ops/permission flags, targeting rules, kill-switch SLA, flag debt cleanup, safe rollout recipe | Important | 10 min | 10 min |
 | 05 | [Backup Strategy & Restore Drills](30.3.2.05-backup-strategy-restore-drills.md) | Full/incr/diff taxonomy, logical vs physical, 3-2-1(-1-0), RPO/RTO math, restore game days, automated verification, runbook template | Important | 10 min | 9 min |
 | 06 | [Idempotency & Retry Deep Dive](30.3.2.06-idempotency-retry-deep-dive.md) | Complete reliability chain: API idempotency guard + outbox + consumer dedup + retry budgets + circuit breaker + DLQ | Essential | 13 min | 13 min |

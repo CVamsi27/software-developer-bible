@@ -27,7 +27,7 @@ The design therefore needs explicit dependency contracts, executable input valid
 
 A scheduling rule should be testable without starting an HTTP server. A controller should not need to know how a database query is constructed. A background processor should not assume the request's tenant context or transaction is still available.
 
-These are different boundaries. Domain-driven design supplies a vocabulary for business capabilities and rules. Ports and adapters describe dependency direction. They can be used together; they are not mutually exclusive alternatives.
+These are different boundaries. Domain-driven design organizes code around business capabilities and rules. Ports are interfaces that state what the application needs; adapters connect those interfaces to a database, transport or other tool. They keep dependencies pointed toward application contracts. These approaches can be used together.
 
 ## How an Appointment Crosses the Domain Layers
 

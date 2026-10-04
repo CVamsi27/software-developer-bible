@@ -16,7 +16,7 @@ Source: [Heap](70.2.4.01-heap.md)
 
 **Q:** What does a heap guarantee without fully sorting its storage?
 
-**A:** The parent/child ordering makes the extreme element available at the root. Other positions are not globally sorted; push/pop repair only affected paths.
+**A:** A min-heap keeps each parent no larger than its children, so the root contains a smallest value. A max-heap reverses the comparison. The remaining storage is not fully sorted. Inserting or removing the root repairs only the affected path through the tree.
 
 ## Monotonic Stack
 
@@ -24,7 +24,7 @@ Source: [Monotonic Stack](70.2.4.02-monotonic-stack.md)
 
 **Q:** Why can each item enter and leave a monotonic stack only once?
 
-**A:** Popping permanently disqualifies that item for future candidates under the invariant. Across the traversal, total pushes plus pops are linear even inside a while loop.
+**A:** In a one-pass monotonic-stack algorithm, an item is pushed once. When it is popped, the algorithm has resolved its answer or proved it cannot help later, so it is never pushed again. Across n items, there are at most n pushes and n pops. An inner while loop therefore does not make the total work quadratic.
 
 ## Stack & Queue Patterns
 
@@ -38,9 +38,9 @@ Source: [Stack & Queue Patterns](70.2.4.03-stack-queue-patterns.md)
 
 Source: [Segment Tree & Binary Indexed Tree (BIT)](70.2.4.04-segment-tree.md)
 
-**Q:** Why does assigning a new value through a Fenwick tree require a delta?
+**Q:** Why does replacing an array value in a sum Fenwick tree require the difference from its old value?
 
-**A:** Fenwick updates add contributions. Store the old array value, compute new minus old, update with that delta, then replace the stored value.
+**A:** A sum Fenwick tree adds a change to the stored totals; it does not directly assign a new array value. Keep the old value and add new minus old to the tree. Then save the new value in the array.
 
 ## Quick Select & Reservoir Sampling
 
@@ -48,11 +48,11 @@ Source: [Quick Select & Reservoir Sampling](70.2.4.05-quick-select-reservoir-sam
 
 **Q:** Why must selection account for every value equal to its pivot?
 
-**A:** A three-way partition produces less-than, equal-to, and greater-than groups. A target rank inside the equal group is already resolved; when continuing to the right, subtract both preceding groups. Treating all equal values as one pivot can miscount ranks or repeatedly process a large duplicate group.
+**A:** A three-way partition groups values below, equal to, and above the pivot. If the target position falls in the equal group, the answer is the pivot. To search the higher group with a relative position, subtract the sizes of both earlier groups. Ignoring duplicate counts can select the wrong position or repeatedly revisit many equal values.
 
 **Q:** Why does reservoir sampling require more than proving each item has probability k/n?
 
-**A:** Equal marginal inclusion probabilities do not alone imply a uniform sample of k-element subsets. The reservoir update preserves the uniform-subset invariant as each new item arrives; this also explains why selected positions, rather than arbitrary replacement bias, matter.
+**A:** Giving each item the same chance to appear is not enough: the items might still be selected in biased combinations. A uniform sample gives every possible group of k items the same probability. Reservoir sampling preserves that rule as items arrive by choosing whether to admit the new item and, if admitted, which stored position to replace uniformly.
 
 ## Summary
 

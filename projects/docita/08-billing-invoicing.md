@@ -7,7 +7,7 @@
 
 ## Definition
 
-An invoice records a charge and the facts used to calculate it. A payment records collected money. Tax snapshots retain calculation context; a daybook groups collection records for reconciliation. These are connected responsibilities with different state and time boundaries.
+An invoice records a charge and the facts used to calculate it. A payment records collected money. Tax snapshots retain the inputs used for tax calculations; a daybook groups collection records so staff can compare them with counted cash or provider statements. These records are connected, but their states can change at different times.
 
 If a clinic changes its registration or a catalog price after an invoice was created, a historical document should not silently substitute today's facts. If a payment arrives late, a collection report must also say which date determines its period.
 
@@ -38,7 +38,7 @@ Define when a document becomes final, which corrections create a new document an
 
 The calculator determines line treatment from explicit fields and configured defaults, derives subtotal/discount/tax/grand total and aggregates components by type and rate. Taxable lines require a place-of-supply state in the current implementation. The supplied buyer address is not itself an automatically validated supply-state classification.
 
-For configured Indian taxable treatment, the implementation compares normalized seller and supply state codes. Matching codes split the computed tax into CGST and SGST; differing codes produce IGST. The split rounds one component and derives the other from the total, preserving the component sum.
+For configured Indian taxable treatment, the implementation compares normalized seller and supply state codes. Matching codes split the computed tax into Central Goods and Services Tax (CGST) and State Goods and Services Tax (SGST); differing codes produce Integrated Goods and Services Tax (IGST). The split rounds one component and derives the other from the total, preserving the component sum.
 
 This explains code behavior, not a universal tax rule. Applicable exemption, classification, rate, place of supply and document requirements need an independently maintained and reviewed policy. The calculator's defaults, including exempt-healthcare treatment and `eInvoice.required = false`, are implementation choices rather than proof of compliance.
 

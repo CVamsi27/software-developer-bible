@@ -15,7 +15,7 @@ This case describes source inspected on **2 October 2026**. It explains the guar
 
 ## First Principles
 
-Concurrent readers can observe the same balance. The database must decide which decrement remains valid at the write, and the movement explaining that change must commit with it. A stored balance is a projection: it stays consistent with history only if every mutation follows the same accounting protocol.
+Concurrent readers can observe the same balance. The database must decide which decrement remains valid at the write, and the movement explaining that change must commit with it. A stored balance is a projection—a value derived from the movement history. It stays consistent with that history only if every quantity change follows the same accounting rules.
 
 Atomicity within one path does not protect callers that bypass it or repeated delivery of the same business operation.
 

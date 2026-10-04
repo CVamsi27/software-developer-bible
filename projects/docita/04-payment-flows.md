@@ -17,7 +17,7 @@ This case describes source inspected on **2 October 2026**. Intended separation 
 
 Merchant identity determines which account receives a provider transaction. Local tenant identity determines which clinic's records may change. Neither a dependency-injection token nor a valid signature establishes that both identities match.
 
-Provider and local database operations also commit independently. A webhook can repeat, arrive out of order or report a payment whose local update previously failed. Correctness therefore needs identity checks, a monotonic business-state transition, durable duplicate handling and reconciliation.
+Provider and local database operations also commit independently. A webhook—a provider's HTTP notification of an event—can repeat, arrive out of order or report a payment whose local update previously failed. Correctness therefore needs identity checks, state changes that do not move backward when old events arrive, stored records that safely handle duplicates, and reconciliation that compares local records with provider records.
 
 ## Why Separate Configuration From Collection?
 

@@ -233,6 +233,23 @@ Source: [Static Exports in Next.js](10.4.3.06-static-exports.md)
 
 Revisit the linked chapter when an answer misses the mechanism, a boundary or a failure case.
 
+## Configured cache model and freshness
+
+Source: [Learning chapter](10.4.3.03-caching.md)
+
+**Q:** Why must you inspect cacheComponents before copying a caching example?
+
+**A:** Next.js 16 Cache Components and the traditional model use different configuration controls. Segment dynamic/revalidate/fetchCache options are not interchangeable with use-cache boundaries.
+
+**Q:** Why can router.refresh still show old server data?
+
+**A:** It requests fresh client route rendering without necessarily invalidating the persistent server Data Cache. Invalidate the relevant server entry/path according to the write contract.
+
+**Q:** How do updateTag and revalidateTag with max differ?
+
+**A:** updateTag is Server Actions-only immediate expiry for read-your-writes. revalidateTag(tag, max) marks entries stale for stale-while-revalidate, so readers can briefly see prior data.
+
+
 ---
 
 ## See Also

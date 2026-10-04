@@ -1,6 +1,6 @@
 # Communication & Messaging - Microservices
 
-> **Study time:** ≈ 1 h 51 m of reading (7 files, ~16 min average).
+> **Study time:** ≈ 1 h 26 m of reading (7 files, ~12 min average).
 > **7 files.** How services talk: gRPC (+ streaming) for typed RPC over HTTP/2, Kafka and RabbitMQ for messaging, broker selection discipline, and event-driven architecture.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../INDEX.md)
@@ -16,8 +16,8 @@
 | 02 | [gRPC Streaming](20.6.2.02-grpc-streaming.md) | Streaming modes (unary/server/client/bidi), gRPC-Web, when gRPC beats REST | Important | Important | 10 min |
 | 03 | [Kafka](20.6.2.03-kafka.md) | Distributed partitioned commit log, partition keys, consumer groups, ordering, exactly-once, replay | Important | Important | 22 min |
 | 04 | [RabbitMQ](20.6.2.04-rabbitmq.md) | AMQP, exchanges/bindings, dead-letter queues, per-message acks, task distribution | Important | Important | 27 min |
-| 05 | [Message Brokers](20.6.2.05-message-brokers.md) | Kafka vs RabbitMQ selection, DLQ discipline, delivery guarantees | Important | Important | 20 min |
-| 06 | [Event-Driven Architecture](20.6.2.06-event-driven-architecture.md) | When events beat requests; producer/consumer coupling, reprocessing | Essential | Important | 19 min |
+| 05 | [Message Brokers](20.6.2.05-message-brokers.md) | Kafka vs RabbitMQ selection, DLQ discipline, delivery guarantees | Important | Important | 6 min |
+| 06 | [Event-Driven Architecture](20.6.2.06-event-driven-architecture.md) | When events beat requests; producer/consumer coupling, reprocessing | Essential | Important | 7 min |
 
 ---
 

@@ -41,19 +41,32 @@ The screening measures length over 550 lines, more than 50 box-diagram lines, mo
 
 These are documentation corrections. They do not modify Docita production code or establish measured business results. Targeted Node execution checked the placeholder binding, async pipeline with mocked fetch, and request-budget empty/boundary/below/over/invalid cases. Browser behavior and full application integration of illustrative snippets were not tested by the corpus verification gates.
 
-## Remaining confirmed rewrite queue
+## Confirmed queue completed — 4 October follow-up
 
-- [React reconciliation](../10-frontend/10.3-react/01-react-internals/10.3.1.03-reconciliation.md): Rebuild around one editable-row identity trace; repeated diagrams still remain.
-- [HTTP methods](../20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.01-http-methods.md): Remove duplicate complete-router implementation; teach retry/idempotency once.
-- [Database joins](../20-backend/20.4-database/02-querying-and-optimization/20.4.2.02-joins.md): The main-first progression and diagram are repaired in the main-branch pass; the inventory aggregate now excludes unmatched old orders and no longer subtracts sales from current stock. Advanced SQL examples remain for a later full consolidation.
-- [Nest modules](../20-backend/20.2-nestjs/01-core-architecture/20.2.1.01-modules.md): Trace provider export/import before advanced variants and reduce repeated benefits.
-- [Broker selection](../20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md): Lead with retained replay versus routed work; remove competing saga/event-sourcing tutorial scope.
-- [Event-driven architecture](../20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.06-event-driven-architecture.md): Trace one event and consumer retry before taxonomy; delegate CQRS and event-store implementations.
-- [CAP](../30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.md): Closed in the personal-site sync pass: one partitioned booking trace now derives the conflict, separates operation contracts from database labels, and explains minority refusal, acknowledgment uncertainty and recovery. The damaged diagram and repeated interview slogans were removed.
-- [SLO pair](../50-quality/50.4-production-engineering/50.4.02-sli-slo-error-budgets.md): Separate measurement vocabulary from release policy; repeated taxonomy remains after unit corrections.
-- [Next caching](../10-frontend/10.4-next.js/03-data-and-caching/10.4.3.03-caching.md): Version/model choice is now explicit; still needs a shorter request-first progression.
-- [RHF and Zod](../10-frontend/10.5-form-handling/10.5.01-react-hook-form.md): Concrete examples repaired; repeated introductory schema/form architecture sections still need consolidation.
-- [Node streams](../20-backend/20.1-node.js/02-io-and-data/20.1.2.01-streams.md): The NDJSON acronym and split-record example are now added; this targeted clarity item is closed.
+The ten remaining chapters were read and consolidated in the follow-up pass:
+
+| Chapter | Reading flow and correction |
+| ----------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Reconciliation](../10-frontend/10.3-react/01-react-internals/10.3.1.03-reconciliation.md) | One editable-row reorder trace; identity preservation/reset, fragments, render/commit and memo boundaries follow from it. |
+| [HTTP methods](../20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.01-http-methods.md) | Appointment retry trace; idempotency means repeated intended effect, not identical responses. Conditional writes and durable POST retry contracts are separate. |
+| [Joins](../20-backend/20.4-database/02-querying-and-optimization/20.4.2.02-joins.md) | Patient fixture carries matching, preservation, counting, EXISTS and LATERAL reasoning; distinct self/product/aggregate mechanisms remain. |
+| [Nest modules](../20-backend/20.2-nestjs/01-core-architecture/20.2.1.01-modules.md) | Provider ownership/import/export trace before dynamic configuration, lifetime/global visibility and lazy loading. Removed fabricated LazyModule import and false initialization/tree-shaking advice. |
+| [Broker selection](../20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md) | Retained history versus unfinished work, followed by acknowledgment/crash boundaries. RabbitMQ Streams replay and publisher confirms are explicit; unmeasured latency tables removed. |
+| [Event-driven architecture](../20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.06-event-driven-architecture.md) | Invoice commit/outbox/consumer/UI trace; event identity, local transaction boundaries, ordering and replay explained before separate CQRS/event-sourcing decisions. |
+| [Quality SLOs](../50-quality/50.4-production-engineering/50.4.02-sli-slo-error-budgets.md) | User measurement contract → request budget → burn alert → separately agreed release policy. Removed repeated request-to-downtime claims and corrected six-hour burn arithmetic. |
+| [Next caching](../10-frontend/10.4-next.js/03-data-and-caching/10.4.3.03-caching.md) | Request-first explanation with explicit traditional/Cache Components model selection and writer freshness/invalidation boundaries. |
+| [React Hook Form](../10-frontend/10.5-form-handling/10.5.01-react-hook-form.md) | Validation/awaited submission/server error trace; controlled adaptation, row identity, subscriptions and retained multistep mechanism remain distinct. |
+| [Zod](../10-frontend/10.5-form-handling/10.5.02-zod.md) | Parsed-input trace before composition/refinement/conversion and trust boundaries; resolver wiring has one home in RHF. |
+
+CAP's partitioned-booking rewrite and Node streams' NDJSON clarification were already closed in the preceding main-branch pass. Each revised category keeps its separate revision companion and existing questions, with additional source-linked practical questions. Importance metadata and chapter IDs remain stable; incoming anchors were repaired.
+
+### Verification scope
+
+Executed fixtures checked Nest exported-provider resolution, missing-export rejection, shared default-scope identity and dynamic token configuration; Zod parsing/conversion, extra-key policy and environment bounds; request-budget empty/boundary/overspend cases; and SQL LEFT preservation, matched counts and EXISTS in SQLite. PostgreSQL LATERAL was not executed. The new freshness regression fixture rejects a fabricated framework LazyModule import, including multiline imports, while accepting LazyModuleLoader and a user-defined local LazyModule.
+
+Fresh-reader review of the frontend group identified a missing concrete Controller adapter; the example was restored. The independent backend reader could not run because its service usage limit was reached. Backend correctness checks above are primary-agent checks, not an independent reader certification. Illustrative UI snippets were not exercised as a browser application; production Next cache behavior depends on the installed model and host.
+
+New official citations were HTTP-probed successfully before updating the baseline. The historical inventory remains a screening snapshot; these rewrites do not certify the unreviewed corpus. There is no remaining item in this **confirmed rewrite queue**. The broader automated candidates still require selective reader review.
 
 ## How to close a page
 

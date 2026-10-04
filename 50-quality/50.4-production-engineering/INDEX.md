@@ -1,6 +1,6 @@
 # Production Engineering — Index
 
-> **Study time:** ≈ 1 h 2 m of reading (7 files, ~9 min average).
+> **Study time:** ≈ 1 h 1 m of reading (7 files, ~9 min average).
 > **7 files** — Incident response, SLI/SLO/error budgets, chaos engineering, production readiness reviews, and sustainable on-call — operating systems in production. The senior differentiator stack.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)
@@ -28,7 +28,7 @@ The SRE framework.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 02 | [SLI/SLO/Error Budgets](50.4.02-sli-slo-error-budgets.md) | SLIs, SLOs, SLAs, error budgets, burn rates, multi-window alerting, Prometheus/Grafana | Important | Important | 8 min |
+| 02 | [SLI/SLO/Error Budgets](50.4.02-sli-slo-error-budgets.md) | SLIs, SLOs, SLAs, error budgets, burn rates, multi-window alerting, Prometheus/Grafana | Important | Important | 7 min |
 
 **Quick recall:**
 - **SLI** = the metric (e.g., request success rate)

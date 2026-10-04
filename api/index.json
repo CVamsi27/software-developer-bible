@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "1fa80c326ab288d5d2486a3f1870e072c6fabf1b9917b609ebf8035d90c0ff78",
+ "corpus_digest": "562581bb5d418b0ebc31310bb496deab665409c047d46b83a9dfff7ff278f614",
  "totals": {
   "chapters": 671,
   "sections": 48,
   "categories": 13,
-  "read_minutes": 8585
+  "read_minutes": 8471
  },
  "chapters": [
   {
@@ -730,9 +730,9 @@
    "s": "React",
    "c": "Frontend",
    "g": [
-    "conce"
+    "concept"
    ],
-   "m": 22
+   "m": 6
   },
   {
    "p": "10-frontend/10.3-react/01-react-internals/10.3.1.04-rendering.html",
@@ -1097,9 +1097,9 @@
    "s": "Next.js",
    "c": "Frontend",
    "g": [
-    "conce"
+    "concept"
    ],
-   "m": 27
+   "m": 8
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.04-streaming.html",
@@ -1200,9 +1200,9 @@
    "c": "Frontend",
    "g": [
     "concept",
-    "referen"
+    "reference"
    ],
-   "m": 16
+   "m": 10
   },
   {
    "p": "10-frontend/10.5-form-handling/10.5.02-zod.html",
@@ -1211,9 +1211,9 @@
    "c": "Frontend",
    "g": [
     "concept",
-    "referen"
+    "reference"
    ],
-   "m": 12
+   "m": 9
   },
   {
    "p": "10-frontend/10.5-form-handling/10.5.03-formik.html",
@@ -1902,9 +1902,9 @@
    "s": "NestJS",
    "c": "Backend",
    "g": [
-    "conce"
+    "concept"
    ],
-   "m": 21
+   "m": 7
   },
   {
    "p": "20-backend/20.2-nestjs/01-core-architecture/20.2.1.02-controllers.html",
@@ -2207,9 +2207,9 @@
    "s": "REST API",
    "c": "API",
    "g": [
-    "conce"
+    "concept"
    ],
-   "m": 29
+   "m": 6
   },
   {
    "p": "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.02-status-codes.html",
@@ -2493,9 +2493,9 @@
    "s": "Database",
    "c": "Data",
    "g": [
-    "conce"
+    "concept"
    ],
-   "m": 17
+   "m": 9
   },
   {
    "p": "20-backend/20.4-database/02-querying-and-optimization/20.4.2.03-execution-plans.html",
@@ -2538,7 +2538,7 @@
    "g": [
     "revisi"
    ],
-   "m": 2
+   "m": 3
   },
   {
    "p": "20-backend/20.4-database/03-transactions-and-replication/20.4.3.01-transactions.html",
@@ -3039,24 +3039,24 @@
   },
   {
    "p": "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.html",
-   "t": "Message Brokers: Kafka vs RabbitMQ",
+   "t": "Message Brokers — Kafka vs RabbitMQ",
    "s": "Microservices",
    "c": "Architecture",
    "g": [
     "concept",
-    "messagi"
+    "messaging"
    ],
-   "m": 20
+   "m": 6
   },
   {
    "p": "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.06-event-driven-architecture.html",
-   "t": "Event-Driven Architecture — Kafka, Event Sourcing, CQRS",
+   "t": "Event-Driven Architecture",
    "s": "Microservices",
    "c": "Architecture",
    "g": [
-    "conce"
+    "concept"
    ],
-   "m": 19
+   "m": 7
   },
   {
    "p": "20-backend/20.6-microservices/02-communication-and-messaging/REVISION.html",
@@ -3066,7 +3066,7 @@
    "g": [
     "revisi"
    ],
-   "m": 2
+   "m": 3
   },
   {
    "p": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.01-saga-pattern.html",
@@ -6512,9 +6512,9 @@
    "s": "Production Engineering",
    "c": "Quality",
    "g": [
-    "conce"
+    "concept"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "50-quality/50.4-production-engineering/50.4.03-chaos-engineering.html",

@@ -1,6 +1,6 @@
 # REST APIs — Index
 
-> **Study time:** ≈ 7 h 2 m of reading (25 files, ~17 min average).
+> **Study time:** ≈ 6 h 39 m of reading (25 files, ~16 min average).
 > **25 files — everything HTTP/API, fundamentals through production.** Study in three passes: **I. Fundamentals** (principles → methods → status codes) → **II. Production concerns** (pagination, errors, long-running operations, file uploads, rate limiting, webhooks, caching) → **III. Advanced** (maturity model, gateways, BFF, auth in context).
 >
 > Absorbed the former `20.10-api-design` stack — rate limiting, error handling (RFC 7807), pagination and webhooks live here once, at full depth.

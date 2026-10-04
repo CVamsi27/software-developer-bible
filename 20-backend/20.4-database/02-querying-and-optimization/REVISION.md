@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Database-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -101,3 +101,19 @@ Use these prompts after the reading pass to recall the querying and optimization
 ## References & Learn More
 
 The linked source chapters provide detailed architectural rationale, implementation contracts, and further reading.
+
+## Join grain and unmatched rows
+
+Source: [Learning chapter](20.4.2.02-joins.md)
+
+**Q:** Why does COUNT(*) over a left join report one row for a patient with no appointment?
+
+**A:** The outer join supplies a NULL-extended placeholder row. COUNT of a non-null appointment identifier counts actual matches and gives zero.
+
+**Q:** When should EXISTS replace a join plus DISTINCT?
+
+**A:** When the required result is each entity with at least one match rather than matching pairs. EXISTS states that presence contract without introducing pair fan-out.
+
+**Q:** What does LEFT LATERAL add to a top-one-per-patient query?
+
+**A:** The subquery can reference each patient, and LEFT preserves patients whose subquery produces no rows. Add a deterministic tie-breaker to the chronological ordering.

@@ -85,3 +85,19 @@ Use these prompts after the reading pass to recall the core architecture mechani
 ## References & Learn More
 
 The linked source chapters provide detailed architectural rationale, implementation contracts, and further reading.
+
+## Module ownership and visibility
+
+Source: [Learning chapter](20.2.1.01-modules.md)
+
+**Q:** Why does importing UsersModule only in AppModule not satisfy AppointmentsService?
+
+**A:** Sibling modules do not automatically inherit each other’s exports. AppointmentsModule must import the owner that exports UsersService.
+
+**Q:** Why can re-registering a shared service hide a wiring bug?
+
+**A:** It creates another provider registration rather than consuming the owner’s exported instance. Default scope does not make every registration globally identical.
+
+**Q:** What cannot be assumed about a lazily loaded Nest module?
+
+**A:** LazyModuleLoader loads provider modules on demand; normal lifecycle hooks are not invoked, and it is not a mechanism for adding controllers/routes after startup.

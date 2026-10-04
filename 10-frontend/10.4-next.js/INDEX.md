@@ -1,6 +1,6 @@
 # Next.js — Index
 
-> **Study time:** ≈ 6 h 57 m of reading (21 files, ~20 min average).
+> **Study time:** ≈ 6 h 38 m of reading (21 files, ~19 min average).
 > **21 files** — App Router, rendering strategies, server components, data fetching patterns, caching, streaming, ISR, authentication, static exports, deployment (Docker/Vercel/self-hosted), and interview questions.
 
 [![Files](https://img.shields.io/badge/files-21-blue)](../../INDEX.md)
@@ -69,10 +69,10 @@ The hardest part of Next.js — the 6 files every senior engineer must own.
 | --: | ------ | -------- | --- | --- | ----------: |
 | 08 | [Data Fetching Patterns](03-data-and-caching/10.4.3.01-data-fetching-patterns.md) | Server Component fetch, `unstable_cache`, Server Actions, React Query, Suspense, parallel fetches | Important | Important | 12 min |
 | 09 | [Server Actions](03-data-and-caching/10.4.3.02-server-actions.md) | Mutations, revalidation, progressive enhancement, form actions | Important | Important | 27 min |
-| 10 | [Caching](03-data-and-caching/10.4.3.03-caching.md) | Data cache, full route cache, revalidation, stale-while-revalidate, cache tags | Important | Important | 27 min |
-| 11 | [Streaming](03-data-and-caching/10.4.3.04-streaming.md) | Streaming SSR, Suspense boundaries, loading UI, parallel routes | Important | Specialized | 22 min |
+| 10 | [Caching](03-data-and-caching/10.4.3.03-caching.md) | Data cache, full route cache, revalidation, stale-while-revalidate, cache tags | Important | Important | 8 min |
+| 11 | [Streaming](03-data-and-caching/10.4.3.04-streaming.md) | Streaming SSR, Suspense boundaries, loading UI, parallel routes | Important | Specialized | 23 min |
 | 12 | [Incremental Static Regeneration](03-data-and-caching/10.4.3.05-incremental-static-regeneration.md) | SWR, on-demand revalidation, cache tags, `generateStaticParams`, fallback | Important | Specialized | 23 min |
-| 13 | [Static Exports](03-data-and-caching/10.4.3.06-static-exports.md) | Static export config, `generateStaticParams`, client-side data, deployment | Important | Specialized | 17 min |
+| 13 | [Static Exports](03-data-and-caching/10.4.3.06-static-exports.md) | Static export config, `generateStaticParams`, client-side data, deployment | Important | Specialized | 18 min |
 
 ---
 
@@ -82,7 +82,7 @@ Production concerns.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 14 | [Authentication](04-production/10.4.4.01-authentication.md) | Auth middleware, JWT, server/client auth flow, NextAuth.js, RBAC | Important | Important | 30 min |
+| 14 | [Authentication](04-production/10.4.4.01-authentication.md) | Auth middleware, JWT, server/client auth flow, NextAuth.js, RBAC | Important | Important | 31 min |
 | 15 | [Image Optimization](04-production/10.4.4.02-image-optimization.md) | `next/image`, lazy loading, responsive images, AVIF/WebP | Important | Specialized | 23 min |
 | 16 | [Deploying Next.js](04-production/10.4.4.03-deploying-nextjs.md) | output standalone + multi-stage Dockerfile, Vercel vs self-hosted, edge limits, ISR cacheHandler, multi-zone, env build-vs-runtime, observability | Important | Specialized | 15 min |
 

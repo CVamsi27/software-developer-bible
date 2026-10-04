@@ -61,3 +61,19 @@ Use the answers to check your reasoning, then revisit the source mechanism and r
 ## References & Learn More
 
 The source chapter links above contain the implementation examples and primary references for each prompt.
+
+## Measurement units and release policy
+
+Source: [Learning chapter](50.4.02-sli-slo-error-budgets.md)
+
+**Q:** What is the 99.9% budget for 100,000 eligible requests?
+
+**A:** 100 bad requests. It cannot be converted into downtime without a separate elapsed-time measurement contract.
+
+**Q:** Does exhausting a budget mathematically mandate every deployment be blocked?
+
+**A:** No. The budget is a measurement; a pre-agreed policy defines release restrictions, remediation/security exceptions and recovery criteria.
+
+**Q:** What does an empty request population tell you about compliance?
+
+**A:** No observed-population result is available. It does not prove health; measurement coverage and low-volume policy need separate treatment.

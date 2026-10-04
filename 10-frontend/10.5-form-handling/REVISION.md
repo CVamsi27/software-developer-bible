@@ -71,3 +71,32 @@ A useful answer names the guarantee, the mechanism that enforces it, and the fai
 The source-linked chapters contain the supporting documentation and worked examples.
 
 [Back to section index](INDEX.md)
+
+## Form state versus business commitment
+
+Source: [Learning chapter](10.5.01-react-hook-form.md)
+
+**Q:** Why does disabling submit while isSubmitting not guarantee one booking?
+
+**A:** It controls this UI while the awaited callback runs. Network uncertainty, another client or direct API retry still needs a server-side idempotency/transaction contract.
+
+**Q:** What must a multistep form do beyond retaining unmounted values?
+
+**A:** Validate visible steps before advancing and validate the complete payload at final submit and on the server. Retained values alone do not rerun every unmounted built-in field rule.
+
+
+## Parsing and conversion boundaries
+
+Source: [Learning chapter](10.5.02-zod.md)
+
+**Q:** Why is z.input different from z.output for a string-to-number schema?
+
+**A:** The raw accepted value is a string, while the successfully parsed value is a number. z.infer describes output, so form collection and submit types can differ.
+
+**Q:** Why should textual false not go through z.coerce.boolean blindly?
+
+**A:** JavaScript Boolean of a nonempty string is true. Explicitly map the permitted textual values before treating them as booleans.
+
+**Q:** Does a parsed invoice payload establish tenant permission?
+
+**A:** No. The schema establishes shape/constraints; authorization, ownership and transactional business invariants remain separate checks.

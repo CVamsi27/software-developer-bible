@@ -654,6 +654,24 @@ CASES = [
         ],
     },
     {
+        "name": "gate 5 rejects fabricated Nest LazyModule imports",
+        "gate": "check_freshness.py",
+        "args": [],
+        "dirs": ["20-backend/20.2-nestjs/01-core-architecture"],
+        "plant": {
+            "20-backend/20.2-nestjs/01-core-architecture/20.2.1.01-modules.md": (
+                "# Modules\n\n```typescript\nimport {\n LazyModule,\n} from '@nestjs/core';\n```\n"
+            ),
+        },
+        "clean": {
+            "20-backend/20.2-nestjs/01-core-architecture/20.2.1.01-modules.md": (
+                "# Modules\n\n```typescript\nimport { LazyModuleLoader } from '@nestjs/core';\n"
+                "import { LazyModule } from './lazy.module';\n```\n"
+                "\nThere is no framework LazyModule decorator.\n"
+            ),
+        },
+    },
+    {
         "name": "gate 5 rejects nonexistent hydrateRoot onHydrated options",
         "gate": "check_freshness.py",
         "args": [],

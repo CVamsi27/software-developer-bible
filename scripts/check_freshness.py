@@ -181,7 +181,13 @@ MSW_REST_IMPORT = re.compile(
     r"\bimport\s*\{[^}]*\brest\b[^}]*\}\s*from\s*['\"]msw['\"]"
 )
 
+NEST_LAZY_IMPORT = re.compile(
+    r"\bimport\s*\{[^}]*\bLazyModule\b[^}]*\}\s*from\s*['\"]@nestjs/core['\"]"
+)
+
 RULES = [
+    ('FABRICATED-NEST-LAZY-MODULE',
+     'Nest exposes LazyModuleLoader, not a LazyModule decorator from @nestjs/core'),
     ('OBSOLETE-MSW-REST',
      'MSW v1 rest import; use current http and HttpResponse APIs'),
     ('UNSUPPORTED-HYDRATION-CALLBACK',
@@ -390,6 +396,10 @@ def check(p: Path, rel: str):
         if isf:
             if not inf and code_rows:
                 source = '\n'.join(row for _, row in code_rows)
+                for match in NEST_LAZY_IMPORT.finditer(source):
+                    offset = source.count('\n', 0, match.start())
+                    hits.append((code_rows[offset][0], 'FABRICATED-NEST-LAZY-MODULE',
+                                 code_rows[offset][1].strip()[:100]))
                 for match in MSW_REST_IMPORT.finditer(source):
                     offset = source.count('\n', 0, match.start())
                     hits.append((code_rows[offset][0], 'OBSOLETE-MSW-REST',

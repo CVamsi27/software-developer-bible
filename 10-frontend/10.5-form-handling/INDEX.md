@@ -1,6 +1,6 @@
 # Form Handling — Index
 
-> **Study time:** ≈ 1 h 16 m of reading (8 files, ~10 min average).
+> **Study time:** ≈ 1 h 7 m of reading (8 files, ~8 min average).
 > **8 files** — Form handling in React from React Hook Form and Zod to Formik, TanStack Form, Server Actions, autosave/draft recovery, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)
@@ -29,7 +29,7 @@ Three main form libraries — pick the right one for the job.
 
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
-| 01 | [React Hook Form](10.5.01-react-hook-form.md) | Uncontrolled inputs, `register`, Zod resolver, `useFieldArray`, `FormProvider` | Default choice for React 18+ forms | Essential | Important | 16 min |
+| 01 | [React Hook Form](10.5.01-react-hook-form.md) | Uncontrolled inputs, `register`, Zod resolver, `useFieldArray`, `FormProvider` | Default choice for React 18+ forms | Essential | Important | 10 min |
 | 03 | [Formik](10.5.03-formik.md) | Controlled fields, context and validation integration | Existing forms or requirements suited to controlled state | Optional | Specialized | 13 min |
 | 04 | [TanStack Form](10.5.04-tanstack-form.md) | Framework-agnostic, type-first, granular subscriptions, Standard Schema | New projects needing framework-agnostic or fine-grained control | Optional | Specialized | 10 min |
 
@@ -50,7 +50,7 @@ Zod is the standard for runtime validation with TypeScript inference.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 02 | [Zod](10.5.02-zod.md) | Schemas, `z.infer`, transforms, refines, API boundary validation, env validation, error formatting | Essential | Important | 12 min |
+| 02 | [Zod](10.5.02-zod.md) | Schemas, `z.infer`, transforms, refines, API boundary validation, env validation, error formatting | Essential | Important | 9 min |
 
 **The killer feature:** `z.infer<typeof Schema>` gives you the TypeScript type from your Zod schema. One source of truth for both runtime validation and compile-time types.
 

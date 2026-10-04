@@ -85,3 +85,15 @@ Use these prompts after the reading pass to recall the http mechanics mechanisms
 ## References & Learn More
 
 The linked source chapters provide detailed architectural rationale, implementation contracts, and further reading.
+
+## HTTP retry and concurrency boundaries
+
+Source: [Learning chapter](20.3.2.01-http-methods.md)
+
+**Q:** Can an idempotent DELETE return 204 and then 404?
+
+**A:** Yes. Its intended effect remains removal; response equality is not the idempotency contract.
+
+**Q:** Why does an idempotent PUT still need If-Match?
+
+**A:** Repeating one replacement is safe under the method contract, but two clients can overwrite each other. An atomic version precondition rejects an outdated write with 412.

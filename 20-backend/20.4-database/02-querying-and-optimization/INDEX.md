@@ -1,6 +1,6 @@
 # Querying & Optimization - Database
 
-> **Study time:** ≈ 1 h 23 m of reading (6 files, ~14 min average).
+> **Study time:** ≈ 1 h 16 m of reading (6 files, ~13 min average).
 > **6 files.** Making queries fast: index types (B-tree to BRIN), join algorithms, execution plans with `EXPLAIN ANALYZE`, window functions, and JSONB.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](../INDEX.md)
@@ -13,7 +13,7 @@
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
 | 01 | [Indexes](20.4.2.01-indexes.md) | B-tree, hash, GiST, GIN, BRIN, composite indexes, index-only scans, partial indexes | Essential | Foundational | 17 min |
-| 02 | [Joins](20.4.2.02-joins.md) | INNER, LEFT, RIGHT, FULL, CROSS, LATERAL, hash/merge/nested loop joins, join order | Essential | Foundational | 17 min |
+| 02 | [Joins](20.4.2.02-joins.md) | INNER, LEFT, RIGHT, FULL, CROSS, LATERAL, hash/merge/nested loop joins, join order | Essential | Foundational | 9 min |
 | 03 | [Execution Plans](20.4.2.03-execution-plans.md) | EXPLAIN ANALYZE, sequential vs index scans, cost estimation, statistics | Essential | Foundational | 15 min |
 | 04 | [Window Functions](20.4.2.04-window-functions.md) | ROW_NUMBER, RANK, DENSE_RANK, LAG, LEAD, aggregate OVER, running totals, moving averages | Essential | Foundational | 16 min |
 | 05 | [JSONB](20.4.2.05-jsonb.md) | Operators (`->`, `->>`, `@>`, `?`), GIN indexing, containment queries, aggregation, real-world patterns | Essential | Foundational | 16 min |

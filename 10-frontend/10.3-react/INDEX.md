@@ -1,6 +1,6 @@
 # React — Index
 
-> **Study time:** ≈ 7 h 34 m of reading (27 files, ~17 min average).
+> **Study time:** ≈ 7 h 18 m of reading (27 files, ~16 min average).
 > **27 files** — React internals from Virtual DOM to Fiber, hooks, patterns, custom hooks, portals, compound components, external stores, React Router data routers, React 18/19 concurrent APIs, performance, state management, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-27-blue)](../../INDEX.md)
@@ -44,7 +44,7 @@ How React actually works under the hood. The mental model that distinguishes a s
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Virtual DOM](01-react-internals/10.3.1.01-virtual-dom.md) | VDOM concept, diffing, batching, React elements vs components | Essential | Foundational | 15 min |
 | 02 | [Fiber](01-react-internals/10.3.1.02-fiber.md) | Fiber architecture, work loop, priority lanes, time slicing | Important | Important | 23 min |
-| 03 | [Reconciliation](01-react-internals/10.3.1.03-reconciliation.md) | Diffing algorithm, keys, component types, bailout | Essential | Foundational | 22 min |
+| 03 | [Reconciliation](01-react-internals/10.3.1.03-reconciliation.md) | Diffing algorithm, keys, component types, bailout | Essential | Foundational | 6 min |
 | 04 | [Rendering](01-react-internals/10.3.1.04-rendering.md) | Render phases, commit phase, batching in React 18, automatic batching | Essential | Foundational | 21 min |
 | 05 | [Lifecycle](01-react-internals/10.3.1.05-lifecycle.md) | Class lifecycle, hooks lifecycle, useEffect cleanup, strict mode double-invoke | Essential | Foundational | 24 min |
 

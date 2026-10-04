@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Microservices-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
 
@@ -117,3 +117,32 @@ Use these prompts after the reading pass to recall the communication and messagi
 ## References & Learn More
 
 The linked source chapters provide detailed architectural rationale, implementation contracts, and further reading.
+
+## Broker storage and acknowledgments
+
+Source: [Learning chapter](20.6.2.05-message-brokers.md)
+
+**Q:** Is replay a Kafka-versus-RabbitMQ yes/no distinction?
+
+**A:** No. Kafka retains partition records; ordinary RabbitMQ queues track unfinished deliveries, but RabbitMQ Streams also support retained log replay. Compare the actual storage type and retention contract.
+
+**Q:** What does a publisher confirm fail to establish?
+
+**A:** It does not prove consumer business completion. Unroutable-message handling is also distinct from broker acceptance; uncertain acknowledgments can require duplicate-safe retry.
+
+
+## Event publication and consumer crashes
+
+Source: [Learning chapter](20.6.2.06-event-driven-architecture.md)
+
+**Q:** Which failure gap does an outbox close, and which remains?
+
+**A:** Committing state and publication intent together prevents losing the event when a process dies after the database commit. Publish/ack uncertainty can still deliver duplicates.
+
+**Q:** Why must a processed-event marker and projection update share a transaction?
+
+**A:** Separate writes can mark unfinished work complete or repeat a completed mutation after a crash. Atomic commitment makes a redelivery observe one consistent outcome.
+
+**Q:** How do event ID, correlation ID and aggregate version differ?
+
+**A:** Event ID identifies one occurrence; correlation ID groups related work; aggregate version orders changes for one entity. Schema version instead identifies the payload format.

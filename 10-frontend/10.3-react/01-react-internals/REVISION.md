@@ -195,6 +195,19 @@ Source: [Lifecycle](10.3.1.05-lifecycle.md)
 
 Revisit the linked chapter when an answer misses the mechanism, a boundary or a failure case.
 
+## Editable-row identity
+
+Source: [Learning chapter](10.3.1.03-reconciliation.md)
+
+**Q:** A row is filtered out and later restored with the same key. Does its draft survive?
+
+**A:** Not merely because the key matches. Unmount removes its local state; retain drafts above the row or in a keyed store when restoration is required.
+
+**Q:** Why can an index key show the right name but the wrong input draft after sorting?
+
+**A:** The positional component identity survives while its record prop changes. The draft remains attached to that position instead of the domain record.
+
+
 ---
 
 ## See Also

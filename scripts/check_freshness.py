@@ -136,22 +136,34 @@ EOL_BASE_IMAGES = {
         '17': date(2026, 6, 1),
     },
 }
+EOL_NODE_RUNTIMES = {
+    '18': date(2025, 4, 30),
+    '20': date(2026, 4, 30),
+}
+NODE_RUNTIME_PIN = re.compile(
+    r'''(?ix)\b(?:node-version\s*:\s*|NODE_VERSION\s*[:=]\s*|'''
+    r'''nodeVersion\s*(?:\?:|=)\s*|Runtime\s*:\s*|runtime\s*:\s*|'''
+    r'''nodejs|node:)['"]?(18|20)'''
+    r'''(?:\.x|(?:\.\d+){1,2}|-[\w.]+)?(?=[\s'"),#]|$)'''
+)
 FROM_PIN = re.compile(
     r'\bFROM\s+((?:[a-z0-9/_.-]+)?(?:golang|node|python|rust|ghcr\.io/graalvm/native-image))'
     r':(\d+)(\.(\d+))?(?:[\s-]|$)')
 
-# --- EOL GitHub Action pins (2026-09-19) ------------------------------------
-# Same date-gate design as base images: an action major starts failing the
-# day it is retired upstream, not when someone remembers to edit a regex.
-# checkout@v3 rides the retired node16 runtime; codecov@v3 predates the v4
-# token-handling overhaul. Only majors the corpus could plausibly pin are
-# listed — an unlisted major stays silent (unknown, not wrong).
+# --- EOL GitHub Action pins (2026-09-23) ------------------------------------
+# GitHub removed the Node 20 action runner on this date. These releases bundle
+# Node 20 and therefore need upgrading even if their action major is otherwise
+# supported. Older retired majors remain listed as well. Unlisted majors stay
+# silent (unknown, not wrong).
 EOL_GITHUB_ACTIONS = {
-    'actions/checkout': {'v2': date(2022, 8, 15), 'v3': date(2024, 8, 15)},
-    'actions/setup-node': {'v2': date(2022, 8, 15), 'v3': date(2024, 8, 15)},
+    'actions/checkout': {'v2': date(2022, 8, 15), 'v3': date(2024, 8, 15), 'v4': date(2026, 9, 23)},
+    'actions/setup-node': {'v2': date(2022, 8, 15), 'v3': date(2024, 8, 15), 'v4': date(2026, 9, 23)},
     'actions/cache': {'v2': date(2022, 8, 15), 'v3': date(2024, 8, 15)},
-    'actions/upload-artifact': {'v2': date(2022, 8, 15), 'v3': date(2024, 8, 15)},
-    'codecov/codecov-action': {'v3': date(2024, 8, 1)},
+    'actions/upload-artifact': {'v2': date(2022, 8, 15), 'v3': date(2024, 8, 15), 'v4': date(2026, 9, 23), 'v5': date(2026, 9, 23)},
+    'actions/upload-pages-artifact': {'v3': date(2026, 9, 23), 'v4': date(2026, 9, 23)},
+    'docker/build-push-action': {'v5': date(2026, 9, 23), 'v6': date(2026, 9, 23)},
+    'aws-actions/configure-aws-credentials': {'v4': date(2026, 9, 23), 'v5': date(2026, 9, 23)},
+    'codecov/codecov-action': {'v3': date(2024, 8, 1), 'v4': date(2026, 9, 23), 'v5': date(2026, 9, 23)},
 }
 USES_PIN = re.compile(r'\buses:\s*([\w.-]+/[\w.-]+)@v(\d+)\b')
 
@@ -229,9 +241,13 @@ RULES = [
     ('EOL-BASE-IMAGE',
      'base-image pin past its end-of-life (data table EOL_BASE_IMAGES, '
      'compared against today); bump to a supported LTS major'),
+    ('EOL-NODE-RUNTIME',
+     'Node.js runtime pin past its end-of-life (data table EOL_NODE_RUNTIMES, '
+     'compared against today); upgrade the CI, container or hosted runtime'),
     ('EOL-GITHUB-ACTION',
-     'GitHub Action major retired upstream (data table EOL_GITHUB_ACTIONS, '
-     'compared against today); bump to the current major'),
+     'GitHub Action release uses a removed runner or is retired upstream '
+     '(data table EOL_GITHUB_ACTIONS, compared against today); bump to a '
+     'Node 24-compatible release'),
     ('OBSOLETE-COMPOSE-VERSION',
      'top-level version: key in a Compose file (Compose V2 ignores it and '
      'warns "the attribute version is obsolete"); delete the line — the '
@@ -441,13 +457,24 @@ def check(p: Path, rel: str):
                 hits.append((lineno, 'EOL-BASE-IMAGE',
                              f'{image}:{version} EOL since {eol.isoformat()} — '
                              f'{line.strip()[:70]}'))
+        m_node_runtime = NODE_RUNTIME_PIN.search(line)
+        if m_node_runtime:
+            version = m_node_runtime.group(1)
+            eol = EOL_NODE_RUNTIMES[version]
+            # Dockerfile FROM pins already produce the more specific
+            # EOL-BASE-IMAGE finding above.
+            is_node_from = bool(re.search(r'\bFROM\s+node:(?:18|20)\b', line, re.I))
+            if date.today() >= eol and not is_node_from:
+                hits.append((lineno, 'EOL-NODE-RUNTIME',
+                             f'Node.js {version} EOL since {eol.isoformat()} — '
+                             f'{line.strip()[:70]}'))
         m_use = USES_PIN.search(line)
         if m_use:
             action, vmajor = m_use.group(1), 'v' + m_use.group(2)
             eol = EOL_GITHUB_ACTIONS.get(action, {}).get(vmajor)
             if eol and date.today() >= eol:
                 hits.append((lineno, 'EOL-GITHUB-ACTION',
-                             f'{action}@{vmajor} retired upstream since '
+                             f'{action}@{vmajor} runner unsupported since '
                              f'{eol.isoformat()} — {line.strip()[:60]}'))
         if COMPOSE_VERSION_KEY.match(line):
             hits.append((lineno, 'OBSOLETE-COMPOSE-VERSION',

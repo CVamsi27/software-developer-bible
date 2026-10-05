@@ -100,14 +100,16 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with: { node-version: 20, cache: 'npm' }
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v7
+        with: { node-version: 22, cache: 'npm' }
       - run: npm ci
       - run: npm run lint
       - run: npm test
       - run: npm run build
 ```
+
+This sample uses current action majors with a supported Node.js project runtime. GitHub's Node 20 removal applies to the runtime used inside JavaScript actions; `setup-node` separately selects the Node.js version used by the project's commands. Check both when updating a workflow. See [GitHub's runner change notice](https://github.blog/changelog/2026-09-23-node-20-is-no-longer-available-in-github-actions/) and the [Node.js release schedule](https://nodejs.org/en/about/previous-releases).
 
 ```yaml
 # .github/workflows/deploy.yml
@@ -119,8 +121,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: docker/build-push-action@v5
+      - uses: actions/checkout@v6
+      - uses: docker/build-push-action@v7
         with:
           push: true
           tags: ghcr.io/myorg/myapp:${{ github.sha }}

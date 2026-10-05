@@ -744,6 +744,45 @@ CASES = [
         },
     },
     {
+        "name": "gate 5 rejects end-of-life Node runtime pins",
+        "gate": "check_freshness.py",
+        "args": [],
+        "plant": {
+            "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.01-github-actions.md": (
+                "# CI Runtime\n\n```yaml\n"
+                "with:\n  node-version: 20\n````\n"
+                "\n```yaml\nRuntime: nodejs18.x\n```\n"
+            ),
+        },
+        "clean": {
+            "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.01-github-actions.md": (
+                "# CI Runtime\n\n```yaml\n"
+                "with:\n  node-version: 22\n````\n"
+                "\n```yaml\nRuntime: nodejs22.x\n```\n"
+                "\nNode.js 20 reached end-of-life in April 2026.\n"
+            ),
+        },
+    },
+    {
+        "name": "gate 5 rejects GitHub Actions releases tied to removed Node 20 runner",
+        "gate": "check_freshness.py",
+        "args": [],
+        "plant": {
+            "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.01-github-actions.md": (
+                "# Actions Runtime\n\n```yaml\n"
+                "steps:\n  - uses: actions/checkout@v4\n"
+                "  - uses: actions/setup-node@v7\n````\n"
+            ),
+        },
+        "clean": {
+            "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.01-github-actions.md": (
+                "# Actions Runtime\n\n```yaml\n"
+                "steps:\n  - uses: actions/checkout@v6\n"
+                "  - uses: actions/setup-node@v7\n````\n"
+            ),
+        },
+    },
+    {
         "name": "gate 11 duplication fires on identical sections across stacks",
         "gate": "check_duplication.py",
         "args": ["--strict"],

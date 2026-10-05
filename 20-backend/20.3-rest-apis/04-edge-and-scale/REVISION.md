@@ -64,11 +64,11 @@ Source: [API Authentication](20.3.4.04-authentication.md)
 
 **Q:** What core constraint explains why the server must verify a claim it didn't witness. governs api authentication?
 
-**A:** "This is Vamsi" arrives over the wire; the proof is either *something only Vamsi has* presented again (a session token the server can look up) or *a cryptographic signature* the server can verify offline (JWT). Every credential scheme is one of these two, or a hybrid.
+**A:** Credentials include server-side sessions, opaque access tokens, signed tokens such as JWTs, API keys and client certificates. Choose based on client type, delegation, revocation needs and operational constraints.
 
 **Q:** What core constraint explains why verification state is the scaling decision. governs api authentication?
 
-**A:** Sessions centralize state (revocation is instant; every request pays the lookup); self-contained tokens distribute it (verification is free; revocation requires lists or short TTLs). Neither dominates — the choice is which failure you can afford.
+**A:** Opaque tokens and sessions usually need a lookup; signed tokens need cryptographic validation and key handling, and may still need state for revocation. Each makes a different state and operations trade-off.
 
 **Q:** What core constraint explains why transport and storage are part of the design, not afterthoughts. governs api authentication?
 

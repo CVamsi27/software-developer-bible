@@ -1,9 +1,9 @@
 # REST APIs — Index
 
-> **Study time:** ≈ 6 h 38 m of reading (25 files, ~16 min average).
+> **Study time:** ≈ 6 h 37 m of reading (25 files, ~16 min average).
 > **25 files — everything HTTP/API, fundamentals through production.** Study in three passes: **I. Fundamentals** (principles → methods → status codes) → **II. Production concerns** (pagination, errors, long-running operations, file uploads, rate limiting, webhooks, caching) → **III. Advanced** (maturity model, gateways, BFF, auth in context).
 >
-> Absorbed the former `20.10-api-design` stack — rate limiting, error handling (RFC 7807), pagination and webhooks live here once, at full depth.
+> Absorbed the former `20.10-api-design` stack — rate limiting, error handling (RFC 9457 Problem Details), pagination and webhooks live here once, at full depth.
 
 [![Files](https://img.shields.io/badge/files-25-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Backend-blue)](../../INDEX.md)
@@ -19,7 +19,7 @@ The 19 content files are organized into 5 categories, each with its own INDEX.
 | ------------------------------------------------------------------------- | ----: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Design & Contract](01-design-and-contract/INDEX.md) | 5 | Principles, design patterns, versioning, maturity model, OpenAPI — how the API is shaped and specified |
 | [HTTP Mechanics](02-http-mechanics/INDEX.md) | 4 | Methods, status codes, CORS, HTTP caching — the transport semantics you can't fake |
-| [Payloads, Errors & Integration](03-payloads-errors-integration/INDEX.md) | 7 | Pagination, error handling (RFC 7807), long-running operations, file uploads, webhooks, serialization & wire formats, transactional email — the contract details clients feel daily |
+| [Payloads, Errors & Integration](03-payloads-errors-integration/INDEX.md) | 7 | Pagination, error handling (RFC 9457), long-running operations, file uploads, webhooks, serialization & wire formats, transactional email — the contract details clients feel daily |
 | [Edge & Scale](04-edge-and-scale/INDEX.md) | 4 | Rate limiting, API gateway, BFF, authentication — surviving traffic; auth pairs with the [auth track](../20.5-security/01-auth/INDEX.md) |
 | [Interview Drills](05-interview-drills/INDEX.md) | 1 | Curated Q&A |
 
@@ -54,7 +54,7 @@ principles → methods    pagination → error design   rate limiting → gatewa
 | II | 09 | [Authentication](04-edge-and-scale/20.3.4.04-authentication.md) | Auth schemes for APIs; pairs with [auth track](../20.5-security/01-auth/INDEX.md) | Essential | Foundational |
 | II | 10 | [Rate Limiting](04-edge-and-scale/20.3.4.01-rate-limiting.md) | Algorithms (token bucket, sliding window), distributed limits | Essential | Foundational |
 | II | 11 | [CORS](02-http-mechanics/20.3.2.03-cors.md) | Preflight, headers, credentials | Essential | Foundational |
-| II | 12 | [Error Handling Design](03-payloads-errors-integration/20.3.3.02-error-handling-design.md) | RFC 7807 problem details, validation errors | Essential | Foundational |
+| II | 12 | [Error Handling Design](03-payloads-errors-integration/20.3.3.02-error-handling-design.md) | RFC 9457 Problem Details, validation errors | Essential | Foundational |
 | II | 13 | [Webhooks](03-payloads-errors-integration/20.3.3.05-webhooks.md) | Delivery, HMAC verification, retry, DLQ, idempotency | Important | Important |
 | II | 14 | [HTTP Caching](02-http-mechanics/20.3.2.04-http-caching.md) | ETags, Cache-Control, revalidation | Essential | Foundational |
 | III | 15 | [REST Maturity Model](01-design-and-contract/20.3.1.04-rest-maturity-model.md) | Richardson L0–L3, HATEOAS | Important | Important |

@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "a7f9bc849c0b167860a8a91e3ca11987527b07378dd9bb4c0930f1d8195d68ee",
+ "corpus_digest": "fedaa11f5b0c599321a313b2d65cf7b6b63279032d9bf34464ac3042c06f366f",
  "totals": {
   "chapters": 671,
   "sections": 48,
   "categories": 13,
-  "read_minutes": 8488
+  "read_minutes": 8427
  },
  "chapters": [
   {
@@ -2173,13 +2173,13 @@
   },
   {
    "p": "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.04-rest-maturity-model.html",
-   "t": "REST Maturity Model & API Versioning",
+   "t": "REST Maturity Model",
    "s": "REST APIs",
    "c": "API",
    "g": [
     "conce"
    ],
-   "m": 8
+   "m": 4
   },
   {
    "p": "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.05-openapi-swagger.html",
@@ -2259,7 +2259,7 @@
    "g": [
     "conce"
    ],
-   "m": 29
+   "m": 30
   },
   {
    "p": "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.02-error-handling-design.html",
@@ -2302,7 +2302,7 @@
     "integrati",
     "webhooks"
    ],
-   "m": 22
+   "m": 23
   },
   {
    "p": "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.06-serialization-and-wire-formats.html",
@@ -2403,7 +2403,7 @@
    "g": [
     "interview-questio"
    ],
-   "m": 25
+   "m": 26
   },
   {
    "p": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-postgresql.html",
@@ -2682,7 +2682,7 @@
    "g": [
     "conce"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "20-backend/20.4-database/05-operations-and-scaling/20.4.5.06-interview-questions.html",
@@ -3908,7 +3908,7 @@
     "scaling",
     "theo"
    ],
-   "m": 13
+   "m": 15
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.html",
@@ -3920,7 +3920,7 @@
     "scaling",
     "theo"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.05-caching-patterns.html",
@@ -3932,7 +3932,7 @@
     "performance",
     "theo"
    ],
-   "m": 12
+   "m": 13
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.html",
@@ -3945,7 +3945,7 @@
     "messaging",
     "theo"
    ],
-   "m": 11
+   "m": 12
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.07-distributed-transactions.html",
@@ -3995,11 +3995,11 @@
     "reliability",
     "theo"
    ],
-   "m": 11
+   "m": 12
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.11-architecture-patterns.html",
-   "t": "Architecture Patterns — Monolith, Microservices, Event-Driven, Hexagonal",
+   "t": "Architecture Patterns and Boundaries",
    "s": "System Design",
    "c": "Architecture",
    "g": [
@@ -4008,7 +4008,7 @@
     "patterns",
     "theo"
    ],
-   "m": 16
+   "m": 12
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.html",
@@ -4020,7 +4020,7 @@
     "scaling",
     "theo"
    ],
-   "m": 11
+   "m": 12
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.13-backpressure-and-flow-control.html",
@@ -4033,7 +4033,7 @@
     "scaling",
     "theo"
    ],
-   "m": 13
+   "m": 14
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.html",
@@ -4046,7 +4046,7 @@
     "distributed-systems",
     "theo"
    ],
-   "m": 13
+   "m": 8
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.15-how-to-approach.html",
@@ -4054,9 +4054,9 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "gui"
+    "guide"
    ],
-   "m": 10
+   "m": 8
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.html",
@@ -4066,7 +4066,7 @@
    "g": [
     "interview-questio"
    ],
-   "m": 28
+   "m": 24
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.17-probabilistic-data-structures.html",
@@ -4079,7 +4079,7 @@
     "distributed-systems",
     "theo"
    ],
-   "m": 28
+   "m": 27
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.18-outbox-and-cdc.html",
@@ -4105,7 +4105,7 @@
     "resilience",
     "theo"
    ],
-   "m": 23
+   "m": 20
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.20-multi-region-deployment.html",
@@ -4118,7 +4118,7 @@
     "global-scale",
     "theo"
    ],
-   "m": 19
+   "m": 17
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.html",
@@ -4130,7 +4130,7 @@
     "networking",
     "theo"
    ],
-   "m": 16
+   "m": 15
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.22-dns-and-name-resolution.html",
@@ -4143,7 +4143,7 @@
     "networking",
     "theo"
    ],
-   "m": 16
+   "m": 14
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.html",
@@ -4157,7 +4157,7 @@
     "theo",
     "tls"
    ],
-   "m": 20
+   "m": 19
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/REVISION.html",
@@ -4168,7 +4168,7 @@
     "retrieval-practi",
     "revision"
    ],
-   "m": 3
+   "m": 4
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.01-url-shortener.html",
@@ -4176,9 +4176,11 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "conce"
+    "concept",
+    "interview",
+    "url-shortener"
    ],
-   "m": 18
+   "m": 8
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.02-whatsapp.html",
@@ -4268,7 +4270,7 @@
    "g": [
     "conce"
    ],
-   "m": 38
+   "m": 28
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.11-live-betting.html",
@@ -4296,9 +4298,11 @@
    "s": "System Design",
    "c": "Architecture",
    "g": [
-    "conce"
+    "concept",
+    "interview",
+    "rate-limiting"
    ],
-   "m": 32
+   "m": 7
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.html",

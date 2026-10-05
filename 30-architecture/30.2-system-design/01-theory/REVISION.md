@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -64,7 +64,7 @@ Source: [Distributed Transactions](30.2.1.07-distributed-transactions.md)
 
 **Q:** What contract does a saga give up compared with atomic commit?
 
-**A:** It permits visible intermediate local commits and recovers with later business actions. It does not provide one globally atomic rollback.
+**A:** It permits visible intermediate local commits and attempts recovery with later business actions. It does not provide one globally atomic rollback; retry limits, terminal failures and reconciliation need explicit design.
 
 ## Rate Limiting
 
@@ -80,7 +80,7 @@ Source: [Consensus & Leader Election](30.2.1.09-consensus-and-leader-election.md
 
 **Q:** Can an isolated old Raft leader safely commit new writes alone?
 
-**A:** No. A leader needs the protocol's quorum and commit rules. Its old role label does not establish authority to commit or authorize an external side effect.
+**A:** No. A leader needs the protocol's quorum and commit rules. Its old role label does not authorize an external side effect; a protected resource may need to reject stale fencing tokens as well.
 
 ## Failure Modes
 
@@ -138,6 +138,10 @@ Source: [Probabilistic Data Structures](30.2.1.17-probabilistic-data-structures.
 
 **A:** A correctly populated filter can rule out membership in its represented set. Concurrent insertion and durable uniqueness still require atomic enforcement; a hint is not a claim.
 
+**Q:** Why should a Count-Min estimate not enforce a hard per-user rate limit by itself?
+
+**A:** Hash collisions can make one key's estimate include counts from other keys. Use an authoritative counter when a false throttle or quota breach is unacceptable.
+
 ## Outbox Pattern & Change Data Capture (CDC)
 
 Source: [Outbox Pattern & Change Data Capture (CDC)](30.2.1.18-outbox-and-cdc.md)
@@ -154,6 +158,10 @@ Source: [Resilience Patterns Deep-Dive: Hedging, Load Shedding, Request Coalesci
 
 **A:** Otherwise hedging expands work beyond the caller's latency budget and can repeat a costly effect. Cancel losers where possible and hedge only safe operations.
 
+**Q:** When is a hedged request likely to help, and what should be measured?
+
+**A:** It can help when the second attempt has an independent chance of finishing sooner. Measure the latency change, duplicate work, cancellation, and shared downstream load; the gain is not guaranteed. See [The Tail at Scale](https://research.google/pubs/the-tail-at-scale/).
+
 ## Multi-Region Deployment
 
 Source: [Multi-Region Deployment](30.2.1.20-multi-region-deployment.md)
@@ -161,6 +169,14 @@ Source: [Multi-Region Deployment](30.2.1.20-multi-region-deployment.md)
 **Q:** What must a failover plan decide before declaring both regions writable?
 
 **A:** The write authority, conflict policy and fencing/reconciliation behavior during partitions. Routing traffic alone does not preserve invariants.
+
+**Q:** Why are RPO and RTO not guaranteed by choosing warm standby or active-active?
+
+**A:** They depend on replication state, recovery decisions, dependencies, capacity, and routing. Measure them in a recovery exercise; [AWS's DR options](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html) describe strategies, not universal recovery times.
+
+**Q:** Why can a region failover lose acknowledged writes even when a replica exists?
+
+**A:** With asynchronous replication, a primary can acknowledge a write before the standby receives it. The recovery point depends on lag and the failure. Check replication state and the application's RPO before promoting; do not assume that a replica is current.
 
 ## TCP & UDP Transport Fundamentals
 
@@ -170,6 +186,18 @@ Source: [TCP & UDP Transport Fundamentals](30.2.1.21-tcp-udp-transport-fundament
 
 **A:** It preserves stream delivery within a connection, but connection failure can leave the caller uncertain about application commit. Framing and operation identity remain application concerns.
 
+**Q:** What does QUIC's 0-RTT mode trade, and why is it unsuitable for some requests?
+
+**A:** It can send application data before the handshake finishes, reducing setup delay on eligible resumed connections. Early data can be replayed, so the operation must be safe under replay; see [RFC 8446](https://www.rfc-editor.org/rfc/rfc8446.html).
+
+**Q:** What should you include when estimating the first HTTPS response on a new connection?
+
+**A:** Count DNS if needed, TCP setup, TLS setup, the request/response path, and server work. State whether resumption or connection reuse applies; [RFC 9293](https://www.rfc-editor.org/rfc/rfc9293.html) specifies TCP, while TLS 1.3 setup is described in [RFC 8446](https://www.rfc-editor.org/rfc/rfc8446.html).
+
+**Q:** Why does HTTP/3 use QUIC over UDP instead of sending HTTP directly over UDP?
+
+**A:** QUIC provides reliable ordered streams, flow control, congestion control, encryption, and connection migration. UDP is its carrier, not the source of those guarantees; see [RFC 9000](https://www.rfc-editor.org/rfc/rfc9000.html) and [RFC 9001](https://www.rfc-editor.org/rfc/rfc9001.html).
+
 ## DNS & Name Resolution
 
 Source: [DNS & Name Resolution](30.2.1.22-dns-and-name-resolution.md)
@@ -178,6 +206,14 @@ Source: [DNS & Name Resolution](30.2.1.22-dns-and-name-resolution.md)
 
 **A:** Resolvers and clients cache answers, connections may be reused, and propagation includes TTL and implementation behavior. Plan overlap instead of assuming an instantaneous cutover.
 
+**Q:** A new DNS record exists, but some clients still report NXDOMAIN. What should you check?
+
+**A:** Check whether a resolver cached a negative answer before the record was created, then inspect the SOA data and resolver cache lifetime. Keep the old path available during a change when possible; see [RFC 2308](https://www.rfc-editor.org/rfc/rfc2308.html).
+
+**Q:** Why can lowering a record's TTL shortly before a migration fail to speed up the cutover?
+
+**A:** Resolvers may already have cached the record using its previous, longer TTL. Lower the TTL ahead of the change, allow old cached answers to expire, and account for open connections and client behavior. See [Kubernetes DNS guidance](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/) for resolver settings in pods.
+
 ## TLS, HTTPS & the Certificate Lifecycle
 
 Source: [TLS, HTTPS & the Certificate Lifecycle](30.2.1.23-tls-https-and-certificates.md)
@@ -185,6 +221,14 @@ Source: [TLS, HTTPS & the Certificate Lifecycle](30.2.1.23-tls-https-and-certifi
 **Q:** What does a valid TLS certificate fail to prove about an application?
 
 **A:** It authenticates the certified endpoint identity under the trust model and supports encrypted transport. It does not prove authorization, business correctness or harmless content.
+
+**Q:** What security properties does TLS 1.3 early data give up compared with normal application data?
+
+**A:** 0-RTT data can be replayed and does not have full forward secrecy. Applications should accept it only when repeated processing is safe; TLS itself does not make a request idempotent. See [RFC 8446, Sections 2.3 and 8](https://www.rfc-editor.org/rfc/rfc8446.html).
+
+**Q:** Why does renewing a certificate require more than obtaining a new certificate file?
+
+**A:** The deployed endpoint must load the renewed certificate and chain, keep the private key protected, and continue validating correctly. Monitor the certificate clients receive after deployment; [ACME (RFC 8555)](https://www.rfc-editor.org/rfc/rfc8555.html) defines an issuance protocol, not your deployment or reload process.
 
 ## Summary
 

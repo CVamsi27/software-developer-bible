@@ -1,26 +1,26 @@
 # System Design — Case Studies
 
-> **Study time:** ≈ 12 h 7 m of reading (32 files, ~23 min average).
-> **32 files** — Applied examples of system design interviews. Read [../01-theory/](../01-theory/INDEX.md) first, then work through these in any order.
+> **Study time:** ≈ 11 h 22 m of reading (32 files, ~21 min average).
+Applied examples of system design interviews. Read [../01-theory/](../01-theory/INDEX.md) first, then choose cases that match your interview goals.
 
 [![Files](https://img.shields.io/badge/files-32-blue)](../../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Pick the case study that matches the JD's domain.** For an Uber-style role, do Uber. For a payment role, do Payment Gateway. For a chat/messaging role, do WhatsApp + Chat System. For a feed/social role, do Twitter + Instagram.
+**Start with the system-design fundamentals, then prioritize cases related to the role.** For example, use the payment and commerce cases for payment products, the messaging cases for chat products, and the feed cases for social products.
 
 ---
 
 ## Topic Categories — by Difficulty Tier
 
-The 27 case studies classify into 4 tiers. Do Tier 1 cold before touching the others.
+The 31 cases are grouped by the kind of reasoning they practice. Use the tiers as a study path, then spend more time on designs related to your target roles.
 
 | Tier | Case studies | Why this tier |
 | ----------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Tier 1 — Foundational** (always asked) | URL Shortener, Rate Limiter, Distributed Counter, Distributed ID Generator | Small enough to fully design in 40 min; exercises IDs, caching, limits, delivery guarantees |
-| **Tier 2 — Core domains** (pick 2-3 by JD) | WhatsApp, Chat System, Twitter Feed, Instagram, Netflix, YouTube, Uber, Lyft, Google Drive, Dropbox | The classic senior-loop prompts; each stresses one hard subsystem (fan-out, geo-indexing, sync, transcoding) |
-| **Tier 3 — Consistency-critical** (fintech/regulated) | Payment Gateway, Ticket Booking, E-Commerce, Live Betting, Hospital Management, Ad Click Aggregator | Idempotency, locking, reconciliation, audit — where correctness beats scale in the rubric |
-| **Tier X — Senior differentiators** | Web Crawler, Workflow Engine, Real-Time Collaboration, Typeahead Autocomplete, Metrics & Monitoring Pipeline, Distributed Job Scheduler, Parking Lot, Distributed Cache, Message Queue, API Gateway | Non-CRUD shapes: crawling politeness, DAG execution, OT/CRDT, prefix indexes, cardinality control, leases & fairness, LLD classics, infra design |
+| **Tier 1 — Foundations** | URL Shortener, Rate Limiter, Distributed Counter, Distributed ID Generator | Practice identifiers, routing, limits, contention and recovery in compact designs. |
+| **Tier 2 — Product systems** | WhatsApp, Chat System, Notification Service, Twitter Feed, Instagram, Netflix, YouTube, Uber, Lyft, Google Drive, Dropbox | Study messaging, feeds, media delivery, dispatch, storage and synchronization. Prioritize the domains that match the role. |
+| **Tier 3 — Correctness-critical workflows** | Payment Gateway, Ticket Booking, E-Commerce, Live Betting, Hospital Management, Ad Click Aggregator | Practice idempotency, concurrency, reconciliation, audit and financial or business invariants. |
+| **Tier 4 — Specialized systems** | Web Crawler, Workflow Engine, Real-Time Collaboration, Typeahead Autocomplete, Metrics & Monitoring Pipeline, Distributed Job Scheduler, Parking Lot, Distributed Cache, Message Queue, API Gateway | Study crawling, workflow state, concurrent editing, indexing, telemetry and infrastructure boundaries. |
 
 ---
 
@@ -28,7 +28,7 @@ The 27 case studies classify into 4 tiers. Do Tier 1 cold before touching the ot
 
 | Domain | Case Studies | When to read |
 | ------------------------- | -------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| **Web (foundational)** | URL Shortener, Rate Limiter, Distributed Counter, Distributed ID Generator | Always — easiest, asked at all levels |
+| **Web (foundational)** | URL Shortener, Rate Limiter, Distributed Counter, Distributed ID Generator | Compact practice for identifiers, traffic policy and contention |
 | **Storage & Sync** | Google Drive, Dropbox | File-storage, collaboration, conflict resolution |
 | **Messaging & Real-Time** | WhatsApp, Chat System, Notification Service, Real-Time Collaboration | Chat apps, notifications, collaborative editing |
 | **Streaming & Media** | Netflix, YouTube | Video platforms, CDN-heavy systems |

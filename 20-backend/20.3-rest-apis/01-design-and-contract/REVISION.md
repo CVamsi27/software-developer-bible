@@ -40,7 +40,7 @@ Source: [REST Principles](20.3.1.02-rest-principles.md)
 
 **Q:** What core constraint explains why statelessness. governs rest principles?
 
-**A:** The server cannot afford to remember each client between requests at scale — so every request must carry everything needed to process it. This single constraint is what makes horizontal scaling and failover trivial (any server can answer any request) and is why auth tokens live in the request, not the session affinity.
+**A:** Each request carries the context needed to understand it without relying on conversational client state retained by the server. This is a REST constraint, not a universal scaling requirement; server-side sessions are possible but introduce a different state-management trade-off.
 
 ## API Versioning
 
@@ -48,15 +48,15 @@ Source: [API Versioning](20.3.1.03-versioning.md)
 
 **Q:** What core constraint explains why clients outlive your release schedule. governs api versioning?
 
-**A:** Mobile apps ship on user devices that update for weeks; browsers cache; third parties integrate and forget. The moment an API has two consumers, you cannot change its semantics in place without breaking someone you can't reach.
+**A:** Clients can upgrade later than the server, so preserve compatibility where practical. Use an opt-in version or migration only when a change cannot remain backward-compatible.
 
 **Q:** What core constraint explains why therefore breaking changes are additive-with-choice governs api versioning?
 
-**A:** new version alongside the old, old deprecated on a published clock. Anything else silently breaks clients.
+**A:** A breaking change may need an opt-in replacement, a published deprecation path and time for clients to migrate. Additive optional changes often do not need a new version.
 
 **Q:** What core constraint explains why the version is part of the contract's identity, not its content. governs api versioning?
 
-**A:** Where it lives (URL, header, media type) trades discoverability against URI purity — the debates are real but secondary; the non-negotiable part is that *old and new coexist and clients opt in explicitly*.
+**A:** Put a version in a URL, header or media type when clients need to opt in to an incompatible contract; compatible additions can evolve without a parallel version.
 
 ## REST Maturity Model & API Versioning
 

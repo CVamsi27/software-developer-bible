@@ -24,9 +24,11 @@ document.addEventListener('DOMContentLoaded', function () {
     item.append(link); list.append(item);
   });
   nav.append(list); outline.append(summary, nav);
+  var titleRow = content.querySelector('.chapter-title-row');
   var player = content.querySelector('.read-aloud');
   var title = content.querySelector('h1');
-  if (player) player.after(outline);
+  if (titleRow) titleRow.after(outline);
+  else if (player) player.after(outline);
   else if (title) title.after(outline);
   else content.prepend(outline);
 });

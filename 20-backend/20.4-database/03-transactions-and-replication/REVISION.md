@@ -28,7 +28,7 @@ Source: [Deadlocks](20.4.3.02-deadlocks.md)
 
 **Q:** How does PostgreSQL detect and break a deadlock condition?
 
-**A:** PostgreSQL runs a deadlock detector after `deadlock_timeout` expires. It searches the lock dependency graph for cycles and aborts the transaction holding the least recent lock with a serialization or deadlock error so the other transaction can proceed.
+**A:** PostgreSQL checks for a deadlock after `deadlock_timeout`, detects a cycle in the lock dependency graph, and aborts one participant with `deadlock_detected` (`40P01`). Which participant is chosen is not an application contract. Retry the whole transaction when safe; this differs from a serialization failure (`40001`).
 
 **Q:** What architectural rule prevents deadlocks across multi-row database updates?
 

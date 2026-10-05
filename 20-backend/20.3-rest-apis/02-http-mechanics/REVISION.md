@@ -32,7 +32,7 @@ Source: [HTTP Status Codes](20.3.2.02-status-codes.md)
 
 **Q:** What core constraint explains why a cache, proxy, or browser sees only the status line. governs http status codes?
 
-**A:** It must decide "retryable? cacheable? redirect?" from three digits — so the classes encode exactly those decisions: 1xx informational, 2xx success, 3xx redirect (cacheable by default!), 4xx client's fault, 5xx server's fault.
+**A:** The first digit gives a broad outcome class: informational, success, redirection, client error or server error. Cacheability and retry behavior depend on the specific status, method, headers and application semantics.
 
 **Q:** What core constraint explains why 4xx vs 5xx is the retry contract. governs http status codes?
 
@@ -72,7 +72,7 @@ Source: [HTTP Caching Strategies](20.3.2.04-http-caching.md)
 
 **Q:** What core constraint explains why correctness demands invalidation paths. governs http caching strategies?
 
-**A:** Any cached representation can be stale after a write; hence explicit no-store for sensitive data, versioned URLs for deploy assets, and revalidation for everything else. Cache design is deciding *what staleness is acceptable where* — a product decision, not a header afterthought.
+**A:** Any cached representation may become stale after a write. Choose freshness, validation and storage directives according to the data and use case; no one combination is required for every response.
 
 ## Summary
 

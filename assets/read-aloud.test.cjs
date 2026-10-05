@@ -36,3 +36,33 @@ test('speech failures return a recoverable error state', () => {
   spoken[0].onerror({error: 'synthesis-failed'}); assert.equal(updates.at(-1), 'error');
   reader.start(['Retry']); assert.equal(updates.at(-1), 'reading');
 });
+test('starting a chunk reports the source element that owns it', () => {
+  const source = {};
+  const spoken = [];
+  const started = [];
+  const synth = { speak(u) { spoken.push(u); }, pause() {}, resume() {}, cancel() {} };
+  const reader = createReader(synth, function (text) { this.text = text; }, () => {}, element => started.push(element));
+  reader.start([{text: 'First paragraph', element: source}]);
+  assert.equal(spoken[0].text, 'First paragraph');
+  spoken[0].onstart();
+  assert.deepEqual(started, [source]);
+});
+test('late starts from a canceled utterance do not activate its source element', () => {
+  const obsoleteSource = {};
+  const spoken = [];
+  const started = [];
+  const synth = { speak(u) { spoken.push(u); }, pause() {}, resume() {}, cancel() {} };
+  const reader = createReader(synth, function (text) { this.text = text; }, () => {}, element => started.push(element));
+  reader.start([{text: 'Old', element: obsoleteSource}]);
+  const obsoleteUtterance = spoken[0];
+  reader.stop();
+  obsoleteUtterance.onstart();
+  assert.deepEqual(started, []);
+});
+test('0.5 speed applies to the next speech chunk', () => {
+  const {reader, spoken} = setup();
+  reader.start(['First', 'Second']);
+  reader.setRate(0.5);
+  spoken[0].onend();
+  assert.equal(spoken[1].rate, 0.5);
+});

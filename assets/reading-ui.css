@@ -31,7 +31,8 @@ html[data-theme="dark"] {
 html[data-theme="light"] { color-scheme: light; }
 .post-header:has(.post-title:empty) { display: none; }
 .post-content { font-size: 1.0625rem; line-height: 1.75; }
-.post-content > h1 { font-size: clamp(1.8rem, 4vw, 2.25rem); margin-top: 1rem; }
+.post-content > h1,
+.post-content > .chapter-title-row > h1 { font-size: clamp(1.8rem, 4vw, 2.25rem); }
 .post-content h2 { font-size: 1.5rem; margin-top: 2.5rem; }
 .post-content h3 { font-size: 1.2rem; }
 .post-content h4 { font-size: 1.05rem; }

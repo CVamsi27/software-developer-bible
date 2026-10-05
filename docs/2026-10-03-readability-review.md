@@ -73,3 +73,9 @@ New official citations were HTTP-probed successfully before updating the baselin
 Read its introduction without assumed jargon knowledge. Identify the concrete problem and explain the first mechanism before showing variants. Trace one example and its failure boundary, then keep each distinct mechanism in one place. Check technical claims and examples independently of layout. Preserve authored revision questions in the separate category companion, repair incoming anchors, regenerate navigation/search metadata and run the verification gates.
 
 This review exposes the remaining editorial work; successful gates alone do not close this queue.
+
+## Fresh-reader follow-up — 5 October
+
+Independent full-prose reads now cover the REST API category and the PostgreSQL/database category; a selected set of system-design theory chapters was also read fully. The exact path coverage, the one database drill that was sampled only, and the open system-design scope are recorded in [the 5 October review ledger](2026-10-05-fresh-reader-review.md). These batches corrected specific protocol, PostgreSQL, queue, CDC and capacity claims; they do not close the corpus-wide review.
+
+A targeted follow-up also corrected the hospital case study's booking-concurrency, tenant-isolation, audit, caching, and failure-recovery examples. See the review ledger for its scope and remaining limits; this does not count as an independent full read of the case study.

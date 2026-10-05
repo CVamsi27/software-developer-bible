@@ -16,11 +16,11 @@ Source: [Connection Pooling](20.4.5.01-connection-pooling.md)
 
 **Q:** Why reuse database connections instead of opening one for every request?
 
-**A:** TLS + auth + backend fork per request cannot survive real traffic — so connections are created once and *reused*, and the pool is the rental contract between app and DB.
+**A:** Opening a new database connection for every request adds setup cost and can overwhelm the server. A pool reuses a bounded set of connections; size it from measured concurrency, query time, and database capacity.
 
 **Q:** Why can a smaller connection pool improve throughput?
 
-**A:** Postgres can actively serve only ~`max_connections` queries; a pool of 200 against 100 cores just queues — context-switching worse than a smaller pool. The formula (cores × 2 + spindles) surprises everyone: *smaller* pools often mean *more* throughput.
+**A:** More connections can increase contention and memory use without increasing useful query throughput. Start with a conservative pool and measure wait time, query latency, and database saturation; there is no universal cores-based formula.
 
 **Q:** How do leaked connections and long transactions affect request latency?
 
@@ -40,7 +40,7 @@ Source: [Database Migrations & Zero-Downtime Schema Changes](20.4.5.02-migration
 
 **Q:** Why can a short ALTER TABLE statement still interrupt application traffic?
 
-**A:** `ALTER TABLE` can take an ACCESS EXCLUSIVE lock even for "add nullable column" — on a hot table that's an outage. Zero-downtime migration is therefore lock-awareness, not just backward compatibility.
+**A:** Even a fast metadata change needs a table lock and may wait behind a long transaction; some defaults or clauses also rewrite the table. Check PostgreSQL version and exact DDL, then test lock acquisition and rewrite behavior on representative data.
 
 ## Soft Delete & Tombstones
 
@@ -48,15 +48,15 @@ Source: [Soft Delete & Tombstones](20.4.5.03-soft-delete-and-tombstones.md)
 
 **Q:** How does soft deletion change the ability to restore data and preserve references?
 
-**A:** FKs cascade or block, audits lose their subject, and "undo" is impossible. Keeping the row and flagging `deleted_at` preserves history, enables restore, and makes deletes as cheap as an UPDATE.
+**A:** A hard delete may be irreversible for the application and may be blocked or cascaded by foreign keys. A `deleted_at` flag can support an undo flow, but every relevant query and unique constraint must account for inactive rows.
 
 **Q:** What must ordinary queries do when a table uses soft deletion?
 
-**A:** Forget one WHERE and ghosts appear in prod. The mitigations (views, default scopes, RLS ) each move the filter somewhere it can't be forgotten — the same "make it structural, not remembered" principle.
+**A:** Queries that should show active rows need a consistent filter, such as `deleted_at IS NULL`. Centralize that rule where useful, and test privileged or administrative queries separately. RLS enforces access policies; it is not automatically a soft-delete filter.
 
 **Q:** Why does a synchronization system need an explicit record of deletion?
 
-**A:** a delete must propagate as *data*, because an absence cannot be replicated. This is why event systems and sync engines speak of tombstones — deletion is information.
+**A:** Replicas cannot infer a deletion from a missing update alone. A deletion event or tombstone tells consumers to remove the older value; its format and retention depend on the system.
 
 ## Backups, PITR & Recovery
 
@@ -88,7 +88,7 @@ Source: [Search Infrastructure at Scale](20.4.5.05-search-infrastructure-at-scal
 
 **Q:** What workload and expected growth should determine whether search needs a separate engine?
 
-**A:** Postgres full-text/trgm to millions of rows, dedicated engines past that, pgvector when embeddings join the party. Migrations between them are expensive — pick by expected 2-year scale.
+**A:** Compare search features, query latency, update rate, operational cost, and measured load. PostgreSQL text search or extensions may fit some workloads; a separate engine may help when requirements or workload justify it. Row count alone is not a reliable cutoff.
 
 ## Summary
 

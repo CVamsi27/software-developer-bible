@@ -48,7 +48,7 @@ Source: [MVCC (Multi-Version Concurrency Control)](20.4.1.03-mvcc.md)
 
 **Q:** How can multiple row versions let a reporting query run alongside writes?
 
-**A:** If consistency requires locks, a long reporting query freezes every write. The escape: keep *multiple versions* of each row so every transaction sees a consistent snapshot without waiting.
+**A:** MVCC lets ordinary reads use row versions without taking row locks that conflict with writers. Snapshot timing depends on isolation: Read Committed takes a new snapshot per statement, while Repeatable Read and Serializable use a transaction snapshot. Some table locks and explicit locking reads can still block.
 
 **Q:** Why must PostgreSQL delay reclaiming some deleted or updated row versions?
 
@@ -64,11 +64,11 @@ Source: [SQL vs NoSQL — Choosing the Right Database](20.4.1.04-nosql-vs-sql.md
 
 **Q:** What becomes harder when relational data is split across database shards?
 
-**A:** Scale-out sharding breaks cross-shard joins and transactions. NoSQL families each abandon a different part of the contract to gain horizontal scale: key-value stores abandon structure, document stores abandon joins, wide-column stores abandon ad-hoc query.
+**A:** Distribution changes the cost of cross-node queries and transactions, but products vary. Some relational databases distribute operations, and some non-relational systems provide transactions or richer queries; compare the exact product guarantees.
 
 **Q:** How should query patterns influence the choice of a relational, document, or key-value store?
 
-**A:** Lookup-by-key at massive scale → KV. Self-contained aggregates (user profiles, product docs) → documents. Deep relational integrity and analytical queries → SQL. The data's *shape and access pattern* picks the store; picking the store first is the mistake.
+**A:** Start with access patterns and consistency needs: key lookup may fit a key-value store, self-contained records may fit a document store, and relational integrity or varied joins may fit a relational database. Verify the product's actual capabilities.
 
 **Q:** Which PostgreSQL features support workloads that might otherwise need a specialized store?
 
@@ -96,15 +96,15 @@ Source: [PostgreSQL Row-Level Security (RLS)](20.4.1.06-row-level-security.md)
 
 **Q:** How can row-level security protect against a missing tenant filter in application SQL?
 
-**A:** If isolation depends on every developer remembering `WHERE tenant_id = $1` in every query forever, the guarantee is only as strong as the most tired engineer. RLS moves the filter into the engine, applied to *every* access regardless of source.
+**A:** RLS applies policies to eligible table operations, reducing dependence on every query repeating a tenant filter. Superusers and `BYPASSRLS` roles bypass policies; table owners normally bypass them unless forced, and `TRUNCATE` is outside RLS.
 
 **Q:** How do row-level security policies obtain the identity used to filter rows?
 
-**A:** — app sets `SET LOCAL app.user_id` per request; policies reference it. The app can no longer forget, but it also can't opt out — which is exactly the point.
+**A:** The application can set transaction-scoped request values for policies to read, but the application still controls those values. Database credentials, transaction handling and role membership remain in the trust boundary.
 
 **Q:** What makes row-level security harder to debug and maintain?
 
-**A:** policies apply silently, superusers bypass them, and debugging "why no rows?" means reasoning about policy expressions. RLS trades developer discipline for engine guarantees — the right trade for multi-tenancy, a wrong one for simple single-tenant apps.
+**A:** Policy behavior is implicit in queries; debugging "why no rows?" requires reading the policy expressions and role memberships. Permissive policies combine with `OR`, so overlapping role membership can broaden access.
 
 ## Summary
 

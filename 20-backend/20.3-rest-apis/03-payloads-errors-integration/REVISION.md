@@ -24,7 +24,7 @@ Source: [API Pagination](20.3.3.01-pagination.md)
 
 **Q:** What core constraint explains why the client needs total-knowledge signals governs api pagination?
 
-**A:** — total count or a `next` link — otherwise "am I done?" is unanswerable. That's why pagination metadata isn't decoration.
+**A:** A `hasMore` flag or next cursor can tell the client whether to request another page. Return an exact total only when the product needs it and the query cost and consistency trade-off are acceptable.
 
 ## API Error Handling & Response Design
 
@@ -36,7 +36,7 @@ Source: [API Error Handling & Response Design](20.3.3.02-error-handling-design.m
 
 **Q:** What core constraint explains why errors must be predictable shapes. governs api error handling & response design?
 
-**A:** A client cannot handle what it can't parse; one error envelope across all endpoints (RFC 7807/9457 style) is what makes centralized handling possible.
+**A:** A client cannot handle what it cannot parse; a consistent error envelope makes centralized handling possible. RFC 9457 is the current Problem Details specification and obsoletes RFC 7807.
 
 **Q:** What core constraint explains why the error budget is part of the contract. governs api error handling & response design?
 

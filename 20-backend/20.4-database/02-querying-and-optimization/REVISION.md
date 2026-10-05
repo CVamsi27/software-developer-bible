@@ -24,7 +24,7 @@ Source: [Database Indexes](20.4.2.01-indexes.md)
 
 **Q:** Why does column order matter in a composite B-tree index?
 
-**A:** (leftmost prefix rule) because a B-tree is sorted lexicographically — an index on `(a, b)` serves `WHERE a` and `WHERE a AND b` but not `WHERE b` alone. This one fact explains most "why isn't my index used" mysteries.
+**A:** A B-tree on `(a, b)` is usually most useful when the query constrains `a`; a query on `b` alone often cannot use it efficiently. PostgreSQL may use skip scans for some data distributions, so check the plan and statistics.
 
 ## SQL Joins
 

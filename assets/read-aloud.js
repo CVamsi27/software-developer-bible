@@ -32,7 +32,9 @@
       utterance.lang = 'en-US';
       active = true;
       utterance.onstart = function () {
-        if (token === generation) onChunkStart(typeof chunk === 'string' ? null : chunk.element, index);
+        if (token === generation) {
+          onChunkStart(typeof chunk === 'string' ? null : chunk.element, index, typeof chunk === 'string' ? null : chunk.range);
+        }
       };
       utterance.onend = function () {
         if (token !== generation) return;
@@ -71,10 +73,58 @@
         return NodeFilter.FILTER_ACCEPT;
       }
     });
-    var groups = [], previous = null, text = '';
+    var groups = [], previous = null, nodes = [];
+    function normalizeNodes(sourceNodes) {
+      var rawCharacters = [], positions = [];
+      sourceNodes.forEach(function (node) {
+        var value = node.textContent;
+        for (var i = 0; i < value.length; i += 1) {
+          rawCharacters.push(value[i]);
+          positions.push({node: node, offset: i});
+        }
+      });
+      var raw = rawCharacters.join('');
+      var normalizedCharacters = [], locations = [], inWhitespace = false;
+      for (var j = 0; j < raw.length; j += 1) {
+        if (/\s/.test(raw[j])) {
+          if (normalizedCharacters.length && !inWhitespace) { normalizedCharacters.push(' '); locations.push(positions[j]); }
+          inWhitespace = true;
+        } else {
+          normalizedCharacters.push(raw[j]); locations.push(positions[j]); inWhitespace = false;
+        }
+      }
+      if (inWhitespace) { normalizedCharacters.pop(); locations.pop(); }
+      var text = normalizedCharacters.join('');
+      return {text: text, locations: locations};
+    }
+    function splitWithOffsets(value) {
+      var parts = [], start = 0;
+      while (value.length - start > 240) {
+        var cut = value.lastIndexOf(' ', start + 240);
+        if (cut < start + 1) cut = start + 240;
+        var end = cut;
+        while (end > start && /\s/.test(value[end - 1])) end -= 1;
+        if (end > start) parts.push({text: value.slice(start, end), start: start, end: end});
+        start = cut;
+        while (start < value.length && /\s/.test(value[start])) start += 1;
+      }
+      if (start < value.length) parts.push({text: value.slice(start), start: start, end: value.length});
+      return parts;
+    }
+    function rangeForPart(document, locations, part) {
+      var first = locations[part.start], last = locations[part.end - 1];
+      if (!first || !last || !document.createRange) return null;
+      var range = document.createRange();
+      range.setStart(first.node, first.offset);
+      range.setEnd(last.node, last.offset + 1);
+      return range;
+    }
     function save() {
-      if (text.trim()) {
-        splitText(text).forEach(function (part) { groups.push({text: part, element: previous}); });
+      if (nodes.length) {
+        var normalized = normalizeNodes(nodes);
+        splitWithOffsets(normalized.text).forEach(function (part) {
+          groups.push({text: part.text, element: previous, range: rangeForPart(content.ownerDocument, normalized.locations, part)});
+        });
       }
     }
     while (walker.nextNode()) {
@@ -83,9 +133,9 @@
       if (!block || !content.contains(block)) continue;
       if (previous !== block) {
         save();
-        text = ''; previous = block;
+        nodes = []; previous = block;
       }
-      text += node.textContent;
+      nodes.push(node);
     }
     save();
     return groups;
@@ -114,17 +164,31 @@
       if (activeElement) activeElement.removeAttribute('data-read-aloud-active');
       activeElement = null;
     }
-    function follow(element) {
+    function follow(element, _index, range) {
       if (!element || !content.contains(element)) { clearActive(); return; }
       if (activeElement !== element) clearActive();
       activeElement = element;
       element.setAttribute('data-read-aloud-active', 'true');
-      var rect = element.getBoundingClientRect();
       var topMargin = 120;
       var bottomMargin = Math.min(120, root.innerHeight * 0.15);
-      if (rect.top < topMargin || rect.bottom > root.innerHeight - bottomMargin) {
-        var reduced = root.matchMedia && root.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        element.scrollIntoView({block: 'start', behavior: reduced ? 'auto' : 'smooth'});
+      var reduced = root.matchMedia && root.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var behavior = reduced ? 'auto' : 'smooth';
+      var rects = range && range.getClientRects ? Array.from(range.getClientRects()).filter(function (rect) { return rect.height > 0; }) : [];
+      if (rects.length) {
+        var first = rects[0], last = rects[rects.length - 1];
+        var visibleTop = topMargin, visibleBottom = root.innerHeight - bottomMargin;
+        var delta = 0;
+        if (last.bottom - first.top > visibleBottom - visibleTop) {
+          var spokenCenter = (first.top + last.bottom) / 2;
+          delta = spokenCenter - (visibleTop + visibleBottom) / 2;
+        } else if (first.top < visibleTop) delta = first.top - visibleTop;
+        else if (last.bottom > visibleBottom) delta = last.bottom - visibleBottom;
+        if (delta) root.scrollBy({top: delta, behavior: behavior});
+      } else {
+        var rect = element.getBoundingClientRect();
+        if (rect.top < topMargin || rect.bottom > root.innerHeight - bottomMargin) {
+          element.scrollIntoView({block: 'start', behavior: behavior});
+        }
       }
     }
     var reader = createReader(root.speechSynthesis, root.SpeechSynthesisUtterance, function (state) {

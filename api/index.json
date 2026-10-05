@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "8a107f699d721c9906382ac5f90b7774266bb3955eaee51714cc075b4d5f9600",
+ "corpus_digest": "37934d6e3f080d33e59e9b42aceb6744cd80a1d38e9527f16ad662764cddf174",
  "totals": {
   "chapters": 671,
   "sections": 48,
   "categories": 13,
-  "read_minutes": 8427
+  "read_minutes": 8428
  },
  "chapters": [
   {
@@ -5281,7 +5281,7 @@
     "slsa",
     "supply-chain"
    ],
-   "m": 15
+   "m": 16
   },
   {
    "p": "40-platform/40.3-ci-cd/02-build-and-deploy/REVISION.html",

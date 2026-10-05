@@ -161,9 +161,16 @@ EOL_GITHUB_ACTIONS = {
     'actions/cache': {'v2': date(2022, 8, 15), 'v3': date(2024, 8, 15)},
     'actions/upload-artifact': {'v2': date(2022, 8, 15), 'v3': date(2024, 8, 15), 'v4': date(2026, 9, 23), 'v5': date(2026, 9, 23)},
     'actions/upload-pages-artifact': {'v3': date(2026, 9, 23), 'v4': date(2026, 9, 23)},
+    'actions/deploy-pages': {'v4': date(2026, 9, 23)},
     'docker/build-push-action': {'v5': date(2026, 9, 23), 'v6': date(2026, 9, 23)},
+    'docker/login-action': {'v3': date(2026, 9, 23)},
+    'docker/metadata-action': {'v5': date(2026, 9, 23)},
     'aws-actions/configure-aws-credentials': {'v4': date(2026, 9, 23), 'v5': date(2026, 9, 23)},
     'codecov/codecov-action': {'v3': date(2024, 8, 1), 'v4': date(2026, 9, 23), 'v5': date(2026, 9, 23)},
+    'github/codeql-action': {'v2': date(2024, 8, 15), 'v3': date(2026, 9, 23)},
+    'googleapis/release-please-action': {'v4': date(2026, 9, 23)},
+    'slsa-framework/slsa-github-generator': {'v1': date(2026, 9, 23)},
+    'treosh/lighthouse-ci-action': {'v11': date(2026, 9, 23)},
 }
 USES_PIN = re.compile(r'\buses:\s*([\w.-]+/[\w.-]+)@v(\d+)\b')
 

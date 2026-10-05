@@ -783,6 +783,29 @@ CASES = [
         },
     },
     {
+        "name": "gate 5 rejects more action majors pinned to removed Node 20 runner",
+        "gate": "check_freshness.py",
+        "args": [],
+        "plant": {
+            "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.01-github-actions.md": (
+                "# Actions Runtime\n\n```yaml\n"
+                "steps:\n"
+                "  - uses: actions/deploy-pages@v4\n"
+                "  - uses: docker/login-action@v3\n"
+                "  - uses: googleapis/release-please-action@v4\n````\n"
+            ),
+        },
+        "clean": {
+            "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.01-github-actions.md": (
+                "# Actions Runtime\n\n```yaml\n"
+                "steps:\n"
+                "  - uses: actions/deploy-pages@v5\n"
+                "  - uses: docker/login-action@v4\n"
+                "  - uses: googleapis/release-please-action@v5\n````\n"
+            ),
+        },
+    },
+    {
         "name": "gate 11 duplication fires on identical sections across stacks",
         "gate": "check_duplication.py",
         "args": ["--strict"],

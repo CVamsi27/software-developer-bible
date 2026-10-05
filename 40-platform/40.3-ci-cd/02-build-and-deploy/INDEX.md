@@ -1,6 +1,6 @@
 # Build & Deploy
 
-> **Study time:** ≈ 1 h 5 m of reading (5 files, ~13 min average).
+> **Study time:** ≈ 1 h 6 m of reading (5 files, ~13 min average).
 > **5 files.** The runtime of every pipeline: building and shipping Docker images, the pipeline shapes (stages, gates, strategies) that take a commit to production safely, artifact registries with digest-based promotion, and supply-chain security for the pipeline itself.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#file-index)
@@ -19,10 +19,10 @@ CI platforms differ in syntax but not in substance: check out, build image, push
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Docker Build & Deploy](40.3.2.01-docker-build-deploy.md) | Build pipelines, layer caching in CI, registries (ECR/GCR/DockerHub), tagging strategy, deployment targets | Important | Important | 16 min |
+| 01 | [Docker Build & Deploy](40.3.2.01-docker-build-deploy.md) | Build pipelines, layer caching in CI, registries (ECR/GCR/DockerHub), tagging strategy, deployment targets | Important | Important | 17 min |
 | 02 | [Pipeline Patterns](40.3.2.02-pipeline-patterns.md) | End-to-end CI/CD pipelines, stage design, deployment strategies (rolling, blue-green, canary, feature flags) | Important | Important | 14 min |
 | 03 | [Artifact Registries & Release Promotion](40.3.2.03-artifact-registries-release-promotion.md) | GHCR/ECR/Artifactory/NPM, immutable tags + digests, build-once promotion dev->staging->prod, changelog automation (release-please/changesets), retention, pull-through caches | Important | Important | 17 min |
-| 04 | [Pipeline Supply-Chain Security & SLSA](40.3.2.04-pipeline-supply-chain-security-slsa.md) | Pipeline as attack surface, SolarWinds/Codecov/xz lessons, SLSA levels, SHA pinning + Dependabot, OIDC federation, provenance attestations, workflow branch protection | Important | Important | 15 min |
+| 04 | [Pipeline Supply-Chain Security & SLSA](40.3.2.04-pipeline-supply-chain-security-slsa.md) | Pipeline as attack surface, SolarWinds/Codecov/xz lessons, SLSA levels, SHA pinning + Dependabot, OIDC federation, provenance attestations, workflow branch protection | Important | Important | 16 min |
 
 ---
 

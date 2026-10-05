@@ -1,6 +1,6 @@
 # Senior Full Stack Interview Bible — Index
 
-> **Study time:** ≈ 140 h 28 m of reading (671 files, ~13 min average).
+> **Study time:** ≈ 140 h 29 m of reading (671 files, ~13 min average).
 > **Start here: [ROADMAP.md](ROADMAP.md) — the canonical study path with phases, checkpoints, and weekly schedule.**
 >
 > **Pick your lane first.** The bible is organized into **2 interview lanes** (`80-lanes-abroad-full-stack`, `81-lanes-indian-sde-faang`) that draw from **7 shared study stacks** — plus the [00-strategy](00-strategy/INDEX.md) **strategy folder** everyone starts with. Each lane has its own preparation strategy; the stacks are the technical material both lanes share.
@@ -147,8 +147,8 @@ After you pick your lane (above), the two lanes share all 7 study stacks. They d
 
 ```text
 00-strategy → Communication → Resume Tips → STAR Method → HR Questions
-10-frontend → JavaScript → TypeScript → React → Next.js → Forms → Animation → HTML/CSS/PWA → Mobile (optional)
-20-backend → Node.js → NestJS → REST APIs → Database → Auth & Security track → Microservices & Distributed Patterns → GraphQL → Caching → AI Engineering → Java
+10-frontend → JavaScript → TypeScript → React → Next.js → Forms → HTML/CSS fundamentals → PWA essentials (Animation and Mobile only when a target role needs them)
+20-backend → Node.js → NestJS → REST APIs → Database → Auth & Security track → Microservices & Distributed Patterns → GraphQL → Caching → AI Engineering (Java deferred unless a target role requires it)
 30-architecture → Design Patterns (Foundations → Creational → Structural → Behavioral → Architectural → Interview Prep) → System Design (00-theory: CAP, sharding, caching, queues, ... → 10-case-studies: URL shortener, Uber, Netflix, ...)
 40-platform → Docker → Kubernetes → CI/CD → Observability → Build Tools → Git Advanced → Serverless & Edge → Monorepo → Twelve-Factor → CDN & Edge → Reverse Proxy → IaC & Terraform
 50-quality → Testing → Accessibility → Performance Monitoring → Production Engineering

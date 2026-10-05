@@ -73,12 +73,12 @@ The platform stack is organized into 4 conceptual layers. Read in this order.
 ## Suggested Study Order
 
 ### Path A — Full-stack senior, 1-week prep
-1. **Docker TL;DR + Dockerfile + Compose** (1.5 hrs) — must know
-2. **Kubernetes TL;DR + Pods + Services** (2 hrs) — for K8s JDs
-3. **CI/CD TL;DR + GitHub Actions** (1.5 hrs) — must know
-4. **Observability TL;DR + OTel** (1.5 hrs) — must know
-5. **Git Advanced TL;DR** (1 hr) — must know
-6. **IaC TL;DR + plan/apply + state** (45 min) — for platform/DevOps-flavored JDs
+1. **Docker core: Dockerfile + Compose** (1.5 hrs) — must know
+2. **Kubernetes core: Pods + Services** (2 hrs) — for K8s JDs
+3. **CI/CD core: GitHub Actions** (1.5 hrs) — must know
+4. **Observability core: signals + OpenTelemetry** (1.5 hrs) — must know
+5. **Git Advanced essentials** (1 hr) — must know
+6. **IaC essentials: plan, apply + state** (45 min) — for platform/DevOps-flavored JDs
 7. Skim: Build Tools, Serverless, Monorepo, 12-Factor
 
 ### Path B — DevOps-focused, deep dive (2-3 weeks)

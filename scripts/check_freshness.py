@@ -173,6 +173,8 @@ EOL_GITHUB_ACTIONS = {
     'treosh/lighthouse-ci-action': {'v11': date(2026, 9, 23)},
 }
 USES_PIN = re.compile(r'\buses:\s*([\w.-]+/[\w.-]+)@v(\d+)\b')
+MUTABLE_ACTION_REF = re.compile(
+    r'\buses:\s*[\w.-]+/[\w.-]+@(master|main|develop|dev|trunk)\b', re.I)
 
 # --- Obsolete Compose version: key (2026-09-19) -----------------------------
 # Compose V2 ignores the top-level version field and warns "the attribute
@@ -255,6 +257,8 @@ RULES = [
      'GitHub Action release uses a removed runner or is retired upstream '
      '(data table EOL_GITHUB_ACTIONS, compared against today); bump to a '
      'Node 24-compatible release'),
+    ('MUTABLE-GITHUB-ACTION-REF',
+     'GitHub Action is pinned to a moving branch; use a reviewed full commit SHA'),
     ('OBSOLETE-COMPOSE-VERSION',
      'top-level version: key in a Compose file (Compose V2 ignores it and '
      'warns "the attribute version is obsolete"); delete the line — the '
@@ -483,6 +487,8 @@ def check(p: Path, rel: str):
                 hits.append((lineno, 'EOL-GITHUB-ACTION',
                              f'{action}@{vmajor} runner unsupported since '
                              f'{eol.isoformat()} — {line.strip()[:60]}'))
+        if in_code and lang.lower() in ('yaml', 'yml') and MUTABLE_ACTION_REF.search(line):
+            hits.append((lineno, 'MUTABLE-GITHUB-ACTION-REF', line.strip()[:100]))
         if COMPOSE_VERSION_KEY.match(line):
             hits.append((lineno, 'OBSOLETE-COMPOSE-VERSION',
                          f'obsolete top-level version key — {line.strip()[:70]}'))

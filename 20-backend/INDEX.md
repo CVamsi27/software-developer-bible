@@ -77,15 +77,16 @@ The backend stack is organized into 5 conceptual layers. Read in this order.
 ## Suggested Study Order
 
 ### Path A — Full-stack senior, 4-week prep (most lanes)
-1. Node.js TL;DR + Event Loop (1 hr)
-2. NestJS TL;DR + Modules + DI (1.5 hrs)
+For the current Germany/remote TypeScript full-stack plan, keep Java deferred unless a specific target role requires it.
+
+1. Node.js core + Event Loop (1 hr)
+2. NestJS Modules + Dependency Injection (1.5 hrs)
 3. REST APIs (3 hrs) — must know
 4. Database (4-6 hrs) — must know
 5. Auth (3 hrs) — must know
 6. Caching (45 min)
 7. Microservices + Message Brokers (skim, 2.5 hrs)
 8. GraphQL + AI Engineering — as needed
-9. Java — full (only if role is Java-based, e.g. many EU product companies / the SDE-FAANG lane)
 
 ### Path B — Backend specialist, deep dive (3-4 weeks)
 1. Node.js: full (4-5 hrs)
@@ -96,7 +97,6 @@ The backend stack is organized into 5 conceptual layers. Read in this order.
 6. Microservices: full (8-10 hrs)
 7. Message Brokers: full (2 hrs) — Kafka ops + event patterns
 8. GraphQL, Caching, AI Engineering — as needed
-9. Java: full (only if target role is Java-based)
 
 ### Path C — Interview tomorrow
 - Review each chapter’s definition, example and summary; focus on the topics listed above

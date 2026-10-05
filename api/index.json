@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "37934d6e3f080d33e59e9b42aceb6744cd80a1d38e9527f16ad662764cddf174",
+ "corpus_digest": "710bdc39fc08c2ed2547477bdd631293ba27d13d954b55d51106ab31ce8b6b5b",
  "totals": {
   "chapters": 671,
   "sections": 48,
   "categories": 13,
-  "read_minutes": 8428
+  "read_minutes": 8429
  },
  "chapters": [
   {
@@ -4692,7 +4692,7 @@
    "g": [
     "conce"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.04-data-retention-archival.html",

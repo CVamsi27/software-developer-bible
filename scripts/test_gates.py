@@ -806,6 +806,28 @@ CASES = [
         },
     },
     {
+        "name": "gate 5 rejects GitHub Actions pinned to moving branch refs",
+        "gate": "check_freshness.py",
+        "args": [],
+        "plant": {
+            "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.01-github-actions.md": (
+                "# Action Pins\n\n```yaml\n"
+                "steps:\n"
+                "  - uses: aquasecurity/trivy-action@master\n"
+                "  - uses: graphql-hive/graphql-inspector@main\n"
+                "````\n"
+            ),
+        },
+        "clean": {
+            "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.01-github-actions.md": (
+                "# Action Pins\n\n```yaml\n"
+                "steps:\n"
+                "  - uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25\n"
+                "````\n"
+            ),
+        },
+    },
+    {
         "name": "gate 11 duplication fires on identical sections across stacks",
         "gate": "check_duplication.py",
         "args": ["--strict"],

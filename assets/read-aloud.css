@@ -45,7 +45,7 @@
 .read-aloud [data-pause] {
   border-color: var(--theme-link, #2563eb);
   background: var(--theme-link, #2563eb);
-  color: var(--theme-bg, #fff);
+  color: #ffffff !important;
 }
 .read-aloud select {
   max-width: 76px;

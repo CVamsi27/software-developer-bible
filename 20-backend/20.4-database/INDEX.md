@@ -1,6 +1,6 @@
 # Database — Index
 
-> **Study time:** ≈ 5 h 21 m of reading (29 files, ~11 min average).
+> **Study time:** ≈ 5 h 23 m of reading (29 files, ~11 min average).
 > **29 files** — Database fundamentals from PostgreSQL internals to indexing, transactions, MVCC, joins, locking, connection pooling, Prisma (plus the ORM/query-builder landscape), execution plans, SQL vs NoSQL, zero-downtime migrations, soft delete & tombstones, backups/PITR recovery, search infrastructure at scale, window functions, JSONB, replication, row-level security, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-29-blue)](../../INDEX.md)
@@ -45,10 +45,10 @@ How Postgres actually works. Every backend interview starts here. Category INDEX
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [PostgreSQL](01-postgresql-foundations/20.4.1.01-postgresql.md) | Architecture, WAL, vacuum, configuration, extensions, autovacuum | Essential | 23 min | 23 min |
-| 02 | [Normalization](01-postgresql-foundations/20.4.1.02-normalization.md) | 1NF, 2NF, 3NF, BCNF, denormalization trade-offs, when to denormalize | Important | 20 min | 19 min |
+| 02 | [Normalization](01-postgresql-foundations/20.4.1.02-normalization.md) | 1NF, 2NF, 3NF, BCNF, denormalization trade-offs, when to denormalize | Important | 20 min | 20 min |
 | 03 | [MVCC](01-postgresql-foundations/20.4.1.03-mvcc.md) | Multiversion concurrency control, visibility rules, tuple versions, vacuum | Important | 17 min | 17 min |
 | 04 | [SQL vs NoSQL](01-postgresql-foundations/20.4.1.04-nosql-vs-sql.md) | Workload fit, CAP, consistency models, polyglot persistence, when to use what | Essential | 9 min | 9 min |
-| 05 | [PostgreSQL Performance](01-postgresql-foundations/20.4.1.05-postgresql-performance.md) | Connection tuning, memory tuning, query optimization, VACUUM, partitioning, monitoring queries | Essential | 12 min | 12 min |
+| 05 | [PostgreSQL Performance](01-postgresql-foundations/20.4.1.05-postgresql-performance.md) | Connection tuning, memory tuning, query optimization, VACUUM, partitioning, monitoring queries | Essential | 12 min | 13 min |
 
 ---
 

@@ -52,7 +52,7 @@ Source: [Compensation guide](80.05-comp-eu-benchmarking.md)
 Source: [Relocation playbook](80.06-visa-relocation-playbook.md)
 
 **Q:** Why does earning above a remembered “EU Blue Card minimum” not prove eligibility for a particular offer?
-**A:** Thresholds and qualifying routes are country- and date-specific. Qualifications, role, contract, employer requirements, application procedure, and dependant permissions can differ. UK and Swiss work routes are outside the EU Blue Card system. Verify the current exact route.
+**A:** Thresholds and qualifying routes are country- and date-specific. Qualifications, role, contract, employer requirements, application procedure, and dependent permissions can differ. UK and Swiss work routes are outside the EU Blue Card system. Verify the current exact route.
 
 ## Employer research
 

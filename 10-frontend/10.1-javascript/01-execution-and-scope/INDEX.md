@@ -1,6 +1,6 @@
 # Execution & Scope — JavaScript
 
-> **Study time:** ≈ 38 min of reading (7 files, ~5 min average).
+> **Study time:** ≈ 40 min of reading (7 files, ~6 min average).
 > **7 files.** How JavaScript actually runs: execution contexts, the call stack, hoisting, scope, lexical environments, and closures — the foundation every other JS concept builds on.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](#files)
@@ -15,10 +15,10 @@
 | --   : | ------ | -------- | --- | --- | ----------: |
 | 01 | [Execution Context](10.1.1.01-execution-context.md) | GEC vs FEC, creation/execution phases, scope chain, hoisting internals | Essential | Foundational | 5 min |
 | 02 | [Scope](10.1.1.02-scope.md) | Global, function, block scope, scope chain, lexical environment | Essential | Foundational | 5 min |
-| 03 | [Call Stack](10.1.1.03-call-stack.md) | LIFO, stack frames, stack overflow, max call stack size, debugging | Essential | Foundational | 5 min |
+| 03 | [Call Stack](10.1.1.03-call-stack.md) | LIFO, stack frames, stack overflow, max call stack size, debugging | Essential | Foundational | 6 min |
 | 04 | [Hoisting](10.1.1.04-hoisting.md) | `var`/`let`/`const` hoisting, temporal dead zone, function hoisting | Essential | Foundational | 7 min |
 | 05 | [Lexical Environment](10.1.1.05-lexical-environment.md) | Environment records, outer reference, scope chain internals | Essential | Foundational | 8 min |
-| 06 | [Closures](10.1.1.06-closures.md) | Lexical scoping, closure lifecycle, module pattern, memory implications | Essential | Foundational | 5 min |
+| 06 | [Closures](10.1.1.06-closures.md) | Lexical scoping, closure lifecycle, module pattern, memory implications | Essential | Foundational | 6 min |
 
 ---
 

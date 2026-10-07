@@ -1,6 +1,6 @@
 # Docker — Index
 
-> **Study time:** ≈ 2 h 21 m of reading (11 files, ~13 min average).
+> **Study time:** ≈ 2 h 23 m of reading (11 files, ~13 min average).
 > **11 files** — Docker fundamentals from images and containers to volumes, networks, Compose, multi-stage builds, runtime internals (namespaces/cgroups), supply chain security (signing/SBOM), rootless & sandboxed runtimes, production patterns, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
@@ -28,7 +28,7 @@ What Docker is and how it runs.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Images & Containers](40.1.01-images-containers.md) | Dockerfile, layers, CMD vs ENTRYPOINT, container lifecycle, image registry | Important | Important | 12 min |
+| 01 | [Images & Containers](40.1.01-images-containers.md) | Dockerfile, layers, CMD vs ENTRYPOINT, container lifecycle, image registry | Important | Important | 13 min |
 | 02 | [Volumes & Networks](40.1.02-volumes-networks.md) | Bind mounts, volumes, tmpfs, bridge/host/overlay networks, port mapping | Important | Important | 14 min |
 
 ---
@@ -40,7 +40,7 @@ Production workflows.
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 03 | [Compose](40.1.03-compose.md) | Docker Compose, multi-container apps, service configuration, profiles | Important | Important | 19 min |
-| 04 | [Multi-Stage Builds](40.1.04-multi-stage-builds.md) | Build stages, dependency caching, image size optimization | Important | Important | 12 min |
+| 04 | [Multi-Stage Builds](40.1.04-multi-stage-builds.md) | Build stages, dependency caching, image size optimization | Important | Important | 13 min |
 
 ---
 

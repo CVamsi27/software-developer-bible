@@ -92,50 +92,50 @@ PAGE = """<!DOCTYPE html>
 
   @media (prefers-color-scheme: dark) {{
     :root:not([data-theme="light"]) {{
-      --theme-bg: #0b1114;
-      --theme-text: #cbd5e1;
-      --theme-text-muted: #94a3b8;
+      --theme-bg: #111820;
+      --theme-text: #d5deea;
+      --theme-text-muted: #a4b3c5;
       --theme-heading: #f8fafc;
-      --theme-border: #1e293b;
-      --theme-border-subtle: #151e28;
+      --theme-border: #2c3b4d;
+      --theme-border-subtle: #1b2835;
       --theme-link: #60a5fa;
       --theme-link-hover: #93c5fd;
       --theme-accent: #3b82f6;
-      --card-bg: #10171d;
-      --input-bg: #0e151b;
-      --chip-bg: #151e26;
-      --chip-hover: #22303c;
-      --chip-text: #cbd5e1;
+      --card-bg: #18222d;
+      --input-bg: #151f2b;
+      --chip-bg: #1e2b39;
+      --chip-hover: #2c3e50;
+      --chip-text: #e2e8f0;
       --chip-active-bg: #3b82f6;
       --chip-active-text: #ffffff;
       --row-hover: rgba(59, 130, 246, 0.08);
       --row-selected: rgba(59, 130, 246, 0.22);
-      --kbd-bg: #151e26;
-      --kbd-border: #334155;
+      --kbd-bg: #1e2b39;
+      --kbd-border: #2c3b4d;
     }}
   }}
 
   html[data-theme="dark"] {{
-    --theme-bg: #0b1114;
-    --theme-text: #cbd5e1;
-    --theme-text-muted: #94a3b8;
+    --theme-bg: #111820;
+    --theme-text: #d5deea;
+    --theme-text-muted: #a4b3c5;
     --theme-heading: #f8fafc;
-    --theme-border: #1e293b;
-    --theme-border-subtle: #151e28;
+    --theme-border: #2c3b4d;
+    --theme-border-subtle: #1b2835;
     --theme-link: #60a5fa;
     --theme-link-hover: #93c5fd;
     --theme-accent: #3b82f6;
-    --card-bg: #10171d;
-    --input-bg: #0e151b;
-    --chip-bg: #151e26;
-    --chip-hover: #22303c;
-    --chip-text: #cbd5e1;
+    --card-bg: #18222d;
+    --input-bg: #151f2b;
+    --chip-bg: #1e2b39;
+    --chip-hover: #2c3e50;
+    --chip-text: #e2e8f0;
     --chip-active-bg: #3b82f6;
     --chip-active-text: #ffffff;
     --row-hover: rgba(59, 130, 246, 0.08);
     --row-selected: rgba(59, 130, 246, 0.22);
-    --kbd-bg: #151e26;
-    --kbd-border: #334155;
+    --kbd-bg: #1e2b39;
+    --kbd-border: #2c3b4d;
   }}
 
   ::selection {{

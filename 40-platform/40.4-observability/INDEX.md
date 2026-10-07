@@ -1,6 +1,6 @@
 # Observability — Index
 
-> **Study time:** ≈ 3 h 10 m of reading (15 files, ~13 min average).
+> **Study time:** ≈ 3 h 14 m of reading (15 files, ~13 min average).
 > **15 files** — Observability fundamentals from logging and monitoring to distributed tracing, OpenTelemetry, continuous profiling, eBPF, error tracking, health checks, SLI/SLO/SLA, alerting, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-15-blue)](../../INDEX.md)
@@ -46,8 +46,8 @@ Logs, metrics, traces — the foundation of observability.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 04 | [Error Tracking](02-errors-and-health/40.4.2.01-error-tracking.md) | Error aggregation (Sentry), source maps, alerting, release tracking | Important | 20 min | 20 min |
-| 05 | [Health Checks](02-errors-and-health/40.4.2.02-health-checks.md) | Liveness/readiness probes, health endpoints, dependency checks | Important | 19 min | 19 min |
+| 04 | [Error Tracking](02-errors-and-health/40.4.2.01-error-tracking.md) | Error aggregation (Sentry), source maps, alerting, release tracking | Important | 20 min | 21 min |
+| 05 | [Health Checks](02-errors-and-health/40.4.2.02-health-checks.md) | Liveness/readiness probes, health endpoints, dependency checks | Important | 19 min | 20 min |
 
 ---
 
@@ -74,8 +74,8 @@ The vendor-neutral standard plus the advanced signals.
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 08 | [OpenTelemetry](04-advanced-telemetry/40.4.4.01-opentelemetry.md) | Vendor-neutral traces + metrics + logs, OTLP, W3C Trace Context, head/tail sampling, baggage, collector pipeline | Important | 24 min | 24 min |
-| 09 | [Continuous Profiling](04-advanced-telemetry/40.4.4.02-continuous-profiling.md) | Always-on CPU/heap/allocation sampling, Pyroscope/Parca, flamegraph diffing, span profiles | Important | 13 min | 13 min |
-| 10 | [eBPF Observability](04-advanced-telemetry/40.4.4.03-ebpf-observability.md) | Kernel programs + verifier + maps, Hubble/Cilium flows, Pixie auto-telemetry, Falco/Tetragon overlap | Important | 14 min | 13 min |
+| 09 | [Continuous Profiling](04-advanced-telemetry/40.4.4.02-continuous-profiling.md) | Always-on CPU/heap/allocation sampling, Pyroscope/Parca, flamegraph diffing, span profiles | Important | 13 min | 14 min |
+| 10 | [eBPF Observability](04-advanced-telemetry/40.4.4.03-ebpf-observability.md) | Kernel programs + verifier + maps, Hubble/Cilium flows, Pixie auto-telemetry, Falco/Tetragon overlap | Important | 14 min | 14 min |
 
 ---
 

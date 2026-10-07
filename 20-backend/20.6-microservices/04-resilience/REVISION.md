@@ -1,4 +1,4 @@
-<!-- section: Microservices | category: Reference | tags: revisi | role-priority: essential | general-importance: important -->
+<!-- section: Microservices | category: Reference | tags: revision | role-priority: essential | general-importance: important -->
 [![Section](https://img.shields.io/badge/section-Microservices-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
@@ -14,33 +14,33 @@ Explain each mechanism before checking the answer. Revisit its source for the ex
 
 Source: [Circuit Breaker](20.6.4.01-circuit-breaker.md)
 
-**Q:** What core constraint explains why retries against a dying service kill it faster. governs circuit breaker?
+**Q:** How can retries amplify an overloaded dependency's failure?
 
-**A:** Every retry is load; a struggling dependency under retry-storm goes from slow to dead — the breaker's open state exists to *remove load* from something that needs to recover.
+**A:** Additional calls consume already constrained connections or CPU and can delay recovery. Bound retries, use backoff and reject calls through a breaker when the failure policy calls for it.
 
-**Q:** What core constraint explains why three states are the whole model governs circuit breaker?
+**Q:** How do closed, open and half-open states govern circuit-breaker calls?
 
-**A:** closed (normal, failures counted), open (fail fast — no network call at all), half-open (probe with limited traffic: recovered? close; not? stay open). The state machine is a control loop on the dependency's health, not on your request.
+**A:** Closed admits calls and tracks outcomes; open rejects protected calls; half-open admits limited recovery probes. Define how success and failure move the breaker between these states.
 
-**Q:** What core constraint explains why the configuration is a capacity decision governs circuit breaker?
+**Q:** Why should breaker thresholds and probe limits reflect dependency capacity?
 
-**A:** thresholds too sensitive = flapping (opening on normal variance); too lax = collapse before opening. Combined with fallbacks (serve cached/degraded), the breaker converts dependency failure from outage to degradation.
+**A:** Thresholds trade false rejection against continued overload. Bound probe concurrency and account for call volume and timeout behavior; a breaker alone does not cap resources consumed by in-flight calls.
 
 ## Bulkhead Pattern
 
 Source: [Bulkhead Pattern](20.6.4.02-bulkhead-pattern.md)
 
-**Q:** What core constraint explains why one shared pool couples every workload. governs bulkhead pattern?
+**Q:** How does a shared resource pool couple otherwise separate workloads?
 
-**A:** A report query exhausting the DB pool takes down login — unrelated features share fate through the resource. The bulkhead partitions the pool (per-dependency, per-priority): one compartment flooding doesn't sink the ship.
+**A:** A slow workload can consume the pool used by unrelated requests. Separate limits prevent it from exhausting the partitioned resource, though shared downstream infrastructure can still fail.
 
-**Q:** What core constraint explains why the partition is a capacity allocation governs bulkhead pattern?
+**Q:** What capacity trade-off does dividing a pool introduce?
 
-**A:** — and therefore a product decision: checkout gets more threads than analytics. Sizing is queueing math (Little's law), not vibes; undersized bulkheads fail fast (good) but loudly.
+**A:** Reserved capacity isolates workloads but can leave one pool idle while another rejects work. Choose budgets from criticality, measured demand and the cost of unused capacity.
 
-**Q:** What core constraint explains why it composes with breakers (→ 20.6.4.01) governs bulkhead pattern?
+**Q:** How do bulkheads and circuit breakers address different failure paths?
 
-**A:** the breaker stops calling a failing dependency; the bulkhead bounds the damage while it still works. Both exist because the alternative — global shared resources — makes every failure everyone's failure.
+**A:** A bulkhead limits resource sharing; a breaker suppresses calls to a failing dependency. Both need deadlines and bounded queues, and neither makes fallback or retry automatically safe.
 
 ## Summary
 

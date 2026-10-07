@@ -35,7 +35,8 @@ async function installReaderAssets(page) {
     assert.equal(await page.locator('[aria-label="Reading speed"] option[value="0.5"]').textContent(), '0.5×');
     assert.equal(await page.evaluate(() => {
       const chunks = window.SDBReadAloud.extractChapter(document.querySelector('.post-content'));
-      return chunks[0].element.tagName === 'H1' && chunks[1].element.tagName === 'P' && chunks[0].element !== chunks[1].element;
+      const firstProse = chunks.find(chunk => chunk.element.tagName === 'P');
+      return chunks[0].element.tagName === 'H1' && firstProse && firstProse.element !== chunks[0].element && firstProse.text.trim().length > 0;
     }), true);
     assert.equal(await page.locator('[data-pause]').isVisible(), false);
     assert.equal(await page.locator('[data-stop]').isVisible(), false);
@@ -81,7 +82,7 @@ async function installReaderAssets(page) {
       primaryBackground: getComputedStyle(el.querySelector('[data-read]')).backgroundColor,
       primaryColor: getComputedStyle(el.querySelector('[data-read]')).color,
       controlScheme: getComputedStyle(el.querySelector('select')).colorScheme
-    })), {controlBackground: 'rgb(24, 34, 45)', controlColor: 'rgb(213, 222, 234)', primaryBackground: 'rgb(96, 165, 250)', primaryColor: 'rgb(17, 24, 32)', controlScheme: 'dark'});
+    })), {controlBackground: 'rgb(24, 34, 45)', controlColor: 'rgb(213, 222, 234)', primaryBackground: 'rgb(37, 99, 235)', primaryColor: 'rgb(255, 255, 255)', controlScheme: 'dark'});
     await page.evaluate(() => document.documentElement.setAttribute('data-theme', 'light'));
     assert.deepEqual(await page.locator('.read-aloud').evaluate(el => ({
       controlBackground: getComputedStyle(el.querySelector('select')).backgroundColor,

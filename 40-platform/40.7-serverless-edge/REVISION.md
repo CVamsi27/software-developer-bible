@@ -1,4 +1,4 @@
-<!-- section: Serverless & Edge | category: Reference | tags: revision, practi | role-priority: important | general-importance: specialized -->
+<!-- section: Serverless & Edge | category: Reference | tags: revision, practice | role-priority: important | general-importance: specialized -->
 [![Section](https://img.shields.io/badge/section-Serverless%20%26%20Edge-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)
@@ -66,6 +66,18 @@ Source: [Durable Execution: Temporal & Inngest](40.7.07-durable-execution-tempor
 
 **A:** Deterministic workflow logic can replay against recorded history. External effects belong in supported activities/steps and still need idempotency across retries.
 
+**Q:** A payment Activity charged the provider, but the Worker crashed before reporting completion. What should its next attempt do?
+
+**A:** Reuse the same receiver-enforced operation key or query the provider's authoritative result before creating another charge. Durable workflow history cannot atomically commit an external provider effect; a timeout is an uncertain outcome, not proof of failure.
+
+**Q:** Does a timed approval wait mean the order was approved when the wait returns?
+
+**A:** Check whether the condition became true or the timeout expired. A timeout must enter an explicit expiry path. Signals arrive asynchronously, and a status query should report the actual workflow phase rather than infer completion from the presence of approval.
+
+**Q:** Must TypeScript Temporal Workflows move every call to `Date.now()` or `Math.random()` into an Activity?
+
+**A:** No. The TypeScript Workflow sandbox replaces them with replay-safe implementations. External I/O and unsupported APIs remain separate concerns. Apply the rules for the actual SDK, and replay recorded histories against changed code.
+
 ## Fly.io Deployment Patterns
 
 Source: [Fly.io Deployment Patterns](40.7.09-flyio-deployment.md)
@@ -73,6 +85,10 @@ Source: [Fly.io Deployment Patterns](40.7.09-flyio-deployment.md)
 **Q:** Why should a stateful Fly application not rely on process memory after scaling or deploy?
 
 **A:** Machines are replaceable and requests can reach different instances. Store durable/shared state deliberately and account for per-machine storage placement.
+
+**Q:** Does Fly Proxy autostart create more Machines when all configured Machines are busy?
+
+**A:** It starts existing stopped or suspended Machines. Provisioning additional Machines is a separate capacity action. A minimum running count keeps capacity warm in the primary region, so check other regions and failure recovery separately.
 
 ## Vite SPA on Cloudflare Workers
 

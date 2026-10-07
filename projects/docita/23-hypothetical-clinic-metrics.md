@@ -9,6 +9,8 @@
 
 A workload model describes how people use a system and translates that usage into operations, load and measurable outcomes. It helps choose tests and explain capacity decisions before operational records are available.
 
+> **Textbook Definition:** A workload model translates assumed user activity into operation rates, resource demands and test scenarios. Its estimates remain hypotheses until supported by comparable measurements.
+
 **This entire scenario is hypothetical.** Assume exactly **25 active clinics** as the minimum-size example for “25+ clinics.” Usage, timing samples and proposed targets below are invented for study. They are not Docita customer counts, production results, historical improvements or evidence for a resume. Current-code observations are identified separately and linked to their case studies.
 
 The problem to solve is concrete: morning bookings, clinical records, billing and asynchronous documents share the database. Average monthly volume can look small while a synchronized morning burst overwhelms one job lane or exposes a booking race.

@@ -167,6 +167,7 @@ FLOW_CLEAN = (
     .replace('category-Interview-orange', 'category-Backend-orange')
     + '\n# Database Transactions\n\n'
     '## Definition\n\nA transaction groups changes into one commit decision.\n\n'
+    '> **Textbook Definition:** A transaction is a unit of database work with a shared commit or abort outcome.\n\n'
     '## First Principles\n\nPartial failure requires a shared commit boundary.\n\n'
     '## Code Examples\n\n```sql\nBEGIN;\nCOMMIT;\n```\n\n'
     '## Summary\n\nChoose isolation for the invariants you need to protect.\n\n'
@@ -423,6 +424,132 @@ def _dup_pair_sandbox(pairs, reword=True):
 
 CASES = [
     {
+        "name": 'gate 5 rejects replay called on a live Temporal Worker instance',
+        "gate": "check_freshness.py",
+        "args": [],
+        "plant": {
+            '40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md': (
+                '# Replay\n'
+                '\n'
+                '```typescript\n'
+                "import { Worker } from '@temporalio/worker';\n"
+                'const worker = await Worker.create({ workflowsPath });\n'
+                'await worker.runReplayHistories(histories);\n'
+                '```\n'
+            ),
+        },
+        "clean": {
+            '40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md': (
+                '# Replay\n'
+                '\n'
+                '```typescript\n'
+                "import { Worker } from '@temporalio/worker';\n"
+                'await Worker.runReplayHistory({ workflowsPath }, history);\n'
+                'for await (const result of Worker.runReplayHistories({ workflowsPath }, histories)) { console.log(result); }\n'
+                '```\n'
+            ),
+        },
+    },
+    {
+        "name": 'gate 5 rejects static ScrollTrigger.kill',
+        "gate": "check_freshness.py",
+        "args": [],
+        "plant": {
+            '10-frontend/10.6-animation/10.6.03-gsap.md': (
+                '# API example\n'
+                '\n'
+                '```typescript\n'
+                'ScrollTrigger.kill();\n'
+                '```\n'
+            ),
+        },
+        "clean": {
+            '10-frontend/10.6-animation/10.6.03-gsap.md': (
+                '# API example\n'
+                '\n'
+                '```typescript\n'
+                'trigger.kill();\n'
+                '```\n'
+            ),
+        },
+    },
+    {
+        "name": 'gate 5 rejects CSS easing strings in GSAP',
+        "gate": "check_freshness.py",
+        "args": [],
+        "plant": {
+            '10-frontend/10.6-animation/10.6.03-gsap.md': (
+                '# API example\n'
+                '\n'
+                '```typescript\n'
+                "gsap.to('.box', { ease: 'cubic-bezier(0.4, 0, 0.2, 1)' });\n"
+                '```\n'
+            ),
+        },
+        "clean": {
+            '10-frontend/10.6-animation/10.6.03-gsap.md': (
+                '# API example\n'
+                '\n'
+                '```typescript\n'
+                "gsap.to('.box', { ease: 'power2.out' });\n"
+                '// CSS cubic-bezier is valid in CSS, not a GSAP ease string.\n'
+                '```\n'
+            ),
+        },
+    },
+    {
+        "name": 'gate 5 rejects obsolete built-in PubSub iterator',
+        "gate": "check_freshness.py",
+        "args": [],
+        "plant": {
+            '20-backend/20.7-graphql/02-execution/20.7.2.02-apollo-server.md': (
+                '# API example\n'
+                '\n'
+                '```typescript\n'
+                "import { PubSub } from 'graphql-subscriptions';\n"
+                'const pubsub = new PubSub();\n'
+                "pubsub.asyncIterator('EVENT');\n"
+                '```\n'
+            ),
+        },
+        "clean": {
+            '20-backend/20.7-graphql/02-execution/20.7.2.02-apollo-server.md': (
+                '# API example\n'
+                '\n'
+                '```typescript\n'
+                "import { PubSub } from 'graphql-subscriptions';\n"
+                'const pubsub = new PubSub();\n'
+                "pubsub.asyncIterableIterator('EVENT');\n"
+                'const redis = new RedisPubSub();\n'
+                "redis.asyncIterator('EVENT');\n"
+                '```\n'
+            ),
+        },
+    },
+    {
+        "name": 'gate 5 rejects fabricated graphql-ws import',
+        "gate": "check_freshness.py",
+        "args": [],
+        "plant": {
+            '20-backend/20.7-graphql/02-execution/20.7.2.02-apollo-server.md': (
+                '# API example\n'
+                '\n'
+                '```typescript\n'
+                "import { useServer } from 'ws.use/server';\n"
+                '```\n'
+            ),
+        },
+        "clean": {
+            '20-backend/20.7-graphql/02-execution/20.7.2.02-apollo-server.md': (
+                '# API example\n'
+                '\n'
+                '```typescript\n'
+                "import { useServer } from 'graphql-ws/use/ws';\n"
+                '```\n'
+            ),
+        },
+    },
+    {
         'name': 'gate 6b checks fence grammar in operational Markdown too',
         'gate': 'check_template.py', 'args': [],
         'plant': {'p.md': FLOW_CLEAN, 'docs/example.md': '# Example\n\n```text\nUnclosed sample\n'},
@@ -461,6 +588,18 @@ CASES = [
         'args': [],
         'plant': {'p.md': FLOW_CLEAN.replace('## See Also', '## Revision Questions\n\n**Q:** What is a transaction?\n**A:** One commit boundary.\n\n## See Also', 1)},
         'clean': {'p.md': FLOW_CLEAN},
+    },
+    {
+        "name": "gate 2 rejects a table attached to a horizontal rule",
+        "gate": "check_alignment.py", "args": [],
+        "plant": {"p.md": "| A | B |\n| --- | --- |\n| 1 | 2 |\n---\n"},
+        "clean": {"p.md": "| A | B |\n| --- | --- |\n| 1 | 2 |\n\n---\n"},
+    },
+    {
+        "name": "gate 2 rejects a table attached to a heading",
+        "gate": "check_alignment.py", "args": [],
+        "plant": {"p.md": "### Cases\n| A | B |\n| --- | --- |\n| 1 | 2 |\n"},
+        "clean": {"p.md": "### Cases\n\n| A | B |\n| --- | --- |\n| 1 | 2 |\n\n````markdown\n### Example\n| A | B |\n| --- | --- |\n| 1 | 2 |\n````\n"},
     },
     {
         "name": "gate 2 alignment fires on unspaced tables",
@@ -610,6 +749,20 @@ CASES = [
         "args": [],
         "plant": {"p.md": "x\n"},
         "clean_real": [REAL_CHAPTER],
+    },
+    {
+        "name": "gate 6b metadata detects a clipped tag while preserving complete tags",
+        "gate": "check_template.py",
+        "args": [],
+        "plant": {"interview-questions.md": BANK_CLEAN.replace('tags: interview-questions -->', 'tags: interview-question -->')},
+        "clean": {"interview-questions.md": BANK_CLEAN},
+    },
+    {
+        "name": "gate 6b requires a formal definition in prose rather than a code example",
+        "gate": "check_template.py",
+        "args": [],
+        "plant": {"p.md": FLOW_CLEAN.replace('> **Textbook Definition:** A transaction is a unit of database work with a shared commit or abort outcome.', '```text\n> **Textbook Definition:** A transaction is a unit of database work with a shared commit or abort outcome.\n```')},
+        "clean": {"p.md": FLOW_CLEAN},
     },
     {
         "name": "gate 6b question-claim fires through a nested-fence example",

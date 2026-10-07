@@ -1,7 +1,7 @@
-<!-- section: JavaScript | category: Reference | tags: revision, retrieval-practi | role-priority: essential | general-importance: foundational -->
+<!-- section: JavaScript | category: Reference | tags: revision, retrieval-practice | role-priority: essential | general-importance: foundational -->
 [![Section](https://img.shields.io/badge/section-JavaScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
-[![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
+[![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
 [![Read time](https://img.shields.io/badge/read--time-9_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
@@ -50,15 +50,15 @@ Source: [Map, Set, WeakMap, WeakSet](10.1.4.02-map-set-weakmap-weakset.md)
 **Definition**
 
 1. **Q:** What do `Map`, `Set`, `WeakMap` and `WeakSet` share, and where do they split?
-   **A:** All four are ES2015 hash-based collections with average O(1) membership. The split is ownership: `Map`/`Set` hold strong references and expose `size` plus iteration, while the weak pair hold their keys weakly and refuse to be counted or walked at all.
+   **A:** They provide keyed entries or unique membership, with different ownership and observation rules. `Map`/`Set` retain entries and expose size and iteration; weak collections do not retain eligible keys/members by themselves and cannot be enumerated. ECMAScript requires average sublinear access for Map/Set, rather than mandating a hash table or worst-case O(1).
 
 2. **Q:** Why does using an object as a plain object's key break identity?
-   **A:** Property keys are coerced to strings, so every distinct object collapses onto `"[object Object]"` and overwrites its peers before the lookup ever runs.
+   **A:** Object property keys become strings or symbols. Ordinary objects with default string conversion commonly collapse to `"[object Object]"`, so they cannot reliably retain key identity. `Map` compares object keys by identity.
 
 **How It Works**
 
 3. **Q:** What actually decides when a `WeakMap` entry goes away?
-   **A:** Reachability from outside the collection. Once no root can reach the key object, the engine discards that entry along with the key — no `delete()` needed, because the collection never kept the key alive.
+   **A:** The collection does not keep an eligible key alive by itself. When no other strong path retains that key, its entry becomes eligible for collection; deletion timing is not observable or guaranteed.
 
 4. **Q:** What does "insertion order" buy you in a `Map` that a plain object cannot promise?
    **A:** Every iterator visits entries in first-add order and `size` is maintained in O(1), so `.keys().next()` reliably yields the oldest key — exactly what the LRU example depends on.
@@ -209,7 +209,7 @@ Source: [Memory Leaks](10.1.4.06-memory-leaks.md)
 **Definition**
 
 2. **Q:** What is the practical test for "is this a leak?"
-   **A:** Ask who still reaches it and whether that holder should. Reachable-and-wanted is a cache, reachable-and-unwanted is a leak, and unreachable is already gone — only the middle case needs fixing.
+   **A:** Find the retaining path and ask whether it should still exist. Reachable obsolete data suggests a leak; unreachable data is eligible for collection, which may happen later. A wanted cache still needs a deliberate size/lifetime policy.
 
 **How It Works**
 
@@ -235,7 +235,7 @@ Source: [Memory Leaks](10.1.4.06-memory-leaks.md)
 **Common Mistakes**
 
 8. **Q:** Why is a plain `Map` the wrong container for object-keyed side data?
-   **A:** The map holds a strong reference to every key, so each object stays alive for the map's whole lifetime regardless of outside reachability. `WeakMap` hands that decision back to the collector.
+   **A:** A reachable `Map` strongly retains its entries until they are removed or the map becomes unreachable. Use `WeakMap` when metadata should follow a key's external lifetime; use an ordinary bounded map when enumeration or explicit retention is required.
 
 **Best Practices**
 
@@ -275,7 +275,7 @@ Source: [Garbage Collection](10.1.4.07-garbage-collection.md)
 **Best Practices**
 
 7. **Q:** When do you reach for `WeakRef` instead of `WeakMap`?
-   **A:** When you want a non-owning handle to a single object rather than side data attached to a key — with the explicit contract that `deref()` can return `undefined` at any time once nothing else holds the target.
+   **A:** When you need a non-owning handle rather than metadata associated with a key. `deref()` may return `undefined` after collection; if it returns an object, that target remains retained through the current job. Do not use weak references for correctness-critical ownership.
 
 **Performance Considerations**
 
@@ -342,10 +342,10 @@ Source: [Equality & Type Coercion](10.1.4.09-equality-and-coercion.md)
 **How It Works**
 
 4. **Q:** In what order does an object become a primitive?
-   **A:** `Symbol.toPrimitive(hint)` if defined, then `valueOf()` for a number/default hint, then `toString()` — and if none of them yields a primitive the engine throws rather than guessing.
+   **A:** A supplied `Symbol.toPrimitive` handles the hint and must return a primitive. Otherwise ordinary number-hint conversion tries `valueOf` then `toString`; string-hint conversion reverses them. Dates customize default-hint behavior. Failed conversion throws.
 
 5. **Q:** How does `+` decide between concatenation and addition?
-   **A:** It applies the default ToPrimitive hint to both sides and concatenates when either result is a string; otherwise it converts both to numbers — which is why `1 + '2'` is `"12"` while `'6' - 1` is `5`.
+   **A:** It converts operands to primitives and concatenates if either result is a string. Otherwise it applies numeric conversion: two Numbers add, two BigInts add, and mixing Number with BigInt throws. Thus `1 + '2'` is `"12"`, but `1n + 1` is an error.
 
 **Code Examples**
 

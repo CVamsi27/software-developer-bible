@@ -1,7 +1,7 @@
-<!-- section: Architecture | category: Reference | tags: revision, retrieval-practi | role-priority: essential | general-importance: important -->
+<!-- section: Architecture | category: Reference | tags: revision, retrieval-practice | role-priority: essential | general-importance: important -->
 [![Section](https://img.shields.io/badge/section-Architecture-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
-[![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
+[![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
 [![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
@@ -33,6 +33,10 @@ Source: [Idempotency Keys](30.3.2.03-idempotency-keys.md)
 **Q:** Which writes belong in one transaction for a replayable local mutation?
 
 **A:** The operation claim, business mutation and stored response. External effects need receiver idempotency or reconciliation beyond that transaction.
+
+**Q:** Can deleting an idempotency record re-enable a previously completed effect?
+
+**A:** Yes, if the caller repeats the key after the service has forgotten it and the underlying operation lacks another uniqueness constraint. Define the supported retry horizon, retain records through it, and use durable business identifiers where duplicate effects must be prevented beyond that window.
 
 ## Feature Flags & Kill Switches
 

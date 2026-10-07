@@ -1,6 +1,6 @@
 # Accessibility — Index
 
-> **Study time:** ≈ 1 h 53 m of reading (10 files, ~11 min average).
+> **Study time:** ≈ 1 h 54 m of reading (10 files, ~11 min average).
 > **10 files** — Web accessibility from WCAG and ARIA to keyboard navigation, accessible charts, design systems, testing, color & contrast, forms, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-10-blue)](../../INDEX.md)
@@ -56,7 +56,7 @@ The foundation — semantic HTML is 90% of accessibility.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 03 | [Keyboard Navigation](50.2.03-keyboard-navigation.md) | Tab order, focus management, focus traps, skip links, keyboard shortcuts, visible focus | Essential | Foundational | 17 min |
+| 03 | [Keyboard Navigation](50.2.03-keyboard-navigation.md) | Tab order, focus management, focus traps, skip links, keyboard shortcuts, visible focus | Essential | Foundational | 18 min |
 | 05 | [Forms & Labels](50.2.05-forms-and-labels.md) | Label association, validation, fieldset/legend, autocomplete, error handling, accessible error messages | Essential | Foundational | 15 min |
 
 ---

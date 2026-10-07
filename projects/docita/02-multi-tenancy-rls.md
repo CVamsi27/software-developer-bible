@@ -13,6 +13,8 @@ This case study describes source inspected on 2 October 2026. Repository configu
 
 A tenant is a customer organization, such as a clinic, that shares the application with others. Tenant isolation prevents one tenant’s operation from reading or changing another tenant’s protected state. Authentication establishes identity; application authorization decides whether that identity may perform the operation. Row-level security (RLS) lets database policies restrict which rows the executing database role may access, using context supplied for its session or transaction.
 
+> **Textbook Definition:** Tenant isolation constrains each operation to the data and capabilities authorized for a particular customer organization. Database row-level security is one enforcement mechanism, whose effective behavior depends on policies, roles and transaction context.
+
 ## First Principles
 
 An identifier supplied in a URL is untrusted. A pooled connection is not permanently associated with one request. Async context carries values but does not establish their authority. Therefore identity, access decisions and database scope must stay connected to the operation at every boundary.

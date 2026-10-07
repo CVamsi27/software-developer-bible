@@ -15,7 +15,17 @@ function contrast(a, b) {
   try {
     const page = await browser.newPage({colorScheme: 'dark', reducedMotion: 'reduce'});
     await page.goto('http://127.0.0.1:4337/10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.05-lexical-environment.html');
+    for (const width of [1280, 1920]) {
+      await page.setViewportSize({width, height: 900});
+      const sizes = await page.evaluate(() => {
+        const article = document.querySelector('.post-content');
+        const paragraph = Array.from(article.children).find(n => n.tagName === 'P' && !n.querySelector('img'));
+        return {article: article.clientWidth, paragraph: paragraph.getBoundingClientRect().width};
+      });
+      assert(Math.abs(sizes.article - sizes.paragraph) <= 1, `paragraph fills article at ${width}px: ${JSON.stringify(sizes)}`);
+    }
     const fence = page.locator('div.highlighter-rouge').first();
+    assert.equal(await fence.locator('.copy-code-btn').count(), 1, 'one Copy control per code block');
     assert.equal(await fence.locator('div.highlight').evaluate(n => getComputedStyle(n).backgroundColor), await fence.evaluate(n => getComputedStyle(n).backgroundColor), 'nested code surface follows the dark palette');
     const outline = page.locator('.chapter-outline');
     assert.equal(await outline.count(), 1, 'chapters offer an outline');
@@ -36,6 +46,7 @@ function contrast(a, b) {
         const body = document.body, code = document.querySelector('#contrast-fixture .highlight');
         return [
           [rgb(body, 'color'), rgb(body, 'backgroundColor'), 'body'],
+          ...Array.from(document.querySelectorAll('.read-aloud [data-read], .read-aloud [data-pause]')).map(n => [rgb(n, 'color'), rgb(n, 'backgroundColor'), 'read-aloud action']),
           ...Array.from(code.querySelectorAll('span')).map(n => [rgb(n, 'color'), rgb(code, 'backgroundColor'), n.className]),
           [rgb(document.querySelector('.site-title'), 'color'), rgb(body, 'backgroundColor'), 'site title']
         ];
@@ -47,20 +58,39 @@ function contrast(a, b) {
     }
     await page.setViewportSize({width: 1280, height: 900});
     await page.reload();
+    await page.emulateMedia({colorScheme: 'light'});
+    await page.getByRole('button', {name: 'Switch to dark mode', exact: true}).waitFor({timeout: 2000});
+    assert.equal(await page.getByRole('button', {name: 'Switch to dark mode', exact: true}).count(), 1, 'toggle follows a changed system preference');
+    await page.emulateMedia({colorScheme: 'dark'});
+    await page.getByRole('button', {name: 'Switch to light mode', exact: true}).waitFor({timeout: 2000});
     const toggle = page.getByRole('button', {name: 'Switch to light mode', exact: true});
     await toggle.click();
     assert.equal(await page.locator('html').getAttribute('data-theme'), 'light');
     await page.reload();
     assert.equal(await page.locator('html').getAttribute('data-theme'), 'light');
+    const deniedStoragePage = await browser.newPage({colorScheme: 'dark'});
+    await deniedStoragePage.addInitScript(() => {
+      Storage.prototype.getItem = () => { throw new DOMException('Storage unavailable', 'SecurityError'); };
+      Storage.prototype.setItem = () => { throw new DOMException('Storage unavailable', 'SecurityError'); };
+    });
+    await deniedStoragePage.goto(page.url());
+    await deniedStoragePage.getByRole('button', {name: 'Switch to light mode', exact: true}).click();
+    assert.equal(await deniedStoragePage.locator('html').getAttribute('data-theme'), 'light', 'theme works when preference storage is unavailable');
+    await deniedStoragePage.close();
     if (process.env.STUDY_UI_SCREENSHOT) {
-      await page.getByRole('button', {name: 'Switch to dark mode', exact: true}).click();
-      await page.evaluate(() => window.scrollTo(0, 0));
-      await page.setViewportSize({width: 375, height: 800});
-      await page.screenshot({path: process.env.STUDY_UI_SCREENSHOT + '-mobile.png'});
-      await page.setViewportSize({width: 1280, height: 900});
-      await page.screenshot({path: process.env.STUDY_UI_SCREENSHOT + '-desktop.png'});
-      await page.locator('div.highlighter-rouge').first().scrollIntoViewIfNeeded();
-      await page.screenshot({path: process.env.STUDY_UI_SCREENSHOT + '-code.png'});
+      await page.evaluate(() => document.getElementById('contrast-fixture')?.remove());
+      for (const theme of ['light', 'dark']) {
+        if (await page.locator('html').getAttribute('data-theme') !== theme) {
+          await page.getByRole('button', {name: 'Switch to ' + theme + ' mode', exact: true}).click();
+        }
+        for (const [label, width, height] of [['mobile', 375, 800], ['desktop', 1280, 900]]) {
+          await page.setViewportSize({width, height});
+          await page.evaluate(() => window.scrollTo(0, 0));
+          await page.screenshot({path: process.env.STUDY_UI_SCREENSHOT + '-' + theme + '-' + label + '.png'});
+        }
+        await page.locator('div.highlighter-rouge').first().scrollIntoViewIfNeeded();
+        await page.screenshot({path: process.env.STUDY_UI_SCREENSHOT + '-' + theme + '-code.png'});
+      }
     }
     console.log('PASS: chapter outline, keyboard destination, system/explicit themes, text and syntax contrast, mobile width, persisted toggle.');
   } finally { await browser.close(); }

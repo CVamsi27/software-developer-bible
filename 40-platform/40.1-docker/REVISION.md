@@ -1,4 +1,4 @@
-<!-- section: Docker | category: Reference | tags: revision, practi | role-priority: important | general-importance: important -->
+<!-- section: Docker | category: Reference | tags: revision, practice | role-priority: important | general-importance: important -->
 [![Section](https://img.shields.io/badge/section-Docker-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)
@@ -81,6 +81,10 @@ Source: [Rootless Mode & Sandboxed Runtimes (gVisor, Kata)](40.1.09-rootless-san
 **Q:** What does rootless mode leave shared with the host?
 
 **A:** The host kernel. Removing daemon root reduces privilege but does not eliminate kernel vulnerabilities; gVisor and VM-backed runtimes introduce additional isolation with compatibility/cost trade-offs.
+
+**Q:** Why does rootless mode not eliminate container-escape risk?
+
+**A:** It reduces host privileges but still shares a host kernel. Runtime vulnerabilities, allowed host interfaces, mounts, and application credentials remain relevant. A userspace kernel or VM boundary adds a different isolation layer; choose and test it against the workload's threat model.
 
 ## Summary
 

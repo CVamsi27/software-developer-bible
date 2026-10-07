@@ -9,6 +9,8 @@
 
 Deployment changes running application versions and their configuration. In Docita, the API and worker run as separate Fly applications. The React single-page application (SPA) loads its interface in the browser, while an API proxy forwards browser API requests to the backend. Cloudflare Workers serve that proxy and the static application assets.
 
+> **Textbook Definition:** Deployment replaces or introduces running software and configuration while managing compatibility among application versions, persistent schemas and queued work. A release is complete only within its defined verification boundary.
+
 Consider a release that adds an invoice field and changes a PDF job payload. A successful build is only the start: old API instances, new workers, existing jobs and the database can overlap during rollout. The release must preserve their contracts and provide evidence that the new version works.
 
 This case describes checked-in source inspected on **2 October 2026**. Configuration and workflow code do not establish current deployed settings or successful production releases.

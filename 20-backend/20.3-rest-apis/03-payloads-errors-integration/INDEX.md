@@ -1,6 +1,6 @@
 # Payloads, Errors & Integration - REST APIs
 
-> **Study time:** ≈ 2 h of reading (8 files, ~15 min average).
+> **Study time:** ≈ 1 h 38 m of reading (8 files, ~12 min average).
 > **8 files.** The contract details clients feel daily: pagination strategies (offset vs cursor vs keyset), RFC 9457 Problem Details, long-running operations (202 Accepted + operation resources), file upload architectures (proxy multipart vs presigned direct-to-S3), webhooks — the "reverse API" — plus the two contracts everyone forgets: **serialization & wire formats** and **transactional email delivery**.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](../INDEX.md)
@@ -12,7 +12,7 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Pagination](20.3.3.01-pagination.md) | Offset vs cursor vs keyset — deep dive | Essential | Foundational | 30 min |
+| 01 | [Pagination](20.3.3.01-pagination.md) | Offset vs cursor vs keyset — deep dive | Essential | Foundational | 8 min |
 | 02 | [Error Handling Design](20.3.3.02-error-handling-design.md) | RFC 9457 Problem Details, validation errors | Essential | Foundational | 11 min |
 | 03 | [Long-Running API Operations](20.3.3.03-long-running-api-operations.md) | `202 Accepted` pattern, operation resource schema, polling vs webhook completion, progress & partial results, idempotent resubmission, cancellation, NestJS sketch | Essential | Foundational | 14 min |
 | 04 | [File Upload APIs](20.3.3.04-file-upload-apis.md) | Multipart streaming, presigned S3 direct uploads, resumable (`Content-Range`, tus), virus-scan gates, metadata sidecars, MIME sniffing + size caps | Essential | Foundational | 15 min |
@@ -38,6 +38,7 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | File upload APIs | `apps/api/src/shared/common/utils/upload.utils.ts` - multer disk storage staged behind MIME/extension checks |
 | Webhooks (ingress) | `apps/api/src/shared/modules/webhooks/razorpay-webhook-verification.helper.ts` - HMAC signature check + replay dedupe |
 | Webhooks (egress) | `apps/api/src/shared/modules/webhooks/outgoing/outgoing-webhook.service.ts` - HMAC-signed deliveries with 5s→300s backoff cap |
+
 ---
 
 [← Previous: HTTP Mechanics](../02-http-mechanics/INDEX.md) · [Next: Edge & Scale →](../04-edge-and-scale/INDEX.md)

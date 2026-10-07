@@ -1,4 +1,4 @@
-<!-- section: AI Engineering | category: Reference | tags: revisi | role-priority: important | general-importance: specialized -->
+<!-- section: AI Engineering | category: Reference | tags: revision | role-priority: important | general-importance: specialized -->
 [![Section](https://img.shields.io/badge/section-AI%20Engineering-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-orange)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)

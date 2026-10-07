@@ -1,4 +1,4 @@
-<!-- section: Java | category: Reference | tags: revisi | role-priority: deferred | general-importance: important -->
+<!-- section: Java | category: Reference | tags: revision | role-priority: deferred | general-importance: important -->
 [![Section](https://img.shields.io/badge/section-Java-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)

@@ -1,7 +1,7 @@
-<!-- section: Next.js | category: Reference | tags: revision, retrieval-practi | role-priority: important | general-importance: important -->
+<!-- section: Next.js | category: Reference | tags: revision, retrieval-practice | role-priority: important | general-importance: important -->
 [![Section](https://img.shields.io/badge/section-Next.js-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
-[![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
+[![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
 [![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
@@ -111,6 +111,9 @@ Source: [Metadata API in Next.js](10.4.2.03-metadata.md)
 
 6. **Q:** Do two Open Graph image sizes provide responsive on-page images?
    **A:** No. Sharing platforms choose preview images; a browser's responsive page image uses srcset/sizes through next/image.
+
+7. **Q:** Where does JSON-LD belong if it is not a field in the Metadata object?
+   **A:** Render structured data separately in a script element in the page or layout, with safe serialization. The Metadata API emits supported document metadata; it does not turn a custom JSON-LD field into structured data.
 
 ## Summary
 

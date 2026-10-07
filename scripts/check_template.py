@@ -12,6 +12,7 @@ conventions.
 import os
 import re
 import sys
+from urllib.parse import unquote
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import md_fences
@@ -303,6 +304,12 @@ def check_metadata(text: str):
     ranks = [BADGE_ORDER.index(b) for b in found]
     if ranks != sorted(ranks):
         problems.append(f"metadata: badges out of order (got {found})")
+    tag_badge = re.search(r'\[!\[Tags\]\(https://img\.shields\.io/badge/tags-(.+)-lightgrey\)\]', header)
+    if fields and tag_badge:
+        badge_tags = unquote(tag_badge.group(1)).replace('--', '-').replace(' · ', ', ')
+        comment_tags = fields.get('tags', '')
+        if {t.strip().lower() for t in comment_tags.split(',')} != {t.strip().lower() for t in badge_tags.split(',')}:
+            problems.append('metadata: comment tags disagree with the Tags badge (check for truncated values)')
     # Targets: contributing.md — content-file badges must link to `#`.
     for name, target in BADGE_TARGET_RX.findall(header):
         if target != '#':
@@ -521,6 +528,19 @@ def check(path: str):
     missing = req - file_heads
     if missing:
         problems.append(f"missing required sections: {sorted(missing)}")
+    if 'Definition' in req and 'Definition' in file_heads:
+        in_definition = False
+        formal = []
+        for _, line, fenced, delimiter in md_fences.walk(text.splitlines()):
+            if fenced or delimiter:
+                continue
+            heading = HEAD.match(line)
+            if heading:
+                in_definition = normalize(heading.group(1)) == 'Definition'
+            if in_definition and line.startswith('> **Textbook Definition:**'):
+                formal.append(line.removeprefix('> **Textbook Definition:**').strip())
+        if len(formal) != 1 or not formal[0]:
+            problems.append('definition: include exactly one nonempty original Textbook Definition in the Definition section')
 
     # Interview banks must not carry `## Code Examples`: that heading there is
     # a mislabeled Q&A block (Sept 2026 audit rule, inherited from

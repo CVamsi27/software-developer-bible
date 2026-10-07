@@ -9,6 +9,8 @@
 
 Architecture assigns responsibilities and controls dependencies. In Docita, domain modules organize business capabilities; shared schemas define application contracts; separate API and worker entry points divide interactive requests from background work.
 
+> **Textbook Definition:** Software architecture defines a system's elements, their responsibilities and relationships, and the constraints governing their evolution. An architectural boundary is effective only where dependencies and execution honor it.
+
 Consider creating an appointment. An HTTP request needs validation and authorization, scheduling rules, persistence, and possibly later notifications. Putting these responsibilities in one service makes every change harder to test and reason about. Separating them helps only when the boundaries remain visible in the actual imports and execution path.
 
 This case study describes source inspected on **2 October 2026**. Source structure is evidence of implementation, not proof that every production path or verification gate currently passes. Earlier incident stories, test totals and build-speed claims lacked supporting evidence and are not treated as measured outcomes here.

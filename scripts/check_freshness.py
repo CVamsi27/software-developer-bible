@@ -206,7 +206,19 @@ NEST_LAZY_IMPORT = re.compile(
     r"\bimport\s*\{[^}]*\bLazyModule\b[^}]*\}\s*from\s*['\"]@nestjs/core['\"]"
 )
 
+# API regressions verified against current upstream docs (2026-10-07).
+# PubSub matches only receivers constructed by the built-in implementation;
+# third-party adapters can legitimately retain asyncIterator.
+BUILTIN_PUBSUB = re.compile(r"\b(?:const|let)\s+(\w+)\s*=\s*new\s+PubSub(?:<[^;]+?>)?\s*\(")
+GSAP_CSS_EASE = re.compile(r"\bease\s*:\s*['\"]cubic-bezier\s*\(")
+FABRICATED_WS_IMPORT = re.compile(r"\bfrom\s*['\"]ws\.use/server['\"]")
+
 RULES = [
+    ('INSTANCE-TEMPORAL-REPLAY', 'Temporal replay helpers are static Worker methods; use Worker.runReplayHistory or consume Worker.runReplayHistories'),
+    ('STATIC-SCROLLTRIGGER-KILL', 'kill() belongs to a ScrollTrigger instance; revert the owned context or kill the owned trigger'),
+    ('GSAP-CSS-EASE-STRING', 'GSAP needs a registered CustomEase or a supported easing name, not a raw CSS cubic-bezier string'),
+    ('OBSOLETE-BUILTIN-PUBSUB-ITERATOR', 'graphql-subscriptions v3 built-in PubSub uses asyncIterableIterator; check third-party adapter APIs separately'),
+    ('FABRICATED-GRAPHQL-WS-IMPORT', 'useServer comes from graphql-ws/use/ws, not ws.use/server'),
     ('FABRICATED-NEST-LAZY-MODULE',
      'Nest exposes LazyModuleLoader, not a LazyModule decorator from @nestjs/core'),
     ('OBSOLETE-MSW-REST',
@@ -423,6 +435,20 @@ def check(p: Path, rel: str):
         if isf:
             if not inf and code_rows:
                 source = '\n'.join(row for _, row in code_rows)
+                if re.search(r"from\s*['\"]@temporalio/worker['\"]", source):
+                    receivers = re.findall(r'\b(?:const|let)\s+(\w+)\s*=\s*await\s+Worker\.create\s*\(', source)
+                    for receiver in receivers:
+                        for match in re.finditer(r'\b' + re.escape(receiver) + r'\.runReplayHistor(?:y|ies)\s*\(', source):
+                            offset = source.count('\n', 0, match.start())
+                            hits.append((code_rows[offset][0], 'INSTANCE-TEMPORAL-REPLAY', code_rows[offset][1].strip()[:100]))
+                for match in FABRICATED_WS_IMPORT.finditer(source):
+                    offset = source.count('\n', 0, match.start())
+                    hits.append((code_rows[offset][0], 'FABRICATED-GRAPHQL-WS-IMPORT', code_rows[offset][1].strip()[:100]))
+                if re.search(r"from\s*['\"]graphql-subscriptions['\"]", source):
+                    for receiver in BUILTIN_PUBSUB.findall(source):
+                        for match in re.finditer(r'\b' + re.escape(receiver) + r'\.asyncIterator\s*\(', source):
+                            offset = source.count('\n', 0, match.start())
+                            hits.append((code_rows[offset][0], 'OBSOLETE-BUILTIN-PUBSUB-ITERATOR', code_rows[offset][1].strip()[:100]))
                 for match in NEST_LAZY_IMPORT.finditer(source):
                     offset = source.count('\n', 0, match.start())
                     hits.append((code_rows[offset][0], 'FABRICATED-NEST-LAZY-MODULE',
@@ -499,6 +525,10 @@ def check(p: Path, rel: str):
             # (?<!:) avoids https://, (?!/) avoids protocol-relative //.
             code_line = re.sub(r'(?<!:)//(?!/).*$', '', line)
             code_rows.append((lineno, code_line))
+            if re.search(r'\bScrollTrigger\.kill\s*\(', code_line):
+                hits.append((lineno, 'STATIC-SCROLLTRIGGER-KILL', line.strip()[:100]))
+            if ('gsap' in rel.lower() or re.search(r'\bgsap\.', text)) and GSAP_CSS_EASE.search(code_line):
+                hits.append((lineno, 'GSAP-CSS-EASE-STRING', line.strip()[:100]))
             if rel.startswith('10-frontend/10.4-next.js/') and NEXT_GEO.search(code_line):
                 hits.append((lineno, 'REMOVED-NEXT-GEO', line.strip()[:100]))
             is_next_context = rel.startswith(PAGES_ROUTER_ALLOWED) or bool(

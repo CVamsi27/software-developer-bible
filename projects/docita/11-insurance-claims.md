@@ -9,6 +9,8 @@
 
 An insurance claim is the application's record of a reimbursement or cashless request, its referenced patient/invoice, amounts, status and supporting documents. Local submission state does not by itself mean an insurer has received or accepted it.
 
+> **Textbook Definition:** A claim-processing workflow represents a reimbursement request through permitted state transitions, associated documents and change history. Local workflow status is separate from external submission or acceptance.
+
 The concrete engineering problem is two staff tabs editing the same claim: one approves it while another submits an older draft. The application must reject the stale write and preserve the history of the accepted transition.
 
 ## First Principles

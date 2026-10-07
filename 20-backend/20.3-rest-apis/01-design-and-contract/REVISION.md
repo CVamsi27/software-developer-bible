@@ -1,4 +1,4 @@
-<!-- section: REST APIs | category: Reference | tags: revisi | role-priority: essential | general-importance: foundational -->
+<!-- section: REST APIs | category: Reference | tags: revision | role-priority: essential | general-importance: foundational -->
 [![Section](https://img.shields.io/badge/section-REST%20APIs-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
@@ -14,81 +14,81 @@ Explain each mechanism before checking the answer. Revisit its source for the ex
 
 Source: [API Design Patterns — REST, GraphQL, gRPC, Webhooks](20.3.1.01-api-design-patterns.md)
 
-**Q:** What core constraint explains why a call crosses a trust and failure boundary. governs api design patterns — rest, graphql, grpc, webhooks?
+**Q:** Which trust and failure boundaries does a remote API call cross?
 
-**A:** Unlike a function call, a network call can fail silently, arrive twice, or arrive late — so the design must make failure modes explicit (timeouts, retries, idempotency keys) rather than assuming function-call semantics.
+**A:** A network call can be delayed, rejected or completed without its response arriving. Validate the remote party and payload, bound waiting and make uncertain retries safe at the operation boundary.
 
-**Q:** What core constraint explains why the client cannot see your internals. governs api design patterns — rest, graphql, grpc, webhooks?
+**Q:** Why should an API contract avoid exposing internal implementation details?
 
-**A:** It only sees what you exchange — so the API models *what consumers need*, not how your services are built. Any 1:1 mapping of internal schema to API shape leaks internals and freezes your database design into a public contract.
+**A:** Consumers depend on the public representation and behavior. Exposing storage details couples their releases to internal changes; publish the fields and operations they actually need.
 
-**Q:** What core constraint explains why consistency beats cleverness. governs api design patterns — rest, graphql, grpc, webhooks?
+**Q:** How does consistent API behavior help independently developed clients?
 
-**A:** Every endpoint that breaks convention (naming, error shape, pagination) costs every client a special case. Uniformity is the feature that makes APIs composable.
+**A:** Consistent naming, error fields and pagination reduce client-specific branches. Document exceptions when an operation needs a different contract.
 
 ## REST Principles
 
 Source: [REST Principles](20.3.1.02-rest-principles.md)
 
-**Q:** What core constraint explains why uniform interface. governs rest principles?
+**Q:** What makes an interface uniform in REST?
 
-**A:** If every API invents its own verbs and semantics, no generic client can exist. Constraining the vocabulary (standard methods, standard media types) is what makes the web's clients — browsers, proxies, caches — work on APIs their authors never saw.
+**A:** The uniform interface combines resource identification, manipulation through representations, self-descriptive messages and hypermedia controls. HTTP methods and media types help express those constraints; naming endpoints consistently is not enough.
 
-**Q:** What core constraint explains why resources, not actions. governs rest principles?
+**Q:** Why does REST model resources rather than a list of remote actions?
 
-**A:** Naming endpoints as nouns with URIs gives the uniform vocabulary something stable to act on; a million verbs (`/getUser`, `/deleteUser`) cannot be generically understood, cached, or retried.
+**A:** A resource identifier gives representations and state transitions a stable target. Remote actions can be valid HTTP APIs, but an action catalog alone does not satisfy REST's uniform-interface constraints.
 
-**Q:** What core constraint explains why statelessness. governs rest principles?
+**Q:** What state may a REST server retain without making requests stateful?
 
-**A:** Each request carries the context needed to understand it without relying on conversational client state retained by the server. This is a REST constraint, not a universal scaling requirement; server-side sessions are possible but introduce a different state-management trade-off.
+**A:** Resource state can remain on the server. Each request must supply the context required to understand it, rather than depending on stored conversational client state from earlier requests.
 
 ## API Versioning
 
 Source: [API Versioning](20.3.1.03-versioning.md)
 
-**Q:** What core constraint explains why clients outlive your release schedule. governs api versioning?
+**Q:** Why must API evolution account for clients that upgrade slowly?
 
-**A:** Clients can upgrade later than the server, so preserve compatibility where practical. Use an opt-in version or migration only when a change cannot remain backward-compatible.
+**A:** Clients may upgrade long after the server. Preserve compatibility where practical and provide an explicit migration path when behavior cannot remain compatible.
 
-**Q:** What core constraint explains why therefore breaking changes are additive-with-choice governs api versioning?
+**Q:** How can a provider introduce an incompatible contract without immediately breaking existing clients?
 
-**A:** A breaking change may need an opt-in replacement, a published deprecation path and time for clients to migrate. Additive optional changes often do not need a new version.
+**A:** Offer an opt-in replacement with documented behavior, a deprecation period and usage evidence before retirement. An optional additive change often needs no new version, but strict consumers still need compatibility checks.
 
-**Q:** What core constraint explains why the version is part of the contract's identity, not its content. governs api versioning?
+**Q:** What does a version identifier tell a client about its contract?
 
-**A:** Put a version in a URL, header or media type when clients need to opt in to an incompatible contract; compatible additions can evolve without a parallel version.
+**A:** It identifies the externally visible contract being selected. A URL, header or media type can carry it; compatible additions may evolve within that contract.
 
 ## REST Maturity Model & API Versioning
 
 Source: [REST Maturity Model & API Versioning](20.3.1.04-rest-maturity-model.md)
 
-**Q:** What core constraint explains why level 0 — one endpoint, post everything. governs rest maturity model & api versioning?
+**Q:** What distinguishes a level 0 HTTP API in the Richardson model?
 
-**A:** You're using HTTP as a tunnel; the protocol carries no meaning, so nothing generic (caches, proxies, monitoring) can help you.
+**A:** HTTP acts mainly as a transport for remote calls, commonly through one URI and POST. Generic HTTP infrastructure still operates, but it cannot infer application-operation semantics from the interface.
 
-**Q:** What core constraint explains why level 1 — resources. governs rest maturity model & api versioning?
+**Q:** What changes when an API introduces resource identifiers at level 1?
 
-**A:** Multiple URIs give the platform *handles* to act on and clients something cacheable and linkable.
+**A:** Distinct resource URIs identify separate targets. Method semantics and cache directives still determine whether their responses are safe to cache or retry.
 
-**Q:** What core constraint explains why level 2 — methods + status codes. governs rest maturity model & api versioning?
+**Q:** Which HTTP capabilities distinguish level 2 from level 1?
 
-**A:** Now the protocol carries semantics: GET is safe and cacheable, 4xx vs 5xx distinguishes blame. Most "REST" APIs live here — correctly.
+**A:** Methods communicate safety and idempotence; status codes and headers express outcomes and caching rules. These capabilities describe the interface, not its internal data model or overall quality.
 
 ## OpenAPI / Swagger Documentation
 
 Source: [OpenAPI / Swagger Documentation](20.3.1.05-openapi-swagger.md)
 
-**Q:** What core constraint explains why humans misdocument and misread. governs openapi / swagger documentation?
+**Q:** How can a machine-readable API description reduce documentation drift?
 
-**A:** A prose API doc drifts from the implementation the first week. One machine-readable source of truth — from which docs, client SDKs, mocks, and tests are *generated* — cannot drift, because everything regenerates from it.
+**A:** Docs and SDKs can be regenerated from one description, reducing separate edits. The description can still drift from the implementation, so validate real responses and compare contract changes.
 
-**Q:** What core constraint explains why contracts enable parallel work. governs openapi / swagger documentation?
+**Q:** How does an API contract let frontend and backend teams work independently?
 
-**A:** Frontend, mobile, and partner teams build against the spec (and its mocks) before the backend exists. The spec is the API's compile-time artifact; treat spec-linting and diffing like type checks in CI.
+**A:** Teams can build clients and mocks against an agreed specification before the server is complete. Schema quality and representative contract tests determine how useful that independence is.
 
-**Q:** What core constraint explains why codegen is only as good as the spec. governs openapi / swagger documentation?
+**Q:** Why can generated client code still fail against a running server?
 
-**A:** `any`-typed schemas, missing error responses, and unnamed parameters all propagate into every generated SDK — which is why spec quality is API quality.
+**A:** Generated types reproduce omissions or errors in the specification. They also cannot establish that the deployed server returns compliant data or enforces the described permissions.
 
 ## Summary
 

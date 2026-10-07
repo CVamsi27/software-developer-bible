@@ -33,6 +33,7 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Status codes & error payloads | `apps/api/src/shared/common/errors/domain.errors.ts` - framework-free errors mapped to HTTP statuses by the global filter |
 | CORS | `apps/api/src/main.ts` - `getCorsOrigins()` allow-list (+ WebSocket twin) |
 | HTTP caching | `apps/api/src/shared/common/interceptors/cache.interceptor.ts` - hashed-key GET response caching through CACHE_MANAGER |
+
 ---
 
 [← Previous: Design & Contract](../01-design-and-contract/INDEX.md) · [Next: Payloads, Errors & Integration →](../03-payloads-errors-integration/INDEX.md)

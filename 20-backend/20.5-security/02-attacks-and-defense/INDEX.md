@@ -34,6 +34,7 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | SQL injection | `apps/api/src/shared/common/utils/postgres-advisory-lock.ts` - even raw SQL goes through parameterized `$queryRaw` tagged templates |
 | BOLA / IDOR defense | `apps/api/src/shared/common/extensions/tenant.extension.ts` - auto-injects clinicId scoping on every query |
 | Audit trail (API Top 10) | `apps/api/src/shared/common/interceptors/patient-audit.interceptor.ts` - PHI access auditing on patient reads |
+
 ---
 
 [← Previous: Auth](../01-auth/INDEX.md) · [Next: Hardening & Operations →](../03-hardening-and-operations/INDEX.md)

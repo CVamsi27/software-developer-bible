@@ -1,4 +1,4 @@
-<!-- section: Accessibility | category: Reference | tags: revision, practi | role-priority: essential | general-importance: foundational -->
+<!-- section: Accessibility | category: Reference | tags: revision, practice | role-priority: essential | general-importance: foundational -->
 [![Section](https://img.shields.io/badge/section-Accessibility-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)

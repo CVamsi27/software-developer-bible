@@ -1,14 +1,20 @@
+---
+layout: post
+title: Senior Full Stack Interview Bible
+permalink: /README.html
+---
+
 # Senior Full Stack Interview Bible
 
 > **A lane-first, stack-deep reference for senior full-stack engineers (5+ YoE)** prepping for product-based companies, FAANG/Big Tech, and EU mid-stage startups. Pick your lane, drill the stacks — or [search all 671 chapters](search.html) by title, section, tag and read time.
 
 [![Lanes](https://img.shields.io/badge/lanes-2-blue)](lanes/INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](INDEX.md)
-[![Files](https://img.shields.io/badge/files-1011-orange)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-1014-orange)](INDEX.md)
 [![Search](https://img.shields.io/badge/search-try%20it-blueviolet)](search.html)
 [![API](https://img.shields.io/badge/corpus%20API-json-informational)](api/index.json)
 [![GoF Coverage](https://img.shields.io/badge/design%20patterns-23%2F23-success)](30-architecture/30.1-design-patterns/INDEX.md)
-[![Last Updated](https://img.shields.io/badge/last%20updated-September%202026-purple)](#)
+[![Last Updated](https://img.shields.io/badge/last%20updated-October%202026-purple)](#)
 
 ---
 
@@ -83,6 +89,8 @@ Use the [two-axis topic importance guide](docs/topic-importance.md) to choose wh
 The [personal-site sync contract](docs/planner-site-sync.md) explains how to refresh the roadmap snapshot and preserve planner evidence when this corpus changes.
 
 Automated gates check defined structural, link, metadata and regression rules. Passing them does not prove every technical claim or teaching explanation correct. The [corpus readability review and per-page inventory](docs/2026-10-03-readability-review.md) distinguish automated screening, close reading and remaining rewrites. Dated [health reports](docs/2026-09-19-corpus-health-report.md) describe the snapshot they measured; rerun the gates for current evidence.
+
+The latest [reading and senior interview quality review](docs/2026-10-07-reading-quality-report.md) records formal definition coverage, reader fixes, resume validation and the limits of the technical review.
 
 ## Private study host and personal records
 

@@ -1,4 +1,4 @@
-<!-- section: GraphQL | category: Reference | tags: revisi | role-priority: optional | general-importance: specialized -->
+<!-- section: GraphQL | category: Reference | tags: revision | role-priority: optional | general-importance: specialized -->
 [![Section](https://img.shields.io/badge/section-GraphQL-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
@@ -14,49 +14,49 @@ Explain each mechanism before checking the answer. Revisit its source for the ex
 
 Source: [GraphQL Overview](20.7.1.01-graphql-overview.md)
 
-**Q:** What core constraint explains why the server cannot predict every client's needs. governs graphql overview?
+**Q:** How does client field selection support different response needs?
 
-**A:** REST endpoints fix the shape at design time — mobile needs 3 fields, web needs 30; someone over-fetches. GraphQL moves shape-declaration into the request: the client asks exactly, the server resolves exactly.
+**A:** Each operation selects its requested fields within the schema. This supports different client views, while resolvers and underlying services still determine the actual work performed.
 
-**Q:** What core constraint explains why the schema is the contract, queries are validated against it. governs graphql overview?
+**Q:** How does schema validation constrain an executable GraphQL operation?
 
-**A:** One typed schema (SDL) from which validation, introspection, tooling, and docs derive — the single-source-of-truth principle  with introspection as the killer feature.
+**A:** Validation checks names, argument types, variable use and selection structure. A valid operation still requires authorization, cost controls and correct runtime values.
 
-**Q:** What core constraint explains why the costs are the famous ones, and they're structural governs graphql overview?
+**Q:** Which data-access, query-cost and caching problems remain with GraphQL?
 
-**A:** N+1 resolution (nested fields → nested resolvers — the dataloader is the answer, not an optimization), query-depth abuse (needs cost limits), and HTTP caching that no longer works (POST everything). Each is REST's cached-free wins being paid back explicitly.
+**A:** Nested access can create N+1 calls and costly queries. HTTP caching needs a deliberate transport and representation policy; GraphQL can support GET queries, so POST-only behavior is not universal.
 
 ## Schema Design
 
 Source: [Schema Design](20.7.1.02-schema-design.md)
 
-**Q:** What core constraint explains why types model the domain, not the database. governs schema design?
+**Q:** Why should a public GraphQL schema model consumer needs rather than database tables?
 
-**A:** The moment `UserTable` appears in the schema, the internal model is frozen into the public contract . The schema is the consumer's view; the DB can refactor freely behind resolvers.
+**A:** The schema is a public contract shaped for client use. Directly exposing tables can freeze storage structure into that contract; resolvers let the database evolve behind a stable API.
 
-**Q:** What core constraint explains why nullability is the schema's honesty axis. governs schema design?
+**Q:** How does field nullability change error propagation?
 
-**A:** `String!` vs `String` is a promise to every client about error handling — defaulting everything nullable pushes error handling to clients; over-strict non-null turns data blips into whole-field failures. Nullability is designed per-field, not defaulted globally.
+**A:** A failing non-null field propagates the error to a nullable ancestor, potentially the root. Choose nullability from data and failure semantics rather than marking every field nullable or non-null mechanically.
 
-**Q:** What core constraint explains why interfaces/unions model polymorphism governs schema design?
+**Q:** How do interfaces and unions describe alternative result types?
 
-**A:** (`Node` interface, `SearchResult` union) — the schema's answer to "one query, many shapes," and the reason GraphQL APIs age better than fixed-resource REST when the domain has genuine type variety.
+**A:** Interfaces expose shared fields across implementing object types; unions expose alternatives without shared fields. Clients use type conditions to select fields on the possible concrete results.
 
 ## Queries & Mutations
 
 Source: [Queries & Mutations](20.7.1.03-queries-mutations.md)
 
-**Q:** What core constraint explains why queries may run in parallel; mutations must serialize. governs queries & mutations?
+**Q:** Which mutation fields does GraphQL serialize, and what does that not guarantee?
 
-**A:** The spec enforces it because reads are independent but writes have order-of-operations hazards — the same read/write asymmetry as CQRS , encoded in the protocol.
+**A:** Only top-level fields of one mutation operation execute serially. Nested fields may resolve normally, separate requests can overlap and GraphQL does not supply transaction rollback.
 
-**Q:** What core constraint explains why variables exist because string-interpolated queries are injection-shaped. governs queries & mutations?
+**Q:** Why should GraphQL inputs use typed variables rather than query-text interpolation?
 
-**A:** Parameterized queries  with typed variables = reusable, cacheable, safe operations — persisted queries are this taken to production (whitelisting, smaller requests).
+**A:** Variables separate typed values from document syntax and support reusable operations. Validation and resolver-level input checks remain necessary; automatic persisted-query negotiation is not an allowlist by itself.
 
-**Q:** What core constraint explains why errors are partial by design governs queries & mutations?
+**Q:** How can execution errors coexist with partial response data?
 
-**A:** errors + partial data can coexist in one response (per-field nullability), because one failed resolver shouldn't void the whole query — a fundamentally different error model than HTTP's all-or-nothing response.
+**A:** Execution can return data with field errors, depending on nullability propagation. Parse or validation errors occur before execution and return no partial data; a non-null failure can also null the whole execution result.
 
 ## Summary
 

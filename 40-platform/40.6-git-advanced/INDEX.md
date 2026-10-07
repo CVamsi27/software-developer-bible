@@ -1,6 +1,6 @@
 # Git Advanced — Index
 
-> **Study time:** ≈ 1 h 55 m of reading (11 files, ~10 min average).
+> **Study time:** ≈ 1 h 58 m of reading (11 files, ~11 min average).
 > **11 files** — Advanced Git operations from the object model, branching strategies, rebase, cherry-pick, hooks, bisect, reflog, format-patch, code archaeology, LFS/partial clones, and commit signing to interview questions.
 
 [![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
@@ -31,7 +31,7 @@ Understand this once and `reset`, `rebase`, and recovery stop being scary.
 
 | # | File | Topics | When to read | Role priority | General importance | Read time |
 | --: | ------ | -------- | -------------- | --- | --- | ----------: |
-| 01 | [Git Internals: Objects, Refs & Packfiles](40.6.01-git-internals-objects-refs-packfiles.md) | blob/tree/commit/tag model, `hash-object`/`mktree` demos, HEAD & refs, packfiles/deltas, reflog safety net, gc/repack, how reset/rebase move refs, `.git` directory tour | First — it unlocks everything else | Important | Foundational | 14 min |
+| 01 | [Git Internals: Objects, Refs & Packfiles](40.6.01-git-internals-objects-refs-packfiles.md) | blob/tree/commit/tag model, `hash-object`/`mktree` demos, HEAD & refs, packfiles/deltas, reflog safety net, gc/repack, how reset/rebase move refs, `.git` directory tour | First — it unlocks everything else | Important | Foundational | 15 min |
 
 ---
 
@@ -41,7 +41,7 @@ How your team organizes work.
 
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
-| 02 | [Branching Strategies](40.6.02-branching-strategies.md) | Git Flow, GitHub Flow, trunk-based development, release branches | Pick the model for your team | Important | Foundational | 7 min |
+| 02 | [Branching Strategies](40.6.02-branching-strategies.md) | Git Flow, GitHub Flow, trunk-based development, release branches | Pick the model for your team | Important | Foundational | 8 min |
 | 03 | [Rebase & Cherry-Pick](40.6.03-rebase-cherry-pick.md) | Interactive rebase, conflict resolution, cherry-pick workflows | Linear history, porting fixes | Important | Foundational | 8 min |
 
 **Decision:**
@@ -60,7 +60,7 @@ What branching model?
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 04 | [Git Hooks](40.6.04-git-hooks.md) | Client/server hooks, pre-commit, Husky, commitlint, lint-staged | Important | Foundational | 11 min |
+| 04 | [Git Hooks](40.6.04-git-hooks.md) | Client/server hooks, pre-commit, Husky, commitlint, lint-staged | Important | Foundational | 12 min |
 
 ---
 
@@ -90,7 +90,7 @@ Keeping large repositories fast and history trustworthy.
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 08 | [Git at Scale: LFS & Partial Clones](40.6.08-git-at-scale-lfs-partial-clones.md) | LFS pointer files/smudge-clean filters, partial clone (`--filter=blob:none`), sparse-checkout, Scalar, CI shallow clones (`fetch-depth`), repo size audits | Important | Foundational | 12 min |
-| 09 | [Signed Commits & Repository Security](40.6.09-signed-commits-repository-security.md) | GPG vs SSH vs Sigstore signing, Verified badges, branch protection enforcement, mailmap identity hygiene, CI verify steps, supply-chain context | Important | Foundational | 11 min |
+| 09 | [Signed Commits & Repository Security](40.6.09-signed-commits-repository-security.md) | GPG vs SSH vs Sigstore signing, Verified badges, branch protection enforcement, mailmap identity hygiene, CI verify steps, supply-chain context | Important | Foundational | 12 min |
 
 ---
 

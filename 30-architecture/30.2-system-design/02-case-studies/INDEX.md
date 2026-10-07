@@ -1,11 +1,13 @@
 # System Design — Case Studies
 
-> **Study time:** ≈ 11 h 22 m of reading (32 files, ~21 min average).
+> **Study time:** ≈ 11 h 29 m of reading (32 files, ~22 min average).
 Applied examples of system design interviews. Read [../01-theory/](../01-theory/INDEX.md) first, then choose cases that match your interview goals.
 
 [![Files](https://img.shields.io/badge/files-32-blue)](../../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
+
+Treat the architectures and sizing below as interview models with explicit assumptions. Use cited primary sources when describing a company's published implementation, and distinguish those facts from choices made for the exercise.
 
 **Start with the system-design fundamentals, then prioritize cases related to the role.** For example, use the payment and commerce cases for payment products, the messaging cases for chat products, and the feed cases for social products.
 

@@ -1,4 +1,4 @@
-<!-- section: Security | category: Reference | tags: revisi | role-priority: essential | general-importance: foundational -->
+<!-- section: Security | category: Reference | tags: revision | role-priority: essential | general-importance: foundational -->
 [![Section](https://img.shields.io/badge/section-Security-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
@@ -14,81 +14,81 @@ Explain each mechanism before checking the answer. Revisit its source for the ex
 
 Source: [Encryption, Hashing & TLS](20.5.3.01-encryption.md)
 
-**Q:** What core constraint explains why symmetric crypto is fast but needs a shared secret governs encryption, hashing & tls?
+**Q:** Why does symmetric encryption require a key-distribution plan?
 
-**A:** — key distribution *is* the problem, solved by asymmetric crypto (public encrypt, private decrypt) at 1000× the cost. Real systems compose: asymmetric to agree on a symmetric key (TLS), symmetric for the data. Composition is the design pattern.
+**A:** Both endpoints need appropriate secret key material. Use an established key-agreement and authentication protocol or managed key distribution; do not invent an exchange or assume a fixed performance ratio.
 
-**Q:** What core constraint explains why authenticated encryption is the default, not an upgrade. governs encryption, hashing & tls?
+**Q:** Why should encrypted application data also have integrity protection?
 
-**A:** AES-GCM/ChaCha20-Poly1305 encrypt *and* authenticate — unauthenticated modes (AES-CBC alone) are malleable, meaning tampering goes undetected. "Encrypt with the right mode" is where most home-rolled designs fail.
+**A:** Authenticated encryption detects modified ciphertext in addition to hiding plaintext. Use a vetted construction such as AES-GCM with its nonce rules; encryption alone can leave tampering undetected.
 
-**Q:** What core constraint explains why key management dominates crypto math in practice. governs encryption, hashing & tls?
+**Q:** How can weak key management defeat a sound encryption algorithm?
 
-**A:** Key rotation, storage (KMS, HSM), separation of duties — the algorithm is the easy part; keeping keys out of repos, logs, and memory dumps is where systems actually break .
+**A:** An attacker who can retrieve or replace keys can bypass the intended confidentiality boundary. Restrict key access, separate responsibilities, rotate deliberately and inspect logs and backups for exposure.
 
 ## Web Security Headers & HTTPS
 
 Source: [Web Security Headers & HTTPS](20.5.3.02-web-security.md)
 
-**Q:** What core constraint explains why you cannot patch the client; you can only instruct it. governs web security headers & https?
+**Q:** How can response headers constrain browser behavior?
 
-**A:** CSP, HSTS, X-Content-Type-Options, frame-ancestors are *directives to the browser* — the server's only lever over execution on someone else's machine. Each header maps to one attack class the browser could otherwise be talked into.
+**A:** CSP constrains supported execution and resource loads; HSTS influences transport; MIME and framing directives address other browser behaviors. Each has a specific scope and must be tested against the intended page behavior.
 
-**Q:** What core constraint explains why https is the substrate everything else assumes. governs web security headers & https?
+**Q:** Which security assumptions depend on authenticated HTTPS transport?
 
-**A:** Without TLS, no header, cookie, or token is trustworthy in transit; HSTS exists because the *first* HTTP request is the vulnerability (SSL-strip), so the policy must be preloaded.
+**A:** TLS protects confidentiality and authenticates the transport peer under the certificate contract. HSTS learned over HTTPS protects later connections; preloading can protect a first visit when supported and appropriate.
 
-**Q:** What core constraint explains why defaults are the attack surface. governs web security headers & https?
+**Q:** Why must a security review examine framework and deployment defaults?
 
-**A:** Browsers permit inline scripts, framing, MIME-sniffing by default because pages need them; headers exist to *turn off* what you don't need — the security posture is "deny by default, allow explicitly.".
+**A:** Defaults vary by component and version. Check the controls actually emitted and enforced, then permit required behavior deliberately rather than assuming a framework's default policy matches the threat model.
 
 ## Threat Modeling — STRIDE & Attack Surfaces
 
 Source: [Threat Modeling — STRIDE & Attack Surfaces](20.5.3.03-threat-modeling-stride.md)
 
-**Q:** What core constraint explains why you cannot defend what you haven't enumerated. governs threat modeling — stride & attack surfaces?
+**Q:** Why must a threat model identify assets and trust boundaries before choosing defenses?
 
-**A:** STRIDE is a checklist over *system facts* — Spoofing, Tampering, Repudiation, Information disclosure, Denial of service, Elevation of privilege — one threat class per trust-boundary crossing. The diagram is the method: draw data flows, label trust boundaries, ask STRIDE at each.
+**A:** The model needs to know what must be protected, who can interact and where trust changes. Apply STRIDE categories to relevant system elements and flows rather than assuming one threat per boundary.
 
-**Q:** What core constraint explains why every threat pairs with a standard mitigation class governs threat modeling — stride & attack surfaces?
+**Q:** How does a threat category help select a mitigation?
 
-**A:** (authentication, integrity, logging, confidentiality, redundancy, authorization) — which is why the exercise produces actionable backlog, not fear. The output is ranked mitigations, not a document.
+**A:** A category suggests controls such as authentication for spoofing or integrity checks for tampering. Select and verify defenses against the concrete attack path, assigning residual risk and ownership.
 
-**Q:** What core constraint explains why it must run when the design changes governs threat modeling — stride & attack surfaces?
+**Q:** Which design changes should trigger a threat-model review?
 
-**A:** , because the model is of *this* system: a threat model of last year's architecture is fiction. Lighter than pen-testing; catches design flaws code review never can.
+**A:** Changes to assets, data flows, authentication, dependencies or deployment boundaries can invalidate assumptions. Review the affected model during design changes and after incidents.
 
 ## Secrets Management
 
 Source: [Secrets Management](20.5.3.04-secrets-management.md)
 
-**Q:** What core constraint explains why anything in source control is compromised forever governs secrets management?
+**Q:** Why must a secret exposed in source control be revoked or rotated?
 
-**A:** — git history is eternal, rotation is the only cure, and rotation is expensive enough that prevention (never commit) is cheaper. Env vars move the leak to logs, crash dumps, and child processes — better, not good.
+**A:** Removing a file does not revoke copies in history, clones or logs. Treat the credential as exposed, revoke or rotate it, inspect its use and then remove retained copies where practical.
 
-**Q:** What core constraint explains why a secrets manager centralizes both storage and *access* governs secrets management?
+**Q:** How does a secrets manager control both storage and access?
 
-**A:** short-lived leases, automatic rotation, audit logs of who-read-what-when. The audit trail is half the product — secret access IS security telemetry.
+**A:** A secrets manager uses identity-based retrieval policy, protected storage and audit logs. Supported lease and rotation features can shorten exposure, but a compromised authorized workload can still retrieve permitted secrets.
 
-**Q:** What core constraint explains why least privilege applies to secrets too governs secrets management?
+**Q:** How should least privilege apply to secret retrieval and use?
 
-**A:** per-service identities, per-path permissions, TTLs. The endgame design is zero long-lived secrets in app land: workload identity minting short-lived credentials on demand.
+**A:** Give each workload access only to the secrets and operations it needs. Prefer short-lived credentials when supported and restrict both secret retrieval and the authority the credential grants.
 
 ## Vulnerability Management & Patch Governance
 
 Source: [Vulnerability Management & Patch Governance](20.5.3.05-vulnerability-management-patch-governance.md)
 
-**Q:** What core constraint explains why your dependencies are attack surface you didn't audit. governs vulnerability management & patch governance?
+**Q:** Why must vulnerability management include application dependencies?
 
-**A:** Transitively, a web app pulls thousands of packages; one vulnerable transitive dep is your breach. Scanning (SCA) exists to make the invisible inventory visible.
+**A:** Dependencies and transitive components expand the executing code and attack surface. Inventory and scan them, then assess whether a finding is present, reachable and relevant to the deployed service.
 
-**Q:** What core constraint explains why patch speed is the whole game — and it's an sla, not a hero effort. governs vulnerability management & patch governance?
+**Q:** How do ownership and patch deadlines improve remediation reliability?
 
-**A:** Exploitation follows disclosure within days; time-to-patch beats scanning frequency. Governance (severity SLAs, ownership, exceptions with expiry) is what makes patching a process instead of an all-hands.
+**A:** Assign an owner, risk-based target date and verified closure criteria. Exceptions need approval and expiry; exploitation timing varies, so a deadline does not substitute for current threat evidence.
 
-**Q:** What core constraint explains why prioritization must be risk-based because the backlog is unbounded. governs vulnerability management & patch governance?
+**Q:** Why should vulnerability prioritization consider exposure and exploitability?
 
-**A:** KEV (known-exploited) + reachability + exposure beats raw CVSS: a 9.8 with no exploit path in your runtime is *less urgent* than a 7.5 in the auth path.
+**A:** Severity is one input alongside known exploitation, exposure, reachability and compensating controls. Document uncertainty and prioritize the concrete threat without dismissing a high-severity finding merely because exploitation has not been observed.
 
 ## Summary
 

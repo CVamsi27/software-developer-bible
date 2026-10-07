@@ -1,17 +1,17 @@
 # Senior Full Stack Interview Bible — Index
 
-> **Study time:** ≈ 140 h 43 m of reading (671 files, ~13 min average).
+> **Study time:** ≈ 141 h 17 m of reading (671 files, ~13 min average).
 > **Start here: [ROADMAP.md](ROADMAP.md) — the canonical study path with phases, checkpoints, and weekly schedule.**
 >
 > **Pick your lane first.** The bible is organized into **2 interview lanes** (`80-lanes-abroad-full-stack`, `81-lanes-indian-sde-faang`) that draw from **7 shared study stacks** — plus the [00-strategy](00-strategy/INDEX.md) **strategy folder** everyone starts with. Each lane has its own preparation strategy; the stacks are the technical material both lanes share.
 >
-> **Folders are numbered for the recommended study order.** `00-` is everyone starts here. `10-` through `60-` are the 7 technical stacks in dependency order. `70-` is interview toolkit. `80-` and `81-` are the two lanes.
+> **Folders are numbered for the recommended study order.** `00-` contains shared interview strategy. The shared stacks run from `10-` frontend through `70-` interview toolkit in study order. `80-` and `81-` are the two lanes.
 
 [![Lanes](https://img.shields.io/badge/lanes-2-blue)](lanes/INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](#the-7-study-stacks-numbered-for-study-order)
-[![Files](https://img.shields.io/badge/files-1011-orange)](#the-7-study-stacks-numbered-for-study-order)
+[![Files](https://img.shields.io/badge/files-1014-orange)](#the-7-study-stacks-numbered-for-study-order)
 [![Design Patterns](https://img.shields.io/badge/GoF%20Coverage-23%2F23-success)](30-architecture/30.1-design-patterns/INDEX.md)
-[![Last Updated](https://img.shields.io/badge/last%20updated-September%202026-purple)](#)
+[![Last Updated](https://img.shields.io/badge/last%20updated-October%202026-purple)](#)
 
 ---
 
@@ -19,12 +19,12 @@
 
 **Everyone starts with the [00-strategy](00-strategy/INDEX.md) strategy folder** — communication, resume, STAR, HR questions — it is shared by both lanes, not a lane itself. Then pick one of the two lanes:
 
-| Lane | Folder | For | Style |
-| ------------------------------------------ | ----------------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| **Abroad Full-Stack** (recommended for EU) | [80-lanes-abroad-full-stack](80-lanes-abroad-full-stack/INDEX.md) | EU / non-Indian mid-stage startups (n8n, SumUp, Langfuse, sennder) | Take-home + system design, 4-week plan, EUR 75-100K + equity, visa |
-| **Indian SDE / FAANG** | [81-lanes-indian-sde-faang](81-lanes-indian-sde-faang/INDEX.md) | Microsoft, Google, Amazon, Meta, Apple, in-country India | LeetCode-heavy, 8-week intensive, USD 150-400K+ |
+| Lane | Folder | Preparation need | Practice |
+| ---------------------- | ----------------------------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------- |
+| **Abroad Full-Stack** | [80-lanes-abroad-full-stack](80-lanes-abroad-full-stack/INDEX.md) | Practical implementation, take-homes and role research | Working features, tests and design defense |
+| **Indian SDE / FAANG** | [81-lanes-indian-sde-faang](81-lanes-indian-sde-faang/INDEX.md) | Algorithms, complexity and broader SDE systems work | Fresh coding problems and system-design decisions |
 
-**Not sure?** Read the [lane decision matrix in abroad-full-stack](80-lanes-abroad-full-stack/INDEX.md#lane-decision--is-this-the-right-lane-for-you). If you're in between (e.g., Booking.com, Spotify, Stripe, remote-first US), use both lanes — start with `81-lanes-indian-sde-faang/` for the FAANG-DSA signal, then `80-lanes-abroad-full-stack/` for the EU-specific family/visa overlay.
+Use the [lane decision](80-lanes-abroad-full-stack/INDEX.md#lane-decision--is-this-the-right-lane-for-you) to connect the paths. A role may need both; confirm its assessment instead of inferring rounds, preparation periods or compensation from a country or employer name.
 
 ---
 
@@ -202,4 +202,4 @@ projects → Docita architecture deep-dives, interview defense
 
 ---
 
-*Last updated: September 2026 — 1011 files, 278K lines, 0 broken links — folders numbered for study order. Every large stack organized into numbered category subfolders; auth track complete through passkeys/SAML; sequences contiguous inside every stack folder (the 80.x lane numbering intentionally gaps into projects/docita prep docs).
+*Last updated: September 2026 — 1014 files, 278K lines, 0 broken links — folders numbered for study order. Every large stack organized into numbered category subfolders; auth track complete through passkeys/SAML; sequences contiguous inside every stack folder (the 80.x lane numbering intentionally gaps into projects/docita prep docs).

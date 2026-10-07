@@ -1,4 +1,4 @@
-<!-- section: GraphQL | category: Reference | tags: revisi | role-priority: optional | general-importance: specialized -->
+<!-- section: GraphQL | category: Reference | tags: revision | role-priority: optional | general-importance: specialized -->
 [![Section](https://img.shields.io/badge/section-GraphQL-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
@@ -14,33 +14,33 @@ Explain each mechanism before checking the answer. Revisit its source for the ex
 
 Source: [Resolvers](20.7.2.01-resolvers.md)
 
-**Q:** What core constraint explains why every field is a function. governs resolvers?
+**Q:** How does field resolution connect a schema to application data?
 
-**A:** The execution engine walks the query tree, invoking one resolver per field — which is why naive resolvers multiply into N+1 (each nested field queries the DB again). The execution model *is* the performance model.
+**A:** The engine resolves selected fields using their parent values, arguments and context. Nested resolvers that repeatedly fetch related rows can create N+1 access patterns.
 
-**Q:** What core constraint explains why dataloader batches because the execution model demands it. governs resolvers?
+**Q:** How does request-scoped batching address repeated nested lookups?
 
-**A:** Collect field-level requests within one tick, resolve once (`WHERE id IN (...)`) — the fix isn't caching, it's converting per-field fan-out into per-level batches. Understanding the tick-batching window is the difference between it working and not.
+**A:** A request-scoped loader groups compatible key requests and may memoize them for that request. Its batch must preserve key/result correspondence and authorization context; separate requests must not accidentally share tenant data.
 
-**Q:** What core constraint explains why resolvers receive (parent, args, context, info) governs resolvers?
+**Q:** What information do a resolver's parent, arguments, context and execution info provide?
 
-**A:** — context is the per-request dependency bag (auth, loaders, → 20.2.1.04's DI thinking), info carries the query AST (optimizations: projections, field selection pushdown). Knowing the four arguments is knowing what each layer owes the next.
+**A:** Parent is the preceding field's value; arguments are validated field inputs; context carries request dependencies and identity; info describes schema and operation execution. None of these substitutes for resource authorization.
 
 ## Apollo Server
 
 Source: [Apollo Server](20.7.2.02-apollo-server.md)
 
-**Q:** What core constraint explains why execution is specified; everything else is operations. governs apollo server?
+**Q:** Which server responsibilities extend beyond GraphQL execution rules?
 
-**A:** Apollo adds what production needs beyond the spec: caching directives, persisted queries, usage telemetry, and error masking (`maskEntityErrors`-style) — because raw resolvers leak internals .
+**A:** A production service also owns HTTP integration, authentication context, safe errors, admission, cancellation and telemetry. Apollo provides hooks for these concerns; they still need application configuration.
 
-**Q:** What core constraint explains why the gateway/federation layer exists because one schema doesn't scale across teams. governs apollo server?
+**Q:** When can schema federation help teams own different parts of one API?
 
-**A:** Federated schemas compose per-team graphs into one — the same modularity need as Nest modules , at API scale. Composition failures (conflicting types) are caught at build time — contract errors become compile errors.
+**A:** Federation can compose service-owned schema parts when ownership and cross-service resolution justify it. Test composition, runtime dependency cost and authorization propagation before assuming one graph removes team coupling.
 
-**Q:** What core constraint explains why operational visibility is the real production feature governs apollo server?
+**Q:** Which execution and dependency measurements help operate a GraphQL service?
 
-**A:** query-level tracing feeding the usage API turns "GraphQL is slow" into "this resolver, this field, this client" — the observability stack  adapted to query-driven APIs.
+**A:** Measure operation latency, resolver and dependency costs, error rates and admission rejections. Protect sensitive arguments and field values when tracing or reporting usage.
 
 ## Summary
 

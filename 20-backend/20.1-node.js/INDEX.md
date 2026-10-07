@@ -1,6 +1,6 @@
 # Node.js — Index
 
-> **Study time:** ≈ 2 h 7 m of reading (17 files, ~7 min average).
+> **Study time:** ≈ 2 h 8 m of reading (17 files, ~8 min average).
 > **17 files** — Event loop internals, streams (Node + Web), buffers, file system, HTTP servers, parallel processing, process management, security, debugging/profiling, Express/Fastify internals, the built-in test runner, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-17-blue)](../../INDEX.md)
@@ -63,7 +63,7 @@ Production concerns — making Node.js scale and stay healthy. Category INDEX: [
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Clustering](03-processes-and-concurrency/20.1.3.01-clustering.md) | Cluster module, worker processes, IPC, load balancing, PM2, graceful restart | Important | Important | 9 min |
-| 02 | [Child Processes & Workers](03-processes-and-concurrency/20.1.3.02-child-processes-workers.md) | `spawn`/`fork`/`exec`, `worker_threads`, SharedArrayBuffer, thread pool, when to use what | Important | Important | 9 min |
+| 02 | [Child Processes & Workers](03-processes-and-concurrency/20.1.3.02-child-processes-workers.md) | `spawn`/`fork`/`exec`, `worker_threads`, SharedArrayBuffer, thread pool, when to use what | Important | Important | 10 min |
 | 03 | [Process & Environment](03-processes-and-concurrency/20.1.3.03-process-environment.md) | `process.env`, `argv`, lifecycle, signals (SIGTERM/SIGINT), graceful shutdown, exit codes | Important | Important | 9 min |
 
 ---

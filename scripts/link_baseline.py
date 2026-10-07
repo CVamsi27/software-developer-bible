@@ -6,8 +6,8 @@ Born from the Sept 2026 dead-link remediation (the audit started from
 keeps a committed baseline of every external URL cited in the docs so
 the next audit diffs against known-good state instead of starting cold.
 
-The baseline is deliberately OUTSIDE verify.sh (like check_freshness
---check-urls): it is an audit tool, not a per-commit gate.
+The baseline diff runs in verify.sh. Network probing is an audit step
+performed before accepting new citations, not a per-commit network gate.
 
 Usage:
   python3 scripts/link_baseline.py --update   # re-capture the baseline

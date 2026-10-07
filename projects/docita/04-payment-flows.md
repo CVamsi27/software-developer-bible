@@ -9,6 +9,8 @@
 
 A payment integration connects a merchant account, provider-side payment state and local business records. Docita distinguishes clinic-owned payment configuration, patient-to-clinic collection and clinic-to-Docita SaaS billing.
 
+> **Textbook Definition:** A payment workflow coordinates merchant identity, provider events and local accounting state through authenticated requests, verified callbacks and reconciliation. Provider acceptance, settlement and local acknowledgment are distinct states.
+
 The central problem is ownership: a patient's invoice payment must reach the intended clinic merchant, while a SaaS subscription payment belongs to Docita. A successful API call can still be wrong if it uses the wrong merchant credentials.
 
 This case describes source inspected on **2 October 2026**. Intended separation is distinguished from current wiring; historical incidents and “zero mix-ups” outcomes are not asserted without evidence.

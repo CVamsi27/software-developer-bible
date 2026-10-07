@@ -1,4 +1,4 @@
-<!-- section: Database | category: Reference | tags: revisi | role-priority: essential | general-importance: foundational -->
+<!-- section: Database | category: Reference | tags: revision | role-priority: essential | general-importance: foundational -->
 [![Section](https://img.shields.io/badge/section-Database-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)

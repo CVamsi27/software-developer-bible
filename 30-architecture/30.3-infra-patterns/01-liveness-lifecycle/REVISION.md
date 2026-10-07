@@ -1,7 +1,7 @@
-<!-- section: Infra Patterns | category: Reference | tags: revision, retrieval-practi | role-priority: essential | general-importance: important -->
+<!-- section: Infra Patterns | category: Reference | tags: revision, retrieval-practice | role-priority: essential | general-importance: important -->
 [![Section](https://img.shields.io/badge/section-Infra%20Patterns-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
-[![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
+[![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
 [![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)

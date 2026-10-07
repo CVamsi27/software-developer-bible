@@ -1,4 +1,4 @@
-<!-- section: Caching | category: Reference | tags: revisi | role-priority: essential | general-importance: important -->
+<!-- section: Caching | category: Reference | tags: revision | role-priority: essential | general-importance: important -->
 [![Section](https://img.shields.io/badge/section-Caching-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-orange)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)

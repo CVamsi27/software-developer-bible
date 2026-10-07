@@ -249,6 +249,20 @@ function f(): number {
 
 CASES = [
     {
+        "name": "table boundary: separate a trailing horizontal rule",
+        "fixer": "check_alignment.py", "args": ["--fix"],
+        "before": "| A | B |\n| --- | --- |\n| 1 | 2 |\n---\n",
+        "after": "| A | B |\n| --- | --- |\n| 1 | 2 |\n\n---\n",
+    },
+
+    {
+        "name": "table boundary: add a blank line without touching nested fences",
+        "fixer": "check_alignment.py", "args": ["--fix"],
+        "before": "### Cases\n| A | B |\n| --- | --- |\n| 1 | 2 |\n\n````markdown\n### Example\n| A | B |\n| --- | --- |\n| 1 | 2 |\n````\n",
+        "after": "### Cases\n\n| A | B |\n| --- | --- |\n| 1 | 2 |\n\n````markdown\n### Example\n| A | B |\n| --- | --- |\n| 1 | 2 |\n````\n",
+    },
+
+    {
         "name": "table alignment: separator spacing + row padding",
         "fixer": "check_alignment.py",
         "args": ["--fix"],

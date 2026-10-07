@@ -1,7 +1,7 @@
-<!-- section: Frontend | category: Reference | tags: revision, retrieval-practi | role-priority: optional | general-importance: specialized -->
+<!-- section: Frontend | category: Reference | tags: revision, retrieval-practice | role-priority: optional | general-importance: specialized -->
 [![Section](https://img.shields.io/badge/section-Frontend-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
-[![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
+[![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
 [![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Optional-lightgrey)](../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../docs/topic-importance.md)
@@ -41,6 +41,14 @@ Source: [Expo EAS Build — Cloud Builds, Profiles & Submitting](10.8.04-expo-ea
 **Q:** What distinguishes an EAS build from a submission or release?
 
 **A:** Build produces the native artifact; submission uploads it to a store path; review and rollout determine user availability. A successful upload is not a live release.
+
+**Q:** Why can an internally distributed preview not simply be submitted to TestFlight?
+
+**A:** Direct internal installation and store testing use different signing/distribution targets. An iOS ad hoc preview is not an App Store-signed artifact; build a store-compatible version for TestFlight. Simulator output is another separate target.
+
+**Q:** With remote version management, why can `app.json` still show an old build number?
+
+**A:** EAS increments its remotely stored build version and applies it to the native build rather than rewriting the local configuration. Record the effective version with the artifact.
 
 ## Over-the-Air Updates — EAS Update, CodePush & the JS/Native Boundary
 

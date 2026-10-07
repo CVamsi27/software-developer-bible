@@ -1,6 +1,6 @@
 # Core Metrics
 
-> **Study time:** ≈ 16 min of reading (2 files, ~8 min average).
+> **Study time:** ≈ 17 min of reading (2 files, ~8 min average).
 > **1 file.** The three Core Web Vitals — LCP, INP, CLS — their thresholds, measurement, and optimization levers. Every senior frontend interview starts here.
 
 [![Files](https://img.shields.io/badge/files-2-blue)](../INDEX.md)
@@ -13,7 +13,7 @@
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Core Web Vitals](50.3.1.01-core-web-vitals.md) | LCP, INP, CLS — measurement, thresholds, optimization strategies. INP replaced FID in 2024. | Important | Important | 14 min |
+| 01 | [Core Web Vitals](50.3.1.01-core-web-vitals.md) | LCP, INP, CLS — measurement, thresholds, optimization strategies. INP replaced FID in 2024. | Important | Important | 15 min |
 
 ---
 

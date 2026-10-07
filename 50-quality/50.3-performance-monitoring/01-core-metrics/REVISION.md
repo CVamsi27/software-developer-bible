@@ -1,4 +1,4 @@
-<!-- section: Performance Monitoring | category: Reference | tags: revision, practi | role-priority: important | general-importance: important -->
+<!-- section: Performance Monitoring | category: Reference | tags: revision, practice | role-priority: important | general-importance: important -->
 [![Section](https://img.shields.io/badge/section-Performance%20Monitoring-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)
@@ -33,6 +33,10 @@ Source: [Core Web Vitals](50.3.1.01-core-web-vitals.md)
 **Q:** Why reserve image space before loading it?
 
 **A:** Known dimensions or an appropriate aspect ratio prevent later content movement. The rendered layout and responsive behavior must match the reservation.
+
+**Q:** Eligible shifts score 0.1 at 0ms, 0.2 at 500ms and 0.05 at 3000ms. Why is CLS 0.3 rather than 0.35?
+
+**A:** The first two shifts share a session window and sum to 0.3. The later shift follows a gap of more than one second and starts another window. CLS uses the largest window sum, rather than the lifetime total. A raw observer that adds every eligible entry reports a different measure.
 
 ## Summary
 

@@ -1,4 +1,4 @@
-<!-- section: Testing | category: Reference | tags: revision, practi | role-priority: important | general-importance: specialized -->
+<!-- section: Testing | category: Reference | tags: revision, practice | role-priority: important | general-importance: specialized -->
 [![Section](https://img.shields.io/badge/section-Testing-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)

@@ -28,7 +28,7 @@ The 4 content files classify into 3 conceptual categories + drills.
 | - | ---- | --------------- | --- | --- |
 | 1 | [Message Brokers](20.9.01-message-brokers.md) | Why decoupling in time is worth a cluster; Kafka vs RabbitMQ models; at-least-once + idempotency as the default contract; when *not* to add a broker | Important | Specialized |
 | 2 | [Kafka Internals & Operations](20.9.02-kafka-internals-and-operations.md) | `acks=all` and the ISR acceptance floor; consumer groups and rebalance storms; lag as the SLI; compaction and replay-as-restart | Important | Specialized |
-| 3 | [Event-Driven Patterns on a Broker](20.9.03-event-driven-patterns.md) | Envelopes and schema contracts that survive version skew; retry→DLQ policy; outbox for atomic write+publish; consumer idempotency patterns | Important | Specialized |
+| 3 | [Event-Driven Patterns on a Broker](20.9.03-event-driven-patterns.md) | Envelopes and schema contracts that survive version skew; retry→DLQ policy; outbox for atomic write+publication intent; consumer idempotency patterns | Important | Specialized |
 | 4 | [Interview Questions](20.9.04-interview-questions.md) | 25 Q&A with follow-up traps | Important | Specialized |
 
 ## The Decision Map (memorize)
@@ -40,7 +40,7 @@ Replay + stream analytics?   → Kafka (log model)
 Rich routing + work queues?  → RabbitMQ (queue model)
 Ordering?                    → per partition/queue ONLY — key by entity id
 Delivery?                    → configure acknowledgments/durability; make retries idempotent
-DB write + publish atomic?   → transactional outbox
+DB write + event intent atomic? → transactional outbox
 Anything can be poison?      → bounded retries → DLQ → alert → review
 ```
 

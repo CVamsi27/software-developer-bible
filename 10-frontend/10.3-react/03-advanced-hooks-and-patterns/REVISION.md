@@ -1,7 +1,7 @@
-<!-- section: React | category: Reference | tags: revision, retrieval-practi | role-priority: essential | general-importance: foundational -->
+<!-- section: React | category: Reference | tags: revision, retrieval-practice | role-priority: essential | general-importance: foundational -->
 [![Section](https://img.shields.io/badge/section-React-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
-[![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
+[![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
 [![Read time](https://img.shields.io/badge/read--time-7_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
@@ -69,7 +69,7 @@ Source: [Error Boundary](10.3.3.02-error-boundary.md)
 **Code Examples**
 
 5. **Q:** How does the "Try again" button in the retry examples actually recover?
-   **A:** It calls `setState` to flip `hasError` back to `false`, so React re-renders the children from scratch — the subtree remounts and a transient failure (flaky fetch, bad intermediate state) can succeed; a persistent bug simply throws again and the fallback returns.
+   **A:** It clears the boundary's failure state, so React re-renders the children from scratch — the subtree remounts and a transient failure (flaky fetch, bad intermediate state) can succeed; a persistent bug simply throws again and the fallback returns.
 
 **Common Mistakes**
 
@@ -77,12 +77,18 @@ Source: [Error Boundary](10.3.3.02-error-boundary.md)
    **A:** Event handlers run outside React's render pass, so the throw never travels up the fiber tree to the boundary — it must be caught with `try/catch` inside the handler.
 
 7. **Q:** What's wrong with a boundary that only renders "Error occurred"?
-   **A:** The user is stuck: `hasError` stays `true` with no path back to working UI. A boundary's real value is recovery — clear the error state to retry, or offer navigation — not merely displaying the failure.
+   **A:** The user is stuck: the failure state remains set with no path back to working UI. A boundary's real value is recovery — clear the error state to retry, or offer navigation — not merely displaying the failure.
 
 **Best Practices**
 
 8. **Q:** Where should boundaries sit in a real application?
    **A:** One per independent failure domain — route, widget, form, feature — nested inside a top-level catch-all, each with its own fallback, so a crash degrades one region instead of blanking the app; a single app-wide boundary is only a last resort.
+
+9. **Q:** Why can a retry button immediately return to the fallback when Suspense data failed?
+   **A:** Clearing the boundary does not replace a cached rejected resource. Reset or invalidate that resource through its owner before retrying; a persistent render bug needs a different recovery path.
+
+10. **Q:** Why does the example store a boolean failure flag rather than treating the caught value as an Error?
+   **A:** JavaScript can throw a string or even null. A truthiness check on the thrown value can miss the failure; an explicit flag selects the fallback while the unknown value goes to a safe reporting adapter.
 
 ## Custom Hooks
 

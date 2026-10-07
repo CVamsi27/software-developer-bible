@@ -1,6 +1,6 @@
 # Functional Patterns — JavaScript
 
-> **Study time:** ≈ 1 h 26 m of reading (6 files, ~14 min average).
+> **Study time:** ≈ 1 h 27 m of reading (6 files, ~14 min average).
 > **6 files.** The patterns you will use daily as a senior engineer: modules, memoization, generators, currying/composition, and recursion with tail-call optimization.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](#files)
@@ -15,9 +15,9 @@
 | --   : | ------ | -------- | --- | --- | ----------: |
 | 01 | [Modules](10.1.5.01-modules.md) | ESM vs CommonJS, dynamic imports, tree shaking, barrel exports | Essential | Foundational | 19 min |
 | 02 | [Memoization](10.1.5.02-memoization.md) | Caching, `_.memoize`, React.memo, useMemo, when to use | Essential | Foundational | 16 min |
-| 03 | [Generators](10.1.5.03-generators.md) | `function*`, yield, iterators, async generators, lazy evaluation | Important | Specialized | 21 min |
-| 04 | [Currying & Composition](10.1.5.04-currying-composition.md) | Currying, partial application, pipe, compose, functional patterns | Important | Specialized | 10 min |
-| 05 | [Recursion & Tail Call](10.1.5.05-recursion-tail-call.md) | Recursive patterns, tail call optimization, trampolining, memoized recursion | Important | Specialized | 12 min |
+| 03 | [Generators](10.1.5.03-generators.md) | `function*`, yield, iterators, async generators, lazy evaluation | Important | Specialized | 22 min |
+| 04 | [Currying & Composition](10.1.5.04-currying-composition.md) | Currying, partial application, pipe, compose, functional patterns | Important | Specialized | 11 min |
+| 05 | [Recursion & Tail Call](10.1.5.05-recursion-tail-call.md) | Recursive patterns, tail call optimization, trampolining, memoized recursion | Important | Specialized | 13 min |
 
 ---
 

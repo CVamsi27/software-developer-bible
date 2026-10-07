@@ -9,6 +9,8 @@
 
 Inpatient management connects a patient's admission to a bed and tracks admission, transfer and discharge. Two rules must remain true: one bed must not be assigned to two active admissions, and one patient must not acquire conflicting active admissions within the defined clinic policy.
 
+> **Textbook Definition:** Resource allocation assigns constrained resources to active requests while preserving capacity and exclusivity invariants under concurrent state transitions; inpatient bed assignment is one such allocation problem.
+
 The difficult case is concurrent staff activity: two requests can both read AVAILABLE before either occupies the bed.
 
 ## First Principles

@@ -1,6 +1,6 @@
 # Kubernetes — Index
 
-> **Study time:** ≈ 4 h 5 m of reading (22 files, ~11 min average).
+> **Study time:** ≈ 4 h 9 m of reading (22 files, ~11 min average).
 > **22 files** — Kubernetes orchestration from pods and replica sets to deployments, services, ingress, ConfigMaps, HPA, node autoscaling (Karpenter/Cluster Autoscaler), health checks, Helm, Kustomize, CRDs/operators, security, batch workloads, PDBs, resource quotas, admission injection, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-22-blue)](../../INDEX.md)
@@ -31,7 +31,7 @@ What runs in K8s. Read these first.
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Pods & ReplicaSets](01-core-workloads/40.2.1.01-pods-replicasets.md) | Pod lifecycle, init containers, sidecars, RS scaling | Optional | 20 min | 20 min |
-| 02 | [Deployments](01-core-workloads/40.2.1.02-deployments.md) | Rolling updates, rollbacks, strategy, status management | Optional | 25 min | 25 min |
+| 02 | [Deployments](01-core-workloads/40.2.1.02-deployments.md) | Rolling updates, rollbacks, strategy, status management | Optional | 25 min | 26 min |
 | 03 | [StatefulSets & DaemonSets](01-core-workloads/40.2.1.03-statefulsets-daemonsets.md) | Stateful workloads (databases), stable network IDs, node-level agents (logging, monitoring) | Optional | 8 min | 8 min |
 | 04 | [Jobs & CronJobs](01-core-workloads/40.2.1.04-jobs-cronjobs.md) | Batch jobs, scheduled tasks, backoff, parallelism, completion mode | Optional | 8 min | 8 min |
 
@@ -54,7 +54,7 @@ How traffic and configuration get in.
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 08 | [HPA & Scaling](03-scaling/40.2.3.01-hpa-scaling.md) | Horizontal pod autoscaling, metrics server, custom metrics, VPA | Optional | 20 min | 20 min |
-| 09 | [Node Autoscaling & Cluster Capacity](03-scaling/40.2.3.02-node-autoscaling-cluster-capacity.md) | Cluster Autoscaler rules, Karpenter consolidation, node pools/taints, overprovisioning buffers, GPU/stateful caveats | Optional | 14 min | 13 min |
+| 09 | [Node Autoscaling & Cluster Capacity](03-scaling/40.2.3.02-node-autoscaling-cluster-capacity.md) | Cluster Autoscaler rules, Karpenter consolidation, node pools/taints, overprovisioning buffers, GPU/stateful caveats | Optional | 14 min | 14 min |
 
 ---
 
@@ -65,9 +65,9 @@ The senior-level reliability and security layer.
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 10 | [Health Checks](04-production-hardening/40.2.4.01-health-checks.md) | Liveness, readiness, startup probes, probe configuration, failure modes | Optional | 18 min | 18 min |
-| 11 | [Pod Disruption Budgets](04-production-hardening/40.2.4.02-pod-disruption-budgets.md) | minAvailable, maxUnavailable, voluntary disruptions, node drainage, availability | Optional | 5 min | 5 min |
+| 11 | [Pod Disruption Budgets](04-production-hardening/40.2.4.02-pod-disruption-budgets.md) | minAvailable, maxUnavailable, voluntary disruptions, node drainage, availability | Optional | 5 min | 6 min |
 | 12 | [RBAC & Network Policies](04-production-hardening/40.2.4.03-rbac-network-policies.md) | Roles, ClusterRoles, Bindings, ServiceAccounts, NetworkPolicies, micro-segmentation | Optional | 7 min | 7 min |
-| 13 | [Resource Quotas](04-production-hardening/40.2.4.04-resource-quotas.md) | ResourceQuota, LimitRange, multi-tenant isolation, priority classes, monitoring | Optional | 19 min | 19 min |
+| 13 | [Resource Quotas](04-production-hardening/40.2.4.04-resource-quotas.md) | ResourceQuota, LimitRange, multi-tenant isolation, priority classes, monitoring | Optional | 19 min | 20 min |
 
 ---
 

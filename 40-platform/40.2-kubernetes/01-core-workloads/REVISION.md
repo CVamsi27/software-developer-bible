@@ -1,4 +1,4 @@
-<!-- section: Kubernetes | category: Reference | tags: revision, practi | role-priority: optional | general-importance: specialized -->
+<!-- section: Kubernetes | category: Reference | tags: revision, practice | role-priority: optional | general-importance: specialized -->
 [![Section](https://img.shields.io/badge/section-Kubernetes-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)
@@ -25,6 +25,10 @@ Source: [Kubernetes Deployments](40.2.1.02-deployments.md)
 **Q:** Why can maxUnavailable zero still produce a bad release?
 
 **A:** It constrains rollout availability according to Pod readiness. Incorrect probes, dependency overload, insufficient surge capacity, or application incompatibility can still affect users.
+
+**Q:** A Deployment reports `ProgressDeadlineExceeded`. Has Kubernetes already restored the previous version?
+
+**A:** No. The condition exposes stalled progress; the Deployment controller continues reconciliation. A release controller, pipeline, or operator must choose rollback or repair, and must verify schema and interface compatibility before restoring an older template.
 
 ## StatefulSets & DaemonSets
 

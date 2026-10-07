@@ -1,4 +1,4 @@
-<!-- section: Git Advanced | category: Reference | tags: revision, practi | role-priority: important | general-importance: foundational -->
+<!-- section: Git Advanced | category: Reference | tags: revision, practice | role-priority: important | general-importance: foundational -->
 [![Section](https://img.shields.io/badge/section-Git%20Advanced-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)
@@ -17,6 +17,14 @@ Source: [Git Internals: Objects, Refs & Packfiles](40.6.01-git-internals-objects
 **Q:** Why does editing a committed file not mutate its existing Git object?
 
 **A:** Objects are content-addressed and immutable; new content creates new objects and a new commit tree. Branch refs move to select history.
+
+**Q:** Where does Git store a tracked file's executable mode, and does changing that mode change the blob?
+
+**A:** The tree entry stores mode and filename; the blob stores file content. A mode-only change creates a different tree while the unchanged content can reuse the same blob.
+
+**Q:** Why should a repository tool not assume every branch is a 41-byte file?
+
+**A:** That describes a loose SHA-1 ref in the traditional files backend. References can be packed or use another backend, and object-ID length depends on repository format. Use Git's ref and object APIs rather than assuming on-disk filenames or byte lengths.
 
 ## Branching Strategies
 

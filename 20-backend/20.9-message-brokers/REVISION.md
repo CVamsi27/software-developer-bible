@@ -1,4 +1,4 @@
-<!-- section: Message Brokers | category: Reference | tags: revisi | role-priority: important | general-importance: specialized -->
+<!-- section: Message Brokers | category: Reference | tags: revision | role-priority: important | general-importance: specialized -->
 [![Section](https://img.shields.io/badge/section-Message%20Brokers-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-orange)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)

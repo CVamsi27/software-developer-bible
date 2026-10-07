@@ -9,7 +9,8 @@ boxes, ERD/tee-line groups, and lines with odd pipe counts are skipped — they
 are not nesting and must not be force-aligned.
 
 Tables: every | in a column forms a straight line (checked outside fenced code
-blocks only).
+blocks only). Blank lines separate a table from adjacent prose, headings or rules:
+Kramdown otherwise renders its pipes as a paragraph (ROADMAP, 2026-10-07).
 
 Usage:
   python3 scripts/check_alignment.py            # report issues, exit 1 if any
@@ -323,10 +324,18 @@ def fix_tables(text):
                 rows.append(lines[j])
                 j += 1
             if len(rows) >= 2 and len({len(split_cells(r)) for r in rows}) == 1:
+                if (SEP_ROW.match(rows[1]) and not SEP_ROW.match(rows[0])
+                        and out and out[-1].strip()):
+                    out.append('')
+                    changed += 1
                 aligned = align_table(rows)
                 if aligned != rows:
                     changed += 1
                 out.extend(aligned)
+                if (SEP_ROW.match(rows[1]) and not SEP_ROW.match(rows[0])
+                        and j < n and lines[j].strip()):
+                    out.append('')
+                    changed += 1
             else:
                 out.extend(rows)
             i = j

@@ -1,4 +1,4 @@
-<!-- section: REST APIs | category: Reference | tags: revisi | role-priority: essential | general-importance: foundational -->
+<!-- section: REST APIs | category: Reference | tags: revision | role-priority: essential | general-importance: foundational -->
 [![Section](https://img.shields.io/badge/section-REST%20APIs-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
@@ -14,65 +14,65 @@ Explain each mechanism before checking the answer. Revisit its source for the ex
 
 Source: [HTTP Methods](20.3.2.01-http-methods.md)
 
-**Q:** What core constraint explains why safe and idempotent are load-bearing promises. governs http methods?
+**Q:** How do safety and idempotence affect caching and retries?
 
-**A:** A retry layer cannot know your code — it only knows the method. GET/HEAD must be safe and PUT/DELETE idempotent *because the network retries and proxies pre-fetch*; violate the promise and retries corrupt data.
+**A:** Safety means no intended state change; idempotence means repeating an identical request has the same intended effect. These properties inform retries, while cacheability additionally depends on response status and headers.
 
-**Q:** What core constraint explains why post is the escape hatch, so it needs help. governs http methods?
+**Q:** How can a POST operation support duplicate-safe retry?
 
-**A:** POST is neither safe nor idempotent — which is exactly why client-generated idempotency keys exist: they give a non-idempotent method the retry-safety it otherwise lacks.
+**A:** Define an idempotency-key contract and atomically record the key with the protected outcome. Reject mismatched reuse and retain state for the permitted retry window; POST itself does not promise idempotence.
 
-**Q:** What core constraint explains why method ≠ crud dogma. governs http methods?
+**Q:** Why does choosing an HTTP method require more than mapping it to a CRUD label?
 
-**A:** The method encodes the *semantics of the interaction* (replace vs partial-modify: PUT vs PATCH), not a mapping onto database operations. Designing "PUT = SQL UPDATE" produces APIs that lie to intermediaries.
+**A:** The method describes interaction semantics, such as replacement versus partial modification. It does not dictate whether the server executes a SQL INSERT or UPDATE.
 
 ## HTTP Status Codes
 
 Source: [HTTP Status Codes](20.3.2.02-status-codes.md)
 
-**Q:** What core constraint explains why a cache, proxy, or browser sees only the status line. governs http status codes?
+**Q:** How do status codes guide browsers, proxies and clients?
 
-**A:** The first digit gives a broad outcome class: informational, success, redirection, client error or server error. Cacheability and retry behavior depend on the specific status, method, headers and application semantics.
+**A:** The first digit gives a broad outcome class. The specific status, method, headers and application contract determine caching, redirection and retry behavior.
 
-**Q:** What core constraint explains why 4xx vs 5xx is the retry contract. governs http status codes?
+**Q:** Why is the 4xx or 5xx class insufficient by itself to decide whether to retry?
 
-**A:** Retrying a 400 changes nothing; retrying a 503 might. Clients and load balancers build policies on this line, so returning 500 for validation errors breaks automation everywhere.
+**A:** Some 4xx responses are retryable after a condition changes, and some 5xx failures persist. Check operation idempotence, Retry-After, attempt limits and the documented failure meaning.
 
-**Q:** What core constraint explains why precision below the class is for clients, not humans. governs http status codes?
+**Q:** When should an API use a specific status code rather than a generic error?
 
-**A:** 401 vs 403 ("who are you" vs "not allowed"), 404 vs 410 ("missing" vs "gone forever") exist so machines branch correctly — picking "close enough" codes destroys that.
+**A:** Use the code whose semantics match the outcome so clients can branch predictably. For example, 401 requires authentication handling, while 403 describes refusal; the response body supplies application detail.
 
 ## CORS (Cross-Origin Resource Sharing)
 
 Source: [CORS (Cross-Origin Resource Sharing)](20.3.2.03-cors.md)
 
-**Q:** What core constraint explains why scripts run with the user's authority. governs cors (cross-origin resource sharing)?
+**Q:** Why does a browser restrict scripts from reading another origin's responses?
 
-**A:** Code from evil.com executing in your browser sends requests *with the user's cookies* — the browser must distinguish "user navigated there" from "some other site's code asked." Same-origin policy is that wall.
+**A:** A script running under one origin must not automatically read private responses from another origin. Browsers apply the same-origin policy even when the user can navigate to both sites.
 
-**Q:** What core constraint explains why the wall needs a door, so the server holds the key. governs cors (cross-origin resource sharing)?
+**Q:** How does a server permit selected cross-origin access?
 
-**A:** CORS is not a security feature the server configures *for* itself; it's the server *opting in* to letting other origins read responses the browser would block. The preflight is the browser asking "may I?" before a non-simple request.
+**A:** Return the applicable CORS headers for allowed origins, methods and headers. Certain requests need preflight; authentication and authorization still apply to the actual request.
 
-**Q:** What core constraint explains why enforcement lives in the browser, so curl doesn't care. governs cors (cross-origin resource sharing)?
+**Q:** Why can a request succeed in curl but be unreadable to browser JavaScript?
 
-**A:** That's why CORS misconfigurations are invisible to Postman and why "it works in curl" proves nothing — and why `Access-Control-Allow-Origin: *` with credentials is impossible by construction.
+**A:** curl does not enforce browser origin policy. A browser can send a request yet withhold its response from JavaScript; credentialed CORS also cannot use a wildcard allowed origin.
 
 ## HTTP Caching Strategies
 
 Source: [HTTP Caching Strategies](20.3.2.04-http-caching.md)
 
-**Q:** What core constraint explains why freshness: don't ask at all. governs http caching strategies?
+**Q:** How does freshness let a cache reuse a response without contacting the origin?
 
-**A:** `Cache-Control` max-age lets the client answer from its own store without touching the network. This is the only strategy with zero latency and zero load; everything else is a refinement of it.
+**A:** A fresh reusable response can be served from the relevant cache without revalidation. Lookup, transfer and rendering still have costs; this reduces origin traffic rather than creating literally zero latency.
 
-**Q:** What core constraint explains why validation: ask cheaply. governs http caching strategies?
+**Q:** How do validators reduce transfer when a cached response becomes stale?
 
-**A:** When freshness expires, `ETag`/`If-None-Match` lets the server answer "unchanged — 304, zero bytes" instead of resending the body. Freshness + validation compose: every cached response should carry both.
+**A:** A conditional request can receive 304 when the stored representation remains valid, avoiding retransmission of its body. The response still carries headers, and validators are useful only when the response policy permits reuse.
 
-**Q:** What core constraint explains why correctness demands invalidation paths. governs http caching strategies?
+**Q:** Which invalidation paths must a caching design account for?
 
-**A:** Any cached representation may become stale after a write. Choose freshness, validation and storage directives according to the data and use case; no one combination is required for every response.
+**A:** Consider writes, permission changes, representation variants and deployment changes. Choose a key and freshness, validation or purge policy that match the tolerated stale-data window.
 
 ## Summary
 

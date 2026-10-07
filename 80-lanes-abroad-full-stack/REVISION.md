@@ -1,4 +1,4 @@
-<!-- section: Abroad Full-Stack Lane | category: Revision | tags: revision, recall, decisio | role-priority: important | general-importance: important -->
+<!-- section: Abroad Full-Stack Lane | category: Revision | tags: revision, recall, decisions | role-priority: important | general-importance: important -->
 [![Section](https://img.shields.io/badge/section-Abroad%20Full-Stack%20Lane-blue)](#)
 [![Category](https://img.shields.io/badge/category-Revision-green)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20recall%20%C2%B7%20decisions-lightgrey)](#)
@@ -274,6 +274,14 @@ Source: [Role-focused brushup](80.29-topic-brushup-roadmap.md).
 **Q:** What is a useful readiness check after reading a topic?
 
 **A:** Implement or trace the mechanism without copying, explain its failure boundary, and handle a changed assumption. Familiarity with an answer does not establish transfer to a new case.
+
+## Senior readiness
+
+Source: [Role-focused brushup](80.29-topic-brushup-roadmap.md#check-senior-readiness-with-changed-constraints)
+
+**Q:** You can recite an outbox definition but cannot explain a crash after provider success. What should you practice next?
+
+**A:** Trace durable intent, the external effect and acknowledgment separately. Reproduce the ambiguous result with a controlled provider substitute, then explain the idempotency or reconciliation contract. Correct terminology establishes only the opening explanation; the changed failure case exposes the recovery gap.
 
 ## Summary
 

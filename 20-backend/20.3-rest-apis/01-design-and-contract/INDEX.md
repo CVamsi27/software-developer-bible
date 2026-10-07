@@ -1,6 +1,6 @@
 # Design & Contract - REST APIs
 
-> **Study time:** ≈ 1 h 13 m of reading (6 files, ~12 min average).
+> **Study time:** ≈ 1 h 15 m of reading (6 files, ~12 min average).
 > **6 files.** How the API is shaped and specified: protocol/design-pattern selection, REST principles, versioning strategy, the maturity model, and the OpenAPI contract.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](../INDEX.md)
@@ -13,9 +13,9 @@
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
 | 01 | [API Design Patterns](20.3.1.01-api-design-patterns.md) | REST vs GraphQL vs gRPC selection, resource naming, consistency, evolution | Essential | Foundational | 15 min |
-| 02 | [REST Principles](20.3.1.02-rest-principles.md) | Stateless, uniform interface, constraints | Essential | Foundational | 17 min |
+| 02 | [REST Principles](20.3.1.02-rest-principles.md) | Stateless, uniform interface, constraints | Essential | Foundational | 18 min |
 | 03 | [Versioning](20.3.1.03-versioning.md) | URL vs header vs query versioning, deprecation policy | Essential | Foundational | 26 min |
-| 04 | [REST Maturity Model](20.3.1.04-rest-maturity-model.md) | Richardson L0-L3, HATEOAS | Important | Important | 4 min |
+| 04 | [REST Maturity Model](20.3.1.04-rest-maturity-model.md) | Richardson L0-L3, HATEOAS | Important | Important | 5 min |
 | 05 | [OpenAPI / Swagger](20.3.1.05-openapi-swagger.md) | Spec-first design, codegen | Essential | Foundational | 9 min |
 
 ---

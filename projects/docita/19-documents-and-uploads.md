@@ -9,6 +9,8 @@
 
 A file workflow connects upload permission, object storage that retains files, database records identifying each file's owner, and read permission. Docita connects these parts through an interface for storage providers, upload-session secrets, and code that resolves file URLs.
 
+> **Textbook Definition:** A file-access workflow coordinates authorization, upload capability, object persistence and resource ownership. Object identifiers and generated links are references to stored content, not independent proof of permission.
+
 Consider a doctor opening an upload link without a normal staff session. The link must grant a narrow upload capability, validate the file, associate the result with the intended record and prevent competing uploads from consuming that capability twice. Generating a secret solves only the first part.
 
 This case describes source inspected on **2 October 2026**. Sequential checks and intended policies are distinguished from concurrent guarantees and production evidence.

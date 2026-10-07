@@ -9,6 +9,8 @@
 
 A **job queue** stores work for a worker to execute. A **transactional outbox** stores an event alongside the business change that caused it, so a crash between database commit and notification does not erase the intent.
 
+> **Textbook Definition:** A durable job queue persists work for later execution; a transactional outbox atomically persists publication intent with a local business change. Both require explicit claim, retry and effect-recovery protocols.
+
 Suppose a prescription must produce a PDF. Saving the prescription and then scheduling its PDF in a separate operation creates a gap: the first write can commit and the second can fail. Writing durable intent in the same database transaction closes that particular gap. It does not make the PDF generation or notification occur exactly once.
 
 This case describes source inspected on **2 October 2026**, with limitations distinguished from the intended design. Production throughput, latency, cost and delivery outcomes were not measured in this review.

@@ -1,6 +1,6 @@
 # Measurement
 
-> **Study time:** ≈ 1 h 3 m of reading (6 files, ~10 min average).
+> **Study time:** ≈ 1 h 4 m of reading (6 files, ~11 min average).
 > **6 files.** How performance is actually measured: browser Performance APIs, profiling tools, Lighthouse CI in the pipeline, real-user monitoring from production — and how the underlying protocol (HTTP/2 vs HTTP/3) changes what you should optimize.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](../INDEX.md)
@@ -33,7 +33,7 @@ Senior interviews probe exactly this split: "Your lab Lighthouse score is 95 but
 | 02 | [Profiling Tools](50.3.2.02-profiling-tools.md) | Chrome DevTools, Lighthouse, WebPageTest, React Profiler, flame charts | Important | Important | 19 min |
 | 03 | [Lighthouse CI](50.3.2.03-lighthouse-ci.md) | Automated audits, budgets, score tracking, CI/CD integration | Important | Important | 9 min |
 | 04 | [Real User Monitoring](50.3.2.04-real-user-monitoring.md) | RUM, `web-vitals` library, `sendBeacon`, CrUX, segmentation | Important | Important | 13 min |
-| 05 | [HTTP/2 & HTTP/3 Performance Effects](50.3.2.05-http2-http3-performance-effects.md) | Multiplexing, TCP head-of-line blocking, QUIC, 0-RTT, connection migration, sharding anti-patterns, CWV impact | Important | Important | 12 min |
+| 05 | [HTTP/2 & HTTP/3 Performance Effects](50.3.2.05-http2-http3-performance-effects.md) | Multiplexing, TCP head-of-line blocking, QUIC, 0-RTT, connection migration, sharding anti-patterns, CWV impact | Important | Important | 13 min |
 
 ---
 

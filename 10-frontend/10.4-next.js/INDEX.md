@@ -1,6 +1,6 @@
 # Next.js — Index
 
-> **Study time:** ≈ 6 h 39 m of reading (21 files, ~19 min average).
+> **Study time:** ≈ 6 h 41 m of reading (21 files, ~19 min average).
 > **21 files** — App Router, rendering strategies, server components, data fetching patterns, caching, streaming, ISR, authentication, static exports, deployment (Docker/Vercel/self-hosted), and interview questions.
 
 [![Files](https://img.shields.io/badge/files-21-blue)](../../INDEX.md)
@@ -43,7 +43,7 @@ The mental model for choosing the right rendering strategy.
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [SSR / CSR / SSG / ISR](01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md) | Rendering strategies comparison, when to use each, hydration, streaming | Important | Specialized | 23 min |
-| 02 | [App Router](01-rendering-fundamentals/10.4.1.02-app-router.md) | Layouts, nested routes, loading states, error handling, route groups | Important | Important | 21 min |
+| 02 | [App Router](01-rendering-fundamentals/10.4.1.02-app-router.md) | Layouts, nested routes, loading states, error handling, route groups | Important | Important | 22 min |
 | 03 | [Server Components](01-rendering-fundamentals/10.4.1.03-server-components.md) | RSC architecture, server rendering, serialization, "use server" | Important | Important | 20 min |
 | 04 | [Client Components](01-rendering-fundamentals/10.4.1.04-client-components.md) | `'use client'`, interleaving, client boundaries, "use client" placement | Important | Specialized | 30 min |
 
@@ -56,7 +56,7 @@ The request pipeline — every Next.js interview tests this.
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 05 | [Middleware](02-routing-and-middleware/10.4.2.01-middleware.md) | Edge middleware, matchers, redirects, rewrite, auth gating | Important | Specialized | 21 min |
-| 06 | [Route Handlers](02-routing-and-middleware/10.4.2.02-route-handlers.md) | API routes, request/response, caching, dynamic vs static | Important | Important | 23 min |
+| 06 | [Route Handlers](02-routing-and-middleware/10.4.2.02-route-handlers.md) | API routes, request/response, caching, dynamic vs static | Important | Important | 24 min |
 | 07 | [Metadata](02-routing-and-middleware/10.4.2.03-metadata.md) | Static/dynamic metadata, SEO, Open Graph, robots, sitemaps | Important | Specialized | 24 min |
 
 ---

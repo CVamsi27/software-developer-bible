@@ -9,9 +9,11 @@
 
 A resume walkthrough connects a concise application claim to a product problem, implementation path, personal contribution and observed boundary. It is preparation for a technical discussion, not a script that supplies missing experience.
 
+> **Textbook Definition:** A claim-evidence crosswalk maps each professional claim to its implementation, personal contribution, verification artifacts and scope limitations, making the wording independently assessable.
+
 Start with one clinic visit: a receptionist books an appointment, a clinician opens the record and writes a prescription, billing records the charge, and background work creates or delivers documents. Explain the user-visible behavior before naming infrastructure.
 
-The current resume contains seven Docita bullets. The cases below map to their order. Source inspection establishes that code exists; the candidate must identify which changes they personally designed, implemented, reviewed or operated. Deployment, adoption and business outcomes require separate evidence.
+The current resume contains five Docita bullets. The cases below map to their order. Source inspection establishes that code exists; the candidate must identify which changes they personally designed, implemented, reviewed or operated. Deployment, adoption and business outcomes require separate evidence.
 
 ## First Principles
 

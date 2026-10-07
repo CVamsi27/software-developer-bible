@@ -1,6 +1,6 @@
 # Testing — Index
 
-> **Study time:** ≈ 4 h 55 m of reading (19 files, ~16 min average).
+> **Study time:** ≈ 4 h 57 m of reading (19 files, ~16 min average).
 > **19 files across 6 categories.** Testing fundamentals from Jest and React Testing Library to unit, integration, E2E, performance testing, chaos engineering, mocking, test patterns, frameworks comparison, test data management, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-19-blue)](../../INDEX.md)
@@ -29,7 +29,7 @@
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Testing Overview](01-foundations/50.1.1.01-testing-overview.md) | Test types, testing pyramid, TDD, BDD, coverage, strategies, when to write which test | Essential | Foundational | 28 min |
-| 02 | [Test Data Management & Anonymization](01-foundations/50.1.1.02-test-data-management-anonymization.md) | Test data pyramid, factories, faker, anonymization/pseudonymization, GDPR-safe seeding, golden datasets | Essential | Foundational | 13 min |
+| 02 | [Test Data Management & Anonymization](01-foundations/50.1.1.02-test-data-management-anonymization.md) | Test data pyramid, factories, faker, anonymization/pseudonymization, GDPR-safe seeding, golden datasets | Essential | Foundational | 14 min |
 
 ---
 
@@ -81,8 +81,8 @@ Aim for **lots of unit tests, some integration, few E2E.**
 
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
-| 01 | [Performance & Load Testing](05-advanced/50.1.5.01-performance-load-testing.md) | k6, Artillery, Locust, p95/p99, ramp-up, stress/soak | Production-scale services | Important | Specialized | 18 min |
-| 02 | [Chaos Engineering & Game Days](05-advanced/50.1.5.02-chaos-engineering.md) | Steady-state hypothesis, blast radius, Toxiproxy, Chaos Monkey, Gremlin, Litmus | Resilient distributed systems | Important | Specialized | 17 min |
+| 01 | [Performance & Load Testing](05-advanced/50.1.5.01-performance-load-testing.md) | k6, Artillery, Locust, p95/p99, ramp-up, stress/soak | Production-scale services | Important | Specialized | 19 min |
+| 02 | [Chaos Engineering & Game Days](05-advanced/50.1.5.02-chaos-engineering.md) | Steady-state hypothesis, blast radius, Toxiproxy, Chaos Monkey, Gremlin, Litmus | Resilient distributed systems | Important | Specialized | 18 min |
 
 ---
 

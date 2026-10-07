@@ -1,4 +1,4 @@
-<!-- section: CDN & Edge Computing | category: Reference | tags: revision, practi | role-priority: important | general-importance: specialized -->
+<!-- section: CDN & Edge Computing | category: Reference | tags: revision, practice | role-priority: important | general-importance: specialized -->
 [![Section](https://img.shields.io/badge/section-CDN%20%26%20Edge%20Computing-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)

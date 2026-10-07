@@ -1,6 +1,6 @@
 # GraphQL — Index
 
-> **Study time:** ≈ 5 h 22 m of reading (12 files, ~27 min average).
+> **Study time:** ≈ 5 h 24 m of reading (12 files, ~27 min average).
 > **12 files** — GraphQL fundamentals from schema design and queries/mutations/subscriptions to resolvers, Apollo Server, Apollo Client, codegen schema safety in CI, performance, security, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-12-blue)](../../INDEX.md)
@@ -41,8 +41,8 @@ The mental model — schema-first design. Category INDEX: [Fundamentals](01-fund
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [GraphQL Overview](01-fundamentals/20.7.1.01-graphql-overview.md) | Schema, queries, mutations, subscriptions, vs REST, when to use GraphQL | Optional | Specialized | 30 min |
-| 02 | [Schema Design](01-fundamentals/20.7.1.02-schema-design.md) | Types, fields, arguments, enums, unions, interfaces, input types, schema-first design | Optional | Specialized | 45 min |
+| 01 | [GraphQL Overview](01-fundamentals/20.7.1.01-graphql-overview.md) | Schema, queries, mutations, subscriptions, vs REST, when to use GraphQL | Optional | Specialized | 31 min |
+| 02 | [Schema Design](01-fundamentals/20.7.1.02-schema-design.md) | Types, fields, arguments, enums, unions, interfaces, input types, schema-first design | Optional | Specialized | 46 min |
 | 03 | [Queries & Mutations](01-fundamentals/20.7.1.03-queries-mutations.md) | Query structure, variables, directives, input types, fragments, alias | Optional | Specialized | 44 min |
 
 ---
@@ -54,7 +54,7 @@ How the server resolves queries. Category INDEX: [Execution](02-execution/INDEX.
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Resolvers](02-execution/20.7.2.01-resolvers.md) | Resolver chain, DataLoader (N+1 prevention), context, error handling | Optional | Specialized | 34 min |
-| 02 | [Apollo Server](02-execution/20.7.2.02-apollo-server.md) | Server setup, plugins, federation, subscriptions, schema stitching | Optional | Specialized | 32 min |
+| 02 | [Apollo Server](02-execution/20.7.2.02-apollo-server.md) | Server setup, plugins, federation, subscriptions, schema stitching | Optional | Specialized | 33 min |
 
 ---
 

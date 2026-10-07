@@ -1,4 +1,4 @@
-<!-- section: Microservices | category: Reference | tags: revisi | role-priority: essential | general-importance: important -->
+<!-- section: Microservices | category: Reference | tags: revision | role-priority: essential | general-importance: important -->
 [![Section](https://img.shields.io/badge/section-Microservices-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
@@ -14,97 +14,97 @@ Explain each mechanism before checking the answer. Revisit its source for the ex
 
 Source: [gRPC](20.6.2.01-grpc.md)
 
-**Q:** What core constraint explains why http/2 gives multiplexing governs grpc?
+**Q:** How does HTTP/2 multiplex concurrent gRPC calls?
 
-**A:** many concurrent calls on one connection — no head-of-line blocking at the HTTP layer, bidirectional streaming as a first-class citizen. The transport enables the API shape.
+**A:** HTTP/2 carries independent streams over one connection. It avoids HTTP/1 application-level serialization, but TCP packet loss can still stall streams sharing that transport connection.
 
-**Q:** What core constraint explains why protobuf gives the contract governs grpc?
+**Q:** How does a Protocol Buffers schema define a cross-language contract?
 
-**A:** schemas typed, versioned, and code-generated for every language — with binary encoding an order of magnitude smaller than JSON. The contract-first discipline  with a binary wire format.
+**A:** The schema names services, fields and messages so clients can generate compatible code. Binary size and speed depend on data and tooling; field evolution still requires compatibility discipline.
 
-**Q:** What core constraint explains why the trade is browser ubiquity. governs grpc?
+**Q:** Why do browser clients need a different gRPC integration path?
 
-**A:** Browsers speak JSON natively; gRPC-Web exists but adds a translation layer. So gRPC wins east-west (service-to-service) and loses north-south (public APIs) — knowing *which edge* you're designing is the whole decision.
+**A:** Browser networking APIs do not expose the same transport capabilities as native gRPC clients. gRPC-Web commonly uses an adapter or proxy, with streaming support depending on the chosen implementation.
 
 ## gRPC Streaming
 
 Source: [gRPC Streaming](20.6.2.02-grpc-streaming.md)
 
-**Q:** What core constraint explains why three shapes cover all flows governs grpc streaming?
+**Q:** Which interaction patterns need server, client or bidirectional streaming?
 
-**A:** server-streaming (one request, many responses — feeds, logs), client-streaming (many requests, one answer — uploads, metrics batches), bidirectional (chat, live sync). Each is the response to a real interaction shape that unary RPC models awkwardly.
+**A:** Server streaming returns many messages for one request; client streaming sends many messages for one response; bidirectional streaming allows both sides to send sequences. Unary calls remain appropriate for a single exchange.
 
-**Q:** What core constraint explains why streams are long-lived connections, so backpressure and lifecycle matter governs grpc streaming?
+**Q:** Why do long-lived streams require backpressure and cancellation policies?
 
-**A:** flow control (HTTP/2 window), cancellation (context propagation — the client hanging up must cancel server work), and reconnect-with-resume are part of the contract, not edge cases.
+**A:** Flow control regulates transport pressure, but applications must also bound buffers and propagate cancellation. Deadlines and completion rules define how resources are released and whether reconnect/resume is supported.
 
-**Q:** What core constraint explains why the failure mode is the forgotten close governs grpc streaming?
+**Q:** What happens when a stream never completes or notices cancellation?
 
-**A:** streams leak connections when neither side terminates — every streaming handler needs cancellation deadlines and explicit completion, the same resource-lifetime discipline as file handles .
+**A:** A stream can retain connections, memory and downstream work. Handle deadlines, cancellation and terminal events; a client disconnect does not automatically stop every application task.
 
 ## Apache Kafka
 
 Source: [Apache Kafka](20.6.2.03-kafka.md)
 
-**Q:** What core constraint explains why an append-only log is the cheapest durable write governs apache kafka?
+**Q:** How does an append-only log support durable recording and replay?
 
-**A:** (sequential disk I/O) and the cheapest replay (seek to offset). Everything Kafka offers — durability, replay, multiple independent consumers — is a property of append-only + offsets.
+**A:** Appending records supports sequential storage, while offsets identify consumption positions for replay. Durability also depends on replication and acknowledgment settings; required history must remain within retention.
 
-**Q:** What core constraint explains why consumer groups solve scale-out with ordering governs apache kafka?
+**Q:** How do partitions and consumer groups combine parallelism with ordering?
 
-**A:** partitions divide the log; a group's members each own partitions exclusively — parallelism with per-partition order preserved. The trade: ordering exists *within* a partition only, so partition-key design is application architecture.
+**A:** Partitions define the ordering boundary; a group's usual assignment gives each partition to one active member. More consumers than partitions do not add partition-level parallelism, and concurrent effects still need ordering discipline.
 
-**Q:** What core constraint explains why retention replaces the queue's delete-after-consume. governs apache kafka?
+**Q:** How does retention differ from removing work after acknowledgment?
 
-**A:** Messages persist (days/forever), so new consumers can replay history and multiple groups read the same events independently — Kafka is an event *database*, not a message queue, and the difference is architectural.
+**A:** Kafka retains records independently of one group's consumption. Time, size and compaction policies determine available history; ordinary work queues instead remove completed deliveries under their acknowledgment contract.
 
 ## RabbitMQ
 
 Source: [RabbitMQ](20.6.2.04-rabbitmq.md)
 
-**Q:** What core constraint explains why the exchange is the router. governs rabbitmq?
+**Q:** How do exchanges and bindings route a RabbitMQ publication?
 
-**A:** Direct (by key), topic (by pattern), fanout (broadcast), headers (by metadata) — producers publish to exchanges, not queues; binding rules decide delivery. This is publish-subscribe as a first-class routing engine, which Kafka deliberately is not.
+**A:** Publishers send to exchanges; bindings route messages to eligible queues by exact keys, patterns, fan-out or headers. Independent consumers need routing that gives each the intended copy.
 
-**Q:** What core constraint explains why acknowledgment semantics are the reliability story. governs rabbitmq?
+**Q:** What do publisher confirms and consumer acknowledgments establish separately?
 
-**A:** Unacked messages redeliver (at-least-once — consumers must be idempotent, → 20.3.3.05); DLX captures the repeatedly-failed; quorum queues replicate. Each is an answer to "what happens when a consumer dies mid-task?".
+**A:** Publisher confirms address broker acceptance under the selected queue and persistence contract. Consumer acknowledgments address completed delivery handling; neither alone proves the application's end-to-end outcome.
 
-**Q:** What core constraint explains why task queues are its native shape governs rabbitmq?
+**Q:** When does a queue-based work-distribution model fit a workload?
 
-**A:** work distribution with per-message ack, priority, and TTL — the opposite trade from Kafka's broadcast log. Choosing between them is "route discrete jobs" vs "broadcast events for many consumers.".
+**A:** A queue fits routed jobs assigned to competing workers with per-delivery acknowledgments. Kafka and RabbitMQ Streams fit retained replay differently; compare the specific storage contract rather than the product name.
 
 ## Message Brokers: Kafka vs RabbitMQ
 
 Source: [Message Brokers: Kafka vs RabbitMQ](20.6.2.05-message-brokers.md)
 
-**Q:** What core constraint explains why a synchronous call fails when either side fails. governs message brokers: kafka vs rabbitmq?
+**Q:** How does a broker decouple producer and consumer availability?
 
-**A:** The broker is the buffer between lifecycles: producer succeeds if the *broker* accepts, consumer processes when *it* can — availability decouples, at the price of eventual processing and new failure modes (broker down, lag, poison messages).
+**A:** A producer can complete after broker acceptance while consumers work later. This shifts the failure boundary to broker durability, backlog and eventual processing; it does not guarantee unlimited buffering.
 
-**Q:** What core constraint explains why delivery semantics are the contract governs message brokers: kafka vs rabbitmq?
+**Q:** How do at-most-once, at-least-once and transactional processing differ?
 
-**A:** at-most-once (fire and forget), at-least-once (acks + redelivery — duplicates possible, consumers must dedupe), exactly-once (transactional + idempotency end-to-end — the expensive, often-unnecessary one). Every queue technology is a point in this space; every consumer design starts by picking it.
+**A:** At-most-once permits loss; at-least-once permits redelivery; transactional processing can provide exactly-once effects within a defined boundary. External APIs and sinks need their own atomicity or idempotency contract.
 
-**Q:** What core constraint explains why ordering and duplication fight each other governs message brokers: kafka vs rabbitmq?
+**Q:** Why must delivery guarantees and ordering scope be designed separately?
 
-**A:** exactly-once ordering requires single-partition serialization; global ordering kills parallelism. Real designs choose per-domain: money flows get ordering + idempotency; telemetry gets at-most-once.
+**A:** Delivery duplication and order are different properties. Define ordering per entity, queue or partition; retries and concurrent workers can change completion order even when transport order is preserved.
 
 ## Event-Driven Architecture — Kafka, Event Sourcing, CQRS
 
 Source: [Event-Driven Architecture — Kafka, Event Sourcing, CQRS](20.6.2.06-event-driven-architecture.md)
 
-**Q:** What core constraint explains why the producer cannot know its consumers. governs event-driven architecture — kafka, event sourcing, cqrs?
+**Q:** How can a new consumer react to an event without changing the producer?
 
-**A:** "OrderPlaced" is a fact; email, inventory, analytics, fraud each react independently — adding a consumer requires *zero producer change*. That decoupling is the entire value and the reason events are past-tense facts, not commands.
+**A:** A consumer can subscribe to an existing fact contract when it already contains the needed data and permits that access. Adding new data or semantics can still require a producer change.
 
-**Q:** What core constraint explains why event-carried state transfer vs notifications is the data design governs event-driven architecture — kafka, event sourcing, cqrs?
+**Q:** How do notification events and state-carrying events change consumer dependencies?
 
-**A:** fat events (all data, consumers independent of the source DB) vs thin events (ID + consumers call back — coupling returns). The choice governs how much coupling the architecture actually removed.
+**A:** Notifications keep payloads small but may require a source lookup that returns newer state. State-carrying events reduce that dependency at the cost of copied data, larger contracts and retention obligations.
 
-**Q:** What core constraint explains why the costs are structural governs event-driven architecture — kafka, event sourcing, cqrs?
+**Q:** What consistency, debugging and schema costs accompany asynchronous events?
 
-**A:** eventual consistency everywhere (the UI must show "processing"), harder debugging (no single request trace — hence correlation IDs and event lineage), and schema evolution as a first-class discipline (consumers outlive producer versions).
+**A:** Downstream effects can lag committed source state. Trace identity, replay policy and compatible schema evolution are necessary; local operations can still have stronger consistency boundaries.
 
 ## Summary
 

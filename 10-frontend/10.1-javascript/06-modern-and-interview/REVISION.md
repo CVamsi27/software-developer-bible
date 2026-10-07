@@ -1,7 +1,7 @@
-<!-- section: JavaScript | category: Reference | tags: revision, retrieval-practi | role-priority: essential | general-importance: foundational -->
+<!-- section: JavaScript | category: Reference | tags: revision, retrieval-practice | role-priority: essential | general-importance: foundational -->
 [![Section](https://img.shields.io/badge/section-JavaScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
-[![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
+[![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
 [![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
@@ -33,7 +33,7 @@ Source: [ES2024+ Modern JavaScript Features (through ES2025)](10.1.6.01-es2024-f
 **Real-World Use Cases**
 
 5. **Q:** When does `Object.groupBy` silently merge groups that `Map.groupBy` would keep apart?
-   **A:** When your callback returns non-string keys. `Object.groupBy` turns them into property keys, so two different objects both become `"[object Object]"` and land in one bucket; `Map.groupBy` uses them as keys by identity and preserves insertion order.
+   **A:** When distinct results convert to the same property key, such as numeric `1` and string `'1'`, or ordinary objects with matching string conversion. `Object.groupBy` preserves symbol keys, so not every non-string key collides. `Map.groupBy` retains object identity and key type.
 
 **Common Mistakes**
 

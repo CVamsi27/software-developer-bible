@@ -1,6 +1,6 @@
 # React — Index
 
-> **Study time:** ≈ 7 h 23 m of reading (27 files, ~16 min average).
+> **Study time:** ≈ 7 h 9 m of reading (27 files, ~16 min average).
 > **27 files** — React internals from Virtual DOM to Fiber, hooks, patterns, custom hooks, portals, compound components, external stores, React Router data routers, React 18/19 concurrent APIs, performance, state management, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-27-blue)](../../INDEX.md)
@@ -43,10 +43,10 @@ How React actually works under the hood. The mental model that distinguishes a s
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Virtual DOM](01-react-internals/10.3.1.01-virtual-dom.md) | VDOM concept, diffing, batching, React elements vs components | Essential | Foundational | 15 min |
-| 02 | [Fiber](01-react-internals/10.3.1.02-fiber.md) | Fiber architecture, work loop, priority lanes, time slicing | Important | Important | 24 min |
+| 02 | [Fiber](01-react-internals/10.3.1.02-fiber.md) | Fiber architecture, work loop, priority lanes, time slicing | Important | Important | 23 min |
 | 03 | [Reconciliation](01-react-internals/10.3.1.03-reconciliation.md) | Diffing algorithm, keys, component types, bailout | Essential | Foundational | 6 min |
 | 04 | [Rendering](01-react-internals/10.3.1.04-rendering.md) | Render phases, commit phase, batching in React 18, automatic batching | Essential | Foundational | 21 min |
-| 05 | [Lifecycle](01-react-internals/10.3.1.05-lifecycle.md) | Class lifecycle, hooks lifecycle, useEffect cleanup, strict mode double-invoke | Essential | Foundational | 24 min |
+| 05 | [Lifecycle](01-react-internals/10.3.1.05-lifecycle.md) | Class lifecycle, hooks lifecycle, useEffect cleanup, strict mode double-invoke | Essential | Foundational | 25 min |
 
 **Read order:** Virtual DOM → Fiber → Reconciliation → Rendering → Lifecycle.
 
@@ -61,8 +61,8 @@ The 5 essential hooks. Used in 95% of React code.
 | 06 | [useState](02-core-hooks/10.3.2.01-usestate.md) | State initialization, batching, functional updates, lazy init | Essential | Foundational | 14 min |
 | 07 | [useEffect](02-core-hooks/10.3.2.02-useeffect.md) | Dependencies, cleanup, effect timing, strict mode, race conditions | Essential | Foundational | 18 min |
 | 08 | [useMemo / useCallback](02-core-hooks/10.3.2.03-usememo-usecallback.md) | Memoization, dependency tracking, when to use (and when not to) | Important | Important | 23 min |
-| 09 | [useRef](02-core-hooks/10.3.2.04-useref.md) | DOM refs, mutable refs, forwardRef, callback refs, useImperativeHandle | Essential | Foundational | 26 min |
-| 10 | [Context API](02-core-hooks/10.3.2.05-context-api.md) | createContext, Provider, useContext, performance pitfalls, splitting context | Important | Important | 31 min |
+| 09 | [useRef](02-core-hooks/10.3.2.04-useref.md) | DOM refs, mutable refs, forwardRef, callback refs, useImperativeHandle | Essential | Foundational | 25 min |
+| 10 | [Context API](02-core-hooks/10.3.2.05-context-api.md) | createContext, Provider, useContext, performance pitfalls, splitting context | Important | Important | 30 min |
 
 ---
 
@@ -73,7 +73,7 @@ The patterns that solve real problems in production code.
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 11 | [Suspense](03-advanced-hooks-and-patterns/10.3.3.01-suspense.md) | Suspense boundaries, data fetching, useTransition, streaming SSR | Important | Specialized | 19 min |
-| 12 | [Error Boundary](03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.md) | Error boundaries, error recovery, logging, Sentry integration | Important | Important | 20 min |
+| 12 | [Error Boundary](03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.md) | Error boundaries, error recovery, logging, Sentry integration | Important | Important | 7 min |
 | 13 | [Custom Hooks](03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.md) | Composition patterns, useLocalStorage, useDebounce, useFetch, testing, best practices | Essential | Important | 37 min |
 | 14 | [useSyncExternalStore](03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.md) | Tearing in concurrent rendering, subscribe/getSnapshot contract, snapshot caching, Zustand/Redux integration, infinite-loop mistakes | Important | Specialized | 16 min |
 | 15 | [Performance](03-advanced-hooks-and-patterns/10.3.3.05-performance.md) | Profiler, React.memo, virtualization, windowing, debouncing, Web Workers | Essential | Foundational | 9 min |
@@ -99,7 +99,7 @@ Reusable component patterns + 60+ interview Qs.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 20 | [Portals](05-patterns-and-interview/10.3.5.01-portals.md) | createPortal, event bubbling, modals, tooltips, overflow escape, SSR safety | Important | Specialized | 23 min |
+| 20 | [Portals](05-patterns-and-interview/10.3.5.01-portals.md) | createPortal, event bubbling, modals, tooltips, overflow escape, SSR safety | Important | Specialized | 24 min |
 | 21 | [Compound Components](05-patterns-and-interview/10.3.5.02-compound-components.md) | Context-based pattern, tabs, accordion, select, form fields, generics | Important | Specialized | 26 min |
 | 22 | [Interview Questions](05-patterns-and-interview/10.3.5.03-interview-questions.md) | 60+ curated questions with answers | Important | Specialized | 14 min |
 

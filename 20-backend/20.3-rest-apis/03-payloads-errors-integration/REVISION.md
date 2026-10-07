@@ -1,4 +1,4 @@
-<!-- section: REST APIs | category: Reference | tags: revisi | role-priority: essential | general-importance: foundational -->
+<!-- section: REST APIs | category: Reference | tags: revision | role-priority: essential | general-importance: foundational -->
 [![Section](https://img.shields.io/badge/section-REST%20APIs-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
@@ -14,113 +14,125 @@ Explain each mechanism before checking the answer. Revisit its source for the ex
 
 Source: [API Pagination](20.3.3.01-pagination.md)
 
-**Q:** What core constraint explains why collections grow; responses cannot. governs api pagination?
+**Q:** Why must an API bound the size of collection responses?
 
-**A:** A table with 10M rows cannot be serialized "in full" — memory, time, and client rendering all fail at different scales. The API must expose a *cursor into the collection* — which is all any pagination scheme is.
+**A:** Large responses consume server memory, transfer time and client resources. Return a bounded subset and a documented continuation rule; offset and cursor schemes implement different rules.
 
-**Q:** What core constraint explains why offset and cursor trade two failure modes. governs api pagination?
+**Q:** How do offset and cursor pagination behave differently during concurrent changes?
 
-**A:** Offset pages (`?page=50`) are cheap to build but shift under concurrent inserts (duplicates/skips) and cost O(skipped) rows server-side. Cursor pages (keyset: `?after=id_123`) are stable and O(log n) but can only walk the sort order. The senior choice is per-collection: mutable data → cursor; small/admin sets → offset.
+**A:** Offset positions shift as rows are inserted or removed. Keyset cursors avoid positional skipping for a stable indexed order, but mutable sort values and filters can still cause omissions; neither alone guarantees a snapshot.
 
-**Q:** What core constraint explains why the client needs total-knowledge signals governs api pagination?
+**Q:** How can a client discover that another page exists without an exact total?
 
-**A:** A `hasMore` flag or next cursor can tell the client whether to request another page. Return an exact total only when the product needs it and the query cost and consistency trade-off are acceptable.
+**A:** A next cursor or hasMore flag can indicate another page. Return an exact total only when its cost and consistency behavior serve a product requirement.
+
+**Q:** Three rows share one timestamp and the first page contains only two. What must its continuation contain?
+
+**A:** The timestamp and a unique tie-breaker from the last returned row. Use the same pair in ORDER BY and the continuation predicate; a timestamp-only strict comparison would skip the third row. Preserve the database values without losing timestamp precision or large identifier digits.
+
+**Q:** Does an opaque or signed cursor authorize the next page?
+
+**A:** No. Validate its size, fields, version and query binding, then enforce the caller's current authorization and tenant scope on every page. Encoding obscures data and signing detects tampering; neither grants access.
+
+**Q:** Why reject a limit such as `20junk` rather than passing it to parseInt?
+
+**A:** parseInt accepts a numeric prefix, so malformed input can become a plausible page size. Validate the complete parameter and bound it before querying; distinguish an absent value from an invalid one.
 
 ## API Error Handling & Response Design
 
 Source: [API Error Handling & Response Design](20.3.3.02-error-handling-design.md)
 
-**Q:** What core constraint explains why every error has a audience: machine or human. governs api error handling & response design?
+**Q:** How do machine-readable error fields and human messages serve different needs?
 
-**A:** The status code and machine-readable `code` field drive client branching (retry? redirect? show form error?); the human-readable `message` is for the developer debugging their integration. Conflating them — leaking stack traces to clients, or returning only prose with no code — serves neither.
+**A:** Stable codes and structured fields drive client decisions. Human messages explain the failure; keep them safe for their audience and retain sensitive diagnostics in protected logs.
 
-**Q:** What core constraint explains why errors must be predictable shapes. governs api error handling & response design?
+**Q:** Why should errors have stable, documented response shapes?
 
-**A:** A client cannot handle what it cannot parse; a consistent error envelope makes centralized handling possible. RFC 9457 is the current Problem Details specification and obsoletes RFC 7807.
+**A:** A predictable representation supports centralized handling. RFC 9457 defines Problem Details; custom extensions still need stable meanings and documented validation.
 
-**Q:** What core constraint explains why the error budget is part of the contract. governs api error handling & response design?
+**Q:** How should an error contract communicate retryability and diagnostic context?
 
-**A:** Which failures are retryable, which are permanent, which carry correlation IDs for support — these are designed decisions. An error that a client can't distinguish "wait and retry" from "give up" has failed at its one job.
+**A:** Document which conditions can change, whether retry is safe and which delay or limit applies. Include a correlation identifier for support without exposing secrets or internal stack traces.
 
 ## Long-Running API Operations (202 Accepted Pattern)
 
 Source: [Long-Running API Operations (202 Accepted Pattern)](20.3.3.03-long-running-api-operations.md)
 
-**Q:** What core constraint explains why a request-response call assumes the answer arrives before something times out. governs long-running api operations (202 accepted pattern)?
+**Q:** Why can long-running work outlive a synchronous request's timeout budget?
 
-**A:** Any operation beyond ~30s violates that assumption at some layer (LB idle timeout, client timeout, connection reset) — no amount of tuning makes 2-hour jobs request-shaped.
+**A:** The expected work may exceed client, proxy or deployment budgets, and a broken connection does not establish that work stopped. No universal duration threshold determines the design.
 
-**Q:** What core constraint explains why the fix is decoupling acceptance from completion. governs long-running api operations (202 accepted pattern)?
+**Q:** What does separating acceptance from completion change for a client?
 
-**A:** Return `202 Accepted` + a status resource immediately (`/operations/{id}`); completion is discovered by polling or pushed by callback/webhook. The operation becomes a *resource* — which is the REST way of representing "work in progress.".
+**A:** The client receives acceptance plus an operation resource and checks progress later. Persist queued, running and terminal states so acceptance is distinguishable from successful completion.
 
-**Q:** What core constraint explains why idempotency moves to creation. governs long-running api operations (202 accepted pattern)?
+**Q:** Why does creating a long-running operation need an idempotency policy?
 
-**A:** Since the client can't know if the create-request landed (timeout before response), creation needs idempotency keys; the operation itself needs checkpointing so a crashed worker resumes rather than restarts.
+**A:** A response can be lost after creation, causing the client to submit the same work again. Deduplicate creation and define worker recovery through restart or checkpointing according to the task.
 
 ## File Upload APIs
 
 Source: [File Upload APIs](20.3.3.04-file-upload-apis.md)
 
-**Q:** What core constraint explains why app servers are the wrong place for large bytes. governs file upload apis?
+**Q:** When does direct object-storage upload help avoid an application-server bottleneck?
 
-**A:** They're sized for request handling, not throughput; streaming 2GB through one ties a worker for minutes. The scalable shape routes bytes *around* the app: presigned URLs direct-to-object-storage, server only brokers authorization.
+**A:** Large byte transfers can consume application connections and bandwidth for long periods. A signed direct-upload grant moves the byte path to storage while the API retains authorization and publication decisions.
 
-**Q:** What core constraint explains why integrity needs both directions. governs file upload apis?
+**Q:** Which checks establish that uploaded bytes match the authorized upload?
 
-**A:** Client → server needs checksums (hash before upload, verify after) because TCP checksums don't catch application-level corruption; server → client needs Content-Length/Range so partial transfers are detectable and resumable.
+**A:** Check the authorized object key, size, content rules and checksum where supported, then inspect the stored object before publishing it. Client-supplied metadata alone does not establish content safety.
 
-**Q:** What core constraint explains why upload size must be a designed limit governs file upload apis?
+**Q:** Why should an upload API define explicit size and resource limits?
 
-**A:** , not an accident of framework defaults — body-size caps, storage quotas, and virus scanning are boundary controls. Every "unlimited" upload endpoint becomes an attacker's free storage.
+**A:** Explicit body limits, quotas, deadlines and scanning budgets prevent accidental resource exhaustion. Apply limits to both proxy and direct-upload flows.
 
 ## Webhooks
 
 Source: [Webhooks](20.3.3.05-webhooks.md)
 
-**Q:** What core constraint explains why the server can't hold the connection, so it calls you back. governs webhooks?
+**Q:** When can a webhook replace polling for an event outcome?
 
-**A:** "Notify me when X happens" over request-response requires the provider to become an HTTP *client* to your endpoint — which means your endpoint is now a public surface with all the security that implies.
+**A:** The provider calls a receiver when an event occurs, avoiding repeated status reads. The receiver must be reachable and own acknowledgment, authentication and failure handling.
 
-**Q:** What core constraint explains why delivery is at-least-once, by construction. governs webhooks?
+**Q:** Why must a webhook receiver handle repeated deliveries?
 
-**A:** The provider cannot know if your endpoint received its POST (your ack may be lost), so it retries — duplicates are guaranteed. Therefore consumer idempotency (event IDs) isn't optional hardening; it's the core protocol requirement.
+**A:** A lost acknowledgment can trigger another delivery; providers can also retry failed attempts. Delivery guarantees vary by provider, so use stable event identity and duplicate-safe handling.
 
-**Q:** What core constraint explains why the consumer must verify the caller. governs webhooks?
+**Q:** How should a webhook receiver verify that a delivery came from its provider?
 
-**A:** Anyone who finds your webhook URL can POST to it — HMAC signatures over the raw body (and timestamp to block replay) are how trust is established — verified *before* processing, not after. ack fast, process async, or the provider's timeout turns your slow handler into false failures.
+**A:** Apply the provider's documented signature scheme to the required raw bytes and signed metadata. Validate time or replay conditions when specified, then durably accept work before returning a success acknowledgment.
 
 ## Serialization & Wire Formats
 
 Source: [Serialization & Wire Formats](20.3.3.06-serialization-and-wire-formats.md)
 
-**Q:** What core constraint explains why bytes are the only interface. governs serialization & wire formats?
+**Q:** Why do independently running systems need an agreed byte representation?
 
-**A:** Everything else — language, runtime, ORM, type system — stops at the socket. So a serialization boundary is where type information is *lost* by default and must be re-established explicitly (a schema, a type declaration, or defensive parsing).
+**A:** A receiver observes bytes rather than the sender's in-memory types. Both sides need an encoding contract and validation that restores the expected value semantics.
 
-**Q:** What core constraint explains why a format is a position on a fixed triangle: size, speed, opacity. governs serialization & wire formats?
+**Q:** How should payload size, encoding cost and inspectability influence a wire-format choice?
 
-**A:** Optimizing size costs readability (binary), optimizing readability costs size (JSON), and no format wins all three — which is why every mature system ends up with more than one.
+**A:** Measure representative payloads and encoding costs alongside tooling, schema evolution and debugging needs. Binary formats are not always smaller or faster for every value distribution.
 
-**Q:** What core constraint explains why every field you ship is a contract you must keep. governs serialization & wire formats?
+**Q:** Why do serialized fields need an evolution policy?
 
-**A:** Once a client parses `created_at`, its name, type and nullability are public API; renaming is a breaking change whether or not a schema exists.
+**A:** Consumers depend on field names, value meaning, type and nullability. Additions, removals and changed meanings need compatibility rules even without a formal schema file.
 
 ## Transactional Email & Notification Delivery
 
 Source: [Transactional Email & Notification Delivery](20.3.3.07-transactional-email-and-notifications.md)
 
-**Q:** What core constraint explains why you do not control the receiving server. governs transactional email & notification delivery?
+**Q:** Why does provider acceptance not establish recipient delivery?
 
-**A:** Delivery is a *negotiation* between mail servers; the final inbox/ spam decision is made by someone else's reputation system, using signals you can only influence (authentication, complaint rate, engagement).
+**A:** Acceptance means an intermediate server accepted responsibility under its contract. Later delivery can fail, and successful mail-server delivery does not establish inbox placement or reading.
 
-**Q:** What core constraint explains why the failure arrives later, and out of band. governs transactional email & notification delivery?
+**Q:** How should a service handle failures reported after the send request succeeds?
 
-**A:** SMTP acceptance is not delivery, and delivery is not read receipt. So the sending call cannot return the truth — which means "email sent" can only ever mean "handed to the provider".
+**A:** Process provider delivery and bounce events, correlate them with the notification and update its durable state. Classify permanent failures before retrying and avoid misleading success labels.
 
-**Q:** What core constraint explains why retries are guaranteed, deduplication is your job. governs transactional email & notification delivery?
+**Q:** Where should a notification system enforce retry and deduplication rules?
 
-**A:** Any at-least-once pipeline (queue, provider retry, our own retry) will duplicate work; the only defense is an idempotency key derived from the business event, not from the attempt.
+**A:** Deduplicate by business event at the enqueue/effect boundary and use provider idempotency when available. A new key for each retry defeats deduplication; provider acknowledgment uncertainty still needs an explicit policy.
 
 ## Summary
 

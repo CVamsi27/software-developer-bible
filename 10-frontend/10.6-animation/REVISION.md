@@ -1,7 +1,7 @@
-<!-- section: Animation | category: Reference | tags: revision, retrieval-practi | role-priority: optional | general-importance: specialized -->
+<!-- section: Animation | category: Reference | tags: revision, retrieval-practice | role-priority: optional | general-importance: specialized -->
 [![Section](https://img.shields.io/badge/section-Animation-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
-[![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
+[![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
 [![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Optional-lightgrey)](../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../docs/topic-importance.md)
@@ -18,6 +18,10 @@ Source: [CSS Animations](10.6.01-css-animations.md)
 
 **A:** They are often eligible for compositing without layout or paint, but layer size, rasterization and browser decisions still matter. Verify the actual animation.
 
+**Q:** Why is replacing an animated width with scale sometimes incorrect?
+
+**A:** Width changes layout geometry and can move neighboring content. Scale changes the visual result without changing normal-flow sizing. Choose the required behavior before optimizing its rendering work.
+
 ## Framer Motion
 
 Source: [Framer Motion](10.6.02-framer-motion.md)
@@ -33,6 +37,14 @@ Source: [GSAP (GreenSock Animation Platform)](10.6.03-gsap.md)
 **Q:** Why must GSAP work created by a React effect have scoped cleanup?
 
 **A:** Remounts and dependency changes can leave duplicate timelines or triggers. Revert or dispose the effect's context so it restores styles and removes owned animation work.
+
+**Q:** Does `lazy: true` defer a ScrollTrigger animation until it enters the viewport?
+
+**A:** No. Tween lazy rendering batches initial writes within a ticker update. ScrollTrigger controls playback through its trigger/start configuration; it has no equivalent `lazy` offscreen-loading setting.
+
+**Q:** Why does an animation started by a later click need `contextSafe`?
+
+**A:** The callback runs after the original `useGSAP` setup, so its new animation is not automatically recorded by that setup's context. `contextSafe` records it for scoped cleanup; manually installed event listeners still need removal.
 
 ## React Spring
 

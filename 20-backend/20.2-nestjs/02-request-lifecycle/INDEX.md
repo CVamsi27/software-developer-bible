@@ -1,6 +1,6 @@
 # Request Lifecycle - NestJS
 
-> **Study time:** ≈ 1 h 55 m of reading (7 files, ~16 min average).
+> **Study time:** ≈ 1 h 56 m of reading (7 files, ~17 min average).
 > **7 files.** What runs in what order for every request: middleware → guards → pipes → interceptors → exception filters — plus the ambient request context (`AsyncLocalStorage`) that crosses all of those stages. Every NestJS interview tests this order — read the files in sequence.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../INDEX.md)
@@ -12,7 +12,7 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Middleware](20.2.2.01-middleware.md) | Functional middleware, class middleware, consumer configuration, `NestModule` | Essential | Important | 17 min |
+| 01 | [Middleware](20.2.2.01-middleware.md) | Functional middleware, class middleware, consumer configuration, `NestModule` | Essential | Important | 18 min |
 | 02 | [Guards](20.2.2.02-guards.md) | Auth guards, role-based access, custom guards, `CanActivate`, execution context | Essential | Important | 23 min |
 | 03 | [Pipes](20.2.2.03-pipes.md) | Validation pipes, transformation pipes, built-in pipes, custom pipes | Essential | Important | 24 min |
 | 04 | [Interceptors](20.2.2.04-interceptors.md) | Request/response transformation, logging, caching, mapping, async interceptors (rxjs pipeline) | Essential | Important | 16 min |

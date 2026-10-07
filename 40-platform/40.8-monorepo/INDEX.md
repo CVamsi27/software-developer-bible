@@ -1,6 +1,6 @@
 # Monorepo — Index
 
-> **Study time:** ≈ 1 h 4 m of reading (7 files, ~9 min average).
+> **Study time:** ≈ 1 h 5 m of reading (7 files, ~9 min average).
 > **7 files** — Monorepo architecture from overview and Turborepo to Nx, workspace tooling deep-dive, versioning & publishing strategies, and curated interview questions.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)
@@ -64,7 +64,7 @@ Monorepo tool?
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 05 | [Versioning & Publishing Strategies](40.8.05-versioning-publishing-strategies.md) | Fixed vs independent versioning, changesets workflow (version PRs, publish, prereleases), private packages & scopes, npm provenance, lockstep decision matrix, breaking-change policy | Important | Specialized | 13 min |
+| 05 | [Versioning & Publishing Strategies](40.8.05-versioning-publishing-strategies.md) | Fixed vs independent versioning, changesets workflow (version PRs, publish, prereleases), private packages & scopes, npm provenance, lockstep decision matrix, breaking-change policy | Important | Specialized | 14 min |
 
 ---
 

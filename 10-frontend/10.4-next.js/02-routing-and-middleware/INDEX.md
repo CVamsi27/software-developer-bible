@@ -1,6 +1,6 @@
 # Routing & Middleware — Next.js
 
-> **Study time:** ≈ 1 h 10 m of reading (4 files, ~18 min average).
+> **Study time:** ≈ 1 h 11 m of reading (4 files, ~18 min average).
 > **4 files.** The request pipeline: Edge middleware for interception, Route Handlers as the API surface, and the Metadata API for SEO tags.
 
 [![Files](https://img.shields.io/badge/files-4-blue)](#files)
@@ -14,7 +14,7 @@
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
 | 01 | [Middleware](10.4.2.01-middleware.md) | Edge middleware, matchers, redirects, rewrite, auth gating | Important | Specialized | 21 min |
-| 02 | [Route Handlers](10.4.2.02-route-handlers.md) | API routes, request/response, caching, dynamic vs static | Important | Important | 23 min |
+| 02 | [Route Handlers](10.4.2.02-route-handlers.md) | API routes, request/response, caching, dynamic vs static | Important | Important | 24 min |
 | 03 | [Metadata](10.4.2.03-metadata.md) | Static/dynamic metadata, SEO, Open Graph, robots, sitemaps | Important | Specialized | 24 min |
 
 ---

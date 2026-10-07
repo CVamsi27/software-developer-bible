@@ -13,7 +13,8 @@
  * wired on DOMContentLoaded.
  */
 (function () {
-  var savedTheme = localStorage.getItem("sdb-theme");
+  var savedTheme;
+  try { savedTheme = localStorage.getItem("sdb-theme"); } catch (_) {}
   if (savedTheme === "dark" || savedTheme === "light") {
     document.documentElement.setAttribute("data-theme", savedTheme);
   }
@@ -60,13 +61,23 @@ document.addEventListener("DOMContentLoaded", function () {
   updateThemeIcon(initialTheme);
   updateThemeColorMeta(initialTheme);
 
+  var systemTheme = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)");
+  if (systemTheme && systemTheme.addEventListener) {
+    systemTheme.addEventListener("change", function () {
+      if (document.documentElement.hasAttribute("data-theme")) return;
+      var effective = getCurrentEffectiveTheme();
+      updateThemeIcon(effective);
+      updateThemeColorMeta(effective);
+    });
+  }
+
   themeBtn.addEventListener("click", function () {
     var current = getCurrentEffectiveTheme();
     var next = current === "dark" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", next);
-    localStorage.setItem("sdb-theme", next);
     updateThemeIcon(next);
     updateThemeColorMeta(next);
+    try { localStorage.setItem("sdb-theme", next); } catch (_) {}
   });
 
   if (!created) return;

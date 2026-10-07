@@ -9,6 +9,8 @@
 
 The long tail covers reminders, custom fields, inbound/outbound webhooks, lab login, staff leave, product feedback and user lifecycle. Read each through its boundary: what is authorized, what changes, what can race, and what proves completion.
 
+> **Textbook Definition:** Cross-cutting workflow analysis evaluates authorization, state transitions, concurrency and recovery across smaller capabilities that share infrastructure but retain distinct business rules.
+
 These features are smaller than billing or appointments, but an incorrect tenant selection can disclose clinical data and an incomplete reversal can leave a doctor unavailable. Source inspection establishes implemented behavior; it does not establish production outcomes.
 
 ## First Principles

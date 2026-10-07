@@ -1,7 +1,43 @@
 /* A collapsible route through the chapter, built from its authored headings. */
 document.addEventListener('DOMContentLoaded', function () {
+  var menuInput = document.getElementById('nav-trigger');
+  var menuToggle = document.querySelector('label[for="nav-trigger"]');
+  var menuLinks = document.querySelector('.site-nav .trigger');
+  if (menuInput && menuToggle && menuLinks) {
+    menuLinks.id = menuLinks.id || 'site-navigation-links';
+    menuToggle.setAttribute('role', 'button');
+    menuToggle.setAttribute('tabindex', '0');
+    menuToggle.setAttribute('aria-label', 'Toggle navigation');
+    menuToggle.setAttribute('aria-controls', menuLinks.id);
+    var updateMenuState = function () {
+      menuToggle.setAttribute('aria-expanded', String(menuInput.checked));
+    };
+    menuInput.addEventListener('change', updateMenuState);
+    menuToggle.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        menuInput.click();
+      }
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && menuInput.checked) {
+        menuInput.checked = false;
+        updateMenuState();
+        menuToggle.focus();
+      }
+    });
+    updateMenuState();
+  }
   var content = document.querySelector('.post-content');
-  if (!content || content.querySelector('.chapter-outline')) return;
+  if (!content) return;
+  var authoredTitle = content.querySelector('h1');
+  var header = document.querySelector('.post-header');
+  var inferredTitle = header && header.querySelector('.post-title');
+  if (authoredTitle && inferredTitle &&
+      authoredTitle.textContent.trim() === inferredTitle.textContent.trim()) {
+    header.hidden = true;
+  }
+  if (content.querySelector('.chapter-outline')) return;
   var headings = Array.from(content.querySelectorAll('h2[id]'));
   if (headings.length < 4) return;
   var outline = document.createElement('details');

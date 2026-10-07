@@ -1,6 +1,6 @@
 # Frameworks & Paradigms
 
-> **Study time:** ≈ 1 h 14 m of reading (5 files, ~15 min average).
+> **Study time:** ≈ 1 h 16 m of reading (5 files, ~15 min average).
 > **5 files.** Where transports meet application code: NestJS gateway wiring, GraphQL subscriptions over pub-sub, WebRTC peer-to-peer media, and how to test all of it under load.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../INDEX.md)
@@ -13,8 +13,8 @@
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [NestJS WebSockets](60.1.3.01-nestjs-websockets.md) | Gateways, adapters (Socket.IO / WS), guards, pipes, exception filters | Important | Specialized | 31 min |
-| 02 | [GraphQL Subscriptions & Live Queries](60.1.3.02-graphql-subscriptions-live-queries.md) | graphql-ws protocol, Redis pub-sub, withFilter server-side authz, live queries vs subscriptions, fan-out scaling, over-emitting costs | Optional | Specialized | 14 min |
+| 01 | [NestJS WebSockets](60.1.3.01-nestjs-websockets.md) | Gateways, adapters (Socket.IO / WS), guards, pipes, exception filters | Important | Specialized | 32 min |
+| 02 | [GraphQL Subscriptions & Live Queries](60.1.3.02-graphql-subscriptions-live-queries.md) | graphql-ws protocol, Redis pub-sub, withFilter server-side authz, live queries vs subscriptions, fan-out scaling, over-emitting costs | Optional | Specialized | 15 min |
 | 03 | [WebRTC Peer-to-Peer](60.1.3.03-webrtc-peer-to-peer.md) | getUserMedia / RTCPeerConnection / RTCDataChannel, signaling, ICE/STUN/TURN, mesh vs SFU vs MCU cost math, NAT types | Optional | Specialized | 12 min |
 | 04 | [Testing Real-Time Systems](60.1.3.04-testing-realtime-systems.md) | Artillery WS scenarios (connect rate, churn, throughput), ordering/backpressure assertions, killing Redis mid-stream, soak tests for fd leaks, CI smoke suites | Important | Specialized | 15 min |
 

@@ -9,6 +9,8 @@
 
 Inventory maintains a current stock quantity and a history explaining how it changed. In Docita, the item holds the live balance while movement records identify receipts, consumption, expiry, waste and other adjustments.
 
+> **Textbook Definition:** An inventory ledger records quantity-changing events and the associated stock balance. Correct mutation preserves the relationship between the balance, authorized movement and concurrency constraints.
+
 Suppose two operators each issue the last unit. Reading quantity 1 and later decrementing without a condition can let both proceed. Separately recording history can also leave a changed balance without its movement when the second write fails.
 
 This case describes source inspected on **2 October 2026**. It explains the guarded mutation path and the other paths that limit a whole-domain guarantee.

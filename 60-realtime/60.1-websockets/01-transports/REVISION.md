@@ -1,4 +1,4 @@
-<!-- section: WebSockets | category: Reference | tags: revision, practi | role-priority: important | general-importance: specialized -->
+<!-- section: WebSockets | category: Reference | tags: revision, practice | role-priority: important | general-importance: specialized -->
 [![Section](https://img.shields.io/badge/section-WebSockets-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)
@@ -37,6 +37,10 @@ Source: [Socket.io](60.1.1.03-socket-io.md)
 **Q:** What do acknowledgments still leave unspecified?
 
 **A:** Define limits on retries, where messages are stored safely, how duplicates are recognized, how clients recover after reconnecting, and whether an acknowledgment means the business operation committed. The application must state these rules explicitly.
+
+**Q:** A write commits, but its acknowledgment is lost. What happens if the client retries?
+
+**A:** The server can receive the command again. Use a durable operation identity and an atomic duplicate-effect check, or reconcile the authoritative result. Socket.IO's ordering and reconnection features do not make the business write execute exactly once.
 
 ## WebTransport
 

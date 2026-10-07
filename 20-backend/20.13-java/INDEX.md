@@ -1,6 +1,6 @@
 # Java — Index
 
-> **Study time:** ≈ 1 h 37 m of reading (7 files, ~14 min average).
+> **Study time:** ≈ 1 h 38 m of reading (7 files, ~14 min average).
 > **7 files** — Java language fundamentals, OOP & SOLID, concurrency & multithreading, and JUnit/Mockito testing — the shared Java backend corpus, used by the SDE/FAANG lane and any Java-heavy EU full-stack target.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../INDEX.md)
@@ -51,6 +51,7 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Concurrency & multithreading | Node's single-thread event loop + process separation - `apps/worker/src/main.ts`, `shared/modules/queue/postgres-queue.service.ts` (background job separation is the architectural goal; inspect actual CPU/I/O behavior) |
 | JUnit & Mockito testing | Colocated Vitest specs (`*.spec.ts`) - e.g. `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.spec.ts` |
 | Actuator / ops | `apps/api/src/shared/modules/monitoring/` + `apps/api/src/instrument.ts` (Sentry) - health, metrics, and tracing analogues |
+
 ---
 
 [← Previous: AI Engineering](../20.12-ai-engineering/INDEX.md) · [Next: NestJS →](../20.2-nestjs/INDEX.md)

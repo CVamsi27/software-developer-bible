@@ -1,4 +1,4 @@
-<!-- section: Database | category: Reference | tags: revisi | role-priority: essential | general-importance: foundational -->
+<!-- section: Database | category: Reference | tags: revision | role-priority: essential | general-importance: foundational -->
 [![Section](https://img.shields.io/badge/section-Database-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
@@ -16,11 +16,11 @@ Source: [PostgreSQL for Backend Engineers](20.4.1.01-postgresql.md)
 
 **Q:** Why do simultaneous updates to an account balance need database concurrency controls?
 
-**A:** Two writers to the same account balance cannot be allowed to interleave blindly — the DB's core promise is serializability where it matters, which forces locking or its equivalent (MVCC, → 20.4.1.03).
+**A:** Two readers can calculate incompatible writes from the same old balance. Use an atomic mutation, a protected transaction or version validation for the required invariant; default isolation does not guarantee serializability.
 
 **Q:** How can an index reduce the number of rows examined when searching a large table?
 
-**A:** Finding "orders by customer 42 in October" in a billion rows demands structure — hence indexes , which trade write cost and space for read time, irreversibly.
+**A:** An index organizes searchable keys so a suitable query can locate candidate rows without scanning the whole table. It adds storage and write maintenance; selectivity and the plan determine whether it is beneficial.
 
 **Q:** How does the write-ahead log help committed changes survive a crash?
 
@@ -36,7 +36,7 @@ Source: [Database Normalization](20.4.1.02-normalization.md)
 
 **Q:** How do normal forms decide which facts belong together in a table?
 
-**A:** Each normal form (1NF→3NF and beyond) is a progressively stricter statement of "no fact depends on anything except its key." 3NF is the practical stopping point because it eliminates all modify-anomalies at the cost of joins.
+**A:** Normal forms constrain dependencies among attributes to reduce redundant facts and modification anomalies. Check the actual dependencies and whether a decomposition is lossless and preserves needed constraints; 3NF does not remove every possible anomaly.
 
 **Q:** What consistency risk does denormalization introduce, and how can the update path control it?
 
@@ -56,7 +56,7 @@ Source: [MVCC (Multi-Version Concurrency Control)](20.4.1.03-mvcc.md)
 
 **Q:** How can a long-running transaction cause table bloat?
 
-**A:** Long transactions pin old versions alive (bloat) or fail (snapshot-too-old). MVCC doesn't eliminate cost — it converts blocking cost into space/time cost, which is usually the better trade but must be understood as one.
+**A:** A long-lived snapshot can prevent vacuum from reclaiming row versions still needed by that transaction. Monitor transaction age, retained versions and vacuum progress; MVCC reduces ordinary read/write blocking but adds cleanup and storage costs.
 
 ## SQL vs NoSQL — Choosing the Right Database
 
@@ -80,7 +80,7 @@ Source: [PostgreSQL Performance Tuning](20.4.1.05-postgresql-performance.md)
 
 **Q:** How do you distinguish CPU work, I/O waits, and lock waits when tuning PostgreSQL?
 
-**A:** Every optimization question is "which one?" — EXPLAIN answers it by showing plan shape (CPU), buffer counts (I/O), and wait events (locks). Measuring before optimizing isn't virtue; it's taxonomy.
+**A:** Use execution plans and buffer instrumentation to inspect query work, and activity/wait-event views to identify blocking or I/O waits. EXPLAIN alone does not report every wait cause; correlate observations with workload and host metrics.
 
 **Q:** Why can the same SQL query run with different execution plans?
 

@@ -1,6 +1,6 @@
 # TypeScript — Index
 
-> **Study time:** ≈ 5 h 29 m of reading (22 files, ~15 min average).
+> **Study time:** ≈ 5 h 32 m of reading (22 files, ~15 min average).
 > **22 files** — TypeScript type system mastery from basic types to branded types, template literals, declaration files, advanced generics, variance, decorators, the `satisfies` operator, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-22-blue)](../../INDEX.md)
@@ -43,7 +43,7 @@ How TypeScript represents types.
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Types vs Interfaces](01-foundations/10.2.1.01-types-vs-interfaces.md) | Type aliases, interfaces, declaration merging, when to use each, performance | Essential | 7 min | 7 min |
-| 02 | [keyof / typeof](01-foundations/10.2.1.02-keyof-typeof.md) | Index type queries, typeof operator, enum types, indexed access types | Essential | 15 min | 15 min |
+| 02 | [keyof / typeof](01-foundations/10.2.1.02-keyof-typeof.md) | Index type queries, typeof operator, enum types, indexed access types | Essential | 15 min | 16 min |
 | 03 | [Type Narrowing](01-foundations/10.2.1.03-type-narrowing.md) | typeof guards, instanceof, discriminated unions, type predicates, control flow analysis | Essential | 18 min | 18 min |
 | 04 | [tsconfig & Compiler Options](01-foundations/10.2.1.04-tsconfig-compiler-options.md) | strict flag family, moduleResolution bundler/node16/nodenext, isolatedModules, incremental/composite, skipLibCheck, annotated senior tsconfig | Essential | 13 min | 14 min |
 
@@ -84,8 +84,8 @@ Senior-level TS — types as a design tool.
 | 13 | [The `satisfies` Operator](04-advanced-patterns/10.2.4.01-satisfies-operator.md) | Type validation without widening, literal preservation, config objects, route tables | Essential | 10 min | 10 min |
 | 14 | [Branded Types](04-advanced-patterns/10.2.4.02-branded-types.md) | Nominal typing, brand patterns, unit types, validation, flavoring, discriminated unions | Important | 24 min | 24 min |
 | 15 | [Decorators](04-advanced-patterns/10.2.4.03-decorators.md) | Class, method, accessor, property, parameter decorators, metadata reflection | Important | 19 min | 20 min |
-| 16 | [Declaration Files](04-advanced-patterns/10.2.4.04-declaration-files.md) | .d.ts syntax, module augmentation, global types, asset declarations, triple-slash directives | Important | 22 min | 22 min |
-| 17 | [Advanced Patterns](04-advanced-patterns/10.2.4.05-advanced-patterns.md) | Class/parameter decorators, typed event emitter, advanced utility combinations | Important | 10 min | 10 min |
+| 16 | [Declaration Files](04-advanced-patterns/10.2.4.04-declaration-files.md) | .d.ts syntax, module augmentation, global types, asset declarations, triple-slash directives | Important | 22 min | 23 min |
+| 17 | [Advanced Patterns](04-advanced-patterns/10.2.4.05-advanced-patterns.md) | Class/parameter decorators, typed event emitter, advanced utility combinations | Important | 10 min | 11 min |
 
 ---
 

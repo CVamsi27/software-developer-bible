@@ -27,12 +27,10 @@ minima:
   skin: auto
 show_excerpts: false
 markdown: kramdown
-# Plugin allowlist. The github-pages gem whitelist-activates EVERY bundled
-# plugin, including jekyll-optional-front-matter, which force-renders all
-# markdown through Liquid — any literal {{ }} in a chapter would crash the
-# build (or silently render empty, which is worse). This site serves the
-# corpus as verbatim static files by design; only the homepage uses theme
-# layouts, and minima's needs stay listed here.
+# Theme dependencies. The pinned github-pages command also loads
+# jekyll-optional-front-matter and renders Markdown chapters as HTML.
+# Chapters containing literal Liquid syntax use raw wrappers; the template
+# gate and production-build warning check protect those examples.
 plugins:
   - jekyll-seo-tag
   - jekyll-feed

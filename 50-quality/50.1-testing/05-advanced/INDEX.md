@@ -1,6 +1,6 @@
 # Advanced Testing
 
-> **Study time:** ≈ 37 min of reading (3 files, ~12 min average).
+> **Study time:** ≈ 39 min of reading (3 files, ~13 min average).
 > **3 files.** Testing beyond correctness: performance/load testing (k6, Artillery, Locust) and chaos engineering — proving the system survives load and failure, not just happy paths.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
@@ -19,8 +19,8 @@ Unit, integration and end-to-end tests check behavior in selected scenarios. Loa
 
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
-| 01 | [Performance & Load Testing](50.1.5.01-performance-load-testing.md) | k6, Artillery, Locust, p95/p99, ramp-up, stress/soak | Production-scale services | Important | Specialized | 18 min |
-| 02 | [Chaos Engineering & Game Days](50.1.5.02-chaos-engineering.md) | Steady-state hypothesis, blast radius, Toxiproxy, Chaos Monkey, Gremlin, Litmus | Resilient distributed systems | Important | Specialized | 17 min |
+| 01 | [Performance & Load Testing](50.1.5.01-performance-load-testing.md) | k6, Artillery, Locust, p95/p99, ramp-up, stress/soak | Production-scale services | Important | Specialized | 19 min |
+| 02 | [Chaos Engineering & Game Days](50.1.5.02-chaos-engineering.md) | Steady-state hypothesis, blast radius, Toxiproxy, Chaos Monkey, Gremlin, Litmus | Resilient distributed systems | Important | Specialized | 18 min |
 
 ---
 

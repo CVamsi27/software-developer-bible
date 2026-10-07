@@ -1,6 +1,6 @@
 # JavaScript — Index
 
-> **Study time:** ≈ 7 h 35 m of reading (40 files, ~11 min average).
+> **Study time:** ≈ 7 h 37 m of reading (40 files, ~11 min average).
 > **40 files** — Core JavaScript concepts from execution context to async patterns, memory management, functional patterns, modern ES2022+ APIs, cancellation, DOM events, cross-tab communication, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-40-blue)](../../INDEX.md)
@@ -48,7 +48,7 @@ How JavaScript actually runs. These 6 files are the foundation — every other c
 | 03 | [Call Stack](01-execution-and-scope/10.1.1.03-call-stack.md) | LIFO, stack frames, stack overflow, max call stack size, debugging | Essential | Foundational | 6 min |
 | 04 | [Hoisting](01-execution-and-scope/10.1.1.04-hoisting.md) | `var`/`let`/`const` hoisting, temporal dead zone, function hoisting | Essential | Foundational | 7 min |
 | 05 | [Lexical Environment](01-execution-and-scope/10.1.1.05-lexical-environment.md) | Environment records, outer reference, scope chain internals | Essential | Foundational | 8 min |
-| 06 | [Closures](01-execution-and-scope/10.1.1.06-closures.md) | Lexical scoping, closure lifecycle, module pattern, memory implications | Essential | Foundational | 6 min |
+| 06 | [Closures](01-execution-and-scope/10.1.1.06-closures.md) | Lexical scoping, closure lifecycle, module pattern, memory implications | Essential | Foundational | 5 min |
 
 **Read order:** Execution Context → Scope → Call Stack → Hoisting → Lexical Environment → Closures (matches the category's numbering and its read-order rationale — see [01-execution-and-scope/INDEX.md](01-execution-and-scope/INDEX.md)).
 
@@ -60,7 +60,7 @@ JavaScript's object model is prototype-based, not class-based. `this` binding is
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 07 | [`this` Keyword](02-objects-prototypes-this/10.1.2.01-this.md) | Implicit/explicit binding, arrow functions, `call`/`apply`/`bind` | Essential | Foundational | 8 min |
+| 07 | [`this` Keyword](02-objects-prototypes-this/10.1.2.01-this.md) | Implicit/explicit binding, arrow functions, `call`/`apply`/`bind` | Essential | Foundational | 7 min |
 | 08 | [Prototypes](02-objects-prototypes-this/10.1.2.02-prototypes.md) | Prototype chain, `__proto__`, `Object.create`, classical inheritance, `class` keyword | Essential | Foundational | 8 min |
 | 09 | [Proxy & Reflect](02-objects-prototypes-this/10.1.2.03-proxy-reflect.md) | Metaprogramming, traps, validation, reactive patterns (Vue 3 uses these!) | Important | Specialized | 9 min |
 
@@ -92,7 +92,7 @@ Choosing the right collection and avoiding memory leaks.
 | 16 | [Pass by Value](04-memory-and-data/10.1.4.01-pass-by-value.md) | Primitive vs reference, value/reference semantics, mutation gotchas | Essential | Foundational | 6 min |  | 6 min |
 | 17 | [Map, Set, WeakMap, WeakSet](04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md) | Keyed collections, weak references, memory-efficient lookups, when to use what | Essential | Foundational | 15 min |  | 15 min |
 | 18 | [Shallow vs Deep Copy](04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.md) | Spread, `Object.assign`, `structuredClone`, JSON methods, pitfalls | Essential | Foundational | 14 min |  | 14 min |
-| 19 | [Debounce](04-memory-and-data/10.1.4.04-debounce.md) | Implementation, leading/trailing edge, real-world use cases (search input, resize) | Essential | Foundational | 22 min |  | 22 min |
+| 19 | [Debounce](04-memory-and-data/10.1.4.04-debounce.md) | Implementation, leading/trailing edge, real-world use cases (search input, resize) | Essential | Foundational | 22 min |  | 23 min |
 | 20 | [Throttle](04-memory-and-data/10.1.4.05-throttle.md) | Implementation, vs debounce, animation frame throttling, scroll handlers | Essential | Foundational | 21 min |  | 21 min |
 | 21 | [Memory Leaks](04-memory-and-data/10.1.4.06-memory-leaks.md) | Detached DOM, closures, circular references, detection, debugging | Essential | Foundational | 21 min |  | 21 min |
 | 22 | [Garbage Collection](04-memory-and-data/10.1.4.07-garbage-collection.md) | Mark-and-sweep, generational collection, V8 Orinoco, WeakRef, FinalizationRegistry | Essential | Foundational | 21 min |  | 22 min |
@@ -111,7 +111,7 @@ The patterns you'll use daily as a senior engineer.
 | 26 | [Memoization](05-functional-patterns/10.1.5.02-memoization.md) | Caching, `_.memoize`, React.memo, useMemo, when to use | Essential | Foundational | 16 min |
 | 27 | [Generators](05-functional-patterns/10.1.5.03-generators.md) | `function*`, yield, iterators, async generators, lazy evaluation | Important | Specialized | 22 min |
 | 28 | [Currying & Composition](05-functional-patterns/10.1.5.04-currying-composition.md) | Currying, partial application, pipe, compose, functional patterns | Important | Specialized | 11 min |
-| 29 | [Recursion & Tail Call](05-functional-patterns/10.1.5.05-recursion-tail-call.md) | Recursive patterns, tail call optimization, trampolining, memoized recursion | Important | Specialized | 12 min |
+| 29 | [Recursion & Tail Call](05-functional-patterns/10.1.5.05-recursion-tail-call.md) | Recursive patterns, tail call optimization, trampolining, memoized recursion | Important | Specialized | 13 min |
 
 ---
 
@@ -121,10 +121,10 @@ The newest features + the interview Q&A bank.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------    : |
-| 30 | [ES2024+ Features](06-modern-and-interview/10.1.6.01-es2024-features.md) | `?.`/`??` syntax foundations (ES2020), `structuredClone`, `toSorted`, `Object.groupBy`, `Promise.withResolvers`, iterator helpers, Set methods (ES2025) | Important | Specialized | 13 min |
+| 30 | [ES2024+ Features](06-modern-and-interview/10.1.6.01-es2024-features.md) | `?.`/`??` syntax foundations (ES2020), `structuredClone`, `toSorted`, `Object.groupBy`, `Promise.withResolvers`, iterator helpers, Set methods (ES2025) | Important | Specialized | 14 min |
 | 31 | [Web Workers](06-modern-and-interview/10.1.6.02-web-workers.md) | Dedicated/Shared workers, OffscreenCanvas, Comlink, React hooks for workers | Important | Important | 10 min |
 | 32 | [DOM Events & Delegation](06-modern-and-interview/10.1.6.03-dom-events-delegation.md) | Capture/bubble phases, target vs currentTarget, delegation patterns, passive listeners, CustomEvent, React synthetic events | Essential | Foundational | 16 min |
-| 33 | [Cross-Tab Communication](06-modern-and-interview/10.1.6.04-cross-tab-communication.md) | BroadcastChannel, storage events, SharedWorker vs postMessage, localStorage mutex, sync logout, IndexedDB payloads, service-worker messaging | Important | Specialized | 14 min |
+| 33 | [Cross-Tab Communication](06-modern-and-interview/10.1.6.04-cross-tab-communication.md) | BroadcastChannel, storage events, SharedWorker vs postMessage, localStorage mutex, sync logout, IndexedDB payloads, service-worker messaging | Important | Specialized | 15 min |
 | 34 | [Interview Questions](06-modern-and-interview/10.1.6.05-interview-questions.md) | 55+ curated questions with answers | Essential | Foundational | 10 min |
 
 ---

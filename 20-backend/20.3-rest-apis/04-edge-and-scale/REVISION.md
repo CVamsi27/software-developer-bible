@@ -1,4 +1,4 @@
-<!-- section: REST APIs | category: Reference | tags: revisi | role-priority: essential | general-importance: foundational -->
+<!-- section: REST APIs | category: Reference | tags: revision | role-priority: essential | general-importance: foundational -->
 [![Section](https://img.shields.io/badge/section-REST%20APIs-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
@@ -14,65 +14,65 @@ Explain each mechanism before checking the answer. Revisit its source for the ex
 
 Source: [API Rate Limiting](20.3.4.01-rate-limiting.md)
 
-**Q:** What core constraint explains why every resource has a max sustainable rate governs api rate limiting?
+**Q:** Why should admission limits reflect sustainable resource capacity?
 
-**A:** (DB connections, CPU, downstream API quota). Without a gate, one client's burst degrades *everyone* — the limiter converts "the system collapsed" into "you got a 429," which is a survivable, diagnosable outcome.
+**A:** Database slots, CPU and downstream quotas are finite. Admission protects those resources before a client's burst consumes capacity needed by others; choose limits from measured workload cost.
 
-**Q:** What core constraint explains why it must be decided at the edge. governs api rate limiting?
+**Q:** Which limits belong at the edge and which need application-level enforcement?
 
-**A:** By the time a request reaches your business logic, it has already cost you. Counters must therefore be shared state (Redis) across instances — per-process in-memory counts are lies in a horizontally scaled deployment.
+**A:** The edge can reject coarse abuse early; application-level limits can enforce tenant, operation and downstream budgets. Global quotas need coordinated accounting, while local limits can deliberately protect each instance.
 
-**Q:** What core constraint explains why the algorithm is a shape-of-burst decision. governs api rate limiting?
+**Q:** How does a rate-limiting algorithm determine permitted bursts?
 
-**A:** Fixed window is cheap but allows 2× bursts at boundaries; sliding window/token bucket smooths that at slightly higher bookkeeping cost. And a limiter without client-visible headers (X-RateLimit-Remaining, Retry-After) just produces mysterious failures.
+**A:** Fixed windows permit bursts near boundaries; sliding windows and token buckets have different burst and bookkeeping behavior. Publish useful retry information and define behavior when shared counters fail.
 
 ## API Gateway Pattern
 
 Source: [API Gateway Pattern](20.3.4.02-api-gateway.md)
 
-**Q:** What core constraint explains why every concern that must apply to every request needs one enforcement point. governs api gateway pattern?
+**Q:** Why can shared edge concerns benefit from centralized enforcement?
 
-**A:** Auth, rate limiting, TLS termination, request logging — implementing them in each service guarantees drift and gaps. The gateway is the single choke point by construction.
+**A:** A shared gateway can apply TLS termination, coarse admission and logging consistently. Services still need resource-specific authorization and safe behavior when traffic reaches them by another trusted path.
 
-**Q:** What core constraint explains why it buys uniformity at the price of a hop and a single point of failure governs api gateway pattern?
+**Q:** What latency and availability costs does a gateway introduce?
 
-**A:** — which is why gateways must be horizontally scalable, config-as-code, and why latency-sensitive internal paths sometimes bypass it (service mesh is the answer for east-west traffic).
+**A:** The gateway adds a hop and another component whose saturation or failure can affect requests. Replicate it, bound work and deploy routing policy with observable rollback.
 
-**Q:** What core constraint explains why routing is its real product. governs api gateway pattern?
+**Q:** How does gateway routing decouple clients from service topology?
 
-**A:** Clients speak one stable surface (your domain); the gateway maps it onto a refactorable service topology — which is what decouples "clients deployed on their schedule" from "backend refactored on ours.".
+**A:** Clients use a stable external surface while the gateway selects upstream services. Routing changes can move implementations without changing every client, provided the public contract remains compatible.
 
 ## BFF — Backend for Frontend
 
 Source: [BFF — Backend for Frontend](20.3.4.03-bff.md)
 
-**Q:** What core constraint explains why one api cannot be optimal for many clients. governs bff — backend for frontend?
+**Q:** When do differing client needs justify separate API composition?
 
-**A:** A mobile screen needs 3 fields in one round trip; a web dashboard needs a different aggregation; both hit the same services. Forcing them through one generic API produces either over-fetching or N+1 round trips — the mismatch is structural, not fixable by parameter tweaking.
+**A:** Separate composition is useful when client payloads, latency budgets or release ownership differ materially. Small differences may be handled by one documented API without another deployable layer.
 
-**Q:** What core constraint explains why so give each client family its own aggregation layer. governs bff — backend for frontend?
+**Q:** What should a client-specific aggregation layer own?
 
-**A:** The BFF is owned by the client team, speaks the client's shape, and calls downstream services. It's the recognition that *composition logic* is a real layer worth owning, not duplication.
+**A:** It owns client-specific aggregation and representation, commonly with the client team. Authoritative business rules and access checks remain in domain services.
 
-**Q:** What core constraint explains why the cost is more deployables and the risk of logic drifting into the wrong bff governs bff — backend for frontend?
+**Q:** What deployment and ownership costs does adding a BFF create?
 
-**A:** — which is why the rule is: BFFs aggregate and reshape, they don't own business rules.
+**A:** Another BFF adds deployment, telemetry and failure paths, and composition may be duplicated. Keep ownership clear and share stable domain APIs when several clients need the same operation.
 
 ## API Authentication
 
 Source: [API Authentication](20.3.4.04-authentication.md)
 
-**Q:** What core constraint explains why the server must verify a claim it didn't witness. governs api authentication?
+**Q:** What evidence lets an API verify a caller's identity claim?
 
-**A:** Credentials include server-side sessions, opaque access tokens, signed tokens such as JWTs, API keys and client certificates. Choose based on client type, delegation, revocation needs and operational constraints.
+**A:** Evidence can include a session identifier, opaque token, signed token, API key or client certificate. Validate it under the issuer and application contract before establishing a principal.
 
-**Q:** What core constraint explains why verification state is the scaling decision. governs api authentication?
+**Q:** How does verification state affect scaling and revocation?
 
-**A:** Opaque tokens and sessions usually need a lookup; signed tokens need cryptographic validation and key handling, and may still need state for revocation. Each makes a different state and operations trade-off.
+**A:** Sessions and opaque tokens usually require current state; signed tokens can be checked locally but need trusted keys and may still require revocation state. Choose from actual lifecycle requirements.
 
-**Q:** What core constraint explains why transport and storage are part of the design, not afterthoughts. governs api authentication?
+**Q:** Why are credential transport and storage part of the authentication design?
 
-**A:** Credentials over TLS only, never in URLs (they leak via logs and Referer), and browser storage choice (cookie vs localStorage) determines your CSRF/XSS exposure — which is why auth and security chapters interlock.
+**A:** A stolen bearer credential can be replayed regardless of its format. Protect transport and logs, and choose browser storage with explicit XSS and CSRF boundaries.
 
 ## Summary
 

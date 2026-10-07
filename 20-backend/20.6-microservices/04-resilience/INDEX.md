@@ -31,6 +31,7 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Request deadlines | `apps/api/src/shared/common/interceptors/timeout.interceptor.ts` - config-driven per-request timeout |
 | Outbound timeouts | `apps/api/src/shared/common/http/fetch-with-timeout.ts` - abortable fetch wrapper for provider calls |
 | Bulkhead by deployment | `apps/worker/src/main.ts` - job load isolated in its own process so spikes cannot starve the API |
+
 ---
 
 [← Previous: Data & Consistency](../03-data-and-consistency/INDEX.md) · [Next: Interview Drills →](../05-interview-drills/INDEX.md)

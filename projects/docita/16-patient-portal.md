@@ -9,6 +9,8 @@
 
 The patient portal gives an authenticated patient access to selected records and a way to report medication doses. To protect those records, the application maps the authenticated user to a patient and clinic, then checks ownership of each requested resource.
 
+> **Textbook Definition:** A patient portal is an authenticated application boundary that maps a user identity to permitted patient resources and actions, enforcing ownership for each operation.
+
 The concrete failure to prevent is simple: a patient changes a prescription ID in the URL and receives someone else's record.
 
 ## First Principles

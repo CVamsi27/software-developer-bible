@@ -9,6 +9,8 @@
 
 An experience reconstruction connects a recorded responsibility to a real project, personal actions, technical decisions and available outcomes. This chapter prepares the four MAQ bullets in the current resume without inventing a project, incident, measurement or client.
 
+> **Textbook Definition:** Experience reconstruction organizes available records of past work into a specific problem, personal contribution, engineering decisions and supported outcomes, keeping later practice distinct from employer history.
+
 The available source is the candidate's previously authored CV. No MAQ source repository, ticket history or performance report was supplied. The technical exercises below teach how to discuss the recorded work; they do not independently verify that it happened. Keep confidential employer material private and use approved sanitized examples.
 
 ## First Principles

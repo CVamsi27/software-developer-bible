@@ -46,10 +46,10 @@
 | # | Script | What it owns | Fails when |
 | --- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
 | 1 | `check_counts.py` | Every count claim on the nav surface (badges, blurb counts, table Files columns, repo-scale totals, [api-contract](api-contract.md)) | a claim disagrees with live disk |
-| 2 | `check_alignment.py` | Table pipe alignment + ASCII box walls | rows/pipes misaligned vs widest cell |
+| 2 | `check_alignment.py` | Table pipe alignment, surrounding blank lines + ASCII box walls | rows/pipes misaligned or a table boundary fails to render |
 | 3 | `check_structure.py` | IDs unique, sequences contiguous, banks last, one H1, unique H2 slugs, **INDEX completeness** (every numbered subdir with an INDEX is linked) | structure or navigation has a gap |
 | 4 | `check_links.py` | Internal links resolve, no stale path-as-label links (fence-aware, anchor-verified) | a link is broken or lies about its target |
-| 5 | `check_freshness.py` | 14 staleness rules incl. date-gated EOL tables | a known stale signature appears |
+| 5 | `check_freshness.py` | Known stale API signatures and date-gated EOL tables | a known stale signature appears |
 | 6 | `link_baseline.py` (diff) | Every cited external URL is in the probe-verified baseline | an unverified URL is cited |
 | 6b | `check_template.py` | Template sections/order, metadata contract, empty sections, question-claim contract, 25-question floor, fence grammar | a chapter or bank violates the contract |
 | 7 | `check_claims.py` | Campaign-material claims integrity (purged phrases stay purged) | a purged claim re-enters active docs |
@@ -113,6 +113,16 @@ When a gate fails, run the tool it names — never hand-edit a claim it owns:
 | `prose_scan.py` | The single reasoning-prose classifier (fence/table/heading/quote/badge exclusions) — imported by gate 19; pinned by gate 20. `read_time.py` deliberately keeps its own reading-weight model; the two classifiers answer different questions |
 | `test_md_fences.py` / `test_fixers.py` / `test_gates.py` | The tooling's own test suites (gates 16/17/18) |
 | `external-links-baseline.json` / `first-principles-baseline.json` | Owned data tables: probe-verified URLs; coverage floor |
+
+### Rendered-page checks
+
+The optional Playwright suites exercise the built site served at `http://127.0.0.1:4337`:
+
+- `test_reading_ui_browser.cjs` checks chapter width, theme behavior, contrast and reader controls.
+- `test_read_aloud_browser.cjs` checks speech extraction and playback; set `STUDY_TEST_URL` to a built chapter.
+- `test_reading_pages_browser.cjs` checks navigation routes, one visible title, separate mobile touch targets, pointer/keyboard menus, expanded state/focus, local overflow, homepage/table/hover contrast and clipboard text.
+
+Run these with `@playwright/test` and its Chromium browser available to Node. On a case-insensitive preview filesystem, `INDEX.html` and `index.html` collide. Render the authored homepage output to a temporary preview alias and set `STUDY_HOME_ROUTE` to that alias for the navigation suite; the production routes stay unchanged. A successful static build does not replace these browser checks.
 
 ### Doctrine: adding a script
 

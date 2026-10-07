@@ -1,6 +1,6 @@
 # Production Hardening
 
-> **Study time:** ≈ 51 min of reading (5 files, ~10 min average).
+> **Study time:** ≈ 53 min of reading (5 files, ~11 min average).
 > **5 files.** The difference between a demo cluster and a production one: health probes, disruption budgets, RBAC + NetworkPolicies, and resource quotas. Every senior K8s interview drills into at least two of these.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#file-index)
@@ -19,10 +19,10 @@ Out of the box, a Deployment is fragile and insecure: no probes (traffic hits un
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Health Checks](40.2.4.01-health-checks.md) | Liveness, readiness, startup probes; probe configuration; failure modes; probe-induced outages | Optional | Specialized | 17 min |
-| 02 | [Pod Disruption Budgets](40.2.4.02-pod-disruption-budgets.md) | minAvailable/maxUnavailable, voluntary disruptions, node drains, availability during maintenance | Optional | Specialized | 5 min |
+| 01 | [Health Checks](40.2.4.01-health-checks.md) | Liveness, readiness, startup probes; probe configuration; failure modes; probe-induced outages | Optional | Specialized | 18 min |
+| 02 | [Pod Disruption Budgets](40.2.4.02-pod-disruption-budgets.md) | minAvailable/maxUnavailable, voluntary disruptions, node drains, availability during maintenance | Optional | Specialized | 6 min |
 | 03 | [RBAC & Network Policies](40.2.4.03-rbac-network-policies.md) | Roles, ClusterRoles, Bindings, ServiceAccounts; default-deny networking; micro-segmentation | Optional | Specialized | 7 min |
-| 04 | [Resource Quotas](40.2.4.04-resource-quotas.md) | ResourceQuota, LimitRange, multi-tenant isolation, priority classes, monitoring usage | Optional | Specialized | 19 min |
+| 04 | [Resource Quotas](40.2.4.04-resource-quotas.md) | ResourceQuota, LimitRange, multi-tenant isolation, priority classes, monitoring usage | Optional | Specialized | 20 min |
 
 ---
 

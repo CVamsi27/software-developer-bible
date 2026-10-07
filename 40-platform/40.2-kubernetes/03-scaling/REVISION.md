@@ -1,4 +1,4 @@
-<!-- section: Kubernetes | category: Reference | tags: revision, practi | role-priority: optional | general-importance: specialized -->
+<!-- section: Kubernetes | category: Reference | tags: revision, practice | role-priority: optional | general-importance: specialized -->
 [![Section](https://img.shields.io/badge/section-Kubernetes-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)
@@ -21,6 +21,10 @@ Source: [Kubernetes HPA & Scaling](40.2.3.01-hpa-scaling.md)
 **Q:** Why can an HPA amplify a database incident?
 
 **A:** Additional application replicas can open more connections and issue more requests against an already saturated dependency. Bound downstream concurrency and choose scaling signals carefully.
+
+**Q:** Four replicas average 80% CPU against a 50% target. What does the basic HPA ratio recommend before controller adjustments?
+
+**A:** `ceil(4 × 80 / 50) = 7` replicas. Current consumption belongs in the numerator: demand above target increases capacity. Missing metrics, readiness, tolerance, stabilization, and configured policies can modify the actual decision.
 
 ## Node Autoscaling & Cluster Capacity (Cluster Autoscaler, Karpenter)
 

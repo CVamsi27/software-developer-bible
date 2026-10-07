@@ -319,11 +319,11 @@ def roadmap_edits(live):
     way INDEXes do — case-study totals, sub-stack counts, folder names. Those
     claims were ungated and drifted (`Case studies ×20` against 31 on disk,
     `9 sub-stacks` against 10). Deriving them here keeps ROADMAP honest from
-    the same computation as everything else.
+    the same computation as everything else. The repeated case-count claim
+    in the wide phase diagram was retired when that diagram became a stages table.
     """
     return [
         ('ROADMAP.md', r'\[Case studies ×(\d+)\]', [live['case_studies']]),
-        ('ROADMAP.md', r'└─ (\d+) case ', [live['case_studies']]),
         ('ROADMAP.md', r'20-backend/ ← (\d+) sub-stacks',
          [live['backend_substacks']]),
         ('ROADMAP.md', r'30\.2-system-design/ ([\d\-a-z]+ \+ [\d\-a-z]+)',

@@ -1,6 +1,6 @@
 # Production Engineering — Index
 
-> **Study time:** ≈ 1 h 1 m of reading (7 files, ~9 min average).
+> **Study time:** ≈ 1 h 3 m of reading (7 files, ~9 min average).
 > **7 files** — Incident response, SLI/SLO/error budgets, chaos engineering, production readiness reviews, and sustainable on-call — operating systems in production. The senior differentiator stack.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)
@@ -43,7 +43,7 @@ When things break (and they will).
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Incident Response](50.4.01-incident-response.md) | Severity levels (SEV1-4), triage workflow, communication templates, blameless postmortems, runbooks | Important | Important | 11 min |
+| 01 | [Incident Response](50.4.01-incident-response.md) | Severity levels (SEV1-4), triage workflow, communication templates, blameless postmortems, runbooks | Important | Important | 12 min |
 
 **Severity (typical):**
 - **SEV1** — full outage, customers affected, all-hands
@@ -57,7 +57,7 @@ When things break (and they will).
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 03 | [Chaos Engineering in Production](50.4.03-chaos-engineering.md) | Game-day runbook, production injection policy + guardrails, automated chaos in CI/CD, failover drills, resilience metrics (experiment design lives in [50.1.5.02](../50.1-testing/05-advanced/50.1.5.02-chaos-engineering.md)) | Important | Important | 9 min |
+| 03 | [Chaos Engineering in Production](50.4.03-chaos-engineering.md) | Game-day runbook, production injection policy + guardrails, automated chaos in CI/CD, failover drills, resilience metrics (experiment design lives in [50.1.5.02](../50.1-testing/05-advanced/50.1.5.02-chaos-engineering.md)) | Important | Important | 10 min |
 
 **Principles:**
 1. Build a hypothesis around steady-state behavior

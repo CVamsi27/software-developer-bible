@@ -1,6 +1,6 @@
 # Advanced Hooks & Patterns — React
 
-> **Study time:** ≈ 2 h 3 m of reading (7 files, ~18 min average).
+> **Study time:** ≈ 1 h 50 m of reading (7 files, ~16 min average).
 > **7 files.** Production-grade patterns: Suspense, error boundaries, custom hooks, external stores via useSyncExternalStore, performance profiling and optimization, and state management.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](#files)
@@ -14,7 +14,7 @@
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
 | 01 | [Suspense](10.3.3.01-suspense.md) | Suspense boundaries, data fetching, useTransition, streaming SSR | Important | Specialized | 19 min |
-| 02 | [Error Boundary](10.3.3.02-error-boundary.md) | Error boundaries, error recovery, logging, Sentry integration | Important | Important | 20 min |
+| 02 | [Error Boundary](10.3.3.02-error-boundary.md) | Error boundaries, error recovery, logging, Sentry integration | Important | Important | 7 min |
 | 03 | [Custom Hooks](10.3.3.03-custom-hooks.md) | Composition patterns, useLocalStorage, useDebounce, useFetch, testing, best practices | Essential | Important | 37 min |
 | 04 | [useSyncExternalStore](10.3.3.04-usesyncexternalstore.md) | Tearing in concurrent rendering, subscribe/getSnapshot contract, snapshot caching, Zustand/Redux integration, infinite-loop mistakes | Important | Specialized | 16 min |
 | 05 | [Performance](10.3.3.05-performance.md) | Profiler, React.memo, virtualization, windowing, debouncing, Web Workers | Essential | Foundational | 9 min |

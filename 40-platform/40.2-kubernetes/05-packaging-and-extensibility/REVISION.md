@@ -22,6 +22,10 @@ Source: [Kubernetes Helm](40.2.5.01-helm.md)
 
 **A:** Templates and chart defaults determine the actual manifests. Valid values are not proof that the rendered deployment has safe probes, selectors, permissions, or resource settings.
 
+**Q:** A Helm values file enables autoscaling but the chart has no HPA template. What exists after rendering?
+
+**A:** Only resources consumed by actual templates exist. The Deployment may omit fixed replicas while no HPA is created. Inspect rendered objects and either disable the option or author the missing controller object; a value name is not behavior.
+
 ## Kustomize Overlays & Packaging Trade-offs
 
 Source: [Kustomize Overlays & Packaging Trade-offs](40.2.5.02-kustomize-overlays-packaging-tradeoffs.md)
@@ -34,6 +38,10 @@ Source: [Kustomize Overlays & Packaging Trade-offs](40.2.5.02-kustomize-overlays
 
 **A:** Kustomize reads resources declared in the directory; the pipe does not declare stdin as a resource. Write the chart output to a declared resource file or configure the Helm generator with the required build flag, then inspect the result.
 
+**Q:** Trace a changed configMapGenerator input into a Deployment rollout. What breaks the trace if name hashes are disabled?
+
+**A:** The generator changes the hashed object name and a recognized Pod-template reference; applying that changed template starts the rollout. Without the changed name/reference, an environment-based consumer can retain its original value until explicit replacement.
+
 ## CRDs, Operators & Controller Patterns
 
 Source: [CRDs, Operators & Controller Patterns](40.2.5.03-crds-operators-controller-patterns.md)
@@ -45,6 +53,14 @@ Source: [CRDs, Operators & Controller Patterns](40.2.5.03-crds-operators-control
 **Q:** What problem do finalizers solve, and what new failure mode do they add?
 
 **A:** They delay deletion until cleanup completes. A broken controller or inaccessible dependency can leave deletion blocked, so cleanup needs a recoverable operational path.
+
+**Q:** The CRD is installed and a PostgresCluster object is accepted, but no Pods appear. Which missing owner explains this?
+
+**A:** The CRD supplies API validation/storage; a controller must implement its spec. An accepted object without the controller remains declared intent, not a provisioned database.
+
+**Q:** Why must finalizer cleanup tolerate a provider delete that succeeded before the controller lost its response?
+
+**A:** Reconciliation can retry. Cleanup must recognize the already deleted external resource and safely finish before removing the finalizer. A manual finalizer removal skips cleanup and can abandon data/resources.
 
 ## Summary
 

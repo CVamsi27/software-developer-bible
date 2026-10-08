@@ -18,9 +18,9 @@ Source: [Prisma ORM](20.4.4.01-prisma.md)
 
 **A:** The application needs a matching generated client, while the database needs reviewed migration SQL. Generating types does not apply DDL, and deployment migration execution does not generate the application client.
 
-**Q:** Why must these examples name Prisma6.19.0 explicitly?
+**Q:** Why must these examples name Prisma 6.19.0 explicitly?
 
-**A:** The constructor/generator/pool and $transaction APIs belong to that legacy major contract. Current ORM8 documentation uses different contract/runtime and db.transaction/model APIs; mixing those APIs produces invalid examples.
+**A:** The constructor/generator/pool and $transaction APIs belong to that legacy major contract. Current ORM 8 documentation uses different contract/runtime and db.transaction/model APIs; mixing those APIs produces invalid examples.
 
 **Q:** What does a generic argument on $queryRaw establish?
 
@@ -28,7 +28,11 @@ Source: [Prisma ORM](20.4.4.01-prisma.md)
 
 **Q:** Why include a second ordering key in a timestamp-based page?
 
-**A:** Several records may share a timestamp. The unique ID breaks ties; skip1 excludes the cursor row. Missing cursor and concurrent insert behavior still require an explicit API policy.
+**A:** Several records may share a timestamp. The unique ID breaks ties; `skip: 1` excludes the cursor row. Missing cursor and concurrent insert behavior still require an explicit API policy.
+
+**Q:** What changes if a cursor row is deleted between page requests?
+
+**A:** The cursor is no longer a valid existing anchor for the query contract. The API must define a missing-cursor outcome or use an explicit value-based boundary; cursor pagination alone does not preserve a multi-request snapshot.
 
 ## Prisma Advanced
 
@@ -48,7 +52,11 @@ Source: [Prisma Advanced](20.4.4.02-prisma-advanced.md)
 
 **Q:** How does transaction-local tenant context avoid contaminating the next request?
 
-**A:** set_config with the local flagtrue scopes the value to the transaction. Protected queries must use that same tx connection, with an enabled policy and a runtime role that does not bypass RLS.
+**A:** set_config with the local flag `true` scopes the value to the transaction. Protected queries must use that same tx connection, with an enabled policy and a runtime role that does not bypass RLS.
+
+**Q:** A helper uses the root Prisma client and commits before its caller throws. Does the caller's rollback undo that helper?
+
+**A:** No. The helper escaped the participating transaction client and owns another boundary. Pass tx through the helper when its effects must commit or roll back with the caller.
 
 ## ORM & Query Builder Landscape
 
@@ -65,6 +73,10 @@ Source: [ORM & Query Builder Landscape](20.4.4.03-orm-query-builder-landscape.md
 **Q:** What should migration review cover beyond whether a tool generated the SQL?
 
 **A:** Assess locks, data backfill, old/new application compatibility, privileges and rollback/recovery. Automatic diff generation or applying pending history does not prove every production drift or online rollout risk is handled.
+
+**Q:** What changes if a raw driver returns a count as decimal text while the public DTO assumes a number?
+
+**A:** Static interfaces do not convert or validate it. Deliberately map the result and preserve precision; the report example returns text so large counts remain JSON serializable without unsafe integer coercion.
 
 ## Summary
 

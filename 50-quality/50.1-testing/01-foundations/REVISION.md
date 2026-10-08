@@ -26,6 +26,14 @@ Source: [Testing Overview](50.1.1.01-testing-overview.md)
 
 **A:** It checks the required observable outcome or contract while allowing valid internal changes. Mirroring implementation steps makes the test change with the code rather than detect a defect.
 
+**Q:** A browser test intercepts the order API and returns a success fixture. Does it verify that a real order was committed?
+
+**A:** It verifies the UI against the supplied response. To verify persistence, exercise the real handler and database, then assert the stored order and inventory invariant. State external substitutions separately.
+
+**Q:** A price function executes every line during tests but returns 502 for two items at 500 cents. What is missing?
+
+**A:** A useful oracle or assertion. Coverage shows execution, not correctness. An independently chosen expected result of 1,000 detects the defect.
+
 ## Test Data Management & Anonymization
 
 Source: [Test Data Management & Anonymization](50.1.1.02-test-data-management-anonymization.md)
@@ -37,6 +45,18 @@ Source: [Test Data Management & Anonymization](50.1.1.02-test-data-management-an
 **Q:** Why can a seeded data factory still be nondeterministic?
 
 **A:** Uncontrolled clocks, randomness outside the seeded source, IDs, concurrency, and external data can vary. Control all inputs relevant to the assertion.
+
+**Q:** Why does preserving customer/order joins with HMAC tokens not make an export anonymous?
+
+**A:** The same input and key preserve stable linkage. A key holder can recompute tokens from candidate IDs, and other fields may identify someone without the key. The transformation also leaves dates and event histories untouched.
+
+**Q:** What changes when a generator uses a fixed seed but generates dates relative to today?
+
+**A:** Replaying on another day changes the date range. Fix the reference date as well as the seed, and pin the generator version and call order. Isolate concurrent generator state.
+
+**Q:** What does a golden dataset checksum establish, and what does it leave unanswered?
+
+**A:** Comparing against an independently recorded digest can detect changed bytes. It cannot establish that expected outputs express the correct business rule; review those outputs separately.
 
 ## Summary
 

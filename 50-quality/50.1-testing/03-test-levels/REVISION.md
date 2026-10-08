@@ -18,6 +18,18 @@ Source: [Unit Testing](50.1.3.01-unit-testing.md)
 
 **A:** When the assertion checks which internal helpers were called and in what order, rather than the result the unit promises. Mock an external dependency when the test needs to control its responses or run without it, and exercise real internal behavior.
 
+**Q:** Why does the token example test time 999 and exactly 1,000 rather than sleeping until the token probably expires?
+
+**A:** Its contract uses `now < expiresAt`, so 999 must reuse A and 1,000 must refresh. A controlled clock makes the comparison repeatable and exposes an incorrect `<=` boundary.
+
+**Q:** Why is a loader call count useful here while a private helper spy may be brittle?
+
+**A:** Avoiding a fetch before expiry is part of the public behavior. A private helper’s name or invocation pattern can change without violating that behavior.
+
+**Q:** Does the sequential cache test establish one refresh for concurrent callers?
+
+**A:** No. Concurrent callers can both see an empty or expired cache. Coalescing requires shared in-flight work and tests that hold one load pending while a second caller arrives.
+
 ## Integration Testing
 
 Source: [Integration Testing](50.1.3.02-integration-testing.md)

@@ -1,6 +1,6 @@
 # Testing — Index
 
-> **Study time:** ≈ 4 h 57 m of reading (19 files, ~16 min average).
+> **Study time:** ≈ 3 h 58 m of reading (19 files, ~13 min average).
 > **19 files across 6 categories.** Testing fundamentals from Jest and React Testing Library to unit, integration, E2E, performance testing, chaos engineering, mocking, test patterns, frameworks comparison, test data management, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-19-blue)](../../INDEX.md)
@@ -28,8 +28,8 @@
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Testing Overview](01-foundations/50.1.1.01-testing-overview.md) | Test types, testing pyramid, TDD, BDD, coverage, strategies, when to write which test | Essential | Foundational | 28 min |
-| 02 | [Test Data Management & Anonymization](01-foundations/50.1.1.02-test-data-management-anonymization.md) | Test data pyramid, factories, faker, anonymization/pseudonymization, GDPR-safe seeding, golden datasets | Essential | Foundational | 14 min |
+| 01 | [Testing Overview](01-foundations/50.1.1.01-testing-overview.md) | Test types, testing pyramid, TDD, BDD, coverage, strategies, when to write which test | Essential | Foundational | 11 min |
+| 02 | [Test Data Management & Anonymization](01-foundations/50.1.1.02-test-data-management-anonymization.md) | Test data pyramid, factories, faker, anonymization/pseudonymization, GDPR-safe seeding, golden datasets | Essential | Foundational | 11 min |
 
 ---
 
@@ -62,7 +62,7 @@ Aim for **lots of unit tests, some integration, few E2E.**
 
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
-| 01 | [Unit Testing](03-test-levels/50.1.3.01-unit-testing.md) | Isolated tests, boundaries, dependency injection, stubs | Pure functions, business logic | Essential | Foundational | 49 min |
+| 01 | [Unit Testing](03-test-levels/50.1.3.01-unit-testing.md) | Isolated tests, boundaries, dependency injection, stubs | Pure functions, business logic | Essential | Foundational | 10 min |
 | 02 | [Integration Testing](03-test-levels/50.1.3.02-integration-testing.md) | Component integration, API testing, database testing (Testcontainers) | Service-level, multiple modules | Essential | Foundational | 10 min |
 | 03 | [E2E Testing](03-test-levels/50.1.3.03-e2e-testing.md) | Playwright, Cypress, user flows, visual regression | Critical user journeys | Essential | Foundational | 11 min |
 

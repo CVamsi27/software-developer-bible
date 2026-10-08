@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-JavaScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-6_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-7_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -17,12 +17,12 @@ Source: [Modules](10.1.5.01-modules.md)
 **Definition**
 
 1. **Q:** What three properties separate a module from "a script in a wrapper"?
-   **A:** A top-level scope nothing outside can reach, an explicit export list as the only way through that wall, and one cached instance per URL — so importing the same module twice still runs it once.
+   **A:** A separately scoped unit, an explicit public surface and dependencies resolved by a host/toolchain. Unexported names are not directly addressable from imports. State is normally shared for one resolved identity within a loader; different URLs/realms/bundled copies can create separate instances.
 
 **First Principles**
 
 2. **Q:** Why does ESM insist that dependencies be static, and what does that buy?
-   **A:** `import` specifiers are fixed at parse time, so tools can build the full graph, detect cycles, and drop unused exports without executing anything — analyzability is the feature, not the syntax.
+   **A:** Static imports let tools discover dependency edges before evaluating bodies, while the host still resolves specifiers. Dynamic import supports computed/conditional loading. Removing unused code requires side-effect and usage analysis plus build configuration; static syntax alone is insufficient.
 
 3. **Q:** Why is module top-level state a singleton, and when is that a hazard?
    **A:** The module map caches one instance per URL, so every importer shares the same bindings — ideal for config or a shared client, a trap the moment you wanted a fresh copy per importer.
@@ -46,7 +46,7 @@ Source: [Modules](10.1.5.01-modules.md)
 **Performance Considerations**
 
 8. **Q:** What must a module provide before a bundler can tree-shake its exports away?
-   **A:** Static, side-effect-free named exports the bundler can prove are unused (ideally with `sideEffects: false` in `package.json`) — a namespace import or a default-exported object keeps every member reachable.
+   **A:** The build must prove removal preserves behavior. Static named usage often helps; a statically accessed namespace can also be analyzed, and default-object property elimination varies. Package sideEffects metadata controls module-level removal in tools such as webpack; incorrect metadata can delete required initialization.
 
 ## Memoization
 
@@ -55,7 +55,7 @@ Source: [Memoization](10.1.5.02-memoization.md)
 **First Principles**
 
 1. **Q:** Why does an unbounded cache count as a leak rather than a slow-down?
-   **A:** The map only grows — every new argument tuple is retained forever, so a hot path over high-cardinality inputs (user ids, raw query strings) pins memory for entries that are rarely read again; the fix is a bound (LRU) or an expiry (TTL).
+   **A:** High-cardinality inputs can retain results long after they are useful. Capacity eviction bounds entries; TTL bounds reuse freshness only if expired entries are actually removed. The chapter lazy TTL wrapper still needs capacity, sweeping or a lifetime boundary.
 
 2. **Q:** What breaks when a function reads module-level state you forgot to declare impure?
    **A:** The first call's answer is cached as if it were a function of its arguments alone, so every later hit returns a value computed under the old state — memoization cannot detect the hidden input; it just freezes whatever the first call observed.
@@ -73,7 +73,7 @@ Source: [Memoization](10.1.5.02-memoization.md)
 **Common Mistakes**
 
 5. **Q:** Object-identity keying vs structural keying — when is each the right choice?
-   **A:** A Map keyed by the object itself is right when the contract is "same instance → same answer" (per-request contexts, repeated parses of one literal); structural keying is right when equal-by-value arguments must share an entry — and then the stringification has to be key-order-insensitive or `{a,b}` and `{b,a}` miss each other.
+   **A:** Identity keying fits a stable immutable instance; mutating it can make a cached result stale. Structural keying requires a defined equivalence rule, such as the complete tenant/query/page tuple in the chapter. JSON serialization is not universal: it can reorder distinctions, discard values or throw.
 
 6. **Q:** What goes wrong if an async function's rejected promise gets cached?
    **A:** The rejection is stored like any value, so every caller inside the TTL is served the same failure without a retry — production wrappers evict on `.catch` so the next call re-hits the network.
@@ -103,7 +103,7 @@ Source: [Generators](10.1.5.03-generators.md)
    **A:** Nothing in the body runs — the call only builds a generator object that implements the iterator protocol. Statements execute up to the next `yield` on each `next()` call, one segment per request.
 
 3. **Q:** How do `return(v)` and `throw(e)` differ in their effect on a suspended generator?
-   **A:** `return(v)` completes it, producing `{ value: v, done: true }`; `throw(e)` re-raises `e` *at the suspended yield expression*, where the generator's own `try/catch` can handle it and resume.
+   **A:** return(v) injects completion through finally, which can itself yield before done becomes true. throw(e) raises e at the suspended yield, where catch can handle it and yield again. Calling return before the body starts does not execute its finally cleanup.
 
 **Code Examples**
 
@@ -116,7 +116,7 @@ Source: [Generators](10.1.5.03-generators.md)
 **Common Mistakes**
 
 6. **Q:** Why is the `yield 3` after `return 2` unreachable, and what does that say about the generator's completion?
-   **A:** `return` finishes the generator immediately; only `yield` suspends it, so anything after `return` is dead code and the third `next()` call simply reports `{ value: 2, done: true }`.
+   **A:** For the example yielding 1 then returning 2, the second next reports value:2/done:true; a later next reports undefined/done:true. The following yield 3 is unreachable. A yielding finally block would be a distinct completion path.
 
 **Best Practices**
 
@@ -151,7 +151,7 @@ Source: [Currying & Function Composition](10.1.5.04-currying-composition.md)
 **Code Examples**
 
 5. **Q:** Why does the generic `curry()` check `args.length >= fn.length` instead of demanding one argument per call?
-   **A:** So callers can group arguments freely — `curried(1)(2, 3)`, `curried(1, 2)(3)`, and `curried(1, 2, 3)` all hit the same path — and the original function fires as soon as enough arguments have accumulated to satisfy its declared arity.
+   **A:** Grouped arguments are accepted as a convenience beyond unary currying. The helper now compares against an explicit arity whose default is fn.length. Defaults and rest parameters make that default incomplete; pass the intended arity when needed.
 
 **Real-World Case Studies**
 
@@ -186,12 +186,12 @@ Source: [Recursion & Tail Call Optimization](10.1.5.05-recursion-tail-call.md)
 **Code Examples**
 
 4. **Q:** Why is naive `fibonacci(100)` hopeless while the memoized one returns instantly?
-   **A:** The naive version recomputes overlapping subtrees — O(2^n) calls, and past ~n=40 it never finishes — while `memoize` turns each distinct `n` into a single cached call, collapsing the work to a chain of n entries.
+   **A:** Repeated overlapping subproblems cause exponential growth in the naive version; memoization computes each bounded integer state once. There is no universal cutoff where execution never finishes. Number precision and recursion depth remain separate limits even when repeated work is removed.
 
 **Real-World Case Studies**
 
 5. **Q:** Why does the recursive tree-view component fit recursion so well, and where does it bite back?
-   **A:** Nested `TreeNode`s mirror the data's own definition — the code *is* the shape — but depth equals data depth, so an unexpectedly deep or cycle-containing structure overflows the stack the same way any other unguarded recursion would.
+   **A:** Child component elements mirror the tree shape, but creating JSX does not directly invoke the child component recursively in the current parent frame. Deep/large trees still impose rendering work and memory costs; cyclic graph data must be rejected or handled with a traversal policy.
 
 **Common Mistakes**
 
@@ -206,7 +206,26 @@ Source: [Recursion & Tail Call Optimization](10.1.5.05-recursion-tail-call.md)
 **Performance & TCO Support**
 
 8. **Q:** ECMAScript mandates proper tail calls, so why can't production code rely on them?
-   **A:** Only JavaScriptCore (Safari) implements them; V8 removed its version in 2017 and SpiderMonkey dropped theirs, so on Chrome, Node, and Firefox a "tail-recursive" function still allocates a frame per call and dies with `RangeError` at ordinary recursion depths.
+   **A:** Qualifying strict-mode tail positions have specified behavior, and WebKit documents its implementation. Support is not portable across deployed engines/configurations; tail-recursive syntax alone cannot establish a safe depth budget. Use a loop, explicit stack or trampoline when the application must handle unbounded depth.
+
+## Changed conditions
+
+Sources: [Modules](10.1.5.01-modules.md), [Memoization](10.1.5.02-memoization.md), [Generators](10.1.5.03-generators.md), [Currying](10.1.5.04-currying-composition.md), [Recursion](10.1.5.05-recursion-tail-call.md).
+
+**Q:** Why can a two-module cycle work until one module reads an imported const during initialization?
+**A:** Linking connects the bindings before evaluation, but the exporting const still needs initialization. The early read can hit its uninitialized state; the cycle alone is not the failure.
+
+**Q:** What happens if undefined is a legitimate computed result and a memoizer treats undefined as a miss?
+**A:** It recomputes on every call. Check key membership separately from the value, as in the bounded wrapper.
+
+**Q:** A yielded promise rejects, then the generator catch yields a fallback promise. What must its driver do?
+**A:** Resume with throw(error), inspect that step's IteratorResult, await the newly yielded promise and resume again. Calling throw without processing its result can leave the outer promise pending.
+
+**Q:** How does adding a default parameter change a curry helper that relies on fn.length?
+**A:** Function.length stops counting at the first default, so the helper may execute before all intended arguments arrive. An explicit completion arity states the intended grouping.
+
+**Q:** Why can a trampoline avoid stack overflow yet freeze a page or return Infinity?
+**A:** It executes steps in one synchronous loop, so it does not yield to input. It also changes call depth rather than Number range or total arithmetic work.
 
 ## Summary
 

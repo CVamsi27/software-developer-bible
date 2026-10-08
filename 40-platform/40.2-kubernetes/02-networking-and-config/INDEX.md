@@ -1,7 +1,7 @@
 # Networking & Config
 
-> **Study time:** ≈ 32 min of reading (4 files, ~8 min average).
-> **4 files.** How traffic gets in and how configuration gets in: Services and Ingress for traffic, ConfigMaps and Secrets for configuration, PodPresets for admission-time injection.
+> **Study time:** ≈ 25 min of reading (4 files, ~6 min average).
+> **4 files.** How traffic gets in and how configuration gets in: Services and Ingress for traffic, ConfigMaps and Secrets for configuration, the historical PodPreset API and supported injection ownership.
 
 [![Files](https://img.shields.io/badge/files-4-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Networking%20%26%20Config-blue)](../INDEX.md)
@@ -26,7 +26,7 @@ A Pod can be reached directly when routing allows, but its address is not a dura
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
 | 01 | [Services & Ingress](40.2.2.01-services-ingress.md) | ClusterIP, NodePort, LoadBalancer, kube-proxy, Ingress controllers, TLS termination, host/path routing | Optional | Specialized | 8 min |
-| 02 | [ConfigMaps & Secrets](40.2.2.02-configmaps-secrets.md) | ConfigMaps, Secrets, mounting vs env vars, encryption at rest, rolling config changes | Optional | Specialized | 17 min |
+| 02 | [ConfigMaps & Secrets](40.2.2.02-configmaps-secrets.md) | ConfigMaps, Secrets, mounting vs env vars, encryption at rest, rolling config changes | Optional | Specialized | 10 min |
 | 03 | [PodPresets](40.2.2.03-podpresets.md) | Removed API history; supported templates, Helm/Kustomize and admission alternatives | Optional | Specialized | 5 min |
 
 ---

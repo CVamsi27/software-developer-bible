@@ -26,6 +26,18 @@ Source: [Kubernetes HPA & Scaling](40.2.3.01-hpa-scaling.md)
 
 **A:** `ceil(4 × 80 / 50) = 7` replicas. Current consumption belongs in the numerator: demand above target increases capacity. Missing metrics, readiness, tolerance, stabilization, and configured policies can modify the actual decision.
 
+**Q:** Three Pods each request `500m` and use `400m`. With a 50% CPU target, trace the recommendation and the steps before new replicas serve traffic.
+
+**A:** Utilization is 80%, so the basic recommendation is `ceil(3 × 80 / 50) = 5`. HPA writes the scale target; Deployment/ReplicaSet reconciliation creates Pods, scheduling finds nodes, kubelets start containers, and readiness admits them to ordinary Service traffic. Five desired replicas can still mean only three ready replicas.
+
+**Q:** What changes if each CPU request doubles while measured use stays the same?
+
+**A:** Utilization falls from 80% to 40%; the basic recommendation becomes `ceil(3 × 40 / 50) = 3`. No physical demand disappeared. The changed denominator affects HPA while the larger request also makes placement harder.
+
+**Q:** One HPA metric fails while another recommends fewer replicas. Can the healthy metric alone trigger downscale?
+
+**A:** The controller skips that downscale rather than assuming the missing signal is safe. A usable metric recommending scale-up can still cause an increase. Missing data changes the decision, not just the displayed metric.
+
 ## Node Autoscaling & Cluster Capacity (Cluster Autoscaler, Karpenter)
 
 Source: [Node Autoscaling & Cluster Capacity (Cluster Autoscaler, Karpenter)](40.2.3.02-node-autoscaling-cluster-capacity.md)
@@ -41,6 +53,18 @@ Source: [Node Autoscaling & Cluster Capacity (Cluster Autoscaler, Karpenter)](40
 **Q:** Why must consolidation respect placement and disruption constraints?
 
 **A:** Evicting workloads only helps if replacement capacity can schedule them and disruption remains acceptable; PDBs, topology, storage, and warm-up can prevent safe movement.
+
+**Q:** Why can a `1500m` Pod remain unschedulable when two allowed nodes each have one CPU left?
+
+**A:** Requests must fit on one feasible node; aggregate free CPU across machines is not one schedulable slot. A provisioner needs a permitted node shape with enough capacity and matching placement constraints.
+
+**Q:** Does tolerating the GPU pool's taint allocate a GPU or guarantee placement in that pool?
+
+**A:** It only permits the taint. A selector or affinity chooses the pool, and a device resource request allocates an exposed GPU. The provider's device plugin must first make that resource available.
+
+**Q:** Why might a low-priority headroom buffer fail to refill after application Pods preempt it?
+
+**A:** The autoscaler's configured expendable-priority cutoff can exclude the replacement placeholders from scale-up demand. Verify the priority configuration and actual Pending events; preemption alone does not prove refill works.
 
 ## Summary
 

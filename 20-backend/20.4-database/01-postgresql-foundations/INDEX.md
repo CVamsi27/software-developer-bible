@@ -1,6 +1,6 @@
 # PostgreSQL Foundations - Database
 
-> **Study time:** ≈ 1 h 36 m of reading (7 files, ~14 min average).
+> **Study time:** ≈ 1 h 15 m of reading (7 files, ~11 min average).
 > **7 files.** How Postgres works under the hood: architecture and WAL, normalization, MVCC, SQL vs NoSQL trade-offs, performance tuning, and row-level security. Every backend interview starts here.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../INDEX.md)
@@ -8,15 +8,25 @@
 
 ---
 
+## Reading flow
+
+1. Start with PostgreSQL's request path: the client session owns transaction state, the backend executes SQL, and WAL supports crash recovery.
+2. Design fact ownership with normalization. Trace keys and dependencies before choosing a normal form or a stored copy.
+3. Read MVCC next: compare statement and transaction snapshots, then change an ordinary reader into a writer and explain the conflict.
+4. Choose a database from the operation's access, atomicity and freshness requirements. Separate data model from product guarantees.
+5. Diagnose performance from workload evidence and plans. Compare identical results before and after an access-path change.
+6. Apply RLS after roles and transactions are clear. Trace verified tenant context through one connection and test both old-row visibility and new-row checks.
+7. Use [revision](REVISION.md) to predict changed conditions, then continue to querying and transaction design before the [database interview bank](../05-operations-and-scaling/20.4.5.06-interview-questions.md).
+
 ## Files
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [PostgreSQL](20.4.1.01-postgresql.md) | Architecture, WAL, vacuum, configuration, extensions, autovacuum | Essential | 23 min | 23 min |
-| 02 | [Normalization](20.4.1.02-normalization.md) | 1NF, 2NF, 3NF, BCNF, denormalization trade-offs, when to denormalize | Important | 20 min | 20 min |
-| 03 | [MVCC](20.4.1.03-mvcc.md) | Multiversion concurrency control, visibility rules, tuple versions, vacuum | Important | 17 min | 17 min |
-| 04 | [SQL vs NoSQL](20.4.1.04-nosql-vs-sql.md) | Workload fit, CAP, consistency models, polyglot persistence, when to use what | Essential | 9 min | 9 min |
-| 05 | [PostgreSQL Performance](20.4.1.05-postgresql-performance.md) | Connection tuning, memory tuning, query optimization, VACUUM, partitioning, monitoring queries | Essential | 12 min | 13 min |
+| 01 | [PostgreSQL](20.4.1.01-postgresql.md) | Architecture, WAL, vacuum, configuration, extensions, autovacuum | Essential | 23 min | 11 min |
+| 02 | [Normalization](20.4.1.02-normalization.md) | 1NF, 2NF, 3NF, BCNF, denormalization trade-offs, when to denormalize | Important | 20 min | 11 min |
+| 03 | [MVCC](20.4.1.03-mvcc.md) | Statement versus transaction snapshots, own writes, concurrent update failure, version cleanup | Important | 17 min | 14 min |
+| 04 | [SQL vs NoSQL](20.4.1.04-nosql-vs-sql.md) | Workload fit, CAP, consistency models, polyglot persistence, when to use what | Essential | 9 min | 12 min |
+| 05 | [PostgreSQL Performance](20.4.1.05-postgresql-performance.md) | Connection tuning, memory tuning, query optimization, VACUUM, partitioning, monitoring queries | Essential | 12 min | 11 min |
 | 06 | [Row-Level Security](20.4.1.06-row-level-security.md) | RLS policies, tenant isolation, session variables, defense-in-depth, multi-tenant SaaS | Essential | 11 min | 11 min |
 
 ---

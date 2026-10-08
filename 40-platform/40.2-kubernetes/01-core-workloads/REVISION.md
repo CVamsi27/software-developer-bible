@@ -18,6 +18,10 @@ Source: [Kubernetes Pods & ReplicaSets](40.2.1.01-pods-replicasets.md)
 
 **A:** A controller such as a ReplicaSet reconciles the requested replica count. A bare Pod has no such workload controller, and replacement does not preserve its process memory.
 
+**Q:** A container crashes while its Pod remains assigned to a healthy node. What changes compared with deleting the Pod?
+
+**A:** The kubelet can restart the container in that same Pod under its restart policy. Deleting a managed Pod instead prompts a workload controller to create a replacement with a new object identity; its process memory is not restored.
+
 ## Kubernetes Deployments
 
 Source: [Kubernetes Deployments](40.2.1.02-deployments.md)
@@ -30,6 +34,14 @@ Source: [Kubernetes Deployments](40.2.1.02-deployments.md)
 
 **A:** No. The condition exposes stalled progress; the Deployment controller continues reconciliation. A release controller, pipeline, or operator must choose rollback or repair, and must verify schema and interface compatibility before restoring an older template.
 
+**Q:** Why can a zero-unavailability rollout stall when the old version is healthy?
+
+**A:** The next surge Pod needs quota admission, schedulable capacity, startup, and availability. If any step fails, keeping old capacity is consistent with the policy but prevents progress. Inspect each state rather than treating desired replicas as ready capacity.
+
+**Q:** Nine stable Pods and one canary Pod share a Service. Is exactly 10% of requests guaranteed to hit canary?
+
+**A:** No. Connections, readiness, affinity, and data-plane behavior affect distribution. The two Deployments do not route traffic by themselves; precise traffic fractions need an appropriate routing mechanism.
+
 ## StatefulSets & DaemonSets
 
 Source: [StatefulSets & DaemonSets](40.2.1.03-statefulsets-daemonsets.md)
@@ -37,6 +49,14 @@ Source: [StatefulSets & DaemonSets](40.2.1.03-statefulsets-daemonsets.md)
 **Q:** What identity does a StatefulSet preserve across replacement?
 
 **A:** A stable ordinal/name and associated storage identity. It does not make application replication, backup, or consistency automatic.
+
+**Q:** What changes when a StatefulSet has Parallel management or an explicit PVC retention policy?
+
+**A:** Parallel changes scale-operation sequencing, not RollingUpdate's update rules. Default PVC retention can be changed by the supported explicit retention policy; inspect it before assuming scale-down keeps or deletes data.
+
+**Q:** Does one desired DaemonSet Pod per node guarantee one healthy agent at every instant?
+
+**A:** No. Placement/startup failures can leave a node uncovered, and surge updates can briefly run two versions. Observe actual per-node readiness and update behavior.
 
 ## Jobs & CronJobs
 
@@ -49,6 +69,10 @@ Source: [Jobs & CronJobs](40.2.1.04-jobs-cronjobs.md)
 **Q:** Does Forbid on a CronJob provide exactly-once scheduling?
 
 **A:** No. It prevents overlapping Jobs from that CronJob according to its policy; delayed/missed schedules and repeated work still require application-level handling.
+
+**Q:** A Job writes its output then crashes before successful exit. What must a replacement attempt assume?
+
+**A:** The prior business effect may already exist although Kubernetes recorded a failed attempt. Reuse a durable idempotency/index decision or otherwise make the effect safe to repeat; completion accounting is not a transaction over external data.
 
 ## Summary
 

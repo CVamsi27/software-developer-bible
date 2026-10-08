@@ -1,6 +1,6 @@
 # Transports
 
-> **Study time:** ≈ 1 h 58 m of reading (5 files, ~24 min average).
+> **Study time:** ≈ 1 h 57 m of reading (5 files, ~23 min average).
 > **5 files.** The four real-time transport options — raw WebSockets, Server-Sent Events, Socket.IO, and WebTransport — and the decision framework for picking between them.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../INDEX.md)
@@ -9,36 +9,31 @@
 
 ---
 
-## The 4 transports
+## Pass 1 — Decide Which Direction Carries the Update
 
-| # | File | Topics | When to use | Role priority | General importance | Read time |
-| --: | ------ | -------- | ------------- | --- | --- | ----------: |
-| 01 | [WebSockets Overview](60.1.1.01-websockets-overview.md) | Protocol, handshake (HTTP Upgrade), frames, vs HTTP, use cases | Bidirectional real-time | Important | Specialized | 30 min |
-| 02 | [Server-Sent Events](60.1.1.02-server-sent-events.md) | EventSource API, auto-reconnect, vs WebSockets, use cases | Server→client only (notifications, live updates) | Important | Specialized | 36 min |
-| 03 | [Socket.IO](60.1.1.03-socket-io.md) | Client/server setup, rooms, namespaces, events, fallback to polling | Quick bidirectional with rich features | Important | Specialized | 40 min |
-| 04 | [WebTransport](60.1.1.04-webtransport.md) | QUIC-based transport, datagrams, streams, vs WebSocket | Modern, low-latency, unreliable delivery OK | Optional | Specialized | 10 min |
+Start with [WebSockets Overview](60.1.1.01-websockets-overview.md) to separate a long-lived bidirectional connection from ordinary request/response. Then read [Server-Sent Events](60.1.1.02-server-sent-events.md): the server sends a stream of events while the client can still issue ordinary HTTP requests. Native EventSource reconnects, but retained events and authorized replay remain server responsibilities.
 
----
+## Pass 2 — Add Application Features Deliberately
 
-## Decision tree
+[Socket.IO](60.1.1.03-socket-io.md) adds an application protocol, named events, rooms, reconnection and transport choices. It is not interchangeable with a raw WebSocket client. If polling is enabled across several servers, requests for one Engine.IO session need the node that owns it; a shared adapter alone does not create that affinity.
 
-```text
-Need real-time communication?
-├── Server → client only? ──────────→ SSE (simple, auto-reconnect)
-├── Bidirectional, simple? ─────────→ WebSocket (raw)
-├── Bidirectional, rich features,
-│   fallback? ──────────────────────→ Socket.IO
-├── Low-latency, datagrams OK? ─────→ WebTransport (modern)
-└── Just initial load? ─────────────→ Polling (or HTTP/2 push)
-```
+## Pass 3 — Separate Reliable Bytes From Replaceable State
 
----
+[WebTransport](60.1.1.04-webtransport.md) is useful when independent streams or unreliable datagrams solve a concrete problem. Trace an out-of-order position update, then explain why a full snapshot can tolerate loss while a dependent delta cannot. Verify browser, endpoint and network support before choosing it.
 
-## Interview traps
+| Need | Starting option | Condition to verify |
+| ----------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------ |
+| Initial document or occasional refresh | Ordinary HTTP; polling if repeated reads are acceptable | Poll frequency, freshness and server cost |
+| Server-to-browser updates | SSE | Proxy buffering, authorization and replay |
+| Bidirectional messages | WebSocket | Heartbeats, bounded queues and application recovery |
+| Named events, rooms and reconnection conveniences | Socket.IO | Protocol compatibility, affinity and adapter semantics |
+| Independent streams or replaceable unreliable updates | WebTransport | Complete protocol path and application recovery |
 
-- "WebSocket is just HTTP after the upgrade" — true post-handshake; know what changes (frames, no CORS model, no caching).
-- "SSE over HTTP/2 vs WebSocket" — SSE multiplexes fine on HTTP/2; WebSocket still needs its own TCP connection.
-- "Why does Socket.IO need fallbacks?" — proxies/CDNs that break the Upgrade handshake.
+These are starting choices, not speed rankings. WebSocket after an HTTP/1.1 upgrade uses WebSocket frames rather than ordinary HTTP request/response messages. WebSocket over HTTP/2 or HTTP/3 uses extended CONNECT where the deployment supports it; do not assume every browser/proxy combination implements that path. See [RFC 8441](https://www.rfc-editor.org/rfc/rfc8441.html) and [RFC 9220](https://www.rfc-editor.org/rfc/rfc9220.html).
+
+## Finish With Revision, Then Architecture and Practice
+
+Close the chapters and work through [section revision questions](REVISION.md). Explain transport delivery separately from application acknowledgment, replay and durable effects. Continue to architecture/scaling before using the separate [interview bank](../04-interview-prep/60.1.4.01-interview-questions.md).
 
 ---
 
@@ -60,8 +55,8 @@ Need real-time communication?
 [Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
 
 | Topic | Docita evidence |
-| --------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| Socket.IO as chosen transport | `socket.io ^4.8.3` in `apps/api/package.json`, wired in `apps/api/src/websockets/websockets.module.ts` |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| Socket.IO as chosen transport | `socket.io` dependency in `apps/api/package.json`, wired in `apps/api/src/websockets/websockets.module.ts` |
 | SSE (one real, narrow use) | `apps/api/src/shared/modules/ai/ai.controller.ts` streams `text/event-stream` for AI responses |
 | Transport-choice rationale | `docs/operations/WEBSOCKET_SCALING.md` — sockets trigger React Query invalidation only |
 | Handshake auth at transport level | `apps/api/src/websockets/base-websocket.gateway.ts` (bearer token from `handshake.auth.token`) |

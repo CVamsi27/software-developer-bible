@@ -1,6 +1,6 @@
 # Foundations — Principles, OOP & UML
 
-> **Study time:** ≈ 1 h 5 m of reading (5 files, ~13 min average).
+> **Study time:** ≈ 1 h 7 m of reading (5 files, ~13 min average).
 > **5 files.** Read these BEFORE any design pattern. SOLID, OOP, and UML are the language every GoF pattern is written in. Without them, the patterns are unmotivated syntax.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../../INDEX.md)

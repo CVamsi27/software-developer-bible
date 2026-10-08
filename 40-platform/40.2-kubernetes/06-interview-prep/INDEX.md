@@ -1,7 +1,7 @@
 # Interview Prep — Kubernetes
 
-> **Study time:** ≈ 20 min of reading (1 files, ~20 min average).
-> **1 file, 50+ curated questions with answers.** The drill that converts K8s knowledge into interview performance.
+> **Study time:** ≈ 21 min of reading (1 files, ~21 min average).
+> **1 file, A curated question bank with answers.** The drill that converts K8s knowledge into interview performance.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Interview%20Prep-blue)](../INDEX.md)
@@ -23,7 +23,7 @@ A question bank spanning everything in this stack: workload semantics, networkin
 
 ### [Kubernetes Interview Questions](40.2.6.01-interview-questions.md)
 
-50+ curated questions with answers, organized by difficulty. Work them only after reading the five content categories — the answers assume the vocabulary.
+A curated question bank with answers, organized by difficulty. Work them only after reading the five content categories — the answers assume the vocabulary.
 
 ---
 
@@ -37,4 +37,4 @@ A question bank spanning everything in this stack: workload semantics, networkin
 
 Where [docita](https://github.com/CVamsi27/docita) meets this topic.
 
-_No direct docita implementation yet._ Docita runs on Fly.io, so K8s answers here can't cite production war stories from it. The honest interview move: use docita's Fly.io mechanics as working analogs — health-gated deploys ≈ readiness gating, suspend-to-zero + scheduled scaling ≈ HPA outcomes, RLS + ABAC ≈ namespace/quota isolation — and say plainly that the cluster experience is theoretical.
+_No direct docita implementation yet._ Docita runs on Fly.io, so K8s answers here can't cite production war stories from it. The honest interview move: use docita's Fly.io mechanics as working analogs — health-gated deploys ≈ readiness gating, suspend-to-zero + scheduled scaling ≈ HPA outcomes, RLS + ABAC as application data/access controls, separate from cluster admission and network policy — and say plainly that the cluster experience is theoretical.

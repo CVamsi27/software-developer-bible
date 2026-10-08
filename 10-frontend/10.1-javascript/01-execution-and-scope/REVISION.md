@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-JavaScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -25,6 +25,14 @@ Source: [Execution Context](10.1.1.01-execution-context.md)
 **Q:** You copy obj.run into a variable and call that variable. Does it keep obj as its receiver?
 
 **A:** An ordinary function gets this from its invocation, not from the object it was copied from. A plain strict-mode call has undefined as this. An arrow instead keeps the enclosing this; host callbacks have their own invocation rules.
+
+**Q:** A block contains `var total` and `let local`. Why can the function use `total` after the block but not `local`?
+
+**A:** The function's VariableEnvironment owns the `var` declaration. Its LexicalEnvironment points to the block record while inside the block and returns to the previous record afterward. Both reads use ordinary identifier lookup; there is no second lookup chain reserved for `var`. The block's `local` is no longer in that path.
+
+**Q:** A default parameter creates a reader for a parameter, and the body redeclares that name with `var`. Does the reader automatically switch to the body binding?
+
+**A:** No. The reader captures the parameter environment in which it was created. Parameter expressions can require a separate body variable environment. Trace those bindings rather than treating every function's LE and VE as one fixed store.
 
 ## Scope
 
@@ -100,11 +108,27 @@ Source: [Lexical Environment](10.1.1.05-lexical-environment.md)
 
 **Q:** Are declarative, function, module, object and global records five parts of every environment?
 
-**A:** No. They are different kinds of record for different situations. Function and module records add information to a declarative record. A global record combines declared variables with names stored as properties of the global object.
+**A:** No. They are different kinds of record for different situations. Function and Module records are specialized Declarative records, not additional stores inside every block. A Global record combines declarative bindings with object-backed global names.
 
 **Q:** Does the scope-chain diagram show exactly how an engine stores variables or how fast lookup will be?
 
 **A:** No. It explains which variable a read should find. An engine can store variables and find them differently while keeping that behavior. Use performance and memory tools to check speed and what stays in memory.
+
+**Q:** Why can a classic browser script read a top-level `let` by name while `globalThis` has no corresponding own property?
+
+**A:** The Global record's Declarative part owns that binding. Unqualified identifier resolution can find it; qualified access through `globalThis` examines object properties instead. A fresh top-level classic-script `var` normally belongs to the object-backed side. Native module declarations belong to the module, including `var`.
+
+**Q:** An imported counter changes after its exporting module increments it. Why, if the importer cannot assign to the import?
+
+**A:** An import connects to the exporter's live binding; it does not freeze its value. The importer can read the updated value but cannot reassign through the imported name. Binding reassignment restrictions also do not deeply freeze an imported object.
+
+**Q:** Does calling a returned arrow with `.call(otherObject)` replace the enclosing function's `this` and `arguments`?
+
+**A:** No. The arrow does not supply its own `this` or implicit `arguments`; lookup reaches the enclosing function's sources. `.call` can choose an ordinary function's receiver, but it cannot override an arrow's lexical `this`.
+
+**Q:** Does reading `settings.theme` place every property of `settings` into lexical scope?
+
+**A:** No. JavaScript resolves the variable `settings`, then accesses its `theme` property. Object Environment Records describe special object-backed identifier environments such as global lookup and legacy `with`; ordinary property access does not create one.
 
 ## Closures
 

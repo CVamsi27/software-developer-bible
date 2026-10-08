@@ -18,6 +18,10 @@ Source: [Stakeholder Management Stories: Product Partnership, Influence, and Tra
 
 **A:** State each constraint, the options and trade-off, how evidence changed the decision, who owned it, and the measured result. Distinguish compromise from unresolved risk.
 
+**Q:** When does escalation support partnership rather than undermine it?
+
+**A:** When the decision exceeds your authority, a material requirement remains unresolved, or urgent risk needs the responsible owner. Present constraints, evidence and options; seek joint framing where feasible without delaying mandatory escalation.
+
 ## Leadership Questions: Decisions, Influence & Team Outcomes
 
 Source: [Leadership Questions: Decisions, Influence & Team Outcomes](70.1.02-leadership-questions.md)
@@ -33,6 +37,10 @@ Source: [Judgment Calls & Ambiguity: Deciding Under Incomplete Data](70.1.03-jud
 **Q:** How do you explain a decision made with incomplete information?
 
 **A:** State what information is missing, which consequences can or cannot be reversed, how you will decide with the available evidence, what feedback you will monitor, and when you would revise the decision.
+
+**Q:** Why does a feature flag not automatically make a trial reversible?
+
+**A:** Turning it off changes future exposure, but cannot undo every data write, user commitment or external effect already created. Bound those consequences and establish actual recovery before calling the trial safe to reverse.
 
 ## Technical Decision Stories: From Constraint to Verified Outcome
 

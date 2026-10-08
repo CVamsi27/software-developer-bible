@@ -1,15 +1,15 @@
 # Backend Stack
 
-> **Study time:** ≈ 41 h 48 m of reading (179 files, ~14 min average).
+> **Study time:** ≈ 40 h 56 m of reading (179 files, ~14 min average).
 > **Node.js, NestJS, REST, GraphQL, Database, Auth & Security, Microservices, AI Engineering, Java** — shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
 > 179 files across 11 sub-stacks, organized by what you need to know in what order.
 
 [![Files](https://img.shields.io/badge/files-179-blue)](../INDEX.md)
-[![Sub-stacks](https://img.shields.io/badge/sub--stacks-10-green)](#the-10-sub-stacks-in-study-order)
+[![Sub-stacks](https://img.shields.io/badge/sub--stacks-10-green)](#the-11-sub-stacks-in-study-order)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-> **Real-world anchor:** every category INDEX below ends with a **Docita Anchor** table mapping its chapters to production code in [docita](https://github.com/CVamsi27/docita) — a healthcare platform (NestJS + Prisma + Postgres, modular monolith with a separate worker deployable). Read the chapter, then read the file that ships it. Where docita has no counterpart (GraphQL, Redis-backed caching, Kafka/gRPC), the anchor says so honestly instead of pretending.
+> **Case-study anchor:** category indexes include Docita inspection pointers where applicable. Learn the chapter mechanism, then inspect the linked implementation and its tests in the [Docita case studies](../projects/docita/INDEX.md). A path identifies code to inspect; current deployment, coverage and production behavior require separate evidence.
 
 ---
 
@@ -53,13 +53,13 @@ The backend stack is organized into 5 conceptual layers. Read in this order.
 
 ### Runtime & Language (read first)
 - **Node.js** — the runtime; event loop, streams, async patterns
-- **NestJS** — the most common framework; modules, DI, guards (read after Node.js)
+- **NestJS** — an application framework; modules, dependency injection and request hooks (read after Node.js)
 - **Java** — language core, OOP/SOLID, concurrency, testing (only if the target role/stack uses Java)
 
 ### API Layer (read second)
 - **REST APIs** — the canonical web API style; status codes, pagination, errors
 - **GraphQL** — alternative to REST; schema-first design
-- **Caching** — patterns every API needs
+- **Caching** — derived state, freshness and invalidation when the workload needs them
 
 ### Data Layer (read third)
 - **Database** — PostgreSQL internals, Prisma ORM, performance
@@ -111,9 +111,9 @@ For the current Germany/remote TypeScript full-stack plan, keep Java deferred un
 ## Cross-References
 
 - [Frontend Stack](../10-frontend/INDEX.md) — for full-stack interviews
-- [System Design](../INDEX.md) — backend patterns at scale
-- [Platform Stack](../INDEX.md) — deployment, observability
-- [Design Patterns](../INDEX.md) — Repository, Saga, CQRS, Event Sourcing, DI
+- [System Design](../30-architecture/30.2-system-design/INDEX.md) — backend patterns at scale
+- [Platform Stack](../40-platform/INDEX.md) — deployment, observability
+- [Design Patterns](../30-architecture/30.1-design-patterns/INDEX.md) — Repository, Saga, CQRS, Event Sourcing, DI
 
 ---
 

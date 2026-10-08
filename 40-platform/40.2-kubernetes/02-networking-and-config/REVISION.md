@@ -22,6 +22,14 @@ Source: [Kubernetes Services & Ingress](40.2.2.01-services-ingress.md)
 
 **A:** It selects eligible endpoints; Pods are replaceable. Stable service discovery is separate from application session persistence and storage.
 
+**Q:** Did the ingress-nginx retirement remove Kubernetes Ingress or every NGINX-based controller?
+
+**A:** No. The community ingress-nginx controller retired in March 2026 and no longer receives fixes or security updates. Ingress remains an API, and other products have separate lifecycles. Select a maintained implementation and test policy translation during migration.
+
+**Q:** Which port does an Ingress backend name when a Service maps port 80 to targetPort 8080?
+
+**A:** The Service port, 80. Its endpoints eventually receive traffic on 8080; the implementation may route directly to endpoint addresses. A matching route still needs a running controller and ready reachable backends.
+
 ## Kubernetes ConfigMaps & Secrets
 
 Source: [Kubernetes ConfigMaps & Secrets](40.2.2.02-configmaps-secrets.md)
@@ -34,6 +42,14 @@ Source: [Kubernetes ConfigMaps & Secrets](40.2.2.02-configmaps-secrets.md)
 
 **A:** No. Mounted updates and environment-variable injection have different behavior, and the application may need a reload or Pod restart to observe the new value.
 
+**Q:** A mutable ConfigMap changes while one Pod uses env injection and another uses a normal volume. Trace what each process sees.
+
+**A:** The first process keeps its startup environment until replacement/restart. The ordinary mounted file can refresh eventually, but the second process changes its effective setting only if it rereads/reloads it. A subPath mount would not receive the file update.
+
+**Q:** Why can `defaultMode: 0400` break a non-root application even though the Secret exists?
+
+**A:** Mode, owner/group, and Pod security settings determine access. The actual process user needs read permission; verify the mounted file as that user rather than treating a restrictive mode number as sufficient.
+
 ## PodPresets
 
 Source: [PodPresets](40.2.2.03-podpresets.md)
@@ -42,9 +58,9 @@ Source: [PodPresets](40.2.2.03-podpresets.md)
 
 **A:** Use supported workload templates, Helm/Kustomize composition, or a deliberately configured admission mechanism; verify the cluster version and avoid removed API manifests.
 
-**Q:** Did the ingress-nginx retirement remove Kubernetes Ingress or every NGINX-based controller?
+**Q:** A fail-closed mutating webhook becomes unavailable. What can happen before the new application Pod reaches scheduling?
 
-**A:** No. The community ingress-nginx controller retired in March 2026 and no longer receives fixes or security updates. Ingress remains an API, and other products have separate lifecycles. Select a maintained implementation and test policy translation during migration.
+**A:** Matching admission requests can fail, so the desired workload exists without its requested new Pods. Inspect admission configuration/events and recover the owned policy service; a new node cannot fix rejected creation.
 
 ## Summary
 

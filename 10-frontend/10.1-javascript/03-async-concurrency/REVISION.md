@@ -57,12 +57,12 @@ Source: [Promises](10.1.3.02-promises.md)
 **Definition**
 
 1. **Q:** What is a promise, as a piece of state rather than as syntax?
-   **A:** An object that starts `pending` and transitions exactly once to either a fulfilled value or a rejection reason, and then never changes — everything else is plumbing around that ratchet.
+   **A:** It starts pending and settles once with a fulfillment value or rejection reason. That outcome cannot be replaced, though a fulfilled object can still mutate. Resolving with another pending promise commits to following it without immediately settling.
 
 **How It Works**
 
 2. **Q:** What happens when a `.then` callback returns a plain value instead of a promise?
-   **A:** The link resolves immediately with that value, so the next `.then` receives it directly; return a promise and the chain adopts its eventual outcome instead.
+   **A:** That value fulfills the returned promise, and the next handler receives it in a later scheduled reaction. Returning another promise instead adopts its eventual outcome; neither makes the next handler run inline.
 
 3. **Q:** Why can a `.then` attached to an already-settled promise still fire?
    **A:** Settlement stores the outcome, and reactions attach to the stored result — late handlers take the same path as early ones, so "already done" needs no special case.

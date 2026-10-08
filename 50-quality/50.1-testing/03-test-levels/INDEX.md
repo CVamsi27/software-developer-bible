@@ -1,6 +1,6 @@
 # Test Levels
 
-> **Study time:** ≈ 1 h 12 m of reading (4 files, ~18 min average).
+> **Study time:** ≈ 33 min of reading (4 files, ~8 min average).
 > **4 files.** The test pyramid in practice: unit, integration, and E2E — what to test at each level, which tools, and how much confidence each layer buys.
 
 [![Files](https://img.shields.io/badge/files-4-blue)](../INDEX.md)

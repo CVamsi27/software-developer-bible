@@ -1,6 +1,6 @@
 # Scaling
 
-> **Study time:** ≈ 36 min of reading (3 files, ~12 min average).
+> **Study time:** ≈ 33 min of reading (3 files, ~11 min average).
 > **3 files.** Matching capacity to load: HorizontalPodAutoscaling driven by metrics, plus node-level autoscaling (Cluster Autoscaler vs Karpenter) that gives pods somewhere to schedule.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](#file-index)
@@ -19,8 +19,8 @@ Kubernetes' core promise is elastic scale — but HPA does nothing until the met
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [HPA & Scaling](40.2.3.01-hpa-scaling.md) | Horizontal pod autoscaling, metrics server, custom metrics, scaling policies, VPA comparison | Optional | 20 min | 20 min |
-| 02 | [Node Autoscaling & Cluster Capacity](40.2.3.02-node-autoscaling-cluster-capacity.md) | Cluster Autoscaler scale-up/down rules, Karpenter direct provisioning + consolidation, node pools/taints, overprovisioning buffers, GPU/stateful scale-from-zero | Optional | 14 min | 14 min |
+| 01 | [HPA & Scaling](40.2.3.01-hpa-scaling.md) | Horizontal pod autoscaling, metrics server, custom metrics, scaling policies, VPA comparison | Optional | 20 min | 14 min |
+| 02 | [Node Autoscaling & Cluster Capacity](40.2.3.02-node-autoscaling-cluster-capacity.md) | Cluster Autoscaler scale-up/down rules, Karpenter direct provisioning + consolidation, node pools/taints, overprovisioning buffers, GPU/stateful scale-from-zero | Optional | 14 min | 17 min |
 
 ---
 

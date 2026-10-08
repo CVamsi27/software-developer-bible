@@ -1,6 +1,6 @@
 # Design Patterns — Index
 
-> **Study time:** ≈ 5 h 30 m of reading (43 files, ~8 min average).
+> **Study time:** ≈ 5 h 32 m of reading (43 files, ~8 min average).
 > **43 files — all 23 GoF patterns plus modern architectural ones, classified by GoF category and purpose.** Design patterns are reusable solutions to recurring problems in software design. The Gang of Four (GoF) formalized 23 classic patterns; we cover all 23 plus modern architectural patterns. Senior LLD/HLD interviews assume fluent recall of these.
 
 [![Files](https://img.shields.io/badge/files-43-blue)](../../INDEX.md)

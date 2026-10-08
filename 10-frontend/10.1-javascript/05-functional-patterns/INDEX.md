@@ -1,6 +1,6 @@
 # Functional Patterns — JavaScript
 
-> **Study time:** ≈ 1 h 27 m of reading (6 files, ~14 min average).
+> **Study time:** ≈ 1 h 37 m of reading (6 files, ~16 min average).
 > **6 files.** The patterns you will use daily as a senior engineer: modules, memoization, generators, currying/composition, and recursion with tail-call optimization.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](#files)
@@ -13,17 +13,19 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Modules](10.1.5.01-modules.md) | ESM vs CommonJS, dynamic imports, tree shaking, barrel exports | Essential | Foundational | 19 min |
-| 02 | [Memoization](10.1.5.02-memoization.md) | Caching, `_.memoize`, React.memo, useMemo, when to use | Essential | Foundational | 16 min |
-| 03 | [Generators](10.1.5.03-generators.md) | `function*`, yield, iterators, async generators, lazy evaluation | Important | Specialized | 22 min |
-| 04 | [Currying & Composition](10.1.5.04-currying-composition.md) | Currying, partial application, pipe, compose, functional patterns | Important | Specialized | 11 min |
-| 05 | [Recursion & Tail Call](10.1.5.05-recursion-tail-call.md) | Recursive patterns, tail call optimization, trampolining, memoized recursion | Important | Specialized | 13 min |
+| 01 | [Modules](10.1.5.01-modules.md) | ESM vs CommonJS, dynamic imports, tree shaking, barrel exports | Essential | Foundational | 20 min |
+| 02 | [Memoization](10.1.5.02-memoization.md) | Caching, `_.memoize`, React.memo, useMemo, when to use | Essential | Foundational | 17 min |
+| 03 | [Generators](10.1.5.03-generators.md) | `function*`, yield, iterators, async generators, lazy evaluation | Important | Specialized | 25 min |
+| 04 | [Currying & Composition](10.1.5.04-currying-composition.md) | Currying, partial application, pipe, compose, functional patterns | Important | Specialized | 13 min |
+| 05 | [Recursion & Tail Call](10.1.5.05-recursion-tail-call.md) | Recursive patterns, tail call optimization, trampolining, memoized recursion | Important | Specialized | 15 min |
 
 ---
 
 ## Read order
 
-Modules → Memoization → Currying & Composition → Generators → Recursion & Tail Call.
+Read **Modules** to understand how code and shared state are wired across files. **Memoization** then makes the ownership and equivalence rules of retained function state explicit. **Currying & Composition** uses closures to supply dependencies in stages and pass values through synchronous transformations.
+
+**Generators** adds a consumer-controlled pause/resume exchange, including async work and cleanup. **Recursion & Tail Call** compares nested computation with loops, trampolines and bounded-depth contracts. Finish with revision so you can distinguish reduced repeated work from reduced call-stack depth.
 
 ---
 

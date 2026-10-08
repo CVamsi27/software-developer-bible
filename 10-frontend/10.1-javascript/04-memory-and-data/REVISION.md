@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-JavaScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-9_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-10_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -61,12 +61,12 @@ Source: [Map, Set, WeakMap, WeakSet](10.1.4.02-map-set-weakmap-weakset.md)
    **A:** The collection does not keep an eligible key alive by itself. When no other strong path retains that key, its entry becomes eligible for collection; deletion timing is not observable or guaranteed.
 
 4. **Q:** What does "insertion order" buy you in a `Map` that a plain object cannot promise?
-   **A:** Every iterator visits entries in first-add order and `size` is maintained in O(1), so `.keys().next()` reliably yields the oldest key — exactly what the LRU example depends on.
+   **A:** Iterators visit insertion order. Updating an existing key leaves its position unchanged; delete/reinsert moves it to the end. The LRU example explicitly moves a hit, so the first key then represents least recent use rather than merely earliest original insertion.
 
 **Code Examples**
 
 5. **Q:** What does `[...new Set(list)]` give you over a hand-written dedupe loop?
-   **A:** Uniqueness decided by SameValueZero in one pass with constant-time membership per element, and the result comes back as a ready-to-map array.
+   **A:** Uniqueness is decided by SameValueZero and first-seen order is preserved in the resulting array. Engines commonly use hash-based membership, but ECMAScript requires average sublinear access rather than a universal constant-time operation.
 
 **Common Mistakes**
 
@@ -85,7 +85,7 @@ Source: [Shallow Copy vs Deep Copy](10.1.4.03-shallow-vs-deep-copy.md)
 **Definition**
 
 1. **Q:** State the difference between a shallow copy and a deep copy in one sentence.
-   **A:** A shallow copy allocates a new top level but leaves every nested value as the original reference; a deep copy allocates a fresh object for each node reachable from the root.
+   **A:** A shallow copy separates the outer container and shares nested object values; a deep clone separates the supported graph while preserving its internal aliases/cycles. The API decides which object types and properties can be copied.
 
 **How It Works**
 
@@ -103,12 +103,12 @@ Source: [Shallow Copy vs Deep Copy](10.1.4.03-shallow-vs-deep-copy.md)
 **Common Mistakes**
 
 5. **Q:** What does `structuredClone` hand back when given a class instance?
-   **A:** A plain object holding the own enumerable data — the prototype and its methods are dropped without any error being thrown, so type checks downstream quietly fail.
+   **A:** A supported ordinary class instance normally becomes a plain object with cloneable enumerable own properties, without the custom prototype/private fields. An uncloneable property such as a function can still throw, so success is not unconditional.
 
 **Best Practices**
 
 6. **Q:** Which copy routine should you use when a value is about to cross a worker boundary?
-   **A:** `structuredClone` — it implements the same structured-clone algorithm `postMessage` enforces, so anything it accepts is guaranteed to make the trip.
+   **A:** Worker messaging uses structured cloning, so design a cloneable payload and let postMessage clone it; pre-cloning is usually unnecessary. Transfer lists, ownership and context restrictions still matter: local cloning success alone is not a universal transport guarantee.
 
 **Performance Considerations**
 
@@ -127,7 +127,7 @@ Source: [Debounce](10.1.4.04-debounce.md)
 **How It Works**
 
 2. **Q:** Why does debounce fail on a scroll handler where throttle succeeds?
-   **A:** Scrolling is a stream that never pauses, so the reset timer never expires and the debounced handler simply never runs. Throttle's fixed-rate gate doesn't need a pause to fire.
+   **A:** Continuous scrolling can keep resetting a trailing debounce indefinitely; it runs when a sufficient pause occurs unless a maximum-wait policy intervenes. A throttle can produce feedback during the stream without waiting for quiet.
 
 3. **Q:** What do the `leading` and `trailing` options choose between?
    **A:** Whether execution happens at the start of a burst or at its end. `leading` runs on the call that opens the quiet window; `trailing` (the default) runs the last call of the burst when the window closes.
@@ -135,7 +135,7 @@ Source: [Debounce](10.1.4.04-debounce.md)
 **Code Examples**
 
 4. **Q:** What does `.cancel()` actually destroy?
-   **A:** The pending timer and the saved arguments, so the scheduled invocation is dropped entirely. That is the cleanup you need on unmount, so a stale closure can never run afterwards.
+   **A:** It drops the pending invocation, including timer and saved arguments. It does not stop a callback/request that already started; in-flight cancellation and obsolete-result checks are separate policies.
 
 **Real-World Use Cases**
 
@@ -145,12 +145,12 @@ Source: [Debounce](10.1.4.04-debounce.md)
 **Common Mistakes**
 
 6. **Q:** What's wrong with `debounce(fetchResults, 50)` and with `debounce(fetchResults, 2000)`?
-   **A:** 50ms is shorter than the gap between a fast typist's keystrokes, so calls leak through mid-burst; 2000ms makes the interface feel stalled. Tune the wait to human input cadence — about 300ms for typing.
+   **A:** A short delay can expire between keystrokes and start more work; a long delay can feel unresponsive. The result depends on actual input cadence and task cost, so 300ms is an example to measure rather than a universal typing constant.
 
 **Best Practices**
 
 7. **Q:** How do you keep one debounced function alive across React re-renders?
-   **A:** Memoize it — `useMemo(() => debounce(fn, wait), [fn, wait])` — so the same wrapper, and any timer it has scheduled, survives instead of being recreated and orphaned each render.
+   **A:** Memoize the wrapper for its chosen dependencies and cancel replaced/unmounted wrappers in effect cleanup. If fn changes every render, the wrapper changes too; the chapter hook instead uses the latest committed callback through a ref while preserving timing state for a stable wait.
 
 **Summary**
 
@@ -164,7 +164,7 @@ Source: [Throttle](10.1.4.05-throttle.md)
 **First Principles**
 
 1. **Q:** What single question tells you whether to debounce or throttle?
-   **A:** Does the final value matter? If yes, debounce and wait for the pause; if no — scroll position, animation progress — throttle to a steady rate and let the middle events go.
+   **A:** Must feedback continue during input, or should work wait for a quiet period? Throttle supports periodic feedback; debounce waits for quiet. Both can preserve the final value with trailing execution, so final-value importance alone does not choose between them.
 
 **Definition**
 
@@ -187,12 +187,12 @@ Source: [Throttle](10.1.4.05-throttle.md)
 **Common Mistakes**
 
 6. **Q:** What goes wrong with `throttle(fetchResults, 300)` on a search box?
-   **A:** Intermediate keystrokes are dropped outright instead of merely delayed, so the request that eventually fires may be built from a stale query. Debouncing is the tool that waits for the user to finish.
+   **A:** Throttle can start queries during continuous typing; a trailing call can still carry the final query. Choose debounce when quiet is the desired trigger. Neither mechanism prevents older responses from overwriting newer results without a generation policy.
 
 **Best Practices**
 
 7. **Q:** What limits make sense for the usual event types?
-   **A:** About 16ms for anything tied to animation frames, 50-100ms for mouse and scroll feedback, 250ms for resize, and a full second for click-driven actions that must not double-fire.
+   **A:** Those intervals are experiments, not guarantees. Coalesce visual work at rendering opportunities; measure mouse/scroll/resize latency. Prevent concurrent writes with an in-flight guard/idempotency, because a one-second window cannot guarantee request completion.
 
 8. **Q:** What is the cleanup contract for a throttled event handler?
    **A:** The code that registers the listener also calls `.cancel()` — which drops any pending trailing invocation — and removes the listener, both in the same unmount effect.
@@ -222,7 +222,7 @@ Source: [Memory Leaks](10.1.4.06-memory-leaks.md)
 **Code Examples**
 
 5. **Q:** Why doesn't the detached-node example leak once its function returns?
-   **A:** The local variable dies with the scope, so the node and its listener both become unreachable. It turns into a leak only when something that outlives the function — a document-level listener or a cache — keeps referencing the node.
+   **A:** A node with only its own listener can become unreachable after its creating scope finishes. The revised window-listener example has a longer-lived path through window → callback → button; returning from the mounting function does not break it. Call and retire the disposer.
 
 6. **Q:** Why does capturing `hugeData.length` instead of reading `hugeData` inside the closure change anything?
    **A:** Calculate the length first and let the callback use only that number. The callback then has no need to access the original array. The engine may reclaim the array once it is unreachable, but exact storage and collection timing remain implementation details.
@@ -265,7 +265,7 @@ Source: [Garbage Collection](10.1.4.07-garbage-collection.md)
    **A:** The young generation is traced and each survivor is copied into a fresh semi-space; after surviving enough collections the object is promoted into the old generation, where it is visited far less frequently.
 
 5. **Q:** How do incremental and concurrent marking reduce jank?
-   **A:** Incremental marking splits the trace into slices so the main thread yields between them, and concurrent marking runs on a helper thread — so the stop-the-world portions shrink to the short begin/end bookkeeping.
+   **A:** Incremental marking interleaves portions of collection with application work; concurrent marking performs supported work alongside the application. Remaining pauses and synchronization depend on the collector/workload, so neither guarantees only short begin/end pauses.
 
 **Common Mistakes**
 
@@ -302,20 +302,20 @@ Source: [Hash Tables & HashMaps — Internals, Collision Resolution & V8](10.1.4
 **How Hash Tables Work**
 
 4. **Q:** Two implementations both report "α = 0.5", but one still feels slow. Why?
-   **A:** Because the load factor bounds only *how many* probes, not how they are distributed — a hash that piles keys into a few buckets clusters badly at α = 0.5, exactly as a good hash does near α = 1.
+   **A:** Load describes occupancy, not a bound on probes. Poor key distribution, clusters, tombstones or long string hashing can make a half-full table slow. Investigate the actual operation mix and collision paths.
 
 **Collision Resolution**
 
 5. **Q:** Why does linear probing collapse at high load while chaining only degrades gently?
-   **A:** Neighbouring probes form runs that feed on themselves: measured successful lookups go from 1.5 probes at α = 0.5 to 5.4 at α = 0.9, while chaining's ≈ 1 + α/2 rises from 1.25 to 1.45 across the same range.
+   **A:** Occupied runs attract more displaced entries in linear probing, and a miss must traverse the run before finding an empty slot. Chaining searches the selected bucket without needing a vacancy in the main array. These are qualitative mechanisms, not measurements performed by this chapter.
 
 **V8 Internals**
 
 6. **Q:** How does V8's `Map`/`Set` actually resolve collisions, and how full does it let the table get?
-   **A:** Separate chaining: bucket = `hash & (buckets − 1)`, colliding rows linked by table offsets, allowing 2 entries per bucket before the table doubles — with deletions compacted at the next rehash rather than left as permanent tombstones.
+   **A:** The cited OrderedHashTable implementation links bucket entries by indices and keeps insertion-order entry storage. Its capacity is twice the bucket count and it tracks deleted entries; growth/compaction are version-specific policies rather than JavaScript guarantees.
 
 7. **Q:** What hash does V8 use for a key, and why does that choice matter?
-   **A:** Strings get a seeded content hash; objects get a random identity hash generated once and stored on the object. The seed is what stops an attacker from crafting keys that all land in the same bucket.
+   **A:** String lookup needs content-derived hashing; object lookup needs stable identity-derived hashing. V8 has changed storage/algorithm details over time. Randomization can impede predictable collision attacks, but is not proof that collisions or denial-of-service workloads are impossible.
 
 **Common Mistakes**
 
@@ -361,6 +361,22 @@ Source: [Equality & Type Coercion](10.1.4.09-equality-and-coercion.md)
 
 8. **Q:** When is `==` the correct choice rather than a lapse?
    **A:** Essentially only `x == null` and `x != null`, where collapsing `null` and `undefined` into one check is the intent; elsewhere write `===` and convert on purpose at the boundary.
+
+## Changed conditions
+
+Sources: [Copying](10.1.4.03-shallow-vs-deep-copy.md), [Throttle](10.1.4.05-throttle.md), [GC](10.1.4.07-garbage-collection.md), [Hash tables](10.1.4.08-hash-tables-internals.md).
+
+**Q:** If two original properties refer to one child and that child refers back to the root, what relationships must a supported deep clone retain?
+**A:** Both copied properties refer to one cloned child, and its back-reference reaches the cloned root. The clone separates the original graph while preserving relationships inside the new graph.
+
+**Q:** A throttle runs a trailing callback at 100ms, then receives an event at 101ms. What is the next ordinary execution time for a 100ms limit?
+**A:** No earlier than about 200ms. The trailing execution resets actual execution spacing; flush can explicitly override the ordinary policy.
+
+**Q:** Why can a young-generation collector not ignore references written by old objects?
+**A:** An old object may be the only path to a young object that must survive. Write-barrier bookkeeping records those paths so a young-region collection can find them without rescanning every old object.
+
+**Q:** Why must inserting into a deleted probe slot first check farther slots for the key?
+**A:** The key may already exist later in the same probe path. Remember the tombstone, scan for an update, then reuse it only when the key is absent; otherwise insertion creates a duplicate.
 
 ## Summary
 

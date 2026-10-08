@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-JavaScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-6_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -20,10 +20,10 @@ Source: [ES2024+ Modern JavaScript Features (through ES2025)](10.1.6.01-es2024-f
    **A:** `?.` short-circuits the rest of the chain on the first `null`/`undefined`; `??` falls back only on those two values. A port of `0` or an empty-string name therefore survives `??` but is silently replaced by `||` — choosing between them means saying out loud whether `0`/`''`/`false` are real values to you.
 
 2. **Q:** Why does the `withTimeout` example destructure all three of `promise`, `resolve`, and `reject`?
-   **A:** It has to both settle the wrapper (resolve on success, reject on timeout) and return it. Dropping `resolve` still compiles — the reference is only a free variable — but throws `ReferenceError: resolve is not defined` the instant the inner promise fulfills, which is exactly the boilerplate `withResolvers` was added to remove.
+   **A:** It has to both settle the wrapper (resolve on success, reject on timeout) and return it. A missing `resolve` is an undeclared identifier that TypeScript normally reports; unchecked JavaScript throws `ReferenceError: resolve is not defined` the instant the inner promise fulfills, which is exactly the boilerplate `withResolvers` was added to remove.
 
 3. **Q:** What does `/^[\w--\d]+$/v` reject that the same pattern without `v` accepts, and what does that tell you about `v`?
-   **A:** With `v` the `--` is set subtraction, so the class means "word characters minus digits" and `'a1'` fails; without `v`, `--` is just two literal hyphens, `\d` still applies, and `'a1'` matches. The `v` (unicodeSets) flag is ES2024, and it changes what the same characters *mean*, not just which characters match.
+   **A:** With `v` the `--` is set subtraction, so the class means "word characters minus digits" and `'a1'` fails; in a non-Unicode legacy character class the repeated hyphens are accepted literally, `\d` still applies, and `'a1'` matches. The `v` (unicodeSets) flag is ES2024, and it changes what the same characters *mean*, not just which characters match.
 
 **Code Examples**
 
@@ -62,7 +62,7 @@ Source: [Web Workers](10.1.6.02-web-workers.md)
 **Why It Matters**
 
 2. **Q:** Why is a 200 ms computation a *correctness-of-experience* problem rather than merely slowness?
-   **A:** Frames are budgeted at about 16 ms; anything longer steals paint time, so the UI freezes and frames drop. The worker answers it by moving the budget-buster to a thread the paints don't depend on — the main thread keeps rendering while the 200 ms runs elsewhere.
+   **A:** A long main-thread computation delays input handlers and rendering opportunities. A roughly 16.7 ms refresh interval applies at 60 Hz, not every device. A worker can perform the calculation separately while the page handles UI; sending and publishing results still cost main-thread work.
 
 **Dedicated Worker**
 
@@ -72,12 +72,12 @@ Source: [Web Workers](10.1.6.02-web-workers.md)
 **Shared Worker**
 
 4. **Q:** How does the shared worker fan a message out to every connected tab?
-   **A:** It keeps a `Set` of `MessagePort`s handed to it by each `onconnect` event and re-posts incoming messages to all of them; on the page side each tab calls `worker.port.start()` before posting or listening, since the port is delivered, not constructed.
+   **A:** Fan-out is an explicit application policy: retain eligible connected ports and post to each. The chapter's cache protocol replies on the requesting port instead. `port.start()` enables queued delivery when using `addEventListener`; assigning `onmessage` implicitly starts that port. Closing one tab's port does not close another's.
 
 **OffscreenCanvas**
 
 5. **Q:** Where does the rendering in the OffscreenCanvas example actually happen, and how does a frame reach the screen?
-   **A:** Inside the worker — an `OffscreenCanvas` has its own 2D context there, so `clearRect`/`fillRect` run off-thread. `transferToImageBitmap()` snapshots the frame, the bitmap goes back as a transferable, and the main thread only `drawImage`s it while `requestAnimationFrame` keeps asking for more.
+   **A:** In the chapter's transferred-canvas path, the page calls `transferControlToOffscreen` and transfers that canvas to the worker, which draws into its own context. The browser presents it on the associated page canvas; no per-frame ImageBitmap reply is shown. Bitmap transfer is a separate presentation design.
 
 **When to Use Workers**
 
@@ -92,7 +92,7 @@ Source: [Web Workers](10.1.6.02-web-workers.md)
 **Best Practices**
 
 8. **Q:** Why pool a worker instead of spawning one per task?
-   **A:** Creation costs roughly 1–40 ms plus script evaluation on every spawn; for many small tasks that overhead dominates the work itself. One reused worker (or `navigator.hardwareConcurrency` of them) amortizes the startup across the whole queue.
+   **A:** Startup and script evaluation add overhead, so reuse can help a sequence of tasks. Measure the actual workload; `hardwareConcurrency` is a hint, not an instruction to occupy every logical processor. Bound queued work, define per-task replies/errors, and stop idle workers when their owner ends.
 
 ## DOM Events & Delegation
 
@@ -101,12 +101,12 @@ Source: [DOM Events & Delegation](10.1.6.03-dom-events-delegation.md)
 **First Principles**
 
 1. **Q:** Why is event delegation something the platform hands you rather than an optimization you bolt on?
-   **A:** Because the event already walks past every ancestor on its way back up — a listener on a stable parent sees all current and future children without any extra propagation. The only cost delegation adds is routing: asking `event.target` which child was responsible.
+   **A:** A bubbling event already travels along its dispatch path, so one stable parent listener can route clicks from children added later. Non-bubbling events, shadow retargeting and stopped propagation change that visibility. Routing still requires validated target/closest/containment checks.
 
 **Definition**
 
 2. **Q:** Put the three propagation phases in order, and say where a `{ capture: true }` listener fires.
-   **A:** Capture runs top-down from `window` to the target's parent, the target phase runs listeners on the element itself, then bubbling climbs back to `window`. A capture listener sits in the first pass — before any default bubble-phase handler on the way down.
+   **A:** Capture runs top-down from `window` to the target's parent, the target phase runs listeners on the element itself, then bubbling climbs back to `window`. Ancestor capture listeners run on the first pass. On the target, capture listeners run before non-capture listeners, both in the target phase.
 
 **How It Works**
 
@@ -119,22 +119,22 @@ Source: [DOM Events & Delegation](10.1.6.03-dom-events-delegation.md)
 **Real-World Use Cases**
 
 5. **Q:** Why does the chapter's analytics listener register with `{ capture: true }`?
-   **A:** Capture runs before bubbling, so it observes the click before any application handler can call `stopPropagation` and cut the climb short — an observer that must see *every* click cannot sit downstream of code that can mute it.
+   **A:** An ancestor capture listener runs before descendant target/bubble listeners, so those later handlers cannot retroactively hide that click. An earlier capture listener can still stop propagation or immediate propagation; no location promises to observe every possible event.
 
 **Common Mistakes**
 
 6. **Q:** What does `preventDefault()` on a link click leave running, and what would you call to stop that?
-   **A:** Propagation — the event keeps bubbling, so document-level analytics still records the click. `stopPropagation()` stops the travel (ancestors never see it) and `stopImmediatePropagation()` additionally silences sibling listeners on the same node; neither of them cancels navigation.
+   **A:** Propagation continues if the event bubbles. `stopPropagation` prevents later propagation steps, without undoing earlier capture handlers or necessarily stopping other listeners in the current invocation. `stopImmediatePropagation` also stops remaining current listeners. Default cancellation requires a cancelable event and a non-passive listener.
 
 **Performance Considerations**
 
 7. **Q:** What does `{ passive: true }` promise the browser, and what does that promise buy on the main thread?
-   **A:** That the handler will never call `preventDefault()`. Because the browser does not have to wait for your JavaScript to finish before deciding, scrolling starts immediately on the compositor instead of after a main-thread round trip on every wheel tick.
+   **A:** That the handler will never call `preventDefault()`. The browser can avoid waiting for that handler to decide whether to cancel scrolling. This reduces a blocking decision; it does not guarantee immediate presentation or make an expensive handler free.
 
 **Best Practices**
 
 8. **Q:** Why pair `closest(selector)` with `root.contains(...)` inside a delegated handler?
-   **A:** `closest` walks up from whatever was actually hit, so a click on an icon inside a button still matches the button; `contains` then rejects matches that arrived from outside the container, so an event bubbling in from a neighbouring subtree can't trigger the wrong listener.
+   **A:** `closest` walks up from whatever was actually hit, so a click on an icon inside a button still matches the button; `contains` rejects a `closest` match above/outside the delegated root. A neighbouring subtree does not normally bubble through this root; the guard limits the match search, rather than changing propagation.
 
 ## Cross-Tab Communication
 
@@ -143,7 +143,7 @@ Source: [Cross-Tab Communication](10.1.6.04-cross-tab-communication.md)
 **First Principles**
 
 1. **Q:** Why can't two same-origin tabs simply share an object instead of messaging?
-   **A:** Each tab is its own event loop, heap, and realm — the browser shares origin and storage, never memory. So every exchange must ride a channel the browser mediates, and picking a channel is really picking who is allowed to hear you.
+   **A:** Tabs independently initialize globals; a shared origin does not unify their models. Eligible same-origin windows with direct references can access objects, and explicit shared byte buffers have their own rules. Message transports copy supported data, constrain recipients and require a recovery policy for missing messages.
 
 **How It Works**
 
@@ -156,12 +156,12 @@ Source: [Cross-Tab Communication](10.1.6.04-cross-tab-communication.md)
 **Code Examples**
 
 4. **Q:** In `ThemeSync.set`, why call `this.apply(theme)` after already writing to storage and posting a message?
-   **A:** The writing tab receives no `storage` event of its own, so the local apply is what updates this tab; `localStorage.setItem` persists and notifies the others, and the BroadcastChannel post gives them the change without waiting for storage to round-trip.
+   **A:** The writing tab receives no `storage` event of its own, so the local apply is what updates this tab; `localStorage.setItem` persists and notifies the others, and the BroadcastChannel provides another transient notification path. Neither channel guarantees a faster delivery, and duplicate application must be harmless.
 
 **Real-World Use Cases**
 
 5. **Q:** Why does the sync-logout recipe do all three of broadcast, storage write, and server invalidation?
-   **A:** The broadcast reaches live tabs immediately, the persisted `auth-event` marker catches tabs that load later, and the server-side invalidation is what actually kills the session — without it a token already copied out still works.
+   **A:** The broadcast reaches live tabs immediately, an explicit startup read of the session-generation-aware marker catches later tabs, and the server-side invalidation is what actually kills the session — without it a token already copied out still works.
 
 **Common Mistakes**
 
@@ -171,12 +171,29 @@ Source: [Cross-Tab Communication](10.1.6.04-cross-tab-communication.md)
 **Performance Considerations**
 
 7. **Q:** Why shouldn't the megabyte report itself travel over the channel?
-   **A:** `storage` events stringify everything and every channel pays clone cost per listener, so big payloads turn each tab into a JSON tax. Signal with a tiny message and let the receiver read the bytes from IndexedDB, which is shared on disk and written once.
+   **A:** Large fan-out adds serialization/copy and repeated processing costs. Commit the report in IndexedDB, then signal its ID; receivers validate the notification and read the stored result. Storage still has read/clone costs and quota/eviction limits, and the signal is not durable.
 
 **Best Practices**
 
-8. **Q:** Why version your message schema after every deploy?
+8. **Q:** Why version a changed message schema across deployments?
    **A:** Because an old tab and a new tab are routinely open at the same time — a stale listener receiving a shape it doesn't recognize will throw or silently ignore it, so a `v` field lets each side decide whether to parse, upgrade, or drop the message.
+
+## Changed-condition checks
+
+Source: [Cross-Tab Communication](10.1.6.04-cross-tab-communication.md)
+
+**Q:** A and B see the same logout through channel and storage, then C logs in later. What prevents duplicate work or a stale logout?
+**A:** A unique event ID deduplicates recent deliveries; idempotent server revalidation tolerates repeats. The public session generation rejects a saved event from an earlier session. C must explicitly read the marker or current server state; a storage event is not history replay.
+
+Source: [DOM Events](10.1.6.03-dom-events-delegation.md)
+
+**Q:** With outer/inner capture and non-capture click listeners, what runs first, and what changes when the inner listener cancels default?
+**A:** Outer capture, inner capture, inner non-capture, then outer bubble. Cancelling a cancelable non-passive click suppresses its default action without changing that propagation order. Stopping propagation is a separate operation.
+
+Source: [Modern Features](10.1.6.01-es2024-features.md)
+
+**Q:** Does a timeout around a promise stop the original operation, and do copied sorting methods duplicate nested items?
+**A:** No. Settlement and operation cancellation have separate ownership; use an abort contract if available. Copying array methods produce a new container while retaining nested identities.
 
 ## Summary
 

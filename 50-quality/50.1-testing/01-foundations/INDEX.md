@@ -1,6 +1,6 @@
 # Testing Foundations
 
-> **Study time:** ≈ 44 min of reading (3 files, ~15 min average).
+> **Study time:** ≈ 24 min of reading (3 files, ~8 min average).
 > **3 files.** The mental model before any tool: the testing pyramid, test types, TDD vs BDD, coverage trade-offs — and the data that feeds every suite. Everything else in the testing stack assumes this vocabulary.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
@@ -17,7 +17,7 @@ Tool questions ("Jest or Vitest?") are cheap. Strategy questions ("what do you t
 - **Test types** — unit, integration, E2E, and where contract/smoke tests fit.
 - **TDD vs BDD** — red-green-refactor vs behavior specs as shared language.
 - **Coverage** — what it measures, what it hides, why 100% is not the goal.
-- **Test data** — factories, faker generators, anonymization, golden datasets.
+- **Test data** — factories, faker generators, anonymization versus pseudonymization, golden datasets.
 
 ---
 
@@ -25,14 +25,14 @@ Tool questions ("Jest or Vitest?") are cheap. Strategy questions ("what do you t
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Testing Overview](50.1.1.01-testing-overview.md) | Test types, testing pyramid, TDD, BDD, coverage, strategies, when to write which test | Essential | Foundational | 28 min |
-| 02 | [Test Data Management & Anonymization](50.1.1.02-test-data-management-anonymization.md) | Test data pyramid, factories/builders, faker, PII risks, GDPR-safe staging seeding, golden datasets, refresh pipelines | Essential | Foundational | 13 min |
+| 01 | [Testing Overview](50.1.1.01-testing-overview.md) | Test types, testing pyramid, TDD, BDD, coverage, strategies, when to write which test | Essential | Foundational | 11 min |
+| 02 | [Test Data Management & Anonymization](50.1.1.02-test-data-management-anonymization.md) | Explicit fixtures, seeded variety, join-preserving pseudonyms, identification risk, golden oracles, refresh validation | Essential | Foundational | 11 min |
 
 ---
 
 ## Key takeaways
 
-- The pyramid is a cost/confidence trade-off, not dogma — but you must justify deviations (e.g., testing trophies) explicitly.
+- The pyramid guides cost and feedback; choose the actual mix from the defect risks and boundaries you need to examine.
 - Coverage is a **negative** signal: low coverage means untested code; high coverage proves nothing about assertion quality.
 - Write tests for behavior at boundaries, not implementation details.
 
@@ -58,7 +58,7 @@ Tool questions ("Jest or Vitest?") are cheap. Strategy questions ("what do you t
 | Topic | Docita evidence |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | Testing strategy doc | `docs/testing/TESTING.md` |
-| Co-located unit tests | 482 `*.spec.ts` files beside their source across `apps/api/src` |
+| Co-located unit tests | `*.spec.ts` files beside their source across `apps/api/src` |
 | Deterministic time (injected clock port) | `apps/api/src/shared/common/ports/clock.port.ts` + `apps/api/src/shared/modules/time/system-clock.service.ts` |
 | Test data factories | `apps/api/src/test-utils/factories.ts` |
 | E2E layer with Playwright | `apps/app/e2e/` + `apps/app/playwright.config.ts` (also `apps/internal`, `apps/landing`) |

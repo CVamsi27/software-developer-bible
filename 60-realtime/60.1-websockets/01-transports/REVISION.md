@@ -50,6 +50,22 @@ Source: [WebTransport](60.1.1.04-webtransport.md)
 
 **A:** When obsolete data should be discarded rather than retransmitted, such as fresh game positions. Reliable ordered streams remain useful for commands/state that must arrive intact.
 
+**Q:** Why does receiving position 4 after losing position 3 work only for some protocols?
+
+**A:** A full snapshot replaces older state without needing position 3. A delta based on position 3 cannot reconstruct the same result; it needs recovery or reliable delivery.
+
+**Q:** Why can a reliable stream return half a JSON record in one read?
+
+**A:** It preserves an ordered byte sequence, not the sender’s write boundaries. Buffer and decode incrementally until the application’s bounded framing rule identifies a complete record.
+
+**Q:** Does QUIC migration cause transport.ready to fire again?
+
+**A:** No. ready is a promise for establishment, not a repeated event. If the session actually closes, create a new one and restore state within a new epoch or cursor domain.
+
+**Q:** Does a successful stream write prove a chat message was stored?
+
+**A:** No. It reports the local write operation, not a durable server effect. Define and observe an acknowledgment whose meaning includes the required business result.
+
 ## Summary
 
 Use the answers to check your reasoning, then revisit the source mechanism and reproduce any relevant example without copying it. A remembered label is useful only when you can explain its limits.

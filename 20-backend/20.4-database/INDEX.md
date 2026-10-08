@@ -1,6 +1,6 @@
 # Database — Index
 
-> **Study time:** ≈ 5 h 23 m of reading (29 files, ~11 min average).
+> **Study time:** ≈ 4 h 31 m of reading (29 files, ~9 min average).
 > **29 files** — Database fundamentals from PostgreSQL internals to indexing, transactions, MVCC, joins, locking, connection pooling, Prisma (plus the ORM/query-builder landscape), execution plans, SQL vs NoSQL, zero-downtime migrations, soft delete & tombstones, backups/PITR recovery, search infrastructure at scale, window functions, JSONB, replication, row-level security, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-29-blue)](../../INDEX.md)
@@ -29,7 +29,7 @@ The 24 files are organized into 5 categories, each with its own INDEX.
 
 ```text
 01 POSTGRES FOUNDATIONS ──→ 02 QUERYING & OPT ──→ 03 TRANSACTIONS ──→ 04 ORM ───────→ 05 OPERATIONS
-architecture/WAL/vacuum     indexes              MVCC                 prisma        connection pooling
+architecture/WAL/vacuum     indexes              invariant boundary                 prisma        connection pooling
 normalization               joins                transactions         prisma adv    migrations
 MVCC                        execution plans      deadlocks            landscape     soft delete
 SQL vs NoSQL                window functions     locking                            backups/PITR
@@ -44,11 +44,12 @@ How Postgres actually works. Every backend interview starts here. Category INDEX
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [PostgreSQL](01-postgresql-foundations/20.4.1.01-postgresql.md) | Architecture, WAL, vacuum, configuration, extensions, autovacuum | Essential | 23 min | 23 min |
-| 02 | [Normalization](01-postgresql-foundations/20.4.1.02-normalization.md) | 1NF, 2NF, 3NF, BCNF, denormalization trade-offs, when to denormalize | Important | 20 min | 20 min |
-| 03 | [MVCC](01-postgresql-foundations/20.4.1.03-mvcc.md) | Multiversion concurrency control, visibility rules, tuple versions, vacuum | Important | 17 min | 17 min |
-| 04 | [SQL vs NoSQL](01-postgresql-foundations/20.4.1.04-nosql-vs-sql.md) | Workload fit, CAP, consistency models, polyglot persistence, when to use what | Essential | 9 min | 9 min |
-| 05 | [PostgreSQL Performance](01-postgresql-foundations/20.4.1.05-postgresql-performance.md) | Connection tuning, memory tuning, query optimization, VACUUM, partitioning, monitoring queries | Essential | 12 min | 13 min |
+| 01 | [PostgreSQL](01-postgresql-foundations/20.4.1.01-postgresql.md) | Architecture, WAL, vacuum, configuration, extensions, autovacuum | Essential | 23 min | 11 min |
+| 02 | [Normalization](01-postgresql-foundations/20.4.1.02-normalization.md) | 1NF, 2NF, 3NF, BCNF, denormalization trade-offs, when to denormalize | Important | 20 min | 11 min |
+| 03 | [MVCC](01-postgresql-foundations/20.4.1.03-mvcc.md) | Multiversion concurrency control, visibility rules, tuple versions, vacuum | Important | 17 min | 14 min |
+| 04 | [SQL vs NoSQL](01-postgresql-foundations/20.4.1.04-nosql-vs-sql.md) | Workload fit, CAP, consistency models, polyglot persistence, when to use what | Essential | 9 min | 12 min |
+| 05 | [PostgreSQL Performance](01-postgresql-foundations/20.4.1.05-postgresql-performance.md) | Connection tuning, memory tuning, query optimization, VACUUM, partitioning, monitoring queries | Essential | 12 min | 11 min |
+| 06 | [Row-Level Security](01-postgresql-foundations/20.4.1.06-row-level-security.md) | Subject roles, transaction context, old-row visibility, new-row checks, policy composition | Essential | Foundational | 11 min |
 
 ---
 
@@ -81,7 +82,7 @@ The hard part — how Postgres handles concurrent access. Category INDEX: [Trans
 
 ## ORM & Access
 
-Prisma. Category INDEX: [ORM & Access](04-orm-and-access/INDEX.md).
+Application query and transaction ownership. Category INDEX: [ORM & Access](04-orm-and-access/INDEX.md).
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
@@ -97,12 +98,12 @@ Production concerns — keeping the database healthy at scale. Category INDEX: [
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Connection Pooling](05-operations-and-scaling/20.4.5.01-connection-pooling.md) | PgBouncer, connection lifecycle, pool sizing, transaction pooling, prepared statements | Important | 17 min | 17 min |
-| 02 | [Migration Strategies](05-operations-and-scaling/20.4.5.02-migration-strategies.md) | Expand/contract, lock-free migrations, backfills, zero-downtime, blue-green DB | Important | 11 min | 11 min |
-| 03 | [Soft Delete & Tombstones](05-operations-and-scaling/20.4.5.03-soft-delete-and-tombstones.md) | `deleted_at` columns, partial indexes, GDPR right-to-erasure, CDC tombstones, log compaction retention | Essential | 20 min | 20 min |
-| 04 | [Backups, PITR & Recovery](05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md) | `pg_dump` vs physical backups, WAL archiving, PITR (`recovery_target_time`), pgBackRest/WAL-G, RPO/RTO, restore drills, cross-region copies | Important | 12 min | 12 min |
+| 01 | [Connection Pooling](05-operations-and-scaling/20.4.5.01-connection-pooling.md) | PgBouncer, connection lifecycle, pool sizing, transaction pooling, prepared statements | Important | 17 min | 10 min |
+| 02 | [Migration Strategies](05-operations-and-scaling/20.4.5.02-migration-strategies.md) | Expand/contract, lock-aware migrations, backfills, zero-downtime, blue-green DB | Important | 11 min | 10 min |
+| 03 | [Soft Delete & Tombstones](05-operations-and-scaling/20.4.5.03-soft-delete-and-tombstones.md) | `deleted_at` columns, partial indexes, GDPR right-to-erasure, CDC tombstones, log compaction retention | Essential | 20 min | 12 min |
+| 04 | [Backups, PITR & Recovery](05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md) | `pg_dump` vs physical backups, WAL archiving, PITR (`recovery_target_time`), pgBackRest/WAL-G, RPO/RTO, restore drills, cross-region copies | Important | 12 min | 10 min |
 | 05 | [Search Infrastructure at Scale](05-operations-and-scaling/20.4.5.05-search-infrastructure-at-scale.md) | Postgres FTS ceiling (GIN/tsvector), Elasticsearch/OpenSearch vs Meilisearch/Typesense, CDC/outbox sync, BM25 tuning, multilingual analysis | Essential | 10 min | 11 min |
-| 06 | [Interview Questions](05-operations-and-scaling/20.4.5.06-interview-questions.md) | 50+ curated questions with answers | Essential | 21 min | 21 min |
+| 06 | [Interview Questions](05-operations-and-scaling/20.4.5.06-interview-questions.md) | Authored questions with mechanism and boundary answers | Essential | 21 min | 8 min |
 
 ---
 
@@ -127,9 +128,13 @@ Production concerns — keeping the database healthy at scale. Category INDEX: [
 ### Path C — Interview tomorrow
 - Review each chapter’s definition, example and summary; focus on the topics listed above
 - Re-read MVCC + Transactions
-- Run through 50+ Interview Questions
+- Run through the authored interview questions
 
 ---
+
+## Recall before interview practice
+
+Each category has a separate revision companion. Use [foundations revision](01-postgresql-foundations/REVISION.md) after its learning pass, [query revision](02-querying-and-optimization/REVISION.md) after query mechanics, [transaction revision](03-transactions-and-replication/REVISION.md) after concurrency/replication, and [ORM revision](04-orm-and-access/REVISION.md) after application access. Complete [operations revision](05-operations-and-scaling/REVISION.md) before the final interview bank.
 
 ## Cross-References
 
@@ -148,7 +153,7 @@ Production concerns — keeping the database healthy at scale. Category INDEX: [
 
 ## Docita Anchor
 
-Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+Real code from [docita](https://github.com/CVamsi27/docita) - healthcare platform (NestJS + Prisma + Postgres). These paths identify implementation code to inspect alongside the case studies; they do not establish current deployment or complete behavior:
 
 | Topic | Docita evidence |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

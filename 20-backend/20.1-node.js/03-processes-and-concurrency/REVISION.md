@@ -26,6 +26,14 @@ Source: [Clustering](20.1.3.01-clustering.md)
 
 **A:** Disable replacement and cancel pending restart timers. Track workers until actual exit; send shutdown, wait for in-flight work and impose a final termination deadline.
 
+**Q:** With two workers listening on port 0, where do three requests on one keep-alive connection go?
+
+**A:** Both workers share the selected random listening port, but all requests on that connection stay on its assigned worker. Killing that worker closes its connection; replacement restores capacity, not the lost response. The primary disables restart before graceful shutdown.
+
+**Q:** What changes if each of four workers opens a ten-connection pool in each of three replicas?
+
+**A:** The combined budget can reach 120 connections, alongside multiplied heaps/native resources. Per-connection round-robin does not control database demand or guarantee even request work; measure admission and total external capacity.
+
 ## Child Processes & Workers
 
 Source: [Child Processes & Workers](20.1.3.02-child-processes-workers.md)
@@ -41,6 +49,14 @@ Source: [Child Processes & Workers](20.1.3.02-child-processes-workers.md)
 **Q:** Can shell-free execFile make an arbitrary command safe?
 
 **A:** It avoids shell interpretation, but the executable still interprets options and can read files or perform other privileged actions. Fix the command and validate allowed arguments, paths, output size and execution time.
+
+**Q:** Trace runOne with iterations 4, then with invalid input, no result and a hung worker.
+
+**A:** The compute fixture resolves its sum 4.146264369941973 after owned termination. Invalid iterations reject through the worker error; clean exit without a message rejects; no completion reaches the timer and rejects. Each terminal path settles once rather than sharing an uncorrelated message across tasks.
+
+**Q:** What changes when new work arrives after closePool begins?
+
+**A:** The example stops application admission before awaiting Piscina close. Later calls reject as closing; accepted work still follows the release's graceful/forced shutdown contract. An abort cannot undo an already completed external effect, and shared bytes require their own synchronization protocol.
 
 ## Process & Environment
 
@@ -58,13 +74,21 @@ Source: [Process & Environment](20.1.3.03-process-environment.md)
 
 **A:** It sets the eventual status while allowing pending writes and owned cleanup to finish. process.exit terminates immediately and can truncate output; use it deliberately at the forced shutdown deadline.
 
+**Q:** Why does PORT="0" remain 0 and DEBUG="false" remain false in the config fixture?
+
+**A:** The parser distinguishes absent values, validates the entire string/range and compares an allowed boolean string. A truthiness fallback would replace zero or treat the string false as true. Empty or 10junk port values fail explicitly.
+
+**Q:** What happens when shutdown is called twice while resource cleanup hangs?
+
+**A:** Both calls return the same operation, admission is draining, and the deadline covers server drain plus resource close. If cleanup cannot finish, the forced failure path owns termination; process exitCode alone cannot release a leaked handle.
+
 ## Summary
 
 Use these prompts after the reading pass to recall the mechanism and its limits.
 
 ## See Also
 
-- [Category reading flow](INDEX.md)
+- [Category reading flow](INDEX.md) — revisit bounded admission before comparing worker and process lifetimes
 
 ## References & Learn More
 

@@ -1,6 +1,6 @@
 # Foundations — Principles, OOP & UML
 
-> **Study time:** ≈ 1 h 7 m of reading (5 files, ~13 min average).
+> **Study time:** ≈ 1 h 8 m of reading (5 files, ~14 min average).
 > **5 files.** Read these BEFORE any design pattern. SOLID, OOP, and UML are the language every GoF pattern is written in. Without them, the patterns are unmotivated syntax.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../../INDEX.md)
@@ -10,15 +10,15 @@
 
 ## Why this folder exists
 
-Many questions about a design pattern examine: "How does this pattern help you follow SOLID?" or "What's the OOP concept at work here?" If you can't answer those, the pattern name is meaningless.
+Begin with state ownership and caller contracts. Then assess a real change using SOLID and other design heuristics. Finally, draw the relationships and trace success plus a failure in UML. A named pattern is useful when its mechanism resolves one of these concrete problems.
 
 **Read order:** OOP → SOLID → Other principles → UML.
 
 | Order | File | Time | What it unlocks | Role priority | General importance |
-| ----: | ------------------------------------------------------ | -----: | --------------------------------------------------------------- | ------------- | ------------------ |
-| 1 | [SOLID Principles](30.1.1.01-solid-principles.md) | 30 min | Five heuristics for evaluating dependency and change boundaries | Important | Foundational |
-| 2 | [DRY, KISS, YAGNI & More](30.1.1.02-dry-kiss-yagni.md) | 20 min | The other 6 principles that show up in code review | Important | Foundational |
-| 3 | [OOP Concepts](30.1.1.03-oop-concepts.md) | 25 min | The 4 pillars + "has-a" relationships | Important | Specialized |
+| ----: | ------------------------------------------------------ | -----: | ----------------------------------------------------------------------------------- | ------------- | ------------------ |
+| 1 | [OOP Concepts](30.1.1.03-oop-concepts.md) | 25 min | The 4 pillars + "has-a" relationships | Important | Specialized |
+| 2 | [SOLID Principles](30.1.1.01-solid-principles.md) | 30 min | Five heuristics for evaluating dependency and change boundaries | Important | Foundational |
+| 3 | [DRY, KISS, YAGNI & More](30.1.1.02-dry-kiss-yagni.md) | 20 min | Decide when knowledge should be shared and which complexity a requirement justifies | Important | Foundational |
 | 4 | [UML Basics](30.1.1.04-uml-basics.md) | 25 min | Sketch class & sequence diagrams on a whiteboard | Important | Specialized |
 
 **Total: ~1.5 hours** to read all 4 once. After that, treat them as a reference.
@@ -28,16 +28,16 @@ Many questions about a design pattern examine: "How does this pattern help you f
 ## File Index
 
 ### [SOLID Principles](30.1.1.01-solid-principles.md)
-The 5 principles every OOP design should follow. The basis of most design patterns. Most LLD interviews test these directly.
+Five diagnostics for responsibility, extension, substitution, client contracts, and dependency direction. Apply them to a concrete change rather than treating interface counts as design quality.
 
 - **SRP** — Single Responsibility Principle: one reason to change
 - **OCP** — Open/Closed: open for extension, closed for modification
 - **LSP** — Liskov Substitution: subtypes must be substitutable
-- **ISP** — Interface Segregation: many small interfaces > one fat interface
+- **ISP** — Interface Segregation: clients depend on the operations they need
 - **DIP** — Dependency Inversion: depend on abstractions, not concretions
 
 ### [DRY, KISS, YAGNI & More](30.1.1.02-dry-kiss-yagni.md)
-The "other 6" principles that show up in code reviews and LLD interviews.
+Heuristics for comparing coordination, reading, maintenance, and speculative-feature costs.
 
 - **DRY** — Don't Repeat Yourself
 - **KISS** — Keep It Simple, Stupid
@@ -48,7 +48,7 @@ The "other 6" principles that show up in code reviews and LLD interviews.
 - **SoC** — Separation of Concerns
 
 ### [OOP Concepts](30.1.1.03-oop-concepts.md)
-The 4 pillars + the "has-a" relationships that show up in class diagrams.
+State invariants, caller contracts, dispatch, and explicitly modeled ownership.
 
 - **Encapsulation** — hide state behind behavior
 - **Inheritance** — "is-a" (use sparingly)
@@ -65,16 +65,16 @@ The visual language of software design. LLD interviews expect you to sketch thes
 
 ---
 
-## How foundations map to the rest of the patterns
+## Use foundations to evaluate a pattern
 
-| Foundation | Patterns it makes possible | Interview question it answers |
-| --------------- | -------------------------------------------- | --------------------------------------------------------------- |
+| Foundation | Patterns to examine | Interview question it answers |
+| ----------------- | ------------------------------------------------- | --------------------------------------------------------------- |
 | **SRP** | Facade, Mediator, Module | "Why is this class 2000 lines?" |
 | **OCP** | Strategy, Decorator, Chain of Responsibility | "How do you add a new behavior without breaking existing code?" |
 | **LSP** | Template Method, Composite, Iterator | "Can I substitute subtype X for parent Y?" |
 | **ISP** | Adapter, Proxy | "Why is your interface 30 methods?" |
 | **DIP** | Factory, Abstract Factory, DI, Repository | "How do you make this testable?" |
-| **OOP pillars** | Every pattern | "Is pattern X inheritance or composition?" |
+| **OOP contracts** | Patterns using state, subtyping, or collaborators | "Is pattern X inheritance or composition?" |
 | **UML** | — | "Draw the class diagram for the parking lot LLD." |
 
 ---
@@ -96,9 +96,9 @@ Show one case where applying a principle reduces change cost and one where it ad
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS (NestJS monorepo) — exercises these foundations in real code.
 
 | Topic | Docita evidence |
-| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| DIP / Dependency Inversion | Constructor injection throughout; repositories bound to DI tokens and enforced by `scripts/checks/check-repository-di-tokens.mjs` |
-| OCP | Strategy registries (`search-strategy.registry.ts`, `bulk-import-strategy.registry.ts`) — new behavior is registered, not edited in |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| DIP / Dependency Inversion | Repository token and constructor-injection checks in `scripts/checks/check-repository-di-tokens.mjs` |
+| OCP | Strategy registries (`search-strategy.registry.ts`, `bulk-import-strategy.registry.ts`) — examples of registration boundaries; callers still need stable strategy contracts |
 | SRP | Command/query service split: `appointment-command.service.ts` vs `appointment-query.service.ts` |
 | ISP | Narrow per-domain ports: `domains/*/application/ports/*`, `shared/common/ports/clock.port.ts` |
 | SoC / module boundaries | Domain layout enforced in CI by `scripts/checks/check-api-domain-layout.mjs` + cross-domain import checks |

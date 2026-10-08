@@ -1,13 +1,13 @@
 # Performance Monitoring — Index
 
-> **Study time:** ≈ 1 h 52 m of reading (12 files, ~9 min average).
+> **Study time:** ≈ 1 h 25 m of reading (12 files, ~7 min average).
 > **12 files across 4 categories.** Web performance monitoring from Core Web Vitals, performance APIs, profiling tools, Lighthouse CI, bundle analysis, real-user monitoring, HTTP/2 & HTTP/3 protocol effects, and performance budgets to interview questions.
 
 [![Files](https://img.shields.io/badge/files-12-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Quality-green)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Why performance monitoring:** Core Web Vitals affect SEO, conversion, and user satisfaction. Senior frontend interviews test LCP/INP/CLS, profiling workflow, and performance budgets. Slow sites lose users — every 100ms costs ~1% of revenue.
+**Why performance monitoring:** Core Web Vitals affect SEO, conversion, and user satisfaction. Senior frontend interviews test LCP/INP/CLS, profiling workflow, and performance budgets. Measure the affected journey and population before claiming a business effect.
 
 ---
 
@@ -24,13 +24,13 @@
 
 ## Core Metrics
 
-The 3 Core Web Vitals — every senior frontend interview starts here.
+Learn the three metrics and their distinct observation boundaries before choosing an optimization.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Core Web Vitals](01-core-metrics/50.3.1.01-core-web-vitals.md) | LCP, INP, CLS — measurement, thresholds, optimization strategies. INP replaced FID in 2024. | Important | Important | 15 min |
+| 01 | [Core Web Vitals](01-core-metrics/50.3.1.01-core-web-vitals.md) | LCP, INP, CLS — measurement, thresholds, optimization strategies. INP replaced FID in 2024. | Important | Important | 8 min |
 
-**The 3 metrics (memorize thresholds):**
+**Good thresholds (evaluate eligible observations at p75):**
 - **LCP** (Largest Contentful Paint) — should be **≤ 2.5s**
 - **INP** (Interaction to Next Paint) — should be **≤ 200ms**
 - **CLS** (Cumulative Layout Shift) — should be **≤ 0.1**
@@ -39,15 +39,15 @@ The 3 Core Web Vitals — every senior frontend interview starts here.
 
 ## Measurement
 
-Lab vs field: APIs, profilers, and Lighthouse are synthetic; RUM is truth from production.
+Laboratory tests control a workload; field collection samples real visits. Performance APIs can serve both. Check coverage and population before comparing results.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Performance APIs](02-measurement/50.3.2.01-performance-apis.md) | `performance` API, Navigation Timing, Resource Timing, observers (PerformanceObserver) | Important | Important | 8 min |
-| 02 | [Profiling Tools](02-measurement/50.3.2.02-profiling-tools.md) | Chrome DevTools, Lighthouse, WebPageTest, React Profiler, flame charts | Important | Important | 19 min |
-| 03 | [Lighthouse CI](02-measurement/50.3.2.03-lighthouse-ci.md) | Automated audits, budgets, score tracking, CI/CD integration | Important | Important | 9 min |
-| 04 | [Real User Monitoring](02-measurement/50.3.2.04-real-user-monitoring.md) | RUM, `web-vitals` library, `sendBeacon`, CrUX (Chrome User Experience Report), segmentation | Important | Important | 13 min |
-| 05 | [HTTP/2 & HTTP/3 Performance Effects](02-measurement/50.3.2.05-http2-http3-performance-effects.md) | Multiplexing, TCP head-of-line blocking, QUIC, 0-RTT, connection migration, protocol-segmented RUM | Important | Important | 13 min |
+| 02 | [Profiling Tools](02-measurement/50.3.2.02-profiling-tools.md) | Chrome DevTools, Lighthouse, WebPageTest, React Profiler, flame charts | Important | Important | 10 min |
+| 03 | [Lighthouse CI](02-measurement/50.3.2.03-lighthouse-ci.md) | Automated audits, budgets, score tracking, CI/CD integration | Important | Important | 7 min |
+| 04 | [Real User Monitoring](02-measurement/50.3.2.04-real-user-monitoring.md) | RUM, `web-vitals` library, `sendBeacon`, CrUX (Chrome User Experience Report), segmentation | Important | Important | 11 min |
+| 05 | [HTTP/2 & HTTP/3 Performance Effects](02-measurement/50.3.2.05-http2-http3-performance-effects.md) | Multiplexing, TCP head-of-line blocking, QUIC, 0-RTT, connection migration, protocol-segmented RUM | Important | Important | 9 min |
 
 ---
 
@@ -55,8 +55,8 @@ Lab vs field: APIs, profilers, and Lighthouse are synthetic; RUM is truth from p
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Bundle Analysis](03-optimization-and-governance/50.3.3.01-bundle-analysis.md) | Bundle size, tree shaking, code splitting, bundlephobia, source-map-explorer | Important | Important | 10 min |
-| 02 | [Performance Budgets](03-optimization-and-governance/50.3.3.02-performance-budgets.md) | `size-limit`, per-chunk budgets, CI enforcement, budgeting tiers | Important | Important | 12 min |
+| 01 | [Bundle Analysis](03-optimization-and-governance/50.3.3.01-bundle-analysis.md) | Bundle size, tree shaking, code splitting, bundlephobia, source-map-explorer | Important | Important | 9 min |
+| 02 | [Performance Budgets](03-optimization-and-governance/50.3.3.02-performance-budgets.md) | `size-limit`, per-chunk budgets, CI enforcement, budgeting tiers | Important | Important | 9 min |
 
 ---
 
@@ -70,12 +70,12 @@ Lab vs field: APIs, profilers, and Lighthouse are synthetic; RUM is truth from p
 
 ## Suggested Study Order
 
-1. **Core Web Vitals** — must know (every frontend interview)
-2. **Performance APIs + Profiling Tools** — must know
+1. **Core Web Vitals** — trace the metric and identify its observation boundary
+2. **Performance APIs + Profiling Tools** — connect a visible delay to timing, stacks and resource waits
 3. **Bundle Analysis** — for build pipeline discussions
 4. **Lighthouse CI + RUM** — for production monitoring
 5. **Performance Budgets** — for engineering culture discussions
-6. **Interview Questions** — final review
+6. **Category revision companions**, then **Interview Questions** — derive answers before changing a condition
 
 ---
 

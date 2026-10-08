@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-TypeScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -36,7 +36,7 @@ Source: [Utility Types](10.2.3.01-utility-types.md)
 **Common Mistakes**
 
 6. **Q:** Why separate an update ID from optional changes?
-   **A:** A partial entity permits the identifier to be absent. A separate required ID establishes which record is being changed before optional fields are considered.
+   **A:** A partial entity permits the identifier to be absent. A separate required ID identifies the target; an explicit Pick allowlist prevents optional changes from also granting writes to IDs, secrets or server-controlled fields.
 
 **Best Practices**
 
@@ -100,7 +100,7 @@ Source: [Mapped Types](10.2.3.03-mapped-types.md)
 **Code Examples**
 
 4. **Q:** Why does `mapValues` enumerate with `Reflect.ownKeys`?
-   **A:** Its declared key space may include symbols, which a `for...in` loop skips. The helper still assumes those keys are own properties of a plain record.
+   **A:** Its declared key space may include symbols, which a `for...in` loop skips. The helper still assumes the declared fields are the actual own fields of a closed plain record; descriptors are not preserved, getters execute during reads, and extra runtime fields can violate the callback type claim.
 
 5. **Q:** What extra operation does a deep partial perform when a database object is supplied?
    **A:** It relaxes fields inside that object as well as the outer property. A shallow partial still requires the nested object's complete original shape.
@@ -116,7 +116,7 @@ Source: [Mapped Types](10.2.3.03-mapped-types.md)
    **A:** The field must still be present unless it has the optional modifier. Its union only allows an explicit undefined value.
 
 8. **Q:** Why keep Date and functions as leaves in the deep transform example?
-   **A:** Mapping their members as ordinary data can destroy their usable signatures. Keeping them as leaves preserves those APIs, while leaving runtime mutation behavior unchanged.
+   **A:** Mapping their members as ordinary data can destroy their usable signatures. Keeping them as leaves preserves those APIs, while leaving runtime mutation behavior unchanged. Map/Set/host classes require additional domain-specific leaf or readonly-container rules.
 
 ## Template Literal Types
 
@@ -153,6 +153,31 @@ Source: [Template Literal Types](10.2.3.04-template-literal-types.md)
 
 8. **Q:** How should a team judge whether a recursive string helper is too expensive?
    **A:** Measure the consuming compilation and editor behavior with realistic inputs. Fixed millisecond estimates and a supposed configurable universal depth do not describe the checker's actual work.
+
+## Changed-condition checks
+
+Source: [Utility Types](10.2.3.01-utility-types.md)
+
+**Q:** Trace a Bob-only profile patch, then assign the full secret-bearing entity to a public type. Which values actually change?
+**A:** The patch helper creates a new outer object with Bob and retains the original Alice object. Assigning to a public static view does not remove stored secret fields; serialization needs a real selected-field projection.
+
+Source: [Conditional Types](10.2.3.02-conditional-types.md)
+
+**Q:** Is ["one",2] admitted by ToArray<string|number>, and what changes with tuple wrapping?
+**A:** The distributive result is string[]|number[], so a mixed array fits neither member. Whole-input wrapping produces (string|number)[], which permits that mixed array. never has no members to distribute.
+
+Source: [Mapped Types](10.2.3.03-mapped-types.md)
+
+**Q:** What is created for name and age in Getters, and does that add functions to a real user?
+**A:** Static members getName:()=>string and getAge:()=>number are derived from their corresponding values. No runtime functions are installed. Numeric/symbol keys omitted by the string template stay omitted from the type only.
+
+Source: [Template Literal Types](10.2.3.04-template-literal-types.md)
+
+**Q:** Build /users/:userId/posts/:postId with userId=a/b, then omit postId at runtime. What happens?
+**A:** The builder substitutes whole segments and encodes a/b as a%2Fb. Missing or nonstring postId throws even if an unchecked caller bypassed the static contract; it cannot leave a trusted unresolved placeholder.
+
+**Q:** A translated name contains $&, or the same placeholder appears twice. Why use a replacement callback?
+**A:** The callback inserts the supplied value literally for every matched token, so replacement-string metacharacters do not change its meaning. Missing dictionary entries/parameters throw under this small plain-text grammar.
 
 ## Summary
 

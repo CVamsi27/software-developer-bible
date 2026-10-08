@@ -1,0 +1,2821 @@
+{
+  "review_date": "2026-10-08",
+  "scope": "Executed review fixtures and checkpoint gates; results do not certify pending semantic documents or unexecuted production integrations.",
+  "results": {
+    "a11y-fixture-results.json": {
+      "browser": "153.0.8010.12",
+      "results": [
+        {
+          "test": "opaque contrast input, exact boundaries and symmetry",
+          "passed": true
+        },
+        {
+          "test": "disclosure native keyboard activation, state and hidden link",
+          "passed": true
+        },
+        {
+          "test": "tabs manual selection, wrap, Home/End, one tab stop and exit",
+          "passed": true
+        },
+        {
+          "test": "native modal entry, inert background, Escape, repeated close and return",
+          "passed": true
+        },
+        {
+          "test": "form empty/invalid/corrected input, focus, descriptions and honest outcome",
+          "passed": true
+        },
+        {
+          "test": "light text/muted/link/focus combinations",
+          "passed": true,
+          "pairs": [
+            {
+              "fg": "text",
+              "bg": "background",
+              "a": "#1a1a1a",
+              "b": "#ffffff",
+              "ratio": 17.40432753274219
+            },
+            {
+              "fg": "muted",
+              "bg": "background",
+              "a": "#595959",
+              "b": "#ffffff",
+              "ratio": 7.004729208035935
+            },
+            {
+              "fg": "link",
+              "bg": "background",
+              "a": "#1e40af",
+              "b": "#ffffff",
+              "ratio": 8.722410784954462
+            },
+            {
+              "fg": "focus",
+              "bg": "background",
+              "a": "#005fcc",
+              "b": "#ffffff",
+              "ratio": 5.984934612252126
+            },
+            {
+              "fg": "text",
+              "bg": "surface",
+              "a": "#1a1a1a",
+              "b": "#f5f5f5",
+              "ratio": 15.96388988776675
+            },
+            {
+              "fg": "muted",
+              "bg": "surface",
+              "a": "#595959",
+              "b": "#f5f5f5",
+              "ratio": 6.424995482321328
+            },
+            {
+              "fg": "link",
+              "bg": "surface",
+              "a": "#1e40af",
+              "b": "#f5f5f5",
+              "ratio": 8.000516254645733
+            },
+            {
+              "fg": "focus",
+              "bg": "surface",
+              "a": "#005fcc",
+              "b": "#f5f5f5",
+              "ratio": 5.4896023391731354
+            }
+          ]
+        },
+        {
+          "test": "dark text/muted/link/focus combinations",
+          "passed": true,
+          "pairs": [
+            {
+              "fg": "text",
+              "bg": "background",
+              "a": "#f9fafb",
+              "b": "#111827",
+              "ratio": 16.97538624440406
+            },
+            {
+              "fg": "muted",
+              "bg": "background",
+              "a": "#d1d5db",
+              "b": "#111827",
+              "ratio": 12.039064392610866
+            },
+            {
+              "fg": "link",
+              "bg": "background",
+              "a": "#93c5fd",
+              "b": "#111827",
+              "ratio": 9.83750053606076
+            },
+            {
+              "fg": "focus",
+              "bg": "background",
+              "a": "#fbbf24",
+              "b": "#111827",
+              "ratio": 10.626632465425244
+            },
+            {
+              "fg": "text",
+              "bg": "surface",
+              "a": "#f9fafb",
+              "b": "#1f2937",
+              "ratio": 14.046656202460271
+            },
+            {
+              "fg": "muted",
+              "bg": "surface",
+              "a": "#d1d5db",
+              "b": "#1f2937",
+              "ratio": 9.961988262743224
+            },
+            {
+              "fg": "link",
+              "bg": "surface",
+              "a": "#93c5fd",
+              "b": "#1f2937",
+              "ratio": 8.14025589356569
+            },
+            {
+              "fg": "focus",
+              "bg": "surface",
+              "a": "#fbbf24",
+              "b": "#1f2937",
+              "ratio": 8.793240441344162
+            }
+          ]
+        },
+        {
+          "test": "forced-color focus outline",
+          "passed": true,
+          "focus": {
+            "style": "solid",
+            "width": "3px",
+            "color": "rgba(26, 235, 255, 0.8)"
+          }
+        }
+      ],
+      "limits": [
+        "Screen-reader speech, mobile assistive technologies, remote server, dynamic tabs and custom modal integration not executed."
+      ]
+    },
+    "a11y-audit-results.json": [
+      {
+        "name": "shipping.html",
+        "exit": 0,
+        "errors": [],
+        "states": [
+          {
+            "state": "closed",
+            "violations": [],
+            "incomplete": []
+          },
+          {
+            "state": "expanded",
+            "violations": [],
+            "incomplete": []
+          }
+        ]
+      },
+      {
+        "name": "shipping-bad-lang.html",
+        "exit": 1,
+        "errors": [],
+        "states": [
+          {
+            "state": "closed",
+            "violations": [
+              "html-has-lang"
+            ],
+            "incomplete": []
+          },
+          {
+            "state": "expanded",
+            "violations": [
+              "html-has-lang"
+            ],
+            "incomplete": []
+          }
+        ]
+      },
+      {
+        "name": "shipping-bad-transition.html",
+        "exit": 1,
+        "errors": [
+          "Expected values to be strictly equal:\n\nfalse !== true\n"
+        ],
+        "states": [
+          {
+            "state": "closed",
+            "violations": [],
+            "incomplete": []
+          }
+        ]
+      },
+      {
+        "name": "good.jsx",
+        "exit": 0,
+        "output": ""
+      },
+      {
+        "name": "bad.jsx",
+        "exit": 1,
+        "output": "\n/private/tmp/bible-depth-review/a11y-fixtures/bad.jsx\n  1:26  error  img elements must have an alt prop, either with meaningful text, or an empty string for decorative images  jsx-a11y/alt-text\n\n\u2716 1 problem (1 error, 0 warnings)\n\n"
+      }
+    ],
+    "backend-nest-core-results.json": {
+      "runtime": "Node23.7; Nest11.2.7; TypeScript strict compiler and isolatedlocalhost",
+      "results": [
+        {
+          "case": "controllers",
+          "output": "201 { id: 1, name: 'Ada', email: 'ada@example.test' }\n200 { id: 1, name: 'Ada', email: 'ada@example.test' }\n400 {\n  message: 'Validation failed (numeric string is expected)',\n  error: 'Bad Request',\n  statusCode: 400\n}\n404 { message: 'User not found', error: 'Not Found', statusCode: 404 }"
+        },
+        {
+          "case": "controllers-invalid-fields",
+          "output": "201 { id: 1, name: 'Ada', email: 'ada@example.test' }\ninvalid-body 400\ninvalid-body 400\n200 { id: 1, name: 'Ada', email: 'ada@example.test' }\n400 {\n  message: 'Validation failed (numeric string is expected)',\n  error: 'Bad Request',\n  statusCode: 400\n}\n404 { message: 'User not found', error: 'Not Found', statusCode: 404 }"
+        },
+        {
+          "case": "provider-alias",
+          "output": "true\nHello, Ada\nnull"
+        },
+        {
+          "case": "provider-class-registration",
+          "output": "false\nHello, Ada\nnull"
+        },
+        {
+          "case": "contexts",
+          "output": "true false clinic-a clinic-b"
+        },
+        {
+          "case": "modules",
+          "output": "true false"
+        },
+        {
+          "case": "module-missing-export",
+          "output": "missing-export rejected"
+        }
+      ]
+    },
+    "lhci-results.json": {
+      "cli": "0.15.1",
+      "lighthouse": "12.6.1",
+      "browser": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36",
+      "successfulAutorunExit": 0,
+      "deliberateZeroLcpAssertionExit": 1,
+      "runs": [
+        {
+          "lcp": 206.88600000000002,
+          "cls": 0,
+          "performance": 1
+        },
+        {
+          "lcp": 202.42899999999997,
+          "cls": 0,
+          "performance": 1
+        },
+        {
+          "lcp": 202.96300000000002,
+          "cls": 0,
+          "performance": 1
+        }
+      ],
+      "localExportReports": 3
+    },
+    "performance-api-results.json": {
+      "browser": "153.0.8010.12",
+      "result": {
+        "nav": {
+          "ttfb": 4.199999928474426,
+          "requestWait": 0.6999999284744263,
+          "dns": 0.30000007152557373,
+          "connection": 0.2999999523162842,
+          "tls": null,
+          "domInteractive": 17.199999928474426,
+          "load": 17.799999952316284
+        },
+        "values": [
+          "A",
+          "B"
+        ],
+        "caught": true,
+        "retained": 7,
+        "reports": [
+          {
+            "label": "same",
+            "duration": 0
+          },
+          {
+            "label": "same",
+            "duration": 0.10000002384185791
+          }
+        ],
+        "ownedMarks": 0,
+        "ownedMeasures": 0,
+        "resourceObserved": true,
+        "disconnected": true
+      }
+    },
+    "rum-results.json": {
+      "browser": "153.0.8010.12",
+      "runtime": "v23.7.0",
+      "checks": [
+        "snapshot replacement and duplicate/out-of-order identity",
+        "invalid/oversized receiving inputs",
+        "new-identity capacity rejection while existing updates remain possible",
+        "actual same-origin Chromium JSON beacon and latest snapshot",
+        "queue-refused fetch fallback and unsampled no report"
+      ],
+      "limits": [
+        "manual metric fixtures; browser web-vitals collectors not executed",
+        "memory fixture only; no durability, complete coverage or production inference"
+      ]
+    },
+    "load-results.json": [
+      {
+        "fixture": "correct",
+        "exit_code": 0,
+        "response_samples": 10,
+        "semantic_failure_rate": 0.0
+      },
+      {
+        "fixture": "wrong-price",
+        "exit_code": 99,
+        "response_samples": 10,
+        "semantic_failure_rate": 1.0
+      }
+    ],
+    "incident-sql-results.json": {
+      "runtime": "PostgreSQL 16.15, isolated Unix socket cluster, no TCP listener",
+      "result": "Three authored read-only diagnostics executed; max_connections=100 and current client activity visible. No production mitigation/integration claimed."
+    },
+    "performance-final-results.json": {
+      "outcomes": [
+        {
+          "name": "layout fixture geometry and repeated targets",
+          "result": "pass",
+          "limit": "No fixed speedup or exact layout-event count asserted"
+        },
+        {
+          "name": "strict TSX and React mount/update callback in Chromium",
+          "result": "pass",
+          "limit": "Development build; no production timing claim"
+        },
+        {
+          "name": "eager/lazy real build, deferred fetch, rejected chunk recovery and export retention",
+          "result": "pass",
+          "esbuild": "0.28.2"
+        },
+        {
+          "name": "protocol observer navigation/resource reporting and owned disconnect",
+          "result": "pass",
+          "limit": "Loopback HTTP/1.1 only; no HTTP/3 edge, packet-loss, replay or migration integration"
+        },
+        {
+          "name": "budget exact-boundary pass, aggregate/individual breaches, absent/duplicate inputs and invalid limits",
+          "result": "pass",
+          "cases": 7
+        }
+      ]
+    },
+    "sse-results.json": {
+      "outcomes": [
+        "native EventSource first snapshot, publication, automatic reconnect and Last-Event-ID replay",
+        "application rejects older/duplicate display update",
+        "explicit stop closes connection, clears registry and suppresses automatic retry",
+        "replay order, bounded history gap reset, malformed/future/unsafe cursor rejection",
+        "invalid payload closes source and releases server registry",
+        "producer finite-value validation"
+      ],
+      "limits": [
+        "Loopback single-process in-memory history only",
+        "No durable log, authentication/revocation, proxy/compression or measured slow-consumer integration",
+        "No fixed transport throughput/latency claims"
+      ]
+    },
+    "websocket-results.json": {
+      "outcomes": [
+        "real Chromium connect/echo safe text rendering, disconnect, re-open and registry cleanup",
+        "real ws invalid JSON/schema/binary and oversized-message close codes",
+        "per-connection fixed-window message rate rejection",
+        "pre-upgrade origin rejection"
+      ],
+      "ws": "8.22.0",
+      "limits": [
+        "No authentication/revocation, durable effects, broker/replay or production-TLS integration",
+        "Heartbeat and buffered-byte policies source reviewed; no long-wait or measured slow-consumer integration"
+      ]
+    },
+    "new-performance-citations.json": [
+      {
+        "url": "https://developer.chrome.com/docs/devtools/memory-problems",
+        "probe": [
+          "LIVE",
+          "HTTP 200"
+        ]
+      },
+      {
+        "url": "https://developer.chrome.com/docs/devtools/performance/reference/",
+        "probe": [
+          "LIVE",
+          "HTTP 200"
+        ]
+      },
+      {
+        "url": "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/nextHopProtocol",
+        "probe": [
+          "LIVE",
+          "HTTP 200"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#metafile",
+        "probe": [
+          "LIVE",
+          "HTTP 200"
+        ]
+      },
+      {
+        "url": "https://nginx.org/en/docs/http/ngx_http_v3_module.html",
+        "probe": [
+          "LIVE",
+          "HTTP 200"
+        ]
+      },
+      {
+        "url": "https://react.dev/reference/react/Profiler",
+        "probe": [
+          "LIVE",
+          "HTTP 200"
+        ]
+      }
+    ],
+    "backend-nest-lifecycle-results.json": {
+      "runtime": "Node23.7; Nest11.2.7; TypeScript strict compiler; actualisolatedlocalHTTP and RxJS",
+      "results": [
+        {
+          "case": "middleware-terminal",
+          "output": "200 { requestId: '4554cf20-8f05-42cf-bbbe-88737e89b384' }\n[ 'identified', 'handler', 'finished' ]"
+        },
+        {
+          "case": "middleware-disconnect",
+          "output": "200 { requestId: 'c39bcda3-aa55-4aed-b347-d059b0c2c53d' }\n[ 'identified', 'handler', 'finished', 'identified', 'closed' ]"
+        },
+        {
+          "case": "guards-registration",
+          "output": "200\n401\n403\n200\n200"
+        },
+        {
+          "case": "pipe-absence-valid-malformed",
+          "output": "accepted 10\naccepted 25\nrejected 400\nrejected 400\nrejected 400\nrejected 400"
+        },
+        {
+          "case": "interceptor-nesting",
+          "output": "3\n[\n  'outer:before',\n  'inner:before',\n  'handler',\n  'inner:map',\n  'outer:map',\n  'inner:finalize',\n  'outer:finalize'\n]"
+        },
+        {
+          "case": "timeout-observation-not-cancellation",
+          "output": "stopped waiting\n1"
+        },
+        {
+          "case": "filter-safe-public-errors",
+          "output": "404 { statusCode: 404, message: 'Not found' }\n400 { statusCode: 400, message: 'Invalid request' }\n500 { statusCode: 500, message: 'Internal server error' }"
+        },
+        {
+          "case": "filter-local-selection",
+          "output": "409 { scope: 'local' }\n400 { statusCode: 400, message: 'Invalid request' }\n500 { statusCode: 500, message: 'Internal server error' }"
+        },
+        {
+          "case": "ALS-interleaving-retained-timer-required-context",
+          "output": "[ 'clinic-a', 'clinic-b' ]\nclinic-a\nundefined\nVerified operation context required"
+        },
+        {
+          "case": "ALS-observable-subscription-boundary",
+          "output": "undefined clinic-a"
+        }
+      ]
+    },
+    "checkpoint-citations.json": [
+      {
+        "url": "https://developer.chrome.com/docs/devtools/memory-problems",
+        "probe": [
+          "LIVE",
+          "HTTP 200"
+        ]
+      },
+      {
+        "url": "https://developer.chrome.com/docs/devtools/performance/reference/",
+        "probe": [
+          "LIVE",
+          "HTTP 200"
+        ]
+      },
+      {
+        "url": "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/nextHopProtocol",
+        "probe": [
+          "LIVE",
+          "HTTP 200"
+        ]
+      },
+      {
+        "url": "https://docs.kurrent.io/",
+        "probe": [
+          "LIVE",
+          "HTTP 200"
+        ]
+      },
+      {
+        "url": "https://docs.nestjs.com/faq/raw-body",
+        "probe": [
+          "LIVE",
+          "HTTP 200"
+        ]
+      },
+      {
+        "url": "https://docs.nestjs.com/graphql/other-features",
+        "probe": [
+          "LIVE",
+          "HTTP 200"
+        ]
+      },
+      {
+        "url": "https://docs.nestjs.com/microservices/exception-filters",
+        "probe": [
+          "LIVE",
+          "HTTP 200"
+        ]
+      },
+      {
+        "url": "https://docs.nestjs.com/recipes/async-local-storage",
+        "probe": [
+          "LIVE",
+          "HTTP 200"
+        ]
+      },
+      {
+        "url": "https://docs.nestjs.com/techniques/performance",
+        "probe": [
+          "LIVE",
+          "HTTP 200"
+        ]
+      },
+      {
+        "url": "https://docs.nestjs.com/techniques/serialization",
+        "probe": [
+          "LIVE",
+          "HTTP 200"
+        ]
+      },
+      {
+        "url": "https://esbuild.github.io/api/#metafile",
+        "probe": [
+          "LIVE",
+          "HTTP 200"
+        ]
+      },
+      {
+        "url": "https://nginx.org/en/docs/http/ngx_http_v3_module.html",
+        "probe": [
+          "LIVE",
+          "HTTP 200"
+        ]
+      },
+      {
+        "url": "https://react.dev/reference/react/Profiler",
+        "probe": [
+          "LIVE",
+          "HTTP 200"
+        ]
+      },
+      {
+        "url": "https://rxjs.dev/api/operators/timeout",
+        "probe": [
+          "LIVE",
+          "HTTP 200"
+        ]
+      },
+      {
+        "url": "https://www.rfc-editor.org/rfc/rfc6455.html",
+        "probe": [
+          "LIVE",
+          "HTTP 200"
+        ]
+      },
+      {
+        "url": "https://www.typescriptlang.org/docs/handbook/modules/reference.html",
+        "probe": [
+          "LIVE",
+          "HTTP 200"
+        ]
+      },
+      {
+        "url": "https://zod.dev/v4/changelog",
+        "probe": [
+          "LIVE",
+          "HTTP 200"
+        ]
+      }
+    ],
+    "expanded-reader-results.json": {
+      "browser": "153.0.8010.12",
+      "checks": [
+        {
+          "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.html",
+          "theme": "light",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.html",
+          "theme": "light",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.html",
+          "theme": "light",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.html",
+          "theme": "dark",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.html",
+          "theme": "dark",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.html",
+          "theme": "dark",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.html",
+          "theme": "light",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.html",
+          "theme": "light",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.html",
+          "theme": "light",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.html",
+          "theme": "dark",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.html",
+          "theme": "dark",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.html",
+          "theme": "dark",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.01-bundle-analysis.html",
+          "theme": "light",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.01-bundle-analysis.html",
+          "theme": "light",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.01-bundle-analysis.html",
+          "theme": "light",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.01-bundle-analysis.html",
+          "theme": "dark",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.01-bundle-analysis.html",
+          "theme": "dark",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.01-bundle-analysis.html",
+          "theme": "dark",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.02-performance-budgets.html",
+          "theme": "light",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.02-performance-budgets.html",
+          "theme": "light",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.02-performance-budgets.html",
+          "theme": "light",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.02-performance-budgets.html",
+          "theme": "dark",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.02-performance-budgets.html",
+          "theme": "dark",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.02-performance-budgets.html",
+          "theme": "dark",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.html",
+          "theme": "light",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.html",
+          "theme": "light",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.html",
+          "theme": "light",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.html",
+          "theme": "dark",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.html",
+          "theme": "dark",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.html",
+          "theme": "dark",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "60-realtime/60.1-websockets/01-transports/60.1.1.02-server-sent-events.html",
+          "theme": "light",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "60-realtime/60.1-websockets/01-transports/60.1.1.02-server-sent-events.html",
+          "theme": "light",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "60-realtime/60.1-websockets/01-transports/60.1.1.02-server-sent-events.html",
+          "theme": "light",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "60-realtime/60.1-websockets/01-transports/60.1.1.02-server-sent-events.html",
+          "theme": "dark",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "60-realtime/60.1-websockets/01-transports/60.1.1.02-server-sent-events.html",
+          "theme": "dark",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "60-realtime/60.1-websockets/01-transports/60.1.1.02-server-sent-events.html",
+          "theme": "dark",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.02-aria.html",
+          "theme": "light",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.02-aria.html",
+          "theme": "light",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.02-aria.html",
+          "theme": "light",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.02-aria.html",
+          "theme": "dark",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.02-aria.html",
+          "theme": "dark",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.02-aria.html",
+          "theme": "dark",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.03-keyboard-navigation.html",
+          "theme": "light",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.03-keyboard-navigation.html",
+          "theme": "light",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.03-keyboard-navigation.html",
+          "theme": "light",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.03-keyboard-navigation.html",
+          "theme": "dark",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.03-keyboard-navigation.html",
+          "theme": "dark",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.03-keyboard-navigation.html",
+          "theme": "dark",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.05-forms-and-labels.html",
+          "theme": "light",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.05-forms-and-labels.html",
+          "theme": "light",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.05-forms-and-labels.html",
+          "theme": "light",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.05-forms-and-labels.html",
+          "theme": "dark",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.05-forms-and-labels.html",
+          "theme": "dark",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.05-forms-and-labels.html",
+          "theme": "dark",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.html",
+          "theme": "light",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.html",
+          "theme": "light",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.html",
+          "theme": "light",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.html",
+          "theme": "dark",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.html",
+          "theme": "dark",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.html",
+          "theme": "dark",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.07-accessibility-design-systems.html",
+          "theme": "light",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.07-accessibility-design-systems.html",
+          "theme": "light",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.07-accessibility-design-systems.html",
+          "theme": "light",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.07-accessibility-design-systems.html",
+          "theme": "dark",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.07-accessibility-design-systems.html",
+          "theme": "dark",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.07-accessibility-design-systems.html",
+          "theme": "dark",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.08-testing-a11y.html",
+          "theme": "light",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.08-testing-a11y.html",
+          "theme": "light",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.08-testing-a11y.html",
+          "theme": "light",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.08-testing-a11y.html",
+          "theme": "dark",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.08-testing-a11y.html",
+          "theme": "dark",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.08-testing-a11y.html",
+          "theme": "dark",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/01-core-metrics/50.3.1.01-core-web-vitals.html",
+          "theme": "light",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/01-core-metrics/50.3.1.01-core-web-vitals.html",
+          "theme": "light",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/01-core-metrics/50.3.1.01-core-web-vitals.html",
+          "theme": "light",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/01-core-metrics/50.3.1.01-core-web-vitals.html",
+          "theme": "dark",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/01-core-metrics/50.3.1.01-core-web-vitals.html",
+          "theme": "dark",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/01-core-metrics/50.3.1.01-core-web-vitals.html",
+          "theme": "dark",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.03-lighthouse-ci.html",
+          "theme": "light",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.03-lighthouse-ci.html",
+          "theme": "light",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.03-lighthouse-ci.html",
+          "theme": "light",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.03-lighthouse-ci.html",
+          "theme": "dark",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.03-lighthouse-ci.html",
+          "theme": "dark",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.03-lighthouse-ci.html",
+          "theme": "dark",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.04-real-user-monitoring.html",
+          "theme": "light",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.04-real-user-monitoring.html",
+          "theme": "light",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.04-real-user-monitoring.html",
+          "theme": "light",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.04-real-user-monitoring.html",
+          "theme": "dark",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.04-real-user-monitoring.html",
+          "theme": "dark",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.04-real-user-monitoring.html",
+          "theme": "dark",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "20-backend/20.2-nestjs/01-core-architecture/20.2.1.04-dependency-injection.html",
+          "theme": "light",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "20-backend/20.2-nestjs/01-core-architecture/20.2.1.04-dependency-injection.html",
+          "theme": "light",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "20-backend/20.2-nestjs/01-core-architecture/20.2.1.04-dependency-injection.html",
+          "theme": "light",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "20-backend/20.2-nestjs/01-core-architecture/20.2.1.04-dependency-injection.html",
+          "theme": "dark",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "20-backend/20.2-nestjs/01-core-architecture/20.2.1.04-dependency-injection.html",
+          "theme": "dark",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "20-backend/20.2-nestjs/01-core-architecture/20.2.1.04-dependency-injection.html",
+          "theme": "dark",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        }
+      ]
+    }
+  },
+  "new_primary_citation_probes": [
+    {
+      "url": "https://chaos-mesh.org/docs/define-scheduling-rules/",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://docs.locust.io/en/stable/",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://docs.nestjs.com/fundamentals/async-providers",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://docs.nestjs.com/fundamentals/module-ref",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://docs.nestjs.com/openapi/mapped-types",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://docs.nestjs.com/techniques/file-upload",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://docs.nestjs.com/techniques/server-sent-events",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://docs.opensearch.org/latest/api-reference/document-apis/bulk/",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://docs.opensearch.org/latest/api-reference/document-apis/index-document/",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://docs.pact.io/getting_started/how_pact_works",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://fast-check.dev/docs/core-blocks/properties/",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://fastify.dev/docs/latest/Reference/Errors/",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://github.com/recharts/recharts/blob/main/storybook/stories/API/Accessibility.mdx",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://grafana.com/docs/k6/latest/using-k6/thresholds/",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://html.spec.whatwg.org/multipage/structured-data.html#structured-cloning",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://jestjs.io/docs/snapshot-testing",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://martinfowler.com/bliki/ObjectMother.html",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://nodejs.org/api/esm.html#urls",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://playwright.dev/docs/accessibility-testing",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://playwright.dev/docs/test-retries",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://sre.google/sre-book/evolving-sre-engagement-model/",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://stately.ai/docs/persistence",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://tc39.es/ecma262/multipage/control-abstraction-objects.html#sec-generator-objects",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.highcharts.com/docs/export-module/export-module-overview",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.highcharts.com/docs/getting-started/version-12",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.meilisearch.com/docs/capabilities/indexing/tasks_and_batches/async_operations",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.postgresql.org/docs/16/datatype-json.html",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.postgresql.org/docs/16/ddl-constraints.html",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.postgresql.org/docs/16/functions-json.html",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.postgresql.org/docs/16/functions-window.html",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.postgresql.org/docs/16/indexes-index-only-scans.html",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.postgresql.org/docs/16/indexes-partial.html",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.postgresql.org/docs/16/indexes-types.html",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.postgresql.org/docs/16/planner-stats.html",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.postgresql.org/docs/16/runtime-config-resource.html",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.postgresql.org/docs/16/sql-explain.html",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.postgresql.org/docs/16/sql-expressions.html#SYNTAX-WINDOW-FUNCTIONS",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.postgresql.org/docs/16/storage-hot.html",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.postgresql.org/docs/16/textsearch-controls.html",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.postgresql.org/docs/16/textsearch-intro.html",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.postgresql.org/docs/16/tutorial-window.html",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.postgresql.org/docs/16/using-explain.html",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.radix-ui.com/primitives/docs/components/dialog",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.typescriptlang.org/docs/handbook/2/classes.html#this-types",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-0.html#decorators",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-4.html#the-noinfer-utility-type",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-6-0.html",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.typescriptlang.org/tsconfig/paths.html",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.w3.org/TR/WCAG22/#dfn-contrast-ratio",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.w3.org/TR/WCAG22/#dfn-relative-luminance",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.w3.org/TR/WCAG22/#wcag-2-layers-of-guidance",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/tabs/",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.w3.org/WAI/ARIA/apg/practices/landmark-regions/",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.w3.org/WAI/ARIA/apg/practices/names-and-descriptions/",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.w3.org/WAI/ARIA/apg/practices/read-me-first/",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/conformance.html",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/intro#understanding-the-four-principles-of-accessibility",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.w3.org/WAI/media/av/",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.w3.org/WAI/standards-guidelines/wcag/",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.w3.org/WAI/test-evaluate/",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.w3.org/WAI/tutorials/forms/grouping/",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.w3.org/WAI/tutorials/forms/labels/",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.w3.org/WAI/tutorials/forms/notifications/",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://www.w3.org/WAI/tutorials/images/decision-tree/",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://developer.chrome.com/blog/lighthouse-10-0/",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/configuration.md",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/getting-started.md",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://web.dev/articles/inp",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://web.dev/articles/lcp",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    },
+    {
+      "url": "https://developer.chrome.com/docs/crux/methodology",
+      "status": "LIVE",
+      "detail": "HTTP 200"
+    }
+  ],
+  "theme_transition_regression": {
+    "before": "Normal-motion resize: theme control right=349 vs menu left=313, hit=false; header stays light while dark surface is selected.",
+    "change": "Header palette switches without fading; theme button animates transform only, leaving breakpoint margins/size immediate.",
+    "after": "Rebuilt-site normal-motion checks pass: immediate reachable mobile hit target, header surface matching selected palette and title contrast at least 4.5:1."
+  },
+  "expanded_reader": {
+    "browser": "153.0.8010.12",
+    "checks": [
+      {
+        "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.html",
+        "theme": "light",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.html",
+        "theme": "light",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.html",
+        "theme": "light",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.html",
+        "theme": "dark",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.html",
+        "theme": "dark",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.html",
+        "theme": "dark",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.html",
+        "theme": "light",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.html",
+        "theme": "light",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.html",
+        "theme": "light",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.html",
+        "theme": "dark",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.html",
+        "theme": "dark",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.html",
+        "theme": "dark",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.01-bundle-analysis.html",
+        "theme": "light",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.01-bundle-analysis.html",
+        "theme": "light",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.01-bundle-analysis.html",
+        "theme": "light",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.01-bundle-analysis.html",
+        "theme": "dark",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.01-bundle-analysis.html",
+        "theme": "dark",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.01-bundle-analysis.html",
+        "theme": "dark",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.02-performance-budgets.html",
+        "theme": "light",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.02-performance-budgets.html",
+        "theme": "light",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.02-performance-budgets.html",
+        "theme": "light",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.02-performance-budgets.html",
+        "theme": "dark",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.02-performance-budgets.html",
+        "theme": "dark",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.02-performance-budgets.html",
+        "theme": "dark",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.html",
+        "theme": "light",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.html",
+        "theme": "light",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.html",
+        "theme": "light",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.html",
+        "theme": "dark",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.html",
+        "theme": "dark",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.html",
+        "theme": "dark",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "60-realtime/60.1-websockets/01-transports/60.1.1.02-server-sent-events.html",
+        "theme": "light",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "60-realtime/60.1-websockets/01-transports/60.1.1.02-server-sent-events.html",
+        "theme": "light",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "60-realtime/60.1-websockets/01-transports/60.1.1.02-server-sent-events.html",
+        "theme": "light",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "60-realtime/60.1-websockets/01-transports/60.1.1.02-server-sent-events.html",
+        "theme": "dark",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "60-realtime/60.1-websockets/01-transports/60.1.1.02-server-sent-events.html",
+        "theme": "dark",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "60-realtime/60.1-websockets/01-transports/60.1.1.02-server-sent-events.html",
+        "theme": "dark",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.02-aria.html",
+        "theme": "light",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.02-aria.html",
+        "theme": "light",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.02-aria.html",
+        "theme": "light",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.02-aria.html",
+        "theme": "dark",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.02-aria.html",
+        "theme": "dark",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.02-aria.html",
+        "theme": "dark",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.03-keyboard-navigation.html",
+        "theme": "light",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.03-keyboard-navigation.html",
+        "theme": "light",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.03-keyboard-navigation.html",
+        "theme": "light",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.03-keyboard-navigation.html",
+        "theme": "dark",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.03-keyboard-navigation.html",
+        "theme": "dark",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.03-keyboard-navigation.html",
+        "theme": "dark",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.05-forms-and-labels.html",
+        "theme": "light",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.05-forms-and-labels.html",
+        "theme": "light",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.05-forms-and-labels.html",
+        "theme": "light",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.05-forms-and-labels.html",
+        "theme": "dark",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.05-forms-and-labels.html",
+        "theme": "dark",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.05-forms-and-labels.html",
+        "theme": "dark",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.html",
+        "theme": "light",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.html",
+        "theme": "light",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.html",
+        "theme": "light",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.html",
+        "theme": "dark",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.html",
+        "theme": "dark",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.html",
+        "theme": "dark",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.07-accessibility-design-systems.html",
+        "theme": "light",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.07-accessibility-design-systems.html",
+        "theme": "light",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.07-accessibility-design-systems.html",
+        "theme": "light",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.07-accessibility-design-systems.html",
+        "theme": "dark",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.07-accessibility-design-systems.html",
+        "theme": "dark",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.07-accessibility-design-systems.html",
+        "theme": "dark",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.08-testing-a11y.html",
+        "theme": "light",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.08-testing-a11y.html",
+        "theme": "light",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.08-testing-a11y.html",
+        "theme": "light",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.08-testing-a11y.html",
+        "theme": "dark",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.08-testing-a11y.html",
+        "theme": "dark",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.2-accessibility/50.2.08-testing-a11y.html",
+        "theme": "dark",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/01-core-metrics/50.3.1.01-core-web-vitals.html",
+        "theme": "light",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/01-core-metrics/50.3.1.01-core-web-vitals.html",
+        "theme": "light",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/01-core-metrics/50.3.1.01-core-web-vitals.html",
+        "theme": "light",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/01-core-metrics/50.3.1.01-core-web-vitals.html",
+        "theme": "dark",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/01-core-metrics/50.3.1.01-core-web-vitals.html",
+        "theme": "dark",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/01-core-metrics/50.3.1.01-core-web-vitals.html",
+        "theme": "dark",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.03-lighthouse-ci.html",
+        "theme": "light",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.03-lighthouse-ci.html",
+        "theme": "light",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.03-lighthouse-ci.html",
+        "theme": "light",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.03-lighthouse-ci.html",
+        "theme": "dark",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.03-lighthouse-ci.html",
+        "theme": "dark",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.03-lighthouse-ci.html",
+        "theme": "dark",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.04-real-user-monitoring.html",
+        "theme": "light",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.04-real-user-monitoring.html",
+        "theme": "light",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.04-real-user-monitoring.html",
+        "theme": "light",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.04-real-user-monitoring.html",
+        "theme": "dark",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.04-real-user-monitoring.html",
+        "theme": "dark",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.04-real-user-monitoring.html",
+        "theme": "dark",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "20-backend/20.2-nestjs/01-core-architecture/20.2.1.04-dependency-injection.html",
+        "theme": "light",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "20-backend/20.2-nestjs/01-core-architecture/20.2.1.04-dependency-injection.html",
+        "theme": "light",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "20-backend/20.2-nestjs/01-core-architecture/20.2.1.04-dependency-injection.html",
+        "theme": "light",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "20-backend/20.2-nestjs/01-core-architecture/20.2.1.04-dependency-injection.html",
+        "theme": "dark",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "20-backend/20.2-nestjs/01-core-architecture/20.2.1.04-dependency-injection.html",
+        "theme": "dark",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "20-backend/20.2-nestjs/01-core-architecture/20.2.1.04-dependency-injection.html",
+        "theme": "dark",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      }
+    ]
+  },
+  "site_build": {
+    "compiler": "Jekyll 3.9.0 via Ruby3.1",
+    "result": "success",
+    "liquid_warnings": false,
+    "private_paths_excluded": true,
+    "local_preview": "/tmp/bible-review-site",
+    "case_insensitive_homepage": "home-preview.html rendered separately from source index.html"
+  },
+  "browser_suites": {
+    "reader": "PASS: chapter outline, keyboard destination, system/explicit themes, text and syntax contrast, mobile width, persisted toggle.",
+    "navigation": "PASS: navigation titles, responsive layout, separate mobile header targets, opened menus, table/hover and homepage contrast, and copied text.",
+    "read_aloud": "PASS: rendered chapter controls, pause/resume/stop, extraction order, mobile width, speed, departure cancellation, unsupported browser."
+  },
+  "limits": [
+    "Read-aloud scheduling is exercised with controlled speech mocks, not actual voice quality.",
+    "Semantic review remains incomplete; no production or assistive technology integration is inferred from fixture results."
+  ],
+  "repository_gates": {
+    "command": "bash scripts/verify.sh",
+    "exit_code": 0,
+    "gate_count": 30,
+    "freshness_rules": 32,
+    "gate_defect_clean_cases": 79,
+    "internal_links": 9797,
+    "verified_anchors": 183,
+    "broken_links": 0,
+    "final_diff_whitespace": "git diff --check passed"
+  }
+}

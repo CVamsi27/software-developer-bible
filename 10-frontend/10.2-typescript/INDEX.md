@@ -1,6 +1,6 @@
 # TypeScript — Index
 
-> **Study time:** ≈ 5 h 32 m of reading (22 files, ~15 min average).
+> **Study time:** ≈ 5 h 34 m of reading (22 files, ~15 min average).
 > **22 files** — TypeScript type system mastery from basic types to branded types, template literals, declaration files, advanced generics, variance, decorators, the `satisfies` operator, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-22-blue)](../../INDEX.md)
@@ -27,7 +27,9 @@ The 18 files are organized into 5 category folders — read in order.
 
 ## Study Flow
 
-Read categories in numeric order — each builds on the previous:
+Read categories in numeric order. First explain which shapes are compatible and how a checked branch narrows unknown input. Then carry an input/output relationship through generics, compare assignability under variance, and derive new records or string grammars with transformations.
+
+In Advanced Patterns, follow validated constructors, decorator phases and separate runtime/declaration exports before combining them in a typed event bus. After each category, complete its separate revision companion; finish with the interview bank and change one condition per answer.
 
 ```text
 01-foundations ─▶ 02-generics-and-inference ─▶ 03-type-transformations
@@ -42,10 +44,10 @@ How TypeScript represents types.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Types vs Interfaces](01-foundations/10.2.1.01-types-vs-interfaces.md) | Type aliases, interfaces, declaration merging, when to use each, performance | Essential | 7 min | 7 min |
-| 02 | [keyof / typeof](01-foundations/10.2.1.02-keyof-typeof.md) | Index type queries, typeof operator, enum types, indexed access types | Essential | 15 min | 16 min |
-| 03 | [Type Narrowing](01-foundations/10.2.1.03-type-narrowing.md) | typeof guards, instanceof, discriminated unions, type predicates, control flow analysis | Essential | 18 min | 18 min |
-| 04 | [tsconfig & Compiler Options](01-foundations/10.2.1.04-tsconfig-compiler-options.md) | strict flag family, moduleResolution bundler/node16/nodenext, isolatedModules, incremental/composite, skipLibCheck, annotated senior tsconfig | Essential | 13 min | 14 min |
+| 01 | [Types vs Interfaces](01-foundations/10.2.1.01-types-vs-interfaces.md) | Type aliases, interfaces, declaration merging, when to use each, performance | Essential | Foundational | 7 min |
+| 02 | [keyof / typeof](01-foundations/10.2.1.02-keyof-typeof.md) | Index type queries, typeof operator, enum types, indexed access types | Essential | Foundational | 16 min |
+| 03 | [Type Narrowing](01-foundations/10.2.1.03-type-narrowing.md) | typeof guards, instanceof, discriminated unions, type predicates, control flow analysis | Essential | Foundational | 18 min |
+| 04 | [tsconfig & Compiler Options](01-foundations/10.2.1.04-tsconfig-compiler-options.md) | strict flag family, moduleResolution bundler/node16/nodenext, isolatedModules, incremental/composite, skipLibCheck, annotated senior tsconfig | Essential | Foundational | 15 min |
 
 ---
 
@@ -55,10 +57,10 @@ Reusable type operations.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 05 | [Generics](02-generics-and-inference/10.2.2.01-generics.md) | Generic functions, constraints, default type parameters, conditional generics | Essential | 15 min | 15 min |
-| 06 | [Infer](02-generics-and-inference/10.2.2.02-infer.md) | Type inference in conditional types, `ReturnType`, `Parameters`, `Awaited`, custom utility types | Important | 13 min | 13 min |
-| 07 | [Advanced Generics](02-generics-and-inference/10.2.2.03-advanced-generics.md) | Template literal types, variadic tuples, recursive types, builder patterns | Important | 19 min | 20 min |
-| 08 | [Type Variance](02-generics-and-inference/10.2.2.04-type-variance.md) | Covariance/contravariance/invariance, strictFunctionTypes bivariance, unsound covariant arrays, in/out annotations, assignability puzzles | Important | 13 min | 14 min |
+| 05 | [Generics](02-generics-and-inference/10.2.2.01-generics.md) | Generic functions, constraints, default type parameters, conditional generics | Essential | Foundational | 13 min |
+| 06 | [Infer](02-generics-and-inference/10.2.2.02-infer.md) | Type inference in conditional types, `ReturnType`, `Parameters`, `Awaited`, custom utility types | Important | Specialized | 13 min |
+| 07 | [Advanced Generics](02-generics-and-inference/10.2.2.03-advanced-generics.md) | Template literal types, variadic tuples, recursive types, builder patterns | Important | Specialized | 18 min |
+| 08 | [Type Variance](02-generics-and-inference/10.2.2.04-type-variance.md) | Covariance/contravariance/invariance, strictFunctionTypes bivariance, unsound covariant arrays, in/out annotations, assignability puzzles | Important | Specialized | 14 min |
 
 ---
 
@@ -68,10 +70,10 @@ The composable operations that make TS powerful.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 09 | [Utility Types](03-type-transformations/10.2.3.01-utility-types.md) | `Partial`, `Required`, `Pick`, `Omit`, `Record`, `Exclude`, `Extract`, `NonNullable` | Essential | 18 min | 18 min |
-| 10 | [Conditional Types](03-type-transformations/10.2.3.02-conditional-types.md) | Ternary types, distributive conditional types, `infer` keyword, `never` | Important | 11 min | 11 min |
-| 11 | [Mapped Types](03-type-transformations/10.2.3.03-mapped-types.md) | Index signatures, mapping modifiers, `as` clause, key remapping | Essential | 16 min | 17 min |
-| 12 | [Template Literal Types](03-type-transformations/10.2.3.04-template-literal-types.md) | String manipulation, infer patterns, CSS types, route builders, recursive string types | Important | 27 min | 27 min |
+| 09 | [Utility Types](03-type-transformations/10.2.3.01-utility-types.md) | `Partial`, `Required`, `Pick`, `Omit`, `Record`, `Exclude`, `Extract`, `NonNullable` | Essential | Foundational | 18 min |
+| 10 | [Conditional Types](03-type-transformations/10.2.3.02-conditional-types.md) | Ternary types, distributive conditional types, `infer` keyword, `never` | Important | Specialized | 12 min |
+| 11 | [Mapped Types](03-type-transformations/10.2.3.03-mapped-types.md) | Index signatures, mapping modifiers, `as` clause, key remapping | Essential | Foundational | 17 min |
+| 12 | [Template Literal Types](03-type-transformations/10.2.3.04-template-literal-types.md) | String manipulation, infer patterns, CSS types, route builders, recursive string types | Important | 27 min | 26 min |
 
 ---
 
@@ -81,11 +83,11 @@ Senior-level TS — types as a design tool.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 13 | [The `satisfies` Operator](04-advanced-patterns/10.2.4.01-satisfies-operator.md) | Type validation without widening, literal preservation, config objects, route tables | Essential | 10 min | 10 min |
-| 14 | [Branded Types](04-advanced-patterns/10.2.4.02-branded-types.md) | Nominal typing, brand patterns, unit types, validation, flavoring, discriminated unions | Important | 24 min | 24 min |
-| 15 | [Decorators](04-advanced-patterns/10.2.4.03-decorators.md) | Class, method, accessor, property, parameter decorators, metadata reflection | Important | 19 min | 20 min |
-| 16 | [Declaration Files](04-advanced-patterns/10.2.4.04-declaration-files.md) | .d.ts syntax, module augmentation, global types, asset declarations, triple-slash directives | Important | 22 min | 23 min |
-| 17 | [Advanced Patterns](04-advanced-patterns/10.2.4.05-advanced-patterns.md) | Class/parameter decorators, typed event emitter, advanced utility combinations | Important | 10 min | 11 min |
+| 13 | [The `satisfies` Operator](04-advanced-patterns/10.2.4.01-satisfies-operator.md) | Type validation without widening, literal preservation, config objects, route tables | Essential | Foundational | 11 min |
+| 14 | [Branded Types](04-advanced-patterns/10.2.4.02-branded-types.md) | Nominal typing, brand patterns, unit types, validation, flavoring, discriminated unions | Important | Specialized | 26 min |
+| 15 | [Decorators](04-advanced-patterns/10.2.4.03-decorators.md) | Class, method, accessor, property, parameter decorators, metadata reflection | Important | Specialized | 19 min |
+| 16 | [Declaration Files](04-advanced-patterns/10.2.4.04-declaration-files.md) | .d.ts syntax, module augmentation, global types, asset declarations, triple-slash directives | Important | Specialized | 25 min |
+| 17 | [Advanced Patterns](04-advanced-patterns/10.2.4.05-advanced-patterns.md) | Class/parameter decorators, typed event emitter, advanced utility combinations | Important | Specialized | 11 min |
 
 ---
 
@@ -93,7 +95,7 @@ Senior-level TS — types as a design tool.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 18 | [Interview Questions](05-interview-prep/10.2.5.01-interview-questions.md) | 50+ curated questions with answers | Essential | 39 min | 39 min |
+| 18 | [Interview Questions](05-interview-prep/10.2.5.01-interview-questions.md) | 50+ curated questions with answers | Essential | Foundational | 38 min |
 
 ---
 
@@ -107,23 +109,11 @@ Senior-level TS — types as a design tool.
 
 ---
 
-## The Senior Pattern
+## Check a Type Against its Runtime Promise
 
-```typescript
-// TypeScript lets you model "this is a validated email" not just "this is a string"
-type Email = string & { readonly __brand: 'Email' };
+An Email brand records construction discipline; only its constructor validates the string. A route type derives parameter names; only the router or builder implements the matching grammar. A declaration describes an exported function; only its JavaScript supplies the behavior. Explain those connections before adding a more complicated type.
 
-// TypeScript lets you make a function that only accepts valid routes
-type Route = `/${string}`;
-const go = (route: Route) => { /* ... */ };
-
-// TypeScript lets you infer the return type of an async function
-type AsyncReturn<T> = T extends Promise<infer R> ? R : never;
-```
-
-If you can read and write these patterns cold, you are ready for any senior TS interview.
-
----
+For each learning pass, predict one accepted call, one rejected call and one runtime boundary. The category revision companions check those distinctions before [interview practice](05-interview-prep/10.2.5.01-interview-questions.md).
 
 ## Cross-References
 

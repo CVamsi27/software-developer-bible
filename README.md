@@ -10,7 +10,7 @@ permalink: /README.html
 
 [![Lanes](https://img.shields.io/badge/lanes-2-blue)](lanes/INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](INDEX.md)
-[![Files](https://img.shields.io/badge/files-1016-orange)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-1017-orange)](INDEX.md)
 [![Search](https://img.shields.io/badge/search-try%20it-blueviolet)](search.html)
 [![API](https://img.shields.io/badge/corpus%20API-json-informational)](api/index.json)
 [![GoF Coverage](https://img.shields.io/badge/design%20patterns-23%2F23-success)](30-architecture/30.1-design-patterns/INDEX.md)
@@ -91,6 +91,8 @@ The [personal-site sync contract](docs/planner-site-sync.md) explains how to ref
 Automated gates check defined structural, link, metadata and regression rules. Passing them does not prove every technical claim or teaching explanation correct. The [corpus readability review and per-page inventory](docs/2026-10-03-readability-review.md) distinguish automated screening, close reading and remaining rewrites. Dated [health reports](docs/2026-09-19-corpus-health-report.md) describe the snapshot they measured; rerun the gates for current evidence.
 
 The latest [reading and senior interview quality review](docs/2026-10-07-reading-quality-report.md) records formal definition coverage, reader fixes, resume validation and the limits of the technical review.
+
+The ongoing [explanation-depth review](docs/2026-10-08-explanation-depth-progress.md) records which documents have completed semantic review, which remain pending and what the executed examples establish. Use that coverage when assessing readiness; repository checks alone do not establish that every explanation has been reviewed.
 
 ## Private study host and personal records
 

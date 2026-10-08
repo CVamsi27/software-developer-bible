@@ -42,7 +42,7 @@
 - [x] Explain LE/VE jobs and block transitions in execution context; cover strictness and default-parameter qualifications without universal memory-bucket claims.
 - [x] Execute the authored examples in an isolated JavaScript/browser environment: defining-scope lookup, independent closures, TDZ, block `var`/`let`, ordinary/arrow ownership, classic-script globals, module live imports and parameter closures.
 - [x] Review each revised chapter without its code: prose must still explain what occurs. Review code with its prose: outputs must match stated setup.
-- [ ] Update source-linked revision questions and any contradictory interview answers. Run template, alignment and internal-link checks.
+- [x] Update source-linked revision questions and any contradictory interview answers. Run template, alignment and internal-link checks.
 
 ## Task 3: Review remaining frontend
 
@@ -98,11 +98,11 @@
 **Interfaces:** Merge fragments by unique source path; pending and unresolved entries remain explicit. Verify current hashes after metadata writers without treating regeneration as a new semantic review.
 
 - [ ] Inspect worker edits and evidence; resolve cross-owner contract changes and missing dispositions. Confirm no uncovered inventory entries remain before claiming completion.
-- [ ] Probe newly introduced primary URLs, then refresh the external-link baseline with the existing workflow.
-- [ ] Run existing writers sequentially: alignment repair, read time, counts, master index. Inspect output and run `bash scripts/verify.sh`.
-- [ ] Build Jekyll, confirm private exclusions, and inspect expanded chapters at mobile/desktop widths in both themes.
-- [ ] Run the reader, navigation and read-aloud browser suites on the final rendered output; check new diagrams/tables and code captions.
-- [ ] Publish an accurate report of semantic review, runtime checks and remaining limitations. Commit/push only when separately requested or already authorized for the resulting work.
+- [x] Probe newly introduced primary URLs, then refresh the external-link baseline with the existing workflow.
+- [x] Run existing writers sequentially: alignment repair, read time, master index, counts. Inspect output and run `bash scripts/verify.sh`.
+- [x] Build Jekyll, confirm private exclusions, and inspect expanded chapters at mobile/desktop widths in both themes.
+- [x] Run the reader, navigation and read-aloud browser suites on the final rendered output; check new diagrams/tables and code captions.
+- [x] Publish an accurate report of semantic review, runtime checks and remaining limitations. Commit/push only when separately requested or already authorized for the resulting work.
 
 ## Test discipline
 

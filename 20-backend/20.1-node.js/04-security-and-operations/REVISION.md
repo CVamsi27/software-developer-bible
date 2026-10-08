@@ -66,13 +66,37 @@ Source: [Express & Fastify Internals](20.1.4.03-express-fastify-internals.md)
 
 **A:** It constrains the response path/status/schema where it is applied. Other schemas, additionalProperties, raw writes, streams and later hooks can emit different data; authorization and every response path still need review.
 
+## Request and diagnostic traces
+
+Sources: [query construction](20.1.4.01-node-security.md), [profile capture](20.1.4.02-debugging-profiling-nodejs.md), [framework factories](20.1.4.03-express-fastify-internals.md).
+
+**Q:** What query reaches MongoDB when the body says `username: 'ada'` and tries to replace the verified tenant?
+
+**A:** The explicit builder uses the separately supplied tenant and string username. An operator object instead of a username throws before driver access; a valid username still needs the lookup's resource policy.
+
+**Q:** What changes when a diagnostic capture uses an existing filename?
+
+**A:** Exclusive writing rejects with EEXIST and preserves the old profile. Sampling and disconnect still have owned cleanup; a successful new file is stack evidence, not proof of a latency improvement.
+
+**Q:** Trace the Fastify fixture's health, unauthenticated order and authenticated order requests.
+
+**A:** Health returns 200 outside the admin hook. The unverified order request returns 401 before lookup. The verified admin request returns 200 after lookup and projects id/totalCents without the internal field.
+
+**Q:** What changes if an authenticated order ID is malformed or well formed but absent?
+
+**A:** The malformed ID fails schema validation with 400 before lookup; an absent valid ID reaches lookup then returns 404. A non-admin role returns 403 earlier in the hook.
+
+**Q:** Why must a custom error handler deliberately preserve parser errors?
+
+**A:** Replacing the default handler transfers response ownership to the application. Map malformed input, body limits and unsupported content types to safe 400/413/415 messages; avoid turning expected rejection into 500 or exposing arbitrary error text.
+
 ## Summary
 
 Use these prompts after the reading pass to recall the mechanism and its limits.
 
 ## See Also
 
-- [Category reading flow](INDEX.md)
+- [Category reading flow](INDEX.md) — connect receiving-API policy with diagnosis and HTTP error ownership
 
 ## References & Learn More
 

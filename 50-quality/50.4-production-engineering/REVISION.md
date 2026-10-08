@@ -16,7 +16,7 @@ Source: [Incident Response — Triage, Communication, Postmortems](50.4.01-incid
 
 **Q:** Why separate incident command from detailed debugging?
 
-**A:** The commander maintains priorities, communication, and coordination while responders investigate. One person doing all roles can lose the shared state under pressure.
+**A:** The commander maintains priorities, communication, and coordination while responders investigate. One person doing all roles can lose the shared state under pressure. Small teams may combine roles initially, then hand them off explicitly as response capacity becomes available.
 
 ## SLIs, SLOs, and Error Budgets
 
@@ -50,18 +50,6 @@ Source: [On-Call Without Burnout](50.4.05-on-call-without-burnout.md)
 
 **A:** Unnecessary interruptions degrade response and retention. Actionability, interrupt load, coverage, and recovery policy are properties of the service's operational design.
 
-## Summary
-
-Use the answers to check your reasoning, then revisit the source mechanism and reproduce any relevant example without copying it. A remembered label is useful only when you can explain its limits.
-
-## See Also
-
-- [Section learning flow](INDEX.md)
-
-## References & Learn More
-
-The source chapter links above contain the implementation examples and primary references for each prompt.
-
 ## Measurement units and release policy
 
 Source: [Learning chapter](50.4.02-sli-slo-error-budgets.md)
@@ -77,3 +65,63 @@ Source: [Learning chapter](50.4.02-sli-slo-error-budgets.md)
 **Q:** What does an empty request population tell you about compliance?
 
 **A:** No observed-population result is available. It does not prove health; measurement coverage and low-volume policy need separate treatment.
+
+## Bounded mitigation and recovery
+
+Source: [Incident Response](50.4.01-incident-response.md)
+
+**Q:** When does rolling back a binary become unsafe?
+
+**A:** When it cannot interpret the current schema, written data or changed ownership. Check those preconditions; use bounded exposure reduction or a forward repair when the old version cannot restore correct operation.
+
+**Q:** Why can terminating every idle database connection worsen a pool incident?
+
+**A:** Idle connections may be healthy reusable capacity. Broad termination causes reconnection work and can interrupt unrelated clients. Inspect the fleet, waits and transactions, then choose a specific authorized action with a stop and recovery check.
+
+## Fault expiry and the verdict
+
+Source: [Operational Chaos Engineering](50.4.03-chaos-engineering.md)
+
+**Q:** Does a runner's finally block ensure recovery after it is killed?
+
+**A:** No. The process may never execute cleanup. Fault lifetime needs an independent bound, and service recovery must be checked after removal because retries, queues and written effects can remain.
+
+**Q:** What if a game day ends before enough traffic was observed?
+
+**A:** Record an inconclusive result and its conditions. An early abort or missing telemetry is not proof that the hypothesis passed or failed.
+
+## Scoped launch approval
+
+Source: [Production Readiness Reviews](50.4.04-production-readiness-reviews.md)
+
+**Q:** Which gaps can conditional approval cover?
+
+**A:** Specific nonblocking gaps with an accepted residual risk, owner, deadline and allowed scope. A blocking recovery or access gap cannot become safe merely by changing the decision label.
+
+**Q:** Why does the sample gate compare the deployment's change identifier with the reviewed change?
+
+**A:** Evidence for one version does not automatically apply to a materially different release. Metadata checks also cannot prove that linked tests or recovery evidence are sufficient.
+
+## Shift populations and coverage
+
+Source: [On-Call Without Burnout](50.4.05-on-call-without-burnout.md)
+
+**Q:** What is wrong with calculating p90 pages per shift from one total page count?
+
+**A:** A percentile needs multiple shift observations. Include quiet shifts and define the counting unit; otherwise the population is missing or biased toward busy shifts.
+
+**Q:** Why report unacknowledged pages separately from acknowledgment latency?
+
+**A:** They have no completed acknowledgment delay. Dropping them silently makes the latency distribution look better, while treating them as zero mislabels failures as immediate success.
+
+## Summary
+
+Use the answers to check your reasoning, then revisit the source mechanism and reproduce any relevant example without copying it. A remembered label is useful only when you can explain its limits.
+
+## See Also
+
+- [Section learning flow](INDEX.md) — connect user-visible failure to budgeting, readiness and on-call recovery
+
+## References & Learn More
+
+The source chapter links above contain the implementation examples and primary references for each prompt.

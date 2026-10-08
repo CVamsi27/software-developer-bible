@@ -19,7 +19,7 @@
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
 | 01 | [Event Loop](20.1.1.01-event-loop.md) | Phases (timers, pending callbacks, idle/prepare, poll, check, close), microtasks vs macrotasks, `setImmediate` vs `nextTick`, blocking vs non-blocking | Essential | Foundational | 7 min |
-| 02 | [Web Streams & Test Runner](20.1.1.02-web-streams-and-test-runner.md) | ReadableStream/WritableStream/TransformStream (WHATWG, global in Node 18+), cross-runtime streams, `node:test`, mocking, watch mode, TAP output | Important | Important | 9 min |
+| 02 | [Web Streams & Test Runner](20.1.1.02-web-streams-and-test-runner.md) | Versioned WHATWG stream interfaces, pressure/cancellation, split-byte decoding, Node adapters, `node:test`, mocking, watch mode, TAP output | Important | Important | 9 min |
 
 ---
 
@@ -29,7 +29,7 @@
 
 ## Docita Anchor
 
-Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+The [Docita case study](../../../projects/docita/INDEX.md) provides code pointers to inspect for these mechanisms. Current pool, cancellation and operational behavior requires runtime evidence; the paths do not alone establish production guarantees.
 
 | Topic | Docita evidence |
 | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -37,7 +37,7 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Timeouts instead of blocked workers | `apps/api/src/shared/common/interceptors/timeout.interceptor.ts` - RxJS timeout bounds observable waiting; it does not preempt CPU work or necessarily cancel the underlying operation |
 | Event-loop pressure guards | `apps/api/src/shared/common/extensions/query-budget.extension.ts` - per-request Prisma query budget surfaces N+1 storms early |
 
-_Web Streams & `node:test`: no direct docita implementation yet._ Streaming lives inside libraries (PDFKit renders to a `Buffer`), and tests run on Jest (`apps/api/jest.config.ts`), not the built-in runner.
+Inspect the actual project runtime and runner configuration when using its examples. The chapter's Web Stream and node:test fixtures establish their own versioned contracts independently of a case-study implementation.
 ---
 
 [Next: I/O & Data →](../02-io-and-data/INDEX.md)

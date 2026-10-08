@@ -1,6 +1,6 @@
 # Optimization & Governance
 
-> **Study time:** ≈ 24 min of reading (3 files, ~8 min average).
+> **Study time:** ≈ 20 min of reading (3 files, ~7 min average).
 > **3 files.** Turning measurement into action: bundle analysis to find what to cut, and performance budgets so the wins survive contact with feature development.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
@@ -19,8 +19,8 @@ A page can become slower as each sprint adds more code and assets. A performance
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Bundle Analysis](50.3.3.01-bundle-analysis.md) | Bundle size, tree shaking, code splitting, bundlephobia, source-map-explorer | Important | Important | 10 min |
-| 02 | [Performance Budgets](50.3.3.02-performance-budgets.md) | `size-limit`, per-chunk budgets, CI enforcement, budgeting tiers | Important | Important | 12 min |
+| 01 | [Bundle Analysis](50.3.3.01-bundle-analysis.md) | Bundle size, tree shaking, code splitting, bundlephobia, source-map-explorer | Important | Important | 9 min |
+| 02 | [Performance Budgets](50.3.3.02-performance-budgets.md) | `size-limit`, per-chunk budgets, CI enforcement, explicit units, valid inputs and exception ownership | Important | Important | 9 min |
 
 ---
 
@@ -34,9 +34,15 @@ Measure (bundle report / RUM)
             → back to Measure
 ```
 
-Budget tiers to remember: initial JS, per-route chunks, total CSS, third-party scripts, and metric-level budgets (LCP ms) via Lighthouse CI.
+Choose independent boundaries: initial JS, per-route chunks, total CSS, third-party scripts, and metric-level budgets (LCP ms) via Lighthouse CI.
 
 ---
+
+## Learning passes
+
+1. Read bundle analysis and run the eager/lazy fixture. Explain both requested assets and export retention.
+2. Read performance budgets and test a legitimate pass, an aggregate breach and missing inputs.
+3. Close the chapters and complete [revision](REVISION.md) before the [interview bank](../04-interview-prep/50.3.4.01-interview-questions.md). State the measured boundary and its limits in each answer.
 
 ## Cross-References
 
@@ -53,7 +59,7 @@ Budget tiers to remember: initial JS, per-route chunks, total CSS, third-party s
 
 ## Docita Anchor
 
-[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
+[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at inspect these paths in the current checkout before claiming verified behavior.
 
 | Topic | Docita evidence |
 | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |

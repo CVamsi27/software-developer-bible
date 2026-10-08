@@ -26,6 +26,14 @@ Source: [Event Loop](20.1.1.01-event-loop.md)
 
 **A:** Their relative eligibility depends on runtime context and timing. Inside an I/O callback, a newly scheduled immediate precedes its newly scheduled zero-delay timer; top-level ordering has no such general guarantee.
 
+**Q:** Trace the CommonJS example from start through its file callback. Which order is promised?
+
+**A:** Initial synchronous start/end precede nextTick then the promise continuation. Inside the successful file callback, its immediate precedes its newly scheduled zero-delay timer. Moving those two registrations to top level loses that portable relative-order guarantee; moving initial code to ES module evaluation also changes the microtask context.
+
+**Q:** What changes if each slice's processItem performs one second of synchronous CPU work?
+
+**A:** The five-millisecond budget is checked between items and cannot preempt one item. That callback still blocks the loop for the item duration. Reduce individual work or use a bounded worker/process protocol; awaiting database I/O does not move that CPU work off-thread.
+
 ## Web Streams and Test Runner
 
 Source: [Web Streams and Test Runner](20.1.1.02-web-streams-and-test-runner.md)
@@ -42,13 +50,21 @@ Source: [Web Streams and Test Runner](20.1.1.02-web-streams-and-test-runner.md)
 
 **A:** No. Native execution strips supported type syntax; run an actual TypeScript checker separately and account for unsupported transformations.
 
+**Q:** In the two-chunk Web Stream fixture, what happens before the returned pipeTo promise completes?
+
+**A:** hello/world are transformed, sink writes are awaited in order, and the started generator reaches finally. The output is HELLO/WORLD with closed=true. A production sink still needs its own durable acknowledgment; an in-memory fixture is not a storage guarantee.
+
+**Q:** What changes when the sink rejects or a UTF-8 euro character crosses chunks?
+
+**A:** Default piping rejects and propagates cancellation upstream so owned resources must clean up. A streaming decoder retains the incomplete multibyte sequence and emits the correct character; independent per-chunk decoding can introduce replacement characters. Custom prevent-cancel/abort options change responsibility and need explicit cleanup.
+
 ## Summary
 
 Use these prompts after the reading pass to recall the mechanism and its limits.
 
 ## See Also
 
-- [Category reading flow](INDEX.md)
+- [Category reading flow](INDEX.md) — revisit callback scheduling before reasoning about cancellation and rejected work
 
 ## References & Learn More
 

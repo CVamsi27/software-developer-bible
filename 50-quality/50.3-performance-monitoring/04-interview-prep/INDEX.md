@@ -28,6 +28,10 @@
 
 ---
 
+## Before the bank
+
+Finish the [metric revision](../01-core-metrics/REVISION.md), [measurement revision](../02-measurement/REVISION.md) and [optimization revision](../03-optimization-and-governance/REVISION.md). Then use the bank to connect their mechanisms under one interview constraint.
+
 ## How to use it
 
 Answer out loud before reading the model answer; the debugging walkthroughs ("LCP is 4 seconds...") are judged on structured diagnosis, not memorized fixes.
@@ -49,7 +53,7 @@ Answer out loud before reading the model answer; the debugging walkthroughs ("LC
 
 ## Docita Anchor
 
-[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at story material you can cite in performance rounds.
+[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — inspect the paths below before using them as evidence; describe only work you actually performed.
 
 | Topic | Docita evidence |
 | ------------------------ | ---------------------------------------------------------------------------------------- |

@@ -1,6 +1,6 @@
 # Quality Stack
 
-> **Study time:** ≈ 8 h 42 m of reading (48 files, ~11 min average).
+> **Study time:** ≈ 5 h 56 m of reading (48 files, ~7 min average).
 > **Testing, accessibility, performance monitoring, production engineering** — the "senior judgment" stack. Shared by both lanes.
 >
 > 48 files across 4 sub-stacks.
@@ -11,23 +11,13 @@
 
 ---
 
-## Docita Anchor
+## Why these responsibilities belong together
 
-Everything in this stack is practiced — not just studied — in [docita](https://github.com/CVamsi27/docita), the companion production repo: 482 co-located spec files and Playwright E2E suites back the testing topics, `scripts/perf/` budget gates back performance governance, and `docs/runbooks/`, `docs/operations/playbooks/`, and 15 numbered ADRs back production engineering. Each sub-stack INDEX carries its own **Docita Anchor** table with verified file paths; chaos engineering is honestly flagged there as having no direct docita implementation yet.
+A change can satisfy its unit tests while excluding keyboard users, slowing a critical journey or failing during recovery. These topics ask different questions about the same product: does the behavior satisfy its contract, can people use it, does it perform under its workload, and can the team operate it when a dependency fails?
 
----
+## Use companion evidence carefully
 
-## Why this stack matters
-
-Quality is what separates a senior engineer from a mid-level one. Every senior interview (especially at FAANG) tests:
-- **Testing** — unit, integration, E2E, mocking, test pyramid, coverage trade-offs
-- **Performance** — Core Web Vitals, profiling, bundle analysis, performance budgets
-- **Production Engineering** — incident response, SLI/SLO/error budgets, blameless postmortems
-- **Accessibility** — WCAG, ARIA, keyboard navigation (often overlooked, cheap interview points)
-
-This is the stack where you prove you can ship software that doesn't break.
-
----
+[Docita](https://github.com/CVamsi27/docita) contains test specifications, performance-budget scripts and operational documents to inspect. Each sub-stack points to relevant artifacts. Their existence does not establish a current pass, complete implementation or personal authorship. Fault injection and other simulations need their own executed evidence.
 
 ## The 4 Sub-Stacks (in study order)
 
@@ -40,25 +30,14 @@ This is the stack where you prove you can ship software that doesn't break.
 
 ---
 
-## Category Map
+## Learning passes
 
-| Category | What it covers | When to read |
-| -------------------------- | ---------------------------------------------------- | ----------------------------- |
-| **Testing** | Unit, integration, E2E, mocking, load testing | First — asked in every loop |
-| **Performance** | CWV, profiling, bundle analysis, performance budgets | Second — frontend-specific |
-| **Production Engineering** | Incidents, SLO, error budgets, chaos engineering | Third — senior differentiator |
-| **Accessibility** | WCAG, ARIA, keyboard, screen readers | Fourth — JD-dependent depth |
+1. **Testing:** state the behavior and expected result, then choose controlled and real boundaries. Complete each category's separate revision before its interview practice.
+2. **Accessibility:** learn semantic structure, keyboard/focus behavior, perceivable content and error recovery. Combine automated findings with manual journeys through the actual interface.
+3. **Performance monitoring:** distinguish laboratory observations from real-user populations, diagnose the contributing path and verify the result under comparable conditions.
+4. **Production engineering:** connect user outcomes to objectives, bounded experiments, release evidence, incident response and sustainable response ownership.
 
----
-
-## Suggested Study Order
-
-1. **Testing pyramid** → frameworks → E2E *(asked in every loop)*
-2. **Performance**: CWV thresholds + profiling workflow
-3. **Production engineering**: incident story + SLO vocabulary *(senior differentiator)*
-4. **Accessibility**: WCAG basics *(cheap points; JD-dependent depth)*
-
----
+The order supplies measurement and boundary reasoning before operational decisions. A role or project can change the depth of practice; accessibility and failure recovery still remain product responsibilities.
 
 ## Interview questions to expect
 
@@ -76,7 +55,7 @@ This is the stack where you prove you can ship software that doesn't break.
 - [Frontend Stack](../10-frontend/INDEX.md) — testing React components (RTL)
 - [Backend Stack](../20-backend/INDEX.md) — integration tests, load testing
 - [Platform Stack — Observability](../40-platform/40.4-observability/INDEX.md) — production monitoring
-- [System Design](../INDEX.md) — performance at scale
+- [System Design](../30-architecture/30.2-system-design/INDEX.md) — performance at scale
 
 ---
 

@@ -210,7 +210,8 @@
     z-index: 1000;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    transition: border-color 0.2s ease, background-color 0.2s ease;
+    /* Theme text and its surface must switch together to preserve contrast. */
+    transition: none;
   }
 
   .site-header .wrapper {
@@ -253,7 +254,7 @@
     color: var(--nav-pill-text) !important;
     background-color: transparent;
     text-decoration: none !important;
-    transition: all 0.15s ease;
+    transition: none;
   }
 
   .site-nav .page-link:hover {
@@ -313,7 +314,8 @@
     color: var(--theme-link);
     text-decoration-thickness: 1px;
     text-underline-offset: 2px;
-    transition: color 0.15s ease;
+    /* Link text must follow its new theme surface without a color fade. */
+    transition: none;
   }
 
   a:hover {
@@ -637,7 +639,8 @@
     background-color: var(--nav-pill-bg);
     color: var(--theme-text);
     cursor: pointer;
-    transition: all 0.2s ease;
+    /* Do not animate margins/size when navigation changes breakpoint. */
+    transition: transform 0.2s ease;
     vertical-align: middle;
   }
 

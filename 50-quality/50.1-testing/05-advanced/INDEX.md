@@ -1,7 +1,7 @@
 # Advanced Testing
 
-> **Study time:** ≈ 39 min of reading (3 files, ~13 min average).
-> **3 files.** Testing beyond correctness: performance/load testing (k6, Artillery, Locust) and chaos engineering — proving the system survives load and failure, not just happy paths.
+> **Study time:** ≈ 22 min of reading (3 files, ~7 min average).
+> **3 files.** Testing beyond correctness: performance/load testing (k6, Artillery, Locust) and chaos engineering — measuring behavior under stated load and failure conditions.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Quality-green)](#)
@@ -9,53 +9,26 @@
 
 ---
 
-## Why this category exists
+## Pass 1 — Relate incoming work to capacity
 
-Unit, integration and end-to-end tests check behavior in selected scenarios. Load testing asks whether the system still works for many simultaneous users; chaos experiments ask what happens when a dependency fails. These two chapters help prepare those operational questions.
+Read [Performance & Load Testing](50.1.5.01-performance-load-testing.md). Start with the operation and workload, distinguish closed users from independent arrivals, then trace the local catalog test from request to business check to exit status. Practice identifying generator limits and the service bottleneck before making a capacity claim.
 
----
+## Pass 2 — Change one failure condition
 
-## The 2 files
+Read [Chaos Engineering & Game Days](50.1.5.02-chaos-engineering.md). Define the hypothesis and fault boundary, run the local downstream-delay fixture and explain what it establishes. Add an application contract before claiming deadline, retry or circuit-breaker resilience.
 
-| # | File | Topics | When to use | Role priority | General importance | Read time |
-| --: | ------ | -------- | ------------- | --- | --- | ----------: |
-| 01 | [Performance & Load Testing](50.1.5.01-performance-load-testing.md) | k6, Artillery, Locust, p95/p99, ramp-up, stress/soak | Production-scale services | Important | Specialized | 19 min |
-| 02 | [Chaos Engineering & Game Days](50.1.5.02-chaos-engineering.md) | Steady-state hypothesis, blast radius, Toxiproxy, Chaos Monkey, Gremlin, Litmus | Resilient distributed systems | Important | Specialized | 18 min |
+## Revision, then operational practice
 
----
+Complete [REVISION](REVISION.md) with the chapters closed. Return to a source example when you cannot trace its denominator, fault or decision boundary. For production permission, response roles and recovery ownership, continue with [operational chaos engineering](../../50.4-production-engineering/50.4.03-chaos-engineering.md).
 
-## Quick orientation
+## Related learning
 
-```text
-Question                              Discipline
-Does it survive expected peak?   →    Load testing
-Where does it break?             →    Stress testing
-How does it behave over hours?   →    Soak testing
-What if a dependency dies?       →    Chaos engineering
-Who fixes it when it does?       →    Game days
-```
-
-Both chapters begin by measuring normal behavior, such as p95 latency or success rate. Then change the load or inject a controlled failure and compare the measurements. This baseline is the experiment’s steady state.
-
----
-
-## Cross-References
-
-- [Production Engineering](../../50.4-production-engineering/INDEX.md) — SLOs give load/chaos tests their pass/fail line.
-- [Observability](../../../40-platform/40.4-observability/INDEX.md) — you cannot chaos-test what you cannot see.
-- [Chaos Engineering (production angle)](../../50.4-production-engineering/50.4.03-chaos-engineering.md) — the same discipline from the ops side.
-
----
-
-## Navigation
-
-[← Mocking & Patterns](../04-mocking-and-patterns/INDEX.md) · [↑ Testing Home](../INDEX.md) · [Next: Interview Prep →](../06-interview-prep/INDEX.md)
-
----
+- [Production Engineering](../../50.4-production-engineering/INDEX.md) — reliability targets, readiness and response capacity
+- [Observability](../../../40-platform/40.4-observability/INDEX.md) — instruments and measurement coverage
 
 ## Docita Anchor
 
-[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
+[Docita](https://github.com/CVamsi27/docita) provides companion artifacts. Performance-budget scripts check selected limits; they are not proof of a load-tested production capacity or a deployed chaos program. Verify the artifact and result before citing it as your experience.
 
 | Topic | Docita evidence |
 | ---------------------------- | ----------------------------------------------------------------------- |
@@ -64,6 +37,6 @@ Both chapters begin by measuring normal behavior, such as p95 latency or success
 | Route-level budgets | `scripts/perf/route-budgets.config.mjs` + `check-route-budgets.mjs` |
 | Chaos engineering | _No direct docita implementation yet._ |
 
-## Finish This Section
+## Navigation
 
-After the reading pass, complete the [section revision questions](REVISION.md) in a separate session. Revisit only the source chapters whose mechanisms you cannot yet explain or reproduce.
+[← Mocking & Patterns](../04-mocking-and-patterns/INDEX.md) · [↑ Testing Home](../INDEX.md) · [Next: Interview Prep →](../06-interview-prep/INDEX.md)

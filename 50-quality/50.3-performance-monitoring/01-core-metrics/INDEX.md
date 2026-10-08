@@ -1,7 +1,7 @@
 # Core Metrics
 
-> **Study time:** ≈ 17 min of reading (2 files, ~8 min average).
-> **1 file.** The three Core Web Vitals — LCP, INP, CLS — their thresholds, measurement, and optimization levers. Every senior frontend interview starts here.
+> **Study time:** ≈ 10 min of reading (2 files, ~5 min average).
+> **1 file.** The three Core Web Vitals — LCP, INP, CLS — their thresholds, measurement, and optimization levers. Begin here before interpreting tool results.
 
 [![Files](https://img.shields.io/badge/files-2-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Quality-green)](#)
@@ -9,20 +9,26 @@
 
 ---
 
+## Reading flow
+
+1. Read [Core Web Vitals](50.3.1.01-core-web-vitals.md) and trace one candidate, interaction and shift window.
+2. Run the distribution example; distinguish a per-visit value from the field p75.
+3. Complete [Revision](REVISION.md), then use measurement tools to investigate a concrete cause.
+
 ## The file
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Core Web Vitals](50.3.1.01-core-web-vitals.md) | LCP, INP, CLS — measurement, thresholds, optimization strategies. INP replaced FID in 2024. | Important | Important | 15 min |
+| 01 | [Core Web Vitals](50.3.1.01-core-web-vitals.md) | LCP, INP, CLS — measurement, thresholds, optimization strategies. INP replaced FID in 2024. | Important | Important | 8 min |
 
 ---
 
 ## Memorize the thresholds
 
 | Metric | What it measures | Good |
-| ----------------------------------- | --------------------------------------------------- | ------- |
+| ----------------------------------- | --------------------------------------------------------------------------- | ------- |
 | **LCP** (Largest Contentful Paint) | Loading — when the main content paints | ≤ 2.5s |
-| **INP** (Interaction to Next Paint) | Responsiveness — worst-case interaction delay (p75) | ≤ 200ms |
+| **INP** (Interaction to Next Paint) | Responsiveness — per-visit near-worst interaction latency; assess field p75 | ≤ 200ms |
 | **CLS** (Cumulative Layout Shift) | Visual stability — unexpected layout movement | ≤ 0.1 |
 
 ---
@@ -48,7 +54,7 @@ The later chapters explain how browser timing APIs, profiling tools, real-user m
 
 ## Docita Anchor
 
-[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
+[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — these paths are reading pointers; inspect the current code and measurement contract before claiming verified production behavior.
 
 | Topic | Docita evidence |
 | ----------------------------- | ------------------------------------------------------------------------------------------- |

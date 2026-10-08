@@ -1,6 +1,6 @@
 # Behavioral Patterns
 
-> **Study time:** ≈ 55 min of reading (13 files, ~4 min average).
+> **Study time:** ≈ 58 min of reading (13 files, ~4 min average).
 > **13 files.** Object collaboration. These patterns are about algorithms and the assignment of responsibilities between objects. They characterize complex control flow that's harder to follow at runtime.
 
 [![Files](https://img.shields.io/badge/files-13-blue)](../../INDEX.md)
@@ -27,18 +27,18 @@ Creational and structural patterns are about "what" (objects) and "how" (composi
 
 | # | Pattern | Intent | Use when | Avoid when | Role priority | General importance |
 | --: | --------- | -------- | ---------- | ------------ | --- | --- |
-| 1 | [Strategy](30.1.4.01-strategy.md) | Swap algorithms at runtime | Multiple ways to do the same thing | Only one algorithm ever | Important | Foundational |
+| 1 | [Strategy](30.1.4.01-strategy.md) | Delegate to selected interchangeable policies | Multiple ways to do the same thing | Only one algorithm ever | Important | Foundational |
 | 2 | [Observer](30.1.4.02-observer.md) | Event-driven notification | UI events, pub/sub, reactive streams | Tight coupling is acceptable | Important | Foundational |
 | 3 | [Chain of Responsibility](30.1.4.03-chain-of-responsibility.md) | Pass request along a chain | Middleware, validation pipelines, exception handling | Single handler always | Important | Specialized |
 | 4 | [State](30.1.4.04-state.md) | Behavior depends on state | State machines, workflow engines | Few states, no transitions | Important | Specialized |
 | 5 | [Template Method](30.1.4.05-template-method.md) | Skeleton + customizable steps | Algorithm with varying steps | Algorithm is fully fixed | Important | Specialized |
-| 6 | [Iterator](30.1.4.06-iterator.md) | Sequential access without exposing internals | Collections, lazy sequences | Trivial arrays | Important | Specialized |
+| 6 | [Iterator](30.1.4.06-iterator.md) | Sequential access without exposing internals | Collections, lazy sequences | Existing iteration already satisfies the traversal contract | Important | Specialized |
 | 7 | [Mediator](30.1.4.07-mediator.md) | Central authority for object communication | Many-to-many object interactions, dialog boxes | Few objects, direct refs are fine | Important | Specialized |
 | 8 | [Memento](30.1.4.08-memento.md) | Capture/restore internal state | Undo and recoverable snapshots | No history needed | Important | Specialized |
 | 9 | [Command](30.1.4.09-command.md) | Encapsulate a request as an object | Undo/redo, queueing, macro recording, transactional ops | Simple one-shot operations | Important | Specialized |
 | 10 | [Visitor](30.1.4.10-visitor.md) | Add operations without modifying classes | ASTs, compilers, complex object structures | Class hierarchy is unstable | Important | Specialized |
 | 11 | [Interpreter](30.1.4.11-interpreter.md) | Grammar + interpreter for a DSL | DSLs, config formats, regex-like languages | A standard language implementation is already suitable | Important | Specialized |
-| 12 | [Null Object](30.1.4.12-null-object.md) | Encapsulated no-op behavior instead of null | Sensible neutral defaults (guest users, no-op loggers), branch-free chains | Absence must surface (silence hides bugs) | Important | Specialized |
+| 12 | [Null Object](30.1.4.12-null-object.md) | Encapsulated no-op behavior instead of null | Sensible neutral defaults (no-op loggers), branch-free chains | Absence must surface (silence hides bugs) | Important | Specialized |
 
 ---
 
@@ -89,7 +89,7 @@ Need to manage object interaction / control flow?
 | Property | Strategy | State |
 | -- | ---------- | ------- |
 | **Who chooses** | Client / context picks strategy | Defined lifecycle transitions govern state |
-| **Number of states** | Many, often set once at init | Often a state machine with transitions |
+| **Selection lifetime** | Per operation or retained by the caller | Often a state machine with transitions |
 | **Awareness of each other** | Strategies usually don't know about each other | States often trigger transitions to other states |
 | **Intent** | "How to do this" | "What am I currently doing" |
 
@@ -126,16 +126,16 @@ Both chain-call. Explain the handling or wrapping intention and the actual stopp
 ### Null Object vs Optional
 
 - **Null Object** encodes *what to do* when absent — the neutral response lives inside the object.
-- **`Optional<T>`** encodes *that* something may be absent — the compiler forces each caller to unwrap and decide.
+- **`Optional<T>`** encodes *that* something may be absent — callers use its explicit value/absence API; the type system does not prove they handle every case correctly.
 
-They compose: resolve `Optional` to a real-or-null-object at the boundary, then keep the domain branch-free. Optional is safer by default; Null Object is cleaner for stable neutral defaults.
+They compose: resolve `Optional` to a real-or-null-object at the boundary, then keep the domain branch-free. Choose whether absence is an outcome the caller must see or an agreed neutral capability; the representation follows that meaning.
 
 ---
 
 ## When NOT to use behavioral patterns
 
 - **Strategy** for a single algorithm — just write the function.
-- **Observer** when you have 2 components that should call each other directly.
+- **Observer** when one stable direct collaboration already expresses the delivery and lifetime contract.
 - **CoR** when there's exactly one handler — just call it.
 - **State objects** when a small explicit union and transition function expresses the rules clearly.
 - **Template Method** when the inheritance contract is unstable; consider injected steps.
@@ -144,7 +144,7 @@ They compose: resolve `Optional` to a real-or-null-object at the boundary, then 
 - **Memento** if undo isn't a requirement.
 - **Command** for one-shot operations with no queue/undo.
 - **Visitor** if the object structure changes often (you'll rewrite all visitors).
-- **Interpreter** for complex grammars — use a parser generator (PEG, ANTLR).
+- Do not make a tiny **Interpreter** example stand in for complex parsing. A parser generator can help syntax processing; evaluation still needs semantic rules.
 - **Null Object** where silence would hide a bug (money, auth, load failures) — let absence throw or return `Optional` instead.
 
 ---
@@ -159,7 +159,7 @@ Trace one request or transition across collaborators and identify who owns order
 
 - [Foundations](../01-foundations/INDEX.md) — OOP concepts and SOLID are prerequisites.
 - [Structural Patterns](../03-structural/INDEX.md) — Iterator often traverses a Composite; Visitor does too.
-- [Architectural Patterns](../05-architectural/INDEX.md) — Command is the basis of CQRS, Event Sourcing is a separate authoritative-history choice.
+- [Architectural Patterns](../05-architectural/INDEX.md) — CQRS separates writes from reads; Command can represent write requests, while Event Sourcing chooses an authoritative history.
 
 ---
 
@@ -180,4 +180,4 @@ Where [docita](https://github.com/CVamsi27/docita) — my production hospital-ma
 | Observer / domain events | `shared/common/events/{domain-events,event.service}.ts`, `ops-alert.listener.ts`, transactional outbox (`outbox-relay.scheduler.ts`, ADR 0010) |
 | Command (CQRS-lite) | `appointment-command.service.ts` vs `appointment-query.service.ts` (+ queue/follow-up twins); queue jobs as command objects |
 | Chain of Responsibility | Nest guard→interceptor→pipe request pipeline (tenant-context, CSRF, rate-limit) |
-| Null Object | _No direct docita implementation yet._ |
+| Null Object | These pointers do not constitute an exhaustive implementation audit or prove absence of a neutral implementation. |

@@ -20,17 +20,17 @@ Source: [Generics](10.2.2.01-generics.md)
    **A:** A named unknown the *caller* decides — `<T>(x: T): T` is a contract that works for any type, and each call site resolves `T` at compile time; nothing about it exists at runtime.
 
 2. **Q:** What do `T extends X` and `T = X` each do?
-   **A:** `extends` *constrains* the parameter to types assignable to `X`, which is what lets the body use `X`'s members; `=` sets a *default* used when the caller omits the argument.
+   **A:** `extends` *constrains* the parameter to types assignable to `X`, which is what lets the body use `X`'s members; `=` supplies a default when no explicit or inferred type argument is selected.
 
 **How It Works**
 
 3. **Q:** Why is `identity("hello")` enough — when would you ever write `identity<string>("hello")`?
-   **A:** Inference binds `T` from the argument's type. Explicit arguments are the fallback where inference has nothing to work from — a parameter that appears only in the return type (`function create<T>(): T` must be called `create<User>()`) — or where you deliberately pin a wider type than inference would pick.
+   **A:** Inference binds `T` from the argument's type. Explicit arguments are the fallback where inference has nothing to work from — a parameter that has no useful input inference (an honest create<T> implementation still needs a factory/decoder, rather than manufacturing arbitrary T) — or where you deliberately pin a wider type than inference would pick.
 
 **Code Examples**
 
-4. **Q:** What is the result type of `merge({ name: "Alice" }, { age: 30 })` where `merge<T, U>(a: T, b: U): T & U`?
-   **A:** `{ name: string; } & { age: number; }` — the intersection carries both member sets, so `merged.name` and `merged.age` are both available.
+4. **Q:** What is the result type of a merge({name:"Alice"},{age:30}) contract returning T & U, and when is that contract misleading?
+   **A:** The disjoint plain-property case fits both member sets. If inputs share an incompatible key, spread overwrites it rather than satisfying both types; inherited/nonenumerable members are not all copied either. The chapter instead uses pair<A,B> to preserve two input types without inventing an intersection guarantee.
 
 **Common Mistakes**
 
@@ -55,7 +55,7 @@ Source: [Infer](10.2.2.02-infer.md)
    **A:** Only inside the `extends` (pattern) clause of a conditional type — `T extends Promise<infer U> ? U : never` is fine, while `T extends string ? infer S : unknown` fails with TS1338.
 
 2. **Q:** What does `type Id<T> = T extends infer U ? U : never` actually extract?
-   **A:** Nothing useful — `U` captures the whole matched type, so the result is just `T`; `infer` earns its keep only when it sits inside a constructed pattern like `Promise<infer U>`.
+   **A:** It captures the whole matched type rather than a smaller component. That is a legal identity-style pattern; structured extraction uses a more specific position such as Promise<infer U>.
 
 **How It Works**
 
@@ -67,13 +67,13 @@ Source: [Infer](10.2.2.02-infer.md)
 
 **Code Examples**
 
-5. **Q:** What does `RouteParams<"users/:id/posts/:postId">` evaluate to, and which construct does the work?
-   **A:** `{ id: string; postId: string }` — the template-literal pattern captures each `:param` with `infer`, and a recursive call on the remaining segment collects the rest.
+5. **Q:** What does the canonical RouteParams<"users/:id/posts/:postId"> helper extract, and where is its full grammar taught?
+   **A:** It derives id and postId string fields by capturing path segments. The [Template Literal Types chapter](../03-type-transformations/10.2.3.04-template-literal-types.md) owns its implementation and supported path grammar; infer supplies capture, not runtime route parsing.
 
 **Common Mistakes**
 
 6. **Q:** Why is `T extends string ? T : unknown` a worse false branch than `never`?
-   **A:** A non-match contributes `unknown`, and `unknown` absorbs any union it joins; `never` contributes nothing, so non-matches fall out of the result entirely.
+   **A:** For a filtering extractor, a non-match contributing unknown can absorb the useful union; never discards it. A pass-through false branch may instead intentionally retain T. The chosen contract matters.
 
 **Best Practices**
 
@@ -99,11 +99,11 @@ Source: [Advanced Generics](10.2.2.03-advanced-generics.md)
 
 **Code Examples**
 
-4. **Q:** In the curried `add(1)(2)(3)` example, why must the stop condition compare against `fn.length` rather than the wrapper's `length`?
-   **A:** The wrapper uses rest parameters, so `wrapper.length` is 0 and the "last argument" branch never fires — you'd return another function forever. Accumulating arguments and comparing their count to the original function's declared arity stops at exactly the right call.
+4. **Q:** In add(1)(2)(3), why does the runtime stop after the third argument, and when is fn.length insufficient?
+   **A:** The chapter explicitly implements three unary stages matching its required tuple. A generic wrapper must use its real application contract; wrapper.length is not original arity, and defaults/rest make fn.length incomplete. The [canonical runtime curry](../../10.1-javascript/05-functional-patterns/10.1.5.04-currying-composition.md) supports explicit arity.
 
-5. **Q:** What goes wrong if `PipeResult` lacks its `Rest extends []` base case?
-   **A:** Recursion bottoms out at `PipeResult<[]> = never`, `never extends (arg) => infer C` still passes, and `C` infers as `unknown` — the pipeline types as `(arg: number) => unknown` instead of `(arg: number) => string`.
+5. **Q:** What goes wrong if a pipeline lacks a terminal case or checks every later input against its first output?
+   **A:** A recursive calculation needs a defined final result. Compatibility also concerns adjacent stages: number→string→number is valid even though the last stage cannot accept the first output. Compatible walks each pair and LastResult captures the final return type.
 
 **Common Mistakes**
 
@@ -152,6 +152,28 @@ Source: [Type Variance](10.2.2.04-type-variance.md)
 
 8. **Q:** When can explicit variance annotations improve compilation work?
    **A:** They can help comparisons of the same generic type when recursive variance inference is expensive or ambiguous. Profiling is needed to establish a benefit for the actual project.
+
+## Changed-condition checks
+
+Source: [Generics](10.2.2.01-generics.md)
+
+**Q:** How does decodeName earn fetchData's string result, and what changes if the endpoint sends name:42?
+**A:** Its runtime check verifies a string field and returns that string, letting T infer as string. A numeric field throws and rejects the request; writing a type argument would not validate it.
+
+Source: [Infer](10.2.2.02-infer.md)
+
+**Q:** Trace DeepUnwrap<Promise<Promise<string>>>. What does a required-head extractor do on an empty tuple?
+**A:** Each matched promise captures its inner type until string reaches the pass-through base case. An empty tuple supplies no guaranteed head, so that extractor returns never.
+
+Source: [Advanced Generics](10.2.2.03-advanced-generics.md)
+
+**Q:** Trace formatLength(9), then change the second function to a string-only input. What changes?
+**A:** Values flow9→10→"10"→2. A string-only second input cannot accept the preceding number output, so the adjacent-stage constraint rejects the pipeline. any would bypass that proof.
+
+Source: [Type Variance](10.2.2.04-type-variance.md)
+
+**Q:** A wider Animal[] alias appends an object without breed to Dog[]. Why does readonly help only part of this problem?
+**A:** The accepted mutable covariance lets that wider write corrupt the narrower view. A readonly consumer cannot append through its view, but other mutable aliases and nested objects remain writable.
 
 ## Summary
 

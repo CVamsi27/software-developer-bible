@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-TypeScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -48,6 +48,9 @@ Source: [The `satisfies` Operator](10.2.4.01-satisfies-operator.md)
 8. **Q:** When is an explicit annotation useful for an exported value?
    **A:** It supplies a stable public contract instead of exposing implementation-specific inference. That can allow an internal refactor without changing the types consumers compile against.
 
+9. **Q:** Would `Record<string, RouteDefinition>` catch an `admni` table entry if its value has the right shape?
+   **A:** No; the open key contract accepts that name. Use a finite union of required keys to catch declaration typos; retained inferred keys only protect later access. [Trace the route contract](10.2.4.01-satisfies-operator.md#the-problem-satisfies-solves).
+
 ## Branded Types
 
 Source: [Branded Types](10.2.4.02-branded-types.md)
@@ -84,6 +87,12 @@ Source: [Branded Types](10.2.4.02-branded-types.md)
 8. **Q:** Why does a type named `JWT` fail to prove a token is trustworthy?
    **A:** A phantom name cannot authenticate bytes or check claims. Signature and claim verification must happen before the program treats the token as trusted.
 
+9. **Q:** Why does zero seconds fail in the speed example instead of producing a branded infinity?
+   **A:** The function checks positive finite time and finite output before asserting the unit. The brand itself adds no arithmetic check. [Trace the units](10.2.4.02-branded-types.md#7-branded-types-for-units).
+
+10. **Q:** What calendar condition rejects `2024-02-30`?
+   **A:** Parsing and formatting back must produce the same canonical UTC date-only string; normalization to March fails that equality. UTC date selection can differ from a local day. [Date boundary](10.2.4.02-branded-types.md#8-date-only-strings-instants-and-text-shapes).
+
 ## Decorators
 
 Source: [Decorators](10.2.4.03-decorators.md)
@@ -99,7 +108,7 @@ Source: [Decorators](10.2.4.03-decorators.md)
    **A:** Registration records which argument position needs which dependency. A container must read that record and construct the class with resolved arguments.
 
 3. **Q:** How does Stage 3 `bound` preserve a receiver for detached calls?
-   **A:** It schedules an instance initializer that replaces the public method with a bound function. Each new instance therefore receives its own function linked to that instance.
+   **A:** It schedules an instance initializer that replaces the public method with a bound function. Each new instance therefore receives its own function linked to that instance. Reading the final method by name also preserves replacements made by stacked decorators.
 
 **Code Examples**
 
@@ -121,6 +130,12 @@ Source: [Decorators](10.2.4.03-decorators.md)
 
 8. **Q:** How many attempts does `Retry(3)` allow?
    **A:** Four: the first attempt plus three retries. Its loop and log denominator must include that initial attempt.
+
+9. **Q:** What happens if `@bound` binds its captured method before an outer decorator supplies a wrapper?
+   **A:** Detached calls can bypass the outer wrapper. The initializer reads the final decorated member from the instance before binding. [Binding trace](10.2.4.03-decorators.md#standard-replacement-and-instance-binding-are-separate).
+
+10. **Q:** Why does a trimmed field later accept an untrimmed assignment?
+   **A:** The field decorator replaces only its initial value. A decorated accessor setter can intercept later writes. [Field and accessor boundary](10.2.4.03-decorators.md#fields-initialize-once-accessors-can-intercept-later-writes).
 
 ## Declaration Files (.d.ts)
 
@@ -159,6 +174,12 @@ Source: [Declaration Files (.d.ts)](10.2.4.04-declaration-files.md)
 
 8. **Q:** Why should a library test a consumer as well as checking its own declarations?
    **A:** A consumer exercises the published entry path, imports and inferred types together. A valid declaration file can still be absent from the package or describe behavior the JavaScript never implements.
+
+9. **Q:** Why do the ambient package declaration and its application import need separate files?
+   **A:** A top-level import changes the declaration file to module scope, where a named module block augments an existing module instead of declaring a new untyped package. [Scope trace](10.2.4.04-declaration-files.md#file-scope-decides-whether-declarations-add-or-extend-names).
+
+10. **Q:** Can a consumer type check establish that `greet` returns a string at runtime?
+   **A:** It checks against the declaration's promise. Execute the exported JavaScript as well, and verify both entry paths in the package. [Two-path fixture](10.2.4.04-declaration-files.md#runtime-exports-and-type-descriptions-follow-separate-paths).
 
 ## TypeScript Advanced Patterns — Decorators, Middleware, Advanced Generics
 
@@ -203,6 +224,12 @@ Source: [TypeScript Advanced Patterns — Decorators, Middleware, Advanced Gener
 
 8. **Q:** Which evidence makes a complicated composed type worth keeping?
    **A:** It should reject a meaningful invalid call and give useful inference for valid calls. If assertions bypass both benefits, simplifying the API often provides stronger checking.
+
+9. **Q:** What changes if a listener unsubscribes another listener during one dispatch?
+   **A:** The copied list still invokes that listener in the current dispatch; removal changes the next emit. A thrown exception instead stops the remaining current calls. [Dispatch policy](10.2.4.05-advanced-patterns.md#couple-an-event-name-to-its-payload-then-define-dispatch).
+
+10. **Q:** Why build a union of event/payload tuples rather than two independent union parameters?
+   **A:** Each tuple retains a valid pairing. Independent unions could admit a name from one case with a payload from another. [Correlated contract](10.2.4.05-advanced-patterns.md#couple-an-event-name-to-its-payload-then-define-dispatch).
 
 ## Summary
 

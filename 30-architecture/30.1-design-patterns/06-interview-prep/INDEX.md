@@ -10,7 +10,7 @@
 
 ## What's here
 
-A curated Q&A bank covering the patterns in [creational](../02-creational/INDEX.md), [structural](../03-structural/INDEX.md), [behavioral](../04-behavioral/INDEX.md), and [architectural](../05-architectural/INDEX.md), plus low-level design (LLD) problems about classes and their interactions. Solve those problems by applying the patterns.
+A curated Q&A bank covering the patterns in [creational](../02-creational/INDEX.md), [structural](../03-structural/INDEX.md), [behavioral](../04-behavioral/INDEX.md), and [architectural](../05-architectural/INDEX.md), plus low-level design (LLD) problems about classes and their interactions. Define the behavior first, then apply a pattern where its contract helps.
 
 ---
 
@@ -33,7 +33,7 @@ The [question bank](30.1.6.01-interview-questions.md) supplies prompts and conci
 
 ## Docita Anchor
 
-Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS (NestJS monorepo) — gives me true stories for these answers.
+Concrete source pointers in [docita](https://github.com/CVamsi27/docita) — the hospital-management NestJS monorepo — supply examples to inspect. A registry is not an untrusted-plugin sandbox, and the pointers do not establish production readiness.
 
 | Topic | Docita evidence |
 | ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
@@ -42,4 +42,4 @@ Where [docita](https://github.com/CVamsi27/docita) — my production hospital-ma
 | "Product creation" → factory techniques | `fhir/factories/*`, `analytics/core/factories/*`, `payment-gateway.factory.ts` |
 | "Template Method pipeline" → base-class skeleton | `base-pdf.service.ts` PDF generation, `base-websocket.gateway.ts` realtime, `base-pdf.processor.ts` queue jobs |
 | "Facade over a subsystem" → Facade | `ocr-facade.service.ts` (OCR pipeline), `templates-facade.service.ts` (WhatsApp templates) |
-| "Repository + DI for testability" → Repository | `base.repository.ts` + DI-token binding enforced by `check-repository-di-tokens.mjs` |
+| "Repository + DI for testability" → Repository | `base.repository.ts` + DI-token binding checked by `check-repository-di-tokens.mjs` |

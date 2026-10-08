@@ -1,26 +1,26 @@
 # Testing — Index
 
-> **Study time:** ≈ 3 h 58 m of reading (19 files, ~13 min average).
+> **Study time:** ≈ 2 h 29 m of reading (19 files, ~8 min average).
 > **19 files across 6 categories.** Testing fundamentals from Jest and React Testing Library to unit, integration, E2E, performance testing, chaos engineering, mocking, test patterns, frameworks comparison, test data management, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-19-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Quality-green)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Why testing:** Every senior engineer must own their test strategy. Test pyramid (unit/integration/E2E), coverage trade-offs, mocking patterns, and the ability to debug flaky tests. This section is the canonical reference.
+## Read from behavior to release evidence
 
----
+A test observes selected behavior under a controlled arrangement. Start with the expected result and boundary, then learn how a runner executes it, how real integrations change the evidence, and how load or fault experiments test different conditions. Tool names and coverage percentages are useful only after that claim is clear.
 
 ## The 6 Categories (in study order)
 
 | Category | Files | Purpose |
-| ----------------------------------------------------------- | ----: | ---------------------------------------------------------------------------------------- |
-| [01 — Foundations](01-foundations/INDEX.md) | 2 | Test types, testing pyramid, TDD vs BDD, coverage, test data management — the vocabulary |
-| [02 — Frameworks](02-frameworks/INDEX.md) | 4 | Jest, Vitest, RTL, comparison — the tools |
-| [03 — Test Levels](03-test-levels/INDEX.md) | 3 | Unit, integration, E2E — the pyramid in practice |
-| [04 — Mocking & Patterns](04-mocking-and-patterns/INDEX.md) | 2 | Mocking mechanics + AAA/factories/builders |
-| [05 — Advanced](05-advanced/INDEX.md) | 2 | Performance/load testing, chaos engineering |
-| [06 — Interview Prep](06-interview-prep/INDEX.md) | 1 | 40+ Qs |
+| ----------------------------------------------------------- | ----: | ------------------------------------------------------------------------------------------------------------------ |
+| [01 — Foundations](01-foundations/INDEX.md) | 2 | Test types, testing pyramid, TDD vs BDD, coverage, test data management — contract, observation and data ownership |
+| [02 — Frameworks](02-frameworks/INDEX.md) | 4 | Jest, Vitest, RTL, comparison — execution, module behavior and awaited UI observations |
+| [03 — Test Levels](03-test-levels/INDEX.md) | 3 | Unit, integration, E2E — scope and real-boundary evidence |
+| [04 — Mocking & Patterns](04-mocking-and-patterns/INDEX.md) | 2 | Controlled collaborators, visible scenarios and resource ownership |
+| [05 — Advanced](05-advanced/INDEX.md) | 2 | Workload models, semantic thresholds and bounded fault experiments |
+| [06 — Interview Prep](06-interview-prep/INDEX.md) | 1 | Forty questions with changed-condition probes |
 
 ---
 
@@ -29,7 +29,7 @@
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Testing Overview](01-foundations/50.1.1.01-testing-overview.md) | Test types, testing pyramid, TDD, BDD, coverage, strategies, when to write which test | Essential | Foundational | 11 min |
-| 02 | [Test Data Management & Anonymization](01-foundations/50.1.1.02-test-data-management-anonymization.md) | Test data pyramid, factories, faker, anonymization/pseudonymization, GDPR-safe seeding, golden datasets | Essential | Foundational | 11 min |
+| 02 | [Test Data Management & Anonymization](01-foundations/50.1.1.02-test-data-management-anonymization.md) | Synthetic ownership, deterministic generation, anonymization/pseudonymization and golden oracles | Essential | Foundational | 11 min |
 
 ---
 
@@ -38,7 +38,7 @@
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
 | 01 | [Jest](02-frameworks/50.1.2.01-jest.md) | Configuration, matchers, snapshots, mocking, code coverage | Most React/Node projects | Essential | Foundational | 9 min |
-| 02 | [Vitest](02-frameworks/50.1.2.02-vitest.md) | Native ESM, Vite integration, HMR, Jest-compatible, worker threads | Vite-based projects, faster than Jest | Essential | Foundational | 9 min |
+| 02 | [Vitest](02-frameworks/50.1.2.02-vitest.md) | Runtime/configuration, transforms, mocking and migration boundaries | Choose from compatibility and measured suite behavior | Essential | Foundational | 9 min |
 | 03 | [React Testing Library](02-frameworks/50.1.2.03-react-testing-library.md) | Render, queries, events, async testing, accessibility (testing-library/jest-dom) | React component tests | Essential | Foundational | 11 min |
 | 04 | [Testing Frameworks Comparison](02-frameworks/50.1.2.04-testing-frameworks-comparison.md) | Jest vs Vitest, Playwright E2E, Supertest API testing, choosing the right framework | Stack decisions | Essential | Foundational | 5 min |
 
@@ -46,19 +46,7 @@
 
 ## Test Levels
 
-The test pyramid in practice.
-
-```text
-       /\
-      / \ E2E (slow, expensive, high confidence)
-     /----\
-    /      \ Integration (medium speed, medium confidence)
-   /----------\
-  /            \ Unit (fast, cheap, narrow confidence)
-/----------------\
-```
-
-Aim for **lots of unit tests, some integration, few E2E.**
+Choose the smallest boundary that observes the relevant failure. Broader scope adds real seams and also setup, cost and diagnosis sources; it does not automatically make every assertion stronger. The pyramid is a feedback-cost model, not a universal test-count ratio.
 
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
@@ -73,7 +61,7 @@ Aim for **lots of unit tests, some integration, few E2E.**
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Mocking](04-mocking-and-patterns/50.1.4.01-mocking.md) | Mock functions, spies, modules, network requests (MSW), time | Essential | Foundational | 10 min |
-| 02 | [Test Patterns](04-mocking-and-patterns/50.1.4.02-test-patterns.md) | Arrange-Act-Assert, factory methods, test fixtures, builders | Essential | Foundational | 48 min |
+| 02 | [Test Patterns](04-mocking-and-patterns/50.1.4.02-test-patterns.md) | Arrange-Act-Assert, factory methods, test fixtures, builders | Essential | Foundational | 11 min |
 
 ---
 
@@ -81,8 +69,8 @@ Aim for **lots of unit tests, some integration, few E2E.**
 
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
-| 01 | [Performance & Load Testing](05-advanced/50.1.5.01-performance-load-testing.md) | k6, Artillery, Locust, p95/p99, ramp-up, stress/soak | Production-scale services | Important | Specialized | 19 min |
-| 02 | [Chaos Engineering & Game Days](05-advanced/50.1.5.02-chaos-engineering.md) | Steady-state hypothesis, blast radius, Toxiproxy, Chaos Monkey, Gremlin, Litmus | Resilient distributed systems | Important | Specialized | 18 min |
+| 01 | [Performance & Load Testing](05-advanced/50.1.5.01-performance-load-testing.md) | k6, Artillery, Locust, p95/p99, ramp-up, stress/soak | Production-scale services | Important | Specialized | 10 min |
+| 02 | [Chaos Engineering & Game Days](05-advanced/50.1.5.02-chaos-engineering.md) | Steady-state hypothesis, blast radius, Toxiproxy, Chaos Monkey, Gremlin, Litmus | Resilient distributed systems | Important | Specialized | 10 min |
 
 ---
 
@@ -94,29 +82,14 @@ Aim for **lots of unit tests, some integration, few E2E.**
 
 ---
 
-## Suggested Study Order
+## Learning passes and revision
 
-1. **Testing Overview** — must know the pyramid
-2. **Jest or Vitest** — the framework your team uses
-3. **React Testing Library** — if React focus
-4. **Unit Testing** — must know
-5. **Integration + E2E** — for senior roles
-6. **Mocking + Test Patterns** — the senior-level
-7. **Performance + Chaos** — for staff/SRE roles
-8. **Interview Questions** — final review
-
----
-
-## Common interview topics
-
-- "What's your testing strategy? Why?"
-- "Unit vs integration vs E2E — when to use which?"
-- "How do you test async code?"
-- "How do you test React components?"
-- "How do you mock network requests?"
-- "What does good test coverage look like? Is 100% the goal?"
-
----
+1. **State the contract:** foundations and data management explain outcomes, assertions, observed code and resource ownership. Finish the [foundations revision](01-foundations/REVISION.md).
+2. **Run and observe:** choose the compatible runner, then learn awaited component observations and its evidence boundary. Finish the [framework revision](02-frameworks/REVISION.md).
+3. **Choose scope:** unit, integration and complete journeys establish different claims. Finish the [test-level revision](03-test-levels/REVISION.md).
+4. **Control and reuse deliberately:** mocking and patterns preserve consumer behavior, scenario visibility and cleanup. Finish the [mocking/pattern revision](04-mocking-and-patterns/REVISION.md).
+5. **Vary operating conditions:** workload and fault experiments separate the offered input, observed response and recovery. Finish the [advanced revision](05-advanced/REVISION.md).
+6. **Practice decisions:** answer the [interview bank](06-interview-prep/INDEX.md), including its changed-condition probes and supported experience questions.
 
 ## Cross-References
 

@@ -1,6 +1,6 @@
 # NestJS — Index
 
-> **Study time:** ≈ 6 h 4 m of reading (24 files, ~15 min average).
+> **Study time:** ≈ 4 h 8 m of reading (24 files, ~10 min average).
 > **24 files** — NestJS framework from modules and controllers to guards, pipes, interceptors, CQRS, microservices, testing, configuration, lifecycle/shutdown, scheduling, OpenAPI docs, custom decorators, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-24-blue)](../../INDEX.md)
@@ -47,9 +47,9 @@ How NestJS apps are structured. Read these first. Category INDEX: [Core Architec
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Modules](01-core-architecture/20.2.1.01-modules.md) | Feature modules, shared modules, global modules, dynamic modules, module re-exports | Essential | Important | 7 min |
-| 02 | [Controllers](01-core-architecture/20.2.1.02-controllers.md) | Route handlers, request/response objects, decorators, version controllers | Essential | Important | 27 min |
-| 03 | [Providers](01-core-architecture/20.2.1.03-providers.md) | Service providers, custom providers, provider scopes (default, request, transient) | Essential | Important | 22 min |
-| 04 | [Dependency Injection](01-core-architecture/20.2.1.04-dependency-injection.md) | DI container, custom providers, circular dependencies, `forwardRef` | Essential | Important | 23 min |
+| 02 | [Controllers](01-core-architecture/20.2.1.02-controllers.md) | Route handlers, request/response objects, decorators, version controllers | Essential | Important | 9 min |
+| 03 | [Providers](01-core-architecture/20.2.1.03-providers.md) | Service providers, custom providers, provider scopes (default, request, transient) | Essential | Important | 7 min |
+| 04 | [Dependency Injection](01-core-architecture/20.2.1.04-dependency-injection.md) | DI container, custom providers, circular dependencies, `forwardRef` | Essential | Important | 7 min |
 
 ---
 
@@ -59,11 +59,11 @@ The order of execution for every request — **every NestJS interview tests this
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Middleware](02-request-lifecycle/20.2.2.01-middleware.md) | Functional middleware, class middleware, consumer configuration, `NestModule` | Essential | Important | 18 min |
-| 02 | [Guards](02-request-lifecycle/20.2.2.02-guards.md) | Auth guards, role-based access, custom guards, `CanActivate`, execution context | Essential | Important | 23 min |
-| 03 | [Pipes](02-request-lifecycle/20.2.2.03-pipes.md) | Validation pipes, transformation pipes, built-in pipes, custom pipes | Essential | Important | 24 min |
-| 04 | [Interceptors](02-request-lifecycle/20.2.2.04-interceptors.md) | Request/response transformation, logging, caching, mapping, async interceptors | Essential | Important | 16 min |
-| 05 | [Exception Filters](02-request-lifecycle/20.2.2.05-exception-filters.md) | Built-in exceptions, custom exception filters, catch-all filters, `@Catch()` | Essential | Important | 20 min |
+| 01 | [Middleware](02-request-lifecycle/20.2.2.01-middleware.md) | Functional middleware, class middleware, consumer configuration, `NestModule` | Essential | Important | 7 min |
+| 02 | [Guards](02-request-lifecycle/20.2.2.02-guards.md) | Auth guards, role-based access, custom guards, `CanActivate`, execution context | Essential | Important | 8 min |
+| 03 | [Pipes](02-request-lifecycle/20.2.2.03-pipes.md) | Validation pipes, transformation pipes, built-in pipes, custom pipes | Essential | Important | 7 min |
+| 04 | [Interceptors](02-request-lifecycle/20.2.2.04-interceptors.md) | Request/response transformation, logging, caching, mapping, async interceptors | Essential | Important | 7 min |
+| 05 | [Exception Filters](02-request-lifecycle/20.2.2.05-exception-filters.md) | Built-in exceptions, custom exception filters, catch-all filters, `@Catch()` | Essential | Important | 8 min |
 
 ---
 

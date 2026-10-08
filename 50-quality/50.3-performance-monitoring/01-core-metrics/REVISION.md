@@ -38,13 +38,37 @@ Source: [Core Web Vitals](50.3.1.01-core-web-vitals.md)
 
 **A:** The first two shifts share a session window and sum to 0.3. The later shift follows a gap of more than one second and starts another window. CLS uses the largest window sum, rather than the lifetime total. A raw observer that adds every eligible entry reports a different measure.
 
+## Field aggregation and changed conditions
+
+Source: [Core Web Vitals](50.3.1.01-core-web-vitals.md)
+
+**Q:** Eight sorted mobile LCP values end with 3,500, 3,900, 4,200 and 6,000 ms. Which value does nearest-rank p75 select?
+
+**A:** The sixth observation, 3,900 ms. It needs improvement. The estimator and population must be explicit; averaging several subgroup p75 values does not reconstruct the combined distribution.
+
+**Q:** Why is INP of 320 ms neither good nor poor?
+
+**A:** Good ends at 200 ms and poor starts above 500 ms. The middle interval needs improvement. A universal multiplier of 1.6 would misclassify this metric.
+
+**Q:** What changes when a visit has no qualifying interaction?
+
+**A:** It may have no INP observation. Keep the missing value and collection coverage visible; substituting zero invents evidence of fast responsiveness.
+
+**Q:** Why can registering web-vitals callbacks in a repeated React effect distort reporting?
+
+**A:** Repeated registration can add collectors/callbacks; the normal library functions do not return an effect cleanup handle. Register once at document bootstrap and aggregate updates under the metric ID.
+
+**Q:** Why must an ingestion service distinguish value from delta?
+
+**A:** Value is the current metric; delta is the change since its previous report. Upsert values or accumulate deltas deliberately. Counting each callback as a new visit changes the sample distribution.
+
 ## Summary
 
 Use the answers to check your reasoning, then revisit the source mechanism and reproduce any relevant example without copying it. A remembered label is useful only when you can explain its limits.
 
 ## See Also
 
-- [Section learning flow](INDEX.md)
+- [Section learning flow](INDEX.md) — separate per-visit metric boundaries from a field distribution
 
 ## References & Learn More
 

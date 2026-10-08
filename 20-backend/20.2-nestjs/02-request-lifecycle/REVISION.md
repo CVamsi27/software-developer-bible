@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-NestJS-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
 
@@ -16,15 +16,15 @@ Source: [NestJS Middleware](20.2.2.01-middleware.md)
 
 **Q:** Which shared request tasks are suited to middleware?
 
-**A:** Logging, correlation IDs, session parsing — things that must happen for *every* request regardless of route. Express-compatible middleware is exactly that: the rawest interception point .
+**A:** Middleware suits early transport tasks such as correlation, session parsing and completion observation on its matched routes. It can respond or pass control; parser, guard and service boundaries still own their respective contracts.
 
 **Q:** How does the context available to middleware differ from handler-level components?
 
-**A:** Middleware can't inject route-scoped dependencies (it's registered outside the DI route graph) — that limitation *is* the design: it separates transport-level from handler-level concerns.
+**A:** Class middleware supports module DI and sees adapter request/response/next. A guard/interceptor ExecutionContext additionally identifies the selected controller and handler, enabling route-metadata policy.
 
 **Q:** Why must middleware registration order follow dependencies between tasks?
 
-**A:** Middleware executes in registration order — CORS before auth, correlation ID before logging. The chain's ordering is configuration with runtime consequences, which is why it lives in explicit module setup, never implicit discovery.
+**A:** Create correlation before logging, and establish verified identity before policies that consume it. Global/module registration and adapter behavior affect ordering; test the intended matches and exclusions.
 
 ## NestJS Guards
 
@@ -32,15 +32,15 @@ Source: [NestJS Guards](20.2.2.02-guards.md)
 
 **Q:** Why perform access checks in a guard before the handler?
 
-**A:** If it lives inside the handler, forgetting it is one `if` away — a structural fix (execution-order guarantee) beats remembered discipline . Guards run after middleware, before interceptors and handlers: nothing downstream executes on denial.
+**A:** A denied guard prevents protected downstream work. The decision still needs verified identity, the intended action/resource, and a consistency boundary for changing authorization state.
 
 **Q:** How do a roles decorator and a guard divide policy declaration from enforcement?
 
-**A:** `@Roles('admin')` + `RolesGuard` reading `Reflector` = policy stated at the route, enforced centrally. The same "declare + enforce" split as ABAC policies .
+**A:** The decorator records metadata. A registered guard selects it, for example handler-first getAllAndOverride, and evaluates the verified principal. A decorator alone grants or denies nothing.
 
 **Q:** Which responsibilities belong outside a guard's allow-or-deny decision?
 
-**A:** Per-field filtering, quota logic — anything richer than allow/deny belongs in interceptors or services; forcing it into a guard produces 400-line guards that re-implement services.
+**A:** A guard can enforce admission, permissions, flags or quotas; services own the detailed operation and data consistency. Response field projection and durable effects need their own explicit boundaries.
 
 ## NestJS Pipes
 
@@ -48,15 +48,15 @@ Source: [NestJS Pipes](20.2.2.03-pipes.md)
 
 **Q:** How can a pipe convert, validate, or default an argument?
 
-**A:** A pipe transforms argument data and may reject it — which unifies coercion (string→number), validation (DTO schema), and defaulting into one boundary concept, applied at the argument level.
+**A:** A pipe receives an extracted argument, returns its validated/transformed/defaulted value or throws. Default missing input deliberately; reject malformed nonmissing representations rather than accepting a numeric prefix.
 
 **Q:** What must be configured to validate a DTO at runtime?
 
-**A:** `ValidationPipe` + class-validator DTOs mean a handler's signature *is* its input contract — malformed data is rejected before business code runs, the same fail-fast-at-boundary as zod env parsing .
+**A:** Register ValidationPipe, use runtime DTO classes with suitable decorators/nested metadata, and select transform/whitelist/null/coercion policies. TypeScript annotations alone perform no runtime validation or authorization.
 
 **Q:** Why does the order of guards and pipes matter?
 
-**A:** pipes run after guards — you validate identity first, then input. Every lifecycle component's position encodes a dependency between concerns.
+**A:** Guards execute before argument pipes. A guard reading raw IDs/body fields must validate the portion it relies on itself; it cannot assume a later ParseUUIDPipe has already succeeded.
 
 ## NestJS Interceptors
 
@@ -64,15 +64,15 @@ Source: [NestJS Interceptors](20.2.2.04-interceptors.md)
 
 **Q:** What does an interceptor observe that an argument pipe or guard does not?
 
-**A:** Timing, response mapping, caching, logging *around* the call — none of these fit guards (boolean) or pipes (argument-level). Interceptors are Nest's AOP: cross-cutting behavior composed via RxJS streams over the response.
+**A:** An interceptor wraps remaining execution and can observe/map/replace its emitted values/errors. A guard decides admission and an argument pipe validates input; none alone proves client delivery.
 
 **Q:** How do RxJS operators add behavior around next.handle()?
 
-**A:** `next.handle()` returns an Observable; `tap` for side-effects, `map` for transforms, `timeout`/`retry` for resilience — response concerns compose without touching handlers.
+**A:** map changes values, tap observes notifications, finalize handles subscription termination, and catchError replaces/rethrows errors. timeout stops waiting and retry resubscribes; neither implies cancellation, rollback or idempotency.
 
 **Q:** In what order do nested interceptors run before and after the handler?
 
-**A:** interceptors execute in registration order for "before," reverse for "after" — nesting semantics. Like middleware order , it's configuration with runtime consequences.
+**A:** Before-work nests from global to controller to route; result transformations unwind in reverse. Short-circuiting next.handle can deliberately skip downstream pipes/handler, so cache eligibility and access policy must remain safe.
 
 ## NestJS Exception Filters
 
@@ -80,15 +80,15 @@ Source: [NestJS Exception Filters](20.2.2.05-exception-filters.md)
 
 **Q:** Why should known application failures map to specific HTTP status codes?
 
-**A:** A `NotFoundException` is a 404, not a server error; the filter layer maps thrown domain errors to HTTP semantics *once*, centrally.
+**A:** A known missing resource can map to404 and a known domain conflict to409. Unexpected failures receive a generic safe500; status/message choices must match the business/protocol meaning.
 
 **Q:** What should a shared error response contain or omit?
 
-**A:** Uniform error envelope, correlation ID, no stack traces — every rule from API error design lands here as code. Without it, every handler invents its own error shape.
+**A:** A stable bounded envelope and server-owned correlation ID can identify the failure. Omit stacks, arbitrary exception messages, rejected secrets and raw database details; diagnostics need redaction and access controls too.
 
 **Q:** Where do exception filters fit when request processing throws?
 
-**A:** guards → interceptors → pipes → handler → filter on throw. Each ring's position is a dependency of concerns — authorization before validation before execution, errors last.
+**A:** An uncaught supported request failure selects an applicable route, controller or global filter. A handled exception is not automatically forwarded through every outer filter, and detached work remains outside that request ownership.
 
 ## Request Context & AsyncLocalStorage
 
@@ -96,15 +96,89 @@ Source: [Request Context & AsyncLocalStorage](20.2.2.06-request-context-and-asyn
 
 **Q:** Why might several layers need the same request identifier?
 
-**A:** The repository must not take a `traceId` argument (it has nothing to do with data access), yet its queries should be attributed to the request. Without an ambient mechanism, either the signature grows or the attribution is lost.
+**A:** Layers can attribute operations with a narrow ambient identifier, or use an explicit context parameter. Neither choice is mandatory for every repository; document the chosen dependency and keep business data explicit.
 
 **Q:** Why is a global current-request variable unsafe when requests overlap?
 
-**A:** State cannot live in a variable; it must follow the *asynchronous continuation* of each request. That is precisely what `async_hooks`-based stores do and precisely why they are the only correct mechanism.
+**A:** A mutable process current-request variable can be overwritten while another request awaits. ALS associates stores with supported async resources; explicit parameters or appropriately scoped DI are also valid mechanisms.
 
 **Q:** What dependency tradeoff comes with reading request context implicitly?
 
-**A:** Ambient context removes plumbing at the cost of hidden inputs: a function's dependencies are no longer visible in its signature. The mitigation is a *narrow, documented* store — ids and immutable facts, never business data or mutable state.
+**A:** Ambient context hides inputs from signatures. Keep the store small and documented, require verified identity where used for enforcement, and give transaction/resource handles a real lifetime contract.
+
+## Traces and changed conditions
+
+### Middleware
+
+Source: [Middleware fixture](20.2.2.01-middleware.md).
+
+**Q:** Trace the generated request ID through the middleware fixture and completion log.
+
+**A:** Correlation assigns a server UUID, the handler returns it and finish records the same ID. The client-supplied ID does not select it. Stages are identified, handler, finished.
+
+**Q:** What changes when the response closes before finish?
+
+**A:** Record closed once and remove both terminal listeners. Finish means transport handoff, not client receipt; neither event makes request IDs appropriate metric labels.
+
+### Guards
+
+Source: [Guard fixture](20.2.2.02-guards.md).
+
+**Q:** Explain health200, missingcredential401, reader403 and admin200 in order.
+
+**A:** Public health bypasses authentication. Reports without a credential stop at authentication; a verified reader fails the inherited admin policy; an admin passes both guards.
+
+**Q:** Why does a reader succeed on `/reports/read`, and what if its metadata is removed?
+
+**A:** Handler-first override chooses the reader role. Removing that declaration exposes the controller admin requirement again. Merge would be a different declared policy.
+
+### Pipes
+
+Source: [Bounded page-size pipe](20.2.2.03-pipes.md).
+
+**Q:** What do undefined, `'25'`, `'10junk'` and a repeated-value array produce?
+
+**A:** Default10, accepted25, then two400 rejections. Absence differs from malformed input; accepted values are safe positive integers at most100.
+
+**Q:** What changes if a database uniqueness lookup moves into a pipe?
+
+**A:** It can give early feedback, but two requests can both pass before either insert. The database constraint and domain-aware conflict mapping still enforce the concurrent invariant.
+
+### Interceptors
+
+Source: [Wrapper and timeout fixtures](20.2.2.04-interceptors.md).
+
+**Q:** Trace handler1 through inner and outer mapping.
+
+**A:** Outer before precedes inner before; handler emits1, inner maps2, outer maps3. Finalizers observe subscription termination, not delivery of the response.
+
+**Q:** Why does the timeout fixture print stopped waiting and later1?
+
+**A:** The5ms first-emission deadline unsubscribes, but the40ms promise continues and increments its effect. A mutation can complete after timeout; cancellation needs a cooperative API and uncertain outcomes need reconciliation.
+
+### Filters
+
+Source: [Safe HTTP filter](20.2.2.05-exception-filters.md).
+
+**Q:** What reaches clients for private404, private400 and an unexpected database-secret error?
+
+**A:** Fixed Not found/Invalid request/Internal server error messages with404/400/500. The arbitrary exception text remains outside the public envelope.
+
+**Q:** What changes if response headers were already sent or a local filter handles the error?
+
+**A:** A new complete JSON/status cannot replace sent bytes; the adapter/stream must handle the existing response. A local applicable filter handles its scope rather than automatically forwarding through every global filter.
+
+### Async context
+
+Source: [ALS interleaving fixture](20.2.2.06-request-context-and-async-local-storage.md).
+
+**Q:** Why do overlapping operations return clinic-a/clinic-b and the later A timer still returns clinic-a?
+
+**A:** Their supported descendant resources retain distinct stores. The timer was created inside A even though it outlives the main callback. Outside both roots getStore is undefined and required tenant access throws.
+
+**Q:** What changes if a timer retains a transaction client after its callback committed?
+
+**A:** Context association may remain, but the client lifetime is over. Await transaction work before leaving, and open a fresh owned transaction at a job boundary; ALS does not automatically bind root-client queries or make missing tenant context safe.
 
 ## Summary
 

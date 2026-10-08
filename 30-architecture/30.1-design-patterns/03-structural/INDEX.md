@@ -1,6 +1,6 @@
 # Structural Patterns
 
-> **Study time:** ≈ 1 h 37 m of reading (9 files, ~11 min average).
+> **Study time:** ≈ 1 h 19 m of reading (9 files, ~9 min average).
 > **9 files.** Class and object composition. These patterns are about how to assemble larger structures from classes and objects while keeping the structure flexible and efficient.
 
 [![Files](https://img.shields.io/badge/files-9-blue)](../../INDEX.md)
@@ -26,9 +26,9 @@ Inheritance couples a subtype to a base contract and implementation. Structural 
 
 | # | Pattern | Intent | Use when | Avoid when | Role priority | General importance |
 | --: | --------- | -------- | ---------- | ------------ | --- | --- |
-| 1 | [Adapter](30.1.3.01-adapter.md) | Bridge incompatible interfaces | 3rd-party SDK, legacy integration | You control both sides | Important | Foundational |
+| 1 | [Adapter](30.1.3.01-adapter.md) | Bridge incompatible interfaces | 3rd-party SDK, legacy integration | Refactoring both sides already preserves compatibility | Important | Foundational |
 | 2 | [Facade](30.1.3.02-facade.md) | Simplified front for complex system | Library/SDK, multi-subsystem workflow | Single subsystem, already simple | Important | Specialized |
-| 3 | [Decorator](30.1.3.03-decorator.md) | Add behavior dynamically | Cross-cutting concerns (logging, auth, caching) | Many independent dimensions → explosion | Important | Specialized |
+| 3 | [Decorator](30.1.3.03-decorator.md) | Add behavior dynamically | Cross-cutting concerns (logging, auth, caching) | Wrapper order obscures the contract | Important | Specialized |
 | 4 | [Proxy](30.1.3.04-proxy.md) | Controlled access (lazy, protection, remote, caching) | Image/DB lazy loading, RBAC checks, network stubs | Direct access is fine | Important | Specialized |
 | 5 | [Module](30.1.3.05-module-pattern.md) | Encapsulation at the file level | File/package visibility boundaries | N/A | Important | Specialized |
 | 6 | [Composite](30.1.3.06-composite.md) | Tree structures, treat part-whole uniformly | File system, UI tree, org chart, AST | Flat structures, no recursion | Important | Specialized |
@@ -79,7 +79,7 @@ These three look similar — they all wrap an object — but intent differs:
 | -- | --------- | ----------- | -------- |
 | **Intent** | Make incompatible interface work | Add new behavior | Control access |
 | **Interface** | Changes the interface | Keeps or extends the interface | Keeps the interface |
-| **When it intercepts** | Always (it's the only way to call the adaptee) | On every call (to add behavior) | On every call (to gate / cache / lazy-load) |
+| **Call-path decision** | Translate the required contract | Delegate or short-circuit under the component promise | Gate, delay, route, or reuse under the subject promise |
 | **Knows about clients** | No | No | Usually not, but can (auth proxy) |
 | **Example** | Wrap Stripe API in your `PaymentProvider` | Wrap a service with a logging object | Wrap a DB row for lazy loading |
 
@@ -108,7 +108,7 @@ Modern TS: a `module.ts` file often *contains* a Facade.
 
 ## When NOT to use structural patterns
 
-- **Adapter** when you control both sides — just refactor the interface.
+- **Adapter** when directly changing both sides preserves compatibility more simply. A migration can still require an adapter even when both sides are owned.
 - **Facade** when the subsystem is small and the client already knows it.
 - **Decorator** when wrapper order and interactions make the contract harder to understand than explicit configuration.
 - **Proxy** when the indirection adds no meaningful access or lifecycle boundary.
@@ -144,9 +144,9 @@ Explain a wrapper by its contract and a shared/tree structure by the state it ow
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS (NestJS monorepo) — wraps and composes for real.
 
 | Topic | Docita evidence |
-| -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Facade | `shared/modules/imports/ocr-facade.service.ts` hides the OCR pipeline; `shared/whatsapp/templates-facade.service.ts` hides template resolution — delegation enforced by `scripts/checks/check-facade-delegation.mjs` |
+| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Facade | `shared/modules/imports/ocr-facade.service.ts` hides the OCR pipeline; `shared/whatsapp/templates-facade.service.ts` hides template resolution — construction/delegation guard source: `scripts/checks/check-facade-delegation.mjs` |
 | Adapter | India's ABDM government API wrapped by `domains/abdm/infrastructure/abdm-abha.client.ts`; Razorpay SDK behind `payments/infrastructure/adapters/razorpay/` |
 | Decorator (framework-shaped) | NestJS interceptor/guard pipelines in `shared/common/interceptors/*` add logging, CSRF, tenant-context around handlers |
-| Module | ES modules + barrel `index.ts` files at every module boundary |
-| Proxy / Flyweight / Composite / Bridge | _No direct docita implementation yet._ |
+| Module | ES module scope and curated entry points; a barrel alone does not enforce every import boundary |
+| Proxy / Flyweight / Composite / Bridge | No exhaustive implementation audit is implied by these pointers; confirm a claimed GoF mechanism in the actual source. |

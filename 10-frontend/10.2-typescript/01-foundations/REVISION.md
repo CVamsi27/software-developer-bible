@@ -17,7 +17,7 @@ Source: [Types vs Interfaces](10.2.1.01-types-vs-interfaces.md)
 **Definition**
 
 1. **Q:** What can `type` declare that `interface` cannot, and vice versa?
-   **A:** `type` covers unions, intersections, tuples, mapped/conditional types and primitive aliases; `interface` adds declaration merging and the `extends` form libraries use for augmentation. Everything both can express is interchangeable.
+   **A:** `type` covers unions, intersections, tuples, mapped/conditional types and primitive aliases; `interface` adds declaration merging and the `extends` form libraries use for augmentation. Their common object shapes are often mutually assignable; merging and conflict handling still differ.
 
 2. **Q:** Why do two declarations with the same name collide for `type` but merge for `interface`?
    **A:** A type alias is a one-shot binding to a single type — a second one is a duplicate identifier. An interface is an open contract: each declaration contributes members to the same growing shape.
@@ -25,15 +25,15 @@ Source: [Types vs Interfaces](10.2.1.01-types-vs-interfaces.md)
 **How It Works**
 
 3. **Q:** Does `interface Dog extends Animal` do something `type Dog = Animal & { … }` cannot?
-   **A:** No for a single object shape — the intersection produces the same members. The differences are elsewhere: `extends` cannot express a union, and only the interface form is mergeable.
+   **A:** Compatible members can describe the same shape, but conflicting extension members report an error at the interface; an intersection instead requires both and may produce an impossible never property. An interface also supports merging.
 
 4. **Q:** What does structural typing imply about a `type Point` and an identically-shaped `interface PointInterface`?
-   **A:** They are interchangeable: a value typed one is assignable to the other, because assignability compares members, never declared names.
+   **A:** They are interchangeable: a value typed one is assignable to the other, because these plain object contracts compare their members. Private/protected class members and brands impose additional compatibility conditions.
 
 **Code Examples**
 
 5. **Q:** Why does `const p: Point = { x: 1, y: 2, z: 3 }` fail while assigning an object literal *variable* with an extra `z` succeeds?
-   **A:** Object literals get an excess-property check against the target type; a variable already typed elsewhere is only checked structurally, and extra members never break assignability.
+   **A:** Object literals get an excess-property check against the target type; a variable already typed elsewhere is only checked structurally, and a compatible existing value can have extra members. This is not an exact runtime schema, and other contexts/index signatures/weak targets have their own checks.
 
 **Common Mistakes**
 
@@ -63,7 +63,7 @@ Source: [Keyof & Typeof](10.2.1.02-keyof-typeof.md)
    **A:** Without `as const` each member widens to `string`, so the union collapses to `string`; with it, members stay literals and the union is `"active" | "inactive"`.
 
 4. **Q:** In `function get<T, K extends keyof T>(obj: T, key: K): T[K]`, what does the `keyof T` constraint buy you?
-   **A:** It guarantees `key` names a real property (typos fail to compile) and gives the return type the precise `T[K]` instead of `any`.
+   **A:** It restricts key to the static contract (typos fail to compile), not a proof of runtime ownership or input validity and gives the return type the precise `T[K]` instead of `any`.
 
 **Code Examples**
 
@@ -98,7 +98,7 @@ Source: [Type Narrowing](10.2.1.03-type-narrowing.md)
    **A:** `typeof null` is `"object"`, so the null branch survives the guard — check `user !== null` (or `!= null`) explicitly instead.
 
 4. **Q:** What must a function return for `if (isCat(x))` to narrow `x`?
-   **A:** A type predicate — `x is Cat` in the signature — not a plain `boolean`; the boolean version only says yes/no, it claims nothing about the type.
+   **A:** An authored predicate signature such as x is Cat communicates the narrowing claim. Recent compilers can also infer predicates from suitable simple checks; an explicit Boolean return alone carries no authored narrowing contract. The checker trusts the claim, so the check must actually validate it.
 
 **Code Examples**
 
@@ -108,7 +108,7 @@ Source: [Type Narrowing](10.2.1.03-type-narrowing.md)
 **Common Mistakes**
 
 6. **Q:** Why is a `void` handler with an uncovered union member dangerous compared to a value-returning one?
-   **A:** The value-returning function fails with `TS2366 Function lacks ending return statement`, but the `void` handler compiles cleanly and silently drops the event.
+   **A:** A value-returning function with a non-undefined return type and strict null checking can fail for the missing return, but the `void` handler compiles cleanly and silently drops the event.
 
 7. **Q:** After `x = x.trim()` inside a branch that had already narrowed `x`, is the narrowed type kept?
    **A:** Yes. `trim()` returns a string, so this assignment leaves the current flow type as `string`. An assignment updates the flow type according to the assigned value; assigning a value that may be `null` can broaden it again. The declared type still limits which assignments are allowed.
@@ -128,10 +128,10 @@ Source: [tsconfig & Compiler Options](10.2.1.04-tsconfig-compiler-options.md)
    **A:** Bundled apps use `bundler` (extensionless imports fine); packages consumed by Node use `nodenext` (relative ESM imports need `.js`, honors `exports` maps). Swapped, you get phantom "cannot find module" errors that appear only in some tools.
 
 3. **Q:** What does `isolatedModules: true` actually reject, and what does it merely warn you about by behavior?
-   **A:** It rejects type/value ambiguity a single-file transpiler can't resolve — chiefly type-only *re*-exports (`export { Foo }` → TS1205) and ambient const enum access (TS2748). Ordinary const enums still compile; they just never get inlined across files.
+   **A:** It rejects type/value ambiguity a single-file transpiler can't resolve — chiefly type-only *re*-exports (`export { Foo }` → TS1205) and ambient const enum access (TS2748). Ordinary const-enum behavior depends on the emitting tool/options; do not promise cross-file inlining under a single-file transform.
 
 4. **Q:** How does `verbatimModuleSyntax` go further than `isolatedModules`?
-   **A:** It requires `import type`/`export type` for every type-only import (not just re-exports) and prevents the emitter from rewriting module syntax, so the file you wrote is the file that ships.
+   **A:** It requires `import type`/`export type` for every type-only import (not just re-exports) and prevents the emitter from rewriting module syntax, while explicitly type-only imports/exports and annotations are erased. It does not preserve every source byte.
 
 **Code Examples**
 
@@ -146,7 +146,29 @@ Source: [tsconfig & Compiler Options](10.2.1.04-tsconfig-compiler-options.md)
 **Best Practices**
 
 7. **Q:** Two engineers get different `tsc` results from the same commit — which tsconfig principle does that violate?
-   **A:** The config is a project fingerprint: CI must type-check with the committed tsconfig, and local editor settings must not drift from it, or the same code means different things per machine.
+   **A:** The config is a project fingerprint: CI must type-check with the committed tsconfig, and the compiler version, dependency declarations and entry command must also agree. The same config with a different compiler can have different defaults and checks.
+
+## Changed-condition checks
+
+Source: [Types vs Interfaces](10.2.1.01-types-vs-interfaces.md)
+
+**Q:** A contract requires value:string, then a second contract requires value:number. Does intersection choose the later member?
+**A:** No. It requires both, producing an impossible string-and-number property. An interface extension instead reports the incompatible member at its declaration.
+
+Source: [Keyof and Typeof](10.2.1.02-keyof-typeof.md)
+
+**Q:** Trace settings.port through typeof, keyof and indexed access. What changes when the property is optional?
+**A:** typeof settings gives the object type, keyof selects names, and indexed access selects port's value type. An optional port read also admits undefined; the key union does not prove the runtime value is present.
+
+Source: [Type Narrowing](10.2.1.03-type-narrowing.md)
+
+**Q:** JSON parsing returns {name:42,email:"a@example.com"}. Why does parseUser reject it despite valid JSON?
+**A:** Syntax parsing yields unknown data. isUser checks the actual required string fields; an as User cast would falsely claim them without changing the value.
+
+Source: [Compiler Options](10.2.1.04-tsconfig-compiler-options.md)
+
+**Q:** With noUncheckedIndexedAccess enabled, why must labels[0] be guarded, and what happens if paths is configured only in tsc?
+**A:** The array type admits an empty array, so the index can be undefined. paths helps static resolution but does not rewrite emitted imports; the bundler/loader needs the matching alias contract.
 
 ## Summary
 

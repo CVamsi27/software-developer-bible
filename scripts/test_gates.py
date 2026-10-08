@@ -864,6 +864,150 @@ CASES = [
         },
     },
     {
+        "name": "gate 5 rejects nonexistent builtin k6 VU memory metric",
+        "gate": "check_freshness.py",
+        "args": [],
+        "dirs": ["50-quality/50.1-testing/05-advanced"],
+        "plant": {
+            "50-quality/50.1-testing/05-advanced/50.1.5.01-load.md": (
+                "# Load\n\n```javascript\nimport http from 'k6/http';\n"
+                "```\n\n```javascript\nexport const options = { thresholds: { 'vus_memory': ['value<512000000'] } };\n```\n"
+            ),
+        },
+        "fire_names": ("FABRICATED-K6-MEMORY-METRIC", "50.1.5.01-load.md:8"),
+        "clean": {
+            "50-quality/50.1-testing/05-advanced/50.1.5.01-load.md": (
+                "# Load\n\n```javascript\nimport { Gauge } from 'k6/metrics';\n"
+                "const observedMemory = new Gauge('vus_memory');\n"
+                "export const options = { thresholds: { 'vus_memory': ['value<512000000'] } };\n```\n"
+                "The application metric requires an actual sampler.\n"
+                "````markdown\n```javascript\nimport http from 'k6/http';\n"
+                "const thresholds = { vus_memory: ['value<512000000'] };\n```\n````\n"
+            ),
+        },
+    },
+    {
+        "name": "gate 5 rejects AxeBuilder on an implicitly owned browser page",
+        "gate": "check_freshness.py",
+        "args": [],
+        "dirs": ["50-quality/50.2-accessibility"],
+        "plant": {
+            "50-quality/50.2-accessibility/50.2.08-testing-a11y.md": (
+                "# Audit\n\n```javascript\nconst AxeBuilder = require('@axe-core/playwright').default;\n"
+                "const page = await browser.newPage();\n"
+                "const results = await new AxeBuilder({ page }).analyze();\n```\n"
+            ),
+        },
+        "fire_names": ("AXE-PLAYWRIGHT-CONTEXT", "50.2.08-testing-a11y.md:5"),
+        "clean": {
+            "50-quality/50.2-accessibility/50.2.08-testing-a11y.md": (
+                "# Audit\n\n```javascript\nconst AxeBuilder = require('@axe-core/playwright').default;\n"
+                "const context = await browser.newContext();\nconst page = await context.newPage();\n"
+                "const results = await new AxeBuilder({ page }).analyze();\n```\n"
+                "```javascript\nconst ordinaryPage = await browser.newPage();\nawait ordinaryPage.goto('http://localhost:8080');\n```\n"
+                "````markdown\n```javascript\nconst AxeBuilder = require('@axe-core/playwright').default;\n"
+                "const page = await browser.newPage();\nnew AxeBuilder({ page });\n```\n````\n"
+            ),
+        },
+    },
+    {
+        "name": "gate 5 rejects nonexistent Recharts AccessibilityLayer import",
+        "gate": "check_freshness.py",
+        "args": [],
+        "dirs": ["50-quality/50.2-accessibility"],
+        "plant": {
+            "50-quality/50.2-accessibility/50.2.06-accessible-charts.md": (
+                "# Chart\n\n```tsx\nimport {\n  BarChart,\n  AccessibilityLayer,\n} from 'recharts';\n```\n"
+            ),
+        },
+        "fire_names": ("FABRICATED-RECHARTS-ACCESSIBILITY-COMPONENT", "50.2.06-accessible-charts.md:4"),
+        "clean": {
+            "50-quality/50.2-accessibility/50.2.06-accessible-charts.md": (
+                "# Chart\n\n```tsx\nimport { BarChart } from 'recharts';\n"
+                "const chart = <BarChart accessibilityLayer data={data} />;\n```\n"
+                "Recharts uses a prop, not an exported AccessibilityLayer component.\n"
+                "````markdown\n```tsx\nimport { AccessibilityLayer } from 'recharts';\n```\n````\n"
+            ),
+        },
+    },
+    {
+        "name": "gate 5 rejects fictional Lighthouse CLI function imports",
+        "gate": "check_freshness.py", "args": [],
+        "dirs": ["50-quality/50.3-performance-monitoring/02-measurement"],
+        "plant": {
+            "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.03-lighthouse-ci.md": (
+                "# Lighthouse CI\n\n```typescript\nimport { start, upload } from '@lhci/cli';\n```\n"
+            ),
+        },
+        "fire_names": ("FABRICATED-LHCI-FUNCTION-API", "50.3.2.03-lighthouse-ci.md:4"),
+        "clean": {
+            "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.03-lighthouse-ci.md": (
+                "# Lighthouse CI\n\n```bash\nnpx lhci autorun --config=./lighthouserc.json\n```\n"
+                "There is no documented start/upload function API.\n"
+                "````markdown\n```typescript\nimport { start, upload } from '@lhci/cli';\n```\n````\n"
+                "```typescript\nimport { start } from './owned-audit.js';\n```\n"
+            ),
+        },
+    },
+    {
+        "name": "gate 5 rejects removed standard Lighthouse interactive audit",
+        "gate": "check_freshness.py", "args": [],
+        "dirs": ["50-quality/50.3-performance-monitoring/02-measurement"],
+        "plant": {
+            "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.03-lighthouse-ci.md": (
+                '# Lighthouse CI\n\n```json\n{"ci":{"assert":{"assertions":{"interactive":["error",{"maxNumericValue":3800}]}}}}\n```\n'
+            ),
+        },
+        "fire_names": ("REMOVED-LIGHTHOUSE-INTERACTIVE", "50.3.2.03-lighthouse-ci.md:4"),
+        "clean": {
+            "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.03-lighthouse-ci.md": (
+                '# Lighthouse CI\n\n```json\n{"ci":{"assert":{"assertions":{"total-blocking-time":["error",{"maxNumericValue":200}]}}}}\n```\n'
+                'Historical Lighthouse 9 used interactive; current standard audits omit it.\n'
+                '````markdown\n```json\n{"ci":{"assert":{"assertions":{"interactive":["error",{"maxNumericValue":3800}]}}}}\n```\n````\n'
+            ),
+            "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.01-performance-apis.md": (
+                '# Performance APIs\n\n```javascript\nconst interactive = { mode: "pointer" };\n```\n'
+            ),
+        },
+    },
+    {
+        "name": "gate 5 rejects fabricated page Chrome heap command",
+        "gate": "check_freshness.py", "args": [],
+        "dirs": ["50-quality/50.3-performance-monitoring/02-measurement"],
+        "plant": {
+            "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.md": (
+                "# Profiling Tools\n\n```typescript\n(window as any).chrome?.sendCommand?.('HeapProfiler.takeHeapSnapshot');\n```\n"
+            ),
+        },
+        "fire_names": ("FABRICATED-PAGE-HEAP-COMMAND", "50.3.2.02-profiling-tools.md:4"),
+        "clean": {
+            "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.md": (
+                "# Profiling Tools\n\n```javascript\nawait session.send('HeapProfiler.takeHeapSnapshot');\n```\n"
+                "Use an authenticated debugging session, not a page API.\n"
+                "````markdown\n```typescript\n(window as any).chrome?.sendCommand?.('HeapProfiler.takeHeapSnapshot');\n```\n````\n"
+            ),
+        },
+    },
+    {
+        "name": "gate 5 rejects UDP proxy RFC mislabeled as WebTransport",
+        "gate": "check_freshness.py",
+        "args": [],
+        "dirs": ["60-realtime/60.1-websockets/01-transports"],
+        "plant": {
+            "60-realtime/60.1-websockets/01-transports/60.1.1.04-webtransport.md": (
+                "# WebTransport\n\n[WebTransport RFC](https://www.rfc-editor.org/rfc/rfc9298.html)\n"
+            ),
+        },
+        "fire_names": ("WRONG-WEBTRANSPORT-RFC", "60.1.1.04-webtransport.md:3"),
+        "clean": {
+            "60-realtime/60.1-websockets/01-transports/60.1.1.04-webtransport.md": (
+                "# WebTransport\n\n[WebTransport over HTTP/3 draft](https://datatracker.ietf.org/doc/html/draft-ietf-webtrans-http3)\n"
+                "[UDP proxying RFC](https://www.rfc-editor.org/rfc/rfc9298.html)\n"
+                "```markdown\n[WebTransport RFC](https://www.rfc-editor.org/rfc/rfc9298.html)\n```\n"
+            ),
+        },
+    },
+    {
         "name": "gate 5 rejects obsolete MSW rest imports including multiline declarations",
         "gate": "check_freshness.py",
         "args": [],

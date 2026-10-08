@@ -1,52 +1,44 @@
 # Accessibility — Index
 
-> **Study time:** ≈ 1 h 54 m of reading (10 files, ~11 min average).
+> **Study time:** ≈ 1 h 14 m of reading (10 files, ~7 min average).
 > **10 files** — Web accessibility from WCAG and ARIA to keyboard navigation, accessible charts, design systems, testing, color & contrast, forms, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-10-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Quality-green)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Why accessibility:** Legal requirement in many jurisdictions (ADA, EAA, Section 508), ethical imperative, and increasingly tested in senior interviews. ~15% of users have some form of disability. WCAG 2.1 AA is the standard most companies aim for. The basics are quick to learn and high-leverage in interviews.
+## Read from the task to its implemented evidence
 
----
+Start with the barriers and the WCAG target, then connect semantic meaning to keyboard behavior, visible information and recoverable input. Continue through equivalent data and shared components before evaluating complete journeys. The [section revision](REVISION.md) belongs after the learning chapters and before interview practice.
 
 ## Topic Categories
 
 | Category | Files | Why it matters |
-| -------------------------------------------------- | ----: | ----------------------------------------------------- |
-| [Standards](#standards) | 1 | WCAG (POUR, levels) — the rule book |
-| [Semantic HTML & ARIA](#semantic-html--aria) | 1 | ARIA roles, states, properties — extending semantics |
+| -------------------------------------------------- | ----: | ------------------------------------------------------ |
+| [Standards](#standards) | 1 | Principles, criteria, target version and process scope |
+| [Semantic HTML & ARIA](#semantic-html--aria) | 1 | Roles, names, states and behavior boundaries |
 | [Interaction](#interaction) | 2 | Keyboard navigation, forms — how users interact |
-| [Visual Design](#visual-design) | 1 | Color, contrast, CVD-safe palettes — the visual side |
+| [Visual Design](#visual-design) | 1 | Rendered contrast pairs, non-color cues and themes |
 | [Charts & Design Systems](#charts--design-systems) | 2 | Data viz a11y, primitives + governance — scaling a11y |
-| [Testing & Interview](#testing--interview) | 2 | A11y testing, 50+ Qs |
+| [Testing & Interview](#testing--interview) | 2 | Evaluation methods and original interview questions |
 
 ---
 
 ## Standards
 
-The rule book.
+Name the target version/level and understand principles, criteria, techniques and complete-process scope.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [WCAG Overview](50.2.01-wcag-overview.md) | POUR principles (Perceivable, Operable, Understandable, Robust), conformance levels A/AA/AAA, success criteria | Essential | Foundational | 12 min |
-
-**POUR (memorize):**
-- **P**erceivable — users can perceive the content (alt text, captions, color contrast)
-- **O**perable — users can operate the UI (keyboard, no seizures, navigation)
-- **U**nderstandable — users can understand (readable, predictable, input assistance)
-- **R**obust — works with assistive tech (valid HTML, ARIA)
-
----
+| 01 | [WCAG Overview](50.2.01-wcag-overview.md) | POUR principles (Perceivable, Operable, Understandable, Robust), conformance levels A/AA/AAA, success criteria | Essential | Foundational | 5 min |
 
 ## Semantic HTML & ARIA
 
-The foundation — semantic HTML is 90% of accessibility.
+Trace the disclosure before comparing roles, names, states and relationships. Exposed meaning and working behavior are separate responsibilities.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 02 | [ARIA](50.2.02-aria.md) | Roles, states, properties, ARIA patterns (combobox, dialog, menu), best practices, when NOT to use | Essential | Foundational | 13 min |
+| 02 | [ARIA](50.2.02-aria.md) | Roles, states, properties, ARIA patterns (combobox, dialog, menu), best practices, when NOT to use | Essential | Foundational | 6 min |
 
 **Rule of thumb:** Semantic HTML first, ARIA second. ARIA is for filling gaps, not replacing HTML.
 
@@ -56,8 +48,8 @@ The foundation — semantic HTML is 90% of accessibility.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 03 | [Keyboard Navigation](50.2.03-keyboard-navigation.md) | Tab order, focus management, focus traps, skip links, keyboard shortcuts, visible focus | Essential | Foundational | 18 min |
-| 05 | [Forms & Labels](50.2.05-forms-and-labels.md) | Label association, validation, fieldset/legend, autocomplete, error handling, accessible error messages | Essential | Foundational | 15 min |
+| 03 | [Keyboard Navigation](50.2.03-keyboard-navigation.md) | Tab order, focus management, focus traps, skip links, keyboard shortcuts, visible focus | Essential | Foundational | 10 min |
+| 05 | [Forms & Labels](50.2.05-forms-and-labels.md) | Label association, validation, fieldset/legend, autocomplete, error handling, accessible error messages | Essential | Foundational | 10 min |
 
 ---
 
@@ -65,20 +57,20 @@ The foundation — semantic HTML is 90% of accessibility.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 04 | [Color & Contrast](50.2.04-color-and-contrast.md) | WCAG 1.4.3 contrast ratios (4.5:1 text, 3:1 UI), color-vision-deficiency-safe palettes, forced-colors mode | Essential | Foundational | 11 min |
+| 04 | [Color & Contrast](50.2.04-color-and-contrast.md) | WCAG 1.4.3 contrast ratios (4.5:1 text, 3:1 UI), color-vision-deficiency-safe palettes, forced-colors mode | Essential | Foundational | 7 min |
 
 ---
 
 ## Charts & Design Systems
 
-Where accessibility scales (or dies): dashboards and shared components.
+Preserve both a chart’s information and tasks, then assign shared-component and consumer responsibilities.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 06 | [Accessible Charts & Data Viz](50.2.06-accessible-charts-data-viz.md) | SVG chart a11y (`role="img"`, labels), table fallbacks, color independence, sonification, screen-reader testing of dashboards, Recharts/Highcharts gaps | Optional | Specialized | 12 min |
-| 07 | [Accessibility Design Systems](50.2.07-accessibility-design-systems.md) | Radix/React Aria primitives, focus management baked in, contrast tokens, jsx-a11y + CI gates, definition-of-done governance, audit-to-component pipeline | Optional | Specialized | 12 min |
+| 06 | [Accessible Charts & Data Viz](50.2.06-accessible-charts-data-viz.md) | SVG chart a11y (`role="img"`, labels), table fallbacks, color independence, sonification, screen-reader testing of dashboards, Recharts/Highcharts gaps | Optional | Specialized | 9 min |
+| 07 | [Accessibility Design Systems](50.2.07-accessibility-design-systems.md) | Radix/React Aria primitives, focus management baked in, contrast tokens, jsx-a11y + CI gates, definition-of-done governance, audit-to-component pipeline | Optional | Specialized | 8 min |
 
-**Rule of thumb:** fix a11y once in the design system — every product inherits it.
+A shared fix reaches a product only after adoption, correct composition and evaluation of its actual journey.
 
 ---
 
@@ -86,34 +78,18 @@ Where accessibility scales (or dies): dashboards and shared components.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 08 | [Testing A11y](50.2.08-testing-a11y.md) | Automated tools (axe-core, Lighthouse), manual testing, screen readers (NVDA, VoiceOver, JAWS), keyboard-only testing | Essential | Foundational | 14 min |
-| 09 | [Interview Questions](50.2.09-interview-questions.md) | 50+ curated questions with answers | Essential | Foundational | 5 min |
+| 08 | [Testing A11y](50.2.08-testing-a11y.md) | Automated tools (axe-core, Lighthouse), manual testing, screen readers (NVDA, VoiceOver, JAWS), keyboard-only testing | Essential | Foundational | 8 min |
+| 09 | [Interview Questions](50.2.09-interview-questions.md) | Original questions, reasoned answers and changed-condition probes | Essential | Foundational | 8 min |
 
 ---
 
-## Suggested Study Order
+## Learning passes
 
-1. **WCAG Overview** — must know the framework
-2. **ARIA** — the most-asked a11y topic
-3. **Keyboard Navigation** — must know
-4. **Forms & Labels** — must know
-5. **Color & Contrast** — quick win
-6. **Accessible Charts / Design Systems** — for senior roles with dashboards or DS ownership
-7. **Testing A11y** — for senior roles
-8. **Interview Questions** — final review
-
----
-
-## Common interview topics
-
-- "What is WCAG? What are the POUR principles?"
-- "What's the difference between ARIA roles and HTML semantics?"
-- "How do you make a custom dropdown accessible?"
-- "What's the minimum contrast ratio for text?"
-- "How do you test accessibility?"
-- "How do you make a modal accessible?" (focus trap, ESC to close, return focus)
-
----
+1. **Meaning and operation:** WCAG, ARIA and keyboard chapters connect the task, accessibility representation and complete interaction lifecycle. Reproduce the disclosure, tabs and dialog transitions.
+2. **Perception and recovery:** contrast and forms explain actual rendered pairs, names/descriptions, invalid state, feedback and correction. Change a theme or error condition and predict the result.
+3. **Information and reuse:** charts preserve insight, exact data and interaction; design systems define layer contracts, evaluation and adoption.
+4. **Evidence:** testing distinguishes encoded rules, browser input, manual meaning and assistive-technology evaluation. Inspect violations, incomplete checks and scope.
+5. **Revision, then interview:** complete [revision](REVISION.md) before the [interview bank](50.2.09-interview-questions.md), using its probes to vary a consequential condition.
 
 ## Cross-References
 
@@ -132,7 +108,7 @@ Where accessibility scales (or dies): dashboards and shared components.
 
 ## Docita Anchor
 
-[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
+[Docita](https://github.com/CVamsi27/docita) supplies companion artifacts to inspect. Verify their current assertions, revision and evaluated states before claiming a pass; a script’s existence does not establish keyboard or screen-reader task completion.
 
 | Topic | Docita evidence |
 | --------------------------- | ---------------------------------------------------------------------------------------------------------------------- |

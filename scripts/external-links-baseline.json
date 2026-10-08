@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-08",
- "url_count": 2255,
+ "url_count": 2282,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md",
@@ -201,9 +201,6 @@
    "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.01-rate-limiting.md",
    "30-architecture/30.2-system-design/01-theory/30.2.1.08-rate-limiting.md"
   ],
-  "https://blog.cloudflare.com/http-2-prioritization-with-nginx/": [
-   "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.md"
-  ],
   "https://blog.isquaredsoftware.com/2020/05/blogged-answers-a-mostly-complete-guide-to-react-rendering-behavior/": [
    "10-frontend/10.3-react/01-react-internals/10.3.1.04-rendering.md"
   ],
@@ -316,8 +313,8 @@
   "https://cdkpatterns.com/": [
    "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md"
   ],
-  "https://chaos-mesh.org/": [
-   "50-quality/50.1-testing/05-advanced/50.1.5.02-chaos-engineering.md"
+  "https://chaos-mesh.org/docs/define-scheduling-rules/": [
+   "50-quality/50.4-production-engineering/50.4.03-chaos-engineering.md"
   ],
   "https://cheatsheetseries.owasp.org/": [
    "20-backend/20.5-security/04-interview-drills/20.5.4.01-interview-questions.md",
@@ -413,9 +410,6 @@
   "https://cloud.google.com/spanner/docs/true-time-external-consistency": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.md"
   ],
-  "https://colorbrewer2.org/": [
-   "50-quality/50.2-accessibility/50.2.04-color-and-contrast.md"
-  ],
   "https://commission.europa.eu/law/law-topic/data-protection/data-protection-explained_en": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.10-hospital-management.md"
   ],
@@ -486,9 +480,6 @@
   ],
   "https://craftinginterpreters.com/": [
    "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.11-interpreter.md"
-  ],
-  "https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html": [
-   "50-quality/50.2-accessibility/50.2.04-color-and-contrast.md"
   ],
   "https://crdt.tech/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.20-multi-region-deployment.md"
@@ -665,15 +656,8 @@
    "30-architecture/30.2-system-design/01-theory/30.2.1.18-outbox-and-cdc.md",
    "70-interview-toolkit/70.1-behavioral/70.1.04-system-design-behavioral.md"
   ],
-  "https://dequeuniversity.com/": [
-   "50-quality/50.2-accessibility/50.2.08-testing-a11y.md",
-   "50-quality/50.2-accessibility/50.2.09-interview-questions.md"
-  ],
   "https://design-system.service.gov.uk/components/text-input/": [
    "50-quality/50.2-accessibility/50.2.05-forms-and-labels.md"
-  ],
-  "https://design-tokens.github.io/community-group/format/": [
-   "50-quality/50.2-accessibility/50.2.07-accessibility-design-systems.md"
   ],
   "https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_binlog_format": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.18-outbox-and-cdc.md"
@@ -705,20 +689,26 @@
   "https://developer.apple.com/ios/universal-links/": [
    "10-frontend/10.8-mobile/10.8.02-deep-linking-universal-links.md"
   ],
+  "https://developer.chrome.com/blog/lighthouse-10-0/": [
+   "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.03-lighthouse-ci.md"
+  ],
   "https://developer.chrome.com/blog/removing-push": [
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.md"
   ],
   "https://developer.chrome.com/docs/capabilities/web-apis/webtransport": [
    "60-realtime/60.1-websockets/01-transports/60.1.1.04-webtransport.md"
   ],
-  "https://developer.chrome.com/docs/crux/": [
+  "https://developer.chrome.com/docs/crux/api/": [
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.04-real-user-monitoring.md"
   ],
-  "https://developer.chrome.com/docs/crux/api/": [
+  "https://developer.chrome.com/docs/crux/methodology": [
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.04-real-user-monitoring.md"
   ],
   "https://developer.chrome.com/docs/css-ui/scroll-driven-animations": [
    "10-frontend/10.6-animation/10.6.06-view-transitions-and-scroll-driven-animations.md"
+  ],
+  "https://developer.chrome.com/docs/devtools/memory-problems": [
+   "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.md"
   ],
   "https://developer.chrome.com/docs/devtools/memory-problems/": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.06-memory-leaks.md"
@@ -728,16 +718,16 @@
    "20-backend/20.1-node.js/04-security-and-operations/20.1.4.02-debugging-profiling-nodejs.md"
   ],
   "https://developer.chrome.com/docs/devtools/performance/": [
-   "50-quality/50.3-performance-monitoring/01-core-metrics/50.3.1.01-core-web-vitals.md",
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.md",
    "50-quality/50.3-performance-monitoring/04-interview-prep/50.3.4.01-interview-questions.md"
   ],
+  "https://developer.chrome.com/docs/devtools/performance/reference/": [
+   "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.md"
+  ],
   "https://developer.chrome.com/docs/lighthouse/overview": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.01-build-optimization.md",
-   "50-quality/50.2-accessibility/50.2.08-testing-a11y.md"
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.01-build-optimization.md"
   ],
   "https://developer.chrome.com/docs/lighthouse/overview/": [
-   "50-quality/50.3-performance-monitoring/01-core-metrics/50.3.1.01-core-web-vitals.md",
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.md",
    "50-quality/50.3-performance-monitoring/04-interview-prep/50.3.4.01-interview-questions.md"
   ],
@@ -837,8 +827,10 @@
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.06-memory-leaks.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver": [
-   "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.01-performance-apis.md",
-   "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.04-real-user-monitoring.md"
+   "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.01-performance-apis.md"
+  ],
+  "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/nextHopProtocol": [
+   "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/API/Performance_API": [
    "10-frontend/10.7-html-css/10.7.03-browser-rendering.md"
@@ -945,21 +937,11 @@
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md",
    "30-architecture/30.1-design-patterns/02-creational/30.1.2.05-prototype.md"
   ],
-  "https://developer.mozilla.org/en-US/docs/Web/Accessibility": [
-   "50-quality/50.2-accessibility/50.2.01-wcag-overview.md",
-   "50-quality/50.2-accessibility/50.2.09-interview-questions.md"
-  ],
-  "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA": [
-   "50-quality/50.2-accessibility/50.2.02-aria.md"
-  ],
-  "https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/img_role": [
-   "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.md"
-  ],
-  "https://developer.mozilla.org/en-US/docs/Web/Accessibility/Keyboard-navigable_JavaScript_widgets": [
-   "50-quality/50.2-accessibility/50.2.03-keyboard-navigation.md"
-  ],
   "https://developer.mozilla.org/en-US/docs/Web/CSS/@layer": [
    "10-frontend/10.7-html-css/10.7.06-css-architecture-styling-approaches.md"
+  ],
+  "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors": [
+   "50-quality/50.2-accessibility/50.2.04-color-and-contrast.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme": [
    "10-frontend/10.7-html-css/10.7.07-theming-design-tokens.md"
@@ -996,8 +978,8 @@
   "https://developer.mozilla.org/en-US/docs/Web/HTML/Element": [
    "10-frontend/10.7-html-css/10.7.01-html-fundamentals.md"
   ],
-  "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#accessibility_concerns": [
-   "50-quality/50.2-accessibility/50.2.05-forms-and-labels.md"
+  "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog": [
+   "50-quality/50.2-accessibility/50.2.03-keyboard-navigation.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/HTML/Responsive_images": [
    "40-platform/40.10-cdn/40.10.03-media-optimization-at-the-edge.md"
@@ -1250,9 +1232,6 @@
   "https://developers.cloudflare.com/workers/vite-plugin/": [
    "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md"
   ],
-  "https://developers.eventstore.com/": [
-   "30-architecture/30.1-design-patterns/05-architectural/30.1.5.03-event-sourcing.md"
-  ],
   "https://developers.google.com/search/docs": [
    "10-frontend/10.7-html-css/10.7.04-seo.md"
   ],
@@ -1478,7 +1457,6 @@
    "10-frontend/10.8-mobile/10.8.02-deep-linking-universal-links.md"
   ],
   "https://docs.bullmq.io/": [
-   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.06-request-context-and-async-local-storage.md",
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.07-transactional-email-and-notifications.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.21-workflow-engine.md"
   ],
@@ -1694,6 +1672,9 @@
   "https://docs.konghq.com/gateway/latest/": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.31-api-gateway.md"
   ],
+  "https://docs.kurrent.io/": [
+   "30-architecture/30.1-design-patterns/05-architectural/30.1.5.03-event-sourcing.md"
+  ],
   "https://docs.launchdarkly.com/": [
    "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.04-feature-flags-kill-switches.md"
   ],
@@ -1705,6 +1686,9 @@
   ],
   "https://docs.llamaindex.ai/en/stable/understanding/": [
    "20-backend/20.12-ai-engineering/20.12.01-llm-app-architecture.md"
+  ],
+  "https://docs.locust.io/en/stable/": [
+   "50-quality/50.1-testing/05-advanced/50.1.5.01-performance-load-testing.md"
   ],
   "https://docs.maestro.dev/": [
    "10-frontend/10.8-mobile/10.8.03-testing-react-native-apps.md"
@@ -1720,24 +1704,27 @@
   ],
   "https://docs.nestjs.com/custom-decorators": [
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.05-advanced-patterns.md",
-   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.02-guards.md",
    "20-backend/20.2-nestjs/05-advanced-and-interview/20.2.5.01-custom-decorators.md"
   ],
   "https://docs.nestjs.com/exception-filters": [
    "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.05-exception-filters.md",
    "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.01-nestjs-websockets.md"
   ],
-  "https://docs.nestjs.com/exception-filters#built-in-http-exceptions": [
-   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.05-exception-filters.md"
-  ],
-  "https://docs.nestjs.com/exception-filters#exception-filters": [
-   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.05-exception-filters.md"
+  "https://docs.nestjs.com/faq/raw-body": [
+   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.01-middleware.md"
   ],
   "https://docs.nestjs.com/faq/request-lifecycle": [
+   "20-backend/20.2-nestjs/01-core-architecture/20.2.1.02-controllers.md",
+   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.01-middleware.md",
+   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.05-exception-filters.md",
+   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.06-request-context-and-async-local-storage.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.04-backend-cheat-sheet.md"
   ],
   "https://docs.nestjs.com/faq/shutdown": [
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.03-lifecycle-hooks-graceful-shutdown.md"
+  ],
+  "https://docs.nestjs.com/fundamentals/async-providers": [
+   "20-backend/20.2-nestjs/01-core-architecture/20.2.1.03-providers.md"
   ],
   "https://docs.nestjs.com/fundamentals/circular-dependency": [
    "20-backend/20.2-nestjs/01-core-architecture/20.2.1.04-dependency-injection.md"
@@ -1746,16 +1733,15 @@
    "20-backend/20.2-nestjs/01-core-architecture/20.2.1.03-providers.md",
    "20-backend/20.2-nestjs/01-core-architecture/20.2.1.04-dependency-injection.md"
   ],
-  "https://docs.nestjs.com/fundamentals/dependency-injection": [
-   "20-backend/20.2-nestjs/01-core-architecture/20.2.1.04-dependency-injection.md"
-  ],
   "https://docs.nestjs.com/fundamentals/dynamic-modules": [
    "20-backend/20.2-nestjs/01-core-architecture/20.2.1.01-modules.md"
   ],
   "https://docs.nestjs.com/fundamentals/execution-context": [
+   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.02-guards.md",
    "20-backend/20.2-nestjs/05-advanced-and-interview/20.2.5.01-custom-decorators.md"
   ],
   "https://docs.nestjs.com/fundamentals/injection-scopes": [
+   "20-backend/20.2-nestjs/01-core-architecture/20.2.1.03-providers.md",
    "20-backend/20.2-nestjs/01-core-architecture/20.2.1.04-dependency-injection.md"
   ],
   "https://docs.nestjs.com/fundamentals/lazy-loading-modules": [
@@ -1765,23 +1751,24 @@
    "20-backend/20.2-nestjs/01-core-architecture/20.2.1.03-providers.md",
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.03-lifecycle-hooks-graceful-shutdown.md"
   ],
+  "https://docs.nestjs.com/fundamentals/module-ref": [
+   "20-backend/20.2-nestjs/01-core-architecture/20.2.1.04-dependency-injection.md"
+  ],
   "https://docs.nestjs.com/fundamentals/testing": [
-   "20-backend/20.2-nestjs/01-core-architecture/20.2.1.03-providers.md",
+   "20-backend/20.2-nestjs/01-core-architecture/20.2.1.04-dependency-injection.md",
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.02-testing.md"
   ],
   "https://docs.nestjs.com/fundamentals/testing#testing-utilities": [
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.02-testing.md"
   ],
+  "https://docs.nestjs.com/graphql/other-features": [
+   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.05-exception-filters.md"
+  ],
   "https://docs.nestjs.com/guards": [
-   "20-backend/20.2-nestjs/01-core-architecture/20.2.1.02-controllers.md",
    "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.02-guards.md",
    "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.01-nestjs-websockets.md"
   ],
   "https://docs.nestjs.com/interceptors": [
-   "20-backend/20.2-nestjs/01-core-architecture/20.2.1.02-controllers.md",
-   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.04-interceptors.md"
-  ],
-  "https://docs.nestjs.com/interceptors#response-mapping": [
    "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.04-interceptors.md"
   ],
   "https://docs.nestjs.com/microservices/basics": [
@@ -1789,6 +1776,9 @@
   ],
   "https://docs.nestjs.com/microservices/basics#transporters": [
    "20-backend/20.2-nestjs/03-patterns/20.2.3.02-microservices.md"
+  ],
+  "https://docs.nestjs.com/microservices/exception-filters": [
+   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.05-exception-filters.md"
   ],
   "https://docs.nestjs.com/microservices/kafka": [
    "20-backend/20.2-nestjs/03-patterns/20.2.3.02-microservices.md"
@@ -1809,17 +1799,22 @@
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.05-swagger-openapi-nestjs.md",
    "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.05-openapi-swagger.md"
   ],
+  "https://docs.nestjs.com/openapi/mapped-types": [
+   "10-frontend/10.2-typescript/03-type-transformations/10.2.3.03-mapped-types.md"
+  ],
   "https://docs.nestjs.com/openapi/security": [
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.05-swagger-openapi-nestjs.md"
   ],
   "https://docs.nestjs.com/pipes": [
-   "20-backend/20.2-nestjs/01-core-architecture/20.2.1.02-controllers.md",
    "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.03-pipes.md",
    "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.01-nestjs-websockets.md"
   ],
   "https://docs.nestjs.com/providers": [
    "20-backend/20.2-nestjs/01-core-architecture/20.2.1.03-providers.md",
    "30-architecture/30.1-design-patterns/05-architectural/30.1.5.07-service-locator-vs-dependency-injection.md"
+  ],
+  "https://docs.nestjs.com/recipes/async-local-storage": [
+   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.06-request-context-and-async-local-storage.md"
   ],
   "https://docs.nestjs.com/recipes/cqrs": [
    "20-backend/20.2-nestjs/03-patterns/20.2.3.01-cqrs.md",
@@ -1837,22 +1832,29 @@
   "https://docs.nestjs.com/techniques/configuration": [
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.01-configuration-validation.md"
   ],
-  "https://docs.nestjs.com/techniques/fastify": [
-   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.01-middleware.md"
+  "https://docs.nestjs.com/techniques/file-upload": [
+   "20-backend/20.2-nestjs/01-core-architecture/20.2.1.02-controllers.md"
   ],
-  "https://docs.nestjs.com/techniques/middleware": [
+  "https://docs.nestjs.com/techniques/performance": [
    "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.01-middleware.md"
   ],
   "https://docs.nestjs.com/techniques/queues": [
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.04-scheduling-background-jobs.md"
   ],
-  "https://docs.nestjs.com/techniques/streaming-files": [
+  "https://docs.nestjs.com/techniques/serialization": [
    "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.04-interceptors.md"
+  ],
+  "https://docs.nestjs.com/techniques/server-sent-events": [
+   "20-backend/20.2-nestjs/01-core-architecture/20.2.1.02-controllers.md"
+  ],
+  "https://docs.nestjs.com/techniques/streaming-files": [
+   "20-backend/20.2-nestjs/01-core-architecture/20.2.1.02-controllers.md"
   ],
   "https://docs.nestjs.com/techniques/task-scheduling": [
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.04-scheduling-background-jobs.md"
   ],
   "https://docs.nestjs.com/techniques/validation": [
+   "20-backend/20.2-nestjs/01-core-architecture/20.2.1.02-controllers.md",
    "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.03-pipes.md",
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.01-configuration-validation.md"
   ],
@@ -1884,7 +1886,10 @@
   "https://docs.ogc.org/is/21-026/21-026.html": [
    "80-lanes-abroad-full-stack/80.34-germany-target-domain-primer.md"
   ],
-  "https://docs.opensearch.org/latest/query-dsl/": [
+  "https://docs.opensearch.org/latest/api-reference/document-apis/bulk/": [
+   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.05-search-infrastructure-at-scale.md"
+  ],
+  "https://docs.opensearch.org/latest/api-reference/document-apis/index-document/": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.05-search-infrastructure-at-scale.md"
   ],
   "https://docs.oracle.com/en/java/javase/21/": [
@@ -1903,6 +1908,9 @@
   ],
   "https://docs.pact.io/": [
    "50-quality/50.1-testing/03-test-levels/50.1.3.02-integration-testing.md"
+  ],
+  "https://docs.pact.io/getting_started/how_pact_works": [
+   "50-quality/50.1-testing/06-interview-prep/50.1.6.01-interview-questions.md"
   ],
   "https://docs.podman.io/": [
    "40-platform/40.1-docker/40.1.09-rootless-sandboxed-runtimes.md"
@@ -1984,6 +1992,7 @@
    "10-frontend/10.8-mobile/10.8.01-react-native-cross-platform.md"
   ],
   "https://docs.temporal.io/": [
+   "30-architecture/30.1-design-patterns/05-architectural/30.1.5.04-saga.md",
    "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md"
   ],
   "https://docs.temporal.io/activity-definition": [
@@ -2060,14 +2069,8 @@
   "https://en.wikipedia.org/wiki/Hash_table": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md"
   ],
-  "https://en.wikipedia.org/wiki/Little%27s_law": [
-   "50-quality/50.1-testing/05-advanced/50.1.5.01-performance-load-testing.md"
-  ],
   "https://en.wikipedia.org/wiki/Memoization": [
    "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.02-memoization.md"
-  ],
-  "https://en.wikipedia.org/wiki/Object_pool_pattern": [
-   "30-architecture/30.1-design-patterns/03-structural/30.1.3.08-flyweight.md"
   ],
   "https://en.wikipedia.org/wiki/Quickselect": [
    "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.05-quick-select-reservoir-sampling.md"
@@ -2108,6 +2111,9 @@
   "https://esbuild.github.io/": [
    "40-platform/40.5-build-tools/02-compilers/40.5.2.02-esbuild-swc.md",
    "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md"
+  ],
+  "https://esbuild.github.io/api/#metafile": [
+   "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.01-bundle-analysis.md"
   ],
   "https://etcd.io/docs/v3.5/tutorials/how-to-create-locks/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.md"
@@ -2157,6 +2163,12 @@
   ],
   "https://familienportal.de/familienportal/familienleistungen/elterngeld/faq/was-ist-elterngeld-124628": [
    "80-lanes-abroad-full-stack/80.14-berlin-dual-career-plan.md"
+  ],
+  "https://fast-check.dev/docs/core-blocks/properties/": [
+   "50-quality/50.1-testing/04-mocking-and-patterns/50.1.4.02-test-patterns.md"
+  ],
+  "https://fastify.dev/docs/latest/Reference/Errors/": [
+   "20-backend/20.1-node.js/04-security-and-operations/20.1.4.03-express-fastify-internals.md"
   ],
   "https://fastify.dev/docs/latest/Reference/Hooks/": [
    "20-backend/20.1-node.js/04-security-and-operations/20.1.4.03-express-fastify-internals.md"
@@ -2346,9 +2358,6 @@
    "10-frontend/10.7-html-css/INDEX.md",
    "10-frontend/10.8-mobile/INDEX.md",
    "10-frontend/INDEX.md",
-   "20-backend/20.1-node.js/01-runtime-and-async/INDEX.md",
-   "20-backend/20.1-node.js/02-io-and-data/INDEX.md",
-   "20-backend/20.1-node.js/03-processes-and-concurrency/INDEX.md",
    "20-backend/20.1-node.js/04-security-and-operations/INDEX.md",
    "20-backend/20.1-node.js/INDEX.md",
    "20-backend/20.12-ai-engineering/INDEX.md",
@@ -2366,10 +2375,8 @@
    "20-backend/20.3-rest-apis/05-interview-drills/INDEX.md",
    "20-backend/20.3-rest-apis/INDEX.md",
    "20-backend/20.4-database/01-postgresql-foundations/INDEX.md",
-   "20-backend/20.4-database/02-querying-and-optimization/INDEX.md",
    "20-backend/20.4-database/03-transactions-and-replication/INDEX.md",
    "20-backend/20.4-database/04-orm-and-access/INDEX.md",
-   "20-backend/20.4-database/05-operations-and-scaling/INDEX.md",
    "20-backend/20.4-database/INDEX.md",
    "20-backend/20.5-security/01-auth/INDEX.md",
    "20-backend/20.5-security/02-attacks-and-defense/INDEX.md",
@@ -2451,8 +2458,13 @@
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.04-declaration-files.md"
   ],
   "https://github.com/GoogleChrome/lighthouse-ci": [
-   "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.03-lighthouse-ci.md",
    "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.02-performance-budgets.md"
+  ],
+  "https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/configuration.md": [
+   "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.03-lighthouse-ci.md"
+  ],
+  "https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/getting-started.md": [
+   "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.03-lighthouse-ci.md"
   ],
   "https://github.com/GoogleChrome/web-vitals": [
    "50-quality/50.3-performance-monitoring/01-core-metrics/50.3.1.01-core-web-vitals.md",
@@ -2473,8 +2485,7 @@
    "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.01-resilience-patterns.md"
   ],
   "https://github.com/Netflix/chaosmonkey": [
-   "30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.md",
-   "50-quality/50.1-testing/05-advanced/50.1.5.02-chaos-engineering.md"
+   "30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.md"
   ],
   "https://github.com/Netflix/concurrency-limits": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.13-backpressure-and-flow-control.md",
@@ -2579,7 +2590,9 @@
    "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.01-bundle-analysis.md"
   ],
   "https://github.com/dequelabs/axe-core": [
-   "50-quality/50.2-accessibility/50.2.07-accessibility-design-systems.md",
+   "50-quality/50.2-accessibility/50.2.08-testing-a11y.md"
+  ],
+  "https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md": [
    "50-quality/50.2-accessibility/50.2.08-testing-a11y.md"
   ],
   "https://github.com/donnemartin/system-design-primer": [
@@ -2834,6 +2847,9 @@
   "https://github.com/reactwg/react-18/discussions/69": [
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.md"
   ],
+  "https://github.com/recharts/recharts/blob/main/storybook/stories/API/Accessibility.mdx": [
+   "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.md"
+  ],
   "https://github.com/redis/ioredis": [
    "20-backend/20.8-caching/20.8.02-redis-fundamentals.md"
   ],
@@ -2896,9 +2912,6 @@
   "https://github.com/teamplanes/graphql-rate-limit": [
    "20-backend/20.7-graphql/03-clients-and-production/20.7.3.02-performance-security.md"
   ],
-  "https://github.com/treosh/lighthouse-ci-action": [
-   "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.03-lighthouse-ci.md"
-  ],
   "https://github.com/trufflehog/trufflehog": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.04-secrets-management.md"
   ],
@@ -2913,9 +2926,6 @@
   "https://github.com/typestack/class-validator": [
    "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.03-pipes.md",
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.01-configuration-validation.md"
-  ],
-  "https://github.com/upgundecha/howtheysre": [
-   "50-quality/50.4-production-engineering/50.4.04-production-readiness-reviews.md"
   ],
   "https://github.com/v8/v8/blob/main/src/objects/ordered-hash-table.h": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md"
@@ -2976,6 +2986,9 @@
   "https://grafana.com/docs/k6/latest/using-k6/scenarios/executors/constant-arrival-rate/": [
    "50-quality/50.1-testing/05-advanced/50.1.5.01-performance-load-testing.md"
   ],
+  "https://grafana.com/docs/k6/latest/using-k6/thresholds/": [
+   "50-quality/50.1-testing/05-advanced/50.1.5.01-performance-load-testing.md"
+  ],
   "https://grafana.com/docs/loki/": [
    "40-platform/40.4-observability/01-pillars/40.4.1.01-logging.md"
   ],
@@ -3006,7 +3019,8 @@
    "20-backend/20.7-graphql/01-fundamentals/20.7.1.02-schema-design.md"
   ],
   "https://groups.csail.mit.edu/tds/papers/Gilbert/Brewer2.pdf": [
-   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.04-nosql-vs-sql.md"
+   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.04-nosql-vs-sql.md",
+   "30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.md"
   ],
   "https://grow.google/certificates/interview-warmup/": [
    "70-interview-toolkit/70.1-behavioral/70.1.05-behavioral-anti-patterns-checklist.md"
@@ -3095,9 +3109,6 @@
    "30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.md",
    "30-architecture/30.2-system-design/01-theory/30.2.1.22-dns-and-name-resolution.md"
   ],
-  "https://hpbn.co/building-blocks-of-tcp/#optimizing-for-tcp": [
-   "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.01-bundle-analysis.md"
-  ],
   "https://hpbn.co/transport-layer-security-tls/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.md"
   ],
@@ -3107,8 +3118,10 @@
   "https://html.spec.whatwg.org/multipage/server-sent-events.html": [
    "60-realtime/60.1-websockets/01-transports/60.1.1.02-server-sent-events.md"
   ],
+  "https://html.spec.whatwg.org/multipage/structured-data.html#structured-cloning": [
+   "30-architecture/30.1-design-patterns/02-creational/30.1.2.05-prototype.md"
+  ],
   "https://httpstatuses.com/": [
-   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.05-exception-filters.md",
    "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.02-status-codes.md"
   ],
   "https://httpwg.org/specs/rfc9110.html": [
@@ -3240,6 +3253,9 @@
    "50-quality/50.1-testing/02-frameworks/50.1.2.01-jest.md",
    "50-quality/50.1-testing/04-mocking-and-patterns/50.1.4.01-mocking.md"
   ],
+  "https://jestjs.io/docs/snapshot-testing": [
+   "50-quality/50.1-testing/04-mocking-and-patterns/50.1.4.02-test-patterns.md"
+  ],
   "https://jestjs.io/docs/timer-mocks": [
    "50-quality/50.1-testing/03-test-levels/50.1.3.01-unit-testing.md"
   ],
@@ -3252,12 +3268,6 @@
   "https://jwt.io/introduction/": [
    "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.04-authentication.md",
    "20-backend/20.5-security/01-auth/20.5.1.05-jwt.md"
-  ],
-  "https://k6.io/docs/": [
-   "50-quality/50.1-testing/05-advanced/50.1.5.01-performance-load-testing.md"
-  ],
-  "https://k6.io/docs/using-k6/scenarios/": [
-   "50-quality/50.1-testing/05-advanced/50.1.5.01-performance-load-testing.md"
   ],
   "https://kafka.apache.org/35/getting-started/upgrade/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.md"
@@ -3551,9 +3561,6 @@
   ],
   "https://learn.microsoft.com/en-us/azure/architecture/databases/guide/transactional-out-box-cosmos": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.18-outbox-and-cdc.md"
-  ],
-  "https://learn.microsoft.com/en-us/azure/architecture/framework/resiliency/chaos-engineering": [
-   "50-quality/50.1-testing/05-advanced/50.1.5.02-chaos-engineering.md"
   ],
   "https://learn.microsoft.com/en-us/azure/architecture/guide/multitenant/overview": [
    "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.04-multi-tenant-saas-architecture.md"
@@ -3921,9 +3928,6 @@
   "https://linkerd.io/2021/05/27/linkerd-vs-istio-benchmarks/": [
    "20-backend/20.6-microservices/01-service-topology/20.6.1.03-service-mesh.md"
   ],
-  "https://litmuschaos.io/": [
-   "50-quality/50.1-testing/05-advanced/50.1.5.02-chaos-engineering.md"
-  ],
   "https://lodash.com/docs/4.17.15#curry": [
    "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.04-currying-composition.md"
   ],
@@ -3987,6 +3991,9 @@
   ],
   "https://martinfowler.com/bliki/DDD_Aggregate.html": [
    "30-architecture/30.1-design-patterns/05-architectural/30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.md"
+  ],
+  "https://martinfowler.com/bliki/ObjectMother.html": [
+   "50-quality/50.1-testing/04-mocking-and-patterns/50.1.4.02-test-patterns.md"
   ],
   "https://martinfowler.com/bliki/ParallelChange.html": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.02-migration-strategies.md"
@@ -4106,9 +4113,6 @@
   "https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/": [
    "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids/70.2.2.02-shortest-paths-dijkstra-bellman-ford.md",
    "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids/70.2.2.06-matrix-traversal-simulation.md"
-  ],
-  "https://mode.com/sql-tutorial/sql-window-functions": [
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.04-window-functions.md"
   ],
   "https://modelcontextprotocol.io": [
    "20-backend/20.12-ai-engineering/20.12.04-agent-orchestration-patterns.md"
@@ -4348,6 +4352,9 @@
    "40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md",
    "40-platform/40.11-reverse-proxy/40.11.02-interview-questions.md"
   ],
+  "https://nginx.org/en/docs/http/ngx_http_v3_module.html": [
+   "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.md"
+  ],
   "https://nginx.org/en/docs/http/websocket.html": [
    "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.02-scaling-patterns.md"
   ],
@@ -4382,9 +4389,6 @@
    "50-quality/50.1-testing/03-test-levels/50.1.3.01-unit-testing.md"
   ],
   "https://nodejs.org/api/async_context.html": [
-   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.06-request-context-and-async-local-storage.md"
-  ],
-  "https://nodejs.org/api/async_hooks.html": [
    "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.06-request-context-and-async-local-storage.md"
   ],
   "https://nodejs.org/api/buffer.html": [
@@ -4422,6 +4426,9 @@
    "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.01-modules.md",
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md",
    "30-architecture/30.1-design-patterns/03-structural/30.1.3.05-module-pattern.md"
+  ],
+  "https://nodejs.org/api/esm.html#urls": [
+   "30-architecture/30.1-design-patterns/02-creational/30.1.2.01-singleton.md"
   ],
   "https://nodejs.org/api/events.html": [
    "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.02-observer.md"
@@ -4476,8 +4483,7 @@
   ],
   "https://nodejs.org/api/worker_threads.html": [
    "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.01-clustering.md",
-   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.02-child-processes-workers.md",
-   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.06-request-context-and-async-local-storage.md"
+   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.02-child-processes-workers.md"
   ],
   "https://nodejs.org/en/about/previous-releases": [
    "40-platform/40.1-docker/40.1.01-images-containers.md",
@@ -4699,6 +4705,9 @@
    "50-quality/50.1-testing/02-frameworks/50.1.2.04-testing-frameworks-comparison.md",
    "50-quality/50.1-testing/03-test-levels/50.1.3.03-e2e-testing.md"
   ],
+  "https://playwright.dev/docs/accessibility-testing": [
+   "50-quality/50.2-accessibility/50.2.08-testing-a11y.md"
+  ],
   "https://playwright.dev/docs/actionability": [
    "50-quality/50.1-testing/03-test-levels/50.1.3.03-e2e-testing.md"
   ],
@@ -4708,6 +4717,9 @@
   "https://playwright.dev/docs/browsers": [
    "50-quality/50.1-testing/03-test-levels/50.1.3.03-e2e-testing.md",
    "70-interview-toolkit/70.1-behavioral/70.1.02-leadership-questions.md"
+  ],
+  "https://playwright.dev/docs/test-retries": [
+   "50-quality/50.1-testing/06-interview-prep/50.1.6.01-interview-questions.md"
   ],
   "https://playwright.dev/docs/test-sharding": [
    "50-quality/50.1-testing/03-test-levels/50.1.3.03-e2e-testing.md"
@@ -4893,6 +4905,9 @@
    "10-frontend/10.3-react/01-react-internals/10.3.1.05-lifecycle.md",
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.md"
   ],
+  "https://react.dev/reference/react/Profiler": [
+   "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.md"
+  ],
   "https://react.dev/reference/react/Suspense": [
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.01-suspense.md",
    "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.04-streaming.md"
@@ -4991,9 +5006,6 @@
   ],
   "https://reactrouter.com/start/framework/actions": [
    "10-frontend/10.5-form-handling/10.5.05-server-actions-and-form-patterns.md"
-  ],
-  "https://recharts.org/": [
-   "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.md"
   ],
   "https://redis.io/commands/incr/": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.20-distributed-counter.md"
@@ -5218,6 +5230,9 @@
   "https://rushjs.io/": [
    "40-platform/40.8-monorepo/40.8.04-monorepo-tools.md"
   ],
+  "https://rxjs.dev/api/operators/timeout": [
+   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.04-interceptors.md"
+  ],
   "https://rxjs.dev/guide/operators": [
    "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.04-interceptors.md"
   ],
@@ -5395,9 +5410,6 @@
   "https://sqlbolt.com/": [
    "70-interview-toolkit/70.3-cheatsheets/70.3.07-sql-data-modeling-cheat-sheet.md"
   ],
-  "https://sre.google/books/": [
-   "50-quality/50.4-production-engineering/50.4.04-production-readiness-reviews.md"
-  ],
   "https://sre.google/sre-book/addressing-cascading-failures/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.19-resilience-patterns-deep-dive.md",
    "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.02-retry-patterns.md",
@@ -5409,6 +5421,9 @@
   "https://sre.google/sre-book/data-integrity/": [
    "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.05-decomposing-monolith-database.md",
    "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md"
+  ],
+  "https://sre.google/sre-book/evolving-sre-engagement-model/": [
+   "50-quality/50.4-production-engineering/50.4.04-production-readiness-reviews.md"
   ],
   "https://sre.google/sre-book/handling-overload/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.md",
@@ -5427,9 +5442,6 @@
    "30-architecture/30.3-infra-patterns/06-interview-prep/30.3.6.01-interview-questions.md",
    "40-platform/40.4-observability/01-pillars/40.4.1.02-monitoring.md",
    "40-platform/40.4-observability/03-sre-targets/40.4.3.02-alerting.md",
-   "50-quality/50.1-testing/05-advanced/50.1.5.01-performance-load-testing.md"
-  ],
-  "https://sre.google/sre-book/monitoring-distributed-systems/#xref_monitoring_golden-signals": [
    "50-quality/50.1-testing/05-advanced/50.1.5.01-performance-load-testing.md"
   ],
   "https://sre.google/sre-book/service-level-objectives/": [
@@ -5479,6 +5491,9 @@
   "https://stately.ai/docs/actions": [
    "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.04-state.md"
   ],
+  "https://stately.ai/docs/persistence": [
+   "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.04-state.md"
+  ],
   "https://stately.ai/docs/xstate": [
    "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.04-state.md"
   ],
@@ -5510,6 +5525,9 @@
   ],
   "https://stripe.dev/blog/payment-api-design": [
    "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.01-api-design-patterns.md"
+  ],
+  "https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/": [
+   "50-quality/50.1-testing/06-interview-prep/50.1.6.01-interview-questions.md"
   ],
   "https://styled-components.com/docs": [
    "10-frontend/10.7-html-css/10.7.06-css-architecture-styling-approaches.md"
@@ -5585,6 +5603,9 @@
   "https://tc39.es/ecma262/multipage/abstract-operations.html#sec-islooselyequal": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.09-equality-and-coercion.md"
   ],
+  "https://tc39.es/ecma262/multipage/control-abstraction-objects.html#sec-generator-objects": [
+   "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.06-iterator.md"
+  ],
   "https://tc39.es/ecma262/multipage/executable-code-and-execution-contexts.html#sec-environment-records": [
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.05-lexical-environment.md"
   ],
@@ -5596,9 +5617,6 @@
   ],
   "https://techdevguide.withgoogle.com/": [
    "00-strategy/INDEX.md"
-  ],
-  "https://temporal.io/": [
-   "30-architecture/30.1-design-patterns/05-architectural/30.1.5.04-saga.md"
   ],
   "https://temporal.io/temporal-versus/cadence": [
    "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.04-state.md"
@@ -5613,7 +5631,8 @@
    "50-quality/50.1-testing/02-frameworks/50.1.2.03-react-testing-library.md"
   ],
   "https://testing-library.com/docs/react-testing-library/api/": [
-   "50-quality/50.1-testing/02-frameworks/50.1.2.03-react-testing-library.md"
+   "50-quality/50.1-testing/02-frameworks/50.1.2.03-react-testing-library.md",
+   "50-quality/50.1-testing/06-interview-prep/50.1.6.01-interview-questions.md"
   ],
   "https://testing-library.com/docs/react-testing-library/api/#renderhook": [
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.md"
@@ -5653,9 +5672,6 @@
   ],
   "https://timkadlec.com/": [
    "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.02-performance-budgets.md"
-  ],
-  "https://tools.ietf.org/html/rfc6455": [
-   "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.md"
   ],
   "https://tools.ietf.org/html/rfc7235": [
    "20-backend/20.5-security/02-attacks-and-defense/20.5.2.02-csrf.md"
@@ -5715,9 +5731,6 @@
   "https://typescript.temporal.io/api/classes/worker.Worker": [
    "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md"
   ],
-  "https://typesense.org/docs/": [
-   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.05-search-infrastructure-at-scale.md"
-  ],
   "https://typicode.github.io/husky/": [
    "40-platform/40.6-git-advanced/40.6.04-git-hooks.md"
   ],
@@ -5728,11 +5741,7 @@
    "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.07-string-search-kmp-rabin-karp.md"
   ],
   "https://use-the-index-luke.com/": [
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.07-sql-data-modeling-cheat-sheet.md"
-  ],
-  "https://use-the-index-luke.com/sql/partial-results/window-functions": [
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.04-window-functions.md"
   ],
   "https://usehooks.com/": [
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.md"
@@ -5855,9 +5864,6 @@
   "https://wave-protocol.org/whitepaper.html": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.22-real-time-collaboration.md"
   ],
-  "https://wave.webaim.org/": [
-   "50-quality/50.2-accessibility/50.2.08-testing-a11y.md"
-  ],
   "https://web.archive.org/web/20110317010636/http://highscalability.com/blog/2011/3/14/6-lessons-from-dropbox-one-million-files-saved-every-15-minu.html": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.18-dropbox.md"
   ],
@@ -5889,6 +5895,12 @@
   ],
   "https://web.dev/articles/http-cache": [
    "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.04-http-caching.md"
+  ],
+  "https://web.dev/articles/inp": [
+   "50-quality/50.3-performance-monitoring/01-core-metrics/50.3.1.01-core-web-vitals.md"
+  ],
+  "https://web.dev/articles/lcp": [
+   "50-quality/50.3-performance-monitoring/01-core-metrics/50.3.1.01-core-web-vitals.md"
   ],
   "https://web.dev/articles/offscreen-canvas": [
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.02-web-workers.md",
@@ -5932,16 +5944,13 @@
   ],
   "https://web.dev/articles/vitals": [
    "10-frontend/10.7-html-css/10.7.04-seo.md",
-   "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.03-lighthouse-ci.md"
+   "50-quality/50.3-performance-monitoring/04-interview-prep/50.3.4.01-interview-questions.md"
   ],
   "https://web.dev/fast/#optimize-your-images": [
    "10-frontend/10.4-next.js/04-production/10.4.4.02-image-optimization.md"
   ],
   "https://web.dev/learn/css": [
    "10-frontend/10.7-html-css/10.7.02-css-fundamentals.md"
-  ],
-  "https://web.dev/learn/forms/accessibility/": [
-   "50-quality/50.2-accessibility/50.2.05-forms-and-labels.md"
   ],
   "https://web.dev/learn/html": [
    "10-frontend/10.7-html-css/10.7.01-html-fundamentals.md"
@@ -5964,28 +5973,7 @@
    "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.05-incremental-static-regeneration.md"
   ],
   "https://web.dev/vitals/": [
-   "50-quality/50.3-performance-monitoring/01-core-metrics/50.3.1.01-core-web-vitals.md",
-   "50-quality/50.3-performance-monitoring/04-interview-prep/50.3.4.01-interview-questions.md"
-  ],
-  "https://webaim.org/": [
-   "50-quality/50.2-accessibility/50.2.01-wcag-overview.md",
-   "50-quality/50.2-accessibility/50.2.08-testing-a11y.md",
-   "50-quality/50.2-accessibility/50.2.09-interview-questions.md"
-  ],
-  "https://webaim.org/articles/visual/colorblind/": [
-   "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.md"
-  ],
-  "https://webaim.org/resources/contrastchecker/": [
-   "50-quality/50.2-accessibility/50.2.04-color-and-contrast.md"
-  ],
-  "https://webaim.org/techniques/aria/": [
-   "50-quality/50.2-accessibility/50.2.02-aria.md"
-  ],
-  "https://webaim.org/techniques/forms/": [
-   "50-quality/50.2-accessibility/50.2.05-forms-and-labels.md"
-  ],
-  "https://webaim.org/techniques/keyboard/": [
-   "50-quality/50.2-accessibility/50.2.03-keyboard-navigation.md"
+   "50-quality/50.3-performance-monitoring/01-core-metrics/50.3.1.01-core-web-vitals.md"
   ],
   "https://webkit.org/blog/6240/ecmascript-6-proper-tail-calls-in-webkit/": [
    "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.05-recursion-tail-call.md"
@@ -6012,25 +6000,11 @@
   "https://whatsappbusiness.com/policy/": [
    "projects/docita/06-whatsapp-integration.md"
   ],
-  "https://wiki.postgresql.org/wiki/Using_EXPLAIN": [
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.03-execution-plans.md"
-  ],
   "https://wix.github.io/Detox/": [
    "10-frontend/10.8-mobile/10.8.03-testing-react-native-apps.md"
   ],
   "https://workos.com/blog/sp-initiated-sso-vs-idp-authentication": [
    "20-backend/20.5-security/01-auth/20.5.1.07-sso-saml-federation.md"
-  ],
-  "https://www.a11yproject.com/": [
-   "50-quality/50.2-accessibility/50.2.01-wcag-overview.md",
-   "50-quality/50.2-accessibility/50.2.08-testing-a11y.md",
-   "50-quality/50.2-accessibility/50.2.09-interview-questions.md"
-  ],
-  "https://www.a11yproject.com/about/#color-and-contrast": [
-   "50-quality/50.2-accessibility/50.2.04-color-and-contrast.md"
-  ],
-  "https://www.a11yproject.com/checklist/": [
-   "50-quality/50.2-accessibility/50.2.03-keyboard-navigation.md"
   ],
   "https://www.aboutamazon.com/news/company-news/2016-letter-to-shareholders": [
    "70-interview-toolkit/70.1-behavioral/70.1.03-judgment-calls-ambiguity.md"
@@ -6355,9 +6329,6 @@
   "https://www.dash0.com/guides/structured-logging-for-modern-applications": [
    "40-platform/40.4-observability/01-pillars/40.4.1.01-logging.md"
   ],
-  "https://www.deque.com/blog/aria-spec-for-the-uninitiated-part-1/": [
-   "50-quality/50.2-accessibility/50.2.02-aria.md"
-  ],
   "https://www.digitalocean.com/community/tutorials/a-practical-guide-to-cors": [
    "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.03-cors.md"
   ],
@@ -6390,9 +6361,6 @@
   ],
   "https://www.elastic.co/guide/en/elastic-stack/current/index.html": [
    "40-platform/40.4-observability/01-pillars/40.4.1.01-logging.md"
-  ],
-  "https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-multi-match-query.html": [
-   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.05-search-infrastructure-at-scale.md"
   ],
   "https://www.elastic.co/guide/en/elasticsearch/reference/current/search-suggesters.html": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.23-typeahead-autocomplete.md"
@@ -6523,9 +6491,6 @@
   "https://www.gesetze-im-internet.de/entgfg/BJNR106500994.html": [
    "80-lanes-abroad-full-stack/80.25-german-workplace-culture.md"
   ],
-  "https://www.getstark.co/": [
-   "50-quality/50.2-accessibility/50.2.04-color-and-contrast.md"
-  ],
   "https://www.gitops.tech/": [
    "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.04-argocd.md"
   ],
@@ -6537,9 +6502,6 @@
   ],
   "https://www.graphql-tools.com/docs/schema-stitching/": [
    "20-backend/20.7-graphql/01-fundamentals/20.7.1.02-schema-design.md"
-  ],
-  "https://www.gremlin.com/community/tutorials/": [
-   "50-quality/50.1-testing/05-advanced/50.1.5.02-chaos-engineering.md"
   ],
   "https://www.hackthebox.com/": [
    "20-backend/20.5-security/04-interview-drills/20.5.4.01-interview-questions.md"
@@ -6553,10 +6515,13 @@
   "https://www.hhs.gov/hipaa/for-professionals/covered-entities/index.html": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.10-hospital-management.md"
   ],
-  "https://www.highcharts.com/demo/highcharts/sonification-navigation": [
+  "https://www.highcharts.com/docs/accessibility/accessibility-module": [
    "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.md"
   ],
-  "https://www.highcharts.com/docs/accessibility/accessibility-module": [
+  "https://www.highcharts.com/docs/export-module/export-module-overview": [
+   "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.md"
+  ],
+  "https://www.highcharts.com/docs/getting-started/version-12": [
    "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.md"
   ],
   "https://www.honeycomb.io/blog/observability-101": [
@@ -6657,7 +6622,7 @@
   "https://www.manning.com/books/rabbitmq-in-depth": [
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.04-rabbitmq.md"
   ],
-  "https://www.meilisearch.com/docs": [
+  "https://www.meilisearch.com/docs/capabilities/indexing/tasks_and_batches/async_operations": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.05-search-infrastructure-at-scale.md"
   ],
   "https://www.migration.gv.at/en/types-of-immigration/permanent-immigration/other-key-workers/": [
@@ -6717,9 +6682,6 @@
   "https://www.oreilly.com/library/view/building-microservices/9781491950340/": [
    "20-backend/20.6-microservices/04-resilience/20.6.4.02-bulkhead-pattern.md"
   ],
-  "https://www.oreilly.com/library/view/chaos-engineering/9781492043850/": [
-   "50-quality/50.1-testing/05-advanced/50.1.5.02-chaos-engineering.md"
-  ],
   "https://www.oreilly.com/library/view/distributed-tracing-in/9781492056621/": [
    "40-platform/40.4-observability/01-pillars/40.4.1.03-tracing.md",
    "40-platform/40.4-observability/05-interview-prep/40.4.5.01-interview-questions.md"
@@ -6749,10 +6711,6 @@
   "https://www.patterns.dev/react/compound-pattern/": [
    "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.02-compound-components.md"
   ],
-  "https://www.percona.com/blog/": [
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md",
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.03-execution-plans.md"
-  ],
   "https://www.pgbouncer.org/config.html": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.01-connection-pooling.md"
   ],
@@ -6781,6 +6739,12 @@
   "https://www.postgresql.org/docs/16/continuous-archiving.html": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md"
   ],
+  "https://www.postgresql.org/docs/16/datatype-json.html": [
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.05-jsonb.md"
+  ],
+  "https://www.postgresql.org/docs/16/ddl-constraints.html": [
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.05-jsonb.md"
+  ],
   "https://www.postgresql.org/docs/16/explicit-locking.html": [
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.02-deadlocks.md",
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.03-optimistic-pessimistic-locking.md"
@@ -6788,6 +6752,21 @@
   "https://www.postgresql.org/docs/16/functions-admin.html": [
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.02-deadlocks.md",
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.04-database-replication.md"
+  ],
+  "https://www.postgresql.org/docs/16/functions-json.html": [
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.05-jsonb.md"
+  ],
+  "https://www.postgresql.org/docs/16/functions-window.html": [
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.04-window-functions.md"
+  ],
+  "https://www.postgresql.org/docs/16/indexes-index-only-scans.html": [
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md"
+  ],
+  "https://www.postgresql.org/docs/16/indexes-partial.html": [
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md"
+  ],
+  "https://www.postgresql.org/docs/16/indexes-types.html": [
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md"
   ],
   "https://www.postgresql.org/docs/16/logical-replication-conflicts.html": [
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.04-database-replication.md"
@@ -6803,6 +6782,12 @@
   "https://www.postgresql.org/docs/16/monitoring-stats.html#MONITORING-PG-STAT-ARCHIVER-VIEW": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md"
   ],
+  "https://www.postgresql.org/docs/16/planner-stats.html": [
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.03-execution-plans.md"
+  ],
+  "https://www.postgresql.org/docs/16/runtime-config-resource.html": [
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.03-execution-plans.md"
+  ],
   "https://www.postgresql.org/docs/16/runtime-config-wal.html": [
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.01-transactions.md",
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.04-database-replication.md"
@@ -6811,10 +6796,26 @@
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md"
   ],
   "https://www.postgresql.org/docs/16/sql-createindex.html": [
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md",
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.01-transactions.md"
+  ],
+  "https://www.postgresql.org/docs/16/sql-explain.html": [
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.03-execution-plans.md"
+  ],
+  "https://www.postgresql.org/docs/16/sql-expressions.html#SYNTAX-WINDOW-FUNCTIONS": [
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.04-window-functions.md"
   ],
   "https://www.postgresql.org/docs/16/sql-select.html": [
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.03-optimistic-pessimistic-locking.md"
+  ],
+  "https://www.postgresql.org/docs/16/storage-hot.html": [
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md"
+  ],
+  "https://www.postgresql.org/docs/16/textsearch-controls.html": [
+   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.05-search-infrastructure-at-scale.md"
+  ],
+  "https://www.postgresql.org/docs/16/textsearch-intro.html": [
+   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.05-search-infrastructure-at-scale.md"
   ],
   "https://www.postgresql.org/docs/16/transaction-iso.html": [
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.01-transactions.md",
@@ -6822,6 +6823,12 @@
   ],
   "https://www.postgresql.org/docs/16/tutorial-transactions.html": [
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.01-transactions.md"
+  ],
+  "https://www.postgresql.org/docs/16/tutorial-window.html": [
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.04-window-functions.md"
+  ],
+  "https://www.postgresql.org/docs/16/using-explain.html": [
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.03-execution-plans.md"
   ],
   "https://www.postgresql.org/docs/16/warm-standby.html": [
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.04-database-replication.md"
@@ -6831,9 +6838,6 @@
   ],
   "https://www.postgresql.org/docs/current/btree-gist.html": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.10-hospital-management.md"
-  ],
-  "https://www.postgresql.org/docs/current/datatype-json.html": [
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.05-jsonb.md"
   ],
   "https://www.postgresql.org/docs/current/ddl-alter.html": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.02-migration-strategies.md"
@@ -6871,31 +6875,18 @@
   "https://www.postgresql.org/docs/current/functions-info.html#FUNCTIONS-PG-SNAPSHOT": [
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.md"
   ],
-  "https://www.postgresql.org/docs/current/functions-json.html": [
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.05-jsonb.md"
-  ],
-  "https://www.postgresql.org/docs/current/functions-window.html": [
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.04-window-functions.md"
-  ],
-  "https://www.postgresql.org/docs/current/indexes-examine.html": [
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md"
-  ],
   "https://www.postgresql.org/docs/current/indexes-index-only-scans.html": [
    "70-interview-toolkit/70.3-cheatsheets/70.3.04-backend-cheat-sheet.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.07-sql-data-modeling-cheat-sheet.md"
   ],
   "https://www.postgresql.org/docs/current/indexes-multicolumn.html": [
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.07-sql-data-modeling-cheat-sheet.md"
   ],
   "https://www.postgresql.org/docs/current/indexes-partial.html": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.03-soft-delete-and-tombstones.md"
   ],
-  "https://www.postgresql.org/docs/current/indexes-types.html": [
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md",
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.05-jsonb.md"
-  ],
   "https://www.postgresql.org/docs/current/indexes.html": [
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.07-sql-data-modeling-cheat-sheet.md"
   ],
   "https://www.postgresql.org/docs/current/logical-replication.html": [
@@ -6933,7 +6924,8 @@
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.05-postgresql-performance.md"
   ],
   "https://www.postgresql.org/docs/current/runtime-config-wal.html": [
-   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-postgresql.md"
+   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-postgresql.md",
+   "30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.md"
   ],
   "https://www.postgresql.org/docs/current/sql-altertable.html": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.02-migration-strategies.md"
@@ -6958,9 +6950,6 @@
   "https://www.postgresql.org/docs/current/sql-truncate.html": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.06-interview-questions.md"
   ],
-  "https://www.postgresql.org/docs/current/textsearch.html": [
-   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.05-search-infrastructure-at-scale.md"
-  ],
   "https://www.postgresql.org/docs/current/transaction-iso.html": [
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.md",
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.04-nosql-vs-sql.md",
@@ -6979,8 +6968,7 @@
    "70-interview-toolkit/70.3-cheatsheets/70.3.07-sql-data-modeling-cheat-sheet.md"
   ],
   "https://www.postgresql.org/docs/current/using-explain.html": [
-   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.05-postgresql-performance.md",
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.03-execution-plans.md"
+   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.05-postgresql-performance.md"
   ],
   "https://www.postgresql.org/docs/current/view-pg-locks.html": [
    "20-backend/20.4-database/04-orm-and-access/20.4.4.02-prisma-advanced.md"
@@ -6990,9 +6978,6 @@
   ],
   "https://www.postgresql.org/docs/current/warm-standby.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.md"
-  ],
-  "https://www.postgresqltutorial.com/postgresql-window-function/": [
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.04-window-functions.md"
   ],
   "https://www.prisma.io/blog": [
    "20-backend/20.4-database/04-orm-and-access/20.4.4.01-prisma.md"
@@ -7059,6 +7044,9 @@
   "https://www.rabbitmq.com/tutorials/tutorial-one-python": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md"
   ],
+  "https://www.radix-ui.com/primitives/docs/components/dialog": [
+   "50-quality/50.2-accessibility/50.2.07-accessibility-design-systems.md"
+  ],
   "https://www.radix-ui.com/primitives/docs/overview/accessibility": [
    "50-quality/50.2-accessibility/50.2.07-accessibility-design-systems.md"
   ],
@@ -7114,7 +7102,7 @@
   "https://www.rfc-editor.org/rfc/rfc6376": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.07-transactional-email-and-notifications.md"
   ],
-  "https://www.rfc-editor.org/rfc/rfc6455": [
+  "https://www.rfc-editor.org/rfc/rfc6455.html": [
    "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc6797": [
@@ -7166,7 +7154,8 @@
   ],
   "https://www.rfc-editor.org/rfc/rfc9001.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.md",
-   "30-architecture/30.2-system-design/01-theory/REVISION.md"
+   "30-architecture/30.2-system-design/01-theory/REVISION.md",
+   "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc9110": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.01-url-shortener.md"
@@ -7264,9 +7253,6 @@
   "https://www.totaltypescript.com/tutorials/the-satisfies-operator": [
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.01-satisfies-operator.md"
   ],
-  "https://www.tpgi.com/color-contrast-checker/": [
-   "50-quality/50.2-accessibility/50.2.04-color-and-contrast.md"
-  ],
   "https://www.twilio.com/docs/api/errors": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.02-error-handling-design.md"
   ],
@@ -7275,6 +7261,9 @@
   ],
   "https://www.typescriptlang.org/cheatsheets": [
    "10-frontend/10.2-typescript/03-type-transformations/10.2.3.01-utility-types.md"
+  ],
+  "https://www.typescriptlang.org/docs/handbook/2/classes.html#this-types": [
+   "30-architecture/30.1-design-patterns/02-creational/30.1.2.05-prototype.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/2/conditional-types.html": [
    "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.02-infer.md",
@@ -7357,6 +7346,9 @@
   "https://www.typescriptlang.org/docs/handbook/modules/introduction.html": [
    "10-frontend/10.2-typescript/01-foundations/10.2.1.04-tsconfig-compiler-options.md"
   ],
+  "https://www.typescriptlang.org/docs/handbook/modules/reference.html": [
+   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.04-declaration-files.md"
+  ],
   "https://www.typescriptlang.org/docs/handbook/project-references.html": [
    "10-frontend/10.2-typescript/01-foundations/10.2.1.04-tsconfig-compiler-options.md"
   ],
@@ -7372,6 +7364,15 @@
   "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-0.html": [
    "10-frontend/10.2-typescript/01-foundations/10.2.1.04-tsconfig-compiler-options.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.02-typescript-cheat-sheet.md"
+  ],
+  "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-0.html#decorators": [
+   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.03-decorators.md"
+  ],
+  "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-4.html#the-noinfer-utility-type": [
+   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.02-branded-types.md"
+  ],
+  "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-6-0.html": [
+   "10-frontend/10.2-typescript/01-foundations/10.2.1.04-tsconfig-compiler-options.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html": [
    "10-frontend/10.2-typescript/05-interview-prep/10.2.5.01-interview-questions.md"
@@ -7391,6 +7392,9 @@
   "https://www.typescriptlang.org/tsconfig/#strictFunctionTypes": [
    "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.04-type-variance.md"
   ],
+  "https://www.typescriptlang.org/tsconfig/paths.html": [
+   "30-architecture/30.1-design-patterns/03-structural/30.1.3.05-module-pattern.md"
+  ],
   "https://www.uber.com/blog/engineering/": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.19-lyft.md"
   ],
@@ -7399,6 +7403,18 @@
   ],
   "https://www.vldb.org/pvldb/vol8/p1816-teller.pdf": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.md"
+  ],
+  "https://www.w3.org/TR/WCAG22/": [
+   "50-quality/50.2-accessibility/50.2.01-wcag-overview.md"
+  ],
+  "https://www.w3.org/TR/WCAG22/#dfn-contrast-ratio": [
+   "50-quality/50.2-accessibility/50.2.04-color-and-contrast.md"
+  ],
+  "https://www.w3.org/TR/WCAG22/#dfn-relative-luminance": [
+   "50-quality/50.2-accessibility/50.2.04-color-and-contrast.md"
+  ],
+  "https://www.w3.org/TR/WCAG22/#wcag-2-layers-of-guidance": [
+   "50-quality/50.2-accessibility/50.2.01-wcag-overview.md"
   ],
   "https://www.w3.org/TR/baggage/": [
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.01-opentelemetry.md"
@@ -7425,47 +7441,91 @@
   "https://www.w3.org/TR/webrtc/": [
    "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.03-webrtc-peer-to-peer.md"
   ],
-  "https://www.w3.org/WAI/": [
-   "50-quality/50.2-accessibility/50.2.01-wcag-overview.md"
-  ],
   "https://www.w3.org/WAI/ARIA/apg/": [
-   "50-quality/50.2-accessibility/50.2.02-aria.md",
-   "50-quality/50.2-accessibility/50.2.03-keyboard-navigation.md",
-   "50-quality/50.2-accessibility/50.2.07-accessibility-design-systems.md",
-   "50-quality/50.2-accessibility/50.2.09-interview-questions.md"
+   "50-quality/50.2-accessibility/50.2.02-aria.md"
   ],
-  "https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html": [
-   "50-quality/50.2-accessibility/50.2.04-color-and-contrast.md"
-  ],
-  "https://www.w3.org/WAI/WCAG21/Understanding/identify-input-purpose.html": [
-   "50-quality/50.2-accessibility/50.2.05-forms-and-labels.md"
-  ],
-  "https://www.w3.org/WAI/WCAG21/Understanding/input-assistance.html": [
-   "50-quality/50.2-accessibility/50.2.05-forms-and-labels.md"
-  ],
-  "https://www.w3.org/WAI/WCAG21/Understanding/keyboard": [
+  "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/": [
    "50-quality/50.2-accessibility/50.2.03-keyboard-navigation.md"
   ],
-  "https://www.w3.org/WAI/WCAG21/quickref/": [
-   "50-quality/50.2-accessibility/50.2.01-wcag-overview.md",
+  "https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/": [
+   "50-quality/50.2-accessibility/50.2.02-aria.md"
+  ],
+  "https://www.w3.org/WAI/ARIA/apg/patterns/tabs/": [
+   "50-quality/50.2-accessibility/50.2.03-keyboard-navigation.md"
+  ],
+  "https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/": [
+   "50-quality/50.2-accessibility/50.2.03-keyboard-navigation.md"
+  ],
+  "https://www.w3.org/WAI/ARIA/apg/practices/landmark-regions/": [
    "50-quality/50.2-accessibility/50.2.09-interview-questions.md"
   ],
-  "https://www.w3.org/WAI/WCAG22/Understanding/conformance": [
+  "https://www.w3.org/WAI/ARIA/apg/practices/names-and-descriptions/": [
+   "50-quality/50.2-accessibility/50.2.02-aria.md"
+  ],
+  "https://www.w3.org/WAI/ARIA/apg/practices/read-me-first/": [
+   "50-quality/50.2-accessibility/50.2.02-aria.md"
+  ],
+  "https://www.w3.org/WAI/WCAG22/Understanding/conformance.html": [
+   "50-quality/50.2-accessibility/50.2.01-wcag-overview.md",
    "50-quality/50.2-accessibility/50.2.07-accessibility-design-systems.md"
   ],
+  "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html": [
+   "50-quality/50.2-accessibility/50.2.04-color-and-contrast.md"
+  ],
+  "https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html": [
+   "50-quality/50.2-accessibility/50.2.05-forms-and-labels.md"
+  ],
+  "https://www.w3.org/WAI/WCAG22/Understanding/intro#understanding-the-four-principles-of-accessibility": [
+   "50-quality/50.2-accessibility/50.2.01-wcag-overview.md"
+  ],
+  "https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html": [
+   "50-quality/50.2-accessibility/50.2.03-keyboard-navigation.md"
+  ],
+  "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html": [
+   "50-quality/50.2-accessibility/50.2.04-color-and-contrast.md"
+  ],
+  "https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html": [
+   "50-quality/50.2-accessibility/50.2.04-color-and-contrast.md"
+  ],
+  "https://www.w3.org/WAI/media/av/": [
+   "50-quality/50.2-accessibility/50.2.09-interview-questions.md"
+  ],
+  "https://www.w3.org/WAI/standards-guidelines/wcag/": [
+   "50-quality/50.2-accessibility/50.2.01-wcag-overview.md"
+  ],
+  "https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/": [
+   "50-quality/50.2-accessibility/50.2.01-wcag-overview.md"
+  ],
+  "https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/": [
+   "50-quality/50.2-accessibility/50.2.09-interview-questions.md"
+  ],
+  "https://www.w3.org/WAI/test-evaluate/": [
+   "50-quality/50.2-accessibility/50.2.08-testing-a11y.md"
+  ],
   "https://www.w3.org/WAI/tutorials/forms/": [
-   "10-frontend/10.5-form-handling/10.5.07-interview-questions.md"
+   "10-frontend/10.5-form-handling/10.5.07-interview-questions.md",
+   "50-quality/50.2-accessibility/50.2.05-forms-and-labels.md"
+  ],
+  "https://www.w3.org/WAI/tutorials/forms/grouping/": [
+   "50-quality/50.2-accessibility/50.2.05-forms-and-labels.md"
+  ],
+  "https://www.w3.org/WAI/tutorials/forms/labels/": [
+   "50-quality/50.2-accessibility/50.2.05-forms-and-labels.md"
+  ],
+  "https://www.w3.org/WAI/tutorials/forms/notifications/": [
+   "50-quality/50.2-accessibility/50.2.05-forms-and-labels.md"
   ],
   "https://www.w3.org/WAI/tutorials/images/complex/": [
    "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.md"
+  ],
+  "https://www.w3.org/WAI/tutorials/images/decision-tree/": [
+   "50-quality/50.2-accessibility/50.2.09-interview-questions.md"
   ],
   "https://www.w3.org/community/design-tokens/": [
    "10-frontend/10.7-html-css/10.7.07-theming-design-tokens.md"
   ],
   "https://www.webpagetest.org/": [
-   "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.04-http-caching.md"
-  ],
-  "https://www.webtest.org/": [
+   "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.04-http-caching.md",
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.md"
   ],
   "https://www.youtube.com/@Amigoscode": [
@@ -7529,6 +7589,9 @@
   ],
   "https://zod.dev/packages/mini": [
    "10-frontend/10.5-form-handling/10.5.02-zod.md"
+  ],
+  "https://zod.dev/v4/changelog": [
+   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.03-pipes.md"
   ],
   "https://zookeeper.apache.org/doc/current/recipes.html#sc_recipes_Locks": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.md"

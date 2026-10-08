@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -18,6 +18,14 @@ Source: [CAP Theorem & PACELC](30.2.1.01-cap-theorem.md)
 
 **A:** Under the theorem's network-partition assumptions, an implementation cannot guarantee both linearizable operations—operations that appear to take effect one at a time between their start and completion—and an eventual response to every request on a non-failing node. It is not a universal choose-two menu in normal operation.
 
+**Q:** A acknowledges booking during a partition. Trace B's attempt to read the slot.
+
+**A:** B cannot tell whether A booked it. Returning free from its old state can violate the real-time single-copy contract; waiting or refusing the unsafe operation gives up availability for it. A connected majority can still serve safe requests.
+
+**Q:** What changes if a standby has flushed a write's log but not applied it?
+
+**A:** Durability evidence is not yet read visibility. An ordinary standby query can lag; specify remote-apply acknowledgment or a read/version barrier when that visibility is required, with appropriate failover rules.
+
 ## Data Consistency Models
 
 Source: [Data Consistency Models](30.2.1.02-consistency-models.md)
@@ -25,6 +33,14 @@ Source: [Data Consistency Models](30.2.1.02-consistency-models.md)
 **Q:** Why do read-your-writes and monotonic reads not form a single stronger/weaker ladder?
 
 **A:** They constrain different histories: one preserves a client's own writes, the other prevents its reads from moving backward. A system can provide one without the other.
+
+**Q:** Trace a user write on A followed by refresh from a lagging B.
+
+**A:** Returning the old value violates read-your-writes if that session was promised its acknowledged change. Route to an authority containing it or wait for B to reach the carried version. Other clients may still observe older data under a weaker contract.
+
+**Q:** Does seeing x=5 and later x=3 always violate monotonic reads?
+
+**A:** No. It violates the guarantee if 3 comes from an older history/version. A newer accepted update can legitimately decrease the value. Compare observed versions, not arithmetic magnitude.
 
 ## Sharding & Replication
 

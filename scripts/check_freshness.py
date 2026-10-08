@@ -40,6 +40,15 @@ SKIP_SUBSTRINGS = ('/docs/superpowers/',)
 
 FAKE_ARCHIVE_TS = 'web.archive.org/web/20240701000000'
 
+# RFC 9298 specifies HTTP UDP proxying, not WebTransport. Match an active
+# citation whose label makes the wrong attribution; legitimate UDP references
+# and fenced demonstrations of the bad link must remain valid.
+WRONG_WEBTRANSPORT_RFC = re.compile(
+    r'\[[^\]\n]*webtransport[^\]\n]*\]\(https?://(?:www\.)?'
+    r'(?:rfc-editor\.org|datatracker\.ietf\.org)/[^)\s]*\brfc9298'
+    r'(?:\.html|/|#[^)\s]*)?\)', re.I
+)
+
 # Retired OWASP cheat-sheet URL forms. OWASP renamed the site's cheat
 # directory from cheat-sheets/ to cheatsheets/ (2026-09), breaking every
 # link written the old way; owasp.org/cheatsheets/ (no subdomain) is a
@@ -214,6 +223,27 @@ GSAP_CSS_EASE = re.compile(r"\bease\s*:\s*['\"]cubic-bezier\s*\(")
 FABRICATED_WS_IMPORT = re.compile(r"\bfrom\s*['\"]ws\.use/server['\"]")
 
 RULES = [
+    ('FABRICATED-PAGE-HEAP-COMMAND',
+     'Heap snapshots require DevTools or a debugging-protocol session; '
+     'window.chrome.sendCommand is not a page API'),
+    ('FABRICATED-LHCI-FUNCTION-API',
+     'Lighthouse CI exposes its documented CLI commands, not start/upload '
+     'function exports from @lhci/cli'),
+    ('REMOVED-LIGHTHOUSE-INTERACTIVE',
+     'Standard Lighthouse removed Time to Interactive in version 10; '
+     'use supported audit IDs and separate field INP measurement'),
+    ('AXE-PLAYWRIGHT-CONTEXT',
+     'AxeBuilder needs an explicit Playwright browser context; create a '
+     'context with browser.newContext(), then context.newPage()'),
+    ('FABRICATED-RECHARTS-ACCESSIBILITY-COMPONENT',
+     'Recharts exposes accessibilityLayer as a chart prop, not an '
+     'AccessibilityLayer component export'),
+    ('FABRICATED-K6-MEMORY-METRIC',
+     'k6 has no builtin vus_memory metric; observe application memory '
+     'through real telemetry or explicitly define and populate a custom metric'),
+    ('WRONG-WEBTRANSPORT-RFC',
+     'RFC 9298 defines HTTP UDP proxying, not WebTransport; cite the '
+     'WebTransport specification or its HTTP/3 draft'),
     ('INSTANCE-TEMPORAL-REPLAY', 'Temporal replay helpers are static Worker methods; use Worker.runReplayHistory or consume Worker.runReplayHistories'),
     ('STATIC-SCROLLTRIGGER-KILL', 'kill() belongs to a ScrollTrigger instance; revert the owned context or kill the owned trigger'),
     ('GSAP-CSS-EASE-STRING', 'GSAP needs a registered CustomEase or a supported easing name, not a raw CSS cubic-bezier string'),
@@ -431,10 +461,49 @@ def check(p: Path, rel: str):
     lang = ''
     code_rows = []
     for lineno, line, inf, isf in md_fences.walk(text.splitlines()):
+        lineno += 1  # md_fences.walk emits zero-based offsets; diagnostics use source lines.
         stripped = line.lstrip()
         if isf:
             if not inf and code_rows:
                 source = '\n'.join(row for _, row in code_rows)
+                for match in re.finditer(
+                        r"\bchrome\s*(?:\?\.)?\s*\.?\s*sendCommand\s*(?:\?\.)?\s*\(\s*['\"]HeapProfiler\.takeHeapSnapshot['\"]", source):
+                    offset = source.count('\n', 0, match.start())
+                    hits.append((code_rows[offset][0], 'FABRICATED-PAGE-HEAP-COMMAND',
+                                 code_rows[offset][1].strip()[:100]))
+                for match in re.finditer(
+                        r"\bimport\s*\{[^}]*?\b(?:start|upload)\b[^}]*?\}\s*from\s*['\"]@lhci/cli['\"]", source):
+                    offset = source.count('\n', 0, match.start())
+                    hits.append((code_rows[offset][0], 'FABRICATED-LHCI-FUNCTION-API',
+                                 code_rows[offset][1].strip()[:100]))
+                if ('Lighthouse CI' in text or 'lighthouserc' in text) and 'assertions' in source:
+                    for match in re.finditer(r"(?:['\"]interactive['\"]|\binteractive)\s*:\s*\[", source):
+                        offset = source.count('\n', 0, match.start())
+                        hits.append((code_rows[offset][0], 'REMOVED-LIGHTHOUSE-INTERACTIVE',
+                                     code_rows[offset][1].strip()[:100]))
+                if '@axe-core/playwright' in source:
+                    for match in re.finditer(
+                            r'\b(?:const|let)\s+(\w+)\s*=\s*await\s+browser\.newPage\s*\(', source):
+                        page = re.escape(match.group(1))
+                        axe_page = re.search(
+                            r'new\s+AxeBuilder\s*\(\s*\{[^}]*?'
+                            r'(?:\bpage\s*:\s*' + page + r'\b|\b' + page + r'(?=\s*[,}]))', source)
+                        if axe_page:
+                            offset = source.count('\n', 0, match.start())
+                            hits.append((code_rows[offset][0], 'AXE-PLAYWRIGHT-CONTEXT',
+                                         code_rows[offset][1].strip()[:100]))
+                for match in re.finditer(
+                        r"\bimport\s*\{[^}]*?\bAccessibilityLayer\b[^}]*?\}\s*from\s*['\"]recharts['\"]", source):
+                    offset = source.count('\n', 0, match.start())
+                    hits.append((code_rows[offset][0], 'FABRICATED-RECHARTS-ACCESSIBILITY-COMPONENT',
+                                 code_rows[offset][1].strip()[:100]))
+                memory_threshold = re.search(r"(?:['\"]vus_memory['\"]|\bvus_memory)\s*:", source)
+                custom_memory = re.search(
+                    r"new\s+(?:[\w$.]+\.)?(?:Rate|Trend|Gauge|Counter)\s*\(\s*['\"]vus_memory['\"]", source)
+                if memory_threshold and not custom_memory and re.search(r"from\s*['\"]k6(?:/[^'\"]*)?['\"]", text):
+                    offset = source.count('\n', 0, memory_threshold.start())
+                    hits.append((code_rows[offset][0], 'FABRICATED-K6-MEMORY-METRIC',
+                                 code_rows[offset][1].strip()[:100]))
                 if re.search(r"from\s*['\"]@temporalio/worker['\"]", source):
                     receivers = re.findall(r'\b(?:const|let)\s+(\w+)\s*=\s*await\s+Worker\.create\s*\(', source)
                     for receiver in receivers:
@@ -466,6 +535,9 @@ def check(p: Path, rel: str):
             in_code = inf
             lang = stripped.lstrip('`~').strip() if inf else ''
             continue
+
+        if not in_code and WRONG_WEBTRANSPORT_RFC.search(line):
+            hits.append((lineno, 'WRONG-WEBTRANSPORT-RFC', line.strip()[:100]))
 
         if FAKE_ARCHIVE_TS in line:
             hits.append((lineno, 'FAKE-ARCHIVE-TS', line.strip()[:100]))
@@ -518,6 +590,9 @@ def check(p: Path, rel: str):
         if COMPOSE_VERSION_KEY.match(line):
             hits.append((lineno, 'OBSOLETE-COMPOSE-VERSION',
                          f'obsolete top-level version key — {line.strip()[:70]}'))
+
+        if in_code and lang == 'json':
+            code_rows.append((lineno, line))
 
         if in_code and lang in ('typescript', 'tsx', 'javascript', 'js'):
             # Strip line comments so explanatory notes like

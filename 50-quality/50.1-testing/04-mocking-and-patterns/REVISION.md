@@ -44,15 +44,35 @@ Source: [Test Patterns](50.1.4.02-test-patterns.md)
 
 **Q:** How does a factory improve a test's reading flow?
 
-**A:** It supplies safe defaults while the test overrides only facts relevant to the scenario. The assertion can then focus on behavior without a large setup block.
+**A:** It creates fresh data with explicit defaults while the test overrides facts relevant to the scenario. Defaults must stay visible when they affect the result; rejection tests may deliberately create invalid input. The assertion can then focus on behavior without a large setup block.
 
 **Q:** When does a shared fixture become a liability?
 
-**A:** When unrelated tests depend on its evolving mutable state or hidden setup. Prefer isolated builders and explicit scenario inputs over a large magical object.
+**A:** When unrelated tests depend on its evolving mutable state or hidden setup. Use explicit scenario inputs and fresh data; for external resources, also give each test an isolated namespace and a cleanup owner.
 
 **Q:** Why name a parameterized case rather than only listing input values?
 
 **A:** The name states the invariant or edge condition being tested, making a failure understandable without reverse-engineering the dataset.
+
+**Q:** Why does the cart builder copy both when adding a line and when building a result?
+
+**A:** The first copy prevents a caller's later mutation from changing the stored line. The second prevents a returned result from changing future results. That contract holds here because all fields are primitives; nested mutable fields need a separate ownership or copying rule.
+
+**Q:** Can the cart's reordering property establish that every total is correctly priced?
+
+**A:** No. An implementation that always returns zero also preserves totals under reordering. Independent expected-value cases check the pricing rule; generated cases search the stated input domain for violations of a relationship.
+
+**Q:** Why does a shared fixture need more than an afterEach cleanup hook?
+
+**A:** Concurrent tests can see or delete each other's state before cleanup. Namespace resources by ownership, await setup and cleanup, and account for a runner that dies before hooks execute.
+
+**Q:** When can two assertions still describe one behavior?
+
+**A:** A rejected action can have both a required error and a required unchanged state. Those observations define one failure contract; splitting them can conceal forbidden mutation.
+
+**Q:** What does a passing DOM snapshot fail to establish?
+
+**A:** It checks the reviewed serialized structure. It does not establish layout, keyboard behavior, screen-reader output or the correctness of an unreviewed update.
 
 ## Summary
 
@@ -60,7 +80,7 @@ Control the smallest useful boundary and exercise the real consumer. Keep the do
 
 ## See Also
 
-- [Section learning flow](INDEX.md)
+- [Section learning flow](INDEX.md) — revisit owned fixtures and observable oracles before substituting dependencies
 
 ## References & Learn More
 

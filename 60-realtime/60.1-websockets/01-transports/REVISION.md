@@ -18,6 +18,18 @@ Source: [WebSockets Overview](60.1.1.01-websockets-overview.md)
 
 **A:** Frames ride an ordered reliable live transport, but reconnects do not automatically replay missed application messages or deduplicate effects. Define IDs, acknowledgments, retention, and replay where needed.
 
+**Q:** Does the HTTP upgrade establish a TCP connection that did not previously exist?
+
+**A:** No. The HTTP/1.1 upgrade happens on an existing connection. A successful protocol handshake is also not user authentication; authorization remains a separate application decision.
+
+**Q:** Why does the echo fixture check both readyState and pending bytes before replying?
+
+**A:** Sending requires an open channel, and pending work must remain bounded. The send callback describes local progress/error, not a durable business acknowledgment. A slow peer triggers the fixture's termination policy.
+
+**Q:** Why can an origin allowlist not identify a trusted user?
+
+**A:** Browsers supply an Origin header, but non-browser clients can supply their own. Validate the application session and authorize rooms/actions independently; do not equate origin acceptance with permission.
+
 ## Server-Sent Events (SSE)
 
 Source: [Server-Sent Events (SSE)](60.1.1.02-server-sent-events.md)
@@ -25,6 +37,22 @@ Source: [Server-Sent Events (SSE)](60.1.1.02-server-sent-events.md)
 **Q:** Why does Last-Event-ID not itself recover a missed SSE event?
 
 **A:** It gives the server a cursor. The server must retain events, authorize replay, detect expired cursors, and send the right continuation or resynchronization response.
+
+**Q:** Trace the local SSE fixture after the browser applies ID 2, the connection closes and ID 3 is published before reconnection.
+
+**A:** The same EventSource reconnects with Last-Event-ID 2. The server validates that cursor and replays retained records greater than 2, then subscribes the response to live publications without an asynchronous gap in this single-process fixture.
+
+**Q:** What changes when that cursor is older than retained history?
+
+**A:** The server emits reset instead of silently skipping updates. The client closes the source and requests a reload for current state. This temperature display can use a latest snapshot; an every-event consumer needs a durable recovery contract.
+
+**Q:** Why does a false Node response write not justify an unbounded pending queue?
+
+**A:** It indicates local buffered pressure, not a client acknowledgment. The fixture disconnects the slow consumer; recovery remains limited to retained history. Waiting for drain, coalescing or durable replay require explicit bounded policies.
+
+**Q:** Does the browser's remembered event ID prove the application applied a database effect?
+
+**A:** No. It is a transport replay cursor. Handler validation, application processing and durable acknowledgment are separate. The display validates and applies before updating its own deduplication cursor.
 
 ## Socket.io
 

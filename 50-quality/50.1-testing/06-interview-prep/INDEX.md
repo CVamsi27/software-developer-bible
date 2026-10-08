@@ -1,6 +1,6 @@
 # Testing Interview Prep
 
-> **Study time:** ≈ 46 min of reading (1 files, ~46 min average).
+> **Study time:** ≈ 11 min of reading (1 files, ~11 min average).
 > **1 file.** The curated question bank for testing rounds — grouped by difficulty, covering strategy, pyramid trade-offs, async/component testing, mocking, and flaky-test debugging.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](../INDEX.md)
@@ -13,28 +13,21 @@
 
 | # | File | Contents | Time | Role priority | General importance |
 | --: | ------ | ---------- | ------ | --- | --- |
-| 01 | [Testing Interview Questions](50.1.6.01-interview-questions.md) | 40+ curated questions grouped by difficulty, with model answers | 2-3 hrs | Essential | Foundational |
+| 01 | [Testing Interview Questions](50.1.6.01-interview-questions.md) | Forty original questions, model answers and changed-condition probes | Practice in several sessions | Essential | Foundational |
 
 ---
 
-## How to use it
+## First pass: explain the contract and evidence
 
-1. Do not read it before the rest of this stack — the answers only stick when they map to chapters you have read.
-2. Answer out loud first, then check the model answer.
-3. Revisit 24 hours later; spaced repetition beats cramming.
+Complete the preceding [testing learning flow](../INDEX.md) and each category's revision companion. Answer the bank's fundamentals and execution questions aloud, then check the model: what behavior runs, what result is expected and what does the test omit? Return to the canonical example when the boundary is unclear.
 
----
+## Second pass: change a consequential condition
 
-## Questions you will be ready for
+Use each probe to vary time, ownership, a failure outcome, a version or an assumption. For release and scale questions, name the required evidence, missing coverage and exception owner. For experience questions, prepare a supported personal example with your contribution and limitations; no model answer supplies that history.
 
-- "What's your testing strategy? Why?"
-- "Unit vs integration vs E2E — when to use which?"
-- "How do you test async code?"
-- "How do you test React components?"
-- "How do you mock network requests?"
-- "What does good coverage look like? Is 100% the goal?"
+## Revisit the gaps
 
----
+Record questions whose reasoning you could not reproduce. After a delay, answer those again without the model. Continue until you can explain the trace and a changed condition, rather than repeating a memorized tool list.
 
 ## Cross-References
 
@@ -51,7 +44,7 @@
 
 ## Docita Anchor
 
-[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at story material you can cite in testing rounds.
+[Docita](https://github.com/CVamsi27/docita) supplies artifacts for inspection. Verify their current contents, test results and your own contribution before using them in an experience answer. A dated audit is historical evidence, not proof that the current release passes.
 
 | Topic | Docita evidence |
 | ---------------------------------------------- | ---------------------------------------------------------- |

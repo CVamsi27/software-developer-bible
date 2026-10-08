@@ -1,6 +1,6 @@
 # Mocking & Test Patterns
 
-> **Study time:** ≈ 1 h of reading (3 files, ~20 min average).
+> **Study time:** ≈ 23 min of reading (3 files, ~8 min average).
 > **3 files.** How to isolate code under test (mocks, spies, stubs, MSW) and how to structure tests that stay maintainable at scale (Arrange-Act-Assert, factories, fixtures, builders).
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
@@ -9,41 +9,26 @@
 
 ---
 
-## Why these belong together
+## Read the real logic against a controlled boundary
 
-Replacing dependencies without clear test structure makes tests easy to break; keeping every real dependency makes them slow. Choose which dependencies to replace with test doubles, such as a fake service or mock, and keep each test easy to read as setup, action and expected result.
+A dependency replacement makes selected inputs controllable but also removes the real dependency from observation. Test structure makes the resulting claim visible: which state was arranged, which action ran and which result was checked. Start with the boundary, then introduce helpers only where repetition obscures that contract.
 
----
+## First pass: choose the replacement and its evidence boundary
 
-## The 2 files
+Read [Mocking](50.1.4.01-mocking.md). Trace the receipt through the real consumer and a rejecting delivery interface. Then distinguish a received HTTP failure from a transport rejection, configured behavior from recorded calls, and wall-clock changes from timer advancement. A fake provider needs its own contract checks; a mock call alone cannot establish delivery.
 
-| # | File | Topics | Role priority | General importance | Read time |
-| --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Mocking](50.1.4.01-mocking.md) | Mock functions, spies, modules, network requests (MSW), fake timers | Essential | Foundational | 10 min |
-| 02 | [Test Patterns](50.1.4.02-test-patterns.md) | Arrange-Act-Assert, factory methods, test fixtures, builders | Essential | Foundational | 48 min |
+## Second pass: make the scenario and ownership visible
 
----
+Read [Test Patterns](50.1.4.02-test-patterns.md). Run the cart cases, then mutate the input and one builder result to explain the copy boundary. Distinguish a factory's fresh data from a fixture's environment and lifecycle. Compare named expected totals with a generated invariant: each detects different defects.
 
-## What to mock (and what not to)
+| Chapter | Main question | Read time |
+| ------------------------------------------- | --------------------------------------------------------- | --------: |
+| [Mocking](50.1.4.01-mocking.md) | What behavior does this replacement let the test observe? | 10 min |
+| [Test Patterns](50.1.4.02-test-patterns.md) | Does reuse keep the contract and state ownership visible? | 48 min |
 
-```text
-Mock:            HTTP edges (MSW), clocks/timers, queues, third-party SDKs
-Do NOT mock:     the unit under test's own logic, plain value objects,
-                 everything (over-mocking = testing your mocks)
-```
+## Revision before interview practice
 
-Interview trap: "Your test mocks half the system — what are you actually verifying?" Over-mocking is the most common senior-level criticism of test suites.
-
----
-
-## Patterns that keep suites alive
-
-- **Arrange-Act-Assert** — one behavior per test; the Act section should be one line.
-- **Object mother / fixture** — canonical valid entities for shared setup.
-- **Test data builder** — `buildUser({ role: "admin" })`; defaults in one place, overrides explicit.
-- **Naming** — `subject_condition_expectation` ("cancel_unpaidInvoice_throws").
-
----
+Complete the [section revision questions](REVISION.md) after both chapters. Change one condition in each example: a provider accepts a request before timing out, a builder stores a nested mutable object, or another worker shares the fixture namespace. Explain which assertion or isolation strategy must change. Continue to the [testing interview bank](../06-interview-prep/50.1.6.01-interview-questions.md) after the remaining testing categories.
 
 ## Cross-References
 
@@ -60,7 +45,7 @@ Interview trap: "Your test mocks half the system — what are you actually verif
 
 ## Docita Anchor
 
-[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
+[Docita](https://github.com/CVamsi27/docita) supplies companion artifacts to inspect. Read the current source and its assertions before claiming that a test passed or that a personal project used the same design.
 
 | Topic | Docita evidence |
 | --------------------------------------------------------- | ---------------------------------------------------------------------------- |

@@ -38,13 +38,45 @@ Source: [Chaos Engineering & Game Days](50.1.5.02-chaos-engineering.md)
 
 **A:** It validates the fault, instrumentation, and stop mechanism before accepting production risk. Production experiments can add realism when explicitly governed; they are not the only valid experiments.
 
+## Load contract and metric population
+
+Source: [Performance & Load Testing](50.1.5.01-performance-load-testing.md)
+
+**Q:** Why does the runnable catalog example add both good and bad attempts to its failure Rate?
+
+**A:** The denominator must be all observed attempts. Adding only failures makes one failure look like a 100% failure population and cannot express the actual ratio.
+
+**Q:** Can HTTP 200 still fail the example's process-level gate?
+
+**A:** Yes. The semantic check verifies the expected item and price, and its Rate threshold fails on an incorrect payload. A check alone records failure; the threshold determines the exit status.
+
+**Q:** What boundary does Little's Law require?
+
+**A:** Use the same stable work population for average throughput, average time and average in-flight work. Include queue time when waiting work is in the population; a p99 multiplied by all registered users is not that relationship.
+
+## Fault layer and application behavior
+
+Source: [Chaos Engineering & Game Days](50.1.5.02-chaos-engineering.md)
+
+**Q:** Does a 150 ms downstream latency toxic generate a 50% HTTP error rate?
+
+**A:** No. It delays selected server-to-client data. HTTP errors require an appropriate application or protocol-aware failure scenario; toxicity selects links and is not a business error percentage.
+
+**Q:** What does the local delay example establish about a circuit breaker?
+
+**A:** Nothing about its state transitions. It verifies delayed correct responses and recovery through the proxy. A breaker test must observe the actual application contract, opening, rejection and recovery probes.
+
+**Q:** Why verify that the application uses the proxy before interpreting a passing chaos test?
+
+**A:** An active fault on an unused route changes nothing. Confirm the routing and injection while the required user operation runs, then check both fault removal and service recovery.
+
 ## Summary
 
 Use the answers to check your reasoning, then revisit the source mechanism and reproduce any relevant example without copying it. A remembered label is useful only when you can explain its limits.
 
 ## See Also
 
-- [Section learning flow](INDEX.md)
+- [Section learning flow](INDEX.md) — set a workload and recovery hypothesis before interpreting experiment results
 
 ## References & Learn More
 

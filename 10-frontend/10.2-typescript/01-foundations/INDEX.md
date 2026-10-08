@@ -1,6 +1,6 @@
 # Foundations — TypeScript
 
-> **Study time:** ≈ 59 min of reading (5 files, ~12 min average).
+> **Study time:** ≈ 1 h of reading (5 files, ~12 min average).
 > **5 files.** Type aliases vs interfaces, `keyof`/`typeof`, control-flow-based narrowing, and the tsconfig compiler options that decide what actually gets checked.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#files)
@@ -16,13 +16,13 @@
 | 01 | [Types vs Interfaces](10.2.1.01-types-vs-interfaces.md) | Type aliases, interfaces, declaration merging, when to use each, performance | Essential | Foundational | 7 min |
 | 02 | [keyof / typeof](10.2.1.02-keyof-typeof.md) | Index type queries, typeof operator, enum types, indexed access types | Essential | Foundational | 16 min |
 | 03 | [Type Narrowing](10.2.1.03-type-narrowing.md) | typeof guards, instanceof, discriminated unions, type predicates, control flow analysis | Essential | Foundational | 18 min |
-| 04 | [tsconfig & Compiler Options](10.2.1.04-tsconfig-compiler-options.md) | strict flag family, moduleResolution bundler/node16/nodenext, isolatedModules, incremental/composite, skipLibCheck, annotated senior tsconfig | Essential | Foundational | 14 min |
+| 04 | [tsconfig & Compiler Options](10.2.1.04-tsconfig-compiler-options.md) | strict flag family, moduleResolution bundler/node16/nodenext, isolatedModules, incremental/composite, skipLibCheck, annotated senior tsconfig | Essential | Foundational | 15 min |
 
 ---
 
 ## Read order
 
-Types vs Interfaces → keyof / typeof → Type Narrowing → tsconfig & Compiler Options.
+First choose a named shape or alternative contract. Derive keys and property value types from that contract, then use runtime checks to narrow uncertain values before reading them. Finally trace the compiler project through checking, emission and the actual loader; flags change accepted code but do not validate runtime inputs. Complete the [revision drill](REVISION.md) before the stack interview bank.
 
 ---
 

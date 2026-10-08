@@ -77,6 +77,30 @@ function contrast(a, b) {
     await deniedStoragePage.getByRole('button', {name: 'Switch to light mode', exact: true}).click();
     assert.equal(await deniedStoragePage.locator('html').getAttribute('data-theme'), 'light', 'theme works when preference storage is unavailable');
     await deniedStoragePage.close();
+    const motionPage = await browser.newPage({colorScheme: 'light', reducedMotion: 'no-preference'});
+    await motionPage.goto(page.url());
+    await motionPage.locator('.theme-toggle-btn').waitFor();
+    await motionPage.setViewportSize({width: 1280, height: 900});
+    await motionPage.evaluate(() => document.documentElement.setAttribute('data-theme', 'light'));
+    await motionPage.setViewportSize({width: 375, height: 800});
+    await motionPage.evaluate(() => document.documentElement.setAttribute('data-theme', 'dark'));
+    const motionState = await motionPage.evaluate(() => new Promise(resolve => requestAnimationFrame(() => {
+      const control = document.querySelector('.theme-toggle-btn');
+      const menu = document.querySelector('label[for="nav-trigger"]');
+      const r = control.getBoundingClientRect(), m = menu.getBoundingClientRect();
+      const hit = document.elementFromPoint(r.x + r.width / 2, r.y + r.height / 2);
+      resolve({controlRight: r.right, menuLeft: m.left, hit: control === hit || control.contains(hit),
+        headerBackground: getComputedStyle(document.querySelector('.site-header')).backgroundColor,
+        titleColor: getComputedStyle(document.querySelector('.site-title')).color,
+        expectedHeaderBackground: getComputedStyle(document.documentElement).getPropertyValue('--header-bg').trim()});
+    })));
+    assert(motionState.controlRight + 4 <= motionState.menuLeft && motionState.hit,
+      `normal-motion resize keeps the theme control reachable: ${JSON.stringify(motionState)}`);
+    assert.equal(motionState.headerBackground, motionState.expectedHeaderBackground,
+      'theme foreground and header background change together without an intermediate palette');
+    assert(contrast(motionState.titleColor, motionState.headerBackground) >= 4.5,
+      'theme switch preserves immediate header-title contrast with normal motion');
+    await motionPage.close();
     if (process.env.STUDY_UI_SCREENSHOT) {
       await page.evaluate(() => document.getElementById('contrast-fixture')?.remove());
       for (const theme of ['light', 'dark']) {

@@ -1,6 +1,6 @@
 # Real-Time Stack
 
-> **Study time:** ≈ 4 h 47 m of reading (14 files, ~20 min average).
+> **Study time:** ≈ 4 h 6 m of reading (14 files, ~18 min average).
 > **WebSockets, SSE, real-time architecture** — optional stack, study when a JD demands it. Shared by both lanes.
 >
 > Study in three passes: **I. Protocols** (which transport, and why) → **II. Implementation** (Socket.IO, NestJS gateways) → **III. Architecture at scale** (fan-out, sticky sessions, pub/sub backbones).
@@ -51,8 +51,8 @@ NestJS gateways: read alongside Pass II when wiring production code.
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | ----: | ------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------------- | ------------------ | --------: |
-| 1 | [WebSockets Overview](60.1-websockets/01-transports/60.1.1.01-websockets-overview.md) | Handshake, frames, heartbeat, when WS beats polling | Important | Specialized | 30 min |
-| 2 | [Server-Sent Events](60.1-websockets/01-transports/60.1.1.02-server-sent-events.md) | Auto-reconnect, `Last-Event-ID`, one-way push over plain HTTP | Important | Specialized | 36 min |
+| 1 | [WebSockets Overview](60.1-websockets/01-transports/60.1.1.01-websockets-overview.md) | Handshake, frames, heartbeat, when WS beats polling | Important | Specialized | 13 min |
+| 2 | [Server-Sent Events](60.1-websockets/01-transports/60.1.1.02-server-sent-events.md) | Auto-reconnect, `Last-Event-ID`, one-way push over plain HTTP | Important | Specialized | 12 min |
 | 3 | [WebTransport](60.1-websockets/01-transports/60.1.1.04-webtransport.md) | HTTP/3, QUIC streams, unidirectional/bidirectional/datagram | Optional | Specialized | 9 min |
 
 ## Framework Implementation

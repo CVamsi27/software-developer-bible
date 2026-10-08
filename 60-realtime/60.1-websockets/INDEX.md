@@ -1,6 +1,6 @@
 # WebSockets — Index
 
-> **Study time:** ≈ 4 h 47 m of reading (14 files, ~20 min average).
+> **Study time:** ≈ 4 h 6 m of reading (14 files, ~18 min average).
 > **14 files across 4 categories.** Real-time communication from WebSocket fundamentals and Socket.IO to Server-Sent Events, real-time architecture, NestJS WebSockets, GraphQL subscriptions, WebRTC peer-to-peer, testing realtime systems, WebTransport, scaling patterns, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-14-blue)](../../INDEX.md)
@@ -28,8 +28,8 @@ The 4 main real-time transports.
 
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
-| 01 | [WebSockets Overview](01-transports/60.1.1.01-websockets-overview.md) | Protocol, handshake (HTTP Upgrade), frames, vs HTTP, use cases | Bidirectional real-time | Important | Specialized | 30 min |
-| 02 | [Server-Sent Events](01-transports/60.1.1.02-server-sent-events.md) | EventSource API, auto-reconnect, vs WebSockets, use cases | Server→client only (notifications, live updates) | Important | Specialized | 36 min |
+| 01 | [WebSockets Overview](01-transports/60.1.1.01-websockets-overview.md) | Protocol, handshake (HTTP Upgrade), frames, vs HTTP, use cases | Bidirectional real-time | Important | Specialized | 13 min |
+| 02 | [Server-Sent Events](01-transports/60.1.1.02-server-sent-events.md) | EventSource API, auto-reconnect, vs WebSockets, use cases | Server→client only (notifications, live updates) | Important | Specialized | 12 min |
 | 03 | [Socket.IO](01-transports/60.1.1.03-socket-io.md) | Client/server setup, rooms, namespaces, events, fallback to polling | Quick bidirectional with rich features | Important | Specialized | 40 min |
 | 04 | [WebTransport](01-transports/60.1.1.04-webtransport.md) | QUIC-based transport, datagrams, streams, vs WebSocket | Modern, low-latency, unreliable delivery OK | Optional | Specialized | 9 min |
 

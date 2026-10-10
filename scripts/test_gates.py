@@ -1732,6 +1732,40 @@ CASES = [
             "the outer scope alive, which is what bounds this chapter's "
             "cache lifetime\n")},
     },
+
+    {
+        "name": "gate 27 rejects a clipped related-reading description",
+        "gate": "check_see_also.py", "args": [],
+        "plant": {"p.md": "# T\n\n## See Also\n\n- [Caching](cache.md) — the cache retains public data while…\n"},
+        "clean": {"p.md": "# T\n\n## See Also\n\n- [Caching](cache.md) — compare freshness and invalidation boundaries\n"},
+        "fire_names": ("p.md:5", "clipped description"),
+    },
+    {
+        "name": "gate 27 rejects a copied heading as a reading reason",
+        "gate": "check_see_also.py", "args": [],
+        "plant": {"p.md": "# T\n\n## See Also\n\n- [CQRS](cqrs.md) — ### Command and query models\n"},
+        "clean": {"p.md": "# T\n\n## See Also\n\n- [CQRS](cqrs.md) — compare command rules with read-model freshness\n"},
+        "fire_names": ("p.md:5", "markup fragment"),
+    },
+    {
+        "name": "gate 27 rejects a copied table as a reading reason",
+        "gate": "check_see_also.py", "args": [],
+        "plant": {"p.md": "# T\n\n## See Also\n\n- [Kafka](kafka.md) — | Concept | Meaning |\n"},
+        "clean": {"p.md": "# T\n\n## See Also\n\n- [Kafka](kafka.md) — trace acknowledgments and consumer recovery\n"},
+        "fire_names": ("p.md:5", "markup fragment"),
+    },
+    {
+        "name": "gate 27 rejects ASCII clipping but ignores fenced examples",
+        "gate": "check_see_also.py", "args": [],
+        "plant": {"p.md": "# T\n\n## See Also\n\n- [Kafka](kafka.md) — the partition records messages and...\n"},
+        "clean": {"p.md": (
+            "# T\n\n## See Also\n\n"
+            "- [Kafka](kafka.md) — trace partition progress and recovery\n"
+            "\n~~~~markdown\n- [Closures](closures.md) — closures\n~~~~\n"
+            "\n````markdown\n- [Closures](closures.md) — closures\n````\n")},
+        "fire_names": ("p.md:5", "clipped description"),
+    },
+
 ]
 
 

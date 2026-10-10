@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "1876a5d494ba75705718eb8c81c3f6085576be877549bf1ba2093e138cc55b26",
+ "corpus_digest": "20d9382e8f74e82db015d224dd15f385e3a6ae7a58e78463c2821b453d0f79c7",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 6305
+  "read_minutes": 6304
  },
  "chapters": [
   {
@@ -4503,7 +4503,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 8
   },
   {
    "p": "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/REVISION.html",

@@ -24,6 +24,25 @@ function contrast(a, b) {
       });
       assert(Math.abs(sizes.article - sizes.paragraph) <= 1, `paragraph fills article at ${width}px: ${JSON.stringify(sizes)}`);
     }
+    // Long inline configuration names must not widen a mobile document.
+    await page.evaluate(() => {
+      const paragraph = document.createElement('p');
+      paragraph.id = 'inline-code-width-fixture';
+      const code = document.createElement('code');
+      code.textContent = 'unclean.leader.election.enable=false';
+      paragraph.append('Configuration: ', code);
+      document.querySelector('.post-content').append(paragraph);
+    });
+    for (const theme of ['light', 'dark']) {
+      await page.evaluate(theme => document.documentElement.setAttribute('data-theme', theme), theme);
+      for (const width of [320, 375]) {
+        await page.setViewportSize({width, height: 900});
+        const scrollWidth = await page.evaluate(() => document.documentElement.scrollWidth);
+        assert(scrollWidth <= width, `long inline code widens ${theme} page: ${scrollWidth} > ${width}`);
+      }
+    }
+    await page.evaluate(() => document.getElementById('inline-code-width-fixture').remove());
+    await page.setViewportSize({width: 1280, height: 900});
     const fence = page.locator('div.highlighter-rouge').first();
     assert.equal(await fence.locator('.copy-code-btn').count(), 1, 'one Copy control per code block');
     assert.equal(await fence.locator('div.highlight').evaluate(n => getComputedStyle(n).backgroundColor), await fence.evaluate(n => getComputedStyle(n).backgroundColor), 'nested code surface follows the dark palette');

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""See Also hygiene — per-stack bare ceiling + the always-wrong label echo.
+"""See Also hygiene — bare ceilings, label echoes and unfinished descriptions.
 
 The 2026-09-22 measurement found 1958 of 2727 See Also entries (72%) bare and
 deliberately DECLINED a bulk derivation: of 1888 entries a title-derivation
@@ -13,7 +13,7 @@ stack by stack.
 bare entries now carry hand-authored per-pair reasons — including the stamped
 footer triple (Coding Patterns / Node.js / TypeScript), where the connecting
 mechanism genuinely differs per chapter (`this` -> TS is `ThisType<T>`; the
-event loop -> Node is libuv phases). This gate makes two properties standing:
+event loop -> Node is libuv phases). This gate makes three properties standing:
 
   1. bare ceiling per top-level stack (see-also-baseline.json) — a stack's
      bare count may fall freely; rising above its committed maximum fails the
@@ -22,6 +22,9 @@ event loop -> Node is libuv phases). This gate makes two properties standing:
      add nothing beyond the link label is the declined boilerplate in
      miniature ("[Closures](closures.md) — closures"); the per-pair judgment
      must connect source to target, not restate the label.
+
+  3. unfinished descriptions (always defects, no baseline) — clipped endings
+     and copied heading/table fragments do not explain why to follow a link.
 
 Check-only by design: authoring or fixing a reason is editorial. `--baseline`
 re-commits the per-stack maxima deliberately. Scope: content markdown,
@@ -34,6 +37,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from scan_scope import guard
+from md_fences import walk
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASELINE = os.path.join(os.path.dirname(os.path.abspath(__file__)),
@@ -42,8 +46,6 @@ SKIP_DIRS = {'.git', 'node_modules', '.archive', 'api', '_site', '__pycache__',
              '.jekyll-cache', 'scripts'}
 EXCLUDE_PATH = re.compile(r'(^|/)personal/')
 
-FENCE_OPEN = re.compile(r'^```(\w[\w+-]*)\s*$')
-FENCE_CLOSE = re.compile(r'^```\s*$')
 ENTRY = re.compile(r'^[-*] \[([^\]]+)\]\(([^)\s]+)\)(?:\s+—\s+(.*))?$')
 STOP = {'the', 'a', 'an', 'and', 'or', 'of', 'to', 'in', 'for', 'vs',
         'versus', 'with', 'on', 'is', 'are'}
@@ -70,16 +72,11 @@ def see_also_entries(path):
         lines = open(os.path.join(ROOT, path), encoding='utf-8').read().split('\n')
     except OSError:
         return []
-    entries, in_fence, in_sa = [], False, False
-    for i, raw in enumerate(lines, 1):
-        if in_fence:
-            if FENCE_CLOSE.match(raw):
-                in_fence = False
+    entries, in_sa = [], False
+    for index, raw, in_fence, is_fence in walk(lines):
+        if is_fence or in_fence:
             continue
-        m = FENCE_OPEN.match(raw)
-        if m:
-            in_fence = True
-            continue
+        i = index + 1
         if raw.startswith('#'):
             in_sa = raw.lstrip('#').strip().lower().startswith('see also')
             continue
@@ -99,23 +96,30 @@ def content_words(text):
 def measure():
     bare = {}
     echo = []
+    unfinished = []
     for path in corpus_files():
         stack = path.split('/')[0] if '/' in path else '(root)'
         for line, label, target, reason in see_also_entries(path):
             if not reason:
                 bare[stack] = bare.get(stack, 0) + 1
+            elif re.search(r'(?:…|\.\.\.)\s*$', reason):
+                unfinished.append((path, line, 'clipped description'))
+            elif re.match(r'^\s*(?:#{1,6}\s|\|)', reason):
+                unfinished.append((path, line, 'markup fragment'))
             elif content_words(reason) <= content_words(label):
                 echo.append((path, line, label, reason))
-    return bare, echo
+    return bare, echo, unfinished
 
 
 def main(argv):
     if '--baseline' in argv:
-        bare, echo = measure()
-        if echo:
+        bare, echo, unfinished = measure()
+        if echo or unfinished:
             for path, line, label, reason in echo:
                 print(f"ECHO {path}:{line}: [{label}] — {reason}")
-            print("refusing to baseline with echo defects present — fix them first")
+            for path, line, defect in unfinished:
+                print(f"UNFINISHED {path}:{line}: {defect}")
+            print("refusing to baseline with description defects present — fix them first")
             return 1
         data = {'stacks': dict(sorted(bare.items()))}
         with open(BASELINE, 'w', encoding='utf-8') as f:
@@ -132,7 +136,7 @@ def main(argv):
         print(f"cannot read baseline {BASELINE} — run with --baseline")
         return 1
 
-    bare, echo = measure()
+    bare, echo, unfinished = measure()
     files = corpus_files()
     guard(len(files), 'markdown files')
     total = sum(bare.values())
@@ -149,14 +153,17 @@ def main(argv):
         problems.append(f"  {path}:{line}: [{label}] — {reason}"
                         f"  (echoes the label; adds no information)")
 
+    for path, line, defect in unfinished:
+        problems.append(f"  {path}:{line}: {defect} — author a complete reading reason")
+
     print(f"see-also: {total} bare across {len(bare)} stacks, "
-          f"{len(echo)} echo defects")
+          f"{len(echo)} echo defects, {len(unfinished)} unfinished descriptions")
     if problems:
         print("FAIL:")
         for p in problems:
             print(p)
         return 1
-    print("OK: within ceilings, no label echoes")
+    print("OK: within ceilings, no label echoes or unfinished descriptions")
     return 0
 
 

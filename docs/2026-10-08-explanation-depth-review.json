@@ -3355,7 +3355,8 @@
       "state": "revised",
       "findings": [
         "Complete existingchapter correctlydefinescallbackthread/nativework, requesttrace, phasedorderingcontext, starvation/slices, resource-specificmeasurement andcleanup",
-        "Missingrequiredrevisionlink"
+        "Missingrequiredrevisionlink",
+        "Closing pass: related-reading descriptions were truncated copies rather than complete source-to-target guidance."
       ],
       "disposition": "Retainedstrongmechanisms/examples/boundaries; addedrevisionlink",
       "questions": [
@@ -3365,10 +3366,12 @@
       "validation": [
         "Complete semantictext read; officialNode22/24/API contracts checked",
         "/tmp/bible-depth-review/backend-node-runtime-results.json: Node23.7 actualCJSorder, exacttwochunkTSfixture, splitdecoder/cancel,5node:testpasses",
-        "Performancehistogram/productionHTTP/admission andNode22/24runtimes notexecuted; nativeTSexecutiondoesnotprove typecheck"
+        "Performancehistogram/productionHTTP/admission andNode22/24runtimes notexecuted; nativeTSexecutiondoesnotprove typecheck",
+        "Rechecked linked chapter headings, practical/formal definitions and summaries; authored 1 specific complete reading reason(s). Prior full-document semantic disposition retained.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
       "reviewed_sha256": "a7def8ec8d5967755a7361789e5b5d3c83b010dc114649136f2ba22bd0316029",
-      "final_sha256": "a7def8ec8d5967755a7361789e5b5d3c83b010dc114649136f2ba22bd0316029"
+      "final_sha256": "8cc3d304dbbd5d66e89bf147a3d0b02d49a8a5bf88473f50c2b905618739117d"
     },
     {
       "path": "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.02-web-streams-and-test-runner.md",
@@ -4567,7 +4570,8 @@
       "findings": [
         "Unit module never closed; E2E setup could omit production bootstrap configuration",
         "Schema synchronization example did not test migration contract",
-        "Fixed runtime/scaling and transaction rollback isolation claims unbounded"
+        "Fixed runtime/scaling and transaction rollback isolation claims unbounded",
+        "Closing pass: related-reading descriptions were truncated copies rather than complete source-to-target guidance."
       ],
       "disposition": "Added teardown/shared bootstrap/migration setup conditions, clear fragment assumptions, real-database versus mock evidence and connection-specific test isolation.",
       "questions": [
@@ -4579,10 +4583,12 @@
         "Official Nest CQRS/microservice/configuration/validation/testing/scheduling/OpenAPI sources read live; BullMQ queue limiter/backoff and oasdiff primary docs read",
         "Runtime: /tmp/bible-depth-review/backend-nest-quality-results.json (5 strict TS config/DTO/OpenAPI/pagination cases)",
         "Existing authored bank Q1-Q40 and companion questions preserved; template671 and current links9862/188 anchors passed",
-        "Limits: actual brokers/Redis/BullMQ/bank provider/production HTTP/Kubernetes/complete app Jest/Testcontainers and oasdiff CI integrations not executed; Docita reference paths not deployment evidence"
+        "Limits: actual brokers/Redis/BullMQ/bank provider/production HTTP/Kubernetes/complete app Jest/Testcontainers and oasdiff CI integrations not executed; Docita reference paths not deployment evidence",
+        "Rechecked linked chapter headings, practical/formal definitions and summaries; authored 1 specific complete reading reason(s). Prior full-document semantic disposition retained.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
       "reviewed_sha256": "ec1c52cb6a673eb9a5b7cfc74d9ee4a88462005d5cf8b313ee8f70b67225c064",
-      "final_sha256": "d864d9a4d8c86c8bd5beb0504865fa20454ca051123436feec40c2f08a2cc623"
+      "final_sha256": "c18f05fa004cd25b37a02d647295236bea1fddbf2285553658d9a9f313f0eeaa"
     },
     {
       "path": "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.03-lifecycle-hooks-graceful-shutdown.md",
@@ -4640,7 +4646,8 @@
       "state": "revised",
       "findings": [
         "DTO minItems/default metadata disagreed with runtime validators; list envelope documented single-item response",
-        "Spec dump wrote file while CI redirected empty stdout/overwrote baseline; invalid decorator/tooling claims"
+        "Spec dump wrote file while CI redirected empty stdout/overwrote baseline; invalid decorator/tooling claims",
+        "Closing pass: related-reading descriptions were truncated copies rather than complete source-to-target guidance."
       ],
       "disposition": "Matched nested DTO constraints and single-item envelope, repaired named artifact generation/compatibility/freshness comparison, separated metadata from guards/validation and credential persistence.",
       "questions": [
@@ -4652,10 +4659,12 @@
         "Official Nest CQRS/microservice/configuration/validation/testing/scheduling/OpenAPI sources read live; BullMQ queue limiter/backoff and oasdiff primary docs read",
         "Runtime: /tmp/bible-depth-review/backend-nest-quality-results.json (5 strict TS config/DTO/OpenAPI/pagination cases)",
         "Existing authored bank Q1-Q40 and companion questions preserved; template671 and current links9862/188 anchors passed",
-        "Limits: actual brokers/Redis/BullMQ/bank provider/production HTTP/Kubernetes/complete app Jest/Testcontainers and oasdiff CI integrations not executed; Docita reference paths not deployment evidence"
+        "Limits: actual brokers/Redis/BullMQ/bank provider/production HTTP/Kubernetes/complete app Jest/Testcontainers and oasdiff CI integrations not executed; Docita reference paths not deployment evidence",
+        "Rechecked linked chapter headings, practical/formal definitions and summaries; authored 1 specific complete reading reason(s). Prior full-document semantic disposition retained.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
       "reviewed_sha256": "42b1487a2f0411538b7ddcc38895c7b8570783bbb3524d7459472dcc5c2e8579",
-      "final_sha256": "e438cca5c9dfaaae5ed4595dd9b88bbf529ade4893d71018317855a0eed52579"
+      "final_sha256": "8995e618e3fe4816f633664da7e1b02cb11c575a3114660cc440ea5b840ad736"
     },
     {
       "path": "20-backend/20.2-nestjs/04-quality-and-operations/INDEX.md",
@@ -4913,7 +4922,8 @@
       "state": "revised",
       "findings": [
         "Generatedspeccannotdrift/neverhandwrite/runtimezerocost claimsfalse; snippetsmissingdeps/UUIDexamplemismatch/generatedcallsinvented",
-        "Runtimevalidation/security enforcement confusedwithdeclarations;code-firstduplicationNestchapter"
+        "Runtimevalidation/security enforcement confusedwithdeclarations;code-firstduplicationNestchapter",
+        "Closing pass: related-reading descriptions were truncated copies rather than complete source-to-target guidance."
       ],
       "disposition": "Rebuiltspec-first/code-firstpipeline, completevalidated3.1.1description,AND/ORsecurity,wirebounds/versiondifferences andrealcontractevidence",
       "questions": [
@@ -4925,10 +4935,12 @@
         "PrimaryFieldingREST,GraphQLHTTP,gRPCcore,OpenAPI3.1.1,RFC9745and8594readlive",
         "/tmp/bible-depth-review/backend-rest-design-results.json:actualNode23.7loopbackversionheaders/adapters;swagger-parser12validatescompleteOpenAPI;Ajv8testsBookpresence/types/bounds",
         "Template671pass,links10132checked0broken;backenddiffcheckpass",
-        "No productionauth/CDN/databasecrossversion/clientgenerator/fuzzdeploymenttests claimed"
+        "No productionauth/CDN/databasecrossversion/clientgenerator/fuzzdeploymenttests claimed",
+        "Rechecked linked chapter headings, practical/formal definitions and summaries; authored 1 specific complete reading reason(s). Prior full-document semantic disposition retained.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
       "reviewed_sha256": "ea25af98d94285ed8bcd933d048138406f133e03f28141f3760df65c602022bb",
-      "final_sha256": "d047d223f42a074cf67fcc86612ea468df715157f5e11086e2211829d6acfd42"
+      "final_sha256": "a9589e8ebd72a13b2dd61f52f664bb2b2cc855ace7daba24cc1ed68330d97eac"
     },
     {
       "path": "20-backend/20.3-rest-apis/01-design-and-contract/INDEX.md",
@@ -5051,7 +5063,8 @@
       "findings": [
         "Weak validator emitted in JSON body; conditional update raced between read/write",
         "Freshness diagram conflated reuse with304; unsupported fixed latency/speedup/size defaults",
-        "Weak validators, no-cache/no-store, Vary dimensions and authority/invalidation boundaries missing"
+        "Weak validators, no-cache/no-store, Vary dimensions and authority/invalidation boundaries missing",
+        "Closing pass: related-reading descriptions were truncated copies rather than complete source-to-target guidance."
       ],
       "disposition": "Derived key/freshness/validation responsibilities, explained directives and strong/weak conditions; runnable ETag reads/atomic single-process replacement, explicit reload/helper behavior and database authority constraints.",
       "questions": [
@@ -5063,10 +5076,12 @@
         "Primary RFC9110/9111, Fetch standard and official Express cors docs read live; installed fresh helper implementation inspected",
         "ExecutedNode23.7 status/payload/strong-weak-list-wildcard-read/write cases: /tmp/bible-depth-review/backend-http-mechanics-results.json",
         "Executed actual Chromium across three loopback origins: /tmp/bible-depth-review/backend-cors-browser-results.json (6 cases)",
-        "Template671 passed; current global links have2 frontend failures outside ownership, owned HTTP targets valid; limits: production auth/CSRF/cookie transmission, CDN/shared-cache purge, distributed database version writes and provider effects unexecuted"
+        "Template671 passed; current global links have2 frontend failures outside ownership, owned HTTP targets valid; limits: production auth/CSRF/cookie transmission, CDN/shared-cache purge, distributed database version writes and provider effects unexecuted",
+        "Rechecked linked chapter headings, practical/formal definitions and summaries; authored 1 specific complete reading reason(s). Prior full-document semantic disposition retained.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
       "reviewed_sha256": "c5129a87ffd17f9ebff7960dcd71f4b3de306c202247c2ff203f0942df57fe84",
-      "final_sha256": "02a464c53b515870cb43a4474248d62ee22c63221cd51cd61dde3b4c1b351e9e"
+      "final_sha256": "f437af864366efe8c3c9c484888b3c4cf7d705a03b134e35e6a781c1433b642a"
     },
     {
       "path": "20-backend/20.3-rest-apis/02-http-mechanics/INDEX.md",
@@ -5344,7 +5359,8 @@
       "baseline_sha256": "e661d08b7634be099d9eaf9d43c0ab79678a71af44e8019a68c52daeaf8d6003",
       "state": "revised",
       "findings": [
-        "Incomplete proxying, missing cancellation/stream/header rules, confused HTTP and WebSocket gateways"
+        "Incomplete proxying, missing cancellation/stream/header rules, confused HTTP and WebSocket gateways",
+        "Closing pass: related-reading descriptions were truncated copies rather than complete source-to-target guidance."
       ],
       "disposition": "Replaced invalid framework fragments with executed bounded Node forwarding server and explained trust, backpressure, failure and retry limits",
       "questions": [
@@ -5355,10 +5371,12 @@
         "Full original semantic reads including complete examples, questions and end matter",
         "Primary RFC 9700/8725, Express proxy trust, Redis programmability, Azure gateway/BFF and Node HTTP sources read live",
         "/tmp/bible-depth-review/backend-rest-edge-results.json: actual Node local rate model, real loopback gateway status/body/timeout/identity forwarding, injected BFF failures/deadline and strict TS tenant authorization",
-        "No real shared Redis/failover, credential provider, deployed gateway or distributed authorization verification claimed"
+        "No real shared Redis/failover, credential provider, deployed gateway or distributed authorization verification claimed",
+        "Rechecked linked chapter headings, practical/formal definitions and summaries; authored 1 specific complete reading reason(s). Prior full-document semantic disposition retained.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
       "reviewed_sha256": "ce92632c127772638e0616d483b4842224faaf803725a712dbc9aad177b5c100",
-      "final_sha256": "d923c3ccc8d395412b9c70e252e117d285413c8461d01f5b6a8bb1456106c47e"
+      "final_sha256": "9ebf56c4d516bef43d825a7e56b858a4f3f9ede5a36f83733c201f1bb9748ac3"
     },
     {
       "path": "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.03-bff.md",
@@ -5388,7 +5406,8 @@
       "baseline_sha256": "d93013176f6a3307c617f0b5645b7db537265812abc15a07c31dc3944a6c8d48",
       "state": "revised",
       "findings": [
-        "Unverified principal casts, incomplete token/refresh implementation, cross-tenant authorization and pooled context hazards"
+        "Unverified principal casts, incomplete token/refresh implementation, cross-tenant authorization and pooled context hazards",
+        "Closing pass: related-reading descriptions were truncated copies rather than complete source-to-target guidance."
       ],
       "disposition": "Explained credential purpose and lifecycle separately from executed object authorization; atomic refresh/revocation/storage and OAuth/OIDC boundaries",
       "questions": [
@@ -5399,10 +5418,12 @@
         "Full original semantic reads including complete examples, questions and end matter",
         "Primary RFC 9700/8725, Express proxy trust, Redis programmability, Azure gateway/BFF and Node HTTP sources read live",
         "/tmp/bible-depth-review/backend-rest-edge-results.json: actual Node local rate model, real loopback gateway status/body/timeout/identity forwarding, injected BFF failures/deadline and strict TS tenant authorization",
-        "No real shared Redis/failover, credential provider, deployed gateway or distributed authorization verification claimed"
+        "No real shared Redis/failover, credential provider, deployed gateway or distributed authorization verification claimed",
+        "Rechecked linked chapter headings, practical/formal definitions and summaries; authored 1 specific complete reading reason(s). Prior full-document semantic disposition retained.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
       "reviewed_sha256": "5bc4b7a79adba453fab178d04bb8f71020e19ad374de6ad1c82b1705688d8819",
-      "final_sha256": "81929743530fc69f39e337b6eeef419f6bc05a1893dbc2dfe65d88cb008a17ac"
+      "final_sha256": "dc9d0e5855f17ed838475bc3e4c40247e060740ec2b935ea09911bc465f05d9f"
     },
     {
       "path": "20-backend/20.3-rest-apis/04-edge-and-scale/INDEX.md",
@@ -5843,7 +5864,9 @@
       "genre": "learning",
       "baseline_sha256": "b67b01f188bfc481b9ea0d4f90feab2d5c5dde3f6bff54a45bc0b1be5695b4bf",
       "state": "reviewed",
-      "findings": [],
+      "findings": [
+        "Closing pass: related-reading descriptions were truncated copies rather than complete source-to-target guidance."
+      ],
       "disposition": "Retained: complete validated fixture, ordered transfer trace, distinct ACID/isolation conditions, write skew, savepoint, external-effect and uncertain-outcome recovery boundaries.",
       "questions": [
         "Why must both transfer accounts be locked and checked before a successful commit?",
@@ -5853,10 +5876,12 @@
         "Complete semantic read of all text and code; checked ownership, trace, variant and boundary consistency",
         "Official PostgreSQL16 isolation/locking/replication restrictions/acknowledgment sources verified",
         "Executed transaction/deadlock/optimistic/stock/claim fixture evidence: /tmp/bible-depth-review/backend-transactions-postgresql-results.json",
-        "Limit: replica routing/failover and production workload not executed"
+        "Limit: replica routing/failover and production workload not executed",
+        "Rechecked linked chapter headings, practical/formal definitions and summaries; authored 2 specific complete reading reason(s). Prior full-document semantic disposition retained.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
       "reviewed_sha256": "b67b01f188bfc481b9ea0d4f90feab2d5c5dde3f6bff54a45bc0b1be5695b4bf",
-      "final_sha256": "4bfb184a66ca27939117261ad97ee9ca4d73667958575aef62370c72314a0474"
+      "final_sha256": "c1a16f1a7f27097002fac7ee1046ab8fafd5f632c328605a1bab401d2cf137e8"
     },
     {
       "path": "20-backend/20.4-database/03-transactions-and-replication/20.4.3.02-deadlocks.md",
@@ -6821,7 +6846,9 @@
       "baseline_sha256": "be90d275db4fd38856bb52013fc8d2cd4061ea0aa5765703aca6cc2ae48e0e03",
       "state": "revised",
       "findings": [
-        "Whole chapter read; corrected discovery/DNS health guarantees, unsafe proxy/caching/fallback examples, historical mesh components and fabricated resource/threshold claims as applicable"
+        "Whole chapter read; corrected discovery/DNS health guarantees, unsafe proxy/caching/fallback examples, historical mesh components and fabricated resource/threshold claims as applicable",
+        "Closing pass: related-reading descriptions were truncated copies rather than complete source-to-target guidance.",
+        "Closing pass: removed the mandatory single-server/all-request model and clarified Kubernetes and framework related-reading scope."
       ],
       "disposition": "Retained topic home, practical/formal definition and original references; taught one focused trace with explicit authority, version and failure boundaries",
       "questions": [
@@ -6830,9 +6857,12 @@
       ],
       "validation": [
         "Full semantic read on 2026-10-10; primary Kubernetes DNS/Istio architecture and data-plane/Microsoft strangler contracts verified",
-        "backend-topology-results.json: bundled Node 24.19.0 exact selector/routes/cohort helpers, including 1000 cohort invariants; no distributed registry, mesh or HTTP proxy integration asserted"
+        "backend-topology-results.json: bundled Node 24.19.0 exact selector/routes/cohort helpers, including 1000 cohort invariants; no distributed registry, mesh or HTTP proxy integration asserted",
+        "Rechecked linked chapter headings, practical/formal definitions and summaries; authored 2 specific complete reading reason(s). Prior full-document semantic disposition retained.",
+        "10 October closing review: revised the specific contract and checked its companion/canonical context; verification recorded in the closing-pass validation record.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "ec5ed0e563634820db1cab3437348718b092998a45e15aba1e5371ddca1f9be8"
+      "final_sha256": "e2319facd7659691c7bbcc82d57ff85f70888366272f99a2cff766a8740b7d29"
     },
     {
       "path": "20-backend/20.6-microservices/01-service-topology/20.6.1.03-service-mesh.md",
@@ -6840,7 +6870,8 @@
       "baseline_sha256": "69c97da56b2760402890eac5f002d9be9e3f2974cfa638be653f9923d23a85c7",
       "state": "revised",
       "findings": [
-        "Whole chapter read; corrected discovery/DNS health guarantees, unsafe proxy/caching/fallback examples, historical mesh components and fabricated resource/threshold claims as applicable"
+        "Whole chapter read; corrected discovery/DNS health guarantees, unsafe proxy/caching/fallback examples, historical mesh components and fabricated resource/threshold claims as applicable",
+        "Closing pass: removed an all-hop sidecar telemetry promise; connected observed proxy traffic to application context and domain signals."
       ],
       "disposition": "Retained topic home, practical/formal definition and original references; taught one focused trace with explicit authority, version and failure boundaries",
       "questions": [
@@ -6849,9 +6880,11 @@
       ],
       "validation": [
         "Full semantic read on 2026-10-10; primary Kubernetes DNS/Istio architecture and data-plane/Microsoft strangler contracts verified",
-        "backend-topology-results.json: bundled Node 24.19.0 exact selector/routes/cohort helpers, including 1000 cohort invariants; no distributed registry, mesh or HTTP proxy integration asserted"
+        "backend-topology-results.json: bundled Node 24.19.0 exact selector/routes/cohort helpers, including 1000 cohort invariants; no distributed registry, mesh or HTTP proxy integration asserted",
+        "10 October closing review: revised the specific contract and checked its companion/canonical context; verification recorded in the closing-pass validation record.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "e5bb47c9c8064e43e88991f7f89f451b4639a94cd9da3e4cf4dace7fb441bba2"
+      "final_sha256": "a31c8d88fcedf8c4a2a272f071ba75494f57929e292c67b39803d72f3f5704a2"
     },
     {
       "path": "20-backend/20.6-microservices/01-service-topology/20.6.1.04-strangler-fig.md",
@@ -6953,7 +6986,8 @@
       "state": "revised",
       "findings": [
         "Whole document read; corrected unscoped delivery/performance/cancellation claims, incomplete client/proto APIs and duplicate mechanism examples where needed",
-        "Follow-up final pass: removed a table-header fragment from related reading; replaced Kafka-as-required-CQRS-transport and partition-placement-as-StatefulSet descriptions with scoped reading guidance."
+        "Follow-up final pass: removed a table-header fragment from related reading; replaced Kafka-as-required-CQRS-transport and partition-placement-as-StatefulSet descriptions with scoped reading guidance.",
+        "Closing pass: replaced ideal/performance marketing in the practical definition with producer, consumer and retained-history behavior plus configuration boundaries."
       ],
       "disposition": "Retained strong broker-selection and durable-event chapters; revised client examples and lifetime/transaction contracts, preserved authored streaming question in source-linked revision",
       "questions": [
@@ -6965,9 +6999,11 @@
         "backend-grpc-results.json: actual loopback HTTP/2 unary statuses and finite streaming/cancellation cleanup",
         "backend-broker-client-contract-results.json: exact TS examples checked against actual client types; Kafka transaction adapter ordering/abort/BigInt cases; no live Kafka/Rabbit cluster assertion",
         "Prior backend-brokers-results.json local policy fixture retained as scoped earlier evidence",
-        "10 October follow-up: complete source and canonical counterpart reads; examples unchanged; related-reading targets checked against their topic scope."
+        "10 October follow-up: complete source and canonical counterpart reads; examples unchanged; related-reading targets checked against their topic scope.",
+        "10 October closing review: revised the specific contract and checked its companion/canonical context; verification recorded in the closing-pass validation record.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "516e9d64267b73095409f5b55fc0d05cd0d1056d787b48dd81d309844290ba8e"
+      "final_sha256": "7cfe4d648433c1606d1ed12a1023500f81e1e375b4b767729f25965fb88c22b2"
     },
     {
       "path": "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.04-rabbitmq.md",
@@ -6996,7 +7032,8 @@
       "baseline_sha256": "03480b8425f42fa37508c3548f32ecb1d08ef3f028c4a56b91e4a3ef5b6119b0",
       "state": "reviewed",
       "findings": [
-        "Whole document read; corrected unscoped delivery/performance/cancellation claims, incomplete client/proto APIs and duplicate mechanism examples where needed"
+        "Whole document read; corrected unscoped delivery/performance/cancellation claims, incomplete client/proto APIs and duplicate mechanism examples where needed",
+        "Closing pass: related-reading descriptions were truncated copies rather than complete source-to-target guidance."
       ],
       "disposition": "Retained strong broker-selection and durable-event chapters; revised client examples and lifetime/transaction contracts, preserved authored streaming question in source-linked revision",
       "questions": [
@@ -7007,9 +7044,11 @@
         "Whole semantic read on 2026-10-10; primary KafkaJS transaction/offset, RabbitMQ confirm/DLX and gRPC cancellation contracts verified",
         "backend-grpc-results.json: actual loopback HTTP/2 unary statuses and finite streaming/cancellation cleanup",
         "backend-broker-client-contract-results.json: exact TS examples checked against actual client types; Kafka transaction adapter ordering/abort/BigInt cases; no live Kafka/Rabbit cluster assertion",
-        "Prior backend-brokers-results.json local policy fixture retained as scoped earlier evidence"
+        "Prior backend-brokers-results.json local policy fixture retained as scoped earlier evidence",
+        "Rechecked linked chapter headings, practical/formal definitions and summaries; authored 1 specific complete reading reason(s). Prior full-document semantic disposition retained.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "03480b8425f42fa37508c3548f32ecb1d08ef3f028c4a56b91e4a3ef5b6119b0"
+      "final_sha256": "de135996a659b7c60a0c65c82a726fd423e4a4f73696758b556f50c848c9f67b"
     },
     {
       "path": "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.06-event-driven-architecture.md",
@@ -7017,7 +7056,8 @@
       "baseline_sha256": "a24a18836038906d1562bd9b493c33c89e3a4acc66b4e8be3fcac2bad0212f3e",
       "state": "reviewed",
       "findings": [
-        "Whole document read; corrected unscoped delivery/performance/cancellation claims, incomplete client/proto APIs and duplicate mechanism examples where needed"
+        "Whole document read; corrected unscoped delivery/performance/cancellation claims, incomplete client/proto APIs and duplicate mechanism examples where needed",
+        "Closing pass: related-reading descriptions were truncated copies rather than complete source-to-target guidance."
       ],
       "disposition": "Retained strong broker-selection and durable-event chapters; revised client examples and lifetime/transaction contracts, preserved authored streaming question in source-linked revision",
       "questions": [
@@ -7028,9 +7068,11 @@
         "Whole semantic read on 2026-10-10; primary KafkaJS transaction/offset, RabbitMQ confirm/DLX and gRPC cancellation contracts verified",
         "backend-grpc-results.json: actual loopback HTTP/2 unary statuses and finite streaming/cancellation cleanup",
         "backend-broker-client-contract-results.json: exact TS examples checked against actual client types; Kafka transaction adapter ordering/abort/BigInt cases; no live Kafka/Rabbit cluster assertion",
-        "Prior backend-brokers-results.json local policy fixture retained as scoped earlier evidence"
+        "Prior backend-brokers-results.json local policy fixture retained as scoped earlier evidence",
+        "Rechecked linked chapter headings, practical/formal definitions and summaries; authored 1 specific complete reading reason(s). Prior full-document semantic disposition retained.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "a24a18836038906d1562bd9b493c33c89e3a4acc66b4e8be3fcac2bad0212f3e"
+      "final_sha256": "60b492391eb4cdfe091c55c006d2af66d04bf6469ba7e4055e24386150de9aab"
     },
     {
       "path": "20-backend/20.6-microservices/02-communication-and-messaging/INDEX.md",
@@ -7074,7 +7116,8 @@
       "baseline_sha256": "2db650ee09e23c43edb88b56a6bf6b631a245890a36ac67669b8fb4bc2c6be55",
       "state": "revised",
       "findings": [
-        "Whole document read; corrected unsafe saga timeout/compensation, missing expected-version append, projection sequencing and migration source/order/authority contracts where applicable"
+        "Whole document read; corrected unsafe saga timeout/compensation, missing expected-version append, projection sequencing and migration source/order/authority contracts where applicable",
+        "Closing pass: related-reading descriptions were truncated copies rather than complete source-to-target guidance."
       ],
       "disposition": "Retained strong transaction/outbox chapters and authored revision questions; replaced incomplete repeated code with focused complete local models and explicit durable boundaries",
       "questions": [
@@ -7085,9 +7128,11 @@
         "Whole semantic read 2026-10-10",
         "backend-data-core-results.json: exact published Node 24.19.0 saga/replay/projection/tombstone helpers and invalid/stale cases",
         "backend-event-append-results.json: actual PostgreSQL 16 expected-version concurrent append and failed-insert rollback",
-        "No saga engine, CDC connector, provider or event transport integration asserted"
+        "No saga engine, CDC connector, provider or event transport integration asserted",
+        "Rechecked linked chapter headings, practical/formal definitions and summaries; authored 1 specific complete reading reason(s). Prior full-document semantic disposition retained.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "8ac4e8042c55aec772b192fdf075389350f9f2af0f616b248f55b03273aa875b"
+      "final_sha256": "f9b65ee149f4e7662cb3e2ed094a2d7437a0d59ad24b89e239b8bbfd45202526"
     },
     {
       "path": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.02-distributed-transactions.md",
@@ -7116,7 +7161,8 @@
       "baseline_sha256": "df099169a1e0e9f0c9bccfe48a23ace8be2c7d54e8d9afe8c9427e613f811c93",
       "state": "revised",
       "findings": [
-        "Whole document read; corrected unsafe saga timeout/compensation, missing expected-version append, projection sequencing and migration source/order/authority contracts where applicable"
+        "Whole document read; corrected unsafe saga timeout/compensation, missing expected-version append, projection sequencing and migration source/order/authority contracts where applicable",
+        "Closing pass: related-reading descriptions were truncated copies rather than complete source-to-target guidance."
       ],
       "disposition": "Retained strong transaction/outbox chapters and authored revision questions; replaced incomplete repeated code with focused complete local models and explicit durable boundaries",
       "questions": [
@@ -7127,9 +7173,11 @@
         "Whole semantic read 2026-10-10",
         "backend-data-core-results.json: exact published Node 24.19.0 saga/replay/projection/tombstone helpers and invalid/stale cases",
         "backend-event-append-results.json: actual PostgreSQL 16 expected-version concurrent append and failed-insert rollback",
-        "No saga engine, CDC connector, provider or event transport integration asserted"
+        "No saga engine, CDC connector, provider or event transport integration asserted",
+        "Rechecked linked chapter headings, practical/formal definitions and summaries; authored 1 specific complete reading reason(s). Prior full-document semantic disposition retained.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "be33773da5f389ab209e8550bca347377b80cffa07074757b54f6db3befe424f"
+      "final_sha256": "43766ffee2841937bfb6f838122693a2bbf4340999fd771533c5c193dc66368e"
     },
     {
       "path": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.04-cqrs.md",
@@ -7859,7 +7907,8 @@
       "baseline_sha256": "b4350e507f2af3eaa147d8112ce8f25a341008886b4c5bb8d324d6d7bb871407",
       "state": "revised",
       "findings": [
-        "New protocol incorrectly excluded max.poll; automatic client migration implied; lag precision/reset and topic resizing/config layers unclear."
+        "New protocol incorrectly excluded max.poll; automatic client migration implied; lag precision/reset and topic resizing/config layers unclear.",
+        "Closing pass: related-reading descriptions were truncated copies rather than complete source-to-target guidance."
       ],
       "disposition": "Corrected pinned Kafka4.1 protocol activation and poll limits; scoped KafkaJS2.2.4 experimental idempotence; complete precise lag helper; distinct auto-create layers; durability/ELR/replay/partition migration boundaries.",
       "questions": [
@@ -7867,10 +7916,12 @@
         "Which ordering, retention, or compatibility condition changes this answer?"
       ],
       "validation": [
-        "Full original file read; primary Kafka4.1 rebalance/KafkaJS2.2.4 producing/RabbitMQ reliability/Confluent schema docs verified live. Extracted JS lag and retry policy executed on Node23.7 with precise offsets/reset/unknown, retry recovery, permanent quarantine, quarantine rejection and bad budget. No real Kafka/RabbitMQ cluster or failover integration claimed. Global template 671 pass; scoped whitespace pass."
+        "Full original file read; primary Kafka4.1 rebalance/KafkaJS2.2.4 producing/RabbitMQ reliability/Confluent schema docs verified live. Extracted JS lag and retry policy executed on Node23.7 with precise offsets/reset/unknown, retry recovery, permanent quarantine, quarantine rejection and bad budget. No real Kafka/RabbitMQ cluster or failover integration claimed. Global template 671 pass; scoped whitespace pass.",
+        "Rechecked linked chapter headings, practical/formal definitions and summaries; authored 1 specific complete reading reason(s). Prior full-document semantic disposition retained.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
       "reviewed_sha256": "099e722d3251cb4a0f74c74e77fd5a7d623b41f901f040ffa8f5ef5cff278269",
-      "final_sha256": "0b22b7ca6a0b5ca31b25b83b9a48b1f07185a61ee1023f5721c513a0a1420539"
+      "final_sha256": "54105e601f7d081c69a1ccfb9f9b47dda474c260d01f261ff41361309077a059"
     },
     {
       "path": "20-backend/20.9-message-brokers/20.9.03-event-driven-patterns.md",
@@ -7878,7 +7929,8 @@
       "baseline_sha256": "b9c80da06e24e4132b6a93305c1ab5f57d2a3e2b2b12108fc14fab709e61ee06",
       "state": "revised",
       "findings": [
-        "Claim check was only named; routing implied arbitrary payload inspection; partial retry sketch and optional-field universal compatibility."
+        "Claim check was only named; routing implied arbitrary payload inspection; partial retry sketch and optional-field universal compatibility.",
+        "Closing pass: related-reading descriptions were truncated copies rather than complete source-to-target guidance."
       ],
       "disposition": "Complete injected retry/quarantine policy; explained durable progress boundary, protected bytes, source-purpose identity and DLQ ordering; added blob storage/replay/authorization trace and actual routing/compatibility distinctions.",
       "questions": [
@@ -7886,10 +7938,12 @@
         "Which ordering, retention, or compatibility condition changes this answer?"
       ],
       "validation": [
-        "Full original file read; primary Kafka4.1 rebalance/KafkaJS2.2.4 producing/RabbitMQ reliability/Confluent schema docs verified live. Extracted JS lag and retry policy executed on Node23.7 with precise offsets/reset/unknown, retry recovery, permanent quarantine, quarantine rejection and bad budget. No real Kafka/RabbitMQ cluster or failover integration claimed. Global template 671 pass; scoped whitespace pass."
+        "Full original file read; primary Kafka4.1 rebalance/KafkaJS2.2.4 producing/RabbitMQ reliability/Confluent schema docs verified live. Extracted JS lag and retry policy executed on Node23.7 with precise offsets/reset/unknown, retry recovery, permanent quarantine, quarantine rejection and bad budget. No real Kafka/RabbitMQ cluster or failover integration claimed. Global template 671 pass; scoped whitespace pass.",
+        "Rechecked linked chapter headings, practical/formal definitions and summaries; authored 1 specific complete reading reason(s). Prior full-document semantic disposition retained.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
       "reviewed_sha256": "2c2bb0f744e27d2df4aa82d3f91fa98008a2fd90a18e9a2621636ddcfbd1d053",
-      "final_sha256": "b78a117077bdf6dc20cdc8610e3e2766ebbb356611cfbcecb297215544137b1e"
+      "final_sha256": "7e6e4f8437ddab132c0a1d663aeae7d2797c83f7f0fd668576146fc347ae48d3"
     },
     {
       "path": "20-backend/20.9-message-brokers/20.9.04-interview-questions.md",
@@ -8871,7 +8925,8 @@
       "baseline_sha256": "e0bbf934d1c59f9a89beec2f3cdd3ea8cab26bd2264c6b02fe726f73f5ffd71f",
       "state": "revised",
       "findings": [
-        "Retained complete independent CQRS/DI derivation, two contract handlers, projection synchronization/read-after-write and dependency lifetime/decorator boundaries; replaced generic opening and linked revision."
+        "Retained complete independent CQRS/DI derivation, two contract handlers, projection synchronization/read-after-write and dependency lifetime/decorator boundaries; replaced generic opening and linked revision.",
+        "Closing pass: related-reading descriptions were truncated copies rather than complete source-to-target guidance."
       ],
       "disposition": "Every section and example read in full. Retained complete independent CQRS/DI derivation, two contract handlers, projection synchronization/read-after-write and dependency lifetime/decorator boundaries; replaced generic opening and linked revision.",
       "questions": [
@@ -8883,9 +8938,11 @@
         "Executed conditional-version conflict in a fake repository, invalid transition, trimmed/empty rename, account fold/invalid amount/overdraw/missing opening, money identity/freeze/currency/overflow, ACL unknown payload/status/ID, deferred locator versus supplied dependency, presenter valid/error output.",
         "Primary Fowler CQRS/injection/GUI architecture and Microsoft saga/event sourcing/ACL/MVVM docs verified; Kurrent redirect and Temporal docs verified.",
         "Owned teaching/revision template, alignment, freshness pass; global links9751, zero broken/stale local references.",
-        "No actual database version race, broker/outbox durability, provider compensation, Docita CI, or browser UI integration executed. Core explanation retained where already complete; no diagram rendering performed."
+        "No actual database version race, broker/outbox durability, provider compensation, Docita CI, or browser UI integration executed. Core explanation retained where already complete; no diagram rendering performed.",
+        "Rechecked linked chapter headings, practical/formal definitions and summaries; authored 2 specific complete reading reason(s). Prior full-document semantic disposition retained.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "88d6c5066a19590f1cc41ce5484e0f5c4e18c4dc4c3e6940767ef2115569e52a"
+      "final_sha256": "0b78487153a2a06fa060074d64c42c4fc20d37d2875d5e8ba52b6bacedc979a5"
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.03-event-sourcing.md",
@@ -8893,7 +8950,8 @@
       "baseline_sha256": "1276bd367570c68c0ddaf68385914509fdd0f6819a52eaf05123c83f9b661712",
       "state": "revised",
       "findings": [
-        "Retained deterministic integer account fold, atomic expected-version append, replay/effects, snapshot/projection/evolution/retention distinctions; clarified trusted typed-stream input versus runtime decode and modernized renamed event-store docs."
+        "Retained deterministic integer account fold, atomic expected-version append, replay/effects, snapshot/projection/evolution/retention distinctions; clarified trusted typed-stream input versus runtime decode and modernized renamed event-store docs.",
+        "Closing pass: related-reading descriptions were truncated copies rather than complete source-to-target guidance."
       ],
       "disposition": "Every section and example read in full. Retained deterministic integer account fold, atomic expected-version append, replay/effects, snapshot/projection/evolution/retention distinctions; clarified trusted typed-stream input versus runtime decode and modernized renamed event-store docs.",
       "questions": [
@@ -8905,9 +8963,11 @@
         "Executed conditional-version conflict in a fake repository, invalid transition, trimmed/empty rename, account fold/invalid amount/overdraw/missing opening, money identity/freeze/currency/overflow, ACL unknown payload/status/ID, deferred locator versus supplied dependency, presenter valid/error output.",
         "Primary Fowler CQRS/injection/GUI architecture and Microsoft saga/event sourcing/ACL/MVVM docs verified; Kurrent redirect and Temporal docs verified.",
         "Owned teaching/revision template, alignment, freshness pass; global links9751, zero broken/stale local references.",
-        "No actual database version race, broker/outbox durability, provider compensation, Docita CI, or browser UI integration executed. Core explanation retained where already complete; no diagram rendering performed."
+        "No actual database version race, broker/outbox durability, provider compensation, Docita CI, or browser UI integration executed. Core explanation retained where already complete; no diagram rendering performed.",
+        "Rechecked linked chapter headings, practical/formal definitions and summaries; authored 1 specific complete reading reason(s). Prior full-document semantic disposition retained.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "0613412945a3e55d7bc6c0b67e2f572a938a6b94e69a5ff1b6bbed74f5418212"
+      "final_sha256": "9e8204f2377453ef129f4aecb641e73d85b233953216ad6b4074931f6029b093"
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.04-saga.md",
@@ -8915,7 +8975,8 @@
       "baseline_sha256": "a778771a0420633e0958375926adb5a149c62f37daacbb9b6db14cc75ebfd12d",
       "state": "revised",
       "findings": [
-        "Retained durable saga state, definitive rejection versus uncertain remote outcome, idempotency/reconciliation, compensation/isolation and orchestration/choreography tradeoffs; corrected misleading root-index link and documentation URL."
+        "Retained durable saga state, definitive rejection versus uncertain remote outcome, idempotency/reconciliation, compensation/isolation and orchestration/choreography tradeoffs; corrected misleading root-index link and documentation URL.",
+        "Closing pass: related-reading descriptions were truncated copies rather than complete source-to-target guidance."
       ],
       "disposition": "Every section and example read in full. Retained durable saga state, definitive rejection versus uncertain remote outcome, idempotency/reconciliation, compensation/isolation and orchestration/choreography tradeoffs; corrected misleading root-index link and documentation URL.",
       "questions": [
@@ -8927,9 +8988,11 @@
         "Executed conditional-version conflict in a fake repository, invalid transition, trimmed/empty rename, account fold/invalid amount/overdraw/missing opening, money identity/freeze/currency/overflow, ACL unknown payload/status/ID, deferred locator versus supplied dependency, presenter valid/error output.",
         "Primary Fowler CQRS/injection/GUI architecture and Microsoft saga/event sourcing/ACL/MVVM docs verified; Kurrent redirect and Temporal docs verified.",
         "Owned teaching/revision template, alignment, freshness pass; global links9751, zero broken/stale local references.",
-        "No actual database version race, broker/outbox durability, provider compensation, Docita CI, or browser UI integration executed. Core explanation retained where already complete; no diagram rendering performed."
+        "No actual database version race, broker/outbox durability, provider compensation, Docita CI, or browser UI integration executed. Core explanation retained where already complete; no diagram rendering performed.",
+        "Rechecked linked chapter headings, practical/formal definitions and summaries; authored 1 specific complete reading reason(s). Prior full-document semantic disposition retained.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "ea297de653d585a25e53e0b0f005a9f45ad0c2c7bc95a662c3e5bf8486aa44ac"
+      "final_sha256": "5af19e5e2556f215280a0c7dbd04e92a17e50e668b45288d3df510226c7383f3"
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.md",
@@ -8981,7 +9044,8 @@
       "baseline_sha256": "03edcf278a66a38aedfa2e161893173ad55806b7f566c966d360917d98a61f4d",
       "state": "revised",
       "findings": [
-        "Retained typed nonglobal locator versus injection, resolution timing, dynamic capabilities/scopes/disposal boundaries; repaired top-level-await setup into explicit async entry and linked revision."
+        "Retained typed nonglobal locator versus injection, resolution timing, dynamic capabilities/scopes/disposal boundaries; repaired top-level-await setup into explicit async entry and linked revision.",
+        "Closing pass: related-reading descriptions were truncated copies rather than complete source-to-target guidance."
       ],
       "disposition": "Every section and example read in full. Retained typed nonglobal locator versus injection, resolution timing, dynamic capabilities/scopes/disposal boundaries; repaired top-level-await setup into explicit async entry and linked revision.",
       "questions": [
@@ -8993,9 +9057,11 @@
         "Executed conditional-version conflict in a fake repository, invalid transition, trimmed/empty rename, account fold/invalid amount/overdraw/missing opening, money identity/freeze/currency/overflow, ACL unknown payload/status/ID, deferred locator versus supplied dependency, presenter valid/error output.",
         "Primary Fowler CQRS/injection/GUI architecture and Microsoft saga/event sourcing/ACL/MVVM docs verified; Kurrent redirect and Temporal docs verified.",
         "Owned teaching/revision template, alignment, freshness pass; global links9751, zero broken/stale local references.",
-        "No actual database version race, broker/outbox durability, provider compensation, Docita CI, or browser UI integration executed. Core explanation retained where already complete; no diagram rendering performed."
+        "No actual database version race, broker/outbox durability, provider compensation, Docita CI, or browser UI integration executed. Core explanation retained where already complete; no diagram rendering performed.",
+        "Rechecked linked chapter headings, practical/formal definitions and summaries; authored 1 specific complete reading reason(s). Prior full-document semantic disposition retained.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "23a81da71adc672a6ebbdb1874a5775400c71c8cf3fd28ef53e26bd8c4cb1c36"
+      "final_sha256": "c684ce323dba6c342d8cb566472c54aab2e6103dcd7ab70f80bbcb3d1a1c1004"
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.08-presentation-patterns-mvc-mvp-mvvm.md",
@@ -9206,7 +9272,8 @@
       "state": "revised",
       "findings": [
         "Added delayed-fill-after-DEL history; TTL lifetime is not source-data freshness.",
-        "Removed false library strategy table and unsupported timing/guarantee claims; distinguished eviction/admission, buffering, invalidation recovery and authoritative writes."
+        "Removed false library strategy table and unsupported timing/guarantee claims; distinguished eviction/admission, buffering, invalidation recovery and authoritative writes.",
+        "Closing pass: related-reading descriptions were truncated copies rather than complete source-to-target guidance."
       ],
       "disposition": "Read the full file, checked the stated mechanism and failure boundary, and reconciled chapter/revision/learning flow where needed.",
       "questions": [
@@ -9216,9 +9283,11 @@
         "Template compliance passes; structure passes (1017 Markdown files); local links pass (9949 links, zero broken); freshness clean (1004 Markdown files, 32 rules).",
         "Eight owned files await parent-controlled alignment writer; no shared writer, generated count or baseline file edited.",
         "Primary sources verified live for guarantees and provider/API claims; citation candidates recorded separately.",
-        "No provider deployment or production integration claimed."
+        "No provider deployment or production integration claimed.",
+        "Rechecked linked chapter headings, practical/formal definitions and summaries; authored 2 specific complete reading reason(s). Prior full-document semantic disposition retained.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "8df291be2b49263d4909f9cbb6773f31d5d87c74ea8e3f17158aa7472e03e4b3"
+      "final_sha256": "988d762d3e734c17c4f15b7d8e1a45b37c18e8ddffcec4b80d40da15bd1ab991"
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md",
@@ -10053,7 +10122,8 @@
       "baseline_sha256": "b306ceb3382c09566a0244fda0d80382397666b19ba4e4026fa88943b4aa1c92",
       "state": "revised",
       "findings": [
-        "Unsupported CRDT-default/company/product guarantees, false PubSub durability and solved-memory claims, plain snapshots/undo/revocation gaps, broken diagram."
+        "Unsupported CRDT-default/company/product guarantees, false PubSub durability and solved-memory claims, plain snapshots/undo/revocation gaps, broken diagram.",
+        "Closing pass: related-reading descriptions were truncated copies rather than complete source-to-target guidance."
       ],
       "disposition": "Whole chapter read; complete Yjs concurrent insert/delete and repair trace; convergence separated from persisted acknowledgement, authorization, ephemeral presence, versioned snapshots and scoped undo.",
       "questions": [
@@ -10063,9 +10133,11 @@
       "validation": [
         "Exact Node24.19.0/Yjs13.6.33example exercised concurrent insert/delete, duplicate delivery, state-vector repair and reordered replica convergence; exact PostgreSQL16.15DDL created.",
         "44combined checks with workflow; in-memory replica test, no live WebSocket/provider/storage/auth/undo integration.",
-        "Primary Yjs Doc and awareness APIs verified10October2026."
+        "Primary Yjs Doc and awareness APIs verified10October2026.",
+        "Rechecked linked chapter headings, practical/formal definitions and summaries; authored 1 specific complete reading reason(s). Prior full-document semantic disposition retained.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "0074ea4f7f0a7183ba4c9a31163aa39471f83ed382c5922f1de31e8e234549f3"
+      "final_sha256": "b7470f905bcdabbbb26413d2d52cf642d806f9849416bc3319dbf7565fd7e908"
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.23-typeahead-autocomplete.md",
@@ -10226,7 +10298,8 @@
       "baseline_sha256": "74d97cdf1b199b27fefe4ffffab62558d3f4b744aa028e1663992a25bce80970",
       "state": "revised",
       "findings": [
-        "Unsafe identityheadertrust, incompleteJWT issuer/audience policy, badRedisLua keys/time state, URLcache and unbounded retry/proxy gaps."
+        "Unsafe identityheadertrust, incompleteJWT issuer/audience policy, badRedisLua keys/time state, URLcache and unbounded retry/proxy gaps.",
+        "Closing pass: related-reading descriptions were truncated copies rather than complete source-to-target guidance."
       ],
       "disposition": "Retained original formal definition and canonical home; focused problem, mechanism, trace and changed-condition decisions replace repeatedfeature lists.",
       "questions": [
@@ -10235,9 +10308,11 @@
       ],
       "validation": [
         "Wholechapterread; pipeline/pathboundary/deadline/cache/fanoutfailure reasoning reconciled withcanonicalREST/microservices chapters.",
-        "Configuration explicitlyillustrative; no productionproxy/JWT/limiterimplementation claimed."
+        "Configuration explicitlyillustrative; no productionproxy/JWT/limiterimplementation claimed.",
+        "Rechecked linked chapter headings, practical/formal definitions and summaries; authored 2 specific complete reading reason(s). Prior full-document semantic disposition retained.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "e43b19893e842e760a6e10e3da777a2bf876701fa71d6d38e3d375221263c15a"
+      "final_sha256": "af808c1cb0c7ee0fb9e97970535b61e3945ff9353f2cf12038ef8c3e5a822e01"
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/INDEX.md",
@@ -10297,7 +10372,8 @@
       "state": "revised",
       "findings": [
         "Replaced unsafe dependency-close-before-drain example with typed ordinary-HTTP helper, bounded idle reaping and forced deadline; derived probe and routing/admission/cleanup separation.",
-        "Removed framework double-shutdown ownership and universal startup/migration/readiness/timing assertions; labelled Pod fragment, described shared preStop grace and uncertain committed outcomes."
+        "Removed framework double-shutdown ownership and universal startup/migration/readiness/timing assertions; labelled Pod fragment, described shared preStop grace and uncertain committed outcomes.",
+        "Closing pass: related-reading descriptions were truncated copies rather than complete source-to-target guidance."
       ],
       "disposition": "Read the full original document and repaired specific lifecycle or coordination mechanism and companion conditions.",
       "questions": [
@@ -10308,9 +10384,11 @@
         "Exact PostgreSQL 16.15 lease SQL reproduced stale-expiry failure and passed fresh-expiry correction under controlled conflict-row wait.",
         "Live primary Node HTTP, Kubernetes probe/lifecycle and PostgreSQL INSERT/clock documentation verified.",
         "Template gate passes; owned whitespace clean. No cluster routing, framework adapter, upgraded socket, election service, replica failover or external effect integration executed.",
-        "Parent owns alignment/count/read-time/citation baseline writers and final gates."
+        "Parent owns alignment/count/read-time/citation baseline writers and final gates.",
+        "Rechecked linked chapter headings, practical/formal definitions and summaries; authored 1 specific complete reading reason(s). Prior full-document semantic disposition retained.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "94bb4604783c2578f6504041a161f927a0ca577247b53eeeefaef96a73651f79"
+      "final_sha256": "59cc192016f5f9c019f7d399eebd07ac416c4b71398e05187d16f1fd3d83de1d"
     },
     {
       "path": "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/INDEX.md",
@@ -10329,9 +10407,10 @@
         "Exact PostgreSQL 16.15 lease SQL reproduced stale-expiry failure and passed fresh-expiry correction under controlled conflict-row wait.",
         "Live primary Node HTTP, Kubernetes probe/lifecycle and PostgreSQL INSERT/clock documentation verified.",
         "Template gate passes; owned whitespace clean. No cluster routing, framework adapter, upgraded socket, election service, replica failover or external effect integration executed.",
-        "Parent owns alignment/count/read-time/citation baseline writers and final gates."
+        "Parent owns alignment/count/read-time/citation baseline writers and final gates.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "8be62dc39a1c1177a1dcf90f0c630dd0b67753fabfc7bf0f4327129c58084d88"
+      "final_sha256": "a4dedae5a4e7c6e0af19e5cb0a62c9afe24ea07f8578130b36ea998dcb145930"
     },
     {
       "path": "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/REVISION.md",
@@ -10922,9 +11001,10 @@
       "validation": [
         "All25 bank authored prompt identities equal HEAD; no template violations; owned whitespace clean.",
         "Mechanism evidence remains in infra-lifecycle,lease,failure,recovery,data,shipping results files.",
-        "Generated count/read-time/alignment metadata remains parent responsibility; no integration claims added."
+        "Generated count/read-time/alignment metadata remains parent responsibility; no integration claims added.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "d1018b0e23ffee0cbf902f08510e4cf0cc518afd7897f72d2a5b7a2807d34ede"
+      "final_sha256": "4ea08925b5290b6e5082ddb9b85166a8dd6f1a0e42a4603c00e216f1874c6bfe"
     },
     {
       "path": "30-architecture/INDEX.md",
@@ -10941,9 +11021,10 @@
       "validation": [
         "All25 bank authored prompt identities equal HEAD; no template violations; owned whitespace clean.",
         "Mechanism evidence remains in infra-lifecycle,lease,failure,recovery,data,shipping results files.",
-        "Generated count/read-time/alignment metadata remains parent responsibility; no integration claims added."
+        "Generated count/read-time/alignment metadata remains parent responsibility; no integration claims added.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "a103b4ceb99216a63e24a2c9846f2abe0cb56c6ed465a3f3acd88b0cfaa634f8"
+      "final_sha256": "14ee93a6af1077f172bede189dd94b1e9d9966737ade3da5b0bba843caf58eef"
     },
     {
       "path": "40-platform/40.1-docker/40.1.01-images-containers.md",
@@ -11763,7 +11844,8 @@
         "Definition conflated scheduling events, Pending states, and Karpenter internals. Diagram ended readiness before assignment.",
         "Obsolete instance label keys and omitted NodeClass made NodePool recipe incomplete. Dedicated-GPU workload fragment falsely presented as complete objects.",
         "CA timing/scale-down checklist and last-node constraints were unsupported universals. Headroom refill ignored priority cutoff; controller coexistence wrongly forbidden.",
-        "Unsourced production cost/latency examples were presented as evidence."
+        "Unsourced production cost/latency examples were presented as evidence.",
+        "Closing pass: corrected related-reading description that subtracted kubelet overhead from already allocatable node capacity."
       ],
       "disposition": "Derived feasible placement from single-node capacity shape; explained CA/group versus Karpenter/NodePool/NodeClass ownership, selectors/taints/devices, refill and forced-disruption limitations. Corrected recipe and labelled cases illustrative.",
       "questions": [
@@ -11774,9 +11856,11 @@
         "Entire baseline document read, with missing truncated ranges reread explicitly.",
         "Affected 12-file template and alignment checks passed; alignment repair limited to owned files.",
         "Repository internal-link check passed: 9460 links, 169 anchors, zero broken/stale paths at batch checkpoint.",
-        "Primary Kubernetes/controller documentation checked for changed technical claims; cluster manifests were reasoned/inspected, not applied."
+        "Primary Kubernetes/controller documentation checked for changed technical claims; cluster manifests were reasoned/inspected, not applied.",
+        "10 October closing review: revised the specific contract and checked its companion/canonical context; verification recorded in the closing-pass validation record.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "ae2e8ef318db3c6902033050c1635842de4980670f92fa4c133e15b24126a26d"
+      "final_sha256": "7628fbfcc1069f7ecb653e4019dfb42950ef283dd91736d4dc18035164bd7323"
     },
     {
       "path": "40-platform/40.2-kubernetes/03-scaling/INDEX.md",
@@ -11822,7 +11906,8 @@
       "findings": [
         "Startup incorrectly called one execution; corrupted diagrams sequenced liveness before readiness.",
         "Repeated manifests used startup path for liveness despite independent endpoint semantics; Node example never listened or initialized flags.",
-        "Incomplete PostgreSQL StatefulSet looked runnable; file marker and gRPC variants lacked validity conditions. Generic requirements mandated every probe and every dependency."
+        "Incomplete PostgreSQL StatefulSet looked runnable; file marker and gRPC variants lacked validity conditions. Generic requirements mandated every probe and every dependency.",
+        "Closing pass: related-reading descriptions were truncated copies rather than complete source-to-target guidance."
       ],
       "disposition": "Replaced repeated recipes with one full Deployment and runnable Node endpoint trace. Explained independent checks, thresholds, supported handlers, Service propagation, worker intake, dependency decision, and exact observation limits.",
       "questions": [
@@ -11834,9 +11919,11 @@
         "Affected 12-file template and alignment checks passed; alignment repair limited to owned files.",
         "Repository internal-link check passed: 9460 links, 169 anchors, zero broken/stale paths at batch checkpoint.",
         "Primary Kubernetes/controller documentation checked for changed technical claims; cluster manifests were reasoned/inspected, not applied.",
-        "Executed published local Node example: initial statuses [503,200,503], then [200,200,200]. Dependency flag is a labelled demo assumption; real dependency integration unexecuted."
+        "Executed published local Node example: initial statuses [503,200,503], then [200,200,200]. Dependency flag is a labelled demo assumption; real dependency integration unexecuted.",
+        "Rechecked linked chapter headings, practical/formal definitions and summaries; authored 2 specific complete reading reason(s). Prior full-document semantic disposition retained.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "7778fce88463286d93718984fbdb82d793796243030e04920165e9b3a17ba001"
+      "final_sha256": "f0ff2ec6236deeb3b6473531d974ef42b0c13d90417761e02e9091d1321b4c48"
     },
     {
       "path": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.02-pod-disruption-budgets.md",
@@ -12240,7 +12327,8 @@
       "baseline_sha256": "1220d324065b04c831505ca044fef81260d9bdccbf13ae71327f3d1cb600bbf8",
       "state": "revised",
       "findings": [
-        "Removed duplicated unsafe provider snippets, false canary claim, malformed rate/percentage gate and mandatory automatic-rollback assertions; taught dependencies, services, cache, joined coverage and authority."
+        "Removed duplicated unsafe provider snippets, false canary claim, malformed rate/percentage gate and mandatory automatic-rollback assertions; taught dependencies, services, cache, joined coverage and authority.",
+        "Closing pass: distinguished merge/promotion/optional gates, separately compiled candidates, scoped job credentials and state-compatible rollback/forward repair; removed universal automatic rollback/zero-downtime claims."
       ],
       "disposition": "Read the whole document, checked its teaching flow and important failure boundaries, and reconciled the chapter with its revision companion.",
       "questions": [
@@ -12248,9 +12336,11 @@
         "Why is no telemetry not a passed canary?"
       ],
       "validation": [
-        "Whole dependency/service/permission trace reviewed; canonical provider examples linked rather than duplicated."
+        "Whole dependency/service/permission trace reviewed; canonical provider examples linked rather than duplicated.",
+        "10 October closing review: revised the specific contract and checked its companion/canonical context; verification recorded in the closing-pass validation record.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "38100f8f46957a16fa0ea431f6f3653514e49c9d5bf4e6912810f5d54f3d882b"
+      "final_sha256": "2361151a575f31d1e65b47ed9209865bffaefbe5dd1aeac2875207be456670b4"
     },
     {
       "path": "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md",
@@ -12309,14 +12399,17 @@
       "baseline_sha256": "32f652a1f13ad7da7eaa6d5b625ccd98966d3c6adf8e9665efc00bc5131e1df8",
       "state": "revised",
       "findings": [
-        "Preserved original prompts and added candidate identity, filesystem/image scan, live digest retention and OIDC leak questions."
+        "Preserved original prompts and added candidate identity, filesystem/image scan, live digest retention and OIDC leak questions.",
+        "Closing pass: added a source-linked recovery question distinguishing safe image rollback from incompatible data/effects."
       ],
       "disposition": "Read the whole document, checked its teaching flow and important failure boundaries, and reconciled the chapter with its revision companion.",
       "questions": [],
       "validation": [
-        "Whole companion read; new questions added under source-linked groups."
+        "Whole companion read; new questions added under source-linked groups.",
+        "10 October closing review: revised the specific contract and checked its companion/canonical context; verification recorded in the closing-pass validation record.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "48dd9b57e79f802aa05b014afe19364d4d9ce6398bf2c114a9ac87803a44247b"
+      "final_sha256": "b9fcd753f217c04fa8b8604ba2dd7bf099c6918a1f36e7124855a2e967f29566"
     },
     {
       "path": "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.01-blue-green-canary.md",
@@ -12543,7 +12636,9 @@
       "state": "revised",
       "findings": [
         "Removed fabricatedStripehealth,undefineddrivers,deprecatedconnections and breaker-success bug; complete deadline-and-size bounded synthetic probe with redirect policy.",
-        "Separated startup,liveness,readiness,user journeys,sharedoutage,draining and supervisor action; canonical lifecycle/probe implementations linked."
+        "Separated startup,liveness,readiness,user journeys,sharedoutage,draining and supervisor action; canonical lifecycle/probe implementations linked.",
+        "Closing pass: related-reading descriptions were truncated copies rather than complete source-to-target guidance.",
+        "Closing pass: aligned practical health/liveness definitions with bounded observations and restart-repairable conditions; distinguished provider instance recovery from user-path monitoring."
       ],
       "disposition": "Read the whole document, checked its teaching flow and important failure boundaries, and reconciled the chapter with its revision companion.",
       "questions": [
@@ -12551,9 +12646,12 @@
         "What must readiness do during a shared required dependency outage?"
       ],
       "validation": [
-        "Exact Node24.19.0localhost checks:200correctbody,wrongbody,503,redirect,oversize,slowbodytimeout,elapsedbound,invalidtimeout/size. No Kubernetesrestart/drain/databasecheck integration claimed."
+        "Exact Node24.19.0localhost checks:200correctbody,wrongbody,503,redirect,oversize,slowbodytimeout,elapsedbound,invalidtimeout/size. No Kubernetesrestart/drain/databasecheck integration claimed.",
+        "Rechecked linked chapter headings, practical/formal definitions and summaries; authored 2 specific complete reading reason(s). Prior full-document semantic disposition retained.",
+        "10 October closing review: revised the specific contract and checked its companion/canonical context; verification recorded in the closing-pass validation record.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "cb64fa4ed2cb1ece10f9c69e8e01421901ee24146236d5ded25efe7ec103dc09"
+      "final_sha256": "877d3ae6bf4ab55b3e700cce022c73ac54ad205113e5914ec58149c81a0eb741"
     },
     {
       "path": "40-platform/40.4-observability/02-errors-and-health/INDEX.md",
@@ -12683,16 +12781,19 @@
       "state": "revised",
       "findings": [
         "Removed broken uncalled Pyroscope startup, invented export endpoint and incomplete Go/pprof fragments; supplied complete built-in Node profile.",
-        "Separated allocation churn from retained heap and sampled CPU from wall time; qualified overhead and native support."
+        "Separated allocation churn from retained heap and sampled CPU from wall time; qualified overhead and native support.",
+        "Closing pass: replaced the claim that eBPF safely observes every process with runtime/privilege/coverage and overhead evaluation."
       ],
       "disposition": "Read the whole document, checked its teaching flow and important failure boundaries, and reconciled the chapter with its revision companion.",
       "questions": [
         "Explain measured coverage, resource identity, head/tail loss and retained-memory evidence."
       ],
       "validation": [
-        "Exact Node CPU workload generated a valid cpuprofile with samples and the hashBatch frame; current Pyroscope Node documentation checked."
+        "Exact Node CPU workload generated a valid cpuprofile with samples and the hashBatch frame; current Pyroscope Node documentation checked.",
+        "10 October closing review: revised the specific contract and checked its companion/canonical context; verification recorded in the closing-pass validation record.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "380c455893320bb989f58b522ecb7e9aba62b2c3f25c95e193e99998634fda5d"
+      "final_sha256": "fcd5fd6495b457133671a2f1243002fefdefc2f67e1c15a9e32f89bd4ecd9932"
     },
     {
       "path": "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.03-ebpf-observability.md",
@@ -13653,7 +13754,8 @@
       "state": "revised",
       "findings": [
         "Lerna deprecated/uncached claim, invalid tag filter, global-cache zero-install and undefined Bazel rule examples were corrected.",
-        "Separated package managers, task orchestration, Rush releases and declared Bazel build actions."
+        "Separated package managers, task orchestration, Rush releases and declared Bazel build actions.",
+        "Closing pass: removed conflicting engineer-count decision tree, absolute tool rankings, mandatory remote caching/versioning and invalid old Rush config pairing; replaced with constraint-driven pilot and source-verified generated setup."
       ],
       "disposition": "Read the entire document, repaired contract and teaching gaps, preserved identifiers and authored questions.",
       "questions": [
@@ -13663,9 +13765,11 @@
       "validation": [
         "Node 24.21.0 exact flat ESLint good/bad checks passed; Turbo real artifact restoration/downstream invalidation and pnpm filters passed.",
         "Nx 23 exact flat lint: UI->utils allowed, UI->API tagged util rejected after project graph generation.",
-        "Official Nx, Turbo, Lerna, pnpm, Yarn and npm provenance documentation verified 2026-10-09; remote cache, registry publication and CI release not executed."
+        "Official Nx, Turbo, Lerna, pnpm, Yarn and npm provenance documentation verified 2026-10-09; remote cache, registry publication and CI release not executed.",
+        "10 October closing review: revised the specific contract and checked its companion/canonical context; verification recorded in the closing-pass validation record.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "0f06cd0f6f90ff56a3cf348e6b29187079d52318c16bfaef4bf56b26454d74ad"
+      "final_sha256": "cc0808a2ce36e871ae3a51ff28fbf2dcad22091a7f25f929644f9984c334fec6"
     },
     {
       "path": "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.md",
@@ -13736,7 +13840,8 @@
       "baseline_sha256": "2280c17be91924b964dd6ac0909ee029890c64ed794e7a1c7ae61e5c381a0184",
       "state": "revised",
       "findings": [
-        "Read complete navigation/revision; retained learning sequence and original authored questions, added source-linked boundary checks and explicit revision before drills."
+        "Read complete navigation/revision; retained learning sequence and original authored questions, added source-linked boundary checks and explicit revision before drills.",
+        "Closing pass: added source-grouped questions for constraints-based tool choice and cache correctness before remote reuse."
       ],
       "disposition": "Read the entire document, repaired contract and teaching gaps, preserved identifiers and authored questions.",
       "questions": [
@@ -13746,9 +13851,11 @@
       "validation": [
         "Node 24.21.0 exact flat ESLint good/bad checks passed; Turbo real artifact restoration/downstream invalidation and pnpm filters passed.",
         "Nx 23 exact flat lint: UI->utils allowed, UI->API tagged util rejected after project graph generation.",
-        "Official Nx, Turbo, Lerna, pnpm, Yarn and npm provenance documentation verified 2026-10-09; remote cache, registry publication and CI release not executed."
+        "Official Nx, Turbo, Lerna, pnpm, Yarn and npm provenance documentation verified 2026-10-09; remote cache, registry publication and CI release not executed.",
+        "10 October closing review: revised the specific contract and checked its companion/canonical context; verification recorded in the closing-pass validation record.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "c7df7788f0c3ef80a6dbe7088a5eb0b49ebd770fc2d58aae71c46d3066f6afd4"
+      "final_sha256": "51beb132b1a8bdbc460fe589ba9708b224a0e5eada22bad99aaf9d4fc12d864d"
     },
     {
       "path": "40-platform/40.9-twelve-factor/40.9.01-the-twelve-factor-app.md",
@@ -13856,7 +13963,8 @@
       "baseline_sha256": "6b94a727aa913cad69e61b156dd95197878afb6eb75a5ff8cf67712df4e73617",
       "state": "revised",
       "findings": [
-        "Full 799-line read found unsupported cost/percentage/speed claims, broken diagrams, stale checkout example, undefined integration dependencies, and coverage without a developed oracle."
+        "Full 799-line read found unsupported cost/percentage/speed claims, broken diagrams, stale checkout example, undefined integration dependencies, and coverage without a developed oracle.",
+        "Closing pass: related-reading descriptions were truncated copies rather than complete source-to-target guidance."
       ],
       "disposition": "Consolidated into a single executable cents example; developed boundary/evidence progression, TDD/BDD purposes, coverage, mutation and flake reasoning.",
       "questions": [
@@ -13865,9 +13973,11 @@
       ],
       "validation": [
         "Complete source read in this pass; template and internal links passed after changes.",
-        "All revised JavaScript fences executed from the authored Markdown in Node 23.7; Faker 10.6.0 replay passed where applicable."
+        "All revised JavaScript fences executed from the authored Markdown in Node 23.7; Faker 10.6.0 replay passed where applicable.",
+        "Rechecked linked chapter headings, practical/formal definitions and summaries; authored 2 specific complete reading reason(s). Prior full-document semantic disposition retained.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "2e15916933d322da762323e8cb2a711a3ad23dd9ad5d6d8ed1cfc2e64dacaeb8"
+      "final_sha256": "ea79a1acd50269d6b77b6417fc4c6bd3f739f41d1bcf24c2eb34817fe53ad771"
     },
     {
       "path": "50-quality/50.1-testing/01-foundations/50.1.1.02-test-data-management-anonymization.md",
@@ -15038,7 +15148,8 @@
       "baseline_sha256": "fefec128ce5c1756e03133cbbe911a67810a5dd57c8aa4acf77ada1ee55ef0f5",
       "state": "revised",
       "findings": [
-        "Mixed raw ws and Socket.IO APIs, unsafe dual writes, work-group fan-out confusion and unsupported universal benchmarks."
+        "Mixed raw ws and Socket.IO APIs, unsafe dual writes, work-group fan-out confusion and unsupported universal benchmarks.",
+        "Closing pass: related-reading descriptions were truncated copies rather than complete source-to-target guidance."
       ],
       "disposition": "Full-file semantic review; focused mechanisms, explicit limits, preserved authored prompts and source-linked revision.",
       "questions": [
@@ -15046,9 +15157,11 @@
         "What changes when the client misses an event before reconnecting?"
       ],
       "validation": [
-        "Socket.IO 4.8.4 real clients; Nest11.2.7 strict TypeScript plus actual pipeline; GraphQL16/graphql-ws6 actual protocol and3 smoke tests; Chromium2peer WebRTC. No Redis/NAT/TURN/media/capacity integration claimed."
+        "Socket.IO 4.8.4 real clients; Nest11.2.7 strict TypeScript plus actual pipeline; GraphQL16/graphql-ws6 actual protocol and3 smoke tests; Chromium2peer WebRTC. No Redis/NAT/TURN/media/capacity integration claimed.",
+        "Rechecked linked chapter headings, practical/formal definitions and summaries; authored 1 specific complete reading reason(s). Prior full-document semantic disposition retained.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "2018a0726b89e663b7d31a86b2e102c51ba7940206531fe267df5bdaa349c5a9"
+      "final_sha256": "18052864957431e6113dd068ded8d8db17526c5b931e608fce060479752d3044"
     },
     {
       "path": "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.02-scaling-patterns.md",
@@ -15104,7 +15217,8 @@
       "baseline_sha256": "81ceb97cd84f68cc4b998dcbf80a67b4840cdc0475572e6f4af1b770a585d3f2",
       "state": "revised",
       "findings": [
-        "Unvalidated impersonation input, invalid string validators, namespace/root mismatch and undefined helpers."
+        "Unvalidated impersonation input, invalid string validators, namespace/root mismatch and undefined helpers.",
+        "Closing pass: related-reading descriptions were truncated copies rather than complete source-to-target guidance."
       ],
       "disposition": "Full-file semantic review; focused mechanisms, explicit limits, preserved authored prompts and source-linked revision.",
       "questions": [
@@ -15112,9 +15226,11 @@
         "What happens when handshake authentication succeeds but resource authorization fails?"
       ],
       "validation": [
-        "Socket.IO 4.8.4 real clients; Nest11.2.7 strict TypeScript plus actual pipeline; GraphQL16/graphql-ws6 actual protocol and3 smoke tests; Chromium2peer WebRTC. No Redis/NAT/TURN/media/capacity integration claimed."
+        "Socket.IO 4.8.4 real clients; Nest11.2.7 strict TypeScript plus actual pipeline; GraphQL16/graphql-ws6 actual protocol and3 smoke tests; Chromium2peer WebRTC. No Redis/NAT/TURN/media/capacity integration claimed.",
+        "Rechecked linked chapter headings, practical/formal definitions and summaries; authored 1 specific complete reading reason(s). Prior full-document semantic disposition retained.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "fcbd445157a281e10003848913d1cf3aad373d54d0de7a2eb853596dde5471aa"
+      "final_sha256": "c1831fc4477c3668037744ec5a20adf01013510fc9a6d7b0951f0244b9f69f66"
     },
     {
       "path": "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.02-graphql-subscriptions-live-queries.md",
@@ -15158,7 +15274,8 @@
       "baseline_sha256": "36d114dd60d6788618323d154c705131fe89751f4c26cfb8e63ea3cc029d73d0",
       "state": "revised",
       "findings": [
-        "Non-running helpers/protocol mismatch, sampling wrong process, invalid load arithmetic and fictional incidents."
+        "Non-running helpers/protocol mismatch, sampling wrong process, invalid load arithmetic and fictional incidents.",
+        "Closing pass: related-reading descriptions were truncated copies rather than complete source-to-target guidance."
       ],
       "disposition": "Full-file semantic review; focused mechanisms, explicit limits, preserved authored prompts and source-linked revision.",
       "questions": [
@@ -15166,9 +15283,11 @@
         "How must the test change when the acknowledgment arrives but persistence is not established?"
       ],
       "validation": [
-        "Socket.IO 4.8.4 real clients; Nest11.2.7 strict TypeScript plus actual pipeline; GraphQL16/graphql-ws6 actual protocol and3 smoke tests; Chromium2peer WebRTC. No Redis/NAT/TURN/media/capacity integration claimed."
+        "Socket.IO 4.8.4 real clients; Nest11.2.7 strict TypeScript plus actual pipeline; GraphQL16/graphql-ws6 actual protocol and3 smoke tests; Chromium2peer WebRTC. No Redis/NAT/TURN/media/capacity integration claimed.",
+        "Rechecked linked chapter headings, practical/formal definitions and summaries; authored 1 specific complete reading reason(s). Prior full-document semantic disposition retained.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "558f0a8d0e00d478881dc1396ab61e8ef78b593b1eb30a3941d26d4a5c2819c6"
+      "final_sha256": "f5eb2811e1a5779eb7e797d8c0593b2b1a246d960e0784f033340e68fbe24776"
     },
     {
       "path": "60-realtime/60.1-websockets/03-frameworks-and-paradigms/INDEX.md",
@@ -18480,9 +18599,10 @@
       ],
       "validation": [
         "Read the complete file including fenced examples and recovered any truncated tool output through separate full-range reads.",
-        "Current whole-repository link check passed: 10394 links, 209 cross-file anchors, zero broken links/labels/inline paths; template671 and harness wiring30 gates passed; scoped git diff --check passed."
+        "Current whole-repository link check passed: 10394 links, 209 cross-file anchors, zero broken links/labels/inline paths; template671 and harness wiring30 gates passed; scoped git diff --check passed.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "cf5b87665480b1473b20b4ccb4fee24e074b0448e7c782aefbd7a1e668d6eff2"
+      "final_sha256": "7f82c2d316cb2c2344eaf2eb73583f68528939753f1595ebaa1ebc9e98620eb1"
     },
     {
       "path": "README.md",
@@ -18696,9 +18816,10 @@
       "validation": [
         "Read the complete file including fenced examples and recovered any truncated tool output through separate full-range reads.",
         "Current whole-repository link check passed: 10394 links, 209 cross-file anchors, zero broken links/labels/inline paths; template671 and harness wiring30 gates passed; scoped git diff --check passed.",
-        "Executed the exact Python consumer against the current API catalog; MVCC search, existing source-path mapping and absent-keyword result assertions passed. Inspected generator sequential write and digest code; no deployed consumer integration claimed."
+        "Executed the exact Python consumer against the current API catalog; MVCC search, existing source-path mapping and absent-keyword result assertions passed. Inspected generator sequential write and digest code; no deployed consumer integration claimed.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "50ede3b1d35fe07a686259803533c0a929f7536632193fea580f8bd970ba5874"
+      "final_sha256": "9924aa358b431daaded4e77d84062b445edeb408c5e3be0e6f37ee7daa07c5d0"
     },
     {
       "path": "docs/deployment.md",
@@ -18797,7 +18918,8 @@
       "baseline_sha256": "60f93b979b1c6e9774be1bcffb2aea137fb5361d71f273ff22dc793fe58b9bff",
       "state": "revised",
       "findings": [
-        "The map claimed every script, while listing main workflows, and repeated repair recipes after Summary; metadata defects cannot all be fixed by the read-time writer."
+        "The map claimed every script, while listing main workflows, and repeated repair recipes after Summary; metadata defects cannot all be fixed by the read-time writer.",
+        "Closing pass: documented the new unfinished-description gate and its shared fence-reader behavior."
       ],
       "disposition": "Clarified main-script scope and manual metadata boundaries; preserved the canonical recipe table, removed its repeated cheat table and kept one final summary.",
       "questions": [
@@ -18805,9 +18927,11 @@
       ],
       "validation": [
         "Read the complete file including fenced examples and recovered any truncated tool output through separate full-range reads.",
-        "Current whole-repository link check passed: 10394 links, 209 cross-file anchors, zero broken links/labels/inline paths; template671 and harness wiring30 gates passed; scoped git diff --check passed."
+        "Current whole-repository link check passed: 10394 links, 209 cross-file anchors, zero broken links/labels/inline paths; template671 and harness wiring30 gates passed; scoped git diff --check passed.",
+        "10 October closing review: revised the specific contract and checked its companion/canonical context; verification recorded in the closing-pass validation record.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "a59e4589bc9dbf8402bd38cd7feff13497253de8b56221ab29f282dfe9ea6dab"
+      "final_sha256": "6b6ae5f57fb9e1291e69a5943f31fa0b3f2dc9b295f126c11cb96ef28999df6c"
     },
     {
       "path": "docs/superpowers/plans/2026-08-25-full-restructure.md",
@@ -18959,15 +19083,18 @@
       "baseline_sha256": "640d64803864f882a6dac864f1df1b8a834f24cd396b712f4864468fb55ab524",
       "state": "revised",
       "findings": [
-        "Whole approved review contract read; updated actual inventory/pilot/frontend completion and clarified existing user commit/push authorization."
+        "Whole approved review contract read; updated actual inventory/pilot/frontend completion and clarified existing user commit/push authorization.",
+        "Closing pass: recorded corpus inventory, specific editorial defects, regression gates and mobile inline-code repair scope."
       ],
       "disposition": "Retained acceptance criteria and completed release checks; appended the bounded Kafka/CQRS follow-up scope and verification steps.",
       "questions": [],
       "validation": [
         "Original checkpoint reviewed plan/design against disjoint ownership; final completion is supported separately by the reconciled dispositions and validation record.",
-        "10 October follow-up: appended the bounded final-pass scope and results; retained prior corpus-wide evidence."
+        "10 October follow-up: appended the bounded final-pass scope and results; retained prior corpus-wide evidence.",
+        "10 October closing review: revised the specific contract and checked its companion/canonical context; verification recorded in the closing-pass validation record.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
-      "final_sha256": "e38f3979912c229794ab05e5942cb0e8502dd05ad8ea2ff88d8dc93259b44659"
+      "final_sha256": "a302bf8bdc04015e8b19c4b6fdd815bb8769693a34f9d8278a66d330700cfb3b"
     },
     {
       "path": "docs/superpowers/specs/2026-08-25-full-restructure-design.md",
@@ -19723,10 +19850,11 @@
       ],
       "validation": [
         "Report totals are calculated from the unique inventory, not inferred from scan coverage.",
-        "10 October follow-up: appended the bounded final-pass scope and results; retained prior corpus-wide evidence."
+        "10 October follow-up: appended the bounded final-pass scope and results; retained prior corpus-wide evidence.",
+        "Corpus closing release: final hash restamped after sequential metadata writers; required gates and rendered evidence recorded separately."
       ],
       "reviewed_sha256": "2edce9b71f15d649a6f49d28eba62356f8139b22d242ef4e94e2b2c4cb34fda8",
-      "final_sha256": "84a88ebf6eeb930cbe6d414a1da6d840fc838ed5776e465d61b9c8a114ed6d40"
+      "final_sha256": "0231f97c077aecac4e9856faf6cf762ddc1037ec2bd7d5abd61864ec41ede993"
     }
   ],
   "progress": {

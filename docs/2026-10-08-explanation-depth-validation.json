@@ -7289,11 +7289,12 @@
     "exit_code": 0,
     "gate_count": 30,
     "freshness_rules": 34,
-    "internal_links": 10896,
+    "internal_links": 10898,
     "verified_anchors": 230,
     "broken_links": 0,
     "writer_fixed_point": true,
-    "final_diff_whitespace": "git diff --check passed"
+    "final_diff_whitespace": "git diff --check passed",
+    "gate_defect_clean_cases": 85
   },
   "followup_final_pass": {
     "checked_at": "2026-10-10",
@@ -7308,5 +7309,86 @@
     "navigation": "PASS on isolated rerun",
     "initial_concurrent_browser_runs": "Failed: nested highlight background mismatch and missing theme control. Isolated diagnostics returned all assets 200 and expected computed colors/control. Isolated suites passed; cause unconfirmed.",
     "examples": "Unchanged; no new runtime behavior claimed"
+  },
+  "corpus_closing_pass": {
+    "checked_at": "2026-10-10",
+    "tracked_markdown_inventory": 1017,
+    "remaining_pending_dispositions": 0,
+    "clipped_reading_reasons_replaced": 37,
+    "affected_source_chapters": 29,
+    "source_target_contexts_checked": 40,
+    "gate_fixture_count": 85,
+    "gate_regressions": "Four new cases failed before repair and passed after repair; includes clean tilde/long-backtick controls.",
+    "see_also": {
+      "bare_within_existing_ceilings": 122,
+      "label_echoes": 0,
+      "unfinished_descriptions": 0
+    },
+    "mobile_inline_code": {
+      "before": "350px page at 320px viewport; actual Kafka page also overflowed at 375px",
+      "after": "Permanent 320/375 light/dark browser fixture passed; preformatted block scrolling retained"
+    },
+    "reader_suites": "Reader, navigation, read-aloud PASS on rebuilt final UI",
+    "updated_page_checks": 240,
+    "updated_pages": 40,
+    "expanded_layout_checks": 144,
+    "screenshots_inspected": [
+      "desktop light monorepo",
+      "mobile dark monorepo"
+    ],
+    "rush_setup": {
+      "version": "5.181.0",
+      "command": "rush init",
+      "cwd": "disposable repository",
+      "result": "PASS; generated rush.json and common/config/rush; no publish or migration"
+    },
+    "primary_sources_checked": [
+      "https://microservices.io/patterns/apigateway.html",
+      "https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/",
+      "https://kafka.apache.org/43/getting-started/introduction/",
+      "https://rushjs.io/pages/maintainer/setup_new_repo/",
+      "https://yarnpkg.com/features/pnp"
+    ],
+    "personal_symlinks": "PASS",
+    "limits": [
+      "Closing corpus scans supplement the existing complete semantic ledger; source/target context checks are explicitly narrower than new whole-document reads.",
+      "Rush initialization does not establish a completed package migration, compatible project build or release publication.",
+      "Read-aloud uses controlled speech mocks; no voice-quality or production provider integration inferred."
+    ],
+    "release_verification": {
+      "checked_at": "2026-10-10",
+      "repository_gates": {
+        "command": "bash scripts/verify.sh",
+        "exit_code": 0,
+        "gate_count": 30,
+        "gate_defect_clean_cases": 85,
+        "writer_fixed_point": true
+      },
+      "standalone_links": {
+        "command": "python3 scripts/check_links.py",
+        "exit_code": 0,
+        "links_checked": 10898,
+        "verified_anchors": 230,
+        "broken_links": 0,
+        "stale_labels": 0,
+        "stale_inline_paths": 0,
+        "external_links_skipped": 8145
+      },
+      "site_build": {
+        "result": "PASS",
+        "liquid_warnings": false,
+        "private_paths_excluded": true
+      },
+      "browser_suites": {
+        "reader": "PASS",
+        "navigation": "PASS",
+        "read_aloud": "PASS",
+        "updated_page_checks": 240,
+        "updated_routes": 40,
+        "expanded_layout_checks": 144,
+        "updated_reading_destinations": "HTTP 200"
+      },
+      "diff_whitespace": "git diff --check passed"
+    }
   }
 }

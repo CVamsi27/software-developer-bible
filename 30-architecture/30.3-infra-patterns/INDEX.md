@@ -1,6 +1,6 @@
 # Infra & Ops Patterns — Index
 
-> **Study time:** ≈ 2 h 6 m of reading (22 files, ~6 min average).
+> **Study time:** ≈ 2 h 5 m of reading (22 files, ~6 min average).
 > **22 files across 6 categories — operations-level patterns that sit *around* your services**: health checks and graceful shutdown, retries and idempotency, feature flags and kill switches, backups proven by restore drills, idempotency-retry deep dive, leader election, data-at-scale levers (including multi-tenant SaaS), zero-downtime deploys, technical debt management, cost engineering (FinOps), data retention/archival, and the interview bank that drills all of it.
 >
 > **Scope note:** the distributed-systems patterns (saga, circuit breaker deep-dives, bulkhead, API gateway, service discovery, strangler fig, event sourcing/CQRS, distributed transactions) live in [20.6-microservices](../../20-backend/20.6-microservices/INDEX.md) — this folder was deduplicated against it.
@@ -47,7 +47,7 @@ Each category REVISION follows its learning chapters
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Health Checks & Graceful Shutdown](01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.md) | Liveness/readiness probes, SIGTERM draining, shutdown hooks | Essential | 11 min | 9 min |
+| 01 | [Health Checks & Graceful Shutdown](01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.md) | Liveness/readiness probes, SIGTERM draining, shutdown hooks | Essential | 11 min | 8 min |
 | 02 | [Resilience Patterns — Overview](02-failure-and-recovery/30.3.2.01-resilience-patterns.md) | Timeout/bulkhead/circuit-breaker landscape; details in [20.6](../../20-backend/20.6-microservices/INDEX.md) | Important | 16 min | 5 min |
 | 03 | [Retry Patterns](02-failure-and-recovery/30.3.2.02-retry-patterns.md) | Exponential backoff, jitter, retry budgets, retry storms | Essential | 11 min | 7 min |
 | 04 | [Idempotency Keys](02-failure-and-recovery/30.3.2.03-idempotency-keys.md) | Stable operation identity, retry replay, and effect boundaries | Essential | 6 min | 6 min |

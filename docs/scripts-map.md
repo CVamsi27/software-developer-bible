@@ -60,7 +60,7 @@
 | 24 | `prose_hygiene.py` | Spelling convention (10 measured pairs), glued ATX headings, GFM table cell counts, empty-filler register (rule 4 check-only) | a minority spelling, a heading that renders as literal text, a table row with a broken cell grid |
 | 25 | `check_dilution.py` | A chapter must not restate itself — ceiling baseline over the measured 0/0 state (within-chapter, sentence granularity; gate 11 owns cross-chapter) | a paragraph restated 20+ lines apart exceeds the baseline |
 | 26 | `check_code_dup.py` | A chapter must not re-teach another chapter's code — cross-file fenced-block pairs (identical token streams ≥ 10 lines; near ≥ 0.85) against a ceiling baseline of classified keeps | an example duplicated from a sibling chapter exceeds the baseline |
-| 27 | `check_see_also.py` | See Also hygiene — per-stack bare ceiling (a stack may improve freely, never silently regress) plus the always-wrong label echo (a reason adding no content beyond its link's label) | a new bare entry or a label-echo reason |
+| 27 | `check_see_also.py` | See Also hygiene — per-stack bare ceilings, label echoes, clipped endings and copied heading/table fragments; uses the shared fence reader | a new bare entry, label echo or unfinished description |
 | 22 | `check_fixpoint.py` | A clean corpus is a byte-for-byte no-op for every repair/restamp writer | a writer edits what its checker calls clean (an edit no gate can flag) |
 | 23 | `check_scope_floor.py` | Every corpus gate exits 1 with a SCOPE ERROR on an empty tree (list derived from verify.sh) | a gate reports compliance while scanning nothing |
 | — | `scan_scope.py` | The scope floor itself: one owner for "a checker that finds nothing must not pass" (imported by every corpus gate) | — |

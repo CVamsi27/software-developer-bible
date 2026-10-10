@@ -505,7 +505,7 @@ else
 fi
 
 echo ""
-echo "27/30  check_see_also.py — See Also hygiene: per-stack bare ceiling + no label echoes"
+echo "27/30  check_see_also.py — See Also hygiene: bare ceilings, label echoes, complete descriptions"
 echo "     python3 scripts/check_see_also.py   (--baseline re-baselines deliberately)"
 echo "------------------------------------------------------------"
 # The 2026-09-22 measurement found 72% of See Also entries bare and declined
@@ -516,7 +516,8 @@ echo "------------------------------------------------------------"
 # standing: a per-stack ceiling on bare entries (a stack may improve freely;
 # regressing above its committed maximum fails), and the label-echo rule —
 # a reason that adds no content beyond the link label is the declined
-# boilerplate in miniature. Check-only: authoring reasons is editorial.
+# boilerplate in miniature. Clipped endings and copied heading/table fragments
+# are baseline-free defects as well. Check-only: authoring reasons is editorial.
 if python3 scripts/check_see_also.py > /dev/null 2>&1; then
     echo "  PASS"
 else

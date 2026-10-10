@@ -42,6 +42,14 @@ Source: [Monorepo Tools Deep-Dive (Lerna, pnpm, Yarn, Rush, Bazel)](40.8.04-mono
 
 **A:** Package management resolves/links dependencies, task orchestration schedules/caches work, and compilers/bundlers produce artifacts. Some tools overlap, but each contract still needs an owner.
 
+**Q:** Can engineer count determine whether a repository needs Bazel?
+
+**A:** No. Compare declared toolchains, generated inputs and reproducibility needs with supported rules and maintenance cost. A small repository can need those controls; a large one can still have a simple script graph.
+
+**Q:** What should a monorepo tooling pilot prove before trusting remote cache hits?
+
+**A:** Prove uncached dependency order and outputs first, then test invalidation for source, configuration, environment and toolchain changes. Protect cache writers and check editor/install compatibility as separate requirements.
+
 ## Versioning & Publishing Strategies
 
 Source: [Versioning & Publishing Strategies](40.8.05-versioning-publishing-strategies.md)

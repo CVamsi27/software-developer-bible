@@ -68,6 +68,12 @@ Source: [Supply-chain security](40.3.2.04-pipeline-supply-chain-security-slsa.md
 
 **A:** Identity tokens and temporary cloud credentials can leak and be abused until expiry within their scope. Narrow trust/permissions, safe logging and revocation remain necessary.
 
+Source: [Pipeline patterns](40.3.2.02-pipeline-patterns.md)
+
+**Q:** Why can automatically reverting an image be the wrong response to a failed release?
+
+**A:** The release may have changed data incompatibly or completed external effects. Define recovery from compatibility and authoritative state; rehearse rollback when safe and forward repair when reverting cannot restore a valid state.
+
 ## Summary
 
 Use the answers to check your reasoning, then revisit the source mechanism and reproduce any relevant example without copying it. A remembered label is useful only when you can explain its limits.

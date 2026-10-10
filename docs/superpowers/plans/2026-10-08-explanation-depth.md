@@ -117,3 +117,14 @@ Scope: scan all tracked Markdown for heading/table fragments embedded in related
 - [x] Replace the two fragment descriptions and contradictory related-reading claims; clarify that CQRS deployment separation is optional.
 - [x] Record findings in the existing ledger, refresh generated metadata and final hashes, run all verification gates and standalone links.
 - [x] Rebuild and check reader navigation/themes, then commit and push the reviewed changes.
+
+## Corpus closing pass — 10 October 2026
+
+Goal: close the remaining related-reading defects across the complete 1,017-document inventory, check broad definition claims as investigation leads, and verify the rendered reading experience. Prior complete document dispositions remain the semantic baseline; this pass records its narrower checks explicitly.
+
+- [x] Read the source/target context of all 37 clipped related-reading descriptions and replace them with complete, specific guidance. Check flagged definition claims against their mechanisms and qualifications.
+- [x] Add failing sandbox gate cases for clipped and markup-fragment descriptions, implement baseline-free rejection in the existing See Also gate, and prove clean/fenced controls still pass. Keep existing ceilings and chapter IDs.
+- [x] Refresh the ledger, validation record and generated metadata; run all required gates and standalone links. Build Jekyll and run reader, navigation, read-aloud and expanded width/theme checks.
+- [x] Review the final diff and evidence, then commit and push.
+
+Mobile finding: a long inline Kafka configuration name overflowed the viewport. The reader fixture reproduced it at 320 pixels before repair; allow wrapping only for inline code while retaining preformatted block scrolling, then rerun all rendered checks.

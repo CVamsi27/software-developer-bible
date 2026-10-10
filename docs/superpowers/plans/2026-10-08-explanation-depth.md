@@ -109,3 +109,11 @@ These checks must run again against the completed continuation. Earlier checkpoi
 ## Test discipline
 
 This work primarily edits prose. Existing meaningful checks protect structural and rendering behavior; no tests assert that particular paragraphs contain preferred phrases. If a shared utility or gate needs a behavior change, add a failing real-case test first, observe its failure, make the minimal change and rerun its tests. Do not add a universal prose-word floor as a comprehension gate.
+
+## Follow-up final pass — 10 October 2026
+
+Scope: scan all tracked Markdown for heading/table fragments embedded in related-reading descriptions, then read the affected Kafka and CQRS chapters and their canonical counterparts. Preserve examples and topic homes.
+
+- [x] Replace the two fragment descriptions and contradictory related-reading claims; clarify that CQRS deployment separation is optional.
+- [x] Record findings in the existing ledger, refresh generated metadata and final hashes, run all verification gates and standalone links.
+- [x] Rebuild and check reader navigation/themes, then commit and push the reviewed changes.

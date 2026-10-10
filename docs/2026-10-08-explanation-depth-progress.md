@@ -61,3 +61,9 @@ The [validation record](2026-10-08-explanation-depth-validation.json) retains 11
 ## Publication
 
 The user authorized commit and push after completion. This report describes the verified changes prepared for publication; the resulting commit is reported in the chat after remote verification. Personal data remains canonical in this private repository; the external career-ops tool repository is not being committed or pushed.
+
+## Follow-up final pass — 10 October 2026
+
+A corpus scan found two related-reading descriptions containing copied table/heading fragments. Complete reads of the affected Kafka and CQRS chapters and their canonical counterparts also found misleading descriptions: Kafka as a required CQRS transport, CQRS removing distributed writes, and service discovery identifying fresh replicas. Replaced these with specific reading guidance and clarified that separate CQRS services and databases are optional. Examples and chapter IDs are unchanged.
+
+Validation: all 30 repository gates and the standalone link check passed (10,897 links, zero broken). Jekyll rebuilt successfully with private paths excluded. The updated chapters passed 12 width/theme checks and all tested internal reading destinations returned HTTP 200; existing reader and navigation suites passed on isolated reruns. Their initial concurrent runs failed on theme surfaces/control presence, but isolated asset diagnostics and reruns did not reproduce the failures; the cause remains unconfirmed.

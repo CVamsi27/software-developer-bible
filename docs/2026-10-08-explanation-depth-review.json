@@ -6952,7 +6952,8 @@
       "baseline_sha256": "52d8eb98c1df8fb19238159acaf71f36bc37ce236f4207b3f1c33d6f996d5d88",
       "state": "revised",
       "findings": [
-        "Whole document read; corrected unscoped delivery/performance/cancellation claims, incomplete client/proto APIs and duplicate mechanism examples where needed"
+        "Whole document read; corrected unscoped delivery/performance/cancellation claims, incomplete client/proto APIs and duplicate mechanism examples where needed",
+        "Follow-up final pass: removed a table-header fragment from related reading; replaced Kafka-as-required-CQRS-transport and partition-placement-as-StatefulSet descriptions with scoped reading guidance."
       ],
       "disposition": "Retained strong broker-selection and durable-event chapters; revised client examples and lifetime/transaction contracts, preserved authored streaming question in source-linked revision",
       "questions": [
@@ -6963,9 +6964,10 @@
         "Whole semantic read on 2026-10-10; primary KafkaJS transaction/offset, RabbitMQ confirm/DLX and gRPC cancellation contracts verified",
         "backend-grpc-results.json: actual loopback HTTP/2 unary statuses and finite streaming/cancellation cleanup",
         "backend-broker-client-contract-results.json: exact TS examples checked against actual client types; Kafka transaction adapter ordering/abort/BigInt cases; no live Kafka/Rabbit cluster assertion",
-        "Prior backend-brokers-results.json local policy fixture retained as scoped earlier evidence"
+        "Prior backend-brokers-results.json local policy fixture retained as scoped earlier evidence",
+        "10 October follow-up: complete source and canonical counterpart reads; examples unchanged; related-reading targets checked against their topic scope."
       ],
-      "final_sha256": "8c77b6272c9f11e3a3573bd827c4b6f97631911cdae1c69df0718fe1baaef77f"
+      "final_sha256": "516e9d64267b73095409f5b55fc0d05cd0d1056d787b48dd81d309844290ba8e"
     },
     {
       "path": "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.04-rabbitmq.md",
@@ -7135,7 +7137,8 @@
       "baseline_sha256": "d791c50ba323d1116e5eda496f4cb73bef511c57c7fd67aa1a2bc2e0238a40d9",
       "state": "revised",
       "findings": [
-        "Whole document read; corrected unsafe saga timeout/compensation, missing expected-version append, projection sequencing and migration source/order/authority contracts where applicable"
+        "Whole document read; corrected unsafe saga timeout/compensation, missing expected-version append, projection sequencing and migration source/order/authority contracts where applicable",
+        "Follow-up final pass: removed a heading fragment from related reading; clarified optional service/database separation and replaced claims that CQRS removes distributed transactions or discovery establishes freshness."
       ],
       "disposition": "Retained strong transaction/outbox chapters and authored revision questions; replaced incomplete repeated code with focused complete local models and explicit durable boundaries",
       "questions": [
@@ -7146,9 +7149,10 @@
         "Whole semantic read 2026-10-10",
         "backend-data-core-results.json: exact published Node 24.19.0 saga/replay/projection/tombstone helpers and invalid/stale cases",
         "backend-event-append-results.json: actual PostgreSQL 16 expected-version concurrent append and failed-insert rollback",
-        "No saga engine, CDC connector, provider or event transport integration asserted"
+        "No saga engine, CDC connector, provider or event transport integration asserted",
+        "10 October follow-up: complete source and canonical counterpart reads; examples unchanged; related-reading targets checked against their topic scope."
       ],
-      "final_sha256": "b4e285093935db2fbfeb9450c7736824f720ec77f0c2eececbd90a6269c364cb"
+      "final_sha256": "6df14d7d919cb5645fc14906c94f52430e999febe0807347f2c09292d5401463"
     },
     {
       "path": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.05-decomposing-monolith-database.md",
@@ -18957,12 +18961,13 @@
       "findings": [
         "Whole approved review contract read; updated actual inventory/pilot/frontend completion and clarified existing user commit/push authorization."
       ],
-      "disposition": "Retain acceptance criteria and pending backend/platform/final reconciliation; completion requires actual dispositions, not a scanner pass.",
+      "disposition": "Retained acceptance criteria and completed release checks; appended the bounded Kafka/CQRS follow-up scope and verification steps.",
       "questions": [],
       "validation": [
-        "Plan and design checked against current disjoint ownership and review ledger; final-release boxes do not certify this continuation."
+        "Original checkpoint reviewed plan/design against disjoint ownership; final completion is supported separately by the reconciled dispositions and validation record.",
+        "10 October follow-up: appended the bounded final-pass scope and results; retained prior corpus-wide evidence."
       ],
-      "final_sha256": "5699db861c2fd2fa3c502e7f577a2bbc2c4799da7335263118ecce351c2a00d3"
+      "final_sha256": "e38f3979912c229794ab05e5942cb0e8502dd05ad8ea2ff88d8dc93259b44659"
     },
     {
       "path": "docs/superpowers/specs/2026-08-25-full-restructure-design.md",
@@ -19717,10 +19722,11 @@
         "How should missing integration or source evidence affect a completion claim?"
       ],
       "validation": [
-        "Report totals are calculated from the unique inventory, not inferred from scan coverage."
+        "Report totals are calculated from the unique inventory, not inferred from scan coverage.",
+        "10 October follow-up: appended the bounded final-pass scope and results; retained prior corpus-wide evidence."
       ],
       "reviewed_sha256": "2edce9b71f15d649a6f49d28eba62356f8139b22d242ef4e94e2b2c4cb34fda8",
-      "final_sha256": "863f054a406c567401b455914f8d5b9e524224342c826fe0a74c372f82d7e9b4"
+      "final_sha256": "84a88ebf6eeb930cbe6d414a1da6d840fc838ed5776e465d61b9c8a114ed6d40"
     }
   ],
   "progress": {

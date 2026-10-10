@@ -7294,5 +7294,19 @@
     "broken_links": 0,
     "writer_fixed_point": true,
     "final_diff_whitespace": "git diff --check passed"
+  },
+  "followup_final_pass": {
+    "checked_at": "2026-10-10",
+    "scope": "Kafka/CQRS related-reading fragments, misleading cross-topic claims and optional deployment separation",
+    "repository_gates": 30,
+    "internal_links": 10897,
+    "broken_links": 0,
+    "site_build": "PASS; private paths excluded",
+    "updated_chapter_width_theme_checks": 12,
+    "internal_reading_destinations": "HTTP 200",
+    "reader": "PASS on isolated rerun",
+    "navigation": "PASS on isolated rerun",
+    "initial_concurrent_browser_runs": "Failed: nested highlight background mismatch and missing theme control. Isolated diagnostics returned all assets 200 and expected computed colors/control. Isolated suites passed; cause unconfirmed.",
+    "examples": "Unchanged; no new runtime behavior claimed"
   }
 }

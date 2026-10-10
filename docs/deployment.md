@@ -56,6 +56,11 @@ Every push to `main` triggers two builds of the same command:
    the dashboard (Pages project → *Deployments* → select a prior
    deployment → *Rollback*), then re-push.
 
+Older reading links ending in `.md` redirect to the rendered `.html` chapter.
+The redirect preserves the query string, including a dated roadmap task, and
+the rendered destination still requires the study session. Chapter and revision
+links keep that context so **Return to roadmap** reopens the same assignment.
+
 ## 2. One-time Cloudflare setup (~10 minutes)
 
 > One-way door: a Git-integrated Pages project cannot be switched back to

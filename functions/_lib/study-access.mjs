@@ -255,6 +255,11 @@ export async function decideAccess({
   if (isPagesDevHost(hostname)) {
     return { action: "canonical", status: 308, location: `${canonicalOrigin}${pathname}${search}` };
   }
+  // Older study catalogues link to source filenames. Open the rendered reader
+  // instead; its access gate still runs, and dated roadmap context survives.
+  if (pathname.endsWith(".md")) {
+    return { action: "canonical", status: 308, location: `${canonicalOrigin}${pathname.slice(0, -3)}.html${search}` };
+  }
   if (isPublicAuthPath(pathname)) return { action: "public", status: 200, location: "" };
 
   const { email, hasToken } = await resolveSession();

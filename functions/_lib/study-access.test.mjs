@@ -393,3 +393,30 @@ test("a signed-out chapter keeps its dated roadmap context through the login des
  assert.equal(result.action,"login");
  assert.equal(new URL(result.location,"https://study.buildora.work").searchParams.get("next"),pathname+search);
 });
+test("legacy Markdown reading links go to rendered chapters without losing the dated task", async () => {
+  const search = "?roadmapDate=2026-10-12&roadmapTask=germany%3A2026%3Aday%3A2026-10-12";
+  let resolved = false;
+  const result = await decideAccess({
+    hostname: "study.buildora.work",
+    pathname: "/10-frontend/scope.md",
+    search,
+    resolveSession: async () => {
+      resolved = true;
+      return { email: "cvamsik99@gmail.com", hasToken: true };
+    },
+  });
+  assert.deepEqual(result, {
+    action: "canonical",
+    status: 308,
+    location: "https://study.buildora.work/10-frontend/scope.html" + search,
+  });
+  assert.equal(resolved, false);
+  const next = await decideAccess({
+    hostname: "study.buildora.work",
+    pathname: "/10-frontend/scope.html",
+    search,
+    resolveSession: async () => ({ email: null, hasToken: false }),
+  });
+  assert.equal(next.action, "login");
+  assert.equal(new URL(next.location, "https://study.buildora.work").searchParams.get("next"), "/10-frontend/scope.html" + search);
+});

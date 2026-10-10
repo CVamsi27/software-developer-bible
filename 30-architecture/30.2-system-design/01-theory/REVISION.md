@@ -42,6 +42,18 @@ Source: [Data Consistency Models](30.2.1.02-consistency-models.md)
 
 **A:** No. It violates the guarantee if 3 comes from an older history/version. A newer accepted update can legitimately decrease the value. Compare observed versions, not arithmetic magnitude.
 
+**Q:** A's write finishes before B invokes a read, but B reads the previous value. Which ordering distinction matters?
+
+**A:** Sequential consistency can order B's read before A's write if their separate client program orders permit it. Linearizability cannot: the write's response precedes the read's invocation. A read overlapping the write can instead return the previous value if the entire history admits that order.
+
+**Q:** Must a causally consistent reader retrieve every intermediate value of a repeatedly overwritten register?
+
+**A:** No. A later version can incorporate its causal predecessors without exposing their obsolete values separately. A reply that refers to a separately stored parent still needs a view that respects that dependency. Independent changes need not have one shared total order.
+
+**Q:** Two clients each make a linearizable read of the last item, then each writes a sale. What guarantee is missing?
+
+**A:** The check and claim are separate operations. Their legal order can still allow both clients to decide from stock one. Use an invariant-preserving transaction or authoritative atomic conditional claim. Serializability orders transactions; strict serializability additionally respects real time.
+
 ## Sharding & Replication
 
 Source: [Sharding & Replication](30.2.1.03-sharding-and-replication.md)
@@ -126,6 +138,10 @@ Source: [Distributed Transactions](30.2.1.07-distributed-transactions.md)
 
 **A:** No. The eventual commit/abort decision is shared; read visibility and isolation across independent resources need their own contract.
 
+**Q:** Does two-phase commit imply that a transaction uses two-phase locking?
+
+**A:** No. 2PC coordinates a shared commit/abort decision. 2PL constrains lock acquisition and release for concurrency control. A system can combine them, but atomic outcome and isolation are separate obligations.
+
 
 ## Rate Limiting
 
@@ -172,6 +188,10 @@ Source: [Failure Modes](30.2.1.10-failure-modes.md)
 **Q:** A 100 ms dependency slows to 2 s and each caller adds two retries. Where does pressure go?
 
 **A:** More work remains in flight, and three attempts per logical request can add load during reduced capacity. Bound admission, waits and retries; isolate critical resources and observe the recovery wave.
+
+**Q:** A heartbeat expires. Does that establish a fail-stop process, or only suspicion?
+
+**A:** Without a reliable failure detector or a bounded-delay assumption, it establishes suspicion. A paused or partitioned process may resume and act. A safe transfer of authority needs the protocol's quorum, epoch or resource-enforced fencing rules, not only a missed heartbeat.
 
 
 ## Architecture Patterns — Monolith, Microservices, Event-Driven, Hexagonal

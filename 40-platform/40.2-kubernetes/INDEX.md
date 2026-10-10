@@ -1,6 +1,6 @@
 # Kubernetes — Index
 
-> **Study time:** ≈ 4 h 4 m of reading (22 files, ~11 min average).
+> **Study time:** ≈ 4 h 5 m of reading (22 files, ~11 min average).
 > **22 files** — Kubernetes orchestration from pods and replica sets to deployments, services, ingress, ConfigMaps, HPA, node autoscaling (Karpenter/Cluster Autoscaler), health checks, Helm, Kustomize, CRDs/operators, security, batch workloads, PDBs, resource quotas, admission injection, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-22-blue)](../../INDEX.md)
@@ -67,7 +67,7 @@ The senior-level reliability and security layer.
 | 10 | [Health Checks](04-production-hardening/40.2.4.01-health-checks.md) | Liveness, readiness, startup probes, probe configuration, failure modes | Optional | 18 min | 9 min |
 | 11 | [Pod Disruption Budgets](04-production-hardening/40.2.4.02-pod-disruption-budgets.md) | minAvailable, maxUnavailable, voluntary disruptions, node drainage, availability | Optional | 5 min | 6 min |
 | 12 | [RBAC & Network Policies](04-production-hardening/40.2.4.03-rbac-network-policies.md) | Roles, ClusterRoles, Bindings, ServiceAccounts, NetworkPolicies, micro-segmentation | Optional | 7 min | 10 min |
-| 13 | [Resource Quotas](04-production-hardening/40.2.4.04-resource-quotas.md) | ResourceQuota, LimitRange, multi-tenant isolation, priority classes, monitoring | Optional | 19 min | 20 min |
+| 13 | [Resource Quotas](04-production-hardening/40.2.4.04-resource-quotas.md) | ResourceQuota, LimitRange, multi-tenant isolation, priority classes, monitoring | Optional | 19 min | 21 min |
 
 ---
 

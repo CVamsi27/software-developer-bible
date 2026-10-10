@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "20d9382e8f74e82db015d224dd15f385e3a6ae7a58e78463c2821b453d0f79c7",
+ "corpus_digest": "f77402131ef1125d831008259c7a10b2cc0e056ca48875f4a95c4b980e7f4937",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 6304
+  "read_minutes": 6307
  },
  "chapters": [
   {
@@ -2027,7 +2027,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "20-backend/20.2-nestjs/03-patterns/20.2.3.02-microservices.html",
@@ -2127,7 +2127,7 @@
    "g": [
     "interview-questions"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "20-backend/20.2-nestjs/05-advanced-and-interview/REVISION.html",
@@ -2443,7 +2443,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 11
   },
   {
    "p": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.05-postgresql-performance.html",
@@ -2712,7 +2712,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "20-backend/20.5-security/01-auth/20.5.1.02-http-basic-digest-auth.html",
@@ -2752,7 +2752,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 10
   },
   {
    "p": "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.html",
@@ -2762,7 +2762,7 @@
    "g": [
     "concept"
    ],
-   "m": 13
+   "m": 12
   },
   {
    "p": "20-backend/20.5-security/01-auth/20.5.1.07-sso-saml-federation.html",
@@ -2825,7 +2825,7 @@
    "g": [
     "revision"
    ],
-   "m": 4
+   "m": 5
   },
   {
    "p": "20-backend/20.5-security/02-attacks-and-defense/20.5.2.01-xss.html",
@@ -2835,7 +2835,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "20-backend/20.5-security/02-attacks-and-defense/20.5.2.02-csrf.html",
@@ -2885,7 +2885,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "20-backend/20.5-security/03-hardening-and-operations/20.5.3.02-web-security.html",
@@ -3139,7 +3139,7 @@
    "g": [
     "revision"
    ],
-   "m": 3
+   "m": 4
   },
   {
    "p": "20-backend/20.6-microservices/04-resilience/20.6.4.01-circuit-breaker.html",
@@ -3312,7 +3312,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 13
   },
   {
    "p": "20-backend/20.8-caching/20.8.02-redis-fundamentals.html",
@@ -3344,7 +3344,7 @@
     "interview-questions",
     "reference"
    ],
-   "m": 12
+   "m": 8
   },
   {
    "p": "20-backend/20.8-caching/REVISION.html",
@@ -3430,7 +3430,7 @@
     "principles",
     "theory"
    ],
-   "m": 18
+   "m": 19
   },
   {
    "p": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.03-oop-concepts.html",
@@ -3819,7 +3819,7 @@
     "concept",
     "ddd"
    ],
-   "m": 5
+   "m": 7
   },
   {
    "p": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.06-anti-corruption-layer.html",
@@ -3895,7 +3895,7 @@
     "distributed-systems",
     "theory"
    ],
-   "m": 11
+   "m": 13
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.html",
@@ -3957,7 +3957,7 @@
     "theory",
     "transactions"
    ],
-   "m": 5
+   "m": 6
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.08-rate-limiting.html",
@@ -3995,7 +3995,7 @@
     "reliability",
     "theory"
    ],
-   "m": 13
+   "m": 14
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.11-architecture-patterns.html",
@@ -4008,7 +4008,7 @@
     "patterns",
     "theory"
    ],
-   "m": 13
+   "m": 14
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.html",
@@ -5121,7 +5121,7 @@
    "g": [
     "concept"
    ],
-   "m": 20
+   "m": 21
   },
   {
    "p": "40-platform/40.2-kubernetes/04-production-hardening/REVISION.html",

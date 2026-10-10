@@ -1,6 +1,6 @@
 # Data & Consistency - Microservices
 
-> **Study time:** ≈ 41 min of reading (7 files, ~6 min average).
+> **Study time:** ≈ 42 min of reading (7 files, ~6 min average).
 > **7 files.** Atomicity and truth across service boundaries: saga with compensating transactions, distributed transaction patterns (outbox vs 2PC), event sourcing, CQRS, decomposing the monolith database, and the transactional outbox deep dive.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../INDEX.md)

@@ -1,0 +1,1858 @@
+{
+  "schema": 1,
+  "date": "2026-10-10",
+  "status": "verified_batch_complete_corpus_review_pending",
+  "coverage_record": "docs/2026-10-10-senior-precision-audit.json",
+  "results": {
+    "postgres-results": {
+      "database": "16.15",
+      "environment": "isolated postgres:16-alpine container, no host ports or mounted data",
+      "checks": [
+        "chapter transfer SQL preserves sum and debits/credits 2500",
+        "insufficient funds aborts the whole transfer and retains balances",
+        "savepoint rolls back only the optional 50 cents",
+        "prepared state survives the preparing psql session; ordinary read still sees old committed value",
+        "prepared transaction retains conflicting lock",
+        "new recovery session applies the durable prepared commit",
+        "prepared abort leaves last committed value unchanged",
+        "two Repeatable Read snapshots see two staff; disjoint updates both commit and violate shared count",
+        "same history at Serializable rejects one transaction, retaining one on-call staff"
+      ],
+      "count": 9
+    },
+    "runtime-results": {
+      "node": "v23.7.0",
+      "typescript": "5.9.3",
+      "jsonwebtoken": "9.0.3",
+      "checks": [
+        "CSRF: matching session/cookie/header accepted",
+        "CSRF: same token under another session rejected",
+        "CSRF: attacker session token injected into victim session rejected",
+        "CSRF: unequal, malformed and missing values rejected without comparison crash",
+        "JWT: valid configured access profile accepted",
+        "JWT: wrong audience rejected",
+        "JWT: wrong issuer rejected",
+        "JWT: refresh-token purpose rejected",
+        "JWT: wrong algorithm rejected",
+        "JWT: missing expiration rejected",
+        "JWT: expired token rejected",
+        "JWT: future issued-at rejected",
+        "JWT: excessive lifetime rejected",
+        "AES-GCM: valid key/context recovers exact plaintext",
+        "AES-GCM: changed record context rejected",
+        "AES-GCM: modified ciphertext and tag rejected",
+        "AES-GCM: malformed record rejected",
+        "Money: multiplication and value equality agree with chapter",
+        "Money: mixed currency, bad quantity and overflow rejected",
+        "Money: frozen runtime fields cannot be reassigned",
+        "Browser LE: closure outer lookup",
+        "Browser LE: block shadowing",
+        "Browser LE: arrow this/arguments",
+        "Browser LE: classic script globals",
+        "Browser LE: module globals",
+        "Browser LE: TDZ stops lookup",
+        "Browser LE: independent factory state"
+      ],
+      "count": 27
+    },
+    "solid-results": {
+      "checks": [
+        "strategy returns 90 and 70 through unchanged delegation",
+        "Rectangle/Square trace produces 20 versus 16 under independent-setter contract"
+      ],
+      "count": 2
+    },
+    "additional-results": {
+      "node": "v23.7.0",
+      "checks": [
+        "OAuth: redirect binds independent state, nonce and S256 verifier",
+        "OAuth: valid callback consumes transaction; replay rejected",
+        "OAuth: missing/mismatched/expired transaction and non-TLS endpoint rejected",
+        "OAuth: provider rejection consumes attempt without returning code",
+        "Cache: simultaneous misses coalesce; hit reused; exact expiry reloads",
+        "Cache: rejected fill removed; null result cached distinctly",
+        "Cache: saturated source-job budget rejects a different miss",
+        "Cache: hits do not change FIFO eviction order",
+        "Promise: synchronous executor, asynchronous chain and values match trace",
+        "Promise: recovery result retained through successful finally",
+        "Promise: allSettled, any, all and race outcomes match",
+        "Promise: shared in-flight result removed after settlement",
+        "Node: actual CommonJS trace and I/O immediate-before-timer",
+        "Browser: task, appended microtask and timer order matches"
+      ],
+      "count": 14
+    },
+    "database-additional-results": {
+      "database": "16.15",
+      "checks": [
+        "Normalization: authored decomposition and join produce both stated totals",
+        "Normalization: current catalog price does not change historical purchased totals",
+        "Database choice: authored relational join returns only paid amount",
+        "MVCC: Read Committed sees old uncommitted value then new committed statement snapshot",
+        "MVCC: stable snapshot excludes later commit; conflicting update rejects and retains writer result",
+        "MVCC: own update visible before rollback; later transaction sees prior committed value"
+      ],
+      "count": 6
+    },
+    "redis-results": {
+      "redis": "7.4.11",
+      "environment": "disposable container without host ports, mounts, network or persistence",
+      "checks": [
+        "MULTI/EXEC: runtime wrong-type error retains earlier successful SET",
+        "Lua: runtime error retains earlier successful SET",
+        "Lease: old owner compare-and-delete preserves replacement lease after expiration",
+        "ACL: key pattern denies cross-tenant GET but does not filter SCAN enumeration"
+      ],
+      "count": 4
+    },
+    "objects-results": {
+      "typescript": "5.9.3",
+      "checks": [
+        "Prototype: authored example 1 returns stated receiver/link/shadow/inspection result",
+        "Prototype: authored example 2 returns stated receiver/link/shadow/inspection result",
+        "Prototype: authored example 3 returns stated receiver/link/shadow/inspection result",
+        "Prototype: authored example 4 returns stated receiver/link/shadow/inspection result",
+        "Prototype: authored example 5 returns stated receiver/link/shadow/inspection result",
+        "Prototype: authored example 6 returns stated receiver/link/shadow/inspection result",
+        "OOP: balance trace and invalid/overflow deposit preserve invariant",
+        "OOP: 5 complete independent TypeScript examples pass strict checking"
+      ],
+      "count": 8,
+      "strictCheckedFiles": [
+        "/tmp/bible-senior-audit/oop-1.ts",
+        "/tmp/bible-senior-audit/oop-2.ts",
+        "/tmp/bible-senior-audit/oop-3.ts",
+        "/tmp/bible-senior-audit/oop-4.ts",
+        "/tmp/bible-senior-audit/oop-13.ts"
+      ]
+    },
+    "badge-results": [
+      {
+        "url": "https://img.shields.io/badge/tags-concept%20%C2%B7%20distributed-systems%20%C2%B7%20theory-lightgrey",
+        "status": 200,
+        "aria_label": [
+          "404: badge not found"
+        ],
+        "error_badge": true,
+        "expected_tag": false
+      },
+      {
+        "url": "https://img.shields.io/badge/tags-concept%20%C2%B7%20distributed--systems%20%C2%B7%20theory-lightgrey",
+        "status": 200,
+        "aria_label": [
+          "tags: concept \u00b7 distributed-systems \u00b7 theory"
+        ],
+        "error_badge": false,
+        "expected_tag": true
+      }
+    ],
+    "citation-results": [
+      {
+        "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cryptographic_Storage_Cheat_Sheet.html",
+        "status": "LIVE",
+        "detail": "HTTP 200",
+        "date": "2026-10-10",
+        "content_verified": "OWASP page describes AES-128/256, authenticated modes, key lifecycle; viewed in web tool."
+      },
+      {
+        "url": "https://docs.oracle.com/javase/specs/jls/se25/html/jls-6.html#jls-6.6",
+        "status": "LIVE",
+        "detail": "HTTP 200",
+        "date": "2026-10-10",
+        "content_verified": "Official primary page and relevant content opened with web tool."
+      },
+      {
+        "url": "https://html.spec.whatwg.org/multipage/webappapis.html#event-loop-processing-model",
+        "status": "LIVE",
+        "detail": "HTTP 200",
+        "date": "2026-10-10",
+        "content_verified": "Official primary page and relevant content opened with web tool."
+      },
+      {
+        "url": "https://redis.io/docs/latest/commands/info/",
+        "status": "LIVE",
+        "detail": "HTTP 200",
+        "date": "2026-10-10",
+        "content_verified": "Official primary page and relevant content opened with web tool."
+      },
+      {
+        "url": "https://redis.io/docs/latest/develop/reference/client-side-caching/",
+        "status": "LIVE",
+        "detail": "HTTP 200",
+        "date": "2026-10-10",
+        "content_verified": "Official primary page and relevant content opened with web tool."
+      },
+      {
+        "url": "https://redis.io/docs/latest/develop/using-commands/transactions/",
+        "status": "LIVE",
+        "detail": "HTTP 200",
+        "date": "2026-10-10",
+        "content_verified": "Official primary page and relevant content opened with web tool."
+      },
+      {
+        "url": "https://redis.io/docs/latest/operate/oss_and_stack/management/scaling/",
+        "status": "LIVE",
+        "detail": "HTTP 200",
+        "date": "2026-10-10",
+        "content_verified": "Official primary page and relevant content opened with web tool."
+      },
+      {
+        "url": "https://tc39.es/ecma262/multipage/control-abstraction-objects.html#sec-promise-objects",
+        "status": "LIVE",
+        "detail": "HTTP 200",
+        "date": "2026-10-10",
+        "content_verified": "Official primary page and relevant content opened with web tool."
+      },
+      {
+        "url": "https://www.typescriptlang.org/docs/handbook/2/classes.html",
+        "status": "LIVE",
+        "detail": "HTTP 200",
+        "date": "2026-10-10",
+        "content_verified": "Official primary page and relevant content opened with web tool."
+      }
+    ],
+    "rendered-results": {
+      "routes": 23,
+      "checks": 184,
+      "matrix": [
+        {
+          "route": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.05-lexical-environment.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.05-lexical-environment.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.05-lexical-environment.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.05-lexical-environment.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.05-lexical-environment.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.05-lexical-environment.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.05-lexical-environment.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.05-lexical-environment.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.01-event-loop.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.01-event-loop.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.01-event-loop.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.01-event-loop.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.01-event-loop.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.01-event-loop.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.01-event-loop.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.01-event-loop.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.02-promises.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.02-promises.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.02-promises.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.02-promises.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.02-promises.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.02-promises.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.02-promises.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.02-promises.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "20-backend/20.5-security/01-auth/20.5.1.01-auth-fundamentals.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.5-security/01-auth/20.5.1.01-auth-fundamentals.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "20-backend/20.5-security/01-auth/20.5.1.01-auth-fundamentals.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "20-backend/20.5-security/01-auth/20.5.1.01-auth-fundamentals.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "20-backend/20.5-security/01-auth/20.5.1.01-auth-fundamentals.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.5-security/01-auth/20.5.1.01-auth-fundamentals.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "20-backend/20.5-security/01-auth/20.5.1.01-auth-fundamentals.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "20-backend/20.5-security/01-auth/20.5.1.01-auth-fundamentals.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "20-backend/20.5-security/01-auth/20.5.1.05-jwt.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.5-security/01-auth/20.5.1.05-jwt.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "20-backend/20.5-security/01-auth/20.5.1.05-jwt.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "20-backend/20.5-security/01-auth/20.5.1.05-jwt.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "20-backend/20.5-security/01-auth/20.5.1.05-jwt.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.5-security/01-auth/20.5.1.05-jwt.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "20-backend/20.5-security/01-auth/20.5.1.05-jwt.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "20-backend/20.5-security/01-auth/20.5.1.05-jwt.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "20-backend/20.5-security/02-attacks-and-defense/20.5.2.02-csrf.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.5-security/02-attacks-and-defense/20.5.2.02-csrf.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "20-backend/20.5-security/02-attacks-and-defense/20.5.2.02-csrf.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "20-backend/20.5-security/02-attacks-and-defense/20.5.2.02-csrf.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "20-backend/20.5-security/02-attacks-and-defense/20.5.2.02-csrf.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.5-security/02-attacks-and-defense/20.5.2.02-csrf.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "20-backend/20.5-security/02-attacks-and-defense/20.5.2.02-csrf.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "20-backend/20.5-security/02-attacks-and-defense/20.5.2.02-csrf.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "20-backend/20.5-security/03-hardening-and-operations/20.5.3.01-encryption.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.5-security/03-hardening-and-operations/20.5.3.01-encryption.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "20-backend/20.5-security/03-hardening-and-operations/20.5.3.01-encryption.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "20-backend/20.5-security/03-hardening-and-operations/20.5.3.01-encryption.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "20-backend/20.5-security/03-hardening-and-operations/20.5.3.01-encryption.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.5-security/03-hardening-and-operations/20.5.3.01-encryption.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "20-backend/20.5-security/03-hardening-and-operations/20.5.3.01-encryption.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "20-backend/20.5-security/03-hardening-and-operations/20.5.3.01-encryption.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.02-distributed-transactions.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.02-distributed-transactions.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.02-distributed-transactions.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.02-distributed-transactions.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.02-distributed-transactions.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.02-distributed-transactions.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.02-distributed-transactions.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.02-distributed-transactions.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "20-backend/20.8-caching/20.8.01-caching-deep-dive.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.8-caching/20.8.01-caching-deep-dive.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "20-backend/20.8-caching/20.8.01-caching-deep-dive.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "20-backend/20.8-caching/20.8.01-caching-deep-dive.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "20-backend/20.8-caching/20.8.01-caching-deep-dive.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.8-caching/20.8.01-caching-deep-dive.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "20-backend/20.8-caching/20.8.01-caching-deep-dive.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "20-backend/20.8-caching/20.8.01-caching-deep-dive.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "20-backend/20.8-caching/20.8.04-interview-questions.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.8-caching/20.8.04-interview-questions.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "20-backend/20.8-caching/20.8.04-interview-questions.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "20-backend/20.8-caching/20.8.04-interview-questions.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "20-backend/20.8-caching/20.8.04-interview-questions.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.8-caching/20.8.04-interview-questions.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "20-backend/20.8-caching/20.8.04-interview-questions.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "20-backend/20.8-caching/20.8.04-interview-questions.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.02-dry-kiss-yagni.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.02-dry-kiss-yagni.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.02-dry-kiss-yagni.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.02-dry-kiss-yagni.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.02-dry-kiss-yagni.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.02-dry-kiss-yagni.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.02-dry-kiss-yagni.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.02-dry-kiss-yagni.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.03-oop-concepts.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.03-oop-concepts.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.03-oop-concepts.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.03-oop-concepts.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.03-oop-concepts.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.03-oop-concepts.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.03-oop-concepts.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.03-oop-concepts.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.02-consistency-models.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.02-consistency-models.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.02-consistency-models.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.02-consistency-models.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.02-consistency-models.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.02-consistency-models.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.02-consistency-models.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.02-consistency-models.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.05-caching-patterns.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.05-caching-patterns.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.05-caching-patterns.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.05-caching-patterns.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.05-caching-patterns.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.05-caching-patterns.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.05-caching-patterns.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.05-caching-patterns.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.07-distributed-transactions.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.07-distributed-transactions.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.07-distributed-transactions.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.07-distributed-transactions.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.07-distributed-transactions.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.07-distributed-transactions.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.07-distributed-transactions.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.07-distributed-transactions.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.11-architecture-patterns.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.11-architecture-patterns.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.11-architecture-patterns.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.11-architecture-patterns.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.11-architecture-patterns.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.11-architecture-patterns.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.11-architecture-patterns.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.11-architecture-patterns.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.04-resource-quotas.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.04-resource-quotas.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.04-resource-quotas.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.04-resource-quotas.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.04-resource-quotas.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.04-resource-quotas.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.04-resource-quotas.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.04-resource-quotas.html",
+          "theme": "dark",
+          "width": 1920
+        }
+      ],
+      "screenshots": [
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.02-consistency-models.html",
+          "theme": "light",
+          "width": 1280,
+          "file": "consistency-light.png"
+        },
+        {
+          "route": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.04-resource-quotas.html",
+          "theme": "dark",
+          "width": 375,
+          "file": "quota-dark-mobile.png"
+        }
+      ]
+    },
+    "module-results": {
+      "checks": [
+        "Native ES module imports observe live counter binding; assignment to import rejects"
+      ],
+      "output": [
+        "0",
+        "1",
+        "TypeError"
+      ],
+      "count": 1
+    },
+    "badge-page-results": {
+      "repaired": 64,
+      "published": 60,
+      "privateExcluded": 4,
+      "checks": 120,
+      "matrix": [
+        {
+          "route": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "10-frontend/10.5-form-handling/10.5.07-interview-questions.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "10-frontend/10.5-form-handling/10.5.07-interview-questions.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "10-frontend/10.6-animation/10.6.08-interview-questions.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "10-frontend/10.6-animation/10.6.08-interview-questions.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "10-frontend/10.8-mobile/10.8.07-interview-questions.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "10-frontend/10.8-mobile/10.8.07-interview-questions.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.2-nestjs/05-advanced-and-interview/20.2.5.02-interview-questions.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.2-nestjs/05-advanced-and-interview/20.2.5.02-interview-questions.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.01-api-design-patterns.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.01-api-design-patterns.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.03-bff.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.03-bff.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.3-rest-apis/05-interview-drills/20.3.5.01-interview-questions.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.3-rest-apis/05-interview-drills/20.3.5.01-interview-questions.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.4-database/05-operations-and-scaling/20.4.5.03-soft-delete-and-tombstones.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.4-database/05-operations-and-scaling/20.4.5.03-soft-delete-and-tombstones.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.4-database/05-operations-and-scaling/20.4.5.06-interview-questions.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.4-database/05-operations-and-scaling/20.4.5.06-interview-questions.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.5-security/04-interview-drills/20.5.4.01-interview-questions.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.5-security/04-interview-drills/20.5.4.01-interview-questions.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.6-microservices/05-interview-drills/20.6.5.01-interview-questions.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.6-microservices/05-interview-drills/20.6.5.01-interview-questions.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.7-graphql/04-interview-prep/20.7.4.01-interview-questions.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.7-graphql/04-interview-prep/20.7.4.01-interview-questions.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/06-interview-prep/30.1.6.01-interview-questions.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.1-design-patterns/06-interview-prep/30.1.6.01-interview-questions.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.02-consistency-models.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.02-consistency-models.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.17-probabilistic-data-structures.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.17-probabilistic-data-structures.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.18-outbox-and-cdc.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.18-outbox-and-cdc.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.19-resilience-patterns-deep-dive.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.19-resilience-patterns-deep-dive.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.20-multi-region-deployment.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.20-multi-region-deployment.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/02-case-studies/30.2.2.01-url-shortener.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/02-case-studies/30.2.2.01-url-shortener.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/02-case-studies/30.2.2.13-rate-limiter.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/02-case-studies/30.2.2.13-rate-limiter.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "40-platform/40.1-docker/40.1.10-interview-questions.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "40-platform/40.1-docker/40.1.10-interview-questions.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "40-platform/40.2-kubernetes/06-interview-prep/40.2.6.01-interview-questions.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "40-platform/40.2-kubernetes/06-interview-prep/40.2.6.01-interview-questions.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "40-platform/40.3-ci-cd/04-interview-prep/40.3.4.01-interview-questions.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "40-platform/40.3-ci-cd/04-interview-prep/40.3.4.01-interview-questions.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "40-platform/40.4-observability/05-interview-prep/40.4.5.01-interview-questions.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "40-platform/40.4-observability/05-interview-prep/40.4.5.01-interview-questions.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "40-platform/40.5-build-tools/04-interview-prep/40.5.4.01-interview-questions.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "40-platform/40.5-build-tools/04-interview-prep/40.5.4.01-interview-questions.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "40-platform/40.6-git-advanced/40.6.10-interview-questions.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "40-platform/40.6-git-advanced/40.6.10-interview-questions.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "40-platform/40.7-serverless-edge/40.7.08-interview-questions.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "40-platform/40.7-serverless-edge/40.7.08-interview-questions.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "40-platform/40.8-monorepo/40.8.06-interview-questions.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "40-platform/40.8-monorepo/40.8.06-interview-questions.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "40-platform/40.9-twelve-factor/40.9.01-the-twelve-factor-app.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "40-platform/40.9-twelve-factor/40.9.01-the-twelve-factor-app.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "50-quality/50.1-testing/05-advanced/50.1.5.02-chaos-engineering.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "50-quality/50.1-testing/05-advanced/50.1.5.02-chaos-engineering.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "50-quality/50.1-testing/06-interview-prep/50.1.6.01-interview-questions.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "50-quality/50.1-testing/06-interview-prep/50.1.6.01-interview-questions.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.09-interview-questions.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "50-quality/50.2-accessibility/50.2.09-interview-questions.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/04-interview-prep/50.3.4.01-interview-questions.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "50-quality/50.3-performance-monitoring/04-interview-prep/50.3.4.01-interview-questions.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "60-realtime/60.1-websockets/04-interview-prep/60.1.4.01-interview-questions.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "60-realtime/60.1-websockets/04-interview-prep/60.1.4.01-interview-questions.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "70-interview-toolkit/70.1-behavioral/70.1.02-leadership-questions.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "70-interview-toolkit/70.1-behavioral/70.1.02-leadership-questions.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "70-interview-toolkit/70.1-behavioral/70.1.03-judgment-calls-ambiguity.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "70-interview-toolkit/70.1-behavioral/70.1.03-judgment-calls-ambiguity.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "70-interview-toolkit/70.1-behavioral/70.1.04-system-design-behavioral.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "70-interview-toolkit/70.1-behavioral/70.1.04-system-design-behavioral.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "70-interview-toolkit/70.1-behavioral/70.1.05-behavioral-anti-patterns-checklist.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "70-interview-toolkit/70.1-behavioral/70.1.05-behavioral-anti-patterns-checklist.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "70-interview-toolkit/70.3-cheatsheets/70.3.01-javascript-cheat-sheet.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "70-interview-toolkit/70.3-cheatsheets/70.3.01-javascript-cheat-sheet.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "70-interview-toolkit/70.3-cheatsheets/70.3.02-typescript-cheat-sheet.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "70-interview-toolkit/70.3-cheatsheets/70.3.02-typescript-cheat-sheet.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "70-interview-toolkit/70.3-cheatsheets/70.3.03-react-nextjs-cheat-sheet.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "70-interview-toolkit/70.3-cheatsheets/70.3.03-react-nextjs-cheat-sheet.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "70-interview-toolkit/70.3-cheatsheets/70.3.04-backend-cheat-sheet.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "70-interview-toolkit/70.3-cheatsheets/70.3.04-backend-cheat-sheet.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "70-interview-toolkit/70.3-cheatsheets/70.3.05-system-design-cheat-sheet.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "70-interview-toolkit/70.3-cheatsheets/70.3.05-system-design-cheat-sheet.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "70-interview-toolkit/70.3-cheatsheets/70.3.06-docker-kubernetes-cicd-cheat-sheet.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "70-interview-toolkit/70.3-cheatsheets/70.3.06-docker-kubernetes-cicd-cheat-sheet.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "70-interview-toolkit/70.3-cheatsheets/70.3.07-sql-data-modeling-cheat-sheet.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "70-interview-toolkit/70.3-cheatsheets/70.3.07-sql-data-modeling-cheat-sheet.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "80-lanes-abroad-full-stack/80.01-take-home-playbook.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "80-lanes-abroad-full-stack/80.01-take-home-playbook.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "80-lanes-abroad-full-stack/80.03-system-design-eu-patterns.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "80-lanes-abroad-full-stack/80.03-system-design-eu-patterns.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "80-lanes-abroad-full-stack/80.07-company-profiles.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "80-lanes-abroad-full-stack/80.07-company-profiles.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "80-lanes-abroad-full-stack/80.09-quick-reference-cards.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "80-lanes-abroad-full-stack/80.09-quick-reference-cards.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "80-lanes-abroad-full-stack/80.12-story-bank.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "80-lanes-abroad-full-stack/80.12-story-bank.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "80-lanes-abroad-full-stack/80.13-study-plan.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "80-lanes-abroad-full-stack/80.13-study-plan.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "80-lanes-abroad-full-stack/80.14-berlin-dual-career-plan.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "80-lanes-abroad-full-stack/80.14-berlin-dual-career-plan.html",
+          "theme": "dark",
+          "width": 320
+        }
+      ]
+    }
+  },
+  "local_check_groups": 71,
+  "fixtures": [
+    {
+      "temporary_path": "/tmp/bible-senior-audit/check-examples.cjs",
+      "sha256": "503b28e25ea802af86b1942b30e9f28891c7c901057e5e939520b68840475f56"
+    },
+    {
+      "temporary_path": "/tmp/bible-senior-audit/check-additional.cjs",
+      "sha256": "0d1f253f1c6cef63d1c54f2011d57a8496272f0190e85b4f5c684981d9b5e213"
+    },
+    {
+      "temporary_path": "/tmp/bible-senior-audit/check-database.py",
+      "sha256": "6830548134b0e7e8b8f2b8a30a3f0fd53b08edd967b3c289ba2be414af0d40fc"
+    },
+    {
+      "temporary_path": "/tmp/bible-senior-audit/check-redis.py",
+      "sha256": "d40e9a08fa058b721dcf4b96487c215a35c2b7857955916ba4c4457f0c63b6c5"
+    },
+    {
+      "temporary_path": "/tmp/bible-senior-audit/check-objects.cjs",
+      "sha256": "3b576cba103c9363d6755be4907fef1f7fef6ac075f015ef070fbc693e76914a"
+    },
+    {
+      "temporary_path": "/tmp/bible-senior-audit/check-rendered.cjs",
+      "sha256": "e582aa3a813517b19238ae3ba32daac5998e9fe01b32f37635a7e7dd366fc0a3"
+    },
+    {
+      "temporary_path": "/tmp/bible-senior-audit/check-badge-pages.cjs",
+      "sha256": "120ff229ec2e7d873d75fd02cd9ab1e40cd13e3a36f5cc0f65abdeef605d0d20"
+    },
+    {
+      "temporary_path": "/tmp/bible-senior-audit/serve-site.py",
+      "sha256": "0af0e2a904026b4bd01af4f3dc3b5c847a6c516c7d0dcd7091b5960094908b44"
+    }
+  ],
+  "badge_regression": {
+    "red": "Both new malformed-URL cases exited 0 on the old checker, reproducing the defect.",
+    "green": "All 87 planted-defect and clean-control gate cases pass after repair."
+  },
+  "limits": [
+    "No complete fresh semantic review is claimed for pending documents or header-only changes.",
+    "PostgreSQL and Redis tests use isolated disposable containers without host ports or mounted data; containers stopped afterward.",
+    "OAuth callback record executed locally; no real provider code exchange or identity validation integration executed.",
+    "No live Kubernetes, managed-service failover, cloud DB, cross-region or all-chapter compilation test.",
+    "Standalone TS snippets are strictly checked only where recorded; other selected TS examples were transpiled and executed.",
+    "Temporary validation fixtures are recorded for this run, not installed as a universal all-chapter test suite."
+  ],
+  "mobile_prose_regression": {
+    "cause": "Plain text create/redirect/ownership/deletion/analytics extends outside a 320px paragraph; computed text Range confirmed the overflow.",
+    "red": "Reader fixture fails before CSS repair: 343 > 320.",
+    "green": "The same fixture passes with overflow-wrap:anywhere on prose blocks; fenced code still uses scrolling.",
+    "fixture": "scripts/test_reading_ui_browser.cjs",
+    "initial_reader_failure": "An earlier final-output parallel run observed 330 > 320. Standalone diagnostics initially did not reproduce it; broader repaired-badge coverage revealed the deterministic unbroken-prose case.",
+    "preview_server_investigation": {
+      "observation": "Parallel reader diagnostics reproduced net::ERR_CONNECTION_RESET for local CSS resources; computed inline-code overflow-wrap was normal because the stylesheet was unavailable. Two animation frames did not repair missing CSS.",
+      "resolution": "Temporary ThreadingHTTPServer backlog increased to 128. All four final browser suites passed concurrently without changing production CSS or weakening assertions."
+    }
+  },
+  "final_checks": {
+    "repository_gates": {
+      "passed": 30,
+      "total": 30,
+      "log": "/tmp/bible-senior-audit/verify-final.log"
+    },
+    "internal_links": {
+      "checked": 10939,
+      "anchors_verified": 231,
+      "broken": 0,
+      "stale_labels": 0,
+      "stale_inline_paths": 0,
+      "external_links_skipped": 8326
+    },
+    "jekyll": {
+      "version": "3.9",
+      "build": "passed",
+      "destination": "/tmp/bible-senior-precision-site"
+    },
+    "private_exclusions": "Source existence and built absence checked for personal data, Indian lane and both internal JSON audit files; public progress report exists. Built reading CSS equals source bytes.",
+    "reader_browser": "passed: outline, keyboard destination, system/explicit themes, text/syntax contrast, long prose and inline code, persisted toggle, denied storage, normal/reduced motion",
+    "read_aloud_browser": "passed: controls, pause/resume/stop, extraction, mobile, speed, departure cancellation, unsupported browser",
+    "career_ops_doctor": "passed; no career-ops changes committed",
+    "gate_regression_cases": 87,
+    "pending_complete_semantic_reviews": 993
+  }
+}

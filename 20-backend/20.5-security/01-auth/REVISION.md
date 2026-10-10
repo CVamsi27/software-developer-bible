@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Security-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -25,6 +25,14 @@ Source: [Auth Fundamentals — Identity, Credentials & Crypto Primitives](20.5.1
 **Q:** Why must authentication and authorization be separate decisions?
 
 **A:** Authentication establishes a principal; authorization decides whether that principal may perform this operation on this resource. A valid login does not establish tenant membership or ownership.
+
+**Q:** Why does a public signature-verification key need trusted distribution even though it is not secret?
+
+**A:** A verifier must know that the key belongs to its accepted issuer. An attacker-controlled replacement key can validate attacker-issued messages. Public verification material can be disclosed; its identity, allowed algorithms, audience and lifecycle still require validation.
+
+**Q:** How does a webhook HMAC differ from a digital signature?
+
+**A:** HMAC producers and verifiers share a secret, so every verifier can generate a valid MAC. A digital-signature verifier can use a public key without obtaining the private signing capability. Neither mechanism encrypts the body or supplies replay prevention by itself.
 
 ## HTTP Basic & Digest Authentication
 
@@ -105,6 +113,14 @@ Source: [OAuth 2.0 & OpenID Connect](20.5.1.06-oauth2-oidc.md)
 **Q:** What authentication contract does OpenID Connect add to OAuth?
 
 **A:** OIDC adds authentication assertions, notably an ID token with recipient and issuer validation. An access token authorizes resource access; it should not be treated as an interchangeable identity token.
+
+**Q:** A callback has a matching state and returns a valid access token. Has the application established an OIDC login?
+
+**A:** No. It must validate the ID token under the trusted issuer/client/nonce contract, map the provider subject and then create the local session. The API independently validates the access token's intended recipient and permissions.
+
+**Q:** Does storing a credential in an HttpOnly cookie remove the need for CSRF protection?
+
+**A:** No. JavaScript cannot read that cookie, but the browser can still attach it automatically. A backend using it must protect its state-changing requests; direct bearer-header usage has a different credential-attachment boundary.
 
 ## SSO, SAML & Federation
 

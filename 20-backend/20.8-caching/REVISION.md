@@ -22,6 +22,14 @@ Source: [Caching Deep-Dive](20.8.01-caching-deep-dive.md).
 
 **A:** It prevents reuse of the previous serialization namespace. A source write and namespace change still have separate timing; a reader can load an old source snapshot into the new key unless the version/read contract prevents it.
 
+**Q:** L1 installs a value from L2 with a new five-second TTL. Is that value at most five seconds old?
+
+**A:** No. It may already have aged in L2 or come from a delayed source read. Propagate and enforce the relevant source/version freshness information, or accept the whole path's stated stale-read window.
+
+**Q:** The cache limits its map to 100 entries. Has it bounded memory to a known number of bytes?
+
+**A:** No. Entry sizes, retained result objects and in-flight responses vary. A count limit needs payload limits or a measured byte policy when memory is the constraint.
+
 **Q:** What must the service survive when an entire hot cache is empty?
 
 **A:** A burst of origin reads. Coalesce identical misses, cap origin concurrency, and shed/serve stale work under an explicit policy; merely adding retries amplifies the burst.

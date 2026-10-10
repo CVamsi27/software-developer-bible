@@ -1,6 +1,6 @@
 # NestJS — Index
 
-> **Study time:** ≈ 3 h 14 m of reading (24 files, ~8 min average).
+> **Study time:** ≈ 3 h 12 m of reading (24 files, ~8 min average).
 > **24 files** — NestJS framework from modules and controllers to guards, pipes, interceptors, CQRS, microservices, testing, configuration, lifecycle/shutdown, scheduling, OpenAPI docs, custom decorators, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-24-blue)](../../INDEX.md)
@@ -73,7 +73,7 @@ The patterns NestJS supports out of the box. Category INDEX: [Patterns](03-patte
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [CQRS](03-patterns/20.2.3.01-cqrs.md) | Commands, queries, events, sagas, command/query buses, `@nestjs/cqrs` | Essential | Important | 8 min |
+| 01 | [CQRS](03-patterns/20.2.3.01-cqrs.md) | Commands, queries, events, sagas, command/query buses, `@nestjs/cqrs` | Essential | Important | 7 min |
 | 02 | [Microservices](03-patterns/20.2.3.02-microservices.md) | TCP, Redis, RabbitMQ, Kafka, gRPC transports, hybrid apps, message patterns | Important | Important | 8 min |
 
 ---
@@ -99,7 +99,7 @@ Category INDEX: [Advanced & Interview](05-advanced-and-interview/INDEX.md).
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Custom Decorators](05-advanced-and-interview/20.2.5.01-custom-decorators.md) | Parameter decorators (@CurrentUser, @ClinicId, @Pagination), method decorators (@RateLimit, @Cache, @Audit), decorator composition | Essential | Important | 11 min |
-| 02 | [Interview Questions](05-advanced-and-interview/20.2.5.02-interview-questions.md) | 40 practice questions with answers | Essential | Important | 8 min |
+| 02 | [Interview Questions](05-advanced-and-interview/20.2.5.02-interview-questions.md) | 40 practice questions with answers | Essential | Important | 7 min |
 
 ---
 

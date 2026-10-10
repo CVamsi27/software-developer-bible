@@ -45,6 +45,9 @@ exclude:
   # in site-build.yml asserts these never appear in _site/.
   - 80-lanes-abroad-full-stack/personal
   - 81-lanes-indian-sde-faang
+  # Internal audit evidence includes private source-path inventories.
+  - docs/2026-10-10-senior-precision-audit.json
+  - docs/2026-10-10-senior-precision-validation.json
 
 # Content pages are rendered with the Minima theme (like the homepage).
 # jekyll-github-metadata (auto-required by the github-pages gem) has NO

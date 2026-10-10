@@ -306,7 +306,10 @@ def check_metadata(text: str):
         problems.append(f"metadata: badges out of order (got {found})")
     tag_badge = re.search(r'\[!\[Tags\]\(https://img\.shields\.io/badge/tags-(.+)-lightgrey\)\]', header)
     if fields and tag_badge:
-        badge_tags = unquote(tag_badge.group(1)).replace('--', '-').replace(' · ', ', ')
+        encoded_tags = unquote(tag_badge.group(1))
+        if any(len(run.group()) % 2 for run in re.finditer(r'-+', encoded_tags)):
+            problems.append('metadata: Tags badge has an unescaped hyphen (use -- for a literal hyphen)')
+        badge_tags = encoded_tags.replace('--', '-').replace(' · ', ', ')
         comment_tags = fields.get('tags', '')
         if {t.strip().lower() for t in comment_tags.split(',')} != {t.strip().lower() for t in badge_tags.split(',')}:
             problems.append('metadata: comment tags disagree with the Tags badge (check for truncated values)')

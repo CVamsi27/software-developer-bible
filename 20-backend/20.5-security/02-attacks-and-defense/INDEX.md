@@ -1,6 +1,6 @@
 # Attacks & Defense - Security
 
-> **Study time:** ≈ 35 min of reading (5 files, ~7 min average).
+> **Study time:** ≈ 34 min of reading (5 files, ~7 min average).
 > **5 files.** What can go wrong and how to stop it: XSS, CSRF, SQL injection, and the OWASP API Top 10 — the most-asked attack questions in senior interviews.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../INDEX.md)
@@ -16,7 +16,7 @@ Start with where untrusted text becomes executable browser content. Then separat
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [XSS](20.5.2.01-xss.md) | Stored/reflected/DOM XSS, CSP, encoding, sanitization | Essential | Foundational | 8 min |
+| 01 | [XSS](20.5.2.01-xss.md) | Stored/reflected/DOM XSS, CSP, encoding, sanitization | Essential | Foundational | 7 min |
 | 02 | [CSRF](20.5.2.02-csrf.md) | SameSite, CSRF tokens, double-submit cookies, origin checking | Essential | Foundational | 8 min |
 | 03 | [SQL Injection](20.5.2.03-sql-injection.md) | Parameterized queries, ORM protection, input validation, WAF | Essential | Foundational | 7 min |
 | 04 | [API Security Best Practices](20.5.2.04-api-security-best-practices.md) | OWASP API Top 10, BOLA/BFLA, mass assignment, SSRF, helmet | Essential | Foundational | 10 min |

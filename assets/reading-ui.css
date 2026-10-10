@@ -38,7 +38,7 @@ html[data-theme="light"] { color-scheme: light; }
 .post-content h2 { font-size: 1.5rem; margin-top: 2.5rem; }
 .post-content h3 { font-size: 1.2rem; }
 .post-content h4 { font-size: 1.05rem; }
-.post-content :is(p, ul, ol, blockquote) { max-width: none; }
+.post-content :is(p, ul, ol, blockquote) { max-width: none; overflow-wrap: anywhere; }
 /* Long inline identifiers can wrap; preformatted code retains its own scroll. */
 .post-content :not(pre) > code { overflow-wrap: anywhere; }
 .post-content :is(h2, h3, h4) { scroll-margin-top: 150px; }

@@ -1,6 +1,6 @@
 # Security — Index
 
-> **Study time:** ≈ 3 h 38 m of reading (24 files, ~9 min average).
+> **Study time:** ≈ 3 h 36 m of reading (24 files, ~9 min average).
 > **The senior security learning track.** Study in three passes: **I. Auth** (the [01-auth](01-auth/INDEX.md) deep-dive: fundamentals → Basic/API keys → sessions → tokens → OAuth → SSO/SAML → MFA/passkeys → authorization) → **II. Attacks & Defense** (XSS, CSRF, SQLi, API Top 10) → **III. Hardening & Operations** (headers/CSP, threat modeling, secrets). Finish with the interview banks.
 >
 > 24 files — from HTTP Basic auth to passkeys, and from XSS to STRIDE, secrets management, vulnerability management, and authored interview questions.
@@ -54,12 +54,12 @@ A complete 10-stage track in [01-auth](01-auth/INDEX.md). Read these in order �
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | ----: | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ------------- | ------------------ | --------: |
-| 0 | [Auth Fundamentals](01-auth/20.5.1.01-auth-fundamentals.md) | Identity vs permissions, hashing vs encryption vs signing, Argon2id, CSPRNG, TLS | Essential | 7 min | 7 min |
+| 0 | [Auth Fundamentals](01-auth/20.5.1.01-auth-fundamentals.md) | Identity vs permissions, hashing vs encryption vs signing, Argon2id, CSPRNG, TLS | Essential | 7 min | 8 min |
 | 1 | [HTTP Basic & Digest Auth](01-auth/20.5.1.02-http-basic-digest-auth.md) | Authorization header, Base64-over-TLS, 401 handshake, Digest challenge-response legacy, nginx patterns | Important | 14 min | 15 min |
 | 2 | [API Keys](01-auth/20.5.1.03-api-keys.md) | CSPRNG generation, hashing keys at rest, `sk_live_` prefixes, rotation windows, scopes, leak runbook | Essential | 13 min | 14 min |
 | 3 | [Sessions & Cookies](01-auth/20.5.1.04-sessions-cookies.md) | Cookie flags, session stores, fixation/hijacking, timeouts | Essential | 16 min | 10 min |
-| 4 | [JWT](01-auth/20.5.1.05-jwt.md) | Token structure, signing algorithms, storage trade-offs, refresh rotation, revocation | Essential | 12 min | 11 min |
-| 5 | [OAuth2 / OIDC](01-auth/20.5.1.06-oauth2-oidc.md) | Grants, PKCE, scopes, social login, the OIDC identity layer | Essential | 19 min | 13 min |
+| 4 | [JWT](01-auth/20.5.1.05-jwt.md) | Token structure, signing algorithms, storage trade-offs, refresh rotation, revocation | Essential | 12 min | 10 min |
+| 5 | [OAuth2 / OIDC](01-auth/20.5.1.06-oauth2-oidc.md) | Grants, PKCE, scopes, social login, the OIDC identity layer | Essential | 19 min | 12 min |
 | 6 | [SSO / SAML / Federation](01-auth/20.5.1.07-sso-saml-federation.md) | One IdP many SPs, SAML flows, assertions & certs, SAML vs OIDC, SCIM/JIT provisioning | Important | 14 min | 14 min |
 | 7 | [MFA / Passkeys / WebAuthn](01-auth/20.5.1.08-mfa-passkeys-webauthn.md) | TOTP mechanics, SMS weaknesses, WebAuthn ceremonies, passkey sync, AAL levels, recovery | Important | 18 min | 14 min |
 | 8 | [RBAC / ABAC](01-auth/20.5.1.09-rbac-abac.md) | Role-based vs attribute-based vs relationship-based, policy engines, deny-by-default | Essential | 20 min | 12 min |
@@ -72,7 +72,7 @@ Stages 10 = the auth question bank below ([drills](01-auth/20.5.1.11-interview-q
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | ----: | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------- | ------------- | ------------------ | --------: |
-| 9 | [XSS](02-attacks-and-defense/20.5.2.01-xss.md) | Stored/reflected/DOM XSS, CSP, encoding, sanitization | Essential | 11 min | 8 min |
+| 9 | [XSS](02-attacks-and-defense/20.5.2.01-xss.md) | Stored/reflected/DOM XSS, CSP, encoding, sanitization | Essential | 11 min | 7 min |
 | 10 | [CSRF](02-attacks-and-defense/20.5.2.02-csrf.md) | SameSite, CSRF tokens, double-submit cookies, origin checking | Essential | 14 min | 8 min |
 | 11 | [SQL Injection](02-attacks-and-defense/20.5.2.03-sql-injection.md) | Parameterized queries, ORM protection, input validation, WAF | Essential | 12 min | 7 min |
 | 12 | [API Security Best Practices](02-attacks-and-defense/20.5.2.04-api-security-best-practices.md) | OWASP API Top 10, BOLA/BFLA, mass assignment, SSRF, helmet | Essential | 11 min | 10 min |

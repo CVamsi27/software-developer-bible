@@ -584,6 +584,20 @@ CASES = [
         },
     },
     {
+        'name': 'gate 6b rejects a literal hyphen that splits a Tags badge into extra URL fields',
+        'gate': 'check_template.py', 'args': [],
+        'plant': {'p.md': FLOW_CLEAN.replace('tags-interview--questions-lightgrey', 'tags-interview-questions-lightgrey')},
+        'clean': {'p.md': FLOW_CLEAN},
+        'fire_names': ['unescaped hyphen'],
+    },
+    {
+        'name': 'gate 6b rejects a percent-encoded field separator in a Tags badge',
+        'gate': 'check_template.py', 'args': [],
+        'plant': {'p.md': FLOW_CLEAN.replace('tags-interview--questions-lightgrey', 'tags-interview%2Dquestions-lightgrey')},
+        'clean': {'p.md': FLOW_CLEAN.replace('tags-interview--questions-lightgrey', 'tags-interview%2D%2Dquestions-lightgrey')},
+        'fire_names': ['unescaped hyphen'],
+    },
+    {
         'name': 'gate 6b checks fence grammar in operational Markdown too',
         'gate': 'check_template.py', 'args': [],
         'plant': {'p.md': FLOW_CLEAN, 'docs/example.md': '# Example\n\n```text\nUnclosed sample\n'},

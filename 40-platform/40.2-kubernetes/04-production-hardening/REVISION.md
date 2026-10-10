@@ -74,6 +74,14 @@ Source: [Resource Quotas](40.2.4.04-resource-quotas.md)
 
 **A:** Admission can reject Pod creation. The workload controller may exist with fewer Pods than desired; inspect its events. This differs from an existing Pending Pod that the scheduler cannot place.
 
+**Q:** A namespace stays below its CPU-request quota. Can its running containers collectively use more CPU than that request total?
+
+**A:** Yes, when node capacity and their runtime limits permit it. Request accounting is not live usage accounting. Quotas restrict declared admission demand; runtime limits and node contention govern actual use.
+
+**Q:** Does a LimitRange minimum of one CPU reserve one CPU for each accepted container?
+
+**A:** No. It constrains the declared allocation. Scheduling still needs a suitable node, and latency depends on the workload and runtime conditions. Adding or changing defaults also does not retroactively resize existing Pods.
+
 ## Summary
 
 Use the answers to check your reasoning, then revisit the source mechanism and reproduce any relevant example without copying it. A remembered label is useful only when you can explain its limits.

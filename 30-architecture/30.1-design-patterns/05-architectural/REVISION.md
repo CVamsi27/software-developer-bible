@@ -90,6 +90,14 @@ Source: [DDD Tactical Patterns — Aggregates & Value Objects](30.1.5.05-ddd-tac
 
 **A:** The class invariant is insufficient for concurrent persistence. Use conditional versioning or appropriate transaction locking, and reevaluate conflicts before committing state and outbox intent.
 
+**Q:** Does an ORM relationship from order to customer put the customer inside the order aggregate?
+
+**A:** No. Aggregate membership follows owned lifecycle and immediate invariants, not navigation convenience. A customer can be referenced by identity while its contact details change independently. Persisting or loading a graph does not establish the domain boundary.
+
+**Q:** Which part loads and saves an order, and which part decides whether its lines allow placement?
+
+**A:** The application service coordinates the use case, persistence and outgoing intent. The aggregate owns its line and lifecycle rules; a domain service can own a business rule that does not naturally belong to one object. Remote calls require their own explicit recovery contract.
+
 ## Anti-Corruption Layer (ACL)
 
 Source: [Anti-Corruption Layer (ACL)](30.1.5.06-anti-corruption-layer.md)

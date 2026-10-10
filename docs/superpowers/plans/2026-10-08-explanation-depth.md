@@ -128,3 +128,35 @@ Goal: close the remaining related-reading defects across the complete 1,017-docu
 - [x] Review the final diff and evidence, then commit and push.
 
 Mobile finding: a long inline Kafka configuration name overflowed the viewport. The reader fixture reproduced it at 320 pixels before repair; allow wrapping only for inline code while retaining preformatted block scrolling, then rerun all rendered checks.
+
+## Book-informed precision pass — 10 October 2026
+
+This continues the approved explanation-depth scope after the reader reported that topic information is still imprecise. Previous review dispositions remain historical evidence; they do not certify this pass. Apply the existing definition/mechanism/trace/boundary contract with a fresh per-document accuracy record. Do not rewrite a correct page simply to make it longer.
+
+### Acceptance contract
+
+A senior reader must be able to state the exact concept, identify its state/authority, explain one operation and a changed-condition failure, and defend a choice against an alternative. Formal definitions must name the actual property rather than benefits or a neighboring pattern. Keep assumptions next to the claim: runtime, isolation level, acknowledgment boundary, consistency model, failure model or resource budget as applicable. An example must agree with its explanation and stop short of guarantees it cannot establish.
+
+Use the supplied books for reasoning and verified chapter attribution, with original wording and examples. Specifications and current official documentation determine version-sensitive behavior. Book advice remains contextual: small functions, fewer dependencies, patterns and service extraction are heuristics, not universal obligations. Record a source's edition and relevant section before citing a chapter number.
+
+### Source map
+
+- *Clean Code* (Robert C. Martin, supplied first-printing edition): naming, functions, boundaries, error handling, tests and classes. Apply its intent without imposing universal line counts or banning useful data structures.
+- *Head First Design Patterns* (Eric Freeman and collaborators, supplied edition): responsibilities, collaborations, composition and variation. Explain the actual collaboration before comparing named patterns.
+- *Designing Data-Intensive Applications* (Martin Kleppmann, 2017): storage chapter 3, replication 5, partitioning 6, transactions 7, distributed failures 8, consistency/consensus and atomic commit 9, streams 11. The supplied chapter 12 concerns future data systems; it is not the primary 2PC chapter.
+- *Clean Architecture* (Robert C. Martin): SOLID chapters 7–11, component cohesion/coupling 13–14, boundaries 17–19, business rules 20 and clean architecture 22. Distinguish source dependencies from execution direction and responsibility from method count.
+- *Fundamentals of Software Architecture* (Mark Richards and Neal Ford, 2020 first edition): modularity chapter 3, characteristics and fitness functions 4–7, architecture styles 9–18 and decisions/risk 19–20. Select a style from requirements and costs, not a rank or team-size slogan.
+- *System Design Interview: An Insider's Guide* (Alex Xu, supplied volume): requirement clarification, estimation and design progression. Treat example architectures and workload numbers as examples, not production facts.
+- *Domain-Driven Design Quickly* (Abel Avram and Floyd Marinescu, 2006; supplied `dokument.pdf`): ubiquitous language, entities/value objects, aggregates, services and repositories. Connect tactical objects to domain meaning and persistence/concurrency boundaries.
+
+### Ordered work and evidence
+
+- [x] **1. Inventory and claim audit.** Enumerate every current authored Markdown path. Store baseline hash, genre, candidate claims and this pass's pending/reviewed/revised state in `docs/2026-10-10-senior-precision-audit.json`. Scan references, definitions, repeated interview promises, absolute claims and comparison tables. A scan is candidate discovery; it cannot set semantic review to passed.
+- [ ] **2. Data/distributed foundation.** Read the complete system-design theory category and the matching database/microservice chapters and companions. Begin with `30.2.1.02-consistency-models.md`, `30.2.1.07-distributed-transactions.md`, `30.2.1.10-failure-modes.md` and `20.6.3.02-distributed-transactions.md`. Correct definition boundaries and book references; trace the actual consistency/commit contract and recovery. Verify cited primary sources and executable examples within their actual environment.
+- [ ] **3. Design and domain boundaries.** Read `30.1.1.01-solid-principles.md`, `30.1.1.02-dry-kiss-yagni.md`, `30.1.1.03-oop-concepts.md`, architectural patterns and tactical DDD, then their revision/interview companions. Replace universal rules and taxonomy-only guidance with responsibility, source-dependency and behavioral contracts. Use concrete change scenarios without duplicating canonical mechanisms.
+- [ ] **4. Application/runtime and platform contracts.** Review frontend, HTTP, Node/Nest, security, caching, brokers, deployment and resource control in dependency order. Reconcile definitions with code, diagrams and later qualifications. Start the confirmed platform contradiction in `40.2.4.04-resource-quotas.md`; distinguish configuration classes from resource/performance guarantees.
+- [ ] **5. Quality, real-time, interview and supporting material.** Review measurement, tests, delivery/ordering, coding costs, study navigation and guides in their genre. Preserve historical personal facts in their canonical home. Remove repeated unsupported promises that a topic will certainly appear in a senior interview; preserve specific explanations of its engineering relevance.
+- [ ] **6. Reconcile companions and review every remaining document.** Carry corrected semantics into source-linked revision questions and interview answers. Record unchanged documents with specific reasons. Keep unresolved and unreviewed paths pending; a structural gate or book citation is not evidence of technical accuracy.
+- [ ] **7. Verify and publish.** Recompute owned alignment/read-time/index/count metadata sequentially; probe new primary citations before updating the link baseline. Run the full Bible suite, standalone links, appropriate example fixtures, an external-destination Jekyll render with private paths excluded, and relevant reading/theme/width checks. Report actual semantic coverage and unresolved integrations separately from automated checks. Use the user's existing commit/push authorization for verified batches.
+
+Each reviewed file's evidence names the concrete claims checked, source/edition/section, complete-read disposition, counterexample or decision probe, and any executed versus source-only verification. No preferred-wording tests or arbitrary length floor will stand in for accuracy. The extracted book text stays in temporary local files; do not commit PDFs, extracted chapters or copied book examples.

@@ -24,13 +24,14 @@ function contrast(a, b) {
       });
       assert(Math.abs(sizes.article - sizes.paragraph) <= 1, `paragraph fills article at ${width}px: ${JSON.stringify(sizes)}`);
     }
-    // Long inline configuration names must not widen a mobile document.
+    // Long configuration names and unbroken prose must not widen a mobile document.
     await page.evaluate(() => {
       const paragraph = document.createElement('p');
       paragraph.id = 'inline-code-width-fixture';
       const code = document.createElement('code');
       code.textContent = 'unclean.leader.election.enable=false';
       paragraph.append('Configuration: ', code);
+      paragraph.append(' Operations: create/redirect/ownership/deletion/analytics');
       document.querySelector('.post-content').append(paragraph);
     });
     for (const theme of ['light', 'dark']) {
@@ -38,7 +39,7 @@ function contrast(a, b) {
       for (const width of [320, 375]) {
         await page.setViewportSize({width, height: 900});
         const scrollWidth = await page.evaluate(() => document.documentElement.scrollWidth);
-        assert(scrollWidth <= width, `long inline code widens ${theme} page: ${scrollWidth} > ${width}`);
+        assert(scrollWidth <= width, `long prose or inline code widens ${theme} page: ${scrollWidth} > ${width}`);
       }
     }
     await page.evaluate(() => document.getElementById('inline-code-width-fixture').remove());

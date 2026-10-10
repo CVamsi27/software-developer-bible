@@ -1,6 +1,6 @@
 # PostgreSQL Foundations - Database
 
-> **Study time:** ≈ 1 h 15 m of reading (7 files, ~11 min average).
+> **Study time:** ≈ 1 h 14 m of reading (7 files, ~11 min average).
 > **7 files.** How Postgres works under the hood: architecture and WAL, normalization, MVCC, SQL vs NoSQL trade-offs, performance tuning, and row-level security. Every backend interview starts here.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../INDEX.md)
@@ -25,7 +25,7 @@
 | 01 | [PostgreSQL](20.4.1.01-postgresql.md) | Architecture, WAL, vacuum, configuration, extensions, autovacuum | Essential | 23 min | 11 min |
 | 02 | [Normalization](20.4.1.02-normalization.md) | 1NF, 2NF, 3NF, BCNF, denormalization trade-offs, when to denormalize | Important | 20 min | 11 min |
 | 03 | [MVCC](20.4.1.03-mvcc.md) | Statement versus transaction snapshots, own writes, concurrent update failure, version cleanup | Important | 17 min | 14 min |
-| 04 | [SQL vs NoSQL](20.4.1.04-nosql-vs-sql.md) | Workload fit, CAP, consistency models, polyglot persistence, when to use what | Essential | 9 min | 12 min |
+| 04 | [SQL vs NoSQL](20.4.1.04-nosql-vs-sql.md) | Workload fit, CAP, consistency models, polyglot persistence, when to use what | Essential | 9 min | 11 min |
 | 05 | [PostgreSQL Performance](20.4.1.05-postgresql-performance.md) | Connection tuning, memory tuning, query optimization, VACUUM, partitioning, monitoring queries | Essential | 12 min | 11 min |
 | 06 | [Row-Level Security](20.4.1.06-row-level-security.md) | RLS policies, tenant isolation, session variables, defense-in-depth, multi-tenant SaaS | Essential | 11 min | 11 min |
 

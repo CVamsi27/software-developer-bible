@@ -42,6 +42,10 @@ Source: [CSRF (Cross-Site Request Forgery)](20.5.2.02-csrf.md)
 
 **A:** Validate an unpredictable token bound to the session or signed double-submit contract. Origin checks can complement it; neither proves user intent after XSS compromises a trusted origin.
 
+**Q:** Does a CSRF attacker need to steal the victim's cookie or read the response?
+
+**A:** No. A browser can carry eligible credentials on the forged request even when the attacker cannot read the cookie or response. Session hijacking and CSRF are distinct paths; authentication checks alone do not distinguish a legitimate mutation from the forged one.
+
 ## SQL Injection
 
 Source: [SQL Injection](20.5.2.03-sql-injection.md)

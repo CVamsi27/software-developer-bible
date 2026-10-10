@@ -30,6 +30,14 @@ Source: [SOLID Principles](30.1.1.01-solid-principles.md)
 
 **A:** Not necessarily. `apply(amount)` lacks that input. OCP protects the anticipated variation inside the current contract; a different requirement can require redesigning that contract and its callers.
 
+**Q:** An account class has deposit, withdrawal and balance methods. Does that alone violate SRP?
+
+**A:** No. Those methods may jointly preserve one coherent account rule. Identify independent stakeholder-driven changes and accidental coupling before splitting. An actor is a group with aligned requirements, not a method count; scattering an invariant across classes can make changes less safe.
+
+**Q:** A switch handles three stable variants. Does OCP require replacing it with strategies?
+
+**A:** No. First establish recurring variation whose changes should spare stable callers. A strategy boundary can help then; registration and genuinely changed contracts can still need edits. Compare that benefit with extra indirection.
+
 ### Preserved SOLID interview prompts
 
 **Q:** "What's the difference between SRP and OCP?"
@@ -75,6 +83,10 @@ Source: [OOP Concepts — Encapsulation, Inheritance, Polymorphism, Abstraction]
 **Q:** What changes if two processes withdraw from the same persisted account through separate object instances?
 
 **A:** A private field in each instance does not serialize shared writes. The implementation needs a transaction or concurrency mechanism that enforces the invariant across those instances.
+
+**Q:** Two implementations have the same interface. Does that establish low coupling?
+
+**A:** It can hide representation differences, but callers still depend on behavior, errors, timing and availability. Evaluate the actual change or failure that can propagate across the interface.
 
 ### Preserved OOP interview prompts
 

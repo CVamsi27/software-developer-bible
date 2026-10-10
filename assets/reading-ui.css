@@ -143,3 +143,19 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 /* Minima nests .highlight inside .highlighter-rouge with its own light fill. */
 .post-content .highlighter-rouge .highlight { background: var(--code-bg); }
 .post-content .highlighter-rouge pre code { background: transparent; border: 0; padding: 0; }
+
+.roadmap-return {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 6px 12px;
+  margin-bottom: 16px;
+  border: 1px solid var(--theme-border);
+  border-radius: 6px;
+  background: var(--card-bg);
+  color: var(--theme-link);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.roadmap-return:hover { background: var(--nav-pill-hover); }
+.roadmap-return:focus-visible { outline: 2px solid var(--theme-link); outline-offset: 3px; }

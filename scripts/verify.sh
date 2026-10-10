@@ -334,7 +334,7 @@ echo "------------------------------------------------------------"
 # broken to fire on everything cannot pass either). Closes the gap gates
 # 15-17 leave: they watch wiring, the fence reader, and the fixers — not
 # whether detection itself still works.
-if python3 scripts/test_gates.py > /dev/null 2>&1 && node --test assets/read-aloud.test.cjs; then
+if python3 scripts/test_gates.py > /dev/null 2>&1 && node --test assets/read-aloud.test.cjs scripts/roadmap-return.test.cjs; then
     echo "  PASS"
 else
     python3 scripts/test_gates.py | tail -10

@@ -6,6 +6,8 @@
 
 # Scripts Map — what runs, what owns what, what to reach for
 
+`roadmap-return.test.cjs` exercises safe dated return links and chapter/revision context; it runs with the JavaScript checks in `verify.sh`.
+
 > The main verification and maintenance scripts, arranged by the job they do inside the 30-gate
 > verification suite: the gate that runs it, what it owns exclusively, the
 > fixer or restamper to reach for when it fails, and the doctrine that keeps

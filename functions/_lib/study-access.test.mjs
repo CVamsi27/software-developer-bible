@@ -386,3 +386,10 @@ test("a real signed token for the approved account is allowed end to end", async
     restore();
   }
 });
+
+test("a signed-out chapter keeps its dated roadmap context through the login destination",async()=>{
+ const pathname="/10-frontend/scope.html",search="?roadmapDate=2026-10-12&roadmapTask=germany%3A2026%3Aday%3A2026-10-12";
+ const result=await decideAccess({hostname:"study.buildora.work",pathname,search,resolveSession:async()=>({email:null,hasToken:false})});
+ assert.equal(result.action,"login");
+ assert.equal(new URL(result.location,"https://study.buildora.work").searchParams.get("next"),pathname+search);
+});

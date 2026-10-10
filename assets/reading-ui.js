@@ -30,6 +30,18 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   var content = document.querySelector('.post-content');
   if (!content) return;
+  var roadmap = window.GermanyRoadmapReturn;
+  if (roadmap && !content.querySelector('.roadmap-return')) {
+    var returnLink = document.createElement('a');
+    returnLink.className = 'roadmap-return';
+    returnLink.textContent = 'Return to personal roadmap';
+    returnLink.href = roadmap.roadmapReturnUrl(window.location.search);
+    content.prepend(returnLink);
+    content.querySelectorAll('a[href]').forEach(function (link) {
+      if (link === returnLink) return;
+      link.href = roadmap.chapterWithContext(link.href, window.location.search);
+    });
+  }
   var authoredTitle = content.querySelector('h1');
   var header = document.querySelector('.post-header');
   var inferredTitle = header && header.querySelector('.post-title');

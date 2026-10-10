@@ -58,7 +58,7 @@ If ingress returns success before local processing finishes, establish durable r
 
 For jobs, uploads and status changes, compare the expected persisted state or claim generation at the write boundary. Distinguish a stale timeout from proof that the original worker stopped.
 
-For outbox delivery, define what processed means: local dispatch, durable handoff, consumer completion or final provider effect. Test failures after each boundary. A synchronous emitter result is insufficient evidence of async consumer completion; no queue design can promise success after exhausted retries without recovery.
+For outbox delivery, define what processed means: local dispatch, durable handoff, consumer completion or final provider effect. Test failures after each boundary. A synchronous emitter result is insufficient evidence of async consumer completion. The 9 October source recheck shows the relay now awaits `emitAsync` under a timeout; the next checks concern required listeners, propagated errors, uncancelled work and duplicate effects, as explained in [the async case](03-async-processing.md). No queue design can promise success after exhausted retries without recovery.
 
 ### Event Contract Evolution
 
@@ -102,7 +102,7 @@ Calling every external provider from every health probe can amplify an outage or
 
 Shared schemas already provide inferred types; adding a field does not necessarily require maintaining an independent TypeScript interface. Automatic form generation can help repetitive forms, but validation shape does not determine accessible labels, grouping, conditional workflow, widgets or clinical meaning.
 
-Prefer selective generation with explicit UI metadata and overrides. Verify accessibility, errors and user flow; do not replace a understandable form with a schema dump to reduce line count.
+Prefer selective generation with explicit UI metadata and overrides. Verify accessibility, errors and user flow; do not replace an understandable form with a schema dump to reduce line count.
 
 ## Real-World Decisions
 

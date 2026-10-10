@@ -1,13 +1,13 @@
 # Serverless & Edge — Index
 
-> **Study time:** ≈ 1 h 48 m of reading (11 files, ~10 min average).
+> **Study time:** ≈ 1 h 9 m of reading (11 files, ~6 min average).
 > **11 files** — Serverless and edge computing fundamentals, from overview and edge functions to AWS Lambda, Vercel, serverless patterns, IaC frameworks, durable execution, Fly.io deployment, Vite SPA on Cloudflare, and curated interview questions.
 
 [![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-DevOps-informational)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Why serverless:** Many mid-stage startups and most AWS deployments use Lambda, Step Functions, or event-driven architectures. Edge functions (Cloudflare Workers, Vercel Edge) are increasingly common for low-latency APIs. Senior interviews test when to use serverless vs containers vs VMs — and the cold start / cost / state trade-offs.
+**Why serverless:** Managed functions, containers and edge services make different promises about lifetime, placement and recovery. Senior interviews test when to use serverless vs containers vs VMs — and the cold start / cost / state trade-offs.
 
 ---
 
@@ -19,7 +19,7 @@
 | [Providers](#providers) | 2 | AWS Lambda, Vercel — the main platforms |
 | [Patterns & IaC](#patterns--iac) | 3 | Serverless patterns, IaC frameworks (SAM/CDK/SST), durable execution |
 | [Deployment](#deployment) | 2 | Fly.io containers, Vite SPA on Cloudflare |
-| [Interview Prep](#interview-prep) | 1 | 30+ Qs |
+| [Interview Prep](#interview-prep) | 1 | 32 source-linked prompts |
 
 ---
 
@@ -27,17 +27,17 @@
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Serverless Overview](40.7.01-serverless-overview.md) | FaaS model, cold starts, FaaS vs containers vs VMs, providers (AWS Lambda, Azure Functions, GCP Cloud Functions) | Important | Specialized | 10 min |
-| 02 | [Edge Functions](40.7.04-edge-functions.md) | Edge runtimes (Cloudflare Workers, Vercel Edge, Lambda@Edge), V8 isolates, state storage | Important | Specialized | 12 min |
+| 01 | [Serverless Overview](40.7.01-serverless-overview.md) | FaaS model, cold starts, FaaS vs containers vs VMs, providers (AWS Lambda, Azure Functions, GCP Cloud Functions) | Important | Specialized | 6 min |
+| 02 | [Edge Functions](40.7.04-edge-functions.md) | Edge runtimes (Cloudflare Workers, Vercel Edge, Lambda@Edge), V8 isolates, state storage | Important | Specialized | 7 min |
 
 **Decision tree:**
 
 ```text
 Deploy choice?
 ├── Bursty / event-driven / pay-per-use? ──→ Serverless (Lambda, Cloud Functions)
-├── Low-latency global API? ──→ Edge functions (Cloudflare Workers)
+├── Can useful work finish near ingress? ──→ Evaluate edge placement and data authority
 ├── Long-running / stateful? ──→ Containers (ECS, K8s)
-└── Predictable high load? ──→ VMs or containers (cheaper at scale)
+└── Predictable high load? ──→ Compare measured total provisioned/function costs
 ```
 
 ---
@@ -46,8 +46,8 @@ Deploy choice?
 
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
-| 03 | [AWS Lambda](40.7.02-aws-lambda.md) | Event sources, cold starts, SnapStart, Provisioned Concurrency, Lambda@Edge | AWS-heavy stacks | Important | Specialized | 9 min |
-| 04 | [Vercel Deployments](40.7.03-vercel-deployments.md) | Edge runtime, Edge Middleware, ISR, preview deploys, Fluid Compute | Next.js apps | Important | Specialized | 10 min |
+| 03 | [AWS Lambda](40.7.02-aws-lambda.md) | Event sources, cold starts, SnapStart, Provisioned Concurrency, Lambda@Edge | AWS-heavy stacks | Important | Specialized | 7 min |
+| 04 | [Vercel Deployments](40.7.03-vercel-deployments.md) | Current runtime contract, caching/ISR, preview deploys, Fluid Compute | Next.js apps | Important | Specialized | 6 min |
 
 ---
 
@@ -55,9 +55,9 @@ Deploy choice?
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 05 | [Serverless Patterns](40.7.05-serverless-patterns.md) | API patterns, event-driven, orchestration (Step Functions), Saga, CQRS | Important | Specialized | 14 min |
-| 06 | [Serverless Frameworks](40.7.06-serverless-frameworks.md) | SAM, CDK, Serverless Framework, SST — IaC for serverless | Important | Specialized | 11 min |
-| 07 | [Durable Execution: Temporal & Inngest](40.7.07-durable-execution-temporal-inngest.md) | Event-sourced replay, workflow/activity split, determinism rules, signals/queries, Inngest steps, retries/timeouts, Step Functions vs code-first trade-offs | Important | Specialized | 15 min |
+| 05 | [Serverless Patterns](40.7.05-serverless-patterns.md) | API patterns, event-driven, orchestration (Step Functions), Saga, CQRS | Important | Specialized | 6 min |
+| 06 | [Serverless Frameworks](40.7.06-serverless-frameworks.md) | SAM, CDK, Serverless Framework, SST — IaC for serverless | Important | Specialized | 6 min |
+| 07 | [Durable Execution: Temporal & Inngest](40.7.07-durable-execution-temporal-inngest.md) | Event-sourced replay, workflow/activity split, determinism rules, signals/queries, Inngest steps, retries/timeouts, Step Functions vs code-first trade-offs | Important | Specialized | 8 min |
 
 ---
 
@@ -65,7 +65,7 @@ Deploy choice?
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 09 | [Fly.io Deployment](40.7.09-flyio-deployment.md) | Container deployment, auto-stop/start, health checks, multi-region, Docker multi-stage builds | Important | Specialized | 9 min |
+| 09 | [Fly.io Deployment](40.7.09-flyio-deployment.md) | Container deployment, auto-stop/start, health checks, multi-region, Docker multi-stage builds | Important | Specialized | 6 min |
 | 10 | [Vite SPA on Cloudflare Workers](40.7.10-vite-spa-cloudflare-workers.md) | Static Assets, Hono proxy, SPA fallback, bundle size limits, same-domain API proxying | Important | Specialized | 9 min |
 
 ---
@@ -74,7 +74,7 @@ Deploy choice?
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 11 | [Interview Questions](40.7.08-interview-questions.md) | 30+ curated questions from beginner to FAANG-style | Important | Specialized | 7 min |
+| 11 | [Interview Questions](40.7.08-interview-questions.md) | 32 preserved source-linked prompts | Important | Specialized | 5 min |
 
 ---
 
@@ -87,7 +87,8 @@ Deploy choice?
 5. **Serverless Frameworks** — for IaC-heavy roles
 6. **Durable Execution** — for orchestration/stateful-flow questions
 7. **Fly.io / Vite SPA on Cloudflare** — deployment for your stack
-8. **Interview Questions** — final review
+8. **[Section revision](REVISION.md)** — explain the mechanisms without copying
+9. **Interview Questions** — choose a policy and trace one failure
 
 ---
 
@@ -106,7 +107,7 @@ Deploy choice?
 
 - [CI/CD](../40.3-ci-cd/INDEX.md) — deploying serverless
 - [Docker](../40.1-docker/INDEX.md) — containers vs serverless trade-offs
-- [Next.js (Edge Middleware)](../../10-frontend/10.4-next.js/INDEX.md) — Vercel Edge
+- [Next.js deployment contracts](../../10-frontend/10.4-next.js/INDEX.md) — framework/runtime compatibility
 - [Observability](../40.4-observability/INDEX.md) — distributed tracing for serverless
 - [Microservices](../../20-backend/20.6-microservices/INDEX.md) — Saga, CQRS in serverless
 
@@ -120,14 +121,15 @@ Deploy choice?
 
 ## Docita Anchor
 
-Where [docita](https://github.com/CVamsi27/docita) meets serverless — the honest answer is **split**:
+Source walkthrough for [Docita](../../projects/docita/INDEX.md), checked on 10 October 2026. Inspect the current source and actual release evidence separately; configuration/ADR intent does not prove a deployed path.
 
-| Topic | Docita evidence |
-| ---------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Serverless: YES (landing/edge) | `apps/landing` is Astro deployed to Cloudflare Workers — `deploy:cloudflare` runs `wrangler deploy` with a `_worker.js` entry; `@astrojs/cloudflare` adapter |
-| Serverless: NO (core API, deliberately) | The NestJS API and worker are long-running Fly.io machines; ADR 0011 chose suspend/resume (`auto_stop_machines='suspend'`) over scale-to-zero functions for cold-start control |
-| Edge caching | Cloudflare in front of the API with origin protection (ADR 0014); `DOCITA_CLOUDFLARE` build flag switches landing to CF mode |
-| Durable Objects / edge compute in the hot path | _No direct docita implementation yet._ |
+| Topic | Source to inspect | Boundary |
+| ------------------- | ----------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| Landing output | Astro/Cloudflare adapter, build scripts and Wrangler config | Verify current emitted entry/assets and deployed routing |
+| API/worker process | Fly config and suspend/resume ADR | Existing Machine lifecycle differs from invocation-based functions |
+| Origin protection | Cloudflare-origin ADR and ingress checks | Verify the deployed trust path; an ADR alone is not enforcement |
+| Deployment workflow | CI workflow triggers and deployment steps | Current source has commented deployment triggers; do not infer automatic live promotion |
+| Durable Objects | No direct implementation claimed | Teaching examples are independent fixtures |
 
 ## Finish This Section
 

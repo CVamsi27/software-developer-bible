@@ -64,6 +64,7 @@ Before contributing, review the existing files in the relevant section to unders
 │ ├── 20.6-microservices/
 │ ├── 20.7-graphql/
 │ ├── 20.8-caching/
+│ ├── 20.9-message-brokers/
 │ ├── 20.12-ai-engineering/
 │ └── 20.13-java/
 │
@@ -108,7 +109,7 @@ Before contributing, review the existing files in the relevant section to unders
 └── 81-lanes-indian-sde-faang/ # Indian SDE / FAANG lane (DSA-heavy) — INDEX.md + numbered 81.x files
 ```
 
-> Repo scale (measured 2026-09-18): **1017 `.md` files / 257K lines** across the stacks, lanes, and projects above — run `python3 scripts/check_counts.py` to verify the claim stays true.
+> Repo scale (tool-maintained): **1017 `.md` files / 193K lines** across the stacks, lanes, and projects above — run `python3 scripts/check_counts.py` to verify the claim stays true.
 
 - **The 7 study stacks** (`10-`, `20-`, `30-`, `40-`, `50-`, `60-`, `70-`) hold the technical material both interview lanes pull from.
 - **00-strategy** is cross-lane (everyone starts here); **80-** and **81-lanes** are terminal interview plans that reference into the stacks, never the other way around; **projects/** holds the Docita deep-dive corpus.
@@ -141,7 +142,7 @@ Before contributing, review the existing files in the relevant section to unders
 
 ## File Metadata (HTML comment + shields.io badges)
 
-Every content file **must** begin with metadata in two forms:
+Teaching-template content files **must** begin with metadata in two forms. Navigation, operational docs and historical records retain their own genres:
 
 1. **HTML comment** (preserved for tooling, hidden in markdown renderers)
 2. **shields.io badges** (visual metadata that renders as colored pills)
@@ -206,11 +207,11 @@ All content files and INDEX.md files use [shields.io](https://shields.io/) badge
 https://img.shields.io/badge/<label>-<value>-<color>
 ```
 
-URL-encode%20special characters:
+URL-encode special characters:
 - Spaces → `%20` (preferred over `_` for readability)
 - `&` → `%26`
 
-> **Note:** Every file type carries badges. Content files carry **Section / Category / Tags** badges (3) below their HTML-comment metadata; INDEX.md files carry **Files / Category / Status** badges (3). There is **no YAML frontmatter anywhere in this repo** — metadata lives in the HTML comment, never in `---` blocks.
+> **Note:** Teaching chapters carry **Section / Category / Tags / Read time** badges (4) below their HTML-comment metadata; stack and category INDEX files carry **Files / Category / Status** badges (3). Topic importance badges add editorial priorities. Jekyll route pages such as `search.md` use YAML frontmatter for routing; chapter metadata stays in the HTML comment.
 
 ### INDEX.md Badges (3 per file)
 
@@ -261,8 +262,7 @@ the topic once. The TL;DR opening is retired (2026-10-01); retain any unique
 fact in the body rather than retaining a second overview.
 
 ```text
-# Title
-[metadata and badges]
+# Title (after metadata and badges)
 
 ## Definition
 The concept and its boundaries in plain language.
@@ -603,7 +603,7 @@ EOF
 
 - Pipe-separated links
 - Bold prefix: `**Cross-references:**`
-- Links point to section directories
+- Links point to the relevant section INDEX.md or canonical chapter
 
 ### In INDEX.md (`## Navigation`)
 
@@ -738,8 +738,8 @@ These files (e.g., `70-interview-toolkit/70.3-cheatsheets/70.3.05-system-design-
 | ------- | --------- | ------------ |
 ```
 
-- No `## Definition`, `## Why Do We Need It?`, etc.
-- `## Quick Reference Table` is the first content section
+- A short scope introduction may precede the table; do not require the full concept-chapter template.
+- The quick reference table follows any short scope introduction
 - Has `## Top 10 Things to Remember`, `## Common Patterns`, and similar section-specific content
 - Has `## Summary`, `## References & Learn More` at the end
 
@@ -775,17 +775,21 @@ These files (in `70-interview-toolkit/70.2-coding-patterns/`) describe algorithm
 
 Identifying criteria for when this pattern applies.
 
-## Template
+## First Principles
 
-Code skeleton showing the core pattern structure (usually 1-2 variants).
+Derive the invariant or state from the problem constraints.
 
 ## How It Works
 
-ASCII diagram showing the pattern in action, with step-by-step visual walkthrough.
+Trace a small input before introducing variants.
+
+## Template
+
+Reusable code skeleton whose contract, invariant and limits are now clear.
 
 ## Code Examples (TypeScript)
 
-3-6 problems from easy to hard, each with:
+A focused set of distinct problems, each with:
 - Problem statement
 - TypeScript implementation
 - Example usage with expected output
@@ -803,15 +807,15 @@ Table format showing complexity for different problem variants:
 
 ## Interview Problems
 
-Grouped by difficulty (Easy / Medium / Hard), each with LeetCode number:
+Grouped by practice stage or verified current difficulty, each with a LeetCode number. A stage describes learning order; it is not a platform difficulty claim:
 
-### Easy
+### Practice the core rule
 
 1. **Problem Name** (LeetCode N)
 
-### Medium
+### Combine constraints
 
-### Hard
+### Extend the pattern
 
 ## Summary
 
@@ -821,7 +825,7 @@ A concise recap of the invariant and decision.
 - Uses `## When to Use` instead of `## Why Do We Need It?`
 - Has a `## Template` section (unique to Coding Pattern files)
 - Uses `## Time/Space Complexity` instead of `## Performance Considerations`
-- Uses `## Interview Problems` with difficulty groups and LeetCode references instead of `## Interview Questions`
+- Uses `## Interview Problems` with practice groups and LeetCode references instead of `## Interview Questions`
 - Ends with the standard `## Summary`; retrieval practice lives in the separate section `REVISION.md`
 
 ### SDE Role Guides
@@ -859,15 +863,15 @@ After making changes, verify the following:
 - [ ] Section order: Definition → First Principles → Why → How → Code Examples → Real-World → Mistakes → Best Practices → Performance → Summary
 - [ ] `## Definition` is the first concept section after metadata/badges; no TL;DR
 - [ ] Preserve the practical explanation and add one concise original `> **Textbook Definition:**` within that section. Do not invent quotations or textbook attributions; cite a primary source when an attributed definition is necessary.
-- [ ] `## Code Examples` uses `typescript` language tag
+- [ ] Code examples use the appropriate language tag and state inputs, expected behavior and limitations
 - [ ] The category `REVISION.md` covers every learning chapter with source links and ≥5 fresh Q/A pairs overall; the chapter separator follows Summary
 
 **Coding Pattern files** (`70-interview-toolkit/70.2-coding-patterns/`):
 - [ ] Uses `## When to Use` instead of `## Why Do We Need It?`
 - [ ] Has `## Template` section with code skeleton
-- [ ] Section order: Definition → When to Use → Template → How It Works → Code Examples → Common Mistakes → Time/Space Complexity → Interview Problems → Summary
+- [ ] Section order: Definition → First Principles → When to Use → How It Works → Template → Code Examples → Common Mistakes → Time/Space Complexity → Interview Problems → Summary
 - [ ] Has `## Time/Space Complexity` table instead of `## Performance Considerations`
-- [ ] Has `## Interview Problems` grouped by Easy/Medium/Hard with LeetCode references
+- [ ] Has `## Interview Problems` grouped by practice stage or verified difficulty with LeetCode references
 
 **Interview Questions files** (last file in each stack/category, `<stack>.<cat>.<seq>-interview-questions.md`):
 - [ ] No Cheat Sheet and no Revision Questions — `## Summary` is the bottom content section
@@ -881,8 +885,8 @@ After making changes, verify the following:
 - [ ] Has `## Trade-offs` section before `## Summary`
 
 **CheatSheet files** (`70-interview-toolkit/70.3-cheatsheets/`):
-- [ ] Starts with `## Quick Reference Table` as first content section
-- [ ] No `## Definition` or `## Why Do We Need It?` sections
+- [ ] Uses a quick-reference table after any concise scope introduction
+- [ ] Does not mechanically repeat the full concept template
 
 **Behavioral guides** (`70-interview-toolkit/70.1-behavioral/`):
 - [ ] Starts with `## Table of Contents` instead of `## Definition`
@@ -933,7 +937,7 @@ It runs, in order, with clear pass/fail output:
 
 | Check | Command | What it verifies |
 | --------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Count guard | `python3 scripts/check_counts.py` | Gate 1/30: every count claim in the navigation surface matches live disk — repo-scale strings ("1017 files, 257K lines"), each INDEX's `Files` badge and `> **N files**` blurb, the `N files in M sub-stacks` stack headers, and the `Files` column of every navigation table. `--write` restamps them all from disk (idempotent) |
+| Count guard | `python3 scripts/check_counts.py` | Gate 1/30: every count claim in the navigation surface matches live disk — repo-scale strings ("1017 files, 193K lines"), each INDEX's `Files` badge and `> **N files**` blurb, the `N files in M sub-stacks` stack headers, and the `Files` column of every navigation table. `--write` restamps them all from disk (idempotent) |
 | Alignment | `python3 scripts/check_alignment.py` | Markdown table pipes and ASCII box walls align; `--fix` repairs in place |
 | Structure | `python3 scripts/check_structure.py` | IDs unique, sequences contiguous, interview files last — every flat stack must carry at least one `*-interview-questions.md` (category stacks hold the bank in a dedicated final interview category; 70.1/70.3 exempt as interview material themselves) (the historical lane-80.x GAPS were fixed 2026-09-13 — sequence now contiguous 1..36), and **no duplicate H2 section slug within a file** — two identically-named outline entries mean an ambiguous anchor and repeated sub-structures written as siblings instead of nested (80.12 had 13 stories as 65 sibling H2s; 81.05 declared "Segment Tree" twice). Nest repeats as `###` |
 | Link check | `python3 scripts/check_links.py` | Fence-aware broken-link scan — every relative prose link resolves to a real file (external URLs and anchor-only links are skipped). Also rejects **stale link labels**: a visible label that is a relative path must point at a path that exists, since pre-renumbering relics leave the target correct while the reader sees a folder layout that no longer exists (a target-only check cannot see these — the Sept 2026 audit fixed 10 such lines and ~18 more survived undetected). Spaced labels are humanized titles, not paths; `personal/` reports are exempt because they quote dead paths as documentation |
@@ -956,12 +960,12 @@ Each script also runs standalone; all exit non-zero on failure so they can gate 
 
 ### Quick Troubleshooting
 
-| Issue                                 | Most Likely Cause                                    | Fix                                                               |
+| Issue                                 | Likely Cause                                    | Fix                                                               |
 | ------------------------------------- | ---------------------------------------------------- | ----------------------------------------------------------------- |
-| Badge displays wrong color            | Color value has wrong format or includes extra space | Ensure format: `blueviolet`, `success`, `#800080` (lowercase hex) |
+| Badge displays wrong color            | Color value has wrong format or includes extra space | Use a named color or hex digits without `#` in the badge URL (for example, `800080`) |
 | `%20` not rendering in badge          | URL encoding not applied                             | Replace literal spaces with `%20` in badge URL value portion      |
 | Code block not rendering              | Missing closing ` ``` `                              | Check that every opening ` ``` ` has a matching closing ` ``` `   |
 | Double newline at end of file         | File has 2+ trailing newlines                        | Use `rstrip(b'\\n') + b'\\n'` to normalize                        |
-| Broken `## See Also` link             | Relative path points to wrong directory              | Use `../NN.N-slug/` (target stack folder); verify it exists         |
+| Broken `## See Also` link             | Relative path points to wrong directory              | Use the correct relative path to the target INDEX.md or chapter; verify it exists         |
 | Navigation link goes to wrong section | Previous/next links out of sequence                  | Verify section follows the 00→81 numbering order                  |
 {% endraw %}

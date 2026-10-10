@@ -88,6 +88,30 @@ Source: [Compound Components](10.3.5.02-compound-components.md)
 8. **Q:** Which updates can memoizing a context value avoid?
    **A:** It avoids context notifications caused solely by rebuilding an equivalent provider value. Changes to shared state still notify consumers, and parent rendering can independently render children.
 
+## Changed identity and display contracts
+
+Source: [Portals](10.3.5.01-portals.md), [Compound Components](10.3.5.02-compound-components.md)
+
+**Q:** What log sequence does one portaled button click request in the bubbling example?
+
+**A:** Its own handler queues the portal entry, then the logical React ancestor queues the outer entry. Native propagation follows the actual DOM path separately.
+
+**Q:** Does setting z-index without checking the destination guarantee an overlay stays above the page?
+
+**A:** No. Stacking contexts, positioning and the browser top layer still govern visibility. A portal changes ancestry rather than granting global priority.
+
+**Q:** Why can switching the simple Tabs example discard an inner form draft?
+
+**A:** The inactive panel returns null, unmounting its inner content. Persist the draft above that content or deliberately keep it mounted when preservation is needed.
+
+**Q:** What must change if compound tab children can be reordered?
+
+**A:** Use stable values instead of positional selection and define removal/reset behavior; otherwise the same selected index can identify a different tab.
+
+**Q:** Why can selected object state become obsolete in a generic list?
+
+**A:** Replacing the input item objects does not replace the stored selected object. A key-owned selection can derive the current item or detect its removal.
+
 ## Summary
 
 Revisit the linked chapter when an answer misses the mechanism, a boundary or a failure case.

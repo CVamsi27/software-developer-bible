@@ -1,7 +1,7 @@
 # Interview Prep — Build Tools
 
-> **Study time:** ≈ 16 min of reading (1 files, ~16 min average).
-> **1 file, 50+ curated questions with answers.** Tree shaking internals, code-splitting strategy, and tool-selection judgment.
+> **Study time:** ≈ 7 min of reading (1 files, ~7 min average).
+> **1 file, 35 curated questions with answers.** Tree shaking internals, code-splitting strategy, and tool-selection judgment.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Interview%20Prep-%2364748b)](../INDEX.md)
@@ -23,7 +23,7 @@ Questions across all three content categories:
 
 ### [Build Tools Interview Questions](40.5.4.01-interview-questions.md)
 
-50+ curated questions with answers. Work them after the content categories.
+35 curated questions with answers. Work them after the content categories and their revision companions. Use one normal output trace and one changed condition per answer.
 
 ---
 
@@ -35,12 +35,4 @@ Questions across all three content categories:
 
 ## Docita Anchor
 
-Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — gives me true stories for these answers.
-
-| Topic | Docita evidence |
-| ---------------------------- | ------------------------------------------------------------------------------ |
-| "Vite vs Webpack?" | Lived the migration: Next.js → Vite SPA (ADR 0012), with reasons recorded |
-| "Monorepo build design?" | Turbo task graph + per-app env scoping + shared vitest config across 5 apps |
-| "Keeping bundles honest?" | knip dead-code gate, jscpd zero-clone gate, file-size budget checks in CI |
-| "Multi-target builds?" | Same repo ships NestJS API, Vite SPAs, Astro landing to Cloudflare, worker app |
-| Turbopack/Rspack war stories | _No direct docita implementation yet._ |
+The [Docita evidence walkthrough](../../../projects/docita/INDEX.md) distinguishes dated lab results from source configuration and deployed behavior. Vite/Astro, shared TypeScript settings and Turbo tasks provide related source examples. Inspect the actual task inputs, invoked gates and emitted outputs before claiming type safety, cache validity or runtime performance. No direct Rspack/Turbopack implementation or measured migration speedup is claimed here.

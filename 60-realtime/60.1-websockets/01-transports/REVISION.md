@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-WebSockets-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../../docs/topic-importance.md)
 
@@ -93,6 +93,30 @@ Source: [WebTransport](60.1.1.04-webtransport.md)
 **Q:** Does a successful stream write prove a chat message was stored?
 
 **A:** No. It reports the local write operation, not a durable server effect. Define and observe an acknowledgment whose meaning includes the required business result.
+
+## Socket.IO Event Boundaries
+
+Source: [Socket.IO](60.1.1.03-socket-io.md)
+
+**Q:** Which object receives reconnect_attempt, and why should ordinary event listeners be outside connect?
+
+**A:** The client Manager at socket.io receives reconnect_attempt. A Socket connect handler runs again after reconnect; registering message listeners inside it accumulates duplicate handlers.
+
+**Q:** Why does Eve fail a room join even though her fixture token is valid?
+
+**A:** Authentication identifies Eve. Room authorization separately checks the verified account’s allowed rooms before joining or returning history.
+
+**Q:** The same command ID is sent with changed text. Why does the fixture reject it?
+
+**A:** The ID identifies one operation. Returning the old result for different content would hide an identity conflict; accepting it would undermine duplicate-effect protection.
+
+**Q:** Does a rate check inside connection middleware limit chat events?
+
+**A:** No. It runs at connection acceptance. Apply an event budget to commands themselves and decide account scope, expiry, shared-node coordination and outage behavior.
+
+**Q:** Why is the retained demo snapshot insufficient after a process restart?
+
+**A:** Both history and operation records are in memory. Durable recovery needs an authoritative store, retention/version rules and permissions; transport reconnection supplies none of them.
 
 ## Summary
 

@@ -46,6 +46,28 @@ Source: [Pipeline Supply-Chain Security & SLSA](40.3.2.04-pipeline-supply-chain-
 
 **A:** An attacker can sign their own artifact. Policy must bind the signature/provenance to the approved repository, workflow, builder, and digest.
 
+Source: [Docker build and deploy](40.3.2.01-docker-build-deploy.md)
+
+**Q:** Why can a local image ID not substitute for a registry manifest digest?
+
+**A:** They identify different objects: the local ID names image configuration, while the registry digest names the manifest or multi-platform index consumed by deployment. Record the intended registry reference after publication.
+
+**Q:** Why does a filesystem scan not prove the release image passed an image scan?
+
+**A:** The scan targets differ. Runtime layers and image packages can differ from the checked source tree; bind the scan evidence to the actual candidate image identity.
+
+Source: [Artifact registries and promotion](40.3.2.03-artifact-registries-release-promotion.md)
+
+**Q:** Does an ECR lifecycle rule know which untagged digests workloads still use?
+
+**A:** No. Its selection uses registry metadata. Inventory deployed/recovery references and preview deletion policy before allowing collection.
+
+Source: [Supply-chain security](40.3.2.04-pipeline-supply-chain-security-slsa.md)
+
+**Q:** What remains stealable after migrating CI cloud access to OIDC?
+
+**A:** Identity tokens and temporary cloud credentials can leak and be abused until expiry within their scope. Narrow trust/permissions, safe logging and revocation remain necessary.
+
 ## Summary
 
 Use the answers to check your reasoning, then revisit the source mechanism and reproduce any relevant example without copying it. A remembered label is useful only when you can explain its limits.

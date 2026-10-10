@@ -424,6 +424,40 @@ def _dup_pair_sandbox(pairs, reword=True):
 
 CASES = [
     {
+        "name": "gate 5 rejects obsolete boolean Deprecation HTTP headers",
+        "gate": "check_freshness.py", "args": [],
+        "plant": {
+            "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.03-versioning.md":
+                "# Versioning\n\n```http\nHTTP/1.1 200 OK\nDeprecation: true\n```\n",
+        },
+        "fire_names": ("BOOLEAN-DEPRECATION-HEADER", "20.3.1.03-versioning.md:5"),
+        "clean": {
+            "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.03-versioning.md":
+                "# Versioning\n\n```http\nHTTP/1.1 200 OK\nDeprecation: @1790812800\n```\n"
+                "\nThe retired syntax was Deprecation:true.\n"
+                "````markdown\n```http\nDeprecation: true\n```\n````\n"
+                "```typescript\n@ApiOperation({ deprecated: true })\n```\n",
+        },
+    },
+    {
+        "name": "gate 5 rejects withdrawn media-sanitization citations in current architecture",
+        "gate": "check_freshness.py", "args": [],
+        "plant": {
+            "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.04-data-retention-archival.md":
+                "# Media sanitization\n\n[NIST sanitization guidance](https://csrc.nist.gov/pubs/sp/800/88/r1/final)\n",
+        },
+        "fire_names": ("WITHDRAWN-NIST-SANITIZATION-CITATION", "30.3.5.04-data-retention-archival.md:3"),
+        "clean": {
+            "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.04-data-retention-archival.md":
+                "# Media sanitization\n\n[NIST Revision 2](https://csrc.nist.gov/pubs/sp/800/88/r2/final)\n"
+                "\nRevision 1 was withdrawn and superseded in 2025.\n"
+                "````markdown\n[NIST former guidance](https://csrc.nist.gov/pubs/sp/800/88/r1/final)\n````\n",
+            "docs/2024-08-01-snapshot.md":
+                "# Historical record\n\n[Then-current guidance](https://csrc.nist.gov/pubs/sp/800/88/r1/final)\n",
+        },
+    },
+
+    {
         "name": 'gate 5 rejects replay called on a live Temporal Worker instance',
         "gate": "check_freshness.py",
         "args": [],

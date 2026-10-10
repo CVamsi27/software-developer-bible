@@ -1,5 +1,7 @@
 # Reading and Interview Quality Implementation Plan
 
+> **Historical design record:** requirements, example paths and checkboxes describe this dated plan, not current repository status or authorization to rerun it. Later [explanation-depth work](../plans/2026-10-08-explanation-depth.md), [AGENTS.md](../../../AGENTS.md) and [contributing.md](../../../contributing.md) govern current changes. Preserve stable chapter IDs; TL;DR and inline chapter cheat/revision sections are retired.
+
 > **For agentic workers:** Execute this plan task by task in the current session, recording validation and remaining limitations in the audit report.
 
 **Goal:** Make the learning corpus concise and formally grounded, fix full-width reading and theme defects, and align senior interview preparation with supported resume evidence.

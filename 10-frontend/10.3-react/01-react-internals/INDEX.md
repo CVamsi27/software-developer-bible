@@ -1,6 +1,6 @@
 # React Internals — React
 
-> **Study time:** ≈ 1 h 34 m of reading (6 files, ~16 min average).
+> **Study time:** ≈ 1 h 31 m of reading (6 files, ~15 min average).
 > **6 files.** How React actually works under the hood: Virtual DOM diffing, the Fiber data structure, reconciliation heuristics, render/commit phases, and lifecycle.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](#files)
@@ -13,17 +13,19 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Virtual DOM](10.3.1.01-virtual-dom.md) | VDOM concept, diffing, batching, React elements vs components | Essential | Foundational | 15 min |
-| 02 | [Fiber](10.3.1.02-fiber.md) | Fiber architecture, work loop, priority lanes, time slicing | Important | Important | 24 min |
+| 01 | [Virtual DOM](10.3.1.01-virtual-dom.md) | VDOM concept, diffing, batching, React elements vs components | Essential | Foundational | 14 min |
+| 02 | [Fiber](10.3.1.02-fiber.md) | Fiber architecture, work loop, priority lanes, time slicing | Important | Important | 21 min |
 | 03 | [Reconciliation](10.3.1.03-reconciliation.md) | Diffing algorithm, keys, component types, bailout | Essential | Foundational | 6 min |
 | 04 | [Rendering](10.3.1.04-rendering.md) | Render phases, commit phase, batching in React 18, automatic batching | Essential | Foundational | 21 min |
-| 05 | [Lifecycle](10.3.1.05-lifecycle.md) | Class lifecycle, hooks lifecycle, useEffect cleanup, strict mode double-invoke | Essential | Foundational | 24 min |
+| 05 | [Lifecycle](10.3.1.05-lifecycle.md) | Class lifecycle, hooks lifecycle, useEffect cleanup, strict mode double-invoke | Essential | Foundational | 25 min |
 
 ---
 
 ## Read order
 
-Virtual DOM → Fiber → Reconciliation → Rendering → Lifecycle.
+1. **Separate descriptions from retained state.** Read Virtual DOM, then Fiber. Explain what an element describes and what a work record retains.
+2. **Follow a single accepted update.** Read Reconciliation, Rendering and Lifecycle. Track row identity, the render/commit boundary and the resource a cleanup releases.
+3. **Change one condition.** Complete the [revision](REVISION.md): reorder a keyed row, abandon a render or change an effect dependency. Then use the React interview bank for timed answers.
 
 ---
 

@@ -176,7 +176,7 @@ Use these prompts after the reading pass to recall the postgresql foundations me
 
 ## See Also
 
-- [Category reading flow](INDEX.md)
+- [Category reading flow](INDEX.md) — return to prerequisites and learning stages for row visibility, index choices and query evidence
 
 ## References & Learn More
 

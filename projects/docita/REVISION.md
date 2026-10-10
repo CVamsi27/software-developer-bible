@@ -83,7 +83,19 @@ Source: [Async processing](03-async-processing.md).
 
 **Q:** What did the local EventEmitter2 probe show?
 
-**A:** Synchronous emit returned before an async listener completed. A relay processed marker after emit does not prove the side effect completed.
+**A:** The 2 October probe showed synchronous `emit` returning before an async listener completed. The 9 October recheck shows the relay now awaits `emitAsync`; extracted-source checks confirmed delayed fulfillment and rejection-driven retry. Its marker still depends on the registered listener returning and propagating the required work.
+
+**Q:** What happens if the required event listener was never registered?
+
+**A:** `emitAsync` can fulfill with no listener results, so this relay marks the row processed. Required-handler registration needs a separate readiness or contract check.
+
+**Q:** Does a dispatch timeout stop the listener's side effect?
+
+**A:** No. It stops waiting, not the underlying promise. The first attempt can complete after a retry begins, so stable operation keys and effect-level idempotency remain necessary.
+
+**Q:** Why can a Nest listener failure fail to trigger an outbox retry?
+
+**A:** Its default `suppressErrors: true` can log the error rather than rethrow it. A required listener must return its work promise and propagate failures; test the actual Nest wiring, not only an emitter stub.
 
 **Q:** Why is using PostgreSQL insufficient to prove transactional enqueue?
 
@@ -699,7 +711,7 @@ Source: [Workload model and outcome definitions](23-hypothetical-clinic-metrics.
 
 ## Current Resume Bullet Walkthrough
 
-Source: [Seven-bullet walkthrough](24-resume-claim-walkthrough.md).
+Source: [Five-bullet walkthrough](24-resume-claim-walkthrough.md).
 
 **Q:** What should lead my 90-second Docita overview?
 

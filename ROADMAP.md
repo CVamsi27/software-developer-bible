@@ -156,7 +156,7 @@ Study as one connected story, not isolated files → **[20-backend/20.5-security
 | --------------------------------------------------------------------- | ------------------------------------------------------ | -------------------------------------------------------------------------------------- |
 | [Coding patterns](70-interview-toolkit/70.2-coding-patterns/INDEX.md) | According to the confirmed coding format | sliding window → two pointers → BFS/DFS → DP → heap → trie → union-find → backtracking |
 | [Behavioral](70-interview-toolkit/70.1-behavioral/INDEX.md) | Weeks 1–2, then weekly reps | STAR(+R) → leadership → conflict → failure stories |
-| [Cheat sheets](70-interview-toolkit/70.3-cheatsheets/INDEX.md) | Final week | JS/TS/React/backend/system-design one-pagers |
+| [Cheat sheets](70-interview-toolkit/70.3-cheatsheets/INDEX.md) | Final week | JS/TS/React/backend/system-design reference sheets |
 
 Start [00-strategy](00-strategy/INDEX.md) items here if not done in Phase 0: [resume](00-strategy/00.02-resume-tips.md) → [STAR](00-strategy/00.03-star-method.md) → [HR questions](00-strategy/00.04-hr-questions.md).
 
@@ -175,7 +175,7 @@ Start [00-strategy](00-strategy/INDEX.md) items here if not done in Phase 0: [re
 6. Logistics: [comp benchmarking](80-lanes-abroad-full-stack/80.05-comp-eu-benchmarking.md) · [visa playbook](80-lanes-abroad-full-stack/80.06-visa-relocation-playbook.md)
 
 ### FAANG lane → [81-lanes-indian-sde-faang](81-lanes-indian-sde-faang/INDEX.md)
-1. [Complete guide](81-lanes-indian-sde-faang/81.01-complete-guide.md) → [LeetCode study plan](81-lanes-indian-sde-faang/81.06-leetcode-study-plan.md) (daily, from Week 3 onward really)
+1. [Complete guide](81-lanes-indian-sde-faang/81.01-complete-guide.md) → [LeetCode study plan](81-lanes-indian-sde-faang/81.06-leetcode-study-plan.md) (alongside the relevant study phases)
 2. [Core CS](81-lanes-indian-sde-faang/81.02-core-cs-fundamentals.md) → [advanced topics](81-lanes-indian-sde-faang/81.05-advanced-topics.md)
 3. Company guides: [Google](81-lanes-indian-sde-faang/81.17-google-interview-guide.md) · [Amazon](81-lanes-indian-sde-faang/81.18-amazon-interview-guide.md) · [Meta](81-lanes-indian-sde-faang/81.19-meta-interview-guide.md) · [Microsoft](81-lanes-indian-sde-faang/81.16-microsoft-azure-interview-guide.md)
 
@@ -237,7 +237,7 @@ Trackers: [80.33-weekly-study-tracker](80-lanes-abroad-full-stack/80.33-weekly-s
 ```text
 software-developer-bible/
 ├── ROADMAP.md ← you are here
-├── INDEX.md ← every file, one list
+├── INDEX.md ← navigation to stacks, lanes and projects
 ├── 00-strategy/ ← resume · STAR · HR · communication
 ├── 10-frontend/ ← JS → TS → React → Next.js (+ forms/animation/html-css/mobile)
 ├── 20-backend/ ← 11 sub-stacks:
@@ -258,7 +258,7 @@ software-developer-bible/
 ├── 40-platform/ ← docker → k8s → CI/CD → observability → git → serverless → monorepo → 12-factor → CDN
 ├── 50-quality/ ← testing · a11y · performance · production engineering
 ├── 60-realtime/ ← WebSockets/SSE (the only realtime home)
-├── 70-interview-toolkit/ ← coding patterns (18) · behavioral depth · cheat sheets
+├── 70-interview-toolkit/ ← coding patterns · behavioral depth · cheat sheets
 ├── 80-lanes-abroad-full-stack/ ← EU lane: playbooks · Docita pack · Germany cluster
 └── 81-lanes-indian-sde-faang/ ← FAANG lane
 ```

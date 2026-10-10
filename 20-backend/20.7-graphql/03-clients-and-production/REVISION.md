@@ -6,7 +6,7 @@
 [![Role priority](https://img.shields.io/badge/role--priority-Optional-lightgrey)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../../docs/topic-importance.md)
 
-# GraphQL — Clients And Production Revision
+# GraphQL — Clients and Production Revision
 
 Explain each mechanism before checking the answer. Revisit its source for the example and boundary conditions.
 
@@ -52,11 +52,43 @@ Source: [GraphQL Code Generator — Schema Safety & CI](20.7.3.03-codegen-schema
 
 **Q:** What can build-time operation validation detect, and what remains a runtime concern?
 
-**A:** Validation catches invalid operation names, fields and types against the tested schema. Runtime data, authorization and deployment version skew remain separate concerns; schema diff rules also need real consumer coverage.
+**A:** Validation catches invalid selections, variable declarations and types against the tested schema. Runtime data, authorization and deployment version skew remain separate concerns; schema diff rules also need real consumer coverage.
 
 **Q:** Why should a project identify one authoritative schema source?
 
 **A:** Choose maintained SDL or code-derived schema as authoritative and regenerate other artifacts. Add consistency checks because generation can still be skipped or run against the wrong schema version.
+
+## Cache, admission and build boundaries
+
+Source: [Apollo Client](20.7.3.01-apollo-client.md)
+
+**Q:** A task's project ID changed in a normalized record. Why can the old project's task list still be wrong?
+
+**A:** Entity normalization updates the task's fields, but cannot infer filtered list membership, counts or order. Explicitly update the relevant list representation or invalidate/refetch the affected operations; test concurrent pages and optimistic rollback.
+
+**Q:** How do network-only and no-cache differ after receiving a result?
+
+**A:** Both fetch rather than satisfying the operation from cache. network-only writes its result into the normalized cache; no-cache does not store that operation result. Neither guarantees the server's data is fresh beyond its own contract.
+
+Source: [Performance and security](20.7.3.02-performance-security.md)
+
+**Q:** Why can an APQ cache contain an expensive document that no developer approved?
+
+**A:** Automatic persisted-query negotiation normally allows a client to submit text after a hash miss. A trusted allowlist accepts only reviewed deployment artifacts. Both still need variable bounds, resource authorization and quotas for repeated requests.
+
+**Q:** Why is depth alone a weak estimate of query work?
+
+**A:** Aliases repeat fields at the same depth and list arguments multiply fan-out. Cost estimates must include bounded arguments and expensive dependencies, then actual concurrency, deadlines and storage limits cap resource consumption.
+
+Source: [Code generation and schema safety](20.7.3.03-codegen-schema-safety-ci.md)
+
+**Q:** What does mapping DateTime to string fail to prove?
+
+**A:** It supplies a compile-time representation but does not parse or validate runtime values. Define server scalar coercion and client decoding separately, and verify that the schema artifact used by codegen matches the deployed contract.
+
+**Q:** Why can regeneration plus git diff miss a new generated file?
+
+**A:** git diff checks tracked changes and does not include untracked output. A committed-artifact workflow must also reject unexpected untracked files or compare a clean generated directory; compilation and runtime tests remain separate checks.
 
 ## Summary
 
@@ -64,7 +96,7 @@ Use these prompts after the reading pass to recall the clients and production me
 
 ## See Also
 
-- [Category reading flow](INDEX.md)
+- [Category reading flow](INDEX.md) — return to prerequisites and learning stages for normalized state and operation admission
 
 ## References & Learn More
 

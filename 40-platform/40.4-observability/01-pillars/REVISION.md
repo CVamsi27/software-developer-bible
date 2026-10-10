@@ -42,6 +42,34 @@ Source: [Distributed Tracing](40.4.1.03-tracing.md)
 
 **A:** The request may not have been sampled, instrumentation may be missing, or export may have failed. A missing span does not prove that the operation never ran.
 
+## Failure Boundaries to Trace
+
+Source: [Logging](40.4.1.01-logging.md)
+
+**Q:** Why can a logger redact credentials.token while leaking the same token in a message?
+
+**A:** Path redaction covers the configured object structure. Safe event schemas must omit or sanitize the other locations; a few paths do not promise universal secret removal.
+
+Source: [Monitoring](40.4.1.02-monitoring.md)
+
+**Q:** Why must an error-fraction query aggregate away status before division?
+
+**A:** Numerator and denominator need matching dimensions and eligible populations. Retaining status can mismatch vectors or calculate a per-status ratio instead of errors over all requests.
+
+**Q:** Why does the tiny server use unmatched rather than the raw URL for unknown requests?
+
+**A:** Arbitrary paths would create unbounded label values. A bounded category preserves aggregate failure evidence without a new time series for each caller-supplied ID.
+
+Source: [Tracing](40.4.1.03-tracing.md)
+
+**Q:** Why can a ParentBased head sampler not promise to retain all eventual errors?
+
+**A:** Its creation-time decision precedes the outcome. Tail sampling can evaluate received outcomes, but cannot recover spans already discarded upstream.
+
+**Q:** Why must a premium baggage value not grant premium access?
+
+**A:** Propagated telemetry metadata is not inherently authenticated. Permission comes from verified application identity; baggage is correlation context.
+
 ## Summary
 
 Use the answers to check your reasoning, then revisit the source mechanism and reproduce any relevant example without copying it. A remembered label is useful only when you can explain its limits.

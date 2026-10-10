@@ -1,6 +1,6 @@
 # Compilers
 
-> **Study time:** ≈ 15 min of reading (3 files, ~5 min average).
+> **Study time:** ≈ 9 min of reading (3 files, ~3 min average).
 > **3 files.** How TS/JSX become browser-compatible JS: Babel (the extensible classic) and the Go/Rust speed tier (ESBuild, SWC).
 
 [![Files](https://img.shields.io/badge/files-3-blue)](#file-index)
@@ -11,7 +11,7 @@
 
 ## Why this category exists
 
-TypeScript does not run in browsers; JSX does not either. Something must strip types, transform syntax, and inject polyfills per browserslist targets. Babel's plugin ecosystem made it ubiquitous; ESBuild and SWC rebuilt the same job 10-100x faster in native code, which is why Vite and Next.js adopted them. Interviews probe whether you know where TypeScript ends and Babel begins.
+TypeScript and JSX require supported transforms, while emitted JavaScript still needs its runtime APIs. Read Babel’s parse/transform/generate mechanism, then compare esbuild/SWC semantics and explicit type checks. A compiler does not automatically inject every required polyfill or guarantee a fixed speedup.
 
 ---
 
@@ -19,8 +19,8 @@ TypeScript does not run in browsers; JSX does not either. Something must strip t
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Babel](40.5.2.01-babel.md) | Compilation pipeline, presets, plugins, polyfills, browserslist, `@babel/preset-env` | Important | Specialized | 6 min |
-| 02 | [ESBuild & SWC](40.5.2.02-esbuild-swc.md) | Go/Rust toolchains, performance model, configuration, where each is embedded | Important | Specialized | 7 min |
+| 01 | [Babel](40.5.2.01-babel.md) | Compilation pipeline, presets, plugins, polyfills, browserslist, `@babel/preset-env` | Important | Specialized | 4 min |
+| 02 | [ESBuild & SWC](40.5.2.02-esbuild-swc.md) | Go/Rust toolchains, performance model, configuration, where each is embedded | Important | Specialized | 3 min |
 
 ---
 
@@ -39,14 +39,7 @@ TypeScript does not run in browsers; JSX does not either. Something must strip t
 
 ## Docita Anchor
 
-Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — compiles TypeScript for real.
-
-| Topic | Docita evidence |
-| ----------------------------- | ----------------------------------------------------------------------------------- |
-| Shared TS config as a package | `packages/typescript-config` centralizes compiler options; apps/projects extend it |
-| Type-check as a build gate | Turbo `check-types` task with dependency ordering; Vite builds depend on it passing |
-| Astro check | Landing app type-checks via `astro check` in its own pipeline |
-| Babel / SWC specifics | Not hand-configured — they arrive embedded inside Vite/Astro toolchains |
+The [Docita evidence walkthrough](../../../projects/docita/INDEX.md) distinguishes dated lab results from source configuration and deployed behavior. Vite/Astro, shared TypeScript settings and Turbo tasks provide related source examples. Inspect the actual task inputs, invoked gates and emitted outputs before claiming type safety, cache validity or runtime performance. No direct Rspack/Turbopack implementation or measured migration speedup is claimed here.
 
 ## Finish This Section
 

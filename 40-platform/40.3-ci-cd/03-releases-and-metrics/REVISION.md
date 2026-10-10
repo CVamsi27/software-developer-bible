@@ -38,6 +38,18 @@ Source: [DORA Metrics & Delivery Performance](40.3.3.02-dora-metrics-delivery-pe
 
 **A:** Shipping rate is only one dimension. Change failures, recovery, user-facing reliability, and workload context must accompany it.
 
+**Q:** Why can a canary show an acceptable global error rate while failing its own users?
+
+**A:** Stable traffic can dominate the aggregate. Compare eligible candidate requests and errors separately from comparable stable traffic, with valid samples and an explicit stop policy.
+
+**Q:** What should zero candidate requests mean to an automated analysis?
+
+**A:** Insufficient evidence. Hold or abort according to policy; do not divide by zero or interpret missing telemetry as zero failures.
+
+**Q:** Why is an incident-driven repair deployment not automatically a failed deployment?
+
+**A:** Failure rate attributes remediation to the originating failed change; rework rate identifies unplanned incident-response deployments. The repair only adds a new failure if it independently requires remediation.
+
 ## Summary
 
 Use the answers to check your reasoning, then revisit the source mechanism and reproduce any relevant example without copying it. A remembered label is useful only when you can explain its limits.

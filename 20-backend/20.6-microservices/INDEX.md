@@ -1,7 +1,7 @@
 # Microservices & Distributed Patterns — Index
 
-> **Study time:** ≈ 6 h 15 m of reading (23 files, ~16 min average).
-> **23 files — the single home for distributed-systems patterns.** Learn in four passes: **I. Foundations** (how services find and talk to each other) → **II. Data patterns** (consistency across services) → **III. Resilience** (surviving partial failure) → **IV. Messaging & migration** (brokers, evolution) → drills.
+> **Study time:** ≈ 2 h 6 m of reading (23 files, ~5 min average).
+> **23 files — the single home for distributed-systems patterns.** Learn service topology and communication first, then data ownership, partial-failure recovery and migration. Use each category’s revision companion before interview practice.
 >
 > Canonical source for saga, circuit breaker, bulkhead, strangler fig, service discovery, API gateway, CQRS/event sourcing, monolith database decomposition, gRPC — the thinner twins in `30.3-infra-patterns` were consolidated here.
 
@@ -13,7 +13,7 @@
 
 ## Topic Categories
 
-The 18 content files classify into 5 categories, each with its own INDEX — the "GoF classification" of distributed systems.
+The categories group responsibilities in a distributed system. Each learning category has its own staged INDEX and a separate revision companion.
 
 | Category | Files | Why it matters |
 | -------------------------------------------------------------------- | ----: | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -21,27 +21,27 @@ The 18 content files classify into 5 categories, each with its own INDEX — the
 | [Communication & Messaging](02-communication-and-messaging/INDEX.md) | 6 | gRPC (+ streaming), Kafka, RabbitMQ, message brokers, event-driven architecture — how services talk |
 | [Data & Consistency](03-data-and-consistency/INDEX.md) | 6 | Saga, distributed transactions, event sourcing, CQRS, database decomposition — atomicity and truth across service boundaries |
 | [Resilience](04-resilience/INDEX.md) | 2 | Circuit breaker, bulkhead — surviving partial failure |
-| [Interview Drills](05-interview-drills/INDEX.md) | 1 | 50+ curated Q&A |
+| [Interview Drills](05-interview-drills/INDEX.md) | 1 | 30 deep answers and quick follow-up prompts |
 
 ---
 
 ## The Flow
 
 ```text
-PASS I — FOUNDATIONS       PASS II — DATA PATTERNS     PASS III — RESILIENCE    PASS IV — MESSAGING
-01-service-topology     →  03-data-and-consistency  →  04-resilience         →  02-communication
-service discovery          event sourcing              circuit breaker           kafka / rabbitmq
-api gateway                cqrs                        bulkhead                  message brokers
-grpc (+streaming)          saga                        (overview: 30.3           event-driven arch
-service mesh               distributed transactions    resilience)               strangler fig
+Topology and RPC -> data ownership and consistency -> bounded failure recovery
+                  -> durable messaging and migration -> revision -> interview practice
 ```
 
 ---
 
+## Revision before interview practice
+
+After each learning pass, use its source-linked companion: [Topology](01-service-topology/REVISION.md), [Communication](02-communication-and-messaging/REVISION.md), [Data and consistency](03-data-and-consistency/REVISION.md), and [Resilience](04-resilience/REVISION.md). Then combine the mechanisms in the interview bank.
+
 ## The Study Order
 
 | Pass | # | File | Topics | Role priority | General importance |
-| ---- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | ------------- | ------------------ |
+| -------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | ------------- | ------------------ |
 | I | 01 | [Service Discovery](01-service-topology/20.6.1.01-service-discovery.md) | Client vs server-side, Consul, Eureka, DNS-based | Important | Important |
 | I | 02 | [API Gateway](01-service-topology/20.6.1.02-api-gateway.md) | Routing, aggregation, auth, rate limiting at the edge | Important | Important |
 | I | 03 | [gRPC](02-communication-and-messaging/20.6.2.01-grpc.md) | Protobuf, HTTP/2, code generation | Important | Important |
@@ -59,7 +59,7 @@ service mesh               distributed transactions    resilience)              
 | IV | 15 | [Event-Driven Architecture](02-communication-and-messaging/20.6.2.06-event-driven-architecture.md) | When events beat requests; producer/consumer, reprocessing | Essential | Important |
 | IV | 16 | [Strangler Fig](01-service-topology/20.6.1.04-strangler-fig.md) | Legacy migration, parallel run, dual-write | Important | Important |
 | V | 17 | [gRPC Streaming](02-communication-and-messaging/20.6.2.02-grpc-streaming.md) | Streaming modes, gRPC-Web, when gRPC beats REST | Important | Important |
-| 18 | [Interview Questions](05-interview-drills/20.6.5.01-interview-questions.md) | 50+ curated Q&A |  | Important | Important |
+| Practice | 18 | [Interview Questions](05-interview-drills/20.6.5.01-interview-questions.md) | 30 deep answers and quick follow-up prompts | Important | Important |
 
 ---
 
@@ -75,7 +75,7 @@ service mesh               distributed transactions    resilience)              
 
 ## Docita Anchor
 
-Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+The local [Docita](https://github.com/CVamsi27/docita) source inspected on 10 October 2026 supplies examples, not evidence of a live deployment or distributed-system guarantees. In particular, a relay timeout does not cancel underlying listeners; retries can repeat effects. Inspect identity and transaction boundaries before making a resume or interview claim:
 
 | Topic | Docita evidence |
 | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -83,7 +83,7 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Postgres-backed queue | `apps/api/src/shared/modules/queue/postgres-queue.service.ts` + `queue.module.ts` + `queue.worker.module.ts` - durable job queue on Postgres rows |
 | In-memory queue (dev) | `apps/api/src/shared/modules/queue/in-memory-queue.service.ts` - same port, no persistence, for tests/CI |
 | DLQ & replay | `apps/api/src/shared/modules/queue/dlq.controller.ts` + `dlq-replay.scheduler.ts` - dead-letter inspection and scheduled replay |
-| Idempotent jobs | `apps/api/src/shared/modules/idempotency/` - idempotency.interceptor/service guarding retried operations |
+| HTTP retry identity | `apps/api/src/shared/modules/idempotency/` - HTTP interceptor/service; this does not prove every background job is idempotent |
 | Event-driven flow | `apps/api/src/shared/common/events/` - `event.service.ts` + `domain-events.ts`/`application-events.ts` on EventEmitter2 |
 | Retry on transient errors | `apps/api/src/shared/common/interceptors/prisma-retry.interceptor.ts` - bounded retry for Prisma connection errors |
 | Saga / 2PC | No counterpart - payments use idempotency + webhooks + reconciliation instead of a saga orchestrator |

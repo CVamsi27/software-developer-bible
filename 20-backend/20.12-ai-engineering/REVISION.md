@@ -82,6 +82,34 @@ Source: [Safety, Cost and Governance](20.12.06-safety-cost-governance.md).
 
 **A:** It rejects admission before concurrent reservations exceed the cap, without a separate over-limit increment/compensation race. Actual-cost settlement still needs a durable request/day reservation, bounded provider usage, and exactly-once release of unused funds.
 
+## Trace and Vary the Boundary
+
+Source: [Architecture](20.12.01-llm-app-architecture.md), [evaluation trace](20.12.02-prompts-context-evals.md#one-deterministic-evaluation-trace), [fusion](20.12.03-retrieval-quality-hybrid-search-reranking.md#trace-fusion-independently-of-any-provider), [local loop](20.12.04-agent-orchestration-patterns.md#an-executable-control-loop-with-injected-read-tools), [sizing](20.12.05-serving-models-hosted-vs-self-hosted.md#vram-sizing-calculator), and [budget admission](20.12.06-safety-cost-governance.md).
+
+**Q:** An answer cites a permitted document but contradicts it. Which check passes, and which must fail?
+
+**A:** Source-id membership passes. Claim-support grading must fail; a structural validator cannot establish factual grounding.
+
+**Q:** A relevant document is absent from both candidate lists. Can RRF or a reranker recover it?
+
+**A:** No. Improve retrieval, eligibility or indexing; later stages only reorder the selected candidates.
+
+**Q:** A model proposes an unknown tool every turn. Can it avoid the local loop's ceiling?
+
+**A:** No. Each inference consumes a turn and each proposal a call, even if no tool executes. A provider spend ceiling still requires separate reservations.
+
+**Q:** The declared GPU capacity is negative or concurrency fractional. Should a sizing formula return a plausible fit?
+
+**A:** No. Reject invalid inputs before arithmetic. A valid lower-bound estimate still requires a real runtime load test.
+
+**Q:** A regex misses a patient's name. May the routing detector downgrade a known health-data class?
+
+**A:** No. Authoritative classification remains binding; detection can tighten a policy but cannot prove anonymization.
+
+**Q:** A cache prefix is reused but writing it also has a charge. Is a hit automatically free?
+
+**A:** No. Measure eligible reuse and the provider's current input, cached-input, cache-write and output categories; prompt caching is distinct from reusing an answer.
+
 ## Summary
 
 Assess state, authority, cost, and recovery at explicit boundaries. An eval pass or a guardrail is evidence for its tested contract, not a blanket accuracy, privacy, or compliance guarantee.

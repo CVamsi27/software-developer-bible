@@ -1,6 +1,6 @@
 # Monorepo — Index
 
-> **Study time:** ≈ 1 h 5 m of reading (7 files, ~9 min average).
+> **Study time:** ≈ 1 h 7 m of reading (7 files, ~10 min average).
 > **7 files** — Monorepo architecture from overview and Turborepo to Nx, workspace tooling deep-dive, versioning & publishing strategies, and curated interview questions.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)
@@ -27,7 +27,7 @@
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Monorepo Overview](40.8.01-monorepo-overview.md) | Monorepo vs polyrepo, pnpm/Yarn/npm workspaces, workspace protocol, when to use | Important | Specialized | 12 min |
+| 01 | [Monorepo Overview](40.8.01-monorepo-overview.md) | Monorepo vs polyrepo, pnpm/Yarn/npm workspaces, workspace protocol, when to use | Important | Specialized | 13 min |
 
 ---
 
@@ -38,7 +38,7 @@ The two main build/cache systems for monorepos.
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
 | 02 | [Turborepo](40.8.02-turborepo.md) | Pipeline, content-hash caching, remote cache, filter, Docker layer caching | Vercel ecosystem, JS/TS monorepos | Important | Specialized | 12 min |
-| 03 | [Nx](40.8.03-nx.md) | Generators, dependency graph, affected commands, module boundaries, Nx Cloud | Large JS/TS monorepos with strict boundaries | Important | Specialized | 11 min |
+| 03 | [Nx](40.8.03-nx.md) | Generators, dependency graph, affected commands, module boundaries, Nx Cloud | Large JS/TS monorepos with strict boundaries | Important | Specialized | 12 min |
 
 **Decision:**
 
@@ -82,7 +82,8 @@ Monorepo tool?
 2. **Turborepo** or **Nx** — for the JD's stack
 3. **Tools Deep-Dive** — for senior roles
 4. **Versioning & Publishing** — "how do you release from a monorepo?"
-5. **Interview Questions** — final review
+5. **Revision** — explain the mechanisms from memory using [source-linked prompts](REVISION.md)
+6. **Interview Questions** — final practice
 
 ---
 
@@ -119,7 +120,7 @@ Where [docita](https://github.com/CVamsi27/docita) — my production hospital-ma
 | pnpm workspaces | `pnpm-workspace.yaml`: `apps/*` (api, app, internal, landing, worker) + `packages/*` (ui, auth, data-access, db, types, utils…) |
 | Turborepo task graph | `turbo.json`: `build` depends on `^build` + `check-types` + `lint`; per-app env allowlists scope cache keys |
 | Shared tooling | One `vitest.shared.config.ts`, one `packages/typescript-config`, shared eslint config |
-| Dead-code control | Repo-wide `knip.json`; knip-clean enforced in release evidence |
+| Dead-code control | Repo-wide `knip.json`; check the current release report for the actual gate result; configuration alone is not a passing run |
 | Versioning/publishing | Not applicable — private app monorepo, no npm publishing |
 
 ## Finish This Section

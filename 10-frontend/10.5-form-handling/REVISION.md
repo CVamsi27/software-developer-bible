@@ -58,20 +58,6 @@ Source: [Autosave & Draft Recovery](10.5.06-autosave-draft-recovery.md)
 
 **A:** A queued or in-flight write can recreate the draft after deletion. Stop new scheduling, await prior writes, then clear storage.
 
-## Summary
-
-A useful answer names the guarantee, the mechanism that enforces it, and the failure boundary. Revisit the source when any of those is unclear.
-
-## See Also
-
-- [Section learning flow](INDEX.md) — return to the study sequence
-
-## References
-
-The source-linked chapters contain the supporting documentation and worked examples.
-
-[Back to section index](INDEX.md)
-
 ## Form state versus business commitment
 
 Source: [Learning chapter](10.5.01-react-hook-form.md)
@@ -100,3 +86,29 @@ Source: [Learning chapter](10.5.02-zod.md)
 **Q:** Does a parsed invoice payload establish tenant permission?
 
 **A:** No. The schema establishes shape/constraints; authorization, ownership and transactional business invariants remain separate checks.
+## Controlled submission and selected subscriptions
+
+Source: [Formik](10.5.03-formik.md), [TanStack Form](10.5.04-tanstack-form.md)
+
+**Q:** Why can a synchronous wizard Next handler leave Formik pending?
+**A:** A non-promise submit handler must explicitly settle isSubmitting. Changing the step alone does not finish the submission cycle.
+
+**Q:** Why does a stable row ID coexist with an indexed form path?
+**A:** React identity should follow the row after removal/reordering, while its field path describes the current position in the model.
+
+**Q:** A schema transform validates successfully. Does TanStack automatically submit that transformed value?
+**A:** No. Parse deliberately at the submit boundary when normalized output is needed; validation and model replacement are different jobs.
+
+## Summary
+
+A useful answer names the guarantee, the mechanism that enforces it, and the failure boundary. Revisit the source when any of those is unclear.
+
+## See Also
+
+- [Section learning flow](INDEX.md) — return to the study sequence
+
+## References
+
+The source-linked chapters contain the supporting documentation and worked examples.
+
+[Back to section index](INDEX.md)

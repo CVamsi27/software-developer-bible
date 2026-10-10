@@ -1,36 +1,22 @@
 # Clients & Production - GraphQL
 
-> **Study time:** ≈ 1 h 24 m of reading (4 files, ~21 min average).
+> **Study time:** ≈ 28 min of reading (4 files, ~7 min average).
 > **4 files.** The client side (normalized cache, optimistic UI), production defenses (query depth limits, complexity analysis, persisted queries, field-level auth), and schema-driven codegen with CI safety gates.
 
 [![Files](https://img.shields.io/badge/files-4-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Clients%20%26%20Production-%23ff6b35)](../INDEX.md)
 
----
+## Learning passes
 
-## Files
+1. Read [Apollo Client](20.7.3.01-apollo-client.md). Trace one normalized entity, an optimistic rollback and a list membership change. Distinguish entity updates from pagination and private-cache lifetime.
+2. Read [Performance and security](20.7.3.02-performance-security.md). Explain APQ versus a trusted allowlist, then reject a valid but oversized page and trace resource authorization.
+3. Read [Code generation and schema safety](20.7.3.03-codegen-schema-safety-ci.md). Generate the actual client-preset output, compile its consumer and identify what still needs runtime validation.
+4. Use [Client and production revision](REVISION.md) before the [interview bank](../04-interview-prep/20.7.4.01-interview-questions.md). Back-end roles can emphasize admission and compatibility; front-end roles should also explain cache/identity transitions.
 
-| Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Apollo Client](20.7.3.01-apollo-client.md) | `InMemoryCache` normalization by `__typename:id`, useQuery/useMutation/useSubscription, optimistic UI; urql/Relay alternatives | Optional | Specialized | 38 min |
-| 02 | [Performance & Security](20.7.3.02-performance-security.md) | N+1, query depth limits, complexity/cost analysis, persisted queries (APQ), per-operation rate limiting, introspection off in prod, field-level auth, CSRF | Optional | Specialized | 32 min |
-| 03 | [Codegen & Schema Safety in CI](20.7.3.03-codegen-schema-safety-ci.md) | GraphQL Code Generator setup, TypedDocumentNode, fragment colocation, schema-as-source-of-truth workflow, graphql-inspector breaking-change checks, publishing typed SDKs | Optional | Specialized | 12 min |
+## Project comparison
 
----
+Compare the [Docita case study](../../../projects/docita/INDEX.md) with these GraphQL boundaries: tenant policy, response freshness and contract generation matter in either API style. A REST implementation is not proof of Apollo caching, GraphQL query controls or a GraphQL codegen pipeline. Use source-backed project claims separately from proposed GraphQL designs.
 
-[← Back to GraphQL](../INDEX.md)
+## Navigation
 
----
-
-## Docita Anchor
-
-Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
-
-_No direct docita implementation yet._ REST-first choice — no GraphQL dependency anywhere in the workspace. The production-defense counterparts that do exist: response caching (`apps/api/src/shared/common/interceptors/cache.interceptor.ts`) and CSRF protection (`apps/api/src/shared/common/interceptors/csrf.interceptor.ts`).
----
-
-[← Previous: Execution](../02-execution/INDEX.md) · [Next: Interview Prep →](../04-interview-prep/INDEX.md)
-
-## Section Revision
-
-After the learning chapters, use the [separate revision drill](REVISION.md) to check recall before interview practice.
+[← Execution](../02-execution/INDEX.md) · [GraphQL index](../INDEX.md) · [Interview practice →](../04-interview-prep/INDEX.md)

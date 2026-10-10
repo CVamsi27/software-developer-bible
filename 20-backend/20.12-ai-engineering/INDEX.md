@@ -1,7 +1,7 @@
 # AI Engineering — Index
 
-> **Study time:** ≈ 1 h 30 m of reading (8 files, ~11 min average).
-> **Building products WITH LLMs** — not model training. This is the 2025+ interview differentiator: RAG architecture, streaming, structured output, evals, and production governance (cost + safety). Relevant interviews may probe these mechanisms; your Docita AI-kill-switch story lives here.
+> **Study time:** ≈ 1 h 34 m of reading (8 files, ~12 min average).
+> **Building products WITH LLMs** — not model training. This is the 2025+ interview differentiator: RAG architecture, streaming, structured output, evals, and production governance (cost + safety). Relevant interviews may probe these mechanisms; verify current project controls before using a personal interview story.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Backend-blue)](../../INDEX.md)
@@ -44,7 +44,7 @@ For an interactive docs feature, read architecture → prompts/evals → retriev
 ```text
 Task needs world knowledge you don't have? → RAG (retrieval + grounding)
 Task is narrow/repetitive/format-fixed? → Prompting + structured output
-Task needs a behavior/style no model has? → Fine-tune LAST (data + cost + ops burden)
+Task has measured recurring behavioral failures? → Evaluate fine-tuning (data + cost + ops burden)
 Output feeds code/DB/UI? → JSON schema / function calling — never parse prose
 Regulated data involved? → Governance layer FIRST (see file 6)
 ```
@@ -64,7 +64,7 @@ Client ──► API gateway ──► AI service layer ──► provider SDK (
 
 ## Docita Anchor
 
-Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+These [Docita](https://github.com/CVamsi27/docita) pointers are starting points for inspecting current code, tests and deployed configuration:
 
 | Topic | Docita evidence |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
@@ -74,13 +74,13 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Cost governance | `apps/api/src/shared/modules/ai/ai-credit-guard.service.ts` - per-clinic credit allotment/exhaustion enforcement |
 | Streaming chat | `apps/api/src/shared/modules/ai/ask-ai.service.ts` - history-aware streamed responses |
 
-RAG/vector retrieval: _no direct docita implementation yet_ — governance-first AI is the pattern this stack teaches.
+These pointers alone do not prove deployment, current provider retention policy, personal ownership or the absence of a retrieval implementation.
 
 ## Cross-references
 
 - Your working example: Docita AI module — env kill-switch (`AI_EXTERNAL_ENABLED`), response caching, streaming generators, credit guard ([80.21 §Q22](../../80-lanes-abroad-full-stack/80.21-docita-google-level-prep.md))
 - [Microservices resilience](../20.6-microservices/INDEX.md) applies directly (circuit breakers around providers)
-- LiveEO angle: GeoAI/optical-SAR fusion is their SPRIND frontier — architecture literacy transfers
+- For a geospatial AI role, connect these mechanisms to the actual role specification and inspected product context
 
 ---
 

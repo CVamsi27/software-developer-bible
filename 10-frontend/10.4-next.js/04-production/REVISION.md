@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Next.js-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
 
@@ -117,6 +117,28 @@ Source: [Deploying Next.js](10.4.4.03-deploying-nextjs.md)
 
 6. **Q:** Why must shutdown testing use the server handle that actually owns traffic?
    **A:** An unrelated wrapper cannot close the generated standalone server through an invented binding. Verify ingress draining and termination behavior on the real process.
+
+## Trace a production boundary
+
+Source: [Authentication](10.4.4.01-authentication.md), [Image optimization](10.4.4.02-image-optimization.md), [Deployment](10.4.4.03-deploying-nextjs.md)
+
+**Q:** A signed session says admin but the account was demoted. What should authorize a protected write?
+**A:** A verified identity resolved against current account/permission policy. An early routing check based on token claims cannot establish current resource access by itself.
+
+**Q:** Can a response generation counter stop an older login response from setting a cookie?
+**A:** No. It can ignore stale client state updates, but the browser processes response cookies independently. Serialize account-changing operations or enforce an appropriate server/session protocol.
+
+**Q:** A 400-CSS-pixel card appears on a density-2 display. Why might the browser choose an approximately 800-pixel image?
+**A:** The display needs about two source pixels per CSS pixel. Accurate sizes and available srcset candidates let it choose suitable bytes; optimizer configuration and browser choice determine the actual candidate.
+
+**Q:** Why should source replacement create a new loading-state owner?
+**A:** An old image can complete or fail after the replacement. A source-keyed component resets state and isolates those late events from the new image's feedback.
+
+**Q:** The new server is healthy but older browser tabs cannot fetch chunks. What did the rollout omit?
+**A:** Asset/version compatibility and retention during overlapping deployments. A health probe proves current serving behavior, not that clients with an older build still have the files and action references they need.
+
+**Q:** Does a shared ISR store automatically provide cross-replica coherence?
+**A:** No. Storage also needs compatible serialization, versioned keys and coherent invalidation semantics. Test failure, concurrent regeneration and rollback on the actual deployment topology.
 
 ## Summary
 

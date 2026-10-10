@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-React-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-7_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-8_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -17,13 +17,13 @@ Source: [Suspense](10.3.3.01-suspense.md)
 **How It Works**
 
 1. **Q:** What physically happens when a component suspends?
-   **A:** The component throws a promise during render; React catches it at the nearest `<Suspense>` boundary above, renders that boundary's fallback instead of the subtree, and re-renders the real UI once the promise resolves — everything outside the boundary keeps rendering untouched.
+   **A:** The component throws a promise during render; React catches it at the nearest `<Suspense>` boundary above, renders that boundary's fallback instead of the subtree, and re-renders the real UI once the promise resolves — already revealed transition content may remain visible, and render attempts can be retried. Boundary placement controls reveal scope, not an exact invocation count.
 
 2. **Q:** Does a Suspense boundary make the whole app wait, or only part of it?
    **A:** Only the subtree inside it. Sibling boundaries and content above it render immediately, which is why the granularity of boundaries — not Suspense itself — decides which regions block which.
 
 3. **Q:** Which React features does Suspense sit underneath besides `React.lazy`?
-   **A:** Data fetching (React Query/Relay suspense modes, `use(promise)` in React 19), streaming server-rendered HTML, and selective hydration of urgent components — all reuse the same throw-a-promise-and-show-a-fallback mechanism.
+   **A:** Data fetching (React Query/Relay suspense modes, `use(promise)` in React 19), streaming server-rendered HTML, and selective hydration of urgent components — share coordinated render availability, while client retry, server streaming and hydration have different renderer responsibilities.
 
 **Code Examples**
 
@@ -39,12 +39,12 @@ Source: [Suspense](10.3.3.01-suspense.md)
    **A:** Every async region then waits on the slowest one — the header spins behind the same fallback as the content. Per-section boundaries let each region show its own fallback and load independently.
 
 7. **Q:** When is lazy-loading a component *not* worth it?
-   **A:** When it's small and needed immediately — a 1KB button or icon costs a chunk request and a fallback flash that outweigh the bytes saved. Split only large, on-demand pieces: routes, editors, charts, modals.
+   **A:** When it's small and needed immediately — splitting can add requests and loading transitions without useful payload savings. Measure the built chunks and target connection; on-demand routes, editors, charts and modals are candidates rather than universal rules.
 
 **Best Practices**
 
 8. **Q:** What hides the extra network round-trip that code splitting introduces?
-   **A:** Preloading — start the dynamic import before the user navigates (e.g., on hover) so the Suspense fallback shows for milliseconds instead of the full download; without it, first visits to a split route pay the 100-200ms chunk fetch.
+   **A:** Preloading starts eligible resources before navigation, potentially reducing the wait. A cache hit, connection speed and actual chunk size determine the result; no fixed delay or elimination of a fallback is guaranteed.
 
 ## Error Boundary
 
@@ -178,10 +178,10 @@ Source: [React Performance Optimization](10.3.3.05-performance.md)
 
 **Code Examples**
 
-3. **Q:** In the `React.memo` example, why do `data` and `onClick` need `useState`/`useCallback` for the memo to bite?
+3. **Q:** Why do stable data and callback identities matter at a React.memo boundary?
    **A:** `memo` compares props shallowly with `Object.is`; an inline object or a re-created function is a fresh reference on every parent render, so the comparison always fails. Stabilizing both props is what lets the comparison succeed and skip the child's render.
 
-4. **Q:** What is the dimmed list in `SearchBox` communicating to the user?
+4. **Q:** What is the dimmed list in ProductSearch communicating to the user?
    **A:** `useDeferredValue(query)` lags behind the input while the heavy filter re-renders, so `query !== deferredQuery` means the visible list still matches an older query. Dropping its opacity tells the user "these results are behind your typing" instead of letting stale results look final or the UI look frozen.
 
 **Common Mistakes**
@@ -222,10 +222,10 @@ Source: [State Management](10.3.3.06-state-management.md)
 
 **Code Examples**
 
-5. **Q:** Why do all three steps in the optimistic-toggle mutation — cancel, snapshot, rollback — exist?
-   **A:** `cancelQueries` stops an in-flight refetch from overwriting the patch; the `previous` snapshot returned from `onMutate` lets `onError` restore the exact prior list when the PATCH fails; `onSettled` revalidates either way so the cache converges on server truth.
+5. **Q:** What responsibilities do cancel, snapshot and rollback have in an optimistic cache mutation?
+   **A:** `cancelQueries` stops an in-flight refetch from overwriting the patch; the `previous` snapshot returned from `onMutate` lets `onError` restore the exact prior list when the PATCH fails; `onSettled` revalidates either way. This strategy also needs ownership/version rules so an older rollback cannot erase a newer patch; the current learning example instead uses an independent UI overlay.
 
-6. **Q:** Why does the Zustand example subscribe to `state.todos` and `state.addTodo` separately?
+6. **Q:** Why can separate selectors for state.todos and state.addTodo narrow subscriptions?
    **A:** Each `useTodoStore(selector)` call compares its selected value to decide whether that store update requires a render. Selecting the whole store — or returning an inline-built object — would wake the component on every write, defeating the selector contract from First Principles.
 
 **Common Mistakes**
@@ -236,7 +236,35 @@ Source: [State Management](10.3.3.06-state-management.md)
 **Best Practices**
 
 8. **Q:** State appears and the team asks "where does it go?" — give the decision rule.
-   **A:** Component-only → `useState`/`useReducer`; shared by siblings → lift to the common ancestor; low-frequency app-wide reads → Context; complex high-frequency client logic → Zustand/Redux; anything fetched from an API → React Query; anything shareable via link → the URL.
+   **A:** Component-only → `useState`/`useReducer`; shared by siblings → lift to the common ancestor; shared provider values → Context; independently selected external state or action tooling → a suitable store; remote copies needing freshness/invalidation → a server-state cache; shareable filters → validated URL state. Frequency and complexity are considerations rather than rigid library boundaries.
+
+## Ownership under changed conditions
+
+Source: [Custom Hooks](10.3.3.03-custom-hooks.md), [Suspense](10.3.3.01-suspense.md), [External stores](10.3.3.04-usesyncexternalstore.md), [State management](10.3.3.06-state-management.md)
+
+**Q:** A parent renders again with the same pending promise. Is that another network request?
+
+**A:** Not from the read itself. The stable promise owner controls creation; the read remains pending until that resource settles.
+
+**Q:** Why does returning a new lazy component type on every render reset more than loading UI?
+
+**A:** React sees a different component identity, so retained local state can be lost and work restarted. Declare lazy types outside rendering.
+
+**Q:** What remains independent when two components call useCounter?
+
+**A:** Each caller owns distinct Hook records and counts. Reusing the implementation shares logic, not storage.
+
+**Q:** Why must a counter's public setter use the same bounds as increment and reset?
+
+**A:** Otherwise another entry point bypasses the invariant. Every exposed transition must clamp or reject according to the declared policy.
+
+**Q:** Does navigator.onLine establish that an authenticated API request will succeed?
+
+**A:** No. It is a browser connectivity hint; DNS, service health, authorization or a particular route can still fail.
+
+**Q:** Does an optimistic rollback always restore the correct displayed state?
+
+**A:** Only with a valid operation-ownership policy. Restoring an old snapshot after a newer patch can erase that patch; independent overlays or versioned patches avoid that blind restoration.
 
 ## Summary
 

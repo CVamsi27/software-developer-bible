@@ -1,121 +1,37 @@
 # GraphQL — Index
 
-> **Study time:** ≈ 5 h 24 m of reading (12 files, ~27 min average).
+> **Study time:** ≈ 1 h 28 m of reading (12 files, ~7 min average).
 > **12 files** — GraphQL fundamentals from schema design and queries/mutations/subscriptions to resolvers, Apollo Server, Apollo Client, codegen schema safety in CI, performance, security, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-12-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-API-%23ff6b35)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Why GraphQL:** The alternative to REST. Used at GitHub, Shopify, Facebook, and increasingly at mid-stage startups. Senior interviews for full-stack roles may include GraphQL schema design, N+1 query prevention, and DataLoader patterns. Read this section if the JD mentions GraphQL or if you're interviewing at companies that have moved from REST.
+Study GraphQL when the role involves client-selected API composition, graph execution or an existing GraphQL service. Learn its contract and execution costs before choosing a server/client library; compare it with REST using the application's actual access patterns.
 
----
+## Learning passes
 
-## Topic Categories
+| Pass | Reading | What you should be able to explain |
+| ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| Contract | [Fundamentals](01-fundamentals/INDEX.md) | Select fields, trace nullability, design inputs and paginate a stable relationship. |
+| Execution | [Resolvers and Apollo Server](02-execution/INDEX.md) | Resolve a field tree with scoped policy, ordered batching and an explicit HTTP/context boundary. |
+| Consumers and operations | [Clients and production](03-clients-and-production/INDEX.md) | Separate entity/list updates, bound request-specific work and validate generated contract artifacts. |
+| Revision | [Fundamentals](01-fundamentals/REVISION.md), [execution](02-execution/REVISION.md), [clients/production](03-clients-and-production/REVISION.md) | Recall mechanisms and their limitations without borrowing the chapter's wording. |
+| Interview practice | [Interview preparation](04-interview-prep/INDEX.md) | Adapt all 50 authored prompts to the role and defend a concrete decision with its failure boundary. |
 
-The 9 files are organized into 4 categories, each with its own INDEX.
+For a back-end role, emphasize authorization paths, storage fan-out, admission and dependency failure. For a front-end role, also trace normalized identity, partial/optimistic data and logout/tenant transitions. For senior architecture work, explain schema ownership, supported-client compatibility and what federation does to cost and trust.
 
-| Category | Files | Why it matters |
-| ---------------------------------------------------------- | ----: | -------------------------------------------------------------------------------- |
-| [Fundamentals](01-fundamentals/INDEX.md) | 3 | Overview vs REST, schema design, queries/mutations/subscriptions |
-| [Execution](02-execution/INDEX.md) | 2 | Resolvers + DataLoader, Apollo Server — the runtime side |
-| [Clients & Production](03-clients-and-production/INDEX.md) | 3 | Apollo Client cache, performance & security defenses, codegen + CI schema checks |
-| [Interview Prep](04-interview-prep/INDEX.md) | 1 | 30+ curated Qs at senior depth |
+## Project comparison
 
----
-
-## The Flow
-
-```text
-01 FUNDAMENTALS ──→ 02 EXECUTION ──→ 03 CLIENTS & PRODUCTION ──→ 04 INTERVIEW PREP
-overview            resolvers         apollo client              30+ Q&A
-schema design       apollo server     performance & security
-queries/mutations                     codegen + schema CI
-```
-
----
-
-## Fundamentals
-
-The mental model — schema-first design. Category INDEX: [Fundamentals](01-fundamentals/INDEX.md).
-
-| # | File | Topics | Role priority | General importance | Read time |
-| --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [GraphQL Overview](01-fundamentals/20.7.1.01-graphql-overview.md) | Schema, queries, mutations, subscriptions, vs REST, when to use GraphQL | Optional | Specialized | 31 min |
-| 02 | [Schema Design](01-fundamentals/20.7.1.02-schema-design.md) | Types, fields, arguments, enums, unions, interfaces, input types, schema-first design | Optional | Specialized | 46 min |
-| 03 | [Queries & Mutations](01-fundamentals/20.7.1.03-queries-mutations.md) | Query structure, variables, directives, input types, fragments, alias | Optional | Specialized | 44 min |
-
----
-
-## Execution
-
-How the server resolves queries. Category INDEX: [Execution](02-execution/INDEX.md).
-
-| # | File | Topics | Role priority | General importance | Read time |
-| --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Resolvers](02-execution/20.7.2.01-resolvers.md) | Resolver chain, DataLoader (N+1 prevention), context, error handling | Optional | Specialized | 34 min |
-| 02 | [Apollo Server](02-execution/20.7.2.02-apollo-server.md) | Server setup, plugins, federation, subscriptions, schema stitching | Optional | Specialized | 33 min |
-
----
-
-## Clients & Production
-
-The client-side and the production concerns. Category INDEX: [Clients & Production](03-clients-and-production/INDEX.md).
-
-| # | File | Topics | Role priority | General importance | Read time |
-| --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Apollo Client](03-clients-and-production/20.7.3.01-apollo-client.md) | Client setup, queries, mutations, normalized cache, fragments, optimistic UI | Optional | Specialized | 38 min |
-| 02 | [Performance & Security](03-clients-and-production/20.7.3.02-performance-security.md) | N+1, DataLoader, query depth limits, complexity analysis, APQs (persisted queries), CSRF, auth | Optional | Specialized | 32 min |
-| 03 | [Codegen & Schema Safety in CI](03-clients-and-production/20.7.3.03-codegen-schema-safety-ci.md) | GraphQL Code Generator, TypedDocumentNode, fragment colocation, graphql-inspector breaking-change gates, typed SDK publishing | Optional | Specialized | 12 min |
-
----
-
-## Interview Prep
-
-Category INDEX: [Interview Prep](04-interview-prep/INDEX.md).
-
-| # | File | Topics | Role priority | General importance | Read time |
-| --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [GraphQL Interview Questions](04-interview-prep/20.7.4.01-interview-questions.md) | 30+ curated questions with answers | Optional | Specialized | 48 min |
-
----
-
-## Suggested Study Order
-
-1. **Overview + Schema Design** (50 min) — must know
-2. **Queries & Mutations** (20 min) — must know
-3. **Resolvers** (30 min) — must know, especially DataLoader
-4. **Apollo Server** (25 min) — production runtime
-5. **Apollo Client** (25 min) — if frontend focus
-6. **Performance & Security** (30 min) — senior level
-7. **Codegen & Schema Safety** (25 min) — tooling maturity signal
-8. **Interview Questions** (2 hrs)
-
----
+The [Docita case study](../../projects/docita/INDEX.md) provides source-backed REST/domain design examples. These GraphQL fixtures teach analogous boundaries but do not establish a deployed GraphQL implementation. A Prisma storage schema and an API DTO schema are separate contracts unless an explicit generator connects them; relation loading does not by itself prove N+1 is absent. Keep project evidence and proposed GraphQL designs distinct.
 
 ## Cross-References
 
-- [REST APIs](../20.3-rest-apis/INDEX.md) — the alternative; most senior interviews cover REST first
-- [React](../../10-frontend/10.3-react/INDEX.md) — Apollo Client + React
-- [NestJS](../20.2-nestjs/INDEX.md) — NestJS GraphQL module
-- [System Design](../../30-architecture/30.2-system-design/INDEX.md) — GraphQL in system design (federation, schema stitching)
-
----
+- [REST APIs](../20.3-rest-apis/INDEX.md) — compare resource/representation contracts and HTTP behavior.
+- [React](../../10-frontend/10.3-react/INDEX.md) — UI identity and state transitions.
+- [NestJS](../20.2-nestjs/INDEX.md) — transport and domain boundaries.
+- [System design](../../30-architecture/30.2-system-design/INDEX.md) — consistency, dependency cost and service ownership.
 
 ## Navigation
 
-[← Previous: Microservices](../20.6-microservices/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Design Patterns →](../../30-architecture/30.1-design-patterns/INDEX.md)
-
----
-
-## Docita Anchor
-
-Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). GraphQL has **no docita implementation** - the API is REST + typed DTOs, so this stack is interview knowledge, not shipped code. The closest shipping counterparts:
-
-| Topic | Docita evidence (closest analog) |
-| ------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Typed schema contracts | `apps/api/src/shared/common/pipes/zod-validation.pipe.ts` + nestjs-zod DTOs - schema-first discipline without GraphQL's runtime |
-| Data-layer schema | `packages/db/prisma/schema.prisma` - the source of truth the typed API contract is derived from |
-| N+1 prevention (DataLoader) | `apps/api/src/shared/common/select-fragments.ts` + Prisma relation loading - N+1 avoided at the query layer instead |
-| Subscriptions (realtime push) | `apps/api/src/websockets/notifications.gateway.ts` + `payment.websocket.gateway.ts` - the WebSocket analog of GraphQL subscriptions |
-| Federation / gateway / codegen | No counterpart - no GraphQL runtime, federation, or codegen pipeline exists |
+[← Microservices](../20.6-microservices/INDEX.md) · [Main index](../../INDEX.md) · [Design patterns →](../../30-architecture/30.1-design-patterns/INDEX.md)

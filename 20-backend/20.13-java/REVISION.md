@@ -78,14 +78,42 @@ Source: [Spring Boot](20.13.05-spring-boot.md)
 
 **A:** No. Register the configuration type and validation first; missing required values can fail validation, but unknown properties are ignored by default unless configured otherwise.
 
+## Follow a Trace and Change One Condition
+
+Source: [Language trace](20.13.01-java-language-fundamentals.md#trace-references-copies-and-collection-order), [account](20.13.02-java-oop-solid.md#1-encapsulation), [buffer cycle](20.13.03-java-concurrency-multithreading.md#follow-a-full-puttake-cycle), [testing](20.13.04-java-testing-junit-mockito.md), and [request lifecycle](20.13.05-spring-boot.md#trace-one-request-through-the-whole-application).
+
+**Q:** A method adds to a list then reassigns its parameter. Which change does the caller see?
+
+**A:** The add affects the shared object. Reassigning the copied reference only changes the local parameter; Java remains pass-by-value.
+
+**Q:** Does a copied ArrayList protect against mutation of shared element objects?
+
+**A:** No. It copies the structure, not each element. Deep immutability or copying needs an explicit element contract.
+
+**Q:** A 100-cent account withdraws 30, then attempts 90. What remains?
+
+**A:** Seventy cents. The second call returns false without mutation; a negative amount throws instead of increasing the balance.
+
+**Q:** A producer receives not-full but another producer fills the slot first. Why is await inside while?
+
+**A:** The awakened producer must reacquire and recheck the condition. Signals do not reserve capacity, and spurious wakes are permitted.
+
+**Q:** A repository test flushes then reads the same id without clearing its entity manager. What could the assertion miss?
+
+**A:** It can receive the same managed entity instead of reading the persisted row. Clear before the lookup and separately test transaction/concurrency behavior.
+
+**Q:** A singleton service stores a request's tenant in a field. Can constructor injection make that safe?
+
+**A:** No. Concurrent requests share the bean. Pass trusted request state explicitly and keep transaction-scoped access on the correct connection.
+
 ## Summary
 
 Use these prompts for retrieval practice. The source chapters contain examples; the interview bank adds longer spoken-answer prompts.
 
 ## See Also
 
-- [Reading flow](INDEX.md)
-- [Interview Questions](20.13.06-interview-questions.md)
+- [Reading flow](INDEX.md) — return to prerequisites and learning stages for language, concurrency and framework contracts
+- [Interview Questions](20.13.06-interview-questions.md) — apply language, thread and framework contracts to timed failure scenarios
 
 ## References & Learn More
 

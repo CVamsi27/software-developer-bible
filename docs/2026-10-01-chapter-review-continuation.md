@@ -1,5 +1,7 @@
 # Chapter Review Continuation
 
+> **Dated review record:** counts, test results and remaining-work statements below describe the recorded pass. Use the [current review progress](2026-10-08-explanation-depth-progress.md) and [verification runbook](verification-gates.md) for present scope; chapter existence and passing scans do not establish complete reader review.
+
 The shared OpenCode conversation established four linked requirements: correct
 technical inaccuracies, explain missing mechanisms, remove repeated teaching,
 and end concept chapters with Summary → Revision Questions → See Also.

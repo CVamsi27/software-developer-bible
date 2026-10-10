@@ -126,13 +126,41 @@ Source: [Transactional Outbox Pattern](20.6.3.06-transactional-outbox.md)
 
 **A:** A marker committed before a failed update can make the retry skip missing work. Keep both in one transaction, verify the intended mutation happened and roll back the marker on failure. A unique consumer/event identity prevents repeated effects for that consumer.
 
+## Replay, projection and migration failure cases
+
+Sources: [event sourcing](20.6.3.03-event-sourcing.md), [CQRS](20.6.3.04-cqrs.md), [database decomposition](20.6.3.05-decomposing-monolith-database.md).
+
+**Q:** Two commands read stream version four. Why must append check that version atomically?
+
+**A:** Both may have passed an invariant against the same old state. One successful append changes that state; the other must reload and re-evaluate instead of accepting its stale decision.
+
+**Q:** Why is a snapshot of version ten labeled version twelve unsafe?
+
+**A:** Replay starts after twelve and skips accepted changes eleven and twelve. Snapshot state and its exact source version must belong together.
+
+**Q:** Can a full-state projection accept version twelve after version ten without seeing eleven?
+
+**A:** It can under a validated complete-state contract. A delta consumer cannot generally skip eleven because its missing operation may change the result.
+
+**Q:** Why must a lagging payment view not trigger another charge?
+
+**A:** Read-model lag is not evidence of rejected payment. Query authoritative status or reconcile the original stable operation identity before deciding on another effect.
+
+**Q:** Why is a PostgreSQL LSN not sufficient as a unique changed-row identity?
+
+**A:** Multiple changes can share a source position. Use the connector's full transaction/record identity and order contract, with atomic target mutation and progress.
+
+**Q:** Why must a deletion tombstone survive an older snapshot record?
+
+**A:** Dropping deletion ordering allows the stale snapshot to recreate the row. A version/order-aware target must reject that older record and retain appropriate tombstone/checkpoint history.
+
 ## Summary
 
 Use these prompts after the reading pass to recall the data and consistency mechanisms and boundary constraints.
 
 ## See Also
 
-- [Category reading flow](INDEX.md)
+- [Category reading flow](INDEX.md) — return to prerequisites and learning stages for history, projections and distributed recovery
 
 ## References & Learn More
 

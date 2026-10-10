@@ -1,5 +1,7 @@
 # Docs Modernization Changelog 2 — September 2026
 
+> **Dated review record:** counts, test results and remaining-work statements below describe the recorded pass. Use the [current review progress](2026-10-08-explanation-depth-progress.md) and [verification runbook](verification-gates.md) for present scope; chapter existence and passing scans do not establish complete reader review.
+
 > The second modernization pass: repetition removal, ordering fixes, missing
 > topics, the closing-section gap driven to zero (and gate-enforced), merge
 > artifacts purged, and every one of the 2,313 cited URLs probe-verified.

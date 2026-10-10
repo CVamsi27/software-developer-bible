@@ -42,6 +42,26 @@ Source: [eBPF Observability](40.4.4.03-ebpf-observability.md)
 
 **A:** Kernel verification constrains program behavior but does not remove access, data-exposure, kernel-version, or resource-cost considerations. Attach only the probes required.
 
+## Coverage and Sampling Decisions
+
+Sources: [OpenTelemetry](40.4.4.01-opentelemetry.md), [Profiling](40.4.4.02-continuous-profiling.md), [eBPF](40.4.4.03-ebpf-observability.md).
+
+**Q:** Can tail sampling recover errors discarded by a 1% head sampler?
+
+**A:** No. It decides among received traces. Keeping all qualifying errors requires an input, buffering and routing policy that supplies those errors and survives its relevant failure cases.
+
+**Q:** Why can two randomly balanced tail-sampling collectors lose trace context?
+
+**A:** Spans from one trace can reach different decision makers. Trace-aware routing, late-span behavior and bounded decision buffers need explicit design.
+
+**Q:** Does high allocation volume prove that objects are retained?
+
+**A:** No. Allocation profiles show churn; live-heap evidence and retention paths are needed to investigate a leak. Compare equivalent workloads and runtime versions.
+
+**Q:** Why does an eBPF HTTP graph need more qualification than a connection graph?
+
+**A:** HTTP interpretation needs compatible parsing, configuration and access to readable protocol data. Encryption, unavailable hooks and lost events can limit coverage; selected flow records are not complete application traces.
+
 ## Summary
 
 Use the answers to check your reasoning, then revisit the source mechanism and reproduce any relevant example without copying it. A remembered label is useful only when you can explain its limits.

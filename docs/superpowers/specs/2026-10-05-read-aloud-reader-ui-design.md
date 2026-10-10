@@ -1,5 +1,7 @@
 # Read-Aloud Reader UI Design
 
+> **Historical design record:** requirements, example paths and checkboxes describe this dated plan, not current repository status or authorization to rerun it. Later [explanation-depth work](../plans/2026-10-08-explanation-depth.md), [AGENTS.md](../../../AGENTS.md) and [contributing.md](../../../contributing.md) govern current changes. Preserve stable chapter IDs; TL;DR and inline chapter cheat/revision sections are retired.
+
 ## Problem
 
 The read-aloud player currently takes a full row below the chapter title. It has no 0.5× speed option and does not keep the spoken paragraph in view. Its controls also do not consistently follow the reader's active theme.

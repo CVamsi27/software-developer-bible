@@ -74,13 +74,37 @@ Source: [API Security Best Practices & OWASP API Top 10](20.5.2.04-api-security-
 
 **A:** Compromised internal workloads and routing mistakes can cross a perimeter. Enforce identity and resource-specific policy at the application boundary, with trusted service context rather than network location alone.
 
+## Trace the boundary that changed
+
+Source: [XSS](20.5.2.01-xss.md), [CSRF](20.5.2.02-csrf.md), [SQL injection](20.5.2.03-sql-injection.md), [API security](20.5.2.04-api-security-best-practices.md).
+
+**Q:** Can HTML text escaping make an attacker-controlled `javascript:` link safe?
+
+**A:** No. URL scheme validation is a separate policy; prefer a safe text sink for plain content and validated destinations for links.
+
+**Q:** Why does a signed double-submit token include the current session identifier in its MAC?
+
+**A:** An attacker may inject a cookie/token pair they obtained for their own session. Session binding prevents that pair from verifying for the victim's session.
+
+**Q:** Does parameterizing a search term make `%` a literal character in `LIKE`?
+
+**A:** No. Binding separates SQL syntax from data, while `LIKE` still interprets pattern characters inside the value. Escape pattern characters when the feature promises a literal substring search.
+
+**Q:** Why does resolving an allowed hostname before `fetch` leave an SSRF gap?
+
+**A:** The connection may use another DNS answer or follow a redirect. The actual connector and every redirect must obey destination policy.
+
+**Q:** If a user can read an order, can the response include every stored order property?
+
+**A:** No. Object access and property access are separate decisions. Project only fields authorized for that caller and operation.
+
 ## Summary
 
 Use these prompts after the reading pass to recall the attacks and defense mechanisms and boundary constraints.
 
 ## See Also
 
-- [Category reading flow](INDEX.md)
+- [Category reading flow](INDEX.md) — return to prerequisites and learning stages for attacker-controlled input and browser/server defenses
 
 ## References & Learn More
 

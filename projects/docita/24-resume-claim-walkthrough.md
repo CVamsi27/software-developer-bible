@@ -67,7 +67,7 @@ For one query, show its filters and join scope, pagination ordering, index ratio
 
 Read [async processing](03-async-processing.md), [payments](04-payment-flows.md), [WhatsApp](06-whatsapp-integration.md) and [uploads](19-documents-and-uploads.md). Trace a business write, durable intent, claim, effect and acknowledgment.
 
-The inspected queue's completed-job lookup does not enforce effect-level idempotency. Not every producer demonstrably shares a transaction with business state. The outbox relay's process-local emit is not awaited asynchronous-consumer completion. Recovery without claim fencing can permit repeated work. Explain these current gaps before recommending leases, conditional completion and durable handoff.
+The inspected queue's completed-job lookup does not enforce effect-level idempotency. Not every producer demonstrably shares a transaction with business state. The 9 October recheck shows the outbox relay now awaits `emitAsync` under a 30-second timeout. That observes returned listener promises, but required-handler registration, failure propagation and non-cancelled work still need verification through the real listener wiring. Recovery without claim fencing can permit repeated work. Explain these current gaps before recommending leases, conditional completion and durable handoff.
 
 Verify a payment signature against the exact raw payload and appropriate merchant secret. Then separately establish event ownership, duplicate business effects, ordering and reconciliation. A valid signature is not proof that an event is authorized for every clinic or that a payment settled.
 

@@ -1,7 +1,7 @@
 # Releases & Metrics
 
-> **Study time:** ≈ 36 min of reading (3 files, ~12 min average).
-> **3 files.** Shipping safely and measuring delivery: blue-green and canary deployments for zero-downtime releases with instant rollback, plus the four DORA metrics that tell you whether shipping actually got faster AND safer.
+> **Study time:** ≈ 23 min of reading (3 files, ~8 min average).
+> **3 files.** Shipping safely and measuring delivery: blue-green and canary deployments for controlled traffic exposure and compatible recovery, plus five current DORA delivery measures that tell you whether shipping actually got faster AND safer.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Releases-green)](../INDEX.md)
@@ -11,16 +11,18 @@
 
 ## Why this category exists
 
-Rolling updates are the default but not always enough: big-bang rollouts carry all-or-nothing risk, and "deploy = release" couples shipping code to exposing it to users. Blue-green gives instant rollback; canary gives graduated risk reduction backed by metrics. Senior interviews treat these as the minimum bar for "how do you deploy?" answers.
+Rolling updates are the default but not always enough: big-bang rollouts carry all-or-nothing risk, and "deploy = release" couples shipping code to exposing it to users. Blue-green retains a potential routing reversal; canary bounds exposure when routing and analysis are configured. Both require compatible data and observed recovery. Senior interviews treat these as the minimum bar for "how do you deploy?" answers.
 
 ---
 
 ## File Index
 
+Read exposure/recovery mechanisms first, then learn to measure delivery outcomes with consistent identities. Complete the revision companion before interview practice.
+
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Blue-Green & Canary](40.3.3.01-blue-green-canary.md) | Blue-green swaps, canary traffic shifting, automated rollback on metrics, feature flags as decoupling | Important | Important | 19 min |
-| 02 | [DORA Metrics & Delivery Performance](40.3.3.02-dora-metrics-delivery-performance.md) | Four keys (deployment frequency, lead time, MTTR, change-fail rate), honest instrumentation from CI + incident tools, benchmark bands, gaming pitfalls, error-budget link | Important | Important | 15 min |
+| 01 | [Blue-Green & Canary](40.3.3.01-blue-green-canary.md) | Blue-green swaps, canary traffic shifting, automated rollback on metrics, feature flags as decoupling | Important | Important | 7 min |
+| 02 | [DORA Metrics & Delivery Performance](40.3.3.02-dora-metrics-delivery-performance.md) | Five measures (deployment frequency, change lead time, failed-deployment recovery time, change failure rate, deployment rework rate), honest instrumentation from CI + incident tools, benchmark bands, gaming pitfalls, error-budget link | Important | Important | 14 min |
 
 ---
 
@@ -39,15 +41,17 @@ Rolling updates are the default but not always enough: big-bang rollouts carry a
 
 ## Docita Anchor
 
+Source inspection on 2026-10-10 found deployment triggers paused. These are source-level implementation anchors; historical release notes and workflow comments do not prove current successful live runs.
+
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — releases and measures for real.
 
 | Topic | Docita evidence |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| Canary | `scripts/deploy/worker-canary-deploy.sh` rolls the worker app gradually |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Canary | `scripts/deploy/worker-canary-deploy.sh` checks a canary machine stays started before a rolling call; it does not measure HTTP request cohorts and uses two remote deploy calls |
 | Health-gated rollouts | Fly checks gate deploys: `/api/health/live`, 240s `grace_period` |
 | Release evidence | `docs/operations/releases/2026-08-06-p5-closure.md` fills a release-evidence checklist with measured facts (test counts, SLO baselines) |
 | Latency SLOs in CI | `scripts/checks/api-latency-slos.mjs` + `check-api-latency-budget.mjs` enforce budgets as gates |
-| Synthetic monitoring | `.github/workflows/synthetic-monitoring.yml` probes the live deployment |
+| Synthetic monitoring | `.github/workflows/synthetic-monitoring.yml` defines probes and records a historical manually-disabled note; current live scheduler state was not checked |
 | DORA dashboards | _No direct docita implementation yet._ |
 
 ## Finish This Section

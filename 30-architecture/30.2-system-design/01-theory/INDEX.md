@@ -1,13 +1,13 @@
 # System Design — Foundational Theory
 
-> **Study time:** ≈ 5 h 18 m of reading (24 files, ~13 min average).
+> **Study time:** ≈ 5 h 20 m of reading (24 files, ~13 min average).
 > **Study time and file counts are generated from the current chapter set.**
 
 [![Files](https://img.shields.io/badge/files-24-blue)](../../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-Read the foundations first, then the supporting guides and network chapters. Use the table below to follow the sequence; after this, move to [../02-case-studies/](../02-case-studies/INDEX.md).
+Begin with problem framing and the network prerequisites when needed, then follow the foundational concepts and supporting deep-dives. Use the table below to follow the sequence; after this, move to [../02-case-studies/](../02-case-studies/INDEX.md).
 
 ---
 
@@ -36,7 +36,7 @@ These 14 are the building blocks. Read in this order — each builds on the prev
 | 2 | [Data Consistency Models](30.2.1.02-consistency-models.md) | Linearizability, eventual and causal consistency, read-your-writes, monotonic reads | Match the read guarantee to what each operation needs users to observe. | Essential | Foundational |
 | 3 | [Sharding & Replication](30.2.1.03-sharding-and-replication.md) | Hash, range and directory sharding; single-leader, multi-leader and leaderless replication | Distinguish splitting data for capacity from copying it for availability or read scale. | Essential | Foundational |
 | 4 | [Load Balancing](30.2.1.04-load-balancing.md) | L4 vs L7, routing algorithms, health checks | Understand what information each routing strategy uses and how health decisions affect traffic. | Essential | Foundational |
-| 5 | [Caching Patterns](30.2.1.05-caching-patterns.md) | Cache-aside and other read/write patterns; LRU, LFU and TTL eviction | Choose what can be cached, how it stays acceptably fresh, and what happens on a miss or cache loss. | Essential | Foundational |
+| 5 | [Caching Patterns](30.2.1.05-caching-patterns.md) | Cache-aside and other read/write patterns; capacity eviction and independent expiry | Choose what can be cached, how it stays acceptably fresh, and what happens on a miss or cache loss. | Essential | Foundational |
 | 6 | [Queues & Async](30.2.1.06-queues-and-async.md) | Point-to-point and pub/sub, delivery scope, idempotency, recovery, ordering | Decide when deferred work helps and how consumers recover from retries, duplicates and backlog. | Essential | Foundational |
 | 7 | [Distributed Transactions](30.2.1.07-distributed-transactions.md) | Two-phase commit, three-phase commit, saga choreography and orchestration | Compare coordination protocols and workflows; a saga uses local transactions and compensation, not global atomicity. | Essential | Foundational |
 | 8 | [Rate Limiting](30.2.1.08-rate-limiting.md) | Fixed and sliding windows, token and leaky buckets, distributed limits | Select a policy and algorithm based on burst, fairness, precision and coordination requirements. | Essential | Foundational |
@@ -50,18 +50,19 @@ These 14 are the building blocks. Read in this order — each builds on the prev
 ## Meta guides & network deep-dive (read after the 14)
 
 | # | File | What it covers | Role priority | General importance |
-| --- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------ |
+| --- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------- | ------------------ |
 | 15 | [How to Approach](30.2.1.15-how-to-approach.md) | A practical interview flow: clarify → estimate → sketch → deep-dive. Adapt it to the prompt and time available. | Essential | Foundational |
-| 16 | [Interview Questions](30.2.1.16-interview-questions.md) | 30 practice designs, from short links and rate limits to multi-region payments. | Essential | Foundational |
 | 17 | [Probabilistic Data Structures](30.2.1.17-probabilistic-data-structures.md) | Bloom filter, HyperLogLog, Count-Min Sketch and Cuckoo filter for approximate membership, cardinality and frequency; Merkle trees as a deterministic integrity structure. | Essential | Foundational |
 | 18 | [Outbox & CDC](30.2.1.18-outbox-and-cdc.md) | Transactional outbox + change data capture — solving the dual-write problem for reliable event publication | Essential | Foundational |
 | 19 | [Resilience Patterns Deep-Dive](30.2.1.19-resilience-patterns-deep-dive.md) | Request hedging, load shedding, request coalescing, deadline propagation — the senior-level tail-latency toolkit | Essential | Foundational |
-| 20 | [Multi-Region Deployment](30.2.1.20-multi-region-deployment.md) | Active-passive vs active-active, geo-routing, cross-region replication, conflict resolution, GDPR data residency, RPO/RTO | Essential | Foundational |
+| 20 | [Multi-Region Deployment](30.2.1.20-multi-region-deployment.md) | Active-passive vs active-active, geo-routing, cross-region replication, conflict resolution, explicit data-location requirements, RPO/RTO | Essential | Foundational |
 | 21 | [TCP & UDP Transport Fundamentals](30.2.1.21-tcp-udp-transport-fundamentals.md) | Where transport sits, three-way handshake + cost arithmetic, seq/ack retransmission, flow/congestion control (slow start/AIMD), UDP datagram model, TCP-vs-UDP decision table, HOL blocking, connection reuse economics, TLS-on-TCP, QUIC rationale | Essential | Foundational |
-| 22 | [DNS & Name Resolution](30.2.1.22-dns-and-name-resolution.md) | Hierarchy and delegation, the resolution walk (stub → recursive → root → TLD → authoritative), record types, TTL as the agility-vs-cache trade, negative caching and the propagation myth, DNS as load balancer (and why failover is minutes), anycast, DoH/DoT, DNSSEC, Kubernetes `ndots` traps | Essential | Foundational |
+| 22 | [DNS & Name Resolution](30.2.1.22-dns-and-name-resolution.md) | Hierarchy and delegation, the resolution walk (stub → recursive → root → TLD → authoritative), record types, TTL as the agility-vs-cache trade, negative caching and the propagation myth, DNS as traffic steering with measured recovery behavior, anycast, DoH/DoT, DNSSEC, Kubernetes `ndots` traps | Essential | Foundational |
 | 23 | [TLS, HTTPS & the Certificate Lifecycle](30.2.1.23-tls-https-and-certificates.md) | Handshake vs record layer, hybrid crypto (ECDHE + AEAD), certificates and the chain of trust, DV/OV/EV, forward secrecy, resumption and 0-RTT replay risk, revocation/HSTS, termination points and mTLS, ACME automation | Essential | Foundational |
 
 ---
+
+After the learning chapters, use [Theory revision](REVISION.md), then the separate [30 design prompts](30.2.1.16-interview-questions.md). Chapter IDs remain stable even though interview practice comes last in the learning flow.
 
 **Next:** [Case studies →](../02-case-studies/INDEX.md)
 

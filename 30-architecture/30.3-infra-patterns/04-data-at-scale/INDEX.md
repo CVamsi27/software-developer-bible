@@ -1,7 +1,7 @@
 # Data at Scale
 
-> **Study time:** ≈ 45 min of reading (5 files, ~9 min average).
-> **5 files.** Scaling the data layer once your single Postgres stops being enough: database scaling levers, data pipelines that move and transform data continuously, CDN architecture that pushes reads to the edge, and multi-tenant SaaS architecture patterns.
+> **Study time:** ≈ 32 min of reading (5 files, ~6 min average).
+> **5 files.** Scaling measured data paths: database scaling levers, data pipelines that move and transform data continuously, CDN architecture that pushes reads to the edge, and multi-tenant SaaS architecture patterns.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Data%20at%20Scale-orange)](../INDEX.md)
@@ -11,7 +11,7 @@
 
 ## Why this category exists
 
-Vertical scaling buys you months, not years. At real scale you need to know which lever to pull — replicas for read load, partitioning for write load, caching for hot keys — and how data flows between systems: batch vs streaming pipelines, medallion architectures, edge delivery. These three chapters are the operational counterpart to system-design theory.
+Measure resource and consistency requirements before choosing a lever. Replicas can distribute eligible reads; partitioning can prune queries and simplify retention within one server; caches reuse eligible responses. Pipelines add useful copies and recovery contracts, while tenant isolation must cover every path. These chapters connect theory to those operational boundaries.
 
 ---
 
@@ -19,10 +19,10 @@ Vertical scaling buys you months, not years. At real scale you need to know whic
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Database Scaling](30.3.4.01-database-scaling.md) | Read replicas, vertical vs horizontal scaling, partitioning, connection pooling, scaling levers in order | Important | Specialized | 9 min |
-| 02 | [Data Pipelines](30.3.4.02-data-pipelines.md) | ETL vs ELT vs streaming, Bronze/Silver/Gold framing, batch vs stream trade-offs, pipeline reliability | Important | Specialized | 16 min |
-| 03 | [CDN Architecture](30.3.4.03-cdn-architecture.md) | Edge caching strategy, PoPs, cache keys, invalidation (also: [40.10-cdn](../../../40-platform/40.10-cdn/INDEX.md)) | Important | Specialized | 12 min |
-| 04 | [Multi-Tenant SaaS Architecture](30.3.4.04-multi-tenant-saas-architecture.md) | Shared vs separate schemas, tenant context propagation, RLS defense-in-depth, noise neighbors, per-tenant caching | Important | Specialized | 6 min |
+| 01 | [Database Scaling](30.3.4.01-database-scaling.md) | Read replicas, vertical vs horizontal scaling, partitioning, connection pooling, measured bottlenecks and independent levers | Important | Specialized | 10 min |
+| 02 | [Data Pipelines](30.3.4.02-data-pipelines.md) | ETL vs ELT vs streaming, Bronze/Silver/Gold framing, batch vs stream trade-offs, pipeline reliability | Important | Specialized | 8 min |
+| 03 | [CDN Architecture](30.3.4.03-cdn-architecture.md) | Edge caching strategy, PoPs, cache keys, invalidation (also: [40.10-cdn](../../../40-platform/40.10-cdn/INDEX.md)) | Important | Specialized | 6 min |
+| 04 | [Multi-Tenant SaaS Architecture](30.3.4.04-multi-tenant-saas-architecture.md) | Shared vs separate schemas, tenant context propagation, RLS defense-in-depth, noisy neighbors, per-tenant caching | Important | Specialized | 6 min |
 
 ---
 
@@ -48,7 +48,7 @@ Explain which bottleneck each added component removes and how consistency, autho
 
 ## Docita Anchor
 
-Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — manages data growth for real.
+Candidate implementation locations in [Docita](https://github.com/CVamsi27/docita). Source names and tests guide inspection; verify the actual checked-out revision/configuration and failure evidence before presenting them as deployed capacity or isolation proof.
 
 | Topic | Docita evidence |
 | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

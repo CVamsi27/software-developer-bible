@@ -1,7 +1,7 @@
 # Failure & Recovery
 
-> **Study time:** ≈ 1 h 9 m of reading (7 files, ~10 min average).
-> **7 files.** Surviving transient failure without side effects, containing blast radius on purpose, and recovering state when prevention fails: the resilience pattern landscape, retry discipline, idempotency keys, feature flags with kill switches, backup strategy proven by restore drills, and the complete idempotency-retry chain. Distributed systems fail constantly; these patterns decide whether failure is an incident or a log line.
+> **Study time:** ≈ 41 min of reading (7 files, ~6 min average).
+> **7 files.** Surviving transient failure without side effects, containing blast radius on purpose, and recovering state when prevention fails: the resilience pattern landscape, retry discipline, idempotency keys, feature flags with kill switches, backup strategy proven by restore drills, and the complete idempotency-retry chain. The useful answer is a bounded failure and a recoverable outcome, supported by the chosen authority and capacity contracts.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Resilience-orange)](../INDEX.md)
@@ -19,12 +19,12 @@ Networks partition, dependencies time out, deploys hiccup. Naive code turns each
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Resilience Patterns — Overview](30.3.2.01-resilience-patterns.md) | Timeout, bulkhead, circuit-breaker landscape; deep-dive implementations live in [20.6-microservices](../../../20-backend/20.6-microservices/INDEX.md) | Important | 16 min | 16 min |
-| 02 | [Retry Patterns](30.3.2.02-retry-patterns.md) | Exponential backoff, jitter, retry budgets, retry storms, when NOT to retry | Essential | 11 min | 11 min |
+| 01 | [Resilience Patterns — Overview](30.3.2.01-resilience-patterns.md) | Timeout, bulkhead, circuit-breaker landscape; deep-dive implementations live in [20.6-microservices](../../../20-backend/20.6-microservices/INDEX.md) | Important | 16 min | 5 min |
+| 02 | [Retry Patterns](30.3.2.02-retry-patterns.md) | Exponential backoff, jitter, retry budgets, retry storms, when NOT to retry | Essential | 11 min | 7 min |
 | 03 | [Idempotency Keys](30.3.2.03-idempotency-keys.md) | Stable operation identity, atomic local effects, retry replay, remote deduplication limits | Essential | 6 min | 6 min |
-| 04 | [Feature Flags & Kill Switches](30.3.2.04-feature-flags-kill-switches.md) | Release/experiment/ops/permission flags, targeting rules, kill-switch SLA, flag debt cleanup, safe rollout recipe | Important | 10 min | 10 min |
-| 05 | [Backup Strategy & Restore Drills](30.3.2.05-backup-strategy-restore-drills.md) | Full/incr/diff taxonomy, logical vs physical, 3-2-1(-1-0), RPO/RTO math, restore game days, automated verification, runbook template | Important | 10 min | 10 min |
-| 06 | [Idempotency & Retry Deep Dive](30.3.2.06-idempotency-retry-deep-dive.md) | Complete reliability chain: API idempotency guard + outbox + consumer dedup + retry budgets + circuit breaker + DLQ | Essential | 13 min | 14 min |
+| 04 | [Feature Flags & Kill Switches](30.3.2.04-feature-flags-kill-switches.md) | Release/experiment/ops/permission flags, targeting rules, kill-switch SLA, flag debt cleanup, safe rollout recipe | Important | 10 min | 6 min |
+| 05 | [Backup Strategy & Restore Drills](30.3.2.05-backup-strategy-restore-drills.md) | Full/incr/diff taxonomy, logical vs physical, 3-2-1(-1-0), RPO/RTO math, restore game days, automated verification, runbook template | Important | 10 min | 7 min |
+| 06 | [Idempotency & Retry Deep Dive](30.3.2.06-idempotency-retry-deep-dive.md) | Cross-authority failure trace: atomic API claim, outbox, inbox, receiver identity, budget and replay limits | Essential | 13 min | 7 min |
 
 **Read order:** overview → retries → idempotency → flags/kill-switches → backups/drills → deep dive. Retries without idempotency are how you double-charge a customer; backups without restore drills are how you discover corruption mid-outage.
 
@@ -53,7 +53,7 @@ Trace one uncertain mutation and one full restore; explain the retry identity, d
 
 ## Docita Anchor
 
-Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — survives failure for real.
+Candidate implementation locations in [Docita](https://github.com/CVamsi27/docita), the hospital-management SaaS. Read the checked-out revision and its tests before presenting a path as evidence of concurrency, cancellation, recovery or provider guarantees.
 
 | Topic | Docita evidence |
 | ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- |

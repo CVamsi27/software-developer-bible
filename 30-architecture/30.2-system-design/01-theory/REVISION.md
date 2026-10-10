@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-8_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -50,6 +50,15 @@ Source: [Sharding & Replication](30.2.1.03-sharding-and-replication.md)
 
 **A:** A hot key or uneven request distribution can overload one shard while others remain idle. Measure work per shard, not just bytes or record counts.
 
+**Q:** Tenant 42 moves A→B. Why is copying its rows insufficient?
+
+**A:** New writes can still arrive at A during the copy. Capture the delta, validate B, transfer routing authority and reject old-generation writes before admitting B as the owner.
+
+**Q:** Does one leader eliminate every write conflict?
+
+**A:** It orders accepted writes, but two clients can still overwrite one another without the required transaction or version check. Replication topology does not replace the data invariant.
+
+
 ## Load Balancing
 
 Source: [Load Balancing](30.2.1.04-load-balancing.md)
@@ -57,6 +66,15 @@ Source: [Load Balancing](30.2.1.04-load-balancing.md)
 **Q:** What failure can sticky routing mask until failover?
 
 **A:** A client's consistency or session state may depend on one backend. Failover needs shared state or explicit consistency tokens rather than assuming the next node is equivalent.
+
+**Q:** Trace 100 HTTP/2 requests over one L4-balanced connection.
+
+**A:** The balancer chooses its backend when the connection begins; multiplexed requests remain on that backend. A configured HTTP-aware proxy can choose upstreams at request granularity.
+
+**Q:** What changes when a draining backend committed an update before losing its reply?
+
+**A:** Routing a retry elsewhere does not prove failure of the first attempt. Preserve operation identity and reconcile the effect under the mutation contract.
+
 
 ## Caching Patterns
 
@@ -66,6 +84,15 @@ Source: [Caching Patterns](30.2.1.05-caching-patterns.md)
 
 **A:** The system must decide which reads may see old values and how updates, races and TTLs converge. A cache hit is only correct under that staleness contract.
 
+**Q:** A reader loads v1, a writer commits v2 and deletes the key, then the reader fills v1. What did invalidation miss?
+
+**A:** The delayed fill occurs after deletion. Define an authoritative/versioned fill boundary or an acceptable stale window; successful DEL alone does not order source reads.
+
+**Q:** Does a fresh TTL prove that the source value is equally fresh?
+
+**A:** No. The loader may insert an already-old value, and stale-serving policies can extend reuse. TTL bounds an installed entry only under the actual expiry policy.
+
+
 ## Message Queues & Async Patterns
 
 Source: [Message Queues & Async Patterns](30.2.1.06-queues-and-async.md)
@@ -73,6 +100,15 @@ Source: [Message Queues & Async Patterns](30.2.1.06-queues-and-async.md)
 **Q:** Why should a consumer acknowledge a message after committing its local effect?
 
 **A:** Acknowledging first can lose work if the process crashes. Committing first permits redelivery, so the local effect also needs transactional deduplication.
+
+**Q:** Trace a crash after the local effect commits but before acknowledgment.
+
+**A:** The broker may redeliver. A processed-event identity committed with the effect lets the consumer skip the repeated effect; a separate marker written later leaves a crash window.
+
+**Q:** Why can per-partition delivery order still produce out-of-order effects?
+
+**A:** The consumer can start parallel tasks or retry earlier work while later work completes. Control in-flight work and define aggregate versions or a gap policy when effect order matters.
+
 
 ## Distributed Transactions
 
@@ -82,6 +118,15 @@ Source: [Distributed Transactions](30.2.1.07-distributed-transactions.md)
 
 **A:** It permits visible intermediate local commits and attempts recovery with later business actions. It does not provide one globally atomic rollback; retry limits, terminal failures and reconciliation need explicit design.
 
+**Q:** Both participants prepare, order commits, stock times out. Can stock abort on its own?
+
+**A:** No. The coordinator may have durably decided commit and already delivered it elsewhere. Stock must learn the durable decision; uncertainty can block conflicting work.
+
+**Q:** Does shared atomic commit mean arbitrary readers see both databases switch simultaneously?
+
+**A:** No. The eventual commit/abort decision is shared; read visibility and isolation across independent resources need their own contract.
+
+
 ## Rate Limiting
 
 Source: [Rate Limiting](30.2.1.08-rate-limiting.md)
@@ -89,6 +134,15 @@ Source: [Rate Limiting](30.2.1.08-rate-limiting.md)
 **Q:** Why can two independent local token buckets exceed a global limit?
 
 **A:** Each grants capacity without knowing the other's grants. A global contract needs coordination or a documented allocation/approximation strategy.
+
+**Q:** The Redis script starts EXPIRE on the first INCR. Is that a sliding window?
+
+**A:** No. It is a first-arrival window with one counter until expiry. A true rolling-window log retains timestamps; a weighted two-window counter is approximate.
+
+**Q:** Two local buckets each grant 100 requests. What is the shared allowance?
+
+**A:** Without coordination or safely allocated budgets they can grant 200. A local fallback changes the global quota even if each local decision is atomic.
+
 
 ## Consensus & Leader Election
 
@@ -98,6 +152,15 @@ Source: [Consensus & Leader Election](30.2.1.09-consensus-and-leader-election.md
 
 **A:** No. A leader needs the protocol's quorum and commit rules. Its old role label does not authorize an external side effect; a protected resource may need to reject stale fencing tokens as well.
 
+**Q:** A commits X on A+B, then A is isolated. Trace the safe replacement.
+
+**A:** B+C can elect an eligible newer-term leader. Voting/log rules preserve X; A cannot commit fresh entries alone even if it still calls itself leader.
+
+**Q:** What stops a later Paxos proposer replacing an already-chosen value?
+
+**A:** Prepare promises reject lower proposals, and the proposer must carry the highest-numbered accepted value returned by its prepare quorum. Quorum intersection connects the accepted history.
+
+
 ## Failure Modes
 
 Source: [Failure Modes](30.2.1.10-failure-modes.md)
@@ -105,6 +168,11 @@ Source: [Failure Modes](30.2.1.10-failure-modes.md)
 **Q:** Why is a timeout a dangerous trigger for retrying a mutation?
 
 **A:** The first attempt may have committed while its response was lost. Retry only under an appropriate idempotency and reconciliation contract.
+
+**Q:** A 100 ms dependency slows to 2 s and each caller adds two retries. Where does pressure go?
+
+**A:** More work remains in flight, and three attempts per logical request can add load during reduced capacity. Bound admission, waits and retries; isolate critical resources and observe the recovery wave.
+
 
 ## Architecture Patterns — Monolith, Microservices, Event-Driven, Hexagonal
 
@@ -114,6 +182,15 @@ Source: [Architecture Patterns — Monolith, Microservices, Event-Driven, Hexago
 
 **A:** A cohesive domain or operational ownership boundary whose independent evolution is worth its network, consistency and deployment costs.
 
+**Q:** Trace an HTTP request through a hexagonal stock reservation.
+
+**A:** The HTTP adapter calls a use case, which applies rules and uses a repository port. The PostgreSQL adapter implements that port; source dependency points toward the interface even though runtime calls reach the adapter.
+
+**Q:** What does an in-memory adapter test fail to establish?
+
+**A:** It can test use-case decisions but cannot establish real database locks, constraints, transactional isolation or provider integration.
+
+
 ## Capacity Planning & Back-of-Envelope Estimation
 
 Source: [Capacity Planning & Back-of-Envelope Estimation](30.2.1.12-capacity-planning.md)
@@ -122,6 +199,15 @@ Source: [Capacity Planning & Back-of-Envelope Estimation](30.2.1.12-capacity-pla
 
 **A:** Bursts, skew, failover and maintenance can concentrate work. Average load hides queues and saturation at the periods that determine service reliability.
 
+**Q:** At 10K arrivals/s and 1K completions/s, how long to accumulate 1M messages?
+
+**A:** About 1,000,000÷9,000=111 seconds under constant rates and no shedding. Memory depends on payload and overhead; this is not a universal crash point.
+
+**Q:** A tested instance serves 1K/s, demand is 35K/s, and one instance may fail. What is the minimum under those assumptions?
+
+**A:** 36 instances keep 35 tested instances after one loss. Zone-loss, autoscaling delay, traffic skew and downstream limits can require a different topology or more headroom.
+
+
 ## Backpressure & Flow Control
 
 Source: [Backpressure & Flow Control](30.2.1.13-backpressure-and-flow-control.md)
@@ -129,6 +215,15 @@ Source: [Backpressure & Flow Control](30.2.1.13-backpressure-and-flow-control.md
 **Q:** How can a push protocol provide backpressure without becoming a pull API?
 
 **A:** Credits, bounded windows or explicit pause/resume signals restrict producer progress to consumer capacity. The key is bounded admitted work and a defined overload policy.
+
+**Q:** A blocked enqueue wakes, but a newcomer fills the slot first. What must the awakened writer do?
+
+**A:** Recheck the capacity condition before storing its item. One wakeup is not a reserved slot; an if-only check can overfill the queue.
+
+**Q:** Does bounding stored items bound total process memory?
+
+**A:** No. Waiting producers, request bodies and in-flight jobs can still accumulate. Bound admission, waiters and deadlines as well as the stored queue.
+
 
 ## Distributed Locks & Coordination
 
@@ -166,6 +261,15 @@ Source: [Outbox Pattern & Change Data Capture (CDC)](30.2.1.18-outbox-and-cdc.md
 
 **A:** It commits business data and publication intent together. The relay can still publish and crash before marking sent, so consumers must tolerate duplicate delivery.
 
+**Q:** Why does an autocommit SKIP LOCKED select fail to claim through publication?
+
+**A:** Its transaction ends when the statement finishes, releasing row locks before the broker call. Use one explicit claim transaction or a recoverable owner/lease protocol.
+
+**Q:** Worker A holds aggregate v1; worker B skips it and publishes v2. Does the same Kafka key restore order?
+
+**A:** No. Kafka preserves append order within its partition, not the desired order of competing relays. Serialize aggregate dispatch or enforce a durable consumer version/gap policy.
+
+
 ## Resilience Patterns Deep-Dive: Hedging, Load Shedding, Request Coalescing, Deadlines
 
 Source: [Resilience Patterns Deep-Dive: Hedging, Load Shedding, Request Coalescing, Deadlines](30.2.1.19-resilience-patterns-deep-dive.md)
@@ -177,6 +281,15 @@ Source: [Resilience Patterns Deep-Dive: Hedging, Load Shedding, Request Coalesci
 **Q:** When is a hedged request likely to help, and what should be measured?
 
 **A:** It can help when the second attempt has an independent chance of finishing sooner. Measure the latency change, duplicate work, cancellation, and shared downstream load; the gain is not guaranteed. See [The Tail at Scale](https://research.google/pubs/the-tail-at-scale/).
+
+**Q:** With p-memoize cache:false, when do same-key callers share work?
+
+**A:** Concurrent executions share their in-flight result; settled results are not retained for later calls. A time-expiring result cache is a distinct policy.
+
+**Q:** Does aborting fetch prove the remote operation stopped?
+
+**A:** No. The client can stop waiting or reading while the server continues. Propagate cancellation and verify the actual remote lifecycle when that matters.
+
 
 ## Multi-Region Deployment
 
@@ -193,6 +306,15 @@ Source: [Multi-Region Deployment](30.2.1.20-multi-region-deployment.md)
 **Q:** Why can a region failover lose acknowledged writes even when a replica exists?
 
 **A:** With asynchronous replication, a primary can acknowledge a write before the standby receives it. The recovery point depends on lag and the failure. Check replication state and the application's RPO before promoting; do not assume that a replica is current.
+
+**Q:** A has component 3 and B has 2; merge B twice. What is the count?
+
+**A:** The component-wise maximum remains {A:3,B:2}, total 5. Repeated state delivery does not add B twice.
+
+**Q:** Two writers both increment actor A from 3 to 4. Does merge retain both increments?
+
+**A:** No. Maximum yields 4, losing one increment. Each actor component requires one durable monotonic owner; region labels alone do not supply that protocol.
+
 
 ## TCP & UDP Transport Fundamentals
 
@@ -230,6 +352,11 @@ Source: [DNS & Name Resolution](30.2.1.22-dns-and-name-resolution.md)
 
 **A:** Resolvers may already have cached the record using its previous, longer TTL. Lower the TTL ahead of the change, allow old cached answers to expire, and account for open connections and client behavior. See [Kubernetes DNS guidance](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/) for resolver settings in pods.
 
+**Q:** A TTL expires. Has the authoritative DNS record disappeared?
+
+**A:** No. Only that cached answer expires. The resolver can refresh from the authoritative record; unavailable or incorrect authority then determines the result.
+
+
 ## TLS, HTTPS & the Certificate Lifecycle
 
 Source: [TLS, HTTPS & the Certificate Lifecycle](30.2.1.23-tls-https-and-certificates.md)
@@ -245,6 +372,15 @@ Source: [TLS, HTTPS & the Certificate Lifecycle](30.2.1.23-tls-https-and-certifi
 **Q:** Why does renewing a certificate require more than obtaining a new certificate file?
 
 **A:** The deployed endpoint must load the renewed certificate and chain, keep the private key protected, and continue validating correctly. Monitor the certificate clients receive after deployment; [ACME (RFC 8555)](https://www.rfc-editor.org/rfc/rfc8555.html) defines an issuance protocol, not your deployment or reload process.
+
+**Q:** In a full TLS 1.3 certificate handshake, when does the server send Finished?
+
+**A:** It sends Finished in its first server flight after the encrypted certificate and CertificateVerify. The client validates that flight and sends its own Finished.
+
+**Q:** Does enabling OCSP stapling work for a current Let's Encrypt certificate?
+
+**A:** No. Let's Encrypt ended its OCSP service on 6 August 2025 and supplies CRLs. Revocation configuration must match the issuer and client mechanism.
+
 
 ## Summary
 

@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Security-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -170,13 +170,49 @@ Source: [ABAC (Attribute-Based Access Control)](20.5.1.10-abac-access-control.md
 
 **A:** A missing attribute needs a defined failure policy; stale membership can grant outdated access. Bound lookup and evaluation time and invalidate cached decisions when relevant facts change.
 
+## Failure Traces
+
+Sources: [API keys](20.5.1.03-api-keys.md), [sessions](20.5.1.04-sessions-cookies.md), [JWT](20.5.1.05-jwt.md), [OAuth/OIDC](20.5.1.06-oauth2-oidc.md), [federation](20.5.1.07-sso-saml-federation.md), [MFA](20.5.1.08-mfa-passkeys-webauthn.md), [RBAC](20.5.1.09-rbac-abac.md) and [ABAC](20.5.1.10-abac-access-control.md).
+
+**Q:** Why can a revoked API key still pass a cached guard, and what must the contract state?
+
+**A:** A cached record may retain an earlier active state. Specify and enforce the rejection window; destructive operations may require a current check. Prefixes identify candidates and need uniqueness, while full verifiers and ownership still decide access.
+
+**Q:** A login sets `userId` on an existing session but never regenerates it. What survives?
+
+**A:** The pre-login bearer identifier. If an attacker knew it, authentication grants that same identifier new privileges. Regenerate after accepted credentials, save new state before responding, then reject the old ID.
+
+**Q:** Why does a correctly signed JWT with no `exp` need to fail a profile requiring short lifetimes?
+
+**A:** A library can validate an expiration only when it exists. The application must require expiry and other profile fields, alongside algorithm/issuer/audience/purpose/runtime shape; a type cast does not validate them.
+
+**Q:** An OAuth callback arrives twice with the same state. What blocks the second exchange?
+
+**A:** An atomic browser-bound transaction consume before asynchronous redemption. State, PKCE verifier and OIDC nonce have separate roles; a missing stored value must never match a missing callback value.
+
+**Q:** The directory disabled an employee, but an existing app cookie still works. Which boundary was missed?
+
+**A:** IdP login rejection does not destroy the SP's local session. SCIM/account changes, app session revocation or current-state checks must propagate disablement within the allowed window.
+
+**Q:** Why should registration not look up its challenge using the new credential ID?
+
+**A:** That credential did not exist at start. Store an expiring attempt bound to the authenticated account and browser, consume it once, then validate origin/RP/challenge/user verification and unique credential ownership.
+
+**Q:** A role inherits itself indirectly. Is recursive permission expansion safe?
+
+**A:** No. Detect cycles and unknown parents, bound depth and reject invalid configuration. Role names do not imply inheritance, and expanded permissions do not replace tenant/object scope.
+
+**Q:** A request says a patient belongs to clinic A and is public. Which attributes can authorize access?
+
+**A:** Use verified current subject data and the actual stored patient's tenant/classification/assignment. Requested attributes cannot establish authority. Constrain the subsequent operation with the same state/version to prevent a stale decision race.
+
 ## Summary
 
 Use these prompts after the reading pass to recall the auth mechanisms and boundary constraints.
 
 ## See Also
 
-- [Category reading flow](INDEX.md)
+- [Category reading flow](INDEX.md) — return to prerequisites and learning stages for identity and current permissions
 
 ## References & Learn More
 

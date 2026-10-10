@@ -1,5 +1,7 @@
 # Product Resume and Experience Defense Implementation Plan
 
+> **Historical design record:** requirements, example paths and checkboxes describe this dated plan, not current repository status or authorization to rerun it. Later [explanation-depth work](../plans/2026-10-08-explanation-depth.md), [AGENTS.md](../../../AGENTS.md) and [contributing.md](../../../contributing.md) govern current changes. Preserve stable chapter IDs; TL;DR and inline chapter cheat/revision sections are retired.
+
 > **For agentic workers:** Execute sequentially using the established canonical private resume source and approved one-page layout.
 
 **Goal:** Present relevant full-stack product engineering experience and provide a claim-by-claim preparation path for Docita and MAQ.

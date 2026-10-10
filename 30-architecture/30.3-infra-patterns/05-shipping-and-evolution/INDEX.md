@@ -1,6 +1,6 @@
 # Shipping & Evolution
 
-> **Study time:** ≈ 54 min of reading (5 files, ~11 min average).
+> **Study time:** ≈ 27 min of reading (5 files, ~5 min average).
 > **5 files.** Change without breakage and grow without waste: deploying new versions with zero downtime, paying down technical debt deliberately, treating cloud spend as an engineering metric (FinOps), and managing data lifecycle from hot storage to legal-hold-compliant deletion.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#file-index)
@@ -19,10 +19,10 @@ Shipping is not `git push` to prod. Users are mid-request while you deploy; sche
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Zero-Downtime Deployments](30.3.5.01-zero-downtime-deployments.md) | Rolling vs blue-green vs canary, expand/contract migrations, health-gated rollouts, rollback paths | Important | Specialized | 15 min |
-| 02 | [Technical Debt](30.3.5.02-technical-debt.md) | Debt quadrants, intentional vs accidental debt, remediation strategy, communicating debt to stakeholders | Important | Specialized | 16 min |
-| 03 | [Cost Engineering & FinOps](30.3.5.03-cost-engineering-finops.md) | Rightsizing, storage tiering, spot strategy, autoscaling traps, tagging/allocation, unit economics, cost checks in CI | Important | Specialized | 11 min |
-| 04 | [Data Retention & Archival](30.3.5.04-data-retention-archival.md) | Retention drivers, log/metric tiers, hot/warm/cold storage, DB TTLs, legal hold, right-to-erasure pipelines, runbooks | Important | Specialized | 10 min |
+| 01 | [Zero-Downtime Deployments](30.3.5.01-zero-downtime-deployments.md) | Rolling vs blue-green vs canary, expand/contract migrations, health-gated rollouts, rollback paths | Important | Specialized | 6 min |
+| 02 | [Technical Debt](30.3.5.02-technical-debt.md) | Debt quadrants, intentional vs accidental debt, remediation strategy, communicating debt to stakeholders | Important | Specialized | 6 min |
+| 03 | [Cost Engineering & FinOps](30.3.5.03-cost-engineering-finops.md) | Rightsizing, storage tiering, spot strategy, autoscaling traps, tagging/allocation, unit economics, cost checks in CI | Important | Specialized | 6 min |
+| 04 | [Data Retention & Archival](30.3.5.04-data-retention-archival.md) | Retention drivers, log/metric tiers, hot/warm/cold storage, DB TTLs, legal hold, right-to-erasure pipelines, runbooks | Important | Specialized | 7 min |
 
 ---
 
@@ -50,12 +50,12 @@ Describe a reversible release, an evidence-backed debt decision and an expiry pa
 
 ## Docita Anchor
 
-Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — ships and evolves for real.
+Candidate implementation locations in [Docita](https://github.com/CVamsi27/docita). Source configuration and gate names guide inspection; inspect the checked-out revision and execution evidence before claiming deployed recovery, capacity, hold or deletion guarantees.
 
 | Topic | Docita evidence |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Feature flags & kill switches | `shared/modules/feature-flags/*` (controller + service + repository) and `apps/api/src/shared/modules/services/feature-flag.service.ts` |
-| Zero-downtime releases | Fly API health check uses a 30s grace period; worker canary startup is not a business-operation probe. Release evidence must establish compatibility and recovery, not merely successful startup |
+| Zero-downtime releases | Inspect Fly API health/grace configuration; worker startup is not a business-operation probe. Release evidence must establish compatibility and recovery, not merely successful startup |
 | Safe schema evolution | Migration CI workflow + gates: `check-migration-safety.mjs`, `check-migration-reversibility.mjs` |
-| Cost / FinOps | Inspected API configuration uses a 512MB shared VM, suspend/auto-start and zero minimum machines. A workflow file does not prove scheduled capacity changes are currently enabled |
+| Cost / FinOps | Inspect API VM sizing, suspend/auto-start and minimum-machine configuration. A workflow file does not prove scheduled capacity changes are currently enabled |
 | Data retention | `apps/api/src/shared/modules/compliance/data-retention.scheduler.ts` (see also [Data at Scale](../04-data-at-scale/INDEX.md)) |

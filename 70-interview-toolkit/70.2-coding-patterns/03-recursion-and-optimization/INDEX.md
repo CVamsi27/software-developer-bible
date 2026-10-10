@@ -1,6 +1,6 @@
 # Recursion & Optimization
 
-> **Study time:** ≈ 41 min of reading (4 files, ~10 min average).
+> **Study time:** ≈ 44 min of reading (4 files, ~11 min average).
 > **4 files.** The exhaustive-search-to-optimal pipeline: backtracking to enumerate, dynamic programming to remember, bit manipulation to compress state.
 
 [![Files](https://img.shields.io/badge/files-4-blue)](../INDEX.md)
@@ -17,8 +17,8 @@ Enumerate choices with backtracking first, watching which state must be restored
 
 | # | File | When to recognize | Role priority | General importance | Read time |
 | --: | ------ | ------------------- | --- | --- | ----------: |
-| 01 | [Backtracking](70.2.3.01-backtracking.md) | "Generate all permutations/combinations/subsets", N-Queens, Sudoku | Essential | Important | 13 min |
-| 02 | [Dynamic Programming](70.2.3.02-dynamic-programming.md) | "Count ways, min/max cost, longest common subsequence, knapsack" | Essential | Important | 12 min |
+| 01 | [Backtracking](70.2.3.01-backtracking.md) | "Generate all permutations/combinations/subsets", N-Queens, Sudoku | Essential | Important | 15 min |
+| 02 | [Dynamic Programming](70.2.3.02-dynamic-programming.md) | "Count ways, min/max cost, longest common subsequence, knapsack" | Essential | Important | 13 min |
 | 03 | [Bit Manipulation](70.2.3.03-bit-manipulation.md) | "XOR tricks, bitmask subset enumeration, popcount, single number" | Optional | Specialized | 14 min |
 
 ---
@@ -26,7 +26,7 @@ Enumerate choices with backtracking first, watching which state must be restored
 ## The relationship
 
 ```text
-Brute force recursion          → correct, exponential
+Exhaustive recursion          → requires correct branches/base cases; often exponential
    + prune dead branches       → backtracking
    + memoize overlapping calls → dynamic programming (top-down)
    + tabulate bottom-up        → DP (bottom-up), evaluated in dependency order

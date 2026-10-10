@@ -1,6 +1,6 @@
 # Errors & Health
 
-> **Study time:** ≈ 43 min of reading (3 files, ~14 min average).
+> **Study time:** ≈ 16 min of reading (3 files, ~5 min average).
 > **3 files.** Runtime quality signals: aggregated error tracking (Sentry-style) and health checks that let orchestrators and load balancers trust your process.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](#file-index)
@@ -11,16 +11,18 @@
 
 ## Why this category exists
 
-Pillars tell you what the system did; errors and health tell you whether what it did was correct and whether it can keep doing it. Error tracking groups thousands of stack traces into actionable issues tied to releases; health endpoints turn internal state into machine-readable signals that Kubernetes probes and load balancers act on. Together they close the loop between "it broke" and "something restarted it".
+Error reports identify selected failures; health signals support defined control/observation decisions. Neither proves that every user action was correct. Error tracking groups thousands of stack traces into actionable issues tied to releases; health endpoints turn internal state into machine-readable signals that Kubernetes probes and load balancers act on. Explain the report/triage flow first, then the action each health observation is allowed to control.
 
 ---
 
 ## File Index
 
+Read error capture/grouping/privacy before health-control semantics and bounded outside-in observations. Complete revision before the separate interview drill.
+
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Error Tracking](40.4.2.01-error-tracking.md) | Error aggregation (Sentry), source maps, grouping/dedup, release tracking, alerting on new issues | Important | Important | 21 min |
-| 02 | [Health Checks](40.4.2.02-health-checks.md) | Liveness/readiness semantics, health endpoint design, dependency checks, graceful degradation | Important | Important | 20 min |
+| 01 | [Error Tracking](40.4.2.01-error-tracking.md) | Error aggregation (Sentry), source maps, grouping/dedup, release tracking, alerting on new issues | Important | Important | 7 min |
+| 02 | [Health Checks](40.4.2.02-health-checks.md) | Liveness/readiness semantics, health endpoint design, dependency checks, graceful degradation | Important | Important | 7 min |
 
 ---
 
@@ -39,6 +41,8 @@ Pillars tell you what the system did; errors and health tell you whether what it
 ---
 
 ## Docita Anchor
+
+These are implementation anchors. Current `instrument.ts` was inspected on 2026-10-10; source configuration does not prove live ingestion, universal redaction or current production health.
 
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — tracks errors and health for real.
 

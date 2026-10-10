@@ -1,7 +1,7 @@
 # Interview Prep — CI/CD
 
-> **Study time:** ≈ 11 min of reading (1 files, ~11 min average).
-> **1 file, 50+ curated questions with answers.** From "write a basic workflow" to "design a zero-downtime release process".
+> **Study time:** ≈ 5 min of reading (1 files, ~5 min average).
+> **1 file, An authored question bank with answers.** From "write a basic workflow" to "design a zero-downtime release process".
 
 [![Files](https://img.shields.io/badge/files-1-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Interview%20Prep-green)](../INDEX.md)
@@ -23,7 +23,7 @@ Questions spanning all three content categories: platform mechanics (Actions/Git
 
 ### [CI/CD Interview Questions](40.3.4.01-interview-questions.md)
 
-50+ curated questions with answers. Do them after reading the content categories; the model answers reference those chapters.
+An authored question bank with answers. Do them after reading the content categories; the model answers reference those chapters.
 
 ---
 
@@ -35,12 +35,14 @@ Questions spanning all three content categories: platform mechanics (Actions/Git
 
 ## Docita Anchor
 
+Current source inspection on 2026-10-10 found deploy triggers commented out. Use historical measured release evidence with its date; configuration files do not establish current production health or successful delivery.
+
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — gives me true stories for these answers.
 
 | Topic | Docita evidence |
-| -------------------------- | -------------------------------------------------------------------------------------------------------- |
-| "Design a pipeline" | 11-workflow GitHub Actions suite around a turbo monorepo (`ci.yml`, `api-e2e.yml`, `db-migrations.yml`…) |
-| "Zero-downtime deploy?" | Health-gated Fly deploys + canaried worker rollout + migration-before-deploy ordering |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| "Design a pipeline" | GitHub Actions configuration around a turbo monorepo (`ci.yml`, `api-e2e.yml`, `db-migrations.yml`…) |
+| "Zero-downtime deploy?" | Configured Fly checks, worker started-state canary settling and migration ordering; not proof of current zero downtime |
 | "How do you keep CI fast?" | Pre-push husky subset of gates; full `verify:standard` reserved for merge; turbo task caching |
-| "Release metrics?" | Latency-SLO budgets enforced in CI, synthetic monitoring, filled release-evidence docs |
+| "Release metrics?" | Latency-budget scripts and dated release evidence; synthetic workflow records a historical manually-disabled note |
 | GitOps / ArgoCD stories | _No direct docita implementation yet._ |

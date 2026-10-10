@@ -1,6 +1,6 @@
 # Communication & Messaging - Microservices
 
-> **Study time:** ≈ 1 h 26 m of reading (7 files, ~12 min average).
+> **Study time:** ≈ 38 min of reading (7 files, ~5 min average).
 > **7 files.** How services talk: gRPC (+ streaming) for typed RPC over HTTP/2, Kafka and RabbitMQ for messaging, broker selection discipline, and event-driven architecture.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../INDEX.md)
@@ -8,14 +8,18 @@
 
 ---
 
+## Learning flow
+
+Trace a typed unary call before studying stream lifetime and cancellation. Then compare Kafka partition progress with RabbitMQ routed deliveries, use broker selection to choose the actual storage model, and finish with durable event publication and consumers. Use [revision](REVISION.md) before the [interview bank](../05-interview-drills/20.6.5.01-interview-questions.md).
+
 ## Files
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [gRPC](20.6.2.01-grpc.md) | Protobuf, HTTP/2, code generation, contract-first design, interceptor chains | Important | Important | 11 min |
-| 02 | [gRPC Streaming](20.6.2.02-grpc-streaming.md) | Streaming modes (unary/server/client/bidi), gRPC-Web, when gRPC beats REST | Important | Important | 10 min |
-| 03 | [Kafka](20.6.2.03-kafka.md) | Distributed partitioned commit log, partition keys, consumer groups, ordering, exactly-once, replay | Important | Important | 22 min |
-| 04 | [RabbitMQ](20.6.2.04-rabbitmq.md) | AMQP, exchanges/bindings, dead-letter queues, per-message acks, task distribution | Important | Important | 27 min |
+| 01 | [gRPC](20.6.2.01-grpc.md) | Protobuf, HTTP/2, code generation, contract-first design, interceptor chains | Important | Important | 5 min |
+| 02 | [gRPC Streaming](20.6.2.02-grpc-streaming.md) | Streaming modes (unary/server/client/bidi), gRPC-Web, when gRPC beats REST | Important | Important | 5 min |
+| 03 | [Kafka](20.6.2.03-kafka.md) | Distributed partitioned commit log, partition keys, consumer groups, ordering, exactly-once, replay | Important | Important | 6 min |
+| 04 | [RabbitMQ](20.6.2.04-rabbitmq.md) | AMQP, exchanges/bindings, dead-letter queues, per-message acks, task distribution | Important | Important | 6 min |
 | 05 | [Message Brokers](20.6.2.05-message-brokers.md) | Kafka vs RabbitMQ selection, DLQ discipline, delivery guarantees | Important | Important | 6 min |
 | 06 | [Event-Driven Architecture](20.6.2.06-event-driven-architecture.md) | When events beat requests; producer/consumer coupling, reprocessing | Essential | Important | 7 min |
 
@@ -27,7 +31,7 @@
 
 ## Docita Anchor
 
-Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+These [Docita](https://github.com/CVamsi27/docita) source paths illustrate current in-process/provider boundaries; inspect their actual completion contract rather than treating them as broker deployments:
 
 | Topic | Docita evidence |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
@@ -36,7 +40,7 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Channel abstraction | `apps/api/src/shared/modules/messaging/notification-orchestrator.service.ts` - channel-agnostic notification fan-out |
 | Provider adapter isolation | `apps/api/src/shared/modules/messaging/email/providers/zeptomail-email.provider.ts` - circuit-broken ZeptoMail behind IEmailProvider |
 
-Kafka, RabbitMQ, and gRPC not used — justified while events stay inside one deployable; the outbox relay would republish to a broker the day events cross deployable boundaries.
+Kafka, RabbitMQ, and gRPC not used — justified while events stay inside one deployable; a cross-deployable requirement would need an explicit transport and acknowledgment contract. It does not automatically require a particular broker.
 ---
 
 [← Previous: Service Topology](../01-service-topology/INDEX.md) · [Next: Data & Consistency →](../03-data-and-consistency/INDEX.md)

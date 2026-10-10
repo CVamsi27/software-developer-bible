@@ -1,7 +1,7 @@
 # Interview Prep — Observability
 
-> **Study time:** ≈ 18 min of reading (1 files, ~18 min average).
-> **1 file, 50+ curated questions with answers.** The senior-differentiator drill: logs vs metrics vs traces is the opening question; SLO math and sampling strategy are the follow-ups.
+> **Study time:** ≈ 10 min of reading (1 files, ~10 min average).
+> **1 file, 50 curated questions with answers.** The senior-differentiator drill: logs vs metrics vs traces is the opening question; SLO math and sampling strategy are the follow-ups.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Interview%20Prep-%230ea5e9)](../INDEX.md)
@@ -23,7 +23,7 @@ Questions across all four content categories:
 
 ### [Observability Interview Questions](40.4.5.01-interview-questions.md)
 
-50+ curated questions with answers, organized by difficulty. Work them after the content categories.
+50 curated questions with answers, organized by difficulty. Work them after the content categories and their source-linked revision companions. State the measurement population, explain one failure trace, then defend a decision.
 
 ---
 
@@ -33,14 +33,14 @@ Questions across all four content categories:
 
 ---
 
-## Docita Anchor
+## Docita source anchors and claim boundaries
 
-Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — gives me true stories for these answers.
+Local Docita source inspected on 10 October 2026 supplies implementation examples. Source presence is not proof of deployment, healthcare compliance or a measured service objective; use the dated [evidence walkthrough](../../../projects/docita/INDEX.md) for resume claims.
 
-| Topic | Docita evidence |
-| --------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| "Logs vs metrics vs traces?" | Pino JSON logs + Prom-style metric factories + Sentry tracing — and the honest tradeoff of skipping OTel |
-| "Scrubbing PII from telemetry?" (healthcare!) | `phi-redactor.ts` + parity-enforced Sentry scrubbing gates in CI |
-| "How do you set an SLO?" | API-latency and web-vitals budgets enforced as merge gates, not dashboards |
-| "Alert fatigue?" | Symptom-driven ops alerts on domain events + runbook per failure class |
-| OTel collector / eBPF stories | _No direct docita implementation yet._ |
+| Practice question | Source and boundary |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Logs, metrics and traces | Pino configuration, metric factories and Sentry instrumentation provide concrete paths; verify retained output and propagation before asserting coverage. |
+| Sensitive telemetry | Redaction and scrubbing fixtures test named cases. They do not prove every clinical payload is scrubbed. |
+| Reliability targets | CI performance budgets can block tested regressions; they are not a production request-based SLO or consumed error budget. |
+| Alert operations | Inspect rule ownership, runbooks and actual delivery evidence separately from source configuration. |
+| Collector and eBPF | No direct Docita implementation is claimed. |

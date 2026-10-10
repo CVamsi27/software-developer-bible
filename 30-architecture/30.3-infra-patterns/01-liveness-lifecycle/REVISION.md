@@ -34,6 +34,30 @@ Source: [Health Checks & Graceful Shutdown — Liveness, Readiness, SIGTERM](30.
 
 **A:** A probe checks a selected signal. Synthetic transactions or other end-to-end evidence are needed for important dependencies and workflows.
 
+**Q:** Does closing a Node.js HTTP listener immediately reset every active response?
+
+**A:** No. It stops new connections and allows ordinary active work to complete under its lifecycle contract. Await drain before closing required dependencies; upgraded sockets need separate handling.
+
+**Q:** A preStop hook sleeps twenty seconds inside a thirty-second termination grace. How much application drain time remains?
+
+**A:** The hook uses the same grace countdown, leaving roughly ten seconds before scheduling/cleanup margins. The sleep does not prove routing propagation completed.
+
+**Q:** An optional cache is down but the service has a safe database path. Must every readiness check fail?
+
+**A:** Not automatically. Decide readiness from actual serving/admission capability, degrade safely and observe downstream capacity. Removing the whole fleet can worsen a shared outage.
+
+**Q:** What's the difference between liveness and readiness probes?
+
+**A:** Liveness selects a restart action useful for local failure; readiness controls eligibility for new routed work. A selected health signal is not complete business-path evidence.
+
+**Q:** How do you handle graceful shutdown in Node.js?
+
+**A:** Use one shutdown owner, withdraw/stop admission, await accepted HTTP/work drain within a deadline, then close dependencies. Handle streams/workers separately and preserve abrupt-death recovery.
+
+**Q:** What happens if you don't have graceful shutdown?
+
+**A:** Accepted work may be interrupted and replies lost. Durable transactions can survive while callers remain uncertain; recovery/deduplication matters rather than assuming every interruption is a 500 or data corruption.
+
 ## Summary
 
 A useful answer names the guarantee, the mechanism that enforces it, and the failure boundary. Revisit the source when any of those is unclear.

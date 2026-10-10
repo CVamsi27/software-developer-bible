@@ -1,5 +1,7 @@
 # Design - Bible Restructure: Unified Numbering, Category Subfolders, Full Topic Coverage
 
+> **Historical design record:** requirements, example paths and checkboxes describe this dated plan, not current repository status or authorization to rerun it. Later [explanation-depth work](../plans/2026-10-08-explanation-depth.md), [AGENTS.md](../../../AGENTS.md) and [contributing.md](../../../contributing.md) govern current changes. Preserve stable chapter IDs; TL;DR and inline chapter cheat/revision sections are retired.
+
 Date: 2026-08-25
 Status: Approved (user approved all sections including design-patterns scheme conversion)
 Scope: Everything at once - structure, numbering, auth completion, and ~80 new chapters across all stacks.

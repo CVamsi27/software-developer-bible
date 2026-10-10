@@ -54,6 +54,48 @@ Source: [Quick Select & Reservoir Sampling](70.2.4.05-quick-select-reservoir-sam
 
 **A:** Giving each item the same chance to appear is not enough: the items might still be selected in biased combinations. A uniform sample gives every possible group of k items the same probability. Reservoir sampling preserves that rule as items arrive by choosing whether to admit the new item and, if admitted, which stored position to replace uniformly.
 
+## Test the Invariant
+
+### Heap
+
+Source: [Heap](70.2.4.01-heap.md)
+
+**Q:** Why use a min-heap to retain the largest k stream values?
+
+**A:** The root is the weakest retained candidate. Once k arrivals exist, a larger arrival replaces that root; a smaller one cannot enter the best k. The root then represents the kth largest, not the largest.
+
+### Monotonic Stack
+
+Source: [Monotonic Stack](70.2.4.02-monotonic-stack.md)
+
+**Q:** Why can equal histogram heights remain in the stack?
+
+**A:** With strict popping, a later equal bar may get a narrow width, but the earlier equal bar is eventually popped with a wider compatible interval. The maximum still includes that wider rectangle; tie rules need a different argument for counting contributions.
+
+### Stack and Queue
+
+Source: [Stack and Queue](70.2.4.03-stack-queue-patterns.md)
+
+**Q:** Why not transfer newly enqueued values while the two-stack queue still has output values?
+
+**A:** The output stack holds older arrivals in dequeue order. Transferring new arrivals onto it would place them above those older items and break FIFO. Transfer only when the output stack is empty.
+
+### Segment Tree
+
+Source: [Segment Tree](70.2.4.04-segment-tree.md)
+
+**Q:** Where is a pending range-add already reflected before it is pushed to children?
+
+**A:** The parent aggregate already contains delta times its segment length. Its tag records what children have not yet received. Pushing changes child sums and tags, then clears the parent tag; adding to the parent again would double-count.
+
+### Reservoir Sampling
+
+Source: [Reservoir Sampling](70.2.4.05-quick-select-reservoir-sampling.md)
+
+**Q:** Are equal-valued stream arrivals one sampling candidate or several?
+
+**A:** They are distinct arrival positions. A uniform position sample can contain repeated values; deduplicating changes the population and the sampling task. State whether the product wants positions, events or unique values.
+
 ## Summary
 
 Distinguish order at the root, monotone candidate order, and partial partition order. For range updates, specify whether the operation adds a delta or replaces a value.

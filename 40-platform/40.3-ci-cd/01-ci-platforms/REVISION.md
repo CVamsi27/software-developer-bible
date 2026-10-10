@@ -66,6 +66,18 @@ Source: [ArgoCD (GitOps)](40.3.1.04-argocd.md)
 
 **A:** It can restore manifests/artifact references. Database migrations, writes, and external effects may require a separate forward repair or rollback procedure.
 
+**Q:** If Argo CD reports Synced, what must you still check before calling the release successful?
+
+**A:** Desired configuration matches live configuration, but workload health and user-visible behavior can still fail. Inspect readiness, resource health and application checks separately.
+
+**Q:** Why must a release that depends on a PreSync migration avoid selective sync?
+
+**A:** Hooks do not run during selective sync. A normal ordered synchronization can execute the migration; it still needs compatible, safely repeatable database behavior.
+
+**Q:** Does a SyncFail hook automatically reverse a database migration?
+
+**A:** No. It can run configured remediation, but database/external effects are not a transaction with manifest synchronization. Establish a compatible repair procedure.
+
 ## Summary
 
 Use the answers to check your reasoning, then revisit the source mechanism and reproduce any relevant example without copying it. A remembered label is useful only when you can explain its limits.

@@ -27,7 +27,7 @@ Running five application instances can cause a scheduled job to run five times o
 
 Read the consensus theory link first. Then compare the tools used to coordinate running processes, checking how ownership is renewed and how the protected resource rejects an old owner.
 
-Show a paused owner resuming after a successor acquires the lease and explain exactly which write the resource rejects. Then use [section revision](REVISION.md) without reopening the chapters. Interview banks, where present, are a separate drill after this check.
+Trace a conflict-row wait during acquisition, then show a paused owner resuming after a successor acquires the lease and explain exactly which write the resource rejects. Then use [section revision](REVISION.md) without reopening the chapters. Interview banks, where present, are a separate drill after this check.
 
 ## Cross-References
 

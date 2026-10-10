@@ -1,6 +1,6 @@
 # Docker — Index
 
-> **Study time:** ≈ 2 h 22 m of reading (11 files, ~13 min average).
+> **Study time:** ≈ 2 h 1 m of reading (11 files, ~11 min average).
 > **11 files** — Docker fundamentals from images and containers to volumes, networks, Compose, multi-stage builds, runtime internals (namespaces/cgroups), supply chain security (signing/SBOM), rootless & sandboxed runtimes, production patterns, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
@@ -18,7 +18,7 @@
 | [Core Concepts](#core-concepts) | 2 | Images, containers, volumes, networks — the foundation |
 | [Multi-Container & Build](#multi-container--build) | 2 | Compose, multi-stage builds — production workflows |
 | [Production & Security](#production--security) | 5 | Best practices, production patterns, runtime internals, supply chain, sandboxed runtimes |
-| [Interview Prep](#interview-prep) | 1 | 50+ Qs |
+| [Interview Prep](#interview-prep) | 1 | 30 questions |
 
 ---
 
@@ -39,8 +39,8 @@ Production workflows.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 03 | [Compose](40.1.03-compose.md) | Docker Compose, multi-container apps, service configuration, profiles | Important | Important | 19 min |
-| 04 | [Multi-Stage Builds](40.1.04-multi-stage-builds.md) | Build stages, dependency caching, image size optimization | Important | Important | 12 min |
+| 03 | [Compose](40.1.03-compose.md) | Docker Compose, multi-container apps, service configuration, profiles | Important | Important | 20 min |
+| 04 | [Multi-Stage Builds](40.1.04-multi-stage-builds.md) | Build stages, dependency caching, image size optimization | Important | Important | 11 min |
 
 ---
 
@@ -48,11 +48,11 @@ Production workflows.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 05 | [Best Practices & Security](40.1.05-dockerfile-best-practices.md) | Layer caching, non-root users, distroless images, image scanning, labels | Important | Important | 9 min |
-| 06 | [Production Patterns](40.1.06-production-patterns.md) | Multi-stage builds (advanced), Docker Compose in production, image optimization, container security checklist | Important | Important | 10 min |
+| 05 | [Best Practices & Security](40.1.05-dockerfile-best-practices.md) | Layer caching, non-root users, distroless images, image scanning, labels | Important | Important | 10 min |
+| 06 | [Production Patterns](40.1.06-production-patterns.md) | Multi-stage builds (advanced), Docker Compose in production, image optimization, container security checklist | Important | Important | 9 min |
 | 07 | [Container Runtime Internals](40.1.07-container-runtime-internals-namespaces-cgroups.md) | Namespaces (pid/net/mnt/uts/ipc/user), cgroups v2 limits, OverlayFS copy-on-write layers, runc/containerd stack, container vs VM | Optional | Specialized | 14 min |
-| 08 | [Image Signing, SBOM & Supply Chain](40.1.08-image-signing-sbom-supply-chain.md) | Cosign signing + admission verification, SBOM (syft, BuildKit attestations), SLSA provenance levels, registry policy, CI gates | Optional | Specialized | 12 min |
-| 09 | [Rootless & Sandboxed Runtimes](40.1.09-rootless-sandboxed-runtimes.md) | Rootless mode (user namespaces, slirp4netns/pasta), gVisor vs Kata trade-offs, multi-tenant isolation, RuntimeClass | Optional | Specialized | 12 min |
+| 08 | [Image Signing, SBOM & Supply Chain](40.1.08-image-signing-sbom-supply-chain.md) | Cosign signing + admission verification, SBOM (syft, BuildKit attestations), SLSA provenance levels, registry policy, CI gates | Optional | Specialized | 11 min |
+| 09 | [Rootless & Sandboxed Runtimes](40.1.09-rootless-sandboxed-runtimes.md) | Rootless mode (user namespaces, slirp4netns/pasta), gVisor vs Kata trade-offs, multi-tenant isolation, RuntimeClass | Optional | Specialized | 11 min |
 
 ---
 
@@ -60,7 +60,7 @@ Production workflows.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 10 | [Interview Questions](40.1.10-interview-questions.md) | 50+ curated questions with answers | Important | Important | 25 min |
+| 10 | [Interview Questions](40.1.10-interview-questions.md) | 30 curated questions with answers | Important | Important | 6 min |
 
 ---
 
@@ -75,56 +75,18 @@ Production workflows.
 7. **Container Runtime Internals** — namespaces/cgroups, the "what is a container" answer
 8. **Image Signing & Supply Chain** — cosign, SBOM, SLSA
 9. **Rootless & Sandboxed Runtimes** — gVisor/Kata, multi-tenancy
-10. **Interview Questions** — final review
+10. **Revision** — explain the source-linked mechanisms from memory using [the companion](REVISION.md)
+11. **Interview Questions** — final practice
 
 ---
 
-## Key Patterns (memorize)
+## Three Reading Passes
 
-### The Multi-Stage Dockerfile (the standard)
+**Build and run:** Follow image contents, a container's process and writable layer, then connect volume lifetime and network paths. Reproduce a restart/removal case and explain why service DNS differs from localhost.
 
-```dockerfile
-# Build stage
-FROM node:22-alpine AS builder
-WORKDIR /app
-COPY package*.json ./
-RUN npm ci
-COPY . .
-RUN npm run build
+**Package and operate:** Build one application with separate compile/runtime dependencies. Explain cache inputs, secret injection, health versus restart behavior, and graceful shutdown before proposing a rollout.
 
-# Production stage
-FROM node:22-alpine
-WORKDIR /app
-COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/node_modules ./node_modules
-USER node
-EXPOSE 3000
-CMD ["node", "dist/main.js"]
-```
-
-This produces a small, secure production image. The build dependencies (TypeScript, dev deps) don't ship to production.
-
-### The Compose Stack
-
-```yaml
-# docker-compose.yml
-services:
-  app:
-    build: .
-    ports: ['3000:3000']
-    depends_on: [db, redis]
-    environment:
-      DATABASE_URL: postgresql://user:pass@db:5432/mydb
-      REDIS_URL: redis://redis:6379
-  db:
-    image: postgres:16-alpine
-    volumes: ['pgdata:/var/lib/postgresql/data']
-  redis:
-    image: redis:7-alpine
-
-volumes:
-  pgdata:
-```
+**Choose trust boundaries:** Read namespaces/cgroups, signature/provenance verification and rootless/sandboxed runtimes. Distinguish observed runtime evidence from configuration sketches and unexecuted integrations. Then use the revision companion before interview practice.
 
 ---
 
@@ -147,11 +109,11 @@ volumes:
 Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — uses Docker for real.
 
 | Topic | Docita evidence |
-| ------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Dockerfile in production | `apps/api/Dockerfile` — the image Fly builds and runs (`fly.toml [build]`) |
 | Compose for local/e2e | `docker-compose.yml`: API service + `postgres:15-alpine`; E2E tests run against this Postgres (`docita_test`) |
-| Image scanning | `.github/workflows/container-scan.yml` scans the built API image |
-| Rootless/runtimes/signing | Not configured — standard Docker runtime, no cosign/SBOM gates |
+| Image scanning | `.github/workflows/container-scan.yml` schedules Trivy filesystem scans (`scan-type: fs`) of apps/api and apps/worker; this is not a built-image scan |
+| Rootless/runtimes/signing | No rootless/sandbox/cosign/SBOM setup established by these inspected Docker/Compose/scan files; verify the release configuration separately |
 
 ## Finish This Section
 

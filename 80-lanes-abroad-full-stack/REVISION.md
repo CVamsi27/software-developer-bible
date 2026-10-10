@@ -283,19 +283,6 @@ Source: [Role-focused brushup](80.29-topic-brushup-roadmap.md#check-senior-readi
 
 **A:** Trace durable intent, the external effect and acknowledgment separately. Reproduce the ambiguous result with a controlled provider substitute, then explain the idempotency or reconciliation contract. Correct terminology establishes only the opening explanation; the changed failure case exposes the recovery gap.
 
-## Summary
-
-Use a missed answer to identify the assumption or mechanism that needs another example. Larger rehearsals belong in the mock bank; current campaign facts belong in the private workspace.
-
-## See Also
-
-- [Lane reading flow](INDEX.md) — return to the guide sequence.
-- [Mock bank](80.11-mock-interview-bank.md) — practice complete answers under a time budget.
-
-## References & Learn More
-
-The source-linked guides above hold the mechanisms and current primary references. Recheck date-sensitive route and tax conditions when making an actual decision.
-
 ## [Germany Target Engine](80.35-germany-target-engine.md)
 
 **Q:** A promising company rejected you immediately. What can you conclude, and what should you change?
@@ -319,3 +306,35 @@ The source-linked guides above hold the mechanisms and current primary reference
 **Q:** How do you test whether a rehearsed architecture explanation reflects understanding?
 
 **A:** Change a failure or concurrency assumption and trace the sequence again. Identify the exact enforcing operation and acknowledge outcomes outside its guarantee.
+
+## Follow-up contracts for the mock bank
+
+Source: [Twenty mock prompts](80.11-mock-interview-bank.md)
+
+**Q:** A design answer names a cache and a queue but does not explain a failed write. What should the interviewer ask next?
+**A:** Ask where the authoritative state becomes durable, which work may repeat and how recovery discovers the incomplete operation. Follow one concrete failure instead of adding another component.
+
+**Q:** Why should a coding follow-up change a precondition rather than merely increase the input length?
+**A:** Negative values, duplicate identities or a changed output can invalidate the original invariant. Deriving the consequence tests reasoning; a larger input alone may only retest the same complexity claim.
+
+**Q:** What remains unproved when a take-home has many passing unit tests but no clean setup rehearsal?
+**A:** The reviewer may be unable to install, seed and start the submitted artifact. Run its documented path from clean prerequisites and record the actual result.
+
+**Q:** How should a candidate handle a project follow-up asking for a metric they never measured?
+**A:** Describe the supported behavior and contribution, state the measurement gap and explain how it could be measured. Do not convert a design estimate into a historical result.
+
+**Q:** Why does mock feedback belong to the observed attempt rather than a permanent seniority label?
+**A:** It samples particular work under a chosen format. Record the specific correct or missing mechanism, repair it and try a changed case before drawing broader conclusions.
+
+## Summary
+
+Use a missed answer to identify the assumption or mechanism that needs another example. Larger rehearsals belong in the mock bank; current campaign facts belong in the private workspace.
+
+## See Also
+
+- [Lane reading flow](INDEX.md) — return to the guide sequence.
+- [Mock bank](80.11-mock-interview-bank.md) — practice complete answers under a time budget.
+
+## References & Learn More
+
+The source-linked guides above hold the mechanisms and current primary references. Recheck date-sensitive route and tax conditions when making an actual decision.

@@ -1,6 +1,6 @@
 # Java — Index
 
-> **Study time:** ≈ 1 h 38 m of reading (7 files, ~14 min average).
+> **Study time:** ≈ 1 h 45 m of reading (7 files, ~15 min average).
 > **7 files** — Java language fundamentals, OOP & SOLID, concurrency & multithreading, and JUnit/Mockito testing — the shared Java backend corpus, used by the SDE/FAANG lane and any Java-heavy EU full-stack target.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../INDEX.md)
@@ -42,7 +42,7 @@
 
 ## Docita Anchor
 
-Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Docita is a **TypeScript/NestJS monorepo — there is no Java code to map to**. The Java chapters teach JVM concepts the stack itself doesn't use; the closest conceptual counterparts (not code mappings):
+These [Docita](https://github.com/CVamsi27/docita) TypeScript/NestJS pointers offer conceptual comparisons. Inspect current implementation and deployment evidence before claiming behavior or the absence of Java code:
 
 | Java chapter | Closest docita concept |
 | ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

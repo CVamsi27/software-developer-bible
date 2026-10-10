@@ -22,6 +22,22 @@ Source: [CDN Architecture](40.10.01-cdn-architecture.md)
 
 **A:** It aggregates/coalesces eligible misses before the origin. It does not repair uncacheable traffic or compensate for a wrong key/TTL policy.
 
+**Q:** Does using POST with no-store prove a patient response avoids sensitive processing at the edge?
+
+**A:** No. Intermediaries may process bodies, headers and telemetry even without caching. Verify actual bypass rules, data flow, logs and applicable service obligations.
+
+**Q:** New hashed JS is published. Can the old asset and API behavior immediately disappear?
+
+**A:** No. Old tabs/HTML/service workers may still reference them. Keep the chosen compatibility/retention window; versioned identity does not update every client.
+
+**Q:** How do you handle cache invalidation for a SPA?
+
+**A:** Publish immutable versioned assets before references, select the HTML freshness/revalidation policy and retain old clients' supported assets/API behavior. Purge corrections under a verified recovery path.
+
+**Q:** How do you prevent PHI from being cached at the CDN edge?
+
+**A:** Use an explicit no-store/bypass policy and test every protected response path. Method choice is insufficient; validate keys/custom code, processing and telemetry obligations separately.
+
 ## Multi-CDN Traffic Steering
 
 Source: [Multi-CDN Traffic Steering](40.10.02-multi-cdn-traffic-steering.md)
@@ -34,6 +50,14 @@ Source: [Multi-CDN Traffic Steering](40.10.02-multi-cdn-traffic-steering.md)
 
 **A:** A cold secondary can surge the origin and have worse latency during failover. Health, cache policy, certificates, and routing need parity before the switch.
 
+**Q:** A purge submits on A and fails on B. Is the operation atomic or worse than no purge by definition?
+
+**A:** Neither. Record both statuses and the affected content risk, retry/reconcile B and verify each provider's completion. Partial success can matter; no global rollback is implied.
+
+**Q:** Does an 80:20 DNS weight mean exactly eighty percent of users receive A?
+
+**A:** No. It affects eligible DNS answer selection. Resolver caching, user grouping, live connections and health policy change observed request/byte shares.
+
 ## Media Optimization at the Edge
 
 Source: [Media Optimization at the Edge](40.10.03-media-optimization-at-the-edge.md)
@@ -41,6 +65,22 @@ Source: [Media Optimization at the Edge](40.10.03-media-optimization-at-the-edge
 **Q:** Why must format negotiation participate in cache identity?
 
 **A:** Different Accept capabilities may select different representations at the same URL. A matching Vary/key rule keeps caches from serving the wrong variant.
+
+**Q:** A valid signature is checked only on a cache miss. What happens on a hit after expiry?
+
+**A:** The hit can bypass the expired grant unless authorization runs first for every request. Shared content identity and caller permission are separate.
+
+**Q:** Width 420 normalizes to bucket 480. Which width must the renderer use?
+
+**A:** 480. Key and renderer inputs must match; otherwise one key can represent different bytes. Source/transform version and selected format also participate.
+
+**Q:** Does Accept: image/avif;q=0 permit choosing AVIF by substring?
+
+**A:** No. q=0 excludes that representation. Use supported negotiation and preserve the resolved format in cache identity.
+
+**Q:** Why reject malformed signature length before timingSafeEqual?
+
+**A:** The API compares equal-length byte buffers and throws for unequal lengths. Validate encoded shape, decode to bytes and reject malformed grants before comparison.
 
 ## Summary
 

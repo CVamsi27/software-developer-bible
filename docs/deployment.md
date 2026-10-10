@@ -68,9 +68,7 @@ Every push to `main` triggers two builds of the same command:
    `software-developer-bible`
    (must match `wrangler.toml` for manual CLI use). It must be a **Pages**
    project: a Worker project (Workers Builds) shows a *Deploy command*
-   field — typically prefilled with `npx wrangler deploy` — and can never
-   serve this site. If you see that field, delete the project and restart
-   this step.
+   field — typically prefilled with `npx wrangler deploy` — and does not match this repo's Pages Functions deployment contract. If you see that field, stop and check the project identity. Create the intended Pages project; remove a mistaken Worker only after confirming it serves no needed traffic.
 2. **Build settings** — framework preset `Jekyll`, then override:
    | Setting | Value |
    | ------------------------- | ---------------------------- |
@@ -107,7 +105,7 @@ Every push to `main` triggers two builds of the same command:
    `STUDY_PROBE_TOKEN` (generate with `openssl rand -hex 32`) as a
    **production** variable here, and the same value as a **repository secret**
    of the same name (GitHub → Settings → Secrets and variables → Actions),
-   which is what `study-live.yml` passes to the probe. A request whose session
+   which is what `study-live.yml` passes to the probe. This token is a bearer credential with chapter-read access, not a harmless health-check flag; keep it secret and rotate both configured copies together. A request whose session
    cookie carries it is treated as the approved account, so the live probe can
    fetch one real chapter per stack and assert each answers 200 with its own
    title, instead of only proving the site is *blocked*. Leave it unset and the
@@ -215,8 +213,8 @@ drift from it.
 
 Warnings never change the exit code: they describe environment state (unset
 Supabase variables, a dead denial host) that only an operator can change —
-including when that host does not answer at all. Failures mean the live host
-contradicts this runbook.
+including when that host does not answer at all. A zero exit with warnings proves only the paths actually exercised; unconfigured or unprobed paths remain unverified. Failures mean the live host
+contradicts the checked contract.
 
 **The signed-in path** is probed only when `STUDY_PROBE_TOKEN` is set (see
 §2 step 3): the probe then fetches one real chapter per top-level stack with
@@ -261,9 +259,7 @@ delivery, refresh-token store, or binary upload in this site.
   publishing temporarily: Pages project → *Settings* → *Builds* → *Branch
   control* → turn off automatic production-branch deployments. The CI gate
   keeps running; re-enable to resume.
-- **Local preview** parity with CI is unavailable on this machine (native-gem
-  build failure); the CI gate plus Pages preview URLs are the render gates
-  of record.
+- **Local preview:** use the locked bundle and Ruby version to build with `JEKYLL_ENV=production bundle exec jekyll build`. A historical native-gem failure does not establish that preview is unavailable now. Serve the output on loopback and run the [rendered-page checks](scripts-map.md#rendered-page-checks). On case-insensitive filesystems, the authored homepage needs the documented temporary preview alias because `INDEX.html` and `index.html` collide. Local rendering does not prove edge auth or a deployed release.
 - Rollbacks are a dashboard action: Pages project → *Deployments* → select a
   prior deployment → *Rollback*.
 

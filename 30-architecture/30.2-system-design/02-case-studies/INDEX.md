@@ -1,6 +1,6 @@
 # System Design — Case Studies
 
-> **Study time:** ≈ 11 h 29 m of reading (32 files, ~22 min average).
+> **Study time:** ≈ 5 h 30 m of reading (32 files, ~10 min average).
 Applied examples of system design interviews. Read [../01-theory/](../01-theory/INDEX.md) first, then choose cases that match your interview goals.
 
 [![Files](https://img.shields.io/badge/files-32-blue)](../../../INDEX.md)
@@ -56,7 +56,7 @@ The 31 cases are grouped by the kind of reasoning they practice. Use the tiers a
 | 05 | [Google Drive](30.2.2.05-google-drive.md) | Storage & Sync | File storage, sync, upload optimization, conflict resolution | Important | Important |
 | 06 | [Payment Gateway](30.2.2.06-payment-gateway.md) | Commerce & Fintech | Payment processing, idempotency, reconciliation, fraud detection | Important | Important |
 | 07 | [Notification Service](30.2.2.07-notification-service.md) | Messaging & Real-Time | Push, email, SMS, template system, delivery guarantees | Important | Important |
-| 08 | [Ticket Booking](30.2.2.08-ticket-booking.md) | Commerce & Fintech | Concurrent booking, row-level locking, two-phase commit | Important | Important |
+| 08 | [Ticket Booking](30.2.2.08-ticket-booking.md) | Commerce & Fintech | Conditional holds, expiry ownership, payment compensation | Important | Important |
 | 09 | [E-Commerce](30.2.2.09-e-commerce.md) | Commerce & Fintech | Product catalog, cart, inventory, order management, payment flow | Important | Important |
 | 10 | [Hospital Management](30.2.2.10-hospital-management.md) | Healthcare & Vertical | Appointment scheduling, EHR, billing, interoperability | Important | Important |
 | 11 | [Live Betting](30.2.2.11-live-betting.md) | Commerce & Fintech | Real-time odds, event processing, concurrency, consistency | Important | Important |
@@ -68,15 +68,15 @@ The 31 cases are grouped by the kind of reasoning they practice. Use the tiers a
 | 17 | [YouTube](30.2.2.17-youtube.md) | Streaming & Media | Video transcoding ladder, HLS/DASH streaming, CDN economics, recommendations | Important | Important |
 | 18 | [Dropbox](30.2.2.18-dropbox.md) | Storage & Sync | Block-level sync, content-addressable storage, conflict resolution, cursors | Important | Important |
 | 19 | [Lyft](30.2.2.19-lyft.md) | Ride-sharing & Geo | S2/H3 geo indexing, dispatch algorithm, ETA service, surge pricing | Important | Important |
-| 20 | [Distributed Counter](30.2.2.20-distributed-counter.md) | Web (foundational) | Hot-key sharding, G-Counter CRDT, local pre-aggregation, tiered storage | Important | Important |
-| 21 | [Workflow Engine](30.2.2.21-workflow-engine.md) | Automation | DAG execution, state machine, BullMQ workers, idempotency, retry strategy | Important | Important |
+| 20 | [Distributed Counter](30.2.2.20-distributed-counter.md) | Web (foundational) | Stable event identity, hot-key sharding, CRDT merge, read contracts | Important | Important |
+| 21 | [Workflow Engine](30.2.2.21-workflow-engine.md) | Automation | Dependency eligibility, durable state, action identity, waits, compensation | Important | Important |
 | 22 | [Real-Time Collaboration](30.2.2.22-real-time-collaboration.md) | Messaging & Real-Time | OT vs CRDT, WebSocket protocol, Redis Pub/Sub, version history, offline support | Important | Important |
 | 23 | [Typeahead Autocomplete](30.2.2.23-typeahead-autocomplete.md) | Search & Data | Trie/prefix index, offline top-k ranking, geo-sharded indexes, freshness vs latency, personalization | Important | Important |
 | 24 | [Metrics Monitoring Pipeline](30.2.2.24-metrics-monitoring-pipeline.md) | Platform & Telemetry | TSDB ingestion path, downsampling, cardinality explosion control, push vs pull, alert evaluation at scale | Important | Important |
 | 25 | [Distributed Job Scheduler](30.2.2.25-distributed-job-scheduler.md) | Automation | Cron at scale, leader election, task leases & fencing, dedup, delayed jobs, fairness/starvation | Important | Important |
 | 26 | [Distributed ID Generator](30.2.2.26-distributed-id-generator.md) | Web (foundational) | Snowflake bit layout, clock skew handling, k-orderability, node-ID coordination, UUIDv7 comparison | Important | Important |
-| 27 | [Ad Click Aggregator](30.2.2.27-ad-click-aggregator.md) | Platform & Telemetry | Streaming ingestion, layered dedup, tumbling windows & watermarks, exactly-once sinks, fraud filtering | Important | Important |
-| 28 | [Parking Lot](30.2.2.28-parking-lot.md) | Infrastructure & LLD | OOP modeling, strategy pattern, real-time state, concurrent access, payment integration | Important | Important |
+| 27 | [Ad Click Aggregator](30.2.2.27-ad-click-aggregator.md) | Platform & Telemetry | Stable event identity, watermarks, revisioned reporting, fraud decisions, settlement | Important | Important |
+| 28 | [Parking Lot](30.2.2.28-parking-lot.md) | Infrastructure & LLD | Compatible allocation, live sessions, physical evidence, fee boundaries, payment | Important | Important |
 | 29 | [Distributed Cache](30.2.2.29-distributed-cache.md) | Infrastructure & LLD | Consistent hashing, replication, eviction policies, cache stampede, hot key handling | Important | Important |
 | 30 | [Message Queue](30.2.2.30-message-queue.md) | Infrastructure & LLD | WAL, consumer groups, delivery guarantees, backpressure, Kafka vs RabbitMQ comparison | Important | Important |
 | 31 | [API Gateway](30.2.2.31-api-gateway.md) | Infrastructure & LLD | Routing, rate limiting, JWT validation, BFF pattern, circuit breaker, protocol translation | Important | Important |
@@ -91,7 +91,7 @@ The 31 cases are grouped by the kind of reasoning they practice. Use the tiers a
 
 Choose a compact case first, such as the URL shortener. Move to a scarce-resource case, then a delivery/streaming case and a coordination case. Reuse theory links rather than relearning each mechanism.
 
-For each case, explain one rule that must always hold, which changes must succeed or fail together to preserve it, the largest source of scaling pressure, and one path for recovering from failure. Then use [section revision](REVISION.md) without reopening the chapters. Interview banks, where present, are a separate drill after this check.
+For each case, explain one rule that must always hold, which changes must succeed or fail together to preserve it, the largest source of scaling pressure, and one path for recovering from failure. Then use [section revision](REVISION.md) without reopening the chapters. After that, use the [system-design interview bank](../01-theory/30.2.1.16-interview-questions.md) as a separate drill. Change one condition per answer: delay a response, expire a lease, revoke a user, or move ownership to another region. Explain which invariant still holds and which guarantee changes.
 
 ## Navigation
 
@@ -99,14 +99,14 @@ For each case, explain one rule that must always hold, which changes must succee
 
 ---
 
-## Docita Anchor
+## Docita implementation anchors
 
-Where [docita](https://github.com/CVamsi27/docita) meets these case studies — plainly: **hospital management is not an analogy, it IS the product I ship.**
+The local Docita checkout at `dc5a97dc3` was inspected on 10 October 2026. These source paths connect study concepts to implementation questions; their presence does not establish deployment status, production scale, or all guarantees in an interview model. Use the [Docita evidence walkthrough](../../../projects/docita/INDEX.md) for measured and dated claims.
 
-| Topic | Docita evidence |
-| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Hospital Management = the product | `apps/api/src/domains/*`: appointments, patients, prescriptions, billing, inventory, IPD, lab-portal, insurance-claims — this case study is my day job |
-| Notification Service | `apps/api/src/shared/modules/messaging/notification-orchestrator.service.ts` + `channels/{email,sms,whatsapp}.channel.ts` + reminders domain |
-| Payment Gateway | Razorpay webhook signature verification helper, `payment.websocket.gateway.ts`, internal billing service, `razorpay-outage.md` playbook |
-| Workflow Engine | `apps/api/src/shared/modules/imports/bulk-import-orchestrator.service.ts` + job processor/query services + DLQ replay scheduler |
-| URL Shortener, Uber, Twitter, Netflix, etc. | _No direct docita implementation yet._ |
+| Topic | Source anchor and boundary |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Hospital management | `apps/api/src/domains/` contains clinical and operational domain code. The case study remains an illustrative design, not a clinical validation certificate. |
+| Notifications | `apps/api/src/shared/modules/messaging/notification-orchestrator.service.ts` selects registered channels and records send results. Provider acceptance is distinct from recipient delivery or reading. |
+| Payments | `apps/api/src/shared/modules/webhooks/razorpay-webhook-verification.helper.ts` verifies raw-body signatures and replay state. A helper alone does not establish end-to-end payment or settlement correctness. |
+| Workflow recovery | `apps/api/src/shared/modules/imports/bulk-import-orchestrator.service.ts` coordinates import jobs; `apps/api/src/shared/modules/queue/dlq-replay.scheduler.ts` handles queue-recovery work. These are bounded workflows, not evidence of a general user-defined DAG engine. |
+| Other product cases | No direct Docita implementation is claimed for URL shortening, ride dispatch, social feeds, or media streaming. |

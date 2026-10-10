@@ -54,6 +54,34 @@ Source: [Event-Driven Patterns](20.9.03-event-driven-patterns.md).
 
 **A:** Later entity events can be processed without the failed predecessor. Decide whether that gap is allowed or whether the entity/partition must remain blocked until repaired.
 
+## Failure Traces
+
+Sources: [broker model](20.9.01-message-brokers.md), [Kafka operations](20.9.02-kafka-internals-and-operations.md), and [event patterns](20.9.03-event-driven-patterns.md).
+
+**Q:** A provider charged once but the worker crashed before its offset commit. What must the retry reuse?
+
+**A:** The same effect idempotency key, within the provider's supported window. A new key can charge again; an in-memory dedup marker cannot survive the crash.
+
+**Q:** Why can increasing partitions break the order assumed for one customer?
+
+**A:** Hash-based mapping can move that key to a new partition. Older records remain in the original partition, so parallel readers need a migration barrier or entity-version enforcement.
+
+**Q:** What does a committed offset of 115 mean when the log end is 120?
+
+**A:** Recovery starts at 115, giving an offset distance of five. It does not prove five retained records or a particular delay; an invalid/reset position must remain unknown rather than zero.
+
+**Q:** Does upgrading the broker to Kafka 4.1 put every consumer on KIP-848?
+
+**A:** No. A compatible client explicitly selects the consumer protocol. Server heartbeat/session settings then apply, but Java poll-progress limits still matter; KafkaJS's documented contract must be checked separately.
+
+**Q:** Why can a claim-check event become impossible to replay after its first successful delivery?
+
+**A:** Its referenced object may have been deleted. Blob retention and authorization must cover every independent consumer and the entire supported retry/replay horizon, with corruption/missing-object handling.
+
+**Q:** Does adding an optional field prove every older consumer will accept the event?
+
+**A:** No. Compatibility depends on format, defaults, validation and semantics. A strict unknown-field reader can reject it, and changing a money unit can break meaning without changing the type.
+
 ## Next Step
 
 Return to the [reading flow](INDEX.md), then answer an interview question with one concrete failure boundary and one trade-off.

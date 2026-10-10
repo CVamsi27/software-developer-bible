@@ -1,6 +1,6 @@
 # Fundamentals - GraphQL
 
-> **Study time:** ≈ 2 h 3 m of reading (4 files, ~31 min average).
+> **Study time:** ≈ 33 min of reading (4 files, ~8 min average).
 > **4 files.** The mental model: GraphQL as a typed query language vs REST, schema-first contract design, and queries/mutations/subscriptions syntax.
 
 [![Files](https://img.shields.io/badge/files-4-blue)](../INDEX.md)
@@ -8,13 +8,19 @@
 
 ---
 
+## Reading Flow
+
+Read the overview to follow one selection from validation to its result. Next, design the schema's types and failure boundaries. Then build operations and trace a partially failing mutation before choosing retry behavior.
+
+After the chapters, use [revision](REVISION.md), then continue to [execution](../02-execution/INDEX.md). The [interview bank](../04-interview-prep/20.7.4.01-interview-questions.md) comes after the complete GraphQL learning pass.
+
 ## Files
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [GraphQL Overview](20.7.1.01-graphql-overview.md) | Typed query language + runtime, client-specified shapes, vs REST (over/under-fetching), when to use GraphQL | Optional | Specialized | 31 min |
-| 02 | [Schema Design](20.7.1.02-schema-design.md) | Object/Interface/Union/Enum/Input/Scalar types, nullability, Relay connections, input types for mutations, deprecation-aware evolution | Optional | Specialized | 46 min |
-| 03 | [Queries & Mutations](20.7.1.03-queries-mutations.md) | Selection sets, variables, fragments, directives (`@include`/`@skip`/`@deprecated`), subscriptions, idempotency keys for mutations | Optional | Specialized | 44 min |
+| 01 | [GraphQL Overview](20.7.1.01-graphql-overview.md) | Typed query language + runtime, client-specified shapes, vs REST (over/under-fetching), when to use GraphQL | Optional | Specialized | 9 min |
+| 02 | [Schema Design](20.7.1.02-schema-design.md) | Object/Interface/Union/Enum/Input/Scalar types, nullability, Relay connections, input types for mutations, deprecation-aware evolution | Optional | Specialized | 12 min |
+| 03 | [Queries & Mutations](20.7.1.03-queries-mutations.md) | Selection sets, variables, fragments, conditional selections (`@include`/`@skip`), operation names, serial mutation execution, errors and idempotency boundaries | Optional | Specialized | 10 min |
 
 ---
 
@@ -24,9 +30,7 @@
 
 ## Docita Anchor
 
-Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
-
-_No direct docita implementation yet._ Docita is deliberately REST-first — URI-versioned REST documented via OpenAPI (`apps/api/src/main.ts`); `apps/api/package.json` carries no `@nestjs/graphql` or Apollo dependency. If GraphQL ever lands, schemas would start from these same domain modules and repository ports.
+_No direct Docita GraphQL implementation is cited here._ Docita is deliberately REST-first — URI-versioned REST documented via OpenAPI (`apps/api/src/main.ts`); `apps/api/package.json` carries no `@nestjs/graphql` or Apollo dependency. If GraphQL ever lands, schemas would start from these same domain modules and repository ports.
 ---
 
 [Next: Execution →](../02-execution/INDEX.md)

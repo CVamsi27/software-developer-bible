@@ -38,6 +38,28 @@ Source: [Health Checks](40.4.2.02-health-checks.md)
 
 **A:** That all user journeys, dependencies, tenants, and data are correct. Pair probes with service-level and synthetic measurements.
 
+## Boundary Variants
+
+Source: [Error tracking](40.4.2.01-error-tracking.md)
+
+**Q:** Why does sendDefaultPii false not protect a password explicitly added as extra context?
+
+**A:** Default collection and manually supplied context differ. Define an allowlisted event schema and test explicit fields plus exception text and every enabled signal.
+
+**Q:** Why must source-map debug ID injection happen before final artifact hashes/publication?
+
+**A:** Injection changes emitted artifacts. The uploaded maps and deployed bytes must share the matching identity; hashing earlier bytes certifies a different candidate.
+
+Source: [Health checks](40.4.2.02-health-checks.md)
+
+**Q:** Why must a probe timeout remain active while reading the response body?
+
+**A:** Headers can arrive promptly while the body stalls. The complete observation must fit the deadline, with response size also bounded.
+
+**Q:** Why can a circuit breaker count an unhealthy dependency helper as a success?
+
+**A:** If the helper fulfills with an unhealthy object, a rejection-based breaker may record success. Match failure semantics to the breaker contract and test that boundary.
+
 ## Summary
 
 Use the answers to check your reasoning, then revisit the source mechanism and reproduce any relevant example without copying it. A remembered label is useful only when you can explain its limits.

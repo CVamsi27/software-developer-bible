@@ -78,6 +78,28 @@ Source: [Canvas & SVG Animation](10.6.07-canvas-svg-animation.md)
 
 **A:** The backing buffer needs enough device pixels for sharp output. Scale/reset the drawing transform deliberately and account for the memory and fill-rate cost.
 
+## Trace changed timing and cancellation
+
+Source: [CSS animation](10.6.01-css-animations.md), [GSAP](10.6.03-gsap.md), [WAAPI](10.6.05-web-animations-api.md), [View/scroll transitions](10.6.06-view-transitions-and-scroll-driven-animations.md), [Canvas](10.6.07-canvas-svg-animation.md)
+
+**Q:** At half the duration, why need a transition not be halfway in distance?
+**A:** A timing function maps elapsed progress into effect progress. A nonlinear ease changes that mapping.
+
+**Q:** Why does GSAP subtitle start at 0.3 seconds after a 0.5-second title with position −=0.2?
+**A:** The position subtracts 0.2 seconds from the timeline's current end. It overlaps the title's last 0.2 seconds rather than delaying it.
+
+**Q:** Why can canceling a fade prevent a reveal but still require promise handling?
+**A:** Cancellation rejects a pending finished promise. The owner must catch that outcome and stop obsolete callbacks from changing the current interface.
+
+**Q:** Why keep forwards fill until committing a completed WAAPI effect?
+**A:** It retains the final effect for compatible browsers while commitStyles writes it to inline styles; cancel then releases the retained animation.
+
+**Q:** Why does starting a view transition after a route effect lose the previous snapshot?
+**A:** The route DOM already changed. The transition must wrap the actual update or use a router integration that does so.
+
+**Q:** Why does the Canvas example clamp a long frame interval?
+**A:** It deliberately discards excess simulation time to avoid teleporting after a pause. Real-time simulation would need a different catch-up policy.
+
 ## Summary
 
 A useful answer names the guarantee, the mechanism that enforces it, and the failure boundary. Revisit the source when any of those is unclear.

@@ -18,6 +18,10 @@ Source: [React Native & Cross-Platform](10.8.01-react-native-cross-platform.md)
 
 **A:** It removes or changes particular bridge costs. Expensive JavaScript, rendering, lists, image work and native code can still exceed the frame budget.
 
+**Q:** A card is halfway through expanding when tapped again. Which value should determine its next target?
+
+**A:** The logical expanded state, not the intermediate spring value. Flip intent, assign the new target and let the animation continue from its current progress. UI-thread execution still does not guarantee a frame budget.
+
 ## Deep Linking, Universal Links & App Links
 
 Source: [Deep Linking, Universal Links & App Links](10.8.02-deep-linking-universal-links.md)
@@ -26,6 +30,10 @@ Source: [Deep Linking, Universal Links & App Links](10.8.02-deep-linking-univers
 
 **A:** Preserve and validate the intended destination, authenticate, then authorize and navigate. Never treat the link's object ID as proof of access.
 
+**Q:** A warm link arrives before getInitialURL resolves. How do you keep the late initial link from replacing it?
+
+**A:** Subscribe during bootstrap, record that an event arrived and ignore the older initial completion. Cleanup must also disable pending completions. Validate the route and wait for session/navigation readiness before accessing data.
+
 ## Testing React Native Apps
 
 Source: [Testing React Native Apps](10.8.03-testing-react-native-apps.md)
@@ -33,6 +41,10 @@ Source: [Testing React Native Apps](10.8.03-testing-react-native-apps.md)
 **Q:** Why do JavaScript component tests not prove native navigation works?
 
 **A:** They often mock native modules and run outside the device runtime. Use focused native integration/end-to-end checks for platform behavior and release-critical journeys.
+
+**Q:** A permission mock always returns granted. Which failure is hidden, and what evidence is still missing after fixing it?
+
+**A:** Denial/recovery behavior is hidden. Configure a denial case and assert the React response; device tests must still verify the actual OS prompt, settings and lifecycle behavior.
 
 ## Expo EAS Build — Cloud Builds, Profiles & Submitting
 
@@ -50,6 +62,10 @@ Source: [Expo EAS Build — Cloud Builds, Profiles & Submitting](10.8.04-expo-ea
 
 **A:** EAS increments its remotely stored build version and applies it to the native build rather than rewriting the local configuration. Record the effective version with the artifact.
 
+**Q:** A preview runs on an enrolled iPhone but cannot be submitted to TestFlight. Why is renaming its profile insufficient?
+
+**A:** The existing artifact carries its signing/distribution contract. Produce a store-compatible build from reviewed source, record its effective version and submit that exact artifact ID.
+
 ## Over-the-Air Updates — EAS Update, CodePush & the JS/Native Boundary
 
 Source: [Over-the-Air Updates — EAS Update, CodePush & the JS/Native Boundary](10.8.05-codepush-ota-updates.md)
@@ -58,6 +74,10 @@ Source: [Over-the-Air Updates — EAS Update, CodePush & the JS/Native Boundary]
 
 **A:** Its JavaScript may depend on native capabilities in that binary. The version label is a compatibility contract and must change when native requirements change.
 
+**Q:** A device is offline when an OTA revert is published. What code can it run?
+
+**A:** It retains an eligible cached update or embedded fallback under its update policy; publication cannot immediately repair an offline device. Monitor actual uptake and test crash recovery for each supported runtime.
+
 ## App-Store Release Automation — Release Trains, Store Review & Rollout Safety
 
 Source: [App-Store Release Automation — Release Trains, Store Review & Rollout Safety](10.8.06-app-store-release-automation.md)
@@ -65,6 +85,10 @@ Source: [App-Store Release Automation — Release Trains, Store Review & Rollout
 **Q:** Why can stopping a phased release not undo every user's installed version?
 
 **A:** Users who already installed retain that binary. Recovery may require a compatible OTA update or a new store build, with adoption and review delays.
+
+**Q:** You pause an iOS phased release after a crash spike. Can you assume only the configured percentage has the binary?
+
+**A:** No. Apple’s phased schedule governs automatic updates; anyone can manually download it. Existing installations remain. Contain the feature and deliver a compatible repair or corrective binary, with adoption evidence.
 
 ## Summary
 

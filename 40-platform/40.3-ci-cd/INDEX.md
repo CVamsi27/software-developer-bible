@@ -1,7 +1,7 @@
 {% raw %}
 # CI/CD — Index
 
-> **Study time:** ≈ 2 h 41 m of reading (14 files, ~12 min average).
+> **Study time:** ≈ 1 h 48 m of reading (14 files, ~8 min average).
 > **14 files** — CI/CD pipeline fundamentals from GitHub Actions and Jenkins to GitLab CI, ArgoCD, Docker build/deploy, artifact registries with release promotion, supply-chain security (SLSA), blue-green/canary deployments, DORA metrics, pipeline patterns, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-14-blue)](../../INDEX.md)
@@ -19,7 +19,7 @@
 | CI Platforms | [01-ci-platforms/](01-ci-platforms/INDEX.md) | 4 | GitHub Actions, GitLab CI, Jenkins, ArgoCD — pick the one your company uses |
 | Build & Deploy | [02-build-and-deploy/](02-build-and-deploy/INDEX.md) | 4 | Docker build/deploy, pipeline patterns, artifact registries + promotion, supply-chain security (SLSA) |
 | Releases & Metrics | [03-releases-and-metrics/](03-releases-and-metrics/INDEX.md) | 2 | Blue-green, canary — plus DORA metrics for delivery performance |
-| Interview Prep | [04-interview-prep/](04-interview-prep/INDEX.md) | 1 | 50+ Qs |
+| Interview Prep | [04-interview-prep/](04-interview-prep/INDEX.md) | 1 | Authored interview drill |
 
 ---
 
@@ -30,8 +30,8 @@ Pick the one your company uses — the patterns are similar.
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
 | 01 | [GitHub Actions](01-ci-platforms/40.3.1.01-github-actions.md) | Workflows, actions, runners, matrix builds, caching, secrets | Most common — GitHub repos | Important | Important | 12 min |
-| 02 | [GitLab CI/CD](01-ci-platforms/40.3.1.02-gitlab-ci.md) | `.gitlab-ci.yml`, multi-project pipelines, Auto DevOps | GitLab repos | Important | Important | 10 min |
-| 03 | [Jenkins CI/CD](01-ci-platforms/40.3.1.03-jenkins.md) | Declarative/scripted pipelines, shared libraries, plugins | Legacy enterprise | Important | Important | 11 min |
+| 02 | [GitLab CI/CD](01-ci-platforms/40.3.1.02-gitlab-ci.md) | `.gitlab-ci.yml`, multi-project pipelines, Auto DevOps | GitLab repos | Important | Important | 8 min |
+| 03 | [Jenkins CI/CD](01-ci-platforms/40.3.1.03-jenkins.md) | Declarative/scripted pipelines, shared libraries, plugins | Legacy enterprise | Important | Important | 7 min |
 | 04 | [ArgoCD (GitOps)](01-ci-platforms/40.3.1.04-argocd.md) | GitOps, ApplicationSets, sync policies, rollback | K8s + GitOps | Important | Important | 11 min |
 
 ---
@@ -40,10 +40,10 @@ Pick the one your company uses — the patterns are similar.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 05 | [Docker Build & Deploy](02-build-and-deploy/40.3.2.01-docker-build-deploy.md) | Docker build pipelines, registry (ECR/GCR/DockerHub), deployment strategies | Important | Important | 18 min |
-| 06 | [Pipeline Patterns](02-build-and-deploy/40.3.2.02-pipeline-patterns.md) | GitHub Actions CI/CD, GitLab CI, deployment pipelines, deployment strategies (rolling, blue-green, canary, feature flags) | Important | Important | 15 min |
-| 07 | [Artifact Registries & Release Promotion](02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md) | GHCR/ECR/Artifactory/NPM, immutable digests, build-once promotion dev->staging->prod, changelog automation, retention, pull-through caches | Important | Important | 17 min |
-| 08 | [Pipeline Supply-Chain Security & SLSA](02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.md) | Pipeline attack surface, SolarWinds/Codecov/xz, SLSA levels, SHA pinning + Dependabot, OIDC federation, provenance attestations | Important | Important | 16 min |
+| 05 | [Docker Build & Deploy](02-build-and-deploy/40.3.2.01-docker-build-deploy.md) | Docker build pipelines, registry (ECR/GCR/DockerHub), deployment strategies | Important | Important | 7 min |
+| 06 | [Pipeline Patterns](02-build-and-deploy/40.3.2.02-pipeline-patterns.md) | GitHub Actions CI/CD, GitLab CI, deployment pipelines, deployment strategies (rolling, blue-green, canary, feature flags) | Important | Important | 6 min |
+| 07 | [Artifact Registries & Release Promotion](02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md) | GHCR/ECR/Artifactory/NPM, immutable digests, build-once promotion dev->staging->prod, changelog automation, retention, pull-through caches | Important | Important | 11 min |
+| 08 | [Pipeline Supply-Chain Security & SLSA](02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.md) | Pipeline attack surface, SolarWinds/Codecov/xz, SLSA levels, SHA pinning + Dependabot, OIDC federation, provenance attestations | Important | Important | 14 min |
 
 ---
 
@@ -53,18 +53,10 @@ Senior-level patterns for zero-downtime deploys.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 09 | [Blue-Green & Canary](03-releases-and-metrics/40.3.3.01-blue-green-canary.md) | Zero-downtime deployments, traffic shifting, rollback, feature flags | Important | Important | 19 min |
-| 10 | [DORA Metrics & Delivery Performance](03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md) | Four keys (DF, lead time, MTTR, CFR), honest instrumentation, benchmarks, gaming pitfalls, error budgets | Important | Important | 15 min |
+| 09 | [Blue-Green & Canary](03-releases-and-metrics/40.3.3.01-blue-green-canary.md) | Zero-downtime deployments, traffic shifting, rollback, feature flags | Important | Important | 7 min |
+| 10 | [DORA Metrics & Delivery Performance](03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md) | Five delivery measures including deployment rework rate, honest instrumentation, benchmarks, gaming pitfalls, error budgets | Important | Important | 14 min |
 
-**Decision:**
-
-```text
-Need zero-downtime deployment?
-├── Big-bang deploy is OK? ──→ Rolling update (default)
-├── Need instant rollback? ──→ Blue-green
-├── Want gradual risk reduction? ──→ Canary
-└── Want to test in production? ──→ Feature flags
-```
+**Decision:** Choose exposure based on routing capability, traffic/sample size, capacity and state compatibility. Rolling replacement, retained blue-green capacity and analyzed canaries solve different constraints; none alone promises zero downtime or instant recovery.
 
 ---
 
@@ -72,7 +64,7 @@ Need zero-downtime deployment?
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 11 | [Interview Questions](04-interview-prep/40.3.4.01-interview-questions.md) | 50+ curated questions with answers | Important | Important | 11 min |
+| 11 | [Interview Questions](04-interview-prep/40.3.4.01-interview-questions.md) | Authored question bank | Important | Important | 5 min |
 
 ---
 
@@ -86,48 +78,14 @@ Need zero-downtime deployment?
 6. **Blue-Green & Canary** — for senior roles
 7. **DORA Metrics & Delivery Performance** — staff/lead conversations
 8. **Jenkins / ArgoCD** — as relevant
-9. **Interview Questions** — final review
+9. **Category REVISION companions** — explain mechanisms from memory
+10. **Interview Questions** — separate final practice
 
 ---
 
-## The Standard Pipeline (memorize)
+## Trace the Actual Release Contract
 
-```yaml
-# .github/workflows/ci.yml
-name: CI
-on: [push, pull_request]
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-      - uses: actions/setup-node@v7
-        with: { node-version: 22, cache: 'npm' }
-      - run: npm ci
-      - run: npm run lint
-      - run: npm test
-      - run: npm run build
-```
-
-This sample uses current action majors with a supported Node.js project runtime. GitHub's Node 20 removal applies to the runtime used inside JavaScript actions; `setup-node` separately selects the Node.js version used by the project's commands. Check both when updating a workflow. See [GitHub's runner change notice](https://github.blog/changelog/2026-09-23-node-20-is-no-longer-available-in-github-actions/) and the [Node.js release schedule](https://nodejs.org/en/about/previous-releases).
-
-```yaml
-# .github/workflows/deploy.yml
-name: Deploy
-on:
-  push:
-    branches: [main]
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-      - uses: docker/build-push-action@v7
-        with:
-          push: true
-          tags: ghcr.io/myorg/myapp:${{ github.sha }}
-      - run: kubectl set image deployment/myapp myapp=ghcr.io/myorg/myapp:${{ github.sha }}
-```
+Use the complete [GitHub Actions](01-ci-platforms/40.3.1.01-github-actions.md) workflow and [image pipeline](02-build-and-deploy/40.3.2.01-docker-build-deploy.md). Explain the event/ref, real checks, output producer, artifact identity, scoped credentials, deployment target and recovery evidence. Do not memorize an incomplete deploy fragment as if it supplies registry login, cluster trust and an approved build automatically.
 
 ---
 

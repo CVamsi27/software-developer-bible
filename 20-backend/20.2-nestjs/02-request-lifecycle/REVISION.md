@@ -186,7 +186,7 @@ Use these prompts after the reading pass to recall the request lifecycle mechani
 
 ## See Also
 
-- [Category reading flow](INDEX.md)
+- [Category reading flow](INDEX.md) — return to prerequisites and learning stages for request ownership and scoped context
 
 ## References & Learn More
 

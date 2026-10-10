@@ -84,7 +84,7 @@ Use these prompts after the reading pass to recall the mechanism and its limits.
 
 ## See Also
 
-- [Category reading flow](INDEX.md)
+- [Category reading flow](INDEX.md) — return to prerequisites and learning stages for query construction and transaction ownership
 
 ## References & Learn More
 

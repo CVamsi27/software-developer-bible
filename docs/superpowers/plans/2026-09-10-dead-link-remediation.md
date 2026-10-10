@@ -1,5 +1,7 @@
 # Dead-Link Remediation & Wayback Pass Implementation Plan
 
+> **Historical design record:** requirements, example paths and checkboxes describe this dated plan, not current repository status or authorization to rerun it. Later [explanation-depth work](../plans/2026-10-08-explanation-depth.md), [AGENTS.md](../../../AGENTS.md) and [contributing.md](../../../contributing.md) govern current changes. Preserve stable chapter IDs; TL;DR and inline chapter cheat/revision sections are retired.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Eliminate every confirmed-dead external citation in the bible docs by probe-verified replacement (live URL or exact Wayback snapshot), closing the "~200 dead links remain open" item in `docs/2026-09-10-modernization-changelog.md` §5.

@@ -7,17 +7,32 @@
 # Gate Design Principles — why the verification suite is shaped the way it is
 
 > The [gate inventory](verification-gates.md) records *what* each
-> of the 21 gates enforces; the [scripts map](scripts-map.md) records *how to
+> of the current gates enforces; the [scripts map](scripts-map.md) records *how to
 > route* around a failure. This doc records the *why*: six constraints of a
 > hand-maintained corpus, the design each constraint forces, and the method —
 > measure, fix, gate, prove both ways, write it down — that produced every
 > rule in the suite. Nothing here was designed up front; each principle was
 > earned by a defect.
 
+## Definition
+
+- **Gate** — a read-only check that fails a build. Never writes.
+- **Fixer** — rewrites files; idempotent; shares its detection logic with a
+  gate so the two cannot disagree; its output is pinned byte-for-byte.
+- **Restamper** — the single writer of an owned claim, recomputing it from
+  the same data the gate reads.
+- **Generator** — produces files whose content is fully derived; `--check`
+  mode makes it double as a gate (byte-lock).
+- **Owned claim** — a number whose truth is recomputed, not asserted.
+- **Drift class** — a defect category that recurs structurally, and is
+  therefore gateable.
+- **Day-one catch** — a real defect a new rule found on its first baseline
+  run, before any planted test. The ledger of these is the method's evidence.
+
 ## First Principles
 
-1. **Prose has no compiler.** Code that lies fails to build; a document that
-   lies renders perfectly. In a hand-maintained corpus every claim — a count,
+1. **Prose has no compiler.** Invalid syntax or types may fail a build, but wrong behavior can still compile; a document that
+   lies can render perfectly. In a hand-maintained corpus every claim — a count,
    a pin, a link, a promise — is unchecked by default, so verification must
    be made explicit. That is the entire justification for the suite's
    existence, and it is why gates are cheap stdlib scans that run on every
@@ -25,8 +40,7 @@
 
 2. **A claim without an owner drifts.** Given one number quoted in three
    places and a corpus that changes daily, the number is already wrong; the
-   only question is when anyone notices. There are exactly two cures and they
-   do not overlap: give the claim a single *writer* that recomputes it from
+   only question is when anyone notices. Two complementary controls are: give the claim a single *writer* that recomputes it from
    disk (a restamper with `--write`), or give it a constant *reader* that
    fails when reality disagrees (a gate). Hand-editing an owned claim is not
    maintenance — it is re-introducing the drift on a delay.
@@ -66,21 +80,6 @@
    rule is trusted, and the honest record of what a rule caught on its first
    baseline run — the day-one ledger — is the empirical argument that the
    method finds what manual passes miss.
-
-## Definition
-
-- **Gate** — a read-only check that fails a build. Never writes.
-- **Fixer** — rewrites files; idempotent; shares its detection logic with a
-  gate so the two cannot disagree; its output is pinned byte-for-byte.
-- **Restamper** — the single writer of an owned claim, recomputing it from
-  the same data the gate reads.
-- **Generator** — produces files whose content is fully derived; `--check`
-  mode makes it double as a gate (byte-lock).
-- **Owned claim** — a number whose truth is recomputed, not asserted.
-- **Drift class** — a defect category that recurs structurally, and is
-  therefore gateable.
-- **Day-one catch** — a real defect a new rule found on its first baseline
-  run, before any planted test. The ledger of these is the method's evidence.
 
 ## Why Do We Need It?
 
@@ -174,23 +173,10 @@ it is what converts "we added checks" into "we know the checks work."
 
 ## Summary
 
-Twenty-one gates, three test suites, one harness auditor, and a drift drill
-— none designed up front, all forced by defects that were real, each proven
-to fire and to pass, every claim either owned or dated. The design fits in
+The suite combines corpus checks, parser/fixer tests, a harness auditor and a drift drill. Its checks arose from observed defects and are tested with defect and clean controls. They cover named failure classes, not every possible technical or editorial error. The design fits in
 one sentence: **make the corpus a system whose lies are detectable, whose
 detection is wired, and whose wiring is itself tested** — then write down
 how, so the next maintainer inherits the reasoning and not just the rules.
-
-## Cheat Sheet
-
-```text
-New claim in prose?     -> give it an owner (restamper) or a gate
-New defect class?       -> measure, fix deep, gate, prove both ways, ledger
-New gate script?        -> wire it (gate row + trigger + doc row) or rename it
-New rule fires day one? -> record the catch; it is the method's evidence
-Sweep clean twice?      -> stop sweeping; write the ledger
-Tempted to hand-edit?   -> find the owner; run it with --write
-```
 
 ## See Also
 

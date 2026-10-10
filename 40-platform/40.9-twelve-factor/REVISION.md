@@ -34,6 +34,38 @@ Source: [The Twelve-Factor App](40.9.01-the-twelve-factor-app.md)
 
 **A:** They need the same dependency/schema/environment contract as the service. Ad-hoc laptop scripts create untracked versions and privilege drift.
 
+**Q:** Can a stateless process have a connection pool or local cache?
+
+**A:** Yes. Those are reconstructible optimization state; accepted business effects must remain correct if they disappear. Warm-up time still affects readiness and scale-out.
+
+**Q:** Does redeploying release R−1 undo the database migration from R?
+
+**A:** No. It restores code/configuration identity, not external effects. Check backward-compatible schema/data behavior and the recovery path before rollback.
+
+**Q:** Must every web process start within five seconds and stop within thirty?
+
+**A:** No. The methodology favors fast start and graceful stop; measure workload readiness and configure the runtime deadline. Sudden death still requires durable recovery.
+
+**Q:** Is a secret fetched into memory safe from crash dumps?
+
+**A:** No. Delivery avoids embedding it in the artifact but does not remove its in-memory value. Control diagnostics, lifetime, access and redaction.
+
+## Deployment Prompts Moved from the Learning Chapter
+
+Source: [The Twelve-Factor App](40.9.01-the-twelve-factor-app.md)
+
+**Q:** Walk me through your deployment pipeline.
+
+**A:** Identify the built artifact, release configuration, compatibility/migration gate, rollout and observed outcome. Use your actual pipeline; separating the stages does not make rollback of external state automatic.
+
+**Q:** How do you handle config?
+
+**A:** Explain deployment-varying inputs, validation, credential delivery and audit. The original factor recommends independent env vars; identify any mounted-config or runtime-service adaptation and its exposure boundary.
+
+**Q:** What about stateful operations like database migrations?
+
+**A:** Run compatible release tooling under an explicit owner and recoverable one-off execution policy. Prevent unsafe overlap, preserve supported old/new schema behavior and verify the result before admitting dependent code.
+
 ## Summary
 
 Use the answers to check your reasoning, then revisit the source mechanism and reproduce any relevant example without copying it. A remembered label is useful only when you can explain its limits.

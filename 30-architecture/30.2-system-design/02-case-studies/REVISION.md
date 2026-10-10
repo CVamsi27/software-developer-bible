@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-7_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
 
@@ -17,6 +17,10 @@ Source: [URL Shortener System Design](30.2.2.01-url-shortener.md)
 **Q:** Why must short-code uniqueness be enforced after generation?
 
 **A:** Random generation can collide and concurrent requests can choose the same code. A unique constraint or conditional insertion must reject collisions and retry generation.
+
+**Q:** What if two custom-alias requests both pass an existence check?
+
+**A:** The authoritative unique insertion admits one. The other returns a conflict or retries under policy; a lost successful response needs stable request identity, not a new alias allocation.
 
 ## WhatsApp System Design
 
@@ -114,6 +118,10 @@ Source: [Rate Limiter System Design](30.2.2.13-rate-limiter.md)
 
 **A:** When its shared store is unavailable, that choice trades service access against overload or abuse. The policy depends on the endpoint and its protected resource.
 
+**Q:** How can a quota of two be exceeded when the stored count is one?
+
+**A:** Two separate readers can both see one, both admit, and increment to three. The check and update must be one atomic admission operation.
+
 ## Web Crawler System Design
 
 Source: [Web Crawler System Design](30.2.2.14-web-crawler.md)
@@ -146,6 +154,10 @@ Source: [YouTube System Design](30.2.2.17-youtube.md)
 
 **A:** It is expensive, may produce many variants and can fail independently. Persist progress and stable job identities before exposing a playable version.
 
+**Q:** Why must a version-one transcoder not publish ready after a replacement upload?
+
+**A:** Its outputs belong to a superseded source version. Publication checks the current source/processing version and only exposes a complete validated manifest for that version.
+
 ## Dropbox System Design
 
 Source: [Dropbox System Design](30.2.2.18-dropbox.md)
@@ -153,6 +165,10 @@ Source: [Dropbox System Design](30.2.2.18-dropbox.md)
 **Q:** Why does content hashing not resolve concurrent file edits by itself?
 
 **A:** It identifies bytes, not which version should win. The sync protocol still needs versions, conflict detection and a user-visible reconciliation policy.
+
+**Q:** Why persist a change cursor after applying its page rather than before?
+
+**A:** A crash before application with an advanced cursor skips changes. Applying first may replay a page after a crash, so application must be idempotent under stable change identity.
 
 ## Lyft / Ride-Sharing System Design
 
@@ -162,6 +178,10 @@ Source: [Lyft / Ride-Sharing System Design](30.2.2.19-lyft.md)
 
 **A:** A shared atomic claim or transactional state transition. Independent local decisions based on location snapshots cannot enforce the assignment invariant.
 
+**Q:** Why does locking only a ride leave driver double-booking possible?
+
+**A:** Two different rides can each accept the same driver. Claim the driver and ride together under one authoritative transaction and recheck the current unexpired offer.
+
 ## Distributed Counter / Metrics Aggregation System Design
 
 Source: [Distributed Counter / Metrics Aggregation System Design](30.2.2.20-distributed-counter.md)
@@ -169,6 +189,10 @@ Source: [Distributed Counter / Metrics Aggregation System Design](30.2.2.20-dist
 **Q:** Why can a sharded counter be scalable yet unsuitable for a hard inventory cap?
 
 **A:** Summing eventually visible shards gives an approximate or delayed total. Enforcing a strict cap requires coordinated admission or preallocated bounded rights.
+
+**Q:** Which G-Counter operation is idempotent, and which business action is not automatically deduplicated?
+
+**A:** State merge takes the maximum per writer slot, so repeated state exchange changes nothing. Repeating a new local increment for one client retry can still count the business event twice.
 
 ## Workflow Engine — System Design Case Study
 
@@ -178,6 +202,10 @@ Source: [Workflow Engine — System Design Case Study](30.2.2.21-workflow-engine
 
 **A:** Its durable execution state and the stable identity of the intended work. Workers may repeat after crashes, so steps need appropriate deduplication or reconciliation.
 
+**Q:** Why is a completed-step lookup insufficient before an external charge?
+
+**A:** Two attempts can pass the lookup, and a charge can succeed before its result is saved. Stable downstream action identity, ownership checks, and uncertain-outcome reconciliation cover those gaps.
+
 ## Real-Time Collaboration — System Design Case Study
 
 Source: [Real-Time Collaboration — System Design Case Study](30.2.2.22-real-time-collaboration.md)
@@ -185,6 +213,10 @@ Source: [Real-Time Collaboration — System Design Case Study](30.2.2.22-real-ti
 **Q:** Why does CRDT convergence not automatically preserve a business invariant?
 
 **A:** The merge rules guarantee particular state convergence properties. Invariants such as limited stock or permission enforcement may require additional coordination.
+
+**Q:** Why should an editor snapshot preserve CRDT state rather than just the displayed string?
+
+**A:** The string discards identifiers and relationships required to merge offline edits. Persist compatible CRDT state at a known checkpoint and retain later missing updates.
 
 ## Typeahead / Autocomplete System Design
 
@@ -194,6 +226,10 @@ Source: [Typeahead / Autocomplete System Design](30.2.2.23-typeahead-autocomplet
 
 **A:** A fast suggestion can still leak private document names or identities. Authorization and tenant boundaries apply to search indexes and caches too.
 
+**Q:** How can an older autocomplete response overwrite a newer query even after cancellation?
+
+**A:** Cancellation races with response completion. Render only a response whose request generation still matches current input; keep private cache scope separate from that UI rule.
+
 ## Metrics & Monitoring Pipeline System Design
 
 Source: [Metrics & Monitoring Pipeline System Design](30.2.2.24-metrics-monitoring-pipeline.md)
@@ -201,6 +237,10 @@ Source: [Metrics & Monitoring Pipeline System Design](30.2.2.24-metrics-monitori
 **Q:** Why must a metrics pipeline distinguish event time from ingestion time?
 
 **A:** Late and reordered samples affect windows and alerts differently. Define watermark, lateness and correction policies rather than treating arrival as occurrence.
+
+**Q:** Why cannot a Bloom-filter match prove series quota admission?
+
+**A:** It may be a false positive for a new series. Confirm exact tenant-scoped identity and atomically reserve quota; use the filter only to optimize lookup.
 
 ## Distributed Job Scheduler System Design
 
@@ -210,6 +250,10 @@ Source: [Distributed Job Scheduler System Design](30.2.2.25-distributed-job-sche
 
 **A:** Leases can expire, workers can restart and acknowledgments can be lost. Use stable run identities plus effect-side deduplication or fencing.
 
+**Q:** Why retain occurrence uniqueness after a scheduled job succeeds?
+
+**A:** A delayed scanner or replay can revisit its scheduled timestamp. A live-only unique key disappears after success and would allow the same occurrence to be created again.
+
 ## Distributed ID Generator System Design
 
 Source: [Distributed ID Generator System Design](30.2.2.26-distributed-id-generator.md)
@@ -217,6 +261,10 @@ Source: [Distributed ID Generator System Design](30.2.2.26-distributed-id-genera
 **Q:** What should an ID generator do when the clock moves backward?
 
 **A:** Follow an explicit policy such as waiting, a logical clock or refusing generation. Reusing a timestamp/worker/sequence range can violate uniqueness.
+
+**Q:** Why can writing last timestamp every few seconds fail after restart?
+
+**A:** Issued timestamp/sequence combinations inside the unsaved interval can be reused. Persist a safe reservation before issuance or restore a protocol that skips all possibly issued values and preserves exclusive identity.
 
 ## Ad Click Aggregator System Design
 
@@ -226,6 +274,10 @@ Source: [Ad Click Aggregator System Design](30.2.2.27-ad-click-aggregator.md)
 
 **A:** If it does not, the next duplicate may find no exact record and be counted again. Commit deduplication and the aggregate effect atomically.
 
+**Q:** Why does nightly replay not by itself prove an invoice exact?
+
+**A:** The log may miss source events or retain outdated fraud/price policy. Reconcile defined event sets and versions, settle an auditable revision, and record later adjustments rather than overwrite issued billing.
+
 ## Parking Lot System Design
 
 Source: [Parking Lot System Design](30.2.2.28-parking-lot.md)
@@ -233,6 +285,10 @@ Source: [Parking Lot System Design](30.2.2.28-parking-lot.md)
 **Q:** What should make releasing a parking space safe to retry?
 
 **A:** A ticket/session identity and conditional transition ensure that repeating an old release cannot free a space currently occupied by a newer session.
+
+**Q:** Why must payment and physical exit remain separate facts?
+
+**A:** A paid car may still occupy a space, and a sent barrier command may not have executed. Reconcile controller/passage/occupancy evidence under the facility policy before releasing authoritative ownership.
 
 ## Distributed Cache System Design
 
@@ -242,6 +298,10 @@ Source: [Distributed Cache System Design](30.2.2.29-distributed-cache.md)
 
 **A:** It limits key remapping as nodes change. It does not supply invalidation, replication ordering, durable storage or protection against hot keys.
 
+**Q:** How can delete-after-write still leave an old cached value?
+
+**A:** An in-flight reader loaded version seven before a version-eight write and invalidation, then populates seven afterward. Version/generation-aware population or an explicit stale-window policy handles the race.
+
 ## Message Queue System Design
 
 Source: [Message Queue System Design](30.2.2.30-message-queue.md)
@@ -250,6 +310,10 @@ Source: [Message Queue System Design](30.2.2.30-message-queue.md)
 
 **A:** A worker may commit an effect but fail to acknowledge before the timeout. The broker can then deliver the same message again.
 
+**Q:** Why can partition-ordered reads still produce out-of-order business effects?
+
+**A:** Parallel handlers, retries, producer races, and delayed external calls can complete in another order. Enforce aggregate versions or serialized processing where business ordering is required.
+
 ## API Gateway System Design
 
 Source: [API Gateway System Design](30.2.2.31-api-gateway.md)
@@ -257,6 +321,97 @@ Source: [API Gateway System Design](30.2.2.31-api-gateway.md)
 **Q:** Why should an API gateway preserve the caller's end-to-end deadline?
 
 **A:** Independent full timeouts at each hop let work continue after the client gives up. Propagate the remaining budget and cancel where supported.
+
+**Q:** Why are identity headers not safe merely because a gateway sets them?
+
+**A:** A caller can spoof them unless the gateway strips inbound values and the backend authenticates the protected gateway context/channel. The backend still checks resource and tenant authorization.
+
+## Additional case traces
+
+Source: [30.2.2.02-whatsapp](30.2.2.02-whatsapp.md)
+
+**Q:** Why does a socket send fail to prove delivery?
+
+**A:** Only an authenticated recipient receipt after durable device storage establishes that device delivery. Socket acceptance proves neither receipt nor user reading.
+
+Source: [30.2.2.03-uber](30.2.2.03-uber.md)
+
+**Q:** Why can the nearest driver arrive later?
+
+**A:** Straight-line distance ignores road barriers and traffic. Use bounded fresh eligible candidates and a road ETA budget, then let the authoritative transaction claim both driver and ride.
+
+Source: [30.2.2.04-netflix](30.2.2.04-netflix.md)
+
+**Q:** Why cannot a license outage create an offline license?
+
+**A:** Offline rights must be provisioned in advance under expiry/device policy. An outage cannot safely manufacture authorization; existing valid licenses may continue while new starts fail.
+
+Source: [30.2.2.05-google-drive](30.2.2.05-google-drive.md)
+
+**Q:** Why does parent_id referencing files fail to prevent a folder cycle?
+
+**A:** A foreign key only proves existence. The move authority must check folder type, scope, ancestry and concurrent moves under suitable coordination; otherwise two individually checked moves can create a cycle.
+
+Source: [30.2.2.06-payment-gateway](30.2.2.06-payment-gateway.md)
+
+**Q:** Why must a timed-out charge retain its provider identity?
+
+**A:** The provider may have succeeded before the response was lost. Another provider has a separate deduplication namespace and can charge again. Reconcile/retry the existing identity before changing route.
+
+Source: [30.2.2.07-notification-service](30.2.2.07-notification-service.md)
+
+**Q:** Why recheck preferences after scheduling?
+
+**A:** A recipient may opt out or lose a valid channel target while a job waits. Acceptance-time consent is stale; dispatch rechecks purpose/channel policy, quiet hours and expiry before provider work.
+
+Source: [30.2.2.16-instagram](30.2.2.16-instagram.md)
+
+**Q:** Why is a cached feed ID insufficient to show a post?
+
+**A:** It is derived shortlist data. Current visibility, blocking, expiry and deletion must still be checked during hydration and media access, including cache hits.
+
+
+Source: [Ticket booking](30.2.2.08-ticket-booking.md)
+
+**Q:** Why must a late successful payment not reclaim an expired hold's seats?
+
+**A:** Another buyer may already hold or own those seats. Confirmation must recheck the exact current hold and expiry. Reconcile/cancel/refund the payment under the compensation policy instead of taking another buyer's inventory.
+
+Source: [E-commerce](30.2.2.09-e-commerce.md)
+
+**Q:** Why can a duplicate inventory-release command create oversell risk?
+
+**A:** Incrementing available stock on every retry invents additional units. Claim active-to-released once and restore that reservation's quantity in the same transaction; subsequent retries return the recorded outcome without another increment.
+
+Source: [Hospital management](30.2.2.10-hospital-management.md)
+
+**Q:** Why does an overlap exclusion constraint fail to implement booking retry identity?
+
+**A:** It rejects competing active time intervals, but cannot tell whether a repeated request is the same already committed booking. A scoped stable command ID with a matching payload returns the existing appointment after a lost response; resource authorization is rechecked independently.
+
+Source: [Live betting](30.2.2.11-live-betting.md)
+
+**Q:** Why must cash-out and settlement share a terminal-state decision?
+
+**A:** Both can credit the same open wager. Compare the authoritative wager state/version and post the winning transition and journal atomically; a competing retry retrieves the recorded result rather than crediting it again.
+
+Source: [Twitter feed](30.2.2.12-twitter-feed.md)
+
+**Q:** Why does a chronological cursor include the post ID as well as time?
+
+**A:** Two posts can share a timestamp. Ordering and filtering by the same complete tuple preserve the boundary; time-only filtering can skip a tied post. Ranked feeds additionally need a session/snapshot contract.
+
+Source: [Web crawler](30.2.2.14-web-crawler.md)
+
+**Q:** Why can a locally delayed fetch still overwhelm one origin?
+
+**A:** Other workers can independently pass the same timing check. Reserve origin capacity and next-start time atomically under shared ownership, bound request lifetimes and account for overlap during expired-claim recovery.
+
+Source: [Chat system](30.2.2.15-chat-system.md)
+
+**Q:** Why does a new-message cursor miss offline edits?
+
+**A:** An edit changes an existing sequence rather than creating a later message. Retain a separate change/delta cursor with a snapshot watermark, apply changes before advancing it, and require resynchronization when retention removed needed deltas.
 
 ## Summary
 

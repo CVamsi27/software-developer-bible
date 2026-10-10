@@ -222,7 +222,18 @@ BUILTIN_PUBSUB = re.compile(r"\b(?:const|let)\s+(\w+)\s*=\s*new\s+PubSub(?:<[^;]
 GSAP_CSS_EASE = re.compile(r"\bease\s*:\s*['\"]cubic-bezier\s*\(")
 FABRICATED_WS_IMPORT = re.compile(r"\bfrom\s*['\"]ws\.use/server['\"]")
 
+# RFC9745 defines a Structured Field Date, not the older boolean examples.
+BOOLEAN_DEPRECATION_HEADER = re.compile(r'^\s*Deprecation\s*:\s*true\s*$', re.I)
+# Current teaching cites Revision2. Historical records outside teaching stacks
+# may retain their then-current sources; a fenced citation is an illustration.
+WITHDRAWN_NIST_SANITIZATION = re.compile(
+    r'\]\(https?://csrc\.nist\.gov/pubs/sp/800/88/r1/final(?:#[^)]*)?\)', re.I)
+
 RULES = [
+    ('BOOLEAN-DEPRECATION-HEADER',
+     'RFC9745 Deprecation uses a Structured Field Date such as @1790812800, not true'),
+    ('WITHDRAWN-NIST-SANITIZATION-CITATION',
+     'Current media-sanitization teaching must cite NIST SP800-88 Revision2; Revision1 was withdrawn'),
     ('FABRICATED-PAGE-HEAP-COMMAND',
      'Heap snapshots require DevTools or a debugging-protocol session; '
      'window.chrome.sendCommand is not a page API'),
@@ -535,6 +546,12 @@ def check(p: Path, rel: str):
             in_code = inf
             lang = stripped.lstrip('`~').strip() if inf else ''
             continue
+
+        if in_code and lang.lower() in ('http', 'https') and BOOLEAN_DEPRECATION_HEADER.match(line):
+            hits.append((lineno, 'BOOLEAN-DEPRECATION-HEADER', line.strip()[:100]))
+        if (not in_code and rel.startswith(('20-backend/', '30-architecture/', '40-platform/'))
+                and WITHDRAWN_NIST_SANITIZATION.search(line)):
+            hits.append((lineno, 'WITHDRAWN-NIST-SANITIZATION-CITATION', line.strip()[:100]))
 
         if not in_code and WRONG_WEBTRANSPORT_RFC.search(line):
             hits.append((lineno, 'WRONG-WEBTRANSPORT-RFC', line.strip()[:100]))

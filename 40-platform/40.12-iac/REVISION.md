@@ -34,6 +34,26 @@ Source: [40.12.01 — Infrastructure as Code & Terraform Fundamentals](40.12.01-
 
 **A:** The command establishes what the provider reported. Service behavior, propagation, access, and readiness must be observed through deployment-specific checks.
 
+**Q:** Plan observes an object, then someone edits it before apply. Does the saved plan stop that edit?
+
+**A:** No. Supported state locks control Terraform operations on that state, not external console writes. Apply can encounter different conditions; verify the target, review changes and inspect actual outcomes.
+
+**Q:** Does reading a secret-manager value keep it out of ordinary state?
+
+**A:** Not necessarily. A provider data result can be persisted. sensitive marks redact display; use supported ephemeral/write-only contracts where needed and protect state/plans regardless.
+
+**Q:** Which current S3 backend setting enables a native state lock?
+
+**A:** use_lockfile = true, with the necessary lockfile permissions. Selecting S3 alone does not enable it; the older DynamoDB lock mechanism is deprecated.
+
+**Q:** Is CDKTF a maintained new-project option?
+
+**A:** HashiCorp deprecated it on 10 December 2025 and stopped maintaining it. Existing projects need an explicit support/migration choice. AWS CDK is a different tool and synthesizes CloudFormation.
+
+**Q:** Why might retrying after a partial apply need import rather than another create?
+
+**A:** The remote creation might have succeeded before its identity was persisted. Inspect remote state and ownership, recover the mapping if needed, then produce a fresh plan.
+
 ## Summary
 
 Use the answers to check your reasoning, then revisit the source mechanism and reproduce any relevant example without copying it. A remembered label is useful only when you can explain its limits.

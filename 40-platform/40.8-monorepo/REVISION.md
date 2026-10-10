@@ -50,6 +50,26 @@ Source: [Versioning & Publishing Strategies](40.8.05-versioning-publishing-strat
 
 **A:** Consumers need compatible dependency/peer ranges and valid registry references. Bumping the package alone may leave workspace-only references or incompatible dependents.
 
+## Boundaries to Recheck
+
+Source: [Monorepo Overview](40.8.01-monorepo-overview.md)
+
+**Q:** Can CODEOWNERS keep a package's source hidden from another team?
+
+**A:** No. It assigns review ownership; repository read permissions govern source access. Use separate repositories when confidential code needs a separate read boundary.
+
+Source: [Nx](40.8.03-nx.md)
+
+**Q:** A UI project may depend on targets tagged UI or util. Why might an API library tagged util pass unexpectedly?
+
+**A:** The allowed tag list is an OR condition. Separate scope constraints from type constraints so a utility label cannot bypass a required scope boundary.
+
+Source: [Versioning & Publishing](40.8.05-versioning-publishing-strategies.md)
+
+**Q:** Does enabling npm provenance remove the need for publish authorization?
+
+**A:** No. Provenance attests origin. Token credentials or explicitly configured trusted publishing authorize the registry operation; validate the tarball and exact version set independently.
+
 ## Summary
 
 Use the answers to check your reasoning, then revisit the source mechanism and reproduce any relevant example without copying it. A remembered label is useful only when you can explain its limits.

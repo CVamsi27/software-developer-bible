@@ -38,6 +38,26 @@ Source: [Nginx Reverse Proxy Internals](40.11.01-nginx-reverse-proxy-internals.m
 
 **A:** No. The community ingress-nginx controller retired in March 2026 and no longer receives fixes or security updates. Ingress remains an API, and other products have separate lifecycles. Select a maintained implementation and test policy translation during migration.
 
+**Q:** /api/users matches location /api/. How does a trailing slash on proxy_pass change the path?
+
+**A:** A proxy_pass without a URI preserves /api/users. With a URI /, the ordinary prefix match is replaced, forwarding /users. Rewrites/variables/regex locations have further conditions.
+
+**Q:** An upstream sends a byte every twenty seconds under proxy_read_timeout 30s. Must the response end at thirty seconds?
+
+**A:** No. The setting measures the interval between upstream reads. A total application deadline needs a separate boundary.
+
+**Q:** Does burst=20 nodelay hold twenty extra requests in a delay queue?
+
+**A:** No. It admits excess immediately while rate accounting drains. Without nodelay, permitted excess may be delayed. Requests beyond the capacity are rejected under the configured response policy.
+
+**Q:** Why pair proxy_cache_bypass with proxy_no_cache for an authenticated request?
+
+**A:** One controls serving an existing entry; the other controls storing the response. Correct keys and upstream cache controls remain necessary; a public cache must not reuse personalized content across identities.
+
+**Q:** Does successfully reloading workers prove a POST with a lost upstream reply is safe to repeat?
+
+**A:** No. The upstream could have committed. Retrying needs stable application operation identity and outcome reconciliation, independently of worker replacement.
+
 ## Summary
 
 Use the answers to check your reasoning, then revisit the source mechanism and reproduce any relevant example without copying it. A remembered label is useful only when you can explain its limits.

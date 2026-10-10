@@ -34,6 +34,14 @@ Source: [Leader Election & Consensus — Raft, Paxos, Practical Patterns](30.3.3
 
 **A:** No. It is a single-store lease primitive with the durability and failover behavior of that store. Consensus and multi-node lock algorithms have different contracts.
 
+**Q:** A replacement INSERT computed its expiry before waiting on a locked lease row. Why can reusing that expiry be unsafe?
+
+**A:** The wait can consume the interval, so ON CONFLICT may return an already-expired grant. Recompute replacement expiry from the database clock after the conflict-row wait.
+
+**Q:** Does rejecting an old fencing epoch prove the caller still owns a live lease?
+
+**A:** No. It rejects stale epochs after a newer one reaches the resource. Current ownership needs a checked owner/epoch/expiry boundary serialized with replacement, and an external effect needs its own contract.
+
 ## Summary
 
 A useful answer names the guarantee, the mechanism that enforces it, and the failure boundary. Revisit the source when any of those is unclear.

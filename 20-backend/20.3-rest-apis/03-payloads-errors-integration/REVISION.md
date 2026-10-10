@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-REST%20APIs-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -134,13 +134,75 @@ Source: [Transactional Email & Notification Delivery](20.3.3.07-transactional-em
 
 **A:** Deduplicate by business event at the enqueue/effect boundary and use provider idempotency when available. A new key for each retry defeats deduplication; provider acknowledgment uncertainty still needs an explicit policy.
 
+## Changed-Condition Checks
+
+Source: [Error contracts](20.3.3.02-error-handling-design.md)
+
+**Q:** A database exception includes a password and SQL query. Which fields reach the client?
+
+**A:** A safe generic problem with consistent HTTP status and an opaque occurrence URI. Retain redacted diagnostics in protected records; wrapping the exception's message as a public domain error would break that boundary.
+
+**Q:** A matching creation key is submitted twice after a lost response. Is a 409 always the correct second result?
+
+**A:** No. Recover the original response or operation for the same scoped key and fingerprint. A different request under that key is a conflict. Enforce the key atomically; a pre-insert lookup races.
+
+Source: [Long-running operations](20.3.3.03-long-running-api-operations.md)
+
+**Q:** The operation row committed, but the process stopped before enqueueing. How does accepted work recover?
+
+**A:** Commit a dispatch outbox row in the same transaction and let a recoverable relay publish it. A standalone operation insert followed by a queue call leaves a gap.
+
+**Q:** A client stops polling or requests cancellation while completion commits. What follows?
+
+**A:** Stopping polling does not stop server work. Cancellation is a conditional request; if completion wins, return the current terminal state. Remote effects already completed need a separate compensation policy.
+
+Source: [Uploads](20.3.3.04-file-upload-apis.md)
+
+**Q:** A file passed scanning, then a still-valid upload URL replaced its key. Is serving that key safe?
+
+**A:** The old verdict applies only to the inspected bytes. Bind publication to an immutable version, enforced write-once identity or protected published copy so the served object cannot silently change.
+
+**Q:** Two resumable PATCH requests carry the same offset. Can both append independently?
+
+**A:** No. Compare and update the authoritative offset under serialized ownership or an atomic condition. A stale tus offset returns 409 without modifying the resource; a header alone does not implement recovery.
+
+Source: [Webhooks](20.3.3.05-webhooks.md)
+
+**Q:** An inbox row commits and its acknowledgment is lost. What must the repeated delivery do?
+
+**A:** Verify the delivery, compare its durable identity and payload, acknowledge the existing acceptance and avoid adding new work. The business worker still needs duplicate-safe transitions and separate handling of remote effects.
+
+**Q:** What is wrong with adding a “seen” record before a queue send and returning success immediately?
+
+**A:** A crash can lose the send while suppressing the recovery delivery. Commit inbox and processing intent together, then acknowledge after durable acceptance.
+
+Source: [Wire formats](20.3.3.06-serialization-and-wire-formats.md)
+
+**Q:** A JSON identifier has 9007199254740993 as an unquoted number. Why can a JavaScript consumer receive a different value?
+
+**A:** Its ordinary decoder uses a number representation that rounds that integer. Publish and decode the identifier as a decimal string before precision is lost; JSON grammar itself does not require every language to round it.
+
+**Q:** Does a protobuf rename preserve every contract?
+
+**A:** A retained field number can preserve binary identity, but ProtoJSON names and generated language APIs may break. Reserve removed numbers/names and test the actual old/new consumer paths.
+
+Source: [Notifications](20.3.3.07-transactional-email-and-notifications.md)
+
+**Q:** The provider accepted a receipt, but the response timed out. Does a local sent-at guard prevent the next worker from duplicating it?
+
+**A:** No. Persist ownership and reuse the provider's stable effect key within its documented window, or reconcile the unknown outcome. Local uniqueness cannot atomically include the external send.
+
+**Q:** SPF fails but a valid DKIM signature aligns with the visible From domain. Can DMARC pass?
+
+**A:** Yes. An aligned passing SPF or DKIM path can satisfy DMARC. Its requested policy does not guarantee inbox placement or override every receiver's local policy.
+
 ## Summary
 
 Use these prompts after the reading pass to recall the payloads errors integration mechanisms and boundary constraints.
 
 ## See Also
 
-- [Category reading flow](INDEX.md)
+- [Category reading flow](INDEX.md) — return to prerequisites and learning stages for validated data, errors and integration outcomes
 
 ## References & Learn More
 

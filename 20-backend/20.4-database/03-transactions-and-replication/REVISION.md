@@ -80,7 +80,7 @@ Use these prompts after the reading pass to recall the transaction and replicati
 
 ## See Also
 
-- [Category reading flow](INDEX.md)
+- [Category reading flow](INDEX.md) — return to prerequisites and learning stages for isolation, locks and replication freshness
 
 ## References & Learn More
 

@@ -1,6 +1,6 @@
 # Form Handling — Index
 
-> **Study time:** ≈ 1 h 9 m of reading (8 files, ~9 min average).
+> **Study time:** ≈ 1 h 3 m of reading (8 files, ~8 min average).
 > **8 files** — Form handling in React from React Hook Form and Zod to Formik, TanStack Form, Server Actions, autosave/draft recovery, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)
@@ -30,17 +30,12 @@ Three main form libraries — pick the right one for the job.
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
 | 01 | [React Hook Form](10.5.01-react-hook-form.md) | Uncontrolled inputs, `register`, Zod resolver, `useFieldArray`, `FormProvider` | Default choice for React 18+ forms | Essential | Important | 10 min |
-| 03 | [Formik](10.5.03-formik.md) | Controlled fields, context and validation integration | Existing forms or requirements suited to controlled state | Optional | Specialized | 13 min |
-| 04 | [TanStack Form](10.5.04-tanstack-form.md) | Framework-agnostic, type-first, granular subscriptions, Standard Schema | New projects needing framework-agnostic or fine-grained control | Optional | Specialized | 11 min |
+| 03 | [Formik](10.5.03-formik.md) | Controlled fields, context and validation integration | Existing forms or requirements suited to controlled state | Optional | Specialized | 8 min |
+| 04 | [TanStack Form](10.5.04-tanstack-form.md) | Framework-agnostic, type-first, granular subscriptions, Standard Schema | New projects needing framework-agnostic or fine-grained control | Optional | Specialized | 10 min |
 
 **Decision:**
 
-```text
-Building a new React form?
-├── Yes, standard React 18+ app → React Hook Form (RHF)
-├── Yes, need framework-agnostic or fine-grained reactivity → TanStack Form
-└── No, maintaining legacy → Formik (don't start new projects with it)
-```
+Compare the existing integration, native/controlled widgets, required subscriptions, framework adapters and normalized output. Prototype the representative form and measure it before choosing or migrating; no library name establishes a universal performance or maintenance conclusion.
 
 ---
 
@@ -86,13 +81,14 @@ Long-form resilience: recover persisted input and handle storage failures.
 
 ## Suggested Study Order
 
-1. **React Hook Form** (30 min) — the default
+1. **React Hook Form** (30 min) — field ownership and subscriptions
 2. **Zod** (30 min) — the validator
 3. **Server Actions** (30 min) — modern Next.js
 4. **Autosave & Draft Recovery** (30 min) — production polish for long forms
 5. **TanStack Form** (25 min) — alternative if needed
-6. **Formik** (skim, 10 min) — for legacy
-7. **Interview Questions** (2 hrs)
+6. **Formik** (20 min) — controlled values and submission ownership
+7. **[Section revision](REVISION.md)** — check mechanisms and changed conditions
+8. **Interview Questions** (2 hrs)
 
 ---
 

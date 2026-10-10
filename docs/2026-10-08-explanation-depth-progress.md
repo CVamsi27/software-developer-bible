@@ -1,42 +1,37 @@
 # Explanation-depth review — progress
 
-Status: implementation remains incomplete. This is the current review snapshot, not a claim that every document is perfect or that reading alone guarantees an interview outcome.
-
-The [per-document ledger](2026-10-08-explanation-depth-review.json) records 279 revised and 31 reviewed dispositions, with 707 pending entries. A pending entry can have partial edits; it has not earned a complete semantic disposition. Repository-wide automated checks and metadata generation do not change that state.
+Semantic review is complete for the 1,017-document inventory: 898 revised and 119 reviewed dispositions, with no pending entries. The [per-document ledger](2026-10-08-explanation-depth-review.json) records specific findings, reader questions and evidence boundaries. Automated gates and examples supplement full reads; no interview outcome or untested production behavior is guaranteed.
 
 ## Recorded semantic coverage
 
 | Area | Completed dispositions | Pending dispositions |
 | -------------------------- | ---------------------: | -------------------: |
 | 00-strategy | 6 | 0 |
-| 10-frontend | 75 | 100 |
-| 20-backend | 72 | 151 |
-| 30-architecture | 50 | 89 |
-| 40-platform | 29 | 121 |
+| 10-frontend | 175 | 0 |
+| 20-backend | 223 | 0 |
+| 30-architecture | 139 | 0 |
+| 40-platform | 150 | 0 |
 | 50-quality | 63 | 0 |
-| 60-realtime | 5 | 15 |
-| 70-interview-toolkit | 7 | 43 |
-| 80-lanes-abroad-full-stack | 0 | 98 |
-| 81-lanes-indian-sde-faang | 0 | 25 |
-| docs | 1 | 30 |
-| projects | 0 | 30 |
+| 60-realtime | 20 | 0 |
+| 70-interview-toolkit | 50 | 0 |
+| 80-lanes-abroad-full-stack | 98 | 0 |
+| 81-lanes-indian-sde-faang | 25 | 0 |
+| docs | 31 | 0 |
+| projects | 30 | 0 |
 
-Single root documents are also represented individually in the ledger. The [approved design](superpowers/specs/2026-10-08-explanation-depth-design.md) and [implementation plan](superpowers/plans/2026-10-08-explanation-depth.md) retain their acceptance criteria and incomplete tasks.
+Root documents also have individual entries. The [approved design](superpowers/specs/2026-10-08-explanation-depth-design.md) and [implementation plan](superpowers/plans/2026-10-08-explanation-depth.md) retain the acceptance criteria.
 
-## What changed in this continuation
+## Completed continuation work
 
-- Accessibility: rebuilt the chapters around named controls, actual state changes, manual tab selection, native dialog dismissal, form recovery, exact contrast, data-derived chart alternatives, reusable component ownership and scoped audit evidence. Preserved original interview questions and source-linked revision prompts.
-- Testing and production engineering: replaced invalid or incomplete examples with bounded workload/chaos fixtures, strong test oracles, explicit readiness and error-budget contracts, and truthful interview answers.
-- Backend: completed the Node and database review batches, then reconciled Nest core ownership and the request lifecycle: guards, validation, safe errors, Observable cleanup and asynchronous context isolation.
-- Frontend and patterns: reviewed language/TypeScript foundation batches and pattern collaboration/lifecycle traces; the advanced TypeScript category now has compiler/runtime evidence, while remaining frontend documents retain explicit pending dispositions.
-- Performance: corrected Core Web Vitals classification and reporting, made Lighthouse CI executable, and explained RUM sampling bias, update identity and delivery boundaries. Completed the remaining profiling, HTTP protocol effects, bundle/budget and interview material with actual browser/build/checker fixtures.
-- Realtime: replaced WebSocket and SSE catalog code with complete bounded local fixtures, validated message/cursor rules, explicit teardown and recovery boundaries; remaining realtime material is still pending.
-- Reader UI: removed header palette fading and the theme button’s layout transitions, which briefly hid its mobile hit target; a normal-motion browser regression catches the reported failure.
-- Cross-references: supplied concrete reasons to revisit adjacent mechanisms; fixed spelling, a JSONB table pipe and generated metadata through existing writers.
+- Concepts now explain a concrete problem, practical and textbook definitions, a constraint-derived mechanism, a focused trace, and decisions/failure boundaries. Indexes put learning before separate revision and interview practice.
+- Frontend, backend, architecture, quality, realtime, coding patterns and deployment examples were reviewed with topic-specific executable checks. Adjacent material links to the canonical mechanism instead of duplicating incomplete implementations.
+- Git preserves all 40 authored interview prompts and passes 33 isolated object/state/hook/bundle/signing checks. Serverless preserves all 32 prompts and records 45 handler, infrastructure, local Worker and Temporal execution/replay checks.
+- Build tools preserve all 35 prompts; 19 actual toolchain checks cover Babel, esbuild/SWC, Webpack/Rspack, Vite and bounded image transformation. Observability preserves all 50 prompts with corrected measurement and sampling boundaries.
+- System-design case studies retain their scope and explain authority, command identity, retries, capacity and recovery. The last four cases add 130 Python/PostgreSQL checks with explicit external-integration limits.
+- Role lanes, projects and canonical resume material distinguish actual source/lab evidence from hypothetical or deployed claims. The three reviewed one-page resume PDFs remain in the private canonical directory.
+- Freshness regression checks reject known removed/fabricated APIs and invalid specification attribution. Historical documents retain their dates and operational records retain their genre.
 
-The [saved validation record](2026-10-08-explanation-depth-validation.json) retains the executed fixture outcomes and new-citation probes.
-
-## Executed evidence and limits
+## Recorded earlier fixture evidence and limits
 
 | Check | Observed result | Limit |
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------- |
@@ -50,14 +45,19 @@ The [saved validation record](2026-10-08-explanation-depth-validation.json) reta
 | New citations | Newly introduced primary URLs were probed live before updating the baseline | Liveness does not validate every inference in a chapter |
 | Freshness regressions | Planted defect and valid controls cover k6 metric/RFC errors, AxeBuilder context, Recharts export and Lighthouse API/audit errors | Signature checks do not replace full semantic review |
 
-## Verification status
 
-The repository gate suite passes all 30 checks. Jekyll builds without Liquid warnings and excludes private career paths. Reader, navigation and read-aloud browser suites pass on the rebuilt site, including the new normal-motion hit-target and immediate header-contrast regressions. Sixteen expanded chapters pass 96 phone/laptop/wide-screen checks across both themes, with paragraphs filling the article width. Read-aloud tests use controlled speech mocks and do not establish real voice quality. The user authorized a commit and push of this checkpoint; the Git publication outcome is reported separately in the chat. Whole-corpus review remains incomplete.
 
-## Outstanding work
 
-The review workers resumed after the earlier usage-limit interruption and delivered stable batches for this checkpoint. The remaining entries include substantial frontend, backend, architecture/platform, realtime, interview-toolkit, lanes, project and supporting material. Partial system-design theory edits in CAP, consistency and their revision remain pending until complete semantic reconciliation. Optional role priority does not exempt a document from the review.
+## Final validation
 
-The next review must finish the pending per-document dispositions and reconcile changed contracts with still-pending drill banks. The existing resume/personal facts remain canonical; this pass has not invented achievements or treated an example as career evidence. Historical records retain their dates and factual context.
+All 30 repository gates passed on 10 October 2026, including count/alignment/structure, template and answer depth, link/freshness checks, writer fixed points, regression tests, and duplication/readability checks. The standalone internal scan verified 10,896 links and 230 anchors with zero broken links, stale labels or stale inline paths. The freshness scan is clean under 34 rules.
 
-A green build, structural gate or browser fixture supports only its stated boundary. Whole-corpus completion requires all pending semantic dispositions and material evidence gaps to be resolved under the approved plan.
+The 194 new citations were probed before baseline refresh: 191 LIVE, zero DEAD, and three WARN. Their saved records preserve bot/network warnings and separate content verification; liveness does not validate every inference.
+
+Jekyll built successfully with no Liquid warnings/errors, and the private personal tree is excluded. Reader, navigation and controlled read-aloud browser suites passed. Expanded chapters passed 144 checks across light/dark themes and 375/1280/1920-pixel viewports: paragraph width matches the article, outlines resolve, and pages do not overflow horizontally. Rendered desktop/light and mobile/dark pages were also inspected visually.
+
+The [validation record](2026-10-08-explanation-depth-validation.json) retains 115 saved fixture records, current final checks, source dates and explicit integration limits. Actual cloud IAM, deployed provider routing/billing, full broker fleets, NAT/TURN, external payments and assistive-technology speech are not inferred from local tests.
+
+## Publication
+
+The user authorized commit and push after completion. This report describes the verified changes prepared for publication; the resulting commit is reported in the chat after remote verification. Personal data remains canonical in this private repository; the external career-ops tool repository is not being committed or pushed.

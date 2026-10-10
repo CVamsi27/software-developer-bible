@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Serverless%20%26%20Edge-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../docs/topic-importance.md)
 
@@ -109,6 +109,30 @@ Source: [Vite SPA on Cloudflare Workers](40.7.10-vite-spa-cloudflare-workers.md)
 **Q:** Why might middleware in the Worker never protect the static application shell?
 
 **A:** Asset-first requests can bypass the script. Protect the relevant asset paths through the intended access/routing policy and test deployed responses; backend data authorization remains its own boundary.
+
+## Delivery and version-change cases
+
+Source: [Lambda](40.7.02-aws-lambda.md), [patterns](40.7.05-serverless-patterns.md), [frameworks](40.7.06-serverless-frameworks.md), and [durable execution](40.7.07-durable-execution-temporal-inngest.md).
+
+**Q:** Does a successful EventBridge HTTP request prove every entry was published?
+
+**A:** No. Inspect the failed-entry count and entry errors, retry eligible entries with stable identities, and verify the target/bus configuration and delivery evidence.
+
+**Q:** Why does a FIFO handler stop after the first failed record instead of processing later records anyway?
+
+**A:** Continuing can overtake the failed ordered work. Report the failed and unprocessed records under the mapping's partial-batch contract; their business effects still need safe retry identity.
+
+**Q:** Does current SST synthesize CDK constructs because historical SST used CDK?
+
+**A:** No. Current SST uses Pulumi and provider integration, including bridged Terraform providers. Check the installed version and generated resources rather than mixing generations of APIs.
+
+**Q:** Where is an Inngest SDK v4 trigger declared?
+
+**A:** In the createFunction configuration's triggers field. The handler is the second argument; historical three-argument v3 examples need explicit version labels.
+
+**Q:** If a workflow Activity times out, is it safe to dispatch a second shipment immediately?
+
+**A:** No. Timeout does not prove the first remote effect failed. Use receiver-enforced stable identity or reconcile authoritative shipment state before creating another effect.
 
 ## Summary
 

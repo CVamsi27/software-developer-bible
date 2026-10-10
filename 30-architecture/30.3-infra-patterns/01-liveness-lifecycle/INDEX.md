@@ -1,6 +1,6 @@
 # Liveness & Lifecycle
 
-> **Study time:** ≈ 13 min of reading (2 files, ~6 min average).
+> **Study time:** ≈ 11 min of reading (2 files, ~6 min average).
 > **1 file.** The contract between your application and its orchestrator: prove you are alive, prove you are ready, and die gracefully when asked. Get this wrong and Kubernetes restarts healthy pods — or routes traffic to dying ones.
 
 [![Files](https://img.shields.io/badge/files-2-blue)](#file-index)
@@ -19,7 +19,7 @@ An orchestrator such as Kubernetes, ECS or Nomad starts and manages application 
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Health Checks & Graceful Shutdown](30.3.1.01-health-checks-graceful-shutdown.md) | Liveness vs readiness vs startup probes, health endpoint design, SIGTERM handling, connection draining, shutdown hooks | Essential | Important | 11 min |
+| 01 | [Health Checks & Graceful Shutdown](30.3.1.01-health-checks-graceful-shutdown.md) | Liveness vs readiness vs startup probes, health endpoint design, SIGTERM handling, connection draining, shutdown hooks | Essential | Important | 9 min |
 
 ---
 
@@ -44,7 +44,7 @@ Distinguish a dependency outage from a stuck process and show why the two produc
 
 ## Docita Anchor
 
-Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — proves liveness for real (on Fly.io, not Kubernetes).
+Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — provides related lifecycle configuration (Fly.io rather than Kubernetes). The paths are source pointers; verify runtime actions and accepted-work outcomes separately.
 
 | Topic | Docita evidence |
 | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

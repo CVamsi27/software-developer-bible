@@ -1,5 +1,7 @@
 # Reference Coverage Audit — Backend/System-Design Videos vs the Bible
 
+> **Dated review record:** counts, test results and remaining-work statements below describe the recorded pass. Use the [current review progress](2026-10-08-explanation-depth-progress.md) and [verification runbook](verification-gates.md) for present scope; chapter existence and passing scans do not establish complete reader review.
+
 **Date:** 2026-09-16 · **Method:** each reference's topic list (video chapter markers pulled from the channel feed, where published) mapped to the chapter that teaches it. Anything without a dedicated home was treated as a gap and either written or explicitly scoped out.
 
 **References audited**

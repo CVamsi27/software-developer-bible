@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-React-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -125,6 +125,30 @@ Source: [React Router](10.3.4.03-react-router.md)
 
 8. **Q:** Why might `shouldRevalidate` improve performance but introduce stale data?
    **A:** It can skip a loader after a mutation, reducing requests. Skip only when the retained data is unaffected, and account for the error-response defaults of the installed router version.
+
+## API and lifetime boundaries
+
+Source: [Modern Hooks](10.3.4.01-modern-hooks-react18-19.md), [Web Components](10.3.4.02-web-components.md), [React Router](10.3.4.03-react-router.md)
+
+**Q:** When should a theme change reconnect a room?
+
+**A:** Only if theme is a connection input. If it affects notification presentation alone, an Effect Event can read the latest theme from the effect's callback without replacing the room connection.
+
+**Q:** Can an Effect Event be passed down as a normal button callback?
+
+**A:** No. Keep it inside its effect/subscription lifecycle; it is not a general replacement for event handlers or required dependencies.
+
+**Q:** Why is useId unsuitable for a database record's list key?
+
+**A:** It identifies an accessibility relationship for a component instance. A list must use the stable domain identity of the record across reorder and mount changes.
+
+**Q:** What can replacing all shadow markup lose even when the displayed text is correct?
+
+**A:** It replaces inner node identity, potentially losing focus and control state. A stable-node update or renderer is required when that state must survive.
+
+**Q:** Does aborting an obsolete navigation undo a mutation at the server?
+
+**A:** No. The client may stop waiting while the server already accepted work. Use server-side version/idempotency rules for conflicting or retried writes.
 
 ## Summary
 

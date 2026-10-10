@@ -1,6 +1,6 @@
 # Senior Full Stack Interview Bible — Index
 
-> **Study time:** ≈ 134 h 6 m of reading (671 files, ~12 min average).
+> **Study time:** ≈ 105 h 5 m of reading (671 files, ~9 min average).
 > **Start here: [ROADMAP.md](ROADMAP.md) — the canonical study path with phases, checkpoints, and weekly schedule.**
 >
 > **Pick your lane first.** The bible is organized into **2 interview lanes** (`80-lanes-abroad-full-stack`, `81-lanes-indian-sde-faang`) that draw from **7 shared study stacks** — plus the [00-strategy](00-strategy/INDEX.md) **strategy folder** everyone starts with. Each lane has its own preparation strategy; the stacks are the technical material both lanes share.
@@ -47,7 +47,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 | 9 | [80-lanes-abroad-full-stack](80-lanes-abroad-full-stack/INDEX.md) or [81-lanes-indian-sde-faang](81-lanes-indian-sde-faang/INDEX.md) | Lane-specific prep | 1-2 weeks | After stacks |
 | 10 | [projects](projects/INDEX.md) | Project deep-dives (Docita interview defense) | As needed | Before project interviews |
 
-**Total: 8-12 weeks if you're starting from zero, 4-6 weeks if you're already strong on most of it.**
+These are sample scheduling blocks, not readiness estimates. Use [ROADMAP checkpoints](ROADMAP.md#checkpoints--do-not-skip) to choose depth and adjust time after a fresh exercise.
 
 ---
 
@@ -81,7 +81,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 | ----- | ------------------------------------------------------------------------------ | ----: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | 20.1 | [Node.js](20-backend/20.1-node.js/INDEX.md) | 17 | Event loop, streams, clustering, web streams, child processes, test runner |
 | 20.2 | [NestJS](20-backend/20.2-nestjs/INDEX.md) | 24 | Modules, DI, guards, pipes, interceptors, CQRS, microservices |
-| 20.3 | [REST APIs](20-backend/20.3-rest-apis/INDEX.md) | 25 | HTTP methods, status codes, versioning, pagination, rate limiting, RFC 7807 errors, webhooks, HTTP caching, maturity model |
+| 20.3 | [REST APIs](20-backend/20.3-rest-apis/INDEX.md) | 25 | HTTP methods, status codes, versioning, pagination, rate limiting, RFC 9457 Problem Details, webhooks, HTTP caching, maturity model |
 | 20.4 | [Database](20-backend/20.4-database/INDEX.md) | 29 | PostgreSQL, indexes, transactions, MVCC, Prisma, pooling, replication, row-level security |
 | 20.5 | [Auth & Security](20-backend/20.5-security/INDEX.md) | 24 | **[auth track](20-backend/20.5-security/01-auth/INDEX.md):** fundamentals → sessions → JWT → OAuth → RBAC → ABAC deep-dive · attacks (XSS, CSRF, SQLi) · hardening (CSP, STRIDE, secrets) |
 | 20.6 | [Microservices & Distributed Patterns](20-backend/20.6-microservices/INDEX.md) | 23 | Service discovery, gateway, saga, circuit breaker, event sourcing/CQRS, transactional outbox, Kafka/RabbitMQ, gRPC streaming, service mesh, event-driven architecture |
@@ -149,7 +149,7 @@ After you pick your lane (above), the two lanes share all 7 study stacks. They d
 00-strategy → Communication → Resume Tips → STAR Method → HR Questions
 10-frontend → JavaScript → TypeScript → React → Next.js → Forms → HTML/CSS fundamentals → PWA essentials (Animation and Mobile only when a target role needs them)
 20-backend → Node.js → NestJS → REST APIs → Database → Auth & Security track → Microservices & Distributed Patterns → GraphQL → Caching → AI Engineering (Java deferred unless a target role requires it)
-30-architecture → Design Patterns (Foundations → Creational → Structural → Behavioral → Architectural → Interview Prep) → System Design (00-theory: CAP, sharding, caching, queues, ... → 10-case-studies: URL shortener, Uber, Netflix, ...)
+30-architecture → Design Patterns (Foundations → Creational → Structural → Behavioral → Architectural → Interview Prep) → System Design (01-theory: CAP, sharding, caching, queues, ... → 02-case-studies: URL shortener, Uber, Netflix, ...)
 40-platform → Docker → Kubernetes → CI/CD → Observability → Build Tools → Git Advanced → Serverless & Edge → Monorepo → Twelve-Factor → CDN & Edge → Reverse Proxy → IaC & Terraform
 50-quality → Testing → Accessibility → Performance Monitoring → Production Engineering
 60-realtime → WebSockets
@@ -158,8 +158,8 @@ After you pick your lane (above), the two lanes share all 7 study stacks. They d
 projects → Docita architecture deep-dives, interview defense
 ```
 
-**For Indian SDE / FAANG:** Coding Patterns is the priority (22 files, all patterns). 8-12 week intensive, 4-6 hrs/day.
-**For Abroad Full-Stack:** Coding Patterns is light (30-40 mediums across 6 patterns only). Heavy on System Design + take-home prep. 4-week realistic, 2-3 hrs/day.
+**For algorithmic assessments:** prioritize fresh problems from the coding-pattern stages, then explain correctness, complexity and edge cases.
+**For practical full-stack assessments:** prioritize an implemented feature, tests, design defense and supported project stories. Add algorithm practice to the depth the confirmed assessment requires.
 
 ---
 
@@ -202,4 +202,4 @@ projects → Docita architecture deep-dives, interview defense
 
 ---
 
-*Last updated: September 2026 — 1017 files, 257K lines, 0 broken links — folders numbered for study order. Every large stack organized into numbered category subfolders; auth track complete through passkeys/SAML; sequences contiguous inside every stack folder (the 80.x lane numbering intentionally gaps into projects/docita prep docs).
+*Last updated: September 2026 — 1017 files, 193K lines, 0 broken links — folders numbered for study order. Every large stack organized into numbered category subfolders; auth track complete through passkeys/SAML; sequences contiguous inside every stack folder (the 80.x lane numbering intentionally gaps into projects/docita prep docs).

@@ -1,6 +1,6 @@
 # IaC & Terraform — Index
 
-> **Study time:** ≈ 16 min of reading (3 files, ~5 min average).
+> **Study time:** ≈ 15 min of reading (3 files, ~5 min average).
 > **Infrastructure as Code fundamentals, Terraform state/plan/apply, modules, drift, backends, CI/CD safety, OpenTofu/Pulumi comparisons.**
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../../INDEX.md)
@@ -19,9 +19,9 @@ Every other sub-stack in Platform assumes infrastructure *exists*. This one answ
 
 **Pass 2 — Hands-on mental reps (30 min):** Trace the command lifecycle (`init → validate → plan → apply`) and the CI/CD workflow. Explain to yourself what happens when two engineers run `apply` without locking.
 
-**Pass 3 — Interviews (30 min):** Work [40.12.02-interview-questions.md](40.12.02-interview-questions.md). The three that recur: state & drift, brownfield adoption (`import`), and IaC in CI.
+**Pass 3 — Retrieval and interviews:** Work [40.12.02-interview-questions.md](40.12.02-interview-questions.md). The three that recur: state & drift, brownfield adoption (`import`), and IaC in CI.
 
-**Recap:** Re-read Mistakes + Cheat Sheet before any platform interview.
+**Revision before practice:** Close the chapter and use [section revision](REVISION.md), then attempt the separate interview bank. Check identity, partial failure and exposure boundaries.
 
 ---
 
@@ -29,23 +29,23 @@ Every other sub-stack in Platform assumes infrastructure *exists*. This one answ
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [40.12.01-iac-fundamentals-terraform.md](40.12.01-iac-fundamentals-terraform.md) | IaC model, HCL, state & drift, plan/apply, providers, backends, modules, workspaces, OpenTofu/Pulumi/CDKTF, mistakes, best practices | Optional | Specialized | 7 min |
-| 02 | [40.12.02-interview-questions.md](40.12.02-interview-questions.md) | 11 Q&A: state, drift, declarative vs imperative, brownfield import, environments, modules, GitOps, CI safety, tool comparison + behavioral story | Optional | Specialized | 7 min |
+| 01 | [40.12.01-iac-fundamentals-terraform.md](40.12.01-iac-fundamentals-terraform.md) | IaC model, HCL, state & drift, plan/apply, providers, backends, modules, workspaces, OpenTofu/Pulumi and CDKTF deprecation, mistakes, best practices | Optional | Specialized | 8 min |
+| 02 | [40.12.02-interview-questions.md](40.12.02-interview-questions.md) | Applied Q&A: state, drift, declarative vs imperative, brownfield import, environments, modules, GitOps, CI safety, tool comparison + behavioral story | Optional | Specialized | 5 min |
 
 ---
 
 ## Quick Reference
 
 | Concept | One-liner |
-| ---------- | ------------------------------------------------------------ |
+| ---------- | -------------------------------------------------------------------- |
 | IaC | Infrastructure declared as reviewable, versioned code |
-| State | Terraform's record of what exists — needed to compute a diff |
+| State | Recorded identity/attribute mapping; remote observations can differ |
 | Drift | Config vs reality mismatch; `plan` reveals it |
-| Plan | Read-only diff — the review artifact |
-| Apply | The only mutating step |
-| Backend | Where state lives (remote + lock = non-negotiable) |
+| Plan | Proposed resource actions; protected artifact and API/backend access |
+| Apply | Executes the selected resource changes |
+| Backend | State storage with explicitly configured protection/locking |
 | Module | Reusable, parameterized infra function |
-| Brownfield | `import` existing resources — never recreate |
+| Brownfield | Adopt IDs and reconcile configuration before changing resources |
 
 ---
 

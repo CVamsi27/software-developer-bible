@@ -90,13 +90,45 @@ Source: [Swagger & OpenAPI in NestJS](20.2.4.05-swagger-openapi-nestjs.md)
 
 **A:** Response types, error codes, and examples need explicit documentation. A generated specification may still be incomplete or promise behavior the handler does not provide.
 
+## Recovery and contract checks
+
+Sources: [Configuration](20.2.4.01-configuration-validation.md), [Testing](20.2.4.02-testing.md), [Lifecycle](20.2.4.03-lifecycle-hooks-graceful-shutdown.md), [Jobs](20.2.4.04-scheduling-background-jobs.md), [OpenAPI](20.2.4.05-swagger-openapi-nestjs.md)
+
+**Q:** Does `ConfigService.get<number>()` convert an environment string into a number?
+
+**A:** No. Parse and validate the setting; the generic annotation alone only affects TypeScript.
+
+**Q:** Why share bootstrap configuration with an E2E application's setup?
+
+**A:** Importing the root module does not run `main.ts`; otherwise the test can omit production pipes, filters or prefixes.
+
+**Q:** What happens if a preStop hook uses 10 seconds of a 30-second termination period?
+
+**A:** Draining and cleanup share the remaining budget; the timer is not reset after preStop.
+
+**Q:** Why can releasing a daily cron lease still allow the same run twice?
+
+**A:** Another delayed replica can acquire it after release. Durable run identities and duplicate-safe effects establish deduplication.
+
+**Q:** A bank accepted a payout but its reply was lost. Why not reset the claim to pending?
+
+**A:** A new transfer could duplicate the payment. Preserve the provider operation identity and reconcile its status.
+
+**Q:** Does `@ApiProperty({ minItems: 1 })` reject an empty request array?
+
+**A:** It documents the constraint. Runtime validation needs an array-size validator and an enabled validation pipe.
+
+**Q:** A spec dump writes a file. Why does redirecting stdout create a bad baseline?
+
+**A:** The named file receives the JSON; stdout may be empty. Generate to an explicit separate file before comparison.
+
 ## Summary
 
 Use these prompts after the reading pass to recall the quality and operations mechanisms and boundary constraints.
 
 ## See Also
 
-- [Category reading flow](INDEX.md)
+- [Category reading flow](INDEX.md) — return to prerequisites and learning stages for runtime tests and lifecycle recovery
 
 ## References & Learn More
 

@@ -1,13 +1,13 @@
 # Build Tools — Index
 
-> **Study time:** ≈ 1 h 38 m of reading (13 files, ~8 min average).
+> **Study time:** ≈ 55 min of reading (13 files, ~4 min average).
 > **13 files** — Frontend build tooling from Webpack, Vite, Turbopack, Rspack to Babel, ESBuild, SWC, build optimization, asset pipelines (CSS/images/fonts), tool comparison, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-13-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Tooling-%2364748b)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Why build tools:** Senior frontend interviews ask about bundlers, transpilers, and build optimization. Pick the right tool (Vite for new projects, Webpack for legacy), understand tree shaking and code splitting, and know what Babel/SWC do under the hood.
+**Why build tools:** Senior frontend interviews ask about bundlers, transpilers, and build optimization. Start from the framework’s supported integration, understand side effects and lazy loading, then compare transforms and measured workloads.
 
 ---
 
@@ -18,7 +18,7 @@
 | Bundlers | [01-bundlers/](01-bundlers/INDEX.md) | 4 | Webpack, Vite, Turbopack, Rspack — the main options |
 | Compilers | [02-compilers/](02-compilers/INDEX.md) | 2 | Babel, ESBuild/SWC — how JSX + TS get to JS |
 | Optimization & Comparison | [03-optimization-and-comparison/](03-optimization-and-comparison/INDEX.md) | 3 | Build optimization, asset pipelines (CSS/images/fonts), tool comparison — fast builds, small bundles |
-| Interview Prep | [04-interview-prep/](04-interview-prep/INDEX.md) | 1 | 50+ Qs |
+| Interview Prep | [04-interview-prep/](04-interview-prep/INDEX.md) | 1 | 35 Qs |
 
 ---
 
@@ -28,19 +28,16 @@ The main bundlers — pick based on project needs.
 
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
-| 01 | [Webpack](01-bundlers/40.5.1.01-webpack.md) | Configuration, loaders, plugins, code splitting, HMR | Legacy / complex configs | Important | Specialized | 9 min |
-| 02 | [Vite](01-bundlers/40.5.1.02-vite.md) | Dev server, ESBuild, Rollup, plugins, SSR | New projects, fastest dev experience | Important | Specialized | 5 min |
-| 03 | [Turbopack](01-bundlers/40.5.1.03-turbopack.md) | Incremental computation, caching, Rust-based bundling | Next.js 13+, very large apps | Important | Specialized | 4 min |
-| 04 | [Rspack](01-bundlers/40.5.1.04-rspack.md) | Rust-based Webpack-compatible bundler, federation | Webpack replacement for large apps | Important | Specialized | 10 min |
+| 01 | [Webpack](01-bundlers/40.5.1.01-webpack.md) | Configuration, loaders, plugins, code splitting, HMR | Legacy / complex configs | Important | Specialized | 4 min |
+| 02 | [Vite](01-bundlers/40.5.1.02-vite.md) | Dev server, Rolldown/Oxc, plugins, SSR | Supported framework SPAs and library builds | Important | Specialized | 5 min |
+| 03 | [Turbopack](01-bundlers/40.5.1.03-turbopack.md) | Incremental computation, caching, Rust-based bundling | Next.js 16 supported default | Important | Specialized | 5 min |
+| 04 | [Rspack](01-bundlers/40.5.1.04-rspack.md) | Rust-based Webpack-compatible bundler, federation | Webpack replacement for large apps | Important | Specialized | 4 min |
 
 **Decision tree:**
 
 ```text
-New project?
-├── Yes → Vite (or Next.js = Turbopack)
-├── Legacy Webpack → stay on Webpack (or migrate to Rspack)
-├── Very large monorepo → Rspack or Turbopack
-└── Next.js → Turbopack (default since v15)
+Framework requirement -> supported default -> required extension inventory
+                     -> measured migration slice -> production output checks
 ```
 
 ---
@@ -51,8 +48,8 @@ How TS/JSX become browser-compatible JS.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 05 | [Babel](02-compilers/40.5.2.01-babel.md) | Compilation, presets, plugins, polyfills, browserslist | Important | Specialized | 6 min |
-| 06 | [ESBuild & SWC](02-compilers/40.5.2.02-esbuild-swc.md) | Go/Rust bundlers, performance, config, use cases | Important | Specialized | 7 min |
+| 05 | [Babel](02-compilers/40.5.2.01-babel.md) | Compilation, presets, plugins, polyfills, browserslist | Important | Specialized | 4 min |
+| 06 | [ESBuild & SWC](02-compilers/40.5.2.02-esbuild-swc.md) | Bundler/compiler roles, semantics, type-check boundary | Important | Specialized | 3 min |
 
 ---
 
@@ -60,8 +57,8 @@ How TS/JSX become browser-compatible JS.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 07 | [Build Optimization](03-optimization-and-comparison/40.5.3.01-build-optimization.md) | Tree shaking, code splitting (route/lazy), bundle analysis, caching, source maps | Important | Specialized | 14 min |
-| 08 | [Asset Pipelines — CSS, Images & Fonts](03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md) | PostCSS/Lightning CSS, Tailwind compile path, sharp responsive image sets, font subsetting + preload, hashing/fingerprinting, hidden source maps | Important | Specialized | 16 min |
+| 07 | [Build Optimization](03-optimization-and-comparison/40.5.3.01-build-optimization.md) | Tree shaking, code splitting (route/lazy), bundle analysis, caching, source maps | Important | Specialized | 5 min |
+| 08 | [Asset Pipelines — CSS, Images & Fonts](03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md) | PostCSS/Lightning CSS, Tailwind compile path, sharp responsive image sets, font subsetting + preload, hashing/fingerprinting, hidden source maps | Important | Specialized | 8 min |
 | 09 | [Build Tool Comparison](03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md) | Webpack vs Vite vs Turbopack vs Rspack trade-offs, when to use each | Important | Specialized | 4 min |
 
 ---
@@ -70,7 +67,7 @@ How TS/JSX become browser-compatible JS.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 10 | [Interview Questions](04-interview-prep/40.5.4.01-interview-questions.md) | 50+ curated questions with answers | Important | Specialized | 16 min |
+| 10 | [Interview Questions](04-interview-prep/40.5.4.01-interview-questions.md) | 35 curated questions with answers | Important | Specialized | 7 min |
 
 ---
 
@@ -82,7 +79,8 @@ How TS/JSX become browser-compatible JS.
 4. **Babel + ESBuild/SWC** — the transpilers
 5. **Turbopack + Rspack** — the new Rust-based options
 6. **Tool Comparison** — when to use what
-7. **Interview Questions** — final review
+7. **Revision** — [Bundlers](01-bundlers/REVISION.md), [Compilers](02-compilers/REVISION.md), [Optimization](03-optimization-and-comparison/REVISION.md)
+8. **Interview Questions** — defend a mechanism under changed conditions
 
 ---
 

@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Next.js-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
 
@@ -114,6 +114,28 @@ Source: [Metadata API in Next.js](10.4.2.03-metadata.md)
 
 7. **Q:** Where does JSON-LD belong if it is not a field in the Metadata object?
    **A:** Render structured data separately in a script element in the page or layout, with safe serialization. The Metadata API emits supported document metadata; it does not turn a custom JSON-LD field into structured data.
+
+## Follow the Failure Boundary
+
+Source: [Middleware](10.4.2.01-middleware.md), [Route Handlers](10.4.2.02-route-handlers.md), [Metadata](10.4.2.03-metadata.md).
+
+**Q:** Why clone a rewrite URL before replacing its pathname?
+**A:** The existing URL carries query parameters and other routing context. A path-only construction can silently lose pagination or search inputs.
+
+**Q:** What makes an in-memory fixed-window limiter pass request 100 but reject 101?
+**A:** The first request initializes count 1; accepted requests increment it until the maximum. Later requests in that window reject; a new window resets the record. Replicas still need a shared atomic policy.
+
+**Q:** Why is putting JSON directly into an ORM update unsafe even after authentication?
+**A:** Identity does not restrict supplied field names. Parse an allowlist and authorize the resource so protected fields such as roles cannot be mass-assigned.
+
+**Q:** What work must stop when an SSE consumer disconnects?
+**A:** The stream's producer and timers or upstream subscriptions must stop through cancellation; returning streaming headers alone does not clean them up.
+
+**Q:** Why does a verified payment webhook still need event deduplication?
+**A:** Verification establishes source/integrity. Delivery may retry or arrive out of order, so durable handling must avoid duplicate side effects and invalid state transitions.
+
+**Q:** Why should a sitemap not stamp every page with the time the file was generated?
+**A:** The field describes content modification, not the sitemap's execution time. Use actual page changes so the discovery signal remains accurate.
 
 ## Summary
 

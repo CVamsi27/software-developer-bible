@@ -58,13 +58,49 @@ Source: [Queries & Mutations](20.7.1.03-queries-mutations.md)
 
 **A:** Execution can return data with field errors, depending on nullability propagation. Parse or validation errors occur before execution and return no partial data; a non-null failure can also null the whole execution result.
 
+## Trace and Changed-Condition Checks
+
+Source: [Overview](20.7.1.01-graphql-overview.md)
+
+**Q:** Why does selecting an unknown nickname field prevent the user lookup in the example?
+
+**A:** The parsed operation fails schema validation before execution, so the root resolver is not called. A resolver failing for a valid selected field is a different, execution-time outcome.
+
+**Q:** Does selecting only a post title prove the database fetched only that column?
+
+**A:** No. It constrains the response selection; the resolver or data-access plan determines what storage work occurs.
+
+Source: [Schema design](20.7.1.02-schema-design.md)
+
+**Q:** A user's required name fails while another root post succeeds. What remains in the response?
+
+**A:** The nullable user becomes null, the unrelated post can remain, and the error path names the failing user/name field. Making the user root non-null can instead propagate the failure to all data.
+
+**Q:** Why cannot SearchResult expose id directly even though both union members have one?
+
+**A:** A union declares alternative object types without declaring shared fields. Select member fields through fragments; an interface can declare a common id contract.
+
+**Q:** Does declaring DateTime or @auth install date validation or a permission check?
+
+**A:** No. The scalar needs parsing/serialization behavior and the directive needs a corresponding implementation. Names and generated types alone do not enforce those contracts.
+
+Source: [Queries and mutations](20.7.1.03-queries-mutations.md)
+
+**Q:** Why does the counter end at five after add(2), rejected add(-1) and add(3)?
+
+**A:** The nullable failed root field permits execution to continue. Root fields complete serially, but GraphQL does not roll back the earlier addition. Making add non-null nulls the data and stops later completion without undoing the first effect.
+
+**Q:** Are an omitted update title, null and an empty string interchangeable?
+
+**A:** No. They are distinct inputs. The service must define each meaning and inspect presence; a truthiness test silently conflates them.
+
 ## Summary
 
 Use these prompts after the reading pass to recall the fundamentals mechanisms and boundary constraints.
 
 ## See Also
 
-- [Category reading flow](INDEX.md)
+- [Category reading flow](INDEX.md) — return to prerequisites and learning stages for GraphQL selection and execution contracts
 
 ## References & Learn More
 

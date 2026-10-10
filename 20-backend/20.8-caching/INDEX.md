@@ -1,6 +1,6 @@
 # Caching — Index
 
-> **Study time:** ≈ 49 min of reading (5 files, ~10 min average).
+> **Study time:** ≈ 50 min of reading (5 files, ~10 min average).
 > **5 files** — Redis, cache patterns, invalidation strategies — the biggest latency lever and the classic senior-interview topic.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../../INDEX.md)
@@ -21,15 +21,15 @@
 
 ---
 
-## The Decision Table (memorize this)
+## Compare the Contracts
 
 | Read/write profile | Pattern | Why |
 | ------------------------------ | ---------------------------------- | ------------------------------------------------------------------ |
-| Read-heavy, stale-tolerant | Cache-aside + TTL + jitter | Simplest correct default |
+| Read-heavy, stale-tolerant | Cache-aside + TTL + jitter | Useful when the stated stale-read and fallback policy holds |
 | Read-heavy, needs fresh writes | Write-through | Successful writes warm reads; partial failures and ordering remain |
 | Write-heavy analytics | Write-behind (batch flush) | Throughput ↑; risk window on crash |
 | Hot key / thundering herd | Lock single-flight + early refresh | Stampede defense |
-| Cross-instance coordination | Redlock (with caveats) / DB lease | Correctness > availability of lock |
+| Cross-instance coordination | Redlock (with caveats) / DB lease | A lease does not replace the resource invariant |
 
 ---
 
@@ -57,7 +57,7 @@ Need to cache data?
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 1 | [Caching Deep Dive](20.8.01-caching-deep-dive.md) | Cache hierarchy, patterns (cache-aside, write-through, write-behind), invalidation strategies, stampede prevention, multi-tenant caching | Essential | Important | 10 min |
+| 1 | [Caching Deep Dive](20.8.01-caching-deep-dive.md) | Cache hierarchy, patterns (cache-aside, write-through, write-behind), invalidation strategies, stampede prevention, multi-tenant caching | Essential | Important | 11 min |
 | 2 | [Redis Fundamentals](20.8.02-redis-fundamentals.md) | Data structures (strings, hashes, lists, sets, sorted sets, streams), caching patterns with Redis, rate limiting, distributed locks, pub/sub | Essential | Important | 17 min |
 | 3 | [Advanced Redis Patterns](20.8.03-advanced-redis-patterns.md) | Redlock, Lua rate limiting, Pub/Sub deep-dive, Redis Streams, scripting best practices | Essential | Important | 8 min |
 | 4 | [Interview Questions](20.8.04-interview-questions.md) | 25 senior Q&A: invalidation design, stampede physics, data-structure tradeoffs, hit-ratio forensics, persistence decisions | Essential | Important | 12 min |
@@ -90,7 +90,7 @@ Need to cache data?
 
 ## Docita Anchor
 
-Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+These [Docita](https://github.com/CVamsi27/docita) pointers are places to inspect current behavior and tests before citing project evidence:
 
 | Topic | Docita evidence |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -100,4 +100,4 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Response caching | `apps/api/src/shared/common/interceptors/cache.interceptor.ts` - hashed-key GET caching through CACHE_MANAGER |
 | Short-TTL flag cache | `apps/api/src/shared/modules/feature-flags/feature-flags.service.ts` - 30s resolved-flag TTLs bound staleness |
 
-The backend store is in-memory today (`CACHE_BACKEND=memory`; CI guard `scripts/checks/check-cache-redis-required.mjs` pins the future Redis swap), so Redlock/Lua/Streams chapters: _no direct docita implementation yet._
+Verify the current cache backend and deployment configuration. These pointers alone do not establish Redis use, present TTL values or production correctness.

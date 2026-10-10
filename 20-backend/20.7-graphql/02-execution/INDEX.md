@@ -1,35 +1,22 @@
 # Execution - GraphQL
 
-> **Study time:** ≈ 1 h 9 m of reading (3 files, ~23 min average).
+> **Study time:** ≈ 18 min of reading (3 files, ~6 min average).
 > **3 files.** How the server resolves queries: resolver chains with DataLoader for N+1 prevention, and Apollo Server's plugin model, federation, and subscriptions.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Execution-%23ff6b35)](../INDEX.md)
 
----
+## Learning passes
 
-## Files
+1. Read [Resolvers](20.7.2.01-resolvers.md). Trace parent values, default resolution, ordered batching and a missing author's nullable boundary. Explain why the loader is request-scoped.
+2. Read [Apollo Server](20.7.2.02-apollo-server.md). Run the Server 5/Express 5 fixture, then distinguish HTTP authentication from schema execution and resource authorization.
+3. Use [Execution revision](REVISION.md) without looking at the answers. Return to a chapter when you cannot explain its failure boundary.
+4. Continue to [Clients and production](../03-clients-and-production/INDEX.md), then the [interview bank](../04-interview-prep/20.7.4.01-interview-questions.md).
 
-| Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Resolvers](20.7.2.01-resolvers.md) | Resolver chain, `(parent, args, context, info)`, default resolvers, DataLoader batching/caching (N+1 fix), `GraphQLError` + `extensions.code` | Optional | Specialized | 34 min |
-| 02 | [Apollo Server](20.7.2.02-apollo-server.md) | Server setup (Express/Fastify/Lambda), plugins, landing page/Explorer, CSRF prevention, federation, subscriptions; Yoga/Mercurius alternatives | Optional | Specialized | 33 min |
+## Project comparison
 
----
+The [Docita case study](../../../projects/docita/INDEX.md) describes the repository's REST and domain-service boundaries. Use it to compare where identity and business policy live; these GraphQL examples are study fixtures, not evidence of a deployed Docita GraphQL service. Describe an evaluation or implementation as your experience only when you can substantiate it.
 
-[← Back to GraphQL](../INDEX.md)
+## Navigation
 
----
-
-## Docita Anchor
-
-Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
-
-_No direct docita implementation yet._ No resolvers, DataLoader, or Apollo server exist — `apps/api/package.json` has no GraphQL dependency (REST-first choice). The closest execution analog is use cases resolving through repository ports: `apps/api/src/domains/appointments/application/use-cases/create-appointment.use-case.ts`.
----
-
-[← Previous: Fundamentals](../01-fundamentals/INDEX.md) · [Next: Clients & Production →](../03-clients-and-production/INDEX.md)
-
-## Section Revision
-
-After the learning chapters, use the [separate revision drill](REVISION.md) to check recall before interview practice.
+[← Fundamentals](../01-fundamentals/INDEX.md) · [GraphQL index](../INDEX.md) · [Clients and production →](../03-clients-and-production/INDEX.md)

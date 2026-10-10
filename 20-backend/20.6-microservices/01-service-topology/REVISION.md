@@ -74,13 +74,41 @@ Source: [Strangler Fig Pattern](20.6.1.04-strangler-fig.md)
 
 **A:** Define the conditions that trigger fallback and whether data written by the new path remains compatible. Retire the old capability only after dependency, traffic and recovery evidence support removal.
 
+## Changed conditions
+
+Source: [Discovery](20.6.1.01-service-discovery.md), [Gateway](20.6.1.02-api-gateway.md), [Mesh](20.6.1.03-service-mesh.md), [Strangler](20.6.1.04-strangler-fig.md).
+
+**Q:** An endpoint's lease expires at time 10. Can a snapshot selector use it at time 10?
+
+**A:** Not under the chapter's strict greater-than-now contract. A live connection might still exist, but that is different evidence with separate draining rules.
+
+**Q:** Why does `/api/orders-archive` not select the `/api/orders` route?
+
+**A:** Prefix matching must respect a path-segment boundary; exact prefix or prefix plus slash does, raw startsWith does not.
+
+**Q:** Is a URL-only cache safe for a caller-authorized order read?
+
+**A:** No. Different callers can have different permitted data. Define cache eligibility and authorization/representation scope, or avoid caching the response.
+
+**Q:** A mesh retries a write whose response was lost. What property must come from the application?
+
+**A:** Idempotent acceptance/status resolution under a durable operation contract. Authenticated transport cannot prove the first attempt did not commit.
+
+**Q:** Why can a strangler's legacy fallback duplicate an order after timeout?
+
+**A:** Replacement may have committed before its response failed. Resolve the unknown outcome instead of blindly executing the command on legacy.
+
+**Q:** Equal row counts appear after backfill. What is still unproven?
+
+**A:** Entity identity, values, versions, deletion handling and replication position. Compare semantic state under a consistent observation boundary.
+
 ## Summary
 
 Use these prompts after the reading pass to recall the service topology mechanisms and boundary constraints.
 
 ## See Also
 
-- [Category reading flow](INDEX.md)
+- [Category reading flow](INDEX.md) — return to prerequisites and learning stages for routes, mesh identity and safe migration
 
 ## References & Learn More
 

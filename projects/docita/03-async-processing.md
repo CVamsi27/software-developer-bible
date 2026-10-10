@@ -13,7 +13,7 @@ A **job queue** stores work for a worker to execute. A **transactional outbox** 
 
 Suppose a prescription must produce a PDF. Saving the prescription and then scheduling its PDF in a separate operation creates a gap: the first write can commit and the second can fail. Writing durable intent in the same database transaction closes that particular gap. It does not make the PDF generation or notification occur exactly once.
 
-This case describes source inspected on **2 October 2026**, with limitations distinguished from the intended design. Production throughput, latency, cost and delivery outcomes were not measured in this review.
+This case starts from source inspected on **2 October 2026**. A targeted **9 October 2026** recheck at local HEAD `dc5a97dc3` updates the relay acknowledgment below; unrelated working-tree changes were present. This is not a clean-revision or production audit. Throughput, latency, cost and delivery outcomes were not measured.
 
 ## First Principles
 
@@ -105,17 +105,28 @@ The outbox schema gives its optional idempotency key a unique constraint. The ap
 
 ## What the Current Relay Actually Acknowledges
 
-The relay schedule is **every 5 seconds** in `CRON_SCHEDULES.OUTBOX_RELAY`. It selects up to **200** eligible rows, increments attempts and dispatches each through the process-local EventEmitter2. It adds outbox, aggregate and clinic identifiers to the payload, then records `processedAt`.
+The relay schedule is **every 5 seconds** in `CRON_SCHEDULES.OUTBOX_RELAY`. It selects up to **200** eligible rows, increments attempts and dispatches each through the process-local EventEmitter2. It adds outbox, aggregate and clinic identifiers to the payload, awaits `emitAsync` with a **30-second dispatch timeout**, then records `processedAt` after fulfillment.
 
 A local running flag avoids overlapping drains in one instance. A transaction-scoped PostgreSQL advisory lock coordinates instances that use the same lock convention. The helper holds that lock while awaiting its callback, but passes no transaction client to the callback; the relay uses the Prisma service. Do not assume the advisory lock proves all callback queries use the lock transaction or that external work becomes transactional.
 
-### Dispatch Is Not Consumer Completion
+### Acknowledgment Depends on the Listener Contract
 
-The relay calls `events.emit`, not an awaited asynchronous-listener acknowledgment. A local probe of the installed **EventEmitter2 6.4.9** showed `emit` returning while an async listener was still waiting. The relay can therefore record `processedAt` before that listener completes.
+The 2 October probe of **EventEmitter2 6.4.9** showed synchronous `emit` returning before an async listener completed. The rechecked relay now awaits `emitAsync`: promises returned by registered listeners must fulfill before the success path writes `processedAt`. An extracted-source check with the actual installed emitter confirmed both delayed fulfillment and rejection-driven retry.
 
-This establishes an API behavior and a source-level acknowledgment boundary, not a claim that a particular production listener failed. It means “processed” here cannot be assumed to mean every downstream side effect completed durably. Also, an in-process emitter reaches listeners in that process; an outbox does not automatically broadcast the event to every replica.
+Trace one event whose listener returns a promise for PDF creation:
 
-On a caught dispatch error, the relay records the error and schedules exponential retry with a **5-second base**, **5-minute cap** and **8-attempt ceiling**. `Promise.allSettled` lets separate row tasks finish independently. None of these mechanisms guarantees eventual success: exhausted rows, absent listeners, asynchronous failures, downtime and operational replay all matter.
+| Outcome | Relay behavior | Remaining boundary |
+| -------------------------------------- | --------------------------------------------------------- | ----------------------------------------------------------------- |
+| PDF promise fulfills before 30 seconds | Write `processedAt` | Fulfillment must represent the required effect, not detached work |
+| Listener promise rejects | Leave the row unprocessed and schedule retry | Other listeners may already have succeeded and can run again |
+| Dispatch reaches the timeout | Record failure and schedule retry | The original work keeps running unless separately cancelled |
+| No listener is registered | `emitAsync` fulfills with an empty result; mark processed | Required-handler registration needs its own check |
+
+Awaiting the emitter is an improvement, but the listener must return the promise for its required work and propagate its failure. [Nest's event listener options](https://docs.nestjs.com/techniques/events) default to `suppressErrors: true`: a listener error can be logged rather than rethrown. Required consumers therefore need an explicit error-propagation contract, verified through the actual Nest wiring. The extracted-source check did not exercise that wiring.
+
+EventEmitter2 combines listener promises with `Promise.all`, which rejects on the first rejection; it does not cancel or wait for all remaining work on that failure path. The relay's timeout also rejects without cancelling the underlying promise. A slow first attempt can still complete after a retry starts, so consumers need effect-level idempotency. An in-process emitter reaches listeners in that process; it does not broadcast to every replica.
+
+On a caught dispatch error, the relay records the error and schedules exponential retry with a **5-second base**, **5-minute cap** and **8-attempt ceiling**. The outer `Promise.allSettled` lets separate **row tasks** finish independently; it does not change a row's listener semantics. Exhausted retries, missing handlers, swallowed errors and replay still require operational recovery. A processed marker establishes only the completion promised by the listener contract, not automatically an external provider's durable receipt.
 
 ## Real-World Decisions
 
@@ -148,7 +159,7 @@ Test the crash boundaries: before commit, after commit, after claim, after the e
 | Assessment | What it means here |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Current strengths | Atomic job claiming, delayed retries and an outbox provide useful building blocks. |
-| Current limitations | Claim ownership, completion fencing, local asynchronous listeners and enqueue transaction boundaries leave failure gaps. |
+| Current limitations | Claim ownership, completion fencing, enqueue transaction boundaries, listener registration/error propagation and non-cancelled timeouts leave failure gaps. |
 | Recommended design | Commit required work with business state; claim with an ownership token, renew bounded leases, fence completion, and make consumer effects idempotent under stable operation keys. |
 | Evidence needed | Fault injection at claim/effect/ack boundaries preserves required work; duplicate delivery produces one business effect; an expired claimant cannot acknowledge a replacement claim. |
 
@@ -168,7 +179,7 @@ PostgreSQL can atomically retain work intent and coordinate claims. Reliable exe
 
 ## References
 
-Source paths refer to the Docita repository inspected on 2 October 2026:
+Source paths refer to the 2 October inspection, with the relay and outbox append rechecked on 9 October as described above:
 
 - `apps/api/src/shared/modules/queue/postgres-queue.service.ts`
 - `apps/api/src/shared/modules/queue/infrastructure/prisma-queue-job.repository.ts`
@@ -178,3 +189,4 @@ Source paths refer to the Docita repository inspected on 2 October 2026:
 - `apps/api/src/shared/common/utils/postgres-advisory-lock.ts`
 - `apps/api/src/shared/schedule/cron-schedules.ts`
 - `packages/db/prisma/schema.prisma` — `QueueJob` and `OutboxEvent` models.
+- [NestJS events](https://docs.nestjs.com/techniques/events) — listener registration lifecycle and default error-suppression behavior.

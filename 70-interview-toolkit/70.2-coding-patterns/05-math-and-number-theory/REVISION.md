@@ -34,6 +34,18 @@ Source: [Number Theory & Combinatorics](70.2.5.01-number-theory-combinatorics.md
 
 **A:** List which outcomes are possible and why they are equally likely. If they are not, use their actual probabilities instead of counting alone. Count without including the same outcome twice. Before multiplying probabilities, justify that the events are independent or use the appropriate conditional probabilities.
 
+**Q:** Why can the sieve start crossing out multiples at p²?
+
+**A:** A smaller multiple p×k with k<p already has a factor less than p and was crossed out by an earlier prime. Starting at p² avoids repeating that work without skipping a composite.
+
+**Q:** How does choosing an ordered pair differ from choosing an unordered pair?
+
+**A:** From n distinct candidates without replacement, ordered choices give n×(n−1). Every unordered pair has two orderings, so divide by 2. With replacement, the choice count and duplicate argument change.
+
+**Q:** Why are two draws without replacement not independent?
+
+**A:** The first draw changes the remaining population. After one of four distinct items is selected, a particular different item has conditional probability 1/3 on the next draw, not its original 1/4. Count the joint outcomes or multiply by the correct conditional probability.
+
 ## Summary
 
 Check the modulus, invertibility, intermediate numeric range, and sample space before applying a formula. These conditions determine whether the arithmetic result has the intended meaning.

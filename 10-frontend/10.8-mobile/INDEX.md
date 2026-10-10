@@ -9,6 +9,8 @@
 
 ---
 
+This is optional specialist depth for a web full-stack role. Read it when the target role includes native/mobile ownership; prioritize the core JavaScript, React and request/data boundaries first.
+
 ## Pass 1 — understand which runtime owns the feature
 
 [React Native & Cross-Platform](10.8.01-react-native-cross-platform.md) follows JavaScript, Fabric's renderer and native modules. Decide which code can be shared with web and which platform capabilities need native ownership. Expo tooling and custom native modules can coexist.

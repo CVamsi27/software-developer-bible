@@ -1,6 +1,6 @@
 # Interview Drills - REST APIs
 
-> **Study time:** ≈ 26 min of reading (1 files, ~26 min average).
+> **Study time:** ≈ 8 min of reading (1 files, ~8 min average).
 > **1 file.** Curated Q&A to close the loop on the full REST/API stack.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](../INDEX.md)
@@ -8,11 +8,15 @@
 
 ---
 
+## Practice Flow
+
+Read the four category revision companions first. Answer the ten worked design questions aloud, then use the authored fifty-question bank to vary one condition per answer. Cite actual project evidence only after inspecting its current implementation and tests.
+
 ## Files
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Interview Questions](20.3.5.01-interview-questions.md) | Curated Q&A across design, HTTP mechanics, payloads/errors, edge and scale | Essential | Foundational | 26 min |
+| 01 | [Interview Questions](20.3.5.01-interview-questions.md) | Curated Q&A across design, HTTP mechanics, payloads/errors, edge and scale | Essential | Foundational | 8 min |
 
 ---
 
@@ -22,7 +26,7 @@
 
 ## Docita Anchor
 
-Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the drills, then cite real answers:
+These [Docita](https://github.com/CVamsi27/docita) healthcare-application pointers identify places to inspect before citing project evidence. They do not establish current deployment, correctness or personal ownership by themselves:
 
 | Drill | Docita evidence |
 | ------------------------------ | -------------------------------------------------------------------------------------------------------------------- |

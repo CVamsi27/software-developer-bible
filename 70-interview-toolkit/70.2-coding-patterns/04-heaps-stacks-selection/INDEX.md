@@ -1,6 +1,6 @@
 # Heaps, Stacks & Selection
 
-> **Study time:** ≈ 1 h 13 m of reading (6 files, ~12 min average).
+> **Study time:** ≈ 1 h 16 m of reading (6 files, ~13 min average).
 > **6 files.** Order-of-access structures and their interview patterns: heaps for top-K and streams, monotonic stacks for next-greater-element, classic stack/queue designs, segment trees for range queries, and quickselect/reservoir sampling for selection under constraints.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](../INDEX.md)
@@ -17,10 +17,10 @@ Read the heap for changing priorities, then the monotonic stack for candidates w
 
 | # | File | When to recognize | Role priority | General importance | Read time |
 | --: | ------ | ------------------- | --- | --- | ----------: |
-| 01 | [Heap](70.2.4.01-heap.md) | "Top K, K-way merge, median of stream, scheduling" | Essential | Important | 12 min |
+| 01 | [Heap](70.2.4.01-heap.md) | "Top K, K-way merge, median of stream, scheduling" | Essential | Important | 14 min |
 | 02 | [Monotonic Stack](70.2.4.02-monotonic-stack.md) | "Next greater/smaller element, largest rectangle in histogram, daily temperatures" | Essential | Important | 12 min |
 | 03 | [Stack & Queue Patterns](70.2.4.03-stack-queue-patterns.md) | "LRU cache, sliding window max (deque), min stack, valid parentheses" | Essential | Important | 16 min |
-| 04 | [Segment Tree](70.2.4.04-segment-tree.md) | "Range sum/min/max query with point updates" | Optional | Specialized | 16 min |
+| 04 | [Segment Tree](70.2.4.04-segment-tree.md) | "Range sum/min/max query with point updates" | Optional | Specialized | 17 min |
 | 05 | [Quick Select & Reservoir Sampling](70.2.4.05-quick-select-reservoir-sampling.md) | "K-th largest without sorting, random sample from a stream" | Essential | Important | 15 min |
 
 ---
@@ -30,8 +30,9 @@ Read the heap for changing priorities, then the monotonic stack for candidates w
 ```text
 K largest/smallest, streaming?    → Heap
 Next/previous greater element?    → Monotonic Stack
-O(1) access structure design?     → Stack/Queue Patterns
-Many range queries + updates?     → Segment Tree
+Access-order structure design?     → Stack/Queue Patterns
+Many sums + point updates?        → Fenwick Tree
+General associative ranges?       → Segment Tree
 K-th finite-array element?       → Quick Select
 Unknown length, uniform sample?   → Reservoir Sampling
 ```

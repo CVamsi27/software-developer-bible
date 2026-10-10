@@ -1,7 +1,7 @@
 # Reverse Proxy — Index
 
-> **Study time:** ≈ 29 min of reading (3 files, ~10 min average).
-> **1 file** — Nginx as the production front door: the C10K origin story, the master–worker event-loop model, config context hierarchy, upstream load balancing, TLS termination, buffering, rate limiting, caching, and zero-downtime reloads.
+> **Study time:** ≈ 28 min of reading (3 files, ~9 min average).
+> **1 file** — Nginx as the production front door: the C10K origin story, the master–worker event-loop model, config context hierarchy, upstream load balancing, TLS termination, buffering, rate limiting, caching, and graceful worker replacement.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Platform-blue)](#)
@@ -15,8 +15,8 @@ A proxy separates client-facing HTTP policy from backend request handling. Read 
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Nginx Reverse Proxy Internals](40.11.01-nginx-reverse-proxy-internals.md) | Forward vs reverse proxy, C10K, master–worker model, epoll/kqueue event loop vs Apache threads, blocking-is-poison (aio threads), main/events/http/server/location contexts, sendfile vs proxy_pass, upstream LB algorithms (round robin, least_conn, ip_hash, weights), passive/active health checks, TLS termination, gzip/brotli, proxy buffering, limit_req burst nodelay, proxy_cache, SIGHUP zero-downtime reload, nginx vs HAProxy vs Envoy vs cloud ALB | Important | Specialized | 20 min |
-| 02 | [Nginx Reverse Proxy Interview Questions](40.11.02-interview-questions.md) | Focused Q&A: event-loop failure modes, reload semantics, buffering/keepalive defaults that bite, health checks, rate limiting, the nginx-vs-alternatives decision, scenario drills (502 diagnosis, outage story, "is nginx still relevant?") | Important | Specialized | 7 min |
+| 01 | [Nginx Reverse Proxy Internals](40.11.01-nginx-reverse-proxy-internals.md) | Forward vs reverse proxy, C10K, master–worker model, readiness event loop and resource boundaries, blocking-is-poison (aio threads), main/events/http/server/location contexts, sendfile vs proxy_pass, upstream LB algorithms (round robin, least_conn, ip_hash, weights), passive/active health checks, TLS termination, gzip/brotli, proxy buffering, limit_req burst nodelay, proxy_cache, SIGHUP worker replacement, nginx vs HAProxy vs Envoy vs cloud ALB | Important | Specialized | 20 min |
+| 02 | [Nginx Reverse Proxy Interview Questions](40.11.02-interview-questions.md) | Focused Q&A: event-loop failure modes, reload semantics, buffering/keepalive defaults that bite, health checks, rate limiting, the nginx-vs-alternatives decision, scenario drills (502 diagnosis, outage story, "is nginx still relevant?") | Important | Specialized | 6 min |
 
 ---
 
@@ -43,7 +43,7 @@ A proxy separates client-facing HTTP policy from backend request handling. Read 
 
 ## Docita Anchor
 
-Where [docita](https://github.com/CVamsi27/docita) meets reverse proxies — plainly: **no self-managed nginx exists**; the proxy is consumed, not operated.
+These existing [Docita](https://github.com/CVamsi27/docita) pointers describe managed-proxy integration rather than a self-managed NGINX implementation. Inspect code and actual routing/credential policy before making a deployment claim.
 
 | Topic | Docita evidence |
 | ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |

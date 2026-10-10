@@ -229,10 +229,6 @@ Source: [Static Exports in Next.js](10.4.3.06-static-exports.md)
 6. **Q:** Where is authorization enforced when an exported shell shows private API data?
    **A:** The external API must verify the request and enforce permissions. Hiding client UI is not an access-control boundary.
 
-## Summary
-
-Revisit the linked chapter when an answer misses the mechanism, a boundary or a failure case.
-
 ## Configured cache model and freshness
 
 Source: [Learning chapter](10.4.3.03-caching.md)
@@ -249,6 +245,32 @@ Source: [Learning chapter](10.4.3.03-caching.md)
 
 **A:** updateTag is Server Actions-only immediate expiry for read-your-writes. revalidateTag(tag, max) marks entries stale for stale-while-revalidate, so readers can briefly see prior data.
 
+
+## Write and Delivery Traces
+
+Source: [Fetching](10.4.3.01-data-fetching-patterns.md), [Actions](10.4.3.02-server-actions.md), [Caching](10.4.3.03-caching.md), [Streaming](10.4.3.04-streaming.md), [ISR](10.4.3.05-incremental-static-regeneration.md), [Export](10.4.3.06-static-exports.md).
+
+**Q:** Why label retained search results while the new key loads?
+**A:** Placeholder data can belong to the previous query. It is useful continuity only when users can tell that the current input has not finished resolving.
+
+**Q:** Why does setting a desired like state behave more predictably on retry than toggling it?
+**A:** Retrying the same desired state is idempotent under the unique record constraint; a second toggle reverses the first result. Competing opposite states still need an ordering policy.
+
+**Q:** What makes a temporary optimistic todo disappear after successful submission?
+**A:** The action overlay ends. If the authorized server list has not become the new base, React returns to the old list; revalidation/base reconciliation is part of success.
+
+**Q:** Can a fast streamed title guarantee a fast largest-content paint?
+**A:** No. The largest visible region may still wait for data, assets or proxy buffering. Measure its arrival separately from shell delivery.
+
+**Q:** Why invalidate a bestseller list when a rating falls below its threshold?
+**A:** The product was present in the old selection and must be removed. Checking only the new qualifying state misses that change; use before/after data or conservative list invalidation.
+
+**Q:** Does fetching generated JSON after mount make an exported dashboard live?
+**A:** No. The JSON remains the deployed build snapshot. Live or private data requires a separate runtime and the appropriate freshness/access policy.
+
+## Summary
+
+Revisit the linked chapter when an answer misses the mechanism, a boundary or a failure case.
 
 ---
 

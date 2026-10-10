@@ -42,13 +42,41 @@ Source: [Bulkhead Pattern](20.6.4.02-bulkhead-pattern.md)
 
 **A:** A bulkhead limits resource sharing; a breaker suppresses calls to a failing dependency. Both need deadlines and bounded queues, and neither makes fallback or retry automatically safe.
 
+## Admission and lifetime failure cases
+
+Sources: [circuit breaker](20.6.4.01-circuit-breaker.md), [bulkhead](20.6.4.02-bulkhead-pattern.md).
+
+**Q:** Why must a late success from an old closed-state call not close a newly open circuit?
+
+**A:** That success belongs to an earlier admission epoch. It is not a controlled recovery probe; protect new state from stale completions.
+
+**Q:** Why does cooldown expiry require a bounded probe rather than admitting all callers?
+
+**A:** Elapsed time supplies no health evidence. Unbounded recovery traffic can immediately overload the dependency again, especially across many replicas.
+
+**Q:** Is a fake guest identity a valid fallback for an authenticated user lookup failure?
+
+**A:** No. It changes identity meaning. Reject or use authorized, explicitly valid cached data under its freshness policy.
+
+**Q:** When may a bulkhead release a permit after caller timeout?
+
+**A:** When the protected work actually stops or settles. A timeout wrapper can reject while the underlying operation continues; early release then undercounts resource occupancy.
+
+**Q:** Is a zero-length bulkhead queue necessarily wrong?
+
+**A:** No. Immediate rejection can preserve deadlines and memory. Queue only within bounded burst, waiting and cancellation contracts.
+
+**Q:** Why can separate reporting/login database pools still interfere?
+
+**A:** They reserve client connections, not database CPU, disk or locks. Test and budget the remaining shared resources.
+
 ## Summary
 
 Use these prompts after the reading pass to recall the resilience mechanisms and boundary constraints.
 
 ## See Also
 
-- [Category reading flow](INDEX.md)
+- [Category reading flow](INDEX.md) — return to prerequisites and learning stages for bounded admission and recovery probes
 
 ## References & Learn More
 

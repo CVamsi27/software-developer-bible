@@ -9,7 +9,7 @@
 
 ## Reading Flow
 
-Start with one operation and trace identity, state and failure boundaries. These cases support explanations of full-stack TypeScript SaaS work; a source path supports a specific implementation claim, while production results require separate dated evidence. All 22 cases now distinguish current behavior from proposed improvements. The inspection used the local Docita working tree on 2 October 2026, with HEAD at c4eec265a and uncommitted changes present; it is not a clean-revision or production audit. Source details can change, so recheck the cited paths before presenting an implementation claim.
+Start with one operation and trace identity, state and failure boundaries. These cases support explanations of full-stack TypeScript SaaS work; a source path supports a specific implementation claim, while production results require separate dated evidence. All 22 cases now distinguish current behavior from proposed improvements. The inspection used the local Docita working tree on 2 October 2026, with HEAD at c4eec265a and uncommitted changes present; it is not a clean-revision or production audit. A targeted 9 October recheck at local HEAD `dc5a97dc3`, also with unrelated working-tree changes present, updates the outbox acknowledgment in case 03 and its companion discussions. It does not refresh every case into a production audit. Source details can change, so recheck the cited paths before presenting an implementation claim.
 
 ### Stage 1 — Follow an Operation Through the System
 
@@ -51,7 +51,7 @@ Read [the hypothetical 25-clinic metrics scenario](23-hypothetical-clinic-metric
 
 ### Stage 6 — Connect the Current Resume to Actual Work
 
-Use [the seven-bullet resume walkthrough](24-resume-claim-walkthrough.md) to explain the product, personal contribution, implementation and evidence behind each claim. Then rehearse one changed constraint.
+Use [the five-bullet resume walkthrough](24-resume-claim-walkthrough.md) to explain the product, personal contribution, implementation and evidence behind each claim. Then rehearse one changed constraint.
 
 ### Revision, Then Interview Practice
 

@@ -6,7 +6,7 @@
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../docs/topic-importance.md)
 
-# Html Css — Revision
+# HTML/CSS — Revision
 
 Read the section's learning chapters first. Close them, explain each answer with a concrete failure or tradeoff, then use the source link to check what you missed.
 
@@ -73,6 +73,34 @@ Source: [Browser Storage](10.7.08-browser-storage.md)
 **Q:** What protection does an HttpOnly cookie provide, and what remains?
 
 **A:** JavaScript cannot directly read that cookie. XSS may still act as the user, and cookie-based requests still require an appropriate CSRF and authorization design.
+
+## Trace reload, metadata and layout conditions
+
+Source: [HTML](10.7.01-html-fundamentals.md), [CSS](10.7.02-css-fundamentals.md), [SEO](10.7.04-seo.md), [PWA](10.7.05-pwa.md), [Themes](10.7.07-theming-design-tokens.md), [Storage](10.7.08-browser-storage.md)
+
+**Q:** A labeled input lacks name. What happens on ordinary form submission?
+**A:** The label still names it for interaction/accessibility, but it supplies no named entry in FormData. Label association and submitted key have different jobs.
+
+**Q:** Why can a flex child overflow despite flex:1?
+**A:** Its automatic minimum can preserve a long content width. Inspect min-width and wrapping/overflow; min-width:0 permits shrinking but does not itself wrap content.
+
+**Q:** Does a canonical link redirect the visitor to the preferred URL?
+**A:** No. It is a search processing signal. An HTTP redirect performs navigation, and consistency with internal links/sitemaps supports canonical identity.
+
+**Q:** How do you handle app updates in a PWA?
+**A:** Installation and activation are separate. An installed update may wait while old clients remain; default waiting or an explicit accepted activation protocol must preserve asset/data compatibility. skipWaiting does not itself reload pages or guarantee safety.
+
+**Q:** When would you use cache-first vs network-first?
+**A:** Use a cache-first rule for suitable immutable/public assets, and network-first only for deliberately cacheable data with defined stale fallback. Private healthcare responses require identity, retention and device-security policy; no strategy name grants permission to store them.
+
+**Q:** Why can precached HTML still fail on offline reload?
+**A:** Its referenced scripts/styles must also be stored and served by matching fetch rules. A manifest or cached document alone does not provide the whole shell.
+
+**Q:** Why does choosing system differ from storing dark?
+**A:** System is a policy that follows later OS changes. Dark is an explicit choice; store the policy separately from the effective root appearance.
+
+**Q:** A request write succeeded but its IndexedDB transaction aborted. Is the draft saved?
+**A:** No. Report success only after transaction completion; request success is not the final commit acknowledgment.
 
 ## Summary
 

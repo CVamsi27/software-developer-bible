@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-REST%20APIs-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -58,9 +58,9 @@ Source: [API Versioning](20.3.1.03-versioning.md)
 
 **A:** It identifies the externally visible contract being selected. A URL, header or media type can carry it; compatible additions may evolve within that contract.
 
-## REST Maturity Model & API Versioning
+## REST Maturity Model
 
-Source: [REST Maturity Model & API Versioning](20.3.1.04-rest-maturity-model.md)
+Source: [REST Maturity Model](20.3.1.04-rest-maturity-model.md)
 
 **Q:** What distinguishes a level 0 HTTP API in the Richardson model?
 
@@ -90,13 +90,65 @@ Source: [OpenAPI / Swagger Documentation](20.3.1.05-openapi-swagger.md)
 
 **A:** Generated types reproduce omissions or errors in the specification. They also cannot establish that the deployed server returns compliant data or enforces the described permissions.
 
+## Trace and Boundary Checks
+
+Source: [API styles](20.3.1.01-api-design-patterns.md)
+
+**Q:** Which API could a shop use for order reads, collaborative messages and payment callbacks?
+
+**A:** A resource/GraphQL read contract, a WebSocket channel for two-way messages, and a webhook ingress can coexist. Choose interaction and recovery rules independently; one product need not select only one style.
+
+**Q:** Does one GraphQL request or a protobuf body prove lower end-to-end latency?
+
+**A:** No. Resolve/fan-out work, network calls, authorization, serialization, compression and client behavior affect cost. Measure representative operations rather than ranking transports universally.
+
+Source: [REST](20.3.1.02-rest-principles.md)
+
+**Q:** The client follows a cancellation control, but an order shipped since its read. What remains authoritative?
+
+**A:** The server's current authorization and domain/version check. A displayed control can become stale; following it does not bypass validation or guarantee a transition.
+
+**Q:** Does storing orders and idempotency records violate REST statelessness?
+
+**A:** No. Resource state can remain server-side. Statelessness concerns the interaction context required to understand the request, not the absence of persistent domain data or a requirement to use JWT.
+
+Source: [Versioning](20.3.1.03-versioning.md)
+
+**Q:** Version 2 renames name to displayName. What should a supported version 1 reader still receive?
+
+**A:** Its original documented name field from the version 1 adapter. A shared domain model can serve both, but a new shared serializer must not silently replace the old representation.
+
+**Q:** Can Deprecation:true and Sunset:2027-04-01 serve as the standardized date syntax?
+
+**A:** No. RFC 9745 uses a structured-field date such as @1790812800; Sunset uses an HTTP-date. These lifecycle hints do not themselves migrate clients or change the deprecated operation.
+
+Source: [Maturity model](20.3.1.04-rest-maturity-model.md)
+
+**Q:** Why is POST /appointments/42 with an action field a useful level 1 example?
+
+**A:** It introduces a resource target while the method still hides whether the operation reads or changes it. Using GET correctly would already demonstrate part of level 2.
+
+**Q:** Does adding an unexplained _links object prove level 3 or production readiness?
+
+**A:** No. Clients need understood control/media semantics. The ladder also says nothing by itself about authorization, durability or the other REST constraints.
+
+Source: [OpenAPI](20.3.1.05-openapi-swagger.md)
+
+**Q:** A 200 Book response omits required title. Can generated docs prove that response valid?
+
+**A:** No. Validate the actual representation against the declared schema. Generated docs can accurately display a description that the implementation violates.
+
+**Q:** In OpenAPI, how does security:[{a:[],b:[]}] differ from security:[{a:[]},{b:[]}]?
+
+**A:** The first requires both schemes; the second allows alternatives. The declaration still requires matching runtime verification and authorization.
+
 ## Summary
 
 Use these prompts after the reading pass to recall the design and contract mechanisms and boundary constraints.
 
 ## See Also
 
-- [Category reading flow](INDEX.md)
+- [Category reading flow](INDEX.md) — return to prerequisites and learning stages for resource identity and HTTP contracts
 
 ## References & Learn More
 

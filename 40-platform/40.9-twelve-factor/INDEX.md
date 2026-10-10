@@ -1,7 +1,7 @@
 # Twelve-Factor App — Index
 
-> **Study time:** ≈ 28 min of reading (3 files, ~9 min average).
-> **1 file** — The canonical cloud-native methodology. The vocabulary of modern DevOps, platform engineering, and senior backend interviews. Every Kubernetes, Heroku, Fly, Vercel, and Lambda deployment is built around these 12 factors.
+> **Study time:** ≈ 15 min of reading (3 files, ~5 min average).
+> **1 file** — The canonical cloud-native methodology. The vocabulary of modern DevOps, platform engineering, and senior backend interviews. Use the factors to diagnose the relationship between deployment inputs, durable resources and replaceable processes.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
@@ -16,11 +16,11 @@
 The 12 (+3) factors classify into 4 conceptual families — the way to *recall* them under pressure.
 
 | Category | Factors | The principle in one line |
-| ---------------------------------------- | -------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| ---------------------------------------- | -------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
 | [Build & Ship](#factor-categories) | 1 Codebase · 2 Dependencies · 5 Build/Release/Run | One repo → deterministic build → immutable release |
-| [Config & Bindings](#factor-categories) | 3 Config · 4 Backing services | Config lives in env; backing services are swappable attached resources |
+| [Config & Bindings](#factor-categories) | 3 Config · 4 Backing services | The original recommends env vars; bindings select compatible attached resources |
 | [Runtime Model](#factor-categories) | 6 Processes · 7 Port binding · 8 Concurrency · 9 Disposability | Stateless processes, self-port-binding, scale by process count, die gracefully |
-| [Operational Parity](#factor-categories) | 10 Dev/prod parity · 11 Logs · 12 Admin processes | Same environments everywhere; logs are event streams; admin = one-off processes |
+| [Operational Parity](#factor-categories) | 10 Dev/prod parity · 11 Logs · 12 Admin processes | Reduce relevant differences between environments; logs are event streams; admin = one-off processes |
 | *(15-factor extension)* | API first · Telemetry · Auth | The modern add-ons for API + observability + security concerns |
 
 ---
@@ -35,7 +35,7 @@ The 12 (+3) factors classify into 4 conceptual families — the way to *recall* 
 | 4 | **Backing services** | Treat backing services as attached resources |
 | 5 | **Build, release, run** | Strictly separate build and run stages |
 | 6 | **Processes** | Execute the app as one or more stateless processes |
-| 7 | **Port binding** | Export services via port binding (no embedded web server) |
+| 7 | **Port binding** | Export services via port binding (a self-contained server) |
 | 8 | **Concurrency** | Scale out via the process model |
 | 9 | **Disposability** | Fast startup, graceful shutdown |
 | 10 | **Dev/prod parity** | Keep dev, staging, and prod as similar as possible |
@@ -53,16 +53,16 @@ The 12 (+3) factors classify into 4 conceptual families — the way to *recall* 
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [The Twelve-Factor App](40.9.01-the-twelve-factor-app.md) | All 12 factors + the 15-factor extension, with examples, anti-patterns, and "how to comply" guidance | Important | Important | 19 min |
-| 02 | [Twelve-Factor App Interview Questions](40.9.02-interview-questions.md) | 18 senior-depth Q&A: the factors as diagnosis (violation → incident → fix), build/release/run immutability, process-type scaling, migrations as one-off releases, K8s/serverless mapping, scenario drills (slow-boot autoscaling, MemoryStore incident, "is 12-factor obsolete?") | Important | Important | 7 min |
+| 01 | [The Twelve-Factor App](40.9.01-the-twelve-factor-app.md) | All 12 factors + the 15-factor extension, with examples, anti-patterns, and "how to comply" guidance | Important | Important | 8 min |
+| 02 | [Twelve-Factor App Interview Questions](40.9.02-interview-questions.md) | Diagnostic Q&A: the factors as diagnosis (violation → incident → fix), build/release/run immutability, process-type scaling, migrations as one-off releases, K8s/serverless mapping, scenario drills (slow-boot autoscaling, MemoryStore incident, "is 12-factor obsolete?") | Important | Important | 5 min |
 
 ---
 
-## When to read
+## Reading Passes
 
-- **Always** — once, before any cloud-native interview
-- 28 min read
-- Then reference back when discussing app architecture
+1. Trace a replacement failure, then read the factor groups and worker recovery example.
+2. Close the chapter and use [section revision](REVISION.md). Explain the altered-condition questions before checking answers.
+3. Attempt the [separate interview bank](40.9.02-interview-questions.md), using evidence from your own deployments.
 
 ---
 
@@ -95,13 +95,13 @@ The full bank with model answers: → [40.9.02 Interview Questions](40.9.02-inte
 
 ## Docita Anchor
 
-Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — lives the factors.
+These existing [Docita](https://github.com/CVamsi27/docita) pointers locate related configuration and deployment code. They are investigation starting points; the paths alone do not establish production readiness or measured compliance.
 
 | Topic | Docita evidence |
-| ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------- |
+| ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | III. Config in env | `shared/modules/config/env-schema.ts` validates env; turbo `globalEnv` allowlists exactly which vars bust caches |
 | IV. Backing services as attached resources | Swapped by env: `QUEUE_BACKEND=postgres`, `CACHE_BACKEND=memory`, `STORAGE_PROVIDER=r2` (fly.toml) |
-| VI. Processes | Stateless API + separate worker app; suspend/resume via `auto_stop_machines` proves disposability |
+| VI. Processes | Stateless API + separate worker app; inspect replacement and accepted-work recovery; `auto_stop_machines` alone does not prove disposability |
 | V. Build/release/run | Turbo build → CI deploy workflow → migration gate (`db-migrations.yml`) before rollout |
 | XI. Logs | Pino structured logs to stdout; PHI redaction before emit |
 | X. Dev/prod parity | `docker-compose.yml` Postgres locally mirrors managed prod Postgres |

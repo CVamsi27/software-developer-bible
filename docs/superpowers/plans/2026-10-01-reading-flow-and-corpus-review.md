@@ -1,5 +1,7 @@
 # Reading Flow and Corpus Review Implementation Plan
 
+> **Historical design record:** requirements, example paths and checkboxes describe this dated plan, not current repository status or authorization to rerun it. Later [explanation-depth work](../plans/2026-10-08-explanation-depth.md), [AGENTS.md](../../../AGENTS.md) and [contributing.md](../../../contributing.md) govern current changes. Preserve stable chapter IDs; TL;DR and inline chapter cheat/revision sections are retired.
+
 > **For agentic workers:** Use executing-plans to implement the work and keep review evidence by path. Parallel editorial reviewers may own disjoint directory groups after the mechanical format migration.
 
 **Goal:** Review all Markdown, remove chapter TL;DR repetition, improve learning flow, separate revision practice, and commit/push verified results.

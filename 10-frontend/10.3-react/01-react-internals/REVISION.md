@@ -191,10 +191,6 @@ Source: [Lifecycle](10.3.1.05-lifecycle.md)
 7. **Q:** When should DOM measurement use a layout effect?
    **A:** Use it when the measurement changes what must be displayed before paint. Ordinary external synchronization can use a passive effect after commit.
 
-## Summary
-
-Revisit the linked chapter when an answer misses the mechanism, a boundary or a failure case.
-
 ## Editable-row identity
 
 Source: [Learning chapter](10.3.1.03-reconciliation.md)
@@ -206,6 +202,35 @@ Source: [Learning chapter](10.3.1.03-reconciliation.md)
 **Q:** Why can an index key show the right name but the wrong input draft after sorting?
 
 **A:** The positional component identity survives while its record prop changes. The draft remains attached to that position instead of the domain record.
+
+
+## Update and ownership boundaries
+
+Source: [Virtual DOM](10.3.1.01-virtual-dom.md), [Fiber](10.3.1.02-fiber.md), [Rendering](10.3.1.04-rendering.md), [Lifecycle](10.3.1.05-lifecycle.md)
+
+**Q:** A paragraph's text changes from 0 to 1. Must React replace its element node?
+
+**A:** A same-type host element at the same identity can be retained while its text changes. New description objects do not imply new DOM nodes.
+
+**Q:** A fiber has no child and no sibling. How does traversal find the next work item?
+
+**A:** Completion follows its parent link, completes that parent and seeks the parent's sibling, continuing upward if necessary. These links encode a tree, not one flat list.
+
+**Q:** Why does a memoized results view help separate urgent input from deferred filtering?
+
+**A:** It can skip the urgent parent render while its result-driving query prop remains unchanged. The transition schedules the changed query's render; one long filter still cannot be interrupted midway.
+
+**Q:** Does act() automatically finish a fetch controlled by an unresolved promise?
+
+**A:** No. The test must resolve or reject the promise and coordinate the resulting React work. act() is not a network, timer or elapsed-time guarantee.
+
+**Q:** Why can cancellation alone fail to keep the right profile visible?
+
+**A:** It may arrive too late, and the already stored old result can remain during the new prop's first commit. Guard result publication and tie the displayed data to the requested identity.
+
+## Summary
+
+Revisit the linked chapter when an answer misses the mechanism, a boundary or a failure case.
 
 
 ---

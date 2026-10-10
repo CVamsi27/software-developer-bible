@@ -1,6 +1,6 @@
 # SRE Targets
 
-> **Study time:** ≈ 24 min of reading (3 files, ~8 min average).
+> **Study time:** ≈ 18 min of reading (3 files, ~6 min average).
 > **3 files.** The SRE framework for reliability: define SLIs/SLOs with real error budgets, then alert in a way that pages humans only when it matters.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](#file-index)
@@ -11,7 +11,7 @@
 
 ## Why this category exists
 
-"99.9% availability" is meaningless until you pick an SLI (which requests count?), a window (over 30 days?), and consequences (what stops when the budget burns?). This category covers the measurement layer — SLI/SLO/SLA distinctions, multi-window burn-rate math — and the response layer: alerting principles, runbooks, and why paging on CPU is how on-call dies inside.
+"99.9% availability" is meaningless until you pick an SLI (which requests count?), a window (over 30 days?), and consequences (what stops when the budget burns?). This category covers the measurement layer — SLI/SLO/SLA distinctions, multi-window burn-rate math — and the response layer: alerting principles, runbooks, and how a page connects user impact to a clear owner and a safe response.
 
 Quick distinction:
 - **SLI** = Service Level Indicator (the metric, e.g., "99.5% of requests succeed")
@@ -25,7 +25,7 @@ Quick distinction:
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
 | 01 | [SLI / SLO / SLA](40.4.3.01-sli-slo-sla.md) | Reliability targets, error budgets, multi-window burn rates, SLO-driven alerting | Important | Important | 9 min |
-| 02 | [Alerting](40.4.3.02-alerting.md) | Alert principles, PagerDuty, Alertmanager, runbooks, symptom vs cause alerts | Important | Important | 13 min |
+| 02 | [Alerting](40.4.3.02-alerting.md) | Alert principles, PagerDuty, Alertmanager, runbooks, symptom vs cause alerts | Important | Important | 7 min |
 
 ---
 
@@ -44,16 +44,22 @@ Quick distinction:
 
 ## Docita Anchor
 
-Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — sets targets and alerts for real.
+Source-level examples from [Docita](https://github.com/CVamsi27/docita); a CI threshold or domain notification is not evidence of a measured production SLO or a working paging integration.
 
 | Topic | Docita evidence |
-| -------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| Latency SLOs as CI gates | `scripts/checks/api-latency-slos.mjs` + `check-api-latency-budget.mjs` — budgets enforced, not just graphed |
-| Web-vitals SLOs | `check:web-vitals:enforce` baseline gate (see release evidence doc P5.8) |
+| -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Latency SLOs as CI gates | `scripts/checks/api-latency-slos.mjs` + `check-api-latency-budget.mjs` — performance regression thresholds; not a production eligible-request SLI |
+| Web-vitals SLOs | `check:web-vitals:enforce` baseline regression gate; distinct from a production user population and window |
 | Alerting | `ops-alert.service.ts` wired to domain events via listener; admin alert channel under `messaging/admin-alerts` |
 | Runbooks for breaches | `docs/operations/playbooks/*` (DB exhaustion, upstream timeouts, queue backlog) |
-| Synthetic probes | `.github/workflows/synthetic-monitoring.yml` |
+| Synthetic probes | `.github/workflows/synthetic-monitoring.yml` — the source records a historical disabled status; current scheduling/delivery needs live verification |
 | Burn-rate dashboards / PagerDuty | _No direct docita implementation yet._ |
+
+## Learning Passes
+
+1. Define the eligible user event, target and measurement window in the SLI/SLO chapter. Work the request-budget example before converting a time-based target to minutes.
+2. Trace long and short windows into each independent alert policy. Then choose routing, ownership and a runbook.
+3. Work the revision questions below before the stack interview bank.
 
 ## Finish This Section
 

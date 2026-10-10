@@ -1,6 +1,6 @@
 # Architecture Stack
 
-> **Study time:** ≈ 25 h 21 m of reading (121 files, ~13 min average).
+> **Study time:** ≈ 18 h 13 m of reading (121 files, ~9 min average).
 > **System design + design patterns** — shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
 > The architecture stack is what you need for system design rounds. Do this after you've covered frontend and backend stacks (10-frontend, 20-backend).
@@ -15,8 +15,8 @@
 | Section | Files | Topics |
 | ------------------------------------------------------- | ----: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Design Patterns](30.1-design-patterns/INDEX.md) | 38 | **Foundations** (SOLID, OOP, UML) + **Creational** (Singleton, Factory, Builder, Abstract Factory, Prototype) + **Structural** (Adapter, Facade, Decorator, Proxy, Module, Composite, Bridge, Flyweight) + **Behavioral** (Strategy, Observer, Chain, State, Template Method, Iterator, Mediator, Memento, Command, Visitor, Interpreter) + **Architectural** (Repository, CQRS+DI, Event Sourcing, Saga) + 50+ interview questions. All 23 GoF patterns + modern patterns. |
-| [System Design](30.2-system-design/INDEX.md) | 52 | 14 foundational theory files (CAP, consistency, sharding, caching, queues, distributed transactions, rate limiting, consensus, failure modes, architecture patterns, capacity planning, backpressure, distributed locks) + 6 meta guides (approach framework, interview bank, probabilistic structures, outbox/CDC, resilience deep-dive, multi-region) + 31 case studies (URL shortener, WhatsApp, Uber, Netflix, payment gateway, ticket booking, etc.) |
-| [Infrastructure Patterns](30.3-infra-patterns/INDEX.md) | 16 | Health checks & graceful shutdown, resilience overview, retry patterns, idempotency keys, leader election & consensus, database scaling, data pipelines, CDN architecture, zero-downtime deployments, technical debt management — organized into 5 categories (liveness/lifecycle, failure/recovery, coordination, data-at-scale, shipping/evolution) |
+| [System Design](30.2-system-design/INDEX.md) | 52 | Theory (CAP, consistency, sharding, caching, queues, transactions, rate limiting, consensus, failures, capacity, transport, DNS and TLS) + approach/interview practice and advanced mechanisms (probabilistic structures, outbox/CDC, resilience and multi-region) + case studies (URL shortener, WhatsApp, Uber, Netflix, payment gateway, ticket booking, etc.) |
+| [Infrastructure Patterns](30.3-infra-patterns/INDEX.md) | 16 | Health checks & graceful shutdown, resilience overview, retry patterns, idempotency keys, leader election & consensus, database scaling, data pipelines, CDN architecture, zero-downtime deployments, technical debt management — learn lifecycle, failure/recovery, coordination, data-at-scale and shipping/evolution before the separate interview bank |
 
 ---
 
@@ -33,7 +33,7 @@ The Design Patterns section groups patterns using the **Gang of Four classificat
 | Architectural | [05-architectural](30.1-design-patterns/05-architectural/INDEX.md) | 4 patterns | Modern distributed systems |
 | Interview Prep | [06-interview-prep](30.1-design-patterns/06-interview-prep/INDEX.md) | 1 file | 50+ curated Q&A |
 
- **Start here: [Design Patterns Index](30.1-design-patterns/INDEX.md)** — full pattern map and decision cheat sheet.
+ **Start here: [Design Patterns Index](30.1-design-patterns/INDEX.md)** — full pattern map and category learning paths.
 
 ---
 
@@ -49,7 +49,9 @@ The Design Patterns section groups patterns using the **Gang of Four classificat
 
 3. **System Design case studies** (URL shortener, Uber, Netflix) — applied examples.
 
-4. **Infrastructure patterns** — production-grade scaling, resilience, deployment.
+4. **Infrastructure patterns** — operational contracts for scaling, resilience, release and recovery.
+
+Use the category REVISION companions after their learning chapters, then the separate interview drills. For case studies, state assumptions, trace one request/change through its authorities and test a failure condition; remembering a diagram alone is insufficient.
 
 ---
 

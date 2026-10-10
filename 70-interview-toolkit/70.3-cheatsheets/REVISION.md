@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Cheat%20Sheets-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../docs/topic-importance.md)
 
@@ -95,6 +95,64 @@ Source: [SQL & Data Modeling Cheat Sheet](70.3.07-sql-data-modeling-cheat-sheet.
 
 **A:** It emits a row for each matching pair and preserves multiplicity. A left row matching two right rows contributes two result rows; select an aggregate, distinct operation, or existence test only when that matches the intended semantics.
 
+
+## Trace the Missing Boundary
+
+### JavaScript
+
+Source: [JavaScript](70.3.01-javascript-cheat-sheet.md)
+
+**Q:** Does this reference emitter wait for an async listener?
+
+**A:** No. It calls listeners synchronously, propagates a synchronous throw and ignores returned promises. A rejected async result needs a separate observed policy; this helper supplies neither durable delivery nor awaited completion.
+
+### TypeScript
+
+Source: [TypeScript](70.3.02-typescript-cheat-sheet.md)
+
+**Q:** What fact does the user type predicate establish beyond an assertion?
+
+**A:** It executes checks that id and name are strings on a non-null object. An as assertion changes only the checker view. Neither establishes authorization or every domain invariant.
+
+### React and Next.js
+
+Source: [React and Next.js](70.3.03-react-nextjs-cheat-sheet.md)
+
+**Q:** Why can an optimistic todo disappear after a successful server action?
+
+**A:** The temporary optimistic projection settles back to the authoritative props. If the parent never refreshes those props after persistence, the new item is absent there. Persist and refresh the baseline, rather than treating a temporary render as the source of truth.
+
+### Backend
+
+Source: [Backend](70.3.04-backend-cheat-sheet.md)
+
+**Q:** What does locking both accounts leave outside the transfer example?
+
+**A:** It protects the local balance operation under the stated currency and numeric rules. Caller ownership, durable request idempotency and audit records still need implementation; a local transaction cannot atomically include a remote payment provider.
+
+### System Design
+
+Source: [System Design](70.3.05-system-design-cheat-sheet.md)
+
+**Q:** What is the missing guarantee when a Redis lease expires while its old owner is paused?
+
+**A:** A token-checked release prevents deleting a newer lease but does not stop the old owner from resuming its work. A protected resource must enforce a fencing or version condition if stale work would violate the invariant.
+
+### Platform
+
+Source: [Platform](70.3.06-docker-kubernetes-cicd-cheat-sheet.md)
+
+**Q:** Can the probe fragment be applied as a standalone Kubernetes resource?
+
+**A:** No. It belongs under a container in a Pod template and lacks its own kind and metadata. The deployment strategy fragment has a different location; syntax alone does not verify the workload and metrics dependencies.
+
+### SQL and Modeling
+
+Source: [SQL and Modeling](70.3.07-sql-data-modeling-cheat-sheet.md)
+
+**Q:** Does a filtered view prevent every caller from reading soft-deleted rows?
+
+**A:** Only callers restricted to that interface receive its filtering contract. Direct base-table access can bypass it. Enforce privileges and appropriate row policies, and consider owner/bypass-role behavior and restore uniqueness conflicts.
 
 ## Summary
 

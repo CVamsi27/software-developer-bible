@@ -67,7 +67,7 @@ For an imminent interview, start with its brief and a gap diagnosis below. For a
 | [Map Project Problems to Engineering Topics](80.22-docita-tech-topic-mapping.md) | Connect a project problem to its canonical lesson | Important | Important |
 | [Docita Interview Defense — Explain One Decision Under Follow-up](80.36-docita-complete-interview-defense.md) | Defend one decision under follow-up | Important | Important |
 
-## 5. Adapt to the product and run a mock
+## 5. Adapt to the product
 
 **Result:** a product-specific explanation and a mock with concrete feedback. Company research is dated context, not a promise about its current hiring loop.
 
@@ -76,8 +76,6 @@ For an imminent interview, start with its brief and a gap diagnosis below. For a
 | [Company Product Preparation Sheets](80.32-company-prep-sheets.md) | Prepare product-specific talking points | Important | Important |
 | [Healthtech and Geospatial Domain Primer](80.34-germany-target-domain-primer.md) | Learn healthtech and geospatial domain boundaries | Important | Specialized |
 | [Langfuse Product Engineering Preparation](80.19-langfuse-interview-prep.md) | Understand the Langfuse product and trace workflow | Important | Important |
-| [Mock Interview Bank — Twenty Practice Prompts](80.11-mock-interview-bank.md) | Choose prompts from the mock interview bank | Important | Important |
-| [Run and Review a Mock Interview](80.30-mock-interview-script.md) | Facilitate a mock and repair observed gaps | Important | Important |
 | [Quick Reference — Find the Decision You Need](80.09-quick-reference-cards.md) | Find the next guide quickly | Important | Important |
 
 ## 6. Compare the actual offer
@@ -88,9 +86,16 @@ For an imminent interview, start with its brief and a gap diagnosis below. For a
 | -------------------------------------------------------------------------- | --------------------------------------------------- | ------------- | ------------------ |
 | [Discuss and Negotiate an Actual Offer](80.31-salary-negotiation-guide.md) | Negotiate supported priorities and record agreement | Important | Specialized |
 
-## Finish the category with revision
+## Recall the learning before interview practice
 
-After the learning stages, use [category revision](REVISION.md) to test the decisions and boundaries without reopening the guides. The mock bank supplies interview prompts; it does not replace reviewing an uncertain mechanism in its canonical chapter.
+After the learning stages, use [category revision](REVISION.md) to test the decisions and boundaries without reopening the guides. Then run a mock using the guides below. Return to a canonical chapter when a follow-up exposes an uncertain mechanism.
+
+## 7. Rehearse the confirmed interview
+
+| Read | Purpose | Role priority | General importance |
+| ----------------------------------------------------------------------------- | ------------------------------------------- | ------------- | ------------------ |
+| [Mock Interview Bank — Twenty Practice Prompts](80.11-mock-interview-bank.md) | Choose prompts from the mock interview bank | Important | Important |
+| [Run and Review a Mock Interview](80.30-mock-interview-script.md) | Facilitate a mock and repair observed gaps | Important | Important |
 
 ## Go deeper only where the diagnosis points
 

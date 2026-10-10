@@ -74,13 +74,55 @@ Source: [API Authentication](20.3.4.04-authentication.md)
 
 **A:** A stolen bearer credential can be replayed regardless of its format. Protect transport and logs, and choose browser storage with explicit XSS and CSRF boundaries.
 
+## Trace and Failure Checks
+
+Source: [Rate limiting](20.3.4.01-rate-limiting.md)
+
+**Q:** A depleted bucket is checked at0.4seconds and again at1.0second. Why preserve fractional refill?
+
+**A:** The first check earns0.4tokens even if it cannot admit a cost1request. Discarding that time while advancing lastRefill can prevent a busy key from ever refilling; keep the fraction with the updated clock.
+
+**Q:** Does a Redis pipeline or an always-fail-open policy enforce every shared quota correctly?
+
+**A:** No. Combined read/refill/compare/consume needs an atomic decision, while pipelines only batch commands. Store-outage policy depends on the operation: hard quota, availability and degraded local protection have different risks.
+
+Source: [Gateway forwarding](20.3.4.02-api-gateway.md)
+
+**Q:** In the read-gateway fixture, what happens to /api/products/42?view=compact and a supplied X-User-Id?
+
+**A:** The fixed target receives /products/42?view=compact. The fixture does not forward the asserted identity, and it generates its own request ID. A real protected gateway needs authenticated context and downstream resource authorization.
+
+**Q:** An upstream starts a body then fails. Can the gateway write a new JSON502response?
+
+**A:** No, response headers/body already started. Terminate the failed stream under the proxy contract. Before headers start, connection failure and deadline failure can map to documented502/504outcomes.
+
+Source: [BFF composition](20.3.4.03-bff.md)
+
+**Q:** Required profile data succeeds but optional activity fails. Why not return an empty activity list?
+
+**A:** Empty means no activity, while unavailable means the dependency failed. Return an explicit partial state when permitted; fail the operation when required data or the total deadline contract fails.
+
+**Q:** Does a partner requesting only displayName prove it may see that user?
+
+**A:** No. Field selection shapes output; verified principal, tenant and resource policy authorize it. Enforce access at the data-owning boundary and scope private caches appropriately.
+
+Source: [API authentication](20.3.4.04-authentication.md)
+
+**Q:** A tenant-a principal has invoice:read:any. Can it read tenant-b's invoice in the example?
+
+**A:** No. That permission is tenant-scoped; the tenant condition still rejects it. A global administrator needs a separate explicit policy.
+
+**Q:** Two refresh calls read one unused token, then independently mark and replace it. What is missing?
+
+**A:** Atomic consumption and successor creation under the session/family contract. Single-flight clients help legitimate concurrency but do not close server races or lost-response recovery; logout also needs an explicit access-token revocation window.
+
 ## Summary
 
 Use these prompts after the reading pass to recall the edge and scale mechanisms and boundary constraints.
 
 ## See Also
 
-- [Category reading flow](INDEX.md)
+- [Category reading flow](INDEX.md) — return to prerequisites and learning stages for proxy authority and demand budgets
 
 ## References & Learn More
 

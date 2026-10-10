@@ -1,6 +1,6 @@
 # Message Brokers — Index
 
-> **Study time:** ≈ 29 min of reading (5 files, ~6 min average).
+> **Study time:** ≈ 34 min of reading (5 files, ~7 min average).
 > The transport layer of event-driven systems: Kafka's log model and RabbitMQ's queue model, delivery semantics, durability configuration, consumer-group operations, and the patterns (envelopes, DLQs, outbox, idempotency) that make async pipelines production-safe. Pairs with [Microservices](../20.6-microservices/INDEX.md) (the architecture that uses brokers) and [Queues & Async](../../30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md) (the theory).
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../../INDEX.md)
@@ -29,9 +29,10 @@ The 4 content files classify into 3 conceptual categories + drills.
 | 1 | [Message Brokers](20.9.01-message-brokers.md) | Why decoupling in time is worth a cluster; Kafka vs RabbitMQ models; at-least-once + idempotency as the default contract; when *not* to add a broker | Important | Specialized |
 | 2 | [Kafka Internals & Operations](20.9.02-kafka-internals-and-operations.md) | `acks=all` and the ISR acceptance floor; consumer groups and rebalance storms; lag as the SLI; compaction and replay-as-restart | Important | Specialized |
 | 3 | [Event-Driven Patterns on a Broker](20.9.03-event-driven-patterns.md) | Envelopes and schema contracts that survive version skew; retry→DLQ policy; outbox for atomic write+publication intent; consumer idempotency patterns | Important | Specialized |
+| — | [Revision](REVISION.md) | Explain the crash, offset reset, key remapping, and missing-blob cases before drilling | Important | Specialized |
 | 4 | [Interview Questions](20.9.04-interview-questions.md) | 25 Q&A with follow-up traps | Important | Specialized |
 
-## The Decision Map (memorize)
+## Choose the Required Contract
 
 ```text
 Need a reply now?            → HTTP, no broker
@@ -57,7 +58,7 @@ After the three chapters, use [Revision](REVISION.md) to explain acknowledgment,
 
 ## Docita Anchor
 
-Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+The [Docita study material](../../projects/docita/03-async-processing.md) describes a PostgreSQL worker design. The following implementation details are study pointers; confirm the current checkout and call sites before presenting them as deployed behavior:
 
 | Topic | Docita evidence | Role priority | General importance |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------- | ------------------ |
@@ -69,7 +70,7 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Stale-worker recovery | ACTIVE jobs older than ten minutes are recovered with a delay; an older worker can still finish later, so ownership fencing and effect idempotency remain separate concerns | Varies | Varies |
 | Outbox relay | `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.ts` + `outbox.service.ts` - `OutboxEvent` rows polled and republished after commit | Varies | Varies |
 
-Docita ships **zero Kafka/RabbitMQ - deliberately.** The broker chapters' real-world anchor here is the decision matrix that kept them out, plus the patterns implemented broker-free (idempotency, retry→DLQ, claiming, outbox). A broker migration requires explicit changes to acknowledgments, ownership, delivery/replay and consumer contracts; replacing a publish target alone is not enough.
+The referenced Docita design uses PostgreSQL workers rather than Kafka/RabbitMQ; this is an architectural study example, not current deployment evidence. The broker chapters' real-world anchor here is the decision matrix that kept them out, plus the patterns implemented broker-free (idempotency, retry→DLQ, claiming, outbox). A broker migration requires explicit changes to acknowledgments, ownership, delivery/replay and consumer contracts; replacing a publish target alone is not enough.
 
 ## Navigation
 

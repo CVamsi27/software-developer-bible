@@ -397,6 +397,32 @@ Complete the learning stages in [the index](INDEX.md), then answer from memory. 
 
 **A:** State its environment, input, measurement and scope; do not infer production latency, churn or savings without separate evidence.
 
+## [Mock Interview Question Bank](81.09-mock-interview-question-bank.md)
+
+**Q:** What is the useful purpose of repeating the serialization and LRU tasks in this bank?
+
+**A:** Change their contracts: reject malformed serialized data or preserve cache invariants under concurrency. Repeating the same memorized answer does not test those conditions.
+
+**Q:** Why does a short-code hash need a storage uniqueness rule?
+
+**A:** Different inputs can collide, and concurrent creators can choose the same code. An atomic constraint and explicit conflict policy determine which mapping becomes valid.
+
+**Q:** A chat server stores a message and crashes before acknowledging it. What must a retry preserve?
+
+**A:** A stable message identity and a deduplication contract at the durable and display boundaries. Acknowledgment loss must not create another business message.
+
+**Q:** Why does selecting a nearby driver not reserve that driver?
+
+**A:** Selection reads a candidate state; another worker can select the same driver. An atomic ownership transition must choose a single assignment.
+
+**Q:** A payment times out after the provider accepts it. Why is blindly issuing a new charge unsafe?
+
+**A:** The first effect may exist even though its reply was lost. Reuse the provider's operation identity where supported and look up or reconcile the outcome before treating it as a new charge.
+
+**Q:** What should replace the invented metrics in a sample behavioral answer?
+
+**A:** The candidate's actual actions and supported observations, with the measurement context or explicit limits. A truthful qualitative result is preferable to a copied percentage.
+
 ## Summary
 
 A useful answer identifies the shared resource, enforcing mechanism and failure boundary. Revisit its source when those are unclear.

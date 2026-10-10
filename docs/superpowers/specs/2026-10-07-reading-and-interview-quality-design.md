@@ -1,5 +1,7 @@
 # Reading and Interview Quality Design
 
+> **Historical design record:** requirements, example paths and checkboxes describe this dated plan, not current repository status or authorization to rerun it. Later [explanation-depth work](../plans/2026-10-08-explanation-depth.md), [AGENTS.md](../../../AGENTS.md) and [contributing.md](../../../contributing.md) govern current changes. Preserve stable chapter IDs; TL;DR and inline chapter cheat/revision sections are retired.
+
 The reader currently caps paragraphs twice: at 860px in the theme include and at 76 characters in the reading stylesheet. At desktop widths this leaves unused article space. Use one article width, with responsive gutters; paragraphs, lists and callouts fill that area. Keep wide tables and code independently scrollable.
 
 Preserve each existing practical definition. Add a concise, original textbook-style definition that states the formal mechanism and its boundary. These are explanatory paraphrases, not quotations from an unnamed textbook. Do not add definitions to navigation pages, revision drills or dated application records merely to satisfy a template.

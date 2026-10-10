@@ -1,7 +1,7 @@
 # Interview Prep — Next.js
 
-> **Study time:** ≈ 45 min of reading (1 files, ~45 min average).
-> **1 file.** The self-test bank: 60 curated Next.js questions covering App Router, RSC, Server Actions, caching, and deployment.
+> **Study time:** ≈ 37 min of reading (1 files, ~37 min average).
+> **1 file.** The self-test bank: 40 Next.js questions covering App Router, RSC, Server Actions, caching, and deployment.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](#files)
 [![Category](https://img.shields.io/badge/category-Interview_Prep-orange)](../INDEX.md)
@@ -13,13 +13,19 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Interview Questions](10.4.5.01-interview-questions.md) | 60+ curated questions with answers | Important | Specialized | 45 min |
+| 01 | [Interview Questions](10.4.5.01-interview-questions.md) | 40 questions with answers | Important | Specialized | 37 min |
 
 ---
 
 _No direct docita implementation yet._ (The question bank is Next.js-specific; docita ships no Next.js app to anchor against.)
 
 ---
+
+## Practice order
+
+1. Complete each learning category and its revision companion.
+2. Answer the rendering and routing questions before data/cache and production decisions.
+3. For senior scenarios, state workload, privacy/freshness requirements, failure behavior and the evidence that would validate the design. Revisit the source chapter when a code fragment relies on an unexplained adapter.
 
 ## Navigation
 

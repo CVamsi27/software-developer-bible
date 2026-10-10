@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "7d79b64bf187239d9a94fc5ef7dabebf646696d20a15fa631a2370b022e55217",
+ "corpus_digest": "19cabb9feea8c843e4e55f4bada1c401385dc92ec5d0638f284f71bec59294a6",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 8046
+  "read_minutes": 6305
  },
  "chapters": [
   {
@@ -712,7 +712,7 @@
    "g": [
     "concept"
    ],
-   "m": 15
+   "m": 14
   },
   {
    "p": "10-frontend/10.3-react/01-react-internals/10.3.1.02-fiber.html",
@@ -722,7 +722,7 @@
    "g": [
     "concept"
    ],
-   "m": 23
+   "m": 21
   },
   {
    "p": "10-frontend/10.3-react/01-react-internals/10.3.1.03-reconciliation.html",
@@ -803,7 +803,7 @@
    "g": [
     "concept"
    ],
-   "m": 25
+   "m": 26
   },
   {
    "p": "10-frontend/10.3-react/02-core-hooks/10.3.2.05-context-api.html",
@@ -813,7 +813,7 @@
    "g": [
     "concept"
    ],
-   "m": 30
+   "m": 31
   },
   {
    "p": "10-frontend/10.3-react/02-core-hooks/REVISION.html",
@@ -834,7 +834,7 @@
    "g": [
     "concept"
    ],
-   "m": 19
+   "m": 16
   },
   {
    "p": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.html",
@@ -854,7 +854,7 @@
    "g": [
     "concept"
    ],
-   "m": 37
+   "m": 38
   },
   {
    "p": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.html",
@@ -895,7 +895,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "10-frontend/10.3-react/04-modern-react/10.3.4.01-modern-hooks-react18-19.html",
@@ -905,7 +905,7 @@
    "g": [
     "concept"
    ],
-   "m": 15
+   "m": 17
   },
   {
    "p": "10-frontend/10.3-react/04-modern-react/10.3.4.02-web-components.html",
@@ -915,7 +915,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "10-frontend/10.3-react/04-modern-react/10.3.4.03-react-router.html",
@@ -925,7 +925,7 @@
    "g": [
     "concept"
    ],
-   "m": 17
+   "m": 18
   },
   {
    "p": "10-frontend/10.3-react/04-modern-react/REVISION.html",
@@ -936,7 +936,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 3
+   "m": 4
   },
   {
    "p": "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.01-portals.html",
@@ -946,7 +946,7 @@
    "g": [
     "concept"
    ],
-   "m": 24
+   "m": 25
   },
   {
    "p": "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.02-compound-components.html",
@@ -956,7 +956,7 @@
    "g": [
     "concept"
    ],
-   "m": 26
+   "m": 27
   },
   {
    "p": "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.03-interview-questions.html",
@@ -987,7 +987,7 @@
    "g": [
     "concept"
    ],
-   "m": 23
+   "m": 22
   },
   {
    "p": "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.html",
@@ -997,7 +997,7 @@
    "g": [
     "concept"
    ],
-   "m": 22
+   "m": 21
   },
   {
    "p": "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.03-server-components.html",
@@ -1007,7 +1007,7 @@
    "g": [
     "concept"
    ],
-   "m": 20
+   "m": 19
   },
   {
    "p": "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.04-client-components.html",
@@ -1017,7 +1017,7 @@
    "g": [
     "concept"
    ],
-   "m": 30
+   "m": 26
   },
   {
    "p": "10-frontend/10.4-next.js/01-rendering-fundamentals/REVISION.html",
@@ -1038,7 +1038,7 @@
    "g": [
     "concept"
    ],
-   "m": 21
+   "m": 20
   },
   {
    "p": "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.02-route-handlers.html",
@@ -1048,7 +1048,7 @@
    "g": [
     "concept"
    ],
-   "m": 24
+   "m": 22
   },
   {
    "p": "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.03-metadata.html",
@@ -1058,7 +1058,7 @@
    "g": [
     "concept"
    ],
-   "m": 24
+   "m": 23
   },
   {
    "p": "10-frontend/10.4-next.js/02-routing-and-middleware/REVISION.html",
@@ -1069,7 +1069,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 2
+   "m": 3
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.01-data-fetching-patterns.html",
@@ -1089,7 +1089,7 @@
    "g": [
     "concept"
    ],
-   "m": 28
+   "m": 26
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.03-caching.html",
@@ -1109,7 +1109,7 @@
    "g": [
     "concept"
    ],
-   "m": 23
+   "m": 20
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.05-incremental-static-regeneration.html",
@@ -1119,7 +1119,7 @@
    "g": [
     "concept"
    ],
-   "m": 23
+   "m": 21
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.06-static-exports.html",
@@ -1150,7 +1150,7 @@
    "g": [
     "concept"
    ],
-   "m": 31
+   "m": 32
   },
   {
    "p": "10-frontend/10.4-next.js/04-production/10.4.4.02-image-optimization.html",
@@ -1160,7 +1160,7 @@
    "g": [
     "concept"
    ],
-   "m": 23
+   "m": 22
   },
   {
    "p": "10-frontend/10.4-next.js/04-production/10.4.4.03-deploying-nextjs.html",
@@ -1170,7 +1170,7 @@
    "g": [
     "concept"
    ],
-   "m": 15
+   "m": 16
   },
   {
    "p": "10-frontend/10.4-next.js/04-production/REVISION.html",
@@ -1181,7 +1181,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 2
+   "m": 3
   },
   {
    "p": "10-frontend/10.4-next.js/05-interview-prep/10.4.5.01-interview-questions.html",
@@ -1191,7 +1191,7 @@
    "g": [
     "concept"
    ],
-   "m": 45
+   "m": 37
   },
   {
    "p": "10-frontend/10.5-form-handling/10.5.01-react-hook-form.html",
@@ -1224,7 +1224,7 @@
     "concept",
     "reference"
    ],
-   "m": 13
+   "m": 8
   },
   {
    "p": "10-frontend/10.5-form-handling/10.5.04-tanstack-form.html",
@@ -1236,7 +1236,7 @@
     "reference",
     "tool"
    ],
-   "m": 11
+   "m": 10
   },
   {
    "p": "10-frontend/10.5-form-handling/10.5.05-server-actions-and-form-patterns.html",
@@ -1429,7 +1429,7 @@
    "g": [
     "concept"
    ],
-   "m": 19
+   "m": 17
   },
   {
    "p": "10-frontend/10.7-html-css/10.7.06-css-architecture-styling-approaches.html",
@@ -1479,7 +1479,7 @@
   },
   {
    "p": "10-frontend/10.7-html-css/REVISION.html",
-   "t": "Html Css — Revision",
+   "t": "HTML/CSS — Revision",
    "s": "HTML/CSS",
    "c": "Reference",
    "g": [
@@ -1507,7 +1507,7 @@
     "concept",
     "guide"
    ],
-   "m": 11
+   "m": 13
   },
   {
    "p": "10-frontend/10.8-mobile/10.8.03-testing-react-native-apps.html",
@@ -1518,7 +1518,7 @@
     "concept",
     "guide"
    ],
-   "m": 12
+   "m": 11
   },
   {
    "p": "10-frontend/10.8-mobile/10.8.04-expo-eas-builds.html",
@@ -1551,7 +1551,7 @@
     "concept",
     "guide"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "10-frontend/10.8-mobile/10.8.07-interview-questions.html",
@@ -1753,7 +1753,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "20-backend/20.12-ai-engineering/20.12.02-prompts-context-evals.html",
@@ -1763,7 +1763,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 10
   },
   {
    "p": "20-backend/20.12-ai-engineering/20.12.03-retrieval-quality-hybrid-search-reranking.html",
@@ -1773,7 +1773,7 @@
    "g": [
     "concept"
    ],
-   "m": 13
+   "m": 14
   },
   {
    "p": "20-backend/20.12-ai-engineering/20.12.04-agent-orchestration-patterns.html",
@@ -1783,7 +1783,7 @@
    "g": [
     "concept"
    ],
-   "m": 24
+   "m": 22
   },
   {
    "p": "20-backend/20.12-ai-engineering/20.12.05-serving-models-hosted-vs-self-hosted.html",
@@ -1793,7 +1793,7 @@
    "g": [
     "concept"
    ],
-   "m": 17
+   "m": 18
   },
   {
    "p": "20-backend/20.12-ai-engineering/20.12.06-safety-cost-governance.html",
@@ -1803,7 +1803,7 @@
    "g": [
     "production"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "20-backend/20.12-ai-engineering/20.12.07-interview-questions.html",
@@ -1833,7 +1833,7 @@
    "g": [
     "concept"
    ],
-   "m": 34
+   "m": 36
   },
   {
    "p": "20-backend/20.13-java/20.13.02-java-oop-solid.html",
@@ -1843,7 +1843,7 @@
    "g": [
     "concept"
    ],
-   "m": 14
+   "m": 15
   },
   {
    "p": "20-backend/20.13-java/20.13.03-java-concurrency-multithreading.html",
@@ -1853,7 +1853,7 @@
    "g": [
     "concept"
    ],
-   "m": 17
+   "m": 19
   },
   {
    "p": "20-backend/20.13-java/20.13.04-java-testing-junit-mockito.html",
@@ -1863,7 +1863,7 @@
    "g": [
     "concept"
    ],
-   "m": 15
+   "m": 16
   },
   {
    "p": "20-backend/20.13-java/20.13.05-spring-boot.html",
@@ -1873,7 +1873,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "20-backend/20.13-java/20.13.06-interview-questions.html",
@@ -2027,7 +2027,7 @@
    "g": [
     "concept"
    ],
-   "m": 19
+   "m": 8
   },
   {
    "p": "20-backend/20.2-nestjs/03-patterns/20.2.3.02-microservices.html",
@@ -2037,7 +2037,7 @@
    "g": [
     "concept"
    ],
-   "m": 22
+   "m": 8
   },
   {
    "p": "20-backend/20.2-nestjs/03-patterns/REVISION.html",
@@ -2067,7 +2067,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 13
   },
   {
    "p": "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.03-lifecycle-hooks-graceful-shutdown.html",
@@ -2097,7 +2097,7 @@
    "g": [
     "concept"
    ],
-   "m": 15
+   "m": 14
   },
   {
    "p": "20-backend/20.2-nestjs/04-quality-and-operations/REVISION.html",
@@ -2117,7 +2117,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "20-backend/20.2-nestjs/05-advanced-and-interview/20.2.5.02-interview-questions.html",
@@ -2127,7 +2127,7 @@
    "g": [
     "interview-questions"
    ],
-   "m": 38
+   "m": 8
   },
   {
    "p": "20-backend/20.2-nestjs/05-advanced-and-interview/REVISION.html",
@@ -2149,7 +2149,7 @@
     "concept",
     "theory"
    ],
-   "m": 15
+   "m": 7
   },
   {
    "p": "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.02-rest-principles.html",
@@ -2159,7 +2159,7 @@
    "g": [
     "concept"
    ],
-   "m": 18
+   "m": 6
   },
   {
    "p": "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.03-versioning.html",
@@ -2169,7 +2169,7 @@
    "g": [
     "concept"
    ],
-   "m": 26
+   "m": 6
   },
   {
    "p": "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.04-rest-maturity-model.html",
@@ -2179,7 +2179,7 @@
    "g": [
     "concept"
    ],
-   "m": 5
+   "m": 4
   },
   {
    "p": "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.05-openapi-swagger.html",
@@ -2189,7 +2189,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 7
   },
   {
    "p": "20-backend/20.3-rest-apis/01-design-and-contract/REVISION.html",
@@ -2199,7 +2199,7 @@
    "g": [
     "revision"
    ],
-   "m": 2
+   "m": 3
   },
   {
    "p": "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.01-http-methods.html",
@@ -2219,7 +2219,7 @@
    "g": [
     "concept"
    ],
-   "m": 30
+   "m": 7
   },
   {
    "p": "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.03-cors.html",
@@ -2229,7 +2229,7 @@
    "g": [
     "concept"
    ],
-   "m": 20
+   "m": 6
   },
   {
    "p": "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.04-http-caching.html",
@@ -2239,7 +2239,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 8
   },
   {
    "p": "20-backend/20.3-rest-apis/02-http-mechanics/REVISION.html",
@@ -2269,7 +2269,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 7
   },
   {
    "p": "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.03-long-running-api-operations.html",
@@ -2279,7 +2279,7 @@
    "g": [
     "concept"
    ],
-   "m": 14
+   "m": 7
   },
   {
    "p": "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.04-file-upload-apis.html",
@@ -2289,7 +2289,7 @@
    "g": [
     "concept"
    ],
-   "m": 15
+   "m": 7
   },
   {
    "p": "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.05-webhooks.html",
@@ -2302,7 +2302,7 @@
     "integration",
     "webhooks"
    ],
-   "m": 23
+   "m": 10
   },
   {
    "p": "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.06-serialization-and-wire-formats.html",
@@ -2316,7 +2316,7 @@
     "protobuf",
     "serialization"
    ],
-   "m": 11
+   "m": 7
   },
   {
    "p": "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.07-transactional-email-and-notifications.html",
@@ -2330,7 +2330,7 @@
     "email",
     "notifications"
    ],
-   "m": 13
+   "m": 7
   },
   {
    "p": "20-backend/20.3-rest-apis/03-payloads-errors-integration/REVISION.html",
@@ -2340,7 +2340,7 @@
    "g": [
     "revision"
    ],
-   "m": 3
+   "m": 4
   },
   {
    "p": "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.01-rate-limiting.html",
@@ -2350,7 +2350,7 @@
    "g": [
     "concept"
    ],
-   "m": 30
+   "m": 8
   },
   {
    "p": "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.02-api-gateway.html",
@@ -2360,7 +2360,7 @@
    "g": [
     "concept"
    ],
-   "m": 29
+   "m": 8
   },
   {
    "p": "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.03-bff.html",
@@ -2373,7 +2373,7 @@
     "concept",
     "pattern"
    ],
-   "m": 18
+   "m": 8
   },
   {
    "p": "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.04-authentication.html",
@@ -2383,7 +2383,7 @@
    "g": [
     "concept"
    ],
-   "m": 32
+   "m": 7
   },
   {
    "p": "20-backend/20.3-rest-apis/04-edge-and-scale/REVISION.html",
@@ -2403,7 +2403,7 @@
    "g": [
     "interview-questions"
    ],
-   "m": 26
+   "m": 8
   },
   {
    "p": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-postgresql.html",
@@ -2732,7 +2732,7 @@
    "g": [
     "concept"
    ],
-   "m": 13
+   "m": 14
   },
   {
    "p": "20-backend/20.5-security/01-auth/20.5.1.04-sessions-cookies.html",
@@ -2742,7 +2742,7 @@
    "g": [
     "concept"
    ],
-   "m": 16
+   "m": 10
   },
   {
    "p": "20-backend/20.5-security/01-auth/20.5.1.05-jwt.html",
@@ -2752,7 +2752,7 @@
    "g": [
     "concept"
    ],
-   "m": 13
+   "m": 11
   },
   {
    "p": "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.html",
@@ -2762,7 +2762,7 @@
    "g": [
     "concept"
    ],
-   "m": 19
+   "m": 13
   },
   {
    "p": "20-backend/20.5-security/01-auth/20.5.1.07-sso-saml-federation.html",
@@ -2782,7 +2782,7 @@
    "g": [
     "concept"
    ],
-   "m": 18
+   "m": 14
   },
   {
    "p": "20-backend/20.5-security/01-auth/20.5.1.09-rbac-abac.html",
@@ -2792,7 +2792,7 @@
    "g": [
     "concept"
    ],
-   "m": 20
+   "m": 12
   },
   {
    "p": "20-backend/20.5-security/01-auth/20.5.1.10-abac-access-control.html",
@@ -2805,7 +2805,7 @@
     "concept",
     "policies"
    ],
-   "m": 14
+   "m": 9
   },
   {
    "p": "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.html",
@@ -2813,9 +2813,9 @@
    "s": "Security/Auth",
    "c": "Interview",
    "g": [
-    "interview-questio"
+    "interview-questions"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "20-backend/20.5-security/01-auth/REVISION.html",
@@ -2825,7 +2825,7 @@
    "g": [
     "revision"
    ],
-   "m": 3
+   "m": 4
   },
   {
    "p": "20-backend/20.5-security/02-attacks-and-defense/20.5.2.01-xss.html",
@@ -2835,7 +2835,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 8
   },
   {
    "p": "20-backend/20.5-security/02-attacks-and-defense/20.5.2.02-csrf.html",
@@ -2845,7 +2845,7 @@
    "g": [
     "concept"
    ],
-   "m": 14
+   "m": 8
   },
   {
    "p": "20-backend/20.5-security/02-attacks-and-defense/20.5.2.03-sql-injection.html",
@@ -2855,7 +2855,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 7
   },
   {
    "p": "20-backend/20.5-security/02-attacks-and-defense/20.5.2.04-api-security-best-practices.html",
@@ -2865,7 +2865,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 10
   },
   {
    "p": "20-backend/20.5-security/02-attacks-and-defense/REVISION.html",
@@ -2885,7 +2885,7 @@
    "g": [
     "concept"
    ],
-   "m": 15
+   "m": 8
   },
   {
    "p": "20-backend/20.5-security/03-hardening-and-operations/20.5.3.02-web-security.html",
@@ -2895,7 +2895,7 @@
    "g": [
     "concept"
    ],
-   "m": 20
+   "m": 8
   },
   {
    "p": "20-backend/20.5-security/03-hardening-and-operations/20.5.3.03-threat-modeling-stride.html",
@@ -2905,7 +2905,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 5
   },
   {
    "p": "20-backend/20.5-security/03-hardening-and-operations/20.5.3.04-secrets-management.html",
@@ -2915,7 +2915,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 7
   },
   {
    "p": "20-backend/20.5-security/03-hardening-and-operations/20.5.3.05-vulnerability-management-patch-governance.html",
@@ -2935,7 +2935,7 @@
    "g": [
     "revision"
    ],
-   "m": 2
+   "m": 3
   },
   {
    "p": "20-backend/20.5-security/04-interview-drills/20.5.4.01-interview-questions.html",
@@ -2945,7 +2945,7 @@
    "g": [
     "interview-questions"
    ],
-   "m": 71
+   "m": 8
   },
   {
    "p": "20-backend/20.6-microservices/01-service-topology/20.6.1.01-service-discovery.html",
@@ -2955,7 +2955,7 @@
    "g": [
     "concept"
    ],
-   "m": 13
+   "m": 5
   },
   {
    "p": "20-backend/20.6-microservices/01-service-topology/20.6.1.02-api-gateway.html",
@@ -2965,7 +2965,7 @@
    "g": [
     "concept"
    ],
-   "m": 20
+   "m": 5
   },
   {
    "p": "20-backend/20.6-microservices/01-service-topology/20.6.1.03-service-mesh.html",
@@ -2975,7 +2975,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 4
   },
   {
    "p": "20-backend/20.6-microservices/01-service-topology/20.6.1.04-strangler-fig.html",
@@ -2985,7 +2985,7 @@
    "g": [
     "concept"
    ],
-   "m": 23
+   "m": 6
   },
   {
    "p": "20-backend/20.6-microservices/01-service-topology/REVISION.html",
@@ -3005,7 +3005,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 5
   },
   {
    "p": "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.02-grpc-streaming.html",
@@ -3015,7 +3015,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 5
   },
   {
    "p": "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.03-kafka.html",
@@ -3025,7 +3025,7 @@
    "g": [
     "concept"
    ],
-   "m": 22
+   "m": 6
   },
   {
    "p": "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.04-rabbitmq.html",
@@ -3035,7 +3035,7 @@
    "g": [
     "concept"
    ],
-   "m": 27
+   "m": 6
   },
   {
    "p": "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.html",
@@ -3076,7 +3076,7 @@
    "g": [
     "concept"
    ],
-   "m": 26
+   "m": 5
   },
   {
    "p": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.02-distributed-transactions.html",
@@ -3096,7 +3096,7 @@
    "g": [
     "concept"
    ],
-   "m": 30
+   "m": 7
   },
   {
    "p": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.04-cqrs.html",
@@ -3106,7 +3106,7 @@
    "g": [
     "concept"
    ],
-   "m": 28
+   "m": 6
   },
   {
    "p": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.05-decomposing-monolith-database.html",
@@ -3116,7 +3116,7 @@
    "g": [
     "concept"
    ],
-   "m": 13
+   "m": 7
   },
   {
    "p": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.06-transactional-outbox.html",
@@ -3149,7 +3149,7 @@
    "g": [
     "concept"
    ],
-   "m": 24
+   "m": 7
   },
   {
    "p": "20-backend/20.6-microservices/04-resilience/20.6.4.02-bulkhead-pattern.html",
@@ -3159,7 +3159,7 @@
    "g": [
     "concept"
    ],
-   "m": 20
+   "m": 6
   },
   {
    "p": "20-backend/20.6-microservices/04-resilience/REVISION.html",
@@ -3179,7 +3179,7 @@
    "g": [
     "interview-questions"
    ],
-   "m": 66
+   "m": 10
   },
   {
    "p": "20-backend/20.7-graphql/01-fundamentals/20.7.1.01-graphql-overview.html",
@@ -3190,7 +3190,7 @@
     "concept",
     "overview"
    ],
-   "m": 31
+   "m": 9
   },
   {
    "p": "20-backend/20.7-graphql/01-fundamentals/20.7.1.02-schema-design.html",
@@ -3200,7 +3200,7 @@
    "g": [
     "concept"
    ],
-   "m": 46
+   "m": 12
   },
   {
    "p": "20-backend/20.7-graphql/01-fundamentals/20.7.1.03-queries-mutations.html",
@@ -3210,7 +3210,7 @@
    "g": [
     "concept"
    ],
-   "m": 44
+   "m": 10
   },
   {
    "p": "20-backend/20.7-graphql/01-fundamentals/REVISION.html",
@@ -3230,7 +3230,7 @@
    "g": [
     "concept"
    ],
-   "m": 34
+   "m": 8
   },
   {
    "p": "20-backend/20.7-graphql/02-execution/20.7.2.02-apollo-server.html",
@@ -3241,7 +3241,7 @@
     "concept",
     "reference"
    ],
-   "m": 33
+   "m": 8
   },
   {
    "p": "20-backend/20.7-graphql/02-execution/REVISION.html",
@@ -3262,31 +3262,31 @@
     "concept",
     "reference"
    ],
-   "m": 38
+   "m": 9
   },
   {
    "p": "20-backend/20.7-graphql/03-clients-and-production/20.7.3.02-performance-security.html",
-   "t": "Performance & Security",
+   "t": "GraphQL Performance and Security",
    "s": "GraphQL",
    "c": "API",
    "g": [
     "concept"
    ],
-   "m": 32
+   "m": 9
   },
   {
    "p": "20-backend/20.7-graphql/03-clients-and-production/20.7.3.03-codegen-schema-safety-ci.html",
-   "t": "GraphQL Code Generator — Schema Safety & CI",
+   "t": "Code Generation, Schema Safety and CI",
    "s": "GraphQL",
    "c": "API",
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 8
   },
   {
    "p": "20-backend/20.7-graphql/03-clients-and-production/REVISION.html",
-   "t": "GraphQL — Clients And Production Revision",
+   "t": "GraphQL — Clients and Production Revision",
    "s": "GraphQL",
    "c": "Reference",
    "g": [
@@ -3302,7 +3302,7 @@
    "g": [
     "interview-questions"
    ],
-   "m": 48
+   "m": 9
   },
   {
    "p": "20-backend/20.8-caching/20.8.01-caching-deep-dive.html",
@@ -3312,7 +3312,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "20-backend/20.8-caching/20.8.02-redis-fundamentals.html",
@@ -3364,7 +3364,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 8
   },
   {
    "p": "20-backend/20.9-message-brokers/20.9.02-kafka-internals-and-operations.html",
@@ -3374,7 +3374,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "20-backend/20.9-message-brokers/20.9.03-event-driven-patterns.html",
@@ -3384,7 +3384,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 9
   },
   {
    "p": "20-backend/20.9-message-brokers/20.9.04-interview-questions.html",
@@ -3895,7 +3895,7 @@
     "distributed-systems",
     "theory"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.html",
@@ -3908,7 +3908,7 @@
     "scaling",
     "theory"
    ],
-   "m": 15
+   "m": 16
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.html",
@@ -3920,7 +3920,7 @@
     "scaling",
     "theory"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.05-caching-patterns.html",
@@ -3932,7 +3932,7 @@
     "performance",
     "theory"
    ],
-   "m": 13
+   "m": 14
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.html",
@@ -3945,7 +3945,7 @@
     "messaging",
     "theory"
    ],
-   "m": 12
+   "m": 13
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.07-distributed-transactions.html",
@@ -3970,7 +3970,7 @@
     "scaling",
     "theory"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.html",
@@ -3995,7 +3995,7 @@
     "reliability",
     "theory"
    ],
-   "m": 12
+   "m": 13
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.11-architecture-patterns.html",
@@ -4033,7 +4033,7 @@
     "scaling",
     "theory"
    ],
-   "m": 14
+   "m": 12
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.html",
@@ -4079,7 +4079,7 @@
     "distributed-systems",
     "theory"
    ],
-   "m": 27
+   "m": 28
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.18-outbox-and-cdc.html",
@@ -4092,7 +4092,7 @@
     "distributed-systems",
     "theory"
    ],
-   "m": 19
+   "m": 8
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.19-resilience-patterns-deep-dive.html",
@@ -4118,7 +4118,7 @@
     "global-scale",
     "theory"
    ],
-   "m": 17
+   "m": 18
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.html",
@@ -4143,7 +4143,7 @@
     "networking",
     "theory"
    ],
-   "m": 14
+   "m": 15
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.html",
@@ -4157,7 +4157,7 @@
     "theory",
     "tls"
    ],
-   "m": 19
+   "m": 21
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/REVISION.html",
@@ -4168,7 +4168,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 5
+   "m": 8
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.01-url-shortener.html",
@@ -4190,7 +4190,7 @@
    "g": [
     "concept"
    ],
-   "m": 28
+   "m": 10
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.03-uber.html",
@@ -4200,7 +4200,7 @@
    "g": [
     "concept"
    ],
-   "m": 35
+   "m": 9
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.04-netflix.html",
@@ -4210,7 +4210,7 @@
    "g": [
     "concept"
    ],
-   "m": 32
+   "m": 9
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.05-google-drive.html",
@@ -4220,7 +4220,7 @@
    "g": [
     "concept"
    ],
-   "m": 38
+   "m": 11
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.06-payment-gateway.html",
@@ -4230,7 +4230,7 @@
    "g": [
     "concept"
    ],
-   "m": 39
+   "m": 11
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.07-notification-service.html",
@@ -4240,7 +4240,7 @@
    "g": [
     "concept"
    ],
-   "m": 36
+   "m": 10
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.08-ticket-booking.html",
@@ -4250,7 +4250,7 @@
    "g": [
     "concept"
    ],
-   "m": 36
+   "m": 10
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.09-e-commerce.html",
@@ -4260,7 +4260,7 @@
    "g": [
     "concept"
    ],
-   "m": 44
+   "m": 11
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.10-hospital-management.html",
@@ -4270,7 +4270,7 @@
    "g": [
     "concept"
    ],
-   "m": 29
+   "m": 30
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.11-live-betting.html",
@@ -4280,7 +4280,7 @@
    "g": [
     "concept"
    ],
-   "m": 39
+   "m": 9
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.12-twitter-feed.html",
@@ -4290,7 +4290,7 @@
    "g": [
     "concept"
    ],
-   "m": 30
+   "m": 9
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.13-rate-limiter.html",
@@ -4312,7 +4312,7 @@
    "g": [
     "concept"
    ],
-   "m": 41
+   "m": 12
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.html",
@@ -4322,7 +4322,7 @@
    "g": [
     "concept"
    ],
-   "m": 42
+   "m": 12
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.html",
@@ -4332,7 +4332,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 14
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.17-youtube.html",
@@ -4342,7 +4342,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 11
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.18-dropbox.html",
@@ -4352,7 +4352,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 10
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.19-lyft.html",
@@ -4362,7 +4362,7 @@
    "g": [
     "concept"
    ],
-   "m": 14
+   "m": 10
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.20-distributed-counter.html",
@@ -4372,7 +4372,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 10
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.21-workflow-engine.html",
@@ -4382,7 +4382,7 @@
    "g": [
     "concept"
    ],
-   "m": 14
+   "m": 10
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.22-real-time-collaboration.html",
@@ -4392,7 +4392,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.23-typeahead-autocomplete.html",
@@ -4402,7 +4402,7 @@
    "g": [
     "concept"
    ],
-   "m": 16
+   "m": 9
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.html",
@@ -4412,7 +4412,7 @@
    "g": [
     "concept"
    ],
-   "m": 15
+   "m": 10
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.25-distributed-job-scheduler.html",
@@ -4422,7 +4422,7 @@
    "g": [
     "concept"
    ],
-   "m": 16
+   "m": 10
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.26-distributed-id-generator.html",
@@ -4432,7 +4432,7 @@
    "g": [
     "concept"
    ],
-   "m": 14
+   "m": 9
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.27-ad-click-aggregator.html",
@@ -4442,7 +4442,7 @@
    "g": [
     "concept"
    ],
-   "m": 16
+   "m": 10
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.28-parking-lot.html",
@@ -4452,7 +4452,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 8
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.29-distributed-cache.html",
@@ -4462,7 +4462,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 8
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.html",
@@ -4472,7 +4472,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 8
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.31-api-gateway.html",
@@ -4482,7 +4482,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 8
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/REVISION.html",
@@ -4493,7 +4493,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 4
+   "m": 7
   },
   {
    "p": "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.html",
@@ -4503,7 +4503,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 9
   },
   {
    "p": "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/REVISION.html",
@@ -4524,7 +4524,7 @@
    "g": [
     "concept"
    ],
-   "m": 16
+   "m": 5
   },
   {
    "p": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.02-retry-patterns.html",
@@ -4534,7 +4534,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 7
   },
   {
    "p": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.03-idempotency-keys.html",
@@ -4554,7 +4554,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 6
   },
   {
    "p": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.05-backup-strategy-restore-drills.html",
@@ -4564,7 +4564,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 7
   },
   {
    "p": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.06-idempotency-retry-deep-dive.html",
@@ -4577,7 +4577,7 @@
     "resilience",
     "retry"
    ],
-   "m": 14
+   "m": 7
   },
   {
    "p": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/REVISION.html",
@@ -4588,7 +4588,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 2
+   "m": 3
   },
   {
    "p": "30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.html",
@@ -4619,7 +4619,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.02-data-pipelines.html",
@@ -4629,7 +4629,7 @@
    "g": [
     "concept"
    ],
-   "m": 16
+   "m": 8
   },
   {
    "p": "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.html",
@@ -4639,7 +4639,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 6
   },
   {
    "p": "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.04-multi-tenant-saas-architecture.html",
@@ -4672,7 +4672,7 @@
    "g": [
     "concept"
    ],
-   "m": 15
+   "m": 6
   },
   {
    "p": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.02-technical-debt.html",
@@ -4682,7 +4682,7 @@
    "g": [
     "concept"
    ],
-   "m": 16
+   "m": 6
   },
   {
    "p": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.html",
@@ -4692,7 +4692,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 6
   },
   {
    "p": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.04-data-retention-archival.html",
@@ -4702,7 +4702,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 7
   },
   {
    "p": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/REVISION.html",
@@ -4724,7 +4724,7 @@
     "interview-questions",
     "reference"
    ],
-   "m": 7
+   "m": 6
   },
   {
    "p": "40-platform/40.1-docker/40.1.01-images-containers.html",
@@ -4754,7 +4754,7 @@
    "g": [
     "concept"
    ],
-   "m": 19
+   "m": 20
   },
   {
    "p": "40-platform/40.1-docker/40.1.04-multi-stage-builds.html",
@@ -4764,7 +4764,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 11
   },
   {
    "p": "40-platform/40.1-docker/40.1.05-dockerfile-best-practices.html",
@@ -4774,7 +4774,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "40-platform/40.1-docker/40.1.06-production-patterns.html",
@@ -4784,7 +4784,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 9
   },
   {
    "p": "40-platform/40.1-docker/40.1.07-container-runtime-internals-namespaces-cgroups.html",
@@ -4804,7 +4804,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 11
   },
   {
    "p": "40-platform/40.1-docker/40.1.09-rootless-sandboxed-runtimes.html",
@@ -4814,7 +4814,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 11
   },
   {
    "p": "40-platform/40.1-docker/40.1.10-interview-questions.html",
@@ -4824,7 +4824,7 @@
    "g": [
     "interview-questions"
    ],
-   "m": 25
+   "m": 6
   },
   {
    "p": "40-platform/40.1-docker/REVISION.html",
@@ -4845,7 +4845,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.html",
@@ -4869,7 +4869,7 @@
     "performance",
     "reference"
    ],
-   "m": 13
+   "m": 8
   },
   {
    "p": "40-platform/40.10-cdn/40.10.04-interview-questions.html",
@@ -4880,7 +4880,7 @@
     "interview-questions",
     "reference"
    ],
-   "m": 12
+   "m": 6
   },
   {
    "p": "40-platform/40.10-cdn/REVISION.html",
@@ -4915,7 +4915,7 @@
     "interview-questions",
     "reference"
    ],
-   "m": 7
+   "m": 6
   },
   {
    "p": "40-platform/40.11-reverse-proxy/REVISION.html",
@@ -4936,7 +4936,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "40-platform/40.12-iac/40.12.02-interview-questions.html",
@@ -4947,7 +4947,7 @@
     "interview-questions",
     "reference"
    ],
-   "m": 7
+   "m": 5
   },
   {
    "p": "40-platform/40.12-iac/REVISION.html",
@@ -5203,7 +5203,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 8
   },
   {
    "p": "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.03-jenkins.html",
@@ -5213,7 +5213,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 7
   },
   {
    "p": "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.04-argocd.html",
@@ -5244,7 +5244,7 @@
    "g": [
     "concept"
    ],
-   "m": 18
+   "m": 7
   },
   {
    "p": "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.02-pipeline-patterns.html",
@@ -5254,7 +5254,7 @@
    "g": [
     "concept"
    ],
-   "m": 15
+   "m": 6
   },
   {
    "p": "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.html",
@@ -5268,7 +5268,7 @@
     "promotion",
     "registries"
    ],
-   "m": 17
+   "m": 11
   },
   {
    "p": "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.html",
@@ -5281,7 +5281,7 @@
     "slsa",
     "supply-chain"
    ],
-   "m": 16
+   "m": 14
   },
   {
    "p": "40-platform/40.3-ci-cd/02-build-and-deploy/REVISION.html",
@@ -5302,7 +5302,7 @@
    "g": [
     "concept"
    ],
-   "m": 19
+   "m": 7
   },
   {
    "p": "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.html",
@@ -5315,7 +5315,7 @@
     "dora",
     "metrics"
    ],
-   "m": 15
+   "m": 14
   },
   {
    "p": "40-platform/40.3-ci-cd/03-releases-and-metrics/REVISION.html",
@@ -5336,7 +5336,7 @@
    "g": [
     "interview-questions"
    ],
-   "m": 11
+   "m": 5
   },
   {
    "p": "40-platform/40.4-observability/01-pillars/40.4.1.01-logging.html",
@@ -5347,7 +5347,7 @@
     "concept",
     "reference"
    ],
-   "m": 17
+   "m": 6
   },
   {
    "p": "40-platform/40.4-observability/01-pillars/40.4.1.02-monitoring.html",
@@ -5358,7 +5358,7 @@
     "concept",
     "reference"
    ],
-   "m": 18
+   "m": 7
   },
   {
    "p": "40-platform/40.4-observability/01-pillars/40.4.1.03-tracing.html",
@@ -5369,7 +5369,7 @@
     "concept",
     "reference"
    ],
-   "m": 18
+   "m": 7
   },
   {
    "p": "40-platform/40.4-observability/01-pillars/REVISION.html",
@@ -5391,7 +5391,7 @@
     "concept",
     "reference"
    ],
-   "m": 21
+   "m": 7
   },
   {
    "p": "40-platform/40.4-observability/02-errors-and-health/40.4.2.02-health-checks.html",
@@ -5402,7 +5402,7 @@
     "concept",
     "reference"
    ],
-   "m": 20
+   "m": 7
   },
   {
    "p": "40-platform/40.4-observability/02-errors-and-health/REVISION.html",
@@ -5437,7 +5437,7 @@
     "guide",
     "reference"
    ],
-   "m": 13
+   "m": 7
   },
   {
    "p": "40-platform/40.4-observability/03-sre-targets/REVISION.html",
@@ -5462,7 +5462,7 @@
     "reference",
     "tracing"
    ],
-   "m": 24
+   "m": 8
   },
   {
    "p": "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.02-continuous-profiling.html",
@@ -5475,7 +5475,7 @@
     "profiling",
     "pyroscope"
    ],
-   "m": 14
+   "m": 10
   },
   {
    "p": "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.03-ebpf-observability.html",
@@ -5488,7 +5488,7 @@
     "kernel",
     "network-observability"
    ],
-   "m": 14
+   "m": 11
   },
   {
    "p": "40-platform/40.4-observability/04-advanced-telemetry/REVISION.html",
@@ -5510,7 +5510,7 @@
     "interview-questions",
     "practice"
    ],
-   "m": 18
+   "m": 10
   },
   {
    "p": "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.html",
@@ -5522,7 +5522,7 @@
     "reference",
     "tool"
    ],
-   "m": 9
+   "m": 4
   },
   {
    "p": "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.html",
@@ -5558,7 +5558,7 @@
     "reference",
     "tool"
    ],
-   "m": 10
+   "m": 4
   },
   {
    "p": "40-platform/40.5-build-tools/01-bundlers/REVISION.html",
@@ -5581,11 +5581,11 @@
     "reference",
     "tool"
    ],
-   "m": 6
+   "m": 4
   },
   {
    "p": "40-platform/40.5-build-tools/02-compilers/40.5.2.02-esbuild-swc.html",
-   "t": "ESBuild & SWC",
+   "t": "esbuild and SWC",
    "s": "Build Tools",
    "c": "Tooling",
    "g": [
@@ -5593,7 +5593,7 @@
     "reference",
     "tool"
    ],
-   "m": 7
+   "m": 3
   },
   {
    "p": "40-platform/40.5-build-tools/02-compilers/REVISION.html",
@@ -5616,7 +5616,7 @@
     "guide",
     "reference"
    ],
-   "m": 14
+   "m": 5
   },
   {
    "p": "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.html",
@@ -5631,7 +5631,7 @@
     "images",
     "pipeline"
    ],
-   "m": 16
+   "m": 8
   },
   {
    "p": "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.html",
@@ -5665,7 +5665,7 @@
     "interview-questions",
     "practice"
    ],
-   "m": 16
+   "m": 7
   },
   {
    "p": "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.html",
@@ -5677,7 +5677,7 @@
     "guide",
     "reference"
    ],
-   "m": 15
+   "m": 14
   },
   {
    "p": "40-platform/40.6-git-advanced/40.6.02-branching-strategies.html",
@@ -5689,7 +5689,7 @@
     "guide",
     "reference"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "40-platform/40.6-git-advanced/40.6.03-rebase-cherry-pick.html",
@@ -5712,7 +5712,7 @@
     "reference",
     "tool"
    ],
-   "m": 12
+   "m": 5
   },
   {
    "p": "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.html",
@@ -5735,7 +5735,7 @@
     "guide",
     "reference"
    ],
-   "m": 11
+   "m": 5
   },
   {
    "p": "40-platform/40.6-git-advanced/40.6.07-code-archaeology.html",
@@ -5759,7 +5759,7 @@
     "guide",
     "reference"
    ],
-   "m": 12
+   "m": 8
   },
   {
    "p": "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.html",
@@ -5771,7 +5771,7 @@
     "reference",
     "security"
    ],
-   "m": 12
+   "m": 7
   },
   {
    "p": "40-platform/40.6-git-advanced/40.6.10-interview-questions.html",
@@ -5782,7 +5782,7 @@
     "interview-questions",
     "practice"
    ],
-   "m": 14
+   "m": 6
   },
   {
    "p": "40-platform/40.6-git-advanced/REVISION.html",
@@ -5804,7 +5804,7 @@
     "concept",
     "overview"
    ],
-   "m": 10
+   "m": 6
   },
   {
    "p": "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.html",
@@ -5815,7 +5815,7 @@
     "concept",
     "reference"
    ],
-   "m": 9
+   "m": 7
   },
   {
    "p": "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.html",
@@ -5826,7 +5826,7 @@
     "concept",
     "reference"
    ],
-   "m": 10
+   "m": 6
   },
   {
    "p": "40-platform/40.7-serverless-edge/40.7.04-edge-functions.html",
@@ -5837,7 +5837,7 @@
     "concept",
     "reference"
    ],
-   "m": 12
+   "m": 7
   },
   {
    "p": "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.html",
@@ -5848,7 +5848,7 @@
     "concept",
     "reference"
    ],
-   "m": 14
+   "m": 6
   },
   {
    "p": "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.html",
@@ -5860,7 +5860,7 @@
     "reference",
     "tool"
    ],
-   "m": 11
+   "m": 6
   },
   {
    "p": "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.html",
@@ -5872,7 +5872,7 @@
     "pattern",
     "reference"
    ],
-   "m": 15
+   "m": 8
   },
   {
    "p": "40-platform/40.7-serverless-edge/40.7.08-interview-questions.html",
@@ -5883,7 +5883,7 @@
     "interview-questions",
     "practice"
    ],
-   "m": 7
+   "m": 5
   },
   {
    "p": "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.html",
@@ -5896,7 +5896,7 @@
     "deployment",
     "flyio"
    ],
-   "m": 9
+   "m": 6
   },
   {
    "p": "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.html",
@@ -5921,7 +5921,7 @@
     "practice",
     "revision"
    ],
-   "m": 2
+   "m": 3
   },
   {
    "p": "40-platform/40.8-monorepo/40.8.01-monorepo-overview.html",
@@ -5932,7 +5932,7 @@
     "concept",
     "overview"
    ],
-   "m": 12
+   "m": 13
   },
   {
    "p": "40-platform/40.8-monorepo/40.8.02-turborepo.html",
@@ -5956,7 +5956,7 @@
     "reference",
     "tool"
    ],
-   "m": 11
+   "m": 12
   },
   {
    "p": "40-platform/40.8-monorepo/40.8.04-monorepo-tools.html",
@@ -6015,7 +6015,7 @@
     "methodology",
     "reference"
    ],
-   "m": 19
+   "m": 8
   },
   {
    "p": "40-platform/40.9-twelve-factor/40.9.02-interview-questions.html",
@@ -6026,7 +6026,7 @@
     "interview-questions",
     "reference"
    ],
-   "m": 7
+   "m": 5
   },
   {
    "p": "40-platform/40.9-twelve-factor/REVISION.html",
@@ -6601,7 +6601,7 @@
   },
   {
    "p": "60-realtime/60.1-websockets/01-transports/60.1.1.03-socket-io.html",
-   "t": "Socket.io",
+   "t": "Socket.IO",
    "s": "WebSockets",
    "c": "Real-Time",
    "g": [
@@ -6609,7 +6609,7 @@
     "reference",
     "tool"
    ],
-   "m": 40
+   "m": 13
   },
   {
    "p": "60-realtime/60.1-websockets/01-transports/60.1.1.04-webtransport.html",
@@ -6631,7 +6631,7 @@
     "practice",
     "revision"
    ],
-   "m": 2
+   "m": 3
   },
   {
    "p": "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.01-real-time-architecture.html",
@@ -6643,7 +6643,7 @@
     "guide",
     "reference"
    ],
-   "m": 35
+   "m": 9
   },
   {
    "p": "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.02-scaling-patterns.html",
@@ -6655,7 +6655,7 @@
     "guide",
     "reference"
    ],
-   "m": 11
+   "m": 8
   },
   {
    "p": "60-realtime/60.1-websockets/02-architecture-and-scaling/REVISION.html",
@@ -6677,11 +6677,11 @@
     "concept",
     "reference"
    ],
-   "m": 32
+   "m": 11
   },
   {
    "p": "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.02-graphql-subscriptions-live-queries.html",
-   "t": "GraphQL Subscriptions & Live Queries",
+   "t": "GraphQL Subscriptions and Live Queries",
    "s": "WebSockets",
    "c": "Real-Time",
    "g": [
@@ -6689,7 +6689,7 @@
     "graphql",
     "subscriptions"
    ],
-   "m": 15
+   "m": 11
   },
   {
    "p": "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.03-webrtc-peer-to-peer.html",
@@ -6701,7 +6701,7 @@
     "p2p",
     "webrtc"
    ],
-   "m": 12
+   "m": 11
   },
   {
    "p": "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.04-testing-realtime-systems.html",
@@ -6714,7 +6714,7 @@
     "load",
     "testing"
    ],
-   "m": 15
+   "m": 10
   },
   {
    "p": "60-realtime/60.1-websockets/03-frameworks-and-paradigms/REVISION.html",
@@ -6729,14 +6729,14 @@
   },
   {
    "p": "60-realtime/60.1-websockets/04-interview-prep/60.1.4.01-interview-questions.html",
-   "t": "WebSockets & Real-Time Interview Questions",
+   "t": "WebSockets and Real-Time Interview Questions",
    "s": "WebSockets",
    "c": "Real-Time",
    "g": [
     "interview-questions",
     "practice"
    ],
-   "m": 46
+   "m": 8
   },
   {
    "p": "70-interview-toolkit/70.1-behavioral/70.1.01-stakeholder-management-stories.html",
@@ -6813,7 +6813,7 @@
     "concept",
     "practice"
    ],
-   "m": 11
+   "m": 10
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.02-two-pointers.html",
@@ -6824,7 +6824,7 @@
     "concept",
     "practice"
    ],
-   "m": 13
+   "m": 10
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.03-binary-search.html",
@@ -6835,7 +6835,7 @@
     "concept",
     "practice"
    ],
-   "m": 11
+   "m": 12
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.04-linked-list-manipulation-patterns.html",
@@ -6868,7 +6868,7 @@
     "concept",
     "practice"
    ],
-   "m": 12
+   "m": 13
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.07-string-search-kmp-rabin-karp.html",
@@ -6879,7 +6879,7 @@
     "concept",
     "practice"
    ],
-   "m": 15
+   "m": 14
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/REVISION.html",
@@ -6890,7 +6890,7 @@
     "practice",
     "revision"
    ],
-   "m": 2
+   "m": 3
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids/70.2.2.01-dfs-bfs.html",
@@ -6901,7 +6901,7 @@
     "concept",
     "practice"
    ],
-   "m": 17
+   "m": 18
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids/70.2.2.02-shortest-paths-dijkstra-bellman-ford.html",
@@ -6912,7 +6912,7 @@
     "concept",
     "practice"
    ],
-   "m": 14
+   "m": 16
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids/70.2.2.03-union-find.html",
@@ -6945,7 +6945,7 @@
     "concept",
     "practice"
    ],
-   "m": 15
+   "m": 17
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids/70.2.2.06-matrix-traversal-simulation.html",
@@ -6956,7 +6956,7 @@
     "concept",
     "practice"
    ],
-   "m": 13
+   "m": 14
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids/REVISION.html",
@@ -6978,7 +6978,7 @@
     "concept",
     "practice"
    ],
-   "m": 13
+   "m": 15
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization/70.2.3.02-dynamic-programming.html",
@@ -6989,7 +6989,7 @@
     "concept",
     "practice"
    ],
-   "m": 12
+   "m": 13
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization/70.2.3.03-bit-manipulation.html",
@@ -7022,7 +7022,7 @@
     "concept",
     "practice"
    ],
-   "m": 12
+   "m": 14
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.02-monotonic-stack.html",
@@ -7055,7 +7055,7 @@
     "concept",
     "practice"
    ],
-   "m": 16
+   "m": 17
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.05-quick-select-reservoir-sampling.html",
@@ -7087,7 +7087,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 12
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/05-math-and-number-theory/REVISION.html",
@@ -7131,7 +7131,7 @@
     "cheat-sheet",
     "reference"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "70-interview-toolkit/70.3-cheatsheets/70.3.04-backend-cheat-sheet.html",
@@ -7142,7 +7142,7 @@
     "cheat-sheet",
     "reference"
    ],
-   "m": 5
+   "m": 6
   },
   {
    "p": "70-interview-toolkit/70.3-cheatsheets/70.3.05-system-design-cheat-sheet.html",
@@ -7153,7 +7153,7 @@
     "cheat-sheet",
     "reference"
    ],
-   "m": 4
+   "m": 5
   },
   {
    "p": "70-interview-toolkit/70.3-cheatsheets/70.3.06-docker-kubernetes-cicd-cheat-sheet.html",
@@ -7164,7 +7164,7 @@
     "cheat-sheet",
     "devops"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "70-interview-toolkit/70.3-cheatsheets/70.3.07-sql-data-modeling-cheat-sheet.html",
@@ -7176,7 +7176,7 @@
     "data-modeling",
     "sql"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "70-interview-toolkit/70.3-cheatsheets/REVISION.html",
@@ -7187,7 +7187,7 @@
     "practice",
     "revision"
    ],
-   "m": 2
+   "m": 3
   }
  ]
 }

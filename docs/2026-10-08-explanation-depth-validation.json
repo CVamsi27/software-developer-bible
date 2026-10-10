@@ -1,6 +1,6 @@
 {
-  "review_date": "2026-10-08",
-  "scope": "Executed review fixtures and checkpoint gates; results do not certify pending semantic documents or unexecuted production integrations.",
+  "review_date": "2026-10-10",
+  "scope": "Complete semantic inventory with actual local fixture evidence; final repository/rendered checks are recorded separately from unexecuted production integrations.",
   "results": {
     "a11y-fixture-results.json": {
       "browser": "153.0.8010.12",
@@ -623,6 +623,438 @@
       "browser": "153.0.8010.12",
       "checks": [
         {
+          "route": "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.html",
+          "theme": "light",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.html",
+          "theme": "light",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.html",
+          "theme": "light",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.html",
+          "theme": "dark",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.html",
+          "theme": "dark",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.html",
+          "theme": "dark",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.html",
+          "theme": "light",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.html",
+          "theme": "light",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.html",
+          "theme": "light",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.html",
+          "theme": "dark",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.html",
+          "theme": "dark",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.html",
+          "theme": "dark",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.html",
+          "theme": "light",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.html",
+          "theme": "light",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.html",
+          "theme": "light",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.html",
+          "theme": "dark",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.html",
+          "theme": "dark",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.html",
+          "theme": "dark",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.html",
+          "theme": "light",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.html",
+          "theme": "light",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.html",
+          "theme": "light",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.html",
+          "theme": "dark",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.html",
+          "theme": "dark",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.html",
+          "theme": "dark",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.html",
+          "theme": "light",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.html",
+          "theme": "light",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.html",
+          "theme": "light",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.html",
+          "theme": "dark",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.html",
+          "theme": "dark",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.html",
+          "theme": "dark",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.html",
+          "theme": "light",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.html",
+          "theme": "light",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.html",
+          "theme": "light",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.html",
+          "theme": "dark",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.html",
+          "theme": "dark",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.html",
+          "theme": "dark",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.html",
+          "theme": "light",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.html",
+          "theme": "light",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.html",
+          "theme": "light",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.html",
+          "theme": "dark",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.html",
+          "theme": "dark",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.html",
+          "theme": "dark",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.html",
+          "theme": "light",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.html",
+          "theme": "light",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.html",
+          "theme": "light",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.html",
+          "theme": "dark",
+          "width": 375,
+          "scroll": 375,
+          "article": 339,
+          "paragraph": 339,
+          "headings": true
+        },
+        {
+          "route": "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.html",
+          "theme": "dark",
+          "width": 1280,
+          "scroll": 1280,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
+          "route": "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.html",
+          "theme": "dark",
+          "width": 1920,
+          "scroll": 1920,
+          "article": 1140,
+          "paragraph": 1140,
+          "headings": true
+        },
+        {
           "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.html",
           "theme": "light",
           "width": 375,
@@ -1487,433 +1919,4012 @@
           "headings": true
         }
       ]
+    },
+    "ad-parking-results.json": {
+      "runtime": "Python 3.14.5",
+      "checks": 496,
+      "results": [
+        "Exact authored click reducer all24orders duplicate replay currency/window boundaries invalidbillability and payload mismatch",
+        "Exact authored fee function416tariff/boundarycases independently recomputed plus negativeinputs",
+        "Independent event/window cardinality arithmetic"
+      ],
+      "limits": [
+        "Pure state model has no durablecheckpoint/ClickHouse/stream processor/billing integration",
+        "Fee checks do not implement calendar-day timezone taxes charging or payment integration"
+      ]
+    },
+    "advanced-final-results.json": {
+      "node": "24.19.0",
+      "otel_local_four_assertions": "passed",
+      "profile_artifact": "/tmp/bible-depth-review/profile-local-check/CPU.20261010.035332.44699.0.001.cpuprofile",
+      "profile_samples": 74,
+      "hashBatch_frame_present": true,
+      "linux_ebpf_execution": "not run on macOS; prerequisites explicitly documented"
+    },
+    "animation-browser-results.json": {
+      "browser": "153.0.8010.12",
+      "checks": [
+        "Native WAAPI finite completion/commit/cancel preserves final opacity and cancellation rejects AbortError",
+        "Extracted reveal owner canceled before completion never displays obsolete content",
+        "Extracted reduced-motion reveal immediately displays content"
+      ],
+      "scope": "Real Chromium DOM/WAAPI; no frame-rate or GSAP/Motion/mobile support guarantee"
+    },
+    "backend-ai-postgresql-results.json": {
+      "runtime": "PostgreSQL 16.15 (Homebrew) on aarch64-apple-darwin25.6.0, compiled by Apple clang version 21.0.0 (clang-2100.1.1.101), 64-bit",
+      "results": [
+        {
+          "case": "two concurrent 300-cent reservations against 500 cap admit exactly one",
+          "responses": [
+            "2026-10-09|300",
+            ""
+          ]
+        },
+        {
+          "case": "first over-cap reservation inserts no row",
+          "status": "pass"
+        },
+        {
+          "case": "exact-cap reservation succeeds; later admission denies without mutation",
+          "status": "pass"
+        }
+      ],
+      "limits": "Actual isolated PostgreSQL admission fixture only; no full durable request reservation/settlement/provider billing integration"
+    },
+    "backend-ai-runtime-results.json": {
+      "runtime": "v23.7.0",
+      "cases": [
+        "answer membership versus support boundary",
+        "invalid JSON/schema/source ids",
+        "RRF arithmetic and duplicate rejection",
+        "call/result identity",
+        "unknown calls consume turns",
+        "duplicate call id halt",
+        "call count ceiling",
+        "safe provider error",
+        "abort-aware model deadline",
+        "configuration rejection"
+      ],
+      "status": "pass",
+      "sizing": {
+        "weightsGiB": 32.6,
+        "kvPerRequestGiB": 2.5,
+        "totalGiB": 81.86,
+        "fitsOneGpu": false,
+        "idealAggregateLowerBound": 2
+      },
+      "limits": [
+        "Injected local model/tools only; no provider SDK, MCP server, GPU runtime, reranker or production model-quality test"
+      ]
+    },
+    "backend-attacks-results.json": {
+      "status": "pass",
+      "cases": [
+        "sanitizer permitted formatting/removes event+SVG+image",
+        "CSRF current-session binding/malformed denial",
+        "fixed destination rejects URL input",
+        "actual PostgreSQL bound literal wildcard/backslash/quote + tenant filtering"
+      ],
+      "limits": "No browser execution/CSP, mounted middleware, or network SSRF connector integration asserted"
+    },
+    "backend-authorization-results.json": {
+      "output": "true\nfalse\nPASS strict TS inherited grants/dedup/unknown/cycles/duplicate roles; patient assignment/duty/clearance NaN/action/cross-tenant including admin\n",
+      "limitations": "Actual strict TS + extracted pure policy models. No Prisma RBAC store, Nest guard, RLS or policy-service deployment claimed."
+    },
+    "backend-broker-client-contract-results.json": {
+      "status": "pass",
+      "node": "v24.19.0",
+      "typescript": "7.0.2",
+      "kafkajs": "2.2.4",
+      "amqplib": "2.2.0",
+      "cases": [
+        "exact Kafka/Rabbit TS typecheck against real client declarations",
+        "Kafka output then next offset then commit",
+        "offset failure aborts without commit",
+        "malformed envelope opens no transaction"
+      ],
+      "limits": "Kafka transaction adapter doubles only; Rabbit publication typechecked, no live broker, ISR failure or publisher confirmation integration"
+    },
+    "backend-brokers-results.json": {
+      "runtime": "v23.7.0",
+      "exit_code": 0,
+      "output": "{ status: 'known', lag: '5' }\nPASS precise lag/reset/unknown; retry recovery; permanent quarantine; failed quarantine rejects; invalid budget\n",
+      "limitations": "Local extracted pure helper/policy tests; no Kafka/RabbitMQ cluster, ISR failover, KIP848 or transactional broker integration executed."
+    },
+    "backend-cache-results.json": {
+      "node": "v23.7.0",
+      "cases": [
+        "same-key coalescing",
+        "cached null distinct",
+        "TTL re-fetch",
+        "rejected fill recovers",
+        "in-flight key cap",
+        "configuration rejection"
+      ],
+      "status": "pass",
+      "limitations": [
+        "Local deterministic model only; no actual Redis server, deployment failover or cluster probe"
+      ]
+    },
+    "backend-cors-browser-results.json": {
+      "runtime": "actual headless Chromium browser on three loopback origins; Express/cors code extracted from chapter",
+      "results": [
+        "allowed credential-mode GET readable; exposed header visible; no preflight",
+        "allowed JSON POST preflight then actual POST",
+        "wildcard plus credential mode rejected by browser",
+        "denied simple GET reached server but browser blocked read",
+        "denied JSON preflight prevented actual POST",
+        "denied safelisted text POST reached handler before browser blocked read"
+      ],
+      "counts": {
+        "GET": 3,
+        "POST": 2,
+        "OPTIONS": 2
+      },
+      "not_executed": [
+        "production authentication/CSRF",
+        "third-party-cookie policies/cookie transmission",
+        "edge cache/proxy deployment"
+      ]
+    },
+    "backend-data-core-results.json": {
+      "runtime": "v24.19.0",
+      "results": [
+        "Exact published payment decision: unknown reconciliation, verified paid/declined and invalid state",
+        "Exact event reducer: initial replay, snapshot suffix, version gap, overdraft, unknown type and overflow rejection",
+        "Exact full-state projection: gap allowed, stale ignored, tenant mismatch and invalid total rejected",
+        "Exact target applier: stale snapshot blocked, delete tombstone survives stale replay, key mismatch rejected"
+      ],
+      "boundaries": [
+        "Pure helpers only; no durable saga worker, event transport, connector or real provider integration"
+      ]
+    },
+    "backend-deletion-recovery-postgresql-results.json": {
+      "runtime": "PostgreSQL16.15 isolated primary and restore clusters; local archive is demonstration only",
+      "results": [
+        {
+          "case": "deletion fixture",
+          "output": []
+        },
+        {
+          "case": "atomic inactive and event",
+          "output": [
+            "1|f|1"
+          ]
+        },
+        {
+          "case": "restore rejects generation1 purge",
+          "output": [
+            "1|t|2"
+          ]
+        },
+        {
+          "case": "active replacement prevents restoration",
+          "output": "ERROR:  23505"
+        },
+        {
+          "case": "collision leaves original inactive replacement active",
+          "output": [
+            "1|f|3",
+            "2|t|0"
+          ]
+        },
+        {
+          "case": "old cycle cannot purge a later expired cycle",
+          "output": []
+        },
+        {
+          "case": "matching current cycle can purge expired row",
+          "output": [
+            "1"
+          ]
+        },
+        {
+          "case": "durable lifecycle events survive subject removal",
+          "output": [
+            "user.inactive|1",
+            "user.restored|2"
+          ]
+        },
+        {
+          "case": "logical dump restored fixture state",
+          "output": [
+            "1"
+          ]
+        },
+        {
+          "case": "named restore point excludes bad update",
+          "output": [
+            "2"
+          ]
+        },
+        {
+          "case": "source retains bad committed update",
+          "output": [
+            "999"
+          ]
+        },
+        {
+          "case": "recovered cluster paused in recovery",
+          "output": [
+            "t|t"
+          ]
+        },
+        {
+          "case": "promoted recovered state",
+          "output": [
+            "2|f"
+          ]
+        }
+      ]
+    },
+    "backend-event-append-results.json": {
+      "runtime": "PostgreSQL 16.15 (Homebrew) on aarch64-apple-darwin25.6.0, compiled by Apple clang version 21.0.0 (clang-2100.1.1.101), 64-bit",
+      "results": [
+        "Exact chapter schema and parameterized PREPARE statement executed",
+        "Duplicate event identity rejects insert and rolls back version increment",
+        "Two concurrent expected-version-one appends accept exactly one version-two record"
+      ],
+      "boundaries": [
+        "Local PostgreSQL only; no event transport, failover, stream erasure or provider integration"
+      ]
+    },
+    "backend-federation-mfa-results.json": {
+      "output": "PASS RFC6238 all six SHA1 test vectors; strict NodeSAML5.1 config/request generation/malformed rejection; actual SimpleWebAuthn14 options/browser-bound attempt/consume/replay/malformed rejection\n",
+      "limitations": "Actual libraries generate requests/options and reject malformed inputs. No valid signed SAML IdP exchange, virtual/hardware authenticator successful WebAuthn ceremony, SCIM deployment, shared replay store or browser UX claimed. Local injected attempt storage only."
+    },
+    "backend-foundations-postgresql-results.json": {
+      "runtime": "PostgreSQL 16.15, isolated temporary Unix-socket cluster, no TCP listener",
+      "results": [
+        {
+          "case": "overview related-fact query",
+          "output": [
+            "Ada|12.50"
+          ]
+        },
+        {
+          "case": "overview invalid foreign key",
+          "output": [
+            "ERROR:  23503"
+          ]
+        },
+        {
+          "case": "overview own change and rollback",
+          "output": [
+            "shipped",
+            "paid"
+          ]
+        },
+        {
+          "case": "normalization one owner and reconstructed totals",
+          "output": [
+            "10|ada.new@example.test|11.00",
+            "11|ada.new@example.test|3.00"
+          ]
+        },
+        {
+          "case": "purchased prices unaffected by catalog change",
+          "output": [
+            "10|11.00",
+            "11|3.00"
+          ]
+        },
+        {
+          "case": "database-choice relational query",
+          "output": [
+            "Ada|1250"
+          ]
+        },
+        {
+          "case": "performance fixture and original plan",
+          "output": [
+            "Sort  (cost=221.83..221.91 rows=33 width=12) (actual time=0.312..0.312 rows=34 loops=1)",
+            "  Sort Key: slot_start, id",
+            "  Sort Method: quicksort  Memory: 26kB",
+            "  Buffers: shared hit=71",
+            "  ->  Seq Scan on perf_visits  (cost=0.00..221.00 rows=33 width=12) (actual time=0.004..0.308 rows=34 loops=1)",
+            "        Filter: ((clinic_id = 42) AND (status = 'booked'::text))",
+            "        Rows Removed by Filter: 9966",
+            "        Buffers: shared hit=71",
+            "Planning:",
+            "  Buffers: shared hit=29",
+            "Planning Time: 0.064 ms",
+            "Execution Time: 0.316 ms"
+          ]
+        },
+        {
+          "case": "performance indexed plan",
+          "output": [
+            "Sort  (cost=63.91..64.00 rows=33 width=12) (actual time=0.021..0.022 rows=34 loops=1)",
+            "  Sort Key: slot_start, id",
+            "  Sort Method: quicksort  Memory: 26kB",
+            "  Buffers: shared hit=34 read=3",
+            "  ->  Bitmap Heap Scan on perf_visits  (cost=4.54..63.08 rows=33 width=12) (actual time=0.011..0.018 rows=34 loops=1)",
+            "        Recheck Cond: ((clinic_id = 42) AND (status = 'booked'::text))",
+            "        Heap Blocks: exact=34",
+            "        Buffers: shared hit=34 read=3",
+            "        ->  Bitmap Index Scan on perf_booked_clinic_slot  (cost=0.00..4.53 rows=33 width=0) (actual time=0.008..0.008 rows=34 loops=1)",
+            "              Index Cond: (clinic_id = 42)",
+            "              Buffers: shared read=3",
+            "Planning:",
+            "  Buffers: shared hit=16 read=1",
+            "Planning Time: 0.031 ms",
+            "Execution Time: 0.026 ms"
+          ]
+        },
+        {
+          "case": "performance query result count",
+          "output": [
+            "34"
+          ]
+        },
+        {
+          "case": "performance index diagnostics",
+          "output": [
+            "public|choice_customers|choice_customers_pkey|0|16 kB",
+            "public|choice_orders|choice_orders_pkey|0|16 kB",
+            "public|customers|customers_email_key|0|16 kB",
+            "public|customers|customers_pkey|0|16 kB",
+            "public|norm_customers|norm_customers_pkey|0|16 kB",
+            "public|norm_order_items|norm_order_items_pkey|0|16 kB",
+            "public|norm_orders|norm_orders_pkey|0|16 kB",
+            "public|norm_products|norm_products_pkey|0|16 kB",
+            "public|orders|orders_pkey|0|16 kB",
+            "public|perf_visits|perf_booked_clinic_slot|0|152 kB",
+            "public|perf_visits|perf_visits_pkey|0|240 kB"
+          ]
+        },
+        {
+          "case": "performance version estimates",
+          "output": [
+            "norm_order_items|0|0|0.00||",
+            "customers|0|0|0.00||",
+            "choice_customers|0|0|0.00||",
+            "norm_products|0|0|0.00||",
+            "norm_orders|0|0|0.00||",
+            "norm_customers|0|0|0.00||",
+            "choice_orders|0|0|0.00||",
+            "perf_visits|10000|0|0.00||",
+            "orders|0|0|0.00||"
+          ]
+        },
+        {
+          "case": "RLS fixture",
+          "output": []
+        },
+        {
+          "case": "RLS subject role, tenant reads and context lifetime",
+          "output": [
+            "rls_api",
+            "1|Ada",
+            "0",
+            "2|Lin"
+          ]
+        },
+        {
+          "case": "RLS cross-tenant insert and update denied",
+          "output": [
+            "ERROR:  42501",
+            "ERROR:  42501"
+          ]
+        },
+        {
+          "case": "RLS missing mutation policy denies insert",
+          "output": [
+            "ERROR:  42501"
+          ]
+        },
+        {
+          "case": "RLS table owner bypass",
+          "output": [
+            "2"
+          ]
+        },
+        {
+          "case": "RLS failed updates left original rows",
+          "output": [
+            "1|Ada",
+            "2|Lin"
+          ]
+        }
+      ]
+    },
+    "backend-grpc-results.json": {
+      "status": "pass",
+      "node": "v24.19.0",
+      "grpc": "1.14.6",
+      "protoLoader": "0.8.1",
+      "cases": [
+        "actual HTTP/2 unary success/invalid/not-found",
+        "ordered finite server stream",
+        "invalid range status",
+        "client cancellation stops production and releases local source"
+      ],
+      "limits": "Loopback insecure demonstration; no TLS/auth/database/resume or forced transport saturation integration"
+    },
+    "backend-http-mechanics-results.json": {
+      "runtime": "Node23.7 Express 5.2.1",
+      "results": [
+        {
+          "case": "status",
+          "output": "GET 404\nPOST 400\nPOST 422\nPOST 201\nPOST 409\nGET 200\nPUT 405\nDELETE 204\nGET 404"
+        },
+        {
+          "case": "status-large-payload",
+          "output": "GET 404\nPOST 400\nPOST 413\nPOST 422\nPOST 201\nPOST 409\nGET 200\nPUT 405\nDELETE 204\nGET 404"
+        },
+        {
+          "case": "http-validator",
+          "output": "http://127.0.0.1:55609/product\nstrong/weak/list/wildcard reads 304; weak/stale writes 412; valid write204 and changed read200"
+        }
+      ],
+      "not_executed": [
+        "shared CDN freshness/purge/variants",
+        "distributed database version update",
+        "production auth/range/WebSocket/provider effects"
+      ]
+    },
+    "backend-java-results.json": {
+      "runtime": [
+        "openjdk version \"21.0.12.1\" 2026-08-18 LTS",
+        "OpenJDK Runtime Environment Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS)",
+        "OpenJDK 64-Bit Server VM Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS, mixed mode, sharing)"
+      ],
+      "results": [
+        {
+          "case": "complete authored language trace",
+          "output": [
+            "[Ada, shared change]",
+            "[Ada]",
+            "true",
+            "true",
+            "false",
+            "2",
+            "1",
+            "[3, 1]",
+            "unmodifiable list"
+          ]
+        },
+        {
+          "case": "authored account and bounded buffer with actual platform and virtual threads",
+          "output": "account invariants, bounded producer/consumer, interrupt recovery, anyOf failure and virtual thread: pass"
+        },
+        {
+          "case": "actual JUnit 5.11.4 lifecycle and parameterized CalculatorTest",
+          "testsSuccessful": 6
+        }
+      ],
+      "limits": [
+        "Temporary SHA256-verified Temurin Java21 runtime; no machine JDK installed",
+        "JUnit calculator, real thread/account/library tests only; Mockito/Spring Security/JPA/Testcontainers snippets remain explicitly unexecuted adapter examples"
+      ]
+    },
+    "backend-jwt-oauth-results.json": {
+      "output": "PASS actual jsonwebtoken9 signature/alg/audience/expiry/required profile/token purpose/runtime shape; PKCE SHA256/nonce/state/expiry/one-use callback/TLS endpoint\n",
+      "limitations": "Actual jsonwebtoken9 local cryptographic validation; complete local transaction helpers only. No provider authorization/code exchange/OIDC library validation/live JWKS/refresh store integration executed."
+    },
+    "backend-mvcc-postgresql-results.json": {
+      "runtime": "PostgreSQL 16.15 (Homebrew), isolated temporary cluster, Unix socket, no TCP listener",
+      "results": [
+        {
+          "case": "read committed: initial snapshot",
+          "output": [
+            "100"
+          ]
+        },
+        {
+          "case": "ordinary read while writer uncommitted",
+          "output": [
+            "100"
+          ]
+        },
+        {
+          "case": "same-row writer blocks and reaches lock timeout",
+          "output": [
+            "ERROR:  55P03"
+          ]
+        },
+        {
+          "case": "read committed: new statement sees new commit",
+          "output": [
+            "500"
+          ]
+        },
+        {
+          "case": "repeatable read: establish snapshot",
+          "output": [
+            "100"
+          ]
+        },
+        {
+          "case": "repeatable read: commit remains outside old snapshot",
+          "output": [
+            "100"
+          ]
+        },
+        {
+          "case": "repeatable-read concurrent update fails",
+          "output": [
+            "ERROR:  40001"
+          ]
+        },
+        {
+          "case": "after ending old transaction, new snapshot sees 500",
+          "output": [
+            "500"
+          ]
+        },
+        {
+          "case": "own uncommitted update is visible",
+          "output": [
+            "200"
+          ]
+        },
+        {
+          "case": "rollback preserves earlier committed value",
+          "output": [
+            "100"
+          ]
+        },
+        {
+          "case": "conditional reservation inserts one order",
+          "output": [
+            "1"
+          ]
+        },
+        {
+          "case": "second reservation returns no order",
+          "output": []
+        },
+        {
+          "case": "inventory invariant preserved",
+          "output": [
+            "0",
+            "1"
+          ]
+        }
+      ]
+    },
+    "backend-nest-patterns-results.json": {
+      "runtime": "Node23.7 Nest11.2.7 cqrs11.0.3 TypeScript5.9.3 strict; loopbackTCP",
+      "results": [
+        {
+          "case": "cqrs",
+          "output": "[ 'A1', 'A2' ]\nA1\n[ 'A2' ]\nSeat unavailable"
+        },
+        {
+          "case": "cqrs-changed-seat",
+          "output": "[ 'A1', 'A2' ]\nA2\n[ 'A1' ]\nSeat unavailable"
+        },
+        {
+          "case": "tcp",
+          "output": "{ id: 'A1', available: true }\nSeat not found"
+        },
+        {
+          "case": "tcp-unavailable",
+          "output": "{ id: 'A1', available: true }\nclosed-service rejected"
+        }
+      ],
+      "not_executed": [
+        "Kafka/RabbitMQ/Redis/NATS/MQTT/gRPC deployments",
+        "durable CQRS database/outbox/saga integration"
+      ]
+    },
+    "backend-nest-quality-results.json": {
+      "runtime": "Node23.7 TypeScript5.9.3 strict",
+      "versions": {
+        "@nestjs/core": "11.2.7",
+        "@nestjs/swagger": "11.4.7",
+        "@nestjs/config": "4.0.4",
+        "joi": "18.2.9",
+        "class-validator": "0.15.1"
+      },
+      "results": [
+        {
+          "case": "joi-config",
+          "output": "valid port converted; invalid/missing config rejected"
+        },
+        {
+          "case": "dto-inputs",
+          "output": "DTO valid transformed; extra role and invalid email rejected"
+        },
+        {
+          "case": "swagger-dto-runtime",
+          "output": "nested order valid; empty items, zero quantity and invalid shipping rejected"
+        },
+        {
+          "case": "swagger-envelope",
+          "output": "generated single-item envelope uses ItemDto ref"
+        },
+        {
+          "case": "decorator-pagination",
+          "output": "pagination valid; malformed/negative/array/unsafe integers rejected"
+        }
+      ],
+      "not_executed": [
+        "full referenced Users application/Jest/Testcontainers suite",
+        "production signals/Kubernetes/Redis/BullMQ/provider bank integration",
+        "oasdiff CLI CI job"
+      ]
+    },
+    "backend-node-io-results.json": [
+      {
+        "runtime": "v23.7.0"
+      },
+      {
+        "case": "NDJSON-framing-errors-cleanup",
+        "output": "{\"out\":[{\"id\":1},{\"text\":\"\u20ac\"}],\"malformedRejected\":true,\"oversizedRejected\":true,\"sourceClosed\":true}"
+      },
+      {
+        "case": "buffer-encoding-ownership-wire",
+        "output": "4\n7\n68c3a9f09f9880\nJello\nJello\n1234abcd"
+      },
+      {
+        "case": "bounded-frame-and-upload",
+        "output": "{\"type\":7,\"payload\":\"h\u00e9\",\"invalidLengthRejected\":true,\"truncatedRejected\":true,\"duplicateRejected\":true}"
+      },
+      {
+        "case": "owned-file-replacement-prefix-containment",
+        "output": "{\"replacement\":2,\"noTemporaryFiles\":true,\"prefix\":\"{\\\"r\",\"lexicalEscapeRejected\":true,\"serializationFailurePreservesTarget\":true}"
+      },
+      {
+        "case": "HTTP-bounded-route-error-lifetime",
+        "output": "{\"authorizedFieldsOnlyEcho\":true,\"nonobject400\":true,\"malformed400\":true,\"media415\":true,\"oversized413\":true,\"missing404\":true,\"health200\":true}"
+      }
+    ],
+    "backend-node-process-results.json": {
+      "runtime": "Node23.7.0; Piscina5.3.2; isolatedlocalhost randomport",
+      "results": [
+        {
+          "case": "worker-terminal-paths",
+          "output": "{\"version\":\"v23.7.0\",\"result\":{\"result\":4.146264369941973},\"invalidRejected\":true,\"emptyExitRejected\":true,\"timeoutRejected\":true,\"sharedCounter\":200000}"
+        },
+        {
+          "case": "Piscina-release-admission-close",
+          "output": "{\"piscina\":\"5.3.2\",\"small\":{\"result\":4.146264369941973},\"fulfilled\":36,\"rejected\":64,\"closingRejected\":true}"
+        },
+        {
+          "case": "configuration-zero-and-shutdown",
+          "output": "{\"port\":0,\"debug\":false,\"badPortRejected\":true,\"oneShutdown\":true,\"events\":[\"resources\"]}"
+        },
+        {
+          "case": "cluster sharedport keepalive replacement gracefulexit",
+          "output": {
+            "initial": [
+              {
+                "event": "listening",
+                "pid": 643,
+                "port": 51983
+              },
+              {
+                "event": "listening",
+                "pid": 642,
+                "port": 51983
+              }
+            ],
+            "sameConnectionResponses": [
+              "Worker 643",
+              "Worker 643",
+              "Worker 643"
+            ],
+            "killedExit": {
+              "event": "exit",
+              "pid": 643,
+              "code": null,
+              "signal": "SIGKILL"
+            },
+            "replacement": {
+              "event": "listening",
+              "pid": 644,
+              "port": 51983
+            },
+            "shutdownExit": 0
+          }
+        }
+      ]
+    },
+    "backend-node-runtime-results.json": [
+      {
+        "runtime": "v23.7.0"
+      },
+      {
+        "case": "CommonJS and I/O context order",
+        "output": [
+          "start",
+          "end",
+          "tick",
+          "promise",
+          "immediate in I/O",
+          "timeout in I/O"
+        ]
+      },
+      {
+        "case": "exact authored twochunk TypeScript fixture",
+        "output": "[ 'HELLO', 'WORLD' ] true"
+      },
+      {
+        "case": "authored node:test asserts completion/mocks/subtests",
+        "output": "TAP version 13\n# Subtest: division handles its boundary\nok 1 - division handles its boundary\n  ---\n  duration_ms: 0.455542\n  type: 'test'\n  ...\n# Subtest: await a collaborator result\nok 2 - await a collaborator result\n  ---\n  duration_ms: 0.193791\n  type: 'test'\n  ...\n# Subtest: parent waits for each child\n    # Subtest: positive input\n    ok 1 - positive input\n      ---\n      duration_ms: 0.049333\n      type: 'test'\n      ...\n    # Subtest: negative input\n    ok 2 - negative input\n      ---\n      duration_ms: 0.037958\n      type: 'test'\n      ...\n    1..2\nok 3 - parent waits for each child\n  ---\n  duration_ms: 0.246417\n  type: 'test'\n  ...\n1..3\n# tests 5\n# suites 0\n# pass 5\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 38.856666\n"
+      },
+      {
+        "case": "pipe serial awaits splitdecoder cancellation",
+        "output": {
+          "output": [
+            "HELLO",
+            "WORLD"
+          ],
+          "maxWrites": 1,
+          "splitDecoded": "\u20ac",
+          "cancelClosed": true
+        }
+      }
+    ],
+    "backend-node-security-results.json": {
+      "runtime": "Node23.7.0; isolated scratch dependencies/local random ports",
+      "results": [
+        {
+          "case": "framework-lifecycle",
+          "output": "{\"express\":[[200,{\"id\":\"7\",\"totalCents\":1250}],[400,{\"error\":\"Invalid request\"}],[404,{\"error\":\"Not found\"}],[500,{\"error\":\"Internal server error\"}]],\"fastify\":[[200,{\"status\":\"ok\"}],[401,{\"error\":\"Unauthorized\"}],[200,{\"id\":\"7\",\"totalCents\":1250}],[400,{\"error\":\"Invalid request\"}],[404,{\"error\":\"Not found\"}],[403,{\"error\":\"Forbidden\"}],[500,{\"error\":\"Internal server error\"}]],\"parser\":[[400,{\"error\":\"Invalid request\"}],[413,{\"error\":\"Payload too large\"}],[415,{\"error\":\"Unsupported media type\"}]],\"lookups\":3,\"versions\":{\"express\":\"5.2.1\",\"fastify\":\"5.12.5\"}}"
+        },
+        {
+          "case": "security-shapes-headers",
+          "output": "{\"query\":{\"tenantId\":\"clinic-7\",\"username\":\"ada\"},\"operatorRejected\":true,\"prototypeRejected\":true,\"unsupportedModeRejected\":true,\"helmet\":\"8 (installed lockfile)\"}"
+        },
+        {
+          "case": "diagnostic-artifact-interval-cleanup",
+          "output": "{\"samples\":2,\"stopped\":true,\"profileNodes\":7,\"exclusiveArtifact\":true}"
+        }
+      ]
+    },
+    "backend-payload-postgresql-results.json": {
+      "runtime": "postgres (PostgreSQL) 16.15 (Homebrew)",
+      "results": [
+        {
+          "case": "authored verified-event inbox/work fixture",
+          "output": [
+            "1",
+            "1"
+          ]
+        },
+        {
+          "case": "repeat accepted event does not duplicate work",
+          "output": [
+            "1"
+          ]
+        },
+        {
+          "case": "two concurrent acceptance transactions one durable inbox/work pair",
+          "output": [
+            "1|1"
+          ]
+        },
+        {
+          "case": "acceptance rollback no partial durable rows",
+          "output": [
+            "0",
+            "0"
+          ]
+        },
+        {
+          "case": "worker local state and completion commit",
+          "output": [
+            "t|1"
+          ]
+        },
+        {
+          "case": "repeated local transition retains one paid state",
+          "output": [
+            "1"
+          ]
+        },
+        {
+          "case": "authored tied timestamp/ID keyset includes40and39 and excludes unauthorized tenant99",
+          "output": [
+            "40|2026-10-09 15:32:00.000123+05:30|n",
+            "39|2026-10-09 15:31:00+05:30|n"
+          ]
+        },
+        {
+          "case": "millisecond truncation changes continuation and skips40",
+          "output": [
+            "39|2026-10-09 15:31:00+05:30|n"
+          ]
+        }
+      ],
+      "limits": "Real isolated PostgreSQL Unix-socket cluster; no provider/queue/remote worker transaction integration"
+    },
+    "backend-payload-runtime-results.json": {
+      "runtime": "v23.7.0",
+      "typescript": "strict ES2022 compile using temp Nest dependency root; library declarations skipLibCheck",
+      "results": [
+        "strict TypeScript public/unknown problem mapping, nested field path and unsafe occurrence input",
+        "strict pagination parameter rejects and lossless last-returned-row cursor",
+        "actual loopback polling: non-JSON429, progress, terminal result, unknown state, deadline and caller cancellation",
+        "SHA256 hex digest bytes converted to base64 and invalid inputs rejected",
+        "HMAC raw Unicode bytes accepted; wrong secret, changed signed ID, stale/future/malformed/array headers and invalid UTF8 rejected",
+        "JSON precision, decimal-string identity, omitted undefined, array null and bigint failure",
+        "notification queue identity stable, differentiated and never colon/integer-only",
+        "authored serialization fixture exact console output"
+      ],
+      "limits": "No real provider/S3/scanner/production worker/SMTP/ProtoJSON integration executed"
+    },
+    "backend-pool-postgresql-results.json": {
+      "runtime": "Node.js 23.7.0, node-postgres 8.16.3, PostgreSQL 16.15, isolated Unix socket cluster",
+      "results": [
+        {
+          "case": "pool max1 queues borrower and returns query",
+          "output": [
+            "1",
+            "42"
+          ]
+        },
+        {
+          "case": "pool max2 changed condition no queue",
+          "output": [
+            "0",
+            "42"
+          ]
+        },
+        {
+          "case": "transaction rollback/success and acquisition timeout recovery",
+          "output": [
+            "0",
+            "4",
+            "acquisition timed out",
+            "42"
+          ]
+        }
+      ]
+    },
+    "backend-query-postgresql-results.json": {
+      "runtime": "PostgreSQL16.15 isolated Unix-socket cluster",
+      "results": [
+        {
+          "case": "partial covering ordered fixture results",
+          "output": [
+            "9942|99420",
+            "9842|98420",
+            "9742|97420"
+          ]
+        },
+        {
+          "case": "visibility-map effect on same covering scan",
+          "before": [
+            {
+              "Plan": {
+                "Node Type": "Limit",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Startup Cost": 0.28,
+                "Total Cost": 9.69,
+                "Plan Rows": 3,
+                "Plan Width": 16,
+                "Actual Startup Time": 0.003,
+                "Actual Total Time": 0.003,
+                "Actual Rows": 3,
+                "Actual Loops": 1,
+                "Shared Hit Blocks": 5,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0,
+                "Plans": [
+                  {
+                    "Node Type": "Index Only Scan",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Scan Direction": "Forward",
+                    "Index Name": "index_paid_tenant_time",
+                    "Relation Name": "index_orders",
+                    "Alias": "index_orders",
+                    "Startup Cost": 0.28,
+                    "Total Cost": 157.13,
+                    "Plan Rows": 50,
+                    "Plan Width": 16,
+                    "Actual Startup Time": 0.003,
+                    "Actual Total Time": 0.003,
+                    "Actual Rows": 3,
+                    "Actual Loops": 1,
+                    "Index Cond": "(tenant_id = 42)",
+                    "Rows Removed by Index Recheck": 0,
+                    "Heap Fetches": 3,
+                    "Shared Hit Blocks": 5,
+                    "Shared Read Blocks": 0,
+                    "Shared Dirtied Blocks": 0,
+                    "Shared Written Blocks": 0,
+                    "Local Hit Blocks": 0,
+                    "Local Read Blocks": 0,
+                    "Local Dirtied Blocks": 0,
+                    "Local Written Blocks": 0,
+                    "Temp Read Blocks": 0,
+                    "Temp Written Blocks": 0
+                  }
+                ]
+              },
+              "Planning": {
+                "Shared Hit Blocks": 0,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0
+              },
+              "Planning Time": 0.014,
+              "Triggers": [],
+              "Execution Time": 0.006
+            }
+          ],
+          "after": [
+            {
+              "Plan": {
+                "Node Type": "Limit",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Startup Cost": 0.28,
+                "Total Cost": 0.57,
+                "Plan Rows": 3,
+                "Plan Width": 16,
+                "Actual Startup Time": 0.003,
+                "Actual Total Time": 0.003,
+                "Actual Rows": 3,
+                "Actual Loops": 1,
+                "Shared Hit Blocks": 3,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0,
+                "Plans": [
+                  {
+                    "Node Type": "Index Only Scan",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Scan Direction": "Forward",
+                    "Index Name": "index_paid_tenant_time",
+                    "Relation Name": "index_orders",
+                    "Alias": "index_orders",
+                    "Startup Cost": 0.28,
+                    "Total Cost": 5.16,
+                    "Plan Rows": 50,
+                    "Plan Width": 16,
+                    "Actual Startup Time": 0.003,
+                    "Actual Total Time": 0.003,
+                    "Actual Rows": 3,
+                    "Actual Loops": 1,
+                    "Index Cond": "(tenant_id = 42)",
+                    "Rows Removed by Index Recheck": 0,
+                    "Heap Fetches": 0,
+                    "Shared Hit Blocks": 3,
+                    "Shared Read Blocks": 0,
+                    "Shared Dirtied Blocks": 0,
+                    "Shared Written Blocks": 0,
+                    "Local Hit Blocks": 0,
+                    "Local Read Blocks": 0,
+                    "Local Dirtied Blocks": 0,
+                    "Local Written Blocks": 0,
+                    "Temp Read Blocks": 0,
+                    "Temp Written Blocks": 0
+                  }
+                ]
+              },
+              "Planning": {
+                "Shared Hit Blocks": 19,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0
+              },
+              "Planning Time": 0.024,
+              "Triggers": [],
+              "Execution Time": 0.005
+            }
+          ]
+        },
+        {
+          "case": "expression unique policy rejects case-equivalent key",
+          "output": [
+            "1",
+            "ERROR:  23505"
+          ]
+        },
+        {
+          "case": "join fixture",
+          "output": []
+        },
+        {
+          "case": "left join pairs and null placeholder",
+          "output": [
+            "1|Ada|10|booked",
+            "1|Ada|11|cancelled",
+            "2|Ben|12|booked",
+            "3|Cy||"
+          ]
+        },
+        {
+          "case": "ON retains unmatched patient",
+          "output": [
+            "1|Ada|10",
+            "2|Ben|12",
+            "3|Cy|"
+          ]
+        },
+        {
+          "case": "count match key ignores placeholder",
+          "output": [
+            "1|Ada|2",
+            "2|Ben|1",
+            "3|Cy|0"
+          ]
+        },
+        {
+          "case": "presence only avoids fanout",
+          "output": [
+            "1|Ada",
+            "2|Ben"
+          ]
+        },
+        {
+          "case": "left lateral one per patient",
+          "output": [
+            "1|Ada|11",
+            "2|Ben|12",
+            "3|Cy|"
+          ]
+        },
+        {
+          "case": "index preserves ordered-limit result",
+          "output": [
+            "42",
+            "142",
+            "242"
+          ]
+        },
+        {
+          "case": "actual before-after query strategy",
+          "before": [
+            {
+              "Plan": {
+                "Node Type": "Limit",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Startup Cost": 0.29,
+                "Total Cost": 14.42,
+                "Plan Rows": 3,
+                "Plan Width": 4,
+                "Actual Startup Time": 0.005,
+                "Actual Total Time": 0.013,
+                "Actual Rows": 3,
+                "Actual Loops": 1,
+                "Shared Hit Blocks": 7,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0,
+                "Plans": [
+                  {
+                    "Node Type": "Index Scan",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Scan Direction": "Forward",
+                    "Index Name": "plan_events_pkey",
+                    "Relation Name": "plan_events",
+                    "Alias": "plan_events",
+                    "Startup Cost": 0.29,
+                    "Total Cost": 471.29,
+                    "Plan Rows": 100,
+                    "Plan Width": 4,
+                    "Actual Startup Time": 0.004,
+                    "Actual Total Time": 0.013,
+                    "Actual Rows": 3,
+                    "Actual Loops": 1,
+                    "Filter": "(tenant_id = 42)",
+                    "Rows Removed by Filter": 239,
+                    "Shared Hit Blocks": 7,
+                    "Shared Read Blocks": 0,
+                    "Shared Dirtied Blocks": 0,
+                    "Shared Written Blocks": 0,
+                    "Local Hit Blocks": 0,
+                    "Local Read Blocks": 0,
+                    "Local Dirtied Blocks": 0,
+                    "Local Written Blocks": 0,
+                    "Temp Read Blocks": 0,
+                    "Temp Written Blocks": 0
+                  }
+                ]
+              },
+              "Planning": {
+                "Shared Hit Blocks": 17,
+                "Shared Read Blocks": 0,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0
+              },
+              "Planning Time": 0.075,
+              "Triggers": [],
+              "Execution Time": 0.016
+            }
+          ],
+          "after": [
+            {
+              "Plan": {
+                "Node Type": "Limit",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Startup Cost": 0.29,
+                "Total Cost": 9.82,
+                "Plan Rows": 3,
+                "Plan Width": 4,
+                "Actual Startup Time": 0.008,
+                "Actual Total Time": 0.009,
+                "Actual Rows": 3,
+                "Actual Loops": 1,
+                "Shared Hit Blocks": 3,
+                "Shared Read Blocks": 2,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0,
+                "Plans": [
+                  {
+                    "Node Type": "Index Only Scan",
+                    "Parent Relationship": "Outer",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Scan Direction": "Forward",
+                    "Index Name": "plan_events_tenant_id",
+                    "Relation Name": "plan_events",
+                    "Alias": "plan_events",
+                    "Startup Cost": 0.29,
+                    "Total Cost": 317.97,
+                    "Plan Rows": 100,
+                    "Plan Width": 4,
+                    "Actual Startup Time": 0.008,
+                    "Actual Total Time": 0.008,
+                    "Actual Rows": 3,
+                    "Actual Loops": 1,
+                    "Index Cond": "(tenant_id = 42)",
+                    "Rows Removed by Index Recheck": 0,
+                    "Heap Fetches": 3,
+                    "Shared Hit Blocks": 3,
+                    "Shared Read Blocks": 2,
+                    "Shared Dirtied Blocks": 0,
+                    "Shared Written Blocks": 0,
+                    "Local Hit Blocks": 0,
+                    "Local Read Blocks": 0,
+                    "Local Dirtied Blocks": 0,
+                    "Local Written Blocks": 0,
+                    "Temp Read Blocks": 0,
+                    "Temp Written Blocks": 0
+                  }
+                ]
+              },
+              "Planning": {
+                "Shared Hit Blocks": 8,
+                "Shared Read Blocks": 1,
+                "Shared Dirtied Blocks": 0,
+                "Shared Written Blocks": 0,
+                "Local Hit Blocks": 0,
+                "Local Read Blocks": 0,
+                "Local Dirtied Blocks": 0,
+                "Local Written Blocks": 0,
+                "Temp Read Blocks": 0,
+                "Temp Written Blocks": 0
+              },
+              "Planning Time": 0.021,
+              "Triggers": [],
+              "Execution Time": 0.011
+            }
+          ]
+        },
+        {
+          "case": "EXPLAIN ANALYZE mutation executes then fixture rollback",
+          "output": [
+            "Update on plan_events  (cost=0.29..8.30 rows=0 width=0) (actual time=0.008..0.008 rows=0 loops=1)",
+            "  Buffers: shared hit=5",
+            "  ->  Index Scan using plan_events_pkey on plan_events  (cost=0.29..8.30 rows=1 width=38) (actual time=0.003..0.003 rows=1 loops=1)",
+            "        Index Cond: (id = 42)",
+            "        Buffers: shared hit=3",
+            "Planning Time: 0.008 ms",
+            "Execution Time: 0.093 ms",
+            "changed",
+            "100"
+          ]
+        },
+        {
+          "case": "ranking ties and prewindow department filter",
+          "output": [
+            "1|100|1|1|1|320",
+            "2|80|2|2|2|320",
+            "3|80|3|2|2|320",
+            "4|60|4|4|3|320"
+          ]
+        },
+        {
+          "case": "two rows per department",
+          "output": [
+            "1|A|100",
+            "2|A|80",
+            "5|B|50"
+          ]
+        },
+        {
+          "case": "default peer vs ROWS and lastvalue frame",
+          "output": [
+            "1|100|100|100|60",
+            "2|260|180|80|60",
+            "3|260|260|80|60",
+            "4|320|320|60|60"
+          ]
+        },
+        {
+          "case": "lag lead deterministic chronology",
+          "output": [
+            "1||80",
+            "2|100|80",
+            "3|80|60",
+            "4|80|",
+            "5||"
+          ]
+        },
+        {
+          "case": "consecutive day islands",
+          "output": [
+            "2026-01-01|2026-01-02|2",
+            "2026-01-04|2026-01-04|1"
+          ]
+        },
+        {
+          "case": "session >30minute threshold",
+          "output": [
+            "1|2026-01-01 10:00:00|2026-01-01 10:50:00|3",
+            "2|2026-01-01 11:21:00|2026-01-01 11:21:00|1"
+          ]
+        },
+        {
+          "case": "changed >=30 boundary",
+          "output": [
+            "1|2026-01-01 10:00:00|2026-01-01 10:20:00|2",
+            "2|2026-01-01 10:50:00|2026-01-01 10:50:00|1",
+            "3|2026-01-01 11:21:00|2026-01-01 11:21:00|1"
+          ]
+        },
+        {
+          "case": "document fixture type and null distinction",
+          "output": [
+            "1|Acme|A",
+            "2|Other|",
+            "t|null|t|f"
+          ]
+        },
+        {
+          "case": "containment values retain types",
+          "output": [
+            "1",
+            "2",
+            "t|f"
+          ]
+        },
+        {
+          "case": "nested update shallow replacement and missingparent",
+          "output": [
+            "A|16|2",
+            "{\"specs\": {\"ram\": 16}}",
+            "{}"
+          ]
+        },
+        {
+          "case": "stale document version rejected",
+          "output": []
+        },
+        {
+          "case": "array-expansion grain and deterministicaggregate",
+          "output": [
+            "audio|2",
+            "portable|1",
+            "[\"Acme\", \"Other\"]"
+          ]
+        },
+        {
+          "case": "present stringprice rejected by typed CHECK",
+          "output": [
+            "ERROR:  23514"
+          ]
+        }
+      ]
+    },
+    "backend-resilience-results.json": {
+      "runtime": "v24.19.0",
+      "results": [
+        "Exact breaker thresholds/rejection and cooldown equality",
+        "Single concurrent half-open probe, failed-probe cooldown and successful recovery",
+        "Late old-epoch success does not close newer open state",
+        "Ignored validation error does not count as dependency failure",
+        "Exact fail-fast bulkhead saturation, separate login admission, pre-abort rejection, synchronous/asynchronous failure permit release"
+      ],
+      "boundaries": [
+        "Local models only; no rolling-window library, real network chaos, fleet coordination or queued limiter asserted"
+      ]
+    },
+    "backend-rest-design-results.json": {
+      "runtime": "v23.7.0",
+      "results": [
+        "actual loopback old/new adapters preserve name/displayName; structured deprecation/date Sunset; unknownversion404 andmethod405Allow",
+        "complete authored OpenAPI3.1.1 structure and references validate with swagger-parser12",
+        "actual JSONSchema2020-12 Book requires both strings and rejects missing/type/empty values"
+      ],
+      "limits": "No production authorization, generator/fuzz/SDK/CDN/crossversionDB deployed integration claimed"
+    },
+    "backend-rest-edge-results.json": {
+      "runtime": "v23.7.0",
+      "results": [
+        "fractional refill, weightedcost, identity isolation, backwardsclock, invalidpolicy, boundedkeys and fullbucket eviction; separate processes deliberately do not enforce fleet quota",
+        "BFF selected fields, optional synchronous rejection versus required failure, missingprincipal and cancellation-aware deadline",
+        "strictTypeScript tenant/owner/privileged object-read boundary",
+        "actual loopback readproxy path/query+status+headers+body, forgedidentity/requestID strip, route/method rejection,204emptybody,500textpreservation,504deadlinecancelsupstream and502closedupstream"
+      ],
+      "limits": "Gateway uses same authored logic with dynamic isolated loopback ports; no real Redis/fleetfailover/OAuth/JWT/provider/cookie/production service deployment claimed"
+    },
+    "backend-search-postgresql-results.json": {
+      "runtime": "PostgreSQL16.15 isolated Unix-socket cluster",
+      "results": [
+        {
+          "case": "ranked tenant7 lexical matches",
+          "output": [
+            "1|Wireless headphones",
+            "2|Audio stand"
+          ]
+        },
+        {
+          "case": "ordinary incomplete term differs from explicit prefix",
+          "output": [
+            "f|t"
+          ]
+        },
+        {
+          "case": "tenant8 gets only its own document",
+          "output": [
+            "3"
+          ]
+        }
+      ]
+    },
+    "backend-secret-cache-results.json": {
+      "status": "pass",
+      "node": "v24.19.0",
+      "cases": [
+        "concurrent single-flight",
+        "cache before expiry",
+        "expired refresh rejection",
+        "recovery after failure",
+        "invalid TTL rejection"
+      ],
+      "limits": "Injected local loader/clock only; no AWS/Vault/Kubernetes integration"
+    },
+    "backend-security-first4-results.json": {
+      "session": "PASS actual loopback HTTP session login regeneration/old-ID denial/origin/CSRF/logout/idle+absolute expiry\n",
+      "limitations": "MemoryStore + injected credential adapter. No Redis/PostgreSQL session-store deployment, TLS/browser SameSite, proxy or concurrent logout proof.",
+      "guards": "PASS strict TS + actual Argon2 Basic verification/colon password/invalid input/challenge; API key class scopes/current revocation/expiry/corrupt verifier; equality bytes\n",
+      "guard_limitations": "Actual direct guard calls with injected repository/ExecutionContext; no remote key store, rate limiter or mounted Nest integration."
+    },
+    "backend-topology-results.json": {
+      "status": "pass",
+      "node": "v24.19.0",
+      "cases": [
+        "endpoint strict expiry/readiness/transport",
+        "route segment boundary",
+        "1000 deterministic cohorts and monotone rollout"
+      ],
+      "limits": "Exact local helpers; no registry/mesh/proxy/cloud integration"
+    },
+    "backend-transactions-postgresql-results.json": {
+      "runtime": "PostgreSQL16.15 isolated Unix-socket cluster",
+      "results": [
+        {
+          "case": "transfer fixture",
+          "output": []
+        },
+        {
+          "case": "ordered locked transfer",
+          "output": []
+        },
+        {
+          "case": "both balances committed together",
+          "output": [
+            "7500",
+            "2500"
+          ]
+        },
+        {
+          "case": "savepoint discards optional increment",
+          "output": []
+        },
+        {
+          "case": "savepoint kept only100 increment",
+          "output": [
+            "2600"
+          ]
+        },
+        {
+          "case": "deadlock breaks wait cycle with one40P01 victim",
+          "output": [
+            [
+              "ERROR:  40P01"
+            ],
+            [
+              "1"
+            ]
+          ]
+        },
+        {
+          "case": "optimistic fixture",
+          "output": [
+            "1|Original|1"
+          ]
+        },
+        {
+          "case": "first expected-version update",
+          "output": [
+            "1|First edit|2"
+          ]
+        },
+        {
+          "case": "stale repeated update rejects",
+          "output": []
+        },
+        {
+          "case": "conditional reservation",
+          "output": [
+            "9"
+          ]
+        },
+        {
+          "case": "atomic first job claim",
+          "output": [
+            "1"
+          ]
+        },
+        {
+          "case": "second job remains pending",
+          "output": [
+            "1"
+          ]
+        },
+        {
+          "case": "migration fixture and expansion",
+          "output": []
+        },
+        {
+          "case": "compatible dual write",
+          "output": []
+        },
+        {
+          "case": "backfill converts current decimal exactly",
+          "output": [
+            "1|1250"
+          ]
+        },
+        {
+          "case": "repeated backfill idempotent",
+          "output": []
+        },
+        {
+          "case": "verification no mismatches",
+          "output": [
+            "0"
+          ]
+        },
+        {
+          "case": "empty skipped batch while mismatched row locked",
+          "output": []
+        },
+        {
+          "case": "verification detects skipped mismatch",
+          "output": [
+            "1"
+          ]
+        },
+        {
+          "case": "released row repaired in resumed batch",
+          "output": [
+            "1|1260"
+          ]
+        },
+        {
+          "case": "verify before adding required-value constraint",
+          "output": [
+            "0"
+          ]
+        },
+        {
+          "case": "validated constraint and NOT NULL",
+          "output": []
+        }
+      ]
+    },
+    "build-final-results.json": {
+      "runtime": "v24.19.0",
+      "versions": {
+        "webpack": "5.111.1",
+        "@rspack/core": "2.2.8",
+        "@babel/core": "7.29.7",
+        "esbuild": "0.28.2",
+        "@swc/core": "1.16.13",
+        "vite": "8.3.4",
+        "lightningcss": "1.33.0",
+        "sharp": "0.35.5",
+        "typescript": "7.0.2"
+      },
+      "checks": 19,
+      "results": [
+        "Exact Babel private-field and map example executes",
+        "Exact esbuild/SWC type stripping succeeds while TypeScript rejects assignment",
+        "Exact webpack lazy graph emits two chunks and unchanged rebuild preserves identities",
+        "Exact Rspack2 SWC transform emits executable fixture",
+        "Exact size measurement rejects missing and empty output",
+        "Exact sharp variant retains smaller dimensions and emits WebP",
+        "Exact Vite CSS configuration emits CSS and hidden map without discovery comment"
+      ],
+      "limits": [
+        "No full application/federation/SSR/Turbopack or runtime browser HMR integration",
+        "Webpack lazy chunk generation tested, browser HTTP chunk loading not yet exercised",
+        "Image byte/format fixture does not establish visual quality, font coverage or performance",
+        "Source maps not uploaded to provider; no private/public deployment claim"
+      ]
+    },
+    "case-foundations-results.json": {
+      "runtime": "PostgreSQL 16.15 (Homebrew) on aarch64-apple-darwin25.6.0, compiled by Apple clang version 21.0.0 (clang-2100.1.1.101), 64-bit",
+      "checks": 52,
+      "results": [
+        "Exact URL/video/file metadata DDL, uniqueness/ready/negative size/version conflict/restore constraints",
+        "Stale processing-version publication matched zero rows",
+        "Ten actual concurrent PostgreSQL quota checks admitted one remaining request; separate read/increment demonstration overshot",
+        "Exact Python Dropbox checksum across six block-boundary sizes plus official binary-digest example",
+        "Independent consistent upload/playback/file-storage unit arithmetic"
+      ],
+      "limits": [
+        "No live URL redirect/CDN/S3 upload or auth enforcement",
+        "No actual distributed sync/client filesystem/GC implementation",
+        "Quota check demonstrates a PostgreSQL atomic update, not execution of a Redis limiter"
+      ]
+    },
+    "chart-results.json": {
+      "browser": "153.0.8010.12",
+      "values": [
+        1200000,
+        1500000,
+        1400000,
+        1900000
+      ],
+      "growth": "58.3%",
+      "violations": [],
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "impact": "serious",
+          "tags": [
+            "cat.color",
+            "wcag2aa",
+            "wcag143",
+            "TTv5",
+            "TT13.c",
+            "EN-301-549",
+            "EN-9.1.4.3",
+            "ACT",
+            "RGAAv4",
+            "RGAA-3.2.1"
+          ],
+          "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+          "help": "Elements must meet minimum color contrast ratio thresholds",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.13/color-contrast?application=playwright",
+          "nodes": [
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "12.0pt (16px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg id=\"revenue-chart\" role=\"img\" aria-labelledby=\"revenue-title\" aria-describedby=\"revenue-summary\" viewBox=\"0 0 420 280\">",
+                      "target": [
+                        "#revenue-chart"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<text x=\"20\" y=\"250\" fill=\"#1a1a1a\">Q1</text>",
+              "target": [
+                "text[x=\"20\"][y=\"250\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "12.0pt (16px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg id=\"revenue-chart\" role=\"img\" aria-labelledby=\"revenue-title\" aria-describedby=\"revenue-summary\" viewBox=\"0 0 420 280\">",
+                      "target": [
+                        "#revenue-chart"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<text x=\"20\" y=\"100\" fill=\"#1a1a1a\">1.2M</text>",
+              "target": [
+                "text[y=\"100\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "12.0pt (16px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg id=\"revenue-chart\" role=\"img\" aria-labelledby=\"revenue-title\" aria-describedby=\"revenue-summary\" viewBox=\"0 0 420 280\">",
+                      "target": [
+                        "#revenue-chart"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<text x=\"120\" y=\"250\" fill=\"#1a1a1a\">Q2</text>",
+              "target": [
+                "text[x=\"120\"][y=\"250\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "12.0pt (16px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg id=\"revenue-chart\" role=\"img\" aria-labelledby=\"revenue-title\" aria-describedby=\"revenue-summary\" viewBox=\"0 0 420 280\">",
+                      "target": [
+                        "#revenue-chart"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<text x=\"120\" y=\"70\" fill=\"#1a1a1a\">1.5M</text>",
+              "target": [
+                "text[y=\"70\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "12.0pt (16px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg id=\"revenue-chart\" role=\"img\" aria-labelledby=\"revenue-title\" aria-describedby=\"revenue-summary\" viewBox=\"0 0 420 280\">",
+                      "target": [
+                        "#revenue-chart"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<text x=\"220\" y=\"250\" fill=\"#1a1a1a\">Q3</text>",
+              "target": [
+                "text[x=\"220\"][y=\"250\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "12.0pt (16px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg id=\"revenue-chart\" role=\"img\" aria-labelledby=\"revenue-title\" aria-describedby=\"revenue-summary\" viewBox=\"0 0 420 280\">",
+                      "target": [
+                        "#revenue-chart"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<text x=\"220\" y=\"80\" fill=\"#1a1a1a\">1.4M</text>",
+              "target": [
+                "text[y=\"80\"][x=\"220\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "12.0pt (16px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg id=\"revenue-chart\" role=\"img\" aria-labelledby=\"revenue-title\" aria-describedby=\"revenue-summary\" viewBox=\"0 0 420 280\">",
+                      "target": [
+                        "#revenue-chart"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<text x=\"320\" y=\"250\" fill=\"#1a1a1a\">Q4</text>",
+              "target": [
+                "text[x=\"320\"][y=\"250\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            },
+            {
+              "any": [
+                {
+                  "id": "color-contrast",
+                  "data": {
+                    "contrastRatio": 0,
+                    "fontSize": "12.0pt (16px)",
+                    "fontWeight": "normal",
+                    "messageKey": "imgNode",
+                    "expectedContrastRatio": "4.5:1"
+                  },
+                  "relatedNodes": [
+                    {
+                      "html": "<svg id=\"revenue-chart\" role=\"img\" aria-labelledby=\"revenue-title\" aria-describedby=\"revenue-summary\" viewBox=\"0 0 420 280\">",
+                      "target": [
+                        "#revenue-chart"
+                      ]
+                    }
+                  ],
+                  "impact": "serious",
+                  "message": "Element's background color could not be determined because element contains an image node"
+                }
+              ],
+              "all": [],
+              "none": [],
+              "impact": "serious",
+              "html": "<text x=\"320\" y=\"30\" fill=\"#1a1a1a\">1.9M</text>",
+              "target": [
+                "text[y=\"30\"]"
+              ],
+              "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because element contains an image node"
+            }
+          ]
+        }
+      ],
+      "limits": [
+        "screen-reader speech/library integrations/dynamic data not executed"
+      ]
+    },
+    "cheat-postgresql-results.json": {
+      "runtime": "PostgreSQL 16.15 (Homebrew) on aarch64-apple-darwin25.6.0, compiled by Apple clang version 21.0.0 (clang-2100.1.1.101), 64-bit",
+      "checks": 54,
+      "results": [
+        "Exact transfer function success and invalid/null/missing/currency/insufficient/overflow rollback against independently read balances",
+        "Exact anti-joins, deterministic latest-session ties, division-by-zero LAG, gapped-day row windows and dense-rank ties",
+        "Exact audit/junction DDL, duplicate and foreign-key rejection, filtered view bypass and partial unique restore rejection",
+        "Exact repeatable-read transaction snippet"
+      ],
+      "limits": [
+        "Isolated PostgreSQL16 Unix socket cluster; no live account data or TCP listener",
+        "PostgreSQL18 skip-scan guidance source-based, not exercised in this PostgreSQL16 fixture",
+        "No full Nest/Prisma application, production transfer, cloud deployment, payment provider or external side effect executed"
+      ]
+    },
+    "cheat-reference-results.json": {
+      "language": "Exact JS emitter/scheduling/BigInt generator and strict TS5.9.3 decoders passed",
+      "react": "19.3.0",
+      "react_checks": "Exact authored components executed in jsdom; schema/HTTP errors, escaped markup, fallback and optimistic baseline checked",
+      "postgres": {
+        "runtime": "PostgreSQL 16.15 (Homebrew) on aarch64-apple-darwin25.6.0, compiled by Apple clang version 21.0.0 (clang-2100.1.1.101), 64-bit",
+        "checks": 54,
+        "results": [
+          "Exact transfer function success and invalid/null/missing/currency/insufficient/overflow rollback against independently read balances",
+          "Exact anti-joins, deterministic latest-session ties, division-by-zero LAG, gapped-day row windows and dense-rank ties",
+          "Exact audit/junction DDL, duplicate and foreign-key rejection, filtered view bypass and partial unique restore rejection",
+          "Exact repeatable-read transaction snippet"
+        ],
+        "limits": [
+          "Isolated PostgreSQL16 Unix socket cluster; no live account data or TCP listener",
+          "PostgreSQL18 skip-scan guidance source-based, not exercised in this PostgreSQL16 fixture",
+          "No full Nest/Prisma application, production transfer, cloud deployment, payment provider or external side effect executed"
+        ]
+      },
+      "limits": [
+        "No Next application/Prisma integration executed",
+        "Platform manifests are partial illustrations, not deployed cluster evidence"
+      ]
+    },
+    "ci-build-final-results.json": {
+      "checks": [
+        "29.8.2",
+        "exact health body 200",
+        "unknown route404",
+        "candidate identity equals running image",
+        "non-root runtime",
+        "read-only runtime rejects write",
+        "exact promotion JavaScript five assertions"
+      ],
+      "scope": "local Docker runtime and promotion policy only; no registry push/cloud deployment/signing scan"
+    },
+    "ci-metrics-final-results.json": {
+      "node": "v24.19.0",
+      "typescript": "6.0.3",
+      "canaryAssertions": 4,
+      "doraAssertions": 10,
+      "scope": "exact local JS/TS examples; no BigQuery/provider/telemetry integration"
+    },
+    "counter-boundary-results.json": {
+      "checks": [
+        "Extracted useCounter: positive and negative arithmetic overflow saturate at finite bounds"
+      ],
+      "environment": "React 19.3/jsdom"
+    },
+    "drive-instagram-final-results.json": {
+      "date": "2026-10-10",
+      "runtime": "PostgreSQL 16.15 (Homebrew) on aarch64-apple-darwin25.6.0, compiled by Apple clang version 21.0.0 (clang-2100.1.1.101), 64-bit",
+      "checks": 18,
+      "passed": [
+        "Exact Drive/Instagram authored PostgreSQL DDL",
+        "Root-name/self-parent/quota/current-version/unique-history/role rejection",
+        "Unique likes reject duplicate retries"
+      ],
+      "limits": [
+        "No full folder-cycle/move/ACL inheritance protocol",
+        "No actual object upload/social feed/provider integration"
+      ]
+    },
+    "ecommerce-final-results.json": {
+      "date": "2026-10-10",
+      "runtime": "PostgreSQL 16.15 (Homebrew) on aarch64-apple-darwin25.6.0, compiled by Apple clang version 21.0.0 (clang-2100.1.1.101), 64-bit",
+      "checks": 23,
+      "passed": [
+        "Exact PostgreSQL inventory/reservation DDL/function",
+        "Ten real final-unit contenders produce one winner",
+        "Negative/insufficient quantity reject with reservation rollback",
+        "Duplicate reservation identity prevents second decrement"
+      ],
+      "limits": [
+        "No multi-item distributed checkout/payment/fulfillment execution",
+        "Retry API and release/consume authority explained but not a complete service"
+      ]
+    },
+    "edge-final-results.json": {
+      "checked_at": "2026-10-10",
+      "runtime": "v24.19.0",
+      "checks": 45,
+      "assertions": [
+        "HTTP v2 GET/demo-1",
+        "private fixture cache GETdemo-1",
+        "HTTP v2 GET/missing",
+        "private fixture cache GETmissing",
+        "HTTP v2 GET/!",
+        "private fixture cache GET!",
+        "HTTP v2 POST/demo-1",
+        "private fixture cache POSTdemo-1",
+        "route bounded 20",
+        "route bounded 0",
+        "route bounded 101",
+        "route bounded -1",
+        "route bounded 1.2",
+        "route bounded 9007199254740992",
+        "Standard partial batch failed ID",
+        "Standard independent later record processed",
+        "CDK synthesized handler/runtime/timeout",
+        "CDK actual GET route",
+        "Inngest v4 two-argument function builds/imports",
+        "Web-API hello GET/api/hello",
+        "Web-API hello POST/api/hello",
+        "Web-API hello GET/missing",
+        "proxy controlled target",
+        "proxy drops caller identity headers",
+        "proxy method/query/body",
+        "proxy writes forwarded",
+        "proxy controlled target",
+        "proxy drops caller identity headers",
+        "manual redirect selection",
+        "proxy redirect returned",
+        "proxy delegates non-API assets",
+        "proxy rejects credential-bearing origin",
+        "proxy controlled target",
+        "proxy drops caller identity headers",
+        "proxy upstream error contract",
+        "Temporal approval then activity",
+        "Temporal recorded history replays",
+        "Replay does not repeat completed activity",
+        "Temporal durable approval timeout",
+        "Timeout does not charge",
+        "Real Wrangler dev GET /api/hello returns 200",
+        "Real Wrangler dev POST /api/hello returns 405",
+        "Real Wrangler dev unknown route returns 404",
+        "Generated Worker Env strict-compiles for both configurations",
+        "Both exact Worker configurations package successfully in dry runs"
+      ],
+      "versions": {
+        "typescript": "7.0.2",
+        "wrangler": "4.149.0",
+        "inngest": "4.23.0",
+        "aws-cdk-lib": "2.273.0",
+        "@temporalio/worker": "1.24.0"
+      },
+      "limits": [
+        "Legacy Miniflare adapter fixture failed startup. Current Wrangler dev successfully ran the exact hello Worker in local workerd; proxy semantics run in Node with controlled upstream/asset adapters. No deployed routing/global-latency claim.",
+        "Temporal time-skipping server validates execution, approval timeout and recorded replay; fixture activity makes no external effect.",
+        "Inngest function is strict-compiled and imported, not run against a persistent executor.",
+        "Cloud IAM, account quotas, production secrets, Fly rollout/volume restoration, and deployed provider latency/billing require independent integration checks."
+      ]
+    },
+    "errors-health-final-results.json": {
+      "node": "v24.19.0",
+      "sentry": "11.6.0",
+      "healthChecks": 9,
+      "scope": "exact Sentry custom transport scoped event/privacy and real localhost bounded status/body/redirect/slow-body/oversize; no live Sentry upload or Kubernetes control"
+    },
+    "forms-results.json": {
+      "react": "19.3.0",
+      "environment": "jsdom and installed Formik/TanStack/Zod; local failing service stub, not real authentication/browser layout",
+      "checks": [
+        "10.5.03-formik.md: real library submit remains pending until rejection; feedback settles and values remain",
+        "10.5.04-tanstack-form.md: real library submit remains pending until rejection; feedback settles and values remain",
+        "Zod age parser distinguishes input/output and rejects empty/null/out-of-range values",
+        "Extracted draft writer drains an in-flight save before clear and ignores later schedule"
+      ]
+    },
+    "git-final-results.json": {
+      "checked_at": "2026-10-10",
+      "runtime": "git version 2.48.1",
+      "checks": 33,
+      "assertions": [
+        "typed blob identity",
+        "blob size/type",
+        "plumbing snapshot",
+        "plumbing leaves worktree intact",
+        "rebase new identity",
+        "rebase new parent",
+        "rebase content",
+        "range diff compares series",
+        "cherry-pick trace",
+        "cherry-pick target tested",
+        "soft keeps staged tree",
+        "mixed unstages",
+        "mixed retains file",
+        "anchored old commit",
+        "reflog records tip",
+        "subject 'feat(ui): layout\\n\\nbo'",
+        "subject 'bad\\n\\nfix: valid body'",
+        "subject 'fix!: change\\n'",
+        "subject 'fix: xxxxxxxxxxxxxxx'",
+        "server allows creation",
+        "server rejects main",
+        "pre-receive rejects all updates",
+        "server allows deletion",
+        "format-patch prints filenames",
+        "am retains authored content",
+        "full bundle restores without remote network",
+        "increment rejects missing prerequisites",
+        "blob gate small passes",
+        "blob gate rejects introduced large blob",
+        "blob gate rejects missing base",
+        "trusted SSH verification",
+        "untrusted SSH rejection",
+        "unsigned rejection"
+      ],
+      "limits": [
+        "Disposable repositories only; no production refs modified or published.",
+        "Hosted branch rules, GPG/Sigstore identity and LFS service restoration not integration-tested."
+      ]
+    },
+    "graphql-fundamentals-results.json": {
+      "runtime": "v24.19.0",
+      "graphql": "16.14.2",
+      "checks": 15,
+      "results": [
+        "Exact overview and mutation ES modules executed",
+        "Complete domain SDL built/validated and conditional selection/interface fragment executed",
+        "Independent absence/invalid selection/no execution/coercion/union/nullability/serial side-effects/input-presence assertions"
+      ],
+      "limits": [
+        "No HTTP server, database, authentication provider, DateTime validation implementation or cloud integration executed",
+        "Domain schema is an SDL contract; its custom scalar/services need implementations"
+      ]
+    },
+    "graphs-results.json": {
+      "date": "2026-10-09",
+      "chapters": 6,
+      "typescript": "5.9.3",
+      "assertions": 84228,
+      "result": "passed",
+      "checks": [
+        "strict compilation of exact extracted chapter examples",
+        "Floyd-Warshall distance and reachable negative-cycle oracles",
+        "bounded walk enumeration for stop limits",
+        "4096 directed-graph ordering checks",
+        "1024 undirected connectivity cases",
+        "grid reachability, zeroing and shore oracles",
+        "coordinate traversal and rotation oracles",
+        "trie lookup/prefix/wildcard/update and identity/restoration checks"
+      ],
+      "limits": [
+        "small finite inputs; does not establish arbitrary numeric precision",
+        "recursive examples remain subject to runtime stack limits",
+        "browser/production search integrations not exercised"
+      ]
+    },
+    "hospital-final-results.json": {
+      "date": "2026-10-10",
+      "runtime": "PostgreSQL 16.15 (Homebrew) on aarch64-apple-darwin25.6.0, compiled by Apple clang version 21.0.0 (clang-2100.1.1.101), 64-bit",
+      "checks": 23,
+      "passed": [
+        "Exact full PostgreSQL clinical/scheduling schema",
+        "Half-open adjacent intervals allowed; overlapping active intervals reject",
+        "Cross-tenant patient link and reversed interval reject",
+        "Checked-in blocking and cancellation/rebooking",
+        "Ten actual concurrent interval inserts produce one winner"
+      ],
+      "limits": [
+        "No application role RLS/clinical policy or real patient processing",
+        "Python explicitly boundary pseudocode; no runnable API claimed",
+        "Audit partition creation remains operational work"
+      ]
+    },
+    "id-results.json": {
+      "node": "v24.19.0",
+      "typescript": "5.9.3",
+      "checks": 12306,
+      "results": [
+        "Exact strict authored generator4096same-ms uniqueness bit extraction sequence exhaustion next-ms recovery rollback field/horizon bounds decimal-stringserialization"
+      ],
+      "limits": [
+        "No lease/restart/durable high-water implementation or throughput benchmark"
+      ]
+    },
+    "india-lane-results.json": {
+      "review_date": "2026-10-09",
+      "swift": "Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)",
+      "results": [
+        {
+          "case": "empty",
+          "reserved": 0,
+          "result": "pass"
+        },
+        {
+          "case": "one-item-concurrent",
+          "reserved": 1,
+          "result": "pass"
+        },
+        {
+          "case": "two-items-concurrent",
+          "reserved": 2,
+          "result": "pass"
+        },
+        {
+          "case": "controlled-suspension-between-check-and-change",
+          "reserved": 2,
+          "result": "demonstrated broken invariant with one item; actor alone does not make workflow atomic"
+        },
+        {
+          "case": "offer/session/prefix/nonempty-window-arithmetic",
+          "result": "pass",
+          "limit": "hypothetical arithmetic, no market/tax/learning outcome claim"
+        }
+      ],
+      "bank_slots": 90,
+      "bank_slots_preserved": true,
+      "limits": [
+        "No cloud account, queue, blob, Spanner, live recruiter or Anki integration executed.",
+        "Swift checks cover the actor reservation boundary, not a remote payment workflow."
+      ]
+    },
+    "infra-data-results.json": {
+      "runtime": "PostgreSQL16.15 isolated local cluster",
+      "results": [
+        "Exact range/hash/list schemas, independent indexes and child autovacuum settings execute; UTC month boundary routes to correct child; hash hasall8children; February predicate prunes January",
+        "Exact after-image upsert ignores duplicate8 and delayed7, accepts9tombstone then prevents old7resurrection while retained",
+        "Exact RLS policy under non-bypass runtime role reads authorized A, local setting expires after commit and returns0withoutcontext, then Breads1",
+        "Exact Nodev23.7.0 AsyncLocalStorage wrapper preserves A/B contexts across interleaved async execution and fails closed outside boundary; resolver is fixture stub, not authentication"
+      ],
+      "boundaries": [
+        "Fixture schemas/identities only; no live replication/PgBouncer/Prisma configuration, streaming checkpoint/Delta table, CDN provider or complete tenant authentication/authorization integration executed"
+      ]
+    },
+    "infra-failure-results.json": {
+      "runtime": "v23.7.0",
+      "results": [
+        "Exact retry helper recovers after two HTTP503s, refuses HTTP400, declines Retry-After beyond deadline, caps additional attempts via budget, aborts stalled body, parses seconds/date and rejects invalid policy",
+        "Exact rollout primitive deterministic for1000subjects;5percent cohort remains subset of10percent; explicit anonymous and0/100/bad-percent boundaries"
+      ],
+      "boundaries": [
+        "Local Node GET and target allocation only; no framework interceptor, provider mutation, control-plane distribution, experiment validity, fleet budget or orchestrator integration executed"
+      ]
+    },
+    "infra-lease-results.json": {
+      "runtime": "PostgreSQL16.15 isolated socket cluster",
+      "results": [
+        "original: granted epoch2 with already expired lease",
+        "fixed: granted epoch2 with fresh lease measured after row wait"
+      ],
+      "boundaries": [
+        "Authored claim with scaled80ms lease and controlled300ms row-lock wait; local primary only",
+        "No Redis/ZooKeeper/etcd election, replica promotion, fencing namespace restore or external provider executed"
+      ]
+    },
+    "infra-lifecycle-results.json": {
+      "runtime": "v23.7.0",
+      "results": [
+        "Exact drain helper preserved active ordinary HTTP response and withheld dependency cleanup until completion",
+        "Stalled ordinary response forcibly closed at helper deadline and shutdown rejected",
+        "Invalid grace rejected"
+      ],
+      "boundaries": [
+        "Local Node HTTP ordering only; no NestJS adapter, workers/upgraded sockets, orchestrator/routing propagation or SIGKILL durability integration executed"
+      ]
+    },
+    "infra-recovery-results.json": {
+      "runtime": "PostgreSQL16.15 isolated socket cluster; bash artifact check",
+      "results": [
+        "Exact checksum fragment accepts valid artifact and rejects altered bytes/malformed digest, including filename spaces",
+        "Exact authored SQL with fixture-bound parameters: competing claim waits; committed winner replay visible at next READ COMMITTED statement; one appointment; abort removes claim and permits retry",
+        "Local pg_dump custom archive restored into new database with appointment time and replay identity preserved"
+      ],
+      "boundaries": [
+        "No API fingerprint/replay handler, broker/provider, physical/PITR chain, cloud Object Lock, production dataset, end-to-end RTO or external-effect reconciliation integration executed"
+      ]
+    },
+    "infra-shipping-results.json": {
+      "runtime": "PostgreSQL16.15 isolated cluster; Python JSON syntax",
+      "results": [
+        "Exact expand/dual-write/backfill SQL leaves old/new reader values equal and mismatch0",
+        "Old-only writer change reproduces mismatch1; synchronizing fields restores0, illustrating missing concurrent-writer bridge",
+        "S3 lifecycle example parses with documented capitalized fields/Status; cost example arithmetic0.0032and46.875percent checked"
+      ],
+      "boundaries": [
+        "No Kubernetes/Istio/NGINX rollout, fleet capacity/canary/rollback, production-sized migration or provider lifecycle/hold/deletion/KMS sanitization integration executed",
+        "S3 parse is syntax evidence only, not provider deployment acceptance or deletion proof"
+      ]
+    },
+    "last-cases-results.json": {
+      "runtime": "Python 3.14.5; PostgreSQL 16.15 (Homebrew) on aarch64-apple-darwin25.6.0, compiled by Apple clang version 21.0.0 (clang-2100.1.1.101), 64-bit",
+      "checks": 130,
+      "results": [
+        "Exact decimal cash-out example improves/degrades and rejects invalid inputs",
+        "Exact feed merge 24 source permutations, ties, cursor continuation, duplicate conflict and invalid limits",
+        "Exact narrow URL helper preserves query/path/port and rejects malformed syntax",
+        "Exact frontier DDL ownership constraints and stale completion rejection",
+        "Exact chat DDL with prose transaction: eight concurrent same-command sends retain one message/outbox; failed insertion rolls back sequence; revoked membership rejects retry"
+      ],
+      "limits": [
+        "No actual bet wallet/settlement/provider/price-feed integration",
+        "No actual graph authorization, cursor signing or ranked feed service",
+        "URL syntax checks do not establish DNS/SSRF/redirect/robots or distributed politeness safety",
+        "Chat fixture supplies the transaction described in prose; no WebSocket/device-sync/receipt/E2EE/group-load integration"
+      ]
+    },
+    "linear-results.json": {
+      "date": "2026-10-09",
+      "chapters": 7,
+      "strict_typescript": "5.9.3",
+      "assertions": 41177,
+      "oracles": "enumerated subarrays/pairs/triples,reachable states,naive matches,interval subsets/point coverage,list identity and restoration",
+      "limitations": "small exact integer/ASCII or stated UTF16 examples; not arbitrary precision or production text normalization"
+    },
+    "lyft-counter-results.json": {
+      "runtime": "PostgreSQL 16.15 (Homebrew) on aarch64-apple-darwin25.6.0, compiled by Apple clang version 21.0.0 (clang-2100.1.1.101), 64-bit",
+      "checks": 226,
+      "results": [
+        "Exact ride/driver/assignment DDL; two concurrent rides competing for one driver admit one",
+        "Unique ride constraint rejects second driver; failed assignment transaction rolls availability back",
+        "Exact event-claim counter SQL suppresses retry and eight concurrent duplicate events",
+        "Overflow rolls event claim back with value update",
+        "Exact Python G-Counter merge exhaustively checked idempotence commutativity associativity over 64 triples",
+        "Capacity unit checks"
+      ],
+      "limits": [
+        "Assignment fixture implements chapter pseudocode, not full offer/auth/expiry/outbox/API",
+        "No live Redis S2 H3 Kafka routing engine or payment provider",
+        "Counter schema omits API payload mismatch and authorization checks; no live DynamoDB execution"
+      ]
+    },
+    "math-results.json": {
+      "date": "2026-10-09",
+      "runtime": "Temurin21.0.12.1",
+      "result": "passed",
+      "assertions": 33504,
+      "checks": [
+        "exact extracted Java fragments compile with -Xlint:all",
+        "trial primality and factor reconstruction",
+        "BigInteger GCD/LCM incl signed int extrema",
+        "extended Euclid identity 0..100 pairs",
+        "BigInteger residue/power/inverse/binomial oracles incl long extrema"
+      ],
+      "limits": [
+        "fixed modulus and stated integer bounds; no arbitrary long extendedGCD claim",
+        "small feasible allocations; resource exhaustion not tested"
+      ]
+    },
+    "metrics-rule-results.json": {
+      "runtime": "Prometheus promtool3.5.0 Docker sha25663805ebb8d2b3920190daf1cb14a60871b16fd38bed42b857a3182bc621f4996",
+      "results": [
+        "Exact authored alert rule check passes",
+        "Four alert assertions pending/firing/belowthreshold/absentseries pass"
+      ],
+      "limits": [
+        "No ingestion/queryfleet/HA/provider integration"
+      ]
+    },
+    "mobile-results.json": {
+      "react": "19.3.0",
+      "checks": [
+        "Extracted URL parser: 2 allowed URLs and 9 invalid/unknown/credential/query/oversized cases",
+        "Extracted hook: cold completion, newer event wins, pending completion suppressed after unmount, initial rejection reported"
+      ],
+      "limitations": "React/jsdom with an explicit Linking delivery stub; not native OS association, device navigation, invitation authorization or deferred-install verification"
+    },
+    "mobile-sql-results.json": {
+      "sqlite": "3.53.2",
+      "checks": [
+        "Extracted schema and parameterized upsert: one record updated, rowid retained, SELECT alias/order correct, invalid NOT NULL write rejects"
+      ],
+      "limitations": "Actual SQLite SQL engine via Python; Expo native API scheduling, device persistence and synchronization are not exercised"
+    },
+    "next-isr-results.json": {
+      "next": "16.4.0",
+      "react": "19.3.0",
+      "adaptation": "Extracted first ISR code block; local controlled API replaces example.com; revalidate 1 replaces 60 for bounded execution; one local production instance.",
+      "events": [
+        {
+          "case": "cold on-demand output",
+          "status": 200,
+          "cache": "MISS"
+        },
+        {
+          "case": "warm stored output",
+          "cache": "HIT"
+        },
+        {
+          "case": "expired request serves prior successful output",
+          "cache": "STALE"
+        },
+        {
+          "case": "successful refresh replaces output",
+          "cache": "HIT"
+        },
+        {
+          "case": "upstream regeneration failure retains last successful B",
+          "cache": "HIT"
+        },
+        {
+          "case": "later retry recovers to C",
+          "cache": "HIT"
+        }
+      ]
+    },
+    "notification-final-results.json": {
+      "date": "2026-10-10",
+      "runtime": "PostgreSQL 16.15 (Homebrew) on aarch64-apple-darwin25.6.0, compiled by Apple clang version 21.0.0 (clang-2100.1.1.101), 64-bit",
+      "checks": 17,
+      "passed": [
+        "Exact PostgreSQL intent/delivery DDL and producer/recipient/channel/target dedup",
+        "Negative attempts/unknown channels reject",
+        "Exact Python aware local-time quiet windows overnight/boundaries/repeatedDST instant"
+      ],
+      "limits": [
+        "No next-allowed-instant scheduler",
+        "No provider external delivery or callback integration"
+      ]
+    },
+    "payment-final-results.json": {
+      "date": "2026-10-10",
+      "runtime": "PostgreSQL 16.15 (Homebrew) on aarch64-apple-darwin25.6.0, compiled by Apple clang version 21.0.0 (clang-2100.1.1.101), 64-bit",
+      "checks": 13,
+      "passed": [
+        "Exact command/event DDL",
+        "Scoped retry uniqueness distinguishes separate equal purchases and merchants",
+        "Negative amount rejected",
+        "Unique provider result and event identities"
+      ],
+      "limits": [
+        "No provider call or real financial effect",
+        "No full ledger posting/balance function or concurrent refund workflow"
+      ]
+    },
+    "pillars-final-results.json": {
+      "node": "v24.19.0",
+      "versions": {
+        "pino": "10.4.0",
+        "@prometheus-io/client": "0.16.1",
+        "@opentelemetry/api": "1.9.1",
+        "@opentelemetry/sdk-trace-node": "2.12.0",
+        "@opentelemetry/sdk-trace-base": "2.12.0",
+        "@opentelemetry/core": "2.12.0"
+      },
+      "scope": "exact logger redaction and guards, real localhost HTTP bounded labels and once-only gauges, in-memory parent-child propagated trace/error checks; no network OTLP or production exporters"
+    },
+    "platform-cdn-results.json": {
+      "runtime": "v23.7.0",
+      "results": [
+        "Exact public image helper: normalized key/renderer width, order/tracking invariance, format separation; malformed/repeated/unbounded/unknown values reject",
+        "Exact Node signature helpers: valid grant, expiry boundary, path/expiry tampering and malformed signatures; equal-length buffers; invalid key/clock boundary",
+        "Exact nearest-rank RUM p75 fixture and insufficient/no-success evidence cases",
+        "Exact coordinated purge abstraction records all three providers including synchronous rejection"
+      ],
+      "boundaries": [
+        "Local primitives only; no HTTP cache authorization order, full Accept parser, image renderer, hls.js player, provider purge, Route53 health/steering or cloud deployment executed",
+        "Random signing key used only in process, not written to disk"
+      ]
+    },
+    "platform-iac-results.json": {
+      "runtime": "Terraform 1.13.0 official archive checksum verified",
+      "results": [
+        "Exact authored builtin HCL initialized, validated, planned, applied: v1 stored",
+        "Unchanged configuration second plan exit 0",
+        "Changed variable planned/applied and output became v2",
+        "Address refactor with moved block preserves identity without create/delete"
+      ],
+      "boundaries": [
+        "Isolated temporary local state and builtin terraform_data only; no cloud resources, accounts, locking backend, provider permissions or CDKTF migration executed",
+        "Saved plans/temp state removed on exit"
+      ]
+    },
+    "private-report-results.json": {
+      "review_date": "2026-10-09",
+      "documents": 52,
+      "connector_tests": 24,
+      "connector_red": {
+        "initial_failed": 15,
+        "initial_passed": 4,
+        "shape_failed": 4,
+        "shape_passed": 19
+      },
+      "scope": "Local extraction with scriptedHTTP and realdlt. No liveAPI/cognee cleanup/employer availability/human interview validation.",
+      "preserved": "43tracker rows;13storyIDs;7routerdrills;all authored form/role-prompt intents; partner goals and dated leads."
+    },
+    "projects-math-results.json": {
+      "checks": {
+        "appointments_month": 26000,
+        "api_requests_month": 520000,
+        "api_average_second": 0.6944444444444444,
+        "busy_second": 3.3333333333333335,
+        "pdf_month": 20800.0,
+        "pdf_busy_hour": 640.0,
+        "pdf_GiB_month": 2.9754638671875,
+        "pdf_GiB_12months": 35.70556640625,
+        "queue_starts_hour": 1800.0,
+        "queue_burst_minutes": 33.333333333333336,
+        "relay_selection_second": 40.0,
+        "booking_improvement_percent": 50.0,
+        "invoice_improvement_percent": 62.5,
+        "booking_mean_labor_hours": 650.0,
+        "invoice_mean_labor_hours": 541.6666666666666,
+        "p95_improvement_percent": 56.25,
+        "delivery_percent": 98.0,
+        "reconciliation_percent": 99.5,
+        "availability_budget_minutes": 43.2
+      },
+      "limitation": "Arithmetic from invented chapter inputs only; no workload, throughput, adoption or operational outcome executed"
+    },
+    "projects-runtime-results.json": {
+      "sourceRevision": "dc5a97dc309cd3746e61db7bc0f57f0778704f88",
+      "eventemitter2": "6.4.9",
+      "checks": [
+        "Extracted relay waits for actual EventEmitter2 async listener fulfillment before processedAt",
+        "Extracted relay records retry evidence and leaves processedAt absent after rejection",
+        "An event with no registered listener still resolves and is acknowledged: required-listener registration remains a contract",
+        "Extracted dispatch timeout (10ms test parameter vs production 30s) rejects without canceling underlying work",
+        "Extracted RLS routing core still permits sibling base-client fallback while another delegate awaits; no DB exposure claimed",
+        "Extracted actual WhatsApp parser confirms two-step duration, numeric menu ambiguity, negation and delay-text limitations",
+        "Extracted actual interval helper permits adjacency and rejects one-minute overlap"
+      ],
+      "limitations": "Real source functions/class and emitter with controlled persistence/advisory-lock/enum/decorator adapters; no DB role/policy, actual listener Nest configuration, gateway, patient data or deployed operation tested"
+    },
+    "pwa-results.json": {
+      "browser": "153.0.8010.12",
+      "scope": "Extracted public service worker; local HTTP fixture (secure localhost), actual Chromium offline reload; no background-sync/push/clinical-data or multiversion deployment proof",
+      "checks": [
+        "Installed public shell and assets survive offline reload",
+        "Precached JavaScript executes and stylesheet applies offline",
+        "Private API response never enters owned caches and fails offline rather than using a private cached response"
+      ]
+    },
+    "react-modern-results.json": {
+      "react": "19.3.0",
+      "environment": "jsdom; custom elements/shadow DOM are DOM behavior, not CSS/layout or real event retargeting proof",
+      "checks": [
+        "Effect Event reads latest theme without reconnect; changed room cleans up and reconnects",
+        "useId associates labels with distinct field instances",
+        "Custom element observed attribute updates and untrusted name remains literal text"
+      ]
+    },
+    "react-pattern-results.json": {
+      "react": "19.3.0",
+      "environment": "jsdom; no browser layout/focus policy proof",
+      "checks": [
+        "Portal click composes child then logical React ancestor entries; native outer DOM listener absent and document listener present",
+        "Compound tab switching changes provider selection and inactive inner content remounts on restore",
+        "Generic compound list selected zero remains visible"
+      ]
+    },
+    "react-runtime-results.json": {
+      "react": "19.3.0",
+      "environment": "jsdom; ResizeObserver stub tests resource ownership, not layout",
+      "results": {
+        "keyed_reorder": "Retained and moved original row DOM identities",
+        "filter_remount": "Removed row mounted a new DOM identity",
+        "queue": "Three replacements increment once; three updaters compose to +3",
+        "effect_cleanup": "Strict Mode replay leaves one listener; unmount removes it",
+        "context": "Memo consumer updates on consumed context; nearer provider shields inner reader",
+        "custom_counter": "Independent caller state; bounds enforced on composed updates and direct setter/reset",
+        "auth_failure": "Newest failed login settles loading and obsolete initial lookup cannot publish",
+        "boundary": "Unknown null throw selects fallback; intentional retry remount succeeds",
+        "suspense": "Controlled lazy module pending fallback resolves into content",
+        "ref_cleanup": "React 19 callback attachment cleanup balances Strict Mode and unmount"
+      }
+    },
+    "realtime-results.json": {
+      "review_date": "2026-10-09",
+      "new_dispositions": 15,
+      "socket": "real local authentication, authorization, identity, broadcast, duplicate/conflict, malformed, reconnect snapshot, account event budget passed",
+      "nest": "Nest11.2.7 strict TypeScript and actual handshake/guard/pipe/authorization/joined-state/ack/exception-timeout passed",
+      "graphql": "GraphQL16/graphql-ws6 schema/protocol,finite stream,tenant,credential,revocation,cancellation passed; three chapter smoke tests passed",
+      "webrtc": "Real Chromium same-page two peers, negotiation and stale/malformed/invalid snapshots, bounded wait passed",
+      "limitations": [
+        "No live Redis routing/replay integration",
+        "No NAT/TURN/camera/media integration",
+        "No fleet capacity or real outage drill",
+        "No production deployment inference from Docita source"
+      ],
+      "preserved_bank_questions": 30,
+      "preserved_bank_followups": 30,
+      "local_links": 10237
+    },
+    "recursion-results.json": {
+      "date": "2026-10-09",
+      "chapters": 3,
+      "typescript": "5.9.3",
+      "assertions": 266673,
+      "result": "passed",
+      "checks": [
+        "exact extracted examples strict compiled; duplicate power-of-two implementation removed after compiler failure",
+        "independent subset/permutation/queen enumeration",
+        "knapsack subset oracle incl zero-weight and skipped negative values",
+        "BigInt Fibonacci oracle through supported limit",
+        "enumerated LCS/LIS and BFS edit/coin oracles",
+        "word-search separate-visited oracle and input restoration",
+        "Sudoku givens/rows/columns/boxes checked",
+        "65536 bit-count/reversal/power values and BigInt masks; multiplicity/permissions boundaries"
+      ],
+      "limits": [
+        "small finite input oracles; recursive stack/resource exhaustion not tested",
+        "Sudoku fixture follows stated valid solvable board contract",
+        "no wider-than-32-bit Number XOR guarantee or production authorization claim"
+      ]
+    },
+    "resume-export-results.json": {
+      "checked_date": "2026-10-09",
+      "existing_tests_passed": 11,
+      "exports": [
+        {
+          "variant": "Vamsi_Resume.pdf",
+          "pages": 1,
+          "ordered_searchable_a4": true,
+          "phone_included": true,
+          "visual_inspection": "All three rendered pages inspected; no clipping, overlapping text or missing glyphs."
+        },
+        {
+          "variant": "Vamsi_Resume_EU.pdf",
+          "pages": 1,
+          "ordered_searchable_a4": true,
+          "phone_included": true,
+          "visual_inspection": "All three rendered pages inspected; no clipping, overlapping text or missing glyphs."
+        },
+        {
+          "variant": "Vamsi_Resume_Public.pdf",
+          "pages": 1,
+          "ordered_searchable_a4": true,
+          "phone_included": false,
+          "visual_inspection": "All three rendered pages inspected; no clipping, overlapping text or missing glyphs."
+        }
+      ],
+      "scope": "Content synchronization, structural checks and visual inspection; no historical work or production measurement newly verified."
+    },
+    "scheduler-sql-results.json": {
+      "runtime": "PostgreSQL 16.15 (Homebrew) on aarch64-apple-darwin25.6.0, compiled by Apple clang version 21.0.0 (clang-2100.1.1.101), 64-bit",
+      "checks": 35,
+      "results": [
+        "Exact job DDL/claim eight actual concurrent claimers admit one",
+        "Expired lease recovery rejects stale token and accepts current owner",
+        "Completed occurrence uniqueness prevents late replay",
+        "Exact range allocator ten concurrent disjoint blocks; zero-size rejection and overflow abort"
+      ],
+      "limits": [
+        "Heartbeat/completion/reaper fixture supplies conditions described in prose; not complete application",
+        "No actual cron/timezone/fairness/broker/provider/remote side-effect fencing"
+      ]
+    },
+    "selection-results.json": {
+      "date": "2026-10-09",
+      "chapters": 5,
+      "typescript": "5.9.3",
+      "assertions": 481350,
+      "result": "passed",
+      "checks": [
+        "strict exact extracted examples",
+        "heap/stream rank/median and quickselect sorted oracle; duplicate frequencies and constant pivot paths",
+        "nearest-neighbor/rectangle/water independent scans",
+        "plain-array point/delta/lazy range model",
+        "state-space cooldown scheduling oracle",
+        "ring/queue/minimum/LRU operation models",
+        "complete small discrete choice enumeration for uniform reservoir subsets, shuffle permutations and matching indices"
+      ],
+      "limits": [
+        "small finite inputs; no RNG security or floating-point exact-uniformity claim",
+        "MinStack/RPN inputs follow nonempty/valid-expression contracts",
+        "Number arithmetic precision and real workload/resource costs remain caller conditions"
+      ]
+    },
+    "sre-final-results.json": [
+      {
+        "command": [
+          "/Users/vamsikrishnachandaluri/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node",
+          "/tmp/bible-depth-review/sre-rule-checks/budget.mjs"
+        ],
+        "exit": 0,
+        "output": ""
+      },
+      {
+        "command": [
+          "docker",
+          "run",
+          "--rm",
+          "-v",
+          "/tmp/bible-depth-review/sre-rule-checks:/work",
+          "--entrypoint",
+          "/bin/promtool",
+          "prom/prometheus:v3.5.0",
+          "check",
+          "rules",
+          "/work/burn-alerts.yml",
+          "/work/slo-alerts.yml"
+        ],
+        "exit": 0,
+        "output": "Checking /work/burn-alerts.yml\n  SUCCESS: 6 rules found\n\nChecking /work/slo-alerts.yml\n  SUCCESS: 3 rules found\n\n"
+      },
+      {
+        "command": [
+          "docker",
+          "run",
+          "--rm",
+          "-v",
+          "/tmp/bible-depth-review/sre-rule-checks:/work",
+          "-w",
+          "/work",
+          "--entrypoint",
+          "/bin/promtool",
+          "prom/prometheus:v3.5.0",
+          "test",
+          "rules",
+          "tests.yml"
+        ],
+        "exit": 0,
+        "output": "  SUCCESS\n\n"
+      }
+    ],
+    "theory-network-results.json": {
+      "runtime": "Node23.7/OpenSSL3 local TCP/TLS fixtures",
+      "results": [
+        "Exact measureConnect helper executed against local TCP listener",
+        "Exact certDaysRemaining helper executed against local two-day certificate signed by temporary trusted CA",
+        "Incorrect TLS hostname rejected with normal certificate verification enabled"
+      ],
+      "boundaries": [
+        "Temporary CA trust supplied only through child NODE_EXTRA_CA_CERTS; private keys removed on exit",
+        "No public CA renewal, Nginx/Certbot deployment, ECH, QUIC or production network benchmark executed",
+        "Local connect timing is not remote handshake performance"
+      ]
+    },
+    "theory-outbox-postgresql-results.json": {
+      "runtime": "PostgreSQL16.15 isolated Unix socket cluster, no TCP listener",
+      "results": [
+        "Authored outbox schema executed",
+        "Autocommit select permitted two sessions to select same row42",
+        "Explicit transaction held row42; second SKIP LOCKED selected same aggregate later version43",
+        "Rollback retained pending row42 for re-delivery",
+        "Prepared mark remained invisible and recorded in pg_prepared_xacts until COMMIT PREPARED"
+      ],
+      "boundaries": [
+        "No Kafka publish, connector, replica failover or distributed transaction manager executed",
+        "Prepared transaction fixture proves local state only; all prepared work resolved before shutdown"
+      ]
+    },
+    "theory-probability-results.json": {
+      "runtime": "v23.7.0",
+      "results": [
+        "1000 inserted Bloom keys retained; invalid capacity rejected (no statistical FPR claim)",
+        "Compatible CMS merge preserved count lower bound; dimensions and negative updates rejected",
+        "Merkle proof verification for leaf counts1\u201311; altered payload/count/index rejected; three leaves differ from duplicate-last four leaves"
+      ],
+      "boundaries": [
+        "No Redis/cloud/broker integration executed",
+        "Teaching hashes do not establish theoretical random-hash error probabilities",
+        "CMS totals kept below Number.MAX_SAFE_INTEGER"
+      ]
+    },
+    "theory-resilience-results.json": {
+      "runtime": "v23.7.0",
+      "pMemoize": "8.0.0",
+      "results": [
+        "Local Singleflight collapsed50 concurrent calls and retried after rejection",
+        "p-memoize cache:false shared50 in-flight calls and called again after settlement",
+        "Local admission never exceeded10 slots across1000 attempts; slot releases restored eligibility",
+        "Authored fetch deadline returned fastJSON and aborted a delayed response body"
+      ],
+      "boundaries": [
+        "No gRPC/middleware/cloud or remote cancellation integration executed",
+        "Random admission example tested only its finite capacity invariant, not optimal latency or tuned probability"
+      ]
+    },
+    "ticket-final-results.json": {
+      "date": "2026-10-10",
+      "runtime": "PostgreSQL 16.15 (Homebrew) on aarch64-apple-darwin25.6.0, compiled by Apple clang version 21.0.0 (clang-2100.1.1.101), 64-bit",
+      "checks": 27,
+      "passed": [
+        "Exact PostgreSQL DDL/claim function",
+        "Ten real concurrent claim statements produced exactly one winner",
+        "Group partial-update rollback and missing/duplicate/empty input reject",
+        "Expired-hold replacement and stale cleanup preserve new holder"
+      ],
+      "limits": [
+        "No live payment or booking-confirmation/QR/gate integration",
+        "Claim function is not complete auth/idempotency/price API"
+      ]
+    },
+    "typeahead-results.json": {
+      "node": "v24.19.0",
+      "typescript": "5.9.3",
+      "checks": 13,
+      "results": [
+        "Exact strict authored prefix index checks ordering normalization nonLatin missing-prefix bounds and input/output copy isolation"
+      ],
+      "limits": [
+        "No fuzzy retrieval ranking pipeline private-cache browser UI or throughput benchmark"
+      ]
+    },
+    "uber-netflix-final-results.json": {
+      "date": "2026-10-10",
+      "checks": 18,
+      "passed": [
+        "Exact authored Python distance function finite/range/zero/dateline/symmetry",
+        "Exact authored Python rendition choice bounds/device limits/no fitting quality",
+        "Independent consistent peak/daily video units"
+      ],
+      "limits": [
+        "No actual road routing/GEO index/dispatch",
+        "No real player/CDN/DRM/ABR controller"
+      ]
+    },
+    "whatsapp-final-results.json": {
+      "date": "2026-10-10",
+      "runtime": "PostgreSQL 16.15 (Homebrew) on aarch64-apple-darwin25.6.0, compiled by Apple clang version 21.0.0 (clang-2100.1.1.101), 64-bit",
+      "checks": 10,
+      "passed": [
+        "Exact chapter PostgreSQL DDL",
+        "Stable retry lookup and uniqueness",
+        "Membership FK and dispatch FK reject invalid records",
+        "Acceptance/outbox single transaction"
+      ],
+      "limits": [
+        "No live encrypted-device protocol, socket, broker or push-provider integration"
+      ]
+    },
+    "workflow-collaboration-results.json": {
+      "node": "v24.19.0",
+      "typescript": "5.9.3",
+      "yjs": "13.6.33",
+      "checks": 44,
+      "results": [
+        "Exact strict TypeScript lifecycle function all36state/event pairs",
+        "Exact authored Yjs two-replica insert/delete duplicate and third-replica state-vector repair",
+        "Three delivery orders converge on same text"
+      ],
+      "limits": [
+        "In-memory algorithm and lifecycle checks only; no database lease/outbox/workflow queue/network authorization integration"
+      ]
+    },
+    "youtube-hls-results.json": {
+      "ffmpeg": "ffmpeg version 8.1.1 Copyright (c) 2000-2026 the FFmpeg developers",
+      "results": [
+        "Exact authored command generated three nonempty segments; FFprobe verified640x360/H264; targetduration2 and ENDLIST checked"
+      ],
+      "limits": [
+        "Synthetic local six-second video only; no cloud multipart/CDN/player ABR/multiple rendition/DRM implementation"
+      ]
     }
   },
   "new_primary_citation_probes": [
     {
-      "url": "https://chaos-mesh.org/docs/define-scheduling-rules/",
+      "url": "https://12factor.net/admin-processes",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/@media/forced-colors",
+      "url": "https://12factor.net/codebase",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog",
+      "url": "https://12factor.net/processes",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://docs.locust.io/en/stable/",
+      "url": "https://argo-cd.readthedocs.io/en/stable/user-guide/sync-waves/",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://docs.nestjs.com/fundamentals/async-providers",
+      "url": "https://argoproj.github.io/argo-rollouts/features/canary/",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://docs.nestjs.com/fundamentals/module-ref",
+      "url": "https://cp-algorithms.com/algebra/binary-exp.html",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://docs.nestjs.com/openapi/mapped-types",
+      "url": "https://cp-algorithms.com/algebra/euclid-algorithm.html",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://docs.nestjs.com/techniques/file-upload",
+      "url": "https://cp-algorithms.com/combinatorics/binomial-coefficients.html",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://docs.nestjs.com/techniques/server-sent-events",
+      "url": "https://csrc.nist.gov/pubs/sp/800/88/r2/final",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://docs.opensearch.org/latest/api-reference/document-apis/bulk/",
+      "url": "https://datatracker.ietf.org/doc/html/rfc9700",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://docs.opensearch.org/latest/api-reference/document-apis/index-document/",
+      "url": "https://developer.android.com/training/app-links/about",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://docs.pact.io/getting_started/how_pact_works",
+      "url": "https://developer.apple.com/documentation/technotes/tn3155-debugging-universal-links",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://fast-check.dev/docs/core-blocks/properties/",
+      "url": "https://developer.apple.com/help/app-store-connect/update-your-app/release-a-version-update-in-phases/",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://fastify.dev/docs/latest/Reference/Errors/",
+      "url": "https://developer.hashicorp.com/terraform/cdktf",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md",
+      "url": "https://developer.hashicorp.com/terraform/cli/commands/plan",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://github.com/recharts/recharts/blob/main/storybook/stories/API/Accessibility.mdx",
+      "url": "https://developer.hashicorp.com/terraform/language/backend/s3",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://grafana.com/docs/k6/latest/using-k6/thresholds/",
+      "url": "https://developer.hashicorp.com/terraform/language/manage-sensitive-data",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://html.spec.whatwg.org/multipage/structured-data.html#structured-cloning",
+      "url": "https://developer.hashicorp.com/terraform/language/resources/terraform-data",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://jestjs.io/docs/snapshot-testing",
+      "url": "https://developer.hashicorp.com/terraform/language/state",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://martinfowler.com/bliki/ObjectMother.html",
+      "url": "https://developer.hashicorp.com/vault/tutorials/db-credentials/manage-dynamic-leases",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://nodejs.org/api/esm.html#urls",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Animation/commitStyles",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://playwright.dev/docs/accessibility-testing",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Animation/finished",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://playwright.dev/docs/test-retries",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream/ReadableStream",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://sre.google/sre-book/evolving-sre-engagement-model/",
+      "url": "https://developers.cloudflare.com/images/transform-images/transform-via-url/",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://stately.ai/docs/persistence",
+      "url": "https://developers.google.com/search/docs/appearance/snippet",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://stryker-mutator.io/docs/mutation-testing-elements/mutant-states-and-metrics/",
+      "url": "https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://tc39.es/ecma262/multipage/control-abstraction-objects.html#sec-generator-objects",
+      "url": "https://developers.openai.com/api/docs/guides/prompt-caching",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.highcharts.com/docs/export-module/export-module-overview",
+      "url": "https://developers.openai.com/api/docs/pricing",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.highcharts.com/docs/getting-started/version-12",
+      "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-instance-termination-notices.html",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.meilisearch.com/docs/capabilities/indexing/tasks_and_batches/async_operations",
+      "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.postgresql.org/docs/16/datatype-json.html",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/lifecycle-expire-general-considerations.html",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.postgresql.org/docs/16/ddl-constraints.html",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.postgresql.org/docs/16/functions-json.html",
+      "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.postgresql.org/docs/16/functions-window.html",
+      "url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-weighted.html",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.postgresql.org/docs/16/indexes-index-only-scans.html",
+      "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/example_dynamodb_Scenario_AtomicCounterOperations_section.html",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.postgresql.org/docs/16/indexes-partial.html",
+      "url": "https://docs.aws.amazon.com/cdk/v2/guide/core-concepts.html",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.postgresql.org/docs/16/indexes-types.html",
+      "url": "https://docs.aws.amazon.com/cli/latest/reference/s3api/put-bucket-lifecycle-configuration.html",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.postgresql.org/docs/16/planner-stats.html",
+      "url": "https://docs.aws.amazon.com/kms/latest/APIReference/API_Sign.html",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.postgresql.org/docs/16/runtime-config-resource.html",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/scaling-behavior.html",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.postgresql.org/docs/16/sql-explain.html",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/services-sqs-errorhandling.html",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.postgresql.org/docs/16/sql-expressions.html#SYNTAX-WINDOW-FUNCTIONS",
+      "url": "https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.postgresql.org/docs/16/storage-hot.html",
+      "url": "https://docs.bullmq.io/guide/jobs/job-ids",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.postgresql.org/docs/16/textsearch-controls.html",
+      "url": "https://docs.bullmq.io/guide/jobs/stalled",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.postgresql.org/docs/16/textsearch-intro.html",
+      "url": "https://docs.cilium.io/en/stable/observability/visibility/",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.postgresql.org/docs/16/tutorial-window.html",
+      "url": "https://docs.docker.com/compose/how-tos/environment-variables/variable-interpolation/",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.postgresql.org/docs/16/using-explain.html",
+      "url": "https://docs.docker.com/compose/how-tos/startup-order/",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.radix-ui.com/primitives/docs/components/dialog",
+      "url": "https://docs.docker.com/engine/daemon/live-restore/",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.typescriptlang.org/docs/handbook/2/classes.html#this-types",
+      "url": "https://docs.docker.com/engine/network/drivers/bridge/",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-0.html#decorators",
+      "url": "https://docs.docker.com/engine/storage/containerd/",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-4.html#the-noinfer-utility-type",
+      "url": "https://docs.docker.com/reference/dockerfile/",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-6-0.html",
+      "url": "https://docs.dropboxapi.com/dropbox-api/docs/detecting-changes",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.typescriptlang.org/tsconfig/paths.html",
+      "url": "https://docs.dropboxapi.com/dropbox-api/docs/technical-reference/content-hash",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.w3.org/TR/WCAG22/",
+      "url": "https://docs.expo.dev/eas/json/",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.w3.org/TR/WCAG22/#dfn-contrast-ratio",
+      "url": "https://docs.expo.dev/versions/latest/sdk/sqlite/",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.w3.org/TR/WCAG22/#dfn-relative-luminance",
+      "url": "https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/authorizing-oauth-apps",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.w3.org/TR/WCAG22/#wcag-2-layers-of-guidance",
+      "url": "https://docs.github.com/en/webhooks/using-webhooks/handling-failed-webhook-deliveries",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/",
+      "url": "https://docs.github.com/en/webhooks/using-webhooks/validating-webhook-deliveries",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/",
+      "url": "https://docs.gitlab.com/ci/docker/using_buildkit/",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/tabs/",
+      "url": "https://docs.gitlab.com/ci/jobs/job_artifacts/",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/",
+      "url": "https://docs.gitlab.com/ci/pipelines/merge_request_pipelines/",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.w3.org/WAI/ARIA/apg/practices/landmark-regions/",
+      "url": "https://docs.kernel.org/bpf/verifier.html",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.w3.org/WAI/ARIA/apg/practices/names-and-descriptions/",
+      "url": "https://docs.launchdarkly.com/sdk/concepts/client-side-server-side",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.w3.org/WAI/ARIA/apg/practices/read-me-first/",
+      "url": "https://docs.nestjs.com/techniques/events",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.w3.org/WAI/WCAG22/Understanding/conformance.html",
+      "url": "https://docs.nestjs.com/websockets/adapter",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+      "url": "https://docs.nestjs.com/websockets/exception-filters",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html",
+      "url": "https://docs.nestjs.com/websockets/guards",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.w3.org/WAI/WCAG22/Understanding/intro#understanding-the-four-principles-of-accessibility",
+      "url": "https://docs.nestjs.com/websockets/pipes",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.w3.org/WAI/WCAG22/Understanding/keyboard.html",
+      "url": "https://docs.npmjs.com/generating-provenance-statements/",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html",
+      "url": "https://docs.python.org/3/library/urllib.parse.html",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html",
+      "url": "https://docs.sentry.io/platforms/javascript/guides/node/",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.w3.org/WAI/media/av/",
+      "url": "https://docs.sentry.io/platforms/javascript/guides/node/configuration/options/",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.w3.org/WAI/standards-guidelines/wcag/",
+      "url": "https://docs.sentry.io/platforms/javascript/sourcemaps/uploading/cli/",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/",
+      "url": "https://docs.sigstore.dev/cosign/verifying/verify/",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/",
+      "url": "https://docs.slack.dev/authentication/verifying-requests-from-slack/",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.w3.org/WAI/test-evaluate/",
+      "url": "https://docs.stripe.com/security/guide",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.w3.org/WAI/tutorials/forms/grouping/",
+      "url": "https://docs.swmansion.com/react-native-reanimated/docs/animations/withSpring/",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.w3.org/WAI/tutorials/forms/labels/",
+      "url": "https://docs.temporal.io/workflow-definition",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.w3.org/WAI/tutorials/forms/notifications/",
+      "url": "https://docs.yjs.dev/api/y.doc",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://www.w3.org/WAI/tutorials/images/decision-tree/",
+      "url": "https://docs.yjs.dev/getting-started/adding-awareness",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://developer.chrome.com/blog/lighthouse-10-0/",
+      "url": "https://expressjs.com/en/guide/behind-proxies/",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/configuration.md",
+      "url": "https://expressjs.com/en/resources/middleware/session/",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://github.com/GoogleChrome/lighthouse-ci/blob/main/docs/getting-started.md",
+      "url": "https://external-secrets.io/v1.0.0/api/spec/",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://web.dev/articles/inp",
+      "url": "https://fetch.spec.whatwg.org/",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://web.dev/articles/lcp",
+      "url": "https://ffmpeg.org/ffmpeg-formats.html#hls-2",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     },
     {
-      "url": "https://developer.chrome.com/docs/crux/methodology",
+      "url": "https://formik.org/docs/api/useField",
       "status": "LIVE",
-      "detail": "HTTP 200"
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://formik.org/docs/guides/form-submission",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://github.com/auth0/node-jsonwebtoken",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://github.com/ben-manes/caffeine/wiki/Efficiency",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://github.com/delta-io/delta/blob/master/PROTOCOL.md",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://github.com/node-saml/node-saml",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://github.com/panva/jose/blob/main/docs/jwt/verify/interfaces/JWTVerifyOptions.md",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://github.com/prometheus/client_js",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://github.com/tj/connect-redis",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://github.com/video-dev/hls.js/blob/master/docs/API.md",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://grafana.com/docs/pyroscope/latest/configure-client/language-sdks/nodejs/",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://graphql.org/learn/execution/",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://graphql.org/learn/serving-over-http/",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://gvisor.dev/docs/architecture_guide/platforms/",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/data-sharing/anonymisation/introduction-to-anonymisation/",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/individual-rights/individual-rights/right-to-erasure/",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://istio.io/latest/docs/ops/deployment/architecture/",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://istio.io/latest/docs/overview/dataplane-modes/",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://kafka.apache.org/41/getting-started/introduction/",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://kafka.js.org/docs/producing",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://kafka.js.org/docs/transactions",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://lamport.azurewebsites.net/pubs/paxos-simple.pdf",
+      "status": "WARN",
+      "detail": "HTTP 406 (bot-blocked or rate-limited?)",
+      "checked_at": "2026-10-10",
+      "content_verification": "Author-hosted Paxos Made Simple14page PDF body retrieved via web2026-10-09; CLI406 retained."
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/gateway-routing",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://letsencrypt.org/2025/08/06/ocsp-service-has-reached-end-of-life",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://martinfowler.com/bliki/BranchByAbstraction.html",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://migri.fi/en/-/aliens-act-s-provisions-on-permanent-residence-permit-amended-as-of-8-january-2026?languageId=en_US",
+      "status": "WARN",
+      "detail": "no response",
+      "checked_at": "2026-10-10",
+      "content_verification": "Prior same-session normal browser opened official8Jan2026 permanent-residence amendment article; automatic Cloudflare challenge resolved without CAPTCHA. CLI WARN retained."
+    },
+    {
+      "url": "https://nextjs.org/docs/app/api-reference/components/image",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://nextjs.org/docs/app/api-reference/file-conventions/layout",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://nextjs.org/docs/app/api-reference/file-conventions/parallel-routes",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://nextjs.org/docs/app/api-reference/file-conventions/template",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://nextjs.org/docs/app/api-reference/functions/fetch",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://nextjs.org/docs/app/getting-started/route-handlers",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://nextjs.org/docs/app/guides/json-ld",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://nextjs.org/docs/app/guides/self-hosting",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://nextjs.org/docs/pages/api-reference/functions/get-static-paths",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://nginx.org/en/docs/http/ngx_http_ssl_module.html",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://nginx.org/en/docs/http/ngx_http_upstream_module.html",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://nodejs.org/api/crypto.html",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://nodejs.org/api/crypto.html#cryptotimingsafeequala-b",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://nodejs.org/api/globals.html#fetch",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://nodejs.org/api/http.html#serverclosecallback",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://nx.dev/docs/features/enforce-module-boundaries",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://openfeature.dev/specification/sections/evaluation-context/",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://opentelemetry.io/docs/collector/deploy/other/no-collector/",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://opentelemetry.io/docs/languages/js/sampling/",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://pages.nist.gov/800-63-4/sp800-63b.html",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://prometheus.io/docs/practices/histograms/",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://prometheus.io/docs/prometheus/latest/querying/functions/",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://react.dev/learn/lifecycle-of-reactive-effects",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://react.dev/learn/render-and-commit",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://react.dev/reference/react-dom/components/common#ref-callback",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://react.dev/reference/react/useEffectEvent",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://react.dev/reference/react/useId",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://react.dev/reference/rsc/use-client",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://react.dev/reference/rsc/use-client#serializable-types-returned-by-server-components",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://reactnative.dev/architecture/threading-model",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://reactrouter.com/explanation/race-conditions",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://reactrouter.com/how-to/view-transitions",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://redis.io/docs/latest/develop/programmability/",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://redis.io/docs/latest/develop/reference/eviction/",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://redis.io/docs/latest/manual/replication/",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://resend.com/docs/dashboard/emails/idempotency-keys",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://sharp.pixelplumbing.com/api-output/",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://sharp.pixelplumbing.com/api-resize/",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://spec.graphql.org/September2025/",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://spec.graphql.org/September2025/#sec-Execution",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://spec.openapis.org/oas/v3.1.1.html",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://sst.dev/docs/",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://tailwindcss.com/docs/detecting-classes-in-source-files",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://tanstack.com/form/latest/docs/framework/react/guides/arrays",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://tanstack.com/form/latest/docs/framework/react/guides/validation",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://the-guild.dev/graphql/codegen/docs/guides/react-vue",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://the-guild.dev/graphql/codegen/plugins/typescript/typescript-generic-sdk",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://the-guild.dev/graphql/codegen/plugins/typescript/typescript-graphql-request",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://the-guild.dev/graphql/inspector/docs/commands/diff",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://the-guild.dev/graphql/ws/guides",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://the-guild.dev/graphql/ws/guides/recipes",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://vite.dev/config/build-options.html",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://vite.dev/config/shared-options.html",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://www.apollographql.com/docs/apollo-server/api/express-middleware",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://www.apollographql.com/docs/apollo-server/data/resolvers",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://www.apollographql.com/docs/apollo-server/integrations/plugins-event-reference",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://www.apollographql.com/docs/apollo-server/migration",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://www.apollographql.com/docs/apollo-server/performance/apq",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://www.apollographql.com/docs/apollo-server/security/authentication",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://www.apollographql.com/docs/apollo-server/security/cors",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://www.apollographql.com/docs/react/caching/cache-configuration",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://www.apollographql.com/docs/react/caching/cache-interaction",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://www.apollographql.com/docs/react/data/queries",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://www.apollographql.com/docs/react/get-started",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://www.apollographql.com/docs/react/migrating/apollo-client-4-migration",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://www.hhs.gov/hipaa/for-professionals/special-topics/health-information-technology/cloud-computing/index.html",
+      "status": "WARN",
+      "detail": "no response",
+      "checked_at": "2026-10-10",
+      "content_verification": "Official HHS Guidance on HIPAA & Cloud Computing body verified via web2026-10-09; old path redirects to health-information-technology path. CLI remains WARN."
+    },
+    {
+      "url": "https://www.inngest.com/docs/reference/typescript/v4/functions/create",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://www.irishimmigration.ie/registering-your-immigration-permission/information-on-registering/immigration-permission-Stamps/",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://www.jenkins.io/doc/book/blueocean/",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://www.jenkins.io/doc/book/pipeline/docker/",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://www.jenkins.io/doc/book/pipeline/jenkinsfile/",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://www.jenkins.io/doc/book/pipeline/shared-libraries/",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://www.postgresql.org/docs/current/backup-dump.html",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://www.postgresql.org/docs/current/continuous-archiving.html",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://www.postgresql.org/docs/current/functions-datetime.html",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://www.postgresql.org/docs/current/sql-notify.html",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://www.postgresql.org/docs/current/sql-select.html",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc8594.html",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc9110.html#name-retry-after",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc9111",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc9111.html",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc9162.html",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc9745.txt",
+      "status": "LIVE",
+      "detail": "HTTP 200",
+      "checked_at": "2026-10-10"
     }
   ],
   "theme_transition_regression": {
@@ -1924,6 +5935,438 @@
   "expanded_reader": {
     "browser": "153.0.8010.12",
     "checks": [
+      {
+        "route": "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.html",
+        "theme": "light",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.html",
+        "theme": "light",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.html",
+        "theme": "light",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.html",
+        "theme": "dark",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.html",
+        "theme": "dark",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.html",
+        "theme": "dark",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.html",
+        "theme": "light",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.html",
+        "theme": "light",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.html",
+        "theme": "light",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.html",
+        "theme": "dark",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.html",
+        "theme": "dark",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.html",
+        "theme": "dark",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.html",
+        "theme": "light",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.html",
+        "theme": "light",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.html",
+        "theme": "light",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.html",
+        "theme": "dark",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.html",
+        "theme": "dark",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.html",
+        "theme": "dark",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.html",
+        "theme": "light",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.html",
+        "theme": "light",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.html",
+        "theme": "light",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.html",
+        "theme": "dark",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.html",
+        "theme": "dark",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.html",
+        "theme": "dark",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.html",
+        "theme": "light",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.html",
+        "theme": "light",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.html",
+        "theme": "light",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.html",
+        "theme": "dark",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.html",
+        "theme": "dark",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.html",
+        "theme": "dark",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.html",
+        "theme": "light",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.html",
+        "theme": "light",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.html",
+        "theme": "light",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.html",
+        "theme": "dark",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.html",
+        "theme": "dark",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.html",
+        "theme": "dark",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.html",
+        "theme": "light",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.html",
+        "theme": "light",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.html",
+        "theme": "light",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.html",
+        "theme": "dark",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.html",
+        "theme": "dark",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.html",
+        "theme": "dark",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.html",
+        "theme": "light",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.html",
+        "theme": "light",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.html",
+        "theme": "light",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.html",
+        "theme": "dark",
+        "width": 375,
+        "scroll": 375,
+        "article": 339,
+        "paragraph": 339,
+        "headings": true
+      },
+      {
+        "route": "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.html",
+        "theme": "dark",
+        "width": 1280,
+        "scroll": 1280,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
+      {
+        "route": "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.html",
+        "theme": "dark",
+        "width": 1920,
+        "scroll": 1920,
+        "article": 1140,
+        "paragraph": 1140,
+        "headings": true
+      },
       {
         "route": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.html",
         "theme": "light",
@@ -2790,32 +7233,66 @@
       }
     ]
   },
+  "limits": [
+    "Review covers all 1,017 inventory entries; it does not guarantee interview outcomes.",
+    "Local fixtures do not certify cloud IAM, deployed routing/latency/billing, broker fleets, NAT/TURN, real payments, or assistive-technology speech.",
+    "Read-aloud scheduling uses controlled speech mocks; actual voice quality remains device-dependent.",
+    "Scripted external-link warnings retain their status and separate content-verification evidence."
+  ],
+  "previous_checkpoint": {
+    "site_build": {
+      "compiler": "Jekyll 3.9.0 via Ruby3.1",
+      "result": "success",
+      "liquid_warnings": false,
+      "private_paths_excluded": true,
+      "local_preview": "/tmp/bible-review-site",
+      "case_insensitive_homepage": "home-preview.html rendered separately from source index.html"
+    },
+    "browser_suites": {
+      "reader": "PASS: chapter outline, keyboard destination, system/explicit themes, text and syntax contrast, mobile width, persisted toggle.",
+      "navigation": "PASS: navigation titles, responsive layout, separate mobile header targets, opened menus, table/hover and homepage contrast, and copied text.",
+      "read_aloud": "PASS: rendered chapter controls, pause/resume/stop, extraction order, mobile width, speed, departure cancellation, unsupported browser."
+    },
+    "repository_gates": {
+      "command": "bash scripts/verify.sh",
+      "exit_code": 0,
+      "gate_count": 30,
+      "freshness_rules": 32,
+      "gate_defect_clean_cases": 79,
+      "internal_links": 9797,
+      "verified_anchors": 183,
+      "broken_links": 0,
+      "final_diff_whitespace": "git diff --check passed"
+    },
+    "limits": [
+      "Read-aloud scheduling is exercised with controlled speech mocks, not actual voice quality.",
+      "Semantic review remains incomplete; no production or assistive technology integration is inferred from fixture results."
+    ]
+  },
   "site_build": {
-    "compiler": "Jekyll 3.9.0 via Ruby3.1",
+    "checked_at": "2026-10-10",
+    "compiler": "Jekyll 3.9.0 / Ruby 3.1",
     "result": "success",
     "liquid_warnings": false,
     "private_paths_excluded": true,
-    "local_preview": "/tmp/bible-review-site",
-    "case_insensitive_homepage": "home-preview.html rendered separately from source index.html"
+    "case_insensitive_homepage": "home-preview.html rendered from authored index.html"
   },
   "browser_suites": {
     "reader": "PASS: chapter outline, keyboard destination, system/explicit themes, text and syntax contrast, mobile width, persisted toggle.",
     "navigation": "PASS: navigation titles, responsive layout, separate mobile header targets, opened menus, table/hover and homepage contrast, and copied text.",
-    "read_aloud": "PASS: rendered chapter controls, pause/resume/stop, extraction order, mobile width, speed, departure cancellation, unsupported browser."
+    "readaloud": "PASS: rendered chapter controls, pause/resume/stop, extraction order, mobile width, speed, departure cancellation, unsupported browser.",
+    "expanded": "Expanded pages: 144 width/theme/outline checks passed"
   },
-  "limits": [
-    "Read-aloud scheduling is exercised with controlled speech mocks, not actual voice quality.",
-    "Semantic review remains incomplete; no production or assistive technology integration is inferred from fixture results."
-  ],
   "repository_gates": {
+    "checked_at": "2026-10-10",
     "command": "bash scripts/verify.sh",
     "exit_code": 0,
     "gate_count": 30,
-    "freshness_rules": 32,
-    "gate_defect_clean_cases": 79,
-    "internal_links": 9797,
-    "verified_anchors": 183,
+    "freshness_rules": 34,
+    "internal_links": 10896,
+    "verified_anchors": 230,
     "broken_links": 0,
+    "writer_fixed_point": true,
     "final_diff_whitespace": "git diff --check passed"
   }
 }

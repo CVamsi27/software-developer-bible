@@ -42,13 +42,39 @@ Source: [Apollo Server](20.7.2.02-apollo-server.md)
 
 **A:** Measure operation latency, resolver and dependency costs, error rates and admission rejections. Protect sensitive arguments and field values when tracing or reporting usage.
 
+## Execution failure boundaries
+
+Source: [Resolvers](20.7.2.01-resolvers.md)
+
+**Q:** A batch asks for u1, u2 and a missing key, but storage returns u2 first. What should its result contain?
+
+**A:** Return one result per requested key in input order: u1's row, u2's row and null or an intentional per-key error. Returning storage order silently attaches the wrong related records. Keep the batch scoped to the verified request identity.
+
+**Q:** Why is executing two mutation fields serially different from using a transaction?
+
+**A:** Serial execution orders top-level mutation fields but does not roll back the first field when the second fails. Put atomic business changes in an authoritative transaction and specify retry/idempotency behavior independently.
+
+**Q:** Why can a missing non-null author remove an entire posts response?
+
+**A:** Null propagates to the closest nullable boundary. With author: User!, posts: [Post!]!, the author failure nulls a non-null post, then a non-null list, reaching root data. Nullable author would preserve the post instead.
+
+Source: [Apollo Server](20.7.2.02-apollo-server.md)
+
+**Q:** Does executeOperation with a principal prove that Express authentication works?
+
+**A:** No. It exercises GraphQL processing with supplied context, bypassing HTTP middleware. Use HTTP integration tests for credentials, body limits and CORS/CSRF boundaries, plus schema-execution tests for resource policy and null behavior.
+
+**Q:** Why should current variables not be inspected only by a static validation rule?
+
+**A:** The server may cache validation results for a document. A new request can reuse that document with different variables or identity, so admission checks depending on them must execute on every request before resolver work.
+
 ## Summary
 
 Use these prompts after the reading pass to recall the execution mechanisms and boundary constraints.
 
 ## See Also
 
-- [Category reading flow](INDEX.md)
+- [Category reading flow](INDEX.md) — return to prerequisites and learning stages for resolver ownership and request lifecycle
 
 ## References & Learn More
 

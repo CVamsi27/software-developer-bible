@@ -1,6 +1,6 @@
 # CI Platforms
 
-> **Study time:** ≈ 46 min of reading (5 files, ~9 min average).
+> **Study time:** ≈ 40 min of reading (5 files, ~8 min average).
 > **5 files.** The four platforms you are most likely to meet: GitHub Actions, GitLab CI, Jenkins, and ArgoCD (GitOps). The concepts transfer; learn one deeply, map the others.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#file-index)

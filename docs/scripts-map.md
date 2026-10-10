@@ -6,7 +6,7 @@
 
 # Scripts Map — what runs, what owns what, what to reach for
 
-> Every script in `scripts/`, arranged by the job it does inside the 30-gate
+> The main verification and maintenance scripts, arranged by the job they do inside the 30-gate
 > verification suite: the gate that runs it, what it owns exclusively, the
 > fixer or restamper to reach for when it fails, and the doctrine that keeps
 > one concern from growing a second implementation. Gate numbers refer to
@@ -79,7 +79,7 @@
 
 ### The checker → fixer → restamper recipes
 
-When a gate fails, run the tool it names — never hand-edit a claim it owns:
+When a gate fails, identify the reported defect and use its matching repair. Metadata placement, category and tag errors need an authored correction; the read-time writer only computes read times. Never hand-edit an owned count:
 
 | Failure | Reach for |
 | ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -172,22 +172,6 @@ owner per concern and test suites pinning the two layers most able to do
 silent damage. When something fails, the recipe table routes you to the one
 correct tool; when you add a tool, the doctrine tells you what wiring makes
 it real.
-
-## Cheat sheet
-
-| You see... | You run... |
-| ----------------------------------- | -------------------------------------------------------------------- |
-| `COUNT DRIFT` | `python3 scripts/check_counts.py --write` |
-| `misaligned boxes/tables` | `python3 scripts/check_alignment.py --fix` |
-| `read_time drifted` | `python3 scripts/read_time.py --write` |
-| `search.html drifted` | `python3 scripts/gen_master_index.py` |
-| `de-indented lines found` | `python3 scripts/fix_box_code_indent.py --fix` |
-| `over-padded boxes found` | `python3 scripts/fix_box_width.py --fix` then aligner |
-| `trailing whitespace` / paste-shift | `python3 scripts/fix_code_whitespace.py --trailing-ws --paste-shift` |
-| `unverified external URL` | browser-verify → `link_baseline.py --update` |
-| `INDEX GAP` | add the missing link by hand (it is navigation, not a count) |
-| `wiring: N problem(s)` | fix by hand — the harness must listen |
-| any test gate red | fix the module, not the expectations |
 
 ## See Also
 

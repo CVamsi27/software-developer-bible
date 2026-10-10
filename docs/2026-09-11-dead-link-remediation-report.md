@@ -1,5 +1,7 @@
 # Dead-Link Remediation — Outcome Report (September 2026)
 
+> **Dated review record:** counts, test results and remaining-work statements below describe the recorded pass. Use the [current review progress](2026-10-08-explanation-depth-progress.md) and [verification runbook](verification-gates.md) for present scope; chapter existence and passing scans do not establish complete reader review.
+
 Closing report for the dead-link remediation executed from
 `docs/superpowers/plans/2026-09-10-dead-link-remediation.md`. It records
 what was replaced, what was deliberately left alone, what the audit
@@ -116,6 +118,10 @@ ADDED) → `--update` → commit baseline JSON with the doc change.
   cite a different host rather than accept perpetual audit noise.
   `link_baseline.py` quarantines known hosts of this class as SUSPECT:
   reported, summarized in CI, but never failing the run.
+
+## Browser follow-up — 9 October 2026
+
+The continuation's primary reviewer opened the [Finnish Immigration Service article on the 8 January 2026 permanent-residence amendments](https://migri.fi/en/-/aliens-act-s-provisions-on-permanent-residence-permit-amended-as-of-8-january-2026?languageId=en_US) in a normal browser and read the intended official article. Its automatic Cloudflare challenge resolved without a CAPTCHA. The separate scripted probe returned no response and remains **WARN**; browser content verification is not recorded as an HTTP 200 from that probe. This checks that citation's article body, not an individual applicant's eligibility or the full external-link inventory.
 
 ## 6. See also
 

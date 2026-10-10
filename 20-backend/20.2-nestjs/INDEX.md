@@ -1,19 +1,19 @@
 # NestJS — Index
 
-> **Study time:** ≈ 4 h 8 m of reading (24 files, ~10 min average).
+> **Study time:** ≈ 3 h 14 m of reading (24 files, ~8 min average).
 > **24 files** — NestJS framework from modules and controllers to guards, pipes, interceptors, CQRS, microservices, testing, configuration, lifecycle/shutdown, scheduling, OpenAPI docs, custom decorators, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-24-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Backend-success)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Why NestJS:** The most common Node.js framework for production TypeScript backends. Used by mid-stage startups (n8n, SumUp, etc.), enterprises, and increasingly at FAANG adjacent companies. Senior interviews test NestJS architecture (modules, DI), request lifecycle (middleware → guards → pipes → interceptors → controller), and patterns (CQRS, microservices, custom decorators).
+**Why NestJS:** Nest supplies a consistent container, module graph and request pipeline for TypeScript backends. Learn those mechanisms before choosing CQRS, another transport or background work. Interview practice focuses on registration, ownership and failure boundaries, with executable examples in the learning chapters.
 
 ---
 
 ## Topic Categories
 
-The 18 files are organized into 5 categories, each with its own INDEX.
+The chapters are organized into five categories, each with its own learning flow and revision companion.
 
 | Category | Files | Why it matters |
 | ---------------------------------------------------------- | ----: | ----------------------------------------------------------------------------------------------------------- |
@@ -21,7 +21,7 @@ The 18 files are organized into 5 categories, each with its own INDEX.
 | [Request Lifecycle](02-request-lifecycle/INDEX.md) | 6 | Middleware, Guards, Pipes, Interceptors, Exception Filters, Request Context (ALS) — what runs in what order |
 | [Patterns](03-patterns/INDEX.md) | 2 | CQRS, Microservices — the patterns NestJS supports out of the box |
 | [Quality & Operations](04-quality-and-operations/INDEX.md) | 5 | Config validation, Testing, Lifecycle/shutdown, Scheduling/jobs, OpenAPI docs |
-| [Advanced & Interview](05-advanced-and-interview/INDEX.md) | 2 | Custom decorators, 50+ interview Qs |
+| [Advanced & Interview](05-advanced-and-interview/INDEX.md) | 2 | Custom decorators, 40 interview prompts |
 
 ---
 
@@ -36,7 +36,7 @@ DI                       interceptors                             scheduling/job
                          exception filters                        swagger/openapi
 ```
 
-**Lifecycle order:** Middleware → Guards → Pipes → Controller → Interceptors (rxjs pipeline) → Exception Filters.
+**Request order:** Middleware → Guards → Interceptors (before) → Pipes → Handler → Interceptors (after). Filters handle uncaught errors; interceptors can catch or short-circuit the downstream stream.
 
 ---
 
@@ -55,7 +55,7 @@ How NestJS apps are structured. Read these first. Category INDEX: [Core Architec
 
 ## Request Lifecycle
 
-The order of execution for every request — **every NestJS interview tests this**. Read in order. Category INDEX: [Request Lifecycle](02-request-lifecycle/INDEX.md).
+The order of execution and each stage's responsibilities. Read in order. Category INDEX: [Request Lifecycle](02-request-lifecycle/INDEX.md).
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
@@ -73,8 +73,8 @@ The patterns NestJS supports out of the box. Category INDEX: [Patterns](03-patte
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [CQRS](03-patterns/20.2.3.01-cqrs.md) | Commands, queries, events, sagas, command/query buses, `@nestjs/cqrs` | Essential | Important | 19 min |
-| 02 | [Microservices](03-patterns/20.2.3.02-microservices.md) | TCP, Redis, RabbitMQ, Kafka, gRPC transports, hybrid apps, message patterns | Important | Important | 22 min |
+| 01 | [CQRS](03-patterns/20.2.3.01-cqrs.md) | Commands, queries, events, sagas, command/query buses, `@nestjs/cqrs` | Essential | Important | 8 min |
+| 02 | [Microservices](03-patterns/20.2.3.02-microservices.md) | TCP, Redis, RabbitMQ, Kafka, gRPC transports, hybrid apps, message patterns | Important | Important | 8 min |
 
 ---
 
@@ -85,10 +85,10 @@ Production hygiene. Category INDEX: [Quality & Operations](04-quality-and-operat
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Configuration & Validation](04-quality-and-operations/20.2.4.01-configuration-validation.md) | ConfigModule, ValidationPipe, class-validator, Joi, DTOs, env validation | Essential | Important | 12 min |
-| 02 | [Testing](04-quality-and-operations/20.2.4.02-testing.md) | Jest, TestingModule, supertest, Testcontainers, e2e/integration/unit | Essential | Important | 12 min |
+| 02 | [Testing](04-quality-and-operations/20.2.4.02-testing.md) | Jest, TestingModule, supertest, Testcontainers, e2e/integration/unit | Essential | Important | 13 min |
 | 03 | [Lifecycle Hooks & Graceful Shutdown](04-quality-and-operations/20.2.4.03-lifecycle-hooks-graceful-shutdown.md) | Lifecycle hook map + ordering, `enableShutdownHooks()`, SIGTERM, Kubernetes terminationGracePeriod, draining connections, closing pools in order | Essential | Important | 14 min |
 | 04 | [Scheduling & Background Jobs](04-quality-and-operations/20.2.4.04-scheduling-background-jobs.md) | @nestjs/schedule + dynamic API, distributed cron locks (Redis NX), BullMQ queues, retries/backoff/rate limits, idempotent handlers, job observability | Essential | Important | 19 min |
-| 05 | [Swagger & OpenAPI](04-quality-and-operations/20.2.4.05-swagger-openapi-nestjs.md) | @nestjs/swagger setup, DocumentBuilder, @ApiProperty DTOs, generics + @ApiExtraModels, security schemes, spec JSON codegen, CI contract checks | Essential | Important | 15 min |
+| 05 | [Swagger & OpenAPI](04-quality-and-operations/20.2.4.05-swagger-openapi-nestjs.md) | @nestjs/swagger setup, DocumentBuilder, @ApiProperty DTOs, generics + @ApiExtraModels, security schemes, spec JSON codegen, CI contract checks | Essential | Important | 14 min |
 
 ---
 
@@ -98,19 +98,19 @@ Category INDEX: [Advanced & Interview](05-advanced-and-interview/INDEX.md).
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Custom Decorators](05-advanced-and-interview/20.2.5.01-custom-decorators.md) | Parameter decorators (@CurrentUser, @ClinicId, @Pagination), method decorators (@RateLimit, @Cache, @Audit), decorator composition | Essential | Important | 10 min |
-| 02 | [Interview Questions](05-advanced-and-interview/20.2.5.02-interview-questions.md) | 50+ curated questions with answers | Essential | Important | 38 min |
+| 01 | [Custom Decorators](05-advanced-and-interview/20.2.5.01-custom-decorators.md) | Parameter decorators (@CurrentUser, @ClinicId, @Pagination), method decorators (@RateLimit, @Cache, @Audit), decorator composition | Essential | Important | 11 min |
+| 02 | [Interview Questions](05-advanced-and-interview/20.2.5.02-interview-questions.md) | 40 practice questions with answers | Essential | Important | 8 min |
 
 ---
 
 ## Suggested Study Order
 
-1. **Core Architecture** (4 files, ~2 hrs) — must know
-2. **Request Lifecycle** (6 files, ~2.5 hrs) — must know, the most-asked cluster
+1. **Core Architecture** — explain provider tokens, module visibility and instance identity.
+2. **Request Lifecycle** — trace successful and rejected requests, then use its revision companion.
 3. **Patterns** (CQRS + Microservices) — for senior/DDD roles
 4. **Quality & Operations** (5 files) — production hygiene
 5. **Custom Decorators** — senior-level
-6. **Interview Questions** — final review
+6. **Category revision, then Interview Questions** — recall the mechanism before practicing changed conditions.
 
 ---
 
@@ -132,7 +132,7 @@ Category INDEX: [Advanced & Interview](05-advanced-and-interview/INDEX.md).
 
 ## Docita Anchor
 
-Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+Real code from [docita](https://github.com/CVamsi27/docita) - healthcare application (NestJS + Prisma + PostgreSQL). Use the following paths to investigate the current checkout; these references do not establish deployment readiness:
 
 | Topic | Docita evidence |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

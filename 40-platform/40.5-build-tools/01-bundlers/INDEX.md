@@ -1,6 +1,6 @@
 # Bundlers
 
-> **Study time:** ≈ 31 min of reading (5 files, ~6 min average).
+> **Study time:** ≈ 20 min of reading (5 files, ~4 min average).
 > **5 files.** The four bundlers that matter: Webpack (the incumbent), Vite (the default for new projects), and the Rust challengers Turbopack and Rspack.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#file-index)
@@ -16,11 +16,8 @@ The bundler decides dev-server latency, build time, and output shape. Interviews
 **Decision tree:**
 
 ```text
-New project?
-├── Yes → Vite (or Next.js = Turbopack)
-├── Legacy Webpack → stay on Webpack (or migrate to Rspack)
-├── Very large monorepo → Rspack or Turbopack
-└── Next.js → Turbopack (default since v15)
+Framework requirement -> supported default -> required extension inventory
+                     -> measured migration slice -> production output checks
 ```
 
 ---
@@ -29,10 +26,10 @@ New project?
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Webpack](40.5.1.01-webpack.md) | Configuration, loaders, plugins, code splitting, HMR | Important | Specialized | 9 min |
-| 02 | [Vite](40.5.1.02-vite.md) | Dev server, native ESM in dev, ESBuild + Rollup, plugins, SSR | Important | Specialized | 5 min |
-| 03 | [Turbopack](40.5.1.03-turbopack.md) | Incremental computation, caching, Rust-based bundling | Important | Specialized | 4 min |
-| 04 | [Rspack](40.5.1.04-rspack.md) | Rust-based Webpack-compatible bundler, module federation | Important | Specialized | 10 min |
+| 01 | [Webpack](40.5.1.01-webpack.md) | Configuration, loaders, plugins, code splitting, HMR | Important | Specialized | 4 min |
+| 02 | [Vite](40.5.1.02-vite.md) | Dev server, native ESM in dev, Rolldown/Oxc production, plugins, SSR | Important | Specialized | 5 min |
+| 03 | [Turbopack](40.5.1.03-turbopack.md) | Incremental computation, caching, Rust-based bundling | Important | Specialized | 5 min |
+| 04 | [Rspack](40.5.1.04-rspack.md) | Rust-based Webpack-compatible bundler, module federation | Important | Specialized | 4 min |
 
 ---
 
@@ -51,14 +48,7 @@ New project?
 
 ## Docita Anchor
 
-Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — bundles for real.
-
-| Topic | Docita evidence |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| Vite | The SPA apps (`apps/app`, `apps/internal`) run on Vite — ADR 0012 records replacing Next.js with a Vite SPA |
-| Astro (SSG) | `apps/landing` builds with Astro, deployable to Cloudflare Workers (`build:cloudflare`, wrangler) |
-| Turbopack / Rspack | _No direct docita implementation yet._ |
-| Build orchestration | Turbo task graph wraps every bundle: `build` depends on `^build` + `check-types` + `lint`, outputs `dist/**` for caching |
+The [Docita evidence walkthrough](../../../projects/docita/INDEX.md) distinguishes dated lab results from source configuration and deployed behavior. Vite/Astro, shared TypeScript settings and Turbo tasks provide related source examples. Inspect the actual task inputs, invoked gates and emitted outputs before claiming type safety, cache validity or runtime performance. No direct Rspack/Turbopack implementation or measured migration speedup is claimed here.
 
 ## Finish This Section
 

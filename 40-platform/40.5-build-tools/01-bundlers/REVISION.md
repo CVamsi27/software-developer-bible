@@ -52,7 +52,7 @@ Use the answers to check your reasoning, then revisit the source mechanism and r
 
 ## See Also
 
-- [Section learning flow](INDEX.md)
+- [Section learning flow](INDEX.md) — return to prerequisites and compare the tool’s output boundary
 
 ## References & Learn More
 

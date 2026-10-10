@@ -1,6 +1,6 @@
 # Advanced & Interview - NestJS
 
-> **Study time:** ≈ 50 min of reading (3 files, ~17 min average).
+> **Study time:** ≈ 21 min of reading (3 files, ~7 min average).
 > **3 files.** Senior-level customization with parameter/method decorators and decorator composition, then the curated question bank for final review.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
@@ -12,8 +12,9 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Custom Decorators](20.2.5.01-custom-decorators.md) | Parameter decorators (@CurrentUser, @ClinicId, @Pagination), method decorators (@RateLimit, @Cache, @Audit), decorator composition | Essential | Important | 10 min |
-| 02 | [Interview Questions](20.2.5.02-interview-questions.md) | 50+ curated questions with answers | Essential | Important | 38 min |
+| 01 | [Custom Decorators](20.2.5.01-custom-decorators.md) | Parameter decorators (@CurrentUser, @ClinicId, @Pagination), method decorators (@RateLimit, @Cache, @Audit), decorator composition | Essential | Important | 11 min |
+| Revision | [Category recall](REVISION.md) | Extraction, metadata and enforcement boundaries before the interview drill | Essential | Important | — |
+| 02 | [Interview Questions](20.2.5.02-interview-questions.md) | 40 practice questions with answers | Essential | Important | 8 min |
 
 ---
 
@@ -23,7 +24,7 @@
 
 ## Docita Anchor
 
-Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+Real code from [docita](https://github.com/CVamsi27/docita) - healthcare application (NestJS + Prisma + PostgreSQL). Use the following paths to investigate the current checkout; these references do not establish deployment readiness:
 
 | Topic | Docita evidence |
 | ------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
@@ -31,11 +32,7 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Route metadata decorators | `apps/api/src/shared/modules/idempotency/requires-idempotency.decorator.ts` - marker drives IdempotencyInterceptor |
 | Role markers | `apps/api/src/shared/modules/auth/auth/roles.decorator.ts` - @Roles read back via Reflector in RolesGuard |
 
-Every interview question about decorators/lifecycle is answerable from these files — walk `app.module.ts` registrations to narrate the chain end-to-end.
+Use these evidence paths to investigate decorator registration and consumption in the project. The reference examples still require checking the current checkout; they do not prove every lifecycle or transport feature ships there.
 ---
 
 [← Previous: Quality & Operations](../04-quality-and-operations/INDEX.md)
-
-## Section Revision
-
-After the learning chapters, use the [separate revision drill](REVISION.md) to check recall before interview practice.

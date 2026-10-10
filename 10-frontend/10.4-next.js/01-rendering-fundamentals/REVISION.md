@@ -59,7 +59,7 @@ Source: [App Router in Next.js](10.4.1.02-app-router.md)
 **How It Works**
 
 2. **Q:** Why does a shared layout preserve state while a template can reset it?
-   **A:** Navigation reuses the shared layout instance. A template receives a new instance/key, so its state and effects restart.
+   **A:** Navigation reuses the shared layout instance. A template remounts when its relevant segment key changes, so descendant client state and effects restart; deeper navigation can retain a higher template and search-parameter changes alone do not remount it.
 
 
 **Code Examples**
@@ -153,6 +153,25 @@ Source: [Client Components in Next.js](10.4.1.04-client-components.md)
 
 6. **Q:** Why do local product-filter controls not change a server-rendered grid by themselves?
    **A:** Their state belongs only to the client control. Connect it to URL parameters/server navigation or a client data layer to affect the product results.
+
+## Trace and Boundary Checks
+
+Source: [Rendering comparison](10.4.1.01-ssr-csr-ssg-isr.md), [App Router](10.4.1.02-app-router.md), [Server Components](10.4.1.03-server-components.md), [Client Components](10.4.1.04-client-components.md).
+
+**Q:** Why can a request-rendered account page still display old data?
+**A:** Request rendering and upstream caching are separate. An upstream data cache or lagging source can return an older value even when Next bypasses its own persistent fetch cache.
+
+**Q:** Does a middleware header naming ISR prove regeneration happened?
+**A:** No. It labels a request match. Verify production output and cache/timestamp behavior with controlled requests.
+
+**Q:** What changes on reload after a photo was opened in an intercepted slot?
+**A:** Direct navigation selects the normal photo page; an unmatched slot uses its default because the prior client navigation state is unavailable.
+
+**Q:** Why can one review query per product card be slow even with zero card implementation bytes in the browser?
+**A:** Those server reads can create an N+1 query pattern. Code placement reduces bundle cost but does not batch database work.
+
+**Q:** Why capture a socket in an effect cleanup instead of merely closing whatever its ref currently contains?
+**A:** Each setup owns its own connection. Cleanup must disable and close that instance so obsolete work cannot publish into a later setup.
 
 ## Summary
 

@@ -1,6 +1,6 @@
 # Real-Time Stack
 
-> **Study time:** ≈ 4 h 6 m of reading (14 files, ~18 min average).
+> **Study time:** ≈ 2 h 2 m of reading (14 files, ~9 min average).
 > **WebSockets, SSE, real-time architecture** — optional stack, study when a JD demands it. Shared by both lanes.
 >
 > Study in three passes: **I. Protocols** (which transport, and why) → **II. Implementation** (Socket.IO, NestJS gateways) → **III. Architecture at scale** (fan-out, sticky sessions, pub/sub backbones).
@@ -13,37 +13,34 @@
 
 ## Docita Anchor
 
-Real-time here is not theoretical: [docita](https://github.com/CVamsi27/docita) runs Socket.IO (`^4.8.3`) with two authenticated NestJS gateways sharing a `BaseWebSocketGateway` base class, `clinic:{id}` tenant-scoped rooms, per-connection rate limits, and one deliberate SSE use (AI streaming). Its scaling story is honestly documented in `docs/operations/WEBSOCKET_SCALING.md`: single-replica boundary, no Redis pub/sub adapter yet. Category INDEXes under [60.1-websockets/](60.1-websockets/INDEX.md) carry verified **Docita Anchor** tables.
+The [Docita companion](https://github.com/CVamsi27/docita) has notification/payment gateways, a shared base class and clinic/user room routing in the local source checked on 9 October 2026. Its `docs/operations/WEBSOCKET_SCALING.md` documents a single-replica boundary and required cross-replica verification before scaling. These source references do not establish live production capacity, successful recovery or a deployed Redis adapter.
 
 ---
 
 ## Topic Categories
 
-The 11 files organize into 5 conceptual categories — the "GoF classification" of real-time systems. Read in order within each.
+The topics below group transport choices, application integration, peer connectivity, architecture and practice. Use the learning passes to connect their mechanisms.
 
 | Category | Files | Why it matters |
 | ------------------------------------------------------------ | ----: | ---------------------------------------------------------------------------------------------- |
 | [Transport Protocols](#transport-protocols) | 3 | WebSockets vs SSE vs WebTransport — pick the right pipe before writing code |
 | [Framework Implementation](#framework-implementation) | 3 | Socket.IO semantics, NestJS gateways, GraphQL subscriptions — where code actually gets written |
-| [Peer-to-Peer & Data Channels](#peer-to-peer--data-channels) | 1 | WebRTC — media without servers |
+| [Peer-to-Peer & Data Channels](#peer-to-peer--data-channels) | 1 | WebRTC — direct routes, relay fallback and conferencing |
 | [Architecture & Scale](#architecture--scale) | 2 | Fan-out, presence, sticky sessions, Redis adapter — surviving >1 node |
 | [Testing & Drills](#testing--drills) | 2 | Load/chaos/soak testing realtime systems + curated Q&A |
 
 ---
 
-## The Track — Read In This Order
+## Learning Passes
 
-```text
-Pass I — TRANSPORTS           Pass II — ARCHITECTURE & SCALE    Pass III — DRILLS
-websockets-overview     ──┐   real-time-architecture      ──┐   interview-questions
-server-sent-events        ├→  scaling-patterns              ├→
-socket-io                 │                                 │
-webtransport            ──┘                                 ┘
+Use the [WebSockets learning flow](60.1-websockets/INDEX.md) for category prerequisites, revision companions and interview practice.
 
-NestJS gateways: read alongside Pass II when wiring production code.
-```
+1. **Choose a channel:** compare WebSocket, SSE and Socket.IO. Read WebTransport when its stream/datagram behavior is relevant to the role. Complete the [transport revision](60.1-websockets/01-transports/REVISION.md).
+2. **Explain state and recovery:** trace a committed update, missed publication and reconnect in architecture/scaling. Complete the [architecture revision](60.1-websockets/02-architecture-and-scaling/REVISION.md).
+3. **Implement and verify:** follow the relevant NestJS, GraphQL or WebRTC mechanism, then separate local protocol evidence from network, load and recovery checks. Complete the [framework revision](60.1-websockets/03-frameworks-and-paradigms/REVISION.md).
+4. **Practice:** answer the interview bank and its follow-ups aloud, reproducing a focused canonical example when an explanation is incomplete.
 
-**Total time: ~6 hours.** Skip WebTransport if interviewing before next week; it's a bonus-point topic.
+Reading estimates do not include reproducing examples or interview rehearsal. Prioritize by the role's requirements and the mechanisms you cannot yet explain.
 
 ---
 
@@ -59,28 +56,28 @@ NestJS gateways: read alongside Pass II when wiring production code.
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | ----: | ----------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | ------------- | ------------------ | --------: |
-| 4 | [Socket.IO](60.1-websockets/01-transports/60.1.1.03-socket-io.md) | Rooms, namespaces, acks, fallbacks, reconnection semantics | Important | Specialized | 40 min |
-| 5 | [NestJS WebSockets](60.1-websockets/03-frameworks-and-paradigms/60.1.3.01-nestjs-websockets.md) | Gateways, decorators, lifecycle hooks — production wiring | Important | Specialized | 32 min |
-| 6 | [GraphQL Subscriptions & Live Queries](60.1-websockets/03-frameworks-and-paradigms/60.1.3.02-graphql-subscriptions-live-queries.md) | graphql-ws protocol, Redis pub-sub fan-out, withFilter authz, over-emitting costs | Optional | Specialized | 15 min |
+| 4 | [Socket.IO](60.1-websockets/01-transports/60.1.1.03-socket-io.md) | Rooms, namespaces, acks, fallbacks, reconnection semantics | Important | Specialized | 13 min |
+| 5 | [NestJS WebSockets](60.1-websockets/03-frameworks-and-paradigms/60.1.3.01-nestjs-websockets.md) | Gateways, decorators, lifecycle hooks — production wiring | Important | Specialized | 11 min |
+| 6 | [GraphQL Subscriptions & Live Queries](60.1-websockets/03-frameworks-and-paradigms/60.1.3.02-graphql-subscriptions-live-queries.md) | graphql-ws protocol, Redis pub-sub fan-out, withFilter authz, over-emitting costs | Optional | Specialized | 11 min |
 
 ## Peer-to-Peer & Data Channels
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | ----: | --------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | ------------- | ------------------ | --------: |
-| 7 | [WebRTC Peer-to-Peer](60.1-websockets/03-frameworks-and-paradigms/60.1.3.03-webrtc-peer-to-peer.md) | getUserMedia / RTCPeerConnection / RTCDataChannel, signaling, ICE/STUN/TURN, mesh vs SFU vs MCU cost math | Optional | Specialized | 12 min |
+| 7 | [WebRTC Peer-to-Peer](60.1-websockets/03-frameworks-and-paradigms/60.1.3.03-webrtc-peer-to-peer.md) | getUserMedia / RTCPeerConnection / RTCDataChannel, signaling, ICE/STUN/TURN, mesh vs SFU vs MCU cost math | Optional | Specialized | 11 min |
 
 ## Architecture & Scale
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | ----: | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- | ------------- | ------------------ | --------: |
-| 8 | [Real-Time Architecture](60.1-websockets/02-architecture-and-scaling/60.1.2.01-real-time-architecture.md) | Transport decision tree, presence, delivery guarantees | Important | Specialized | 35 min |
-| 9 | [Scaling Patterns](60.1-websockets/02-architecture-and-scaling/60.1.2.02-scaling-patterns.md) | Sticky sessions, Redis adapter, pub/sub backbone, connection limits | Important | Specialized | 11 min |
+| 8 | [Real-Time Architecture](60.1-websockets/02-architecture-and-scaling/60.1.2.01-real-time-architecture.md) | Transport decision tree, presence, delivery guarantees | Important | Specialized | 9 min |
+| 9 | [Scaling Patterns](60.1-websockets/02-architecture-and-scaling/60.1.2.02-scaling-patterns.md) | Sticky sessions, Redis adapter, pub/sub backbone, connection limits | Important | Specialized | 8 min |
 
 ## Testing & Drills
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | ----: | -------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ------------- | ------------------ | --------: |
-| 10 | [Testing Real-Time Systems](60.1-websockets/03-frameworks-and-paradigms/60.1.3.04-testing-realtime-systems.md) | Artillery WS scenarios, churn, ordering/backpressure assertions, chaos drills, soak tests | Important | Specialized | 15 min |
+| 10 | [Testing Real-Time Systems](60.1-websockets/03-frameworks-and-paradigms/60.1.3.04-testing-realtime-systems.md) | Artillery WS scenarios, churn, ordering/backpressure assertions, chaos drills, soak tests | Important | Specialized | 10 min |
 
 | File | Contents | Role priority | General importance |
 | ----------------------------------------------------------------------------------------- | -------------------------------------------------------- | ------------- | ------------------ |
@@ -93,8 +90,8 @@ NestJS gateways: read alongside Pass II when wiring production code.
 ```text
 Need server→client push only? → SSE (auto-reconnect, Last-Event-ID)
 Need bidirectional (chat/collab)? → WebSockets (Socket.IO for rooms/fallbacks)
-Need it behind serverless/edge? → managed pub/sub + polling fallback first
-Scaling beyond one node? → Redis adapter / sticky sessions → pub/sub backbone
+Managed connection service? → verify ownership, protocol, quotas and recovery
+Multiple gateways? → cross-node routing; polling affinity where required; recover state
 ```
 
 ## Common interview topics

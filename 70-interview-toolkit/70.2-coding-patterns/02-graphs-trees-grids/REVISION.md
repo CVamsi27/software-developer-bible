@@ -58,6 +58,56 @@ Source: [Matrix Traversal & Simulation](70.2.2.06-matrix-traversal-simulation.md
 
 **A:** State the valid row and column limits, the order of visits, and how you mark visited cells. Also ask whether a later step needs an original value that you are about to overwrite. A marker stored in the matrix must be distinguishable from every valid input value.
 
+## Boundary Checks
+
+### DFS & BFS
+
+Source: [DFS & BFS](70.2.2.01-dfs-bfs.md)
+
+**Q:** Why freeze the queue layer before spreading rot to neighbors?
+
+**A:** All entries in that layer represent the same minute. Newly rotten cells wait for the next layer; processing them immediately would let several edges spread in one minute.
+
+### Shortest Paths
+
+Source: [Shortest Paths](70.2.2.02-shortest-paths-dijkstra-bellman-ford.md)
+
+**Q:** What does the negative-cycle flag say about the returned distance array?
+
+**A:** It indicates a reachable negative cycle; affected values cannot be treated as finite shortest distances. The helper does not mark all affected targets. A target is unbounded only if a reachable negative cycle can also reach it.
+
+### Union-Find
+
+Source: [Union-Find](70.2.2.03-union-find.md)
+
+**Q:** Why is the DSU component total different from the number of newly activated islands?
+
+**A:** The DSU allocates inactive cells too. Track land separately: activation adds one island, and each successful union with active adjacent land removes one. Duplicate activation does neither.
+
+### Topological Sort
+
+Source: [Topological Sort](70.2.2.04-topological-sort.md)
+
+**Q:** Does a valid topological order determine an optimal parallel schedule?
+
+**A:** It only respects prerequisites. Capacity limits, task durations and other resources still determine which available tasks can run together; the semester helper assumes unlimited parallelism and equal durations.
+
+### Trie
+
+Source: [Trie](70.2.2.05-trie.md)
+
+**Q:** Does finding a prefix make autocomplete cost only the prefix length?
+
+**A:** It finds the subtree in prefix-length time under the map assumptions. Enumerating and producing its completions still costs traversal and output work. A terminal marker decides which visited prefixes are complete words.
+
+### Matrix Simulation
+
+Source: [Matrix Simulation](70.2.2.06-matrix-traversal-simulation.md)
+
+**Q:** Why remove two sides when a shared land edge is inspected only once?
+
+**A:** Both cells contributed four edges, including their shared side. Checking only up and left avoids inspecting that pair twice, then subtracting two removes both contributions.
+
 ## Summary
 
 Choose the state before the traversal: visited status for reachability, tentative distance for weighted paths, component representative for merges, or remaining prerequisites for dependency order.

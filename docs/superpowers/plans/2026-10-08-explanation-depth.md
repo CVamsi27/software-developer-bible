@@ -50,11 +50,11 @@
 
 **Interfaces:** Produces `/tmp/bible-depth-review/frontend.json`, edited chapters/companions and a citation list; shared metadata is consolidated later.
 
-- [ ] Read each file in learning order, including navigation/revision/drills. For every consequential named variant, check meaning, relation, trace and boundary.
-- [ ] Replace catalog-only instruction with concrete explanations in the relevant canonical section. Preserve useful compact comparisons.
-- [ ] Check lifecycle/identity/ownership examples across language, TypeScript, browser, React, forms, Next.js, animation and mobile material.
-- [ ] Verify unstable/niche claims through primary sources. Run representative changed examples and record unexecuted integrations accurately.
-- [ ] For each learning document, record one trace question and one changed-condition question. Return per-file findings, rationale and validation; do not infer completion from file length.
+- [x] Read each file in learning order, including navigation/revision/drills. For every consequential named variant, check meaning, relation, trace and boundary.
+- [x] Replace catalog-only instruction with concrete explanations in the relevant canonical section. Preserve useful compact comparisons.
+- [x] Check lifecycle/identity/ownership examples across language, TypeScript, browser, React, forms, Next.js, animation and mobile material.
+- [x] Verify unstable/niche claims through primary sources. Run representative changed examples and record unexecuted integrations accurately.
+- [x] For each learning document, record one trace question and one changed-condition question. Return per-file findings, rationale and validation; do not infer completion from file length.
 
 ## Task 4: Review backend
 
@@ -62,11 +62,11 @@
 
 **Interfaces:** Produces `/tmp/bible-depth-review/backend.json`, edited chapters/companions and new source URLs.
 
-- [ ] Review Node, HTTP/API, PostgreSQL, security, NestJS, caching, brokers, microservices, GraphQL, AI and Java in dependency order.
-- [ ] Reconcile diagrams and code against prose, prioritizing the confirmed MVCC isolation mismatch. Explain snapshots, visible row versions, concurrent writes and cleanup before low-level tuple fields.
-- [ ] Make setups/runtime assumptions explicit; trace request/job/transaction ownership and failure recovery before comparing variants.
-- [ ] Use actual PostgreSQL for isolation assertions if available; explicitly record a source-verified but unexecuted database test when it is unavailable. Do not substitute SQLite as MVCC proof.
-- [ ] Preserve authored questions and carry changed contracts through category revision/interview material. Produce per-file dispositions and comprehension questions.
+- [x] Review Node, HTTP/API, PostgreSQL, security, NestJS, caching, brokers, microservices, GraphQL, AI and Java in dependency order.
+- [x] Reconcile diagrams and code against prose, prioritizing the confirmed MVCC isolation mismatch. Explain snapshots, visible row versions, concurrent writes and cleanup before low-level tuple fields.
+- [x] Make setups/runtime assumptions explicit; trace request/job/transaction ownership and failure recovery before comparing variants.
+- [x] Use actual PostgreSQL for isolation assertions if available; explicitly record a source-verified but unexecuted database test when it is unavailable. Do not substitute SQLite as MVCC proof.
+- [x] Preserve authored questions and carry changed contracts through category revision/interview material. Produce per-file dispositions and comprehension questions.
 
 ## Task 5: Review architecture and platform
 
@@ -74,11 +74,11 @@
 
 **Interfaces:** Produces `/tmp/bible-depth-review/architecture-platform.json`, revised source documents and citation/verification notes.
 
-- [ ] Explain component responsibilities and interactions before taxonomy, protocols or deployment recipes.
-- [ ] Trace design decisions from requirements, invariants, workload and failures; remove unsupported guarantees and contradictory diagrams.
-- [ ] Teach platform behavior through inputs, controller/runtime action and observable results. Review HPA resource metrics and scheduling/readiness boundaries in particular.
-- [ ] Distinguish measured integration evidence from algorithm/configuration reasoning. Verify volatile/niche behavior against primary docs.
-- [ ] Update affected revision/navigation/drill passages and record per-file trace/changed-condition questions and dispositions.
+- [x] Explain component responsibilities and interactions before taxonomy, protocols or deployment recipes.
+- [x] Trace design decisions from requirements, invariants, workload and failures; remove unsupported guarantees and contradictory diagrams.
+- [x] Teach platform behavior through inputs, controller/runtime action and observable results. Review HPA resource metrics and scheduling/readiness boundaries in particular.
+- [x] Distinguish measured integration evidence from algorithm/configuration reasoning. Verify volatile/niche behavior against primary docs.
+- [x] Update affected revision/navigation/drill passages and record per-file trace/changed-condition questions and dispositions.
 
 ## Task 6: Review quality, realtime, interview and supporting genres
 
@@ -86,18 +86,20 @@
 
 **Interfaces:** Produces `/tmp/bible-depth-review/coordinator.json`; personal data remains in its canonical private paths.
 
-- [ ] Review every document according to its genre: concepts teach mechanisms, cases justify decisions, drills explain answers, indexes establish prerequisites, and operational documents explain actions and evidence.
-- [ ] Clarify measurement boundaries, causal reasoning, ownership, retries, races and recovery where consequential to the topic.
-- [ ] Preserve historical dates/facts and personal experience; distinguish existing behavior, proposed designs and hypothetical evidence.
-- [ ] Record a reason for unchanged documents, as well as specific edited passages and their checks. Do not insert textbook structure into trackers or historical notes.
+- [x] Review every document according to its genre: concepts teach mechanisms, cases justify decisions, drills explain answers, indexes establish prerequisites, and operational documents explain actions and evidence.
+- [x] Clarify measurement boundaries, causal reasoning, ownership, retries, races and recovery where consequential to the topic.
+- [x] Preserve historical dates/facts and personal experience; distinguish existing behavior, proposed designs and hypothetical evidence.
+- [x] Record a reason for unchanged documents, as well as specific edited passages and their checks. Do not insert textbook structure into trackers or historical notes.
 
 ## Task 7: Consolidate and validate
+
+These checks must run again against the completed continuation. Earlier checkpoint successes remain dated evidence, not completion of this final pass.
 
 **Files:** Final review JSON/report, modified chapters and companions, `scripts/external-links-baseline.json`, read-time/count/search/API generated output.
 
 **Interfaces:** Merge fragments by unique source path; pending and unresolved entries remain explicit. Verify current hashes after metadata writers without treating regeneration as a new semantic review.
 
-- [ ] Inspect worker edits and evidence; resolve cross-owner contract changes and missing dispositions. Confirm no uncovered inventory entries remain before claiming completion.
+- [x] Inspect worker edits and evidence; resolve cross-owner contract changes and missing dispositions. Confirm no uncovered inventory entries remain before claiming completion.
 - [x] Probe newly introduced primary URLs, then refresh the external-link baseline with the existing workflow.
 - [x] Run existing writers sequentially: alignment repair, read time, master index, counts. Inspect output and run `bash scripts/verify.sh`.
 - [x] Build Jekyll, confirm private exclusions, and inspect expanded chapters at mobile/desktop widths in both themes.

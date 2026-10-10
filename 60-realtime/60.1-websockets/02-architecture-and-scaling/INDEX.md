@@ -1,6 +1,6 @@
 # Architecture & Scaling
 
-> **Study time:** ≈ 48 min of reading (3 files, ~16 min average).
+> **Study time:** ≈ 19 min of reading (3 files, ~6 min average).
 > **3 files.** Real-time system design: pub/sub topologies, presence, state sync — then the concrete scaling patterns (sticky sessions, Redis adapter, sharding) that keep connections alive past one node.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
@@ -11,7 +11,7 @@
 
 ## Why this is the hard part
 
-Transports are solved problems; scale is where real-time systems die. A single Node process holds ~10K+ sockets comfortably — the interesting questions start at node two: who receives this message, which instance owns which connection, and what happens during reconnect.
+Start with a durable change and trace how an authorized client learns about it. Then distribute connections across gateways and identify what fails between commit, publication and recovery. Measure the real workload; a single-node demonstration does not establish a universal capacity limit.
 
 ---
 
@@ -19,21 +19,18 @@ Transports are solved problems; scale is where real-time systems die. A single N
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Real-Time Architecture](60.1.2.01-real-time-architecture.md) | Pub/sub, message brokers, scaling WebSockets, state sync, presence | Important | Specialized | 34 min |
-| 02 | [Scaling Patterns](60.1.2.02-scaling-patterns.md) | Sticky sessions, Redis adapter, sharding, edge platforms (Cloudflare Durable Objects) | Important | Specialized | 11 min |
+| 01 | [Real-Time Architecture](60.1.2.01-real-time-architecture.md) | Pub/sub, message brokers, scaling WebSockets, state sync, presence | Important | Specialized | 9 min |
+| 02 | [Scaling Patterns](60.1.2.02-scaling-patterns.md) | Sticky sessions, Redis adapter, sharding, edge platforms (Cloudflare Durable Objects) | Important | Specialized | 8 min |
 
 ---
 
-## The escalation path
+## Learning Passes
 
-```text
-1 node            → done, skip the rest
-N nodes, same LB  → sticky sessions + Socket.IO Redis adapter
-10K+ connections  → shard connection space; pub/sub backbone (Redis/Kafka)
-Global users      → edge termination (Durable Objects / managed pub-sub)
-```
+1. **Delivery contract:** read the architecture chapter and trace a booking committed before notification fails. Separate live fan-out, retained history and work distribution.
+2. **Fleet behavior:** read scaling patterns and trace one room across two gateways. Explain polling affinity, recovery on another node, slow-client policy and failure headroom.
+3. **Revision:** complete the [source-linked revision questions](REVISION.md), then move to framework implementation and interview practice.
 
-Interview favorite: "How do you broadcast to a room whose members are spread across 20 servers?" — the answer is always an off-box bus (Redis pub/sub or broker fan-out), never inter-server socket chatter.
+A cross-node audience needs routing that reaches its owning gateways. A broker/adapter is one implementation; an explicit inter-gateway routing service is another. Choose from workload and failure requirements rather than an “always use Redis” rule.
 
 ---
 
@@ -52,7 +49,7 @@ Interview favorite: "How do you broadcast to a room whose members are spread acr
 
 ## Docita Anchor
 
-[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
+[Docita](https://github.com/CVamsi27/docita) is a companion project. The paths below were checked in the local checkout on 9 October 2026; source presence does not establish a deployed topology or successful recovery drill.
 
 | Topic | Docita evidence |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

@@ -1,5 +1,7 @@
 # Corpus readability review — 3 October 2026
 
+> **Dated review record:** counts, test results and remaining-work statements below describe the recorded pass. Use the [current review progress](2026-10-08-explanation-depth-progress.md) and [verification runbook](verification-gates.md) for present scope; chapter existence and passing scans do not establish complete reader review.
+
 ## What was checked
 
 The [per-page inventory](2026-10-03-readability-inventory.csv) records 754 pages: 583 teaching/case pages and 171 revision or interview-drill pages. Every listed file was read by the structural scanner, including its fence boundaries, headings and prose. This is **automated screening**, not a claim that every paragraph received a full reader review.

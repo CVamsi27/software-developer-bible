@@ -38,6 +38,46 @@ Source: [Scaling WebSockets](60.1.2.02-scaling-patterns.md)
 
 **A:** Each subscription/node can increase broker delivery and duplicate work. Partition channels and measure downstream throughput instead of assuming gateway count is the only bottleneck.
 
+## Commit, Publish and Recover
+
+Source: [Real-Time Architecture](60.1.2.01-real-time-architecture.md)
+
+**Q:** A booking and outbox record commit, then the worker crashes after publishing. Which repetition is possible?
+
+**A:** The worker may publish the same stable event again because its publication checkpoint was not saved. Consumers deduplicate/reconcile under their effect contract; the outbox does not promise exactly-once network delivery.
+
+**Q:** Why can a snapshot fetched before subscribing leave a screen permanently stale?
+
+**A:** A change can occur between the snapshot and active subscription. Coordinate a versioned snapshot/replay boundary or subscribe, buffer and reconcile under an explicit version domain.
+
+**Q:** What goes wrong when every gateway shares one work-consumer group?
+
+**A:** The group distributes an event to one member while interested clients may be on other members. Route onward, align ownership or use independent subscription/checkpoint domains for all interested gateways.
+
+**Q:** Does an audit outbox make current-state tables an event-sourced system?
+
+**A:** No. Event sourcing makes domain event history authoritative for reconstructing state. An outbox can only support reliable publication beside ordinary authoritative tables.
+
+## Fleet and Workload Boundaries
+
+Source: [Scaling WebSockets](60.1.2.02-scaling-patterns.md)
+
+**Q:** Why does the Redis adapter not eliminate polling affinity?
+
+**A:** It forwards Socket.IO room events; it does not share ownership of the Engine.IO polling session. Successive requests still need its owning node.
+
+**Q:** Estimate payload-only egress for 500-byte events at 20 per second to 2,000 clients.
+
+**A:** 500 × 20 × 2,000 is 20,000,000 bytes/second, about 20 decimal MB/second. Framing, TLS, broker traffic and other work add to that figure.
+
+**Q:** What must survive when reconnect reaches a different gateway?
+
+**A:** Verified identity/current permissions, durable business state and the history/snapshot needed by recovery. An old process’s live socket cannot be transferred by changing a registry entry.
+
+**Q:** Why can scale-out fail to help a hot auction?
+
+**A:** One authoritative ordering/price invariant may remain serialized even with more connection gateways. Partitioning must preserve the invariant and define safe ownership transfer.
+
 ## Summary
 
 Use the answers to check your reasoning, then revisit the source mechanism and reproduce any relevant example without copying it. A remembered label is useful only when you can explain its limits.

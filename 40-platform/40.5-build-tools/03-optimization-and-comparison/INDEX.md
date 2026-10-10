@@ -1,6 +1,6 @@
 # Optimization & Comparison
 
-> **Study time:** ≈ 36 min of reading (4 files, ~9 min average).
+> **Study time:** ≈ 19 min of reading (4 files, ~5 min average).
 > **4 files.** Making builds fast and bundles small, shipping assets (CSS/images/fonts) through a real pipeline — then choosing tools with evidence instead of hype.
 
 [![Files](https://img.shields.io/badge/files-4-blue)](#file-index)
@@ -19,8 +19,8 @@ Tool choice gets debated endlessly; bundle size regressions ship silently. This 
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Build Optimization](40.5.3.01-build-optimization.md) | Tree shaking, code splitting (route/lazy), bundle analysis, caching, source maps | Important | Specialized | 14 min |
-| 02 | [Asset Pipelines — CSS, Images & Fonts](40.5.3.02-asset-pipelines-css-images-fonts.md) | PostCSS/Lightning CSS chain, Tailwind compile path, sharp responsive sets, font subsetting + preload, content hashing, hidden source maps, Vite/webpack configs | Important | Specialized | 16 min |
+| 01 | [Build Optimization](40.5.3.01-build-optimization.md) | Tree shaking, code splitting (route/lazy), bundle analysis, caching, source maps | Important | Specialized | 5 min |
+| 02 | [Asset Pipelines — CSS, Images & Fonts](40.5.3.02-asset-pipelines-css-images-fonts.md) | PostCSS/Lightning CSS chain, Tailwind compile path, sharp responsive sets, font subsetting + preload, content hashing, hidden source maps, Vite/webpack configs | Important | Specialized | 8 min |
 | 03 | [Build Tool Comparison](40.5.3.03-build-tool-comparison.md) | Webpack vs Vite vs Turbopack vs Rspack trade-offs, migration paths, when to use each | Important | Specialized | 4 min |
 
 ---
@@ -40,15 +40,7 @@ Tool choice gets debated endlessly; bundle size regressions ship silently. This 
 
 ## Docita Anchor
 
-Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — keeps builds fast for real.
-
-| Topic | Docita evidence |
-| ------------------------------- | -------------------------------------------------------------------------------------------------- |
-| Build caching | Turbo caches `build`/`test` outputs (`dist/**`, empty test outputs) keyed by scoped env allowlists |
-| Dead-code elimination as a gate | `knip.json` + knip-clean requirement recorded in release evidence |
-| Duplication budget | `check:duplication` (jscpd, zero clones) in pre-push and release evidence |
-| Size budgets | `scripts/checks/check-file-size-budget.mjs` and `check-worker-size.mjs` |
-| Tree-shaking / bundle analysis | Not separately configured beyond toolchain defaults |
+The [Docita evidence walkthrough](../../../projects/docita/INDEX.md) distinguishes dated lab results from source configuration and deployed behavior. Vite/Astro, shared TypeScript settings and Turbo tasks provide related source examples. Inspect the actual task inputs, invoked gates and emitted outputs before claiming type safety, cache validity or runtime performance. No direct Rspack/Turbopack implementation or measured migration speedup is claimed here.
 
 ## Finish This Section
 

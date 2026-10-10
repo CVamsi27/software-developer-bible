@@ -38,13 +38,37 @@ Source: [NestJS Custom Decorators](20.2.5.01-custom-decorators.md)
 
 **A:** Test the metadata and the guard separately, then send allowed and disallowed requests through a route with the guard registered. A decorator test alone cannot prove enforcement.
 
+## Extraction and enforcement boundaries
+
+Source: [Custom decorators](20.2.5.01-custom-decorators.md)
+
+**Q:** Does `@Controller` register a class that no module lists as a controller?
+
+**A:** No. The decorator stores metadata; module registration makes it part of the application graph.
+
+**Q:** Why is `emitDecoratorMetadata` different from a custom `SetMetadata` key?
+
+**A:** The compiler emits design-type metadata for implicit injection. `SetMetadata` explicitly writes the application's chosen key/value.
+
+**Q:** Why should a missing clinic identity fail before a repository call?
+
+**A:** Passing undefined can weaken a query's tenant filter. Authenticate and authorize the tenant, then reject absent identity.
+
+**Q:** Why reject `page=2abc` instead of accepting `parseInt`'s result?
+
+**A:** It is malformed input, not the declared positive-integer contract. Explicit parsing avoids partial acceptance.
+
+**Q:** What must accompany response-transform metadata to change an output?
+
+**A:** A registered interceptor reads it and maps the downstream response. Metadata alone leaves execution unchanged.
+
 ## Summary
 
 Use these prompts after the reading pass to recall the advanced and interview mechanisms and boundary constraints.
 
 ## See Also
 
-- [Category reading flow](INDEX.md)
+- [Category reading flow](INDEX.md) — return to prerequisites and learning stages for advanced dependency and request decisions
 
 ## References & Learn More
 

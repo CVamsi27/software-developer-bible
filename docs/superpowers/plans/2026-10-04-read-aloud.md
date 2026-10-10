@@ -1,5 +1,7 @@
 # Read Aloud Implementation Plan
 
+> **Historical design record:** requirements, example paths and checkboxes describe this dated plan, not current repository status or authorization to rerun it. Later [explanation-depth work](../plans/2026-10-08-explanation-depth.md), [AGENTS.md](../../../AGENTS.md) and [contributing.md](../../../contributing.md) govern current changes. Preserve stable chapter IDs; TL;DR and inline chapter cheat/revision sections are retired.
+
 **Goal:** Read study chapters using browser speech, with play, pause/resume, stop and speed controls.
 
 **Architecture:** One shared browser script owns chapter extraction, short utterance sequencing and playback state. The shared Jekyll head loads it; navigation and code blocks are omitted. Browser voices determine audio quality; no application TTS backend is added. Departure cancels narration.

@@ -1,6 +1,6 @@
 # REST APIs — Index
 
-> **Study time:** ≈ 6 h 18 m of reading (25 files, ~15 min average).
+> **Study time:** ≈ 2 h 40 m of reading (25 files, ~6 min average).
 > **25 files — everything HTTP/API, fundamentals through production.** Study in three passes: **I. Fundamentals** (principles → methods → status codes) → **II. Production concerns** (pagination, errors, long-running operations, file uploads, rate limiting, webhooks, caching) → **III. Advanced** (maturity model, gateways, BFF, auth in context).
 >
 > Absorbed the former `20.10-api-design` stack — rate limiting, error handling (RFC 9457 Problem Details), pagination and webhooks live here once, at full depth.
@@ -42,7 +42,7 @@ principles → methods    pagination → error design   rate limiting → gatewa
 ## The Study Order
 
 | Pass | # | File | Topics | Role priority | General importance |
-| ---- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------- | ------------- | ------------------ |
+| ---- | --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ------------- | ------------------ |
 | I | 01 | [API Design Patterns](01-design-and-contract/20.3.1.01-api-design-patterns.md) | Resource naming, consistency, evolution | Essential | Foundational |
 | I | 02 | [REST Principles](01-design-and-contract/20.3.1.02-rest-principles.md) | Stateless, uniform interface, constraints | Essential | Foundational |
 | I | 03 | [HTTP Methods](02-http-mechanics/20.3.2.01-http-methods.md) | GET/POST/PUT/PATCH/DELETE semantics, idempotency | Essential | Foundational |
@@ -57,17 +57,23 @@ principles → methods    pagination → error design   rate limiting → gatewa
 | II | 12 | [Error Handling Design](03-payloads-errors-integration/20.3.3.02-error-handling-design.md) | RFC 9457 Problem Details, validation errors | Essential | Foundational |
 | II | 13 | [Webhooks](03-payloads-errors-integration/20.3.3.05-webhooks.md) | Delivery, HMAC verification, retry, DLQ, idempotency | Important | Important |
 | II | 14 | [HTTP Caching](02-http-mechanics/20.3.2.04-http-caching.md) | ETags, Cache-Control, revalidation | Essential | Foundational |
+| II | — | [Serialization & Wire Formats](03-payloads-errors-integration/20.3.3.06-serialization-and-wire-formats.md) | Precision, presence, schemas and evolution | Essential | Foundational |
+| II | — | [Transactional Notifications](03-payloads-errors-integration/20.3.3.07-transactional-email-and-notifications.md) | Durable intent, unknown acceptance and delivery evidence | Essential | Foundational |
 | III | 15 | [REST Maturity Model](01-design-and-contract/20.3.1.04-rest-maturity-model.md) | Richardson L0–L3, HATEOAS | Important | Important |
 | III | 16 | [OpenAPI / Swagger](01-design-and-contract/20.3.1.05-openapi-swagger.md) | Spec-first design, codegen | Essential | Foundational |
 | III | 17 | [API Gateway](04-edge-and-scale/20.3.4.02-api-gateway.md) | Edge concerns; deep patterns in [microservices](../20.6-microservices/INDEX.md) | Important | Important |
 | III | 18 | [BFF](04-edge-and-scale/20.3.4.03-bff.md) | Backend-for-frontend pattern | Essential | Foundational |
-| 19 | [Interview Questions](05-interview-drills/20.3.5.01-interview-questions.md) | Curated Q&A |  | Essential | Foundational |
+| III | 19 | [Interview Questions](05-interview-drills/20.3.5.01-interview-questions.md) | Curated Q&A after category revision | Essential | Foundational |
 
 ---
 
 **Cross-references:** [Auth track](../20.5-security/01-auth/INDEX.md) · [Microservices & distributed patterns](../20.6-microservices/INDEX.md) · [Caching](../20.8-caching/INDEX.md)
 
 ---
+
+## Revision Before Interview Practice
+
+Use [design](01-design-and-contract/REVISION.md), [HTTP mechanics](02-http-mechanics/REVISION.md), [payload/integration](03-payloads-errors-integration/REVISION.md) and [edge/scale](04-edge-and-scale/REVISION.md) revision after their learning chapters and before the interview bank.
 
 ## Navigation
 
@@ -77,7 +83,7 @@ principles → methods    pagination → error design   rate limiting → gatewa
 
 ## Docita Anchor
 
-Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+These [Docita](https://github.com/CVamsi27/docita) healthcare-application pointers are starting points for current code and evidence inspection, not deployment guarantees:
 
 | Topic | Docita evidence |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -88,4 +94,4 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | Idempotent writes | `apps/api/src/shared/modules/idempotency/` - `idempotency.interceptor.ts` + `idempotency.service.ts` + `requires-idempotency.decorator.ts` for payment/order-style POSTs |
 | Webhooks | `apps/api/src/domains/webhooks/` + `shared/modules/webhooks/webhook-verifier.ts`, `razorpay-webhook-verification.helper.ts`, `outgoing/` - signed inbound + outbound delivery |
 | Response caching | `apps/api/src/cache/cache.module.ts` + `shared/common/interceptors/cache.interceptor.ts` - Cache-Control headers are not centrally set; see the caching sub-stack anchor |
-| REST maturity / HATEOAS | No counterpart - pragmatic JSON API with typed DTOs; the maturity model is the interview framing |
+| REST maturity / HATEOAS | Inspect current interface controls before classifying maturity; typed DTOs alone do not establish REST constraints |

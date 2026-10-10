@@ -40,7 +40,7 @@ Source: [Docker Multi-Stage Builds](40.1.04-multi-stage-builds.md)
 
 **Q:** What crosses a multi-stage build boundary?
 
-**A:** Only explicitly copied files and selected image configuration; tools and secrets in earlier stages are not automatically needed in the runtime image.
+**A:** COPY --from transfers specified files, not the earlier stage's ENV, USER or command configuration. A stage inherits the configuration of its own FROM image; define its runtime settings deliberately. Build tools and secrets are not automatically needed in the runtime image.
 
 ## Dockerfile Best Practices & Security
 
@@ -85,6 +85,26 @@ Source: [Rootless Mode & Sandboxed Runtimes (gVisor, Kata)](40.1.09-rootless-san
 **Q:** Why does rootless mode not eliminate container-escape risk?
 
 **A:** It reduces host privileges but still shares a host kernel. Runtime vulnerabilities, allowed host interfaces, mounts, and application credentials remain relevant. A userspace kernel or VM boundary adds a different isolation layer; choose and test it against the workload's threat model.
+
+## Trace Changed Conditions
+
+Source: [Images & Containers](40.1.01-images-containers.md)
+
+**Q:** A Node build requires TypeScript as a development dependency. Where can production dependency omission happen safely?
+
+**A:** Install build tools in the builder, compile there, and omit or prune them for the final runtime stage. Omitting them before the compilation step removes the compiler itself.
+
+Source: [Volumes & Networks](40.1.02-volumes-networks.md)
+
+**Q:** Why does localhost:5432 fail for an API container with a separate database container?
+
+**A:** The API's loopback address belongs to its own network namespace. On a shared user-defined bridge, use the database service name and container port, such as postgres:5432.
+
+Source: [Compose](40.1.03-compose.md)
+
+**Q:** A database was healthy at startup and fails later. Will service_healthy stop the API?
+
+**A:** No. The condition gates startup. The running API still needs connection-failure handling; an unhealthy container is not automatically restarted solely because of its health status.
 
 ## Summary
 

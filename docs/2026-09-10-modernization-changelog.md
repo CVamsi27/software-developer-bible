@@ -1,5 +1,7 @@
 # Docs Modernization Changelog — September 2026
 
+> **Dated review record:** counts, test results and remaining-work statements below describe the recorded pass. Use the [current review progress](2026-10-08-explanation-depth-progress.md) and [verification runbook](verification-gates.md) for present scope; chapter existence and passing scans do not establish complete reader review.
+
 > What changed in the software-developer-bible docs during the September 2026
 > modernization pass, why, and how the new verification gates prevent the same
 > classes of rot from shipping again.

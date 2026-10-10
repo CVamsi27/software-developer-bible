@@ -1,5 +1,7 @@
 # Resume and Role Readiness Implementation Plan
 
+> **Historical design record:** requirements, example paths and checkboxes describe this dated plan, not current repository status or authorization to rerun it. Later [explanation-depth work](../plans/2026-10-08-explanation-depth.md), [AGENTS.md](../../../AGENTS.md) and [contributing.md](../../../contributing.md) govern current changes. Preserve stable chapter IDs; TL;DR and inline chapter cheat/revision sections are retired.
+
 > **For agentic workers:** Use executing-plans to implement the tasks sequentially. Keep personal content under the private canonical directory.
 
 **Goal:** Correct the current resume and generator claims, verify both one-page outputs, and connect target full-stack interview preparation to observable practice.

@@ -58,6 +58,30 @@ Source: [Advanced Redis Patterns](20.8.03-advanced-redis-patterns.md).
 
 **A:** XACK clears pending-delivery bookkeeping; retention controls stored entries. Persistence, asynchronous replication, eviction, and recovery settings decide whether an appended event survives a failure.
 
+## Trace and Change One Condition
+
+Source: [Cache-aside model](20.8.01-caching-deep-dive.md#cache-aside-with-one-complete-local-trace), [Redis lease](20.8.02-redis-fundamentals.md#4-distributed-lock), and [Streams recovery](20.8.03-advanced-redis-patterns.md#4-redis-streams-with-consumer-groups).
+
+**Q:** Two callers read one absent key before the source resolves. How many loads does the local model perform, and what changes across processes?
+
+**A:** One local in-flight promise serves both. Another process has its own map and can also load; this model does not promise fleet-wide coalescing.
+
+**Q:** The source rejects. Should a subsequent caller reuse that rejected promise?
+
+**A:** No. The finally handler removes it, enabling recovery. A deadline and bounded retries still belong in the source adapter.
+
+**Q:** A caller mutates the returned object. What does the example cache subsequently return?
+
+**A:** The same object reference. The contract requires immutability or deliberate cloning; copying a value into a cache does not automatically isolate it.
+
+**Q:** A lease acquisition succeeds but the response is lost. Is retrying acquisition evidence that the first attempt failed?
+
+**A:** No. The stored lease may exist. Unique holder identity, bounded reconciliation and the protected resource's invariant handle the uncertainty.
+
+**Q:** A stream entry is reclaimed while the original worker resumes. Does XACK arbitrate the business effect?
+
+**A:** No. Both can perform work before acknowledgment; the authoritative effect needs an atomic deduplication or conflict guard.
+
 ## Next Step
 
 Return to the [reading flow](INDEX.md), then use the interview bank to explain one trade-off in under a minute.

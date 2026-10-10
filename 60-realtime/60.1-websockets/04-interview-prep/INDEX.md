@@ -1,6 +1,6 @@
 # WebSockets Interview Prep
 
-> **Study time:** ≈ 46 min of reading (1 files, ~46 min average).
+> **Study time:** ≈ 8 min of reading (1 files, ~8 min average).
 > **1 file.** The curated question bank for real-time rounds — protocol trade-offs, scaling designs, authentication, reconnection semantics, and failure modes.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](../INDEX.md)
@@ -13,11 +13,11 @@
 
 | # | File | Contents | Time | Role priority | General importance |
 | --: | ------ | ---------- | ------ | --- | --- |
-| 01 | [Interview Questions](60.1.4.01-interview-questions.md) | 50+ curated questions with answers | 2-3 hrs | Important | Specialized |
+| 01 | [Interview Questions](60.1.4.01-interview-questions.md) | 30 authored questions and their follow-ups | 2-3 hrs | Important | Specialized |
 
 ---
 
-## Questions you will be ready for
+## Questions to Practice
 
 - "WebSocket vs SSE — when to use which?"
 - "How do you scale WebSockets across multiple servers?"
@@ -29,7 +29,7 @@
 
 ## How to use it
 
-Real-time rounds reward the ability to explain a design as well as recall APIs. Before drilling answers, draw how one event reaches many clients: load balancer → WebSocket gateway instances → Redis adapter that shares events between instances → persistent storage.
+Real-time rounds reward the ability to explain a design as well as recall APIs. Before drilling, complete the [transport revision](../01-transports/REVISION.md), [architecture revision](../02-architecture-and-scaling/REVISION.md) and [framework revision](../03-frameworks-and-paradigms/REVISION.md). Then trace an authorized command → durable state/outbox → publication → interested gateways → clients. Explain recovery and uncertain acknowledgments before naming products.
 
 ---
 

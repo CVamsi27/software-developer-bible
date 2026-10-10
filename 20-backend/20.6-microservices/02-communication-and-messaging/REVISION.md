@@ -106,17 +106,21 @@ Source: [Event-Driven Architecture — Kafka, Event Sourcing, CQRS](20.6.2.06-ev
 
 **A:** Downstream effects can lag committed source state. Trace identity, replay policy and compatible schema evolution are necessary; local operations can still have stronger consistency boundaries.
 
-## Summary
+## Choosing gRPC under changed conditions
 
-Use these prompts after the reading pass to recall the communication and messaging mechanisms and boundary constraints.
+Source: [gRPC](20.6.2.01-grpc.md), [Streaming](20.6.2.02-grpc-streaming.md).
 
-## See Also
+**Q:** When would you choose gRPC over REST?
 
-- [Category reading flow](INDEX.md)
+**A:** Compare the actual typed contract, native streaming needs, client/browser support, HTTP semantics, tooling and measured workload. There is no universal speed multiple. Docita's existing in-process/outbox communication should not be described as a deployed gRPC integration.
 
-## References & Learn More
+**Q:** HTTP status is 200 but final gRPC status is INVALID_ARGUMENT. Did the RPC succeed?
 
-The linked source chapters provide detailed architectural rationale, implementation contracts, and further reading.
+**A:** No. The final RPC status governs the gRPC outcome; the HTTP response status alone is insufficient.
+
+**Q:** Why does waiting for drain not prove the reader completed the business effect?
+
+**A:** Drain reports local writable pressure relief. Durable processing or business acknowledgment needs its own protocol.
 
 ## Broker storage and acknowledgments
 
@@ -146,3 +150,35 @@ Source: [Learning chapter](20.6.2.06-event-driven-architecture.md)
 **Q:** How do event ID, correlation ID and aggregate version differ?
 
 **A:** Event ID identifies one occurrence; correlation ID groups related work; aggregate version orders changes for one entity. Schema version instead identifies the payload format.
+
+## Transaction and delivery failures
+
+Source: [Kafka](20.6.2.03-kafka.md), [RabbitMQ](20.6.2.04-rabbitmq.md).
+
+**Q:** Why does a Kafka consume-transform-produce transaction include offset 43 after input offset 42?
+
+**A:** Committed progress describes the next record to read. Coordinating output and that progress prevents separately advancing input or producing visible duplicate output across a crash within the Kafka transaction boundary.
+
+**Q:** Can that Kafka transaction atomically include an external charge?
+
+**A:** No. External effects need their own idempotency or local atomic job/deduplication boundary; Kafka output/offset coordination does not span arbitrary systems.
+
+**Q:** RabbitMQ publish returns false. Is the message rejected by the broker?
+
+**A:** That boolean reports local writable pressure. Publisher confirms report acceptance; mandatory returns report unroutable publications. They are separate signals.
+
+**Q:** Why does computing an incremented retry header before nack(false, false) not retry a message?
+
+**A:** A local variable changes no broker state. Reject-without-requeue follows the configured dead-letter path or discards the delivery. A delayed retry must actually route or republish work under the chosen acknowledgment policy.
+
+## Summary
+
+Use these prompts after the reading pass to recall the communication and messaging mechanisms and boundary constraints.
+
+## See Also
+
+- [Category reading flow](INDEX.md) — return to prerequisites and learning stages for RPC deadlines and broker acknowledgment
+
+## References & Learn More
+
+The linked source chapters provide detailed architectural rationale, implementation contracts, and further reading.

@@ -74,18 +74,6 @@ Source: [HTTP Caching Strategies](20.3.2.04-http-caching.md)
 
 **A:** Consider writes, permission changes, representation variants and deployment changes. Choose a key and freshness, validation or purge policy that match the tolerated stale-data window.
 
-## Summary
-
-Use these prompts after the reading pass to recall the http mechanics mechanisms and boundary constraints.
-
-## See Also
-
-- [Category reading flow](INDEX.md)
-
-## References & Learn More
-
-The linked source chapters provide detailed architectural rationale, implementation contracts, and further reading.
-
 ## HTTP retry and concurrency boundaries
 
 Source: [Learning chapter](20.3.2.01-http-methods.md)
@@ -97,3 +85,47 @@ Source: [Learning chapter](20.3.2.01-http-methods.md)
 **Q:** Why does an idempotent PUT still need If-Match?
 
 **A:** Repeating one replacement is safe under the method contract, but two clients can overwrite each other. An atomic version precondition rejects an outdated write with 412.
+
+## Response access and cache boundaries
+
+Sources: [Status codes](20.3.2.02-status-codes.md), [CORS](20.3.2.03-cors.md), [HTTP caching](20.3.2.04-http-caching.md)
+
+**Q:** Why can a report accepted with 202 later fail?
+
+**A:** Acceptance records work for later processing; it is not its final outcome. Inspect the authorized status resource.
+
+**Q:** What accompanies a 401 response for an authentication scheme?
+
+**A:** An applicable WWW-Authenticate challenge; safe detail can explain the application's credential requirement.
+
+**Q:** Can a cookie-bearing safelisted POST execute before CORS blocks reading its response?
+
+**A:** Yes. Cookies do not by themselves require preflight. CORS cannot undo the effect or replace CSRF protection.
+
+**Q:** Why does a JSON POST usually cause OPTIONS before the actual request?
+
+**A:** Its Content-Type is not CORS-safelisted. The browser checks permitted method/header names, then checks the actual response too.
+
+**Q:** Does no-cache prohibit storage?
+
+**A:** No. It requires validation before reuse. No-store directs caches not to store the response.
+
+**Q:** Why can a weak ETag validate GET but fail an If-Match write condition?
+
+**A:** GET validation uses weak comparison; If-Match requires strong comparison.
+
+**Q:** Does checking a version then awaiting an unrelated UPDATE prevent lost writes?
+
+**A:** No. Another writer can change it in the gap. Check the expected version atomically with the update.
+
+## Summary
+
+Use these prompts after the reading pass to recall the http mechanics mechanisms and boundary constraints.
+
+## See Also
+
+- [Category reading flow](INDEX.md) — return to prerequisites and learning stages for caching, conditional requests and protocol behavior
+
+## References & Learn More
+
+The linked source chapters provide detailed architectural rationale, implementation contracts, and further reading.

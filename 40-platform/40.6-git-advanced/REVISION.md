@@ -90,6 +90,30 @@ Source: [Signed Commits & Repository Security](40.6.09-signed-commits-repository
 
 **A:** It binds commit content to control of a trusted signing identity/key under a verification policy. It does not independently prove that the author field's human wrote or reviewed the code.
 
+## Recovery and verification cases
+
+Source: [Advanced commands](40.6.05-git-advanced-commands.md), [bundles](40.6.06-patch-and-bundle.md), [scale](40.6.08-git-at-scale-lfs-partial-clones.md), and [signing](40.6.09-signed-commits-repository-security.md).
+
+**Q:** A reflog names a commit whose object is missing. Does creating a branch recover its bytes?
+
+**A:** No. The ref can name history only if the necessary objects exist. Preserve the damaged store and obtain verified missing objects from a complete backup or trusted remote; reflog is not an object backup.
+
+**Q:** Why can an incremental bundle pass verification in its creator but fail on an empty receiver?
+
+**A:** Its prerequisite commits exist in the creator. The empty receiver lacks them. Restore the base bundle first and verify the incremental bundle in the actual receiver.
+
+**Q:** Why did a sparse build pass despite a required package being absent?
+
+**A:** A discovery-only script tested present directories instead of required targets. Decide the job's required targets first and reject an incomplete checkout.
+
+**Q:** Does a signed LFS pointer prove the file bytes can be restored offline?
+
+**A:** No. It binds the content identity/size recorded in Git, but the binary bytes are stored separately. Back up and verify LFS content as well as Git objects and refs.
+
+**Q:** Can a contribution provide its own allowed-signers file for a required signature check?
+
+**A:** That would let the contribution redefine who is trusted. Provision the verification policy through a separate reviewed trust path.
+
 ## Summary
 
 Use the answers to check your reasoning, then revisit the source mechanism and reproduce any relevant example without copying it. A remembered label is useful only when you can explain its limits.

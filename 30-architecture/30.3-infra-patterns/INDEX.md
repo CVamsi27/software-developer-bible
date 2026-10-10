@@ -1,6 +1,6 @@
 # Infra & Ops Patterns — Index
 
-> **Study time:** ≈ 3 h 17 m of reading (22 files, ~9 min average).
+> **Study time:** ≈ 2 h 6 m of reading (22 files, ~6 min average).
 > **22 files across 6 categories — operations-level patterns that sit *around* your services**: health checks and graceful shutdown, retries and idempotency, feature flags and kill switches, backups proven by restore drills, idempotency-retry deep dive, leader election, data-at-scale levers (including multi-tenant SaaS), zero-downtime deploys, technical debt management, cost engineering (FinOps), data retention/archival, and the interview bank that drills all of it.
 >
 > **Scope note:** the distributed-systems patterns (saga, circuit breaker deep-dives, bulkhead, API gateway, service discovery, strangler fig, event sourcing/CQRS, distributed transactions) live in [20.6-microservices](../../20-backend/20.6-microservices/INDEX.md) — this folder was deduplicated against it.
@@ -36,7 +36,8 @@ COORDINATE         02 feature flags                        05 data retention
 03 leader election 02 backups & restore                    & archival
    & consensus        drills
 
-DRILL IT
+RETRIEVE THEN DRILL
+Each category REVISION follows its learning chapters
 06 interview prep — the whole stack as Q&A
 ```
 
@@ -46,23 +47,29 @@ DRILL IT
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Health Checks & Graceful Shutdown](01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.md) | Liveness/readiness probes, SIGTERM draining, shutdown hooks | Essential | 11 min | 11 min |
-| 02 | [Resilience Patterns — Overview](02-failure-and-recovery/30.3.2.01-resilience-patterns.md) | Timeout/bulkhead/circuit-breaker landscape; details in [20.6](../../20-backend/20.6-microservices/INDEX.md) | Important | 16 min | 16 min |
-| 03 | [Retry Patterns](02-failure-and-recovery/30.3.2.02-retry-patterns.md) | Exponential backoff, jitter, retry budgets, retry storms | Essential | 11 min | 11 min |
+| 01 | [Health Checks & Graceful Shutdown](01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.md) | Liveness/readiness probes, SIGTERM draining, shutdown hooks | Essential | 11 min | 9 min |
+| 02 | [Resilience Patterns — Overview](02-failure-and-recovery/30.3.2.01-resilience-patterns.md) | Timeout/bulkhead/circuit-breaker landscape; details in [20.6](../../20-backend/20.6-microservices/INDEX.md) | Important | 16 min | 5 min |
+| 03 | [Retry Patterns](02-failure-and-recovery/30.3.2.02-retry-patterns.md) | Exponential backoff, jitter, retry budgets, retry storms | Essential | 11 min | 7 min |
 | 04 | [Idempotency Keys](02-failure-and-recovery/30.3.2.03-idempotency-keys.md) | Stable operation identity, retry replay, and effect boundaries | Essential | 6 min | 6 min |
-| 05 | [Feature Flags & Kill Switches](02-failure-and-recovery/30.3.2.04-feature-flags-kill-switches.md) | Flag types, targeting rules, kill-switch SLA, flag debt cleanup | Important | 10 min | 10 min |
-| 06 | [Backup Strategy & Restore Drills](02-failure-and-recovery/30.3.2.05-backup-strategy-restore-drills.md) | Backup taxonomy, 3-2-1(-1-0), RPO/RTO math, restore game days, verification | Important | 10 min | 10 min |
-| 07 | [Leader Election & Consensus](03-coordination/30.3.3.01-leader-election-consensus.md) | Fencing tokens, leases, cron coordination | Important | 7 min | 7 min |
-| 08 | [Database Scaling](04-data-at-scale/30.3.4.01-database-scaling.md) | Read replicas, partitioning, scaling levers in order | Important | 9 min | 9 min |
-| 09 | [Data Pipelines](04-data-at-scale/30.3.4.02-data-pipelines.md) | ETL vs streaming, Bronze/Silver/Gold framing | Important | 16 min | 16 min |
-| 10 | [CDN Architecture](04-data-at-scale/30.3.4.03-cdn-architecture.md) | Edge caching strategy (also: [40.10 CDN](../../40-platform/40.10-cdn/INDEX.md)) | Important | 12 min | 12 min |
-| 11 | [Zero-Downtime Deployments](05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.md) | Blue-green, canary, expand/contract migrations | Important | 15 min | 15 min |
-| 12 | [Technical Debt](05-shipping-and-evolution/30.3.5.02-technical-debt.md) | Quadrants, remediation strategy | Important | 16 min | 16 min |
-| 13 | [Cost Engineering & FinOps](05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md) | Rightsizing, spot strategy, unit economics, cost checks in CI | Important | 10 min | 11 min |
-| 14 | [Data Retention & Archival](05-shipping-and-evolution/30.3.5.04-data-retention-archival.md) | Retention tiers, hot/warm/cold storage, legal hold, right-to-erasure | Important | 10 min | 10 min |
-| 15 | [Infra & Ops Patterns Interview Questions](06-interview-prep/30.3.6.01-interview-questions.md) | Probe contracts, retry+idempotency, RPO/RTO & drills, fencing tokens, scaling levers, blue-green vs canary, scenario drills | Important | 7 min | 7 min |
+| 05 | [Feature Flags & Kill Switches](02-failure-and-recovery/30.3.2.04-feature-flags-kill-switches.md) | Flag types, targeting rules, kill-switch SLA, flag debt cleanup | Important | 10 min | 6 min |
+| 06 | [Backup Strategy & Restore Drills](02-failure-and-recovery/30.3.2.05-backup-strategy-restore-drills.md) | Backup taxonomy, 3-2-1(-1-0), RPO/RTO math, restore game days, verification | Important | 10 min | 7 min |
+| 07 | [Idempotency & Retry Deep Dive](02-failure-and-recovery/30.3.2.06-idempotency-retry-deep-dive.md) | Cross-authority commit, redelivery, ordering and replay boundaries | Essential | Important | 7 min |
+| 08 | [Leader Election & Consensus](03-coordination/30.3.3.01-leader-election-consensus.md) | Fencing tokens, leases, cron coordination | Important | 7 min | 7 min |
+| 09 | [Database Scaling](04-data-at-scale/30.3.4.01-database-scaling.md) | Read replicas, partitioning, measured scaling levers | Important | 9 min | 10 min |
+| 10 | [Data Pipelines](04-data-at-scale/30.3.4.02-data-pipelines.md) | ETL vs streaming, Bronze/Silver/Gold framing | Important | 16 min | 8 min |
+| 11 | [CDN Architecture](04-data-at-scale/30.3.4.03-cdn-architecture.md) | Edge caching strategy (also: [40.10 CDN](../../40-platform/40.10-cdn/INDEX.md)) | Important | 12 min | 6 min |
+| 12 | [Multi-Tenant SaaS Architecture](04-data-at-scale/30.3.4.04-multi-tenant-saas-architecture.md) | Verified request context, transaction-local RLS, caches/jobs and shared capacity | Important | Specialized | 6 min |
+| 13 | [Zero-Downtime Deployments](05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.md) | Blue-green, canary, expand/contract migrations | Important | 15 min | 6 min |
+| 14 | [Technical Debt](05-shipping-and-evolution/30.3.5.02-technical-debt.md) | Quadrants, remediation strategy | Important | 16 min | 6 min |
+| 15 | [Cost Engineering & FinOps](05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md) | Rightsizing, spot strategy, unit economics, cost checks in CI | Important | 10 min | 6 min |
+| 16 | [Data Retention & Archival](05-shipping-and-evolution/30.3.5.04-data-retention-archival.md) | Retention tiers, hot/warm/cold storage, legal hold, right-to-erasure | Important | 10 min | 7 min |
+| 17 | [Infra & Ops Patterns Interview Questions](06-interview-prep/30.3.6.01-interview-questions.md) | Probe contracts, retry+idempotency, RPO/RTO & drills, fencing tokens, scaling levers, blue-green vs canary, scenario drills | Important | 7 min | 6 min |
 
 ---
+
+## Category Completion
+
+After each category, use its REVISION companion without reopening the chapters. Explain the guarantee, authority and one changed failure condition; then continue to the next category. The separate interview bank comes after all category retrieval checks.
 
 ## Where did the moved patterns go?
 

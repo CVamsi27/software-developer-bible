@@ -59,7 +59,7 @@ For an idle, immediately completing single job-name lane, the poll setting gives
 
 The invented 640 PDFs/hour average in the busy hour is about 0.178 arrivals/second. A 1,000-job burst would need at least about 33 minutes to start its last job in the idealized single-lane model, before accounting for execution time. Therefore the normal-hour average cannot justify a short burst completion SLA.
 
-Likewise, 200 rows every five seconds is an idealized relay selection rate of 40 rows/second, not downstream delivery throughput. The current relay records process-local emitter dispatch, which does not await every asynchronous listener. Read [async processing](03-async-processing.md) before attaching a completion target to either mechanism.
+Likewise, 200 rows every five seconds is an idealized relay selection rate of 40 rows/second, not downstream delivery throughput. The 9 October source recheck shows the relay now awaits promises returned by process-local listeners under a 30-second timeout. Missing listeners, suppressed errors, detached work and uncancelled timeouts still limit what that acknowledgment proves. Read [async processing](03-async-processing.md) before attaching a completion target to either mechanism.
 
 ## Use Outcome Metrics With Explicit Denominators
 
@@ -90,10 +90,10 @@ Treat p95 as a quantile of the eligible request distribution, not the average of
 This table maps all existing cases to the model without duplicating their mechanisms. A listed metric is a **measurement proposal**, not proof that its instrumentation already exists.
 
 | Current case | Practical metric to investigate | Current implementation boundary and acceptance evidence |
-| ------------------------------------------------------------------ | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| ------------------------------------------------------------------ | -------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [01 Architecture](01-architecture-decisions.md) | Lead time from approved change to compatible release | A shared commit is not atomic deployment; record version overlap and migration compatibility |
 | [02 Tenant isolation](02-multi-tenancy-rls.md) | Unauthorized effects in a two-clinic access matrix | Staged policy settings and transaction routing matter; execute real-role and pooled-connection probes |
-| [03 Async work](03-async-processing.md) | Backlog age, completion delay, duplicate effects | Completed-job lookup and local dispatch acknowledgment leave gaps; exercise effect/ack crash windows |
+| [03 Async work](03-async-processing.md) | Backlog age, completion delay, duplicate effects | Completed-job lookup, claim ownership and conditional listener acknowledgment leave gaps; exercise effect/ack crash windows and non-cancelled timeouts |
 | [04 Payments](04-payment-flows.md) | Captured payments reconciled; unresolved amount and age | Merchant ownership and idempotency need end-to-end verification; reconcile authoritative provider records |
 | [05 Clinic workflows](05-clinic-workflows.md) | Booking time; accepted conflicting reservations | A pre-save availability check does not own capacity; race distinct requests for the same resource |
 | [06 WhatsApp](06-whatsapp-integration.md) | Delivered eligible messages; provider delay and cost | Accepted enqueue/send is not delivery; use callback receipts, consent and retry evidence |
@@ -167,7 +167,7 @@ The 25-clinic assumption yields a coherent workload model, not measured business
 
 ## References
 
-Current settings were rechecked in the local Docita working tree on 2 October 2026; this is not a production audit. The linked case studies retain the wider implementation assessments and their source paths.
+The queue settings were rechecked in the local Docita working tree on 2 October 2026; the relay acknowledgment was rechecked on 9 October at local HEAD `dc5a97dc3`. This is not a production audit. The linked case studies retain the wider implementation assessments and their source paths.
 
 - `apps/api/src/shared/modules/queue/postgres-queue.service.ts` — polling interval and default attempt budget.
 - `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.ts` — batch size and acknowledgment path.

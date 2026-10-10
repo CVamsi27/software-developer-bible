@@ -195,6 +195,30 @@ Source: [Context API](10.3.2.05-context-api.md)
 7. **Q:** Why cannot React.memo block an update to context a component reads?
    **A:** Consumed context is a direct dependency independent of the prop comparison. Splitting contexts can reduce which readers are notified when one value changes.
 
+## Changed contracts
+
+Source: [useMemo/useCallback](10.3.2.03-usememo-usecallback.md), [useRef](10.3.2.04-useref.md), [Context](10.3.2.05-context-api.md)
+
+**Q:** What happens to cached sorting when the parent allocates an equivalent new array?
+
+**A:** Its dependency reference differs, so the calculation reruns. In-place mutation is worse: it can preserve identity while silently invalidating the cached contents.
+
+**Q:** A condition replaces an observed node. Why might an effect depending on the ref object keep watching the old node?
+
+**A:** The ref object remains stable; assigning `.current` does not schedule the effect. A callback ref can own the observer for each attached node.
+
+**Q:** How does a React 19 callback ref release a ResizeObserver?
+
+**A:** It returns cleanup from attachment. Detachment invokes that cleanup; stable callback identity avoids unnecessary detach/attach cycles.
+
+**Q:** Can a component read a context provider it returns around its own children?
+
+**A:** No. The reading call resolves providers above that component; its returned provider is below it. Move the reader under the owner.
+
+**Q:** Why must the newest failed login settle loading after invalidating an initial session lookup?
+
+**A:** The old lookup is correctly prohibited from publishing. Without a failure settlement in the current action, no remaining owner can clear the initial loading state.
+
 ## Summary
 
 Revisit the linked chapter when an answer misses the mechanism, a boundary or a failure case.

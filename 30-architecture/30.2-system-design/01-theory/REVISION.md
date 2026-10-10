@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-8_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-9_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -87,6 +87,10 @@ Source: [Load Balancing](30.2.1.04-load-balancing.md)
 
 **A:** Routing a retry elsewhere does not prove failure of the first attempt. Preserve operation identity and reconcile the effect under the mutation contract.
 
+**Q:** Do more virtual nodes distribute one extremely popular cache key across servers?
+
+**A:** No. They smooth ownership across many keys; one key still selects one destination. Replicating, caching or splitting that key needs a separate design and consistency contract.
+
 
 ## Caching Patterns
 
@@ -112,6 +116,14 @@ Source: [Message Queues & Async Patterns](30.2.1.06-queues-and-async.md)
 **Q:** Why should a consumer acknowledge a message after committing its local effect?
 
 **A:** Acknowledging first can lose work if the process crashes. Committing first permits redelivery, so the local effect also needs transactional deduplication.
+
+**Q:** The API saves a report request, crashes before publishing its message and already returned success. What boundary was missing?
+
+**A:** The database save and broker publish were separate commits. A transactional outbox or another durable recovery protocol must preserve the pending handoff. Returning acceptance alone does not enqueue it.
+
+**Q:** Must a new high-priority message interrupt a low-priority task already executing?
+
+**A:** No. Priority usually selects among eligible queued work. Existing execution, prefetched deliveries and starvation limits affect observed behavior.
 
 **Q:** Trace a crash after the local effect commits but before acknowledgment.
 
@@ -175,6 +187,14 @@ Source: [Consensus & Leader Election](30.2.1.09-consensus-and-leader-election.md
 **Q:** What stops a later Paxos proposer replacing an already-chosen value?
 
 **A:** Prepare promises reject lower proposals, and the proposer must carry the highest-numbered accepted value returned by its prepare quorum. Quorum intersection connects the accepted history.
+
+**Q:** Raft commits a debit but the client loses the response. Does retrying guarantee one debit?
+
+**A:** No. Agreement preserves the log, but a retry can become another command. Preserve a stable operation identity and result in the replicated application state; external effects need their own deduplication boundary.
+
+**Q:** Does Zab make every ZooKeeper read current at every replica?
+
+**A:** No. It orders committed state changes; replicas can be at different applied positions. Read freshness follows the service's API contract, not merely its broadcast protocol.
 
 
 ## Failure Modes
@@ -252,6 +272,10 @@ Source: [Distributed Locks & Coordination](30.2.1.14-distributed-locks.md)
 **Q:** Why is a lease insufficient to stop a paused worker writing after expiry?
 
 **A:** The worker may resume without noticing it lost the lease. The resource must reject stale authority, for example with fencing tokens, or use another transactional safety boundary.
+
+**Q:** A lease expires, but the resource has never seen the replacement's higher epoch. Must an epoch-only fence reject the expired holder?
+
+**A:** No. The fence rejects epochs older than the newest accepted epoch. If each write must prove current ownership, check the authoritative lease and perform the mutation inside one protected transaction or equivalent resource-side condition.
 
 ## How to Approach Any System Design Problem
 

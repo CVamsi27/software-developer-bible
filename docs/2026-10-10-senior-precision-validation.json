@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "date": "2026-10-10",
-  "status": "verified_batch_complete_corpus_review_pending",
+  "status": "verified_batches_complete_corpus_review_pending",
   "coverage_record": "docs/2026-10-10-senior-precision-audit.json",
   "results": {
     "postgres-results": {
@@ -209,11 +209,39 @@
         "detail": "HTTP 200",
         "date": "2026-10-10",
         "content_verified": "Official primary page and relevant content opened with web tool."
+      },
+      {
+        "url": "https://zookeeper.apache.org/doc/current/zookeeperInternals.html",
+        "status": "LIVE",
+        "detail": "HTTP 200",
+        "date": "2026-10-10",
+        "content_verified": "ZooKeeper official protocol/consistency documentation read via web tool"
+      },
+      {
+        "url": "https://zookeeper.apache.org/doc/current/zookeeperProgrammers.html",
+        "status": "LIVE",
+        "detail": "HTTP 200",
+        "date": "2026-10-10",
+        "content_verified": "ZooKeeper official protocol/consistency documentation read via web tool"
+      },
+      {
+        "url": "https://www.rabbitmq.com/docs/priority",
+        "status": "LIVE",
+        "detail": "HTTP 200",
+        "date": "2026-10-10",
+        "content_verified": "Official source read via web tool"
+      },
+      {
+        "url": "https://www.rabbitmq.com/docs/ttl",
+        "status": "LIVE",
+        "detail": "HTTP 200",
+        "date": "2026-10-10",
+        "content_verified": "Official source read via web tool"
       }
     ],
     "rendered-results": {
-      "routes": 23,
-      "checks": 184,
+      "routes": 38,
+      "checks": 304,
       "matrix": [
         {
           "route": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.05-lexical-environment.html",
@@ -256,6 +284,46 @@
           "width": 1920
         },
         {
+          "route": "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.02-prototypes.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.02-prototypes.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.02-prototypes.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.02-prototypes.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.02-prototypes.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.02-prototypes.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.02-prototypes.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.02-prototypes.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
           "route": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.01-event-loop.html",
           "theme": "light",
           "width": 320
@@ -372,6 +440,166 @@
         },
         {
           "route": "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.02-normalization.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.02-normalization.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.02-normalization.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.02-normalization.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.02-normalization.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.02-normalization.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.02-normalization.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.02-normalization.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.04-nosql-vs-sql.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.04-nosql-vs-sql.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.04-nosql-vs-sql.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.04-nosql-vs-sql.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.04-nosql-vs-sql.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.04-nosql-vs-sql.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.04-nosql-vs-sql.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.04-nosql-vs-sql.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "20-backend/20.4-database/03-transactions-and-replication/20.4.3.01-transactions.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.4-database/03-transactions-and-replication/20.4.3.01-transactions.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "20-backend/20.4-database/03-transactions-and-replication/20.4.3.01-transactions.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "20-backend/20.4-database/03-transactions-and-replication/20.4.3.01-transactions.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "20-backend/20.4-database/03-transactions-and-replication/20.4.3.01-transactions.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "20-backend/20.4-database/03-transactions-and-replication/20.4.3.01-transactions.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "20-backend/20.4-database/03-transactions-and-replication/20.4.3.01-transactions.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "20-backend/20.4-database/03-transactions-and-replication/20.4.3.01-transactions.html",
           "theme": "dark",
           "width": 1920
         },
@@ -856,6 +1084,46 @@
           "width": 1920
         },
         {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
           "route": "30-architecture/30.2-system-design/01-theory/30.2.1.02-consistency-models.html",
           "theme": "light",
           "width": 320
@@ -936,6 +1204,46 @@
           "width": 1920
         },
         {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
           "route": "30-architecture/30.2-system-design/01-theory/30.2.1.05-caching-patterns.html",
           "theme": "light",
           "width": 320
@@ -976,6 +1284,46 @@
           "width": 1920
         },
         {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
           "route": "30-architecture/30.2-system-design/01-theory/30.2.1.07-distributed-transactions.html",
           "theme": "light",
           "width": 320
@@ -1012,6 +1360,46 @@
         },
         {
           "route": "30-architecture/30.2-system-design/01-theory/30.2.1.07-distributed-transactions.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.html",
           "theme": "dark",
           "width": 1920
         },
@@ -1096,6 +1484,206 @@
           "width": 1920
         },
         {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.15-how-to-approach.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.15-how-to-approach.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.15-how-to-approach.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.15-how-to-approach.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.15-how-to-approach.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.15-how-to-approach.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.15-how-to-approach.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.15-how-to-approach.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.18-outbox-and-cdc.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.18-outbox-and-cdc.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.18-outbox-and-cdc.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.18-outbox-and-cdc.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.18-outbox-and-cdc.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.18-outbox-and-cdc.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.18-outbox-and-cdc.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.2-system-design/01-theory/30.2.1.18-outbox-and-cdc.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.3-infra-patterns/03-coordination/REVISION.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.3-infra-patterns/03-coordination/REVISION.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.3-infra-patterns/03-coordination/REVISION.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.3-infra-patterns/03-coordination/REVISION.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "30-architecture/30.3-infra-patterns/03-coordination/REVISION.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "30-architecture/30.3-infra-patterns/03-coordination/REVISION.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "30-architecture/30.3-infra-patterns/03-coordination/REVISION.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "30-architecture/30.3-infra-patterns/03-coordination/REVISION.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
           "route": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.04-resource-quotas.html",
           "theme": "light",
           "width": 320
@@ -1132,6 +1720,46 @@
         },
         {
           "route": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.04-resource-quotas.html",
+          "theme": "dark",
+          "width": 1920
+        },
+        {
+          "route": "docs/2026-10-10-senior-precision-progress.html",
+          "theme": "light",
+          "width": 320
+        },
+        {
+          "route": "docs/2026-10-10-senior-precision-progress.html",
+          "theme": "light",
+          "width": 375
+        },
+        {
+          "route": "docs/2026-10-10-senior-precision-progress.html",
+          "theme": "light",
+          "width": 1280
+        },
+        {
+          "route": "docs/2026-10-10-senior-precision-progress.html",
+          "theme": "light",
+          "width": 1920
+        },
+        {
+          "route": "docs/2026-10-10-senior-precision-progress.html",
+          "theme": "dark",
+          "width": 320
+        },
+        {
+          "route": "docs/2026-10-10-senior-precision-progress.html",
+          "theme": "dark",
+          "width": 375
+        },
+        {
+          "route": "docs/2026-10-10-senior-precision-progress.html",
+          "theme": "dark",
+          "width": 1280
+        },
+        {
+          "route": "docs/2026-10-10-senior-precision-progress.html",
           "theme": "dark",
           "width": 1920
         }
@@ -1769,9 +2397,37 @@
           "width": 320
         }
       ]
+    },
+    "coordination-results": {
+      "database": "16.15",
+      "checks": [
+        "Lease acquisition/renewal: exact acquisition works; wrong owner and generation rejected",
+        "Expired lease cannot renew; replacement increments epoch; live replacement excludes another claim",
+        "Epoch-only fence still accepts expired owner before it sees a newer epoch: no current-lease proof",
+        "Higher epoch fences stale write; same epoch permits subsequent writes without replacing operation deduplication",
+        "Transaction advisory lock excludes concurrent acquisition and releases at commit",
+        "Conflict-row wait does not consume new lease interval: expiry recomputed after acquiring row lock"
+      ],
+      "count": 6,
+      "limits": [
+        "Local one-primary contract; no failover, live Raft/Zab or external side-effect service tested"
+      ]
+    },
+    "outbox-results": {
+      "database": "16.15",
+      "checks": [
+        "Outbox sequence ID 1 commits after visible ID 2: allocation is not commit order",
+        "Authored LIMIT 100 SKIP LOCKED allows another claimant to take version 101 while earlier aggregate versions are locked",
+        "Rolled-back relay claim retains all pending intents for recovery",
+        "Identity/effect in one committed database row survives repeated attempts; rollback permits a safe retry"
+      ],
+      "count": 4,
+      "limits": [
+        "No real broker publication, Kafka ordering or Debezium connector executed; these tests establish local database boundaries only"
+      ]
     }
   },
-  "local_check_groups": 71,
+  "local_check_groups": 81,
   "fixtures": [
     {
       "temporary_path": "/tmp/bible-senior-audit/check-examples.cjs",
@@ -1795,7 +2451,7 @@
     },
     {
       "temporary_path": "/tmp/bible-senior-audit/check-rendered.cjs",
-      "sha256": "e582aa3a813517b19238ae3ba32daac5998e9fe01b32f37635a7e7dd366fc0a3"
+      "sha256": "de0f57b4b3bf4dcce31add7ace85558d97429da2a62a1fb97990800d0a497904"
     },
     {
       "temporary_path": "/tmp/bible-senior-audit/check-badge-pages.cjs",
@@ -1804,6 +2460,14 @@
     {
       "temporary_path": "/tmp/bible-senior-audit/serve-site.py",
       "sha256": "0af0e2a904026b4bd01af4f3dc3b5c847a6c516c7d0dcd7091b5960094908b44"
+    },
+    {
+      "temporary_path": "/tmp/bible-senior-audit/check-coordination.py",
+      "sha256": "5a343f7518f1df6933873a9066305846ce03574cb4b2b77ef6f628f583570197"
+    },
+    {
+      "temporary_path": "/tmp/bible-senior-audit/check-outbox.py",
+      "sha256": "45f4e30594f67238fd03a171b67824fc13ca4b12bf10652af2326d73873107c7"
     }
   ],
   "badge_regression": {
@@ -1816,7 +2480,8 @@
     "OAuth callback record executed locally; no real provider code exchange or identity validation integration executed.",
     "No live Kubernetes, managed-service failover, cloud DB, cross-region or all-chapter compilation test.",
     "Standalone TS snippets are strictly checked only where recorded; other selected TS examples were transpiled and executed.",
-    "Temporary validation fixtures are recorded for this run, not installed as a universal all-chapter test suite."
+    "Temporary validation fixtures are recorded for this run, not installed as a universal all-chapter test suite.",
+    "No live Raft/Zab fault injection, RabbitMQ priority integration, load-balancer deployment or Debezium connector was executed; added source/trace checks are distinguished from PostgreSQL execution."
   ],
   "mobile_prose_regression": {
     "cause": "Plain text create/redirect/ownership/deletion/analytics extends outside a 320px paragraph; computed text Range confirmed the overflow.",
@@ -1833,26 +2498,29 @@
     "repository_gates": {
       "passed": 30,
       "total": 30,
-      "log": "/tmp/bible-senior-audit/verify-final.log"
+      "log": "/tmp/bible-senior-audit/verify-followup.log"
     },
     "internal_links": {
-      "checked": 10939,
+      "checked": 10940,
       "anchors_verified": 231,
       "broken": 0,
       "stale_labels": 0,
       "stale_inline_paths": 0,
-      "external_links_skipped": 8326
+      "external_links_skipped": 8331
     },
     "jekyll": {
       "version": "3.9",
       "build": "passed",
-      "destination": "/tmp/bible-senior-precision-site"
+      "destination": "/tmp/bible-senior-precision-site",
+      "log": "/tmp/bible-senior-audit/jekyll-followup.log"
     },
     "private_exclusions": "Source existence and built absence checked for personal data, Indian lane and both internal JSON audit files; public progress report exists. Built reading CSS equals source bytes.",
     "reader_browser": "passed: outline, keyboard destination, system/explicit themes, text/syntax contrast, long prose and inline code, persisted toggle, denied storage, normal/reduced motion",
     "read_aloud_browser": "passed: controls, pause/resume/stop, extraction, mobile, speed, departure cancellation, unsupported browser",
-    "career_ops_doctor": "passed; no career-ops changes committed",
+    "career_ops_doctor": "passed; follow-up source symlinks verified; no career-ops changes committed",
     "gate_regression_cases": 87,
-    "pending_complete_semantic_reviews": 993
+    "pending_complete_semantic_reviews": 985,
+    "reader_log": "/tmp/bible-senior-audit/reader-followup.log",
+    "read_aloud_log": "/tmp/bible-senior-audit/read-aloud-followup.log"
   }
 }

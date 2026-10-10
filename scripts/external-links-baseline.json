@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-10",
- "url_count": 2402,
+ "url_count": 2406,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md",
@@ -5753,6 +5753,7 @@
    "50-quality/50.1-testing/05-advanced/50.1.5.01-performance-load-testing.md"
   ],
   "https://sre.google/sre-book/service-level-objectives/": [
+   "30-architecture/30.2-system-design/01-theory/30.2.1.15-how-to-approach.md",
    "40-platform/40.4-observability/03-sre-targets/40.4.3.01-sli-slo-sla.md"
   ],
   "https://sre.google/sre-book/table-of-contents/": [
@@ -7387,12 +7388,18 @@
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.04-rabbitmq.md",
    "20-backend/20.9-message-brokers/20.9.03-event-driven-patterns.md"
   ],
+  "https://www.rabbitmq.com/docs/priority": [
+   "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md"
+  ],
   "https://www.rabbitmq.com/docs/reliability": [
    "20-backend/20.9-message-brokers/20.9.01-message-brokers.md",
    "20-backend/20.9-message-brokers/20.9.04-interview-questions.md"
   ],
   "https://www.rabbitmq.com/docs/streams": [
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md"
+  ],
+  "https://www.rabbitmq.com/docs/ttl": [
+   "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md"
   ],
   "https://www.rabbitmq.com/documentation.html": [
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md"
@@ -7973,6 +7980,12 @@
   ],
   "https://zookeeper.apache.org/doc/current/recipes.html#sc_recipes_Locks": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.md"
+  ],
+  "https://zookeeper.apache.org/doc/current/zookeeperInternals.html": [
+   "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.md"
+  ],
+  "https://zookeeper.apache.org/doc/current/zookeeperProgrammers.html": [
+   "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.md"
   ]
  }
 }

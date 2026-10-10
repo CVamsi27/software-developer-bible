@@ -4,13 +4,14 @@ This pass corrects concepts that could lead to the wrong engineering decision: c
 
 ## Fresh review coverage
 
-The current inventory contains **1,023 authored Markdown documents**. This pass completely read **22 revised documents** and **8 retained/review-report documents**. **993 documents remain pending a new complete semantic review**. The earlier explanation-depth review remains historical evidence; it does not close this new accuracy pass.
+The current inventory contains **1,023 authored Markdown documents**. This pass completely read **27 revised documents** and **11 retained/review-report documents**. **985 documents remain pending a new complete semantic review**. The earlier explanation-depth review remains historical evidence; it does not close this new accuracy pass.
 
-Header or narrowly scoped companion repairs also touched **92 pending documents**. Those changes do not certify their remaining content. The internal audit records each path, baseline/current hash, concrete claims checked, source and disposition. A scanner or structural gate cannot establish technical accuracy.
+Header or narrowly scoped companion repairs also touched **89 pending documents**. Those changes do not certify their remaining content. The internal audit records each path, baseline/current hash, concrete claims checked, source and disposition. A scanner or structural gate cannot establish technical accuracy.
 
 ## Corrected engineering boundaries
 
 - **Distributed data:** sequential versus real-time ordering; serializability versus strict serializability; quorum assumptions; atomic commit versus locking; prepared outcomes and partial-failure uncertainty. DDIA references now identify the supplied 2017 edition and the correct chapters.
+- **Coordination and routing:** one consensus decision versus a replicated log, quorum configuration, Zab scope, retry identity, stale-writer fences and hot-key limits. Queue acceptance, deferred completion, priority and aggregate routing now carry their actual conditions.
 - **Design:** stakeholder-driven responsibility, actual behavioral substitution, source dependencies versus runtime calls, domain-service/aggregate boundaries, and language-specific access controls. Removed universal method-count, hierarchy and interface rules.
 - **Security:** identity evidence, hash/MAC/signature distinctions, intended token recipients, OAuth/OIDC roles and callback traces, cookie credential attachment, authenticated encryption and key lifecycle. Broken auth diagrams were replaced with readable mechanisms.
 - **Caching:** installed-entry TTL versus source-data age, delayed fills, namespace versions, normal misses versus stampedes, capacity/byte budgets, authoritative Redis state and partial-write recovery. All authored caching interview questions remain, with conditional and concise model answers.
@@ -23,7 +24,7 @@ Header or narrowly scoped companion repairs also touched **92 pending documents*
 
 ## Validation and limits
 
-Executed checks cover PostgreSQL 16.15 transfer, savepoint, prepared-state recovery, snapshot visibility, write skew and serialization rejection; Node/browser lexical environment, promise, OAuth transaction and cache examples; value-object/account invariants; and Redis 7.4 transaction/script error retention, lease release and ACL enumeration. Five complete OOP examples also pass strict TypeScript 5.9.3 checking.
+Executed checks cover PostgreSQL 16.15 transfer, savepoint, prepared-state recovery, snapshot visibility, write skew, serialization rejection, lease renewal/replacement, stale epochs, conflict-row waits and outbox claim ordering; Node/browser lexical environment, promise, OAuth transaction and cache examples; value-object/account invariants; and Redis 7.4 transaction/script error retention, lease release and ACL enumeration. Five complete OOP examples also pass strict TypeScript 5.9.3 checking.
 
 These checks establish the stated local traces. They do not establish managed-service failover, live provider OAuth exchange, cloud database behavior, Kubernetes admission on a real cluster or every integration sketch. The internal validation record retains outcomes, environment versions and unresolved execution boundaries. Full repository gates and rendered-page checks are reported only after their final run.
 

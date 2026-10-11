@@ -16,25 +16,27 @@
 
 ## First Principles
 
-- **A script exists because a specific defect was real.** Every checker here
-  was written after a defect actually shipped or was caught by hand — count
-  drift, bank over-promising, invisible sub-stacks, fence desync. If you
-  cannot name the defect a new script prevents, it does not belong yet.
+- **A script exists to prevent a named defect.** Checkers here cover concrete
+  failure classes such as count drift, bank over-promising, invisible
+  sub-stacks and fence desynchronization. Before adding one, name the defect
+  it detects and the behavior that proves it catches that defect.
 - **One owner per concern.** Counts are restamped only by
   `check_counts.py --write`, fence state is parsed only by `md_fences.py`,
   the gate count lives only in `check_verify_wiring.py`'s computation. Two
   implementations of one concern *will* disagree eventually; the disagreement
   is the bug.
-- **A checker that can fix should also explain**, and a fixer's output is a
-  contract: pinned byte-for-byte by `test_fixers.py` (gate 17), so a fixer
-  that starts repairing wrongly fails the suite instead of silently
-  corrupting the corpus.
+- **A checker that can fix should also explain.** Repair writers listed by
+  `check_fixpoint.py` must leave a clean corpus unchanged. `test_fixers.py`
+  pins representative repair output byte-for-byte, so an incorrect repair
+  fails verification instead of silently corrupting the corpus.
 
 ## Definition
 
 - **Gates** are read-only checks — they fail a build; they never write.
-- **Fixers** rewrite files; every fixer is idempotent and shares its
-  detection logic with a gate (same parser, same thresholds).
+- **Repair writers** rewrite files to correct detected defects. The repeatable
+  repair and restamp tools listed by `check_fixpoint.py` must be idempotent;
+  one-shot authoring helpers such as `insert_section.py` have a different
+  contract and are not run as corpus-wide repair passes.
 - **Restampers** recompute *owned claims* from disk (badges, counts,
   read-times, search index). Running a restamper is how a "drifted" failure
   becomes green — legitimately, because the claim's owner recomputed it.
@@ -58,26 +60,26 @@
 | 8 | `check_code_whitespace.py` | Trailing WS + paste-shift bases inside fenced code | code hygiene regresses |
 | 8b | `fix_box_code_indent.py --check` | Code embedded in box walls keeps indentation | box code renders flat |
 | 8c | `fix_box_width.py --check` | Boxes stay within screen width | a box wraps on laptop screens |
-| 21 | `fix_nav_labels.py --check` | Previous/Next nav labels are canonically-cased human titles, not paths | a label is a raw path or a slug-humanized acronym (`Mvcc`, `Cicd`) |
-| 24 | `prose_hygiene.py` | Spelling convention (10 measured pairs), glued ATX headings, GFM table cell counts, empty-filler register (rule 4 check-only) | a minority spelling, a heading that renders as literal text, a table row with a broken cell grid |
-| 25 | `check_dilution.py` | A chapter must not restate itself — ceiling baseline over the measured 0/0 state (within-chapter, sentence granularity; gate 11 owns cross-chapter) | a paragraph restated 20+ lines apart exceeds the baseline |
-| 26 | `check_code_dup.py` | A chapter must not re-teach another chapter's code — cross-file fenced-block pairs (identical token streams ≥ 10 lines; near ≥ 0.85) against a ceiling baseline of classified keeps | an example duplicated from a sibling chapter exceeds the baseline |
-| 27 | `check_see_also.py` | See Also hygiene — per-stack bare ceilings, label echoes, clipped endings and copied heading/table fragments; uses the shared fence reader | a new bare entry, label echo or unfinished description |
-| 22 | `check_fixpoint.py` | A clean corpus is a byte-for-byte no-op for every repair/restamp writer | a writer edits what its checker calls clean (an edit no gate can flag) |
-| 23 | `check_scope_floor.py` | Every corpus gate exits 1 with a SCOPE ERROR on an empty tree (list derived from verify.sh) | a gate reports compliance while scanning nothing |
-| — | `scan_scope.py` | The scope floor itself: one owner for "a checker that finds nothing must not pass" (imported by every corpus gate) | — |
 | 9 | `check_first_principles.py --diff` | First-Principles coverage must not regress | coverage drops below baseline |
 | 10 | `check_cross_refs.py` | `→ N.N.N` refs resolve to real files | a ref points nowhere |
 | 11 | `check_duplication.py --strict` | No chapter teaches another chapter's prose | near-duplicate sections appear |
 | 12 | `check_topic_twins.py` | Twin chapters cross-link both ways | twins stop linking |
-| 19 | `check_answer_depth.py` | Interview answers AND chapter Definitions carry ≥25 prose words (fence- and table-aware); H3-title-plus-code genres deliberately exempt | an answer is table-only or one-line prose; a Definition is a bare table |
-| 20 | `test_prose_scan.py` | The prose scanner's classification contract (11 characterization cases) | `prose_scan` starts counting tables/fences or drops exclusions |
 | 13 | `read_time.py --check` | Declared study/read times equal computed estimates | times drift from word counts |
 | 14 | `gen_master_index.py --check` | search.html + api/index.json byte-identical to corpus | generated files stale |
 | 15 | `check_verify_wiring.py` | The harness itself: failure branches, gate count in 3 files, CI enforcement, trigger paths | the harness stops listening |
 | 16 | `test_md_fences.py` | The fence owner's semantics (16 characterization cases) | `md_fences.walk` drifts |
 | 17 | `test_fixers.py` | The fixers' repair output (7 planted-defect round trips, byte-exact) | a fixer repairs wrongly |
 | 18 | `test_gates.py`, `test_read_time.py` | **The suite self-test** — each sandboxable gate's canonical defect must fire, clean content must pass, and generated study-time text must use correct singular/plural grammar | gate detection drifts or an index says `1 files` |
+| 19 | `check_answer_depth.py` | Interview answers AND chapter Definitions carry ≥25 prose words (fence- and table-aware); H3-title-plus-code genres deliberately exempt | an answer is table-only or one-line prose; a Definition is a bare table |
+| 20 | `test_prose_scan.py` | The prose scanner's classification contract (11 characterization cases) | `prose_scan` starts counting tables/fences or drops exclusions |
+| 21 | `fix_nav_labels.py --check` | Previous/Next nav labels are canonically-cased human titles, not paths | a label is a raw path or a slug-humanized acronym (`Mvcc`, `Cicd`) |
+| 22 | `check_fixpoint.py` | A clean corpus is a byte-for-byte no-op for every repair/restamp writer | a writer edits what its checker calls clean (an edit no gate can flag) |
+| 23 | `check_scope_floor.py` | Every corpus gate exits 1 with a SCOPE ERROR on an empty tree (list derived from verify.sh) | a gate reports compliance while scanning nothing |
+| 24 | `prose_hygiene.py` | Spelling convention (10 measured pairs), glued ATX headings, GFM table cell counts, empty-filler register (rule 4 check-only) | a minority spelling, a heading that renders as literal text, a table row with a broken cell grid |
+| 25 | `check_dilution.py` | A chapter must not restate itself — ceiling baseline over the measured 0/0 state (within-chapter, sentence granularity; gate 11 owns cross-chapter) | a paragraph restated 20+ lines apart exceeds the baseline |
+| 26 | `check_code_dup.py` | A chapter must not re-teach another chapter's code — cross-file fenced-block pairs (identical token streams ≥ 10 lines; near ≥ 0.85) against a ceiling baseline of classified keeps | an example duplicated from a sibling chapter exceeds the baseline |
+| 27 | `check_see_also.py` | See Also hygiene — per-stack bare ceilings, label echoes, clipped endings and copied heading/table fragments; uses the shared fence reader | a new bare entry, label echo or unfinished description |
+| — | `scan_scope.py` | The scope floor itself: one owner for "a checker that finds nothing must not pass" (imported by every corpus gate) | — |
 
 ### The checker → fixer → restamper recipes
 

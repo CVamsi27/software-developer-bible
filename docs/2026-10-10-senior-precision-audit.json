@@ -10378,20 +10378,26 @@
       "claims_checked": [
         "Replaced misleading one-hash-to-cardinality intuition with the HLL register-index, rank-maximum and all-register estimate mechanism.",
         "Checked false-positive and false-negative contracts for Bloom and Cuckoo filters, Count-Min non-negative-update assumptions, compatible merge rules, Merkle commitments and quantile aggregation.",
-        "Distinguished t-digest approximation from HDR deterministic quantization and removed the mislabeled Cuckoo-filter scalability citation."
+        "Distinguished t-digest approximation from HDR deterministic quantization and removed the mislabeled Cuckoo-filter scalability citation.",
+        "Bloom/Cuckoo membership; HLL register update and estimate assumptions; Count-Min update contract; t-digest/HDR guarantees; Merkle commitments."
       ],
       "sources": [
         "Redis HyperLogLog documentation and current Redis implementation for register count, error and encoding",
         "Flajolet et al. 2007 HyperLogLog paper",
         "Current t-digest and HDR Histogram reference implementations",
-        "RFC 9162 and Dynamo paper for Merkle-tree/log applications"
+        "RFC 9162 and Dynamo paper for Merkle-tree/log applications",
+        "Redis HyperLogLog documentation and implementation",
+        "Flajolet et al. 2007 HyperLogLog",
+        "t-digest and HDR references",
+        "RFC 9162"
       ],
       "disposition": "Revised: clarified exact-versus-approximate scope, HLL mechanics and precision, fixed-capacity filter limits, quantile-summary guarantees and comparison heading.",
       "validation": [
         "All three TypeScript examples passed strict TypeScript 7.0.2 compilation with Node.js types.",
-        "Bloom, Count-Min, Cuckoo, Merkle and quantile sections and source-linked revision answers read against their stated guarantees."
+        "Bloom, Count-Min, Cuckoo, Merkle and quantile sections and source-linked revision answers read against their stated guarantees.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "a13b9fb49a95b0745248719d869a418dc73a5104ff6c6809f225e1ad92655183",
+      "current_sha256": "e7efe94e84c266b36dc3ac60b107511ae8db8db7b054b1cad8e755d453880432",
       "limited_edits": [
         "Escaped literal hyphens in the Tags badge URL; this header-only repair does not establish a fresh semantic review."
       ]
@@ -12317,18 +12323,21 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Cache keys and purges, DNS steering limits, multi-provider failover, privacy boundaries, measurement, and the TypeScript purge example."
+        "Cache keys and purges, DNS steering limits, multi-provider failover, privacy boundaries, measurement, and the TypeScript purge example.",
+        "Re-read the committed content delta in its complete document context; verified wording, navigation/count claims and consistency with linked canonical material."
       ],
       "sources": [
         "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-weighted.html",
         "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-policies.html",
-        "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Server-Timing"
+        "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Server-Timing",
+        "Current complete document and linked canonical chapter/index/revision records"
       ],
       "disposition": "Reviewed the complete chapter or section companion for accuracy, clarity, current boundaries and internal consistency.",
       "validation": [
-        "Complete file reviewed against the topic mechanism and neighboring section flow."
+        "Complete file reviewed against the topic mechanism and neighboring section flow.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "8d05aff949810a7db8220923c1aa63dafa7b246793ff01ecbd008614387a05ff"
+      "current_sha256": "01cd381cd2828242fb11a1f4156dfe644891104a1f66cc08ca11cc0e6fad803d"
     },
     {
       "path": "40-platform/40.10-cdn/REVISION.md",
@@ -13182,16 +13191,19 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Workflow and job rules, DAG/artifact semantics, merge-result distinction, runner trust, environment protection, cache scope, and downstream status version boundary."
+        "Workflow and job rules, DAG/artifact semantics, merge-result distinction, runner trust, environment protection, cache scope, and downstream status version boundary.",
+        "Re-read the committed content delta in its complete document context; verified wording, navigation/count claims and consistency with linked canonical material."
       ],
       "sources": [
-        "GitLab CI YAML reference, needs and artifacts docs, resource groups, OIDC ID-token authentication, BuildKit guidance, downstream pipelines; strategy:mirror introduced in GitLab 18.2."
+        "GitLab CI YAML reference, needs and artifacts docs, resource groups, OIDC ID-token authentication, BuildKit guidance, downstream pipelines; strategy:mirror introduced in GitLab 18.2.",
+        "Current complete document and linked canonical chapter/index/revision records"
       ],
       "disposition": "Added scoped job-identity guidance for cloud federation, stated the GitLab 18.2 minimum for strategy:mirror, and normalized navigation labels.",
       "validation": [
-        "Full chapter reread; GitLab YAML example parsed; official current docs checked."
+        "Full chapter reread; GitLab YAML example parsed; official current docs checked.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "92dc5be8631daae74d880dd63c4d7e85e7d9e675c2b94e817ac31bf1d36f6dcd"
+      "current_sha256": "bdb28100075bfd399059523787d7ec0384bacffd115a361410dd4e6413a00bfb"
     },
     {
       "path": "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.03-jenkins.md",
@@ -13218,16 +13230,19 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Rendered desired state versus tracked live resources; sync versus health; phase/wave ordering; auto-sync, self-heal, pruning, ApplicationSet ownership, and rollback limits."
+        "Rendered desired state versus tracked live resources; sync versus health; phase/wave ordering; auto-sync, self-heal, pruning, ApplicationSet ownership, and rollback limits.",
+        "Re-read the committed content delta in its complete document context; verified wording, navigation/count claims and consistency with linked canonical material."
       ],
       "sources": [
-        "Argo CD official automated sync, sync waves, selective sync, AppProject permission and orphaned-resource documentation."
+        "Argo CD official automated sync, sync waves, selective sync, AppProject permission and orphaned-resource documentation.",
+        "Current complete document and linked canonical chapter/index/revision records"
       ],
       "disposition": "Clarified self-heal scope and orphan monitoring, stated the permissive default AppProject boundary, removed a duplicate rollback command, used a digest-promotion caveat in examples, and standardized the product name.",
       "validation": [
-        "Full chapter reread; all three YAML examples parsed; official behavior checked."
+        "Full chapter reread; all three YAML examples parsed; official behavior checked.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "c4c2b1f24d701b55e2a7d14e1e5b7ece47dac594eac5546a9eef0108c50126bf"
+      "current_sha256": "dd1e3f00d249235088030f128f57ee8a7cfcc3d9a40a993bc8a9772cbf23b4e8"
     },
     {
       "path": "40-platform/40.3-ci-cd/01-ci-platforms/INDEX.md",
@@ -13236,16 +13251,19 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Learning flow from verification/promotion through job graph and reconciliation; count scope and links."
+        "Learning flow from verification/promotion through job graph and reconciliation; count scope and links.",
+        "Re-read the committed content delta in its complete document context; verified wording, navigation/count claims and consistency with linked canonical material."
       ],
       "sources": [
-        "Linked platform chapters and revision drill."
+        "Linked platform chapters and revision drill.",
+        "Current complete document and linked canonical chapter/index/revision records"
       ],
       "disposition": "Refined the learning flow around event, execution, artifact and authority boundaries.",
       "validation": [
-        "Full index reread; navigation targets checked."
+        "Full index reread; navigation targets checked.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "20151d8ae984f74d603faa8c882379c8c46193b7397a937538e315f4ea7bb120"
+      "current_sha256": "b9dfcebaac62f47a0a1fe32dcd5b1424c683b5fa5e6ea52103bd853763f5523a"
     },
     {
       "path": "40-platform/40.3-ci-cd/01-ci-platforms/REVISION.md",
@@ -13308,16 +13326,19 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Tag reassignment versus digest identity and deletion; OCI digest scope; multi-platform identity; ECR tag-pattern matching; non-container package integrity; signing, attestations and generated changelogs."
+        "Tag reassignment versus digest identity and deletion; OCI digest scope; multi-platform identity; ECR tag-pattern matching; non-container package integrity; signing, attestations and generated changelogs.",
+        "Re-read the committed content delta in its complete document context; verified wording, navigation/count claims and consistency with linked canonical material."
       ],
       "sources": [
-        "Docker registry and image-manifest docs; AWS ECR lifecycle-policy docs; GitHub Actions trigger docs; Sigstore verification docs; official Changesets, release-please and crane documentation."
+        "Docker registry and image-manifest docs; AWS ECR lifecycle-policy docs; GitHub Actions trigger docs; Sigstore verification docs; official Changesets, release-please and crane documentation.",
+        "Current complete document and linked canonical chapter/index/revision records"
       ],
       "disposition": "Qualified tag immutability, distinguished immutable container digests from package versions/checksums, replaced a broken promotion diagram with a readable flow, corrected Harbor and changelog claims, and fixed a crane label typo.",
       "validation": [
-        "Full chapter reread; promotion-policy JavaScript assertions pass; reference targets checked."
+        "Full chapter reread; promotion-policy JavaScript assertions pass; reference targets checked.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "f4cdadbecf7916f57d1509d8a0f6bd559987a09e84429b9ef15b95e5a7940e2b"
+      "current_sha256": "bc54b85d18d4a56f1af0ec290ee4ebc6499996616e6b090e38ccf7e9edf7abde"
     },
     {
       "path": "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.md",
@@ -13398,16 +13419,23 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Current five metric definitions, causal attribution, recovery-clock choice, consistent service/time windows, rework denominator, BigQuery week syntax and failure mapping."
+        "Current five metric definitions, causal attribution, recovery-clock choice, consistent service/time windows, rework denominator, BigQuery week syntax and failure mapping.",
+        "Current metric definitions, attribution data, shared half-open measurement window, recovery times, BigQuery date truncation and interview advice; corrected event-volume and answer-quality overstatements.",
+        "Executed seven runtime assertions over the published DORA helper example: window edges, staging exclusion, lead-time median, failure attribution, rework rate, multiple recovery events and invalid/empty inputs."
       ],
       "sources": [
-        "Current DORA metric guide and metric-history article; official BigQuery function semantics."
+        "Current DORA metric guide and metric-history article; official BigQuery function semantics.",
+        "https://dora.dev/guides/dora-metrics/",
+        "https://dora.dev/insights/dora-metrics-history/",
+        "https://cloud.google.com/bigquery/docs/reference/standard-sql/date_functions"
       ],
       "disposition": "Aligned metric terminology with current DORA guidance, made each helper apply one explicit production window, normalized deployment-failure attribution, corrected DATE_TRUNC and softened causal examples.",
       "validation": [
-        "Full chapter reread; five metric implementations pass six focused assertions; SQL dialect and query assumptions inspected."
+        "Full chapter reread; five metric implementations pass six focused assertions; SQL dialect and query assumptions inspected.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked.",
+        "Node.js 23.7.0 type-stripping execution passed 7/7 focused assertions; the code sample has no build dependency."
       ],
-      "current_sha256": "6a0c73780a7b45aa8b7051500e807cefd188c4e16be14d05f0b9dec0222f8571"
+      "current_sha256": "58e5cfb46daf505dd760d880278b030a8b04b288beaf0963f4f65a19a7ef5418"
     },
     {
       "path": "40-platform/40.3-ci-cd/03-releases-and-metrics/INDEX.md",
@@ -13416,16 +13444,19 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Learning order, exact chapter scope and current five-metric terminology."
+        "Learning order, exact chapter scope and current five-metric terminology.",
+        "Re-read the committed content delta in its complete document context; verified wording, navigation/count claims and consistency with linked canonical material."
       ],
       "sources": [
-        "Linked release and revision chapters."
+        "Linked release and revision chapters.",
+        "Current complete document and linked canonical chapter/index/revision records"
       ],
       "disposition": "Removed an unsupported automated-rollback promise and described analysis, stop criteria and contextual DORA research instead.",
       "validation": [
-        "Full index reread; links and read-time source fields checked."
+        "Full index reread; links and read-time source fields checked.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "ebdfe3b364892513e681f0bca2302653a02ace0474ee17ab1daa7826ecb998d4"
+      "current_sha256": "6d269b46f8f7d7047a0ddb72f8797d85340324f70a974d5c4c0d6e657eb550e9"
     },
     {
       "path": "40-platform/40.3-ci-cd/03-releases-and-metrics/REVISION.md",
@@ -13491,16 +13522,19 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Section learning order from platform execution through artifact verification, production exposure, measurement and interview practice."
+        "Section learning order from platform execution through artifact verification, production exposure, measurement and interview practice.",
+        "Re-read the committed content delta in its complete document context; verified wording, navigation/count claims and consistency with linked canonical material."
       ],
       "sources": [
-        "All CI/CD category indexes and their linked chapters."
+        "All CI/CD category indexes and their linked chapters.",
+        "Current complete document and linked canonical chapter/index/revision records"
       ],
       "disposition": "Reframed the section around a traced release contract and removed claims that every senior must use one tool or that a strategy guarantees zero downtime.",
       "validation": [
-        "Full index reread; category and navigation targets checked."
+        "Full index reread; category and navigation targets checked.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "fb918e6fb2d1fc963ca9c2a057f893726466a0729431e967c94e27f154ff59e9"
+      "current_sha256": "5449faa62750d2c454eaaf10775bc91414620ec22b53478b6ac6b25d8008249f"
     },
     {
       "path": "40-platform/40.4-observability/01-pillars/40.4.1.01-logging.md",
@@ -13758,15 +13792,21 @@
         "Mechanism and boundaries",
         "Examples and failure cases",
         "Version/tooling claims",
-        "Internal and source links"
+        "Internal and source links",
+        "SDK example package ownership and terminology against current JS API and trace SDK specification."
       ],
       "sources": [
+        "https://opentelemetry.io/docs/languages/js/",
+        "https://opentelemetry.io/docs/specs/otel/trace/sdk/",
         "https://opentelemetry.io/docs/languages/js/",
         "https://opentelemetry.io/docs/specs/otel/trace/sdk/"
       ],
       "disposition": "Read end to end. Corrected technical wording, stale version context, or a sample where noted; retained accurate material.",
-      "validation": "Manual technical review; Node.js 22 OpenTelemetry sample ran and emitted an in-memory span.",
-      "current_sha256": "6acd9fa096c86f4c2ee1b36e4a7b0a1d7daca23dae93c257aa6c45d49ee86663"
+      "validation": [
+        "Manual technical review; Node.js 22 OpenTelemetry sample ran and emitted an in-memory span.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
+      ],
+      "current_sha256": "7be5c27be21440c8e9c6cb259a8b9788254d32e2fe5f5a9dda8e6ab74739e2c7"
     },
     {
       "path": "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.02-continuous-profiling.md",
@@ -13779,12 +13819,18 @@
         "Mechanism and boundaries",
         "Examples and failure cases",
         "Version/tooling claims",
-        "Internal and source links"
+        "Internal and source links",
+        "Sampling, bounded labels, matched profile comparisons, allocation/retained-heap evidence and backend/runtime-dependent span profiles."
       ],
-      "sources": [],
+      "sources": [
+        "OpenTelemetry profile-signal material and linked Pyroscope/Parca references in chapter"
+      ],
       "disposition": "Read end to end. Corrected technical wording, stale version context, or a sample where noted; retained accurate material.",
-      "validation": "Manual technical review.",
-      "current_sha256": "29b3f6113dd637b1a3f48444b6567054a09474f8fc13e3bf80bac81d97d186b8"
+      "validation": [
+        "Manual technical review.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
+      ],
+      "current_sha256": "584cfcaeb004d9992d67728e2e192c6366629d13e0336f971486d9ac04cf7802"
     },
     {
       "path": "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.03-ebpf-observability.md",
@@ -13799,12 +13845,19 @@
         "Mechanism and boundaries",
         "Examples and failure cases",
         "Version/tooling claims",
-        "Internal and source links"
+        "Internal and source links",
+        "eBPF visibility, runtime/protocol coverage, enforcement and event-delivery limits; examples avoid universal visibility or guaranteed outcomes."
       ],
-      "sources": [],
+      "sources": [
+        "Linux kernel eBPF documentation",
+        "Linked Cilium, Hubble and Tetragon references"
+      ],
       "disposition": "Read end to end. Corrected technical wording, stale version context, or a sample where noted; retained accurate material.",
-      "validation": "Manual technical review.",
-      "current_sha256": "a5e94992d6f2033f23371400b25e3030da7d41055badaf5ddbafbbf57800ec0f"
+      "validation": [
+        "Manual technical review.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
+      ],
+      "current_sha256": "6393116fd24bcfde4bc231c1fe91743ada618ee760bb804cc62a8c7eb7f09104"
     },
     {
       "path": "40-platform/40.4-observability/04-advanced-telemetry/INDEX.md",
@@ -13817,12 +13870,18 @@
         "Mechanism and boundaries",
         "Examples and failure cases",
         "Version/tooling claims",
-        "Internal and source links"
+        "Internal and source links",
+        "Re-read the committed content delta in its complete document context; verified wording, navigation/count claims and consistency with linked canonical material."
       ],
-      "sources": [],
+      "sources": [
+        "Current complete document and linked canonical chapter/index/revision records"
+      ],
       "disposition": "Read end to end; definitions, examples, boundaries, and navigation are accurate and no substantive edit was needed.",
-      "validation": "Manual technical review.",
-      "current_sha256": "a96232c410903bee55b2828feec6df5c7040fe60f94fc2026db24223566dbb38"
+      "validation": [
+        "Manual technical review.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
+      ],
+      "current_sha256": "d124b3d132909620129c1fe6ab0f1b049767cf26d270e41121fda7cb46fd9d25"
     },
     {
       "path": "40-platform/40.4-observability/04-advanced-telemetry/REVISION.md",
@@ -13892,12 +13951,18 @@
         "Mechanism and boundaries",
         "Examples and failure cases",
         "Version/tooling claims",
-        "Internal and source links"
+        "Internal and source links",
+        "Re-read the committed content delta in its complete document context; verified wording, navigation/count claims and consistency with linked canonical material."
       ],
-      "sources": [],
+      "sources": [
+        "Current complete document and linked canonical chapter/index/revision records"
+      ],
       "disposition": "Read end to end. Corrected technical wording, stale version context, or a sample where noted; retained accurate material.",
-      "validation": "Manual technical review.",
-      "current_sha256": "e4c4424fd0be5ffc644f3de07d770d8da712be6d7091be4e79ddb6aac7de28a4"
+      "validation": [
+        "Manual technical review.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
+      ],
+      "current_sha256": "d5c5926af883a328ef70dfef6689e3641721e79065dc9ccc33d7cc5e83507b16"
     },
     {
       "path": "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md",
@@ -14545,20 +14610,27 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Current Lambda limits and SnapStart eligibility; Vercel and Next.js runtime boundaries; edge state, deployment, and durable execution claims."
+        "Current Lambda limits and SnapStart eligibility; Vercel and Next.js runtime boundaries; edge state, deployment, and durable execution claims.",
+        "Lambda scaling/SnapStart and current Vercel/Next.js runtime boundaries, including Proxy and Cache Components."
       ],
       "sources": [
         "https://docs.aws.amazon.com/lambda/latest/dg/scaling-behavior.html",
         "https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html",
         "https://vercel.com/changelog/edge-middleware-and-edge-functions-are-now-powered-by-vercel-functions",
         "https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config",
+        "https://nextjs.org/docs/app/guides/upgrading/version-16",
+        "https://docs.aws.amazon.com/lambda/latest/dg/scaling-behavior.html",
+        "https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html",
+        "https://vercel.com/docs/functions/runtimes/edge",
+        "https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config",
         "https://nextjs.org/docs/app/guides/upgrading/version-16"
       ],
       "disposition": "Reviewed the complete chapter or section companion for accuracy, clarity, current boundaries and internal consistency.",
       "validation": [
-        "Complete file reviewed against the topic mechanism and neighboring section flow."
+        "Complete file reviewed against the topic mechanism and neighboring section flow.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "84347fd0b1c5e14560150e82e35b16e36856e89b94c55f5ac59f87961ca34869"
+      "current_sha256": "37262235861fea02d651226db5e1d5b511444c7800b809d2e7b0bfe961804a55"
     },
     {
       "path": "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md",
@@ -14567,20 +14639,27 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Current Lambda limits and SnapStart eligibility; Vercel and Next.js runtime boundaries; edge state, deployment, and durable execution claims."
+        "Current Lambda limits and SnapStart eligibility; Vercel and Next.js runtime boundaries; edge state, deployment, and durable execution claims.",
+        "Edge execution limits, Vercel deprecation guidance, Next.js Proxy/route-segment support and Cache Components constraints."
       ],
       "sources": [
         "https://docs.aws.amazon.com/lambda/latest/dg/scaling-behavior.html",
         "https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html",
         "https://vercel.com/changelog/edge-middleware-and-edge-functions-are-now-powered-by-vercel-functions",
         "https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config",
+        "https://nextjs.org/docs/app/guides/upgrading/version-16",
+        "https://vercel.com/docs/functions/runtimes/edge",
+        "https://vercel.com/changelog/new-execution-duration-limit-for-edge-functions",
+        "https://nextjs.org/docs/app/api-reference/file-conventions/proxy",
+        "https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config",
         "https://nextjs.org/docs/app/guides/upgrading/version-16"
       ],
       "disposition": "Reviewed the complete chapter or section companion for accuracy, clarity, current boundaries and internal consistency.",
       "validation": [
-        "Complete file reviewed against the topic mechanism and neighboring section flow."
+        "Complete file reviewed against the topic mechanism and neighboring section flow.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "c37ae6986c09fa3579d9252d26b759ed4d45b7ba00d8b05b17d8aa2e33ff5b27"
+      "current_sha256": "619418367c41ee4f6a160aa54f7af24745a101bec6bc2c3587aa6af709b4d7ae"
     },
     {
       "path": "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md",
@@ -14724,20 +14803,23 @@
       "state": "reviewed",
       "scan_candidates": [],
       "claims_checked": [
-        "Current Lambda limits and SnapStart eligibility; Vercel and Next.js runtime boundaries; edge state, deployment, and durable execution claims."
+        "Current Lambda limits and SnapStart eligibility; Vercel and Next.js runtime boundaries; edge state, deployment, and durable execution claims.",
+        "Re-read the committed content delta in its complete document context; verified wording, navigation/count claims and consistency with linked canonical material."
       ],
       "sources": [
         "https://docs.aws.amazon.com/lambda/latest/dg/scaling-behavior.html",
         "https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html",
         "https://vercel.com/changelog/edge-middleware-and-edge-functions-are-now-powered-by-vercel-functions",
         "https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config",
-        "https://nextjs.org/docs/app/guides/upgrading/version-16"
+        "https://nextjs.org/docs/app/guides/upgrading/version-16",
+        "Current complete document and linked canonical chapter/index/revision records"
       ],
       "disposition": "Reviewed the complete chapter or section companion for accuracy, clarity, current boundaries and internal consistency.",
       "validation": [
-        "Complete file reviewed against the topic mechanism and neighboring section flow."
+        "Complete file reviewed against the topic mechanism and neighboring section flow.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "4ad998dc7c36bdb42b9ace96985f866735fd9dfe4aa7be62b35349067f140e22"
+      "current_sha256": "72ed5ad224ea7f95e8ba876fa6f43f794076db5ea79642aa4bf3719505d1f6ce"
     },
     {
       "path": "40-platform/40.7-serverless-edge/REVISION.md",
@@ -14966,14 +15048,18 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "All twelve categories and both role-based paths were checked; the platform-focused deep dive now includes IaC, reverse proxies, CDN, serverless and Twelve-Factor material."
+        "All twelve categories and both role-based paths were checked; the platform-focused deep dive now includes IaC, reverse proxies, CDN, serverless and Twelve-Factor material.",
+        "Re-read the committed content delta in its complete document context; verified wording, navigation/count claims and consistency with linked canonical material."
       ],
-      "sources": [],
+      "sources": [
+        "Current complete document and linked canonical chapter/index/revision records"
+      ],
       "disposition": "Reviewed the full index or brief and corrected the study-flow, coverage or date claim where needed.",
       "validation": [
-        "Full-file review against linked category structure and repository counting conventions."
+        "Full-file review against linked category structure and repository counting conventions.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "39e8c346860fce77a568f4916ee74fd2b708df7d708c1fabbf54a53f12e424dc"
+      "current_sha256": "aa25c55e3606a809ea9b861998d3e517c07464226d58b28c6c6be92603c5c3bd"
     },
     {
       "path": "50-quality/50.1-testing/01-foundations/50.1.1.01-testing-overview.md",
@@ -15054,16 +15140,19 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Jest execution, mock state, timers and CommonJS/ESM boundaries are version-scoped; Node 24.9 require(esm) interop is separated from Jest ESM test execution."
+        "Jest execution, mock state, timers and CommonJS/ESM boundaries are version-scoped; Node 24.9 require(esm) interop is separated from Jest ESM test execution.",
+        "CommonJS transforms versus native ESM test execution; Node 24.9+ require(esm) and top-level-await boundaries."
       ],
       "sources": [
+        "https://jestjs.io/docs/ecmascript-modules",
         "https://jestjs.io/docs/ecmascript-modules"
       ],
       "disposition": "Revised: Jest execution, mock state, timers and CommonJS/ESM boundaries are version-scoped; Node 24.9 require(esm) interop is separated from Jest ESM test execution.",
       "validation": [
-        "Complete chapter reread; Jest 30.5 ESM documentation checked; example APIs and module caveats reviewed"
+        "Complete chapter reread; Jest 30.5 ESM documentation checked; example APIs and module caveats reviewed",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "dcbb6dd875203dd868302587ed73e4210263ee8324ae28735b262638e9903e8d"
+      "current_sha256": "4ae281b4ca9046d8577a0c06954d8b7591f5ba542c70b833023bc851e2e0b1e2"
     },
     {
       "path": "50-quality/50.1-testing/02-frameworks/50.1.2.02-vitest.md",
@@ -15109,16 +15198,20 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Runner, component, HTTP and browser-tool boundaries are compared without universal speed or preference claims."
+        "Runner, component, HTTP and browser-tool boundaries are compared without universal speed or preference claims.",
+        "Runner/component/HTTP/browser-tool boundaries and Vitest 5 Node/Vite requirements."
       ],
       "sources": [
-        "Canonical chapter, references and linked official specifications reviewed"
+        "Canonical chapter, references and linked official specifications reviewed",
+        "https://vitest.dev/blog/vitest-5",
+        "https://vitest.dev/guide/migration/"
       ],
       "disposition": "Revised: Runner, component, HTTP and browser-tool boundaries are compared without universal speed or preference claims.",
       "validation": [
-        "Complete comparison reread; version constraints checked against the canonical Jest/Vitest chapters"
+        "Complete comparison reread; version constraints checked against the canonical Jest/Vitest chapters",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "2dc2a498b2db039d5fe9a2d0f80019f342d63ca980d3cb05085f9fd97d52a1ff"
+      "current_sha256": "dc54e60759a55b3195dbf0d69d664de04d6ebd4246e98ca9860b005749bbc44e"
     },
     {
       "path": "50-quality/50.1-testing/02-frameworks/INDEX.md",
@@ -15127,16 +15220,19 @@
       "state": "reviewed",
       "scan_candidates": [],
       "claims_checked": [
-        "Framework learning flow distinguishes runner setup, browser/component evidence and type checking."
+        "Framework learning flow distinguishes runner setup, browser/component evidence and type checking.",
+        "Re-read the committed content delta in its complete document context; verified wording, navigation/count claims and consistency with linked canonical material."
       ],
       "sources": [
-        "Canonical chapter, references and linked official specifications reviewed"
+        "Canonical chapter, references and linked official specifications reviewed",
+        "Current complete document and linked canonical chapter/index/revision records"
       ],
       "disposition": "Retained: Framework learning flow distinguishes runner setup, browser/component evidence and type checking.",
       "validation": [
-        "Complete index and revision read; linked examples and fresh revision questions checked"
+        "Complete index and revision read; linked examples and fresh revision questions checked",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "b6ad7be992800890cec543d9bf7909d51b438ea5a6a86194071e65c591624562"
+      "current_sha256": "c3e987ac67ee027588ba2cd67325cb3bb4edc4120b492c284b4e4d61089120c7"
     },
     {
       "path": "50-quality/50.1-testing/02-frameworks/REVISION.md",
@@ -15441,16 +15537,19 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "The root index reports the testing file count and orders all six learning categories before their revision/interview work."
+        "The root index reports the testing file count and orders all six learning categories before their revision/interview work.",
+        "Re-read the committed content delta in its complete document context; verified wording, navigation/count claims and consistency with linked canonical material."
       ],
       "sources": [
-        "Canonical chapter, references and linked official specifications reviewed"
+        "Canonical chapter, references and linked official specifications reviewed",
+        "Current complete document and linked canonical chapter/index/revision records"
       ],
       "disposition": "Revised: The root index reports the testing file count and orders all six learning categories before their revision/interview work.",
       "validation": [
-        "Complete category index reread; interview count and learning-flow copy corrected; count and reading-time badges are generated separately"
+        "Complete category index reread; interview count and learning-flow copy corrected; count and reading-time badges are generated separately",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "8bfa3400d41f8b7cf7a4c27dd47355ca165824c6b790ac06cd26543be7b82e20"
+      "current_sha256": "b681aad2991f7acb668ae761a982be867f7d5f8f55f9e9dd1781722d9b4d3b8a"
     },
     {
       "path": "50-quality/50.2-accessibility/50.2.01-wcag-overview.md",
@@ -16150,14 +16249,18 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "The four quality sub-stacks and practice sequence were checked for coverage and clear verification boundaries."
+        "The four quality sub-stacks and practice sequence were checked for coverage and clear verification boundaries.",
+        "Re-read the committed content delta in its complete document context; verified wording, navigation/count claims and consistency with linked canonical material."
       ],
-      "sources": [],
+      "sources": [
+        "Current complete document and linked canonical chapter/index/revision records"
+      ],
       "disposition": "Reviewed the full index or brief and corrected the study-flow, coverage or date claim where needed.",
       "validation": [
-        "Full-file review against linked category structure and repository counting conventions."
+        "Full-file review against linked category structure and repository counting conventions.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "28b9c02c43b2ce3e2ce50795cfb03f334f2627e1775990d3f8ffa4247fad7c12"
+      "current_sha256": "fa7fcdc2d4d760528ab24e4b60c2c465bf235665cce319f462aa57517a2d061d"
     },
     {
       "path": "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.md",
@@ -16742,16 +16845,19 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Inclusive and answer-space invariants preserve the target boundary; distinct rotated values give logarithmic search while duplicates may take linear time."
+        "Inclusive and answer-space invariants preserve the target boundary; distinct rotated values give logarithmic search while duplicates may take linear time.",
+        "Inclusive and answer-space invariants, midpoint updates and duplicate-rotated-array worst case."
       ],
       "sources": [
-        "Full chapter and its cited primary references; the companion revision/index where applicable"
+        "Full chapter and its cited primary references; the companion revision/index where applicable",
+        "Full chapter and linked revision/index sources"
       ],
       "disposition": "Retained where the explanation and code satisfy the stated contract; corrected specific trace, complexity, input-boundary or problem-grouping issues found in review.",
       "validation": [
-        "Complete chapter read; representative traces, invariants, code preconditions, complexity claims and interview problem groupings reviewed."
+        "Complete chapter read; representative traces, invariants, code preconditions, complexity claims and interview problem groupings reviewed.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "5991c64329d0be027980b8c8f0d74d4aefa24fa90b707b9ad616d57617aea8e1"
+      "current_sha256": "3296c2687b814984a4a5323cb27fe6ce41ea07b0bf810e0fbaf038d6f7e3c0a2"
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.04-linked-list-manipulation-patterns.md",
@@ -16834,16 +16940,19 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "The category index orders the learning passes and file table consistently with the canonical chapter sequence."
+        "The category index orders the learning passes and file table consistently with the canonical chapter sequence.",
+        "Re-read the committed content delta in its complete document context; verified wording, navigation/count claims and consistency with linked canonical material."
       ],
       "sources": [
-        "Full chapter and its cited primary references; the companion revision/index where applicable"
+        "Full chapter and its cited primary references; the companion revision/index where applicable",
+        "Current complete document and linked canonical chapter/index/revision records"
       ],
       "disposition": "Retained where the explanation and code satisfy the stated contract; corrected specific trace, complexity, input-boundary or problem-grouping issues found in review.",
       "validation": [
-        "Full index read; file links, read-time labels and revision placement checked."
+        "Full index read; file links, read-time labels and revision placement checked.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "5dab7e62a71667688ba30c18ace0f024c7c2e8445a976ce021e8e0b737c14e58"
+      "current_sha256": "f4553545d1cdf406165f97ac7709e22006ef7bdf10fbff9cf07c8a6b094f0019"
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/REVISION.md",
@@ -17124,16 +17233,19 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Strictness, equal-value behavior, index retention and one-push/one-pop amortization match the examples."
+        "Strictness, equal-value behavior, index retention and one-push/one-pop amortization match the examples.",
+        "Strictness, equal-value behavior, index retention and amortized push/pop reasoning."
       ],
       "sources": [
-        "Full chapter and its cited primary references; the companion revision/index where applicable"
+        "Full chapter and its cited primary references; the companion revision/index where applicable",
+        "Full chapter and linked revision/index sources"
       ],
       "disposition": "Retained where the explanation and code satisfy the stated contract; corrected specific trace, complexity, input-boundary or problem-grouping issues found in review.",
       "validation": [
-        "Complete chapter read; representative traces, invariants, code preconditions, complexity claims and interview problem groupings reviewed."
+        "Complete chapter read; representative traces, invariants, code preconditions, complexity claims and interview problem groupings reviewed.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "93e4fb3a128c7e6a164a58f6c3b705c33ad8d73da65aff64abed23b2fc42ee7b"
+      "current_sha256": "ee36832d20a4f65277f491666725a65b75ab03d4f2853538ed9cde321a9fcedf"
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.03-stack-queue-patterns.md",
@@ -17196,16 +17308,19 @@
       "state": "reviewed",
       "scan_candidates": [],
       "claims_checked": [
-        "The category index orders the learning passes and file table consistently with the canonical chapter sequence."
+        "The category index orders the learning passes and file table consistently with the canonical chapter sequence.",
+        "Re-read the committed content delta in its complete document context; verified wording, navigation/count claims and consistency with linked canonical material."
       ],
       "sources": [
-        "Full chapter and its cited primary references; the companion revision/index where applicable"
+        "Full chapter and its cited primary references; the companion revision/index where applicable",
+        "Current complete document and linked canonical chapter/index/revision records"
       ],
       "disposition": "Retained: full text and representative derivations support the stated assumptions and decision boundaries.",
       "validation": [
-        "Full index read; file links, read-time labels and revision placement checked."
+        "Full index read; file links, read-time labels and revision placement checked.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "2c77f4d315d1b25e4987c29c134ce6c51a0b58600947c3e2a1301a21ca16bb91"
+      "current_sha256": "bf5978513c2812da08c00ce0fb9745d4049c396e22dcc0fef72c3294627e2c3f"
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/REVISION.md",
@@ -17286,16 +17401,19 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "The category index orders the learning passes and file table consistently with the canonical chapter sequence."
+        "The category index orders the learning passes and file table consistently with the canonical chapter sequence.",
+        "Re-read the committed content delta in its complete document context; verified wording, navigation/count claims and consistency with linked canonical material."
       ],
       "sources": [
-        "Full chapter and its cited primary references; the companion revision/index where applicable"
+        "Full chapter and its cited primary references; the companion revision/index where applicable",
+        "Current complete document and linked canonical chapter/index/revision records"
       ],
       "disposition": "Retained where the explanation and code satisfy the stated contract; corrected specific trace, complexity, input-boundary or problem-grouping issues found in review.",
       "validation": [
-        "Full index read; file links, read-time labels and revision placement checked."
+        "Full index read; file links, read-time labels and revision placement checked.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "470f000d85c334e8d50c8bf96dbd186237242622dedd081d63eef45e2360fa52"
+      "current_sha256": "9d97d9d47c9d7d93f3b68d562796e525ae526f3c62b6bf5660e73dcc2d7dcd6a"
     },
     {
       "path": "70-interview-toolkit/70.3-cheatsheets/70.3.01-javascript-cheat-sheet.md",
@@ -17516,14 +17634,18 @@
       "state": "reviewed",
       "scan_candidates": [],
       "claims_checked": [
-        "The toolkit flow and category catalog now name all seven cheat sheets and separate retrieval practice from learning."
+        "The toolkit flow and category catalog now name all seven cheat sheets and separate retrieval practice from learning.",
+        "Re-read the committed content delta in its complete document context; verified wording, navigation/count claims and consistency with linked canonical material."
       ],
-      "sources": [],
+      "sources": [
+        "Current complete document and linked canonical chapter/index/revision records"
+      ],
       "disposition": "Reviewed the full index or brief and corrected the study-flow, coverage or date claim where needed.",
       "validation": [
-        "Full-file review against linked category structure and repository counting conventions."
+        "Full-file review against linked category structure and repository counting conventions.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "0a057d749fb8ba2017afbc3f32d531a5a367fbe9d3e36780778f13ac062f6710"
+      "current_sha256": "83048a8fd624cb85ad9d9a7f3eabe407c34b6f9e5081012307a34e6e43455440"
     },
     {
       "path": "80-lanes-abroad-full-stack/80.01-take-home-playbook.md",
@@ -18655,17 +18777,20 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Truthful outreach claims, current-status caveats for dated contacts, authorization language, follow-up conditions, and canonical application tracking."
+        "Truthful outreach claims, current-status caveats for dated contacts, authorization language, follow-up conditions, and canonical application tracking.",
+        "Truthful outreach claims, dated contact research, authorization wording, follow-up conditions and canonical tracker links."
       ],
       "sources": [
-        "Canonical resume, application tracker, target research, and Germany work-authorization guide linked from the playbook."
+        "Canonical resume, application tracker, target research, and Germany work-authorization guide linked from the playbook.",
+        "Canonical private resume, application tracker, targets and work-authorization guide"
       ],
       "disposition": "Renamed the vague liveness column to Dated research note, clarified a hiring-manager reference, and removed irrelevant seed-funding trivia; public contact records remain explicitly historical.",
       "validation": [
         "Full document read; every template preserves conditional claims and does not imply a message was sent.",
-        "Personal data remains in the canonical private directory."
+        "Personal data remains in the canonical private directory.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "c39c53d9159775e4269dbc71dec1c63125532d037e8bd425df22e00c218d6e3f"
+      "current_sha256": "5ca37a84d8480289530c09416b2017a9ad455a322b58c533fba63dc3d7d30f54"
     },
     {
       "path": "80-lanes-abroad-full-stack/personal/reports/001-deepl-2026-08-08.md",
@@ -19991,14 +20116,18 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "The root study order, lane selection, cross-stack navigation and date/count claims were checked; generated counts remain owned by check_counts.py."
+        "The root study order, lane selection, cross-stack navigation and date/count claims were checked; generated counts remain owned by check_counts.py.",
+        "Re-read the committed content delta in its complete document context; verified wording, navigation/count claims and consistency with linked canonical material."
       ],
-      "sources": [],
+      "sources": [
+        "Current complete document and linked canonical chapter/index/revision records"
+      ],
       "disposition": "Reviewed the full index or brief and corrected the study-flow, coverage or date claim where needed.",
       "validation": [
-        "Full-file review against linked category structure and repository counting conventions."
+        "Full-file review against linked category structure and repository counting conventions.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "486c71cf9dc863914eef5fd298879b6eed420c2d6edda09d99dfda52a891f98c",
+      "current_sha256": "b62f0037b10cd268c0fc110b79edf1c054d0510317dc338cb6eaf11b200f58da",
       "limited_edits": [
         "Generated study-time and aligned table metadata refreshed from current chapters; semantic review remains pending.",
         "Generated study-time metadata refreshed from current child sections; semantic review remains pending."
@@ -20011,17 +20140,20 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "The historical chapter continuation is directly discoverable and clearly marked as an earlier snapshot."
+        "The historical chapter continuation is directly discoverable and clearly marked as an earlier snapshot.",
+        "Re-read the committed content delta in its complete document context; verified wording, navigation/count claims and consistency with linked canonical material."
       ],
       "sources": [
         "docs/2026-10-01-chapter-review-continuation.md",
-        "docs/2026-10-10-senior-precision-progress.md"
+        "docs/2026-10-10-senior-precision-progress.md",
+        "Current complete document and linked canonical chapter/index/revision records"
       ],
       "disposition": "Added a direct historical-report link so repository structure checks and readers can discover it.",
       "validation": [
-        "Complete README read; link target and historical scope checked."
+        "Complete README read; link target and historical scope checked.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "48fa0f8ac7330ee632609066a14e812e570fbb3fc1601b2c99dff02073b93d0b",
+      "current_sha256": "7d50d3a91e310cc15af1400540c41c48d1848a2b1efdbe6eefee2da58322860e",
       "limited_edits": [
         "Added navigation to the fresh technical-precision progress report; no full fresh semantic review."
       ]
@@ -20052,20 +20184,23 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Contributor workflow, validation gates and generated metadata ownership."
+        "Contributor workflow, validation gates and generated metadata ownership.",
+        "Re-read the committed content delta in its complete document context; verified wording, navigation/count claims and consistency with linked canonical material."
       ],
       "sources": [
         "scripts/verify.sh",
         "scripts/check_counts.py",
         "scripts/check_links.py",
         "scripts/check_freshness.py",
-        "scripts/link_baseline.py"
+        "scripts/link_baseline.py",
+        "Current complete document and linked canonical chapter/index/revision records"
       ],
       "disposition": "Retained repository workflow; current gates are documented separately and should be rerun before release.",
       "validation": [
-        "Complete document read in sections."
+        "Complete document read in sections.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "696b7955a248de36312f377031762d42fc5ba7d3e9e397ea1da4237293e95725"
+      "current_sha256": "9632a4236c6aa572a7cc78b322510e8755fa4b46777cbeea068d479fd44951aa"
     },
     {
       "path": "design-qa.md",
@@ -20089,49 +20224,73 @@
       "path": "docs/2026-09-10-modernization-changelog.md",
       "genre": "guide/supporting",
       "baseline_sha256": "61e0738dfbfaaf1020c70539b8d6a0805dd70d5041e0fb70370ea3a49fc79719",
-      "state": "pending",
+      "state": "reviewed",
       "scan_candidates": [],
-      "claims_checked": [],
-      "sources": [],
-      "disposition": null,
-      "validation": [],
-      "current_sha256": "61e0738dfbfaaf1020c70539b8d6a0805dd70d5041e0fb70370ea3a49fc79719"
+      "claims_checked": [
+        "Dated changes, scope and links; completed work is distinguished from follow-up."
+      ],
+      "sources": [
+        "Full dated document and its cited/local companion records"
+      ],
+      "disposition": "Retained as a historical changelog; dated snapshots are not presented as current status.",
+      "validation": [
+        "Full text read; date/scope, historical versus current claims and local links checked."
+      ],
+      "current_sha256": "fd4577f7891c0c15ecb31396ce352df941c4637759f4c98f7aec7f8369422279"
     },
     {
       "path": "docs/2026-09-11-dead-link-remediation-report.md",
       "genre": "guide/supporting",
       "baseline_sha256": "4dfdc5a6e7b484653d31c3b421eb577dd311fcf371b8f1a491e32cf144ed9425",
-      "state": "pending",
+      "state": "reviewed",
       "scan_candidates": [],
-      "claims_checked": [],
-      "sources": [],
-      "disposition": null,
-      "validation": [],
-      "current_sha256": "4dfdc5a6e7b484653d31c3b421eb577dd311fcf371b8f1a491e32cf144ed9425"
+      "claims_checked": [
+        "Dated probe results, dead/suspect classifications and limitations of datacenter checks."
+      ],
+      "sources": [
+        "Full dated document and its cited/local companion records"
+      ],
+      "disposition": "Retained as historical remediation evidence; current human verification steps are in the companion checklist.",
+      "validation": [
+        "Full text read; date/scope, historical versus current claims and local links checked."
+      ],
+      "current_sha256": "c096929b55cf1bd2c43b47fd8dd4b89648215a747e90ca827ea36cfebb4e98af"
     },
     {
       "path": "docs/2026-09-14-modernization-changelog-2.md",
       "genre": "guide/supporting",
       "baseline_sha256": "4622cbcbdc9893fa2f5bcb0723b9e5659aaa7635270cbba3b223ed82f104f4ca",
-      "state": "pending",
+      "state": "reviewed",
       "scan_candidates": [],
-      "claims_checked": [],
-      "sources": [],
-      "disposition": null,
-      "validation": [],
-      "current_sha256": "4622cbcbdc9893fa2f5bcb0723b9e5659aaa7635270cbba3b223ed82f104f4ca"
+      "claims_checked": [
+        "Dated modernization changes, validation scope and completed versus follow-up work."
+      ],
+      "sources": [
+        "Full dated document and its cited/local companion records"
+      ],
+      "disposition": "Retained as historical change evidence with its original date and scope.",
+      "validation": [
+        "Full text read; date/scope, historical versus current claims and local links checked."
+      ],
+      "current_sha256": "84fc9acee7b32da63ca4bafcdad4668b7a6c9dfac826fff533f25de852307053"
     },
     {
       "path": "docs/2026-09-19-corpus-health-report.md",
       "genre": "guide/supporting",
       "baseline_sha256": "e361d0cc75131588b239ebbbd1547f2ed172a81034a4f0be4cb3e703e06dd2e7",
-      "state": "pending",
+      "state": "reviewed",
       "scan_candidates": [],
-      "claims_checked": [],
-      "sources": [],
-      "disposition": null,
-      "validation": [],
-      "current_sha256": "e6cc7fb3d32c0bb189b5c6f307b084fb39182c899d0442d2dc594645cdeea2f7"
+      "claims_checked": [
+        "Dated inventory snapshot, health-measure definitions and links to current review evidence."
+      ],
+      "sources": [
+        "Full dated document and its cited/local companion records"
+      ],
+      "disposition": "Retained as historical metrics; counts are not represented as current.",
+      "validation": [
+        "Full text read; date/scope, historical versus current claims and local links checked."
+      ],
+      "current_sha256": "381be7b0c7e37b1acb134ade0443f15e801a306414cf3aa9e5297ee19a2bcc39"
     },
     {
       "path": "docs/2026-10-01-chapter-review-continuation.md",
@@ -20140,65 +20299,92 @@
       "state": "reviewed",
       "scan_candidates": [],
       "claims_checked": [
-        "Historical contract transition and earlier wave evidence are clearly dated and marked incomplete."
+        "Historical contract transition and earlier wave evidence are clearly dated and marked incomplete.",
+        "Re-read the committed content delta in its complete document context; verified wording, navigation/count claims and consistency with linked canonical material."
       ],
       "sources": [
         "docs/2026-10-08-explanation-depth-progress.md",
-        "docs/verification-gates.md"
+        "docs/verification-gates.md",
+        "Current complete document and linked canonical chapter/index/revision records"
       ],
       "disposition": "Kept its historical results; linked it from the current precision-progress report so it is discoverable.",
       "validation": [
-        "Complete document read; structural orphan subsequently resolved."
+        "Complete document read; structural orphan subsequently resolved.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "d0402906b85be27c485535f37263654d514cb496640347eb55f14bfa05241eb0"
+      "current_sha256": "ed4a0d5b8c8654b6e9fe3cd93672579538627431d839022a0679241fd998b822"
     },
     {
       "path": "docs/2026-10-03-readability-review.md",
       "genre": "guide/supporting",
       "baseline_sha256": "ea1e86cdec79cfc07be5ba542913477c701c0042dc3fdee15db97fe0d9bf6cb4",
-      "state": "pending",
+      "state": "reviewed",
       "scan_candidates": [],
-      "claims_checked": [],
-      "sources": [],
-      "disposition": null,
-      "validation": [],
-      "current_sha256": "ea1e86cdec79cfc07be5ba542913477c701c0042dc3fdee15db97fe0d9bf6cb4"
+      "claims_checked": [
+        "Date, reader sample, observations and separation of findings from proposed follow-up."
+      ],
+      "sources": [
+        "Full dated document and its cited/local companion records"
+      ],
+      "disposition": "Retained as dated qualitative evidence; the sample is not claimed to certify every file.",
+      "validation": [
+        "Full text read; date/scope, historical versus current claims and local links checked."
+      ],
+      "current_sha256": "a922572df8f541979203e7278560c20033ef59dce08d31f8cb72c1c4655ba0e1"
     },
     {
       "path": "docs/2026-10-05-fresh-reader-review.md",
       "genre": "guide/supporting",
       "baseline_sha256": "6e9b999ff677596e2052ee0706e64a82186f8f32cd8856c2f07183ec1b4b2f7d",
-      "state": "pending",
+      "state": "reviewed",
       "scan_candidates": [],
-      "claims_checked": [],
-      "sources": [],
-      "disposition": null,
-      "validation": [],
-      "current_sha256": "6e9b999ff677596e2052ee0706e64a82186f8f32cd8856c2f07183ec1b4b2f7d"
+      "claims_checked": [
+        "Reader observations and separation of learner feedback from confirmed defects."
+      ],
+      "sources": [
+        "Full dated document and its cited/local companion records"
+      ],
+      "disposition": "Retained as dated feedback; subsequent implementation and current coverage are linked separately.",
+      "validation": [
+        "Full text read; date/scope, historical versus current claims and local links checked."
+      ],
+      "current_sha256": "4b4c76c27da879cdd28299fe0773e425ff6d6c608969218124e63259126b2299"
     },
     {
       "path": "docs/2026-10-07-reading-quality-report.md",
       "genre": "guide/supporting",
       "baseline_sha256": "5b48a602d80d97d69b754f38986dd5beebc23fc2a9e44c122ec49c5941c5b5de",
-      "state": "pending",
+      "state": "reviewed",
       "scan_candidates": [],
-      "claims_checked": [],
-      "sources": [],
-      "disposition": null,
-      "validation": [],
-      "current_sha256": "5b48a602d80d97d69b754f38986dd5beebc23fc2a9e44c122ec49c5941c5b5de"
+      "claims_checked": [
+        "Dated sample, measured scope, remediation claims and check limitations."
+      ],
+      "sources": [
+        "Full dated document and its cited/local companion records"
+      ],
+      "disposition": "Retained as historical quality evidence; the 12 October report owns current results.",
+      "validation": [
+        "Full text read; date/scope, historical versus current claims and local links checked."
+      ],
+      "current_sha256": "f6c10cde117f4c4d0b55b54837445f8075b7d0664d2a12558accfd1d6d2547ee"
     },
     {
       "path": "docs/2026-10-08-explanation-depth-progress.md",
       "genre": "guide/supporting",
       "baseline_sha256": "0231f97c077aecac4e9856faf6cf762ddc1037ec2bd7d5abd61864ec41ede993",
-      "state": "pending",
+      "state": "reviewed",
       "scan_candidates": [],
-      "claims_checked": [],
-      "sources": [],
-      "disposition": null,
-      "validation": [],
-      "current_sha256": "0231f97c077aecac4e9856faf6cf762ddc1037ec2bd7d5abd61864ec41ede993"
+      "claims_checked": [
+        "8 October inventory, totals and fixtures are a dated checkpoint and link to current evidence."
+      ],
+      "sources": [
+        "Full dated document and its cited/local companion records"
+      ],
+      "disposition": "Retained as dated implementation evidence; current totals are in the later report.",
+      "validation": [
+        "Full text read; date/scope, historical versus current claims and local links checked."
+      ],
+      "current_sha256": "18babd26aae9c9c9625537cdacc11180f04f2333856518c82a4690028f7f8ef5"
     },
     {
       "path": "docs/2026-10-10-senior-precision-progress.md",
@@ -20209,20 +20395,24 @@
       "claims_checked": [
         "Coverage totals match the hash-strict review ledger after the Kubernetes networking/configuration cohort.",
         "Recorded Kubernetes source checks, YAML parse results, count-writer regression outcome, generated read-time total and verification limitations.",
-        "Latest full repository verification reports 30 passing gates, current internal-link totals and an unchanged external citation baseline."
+        "Latest full repository verification reports 30 passing gates, current internal-link totals and an unchanged external citation baseline.",
+        "Coverage totals, historical checkpoints, executed checks and integration limits; stale totals replaced with final ledger values."
       ],
       "sources": [
         "docs/2026-10-10-senior-precision-audit.json",
         "docs/2026-10-10-senior-precision-validation.json",
-        "GraphQL official/package sources recorded in graphql-precision-results"
+        "GraphQL official/package sources recorded in graphql-precision-results",
+        "docs/2026-10-10-senior-precision-audit.json",
+        "docs/2026-10-10-senior-precision-validation.json"
       ],
       "disposition": "Updated the checkpoint to 725 completed reviews, 298 pending files, 41 changed pending paths, 6,419 reading minutes, the current Kubernetes networking/configuration evidence and the latest full gate run.",
       "validation": [
         "Coverage totals recomputed from the current ledger.",
         "All 30 repository verification gates passed; 10,991 internal links and 234 anchors had zero broken or stale internal references.",
-        "External citation baseline had 2,539 records with no additions or removals."
+        "External citation baseline had 2,539 records with no additions or removals.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "1c19e7eaa5f95032cd8c8893c2a52311567c59e0f098ba3c3d036dc2b620a479"
+      "current_sha256": "df0cfe4df6f5e8eb128bdd0636c9c4b3cb963b96103683c11033d5eca83f8d72"
     },
     {
       "path": "docs/api-contract.md",
@@ -20232,32 +20422,44 @@
       "scan_candidates": [],
       "claims_checked": [
         "Generated API fields, deterministic ordering, tag normalization, per-record read time and aggregate chapter/section/category totals.",
-        "Python and TypeScript consumer examples, chapter filtering, canonical GitHub link construction and compatibility/versioning limits."
+        "Python and TypeScript consumer examples, chapter filtering, canonical GitHub link construction and compatibility/versioning limits.",
+        "Generated API fields/order, filtering, read-time aggregation and consumer examples versus api/index.json."
       ],
       "sources": [
         "scripts/gen_master_index.py",
         "api/index.json",
         "scripts/check_study_live.py",
-        "scripts/test_gates.py"
+        "scripts/test_gates.py",
+        "scripts/gen_master_index.py",
+        "api/index.json",
+        "scripts/check_study_live.py"
       ],
       "disposition": "Corrected consumer-example grammar and synchronized the documented MVCC read-time example and aggregate read-minute total with the regenerated API artifact.",
       "validation": [
         "Complete contract read; current metadata generation and consumer outputs checked against the regenerated API index.",
-        "The MVCC example record reports 14 minutes; the regenerated API total reports 6,421 minutes."
+        "The MVCC example record reports 14 minutes; the regenerated API total reports 6,421 minutes.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "8e5efb621c794a6a3ed16f2505c86a4a9ba69a0aa8bcb7b806dc4669c1df32c1"
+      "current_sha256": "375b542c8ce9a15d55efa219f0165061695b08d45460deab5381cec847b4eab5"
     },
     {
       "path": "docs/deployment.md",
       "genre": "guide/supporting",
       "baseline_sha256": "47a30b790870ae2608651b1389ecc83c353235738af5795bc0f6c97ec3913e1f",
-      "state": "pending",
+      "state": "reviewed",
       "scan_candidates": [],
-      "claims_checked": [],
-      "sources": [],
-      "disposition": null,
-      "validation": [],
-      "current_sha256": "47a30b790870ae2608651b1389ecc83c353235738af5795bc0f6c97ec3913e1f"
+      "claims_checked": [
+        "Pages build/Ruby selection, fail-closed allowlist, Supabase bindings, callback, private-path exclusion and optional live probe."
+      ],
+      "sources": [
+        "Current Pages middleware and repository configuration",
+        "https://developers.cloudflare.com/pages/configuration/build-image/"
+      ],
+      "disposition": "Matches current middleware and config; STUDY_ALLOWED_EMAIL is required and no address is stored in source.",
+      "validation": [
+        "Full runbook read and compared with implementation/configuration; official build-image doc confirms .ruby-version and RUBY_VERSION; repository gates pass."
+      ],
+      "current_sha256": "8ddfdc0783cafbf795c0fae346d876ff193c22babb614926d1c8e421e0437be8"
     },
     {
       "path": "docs/gate-design-principles.md",
@@ -20302,147 +20504,221 @@
       "path": "docs/reference-coverage-audit.md",
       "genre": "guide/supporting",
       "baseline_sha256": "3ff0de3175dfbe60182be04c646a6615dfde3fea0cd8fd0814591d6dd64ff0e9",
-      "state": "pending",
+      "state": "reviewed",
       "scan_candidates": [],
-      "claims_checked": [],
-      "sources": [],
-      "disposition": null,
-      "validation": [],
-      "current_sha256": "3ff0de3175dfbe60182be04c646a6615dfde3fea0cd8fd0814591d6dd64ff0e9"
+      "claims_checked": [
+        "Audit date, reference scope, classification method and difference between link liveness and semantic coverage."
+      ],
+      "sources": [
+        "Full dated document and its cited/local companion records"
+      ],
+      "disposition": "Retained as a dated reference snapshot, not proof that every cited statement is accurate.",
+      "validation": [
+        "Full text read; date/scope, historical versus current claims and local links checked."
+      ],
+      "current_sha256": "2ea8e5d74a2c53288aca12f81b608d2816a2a4514d61a37b592779a9bfed7b6b"
     },
     {
       "path": "docs/residential-verification-checklist.md",
       "genre": "guide/supporting",
       "baseline_sha256": "c31167c62266e012ebebb5ab28bddf5b95972722e2715211e5f40b5313d7008e",
-      "state": "pending",
+      "state": "revised",
       "scan_candidates": [],
-      "claims_checked": [],
-      "sources": [],
-      "disposition": null,
-      "validation": [],
-      "current_sha256": "c31167c62266e012ebebb5ab28bddf5b95972722e2715211e5f40b5313d7008e"
+      "claims_checked": [
+        "Run and job ID retrieval followed by valid gh syntax for the workflow job log."
+      ],
+      "sources": [
+        ".github/workflows/link-rot-audit.yml",
+        "GitHub CLI run/job documentation"
+      ],
+      "disposition": "Repaired the copyable log command after checking workflow job structure.",
+      "validation": [
+        "Command checked against the single-job workflow; Markdown links and repository gates pass."
+      ],
+      "current_sha256": "e151fa0b02bfa514e4a1955ac539fd48c47e0d7eb83fd53006d2319441b38760"
     },
     {
       "path": "docs/scripts-map.md",
       "genre": "guide/supporting",
       "baseline_sha256": "b652dd0fad895b40cbaa95d0171234495828ba874d10732dec99b25b182b48bc",
-      "state": "pending",
-      "scan_candidates": [
-        "definition contains absolute wording; inspect full condition"
+      "state": "revised",
+      "scan_candidates": [],
+      "claims_checked": [
+        "Gate order versus verify.sh; repair/restamp writer idempotence versus one-shot authoring helper contracts."
       ],
-      "claims_checked": [],
-      "sources": [],
-      "disposition": null,
-      "validation": [],
-      "current_sha256": "8f214170900745d07490ba69739d67974530c060b3155b93a339df88a923db24"
+      "sources": [
+        "scripts/verify.sh",
+        "scripts/check_fixpoint.py",
+        "Repair and authoring writer implementations"
+      ],
+      "disposition": "Corrected gate ordering and scoped the writer contract to tools checked by check_fixpoint.py.",
+      "validation": [
+        "Compared table and definitions with implementation; gate regression, fixed-point and repository suites pass."
+      ],
+      "current_sha256": "175602f4b0d5d283dd7b05f1c56b9dc5ddde0675c87360c4fa97cca4c727f212"
     },
     {
       "path": "docs/superpowers/plans/2026-08-25-full-restructure.md",
       "genre": "guide/supporting",
       "baseline_sha256": "d0a211134f4b560892d5a328b99ab18dcdc16a03a7289fc5ec0368bdc58b6cd8",
-      "state": "pending",
+      "state": "reviewed",
       "scan_candidates": [],
-      "claims_checked": [],
-      "sources": [],
-      "disposition": null,
-      "validation": [],
+      "claims_checked": [
+        "Historical restructuring steps, dates and current superseding repository conventions."
+      ],
+      "sources": [
+        "Full dated document and its cited/local companion records"
+      ],
+      "disposition": "Retained as a historical plan; AGENTS.md and contributing.md govern current conventions.",
+      "validation": [
+        "Full text read; date/scope, historical versus current claims and local links checked."
+      ],
       "current_sha256": "d0a211134f4b560892d5a328b99ab18dcdc16a03a7289fc5ec0368bdc58b6cd8"
     },
     {
       "path": "docs/superpowers/plans/2026-09-10-dead-link-remediation.md",
       "genre": "guide/supporting",
       "baseline_sha256": "530cb0d0d39003b8506c77a2a3dab55014f2de3a1d255912cb0c0ae4852f5357",
-      "state": "pending",
+      "state": "reviewed",
       "scan_candidates": [],
-      "claims_checked": [],
-      "sources": [],
-      "disposition": null,
-      "validation": [],
+      "claims_checked": [
+        "Historical remediation choices, dated results and distinction between automated/residential checks."
+      ],
+      "sources": [
+        "Full dated document and its cited/local companion records"
+      ],
+      "disposition": "Retained as a historical plan; the companion checklist carries the current human workflow.",
+      "validation": [
+        "Full text read; date/scope, historical versus current claims and local links checked."
+      ],
       "current_sha256": "530cb0d0d39003b8506c77a2a3dab55014f2de3a1d255912cb0c0ae4852f5357"
     },
     {
       "path": "docs/superpowers/plans/2026-10-01-reading-flow-and-corpus-review.md",
       "genre": "guide/supporting",
       "baseline_sha256": "86d951fb6cba5af985de64d3ad3536fe704ddc976571e1d9885e2d4c4d11b793",
-      "state": "pending",
+      "state": "reviewed",
       "scan_candidates": [],
-      "claims_checked": [],
-      "sources": [],
-      "disposition": null,
-      "validation": [],
+      "claims_checked": [
+        "Dated proposal, accepted reading-flow rules, completed work and historical checklist status."
+      ],
+      "sources": [
+        "Full dated document and its cited/local companion records"
+      ],
+      "disposition": "Retained as a historical plan; current rules and results are linked separately.",
+      "validation": [
+        "Full text read; date/scope, historical versus current claims and local links checked."
+      ],
       "current_sha256": "86d951fb6cba5af985de64d3ad3536fe704ddc976571e1d9885e2d4c4d11b793"
     },
     {
       "path": "docs/superpowers/plans/2026-10-02-product-resume-defense.md",
       "genre": "guide/supporting",
       "baseline_sha256": "53f03d210d81bb7c7dc909854cc4521193756675813580c3031ab48ec0ba21db",
-      "state": "pending",
+      "state": "reviewed",
       "scan_candidates": [],
-      "claims_checked": [],
-      "sources": [],
-      "disposition": null,
-      "validation": [],
+      "claims_checked": [
+        "Plan scope, evidence distinction and references to canonical private resume material."
+      ],
+      "sources": [
+        "Full dated document and its cited/local companion records"
+      ],
+      "disposition": "Retained as dated planning evidence; factual personal data remains in its canonical private location.",
+      "validation": [
+        "Full text read; date/scope, historical versus current claims and local links checked."
+      ],
       "current_sha256": "53f03d210d81bb7c7dc909854cc4521193756675813580c3031ab48ec0ba21db"
     },
     {
       "path": "docs/superpowers/plans/2026-10-02-resume-and-role-readiness.md",
       "genre": "guide/supporting",
       "baseline_sha256": "c49329e0c00e75611bcee73f592bad26c8ebde5e9f6145e6400947da4caac136",
-      "state": "pending",
+      "state": "reviewed",
       "scan_candidates": [],
-      "claims_checked": [],
-      "sources": [],
-      "disposition": null,
-      "validation": [],
+      "claims_checked": [
+        "Dated readiness scope, task state and canonical personal-data references."
+      ],
+      "sources": [
+        "Full dated document and its cited/local companion records"
+      ],
+      "disposition": "Retained as historical planning evidence; current facts remain in private canonical files.",
+      "validation": [
+        "Full text read; date/scope, historical versus current claims and local links checked."
+      ],
       "current_sha256": "c49329e0c00e75611bcee73f592bad26c8ebde5e9f6145e6400947da4caac136"
     },
     {
       "path": "docs/superpowers/plans/2026-10-04-read-aloud.md",
       "genre": "guide/supporting",
       "baseline_sha256": "ef5b495c47e329a120d23a512685d35c4e8e7cc8276aa572928eac751eacdd88",
-      "state": "pending",
+      "state": "reviewed",
       "scan_candidates": [],
-      "claims_checked": [],
-      "sources": [],
-      "disposition": null,
-      "validation": [],
+      "claims_checked": [
+        "Historical feature scope, implementation notes and validation limits."
+      ],
+      "sources": [
+        "Full dated document and its cited/local companion records"
+      ],
+      "disposition": "Retained as a dated plan; current source and validation records govern behavior.",
+      "validation": [
+        "Full text read; date/scope, historical versus current claims and local links checked."
+      ],
       "current_sha256": "ef5b495c47e329a120d23a512685d35c4e8e7cc8276aa572928eac751eacdd88"
     },
     {
       "path": "docs/superpowers/plans/2026-10-05-read-aloud-ui.md",
       "genre": "guide/supporting",
       "baseline_sha256": "8e791776e7d1dcd226514425c806a120b228852f62d6e170f157510419115125",
-      "state": "pending",
+      "state": "reviewed",
       "scan_candidates": [],
-      "claims_checked": [],
-      "sources": [],
-      "disposition": null,
-      "validation": [],
+      "claims_checked": [
+        "Historical reader-control requirements, interaction decisions and completion evidence."
+      ],
+      "sources": [
+        "Full dated document and its cited/local companion records"
+      ],
+      "disposition": "Retained as a historical UI plan; current behavior is covered by the browser suite.",
+      "validation": [
+        "Full text read; date/scope, historical versus current claims and local links checked."
+      ],
       "current_sha256": "8e791776e7d1dcd226514425c806a120b228852f62d6e170f157510419115125"
     },
     {
       "path": "docs/superpowers/plans/2026-10-07-reading-and-interview-quality.md",
       "genre": "guide/supporting",
       "baseline_sha256": "a1f991eeb32c1aadaad78cf20921e3d90246637218c1e036676aa2e1001c7844",
-      "state": "pending",
+      "state": "reviewed",
       "scan_candidates": [],
-      "claims_checked": [],
-      "sources": [],
-      "disposition": null,
-      "validation": [],
+      "claims_checked": [
+        "Historical quality scope, criteria and completion state."
+      ],
+      "sources": [
+        "Full dated document and its cited/local companion records"
+      ],
+      "disposition": "Retained as dated planning evidence; current status is owned by the review ledger.",
+      "validation": [
+        "Full text read; date/scope, historical versus current claims and local links checked."
+      ],
       "current_sha256": "a1f991eeb32c1aadaad78cf20921e3d90246637218c1e036676aa2e1001c7844"
     },
     {
       "path": "docs/superpowers/plans/2026-10-08-explanation-depth.md",
       "genre": "guide/supporting",
       "baseline_sha256": "ca855afa8b2eb9b537bdbc1f83073a25d2c95e87c8bebc87ac7a4853b7c17523",
-      "state": "pending",
+      "state": "revised",
       "scan_candidates": [],
-      "claims_checked": [],
-      "sources": [],
-      "disposition": null,
-      "validation": [],
-      "current_sha256": "0daa7ac749500da92885b2062ac312bb85f676df9093bec15ffe28556b77984c"
+      "claims_checked": [
+        "Work orders and acceptance criteria now agree with the closed ledger and final validation."
+      ],
+      "sources": [
+        "docs/2026-10-10-senior-precision-audit.json",
+        "docs/2026-10-10-senior-precision-validation.json"
+      ],
+      "disposition": "Recorded completed cohorts and evidence; replaced active instructions with a closure record.",
+      "validation": [
+        "Compared all marked work orders to per-file dispositions and validation results; links pass."
+      ],
+      "current_sha256": "c3e7c8ef41a3a442147835636707822c7ffa8b8772b2411f123159f070e16e6d"
     },
     {
       "path": "docs/superpowers/plans/2026-10-11-study-flow-uiux.md",
@@ -20466,49 +20742,74 @@
       "path": "docs/superpowers/specs/2026-08-25-full-restructure-design.md",
       "genre": "guide/supporting",
       "baseline_sha256": "7cd4f903a1527cb05bad15673e41cfbed83fd7d471d131c85e4065948eb1d3de",
-      "state": "pending",
+      "state": "reviewed",
       "scan_candidates": [],
-      "claims_checked": [],
-      "sources": [],
-      "disposition": null,
-      "validation": [],
+      "claims_checked": [
+        "Historical paths and TL;DR-era template choices are identified as superseded by current teaching rules."
+      ],
+      "sources": [
+        "Full dated document and its cited/local companion records"
+      ],
+      "disposition": "Retained as historical design; AGENTS.md and contributing.md govern current conventions.",
+      "validation": [
+        "Full text read; date/scope, historical versus current claims and local links checked."
+      ],
       "current_sha256": "7cd4f903a1527cb05bad15673e41cfbed83fd7d471d131c85e4065948eb1d3de"
     },
     {
       "path": "docs/superpowers/specs/2026-10-05-read-aloud-reader-ui-design.md",
       "genre": "guide/supporting",
       "baseline_sha256": "4bbaa52ba7507dbb5d374bae3537b6cfaa925dc1a1c7fd5cf07d0b569ad11e48",
-      "state": "pending",
+      "state": "reviewed",
       "scan_candidates": [],
-      "claims_checked": [],
-      "sources": [],
-      "disposition": null,
-      "validation": [],
+      "claims_checked": [
+        "Historical interaction requirements and recorded implementation/test state."
+      ],
+      "sources": [
+        "Full dated document and its cited/local companion records"
+      ],
+      "disposition": "Retained as a dated UI design; current behavior is covered by reader tests.",
+      "validation": [
+        "Full text read; date/scope, historical versus current claims and local links checked."
+      ],
       "current_sha256": "4bbaa52ba7507dbb5d374bae3537b6cfaa925dc1a1c7fd5cf07d0b569ad11e48"
     },
     {
       "path": "docs/superpowers/specs/2026-10-07-reading-and-interview-quality-design.md",
       "genre": "guide/supporting",
       "baseline_sha256": "1de5cb2aac0a983e741a3fc1a5f9a5a0920e909d1139aa816392db367f057d42",
-      "state": "pending",
+      "state": "reviewed",
       "scan_candidates": [],
-      "claims_checked": [],
-      "sources": [],
-      "disposition": null,
-      "validation": [],
+      "claims_checked": [
+        "Historical requirements and verification scope are distinguished from current corpus coverage."
+      ],
+      "sources": [
+        "Full dated document and its cited/local companion records"
+      ],
+      "disposition": "Retained as a dated design; whole-corpus outcome is documented separately.",
+      "validation": [
+        "Full text read; date/scope, historical versus current claims and local links checked."
+      ],
       "current_sha256": "1de5cb2aac0a983e741a3fc1a5f9a5a0920e909d1139aa816392db367f057d42"
     },
     {
       "path": "docs/superpowers/specs/2026-10-08-explanation-depth-design.md",
       "genre": "guide/supporting",
       "baseline_sha256": "d992f7903698b3e2acbcd4e3fcca94e019308e4a1f7e4a4855919277c9fa1663",
-      "state": "pending",
+      "state": "revised",
       "scan_candidates": [],
-      "claims_checked": [],
-      "sources": [],
-      "disposition": null,
-      "validation": [],
-      "current_sha256": "d992f7903698b3e2acbcd4e3fcca94e019308e4a1f7e4a4855919277c9fa1663"
+      "claims_checked": [
+        "Status and delivery stages now match the completed 1,026-file inventory."
+      ],
+      "sources": [
+        "docs/2026-10-10-senior-precision-audit.json",
+        "docs/2026-10-10-senior-precision-progress.md"
+      ],
+      "disposition": "Updated approved design from in-progress to completed and linked final coverage evidence.",
+      "validation": [
+        "Compared completion status with the current ledger and report; links pass."
+      ],
+      "current_sha256": "a82cbd89ae3d6dbad4d57fcdd53424aca5d2c556d565ffa0e7ee55d14347b55e"
     },
     {
       "path": "docs/superpowers/specs/2026-10-11-study-flow-uiux-design.md",
@@ -20555,17 +20856,22 @@
       "claims_checked": [
         "Gate 18 now names both the gate-defect self-test and the study-time grammar regression suite.",
         "The document lists all 30 current gate labels and distinguishes structural gates from semantic review.",
-        "The described verification and repair commands agree with verify.sh and the scripts map."
+        "The described verification and repair commands agree with verify.sh and the scripts map.",
+        "Gate names/order, regression-suite ownership and commands against verify.sh and current output."
       ],
       "sources": [
         "scripts/verify.sh",
-        "current progress ledgers"
+        "current progress ledgers",
+        "scripts/verify.sh",
+        "scripts/test_gates.py",
+        "scripts/check_fixpoint.py"
       ],
       "disposition": "Added the read-time generator regression to gate 18, aligned its table, and checked the gate descriptions against the passing verification suite.",
       "validation": [
-        "check_alignment, check_verify_wiring, check_fixpoint, test_gates and the full 30-gate suite pass."
+        "check_alignment, check_verify_wiring, check_fixpoint, test_gates and the full 30-gate suite pass.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "484b9d501dd47d8ff95de745f65517dbe0a84f0509a254f5b105281241adb521"
+      "current_sha256": "5185efc4789f73fd97f053db258bc7227655ce27852c5f21e5149a2b234b916e"
     },
     {
       "path": "lanes/INDEX.md",
@@ -20574,16 +20880,19 @@
       "state": "reviewed",
       "scan_candidates": [],
       "claims_checked": [
-        "Lane sequence introduces role-preparation materials in a useful dependency order."
+        "Lane sequence introduces role-preparation materials in a useful dependency order.",
+        "Re-read the committed content delta in its complete document context; verified wording, navigation/count claims and consistency with linked canonical material."
       ],
       "sources": [
-        "Local lane indexes"
+        "Local lane indexes",
+        "Current complete document and linked canonical chapter/index/revision records"
       ],
       "disposition": "Retained after checking routes and internal links.",
       "validation": [
-        "Complete document read."
+        "Complete document read.",
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
       ],
-      "current_sha256": "7148e11d657b04e9d3e63f31e754606dd9193ddfc43cb65668f579ad3c6eb2b7"
+      "current_sha256": "aaf4cf4cb579fe757f9874a582e913d19fb04154f14fbcee7b3816016281663b"
     },
     {
       "path": "projects/INDEX.md",
@@ -21174,13 +21483,12 @@
   "coverage": {
     "inventory": 1026,
     "states": {
-      "pending": 25,
-      "reviewed": 432,
-      "revised": 569
+      "reviewed": 453,
+      "revised": 573
     },
-    "pending": 25,
-    "reviewed": 432,
-    "revised": 569,
-    "pending_paths_with_changed_content_hash": 3
+    "pending": 0,
+    "reviewed": 453,
+    "revised": 573,
+    "pending_paths_with_changed_content_hash": 0
   }
 }

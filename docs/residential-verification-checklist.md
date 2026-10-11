@@ -15,9 +15,12 @@
 ## 0. Pull the current verdicts from the last CI run
 
 ```bash
-gh run list --workflow=link-rot-audit.yml --limit 1          # get run id
-gh run view --log --job=$(gh run view <RUN_ID> --json jobs \
-  --jq '.jobs[0].databaseId') | grep -E '  (DEAD|SUSPECT|warn) '
+RUN_ID="$(gh run list --workflow=link-rot-audit.yml --limit 1 \
+  --json databaseId --jq '.[0].databaseId')"
+JOB_ID="$(gh run view "$RUN_ID" --json jobs \
+  --jq '.jobs[0].databaseId')"
+gh run view "$RUN_ID" --job "$JOB_ID" --log \
+  | grep -E '  (DEAD|SUSPECT|warn) '
 ```
 
 Why vantage matters (full lesson: remediation report, lesson 6):

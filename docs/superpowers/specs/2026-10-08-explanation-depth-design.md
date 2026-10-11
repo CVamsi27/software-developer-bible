@@ -1,6 +1,6 @@
 # Explanation Depth — Design and Review Plan
 
-Status: approved by the user on 2026-10-08; implementation in progress.
+Status: approved by the user on 2026-10-08; whole-corpus review and implementation completed on 2026-10-12.
 
 ## Problem and outcome
 
@@ -79,11 +79,11 @@ Each batch has its own review notes and verification. Finish the whole chapter a
 - [x] **1. Inventory and review ledger.** Enumerate tracked and newly authored Markdown outside dependencies/build output. Record file path, genre, content hash, review state, section findings, disposition and validation evidence. Account for every path; a scanner pass does not set a file to reviewed. Produce `docs/2026-10-08-explanation-depth-review.json` and a short progress report.
 - [x] **2. JavaScript scope pilot.** Review lexical environment, execution context, scope, hoisting, closures and their revision/interview companions together. Verify explanations against primary language sources and execute the observable cases below. Publish the reference treatment and record the criteria used to assess it.
 - [x] **3. Core frontend foundations.** Review the rest of JavaScript, TypeScript, HTML/CSS/browser behavior, React and forms in prerequisite order. Follow with Next.js, animation and mobile. Resolve glossary-only descriptions, lifecycle diagrams, unexplained code and ownership gaps.
-- [ ] **4. Backend foundations and application boundaries.** Review Node.js, database, HTTP/API, authentication/authorization and NestJS. Prioritize complete transaction/MVCC traces. Continue through caching, brokers, microservices, GraphQL, AI and Java; optional/deferred role priority affects sequence, not review coverage.
-- [ ] **5. Architecture and platform.** Review design-pattern responsibilities and collaboration before variants; derive system-design decisions from requirements and failure cases. Review platform tooling from input through controller/runtime behavior to observable deployment/operations results.
-- [ ] **6. Quality, real-time and interview toolkit.** Review what each measurement or guarantee actually observes; explain race, retry and recovery conditions. Ensure interview answers contain reasoning for follow-up questions and revision companions refer to the actual source mechanisms.
-- [ ] **7. Strategy, lanes, navigation and project material.** Review learner prerequisites, study order and project traces. Keep factual experience and hypothetical designs distinct. Fix missing explanations in operational documents according to their genre. Review personal and historical records for clarity/cross-references while preserving their facts, dates, decisions and canonical location.
-- [ ] **8. Whole-corpus reconciliation and release evidence.** Check the ledger for unreviewed or unresolved files, reconcile changed terminology and example contracts across companions, regenerate owned metadata, and run the repository/build/browser checks below. Report semantic coverage separately from automated coverage.
+- [x] **4. Backend foundations and application boundaries.** Review Node.js, database, HTTP/API, authentication/authorization and NestJS. Prioritize complete transaction/MVCC traces. Continue through caching, brokers, microservices, GraphQL, AI and Java; optional/deferred role priority affects sequence, not review coverage.
+- [x] **5. Architecture and platform.** Review design-pattern responsibilities and collaboration before variants; derive system-design decisions from requirements and failure cases. Review platform tooling from input through controller/runtime behavior to observable deployment/operations results.
+- [x] **6. Quality, real-time and interview toolkit.** Review what each measurement or guarantee actually observes; explain race, retry and recovery conditions. Ensure interview answers contain reasoning for follow-up questions and revision companions refer to the actual source mechanisms.
+- [x] **7. Strategy, lanes, navigation and project material.** Review learner prerequisites, study order and project traces. Keep factual experience and hypothetical designs distinct. Fix missing explanations in operational documents according to their genre. Review personal and historical records for clarity/cross-references while preserving their facts, dates, decisions and canonical location.
+- [x] **8. Whole-corpus reconciliation and release evidence.** Check the ledger for unreviewed or unresolved files, reconcile changed terminology and example contracts across companions, regenerate owned metadata, and run the repository/build/browser checks below. Report semantic coverage separately from automated coverage.
 
 Do not stop after role-essential pages or the 423 candidate documents. Every authored Markdown path receives a recorded review disposition. A correct passage can remain unchanged, with a reason; a historical record can retain its original context, with that genre decision recorded.
 
@@ -116,4 +116,4 @@ Acceptance requires every inventory entry to have a completed review disposition
 
 Keep chapter IDs and canonical topic homes stable. Preserve the practical/formal definition pair where correct, one final Summary, separate revision, source-linked authored questions, existing role-priority semantics and private-data boundaries. Do not duplicate personal data, alter job-history claims, or commit/push in `career-ops`.
 
-The user approved this design on 2026-10-08 and subsequently authorized completion, commit and push. The checkboxes track the whole-document review; pending batches and final verification remain explicit. Publishing a site deployment is separate from committing and pushing source changes.
+The user approved this design on 2026-10-08 and subsequently authorized completion, commit and push. The 12 October ledger records a current disposition for all 1,026 inventoried Markdown files, with no pending entries. The [final progress report](../../2026-10-10-senior-precision-progress.md) records the review totals, verification and remaining integration limits. Publishing a site deployment is separate from committing and pushing source changes.

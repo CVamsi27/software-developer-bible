@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "date": "2026-10-12",
-  "status": "verified_batches_complete_corpus_review_pending",
+  "status": "awaiting_remote_site_build",
   "coverage_record": "docs/2026-10-10-senior-precision-audit.json",
   "results": {
     "postgres-results": {
@@ -3874,13 +3874,14 @@
     "green": "All 87 planted-defect and clean-control gate cases pass after repair."
   },
   "limits": [
-    "No complete fresh semantic review is claimed for pending documents or header-only changes.",
+    "Scanners and metadata writers do not establish semantic accuracy; all 1,026 tracked Markdown documents have an individually reviewed or revised current-hash disposition.",
     "PostgreSQL and Redis tests use isolated disposable containers without host ports or mounted data; containers stopped afterward.",
     "OAuth callback record executed locally; no real provider code exchange or identity validation integration executed.",
     "No live Kubernetes, managed-service failover, cloud DB, cross-region or all-chapter compilation test.",
     "Standalone TS snippets are strictly checked only where recorded; other selected TS examples were transpiled and executed.",
     "Temporary validation fixtures are recorded for this run, not installed as a universal all-chapter test suite.",
-    "No live Raft/Zab fault injection, RabbitMQ priority integration, load-balancer deployment or Debezium connector was executed; added source/trace checks are distinguished from PostgreSQL execution."
+    "No live Raft/Zab fault injection, RabbitMQ priority integration, load-balancer deployment or Debezium connector was executed; added source/trace checks are distinguished from PostgreSQL execution.",
+    "A local Jekyll build could not run on the available Ruby 2.6/4.0 toolchains; the repository-pinned Ruby 3.4.11 site build and rendered-route check remain pending on the pushed branch."
   ],
   "mobile_prose_regression": {
     "cause": "Plain text create/redirect/ownership/deletion/analytics extends outside a 320px paragraph; computed text Range confirmed the overflow.",
@@ -3898,30 +3899,32 @@
       "command": "bash scripts/verify.sh",
       "passed": 30,
       "total": 30,
-      "result": "passed after the production-hardening cohort and audit update"
+      "result": "passed after all current Markdown, audit and generated metadata changes"
     },
     "internal_links": {
-      "checked": 10988,
+      "checked": 11008,
       "anchors_verified": 234,
       "broken": 0,
       "stale_labels": 0,
       "stale_inline_paths": 0,
-      "external_links_skipped": 8639
+      "external_links_skipped": 8656
     },
     "external_link_baseline": {
-      "records": 2545,
+      "baseline_records": 5674,
+      "current_referenced_records": 2561,
       "added": 0,
-      "removed": 0
+      "removed": 3113,
+      "result": "passed; no new unbaselined URL"
     },
     "corpus_counts": {
-      "markdown_files": 1023,
+      "markdown_files": 1026,
       "study_chapters": 671,
       "interview_banks": 40
     },
     "read_time": {
       "content_files": 671,
       "indexes": 156,
-      "total_minutes": 6422,
+      "total_minutes": 6429,
       "result": "passed"
     },
     "study_time_grammar_regression": {
@@ -3930,22 +3933,37 @@
       "result": "passed"
     },
     "gate_regression_cases": {
-      "passed": 89,
-      "total": 89,
+      "passed": 95,
+      "total": 95,
       "result": "passed"
     },
+    "rendered_heading_unit_tests": {
+      "passed": 3,
+      "total": 3,
+      "command": "python3 scripts/test_rendered_headings.py"
+    },
+    "dora_example_runtime": {
+      "node": "23.7.0",
+      "passed": 7,
+      "total": 7,
+      "execution": "Node.js experimental type stripping; half-open window, staging exclusion, metrics, attribution, multiple recoveries and invalid/empty cases"
+    },
     "coverage": {
-      "inventory": 1023,
+      "inventory": 1026,
       "states": {
-        "pending": 289,
-        "reviewed": 265,
-        "revised": 469
+        "reviewed": 453,
+        "revised": 573
       },
-      "pending_paths_with_changed_content_hash": 39
+      "pending": 0,
+      "pending_paths_with_changed_content_hash": 0
     },
     "stale_completed_review_hashes": 0,
-    "browser_rendered_page_checks": "Not rerun for this content-only cohort; earlier rendered evidence is retained under previous_final_checks.",
-    "git_diff_check": "Passed after production-hardening documentation, audit and progress updates."
+    "jekyll_local": {
+      "status": "blocked by local runtime",
+      "details": "The default bundle launcher selects macOS Ruby 2.6 and lacks Bundler 2.5.11. Homebrew Ruby 4.0.6 cannot build locked legacy native dependencies posix-spawn 0.3.15 and rdiscount 1.6.8. Repository CI pins Ruby 3.4.11; run site-build manually against the pushed branch."
+    },
+    "rendered_browser_ui": "Not rerun after documentation-only closeout; previous_final_checks records passing reader, navigation and read-aloud suites. No UI source changed in this closeout.",
+    "git_diff_check": "Passed after the latest Markdown and generated API changes."
   },
   "previous_final_checks": {
     "repository_gates": {

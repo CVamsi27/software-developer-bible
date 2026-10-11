@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<article class="post">
+  {% assign heading_fragments = content | split: '<h1' %}
+  {% if page.title and heading_fragments.size == 1 %}
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title | escape }}</h1>
+  </header>
+  {% endif %}
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+</article>

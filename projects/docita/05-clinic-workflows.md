@@ -137,7 +137,7 @@ Start with the business invariant and identify the write that enforces it. Keep 
 
 | Assessment | What it means here |
 | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Current strengths | Conditional reply transitions and the appointment exclusion constraint protect important paths. |
+| Current strengths | Consultation writes group the appointment and queue-token updates in a transaction; the inspected migration defines an exclusion constraint for overlapping active appointments. |
 | Current limitations | Other preflight checks and token allocation can race; local-time assumptions and unused buffer constants can mislead readers. |
 | Recommended design | Enforce overlapping-slot and token uniqueness in the database, couple related state changes transactionally, and calculate clinic calendar boundaries from explicit timezone policy. |
 | Evidence needed | Concurrent bookings yield one winner, terminal visits reject stale actions, queue tokens remain unique, and timezone/DST fixtures preserve the intended clinic day. |

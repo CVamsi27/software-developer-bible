@@ -16,8 +16,8 @@
 The learning chapters are organized into four categories, each with a reading-flow INDEX and revision companion.
 
 | Category | Files | Why it matters |
-| ---------------------------------------------------------------- | ----: | ---------------------------------------------------------------------------------- |
-| [Runtime & Async](01-runtime-and-async/INDEX.md) | 2 | The event loop + Web Streams/test runner — every senior interview tests this |
+| ---------------------------------------------------------------- | ----: | ------------------------------------------------------------------------------------------- |
+| [Runtime & Async](01-runtime-and-async/INDEX.md) | 2 | Scheduling, stream demand and test completion explain request latency and resource lifetime |
 | [I/O & Data](02-io-and-data/INDEX.md) | 4 | Streams, buffers, file system, HTTP — the I/O primitives |
 | [Processes & Concurrency](03-processes-and-concurrency/INDEX.md) | 3 | Clustering, child processes/worker threads, lifecycle — production concerns |
 | [Security & Operations](04-security-and-operations/INDEX.md) | 4 | Security, diagnostics (debug/profiling), framework internals, full-stack self-test |

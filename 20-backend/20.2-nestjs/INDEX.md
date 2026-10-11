@@ -1,6 +1,6 @@
 # NestJS — Index
 
-> **Study time:** ≈ 3 h 12 m of reading (24 files, ~8 min average).
+> **Study time:** ≈ 3 h 17 m of reading (24 files, ~8 min average).
 > **24 files** — NestJS framework from modules and controllers to guards, pipes, interceptors, CQRS, microservices, testing, configuration, lifecycle/shutdown, scheduling, OpenAPI docs, custom decorators, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-24-blue)](../../INDEX.md)
@@ -64,6 +64,7 @@ The order of execution and each stage's responsibilities. Read in order. Categor
 | 03 | [Pipes](02-request-lifecycle/20.2.2.03-pipes.md) | Validation pipes, transformation pipes, built-in pipes, custom pipes | Essential | Important | 7 min |
 | 04 | [Interceptors](02-request-lifecycle/20.2.2.04-interceptors.md) | Request/response transformation, logging, caching, mapping, async interceptors | Essential | Important | 7 min |
 | 05 | [Exception Filters](02-request-lifecycle/20.2.2.05-exception-filters.md) | Built-in exceptions, custom exception filters, catch-all filters, `@Catch()` | Essential | Important | 8 min |
+| 06 | [Request Context](02-request-lifecycle/20.2.2.06-request-context-and-async-local-storage.md) | AsyncLocalStorage lifetime, trusted identity and Observable subscription | Essential | Important | 8 min |
 
 ---
 
@@ -84,11 +85,11 @@ Production hygiene. Category INDEX: [Quality & Operations](04-quality-and-operat
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Configuration & Validation](04-quality-and-operations/20.2.4.01-configuration-validation.md) | ConfigModule, ValidationPipe, class-validator, Joi, DTOs, env validation | Essential | Important | 12 min |
+| 01 | [Configuration & Validation](04-quality-and-operations/20.2.4.01-configuration-validation.md) | ConfigModule, ValidationPipe, class-validator, Joi, DTOs, env validation | Essential | Important | 13 min |
 | 02 | [Testing](04-quality-and-operations/20.2.4.02-testing.md) | Jest, TestingModule, supertest, Testcontainers, e2e/integration/unit | Essential | Important | 13 min |
-| 03 | [Lifecycle Hooks & Graceful Shutdown](04-quality-and-operations/20.2.4.03-lifecycle-hooks-graceful-shutdown.md) | Lifecycle hook map + ordering, `enableShutdownHooks()`, SIGTERM, Kubernetes terminationGracePeriod, draining connections, closing pools in order | Essential | Important | 14 min |
-| 04 | [Scheduling & Background Jobs](04-quality-and-operations/20.2.4.04-scheduling-background-jobs.md) | @nestjs/schedule + dynamic API, distributed cron locks (Redis NX), BullMQ queues, retries/backoff/rate limits, idempotent handlers, job observability | Essential | Important | 19 min |
-| 05 | [Swagger & OpenAPI](04-quality-and-operations/20.2.4.05-swagger-openapi-nestjs.md) | @nestjs/swagger setup, DocumentBuilder, @ApiProperty DTOs, generics + @ApiExtraModels, security schemes, spec JSON codegen, CI contract checks | Essential | Important | 14 min |
+| 03 | [Lifecycle Hooks & Graceful Shutdown](04-quality-and-operations/20.2.4.03-lifecycle-hooks-graceful-shutdown.md) | Lifecycle hook map + ordering, `enableShutdownHooks()`, SIGTERM, Kubernetes terminationGracePeriod, draining connections, closing pools in order | Essential | Important | 15 min |
+| 04 | [Scheduling & Background Jobs](04-quality-and-operations/20.2.4.04-scheduling-background-jobs.md) | @nestjs/schedule + dynamic API, distributed cron locks (Redis NX), BullMQ queues, retries/backoff/rate limits, idempotent handlers, job observability | Essential | Important | 20 min |
+| 05 | [Swagger & OpenAPI](04-quality-and-operations/20.2.4.05-swagger-openapi-nestjs.md) | @nestjs/swagger setup, DocumentBuilder, @ApiProperty DTOs, generics + @ApiExtraModels, security schemes, spec JSON codegen, CI contract checks | Essential | Important | 15 min |
 
 ---
 
@@ -107,9 +108,9 @@ Category INDEX: [Advanced & Interview](05-advanced-and-interview/INDEX.md).
 
 1. **Core Architecture** — explain provider tokens, module visibility and instance identity.
 2. **Request Lifecycle** — trace successful and rejected requests, then use its revision companion.
-3. **Patterns** (CQRS + Microservices) — for senior/DDD roles
-4. **Quality & Operations** (5 files) — production hygiene
-5. **Custom Decorators** — senior-level
+3. **Patterns** — distinguish local dispatch from remote delivery, then explain projection lag and a lost reply.
+4. **Quality & Operations** — reject invalid startup settings, test the real contract, drain accepted work, and recover interrupted jobs.
+5. **Custom Decorators** — connect each metadata marker to its registered enforcement or transformation stage.
 6. **Category revision, then Interview Questions** — recall the mechanism before practicing changed conditions.
 
 ---

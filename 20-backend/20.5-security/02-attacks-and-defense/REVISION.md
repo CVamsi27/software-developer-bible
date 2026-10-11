@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Security-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -25,6 +25,18 @@ Source: [XSS (Cross-Site Scripting)](20.5.2.01-xss.md)
 **Q:** What protection can CSP add when an unsafe execution sink remains?
 
 **A:** A restrictive policy can block classes of script execution and resource loading, but cannot repair every unsafe sink. HttpOnly protects direct cookie reads; it does not stop injected code from issuing authenticated requests.
+
+**Q:** When should a strict CSP authorize scripts with a nonce versus a hash?
+
+**A:** A nonce should be unpredictable and generated for each response, then added only to trusted script elements. A hash authorizes exact script content and changes when that content changes; it can fit static output more easily. Caching and template delivery must preserve the chosen contract.
+
+Source: [OWASP Content Security Policy Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html) · [MDN CSP guide](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CSP)
+
+**Q:** What does Trusted Types enforce, and what responsibility remains with the application?
+
+**A:** With enforcement enabled in a supporting browser, covered DOM injection sinks reject ordinary strings unless a configured policy provides trusted values. The policy must perform a safe transformation such as sanitization; Trusted Types do not make an unsafe policy safe or replace output protection elsewhere.
+
+Source: [MDN Trusted Types API](https://developer.mozilla.org/en-US/docs/Web/API/Trusted_Types_API)
 
 ## CSRF (Cross-Site Request Forgery)
 
@@ -58,6 +70,12 @@ Source: [SQL Injection](20.5.2.03-sql-injection.md)
 
 **A:** Bind untrusted values rather than concatenate them into the statement. Parameters generally do not stand for identifiers or keywords; construct those from validated allowlists.
 
+**Q:** What should a query do when a user can select its sort column or direction?
+
+**A:** Keep the SQL grammar in application code and map each public choice to a fixed identifier or keyword. A placeholder binds values, not identifiers, and quoting a valid identifier does not authorize its use.
+
+Source: [OWASP SQL Injection Prevention](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html) · [Prisma ORM v6 raw queries](https://www.prisma.io/docs/orm/v6/prisma-client/using-raw-sql/raw-queries)
+
 **Q:** How does least privilege reduce the impact of a SQL injection flaw?
 
 **A:** An injected statement runs with the database role's authority. Restrict role permissions and data reach, but do not treat RLS or low privilege as a replacement for removing the injection flaw.
@@ -68,7 +86,27 @@ Source: [API Security Best Practices & OWASP API Top 10](20.5.2.04-api-security-
 
 **Q:** Which identity, input and access claims must an API validate?
 
-**A:** Verify credential evidence, authorize the specific object and operation, and validate expected payload fields. Mass assignment, tenant scope and response-property access need explicit checks too.
+**A:** Verify the credential, then authorize the principal for this operation and object using trusted tenant and state context. Independently allowlist writable fields and project only readable response properties. A valid identity is not permission to every row or field.
+
+Source: [OWASP API1 — Broken Object Level Authorization](https://api-security.owasp.org/editions/2023/en/0xa1-broken-object-level-authorization/) · [OWASP API3 — Broken Object Property Level Authorization](https://api-security.owasp.org/editions/2023/en/0xa3-broken-object-property-level-authorization/)
+
+**Q:** Why should a tenant-scoped read include the tenant in its data-access predicate?
+
+**A:** The tenant identifier from a route or header is only a request value. Verify current membership, then constrain the resource lookup by the verified tenant and its access policy; a guessed identifier must not widen the query.
+
+Source: [OWASP API1 — Broken Object Level Authorization](https://api-security.owasp.org/editions/2023/en/0xa1-broken-object-level-authorization/)
+
+**Q:** Why are request-rate limits insufficient as the only resource budget?
+
+**A:** A permitted request can still contain too many records, trigger an expensive query, run too long, fan out concurrently or incur a paid downstream call. Bound the cost dimensions at their respective boundaries and test them separately.
+
+Source: [OWASP API4 — Unrestricted Resource Consumption](https://api-security.owasp.org/editions/2023/en/0xa4-unrestricted-resource-consumption/)
+
+**Q:** How does abuse of a sensitive business flow differ from resource exhaustion?
+
+**A:** Resource exhaustion consumes infrastructure or paid capacity; business-flow abuse follows valid operations in a way that harms domain outcomes, such as reserving all inventory. Apply domain quotas, state transitions and idempotency in addition to technical budgets.
+
+Source: [OWASP API6 — Unrestricted Access to Sensitive Business Flows](https://api-security.owasp.org/editions/2023/en/0xa6-unrestricted-access-to-sensitive-business-flows/)
 
 **Q:** How can an API return useful errors without exposing sensitive details?
 
@@ -76,7 +114,25 @@ Source: [API Security Best Practices & OWASP API Top 10](20.5.2.04-api-security-
 
 **Q:** Why do APIs need object and operation checks even behind a trusted network boundary?
 
-**A:** Compromised internal workloads and routing mistakes can cross a perimeter. Enforce identity and resource-specific policy at the application boundary, with trusted service context rather than network location alone.
+**A:** Network placement can reduce exposure but does not establish which workload or user sent a request, nor which record it may change. Authenticate the caller and apply resource-specific policy at the service that owns the operation.
+
+**Q:** Why does an outbound host allowlist need connection-time and redirect controls?
+
+**A:** DNS can resolve differently between validation and connection, and a permitted host can redirect the client elsewhere. Enforce destination policy through the actual connector for each hop, disable redirects or revalidate them, and restrict network egress.
+
+Source: [OWASP SSRF Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html)
+
+**Q:** What must an API do before trusting a response from a third-party service?
+
+**A:** Use authenticated TLS, apply explicit time and size limits, validate the response schema, and constrain redirects and downstream effects. A reputable provider's data is still external input.
+
+Source: [OWASP API10 — Unsafe Consumption of APIs](https://api-security.owasp.org/editions/2023/en/0xaa-unsafe-consumption-of-apis/)
+
+**Q:** What information belongs in a client-facing problem response versus a diagnostic log?
+
+**A:** Return stable, documented interface details that let the client respond; keep stack traces, query text, secrets and sensitive internal context in protected diagnostics. A problem-details format describes the HTTP interface and is not a debugging channel.
+
+Source: [RFC 9457 — Problem Details for HTTP APIs](https://www.rfc-editor.org/rfc/rfc9457.html)
 
 ## Trace the boundary that changed
 
@@ -93,6 +149,8 @@ Source: [XSS](20.5.2.01-xss.md), [CSRF](20.5.2.02-csrf.md), [SQL injection](20.5
 **Q:** Does parameterizing a search term make `%` a literal character in `LIKE`?
 
 **A:** No. Binding separates SQL syntax from data, while `LIKE` still interprets pattern characters inside the value. Escape pattern characters when the feature promises a literal substring search.
+
+Source: [PostgreSQL 18 pattern matching](https://www.postgresql.org/docs/18/functions-matching.html)
 
 **Q:** Why does resolving an allowed hostname before `fetch` leave an SSRF gap?
 

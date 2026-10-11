@@ -20,9 +20,9 @@ import { onRequestGet as logout } from "./logout.ts";
  *
  *     node --experimental-strip-types --test functions/auth/routes.test.mjs
  */
-const ALLOWED = "cvamsik99@gmail.com";
+const ALLOWED = "owner@example.test";
 const SUPABASE = "https://example.supabase.co";
-const ENV = { SUPABASE_URL: SUPABASE, SUPABASE_ANON_KEY: "publishable-key" };
+const ENV = { SUPABASE_URL: SUPABASE, SUPABASE_ANON_KEY: "publishable-key", STUDY_ALLOWED_EMAIL: ALLOWED };
 
 /** Stub Supabase's /auth/v1/user, capturing the request the route makes. */
 function stubUser(user, { status = 200, throws = false } = {}) {
@@ -122,6 +122,25 @@ test("an account outside the allowlist is refused with the denial target", async
       redirect: "https://personal.buildora.work/?study=access-denied",
     });
     assert.equal(response.headers.get("Set-Cookie"), null, "no cookie for a refused account");
+  } finally {
+    stub.restore();
+  }
+});
+
+test("a missing allowlist configuration fails closed", async () => {
+  const stub = stubUser({ email: ALLOWED });
+  try {
+    const response = await post({
+      body: { access_token: "a.b.c" },
+      env: { SUPABASE_URL: SUPABASE, SUPABASE_ANON_KEY: "publishable-key" },
+    });
+    assert.equal(response.status, 403);
+    assert.deepEqual(await response.json(), {
+      ok: false,
+      reason: "not-allowed",
+      redirect: "https://personal.buildora.work/?study=access-denied",
+    });
+    assert.equal(response.headers.get("Set-Cookie"), null);
   } finally {
     stub.restore();
   }

@@ -33,7 +33,7 @@ Tool questions ("Jest or Vitest?") are cheap. Strategy questions ("what do you t
 ## Key takeaways
 
 - The pyramid guides cost and feedback; choose the actual mix from the defect risks and boundaries you need to examine.
-- Coverage is a **negative** signal: low coverage means untested code; high coverage proves nothing about assertion quality.
+- Coverage records execution, not correctness. Use uncovered critical paths to find missing scenarios, and inspect assertions for meaningful checks.
 - Write tests for behavior at boundaries, not implementation details.
 
 ---

@@ -17,7 +17,7 @@
 | ----------------------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | **Edge Caching** | PoPs, origin shielding, cache keys, TTL/SWR, stale-while-revalidate | Static + cacheable API responses live at the edge; everything needs a cache key |
 | **Invalidation & Versioning** | Tag/purge APIs, content-hashed URLs, deploy-time invalidation | Purge under verified provider semantics; versioned assets avoid overwriting an identity |
-| **Edge Compute** | Cloudflare Workers, Vercel Edge, compute-light request handling | Auth-adjacent routing, A/B, rewrites at the edge under a measured runtime/data-authority contract |
+| **Edge Compute** | Cloudflare Workers and provider-specific edge runtimes | Routing or bounded request logic under a measured runtime and data-authority contract |
 | **Multi-CDN Steering** | DNS/GSLB, RUM-based weights, failover health checks, cost arbitration | Steer by measured per-region performance; failover needs warm caches + short TTLs |
 | **Media at the Edge** | Image CDNs, AVIF/WebP negotiation, HLS/DASH ladders, signed URLs | Transform on the fly; format must be part of the cache key |
 | **Compliance & PHI** | Regulated data at the edge, scrubbing, residency | Per-request personalized/regulated processing stays at origin unless you have a caching-key + scrubbing story |
@@ -38,20 +38,20 @@
 ## The Interview Answer in One Table
 
 | Question | Answer spine |
-| ---------------------------- | --------------------------------------------------------------------------------------------------------- |
+| ------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | What belongs at the edge? | Static assets, cached API responses, auth-adjacent routing — anything compute-light and latency-sensitive |
-| What never goes there? | Per-request personalized/regulated data processing without a clear caching key and scrubbing story |
+| How should private or regulated data be handled? | Keep personalized responses out of shared caching unless authorization, processing, logging, and residency policies permit it; edge computation still needs those controls |
 | How do you invalidate? | Tag/purge APIs, versioned URLs (`app.[hash].js`), short TTL + SWR for semi-dynamic |
 | Why multi-CDN? | Resilience to provider outages, per-region performance wins, egress cost arbitrage — proven with RUM data |
 | How do you serve media fast? | Edge image transforms + format negotiation; video as CMAF/HLS-DASH ladders behind origin shields |
-| Real example to cite | SPA assets on Cloudflare Workers + ~50KB same-origin proxy worker (Docita topology) |
+| Real example to cite | A Vite SPA's static assets and explicitly routed API proxy; verify the deployed trust boundary and measured bundle size |
 
 ---
 
 ## Reading Passes
 
 - **Before any system-design interview with a "global users" angle** — pairs with [HTTP caching](../../20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.04-http-caching.md)
-- Chapter 01 first (45 min); chapters 02/03 for scale-, cost-, or media-heavy roles
+- Chapter 01 first (7 min); chapters 02/03 for scale-, cost-, or media-heavy roles
 - Skim the provider evaluation criteria if pressed for time
 
 ## Common interview questions

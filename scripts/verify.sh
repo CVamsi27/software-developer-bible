@@ -325,19 +325,25 @@ else
 fi
 
 echo ""
-echo "18/30 test_gates.py — the gates still catch their defects"
-echo "     python3 scripts/test_gates.py"
-echo "------------------------------------------------------------"
 # The meta-gate: plants each sandboxable gate's canonical defect in a temp
 # tree and asserts the gate exits non-zero (fire side), then runs it on
 # clean content including a real passing chapter (clean side, so a gate
 # broken to fire on everything cannot pass either). Closes the gap gates
 # 15-17 leave: they watch wiring, the fence reader, and the fixers — not
 # whether detection itself still works.
-if python3 scripts/test_gates.py > /dev/null 2>&1 && node --test assets/read-aloud.test.cjs assets/study-state.test.cjs scripts/roadmap-return.test.cjs; then
+echo "18/30 test_gates.py + test_read_time.py — gates and generated study-time text"
+echo "     python3 scripts/test_gates.py && python3 scripts/test_read_time.py"
+echo "------------------------------------------------------------"
+# The meta-gate plants each sandboxable gate's canonical defect in a temp
+# tree and asserts both the fire and clean sides. Reading-time tests pin the
+# generated singular/plural grammar; the site tests keep the main reading UI
+# and roadmap return links covered alongside the corpus gates.
+if python3 scripts/test_gates.py > /dev/null 2>&1 && python3 scripts/test_read_time.py > /dev/null 2>&1 && node --test assets/read-aloud.test.cjs assets/study-state.test.cjs scripts/roadmap-return.test.cjs > /dev/null 2>&1; then
     echo "  PASS"
 else
     python3 scripts/test_gates.py | tail -10
+    python3 scripts/test_read_time.py | tail -10
+    node --test assets/read-aloud.test.cjs assets/study-state.test.cjs scripts/roadmap-return.test.cjs | tail -10
     echo "  FAIL — a gate no longer detects its canonical defect"
     FAIL=1
 fi

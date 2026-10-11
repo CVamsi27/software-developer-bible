@@ -1,6 +1,6 @@
 # Message Brokers — Index
 
-> **Study time:** ≈ 34 min of reading (5 files, ~7 min average).
+> **Study time:** ≈ 37 min of reading (5 files, ~7 min average).
 > The transport layer of event-driven systems: Kafka's log model and RabbitMQ's queue model, delivery semantics, durability configuration, consumer-group operations, and the patterns (envelopes, DLQs, outbox, idempotency) that make async pipelines production-safe. Pairs with [Microservices](../20.6-microservices/INDEX.md) (the architecture that uses brokers) and [Queues & Async](../../30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md) (the theory).
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../../INDEX.md)
@@ -14,9 +14,9 @@
 The 4 content files classify into 3 conceptual categories + drills.
 
 | Category | Files | Why it matters |
-| --------------------- | ----: | -------------------------------------------------------------------------------- |
+| --------------------- | ----: | --------------------------------------------------------------------------------------------------------- |
 | **Model & Semantics** | 1 | Log vs queue, delivery guarantees, when a broker is the wrong tool |
-| **Operations** | 1 | Replication/ISR, produce durability, consumer groups, rebalances, lag as the SLI |
+| **Operations** | 1 | Replication/ISR, produce durability, classic groups, KIP-848, Share Groups, rebalances and lag boundaries |
 | **Patterns** | 1 | Envelopes, schema evolution, DLQ policy, outbox, idempotent consumers |
 | **Interview Drills** | 1 | 25 Q&A with follow-up traps |
 
@@ -27,7 +27,7 @@ The 4 content files classify into 3 conceptual categories + drills.
 | # | File | You can defend… | Role priority | General importance |
 | - | ---- | --------------- | --- | --- |
 | 1 | [Message Brokers](20.9.01-message-brokers.md) | Why decoupling in time is worth a cluster; Kafka vs RabbitMQ models; at-least-once + idempotency as the default contract; when *not* to add a broker | Important | Specialized |
-| 2 | [Kafka Internals & Operations](20.9.02-kafka-internals-and-operations.md) | `acks=all` and the ISR acceptance floor; consumer groups and rebalance storms; lag as the SLI; compaction and replay-as-restart | Important | Specialized |
+| 2 | [Kafka Internals & Operations](20.9.02-kafka-internals-and-operations.md) | `acks=all` and the ISR acceptance floor; classic groups, KIP-848 and Share Groups; rebalance storms; offset lag and replay boundaries | Important | Specialized |
 | 3 | [Event-Driven Patterns on a Broker](20.9.03-event-driven-patterns.md) | Envelopes and schema contracts that survive version skew; retry→DLQ policy; outbox for atomic write+publication intent; consumer idempotency patterns | Important | Specialized |
 | — | [Revision](REVISION.md) | Explain the crash, offset reset, key remapping, and missing-blob cases before drilling | Important | Specialized |
 | 4 | [Interview Questions](20.9.04-interview-questions.md) | 25 Q&A with follow-up traps | Important | Specialized |
@@ -37,9 +37,10 @@ The 4 content files classify into 3 conceptual categories + drills.
 ```text
 Need a reply now?            → HTTP, no broker
 One consumer, low rate?      → job table / in-process queue, no broker
-Replay + stream analytics?   → Kafka (log model)
-Rich routing + work queues?  → RabbitMQ (queue model)
-Ordering?                    → per partition/queue ONLY — key by entity id
+Replay + stream analytics?   → Kafka classic consumer group (log model)
+Per-record work distribution? → Kafka 4.2+ Share Groups or RabbitMQ queues; compare acknowledgment and ordering contracts
+Rich routing + work queues?  → RabbitMQ exchanges and queues
+Ordering?                    → Kafka classic group: per partition; RabbitMQ: strongest with a single active consumer and no requeue/priority effects; key by entity id
 Delivery?                    → configure acknowledgments/durability; make retries idempotent
 DB write + event intent atomic? → transactional outbox
 Anything can be poison?      → bounded retries → DLQ → alert → review
@@ -55,6 +56,8 @@ After the three chapters, use [Revision](REVISION.md) to explain acknowledgment,
 - [Queues & Async (theory)](../../30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md) — backpressure, Little's law, the architecture why
 - [Idempotency Keys](../../30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.03-idempotency-keys.md) — the consumer-side contract
 - [Observability](../../40-platform/40.4-observability/INDEX.md) — lag dashboards, tracing across async hops
+- [Kafka 4.3 — release notes and Share Groups](https://kafka.apache.org/43/getting-started/upgrade/) — versioned boundary between classic groups and per-record share consumption
+- [RabbitMQ 4.3.6 — queue ordering](https://www.rabbitmq.com/docs/queues) — conditions that affect dequeue and processing order
 
 ## Docita Anchor
 

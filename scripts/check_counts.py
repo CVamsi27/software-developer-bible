@@ -26,13 +26,14 @@ same chapter count README's search link uses.
 
 Counting rule (one rule, applied per scope)
 -------------------------------------------
-  * repo total   — every `.md` in the tree, minus .git/node_modules/.archive
+  * repo total   — every source `.md` in the tree, minus generated output and
+                   vendored dependencies (.git/node_modules/vendor/.archive/_site)
   * scope count  — `.md` files under that folder, excluding `INDEX.md` and
                    `README.md` and excluding the `personal/` data subtree
                    (personal campaign data is not study material)
 
-The scope rule reproduces every number the corpus was built around: 121
-frontend chapters, 143 backend, 36 abroad-lane docs, 22 FAANG-lane docs.
+Live counts are derived from the repository's current paths. Historical totals
+belong in dated reports, not in this gate's current scope description.
 
 Usage:
   python3 scripts/check_counts.py            # report + exit 1 on drift
@@ -52,12 +53,12 @@ from scan_scope import guard
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SKIP_DIRS = {'.git', 'node_modules', '.archive', '.sass-cache'}
+SKIP_DIRS = {'.git', 'node_modules', 'vendor', '.archive', '.sass-cache', '_site'}
 SKIP_NAMES = {'INDEX.md', 'README.md'}
 PERSONAL = 'personal'
 
-# read_time.py's scope: the 7 shared study stacks only. Used for the "550
-# chapters" claim, so the two scripts cannot disagree about what a chapter is.
+# read_time.py's scope: the 7 shared study stacks only. The homepage search
+# total and the read-time walk use this same scope, so the counts agree.
 EXEMPT_TOP = {'80-lanes-abroad-full-stack', '81-lanes-indian-sde-faang',
               'lanes', 'projects', 'docs'}
 CONTENT_SKIP_NAMES = SKIP_NAMES | {'AGENTS.md', 'contributing.md',
@@ -96,6 +97,21 @@ def scope_chapters(subdir):
         return None
     return sum(1 for p in walk_md(base)
                if os.path.basename(p) not in SKIP_NAMES)
+
+
+def navigation_file_count(subdir):
+    """Numbered learning/interview files in a folder, excluding companions.
+
+    Navigation tables use "Files" for the chapters in a learning flow. An
+    INDEX and its REVISION companion organize that flow, but are not chapters
+    in the table's count; badges and opening blurbs continue to use the wider
+    `scope_chapters` count.
+    """
+    base = os.path.join(ROOT, subdir)
+    if not os.path.isdir(base):
+        return None
+    return sum(1 for p in walk_md(base)
+               if os.path.basename(p) not in SKIP_NAMES | {'REVISION.md'})
 
 
 def sub_stack_count(subdir):
@@ -332,10 +348,13 @@ def roadmap_edits(live):
 
 
 def section_blurb_edits():
-    """Counts in the root INDEX's per-section blurbs (it has no table)."""
-    return [
-        ('INDEX.md', r'^> (\d+) files\. Cross-lane', '00-strategy'),
-    ]
+    """Optional root section blurbs, if the editorial index includes them.
+
+    The current root index presents the strategy stack as an unnumbered entry,
+    so there is no owned section-count claim to restamp. Stack counts remain
+    owned by the study-order tables and each stack's INDEX.
+    """
+    return []
 
 
 REPO_SCOPE_BADGES = {'INDEX.md', 'README.md', 'lanes/INDEX.md'}
@@ -395,11 +414,12 @@ def expected_badge(rel, live):
 
 
 def table_edits(rel, text, live):
-    """Fix the `Files` cell of any navigation table row that links a folder.
+    """Fix the `Files` cell of any navigation row that links a folder.
 
-    Only tables whose header carries a `Files` cell next to a
-    Stack/Sub-stack/Lane cell are touched — the "Study order cheat sheet" and
-    "Lane vs Stack" tables use their integer columns for other things.
+    Navigation tables pair `Files` with a Stack, Sub-stack, Category, Section,
+    Folder or Lane column. Other integer columns (for example, study order)
+    remain untouched. The count includes learning and interview chapters, but
+    excludes INDEX and REVISION companions.
     """
     lines = text.split('\n')
     header = None
@@ -412,7 +432,8 @@ def table_edits(rel, text, live):
         if all(re.fullmatch(r'\s*:?-{2,}:?\s*', c) for c in raw_cells if c.strip()):
             continue  # separator row keeps the header mode
         low = [c.strip().lower() for c in raw_cells]
-        if 'files' in low and ({'stack', 'sub-stack'} & set(low) or 'lane' in low):
+        if 'files' in low and ({'stack', 'sub-stack', 'category', 'section',
+                                'folder', 'lane'} & set(low)):
             header = low
             continue
         if header is None:
@@ -432,7 +453,7 @@ def table_edits(rel, text, live):
         sub = target[:-len('INDEX.md')].rstrip('/') if target.endswith('/INDEX.md') \
             else target.rstrip('/')
         sub = os.path.normpath(os.path.join(os.path.dirname(rel), sub))
-        want = scope_chapters(sub)
+        want = navigation_file_count(sub)
         if want is None or int(raw_cells[fi].strip()) == want:
             continue
         # Replace only the digits, in place, to preserve column padding.
@@ -522,10 +543,10 @@ def restamp(texts, live):
         if n == 0:
             missing.append((rel, rx))
 
-    for rel in ('INDEX.md', 'README.md', 'lanes/INDEX.md'):
-        if rel not in texts:
-            continue
-        texts[rel], _ = table_edits(rel, texts[rel], live)
+    for rel in list(texts):
+        if os.path.basename(rel) == 'INDEX.md' or rel in (
+                'README.md', 'lanes/INDEX.md'):
+            texts[rel], _ = table_edits(rel, texts[rel], live)
 
     for rel, got, want in badge_edits(live, texts):
         if got is None:

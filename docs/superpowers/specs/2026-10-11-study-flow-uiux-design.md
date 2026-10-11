@@ -136,7 +136,7 @@ Each phase can be reviewed and shipped independently after a visual direction is
 | 3 — Revise | Answer disclosures on revision companions | Proposed focused `assets/revision-ui.js` and companion styling | Questions and source groups unchanged; answers reveal by keyboard; printing and no-JavaScript reading include every answer |
 | 4 — Resume | Versioned local saved position and returning home state | Proposed focused `assets/study-resume.js`, `index.html`, reader hook | Explicit resume, fragment precedence, unavailable/corrupt storage, removed anchors and removed paths all behave as specified |
 
-Before phases 2 and 4, establish an explicit published-page catalog from the build's actual outputs. The generated search/API catalog currently includes some paths excluded by `_config.yml`; do not assume every search row is a deployed page. Preserve the API's existing consumers and corpus digest; add a separate published navigation view rather than changing its contract incidentally.
+The initial proposal found that source search metadata can include paths that `_config.yml` excludes from publication. The implementation now keeps those concerns separate: `assets/study-catalog.js` derives resumable/navigation paths from Jekyll's emitted pages, while the generated API retains its existing consumer contract. Keep checking the rendered catalog against actual build output, especially on a case-sensitive production-equivalent build.
 
 Keep source and generated output synchronized: modify the generator, then regenerate search; never hand-edit generated `search.html`. Keep the chapter enhancement entry point small. Add focused modules only for new stateful responsibilities, rather than moving unrelated styling and scripts wholesale.
 

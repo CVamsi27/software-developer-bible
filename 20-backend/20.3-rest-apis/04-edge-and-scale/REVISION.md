@@ -78,9 +78,9 @@ Source: [API Authentication](20.3.4.04-authentication.md)
 
 Source: [Rate limiting](20.3.4.01-rate-limiting.md)
 
-**Q:** A depleted bucket is checked at0.4seconds and again at1.0second. Why preserve fractional refill?
+**Q:** A depleted bucket is checked at 0.4 seconds and again at 1.0 second. Why preserve fractional refill?
 
-**A:** The first check earns0.4tokens even if it cannot admit a cost1request. Discarding that time while advancing lastRefill can prevent a busy key from ever refilling; keep the fraction with the updated clock.
+**A:** The first check earns 0.4 tokens even if it cannot admit a request costing 1 token. Discarding that time while advancing `lastRefill` can prevent a busy key from ever refilling; keep the fraction with the updated clock.
 
 **Q:** Does a Redis pipeline or an always-fail-open policy enforce every shared quota correctly?
 
@@ -88,13 +88,13 @@ Source: [Rate limiting](20.3.4.01-rate-limiting.md)
 
 Source: [Gateway forwarding](20.3.4.02-api-gateway.md)
 
-**Q:** In the read-gateway fixture, what happens to /api/products/42?view=compact and a supplied X-User-Id?
+**Q:** In the read-gateway fixture, what happens to `/api/products/42?view=compact` and a supplied `X-User-Id`?
 
 **A:** The fixed target receives /products/42?view=compact. The fixture does not forward the asserted identity, and it generates its own request ID. A real protected gateway needs authenticated context and downstream resource authorization.
 
-**Q:** An upstream starts a body then fails. Can the gateway write a new JSON502response?
+**Q:** An upstream starts a body and then fails. Can the gateway write a new JSON `502` response?
 
-**A:** No, response headers/body already started. Terminate the failed stream under the proxy contract. Before headers start, connection failure and deadline failure can map to documented502/504outcomes.
+**A:** No; the response has already started. Terminate the failed stream under the proxy contract. Before headers start, connection and deadline failures can map to documented `502` and `504` outcomes.
 
 Source: [BFF composition](20.3.4.03-bff.md)
 

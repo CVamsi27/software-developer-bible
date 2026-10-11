@@ -31,7 +31,7 @@ import sys
 
 from scan_scope import guard
 
-SKIP_DIRS = {'.git', 'node_modules', '.archive', 'venv', '__pycache__'}
+SKIP_DIRS = {'.git', 'node_modules', 'vendor', '_site', '.archive', 'venv', '__pycache__'}
 FENCE_RE = re.compile(r'^( {0,3})(`{3,}|~{3,})([A-Za-z0-9_+-]*)')
 LAYOUT_LANGS = {'', 'text', 'tsv', 'anki', 'csv', 'diff', 'mermaid'}
 

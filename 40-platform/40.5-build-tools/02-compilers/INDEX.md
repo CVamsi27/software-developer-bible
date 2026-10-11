@@ -1,7 +1,7 @@
 # Compilers
 
 > **Study time:** ≈ 9 min of reading (3 files, ~3 min average).
-> **3 files.** How TS/JSX become browser-compatible JS: Babel (the extensible classic) and the Go/Rust speed tier (ESBuild, SWC).
+> **3 files.** How TypeScript and JSX syntax become JavaScript, and which checks and runtime APIs remain separate.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Compilers-%2364748b)](../INDEX.md)

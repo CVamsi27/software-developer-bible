@@ -1,13 +1,13 @@
 # Caching — Index
 
-> **Study time:** ≈ 48 min of reading (5 files, ~10 min average).
-> **5 files** — Redis, cache patterns, invalidation strategies — the biggest latency lever and the classic senior-interview topic.
+> **Study time:** ≈ 45 min of reading (5 files, ~9 min average).
+> **5 files** — cache contracts, invalidation, Redis data structures, operational patterns and interview practice.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Backend-blue)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Why caching:** A 10 ms request at 1000 requests/s implies about 10 concurrent requests by Little's law, not 10 CPU seconds/s. Caching can reduce origin work and response latency; measure both rather than equating elapsed time with CPU consumption. The difference between a junior and senior engineer is often the ability to identify what to cache, how to invalidate it, and how to prevent stampedes.
+**Why caching:** Caching can reduce response time and origin work when reads repeat and the cache costs less than recomputation. Measure latency, origin load, hit rate and miss cost; then define freshness, invalidation and outage behavior before picking a pattern.
 
 ---
 
@@ -17,19 +17,19 @@
 | ------------------- | ------------------------------------------------------------- | -------------------------------------------------------------------- | ------------- | ------------------ |
 | Patterns & Strategy | [Caching Deep Dive](20.8.01-caching-deep-dive.md) | When to use what — the 6 patterns, invalidation, stampede prevention | Essential | Important |
 | Redis Fundamentals | [Redis Fundamentals](20.8.02-redis-fundamentals.md) | Data structures, basic patterns, pub/sub | Essential | Important |
-| Advanced Redis | [Advanced Redis Patterns](20.8.03-advanced-redis-patterns.md) | Redlock, Lua scripting, Streams — the senior-level toolkit | Essential | Important |
+| Advanced Redis | [Advanced Redis Patterns](20.8.03-advanced-redis-patterns.md) | Leases, Lua scripting, Streams — the senior-level toolkit | Essential | Important |
 
 ---
 
 ## Compare the Contracts
 
 | Read/write profile | Pattern | Why |
-| ------------------------------ | ---------------------------------- | ------------------------------------------------------------------ |
+| ------------------------------ | ---------------------------------------------------------- | ------------------------------------------------------------------ |
 | Read-heavy, stale-tolerant | Cache-aside + TTL + jitter | Useful when the stated stale-read and fallback policy holds |
 | Read-heavy, needs fresh writes | Write-through | Successful writes warm reads; partial failures and ordering remain |
 | Write-heavy analytics | Write-behind (batch flush) | Throughput ↑; risk window on crash |
 | Hot key / thundering herd | Lock single-flight + early refresh | Stampede defense |
-| Cross-instance coordination | Redlock (with caveats) / DB lease | A lease does not replace the resource invariant |
+| Cross-instance coordination | Database invariant first; lease only where overlap is safe | Expiry and failover can permit overlapping holders |
 
 ---
 
@@ -48,7 +48,7 @@ Need to cache data?
 │
 ├─ Multi-instance mutex? ──→ DB invariant or lease + resource-enforced fencing
 │
-└─ Just count / dedupe / queue? ──→ Specialized data structures (HLL, Bloom, Streams)
+└─ Just count / dedupe / queue? ──→ Specialized data structures (JSON, Time Series, probabilistic types, Streams)
 ```
 
 ---
@@ -58,8 +58,8 @@ Need to cache data?
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 1 | [Caching Deep Dive](20.8.01-caching-deep-dive.md) | Cache hierarchy, patterns (cache-aside, write-through, write-behind), invalidation strategies, stampede prevention, multi-tenant caching | Essential | Important | 13 min |
-| 2 | [Redis Fundamentals](20.8.02-redis-fundamentals.md) | Data structures (strings, hashes, lists, sets, sorted sets, streams), caching patterns with Redis, rate limiting, distributed locks, pub/sub | Essential | Important | 17 min |
-| 3 | [Advanced Redis Patterns](20.8.03-advanced-redis-patterns.md) | Redlock, Lua rate limiting, Pub/Sub deep-dive, Redis Streams, scripting best practices | Essential | Important | 8 min |
+| 2 | [Redis Fundamentals](20.8.02-redis-fundamentals.md) | Data structures (strings, hashes, lists, sets, sorted sets, streams), caching patterns with Redis, rate limiting, distributed locks, pub/sub | Essential | Important | 12 min |
+| 3 | [Advanced Redis Patterns](20.8.03-advanced-redis-patterns.md) | Lease assumptions, Lua rate limiting, Pub/Sub delivery, Redis Streams, scripting boundaries | Essential | Important | 9 min |
 | 4 | [Interview Questions](20.8.04-interview-questions.md) | 25 senior Q&A: invalidation design, stampede physics, data-structure tradeoffs, hit-ratio forensics, persistence decisions | Essential | Important | 8 min |
 
 ---

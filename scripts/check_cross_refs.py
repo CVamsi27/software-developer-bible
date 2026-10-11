@@ -24,7 +24,7 @@ FENCE = re.compile(r'^\s*(```|~~~)')
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SKIP_DIRS = {'.git', 'node_modules', '.archive', 'personal'}
+SKIP_DIRS = {'.git', 'node_modules', 'vendor', '_site', '.archive', 'personal'}
 
 
 def normalize(ref: str):

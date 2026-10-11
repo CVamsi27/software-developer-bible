@@ -100,14 +100,14 @@ Source: [Decorators](10.2.4.03-decorators.md)
 **Definition**
 
 1. **Q:** Which compiler choice determines the decorator calling convention?
-   **A:** Enabling `experimentalDecorators` selects the legacy convention. With it disabled, TypeScript 5.0 and later use the Stage 3 convention for supported class decorators.
+   **A:** Enabling `experimentalDecorators` selects the legacy convention. With it disabled, TypeScript 5.0 and later use the standard ECMAScript decorator convention for supported class elements.
 
 **How It Works**
 
 2. **Q:** Why does registering a parameter token not inject a value by itself?
    **A:** Registration records which argument position needs which dependency. A container must read that record and construct the class with resolved arguments.
 
-3. **Q:** How does Stage 3 `bound` preserve a receiver for detached calls?
+3. **Q:** How does the standard `bound` decorator preserve a receiver for detached calls?
    **A:** It schedules an instance initializer that replaces the public method with a bound function. Each new instance therefore receives its own function linked to that instance. Reading the final method by name also preserves replacements made by stacked decorators.
 
 **Code Examples**
@@ -149,7 +149,7 @@ Source: [Declaration Files (.d.ts)](10.2.4.04-declaration-files.md)
 **How It Works**
 
 2. **Q:** Why are imports and exports useful in declarations?
-   **A:** They connect the types and values exposed by modules, just as they identify an implementation's public surface. Their presence also changes the file from global script scope to module scope.
+   **A:** They connect types and values to a module's public surface. A declaration file's script/module scope determines whether `declare module` declares a runtime-provided module or augments an existing one; its `.d.ts`, `.d.mts` or `.d.cts` module format is a separate Node resolution concern. [Scope and format](10.2.4.04-declaration-files.md#file-scope-decides-whether-declarations-add-or-extend-names).
 
 **Code Examples**
 

@@ -64,6 +64,10 @@ Source: [Apollo Server](20.7.2.02-apollo-server.md)
 
 **A:** No. It exercises GraphQL processing with supplied context, bypassing HTTP middleware. Use HTTP integration tests for credentials, body limits and CORS/CSRF boundaries, plus schema-execution tests for resource policy and null behavior.
 
+**Q:** Can Apollo Server 5.5.1 use GraphQL.js 17.0.2 as its normal peer dependency?
+
+**A:** No. Its declared peer range is `^16.11.0`, so use a supported GraphQL.js 16 release such as 16.14.2. Verify the exact peer range when upgrading; a separately supported experimental incremental-delivery path has a different prerelease constraint.
+
 **Q:** Why should current variables not be inspected only by a static validation rule?
 
 **A:** The server may cache validation results for a document. A new request can reuse that document with different variables or identity, so admission checks depending on them must execute on every request before resolver work.

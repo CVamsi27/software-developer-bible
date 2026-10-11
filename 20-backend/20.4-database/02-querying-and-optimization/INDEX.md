@@ -22,7 +22,7 @@ Start with relational keys, MVCC visibility and an explicit result requirement. 
 ## Files
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------: |
+| :---: | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------- | ------------------ | --------: |
 | 01 | [Indexes](20.4.2.01-indexes.md) | B-tree, hash, GiST, GIN, BRIN, composite indexes, index-only scans, partial indexes | Essential | Foundational | 9 min |
 | 02 | [Joins](20.4.2.02-joins.md) | INNER, LEFT, RIGHT, FULL, CROSS, LATERAL, hash/merge/nested loop joins, join order | Essential | Foundational | 10 min |
 | 03 | [Execution Plans](20.4.2.03-execution-plans.md) | EXPLAIN ANALYZE, sequential vs index scans, cost estimation, statistics | Essential | Foundational | 8 min |

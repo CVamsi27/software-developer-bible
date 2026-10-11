@@ -32,7 +32,7 @@ The client receives a product contract; setup and its construction owner retain 
 | 2 | [Factory Method](30.1.2.02-factory-method.md) | Defer instantiation to subclass | Plugin system, multiple implementations | Only one type, simple `new` works | Important | Foundational |
 | 3 | [Builder](30.1.2.03-builder.md) | Step-by-step construction | Ordered assembly or reusable recipes | Named options already suffice | Important | Specialized |
 | 4 | [Abstract Factory](30.1.2.04-abstract-factory.md) | Families of related objects | Cross-platform UI, theme systems, OS-specific bundles | No compatibility requirement | Important | Specialized |
-| 5 | [Prototype](30.1.2.05-prototype.md) | Clone instead of construct | Object creation is expensive, "shape then customize" | Copy semantics add more cost than direct construction | Important | Specialized |
+| 5 | [Prototype](30.1.2.05-prototype.md) | Copy through an existing instance | Object creation is expensive, "shape then customize" | Copy semantics add more cost than direct construction | Important | Specialized |
 
 ---
 
@@ -119,21 +119,21 @@ Need to create objects?
 
 ### Factory Method vs Abstract Factory
 
-- **Factory Method** creates **one** product; subclasses decide the concrete type.
+- **Factory Method** lets subclasses determine the product returned by an overridable creation operation used by a creator workflow.
 - **Abstract Factory** creates a **family** of related products; the factory itself is the abstraction, and concrete factories (e.g., `MacUIFactory`) return a matching set.
 
 The signal is a coherent family of related products, not a fixed minimum number of methods.
 
 ### Builder vs Factory
 
-- **Factory** creates an object in **one step** (often eagerly, with no params or a few).
+- **Factory** exposes a creation operation; its implementation can have multiple internal steps or asynchronous initialization.
 - **Builder** constructs the object **step-by-step**, with many optional parts, and the build is the final step.
 
 Many optional construction steps can justify a Builder; a named options object may be simpler.
 
 ### Prototype vs Factory
 
-- **Factory** creates from a class (re-runs the constructor + init).
+- **Factory** owns a creation choice; it can construct, reuse a cached result, invoke a builder, or copy a prototype.
 - **Prototype** delegates to an instance's clone contract; it may still call a constructor while reusing configured data.
 
 If construction is expensive and most new objects look like existing ones, Prototype may be appropriate after comparing copy semantics and cost.
@@ -160,7 +160,7 @@ Choose a creation pattern from a concrete variation axis and name the extra coup
 
 - [Foundations](../01-foundations/INDEX.md) — DIP and OOP concepts are prerequisites.
 - [Structural Patterns](../03-structural/INDEX.md) — Facade often wraps a Factory.
-- [Architectural Patterns](../05-architectural/INDEX.md) — Repository and DI containers are creational patterns at scale.
+- [Architectural Patterns](../05-architectural/INDEX.md) — Repository abstracts domain collection access; DI supplies dependencies and their lifetimes.
 
 ---
 

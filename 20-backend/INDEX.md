@@ -1,6 +1,6 @@
 # Backend Stack
 
-> **Study time:** ≈ 24 h 7 m of reading (179 files, ~8 min average).
+> **Study time:** ≈ 24 h 52 m of reading (179 files, ~8 min average).
 > **Node.js, NestJS, REST, GraphQL, Database, Auth & Security, Microservices, AI Engineering, Java** — shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
 > 179 files across 11 sub-stacks, organized by what you need to know in what order.
@@ -38,7 +38,7 @@ This stack is the canonical reference. Each sub-stack has its own INDEX with det
 | 5 | [Auth & Security](20.5-security/INDEX.md) | 21 | [auth track](20.5-security/01-auth/INDEX.md): fundamentals → sessions → JWT → OAuth → RBAC/ABAC · attacks (XSS, CSRF, SQLi) · hardening (CSP, STRIDE, secrets) · API Top 10 |
 | 6 | [Microservices & Distributed Patterns](20.6-microservices/INDEX.md) | 19 | Service discovery, gateway, saga, circuit breaker, event sourcing/CQRS, Kafka/RabbitMQ, gRPC streaming, service mesh, event-driven architecture |
 | 7 | [GraphQL](20.7-graphql/INDEX.md) | 9 | Schema design, queries/mutations, Apollo Server, performance, security |
-| 8 | [Caching](20.8-caching/INDEX.md) | 3 | Cache patterns, invalidation, stampede prevention, Redis fundamentals + advanced patterns |
+| 8 | [Caching](20.8-caching/INDEX.md) | 4 | Cache patterns, invalidation, stampede prevention, Redis fundamentals + advanced patterns |
 | 9 | [Message Brokers](20.9-message-brokers/INDEX.md) | 4 | Kafka vs RabbitMQ models, delivery semantics, acks/ISR durability, consumer groups & rebalances, lag SLI, envelopes/schema evolution, DLQs, transactional outbox |
 | 10 | [AI Engineering](20.12-ai-engineering/INDEX.md) | 7 | LLM app architecture (RAG/streaming/structured output), prompts & evals, safety & cost governance |
 | 11 | [Java](20.13-java/INDEX.md) | 6 | Language fundamentals, OOP & SOLID, concurrency, JUnit/Mockito testing, Spring Boot, interview Q&A |

@@ -90,9 +90,9 @@ Source: [Message Brokers: Kafka vs RabbitMQ](20.6.2.05-message-brokers.md)
 
 **A:** Delivery duplication and order are different properties. Define ordering per entity, queue or partition; retries and concurrent workers can change completion order even when transport order is preserved.
 
-## Event-Driven Architecture — Kafka, Event Sourcing, CQRS
+## Event-Driven Architecture
 
-Source: [Event-Driven Architecture — Kafka, Event Sourcing, CQRS](20.6.2.06-event-driven-architecture.md)
+Source: [Event-Driven Architecture](20.6.2.06-event-driven-architecture.md)
 
 **Q:** How can a new consumer react to an event without changing the producer?
 

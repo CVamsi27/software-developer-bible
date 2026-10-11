@@ -6,7 +6,7 @@
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
-# Database — Revision
+# ORM & Access — Revision
 
 Explain each mechanism before checking the answer. Revisit its source for the example and boundary conditions.
 
@@ -20,7 +20,7 @@ Source: [Prisma ORM](20.4.4.01-prisma.md)
 
 **Q:** Why must these examples name Prisma 6.19.0 explicitly?
 
-**A:** The constructor/generator/pool and $transaction APIs belong to that legacy major contract. Current ORM 8 documentation uses different contract/runtime and db.transaction/model APIs; mixing those APIs produces invalid examples.
+**A:** The constructor/generator/pool and `$transaction` APIs belong to that legacy major contract. As of 11 October 2026, ORM 8 remains a release candidate with different contract/runtime and `db.transaction`/model APIs; the current stable line is v7. Check the [release-status page](https://www.prisma.io/docs/orm/release-status) before applying this version note to a new project.
 
 **Q:** What does a generic argument on $queryRaw establish?
 

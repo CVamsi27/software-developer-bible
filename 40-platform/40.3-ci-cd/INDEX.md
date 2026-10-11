@@ -1,22 +1,22 @@
 {% raw %}
 # CI/CD — Index
 
-> **Study time:** ≈ 1 h 48 m of reading (14 files, ~8 min average).
-> **14 files** — CI/CD pipeline fundamentals from GitHub Actions and Jenkins to GitLab CI, ArgoCD, Docker build/deploy, artifact registries with release promotion, supply-chain security (SLSA), blue-green/canary deployments, DORA metrics, pipeline patterns, and interview questions.
+> **Study time:** ≈ 1 h 51 m of reading (14 files, ~8 min average).
+> **14 files** — a release path from GitHub Actions, GitLab CI/CD, Jenkins or Argo CD through build, artifact verification, production exposure and delivery measurement, followed by interview practice.
 
 [![Files](https://img.shields.io/badge/files-14-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Why CI/CD:** Every senior engineer owns their pipeline. You must know how to set up GitHub Actions (or GitLab CI), build a Docker image, push to a registry, and deploy to a target. Blue-green and canary deployments are the senior-level patterns. GitOps (ArgoCD) is increasingly common.
+**Why CI/CD:** Senior engineers need to trace how a change becomes a production release: which code runs, which checks block it, which artifact is promoted, who can authorize deployment and how recovery is verified. The platform syntax varies; those boundaries carry across GitHub Actions, GitLab CI/CD, Jenkins and Argo CD.
 
 ---
 
 ## Category Map
 
 | Category | Folder | Files | What it covers |
-| ------------------ | ------------------------------------------------------------ | ----: | ----------------------------------------------------------------------------------------------------- |
-| CI Platforms | [01-ci-platforms/](01-ci-platforms/INDEX.md) | 4 | GitHub Actions, GitLab CI, Jenkins, ArgoCD — pick the one your company uses |
+| ------------------ | ------------------------------------------------------------ | ----: | -------------------------------------------------------------------------------------------------------- |
+| CI Platforms | [01-ci-platforms/](01-ci-platforms/INDEX.md) | 4 | GitHub Actions, GitLab CI/CD, Jenkins, and Argo CD — compare their event, execution and authority models |
 | Build & Deploy | [02-build-and-deploy/](02-build-and-deploy/INDEX.md) | 4 | Docker build/deploy, pipeline patterns, artifact registries + promotion, supply-chain security (SLSA) |
 | Releases & Metrics | [03-releases-and-metrics/](03-releases-and-metrics/INDEX.md) | 2 | Blue-green, canary — plus DORA metrics for delivery performance |
 | Interview Prep | [04-interview-prep/](04-interview-prep/INDEX.md) | 1 | Authored interview drill |
@@ -25,14 +25,14 @@
 
 ## CI Platforms
 
-Pick the one your company uses — the patterns are similar.
+Start with the event, job graph and credential model of one platform. Compare the same release contract in the others, including the controller model when Argo CD owns cluster reconciliation.
 
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
 | 01 | [GitHub Actions](01-ci-platforms/40.3.1.01-github-actions.md) | Workflows, actions, runners, matrix builds, caching, secrets | Most common — GitHub repos | Important | Important | 12 min |
-| 02 | [GitLab CI/CD](01-ci-platforms/40.3.1.02-gitlab-ci.md) | `.gitlab-ci.yml`, multi-project pipelines, Auto DevOps | GitLab repos | Important | Important | 8 min |
+| 02 | [GitLab CI/CD](01-ci-platforms/40.3.1.02-gitlab-ci.md) | `.gitlab-ci.yml`, multi-project pipelines, Auto DevOps | GitLab repos | Important | Important | 9 min |
 | 03 | [Jenkins CI/CD](01-ci-platforms/40.3.1.03-jenkins.md) | Declarative/scripted pipelines, shared libraries, plugins | Legacy enterprise | Important | Important | 7 min |
-| 04 | [ArgoCD (GitOps)](01-ci-platforms/40.3.1.04-argocd.md) | GitOps, ApplicationSets, sync policies, rollback | K8s + GitOps | Important | Important | 11 min |
+| 04 | [Argo CD (GitOps)](01-ci-platforms/40.3.1.04-argocd.md) | GitOps, ApplicationSets, sync policies and recovery boundaries | Kubernetes + GitOps | Important | Important | 11 min |
 
 ---
 
@@ -49,12 +49,12 @@ Pick the one your company uses — the patterns are similar.
 
 ## Releases & Metrics
 
-Senior-level patterns for zero-downtime deploys.
+Controlled exposure, measured outcomes and compatible recovery.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 09 | [Blue-Green & Canary](03-releases-and-metrics/40.3.3.01-blue-green-canary.md) | Zero-downtime deployments, traffic shifting, rollback, feature flags | Important | Important | 7 min |
-| 10 | [DORA Metrics & Delivery Performance](03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md) | Five delivery measures including deployment rework rate, honest instrumentation, benchmarks, gaming pitfalls, error budgets | Important | Important | 14 min |
+| 10 | [DORA Metrics & Delivery Performance](03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md) | Five delivery measures including deployment rework rate, honest instrumentation, benchmarks, gaming pitfalls, error budgets | Important | Important | 16 min |
 
 **Decision:** Choose exposure based on routing capability, traffic/sample size, capacity and state compatibility. Rolling replacement, retained blue-green capacity and analyzed canaries solve different constraints; none alone promises zero downtime or instant recovery.
 
@@ -77,7 +77,7 @@ Senior-level patterns for zero-downtime deploys.
 5. **Pipeline Supply-Chain Security & SLSA** — staff differentiator
 6. **Blue-Green & Canary** — for senior roles
 7. **DORA Metrics & Delivery Performance** — staff/lead conversations
-8. **Jenkins / ArgoCD** — as relevant
+8. **Jenkins / Argo CD** — as relevant
 9. **Category REVISION companions** — explain mechanisms from memory
 10. **Interview Questions** — separate final practice
 

@@ -25,12 +25,12 @@ Source: [Modules](10.1.5.01-modules.md)
    **A:** Static imports let tools discover dependency edges before evaluating bodies, while the host still resolves specifiers. Dynamic import supports computed/conditional loading. Removing unused code requires side-effect and usage analysis plus build configuration; static syntax alone is insufficient.
 
 3. **Q:** Why is module top-level state a singleton, and when is that a hazard?
-   **A:** The module map caches one instance per URL, so every importer shares the same bindings — ideal for config or a shared client, a trap the moment you wanted a fresh copy per importer.
+   **A:** Within a loader, one resolved identity normally shares an instance. Different realms/URLs/bundled copies can differ. Shared config/client state may fit; per-request mutable session state needs a separate owner.
 
 **How It Works**
 
 4. **Q:** Put the ESM loading pipeline in order.
-   **A:** Parse the entry graph → resolve specifiers to URLs → fetch → parse each module → link imports to exports → evaluate in dependency order; evaluation happens once per module no matter how many importers it has.
+   **A:** Discover dependencies while parsing/loading, resolve identities, obtain their source, link bindings, then evaluate the graph with cycle/await rules. Fetching can overlap, and evaluation sharing is per resolved identity/loader rather than universally once.
 
 5. **Q:** What can CommonJS `require()` do that a static `import` cannot, and what is ESM's escape hatch?
    **A:** `require()` builds its argument at runtime, so it can run conditionally or on a computed path; ESM imports are hoisted and resolved before any code runs — for conditional loading you `await import()`, which yields a promise for the module namespace.
@@ -38,7 +38,7 @@ Source: [Modules](10.1.5.01-modules.md)
 **Common Mistakes**
 
 6. **Q:** When a circular dependency bites, do you get `undefined` or an error?
-   **A:** It depends on the system: CommonJS hands back a partially-filled `exports` object (`undefined` for anything not assigned yet, plus Node's circular-dependency warning), while reading an uninitialized ESM live binding throws a ReferenceError (TDZ).
+   **A:** It depends on the system: CommonJS hands back a partially initialized exported value (some missing properties can produce undefined or a warning), while reading an uninitialized ESM live binding throws a ReferenceError (TDZ).
 
 7. **Q:** Why can `import { foo } from './utils'` fail in Node ESM yet work in a bundler?
    **A:** Node's ESM resolver requires the full path with an extension and does no directory/index guessing; bundlers apply their own `resolve.extensions` config — so dual-target code needs a deliberate strategy (`exports` map, or always ship explicit paths).
@@ -76,12 +76,12 @@ Source: [Memoization](10.1.5.02-memoization.md)
    **A:** Identity keying fits a stable immutable instance; mutating it can make a cached result stale. Structural keying requires a defined equivalence rule, such as the complete tenant/query/page tuple in the chapter. JSON serialization is not universal: it can reorder distinctions, discard values or throw.
 
 6. **Q:** What goes wrong if an async function's rejected promise gets cached?
-   **A:** The rejection is stored like any value, so every caller inside the TTL is served the same failure without a retry — production wrappers evict on `.catch` so the next call re-hits the network.
+   **A:** The rejection is stored like any value, so every caller inside the TTL is served the same failure without a retry — a retryable-failure policy removes only the matching cached promise while preserving rejection for callers. A negative-cache policy may instead deliberately retain a classified failure for a bounded time.
 
 **Real-World Use Cases**
 
-7. **Q:** In the `ProductList` example, why is the `useMemo` dependency list a correctness concern and not just an optimization knob?
-   **A:** The memoized filter only recomputes when a listed dep changes — drop `category` from the deps and the component renders last category's products while looking perfectly healthy; a stale render reads as a data bug, not a cache bug.
+7. **Q:** In the filtered-items example, why is the `useMemo` dependency list a correctness concern and not just an optimization knob?
+   **A:** The memoized filter only recomputes when a listed dep changes — drop `filter` from the deps and the component can render the previous filter’s items while looking perfectly healthy; a stale render reads as a data bug, not a cache bug.
 
 **Performance Considerations**
 
@@ -121,7 +121,7 @@ Source: [Generators](10.1.5.03-generators.md)
 **Best Practices**
 
 7. **Q:** Why prefer `for...of` over a manual `while (!done)` loop when both can print the same values?
-   **A:** `for...of` closes the iterator when the loop exits early — it calls the generator's `return()`, so `finally` blocks inside run. A manual loop that simply stops calling `next()` leaves the generator suspended with its cleanup never executed.
+   **A:** A body break/return/throw invokes an available iterator return. Producer next failures differ, and a yielding finally may require more pulls, so mandatory cleanup must not depend on that pattern. A manual loop needs its own owned close on early exit.
 
 **Performance Considerations**
 
@@ -196,7 +196,7 @@ Source: [Recursion & Tail Call Optimization](10.1.5.05-recursion-tail-call.md)
 **Common Mistakes**
 
 6. **Q:** What breaks when you forget `return` in front of the recursive call?
-   **A:** The function still recurses, but its own result is discarded and it evaluates to `undefined`, so callers downstream get `undefined` where they expected a number or structure — silent until something consumes it.
+   **A:** When a function should return the child’s result but simply calls it and falls through, the caller receives undefined. Side-effect-only traversals can correctly omit return; the intended result contract decides.
 
 **Best Practices**
 

@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Fence-aware broken-link checker for software-developer-bible.
 
-Scans every .md file (skipping .git / node_modules / .archive) and verifies
+Scans every source .md file (skipping generated output, vendored dependencies,
+and .git) and verifies
 that each *prose* markdown link resolves to a real file or directory inside
 the repo, and that every in-page anchor (`#fragment`) resolves to a real
 heading slug in its target file. This scripts the footer claims
@@ -35,7 +36,7 @@ import urllib.parse
 from scan_scope import guard
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SKIP_DIRS = {'.git', 'node_modules', '.archive'}
+SKIP_DIRS = {'.git', 'node_modules', 'vendor', '.archive', '_site'}
 
 # Protocols / target forms that cannot or should not be resolved to a file.
 EXTERNAL_PREFIXES = (

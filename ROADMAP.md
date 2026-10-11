@@ -113,7 +113,7 @@ Study as one connected story, not isolated files → **[20-backend/20.5-security
 
 | Order | Topic | Flow inside |
 | ----- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 3.1 | [Design patterns](30-architecture/30.1-design-patterns/INDEX.md) | SOLID → GoF applied (Strategy, Repository, Observer, DI…) → CQRS in practice |
+| 3.1 | [Design patterns](30-architecture/30.1-design-patterns/INDEX.md) | SOLID → GoF patterns (Strategy, Observer…) → modern architectural patterns (Repository, DI, CQRS) |
 | 3.2 | [SD method](30-architecture/30.2-system-design/01-theory/30.2.1.15-how-to-approach.md) | clarify requirements → estimate workload → propose boundaries → trace a critical path and its failures |
 | 3.3 | [SD theory](30-architecture/30.2-system-design/01-theory/INDEX.md) | CAP → consistency models → sharding → caching → queues → rate limiting → consensus → failure modes → backpressure → multi-region |
 | 3.4 | [Case studies ×32](30-architecture/30.2-system-design/02-case-studies/INDEX.md) | URL shortener → WhatsApp → Uber → Netflix → payment gateway → ticket booking → notification service → hospital mgmt… practice 5 aloud with a timer |
@@ -164,7 +164,7 @@ Start [00-strategy](00-strategy/INDEX.md) items here if not done in Phase 0: [re
 
 ---
 
-## Phase 7 — Lane Execution *(final 1–2 weeks before applying)*
+## Phase 7 — Lane Execution *(applications and practice alongside learning)*
 
 ### Abroad/EU lane → [80-lanes-abroad-full-stack](80-lanes-abroad-full-stack/INDEX.md)
 1. [Take-home playbook](80-lanes-abroad-full-stack/80.01-take-home-playbook.md) → ship one practice build ([starter prompt](80-lanes-abroad-full-stack/80.15-take-home-starter-prompt.md))
@@ -191,11 +191,11 @@ A sample plan for filling broad gaps: work through phases 0–5 while practicing
 ### Focused plan — 4 sample weeks (~2–3 h/day)
 
 | Week | Do | Skip |
-| ---- | ---------------------------------------------------------------------------------------- | ----------------------------------------------------- |
+| ---- | ------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- |
 | 1 | Phase 0 + Phase 1 (skim 1.1–1.2, full 1.3–1.5) + 8 STAR stories | specialist animation or mobile topics unless required |
 | 2 | Phase 2.2–2.3 (APIs + data) + **auth track** + start coding patterns | GraphQL unless JD |
 | 3 | Phase 2.5 + Phase 3 + one accessibility/tested user flow + assessed coding format | cluster administration unless required |
-| 4 | Phase 4 skim (Docker/CI/observability) + Phase 6 drills + Phase 7 lane execution + apply | monorepo, CDN, chaos |
+| 4 | Phase 4 skim (Docker/CI/observability) + Phase 6 drills + Phase 7 mocks; continue suitable applications | monorepo, CDN, chaos |
 
 ### Emergency — 1 week
 Prioritize the confirmed assessment: one fresh implementation or coding exercise, one relevant design, two mocks and supported project stories. Review authorization, failure recovery and the tests for your critical flow. Use the [lane 80 index](80-lanes-abroad-full-stack/INDEX.md) for practical full-stack exercises. One week cannot close every fundamental gap; spend it on the most consequential ones.
@@ -219,7 +219,7 @@ Use these as self-assessment checks. A weak result tells you where to practice n
 
 ---
 
-## Weekly Rhythm (any speed)
+## Sample Weekly Rhythm
 
 | Day | Block 1 (90') | Block 2 (60') |
 | ------- | ------------------------------------------------ | -------------------------------------------------------- |
@@ -227,6 +227,8 @@ Use these as self-assessment checks. A weak result tells you where to practice n
 | Fri | Catch-up / re-read flagged files | Flashcards from cheat sheets |
 | Sat | Timed mock or recorded design | Story rehearsal out loud |
 | Sun | Rest · 15-min weekly review against this roadmap | update tracker |
+
+Use this sample only when you do not already have an active timetable. Do not add its blocks above a personal plan; move its brief weekly review to the scheduled planning block when Sunday is a recovery day.
 
 Trackers: [80.33-weekly-study-tracker](80-lanes-abroad-full-stack/80.33-weekly-study-tracker.md) · [81 daily timer](81-lanes-indian-sde-faang/81.11-daily-study-timer.md)
 

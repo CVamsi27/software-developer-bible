@@ -8,18 +8,19 @@
 
 The production host is private by design. Cloudflare Pages Functions run the
 access gate before a static file can be served: Google OAuth is brokered by
-Supabase Auth, and only the case-insensitive address `cvamsik99@gmail.com`
-(including German/EU `@googlemail.com` aliases) receives a short-lived
-`HttpOnly` session cookie. An unauthenticated visitor sees `/auth/login.html`;
+Supabase Auth, and only the allowlisted account receives a
+short-lived `HttpOnly` session cookie. Matching is case-insensitive and the
+gate treats supported `@gmail.com` and `@googlemail.com` aliases as equivalent.
+An unauthenticated visitor sees `/auth/login.html`;
 a signed-in visitor with a different address is sent to
 `https://personal.buildora.work/?study=access-denied` (with stale/invalid cookies
 purged so the browser never enters an access-denied redirect loop). The gate is
 server-side, so copying a static file URL does not bypass it.
 
 |  |  |
-| --------------- | --------------------------------------------------------------------- |
+| --------------- | ---------------------------------------------------------------------- |
 | **Status** | Git integration (Connect to Git) · production branch `main` |
-| **Pages build** | `bundle exec jekyll build` → `_site` (Ruby 3.1 via `.ruby-version`) |
+| **Pages build** | `bundle exec jekyll build` → `_site` (Ruby 3.4.11 via `.ruby-version`) |
 | **CI gate** | `site-build.yml` → same render + lane-exclusion assertions |
 
 ## 1. How publishing works
@@ -83,11 +84,14 @@ links keep that context so **Return to roadmap** reopens the same assignment.
    (The preset's bare `jekyll build` skips bundler; the override builds
    against the locked `Gemfile`.)
 3. **Environment** — Pages project → *Settings* → *Environment variables*:
-   `JEKYLL_ENV=production`. Ruby needs no variable: the `.ruby-version`
-   file (`3.1`) in the repo root pins the build image — the locked
-   `liquid 4.0.3` calls `Object#tainted?`, removed in Ruby 3.2, so the
-   default 3.4.x image crashes every render. (If the image ever rejects
-   the file, set `RUBY_VERSION=3.1` here instead.) Add these **production**
+   `JEKYLL_ENV=production`. The `.ruby-version` file pins Ruby 3.4.11;
+   Cloudflare Pages supports a repository `.ruby-version` override. The
+   lock now uses `github-pages 232`, Jekyll 3.10.0 and Liquid 4.0.4, which
+   removes the Ruby 3.2+ `Object#tainted?` incompatibility in Liquid 4.0.3.
+   If the build image ignores the file, set `RUBY_VERSION=3.4.11` here.
+   Add `STUDY_ALLOWED_EMAIL` with the exact Google account authorized to read
+   Study. This value is required; when it is missing, the gate fails closed
+   and no verified account receives content access. Add these **production**
    variables for the Pages Functions auth gate: `SUPABASE_URL` and either
    `SUPABASE_ANON_KEY` or `SUPABASE_JWKS_URL`. They are read at request time
    and are intentionally not committed. With asymmetric Supabase signing,
@@ -288,10 +292,11 @@ short-circuit regressed — do not "fix" it with a token; restore the
 `_config.yml` shape documented there.
 
 **Pages build fails on Ruby or gems.** Check the build log's Ruby line: it
-must read 3.1.x. The pin is the `.ruby-version` file; if the image ignores
-it, set `RUBY_VERSION=3.1` under *Settings* → *Environment variables*. Do
-not "fix" it by upgrading `liquid` — the version is locked by the
-`github-pages` gem.
+must read 3.4.11. The pin is the `.ruby-version` file; if the image ignores
+it, set `RUBY_VERSION=3.4.11` under *Settings* → *Environment variables*.
+Keep `Gemfile.lock` committed so local, CI and Pages builds use the same
+compatible `github-pages`/Liquid set. The Ruby 3.4.11 pin and lock were
+validated together with the full Jekyll render.
 
 **Pages is green but CI (`site-build`) is red.** The deployment is live
 without its safety guards (lane exclusion, Liquid warnings) — treat as
@@ -323,5 +328,6 @@ the build log names the offending file under `functions/`.
 - [Git integration](https://developers.cloudflare.com/pages/configuration/git-integration/) — webhook triggers and automated branch deployments from GitHub repositories
 - [Build configuration](https://developers.cloudflare.com/pages/configuration/build-configuration/) — build commands, output directories, and environment variables for the Jekyll pipeline
 - [Build image (language versions)](https://developers.cloudflare.com/pages/configuration/build-image/) — Ruby and Node runtime pins for reproducible build environments
+- [Ruby releases](https://www.ruby-lang.org/en/downloads/releases/) — official current and historical Ruby patch releases
 - [Custom domains](https://developers.cloudflare.com/pages/configuration/custom-domains/) — apex domain mapping, CNAME records, and automated edge SSL certificate provisioning
 {% endraw %}

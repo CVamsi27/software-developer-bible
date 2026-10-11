@@ -80,7 +80,7 @@ Source: [NestJS Exception Filters](20.2.2.05-exception-filters.md)
 
 **Q:** Why should known application failures map to specific HTTP status codes?
 
-**A:** A known missing resource can map to404 and a known domain conflict to409. Unexpected failures receive a generic safe500; status/message choices must match the business/protocol meaning.
+**A:** A known missing resource can map to 404 and a known domain conflict to 409. Unexpected failures receive a generic safe 500; status/message choices must match the business/protocol meaning.
 
 **Q:** What should a shared error response contain or omit?
 
@@ -124,7 +124,7 @@ Source: [Middleware fixture](20.2.2.01-middleware.md).
 
 Source: [Guard fixture](20.2.2.02-guards.md).
 
-**Q:** Explain health200, missingcredential401, reader403 and admin200 in order.
+**Q:** Explain health 200, missing credential 401, reader 403 and admin 200 in order.
 
 **A:** Public health bypasses authentication. Reports without a credential stop at authentication; a verified reader fails the inherited admin policy; an admin passes both guards.
 
@@ -138,7 +138,7 @@ Source: [Bounded page-size pipe](20.2.2.03-pipes.md).
 
 **Q:** What do undefined, `'25'`, `'10junk'` and a repeated-value array produce?
 
-**A:** Default10, accepted25, then two400 rejections. Absence differs from malformed input; accepted values are safe positive integers at most100.
+**A:** Default 10, accepted 25, then two 400 rejections. Absence differs from malformed input; accepted values are safe positive integers at most 100.
 
 **Q:** What changes if a database uniqueness lookup moves into a pipe?
 
@@ -148,21 +148,21 @@ Source: [Bounded page-size pipe](20.2.2.03-pipes.md).
 
 Source: [Wrapper and timeout fixtures](20.2.2.04-interceptors.md).
 
-**Q:** Trace handler1 through inner and outer mapping.
+**Q:** Trace handler 1 through inner and outer mapping.
 
-**A:** Outer before precedes inner before; handler emits1, inner maps2, outer maps3. Finalizers observe subscription termination, not delivery of the response.
+**A:** Outer before precedes inner before; handler emits 1, inner maps 2, outer maps 3. Finalizers observe subscription termination, not delivery of the response.
 
-**Q:** Why does the timeout fixture print stopped waiting and later1?
+**Q:** Why does the timeout fixture print stopped waiting and later 1?
 
-**A:** The5ms first-emission deadline unsubscribes, but the40ms promise continues and increments its effect. A mutation can complete after timeout; cancellation needs a cooperative API and uncertain outcomes need reconciliation.
+**A:** The 5 ms first-emission deadline unsubscribes, but the 40 ms promise continues and increments its effect. A mutation can complete after timeout; cancellation needs a cooperative API and uncertain outcomes need reconciliation.
 
 ### Filters
 
 Source: [Safe HTTP filter](20.2.2.05-exception-filters.md).
 
-**Q:** What reaches clients for private404, private400 and an unexpected database-secret error?
+**Q:** What reaches clients for private 404, private 400 and an unexpected database-secret error?
 
-**A:** Fixed Not found/Invalid request/Internal server error messages with404/400/500. The arbitrary exception text remains outside the public envelope.
+**A:** Fixed Not found/Invalid request/Internal server error messages with 404/400/500. The arbitrary exception text remains outside the public envelope.
 
 **Q:** What changes if response headers were already sent or a local filter handles the error?
 

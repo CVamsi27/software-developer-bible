@@ -60,7 +60,7 @@ Source: [Dynamic Programming](70.2.3.02-dynamic-programming.md)
 
 **A:** Each state ends at that exact index. The best sequence may finish earlier, so the answer is the maximum across all ending states. Strict increase also requires a less-than comparison, not less-than-or-equal.
 
-### Dynamic Programming
+### Reconstructing a path from rolling state
 
 Source: [Dynamic Programming](70.2.3.02-dynamic-programming.md)
 

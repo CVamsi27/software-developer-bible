@@ -1,7 +1,7 @@
 # Animation — Index
 
-> **Study time:** ≈ 1 h 8 m of reading (9 files, ~8 min average).
-> **9 files** — Web animation techniques from Framer Motion and CSS animations to Web Animations API, GSAP, React Spring, View Transitions API, Canvas/SVG rendering, and curated interview questions.
+> **Study time:** ≈ 1 h 2 m of reading (9 files, ~7 min average).
+> **9 files** — CSS and browser animation APIs, Motion for React (formerly Framer Motion), GSAP, React Spring, Canvas/SVG rendering, and interview practice.
 
 [![Files](https://img.shields.io/badge/files-9-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](#)
@@ -20,8 +20,8 @@ Explain why an eligible transform animation can avoid repeated layout/paint, and
 ## Pass 2 — choose how the interaction is controlled
 
 | Interaction | Chapter | Mechanism to understand | Role priority | General importance |
-| ----------------------------------------------- | ----------------------------------------- | -------------------------------------------------------------- | ------------- | ------------------ |
-| React entry, exit, gestures or reordered layout | [Framer Motion](10.6.02-framer-motion.md) | Target interpolation, presence retention and layout projection | Optional | Specialized |
+| ----------------------------------------------- | -------------------------------------------- | -------------------------------------------------------------- | ------------- | ------------------ |
+| React entry, exit, gestures or reordered layout | [Motion for React](10.6.02-framer-motion.md) | Target interpolation, presence retention and layout projection | Optional | Specialized |
 | Deliberate sequences with overlapping tracks | [GSAP](10.6.03-gsap.md) | Timeline ownership and cleanup | Optional | Specialized |
 | Interruptible spring values | [React Spring](10.6.04-react-spring.md) | A changing target and a continuing physical state | Optional | Specialized |
 
@@ -55,7 +55,7 @@ Real code from [docita](https://github.com/CVamsi27/docita) - production healthc
 | CSS animations (`@keyframes`) | `packages/ui/src/styles/globals.css` - pulse/shimmer/shake/fade-up keyframes with `prefers-reduced-motion` media blocks |
 | `prefers-reduced-motion` in JS | `packages/hooks/src/use-prefers-reduced-motion.ts` - matchMedia hook plus a reduced-motion scroll-behavior helper |
 
-_Framer Motion, GSAP, React Spring, WAAPI, View Transitions, and Canvas/SVG animation: no direct docita implementation yet._
+_Motion for React, GSAP, React Spring, WAAPI, View Transitions, and Canvas/SVG animation: no direct Docita implementation yet._
 
 ---
 

@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-9_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-11_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -159,6 +159,8 @@ Source: [Distributed Transactions](30.2.1.07-distributed-transactions.md)
 
 Source: [Rate Limiting](30.2.1.08-rate-limiting.md)
 
+Additional sources: [RFC 6585 §4 — 429](https://www.rfc-editor.org/rfc/rfc6585.html#section-4), [RFC 9110 §10.2.3 — Retry-After](https://www.rfc-editor.org/rfc/rfc9110.html#section-10.2.3), [IETF Datatracker — RateLimit header-field draft status](https://datatracker.ietf.org/doc/draft-ietf-httpapi-ratelimit-headers/)
+
 **Q:** Why can two independent local token buckets exceed a global limit?
 
 **A:** Each grants capacity without knowing the other's grants. A global contract needs coordination or a documented allocation/approximation strategy.
@@ -170,6 +172,10 @@ Source: [Rate Limiting](30.2.1.08-rate-limiting.md)
 **Q:** Two local buckets each grant 100 requests. What is the shared allowance?
 
 **A:** Without coordination or safely allocated budgets they can grant 200. A local fallback changes the global quota even if each local decision is atomic.
+
+**Q:** Is the `RateLimit` header-field document already an HTTP standard?
+
+**A:** No. The IETF Datatracker currently lists it as an active Internet-Draft with no intended RFC status. Treat those fields as draft until the Datatracker shows publication, and follow each API's documented contract.
 
 
 ## Consensus & Leader Election
@@ -289,6 +295,8 @@ Source: [How to Approach Any System Design Problem](30.2.1.15-how-to-approach.md
 
 Source: [Probabilistic Data Structures](30.2.1.17-probabilistic-data-structures.md)
 
+Additional source: [Redis HyperLogLog documentation](https://redis.io/docs/latest/develop/data-types/probabilistic/hyperloglogs/)
+
 **Q:** Why may a Bloom negative skip an exact read but not an authoritative uniqueness write?
 
 **A:** A correctly populated filter can rule out membership in its represented set. Concurrent insertion and durable uniqueness still require atomic enforcement; a hint is not a claim.
@@ -296,6 +304,18 @@ Source: [Probabilistic Data Structures](30.2.1.17-probabilistic-data-structures.
 **Q:** Why should a Count-Min estimate not enforce a hard per-user rate limit by itself?
 
 **A:** Hash collisions can make one key's estimate include counts from other keys. Use an authoritative counter when a false throttle or quota breach is unacceptable.
+
+**Q:** Why is averaging two shard p99 values not a fleet p99?
+
+**A:** A percentile is a rank in a distribution, not an additive value. Merge compatible histogram bins or quantile sketches with their counts, then estimate the combined rank. A small slow shard and a large fast shard must contribute their actual sample counts.
+
+**Q:** Are HDR histograms probabilistic in the same sense as Bloom filters?
+
+**A:** No. HDR uses deterministic value-range and precision quantization. A t-digest instead compresses samples into weighted centroids with implementation-dependent approximation. Neither recovers every original request latency.
+
+**Q:** Does one HLL hash with a seven-bit rank mean eight distinct values were seen?
+
+**A:** No. Its rank updates one register's maximum. Cardinality is estimated from all registers together, with corrections for the estimator's range and implementation.
 
 ## Outbox Pattern & Change Data Capture (CDC)
 
@@ -335,6 +355,14 @@ Source: [Resilience Patterns Deep-Dive: Hedging, Load Shedding, Request Coalesci
 **A:** No. The client can stop waiting or reading while the server continues. Propagate cancellation and verify the actual remote lifecycle when that matters.
 
 
+**Q:** Why install a singleflight promise before invoking the loader?
+
+**A:** A synchronous throw must become the shared rejection, and a reentrant caller should find the existing flight. Deferring the loader to a microtask establishes that ordering. The loader must not recursively await its own key.
+
+**Q:** Why is forwarding a wall-clock deadline unchanged across machines unsafe?
+
+**A:** Their clocks can differ. Propagate a remaining budget with elapsed time accounted for, as gRPC does, or define an explicit clock-skew policy for absolute timestamps. A fresh timeout at every hop expands the original budget.
+
 ## Multi-Region Deployment
 
 Source: [Multi-Region Deployment](30.2.1.20-multi-region-deployment.md)
@@ -350,6 +378,14 @@ Source: [Multi-Region Deployment](30.2.1.20-multi-region-deployment.md)
 **Q:** Why can a region failover lose acknowledged writes even when a replica exists?
 
 **A:** With asynchronous replication, a primary can acknowledge a write before the standby receives it. The recovery point depends on lag and the failure. Check replication state and the application's RPO before promoting; do not assume that a replica is current.
+
+**Q:** What does DynamoDB's MRSC mode require, and what does its zero-RPO guarantee cost?
+
+**A:** MRSC requires exactly three Regions within one supported Region set, configured as three replicas or two replicas plus a witness. Cross-region coordination raises write and strong-read latency; transactions, TTL and local secondary indexes are unsupported. Competing same-item writes can fail with `ReplicatedWriteConflictException`; retry only with an application-safe, bounded policy. This is a DynamoDB contract, not a universal property of synchronous replication. See [AWS's global-table behavior](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_HowItWorks.html).
+
+**Q:** Can a transaction written to an MREC replica be assumed atomic when read from another Region?
+
+**A:** No. MREC replicates items individually. A transaction is atomic in the Region that runs it, but another replica can expose a partial set while its writes propagate. Keep cross-item invariants behind one authority or a protocol that provides the needed global atomicity. See [AWS's MREC and MRSC limits](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_HowItWorks.html).
 
 **Q:** A has component 3 and B has 2; merge B twice. What is the count?
 
@@ -401,6 +437,14 @@ Source: [DNS & Name Resolution](30.2.1.22-dns-and-name-resolution.md)
 **A:** No. Only that cached answer expires. The resolver can refresh from the authoritative record; unavailable or incorrect authority then determines the result.
 
 
+**Q:** SOA TTL is 300 seconds and SOA.MINIMUM is 60. What bounds ordinary negative caching?
+
+**A:** The lesser value, 60 seconds, under RFC 2308. A positive A record's TTL is a different cache policy; changing it does not flush a previously cached NXDOMAIN.
+
+**Q:** Can an HTTPS DNS record change which hostname the TLS certificate must identify?
+
+**A:** No. HTTPS/SVCB records can advertise a target, port, ALPN and ECH configuration, but the client still validates the certificate against its intended service identity. ECH can hide the inner SNI when negotiated; the chosen DNS resolver still sees its query. See [RFC 9460](https://www.rfc-editor.org/rfc/rfc9460.html), [RFC 9848](https://www.rfc-editor.org/rfc/rfc9848.html), and [RFC 9525](https://www.rfc-editor.org/rfc/rfc9525.html).
+
 ## TLS, HTTPS & the Certificate Lifecycle
 
 Source: [TLS, HTTPS & the Certificate Lifecycle](30.2.1.23-tls-https-and-certificates.md)
@@ -425,6 +469,18 @@ Source: [TLS, HTTPS & the Certificate Lifecycle](30.2.1.23-tls-https-and-certifi
 
 **A:** No. Let's Encrypt ended its OCSP service on 6 August 2025 and supplies CRLs. Revocation configuration must match the issuer and client mechanism.
 
+
+**Q:** Does TLS 1.3 resumption always remove a handshake round trip?
+
+**A:** No. Normal full and resumed handshakes commonly both take one RTT. Resumption avoids certificate exchange and some authentication work; eligible 0-RTT early data changes when application data can be sent and introduces replay and forward-secrecy limits.
+
+**Q:** Does a DNS CNAME change the name a TLS client checks in a certificate?
+
+**A:** No. The client matches a `subjectAltName` to the reference identity it intended to reach. A CNAME changes how DNS locates the endpoint; it does not replace that expected identity, and a Common Name fallback is not valid under current service-identity rules. See [RFC 9525](https://www.rfc-editor.org/rfc/rfc9525.html).
+
+**Q:** Does HTTP/3 carry application data in TLS records over TCP?
+
+**A:** No. QUIC uses the TLS 1.3 handshake and key schedule, then carries HTTP/3 in QUIC streams and protects QUIC packets. UDP carries those packets; QUIC provides the transport guarantees. See [RFC 9001](https://www.rfc-editor.org/rfc/rfc9001.html).
 
 ## Summary
 

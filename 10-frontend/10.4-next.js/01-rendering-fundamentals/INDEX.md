@@ -1,7 +1,7 @@
 # Rendering Fundamentals — Next.js
 
-> **Study time:** ≈ 1 h 31 m of reading (5 files, ~18 min average).
-> **5 files.** The mental model for choosing the right rendering strategy: SSR vs CSR vs SSG vs ISR, App Router conventions, React Server Components, and Client Component boundaries.
+> **Study time:** ≈ 1 h 38 m of reading (5 files, ~20 min average).
+> **5 files.** Choose where data is read, when output is cached, and where browser code begins; then trace App Router boundaries, Server Components, Client Components, and Next.js 16 Cache Components.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#files)
 [![Category](https://img.shields.io/badge/category-Rendering_Fundamentals-orange)](../INDEX.md)
@@ -13,10 +13,10 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [SSR / CSR / SSG / ISR](10.4.1.01-ssr-csr-ssg-isr.md) | Rendering strategies comparison, when to use each, hydration, streaming | Important | Specialized | 22 min |
-| 02 | [App Router](10.4.1.02-app-router.md) | Layouts, nested routes, loading states, error handling, route groups | Important | Important | 21 min |
-| 03 | [Server Components](10.4.1.03-server-components.md) | RSC payload, server rendering, serialization, authorized data access | Important | Important | 19 min |
-| 04 | [Client Components](10.4.1.04-client-components.md) | `'use client'`, interleaving, client boundaries, "use client" placement | Important | Specialized | 26 min |
+| 01 | [SSR / CSR / SSG / ISR](10.4.1.01-ssr-csr-ssg-isr.md) | Rendering strategies comparison, when to use each, hydration, streaming | Important | Specialized | 24 min |
+| 02 | [App Router](10.4.1.02-app-router.md) | Layouts, nested routes, loading states, error handling, route groups | Important | Important | 24 min |
+| 03 | [Server Components](10.4.1.03-server-components.md) | RSC payload, server rendering, serialization, authorized data access | Important | Important | 20 min |
+| 04 | [Client Components](10.4.1.04-client-components.md) | `'use client'`, interleaving, client boundaries, "use client" placement | Important | Specialized | 27 min |
 
 ---
 
@@ -26,19 +26,6 @@
 2. **Give navigation shared owners:** Trace a dashboard layout, page replacement and loading/error scope in App Router.
 3. **Follow the execution boundary:** Trace a database result through a Server Component into a hydrated client control. Explain what is serialized and what code ships.
 4. **Check recall, then practice:** Use [Revision](REVISION.md) before the [interview bank](../05-interview-prep/10.4.5.01-interview-questions.md).
-
----
-
-## Docita Anchor
-
-Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
-
-| Topic in this category | Docita evidence |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------ |
-| CSR corner of the matrix | `apps/app/src/main.tsx` - pure client-side rendered SPA shell via `createRoot` |
-| Server-rendered marketing site | `apps/landing/astro.config.mjs` - Astro server-output build (Cloudflare adapter) alongside the CSR app |
-
-_No direct docita Next.js implementation (App Router / RSC / `"use client"`) yet._
 
 ---
 

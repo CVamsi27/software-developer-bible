@@ -135,12 +135,12 @@ Source: [Error Handling](10.1.3.04-error-handling.md)
 **Definition**
 
 1. **Q:** What does JavaScript guarantee when something throws?
-   **A:** Control transfers to the nearest enclosing `try`, every frame between the throw site and that handler is popped on the way, and any `finally` blocks still run during the unwind.
+   **A:** A synchronous throw propagates to the nearest applicable catch as evaluations exit; intervening finally blocks run on those control-flow exits. Finally can itself replace the outcome, and process termination is outside that cleanup guarantee.
 
 **How It Works**
 
 2. **Q:** Why can't a `try` wrapped around `fetch(url)` catch the network failure that happens afterwards?
-   **A:** The failure arrives in a later tick, after the calling frame has already returned — only the promise channel, through `await` or `.catch`, still spans that gap, which is the whole reason rejection travels as a value.
+   **A:** The request result is reported by a promise, rather than a synchronous throw from that call. Await it inside the try or attach a rejection handler; a synchronous request-setup exception is a separate case.
 
 3. **Q:** What are `Promise.all` and `Promise.allSettled` each asserting about many results where some fail?
    **A:** `all` asserts that any failure is *the* answer and rejects at once; `allSettled` asserts that every outcome is data and resolves with one record per input.
@@ -148,7 +148,7 @@ Source: [Error Handling](10.1.3.04-error-handling.md)
 **Code Examples**
 
 4. **Q:** What type does `catch (error)` bind under strict TypeScript, and what follows from that?
-   **A:** `unknown`, so properties may only be read after narrowing — `instanceof Error`, `'message' in error`, or a `typeof` check — which turns a careless `error.message` into a compile error.
+   **A:** `unknown` when useUnknownInCatchVariables is enabled by strict or explicitly. Narrow the container before property access and check the property type before treating a message as a string; a type assertion alone supplies no runtime check.
 
 5. **Q:** Why does `Error` have a `cause` option instead of requiring you to splice the original message into the new one?
    **A:** It preserves the original error object with its own stack, so logs keep both the wrapper's context and the true origin rather than a flattened string.
@@ -156,15 +156,15 @@ Source: [Error Handling](10.1.3.04-error-handling.md)
 **Common Mistakes**
 
 6. **Q:** What is the actual damage done by `catch (error) {}`?
-   **A:** It turns a diagnosable failure into an invisible one: the caller proceeds as if nothing happened, the log stays empty, and any partial writes remain half-applied — log it with context or re-throw.
+   **A:** Unless intentional recovery or cancellation policy justifies ignoring it, the owner loses the failure signal and may treat incomplete work as success. Propagate or return an explicit outcome, and report once at the owning boundary. Catching or rethrowing does not roll back earlier effects.
 
 7. **Q:** Why is `throw 'not found'` a review-blocking habit?
-   **A:** A thrown string carries no stack, no `.name`, and nowhere to attach a `code`, so both `instanceof` branching and error reporting break down — throw an `Error` subclass.
+   **A:** JavaScript permits it, but a string has no standard error name, cause or stack fields. Prefer an Error with the diagnostic/category fields the owner needs; callers must still safely handle unknown thrown values.
 
 **Best Practices**
 
 8. **Q:** Where should a `try/catch` sit, and where is it just noise?
-   **A:** At a boundary where you can recover, translate, or return a `Result`; around internal lines it hides the failure without adding a decision, so let the error propagate instead.
+   **A:** Place it where code can recover, clean up, translate or choose a Result. A local handler can be appropriate when it owns such a decision; redundant catches that only relog or suppress should let the owning boundary handle it.
 
 ## Aborting & Cancellation
 
@@ -243,6 +243,10 @@ Source: [Bounded Concurrency & Promise Pools](10.1.3.06-bounded-concurrency.md)
 
 8. **Q:** What additional buffer matters in an ordered streaming pool?
    **A:** Results that finish ahead of a slow earlier item may accumulate before delivery. Bound that buffer as well as active tasks to provide consumer backpressure.
+
+**Q:** Does a pool whose mapper returns fetch responses bound complete response-body transfers?
+
+**A:** No. Fetch resolves when headers arrive; unconsumed bodies can remain active after a slot is released. Consume or cancel each body before mapper completion when that is the bounded unit, and add size/buffer limits.
 
 ## Summary
 

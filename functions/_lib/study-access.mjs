@@ -1,4 +1,3 @@
-const ALLOWED_STUDY_EMAIL = "cvamsik99@gmail.com";
 const PERSONAL_ACCESS_DENIED_URL = "https://personal.buildora.work/?study=access-denied";
 const PRODUCTION_PAGES_HOST = "software-developer-bible.pages.dev";
 export const STUDY_CANONICAL_ORIGIN = "https://study.buildora.work";
@@ -24,12 +23,11 @@ export function normalizeEmail(value) {
   return typeof value === "string" ? value.trim().toLowerCase() : "";
 }
 
-export function isAllowedStudyEmail(value) {
-  const norm = normalizeEmail(value);
-  return (
-    norm === ALLOWED_STUDY_EMAIL ||
-    norm.replace(/@googlemail\.com$/, "@gmail.com") === ALLOWED_STUDY_EMAIL
-  );
+export function isAllowedStudyEmail(value, allowedEmail) {
+  const normalizeGoogleAlias = (email) => normalizeEmail(email).replace(/@googlemail\.com$/, "@gmail.com");
+  const norm = normalizeGoogleAlias(value);
+  const allowed = normalizeGoogleAlias(allowedEmail);
+  return Boolean(allowed) && norm === allowed;
 }
 
 export function isPagesDevHost(value) {
@@ -197,10 +195,12 @@ export function readStudyNextCookie(cookieHeader) {
  */
 export function probeTokenSession(token, env) {
   const expected = env?.STUDY_PROBE_TOKEN;
+  const allowedEmail = normalizeEmail(env?.STUDY_ALLOWED_EMAIL);
   if (typeof expected !== "string" || expected.length === 0) return null;
+  if (!allowedEmail) return null;
   if (typeof token !== "string" || token.length === 0) return null;
   if (!matchesSecret(token, expected)) return null;
-  return { email: ALLOWED_STUDY_EMAIL };
+  return { email: allowedEmail };
 }
 
 function matchesSecret(presented, expected) {
@@ -249,6 +249,7 @@ export async function decideAccess({
   hostname,
   pathname,
   search = "",
+  allowedEmail = "",
   resolveSession,
   canonicalOrigin = STUDY_CANONICAL_ORIGIN,
 }) {
@@ -263,7 +264,7 @@ export async function decideAccess({
   if (isPublicAuthPath(pathname)) return { action: "public", status: 200, location: "" };
 
   const { email, hasToken } = await resolveSession();
-  if (email && isAllowedStudyEmail(email)) return { action: "allow", status: 200, location: "" };
+  if (email && isAllowedStudyEmail(email, allowedEmail)) return { action: "allow", status: 200, location: "" };
   if (hasToken) return { action: "denied", status: 302, location: accessDeniedRedirect() };
 
   const next = safeNextPath(`${pathname}${search}`);

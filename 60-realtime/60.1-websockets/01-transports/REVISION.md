@@ -70,6 +70,10 @@ Source: [Socket.io](60.1.1.03-socket-io.md)
 
 **A:** The server can receive the command again. Use a durable operation identity and an atomic duplicate-effect check, or reconcile the authoritative result. Socket.IO's ordering and reconnection features do not make the business write execute exactly once.
 
+**Q:** Why must an asynchronous room-join response be associated with a connection generation?
+
+**A:** Disconnect and reconnect can replace the channel while a join promise is pending. Ignore the obsolete completion so it cannot mark the replacement channel ready before that channel rejoins.
+
 ## WebTransport
 
 Source: [WebTransport](60.1.1.04-webtransport.md)

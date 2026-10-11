@@ -19,6 +19,8 @@ export type StudyEnv = {
   NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY?: string;
   NEXT_PUBLIC_SUPABASE_ANON_KEY?: string;
   SUPABASE_JWKS_URL?: string;
+  /** Exact Google account authorized to read the study site. */
+  STUDY_ALLOWED_EMAIL?: string;
   /** Optional credential that lets the live probe verify the success path. */
   STUDY_PROBE_TOKEN?: string;
 };

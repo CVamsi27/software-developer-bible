@@ -1,6 +1,6 @@
 # WebSockets Interview Prep
 
-> **Study time:** ≈ 8 min of reading (1 files, ~8 min average).
+> **Study time:** ≈ 8 min of reading (1 file, ~8 min average).
 > **1 file.** The curated question bank for real-time rounds — protocol trade-offs, scaling designs, authentication, reconnection semantics, and failure modes.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](../INDEX.md)
@@ -11,9 +11,9 @@
 
 ## The file
 
-| # | File | Contents | Time | Role priority | General importance |
+| # | File | Contents | Practice time | Role priority | General importance |
 | --: | ------ | ---------- | ------ | --- | --- |
-| 01 | [Interview Questions](60.1.4.01-interview-questions.md) | 30 authored questions and their follow-ups | 2-3 hrs | Important | Specialized |
+| 01 | [Interview Questions](60.1.4.01-interview-questions.md) | 30 authored questions and their follow-ups | 2-3 hours for worked answers | Important | Specialized |
 
 ---
 

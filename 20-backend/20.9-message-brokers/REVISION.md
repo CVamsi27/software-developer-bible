@@ -34,7 +34,7 @@ Source: [Kafka Internals & Operations](20.9.02-kafka-internals-and-operations.md
 
 **A:** No. It is an offset distance affected by processing/commit rate and log gaps. Measure event-to-effect latency and oldest-unprocessed age alongside lag.
 
-**Q:** Why does a KafkaJS heartbeat inside a loop not make an arbitrarily slow chunk safe?
+**Q:** Why does a consumer heartbeat inside a loop not make an arbitrarily slow chunk safe?
 
 **A:** The heartbeat runs only after the chunk yields. A long chunk can exceed the session budget or block JavaScript from sending it. Bound/chunk the work and keep effects idempotent across reassignment.
 
@@ -70,9 +70,13 @@ Sources: [broker model](20.9.01-message-brokers.md), [Kafka operations](20.9.02-
 
 **A:** Recovery starts at 115, giving an offset distance of five. It does not prove five retained records or a particular delay; an invalid/reset position must remain unknown rather than zero.
 
-**Q:** Does upgrading the broker to Kafka 4.1 put every consumer on KIP-848?
+**Q:** Does upgrading the broker to Kafka 4.3 put every consumer on KIP-848?
 
-**A:** No. A compatible client explicitly selects the consumer protocol. Server heartbeat/session settings then apply, but Java poll-progress limits still matter; KafkaJS's documented contract must be checked separately.
+**A:** No. A compatible client explicitly selects the consumer protocol. Server heartbeat/session settings then apply, but Java poll-progress limits still matter; check each client's protocol support instead of assuming API compatibility implies KIP-848 support.
+
+**Q:** When should a Kafka Share Group replace a classic consumer group?
+
+**A:** When individual records can be distributed and acknowledged independently, and strict per-partition processing order is unnecessary. A classic group remains the fit for partition ownership, ordered stream processing and offset-based replay.
 
 **Q:** Why can a claim-check event become impossible to replay after its first successful delivery?
 

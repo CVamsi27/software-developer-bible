@@ -440,6 +440,21 @@ CASES = [
         },
     },
     {
+        "name": "gate 5 ignores generated and vendored Markdown",
+        "gate": "check_freshness.py", "args": [],
+        "plant": {
+            "p.md": "# Source\n\n```http\nDeprecation: true\n```\n",
+            "_site/copied.md": "# Generated copy\n\n```http\nDeprecation: true\n```\n",
+            "vendor/copied.md": "# Vendored copy\n\n```http\nDeprecation: true\n```\n",
+        },
+        "fire_names": ("p.md:4", "BOOLEAN-DEPRECATION-HEADER"),
+        "clean": {
+            "p.md": "# Source\n\nThe current representation is a date.\n",
+            "_site/copied.md": "# Generated copy\n\n```http\nDeprecation: true\n```\n",
+            "vendor/copied.md": "# Vendored copy\n\n```http\nDeprecation: true\n```\n",
+        },
+    },
+    {
         "name": "gate 5 rejects withdrawn media-sanitization citations in current architecture",
         "gate": "check_freshness.py", "args": [],
         "plant": {
@@ -638,6 +653,24 @@ CASES = [
         'clean': {'p.md': FLOW_CLEAN},
     },
     {
+        'name': 'gate 6b template ignores generated and vendored Markdown',
+        'gate': 'check_template.py',
+        'args': [],
+        'plant': {
+            'p.md': FLOW_CLEAN.replace(
+                '## See Also',
+                '## Cheat Sheet\n\nA duplicate recap of the concept.\n\n## See Also', 1),
+            '_site/copied.md': '# Generated copy\n',
+            'vendor/copied.md': '# Vendored copy\n',
+        },
+        'fire_names': ('p.md', 'retired in-chapter Cheat Sheet'),
+        'clean': {
+            'p.md': FLOW_CLEAN,
+            '_site/copied.md': '# Generated copy\n',
+            'vendor/copied.md': '# Vendored copy\n',
+        },
+    },
+    {
         "name": "gate 2 rejects a table attached to a horizontal rule",
         "gate": "check_alignment.py", "args": [],
         "plant": {"p.md": "| A | B |\n| --- | --- |\n| 1 | 2 |\n---\n"},
@@ -655,6 +688,21 @@ CASES = [
         "args": [],
         "plant": {"p.md": "before\n\n| A | B |\n|---|---|\n| 1 | 2 |\n"},
         "clean": {"p.md": "before\n\n| A | B |\n| --- | --- |\n| 1 | 2 |\n"},
+    },
+    {
+        "name": "gate 2 alignment ignores generated and vendored Markdown",
+        "gate": "check_alignment.py", "args": [],
+        "plant": {
+            "p.md": "before\n\n| A | B |\n|---|---|\n| 1 | 2 |\n",
+            "_site/copied.md": "# Copy\n\n| A | B |\n|---|---|\n| 1 | 2 |\n",
+            "vendor/copied.md": "# Copy\n\n| A | B |\n|---|---|\n| 1 | 2 |\n",
+        },
+        "fire_names": ("p.md",),
+        "clean": {
+            "p.md": "before\n\n| A | B |\n| --- | --- |\n| 1 | 2 |\n",
+            "_site/copied.md": "# Copy\n\n| A | B |\n|---|---|\n| 1 | 2 |\n",
+            "vendor/copied.md": "# Copy\n\n| A | B |\n|---|---|\n| 1 | 2 |\n",
+        },
     },
     {
         "name": "gate 4 checks navigation and headings inside whole-chapter raw wrappers",
@@ -697,11 +745,51 @@ CASES = [
         },
     },
     {
+        "name": "gate 4 ignores generated and vendored Markdown",
+        "gate": "check_links.py",
+        "args": [],
+        "plant": {
+            "source.md": "# Source\n\n[missing](no-such-file.md)\n",
+            "target.md": "# Target\n",
+            "_site/copied.md": (
+                "# Generated copy\n\n`10-frontend/10.1-javascript/nope.md`\n"
+            ),
+            "vendor/copied.md": (
+                "# Vendored copy\n\n`20-backend/20.4-database/nope.md`\n"
+            ),
+        },
+        "clean": {
+            "source.md": "# Source\n\n[valid](target.md)\n",
+            "target.md": "# Target\n",
+            "_site/copied.md": (
+                "# Generated copy\n\n`10-frontend/10.1-javascript/nope.md`\n"
+            ),
+            "vendor/copied.md": (
+                "# Vendored copy\n\n`20-backend/20.4-database/nope.md`\n"
+            ),
+        },
+    },
+    {
         "name": "gate 8 whitespace fires on trailing ws in fences",
         "gate": "check_code_whitespace.py",
         "args": [],
         "plant": {"p.md": "text\n\n```js\nconst y = 3;   \n```\n"},
         "clean": {"p.md": "text\n\n```js\nconst y = 3;\n```\n"},
+    },
+    {
+        "name": "gate 8 whitespace ignores generated and vendored Markdown",
+        "gate": "check_code_whitespace.py", "args": [],
+        "plant": {
+            "p.md": "# Source\n\n```js\nconst y = 3;   \n```\n",
+            "_site/copied.md": "# Copy\n\n```js\nconst y = 3;   \n```\n",
+            "vendor/copied.md": "# Copy\n\n```js\nconst y = 3;   \n```\n",
+        },
+        "fire_names": ("p.md:4", "TRAILING-WS"),
+        "clean": {
+            "p.md": "# Source\n\n```js\nconst y = 3;\n```\n",
+            "_site/copied.md": "# Copy\n\n```js\nconst y = 3;   \n```\n",
+            "vendor/copied.md": "# Copy\n\n```js\nconst y = 3;   \n```\n",
+        },
     },
     {
         "name": "gate 1 counts fires on a drifted Files badge",
@@ -747,11 +835,73 @@ CASES = [
         },
     },
     {
+        # Nested stack INDEX tables are learning navigation too. Their Files
+        # column counts numbered study chapters, not the REVISION companion;
+        # the old writer only visited the three repository-root indexes and
+        # silently left this row stale.
+        "name": "gate 1 counts fires on a stale nested INDEX navigation row",
+        "gate": "check_counts.py",
+        "args": [],
+        "dirs": ["20-backend"],
+        "plant": {
+            "10-frontend/INDEX.md": (
+                "# Frontend\n\n"
+                "[![Files](https://img.shields.io/badge/files-3-blue)](#)\n\n"
+                "| Order | Sub-stack | Files | Topics |\n"
+                "| ----: | -------- | ----: | ------ |\n"
+                "| 1 | [HTML/CSS](10.7-html-css/INDEX.md) | 1 | Web platform |\n"
+            ),
+            "10-frontend/10.7-html-css/INDEX.md": (
+                "# HTML/CSS\n\n"
+                "> 3 files — HTML and CSS study path.\n\n"
+                "[![Files](https://img.shields.io/badge/files-3-blue)](#)\n"
+            ),
+            "10-frontend/10.7-html-css/10.7.01-html.md": "# HTML\n",
+            "10-frontend/10.7-html-css/10.7.02-css.md": "# CSS\n",
+            "10-frontend/10.7-html-css/REVISION.md": "# Revision\n",
+        },
+        "clean": {
+            "10-frontend/INDEX.md": (
+                "# Frontend\n\n"
+                "[![Files](https://img.shields.io/badge/files-3-blue)](#)\n\n"
+                "| Order | Sub-stack | Files | Topics |\n"
+                "| ----: | -------- | ----: | ------ |\n"
+                "| 1 | [HTML/CSS](10.7-html-css/INDEX.md) | 2 | Web platform |\n"
+            ),
+            "10-frontend/10.7-html-css/INDEX.md": (
+                "# HTML/CSS\n\n"
+                "> 3 files — HTML and CSS study path.\n\n"
+                "[![Files](https://img.shields.io/badge/files-3-blue)](#)\n"
+            ),
+            "10-frontend/10.7-html-css/10.7.01-html.md": "# HTML\n",
+            "10-frontend/10.7-html-css/10.7.02-css.md": "# CSS\n",
+            "10-frontend/10.7-html-css/REVISION.md": "# Revision\n",
+        },
+        "fire_names": ("COUNT DRIFT", "10-frontend/INDEX.md:"),
+    },
+    {
         "name": "gate 3 structure fires on two H1s",
         "gate": "check_structure.py",
         "args": [],
         "plant": {"p.md": "# A\n\nx\n\n# B\n\ny\n"},
         "clean": {"p.md": "# A\n\nx\n\n## Sub\n\ny\n"},
+    },
+    {
+        "name": "gate 3 structure ignores generated and vendored Markdown",
+        "gate": "check_structure.py", "args": [],
+        "plant": {
+            "p.md": "# A\n\nx\n\n# B\n\ny\n",
+            "target.md": "# Target\n",
+            "_site/copied.md": "# Copy\n\n[broken](absent.md)\n",
+            "vendor/copied.md": "# Copy\n\n[broken](absent.md)\n",
+        },
+        "fire_names": ("H1 COUNT p.md",),
+        "clean": {
+            "p.md": "# A\n\nx\n\n## Sub\n\ny\n",
+            "target.md": "# Target\n",
+            "_site/copied.md": "# Copy\n\n[broken](absent.md)\n",
+            "vendor/copied.md": "# Copy\n\n[broken](absent.md)\n",
+        },
     },
     {
         # The 2026-09-21 sweep found exactly one of these on disk (an H2
@@ -1069,6 +1219,30 @@ CASES = [
             "50-quality/50.1-testing/50.1.01-mocking.md": (
                 "# Mocking\n\n```typescript\nimport { http, HttpResponse } from 'msw';\n```\n"
                 "\nMSW v1 used rest; current code uses http.\n"
+            ),
+        },
+    },
+    {
+        "name": "gate 5 rejects deprecated Zod 4 chained string format validators",
+        "gate": "check_freshness.py",
+        "args": [],
+        "plant": {
+            "10-frontend/10.5-form-handling/10.5.02-zod.md": (
+                "# Zod 4\n\n```typescript\n"
+                "const email = z.string().email();\n"
+                "const id = z.string().uuid();\n"
+                "```\n"
+            ),
+        },
+        "fire_names": ("DEPRECATED-ZOD4-STRING-FORMAT", "10.5.02-zod.md:4"),
+        "clean": {
+            "10-frontend/10.5-form-handling/10.5.02-zod.md": (
+                "# Zod 4\n\n```typescript\n"
+                "const email = z.email();\n"
+                "const id = z.uuid();\n"
+                "```\n"
+                "The deprecated `z.string().email()` spelling is discussed in prose.\n"
+                "````markdown\n```typescript\nconst old = z.string().uuid();\n```\n````\n"
             ),
         },
     },

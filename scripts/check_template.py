@@ -19,7 +19,7 @@ import md_fences
 from scan_scope import guard
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SKIP_DIRS = {'.git', 'node_modules', '.archive', 'personal'}
+SKIP_DIRS = {'.git', 'node_modules', 'vendor', '_site', '.archive', 'personal'}
 # Campaign/project docs are not concept chapters; they have their own
 # conventions (the First Principles gate covers them separately).
 # `docs/` holds project meta (changelogs, reports, plans, specs) that

@@ -7,7 +7,7 @@
 [![Category](https://img.shields.io/badge/category-Quality-green)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Why performance monitoring:** Core Web Vitals affect SEO, conversion, and user satisfaction. Senior frontend interviews test LCP/INP/CLS, profiling workflow, and performance budgets. Measure the affected journey and population before claiming a business effect.
+**Why performance monitoring:** Performance monitoring connects loading, interaction and visual stability to decisions about a real user journey. It also helps assess search and business outcomes, which need their own scope and evidence. Senior interviews test LCP/INP/CLS, profiling and enforced budgets.
 
 ---
 
@@ -18,7 +18,7 @@
 | [01 — Core Metrics](01-core-metrics/INDEX.md) | 1 | LCP, INP, CLS — the three pillars and their thresholds |
 | [02 — Measurement](02-measurement/INDEX.md) | 5 | Performance APIs, profiling tools, Lighthouse CI, RUM, HTTP/2 & HTTP/3 effects |
 | [03 — Optimization & Governance](03-optimization-and-governance/INDEX.md) | 2 | Bundle analysis, performance budgets |
-| [04 — Interview Prep](04-interview-prep/INDEX.md) | 1 | 25+ Qs |
+| [04 — Interview Prep](04-interview-prep/INDEX.md) | 1 | 30 questions |
 
 ---
 
@@ -56,7 +56,7 @@ Laboratory tests control a workload; field collection samples real visits. Perfo
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Bundle Analysis](03-optimization-and-governance/50.3.3.01-bundle-analysis.md) | Bundle size, tree shaking, code splitting, bundlephobia, source-map-explorer | Important | Important | 9 min |
-| 02 | [Performance Budgets](03-optimization-and-governance/50.3.3.02-performance-budgets.md) | `size-limit`, per-chunk budgets, CI enforcement, budgeting tiers | Important | Important | 9 min |
+| 02 | [Performance Budgets](03-optimization-and-governance/50.3.3.02-performance-budgets.md) | artifact and route budgets, CI enforcement, explicit units and exception ownership | Important | Important | 9 min |
 
 ---
 
@@ -64,7 +64,7 @@ Laboratory tests control a workload; field collection samples real visits. Perfo
 
 | # | File | Contents | Time | Role priority | General importance |
 | --: | ------ | ---------- | ------ | --- | --- |
-| 01 | [Interview Questions](04-interview-prep/50.3.4.01-interview-questions.md) | 25+ curated questions with answers | 1-2 hrs | Important | Important |
+| 01 | [Interview Questions](04-interview-prep/50.3.4.01-interview-questions.md) | 30 questions with answers and changed-condition probes | 1-2 hrs | Important | Important |
 
 ---
 

@@ -1,13 +1,13 @@
 # WebSockets — Index
 
-> **Study time:** ≈ 2 h 2 m of reading (14 files, ~9 min average).
+> **Study time:** ≈ 2 h 3 m of reading (14 files, ~9 min average).
 > **14 files across 4 categories.** Real-time communication from WebSocket fundamentals and Socket.IO to Server-Sent Events, real-time architecture, NestJS WebSockets, GraphQL subscriptions, WebRTC peer-to-peer, testing realtime systems, WebTransport, scaling patterns, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-14-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Real--Time-%2300b4d8)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Why real-time:** Mid-stage startups increasingly build chat, collaboration, or live-tracking features. Senior interviews test WebSocket protocol knowledge, scaling patterns (sticky sessions, Redis adapter), and the choice between SSE / WebSocket / WebTransport / polling. Read this section when the JD requires it.
+**Why real-time:** Chat, collaboration and live tracking require clear transport, delivery and recovery contracts. Prepare protocol choices and scaling decisions when those responsibilities appear in the role. Read this section when the JD requires it.
 
 ---
 
@@ -30,8 +30,8 @@ Transport options and the Socket.IO library built above them.
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
 | 01 | [WebSockets Overview](01-transports/60.1.1.01-websockets-overview.md) | Protocol, handshake (HTTP Upgrade), frames, vs HTTP, use cases | Bidirectional real-time | Important | Specialized | 13 min |
 | 02 | [Server-Sent Events](01-transports/60.1.1.02-server-sent-events.md) | EventSource API, auto-reconnect, vs WebSockets, use cases | Server→client only (notifications, live updates) | Important | Specialized | 12 min |
-| 03 | [Socket.IO](01-transports/60.1.1.03-socket-io.md) | Client/server setup, rooms, namespaces, events, fallback to polling | Quick bidirectional with rich features | Important | Specialized | 13 min |
-| 04 | [WebTransport](01-transports/60.1.1.04-webtransport.md) | QUIC-based transport, datagrams, streams, vs WebSocket | Modern, low-latency, unreliable delivery OK | Optional | Specialized | 9 min |
+| 03 | [Socket.IO](01-transports/60.1.1.03-socket-io.md) | Client/server setup, rooms, namespaces, events, fallback to polling | Quick bidirectional with rich features | Important | Specialized | 14 min |
+| 04 | [WebTransport](01-transports/60.1.1.04-webtransport.md) | QUIC-based transport, datagrams, streams, vs WebSocket | Independent reliable streams or replaceable datagrams | Optional | Specialized | 9 min |
 
 **Decision tree:**
 
@@ -40,7 +40,7 @@ Need real-time communication?
 ├── Server → client only? ──→ SSE (simple, auto-reconnect)
 ├── Bidirectional, simple? ──→ WebSocket (raw)
 ├── Bidirectional, rich features, fallback? ──→ Socket.IO
-├── Low-latency, unreliable, datagrams? ──→ WebTransport (modern)
+├── Independent streams or replaceable datagrams? ──→ WebTransport (verify full path)
 └── Just initial load? ──→ ordinary HTTP request (poll only for repeated updates)
 ```
 
@@ -64,7 +64,7 @@ The hard part — making it work at scale.
 | 01 | [NestJS WebSockets](03-frameworks-and-paradigms/60.1.3.01-nestjs-websockets.md) | Gateways, adapters (Socket.IO / WS), guards, pipes, exception filters | Important | Specialized | 11 min |
 | 02 | [GraphQL Subscriptions & Live Queries](03-frameworks-and-paradigms/60.1.3.02-graphql-subscriptions-live-queries.md) | graphql-ws protocol, Redis pub-sub, withFilter, live queries, fan-out scaling | Optional | Specialized | 11 min |
 | 03 | [WebRTC Peer-to-Peer](03-frameworks-and-paradigms/60.1.3.03-webrtc-peer-to-peer.md) | getUserMedia, RTCPeerConnection, RTCDataChannel, ICE/STUN/TURN, mesh vs SFU vs MCU | Optional | Specialized | 11 min |
-| 04 | [Testing Real-Time Systems](03-frameworks-and-paradigms/60.1.3.04-testing-realtime-systems.md) | Artillery WS scenarios, churn, ordering/backpressure assertions, chaos drills, soak tests | Important | Specialized | 10 min |
+| 04 | [Testing Real-Time Systems](03-frameworks-and-paradigms/60.1.3.04-testing-realtime-systems.md) | Protocol smoke checks, workload/churn design, recovery oracles and soak evidence | Important | Specialized | 10 min |
 
 ---
 

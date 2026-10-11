@@ -25,14 +25,14 @@ Running five application instances can cause a scheduled job to run five times o
 
 ## Reading Path and Completion Check
 
-Read the consensus theory link first. Then compare the tools used to coordinate running processes, checking how ownership is renewed and how the protected resource rejects an old owner.
+Read [Consensus & Leader Election](../../30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.md) first. Then compare the tools used to coordinate running processes, checking how ownership is renewed and how the protected resource rejects an old owner.
 
 Trace a conflict-row wait during acquisition, then show a paused owner resuming after a successor acquires the lease and explain exactly which write the resource rejects. Then use [section revision](REVISION.md) without reopening the chapters. Interview banks, where present, are a separate drill after this check.
 
 ## Cross-References
 
 - [Distributed Locks](../../30.2-system-design/01-theory/INDEX.md) — Redlock, ZooKeeper, advisory locks in system-design depth
-- [Consensus & Leader Election (theory)](../../30.2-system-design/01-theory/INDEX.md) — the underlying distributed-systems theory
+- [Consensus & Leader Election (theory)](../../30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.md) — the underlying distributed-systems theory
 
 ---
 

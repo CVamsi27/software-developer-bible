@@ -1,7 +1,7 @@
 # Patterns & Interview Prep — React
 
-> **Study time:** ≈ 1 h 8 m of reading (4 files, ~17 min average).
-> **4 files.** Reusable component composition patterns — portals and compound components — plus the focused interview bank.
+> **Study time:** ≈ 1 h 7 m of reading (4 files, ~17 min average).
+> **4 files.** Reusable composition patterns — portals and compound components — plus focused interview practice.
 
 [![Files](https://img.shields.io/badge/files-4-blue)](#files)
 [![Category](https://img.shields.io/badge/category-Patterns_and_Interview-orange)](../INDEX.md)
@@ -13,9 +13,9 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Portals](10.3.5.01-portals.md) | createPortal, event bubbling, modals, tooltips, overflow escape, SSR safety | Important | Specialized | 25 min |
-| 02 | [Compound Components](10.3.5.02-compound-components.md) | Context-based pattern, tabs, accordion, select, form fields, generics | Important | Specialized | 27 min |
-| 03 | [Interview Questions](10.3.5.03-interview-questions.md) | Curated mechanism, tradeoff and failure questions | Important | Specialized | 14 min |
+| 01 | [Portals](10.3.5.01-portals.md) | createPortal, event bubbling, modals, tooltips, overflow escape, SSR safety | Important | Specialized | 23 min |
+| 02 | [Compound Components](10.3.5.02-compound-components.md) | Context-based composition, tabs, accordion, choice popover, form fields, generics | Important | Specialized | 30 min |
+| 03 | [Interview Questions](10.3.5.03-interview-questions.md) | Curated mechanism, tradeoff and failure questions | Important | Specialized | 12 min |
 
 ---
 
@@ -24,17 +24,6 @@
 1. **Separate placement from logical ownership.** Read Portals; trace context, React events and native DOM paths across the destination.
 2. **Coordinate flexible parts through one owner.** Read Compound Components; identify the selection owner, unmount/reset policy and accessible relationships.
 3. **Recall before timed answers.** Complete [revision](REVISION.md), then the interview bank. Add a concrete trace and a changed-condition boundary to each answer.
-
----
-
-## Docita Anchor
-
-Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
-
-| Topic in this category | Docita evidence |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Portals | `packages/ui/src/components/overlay/dialog.tsx` - `DialogPrimitive.Portal` wrapper rendering dialogs outside the DOM tree |
-| Compound components | `packages/ui/src/components/form/form-primitives.tsx` - FormField/FormLabel/FormControl/FormMessage kit backed by context in `packages/ui/src/components/form/form.tsx` |
 
 ---
 

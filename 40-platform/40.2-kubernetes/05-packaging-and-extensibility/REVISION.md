@@ -62,6 +62,10 @@ Source: [CRDs, Operators & Controller Patterns](40.2.5.03-crds-operators-control
 
 **A:** Reconciliation can retry. Cleanup must recognize the already deleted external resource and safely finish before removing the finalizer. A manual finalizer removal skips cleanup and can abandon data/resources.
 
+**Q:** Why does changing a CRD's storage version not migrate objects already stored in etcd?
+
+**A:** The storage version controls new writes. Reads can convert an old stored representation for a client without rewriting the object. Migrate existing objects and verify `status.storedVersions` before removing the old version.
+
 ## Summary
 
 Use the answers to check your reasoning, then revisit the source mechanism and reproduce any relevant example without copying it. A remembered label is useful only when you can explain its limits.

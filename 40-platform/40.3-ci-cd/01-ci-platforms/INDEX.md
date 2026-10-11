@@ -1,7 +1,7 @@
 # CI Platforms
 
-> **Study time:** ≈ 40 min of reading (5 files, ~8 min average).
-> **5 files.** The four platforms you are most likely to meet: GitHub Actions, GitLab CI, Jenkins, and ArgoCD (GitOps). The concepts transfer; learn one deeply, map the others.
+> **Study time:** ≈ 41 min of reading (5 files, ~8 min average).
+> **5 files.** The four platforms you are most likely to meet: GitHub Actions, GitLab CI/CD, Jenkins, and Argo CD. Learn one deeply, then map its event, execution, artifact and authority boundaries to the others.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-CI%20Platforms-green)](../INDEX.md)
@@ -23,7 +23,7 @@ Start with the platform your project uses, but keep the same questions throughou
 
 ## Pass 3 — Let a Controller Reconcile the Declared State
 
-[ArgoCD](40.3.1.04-argocd.md) continuously compares desired Git state with the cluster. Trace drift and synchronization separately from the build that produced the image, and separate manifest rollback from irreversible database/external effects.
+[Argo CD](40.3.1.04-argocd.md) continuously compares rendered desired state with tracked cluster resources. Trace drift and synchronization separately from the build that produced the image, and separate manifest rollback from irreversible database/external effects.
 
 ## Finish With Revision, Then Practice
 

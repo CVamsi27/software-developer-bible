@@ -67,19 +67,22 @@ Source: [App Router in Next.js](10.4.1.02-app-router.md)
 3. **Q:** How should a server page read a dynamic segment in Next.js 15 and 16?
    **A:** Receive params as a Promise and await it before reading the field. The temporary synchronous compatibility in 15 does not extend to 16.
 
-4. **Q:** What happens to an unmatched parallel slot after a hard navigation?
-   **A:** The router needs a default.tsx fallback because it cannot recover that slot's prior active state. Provide one for each potentially unmatched slot.
+4. **Q:** Why does Next.js 16 require parallel-route defaults, and what happens to an unmatched slot on hard navigation?
+   **A:** The build requires an explicit `default.tsx` for each parallel-route slot. On hard navigation, an unmatched slot renders that default because Next cannot recover its prior active state. Return `notFound()` from the default to preserve a 404; the implicit `children` slot can need one too.
+
+5. **Q:** If a layout checks a role and returns only the `admin` or `user` slot, has it prevented the other slot's server work?
+   **A:** No. Next renders every slot at that segment even when the layout does not return its output. Authorize inside each slot's data-access path, and do not mix prerendered and dynamically rendered slots at one segment.
 
 
 **Common Mistakes**
 
-5. **Q:** Why does the current segment's error.tsx fail to catch an error in its layout?
+6. **Q:** Why does the current segment's error.tsx fail to catch an error in its layout?
    **A:** The error boundary is nested beneath that layout. A parent boundary, or global-error.tsx for root-layout failure, must cover the failing ancestor.
 
 
 **Code Examples**
 
-6. **Q:** Can a page and a Route Handler claim the same segment?
+7. **Q:** Can a page and a Route Handler claim the same segment?
    **A:** No. Both own the same URL, so place the handler in a different segment.
 
 ## Server Components in Next.js

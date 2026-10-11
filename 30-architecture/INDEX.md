@@ -1,6 +1,6 @@
 # Architecture Stack
 
-> **Study time:** ≈ 18 h 24 m of reading (121 files, ~9 min average).
+> **Study time:** ≈ 19 h 8 m of reading (121 files, ~9 min average).
 > **System design + design patterns** — shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
 > The architecture stack is what you need for system design rounds. Do this after you've covered frontend and backend stacks (10-frontend, 20-backend).
@@ -15,8 +15,8 @@
 | Section | Files | Topics |
 | ------------------------------------------------------- | ----: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Design Patterns](30.1-design-patterns/INDEX.md) | 38 | **Foundations** (SOLID, OOP, UML) + **Creational** (Singleton, Factory, Builder, Abstract Factory, Prototype) + **Structural** (Adapter, Facade, Decorator, Proxy, Module, Composite, Bridge, Flyweight) + **Behavioral** (Strategy, Observer, Chain, State, Template Method, Iterator, Mediator, Memento, Command, Visitor, Interpreter) + **Architectural** (Repository, CQRS+DI, Event Sourcing, Saga) + 50+ interview questions. All 23 GoF patterns + modern patterns. |
-| [System Design](30.2-system-design/INDEX.md) | 52 | Theory (CAP, consistency, sharding, caching, queues, transactions, rate limiting, consensus, failures, capacity, transport, DNS and TLS) + approach/interview practice and advanced mechanisms (probabilistic structures, outbox/CDC, resilience and multi-region) + case studies (URL shortener, WhatsApp, Uber, Netflix, payment gateway, ticket booking, etc.) |
-| [Infrastructure Patterns](30.3-infra-patterns/INDEX.md) | 16 | Health checks & graceful shutdown, resilience overview, retry patterns, idempotency keys, leader election & consensus, database scaling, data pipelines, CDN architecture, zero-downtime deployments, technical debt management — learn lifecycle, failure/recovery, coordination, data-at-scale and shipping/evolution before the separate interview bank |
+| [System Design](30.2-system-design/INDEX.md) | 54 | Theory (CAP, consistency, sharding, caching, queues, transactions, rate limiting, consensus, failures, capacity, transport, DNS and TLS) + approach/interview practice and advanced mechanisms (probabilistic structures, outbox/CDC, resilience and multi-region) + case studies (URL shortener, WhatsApp, Uber, Netflix, payment gateway, ticket booking, etc.) |
+| [Infrastructure Patterns](30.3-infra-patterns/INDEX.md) | 17 | Health and lifecycle, resilience and recovery, coordination, scaling and multi-tenant systems, deployments, technical debt, FinOps, data retention, and interview practice |
 
 ---
 

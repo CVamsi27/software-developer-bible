@@ -31,7 +31,7 @@ For compensation, distinguish recurring components from one-time payments and un
 
 - [Indian SDE / FAANG lane](../81-lanes-indian-sde-faang/INDEX.md) organizes that role-preparation track.
 - [Abroad Full-Stack lane](../80-lanes-abroad-full-stack/INDEX.md) organizes relocation and full-stack preparation.
-- The [lane comparison](../80-lanes-abroad-full-stack/INDEX.md) helps choose where to continue; verify the specific employer's requirements.
+- The [lane comparison](../lanes/INDEX.md) helps choose where to continue; verify the specific employer's requirements.
 
 ---
 

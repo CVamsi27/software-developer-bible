@@ -467,10 +467,12 @@ def main():
     if targets:
         paths = [p for p in targets if p.endswith('.md')]
     else:
-        paths = [os.path.join(r, f)
-                 for r, _, fs in os.walk('.')
-                 if '.git' not in r and 'node_modules' not in r
-                 for f in fs if f.endswith('.md')]
+        skip_dirs = {'.git', 'node_modules', 'vendor', '_site', '.archive',
+                     '.freebuff', '.sass-cache'}
+        paths = []
+        for root, dirs, files in os.walk('.'):
+            dirs[:] = [d for d in dirs if d not in skip_dirs]
+            paths.extend(os.path.join(root, f) for f in files if f.endswith('.md'))
     # "0 file(s) with misaligned boxes/tables" is what a broken walk prints
     # too — the count of files actually read is the gate's real reach
     # (scan_scope). Aligned boxes in no files is not a pass.

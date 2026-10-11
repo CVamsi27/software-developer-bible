@@ -1,6 +1,6 @@
 # Generics & Inference — TypeScript
 
-> **Study time:** ≈ 1 h 2 m of reading (5 files, ~12 min average).
+> **Study time:** ≈ 1 h 4 m of reading (5 files, ~13 min average).
 > **5 files.** Reusable type-safe abstractions: generics with constraints and defaults, `infer` extraction in conditional types, recursive/variadic type-level programming, and the variance rules that decide assignability.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#files)
@@ -12,11 +12,11 @@
 ## Files
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------: |
+| ------ | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ | ------------- | ------------------ | ----------: |
 | 01 | [Generics](10.2.2.01-generics.md) | Generic functions, constraints, default type parameters, conditional generics | Essential | Foundational | 13 min |
 | 02 | [Infer](10.2.2.02-infer.md) | Type inference in conditional types, `ReturnType`, `Parameters`, `Awaited`, custom utility types | Important | Specialized | 13 min |
-| 03 | [Advanced Generics](10.2.2.03-advanced-generics.md) | Template literal types, variadic tuples, recursive types, builder patterns | Important | Specialized | 18 min |
-| 04 | [Type Variance](10.2.2.04-type-variance.md) | Covariance/contravariance/invariance, strictFunctionTypes bivariance, unsound covariant arrays, in/out annotations, assignability puzzles | Important | Specialized | 14 min |
+| 03 | [Advanced Generics](10.2.2.03-advanced-generics.md) | Higher-kinded encodings, deep path constraints, conditional returns, variadic pipelines, recursive transforms and their limits | Important | Specialized | 18 min |
+| 04 | [Type Variance](10.2.2.04-type-variance.md) | Producer/consumer direction, strict callback parameters, method bivariance, mutable array holes, variance annotations | Important | Specialized | 15 min |
 
 ---
 

@@ -24,7 +24,11 @@ Source: [Kubernetes Health Checks](40.2.4.01-health-checks.md)
 
 **Q:** What changes when a shared database fails but every API event loop remains responsive?
 
-**A:** A readiness contract requiring that database can withdraw traffic, while local liveness stays successful. Making database availability a liveness condition would instead restart every replica without repairing the shared cause.
+**A:** If every API request requires that database, readiness can withdraw an affected replica while local liveness stays successful. If the application can serve a useful degraded response, keep it ready and handle the dependency failure in the request path. Making a shared database failure a liveness condition would restart replicas without repairing the cause.
+
+**Q:** Does an HTTPS probe or Kubernetes v1.37's alpha gRPC TLS probe verify the server's certificate?
+
+**A:** No. HTTPS and the gRPC TLS probe encrypt traffic but skip server-certificate verification. The gRPC TLS mode is alpha in v1.37 and disabled by default; neither mode proves server identity.
 
 ## Pod Disruption Budgets
 
@@ -38,6 +42,10 @@ Source: [Pod Disruption Budgets](40.2.4.02-pod-disruption-budgets.md)
 
 **A:** The desired healthy threshold is two, and the first accepted disruption consumes the available allowance. Replacement intent is not replacement readiness. Wait for healthy capacity to return.
 
+**Q:** What does `selector: {}` select in a `policy/v1` PodDisruptionBudget, and when can you use `maxUnavailable`?
+
+**A:** An empty selector matches every Pod in the namespace, so use explicit labels and check the PDB status. `maxUnavailable` needs one supported managing controller for the selected Pods; for arbitrary or bare Pods, use an integer `minAvailable`.
+
 ## RBAC & Network Policies
 
 Source: [RBAC & Network Policies](40.2.4.03-rbac-network-policies.md)
@@ -45,6 +53,10 @@ Source: [RBAC & Network Policies](40.2.4.03-rbac-network-policies.md)
 **Q:** Why can a NetworkPolicy manifest have no effect?
 
 **A:** The cluster's network implementation must enforce NetworkPolicy. The object's existence alone does not prove data-plane isolation.
+
+**Q:** If no RBAC rule matches a request, does that alone prove the API server rejects it?
+
+**A:** No. The RBAC authorizer returns no opinion when no rule matches, so another configured authorizer may decide the request. A conclusive allow or deny decides it; if every authorizer returns no opinion, the API server denies it.
 
 **Q:** What is the difference between RBAC and NetworkPolicy?
 

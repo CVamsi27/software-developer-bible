@@ -1,6 +1,6 @@
 # Interview Drills - Security
 
-> **Study time:** ≈ 8 min of reading (1 files, ~8 min average).
+> **Study time:** ≈ 8 min of reading (1 file, ~8 min average).
 > **1 file.** The full authored security question bank — pairs with the auth-track question set in [01-auth](../01-auth/INDEX.md).
 
 [![Files](https://img.shields.io/badge/files-1-blue)](../INDEX.md)

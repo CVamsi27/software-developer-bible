@@ -19,7 +19,7 @@
 ## Files
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------: |
+| ----- | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ------------- | ------------------ | ----------: |
 | 01 | [Transactions](20.4.3.01-transactions.md) | ACID, BEGIN/COMMIT, SAVEPOINT, isolation levels (read committed, repeatable read, serializable) | Essential | Foundational | 7 min |
 | 02 | [Deadlocks](20.4.3.02-deadlocks.md) | Wait cycles, detector versus timeout, lock ordering, blocker diagnosis, whole-transaction retry | Essential | Foundational | 5 min |
 | 03 | [Optimistic & Pessimistic Locking](20.4.3.03-optimistic-pessimistic-locking.md) | Version-based locking, row-level locking, advisory locks, SELECT FOR UPDATE | Important | Important | 6 min |

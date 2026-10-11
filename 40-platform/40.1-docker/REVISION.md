@@ -106,6 +106,18 @@ Source: [Compose](40.1.03-compose.md)
 
 **A:** No. The condition gates startup. The running API still needs connection-failure handling; an unhealthy container is not automatically restarted solely because of its health status.
 
+**Q:** What changes when the official PostgreSQL image moves from major 17 to 18, and why is changing only the image tag unsafe?
+
+**A:** PostgreSQL 18+ uses a version-specific `PGDATA` path under `/var/lib/postgresql` and declares that parent as its volume target. Older official-image majors use `/var/lib/postgresql/data`. Mounting the old path with the new image can leave data in an unintended anonymous volume; follow the image's documented upgrade and migration procedure, and verify the restored data before removing the old volume.
+
+Source: [PostgreSQL Official Image: PGDATA and volumes](https://github.com/docker-library/docs/blob/master/postgres/README.md#pgdata)
+
+**Q:** What is the rootless Docker host-network change in Engine 29.5, and why might explicit port publishing still be safer?
+
+**A:** Before Engine 29.5, rootless host networking remained inside RootlessKit's network namespace; newer engines can bind into the real host namespace. Sharing that namespace removes network isolation, so use explicit `-p` publishing unless the workload needs host networking and the security trade-off is accepted.
+
+Source: [Docker rootless networking limitations](https://docs.docker.com/engine/security/rootless/troubleshoot/)
+
 ## Summary
 
 Use the answers to check your reasoning, then revisit the source mechanism and reproduce any relevant example without copying it. A remembered label is useful only when you can explain its limits.

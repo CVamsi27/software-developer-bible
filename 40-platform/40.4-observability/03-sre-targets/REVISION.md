@@ -22,6 +22,10 @@ Source: [SLI, SLO & SLA](40.4.3.01-sli-slo-sla.md)
 
 **A:** Request-based budgets count failed eligible requests. Time-based availability can translate to minutes, but the denominator and user traffic model determine the budget.
 
+**Q:** A request SLO target is 99.9%. What fraction is the allowed bad-event budget?
+
+**A:** The complement, 0.1% of eligible requests. It is not the reciprocal of 99.9%; converting that request budget to downtime minutes would require a separate time-based objective and measurement model.
+
 **Q:** What should happen when the budget is exhausted?
 
 **A:** Follow the pre-agreed policy for risky changes, reliability work, and exceptions. The budget informs a product decision rather than triggering an undocumented universal freeze.

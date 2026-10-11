@@ -37,7 +37,7 @@ from scan_scope import guard
 import re
 import sys
 
-SKIP_DIRS = {'.git', 'node_modules', '.archive', 'venv', '__pycache__',
+SKIP_DIRS = {'.git', 'node_modules', 'vendor', '_site', '.archive', 'venv', '__pycache__',
              '.github', 'scripts', 'projects'}
 FENCE_RE = re.compile(r'^( {0,3})(`{3,}|~{3,})([A-Za-z0-9_+-]*)')
 TARGET_LABELS = {'', 'text', 'txt', 'plain', 'output', 'console', 'log'}

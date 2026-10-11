@@ -18,13 +18,13 @@ Source: [Communication Skills for Senior Engineer Interviews](00.01-communicatio
 
 **A:** Clarify which requirement or assumption changed, explain the consequence, and revise the decision or defend its tradeoff with evidence. Do not treat pushback as a personal contest.
 
-**Q:** How should you test whether a resume supports the target role?
-
-**A:** Ask whether each prominent claim answers that role's requirements and whether a reader can find your scope, evidence and contribution quickly. Tailor truthful emphasis rather than copying unsupported keywords.
-
 ## Resume Tips for Senior Full Stack Engineers
 
 Source: [Resume Tips for Senior Full Stack Engineers](00.02-resume-tips.md)
+
+**Q:** How should you test whether a resume supports the target role?
+
+**A:** Ask whether each prominent claim answers that role's requirements and whether a reader can find your scope, evidence and contribution quickly. Tailor truthful emphasis rather than copying unsupported keywords.
 
 **Q:** How can an impact bullet remain credible when you lack a precise percentage?
 
@@ -48,7 +48,7 @@ Source: [HR Round Strategy for Senior Full Stack Engineers](00.04-hr-questions.m
 
 ## Summary
 
-A useful answer names the guarantee, the mechanism that enforces it, and the failure boundary. Revisit the source when any of those is unclear.
+Prepare evidence of your contribution, explain the decision clearly, and compare employment terms using their actual conditions. Revisit the source when a claim, story or offer assumption cannot survive a follow-up.
 
 ## See Also
 

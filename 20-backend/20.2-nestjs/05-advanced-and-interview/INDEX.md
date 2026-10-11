@@ -8,6 +8,10 @@
 
 ---
 
+## Learning flow
+
+First trace a parameter extractor after authentication and distinguish extraction from validation. Then attach route metadata and identify the registered guard or interceptor that consumes it. Test a missing principal and an unregistered consumer before the revision companion and interview bank.
+
 ## Files
 
 | Order | File | Topics | Role priority | General importance | Read time |

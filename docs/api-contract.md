@@ -16,13 +16,13 @@
   "consumers": ["repos/resume-generator", "repos/docita"],
   "corpus_digest": "<sha256 over every content file — see the table>",
   "totals":    { "chapters": 671, "sections": 47, "categories": 13,
-                 "read_minutes": 6311 },
+                 "read_minutes": 6429 },
   "chapters": [
     { "p": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.html",
       "t": "MVCC (Multi-Version Concurrency Control)",
       "s": "Database", "c": "Data",
       "g": ["concept"],
-      "m": 18 }
+      "m": 14 }
   ]
 }
 ```
@@ -32,7 +32,7 @@
 | `p` | Site path (`…​.html`) — equals the repo path with the extension swapped. For repo-relative links, replace the trailing `.html` with `.md`. |
 | `t` | Chapter H1 title (the same string gate 6b sees). |
 | `s` / `c` | Section (from the metadata comment) and Category (one of contributing.md's canonical 14 — gate 6b enforces both). |
-| `g` | Tags, lowercased, deduplicated, sorted. |
+| `g` | Tags trimmed, deduplicated and sorted; the generator preserves their spelling and case. |
 | `m` | Computed read minutes (gate 13's model; reference genres already halved). |
 | `totals.read_minutes` | Sum over all chapters (divide by 60 for hours). |
 | `corpus_digest` | sha256 over each content file's sha256, keyed by repo path, in sorted order. It changes when any chapter's bytes change and carries no timestamp, so it is the freshness anchor: `scripts/check_study_live.py` fetches the *deployed* copy of this file and fails when its digest differs from the checkout's — that is how a deployment left behind HEAD is caught. Deliberately a placeholder in the example above: a literal value in this document would be stale after the next chapter edit, and nothing restamps it. |
@@ -43,7 +43,7 @@ the template gate; minutes match gate 13's model; the generator writes both outp
 no timestamps — the same corpus produces byte-identical output, so
 consumers can commit it or diff it without noise.
 
-**Non-guarantees:** record order is alphabetical by `p`, not study order
+**Non-guarantees:** record order is alphabetical by section `s`, then path `p`, not study order
 (use the per-stack INDEX files for pedagogy order); tags are a free
 vocabulary (only their presence, not their spelling, is gated).
 
@@ -62,7 +62,7 @@ resume-generator repo (or vendor it) as needed:
 ```python
 #!/usr/bin/env python3
 """Find bible preparation chapters for resume skills. Example consumer of api/index.json.
-Executed against the live file 2026-09-17; output quoted below is real."""
+Example output from this checkout on 2026-10-11; regenerate it after corpus changes."""
 import json, pathlib, sys
 
 API = pathlib.Path.home() / "repos/software-developer-bible/api/index.json"
@@ -85,20 +85,19 @@ if __name__ == "__main__":
         print(f"{c['t']}  ({c['m']} min)  → {repo_path}")
 ```
 
-Verified against the live file (2026-09-17): `find("mvcc", data)` prints
+On 2026-10-11, `find("mvcc", data)` printed
 
 ```
-MVCC (Multi-Version Concurrency Control)  (18 min)  -> 20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.md
+MVCC (Multi-Version Concurrency Control)  (14 min)  -> 20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.md
 ```
 
 The TypeScript example's `drillsFor` logic was executed the same way:
-Kubernetes drills shortest-first resolve to StatefulSets & DaemonSets,
-Jobs & CronJobs, RBAC & Network Policies.
+Kubernetes drills shortest-first resolve to PodPresets, Pod Disruption Budgets,
+then Kubernetes Services & Ingress.
 
 ## Consumer: `repos/docita` (TypeScript)
 
-Pick drill topics and canonical links for a study session, filtered by
-section and tagged genre:
+Select teaching chapters by section, exclude interview banks and revision guides, and sort the results shortest-first for a drill queue:
 
 ```typescript
 // api/index.json is committed or fetched; typing kept minimal on purpose
@@ -106,7 +105,8 @@ type Chapter = { p: string; t: string; s: string; c: string; g: string[]; m: num
 
 export function drillsFor(section: string, api: { chapters: Chapter[] }): Chapter[] {
   return api.chapters
-    .filter(c => c.s === section && !c.g.includes("interview-questions"))
+    .filter(c => c.s === section && !c.g.includes("interview-questions")
+      && !c.g.includes("revision"))
     .sort((a, b) => a.m - b.m);          // shortest first for a drill queue
 }
 

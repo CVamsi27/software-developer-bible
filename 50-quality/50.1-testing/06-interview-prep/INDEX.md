@@ -1,6 +1,6 @@
 # Testing Interview Prep
 
-> **Study time:** ≈ 11 min of reading (1 files, ~11 min average).
+> **Study time:** ≈ 11 min of reading (1 file, ~11 min average).
 > **1 file.** The curated question bank for testing rounds — grouped by difficulty, covering strategy, pyramid trade-offs, async/component testing, mocking, and flaky-test debugging.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](../INDEX.md)
@@ -13,7 +13,7 @@
 
 | # | File | Contents | Time | Role priority | General importance |
 | --: | ------ | ---------- | ------ | --- | --- |
-| 01 | [Testing Interview Questions](50.1.6.01-interview-questions.md) | Forty original questions, model answers and changed-condition probes | Practice in several sessions | Essential | Foundational |
+| 01 | [Testing Interview Questions](50.1.6.01-interview-questions.md) | Forty questions, model answers and changed-condition probes | Practice in several sessions | Essential | Foundational |
 
 ---
 

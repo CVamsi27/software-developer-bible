@@ -15,7 +15,7 @@ Start by bounding admission and choosing the budget scope. Place trusted HTTP fo
 ## Files
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------: |
+| :---: | --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------ | --------: |
 | 01 | [Rate Limiting](20.3.4.01-rate-limiting.md) | Algorithms (token bucket, sliding window), distributed limits | Essential | Foundational | 8 min |
 | 02 | [API Gateway](20.3.4.02-api-gateway.md) | Routing, aggregation, auth, rate limiting at the edge; deep patterns in [microservices](../../20.6-microservices/INDEX.md) | Important | Important | 8 min |
 | 03 | [BFF](20.3.4.03-bff.md) | Backend-for-frontend pattern, per-client payload shaping, gateway-routes vs dedicated-BFF vs GraphQL-BFF variants | Essential | Foundational | 8 min |

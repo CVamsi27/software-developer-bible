@@ -18,9 +18,11 @@ import {
 
 const JWKS_URL = "https://example.supabase.co/auth/v1/.well-known/jwks.json";
 const STUDY = { hostname: "study.buildora.work" };
+const ALLOWED_EMAIL = "owner@example.test";
+const ALLOWLIST = { STUDY_ALLOWED_EMAIL: ALLOWED_EMAIL };
 
 /** A genuinely ES256-signed access token plus the JWKS that verifies it. */
-async function signedToken({ email = "cvamsik99@gmail.com", expiresIn = 3600, kid = "study-key" } = {}) {
+async function signedToken({ email = ALLOWED_EMAIL, expiresIn = 3600, kid = "study-key" } = {}) {
   const { privateKey, publicKey } = await crypto.subtle.generateKey(
     { name: "ECDSA", namedCurve: "P-256" },
     true,
@@ -56,14 +58,16 @@ function stubJwks(jwks) {
 }
 
 test("allows only the exact study account, case-insensitively", () => {
-  assert.equal(isAllowedStudyEmail("cvamsik99@gmail.com"), true);
-  assert.equal(isAllowedStudyEmail("CVAMSIK99@GMAIL.COM"), true);
-  assert.equal(isAllowedStudyEmail("other@example.com"), false);
-  assert.equal(isAllowedStudyEmail("cvamsik99@gmail.com.evil.example"), false);
+  assert.equal(isAllowedStudyEmail(ALLOWED_EMAIL, ALLOWED_EMAIL), true);
+  assert.equal(isAllowedStudyEmail("OWNER@EXAMPLE.TEST", ALLOWED_EMAIL), true);
+  assert.equal(isAllowedStudyEmail("owner@googlemail.com", "owner@gmail.com"), true);
+  assert.equal(isAllowedStudyEmail("other@example.com", ALLOWED_EMAIL), false);
+  assert.equal(isAllowedStudyEmail("owner@example.test.evil.example", ALLOWED_EMAIL), false);
+  assert.equal(isAllowedStudyEmail(ALLOWED_EMAIL, ""), false, "missing configuration must fail closed");
 });
 
 test("normalizes whitespace and casing without changing the identity", () => {
-  assert.equal(normalizeEmail("  CVamsik99@Gmail.com  "), "cvamsik99@gmail.com");
+  assert.equal(normalizeEmail("  Owner@Example.test  "), ALLOWED_EMAIL);
   assert.equal(normalizeEmail(null), "");
 });
 
@@ -115,7 +119,7 @@ test("verifies an asymmetric access token with the configured JWKS endpoint", as
   try {
     assert.deepEqual(
       await fetchSupabaseUser(token, { SUPABASE_JWKS_URL: JWKS_URL }),
-      { email: "cvamsik99@gmail.com" },
+      { email: ALLOWED_EMAIL },
     );
   } finally {
     restore();
@@ -147,7 +151,7 @@ test("an absent cookie is anonymous and never calls the verifier", async () => {
     token: "",
     verifyToken: async () => {
       verifications += 1;
-      return { email: "cvamsik99@gmail.com" };
+      return { email: ALLOWED_EMAIL };
     },
   });
   assert.deepEqual(session, { email: null, hasToken: false });
@@ -157,9 +161,9 @@ test("an absent cookie is anonymous and never calls the verifier", async () => {
 test("forwards the verified account's email", async () => {
   const session = await resolveSessionFromToken({
     token: "tok",
-    verifyToken: async () => ({ email: "cvamsik99@gmail.com" }),
+    verifyToken: async () => ({ email: ALLOWED_EMAIL }),
   });
-  assert.deepEqual(session, { email: "cvamsik99@gmail.com", hasToken: true });
+  assert.deepEqual(session, { email: ALLOWED_EMAIL, hasToken: true });
 });
 
 test("a rejected token and a thrown verification are both presented sessions", async () => {
@@ -187,11 +191,12 @@ test("an unset probe credential grants nothing", () => {
   for (const env of [{}, { STUDY_PROBE_TOKEN: "" }, null]) {
     assert.equal(probeTokenSession(PROBE, env), null);
   }
+  assert.equal(probeTokenSession(PROBE, { STUDY_PROBE_TOKEN: PROBE }), null, "probe also requires the allowlist");
 });
 
 test("the probe credential admits only an exact match", () => {
-  assert.deepEqual(probeTokenSession(PROBE, { STUDY_PROBE_TOKEN: PROBE }), {
-    email: "cvamsik99@gmail.com",
+  assert.deepEqual(probeTokenSession(PROBE, { ...ALLOWLIST, STUDY_PROBE_TOKEN: PROBE }), {
+    email: ALLOWED_EMAIL,
   });
   for (const wrong of [
     "",
@@ -200,7 +205,7 @@ test("the probe credential admits only an exact match", () => {
     "A-LONG-RANDOM-PROBE-SECRET-VALUE",
     "a-long-random-probe-secret-valueX",
   ]) {
-    assert.equal(probeTokenSession(wrong, { STUDY_PROBE_TOKEN: PROBE }), null, wrong);
+    assert.equal(probeTokenSession(wrong, { ...ALLOWLIST, STUDY_PROBE_TOKEN: PROBE }), null, wrong);
   }
 });
 
@@ -210,12 +215,12 @@ test("a cookie that is not the probe credential still goes to Supabase", async (
     token: "an-ordinary-session-cookie",
     verifyToken: async (token) => {
       calls.push(token);
-      return probeTokenSession(token, { STUDY_PROBE_TOKEN: PROBE })
-        ?? { email: "cvamsik99@gmail.com" };
+      return probeTokenSession(token, { ...ALLOWLIST, STUDY_PROBE_TOKEN: PROBE })
+        ?? { email: ALLOWED_EMAIL };
     },
   });
   assert.deepEqual(calls, ["an-ordinary-session-cookie"]);
-  assert.deepEqual(session, { email: "cvamsik99@gmail.com", hasToken: true });
+  assert.deepEqual(session, { email: ALLOWED_EMAIL, hasToken: true });
 });
 
 // ---------------------------------------------------------------------------
@@ -272,7 +277,8 @@ test("serves content to a verified session for the approved account", async () =
   const decision = await decideAccess({
     ...STUDY,
     pathname: "/10-frontend/10.1-javascript/INDEX.html",
-    resolveSession: verified("cvamsik99@gmail.com"),
+    allowedEmail: ALLOWED_EMAIL,
+    resolveSession: verified(ALLOWED_EMAIL),
   });
   assert.deepEqual(decision, { action: "allow", status: 200, location: "" });
 });
@@ -341,11 +347,12 @@ test("serves the asset for allow and public, and redirects otherwise", async () 
 test("the probe credential serves content to the live probe's session", async () => {
   const session = await resolveSessionFromToken({
     token: PROBE,
-    verifyToken: (token) => probeTokenSession(token, { STUDY_PROBE_TOKEN: PROBE }),
+    verifyToken: (token) => probeTokenSession(token, { ...ALLOWLIST, STUDY_PROBE_TOKEN: PROBE }),
   });
   const decision = await decideAccess({
     ...STUDY,
     pathname: "/00-strategy/00.01-communication.html",
+    allowedEmail: ALLOWED_EMAIL,
     resolveSession: async () => session,
   });
   assert.deepEqual(decision, { action: "allow", status: 200, location: "" });
@@ -379,6 +386,7 @@ test("a real signed token for the approved account is allowed end to end", async
     const decision = await decideAccess({
       ...STUDY,
       pathname: "/10-frontend/INDEX.html",
+      allowedEmail: ALLOWED_EMAIL,
       resolveSession: async () => ({ email: session?.email ?? null, hasToken: true }),
     });
     assert.deepEqual(decision, { action: "allow", status: 200, location: "" });
@@ -402,7 +410,7 @@ test("legacy Markdown reading links go to rendered chapters without losing the d
     search,
     resolveSession: async () => {
       resolved = true;
-      return { email: "cvamsik99@gmail.com", hasToken: true };
+      return { email: ALLOWED_EMAIL, hasToken: true };
     },
   });
   assert.deepEqual(result, {

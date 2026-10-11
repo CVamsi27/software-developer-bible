@@ -32,7 +32,7 @@ Source: [Artifact Registries & Release Promotion](40.3.2.03-artifact-registries-
 
 **Q:** What distinguishes an artifact tag from a digest?
 
-**A:** A tag can be moved; a digest identifies immutable content. Release promotion and rollback evidence should record the tested digest.
+**A:** A tag can be reassigned unless the registry prevents it. A digest identifies exact manifest bytes, but a registry may delete those bytes; retain deployed digests for the required rollback window.
 
 ## Pipeline Supply-Chain Security & SLSA
 

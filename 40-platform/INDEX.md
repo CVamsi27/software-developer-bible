@@ -1,6 +1,6 @@
 # Platform Stack
 
-> **Study time:** ≈ 15 h 40 m of reading (118 files, ~8 min average).
+> **Study time:** ≈ 15 h 53 m of reading (118 files, ~8 min average).
 > **Docker, Kubernetes, CI/CD, Observability, Build Tools, Git, Serverless, Monorepo, 12-Factor, CDN, Reverse Proxy, IaC** — shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
 > 118 files across 12 sub-stacks — the "how it runs" layer of the bible.
@@ -37,9 +37,9 @@ Each sub-stack establishes prerequisites, learning chapters, separate revision a
 | 6 | [Git Advanced](40.6-git-advanced/INDEX.md) | 10 | Internals (objects/refs/packfiles), branching, rebase, hooks, archaeology, LFS/partial clones, signed commits |
 | 7 | [Serverless & Edge](40.7-serverless-edge/INDEX.md) | 10 | Lambda, Vercel Edge, serverless patterns, SAM/CDK/SST, durable execution (Temporal/Inngest) |
 | 8 | [Monorepo](40.8-monorepo/INDEX.md) | 6 | Turborepo, Nx, pnpm, Rush, Bazel, versioning & publishing strategies |
-| 9 | [Twelve-Factor App](40.9-twelve-factor/INDEX.md) | 1 | The canonical cloud-native methodology — codebase, dependencies, config, backing services, build/release/run, processes, port binding, concurrency, disposability, dev/prod parity, logs, admin processes |
-| 10 | [CDN & Edge](40.10-cdn/INDEX.md) | 3 | CDN caching strategies, invalidation, edge functions, multi-CDN steering, media optimization at the edge, PHI-at-edge considerations |
-| 11 | [Reverse Proxy](40.11-reverse-proxy/INDEX.md) | 1 | Nginx internals: C10K, master–worker + epoll event loop, config contexts, sendfile vs proxy_pass, upstream LB algorithms, health checks, TLS termination, buffering, rate limiting, proxy_cache, zero-downtime reload, nginx vs HAProxy vs Envoy vs ALB |
+| 9 | [Twelve-Factor App](40.9-twelve-factor/INDEX.md) | 2 | The canonical cloud-native methodology — codebase, dependencies, config, backing services, build/release/run, processes, port binding, concurrency, disposability, dev/prod parity, logs, admin processes |
+| 10 | [CDN & Edge](40.10-cdn/INDEX.md) | 4 | CDN caching strategies, invalidation, edge functions, multi-CDN steering, media optimization at the edge, PHI-at-edge considerations |
+| 11 | [Reverse Proxy](40.11-reverse-proxy/INDEX.md) | 2 | Nginx internals: C10K, master–worker + epoll event loop, config contexts, sendfile vs proxy_pass, upstream LB algorithms, health checks, TLS termination, buffering, rate limiting, proxy_cache, zero-downtime reload, nginx vs HAProxy vs Envoy vs ALB |
 | 12 | [IaC & Terraform](40.12-iac/INDEX.md) | 2 | Infrastructure as Code, HCL, state & drift, plan/apply, backends & locking, modules, workspaces, brownfield import, OpenTofu/Pulumi/CDKTF, IaC in CI/CD |
 
 ---
@@ -82,12 +82,15 @@ Use these four layers to connect development, release and operation. The numbere
 7. Choose Build Tools, Serverless, Monorepo and Twelve-Factor chapters that match the job description.
 8. Use each chosen category’s `REVISION.md`, then its interview bank. The time boxes are practice budgets; they do not replace the generated reading estimates.
 
-### Path B — DevOps-focused, deep dive (2-3 weeks)
-1. Docker: full (4-5 hrs)
-2. Kubernetes: full (8-10 hrs)
-3. CI/CD: full (4-5 hrs)
-4. Observability: full (5-6 hrs)
-5. Serverless, Build Tools, Git, Monorepo — as needed
+### Path B — Platform-focused, deep dive (2-3 weeks)
+1. Docker: full (4-5 hrs), including image provenance and runtime limits.
+2. Kubernetes: full (8-10 hrs), including scheduling, rollout, disruption and recovery behavior.
+3. CI/CD and GitOps: full (4-5 hrs), including artifact identity, promotion and rollback boundaries.
+4. Observability: full (5-6 hrs), including signal design, alerting and incident evidence.
+5. IaC and reverse proxies: trace state, plans, trusted proxy hops, TLS and safe configuration rollout.
+6. CDN and edge: compare cache keys, invalidation, failover and the provider-specific execution model.
+7. Serverless and Twelve-Factor: follow runtime limits, durable work, configuration and process lifecycle.
+8. Build tools, Git and monorepos: choose the chapters that match the delivery architecture, then complete each selected section's revision and interview practice.
 
 ### Path C — Interview tomorrow
 

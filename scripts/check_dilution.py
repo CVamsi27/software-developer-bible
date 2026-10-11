@@ -48,7 +48,7 @@ from scan_scope import guard
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASELINE = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                         'dilution-baseline.json')
-SKIP_DIRS = {'.git', 'node_modules', '.archive', 'api', '_site', '__pycache__',
+SKIP_DIRS = {'.git', 'node_modules', 'vendor', 'api', '_site', '.archive', '__pycache__',
              '.jekyll-cache', 'scripts'}
 EXCLUDE_PATH = re.compile(r'(^|/)personal/')
 

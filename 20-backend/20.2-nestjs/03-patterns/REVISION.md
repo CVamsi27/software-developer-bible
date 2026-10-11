@@ -16,11 +16,11 @@ Source: [CQRS in NestJS](20.2.3.01-cqrs.md)
 
 **Q:** Why might reads and writes need different data models?
 
-**A:** Writes care about invariants and transactions; reads care about denormalized, query-friendly views. Forcing both through one model produces either slow reads or awkward writes.
+**A:** Writes care about invariants and transactions; reads care about denormalized, query-friendly views. A shared model can still be appropriate for simple operations. Separate models are useful when those demands conflict enough to justify extra coordination.
 
 **Q:** How does a command differ from a query?
 
-**A:** The naming split is the discipline: `UpdateOrderStatus` (command, requests a change, may fail) vs `GetOrder` (query, side-effect-free). The distinction makes audit, validation, and authorization per-intent rather than per-CRUD-verb.
+**A:** A command requests a state change; a query answers without changing domain state. `UpdateOrderStatus` and `GetOrder` name those separate contracts. Naming alone does not establish segregation: their interfaces and handlers must preserve the distinction.
 
 **Q:** When can a separate read model return older data, and when is that acceptable?
 
@@ -36,7 +36,7 @@ Source: [NestJS Microservices](20.2.3.02-microservices.md)
 
 **Q:** Which delivery behavior should be checked before choosing a Nest transport?
 
-**A:** TCP (request/response), Redis pub/sub, NATS, Kafka (at-least-once with consumer groups), gRPC (typed streaming). Each carries the same handler contract but different guarantees — the same delivery-semantics questions as webhooks and Redis streams.
+**A:** Check reply loss for TCP/gRPC, offline loss for Redis pub/sub/Core NATS, and persistence, offsets or acknowledgments for Kafka/RabbitMQ. A consumer group alone does not guarantee at-least-once business processing: committing progress before an effect can lose that effect; committing afterward can repeat it. These transports need different recovery contracts.
 
 **Q:** What connection and failure responsibilities does ClientProxy introduce?
 

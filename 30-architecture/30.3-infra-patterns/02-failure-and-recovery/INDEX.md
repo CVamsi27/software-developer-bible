@@ -19,12 +19,12 @@ Networks partition, dependencies time out, deploys hiccup. Naive code turns each
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Resilience Patterns — Overview](30.3.2.01-resilience-patterns.md) | Timeout, bulkhead, circuit-breaker landscape; deep-dive implementations live in [20.6-microservices](../../../20-backend/20.6-microservices/INDEX.md) | Important | 16 min | 5 min |
-| 02 | [Retry Patterns](30.3.2.02-retry-patterns.md) | Exponential backoff, jitter, retry budgets, retry storms, when NOT to retry | Essential | 11 min | 7 min |
-| 03 | [Idempotency Keys](30.3.2.03-idempotency-keys.md) | Stable operation identity, atomic local effects, retry replay, remote deduplication limits | Essential | 6 min | 6 min |
-| 04 | [Feature Flags & Kill Switches](30.3.2.04-feature-flags-kill-switches.md) | Release/experiment/ops/permission flags, targeting rules, kill-switch SLA, flag debt cleanup, safe rollout recipe | Important | 10 min | 6 min |
-| 05 | [Backup Strategy & Restore Drills](30.3.2.05-backup-strategy-restore-drills.md) | Full/incr/diff taxonomy, logical vs physical, 3-2-1(-1-0), RPO/RTO math, restore game days, automated verification, runbook template | Important | 10 min | 7 min |
-| 06 | [Idempotency & Retry Deep Dive](30.3.2.06-idempotency-retry-deep-dive.md) | Cross-authority failure trace: atomic API claim, outbox, inbox, receiver identity, budget and replay limits | Essential | 13 min | 7 min |
+| 01 | [Resilience Patterns — Overview](30.3.2.01-resilience-patterns.md) | Timeout, bulkhead, circuit-breaker landscape; deep-dive implementations live in [20.6-microservices](../../../20-backend/20.6-microservices/INDEX.md) | Important | Specialized | 5 min |
+| 02 | [Retry Patterns](30.3.2.02-retry-patterns.md) | Exponential backoff, jitter, retry budgets, retry storms, when NOT to retry | Essential | Important | 7 min |
+| 03 | [Idempotency Keys](30.3.2.03-idempotency-keys.md) | Stable operation identity, atomic local effects, retry replay, remote deduplication limits | Essential | Important | 6 min |
+| 04 | [Feature Flags & Kill Switches](30.3.2.04-feature-flags-kill-switches.md) | Release and experiment flags, operational controls, trusted targeting, propagation and cleanup | Important | Specialized | 6 min |
+| 05 | [Backup Strategy & Restore Drills](30.3.2.05-backup-strategy-restore-drills.md) | Full, incremental and differential backups; logical and physical formats; RPO/RTO; verified recovery and runbooks | Important | Specialized | 7 min |
+| 06 | [Idempotency & Retry Deep Dive](30.3.2.06-idempotency-retry-deep-dive.md) | Cross-service failure trace: atomic API claim, outbox, inbox, receiver identity, retry budget and replay limits | Essential | Important | 7 min |
 
 **Read order:** overview → retries → idempotency → flags/kill-switches → backups/drills → deep dive. Retries without idempotency are how you double-charge a customer; backups without restore drills are how you discover corruption mid-outage.
 

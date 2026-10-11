@@ -1,6 +1,6 @@
 # Interview Prep — Observability
 
-> **Study time:** ≈ 10 min of reading (1 files, ~10 min average).
+> **Study time:** ≈ 10 min of reading (1 file, ~10 min average).
 > **1 file, 50 curated questions with answers.** The senior-differentiator drill: logs vs metrics vs traces is the opening question; SLO math and sampling strategy are the follow-ups.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](#file-index)

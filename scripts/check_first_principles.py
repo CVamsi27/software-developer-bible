@@ -20,7 +20,7 @@ from pathlib import Path
 from scan_scope import guard
 
 ROOT = Path(__file__).resolve().parent.parent
-SKIP_DIRS = {".git", "node_modules", ".archive", ".freebuff", "scripts", "docs", "personal"}
+SKIP_DIRS = {".git", "node_modules", "vendor", "_site", ".archive", ".freebuff", "scripts", "docs", "personal"}
 BASELINE = Path(__file__).resolve().parent / "first-principles-baseline.json"
 
 SECTION = re.compile(r"^## First Principles\s*$", re.M)

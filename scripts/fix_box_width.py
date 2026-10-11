@@ -276,7 +276,7 @@ def main():
     fix = "--fix" in argv
     report = "--report" in argv
     hug = "--hug" in argv
-    skip = {".git", "node_modules", ".archive", "personal"}
+    skip = {".git", "node_modules", "vendor", "_site", ".archive", "personal"}
     files = []
     for root, dirs, fs in os.walk("."):
         dirs[:] = [d for d in dirs if d not in skip]

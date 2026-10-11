@@ -1,5 +1,7 @@
 # Explanation-depth review — progress
 
+> **Historical checkpoint:** this report describes the 1,017-document inventory and validation recorded on 8 October 2026. For current corpus coverage and verification, use the [12 October precision review](2026-10-10-senior-precision-progress.md) and its [per-file ledger](2026-10-10-senior-precision-audit.json).
+
 Semantic review is complete for the 1,017-document inventory: 898 revised and 119 reviewed dispositions, with no pending entries. The [per-document ledger](2026-10-08-explanation-depth-review.json) records specific findings, reader questions and evidence boundaries. Automated gates and examples supplement full reads; no interview outcome or untested production behavior is guaranteed.
 
 ## Recorded semantic coverage

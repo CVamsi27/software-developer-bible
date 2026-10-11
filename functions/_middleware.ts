@@ -154,6 +154,7 @@ export const onRequest = async ({ request, env, next }: PagesContext) => {
     hostname: url.hostname,
     pathname: url.pathname,
     search: url.search,
+    allowedEmail: env.STUDY_ALLOWED_EMAIL,
     resolveSession: () =>
       resolveSessionFromToken({
         token: readStudyToken(request.headers.get("Cookie")),

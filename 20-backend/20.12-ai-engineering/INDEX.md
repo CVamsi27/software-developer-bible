@@ -1,7 +1,7 @@
 # AI Engineering — Index
 
-> **Study time:** ≈ 1 h 34 m of reading (8 files, ~12 min average).
-> **Building products WITH LLMs** — not model training. This is the 2025+ interview differentiator: RAG architecture, streaming, structured output, evals, and production governance (cost + safety). Relevant interviews may probe these mechanisms; verify current project controls before using a personal interview story.
+> **Study time:** ≈ 1 h 37 m of reading (8 files, ~12 min average).
+> **Building products with language models** — this track focuses on application architecture, retrieval, evaluation, serving, and governance rather than model training. Learn the mechanisms in order, then practice explaining their trade-offs with evidence from systems you have actually worked on.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Backend-blue)](../../INDEX.md)
@@ -32,7 +32,7 @@ The 7 content files classify into 4 conceptual categories + drills — a route t
 | 3 | [Retrieval Quality: Hybrid Search & Reranking](20.12.03-retrieval-quality-hybrid-search-reranking.md) | Why pure vector fails; hybrid BM25+vector fusion (RRF); rerankers; HNSW/IVF; chunking; recall@k/MRR harness; pgvector hybrid example | Important | Specialized |
 | 4 | [Agent Orchestration Patterns](20.12.04-agent-orchestration-patterns.md) | ReAct plan-act-observe loops; state machines vs graph orchestration; tool-calling (parallel/chained); step/token budgets + circuit breakers; supervisor/debate/handoff topologies; memory tiers; trajectory evals | Important | Specialized |
 | 5 | [Serving Models: Hosted vs Self-Hosted](20.12.05-serving-models-hosted-vs-self-hosted.md) | Decision matrix (cost/latency/residency/control); vLLM PagedAttention + continuous batching; quantization ladder; VRAM math; TTFT/TPOT; provider routing/fallback; EU-GDPR hybrid pattern | Important | Specialized |
-| 6 | [Safety, Cost & Governance](20.12.06-safety-cost-governance.md) | Kill-switches, spend guards, PII redaction, human-in-the-loop — the regulated-domain story | Important | Specialized |
+| 6 | [Safety, Cost & Governance](20.12.06-safety-cost-governance.md) | Data classification, egress policy, spend guards, authorization, human review, and minimized audit evidence | Important | Specialized |
 | 7 | [Interview Questions](20.12.07-interview-questions.md) | 25+ Q&A with follow-up traps | Important | Specialized |
 
 ## Choose Your First Pass
@@ -46,7 +46,7 @@ Task needs world knowledge you don't have? → RAG (retrieval + grounding)
 Task is narrow/repetitive/format-fixed? → Prompting + structured output
 Task has measured recurring behavioral failures? → Evaluate fine-tuning (data + cost + ops burden)
 Output feeds code/DB/UI? → JSON schema / function calling — never parse prose
-Regulated data involved? → Governance layer FIRST (see file 6)
+Sensitive or regulated data involved? → Apply authoritative data policy before selecting a provider (see file 6)
 ```
 
 ## The Production Stack in One Diagram
@@ -54,10 +54,10 @@ Regulated data involved? → Governance layer FIRST (see file 6)
 ```text
 Client ──► API gateway ──► AI service layer ──► provider SDK (streaming)
                 │ │ ├── prompt assembly (+RAG context)
-                │ │ ├── guardrails: PII gate · cost meter · rate limit
+                │ │ ├── controls: data-class policy · cost budget · rate limit
                 │ │ └── fallback: cached response → smaller model → degrade gracefully
                 │ └── observability: token/cost/latency metrics, trace per completion
-                └── feature flag / KILL SWITCH (default-off for regulated data)
+                └── feature flag / kill switch (test coverage for every provider egress path)
 ```
 
 ---
@@ -67,10 +67,10 @@ Client ──► API gateway ──► AI service layer ──► provider SDK (
 These [Docita](https://github.com/CVamsi27/docita) pointers are starting points for inspecting current code, tests and deployed configuration:
 
 | Topic | Docita evidence |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | Kill-switched provider access | `apps/api/src/shared/modules/ai/openai.service.ts` - `AI_EXTERNAL_ENABLED=false` constructs no client at all; responses cached |
 | Structured clinical output | `apps/api/src/shared/modules/ai/clinical-ai.service.ts` - prescription analysis normalized through typed normalizers |
-| OCR extraction pipeline | `apps/api/src/shared/modules/ai/ocr-extraction.service.ts` - vision-based field extraction with per-field confidence |
+| OCR extraction pipeline | `apps/api/src/shared/modules/ai/ocr-extraction.service.ts` - local OCR is available; optional cloud vision is configuration-gated |
 | Cost governance | `apps/api/src/shared/modules/ai/ai-credit-guard.service.ts` - per-clinic credit allotment/exhaustion enforcement |
 | Streaming chat | `apps/api/src/shared/modules/ai/ask-ai.service.ts` - history-aware streamed responses |
 

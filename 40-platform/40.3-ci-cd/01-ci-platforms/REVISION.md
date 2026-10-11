@@ -46,6 +46,10 @@ Source: [GitLab CI/CD](40.3.1.02-gitlab-ci.md)
 
 **A:** Stages provide broad ordering barriers; needs declares particular job dependencies so independent work can run sooner. Artifact dependencies must still match the producer/consumer contract.
 
+**Q:** What must a cloud provider verify before trusting a GitLab job ID token?
+
+**A:** Match the configured issuer and audience, then restrict trust to the intended project and protected ref or deployment environment. A valid token proves job identity; it does not make unreviewed pipeline code trustworthy or grant a role by itself.
+
 ## Jenkins CI/CD
 
 Source: [Jenkins CI/CD](40.3.1.03-jenkins.md)
@@ -54,13 +58,13 @@ Source: [Jenkins CI/CD](40.3.1.03-jenkins.md)
 
 **A:** Agent images, plugins, credentials, tool versions, and external dependencies also influence execution. Pin and operate those inputs as part of the pipeline system.
 
-## ArgoCD (GitOps)
+## Argo CD (GitOps)
 
-Source: [ArgoCD (GitOps)](40.3.1.04-argocd.md)
+Source: [Argo CD (GitOps)](40.3.1.04-argocd.md)
 
-**Q:** Why does a manual production hotfix drift under GitOps?
+**Q:** Why can an unrecorded live-cluster hotfix be overwritten under GitOps?
 
-**A:** The controller may restore the declared Git state. Record the intended change in the source of truth or use an explicit incident policy before reconciliation reverses it.
+**A:** If the edited fields belong to an Argo-tracked resource and self-heal is enabled, reconciliation may restore the declared Git state. Record the repair in the source of truth or follow an explicit incident policy before resuming reconciliation.
 
 **Q:** Can reverting Git safely reverse every deployment effect?
 

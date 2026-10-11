@@ -1,27 +1,27 @@
 # Database — Index
 
-> **Study time:** ≈ 4 h 9 m of reading (29 files, ~9 min average).
+> **Study time:** ≈ 4 h 10 m of reading (29 files, ~9 min average).
 > **29 files** — Database fundamentals from PostgreSQL internals to indexing, transactions, MVCC, joins, locking, connection pooling, Prisma (plus the ORM/query-builder landscape), execution plans, SQL vs NoSQL, zero-downtime migrations, soft delete & tombstones, backups/PITR recovery, search infrastructure at scale, window functions, JSONB, replication, row-level security, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-29-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Data-8b5cf6)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Why databases are non-negotiable:** Every senior backend interview tests database knowledge. Schema design, indexing, transactions, locking, connection pooling, query optimization — these are table stakes. This section is the canonical reference for PostgreSQL + Prisma, the most common stack at product-based companies.
+Database choices determine who owns each fact, how concurrent writes preserve it, and how queries are served and recovered. This track follows that lifecycle from PostgreSQL storage and relational design through query plans, transactions, application access, and operational recovery. PostgreSQL and Prisma provide the concrete examples; the chapters mark where another model or tool changes the decision.
 
 ---
 
 ## Topic Categories
 
-The 24 files are organized into 5 categories, each with its own INDEX.
+The 24 listed learning files are grouped into 5 categories: 23 topic chapters and an interview bank. One revision companion per category brings the total to 29 files.
 
 | Category | Files | Why it matters |
 | ---------------------------------------------------------------------- | ----: | ------------------------------------------------------------------------------------------ |
-| [PostgreSQL Foundations](01-postgresql-foundations/INDEX.md) | 6 | How Postgres works under the hood — every backend interview starts here |
-| [Querying & Optimization](02-querying-and-optimization/INDEX.md) | 5 | Indexes, joins, execution plans, window functions, JSONB — the day-to-day performance work |
-| [Transactions & Replication](03-transactions-and-replication/INDEX.md) | 4 | MVCC, transactions, locking, deadlocks — the hard part |
-| [ORM & Access](04-orm-and-access/INDEX.md) | 3 | Prisma fundamentals and advanced patterns, plus the access-layer decision tree |
-| [Operations & Scaling](05-operations-and-scaling/INDEX.md) | 6 | Connection pooling, migrations, soft delete, backups/PITR, search infra, interview bank |
+| [PostgreSQL Foundations](01-postgresql-foundations/INDEX.md) | 6 | Storage, constraints, row visibility and maintenance |
+| [Querying & Optimization](02-querying-and-optimization/INDEX.md) | 5 | Index choice, join plans and measuring query work |
+| [Transactions & Replication](03-transactions-and-replication/INDEX.md) | 4 | Transaction invariants, locking and replica behavior |
+| [ORM & Access](04-orm-and-access/INDEX.md) | 3 | Application query ownership, Prisma and access-layer choices |
+| [Operations & Scaling](05-operations-and-scaling/INDEX.md) | 6 | Pooling, safe migrations, deletion, recovery and search |
 
 ---
 
@@ -40,43 +40,43 @@ performance                 JSONB                replication                    
 
 ## PostgreSQL Foundations
 
-How Postgres actually works. Every backend interview starts here. Category INDEX: [PostgreSQL Foundations](01-postgresql-foundations/INDEX.md).
+Trace how PostgreSQL stores changes, enforces constraints and exposes visible rows. Category INDEX: [PostgreSQL Foundations](01-postgresql-foundations/INDEX.md).
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [PostgreSQL](01-postgresql-foundations/20.4.1.01-postgresql.md) | Architecture, WAL, vacuum, configuration, extensions, autovacuum | Essential | 23 min | 11 min |
-| 02 | [Normalization](01-postgresql-foundations/20.4.1.02-normalization.md) | 1NF, 2NF, 3NF, BCNF, denormalization trade-offs, when to denormalize | Important | 20 min | 11 min |
-| 03 | [MVCC](01-postgresql-foundations/20.4.1.03-mvcc.md) | Multiversion concurrency control, visibility rules, tuple versions, vacuum | Important | 17 min | 14 min |
-| 04 | [SQL vs NoSQL](01-postgresql-foundations/20.4.1.04-nosql-vs-sql.md) | Workload fit, CAP, consistency models, polyglot persistence, when to use what | Essential | 9 min | 11 min |
-| 05 | [PostgreSQL Performance](01-postgresql-foundations/20.4.1.05-postgresql-performance.md) | Connection tuning, memory tuning, query optimization, VACUUM, partitioning, monitoring queries | Essential | 12 min | 11 min |
+| 01 | [PostgreSQL](01-postgresql-foundations/20.4.1.01-postgresql.md) | Architecture, WAL, vacuum, configuration, extensions, autovacuum | Essential | Foundational | 11 min |
+| 02 | [Normalization](01-postgresql-foundations/20.4.1.02-normalization.md) | 1NF, 2NF, 3NF, BCNF, denormalization trade-offs, when to denormalize | Important | Important | 11 min |
+| 03 | [MVCC](01-postgresql-foundations/20.4.1.03-mvcc.md) | Multiversion concurrency control, visibility rules, tuple versions, vacuum | Important | Important | 14 min |
+| 04 | [SQL vs NoSQL](01-postgresql-foundations/20.4.1.04-nosql-vs-sql.md) | Workload fit, CAP, consistency models, polyglot persistence, when to use what | Essential | Foundational | 11 min |
+| 05 | [PostgreSQL Performance](01-postgresql-foundations/20.4.1.05-postgresql-performance.md) | Connection tuning, memory tuning, query optimization, VACUUM, partitioning, monitoring queries | Essential | Foundational | 11 min |
 | 06 | [Row-Level Security](01-postgresql-foundations/20.4.1.06-row-level-security.md) | Subject roles, transaction context, old-row visibility, new-row checks, policy composition | Essential | Foundational | 11 min |
 
 ---
 
 ## Querying & Optimization
 
-Making queries fast. Category INDEX: [Querying & Optimization](02-querying-and-optimization/INDEX.md).
+Choose indexes and query shapes from filters, joins and measured execution plans. Category INDEX: [Querying & Optimization](02-querying-and-optimization/INDEX.md).
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Indexes](02-querying-and-optimization/20.4.2.01-indexes.md) | B-tree, hash, GiST, GIN, BRIN, composite indexes, index-only scans, partial indexes | Essential | 17 min | 9 min |
-| 02 | [Joins](02-querying-and-optimization/20.4.2.02-joins.md) | INNER, LEFT, RIGHT, FULL, CROSS, LATERAL, hash/merge/nested loop joins, join order | Essential | 17 min | 10 min |
-| 03 | [Execution Plans](02-querying-and-optimization/20.4.2.03-execution-plans.md) | EXPLAIN ANALYZE, sequential vs index scans, cost estimation, statistics | Essential | 15 min | 8 min |
-| 04 | [Window Functions](02-querying-and-optimization/20.4.2.04-window-functions.md) | ROW_NUMBER, RANK, LAG, LEAD, aggregate OVER, running totals, moving averages | Essential | 16 min | 11 min |
-| 05 | [JSONB](02-querying-and-optimization/20.4.2.05-jsonb.md) | Operators, indexing, containment queries, aggregation, real-world patterns | Essential | 16 min | 10 min |
+| 01 | [Indexes](02-querying-and-optimization/20.4.2.01-indexes.md) | B-tree, hash, GiST, GIN, BRIN, composite indexes, index-only scans, partial indexes | Essential | Foundational | 9 min |
+| 02 | [Joins](02-querying-and-optimization/20.4.2.02-joins.md) | INNER, LEFT, RIGHT, FULL, CROSS, LATERAL, hash/merge/nested loop joins, join order | Essential | Foundational | 10 min |
+| 03 | [Execution Plans](02-querying-and-optimization/20.4.2.03-execution-plans.md) | EXPLAIN ANALYZE, sequential vs index scans, cost estimation, statistics | Essential | Foundational | 8 min |
+| 04 | [Window Functions](02-querying-and-optimization/20.4.2.04-window-functions.md) | ROW_NUMBER, RANK, LAG, LEAD, aggregate OVER, running totals, moving averages | Essential | Foundational | 11 min |
+| 05 | [JSONB](02-querying-and-optimization/20.4.2.05-jsonb.md) | Operators, indexing, containment queries, aggregation, real-world patterns | Essential | Foundational | 10 min |
 
 ---
 
 ## Transactions & Replication
 
-The hard part — how Postgres handles concurrent access. Category INDEX: [Transactions & Replication](03-transactions-and-replication/INDEX.md).
+Preserve transaction invariants and make isolation, lock and replication behavior explicit. Category INDEX: [Transactions & Replication](03-transactions-and-replication/INDEX.md).
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Transactions](03-transactions-and-replication/20.4.3.01-transactions.md) | ACID, BEGIN/COMMIT, SAVEPOINT, isolation levels (read committed, repeatable read, serializable) | Essential | 7 min | 7 min |
-| 02 | [Deadlocks](03-transactions-and-replication/20.4.3.02-deadlocks.md) | Detection, prevention, timeout-based resolution, retry strategies, lock ordering | Essential | 5 min | 5 min |
-| 03 | [Optimistic & Pessimistic Locking](03-transactions-and-replication/20.4.3.03-optimistic-pessimistic-locking.md) | Version-based locking, row-level locking, advisory locks, SELECT FOR UPDATE | Important | 6 min | 6 min |
-| 04 | [Database Replication](03-transactions-and-replication/20.4.3.04-database-replication.md) | Streaming vs logical, read replicas, Patroni failover, replication lag, conflict resolution | Important | 7 min | 7 min |
+| 01 | [Transactions](03-transactions-and-replication/20.4.3.01-transactions.md) | ACID, BEGIN/COMMIT, SAVEPOINT, isolation levels (read committed, repeatable read, serializable) | Essential | Foundational | 7 min |
+| 02 | [Deadlocks](03-transactions-and-replication/20.4.3.02-deadlocks.md) | Detection, prevention, timeout-based resolution, retry strategies, lock ordering | Essential | Foundational | 5 min |
+| 03 | [Optimistic & Pessimistic Locking](03-transactions-and-replication/20.4.3.03-optimistic-pessimistic-locking.md) | Version-based locking, row-level locking, advisory locks, SELECT FOR UPDATE | Important | Important | 6 min |
+| 04 | [Database Replication](03-transactions-and-replication/20.4.3.04-database-replication.md) | Streaming vs logical, read replicas, Patroni failover, replication lag, conflict resolution | Important | Important | 7 min |
 
 ---
 
@@ -86,30 +86,32 @@ Application query and transaction ownership. Category INDEX: [ORM & Access](04-o
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Prisma](04-orm-and-access/20.4.4.01-prisma.md) | Schema, migrations, queries, relations, middleware, performance | Essential | 11 min | 11 min |
-| 02 | [Prisma Advanced](04-orm-and-access/20.4.4.02-prisma-advanced.md) | Interactive transactions, raw queries, performance optimization, multi-tenancy, schema patterns | Essential | 10 min | 10 min |
-| 03 | [ORM & Query Builder Landscape](04-orm-and-access/20.4.4.03-orm-query-builder-landscape.md) | Prisma vs Drizzle vs TypeORM vs Knex vs raw decision tree, type-safety spectrum, migration tooling comparison | Essential | 8 min | 8 min |
+| 01 | [Prisma](04-orm-and-access/20.4.4.01-prisma.md) | Schema, migrations, queries, relations, middleware, performance | Essential | Foundational | 11 min |
+| 02 | [Prisma Advanced](04-orm-and-access/20.4.4.02-prisma-advanced.md) | Interactive transactions, raw queries, performance optimization, multi-tenancy, schema patterns | Essential | Foundational | 11 min |
+| 03 | [ORM & Query Builder Landscape](04-orm-and-access/20.4.4.03-orm-query-builder-landscape.md) | Prisma vs Drizzle vs TypeORM vs Knex vs raw decision tree, type-safety spectrum, migration tooling comparison | Essential | Foundational | 8 min |
 
 ---
 
 ## Operations & Scaling
 
-Production concerns — keeping the database healthy at scale. Category INDEX: [Operations & Scaling](05-operations-and-scaling/INDEX.md).
+Operate connections, schema changes, deletion, backup/recovery and search integrations. Category INDEX: [Operations & Scaling](05-operations-and-scaling/INDEX.md).
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Connection Pooling](05-operations-and-scaling/20.4.5.01-connection-pooling.md) | PgBouncer, connection lifecycle, pool sizing, transaction pooling, prepared statements | Important | 17 min | 10 min |
-| 02 | [Migration Strategies](05-operations-and-scaling/20.4.5.02-migration-strategies.md) | Expand/contract, lock-aware migrations, backfills, zero-downtime, blue-green DB | Important | 11 min | 10 min |
-| 03 | [Soft Delete & Tombstones](05-operations-and-scaling/20.4.5.03-soft-delete-and-tombstones.md) | `deleted_at` columns, partial indexes, GDPR right-to-erasure, CDC tombstones, log compaction retention | Essential | 20 min | 12 min |
-| 04 | [Backups, PITR & Recovery](05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md) | `pg_dump` vs physical backups, WAL archiving, PITR (`recovery_target_time`), pgBackRest/WAL-G, RPO/RTO, restore drills, cross-region copies | Important | 12 min | 10 min |
-| 05 | [Search Infrastructure at Scale](05-operations-and-scaling/20.4.5.05-search-infrastructure-at-scale.md) | Postgres FTS ceiling (GIN/tsvector), Elasticsearch/OpenSearch vs Meilisearch/Typesense, CDC/outbox sync, BM25 tuning, multilingual analysis | Essential | 10 min | 11 min |
-| 06 | [Interview Questions](05-operations-and-scaling/20.4.5.06-interview-questions.md) | Authored questions with mechanism and boundary answers | Essential | 21 min | 8 min |
+| 01 | [Connection Pooling](05-operations-and-scaling/20.4.5.01-connection-pooling.md) | PgBouncer, connection lifecycle, pool sizing, transaction pooling, prepared statements | Important | Important | 10 min |
+| 02 | [Migration Strategies](05-operations-and-scaling/20.4.5.02-migration-strategies.md) | Expand/contract, lock-aware migrations, backfills, zero-downtime, blue-green DB | Important | Important | 10 min |
+| 03 | [Soft Delete & Tombstones](05-operations-and-scaling/20.4.5.03-soft-delete-and-tombstones.md) | `deleted_at` columns, partial indexes, GDPR right-to-erasure, CDC tombstones, log compaction retention | Essential | Foundational | 12 min |
+| 04 | [Backups, PITR & Recovery](05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md) | `pg_dump` vs physical backups, WAL archiving, PITR (`recovery_target_time`), pgBackRest/WAL-G, RPO/RTO, restore drills, cross-region copies | Important | Important | 10 min |
+| 05 | [Search Infrastructure at Scale](05-operations-and-scaling/20.4.5.05-search-infrastructure-at-scale.md) | Postgres FTS ceiling (GIN/tsvector), Elasticsearch/OpenSearch vs Meilisearch/Typesense, CDC/outbox sync, BM25 tuning, multilingual analysis | Essential | Foundational | 11 min |
+| 06 | [Interview Questions](05-operations-and-scaling/20.4.5.06-interview-questions.md) | Authored questions with mechanism and boundary answers | Essential | Foundational | 8 min |
 
 ---
 
 ## Suggested Study Order
 
-### Path A — Backend new, prepping for senior (2-3 weeks)
+The paths below estimate focused study time, including practice and review. The 4 h 10 m above is reading time only.
+
+### Path A — Building backend depth for senior interviews (2–3 weeks)
 1. PostgreSQL Foundations (6 files, ~2.5 hrs)
 2. Querying & Optimization (5 files, ~2 hrs)
 3. Transactions & Replication (4 files, ~2 hrs)
@@ -118,7 +120,7 @@ Production concerns — keeping the database healthy at scale. Category INDEX: [
 6. Specialized features (JSONB, window functions, soft delete) — as needed
 7. Interview Questions (3 hrs)
 
-### Path B — Senior, refresher (1-2 days)
+### Path B — Senior refresher (1–2 days)
 1. MVCC + Transactions + Locking (1.5 hrs)
 2. Indexes + Execution Plans (1 hr)
 3. Replication + Connection Pooling (1 hr)
@@ -126,9 +128,9 @@ Production concerns — keeping the database healthy at scale. Category INDEX: [
 5. Interview Questions (focus on the 20 harder Qs)
 
 ### Path C — Interview tomorrow
-- Review each chapter’s definition, example and summary; focus on the topics listed above
-- Re-read MVCC + Transactions
-- Run through the authored interview questions
+- Use 60–90 minutes to refresh MVCC, transaction isolation, indexes and execution plans, locking, and recovery.
+- Rehearse five questions from the interview bank. For each, state the invariant, trace normal operation, explain a failure/retry boundary, and name an operational signal.
+- Revisit weak chapter summaries instead of trying to read all 29 files.
 
 ---
 

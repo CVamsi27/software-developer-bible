@@ -74,6 +74,10 @@ Source: [Multi-Tenant SaaS Architecture](30.3.4.04-multi-tenant-saas-architectur
 
 **A:** Transaction-local context does not follow a query onto another pooled connection. Pin both operations together and use a runtime role that cannot bypass the policy.
 
+**Q:** Why should a tenant filter built with Prisma middleware or an extension name its supported major version and operations?
+
+**A:** Prisma ORM 7 removed the legacy `$use` API, while Prisma ORM 8 provides a different middleware configuration. A filter covering selected operations is not proof that nested, raw or relationship paths enforce the same tenant boundary.
+
 **Q:** Does installing a transaction-local tenant setting protect a later query on another pooled connection?
 
 **A:** No. Context installation and protected statements must use the same transaction/connection. Authorized application context and an RLS-constrained runtime role are also necessary; RLS cannot make SQL injection safe.

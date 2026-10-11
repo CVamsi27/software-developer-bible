@@ -1,6 +1,6 @@
 # Dead-Link Remediation — Outcome Report (September 2026)
 
-> **Dated review record:** counts, test results and remaining-work statements below describe the recorded pass. Use the [current review progress](2026-10-08-explanation-depth-progress.md) and [verification runbook](verification-gates.md) for present scope; chapter existence and passing scans do not establish complete reader review.
+> **Dated review record:** counts, test results and remaining-work statements below describe the recorded pass. Use the [current review progress](2026-10-10-senior-precision-progress.md) and [verification runbook](verification-gates.md) for present scope; chapter existence and passing scans do not establish complete reader review.
 
 Closing report for the dead-link remediation executed from
 `docs/superpowers/plans/2026-09-10-dead-link-remediation.md`. It records

@@ -19,6 +19,7 @@ import { onRequest } from "./_middleware.ts";
  *     node --experimental-strip-types --test functions/_middleware.test.mjs
  */
 const PROBE_TOKEN = "a-long-random-probe-secret-value";
+const ALLOWED_EMAIL = "owner@example.test";
 const CHAPTER = "/10-frontend/10.1-javascript/INDEX.html";
 
 function call(path, { cookie = "", env = {}, host = "study.buildora.work" } = {}) {
@@ -71,7 +72,7 @@ test("the callback intercept precedes the policy, even for a session that would 
   // chapter: the callback has to be the whole response, not a decision.
   const response = await call("/auth/callback.html?code=x", {
     cookie: `study_access_token=${PROBE_TOKEN}`,
-    env: { STUDY_PROBE_TOKEN: PROBE_TOKEN },
+    env: { STUDY_PROBE_TOKEN: PROBE_TOKEN, STUDY_ALLOWED_EMAIL: ALLOWED_EMAIL },
   });
   assert.equal(response.status, 200);
   const body = await response.text();
@@ -89,7 +90,7 @@ test("a visitor with no cookie lands on login with the deep link preserved", asy
 test("the probe credential is read from the cookie and serves the chapter", async () => {
   const response = await call(CHAPTER, {
     cookie: `study_access_token=${PROBE_TOKEN}`,
-    env: { STUDY_PROBE_TOKEN: PROBE_TOKEN },
+    env: { STUDY_PROBE_TOKEN: PROBE_TOKEN, STUDY_ALLOWED_EMAIL: ALLOWED_EMAIL },
   });
   assert.equal(response.status, 200);
   assert.equal(await response.text(), "CHAPTER");
@@ -98,13 +99,23 @@ test("the probe credential is read from the cookie and serves the chapter", asyn
 test("a cookie beside others is still found", async () => {
   const response = await call(CHAPTER, {
     cookie: `theme=dark; study_access_token=${PROBE_TOKEN}; other=1`,
-    env: { STUDY_PROBE_TOKEN: PROBE_TOKEN },
+    env: { STUDY_PROBE_TOKEN: PROBE_TOKEN, STUDY_ALLOWED_EMAIL: ALLOWED_EMAIL },
   });
   assert.equal(response.status, 200);
 });
 
 test("an unset probe credential grants nothing", async () => {
   const response = await call(CHAPTER, { cookie: `study_access_token=${PROBE_TOKEN}` });
+  assert.equal(response.status, 302);
+  assert.equal(response.headers.get("Location"),
+               "https://personal.buildora.work/?study=access-denied");
+});
+
+test("a configured probe cannot grant access when the allowlist is missing", async () => {
+  const response = await call(CHAPTER, {
+    cookie: `study_access_token=${PROBE_TOKEN}`,
+    env: { STUDY_PROBE_TOKEN: PROBE_TOKEN },
+  });
   assert.equal(response.status, 302);
   assert.equal(response.headers.get("Location"),
                "https://personal.buildora.work/?study=access-denied");

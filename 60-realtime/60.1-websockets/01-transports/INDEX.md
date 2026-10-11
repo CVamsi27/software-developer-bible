@@ -1,6 +1,6 @@
 # Transports
 
-> **Study time:** ≈ 50 min of reading (5 files, ~10 min average).
+> **Study time:** ≈ 51 min of reading (5 files, ~10 min average).
 > **5 files.** The four real-time transport options — raw WebSockets, Server-Sent Events, Socket.IO, and WebTransport — and the decision framework for picking between them.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../INDEX.md)
@@ -52,7 +52,7 @@ Close the chapters and work through [section revision questions](REVISION.md). E
 
 ## Docita Anchor
 
-[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
+[Docita](https://github.com/CVamsi27/docita) is a companion project. These source paths identify implementation evidence; they do not establish a deployed topology or successful recovery drill.
 
 | Topic | Docita evidence |
 | --------------------------------- | ---------------------------------------------------------------------------------------------------------- |

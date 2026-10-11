@@ -86,6 +86,12 @@ Source: [Code generation and schema safety](20.7.3.03-codegen-schema-safety-ci.m
 
 **A:** It supplies a compile-time representation but does not parse or validate runtime values. Define server scalar coercion and client decoding separately, and verify that the schema artifact used by codegen matches the deployed contract.
 
+Source: [Apollo Client](20.7.3.01-apollo-client.md) and [Apollo Server](../02-execution/20.7.2.02-apollo-server.md)
+
+**Q:** Can one GraphQL.js major version be assumed compatible across Apollo Client and Apollo Server?
+
+**A:** No. Apollo Client 4.3.3 accepts GraphQL.js 16 or 17, while Apollo Server 5.5.1 declares `^16.11.0`. When practical, share a compatible 16.x runtime in a combined server/client project and check peer dependencies on upgrades.
+
 **Q:** Why can regeneration plus git diff miss a new generated file?
 
 **A:** git diff checks tracked changes and does not include untracked output. A committed-artifact workflow must also reject unexpected untracked files or compare a clean generated directory; compilation and runtime tests remain separate checks.

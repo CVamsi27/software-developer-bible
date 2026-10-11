@@ -36,7 +36,7 @@ Source: [This](10.1.2.01-this.md)
    **A:** Copying the function does not copy the receiver — with no `.` in front of the call, `this` falls back to the default binding.
 
 6. **Q:** What breaks when an object literal declares `greet: () => console.log(this.name)`?
-   **A:** The arrow froze the literal's surrounding `this` at creation time, so invoking `obj.greet()` still reads from the outer scope instead of `obj`.
+   **A:** The arrow resolves `this` through the literal's surrounding lexical environment, so invoking `obj.greet()` still reads from the outer scope instead of `obj`.
 
 **Common Mistakes**
 

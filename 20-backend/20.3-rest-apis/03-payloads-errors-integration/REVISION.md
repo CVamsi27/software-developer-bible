@@ -196,9 +196,15 @@ Source: [Notifications](20.3.3.07-transactional-email-and-notifications.md)
 
 **A:** Yes. An aligned passing SPF or DKIM path can satisfy DMARC. Its requested policy does not guarantee inbox placement or override every receiver's local policy.
 
+Source: [Long-running polling](20.3.3.03-long-running-api-operations.md)
+
+**Q:** Retry-After requests 60 seconds but only 30 seconds remain in the client budget. Should polling clamp it to five seconds?
+
+**A:** No. Do not retry earlier than the requested wait. The overall deadline ends the attempt before the next poll; a future caller can resume under its own budget.
+
 ## Summary
 
-Use these prompts after the reading pass to recall the payloads errors integration mechanisms and boundary constraints.
+Use these prompts after reading the chapters to recall payload, error and integration mechanisms alongside their boundary constraints.
 
 ## See Also
 

@@ -10,7 +10,8 @@ import sys
 from pathlib import Path
 
 ROOT = Path(".").resolve()
-SKIP = ("/.git/", "/.archive/", "/.freebuff/", "/.sass-cache/")
+SKIP = ("/.git/", "/node_modules/", "/vendor/", "/_site/", "/.archive/",
+        "/.freebuff/", "/.sass-cache/")
 LINK = re.compile(r"(\]\()((?:\.\./|[^)/])[^)\s]*\.md)(\))")
 ambiguous = []
 fixed = 0

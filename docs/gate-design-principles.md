@@ -16,6 +16,10 @@
 
 ## Definition
 
+A verification gate checks a named condition and returns a failing result when the condition is violated. The build or release harness must propagate that result for the check to block anything.
+
+**Textbook definition:** a verification gate is an acceptance predicate evaluated at a workflow boundary, with progression contingent on its result. Its assurance is limited by the predicate, inputs and enforcement path.
+
 - **Gate** — a read-only check that fails a build. Never writes.
 - **Fixer** — rewrites files; idempotent; shares its detection logic with a
   gate so the two cannot disagree; its output is pinned byte-for-byte.
@@ -32,22 +36,23 @@
 ## First Principles
 
 1. **Prose has no compiler.** Invalid syntax or types may fail a build, but wrong behavior can still compile; a document that
-   lies can render perfectly. In a hand-maintained corpus every claim — a count,
-   a pin, a link, a promise — is unchecked by default, so verification must
-   be made explicit. That is the entire justification for the suite's
-   existence, and it is why gates are cheap stdlib scans that run on every
-   push rather than expensive audits that run occasionally.
+   lies can render perfectly. In a hand-maintained corpus, a count, an API
+   signature, a path or a guarantee can look plausible and still be wrong.
+   The suite makes specific, repeatable properties explicit. Structural
+   checks, semantic review and live-source verification answer different
+   questions; none substitutes for the others. Bounded local checks can run
+   routinely, while remote drift and claims that need human interpretation
+   require separate evidence.
 
-2. **A claim without an owner drifts.** Given one number quoted in three
-   places and a corpus that changes daily, the number is already wrong; the
-   only question is when anyone notices. Two complementary controls are: give the claim a single *writer* that recomputes it from
+2. **A claim without an owner drifts.** A number quoted independently in three
+   places can become inconsistent as the corpus changes. Two complementary controls are: give the claim a single *writer* that recomputes it from
    disk (a restamper with `--write`), or give it a constant *reader* that
    fails when reality disagrees (a gate). Hand-editing an owned claim is not
    maintenance — it is re-introducing the drift on a delay.
 
-3. **Manual sweeps decay; rules do not.** A sweep is true the day it runs
+3. **A repeatable rule makes a check reusable.** A sweep is true the day it runs
    and less true every day after. Converting a sweep's finding into a gate
-   rule converts a point-in-time audit into a standing property. The residue
+   rule checks that named property on subsequent runs. The detector itself still needs regression controls and updated inputs. The residue
    — defect classes too singular or context-dependent to gate — decays back
    silently unless re-probed on a schedule, which is what the drift drill is
    for. The corollary sets the boundary: *do not gate singletons*. A rule
@@ -114,16 +119,17 @@ are all recorded, with dates, in the [health report](2026-09-19-corpus-health-re
 
 ### The layers, and what watches each
 
-| Layer | Watches | Watched by |
-| --------------- | ----------------------------------------------------------- | ----------- |
-| Corpus content | counts, links, structure, claims, staleness | gates 1–14 |
-| Harness | failure branches, gate count, CI enforcement, trigger paths | gate 15 |
-| Tooling parsers | fence semantics, gate detection, fixer output | gates 16–18 |
-| Navigation | sub-stacks, chapters, docs — nothing invisible | gates 3, 15 |
+| Concern | Examples | Checks (labels can overlap) |
+| ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------------------------ |
+| Corpus claims and learning content | counts, links, structure, staleness, answer depth, spelling, repeated prose, topic links and generated reading metadata | gates 1–14, 19, 24–27 |
+| Harness and workflow wiring | failure propagation, gate inventory, CI enforcement and trigger coverage | gate 15 |
+| Shared parsers and repair tools | fence and prose parsing, planted gate defects, writer output, empty-scope behavior and fixed points | gates 16–18, 20, 22–23 |
+| Navigation and teaching flow | reachable chapters, readable previous/next labels and related-reading guidance | gates 3–4, 21, 27 |
 
-The design property this table encodes: **every layer that can be wrong has
-something that watches it**, and the watchers are themselves watched — down
-to the self-test that re-proves detection every run.
+These rows group concerns; they are not mutually exclusive or complete
+coverage claims. Each gate checks only its named property on its declared
+inputs. Parser, writer and harness tests exercise selected failure and
+control cases, so a passing test still leaves other behavior for review.
 
 ## Real-world Application
 
@@ -166,8 +172,7 @@ it is what converts "we added checks" into "we know the checks work."
   gate without the fix buries signal on day one.
 - Keep exemption lists *named and reasoned* inside the gate code, never in a
   side document that can drift.
-- Treat baseline JSONs (link baselines, coverage floors) as append-only audit
-  trails; their diffs are the citation history.
+- Review baseline JSON changes deliberately. A snapshot may legitimately remove an old citation or revise a scoped floor; Git history retains those changes. Never reset a baseline just to silence an unexplained failure.
 - When a sweep comes back clean twice, stop sweeping and write the ledger —
   saturation is a result, not a failure.
 

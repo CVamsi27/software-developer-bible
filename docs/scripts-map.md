@@ -46,11 +46,11 @@
 ### The 30 gates, in verify.sh order
 
 | # | Script | What it owns | Fails when |
-| --- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| --- | ------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
 | 1 | `check_counts.py` | Every count claim on the nav surface (badges, blurb counts, table Files columns, repo-scale totals, [api-contract](api-contract.md)) | a claim disagrees with live disk |
 | 2 | `check_alignment.py` | Table pipe alignment, surrounding blank lines + ASCII box walls | rows/pipes misaligned or a table boundary fails to render |
 | 3 | `check_structure.py` | IDs unique, sequences contiguous, banks last, one H1, unique H2 slugs, **INDEX completeness** (every numbered subdir with an INDEX is linked) | structure or navigation has a gap |
-| 4 | `check_links.py` | Internal links resolve, no stale path-as-label links (fence-aware, anchor-verified) | a link is broken or lies about its target |
+| 4 | `check_links.py` | Source Markdown links, anchors, visible path labels and unambiguous prose code paths resolve (fence-aware; generated `_site/` output and vendored `vendor/` dependencies are excluded) | a link is broken or presents a path that no longer exists |
 | 5 | `check_freshness.py` | Known stale API signatures and date-gated EOL tables | a known stale signature appears |
 | 6 | `link_baseline.py` (diff) | Every cited external URL is in the probe-verified baseline | an unverified URL is cited |
 | 6b | `check_template.py` | Template sections/order, metadata contract, empty sections, question-claim contract, 25-question floor, fence grammar | a chapter or bank violates the contract |
@@ -77,7 +77,7 @@
 | 15 | `check_verify_wiring.py` | The harness itself: failure branches, gate count in 3 files, CI enforcement, trigger paths | the harness stops listening |
 | 16 | `test_md_fences.py` | The fence owner's semantics (16 characterization cases) | `md_fences.walk` drifts |
 | 17 | `test_fixers.py` | The fixers' repair output (7 planted-defect round trips, byte-exact) | a fixer repairs wrongly |
-| 18 | `test_gates.py` | **The suite self-test** — each sandboxable gate's canonical defect, planted in a temp tree, must still fire; clean content must still pass | a gate stops detecting its defect |
+| 18 | `test_gates.py`, `test_read_time.py` | **The suite self-test** — each sandboxable gate's canonical defect must fire, clean content must pass, and generated study-time text must use correct singular/plural grammar | gate detection drifts or an index says `1 files` |
 
 ### The checker → fixer → restamper recipes
 
@@ -98,10 +98,11 @@ When a gate fails, identify the reported defect and use its matching repair. Met
 ### Scripts that serve specific workflows (not gates)
 
 | Script | Job |
-| ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `backfill_metadata.py` | Backfills the metadata block the template gate requires (historical import) |
 | `check_study_live.py` | Post-deploy contract probe of the private study host — gating, canonicalization, the public surface, sign-in, denial, freshness; run by `study-live.yml`, pinned offline by `test_study_live.py` |
 | `test_study_live.py` | Characterization tests for the live probe against stub hosts (18 cases) — the hermetic job that must pass before the live probe judges a deployment |
+| `test_rendered_headings.py` | Checks the Minima page and post layouts keep one article H1; runs unit fixtures and scans the built site in `site-build.yml` |
 | `fix_depth.py` | Rewrites relative md links after files move deeper/shallower |
 | `fix_fence_labels.py` | Relabels fences mislabeled as `text`/`plain`/`output`/`console` |
 | `fix_section_order.py` | One-off canonical section reorder (normalizer) |
@@ -113,7 +114,7 @@ When a gate fails, identify the reported defect and use its matching repair. Met
 | `job_board_watch.py` | Weekly JD watch (advisory workflow) |
 | `md_fences.py` | The single fence parser — imported by ten scripts; pinned by gate 16 |
 | `prose_scan.py` | The single reasoning-prose classifier (fence/table/heading/quote/badge exclusions) — imported by gate 19; pinned by gate 20. `read_time.py` deliberately keeps its own reading-weight model; the two classifiers answer different questions |
-| `test_md_fences.py` / `test_fixers.py` / `test_gates.py` | The tooling's own test suites (gates 16/17/18) |
+| `test_md_fences.py` / `test_fixers.py` / `test_gates.py` / `test_read_time.py` | The tooling's own test suites (gates 16/17/18) |
 | `external-links-baseline.json` / `first-principles-baseline.json` | Owned data tables: probe-verified URLs; coverage floor |
 
 ### Rendered-page checks
@@ -123,6 +124,7 @@ The optional Playwright suites exercise the built site served at `http://127.0.0
 - `test_reading_ui_browser.cjs` checks chapter width, theme behavior, contrast and reader controls.
 - `test_read_aloud_browser.cjs` checks speech extraction and playback; set `STUDY_TEST_URL` to a built chapter.
 - `test_reading_pages_browser.cjs` checks navigation routes, one visible title, separate mobile touch targets, pointer/keyboard menus, expanded state/focus, local overflow, homepage/table/hover contrast and clipboard text.
+- `test_rendered_headings.py` checks that a rendered Markdown H1 suppresses Minima's generated title across page and post layouts, including the built README.
 
 Run these with `@playwright/test` and its Chromium browser available to Node. On a case-insensitive preview filesystem, `INDEX.html` and `index.html` collide. Render the authored homepage output to a temporary preview alias and set `STUDY_HOME_ROUTE` to that alias for the navigation suite; the production routes stay unchanged. A successful static build does not replace these browser checks.
 
@@ -190,3 +192,5 @@ it real.
 - `scripts/verify.sh` — the executable table of contents for this map.
 - `scripts/test_fixers.py` / `scripts/test_md_fences.py` — the recorded
   contracts of the fixers and the fence parser.
+- `scripts/test_read_time.py` — regression checks for singular/plural file
+  counts in generated study-time lines.

@@ -71,7 +71,7 @@ Source: [Map, Set, WeakMap, WeakSet](10.1.4.02-map-set-weakmap-weakset.md)
 **Common Mistakes**
 
 6. **Q:** Why does `for (const x of someWeakMap)` throw a `TypeError`?
-   **A:** The spec makes weak collections non-iterable and non-enumerable on purpose — exposing a key list would surface keys that are already unreachable. Reach for a regular `Map` when you need to walk the contents.
+   **A:** Weak collections expose no enumerable key list: collection timing must not become an ordinary observable membership scan. Reach for a regular `Map` when you need to walk the contents.
 
 **Best Practices**
 
@@ -98,7 +98,7 @@ Source: [Shallow Copy vs Deep Copy](10.1.4.03-shallow-vs-deep-copy.md)
    **A:** Spread only duplicates the first level. The nested array is the same object in both places, so a mutation through either reference is visible through both.
 
 4. **Q:** What does `JSON.parse(JSON.stringify(x))` silently rewrite, and what does it refuse outright?
-   **A:** Dates become ISO strings, `Map`/`Set`/`RegExp` become `{}`, and `NaN`/`Infinity` become `null`, while functions and `undefined` disappear. Circular structures and `BigInt` values abort with a TypeError.
+   **A:** Dates become ISO strings, ordinary `Map`/`Set`/`RegExp` become `{}`, and `NaN`/`Infinity` become `null`. Functions and `undefined` are omitted in object properties but become `null` in array slots; a top-level undefined result is not valid JSON for `JSON.parse`. Cycles and unhandled `BigInt` values throw.
 
 **Common Mistakes**
 
@@ -122,7 +122,7 @@ Source: [Debounce](10.1.4.04-debounce.md)
 **Definition**
 
 1. **Q:** What is a debounce function actually waiting for?
-   **A:** A quiet gap of N milliseconds. Every incoming call resets the clock, so the wrapped function runs only once no call has arrived for the whole wait.
+   **A:** For ordinary trailing debounce, a quiet gap of N milliseconds. Each call replaces the pending arguments and deadline. Leading execution and explicit flush are separate policies; sustained input can postpone trailing execution indefinitely.
 
 **How It Works**
 
@@ -169,7 +169,7 @@ Source: [Throttle](10.1.4.05-throttle.md)
 **Definition**
 
 2. **Q:** What does a throttled function promise its caller?
-   **A:** At most one execution per interval regardless of how often it is invoked, with the surplus calls inside the window discarded rather than queued.
+   **A:** The chapter’s ordinary throttle spaces callback starts by at least the configured interval and can retain the latest suppressed arguments for trailing execution. Cancel resets timing and flush can override spacing; promises already started can overlap.
 
 **How It Works**
 
@@ -214,10 +214,10 @@ Source: [Memory Leaks](10.1.4.06-memory-leaks.md)
 **How It Works**
 
 3. **Q:** What are the chapter's five causes, and what is the single move that repairs each?
-   **A:** Detached DOM pinned by a listener, listeners never removed, closures pinning large data, uncleared timers, and implicit globals. Every fix is the same action — break the reference by removing, clearing, or narrowing what the closure captures.
+   **A:** Long-lived listener paths, closures retaining obsolete data, timers, globals and unbounded caches can keep data reachable. A detached node/listener cycle alone is collectible. Find the root path, then remove the unwanted owner or apply an explicit retention bound.
 
 4. **Q:** How do you tell a growing heap apart from a leak while the app is running?
-   **A:** Take a heap snapshot, repeat the suspicious action several times, and diff snapshots: objects whose count climbs with each repetition are retained, while a healthy heap returns to roughly the same size after a forced collection.
+   **A:** Repeat a controlled lifecycle and compare snapshots/retaining paths after equivalent collection opportunities. Growth can also be wanted cache warm-up or delayed collection; distinguish retained obsolete objects from expected live state before calling it a leak.
 
 **Code Examples**
 
@@ -240,7 +240,7 @@ Source: [Memory Leaks](10.1.4.06-memory-leaks.md)
 **Best Practices**
 
 9. **Q:** What makes a cache safe to keep in module scope?
-   **A:** A hard bound — max size with eviction, or a TTL that actually deletes — or weak keys. Unbounded growth in a long-lived container is a leak even though nothing was technically forgotten.
+   **A:** A policy matching ownership: bounded entry/byte count, expiry that is actually enforced, and resource cleanup where needed. TTL checked only on reads leaves unread entries retained; weak keys leave values alive while keys remain externally reachable.
 
 ## Garbage Collection
 
@@ -252,7 +252,7 @@ Source: [Garbage Collection](10.1.4.07-garbage-collection.md)
    **A:** "Is it needed?" asks for intent, which the program never records, while "is it reachable from a root" is a graph walk with a decidable answer. The engine can always run it — including when the answer wrongly keeps a useless object alive.
 
 2. **Q:** What does reference counting get wrong that mark-and-sweep gets right?
-   **A:** Members of a cycle hold each other's counts above zero forever, so nothing is ever freed; tracing from the roots sees the entire island as unreachable and reclaims it in one pass.
+   **A:** Plain reference counting cannot reclaim an isolated cycle because its internal references keep counts positive. Tracing can identify the island as unreachable; reference-counting systems can also add cycle detection, and actual reclamation timing is policy-dependent.
 
 **Definition**
 
@@ -262,7 +262,7 @@ Source: [Garbage Collection](10.1.4.07-garbage-collection.md)
 **How It Works**
 
 4. **Q:** What happens in a scavenge, and what is promotion?
-   **A:** The young generation is traced and each survivor is copied into a fresh semi-space; after surviving enough collections the object is promoted into the old generation, where it is visited far less frequently.
+   **A:** In a copying young collector, reachable survivors move into available survivor/old storage; promotion makes an object old-generation data. This is one collector strategy, not a guarantee that every young collection copies every survivor or uses a fixed age threshold.
 
 5. **Q:** How do incremental and concurrent marking reduce jank?
    **A:** Incremental marking interleaves portions of collection with application work; concurrent marking performs supported work alongside the application. Remaining pauses and synchronization depend on the collector/workload, so neither guarantees only short begin/end pauses.
@@ -280,7 +280,7 @@ Source: [Garbage Collection](10.1.4.07-garbage-collection.md)
 **Performance Considerations**
 
 8. **Q:** What does allocation rate actually control?
-   **A:** How quickly the young generation fills, and therefore how often minor collections run. Allocating inside a hot loop turns an otherwise cheap, frequent scavenge into visible frame drops.
+   **A:** Allocation contributes to heap pressure and collection work, alongside live size, object kinds and engine policy. Hot-loop allocation can cause pauses, but measured traces must establish whether it causes the observed frame drops.
 
 ## Hash Tables & HashMaps — Internals, Collision Resolution & V8
 
@@ -289,7 +289,7 @@ Source: [Hash Tables & HashMaps — Internals, Collision Resolution & V8](10.1.4
 **First Principles**
 
 1. **Q:** Why can a hash table never promise worst-case O(1) the way an array does?
-   **A:** An array's address *is* the key, while a hash table must destroy the key to get an index — a many-to-one mapping where some key always loses the collision lottery and pays extra probes, plus an occasional full rehash.
+   **A:** Direct indexing already has a bounded integer position. A hash table maps many possible keys to fewer candidate positions and must compare full keys to resolve collisions; growth can also move all entries. The examples provide expected/amortized, not per-operation worst-case constant bounds.
 
 2. **Q:** What does "amortized" buy you that a worst-case claim wouldn't?
    **A:** Over a sequence of n inserts the rehashes cost 1 + 2 + 4 + … + n ≤ 2n, so the rare O(n) spike averages to a constant per insert — O(1) per op even though one op can still hitch.
@@ -297,7 +297,7 @@ Source: [Hash Tables & HashMaps — Internals, Collision Resolution & V8](10.1.4
 **Definition**
 
 3. **Q:** What is the load factor, and why do chaining and open addressing draw the line in different places?
-   **A:** α = entries ÷ slots. Chaining keeps working past α = 1 (chains just lengthen), while open addressing needs an empty slot to insert into, so it must resize early — around 0.5–0.7.
+   **A:** α = entries ÷ slots. Chaining can store multiple entries per bucket and exceed one; open addressing stores entries in the slots and needs insertion space. Its growth policy also accounts for probe distribution and tombstones; example thresholds are not universal.
 
 **How Hash Tables Work**
 
@@ -329,10 +329,10 @@ Source: [Equality & Type Coercion](10.1.4.09-equality-and-coercion.md)
 **First Principles**
 
 1. **Q:** If `===` exists, why does JavaScript still ship loose equality at all?
-   **A:** Because values arrive with unknown types — query strings, form fields, JSON — and someone has to normalize before comparing. `==` *is* that normalization policy; `===` plus explicit conversion is its stricter replacement.
+   **A:** Loose equality is an existing language contract retained for compatibility and deliberate type-dependent comparisons. It is not general input validation: boundary data still needs an explicit parsing/range policy before comparison.
 
 2. **Q:** How can `[]` be truthy at the same time as `[] == false` being `true`?
-   **A:** They answer different questions with different rule sets: a boolean context declares every object truthy, while `==` with a boolean operand runs ToNumber and lands both sides on `0`.
+   **A:** They answer different questions with different rule sets: a boolean context treats ordinary objects as truthy (the legacy browser `document.all` is exceptional), while `==` with a boolean operand runs ToNumber and lands both sides on `0`.
 
 **Definition**
 
@@ -360,7 +360,7 @@ Source: [Equality & Type Coercion](10.1.4.09-equality-and-coercion.md)
 **Best Practices**
 
 8. **Q:** When is `==` the correct choice rather than a lapse?
-   **A:** Essentially only `x == null` and `x != null`, where collapsing `null` and `undefined` into one check is the intent; elsewhere write `===` and convert on purpose at the boundary.
+   **A:** The nullish idioms deliberately collapse `null` and `undefined`. A different loose comparison is defensible only when its documented operand types and conversion behavior are the intended contract; strict comparison plus explicit parsing is usually clearer.
 
 ## Changed conditions
 
@@ -377,6 +377,22 @@ Sources: [Copying](10.1.4.03-shallow-vs-deep-copy.md), [Throttle](10.1.4.05-thro
 
 **Q:** Why must inserting into a deleted probe slot first check farther slots for the key?
 **A:** The key may already exist later in the same probe path. Remember the tombstone, scan for an update, then reuse it only when the key is absent; otherwise insertion creates a duplicate.
+
+## Ownership and conversion boundaries
+
+Sources: [Copying](10.1.4.03-shallow-vs-deep-copy.md), [Debounce](10.1.4.04-debounce.md), [Coercion](10.1.4.09-equality-and-coercion.md).
+
+**Q:** Does structured cloning a SharedArrayBuffer create isolated bytes?
+**A:** No. The cloned wrapper accesses the same shared memory. Transfer of an ordinary ArrayBuffer is different: it moves ownership and detaches the original buffer.
+
+**Q:** A search request is active when the input changes, but the replacement waits for debounce. When must the old result lose publication authority?
+**A:** Immediately on the input change. Cancel/invalidate the old generation then, rather than waiting for the next request to start; otherwise an old response can publish during the quiet-time gap.
+
+**Q:** Why must an undo history clone the new snapshot before removing redo entries?
+**A:** Cloning can throw for unsupported data. Preparing the snapshot first preserves the existing history on failure instead of partly applying the update.
+
+**Q:** What does Boolean('false') mean for a URL feature flag?
+**A:** It means true because the string is nonempty. A textual flag needs an explicit accepted-spelling policy, with invalid values handled deliberately.
 
 ## Summary
 

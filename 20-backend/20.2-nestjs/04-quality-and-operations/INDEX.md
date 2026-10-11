@@ -1,6 +1,6 @@
 # Quality & Operations - NestJS
 
-> **Study time:** ≈ 1 h 14 m of reading (6 files, ~12 min average).
+> **Study time:** ≈ 1 h 19 m of reading (6 files, ~13 min average).
 > **6 files.** Production hygiene: configuration management with env validation, the testing story (unit, integration, e2e) built on `TestingModule`, lifecycle hooks and graceful shutdown, scheduling and background jobs, and OpenAPI/Swagger documentation with contract checks.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](../INDEX.md)
@@ -8,14 +8,21 @@
 
 ---
 
+## Reading flow
+
+1. Validate startup settings before constructing their clients, then distinguish those checks from request validation in [Configuration](20.2.4.01-configuration-validation.md).
+2. Use [Testing](20.2.4.02-testing.md) to choose which graph, request path or database contract needs real components. A mocked success is evidence only for that configured collaboration.
+3. Follow [Lifecycle](20.2.4.03-lifecycle-hooks-graceful-shutdown.md) from stopped admission through tracked work to dependency closure. Then trace [Jobs](20.2.4.04-scheduling-background-jobs.md) through lease loss and an uncertain external effect.
+4. Generate [OpenAPI](20.2.4.05-swagger-openapi-nestjs.md) and compare it with runtime validation and responses. Use [Revision](REVISION.md) after these operational traces, before interview practice.
+
 ## Files
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Configuration & Validation](20.2.4.01-configuration-validation.md) | ConfigModule, ValidationPipe, class-validator, Joi, DTOs, env validation | Essential | Important | 12 min |
-| 02 | [Testing](20.2.4.02-testing.md) | Jest, TestingModule, supertest, Testcontainers, e2e/integration/unit | Essential | Important | 12 min |
-| 03 | [Lifecycle Hooks & Graceful Shutdown](20.2.4.03-lifecycle-hooks-graceful-shutdown.md) | OnModuleInit/OnApplicationBootstrap/OnModuleDestroy/BeforeApplicationShutdown/OnApplicationShutdown, ordering guarantees, `enableShutdownHooks()`, SIGTERM, Kubernetes terminationGracePeriod, draining connections, closing pools in order | Essential | Important | 14 min |
-| 04 | [Scheduling & Background Jobs](20.2.4.04-scheduling-background-jobs.md) | @nestjs/schedule (cron/interval/timeout + dynamic API), distributed cron locks (Redis NX / leader election), BullMQ queues, retries with backoff, rate limits, idempotent handlers, job observability | Essential | Important | 19 min |
+| 01 | [Configuration & Validation](20.2.4.01-configuration-validation.md) | ConfigModule, ValidationPipe, class-validator, Joi, DTOs, env validation | Essential | Important | 13 min |
+| 02 | [Testing](20.2.4.02-testing.md) | Jest, TestingModule, supertest, Testcontainers, e2e/integration/unit | Essential | Important | 13 min |
+| 03 | [Lifecycle Hooks & Graceful Shutdown](20.2.4.03-lifecycle-hooks-graceful-shutdown.md) | OnModuleInit/OnApplicationBootstrap/OnModuleDestroy/BeforeApplicationShutdown/OnApplicationShutdown, ordering guarantees, `enableShutdownHooks()`, SIGTERM, Kubernetes terminationGracePeriod, draining connections, closing pools in order | Essential | Important | 15 min |
+| 04 | [Scheduling & Background Jobs](20.2.4.04-scheduling-background-jobs.md) | @nestjs/schedule (cron/interval/timeout + dynamic API), distributed cron locks (Redis NX / leader election), BullMQ queues, retries with backoff, rate limits, idempotent handlers, job observability | Essential | Important | 20 min |
 | 05 | [Swagger & OpenAPI](20.2.4.05-swagger-openapi-nestjs.md) | @nestjs/swagger setup, DocumentBuilder composition, @ApiProperty DTO mapping, generics + @ApiExtraModels, bearer/apikey/cookie schemes, response decorators, spec JSON for client codegen, CI contract checks | Essential | Important | 15 min |
 
 ---

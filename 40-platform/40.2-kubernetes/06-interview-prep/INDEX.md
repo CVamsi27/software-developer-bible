@@ -1,6 +1,6 @@
 # Interview Prep — Kubernetes
 
-> **Study time:** ≈ 21 min of reading (1 files, ~21 min average).
+> **Study time:** ≈ 21 min of reading (1 file, ~21 min average).
 > **1 file, A curated question bank with answers.** The drill that converts K8s knowledge into interview performance.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](#file-index)
@@ -9,13 +9,9 @@
 
 ---
 
-## What's here
+## How to use this bank
 
-A question bank spanning everything in this stack: workload semantics, networking, config, scaling, hardening, and packaging.
-
-- **Easy** — pod vs container, Service types, ConfigMap vs Secret
-- **Medium** — rolling update mechanics, HPA metrics pipeline, probe tuning, PDB behavior during drains
-- **Hard** — RBAC design for multi-tenancy, StatefulSet rollout ordering, quota enforcement edge cases
+The 30 questions cover workloads, networking, configuration, scaling, reliability, security, packaging and delivery. Answer aloud before reading each explanation. State assumptions, trace the mechanism, then name a failure mode and a verification step. Use the linked chapter when an answer depends on a specific API or controller behavior.
 
 ---
 
@@ -23,7 +19,7 @@ A question bank spanning everything in this stack: workload semantics, networkin
 
 ### [Kubernetes Interview Questions](40.2.6.01-interview-questions.md)
 
-A curated question bank with answers, organized by difficulty. Work them only after reading the five content categories — the answers assume the vocabulary.
+Thirty questions with explanations and source links. Attempt them after the five learning categories; the answers assume their vocabulary.
 
 ---
 

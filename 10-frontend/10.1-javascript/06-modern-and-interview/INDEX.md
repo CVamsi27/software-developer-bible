@@ -1,7 +1,7 @@
 # Modern JS & Interview Prep — JavaScript
 
-> **Study time:** ≈ 1 h 20 m of reading (6 files, ~13 min average).
-> **6 files.** The newest language features (ES2023+/ES2024), offloading CPU-heavy work to Web Workers, DOM events & delegation, cross-tab communication, and the 50+ question self-test bank.
+> **Study time:** ≈ 1 h 26 m of reading (6 files, ~14 min average).
+> **6 files.** Selected ECMAScript 2022–2026 features and separate host APIs, Web Workers, DOM events, cross-tab coordination, and a 62-question interview bank.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](#files)
 [![Category](https://img.shields.io/badge/category-Modern_JS_Interview-orange)](../INDEX.md)
@@ -12,12 +12,12 @@
 ## Files
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------    : |
-| 01 | [ES2024+ Features](10.1.6.01-es2024-features.md) | `?.`/`??` syntax foundations (ES2020), `structuredClone`, `toSorted`, `Object.groupBy`, `Promise.withResolvers`, iterator helpers, Set methods (ES2025) | Important | Specialized | 16 min |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 01 | [Recent ECMAScript Features](10.1.6.01-es2024-features.md) | Selected ES2022–2026 APIs, host/runtime boundaries, iteration, promises, arrays, and binary data | Important | Specialized | 19 min |
 | 02 | [Web Workers](10.1.6.02-web-workers.md) | Dedicated/Shared workers, OffscreenCanvas, Comlink, React hooks for workers | Important | Important | 11 min |
-| 03 | [DOM Events & Delegation](10.1.6.03-dom-events-delegation.md) | Capture/bubble phases, target vs currentTarget, delegation patterns, passive listeners, CustomEvent, React synthetic events | Essential | Foundational | 17 min |
+| 03 | [DOM Events & Delegation](10.1.6.03-dom-events-delegation.md) | Capture/bubble phases, target vs currentTarget, delegation patterns, passive listeners, CustomEvent, React synthetic events | Essential | Foundational | 18 min |
 | 04 | [Cross-Tab Communication](10.1.6.04-cross-tab-communication.md) | BroadcastChannel, storage events, SharedWorker vs postMessage, non-atomic storage races and Web Locks, sync logout, IndexedDB payloads, service-worker messaging | Important | Specialized | 19 min |
-| 05 | [Interview Questions](10.1.6.05-interview-questions.md) | 55+ curated questions with answers | Essential | Foundational | 11 min |
+| 05 | [Interview Questions](10.1.6.05-interview-questions.md) | 62 curated questions with answers and changed-condition checks | Essential | Foundational | 12 min |
 
 ---
 

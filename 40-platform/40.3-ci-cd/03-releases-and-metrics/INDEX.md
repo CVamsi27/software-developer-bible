@@ -1,6 +1,6 @@
 # Releases & Metrics
 
-> **Study time:** ≈ 23 min of reading (3 files, ~8 min average).
+> **Study time:** ≈ 25 min of reading (3 files, ~8 min average).
 > **3 files.** Shipping safely and measuring delivery: blue-green and canary deployments for controlled traffic exposure and compatible recovery, plus five current DORA delivery measures that tell you whether shipping actually got faster AND safer.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](#file-index)
@@ -21,8 +21,8 @@ Read exposure/recovery mechanisms first, then learn to measure delivery outcomes
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Blue-Green & Canary](40.3.3.01-blue-green-canary.md) | Blue-green swaps, canary traffic shifting, automated rollback on metrics, feature flags as decoupling | Important | Important | 7 min |
-| 02 | [DORA Metrics & Delivery Performance](40.3.3.02-dora-metrics-delivery-performance.md) | Five measures (deployment frequency, change lead time, failed-deployment recovery time, change failure rate, deployment rework rate), honest instrumentation from CI + incident tools, benchmark bands, gaming pitfalls, error-budget link | Important | Important | 14 min |
+| 01 | [Blue-Green & Canary](40.3.3.01-blue-green-canary.md) | Blue-green traffic switches, canary analysis and stop criteria, feature flags, compatible recovery | Important | Important | 7 min |
+| 02 | [DORA Metrics & Delivery Performance](40.3.3.02-dora-metrics-delivery-performance.md) | Five measures, honest instrumentation from CD/Git/incident systems, contextual research clusters, gaming pitfalls, relationship to error-budget policy | Important | Important | 16 min |
 
 ---
 

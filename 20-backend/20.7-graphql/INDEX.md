@@ -1,6 +1,6 @@
 # GraphQL — Index
 
-> **Study time:** ≈ 1 h 28 m of reading (12 files, ~7 min average).
+> **Study time:** ≈ 1 h 32 m of reading (12 files, ~8 min average).
 > **12 files** — GraphQL fundamentals from schema design and queries/mutations/subscriptions to resolvers, Apollo Server, Apollo Client, codegen schema safety in CI, performance, security, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-12-blue)](../../INDEX.md)

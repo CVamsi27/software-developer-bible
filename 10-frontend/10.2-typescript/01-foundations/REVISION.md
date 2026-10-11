@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-TypeScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -62,8 +62,8 @@ Source: [Keyof & Typeof](10.2.1.02-keyof-typeof.md)
 3. **Q:** Why does `type Status = typeof STATUS[keyof typeof STATUS]` need `as const` on `STATUS`?
    **A:** Without `as const` each member widens to `string`, so the union collapses to `string`; with it, members stay literals and the union is `"active" | "inactive"`.
 
-4. **Q:** In `function get<T, K extends keyof T>(obj: T, key: K): T[K]`, what does the `keyof T` constraint buy you?
-   **A:** It restricts key to the static contract (typos fail to compile), not a proof of runtime ownership or input validity and gives the return type the precise `T[K]` instead of `any`.
+4. **Q:** In `function get<T, K extends keyof T>(obj: T, key: K): T[K]`, what does the `keyof T` constraint buy you, and what can it not prove for a dictionary?
+   **A:** It restricts the key to the static contract and preserves the declared property type; it does not prove runtime ownership or presence. For `Record<string, V>`, arbitrary keys are allowed even when absent, so a generic `T[K]` return can overstate a lookup. Model dictionary results as `V | undefined` and check the intended presence boundary.
 
 **Code Examples**
 
@@ -97,8 +97,8 @@ Source: [Type Narrowing](10.2.1.03-type-narrowing.md)
 3. **Q:** Why does `if (typeof user === "object")` still allow `null`?
    **A:** `typeof null` is `"object"`, so the null branch survives the guard — check `user !== null` (or `!= null`) explicitly instead.
 
-4. **Q:** What must a function return for `if (isCat(x))` to narrow `x`?
-   **A:** An authored predicate signature such as x is Cat communicates the narrowing claim. Recent compilers can also infer predicates from suitable simple checks; an explicit Boolean return alone carries no authored narrowing contract. The checker trusts the claim, so the check must actually validate it.
+4. **Q:** What must a function return for `if (isCat(x))` to narrow `x`, and when can the compiler infer that result?
+   **A:** An explicit `x is Cat` return type is trusted by the checker, so its implementation must validate the claim. Since TypeScript 5.5, some unannotated Boolean functions infer predicates when they have one return path, do not mutate the parameter, and return an expression that refines it on both true and false outcomes. Annotating the return as `boolean` prevents that predicate inference.
 
 **Code Examples**
 
@@ -119,13 +119,13 @@ Source: [tsconfig & Compiler Options](10.2.1.04-tsconfig-compiler-options.md)
 
 **Definition**
 
-1. **Q:** What four option families does a tsconfig organize into, and which family decides which bugs reach production?
-   **A:** Strictness, modules/resolution, emit/build, and interop/lint-adjacent flags. Strictness is the one that decides bug classes: `strictNullChecks` and `noImplicitAny` catch null dereferences and silent `any` at compile time instead of at runtime.
+1. **Q:** What four option families does a tsconfig organize into, and what can strict checks catch?
+   **A:** Strictness, modules/resolution, emit/build, and interop/tooling options. Checks such as `strictNullChecks` and `noImplicitAny` can expose nullable-value and implicit-`any` mistakes when the declarations preserve those uncertainties; explicit `any`, assertions, unchecked external data and runtime behavior remain outside that guarantee.
 
 **How It Works**
 
-2. **Q:** App or published npm package — which `moduleResolution` does each need, and what breaks when they're swapped?
-   **A:** Bundled apps use `bundler` (extensionless imports fine); packages consumed by Node use `nodenext` (relative ESM imports need `.js`, honors `exports` maps). Swapped, you get phantom "cannot find module" errors that appear only in some tools.
+2. **Q:** How do bundled, fixed Node 20 and current Node module settings differ, and how should a team choose?
+   **A:** Use `module: "preserve"` or `"esnext"` with `moduleResolution: "bundler"` when a bundler loads the application. For a package pinned to Node 20, use `module: "node20"` with `moduleResolution: "node16"`; `node20` is not a resolution value. Use `nodenext` for both settings when following the current Node rules modeled by that TypeScript release. Node ESM relative imports need runtime-valid extensions such as `.js`; package `exports` conditions and the actual loader must agree with the checker.
 
 3. **Q:** What does `isolatedModules: true` actually reject, and what does it merely warn you about by behavior?
    **A:** It rejects type/value ambiguity a single-file transpiler can't resolve — chiefly type-only *re*-exports (`export { Foo }` → TS1205) and ambient const enum access (TS2748). Ordinary const-enum behavior depends on the emitting tool/options; do not promise cross-file inlining under a single-file transform.
@@ -145,8 +145,8 @@ Source: [tsconfig & Compiler Options](10.2.1.04-tsconfig-compiler-options.md)
 
 **Best Practices**
 
-7. **Q:** Two engineers get different `tsc` results from the same commit — which tsconfig principle does that violate?
-   **A:** The config is a project fingerprint: CI must type-check with the committed tsconfig, and the compiler version, dependency declarations and entry command must also agree. The same config with a different compiler can have different defaults and checks.
+7. **Q:** An upgrade to TypeScript 6 or 7 changes a project's checking or rejects its config. What should you inspect?
+   **A:** Pin and record the compiler version, inspect `tsc --showConfig`, and compare defaults and removed options with the [TypeScript 6 release notes](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-6-0.html) and [TypeScript 7.0 announcement](https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/). TS 6 defaults `strict` to true and `types` to an empty list; TS 7 removes deprecated options such as `baseUrl` and `node10` resolution. Validate the application's actual build and runtime after migrating.
 
 ## Changed-condition checks
 
@@ -169,6 +169,11 @@ Source: [Compiler Options](10.2.1.04-tsconfig-compiler-options.md)
 
 **Q:** With noUncheckedIndexedAccess enabled, why must labels[0] be guarded, and what happens if paths is configured only in tsc?
 **A:** The array type admits an empty array, so the index can be undefined. paths helps static resolution but does not rewrite emitted imports; the bundler/loader needs the matching alias contract.
+
+Source: [tsconfig & Compiler Options](10.2.1.04-tsconfig-compiler-options.md)
+
+**Q:** A Vite app checks `vite.config.ts` with TypeScript 6 but gets missing `process` and Vite-client globals. What should its config provide?
+**A:** Install `@types/node` and include the required ambient packages, for example `"types": ["vite/client", "node"]`. With TypeScript 6, ambient packages are not automatically included just because they are installed.
 
 ## Summary
 

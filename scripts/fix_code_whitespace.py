@@ -35,7 +35,7 @@ import os
 import re
 import sys
 
-SKIP_DIRS = {'.git', 'node_modules', '.archive', 'venv', '__pycache__'}
+SKIP_DIRS = {'.git', 'node_modules', 'vendor', '_site', '.archive', 'venv', '__pycache__'}
 # CommonMark: fences may be indented 0-3 spaces and still open/close a
 # block (deeper than 3 spaces = indented code, not a fence).
 FENCE_RE = re.compile(r'^( {0,3})(`{3,}|~{3,})([A-Za-z0-9_+-]*)')

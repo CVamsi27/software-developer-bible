@@ -1,6 +1,6 @@
 # Real-Time Stack
 
-> **Study time:** ≈ 2 h 2 m of reading (14 files, ~9 min average).
+> **Study time:** ≈ 2 h 3 m of reading (14 files, ~9 min average).
 > **WebSockets, SSE, real-time architecture** — optional stack, study when a JD demands it. Shared by both lanes.
 >
 > Study in three passes: **I. Protocols** (which transport, and why) → **II. Implementation** (Socket.IO, NestJS gateways) → **III. Architecture at scale** (fan-out, sticky sessions, pub/sub backbones).
@@ -56,7 +56,7 @@ Reading estimates do not include reproducing examples or interview rehearsal. Pr
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | ----: | ----------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | ------------- | ------------------ | --------: |
-| 4 | [Socket.IO](60.1-websockets/01-transports/60.1.1.03-socket-io.md) | Rooms, namespaces, acks, fallbacks, reconnection semantics | Important | Specialized | 13 min |
+| 4 | [Socket.IO](60.1-websockets/01-transports/60.1.1.03-socket-io.md) | Rooms, namespaces, acks, fallbacks, reconnection semantics | Important | Specialized | 14 min |
 | 5 | [NestJS WebSockets](60.1-websockets/03-frameworks-and-paradigms/60.1.3.01-nestjs-websockets.md) | Gateways, decorators, lifecycle hooks — production wiring | Important | Specialized | 11 min |
 | 6 | [GraphQL Subscriptions & Live Queries](60.1-websockets/03-frameworks-and-paradigms/60.1.3.02-graphql-subscriptions-live-queries.md) | graphql-ws protocol, Redis pub-sub fan-out, withFilter authz, over-emitting costs | Optional | Specialized | 11 min |
 
@@ -77,7 +77,7 @@ Reading estimates do not include reproducing examples or interview rehearsal. Pr
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | ----: | -------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ------------- | ------------------ | --------: |
-| 10 | [Testing Real-Time Systems](60.1-websockets/03-frameworks-and-paradigms/60.1.3.04-testing-realtime-systems.md) | Artillery WS scenarios, churn, ordering/backpressure assertions, chaos drills, soak tests | Important | Specialized | 10 min |
+| 10 | [Testing Real-Time Systems](60.1-websockets/03-frameworks-and-paradigms/60.1.3.04-testing-realtime-systems.md) | Protocol smoke checks, workload/churn design, recovery oracles and soak evidence | Important | Specialized | 10 min |
 
 | File | Contents | Role priority | General importance |
 | ----------------------------------------------------------------------------------------- | -------------------------------------------------------- | ------------- | ------------------ |

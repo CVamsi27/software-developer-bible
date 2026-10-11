@@ -49,7 +49,12 @@ function contrast(a, b) {
     assert.equal(await fence.locator('div.highlight').evaluate(n => getComputedStyle(n).backgroundColor), await fence.evaluate(n => getComputedStyle(n).backgroundColor), 'nested code surface follows the dark palette');
     const outline = page.locator('.chapter-outline');
     assert.equal(await outline.count(), 1, 'chapters offer an outline');
-    await outline.locator('summary').click();
+    const outlineSummary = outline.locator('summary');
+    assert.equal(await outline.evaluate(node => node.open), true, 'desktop outline starts open');
+    await outlineSummary.click();
+    assert.equal(await outline.evaluate(node => node.open), false, 'desktop outline can collapse');
+    await outlineSummary.click();
+    assert.equal(await outline.evaluate(node => node.open), true, 'desktop outline can reopen');
     const links = await outline.locator('a').evaluateAll(nodes => nodes.map(a => ({href: a.getAttribute('href'), text: a.textContent, target: !!document.getElementById(a.hash.slice(1))})));
     assert(links.length >= 5 && links.every(a => a.target && !a.text.startsWith('#')));
     await outline.locator('a').first().click();

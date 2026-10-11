@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-NestJS-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
 
@@ -64,7 +64,7 @@ Source: [Scheduling & Background Jobs](20.2.4.04-scheduling-background-jobs.md)
 
 **Q:** When should work move outside the HTTP request path?
 
-**A:** Move work when its duration exceeds the application or proxy request timeout. A scheduler or queue separates acceptance from completion; roughly 30 seconds is an example threshold, not a universal limit.
+**A:** Move work when its duration exceeds the application or proxy request timeout. A scheduler or queue separates acceptance from completion; use the actual deadline and workload budget; there is no universal duration threshold.
 
 **Q:** Why can several application replicas run the same scheduled task?
 
@@ -121,6 +121,22 @@ Sources: [Configuration](20.2.4.01-configuration-validation.md), [Testing](20.2.
 **Q:** A spec dump writes a file. Why does redirecting stdout create a bad baseline?
 
 **A:** The named file receives the JSON; stdout may be empty. Generate to an explicit separate file before comparison.
+
+**Q:** Why can a forced HTTP socket close leave work that still needs the database?
+
+**A:** Transport closure does not cancel an arbitrary handler promise. Track accepted work, await settlement or apply cooperative cancellation, then release its dependencies; abrupt termination still requires recovery-safe effects.
+
+**Q:** Does compiling a mocked TestingModule prove the production module exports are correct?
+
+**A:** It proves only that supplied graph resolves. Separately compile the actual owning modules and test the relevant runtime paths; an override can hide the missing production registration.
+
+**Q:** Does a password containing an uppercase letter and digit necessarily resist guessing?
+
+**A:** No. The custom length example checks only its stated length bounds. A real password policy also screens common/compromised values and controls verification cost; the configuration chapter links current guidance.
+
+**Q:** Why is the retained failed-job count different from a recent failure rate?
+
+**A:** Retained failed jobs remain until cleanup/review, so that count describes a backlog. A time-windowed failure counter/rate describes new failures and avoids treating one old job as evidence of an ongoing outage.
 
 ## Summary
 

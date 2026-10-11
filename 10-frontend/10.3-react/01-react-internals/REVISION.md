@@ -67,19 +67,22 @@ Source: [React Fiber](10.3.1.02-fiber.md)
 4. **Q:** Which phase changes the displayed DOM?
    **A:** Commit publishes prepared changes and runs layout work. Render may prepare detached nodes and flags without mutating the displayed tree.
 
+5. **Q:** Does fetching in an Effect activate a surrounding Suspense fallback?
+   **A:** No. Suspense responds to work that suspends during render, such as lazy code or a supported framework/data source. Fetching in an Effect does not suspend the render.
+
 **Code Examples**
 
-5. **Q:** Why does filtering data inside a transition callback still delay typing?
+6. **Q:** Why does filtering data inside a transition callback still delay typing?
    **A:** The callback runs immediately; transition marks setters rather than moving arbitrary computation off the main thread. Put the result-driving state update there and schedule the consuming render separately.
 
 **Common Mistakes**
 
-6. **Q:** Why should the controlled input value remain outside a transition?
+7. **Q:** Why should the controlled input value remain outside a transition?
    **A:** An input must reflect its current event promptly. Deferred state can drive the expensive results view while the input itself stays urgent.
 
 **Performance Considerations**
 
-7. **Q:** Why are lane bitmasks and fiber sizes poor application contracts?
+8. **Q:** Why are lane bitmasks and fiber sizes poor application contracts?
    **A:** They are internal details that depend on React versions, build settings and runtimes. Supported scheduling APIs express intent without depending on those layouts.
 
 ## Reconciliation

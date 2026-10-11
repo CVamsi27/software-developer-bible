@@ -24,7 +24,7 @@ Source: [Kubernetes Services & Ingress](40.2.2.01-services-ingress.md)
 
 **Q:** Did the ingress-nginx retirement remove Kubernetes Ingress or every NGINX-based controller?
 
-**A:** No. The community ingress-nginx controller retired in March 2026 and no longer receives fixes or security updates. Ingress remains an API, and other products have separate lifecycles. Select a maintained implementation and test policy translation during migration.
+**A:** No. The community ingress-nginx controller retired in March 2026 and no longer receives fixes or security updates. The Ingress API remains stable but frozen, with no planned removal; Kubernetes recommends Gateway API for new routing features. Other controllers have separate lifecycles. Select a maintained implementation and test policy translation during migration.
 
 **Q:** Which port does an Ingress backend name when a Service maps port 80 to targetPort 8080?
 
@@ -36,7 +36,7 @@ Source: [Kubernetes ConfigMaps & Secrets](40.2.2.02-configmaps-secrets.md)
 
 **Q:** Why is a Secret's base64 value not a security boundary?
 
-**A:** Base64 is encoding. Protect access with RBAC, encrypt stored data where required, control mounts/logging, and avoid committing plaintext or encoded secret material.
+**A:** Base64 is reversible encoding, and Secret objects are unencrypted in etcd by default. Configure encryption at rest and protect its keys and backups. Restrict direct Secret reads and Pod creation because a workload can expose a mounted value; control mounts and logging, and avoid committing plaintext or encoded secret material.
 
 **Q:** Will editing a ConfigMap always reconfigure the application?
 

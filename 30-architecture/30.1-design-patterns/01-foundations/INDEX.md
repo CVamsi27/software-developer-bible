@@ -1,7 +1,7 @@
 # Foundations — Principles, OOP & UML
 
 > **Study time:** ≈ 1 h 9 m of reading (5 files, ~14 min average).
-> **5 files.** Read these BEFORE any design pattern. SOLID, OOP, and UML are the language every GoF pattern is written in. Without them, the patterns are unmotivated syntax.
+> **5 files.** Read these BEFORE any design pattern. SOLID, OOP, and UML are the language every GoF pattern is written in. Use them to explain the state, caller promises, and relationships a pattern is meant to protect.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
@@ -43,7 +43,7 @@ Heuristics for comparing coordination, reading, maintenance, and speculative-fea
 - **KISS** — Keep It Simple, Stupid
 - **YAGNI** — You Aren't Gonna Need It
 - **Rule of Three** — a third case often clarifies variation; not a mandatory threshold
-- **Composition over Inheritance** — favor "has-a" over "is-a"
+- **Composition over Inheritance** — delegate reuse when a behavioral subtype promise is unnecessary
 - **POLA** — Principle of Least Astonishment
 - **SoC** — Separation of Concerns
 
@@ -51,10 +51,10 @@ Heuristics for comparing coordination, reading, maintenance, and speculative-fea
 State invariants, caller contracts, dispatch, and explicitly modeled ownership.
 
 - **Encapsulation** — hide state behind behavior
-- **Inheritance** — "is-a" (use sparingly)
+- **Inheritance** — a subtype relationship whose behavior must satisfy the caller contract
 - **Polymorphism** — same interface, different behavior
 - **Abstraction** — hide complexity behind a simple interface
-- **Association, Aggregation, Composition** — the 3 flavors of "has-a"
+- **Association, Aggregation, Composition** — distinguish references, grouping, and modeled ownership
 
 ### [UML Basics](30.1.1.04-uml-basics.md)
 The visual language of software design. LLD interviews expect you to sketch these on a whiteboard.

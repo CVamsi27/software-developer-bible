@@ -6,7 +6,7 @@
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
-# REST APIs — Http Mechanics Revision
+# REST APIs — HTTP Mechanics Revision
 
 Explain each mechanism before checking the answer. Revisit its source for the example and boundary conditions.
 
@@ -118,9 +118,13 @@ Sources: [Status codes](20.3.2.02-status-codes.md), [CORS](20.3.2.03-cors.md), [
 
 **A:** No. Another writer can change it in the gap. Check the expected version atomically with the update.
 
+**Q:** Why does the cache example omit an ETag on successful PUT after rebuilding the JSON?
+
+**A:** HTTP forbids a successful PUT validator unless the received representation was stored without transformation and the validator identifies it. This handler selects fields and serializes anew; GET returns the resulting representation validator.
+
 ## Summary
 
-Use these prompts after the reading pass to recall the http mechanics mechanisms and boundary constraints.
+Use these prompts after the reading pass to recall the HTTP request and cache mechanisms and boundary constraints.
 
 ## See Also
 

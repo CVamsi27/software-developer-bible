@@ -1,6 +1,6 @@
 # Scaling
 
-> **Study time:** ≈ 33 min of reading (3 files, ~11 min average).
+> **Study time:** ≈ 35 min of reading (3 files, ~12 min average).
 > **3 files.** Matching capacity to load: HorizontalPodAutoscaling driven by metrics, plus node-level autoscaling (Cluster Autoscaler vs Karpenter) that gives pods somewhere to schedule.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](#file-index)
@@ -11,7 +11,7 @@
 
 ## Why this category exists
 
-Kubernetes' core promise is elastic scale — but HPA does nothing until the metrics server exists, resource requests are honest, and the cluster has room to schedule into. These chapters cover pod autoscaling end to end and the node-capacity picture it depends on: pending pods, scale-down safety rules, overprovisioning buffers, and GPU/stateful caveats.
+Workload autoscaling needs a reliable metric and honest resource requests; node autoscaling needs a Pod that cannot currently schedule and a feasible provider capacity option. These chapters trace both control loops, their interaction, and the safety and latency constraints that shape scale-up and scale-down.
 
 ---
 
@@ -19,8 +19,8 @@ Kubernetes' core promise is elastic scale — but HPA does nothing until the met
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [HPA & Scaling](40.2.3.01-hpa-scaling.md) | Horizontal pod autoscaling, metrics server, custom metrics, scaling policies, VPA comparison | Optional | 20 min | 14 min |
-| 02 | [Node Autoscaling & Cluster Capacity](40.2.3.02-node-autoscaling-cluster-capacity.md) | Cluster Autoscaler scale-up/down rules, Karpenter direct provisioning + consolidation, node pools/taints, overprovisioning buffers, GPU/stateful scale-from-zero | Optional | 14 min | 17 min |
+| 01 | [HPA & Scaling](40.2.3.01-hpa-scaling.md) | Horizontal Pod Autoscaling, resource and external metrics, scale-to-zero, scaling policies, VPA comparison | Optional | Specialized | 16 min |
+| 02 | [Node Autoscaling & Cluster Capacity](40.2.3.02-node-autoscaling-cluster-capacity.md) | Cluster Autoscaler and Karpenter, placement and provisioning, node pools, disruption, overprovisioning, GPU and stateful workloads | Optional | Specialized | 17 min |
 
 ---
 
@@ -44,10 +44,10 @@ Where [docita](https://github.com/CVamsi27/docita) meets this topic.
 _No direct docita implementation yet_ — no HPA/Karpenter; scaling is deliberate Fly.io mechanics:
 
 | Topic | Docita evidence |
-| ------------------------------------ | -------------------------------------------------------------------------------------- |
-| HPA analog (per-machine concurrency) | `fly.toml [http_service.concurrency]` — soft 60 / hard 100 requests per machine |
-| Scheduled scaling | `.github/workflows/scale-api-hours.yml` grows/shrinks machines with IST business hours |
-| Scale-to-zero | ADR 0011: `auto_stop_machines='suspend'`, auto-start on request |
+| ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Fly Proxy request concurrency | `fly.toml [http_service.concurrency]` sets soft 60 / hard 100 requests per machine. Proxy concurrency helps route requests and start an existing stopped machine; it does not create machines or implement an HPA control loop. [Fly Proxy autostop/autostart](https://fly.io/docs/reference/fly-proxy-autostop-autostart/) |
+| Scheduled scaling | `.github/workflows/scale-api-hours.yml` defines 8:30 AM/PM IST cron runs, but GitHub's Actions API reported `disabled_manually` on 2026-10-12; the configured schedule is not active. |
+| Idle suspend and wake | `fly.toml` sets `auto_stop_machines='suspend'`, `auto_start_machines=true`, and `min_machines_running=0`; Fly Proxy suspends and wakes existing machines based on traffic, but does not create or destroy machines. |
 | Node autoscaling / VPA / Karpenter | _No direct docita implementation yet._ |
 
 ## Finish This Section

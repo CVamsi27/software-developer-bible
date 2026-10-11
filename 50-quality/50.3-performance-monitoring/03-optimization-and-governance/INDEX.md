@@ -20,21 +20,21 @@ A page can become slower as each sprint adds more code and assets. A performance
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Bundle Analysis](50.3.3.01-bundle-analysis.md) | Bundle size, tree shaking, code splitting, bundlephobia, source-map-explorer | Important | Important | 9 min |
-| 02 | [Performance Budgets](50.3.3.02-performance-budgets.md) | `size-limit`, per-chunk budgets, CI enforcement, explicit units, valid inputs and exception ownership | Important | Important | 9 min |
+| 02 | [Performance Budgets](50.3.3.02-performance-budgets.md) | artifact and route budgets, CI enforcement, explicit units, valid inputs and exception ownership | Important | Important | 9 min |
 
 ---
 
 ## The loop
 
 ```text
-Measure (bundle report / RUM)
-   → Find the offender (source-map-explorer)
-      → Fix (code split, drop dep, tree-shake)
-         → Enforce (size-limit budget fails the PR)
-            → back to Measure
+Measure shipped assets and field outcomes
+   → Attribute a surprising asset to its source modules
+      → Change a dependency or loading boundary
+         → Enforce the declared artifact budget
+            → Recheck the affected journey in lab and field
 ```
 
-Choose independent boundaries: initial JS, per-route chunks, total CSS, third-party scripts, and metric-level budgets (LCP ms) via Lighthouse CI.
+Choose independent boundaries: initial JavaScript, route-loaded chunks, CSS, third-party scripts and user metrics such as field LCP. Use an appropriate gate for each measurement.
 
 ---
 
@@ -59,7 +59,7 @@ Choose independent boundaries: initial JS, per-route chunks, total CSS, third-pa
 
 ## Docita Anchor
 
-[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at inspect these paths in the current checkout before claiming verified behavior.
+[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to. The paths below are inspection pointers; verify their current code and results before claiming tested behavior.
 
 | Topic | Docita evidence |
 | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |

@@ -23,7 +23,7 @@
 
 ---
 
-## Memorize the thresholds
+## Keep the field cutoffs visible
 
 | Metric | What it measures | Good |
 | ----------------------------------- | --------------------------------------------------------------------------- | ------- |

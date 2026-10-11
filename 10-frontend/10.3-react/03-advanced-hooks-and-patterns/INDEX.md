@@ -1,6 +1,6 @@
 # Advanced Hooks & Patterns — React
 
-> **Study time:** ≈ 1 h 49 m of reading (7 files, ~16 min average).
+> **Study time:** ≈ 1 h 46 m of reading (7 files, ~15 min average).
 > **7 files.** Production-grade patterns: Suspense, error boundaries, custom hooks, external stores via useSyncExternalStore, performance profiling and optimization, and state management.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](#files)
@@ -13,12 +13,12 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Suspense](10.3.3.01-suspense.md) | Suspense boundaries, data fetching, useTransition, streaming SSR | Important | Specialized | 16 min |
-| 02 | [Error Boundary](10.3.3.02-error-boundary.md) | Error boundaries, error recovery, logging, Sentry integration | Important | Important | 7 min |
-| 03 | [Custom Hooks](10.3.3.03-custom-hooks.md) | Composition patterns, useLocalStorage, useDebounce, useFetch, testing, best practices | Essential | Important | 38 min |
+| 01 | [Suspense](10.3.3.01-suspense.md) | Suspense boundaries, data fetching, useTransition, streaming SSR | Important | Specialized | 17 min |
+| 02 | [Error Boundary](10.3.3.02-error-boundary.md) | Class boundary, recovery scope, safe reporting, resource retry | Important | Important | 7 min |
+| 03 | [Custom Hooks](10.3.3.03-custom-hooks.md) | State isolation, cleanup, decoded requests, subscriptions, async ownership, testing | Essential | Important | 32 min |
 | 04 | [useSyncExternalStore](10.3.3.04-usesyncexternalstore.md) | Tearing in concurrent rendering, subscribe/getSnapshot contract, snapshot caching, Zustand/Redux integration, infinite-loop mistakes | Important | Specialized | 16 min |
-| 05 | [Performance](10.3.3.05-performance.md) | Profiler, React.memo, virtualization, windowing, debouncing, Web Workers | Essential | Foundational | 9 min |
-| 06 | [State Management](10.3.3.06-state-management.md) | Redux Toolkit, Zustand, Jotai, Context vs external state, when to use which | Essential | Important | 15 min |
+| 05 | [Performance](10.3.3.05-performance.md) | Profiling, memo boundaries, virtualization, code splitting, transitions | Essential | Foundational | 10 min |
+| 06 | [State Management](10.3.3.06-state-management.md) | Local/shared/server state, query caches, reducers, version conflicts and ownership boundaries | Essential | Important | 16 min |
 
 ---
 
@@ -32,7 +32,7 @@
 
 ## Docita Anchor
 
-Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
+Real code from [Docita](https://github.com/CVamsi27/docita), a production healthcare platform with NestJS APIs, React/Astro apps and a TypeScript monorepo. Study the chapter, then find the example in the repository:
 
 | Topic in this category | Docita evidence |
 | ------------------------------ | ---------------------------------------------------------------------------------------------------------- |

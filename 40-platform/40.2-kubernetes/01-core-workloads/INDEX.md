@@ -1,6 +1,6 @@
 # Core Workloads
 
-> **Study time:** ≈ 1 h 8 m of reading (5 files, ~14 min average).
+> **Study time:** ≈ 1 h 9 m of reading (5 files, ~14 min average).
 > **5 files.** What actually runs in a Kubernetes cluster: pods and ReplicaSets, Deployments on top, StatefulSets/DaemonSets for special cases, Jobs/CronJobs for batch. Read these before anything else in the K8s stack.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#file-index)
@@ -19,10 +19,10 @@ These chapters explain the controllers that request running processes or complet
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Pods & ReplicaSets](40.2.1.01-pods-replicasets.md) | Pod lifecycle, init containers, sidecars, labels/selectors, RS scaling | Optional | Specialized | 21 min |
-| 02 | [Deployments](40.2.1.02-deployments.md) | Rolling updates, rollbacks, strategies, revision history, status management | Optional | Specialized | 26 min |
+| 01 | [Pods & ReplicaSets](40.2.1.01-pods-replicasets.md) | Pod lifecycle, init containers, sidecars, labels/selectors, RS scaling | Optional | Specialized | 22 min |
+| 02 | [Deployments](40.2.1.02-deployments.md) | Rolling updates, rollbacks, strategies, revision history, status management | Optional | Specialized | 27 min |
 | 03 | [StatefulSets & DaemonSets](40.2.1.03-statefulsets-daemonsets.md) | Stateful workloads (databases), stable network IDs, ordered rollout, node-level agents (logging, monitoring) | Optional | Specialized | 10 min |
-| 04 | [Jobs & CronJobs](40.2.1.04-jobs-cronjobs.md) | Batch jobs, scheduled tasks, backoff, parallelism, completion modes, concurrency policy | Optional | Specialized | 9 min |
+| 04 | [Jobs & CronJobs](40.2.1.04-jobs-cronjobs.md) | Batch jobs, scheduled tasks, backoff, parallelism, completion modes, concurrency policy | Optional | Specialized | 8 min |
 
 ---
 
@@ -46,10 +46,10 @@ Where [docita](https://github.com/CVamsi27/docita) meets this topic.
 _No direct docita implementation yet_ — the API runs as long-running Fly.io machines, not Kubernetes. Honest analogs only:
 
 | Topic | Docita evidence |
-| ----------------------- | --------------------------------------------------------------------------------------------------------------- |
-| Machine ≈ pod replica | `fly.toml [[vm]]` — one 2GB machine, `min_machines_running` floor instead of a ReplicaSet |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Machine as replica analogy | `fly.toml [[vm]]` defines a 512 MB API machine and `min_machines_running = 0`; Fly machine scaling is not a Kubernetes ReplicaSet. The worker is a separate 256 MB app. |
 | Deployment-like rollout | CI-driven deploys (`.github/workflows/deploy.yml`) against `apps/api/Dockerfile` with health-gated grace period |
-| CronJob analog | Nest `@Cron` schedulers in the worker app, gated by `cron-heartbeat.ts` so only one instance fires |
+| CronJob analog | The worker app enables Nest `@Cron` handlers; the API disables them. `CronHeartbeat` records outcomes for observability, but does not elect one worker or prevent duplicate execution. |
 | StatefulSet / DaemonSet | _No direct docita implementation yet._ |
 
 ## Finish This Section

@@ -42,7 +42,7 @@ import tempfile
 from scan_scope import guard
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-COPY_SKIP = {'.git', 'node_modules', '.archive', '__pycache__'}
+COPY_SKIP = {'.git', 'node_modules', 'vendor', '_site', '.archive', '__pycache__'}
 
 # (script, args) — the exact invocations the repo documents for repair.
 WRITERS = [

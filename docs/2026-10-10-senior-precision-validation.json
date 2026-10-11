@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "date": "2026-10-10",
+  "date": "2026-10-12",
   "status": "verified_batches_complete_corpus_review_pending",
   "coverage_record": "docs/2026-10-10-senior-precision-audit.json",
   "results": {
@@ -90,9 +90,15 @@
         "Database choice: authored relational join returns only paid amount",
         "MVCC: Read Committed sees old uncommitted value then new committed statement snapshot",
         "MVCC: stable snapshot excludes later commit; conflicting update rejects and retains writer result",
-        "MVCC: own update visible before rollback; later transaction sees prior committed value"
+        "MVCC: own update visible before rollback; later transaction sees prior committed value",
+        "PostgreSQL foundations: constraints, join/aggregate result, foreign-key rejection and rollback fixture passed",
+        "PostgreSQL performance: clinic 42 returns 34 booked and 66 cancelled rows; partial-index query result remains unchanged",
+        "PostgreSQL performance: EXPLAIN ANALYZE executed; bitmap index/heap path plus sort observed without asserting a fixed plan",
+        "PostgreSQL RLS: non-owner role sees only its tenant; hidden tenant update affects zero rows; transaction-local context clears on commit",
+        "PostgreSQL RLS: cross-tenant insert rejected and WITH CHECK rejects an update that changes tenant"
       ],
-      "count": 6
+      "count": 11,
+      "environment": "isolated postgres:16-alpine container, no host ports or mounted data"
     },
     "redis-results": {
       "redis": "7.4.11",
@@ -140,7 +146,7 @@
         "url": "https://img.shields.io/badge/tags-concept%20%C2%B7%20distributed--systems%20%C2%B7%20theory-lightgrey",
         "status": 200,
         "aria_label": [
-          "tags: concept \u00b7 distributed-systems \u00b7 theory"
+          "tags: concept · distributed-systems · theory"
         ],
         "error_badge": false,
         "expected_tag": true
@@ -237,6 +243,181 @@
         "detail": "HTTP 200",
         "date": "2026-10-10",
         "content_verified": "Official source read via web tool"
+      },
+      {
+        "url": "https://www.postgresql.org/docs/16/functions-info.html",
+        "status": "LIVE",
+        "detail": "Official PostgreSQL 16 documentation opened and relevant pg_blocking_pids behavior read",
+        "date": "2026-10-11",
+        "content_verified": "pg_blocking_pids returns blockers, can repeat PIDs for parallel queries, and represents prepared transactions with PID 0."
+      },
+      {
+        "url": "https://www.postgresql.org/docs/16/runtime-config-locks.html",
+        "status": "LIVE",
+        "detail": "Official PostgreSQL 16 documentation opened and relevant setting read",
+        "date": "2026-10-11",
+        "content_verified": "deadlock_timeout delays deadlock checks to avoid checking every lock wait; increasing it delays reporting real deadlocks."
+      },
+      {
+        "url": "https://www.postgresql.org/docs/16/runtime-config-client.html",
+        "status": "LIVE",
+        "detail": "Official PostgreSQL 16 documentation opened and relevant settings read",
+        "date": "2026-10-11",
+        "content_verified": "lock_timeout applies independently to each lock acquisition attempt; statement_timeout bounds server statement execution."
+      },
+      {
+        "url": "https://www.postgresql.org/docs/16/errcodes-appendix.html",
+        "status": "LIVE",
+        "detail": "Official PostgreSQL 16 documentation opened and relevant codes read",
+        "date": "2026-10-11",
+        "content_verified": "40P01 is deadlock_detected, 40001 is serialization_failure, and 55P03 is lock_not_available."
+      },
+      {
+        "url": "https://www.prisma.io/docs/orm/release-status",
+        "status": "LIVE",
+        "detail": "Official page opened and relevant content read",
+        "date": "2026-10-11",
+        "content_verified": "Prisma official status page confirms ORM 8 remains a release candidate; v6 security-only period ends 2026-11-19."
+      },
+      {
+        "url": "https://github.com/prisma/orm/releases",
+        "status": "LIVE",
+        "detail": "Official page opened and relevant content read",
+        "date": "2026-10-11",
+        "content_verified": "Official release list checked; v8 release candidates and v7.10.0 stable release listed."
+      },
+      {
+        "url": "https://www.prisma.io/docs/orm/v8/reference/transactions-and-runtime",
+        "status": "LIVE",
+        "detail": "Official page opened and relevant content read",
+        "date": "2026-10-11",
+        "content_verified": "Official Prisma ORM 8 RC transaction reference confirms a different callback/options contract."
+      },
+      {
+        "url": "https://www.prisma.io/docs/orm/supported-databases",
+        "status": "LIVE",
+        "detail": "Official page opened and relevant content read",
+        "date": "2026-10-11",
+        "content_verified": "Official provider support matrix inspected for current version caveat."
+      },
+      {
+        "url": "https://orm.drizzle.team/docs/kit-overview",
+        "status": "LIVE",
+        "detail": "Official page opened and relevant content read",
+        "date": "2026-10-11",
+        "content_verified": "Official Drizzle Kit docs confirm generate and migrate commands."
+      },
+      {
+        "url": "https://typeorm.io/docs/migrations/executing/",
+        "status": "LIVE",
+        "detail": "Official page opened and relevant content read",
+        "date": "2026-10-11",
+        "content_verified": "Official TypeORM docs confirm migration:run requires compiled JavaScript unless a ts-node runner is used."
+      },
+      {
+        "url": "https://react.dev/reference/react/Suspense",
+        "status": "LIVE",
+        "detail": "HTTP 200",
+        "date": "2026-10-11",
+        "content_verified": "React v19.3 primary page opened; Suspense triggers, cached-resource boundary, reveal behavior and layout Effect lifecycle checked."
+      },
+      {
+        "url": "https://react.dev/reference/react/use",
+        "status": "LIVE",
+        "detail": "HTTP 200",
+        "date": "2026-10-11",
+        "content_verified": "React v19.3 primary page opened; stable cached Promise, suspension, rejection and Server-to-Client serialization requirements checked."
+      },
+      {
+        "url": "https://react.dev/reference/react/Component#componentdidcatch",
+        "status": "LIVE",
+        "detail": "HTTP 200",
+        "date": "2026-10-11",
+        "content_verified": "React v19.3 primary page opened; class Error Boundary lifecycle checked."
+      },
+      {
+        "url": "https://react.dev/reference/react/useTransition",
+        "status": "LIVE",
+        "detail": "HTTP 200",
+        "date": "2026-10-11",
+        "content_verified": "React v19.3 primary page opened; Action errors, pending state and input/await caveats checked."
+      },
+      {
+        "url": "https://react.dev/reference/react/useSyncExternalStore",
+        "status": "LIVE",
+        "detail": "HTTP 200",
+        "date": "2026-10-11",
+        "content_verified": "React v19.3 primary page opened; stable immutable snapshots, subscription cleanup, server snapshot and transition behavior checked."
+      },
+      {
+        "url": "https://react.dev/learn/reusing-logic-with-custom-hooks",
+        "status": "LIVE",
+        "detail": "HTTP 200",
+        "date": "2026-10-11",
+        "content_verified": "Official React custom Hook guidance reviewed for composition and caller ownership."
+      },
+      {
+        "url": "https://react.dev/reference/rules/rules-of-hooks",
+        "status": "LIVE",
+        "detail": "HTTP 200",
+        "date": "2026-10-11",
+        "content_verified": "Official React Rules of Hooks page reviewed for top-level and component/custom-Hook call constraints."
+      },
+      {
+        "url": "https://react.dev/reference/react/useEffectEvent",
+        "status": "LIVE",
+        "detail": "HTTP 200",
+        "date": "2026-10-11",
+        "content_verified": "Official React Effect Event page reviewed for committed callback/lifetime boundary where relevant."
+      },
+      {
+        "url": "https://tanstack.com/query/latest/docs/framework/react/guides/important-defaults",
+        "status": "LIVE",
+        "detail": "HTTP 200",
+        "date": "2026-10-11",
+        "content_verified": "TanStack Query v5 Latest page opened; stale/fresh policy and cache retention distinctions checked."
+      },
+      {
+        "url": "https://tanstack.com/query/latest/docs/framework/react/guides/optimistic-updates",
+        "status": "LIVE",
+        "detail": "HTTP 200",
+        "date": "2026-10-11",
+        "content_verified": "TanStack Query v5 Latest page opened; UI-variable and direct-cache optimistic strategies checked."
+      },
+      {
+        "url": "https://tanstack.com/query/latest/docs/framework/react/guides/query-cancellation",
+        "status": "LIVE",
+        "detail": "HTTP 200",
+        "date": "2026-10-11",
+        "content_verified": "TanStack Query v5 Latest page opened; supplied AbortSignal/cancellation behavior checked."
+      },
+      {
+        "url": "https://tanstack.com/virtual/latest/docs/framework/react/react-virtual",
+        "status": "LIVE",
+        "detail": "HTTP 200",
+        "date": "2026-10-11",
+        "content_verified": "TanStack Virtual React v3 Latest primary docs opened; useVirtualizer contract and current React-specific options checked."
+      },
+      {
+        "url": "https://zod.dev/v4",
+        "status": "LIVE",
+        "detail": "HTTP 200",
+        "date": "2026-10-11",
+        "content_verified": "Official Zod v4 page opened; runtime parse/safeParse boundary checked."
+      },
+      {
+        "url": "https://web.dev/articles/vitals",
+        "status": "LIVE",
+        "detail": "HTTP 200",
+        "date": "2026-10-11",
+        "content_verified": "Current web.dev Vitals guidance opened; LCP/INP/CLS thresholds and P75 field framing checked."
+      },
+      {
+        "url": "https://web.dev/articles/fcp",
+        "status": "LIVE",
+        "detail": "HTTP 200",
+        "date": "2026-10-11",
+        "content_verified": "Current web.dev FCP page opened; FCP treated as a loading diagnostic rather than Core Web Vital."
       }
     ],
     "rendered-results": {
@@ -2425,9 +2606,987 @@
       "limits": [
         "No real broker publication, Kafka ordering or Debezium connector executed; these tests establish local database boundaries only"
       ]
+    },
+    "rest-results": {
+      "node": "v23.7.0",
+      "checks": [
+        "REST pagination: valid/invalid page limits, exact-full/empty results and cursor use of the last returned row",
+        "REST long-running polling: seconds/date Retry-After, malformed date fallback, timer-overflow rejection, 503-to-200 completion and abort cancellation",
+        "REST upload: SHA-256 encoding accepts valid digest and rejects malformed fixtures",
+        "REST webhook: raw-body HMAC, mutation rejection, timestamp expiry, malformed signature and body-size bound",
+        "REST token bucket: burst, fractional refill, backwards clock rejection and invalid cost",
+        "REST gateway: fixed route mapping, method rejection, identity-header stripping, generated request ID, upstream status and timeout mapping",
+        "REST BFF: required principal, permitted-field projection and explicit optional-dependency failure state",
+        "REST authorization: same-tenant owner, non-owner denial and cross-tenant permission denial"
+      ],
+      "count": 8
+    },
+    "database-querying-results": {
+      "database": "16.15",
+      "environment": "isolated postgres:16-alpine container, no host ports or mounted data",
+      "checks": [
+        "Indexes: ordered partial-index fixture returns 9942, 9842, 9742; index-only heap fetches fall from 3 to 0 after VACUUM in this isolated run",
+        "Indexes: lowercase expression uniqueness rejects duplicate normalized email; expected error followed by rollback",
+        "Joins: patient fixture confirms left-join grain, ON versus WHERE preservation, match count, EXISTS and LEFT LATERAL outputs",
+        "Joins: in-window inventory fixture excludes old order item from the measured quantity",
+        "Execution plans: before/after access-path fixture preserves IDs 42, 142, 242 and rollback restores the UPDATE example",
+        "Window functions: rank/peer frames, lag/lead, date islands and 30-minute session examples match stated results",
+        "JSONB: missing/JSON-null distinction, containment types, nested mutation, shallow merge, stale version, GIN query and aggregation match stated outcomes"
+      ],
+      "count": 7
+    },
+    "database-transaction-results": {
+      "database": "16.15",
+      "environment": "fresh isolated postgres:16-alpine container with no host ports or mounted data",
+      "checks": [
+        "Reverse-order two-session row locking produced one expected 40P01 deadlock victim while the other transaction committed",
+        "pg_blocking_pids diagnostic with DISTINCT PIDs and LEFT JOIN executed successfully against pg_stat_activity",
+        "Ordered FOR UPDATE query locked and returned both account rows inside one transaction",
+        "Expected-version writes changed version 1 to 2; a stale version-1 write returned zero rows",
+        "Conditional stock reservation admitted exactly ten updates from stock 10 and rejected the eleventh",
+        "SKIP LOCKED claim CTE returned a job and transitioned it to processing atomically"
+      ],
+      "count": 6
+    },
+    "prisma-orm-results": {
+      "prisma": "6.19.0",
+      "typescript": "5.9.3",
+      "checks": [
+        "Full authored Prisma schema passed prisma validate",
+        "Prisma Client generated successfully from the authored schema",
+        "Eight Prisma Client TypeScript examples passed strict type checking",
+        "Prisma ORM 8 RC transaction/provider/error boundaries checked against official docs; no RC code was treated as stable"
+      ],
+      "count": 4,
+      "environment": "temporary /tmp project; no repository dependencies or generated client committed"
+    },
+    "orm-landscape-results": {
+      "postgres": "16.15",
+      "checks": [
+        "Authored node-postgres JavaScript report example passed node --check",
+        "PostgreSQL fixture ranked Ada first with count 2 and excluded an unpublished row",
+        "Current Drizzle Kit, Knex and TypeORM migration commands and the TypeORM TS/JS execution boundary checked against official documentation"
+      ],
+      "count": 3,
+      "environment": "isolated postgres:16-alpine container with no host ports or mounted data"
+    },
+    "database-operations-results": {
+      "database": "PostgreSQL 16.15",
+      "checks": [
+        "Migration expand/backfill fixture converted 12.50 to 1250 cents, repaired the row, validated the required-value constraint and finished with zero mismatches.",
+        "Soft-delete outbox lifecycle appended inactive/restored events, rejected stale generation-1 purge, and retained the restored row at generation 2.",
+        "Active-email partial unique index permitted reuse for inactive account and rejected conflicting restoration with SQLSTATE 23505.",
+        "Text-search fixture returned the two authorized tenant-7 documents, excluded tenant 8, and ranked title-weighted result first.",
+        "websearch_to_tsquery rejected the short unprefixed term while explicit to_tsquery prefix matched as documented."
+      ],
+      "count": 5,
+      "environment": "existing isolated postgres:16-alpine container bible-senior-db-lock-audit; disposable schema, no host ports or mounted data"
+    },
+    "operations-source-checks": {
+      "checks": [
+        "node-postgres checkout/wait/release/pool metrics behavior checked against current official API docs.",
+        "PgBouncer transaction pooling incompatibilities, protocol prepared-statement setting, and virtual pgbouncer admin console checked against official docs.",
+        "PostgreSQL WAL archiving, incomplete-segment timing, archive_command exit contract, archive statistics limits and PITR target boundary checked against PostgreSQL 16 docs.",
+        "Debezium delete envelope versus null Kafka tombstone and Kafka delete.retention.ms catch-up bound checked against official docs."
+      ],
+      "count": 4
+    },
+    "javascript-memory-algorithms-results": {
+      "typescript": "5.9.3",
+      "checks": [
+        "Debounce wrapper strict-compiled and coalesced latest args; cancel suppressed pending callback; flush ran it once; leading+trailing single-call and multi-call burst behavior matched chapter.",
+        "Shallow-copy graph clone preserved cycles and shared child aliases while isolating clone from original.",
+        "Chaining, open-addressing and Robin Hood hash maps strict-compiled and matched native Map over 5000 deterministic randomized set/get/delete operations each.",
+        "Tail-recursive Fibonacci/sum/flatten traces and trampoline factorial at 100000 steps matched expected results without recursive stack growth."
+      ],
+      "count": 4,
+      "environment": "Node v23.7.0; TypeScript 5.9.3; temporary files under /tmp/bible-js-precision"
+    },
+    "ecmascript-modern-results": {
+      "node": "v23.7.0",
+      "checks": [
+        "toSorted returns sorted copy",
+        "Object.groupBy null prototype and shared item identity",
+        "Map.groupBy retains item identity",
+        "Promise.withResolvers settlement",
+        "ArrayBuffer.transfer detaches sender buffer and retains bytes",
+        "RegExp v set subtraction",
+        "iterator helper map/filter/take result",
+        "Promise.try invokes callback synchronously and returns a promise",
+        "Array.fromAsync async source and awaited mapper",
+        "Array.fromAsync awaits promise values from sync iterables",
+        "Array.fromAsync preserves a promise yielded by an async iterator without a mapper and awaits it through a mapper"
+      ],
+      "count": 11,
+      "source_only": [
+        "ECMAScript 2026 / TC39: Iterator.concat, Map/WeakMap.getOrInsert and getOrInsertComputed, JSON.parse context.source and JSON.rawJSON, Uint8Array base64/hex, Math.sumPrecise, Error.isError; absent in Node v23.7.0."
+      ],
+      "limits": [
+        "Only APIs supported by this runtime were executed; no browser support matrix or performance claim was inferred."
+      ]
+    },
+    "modern-dom-source-checks": {
+      "sources": [
+        "https://dom.spec.whatwg.org/#dispatching-events",
+        "https://html.spec.whatwg.org/multipage/web-messaging.html#broadcastchannel",
+        "https://html.spec.whatwg.org/multipage/webstorage.html",
+        "https://html.spec.whatwg.org/multipage/workers.html",
+        "https://www.w3.org/TR/web-locks/",
+        "https://react.dev/blog/2024/12/05/react-19"
+      ],
+      "checks": [
+        "DOM event dispatch path and listener phases; dispatchEvent synchrony; CustomEvent.detail identity",
+        "Browser root-target passive interventions are Chrome-specific and limited to documented input events",
+        "BroadcastChannel structured clone, eligible recipient and asynchronous delivery boundaries",
+        "Storage writes do not provide a cross-context lock; same-value writes do not notify",
+        "Web Locks are cooperative and held for the lifetime of the callback promise",
+        "React 19 permits ref as a prop for function components; class component refs remain distinct"
+      ],
+      "count": 6,
+      "limits": [
+        "Primary-source checks only; no browser multi-tab or rendered UI suite was executed in this batch."
+      ]
+    },
+    "typescript-foundations-results": {
+      "node": "v23.7.0",
+      "typescript": "6.0.2",
+      "typescript7": "7.0.2",
+      "checks": [
+        "Types-vs-interface structural contracts, excess-property check, declaration merging, incompatible extension and intersection examples read and checked.",
+        "keyof/typeof and pick fixtures pass strict TypeScript checking with exactOptionalPropertyTypes and noUncheckedIndexedAccess.",
+        "pick runtime fixture preserves a missing optional key as absent, copies an own __proto__ key as data, and leaves the result prototype unchanged.",
+        "With noUncheckedIndexedAccess, a generic T[K] Record accessor compiles as number while an absent runtime key returns undefined; the documented V | undefined accessor correctly checks own-key presence.",
+        "TypeScript 5.5 inferred-predicate fixture compiles; explicit boolean callback is not treated as a predicate, and filter result types match the chapter.",
+        "Runtime filtering keeps score 0 with score !== undefined and drops it with !!score.",
+        "module: node20 plus moduleResolution: node16 compiles under TypeScript 6.0.2 and 7.0.2; TypeScript 6 rejects moduleResolution: node20.",
+        "Vite/browser/Node tsconfig example and CI compiler-API script compile with TypeScript 6.0.2, Vite 7 and @types/node; the script executes successfully.",
+        "The new TypeScript 5.5, 5.9, 7.0 and noUncheckedIndexedAccess source URLs returned HTTP 200; external-link baseline updated.",
+        "Repository link checker: 10,975 links checked, 231 anchors verified, zero broken links, stale labels or stale inline paths."
+      ],
+      "count": 10,
+      "strictCheckedFiles": [
+        "/tmp/bible-typescript-foundations/pick.ts",
+        "/tmp/bible-typescript-foundations/narrowing.ts",
+        "/tmp/bible-typescript-foundations/index-signature.ts",
+        "/tmp/bible-typescript-foundations/dictionary.ts",
+        "/tmp/bible-typescript-foundations/node20.ts",
+        "/tmp/bible-tsconfig-example/src/main.ts",
+        "/tmp/bible-tsconfig-example/vite.config.ts",
+        "/tmp/bible-tsconfig-example/scripts/check-tsconfig.ts"
+      ],
+      "environment": "Temporary fixtures and dependencies under /tmp; no test dependencies were added to the repository."
+    },
+    "typescript-generics-results": {
+      "node": "v23.7.0",
+      "typescript": "6.0.2",
+      "snippetCount": 51,
+      "checks": [
+        "All authored TypeScript code blocks in generics, infer, advanced generics and variance chapters compile with strict, exactOptionalPropertyTypes and noUncheckedIndexedAccess.",
+        "Method-syntax callbacks accept both parameter substitutions while function-valued properties reject the Dog-only-to-Animal direction.",
+        "No-unchecked indexed read and tuple/property optional cases compile with the documented undefined/never results.",
+        "The runtime curry and pipeline example returns 6 and 2; incompatible adjacent stages are rejected during compilation.",
+        "New official TypeScript compatibility, variance and variadic tuple source URLs returned HTTP 200 and the external-link baseline was updated.",
+        "Repository link checker: 10,975 links checked (231 anchors), zero broken links, stale labels or stale inline paths."
+      ],
+      "count": 6,
+      "strictCheckedFiles": [
+        "/tmp/bible-ts-generics-snippets/10.2.2.01-generics-01.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.01-generics-02.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.01-generics-03.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.01-generics-04.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.01-generics-05.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.01-generics-06.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.01-generics-07.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.01-generics-08.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.01-generics-09.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.01-generics-10.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.01-generics-11.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.01-generics-12.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.01-generics-13.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.02-infer-01.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.02-infer-02.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.02-infer-03.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.02-infer-04.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.02-infer-05.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.02-infer-06.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.02-infer-07.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.02-infer-08.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.02-infer-09.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.02-infer-10.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.02-infer-11.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.03-advanced-generics-01.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.03-advanced-generics-02.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.03-advanced-generics-03.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.03-advanced-generics-04.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.03-advanced-generics-05.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.03-advanced-generics-06.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.03-advanced-generics-07.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.03-advanced-generics-08.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.03-advanced-generics-09.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.03-advanced-generics-10.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.03-advanced-generics-11.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.03-advanced-generics-12.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.03-advanced-generics-13.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.04-type-variance-01.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.04-type-variance-02.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.04-type-variance-03.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.04-type-variance-04.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.04-type-variance-05.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.04-type-variance-06.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.04-type-variance-07.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.04-type-variance-08.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.04-type-variance-09.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.04-type-variance-10.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.04-type-variance-11.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.04-type-variance-12.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.04-type-variance-13.ts",
+        "/tmp/bible-ts-generics-snippets/10.2.2.04-type-variance-14.ts",
+        "/tmp/bible-ts-generics-snippets/infer-edge.ts"
+      ],
+      "environment": "Temporary files under /tmp; no repository test dependencies added."
+    },
+    "typescript-advanced-patterns-results": {
+      "typescript": "6.0.2",
+      "checks": [
+        "All 15 branded-type examples compile with strict, exactOptionalPropertyTypes and noUncheckedIndexedAccess; identifier constructors validate the documented prefix/character formats.",
+        "Both combined advanced-pattern examples compile with strict, exactOptionalPropertyTypes and noUncheckedIndexedAccess.",
+        "All 10 decorator examples compile with TypeScript 6.0.2 under their documented standard or experimental legacy convention; reflect-metadata examples use the package API declarations.",
+        "All 13 declaration-file examples and consumers compile under strict NodeNext with exactOptionalPropertyTypes and noUncheckedIndexedAccess; minimal dependency declarations stand in for installed packages.",
+        "Ambient declaration scope regression passes under NodeNext: the script-scope file declares a missing runtime package; adding export {} changes it to an augmentation and the missing package is rejected.",
+        "The TypeScript module-format reference and moduleDetection pages were retrieved from the official documentation; new source URLs returned HTTP 200 and were added to the external-link baseline.",
+        "Repository links: 10,977 references and 232 anchors resolve; no broken links, stale labels or stale inline paths.",
+        "Alignment, unified numbering, structure and git diff whitespace checks pass."
+      ],
+      "example_counts": {
+        "branded_types": 15,
+        "decorators": 10,
+        "declaration_files": 13,
+        "combined_advanced_patterns": 2
+      },
+      "count": 8
+    },
+    "typescript-interview-results": {
+      "typescript": "6.0.2",
+      "checks": [
+        "All 41 authored TypeScript examples compile with strict, exactOptionalPropertyTypes and noUncheckedIndexedAccess under NodeNext; small React declarations support React/JSX examples, the ambient package declaration is checked as .d.ts, and the once method fragment is compiled in an emitter context.",
+        "API-client GET and POST body/response relationships accept valid calls and reject a GET body, missing POST body and invalid POST payload with @ts-expect-error.",
+        "Runtime decoder accepts an own-field user and rejects inherited id/name fields.",
+        "A once listener that recursively emits the same event runs once because it unsubscribes before user code.",
+        "The query-builder fixture emits SELECT id, name FROM users WHERE id = $1 and the bound parameter [\"1\"].",
+        "The question bank contains 50 contiguous numbered questions; 22 timed TypeScript chapter/revision documents sum to 343 minutes, matching the 5 h 43 m root-index estimate; the interview bank is estimated at 39 minutes.",
+        "The newly cited TypeScript for the New Programmer page returned HTTP 200; the conditional-types, narrowing and module-reference pages are official TypeScript handbook pages already in the verified URL baseline."
+      ],
+      "example_counts": {
+        "typescript_examples": 41,
+        "questions": 50,
+        "timed_chapter_and_revision_documents": 22
+      },
+      "count": 7
+    },
+    "react-internals-results": {
+      "typescript": "6.0.2",
+      "checks": [
+        "Updated beforeprint/flushSync TSX passed strict no-emit checking with minimal ambient React declarations.",
+        "Updated transition/Suspense resource TSX passed strict no-emit checking with minimal ambient React declarations.",
+        "React 19.3 documentation reviewed for render/commit, Effect timing, Strict Mode, Suspense activation and flushSync caveats.",
+        "Cited current React implementation files and official docs returned HTTP 200 in GET probes."
+      ],
+      "count": 4,
+      "source_urls": [
+        "https://react.dev/reference/react/Suspense",
+        "https://react.dev/reference/react/useEffect",
+        "https://react.dev/reference/react/useLayoutEffect",
+        "https://react.dev/reference/react/StrictMode",
+        "https://react.dev/reference/react-dom/flushSync",
+        "https://react.dev/reference/react/useTransition",
+        "https://react.dev/reference/react/useDeferredValue",
+        "https://react.dev/learn/render-and-commit",
+        "https://react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key",
+        "https://react.dev/learn/preserving-and-resetting-state",
+        "https://raw.githubusercontent.com/facebook/react/main/packages/react-reconciler/src/ReactFiber.js",
+        "https://raw.githubusercontent.com/facebook/react/main/packages/react-reconciler/src/ReactFiberLane.js"
+      ],
+      "limits": [
+        "Snippet checks used minimal ambient React declarations rather than the installed React type package.",
+        "No browser print dialog or lifecycle integration was executed."
+      ]
+    },
+    "react-core-hooks-results": {
+      "typescript": "6.0.2",
+      "checks": [
+        "ContactForm, DataVisualization, AuthProvider and CartProvider TSX examples passed strict no-emit checking with minimal ambient React declarations.",
+        "React 19.3 official references were checked for useState, Effect synchronization/timing, memoization caches, compiler behavior, refs and Context propagation.",
+        "The three new source references returned HTTP 200; the external-link baseline was recaptured and reports 0 additions or removals.",
+        "Repository structure check passed for 1,023 Markdown files; 10,977 local links and 232 anchors passed with no broken or stale references."
+      ],
+      "count": 4,
+      "source_urls": [
+        "https://react.dev/reference/react/useState",
+        "https://react.dev/reference/react/useEffect",
+        "https://react.dev/reference/react/StrictMode",
+        "https://react.dev/learn/lifecycle-of-reactive-effects",
+        "https://react.dev/reference/react/useMemo",
+        "https://react.dev/reference/react/useCallback",
+        "https://react.dev/learn/react-compiler",
+        "https://react.dev/reference/react/useRef",
+        "https://react.dev/reference/react/forwardRef",
+        "https://react.dev/reference/react-dom/components/common#ref-callback",
+        "https://react.dev/learn/passing-data-deeply-with-context",
+        "https://react.dev/reference/react/useContext"
+      ],
+      "limits": [
+        "Snippet checks used minimal ambient React declarations rather than installed React packages and types.",
+        "No browser hydration, local-storage failure, or interaction test was run for these conceptual examples."
+      ]
+    },
+    "react-advanced-hooks-results": {
+      "typescript": "6.0.2",
+      "react_types": "19.3.0",
+      "checks": [
+        "Custom Hooks useCounter, SSR-safe localStorage with runtime decoder, request-identity-aware fetch, IntersectionObserver, event-listener overloads, useAsync and WebSocket examples pass strict no-emit TypeScript checking with exactOptionalPropertyTypes and noUncheckedIndexedAccess.",
+        "TanStack Virtual list example passes the same strict check against the installed @tanstack/react-virtual package.",
+        "The TanStack Query v5 and Zod v4 editable-record example passed strict TypeScript checking against the actual packages; server-side tenant authorization and version enforcement remain API contract assumptions.",
+        "React v19.3 Suspense, use(Promise), Component/Error Boundary, useTransition and useSyncExternalStore docs were reviewed for the stated contracts.",
+        "All 12 cited React, TanStack, Zod and web.dev URLs returned HTTP 200 on GET; external citation baseline diff is 0 at 2,449 URLs.",
+        "Repository structure passed for 1,023 Markdown files; 10,979 internal links and 232 anchors pass; git diff --check passes."
+      ],
+      "count": 6,
+      "source_urls": [
+        "https://react.dev/reference/react/Suspense",
+        "https://react.dev/reference/react/use",
+        "https://react.dev/reference/react/Component#componentdidcatch",
+        "https://react.dev/reference/react/useTransition",
+        "https://react.dev/reference/react/useSyncExternalStore",
+        "https://react.dev/learn/reusing-logic-with-custom-hooks",
+        "https://react.dev/reference/rules/rules-of-hooks",
+        "https://react.dev/reference/react/useEffectEvent",
+        "https://tanstack.com/query/latest/docs/framework/react/guides/important-defaults",
+        "https://tanstack.com/query/latest/docs/framework/react/guides/optimistic-updates",
+        "https://tanstack.com/query/latest/docs/framework/react/guides/query-cancellation",
+        "https://tanstack.com/virtual/latest/docs/framework/react/react-virtual",
+        "https://zod.dev/v4",
+        "https://web.dev/articles/vitals",
+        "https://web.dev/articles/fcp"
+      ],
+      "limits": [
+        "Storage hydration, denied-storage behavior, browser focus and virtualized assistive-technology behavior were not exercised in a real browser during this category check.",
+        "The illustrative API must implement authorization, decoding-compatible response contracts, and atomic expected-version enforcement; client query keys and mutation behavior do not provide these server guarantees."
+      ]
+    },
+    "react-modern-results": {
+      "typescript": "6.0.2",
+      "react": "19.3.0",
+      "react_router": "8.4.0",
+      "checks": [
+        "React 19.3 examples for transitions, deferred and optimistic updates, use(promise), form Actions, useActionState, useFormStatus, useEffectEvent, useId and ref-as-prop pass TypeScript 6.0.2 strict checking with exactOptionalPropertyTypes and noUncheckedIndexedAccess.",
+        "React 19 custom-element JSX augmentation and property/event props pass the same strict TypeScript check against actual React 19.3 type declarations.",
+        "React Router 8.4.0 Data Mode route, loader, action, useLoaderData, Await render-prop and DOM RouterProvider examples pass the same strict TypeScript check against actual package declarations.",
+        "React 19.3 docs and React Router v8.4 modes, data, actions, route objects, Await, revalidation, race conditions and migration pages were reviewed.",
+        "All cited technical source URLs returned HTTP 200 on GET; an inaccessible personal GitHub link in the learning index was removed.",
+        "Structure passed for 1,023 Markdown files; 10,979 internal links and 232 anchors pass; 671 content read-time badges and 156 index totals are consistent; external link baseline has 0 additions/removals at 2,455 URLs; git diff --check passes."
+      ],
+      "count": 6,
+      "source_urls": [
+        "https://developer.mozilla.org/en-US/docs/Web/API/Web_components",
+        "https://react.dev/reference/react-dom/components#custom-html-elements",
+        "https://react.dev/reference/react-dom/components/form",
+        "https://react.dev/reference/react-dom/hooks/useFormStatus",
+        "https://react.dev/reference/react/forwardRef",
+        "https://react.dev/reference/react/use",
+        "https://react.dev/reference/react/useActionState",
+        "https://react.dev/reference/react/useDeferredValue",
+        "https://react.dev/reference/react/useEffectEvent",
+        "https://react.dev/reference/react/useId",
+        "https://react.dev/reference/react/useOptimistic",
+        "https://react.dev/reference/react/useTransition",
+        "https://react.dev/reference/rsc/server-components",
+        "https://reactrouter.com/api/components/Await",
+        "https://reactrouter.com/api/data-routers/RouterProvider",
+        "https://reactrouter.com/explanation/race-conditions",
+        "https://reactrouter.com/how-to/optimize-revalidation",
+        "https://reactrouter.com/start/changelog",
+        "https://reactrouter.com/start/data/actions",
+        "https://reactrouter.com/start/data/data-loading",
+        "https://reactrouter.com/start/data/route-object",
+        "https://reactrouter.com/start/modes",
+        "https://reactrouter.com/upgrading/v7",
+        "https://web.dev/articles/shadowdom",
+        "https://reactrouter.com/api/data-routers/RouterProvider"
+      ],
+      "limits": [
+        "The React snippets and component/router contracts were type-checked; browser hydration, DOM event propagation, navigation cancellation and server rendering were not exercised in a browser.",
+        "Client-side route guards are navigation behavior only; authorization remains the responsibility of the server/API for each protected operation."
+      ]
+    },
+    "react-patterns-interview-results": {
+      "typescript": "6.0.3",
+      "react": "19.3.0",
+      "checks": [
+        "All 31 selected TSX fixtures (15 portal and 16 compound-component files) pass strict no-emit TypeScript 6.0.3 checks against React and React DOM 19.3.0, with exactOptionalPropertyTypes and noUncheckedIndexedAccess.",
+        "The full portal and compound-component chapters were read; current createPortal, Context, Children, cloneElement, form ID, option-registration, state-identity and widget-semantics claims were checked.",
+        "The full 43-question interview bank and both React indexes were read; current React public contracts were checked against the official React 19.3 documentation.",
+        "Clarified the modal SSR boundary, renamed the custom control as a choice popover, documented its first-render label-registration behavior, removed arbitrary field names from generated IDs, and tightened cleanup and server-state freshness answers.",
+        "The previously pending five-file cohort is now hash-matched as revised in the precision audit; generated read-time and count writers report no additional Markdown restamps."
+      ],
+      "count": 5,
+      "source_urls": [
+        "https://react.dev/reference/react-dom/createPortal",
+        "https://react.dev/reference/react/StrictMode",
+        "https://react.dev/reference/react/Children",
+        "https://react.dev/reference/react/cloneElement",
+        "https://react.dev/reference/react/use",
+        "https://react.dev/reference/react/useActionState",
+        "https://react.dev/reference/react/useContext",
+        "https://react.dev/reference/react/useDeferredValue",
+        "https://react.dev/reference/react/useEffect",
+        "https://react.dev/reference/react/useOptimistic",
+        "https://react.dev/reference/react/useSyncExternalStore",
+        "https://react.dev/reference/react/useTransition",
+        "https://react.dev/reference/rsc/server-components",
+        "https://react.dev/reference/react/Component",
+        "https://react.dev/reference/react/useMemo",
+        "https://nextjs.org/docs/app/guides/migrating/app-router-migration",
+        "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/"
+      ],
+      "limits": [
+        "TypeScript checks establish static consistency only; browser portal event paths, hydration, focus behavior, keyboard interaction and screen-reader output were not executed.",
+        "The overlay and compound-control examples are explicitly teaching sketches; production dialog, tooltip, tab, menu and listbox interaction contracts require tested primitives or the complete documented behavior.",
+        "The fixture set is selective and does not compile every code fragment from the chapters as a single application."
+      ],
+      "react_dom": "19.3.0"
+    },
+    "next-rendering-fundamentals-results": {
+      "next": "16.4.0",
+      "react": "19.3.0",
+      "react_dom": "19.3.0",
+      "typescript": "6.0.3",
+      "compiler_options": [
+        "--strict",
+        "--skipLibCheck",
+        "--exactOptionalPropertyTypes",
+        "--noUncheckedIndexedAccess",
+        "--jsx react-jsx",
+        "--moduleResolution bundler",
+        "--noEmit"
+      ],
+      "fixtures": 16,
+      "checks": [
+        "7 separate App Router parallel-route, default-slot and error-boundary fixtures compile",
+        "Server Component external API decoder narrows unknown JSON before rendering",
+        "Client theme, contact form and WebSocket examples compile",
+        "Promise params and route examples compile against Next.js 16 declarations",
+        "Next.js caching, route-default and component-boundary source links resolve; new external citation included in baseline",
+        "Three added fixtures cover Pages Router getStaticPaths/getStaticProps route guards, Next.js 16 parallel-slot defaults, and deterministic UTC date formatting.",
+        "After the edits, all 25 TSX fixture files in the combined Next.js audit directory passed strict no-emit TypeScript 6.0.3 checking against Next.js 16.4.0 and React 19.3.0.",
+        "Current official docs and the Next.js 16 release notes confirm explicit default files, hard-navigation fallback behavior, server execution of all slots, and the same-segment rendering-mode constraint."
+      ],
+      "limitations": [
+        "The date-picker package was not installed for a package-level compile; its id prop was verified in the official component props reference.",
+        "No production Next.js build, deployed cache trace, browser hydration or modal focus-interaction test was run."
+      ],
+      "source_urls": [
+        "https://nextjs.org/docs/app/api-reference/file-conventions/default",
+        "https://nextjs.org/docs/app/api-reference/file-conventions/parallel-routes",
+        "https://nextjs.org/docs/app/getting-started/server-and-client-components",
+        "https://nextjs.org/blog/next-16"
+      ]
+    },
+    "next-routing-middleware-results": {
+      "next": "16.4.0",
+      "react": "19.3.0",
+      "react_dom": "19.3.0",
+      "typescript": "6.0.3",
+      "compiler_options": [
+        "--strict",
+        "--skipLibCheck",
+        "--exactOptionalPropertyTypes",
+        "--noUncheckedIndexedAccess",
+        "--jsx react-jsx",
+        "--moduleResolution bundler",
+        "--noEmit"
+      ],
+      "fixtures": 17,
+      "checks": [
+        "Proxy function and matcher compile against Next.js 16 declarations",
+        "Dynamic Route Handler Promise params and response compile",
+        "Metadata generation, parent metadata merge and runtime API decoder compile",
+        "Sitemap response decoder and MetadataRoute output compile",
+        "Rendering cohort examples still compile in the combined fixture set"
+      ],
+      "source_probe": [
+        "Next.js Proxy API",
+        "NextRequest and NextResponse APIs",
+        "Route Handler API and guide",
+        "Cache Components guide",
+        "Metadata and OG guide/API/file conventions",
+        "JSON-LD guide"
+      ],
+      "limitations": [
+        "No deployed Proxy timing or authentication integration was exercised.",
+        "No production Route Handler deployment, Stripe webhook delivery, metadata crawler fetch or browser share preview was run."
+      ]
+    },
+    "next-data-caching-results": {
+      "next": "16.4.0",
+      "react": "19.3.0",
+      "react_dom": "19.3.0",
+      "typescript": "6.0.3",
+      "compiler_options": [
+        "--strict",
+        "--exactOptionalPropertyTypes",
+        "--noUncheckedIndexedAccess",
+        "--jsx react-jsx",
+        "--moduleResolution bundler",
+        "--noEmit",
+        "--lib esnext,dom,dom.iterable"
+      ],
+      "fixtures": 5,
+      "checks": [
+        "Data-fetching TSX patterns",
+        "Server Action form and useActionState patterns",
+        "Streaming page/error patterns",
+        "ISR route parameter patterns",
+        "Static-export page and client snapshot patterns"
+      ],
+      "outcome": "Passed: npx tsc --noEmit --pretty false --lib esnext,dom,dom.iterable",
+      "limitations": [
+        "No production deployment, browser rendering, cache-store behavior, webhook delivery or multi-instance ISR coordination was exercised.",
+        "External JSON runtime schemas in teaching snippets remain application adapters and are not established by TypeScript compilation."
+      ]
+    },
+    "next-production-results": {
+      "next": "16.4.0",
+      "react": "19.3.0",
+      "typescript": "6.0.3",
+      "compiler_options": [
+        "--strict",
+        "--skipLibCheck false",
+        "--exactOptionalPropertyTypes",
+        "--noUncheckedIndexedAccess",
+        "--jsx react-jsx",
+        "--module preserve",
+        "--moduleResolution bundler",
+        "--noEmit",
+        "--lib esnext,dom,dom.iterable"
+      ],
+      "combined_fixture_count": 28,
+      "production_fixture_count": 3,
+      "checks": [
+        "Production proxy.ts handler and matcher compile against Next.js 16 declarations.",
+        "next/image props, remotePatterns and Next.js 16 image quality configuration compile against current declarations.",
+        "NextConfig deploymentId is narrowed to a required string before assignment, including exactOptionalPropertyTypes.",
+        "All 28 rendering, routing, data/caching and production TypeScript/TSX fixtures pass in one strict no-emit run."
+      ],
+      "source_urls": [
+        "https://nextjs.org/docs/app/guides/authentication",
+        "https://nextjs.org/docs/app/api-reference/file-conventions/proxy",
+        "https://nextjs.org/docs/app/api-reference/components/image",
+        "https://nextjs.org/docs/app/guides/self-hosting",
+        "https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheComponents",
+        "https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheHandlers",
+        "https://nextjs.org/docs/app/api-reference/config/next-config-js/deploymentId",
+        "https://authjs.dev/getting-started/installation?framework=Next.js"
+      ],
+      "outcome": "Passed: TypeScript 6.0.3 strict no-emit check against Next.js 16.4.0 and React 19.3.0.",
+      "limitations": [
+        "Auth.js snippets are version-scoped and were not compiled as a complete provider/adapter integration.",
+        "No production build, browser image/LCP measurement, deployed cache topology, rolling container deployment or Kubernetes shutdown test was run."
+      ]
+    },
+    "next-interview-results": {
+      "next": "16.4.0",
+      "react": "19.3.0",
+      "typescript": "6.0.3",
+      "compiler_options": [
+        "--strict",
+        "--skipLibCheck false",
+        "--exactOptionalPropertyTypes",
+        "--noUncheckedIndexedAccess",
+        "--jsx react-jsx",
+        "--module preserve",
+        "--moduleResolution bundler",
+        "--noEmit",
+        "--lib esnext,dom,dom.iterable"
+      ],
+      "combined_fixture_count": 29,
+      "interview_specific_fixture_count": 1,
+      "checks": [
+        "All 29 TS/TSX fixtures in the combined Next.js review set pass strict no-emit compilation.",
+        "The interview-current-contracts fixture checks Cache Components configuration, cacheLife/cacheTag, revalidation signatures, locale Proxy routing, and parallel-route/Image contracts.",
+        "The existing error-boundary fixture was updated to the Next.js 16.3+ stable retry contract and passes strict compilation.",
+        "The 40-question bank was read end to end; cache, authorization, routing, rendering, deployment and failure claims were compared with current official documentation.",
+        "The read-time generator regression passes for both singular and plural file counts and is wired into gate 18."
+      ],
+      "source_urls": [
+        "https://nextjs.org/docs/app/api-reference/file-conventions/proxy",
+        "https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheComponents",
+        "https://nextjs.org/docs/app/api-reference/components/image",
+        "https://nextjs.org/docs/app/api-reference/file-conventions/parallel-routes",
+        "https://nextjs.org/docs/app/api-reference/file-conventions/error",
+        "https://nextjs.org/docs/app/api-reference/functions/generate-metadata",
+        "https://nextjs.org/docs/app/guides/streaming",
+        "https://nextjs.org/docs/app/guides/internationalization",
+        "https://nextjs.org/docs/app/guides/authentication",
+        "https://nextjs.org/docs/app/guides/self-hosting",
+        "https://authjs.dev/getting-started/installation?framework=Next.js"
+      ],
+      "limitations": [
+        "The 29-file compile set validates selected contracts, not every question-bank snippet as one integrated application.",
+        "No production Next.js build, deployed cache topology, browser rendering, image performance measurement or interactive error/parallel-route test was run in this continuation."
+      ],
+      "outcome": "Passed: all 29 selected Next.js TS/TSX fixtures compile with strict TypeScript 6.0.3 against Next.js 16.4.0 and React 19.3.0."
+    },
+    "http-auth-session-boundaries": {
+      "checks": [
+        "Reread the current HTTP Basic/Digest, API Keys and Sessions/Cookies chapters and checked their examples against the cited protocol and framework contracts.",
+        "Corrected the distinction between an HTTP 401 challenge and a browser-specific login prompt; verified Basic charset, colon and Digest cnonce details against the RFCs.",
+        "Closed the API-key guard missing-scope fail-open and made environment, bearer-scheme and tenant authorization boundaries explicit.",
+        "Checked cookie scope, proxy trust, expiry and CSRF behavior; rejected CSRF requests do not refresh the sample idle timer and sensitive responses carry Cache-Control: no-store.",
+        "The embedded Express JavaScript example passed node --check.",
+        "Eight official protocol, OWASP, NestJS, Express and Node.js reference URLs returned HTTP 200 to GET probes."
+      ],
+      "count": 6,
+      "source_urls": [
+        "https://datatracker.ietf.org/doc/html/rfc7617",
+        "https://datatracker.ietf.org/doc/html/rfc7616",
+        "https://www.rfc-editor.org/rfc/rfc9110",
+        "https://docs.nestjs.com/v11/fundamentals/execution-context",
+        "https://cheatsheetseries.owasp.org/cheatsheets/Key_Management_Cheat_Sheet.html",
+        "https://www.rfc-editor.org/rfc/rfc6265",
+        "https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html",
+        "https://expressjs.com/en/resources/middleware/session/",
+        "https://nodejs.org/api/crypto.html#cryptorandombytessize-callback"
+      ],
+      "limits": [
+        "The Express example received a syntax check only; no request-level Express, browser-cookie or CSRF integration test ran.",
+        "NestJS and TypeScript dependencies are not installed in this repository, so the TypeScript guard examples were source-reviewed but not compiled as an application."
+      ]
+    },
+    "saml-passkey-assurance": {
+      "checks": [
+        "Reread both full teaching chapters and their category index; updated the index and source-linked revision questions for the corrected contracts.",
+        "Checked SAML response/assertion signature alternatives, assertion conditions and metadata trust against the OASIS Core, Profiles and Metadata specifications.",
+        "Traced SP-initiated request correlation, cross-site ACS cookie behavior, RelayState handling, unsolicited-login risk and local-session ownership.",
+        "Reviewed the exact Node-SAML v5.1.0 source tag: its CacheProvider has get/remove calls but no atomic consume method; simultaneous InResponseTo checks can race.",
+        "Checked WebAuthn RP ID scope and relying-party origin validation against W3C WebAuthn Level 3.",
+        "Checked NIST SP 800-63B-4 AAL, PSTN and syncable-key requirements; syncable keys cannot meet AAL3 non-exportability.",
+        "Executed the embedded TOTP helper against RFC 6238 eight-digit SHA-1 vectors at Unix times 59 and 1111111109; both outputs matched.",
+        "GET-probed the seven new specification, version-pinned source and advisory URLs; all returned HTTP 200, then refreshed the citation baseline."
+      ],
+      "count": 8,
+      "source_urls": [
+        "https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf",
+        "https://docs.oasis-open.org/security/saml/v2.0/saml-profiles-2.0-os.pdf",
+        "https://docs.oasis-open.org/security/saml/v2.0/saml-metadata-2.0-os.pdf",
+        "https://github.com/node-saml/node-saml/blob/v5.1.0/src/types.ts",
+        "https://github.com/node-saml/node-saml/blob/v5.1.0/src/saml.ts",
+        "https://github.com/node-saml/node-saml/security/advisories/GHSA-4mxg-3p6v-xgq3",
+        "https://www.rfc-editor.org/rfc/rfc7643",
+        "https://www.rfc-editor.org/rfc/rfc7644",
+        "https://datatracker.ietf.org/doc/html/rfc6238",
+        "https://datatracker.ietf.org/doc/html/rfc4226",
+        "https://www.w3.org/TR/webauthn-3/",
+        "https://pages.nist.gov/800-63-4/sp800-63b.html",
+        "https://pages.nist.gov/800-63-4/sp800-63b/aal/",
+        "https://pages.nist.gov/800-63-4/sp800-63b/syncable/",
+        "https://simplewebauthn.dev/docs/packages/server",
+        "https://www.npmjs.com/package/%40simplewebauthn/server?activeTab=versions"
+      ],
+      "limitations": [
+        "No SAML provider, ACS request, distributed cache race or WebAuthn browser ceremony was integration-tested; those examples were source-reviewed. The TOTP helper alone was executed against RFC vectors.",
+        "AAL guidance was checked against NIST requirements but this is not a conformance assessment of a deployed service."
+      ],
+      "outcome": "Revised SAML federation and MFA/WebAuthn chapters plus their category study outcomes. Standards links are live, TOTP vectors pass, and the full repository verification suite passes 30/30."
+    },
+    "auth-interview-bank-precision": {
+      "checks": [
+        "Reread the complete 40-question bank and its revision companion; question IDs remain contiguous from 1 through 40.",
+        "OAuth grant, PKCE/state/nonce and Resource Owner Password Credentials/Implicit guidance matches RFC 9700.",
+        "Device Authorization polling honors the interval, slow_down increment, timeout backoff and stop-on-other-error rule from RFC 8628.",
+        "BFF, token-mediating and browser-only client trade-offs are aligned to RFC 10017.",
+        "Passkey RP ID/origin, syncable-key and AAL3 answers match W3C WebAuthn Level 3 and NIST SP 800-63B-4.",
+        "HTTP challenge, tenant authorization, policy placement, account recovery, credential lifecycle and audit boundaries were reread in context.",
+        "Internal links pass; RFC 10017 returned HTTP 200 and the external citation baseline has no diff."
+      ],
+      "count": 7,
+      "source_urls": [
+        "https://datatracker.ietf.org/doc/html/rfc9700",
+        "https://datatracker.ietf.org/doc/html/rfc9110",
+        "https://www.w3.org/TR/webauthn-3/",
+        "https://pages.nist.gov/800-63-4/sp800-63b/aal/",
+        "https://pages.nist.gov/800-63-4/sp800-63b/syncable/",
+        "https://datatracker.ietf.org/doc/html/rfc9106",
+        "https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html",
+        "https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html",
+        "https://datatracker.ietf.org/doc/html/rfc8628",
+        "https://datatracker.ietf.org/doc/html/rfc10017"
+      ],
+      "limits": [
+        "No live OAuth provider, device flow, SAML IdP, WebAuthn authenticator or multi-service authorization integration was executed.",
+        "The question bank is practice material and does not certify a deployed authentication or authorization system."
+      ]
+    },
+    "oauth-browser-architecture-precision": {
+      "checks": [
+        "Compared browser-only OAuth client, token-mediating backend and BFF responsibilities with RFC 10017 sections 6.1-6.3.",
+        "Kept cookie CSRF and active-XSS request capability explicit for the BFF.",
+        "Compared device-grant interval, slow_down, timeout and terminating error behavior with RFC 8628 section 3.5.",
+        "The RFC 10017 citation returned HTTP 200 and was added to the checked external-link baseline."
+      ],
+      "count": 4,
+      "source_urls": [
+        "https://datatracker.ietf.org/doc/html/rfc8628",
+        "https://datatracker.ietf.org/doc/html/rfc10017"
+      ],
+      "limitations": [
+        "Source and citation checks only; no authorization-server or device-client integration was executed."
+      ],
+      "outcome": "passed"
+    },
+    "authorization-model-results": {
+      "node": "v23.7.0",
+      "typescript": "5.9.3",
+      "strictCheckedFiles": [
+        "/tmp/rbac-static-check.ts",
+        "/tmp/abac-static-check.ts"
+      ],
+      "checks": [
+        "RBAC: inherited permission allows the documented read",
+        "RBAC: ungranted delete is denied",
+        "RBAC: unknown assigned role is rejected",
+        "RBAC: cyclic hierarchy is rejected",
+        "RBAC: invalid permission action is rejected",
+        "ABAC: valid assigned on-duty doctor read is allowed",
+        "ABAC: off-duty doctor is denied",
+        "ABAC: cross-tenant read is denied",
+        "ABAC: insufficient restricted-data clearance is denied",
+        "ABAC: same-tenant administrator follows the documented policy",
+        "ABAC: negative clearance is rejected"
+      ],
+      "count": 11,
+      "limits": "The snippets were extracted from the authored chapters; no identity provider, OPA deployment, database enforcement or clinical workflow integration was executed."
+    },
+    "xss-sink-validation-results": {
+      "node": "v23.7.0",
+      "typescript": "5.9.3",
+      "dompurify": "3.4.16",
+      "jsdom": "27.0.1",
+      "strictCheckedFiles": [
+        "/tmp/xss-vulnerable-sinks.ts",
+        "/tmp/xss-text-sink.ts"
+      ],
+      "checks": [
+        "textContent: hostile HTML-looking input creates no image element and is preserved exactly as text",
+        "textContent: serialized HTML contains encoded hostile characters",
+        "textContent: one paragraph is appended for the comment",
+        "DOMPurify: allowed strong/em/list formatting remains",
+        "DOMPurify: disallowed image, event handler and script markup are removed",
+        "DOMPurify: over-limit input is rejected",
+        "DOMPurify: non-string input is rejected"
+      ],
+      "count": 7,
+      "sources": "OWASP XSS and CSP cheat sheets, OWASP DOM XSS guidance, React DOM reference, MDN CSP and Trusted Types, and DOMPurify documentation were checked; all citations returned HTTP 200 and the external-link baseline was updated.",
+      "limits": "No production browser policy rollout or live application integration was run; temporary dependencies were installed outside the repository."
+    },
+    "security-hardening-operations-precision": {
+      "node": "v23.7.0",
+      "runtimeAssertions": {
+        "triage": 11,
+        "cachedSecret": 6
+      },
+      "checks": [
+        "Reread the three complete hardening chapters, their category index and the full revision companion; aligned the examples, question answers and study flow.",
+        "Threat-modeling guidance was checked against OWASP and Microsoft SDL/STRIDE sources; secret delivery/signing claims were checked against current Kubernetes, External Secrets v1, Vault and AWS KMS documentation.",
+        "Vulnerability triage was checked against FIRST CVSS v3.1/v4.0 and EPSS, CISA KEV, Syft, Trivy and Renovate primary documentation.",
+        "Test-first triage refinement: four malformed-input cases failed before the guards were added; the extracted example then passed 11 assertions covering malformed applicability, score, EPSS, KEV and reachability plus normal priority paths.",
+        "The extracted secret-cache helper passed 6 assertions covering concurrent-load deduplication, cache reuse, expiry and failed-refresh handling.",
+        "Parsed the Renovate JSON sample; the five new citation URLs returned HTTP 200, then the external-link baseline was updated to 2,463 URLs with no remaining diff.",
+        "The hardening category index totals 50 minutes across five chapters and its revision file; generated study-time, count and master-index checks were refreshed."
+      ],
+      "source_urls": [
+        "https://img.shields.io/badge/section-Security-blue",
+        "https://img.shields.io/badge/category-Architecture-800080",
+        "https://img.shields.io/badge/tags-concept-lightgrey",
+        "https://img.shields.io/badge/read--time-7_min-informational",
+        "https://img.shields.io/badge/role--priority-Important-blue",
+        "https://img.shields.io/badge/general--importance-Specialized-lightgrey",
+        "https://learn.microsoft.com/en-us/compliance/assurance/assurance-microsoft-security-development-lifecycle",
+        "https://learn.microsoft.com/en-us/azure/security/develop/threat-modeling-tool",
+        "https://owasp.org/API-Security/editions/2023/en/0x11-t10/",
+        "https://owasp.org/Top10/",
+        "https://shostack.org/books/threat-modeling-book",
+        "https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html",
+        "https://shostack.org/games/eop",
+        "https://img.shields.io/badge/read--time-8_min-informational",
+        "https://img.shields.io/badge/role--priority-Essential-brightgreen",
+        "https://img.shields.io/badge/general--importance-Foundational-blueviolet",
+        "https://docs.aws.amazon.com/kms/latest/APIReference/API_Sign.html",
+        "https://external-secrets.io/v1.0.0/api/spec/",
+        "https://developer.hashicorp.com/vault/tutorials/db-credentials/manage-dynamic-leases",
+        "https://kubernetes.io/docs/concepts/configuration/secret/",
+        "https://www.vaultproject.io/",
+        "https://aws.amazon.com/secrets-manager/",
+        "https://cloud.google.com/secret-manager/docs",
+        "https://external-secrets.io/",
+        "https://github.com/gitleaks/gitleaks",
+        "https://github.com/trufflehog/trufflehog",
+        "https://developer.hashicorp.com/vault/docs/secrets/databases/postgresql",
+        "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html",
+        "https://img.shields.io/badge/read--time-14_min-informational",
+        "https://www.first.org/cvss/v3.1/specification-document",
+        "https://www.first.org/cvss/v4.0/",
+        "https://www.first.org/epss/",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "https://owasp.org/www-project-vulnerability-management-guide/",
+        "https://cyclonedx.org/specification/overview/",
+        "https://github.com/anchore/syft",
+        "https://trivy.dev/docs/latest/guide/supply-chain/sbom/",
+        "https://docs.renovatebot.com/configuration-options/",
+        "https://nodejs.org/en/about/eol",
+        "https://img.shields.io/badge/category-Reference-success",
+        "https://img.shields.io/badge/tags-revision-lightgrey",
+        "https://img.shields.io/badge/read--time-4_min-informational",
+        "https://img.shields.io/badge/role--priority-Essential-brightgreen",
+        "https://img.shields.io/badge/general--importance-Foundational-blueviolet",
+        "https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html",
+        "https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html",
+        "https://helmet.js.org/faq/csp-nonce-example/",
+        "https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Strict_Transport_Security_Cheat_Sheet.html",
+        "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html",
+        "https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html",
+        "https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html",
+        "https://expressjs.com/en/guide/migrating-5/",
+        "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html",
+        "https://kubernetes.io/docs/concepts/configuration/secret/",
+        "https://external-secrets.io/v1.0.0/api/externalsecret/",
+        "https://developer.hashicorp.com/vault/tutorials/db-credentials/manage-dynamic-leases",
+        "https://docs.aws.amazon.com/kms/latest/APIReference/API_Sign.html",
+        "https://www.first.org/cvss/v3.1/specification-document",
+        "https://www.first.org/cvss/v4.0/",
+        "https://www.first.org/epss/",
+        "https://www.cisa.gov/known-exploited-vulnerabilities-catalog",
+        "https://github.com/anchore/syft",
+        "https://trivy.dev/docs/latest/guide/supply-chain/sbom/"
+      ],
+      "limits": [
+        "Node.js type stripping ran the TypeScript triage sample but no strict TypeScript compiler was available.",
+        "No Trivy scanner/image, PostgreSQL vulnerability-exception table, live Kubernetes cluster, Vault database plugin, cloud secrets manager or AWS KMS integration was executed.",
+        "Local Docita paths remain inspection leads and do not establish current production deployment or operating effectiveness.",
+        "The corpus semantic pass remains incomplete; pending documents remain explicitly pending."
+      ],
+      "outcome": "passed_for_this_cohort"
+    },
+    "system-design-storage-payments-notifications-precision": {
+      "postgresql": "16.15",
+      "schemaChecks": 3,
+      "negativeAssertions": 5,
+      "python": "3.14.5",
+      "quietHoursAssertions": 10,
+      "newSourceUrlsHttp200": 3,
+      "checks": [
+        "Read the complete Drive, Payment Gateway and Notification Service chapters plus the complete case-study index and revision companion.",
+        "Tested the Drive current-version foreign key and folder guard; tested payment provider-reference and idempotency-key constraints; tested notification event-key uniqueness.",
+        "Tested quiet-hour boundaries, aware timestamps, daylight-saving gap/repeat cases and absent IANA data using the chapter example.",
+        "Updated the current external-link baseline after all three new official source URLs returned HTTP 200."
+      ],
+      "limits": [
+        "PostgreSQL checks used rolled-back temporary schemas; no object store, payment provider, mail/SMS/push provider or real notification queue was run.",
+        "The architecture is an interview model, not a claim about Google Drive internal deployment.",
+        "Consent handling is product policy guidance, not a jurisdiction-specific legal compliance determination."
+      ],
+      "outcome": "passed_for_this_cohort"
+    },
+    "system-design-ticket-booking-ecommerce-precision": {
+      "postgresql": "16.15",
+      "schemaChecks": 2,
+      "behaviorAssertions": 7,
+      "checks": [
+        "Read the full ticket-booking and e-commerce chapters, then reconciled their source-linked revision answers.",
+        "Ticket-booking SQL verified all-or-none group claims, same-event hold ownership, synchronized copied expiry, expired replacement and stale-cleanup fencing.",
+        "E-commerce SQL verified final-unit contention rollback and rejected negative quantities without increasing stock."
+      ],
+      "limits": [
+        "The examples ran in rolled-back local PostgreSQL schemas; no payment provider, ticket issuer, venue gate, warehouse or fulfillment service was executed.",
+        "The designs are interview models; capacity values and policies remain workload assumptions."
+      ],
+      "outcome": "passed_for_this_cohort"
+    },
+    "system-design-betting-feed-crawler-chat-instagram-precision": {
+      "postgresql": "16.15",
+      "cases": [
+        "30.2.2.11 Live Betting",
+        "30.2.2.12 Twitter Feed",
+        "30.2.2.13 Rate Limiter",
+        "30.2.2.14 Web Crawler",
+        "30.2.2.15 Chat System",
+        "30.2.2.16 Instagram"
+      ],
+      "checks": [
+        "Live betting workload/payout arithmetic reviewed; idealized Decimal claim-value helper passed 8 assertions.",
+        "Twitter chronological pagination helper passed 6 cursor, tie-break, dedupe and version assertions; official historical Twitter/X Engineering pages were opened.",
+        "Rate-limiter chapter separates per-time arrivals from in-flight concurrency and slow-request exhaustion.",
+        "Crawler URL identity helper passed 20 assertions; extracted PostgreSQL frontier schema and lease bounds passed.",
+        "Chat PostgreSQL schema/transaction fixture passed 4 sequence, uniqueness, outbox and rollback checks.",
+        "Instagram PostgreSQL schema passed ownership, unique-operation, relation, comment-parent, 24-hour expiry and outbox checks.",
+        "Instagram upload claim fixture passed expired-intent, live-lease, expired-lease, generation-fence, current-publish and checksum checks."
+      ],
+      "source_checks": "Two official historical Twitter Engineering articles were opened: timeline infrastructure/fan-out and timeline ranking. The articles are labeled historical context; the proposed design is not presented as Twitter current internals. No other external sources were added in this cohort.",
+      "limits": [
+        "All database checks used disposable local PostgreSQL clusters; no production provider, CDN, multi-region or physically sharded environment was exercised.",
+        "Capacity figures and latency targets are scenario assumptions, not measured company facts."
+      ]
+    },
+    "system-design-video-sync-rideshare-precision": {
+      "postgresql": "16.15",
+      "cases": [
+        "30.2.2.17 YouTube",
+        "30.2.2.18 Dropbox",
+        "30.2.2.19 Lyft / ride sharing"
+      ],
+      "checks": [
+        "Opened the relevant official S3 multipart, Dropbox content-hash/change-detection, FFmpeg HLS, S2, H3 and OSRM references; reviewed third-party YouTube history as historical analysis only.",
+        "YouTube PostgreSQL schema passed initial publication, replacement upload with retained ready version, stale-worker rejection and current-version publication checks.",
+        "Exact HLS command generated three referenced MPEG-TS segments and an ENDLIST playlist.",
+        "Dropbox hash example passed empty, ordinary, exact 4 MiB and 4 MiB-plus-one-byte vectors against an independent reference calculation.",
+        "Dropbox PostgreSQL schema passed deferred same-file version-pointer commit, two sequenced changes, stale-base rejection, idempotency uniqueness and cursor-head checks.",
+        "Lyft PostgreSQL assignment constraints rejected a duplicate driver and a duplicate ride."
+      ],
+      "limits": [
+        "All database examples ran against a disposable local PostgreSQL 16.15 cluster; no production provider, object store, CDN, device fleet or geographically distributed deployment was exercised.",
+        "The HLS command demonstrates one local video-only rendition, not a production multi-rendition encoder.",
+        "Architecture and capacity values are interview models and workload assumptions, not claims about company internals."
+      ],
+      "outcome": "passed_for_this_cohort"
+    },
+    "system-design-rate-limiting-probabilistic-precision": {
+      "chapters": [
+        "30.2.1.08 Rate Limiting",
+        "30.2.1.17 Probabilistic Data Structures"
+      ],
+      "revision": "30.2-system-design/01-theory/REVISION.md",
+      "sources_checked": [
+        "RFC 6585 §4",
+        "RFC 9110 §10.2.3",
+        "IETF RateLimit header-fields draft-11 status",
+        "Redis HyperLogLog docs and implementation",
+        "NGINX limit_req",
+        "Envoy global/local rate limiting",
+        "Amazon API Gateway request throttling",
+        "t-digest and HDR Histogram implementations"
+      ],
+      "checks": [
+        "Three TypeScript examples compiled with TypeScript 7.0.2 --strict and Node.js types.",
+        "Redis Lua example passed allow/allow/deny, TTL and invalid-configuration no-mutation checks.",
+        "All 30 repository verification gates passed; 89/89 gate regressions passed."
+      ],
+      "limits": [
+        "No live HTTP gateway, Envoy fleet, API Gateway account or multi-node Redis deployment was exercised.",
+        "Browser rendering was not rerun because this cohort changed documentation content only."
+      ],
+      "outcome": "passed_for_this_cohort"
     }
   },
-  "local_check_groups": 81,
+  "local_check_groups": 100,
   "fixtures": [
     {
       "temporary_path": "/tmp/bible-senior-audit/check-examples.cjs",
@@ -2468,6 +3627,246 @@
     {
       "temporary_path": "/tmp/bible-senior-audit/check-outbox.py",
       "sha256": "45f4e30594f67238fd03a171b67824fc13ca4b12bf10652af2326d73873107c7"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/next-doc-audit/app-error.tsx",
+      "sha256": "d8446477f911021bcc09585ce9d1db80d190b5ed03dcefff7d3f8a939ccf2eb3"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/next-doc-audit/app-parallel-1.tsx",
+      "sha256": "bc30e52df94fa436ec44fcb47df85573ff6155b834421ee194611c6ed98346cf"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/next-doc-audit/app-parallel-2.tsx",
+      "sha256": "b6fbbc6296e7e1ace61cd2ed17de3d48864863fa68e2f17b1675307c08ffbfc6"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/next-doc-audit/app-parallel-3.tsx",
+      "sha256": "abba24e3c3c666b8449ae6e209ae133f9eb63f055c1deb3f74bf167aefdcb76b"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/next-doc-audit/app-parallel-4.tsx",
+      "sha256": "98ada60adc3be6b909eb880ebce4ef822d6fa5b091794dc11ee16cbd1fc1e033"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/next-doc-audit/app-parallel-5.tsx",
+      "sha256": "9a4d89908832e9332fabf67ea74f9a18d39774cdaf77de40772694f2a047c026"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/next-doc-audit/app-parallel-6.tsx",
+      "sha256": "5eb1590c00f96d2793029945e0a5a034bb8c1572510c765cdd754bdaf463be5c"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/next-doc-audit/app-parallel-7.tsx",
+      "sha256": "0709ee590e71e5c9a97bc96b4988d550ad48cfc5cdd15fe524f6d5f693ca2de0"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/next-doc-audit/client-form.tsx",
+      "sha256": "ca6f89a6dce86501147e71006ec6eadb2a603c20708d5fae795b6216bc942282"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/next-doc-audit/client-theme.tsx",
+      "sha256": "3db4f68b71deea79a379cf813916f1f6cc24ea8bcd4ca550f5edf4d41ef59091"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/next-doc-audit/client-websocket.tsx",
+      "sha256": "ed9b5c32b75c8f498fc1aba27278ede2fc0bc83bee6b9d79902004ae63608f49"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/next-doc-audit/server-github.tsx",
+      "sha256": "50a62f5797dc245c0fc8d81d7187506a64dc5fd45ea334b7c70347ab5a2931f1"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/next-doc-audit/server-user.tsx",
+      "sha256": "05274162c2d44ad546c2104308cf809747b2afa936b7a26f4ade5b0818e8d624"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/next-doc-audit/metadata-dynamic.tsx",
+      "sha256": "2e7a883fbec0c26fc30629d864afebeb020df31bd6f4f5aec97c0dd99cccf3c1"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/next-doc-audit/proxy.ts",
+      "sha256": "daaa44ac2328c89d1ef7d09d4f2705a1e7c65436cf71a4ab9526a867fc403f34"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/next-doc-audit/route-dynamic.ts",
+      "sha256": "623d17022bfeb6514ba2bba55d38e55aef6b0342fd96113359a0c592b469dc87"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/next-doc-audit/sitemap.ts",
+      "sha256": "c4ee9e684d86d8ba1d0f91285c4b091b5d6e9897bb3010c4b4d4eec24704cc9c"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/next-doc-audit/data-fetching.tsx",
+      "sha256": "0836ed186838748b373bab2f121e91a9cd734bc4e637cd48056e073233dd2457"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/next-doc-audit/server-actions.tsx",
+      "sha256": "74b2e30385f4a6e47637ce11abfc4f325a51d13741327f89d95d8f11937bf0b3"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/next-doc-audit/streaming.tsx",
+      "sha256": "cc5d5f2f9c850f28229f4d7e687187ddde51a55719642fabf0b02d81dd5b1ada"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/next-doc-audit/isr.tsx",
+      "sha256": "c205bf026b643129486b9e160f45842227a38ee4439ac1cbac7a2f39a7108bd8"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/next-doc-audit/static-export.tsx",
+      "sha256": "ddc724587859729067cb035a8c9a88fc83d3b2827fd10b8d93814c79a19aaeed"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/next-doc-audit/pages-ssg-boundaries.tsx",
+      "sha256": "a79b36af95ff0ddb8f56b7d22588ba6c6f0a2770aeb3270211797ae3ff8c8bb1"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/next-doc-audit/app-parallel-next16.tsx",
+      "sha256": "b5b179cb4940e0ecfe8549ef01a137aab20b9dd7e25b4726e385777a820d5bec"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/next-doc-audit/client-date-format.tsx",
+      "sha256": "587db2fc1bde3df08f5ae30ac7ddc4db92bd46c6f741bb7ae6a45ebf3b380628"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/next-doc-audit/production-proxy.ts",
+      "sha256": "cecea5127f3e20efd2b8afaa2a61b5e075e2ada99a244ab34c7936fc145fb23c"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/next-doc-audit/production-image.tsx",
+      "sha256": "ae9afdc6fda8893e3d211f9f35a23d5dfeb8b7ae77cc615a036e18f9366b1034"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/next-doc-audit/production-next-config.ts",
+      "sha256": "70e1db2918ca49d56acb8332c5ab316aa8f91d9c49b82a8a4d44717a6170aa1d"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/next-doc-audit/interview-current-contracts.tsx",
+      "sha256": "8ca2c5823ac7bed6fbc7e4253e9ff914a2ec30d7667be6157446fced375392c6"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/portals-0.tsx",
+      "sha256": "5deb971032e87800ebbe646ae93730429e06445113da274dbf4ef55eac6e23f3"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/portals-1.tsx",
+      "sha256": "1ba24ce28d850b2c2a0e7f29d83532b5700803904402a22bf60a5da44689abf5"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/portals-2.tsx",
+      "sha256": "e71f062e9791c6c3443507cb3226d5e0343e1f9892d406aa3429f6016271b2a5"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/portals-3.tsx",
+      "sha256": "b953c14ba2195e7cab37758f2a5a6213539bbbcc6d961d54de616927bb709316"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/portals-4.tsx",
+      "sha256": "b15e82d3456120ebf86d0a6ce8895450a37e39cd49ffbd15f2338a8121f532df"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/portals-5.tsx",
+      "sha256": "f33a24f73a173dc90a47b5412f99744f672030db5ddb9064177f08172b57cb69"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/portals-6.tsx",
+      "sha256": "7dadfd225b291ceac9ac08ec72b2df2e1e829092053a02db1286fed77263bb67"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/portals-7.tsx",
+      "sha256": "5e3fccacbf45992c348e783807e3a8be4150fe1d528e02b9e820c3bed5a423c6"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/portals-audit-1.tsx",
+      "sha256": "27eadc5b368ec72fbc664a4d593f6f93bf3f503bb3822977db45ecc50d761e3f"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/portals-audit-2.tsx",
+      "sha256": "28ee73bd862a3d39475e43c5584e67351348c9a931b8fd0ec54f82eb97ac4843"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/portals-audit-3.tsx",
+      "sha256": "0b37e587025899ce33dc0e787ef8ed656ea96a16a032e03d8184eda9420e193b"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/portals-audit-4.tsx",
+      "sha256": "c3124891ad6c4727adc04deab6929504876be5fca99723b76b54a343be9fb5bf"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/portals-audit-7.tsx",
+      "sha256": "4610c4453add821a2136f52120992a22b9d59279f01fcecf4e6095b36ea842a2"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/portals-audit-8.tsx",
+      "sha256": "860923c28968bcdc40ef630808f81d66d494afb64989fc011ac097ef04f0f112"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/portals-audit-9.tsx",
+      "sha256": "90a30d2aa78ff7d16b18bbd4cadf9cb5bdee7b1794784cec92637f50d12b7e14"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/compound-0.tsx",
+      "sha256": "40352f7fe232dae215e05ca1f88f1c7f828a9e35c65536f337b78382f4199944"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/compound-1.tsx",
+      "sha256": "82d0c5380347cbc86176a5d017c447981cb678276dcfdcffae4167e7b4d5e27a"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/compound-2.tsx",
+      "sha256": "616748d5a101f643373486dd300e84b407b2d1fcea3d5aa10272f649348742c3"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/compound-4.tsx",
+      "sha256": "f6fd88faa2fdd9ebbc7a8620396f65e8f72243716c8aa1b222890cbea1e768c2"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/compound-5.tsx",
+      "sha256": "7414d8ef3ea3cd03420e7d1f9cf4d14c28cc8fee16899dc063c908eeb8e8c352"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/compound-6.tsx",
+      "sha256": "f725d43c3b4af5809b149ab9efbeee4f26570ab2bb38aa8f2be54e3b4d3c1753"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/compound-7.tsx",
+      "sha256": "de0fa27803d849623016b55d80908cc868b8e67c3a46d0efd1454e215f22a72e"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/compound-8.tsx",
+      "sha256": "025e4950efa1dc3ace321e65749353ea4daba14af3590795e821effc8af27964"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/compound-audit-1.tsx",
+      "sha256": "b12a66725ceba2582116ac6d83e5f9f342828bff02e81261c2b08e65f12b2d32"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/compound-audit-2.tsx",
+      "sha256": "73a26e8e9bd4b128b71ce5911221ba5521141a4471f0d3c15a085b8fed11ec8f"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/compound-audit-3.tsx",
+      "sha256": "4e63104719a930300868fdc0e3a2fe8d16d6930b2f39c588d2bf4934fb1b2894"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/compound-audit-5.tsx",
+      "sha256": "7b0de97c27ad3c7cc6370f01443bc91fe8b80a7b2281a3fe72cb1d89ad1b6d67"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/compound-audit-6.tsx",
+      "sha256": "6c3997bf2f13c7f084f81ae702118a7a5d1b4293476c0f6c66d855dd1035292b"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/compound-audit-7.tsx",
+      "sha256": "1e8d9e96d4e623fc36b6deed34a7ccc3bc3b89bdcfd81d49d8894b24008f765c"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/compound-audit-8.tsx",
+      "sha256": "1508e6175ec63279a31eefbbfd96fc2d9228b4955ff52e32d3294a8259ee575e"
+    },
+    {
+      "temporary_path": "/tmp/react-modern-v8-check/fixtures/compound-audit-9.tsx",
+      "sha256": "4db11e0634296c8d66c5158fed8cd84cf59ec48607365f7c0318f300eb81941d"
     }
   ],
   "badge_regression": {
@@ -2496,17 +3895,71 @@
   },
   "final_checks": {
     "repository_gates": {
+      "command": "bash scripts/verify.sh",
+      "passed": 30,
+      "total": 30,
+      "result": "passed after the production-hardening cohort and audit update"
+    },
+    "internal_links": {
+      "checked": 10988,
+      "anchors_verified": 234,
+      "broken": 0,
+      "stale_labels": 0,
+      "stale_inline_paths": 0,
+      "external_links_skipped": 8639
+    },
+    "external_link_baseline": {
+      "records": 2545,
+      "added": 0,
+      "removed": 0
+    },
+    "corpus_counts": {
+      "markdown_files": 1023,
+      "study_chapters": 671,
+      "interview_banks": 40
+    },
+    "read_time": {
+      "content_files": 671,
+      "indexes": 156,
+      "total_minutes": 6422,
+      "result": "passed"
+    },
+    "study_time_grammar_regression": {
+      "passed": 2,
+      "total": 2,
+      "result": "passed"
+    },
+    "gate_regression_cases": {
+      "passed": 89,
+      "total": 89,
+      "result": "passed"
+    },
+    "coverage": {
+      "inventory": 1023,
+      "states": {
+        "pending": 289,
+        "reviewed": 265,
+        "revised": 469
+      },
+      "pending_paths_with_changed_content_hash": 39
+    },
+    "stale_completed_review_hashes": 0,
+    "browser_rendered_page_checks": "Not rerun for this content-only cohort; earlier rendered evidence is retained under previous_final_checks.",
+    "git_diff_check": "Passed after production-hardening documentation, audit and progress updates."
+  },
+  "previous_final_checks": {
+    "repository_gates": {
       "passed": 30,
       "total": 30,
       "log": "/tmp/bible-senior-audit/verify-followup.log"
     },
     "internal_links": {
-      "checked": 10940,
-      "anchors_verified": 231,
+      "checked": 10977,
+      "anchors_verified": 232,
       "broken": 0,
       "stale_labels": 0,
       "stale_inline_paths": 0,
-      "external_links_skipped": 8331
+      "external_links_skipped": 8396
     },
     "jekyll": {
       "version": "3.9",
@@ -2522,5 +3975,287 @@
     "pending_complete_semantic_reviews": 985,
     "reader_log": "/tmp/bible-senior-audit/reader-followup.log",
     "read_aloud_log": "/tmp/bible-senior-audit/read-aloud-followup.log"
+  },
+  "sql-injection-results": {
+    "node": "v23.7.0",
+    "syntaxCheck": "passed",
+    "runtimeAssertions": 10,
+    "checks": [
+      "Hostile SQL-looking term remained in a bound parameter, not query text.",
+      "Tenant, term and limit were passed as values in the expected placeholder order.",
+      "Sort name and direction mapped to fixed SQL fragments; hostile choices and invalid limits were rejected.",
+      "LIKE metacharacters were escaped for the documented literal-substring behavior."
+    ],
+    "sources": "OWASP SQL Injection Prevention, Prisma ORM v6 raw queries, PostgreSQL 18 pattern matching and PortSwigger SQL injection materials were checked; each cited URL returned HTTP 200 and the external-link baseline was refreshed.",
+    "limits": "No PostgreSQL server, live ORM connection or query-plan integration test ran."
+  },
+  "api-security-precision-results": {
+    "node": "v23.7.0",
+    "runtimeAssertions": 5,
+    "checks": [
+      "Fixed partner origin and expected profile path are preserved.",
+      "URL-like, traversal, slash-containing and empty identifiers are rejected before URL construction."
+    ],
+    "sourceChecks": "OWASP API Security Top 10 2023, OWASP API1/API3/API4/API6/API10, OWASP SSRF and REST security cheat sheets, and RFC 9457 were checked; all nine unique new URLs returned HTTP 200 and were added to the external citation baseline.",
+    "limits": "Authorization is a repository-contract sketch and was not tested against a production identity provider, ORM or API server. No DNS rebinding, proxy, redirect, network egress or multi-replica integration test was run."
+  },
+  "web-security-policy-results": {
+    "node": "v23.7.0",
+    "express": "5.3.0",
+    "helmet": "8.3.0",
+    "cors": "2.8.6",
+    "runtimeAssertions": 19,
+    "checks": [
+      "CSP nonce matches trusted HTML script and rotates per response",
+      "CSP and X-Frame-Options both deny framing",
+      "CORS allows configured preflight and withholds allow-origin for an unlisted origin while a simple GET still reaches the handler",
+      "HSTS is absent on HTTP and emitted on a direct HTTPS response only in production mode",
+      "Opaque redirect choices map to fixed paths; unknown values fall back to a local route"
+    ],
+    "sourceChecks": "Nine unique OWASP, Helmet and Express citations returned HTTP 200; the baseline was refreshed after the checks.",
+    "limits": "Tests used Node HTTP and a temporary local self-signed HTTPS certificate. No browser engine, deployed proxy/CDN or CSP-report collector was tested."
+  },
+  "csrf-token-refinement-results": {
+    "node": "v23.7.0",
+    "syntaxCheck": "passed",
+    "runtimeAssertions": 7,
+    "checks": [
+      "Signed token verifies for the active session",
+      "Token issued for another session fails",
+      "Mismatched, malformed and empty-session inputs fail closed",
+      "Fresh token differs and verifies"
+    ],
+    "sourceChecks": "The corrected canonical OWASP CSRF Cheat Sheet URL returned HTTP 200."
+  },
+  "hospital-management-precision-results": {
+    "database": "PostgreSQL 16.15 (Homebrew), disposable local cluster, Unix socket only",
+    "checks": [
+      "Extracted chapter schema creates all tables and both range exclusion constraints.",
+      "Overlapping active appointment for one doctor rejected.",
+      "Overlapping active appointment for one patient across doctors rejected.",
+      "Adjacent half-open interval and booking after cancellation accepted.",
+      "Composite tenant FK rejects appointment referencing another tenant patient.",
+      "Blank idempotency key and non-SHA-256-length fingerprint rejected.",
+      "Deferred command FK permits command-first insert when matching appointment is inserted in same transaction.",
+      "Duplicate idempotency key preserves original appointment identity; committed command without appointment is rejected."
+    ],
+    "time_zone_helper": {
+      "runtime": "Python 3.14.5 standard library zoneinfo, extracted from the chapter",
+      "assertions": 6,
+      "result": "passed",
+      "cases": [
+        "ordinary local time",
+        "both offsets in the repeated DST hour",
+        "nonexistent spring-forward local time",
+        "mismatched facility offset",
+        "naive timestamp"
+      ]
+    },
+    "new_external_sources_http_200": 7
+  },
+  "graphql-precision-results": {
+    "documents_reviewed": 17,
+    "revised_this_continuation": 13,
+    "retained_after_review": 3,
+    "current_package_versions": {
+      "graphql": "17.0.2",
+      "apollo_server": "5.5.1 (peer graphql ^16.11.0)",
+      "apollo_client": "4.3.3",
+      "express_integration": "1.1.2",
+      "express": "5.3.0",
+      "dataloader": "2.2.3",
+      "codegen_cli": "7.4.6",
+      "codegen_client_preset": "6.2.3",
+      "typescript": "7.0.2",
+      "react": "19.3.0",
+      "rxjs": "7.8.2",
+      "checked_on": "2026-10-11"
+    },
+    "runtime_checks": [
+      "GraphQL.js 17.0.2 built the full schema including non-null defaulted pagination arguments.",
+      "The mutation fixture produced first=2, rejected=null, last=5 and preserved execution order [2,-1,3].",
+      "The resolver fixture returned aligned author results, null for a missing author and one DataLoader batch.",
+      "The subscription fixture produced one event through an AsyncIterable source.",
+      "Apollo Server HTTP fixture returned Ada with the test credential and HTTP 401 without it.",
+      "Operation-admission fixture accepted first=2 and rejected first=500 before resolver work.",
+      "Apollo Client TSX and Code Generator client-preset artifacts compiled with strict TypeScript 7.0.2.",
+      "New GraphQL.js and Apollo incremental-delivery links returned HTTP 200."
+    ],
+    "limits": "Runtime checks used disposable temporary package directories. No deployed GraphQL service, database, subscription broker, or production authorization provider was exercised."
+  },
+  "redis-8-client-precision-results": {
+    "server": "Redis Open Source 8.10.1",
+    "client": "node-redis 6.3.0",
+    "node": "23.7.0",
+    "typescript": "7.0.2",
+    "strict_fixture_count": 9,
+    "runtime_checks": [
+      "string/counter, hash, list, set and sorted-set commands with actual return values",
+      "owner-token lease acquisition and compare-and-delete release",
+      "exact Lua token-bucket script admission and refill-state behavior",
+      "Pub/Sub subscriber callback delivery",
+      "Streams group creation, isolated blocking read and acknowledgment",
+      "HyperLogLog cardinality and node-redis scanIterator batch shape",
+      "graceful client close"
+    ],
+    "source_checks": "Redis 8.10.1/8.0, licensing, client, data-types, persistence, Streams, migration, 8.2 and 8.8 release pages returned HTTP 200; 9 newly cited URLs passed GET probes.",
+    "limits": "Disposable local Redis only. No managed service, failover topology, production ACL/TLS setup or application worker was exercised."
+  },
+  "count-writer-design-approval": {
+    "scope": "Recompute navigation Files rows in every INDEX.md and count numbered learning/interview chapters while excluding INDEX and REVISION companions.",
+    "approval": "User approved the all-INDEX-table design.",
+    "regression": "Nested-index stale-row case passes; scripts/test_gates.py passes 89/89."
+  },
+  "broker-precision-results": {
+    "date": "2026-10-11",
+    "documents": 9,
+    "version_snapshot": {
+      "apache_kafka": "4.3.1 newest supported release listed",
+      "rabbitmq": "4.3.6 current documentation",
+      "confluent_javascript": "1.11.0"
+    },
+    "checks": [
+      "Kafka classic groups versus 4.2+ Share Groups and Rabbit queues versus Streams",
+      "Manual offset commits, partition-serial handling, KIP-848, classic-group lag and producer durability boundaries",
+      "RabbitMQ queue ordering, transient classic queue default and quorum delayed retry scope",
+      "Transport keys separated from event identity and payload schema rules"
+    ],
+    "strict_typescript": {
+      "typescript": "7.0.2",
+      "confluent_examples": 4,
+      "result": "passed"
+    },
+    "sources": [
+      "https://kafka.apache.org/community/downloads/",
+      "https://kafka.apache.org/43/getting-started/upgrade/",
+      "https://kafka.apache.org/43/operations/consumer-rebalance-protocol/",
+      "https://docs.confluent.io/kafka-clients/javascript/current/overview.html",
+      "https://www.rabbitmq.com/docs/queues",
+      "https://www.rabbitmq.com/blog/2026/04/23/rabbitmq-4.3-release"
+    ],
+    "limits": "No live Kafka or RabbitMQ cluster integration was executed; client API examples were strict-compiled against the published package declarations."
+  },
+  "failure-recovery-precision-results": {
+    "date": "2026-10-11",
+    "documents": 8,
+    "revised_documents": 3,
+    "corrections": [
+      "Fixed failure-recovery index columns so general-importance and reading-time values align with the headings.",
+      "Labeled the Idempotency-Key HTTPAPI draft as expired, clarified that current APIs define their own header syntax, and added a source-linked revision question."
+    ],
+    "sources_checked": [
+      "https://datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header/",
+      "https://docs.stripe.com/api/idempotent_requests",
+      "https://www.postgresql.org/docs/current/transaction-iso.html",
+      "https://www.postgresql.org/docs/current/continuous-archiving.html",
+      "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html",
+      "https://openfeature.dev/specification/sections/evaluation-context/",
+      "https://www.rfc-editor.org/rfc/rfc9110.html#name-retry-after",
+      "https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/"
+    ],
+    "strict_typescript": {
+      "typescript": "7.0.2",
+      "node": "23.7.0",
+      "examples": [
+        "bounded retry helper",
+        "deterministic feature-flag cohort"
+      ],
+      "result": "passed"
+    },
+    "limits": "No backup restore, PostgreSQL provider, hosted feature-flag service or payment-provider integration was run."
+  },
+  "docker-precision-results": {
+    "reviewed_documents": 12,
+    "corrected_boundaries": [
+      "PostgreSQL 18 official-image data and mount paths",
+      "Compose health/dependency/restart and local-secret semantics",
+      "cgroup accounting versus configured enforcement",
+      "SLSA Build v1.1 L1-L3; no Build L0",
+      "Docker Engine 29 and 29.5 rootless host-network behavior",
+      "image-attestation export/store limitations"
+    ],
+    "compose_config_examples": {
+      "passed": 9,
+      "total": 9,
+      "command": "docker compose config --quiet",
+      "note": "The environment-interpolation example was checked with temporary illustrative env files."
+    },
+    "current_official_urls_http_200": 14,
+    "limits": "No image build, container startup, Kubernetes cluster or production secret-manager integration was exercised."
+  },
+  "kubernetes-networking-config-results": {
+    "reviewed_documents": 5,
+    "revised_documents": 5,
+    "corrected_boundaries": [
+      "Ingress API stable/frozen lifecycle versus community ingress-nginx retirement",
+      "Gateway API as the Kubernetes-recommended successor for new routing features",
+      "Secret base64 encoding versus default unencrypted etcd storage and API/workload access",
+      "ConfigMap/Secret delivery versus process reload and mixed-version rollout behavior",
+      "PodPreset removal in Kubernetes 1.20; manifest rendering versus cluster admission ownership"
+    ],
+    "yaml_examples": {
+      "parsed": 7,
+      "total": 7,
+      "parser": "Ruby Psych 4.0.6"
+    },
+    "new_official_urls_http_200": 2,
+    "count_writer_regression": {
+      "old_writer": "fails on stale nested INDEX navigation row",
+      "current_writer_gate_suite": "89/89 passed"
+    },
+    "limits": "No live Kubernetes cluster, Ingress/Gateway controller, admission webhook, encryption-at-rest migration or application reload integration was exercised."
+  },
+  "kubernetes-scaling-results": {
+    "reviewed_documents": 4,
+    "revised_documents": 4,
+    "corrected_boundaries": [
+      "HPA scale-to-zero beta eligibility, feature-gate/version-skew requirements and the ScaledToZero condition",
+      "Durable queue wake-up versus cold-start and HTTP Service buffering limits",
+      "Cluster Autoscaler preconfigured groups versus Karpenter NodePool provisioning and provider constraints",
+      "Narrow scope of CA node scale-down and Karpenter voluntary-disruption annotations",
+      "Fly Proxy concurrency and autostart of existing Machines versus creation of capacity; Docita scheduled workflow is disabled_manually"
+    ],
+    "yaml_examples": {
+      "parsed": 9,
+      "total": 9,
+      "parser": "Ruby Psych 5.3.1"
+    },
+    "new_official_urls_http_200": 4,
+    "live_external_state": {
+      "docita_scale_api_hours_workflow": "disabled_manually",
+      "queried": "2026-10-11"
+    },
+    "count_writer_regression": {
+      "current_writer_gate_suite": "89/89 passed"
+    },
+    "limits": "No live Kubernetes control plane, HPA metric adapter, autoscaling provider, GPU node launch, workload interruption, or Docita runtime behavior was exercised."
+  },
+  "kubernetes-production-hardening-results": {
+    "reviewed_documents": 5,
+    "revised_documents": 5,
+    "corrected_boundaries": [
+      "Probe startup gates later liveness/readiness checks; probe success is only evidence for its chosen check",
+      "HTTPS and v1.37 alpha gRPC TLS probe modes skip certificate verification",
+      "policy/v1 empty PDB selector selects all namespace Pods and maxUnavailable requires supported controller ownership",
+      "RBAC no-match is no opinion within an authorizer chain; projected ServiceAccount token lifetimes",
+      "NetworkPolicy additive semantics, two-sided isolated connection rules, enforcement dependency and asynchronous convergence",
+      "Docita Fly health-check grace period and Trivy filesystem scan scope"
+    ],
+    "yaml_examples": {
+      "parsed": 7,
+      "total": 7,
+      "parser": "Ruby Psych"
+    },
+    "javascript_examples": {
+      "syntax_checked": 1,
+      "total": 1,
+      "command": "node --check"
+    },
+    "new_official_urls_http_200": 4,
+    "count_writer_regression": {
+      "passed": 89,
+      "total": 89
+    },
+    "limits": "No live Kubernetes cluster behavior, API authorization integration or network-policy data-plane enforcement was exercised."
   }
 }

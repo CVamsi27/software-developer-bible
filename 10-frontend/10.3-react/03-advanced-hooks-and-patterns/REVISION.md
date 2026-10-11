@@ -16,22 +16,22 @@ Source: [Suspense](10.3.3.01-suspense.md)
 
 **How It Works**
 
-1. **Q:** What physically happens when a component suspends?
-   **A:** The component throws a promise during render; React catches it at the nearest `<Suspense>` boundary above, renders that boundary's fallback instead of the subtree, and re-renders the real UI once the promise resolves — already revealed transition content may remain visible, and render attempts can be retried. Boundary placement controls reveal scope, not an exact invocation count.
+1. **Q:** What does React do when a supported read cannot finish during render?
+   **A:** The nearest `<Suspense>` boundary can show its fallback for that region and retry when the resource settles. Already revealed content may remain visible during a transition, and render attempts can repeat; boundary placement controls reveal scope, not an exact invocation count.
 
 2. **Q:** Does a Suspense boundary make the whole app wait, or only part of it?
    **A:** Only the subtree inside it. Sibling boundaries and content above it render immediately, which is why the granularity of boundaries — not Suspense itself — decides which regions block which.
 
-3. **Q:** Which React features does Suspense sit underneath besides `React.lazy`?
-   **A:** Data fetching (React Query/Relay suspense modes, `use(promise)` in React 19), streaming server-rendered HTML, and selective hydration of urgent components — share coordinated render availability, while client retry, server streaming and hydration have different renderer responsibilities.
+3. **Q:** Which work can activate Suspense besides a `React.lazy` component?
+   **A:** A Promise read with `use` or by a Suspense-enabled data source can suspend; streaming server rendering and selective hydration also integrate with boundaries. A library must own a stable Promise/cache, because Suspense does not cache arbitrary requests.
 
 **Code Examples**
 
-4. **Q:** What is lost when a lazy component has no Suspense wrapper?
-   **A:** A lazy component can suspend while its chunk loads. Without an explicit boundary a concurrent root can wait without intentional loading UI; a boundary defines what the user sees during that wait.
+4. **Q:** What is missing when a lazy component has no local Suspense boundary?
+   **A:** The region has no intentional local fallback while its code is pending. A boundary defines which part of the interface can show loading UI; root behavior depends on the renderer.
 
-5. **Q:** What does reading a stable promise with `use` give you that the effect-based version does not?
-   **A:** The loading/error branches move out of the component: `use` reads the promise in render and suspends, so the component only ever renders real UI while the Suspense (and Error) boundary above owns the spinner and failure states.
+5. **Q:** What does reading a stable Promise with `use` change compared with fetching in an Effect?
+   **A:** The read can suspend during render, so the nearest Suspense boundary handles pending work and an Error Boundary handles rejection. The component's resolved rendering still needs to validate and display its data.
 
 **Common Mistakes**
 
@@ -53,7 +53,7 @@ Source: [Error Boundary](10.3.3.02-error-boundary.md)
 **Definition**
 
 1. **Q:** Why can't a plain function component serve as an error boundary?
-   **A:** Catching a child's throw requires React to invoke lifecycle methods *on the boundary itself* — `getDerivedStateFromError` during render and `componentDidCatch` after commit — and function components have neither; React ships no hook equivalent (the `useErrorBoundary` hook people cite comes from the third-party `react-error-boundary` library).
+   **A:** The React boundary primitive uses class lifecycle methods: `getDerivedStateFromError` selects fallback state and `componentDidCatch` reports after commit. React has no built-in function Hook equivalent; a third-party library can wrap a class boundary with a Hook-friendly API.
 
 2. **Q:** Which errors does a boundary catch, and which slip through?
    **A:** It catches anything thrown while React renders its children: render bodies, lifecycle methods, child constructors. Ordinary event handlers and detached async callbacks need local error handling. React 19 transition Action failures and rejected promises read with `use` can reach a boundary; server rendering and a boundary's own fallback errors have different handling.
@@ -63,13 +63,13 @@ Source: [Error Boundary](10.3.3.02-error-boundary.md)
 3. **Q:** What's the difference between `getDerivedStateFromError` and `componentDidCatch`?
    **A:** The first is static, runs in the render phase, must be pure, and only returns the state patch that flips the boundary to its fallback; the second is an instance method that runs after commit with `(error, errorInfo)` and is where side effects like reporting belong.
 
-4. **Q:** What is `errorInfo.componentStack` and where do you use it?
-   **A:** The chain of component instances that led to the throw — React's equivalent of a stack trace. You log it inside `componentDidCatch` so your error service can point at the failing component, not just the message.
+4. **Q:** What does `errorInfo.componentStack` add to a JavaScript error stack?
+   **A:** It identifies the React component-tree locations involved in the failed render; it is not the JavaScript call stack. Send it with sanitized error details from `componentDidCatch` so reports identify the failing UI region.
 
 **Code Examples**
 
-5. **Q:** How does the "Try again" button in the retry examples actually recover?
-   **A:** It clears the boundary's failure state, so React re-renders the children from scratch — the subtree remounts and a transient failure (flaky fetch, bad intermediate state) can succeed; a persistent bug simply throws again and the fallback returns.
+5. **Q:** What does clearing the boundary's failure state do, and what does it leave untouched?
+   **A:** It retries rendering the region and remounts its children, losing their local state. It does not invalidate a rejected Promise held in an external cache; the resource owner must provide a fresh value before that retry can succeed.
 
 **Common Mistakes**
 
@@ -115,8 +115,8 @@ Source: [Custom Hooks](10.3.3.03-custom-hooks.md)
 
 **Code Examples**
 
-6. **Q:** Why does `useDebounce` return `clearTimeout(timer)` from its effect?
-   **A:** Every new `value` re-runs the effect; without the cleanup the previous timer would still fire and commit a stale value after a newer one. Clearing guarantees only the final change's timer survives, so rapid typing settles on the last query.
+6. **Q:** Why does a debounce Effect return cleanup that clears its timer?
+   **A:** A new value cleans up the preceding timer before setting another. Without cleanup, an older timeout could publish a value after a newer one; cleanup leaves the latest scheduled value eligible to settle.
 
 7. **Q:** Why keep fetch options as dependencies but an event handler in a committed ref?
    **A:** A URL or request-option change should cancel the old request and start a new one, so use stable options and list them as dependencies. A handler change can update what an existing event listener calls without reinstalling that listener; updating the handler ref after commit separates callback behavior from subscription lifetime.
@@ -149,7 +149,7 @@ Source: [useSyncExternalStore](10.3.3.04-usesyncexternalstore.md)
 **Code Examples**
 
 5. **Q:** In the viewport hook, where does referential stability come from?
-   **A:** The getter retains its cached object while dimensions match. The shared resize handler refreshes it and notifies every subscriber; React suppresses a resulting render when the selected snapshot is unchanged.
+   **A:** The getter retains its cached object while dimensions match. The shared resize handler refreshes it and notifies subscribers; React avoids a render when the snapshot identity remains unchanged.
 
 6. **Q:** Why does the hand-rolled store assign `state = next` *before* notifying listeners?
    **A:** Listeners synchronously re-read the snapshot when notified; notifying first would make them read the stale value and conclude nothing changed. The `Object.is` bail-out before the swap also keeps identical updates from waking subscribers at all.
@@ -161,8 +161,8 @@ Source: [useSyncExternalStore](10.3.3.04-usesyncexternalstore.md)
 
 **Best Practices**
 
-8. **Q:** When should you reach for this hook instead of an effect?
-   **A:** Whenever the source looks like "events + a current-value getter" — `matchMedia`, online status, sockets, `store.getState()`. React checks snapshot consistency around subscription and concurrent commit and supports a matching server snapshot. External-store mutations may force a transition to restart as blocking work; pre-paint subscription setup is not the contract.
+8. **Q:** When is this hook a better fit than an Effect bridge?
+   **A:** Use it when React must read a synchronous external snapshot consistently, such as a store or browser value with a change event. An Effect can remain simpler when it synchronizes one resource or moves asynchronous results into React-owned state. The Hook does not promise pre-paint subscription attachment.
 
 ## React Performance Optimization
 
@@ -222,8 +222,8 @@ Source: [State Management](10.3.3.06-state-management.md)
 
 **Code Examples**
 
-5. **Q:** What responsibilities do cancel, snapshot and rollback have in an optimistic cache mutation?
-   **A:** `cancelQueries` stops an in-flight refetch from overwriting the patch; the `previous` snapshot returned from `onMutate` lets `onError` restore the exact prior list when the PATCH fails; `onSettled` revalidates either way. This strategy also needs ownership/version rules so an older rollback cannot erase a newer patch; the current learning example instead uses an independent UI overlay.
+5. **Q:** Why does the mutation example show pending text as an independent UI overlay instead of patching the query cache?
+   **A:** The confirmed cache remains untouched while the request is pending, so a rollback cannot restore an old snapshot over a newer mutation. Mutation variables drive the temporary row label; the server's accepted response updates the cache, and conflicts require a deliberate rebase.
 
 6. **Q:** Why can separate selectors for state.todos and state.addTodo narrow subscriptions?
    **A:** Each `useTodoStore(selector)` call compares its selected value to decide whether that store update requires a render. Selecting the whole store — or returning an inline-built object — would wake the component on every write, defeating the selector contract from First Principles.
@@ -231,7 +231,7 @@ Source: [State Management](10.3.3.06-state-management.md)
 **Common Mistakes**
 
 7. **Q:** Why does normalization matter more as the app grows?
-   **A:** Nested copies mean one entity update rebuilds every ancestor path, and duplicates drift out of sync; a flat `byId`/`allIds` map updates a single key, keeps one source of truth, and makes lookups O(1).
+   **A:** Nested copies mean one entity update rebuilds ancestor paths, and duplicate entities can drift; a `byId`/`allIds` structure keeps one record per identity and supports direct average-case lookup.
 
 **Best Practices**
 

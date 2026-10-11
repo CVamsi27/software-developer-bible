@@ -1,13 +1,13 @@
 # Docker — Index
 
-> **Study time:** ≈ 2 h 1 m of reading (11 files, ~11 min average).
+> **Study time:** ≈ 2 h 5 m of reading (11 files, ~11 min average).
 > **11 files** — Docker fundamentals from images and containers to volumes, networks, Compose, multi-stage builds, runtime internals (namespaces/cgroups), supply chain security (signing/SBOM), rootless & sandboxed runtimes, production patterns, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Why Docker:** The unit of deployment for modern apps. Every senior backend interview expects you to write a Dockerfile, debug a container, and explain image optimization. Docker is also the foundation for Kubernetes, CI/CD, and serverless.
+**Why Docker:** Container images are a common unit for application delivery and are used by platforms such as Kubernetes, CI pipelines and some serverless services. For senior backend and platform roles, be ready to explain how your application is built, configured, isolated, observed and shut down in its actual runtime.
 
 ---
 
@@ -29,7 +29,7 @@ What Docker is and how it runs.
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Images & Containers](40.1.01-images-containers.md) | Dockerfile, layers, CMD vs ENTRYPOINT, container lifecycle, image registry | Important | Important | 13 min |
-| 02 | [Volumes & Networks](40.1.02-volumes-networks.md) | Bind mounts, volumes, tmpfs, bridge/host/overlay networks, port mapping | Important | Important | 14 min |
+| 02 | [Volumes & Networks](40.1.02-volumes-networks.md) | Bind mounts, volumes, tmpfs, bridge/host/overlay networks, port mapping | Important | Important | 15 min |
 
 ---
 
@@ -39,7 +39,7 @@ Production workflows.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 03 | [Compose](40.1.03-compose.md) | Docker Compose, multi-container apps, service configuration, profiles | Important | Important | 20 min |
+| 03 | [Compose](40.1.03-compose.md) | Docker Compose, multi-container apps, service configuration, profiles | Important | Important | 21 min |
 | 04 | [Multi-Stage Builds](40.1.04-multi-stage-builds.md) | Build stages, dependency caching, image size optimization | Important | Important | 11 min |
 
 ---
@@ -49,10 +49,10 @@ Production workflows.
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 05 | [Best Practices & Security](40.1.05-dockerfile-best-practices.md) | Layer caching, non-root users, distroless images, image scanning, labels | Important | Important | 10 min |
-| 06 | [Production Patterns](40.1.06-production-patterns.md) | Multi-stage builds (advanced), Docker Compose in production, image optimization, container security checklist | Important | Important | 9 min |
+| 06 | [Production Patterns](40.1.06-production-patterns.md) | Multi-stage builds (advanced), Docker Compose in production, image optimization, container security checklist | Important | Important | 10 min |
 | 07 | [Container Runtime Internals](40.1.07-container-runtime-internals-namespaces-cgroups.md) | Namespaces (pid/net/mnt/uts/ipc/user), cgroups v2 limits, OverlayFS copy-on-write layers, runc/containerd stack, container vs VM | Optional | Specialized | 14 min |
 | 08 | [Image Signing, SBOM & Supply Chain](40.1.08-image-signing-sbom-supply-chain.md) | Cosign signing + admission verification, SBOM (syft, BuildKit attestations), SLSA provenance levels, registry policy, CI gates | Optional | Specialized | 11 min |
-| 09 | [Rootless & Sandboxed Runtimes](40.1.09-rootless-sandboxed-runtimes.md) | Rootless mode (user namespaces, slirp4netns/pasta), gVisor vs Kata trade-offs, multi-tenant isolation, RuntimeClass | Optional | Specialized | 11 min |
+| 09 | [Rootless & Sandboxed Runtimes](40.1.09-rootless-sandboxed-runtimes.md) | Rootless mode and user namespaces, version-dependent network backends, gVisor vs Kata boundaries, multi-tenant isolation, RuntimeClass | Optional | Specialized | 12 min |
 
 ---
 
@@ -92,7 +92,7 @@ Production workflows.
 
 ## Cross-References
 
-- [Kubernetes](../40.2-kubernetes/INDEX.md) — orchestrates Docker containers
+- [Kubernetes](../40.2-kubernetes/INDEX.md) — schedules OCI images through CRI-compatible runtimes such as containerd or CRI-O
 - [CI/CD](../40.3-ci-cd/INDEX.md) — Docker build/deploy pipelines
 - [Microservices](../../20-backend/20.6-microservices/INDEX.md) — services packaged as Docker images
 

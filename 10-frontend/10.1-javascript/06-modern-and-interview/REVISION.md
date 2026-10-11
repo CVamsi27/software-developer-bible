@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-JavaScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-6_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-7_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -10,9 +10,9 @@
 
 Complete the learning chapters first, then answer these questions without reopening them. Use each source link to check an uncertain answer.
 
-## ES2024+ Modern JavaScript Features (through ES2025)
+## Recent ECMAScript Features (ES2022–ES2026)
 
-Source: [ES2024+ Modern JavaScript Features (through ES2025)](10.1.6.01-es2024-features.md)
+Source: [Recent ECMAScript Features](10.1.6.01-es2024-features.md)
 
 **How It Works**
 
@@ -49,6 +49,29 @@ Source: [ES2024+ Modern JavaScript Features (through ES2025)](10.1.6.01-es2024-f
 
 8. **Q:** Is `structuredClone` uniformly faster than the JSON round-trip, and if not why does it still win?
    **A:** No; measure the actual data and runtime. JSON serialization and structured cloning have different contracts. Structured cloning supports cycles and types such as Date, Map, Set and typed arrays that a JSON round-trip loses or changes. Choose the required behavior first, then compare timings for data supported by both.
+
+**ES2026 boundaries**
+
+9. **Q:** When does `Array.fromAsync` unwrap values from an async iterable, and what does a mapper change?
+   **A:** Without a mapper it retains a promise yielded by an async iterator as an element. A mapper result is awaited; sync-iterator values are also awaited during async collection. `Array.fromAsync` is asynchronous collection, not an async-stream pipeline.
+
+10. **Q:** How does `Iterator.concat` avoid the eager work of array concatenation?
+    **A:** It returns a synchronous iterator that asks each source for values in order as the consumer advances. It does not build an array, and later sources are not consumed before iteration reaches them.
+
+11. **Q:** Why can `map.getOrInsert(key, expensiveDefault())` do work that `getOrInsertComputed` avoids?
+    **A:** JavaScript evaluates function arguments before the call, so `expensiveDefault()` runs even when the key already exists. The computed form calls its callback only for a missing key; a stored `undefined` still counts as present.
+
+12. **Q:** What part of a JSON numeric token can an ES2026 reviver use to recover an exact integer?
+    **A:** For primitive values the reviver's third argument provides `context.source`, the original JSON spelling. Check the field's accepted syntax, then convert the text to `BigInt` before relying on the rounded Number. This does not make JSON numbers generally arbitrary-precision.
+
+13. **Q:** Why is `Math.sumPrecise` still the wrong representation for an exact decimal currency total?
+    **A:** Its improved summation reduces intermediate floating-point error but returns a Number. Use integer minor units or a decimal type when the domain requires exact decimal arithmetic.
+
+14. **Q:** What boundary does `Error.isError` handle that `instanceof Error` may miss?
+    **A:** It recognizes built-in Error objects across realms where the prototype chain differs. It does not prove an error is trusted or safe to render.
+
+15. **Q:** Why decode base64 directly to `Uint8Array` instead of treating it as text?
+    **A:** Base64 represents bytes, not characters. The typed-array methods avoid an intermediate Latin-1 string and expose choices such as standard versus URL-safe alphabet and how strictly to accept the final chunk.
 
 ## Web Workers
 
@@ -148,7 +171,7 @@ Source: [Cross-Tab Communication](10.1.6.04-cross-tab-communication.md)
 **How It Works**
 
 2. **Q:** You need one WebSocket serving five tabs. Which transport fits, and why doesn't `BroadcastChannel`?
-   **A:** A `SharedWorker` hub: it lives outside every tab, so it owns the single socket and a single serialized queue in a star topology. `BroadcastChannel` only fans messages out to peers — each tab would still open its own socket and its own copy of the state.
+   **A:** A `SharedWorker` can own the single socket and accept a `MessagePort` from each tab; the worker's application code defines request ordering, queuing, backpressure and reconnect behavior. `BroadcastChannel` only fans messages out to eligible peers; it does not elect a socket owner, so each tab would otherwise manage its own connection.
 
 3. **Q:** What are the two `storage`-event gotchas that break naive cross-tab code?
    **A:** It never fires in the tab that wrote (apply the change locally yourself), and it never fires when the new value equals the old one — so re-writing an identical string notifies nobody.
@@ -161,7 +184,7 @@ Source: [Cross-Tab Communication](10.1.6.04-cross-tab-communication.md)
 **Real-World Use Cases**
 
 5. **Q:** Why does the sync-logout recipe do all three of broadcast, storage write, and server invalidation?
-   **A:** The broadcast reaches live tabs immediately, an explicit startup read of the session-generation-aware marker catches later tabs, and the server-side invalidation is what actually kills the session — without it a token already copied out still works.
+   **A:** BroadcastChannel notifies eligible live tabs asynchronously, but delivery is not durable. An explicit startup read of the session-generation-aware marker helps later tabs catch up, and server-side invalidation revokes the session according to the server's credential-validation contract; a client message alone cannot revoke a copied credential.
 
 **Common Mistakes**
 

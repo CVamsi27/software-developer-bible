@@ -1,13 +1,13 @@
 # Form Handling — Index
 
-> **Study time:** ≈ 1 h 3 m of reading (8 files, ~8 min average).
+> **Study time:** ≈ 1 h 4 m of reading (8 files, ~8 min average).
 > **8 files** — Form handling in React from React Hook Form and Zod to Formik, TanStack Form, Server Actions, autosave/draft recovery, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Why forms matter:** Every product has forms. Sign-up, login, settings, checkout, search. Senior interviews test form state management, validation, accessibility, and progressive enhancement. Form libraries (React Hook Form, TanStack Form) and validation (Zod) are now standard tooling.
+Forms coordinate editable values, feedback, submission and recovery. Senior interviews test how these states cross browser, server and persistence boundaries.
 
 ---
 
@@ -15,11 +15,11 @@
 
 | Category | Files | Why it matters |
 | --------------------------------------------- | ----: | --------------------------------------------------------------------- |
-| [Form Libraries](#form-libraries) | 3 | React Hook Form, Formik, TanStack Form — pick the right one |
-| [Validation](#validation) | 1 | Zod — the standard for runtime + type-safe validation |
-| [Server-Side Patterns](#server-side-patterns) | 1 | Server Actions, progressive enhancement, modern Next.js form patterns |
+| [Form Libraries](#form-libraries) | 3 | Compare field ownership, subscriptions and existing integrations |
+| [Validation](#validation) | 1 | Zod 4 runtime parsing and TypeScript input/output types |
+| [Server-Side Patterns](#server-side-patterns) | 1 | Server Functions, Server Actions, progressive enhancement |
 | [Draft Persistence](#draft-persistence) | 1 | Autosave, localStorage/IndexedDB, dirty guards, conflict resolution |
-| [Interview Prep](#interview-prep) | 1 | 30+ form-specific Qs |
+| [Interview Prep](#interview-prep) | 1 | 30+ form-specific questions |
 
 ---
 
@@ -29,9 +29,9 @@ Three main form libraries — pick the right one for the job.
 
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
-| 01 | [React Hook Form](10.5.01-react-hook-form.md) | Uncontrolled inputs, `register`, Zod resolver, `useFieldArray`, `FormProvider` | Default choice for React 18+ forms | Essential | Important | 10 min |
-| 03 | [Formik](10.5.03-formik.md) | Controlled fields, context and validation integration | Existing forms or requirements suited to controlled state | Optional | Specialized | 8 min |
-| 04 | [TanStack Form](10.5.04-tanstack-form.md) | Framework-agnostic, type-first, granular subscriptions, Standard Schema | New projects needing framework-agnostic or fine-grained control | Optional | Specialized | 10 min |
+| 01 | [React Hook Form](10.5.01-react-hook-form.md) | Native registration, controlled widgets, Zod resolver, `useFieldArray`, `FormProvider` | Existing integrations or forms that benefit from native field registration | Essential | Important | 10 min |
+| 03 | [Formik](10.5.03-formik.md) | Controlled fields, context and validation integration | Existing Formik forms or requirements suited to controlled state | Optional | Specialized | 8 min |
+| 04 | [TanStack Form](10.5.04-tanstack-form.md) | Typed fields, granular subscriptions, framework adapters, Standard Schema | Forms that need selected subscriptions or a non-React adapter | Optional | Specialized | 10 min |
 
 **Decision:**
 
@@ -41,13 +41,13 @@ Compare the existing integration, native/controlled widgets, required subscripti
 
 ## Validation
 
-Zod is the standard for runtime validation with TypeScript inference.
+Zod parses runtime values and can derive TypeScript types from its schemas.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 02 | [Zod](10.5.02-zod.md) | Schemas, `z.infer`, transforms, refines, API boundary validation, env validation, error formatting | Essential | Important | 10 min |
 
-**The killer feature:** `z.infer<typeof Schema>` gives you the TypeScript type from your Zod schema. One source of truth for both runtime validation and compile-time types.
+`z.infer<typeof schema>` describes parsed output; `z.input<typeof schema>` describes accepted input when transforms or coercion change its type. Parsing does not establish authorization.
 
 ---
 
@@ -67,7 +67,7 @@ Long-form resilience: recover persisted input and handle storage failures.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 06 | [Autosave & Draft Recovery](10.5.06-autosave-draft-recovery.md) | Debounced autosave, localStorage vs IndexedDB, multi-step resume, dirty-state guards (`beforeunload` + route blockers), versioned draft migrations, server-vs-local conflict resolution | Important | Important | 9 min |
+| 06 | [Autosave & Draft Recovery](10.5.06-autosave-draft-recovery.md) | Debounced autosave, localStorage vs IndexedDB, multi-step resume, dirty-state guards (`beforeunload` + route blockers), versioned draft migrations, server-vs-local conflict resolution | Important | Important | 10 min |
 
 ---
 
@@ -79,24 +79,20 @@ Long-form resilience: recover persisted input and handle storage failures.
 
 ---
 
-## Suggested Study Order
+## Study Order
 
-1. **React Hook Form** (30 min) — field ownership and subscriptions
-2. **Zod** (30 min) — the validator
-3. **Server Actions** (30 min) — modern Next.js
-4. **Autosave & Draft Recovery** (30 min) — production polish for long forms
-5. **TanStack Form** (25 min) — alternative if needed
-6. **Formik** (20 min) — controlled values and submission ownership
-7. **[Section revision](REVISION.md)** — check mechanisms and changed conditions
-8. **Interview Questions** (2 hrs)
+1. Read [Zod](10.5.02-zod.md) to distinguish received input from parsed output.
+2. Work through [React Hook Form](10.5.01-react-hook-form.md): register a native field, adapt a controlled widget and retain input after a rejected save.
+3. Compare [Formik](10.5.03-formik.md) and [TanStack Form](10.5.04-tanstack-form.md) by tracing who owns values and which views subscribe to changes.
+4. Trace a server rejection and no-JavaScript submission in [Server Actions](10.5.05-server-actions-and-form-patterns.md).
+5. Walk a failed save, reload and revision conflict in [Autosave & Draft Recovery](10.5.06-autosave-draft-recovery.md).
+6. Close the chapters, answer the [revision questions](REVISION.md), then use the separate [interview drill](10.5.07-interview-questions.md).
 
 ---
 
 ## Reading Path and Completion Check
 
-Read Zod first to separate input from parsed output. Build one RHF form, compare Formik and TanStack against its editing needs, then add a server boundary and draft recovery.
-
-Trace a failed submit, a repeated submit and a reload with an unsaved draft. Explain which component owns each recovery step. Then use [section revision](REVISION.md) without reopening the chapters. Interview banks, where present, are a separate drill after this check.
+Build one form, submit invalid and valid values, simulate a server rejection, then restore a draft after reload. Be able to state what each layer validates, what it persists and which operation enforces authorization or conflict handling.
 
 ## Cross-References
 

@@ -172,7 +172,7 @@ Source: [PostgreSQL Row-Level Security (RLS)](20.4.1.06-row-level-security.md)
 
 ## Summary
 
-Use these prompts after the reading pass to recall the postgresql foundations mechanisms and boundary constraints.
+Use these prompts after the reading pass to recall PostgreSQL foundation mechanisms and their boundary conditions.
 
 ## See Also
 

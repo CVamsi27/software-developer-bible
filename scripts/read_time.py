@@ -32,7 +32,7 @@ import md_fences
 from scan_scope import guard
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SKIP_DIRS = {'.git', 'node_modules', '.archive', 'personal', 'docs', '.freebuff'}
+SKIP_DIRS = {'.git', 'node_modules', 'vendor', '.archive', '_site', 'personal', 'docs', '.freebuff'}
 SKIP_FILES = {'INDEX.md', 'README.md', 'AGENTS.md', 'contributing.md', 'ROADMAP.md', 'search.md', 'design-qa.md'}
 EXEMPT_PREFIXES = ('80-lanes-abroad-full-stack', '81-lanes-indian-sde-faang',
                    '80-lanes', '81-lanes', 'lanes/', 'projects/')
@@ -66,16 +66,17 @@ def style(path):
 def count(path):
     prose = code = rows = 0
     in_fence = False
-    for _, line, in_fence, is_fence in md_fences.walk(open(path, encoding='utf-8')):
-        if is_fence:
-            continue
-        if in_fence:
-            code += 1
-            continue
-        if line.lstrip().startswith('|') and line.count('|') >= 2:
-            rows += 1
-            continue
-        prose += len(line.split())
+    with open(path, encoding='utf-8') as source:
+        for _, line, in_fence, is_fence in md_fences.walk(source):
+            if is_fence:
+                continue
+            if in_fence:
+                code += 1
+                continue
+            if line.lstrip().startswith('|') and line.count('|') >= 2:
+                rows += 1
+                continue
+            prose += len(line.split())
     return prose, code, rows
 
 
@@ -210,15 +211,19 @@ def write_indexes(dry_run=False):
         if not n:
             # Excluded subtrees (lanes, projects) carry no study time; a stale
             # line from an earlier pass would be a claim with no source.
-            text = open(idx, encoding='utf-8').read()
+            with open(idx, encoding='utf-8') as source:
+                text = source.read()
             if TIME_LINE.search(text):
                 new = TIME_LINE.sub('', text).replace('\n\n\n', '\n\n')
                 changed += 1
                 if not dry_run:
-                    open(idx, 'w', encoding='utf-8').write(new)
+                    with open(idx, 'w', encoding='utf-8') as destination:
+                        destination.write(new)
             continue
-        text = refresh_columns(open(idx, encoding='utf-8').read(), os.path.dirname(idx))
-        line = f"> **Study time:** ≈ {human(total)} of reading ({n} files, ~{round(total / n)} min average)."
+        with open(idx, encoding='utf-8') as source:
+            text = refresh_columns(source.read(), os.path.dirname(idx))
+        file_label = 'file' if n == 1 else 'files'
+        line = f"> **Study time:** ≈ {human(total)} of reading ({n} {file_label}, ~{round(total / n)} min average)."
         lines = text.split('\n')
         placed = False
         for i, l in enumerate(lines):
@@ -239,7 +244,8 @@ def write_indexes(dry_run=False):
             continue
         changed += 1
         if not dry_run:
-            open(idx, 'w', encoding='utf-8').write(new)
+            with open(idx, 'w', encoding='utf-8') as destination:
+                destination.write(new)
     return changed
 
 

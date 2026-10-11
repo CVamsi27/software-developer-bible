@@ -13,7 +13,8 @@ old_name, new_rel = sys.argv[1], Path(sys.argv[2])
 ROOT = Path(".").resolve()
 target_abs = ROOT / new_rel
 LINK = re.compile(r"(\]\()([^)\s]+\.md)(\))")
-SKIP = ("/.git/", "/.archive/", "/.freebuff/", "/.sass-cache/")
+SKIP = ("/.git/", "/node_modules/", "/vendor/", "/_site/", "/.archive/",
+        "/.freebuff/", "/.sass-cache/")
 changed = 0
 
 for p in ROOT.rglob("*.md"):

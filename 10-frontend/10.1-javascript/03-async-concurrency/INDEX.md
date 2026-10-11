@@ -1,7 +1,7 @@
 # Async & Concurrency — JavaScript
 
-> **Study time:** ≈ 1 h 9 m of reading (7 files, ~10 min average).
-> **7 files.** The most-asked topic in senior JS interviews: the event loop, promises, async/await, error propagation across asynchronous boundaries, and cancellation with AbortSignal.
+> **Study time:** ≈ 1 h 10 m of reading (7 files, ~10 min average).
+> **7 files.** Scheduling and work ownership: the event loop, promises, async/await, error propagation across asynchronous boundaries, and cancellation with AbortSignal.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](#files)
 [![Category](https://img.shields.io/badge/category-Async_and_Concurrency-orange)](../INDEX.md)
@@ -18,7 +18,7 @@
 | 03 | [Async/Await](10.1.3.03-async-await.md) | Async functions, error handling, concurrency, sequential vs parallel, top-level await | Essential | Foundational | 8 min |
 | 04 | [Error Handling](10.1.3.04-error-handling.md) | try/catch/finally, custom errors, error propagation, async error handling, unhandled rejections | Essential | Foundational | 19 min |
 | 05 | [Aborting & Cancellation](10.1.3.05-abort-and-cancellation.md) | AbortController/AbortSignal, stale-request races, `AbortSignal.timeout`/`any`, listener cleanup, cooperative cancellation | Essential | Foundational | 8 min |
-| 06 | [Bounded Concurrency & Promise Pools](10.1.3.06-bounded-concurrency.md) | Worker-pool pattern, fail-fast vs allSettled policies, AbortSignal threading, `p-limit` in production | Essential | Foundational | 12 min |
+| 06 | [Bounded Concurrency & Promise Pools](10.1.3.06-bounded-concurrency.md) | Worker-pool pattern, fail-fast vs allSettled policies, AbortSignal threading, library error and cancellation contracts | Essential | Foundational | 13 min |
 
 ---
 

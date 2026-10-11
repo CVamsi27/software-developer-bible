@@ -41,7 +41,7 @@ After each learning pass, use its source-linked companion: [Topology](01-service
 ## The Study Order
 
 | Pass | # | File | Topics | Role priority | General importance |
-| -------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ | ------------- | ------------------ |
+| -------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------- | ------------------ |
 | I | 01 | [Service Discovery](01-service-topology/20.6.1.01-service-discovery.md) | Client vs server-side, Consul, Eureka, DNS-based | Important | Important |
 | I | 02 | [API Gateway](01-service-topology/20.6.1.02-api-gateway.md) | Routing, aggregation, auth, rate limiting at the edge | Important | Important |
 | I | 03 | [gRPC](02-communication-and-messaging/20.6.2.01-grpc.md) | Protobuf, HTTP/2, code generation | Important | Important |
@@ -53,13 +53,13 @@ After each learning pass, use its source-linked companion: [Topology](01-service
 | III | 09 | [Circuit Breaker](04-resilience/20.6.4.01-circuit-breaker.md) | States, fallbacks, resilience wiring | Essential | Important |
 | III | 10 | [Bulkhead Pattern](04-resilience/20.6.4.02-bulkhead-pattern.md) | Pool isolation, tenant isolation | Important | Important |
 | III | 11 | [Service Mesh](01-service-topology/20.6.1.03-service-mesh.md) | Istio, Linkerd, mTLS, traffic management | Important | Important |
-| IV | 12 | [Kafka](02-communication-and-messaging/20.6.2.03-kafka.md) | Topics, partitions, consumer groups, exactly-once | Important | Important |
+| IV | 12 | [Kafka](02-communication-and-messaging/20.6.2.03-kafka.md) | Topics, partitions, consumer groups, transactions within Kafka's boundary | Important | Important |
 | IV | 13 | [RabbitMQ](02-communication-and-messaging/20.6.2.04-rabbitmq.md) | Exchanges, queues, durability | Important | Important |
 | IV | 14 | [Message Brokers](02-communication-and-messaging/20.6.2.05-message-brokers.md) | Kafka vs RabbitMQ, DLQ discipline | Important | Important |
-| IV | 15 | [Event-Driven Architecture](02-communication-and-messaging/20.6.2.06-event-driven-architecture.md) | When events beat requests; producer/consumer, reprocessing | Essential | Important |
+| IV | 15 | [Event-Driven Architecture](02-communication-and-messaging/20.6.2.06-event-driven-architecture.md) | Asynchronous facts, producer/consumer contracts, outbox and reprocessing | Essential | Important |
 | IV | 16 | [Strangler Fig](01-service-topology/20.6.1.04-strangler-fig.md) | Legacy migration, parallel run, dual-write | Important | Important |
-| V | 17 | [gRPC Streaming](02-communication-and-messaging/20.6.2.02-grpc-streaming.md) | Streaming modes, gRPC-Web, when gRPC beats REST | Important | Important |
-| Practice | 18 | [Interview Questions](05-interview-drills/20.6.5.01-interview-questions.md) | 30 deep answers and quick follow-up prompts | Important | Important |
+| V | 17 | [gRPC Streaming](02-communication-and-messaging/20.6.2.02-grpc-streaming.md) | Streaming modes, flow control, cancellation and gRPC-Web trade-offs | Important | Important |
+| Practice | 18 | [Interview Questions](05-interview-drills/20.6.5.01-interview-questions.md) | 30 deep answers and 29 additional quick prompts | Important | Important |
 
 ---
 

@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Next.js-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
 
@@ -79,6 +79,9 @@ Source: [Server Actions in Next.js](10.4.3.02-server-actions.md)
 6. **Q:** Which returned values prove that React serialization is broader than JSON?
    **A:** Native Date, Map, and Set can be supported values. Ordinary functions and arbitrary class instances still cannot be returned across the boundary.
 
+7. **Q:** Why should independent reads not be dispatched as separate client actions?
+   **A:** The Next.js client currently dispatches and awaits Server Functions one at a time. Keep reads in Server Components, or run independent server work together inside one action or Route Handler.
+
 ## Caching in Next.js
 
 Source: [Caching in Next.js](10.4.3.03-caching.md)
@@ -148,6 +151,9 @@ Source: [Streaming in Next.js](10.4.3.04-streaming.md)
 5. **Q:** Why can a late not-found result still have HTTP status 200?
    **A:** The shell may already have sent its headers. Perform decisions needing a real status or redirect before streaming begins.
 
+6. **Q:** Why can `loading.tsx` fail to cover a slow request in a layout?
+   **A:** It wraps the page and descendants beneath the layout, not the parent layout itself. Put request-time work below the fallback or add a nearer Suspense boundary.
+
 
 **Performance Considerations**
 
@@ -189,6 +195,9 @@ Source: [Incremental Static Regeneration (ISR)](10.4.3.05-incremental-static-reg
 
 6. **Q:** Why can pure static hosting not support ISR?
    **A:** There is no runtime available to regenerate and replace cached route output after deployment. A new build is required instead.
+
+7. **Q:** What must a webhook account for when Proxy rewrites a URL to an ISR route?
+   **A:** On-demand ISR requests do not run Proxy, so invalidate the actual route path after rewriting. Multi-instance self-hosting also needs shared cache coordination.
 
 ## Static Exports in Next.js
 

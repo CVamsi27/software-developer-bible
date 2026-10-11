@@ -1,7 +1,7 @@
 # Attacks & Defense - Security
 
-> **Study time:** ≈ 34 min of reading (5 files, ~7 min average).
-> **5 files.** What can go wrong and how to stop it: XSS, CSRF, SQL injection, and the OWASP API Top 10 — the most-asked attack questions in senior interviews.
+> **Study time:** ≈ 38 min of reading (5 files, ~8 min average).
+> **5 files.** Study browser injection, forged requests, SQL injection and API security, then recall their trust boundaries with the separate revision drill.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Attacks%20%26%20Defense-blue)](../INDEX.md)
@@ -16,10 +16,10 @@ Start with where untrusted text becomes executable browser content. Then separat
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [XSS](20.5.2.01-xss.md) | Stored/reflected/DOM XSS, CSP, encoding, sanitization | Essential | Foundational | 7 min |
+| 01 | [XSS](20.5.2.01-xss.md) | Stored/reflected/DOM flows, context encoding, HTML sanitization, CSP, Trusted Types | Essential | Foundational | 7 min |
 | 02 | [CSRF](20.5.2.02-csrf.md) | SameSite, CSRF tokens, double-submit cookies, origin checking | Essential | Foundational | 8 min |
-| 03 | [SQL Injection](20.5.2.03-sql-injection.md) | Parameterized queries, ORM protection, input validation, WAF | Essential | Foundational | 7 min |
-| 04 | [API Security Best Practices](20.5.2.04-api-security-best-practices.md) | OWASP API Top 10, BOLA/BFLA, mass assignment, SSRF, helmet | Essential | Foundational | 10 min |
+| 03 | [SQL Injection](20.5.2.03-sql-injection.md) | Bound values, allowlisted query grammar, ORM/raw-query boundaries, LIKE patterns and least privilege | Essential | Foundational | 7 min |
+| 04 | [API Security Best Practices](20.5.2.04-api-security-best-practices.md) | Object and property authorization, cost budgets, sensitive business flows, SSRF and dependency trust | Essential | Foundational | 12 min |
 
 After these chapters, use [category revision](REVISION.md), then the [security interview bank](../04-interview-drills/20.5.4.01-interview-questions.md).
 
@@ -36,7 +36,7 @@ These [Docita](https://github.com/CVamsi27/docita) paths are review starting poi
 | Topic | Docita evidence |
 | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | CSRF | `apps/api/src/shared/common/interceptors/csrf.interceptor.ts` - double-submit cookie/header pair compared timing-safe |
-| XSS / security headers | `apps/api/src/main.ts` - helmet() sets CSP and hardening headers on both deployables |
+| XSS / security headers | `apps/api/src/main.ts` - `configureSecurityHeaders` applies Helmet/CSP to the HTTP API; `/docs` gets a development-specific policy override |
 | SQL injection | `apps/api/src/shared/common/utils/postgres-advisory-lock.ts` - even raw SQL goes through parameterized `$queryRaw` tagged templates |
 | BOLA / IDOR defense | `apps/api/src/shared/common/extensions/tenant.extension.ts` - tenant-scoping extension; inspect covered clients, models and raw-query bypasses |
 | Audit trail (API Top 10) | `apps/api/src/shared/common/interceptors/patient-audit.interceptor.ts` - PHI access auditing on patient reads |

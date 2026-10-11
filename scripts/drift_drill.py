@@ -35,7 +35,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKIP_TOP = ('80-lanes-abroad-full-stack', '81-lanes-indian-sde-faang',
             'lanes', 'projects', 'docs')
 SKIP_NAMES = {'INDEX.md', 'README.md'}
-SKIP_SUBDIRS = {'.git', 'node_modules', '.archive', '.sass-cache', 'scripts'}
+SKIP_SUBDIRS = {'.git', 'node_modules', 'vendor', '_site', '.archive', '.sass-cache', 'scripts'}
 
 # (name, severity, regex, fix-path note)
 CLASSES = [

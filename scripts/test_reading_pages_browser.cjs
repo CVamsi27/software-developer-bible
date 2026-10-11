@@ -38,13 +38,21 @@ async function textSurfaces(locator) {
     const page = await context.newPage();
     page.setDefaultTimeout(5000);
     const homeRoute = process.env.STUDY_HOME_ROUTE || 'index.html';
-    for (const route of ['ROADMAP.html', 'README.html', 'INDEX.html', homeRoute, 'search.html']) {
+    const scopeIndex = '10-frontend/10.1-javascript/01-execution-and-scope/INDEX.html';
+    const motionChapter = '10-frontend/10.6-animation/10.6.02-framer-motion.html';
+    for (const route of ['ROADMAP.html', 'README.html', 'INDEX.html', homeRoute, 'search.html', scopeIndex, motionChapter]) {
       const response = await page.goto('http://127.0.0.1:4337/' + route, {waitUntil: 'domcontentloaded'});
       check(route + ' response', () => assert.equal(response.status(), 200));
       if (response.status() !== 200) continue;
       if (route !== 'search.html') await page.locator('.back-to-top').waitFor({state: 'attached'});
       const titles = await page.locator('h1:visible').allTextContents();
       check(route + ' title', () => assert.equal(titles.length, 1, 'one visible page title'));
+      if (route === scopeIndex) {
+        check(route + ' authored title', () => assert.equal(titles[0].trim(), 'Execution & Scope — JavaScript'));
+      }
+      if (route === motionChapter) {
+        check(route + ' authored title', () => assert.equal(titles[0].trim(), 'Motion for React (formerly Framer Motion)'));
+      }
       for (const theme of ['light', 'dark']) {
         await page.evaluate(theme => document.documentElement.setAttribute('data-theme', theme), theme);
         await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));

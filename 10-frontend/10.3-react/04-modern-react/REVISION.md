@@ -48,6 +48,9 @@ Source: [Modern React Hooks: useTransition, useDeferredValue, use, useOptimistic
 8. **Q:** What does ref-as-prop actually eliminate in React 19?
    **A:** The `forwardRef` wrapper — function components now read `ref` straight from props (and `forwardRef` is slated for eventual deprecation). `useImperativeHandle` stays: only the *forwarding* boilerplate goes away, not imperative handles for exposing focus/scroll APIs.
 
+9. **Q:** Which `use` reads are supported in a Server Component, and what does that mean for a promise passed to a Client Component?
+   **A:** `use(promise)` is supported in a Server Component, but `use(context)` is not. A Server Component can pass a promise to a Client Component for `use` to read; its resolved value must be serializable.
+
 ## Web Components
 
 Source: [Web Components](10.3.4.02-web-components.md)
@@ -97,15 +100,15 @@ Source: [React Router](10.3.4.03-react-router.md)
 **Definition**
 
 1. **Q:** How does Data Mode differ from a declarative router or Framework Mode?
-   **A:** Data Mode adds loaders, actions, and navigation state to a route tree. Declarative Mode supplies matching/navigation, while Framework Mode adds build and server-rendering conventions; this chapter's examples use v7 Data Mode.
+   **A:** Data Mode adds loaders, actions and navigation state to a route tree. Declarative Mode supplies matching/navigation; Framework Mode adds route modules, build conventions, code splitting and rendering strategies. This chapter's examples use v8 Data Mode.
 
 **How It Works**
 
 2. **Q:** Can a parent layout loader prevent a child loader from starting its request?
    **A:** No; matched loaders normally execute concurrently. Each protected data operation must check access itself, and the server API must authorize every request.
 
-3. **Q:** What changed about deferred loader data between v6 and v7?
-   **A:** V6 used `defer`; v7 returns an object containing an unresolved promise. Await critical data explicitly, then use `<Await>` beneath Suspense for the slower value.
+3. **Q:** What changed about deferred loader data between v6 and v7/v8?
+   **A:** V6 used `defer`; v7 and v8 return an object containing an unresolved promise. Await critical data explicitly, then render the slower value with `<Await>` beneath Suspense.
 
 4. **Q:** Why must a lazy Data Mode module export `Component` and `loader`?
    **A:** `route.lazy` supplies route-object fields from named exports. A default component with `clientLoader` belongs to different Framework Mode conventions and will not populate those fields here.
@@ -123,8 +126,11 @@ Source: [React Router](10.3.4.03-react-router.md)
 
 **Performance Considerations**
 
-8. **Q:** Why might `shouldRevalidate` improve performance but introduce stale data?
-   **A:** It can skip a loader after a mutation, reducing requests. Skip only when the retained data is unaffected, and account for the error-response defaults of the installed router version.
+8. **Q:** What is the v8 Data Mode default after a failed mutation, and what can `shouldRevalidate` change?
+   **A:** A 4xx/5xx action response skips default loader revalidation; a successful-status `{ error }` result still triggers it. `shouldRevalidate` can override the default, so preserve `defaultShouldRevalidate` unless the route data is known to be unaffected.
+
+9. **Q:** What should a v7 application check before moving to v8?
+   **A:** Meet the Node 22.22+ and React/React DOM 19.2.7+ minimums; Framework Mode also requires Vite 7+. Replace `react-router-dom` imports: DOM provider APIs come from `react-router/dom` and other APIs from `react-router`. Review the official migration guide for flags and adapter-specific changes.
 
 ## API and lifetime boundaries
 

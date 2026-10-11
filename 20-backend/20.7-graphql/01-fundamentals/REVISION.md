@@ -94,6 +94,10 @@ Source: [Queries and mutations](20.7.1.03-queries-mutations.md)
 
 **A:** No. They are distinct inputs. The service must define each meaning and inspect presence; a truthiness test silently conflates them.
 
+**Q:** What delivery guarantees come from a GraphQL subscription declaration by itself?
+
+**A:** It defines one event-producing root field and result execution for its source events. Transport, authorization changes, ordering, bounded queues and replay after reconnect need separate implementation contracts.
+
 ## Summary
 
 Use these prompts after the reading pass to recall the fundamentals mechanisms and boundary constraints.

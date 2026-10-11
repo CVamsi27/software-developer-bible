@@ -1,7 +1,7 @@
 # Modern React — React
 
-> **Study time:** ≈ 50 min of reading (4 files, ~12 min average).
-> **4 files.** What changed in React 18/19 — concurrent rendering, transitions, `use(promise)` — interop with the native Web Components platform, and React Router v6/v7 data routers.
+> **Study time:** ≈ 54 min of reading (4 files, ~14 min average).
+> **4 files.** React 18/19 scheduling and Actions, native Web Components interop, and React Router v8 modes with data loading, mutations, errors and revalidation.
 
 [![Files](https://img.shields.io/badge/files-4-blue)](#files)
 [![Category](https://img.shields.io/badge/category-Modern_React-orange)](../INDEX.md)
@@ -13,9 +13,9 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Modern Hooks (React 18/19)](10.3.4.01-modern-hooks-react18-19.md) | useTransition, useDeferredValue, useOptimistic, use(promise), ref-as-prop, Form actions | Important | Specialized | 17 min |
-| 02 | [Web Components](10.3.4.02-web-components.md) | Custom Elements, Shadow DOM, HTML Templates, Web Components vs React | Important | Specialized | 11 min |
-| 03 | [React Router](10.3.4.03-react-router.md) | createBrowserRouter data routers, nested routes + Outlet, loaders/actions, v7 promise fields + Await, protected routes, relative routing, RR vs Next.js | Essential | Foundational | 18 min |
+| 01 | [Modern Hooks (React 18/19)](10.3.4.01-modern-hooks-react18-19.md) | useTransition, useDeferredValue, useOptimistic, use(promise), ref-as-prop, Form actions | Important | Specialized | 18 min |
+| 02 | [Web Components](10.3.4.02-web-components.md) | Custom Elements, Shadow DOM, HTML Templates, Web Components vs React | Important | Specialized | 12 min |
+| 03 | [React Router](10.3.4.03-react-router.md) | v8 modes, nested routes + Outlet, loaders/actions, promise data + Await, authorization boundaries, revalidation, relative routing | Essential | Foundational | 20 min |
 
 ---
 
@@ -23,13 +23,13 @@
 
 1. **Separate pending work from confirmed truth.** Read Modern Hooks; trace a transition, resource read and optimistic Action before choosing an API.
 2. **Identify the host boundary.** Read Web Components; compare attributes, properties, events and React ownership without treating Shadow DOM as a sandbox.
-3. **Make the URL select the lifecycle.** Read React Router, then [revision](REVISION.md). Trace matching, parallel loaders, a failure and revalidation before timed interview practice.
+3. **Make the URL select the lifecycle.** Read React Router, then [revision](REVISION.md). Trace matching, parallel loaders, a failure, a mutation and revalidation; check the v7-to-v8 migration note before applying the examples to an older codebase.
 
 ---
 
 ## Docita Anchor
 
-Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
+The following examples refer to the local Docita codebase, a healthcare platform with a NestJS API and React/Astro apps in a TypeScript monorepo. Study the chapter, then use these paths to find the implementation:
 
 | Topic in this category | Docita evidence |
 | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |

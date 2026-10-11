@@ -31,7 +31,7 @@ from pathlib import Path
 import md_fences
 from scan_scope import guard
 
-SKIP_DIRS = {'.git', 'node_modules', '.archive', '.freebuff', '.sass-cache'}
+SKIP_DIRS = {'.git', 'node_modules', 'vendor', '_site', '.archive', '.freebuff', '.sass-cache'}
 # The Next.js stack teaches Pages Router side-by-side with App Router
 # (marked "Pages Router"); legacy names are intentional there.
 PAGES_ROUTER_ALLOWED = ('10-frontend/10.4-next.js',)
@@ -221,6 +221,11 @@ NEST_LAZY_IMPORT = re.compile(
 BUILTIN_PUBSUB = re.compile(r"\b(?:const|let)\s+(\w+)\s*=\s*new\s+PubSub(?:<[^;]+?>)?\s*\(")
 GSAP_CSS_EASE = re.compile(r"\bease\s*:\s*['\"]cubic-bezier\s*\(")
 FABRICATED_WS_IMPORT = re.compile(r"\bfrom\s*['\"]ws\.use/server['\"]")
+# Zod 4 moves string format validators to the top-level namespace. The
+# chained forms continue to work but are deprecated; examples should use
+# z.email(), z.uuid(), and their peers.
+ZOD4_DEPRECATED_STRING_FORMAT = re.compile(
+    r"\bz\.string\(\)\.(?:email|uuid|url|datetime|date|time|ip|cidr)\s*\(")
 
 # RFC9745 defines a Structured Field Date, not the older boolean examples.
 BOOLEAN_DEPRECATION_HEADER = re.compile(r'^\s*Deprecation\s*:\s*true\s*$', re.I)
@@ -264,6 +269,8 @@ RULES = [
      'Nest exposes LazyModuleLoader, not a LazyModule decorator from @nestjs/core'),
     ('OBSOLETE-MSW-REST',
      'MSW v1 rest import; use current http and HttpResponse APIs'),
+    ('DEPRECATED-ZOD4-STRING-FORMAT',
+     'Zod 4 deprecates chained string format validators; use top-level z.email(), z.uuid(), z.url(), or z.iso.*()'),
     ('UNSUPPORTED-HYDRATION-CALLBACK',
      'hydrateRoot has no onHydrated option; use documented error callbacks '
      'and a component effect for mount-related work'),
@@ -617,6 +624,8 @@ def check(p: Path, rel: str):
             # (?<!:) avoids https://, (?!/) avoids protocol-relative //.
             code_line = re.sub(r'(?<!:)//(?!/).*$', '', line)
             code_rows.append((lineno, code_line))
+            if ZOD4_DEPRECATED_STRING_FORMAT.search(code_line):
+                hits.append((lineno, 'DEPRECATED-ZOD4-STRING-FORMAT', line.strip()[:100]))
             if re.search(r'\bScrollTrigger\.kill\s*\(', code_line):
                 hits.append((lineno, 'STATIC-SCROLLTRIGGER-KILL', line.strip()[:100]))
             if ('gsap' in rel.lower() or re.search(r'\bgsap\.', text)) and GSAP_CSS_EASE.search(code_line):

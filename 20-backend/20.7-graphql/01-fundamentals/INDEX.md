@@ -1,7 +1,7 @@
 # Fundamentals - GraphQL
 
-> **Study time:** ≈ 33 min of reading (4 files, ~8 min average).
-> **4 files.** The mental model: GraphQL as a typed query language vs REST, schema-first contract design, and queries/mutations/subscriptions syntax.
+> **Study time:** ≈ 36 min of reading (4 files, ~9 min average).
+> **4 files.** The mental model: GraphQL's typed operation contract, schema design, field selection and variables, mutation ordering, and subscription event boundaries.
 
 [![Files](https://img.shields.io/badge/files-4-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Fundamentals-%23ff6b35)](../INDEX.md)
@@ -19,8 +19,8 @@ After the chapters, use [revision](REVISION.md), then continue to [execution](..
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
 | 01 | [GraphQL Overview](20.7.1.01-graphql-overview.md) | Typed query language + runtime, client-specified shapes, vs REST (over/under-fetching), when to use GraphQL | Optional | Specialized | 9 min |
-| 02 | [Schema Design](20.7.1.02-schema-design.md) | Object/Interface/Union/Enum/Input/Scalar types, nullability, Relay connections, input types for mutations, deprecation-aware evolution | Optional | Specialized | 12 min |
-| 03 | [Queries & Mutations](20.7.1.03-queries-mutations.md) | Selection sets, variables, fragments, conditional selections (`@include`/`@skip`), operation names, serial mutation execution, errors and idempotency boundaries | Optional | Specialized | 10 min |
+| 02 | [Schema Design](20.7.1.02-schema-design.md) | Object/Interface/Union/Enum/Input/Scalar types, nullability, Relay connections, input types for mutations, deprecation-aware evolution | Optional | Specialized | 13 min |
+| 03 | [Queries & Mutations](20.7.1.03-queries-mutations.md) | Selection sets, variables, fragments, conditional selections (`@include`/`@skip`), operation names, serial mutation execution, errors and idempotency boundaries | Optional | Specialized | 12 min |
 
 ---
 

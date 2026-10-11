@@ -38,6 +38,10 @@ Source: [Kubernetes HPA & Scaling](40.2.3.01-hpa-scaling.md)
 
 **A:** The controller skips that downscale rather than assuming the missing signal is safe. A usable metric recommending scale-up can still cause an increase. Missing data changes the decision, not just the displayed metric.
 
+**Q:** Which HPA metrics can scale a workload from zero in Kubernetes v1.37, and what makes that state different from manually pausing a workload?
+
+**A:** At least one object or external metric is required; CPU and memory resource metrics cannot wake a workload without Pods. The HPA marks its own scale-to-zero state with `ScaledToZero=True`. A durable queue can retain work while workers start, but a Service does not buffer HTTP requests for a zero-replica target.
+
 ## Node Autoscaling & Cluster Capacity (Cluster Autoscaler, Karpenter)
 
 Source: [Node Autoscaling & Cluster Capacity (Cluster Autoscaler, Karpenter)](40.2.3.02-node-autoscaling-cluster-capacity.md)

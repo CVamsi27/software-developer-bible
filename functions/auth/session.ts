@@ -46,7 +46,7 @@ export const onRequestPost = async ({ request, env }: { request: Request; env: S
   } catch {
     user = null;
   }
-  if (!user || !isAllowedStudyEmail(user.email)) {
+  if (!user || !isAllowedStudyEmail(user.email, env.STUDY_ALLOWED_EMAIL)) {
     return json({ ok: false, reason: "not-allowed", redirect: accessDeniedRedirect() }, { status: 403 });
   }
 

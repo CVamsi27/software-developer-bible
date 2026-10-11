@@ -1,7 +1,7 @@
 # Testing — Index
 
-> **Study time:** ≈ 2 h 29 m of reading (19 files, ~8 min average).
-> **19 files across 6 categories.** Testing fundamentals from Jest and React Testing Library to unit, integration, E2E, performance testing, chaos engineering, mocking, test patterns, frameworks comparison, test data management, and interview questions.
+> **Study time:** ≈ 2 h 30 m of reading (19 files, ~8 min average).
+> **19 files across six categories.** Learn testing fundamentals, framework behavior, unit/integration/E2E boundaries, test data, mocking, reusable patterns, load and fault experiments, then practice the interview bank.
 
 [![Files](https://img.shields.io/badge/files-19-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Quality-green)](#)
@@ -11,7 +11,7 @@
 
 A test observes selected behavior under a controlled arrangement. Start with the expected result and boundary, then learn how a runner executes it, how real integrations change the evidence, and how load or fault experiments test different conditions. Tool names and coverage percentages are useful only after that claim is clear.
 
-## The 6 Categories (in study order)
+## Six categories in study order
 
 | Category | Files | Purpose |
 | ----------------------------------------------------------- | ----: | ------------------------------------------------------------------------------------------------------------------ |
@@ -37,7 +37,7 @@ A test observes selected behavior under a controlled arrangement. Start with the
 
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
-| 01 | [Jest](02-frameworks/50.1.2.01-jest.md) | Configuration, matchers, snapshots, mocking, code coverage | Most React/Node projects | Essential | Foundational | 9 min |
+| 01 | [Jest](02-frameworks/50.1.2.01-jest.md) | Configuration, matchers, snapshots, mocking, code coverage | Most React/Node projects | Essential | Foundational | 10 min |
 | 02 | [Vitest](02-frameworks/50.1.2.02-vitest.md) | Runtime/configuration, transforms, mocking and migration boundaries | Choose from compatibility and measured suite behavior | Essential | Foundational | 9 min |
 | 03 | [React Testing Library](02-frameworks/50.1.2.03-react-testing-library.md) | Render, queries, events, async testing, accessibility (testing-library/jest-dom) | React component tests | Essential | Foundational | 11 min |
 | 04 | [Testing Frameworks Comparison](02-frameworks/50.1.2.04-testing-frameworks-comparison.md) | Jest vs Vitest, Playwright E2E, Supertest API testing, choosing the right framework | Stack decisions | Essential | Foundational | 5 min |
@@ -78,7 +78,7 @@ Choose the smallest boundary that observes the relevant failure. Broader scope a
 
 | # | File | Contents | Time | Role priority | General importance |
 | --: | ------ | ---------- | ------ | --- | --- |
-| 01 | [Testing Interview Questions](06-interview-prep/50.1.6.01-interview-questions.md) | 40+ curated questions grouped by difficulty | 2-3 hrs | Essential | Foundational |
+| 01 | [Testing Interview Questions](06-interview-prep/50.1.6.01-interview-questions.md) | 40 questions across fundamentals, async behavior, application boundaries, strategy and experience | Practice in several sessions | Essential | Foundational |
 
 ---
 

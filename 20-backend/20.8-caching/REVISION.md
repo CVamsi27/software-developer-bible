@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Caching-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-orange)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../docs/topic-importance.md)
 
@@ -50,6 +50,18 @@ Source: [Redis Fundamentals](20.8.02-redis-fundamentals.md).
 
 **A:** No. It reduces network round trips, while other clients may interleave. One Lua script or another explicitly atomic decision boundary must decide admission and record it.
 
+## Redis 8 data types and the Node.js client
+
+Source: [Redis Fundamentals](20.8.02-redis-fundamentals.md), [Redis data types](https://redis.io/docs/latest/develop/data-types/), and the [node-redis guide](https://redis.io/docs/latest/develop/clients/nodejs/).
+
+**Q:** When does a Redis Hash fit better than a JSON document, and why is a JSON string different from Redis JSON?
+
+**A:** A Hash stores flat string fields and supports field-level commands. A serialized JSON String is opaque to Redis commands, while Redis JSON supports structured field access and queries. Choose from the required data shape and access pattern, and confirm module/version availability.
+
+**Q:** Which Node.js client does Redis recommend for new applications, and why should you avoid mixing examples from different clients?
+
+**A:** Redis recommends node-redis and describes ioredis as an older client deprecated in its favor. Their command names, option objects and return types differ; pin the client version and test examples against its API.
+
 ## Advanced Redis Patterns
 
 Source: [Advanced Redis Patterns](20.8.03-advanced-redis-patterns.md).
@@ -68,7 +80,7 @@ Source: [Advanced Redis Patterns](20.8.03-advanced-redis-patterns.md).
 
 ## Trace and Change One Condition
 
-Source: [Cache-aside model](20.8.01-caching-deep-dive.md#cache-aside-with-one-complete-local-trace), [Redis lease](20.8.02-redis-fundamentals.md#4-distributed-lock), and [Streams recovery](20.8.03-advanced-redis-patterns.md#4-redis-streams-with-consumer-groups).
+Source: [Cache-aside model](20.8.01-caching-deep-dive.md#cache-aside-with-one-complete-local-trace), [Redis lease](20.8.02-redis-fundamentals.md#expiring-session-and-owner-token-lease), and [Streams recovery](20.8.03-advanced-redis-patterns.md#4-redis-streams-with-consumer-groups).
 
 **Q:** Two callers read one absent key before the source resolves. How many loads does the local model perform, and what changes across processes?
 

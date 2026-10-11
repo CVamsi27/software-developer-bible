@@ -38,7 +38,16 @@ document.addEventListener('DOMContentLoaded', function () {
   var authoredTitle = content.querySelector('h1');
   var header = document.querySelector('.post-header');
   var inferredTitle = header && header.querySelector('.post-title');
-  if (authoredTitle && inferredTitle && authoredTitle.textContent.trim() === inferredTitle.textContent.trim()) header.hidden = true;
+  var normalizeInferredTitle = function (value) {
+    var decoder = document.createElement('textarea');
+    decoder.innerHTML = value.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    return decoder.value.trim().replace(/\s+/g, ' ');
+  };
+  if (authoredTitle && inferredTitle &&
+      authoredTitle.textContent.trim().replace(/\s+/g, ' ') ===
+        normalizeInferredTitle(inferredTitle.textContent)) {
+    header.hidden = true;
+  }
   var roadmap = window.GermanyRoadmapReturn;
   if (roadmap) content.querySelectorAll('a[href]').forEach(function (link) {
     link.href = roadmap.chapterWithContext(link.href, window.location.search);

@@ -54,6 +54,10 @@ Source: [Idempotency Keys](30.3.2.03-idempotency-keys.md)
 
 **A:** The operation claim, business mutation and stored response. External effects need receiver idempotency or reconciliation beyond that transaction.
 
+**Q:** Is the `Idempotency-Key` header governed by a current IETF standard with one universal syntax?
+
+**A:** No. The cited HTTPAPI Internet-Draft expired; APIs define their own syntax and retention behavior. Follow the receiving API's contract rather than assuming vendor compatibility. [Source and status](https://datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header/)
+
 **Q:** Can deleting an idempotency record re-enable a previously completed effect?
 
 **A:** Yes, if the caller repeats the key after the service has forgotten it and the underlying operation lacks another uniqueness constraint. Define the supported retry horizon, retain records through it, and use durable business identifiers where duplicate effects must be prevented beyond that window.

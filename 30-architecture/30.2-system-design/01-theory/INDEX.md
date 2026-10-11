@@ -1,6 +1,6 @@
 # System Design — Foundational Theory
 
-> **Study time:** ≈ 5 h 29 m of reading (24 files, ~14 min average).
+> **Study time:** ≈ 5 h 40 m of reading (24 files, ~14 min average).
 > **Study time and file counts are generated from the current chapter set.**
 
 [![Files](https://img.shields.io/badge/files-24-blue)](../../../INDEX.md)
@@ -28,7 +28,7 @@ The theory chapters are grouped by the question they help answer.
 
 ## Foundational concepts (read in order)
 
-These 14 are the building blocks. Read in this order — each builds on the previous.
+These chapters supply the main building blocks. The sequence moves from data guarantees to traffic, coordination and recovery; revisit a prerequisite when a later example depends on it.
 
 | # | File | Concepts | Why it matters | Role priority | General importance |
 | --- | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------ |
@@ -47,12 +47,12 @@ These 14 are the building blocks. Read in this order — each builds on the prev
 | 13 | [Backpressure & Flow Control](30.2.1.13-backpressure-and-flow-control.md) | Blocking, buffering, dropping, load shedding and flow control | Keep producers from overwhelming consumers and make overload behavior explicit. | Essential | Foundational |
 | 14 | [Distributed Locks](30.2.1.14-distributed-locks.md) | Redis, ZooKeeper, etcd, PostgreSQL advisory locks and fencing tokens | Compare coordination options and protect writes against expired or stale lock holders. | Essential | Foundational |
 
-## Meta guides & network deep-dive (read after the 14)
+## Supporting guides and network prerequisites (consult as needed)
 
 | # | File | What it covers | Role priority | General importance |
 | --- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------- | ------------------ |
 | 15 | [How to Approach](30.2.1.15-how-to-approach.md) | A practical interview flow: clarify → estimate → sketch → deep-dive. Adapt it to the prompt and time available. | Essential | Foundational |
-| 17 | [Probabilistic Data Structures](30.2.1.17-probabilistic-data-structures.md) | Bloom filter, HyperLogLog, Count-Min Sketch and Cuckoo filter for approximate membership, cardinality and frequency; Merkle trees as a deterministic integrity structure. | Essential | Foundational |
+| 17 | [Probabilistic Data Structures](30.2.1.17-probabilistic-data-structures.md) | Bloom filter, HyperLogLog, Count-Min Sketch and Cuckoo filter for approximate membership, cardinality and frequency; Merkle trees as a deterministic integrity structure; t-digest quantiles and deterministic HDR histogram quantization. | Essential | Foundational |
 | 18 | [Outbox & CDC](30.2.1.18-outbox-and-cdc.md) | Transactional outbox + change data capture — solving the dual-write problem for reliable event publication | Essential | Foundational |
 | 19 | [Resilience Patterns Deep-Dive](30.2.1.19-resilience-patterns-deep-dive.md) | Request hedging, load shedding, request coalescing, deadline propagation — the senior-level tail-latency toolkit | Essential | Foundational |
 | 20 | [Multi-Region Deployment](30.2.1.20-multi-region-deployment.md) | Active-passive vs active-active, geo-routing, cross-region replication, conflict resolution, explicit data-location requirements, RPO/RTO | Essential | Foundational |

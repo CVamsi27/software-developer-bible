@@ -1,6 +1,6 @@
 # System Design — Case Studies
 
-> **Study time:** ≈ 5 h 30 m of reading (32 files, ~10 min average).
+> **Study time:** ≈ 6 h of reading (32 files, ~11 min average).
 Applied examples of system design interviews. Read [../01-theory/](../01-theory/INDEX.md) first, then choose cases that match your interview goals.
 
 [![Files](https://img.shields.io/badge/files-32-blue)](../../../INDEX.md)
@@ -31,7 +31,7 @@ The 31 cases are grouped by the kind of reasoning they practice. Use the tiers a
 | Domain | Case Studies | When to read |
 | ------------------------- | -------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
 | **Web (foundational)** | URL Shortener, Rate Limiter, Distributed Counter, Distributed ID Generator | Compact practice for identifiers, traffic policy and contention |
-| **Storage & Sync** | Google Drive, Dropbox | File-storage, collaboration, conflict resolution |
+| **Storage & Sync** | Google Drive, Dropbox | Staged uploads, version history, collaboration, conflict resolution |
 | **Messaging & Real-Time** | WhatsApp, Chat System, Notification Service, Real-Time Collaboration | Chat apps, notifications, collaborative editing |
 | **Streaming & Media** | Netflix, YouTube | Video platforms, CDN-heavy systems |
 | **Social & Feed** | Twitter, Instagram | Social network, fan-out, timeline |
@@ -53,9 +53,9 @@ The 31 cases are grouped by the kind of reasoning they practice. Use the tiers a
 | 02 | [WhatsApp](30.2.2.02-whatsapp.md) | Messaging & Real-Time | Real-time messaging, end-to-end encryption, last-seen, group chats | Important | Important |
 | 03 | [Uber](30.2.2.03-uber.md) | Ride-sharing & Geo | Ride matching, geospatial indexing, real-time tracking, ETA | Important | Important |
 | 04 | [Netflix](30.2.2.04-netflix.md) | Streaming & Media | Video streaming, CDN, recommendation engine, content delivery | Important | Important |
-| 05 | [Google Drive](30.2.2.05-google-drive.md) | Storage & Sync | File storage, sync, upload optimization, conflict resolution | Important | Important |
-| 06 | [Payment Gateway](30.2.2.06-payment-gateway.md) | Commerce & Fintech | Payment processing, idempotency, reconciliation, fraud detection | Important | Important |
-| 07 | [Notification Service](30.2.2.07-notification-service.md) | Messaging & Real-Time | Push, email, SMS, template system, delivery guarantees | Important | Important |
+| 05 | [Google Drive](30.2.2.05-google-drive.md) | Storage & Sync | Staged upload publication, quota, permissions, version conflicts | Important | Important |
+| 06 | [Payment Gateway](30.2.2.06-payment-gateway.md) | Commerce & Fintech | Unknown outcomes, idempotency, ledger posting, refunds, reconciliation | Important | Important |
+| 07 | [Notification Service](30.2.2.07-notification-service.md) | Messaging & Real-Time | Consent, scheduling, channel outcomes, retries, quotas | Important | Important |
 | 08 | [Ticket Booking](30.2.2.08-ticket-booking.md) | Commerce & Fintech | Conditional holds, expiry ownership, payment compensation | Important | Important |
 | 09 | [E-Commerce](30.2.2.09-e-commerce.md) | Commerce & Fintech | Product catalog, cart, inventory, order management, payment flow | Important | Important |
 | 10 | [Hospital Management](30.2.2.10-hospital-management.md) | Healthcare & Vertical | Appointment scheduling, EHR, billing, interoperability | Important | Important |
@@ -74,7 +74,7 @@ The 31 cases are grouped by the kind of reasoning they practice. Use the tiers a
 | 23 | [Typeahead Autocomplete](30.2.2.23-typeahead-autocomplete.md) | Search & Data | Trie/prefix index, offline top-k ranking, geo-sharded indexes, freshness vs latency, personalization | Important | Important |
 | 24 | [Metrics Monitoring Pipeline](30.2.2.24-metrics-monitoring-pipeline.md) | Platform & Telemetry | TSDB ingestion path, downsampling, cardinality explosion control, push vs pull, alert evaluation at scale | Important | Important |
 | 25 | [Distributed Job Scheduler](30.2.2.25-distributed-job-scheduler.md) | Automation | Cron at scale, leader election, task leases & fencing, dedup, delayed jobs, fairness/starvation | Important | Important |
-| 26 | [Distributed ID Generator](30.2.2.26-distributed-id-generator.md) | Web (foundational) | Snowflake bit layout, clock skew handling, k-orderability, node-ID coordination, UUIDv7 comparison | Important | Important |
+| 26 | [Distributed ID Generator](30.2.2.26-distributed-id-generator.md) | Web (foundational) | Snowflake bit layout, clock rollback, worker identity, timestamp ordering limits, UUIDv7 comparison | Important | Important |
 | 27 | [Ad Click Aggregator](30.2.2.27-ad-click-aggregator.md) | Platform & Telemetry | Stable event identity, watermarks, revisioned reporting, fraud decisions, settlement | Important | Important |
 | 28 | [Parking Lot](30.2.2.28-parking-lot.md) | Infrastructure & LLD | Compatible allocation, live sessions, physical evidence, fee boundaries, payment | Important | Important |
 | 29 | [Distributed Cache](30.2.2.29-distributed-cache.md) | Infrastructure & LLD | Consistent hashing, replication, eviction policies, cache stampede, hot key handling | Important | Important |

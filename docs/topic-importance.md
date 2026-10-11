@@ -1,6 +1,6 @@
 # Topic importance for your full-stack preparation
 
-Each topic has two independent badges. **Role priority** follows your current React/TypeScript/Node.js full-stack goal, with remote applications now, Germany next, and extra emphasis on core engineering and system design. **General importance** describes the concept’s breadth across software engineering. These are editorial study decisions, not hiring statistics or a guarantee of interview coverage.
+Each topic has two independent badges. **Role priority** follows your current React/TypeScript/Node.js full-stack goal, with Germany as the primary search and India-eligible remote work as an optional contingency, with extra emphasis on core engineering and system design. **General importance** describes the concept’s breadth across software engineering. These are editorial study decisions, not hiring statistics or a guarantee of interview coverage.
 
 ## What the two tags mean
 

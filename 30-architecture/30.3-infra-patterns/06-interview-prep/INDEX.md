@@ -1,6 +1,6 @@
 # Interview Prep
 
-> **Study time:** ≈ 6 min of reading (1 files, ~6 min average).
+> **Study time:** ≈ 6 min of reading (1 file, ~6 min average).
 > **1 file.** Senior-depth Q&A over the whole stack — lifecycle contracts, retry/idempotency discipline, backup drills, coordination, scaling levers, and zero-downtime shipping — each answer naming the mechanism and the failure mode it guards.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](#file-index)

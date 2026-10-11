@@ -160,3 +160,31 @@ Use the supplied books for reasoning and verified chapter attribution, with orig
 - [ ] **7. Verify and publish.** Recompute owned alignment/read-time/index/count metadata sequentially; probe new primary citations before updating the link baseline. Run the full Bible suite, standalone links, appropriate example fixtures, an external-destination Jekyll render with private paths excluded, and relevant reading/theme/width checks. Report actual semantic coverage and unresolved integrations separately from automated checks. Use the user's existing commit/push authorization for verified batches.
 
 Each reviewed file's evidence names the concrete claims checked, source/edition/section, complete-read disposition, counterexample or decision probe, and any executed versus source-only verification. No preferred-wording tests or arbitrary length floor will stand in for accuracy. The extracted book text stays in temporary local files; do not commit PDFs, extracted chapters or copied book examples.
+
+### Complete the remaining corpus in one delivery
+
+The reader requested one complete pass on 10 October, rather than another partial release. Finish every pending path before the final commit and push. Reviewers own disjoint directories: frontend/quality/realtime/interview toolkit; backend/projects; architecture/platform; and the coordinating reviewer owns strategy, lanes, personal records, navigation and supporting documentation. Each reviewer records full-read findings in a separate temporary JSON file; only the coordinating reviewer merges the audit and regenerates shared metadata. Preserve the completed precision reviews, reopen a document if its meaning changes, and keep verification limits explicit. Run source checks, meaningful example checks and rendered reading checks after reconciliation. A zero-pending inventory must follow actual complete reads, not a bulk status replacement.
+
+## Final accuracy and heading pass — 11 October 2026
+
+**Goal:** Recheck every Markdown document for precise, current teaching and remove duplicate page titles, starting with the reported Lexical Environment example.
+
+**Architecture:** Use the hash-strict audit as a queue, not as proof of quality. Read each pending document in its category context; verify unstable technical claims against primary sources; carry changes into its index, revision companion and interview material. Diagnose duplicate headings in both Markdown source and rendered HTML before changing the canonical title source.
+
+**Tech Stack:** Markdown, Python corpus audit and verification scripts, Jekyll build/render, JavaScript runtime checks, current ECMAScript specification.
+
+### Work order
+
+1. **Trace the duplicate title.** The first source scan found 1,023 Markdown files, no document with multiple authored H1 headings, no adjacent duplicate ATX headings, and no entity-escaped H1. The execution-and-scope index has one authored H1. Build the Jekyll site, inspect that route's DOM and title metadata, and determine whether the theme/layout adds a second title. Scan rendered routes for duplicate visible H1/title nodes and escaped `&amp;` text. Fix the single source of duplication and add a regression check that fails on a repeated rendered page title while allowing distinct headings and code examples.
+2. **Re-audit JavaScript execution and scope.** Read all six chapters, the category index and its revision companion together. Recheck binding creation/initialization, environment-record roles, outer lookup, parameter/body environments, modules, global scripts, `var`/`let` loop bindings, closures, and execution-context/call-stack distinctions against the current ECMA-262 specification. Execute the authored traces in their stated script, module, strictness and browser contexts. Repair only claims or explanations that fail those checks; update source-linked revision questions and interview answers where a contract changes.
+3. **Continue the full Markdown inventory.** Process every pending audit entry in coherent category cohorts. Read the complete file, determine its genre, check definitions and first-use terms, trace each consequential example, qualify environment/version assumptions, verify volatile claims, and compare adjacent canonical chapters for missing or repeated material. Correct errors and stale references; keep correct pages concise. Reconcile affected indexes, revision questions and interview answers. Record the evidence and disposition for each exact file hash; do not mark a scan-only or generator-only change as a semantic review.
+4. **Regenerate and verify.** Run the established read-time, alignment, count and master-index writers in order; refresh the audit and progress totals from the actual inventory. Run the heading regression, `python3 scripts/check_links.py`, the external-link baseline check, `git diff --check`, and `bash scripts/verify.sh`. Build the Jekyll site and inspect representative long and short pages in light/dark themes and narrow/wide viewports. Report completed semantic reads, pending files and executed versus source-reviewed checks separately.
+
+### Completion criteria
+
+- Every inventoried Markdown file has a current, hash-matched reviewed or revised disposition; no pending or stale-completion entries remain.
+- Rendered pages have one visible main title, and the source scan has no accidental duplicate H1 or adjacent repeated heading.
+- Changed technical claims are supported by current primary sources or clearly labeled as assumptions; examples match their stated outputs and runtime boundaries.
+- Revision and interview companions agree with the canonical teaching chapters; indexes preserve the learning order and generated counts.
+- All required repository gates, standalone link checks, Jekyll build, and relevant rendered width/theme checks pass.
+- Use the user's existing commit/push authorization only after the complete inventory satisfies these criteria.

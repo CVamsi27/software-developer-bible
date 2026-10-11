@@ -66,8 +66,8 @@ Source: [Compound Components](10.3.5.02-compound-components.md)
 
 **Code Examples**
 
-3. **Q:** Why must option registration update state rather than mutate a stored Map?
-   **A:** Mutating the Map preserves its identity and schedules no render, so the selected label can remain stale. An immutable state update lets the trigger observe registered labels.
+3. **Q:** Why does the select example register and unregister each option through immutable state updates?
+   **A:** Registration makes the selected label available to the trigger; cleanup removes a label when an option unmounts. A mutated Map keeps the same identity and schedules no render, so added or removed choices can leave the displayed label stale.
 
 4. **Q:** Why can generic JSX on a parent fail to type its namespaced children?
    **A:** Separate JSX elements do not inherit the parent's type parameter through context. A typed component factory creates one context and child API bound to a concrete item type.
@@ -87,6 +87,9 @@ Source: [Compound Components](10.3.5.02-compound-components.md)
 
 8. **Q:** Which updates can memoizing a context value avoid?
    **A:** It avoids context notifications caused solely by rebuilding an equivalent provider value. Changes to shared state still notify consumers, and parent rendering can independently render children.
+
+9. **Q:** Why does the example require a controlled `value` prop instead of implying an uncontrolled mode?
+   **A:** The root owns only open/closed state; the caller owns the selected value. Making `value` required keeps that data contract explicit instead of suggesting a mode the implementation does not support.
 
 ## Changed identity and display contracts
 

@@ -22,9 +22,9 @@ Source: [CSS Animations](10.6.01-css-animations.md)
 
 **A:** Width changes layout geometry and can move neighboring content. Scale changes the visual result without changing normal-flow sizing. Choose the required behavior before optimizing its rendering work.
 
-## Framer Motion
+## Motion for React
 
-Source: [Framer Motion](10.6.02-framer-motion.md)
+Source: [Motion for React](10.6.02-framer-motion.md)
 
 **Q:** Why does an exit animation need AnimatePresence to retain a leaving element?
 
@@ -53,6 +53,10 @@ Source: [React Spring](10.6.04-react-spring.md)
 **Q:** How does a spring's target differ from a fixed-duration tween?
 
 **A:** A spring evolves from its physical/configured state toward the target; tension, friction and mass shape settling behavior rather than one predetermined duration.
+
+**Q:** Why should React Spring's reduced-motion utility usually live near the app root?
+
+**A:** The utility sets the library's global `skipAnimation` flag. Calling it in an isolated leaf can change animation behavior for other Spring components; read the preference once at the shared owner and pass a local value only when one effect needs a tailored alternative.
 
 ## Web Animations API (WAAPI)
 

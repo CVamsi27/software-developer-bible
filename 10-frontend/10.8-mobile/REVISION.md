@@ -78,6 +78,10 @@ Source: [Over-the-Air Updates — EAS Update, CodePush & the JS/Native Boundary]
 
 **A:** It retains an eligible cached update or embedded fallback under its update policy; publication cannot immediately repair an offline device. Monitor actual uptake and test crash recovery for each supported runtime.
 
+**Q:** A JavaScript bundle matches the installed runtime. Is that enough to publish it through an OTA service?
+
+**A:** No. Runtime matching is a technical compatibility condition, not store approval. Review the platform's downloaded-code rules and the provider's release guidance for the specific change; Apple restricts downloaded code that introduces or changes app features, and Google Play restricts self-updating and external executable downloads.
+
 ## App-Store Release Automation — Release Trains, Store Review & Rollout Safety
 
 Source: [App-Store Release Automation — Release Trains, Store Review & Rollout Safety](10.8.06-app-store-release-automation.md)

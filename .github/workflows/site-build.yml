@@ -4,8 +4,8 @@
 #   Git, project `software-developer-bible`) and runs `bundle exec jekyll build` itself on
 #   every push to main — so there is intentionally NO deploy job here: no
 #   wrangler step, no token, no secret. The dashboard holds the build
-#   config; `.ruby-version` pins Ruby 3.1 (the locked liquid 4.0.3 calls
-#   Object#tainted?, removed in Ruby 3.2). See docs/deployment.md.
+#   config; `.ruby-version` pins the tested Ruby 3.4.11 runtime. See
+#   docs/deployment.md for the compatible GitHub Pages/Liquid lock.
 # This workflow: ALWAYS runs the same render as a safety gate. Pages has
 #   no Liquid-warning or lane-exclusion guards, so this job is the
 #   backstop: if it goes red beside a green Pages build, roll the Pages
@@ -20,9 +20,13 @@ on:
       - "**.md"
       - "_config.yml"
       - "_includes/**"
+      - "_layouts/**"
       - "assets/**"
+      - "scripts/test_rendered_headings.py"
       - "search.html"
       - "api/**"
+      - "Gemfile"
+      - "Gemfile.lock"
       # The edge half of the artifact. Cloudflare's Git integration builds on
       # every push to main regardless of paths, so these files already deploy —
       # but a push that *only* touched them skipped this backstop (the render,
@@ -34,7 +38,7 @@ on:
       - ".github/workflows/site-build.yml"
       - "wrangler.toml"
       - ".ruby-version"
-  # Gemfile changes don't match the push paths; dispatch covers those.
+  # Bundle changes run the same pinned Jekyll build as source changes.
   workflow_dispatch:
 
 permissions:
@@ -55,10 +59,7 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          # Ruby 3.1, not 3.2: the locked liquid 4.0.3 (pinned by the
-          # github-pages gem) still calls Object#tainted?, which Ruby 3.2
-          # removed — every Liquid render would crash on 3.2.
-          ruby-version: '3.1'
+          ruby-version: '3.4.11'
           bundler-cache: true   # runs `bundle install` against Gemfile.lock
 
       - name: Build the site (Jekyll)
@@ -86,6 +87,11 @@ jobs:
             exit 1
           fi
           echo "no Liquid warnings in the render"
+
+      - name: Check rendered page titles
+        run: |
+          python3 scripts/test_rendered_headings.py
+          python3 scripts/test_rendered_headings.py _site
 
       - name: Assert the lane trees are not in the built site
         run: |

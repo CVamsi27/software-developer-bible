@@ -100,7 +100,7 @@ Source: [PostgreSQL Window Functions](20.4.2.04-window-functions.md)
 
 **Q:** When does a window function solve a problem that GROUP BY cannot?
 
-**A:** GROUP BY destroys rows to make one output row per group; but "share of total per row" needs every row *kept* and a computation over its peers. Window functions are that: a partition-wise computation exposed alongside each row.
+**A:** `GROUP BY` reduces rows to one output row per group, but a per-row share needs each input row preserved alongside a partition-level total. A window function can calculate both in the same result.
 
 **Q:** What do PARTITION BY, ORDER BY, and the frame clause each control?
 
@@ -132,15 +132,15 @@ Source: [PostgreSQL JSONB](20.4.2.05-jsonb.md)
 
 **Q:** Where should validation happen when data is stored in JSONB?
 
-**A:** Validate at the application boundary and enforce required invariants in the database. Cover SQLNULL, missingkeys, JSONnull, wrongtypes, ranges and schema versions; CHECK expressions evaluating SQLNULL pass unless the contract prevents it.
+**A:** Validate at the application boundary and enforce required invariants in the database. Cover SQL `NULL`, missing keys, JSON `null`, wrong types, ranges and schema versions; `CHECK` expressions that evaluate to SQL `NULL` pass unless the contract prevents it.
 
 **Q:** In the JSONB fixture, how can note exist while its text extraction is SQL NULL?
 
 **A:** note stores JSON null. Existence is true and jsonb_typeof yields the text null, while ->> yields SQLNULL. A missing key also extracts SQLNULL, so use existence/type to distinguish the states.
 
-**Q:** Why does a stale replacement affect no row, and may jsonb_path_ops support a key-existence query?
+**Q:** Why does a stale replacement affect no row, and may `jsonb_path_ops` support a key-existence query?
 
-**A:** The nested update advanced version1 to2, so an expected-version1 replacement is rejected. Independently, jsonb_path_ops does not support ?, ?| or ?&; choose compatible defaultGIN or another path. Whole-row concurrency and operator compatibility are separate contracts.
+**A:** The nested update advanced the version from 1 to 2, so a replacement expecting version 1 is rejected. Separately, `jsonb_path_ops` does not support `?`, `?|` or `?&`; use `jsonb_ops` or another compatible path. Whole-row concurrency and operator support are separate contracts.
 
 ## Summary
 

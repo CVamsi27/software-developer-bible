@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-TypeScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -62,8 +62,8 @@ Source: [Infer](10.2.2.02-infer.md)
 3. **Q:** Given `type Unwrap<T> = T extends Promise<infer U> ? Unwrap<U> : T`, what is `Unwrap<Promise<Promise<string>>>`?
    **A:** `string` — each pass captures the inner `Promise` and recurses until the base case hits a non-promise.
 
-4. **Q:** Which captures produce parameter lists, and which produce instances?
-   **A:** `(...args: infer P) => any` captures the parameter tuple (`P = [string, number]`), `new (...args: any[]) => infer I` captures the constructed instance type, and `(event: infer E) => void` captures a single parameter.
+4. **Q:** Which captures produce parameter lists, and which produce instances? What does the required-head helper do for an optional first parameter?
+   **A:** `(...args: infer P) => any` captures the parameter tuple (`P = [string, number]`), `new (...args: any[]) => infer I` captures the constructed instance type, and `(event: infer E) => void` captures a single parameter. The shown `FirstParam` pattern requires a statically present first argument; an optional first tuple member does not match its required-head pattern.
 
 **Code Examples**
 
@@ -126,14 +126,14 @@ Source: [Type Variance](10.2.2.04-type-variance.md)
 
 **How It Works**
 
-2. **Q:** Which syntax keeps callback parameters bivariant even with strict function checking?
-   **A:** Method declarations keep the compatibility exception. Function-valued properties receive contravariant parameter checking instead.
+2. **Q:** Which syntax keeps callback parameters bivariant even with strict function checking, and which direction can it admit unsafely?
+   **A:** A method declaration keeps the compatibility exception, so both parameter substitutions may be accepted. A function-valued property is checked contravariantly: an Animal handler can stand in for a Dog handler, but a Dog-only handler cannot accept every Animal.
 
 3. **Q:** Why does the pushed object appear at index one in the array example?
    **A:** The original Rex object occupies index zero and retains its breed. The write through the Animal alias appends a different object lacking that field.
 
 4. **Q:** Does a plain `{ value: T }` field make a TypeScript container invariant?
-   **A:** The checker still permits covariant assignment of that shape. A function-property setter plus an output, or a deliberate variance annotation, is needed to express the stricter generic contract.
+   **A:** No. The checker still permits covariant assignment of that mutable property, which is unsound for writes. Model reads and writes with function-property signatures when invariance is required; variance annotations must match the type's structural behavior and do not change unrelated structural comparisons.
 
 **Code Examples**
 
@@ -150,8 +150,8 @@ Source: [Type Variance](10.2.2.04-type-variance.md)
 
 **Performance Considerations**
 
-8. **Q:** When can explicit variance annotations improve compilation work?
-   **A:** They can help comparisons of the same generic type when recursive variance inference is expensive or ambiguous. Profiling is needed to establish a benefit for the actual project.
+8. **Q:** When can explicit variance annotations improve compilation work, and what must they agree with?
+   **A:** They can help comparisons of the same generic type when recursive variance inference is expensive or ambiguous. They must match the type's structural input/output use; they do not force unrelated structural types to become invariant. Profile before attributing a speedup to them.
 
 ## Changed-condition checks
 

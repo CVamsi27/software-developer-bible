@@ -51,7 +51,7 @@ import prose_scan
 from scan_scope import guard
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SKIP_DIRS = {'.git', 'node_modules', '.archive', 'personal'}
+SKIP_DIRS = {'.git', 'node_modules', 'vendor', '_site', '.archive', 'personal'}
 ANSWER_FLOOR = 25  # prose words; tables/code don't count (see module docstring)
 CHAPTER_DEFINITION_FLOOR = 25  # prose words in a chapter's `## Definition`
 # Chapter sweep scope mirrors check_template's exempt prefixes; contributing

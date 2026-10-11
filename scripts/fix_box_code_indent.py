@@ -312,7 +312,7 @@ def main():
         modes.add("json")
     if "--css" in argv:
         modes.add("css")
-    skip = {".git", "node_modules", ".archive", "personal"}
+    skip = {".git", "node_modules", "vendor", "_site", ".archive", "personal"}
     files = []
     for root, dirs, fs in os.walk("."):
         dirs[:] = [d for d in dirs if d not in skip]

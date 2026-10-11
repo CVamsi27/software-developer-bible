@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Java-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Deferred-lightgrey)](../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../docs/topic-importance.md)
 
@@ -34,6 +34,22 @@ Source: [OOP and SOLID](20.13.02-java-oop-solid.md)
 
 **A:** No. The reference cannot be reassigned; the referenced object may still mutate. Deep immutability requires a separate state and copying policy.
 
+**Q:** Why can `Square extends Rectangle` violate substitutability even though a square is mathematically a rectangle?
+
+**A:** A mutable `Rectangle` contract may promise that setting width leaves height unchanged. A square must change both dimensions to preserve its own invariant, so it breaks that postcondition. Use an immutable common shape contract or redesign the mutation API.
+
+**Q:** A class implements two interfaces that provide the same default method. Which implementation runs?
+
+**A:** The conflict must be resolved in the class, usually by overriding the method and choosing or combining the defaults. Java does not select one based on interface order.
+
+**Q:** Does constructor injection prove that a design follows dependency inversion?
+
+**A:** No. Injection supplies an object. Inversion also requires that high-level policy own the abstraction and that lower-level details implement it; injecting a concrete infrastructure class leaves the dependency direction unchanged.
+
+**Q:** When does an OCP extension point help rather than add unnecessary indirection?
+
+**A:** When a real, repeated variation is expected and the new behavior satisfies a stable contract. Keep a workflow unchanged only when new implementations fit that contract; otherwise revise the abstraction rather than stacking flags or conditionals around it.
+
 ## Concurrency
 
 Source: [Concurrency](20.13.03-java-concurrency-multithreading.md)
@@ -49,6 +65,14 @@ Source: [Concurrency](20.13.03-java-concurrency-multithreading.md)
 **Q:** Does anyOf wait for the first successful future?
 
 **A:** It completes on the first completion, including failure. First-success semantics need their own policy for failures and cancellation.
+
+**Q:** Why can LongAdder statistics exceed what a capacity admission check can safely use?
+
+**A:** Its sum is not an atomic snapshot across concurrent updates. Use an atomic check/update, lock or semaphore when the decision must reserve bounded capacity.
+
+**Q:** If timed tryLock returns false, should finally unlock anyway?
+
+**A:** No. Unlock only after successful acquisition; unlocking an unowned ReentrantLock throws. Interrupted acquisition also leaves no ownership to release.
 
 ## Testing
 
@@ -118,4 +142,5 @@ Use these prompts for retrieval practice. The source chapters contain examples; 
 ## References & Learn More
 
 - [Java 21 documentation](https://docs.oracle.com/en/java/javase/21/)
+- [Java Language Specification, Java SE 27](https://docs.oracle.com/javase/specs/jls/se27/html/)
 - [Spring Boot reference](https://docs.spring.io/spring-boot/index.html)

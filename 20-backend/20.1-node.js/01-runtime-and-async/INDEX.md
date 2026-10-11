@@ -1,7 +1,7 @@
 # Runtime & Async - Node.js
 
 > **Study time:** ≈ 18 min of reading (3 files, ~6 min average).
-> **3 files.** How Node.js actually runs JavaScript: the libuv event loop — the most-asked topic in Node interviews — plus the modern Web Streams API and the built-in test runner.
+> **3 files.** How Node.js actually runs JavaScript: the libuv event loop, plus the modern Web Streams API and the built-in test runner.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Runtime%20%26%20Async-success)](../INDEX.md)

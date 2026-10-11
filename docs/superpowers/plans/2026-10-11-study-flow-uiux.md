@@ -54,7 +54,7 @@
 
 **Files:** `design-qa.md`, design evidence under `docs/superpowers/specs/assets/2026-10-11-study-flow/`, count-managed repository docs.
 
-- [x] Build with Homebrew Ruby 3.1: `PATH=/opt/homebrew/opt/ruby@3.1/bin:$PATH bundle exec jekyll build --destination /tmp/bible-uiux-2026-10-11`.
+- [x] Build with the repository-pinned Ruby 3.4.11: `PATH=/opt/homebrew/opt/ruby@3.4/bin:$PATH BUNDLE_PATH=vendor/bundle bundle exec jekyll build --destination /tmp/bible-uiux-2026-10-11`.
 - [x] Render the home layout separately to home-preview.html because macOS treats index.html and INDEX.html as the same output filename. Do not change production URLs to compensate.
 - [x] Open the local build in the in-app browser. Verify query/filter/Back, outline/width, reveal-all, deliberate save/reload/resume and mobile navigation in light/dark themes. Inspect 320 px overflow and visible targets. Compare the final reader reference with a rendered screenshot.
 - [x] Record actual passes, intentional content differences, and limits in design-qa.md. Restamp counts with `python3 scripts/check_counts.py --write`; format only our Markdown tables.

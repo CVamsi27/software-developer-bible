@@ -1,6 +1,6 @@
 # Interview Prep - GraphQL
 
-> **Study time:** ≈ 9 min of reading (1 files, ~9 min average).
+> **Study time:** ≈ 9 min of reading (1 file, ~9 min average).
 > **1 file.** Authored questions and domain-design exercises covering contracts, execution, ownership and failure boundaries.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](../INDEX.md)

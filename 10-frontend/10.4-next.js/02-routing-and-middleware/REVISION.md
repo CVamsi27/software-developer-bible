@@ -10,9 +10,9 @@
 
 Complete the learning chapters first, then answer these questions without reopening them. Use each source link to check an uncertain answer.
 
-## Middleware in Next.js
+## Proxy (formerly Middleware) in Next.js
 
-Source: [Middleware in Next.js](10.4.2.01-middleware.md)
+Source: [Proxy in Next.js](10.4.2.01-middleware.md)
 
 **Definition**
 
@@ -117,7 +117,7 @@ Source: [Metadata API in Next.js](10.4.2.03-metadata.md)
 
 ## Follow the Failure Boundary
 
-Source: [Middleware](10.4.2.01-middleware.md), [Route Handlers](10.4.2.02-route-handlers.md), [Metadata](10.4.2.03-metadata.md).
+Source: [Proxy](10.4.2.01-middleware.md), [Route Handlers](10.4.2.02-route-handlers.md), [Metadata](10.4.2.03-metadata.md).
 
 **Q:** Why clone a rewrite URL before replacing its pathname?
 **A:** The existing URL carries query parameters and other routing context. A path-only construction can silently lose pagination or search inputs.

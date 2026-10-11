@@ -100,7 +100,7 @@ Source: [Mapped Types](10.2.3.03-mapped-types.md)
 **Code Examples**
 
 4. **Q:** Why does `mapValues` enumerate with `Reflect.ownKeys`?
-   **A:** Its declared key space may include symbols, which a `for...in` loop skips. The helper still assumes the declared fields are the actual own fields of a closed plain record; descriptors are not preserved, getters execute during reads, and extra runtime fields can violate the callback type claim.
+   **A:** Its declared key space may include symbols, which a `for...in` loop skips. Reflection reports numeric property keys as strings, so the callback receives the actual `string | symbol` key. The helper still assumes the declared fields are the own fields of a closed plain record; descriptors are not preserved, getters execute during reads, and extra runtime fields can violate the result type claim.
 
 5. **Q:** What extra operation does a deep partial perform when a database object is supplied?
    **A:** It relaxes fields inside that object as well as the outer property. A shallow partial still requires the nested object's complete original shape.
@@ -178,6 +178,9 @@ Source: [Template Literal Types](10.2.3.04-template-literal-types.md)
 
 **Q:** A translated name contains $&, or the same placeholder appears twice. Why use a replacement callback?
 **A:** The callback inserts the supplied value literally for every matched token, so replacement-string metacharacters do not change its meaning. Missing dictionary entries/parameters throw under this small plain-text grammar.
+
+**Q:** What does `Join` return for a readonly tuple versus an open-ended `string[]`?
+**A:** A finite readonly tuple preserves its exact joined literal, such as `"users/42"`; an open-ended array widens to `string` because its length and elements are unknown.
 
 ## Summary
 

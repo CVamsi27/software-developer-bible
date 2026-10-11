@@ -74,12 +74,15 @@ Source: [Image Optimization in Next.js](10.4.4.02-image-optimization.md)
 **Common Mistakes**
 
 5. **Q:** How does image preload guidance differ between Next.js 15 and 16?
-   **A:** 15 examples use priority for likely LCP imagery. 16 deprecates that prop in favor of preload; choose one appropriate loading strategy instead of prioritizing every image.
+   **A:** Next.js 15 examples may use `priority`; Next.js 16 deprecates it. Prefer `loading="eager"` or `fetchPriority="high"` in most cases, and use `preload` only when the LCP image is unambiguous. Do not combine the hints.
+
+6. **Q:** Why must a Next.js 16 image configuration allowlist quality values?
+   **A:** The optimizer accepts only configured `qualities`; restricting the choices bounds which output variants callers can request and prevents arbitrary quality values from expanding optimization work.
 
 
 **Best Practices**
 
-6. **Q:** How can changed images become visible before a long optimizer TTL ends?
+7. **Q:** How can changed images become visible before a long optimizer TTL ends?
    **A:** Version or change the source URL so it selects a new variant key. Route tag revalidation does not purge the image optimizer cache.
 
 ## Deploying Next.js
@@ -97,26 +100,29 @@ Source: [Deploying Next.js](10.4.4.03-deploying-nextjs.md)
 2. **Q:** Why copy public and .next/static after copying standalone output?
    **A:** Output tracing does not include those static asset directories by default. Missing them leaves HTML without its expected files.
 
-3. **Q:** What does a shared cache handler need beyond fetching and storing keys?
-   **A:** Preserve full values, timestamps, and tags, and implement coherent cross-replica invalidation. Serialization and keys must match the pinned framework contract.
+3. **Q:** Which tag sources and values must a previous-model cache handler preserve?
+   **A:** Page/route entries carry tags in `data.headers` (`x-next-cache-tags`); cached `fetch` entries use `ctx.tags`. Preserve the full cache value and timestamp, serialize values such as `Buffer` and `Map`, and synchronize invalidations across replicas.
+
+4. **Q:** What must match across replicas when they serve the same build?
+   **A:** Run the same build and Server Action encryption key on every instance. Use a deployment ID during rolling releases to detect version skew, and retain the corresponding immutable assets.
 
 
 **Code Examples**
 
-4. **Q:** Why can changing a container variable leave a NEXT_PUBLIC URL unchanged?
+5. **Q:** Why can changing a container variable leave a NEXT_PUBLIC URL unchanged?
    **A:** Its browser value was inlined during build. Rebuild the client bundle or read configurable values through request-time server code.
 
 
 **Common Mistakes**
 
-5. **Q:** Why is a rewrite back to the same local path insufficient for a zone split?
+6. **Q:** Why is a rewrite back to the same local path insufficient for a zone split?
    **A:** It never forwards to the independent deployment. Route the path and asset namespace to that zone's actual origin.
 
 
 **Best Practices**
 
-6. **Q:** Why must shutdown testing use the server handle that actually owns traffic?
-   **A:** An unrelated wrapper cannot close the generated standalone server through an invented binding. Verify ingress draining and termination behavior on the real process.
+7. **Q:** What proves that a self-hosted shutdown drains real work?
+   **A:** Send `SIGTERM` or `SIGINT` to the process that owns the Next.js server, allow the configured drain interval, and test with requests in flight. A Kubernetes `preStop` delay alone does not prove ingress has stopped sending traffic.
 
 ## Trace a production boundary
 
@@ -138,7 +144,7 @@ Source: [Authentication](10.4.4.01-authentication.md), [Image optimization](10.4
 **A:** Asset/version compatibility and retention during overlapping deployments. A health probe proves current serving behavior, not that clients with an older build still have the files and action references they need.
 
 **Q:** Does a shared ISR store automatically provide cross-replica coherence?
-**A:** No. Storage also needs compatible serialization, versioned keys and coherent invalidation semantics. Test failure, concurrent regeneration and rollback on the actual deployment topology.
+**A:** No. Storage also needs compatible serialization, versioned keys and coordinated tag invalidation, including a way for instances to learn about invalidations made elsewhere. Test failure, concurrent regeneration and rollback on the actual deployment topology.
 
 ## Summary
 

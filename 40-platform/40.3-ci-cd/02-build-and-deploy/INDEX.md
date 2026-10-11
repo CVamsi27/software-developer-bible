@@ -23,7 +23,7 @@ Read image identity first, then dependency/gate design, registry promotion and f
 | --   : | ------ | -------- | --- | --- | ----------: |
 | 01 | [Docker Build & Deploy](40.3.2.01-docker-build-deploy.md) | Build pipelines, layer caching in CI, registries (ECR/GCR/DockerHub), tagging strategy, deployment targets | Important | Important | 7 min |
 | 02 | [Pipeline Patterns](40.3.2.02-pipeline-patterns.md) | End-to-end CI/CD pipelines, stage design, deployment strategies (rolling, blue-green, canary, feature flags) | Important | Important | 6 min |
-| 03 | [Artifact Registries & Release Promotion](40.3.2.03-artifact-registries-release-promotion.md) | GHCR/ECR/Artifactory/NPM, immutable tags + digests, build-once promotion dev->staging->prod, changelog automation (release-please/changesets), retention, pull-through caches | Important | Important | 11 min |
+| 03 | [Artifact Registries & Release Promotion](40.3.2.03-artifact-registries-release-promotion.md) | GHCR/ECR/Artifactory/npm, configured tag immutability and digests, build-once promotion dev->staging->prod, changelog automation (release-please/Changesets), retention, pull-through caches | Important | Important | 11 min |
 | 04 | [Pipeline Supply-Chain Security & SLSA](40.3.2.04-pipeline-supply-chain-security-slsa.md) | Pipeline as attack surface, SolarWinds/Codecov/xz lessons, SLSA levels, SHA pinning + Dependabot, OIDC federation, provenance attestations, workflow branch protection | Important | Important | 14 min |
 
 ---

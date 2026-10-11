@@ -39,13 +39,13 @@ Both lanes use the same technical chapters. Follow a stack’s reading stages to
 
 | Stack | Folder | What's in it | Files |
 | --------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ----: |
-| **Frontend** | [10-frontend/](10-frontend/INDEX.md) | JavaScript, TypeScript, React, Next.js, Forms, Animation, HTML/CSS/PWA, Mobile | 145 |
-| **Backend** | [20-backend/](20-backend/INDEX.md) | Node.js, NestJS, REST, GraphQL, Database, **Auth track**, Security, Microservices, **AI Engineering**, Java | 179 |
-| **Architecture** | [30-architecture/](30-architecture/INDEX.md) | System design theory + 31 case studies, Design Patterns (categorized: Foundations/Creational/Structural/Behavioral/Architectural — all 23 GoF + modern) | 121 |
-| **Platform** | [40-platform/](40-platform/INDEX.md) | Docker, K8s, CI/CD, Observability, Build Tools, Git, Serverless, Monorepo, 12-Factor | 118 |
-| **Quality** | [50-quality/](50-quality/INDEX.md) | Testing (Jest/RTL/Playwright/Vitest), Accessibility, Performance | 48 |
-| **Real-Time** | [60-realtime/](60-realtime/INDEX.md) | WebSockets, SSE, Socket.IO, scaling patterns | 14 |
-| **Interview Toolkit** | [70-interview-toolkit/](70-interview-toolkit/INDEX.md) | Behavioral, Coding Patterns (18 patterns), Cheat Sheets | 41 |
+| **Frontend** | [10-frontend/](10-frontend/INDEX.md) | JavaScript, TypeScript, React, Next.js, Forms, Animation, HTML/CSS/PWA, Mobile | 122 |
+| **Backend** | [20-backend/](20-backend/INDEX.md) | Node.js, NestJS, REST, GraphQL, Database, **Auth track**, Security, Microservices, **AI Engineering**, Java | 147 |
+| **Architecture** | [30-architecture/](30-architecture/INDEX.md) | System design theory + 31 case studies, Design Patterns (categorized: Foundations/Creational/Structural/Behavioral/Architectural — all 23 GoF + modern) | 109 |
+| **Platform** | [40-platform/](40-platform/INDEX.md) | Docker, K8s, CI/CD, Observability, Build Tools, Git, Serverless, Monorepo, 12-Factor | 95 |
+| **Quality** | [50-quality/](50-quality/INDEX.md) | Testing (Jest/RTL/Playwright/Vitest), Accessibility, Performance | 38 |
+| **Real-Time** | [60-realtime/](60-realtime/INDEX.md) | WebSockets, SSE, Socket.IO, scaling patterns | 11 |
+| **Interview Toolkit** | [70-interview-toolkit/](70-interview-toolkit/INDEX.md) | Behavioral, Coding Patterns (18 patterns), Cheat Sheets | 34 |
 
  Full breakdown with file counts per topic: [INDEX.md → The 7 Study Stacks](INDEX.md#the-7-study-stacks-numbered-for-study-order)
 
@@ -93,6 +93,8 @@ Automated gates check defined structural, link, metadata and regression rules. P
 The [reading and senior interview quality review](docs/2026-10-07-reading-quality-report.md) records formal definition coverage, reader fixes, resume validation and the limits of the technical review.
 
 The ongoing [explanation-depth review](docs/2026-10-08-explanation-depth-progress.md) records which documents have completed semantic review, which remain pending and what the executed examples establish. Use that coverage when assessing readiness; repository checks alone do not establish that every explanation has been reviewed.
+
+The earlier [October 1 chapter-review continuation](docs/2026-10-01-chapter-review-continuation.md) is a historical snapshot; use the current review reports above for present coverage.
 
 The [book-informed technical precision pass](docs/2026-10-10-senior-precision-progress.md) records corrected guarantees, source editions, executed failure cases and the remaining fresh-review coverage.
 

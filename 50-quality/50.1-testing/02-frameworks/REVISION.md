@@ -44,7 +44,8 @@ Source: [Vitest](50.1.2.02-vitest.md)
 
 **Q:** Can jsdom or happy-dom establish the same result as Vitest Browser Mode or a Next.js async Server Component E2E test?
 
-**A:** No. DOM emulators implement a subset of browser behavior. Browser Mode supplies a configured real browser, while async Server Component routing/rendering needs the framework runtime; Next.js currently recommends E2E for that boundary.
+**A:** No. DOM emulators implement a subset of browser behavior. Vitest Browser Mode is a separate real-browser environment, stable since v4 and configured with a provider package; async Server Component routing/rendering needs the framework runtime, for which Next.js recommends E2E.
+
 
 ## React Testing Library
 

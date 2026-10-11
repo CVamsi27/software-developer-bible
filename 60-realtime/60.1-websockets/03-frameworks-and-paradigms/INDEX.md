@@ -16,13 +16,13 @@
 | 01 | [NestJS WebSockets](60.1.3.01-nestjs-websockets.md) | Gateways, adapters (Socket.IO / WS), guards, pipes, exception filters | Important | Specialized | 11 min |
 | 02 | [GraphQL Subscriptions & Live Queries](60.1.3.02-graphql-subscriptions-live-queries.md) | graphql-ws protocol, Redis pub-sub, withFilter server-side authz, live queries vs subscriptions, fan-out scaling, over-emitting costs | Optional | Specialized | 11 min |
 | 03 | [WebRTC Peer-to-Peer](60.1.3.03-webrtc-peer-to-peer.md) | getUserMedia / RTCPeerConnection / RTCDataChannel, signaling, ICE/STUN/TURN, mesh vs SFU vs MCU cost math, route discovery | Optional | Specialized | 11 min |
-| 04 | [Testing Real-Time Systems](60.1.3.04-testing-realtime-systems.md) | Artillery WS scenarios (connect rate, churn, throughput), ordering/backpressure assertions, killing Redis mid-stream, soak tests for fd leaks, CI smoke suites | Important | Specialized | 10 min |
+| 04 | [Testing Real-Time Systems](60.1.3.04-testing-realtime-systems.md) | Protocol smoke tests, workload/ramp/churn design, state-recovery oracles, slow consumers and resource trends | Important | Specialized | 10 min |
 
 ---
 
 ## Why NestJS first
 
-The gateway pattern applies beyond NestJS. Frameworks provide different ways to respond when connections open or close, check each connection's permissions through message guards, and validate message payloads through pipes. Learn those responsibilities here, then map them to the corresponding tools in another framework.
+The gateway pattern applies beyond NestJS. Frameworks provide different ways to respond when connections open or close, authenticate connections at acceptance and authorize individual actions through message guards, and validate message payloads through pipes. Learn those responsibilities here, then map them to the corresponding tools in another framework.
 
 Continue with GraphQL subscription execution and its permissions, then WebRTC negotiation and direct/relay/conferencing paths. Finish with protocol testing and state recovery. NestJS is one implementation, not a prerequisite for GraphQL or WebRTC.
 

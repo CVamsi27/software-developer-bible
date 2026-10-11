@@ -1,6 +1,6 @@
 # Java — Index
 
-> **Study time:** ≈ 1 h 45 m of reading (7 files, ~15 min average).
+> **Study time:** ≈ 1 h 50 m of reading (7 files, ~16 min average).
 > **7 files** — Java language fundamentals, OOP & SOLID, concurrency & multithreading, and JUnit/Mockito testing — the shared Java backend corpus, used by the SDE/FAANG lane and any Java-heavy EU full-stack target.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../INDEX.md)

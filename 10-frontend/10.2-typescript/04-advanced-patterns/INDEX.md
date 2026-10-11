@@ -12,9 +12,9 @@
 ## Files
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------: |
+| ------ | ----------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ------------- | ------------------ | ----------: |
 | 01 | [The `satisfies` Operator](10.2.4.01-satisfies-operator.md) | Type validation without widening, literal preservation, config objects, route tables | Essential | Foundational | 11 min |
-| 02 | [Branded Types](10.2.4.02-branded-types.md) | Nominal typing, brand patterns, unit types, validation, flavoring, discriminated unions | Important | Specialized | 26 min |
+| 02 | [Branded Types](10.2.4.02-branded-types.md) | Nominal-like branding, units, boundary validation, flavoring, discriminated unions | Important | Specialized | 26 min |
 | 03 | [Decorators](10.2.4.03-decorators.md) | Class, method, accessor, property, parameter decorators, metadata reflection | Important | Specialized | 19 min |
 | 04 | [Declaration Files](10.2.4.04-declaration-files.md) | .d.ts syntax, module augmentation, global types, asset declarations, triple-slash directives | Important | Specialized | 25 min |
 | 05 | [Advanced Patterns](10.2.4.05-advanced-patterns.md) | Class/parameter decorators, typed event emitter, advanced utility combinations | Important | Specialized | 11 min |

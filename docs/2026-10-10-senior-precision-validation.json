@@ -3966,10 +3966,11 @@
     "git_diff_check": "Passed after the latest Markdown and generated API changes.",
     "remote_site_build": {
       "workflow": "site-build",
-      "run_id": "38182313974",
-      "job_id": "114597273890",
-      "run_url": "https://github.com/CVamsi27/software-developer-bible/actions/runs/38182313974",
-      "job_url": "https://github.com/CVamsi27/software-developer-bible/actions/runs/38182313974/job/114597273890",
+      "run_id": "38182727439",
+      "job_id": "114598530177",
+      "run_url": "https://github.com/CVamsi27/software-developer-bible/actions/runs/38182727439",
+      "job_url": "https://github.com/CVamsi27/software-developer-bible/actions/runs/38182727439/job/114598530177",
+      "tested_commit": "736fbf38",
       "status": "passed",
       "ruby": "3.4.11",
       "checks": [

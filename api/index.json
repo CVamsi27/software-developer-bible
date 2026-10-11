@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "75b0b5ffce6e46359179bb90e8221900d790423ffd7c34e9b29a4a9eb45ad9fc",
+ "corpus_digest": "ca8bdc27a2f5d12960d6b51d8c7a8337935af4edac2042593eec2ffbbfe3a8f0",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 6429
+  "read_minutes": 6430
  },
  "chapters": [
   {
@@ -4793,7 +4793,7 @@
    "g": [
     "concept"
    ],
-   "m": 14
+   "m": 15
   },
   {
    "p": "40-platform/40.1-docker/40.1.08-image-signing-sbom-supply-chain.html",

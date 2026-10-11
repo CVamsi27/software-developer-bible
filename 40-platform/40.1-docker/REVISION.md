@@ -66,6 +66,10 @@ Source: [Container Runtime Internals — Namespaces, cgroups, OverlayFS](40.1.07
 
 **A:** Namespaces determine the process's view of resources; cgroups account for and limit resource use. Neither alone provides a VM-style separate kernel.
 
+**Q:** Why is “VMs are always safer than containers” an incomplete conclusion for untrusted workloads?
+
+**A:** A VM gives a workload a guest kernel behind a hypervisor; a standard Linux container shares the host kernel. The remaining risks depend on configuration: container privileges, mounts and kernel exposure matter, while VMs still depend on the hypervisor, host and management plane. Choose and harden the boundary against the threat model.
+
 ## Image Signing, SBOM & Supply Chain Security
 
 Source: [Image Signing, SBOM & Supply Chain Security](40.1.08-image-signing-sbom-supply-chain.md)

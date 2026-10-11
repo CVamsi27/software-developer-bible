@@ -12000,7 +12000,8 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Image/container distinction; writable layer and persistence boundaries; port metadata versus publication; maintained runtime examples."
+        "Image/container distinction; writable layer and persistence boundaries; port metadata versus publication; maintained runtime examples.",
+        "Release-speed wording no longer ranks containers against VMs; build promotion and rollback claims specify image-digest behavior."
       ],
       "sources": [
         "https://docs.docker.com/build/building/best-practices/",
@@ -12008,11 +12009,12 @@
         "https://devguide.python.org/versions/",
         "https://go.dev/doc/devel/release"
       ],
-      "disposition": "Revised inaccurate or stale runtime, registry, port and ignore-file guidance; explained image/container lifecycle and resource-limit conditions.",
+      "disposition": "Clarified repeatable image promotion and rollback, including persistent-state compatibility; removed an unsupported universal deployment-speed comparison.",
       "validation": [
-        "Complete chapter read; current official runtime and Docker guidance checked; links returned HTTP 200."
+        "Complete chapter read; current official runtime and Docker guidance checked; links returned HTTP 200.",
+        "Complete chapter reread; Docker build guidance and digest semantics checked against the linked official guidance."
       ],
-      "current_sha256": "14c980a2fae75be6b3515bb5c3a260d564469277b6f50081049b70bd54044e9b"
+      "current_sha256": "86fbd86909c8343560f9c0e000860a9636ecd6e508cf8f6f31cfd07cd39fdf51"
     },
     {
       "path": "40-platform/40.1-docker/40.1.02-volumes-networks.md",
@@ -12127,18 +12129,21 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Namespace isolation and shared kernel model; cgroup accounting versus configured enforcement; runtime/shim process boundaries; host inspection commands."
+        "Namespace isolation and shared kernel model; cgroup accounting versus configured enforcement; runtime/shim process boundaries; host inspection commands.",
+        "Container-versus-VM comparison distinguishes a shared host kernel from a guest kernel and explains the configuration, host and management risks on both sides; startup and density are workload-dependent."
       ],
       "sources": [
         "https://docs.docker.com/engine/containers/runmetrics/",
         "https://docs.docker.com/engine/security/",
-        "https://github.com/containerd/containerd/blob/main/docs/runtime-v2.md"
+        "https://github.com/containerd/containerd/blob/main/docs/runtime-v2.md",
+        "https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-125a.pdf"
       ],
-      "disposition": "Repaired runtime diagram and invalid inspection commands; removed unconditional cgroup limits and direct overlay2 host-path assumptions.",
+      "disposition": "Replaced the simplistic safety/speed ranking with the kernel boundary, remaining threat surfaces and workload-specific operational fit.",
       "validation": [
-        "Complete chapter read; shell syntax and process/cgroup statements checked; source links verified."
+        "Complete chapter read; shell syntax and process/cgroup statements checked; source links verified.",
+        "Complete chapter reread; Docker security guidance and NIST SP 800-125A checked; NIST PDF returned HTTP 200."
       ],
-      "current_sha256": "4e20ea8ed0aa92c3eb74fbbad54133cf5ade8b9d03384aa2686222a4fd158c0c"
+      "current_sha256": "1f58f4a278d0149a503625905474f8011e8fb1175aaa222206bf841b85e659ba"
     },
     {
       "path": "40-platform/40.1-docker/40.1.08-image-signing-sbom-supply-chain.md",
@@ -12187,17 +12192,21 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Interview answers distinguish image/container state, cgroup configuration, Compose restart behavior and endpoint context from registry authentication."
+        "Interview answers distinguish image/container state, cgroup configuration, Compose restart behavior and endpoint context from registry authentication.",
+        "Container-versus-VM answer requires threat-model, privilege, mount and management-plane context and does not claim a universal performance or security winner."
       ],
       "sources": [
         "https://docs.docker.com/build/building/best-practices/",
-        "https://docs.docker.com/compose/how-tos/startup-order/"
+        "https://docs.docker.com/compose/how-tos/startup-order/",
+        "https://docs.docker.com/engine/security/",
+        "https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-125a.pdf"
       ],
-      "disposition": "Corrected resource enforcement, Compose restart and build-context answers to match the teaching chapters.",
+      "disposition": "Aligned the interview answer with the canonical runtime chapter and explicit boundary conditions.",
       "validation": [
-        "Complete interview bank read; answers cross-checked against revised chapters and official documentation."
+        "Complete interview bank read; answers cross-checked against revised chapters and official documentation.",
+        "Complete interview-bank reread; comparative answer cross-checked against Docker security and NIST virtualization guidance."
       ],
-      "current_sha256": "73c6c0bd3f52f7e2d61a3a24121d83530659a2c34969025ac18c7c8dbebfa144"
+      "current_sha256": "a83e1ac97e7448521828b2328c1d2a5e486ed140cd4ade32f512886f75fcbb62"
     },
     {
       "path": "40-platform/40.1-docker/INDEX.md",
@@ -12206,16 +12215,18 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Learning path and chapter summaries align with revised Docker boundaries; Docita example is anchored to current repository evidence."
+        "Learning path and chapter summaries align with revised Docker boundaries; Docita example is anchored to current repository evidence.",
+        "Generated study time reflects the revised container-runtime explanation; chapter order and file counts remain unchanged."
       ],
       "sources": [
         "https://github.com/docker-library/docs/blob/master/postgres/README.md#pgdata"
       ],
-      "disposition": "Aligned the index with the chapters and verified the Docita PostgreSQL 15 example against the Docita checkout.",
+      "disposition": "Restamped generated reading estimates after the chapter text changed.",
       "validation": [
-        "Complete index read; linked targets checked; Docita compose configuration inspected read-only."
+        "Complete index read; linked targets checked; Docita compose configuration inspected read-only.",
+        "python3 scripts/read_time.py --write and --check; python3 scripts/check_counts.py --write and check."
       ],
-      "current_sha256": "68e5a2739b6cc2630944f83551a0483747ae00eef8149f0b0b180b31ba73931c"
+      "current_sha256": "42047e49e1379c85a054b153b02da79e21469c950f03ffdd075f870fa100d1d2"
     },
     {
       "path": "40-platform/40.1-docker/REVISION.md",
@@ -12224,17 +12235,22 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Revision prompts reinforce PostgreSQL 18 image layout changes and Docker Engine 29.5 rootless host-network behavior."
+        "Revision prompts reinforce PostgreSQL 18 image layout changes and Docker Engine 29.5 rootless host-network behavior.",
+        "Added a changed-condition question about the limits of a blanket VM-versus-container safety claim."
       ],
       "sources": [
         "https://github.com/docker-library/docs/blob/master/postgres/README.md#pgdata",
-        "https://docs.docker.com/engine/release-notes/29"
+        "https://docs.docker.com/engine/release-notes/29",
+        "40-platform/40.1-docker/40.1.07-container-runtime-internals-namespaces-cgroups.md",
+        "https://docs.docker.com/engine/security/",
+        "https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-125a.pdf"
       ],
-      "disposition": "Added source-linked questions for version-sensitive storage and rootless networking boundaries.",
+      "disposition": "Added sourced retrieval practice that checks kernel boundaries and remaining risks for both isolation models.",
       "validation": [
-        "Complete companion read; at least five fresh question-answer pairs retained; links checked."
+        "Complete companion read; at least five fresh question-answer pairs retained; links checked.",
+        "Question checked against the revised canonical chapter and its Docker/NIST sources."
       ],
-      "current_sha256": "fd01dde45261cfe7ebf786a0b4e14ecc3c64a12726365febc6c10d590ec9dcf8"
+      "current_sha256": "6d641a39b69090c6c5e8161fa07316017a087fda1d1200600f360e8e0ac9b39f"
     },
     {
       "path": "40-platform/40.10-cdn/40.10.01-cdn-architecture.md",
@@ -15049,17 +15065,19 @@
       "scan_candidates": [],
       "claims_checked": [
         "All twelve categories and both role-based paths were checked; the platform-focused deep dive now includes IaC, reverse proxies, CDN, serverless and Twelve-Factor material.",
-        "Re-read the committed content delta in its complete document context; verified wording, navigation/count claims and consistency with linked canonical material."
+        "Re-read the committed content delta in its complete document context; verified wording, navigation/count claims and consistency with linked canonical material.",
+        "Generated category reading estimate reflects revised Docker chapter length."
       ],
       "sources": [
         "Current complete document and linked canonical chapter/index/revision records"
       ],
-      "disposition": "Reviewed the full index or brief and corrected the study-flow, coverage or date claim where needed.",
+      "disposition": "Restamped generated study estimate; category order and counts remain unchanged.",
       "validation": [
         "Full-file review against linked category structure and repository counting conventions.",
-        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked.",
+        "python3 scripts/read_time.py --write and --check."
       ],
-      "current_sha256": "aa25c55e3606a809ea9b861998d3e517c07464226d58b28c6c6be92603c5c3bd"
+      "current_sha256": "630386e5b08445832adc1aed7e9d8d11a79fa561301de666344935f29b8285cc"
     },
     {
       "path": "50-quality/50.1-testing/01-foundations/50.1.1.01-testing-overview.md",
@@ -20117,17 +20135,19 @@
       "scan_candidates": [],
       "claims_checked": [
         "The root study order, lane selection, cross-stack navigation and date/count claims were checked; generated counts remain owned by check_counts.py.",
-        "Re-read the committed content delta in its complete document context; verified wording, navigation/count claims and consistency with linked canonical material."
+        "Re-read the committed content delta in its complete document context; verified wording, navigation/count claims and consistency with linked canonical material.",
+        "Generated root study estimate reflects revised Docker chapter length."
       ],
       "sources": [
         "Current complete document and linked canonical chapter/index/revision records"
       ],
-      "disposition": "Reviewed the full index or brief and corrected the study-flow, coverage or date claim where needed.",
+      "disposition": "Restamped generated study estimate; stack order and counts remain unchanged.",
       "validation": [
         "Full-file review against linked category structure and repository counting conventions.",
-        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked.",
+        "python3 scripts/read_time.py --write and --check."
       ],
-      "current_sha256": "b62f0037b10cd268c0fc110b79edf1c054d0510317dc338cb6eaf11b200f58da",
+      "current_sha256": "bac0cc2b5689316ee63dab3f34fd41dca71414bd52f72b427f84d64e43ffecc0",
       "limited_edits": [
         "Generated study-time and aligned table metadata refreshed from current chapters; semantic review remains pending.",
         "Generated study-time metadata refreshed from current child sections; semantic review remains pending."
@@ -20397,7 +20417,8 @@
         "Recorded Kubernetes source checks, YAML parse results, count-writer regression outcome, generated read-time total and verification limitations.",
         "Latest full repository verification reports 30 passing gates, current internal-link totals and an unchanged external citation baseline.",
         "Coverage totals, historical checkpoints, executed checks and integration limits; stale totals replaced with final ledger values.",
-        "The pinned Ruby 3.4.11 site-build and rendered-route checks passed against the pushed branch tip 736fbf38."
+        "The pinned Ruby 3.4.11 site-build and rendered-route checks passed against the pushed branch tip 736fbf38.",
+        "Recorded the Docker isolation-boundary correction, regenerated reading total, synchronized citation baseline and final-gate result."
       ],
       "sources": [
         "docs/2026-10-10-senior-precision-audit.json",
@@ -20407,15 +20428,16 @@
         "docs/2026-10-10-senior-precision-validation.json",
         "https://github.com/CVamsi27/software-developer-bible/actions/runs/38182727439"
       ],
-      "disposition": "Updated the final verification checkpoint after the pinned Ruby 3.4.11 site build and rendered-route assertions passed against pushed tip 736fbf38; local counts, gates and current-hash dispositions remain as recorded.",
+      "disposition": "Updated final-pass findings and metrics after the Docker container-versus-VM content and companion material were corrected.",
       "validation": [
         "Coverage totals recomputed from the current ledger.",
         "All 30 repository verification gates passed; 11,008 internal links and 234 anchors had zero broken or stale internal references.",
         "The external citation baseline passed with 5,674 historical records, 2,561 current referenced records, zero additions and 3,113 removals.",
         "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked.",
-        "GitHub Actions site-build run 38182727439 passed the Jekyll build, Liquid warning guard, rendered page title check, private-tree exclusion, and homepage/search/theme assertions on commit 736fbf38."
+        "GitHub Actions site-build run 38182727439 passed the Jekyll build, Liquid warning guard, rendered page title check, private-tree exclusion, and homepage/search/theme assertions on commit 736fbf38.",
+        "Docker/NIST sources were verified; the NIST PDF returned HTTP 200. Full repository gates and final remote site build are rerun for this content delta."
       ],
-      "current_sha256": "cd7230f62e0189b4bda46a521c74af3da0be78f7fb27490f6bf3f29908024b14"
+      "current_sha256": "3a8333455dc8d4e84564b60f3c1304aadd525d80f9cb22e71d4a53bc232bcc0c"
     },
     {
       "path": "docs/api-contract.md",
@@ -20426,7 +20448,8 @@
       "claims_checked": [
         "Generated API fields, deterministic ordering, tag normalization, per-record read time and aggregate chapter/section/category totals.",
         "Python and TypeScript consumer examples, chapter filtering, canonical GitHub link construction and compatibility/versioning limits.",
-        "Generated API fields/order, filtering, read-time aggregation and consumer examples versus api/index.json."
+        "Generated API fields/order, filtering, read-time aggregation and consumer examples versus api/index.json.",
+        "Generated read_minutes example agrees with api/index.json after the content revision."
       ],
       "sources": [
         "scripts/gen_master_index.py",
@@ -20437,13 +20460,14 @@
         "api/index.json",
         "scripts/check_study_live.py"
       ],
-      "disposition": "Corrected consumer-example grammar and synchronized the documented MVCC read-time example and aggregate read-minute total with the regenerated API artifact.",
+      "disposition": "Restamped the generated corpus read-time total from 6,429 to 6,430 minutes.",
       "validation": [
         "Complete contract read; current metadata generation and consumer outputs checked against the regenerated API index.",
         "The MVCC example record reports 14 minutes; the regenerated API total reports 6,421 minutes.",
-        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked."
+        "Re-read the final file and post-review changes; generated metadata and final structure/link/content gates checked.",
+        "python3 scripts/gen_master_index.py; python3 scripts/check_counts.py --write and check."
       ],
-      "current_sha256": "375b542c8ce9a15d55efa219f0165061695b08d45460deab5381cec847b4eab5"
+      "current_sha256": "7abe95fa8bf8a54d7b8d17ee6dbd9d022dd14d9815be4f579a162ab39087d03e"
     },
     {
       "path": "docs/deployment.md",

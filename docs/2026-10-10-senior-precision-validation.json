@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "date": "2026-10-12",
-  "status": "complete",
+  "status": "awaiting_remote_site_build",
   "coverage_record": "docs/2026-10-10-senior-precision-audit.json",
   "results": {
     "postgres-results": {
@@ -3907,14 +3907,14 @@
       "broken": 0,
       "stale_labels": 0,
       "stale_inline_paths": 0,
-      "external_links_skipped": 8656
+      "external_links_skipped": 8658
     },
     "external_link_baseline": {
-      "baseline_records": 5674,
-      "current_referenced_records": 2561,
+      "baseline_records": 2562,
+      "current_referenced_records": 2562,
       "added": 0,
-      "removed": 3113,
-      "result": "passed; no new unbaselined URL"
+      "removed": 0,
+      "result": "passed after probing the new NIST reference and synchronizing the baseline"
     },
     "corpus_counts": {
       "markdown_files": 1026,
@@ -3924,8 +3924,8 @@
     "read_time": {
       "content_files": 671,
       "indexes": 156,
-      "total_minutes": 6429,
-      "result": "passed"
+      "total_minutes": 6430,
+      "result": "passed after regenerated chapter, INDEX and API contract estimates"
     },
     "study_time_grammar_regression": {
       "passed": 2,
@@ -3966,20 +3966,8 @@
     "git_diff_check": "Passed after the latest Markdown and generated API changes.",
     "remote_site_build": {
       "workflow": "site-build",
-      "run_id": "38182727439",
-      "job_id": "114598530177",
-      "run_url": "https://github.com/CVamsi27/software-developer-bible/actions/runs/38182727439",
-      "job_url": "https://github.com/CVamsi27/software-developer-bible/actions/runs/38182727439/job/114598530177",
-      "tested_commit": "736fbf38",
-      "status": "passed",
-      "ruby": "3.4.11",
-      "checks": [
-        "Jekyll build completed",
-        "Liquid warning guard passed",
-        "rendered page titles passed",
-        "private lane trees absent from built site",
-        "homepage, search and shared theme rendered"
-      ]
+      "status": "pending for this content update",
+      "tested_commit": "to be recorded after push"
     }
   },
   "previous_final_checks": {
@@ -4292,5 +4280,15 @@
       "total": 89
     },
     "limits": "No live Kubernetes cluster behavior, API authorization integration or network-policy data-plane enforcement was exercised."
+  },
+  "docker-comparison-precision-results": {
+    "checks": [
+      "A standard Linux container and a VM are distinguished by shared host kernel versus separate guest kernel.",
+      "Container risks include kernel exposure, privileges and mounts; VM risks include hypervisor, host, management plane and device configuration.",
+      "Startup time and density are presented as workload/platform measurements, not universal wins.",
+      "Images table, teaching chapter, interview answer and revision drill align on the comparison.",
+      "Docker Engine security documentation and NIST SP 800-125A were checked; NIST reference returned HTTP 200."
+    ],
+    "runtime_tests": "Not applicable: prose and interview/revision alignment change; no runtime example changed."
   }
 }

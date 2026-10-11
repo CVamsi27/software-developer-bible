@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "date": "2026-10-12",
-  "status": "awaiting_remote_site_build",
+  "status": "complete",
   "coverage_record": "docs/2026-10-10-senior-precision-audit.json",
   "results": {
     "postgres-results": {
@@ -3960,14 +3960,26 @@
     "stale_completed_review_hashes": 0,
     "jekyll_local": {
       "status": "blocked by local runtime; remote CI passed",
-      "details": "The default bundle launcher selects macOS Ruby 2.6 and lacks Bundler 2.5.11. Homebrew Ruby 4.0.6 cannot build locked legacy native dependencies posix-spawn 0.3.15 and rdiscount 1.6.8. The repository-pinned Ruby 3.4.11 Jekyll build and rendered-route checks passed in GitHub Actions run 38182313974."
+      "details": "The default bundle launcher selects macOS Ruby 2.6 and lacks Bundler 2.5.11. Homebrew Ruby 4.0.6 cannot build locked legacy native dependencies posix-spawn 0.3.15 and rdiscount 1.6.8. The repository-pinned Ruby 3.4.11 Jekyll build and rendered-route checks passed in GitHub Actions run 38184053274 on commit aa946237."
     },
     "rendered_browser_ui": "Not rerun after documentation-only closeout; previous_final_checks records passing reader, navigation and read-aloud suites. No UI source changed in this closeout.",
     "git_diff_check": "Passed after the latest Markdown and generated API changes.",
     "remote_site_build": {
       "workflow": "site-build",
-      "status": "pending for this content update",
-      "tested_commit": "to be recorded after push"
+      "run_id": "38184053274",
+      "job_id": "114602493189",
+      "run_url": "https://github.com/CVamsi27/software-developer-bible/actions/runs/38184053274",
+      "job_url": "https://github.com/CVamsi27/software-developer-bible/actions/runs/38184053274/job/114602493189",
+      "tested_commit": "aa946237",
+      "status": "passed",
+      "ruby": "3.4.11",
+      "checks": [
+        "Jekyll build completed",
+        "Liquid warning guard passed",
+        "rendered page titles passed",
+        "private lane trees absent from built site",
+        "homepage, search and shared theme rendered"
+      ]
     }
   },
   "previous_final_checks": {

@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-10",
- "url_count": 2406,
+ "generated": "2026-10-11",
+ "url_count": 2407,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md",
@@ -505,6 +505,9 @@
   "https://crdt.tech/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.20-multi-region-deployment.md"
   ],
+  "https://csrc.nist.gov/Projects/role-based-access-control/faqs": [
+   "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md"
+  ],
   "https://csrc.nist.gov/projects/attribute-based-access-control": [
    "20-backend/20.5-security/01-auth/20.5.1.09-rbac-abac.md"
   ],
@@ -515,7 +518,8 @@
    "20-backend/20.5-security/01-auth/INDEX.md"
   ],
   "https://csrc.nist.gov/publications/detail/sp/800-162/final": [
-   "20-backend/20.5-security/01-auth/20.5.1.10-abac-access-control.md"
+   "20-backend/20.5-security/01-auth/20.5.1.10-abac-access-control.md",
+   "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md"
   ],
   "https://csrc.nist.gov/publications/detail/sp/800-190/final": [
    "40-platform/40.1-docker/40.1.08-image-signing-sbom-supply-chain.md"
@@ -6629,7 +6633,7 @@
   "https://www.creativebloq.com/web-design/manage-large-css-projects-itcss-101517528": [
    "10-frontend/10.7-html-css/10.7.06-css-architecture-styling-approaches.md"
   ],
-  "https://www.cs.cmu.edu/~binfan/papers/conext14_cuckoofilter.pdf": [
+  "https://www.cs.cmu.edu/~dga/papers/cuckoo-conext2014.pdf": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.17-probabilistic-data-structures.md"
   ],
   "https://www.cs.cmu.edu/~wing/publications/LiskovWing94.pdf": [

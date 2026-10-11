@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "date": "2026-10-12",
-  "status": "awaiting_remote_site_build",
+  "status": "complete",
   "coverage_record": "docs/2026-10-10-senior-precision-audit.json",
   "results": {
     "postgres-results": {
@@ -3881,7 +3881,7 @@
     "Standalone TS snippets are strictly checked only where recorded; other selected TS examples were transpiled and executed.",
     "Temporary validation fixtures are recorded for this run, not installed as a universal all-chapter test suite.",
     "No live Raft/Zab fault injection, RabbitMQ priority integration, load-balancer deployment or Debezium connector was executed; added source/trace checks are distinguished from PostgreSQL execution.",
-    "A local Jekyll build could not run on the available Ruby 2.6/4.0 toolchains; the repository-pinned Ruby 3.4.11 site build and rendered-route check remain pending on the pushed branch."
+    "Local Jekyll build is unavailable on this host because the default bundle launcher selects macOS Ruby 2.6 without Bundler 2.5.11, while Homebrew Ruby 4.0.6 cannot build locked legacy native dependencies posix-spawn 0.3.15 and rdiscount 1.6.8; the pinned Ruby 3.4.11 GitHub Actions build passed."
   ],
   "mobile_prose_regression": {
     "cause": "Plain text create/redirect/ownership/deletion/analytics extends outside a 320px paragraph; computed text Range confirmed the overflow.",
@@ -3959,11 +3959,27 @@
     },
     "stale_completed_review_hashes": 0,
     "jekyll_local": {
-      "status": "blocked by local runtime",
-      "details": "The default bundle launcher selects macOS Ruby 2.6 and lacks Bundler 2.5.11. Homebrew Ruby 4.0.6 cannot build locked legacy native dependencies posix-spawn 0.3.15 and rdiscount 1.6.8. Repository CI pins Ruby 3.4.11; run site-build manually against the pushed branch."
+      "status": "blocked by local runtime; remote CI passed",
+      "details": "The default bundle launcher selects macOS Ruby 2.6 and lacks Bundler 2.5.11. Homebrew Ruby 4.0.6 cannot build locked legacy native dependencies posix-spawn 0.3.15 and rdiscount 1.6.8. The repository-pinned Ruby 3.4.11 Jekyll build and rendered-route checks passed in GitHub Actions run 38182313974."
     },
     "rendered_browser_ui": "Not rerun after documentation-only closeout; previous_final_checks records passing reader, navigation and read-aloud suites. No UI source changed in this closeout.",
-    "git_diff_check": "Passed after the latest Markdown and generated API changes."
+    "git_diff_check": "Passed after the latest Markdown and generated API changes.",
+    "remote_site_build": {
+      "workflow": "site-build",
+      "run_id": "38182313974",
+      "job_id": "114597273890",
+      "run_url": "https://github.com/CVamsi27/software-developer-bible/actions/runs/38182313974",
+      "job_url": "https://github.com/CVamsi27/software-developer-bible/actions/runs/38182313974/job/114597273890",
+      "status": "passed",
+      "ruby": "3.4.11",
+      "checks": [
+        "Jekyll build completed",
+        "Liquid warning guard passed",
+        "rendered page titles passed",
+        "private lane trees absent from built site",
+        "homepage, search and shared theme rendered"
+      ]
+    }
   },
   "previous_final_checks": {
     "repository_gates": {

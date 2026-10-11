@@ -64,7 +64,7 @@
     return reader;
   }
   function extractChapter(content) {
-    var excluded = 'pre, script, style, nav, button, img, svg, [hidden], [aria-hidden="true"], .read-aloud, .chapter-outline, .heading-anchor, .chapter-nav-footer';
+    var excluded = 'pre, script, style, nav, button, img, svg, [hidden], [aria-hidden="true"], .read-aloud, .chapter-outline, .heading-anchor, .chapter-nav-footer,.roadmap-return,.reader-breadcrumb,.reader-meta,.reading-width,.study-continuation,.revision-controls,details:not([open])';
     var NodeFilter = content.ownerDocument.defaultView.NodeFilter;
     var walker = content.ownerDocument.createTreeWalker(content, NodeFilter.SHOW_TEXT, {
       acceptNode: function (node) {
@@ -143,9 +143,11 @@
   function mount() {
     var content = document.querySelector('.post-content');
     if (!content || content.querySelector('.read-aloud')) return;
+    var state = root.StudyState;
+    if (!state || (!state.isLearningPath(root.location.pathname) && !/\/REVISION\.html$/i.test(root.location.pathname))) return;
     var bar = document.createElement('section');
     bar.className = 'read-aloud'; bar.setAttribute('aria-label', 'Chapter read aloud');
-    bar.innerHTML = '<span class="read-aloud-status" role="status" aria-live="polite">Read along at your own pace</span><div class="read-aloud-controls"><button type="button" data-read aria-label="Read aloud">Read</button><button type="button" data-pause aria-label="Pause" hidden>Pause</button><button type="button" data-stop aria-label="Stop" hidden>Stop</button><select aria-label="Reading speed"><option value="0.5">0.5×</option><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></div>';
+    bar.innerHTML = '<span class="read-aloud-status" role="status" aria-live="polite">Read along at your own pace</span><div class="read-aloud-controls"><button type="button" data-read aria-label="Read aloud">Listen</button><button type="button" data-pause aria-label="Pause" hidden>Pause</button><button type="button" data-stop aria-label="Stop" hidden>Stop</button><select aria-label="Reading speed"><option value="0.5">0.5×</option><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></div>';
     var title = content.querySelector('h1');
     if (title && title.parentElement === content) {
       var row = document.createElement('div');
@@ -169,6 +171,7 @@
       if (activeElement !== element) clearActive();
       activeElement = element;
       element.setAttribute('data-read-aloud-active', 'true');
+      document.dispatchEvent(new root.CustomEvent('study:narration', {detail: {element: element}}));
       var topMargin = 120;
       var bottomMargin = Math.min(120, root.innerHeight * 0.15);
       var reduced = root.matchMedia && root.matchMedia('(prefers-reduced-motion: reduce)').matches;

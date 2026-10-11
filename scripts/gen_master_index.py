@@ -26,7 +26,7 @@ import time
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from read_time import content_files, minutes, human  # noqa: E402
+from read_time import content_files, minutes  # noqa: E402
 from check_template import parse_meta  # noqa: E402
 
 OUT = os.path.join(ROOT, 'search.html')
@@ -34,8 +34,6 @@ API_OUT = os.path.join(ROOT, 'api', 'index.json')
 CONFIG = os.path.join(ROOT, '_config.yml')
 THEME_ASSET_RE = re.compile(r'^theme_asset:\s*(\S+)\s*$', re.M)
 H1 = re.compile(r'^# (?!#)\s*(.+?)\s*$', re.M)
-MAX_TAGS = 24          # chips rendered for the top tags; the rest stay searchable
-MIN_TAG_COUNT = 4      # tags below this are not offered as chips
 
 
 def collect():
@@ -64,530 +62,62 @@ PAGE = """<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{TITLE} — Master Search Index</title>
+<title>Search the library — {TITLE}</title>
 <script src="{THEME_SRC}"></script>
-<style>
-  :root, html[data-theme="light"] {{
-    --theme-bg: #ffffff;
-    --theme-text: #1f2937;
-    --theme-text-muted: #64748b;
-    --theme-heading: #0f172a;
-    --theme-border: #e2e8f0;
-    --theme-border-subtle: #f1f5f9;
-    --theme-link: #2563eb;
-    --theme-link-hover: #1d4ed8;
-    --theme-accent: #3b82f6;
-    --card-bg: #ffffff;
-    --input-bg: #ffffff;
-    --chip-bg: #f1f5f9;
-    --chip-hover: #e2e8f0;
-    --chip-text: #475569;
-    --chip-active-bg: #2563eb;
-    --chip-active-text: #ffffff;
-    --row-hover: rgba(59, 130, 246, 0.05);
-    --row-selected: rgba(59, 130, 246, 0.12);
-    --kbd-bg: #f1f5f9;
-    --kbd-border: #cbd5e1;
-  }}
-
-  @media (prefers-color-scheme: dark) {{
-    :root:not([data-theme="light"]) {{
-      --theme-bg: #111820;
-      --theme-text: #d5deea;
-      --theme-text-muted: #a4b3c5;
-      --theme-heading: #f8fafc;
-      --theme-border: #2c3b4d;
-      --theme-border-subtle: #1b2835;
-      --theme-link: #60a5fa;
-      --theme-link-hover: #93c5fd;
-      --theme-accent: #3b82f6;
-      --card-bg: #18222d;
-      --input-bg: #151f2b;
-      --chip-bg: #1e2b39;
-      --chip-hover: #2c3e50;
-      --chip-text: #e2e8f0;
-      --chip-active-bg: #3b82f6;
-      --chip-active-text: #ffffff;
-      --row-hover: rgba(59, 130, 246, 0.08);
-      --row-selected: rgba(59, 130, 246, 0.22);
-      --kbd-bg: #1e2b39;
-      --kbd-border: #2c3b4d;
-    }}
-  }}
-
-  html[data-theme="dark"] {{
-    --theme-bg: #111820;
-    --theme-text: #d5deea;
-    --theme-text-muted: #a4b3c5;
-    --theme-heading: #f8fafc;
-    --theme-border: #2c3b4d;
-    --theme-border-subtle: #1b2835;
-    --theme-link: #60a5fa;
-    --theme-link-hover: #93c5fd;
-    --theme-accent: #3b82f6;
-    --card-bg: #18222d;
-    --input-bg: #151f2b;
-    --chip-bg: #1e2b39;
-    --chip-hover: #2c3e50;
-    --chip-text: #e2e8f0;
-    --chip-active-bg: #3b82f6;
-    --chip-active-text: #ffffff;
-    --row-hover: rgba(59, 130, 246, 0.08);
-    --row-selected: rgba(59, 130, 246, 0.22);
-    --kbd-bg: #1e2b39;
-    --kbd-border: #2c3b4d;
-  }}
-
-  ::selection {{
-    background-color: rgba(59, 130, 246, 0.25);
-    color: inherit;
-  }}
-
-  body {{
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 1.5rem 1.5rem 4rem;
-    line-height: 1.5;
-    background-color: var(--theme-bg);
-    color: var(--theme-text);
-    -webkit-font-smoothing: antialiased;
-  }}
-
-  .top-bar {{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1.25rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 1px solid var(--theme-border);
-  }}
-
-  .nav-back {{
-    font-size: 0.92rem;
-    font-weight: 550;
-  }}
-
-  .theme-toggle-btn {{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 34px;
-    height: 34px;
-    border-radius: 8px;
-    border: 1px solid var(--theme-border);
-    background-color: var(--chip-bg);
-    color: var(--theme-text);
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }}
-
-  .theme-toggle-btn:hover {{
-    background-color: var(--chip-hover);
-    border-color: var(--theme-accent);
-    color: var(--theme-accent);
-    transform: scale(1.05);
-  }}
-
-  .theme-toggle-btn svg {{
-    display: block;
-    width: 17px;
-    height: 17px;
-  }}
-
-  h1 {{
-    font-size: 1.65rem;
-    font-weight: 750;
-    color: var(--theme-heading);
-    margin: 0 0 0.4rem;
-    letter-spacing: -0.025em;
-  }}
-
-  .sub {{
-    color: var(--theme-text-muted);
-    margin: 0 0 1.25rem;
-    font-size: 0.92rem;
-  }}
-
-  .search-container {{
-    position: relative;
-    margin: 1rem 0;
-  }}
-
-  .search-box-wrapper {{
-    position: relative;
-    display: flex;
-    align-items: center;
-  }}
-
-  .search-icon {{
-    position: absolute;
-    left: 14px;
-    width: 18px;
-    height: 18px;
-    color: var(--theme-text-muted);
-    pointer-events: none;
-  }}
-
-  #q {{
-    width: 100%;
-    box-sizing: border-box;
-    font-size: 1.05rem;
-    padding: 0.75rem 2.5rem 0.75rem 2.6rem;
-    border: 1.5px solid var(--theme-border);
-    border-radius: 10px;
-    background-color: var(--input-bg);
-    color: var(--theme-text);
-    outline: none;
-    transition: border-color 0.15s ease, box-shadow 0.15s ease;
-  }}
-
-  #q:focus {{
-    border-color: var(--theme-accent);
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
-  }}
-
-  .clear-btn {{
-    position: absolute;
-    right: 12px;
-    background: transparent;
-    border: none;
-    color: var(--theme-text-muted);
-    cursor: pointer;
-    font-size: 1rem;
-    padding: 4px 8px;
-    border-radius: 4px;
-    display: none;
-  }}
-
-  .clear-btn:hover {{
-    color: var(--theme-heading);
-  }}
-
-  .keyboard-hints {{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 12px;
-    margin-top: 6px;
-    font-size: 0.78rem;
-    color: var(--theme-text-muted);
-  }}
-
-  kbd {{
-    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-    font-size: 0.75rem;
-    background-color: var(--kbd-bg);
-    border: 1px solid var(--kbd-border);
-    border-radius: 4px;
-    padding: 1px 5px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  }}
-
-  .chips-group {{
-    margin: 0.75rem 0;
-  }}
-
-  .chips-label {{
-    font-size: 0.78rem;
-    font-weight: 650;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--theme-text-muted);
-    margin-bottom: 0.35rem;
-  }}
-
-  .chips {{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-  }}
-
-  .chips button {{
-    font-size: 0.8rem;
-    padding: 0.24rem 0.65rem;
-    border-radius: 999px;
-    border: 1px solid var(--theme-border);
-    background-color: var(--chip-bg);
-    cursor: pointer;
-    color: var(--chip-text);
-    transition: all 0.15s ease;
-  }}
-
-  .chips button:hover {{
-    background-color: var(--chip-hover);
-    border-color: var(--theme-accent);
-  }}
-
-  .chips button.on {{
-    background-color: var(--chip-active-bg);
-    border-color: var(--chip-active-bg);
-    color: var(--chip-active-text);
-    font-weight: 550;
-  }}
-
-  #stats {{
-    font-size: 0.9rem;
-    color: var(--theme-text-muted);
-    margin: 1.25rem 0 0.75rem;
-    font-weight: 550;
-  }}
-
-  .table-wrapper {{
-    overflow-x: auto;
-    border: 1px solid var(--theme-border);
-    border-radius: 10px;
-    background-color: var(--card-bg);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-  }}
-
-  table {{
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.91rem;
-    margin: 0;
-  }}
-
-  th {{
-    text-align: left;
-    background-color: var(--theme-border-subtle);
-    color: var(--theme-heading);
-    font-weight: 650;
-    border-bottom: 2px solid var(--theme-border);
-    padding: 0.6rem 0.85rem;
-    white-space: nowrap;
-  }}
-
-  td {{
-    border-bottom: 1px solid var(--theme-border);
-    padding: 0.55rem 0.85rem;
-    vertical-align: middle;
-  }}
-
-  tr:last-child td {{
-    border-bottom: none;
-  }}
-
-  tr.active-row {{
-    background-color: var(--row-selected) !important;
-  }}
-
-  tr:hover {{
-    background-color: var(--row-hover);
-  }}
-
-  td.m, th.m {{
-    text-align: right;
-    white-space: nowrap;
-  }}
-
-  .chapter-title-link {{
-    font-weight: 600;
-    color: var(--theme-link);
-    text-decoration: none;
-  }}
-
-  .chapter-title-link:hover {{
-    text-decoration: underline;
-    color: var(--theme-link-hover);
-  }}
-
-  a {{
-    text-decoration: none;
-    color: var(--theme-link);
-  }}
-
-  a:hover {{
-    text-decoration: underline;
-  }}
-
-  .tag-badge {{
-    display: inline-block;
-    font-size: 0.75rem;
-    padding: 1px 6px;
-    margin: 2px 3px 2px 0;
-    border-radius: 4px;
-    background-color: var(--theme-border-subtle);
-    border: 1px solid var(--theme-border);
-    color: var(--theme-text-muted);
-  }}
-
-  .read-badge {{
-    font-size: 0.82rem;
-    font-weight: 550;
-    color: var(--theme-text-muted);
-    font-variant-numeric: tabular-nums;
-  }}
-
-  .hidden {{
-    display: none;
-  }}
-</style>
+<link rel="stylesheet" href="assets/search-ui.css?v=study-flow-5">
+<link rel="stylesheet" href="assets/reading-ui.css?v=study-flow-5">
+<script src="assets/study-state.js" defer></script>
+<script src="assets/roadmap-return.js?v=study-flow-5" defer></script>
+<script src="assets/reading-ui.js?v=study-flow-5" defer></script>
+<script src="assets/search-ui.js" defer></script>
 </head>
 <body>
-<div class="top-bar">
-  <div class="nav-back"><a href="INDEX.html">← Back to Master Index</a></div>
-  <button id="theme-btn" class="theme-toggle-btn" type="button" aria-label="Toggle color theme" title="Toggle dark/light mode"></button>
-</div>
-<h1>{TITLE} — master index</h1>
-<p class="sub">{N} chapters · {TIME} of reading · generated from enforced file
-metadata by <code>scripts/gen_master_index.py</code> — do not edit by hand
-(gate 14 regenerates it; run that script to refresh).</p>
-<div class="search-container">
-  <div class="search-box-wrapper">
-    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-    <input id="q" type="search" placeholder="Search {N} chapters by title, section, category, tags…"
-           autocomplete="off" autofocus>
-    <button id="clear-btn" class="clear-btn" type="button" title="Clear search">✕</button>
+<header class="site-header" role="banner">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="index.html">Developer Bible</a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger">
+      <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+      <div class="trigger">
+        <a class="page-link" href="index.html">Home</a>
+        <a class="page-link" href="INDEX.html">Library</a>
+        <a class="page-link" href="ROADMAP.html">Roadmap</a>
+        <a class="page-link" href="search.html">Search</a>
+      </div>
+    </nav>
   </div>
-  <div class="keyboard-hints">
-    <span><kbd>Esc</kbd> to clear</span>
-    <span><kbd>↑</kbd> <kbd>↓</kbd> to navigate</span>
-    <span><kbd>Enter</kbd> to open chapter</span>
-  </div>
-</div>
-<div class="chips-group"><div class="chips-label">Categories</div><div class="chips" id="cats"></div></div>
-<div class="chips-group"><div class="chips-label">Sections</div><div class="chips" id="secs"></div></div>
-<div class="chips-group"><div class="chips-label">Popular Tags</div><div class="chips" id="tags"></div></div>
-<p id="stats"></p>
-<div class="table-wrapper">
-<table>
-<thead><tr><th>Chapter</th><th>Section</th><th>Tags</th><th class="m">Read</th></tr></thead>
-<tbody id="rows"></tbody>
-</table>
-</div>
-<script>
-const DATA = {DATA};
-const TOP_TAGS = {TOP_TAGS};
-const $ = id => document.getElementById(id);
-const state = {{ q: '', cats: new Set(), secs: new Set(), tags: new Set() }};
-let selectedRowIndex = -1;
-let currentFilteredRows = [];
+</header>
 
-function chips(el, values, set) {{
-  el.innerHTML = '';
-  for (const v of values) {{
-    const b = document.createElement('button');
-    b.textContent = v;
-    b.onclick = () => {{ set.has(v) ? set.delete(v) : set.add(v);
-                        b.classList.toggle('on'); render(); syncUrl(); }};
-    el.appendChild(b);
-  }}
-}}
-
-function match(r) {{
-  if (state.cats.size && !state.cats.has(r.c)) return false;
-  if (state.secs.size && !state.secs.has(r.s)) return false;
-  if (state.tags.size && !r.g.some(t => state.tags.has(t))) return false;
-  if (state.q) {{
-    const hay = (r.t + ' ' + r.s + ' ' + r.c + ' ' + r.g.join(' ')).toLowerCase();
-    if (!hay.includes(state.q)) return false;
-  }}
-  return true;
-}}
-
-function fmt(m) {{ const h = Math.floor(m / 60);
-  return h ? `${{h}}h ${{m % 60}}m` : `${{m}}m`; }}
-
-function updateRowSelection() {{
-  const trs = $('rows').querySelectorAll('tr');
-  trs.forEach((tr, i) => {{
-    if (i === selectedRowIndex) {{
-      tr.classList.add('active-row');
-      tr.scrollIntoView({{ block: 'nearest', behavior: 'smooth' }});
-    }} else {{
-      tr.classList.remove('active-row');
-    }}
-  }});
-}}
-
-function render() {{
-  currentFilteredRows = DATA.filter(match);
-  selectedRowIndex = -1;
-  const total = currentFilteredRows.reduce((a, r) => a + r.m, 0);
-  $('stats').textContent =
-    `${{currentFilteredRows.length}} / ${{DATA.length}} chapters · ~${{fmt(total)}} of reading`;
-  $('rows').innerHTML = currentFilteredRows.map((r, i) =>
-    `<tr data-idx="${{i}}"><td><a class="chapter-title-link" href="${{r.p}}">${{r.t}}</a></td>` +
-    `<td>${{r.s}}</td>` +
-    `<td>${{r.g.map(tag => `<span class="tag-badge">${{tag}}</span>`).join('')}}</td>` +
-    `<td class="m"><span class="read-badge">${{fmt(r.m)}}</span></td></tr>`).join('');
-  $('clear-btn').style.display = state.q ? 'block' : 'none';
-}}
-
-$('q').oninput = e => {{
-  state.q = e.target.value.trim().toLowerCase();
-  render();
-  syncUrl();
-}};
-
-$('clear-btn').onclick = () => {{
-  $('q').value = '';
-  state.q = '';
-  render();
-  syncUrl();
-  $('q').focus();
-}};
-
-// Keyboard navigation
-document.addEventListener('keydown', e => {{
-  if (e.key === 'ArrowDown') {{
-    if (currentFilteredRows.length > 0) {{
-      e.preventDefault();
-      selectedRowIndex = Math.min(selectedRowIndex + 1, currentFilteredRows.length - 1);
-      updateRowSelection();
-    }}
-  }} else if (e.key === 'ArrowUp') {{
-    if (currentFilteredRows.length > 0) {{
-      e.preventDefault();
-      selectedRowIndex = Math.max(selectedRowIndex - 1, 0);
-      updateRowSelection();
-    }}
-  }} else if (e.key === 'Enter') {{
-    if (selectedRowIndex >= 0 && selectedRowIndex < currentFilteredRows.length) {{
-      e.preventDefault();
-      window.location.href = currentFilteredRows[selectedRowIndex].p;
-    }}
-  }} else if (e.key === 'Escape') {{
-    if (state.q || $('q').value) {{
-      e.preventDefault();
-      $('q').value = '';
-      state.q = '';
-      render();
-      syncUrl();
-    }}
-  }}
-}});
-
-chips($('cats'), {CATS}, state.cats);
-chips($('secs'), {SECS}, state.secs);
-chips($('tags'), TOP_TAGS, state.tags);
-
-// Deep links: ?q=&cat=&sec=&tag= restore state, every change syncs the URL.
-function syncUrl() {{
-  const p = new URLSearchParams();
-  if (state.q) p.set('q', state.q);
-  if (state.cats.size) p.set('cat', [...state.cats].join(','));
-  if (state.secs.size) p.set('sec', [...state.secs].join(','));
-  if (state.tags.size) p.set('tag', [...state.tags].join(','));
-  try {{ history.replaceState(null, '', p.toString() ? '?' + p : location.pathname); }}
-  catch (e) {{ /* file:// may block replaceState — filtering still works */ }}
-}}
-
-const params = new URLSearchParams(location.search);
-if (params.get('q')) {{ state.q = params.get('q').toLowerCase(); $('q').value = params.get('q'); }}
-for (const k of (params.get('cat') || '').split(',')) if (k) state.cats.add(k);
-for (const k of (params.get('sec') || '').split(',')) if (k) state.secs.add(k);
-for (const k of (params.get('tag') || '').split(',')) if (k) state.tags.add(k);
-for (const b of document.querySelectorAll('.chips button'))
-  if (state.cats.has(b.textContent) || state.secs.has(b.textContent) ||
-      state.tags.has(b.textContent)) b.classList.add('on');
-render();
-</script>
+<main class="search-main wrapper">
+  <p class="eyebrow">THE STUDY LIBRARY</p>
+  <h1>Search the library</h1>
+  <p class="search-intro">Find explanations, revision questions, and interview practice.</p>
+  <form id="search-form" role="search">
+    <label for="q">Topic or keyword</label>
+    <div class="query-row"><input type="search" id="q" placeholder="Try closures, APIs, or system design" autocomplete="off"><button type="button" id="clear-query">Clear search</button></div>
+    <div class="search-filters">
+      <label for="sec">Stack<select id="sec" aria-label="Stack"><option value="">All stacks</option></select></label>
+      <label for="material">Material<select id="material" aria-label="Material"><option value="">All material</option><option value="learn">Learn</option><option value="revision">Revision</option><option value="interview">Interview practice</option><option value="reference">Reference</option></select></label>
+      <details class="advanced-filters"><summary>More filters</summary><div><label for="cat">Category<select id="cat" aria-label="Category"><option value="">All categories</option></select></label><label for="tag">Tag<select id="tag" aria-label="Tag"><option value="">All tags</option></select></label></div></details>
+    </div>
+  </form>
+  <div id="selected-filters" class="selected-filters" aria-label="Selected filters"></div>
+  <div class="result-heading"><p id="result-count" role="status" aria-live="polite"></p><button type="button" data-clear-filters hidden>Clear filters</button></div>
+  <ol id="results" class="search-results"></ol>
+  <section id="empty-state" hidden><h2>No topics match your search</h2><p>Try a shorter topic name or clear the selected filters.</p><a href="INDEX.html">Browse the library</a></section>
+  <noscript><p>Search needs JavaScript. <a href="INDEX.html">Browse the full learning index</a>.</p></noscript>
+  <p class="search-note">Searches titles, stack, category and tags · {N} chapters · <a href="INDEX.html">Browse the library</a></p>
+</main>
+<script id="study-search-data" type="application/json">{DATA}</script>
 </body>
 </html>
 """
-
 
 def theme_src():
     """The theme script's `src`, read from its single owner in `_config.yml`.
@@ -610,25 +140,14 @@ def theme_src():
 
 
 def render(rows):
-    from collections import Counter
-    cats = sorted({r['c'] for r in rows if r['c']})
-    secs = sorted({r['s'] for r in rows if r['s']})
-    tag_n = Counter(t for r in rows for t in r['g'])
-    top = [t for t, n in tag_n.most_common() if n >= MIN_TAG_COUNT][:MAX_TAGS]
-    total = sum(r['m'] for r in rows)
-    # PAGE is written with doubled braces for readability; substitution is
-    # plain .replace (not str.format), so undouble before placeholders.
+    # Substitute only the owned placeholders; script data is escaped separately.
     page = PAGE.replace('{{', '{').replace('}}', '}')
     return (page
             .replace('{TITLE}', 'Software Developer Bible')
             .replace('{THEME_SRC}', theme_src())
             .replace('{N}', str(len(rows)))
-            .replace('{TIME}', human(total))
             .replace('{DATA}', json.dumps(rows, ensure_ascii=False,
-                                          separators=(',', ':')))
-            .replace('{TOP_TAGS}', json.dumps(top))
-            .replace('{CATS}', json.dumps(cats))
-            .replace('{SECS}', json.dumps(secs)))
+                                          separators=(',', ':')).replace('<', '\\u003c')))
 
 
 def corpus_digest():

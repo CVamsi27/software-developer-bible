@@ -85,3 +85,7 @@
   [data-read-aloud-active="true"] { scroll-behavior: auto; }
 }
 @media print { .read-aloud { display: none; } }
+/* Listening stays secondary to reading. */
+.read-aloud { margin-block-start: 0; }
+.read-aloud :is(button, select) { min-height: 44px; }
+.read-aloud [data-read], .read-aloud [data-pause] { background: var(--card-bg); border-color: var(--theme-border); color: var(--theme-text) !important; }

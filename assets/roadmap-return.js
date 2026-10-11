@@ -18,6 +18,6 @@
    target.searchParams.set('roadmapDate',c.date);target.searchParams.set('roadmapTask',c.task);return target.toString();
   }catch{return url;}
  }
- if(typeof module!=='undefined')module.exports={roadmapReturnUrl,chapterWithContext};
- else root.GermanyRoadmapReturn={roadmapReturnUrl,chapterWithContext};
+ if(typeof module!=='undefined')module.exports={roadmapReturnUrl,chapterWithContext,context};
+ else root.GermanyRoadmapReturn={roadmapReturnUrl,chapterWithContext,context};
 })(typeof window==='undefined'?globalThis:window);

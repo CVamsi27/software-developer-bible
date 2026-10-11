@@ -61,7 +61,7 @@ PERSONAL = 'personal'
 EXEMPT_TOP = {'80-lanes-abroad-full-stack', '81-lanes-indian-sde-faang',
               'lanes', 'projects', 'docs'}
 CONTENT_SKIP_NAMES = SKIP_NAMES | {'AGENTS.md', 'contributing.md',
-                                   'ROADMAP.md', 'search.md'}
+                                   'ROADMAP.md', 'search.md', 'design-qa.md'}
 
 CHEAT_SHEET_HEAD = re.compile(r'^##+ Cheat Sheet\s*$', re.M)
 

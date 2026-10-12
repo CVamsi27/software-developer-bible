@@ -1,6 +1,6 @@
 # Transactions & Replication - Database
 
-> **Study time:** ≈ 27 min of reading (5 files, ~5 min average).
+> **Study time:** ≈ 31 min of reading (5 files, ~6 min average).
 > **5 files.** The hard part — how Postgres handles concurrent access: ACID transactions and isolation levels, deadlocks, optimistic vs pessimistic locking, and replication.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../INDEX.md)
@@ -20,10 +20,10 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | ----- | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ------------- | ------------------ | ----------: |
-| 01 | [Transactions](20.4.3.01-transactions.md) | ACID, BEGIN/COMMIT, SAVEPOINT, isolation levels (read committed, repeatable read, serializable) | Essential | Foundational | 7 min |
-| 02 | [Deadlocks](20.4.3.02-deadlocks.md) | Wait cycles, detector versus timeout, lock ordering, blocker diagnosis, whole-transaction retry | Essential | Foundational | 5 min |
-| 03 | [Optimistic & Pessimistic Locking](20.4.3.03-optimistic-pessimistic-locking.md) | Version-based locking, row-level locking, advisory locks, SELECT FOR UPDATE | Important | Important | 6 min |
-| 04 | [Database Replication](20.4.3.04-database-replication.md) | Physical vs logical, acknowledgment milestones, replay freshness, fenced failover, lag | Important | Important | 7 min |
+| 01 | [Transactions](20.4.3.01-transactions.md) | ACID, BEGIN/COMMIT, SAVEPOINT, isolation levels (read committed, repeatable read, serializable) | Essential | Foundational | 8 min |
+| 02 | [Deadlocks](20.4.3.02-deadlocks.md) | Wait cycles, detector versus timeout, lock ordering, blocker diagnosis, whole-transaction retry | Essential | Foundational | 6 min |
+| 03 | [Optimistic & Pessimistic Locking](20.4.3.03-optimistic-pessimistic-locking.md) | Version-based locking, row-level locking, advisory locks, SELECT FOR UPDATE | Important | Important | 7 min |
+| 04 | [Database Replication](20.4.3.04-database-replication.md) | Physical vs logical, acknowledgment milestones, replay freshness, fenced failover, lag | Important | Important | 8 min |
 
 ---
 

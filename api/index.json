@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "ae5a294fb14d5069c6334f6365b0ad155104b3e2c9daca1482530eab321fb82b",
+ "corpus_digest": "c51d1785e3144c94ad650d2a21ff923d82211b91403d00e82726fc7143002ccf",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5999
+  "read_minutes": 6003
  },
  "chapters": [
   {
@@ -2548,7 +2548,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "20-backend/20.4-database/03-transactions-and-replication/20.4.3.02-deadlocks.html",
@@ -2558,7 +2558,7 @@
    "g": [
     "concept"
    ],
-   "m": 5
+   "m": 6
   },
   {
    "p": "20-backend/20.4-database/03-transactions-and-replication/20.4.3.03-optimistic-pessimistic-locking.html",
@@ -2568,7 +2568,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "20-backend/20.4-database/03-transactions-and-replication/20.4.3.04-database-replication.html",
@@ -2578,7 +2578,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "20-backend/20.4-database/03-transactions-and-replication/REVISION.html",

@@ -68,7 +68,7 @@ Source: [Database Replication](20.4.3.04-database-replication.md)
 
 **Q:** How does synchronous replication trade off write latency against durability?
 
-**A:** The configured synchronous set and synchronous_commit choose whether acknowledgment waits for standby write, durable flush or replay. Waiting adds latency and dependence on that set. Survival also requires failover to a copy containing the write and surviving storage; arbitrary replica promotion is not lossless.
+**A:** With a synchronous standby configured, `remote_write` waits for the standby filesystem write but not durable flush, so a standby OS crash can lose it; `on` waits for durable flush; `remote_apply` also waits for replay, making the commit query-visible there. Waiting adds latency and dependence on the selected set. Survival still requires failover to a copy containing the write and surviving storage; arbitrary replica promotion is not lossless.
 
 **Q:** A standby has caught up, but a Repeatable Read transaction established its snapshot before replay. Is its next read current?
 

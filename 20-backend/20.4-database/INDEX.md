@@ -1,6 +1,6 @@
 # Database — Index
 
-> **Study time:** ≈ 4 h 9 m of reading (29 files, ~9 min average).
+> **Study time:** ≈ 4 h 13 m of reading (29 files, ~9 min average).
 > **29 files** — Database fundamentals from PostgreSQL internals to indexing, transactions, MVCC, joins, locking, connection pooling, Prisma (plus the ORM/query-builder landscape), execution plans, SQL vs NoSQL, zero-downtime migrations, soft delete & tombstones, backups/PITR recovery, search infrastructure at scale, window functions, JSONB, replication, row-level security, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-29-blue)](../../INDEX.md)
@@ -73,10 +73,10 @@ Preserve transaction invariants and make isolation, lock and replication behavio
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Transactions](03-transactions-and-replication/20.4.3.01-transactions.md) | ACID, BEGIN/COMMIT, SAVEPOINT, isolation levels (read committed, repeatable read, serializable) | Essential | Foundational | 7 min |
-| 02 | [Deadlocks](03-transactions-and-replication/20.4.3.02-deadlocks.md) | Detection, prevention, timeout-based resolution, retry strategies, lock ordering | Essential | Foundational | 5 min |
-| 03 | [Optimistic & Pessimistic Locking](03-transactions-and-replication/20.4.3.03-optimistic-pessimistic-locking.md) | Version-based locking, row-level locking, advisory locks, SELECT FOR UPDATE | Important | Important | 6 min |
-| 04 | [Database Replication](03-transactions-and-replication/20.4.3.04-database-replication.md) | Streaming vs logical, read replicas, Patroni failover, replication lag, conflict resolution | Important | Important | 7 min |
+| 01 | [Transactions](03-transactions-and-replication/20.4.3.01-transactions.md) | ACID, BEGIN/COMMIT, SAVEPOINT, isolation levels (read committed, repeatable read, serializable) | Essential | Foundational | 8 min |
+| 02 | [Deadlocks](03-transactions-and-replication/20.4.3.02-deadlocks.md) | Detection, prevention, timeout-based resolution, retry strategies, lock ordering | Essential | Foundational | 6 min |
+| 03 | [Optimistic & Pessimistic Locking](03-transactions-and-replication/20.4.3.03-optimistic-pessimistic-locking.md) | Version-based locking, row-level locking, advisory locks, SELECT FOR UPDATE | Important | Important | 7 min |
+| 04 | [Database Replication](03-transactions-and-replication/20.4.3.04-database-replication.md) | Streaming vs logical, read replicas, Patroni failover, replication lag, conflict resolution | Important | Important | 8 min |
 
 ---
 

@@ -1,6 +1,6 @@
 # PostgreSQL Foundations - Database
 
-> **Study time:** ≈ 1 h 12 m of reading (7 files, ~10 min average).
+> **Study time:** ≈ 1 h 13 m of reading (7 files, ~10 min average).
 > **7 files.** How PostgreSQL works under the hood: architecture and WAL, normalization, MVCC, SQL vs NoSQL trade-offs, performance tuning, and row-level security. This foundation supports the later querying, transaction and operations chapters.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../INDEX.md)
@@ -15,19 +15,19 @@
 3. Read MVCC next: compare statement and transaction snapshots, then change an ordinary reader into a writer and explain the conflict.
 4. Choose a database from the operation's access, atomicity and freshness requirements. Separate data model from product guarantees.
 5. Diagnose performance from workload evidence and plans. Compare identical results before and after an access-path change.
-6. Apply RLS after roles and transactions are clear. Trace verified tenant context through one connection and test both old-row visibility and new-row checks.
+6. Apply RLS after roles and transactions are clear. Trace verified tenant context through one connection, test old-row visibility and new-row checks, then audit fail-open policies, bypass roles and alternate view/function paths.
 7. Use [revision](REVISION.md) to predict changed conditions, then continue to querying and transaction design before the [database interview bank](../05-operations-and-scaling/20.4.5.06-interview-questions.md).
 
 ## Files
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| :---: | ------------------------------------------------------------- | ------------------------------------------------------------------- | ------------- | ------------------ | --------: |
+| :---: | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ------------- | ------------------ | --------: |
 | 01 | [PostgreSQL](20.4.1.01-postgresql.md) | Architecture, WAL, constraints, MVCC, vacuum, configuration | Essential | Foundational | 11 min |
 | 02 | [Normalization](20.4.1.02-normalization.md) | 1NF, 2NF, 3NF, BCNF, denormalization trade-offs | Important | Important | 10 min |
 | 03 | [MVCC](20.4.1.03-mvcc.md) | Statement and transaction snapshots, own writes, conflicts, cleanup | Important | Important | 13 min |
 | 04 | [SQL vs NoSQL](20.4.1.04-nosql-vs-sql.md) | Workload fit, consistency, query shape, product guarantees | Essential | Foundational | 11 min |
 | 05 | [PostgreSQL Performance](20.4.1.05-postgresql-performance.md) | Workload diagnosis, plans, memory, vacuum, partitioning | Essential | Foundational | 11 min |
-| 06 | [Row-Level Security](20.4.1.06-row-level-security.md) | Policy composition, tenant context, roles, old/new row checks | Essential | Foundational | 11 min |
+| 06 | [Row-Level Security](20.4.1.06-row-level-security.md) | Policy composition, tenant context, fail-open conditions, bypass roles, old/new row checks | Essential | Foundational | 12 min |
 
 ---
 

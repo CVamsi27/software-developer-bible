@@ -170,6 +170,18 @@ Source: [PostgreSQL Row-Level Security (RLS)](20.4.1.06-row-level-security.md)
 
 **A:** Not by itself: applicable permissive policies combine with OR. Intersect grants with an appropriate restrictive boundary or design each grant to express the full intended condition, then verify inherited roles and every command.
 
+**Q:** Does enabling RLS guarantee that a missing tenant setting denies every row?
+
+**A:** No. The policy expression decides that. A predicate with `missing_switch OR tenant_matches` deliberately allows all rows when the switch is missing; test absent, empty and valid context as the actual runtime role.
+
+**Q:** Why can a view or function expose a different row set than a direct table query?
+
+**A:** A view normally evaluates base-table policies as its owner, while `security_invoker = true` uses the caller. A `SECURITY DEFINER` function runs with its owner's privileges; audit ownership, `EXECUTE` grants and a trusted `search_path`.
+
+**Q:** What concurrency risk appears when an RLS policy reads a separate permission table?
+
+**A:** A protected query can evaluate an older permission snapshot while a concurrent transaction changes authorization. Define how revocation synchronizes with in-flight operations; use appropriate locks or another explicit serialization boundary when stale authorization is unacceptable.
+
 ## Summary
 
 Use these prompts after the reading pass to recall PostgreSQL foundation mechanisms and their boundary conditions.

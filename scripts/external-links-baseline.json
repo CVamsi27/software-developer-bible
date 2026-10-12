@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-12",
- "url_count": 2576,
+ "url_count": 2578,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md",
@@ -7816,11 +7816,17 @@
   "https://www.postgresql.org/docs/current/sql-altertable.html": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.02-migration-strategies.md"
   ],
+  "https://www.postgresql.org/docs/current/sql-createfunction.html": [
+   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.06-row-level-security.md"
+  ],
   "https://www.postgresql.org/docs/current/sql-createindex.html": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.02-migration-strategies.md",
    "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.md"
   ],
   "https://www.postgresql.org/docs/current/sql-createpolicy.html": [
+   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.06-row-level-security.md"
+  ],
+  "https://www.postgresql.org/docs/current/sql-createview.html": [
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.06-row-level-security.md"
   ],
   "https://www.postgresql.org/docs/current/sql-insert.html": [

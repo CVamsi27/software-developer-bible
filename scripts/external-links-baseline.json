@@ -6215,7 +6215,7 @@
   "https://spec.openapis.org/oas/v3.1.0": [
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.05-swagger-openapi-nestjs.md"
   ],
-  "https://spec.openapis.org/oas/v3.1.1.html": [
+  "https://spec.openapis.org/oas/v3.2.1.html": [
    "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.05-openapi-swagger.md"
   ],
   "https://spring.academy/": [

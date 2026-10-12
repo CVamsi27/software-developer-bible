@@ -208,3 +208,11 @@ Updated the scheduler citation to Nest's current task-scheduling guide. The Bull
 Probed the current NestJS, BullMQ and Node.js references before refreshing the citation baseline. Regenerated read times, counts and search/API output; all 10 writers reach a fixed point. `bash scripts/verify.sh` passes all 30 gates (1,027 Markdown documents, 671 template-compliant teaching chapters, 10,959 links and 185 anchors without failures, 2,576 external URLs without baseline drift). The Ruby 3.4.11 production Jekyll build succeeds with a non-fatal Faraday retry-middleware notice. The full rendered-heading sweep and targeted checks for the three built pages pass. Optional Playwright browser suites could not run because `@playwright/test` is not installed in this checkout.
 
 This completes the direct review of this NestJS Quality & Operations tranche only. The 671-chapter organic-flow audit remains open; other resume-priority groups and the remaining study groups still need direct dispositions.
+
+## Editorial checkpoint — 12 October 2026 (OpenAPI current-version reconciliation)
+
+Re-read the framework-neutral REST OpenAPI chapter alongside its learning index, revision questions and the NestJS generator chapter. Replaced the stale 3.1.1 example with OpenAPI 3.2.1, which the official version list marks as latest on this checkpoint date. Added the practical compatibility boundary for `QUERY`, `additionalOperations` and per-item streaming schemas; a spec feature is useful only when validators, gateways, generators and consumers support it. Clarified that this chapter's current-version example is not a claim that Nest's native Standard Schema conversion emits 3.2.
+
+Added a reader-led mismatch example, aligned the existing revision drill and index summary, and probed the official 3.2.1 text and version list before refreshing the citation baseline. All 30 repository gates pass; the Ruby 3.4.11 production build succeeds with the existing non-fatal Faraday retry-middleware notice. Rendered heading checks and a targeted rendered-text check pass.
+
+This checkpoint covers the OpenAPI concept and its NestJS counterpart, not every chapter in the REST Design & Contract category. The 671-chapter human reading-flow audit remains open.

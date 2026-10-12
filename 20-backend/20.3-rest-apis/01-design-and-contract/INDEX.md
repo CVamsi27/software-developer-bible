@@ -20,7 +20,7 @@ Choose the interaction and client constraints first. Derive resource/HTTP semant
 | 02 | [REST Principles](20.3.1.02-rest-principles.md) | Stateless, uniform interface, constraints | Essential | Foundational | 6 min |
 | 03 | [Versioning](20.3.1.03-versioning.md) | URL vs header vs query versioning, deprecation policy | Essential | Foundational | 6 min |
 | 04 | [REST Maturity Model](20.3.1.04-rest-maturity-model.md) | Richardson L0-L3, HATEOAS | Important | Important | 4 min |
-| 05 | [OpenAPI / Swagger](20.3.1.05-openapi-swagger.md) | Spec-first design, codegen | Essential | Foundational | 7 min |
+| 05 | [OpenAPI / Swagger](20.3.1.05-openapi-swagger.md) | Contract schemas, spec/tool compatibility, client generation and runtime verification | Essential | Foundational | 7 min |
 | Revision | [Category recall](REVISION.md) | Recall the trace and changed conditions | Essential | Foundational | — |
 
 ---

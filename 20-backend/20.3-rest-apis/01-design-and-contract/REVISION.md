@@ -142,6 +142,10 @@ Source: [OpenAPI](20.3.1.05-openapi-swagger.md)
 
 **A:** The first requires both schemes; the second allows alternatives. The declaration still requires matching runtime verification and authorization.
 
+**Q:** What should a team check before adopting an OpenAPI 3.2 feature such as `QUERY` or streaming `itemSchema`?
+
+**A:** Confirm that validators, gateways, generators and deployed consumers support the feature end to end. A valid document cannot make an older tool interpret a new operation or streaming contract correctly.
+
 ## Summary
 
 Use these prompts after the reading pass to recall the design and contract mechanisms and boundary constraints.

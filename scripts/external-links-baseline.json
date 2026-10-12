@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-12",
- "url_count": 2566,
+ "url_count": 2567,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md",
@@ -7904,6 +7904,9 @@
   ],
   "https://www.prisma.io/docs/orm/v7/prisma-client/client-extensions": [
    "20-backend/20.4-database/04-orm-and-access/20.4.4.02-prisma-advanced.md"
+  ],
+  "https://www.prisma.io/docs/orm/v7/prisma-client/queries/aggregation-grouping-summarizing": [
+   "20-backend/20.4-database/04-orm-and-access/20.4.4.03-orm-query-builder-landscape.md"
   ],
   "https://www.prisma.io/docs/orm/v7/prisma-client/queries/transactions": [
    "20-backend/20.4-database/04-orm-and-access/20.4.4.01-prisma.md",

@@ -44,7 +44,7 @@ Source: [Prisma Advanced](20.4.4.02-prisma-advanced.md)
 
 **Q:** How does a duplicate outbox event prevent a second stock reservation in the example?
 
-**A:** The stable event ID has a unique constraint. Its insertion failure aborts the transaction, rolling back that attempt's stock decrement. Returning a prior result also requires verifying ownership and matching operation parameters.
+**A:** The event uses the schema's required `tenantId`, `aggregateId`, `eventType` and `payload` fields, with a stable operation ID as its unique event ID. A duplicate-ID failure aborts the transaction and rolls back that attempt's stock decrement. Returning a prior result also requires verifying ownership and matching operation parameters.
 
 **Q:** Why pass a transaction client into a helper?
 
@@ -64,7 +64,7 @@ Source: [ORM & Query Builder Landscape](20.4.4.03-orm-query-builder-landscape.md
 
 **Q:** What makes two access-layer benchmarks comparable?
 
-**A:** They must compute the same relational result with equivalent filtering, grouping, ordering, limits, projections and deployment constraints. Fetching whole relation graphs to aggregate in JavaScript is a different workload.
+**A:** They must compute the same relational result with equivalent filtering, grouping, ordering, limits, projections and deployment constraints. Include round trips: Prisma 7 `groupBy` returns group keys and aggregates, so author names require a second query; tagged SQL can return the joined report in one statement. Fetching whole relation graphs to aggregate in JavaScript is a different workload.
 
 **Q:** Why can a repository interface fail to preserve atomicity during a tool swap?
 

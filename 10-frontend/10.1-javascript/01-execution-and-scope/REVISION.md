@@ -100,7 +100,7 @@ Source: [Lexical Environment](10.1.1.05-lexical-environment.md)
 
 **Q:** What information does an Environment Record hold about variables?
 
-**A:** It describes the names in one scope, whether their variables are ready to read, and whether their values can be reassigned. It also links to the surrounding scope. This is information described by the language rules, not an ordinary object that application code can access.
+**A:** A Declarative Environment Record represents names as bindings and models initialization and mutability where required; its bindings include block declarations and function parameters. An Object Environment Record resolves eligible names through object properties. Function and Module records add call state and import bindings; a Global record combines declarative and object-backed names. Each record has an outer reference, `null` at the global boundary. These are specification structures, not ordinary objects application code can access.
 
 **Q:** Why does reading an inner `let` variable before its declaration not return the outer variable's value?
 

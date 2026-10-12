@@ -182,7 +182,7 @@ The reader requested one complete pass on 10 October, rather than another partia
 
 ### Final completion record — 12 October 2026
 
-The 1,026-file Markdown inventory has a current hash-matched disposition for every document. The final ledger records 573 revised, 453 reviewed and zero pending files. The 671 numbered teaching chapters, revision companions, interview banks, indexes, personal records and operational/historical documents were reviewed according to their genre. A review disposition does not imply that every external integration was executed. Exact verification and remaining integration limits are recorded in [the precision progress report](../../2026-10-10-senior-precision-progress.md) and [validation record](../../2026-10-10-senior-precision-validation.json). Source commit and push do not deploy the production site.
+The 1,026-file Markdown inventory has a current hash-matched disposition for every document. The final ledger records 576 revised, 450 reviewed and zero pending files. The 671 numbered teaching chapters, revision companions, interview banks, indexes, personal records and operational/historical documents were reviewed according to their genre. A review disposition does not imply that every external integration was executed. Exact verification and remaining integration limits are recorded in [the precision progress report](../../2026-10-10-senior-precision-progress.md) and [validation record](../../2026-10-10-senior-precision-validation.json). Source commit and push do not deploy the production site.
 
 ### Completion criteria
 

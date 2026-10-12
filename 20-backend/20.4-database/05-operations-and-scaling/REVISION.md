@@ -106,6 +106,10 @@ Source: [Backups, PITR & Recovery](20.4.5.04-backups-pitr-recovery.md)
 
 **A:** It may require an older missing WAL segment or inaccessible key/extension. Recovery needs a continuous applicable chain and environment; recent success does not repair a historical gap. A sixty-second archive_timeout does not prove archive durability or RPO.
 
+**Q:** Why can PostgreSQL 18 not restore an incremental `pg_basebackup` by itself, and what must the drill validate?
+
+**A:** The incremental depends on earlier backups. Retain the required chain and manifests, combine backups from oldest to newest, and use `pg_verifybackup` to check integrity. Then replay the required WAL and validate a reachable target in a restore drill; `pg_combinebackup` alone does not prove the files are intact or recoverable.
+
 ## Search Infrastructure at Scale
 
 Source: [Search Infrastructure at Scale](20.4.5.05-search-infrastructure-at-scale.md)

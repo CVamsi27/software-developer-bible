@@ -244,4 +244,12 @@ Verified the date-sensitive release and Prisma 7 generator, client, transaction,
 
 The repository verification suite passed all 30 gates at this checkpoint (1,027 Markdown documents, 671 teaching chapters, 10,960 internal links, 185 anchors, 2,567 baseline citations and all ten writers at a fixed point). The standalone link scan passed. The production Jekyll build, full rendered-heading check and targeted rendered ORM content checks passed.
 
+## Editorial checkpoint — 12 October 2026 (Operations & Scaling)
+
+Read all five Operations & Scaling chapters with the category flow, revision companion, interview bank and current Prisma/PostgreSQL/Kafka references. Added a concrete opening problem to each chapter, corrected the Prisma 6.19 migration/pool claims for the pinned Prisma 7.10.0 adapter contract, and moved distinct operational controls beside the mechanisms they govern. Removed repeated end-of-chapter mistake and best-practice lists after preserving their useful failure conditions in the explanatory flow. The category index now places revision before interview practice.
+
+Updated PostgreSQL references to version 18 and Kafka references to 4.3. Added PostgreSQL 18 incremental-backup dependencies, chain ordering, integrity checking with `pg_verifybackup`, and the requirement for a complete restore drill; added a matching revision prompt. The data-recovery claim was checked against the official PostgreSQL 18 `pg_basebackup`, `pg_combinebackup`, `pg_verifybackup` and continuous-archiving documentation. Prisma 7.10.0 development/deployment commands were checked against the official v7 migration workflow. The Kafka 4.3 design and topic-configuration links were probed.
+
+The repository's 30 verification gates passed: 1,027 Markdown files, 671 study chapters, 10,961 internal links, 185 anchors, zero broken/stale links, 2,569 baseline citation URLs and all metadata writers at a fixed point. A production Jekyll build passed with the repository-pinned Ruby 3.4.11 and Bundler 2.5.11. A rendered-page check confirmed each chapter has one H1, its concrete opening precedes Definition, and the category index renders revision before interview practice. The build emitted only the existing non-fatal Faraday retry-middleware notice.
+
 This directly reviews the ORM & Access category; database operations and scaling and the global 671-chapter organic-flow audit remain open.

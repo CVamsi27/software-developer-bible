@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "1d4ed43d62598d18525f629d7611299ae5ff293ed409078274f03a5d24cbb052",
+ "corpus_digest": "feae9e328bc693d4de9f68ef94cdb864d814b608cb876a3ae31cbd2db2014df2",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 6005
+  "read_minutes": 6003
  },
  "chapters": [
   {
@@ -2648,7 +2648,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 9
   },
   {
    "p": "20-backend/20.4-database/05-operations-and-scaling/20.4.5.03-soft-delete-and-tombstones.html",
@@ -2662,7 +2662,7 @@
     "soft-delete",
     "tombstone"
    ],
-   "m": 12
+   "m": 11
   },
   {
    "p": "20-backend/20.4-database/05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.html",

@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-12",
- "url_count": 2567,
+ "url_count": 2569,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md",
@@ -3745,16 +3745,14 @@
   "https://kafka.apache.org/35/getting-started/upgrade/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.md"
   ],
-  "https://kafka.apache.org/41/configuration/topic-configs/": [
-   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.03-soft-delete-and-tombstones.md"
-  ],
-  "https://kafka.apache.org/41/design/design/": [
-   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.03-soft-delete-and-tombstones.md"
-  ],
   "https://kafka.apache.org/42/javadoc/org/apache/kafka/clients/consumer/KafkaConsumer.html": [
    "70-interview-toolkit/70.3-cheatsheets/70.3.05-system-design-cheat-sheet.md"
   ],
+  "https://kafka.apache.org/43/configuration/topic-configs/": [
+   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.03-soft-delete-and-tombstones.md"
+  ],
   "https://kafka.apache.org/43/design/design/": [
+   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.03-soft-delete-and-tombstones.md",
    "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.02-data-pipelines.md"
   ],
   "https://kafka.apache.org/43/design/design/#transactions": [
@@ -7573,39 +7571,45 @@
   "https://www.pinecone.io/learn/": [
    "20-backend/20.12-ai-engineering/20.12.03-retrieval-quality-hybrid-search-reranking.md"
   ],
-  "https://www.postgresql.org/docs/16/app-pgbasebackup.html": [
-   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md"
-  ],
-  "https://www.postgresql.org/docs/16/app-pgdump.html": [
-   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md"
-  ],
-  "https://www.postgresql.org/docs/16/app-pgrestore.html": [
-   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md"
-  ],
-  "https://www.postgresql.org/docs/16/continuous-archiving.html": [
-   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md"
-  ],
-  "https://www.postgresql.org/docs/16/monitoring-stats.html#MONITORING-PG-STAT-ARCHIVER-VIEW": [
-   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md"
-  ],
-  "https://www.postgresql.org/docs/16/runtime-config-wal.html#RUNTIME-CONFIG-WAL-RECOVERY-TARGET": [
-   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md"
-  ],
-  "https://www.postgresql.org/docs/16/textsearch-controls.html": [
-   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.05-search-infrastructure-at-scale.md"
-  ],
-  "https://www.postgresql.org/docs/16/textsearch-intro.html": [
-   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.05-search-infrastructure-at-scale.md"
-  ],
   "https://www.postgresql.org/docs/17/release-17.html": [
    "20-backend/20.4-database/02-querying-and-optimization/20.4.2.05-jsonb.md"
+  ],
+  "https://www.postgresql.org/docs/18/app-pgbasebackup.html": [
+   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md"
+  ],
+  "https://www.postgresql.org/docs/18/app-pgcombinebackup.html": [
+   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md"
+  ],
+  "https://www.postgresql.org/docs/18/app-pgdump.html": [
+   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md"
+  ],
+  "https://www.postgresql.org/docs/18/app-pgrestore.html": [
+   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md"
+  ],
+  "https://www.postgresql.org/docs/18/app-pgverifybackup.html": [
+   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md"
+  ],
+  "https://www.postgresql.org/docs/18/continuous-archiving.html": [
+   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md"
   ],
   "https://www.postgresql.org/docs/18/functions-matching.html": [
    "20-backend/20.5-security/02-attacks-and-defense/20.5.2.03-sql-injection.md",
    "20-backend/20.5-security/02-attacks-and-defense/REVISION.md"
   ],
+  "https://www.postgresql.org/docs/18/monitoring-stats.html#MONITORING-PG-STAT-ARCHIVER-VIEW": [
+   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md"
+  ],
   "https://www.postgresql.org/docs/18/release-18.html": [
    "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md"
+  ],
+  "https://www.postgresql.org/docs/18/runtime-config-wal.html#RUNTIME-CONFIG-WAL-RECOVERY-TARGET": [
+   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md"
+  ],
+  "https://www.postgresql.org/docs/18/textsearch-controls.html": [
+   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.05-search-infrastructure-at-scale.md"
+  ],
+  "https://www.postgresql.org/docs/18/textsearch-intro.html": [
+   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.05-search-infrastructure-at-scale.md"
   ],
   "https://www.postgresql.org/docs/current/app-pgbasebackup.html": [
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.04-database-replication.md"
@@ -7921,6 +7925,9 @@
   ],
   "https://www.prisma.io/docs/orm/v7/prisma-client/using-raw-sql/typedsql": [
    "20-backend/20.5-security/02-attacks-and-defense/REVISION.md"
+  ],
+  "https://www.prisma.io/docs/orm/v7/prisma-migrate/workflows/development-and-production": [
+   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.02-migration-strategies.md"
   ],
   "https://www.prisma.io/docs/orm/v7/prisma-schema/overview/generators": [
    "20-backend/20.4-database/04-orm-and-access/20.4.4.01-prisma.md"

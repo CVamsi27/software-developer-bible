@@ -1,6 +1,6 @@
 # Modern React — React
 
-> **Study time:** ≈ 54 min of reading (4 files, ~14 min average).
+> **Study time:** ≈ 56 min of reading (4 files, ~14 min average).
 > **4 files.** React 18/19 scheduling and Actions, native Web Components interop, and React Router v8 modes with data loading, mutations, errors and revalidation.
 
 [![Files](https://img.shields.io/badge/files-4-blue)](#files)
@@ -13,7 +13,7 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Modern Hooks (React 18/19)](10.3.4.01-modern-hooks-react18-19.md) | useTransition, useDeferredValue, useOptimistic, use(promise), ref-as-prop, Form actions | Important | Specialized | 18 min |
+| 01 | [Modern Hooks (React 18/19)](10.3.4.01-modern-hooks-react18-19.md) | useTransition, useDeferredValue, useOptimistic, use(promise), ref-as-prop, Form actions | Important | Specialized | 20 min |
 | 02 | [Web Components](10.3.4.02-web-components.md) | Custom Elements, Shadow DOM, HTML Templates, Web Components vs React | Important | Specialized | 12 min |
 | 03 | [React Router](10.3.4.03-react-router.md) | v8 modes, nested routes + Outlet, loaders/actions, promise data + Await, authorization boundaries, revalidation, relative routing | Essential | Foundational | 20 min |
 

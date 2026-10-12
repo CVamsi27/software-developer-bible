@@ -1,6 +1,6 @@
 # Rendering Fundamentals — Next.js
 
-> **Study time:** ≈ 31 min of reading (5 files, ~6 min average).
+> **Study time:** ≈ 47 min of reading (5 files, ~9 min average).
 > **5 files.** Decide when output is produced and reused, then follow one route from its URL and server data to the small client controls that need hydration.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#files)
@@ -13,10 +13,10 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [SSR / CSR / SSG / ISR](10.4.1.01-ssr-csr-ssg-isr.md) | Separate execution location, output timing and cache policy; distinguish hydration from CSR | Important | Specialized | 5 min |
-| 02 | [App Router](10.4.1.02-app-router.md) | Map URL segments to pages, persistent layouts, and loading or failure boundaries | Important | Important | 9 min |
-| 03 | [Server Components](10.4.1.03-server-components.md) | Trace authorized server reads into the RSC payload and safe client props | Important | Important | 7 min |
-| 04 | [Client Components](10.4.1.04-client-components.md) | Start hydration at interaction, keep browser dependencies narrow, and validate writes on the server | Important | Specialized | 7 min |
+| 01 | [SSR / CSR / SSG / ISR](10.4.1.01-ssr-csr-ssg-isr.md) | Separate execution location, output timing and cache policy; distinguish hydration from CSR | Important | Specialized | 10 min |
+| 02 | [App Router](10.4.1.02-app-router.md) | Map URL segments to pages, persistent layouts, and loading or failure boundaries | Important | Important | 12 min |
+| 03 | [Server Components](10.4.1.03-server-components.md) | Trace authorized server reads into the RSC payload and safe client props | Important | Important | 10 min |
+| 04 | [Client Components](10.4.1.04-client-components.md) | Start hydration at interaction, keep browser dependencies narrow, and validate writes on the server | Important | Specialized | 12 min |
 
 ---
 

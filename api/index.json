@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "62aec839cd9b6025285b61541dc48b020cd5e0df2e70537071edae968ec6ceab",
+ "corpus_digest": "6a1ff330da6072f7ed04279cff82bc89306a264bf0781ea9f7a0587835cbeaa8",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 6000
+  "read_minutes": 5999
  },
  "chapters": [
   {
@@ -2077,7 +2077,7 @@
    "g": [
     "concept"
    ],
-   "m": 15
+   "m": 13
   },
   {
    "p": "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.04-scheduling-background-jobs.html",
@@ -2107,7 +2107,7 @@
    "g": [
     "revision"
    ],
-   "m": 3
+   "m": 4
   },
   {
    "p": "20-backend/20.2-nestjs/05-advanced-and-interview/20.2.5.01-custom-decorators.html",

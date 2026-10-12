@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-12",
- "url_count": 2575,
+ "url_count": 2576,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md",
@@ -1650,6 +1650,9 @@
   "https://docs.bullmq.io/guide/jobs/job-ids": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.07-transactional-email-and-notifications.md"
   ],
+  "https://docs.bullmq.io/guide/jobs/repeatable": [
+   "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.04-scheduling-background-jobs.md"
+  ],
   "https://docs.bullmq.io/guide/jobs/stalled": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.21-workflow-engine.md"
   ],
@@ -1982,6 +1985,9 @@
   "https://docs.nestjs.com/": [
    "20-backend/20.2-nestjs/05-advanced-and-interview/20.2.5.02-interview-questions.md"
   ],
+  "https://docs.nestjs.com/application/task-scheduling": [
+   "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.04-scheduling-background-jobs.md"
+  ],
   "https://docs.nestjs.com/controllers": [
    "20-backend/20.2-nestjs/01-core-architecture/20.2.1.02-controllers.md"
   ],
@@ -2134,9 +2140,6 @@
   ],
   "https://docs.nestjs.com/techniques/streaming-files": [
    "20-backend/20.2-nestjs/01-core-architecture/20.2.1.02-controllers.md"
-  ],
-  "https://docs.nestjs.com/techniques/task-scheduling": [
-   "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.04-scheduling-background-jobs.md"
   ],
   "https://docs.nestjs.com/techniques/validation": [
    "20-backend/20.2-nestjs/01-core-architecture/20.2.1.02-controllers.md",

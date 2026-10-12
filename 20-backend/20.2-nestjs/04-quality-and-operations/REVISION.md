@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-NestJS-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
 
@@ -70,6 +70,10 @@ Source: [Lifecycle Hooks & Graceful Shutdown](20.2.4.03-lifecycle-hooks-graceful
 
 **A:** `onModuleInit` supports initialization after module dependencies are available. `onModuleDestroy` and `beforeApplicationShutdown` provide shutdown phases. `enableShutdownHooks` connects them to process signals; define resource ownership and order deliberately.
 
+**Q:** Does the order of modules in `imports` serialize every provider's startup hook?
+
+**A:** No. Nest awaits module lifecycle work in module-graph order, but provider hooks within a module are not a readiness dependency. Model the dependency explicitly and await it before accepting traffic.
+
 **Q:** Why must the application remain correct if graceful shutdown cannot run?
 
 **A:** SIGKILL, out-of-memory failures, or a node crash can prevent cleanup. Idempotent consumers tolerate repeated work, and the transactional outbox preserves pending events with database updates. Graceful shutdown reduces disruption but does not replace those guarantees.
@@ -90,6 +94,10 @@ Source: [Scheduling & Background Jobs](20.2.4.04-scheduling-background-jobs.md)
 
 **A:** Retries with backoff delay repeated attempts. Dead-letter handling isolates exhausted work, and ownership timeouts allow another worker to recover it. Under at-least-once delivery, the same job may run again.
 
+**Q:** Which API should new BullMQ v6 code use for recurring jobs?
+
+**A:** Use `queue.upsertJobScheduler` with a stable scheduler ID. The `Queue.add({ repeat })` and legacy repeat-management APIs were deprecated in v5.16 and removed in v6; plan the documented migration before upgrading.
+
 ## Swagger & OpenAPI in NestJS
 
 Source: [Swagger & OpenAPI in NestJS](20.2.4.05-swagger-openapi-nestjs.md)
@@ -97,6 +105,10 @@ Source: [Swagger & OpenAPI in NestJS](20.2.4.05-swagger-openapi-nestjs.md)
 **Q:** How do decorators support generating an OpenAPI document?
 
 **A:** `@ApiProperty` and `@ApiOperation` describe DTOs and handlers. A generator reads this metadata to produce OpenAPI. Generation reduces duplicated documentation but does not prove the metadata matches runtime behavior.
+
+**Q:** How can Standard Schema feed both generated documentation and request validation?
+
+**A:** Attach the schema through the route parameter decorator so `@nestjs/swagger` can describe it; register the matching Standard Schema validation pipe to enforce it. For transformations, document the request's input shape and the response's output shape.
 
 **Q:** How can one DTO declaration support both validation and documentation?
 

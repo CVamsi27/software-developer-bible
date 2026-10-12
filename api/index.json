@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "feae9e328bc693d4de9f68ef94cdb864d814b608cb876a3ae31cbd2db2014df2",
+ "corpus_digest": "d667f852799803d9e890ed29c7084f3924e653a47567178ed929d4a036c76fcd",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 6003
+  "read_minutes": 5997
  },
  "chapters": [
   {
@@ -5357,7 +5357,7 @@
     "concept",
     "reference"
    ],
-   "m": 7
+   "m": 6
   },
   {
    "p": "40-platform/40.4-observability/01-pillars/40.4.1.03-tracing.html",
@@ -5368,7 +5368,7 @@
     "concept",
     "reference"
    ],
-   "m": 7
+   "m": 6
   },
   {
    "p": "40-platform/40.4-observability/01-pillars/REVISION.html",
@@ -5390,7 +5390,7 @@
     "concept",
     "reference"
    ],
-   "m": 7
+   "m": 6
   },
   {
    "p": "40-platform/40.4-observability/02-errors-and-health/40.4.2.02-health-checks.html",
@@ -5424,7 +5424,7 @@
     "guide",
     "reference"
    ],
-   "m": 9
+   "m": 8
   },
   {
    "p": "40-platform/40.4-observability/03-sre-targets/40.4.3.02-alerting.html",
@@ -5474,7 +5474,7 @@
     "profiling",
     "pyroscope"
    ],
-   "m": 9
+   "m": 8
   },
   {
    "p": "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.03-ebpf-observability.html",
@@ -5487,7 +5487,7 @@
     "kernel",
     "network-observability"
    ],
-   "m": 10
+   "m": 9
   },
   {
    "p": "40-platform/40.4-observability/04-advanced-telemetry/REVISION.html",

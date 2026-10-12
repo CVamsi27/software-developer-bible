@@ -1,6 +1,6 @@
 # Observability — Index
 
-> **Study time:** ≈ 1 h 36 m of reading (15 files, ~6 min average).
+> **Study time:** ≈ 1 h 30 m of reading (15 files, ~6 min average).
 > **15 files** — Observability fundamentals from logging and monitoring to distributed tracing, OpenTelemetry, continuous profiling, eBPF, error tracking, health checks, SLI/SLO/SLA, alerting, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-15-blue)](../../INDEX.md)
@@ -32,8 +32,8 @@ These three signals answer different investigation questions. Profiles add sampl
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
 | 01 | [Logging](01-pillars/40.4.1.01-logging.md) | Structured logging, log levels, centralized logging, ELK stack, log retention | "What happened at time T?" | Important | Important | 6 min |
-| 02 | [Monitoring](01-pillars/40.4.1.02-monitoring.md) | Metrics, dashboards, Prometheus, Grafana, SLIs | "How is the system performing?" | Important | Important | 7 min |
-| 03 | [Tracing](01-pillars/40.4.1.03-tracing.md) | Distributed tracing, spans, OpenTelemetry, Jaeger | "Where did the request spend time?" | Important | Important | 7 min |
+| 02 | [Monitoring](01-pillars/40.4.1.02-monitoring.md) | Metrics, dashboards, Prometheus, Grafana, SLIs | "How is the system performing?" | Important | Important | 6 min |
+| 03 | [Tracing](01-pillars/40.4.1.03-tracing.md) | Distributed tracing, spans, OpenTelemetry, Jaeger | "Where did the request spend time?" | Important | Important | 6 min |
 
 ---
 
@@ -41,7 +41,7 @@ These three signals answer different investigation questions. Profiles add sampl
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 04 | [Error Tracking](02-errors-and-health/40.4.2.01-error-tracking.md) | Error aggregation (Sentry), source maps, alerting, release tracking | Important | Important | 7 min |
+| 04 | [Error Tracking](02-errors-and-health/40.4.2.01-error-tracking.md) | Error aggregation (Sentry), source maps, alerting, release tracking | Important | Important | 6 min |
 | 05 | [Health Checks](02-errors-and-health/40.4.2.02-health-checks.md) | Liveness/readiness probes, health endpoints, dependency checks | Important | Important | 7 min |
 
 ---
@@ -52,7 +52,7 @@ Define the eligible event, good outcome, target and window before writing alert 
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 06 | [SLI / SLO / SLA](03-sre-targets/40.4.3.01-sli-slo-sla.md) | Reliability targets, error budgets, multi-window burn rate, SLO-driven alerting | Important | Important | 9 min |
+| 06 | [SLI / SLO / SLA](03-sre-targets/40.4.3.01-sli-slo-sla.md) | Reliability targets, error budgets, multi-window burn rate, SLO-driven alerting | Important | Important | 8 min |
 | 07 | [Alerting](03-sre-targets/40.4.3.02-alerting.md) | Alerting principles, PagerDuty, Alertmanager, runbooks, what to alert on | Important | Important | 7 min |
 
 ---
@@ -64,8 +64,8 @@ Follow the instrumentation-to-collection path, then select runtime or kernel pro
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 08 | [OpenTelemetry](04-advanced-telemetry/40.4.4.01-opentelemetry.md) | Vendor-neutral traces + metrics + logs, OTLP, W3C Trace Context, head/tail sampling, baggage, collector pipeline | Important | Important | 9 min |
-| 09 | [Continuous Profiling](04-advanced-telemetry/40.4.4.02-continuous-profiling.md) | Always-on CPU/heap/allocation sampling, Pyroscope/Parca, flamegraph diffing, span profiles | Important | Important | 9 min |
-| 10 | [eBPF Observability](04-advanced-telemetry/40.4.4.03-ebpf-observability.md) | Kernel programs + verifier + maps, Hubble/Cilium flows, Pixie auto-telemetry, Falco/Tetragon overlap | Important | Specialized | 10 min |
+| 09 | [Continuous Profiling](04-advanced-telemetry/40.4.4.02-continuous-profiling.md) | Always-on CPU/heap/allocation sampling, Pyroscope/Parca, flamegraph diffing, span profiles | Important | Important | 8 min |
+| 10 | [eBPF Observability](04-advanced-telemetry/40.4.4.03-ebpf-observability.md) | Kernel programs + verifier + maps, Hubble/Cilium flows, Pixie auto-telemetry, Falco/Tetragon overlap | Important | Specialized | 9 min |
 
 ---
 

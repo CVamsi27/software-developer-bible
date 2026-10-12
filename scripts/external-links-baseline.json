@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-12",
- "url_count": 2569,
+ "url_count": 2572,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md",
@@ -1951,6 +1951,9 @@
   ],
   "https://docs.kernel.org/filesystems/overlayfs.html": [
    "40-platform/40.1-docker/40.1.07-container-runtime-internals-namespaces-cgroups.md"
+  ],
+  "https://docs.kernel.org/userspace-api/ebpf/syscall.html": [
+   "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.03-ebpf-observability.md"
   ],
   "https://docs.konghq.com/": [
    "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.02-api-gateway.md"
@@ -5219,6 +5222,9 @@
   "https://opensource.zalando.com/restful-api-guidelines/#rate-limiting": [
    "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.01-rate-limiting.md"
   ],
+  "https://opentelemetry.io/blog/2026/profiles-alpha/": [
+   "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.01-opentelemetry.md"
+  ],
   "https://opentelemetry.io/docs/": [
    "40-platform/40.4-observability/01-pillars/40.4.1.03-tracing.md",
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.01-opentelemetry.md",
@@ -5229,10 +5235,6 @@
   ],
   "https://opentelemetry.io/docs/collector/deploy/other/no-collector/": [
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.01-opentelemetry.md"
-  ],
-  "https://opentelemetry.io/docs/concepts/signals/profiles/": [
-   "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.01-opentelemetry.md",
-   "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.02-continuous-profiling.md"
   ],
   "https://opentelemetry.io/docs/languages/js/sampling/": [
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.01-opentelemetry.md"
@@ -5248,8 +5250,17 @@
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.md",
    "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
   ],
+  "https://opentelemetry.io/docs/specs/otel/profiles/": [
+   "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.01-opentelemetry.md",
+   "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.02-continuous-profiling.md",
+   "40-platform/40.4-observability/04-advanced-telemetry/REVISION.md"
+  ],
   "https://opentelemetry.io/docs/specs/semconv/": [
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.01-opentelemetry.md"
+  ],
+  "https://opentelemetry.io/docs/specs/status/": [
+   "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.01-opentelemetry.md",
+   "40-platform/40.4-observability/04-advanced-telemetry/REVISION.md"
   ],
   "https://orm.drizzle.team/docs/kit-overview": [
    "20-backend/20.4-database/04-orm-and-access/20.4.4.03-orm-query-builder-landscape.md"

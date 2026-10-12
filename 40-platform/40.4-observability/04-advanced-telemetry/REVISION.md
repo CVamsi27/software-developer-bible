@@ -18,6 +18,10 @@ Source: [OpenTelemetry (OTel)](40.4.4.01-opentelemetry.md)
 
 **A:** It standardizes instrumentation, context, and telemetry collection/export. It is not itself the storage/query backend that decides retention, dashboards, or alert policy.
 
+**Q:** What maturity boundary should you check before adopting OpenTelemetry Profiles?
+
+**A:** The Profiles specification is in public Alpha and its protocol remains in development; SDK, Collector and backend support varies. Verify the exact components you plan to deploy; do not infer production support from the general OpenTelemetry name. See the [component status](https://opentelemetry.io/docs/specs/status/) and [Profiles specification](https://opentelemetry.io/docs/specs/otel/profiles/).
+
 **Q:** Why batch and bound telemetry queues?
 
 **A:** Exporters must not create unlimited memory growth or block critical application work when the backend slows down. Queue limits, drops, and retry policy need observability too.

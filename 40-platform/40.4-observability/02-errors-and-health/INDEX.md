@@ -1,6 +1,6 @@
 # Errors & Health
 
-> **Study time:** ≈ 16 min of reading (3 files, ~5 min average).
+> **Study time:** ≈ 15 min of reading (3 files, ~5 min average).
 > **3 files.** Runtime quality signals: aggregated error tracking (Sentry-style) and health checks that let orchestrators and load balancers trust your process.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](#file-index)
@@ -21,7 +21,7 @@ Read error capture/grouping/privacy before health-control semantics and bounded 
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Error Tracking](40.4.2.01-error-tracking.md) | Error aggregation (Sentry), source maps, grouping/dedup, release tracking, alerting on new issues | Important | Important | 7 min |
+| 01 | [Error Tracking](40.4.2.01-error-tracking.md) | Error aggregation (Sentry), source maps, grouping/dedup, release tracking, alerting on new issues | Important | Important | 6 min |
 | 02 | [Health Checks](40.4.2.02-health-checks.md) | Liveness/readiness semantics, health endpoint design, dependency checks, graceful degradation | Important | Important | 7 min |
 
 ---

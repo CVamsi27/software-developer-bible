@@ -1,7 +1,7 @@
 # Quality & Operations - NestJS
 
-> **Study time:** ≈ 1 h 19 m of reading (6 files, ~13 min average).
-> **6 files.** Production hygiene: configuration management with env validation, the testing story (unit, integration, e2e) built on `TestingModule`, lifecycle hooks and graceful shutdown, scheduling and background jobs, and OpenAPI/Swagger documentation with contract checks.
+> **Study time:** ≈ 1 h 11 m of reading (6 files, ~12 min average).
+> **6 files.** Follow application settings from startup into request handling, choose tests by the behavior they can prove, then trace shutdown and background work through recovery. Finish by comparing generated OpenAPI with runtime behavior.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Quality%20%26%20Operations-success)](../INDEX.md)
@@ -19,8 +19,8 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Configuration & Validation](20.2.4.01-configuration-validation.md) | ConfigModule, ValidationPipe, class-validator, Joi, DTOs, env validation | Essential | Important | 13 min |
-| 02 | [Testing](20.2.4.02-testing.md) | Jest, TestingModule, supertest, Testcontainers, e2e/integration/unit | Essential | Important | 13 min |
+| 01 | [Configuration & Validation](20.2.4.01-configuration-validation.md) | Startup schemas with Zod/Standard Schema (Joi 18+ supported); class DTO or schema-first request validation; settings vs authorization | Essential | Important | 8 min |
+| 02 | [Testing](20.2.4.02-testing.md) | Vitest/Jest, TestingModule, Supertest, Testcontainers; evidence at unit, integration, and HTTP boundaries | Essential | Important | 10 min |
 | 03 | [Lifecycle Hooks & Graceful Shutdown](20.2.4.03-lifecycle-hooks-graceful-shutdown.md) | OnModuleInit/OnApplicationBootstrap/OnModuleDestroy/BeforeApplicationShutdown/OnApplicationShutdown, ordering guarantees, `enableShutdownHooks()`, SIGTERM, Kubernetes terminationGracePeriod, draining connections, closing pools in order | Essential | Important | 15 min |
 | 04 | [Scheduling & Background Jobs](20.2.4.04-scheduling-background-jobs.md) | @nestjs/schedule (cron/interval/timeout + dynamic API), distributed cron locks (Redis NX / leader election), BullMQ queues, retries with backoff, rate limits, idempotent handlers, job observability | Essential | Important | 20 min |
 | 05 | [Swagger & OpenAPI](20.2.4.05-swagger-openapi-nestjs.md) | @nestjs/swagger setup, DocumentBuilder composition, @ApiProperty DTO mapping, generics + @ApiExtraModels, bearer/apikey/cookie schemes, response decorators, spec JSON for client codegen, CI contract checks | Essential | Important | 15 min |

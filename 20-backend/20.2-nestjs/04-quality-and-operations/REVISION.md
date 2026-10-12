@@ -26,6 +26,14 @@ Source: [Configuration & Validation in NestJS](20.2.4.01-configuration-validatio
 
 **A:** The schema defines the requirements; deployment values supply the environment-specific settings. Validation checks whether those supplied values satisfy the schema.
 
+**Q:** Does `ConfigModule`'s `validationSchema` validate objects returned by custom `load` factories?
+
+**A:** No. It validates environment variables. A custom factory that reads YAML, JSON, or nested settings must validate and transform those values itself before returning them.
+
+**Q:** Which Joi version works with current `@nestjs/config`, and where do its options go?
+
+**A:** Joi 18 or later implements Standard Schema. Pass it as `validationSchema`, then put Joi-specific options such as `abortEarly` under `validationOptions.libraryOptions`.
+
 ## Testing NestJS Applications
 
 Source: [Testing NestJS Applications](20.2.4.02-testing.md)
@@ -41,6 +49,14 @@ Source: [Testing NestJS Applications](20.2.4.02-testing.md)
 **Q:** Which interactions can Supertest exercise that an isolated class test cannot?
 
 **A:** It exercises middleware ordering, guards, pipes, serialization, and the HTTP response together. These request-lifecycle interactions are behavior beyond an isolated service method.
+
+**Q:** Which request-validation paths does current NestJS support, and what does a schema prove?
+
+**A:** `ValidationPipe` supports class-validator DTOs; `StandardSchemaValidationPipe` supports Standard Schema validators such as Zod. A schema validates and infers a TypeScript type, but it does not authorize the caller or establish a state-dependent invariant.
+
+**Q:** Does a new Nest project always use Vitest, and does `TestingModule` depend on that runner?
+
+**A:** No. Current CLI defaults select Vitest for ESM projects and Jest for CommonJS projects. Existing projects may choose either; Nest's `@nestjs/testing` APIs are runner-agnostic, while mocks and test globals use runner-specific APIs.
 
 ## Lifecycle Hooks & Graceful Shutdown
 

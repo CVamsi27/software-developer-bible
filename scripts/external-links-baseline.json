@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-12",
- "url_count": 2562,
+ "url_count": 2566,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md",
@@ -149,9 +149,6 @@
   "https://atcoder.jp/contests/dp/tasks": [
    "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization/70.2.3.03-bit-manipulation.md"
   ],
-  "https://auth0.com/blog/four-types-of-leaks-in-your-javascript-code-and-how-to-get-rid-of-them/": [
-   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.06-memory-leaks.md"
-  ],
   "https://auth0.com/docs/authenticate/protocols/oauth": [
    "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.md"
   ],
@@ -218,9 +215,6 @@
   ],
   "https://basarat.gitbook.io/typescript/main-1/nominaltyping": [
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.02-branded-types.md"
-  ],
-  "https://basarat.gitbook.io/typescript/type-system/functions": [
-   "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.04-type-variance.md"
   ],
   "https://basarat.gitbook.io/typescript/type-system/index-signatures": [
    "10-frontend/10.2-typescript/01-foundations/10.2.1.02-keyof-typeof.md"
@@ -355,7 +349,8 @@
    "20-backend/20.5-security/01-auth/20.5.1.02-http-basic-digest-auth.md",
    "20-backend/20.5-security/01-auth/20.5.1.03-api-keys.md",
    "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md",
-   "20-backend/20.5-security/01-auth/INDEX.md"
+   "20-backend/20.5-security/01-auth/INDEX.md",
+   "20-backend/20.5-security/01-auth/REVISION.md"
   ],
   "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html": [
    "20-backend/20.5-security/01-auth/20.5.1.09-rbac-abac.md",
@@ -406,7 +401,8 @@
    "20-backend/20.1-node.js/04-security-and-operations/20.1.4.01-node-security.md"
   ],
   "https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html": [
-   "20-backend/20.5-security/01-auth/20.5.1.01-auth-fundamentals.md"
+   "20-backend/20.5-security/01-auth/20.5.1.01-auth-fundamentals.md",
+   "20-backend/20.5-security/01-auth/REVISION.md"
   ],
   "https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html": [
    "20-backend/20.5-security/02-attacks-and-defense/20.5.2.04-api-security-best-practices.md",
@@ -712,7 +708,8 @@
   ],
   "https://datatracker.ietf.org/doc/html/rfc9106": [
    "20-backend/20.5-security/01-auth/20.5.1.01-auth-fundamentals.md",
-   "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md"
+   "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md",
+   "20-backend/20.5-security/01-auth/REVISION.md"
   ],
   "https://datatracker.ietf.org/doc/html/rfc9110": [
    "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md",
@@ -952,9 +949,6 @@
   "https://developer.mozilla.org/en-US/docs/Web/API/Performance": [
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.01-performance-apis.md"
   ],
-  "https://developer.mozilla.org/en-US/docs/Web/API/Performance/memory": [
-   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.06-memory-leaks.md"
-  ],
   "https://developer.mozilla.org/en-US/docs/Web/API/PerformanceObserver": [
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.01-performance-apis.md"
   ],
@@ -1151,11 +1145,11 @@
   "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie": [
    "20-backend/20.5-security/01-auth/20.5.1.04-sessions-cookies.md"
   ],
-  "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite": [
-   "20-backend/20.5-security/02-attacks-and-defense/20.5.2.02-csrf.md"
-  ],
   "https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods": [
    "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.01-http-methods.md"
+  ],
+  "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie": [
+   "20-backend/20.5-security/02-attacks-and-defense/20.5.2.02-csrf.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/HTTP/Status": [
    "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.02-status-codes.md"
@@ -1194,9 +1188,6 @@
   ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSorted": [
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md"
-  ],
-  "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error": [
-   "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.04-error-handling.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind": [
    "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.01-this.md"
@@ -1248,15 +1239,9 @@
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect": [
    "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.03-proxy-reflect.md"
   ],
-  "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set": [
-   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md"
-  ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.01-javascript-cheat-sheet.md"
-  ],
-  "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet": [
-   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols": [
    "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.06-iterator.md"
@@ -1380,6 +1365,9 @@
   "https://developers.google.com/search/docs/appearance/snippet": [
    "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.03-metadata.md"
   ],
+  "https://developers.google.com/search/docs/appearance/title-link": [
+   "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.03-metadata.md"
+  ],
   "https://developers.google.com/search/docs/crawling-indexing/javascript/javascript-seo-basics": [
    "10-frontend/10.7-html-css/10.7.04-seo.md"
   ],
@@ -1407,9 +1395,6 @@
   "https://developers.openai.com/api/docs/pricing": [
    "20-backend/20.12-ai-engineering/20.12.05-serving-models-hosted-vs-self-hosted.md"
   ],
-  "https://devguide.python.org/versions/": [
-   "40-platform/40.1-docker/40.1.01-images-containers.md"
-  ],
   "https://digital-strategy.ec.europa.eu/en/policies/digital-services-act": [
    "80-lanes-abroad-full-stack/80.24-eu-regulatory-compliance.md"
   ],
@@ -1423,7 +1408,6 @@
    "10-frontend/10.3-react/02-core-hooks/10.3.2.01-usestate.md"
   ],
   "https://docker-curriculum.com/": [
-   "40-platform/40.1-docker/40.1.01-images-containers.md",
    "40-platform/40.1-docker/40.1.02-volumes-networks.md",
    "40-platform/40.1-docker/40.1.03-compose.md",
    "40-platform/40.1-docker/40.1.04-multi-stage-builds.md",
@@ -1723,7 +1707,6 @@
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.01-opentelemetry.md"
   ],
   "https://docs.docker.com/": [
-   "40-platform/40.1-docker/40.1.01-images-containers.md",
    "40-platform/40.1-docker/40.1.02-volumes-networks.md",
    "40-platform/40.1-docker/40.1.03-compose.md",
    "40-platform/40.1-docker/40.1.04-multi-stage-builds.md",
@@ -1769,6 +1752,7 @@
    "40-platform/40.1-docker/40.1.09-rootless-sandboxed-runtimes.md"
   ],
   "https://docs.docker.com/engine/security/": [
+   "40-platform/40.1-docker/40.1.01-images-containers.md",
    "40-platform/40.1-docker/40.1.05-dockerfile-best-practices.md",
    "40-platform/40.1-docker/40.1.07-container-runtime-internals-namespaces-cgroups.md"
   ],
@@ -1814,6 +1798,9 @@
   ],
   "https://docs.expo.dev/build/introduction/": [
    "10-frontend/10.8-mobile/10.8.04-expo-eas-builds.md"
+  ],
+  "https://docs.expo.dev/eas-update/code-signing/": [
+   "10-frontend/10.8-mobile/10.8.05-codepush-ota-updates.md"
   ],
   "https://docs.expo.dev/eas-update/codepush/": [
    "10-frontend/10.8-mobile/10.8.05-codepush-ota-updates.md"
@@ -2054,9 +2041,6 @@
    "20-backend/20.2-nestjs/01-core-architecture/20.2.1.04-dependency-injection.md",
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.02-testing.md"
   ],
-  "https://docs.nestjs.com/fundamentals/testing#testing-utilities": [
-   "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.02-testing.md"
-  ],
   "https://docs.nestjs.com/graphql/other-features": [
    "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.05-exception-filters.md"
   ],
@@ -2086,6 +2070,10 @@
   ],
   "https://docs.nestjs.com/middleware": [
    "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.01-middleware.md"
+  ],
+  "https://docs.nestjs.com/migration-guide": [
+   "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.01-configuration-validation.md",
+   "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.02-testing.md"
   ],
   "https://docs.nestjs.com/modules": [
    "20-backend/20.2-nestjs/01-core-architecture/20.2.1.01-modules.md"
@@ -2182,9 +2170,6 @@
   ],
   "https://docs.npmjs.com/auditing-package-dependencies-for-security-vulnerabilities": [
    "20-backend/20.1-node.js/04-security-and-operations/20.1.4.01-node-security.md"
-  ],
-  "https://docs.npmjs.com/cli/commands/npm-ci/": [
-   "40-platform/40.1-docker/40.1.01-images-containers.md"
   ],
   "https://docs.npmjs.com/generating-provenance-statements/": [
    "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.md"
@@ -2442,9 +2427,6 @@
   ],
   "https://en.wikipedia.org/wiki/Closure_(computer_programming)": [
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.06-closures.md"
-  ],
-  "https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)": [
-   "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.04-type-variance.md"
   ],
   "https://en.wikipedia.org/wiki/Goodhart%27s_law": [
    "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md"
@@ -2864,9 +2846,6 @@
   "https://github.com/GoogleCloudPlatform/fourkeys": [
    "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md"
   ],
-  "https://github.com/Hacker0x01/react-datepicker/blob/main/docs/datepicker.md": [
-   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.04-client-components.md"
-  ],
   "https://github.com/HdrHistogram/HdrHistogram": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.17-probabilistic-data-structures.md"
   ],
@@ -2965,6 +2944,10 @@
   "https://github.com/confluentinc/confluent-kafka-javascript/blob/master/MIGRATION.md": [
    "20-backend/20.9-message-brokers/20.9.02-kafka-internals-and-operations.md"
   ],
+  "https://github.com/confluentinc/confluent-kafka-javascript/releases/tag/v1.11.0": [
+   "20-backend/20.9-message-brokers/20.9.01-message-brokers.md",
+   "20-backend/20.9-message-brokers/20.9.02-kafka-internals-and-operations.md"
+  ],
   "https://github.com/containerd/containerd/blob/main/docs/managed-opt.md": [
    "40-platform/40.1-docker/40.1.07-container-runtime-internals-namespaces-cgroups.md"
   ],
@@ -3030,7 +3013,6 @@
    "20-backend/20.1-node.js/04-security-and-operations/20.1.4.03-express-fastify-internals.md"
   ],
   "https://github.com/getify/You-Dont-Know-JS": [
-   "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.04-error-handling.md",
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.md"
   ],
   "https://github.com/git-tips/tips": [
@@ -3096,7 +3078,6 @@
   ],
   "https://github.com/kelseyhightower/kubernetes-the-hard-way": [
    "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.01-pods-replicasets.md",
-   "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.02-deployments.md",
    "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.01-services-ingress.md",
    "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.02-configmaps-secrets.md"
   ],
@@ -3159,6 +3140,12 @@
   "https://github.com/microsoft/api-guidelines/blob/vNext/Guidelines.md#pagination": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.01-pagination.md"
   ],
+  "https://github.com/microsoft/code-push-server": [
+   "10-frontend/10.8-mobile/10.8.05-codepush-ota-updates.md"
+  ],
+  "https://github.com/microsoft/react-native-code-push": [
+   "10-frontend/10.8-mobile/10.8.05-codepush-ota-updates.md"
+  ],
   "https://github.com/microsoft/scalar": [
    "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.md"
   ],
@@ -3215,6 +3202,9 @@
    "20-backend/20.12-ai-engineering/20.12.03-retrieval-quality-hybrid-search-reranking.md"
   ],
   "https://github.com/piscinajs/piscina": [
+   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.02-child-processes-workers.md"
+  ],
+  "https://github.com/piscinajs/piscina/releases": [
    "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.02-child-processes-workers.md"
   ],
   "https://github.com/pmndrs/jotai": [
@@ -3277,9 +3267,6 @@
   ],
   "https://github.com/sindresorhus/p-map": [
    "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.06-bounded-concurrency.md"
-  ],
-  "https://github.com/sindresorhus/p-memoize": [
-   "30-architecture/30.2-system-design/01-theory/30.2.1.19-resilience-patterns-deep-dive.md"
   ],
   "https://github.com/slicknode/graphql-query-complexity": [
    "20-backend/20.7-graphql/03-clients-and-production/20.7.3.02-performance-security.md"
@@ -3345,12 +3332,10 @@
    "10-frontend/10.2-typescript/03-type-transformations/10.2.3.04-template-literal-types.md"
   ],
   "https://github.com/typestack/class-transformer": [
-   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.03-pipes.md",
-   "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.01-configuration-validation.md"
+   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.03-pipes.md"
   ],
   "https://github.com/typestack/class-validator": [
-   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.03-pipes.md",
-   "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.01-configuration-validation.md"
+   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.03-pipes.md"
   ],
   "https://github.com/v8/v8/blob/main/src/objects/ordered-hash-table.h": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md"
@@ -3391,9 +3376,6 @@
   ],
   "https://github.com/yjs/yjs": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.20-multi-region-deployment.md"
-  ],
-  "https://go.dev/doc/devel/release": [
-   "40-platform/40.1-docker/40.1.01-images-containers.md"
   ],
   "https://google.aip.dev/151": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.03-long-running-api-operations.md"
@@ -3583,6 +3565,9 @@
   "https://html.spec.whatwg.org/multipage/server-sent-events.html": [
    "60-realtime/60.1-websockets/01-transports/60.1.1.02-server-sent-events.md"
   ],
+  "https://html.spec.whatwg.org/multipage/structured-data.html": [
+   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.md"
+  ],
   "https://html.spec.whatwg.org/multipage/structured-data.html#structured-cloning": [
    "30-architecture/30.1-design-patterns/02-creational/30.1.2.05-prototype.md"
   ],
@@ -3702,8 +3687,7 @@
    "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.01-modules.md"
   ],
   "https://javascript.info/object-copy": [
-   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.01-pass-by-value.md",
-   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.md"
+   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.01-pass-by-value.md"
   ],
   "https://javascript.info/promise-api": [
    "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.02-promises.md"
@@ -3717,12 +3701,6 @@
   "https://javascript.info/recursion": [
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.03-call-stack.md",
    "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.05-recursion-tail-call.md"
-  ],
-  "https://javascript.info/task/debounce": [
-   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.04-debounce.md"
-  ],
-  "https://javascript.info/type-conversions": [
-   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.09-equality-and-coercion.md"
   ],
   "https://jcip.net/": [
    "20-backend/20.13-java/20.13.03-java-concurrency-multithreading.md"
@@ -3972,6 +3950,7 @@
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.03-lifecycle-hooks-graceful-shutdown.md"
   ],
   "https://kubernetes.io/docs/concepts/workloads/pods/probes/": [
+   "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.02-deployments.md",
    "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.01-health-checks.md",
    "40-platform/40.2-kubernetes/06-interview-prep/40.2.6.01-interview-questions.md"
   ],
@@ -4021,6 +4000,9 @@
    "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.02-deployments.md",
    "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.02-pod-disruption-budgets.md"
   ],
+  "https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/": [
+   "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.02-deployments.md"
+  ],
   "https://kubernetes.io/docs/tutorials/configuration/updating-configuration-via-a-configmap/": [
    "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.02-configmaps-secrets.md"
   ],
@@ -4034,7 +4016,6 @@
    "40-platform/40.1-docker/40.1.08-image-signing-sbom-supply-chain.md"
   ],
   "https://labs.play-with-docker.com/": [
-   "40-platform/40.1-docker/40.1.01-images-containers.md",
    "40-platform/40.1-docker/40.1.02-volumes-networks.md",
    "40-platform/40.1-docker/40.1.03-compose.md",
    "40-platform/40.1-docker/40.1.04-multi-stage-builds.md",
@@ -4045,7 +4026,6 @@
   ],
   "https://landscape.cncf.io/": [
    "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.01-pods-replicasets.md",
-   "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.02-deployments.md",
    "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.01-services-ingress.md",
    "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.02-configmaps-secrets.md"
   ],
@@ -4069,7 +4049,6 @@
    "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.01-event-loop.md"
   ],
   "https://leanpub.com/dockerdeepdive": [
-   "40-platform/40.1-docker/40.1.01-images-containers.md",
    "40-platform/40.1-docker/40.1.02-volumes-networks.md",
    "40-platform/40.1-docker/40.1.03-compose.md",
    "40-platform/40.1-docker/40.1.04-multi-stage-builds.md",
@@ -4148,7 +4127,6 @@
   ],
   "https://learnk8s.io/": [
    "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.01-pods-replicasets.md",
-   "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.02-deployments.md",
    "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.01-services-ingress.md",
    "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.02-configmaps-secrets.md"
   ],
@@ -4717,14 +4695,11 @@
   "https://next-auth.js.org/": [
    "10-frontend/10.4-next.js/04-production/10.4.4.01-authentication.md"
   ],
-  "https://nextjs.org/blog/next-16": [
-   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md",
-   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md"
-  ],
   "https://nextjs.org/docs/app": [
    "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md"
   ],
   "https://nextjs.org/docs/app/api-reference/components/image": [
+   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.06-static-exports.md",
    "10-frontend/10.4-next.js/04-production/10.4.4.02-image-optimization.md",
    "10-frontend/10.4-next.js/05-interview-prep/10.4.5.01-interview-questions.md"
   ],
@@ -4749,13 +4724,16 @@
   "https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md"
   ],
-  "https://nextjs.org/docs/app/api-reference/directives/use-server": [
-   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.02-server-actions.md"
+  "https://nextjs.org/docs/app/api-reference/directives/use-cache": [
+   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md"
+  ],
+  "https://nextjs.org/docs/app/api-reference/directives/use-client": [
+   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.04-client-components.md"
   ],
   "https://nextjs.org/docs/app/api-reference/edge": [
    "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.01-middleware.md"
   ],
-  "https://nextjs.org/docs/app/api-reference/file-conventions/default": [
+  "https://nextjs.org/docs/app/api-reference/file-conventions/dynamic-routes": [
    "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md"
   ],
   "https://nextjs.org/docs/app/api-reference/file-conventions/instrumentation": [
@@ -4764,9 +4742,6 @@
   "https://nextjs.org/docs/app/api-reference/file-conventions/intercepting-routes": [
    "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.03-react-nextjs-cheat-sheet.md"
-  ],
-  "https://nextjs.org/docs/app/api-reference/file-conventions/layout": [
-   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md"
   ],
   "https://nextjs.org/docs/app/api-reference/file-conventions/metadata": [
    "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.03-metadata.md"
@@ -4785,21 +4760,26 @@
   "https://nextjs.org/docs/app/api-reference/file-conventions/route": [
    "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.02-route-handlers.md"
   ],
-  "https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config": [
-   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
-  ],
-  "https://nextjs.org/docs/app/api-reference/file-conventions/template": [
+  "https://nextjs.org/docs/app/api-reference/file-conventions/route-groups": [
    "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md"
   ],
-  "https://nextjs.org/docs/app/api-reference/functions/fetch": [
-   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md"
+  "https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config": [
+   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md",
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
   ],
   "https://nextjs.org/docs/app/api-reference/functions/generate-metadata": [
    "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.03-metadata.md"
   ],
+  "https://nextjs.org/docs/app/api-reference/functions/generate-sitemaps": [
+   "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.03-metadata.md"
+  ],
   "https://nextjs.org/docs/app/api-reference/functions/generate-static-params": [
+   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md",
    "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.05-incremental-static-regeneration.md",
    "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.06-static-exports.md"
+  ],
+  "https://nextjs.org/docs/app/api-reference/functions/generate-viewport": [
+   "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.03-metadata.md"
   ],
   "https://nextjs.org/docs/app/api-reference/functions/next-request": [
    "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.01-middleware.md",
@@ -4825,18 +4805,22 @@
    "10-frontend/10.5-form-handling/10.5.07-interview-questions.md"
   ],
   "https://nextjs.org/docs/app/getting-started/caching": [
-   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md",
-   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.03-server-components.md",
    "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.02-route-handlers.md",
    "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.01-data-fetching-patterns.md",
    "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.03-caching.md"
   ],
+  "https://nextjs.org/docs/app/getting-started/error-handling": [
+   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md"
+  ],
   "https://nextjs.org/docs/app/getting-started/fetching-data": [
-   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md",
-   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.01-data-fetching-patterns.md"
+   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.01-data-fetching-patterns.md",
+   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.04-streaming.md"
   ],
   "https://nextjs.org/docs/app/getting-started/images": [
    "10-frontend/10.4-next.js/04-production/10.4.4.02-image-optimization.md"
+  ],
+  "https://nextjs.org/docs/app/getting-started/layouts-and-pages": [
+   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md"
   ],
   "https://nextjs.org/docs/app/getting-started/metadata-and-og-images": [
    "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.03-metadata.md"
@@ -4844,15 +4828,26 @@
   "https://nextjs.org/docs/app/getting-started/mutating-data": [
    "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.02-server-actions.md"
   ],
+  "https://nextjs.org/docs/app/getting-started/partial-prerendering": [
+   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md",
+   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md",
+   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.03-server-components.md"
+  ],
+  "https://nextjs.org/docs/app/getting-started/proxy": [
+   "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.01-middleware.md"
+  ],
   "https://nextjs.org/docs/app/getting-started/route-handlers": [
    "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.02-route-handlers.md"
   ],
   "https://nextjs.org/docs/app/getting-started/server-and-client-components": [
-   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md",
+   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md",
    "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.03-server-components.md",
    "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.04-client-components.md",
    "10-frontend/10.4-next.js/05-interview-prep/10.4.5.01-interview-questions.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.03-react-nextjs-cheat-sheet.md"
+  ],
+  "https://nextjs.org/docs/app/getting-started/server-and-client-components#preventing-environment-poisoning": [
+   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.03-server-components.md"
   ],
   "https://nextjs.org/docs/app/guides/authentication": [
    "10-frontend/10.4-next.js/04-production/10.4.4.01-authentication.md",
@@ -4864,6 +4859,9 @@
   ],
   "https://nextjs.org/docs/app/guides/client-side-data-fetching": [
    "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.01-data-fetching-patterns.md"
+  ],
+  "https://nextjs.org/docs/app/guides/data-security": [
+   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.02-server-actions.md"
   ],
   "https://nextjs.org/docs/app/guides/deploying-to-platforms": [
    "10-frontend/10.4-next.js/04-production/10.4.4.03-deploying-nextjs.md"
@@ -4886,8 +4884,7 @@
    "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.04-client-components.md"
   ],
   "https://nextjs.org/docs/app/guides/migrating/app-router-migration": [
-   "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.03-interview-questions.md",
-   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md"
+   "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.03-interview-questions.md"
   ],
   "https://nextjs.org/docs/app/guides/multi-zones": [
    "10-frontend/10.4-next.js/04-production/10.4.4.03-deploying-nextjs.md"
@@ -4911,7 +4908,7 @@
   "https://nextjs.org/docs/app/guides/upgrading/version-16": [
    "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
   ],
-  "https://nextjs.org/docs/pages/api-reference/functions/get-static-paths": [
+  "https://nextjs.org/docs/pages/building-your-application/data-fetching": [
    "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md"
   ],
   "https://nextjs.org/docs/pages/guides/incremental-static-regeneration": [
@@ -5056,6 +5053,12 @@
   "https://nodejs.org/api/https.html": [
    "20-backend/20.1-node.js/02-io-and-data/20.1.2.04-http-module.md"
   ],
+  "https://nodejs.org/api/inspector.html": [
+   "20-backend/20.1-node.js/04-security-and-operations/20.1.4.02-debugging-profiling-nodejs.md"
+  ],
+  "https://nodejs.org/api/packages.html": [
+   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.01-modules.md"
+  ],
   "https://nodejs.org/api/path.html": [
    "20-backend/20.1-node.js/02-io-and-data/20.1.2.03-file-system.md"
   ],
@@ -5066,7 +5069,12 @@
    "20-backend/20.1-node.js/04-security-and-operations/20.1.4.01-node-security.md"
   ],
   "https://nodejs.org/api/process.html": [
+   "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.04-error-handling.md",
    "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.03-process-environment.md"
+  ],
+  "https://nodejs.org/api/process.html#processmemoryusage": [
+   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.06-memory-leaks.md",
+   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.07-garbage-collection.md"
   ],
   "https://nodejs.org/api/process.html#when-to-use-queuemicrotask-vs-processnexttick": [
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.md"
@@ -5285,9 +5293,6 @@
   ],
   "https://pages.nist.gov/800-63-4/sp800-63b.html": [
    "20-backend/20.5-security/01-auth/20.5.1.08-mfa-passkeys-webauthn.md"
-  ],
-  "https://pages.nist.gov/800-63-4/sp800-63b.html#passwordver": [
-   "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.01-configuration-validation.md"
   ],
   "https://pages.nist.gov/800-63-4/sp800-63b/aal/": [
    "20-backend/20.5-security/01-auth/20.5.1.08-mfa-passkeys-webauthn.md",
@@ -5527,6 +5532,9 @@
   "https://react.dev/learn/reusing-logic-with-custom-hooks": [
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.md"
   ],
+  "https://react.dev/learn/typescript": [
+   "10-frontend/10.3-react/02-core-hooks/10.3.2.05-context-api.md"
+  ],
   "https://react.dev/learn/writing-markup-with-jsx": [
    "10-frontend/10.3-react/01-react-internals/10.3.1.01-virtual-dom.md"
   ],
@@ -5583,6 +5591,9 @@
   "https://react.dev/reference/react/cloneElement": [
    "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.02-compound-components.md"
   ],
+  "https://react.dev/reference/react/createContext": [
+   "10-frontend/10.3-react/02-core-hooks/10.3.2.05-context-api.md"
+  ],
   "https://react.dev/reference/react/forwardRef": [
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.md",
    "10-frontend/10.3-react/02-core-hooks/10.3.2.04-useref.md",
@@ -5602,7 +5613,8 @@
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.01-suspense.md",
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.md",
    "10-frontend/10.3-react/04-modern-react/10.3.4.01-modern-hooks-react18-19.md",
-   "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.03-interview-questions.md"
+   "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.03-interview-questions.md",
+   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.01-data-fetching-patterns.md"
   ],
   "https://react.dev/reference/react/useActionState": [
    "10-frontend/10.3-react/04-modern-react/10.3.4.01-modern-hooks-react18-19.md",
@@ -5625,7 +5637,6 @@
   ],
   "https://react.dev/reference/react/useEffect": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.04-debounce.md",
-   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.05-throttle.md",
    "10-frontend/10.3-react/01-react-internals/10.3.1.05-lifecycle.md",
    "10-frontend/10.3-react/02-core-hooks/10.3.2.02-useeffect.md",
    "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.03-interview-questions.md"
@@ -5675,11 +5686,17 @@
    "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.03-interview-questions.md",
    "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.03-server-components.md"
   ],
+  "https://react.dev/reference/rsc/server-functions": [
+   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.02-server-actions.md"
+  ],
   "https://react.dev/reference/rsc/use-client": [
    "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.04-client-components.md"
   ],
   "https://react.dev/reference/rsc/use-client#serializable-types-returned-by-server-components": [
    "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.03-server-components.md"
+  ],
+  "https://react.dev/reference/rsc/use-server": [
+   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.02-server-actions.md"
   ],
   "https://react.dev/reference/rules/rules-of-hooks": [
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.md"
@@ -6274,6 +6291,9 @@
   "https://staffeng.com/book/": [
    "70-interview-toolkit/70.1-behavioral/70.1.01-stakeholder-management-stories.md"
   ],
+  "https://standardschema.dev/": [
+   "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.01-configuration-validation.md"
+  ],
   "https://stately.ai/docs/actions": [
    "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.04-state.md"
   ],
@@ -6392,14 +6412,23 @@
   "https://tc39.es/ecma262/#sec-generator-function-definitions": [
    "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.03-generators.md"
   ],
-  "https://tc39.es/ecma262/2024/multipage/ecmascript-language-functions-and-classes.html#sec-tail-position-calls": [
-   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.05-recursion-tail-call.md"
+  "https://tc39.es/ecma262/#sec-map-objects": [
+   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md"
   ],
   "https://tc39.es/ecma262/2026/": [
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md"
   ],
-  "https://tc39.es/ecma262/multipage/abstract-operations.html#sec-islooselyequal": [
+  "https://tc39.es/ecma262/2026/multipage/abstract-operations.html#sec-islooselyequal": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.09-equality-and-coercion.md"
+  ],
+  "https://tc39.es/ecma262/2026/multipage/ecmascript-language-functions-and-classes.html#sec-tail-position-calls": [
+   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.05-recursion-tail-call.md"
+  ],
+  "https://tc39.es/ecma262/2026/multipage/keyed-collections.html": [
+   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md"
+  ],
+  "https://tc39.es/ecma262/2026/multipage/managing-memory.html": [
+   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.07-garbage-collection.md"
   ],
   "https://tc39.es/ecma262/multipage/control-abstraction-objects.html#sec-generator-objects": [
    "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.06-iterator.md"
@@ -6407,11 +6436,17 @@
   "https://tc39.es/ecma262/multipage/control-abstraction-objects.html#sec-promise-objects": [
    "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.02-promises.md"
   ],
+  "https://tc39.es/ecma262/multipage/ecmascript-language-statements-and-declarations.html#sec-let-and-const-declarations": [
+   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.04-hoisting.md"
+  ],
   "https://tc39.es/ecma262/multipage/executable-code-and-execution-contexts.html#sec-environment-records": [
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.05-lexical-environment.md"
   ],
   "https://tc39.es/ecma262/multipage/executable-code-and-execution-contexts.html#sec-execution-contexts": [
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.01-execution-context.md"
+  ],
+  "https://tc39.es/ecma262/multipage/fundamental-objects.html#sec-error-objects": [
+   "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.04-error-handling.md"
   ],
   "https://tc39.es/ecma262/multipage/ordinary-and-exotic-objects-behaviours.html#sec-functiondeclarationinstantiation": [
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.01-execution-context.md",
@@ -6496,9 +6531,6 @@
   "https://trilon.io/blog": [
    "20-backend/20.2-nestjs/05-advanced-and-interview/20.2.5.02-interview-questions.md"
   ],
-  "https://trilon.io/blog/tdd-with-nestjs-integration-tests": [
-   "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.02-testing.md"
-  ],
   "https://trivy.dev/docs/latest/guide/supply-chain/sbom/": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.05-vulnerability-management-patch-governance.md",
    "20-backend/20.5-security/03-hardening-and-operations/REVISION.md"
@@ -6562,9 +6594,6 @@
   "https://use-the-index-luke.com/": [
    "70-interview-toolkit/70.3-cheatsheets/70.3.07-sql-data-modeling-cheat-sheet.md"
   ],
-  "https://usehooks.com/": [
-   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.md"
-  ],
   "https://v8.dev/": [
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.03-call-stack.md"
   ],
@@ -6584,11 +6613,7 @@
   "https://v8.dev/blog/modern-javascript#proper-tail-calls": [
    "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.05-recursion-tail-call.md"
   ],
-  "https://v8.dev/blog/orinoco": [
-   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.07-garbage-collection.md"
-  ],
   "https://v8.dev/blog/trash-talk": [
-   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.06-memory-leaks.md",
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.07-garbage-collection.md"
   ],
   "https://vercel.com/docs": [
@@ -6903,7 +6928,6 @@
   ],
   "https://www.amazon.com/Kubernetes-Patterns-Cloud-Native-Applications/dp/1492050288": [
    "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.01-pods-replicasets.md",
-   "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.02-deployments.md",
    "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.01-services-ingress.md",
    "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.02-configmaps-secrets.md"
   ],
@@ -7141,9 +7165,6 @@
   "https://www.digitalocean.com/community/tutorials/http-status-codes": [
    "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.02-status-codes.md"
   ],
-  "https://www.digitalocean.com/community/tutorials/typescript-generics-types": [
-   "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.01-generics.md"
-  ],
   "https://www.digitalocean.com/community/tutorials/understanding-scope-and-closures-in-javascript-tutorial": [
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.02-scope.md"
   ],
@@ -7210,20 +7231,11 @@
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.05-vulnerability-management-patch-governance.md",
    "20-backend/20.5-security/03-hardening-and-operations/REVISION.md"
   ],
-  "https://www.freecodecamp.org/news/a-guide-to-garbage-collection-in-programming/": [
-   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.07-garbage-collection.md"
-  ],
-  "https://www.freecodecamp.org/news/context-api-in-react/": [
-   "10-frontend/10.3-react/02-core-hooks/10.3.2.05-context-api.md"
-  ],
   "https://www.freecodecamp.org/news/effective-error-handling-in-react-applications/": [
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.md"
   ],
   "https://www.freecodecamp.org/news/javascript-assigning-values-vs-assigning-references/": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.01-pass-by-value.md"
-  ],
-  "https://www.freecodecamp.org/news/javascript-debounce-example/": [
-   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.04-debounce.md"
   ],
   "https://www.freecodecamp.org/news/learn-react-hooks-with-example-code/": [
    "10-frontend/10.3-react/02-core-hooks/10.3.2.04-useref.md"
@@ -7248,9 +7260,6 @@
   ],
   "https://www.freecodecamp.org/news/the-modern-react-data-fetching-handbook-suspense-use-and-errorboundary-explained/": [
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.01-suspense.md"
-  ],
-  "https://www.freecodecamp.org/news/throttling-in-javascript/": [
-   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.05-throttle.md"
   ],
   "https://www.freecodecamp.org/news/understanding-the-javascript-call-stack-861e41ae61d4/": [
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.03-call-stack.md"
@@ -7408,9 +7417,6 @@
   "https://www.joshwcomeau.com/animation/a-friendly-introduction-to-spring-physics/": [
    "10-frontend/10.6-animation/10.6.04-react-spring.md"
   ],
-  "https://www.joshwcomeau.com/react/server-components/": [
-   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.03-server-components.md"
-  ],
   "https://www.joshwcomeau.com/react/why-react-re-renders/": [
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.05-performance.md"
   ],
@@ -7511,6 +7517,9 @@
   "https://www.oreilly.com/library/view/distributed-tracing-in/9781492056621/": [
    "40-platform/40.4-observability/01-pillars/40.4.1.03-tracing.md",
    "40-platform/40.4-observability/05-interview-prep/40.4.5.01-interview-questions.md"
+  ],
+  "https://www.oreilly.com/library/view/kubernetes-patterns/9781492050278/": [
+   "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.02-deployments.md"
   ],
   "https://www.oreilly.com/library/view/observability-engineering/9781492076438/": [
    "40-platform/40.4-observability/05-interview-prep/40.4.5.01-interview-questions.md"
@@ -7894,12 +7903,15 @@
    "20-backend/20.4-database/04-orm-and-access/20.4.4.01-prisma.md",
    "20-backend/20.4-database/04-orm-and-access/20.4.4.02-prisma-advanced.md"
   ],
-  "https://www.prisma.io/docs/orm/v6/prisma-client/using-raw-sql/raw-queries": [
+  "https://www.prisma.io/docs/orm/v6/prisma-schema/overview/generators": [
+   "20-backend/20.4-database/04-orm-and-access/20.4.4.01-prisma.md"
+  ],
+  "https://www.prisma.io/docs/orm/v7/prisma-client/using-raw-sql/raw-queries": [
    "20-backend/20.5-security/02-attacks-and-defense/20.5.2.03-sql-injection.md",
    "20-backend/20.5-security/02-attacks-and-defense/REVISION.md"
   ],
-  "https://www.prisma.io/docs/orm/v6/prisma-schema/overview/generators": [
-   "20-backend/20.4-database/04-orm-and-access/20.4.4.01-prisma.md"
+  "https://www.prisma.io/docs/orm/v7/prisma-client/using-raw-sql/typedsql": [
+   "20-backend/20.5-security/02-attacks-and-defense/REVISION.md"
   ],
   "https://www.prisma.io/docs/orm/v8/reference/transactions-and-runtime": [
    "20-backend/20.4-database/04-orm-and-access/20.4.4.02-prisma-advanced.md"
@@ -8039,6 +8051,7 @@
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.06-serialization-and-wire-formats.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc8441.html": [
+   "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.md",
    "60-realtime/60.1-websockets/01-transports/INDEX.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc8445": [
@@ -8110,6 +8123,7 @@
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc9220.html": [
+   "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.md",
    "60-realtime/60.1-websockets/01-transports/INDEX.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc9250.html": [
@@ -8176,12 +8190,6 @@
    "80-lanes-abroad-full-stack/80.05-comp-eu-benchmarking.md",
    "80-lanes-abroad-full-stack/80.06-visa-relocation-playbook.md"
   ],
-  "https://www.robinwieruch.de/learn-react-before-using-redux/": [
-   "10-frontend/10.3-react/02-core-hooks/10.3.2.05-context-api.md"
-  ],
-  "https://www.robinwieruch.de/react-custom-hook/": [
-   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.md"
-  ],
   "https://www.robustperception.io/": [
    "40-platform/40.4-observability/03-sre-targets/40.4.3.02-alerting.md"
   ],
@@ -8240,9 +8248,6 @@
   "https://www.twilio.com/docs/usage/api": [
    "20-backend/20.3-rest-apis/05-interview-drills/20.3.5.01-interview-questions.md"
   ],
-  "https://www.typescriptlang.org/cheatsheets": [
-   "10-frontend/10.2-typescript/03-type-transformations/10.2.3.01-utility-types.md"
-  ],
   "https://www.typescriptlang.org/docs/handbook/2/classes.html": [
    "30-architecture/30.1-design-patterns/01-foundations/30.1.1.03-oop-concepts.md"
   ],
@@ -8256,8 +8261,7 @@
    "10-frontend/10.2-typescript/05-interview-prep/10.2.5.01-interview-questions.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#inferring-within-conditional-types": [
-   "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.02-infer.md",
-   "10-frontend/10.2-typescript/03-type-transformations/10.2.3.02-conditional-types.md"
+   "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.02-infer.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces": [
    "10-frontend/10.2-typescript/01-foundations/10.2.1.01-types-vs-interfaces.md"
@@ -8285,9 +8289,6 @@
    "10-frontend/10.2-typescript/03-type-transformations/10.2.3.01-utility-types.md",
    "10-frontend/10.2-typescript/03-type-transformations/10.2.3.03-mapped-types.md"
   ],
-  "https://www.typescriptlang.org/docs/handbook/2/mapped-types.html#key-remapping-via-as": [
-   "10-frontend/10.2-typescript/03-type-transformations/10.2.3.03-mapped-types.md"
-  ],
   "https://www.typescriptlang.org/docs/handbook/2/modules.html": [
    "30-architecture/30.1-design-patterns/03-structural/30.1.3.05-module-pattern.md"
   ],
@@ -8305,7 +8306,8 @@
    "10-frontend/10.2-typescript/01-foundations/10.2.1.02-keyof-typeof.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html": [
-   "10-frontend/10.2-typescript/01-foundations/10.2.1.03-type-narrowing.md"
+   "10-frontend/10.2-typescript/01-foundations/10.2.1.03-type-narrowing.md",
+   "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.03-advanced-generics.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html": [
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.04-declaration-files.md"
@@ -8332,6 +8334,9 @@
    "10-frontend/10.2-typescript/05-interview-prep/10.2.5.01-interview-questions.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.02-typescript-cheat-sheet.md"
   ],
+  "https://www.typescriptlang.org/docs/handbook/modules/guides/choosing-compiler-options": [
+   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.01-modules.md"
+  ],
   "https://www.typescriptlang.org/docs/handbook/modules/introduction.html": [
    "10-frontend/10.2-typescript/01-foundations/10.2.1.04-tsconfig-compiler-options.md"
   ],
@@ -8342,8 +8347,20 @@
   "https://www.typescriptlang.org/docs/handbook/project-references.html": [
    "10-frontend/10.2-typescript/01-foundations/10.2.1.04-tsconfig-compiler-options.md"
   ],
+  "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-6.html#strict-function-types": [
+   "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.04-type-variance.md"
+  ],
+  "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html#conditional-types": [
+   "10-frontend/10.2-typescript/03-type-transformations/10.2.3.02-conditional-types.md"
+  ],
   "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-0.html#variadic-tuple-types": [
    "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.03-advanced-generics.md"
+  ],
+  "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-1.html#key-remapping-in-mapped-types": [
+   "10-frontend/10.2-typescript/03-type-transformations/10.2.3.03-mapped-types.md"
+  ],
+  "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-4.html#defaulting-to-the-unknown-type-in-catch-variables": [
+   "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.04-error-handling.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-7.html": [
    "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.04-type-variance.md"
@@ -8388,17 +8405,11 @@
    "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.02-infer.md",
    "10-frontend/10.2-typescript/03-type-transformations/10.2.3.01-utility-types.md"
   ],
-  "https://www.typescriptlang.org/play": [
-   "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.03-advanced-generics.md"
-  ],
   "https://www.typescriptlang.org/play#example/nominal-typing": [
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.02-branded-types.md"
   ],
   "https://www.typescriptlang.org/tsconfig/": [
    "10-frontend/10.2-typescript/01-foundations/10.2.1.04-tsconfig-compiler-options.md"
-  ],
-  "https://www.typescriptlang.org/tsconfig/#strictFunctionTypes": [
-   "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.04-type-variance.md"
   ],
   "https://www.typescriptlang.org/tsconfig/moduleDetection.html": [
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.04-declaration-files.md"
@@ -8593,7 +8604,8 @@
   ],
   "https://zod.dev/": [
    "10-frontend/10.5-form-handling/10.5.02-zod.md",
-   "10-frontend/10.5-form-handling/10.5.07-interview-questions.md"
+   "10-frontend/10.5-form-handling/10.5.07-interview-questions.md",
+   "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.01-configuration-validation.md"
   ],
   "https://zod.dev/api": [
    "10-frontend/10.5-form-handling/10.5.02-zod.md"

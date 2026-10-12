@@ -61,7 +61,7 @@ Source: [Map, Set, WeakMap, WeakSet](10.1.4.02-map-set-weakmap-weakset.md)
    **A:** The collection does not keep an eligible key alive by itself. When no other strong path retains that key, its entry becomes eligible for collection; deletion timing is not observable or guaranteed.
 
 4. **Q:** What does "insertion order" buy you in a `Map` that a plain object cannot promise?
-   **A:** Iterators visit insertion order. Updating an existing key leaves its position unchanged; delete/reinsert moves it to the end. The LRU example explicitly moves a hit, so the first key then represents least recent use rather than merely earliest original insertion.
+   **A:** Iterators visit insertion order. Updating an existing key leaves its position unchanged; delete/reinsert moves it to the end. The LRU example moves a hit to the end, so the first key represents least recently used rather than merely earliest original insertion.
 
 **Code Examples**
 
@@ -90,7 +90,7 @@ Source: [Shallow Copy vs Deep Copy](10.1.4.03-shallow-vs-deep-copy.md)
 **How It Works**
 
 2. **Q:** Why does a deep clone need an identity map (`WeakMap` of original → copy)?
-   **A:** So each node is visited once and so cycles can be re-linked — without it, an object that points back at itself would recurse forever rather than point at its own duplicate.
+   **A:** A graph copier records the copy before visiting children. Reusing that record preserves repeated references and lets a self-reference point back to the cloned root instead of recursing forever. Built-in structured cloning handles this bookkeeping for supported values.
 
 **Code Examples**
 
@@ -98,7 +98,7 @@ Source: [Shallow Copy vs Deep Copy](10.1.4.03-shallow-vs-deep-copy.md)
    **A:** Spread only duplicates the first level. The nested array is the same object in both places, so a mutation through either reference is visible through both.
 
 4. **Q:** What does `JSON.parse(JSON.stringify(x))` silently rewrite, and what does it refuse outright?
-   **A:** Dates become ISO strings, ordinary `Map`/`Set`/`RegExp` become `{}`, and `NaN`/`Infinity` become `null`. Functions and `undefined` are omitted in object properties but become `null` in array slots; a top-level undefined result is not valid JSON for `JSON.parse`. Cycles and unhandled `BigInt` values throw.
+   **A:** Dates normally become ISO strings, ordinary `Map`/`Set`/`RegExp` become `{}`, and `NaN`/infinities become `null`. Functions, `undefined`, and symbol-valued properties are omitted; array slots with those values become `null`. Cycles and unhandled `BigInt` values throw.
 
 **Common Mistakes**
 
@@ -150,7 +150,7 @@ Source: [Debounce](10.1.4.04-debounce.md)
 **Best Practices**
 
 7. **Q:** How do you keep one debounced function alive across React re-renders?
-   **A:** Memoize the wrapper for its chosen dependencies and cancel replaced/unmounted wrappers in effect cleanup. If fn changes every render, the wrapper changes too; the chapter hook instead uses the latest committed callback through a ref while preserving timing state for a stable wait.
+   **A:** Keep the wrapper stable for its intended lifetime, update a callback ref after commit if it must call the latest function, and cancel the wrapper during cleanup. Create timers from events or effects, never during render.
 
 **Summary**
 
@@ -195,7 +195,7 @@ Source: [Throttle](10.1.4.05-throttle.md)
    **A:** Those intervals are experiments, not guarantees. Coalesce visual work at rendering opportunities; measure mouse/scroll/resize latency. Prevent concurrent writes with an in-flight guard/idempotency, because a one-second window cannot guarantee request completion.
 
 8. **Q:** What is the cleanup contract for a throttled event handler?
-   **A:** The code that registers the listener also calls `.cancel()` — which drops any pending trailing invocation — and removes the listener, both in the same unmount effect.
+   **A:** Its owner removes the event listener and calls `.cancel()` to drop pending trailing work when that event source ends. Cancellation does not stop a callback or request that already started.
 
 ## Memory Leaks
 
@@ -299,23 +299,23 @@ Source: [Hash Tables & HashMaps — Internals, Collision Resolution & V8](10.1.4
 3. **Q:** What is the load factor, and why do chaining and open addressing draw the line in different places?
    **A:** α = entries ÷ slots. Chaining can store multiple entries per bucket and exceed one; open addressing stores entries in the slots and needs insertion space. Its growth policy also accounts for probe distribution and tombstones; example thresholds are not universal.
 
-**How Hash Tables Work**
+**Follow a key from hash to stored entry**
 
 4. **Q:** Two implementations both report "α = 0.5", but one still feels slow. Why?
    **A:** Load describes occupancy, not a bound on probes. Poor key distribution, clusters, tombstones or long string hashing can make a half-full table slow. Investigate the actual operation mix and collision paths.
 
-**Collision Resolution**
+**When keys collide, storage strategy matters**
 
 5. **Q:** Why does linear probing collapse at high load while chaining only degrades gently?
    **A:** Occupied runs attract more displaced entries in linear probing, and a miss must traverse the run before finding an empty slot. Chaining searches the selected bucket without needing a vacancy in the main array. These are qualitative mechanisms, not measurements performed by this chapter.
 
-**V8 Internals**
+**Separate JavaScript key rules from V8's implementation choices**
 
 6. **Q:** How does V8's `Map`/`Set` actually resolve collisions, and how full does it let the table get?
-   **A:** The cited OrderedHashTable implementation links bucket entries by indices and keeps insertion-order entry storage. Its capacity is twice the bucket count and it tracks deleted entries; growth/compaction are version-specific policies rather than JavaScript guarantees.
+   **A:** Current V8 source links bucket entries to ordered data entries and tracks deleted entries. Its table representation provides two data-entry slots per bucket; that is not a `Map` API load threshold, and growth/compaction remain version-specific.
 
 7. **Q:** What hash does V8 use for a key, and why does that choice matter?
-   **A:** String lookup needs content-derived hashing; object lookup needs stable identity-derived hashing. V8 has changed storage/algorithm details over time. Randomization can impede predictable collision attacks, but is not proof that collisions or denial-of-service workloads are impossible.
+   **A:** ECMAScript specifies `Map` key equality with SameValueZero, not a hash algorithm. V8 uses internal hashes for ordered tables, but their algorithms and storage can change; do not rely on an assumed randomization scheme as a defense against hostile keys.
 
 **Common Mistakes**
 

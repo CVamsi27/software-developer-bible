@@ -1,6 +1,6 @@
 # TypeScript — Index
 
-> **Study time:** ≈ 5 h 43 m of reading (22 files, ~16 min average).
+> **Study time:** ≈ 4 h 47 m of reading (22 files, ~13 min average).
 > **22 files** — TypeScript type system mastery from basic types to branded types, template literals, declaration files, advanced generics, variance, decorators, the `satisfies` operator, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-22-blue)](../../INDEX.md)
@@ -57,10 +57,10 @@ Reusable type operations.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 05 | [Generics](02-generics-and-inference/10.2.2.01-generics.md) | Generic functions, constraints, default type parameters, conditional generics | Essential | Foundational | 13 min |
-| 06 | [Infer](02-generics-and-inference/10.2.2.02-infer.md) | Type inference in conditional types, `ReturnType`, `Parameters`, `Awaited`, custom utility types | Important | Specialized | 13 min |
-| 07 | [Advanced Generics](02-generics-and-inference/10.2.2.03-advanced-generics.md) | Template literal types, variadic tuples, recursive types, builder patterns | Important | Specialized | 18 min |
-| 08 | [Type Variance](02-generics-and-inference/10.2.2.04-type-variance.md) | Covariance/contravariance/invariance, strictFunctionTypes bivariance, unsound covariant arrays, in/out annotations, assignability puzzles | Important | Specialized | 15 min |
+| 05 | [Generics](02-generics-and-inference/10.2.2.01-generics.md) | Generic functions, constraints, default type parameters, conditional generics | Essential | Foundational | 8 min |
+| 06 | [Infer](02-generics-and-inference/10.2.2.02-infer.md) | Type inference in conditional types, `ReturnType`, `Parameters`, `Awaited`, custom utility types | Important | Specialized | 6 min |
+| 07 | [Advanced Generics](02-generics-and-inference/10.2.2.03-advanced-generics.md) | Template literal types, variadic tuples, recursive types, builder patterns | Important | Specialized | 10 min |
+| 08 | [Type Variance](02-generics-and-inference/10.2.2.04-type-variance.md) | Covariance/contravariance/invariance, strictFunctionTypes bivariance, unsound covariant arrays, in/out annotations, assignability puzzles | Important | Specialized | 7 min |
 
 ---
 
@@ -70,10 +70,10 @@ The composable operations that make TS powerful.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 09 | [Utility Types](03-type-transformations/10.2.3.01-utility-types.md) | `Partial`, `Required`, `Pick`, `Omit`, `Record`, `Exclude`, `Extract`, `NonNullable` | Essential | Foundational | 18 min |
-| 10 | [Conditional Types](03-type-transformations/10.2.3.02-conditional-types.md) | Ternary types, distributive conditional types, `infer` keyword, `never` | Important | Specialized | 12 min |
-| 11 | [Mapped Types](03-type-transformations/10.2.3.03-mapped-types.md) | Index signatures, mapping modifiers, `as` clause, key remapping | Essential | Foundational | 17 min |
-| 12 | [Template Literal Types](03-type-transformations/10.2.3.04-template-literal-types.md) | String manipulation, infer patterns, CSS types, route builders, recursive string types | Important | Specialized | 27 min |
+| 09 | [Utility Types](03-type-transformations/10.2.3.01-utility-types.md) | `Partial`, `Required`, `Pick`, `Omit`, `Record`, `Exclude`, `Extract`, `NonNullable` | Essential | Foundational | 8 min |
+| 10 | [Conditional Types](03-type-transformations/10.2.3.02-conditional-types.md) | Ternary types, distributive conditional types, `infer` keyword, `never` | Important | Specialized | 8 min |
+| 11 | [Mapped Types](03-type-transformations/10.2.3.03-mapped-types.md) | Index signatures, mapping modifiers, `as` clause, key remapping | Essential | Foundational | 8 min |
+| 12 | [Template Literal Types](03-type-transformations/10.2.3.04-template-literal-types.md) | String manipulation, infer patterns, CSS types, route builders, recursive string types | Important | Specialized | 22 min |
 
 ---
 

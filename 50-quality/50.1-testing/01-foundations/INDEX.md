@@ -13,10 +13,10 @@
 
 Tool questions ("Jest or Vitest?") are cheap. Strategy questions ("what do you test, and why?") are what interviews and incidents actually probe. This category builds the strategy layer:
 
-- The **testing pyramid** — many unit tests, fewer integration tests, few E2E tests.
+- The **testing pyramid** — a cost-and-feedback starting model, not a required test ratio.
 - **Test types** — unit, integration, E2E, and where contract/smoke tests fit.
-- **TDD vs BDD** — red-green-refactor vs behavior specs as shared language.
-- **Coverage** — what it measures, what it hides, why 100% is not the goal.
+- **TDD and BDD** — a short test/implementation/refactor cycle and collaborative discovery of concrete behavior; they are not mutually exclusive alternatives.
+- **Coverage** — what execution metrics reveal and why they cannot replace a useful test oracle.
 - **Test data** — factories, faker generators, anonymization versus pseudonymization, golden datasets.
 
 ---
@@ -34,7 +34,7 @@ Tool questions ("Jest or Vitest?") are cheap. Strategy questions ("what do you t
 
 - The pyramid guides cost and feedback; choose the actual mix from the defect risks and boundaries you need to examine.
 - Coverage records execution, not correctness. Use uncovered critical paths to find missing scenarios, and inspect assertions for meaningful checks.
-- Write tests for behavior at boundaries, not implementation details.
+- Assert the observable contract at the boundary that can expose the defect; test a collaborator interaction directly when that interaction is itself required behavior.
 
 ---
 

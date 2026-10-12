@@ -1,6 +1,6 @@
 # WebSockets — Index
 
-> **Study time:** ≈ 2 h 3 m of reading (14 files, ~9 min average).
+> **Study time:** ≈ 2 h 1 m of reading (14 files, ~9 min average).
 > **14 files across 4 categories.** Real-time communication from WebSocket fundamentals and Socket.IO to Server-Sent Events, real-time architecture, NestJS WebSockets, GraphQL subscriptions, WebRTC peer-to-peer, testing realtime systems, WebTransport, scaling patterns, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-14-blue)](../../INDEX.md)
@@ -28,9 +28,9 @@ Transport options and the Socket.IO library built above them.
 
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
-| 01 | [WebSockets Overview](01-transports/60.1.1.01-websockets-overview.md) | Protocol, handshake (HTTP Upgrade), frames, vs HTTP, use cases | Bidirectional real-time | Important | Specialized | 13 min |
+| 01 | [WebSockets Overview](01-transports/60.1.1.01-websockets-overview.md) | Protocol, handshake (HTTP Upgrade), frames, vs HTTP, use cases | Bidirectional real-time | Important | Specialized | 12 min |
 | 02 | [Server-Sent Events](01-transports/60.1.1.02-server-sent-events.md) | EventSource API, auto-reconnect, vs WebSockets, use cases | Server→client only (notifications, live updates) | Important | Specialized | 12 min |
-| 03 | [Socket.IO](01-transports/60.1.1.03-socket-io.md) | Client/server setup, rooms, namespaces, events, fallback to polling | Quick bidirectional with rich features | Important | Specialized | 14 min |
+| 03 | [Socket.IO](01-transports/60.1.1.03-socket-io.md) | Client/server setup, rooms, namespaces, events, fallback to polling | Quick bidirectional with rich features | Important | Specialized | 13 min |
 | 04 | [WebTransport](01-transports/60.1.1.04-webtransport.md) | QUIC-based transport, datagrams, streams, vs WebSocket | Independent reliable streams or replaceable datagrams | Optional | Specialized | 9 min |
 
 **Decision tree:**

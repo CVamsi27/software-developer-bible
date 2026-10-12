@@ -1,13 +1,13 @@
 # Docker — Index
 
-> **Study time:** ≈ 2 h 6 m of reading (11 files, ~11 min average).
+> **Study time:** ≈ 1 h 59 m of reading (11 files, ~11 min average).
 > **11 files** — Docker fundamentals from images and containers to volumes, networks, Compose, multi-stage builds, runtime internals (namespaces/cgroups), supply chain security (signing/SBOM), rootless & sandboxed runtimes, production patterns, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-DevOps-ff7f00)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Why Docker:** Container images are a common unit for application delivery and are used by platforms such as Kubernetes, CI pipelines and some serverless services. For senior backend and platform roles, be ready to explain how your application is built, configured, isolated, observed and shut down in its actual runtime.
+Start with one practical question: what exactly is being released, and what changes when that release starts, stops or moves to another host? These chapters follow the image from build to process, then separate runtime configuration, persistent data and isolation so you can defend the deployment boundary in a senior interview.
 
 ---
 
@@ -28,7 +28,7 @@ What Docker is and how it runs.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Images & Containers](40.1.01-images-containers.md) | Dockerfile, layers, CMD vs ENTRYPOINT, container lifecycle, image registry | Important | Important | 13 min |
+| 01 | [Images & Containers](40.1.01-images-containers.md) | Dockerfile, layers, CMD vs ENTRYPOINT, container lifecycle, image registry | Important | Important | 6 min |
 | 02 | [Volumes & Networks](40.1.02-volumes-networks.md) | Bind mounts, volumes, tmpfs, bridge/host/overlay networks, port mapping | Important | Important | 15 min |
 
 ---
@@ -64,29 +64,11 @@ Production workflows.
 
 ---
 
-## Suggested Study Order
+## Read a deployment in three moves
 
-1. **Images & Containers** — must know
-2. **Volumes & Networks** — must know
-3. **Compose** — for multi-container apps
-4. **Multi-Stage Builds** — for production image size
-5. **Best Practices & Security** — non-root, scanning, distroless
-6. **Production Patterns** — senior level
-7. **Container Runtime Internals** — namespaces/cgroups, the "what is a container" answer
-8. **Image Signing & Supply Chain** — cosign, SBOM, SLSA
-9. **Rootless & Sandboxed Runtimes** — gVisor/Kata, multi-tenancy
-10. **Revision** — explain the source-linked mechanisms from memory using [the companion](REVISION.md)
-11. **Interview Questions** — final practice
-
----
-
-## Three Reading Passes
-
-**Build and run:** Follow image contents, a container's process and writable layer, then connect volume lifetime and network paths. Reproduce a restart/removal case and explain why service DNS differs from localhost.
-
-**Package and operate:** Build one application with separate compile/runtime dependencies. Explain cache inputs, secret injection, health versus restart behavior, and graceful shutdown before proposing a rollout.
-
-**Choose trust boundaries:** Read namespaces/cgroups, signature/provenance verification and rootless/sandboxed runtimes. Distinguish observed runtime evidence from configuration sketches and unexecuted integrations. Then use the revision companion before interview practice.
+1. **Follow the artifact:** Read Images & Containers, then Volumes & Networks. Trace which files are in the image, which process starts, how a port is published and what data survives container replacement.
+2. **Make the release repeatable:** Read Compose, Multi-Stage Builds, Best Practices and Production Patterns. Follow build inputs, runtime configuration, dependency readiness and shutdown through one application lifecycle.
+3. **Check the trust boundary:** Read Runtime Internals, Image Signing and Rootless/Sandboxed Runtimes. Separate documented behavior from configuration assumptions, then use the [revision companion](REVISION.md) before the [interview questions](40.1.10-interview-questions.md).
 
 ---
 

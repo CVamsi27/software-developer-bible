@@ -1,6 +1,6 @@
 # Security — Index
 
-> **Study time:** ≈ 4 h 1 m of reading (24 files, ~10 min average).
+> **Study time:** ≈ 3 h 50 m of reading (24 files, ~10 min average).
 > **The senior security learning track.** Study in three passes: **I. Auth** (the [01-auth](01-auth/INDEX.md) deep-dive: fundamentals → Basic/Digest → API keys → sessions → JWT → OAuth/OIDC → SSO/SAML → MFA/passkeys → RBAC → ABAC) → **II. Attacks & Defense** (XSS, CSRF, SQL injection, API security) → **III. Hardening & Operations** (encryption/TLS, browser policy, threat modeling, secrets and vulnerability response). Finish with the interview banks.
 >
 > The 21 learning and interview files, plus three revision companions, cover HTTP authentication through passkeys, common application attacks, and production security operations.
@@ -46,13 +46,13 @@ Ten auth and authorization chapters build from credentials to policy enforcement
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | ----: | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ------------- | ------------------ | --------: |
-| 1 | [Auth Fundamentals](01-auth/20.5.1.01-auth-fundamentals.md) | Identity vs permissions, hashing vs encryption vs signing, Argon2id, CSPRNG, TLS | Essential | Foundational | 8 min |
+| 1 | [Auth Fundamentals](01-auth/20.5.1.01-auth-fundamentals.md) | Identity vs permissions, hashing vs encryption vs signing, Argon2id, CSPRNG, TLS | Essential | Foundational | 7 min |
 | 2 | [HTTP Basic & Digest Auth](01-auth/20.5.1.02-http-basic-digest-auth.md) | Authorization header, Base64-over-TLS, 401 handshake, Digest challenge-response legacy, nginx patterns | Important | Specialized | 15 min |
 | 3 | [API Keys](01-auth/20.5.1.03-api-keys.md) | CSPRNG generation, hashing keys at rest, `sk_live_` prefixes, rotation windows, scopes, leak runbook | Essential | Foundational | 16 min |
 | 4 | [Sessions & Cookies](01-auth/20.5.1.04-sessions-cookies.md) | Cookie flags, session stores, fixation/hijacking, timeouts | Essential | Foundational | 11 min |
-| 5 | [JWT](01-auth/20.5.1.05-jwt.md) | Token structure, signing algorithms, storage trade-offs, refresh rotation, revocation | Essential | Foundational | 10 min |
+| 5 | [JWT](01-auth/20.5.1.05-jwt.md) | Token structure, signing algorithms, storage trade-offs, refresh rotation, revocation | Essential | Foundational | 8 min |
 | 6 | [OAuth2 / OIDC](01-auth/20.5.1.06-oauth2-oidc.md) | Grants, PKCE, scopes, social login, the OIDC identity layer | Essential | Foundational | 14 min |
-| 7 | [SSO / SAML / Federation](01-auth/20.5.1.07-sso-saml-federation.md) | One IdP many SPs, SAML flows, assertions & certs, SAML vs OIDC, SCIM/JIT provisioning | Important | Specialized | 15 min |
+| 7 | [SSO / SAML / Federation](01-auth/20.5.1.07-sso-saml-federation.md) | One IdP many SPs, SAML flows, assertions & certs, SAML vs OIDC, SCIM/JIT provisioning | Important | Specialized | 12 min |
 | 8 | [MFA / Passkeys / WebAuthn](01-auth/20.5.1.08-mfa-passkeys-webauthn.md) | TOTP mechanics, SMS weaknesses, WebAuthn ceremonies, passkey sync, AAL levels, recovery | Important | Specialized | 16 min |
 | 9 | [RBAC / ABAC](01-auth/20.5.1.09-rbac-abac.md) | Role assignment and activation, policy models, and the boundary between a role and object access | Essential | Foundational | 11 min |
 | 10 | [ABAC Access Control](01-auth/20.5.1.10-abac-access-control.md) | Trusted attribute sources, policy evaluation, enforcement points and failure handling | Essential | Foundational | 10 min |
@@ -65,10 +65,10 @@ Stage 10 is the auth question bank ([drills](01-auth/20.5.1.11-interview-questio
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | ----: | ---------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ------------- | ------------------ | --------: |
-| 11 | [XSS](02-attacks-and-defense/20.5.2.01-xss.md) | Stored/reflected/DOM XSS, CSP, encoding, sanitization | Essential | Foundational | 7 min |
-| 12 | [CSRF](02-attacks-and-defense/20.5.2.02-csrf.md) | SameSite, CSRF tokens, double-submit cookies, origin checking | Essential | Foundational | 8 min |
-| 13 | [SQL Injection](02-attacks-and-defense/20.5.2.03-sql-injection.md) | Parameterized queries, ORM protection, input validation, WAF | Essential | Foundational | 7 min |
-| 14 | [API Security Best Practices](02-attacks-and-defense/20.5.2.04-api-security-best-practices.md) | Object/property authorization, resource limits, SSRF and input/output boundaries | Essential | Foundational | 12 min |
+| 11 | [XSS](02-attacks-and-defense/20.5.2.01-xss.md) | Stored/reflected/DOM XSS, CSP, encoding, sanitization | Essential | Foundational | 6 min |
+| 12 | [CSRF](02-attacks-and-defense/20.5.2.02-csrf.md) | SameSite, CSRF tokens, double-submit cookies, origin checking | Essential | Foundational | 7 min |
+| 13 | [SQL Injection](02-attacks-and-defense/20.5.2.03-sql-injection.md) | Parameterized queries, ORM protection, input validation, WAF | Essential | Foundational | 6 min |
+| 14 | [API Security Best Practices](02-attacks-and-defense/20.5.2.04-api-security-best-practices.md) | Object/property authorization, resource limits, SSRF and input/output boundaries | Essential | Foundational | 10 min |
 
 ---
 

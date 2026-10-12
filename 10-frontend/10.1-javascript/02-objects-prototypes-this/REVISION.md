@@ -124,6 +124,9 @@ Source: [Proxy & Reflect](10.1.2.03-proxy-reflect.md)
 8. **Q:** What do you gain by writing `Reflect.set(target, prop, value, receiver)` inside the trap instead of `target[prop] = value`?
    **A:** The correct receiver reaches setters defined higher up the chain, and the call returns the boolean the trap is required to produce.
 
+9. **Q:** A reactive effect reads after `await`, or throws during a later rerun. Which reads stay tracked, and where does the error surface?
+   **A:** This small runtime tracks only synchronous reads while `active` is set; reads after suspension are not dependencies. The initial failure disposes its partial subscriptions, but a later failure propagates through the write that triggered the rerun and may leave the dependencies read before the throw subscribed.
+
 ## Summary
 
 Revisit the linked chapter when an answer misses the mechanism, a boundary or a failure case.

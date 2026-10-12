@@ -3,9 +3,9 @@
 
 Counts concept chapters (numbered content files, excluding INDEX,
 interview-questions, cheat-sheet/quick-reference files) that carry a
-`## First Principles` section, per stack. The section must sit between
-TL;DR/Why and Definition-style body sections and derive the topic from
-unavoidable constraints — the template rules live in contributing.md.
+`## First Principles` section, per stack. It follows the practical and
+textbook definitions and derives the topic from unavoidable constraints —
+the authoring rules live in contributing.md.
 
 Usage:
   python3 scripts/check_first_principles.py              # report

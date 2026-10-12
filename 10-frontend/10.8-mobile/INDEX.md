@@ -1,6 +1,6 @@
 # Mobile & Cross-Platform — Index
 
-> **Study time:** ≈ 1 h 10 m of reading (8 files, ~9 min average).
+> **Study time:** ≈ 1 h 7 m of reading (8 files, ~8 min average).
 > **8 files** — React Native fluency for studio/agency loops (MVST-class): the architecture and platform-choice primer, plus deep linking, testing, release operations (EAS builds, OTA updates, store automation), and interview-question chapters covering what production mobile work actually adds.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)
@@ -23,7 +23,7 @@ Show what happens when a link opens an authenticated screen on a cold start, and
 
 ## Pass 3 — follow a release to installed devices
 
-[Expo EAS Build](10.8.04-expo-eas-builds.md) produces a signed native artifact. [OTA Updates](10.8.05-codepush-ota-updates.md) targets compatible JavaScript/assets to an existing runtime. [App-Store Release Automation](10.8.06-app-store-release-automation.md) follows review, rollout and recovery.
+[Expo EAS Build](10.8.04-expo-eas-builds.md) produces a signed native artifact. [EAS Update and legacy CodePush](10.8.05-codepush-ota-updates.md) targets compatible JavaScript/assets to an existing runtime and distinguishes the maintained Expo path from retired CodePush infrastructure. [App-Store Release Automation](10.8.06-app-store-release-automation.md) follows review, rollout and recovery.
 
 Distinguish stopping new exposure from repairing devices already updated. Neither a cloud build nor a matching runtime version proves the feature behaves correctly; neither store nor OTA rollback is instant on every installed client.
 

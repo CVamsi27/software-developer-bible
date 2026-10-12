@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Template-compliance gate for teaching chapters and revision companions.
 
-Concepts introduce Definition, then First Principles and mechanisms, and end
-with Summary, See Also and References. TL;DR is retired. Retrieval practice
-lives in the section's separate REVISION.md, not inside a learning chapter.
-Interview banks and domain-shaped case studies retain their lighter contracts.
+Concepts may open with a brief concrete hook, then introduce Definition,
+First Principles and the topic-specific mechanism. They end with Summary, See
+Also and References. TL;DR is retired. Retrieval practice lives in the
+section's separate REVISION.md, not inside a learning chapter. Interview
+banks and domain-shaped case studies retain their own contracts.
 Metadata, fence grammar, raw wrappers and interview depth/count rules remain
 part of this gate. INDEX, operational and personal documents have their own
 conventions.

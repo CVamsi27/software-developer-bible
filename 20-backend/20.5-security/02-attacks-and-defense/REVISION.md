@@ -74,7 +74,13 @@ Source: [SQL Injection](20.5.2.03-sql-injection.md)
 
 **A:** Keep the SQL grammar in application code and map each public choice to a fixed identifier or keyword. A placeholder binds values, not identifiers, and quoting a valid identifier does not authorize its use.
 
-Source: [OWASP SQL Injection Prevention](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html) · [Prisma ORM v6 raw queries](https://www.prisma.io/docs/orm/v6/prisma-client/using-raw-sql/raw-queries)
+Source: [OWASP SQL Injection Prevention](https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html) · [Prisma ORM v7 raw queries](https://www.prisma.io/docs/orm/v7/prisma-client/using-raw-sql/raw-queries)
+
+**Q:** When should a Prisma application prefer TypedSQL over raw-query methods?
+
+**A:** Prefer TypedSQL when its generated, statically authored query contract fits the query. For dynamic SQL that it cannot express, use a supported raw-query API with bound values and fixed or allowlisted grammar; neither type generation nor parameter binding supplies authorization.
+
+Source: [Prisma ORM v7 raw queries](https://www.prisma.io/docs/orm/v7/prisma-client/using-raw-sql/raw-queries) · [Prisma ORM v7 TypedSQL](https://www.prisma.io/docs/orm/v7/prisma-client/using-raw-sql/typedsql)
 
 **Q:** How does least privilege reduce the impact of a SQL injection flaw?
 

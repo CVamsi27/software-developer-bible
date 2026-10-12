@@ -31,7 +31,7 @@ Trace one shared method called on two objects, then explain what changes when a 
 
 ## Docita Anchor
 
-Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
+Examples in [Docita](https://github.com/CVamsi27/docita), a healthcare-platform repository with a NestJS API and React/Astro apps in a TypeScript monorepo. Study the chapter, then locate the implementation:
 
 | Topic in this category | Docita evidence |
 | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |

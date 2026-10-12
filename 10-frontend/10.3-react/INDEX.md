@@ -1,6 +1,6 @@
 # React — Index
 
-> **Study time:** ≈ 7 h 20 m of reading (27 files, ~16 min average).
+> **Study time:** ≈ 6 h 31 m of reading (27 files, ~14 min average).
 > **27 files** — React internals from Virtual DOM to Fiber, hooks, patterns, custom hooks, portals, compound components, external stores, React Router data routers, React 18/19 concurrent APIs, performance, state management, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-27-blue)](../../INDEX.md)
@@ -62,7 +62,7 @@ The core state, synchronization, caching, handle and context APIs.
 | 07 | [useEffect](02-core-hooks/10.3.2.02-useeffect.md) | Dependencies, cleanup, effect timing, strict mode, race conditions | Essential | Foundational | 18 min |
 | 08 | [useMemo / useCallback](02-core-hooks/10.3.2.03-usememo-usecallback.md) | Memoization, dependency tracking, when to use (and when not to) | Important | Important | 24 min |
 | 09 | [useRef](02-core-hooks/10.3.2.04-useref.md) | DOM refs, mutable refs, forwardRef, callback refs, useImperativeHandle | Essential | Foundational | 26 min |
-| 10 | [Context API](02-core-hooks/10.3.2.05-context-api.md) | createContext, Provider, useContext, performance pitfalls, splitting context | Important | Important | 32 min |
+| 10 | [Context API](02-core-hooks/10.3.2.05-context-api.md) | createContext, Provider, useContext, performance pitfalls, splitting context | Important | Important | 8 min |
 
 ---
 
@@ -74,7 +74,7 @@ The patterns that solve real problems in production code.
 | --: | ------ | -------- | --- | --- | ----------: |
 | 11 | [Suspense](03-advanced-hooks-and-patterns/10.3.3.01-suspense.md) | Suspense boundaries, data fetching, useTransition, streaming SSR | Important | Specialized | 17 min |
 | 12 | [Error Boundary](03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.md) | Error boundaries, error recovery, logging, Sentry integration | Important | Important | 7 min |
-| 13 | [Custom Hooks](03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.md) | Composition patterns, useLocalStorage, useDebounce, useFetch, testing, best practices | Essential | Important | 32 min |
+| 13 | [Custom Hooks](03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.md) | Composition patterns, useLocalStorage, useDebounce, useFetch, testing, best practices | Essential | Important | 7 min |
 | 14 | [useSyncExternalStore](03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.md) | Tearing in concurrent rendering, subscribe/getSnapshot contract, snapshot caching, Zustand/Redux integration, infinite-loop mistakes | Important | Specialized | 16 min |
 | 15 | [Performance](03-advanced-hooks-and-patterns/10.3.3.05-performance.md) | Profiler, React.memo, virtualization, windowing, debouncing, Web Workers | Essential | Foundational | 10 min |
 | 16 | [State Management](03-advanced-hooks-and-patterns/10.3.3.06-state-management.md) | Redux Toolkit, Zustand, Jotai, Context vs external state, when to use which | Essential | Important | 16 min |

@@ -53,7 +53,7 @@ Source: [Recent ECMAScript Features](10.1.6.01-es2024-features.md)
 **ES2026 boundaries**
 
 9. **Q:** When does `Array.fromAsync` unwrap values from an async iterable, and what does a mapper change?
-   **A:** Without a mapper it retains a promise yielded by an async iterator as an element. A mapper result is awaited; sync-iterator values are also awaited during async collection. `Array.fromAsync` is asynchronous collection, not an async-stream pipeline.
+   **A:** Without a mapper, a custom async iterator's promise-valued result can remain an element; Array.fromAsync does not re-await async-iterator values. An async generator adopts a promise at its own yield boundary. Mapper results and sync-iterator values are awaited during collection. `Array.fromAsync` is asynchronous collection, not an async-stream pipeline.
 
 10. **Q:** How does `Iterator.concat` avoid the eager work of array concatenation?
     **A:** It returns a synchronous iterator that asks each source for values in order as the consumer advances. It does not build an array, and later sources are not consumed before iteration reaches them.

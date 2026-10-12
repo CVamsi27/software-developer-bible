@@ -10,10 +10,11 @@
 
 ## Reading flow
 
-1. Follow a write through the streams chapter: acceptance, pressure, finish and failure.
-2. Inspect the same data as bytes in Buffers; trace a split frame and the ownership of its payload.
-3. Move those bytes through a file replacement, then a bounded HTTP request/response.
-4. Use [Revision](REVISION.md) to explain the failure boundaries after the examples.
+1. Start with [Streams](20.1.2.01-streams.md) to see how pressure, failure, and completion move through a pipeline.
+2. Follow the stream’s chunks into [Buffers](20.1.2.02-buffers.md), where encoding, framing, and shared memory determine what each byte means and who owns it.
+3. Use [File System](20.1.2.03-file-system.md) to carry those ownership rules into handles, paths, and replacement of persistent state.
+4. Finish with the [HTTP module](20.1.2.04-http-module.md): requests and responses are streams too, with deadlines and one response lifecycle.
+5. Use [Revision](REVISION.md) to retrieve the failure boundary that changes each design decision.
 
 ## Files
 

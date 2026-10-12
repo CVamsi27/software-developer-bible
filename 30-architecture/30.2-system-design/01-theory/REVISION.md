@@ -346,13 +346,13 @@ Source: [Resilience Patterns Deep-Dive: Hedging, Load Shedding, Request Coalesci
 
 **A:** It can help when the second attempt has an independent chance of finishing sooner. Measure the latency change, duplicate work, cancellation, and shared downstream load; the gain is not guaranteed. See [The Tail at Scale](https://research.google/pubs/the-tail-at-scale/).
 
-**Q:** With p-memoize cache:false, when do same-key callers share work?
+**Q:** If two tenants request `user:42`, what must a coalescing key include before they can share a load?
 
-**A:** Concurrent executions share their in-flight result; settled results are not retained for later calls. A time-expiring result cache is a distinct policy.
+**A:** Include the tenant and every authorization or input dimension that can change the result. Otherwise one caller can receive data loaded for another. Same-key singleflight shares only in-flight work within that process; it does not define a settled-result cache.
 
-**Q:** Does aborting fetch prove the remote operation stopped?
+**Q:** Does timing out a caller prove the downstream operation stopped?
 
-**A:** No. The client can stop waiting or reading while the server continues. Propagate cancellation and verify the actual remote lifecycle when that matters.
+**A:** No. A local timeout can stop the caller from waiting while remote work continues. Propagate cancellation through the actual client and dependency, then verify that the operation responds to it.
 
 
 **Q:** Why install a singleflight promise before invoking the loader?

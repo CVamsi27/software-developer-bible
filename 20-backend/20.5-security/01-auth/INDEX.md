@@ -1,6 +1,6 @@
 # Auth - Security
 
-> **Study time:** ≈ 2 h 25 m of reading (12 files, ~12 min average).
+> **Study time:** ≈ 2 h 19 m of reading (12 files, ~12 min average).
 > **Planning:** The stage blocks below estimate study and practice time; chapter badges and the total above report reading time only. Revision and timed practice are separate stages.
 > **The complete authentication & authorization learning track — ten concept stages plus separate practice.** Read them **in order**, each builds on the previous; finish with the interview drills.
 >
@@ -27,7 +27,7 @@ Stage numbers are study order (`0`-`10`, including practice), not file IDs — r
 
 | # | Stage | File | Planned block | You can defend… | Role priority | General importance |
 | --: | ------- | ------ | ------ | ------------------ | --- | --- |
-| 0 | Foundations | [20.5.1.01-auth-fundamentals.md](20.5.1.01-auth-fundamentals.md) | 45 min | Hashing vs encryption, password storage (Argon2id), CSPRNG, why TLS before anything else | Essential | Foundational |
+| 0 | Foundations | [20.5.1.01-auth-fundamentals.md](20.5.1.01-auth-fundamentals.md) | 45 min | Hashing vs encryption, password storage (Argon2id), CSPRNG, authenticated transport and bounded login work | Essential | Foundational |
 | 1 | HTTP Basic & Digest Auth | [20.5.1.02-http-basic-digest-auth.md](20.5.1.02-http-basic-digest-auth.md) | 30 min | Authorization header mechanics, Base64-over-TLS only, Digest challenge-response and its verifier/TLS trade-off, when Basic is still OK | Important | Specialized |
 | 2 | API Keys | [20.5.1.03-api-keys.md](20.5.1.03-api-keys.md) | 30 min | Key generation with CSPRNG, hashing keys at rest, prefix schemes (`sk_live_`), rotation grace windows, per-key scopes | Essential | Foundational |
 | 3 | Sessions & Cookies | [20.5.1.04-sessions-cookies.md](20.5.1.04-sessions-cookies.md) | 45 min | Cookie flags, server-side state, fixation/hijacking, timeouts | Essential | Foundational |

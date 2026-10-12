@@ -1,6 +1,6 @@
 # Attacks & Defense - Security
 
-> **Study time:** ≈ 38 min of reading (5 files, ~8 min average).
+> **Study time:** ≈ 33 min of reading (5 files, ~7 min average).
 > **5 files.** Study browser injection, forged requests, SQL injection and API security, then recall their trust boundaries with the separate revision drill.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../INDEX.md)
@@ -16,10 +16,10 @@ Start with where untrusted text becomes executable browser content. Then separat
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [XSS](20.5.2.01-xss.md) | Stored/reflected/DOM flows, context encoding, HTML sanitization, CSP, Trusted Types | Essential | Foundational | 7 min |
-| 02 | [CSRF](20.5.2.02-csrf.md) | SameSite, CSRF tokens, double-submit cookies, origin checking | Essential | Foundational | 8 min |
-| 03 | [SQL Injection](20.5.2.03-sql-injection.md) | Bound values, allowlisted query grammar, ORM/raw-query boundaries, LIKE patterns and least privilege | Essential | Foundational | 7 min |
-| 04 | [API Security Best Practices](20.5.2.04-api-security-best-practices.md) | Object and property authorization, cost budgets, sensitive business flows, SSRF and dependency trust | Essential | Foundational | 12 min |
+| 01 | [XSS](20.5.2.01-xss.md) | Stored/reflected/DOM flows, context encoding, HTML sanitization, CSP, Trusted Types | Essential | Foundational | 6 min |
+| 02 | [CSRF](20.5.2.02-csrf.md) | SameSite, CSRF tokens, double-submit cookies, origin checking | Essential | Foundational | 7 min |
+| 03 | [SQL Injection](20.5.2.03-sql-injection.md) | Bound values, allowlisted query grammar, TypedSQL/raw-query boundaries, LIKE patterns and least privilege | Essential | Foundational | 6 min |
+| 04 | [API Security Best Practices](20.5.2.04-api-security-best-practices.md) | Object and property authorization, cost budgets, sensitive business flows, SSRF and dependency trust | Essential | Foundational | 10 min |
 
 After these chapters, use [category revision](REVISION.md), then the [security interview bank](../04-interview-drills/20.5.4.01-interview-questions.md).
 

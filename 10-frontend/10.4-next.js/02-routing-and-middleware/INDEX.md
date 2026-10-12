@@ -1,6 +1,6 @@
 # Routing & Middleware — Next.js
 
-> **Study time:** ≈ 1 h 11 m of reading (4 files, ~18 min average).
+> **Study time:** ≈ 49 min of reading (4 files, ~12 min average).
 > **4 files.** Follow Next.js 16 Proxy routing, Route Handlers as the HTTP surface, and metadata resolution from route inputs through social previews and crawler files.
 
 [![Files](https://img.shields.io/badge/files-4-blue)](#files)
@@ -13,9 +13,9 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Proxy (formerly Middleware)](10.4.2.01-middleware.md) | Versioned runtime, matchers, redirects, rewrites and authorization boundary | Important | Specialized | 20 min |
-| 02 | [Route Handlers](10.4.2.02-route-handlers.md) | API routes, request/response, caching, dynamic vs static | Important | Important | 22 min |
-| 03 | [Metadata](10.4.2.03-metadata.md) | Static/dynamic metadata, SEO, Open Graph, robots, sitemaps | Important | Specialized | 26 min |
+| 01 | [Proxy (formerly Middleware)](10.4.2.01-middleware.md) | Versioned runtime, matchers, redirects, rewrites and authorization boundary | Important | Specialized | 11 min |
+| 02 | [Route Handlers](10.4.2.02-route-handlers.md) | API routes, request/response, caching, dynamic vs static | Important | Important | 16 min |
+| 03 | [Metadata](10.4.2.03-metadata.md) | Static/dynamic metadata, SEO, Open Graph, robots, sitemaps | Important | Specialized | 19 min |
 
 ---
 

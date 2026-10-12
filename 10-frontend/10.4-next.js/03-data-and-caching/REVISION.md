@@ -20,30 +20,31 @@ Source: [Data Fetching Patterns in Next.js (App Router)](10.4.3.01-data-fetching
    **A:** A server read can supply data before browser execution when its inputs are already known. Browser-driven search, polling, and optimistic interactions benefit from a client query cache.
 
 
-**How It Works**
+**Reuse and Dependencies**
 
 2. **Q:** Why does adding a fetch tag not necessarily persist its response?
-   **A:** Tags label entries for invalidation. Next.js 15 still needs an explicit persistent-cache choice such as force-cache or positive revalidate.
+   **A:** Tags label entries for invalidation. In the traditional cache model, choose `force-cache` or a positive `revalidate` to opt into persistent fetch reuse.
 
-3. **Q:** How do React cache and unstable_cache differ?
-   **A:** React cache deduplicates within a server render request. unstable_cache stores supported non-fetch results across requests with configurable revalidation.
+3. **Q:** In the traditional cache model, how do React `cache` and `unstable_cache` differ?
+   **A:** React `cache` deduplicates helper work within a server render. `unstable_cache` stores supported non-fetch results across requests with a revalidation policy.
 
 
-**Code Examples**
+**Parallel Work**
 
 4. **Q:** Why can parallelizing queries silently change the requested result?
-   **A:** A dependent query needs its original input, such as the first post's ID. Substituting a user ID may remove a dependency but fetch a different dataset.
+   **A:** A dependent query needs its original input, such as a product ID. Removing that dependency by changing the query can fetch a different dataset.
 
 
-**Common Mistakes**
+**Interactive Reads**
 
-5. **Q:** Will useDeferredValue guarantee fewer search requests?
+5. **Q:** What does it mean when a Server Component passes a promise to a Client Component using React `use()`?
+   **A:** The server starts the read and passes its serializable result across the component boundary. The Client Component reads it under Suspense; this does not make browser-owned live queries server-cached.
+
+6. **Q:** Will `useDeferredValue` guarantee fewer search requests?
    **A:** No. It prioritizes rendering rather than enforcing a time-based debounce; use debouncing/cancellation when controlling query traffic.
 
 
-**Best Practices**
-
-6. **Q:** Where should cache invalidation occur relative to a mutation?
+7. **Q:** Where should cache invalidation occur relative to a mutation?
    **A:** After the authorized, validated write succeeds and before redirecting to dependent output. Target the routes/tags affected rather than invalidating unrelated data.
 
 ## Server Actions in Next.js
@@ -56,13 +57,13 @@ Source: [Server Actions in Next.js](10.4.3.02-server-actions.md)
    **A:** Next creates a client-callable POST interface for it. Keep identity, ownership, and runtime input validation inside the action.
 
 
-**How It Works**
+**Form State and Dispatch**
 
 2. **Q:** Which hook now owns returned form state in the React 19 stack?
    **A:** useActionState from react pairs the previous state with the next submission. The older react-dom useFormState API is deprecated.
 
 
-**Code Examples**
+**Upload and Form Context**
 
 3. **Q:** Why must a useFormStatus submit button be below the form it observes?
    **A:** The hook reads the nearest parent form context. Calling it in the component that creates the form cannot observe that future child form.
@@ -71,7 +72,7 @@ Source: [Server Actions in Next.js](10.4.3.02-server-actions.md)
    **A:** The Server Action request-body limit must be raised from its default one MiB to a bounded suitable value, or the file should upload directly to storage.
 
 
-**Common Mistakes**
+**Failure and Serialization Boundaries**
 
 5. **Q:** Why should redirect be outside a broad action catch block?
    **A:** Redirect throws a framework control-flow signal. A catch can intercept it and incorrectly report a successful redirect as a failed mutation.
@@ -92,19 +93,19 @@ Source: [Caching in Next.js](10.4.3.03-caching.md)
    **A:** The Data Cache persists reusable reads across requests. Request memoization is shorter-lived, and the Full Route Cache holds rendered route output.
 
 
-**How It Works**
+**Refreshing the View**
 
 2. **Q:** Why can router.refresh still display the same old server data?
    **A:** It refreshes the browser's route view without invalidating persistent server data. The new render may read the same cached entry.
 
 
-**Code Examples**
+**Request Deduplication**
 
 3. **Q:** Which requests does automatic request memoization combine?
    **A:** Identical GET URL/options calls within a React server render. Different endpoints and Route Handler execution are outside that deduplication rule.
 
 
-**Common Mistakes**
+**Cache Identity**
 
 4. **Q:** Why does an invalidation tag not isolate two users' cached records?
    **A:** A tag groups entries for refresh, rather than assigning a distinct user key or granting access. Identity-aware keys and authorization are separate requirements.
@@ -128,25 +129,25 @@ Source: [Streaming in Next.js](10.4.3.04-streaming.md)
    **A:** The completed shell and the fallbacks of pending subtrees. Each subtree can replace its placeholder when its server work finishes.
 
 
-**How It Works**
+**Data Dependencies**
 
 2. **Q:** Does adding three Suspense boundaries remove a sequential data dependency?
    **A:** No. Boundaries control reveal timing; a later read that needs an earlier result still waits for that result.
 
 
-**Code Examples**
+**Loading Boundaries**
 
 3. **Q:** What does loading.tsx wrap that an arbitrary local fallback may not?
    **A:** It supplies a segment-level Suspense boundary around the page and its descendants beneath the layout. Local boundaries provide more granular reveal inside that route.
 
 
-**Common Mistakes**
+**Pending and Failure**
 
 4. **Q:** Must every Suspense boundary have its own error.tsx?
    **A:** No. Suspense handles pending work, while route/custom error boundaries handle failures. A route boundary may cover several Suspense regions.
 
 
-**Best Practices**
+**Crawler and Layout Boundaries**
 
 5. **Q:** Why can a late not-found result still have HTTP status 200?
    **A:** The shell may already have sent its headers. Perform decisions needing a real status or redirect before streaming begins.
@@ -155,10 +156,13 @@ Source: [Streaming in Next.js](10.4.3.04-streaming.md)
    **A:** It wraps the page and descendants beneath the layout, not the parent layout itself. Put request-time work below the fallback or add a nearer Suspense boundary.
 
 
-**Performance Considerations**
+**Performance**
 
-6. **Q:** Why can a quick shell improve first paint without fixing LCP?
+7. **Q:** Why can a quick shell improve first paint without fixing LCP?
    **A:** The largest visible element may still depend on a slow section. Measure its actual arrival and reserve matching placeholder geometry to reduce layout shift.
+
+8. **Q:** What streaming behavior should an HTML-limited crawler expect around metadata?
+   **A:** Next.js waits for `generateMetadata` so the crawler receives metadata in the initial head. Page content can still stream after that metadata resolves; DOM-capable crawlers can receive streamed metadata.
 
 ## Incremental Static Regeneration (ISR)
 
@@ -170,13 +174,13 @@ Source: [Incremental Static Regeneration (ISR)](10.4.3.05-incremental-static-reg
    **A:** The next qualifying request, not a timer job. Warm stale output is served while background regeneration proceeds.
 
 
-**How It Works**
+**Build and Runtime Boundaries**
 
 2. **Q:** When does a newly visited ID incur render latency?
    **A:** When no page has been generated for it yet. Build-time generation of popular IDs avoids that first-visit cost.
 
 
-**Code Examples**
+**Invalidation and Cache Lifetimes**
 
 3. **Q:** Does a CMS webhook calling revalidatePath eagerly rebuild the route?
    **A:** No. A Route Handler marks the path for regeneration on its next visit; completed regeneration produces the replacement cache entry.
@@ -185,13 +189,13 @@ Source: [Incremental Static Regeneration (ISR)](10.4.3.05-incremental-static-reg
    **A:** The smallest interval governs that route's regeneration. Each data entry can still keep its own cache policy.
 
 
-**Common Mistakes**
+**Failed Regeneration**
 
 5. **Q:** Why is catching an upstream error and returning a placeholder risky during ISR?
    **A:** That placeholder may count as a successful regeneration and replace useful cached content. Let unexpected failures throw so Next retains the last successful page.
 
 
-**Best Practices**
+**Runtime and Host Limits**
 
 6. **Q:** Why can pure static hosting not support ISR?
    **A:** There is no runtime available to regenerate and replace cached route output after deployment. A new build is required instead.
@@ -209,31 +213,31 @@ Source: [Static Exports in Next.js](10.4.3.06-static-exports.md)
    **A:** next build with output set to export emits the static output. The old next export command was removed in version 14.
 
 
-**How It Works**
+**Build-Time Rendering**
 
 2. **Q:** Do Server Components disappear from an exported app?
    **A:** Their runtime execution moves to build time. The browser receives generated HTML and static navigation payloads, without a request-time Next server.
 
 
-**Code Examples**
+**Route Enumeration**
 
 3. **Q:** How do App and Pages routers prohibit unknown exported dynamic IDs?
    **A:** App Router enumerates generateStaticParams and disables dynamicParams. Pages Router uses getStaticPaths with fallback:false.
 
 
-**Common Mistakes**
+**Static Files and Runtime Endpoints**
 
 4. **Q:** Can a request-independent GET Route Handler be exported?
    **A:** Yes, with appropriate static configuration it emits a build-time file. Request-dependent handlers and mutation methods still require a runtime.
 
 
-**Best Practices**
+**Image Delivery**
 
 5. **Q:** How can next/image work when no optimizer server exists?
    **A:** Serve the source unoptimized or use a custom loader pointing to an external optimizer/CDN. Preserve layout dimensions either way.
 
 
-**How It Works**
+**Authorization Boundary**
 
 6. **Q:** Where is authorization enforced when an exported shell shows private API data?
    **A:** The external API must verify the request and enforce permissions. Hiding client UI is not an access-control boundary.

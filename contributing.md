@@ -109,7 +109,7 @@ Before contributing, review the existing files in the relevant section to unders
 └── 81-lanes-indian-sde-faang/ # Indian SDE / FAANG lane (DSA-heavy) — INDEX.md + numbered 81.x files
 ```
 
-> Repo scale (tool-maintained): **1026 `.md` files / 194K lines** across the stacks, lanes, and projects above — run `python3 scripts/check_counts.py` to verify the claim stays true.
+> Repo scale (tool-maintained): **1027 `.md` files / 181K lines** across the stacks, lanes, and projects above — run `python3 scripts/check_counts.py` to verify the claim stays true.
 
 - **The 7 study stacks** (`10-`, `20-`, `30-`, `40-`, `50-`, `60-`, `70-`) hold the technical material both interview lanes pull from.
 - **00-strategy** is cross-lane (everyone starts here); **80-** and **81-lanes** are terminal interview plans that reference into the stacks, never the other way around; **projects/** holds the Docita deep-dive corpus.
@@ -256,45 +256,35 @@ There is no separate "type" badge — the Tags badge carries the `tags:` values 
 
 ### Standard Concept Files
 
-A chapter should answer a reader's questions in the order they arise: what is
-this, what forces its design, how does it work, and when does it fail? Introduce
-the topic once. The TL;DR opening is retired (2026-10-01); retain any unique
-fact in the body rather than retaining a second overview.
+A chapter should carry one reader through a useful question: what problem are
+they facing, what mechanism explains it, what happens in a concrete case, and
+which boundary changes the decision? Begin with a short, specific situation or
+surprising result before the definition. Keep the practical and textbook
+definitions together, then let the topic determine the remaining headings and
+order. The TL;DR opening is retired (2026-10-01); retain any unique fact in the
+body rather than adding another overview.
 
 ```text
 # Title (after metadata and badges)
 
+One short, topic-specific opening: a problem, question or observable result.
+
 ## Definition
-The concept and its boundaries in plain language.
+Explain the concept in plain language and set its boundary.
 
 > **Textbook Definition:** A concise original formal definition of the mechanism and its scope.
 
 ## First Principles
-The unavoidable constraints and the mechanisms they force.
+Derive the mechanism from a constraint the reader has just encountered; do not repeat the definitions or list benefits.
 
-## Why It Matters
-A concrete problem or decision the reader needs to solve.
+## [A topic-specific question or relationship]
+Build the mechanism from the opening case. Trace one focused example and explain its result.
 
-## How It Works
-A causal explanation, with one diagram or worked example where useful.
-
-## Code Examples
-A small set of distinct executable examples; explain the output and limits.
-
-## Real-World Use Cases
-Apply the mechanism to decisions instead of repeating the same implementation.
-
-## Common Mistakes
-Explain failure causes and corrections; link to the canonical example.
-
-## Best Practices
-Decision criteria and trade-offs that were not already stated above.
-
-## Performance Considerations
-Include only when this topic has a distinct performance mechanism.
+## [A decision or boundary, when it adds new reasoning]
+Compare only alternatives or failure cases that change what an engineer should do.
 
 ## Summary
-One concise final recap of the chapter's decisions and boundaries.
+One concise recap of the mechanism and its most important boundary.
 
 ---
 
@@ -308,67 +298,35 @@ Primary sources supporting technical and version-sensitive claims.
 
 ### Section Rules
 
-1. **Definition first:** a concept's definition is the single opening overview. First Principles follows it, deriving consequences from constraints rather than restating the definition.
+1. **Hook, then define:** a short opening situation may precede the Definition. The practical definition and one formal textbook definition belong together; neither should restate the opening or the final Summary.
 2. **Teach once:** assign each mechanism and full implementation one canonical location. Subsequent sections apply, compare or challenge it; they do not paste it again.
-3. **Preserve the learning story:** use a concrete problem, trace the mechanism, then show a decision or failure. Add domain headings when they clarify that sequence. Introduce unfamiliar terms in plain language and connect each part to the system it belongs to before presenting a taxonomy. Prefer “Inside a lexical environment: what the Environment Record stores” over “Environment Records in Detail”. Do not force every chapter into the same number of examples or mistakes.
+3. **Follow the topic, not a template:** a problem and its mechanism usually belong in the same reading thread. Choose headings that say what the next section explains. Merge “why”, “how”, examples and decisions when they are parts of one explanation; omit a heading when it would repeat a nearby section. Do not force every chapter into the same order, number of examples or mistakes.
 4. **Summary last:** one final Summary ends the teaching content. The separator precedes See Also and References.
 5. **Revision is a separate file:** each category's `REVISION.md` follows the learning chapters in its INDEX; flat stacks place the companion at stack level. Chapters link to it under See Also. Interview banks remain distinct interview practice.
-6. **Required teaching sections:** Definition, First Principles, Code Examples, Summary, See Also and References for concepts. Optional headings appear only when they add a new mechanism or useful decision.
-7. **Plain language before formal names:** explain one new idea at a time. Start with what the reader can observe in a small example, then name the mechanism. Define a new term or acronym when it first appears. For example, say “the name `count` refers to `1`; that connection is called a binding” before discussing binding state. Put specification fields and engine details after the basic mechanism, with a reason the reader needs them. Preserve important conditions, failure cases and subtopics; shorten sentences rather than removing the explanation.
+6. **Required teaching sections:** Definition (with one textbook definition), First Principles, Summary, See Also and References for concepts. A code example is required only when executable code is the clearest way to teach that topic. Optional headings appear only when they add a distinct mechanism or decision.
+7. **Plain language before formal names:** explain one new idea at a time. Let an example show what happens before adding the formal term. Define a new term or acronym when it first appears. For example, say “the name `count` refers to `1`; that connection is called a binding” before discussing binding state. Put specification fields and engine details beside the behavior they explain. Preserve important conditions, failure cases and subtopics; shorten or combine repeated explanations rather than removing depth.
 8. **No retired sections:** learning chapters contain neither TL;DR, Cheat Sheet nor inline Revision Questions. Preserve unique facts in the relevant body section and authored questions in the companion.
 
 ### Design Case Studies (`NN.N-system-design/NN-case-studies/`)
 
-Case studies keep the system's own design flow:
+Start with the users, actions and guarantees the system must support. Derive
+capacity and consistency assumptions before choosing APIs, storage or topology.
+Then trace the main request through the design and follow one important
+failure to its recovery path. Use headings such as requirements, data model,
+architecture or failure handling when those sections clarify this case; omit
+steps that do not change the design. State the assumptions behind estimates
+and end with the trade-offs that would change the recommendation. Revision
+questions remain in the category companion.
 
-```text
-## Problem and Requirements
-## First Principles
-## Capacity Estimation
-## API Design
-## Database Design
-## Architecture
-## Scaling and Failure Handling
-## Trade-offs
-## Summary
+### Tables, diagrams and examples
 
----
-
-## See Also
-## References & Learn More
-```
-
-An opening problem statement introduces the system without a generic Definition
-or TL;DR. Requirements precede design decisions; capacity calculations state
-their assumptions. First Principles derives decisions from the actual load,
-consistency and latency constraints. Revision questions live in the category
-companion. Summary and the cross-reference sections remain required.
-
-### Why and Common Mistakes Variants
-
-Concept files typically use **numbered lists** or **bullet lists** for these sections. However, DevOps-focused files (Docker, Kubernetes, CI/CD) often use **table formats** for clarity:
-
-**Table format for Why:**
-```text
-## Why Do We Need It?
-
-| Problem               | Solution                          |
-| --------------------- | --------------------------------- |
-| "Works on my machine" | Consistent environment via images |
-| Manual server setup   | Declarative configuration         |
-```
-
-**Table format for Common Mistakes:**
-```text
-## Common Mistakes
-
-| Mistake            | Fix                   |
-| ------------------ | --------------------- |
-| Using `latest` tag | Pin specific versions |
-| Running as root    | Use non-root user     |
-```
-
-Either format is acceptable — choose the one that best suits the content.
+Choose a table only when readers need to compare the same properties across
+options. Choose a diagram when spatial relationships, ownership or sequence are
+hard to follow in prose. A code example should advance the explanation: state
+its setup, trace the important steps, explain the result and name the condition
+that would change it. Do not turn “why”, “mistakes” or “best practices” into
+mandatory tables or sections; place each decision beside the mechanism it
+clarifies.
 
 ## Revision Questions Format
 
@@ -937,14 +895,14 @@ It runs, in order, with clear pass/fail output:
 
 | Check | Command | What it verifies |
 | --------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Count guard | `python3 scripts/check_counts.py` | Gate 1/30: every count claim in the navigation surface matches live disk — repo-scale strings ("1026 files, 194K lines"), each INDEX's `Files` badge and `> **N files**` blurb, the `N files in M sub-stacks` stack headers, and the `Files` column of every navigation table. Table counts include learning and interview chapters, but exclude INDEX and REVISION companions; badges and blurbs retain their wider scope. `--write` restamps them all from disk (idempotent) |
+| Count guard | `python3 scripts/check_counts.py` | Gate 1/30: every count claim in the navigation surface matches live disk — repo-scale strings ("1027 files, 181K lines"), each INDEX's `Files` badge and `> **N files**` blurb, the `N files in M sub-stacks` stack headers, and the `Files` column of every navigation table. Table counts include learning and interview chapters, but exclude INDEX and REVISION companions; badges and blurbs retain their wider scope. `--write` restamps them all from disk (idempotent) |
 | Alignment | `python3 scripts/check_alignment.py` | Markdown table pipes and ASCII box walls align; `--fix` repairs in place |
 | Structure | `python3 scripts/check_structure.py` | IDs unique, sequences contiguous, interview files last — every flat stack must carry at least one `*-interview-questions.md` (category stacks hold the bank in a dedicated final interview category; 70.1/70.3 exempt as interview material themselves) (the historical lane-80.x GAPS were fixed 2026-09-13 — sequence now contiguous 1..36), and **no duplicate H2 section slug within a file** — two identically-named outline entries mean an ambiguous anchor and repeated sub-structures written as siblings instead of nested (80.12 had 13 stories as 65 sibling H2s; 81.05 declared "Segment Tree" twice). Nest repeats as `###` |
 | Link check | `python3 scripts/check_links.py` | Fence-aware broken-link scan — every relative prose link resolves to a real file (external URLs and anchor-only links are skipped). Also rejects **stale link labels**: a visible label that is a relative path must point at a path that exists, since pre-renumbering relics leave the target correct while the reader sees a folder layout that no longer exists (a target-only check cannot see these — the Sept 2026 audit fixed 10 such lines and ~18 more survived undetected). Spaced labels are humanized titles, not paths; `personal/` reports are exempt because they quote dead paths as documentation |
 | Freshness gate | `python3 scripts/check_freshness.py` | Stale-API signature scan — flags deprecated APIs, dead/dated reference URLs and moving GitHub Action branch refs in YAML code fences (fake archive timestamps, retired OWASP cheat-sheet URL forms, shuttered domains confirmed dead in the 2026-09 remediation, `url.parse`, sync Next.js `params`, Pages Router exports outside the Next.js stack, `new Buffer()`, setTimeout chunking) |
 | Link baseline | `python3 scripts/link_baseline.py` | Gate 6/30 (diff mode): every cited external URL must be in `scripts/external-links-baseline.json` — exit 1 on unverified ADDED urls; probe-verify each, then `--update` and commit the JSON with the doc change. `--probe` GET-probes all baseline URLs (audit mode, runs in the monthly CI workflow) |
 | Claims gate | `python3 scripts/check_claims.py` | Gate 7/30 (since 2026-09-14): campaign-material claims integrity — purged unverifiable claim phrases (Next.js-at-Docita, invented founder bios, unsourceable AI specifics, DEK/KEK envelope encryption, stale n8n reach) must not re-enter active application answers, the playbook, profile, or CV sources. Strips fenced blocks, quoted spans (JD's own words), and the gate's own `Claims audit <date>:` footnotes before matching; historical sent-record reports are frozen. `--scan` for the non-blocking informational view |
-| Template compliance | `python3 scripts/check_template.py` | Enforces the definition-first teaching flow, required sections by genre, metadata, fence/raw-wrapper integrity and interview counts. Rejects retired TL;DR openings and inline revision drills; separate `REVISION.md` companions hold the practice. |
+| Template compliance | `python3 scripts/check_template.py` | Enforces the reader-hook → practical/textbook definition → First Principles order, required sections by genre, metadata, fence/raw-wrapper integrity and interview counts. Topic-specific headings may organize the remaining explanation; generic middle sections are optional. Rejects retired TL;DR openings and inline revision drills; separate `REVISION.md` companions hold the practice. |
 | Code whitespace | `python3 scripts/check_code_whitespace.py` | Gate 8/30 (since 2026-09-15): code-block indentation hygiene — no trailing whitespace and no whole-block paste-shift base indents (≥4 spaces on every line of a lang-tagged block) inside fenced code. Pass by design: gofmt-style go tabs, Anki TSV data fences, ASCII-diagram alignment in text fences, list-nested fence bases. Bulk-fix with `python3 scripts/fix_code_whitespace.py --trailing-ws --paste-shift` |
 | Box-code indentation | `python3 scripts/fix_box_code_indent.py --check --json --css` | Gate 8b/30: code embedded between ASCII box walls that lost its indentation (every row flat at the box column) renders as visibly broken code. Keyword-anchored JS, JSON and CSS stretches; each mode is strict and a whole-stretch veto protects hand-aligned blocks. Fix with `--fix` |
 | Box width | `python3 scripts/fix_box_width.py --check` | Gate 8c/30: boxes whose right wall is pushed far past their content wrap on laptop screens. Shrinks single-box fences to content width (single-column rows only). Fix with `--fix`, then `check_alignment.py --fix` |

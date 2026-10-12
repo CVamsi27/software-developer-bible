@@ -46,6 +46,9 @@ Source: [Proxy in Next.js](10.4.2.01-middleware.md)
 6. **Q:** Why should a cookie-presence redirect never be the only authorization check?
    **A:** A cookie can be forged, expired, or insufficient for a particular resource. The data-access or mutation endpoint must independently verify identity and permissions.
 
+7. **Q:** Why can excluding a page path in `config.matcher` leave its Server Function outside Proxy checks too?
+   **A:** Server Function calls are POST requests to the page route, not separate routes. Their own function must authenticate and authorize every call; a Proxy matcher is not their security boundary.
+
 ## Route Handlers in Next.js
 
 Source: [Route Handlers in Next.js](10.4.2.02-route-handlers.md)
@@ -58,8 +61,8 @@ Source: [Route Handlers in Next.js](10.4.2.02-route-handlers.md)
 
 **How It Works**
 
-2. **Q:** Are Next.js 15 GET handlers persistently cached automatically?
-   **A:** No. Opt a request-independent public GET into caching explicitly, and distinguish framework caches from HTTP browser/CDN caching.
+2. **Q:** How does GET caching differ with Cache Components off and on?
+   **A:** With Cache Components off, Route Handlers are uncached by default and a safe public GET can opt in through route configuration. With it on, deterministic work can be prerendered and reusable data can be cached in a helper; request-specific reads remain dynamic.
 
 
 **Code Examples**
@@ -78,6 +81,12 @@ Source: [Route Handlers in Next.js](10.4.2.02-route-handlers.md)
 
 6. **Q:** Why are response CORS headers alone insufficient for a preflighted request?
    **A:** The browser first asks OPTIONS whether the method and headers are allowed. That preflight also needs the intended CORS policy, while authentication remains a separate check.
+
+7. **Q:** Why should a Route Handler prefer the generated `RouteContext` helper for dynamic params?
+   **A:** Next.js generates the route-aware type during development, build, or type generation, keeping the handler's param shape aligned with the filesystem route.
+
+8. **Q:** What should logout do beyond expiring the browser's session cookie?
+   **A:** Revoke the server-side session as well. Cookie flags reduce exposure, but they do not validate the session or authorize a mutation; cookie-authenticated writes also need a CSRF policy.
 
 ## Metadata API in Next.js
 
@@ -114,6 +123,12 @@ Source: [Metadata API in Next.js](10.4.2.03-metadata.md)
 
 7. **Q:** Where does JSON-LD belong if it is not a field in the Metadata object?
    **A:** Render structured data separately in a script element in the page or layout, with safe serialization. The Metadata API emits supported document metadata; it does not turn a custom JSON-LD field into structured data.
+
+8. **Q:** What takes precedence when a route defines both `opengraph-image.png` and an `openGraph.images` value?
+   **A:** The file-based metadata convention takes precedence for that field. Remove or align the competing declaration so the emitted preview is intentional.
+
+9. **Q:** Which sitemap fields should be kept accurate for Google, and which do not affect its crawl decisions?
+   **A:** `lastModified` should reflect a significant content change; Google ignores `priority` and `changefreq`. Split a sitemap above 50,000 URLs.
 
 ## Follow the Failure Boundary
 

@@ -1,6 +1,6 @@
 # Modern JS & Interview Prep — JavaScript
 
-> **Study time:** ≈ 1 h 26 m of reading (6 files, ~14 min average).
+> **Study time:** ≈ 1 h 17 m of reading (6 files, ~13 min average).
 > **6 files.** Selected ECMAScript 2022–2026 features and separate host APIs, Web Workers, DOM events, cross-tab coordination, and a 62-question interview bank.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](#files)
@@ -13,10 +13,10 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Recent ECMAScript Features](10.1.6.01-es2024-features.md) | Selected ES2022–2026 APIs, host/runtime boundaries, iteration, promises, arrays, and binary data | Important | Specialized | 19 min |
+| 01 | [Recent ECMAScript Features](10.1.6.01-es2024-features.md) | Selected ES2022–2026 APIs, host/runtime boundaries, iteration, promises, arrays, and binary data | Important | Specialized | 18 min |
 | 02 | [Web Workers](10.1.6.02-web-workers.md) | Dedicated/Shared workers, OffscreenCanvas, Comlink, React hooks for workers | Important | Important | 11 min |
-| 03 | [DOM Events & Delegation](10.1.6.03-dom-events-delegation.md) | Capture/bubble phases, target vs currentTarget, delegation patterns, passive listeners, CustomEvent, React synthetic events | Essential | Foundational | 18 min |
-| 04 | [Cross-Tab Communication](10.1.6.04-cross-tab-communication.md) | BroadcastChannel, storage events, SharedWorker vs postMessage, non-atomic storage races and Web Locks, sync logout, IndexedDB payloads, service-worker messaging | Important | Specialized | 19 min |
+| 03 | [DOM Events & Delegation](10.1.6.03-dom-events-delegation.md) | Capture/bubble phases, target vs currentTarget, delegation patterns, passive listeners, CustomEvent, React synthetic events | Essential | Foundational | 13 min |
+| 04 | [Cross-Tab Communication](10.1.6.04-cross-tab-communication.md) | BroadcastChannel, storage events, SharedWorker vs postMessage, non-atomic storage races and Web Locks, sync logout, IndexedDB payloads, service-worker messaging | Important | Specialized | 16 min |
 | 05 | [Interview Questions](10.1.6.05-interview-questions.md) | 62 curated questions with answers and changed-condition checks | Essential | Foundational | 12 min |
 
 ---
@@ -29,7 +29,7 @@ First compare syntax/host API availability and value-copy behavior. Then study w
 
 ## Docita Anchor
 
-Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
+Examples in [Docita](https://github.com/CVamsi27/docita), a healthcare-platform repository with a NestJS API and React/Astro apps in a TypeScript monorepo. Study the chapter, then locate the implementation:
 
 | Topic in this category | Docita evidence |
 | -------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |

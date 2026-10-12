@@ -1,6 +1,6 @@
 # HTML/CSS & PWA — Index
 
-> **Study time:** ≈ 1 h 14 m of reading (10 files, ~7 min average).
+> **Study time:** ≈ 1 h 10 m of reading (10 files, ~7 min average).
 > **10 files** — HTML fundamentals, CSS layout, CSS architecture, theming/design tokens, browser storage, PWA, SEO, and browser rendering — the foundational web platform skills every senior frontend engineer needs.
 
 [![Files](https://img.shields.io/badge/files-10-blue)](../../INDEX.md)
@@ -50,7 +50,7 @@ Trace a page from accessible markup through layout, paint, storage and reload. E
 
 ## Docita Anchor
 
-Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
+Examples in [Docita](https://github.com/CVamsi27/docita), a healthcare-platform repository with a NestJS API and React/Astro apps in a TypeScript monorepo. Study the chapter, then locate the implementation:
 
 | Topic in this category | Docita evidence |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |

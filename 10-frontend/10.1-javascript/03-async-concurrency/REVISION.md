@@ -227,7 +227,7 @@ Source: [Bounded Concurrency & Promise Pools](10.1.3.06-bounded-concurrency.md)
    **A:** Catching records that input's failure and lets the same worker claim another item; each input receives an indexed outcome.
 
 5. **Q:** What should an already-aborted pool return for its queued inputs?
-   **A:** This version starts none of them and records a rejected outcome with the abort reason for each index. It never returns sparse result holes.
+   **A:** It starts none of them and records a `skipped` outcome with the abort reason for each index. Work already claimed records its actual fulfillment or rejection; the result array has no holes.
 
 **Common Mistakes**
 

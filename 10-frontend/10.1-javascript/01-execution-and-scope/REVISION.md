@@ -94,6 +94,10 @@ Source: [Hoisting](10.1.1.04-hoisting.md)
 
 **A:** In strict code and modules it is block-scoped. Sloppy scripts have legacy Annex B rules with eligibility conditions. Avoid depending on those differences; declare the intended outer binding explicitly.
 
+**Q:** What do `using` and `await using` add to declaration timing and resource lifetime?
+
+**A:** They create lexical resource bindings, so the name follows lexical initialization rules. On scope exit, `using` disposes synchronously and `await using` disposes asynchronously. Check the current specification draft and the runtime or transpiler support you deploy.
+
 ## Lexical Environment
 
 Source: [Lexical Environment](10.1.1.05-lexical-environment.md)

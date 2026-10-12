@@ -1,6 +1,6 @@
 # NestJS — Index
 
-> **Study time:** ≈ 3 h 17 m of reading (24 files, ~8 min average).
+> **Study time:** ≈ 3 h 9 m of reading (24 files, ~8 min average).
 > **24 files** — NestJS framework from modules and controllers to guards, pipes, interceptors, CQRS, microservices, testing, configuration, lifecycle/shutdown, scheduling, OpenAPI docs, custom decorators, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-24-blue)](../../INDEX.md)
@@ -85,8 +85,8 @@ Production hygiene. Category INDEX: [Quality & Operations](04-quality-and-operat
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Configuration & Validation](04-quality-and-operations/20.2.4.01-configuration-validation.md) | ConfigModule, ValidationPipe, class-validator, Joi, DTOs, env validation | Essential | Important | 13 min |
-| 02 | [Testing](04-quality-and-operations/20.2.4.02-testing.md) | Jest, TestingModule, supertest, Testcontainers, e2e/integration/unit | Essential | Important | 13 min |
+| 01 | [Configuration & Validation](04-quality-and-operations/20.2.4.01-configuration-validation.md) | ConfigModule, ValidationPipe, class-validator, Joi, DTOs, env validation | Essential | Important | 8 min |
+| 02 | [Testing](04-quality-and-operations/20.2.4.02-testing.md) | Jest, TestingModule, supertest, Testcontainers, e2e/integration/unit | Essential | Important | 10 min |
 | 03 | [Lifecycle Hooks & Graceful Shutdown](04-quality-and-operations/20.2.4.03-lifecycle-hooks-graceful-shutdown.md) | Lifecycle hook map + ordering, `enableShutdownHooks()`, SIGTERM, Kubernetes terminationGracePeriod, draining connections, closing pools in order | Essential | Important | 15 min |
 | 04 | [Scheduling & Background Jobs](04-quality-and-operations/20.2.4.04-scheduling-background-jobs.md) | @nestjs/schedule + dynamic API, distributed cron locks (Redis NX), BullMQ queues, retries/backoff/rate limits, idempotent handlers, job observability | Essential | Important | 20 min |
 | 05 | [Swagger & OpenAPI](04-quality-and-operations/20.2.4.05-swagger-openapi-nestjs.md) | @nestjs/swagger setup, DocumentBuilder, @ApiProperty DTOs, generics + @ApiExtraModels, security schemes, spec JSON codegen, CI contract checks | Essential | Important | 15 min |

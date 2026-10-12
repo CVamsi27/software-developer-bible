@@ -1,6 +1,6 @@
 # Async & Concurrency — JavaScript
 
-> **Study time:** ≈ 1 h 10 m of reading (7 files, ~10 min average).
+> **Study time:** ≈ 51 min of reading (7 files, ~7 min average).
 > **7 files.** Scheduling and work ownership: the event loop, promises, async/await, error propagation across asynchronous boundaries, and cancellation with AbortSignal.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](#files)
@@ -16,9 +16,9 @@
 | 01 | [Event Loop](10.1.3.01-event-loop.md) | Microtasks vs macrotasks, callback queue, rendering pipeline, `requestAnimationFrame` | Essential | Foundational | 7 min |
 | 02 | [Promises](10.1.3.02-promises.md) | Promise states, chaining, error handling, `Promise.all`/`race`/`allSettled`/`any` | Essential | Foundational | 9 min |
 | 03 | [Async/Await](10.1.3.03-async-await.md) | Async functions, error handling, concurrency, sequential vs parallel, top-level await | Essential | Foundational | 8 min |
-| 04 | [Error Handling](10.1.3.04-error-handling.md) | try/catch/finally, custom errors, error propagation, async error handling, unhandled rejections | Essential | Foundational | 19 min |
+| 04 | [Error Handling](10.1.3.04-error-handling.md) | try/catch/finally, custom errors, error propagation, async error handling, unhandled rejections | Essential | Foundational | 5 min |
 | 05 | [Aborting & Cancellation](10.1.3.05-abort-and-cancellation.md) | AbortController/AbortSignal, stale-request races, `AbortSignal.timeout`/`any`, listener cleanup, cooperative cancellation | Essential | Foundational | 8 min |
-| 06 | [Bounded Concurrency & Promise Pools](10.1.3.06-bounded-concurrency.md) | Worker-pool pattern, fail-fast vs allSettled policies, AbortSignal threading, library error and cancellation contracts | Essential | Foundational | 13 min |
+| 06 | [Bounded Concurrency & Promise Pools](10.1.3.06-bounded-concurrency.md) | Worker-pool pattern, fail-fast vs allSettled policies, AbortSignal threading, library error and cancellation contracts | Essential | Foundational | 8 min |
 
 ---
 

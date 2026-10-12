@@ -39,7 +39,7 @@ How an isolate schedules JavaScript while native I/O progresses. Category INDEX:
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Event Loop](01-runtime-and-async/20.1.1.01-event-loop.md) | Phases (timers, pending callbacks, idle/prepare, poll, check, close), microtasks vs macrotasks, `setImmediate` vs `nextTick`, blocking vs non-blocking | Essential | Foundational | 7 min |
-| 02 | [Web Streams & Test Runner](01-runtime-and-async/20.1.1.02-web-streams-and-test-runner.md) | ReadableStream/WritableStream/TransformStream, `node:test`, mocking, watch mode, TAP output | Important | Important | 9 min |
+| 02 | [Web Streams & Test Runner](01-runtime-and-async/20.1.1.02-web-streams-and-test-runner.md) | ReadableStream/WritableStream/TransformStream, `node:test`, mocking, watch mode, TAP output | Important | Important | 10 min |
 
 ---
 
@@ -49,8 +49,8 @@ The I/O primitives — every backend service uses these. Category INDEX: [I/O & 
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Streams](02-io-and-data/20.1.2.01-streams.md) | Readable, Writable, Transform, Duplex, backpressure, `pipeline()`, error handling | Important | Important | 10 min |
-| 02 | [Buffers](02-io-and-data/20.1.2.02-buffers.md) | Buffer creation, encoding (utf8, base64, hex), allocation, TypedArray interop, memory pooling | Important | Important | 10 min |
+| 01 | [Streams](02-io-and-data/20.1.2.01-streams.md) | Readable, Writable, Transform, Duplex, backpressure, `pipeline()`, error handling | Important | Important | 11 min |
+| 02 | [Buffers](02-io-and-data/20.1.2.02-buffers.md) | Buffer creation, encoding (utf8, base64, hex), allocation, TypedArray interop, memory pooling | Important | Important | 9 min |
 | 03 | [File System](02-io-and-data/20.1.2.03-file-system.md) | `fs` module, read/write (sync vs async vs stream), file watching, permissions, atomic writes | Essential | Foundational | 8 min |
 | 04 | [HTTP Module](02-io-and-data/20.1.2.04-http-module.md) | `createServer`, routing manually, streaming, client requests, reverse proxy, keep-alive | Essential | Foundational | 10 min |
 
@@ -64,7 +64,7 @@ Production concerns — making Node.js scale and stay healthy. Category INDEX: [
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Clustering](03-processes-and-concurrency/20.1.3.01-clustering.md) | Cluster module, worker processes, IPC, load balancing, PM2, graceful restart | Important | Important | 9 min |
 | 02 | [Child Processes & Workers](03-processes-and-concurrency/20.1.3.02-child-processes-workers.md) | `spawn`/`fork`/`exec`, `worker_threads`, SharedArrayBuffer, thread pool, when to use what | Important | Important | 10 min |
-| 03 | [Process & Environment](03-processes-and-concurrency/20.1.3.03-process-environment.md) | `process.env`, `argv`, lifecycle, signals (SIGTERM/SIGINT), graceful shutdown, exit codes | Important | Important | 10 min |
+| 03 | [Process & Environment](03-processes-and-concurrency/20.1.3.03-process-environment.md) | `process.env`, `argv`, lifecycle, signals (SIGTERM/SIGINT), graceful shutdown, exit codes | Important | Important | 9 min |
 
 ---
 

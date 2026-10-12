@@ -1,6 +1,6 @@
 # Testing — Index
 
-> **Study time:** ≈ 2 h 30 m of reading (19 files, ~8 min average).
+> **Study time:** ≈ 2 h 28 m of reading (19 files, ~8 min average).
 > **19 files across six categories.** Learn testing fundamentals, framework behavior, unit/integration/E2E boundaries, test data, mocking, reusable patterns, load and fault experiments, then practice the interview bank.
 
 [![Files](https://img.shields.io/badge/files-19-blue)](../../INDEX.md)
@@ -50,8 +50,8 @@ Choose the smallest boundary that observes the relevant failure. Broader scope a
 
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
-| 01 | [Unit Testing](03-test-levels/50.1.3.01-unit-testing.md) | Isolated tests, boundaries, dependency injection, stubs | Pure functions, business logic | Essential | Foundational | 10 min |
-| 02 | [Integration Testing](03-test-levels/50.1.3.02-integration-testing.md) | Component integration, API testing, database testing (Testcontainers) | Service-level, multiple modules | Essential | Foundational | 10 min |
+| 01 | [Unit Testing](03-test-levels/50.1.3.01-unit-testing.md) | Isolated tests, boundaries, dependency injection, stubs | Pure functions, business logic | Essential | Foundational | 9 min |
+| 02 | [Integration Testing](03-test-levels/50.1.3.02-integration-testing.md) | Component integration, API testing, database testing (Testcontainers) | Service-level, multiple modules | Essential | Foundational | 9 min |
 | 03 | [E2E Testing](03-test-levels/50.1.3.03-e2e-testing.md) | Playwright, Cypress, user flows, visual regression | Critical user journeys | Essential | Foundational | 11 min |
 
 ---

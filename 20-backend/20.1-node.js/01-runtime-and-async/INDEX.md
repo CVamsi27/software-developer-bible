@@ -1,6 +1,6 @@
 # Runtime & Async - Node.js
 
-> **Study time:** ≈ 18 min of reading (3 files, ~6 min average).
+> **Study time:** ≈ 19 min of reading (3 files, ~6 min average).
 > **3 files.** How Node.js actually runs JavaScript: the libuv event loop, plus the modern Web Streams API and the built-in test runner.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
@@ -19,7 +19,7 @@
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
 | 01 | [Event Loop](20.1.1.01-event-loop.md) | Phases (timers, pending callbacks, idle/prepare, poll, check, close), microtasks vs macrotasks, `setImmediate` vs `nextTick`, blocking vs non-blocking | Essential | Foundational | 7 min |
-| 02 | [Web Streams & Test Runner](20.1.1.02-web-streams-and-test-runner.md) | Versioned WHATWG stream interfaces, pressure/cancellation, split-byte decoding, Node adapters, `node:test`, mocking, watch mode, TAP output | Important | Important | 9 min |
+| 02 | [Web Streams & Test Runner](20.1.1.02-web-streams-and-test-runner.md) | Versioned WHATWG stream interfaces, pressure/cancellation, split-byte decoding, Node adapters, `node:test`, mocking, watch mode, TAP output | Important | Important | 10 min |
 
 ---
 

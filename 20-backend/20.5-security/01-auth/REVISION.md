@@ -18,9 +18,21 @@ Source: [Auth Fundamentals — Identity, Credentials & Crypto Primitives](20.5.1
 
 **A:** An identity claim needs accepted evidence, such as a verified credential or a trusted issuer's validated assertion. Identification alone is not authentication.
 
+**Q:** Why store an encoded Argon2id verifier instead of a fast digest or encrypted password?
+
+**A:** A unique salt and configurable memory/time cost make each offline password guess expensive; the encoded parameters also let the service raise its policy and rehash after successful login. Encryption is reversible, while a fast digest makes guesses cheap.
+
+Source: [OWASP Password Storage Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html) · [RFC 9106 — Argon2](https://datatracker.ietf.org/doc/html/rfc9106)
+
 **Q:** How do expiration, rotation and storage controls limit credential exposure?
 
 **A:** Controls limit where a credential can leak, how long it remains useful and what it can authorize. Hashing protects stored verifiers but does not make a stolen caller credential harmless.
+
+**Q:** How should a service limit password-verification work without weakening its hash policy?
+
+**A:** Bound input and attempts before expensive verification, use the library's asynchronous API with bounded concurrency, and combine account-oriented and network signals. Avoid permanent lockout that an attacker can trigger.
+
+Source: [OWASP Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)
 
 **Q:** Why must authentication and authorization be separate decisions?
 
@@ -103,6 +115,12 @@ Source: [JWT (JSON Web Tokens)](20.5.1.05-jwt.md)
 **Q:** How do signed and encrypted JWTs differ in claim confidentiality?
 
 **A:** Signed JWS claims are readable and protected for integrity; JWE encrypts claims under a separate contract. Keep secrets out of signed payloads and validate algorithms and keys independently of untrusted headers.
+
+**Q:** What does storing a JWT in an HttpOnly cookie protect, and which risk remains?
+
+**A:** HttpOnly prevents direct JavaScript reads, but the browser attaches the cookie automatically, so unsafe requests still need CSRF protection. Active XSS can also issue authenticated requests through the victim's browser.
+
+Source: [JWT browser storage](20.5.1.05-jwt.md) · [CSRF](../02-attacks-and-defense/20.5.2.02-csrf.md)
 
 ## OAuth 2.0 & OpenID Connect
 

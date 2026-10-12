@@ -1,6 +1,6 @@
 # Kubernetes — Index
 
-> **Study time:** ≈ 4 h 11 m of reading (22 files, ~11 min average).
+> **Study time:** ≈ 3 h 53 m of reading (22 files, ~11 min average).
 > **22 files** — Kubernetes orchestration from pods and replica sets to deployments, services, ingress, ConfigMaps, HPA, node autoscaling (Karpenter/Cluster Autoscaler), health checks, Helm, Kustomize, CRDs/operators, security, batch workloads, PDBs, resource quotas, admission injection, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-22-blue)](../../INDEX.md)
@@ -31,7 +31,7 @@ What runs in K8s. Read these first.
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Pods & ReplicaSets](01-core-workloads/40.2.1.01-pods-replicasets.md) | Pod lifecycle, init containers, sidecars, RS scaling | Optional | Specialized | 22 min |
-| 02 | [Deployments](01-core-workloads/40.2.1.02-deployments.md) | Rolling updates, rollbacks, strategy, status management | Optional | Specialized | 27 min |
+| 02 | [Deployments](01-core-workloads/40.2.1.02-deployments.md) | Rolling updates, rollbacks, strategy, status management | Optional | Specialized | 9 min |
 | 03 | [StatefulSets & DaemonSets](01-core-workloads/40.2.1.03-statefulsets-daemonsets.md) | Stateful workloads (databases), stable network IDs, node-level agents (logging, monitoring) | Optional | Specialized | 10 min |
 | 04 | [Jobs & CronJobs](01-core-workloads/40.2.1.04-jobs-cronjobs.md) | Batch jobs, scheduled tasks, backoff, parallelism, completion mode | Optional | Specialized | 8 min |
 

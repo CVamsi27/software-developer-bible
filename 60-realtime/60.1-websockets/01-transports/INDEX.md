@@ -1,6 +1,6 @@
 # Transports
 
-> **Study time:** ≈ 51 min of reading (5 files, ~10 min average).
+> **Study time:** ≈ 49 min of reading (5 files, ~10 min average).
 > **5 files.** The four real-time transport options — raw WebSockets, Server-Sent Events, Socket.IO, and WebTransport — and the decision framework for picking between them.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../INDEX.md)
@@ -60,7 +60,3 @@ Close the chapters and work through [section revision questions](REVISION.md). E
 | SSE (one real, narrow use) | `apps/api/src/shared/modules/ai/ai.controller.ts` streams `text/event-stream` for AI responses |
 | Transport-choice rationale | `docs/operations/WEBSOCKET_SCALING.md` — sockets trigger React Query invalidation only |
 | Handshake auth at transport level | `apps/api/src/websockets/base-websocket.gateway.ts` (bearer token from `handshake.auth.token`) |
-
-## Finish This Section
-
-After the reading pass, complete the [section revision questions](REVISION.md) in a separate session. Revisit only the source chapters whose mechanisms you cannot yet explain or reproduce.

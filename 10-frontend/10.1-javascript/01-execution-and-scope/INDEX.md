@@ -1,7 +1,7 @@
 # Execution & Scope — JavaScript
 
-> **Study time:** ≈ 52 min of reading (7 files, ~7 min average).
-> **7 files.** How JavaScript actually runs: execution contexts, the call stack, hoisting, scope, lexical environments, and closures — the foundation every other JS concept builds on.
+> **Study time:** ≈ 53 min of reading (7 files, ~8 min average).
+> Follow one JavaScript evaluation from declaration setup through name lookup and return. The chapters distinguish active calls from lexical environments, explain declaration timing, and end with state retained by closures.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](#files)
 [![Category](https://img.shields.io/badge/category-Execution_and_Scope-orange)](../INDEX.md)
@@ -14,9 +14,9 @@
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
 | 01 | [Execution Context](10.1.1.01-execution-context.md) | Evaluation state, LE/VE roles, block transitions, parameter environments | Essential | Foundational | 9 min |
-| 02 | [Scope](10.1.1.02-scope.md) | Global, function, block scope, scope chain, lexical environment | Essential | Foundational | 5 min |
+| 02 | [Scope](10.1.1.02-scope.md) | Global, function, block and module boundaries, binding lookup, lifetime | Essential | Foundational | 6 min |
 | 03 | [Call Stack](10.1.1.03-call-stack.md) | LIFO, stack frames, stack overflow, max call stack size, debugging | Essential | Foundational | 6 min |
-| 04 | [Hoisting](10.1.1.04-hoisting.md) | `var`/`let`/`const` hoisting, temporal dead zone, function hoisting | Essential | Foundational | 7 min |
+| 04 | [Hoisting](10.1.1.04-hoisting.md) | Declaration setup, temporal dead zone, function and resource declarations | Essential | Foundational | 7 min |
 | 05 | [Lexical Environment](10.1.1.05-lexical-environment.md) | Binding lookup, five record kinds, module imports, global-object boundaries | Essential | Foundational | 15 min |
 | 06 | [Closures](10.1.1.06-closures.md) | Lexical scoping, closure lifecycle, module pattern, memory implications | Essential | Foundational | 6 min |
 
@@ -26,7 +26,7 @@
 
 Execution Context → Scope → Call Stack → Hoisting → Lexical Environment → Closures.
 
-Why this order: **Execution Context** introduces the information needed to run code and set up declarations. **Scope** explains how names refer to variables. **Call Stack** follows active calls and returns. **Hoisting** then shows why a declaration can affect code before its source line runs. **Lexical Environment** explains the records and surrounding-scope links used to find variables. Finally, **Closures** shows how a function keeps access to those variables after the creating call returns.
+Why this order: **Execution Context** sets up code and the environments used for lookup. **Scope** answers where each name is visible; **Call Stack** tracks which calls are unfinished. **Hoisting** separates binding creation from initialization, **Lexical Environment** explains the records behind that lookup, and **Closures** shows why a binding can remain accessible after its creating call returns.
 
 ---
 

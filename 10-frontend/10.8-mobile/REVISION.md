@@ -82,6 +82,10 @@ Source: [Over-the-Air Updates — EAS Update, CodePush & the JS/Native Boundary]
 
 **A:** No. Runtime matching is a technical compatibility condition, not store approval. Review the platform's downloaded-code rules and the provider's release guidance for the specific change; Apple restricts downloaded code that introduces or changes app features, and Google Play restricts self-updating and external executable downloads.
 
+**Q:** Can a deployed CodePush client move to EAS Update by changing the update URL?
+
+**A:** No. The installed binary needs the `expo-updates` client and native configuration. Replace the integration, build a new binary and distribute it through the stores; older installed clients continue using their existing provider until they upgrade.
+
 ## App-Store Release Automation — Release Trains, Store Review & Rollout Safety
 
 Source: [App-Store Release Automation — Release Trains, Store Review & Rollout Safety](10.8.06-app-store-release-automation.md)

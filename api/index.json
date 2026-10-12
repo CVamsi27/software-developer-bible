@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "7be81d404bb26b5c0ab66d154839da9792b60991517edb492cb6585164ea7ef4",
+ "corpus_digest": "3897692ed8769560de3f8a800a5e505c56fc19e721bcd3a6bbe2db1af7a82664",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 6430
+  "read_minutes": 5994
  },
  "chapters": [
   {
@@ -85,7 +85,7 @@
    "g": [
     "concept"
    ],
-   "m": 5
+   "m": 6
   },
   {
    "p": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.03-call-stack.html",
@@ -217,7 +217,7 @@
    "g": [
     "concept"
    ],
-   "m": 19
+   "m": 5
   },
   {
    "p": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.05-abort-and-cancellation.html",
@@ -240,7 +240,7 @@
     "concurrency",
     "interview"
    ],
-   "m": 13
+   "m": 8
   },
   {
    "p": "10-frontend/10.1-javascript/03-async-concurrency/REVISION.html",
@@ -271,7 +271,7 @@
    "g": [
     "concept"
    ],
-   "m": 17
+   "m": 7
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.html",
@@ -281,7 +281,7 @@
    "g": [
     "concept"
    ],
-   "m": 16
+   "m": 6
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.04-debounce.html",
@@ -291,7 +291,7 @@
    "g": [
     "concept"
    ],
-   "m": 16
+   "m": 6
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.05-throttle.html",
@@ -301,7 +301,7 @@
    "g": [
     "concept"
    ],
-   "m": 17
+   "m": 6
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.06-memory-leaks.html",
@@ -311,7 +311,7 @@
    "g": [
     "concept"
    ],
-   "m": 17
+   "m": 5
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.07-garbage-collection.html",
@@ -321,7 +321,7 @@
    "g": [
     "concept"
    ],
-   "m": 21
+   "m": 4
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.html",
@@ -333,7 +333,7 @@
     "data-structures",
     "interview"
    ],
-   "m": 31
+   "m": 30
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.09-equality-and-coercion.html",
@@ -343,7 +343,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 5
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/REVISION.html",
@@ -364,7 +364,7 @@
    "g": [
     "concept"
    ],
-   "m": 20
+   "m": 19
   },
   {
    "p": "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.02-memoization.html",
@@ -374,7 +374,7 @@
    "g": [
     "concept"
    ],
-   "m": 16
+   "m": 14
   },
   {
    "p": "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.03-generators.html",
@@ -384,7 +384,7 @@
    "g": [
     "concept"
    ],
-   "m": 24
+   "m": 17
   },
   {
    "p": "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.04-currying-composition.html",
@@ -426,7 +426,7 @@
     "concept",
     "reference"
    ],
-   "m": 19
+   "m": 18
   },
   {
    "p": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.02-web-workers.html",
@@ -446,7 +446,7 @@
    "g": [
     "concept"
    ],
-   "m": 18
+   "m": 13
   },
   {
    "p": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.04-cross-tab-communication.html",
@@ -456,7 +456,7 @@
    "g": [
     "concept"
    ],
-   "m": 19
+   "m": 16
   },
   {
    "p": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.html",
@@ -539,7 +539,7 @@
    "g": [
     "concept"
    ],
-   "m": 13
+   "m": 8
   },
   {
    "p": "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.02-infer.html",
@@ -549,7 +549,7 @@
    "g": [
     "concept"
    ],
-   "m": 13
+   "m": 6
   },
   {
    "p": "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.03-advanced-generics.html",
@@ -559,7 +559,7 @@
    "g": [
     "concept"
    ],
-   "m": 18
+   "m": 10
   },
   {
    "p": "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.04-type-variance.html",
@@ -569,7 +569,7 @@
    "g": [
     "concept"
    ],
-   "m": 15
+   "m": 7
   },
   {
    "p": "10-frontend/10.2-typescript/02-generics-and-inference/REVISION.html",
@@ -590,7 +590,7 @@
    "g": [
     "concept"
    ],
-   "m": 18
+   "m": 8
   },
   {
    "p": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.02-conditional-types.html",
@@ -600,7 +600,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 8
   },
   {
    "p": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.03-mapped-types.html",
@@ -610,7 +610,7 @@
    "g": [
     "concept"
    ],
-   "m": 17
+   "m": 8
   },
   {
    "p": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.04-template-literal-types.html",
@@ -620,7 +620,7 @@
    "g": [
     "concept"
    ],
-   "m": 27
+   "m": 22
   },
   {
    "p": "10-frontend/10.2-typescript/03-type-transformations/REVISION.html",
@@ -807,13 +807,13 @@
   },
   {
    "p": "10-frontend/10.3-react/02-core-hooks/10.3.2.05-context-api.html",
-   "t": "Context API",
+   "t": "React Context API",
    "s": "React",
    "c": "Frontend",
    "g": [
     "concept"
    ],
-   "m": 32
+   "m": 8
   },
   {
    "p": "10-frontend/10.3-react/02-core-hooks/REVISION.html",
@@ -854,7 +854,7 @@
    "g": [
     "concept"
    ],
-   "m": 32
+   "m": 7
   },
   {
    "p": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.html",
@@ -987,7 +987,7 @@
    "g": [
     "concept"
    ],
-   "m": 24
+   "m": 5
   },
   {
    "p": "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.html",
@@ -997,7 +997,7 @@
    "g": [
     "concept"
    ],
-   "m": 24
+   "m": 9
   },
   {
    "p": "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.03-server-components.html",
@@ -1007,7 +1007,7 @@
    "g": [
     "concept"
    ],
-   "m": 20
+   "m": 7
   },
   {
    "p": "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.04-client-components.html",
@@ -1017,7 +1017,7 @@
    "g": [
     "concept"
    ],
-   "m": 27
+   "m": 7
   },
   {
    "p": "10-frontend/10.4-next.js/01-rendering-fundamentals/REVISION.html",
@@ -1038,7 +1038,7 @@
    "g": [
     "concept"
    ],
-   "m": 20
+   "m": 11
   },
   {
    "p": "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.02-route-handlers.html",
@@ -1048,7 +1048,7 @@
    "g": [
     "concept"
    ],
-   "m": 22
+   "m": 16
   },
   {
    "p": "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.03-metadata.html",
@@ -1058,7 +1058,7 @@
    "g": [
     "concept"
    ],
-   "m": 26
+   "m": 19
   },
   {
    "p": "10-frontend/10.4-next.js/02-routing-and-middleware/REVISION.html",
@@ -1079,7 +1079,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 9
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.02-server-actions.html",
@@ -1089,7 +1089,7 @@
    "g": [
     "concept"
    ],
-   "m": 26
+   "m": 9
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.03-caching.html",
@@ -1109,7 +1109,7 @@
    "g": [
     "concept"
    ],
-   "m": 18
+   "m": 6
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.05-incremental-static-regeneration.html",
@@ -1119,7 +1119,7 @@
    "g": [
     "concept"
    ],
-   "m": 21
+   "m": 10
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.06-static-exports.html",
@@ -1129,7 +1129,7 @@
    "g": [
     "concept"
    ],
-   "m": 17
+   "m": 8
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/REVISION.html",
@@ -1247,7 +1247,7 @@
     "concept",
     "guide"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "10-frontend/10.5-form-handling/10.5.06-autosave-draft-recovery.html",
@@ -1258,7 +1258,7 @@
     "concept",
     "guide"
    ],
-   "m": 10
+   "m": 9
   },
   {
    "p": "10-frontend/10.5-form-handling/10.5.07-interview-questions.html",
@@ -1335,7 +1335,7 @@
     "concept",
     "reference"
    ],
-   "m": 10
+   "m": 8
   },
   {
    "p": "10-frontend/10.6-animation/10.6.06-view-transitions-and-scroll-driven-animations.html",
@@ -1346,7 +1346,7 @@
     "concept",
     "reference"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "10-frontend/10.6-animation/10.6.07-canvas-svg-animation.html",
@@ -1389,7 +1389,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "10-frontend/10.7-html-css/10.7.02-css-fundamentals.html",
@@ -1399,7 +1399,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 9
   },
   {
    "p": "10-frontend/10.7-html-css/10.7.03-browser-rendering.html",
@@ -1429,7 +1429,7 @@
    "g": [
     "concept"
    ],
-   "m": 19
+   "m": 18
   },
   {
    "p": "10-frontend/10.7-html-css/10.7.06-css-architecture-styling-approaches.html",
@@ -1540,7 +1540,7 @@
     "concept",
     "guide"
    ],
-   "m": 9
+   "m": 6
   },
   {
    "p": "10-frontend/10.8-mobile/10.8.06-app-store-release-automation.html",
@@ -1593,7 +1593,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "20-backend/20.1-node.js/01-runtime-and-async/REVISION.html",
@@ -1613,7 +1613,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "20-backend/20.1-node.js/02-io-and-data/20.1.2.02-buffers.html",
@@ -1623,7 +1623,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 9
   },
   {
    "p": "20-backend/20.1-node.js/02-io-and-data/20.1.2.03-file-system.html",
@@ -1683,7 +1683,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 9
   },
   {
    "p": "20-backend/20.1-node.js/03-processes-and-concurrency/REVISION.html",
@@ -2057,7 +2057,7 @@
    "g": [
     "concept"
    ],
-   "m": 13
+   "m": 8
   },
   {
    "p": "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.02-testing.html",
@@ -2067,7 +2067,7 @@
    "g": [
     "concept"
    ],
-   "m": 13
+   "m": 10
   },
   {
    "p": "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.03-lifecycle-hooks-graceful-shutdown.html",
@@ -2423,7 +2423,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 10
   },
   {
    "p": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.html",
@@ -2433,7 +2433,7 @@
    "g": [
     "concept"
    ],
-   "m": 14
+   "m": 13
   },
   {
    "p": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.04-nosql-vs-sql.html",
@@ -2712,7 +2712,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "20-backend/20.5-security/01-auth/20.5.1.02-http-basic-digest-auth.html",
@@ -2752,7 +2752,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 8
   },
   {
    "p": "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.html",
@@ -2772,7 +2772,7 @@
    "g": [
     "concept"
    ],
-   "m": 15
+   "m": 12
   },
   {
    "p": "20-backend/20.5-security/01-auth/20.5.1.08-mfa-passkeys-webauthn.html",
@@ -2835,7 +2835,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 6
   },
   {
    "p": "20-backend/20.5-security/02-attacks-and-defense/20.5.2.02-csrf.html",
@@ -2845,7 +2845,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "20-backend/20.5-security/02-attacks-and-defense/20.5.2.03-sql-injection.html",
@@ -2855,7 +2855,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 6
   },
   {
    "p": "20-backend/20.5-security/02-attacks-and-defense/20.5.2.04-api-security-best-practices.html",
@@ -2865,7 +2865,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 10
   },
   {
    "p": "20-backend/20.5-security/02-attacks-and-defense/REVISION.html",
@@ -3190,7 +3190,7 @@
     "concept",
     "overview"
    ],
-   "m": 9
+   "m": 8
   },
   {
    "p": "20-backend/20.7-graphql/01-fundamentals/20.7.1.02-schema-design.html",
@@ -3384,7 +3384,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 8
   },
   {
    "p": "20-backend/20.9-message-brokers/20.9.04-interview-questions.html",
@@ -4078,7 +4078,7 @@
     "distributed-systems",
     "theory"
    ],
-   "m": 31
+   "m": 29
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.18-outbox-and-cdc.html",
@@ -4104,7 +4104,7 @@
     "resilience",
     "theory"
    ],
-   "m": 21
+   "m": 10
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.20-multi-region-deployment.html",
@@ -4733,7 +4733,7 @@
    "g": [
     "concept"
    ],
-   "m": 13
+   "m": 6
   },
   {
    "p": "40-platform/40.1-docker/40.1.02-volumes-networks.html",
@@ -4977,7 +4977,7 @@
    "g": [
     "concept"
    ],
-   "m": 27
+   "m": 9
   },
   {
    "p": "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.03-statefulsets-daemonsets.html",
@@ -6134,7 +6134,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 9
   },
   {
    "p": "50-quality/50.1-testing/03-test-levels/50.1.3.02-integration-testing.html",
@@ -6144,7 +6144,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 9
   },
   {
    "p": "50-quality/50.1-testing/03-test-levels/50.1.3.03-e2e-testing.html",
@@ -6585,7 +6585,7 @@
     "concept",
     "reference"
    ],
-   "m": 13
+   "m": 12
   },
   {
    "p": "60-realtime/60.1-websockets/01-transports/60.1.1.02-server-sent-events.html",
@@ -6608,7 +6608,7 @@
     "reference",
     "tool"
    ],
-   "m": 14
+   "m": 13
   },
   {
    "p": "60-realtime/60.1-websockets/01-transports/60.1.1.04-webtransport.html",

@@ -1,6 +1,6 @@
 # Form Handling — Index
 
-> **Study time:** ≈ 1 h 4 m of reading (8 files, ~8 min average).
+> **Study time:** ≈ 1 h 3 m of reading (8 files, ~8 min average).
 > **8 files** — Form handling in React from React Hook Form and Zod to Formik, TanStack Form, Server Actions, autosave/draft recovery, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)
@@ -29,9 +29,9 @@ Three main form libraries — pick the right one for the job.
 
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
-| 01 | [React Hook Form](10.5.01-react-hook-form.md) | Native registration, controlled widgets, Zod resolver, `useFieldArray`, `FormProvider` | Existing integrations or forms that benefit from native field registration | Essential | Important | 10 min |
+| 01 | [React Hook Form](10.5.01-react-hook-form.md) | Native registration, controlled widgets, Zod resolver, `useFieldArray`, `FormProvider` | Existing integrations or forms that benefit from native field registration | Essential | Important | 11 min |
 | 03 | [Formik](10.5.03-formik.md) | Controlled fields, context and validation integration | Existing Formik forms or requirements suited to controlled state | Optional | Specialized | 8 min |
-| 04 | [TanStack Form](10.5.04-tanstack-form.md) | Typed fields, granular subscriptions, framework adapters, Standard Schema | Forms that need selected subscriptions or a non-React adapter | Optional | Specialized | 10 min |
+| 04 | [TanStack Form](10.5.04-tanstack-form.md) | Typed fields, granular subscriptions, framework adapters, Standard Schema | Forms that need selected subscriptions or a non-React adapter | Optional | Specialized | 9 min |
 
 **Decision:**
 
@@ -57,7 +57,7 @@ Modern Next.js form patterns with Server Actions.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 05 | [Server Actions & Form Patterns](10.5.05-server-actions-and-form-patterns.md) | `useActionState`, `useFormStatus`, `useOptimistic`, progressive enhancement, file uploads | Important | Specialized | 7 min |
+| 05 | [Server Actions & Form Patterns](10.5.05-server-actions-and-form-patterns.md) | `useActionState`, `useFormStatus`, `useOptimistic`, progressive enhancement, file uploads | Important | Specialized | 8 min |
 
 ---
 
@@ -67,7 +67,7 @@ Long-form resilience: recover persisted input and handle storage failures.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 06 | [Autosave & Draft Recovery](10.5.06-autosave-draft-recovery.md) | Debounced autosave, localStorage vs IndexedDB, multi-step resume, dirty-state guards (`beforeunload` + route blockers), versioned draft migrations, server-vs-local conflict resolution | Important | Important | 10 min |
+| 06 | [Autosave & Draft Recovery](10.5.06-autosave-draft-recovery.md) | Debounced autosave, localStorage vs IndexedDB, multi-step resume, dirty-state guards (`beforeunload` + route blockers), versioned draft migrations, server-vs-local conflict resolution | Important | Important | 9 min |
 
 ---
 
@@ -75,7 +75,7 @@ Long-form resilience: recover persisted input and handle storage failures.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 07 | [Interview Questions](10.5.07-interview-questions.md) | 30+ curated questions covering all form libraries and patterns | Essential | Important | 7 min |
+| 07 | [Interview Questions](10.5.07-interview-questions.md) | 30+ curated questions covering all form libraries and patterns | Essential | Important | 6 min |
 
 ---
 

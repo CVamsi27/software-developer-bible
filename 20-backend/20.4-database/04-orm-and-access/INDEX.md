@@ -1,6 +1,6 @@
 # ORM & Access - Database
 
-> **Study time:** ≈ 32 min of reading (4 files, ~8 min average).
+> **Study time:** ≈ 33 min of reading (4 files, ~8 min average).
 > **4 files.** Prisma from first principles to advanced patterns: schema and migrations, then interactive transactions, raw queries, multi-tenancy, and schema patterns — plus the full access-layer landscape (Prisma vs Drizzle vs TypeORM vs Knex vs raw SQL) with a decision tree.
 
 [![Files](https://img.shields.io/badge/files-4-blue)](../INDEX.md)
@@ -21,7 +21,7 @@ The executable Prisma examples deliberately target the pinned 6.19.0 legacy cont
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | ----- | ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------ | ----------: |
-| 01 | [Prisma](20.4.4.01-prisma.md) | Schema, migrations, queries, relations, version contract, performance | Essential | Foundational | 11 min |
+| 01 | [Prisma](20.4.4.01-prisma.md) | Schema, migrations, queries, relations, version contract, performance | Essential | Foundational | 12 min |
 | 02 | [Prisma Advanced](20.4.4.02-prisma-advanced.md) | Interactive transactions, raw queries, performance optimization, multi-tenancy, schema patterns | Essential | Foundational | 11 min |
 | 03 | [ORM & Query Builder Landscape](20.4.4.03-orm-query-builder-landscape.md) | Prisma vs Drizzle vs TypeORM vs Knex vs raw decision tree, type-safety spectrum, migration tooling comparison, when NOT to use Prisma, team adoption | Essential | Foundational | 8 min |
 

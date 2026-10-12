@@ -1,6 +1,6 @@
 # Core Hooks — React
 
-> **Study time:** ≈ 1 h 41 m of reading (6 files, ~17 min average).
+> **Study time:** ≈ 1 h 19 m of reading (6 files, ~13 min average).
 > **6 files.** The five essential hooks — useState, useEffect, useMemo/useCallback, useRef, Context — used to model state, synchronization, retained handles and shared values.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](#files)
@@ -15,9 +15,9 @@
 | --   : | ------ | -------- | --- | --- | ----------: |
 | 01 | [useState](10.3.2.01-usestate.md) | State initialization, batching, functional updates, lazy init | Essential | Foundational | 15 min |
 | 02 | [useEffect](10.3.2.02-useeffect.md) | Dependencies, cleanup, effect timing, strict mode, race conditions | Essential | Foundational | 19 min |
-| 03 | [useMemo / useCallback](10.3.2.03-usememo-usecallback.md) | Memoization, dependency tracking, when to use (and when not to) | Important | Important | 25 min |
+| 03 | [useMemo / useCallback](10.3.2.03-usememo-usecallback.md) | Disposable render caches, identity boundaries, profiling and React Compiler | Important | Important | 7 min |
 | 04 | [useRef](10.3.2.04-useref.md) | DOM refs, mutable refs, forwardRef, callback refs, useImperativeHandle | Essential | Foundational | 27 min |
-| 05 | [Context API](10.3.2.05-context-api.md) | createContext, Provider, useContext, performance pitfalls, splitting context | Important | Important | 11 min |
+| 05 | [Context API](10.3.2.05-context-api.md) | Provider scope, value ownership, update propagation, consumer boundaries | Important | Important | 7 min |
 
 ---
 

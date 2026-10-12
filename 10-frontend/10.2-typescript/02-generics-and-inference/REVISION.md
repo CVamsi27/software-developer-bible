@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-TypeScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -24,8 +24,8 @@ Source: [Generics](10.2.2.01-generics.md)
 
 **How It Works**
 
-3. **Q:** Why is `identity("hello")` enough — when would you ever write `identity<string>("hello")`?
-   **A:** Inference binds `T` from the argument's type. Explicit arguments are the fallback where inference has nothing to work from — a parameter that has no useful input inference (an honest create<T> implementation still needs a factory/decoder, rather than manufacturing arbitrary T) — or where you deliberately pin a wider type than inference would pick.
+3. **Q:** What type does the basic `identity('hello')` call infer, and how can an API preserve the literal without an explicit type argument?
+   **A:** The ordinary signature infers `string`. A TypeScript 5.0 `const` type parameter requests const-like inference for inline literal arguments, so an exact API can infer `'hello'`; this does not narrow a mutable variable that was created earlier.
 
 **Code Examples**
 

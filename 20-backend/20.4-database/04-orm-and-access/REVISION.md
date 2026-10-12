@@ -18,9 +18,9 @@ Source: [Prisma ORM](20.4.4.01-prisma.md)
 
 **A:** The application needs a matching generated client, while the database needs reviewed migration SQL. Generating types does not apply DDL, and deployment migration execution does not generate the application client.
 
-**Q:** Why must these examples name Prisma 6.19.0 explicitly?
+**Q:** Why do these examples pin Prisma 7.10.0 and name the adapter and generator?
 
-**A:** The constructor/generator/pool and `$transaction` APIs belong to that legacy major contract. As of 11 October 2026, ORM 8 remains a release candidate with different contract/runtime and `db.transaction`/model APIs; the current stable line is v7. Check the [release-status page](https://www.prisma.io/docs/orm/release-status) before applying this version note to a new project.
+**A:** Prisma 7 is the current stable line and its client requires a driver adapter and generated output path. Prisma ORM 8 remains a release candidate with a different contract/runtime and query API. Check the [release-status page](https://www.prisma.io/docs/orm/release-status) before changing the pinned version.
 
 **Q:** What does a generic argument on $queryRaw establish?
 
@@ -48,7 +48,7 @@ Source: [Prisma Advanced](20.4.4.02-prisma-advanced.md)
 
 **Q:** Why pass a transaction client into a helper?
 
-**A:** Its queries participate on the caller's transaction connection. A root-client query or separately opened transaction escapes that rollback boundary; the v6 transaction client does not expose nested $transaction.
+**A:** Its queries participate on the caller's transaction connection. A root-client query or separately opened transaction escapes that rollback boundary; the transaction client does not expose nested `$transaction`.
 
 **Q:** How does transaction-local tenant context avoid contaminating the next request?
 

@@ -1,6 +1,6 @@
 # Auth - Security
 
-> **Study time:** ≈ 2 h 19 m of reading (12 files, ~12 min average).
+> **Study time:** ≈ 2 h 13 m of reading (12 files, ~11 min average).
 > **Planning:** The stage blocks below estimate study and practice time; chapter badges and the total above report reading time only. Revision and timed practice are separate stages.
 > **The complete authentication & authorization learning track — ten concept stages plus separate practice.** Read them **in order**, each builds on the previous; finish with the interview drills.
 >

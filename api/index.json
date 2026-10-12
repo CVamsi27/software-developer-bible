@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "64400c4f9694d7f955939668e925eab3b77398c49592fcd4a98858ea11c59d27",
+ "corpus_digest": "62aec839cd9b6025285b61541dc48b020cd5e0df2e70537071edae968ec6ceab",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 6044
+  "read_minutes": 6000
  },
  "chapters": [
   {
@@ -539,7 +539,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.02-infer.html",
@@ -580,7 +580,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 5
+   "m": 4
   },
   {
    "p": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.01-utility-types.html",
@@ -793,7 +793,7 @@
    "g": [
     "concept"
    ],
-   "m": 25
+   "m": 7
   },
   {
    "p": "10-frontend/10.3-react/02-core-hooks/10.3.2.04-useref.html",
@@ -813,7 +813,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 7
   },
   {
    "p": "10-frontend/10.3-react/02-core-hooks/REVISION.html",
@@ -844,7 +844,7 @@
    "g": [
     "concept"
    ],
-   "m": 14
+   "m": 8
   },
   {
    "p": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.html",
@@ -854,7 +854,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 7
   },
   {
    "p": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.html",
@@ -864,7 +864,7 @@
    "g": [
     "concept"
    ],
-   "m": 17
+   "m": 12
   },
   {
    "p": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.05-performance.html",
@@ -884,7 +884,7 @@
    "g": [
     "concept"
    ],
-   "m": 19
+   "m": 17
   },
   {
    "p": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/REVISION.html",
@@ -1202,7 +1202,7 @@
     "concept",
     "reference"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "10-frontend/10.5-form-handling/10.5.02-zod.html",
@@ -1236,7 +1236,7 @@
     "reference",
     "tool"
    ],
-   "m": 10
+   "m": 9
   },
   {
    "p": "10-frontend/10.5-form-handling/10.5.05-server-actions-and-form-patterns.html",
@@ -1269,7 +1269,7 @@
     "interview-questions",
     "practice"
    ],
-   "m": 7
+   "m": 6
   },
   {
    "p": "10-frontend/10.5-form-handling/REVISION.html",
@@ -2067,7 +2067,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 12
   },
   {
    "p": "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.03-lifecycle-hooks-graceful-shutdown.html",
@@ -2087,7 +2087,7 @@
    "g": [
     "concept"
    ],
-   "m": 20
+   "m": 19
   },
   {
    "p": "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.05-swagger-openapi-nestjs.html",
@@ -2598,7 +2598,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 12
   },
   {
    "p": "20-backend/20.4-database/04-orm-and-access/20.4.4.02-prisma-advanced.html",
@@ -2742,7 +2742,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 8
   },
   {
    "p": "20-backend/20.5-security/01-auth/20.5.1.05-jwt.html",
@@ -2752,7 +2752,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.html",
@@ -2762,7 +2762,7 @@
    "g": [
     "concept"
    ],
-   "m": 14
+   "m": 13
   },
   {
    "p": "20-backend/20.5-security/01-auth/20.5.1.07-sso-saml-federation.html",
@@ -2782,7 +2782,7 @@
    "g": [
     "concept"
    ],
-   "m": 16
+   "m": 14
   },
   {
    "p": "20-backend/20.5-security/01-auth/20.5.1.09-rbac-abac.html",
@@ -2792,7 +2792,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 10
   },
   {
    "p": "20-backend/20.5-security/01-auth/20.5.1.10-abac-access-control.html",
@@ -2805,7 +2805,7 @@
     "concept",
     "policies"
    ],
-   "m": 10
+   "m": 9
   },
   {
    "p": "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.html",
@@ -2825,7 +2825,7 @@
    "g": [
     "revision"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "20-backend/20.5-security/02-attacks-and-defense/20.5.2.01-xss.html",

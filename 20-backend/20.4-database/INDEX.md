@@ -1,6 +1,6 @@
 # Database — Index
 
-> **Study time:** ≈ 4 h 8 m of reading (29 files, ~9 min average).
+> **Study time:** ≈ 4 h 9 m of reading (29 files, ~9 min average).
 > **29 files** — Database fundamentals from PostgreSQL internals to indexing, transactions, MVCC, joins, locking, connection pooling, Prisma (plus the ORM/query-builder landscape), execution plans, SQL vs NoSQL, zero-downtime migrations, soft delete & tombstones, backups/PITR recovery, search infrastructure at scale, window functions, JSONB, replication, row-level security, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-29-blue)](../../INDEX.md)
@@ -86,7 +86,7 @@ Application query and transaction ownership. Category INDEX: [ORM & Access](04-o
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Prisma](04-orm-and-access/20.4.4.01-prisma.md) | Schema, migrations, queries, relations, middleware, performance | Essential | Foundational | 11 min |
+| 01 | [Prisma](04-orm-and-access/20.4.4.01-prisma.md) | Schema, migrations, queries, relations, middleware, performance | Essential | Foundational | 12 min |
 | 02 | [Prisma Advanced](04-orm-and-access/20.4.4.02-prisma-advanced.md) | Interactive transactions, raw queries, performance optimization, multi-tenancy, schema patterns | Essential | Foundational | 11 min |
 | 03 | [ORM & Query Builder Landscape](04-orm-and-access/20.4.4.03-orm-query-builder-landscape.md) | Prisma vs Drizzle vs TypeORM vs Knex vs raw decision tree, type-safety spectrum, migration tooling comparison | Essential | Foundational | 8 min |
 

@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-12",
- "url_count": 2566,
+ "url_count": 2575,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md",
@@ -91,9 +91,6 @@
   "https://api-security.owasp.org/editions/2023/en/0xaa-unsafe-consumption-of-apis/": [
    "20-backend/20.5-security/02-attacks-and-defense/20.5.2.04-api-security-best-practices.md",
    "20-backend/20.5-security/02-attacks-and-defense/REVISION.md"
-  ],
-  "https://api.slack.com/authentication/verifying-requests-from-slack": [
-   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.05-webhooks.md"
   ],
   "https://argo-cd.readthedocs.io/": [
    "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.04-argocd.md",
@@ -243,9 +240,6 @@
   ],
   "https://blog.logrocket.com/fast-javascript-bundling-with-esbuild/": [
    "40-platform/40.5-build-tools/02-compilers/40.5.2.02-esbuild-swc.md"
-  ],
-  "https://blog.logrocket.com/react-error-handling-react-error-boundary/": [
-   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.md"
   ],
   "https://blog.modelcontextprotocol.io/posts/2026-07-28/": [
    "70-interview-toolkit/70.3-cheatsheets/70.3.04-backend-cheat-sheet.md"
@@ -1650,11 +1644,17 @@
   "https://docs.bullmq.io/guide/flows/": [
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.04-scheduling-background-jobs.md"
   ],
+  "https://docs.bullmq.io/guide/job-schedulers/": [
+   "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.04-scheduling-background-jobs.md"
+  ],
   "https://docs.bullmq.io/guide/jobs/job-ids": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.07-transactional-email-and-notifications.md"
   ],
   "https://docs.bullmq.io/guide/jobs/stalled": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.21-workflow-engine.md"
+  ],
+  "https://docs.bullmq.io/guide/rate-limiting": [
+   "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.04-scheduling-background-jobs.md"
   ],
   "https://docs.bullmq.io/guide/workers/stalled-jobs": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.25-distributed-job-scheduler.md"
@@ -1895,7 +1895,7 @@
   "https://docs.github.com/en/rest/about-the-rest-api/api-versions": [
    "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.03-versioning.md"
   ],
-  "https://docs.github.com/en/webhooks": [
+  "https://docs.github.com/en/webhooks/testing-and-troubleshooting-webhooks/redelivering-webhooks": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.05-webhooks.md"
   ],
   "https://docs.github.com/en/webhooks/using-webhooks/handling-failed-webhook-deliveries": [
@@ -2286,6 +2286,9 @@
   "https://docs.sigstore.dev/cosign/verifying/verify/": [
    "40-platform/40.1-docker/40.1.08-image-signing-sbom-supply-chain.md"
   ],
+  "https://docs.slack.dev/apis/events-api/": [
+   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.05-webhooks.md"
+  ],
   "https://docs.slack.dev/authentication/verifying-requests-from-slack/": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.05-webhooks.md"
   ],
@@ -2324,6 +2327,7 @@
   "https://docs.stripe.com/webhooks": [
    "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.02-route-handlers.md",
    "20-backend/20.1-node.js/04-security-and-operations/20.1.4.04-interview-questions.md",
+   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.05-webhooks.md",
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.06-payment-gateway.md",
    "70-interview-toolkit/70.1-behavioral/70.1.04-system-design-behavioral.md"
@@ -3213,10 +3217,6 @@
   "https://github.com/pmndrs/use-gesture": [
    "10-frontend/10.6-animation/10.6.04-react-spring.md"
   ],
-  "https://github.com/pmndrs/zustand": [
-   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.md",
-   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.06-state-management.md"
-  ],
   "https://github.com/postcss/autoprefixer": [
    "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
   ],
@@ -3240,9 +3240,6 @@
   ],
   "https://github.com/react-hook-form/resolvers": [
    "10-frontend/10.5-form-handling/10.5.01-react-hook-form.md"
-  ],
-  "https://github.com/reactwg/react-18/discussions/69": [
-   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.md"
   ],
   "https://github.com/recharts/recharts/blob/main/storybook/stories/API/Accessibility.mdx": [
    "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.md"
@@ -3811,9 +3808,6 @@
   ],
   "https://katacontainers.io/": [
    "40-platform/40.1-docker/40.1.09-rootless-sandboxed-runtimes.md"
-  ],
-  "https://kentcdodds.com/blog/usememo-and-usecallback": [
-   "10-frontend/10.3-react/02-core-hooks/10.3.2.03-usememo-usecallback.md"
   ],
   "https://knexjs.org/guide/": [
    "20-backend/20.4-database/04-orm-and-access/20.4.4.03-orm-query-builder-landscape.md"
@@ -4774,7 +4768,6 @@
    "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.03-metadata.md"
   ],
   "https://nextjs.org/docs/app/api-reference/functions/generate-static-params": [
-   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md",
    "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.05-incremental-static-regeneration.md",
    "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.06-static-exports.md"
   ],
@@ -4810,6 +4803,7 @@
    "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.03-caching.md"
   ],
   "https://nextjs.org/docs/app/getting-started/error-handling": [
+   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.md",
    "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md"
   ],
   "https://nextjs.org/docs/app/getting-started/fetching-data": [
@@ -5292,11 +5286,16 @@
    "81-lanes-indian-sde-faang/81.02-core-cs-fundamentals.md"
   ],
   "https://pages.nist.gov/800-63-4/sp800-63b.html": [
-   "20-backend/20.5-security/01-auth/20.5.1.08-mfa-passkeys-webauthn.md"
+   "20-backend/20.5-security/01-auth/20.5.1.08-mfa-passkeys-webauthn.md",
+   "20-backend/20.5-security/01-auth/REVISION.md"
   ],
   "https://pages.nist.gov/800-63-4/sp800-63b/aal/": [
    "20-backend/20.5-security/01-auth/20.5.1.08-mfa-passkeys-webauthn.md",
    "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md",
+   "20-backend/20.5-security/01-auth/REVISION.md"
+  ],
+  "https://pages.nist.gov/800-63-4/sp800-63b/session/": [
+   "20-backend/20.5-security/01-auth/20.5.1.08-mfa-passkeys-webauthn.md",
    "20-backend/20.5-security/01-auth/REVISION.md"
   ],
   "https://pages.nist.gov/800-63-4/sp800-63b/syncable/": [
@@ -5492,6 +5491,10 @@
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.md",
    "10-frontend/10.3-react/04-modern-react/10.3.4.01-modern-hooks-react18-19.md"
   ],
+  "https://react.dev/blog/2025/10/07/react-compiler-1": [
+   "10-frontend/10.3-react/02-core-hooks/10.3.2.03-usememo-usecallback.md",
+   "10-frontend/10.3-react/02-core-hooks/REVISION.md"
+  ],
   "https://react.dev/learn/keeping-components-pure": [
    "10-frontend/10.3-react/01-react-internals/10.3.1.01-virtual-dom.md",
    "10-frontend/10.3-react/01-react-internals/10.3.1.04-rendering.md"
@@ -5541,9 +5544,6 @@
   "https://react.dev/learn/you-might-not-need-an-effect": [
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.md"
   ],
-  "https://react.dev/reference/react": [
-   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.md"
-  ],
   "https://react.dev/reference/react-dom/components#custom-html-elements": [
    "10-frontend/10.3-react/04-modern-react/10.3.4.02-web-components.md"
   ],
@@ -5572,11 +5572,14 @@
   "https://react.dev/reference/react/Component": [
    "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.03-interview-questions.md"
   ],
-  "https://react.dev/reference/react/Component#componentdidcatch": [
-   "10-frontend/10.3-react/01-react-internals/10.3.1.05-lifecycle.md",
+  "https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary": [
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.md"
   ],
+  "https://react.dev/reference/react/Component#componentdidcatch": [
+   "10-frontend/10.3-react/01-react-internals/10.3.1.05-lifecycle.md"
+  ],
   "https://react.dev/reference/react/Profiler": [
+   "10-frontend/10.3-react/02-core-hooks/10.3.2.03-usememo-usecallback.md",
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.md"
   ],
   "https://react.dev/reference/react/StrictMode": [
@@ -5628,6 +5631,7 @@
   ],
   "https://react.dev/reference/react/useContext": [
    "10-frontend/10.3-react/02-core-hooks/10.3.2.05-context-api.md",
+   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.06-state-management.md",
    "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.02-compound-components.md"
   ],
   "https://react.dev/reference/react/useDeferredValue": [
@@ -5642,6 +5646,7 @@
    "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.03-interview-questions.md"
   ],
   "https://react.dev/reference/react/useEffectEvent": [
+   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.md",
    "10-frontend/10.3-react/04-modern-react/10.3.4.01-modern-hooks-react18-19.md"
   ],
   "https://react.dev/reference/react/useId": [
@@ -5863,7 +5868,13 @@
   "https://redis.io/legal/licenses/": [
    "20-backend/20.8-caching/20.8.02-redis-fundamentals.md"
   ],
-  "https://redux-toolkit.js.org/": [
+  "https://redux.js.org/react-redux/api/hooks": [
+   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.md"
+  ],
+  "https://redux.js.org/toolkit/usage/usage-guide/": [
+   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.06-state-management.md"
+  ],
+  "https://redux.js.org/usage/structuring-reducers/normalizing-state-shape": [
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.06-state-management.md"
   ],
   "https://refactoring.guru/": [
@@ -6076,7 +6087,7 @@
   "https://shopify.dev/docs/api/admin-graphql": [
    "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.03-bff.md"
   ],
-  "https://shopify.dev/docs/apps/webhooks": [
+  "https://shopify.dev/docs/apps/build/webhooks/verify-deliveries": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.05-webhooks.md"
   ],
   "https://shopify.github.io/flash-list/": [
@@ -6323,9 +6334,6 @@
   "https://stripe.com/docs/api/errors": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.02-error-handling-design.md"
   ],
-  "https://stripe.com/docs/webhooks": [
-   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.05-webhooks.md"
-  ],
   "https://stripe.dev/blog/payment-api-design": [
    "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.01-api-design-patterns.md"
   ],
@@ -6385,10 +6393,13 @@
    "10-frontend/10.5-form-handling/10.5.04-tanstack-form.md",
    "10-frontend/10.5-form-handling/10.5.07-interview-questions.md"
   ],
-  "https://tanstack.com/form/latest/docs/comparison": [
+  "https://tanstack.com/form/latest/docs/framework/react/guides/arrays": [
    "10-frontend/10.5-form-handling/10.5.04-tanstack-form.md"
   ],
-  "https://tanstack.com/form/latest/docs/framework/react/guides/arrays": [
+  "https://tanstack.com/form/latest/docs/framework/react/guides/reactivity": [
+   "10-frontend/10.5-form-handling/10.5.04-tanstack-form.md"
+  ],
+  "https://tanstack.com/form/latest/docs/framework/react/guides/submission-handling": [
    "10-frontend/10.5-form-handling/10.5.04-tanstack-form.md"
   ],
   "https://tanstack.com/form/latest/docs/framework/react/guides/validation": [
@@ -6397,11 +6408,18 @@
   "https://tanstack.com/query/latest/docs/framework/react/guides/important-defaults": [
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.06-state-management.md"
   ],
+  "https://tanstack.com/query/latest/docs/framework/react/guides/mutations": [
+   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.06-state-management.md"
+  ],
   "https://tanstack.com/query/latest/docs/framework/react/guides/optimistic-updates": [
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.06-state-management.md"
   ],
   "https://tanstack.com/query/latest/docs/framework/react/guides/query-cancellation": [
+   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.md",
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.06-state-management.md"
+  ],
+  "https://tanstack.com/query/latest/docs/framework/react/guides/suspense": [
+   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.md"
   ],
   "https://tanstack.com/virtual/latest/docs/framework/react/react-virtual": [
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.05-performance.md"
@@ -7231,9 +7249,6 @@
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.05-vulnerability-management-patch-governance.md",
    "20-backend/20.5-security/03-hardening-and-operations/REVISION.md"
   ],
-  "https://www.freecodecamp.org/news/effective-error-handling-in-react-applications/": [
-   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.md"
-  ],
   "https://www.freecodecamp.org/news/javascript-assigning-values-vs-assigning-references/": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.01-pass-by-value.md"
   ],
@@ -7861,6 +7876,9 @@
   "https://www.postgresql.org/docs/current/warm-standby.html#SYNCHRONOUS-REPLICATION": [
    "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md"
   ],
+  "https://www.postgresql.org/support/versioning/": [
+   "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.02-testing.md"
+  ],
   "https://www.prisma.io/blog": [
    "20-backend/20.4-database/04-orm-and-access/20.4.4.01-prisma.md"
   ],
@@ -7875,9 +7893,6 @@
   ],
   "https://www.prisma.io/docs/concepts/components/prisma-schema": [
    "20-backend/20.7-graphql/01-fundamentals/20.7.1.02-schema-design.md"
-  ],
-  "https://www.prisma.io/docs/orm/coming-from-prisma-orm-7": [
-   "20-backend/20.4-database/04-orm-and-access/20.4.4.01-prisma.md"
   ],
   "https://www.prisma.io/docs/orm/prisma-client": [
    "20-backend/20.7-graphql/01-fundamentals/20.7.1.01-graphql-overview.md"
@@ -7896,14 +7911,17 @@
    "20-backend/20.4-database/04-orm-and-access/20.4.4.01-prisma.md",
    "20-backend/20.4-database/04-orm-and-access/20.4.4.03-orm-query-builder-landscape.md"
   ],
-  "https://www.prisma.io/docs/orm/v6/prisma-client/client-extensions": [
+  "https://www.prisma.io/docs/orm/v7/core-concepts/supported-databases/database-drivers": [
+   "20-backend/20.4-database/04-orm-and-access/20.4.4.01-prisma.md"
+  ],
+  "https://www.prisma.io/docs/orm/v7/prisma-client/client-extensions": [
    "20-backend/20.4-database/04-orm-and-access/20.4.4.02-prisma-advanced.md"
   ],
-  "https://www.prisma.io/docs/orm/v6/prisma-client/queries/transactions": [
+  "https://www.prisma.io/docs/orm/v7/prisma-client/queries/transactions": [
    "20-backend/20.4-database/04-orm-and-access/20.4.4.01-prisma.md",
    "20-backend/20.4-database/04-orm-and-access/20.4.4.02-prisma-advanced.md"
   ],
-  "https://www.prisma.io/docs/orm/v6/prisma-schema/overview/generators": [
+  "https://www.prisma.io/docs/orm/v7/prisma-client/setup-and-configuration/databases-connections/connection-pool": [
    "20-backend/20.4-database/04-orm-and-access/20.4.4.01-prisma.md"
   ],
   "https://www.prisma.io/docs/orm/v7/prisma-client/using-raw-sql/raw-queries": [
@@ -7912,6 +7930,9 @@
   ],
   "https://www.prisma.io/docs/orm/v7/prisma-client/using-raw-sql/typedsql": [
    "20-backend/20.5-security/02-attacks-and-defense/REVISION.md"
+  ],
+  "https://www.prisma.io/docs/orm/v7/prisma-schema/overview/generators": [
+   "20-backend/20.4-database/04-orm-and-access/20.4.4.01-prisma.md"
   ],
   "https://www.prisma.io/docs/orm/v8/reference/transactions-and-runtime": [
    "20-backend/20.4-database/04-orm-and-access/20.4.4.02-prisma-advanced.md"
@@ -8118,6 +8139,10 @@
   ],
   "https://www.rfc-editor.org/rfc/rfc9162.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.17-probabilistic-data-structures.md"
+  ],
+  "https://www.rfc-editor.org/rfc/rfc9207.html": [
+   "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.md",
+   "20-backend/20.5-security/01-auth/REVISION.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc9218.html": [
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.md"
@@ -8375,6 +8400,9 @@
    "10-frontend/10.2-typescript/01-foundations/10.2.1.04-tsconfig-compiler-options.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.02-typescript-cheat-sheet.md"
   ],
+  "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-0.html#const-type-parameters": [
+   "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.01-generics.md"
+  ],
   "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-0.html#decorators": [
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.03-decorators.md"
   ],
@@ -8628,6 +8656,12 @@
   ],
   "https://zookeeper.apache.org/doc/current/zookeeperProgrammers.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.md"
+  ],
+  "https://zustand.docs.pmnd.rs/learn/guides/prevent-rerenders-with-use-shallow": [
+   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.md"
+  ],
+  "https://zustand.docs.pmnd.rs/reference/hooks/use-shallow": [
+   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.06-state-management.md"
   ]
  }
 }

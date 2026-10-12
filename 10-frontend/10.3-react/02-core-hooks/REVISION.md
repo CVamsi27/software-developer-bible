@@ -32,7 +32,7 @@ Source: [useState](10.3.2.01-usestate.md)
 4. **Q:** Why must lazy initializers and functional updaters remain pure?
    **A:** React may invoke them more than once while checking or replaying work. Generate event-specific values outside the updater and let it calculate state without side effects.
 
-**Real-World Use Cases**
+**Security boundary**
 
 5. **Q:** What must an update preserve when changing a nested form field?
    **A:** It must copy each changed level while retaining unaffected fields. A Hook setter replaces the supplied object instead of merging it like class setState.
@@ -99,7 +99,7 @@ Source: [useMemo & useCallback](10.3.2.03-usememo-usecallback.md)
    **A:** JavaScript still evaluates that argument. When dependencies match, React returns the previously stored function so the consumer observes a stable reference.
 
 3. **Q:** Why does a memoized calculation still need all of its reactive inputs?
-   **A:** The dependency list determines which cached result can be reused. Leaving out an input can return a result computed from obsolete props or state.
+   **A:** The dependency list determines which cached result can be reused. Leaving out an input can return a result computed from obsolete props or state; a compiler cannot safely repair an incomplete contract.
 
 **Code Examples**
 
@@ -110,6 +110,11 @@ Source: [useMemo & useCallback](10.3.2.03-usememo-usecallback.md)
 
 5. **Q:** Can a stable callback alone stop a table row from rendering?
    **A:** It helps only if a consumer uses identity to skip work, such as a memoized row with otherwise matching props. An ordinary child still executes with its parent.
+
+6. **Q:** How should React Compiler change a team's use of these Hooks?
+   **A:** When enabled, React Compiler can automatically memoize components and Hooks. Prefer its analysis for new code, keep manual memoization for measured or explicit identity needs, and test before removing existing caches.
+
+   Source: [React Compiler 1.0](https://react.dev/blog/2025/10/07/react-compiler-1)
 
 **Common Mistakes**
 
@@ -178,12 +183,12 @@ Source: [Context API](10.3.2.05-context-api.md)
 **Code Examples**
 
 4. **Q:** Why must a required-provider Hook use a sentinel default?
-   **A:** A sentinel such as null lets it distinguish absence from a valid value. A non-null fallback would be returned outside the provider and make an undefined check ineffective.
+   **A:** `undefined` lets the Hook distinguish a missing provider from a valid theme. A useful default such as `'light'` would instead make an incorrectly placed consumer look valid, so choose the fallback policy deliberately.
 
 **Real-World Use Cases**
 
 5. **Q:** Why should locale-loading effects ignore obsolete imports?
-   **A:** An earlier language load can resolve after a later selection. Suppressing the old result prevents translations for that earlier locale from replacing the current ones.
+   **A:** A value read from client Context can control what the interface displays, but it does not authorize a protected request. A client can alter its own state, so the server must authenticate each request and authorize access to the requested resource.
 
 **Common Mistakes**
 

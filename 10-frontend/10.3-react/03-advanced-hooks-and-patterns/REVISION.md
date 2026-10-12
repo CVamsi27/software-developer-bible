@@ -56,7 +56,7 @@ Source: [Error Boundary](10.3.3.02-error-boundary.md)
    **A:** The React boundary primitive uses class lifecycle methods: `getDerivedStateFromError` selects fallback state and `componentDidCatch` reports after commit. React has no built-in function Hook equivalent; a third-party library can wrap a class boundary with a Hook-friendly API.
 
 2. **Q:** Which errors does a boundary catch, and which slip through?
-   **A:** It catches anything thrown while React renders its children: render bodies, lifecycle methods, child constructors. Ordinary event handlers and detached async callbacks need local error handling. React 19 transition Action failures and rejected promises read with `use` can reach a boundary; server rendering and a boundary's own fallback errors have different handling.
+   **A:** It handles errors thrown while React renders descendants. Ordinary event handlers, detached async callbacks and server-rendering failures need their own handling. A rejected promise read with `use` and an error from a React 19 `useTransition` Action can reach a boundary; a pending promise belongs to Suspense.
 
 **How It Works**
 
@@ -82,7 +82,7 @@ Source: [Error Boundary](10.3.3.02-error-boundary.md)
 **Best Practices**
 
 8. **Q:** Where should boundaries sit in a real application?
-   **A:** One per independent failure domain — route, widget, form, feature — nested inside a top-level catch-all, each with its own fallback, so a crash degrades one region instead of blanking the app; a single app-wide boundary is only a last resort.
+   **A:** Put a boundary around each independently recoverable route, feature or widget, with a higher-level fallback for failures the local boundaries cannot contain. Keep expected form validation in form state so a bad field does not discard the whole draft.
 
 9. **Q:** Why can a retry button immediately return to the fallback when Suspense data failed?
    **A:** Clearing the boundary does not replace a cached rejected resource. Reset or invalidate that resource through its owner before retrying; a persistent render bug needs a different recovery path.
@@ -94,37 +94,35 @@ Source: [Error Boundary](10.3.3.02-error-boundary.md)
 
 Source: [Custom Hooks](10.3.3.03-custom-hooks.md)
 
-**First Principles**
+**Definition and ownership**
 
-1. **Q:** What connects extracted stateful logic to React's render lifecycle?
-   **A:** JavaScript functions can maintain closure or module state. A custom hook specifically calls React Hooks during a component render, which ties its state and effects to that caller's Hook records and cleanup lifecycle. Each independent caller receives its own records.
+1. **Q:** What does a custom Hook reuse, and what does each call own?
+   **A:** It reuses the Hook logic. State remains associated with the component instance making the call, so two components calling `useDebouncedValue` have separate values and timers. Shared state needs a shared owner such as a parent, Context provider, or external store.
 
-2. **Q:** How do custom hooks escape "wrapper hell" where HOCs and render props don't?
-   **A:** They share the logic without inserting nodes into the component tree: the caller receives return values instead of a wrapped component, so the hierarchy in JSX and DevTools stays exactly what you wrote — no nesting, no prop-injection collisions, no renamed `displayName`.
+2. **Q:** Why must a custom Hook call its Hooks at the top level?
+   **A:** React associates Hook state with the order of calls during a component render. A conditional or loop can change that order between renders, pairing state with the wrong call or producing a Hook-order error. The Rules of Hooks linter checks this constraint.
 
-3. **Q:** Why does extraction also create a test boundary?
-   **A:** `renderHook` mounts a small harness that calls the hook, allowing direct assertions on its returned behavior. It isolates reusable logic from markup; component tests still verify that UI interactions use the hook correctly, and provider-dependent hooks need an appropriate wrapper.
+3. **Q:** When is a normal function clearer than a custom Hook?
+   **A:** A pure calculation such as `value * 2` has no component state, effect, or subscription to organize, so a normal function is enough. Extract a Hook when its name and return value make a repeated stateful behavior easier to understand or reuse.
 
-**How It Works**
+**Timer and query behavior**
 
-4. **Q:** What does the `use` prefix actually buy you?
-   **A:** The prefix followed by an uppercase letter or digit tells tooling and readers that callers must follow the Hook rules. Runtime access still depends on React's active dispatcher and stable Hook ordering; renaming a function cannot bypass those checks.
+4. **Q:** Why does `useDebouncedValue` clear its timer in Effect cleanup?
+   **A:** When the input or delay changes, cleanup cancels the earlier timer before scheduling the next one. Without that cleanup, an older timer could publish an obsolete value after a newer input.
 
-5. **Q:** Is state shared between two components that call the same `useCounter`?
-   **A:** No. The hook function is ordinary module-scope code; each call site gets its own `useState` slot, so state is isolated per component instance — that isolation is what lets you drop the same hook anywhere without cross-talk.
+5. **Q:** What does passing TanStack Query's `signal` to `fetch` establish?
+   **A:** It lets TanStack Query abort an obsolete request when the query becomes out of date or inactive. The debounced value reduces how often a query key changes; the signal handles cancellation; neither replaces server-side validation, authorization, or rate limiting.
 
-**Code Examples**
+6. **Q:** What does the fake-timer test for `useDebouncedValue` prove, and what does it leave unproven?
+   **A:** It proves the published value stays old until the delay expires and that the latest scheduled value wins. It does not prove HTTP cancellation, caching, response validation, or server behavior; those belong to separate query and API tests.
 
-6. **Q:** Why does a debounce Effect return cleanup that clears its timer?
-   **A:** A new value cleans up the preceding timer before setting another. Without cleanup, an older timeout could publish a value after a newer one; cleanup leaves the latest scheduled value eligible to settle.
+**Effect callbacks**
 
-7. **Q:** Why keep fetch options as dependencies but an event handler in a committed ref?
-   **A:** A URL or request-option change should cancel the old request and start a new one, so use stable options and list them as dependencies. A handler change can update what an existing event listener calls without reinstalling that listener; updating the handler ref after commit separates callback behavior from subscription lifetime.
+7. **Q:** When is React 19.2's `useEffectEvent` appropriate for a subscription?
+   **A:** Use it when logic called from an Effect needs the latest committed values but those values should not restart the subscription. Keep values that should trigger resynchronization in the Effect dependencies; an Effect Event cannot be passed to a child or used as a general event handler.
 
-**Common Mistakes**
-
-8. **Q:** Why is a `useDouble` built on `useState` + `useEffect` a worse hook than `value * 2`?
-   **A:** Storing a derived product in state renders once with the old derived value, then schedules another render from the effect. Compute the product during render. A custom hook is useful when it organizes reusable Hook behavior; a pure helper is sufficient for arithmetic alone.
+8. **Q:** Why should an Effect dependency remain when changing it requires a new subscription or request?
+   **A:** That value is part of the external system's synchronization contract. Removing it can leave the Effect connected to stale inputs. `useEffectEvent` is for non-reactive logic called by an Effect, not a way to suppress a dependency that should restart the work.
 
 ## useSyncExternalStore
 
@@ -156,8 +154,8 @@ Source: [useSyncExternalStore](10.3.3.04-usesyncexternalstore.md)
 
 **Common Mistakes**
 
-7. **Q:** Why does an inline selector like `() => ({ id: user.id })` loop forever, and what's the fix?
-   **A:** It builds a new object on every poll, so `Object.is` never sees equality. Fix it by caching at the source (rebuild only when the underlying data changes) or by using `useSyncExternalStoreWithSelector` with an equality function such as `shallowEqual` — the selector shim used by Zustand's traditional equality-enabled bindings.
+7. **Q:** Why does returning `() => ({ id: user.id })` directly as `getSnapshot` loop, and how should a binding handle that selection?
+   **A:** It builds a new object on every read, so `Object.is` never sees equality. Cache the snapshot at the source, return an existing immutable record, or use the selector and equality API supported by the store binding; a selector-aware adapter can reuse a derived object when its selected fields are unchanged.
 
 **Best Practices**
 
@@ -215,7 +213,7 @@ Source: [State Management](10.3.3.06-state-management.md)
 **How It Works**
 
 3. **Q:** When can one broad context value cause costly updates?
-   **A:** Context has no selectors — any change to the provider's value re-renders every consumer, even one that reads a different field — and it offers no middleware, devtools, or time-travel. Split independent context values or use selector-based subscriptions when broad consumer updates are costly. A reducer plus context can still handle complex state; frequency alone is not a prohibition.
+   **A:** When the provider's value changes by `Object.is`, every component reading that context receives the new value, even if it uses only one field. Context does not provide field selectors. Split independently changing values or use selector-based subscriptions when profiling shows this update boundary is costly. A reducer plus context can still handle complex state; frequency alone is not a prohibition.
 
 4. **Q:** What actually distinguishes server state from client state?
    **A:** Ownership and timing. Server state arrives asynchronously with loading/error and can be invalidated externally, so it needs cache/revalidate/retry semantics; client state is owned by the application; React schedules its local updates, and persistence is optional.
@@ -228,12 +226,12 @@ Source: [State Management](10.3.3.06-state-management.md)
 6. **Q:** Why can separate selectors for state.todos and state.addTodo narrow subscriptions?
    **A:** Each `useTodoStore(selector)` call compares its selected value to decide whether that store update requires a render. Selecting the whole store — or returning an inline-built object — would wake the component on every write, defeating the selector contract from First Principles.
 
-**Common Mistakes**
+**Normalized client data**
 
 7. **Q:** Why does normalization matter more as the app grows?
-   **A:** Nested copies mean one entity update rebuilds ancestor paths, and duplicate entities can drift; a `byId`/`allIds` structure keeps one record per identity and supports direct average-case lookup.
+   **A:** Nested copies mean one entity update rebuilds ancestor paths, and duplicate entities can drift. An ID-keyed table keeps one client-owned record per identity and supports direct lookup; an ordered ID list preserves display order.
 
-**Best Practices**
+**Choosing an owner**
 
 8. **Q:** State appears and the team asks "where does it go?" — give the decision rule.
    **A:** Component-only → `useState`/`useReducer`; shared by siblings → lift to the common ancestor; shared provider values → Context; independently selected external state or action tooling → a suitable store; remote copies needing freshness/invalidation → a server-state cache; shareable filters → validated URL state. Frequency and complexity are considerations rather than rigid library boundaries.

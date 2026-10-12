@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Security-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-7_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-8_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -100,6 +100,10 @@ Source: [Sessions & Cookies](20.5.1.04-sessions-cookies.md)
 
 **A:** Fixation makes a victim use an attacker-known identifier; hijacking steals an established one. Rotate identifiers after login or privilege changes and protect transport, expiry and storage.
 
+**Q:** Why must a session-store outage not silently fall back to process-local memory?
+
+**A:** Different instances would then disagree about session validity, and logout or revocation could stop applying consistently. Treat store failure as an authentication-path failure and make availability behavior observable.
+
 ## JWT (JSON Web Tokens)
 
 Source: [JWT (JSON Web Tokens)](20.5.1.05-jwt.md)
@@ -107,6 +111,10 @@ Source: [JWT (JSON Web Tokens)](20.5.1.05-jwt.md)
 **Q:** How can a recipient validate a signed JWT without contacting a session store?
 
 **A:** Verify protection using a trusted key and allowed algorithm, then validate issuer, audience, time and application requirements. Offline signature verification does not establish current permission to access a resource.
+
+**Q:** Are registered JWT claims such as `iss`, `aud`, `exp` and `jti` automatically required by the format?
+
+**A:** No. The base format defines their meanings, but an issuer/resource-server profile must say which claims are required and how they are validated. A custom permission claim also needs an explicit contract and does not replace object-level authorization.
 
 **Q:** Why does immediate JWT revocation require an additional mechanism?
 
@@ -151,6 +159,12 @@ Source: [OAuth 2.0 Device Authorization Grant, RFC 8628](https://datatracker.iet
 **A:** State correlates a browser-bound authorization response and may carry application state; PKCE binds code redemption to the client transaction; OIDC nonce binds the ID token to the authentication request and helps detect replay. A conforming server-enforced PKCE flow can also provide CSRF protection, but these values are not interchangeable.
 
 Source: [OAuth 2.0 Security Best Current Practice, RFC 9700](https://datatracker.ietf.org/doc/html/rfc9700)
+
+**Q:** A client supports several authorization servers. Why bind the chosen issuer to the pending login and validate the callback issuer before redeeming its code?
+
+**A:** State binds the response to the browser transaction, but the client must also send the code only to the authorization server that issued it. Persist the trusted issuer and endpoint at login start, then validate the response `iss` parameter when supported or apply another documented mix-up defense.
+
+Source: [OAuth 2.0 Authorization Server Issuer Identification, RFC 9207](https://www.rfc-editor.org/rfc/rfc9207.html) · [OAuth 2.0 Security Best Current Practice, RFC 9700](https://datatracker.ietf.org/doc/html/rfc9700)
 
 **Q:** What authentication contract does OpenID Connect add to OAuth?
 
@@ -217,6 +231,18 @@ Sources: [W3C WebAuthn Level 3](https://www.w3.org/TR/webauthn-3/), [NIST SP 800
 **Q:** What credential material does a passkey server store, and what risks remain after a breach?
 
 **A:** The server retains public-key verification material rather than a reusable password. A breach can still expose personal data, sessions or modified registration state; passkeys do not remove those risks.
+
+**Q:** How should saved recovery codes preserve the assurance of an MFA account?
+
+**A:** Generate at least 64 random bits, store a one-way verifier, throttle attempts, and atomically invalidate each code after use before issuing a replacement. Notify the subscriber about recovery. For AAL2, NIST permits two codes from different methods, one code plus a bound single-factor authenticator, or repeated identity proofing when the account was identity-proofed.
+
+Source: [NIST SP 800-63B-4, Account Recovery](https://pages.nist.gov/800-63-4/sp800-63b.html)
+
+**Q:** What reauthentication limits apply to AAL2 and AAL3 sessions?
+
+**A:** AAL2 should reauthenticate within 24 hours overall and after at most one hour of inactivity. AAL3 must reauthenticate within 12 hours overall; its inactivity timeout should be no more than 15 minutes. Apply the relevant profile and stricter action-specific rules where needed.
+
+Source: [NIST SP 800-63B-4, Authentication Assurance Levels](https://pages.nist.gov/800-63-4/sp800-63b/aal/) · [Session Management](https://pages.nist.gov/800-63-4/sp800-63b/session/)
 
 ## RBAC (Role-Based Access Control)
 

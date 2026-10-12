@@ -24,7 +24,7 @@ Source: [Database Indexes](20.4.2.01-indexes.md)
 
 **Q:** Why does column order matter in a composite B-tree index?
 
-**A:** A B-tree on `(a, b)` is usually most useful when the query constrains `a`; a query on `b` alone often cannot use it efficiently. PostgreSQL may use skip scans for some data distributions, so check the plan and statistics.
+**A:** A B-tree on `(a, b)` is usually most useful when the query constrains `a`; a query on `b` alone may otherwise traverse many leading-key ranges. PostgreSQL 18 can repeatedly search a low-cardinality leading key and apply the later-key condition, but many distinct leading values make that work unattractive. Check version, statistics and plan.
 
 **Q:** Why did the covering fixture report three heap fetches before vacuum and zero afterward?
 
@@ -76,7 +76,15 @@ Source: [Execution Plans & Query Optimization](20.4.2.03-execution-plans.md)
 
 **Q:** What does the execution plan add beyond the SQL query text?
 
-**A:** It shows scans/operators, row-flow structure and estimates; instrumented execution adds observations. Application pool/network/serialization waits remain outside that tree, so plan work is one part of endpoint latency.
+**A:** It shows scans/operators, row-flow structure and estimates; instrumented execution adds observations. Pool wait, network transfer and client decoding remain outside executor time. Lock and I/O waits during execution count toward it; PostgreSQL 18 can separately measure server-side result serialization.
+
+**Q:** What does `Index Searches` add to `loops` in a PostgreSQL 18 plan?
+
+**A:** One node execution can do multiple index searches, such as for an `IN`/`ANY` condition or B-tree skip scan. Read the search count alongside loops to understand repeated access; neither value alone gives the total endpoint latency.
+
+**Q:** How can a generic plan help diagnose parameter-sensitive behavior, and what does it leave out?
+
+**A:** PostgreSQL 18's `EXPLAIN (GENERIC_PLAN)` shows a parameterized plan without concrete values and cannot be combined with `ANALYZE`. Compare it with a safe executed plan using representative values; the generic plan does not show observed runtime work.
 
 **Q:** How can incorrect row-count estimates lead to a poor execution plan?
 
@@ -108,7 +116,11 @@ Source: [PostgreSQL Window Functions](20.4.2.04-window-functions.md)
 
 **Q:** Why must a query use an outer filter to select rows by a window-function result?
 
-**A:** WHERE decides the input before window calculations exist. Compute the value in a subquery/CTE, then filter outside. Moving a filter outside can deliberately change which rows contributed to ranking/totals; PostgreSQL16 has no QUALIFY.
+**A:** WHERE decides the input before window calculations exist. Compute the value in a subquery/CTE, then filter outside. Moving a filter outside can deliberately change which rows contributed to ranking/totals; PostgreSQL 18 has no `QUALIFY` clause.
+
+**Q:** Can `lag` skip NULL values in PostgreSQL 18?
+
+**A:** No. PostgreSQL implements `RESPECT NULLS` behavior for `lag`, `lead`, `first_value`, `last_value` and `nth_value`; `IGNORE NULLS` is not implemented.
 
 **Q:** Why do the two salary-80 peers both show 260 with the default running-sum frame?
 
@@ -141,6 +153,10 @@ Source: [PostgreSQL JSONB](20.4.2.05-jsonb.md)
 **Q:** Why does a stale replacement affect no row, and may `jsonb_path_ops` support a key-existence query?
 
 **A:** The nested update advanced the version from 1 to 2, so a replacement expecting version 1 is rejected. Separately, `jsonb_path_ops` does not support `?`, `?|` or `?&`; use `jsonb_ops` or another compatible path. Whole-row concurrency and operator support are separate contracts.
+
+**Q:** When is `JSON_TABLE` useful, and which boundary should a senior engineer make explicit?
+
+**A:** PostgreSQL 17+ can project matching JSON values into relational rows and typed columns. Choose the row/path shape and define `ON EMPTY` and `ON ERROR` behavior so missing fields and failed conversions do not silently become accepted values.
 
 ## Summary
 

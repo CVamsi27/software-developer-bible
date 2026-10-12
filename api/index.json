@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "7e5fc48e515a5744cc65650aeff57d33961ccb0ae530faf527aceabe00e85430",
+ "corpus_digest": "ae5a294fb14d5069c6334f6365b0ad155104b3e2c9daca1482530eab321fb82b",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 6000
+  "read_minutes": 5999
  },
  "chapters": [
   {
@@ -2516,7 +2516,7 @@
     "concept",
     "sql"
    ],
-   "m": 11
+   "m": 10
   },
   {
    "p": "20-backend/20.4-database/02-querying-and-optimization/20.4.2.05-jsonb.html",

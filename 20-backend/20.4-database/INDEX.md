@@ -1,6 +1,6 @@
 # Database — Index
 
-> **Study time:** ≈ 4 h 10 m of reading (29 files, ~9 min average).
+> **Study time:** ≈ 4 h 9 m of reading (29 files, ~9 min average).
 > **29 files** — Database fundamentals from PostgreSQL internals to indexing, transactions, MVCC, joins, locking, connection pooling, Prisma (plus the ORM/query-builder landscape), execution plans, SQL vs NoSQL, zero-downtime migrations, soft delete & tombstones, backups/PITR recovery, search infrastructure at scale, window functions, JSONB, replication, row-level security, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-29-blue)](../../INDEX.md)
@@ -61,9 +61,9 @@ Choose indexes and query shapes from filters, joins and measured execution plans
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Indexes](02-querying-and-optimization/20.4.2.01-indexes.md) | B-tree, hash, GiST, GIN, BRIN, composite indexes, index-only scans, partial indexes | Essential | Foundational | 9 min |
 | 02 | [Joins](02-querying-and-optimization/20.4.2.02-joins.md) | INNER, LEFT, RIGHT, FULL, CROSS, LATERAL, hash/merge/nested loop joins, join order | Essential | Foundational | 10 min |
-| 03 | [Execution Plans](02-querying-and-optimization/20.4.2.03-execution-plans.md) | EXPLAIN ANALYZE, sequential vs index scans, cost estimation, statistics | Essential | Foundational | 8 min |
-| 04 | [Window Functions](02-querying-and-optimization/20.4.2.04-window-functions.md) | ROW_NUMBER, RANK, LAG, LEAD, aggregate OVER, running totals, moving averages | Essential | Foundational | 11 min |
-| 05 | [JSONB](02-querying-and-optimization/20.4.2.05-jsonb.md) | Operators, indexing, containment queries, aggregation, real-world patterns | Essential | Foundational | 10 min |
+| 03 | [Execution Plans](02-querying-and-optimization/20.4.2.03-execution-plans.md) | EXPLAIN ANALYZE, row estimates and loops, buffers, PostgreSQL 18 generic plans/serialization | Essential | Foundational | 8 min |
+| 04 | [Window Functions](02-querying-and-optimization/20.4.2.04-window-functions.md) | ROW_NUMBER, RANK, LAG, LEAD, aggregate OVER, running totals, moving averages | Essential | Foundational | 10 min |
+| 05 | [JSONB](02-querying-and-optimization/20.4.2.05-jsonb.md) | Extraction, missing vs null, operator-compatible GIN, SQL/JSON `JSON_TABLE` (PostgreSQL 17+) | Essential | Foundational | 10 min |
 
 ---
 

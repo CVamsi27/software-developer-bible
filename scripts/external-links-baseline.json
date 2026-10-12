@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-12",
- "url_count": 2578,
+ "url_count": 2573,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md",
@@ -7586,12 +7586,6 @@
   "https://www.postgresql.org/docs/16/continuous-archiving.html": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md"
   ],
-  "https://www.postgresql.org/docs/16/datatype-json.html": [
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.05-jsonb.md"
-  ],
-  "https://www.postgresql.org/docs/16/ddl-constraints.html": [
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.05-jsonb.md"
-  ],
   "https://www.postgresql.org/docs/16/errcodes-appendix.html": [
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.02-deadlocks.md"
   ],
@@ -7604,21 +7598,6 @@
   ],
   "https://www.postgresql.org/docs/16/functions-info.html": [
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.02-deadlocks.md"
-  ],
-  "https://www.postgresql.org/docs/16/functions-json.html": [
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.05-jsonb.md"
-  ],
-  "https://www.postgresql.org/docs/16/functions-window.html": [
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.04-window-functions.md"
-  ],
-  "https://www.postgresql.org/docs/16/indexes-index-only-scans.html": [
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md"
-  ],
-  "https://www.postgresql.org/docs/16/indexes-partial.html": [
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md"
-  ],
-  "https://www.postgresql.org/docs/16/indexes-types.html": [
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md"
   ],
   "https://www.postgresql.org/docs/16/logical-replication-conflicts.html": [
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.04-database-replication.md"
@@ -7634,17 +7613,11 @@
   "https://www.postgresql.org/docs/16/monitoring-stats.html#MONITORING-PG-STAT-ARCHIVER-VIEW": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md"
   ],
-  "https://www.postgresql.org/docs/16/planner-stats.html": [
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.03-execution-plans.md"
-  ],
   "https://www.postgresql.org/docs/16/runtime-config-client.html": [
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.02-deadlocks.md"
   ],
   "https://www.postgresql.org/docs/16/runtime-config-locks.html": [
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.02-deadlocks.md"
-  ],
-  "https://www.postgresql.org/docs/16/runtime-config-resource.html": [
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.03-execution-plans.md"
   ],
   "https://www.postgresql.org/docs/16/runtime-config-wal.html": [
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.01-transactions.md",
@@ -7654,20 +7627,10 @@
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md"
   ],
   "https://www.postgresql.org/docs/16/sql-createindex.html": [
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md",
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.01-transactions.md"
-  ],
-  "https://www.postgresql.org/docs/16/sql-explain.html": [
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.03-execution-plans.md"
-  ],
-  "https://www.postgresql.org/docs/16/sql-expressions.html#SYNTAX-WINDOW-FUNCTIONS": [
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.04-window-functions.md"
   ],
   "https://www.postgresql.org/docs/16/sql-select.html": [
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.03-optimistic-pessimistic-locking.md"
-  ],
-  "https://www.postgresql.org/docs/16/storage-hot.html": [
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md"
   ],
   "https://www.postgresql.org/docs/16/textsearch-controls.html": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.05-search-infrastructure-at-scale.md"
@@ -7682,14 +7645,11 @@
   "https://www.postgresql.org/docs/16/tutorial-transactions.html": [
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.01-transactions.md"
   ],
-  "https://www.postgresql.org/docs/16/tutorial-window.html": [
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.04-window-functions.md"
-  ],
-  "https://www.postgresql.org/docs/16/using-explain.html": [
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.03-execution-plans.md"
-  ],
   "https://www.postgresql.org/docs/16/warm-standby.html": [
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.04-database-replication.md"
+  ],
+  "https://www.postgresql.org/docs/17/release-17.html": [
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.05-jsonb.md"
   ],
   "https://www.postgresql.org/docs/18/functions-matching.html": [
    "20-backend/20.5-security/02-attacks-and-defense/20.5.2.03-sql-injection.md",
@@ -7713,12 +7673,16 @@
   "https://www.postgresql.org/docs/current/datatype-datetime.html": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.10-hospital-management.md"
   ],
+  "https://www.postgresql.org/docs/current/datatype-json.html": [
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.05-jsonb.md"
+  ],
   "https://www.postgresql.org/docs/current/ddl-alter.html": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.02-migration-strategies.md"
   ],
   "https://www.postgresql.org/docs/current/ddl-constraints.html": [
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-postgresql.md",
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.02-normalization.md",
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.05-jsonb.md",
    "80-lanes-abroad-full-stack/80.17-docita-interview-evidence-pack.md"
   ],
   "https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-EXCLUSION": [
@@ -7754,7 +7718,14 @@
   "https://www.postgresql.org/docs/current/functions-info.html#FUNCTIONS-PG-SNAPSHOT": [
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.md"
   ],
+  "https://www.postgresql.org/docs/current/functions-json.html": [
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.05-jsonb.md"
+  ],
+  "https://www.postgresql.org/docs/current/functions-window.html": [
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.04-window-functions.md"
+  ],
   "https://www.postgresql.org/docs/current/indexes-index-only-scans.html": [
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.04-backend-cheat-sheet.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.07-sql-data-modeling-cheat-sheet.md"
   ],
@@ -7763,10 +7734,14 @@
    "70-interview-toolkit/70.3-cheatsheets/70.3.07-sql-data-modeling-cheat-sheet.md"
   ],
   "https://www.postgresql.org/docs/current/indexes-partial.html": [
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md",
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.03-soft-delete-and-tombstones.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.25-distributed-job-scheduler.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.28-parking-lot.md",
    "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
+  ],
+  "https://www.postgresql.org/docs/current/indexes-types.html": [
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md"
   ],
   "https://www.postgresql.org/docs/current/indexes.html": [
    "70-interview-toolkit/70.3-cheatsheets/70.3.07-sql-data-modeling-cheat-sheet.md"
@@ -7789,6 +7764,9 @@
   "https://www.postgresql.org/docs/current/pgtrgm.html#PGTRGM-INDEX": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.01-pagination.md"
   ],
+  "https://www.postgresql.org/docs/current/planner-stats.html": [
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.03-execution-plans.md"
+  ],
   "https://www.postgresql.org/docs/current/queries-limit.html": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.01-pagination.md"
   ],
@@ -7807,6 +7785,7 @@
   "https://www.postgresql.org/docs/current/runtime-config-resource.html": [
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-postgresql.md",
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.05-postgresql-performance.md",
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.03-execution-plans.md",
    "30-architecture/30.2-system-design/01-theory/30.2.1.05-caching-patterns.md"
   ],
   "https://www.postgresql.org/docs/current/runtime-config-wal.html": [
@@ -7820,6 +7799,7 @@
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.06-row-level-security.md"
   ],
   "https://www.postgresql.org/docs/current/sql-createindex.html": [
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md",
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.02-migration-strategies.md",
    "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.md"
   ],
@@ -7828,6 +7808,13 @@
   ],
   "https://www.postgresql.org/docs/current/sql-createview.html": [
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.06-row-level-security.md"
+  ],
+  "https://www.postgresql.org/docs/current/sql-explain.html": [
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.03-execution-plans.md",
+   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.06-interview-questions.md"
+  ],
+  "https://www.postgresql.org/docs/current/sql-expressions.html#SYNTAX-WINDOW-FUNCTIONS": [
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.04-window-functions.md"
   ],
   "https://www.postgresql.org/docs/current/sql-insert.html": [
    "30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.md",
@@ -7852,6 +7839,9 @@
   "https://www.postgresql.org/docs/current/sql-truncate.html": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.06-interview-questions.md"
   ],
+  "https://www.postgresql.org/docs/current/storage-hot.html": [
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md"
+  ],
   "https://www.postgresql.org/docs/current/transaction-iso.html": [
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.md",
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.04-nosql-vs-sql.md",
@@ -7868,10 +7858,12 @@
    "20-backend/20.4-database/02-querying-and-optimization/20.4.2.02-joins.md"
   ],
   "https://www.postgresql.org/docs/current/tutorial-window.html": [
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.04-window-functions.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.07-sql-data-modeling-cheat-sheet.md"
   ],
   "https://www.postgresql.org/docs/current/using-explain.html": [
-   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.05-postgresql-performance.md"
+   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.05-postgresql-performance.md",
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.03-execution-plans.md"
   ],
   "https://www.postgresql.org/docs/current/view-pg-locks.html": [
    "20-backend/20.4-database/04-orm-and-access/20.4.4.02-prisma-advanced.md"

@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 244,
+    "revised": 247,
     "unchanged": 80,
-    "pending": 196,
-    "reviewed": 324,
+    "pending": 193,
+    "reviewed": 327,
     "topic_chapters": 520
   },
   "entries": [
@@ -40,7 +40,7 @@
       "baseline_sha256": "1fecf8d582179ecd4d44e304879f7c29d83edc16926e34d0bc8ce1104717b1ba",
       "previous_depth_review": "revised",
       "reader_question": "What makes a senior-level resume claim both relevant and defensible?",
-      "disposition": "Added concrete senior evidence—ownership boundary, scale or risk, decision, cross-team alignment and operational outcome—and described mentoring through observable results. Replaced overlong, FAANG-specific cross-reference descriptions with the applicable behavioral and abroad preparation paths.",
+      "disposition": "Added concrete senior evidence\u2014ownership boundary, scale or risk, decision, cross-team alignment and operational outcome\u2014and described mentoring through observable results. Replaced overlong, FAANG-specific cross-reference descriptions with the applicable behavioral and abroad preparation paths.",
       "validation": [
         "Directly re-read in learning order; checked the practical/textbook definition, First Principles, scenario flow, summary and cross-references.",
         "The four chapters retain truthful, evidence-based guidance; the offer arithmetic and index reading-time label were checked explicitly.",
@@ -440,7 +440,7 @@
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md",
       "group": "10-frontend/10.1-javascript/04-memory-and-data",
-      "title": "Hash Tables & HashMaps — Internals, Collision Resolution & V8",
+      "title": "Hash Tables & HashMaps \u2014 Internals, Collision Resolution & V8",
       "status": "revised",
       "baseline_sha256": "f5faf06d7d2a0a97a8fe0cc99372685195b12204fa43bac01caf4ce30afe151f",
       "previous_depth_review": "revised",
@@ -552,7 +552,7 @@
     {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md",
       "group": "10-frontend/10.1-javascript/06-modern-and-interview",
-      "title": "Recent ECMAScript Features (ES2022–ES2026)",
+      "title": "Recent ECMAScript Features (ES2022\u2013ES2026)",
       "status": "revised",
       "baseline_sha256": "6655d87b31fa887b2ab3fba44195dc76da1704ff801c480272beaa02506dc4e9",
       "previous_depth_review": "revised",
@@ -880,7 +880,7 @@
     {
       "path": "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.05-advanced-patterns.md",
       "group": "10-frontend/10.2-typescript/04-advanced-patterns",
-      "title": "TypeScript Advanced Patterns — Decorators, Middleware, Advanced Generics",
+      "title": "TypeScript Advanced Patterns \u2014 Decorators, Middleware, Advanced Generics",
       "status": "revised",
       "baseline_sha256": "db71ce14d1ee230c2810020a51179771acbc84b52d097f75360c4c1e8c764644",
       "previous_depth_review": "revised",
@@ -1546,7 +1546,7 @@
       "baseline_sha256": "d6f7391c035755148066b5108c82a4d442a78ba4a8229cdd05d91e43be4bf85d",
       "previous_depth_review": "revised",
       "reader_question": "How do value changes, blur, submit and server rejection differ in Formik?",
-      "disposition": "Removed a repeated library-comparison matrix and a generic mistake catalog. The chapter now keeps one controlled-state lifecycle and closes with a short fit boundary covering migration cost, context updates and FastField’s independence requirement.",
+      "disposition": "Removed a repeated library-comparison matrix and a generic mistake catalog. The chapter now keeps one controlled-state lifecycle and closes with a short fit boundary covering migration cost, context updates and FastField\u2019s independence requirement.",
       "validation": [
         "Re-read all six topic chapters in study order with the group INDEX, REVISION companion and interview bank; preserved textbook definitions and the distinct First Principles sections.",
         "Five representative TypeScript/TSX examples passed strict no-emit compilation with TypeScript 7.0.2, React 19.3.0 and the selected current form-library types.",
@@ -1580,7 +1580,7 @@
       "baseline_sha256": "52bf54552dad31143964ec60205c4c904e570b70fdbe3a4a2fa9bc572431c7f7",
       "previous_depth_review": "revised",
       "reader_question": "How does a field or uploaded file move from FormData into an authorized, recoverable mutation?",
-      "disposition": "Added the missing file-upload policy at the server boundary: treat browser metadata as hints, validate size and content, generate storage names, authorize access, and use scoped direct uploads for files above Next.js’s default 1 MB action body limit. Removed a duplicate cross-reference and aligned the current documentation links.",
+      "disposition": "Added the missing file-upload policy at the server boundary: treat browser metadata as hints, validate size and content, generate storage names, authorize access, and use scoped direct uploads for files above Next.js\u2019s default 1 MB action body limit. Removed a duplicate cross-reference and aligned the current documentation links.",
       "validation": [
         "Re-read all six topic chapters in study order with the group INDEX, REVISION companion and interview bank; preserved textbook definitions and the distinct First Principles sections.",
         "Five representative TypeScript/TSX examples passed strict no-emit compilation with TypeScript 7.0.2, React 19.3.0 and the selected current form-library types.",
@@ -1597,7 +1597,7 @@
       "baseline_sha256": "7df6ca7a14eced3c0d47ec44bd6174082d2397f0eb316b75e6576899f64c8725",
       "previous_depth_review": "revised",
       "reader_question": "How does a draft recover safely across delayed writes and a failed commit?",
-      "disposition": "The chapter follows draft ownership through delayed writes, version ordering, persistence failure and final commit recovery. Its detailed writer example is necessary to show the race and recovery contract; no sections repeat another chapter’s lesson.",
+      "disposition": "The chapter follows draft ownership through delayed writes, version ordering, persistence failure and final commit recovery. Its detailed writer example is necessary to show the race and recovery contract; no sections repeat another chapter\u2019s lesson.",
       "validation": [
         "Re-read all six topic chapters in study order with the group INDEX, REVISION companion and interview bank; preserved textbook definitions and the distinct First Principles sections.",
         "Five representative TypeScript/TSX examples passed strict no-emit compilation with TypeScript 7.0.2, React 19.3.0 and the selected current form-library types.",
@@ -1721,12 +1721,12 @@
     {
       "path": "10-frontend/10.7-html-css/10.7.01-html-fundamentals.md",
       "group": "10-frontend/10.7-html-css",
-      "title": "HTML Fundamentals — Semantic HTML, Forms, Accessibility",
+      "title": "HTML Fundamentals \u2014 Semantic HTML, Forms, Accessibility",
       "status": "revised",
       "baseline_sha256": "616e00a8564bdc1fb976d8b96b90b86766e9ac2dbb15a4c56a9978219cdd7713",
       "previous_depth_review": "revised",
       "reader_question": "How do HTML semantics carry a submitted value from a control into an accessible, recoverable form interaction?",
-      "disposition": "Replaced the misleading “document outline is the API” claim with accurate heading/landmark navigation language. Kept the form trace, native constraints, named successful controls and accessible error state; moved page metadata after the form/accessibility flow and removed unrelated resource-hint detail.",
+      "disposition": "Replaced the misleading \u201cdocument outline is the API\u201d claim with accurate heading/landmark navigation language. Kept the form trace, native constraints, named successful controls and accessible error state; moved page metadata after the form/accessibility flow and removed unrelated resource-hint detail.",
       "validation": [
         "Directly re-read in learning order with the HTML/CSS INDEX, REVISION.md and interview bank; checked definitions, First Principles, mechanism flow, summary and companion questions.",
         "Current CSS reading-flow support was checked against MDN and the CSS Display specification; PWA install, background sync and push limitations were checked against current MDN API pages; current Google FAQ and Core Web Vitals guidance was checked against official sources.",
@@ -1737,7 +1737,7 @@
     {
       "path": "10-frontend/10.7-html-css/10.7.02-css-fundamentals.md",
       "group": "10-frontend/10.7-html-css",
-      "title": "CSS Fundamentals — Grid, Flexbox, Responsive Design, Variables",
+      "title": "CSS Fundamentals \u2014 Grid, Flexbox, Responsive Design, Variables",
       "status": "revised",
       "baseline_sha256": "0fb45ca0b14f13d24ce6385cfe415823c92098fe8fa1a61a9834395e646ffbff",
       "previous_depth_review": "revised",
@@ -1753,7 +1753,7 @@
     {
       "path": "10-frontend/10.7-html-css/10.7.03-browser-rendering.md",
       "group": "10-frontend/10.7-html-css",
-      "title": "Browser Rendering — Critical Rendering Path, Reflow, Paint",
+      "title": "Browser Rendering \u2014 Critical Rendering Path, Reflow, Paint",
       "status": "unchanged",
       "baseline_sha256": "69205d02c1d474f1c6fa3f8d4b324ac7abae1b19c7cfc6b53ea880f4540ec42d",
       "previous_depth_review": "reviewed",
@@ -1769,7 +1769,7 @@
     {
       "path": "10-frontend/10.7-html-css/10.7.04-seo.md",
       "group": "10-frontend/10.7-html-css",
-      "title": "SEO — Meta Tags, Structured Data, Core Web Vitals",
+      "title": "SEO \u2014 Meta Tags, Structured Data, Core Web Vitals",
       "status": "unchanged",
       "baseline_sha256": "3f07373d0be2c8552ffe61a71f8c5894ef3f5180bc1802fa026b255900952ef8",
       "previous_depth_review": "reviewed",
@@ -1785,7 +1785,7 @@
     {
       "path": "10-frontend/10.7-html-css/10.7.05-pwa.md",
       "group": "10-frontend/10.7-html-css",
-      "title": "Progressive Web Apps (PWA) — Service Workers, Manifest, Offline",
+      "title": "Progressive Web Apps (PWA) \u2014 Service Workers, Manifest, Offline",
       "status": "revised",
       "baseline_sha256": "aa3df545160b3ea8a776112cea962e6dea65ca41ab232bf987ea4efff13db596",
       "previous_depth_review": "revised",
@@ -1897,7 +1897,7 @@
     {
       "path": "10-frontend/10.8-mobile/10.8.04-expo-eas-builds.md",
       "group": "10-frontend/10.8-mobile",
-      "title": "Expo EAS Build — Cloud Builds, Profiles & Submitting",
+      "title": "Expo EAS Build \u2014 Cloud Builds, Profiles & Submitting",
       "status": "revised",
       "baseline_sha256": "94a617a812ef30e979f792d765206a4dd8942af82ee7d485f853af28f046d8f0",
       "previous_depth_review": "revised",
@@ -1913,7 +1913,7 @@
     {
       "path": "10-frontend/10.8-mobile/10.8.05-codepush-ota-updates.md",
       "group": "10-frontend/10.8-mobile",
-      "title": "Over-the-Air Updates — EAS Update, CodePush & the JS/Native Boundary",
+      "title": "Over-the-Air Updates \u2014 EAS Update, CodePush & the JS/Native Boundary",
       "status": "unchanged",
       "baseline_sha256": "3b24a1b01b8894abf2f3013b66abd1e2a852069c0d988ed0543a0348c6be7336",
       "previous_depth_review": "revised",
@@ -1929,12 +1929,12 @@
     {
       "path": "10-frontend/10.8-mobile/10.8.06-app-store-release-automation.md",
       "group": "10-frontend/10.8-mobile",
-      "title": "App-Store Release Automation — Release Trains, Store Review & Rollout Safety",
+      "title": "App-Store Release Automation \u2014 Release Trains, Store Review & Rollout Safety",
       "status": "revised",
       "baseline_sha256": "53366575785974d738f43cb7a8f59e49316b7a37ca79d459673779b6f8672c19",
       "previous_depth_review": "revised",
       "reader_question": "What can a staged rollout stop, and how do you repair devices that already installed the release?",
-      "disposition": "Rebuilt the page around one signed artifact through submission, store approval, rollout, adoption and recovery. Removed generic release-train and checklist repetition, and separated Apple’s seven-day automatic-update phase from Play’s update-only staged rollout; both are explicitly distinguished from installed-device adoption and binary recall.",
+      "disposition": "Rebuilt the page around one signed artifact through submission, store approval, rollout, adoption and recovery. Removed generic release-train and checklist repetition, and separated Apple\u2019s seven-day automatic-update phase from Play\u2019s update-only staged rollout; both are explicitly distinguished from installed-device adoption and binary recall.",
       "validation": [
         "Re-read in mobile learning order with INDEX.md, REVISION.md and the interview bank; checked practical/textbook definitions, First Principles, causal flow, summary, source-linked recall and cross-references.",
         "Current primary sources checked for React Native 0.87/0.85 testing and animation guidance, RNTL v14, Expo EAS build/version/update contracts, Apple AASA caching and phased release, and Android Dynamic App Links and staged rollouts.",
@@ -2154,7 +2154,7 @@
       "baseline_sha256": "52d0f1842ff62d3fbe5c3257a347226c9e6a51129dd58ee5dabd2e63e0d686e6",
       "previous_depth_review": "revised",
       "reader_question": "What does the application own between a user question and a delivered answer?",
-      "disposition": "Opened with a concrete “ask our policies” request and followed it through the three knowledge levers, authorized retrieval, streaming, structured outputs, provider boundaries and metering. Removed the duplicated agent-loop implementation in favor of the orchestration chapter and replaced repeated mistake/practice/performance catalogs with a release contract.",
+      "disposition": "Opened with a concrete \u201cask our policies\u201d request and followed it through the three knowledge levers, authorized retrieval, streaming, structured outputs, provider boundaries and metering. Removed the duplicated agent-loop implementation in favor of the orchestration chapter and replaced repeated mistake/practice/performance catalogs with a release contract.",
       "validation": [
         "Re-read in learning order with the AI Engineering INDEX, REVISION companion and interview bank; checked definitions, First Principles, canonical topic ownership, explanation flow, Summary and source links.",
         "Checked changing protocol, serving and regulatory details against the current MCP specification, vLLM CLI/security guidance and European Commission AI Act timeline; versions and limitations are explicit where behavior varies.",
@@ -2183,7 +2183,7 @@
     {
       "path": "20-backend/20.12-ai-engineering/20.12.03-retrieval-quality-hybrid-search-reranking.md",
       "group": "20-backend/20.12-ai-engineering",
-      "title": "Retrieval Quality — Hybrid Search & Reranking",
+      "title": "Retrieval Quality \u2014 Hybrid Search & Reranking",
       "status": "revised",
       "baseline_sha256": "c53d4e2eb349207cdfecf13f708272a2b4cdb3c9c38357a9e3b5a4f4161f2f66",
       "previous_depth_review": "revised",
@@ -2217,11 +2217,11 @@
     {
       "path": "20-backend/20.12-ai-engineering/20.12.05-serving-models-hosted-vs-self-hosted.md",
       "group": "20-backend/20.12-ai-engineering",
-      "title": "Serving Models — Hosted APIs vs Self-Hosted",
+      "title": "Serving Models \u2014 Hosted APIs vs Self-Hosted",
       "status": "revised",
       "baseline_sha256": "df9ba3a347dc58a7135f90485e83430234213c5d394a38e059edfe85ccef8e29",
       "previous_depth_review": "revised",
-      "reader_question": "Which serving path meets this workload’s quality, data and SLO contract?",
+      "reader_question": "Which serving path meets this workload\u2019s quality, data and SLO contract?",
       "disposition": "Kept the decision matrix, PagedAttention/continuous batching, quantization conditions, VRAM arithmetic, routing and deployment sketches. Removed duplicate decision and checklist sections, consolidated workload validation, and corrected vLLM security guidance: its API key is not a complete perimeter and multi-node paths require isolation.",
       "validation": [
         "Re-read in learning order with the AI Engineering INDEX, REVISION companion and interview bank; checked definitions, First Principles, canonical topic ownership, explanation flow, Summary and source links.",
@@ -2251,7 +2251,7 @@
     {
       "path": "20-backend/20.13-java/20.13.01-java-language-fundamentals.md",
       "group": "20-backend/20.13-java",
-      "title": "Java — Language Fundamentals",
+      "title": "Java \u2014 Language Fundamentals",
       "status": "revised",
       "baseline_sha256": "be2fd64535eadf6c30ba4773fa4d038ee87c60efaeb3ba6390601e2c025c566a",
       "previous_depth_review": "revised",
@@ -2267,7 +2267,7 @@
     {
       "path": "20-backend/20.13-java/20.13.02-java-oop-solid.md",
       "group": "20-backend/20.13-java",
-      "title": "Java — OOP Principles, Interfaces & SOLID",
+      "title": "Java \u2014 OOP Principles, Interfaces & SOLID",
       "status": "revised",
       "baseline_sha256": "ab9408466a88e92065a6ddb4d308029a86b49ecf8b442b1c49e31c7be47caa5d",
       "previous_depth_review": "revised",
@@ -2283,7 +2283,7 @@
     {
       "path": "20-backend/20.13-java/20.13.03-java-concurrency-multithreading.md",
       "group": "20-backend/20.13-java",
-      "title": "Java — Concurrency & Multithreading",
+      "title": "Java \u2014 Concurrency & Multithreading",
       "status": "revised",
       "baseline_sha256": "a709cf5ec3661ed979bf0f4b3f09791f21caf2e9f53d81257b3a5d9756ad37b2",
       "previous_depth_review": "revised",
@@ -2299,7 +2299,7 @@
     {
       "path": "20-backend/20.13-java/20.13.04-java-testing-junit-mockito.md",
       "group": "20-backend/20.13-java",
-      "title": "Java — Testing with JUnit & Mockito",
+      "title": "Java \u2014 Testing with JUnit & Mockito",
       "status": "revised",
       "baseline_sha256": "f9cd35e2f350cfba571b4660ee1a73af4534b47f6123f83fc73c58be1585382a",
       "previous_depth_review": "revised",
@@ -2315,7 +2315,7 @@
     {
       "path": "20-backend/20.13-java/20.13.05-spring-boot.md",
       "group": "20-backend/20.13-java",
-      "title": "Java — Spring Boot Essentials",
+      "title": "Java \u2014 Spring Boot Essentials",
       "status": "revised",
       "baseline_sha256": "bc052a6bc6f308c3bc28b5bb5520ed887de2f7c9ec15ac984d3ff3fe01a2f591",
       "previous_depth_review": "revised",
@@ -2629,7 +2629,7 @@
     {
       "path": "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.01-api-design-patterns.md",
       "group": "20-backend/20.3-rest-apis/01-design-and-contract",
-      "title": "API Design Patterns — REST, GraphQL, gRPC, Webhooks",
+      "title": "API Design Patterns \u2014 REST, GraphQL, gRPC, Webhooks",
       "status": "unchanged",
       "baseline_sha256": "f97828e4741b634f4112cfb0e49072d239ea2accd5657931e35c04587a2e667d",
       "previous_depth_review": "revised",
@@ -2651,7 +2651,7 @@
       "baseline_sha256": "bae0dad4c565bdad9c36e29657f4b64aeb0591358a638ef41897bc1606828820",
       "previous_depth_review": "revised",
       "reader_question": "What does the REST uniform interface add beyond consistent HTTP route naming?",
-      "disposition": "Retained the resource-to-representation trace and the constraints table; replaced generic secondary references with the governing HTTP semantics source and Fielding’s dissertation.",
+      "disposition": "Retained the resource-to-representation trace and the constraints table; replaced generic secondary references with the governing HTTP semantics source and Fielding\u2019s dissertation.",
       "validation": [
         "Re-read in category order with INDEX.md and REVISION.md.",
         "Checked practical and textbook definitions, First Principles, causal explanation, one Summary, See Also and references; retained senior-level trade-offs and canonical topic links.",
@@ -2702,7 +2702,7 @@
       "baseline_sha256": "1ad7fcfdeae218969f32371da321b6471e77a5ba1a57bf5022c60c2a6b34c262",
       "previous_depth_review": "revised",
       "reader_question": "Why can a generated client still disagree with the running service?",
-      "disposition": "Kept the spec-to-tool-to-runtime evidence flow and the complete contract example; aligned the “latest version” date to the review date and confirmed the official 3.2.1 specification.",
+      "disposition": "Kept the spec-to-tool-to-runtime evidence flow and the complete contract example; aligned the \u201clatest version\u201d date to the review date and confirmed the official 3.2.1 specification.",
       "validation": [
         "Re-read in category order with INDEX.md and REVISION.md.",
         "Checked practical and textbook definitions, First Principles, causal explanation, one Summary, See Also and references; retained senior-level trade-offs and canonical topic links.",
@@ -2950,7 +2950,7 @@
     {
       "path": "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.03-bff.md",
       "group": "20-backend/20.3-rest-apis/04-edge-and-scale",
-      "title": "BFF — Backend for Frontend",
+      "title": "BFF \u2014 Backend for Frontend",
       "status": "unchanged",
       "baseline_sha256": "2404557da28e2d873d7ec7254dfd97cf848f47fe79862ae8042ec22274525fcd",
       "previous_depth_review": "revised",
@@ -3043,7 +3043,7 @@
     {
       "path": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.04-nosql-vs-sql.md",
       "group": "20-backend/20.4-database/01-postgresql-foundations",
-      "title": "SQL vs NoSQL — Choosing the Right Database",
+      "title": "SQL vs NoSQL \u2014 Choosing the Right Database",
       "status": "revised",
       "baseline_sha256": "b9c207e6624aa261ff9f7ef12dab3dd1e26f34102240da24688005980edfc4f5",
       "previous_depth_review": "revised",
@@ -3204,8 +3204,8 @@
       "status": "unchanged",
       "baseline_sha256": "78ffdba7f23b92f3e315f106b477eb5ba2e68418a7fb0e0588a38bd5cca144e9",
       "previous_depth_review": "reviewed",
-      "reader_question": "Database Transactions — can a reader follow the concurrency or freshness guarantee from a concrete failure to the mechanism and the recovery boundary?",
-      "disposition": "Re-read the complete chapter, index and revision flow. The transfer → isolation anomaly → recovery path is coherent; deadlock diagnosis follows the two-session cycle; locking compares stale writes, short locks and atomic predicates; replication separates copied data, acknowledgment and read freshness. SQL examples and PostgreSQL 18 claims checked against official documentation. No content change was needed.",
+      "reader_question": "Database Transactions \u2014 can a reader follow the concurrency or freshness guarantee from a concrete failure to the mechanism and the recovery boundary?",
+      "disposition": "Re-read the complete chapter, index and revision flow. The transfer \u2192 isolation anomaly \u2192 recovery path is coherent; deadlock diagnosis follows the two-session cycle; locking compares stale writes, short locks and atomic predicates; replication separates copied data, acknowledgment and read freshness. SQL examples and PostgreSQL 18 claims checked against official documentation. No content change was needed.",
       "validation": [
         "Reviewed headings alone and prose in sequence; definitions, first-principles derivations, one summary, See Also and references are present.",
         "Checked transaction isolation and retry behavior against PostgreSQL 18 transaction documentation.",
@@ -3225,8 +3225,8 @@
       "status": "unchanged",
       "baseline_sha256": "39d1e383196168e6f50cdd96eb3205a6396b981f5737c1fef4a637fd982be7a7",
       "previous_depth_review": "reviewed",
-      "reader_question": "Deadlocks — can a reader follow the concurrency or freshness guarantee from a concrete failure to the mechanism and the recovery boundary?",
-      "disposition": "Re-read the complete chapter, index and revision flow. The transfer → isolation anomaly → recovery path is coherent; deadlock diagnosis follows the two-session cycle; locking compares stale writes, short locks and atomic predicates; replication separates copied data, acknowledgment and read freshness. SQL examples and PostgreSQL 18 claims checked against official documentation. No content change was needed.",
+      "reader_question": "Deadlocks \u2014 can a reader follow the concurrency or freshness guarantee from a concrete failure to the mechanism and the recovery boundary?",
+      "disposition": "Re-read the complete chapter, index and revision flow. The transfer \u2192 isolation anomaly \u2192 recovery path is coherent; deadlock diagnosis follows the two-session cycle; locking compares stale writes, short locks and atomic predicates; replication separates copied data, acknowledgment and read freshness. SQL examples and PostgreSQL 18 claims checked against official documentation. No content change was needed.",
       "validation": [
         "Reviewed headings alone and prose in sequence; definitions, first-principles derivations, one summary, See Also and references are present.",
         "Checked transaction isolation and retry behavior against PostgreSQL 18 transaction documentation.",
@@ -3246,8 +3246,8 @@
       "status": "unchanged",
       "baseline_sha256": "9047f79947b8ef59e1ff3e09fe220b135dcb0616d22a4cf98aa3ba2008a5bda3",
       "previous_depth_review": "reviewed",
-      "reader_question": "Optimistic & Pessimistic Locking — can a reader follow the concurrency or freshness guarantee from a concrete failure to the mechanism and the recovery boundary?",
-      "disposition": "Re-read the complete chapter, index and revision flow. The transfer → isolation anomaly → recovery path is coherent; deadlock diagnosis follows the two-session cycle; locking compares stale writes, short locks and atomic predicates; replication separates copied data, acknowledgment and read freshness. SQL examples and PostgreSQL 18 claims checked against official documentation. No content change was needed.",
+      "reader_question": "Optimistic & Pessimistic Locking \u2014 can a reader follow the concurrency or freshness guarantee from a concrete failure to the mechanism and the recovery boundary?",
+      "disposition": "Re-read the complete chapter, index and revision flow. The transfer \u2192 isolation anomaly \u2192 recovery path is coherent; deadlock diagnosis follows the two-session cycle; locking compares stale writes, short locks and atomic predicates; replication separates copied data, acknowledgment and read freshness. SQL examples and PostgreSQL 18 claims checked against official documentation. No content change was needed.",
       "validation": [
         "Reviewed headings alone and prose in sequence; definitions, first-principles derivations, one summary, See Also and references are present.",
         "Checked transaction isolation and retry behavior against PostgreSQL 18 transaction documentation.",
@@ -3267,8 +3267,8 @@
       "status": "unchanged",
       "baseline_sha256": "261c01316b3c4e900b299e219fd6790b54182cafb686bdc39f6274ed31d3ec9c",
       "previous_depth_review": "reviewed",
-      "reader_question": "Database Replication Patterns — can a reader follow the concurrency or freshness guarantee from a concrete failure to the mechanism and the recovery boundary?",
-      "disposition": "Re-read the complete chapter, index and revision flow. The transfer → isolation anomaly → recovery path is coherent; deadlock diagnosis follows the two-session cycle; locking compares stale writes, short locks and atomic predicates; replication separates copied data, acknowledgment and read freshness. SQL examples and PostgreSQL 18 claims checked against official documentation. No content change was needed.",
+      "reader_question": "Database Replication Patterns \u2014 can a reader follow the concurrency or freshness guarantee from a concrete failure to the mechanism and the recovery boundary?",
+      "disposition": "Re-read the complete chapter, index and revision flow. The transfer \u2192 isolation anomaly \u2192 recovery path is coherent; deadlock diagnosis follows the two-session cycle; locking compares stale writes, short locks and atomic predicates; replication separates copied data, acknowledgment and read freshness. SQL examples and PostgreSQL 18 claims checked against official documentation. No content change was needed.",
       "validation": [
         "Reviewed headings alone and prose in sequence; definitions, first-principles derivations, one summary, See Also and references are present.",
         "Checked transaction isolation and retry behavior against PostgreSQL 18 transaction documentation.",
@@ -3289,7 +3289,7 @@
       "baseline_sha256": "cdfdc48951acd199dbe17f1c608a0b41e5bd361068892ec1a8a6342060270c17",
       "previous_depth_review": "revised",
       "reader_question": "Can the reader trace a model through generated types, migration SQL, bounded queries and the database guarantees that remain authoritative?",
-      "disposition": "The schema → generated client/migration → query → transaction/pool sequence is coherent. It keeps application types, deployed DDL and database constraints distinct, with focused examples for pagination, raw results and concurrency boundaries.",
+      "disposition": "The schema \u2192 generated client/migration \u2192 query \u2192 transaction/pool sequence is coherent. It keeps application types, deployed DDL and database constraints distinct, with focused examples for pagination, raw results and concurrency boundaries.",
       "validation": [
         "Re-read category index, every chapter and revision companion in learning order; practical/textbook definitions, First Principles and required chapter endings are present.",
         "Checked Prisma ORM 7.10 stable and Prisma ORM 8 release-candidate status against current official Prisma release documentation.",
@@ -3303,7 +3303,7 @@
     {
       "path": "20-backend/20.4-database/04-orm-and-access/20.4.4.02-prisma-advanced.md",
       "group": "20-backend/20.4-database/04-orm-and-access",
-      "title": "Prisma Advanced — Concurrent Writes, Raw SQL and Tenant Context",
+      "title": "Prisma Advanced \u2014 Concurrent Writes, Raw SQL and Tenant Context",
       "status": "unchanged",
       "baseline_sha256": "f297e227e1db26ab210a277ffb8704a98474509e12bcfab0406839968f6ae02c",
       "previous_depth_review": "revised",
@@ -3322,7 +3322,7 @@
     {
       "path": "20-backend/20.4-database/04-orm-and-access/20.4.4.03-orm-query-builder-landscape.md",
       "group": "20-backend/20.4-database/04-orm-and-access",
-      "title": "ORM & Query Builder Landscape — Choose the Boundary You Need",
+      "title": "ORM & Query Builder Landscape \u2014 Choose the Boundary You Need",
       "status": "unchanged",
       "baseline_sha256": "9792dc20739e66b22e6695b5366afbc88cbd6401e566ba3b47b7e1e9da1eb4f2",
       "previous_depth_review": "revised",
@@ -3436,7 +3436,7 @@
     {
       "path": "20-backend/20.5-security/01-auth/20.5.1.01-auth-fundamentals.md",
       "group": "20-backend/20.5-security/01-auth",
-      "title": "Auth Fundamentals — Identity, Credentials & Crypto Primitives",
+      "title": "Auth Fundamentals \u2014 Identity, Credentials & Crypto Primitives",
       "status": "revised",
       "baseline_sha256": "d43957a6d2dadf85dc4c217df685a50fd308758cb26ae4a3e7f08b97e75645d0",
       "previous_depth_review": "revised",
@@ -3674,7 +3674,7 @@
     {
       "path": "20-backend/20.5-security/03-hardening-and-operations/20.5.3.03-threat-modeling-stride.md",
       "group": "20-backend/20.5-security/03-hardening-and-operations",
-      "title": "Threat Modeling — STRIDE & Attack Surfaces",
+      "title": "Threat Modeling \u2014 STRIDE & Attack Surfaces",
       "status": "revised",
       "baseline_sha256": "027517dcfaf83c7396baf0e0b23a96108788429cfba7c2a5e30f6c4cf4ca09cb",
       "previous_depth_review": "revised",
@@ -3853,7 +3853,7 @@
     {
       "path": "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md",
       "group": "20-backend/20.6-microservices/02-communication-and-messaging",
-      "title": "Message Brokers — Kafka vs RabbitMQ",
+      "title": "Message Brokers \u2014 Kafka vs RabbitMQ",
       "status": "revised",
       "baseline_sha256": "fe2ae6418f314ec1a82a3432beabde3f73ca83f20595cf72d8854ffa4bff9f39",
       "previous_depth_review": "reviewed",
@@ -3925,7 +3925,7 @@
       "status": "revised",
       "baseline_sha256": "5a92672990f23cc3294cd2a39d4e5f1b9ecb8c1c549c7c5824b1bad301a6e332",
       "previous_depth_review": "revised",
-      "reader_question": "What must be preserved if today’s balance must be explainable from accepted changes?",
+      "reader_question": "What must be preserved if today\u2019s balance must be explainable from accepted changes?",
       "disposition": "Moved the balance-history problem ahead of the definition and made First Principles follow retention, deterministic replay and expected-version append. The full example and boundaries for snapshots, projections, schema evolution and retention remain canonical here.",
       "validation": [
         "Directly re-read the chapter in category learning order with INDEX.md, REVISION.md and the related microservices interview answers; verified the practical/textbook definitions, First Principles, single Summary, See Also and References.",
@@ -4064,7 +4064,7 @@
       "baseline_sha256": "d52c419c035399b58632c317197fb35805ec5454b93ea21991db0a6646dccd05",
       "previous_depth_review": "revised",
       "reader_question": "What happens when a later mutation field fails after an earlier effect commits, and how should a client respond?",
-      "disposition": "Opened with the partial-commit retry risk, stated the specification’s side-effect-free/idempotent rule for non-root-mutation fields, shortened the repeated input-presence explanation and replaced generic recap lists with concrete contract tests.",
+      "disposition": "Opened with the partial-commit retry risk, stated the specification\u2019s side-effect-free/idempotent rule for non-root-mutation fields, shortened the repeated input-presence explanation and replaced generic recap lists with concrete contract tests.",
       "validation": [
         "Directly re-read the chapter in category order with INDEX.md, REVISION.md and related GraphQL interview questions; checked the practical/textbook definitions, First Principles, examples, one Summary, See Also and References.",
         "Verified current GraphQL September 2025 specification, GraphQL.js 17.0.2 release, GraphQL.org mutation semantics and Apollo Server 5.5.1 peer dependency; newly added URLs were probed before the citation baseline update.",
@@ -4158,7 +4158,7 @@
     {
       "path": "20-backend/20.8-caching/20.8.01-caching-deep-dive.md",
       "group": "20-backend/20.8-caching",
-      "title": "Caching Deep-Dive — Redis, Strategies, Invalidation, Patterns",
+      "title": "Caching Deep-Dive \u2014 Redis, Strategies, Invalidation, Patterns",
       "status": "revised",
       "baseline_sha256": "ec5971c6a4ac8716806239ed8f9771de29b75d381f490499f41bb9c200283eb7",
       "previous_depth_review": "revised",
@@ -4192,7 +4192,7 @@
     {
       "path": "20-backend/20.8-caching/20.8.03-advanced-redis-patterns.md",
       "group": "20-backend/20.8-caching",
-      "title": "Advanced Redis Patterns — Distributed Locks, Rate Limiting, Pub/Sub, Streams, Lua Scripting",
+      "title": "Advanced Redis Patterns \u2014 Distributed Locks, Rate Limiting, Pub/Sub, Streams, Lua Scripting",
       "status": "revised",
       "baseline_sha256": "5bc41203d2241f0f6708834dd93cd4e8781c12121d772b92cfcb34d8d3629fdd",
       "previous_depth_review": "revised",
@@ -4210,34 +4210,46 @@
       "path": "20-backend/20.9-message-brokers/20.9.01-message-brokers.md",
       "group": "20-backend/20.9-message-brokers",
       "title": "Message Brokers",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "0f59f1bb2be69937cab2e77144a152dbb8799acaf54397f2574525d8427131c6",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "When does temporal decoupling justify a broker, and what delivery contract does the system actually provide?",
+      "disposition": "Replaced the duplicate outbox opener with a worker-outage scenario, corrected producer/consumer timing, qualified persistence as configuration-dependent, and made the fresh-group example read the event it publishes. Updated current Kafka/RabbitMQ snapshot and distinguished queue-first RabbitMQ from its Streams model.",
+      "validation": [
+        "Re-read in category order with INDEX, REVISION and the interview bank; checked the practical/textbook definitions, First Principles, delivery trace, decision boundary, summary and references.",
+        "Verified Kafka 4.3.1 and RabbitMQ 4.3.6 release information and Kafka 4.2 Share Groups status against official project sources; verified Confluent JavaScript client 1.11.0 API surface and corrected the link baseline for new sources.",
+        "Checked the producer/consumer example assumptions and fresh-group offset-reset behavior; included its citations in the baseline and verified them through the repository link gates."
+      ]
     },
     {
       "path": "20-backend/20.9-message-brokers/20.9.02-kafka-internals-and-operations.md",
       "group": "20-backend/20.9-message-brokers",
       "title": "Kafka Internals & Operations",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "677371eb210a96cc9e8d7ba88ddeeb313eaf8c33bf7c5f492ff4416f8b90315e",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which replica acceptance, consumer progress and handler-liveness boundaries decide whether a Kafka pipeline recovers safely?",
+      "disposition": "Reorganized the opening around acknowledged-write survival versus repeated effects; clarified ISR/ELR, classic-group reassignment and offset-lag boundaries. Corrected the Confluent JavaScript 1.11.0 heartbeat example: librdkafka owns heartbeats and the compatibility callback is a no-op; added missing committed-offset handling and explicit offset normalization.",
+      "validation": [
+        "Re-read in category order with INDEX, REVISION and the interview bank; checked the practical/textbook definitions, First Principles, durable-write trace, operational boundaries, summary and references.",
+        "Checked the Confluent JavaScript 1.11.0 declarations and migration documentation; type-checked the revised client/admin examples with TypeScript 7.0.2.",
+        "Executed offset-lag cases for numeric offsets, unset positions, reset positions and truncated ranges; verified the added official Kafka 4.2 reference through the citation-baseline workflow."
+      ]
     },
     {
       "path": "20-backend/20.9-message-brokers/20.9.03-event-driven-patterns.md",
       "group": "20-backend/20.9-message-brokers",
       "title": "Event-Driven Patterns on a Broker",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "1c0baff8af3c3601a258e58a0022d01ce08f42443f4d791b1aa9a3bbae39b9ca",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do event contracts make database publication gaps, duplicate effects, poison messages and replay explicit?",
+      "disposition": "Opened with the committed-row/publish-crash gap and organized the patterns around identity, compatibility, failure and replay boundaries. Replaced absolute DLQ language with a bounded-retry path that states the ordering trade-off; clarified RabbitMQ 4.3 delayed-retry delivery-count behavior and its explicit terminal policy.",
+      "validation": [
+        "Re-read in category order with INDEX, REVISION and the interview bank; checked the practical/textbook definitions, First Principles, end-to-end pattern trace, failure boundaries, summary and references.",
+        "Verified RabbitMQ 4.3 quorum delayed-retry details against official release and queue documentation; confirmed the source links and added them to the citation baseline.",
+        "Executed bounded retry, permanent-failure and quarantine-failure cases; confirmed quarantine failure propagates and that the source event cannot be treated as safely advanced."
+      ]
     },
     {
       "path": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md",
@@ -4264,7 +4276,7 @@
     {
       "path": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.03-oop-concepts.md",
       "group": "30-architecture/30.1-design-patterns/01-foundations",
-      "title": "OOP Concepts — Encapsulation, Inheritance, Polymorphism, Abstraction",
+      "title": "OOP Concepts \u2014 Encapsulation, Inheritance, Polymorphism, Abstraction",
       "status": "pending",
       "baseline_sha256": "734cfcee8156f68d8473f532e2a3aea695c54fe6236542ec9fe962cb6a8b3faa",
       "previous_depth_review": "revised",
@@ -4275,7 +4287,7 @@
     {
       "path": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.04-uml-basics.md",
       "group": "30-architecture/30.1-design-patterns/01-foundations",
-      "title": "UML Basics — Class & Sequence Diagrams",
+      "title": "UML Basics \u2014 Class & Sequence Diagrams",
       "status": "pending",
       "baseline_sha256": "91ad41a6f1cf9e7bedf2ed0fce1b7f0f1ca3fde8261e96e1db7c0c41041409a4",
       "previous_depth_review": "revised",
@@ -4605,7 +4617,7 @@
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.md",
       "group": "30-architecture/30.1-design-patterns/05-architectural",
-      "title": "DDD Tactical Patterns — Aggregates & Value Objects",
+      "title": "DDD Tactical Patterns \u2014 Aggregates & Value Objects",
       "status": "pending",
       "baseline_sha256": "a69fd387a07016b44ed9c4cc23e97e8a7a9d5e09b6b36e88eb16032d7a4fe454",
       "previous_depth_review": "revised",
@@ -4638,7 +4650,7 @@
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.08-presentation-patterns-mvc-mvp-mvvm.md",
       "group": "30-architecture/30.1-design-patterns/05-architectural",
-      "title": "Presentation Patterns — MVC, MVP, MVVM",
+      "title": "Presentation Patterns \u2014 MVC, MVP, MVVM",
       "status": "pending",
       "baseline_sha256": "d22f2981a4726dfd2036a1df31b64b7c783afa12668631f589fb9d20156caf70",
       "previous_depth_review": "revised",
@@ -5111,7 +5123,7 @@
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.21-workflow-engine.md",
       "group": "30-architecture/30.2-system-design/02-case-studies",
-      "title": "Workflow Engine — System Design Case Study",
+      "title": "Workflow Engine \u2014 System Design Case Study",
       "status": "pending",
       "baseline_sha256": "497b69014ea12b4bbfbd415917e4151631445a5ddffec7778b34752a8915c7f0",
       "previous_depth_review": "revised",
@@ -5122,7 +5134,7 @@
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.22-real-time-collaboration.md",
       "group": "30-architecture/30.2-system-design/02-case-studies",
-      "title": "Real-Time Collaboration — System Design Case Study",
+      "title": "Real-Time Collaboration \u2014 System Design Case Study",
       "status": "pending",
       "baseline_sha256": "ad4c34bd709d7bce5417e5dfaa526ccc47f67142248d8e6c366026fc8b65766d",
       "previous_depth_review": "revised",
@@ -5232,7 +5244,7 @@
     {
       "path": "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.md",
       "group": "30-architecture/30.3-infra-patterns/01-liveness-lifecycle",
-      "title": "Health Checks & Graceful Shutdown — Liveness, Readiness, SIGTERM",
+      "title": "Health Checks & Graceful Shutdown \u2014 Liveness, Readiness, SIGTERM",
       "status": "pending",
       "baseline_sha256": "df1074effe826e8870fa201058852254479aebb6bbd97274d967b3678ac04b95",
       "previous_depth_review": "revised",
@@ -5243,7 +5255,7 @@
     {
       "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.01-resilience-patterns.md",
       "group": "30-architecture/30.3-infra-patterns/02-failure-and-recovery",
-      "title": "Resilience Patterns — Circuit Breaker, Bulkhead, Retry, Idempotency",
+      "title": "Resilience Patterns \u2014 Circuit Breaker, Bulkhead, Retry, Idempotency",
       "status": "pending",
       "baseline_sha256": "341c4c367818a5861ac8ec248bf19eaed7fccf5f53bdc4156fc6db59390e2138",
       "previous_depth_review": "revised",
@@ -5298,7 +5310,7 @@
     {
       "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.06-idempotency-retry-deep-dive.md",
       "group": "30-architecture/30.3-infra-patterns/02-failure-and-recovery",
-      "title": "Idempotency & Retry Patterns — Deep Dive",
+      "title": "Idempotency & Retry Patterns \u2014 Deep Dive",
       "status": "pending",
       "baseline_sha256": "47c5bb6a6513a79f8738ac63302a32bfa1696390b6e6bd8e0a4b560c81794b8a",
       "previous_depth_review": "revised",
@@ -5309,7 +5321,7 @@
     {
       "path": "30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.md",
       "group": "30-architecture/30.3-infra-patterns/03-coordination",
-      "title": "Leader Election & Consensus — Raft, Paxos, Practical Patterns",
+      "title": "Leader Election & Consensus \u2014 Raft, Paxos, Practical Patterns",
       "status": "pending",
       "baseline_sha256": "16e298005bc26b37c2964964cf1522d3b0144574fa0edff02e82654a5831fce5",
       "previous_depth_review": "revised",
@@ -5320,7 +5332,7 @@
     {
       "path": "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md",
       "group": "30-architecture/30.3-infra-patterns/04-data-at-scale",
-      "title": "Database Scaling — Partitioning, Replication, Connection Pooling, Query Optimization",
+      "title": "Database Scaling \u2014 Partitioning, Replication, Connection Pooling, Query Optimization",
       "status": "pending",
       "baseline_sha256": "031351759bec53881ca61be23fbb8afc21652df6e8e9ac1b4a450cab6d4a2ffa",
       "previous_depth_review": "revised",
@@ -5331,7 +5343,7 @@
     {
       "path": "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.02-data-pipelines.md",
       "group": "30-architecture/30.3-infra-patterns/04-data-at-scale",
-      "title": "Data Pipelines — ETL, Stream Processing, Data Lake",
+      "title": "Data Pipelines \u2014 ETL, Stream Processing, Data Lake",
       "status": "pending",
       "baseline_sha256": "7bf096fba36b8941a3a142e169bd1b4aa69c4c3a3c4b658e9c0ecc9645e9fd62",
       "previous_depth_review": "revised",
@@ -5342,7 +5354,7 @@
     {
       "path": "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md",
       "group": "30-architecture/30.3-infra-patterns/04-data-at-scale",
-      "title": "CDN Architecture — Edge Caching, Geographic Distribution, Cache Invalidation",
+      "title": "CDN Architecture \u2014 Edge Caching, Geographic Distribution, Cache Invalidation",
       "status": "pending",
       "baseline_sha256": "41a72793d9ffa602c7dca6f19d1bbf925b41be76e9850798b09244ea4fdeb32c",
       "previous_depth_review": "revised",
@@ -5364,7 +5376,7 @@
     {
       "path": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.md",
       "group": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution",
-      "title": "Zero-Downtime Deployments — Blue-Green, Canary, Rolling, Feature Flags",
+      "title": "Zero-Downtime Deployments \u2014 Blue-Green, Canary, Rolling, Feature Flags",
       "status": "pending",
       "baseline_sha256": "f386e3c8bf9c48ea2c7f72035ecd18e6bdddde754d4b87603d078c804af8ee7e",
       "previous_depth_review": "revised",
@@ -5375,7 +5387,7 @@
     {
       "path": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.02-technical-debt.md",
       "group": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution",
-      "title": "Technical Debt — Identification, Prioritization, Remediation",
+      "title": "Technical Debt \u2014 Identification, Prioritization, Remediation",
       "status": "pending",
       "baseline_sha256": "683e257055974cb6bd034100ad03ab083668da65299238bb150fe41f13fe5d28",
       "previous_depth_review": "revised",
@@ -5492,7 +5504,7 @@
     {
       "path": "40-platform/40.1-docker/40.1.06-production-patterns.md",
       "group": "40-platform/40.1-docker",
-      "title": "Docker Production Patterns — Security, Optimization, Multi-Stage",
+      "title": "Docker Production Patterns \u2014 Security, Optimization, Multi-Stage",
       "status": "revised",
       "baseline_sha256": "e4ed9b6667e6ea0c2f612888dfccebbdc6897e580e82af23c4030cc24500d160",
       "previous_depth_review": "revised",
@@ -5508,7 +5520,7 @@
     {
       "path": "40-platform/40.1-docker/40.1.07-container-runtime-internals-namespaces-cgroups.md",
       "group": "40-platform/40.1-docker",
-      "title": "Container Runtime Internals — Namespaces, cgroups, OverlayFS",
+      "title": "Container Runtime Internals \u2014 Namespaces, cgroups, OverlayFS",
       "status": "revised",
       "baseline_sha256": "fc6ba9ff9504d725a09e0e2f2ecd91c0aedc36d5feef67d05850912015b61286",
       "previous_depth_review": "revised",
@@ -5602,7 +5614,7 @@
     {
       "path": "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md",
       "group": "40-platform/40.12-iac",
-      "title": "40.12.01 — Infrastructure as Code & Terraform Fundamentals",
+      "title": "40.12.01 \u2014 Infrastructure as Code & Terraform Fundamentals",
       "status": "pending",
       "baseline_sha256": "5e3be2b25134912b974333cd6f526d02cdd112229090a6921d9942781eba1a92",
       "previous_depth_review": "revised",
@@ -5951,7 +5963,7 @@
     {
       "path": "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.02-pipeline-patterns.md",
       "group": "40-platform/40.3-ci-cd/02-build-and-deploy",
-      "title": "CI/CD Pipeline Patterns — GitHub Actions, GitLab CI, Deployment Strategies",
+      "title": "CI/CD Pipeline Patterns \u2014 GitHub Actions, GitLab CI, Deployment Strategies",
       "status": "revised",
       "baseline_sha256": "f57f6ee078968255be918eb37367c0a2535a05c9a0da5c8b9ed1f877e75ee69d",
       "previous_depth_review": "revised",
@@ -6084,7 +6096,7 @@
       "baseline_sha256": "0d9d27d85eee07392957139002d2a4c7e989f1c7d4973d17973a7777c4cc108a",
       "previous_depth_review": "revised",
       "reader_question": "How do grouped error reports add diagnosis context while aggregate metrics establish the impact?",
-      "disposition": "Retained the selected-error-to-owned-repair flow and clarified how pod restarts, error rates and provider events provide separate evidence rather than proving one another’s cause.",
+      "disposition": "Retained the selected-error-to-owned-repair flow and clarified how pod restarts, error rates and provider events provide separate evidence rather than proving one another\u2019s cause.",
       "validation": [
         "Re-read in learning order with the category INDEX and REVISION companion; reconciled the related 50-question observability interview bank.",
         "Full repository verification passed all 30 gates; standalone links checked 10,838 internal links and 149 anchors; the 2,515-URL citation baseline has no drift.",
@@ -6268,7 +6280,7 @@
     {
       "path": "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md",
       "group": "40-platform/40.5-build-tools/03-optimization-and-comparison",
-      "title": "Asset Pipelines — CSS, Images & Fonts",
+      "title": "Asset Pipelines \u2014 CSS, Images & Fonts",
       "status": "pending",
       "baseline_sha256": "3dfc47bb709646808eb86af9b6c6eabe869aac88402ba9414d5ca56b476ee96e",
       "previous_depth_review": "revised",
@@ -6659,7 +6671,7 @@
       "baseline_sha256": "3ebf0534434260f480453d7429ad311652c8f5514ff2b5b88e35c601681ad834",
       "previous_depth_review": "revised",
       "reader_question": "What behavior boundary does a unit test preserve, and which collaborators must it control to make failures interpretable?",
-      "disposition": "Replaced the “smallest testable part” wording with an explicit behavioral boundary; clarified FIRST as Independent (also called Isolated); removed unrelated and imprecise See Also descriptions.",
+      "disposition": "Replaced the \u201csmallest testable part\u201d wording with an explicit behavioral boundary; clarified FIRST as Independent (also called Isolated); removed unrelated and imprecise See Also descriptions.",
       "validation": [
         "Re-read in stack order with the Test Levels INDEX.md and REVISION.md; reconciled the Testing interview bank.",
         "Checked the flow, textbook definition, First Principles, scenario/code boundaries, one Summary and required References.",
@@ -7038,7 +7050,7 @@
     {
       "path": "50-quality/50.4-production-engineering/50.4.01-incident-response.md",
       "group": "50-quality/50.4-production-engineering",
-      "title": "Incident Response — Triage, Communication, Postmortems",
+      "title": "Incident Response \u2014 Triage, Communication, Postmortems",
       "status": "pending",
       "baseline_sha256": "bc698e731b79fb466f123d1ef87591546b1bda24b7f4eb917a7f3157a068045f",
       "previous_depth_review": "revised",
@@ -7060,7 +7072,7 @@
     {
       "path": "50-quality/50.4-production-engineering/50.4.03-chaos-engineering.md",
       "group": "50-quality/50.4-production-engineering",
-      "title": "Chaos Engineering in Production — Game Days, Automation, Resilience Metrics",
+      "title": "Chaos Engineering in Production \u2014 Game Days, Automation, Resilience Metrics",
       "status": "pending",
       "baseline_sha256": "056fcba44ee9a9588be50e72f385b25cdd9a14d585c639ade272b4a7fce855d9",
       "previous_depth_review": "revised",
@@ -7324,7 +7336,7 @@
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.07-string-search-kmp-rabin-karp.md",
       "group": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures",
-      "title": "String Search — KMP & Rabin-Karp",
+      "title": "String Search \u2014 KMP & Rabin-Karp",
       "status": "pending",
       "baseline_sha256": "18e03d667ad45b5d7934d2a345ddf8c97b10f85bd8cb9e612ab7b2b27b4b9387",
       "previous_depth_review": "revised",

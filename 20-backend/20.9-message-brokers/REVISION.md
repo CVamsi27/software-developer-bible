@@ -34,9 +34,9 @@ Source: [Kafka Internals & Operations](20.9.02-kafka-internals-and-operations.md
 
 **A:** No. It is an offset distance affected by processing/commit rate and log gaps. Measure event-to-effect latency and oldest-unprocessed age alongside lag.
 
-**Q:** Why does a consumer heartbeat inside a loop not make an arbitrarily slow chunk safe?
+**Q:** In Confluent JavaScript 1.11.0, does calling `heartbeat()` inside `eachMessage` extend the progress budget for a slow effect?
 
-**A:** The heartbeat runs only after the chunk yields. A long chunk can exceed the session budget or block JavaScript from sending it. Bound/chunk the work and keep effects idempotent across reassignment.
+**A:** No. The compatibility callback is a no-op; librdkafka manages heartbeats. The handler can still exceed its progress budget and leave an effect in flight after reassignment, so bound or move the work and keep it idempotent.
 
 ## Event-Driven Patterns
 
@@ -53,6 +53,10 @@ Source: [Event-Driven Patterns](20.9.03-event-driven-patterns.md).
 **Q:** What ordering decision is hidden in moving one entity event to a DLQ and continuing?
 
 **A:** Later entity events can be processed without the failed predecessor. Decide whether that gap is allowed or whether the entity/partition must remain blocked until repaired.
+
+**Q:** In RabbitMQ 4.3 quorum queues, why might repeated message returns fail to increase delayed-retry time?
+
+**A:** The delay uses `delivery-count`, which increases only for specified failure paths such as session/channel crashes or AMQP 1.0 `modified` with `delivery_failed=true`. Choose the retry type with that behavior in mind and set a terminal delivery-limit/DLQ policy.
 
 ## Failure Traces
 

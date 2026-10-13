@@ -1,6 +1,6 @@
 # Message Brokers — Index
 
-> **Study time:** ≈ 35 min of reading (5 files, ~7 min average).
+> **Study time:** ≈ 38 min of reading (5 files, ~8 min average).
 > The transport layer of event-driven systems: Kafka's log model and RabbitMQ's queue model, delivery semantics, durability configuration, consumer-group operations, and the patterns (envelopes, DLQs, outbox, idempotency) that make async pipelines production-safe. Pairs with [Microservices](../20.6-microservices/INDEX.md) (the architecture that uses brokers) and [Queues & Async](../../30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md) (the theory).
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../../INDEX.md)
@@ -56,7 +56,8 @@ After the three chapters, use [Revision](REVISION.md) to explain acknowledgment,
 - [Queues & Async (theory)](../../30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md) — backpressure, Little's law, the architecture why
 - [Idempotency Keys](../../30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.03-idempotency-keys.md) — the consumer-side contract
 - [Observability](../../40-platform/40.4-observability/INDEX.md) — lag dashboards, tracing across async hops
-- [Kafka 4.3 — release notes and Share Groups](https://kafka.apache.org/43/getting-started/upgrade/) — versioned boundary between classic groups and per-record share consumption
+- [Kafka 4.2 — Share Groups](https://kafka.apache.org/42/getting-started/upgrade/) — production-ready per-record acknowledgment from 4.2
+- [Kafka 4.3 — upgrade notes](https://kafka.apache.org/43/getting-started/upgrade/) — verify release-specific group and broker behavior
 - [RabbitMQ 4.3.6 — queue ordering](https://www.rabbitmq.com/docs/queues) — conditions that affect dequeue and processing order
 
 ## Docita Anchor

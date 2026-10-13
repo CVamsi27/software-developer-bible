@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "9d7277273a53f1268f685d71d80a32f15d0bd75fe88f1cc9137b81bcf8dd3af1",
+ "corpus_digest": "e81c4e5594586b7108bd91e56c806ab7d212cd3f0ca5b6d562e13637621c6293",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5274
+  "read_minutes": 5277
  },
  "chapters": [
   {
@@ -3364,7 +3364,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "20-backend/20.9-message-brokers/20.9.02-kafka-internals-and-operations.html",
@@ -3374,7 +3374,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "20-backend/20.9-message-brokers/20.9.03-event-driven-patterns.html",
@@ -3384,7 +3384,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "20-backend/20.9-message-brokers/20.9.04-interview-questions.html",

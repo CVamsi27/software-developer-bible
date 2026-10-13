@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Design%20Patterns-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -148,11 +148,15 @@ Source: [Memento Pattern](30.1.4.08-memento.md)
 
 **Q:** Trace save first, edit second, then restore the token.
 
-**A:** The editor privately associates the token with immutable first. The caretaker retains the token and restoration retrieves first; history does not inspect snapshot contents.
+**A:** The editor privately associates the token with the string `first`. The caretaker retains that token; restoration asks the editor to resolve it, and history never inspects the saved value.
 
 **Q:** What if another editor restores that token or an external payment already occurred?
 
 **A:** The other editor rejects an unknown token. Local restoration cannot reverse external effects; define a separate compensation and concurrency boundary.
+
+**Q:** What must change before an in-memory snapshot token can cross a process or version boundary?
+
+**A:** This example's `WeakMap` token is identity-based and process-local. A portable snapshot needs an explicit serializable schema, runtime validation and version migration; it also needs an authenticity boundary if untrusted writers can supply it.
 
 ## Command Pattern
 

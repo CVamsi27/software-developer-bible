@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 306,
+    "revised": 307,
     "unchanged": 80,
-    "pending": 134,
-    "reviewed": 386,
+    "pending": 133,
+    "reviewed": 387,
     "topic_chapters": 520
   },
   "entries": [
@@ -4696,12 +4696,21 @@
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.08-memento.md",
       "group": "30-architecture/30.1-design-patterns/04-behavioral",
       "title": "Memento Pattern",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "cfeabd1ec236fda6f27ccaff9e157d64e77104b929b024fdcedae7112cd7395e",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can an editor offer undo without exposing its private state or letting later edits corrupt earlier snapshots?",
+      "disposition": "Opened with the undo problem, then traced originator-owned capture and restoration through caretaker-managed tokens. Clarified point-in-time snapshot integrity, bounded undo/redo history, token ownership, and why in-memory mementos do not provide distributed rollback. Added the GoF textbook intent and structured-clone limits; aligned the learning index and revision prompts.",
+      "validation": [
+        "Fresh-reader review confirmed the problem-to-mechanism flow, GoF definition, originator/caretaker roles, WeakMap token behavior, structuredClone limits, and comparison boundaries; no findings remained.",
+        "Verified the GoF intent in the O\u2019Reilly-hosted Java Design Patterns chapter and snapshot-copy behavior against MDN Structured clone algorithm documentation.",
+        "The fenced TypeScript example compiled with TypeScript 7.0.2 under strict ES2022 settings and passed runtime checks for restoring the saved value and rejecting a token from another editor.",
+        "Read-time, alignment, citation-baseline, search-index and count writers ran; the fixed-point check confirmed the repair writers leave the corpus stable.",
+        "All 30 repository verification gates passed. Standalone links checked 10,797 links and 152 anchors with 0 issues; citation-baseline diff had 0 added or removed URLs at 2,526.",
+        "Ruby 3.4 locked-bundle production Jekyll build, rendered-heading check and git diff --check passed."
+      ],
+      "reviewed_at": "2026-10-14",
+      "review_sha256": "1d0ede516365ffc06c6d9ecc0deead3d4f17d0b5cc27124adc4ce8fa1baa0681"
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.09-command.md",

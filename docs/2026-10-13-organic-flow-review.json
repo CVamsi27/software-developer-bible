@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 253,
+    "revised": 260,
     "unchanged": 80,
-    "pending": 187,
-    "reviewed": 333,
+    "pending": 180,
+    "reviewed": 340,
     "topic_chapters": 520
   },
   "entries": [
@@ -7537,78 +7537,124 @@
       "path": "70-interview-toolkit/70.3-cheatsheets/70.3.01-javascript-cheat-sheet.md",
       "group": "70-interview-toolkit/70.3-cheatsheets",
       "title": "JavaScript Cheat Sheet",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "3be367f3eeef362da50bc14beae5206c807d4bd184b73fcd4f91d10e9c358ca6",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do a returned closure and a queued promise continuation observe changing state without retaining a call stack or creating a worker?",
+      "disposition": "Added a concrete closure-and-microtask hook before the definitions so the sheet starts with an executable question and leads into its call trace.",
+      "validation": [
+        "Re-read in category order; checked the practical/textbook definitions, First Principles, scenario flow, summary, revision companion, and cross-references.",
+        "Verified the applicable version-sensitive claims against current primary references; new or changed URLs are recorded in the citation baseline.",
+        "All 30 scripts/verify.sh gates passed; the standalone link check covered 10,825 links and 150 anchors with no failures.",
+        "Ruby 3.4 production Jekyll build passed; the site-wide rendered-heading check passed, and each of the seven rendered sheets has exactly one H1.",
+        "git diff --check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.3-cheatsheets/70.3.02-typescript-cheat-sheet.md",
       "group": "70-interview-toolkit/70.3-cheatsheets",
       "title": "TypeScript Cheat Sheet",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "60abeed0a8e43ee86273b12b3ec035b98b2aa30d8366d479882923aad75fd3bb",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Why does a type assertion on response.json() compile without proving the server returned a User?",
+      "disposition": "Added the familiar unsafe assertion as the opening problem, then connected it to unknown input and the runtime guard already used by the canonical example.",
+      "validation": [
+        "Re-read in category order; checked the practical/textbook definitions, First Principles, scenario flow, summary, revision companion, and cross-references.",
+        "Verified the applicable version-sensitive claims against current primary references; new or changed URLs are recorded in the citation baseline.",
+        "All 30 scripts/verify.sh gates passed; the standalone link check covered 10,825 links and 150 anchors with no failures.",
+        "Ruby 3.4 production Jekyll build passed; the site-wide rendered-heading check passed, and each of the seven rendered sheets has exactly one H1.",
+        "git diff --check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.3-cheatsheets/70.3.03-react-nextjs-cheat-sheet.md",
       "group": "70-interview-toolkit/70.3-cheatsheets",
       "title": "React & Next.js Cheat Sheet",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "4bd56a7b6323ba855aac5aac824bed5d6c11db2b084b7dd22f80a08703f05438",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which code stays server-only, which enters the client graph, and how do React scheduling and Next.js cache models affect the request?",
+      "disposition": "Opened on the server-only database/client boundary; corrected component render wording, Fiber as an internal detail, concurrent-rendering limits, and the typed useRef example. Separated the Next.js 15+ previous cache model from opt-in Next.js 16 Cache Components, specified request values outside cached scopes, and synchronized the revision answer.",
+      "validation": [
+        "Re-read in category order; checked the practical/textbook definitions, First Principles, scenario flow, summary, revision companion, and cross-references.",
+        "Checked React useTransition guidance and Next.js 16.4 Cache Components and previous-model docs; the reference distinguishes request memoization, server persistence, route output, and browser Router Cache.",
+        "Verified the applicable version-sensitive claims against current primary references; new or changed URLs are recorded in the citation baseline.",
+        "All 30 scripts/verify.sh gates passed; the standalone link check covered 10,825 links and 150 anchors with no failures.",
+        "Ruby 3.4 production Jekyll build passed; the site-wide rendered-heading check passed, and each of the seven rendered sheets has exactly one H1.",
+        "git diff --check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.3-cheatsheets/70.3.04-backend-cheat-sheet.md",
       "group": "70-interview-toolkit/70.3-cheatsheets",
       "title": "Backend Cheat Sheet",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "958456c0018506cfebd13f406700ad453405cc4e407ef1fb7efaf16d0561a7c6",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do concurrent balance reads preserve an invariant, and how should a request handle an uncertain result?",
+      "disposition": "Opened on a concurrent debit and tied the answer to the existing transaction example. Updated the MCP transport summary to the verified 2026-07-28 specification while retaining compatibility and host-security boundaries.",
+      "validation": [
+        "Re-read in category order; checked the practical/textbook definitions, First Principles, scenario flow, summary, revision companion, and cross-references.",
+        "Checked the direct MCP 2026-07-28 Streamable HTTP specification and official release notes against the stateless transport and one-year legacy HTTP+SSE transition wording.",
+        "Verified the applicable version-sensitive claims against current primary references; new or changed URLs are recorded in the citation baseline.",
+        "All 30 scripts/verify.sh gates passed; the standalone link check covered 10,825 links and 150 anchors with no failures.",
+        "Ruby 3.4 production Jekyll build passed; the site-wide rendered-heading check passed, and each of the seven rendered sheets has exactly one H1.",
+        "git diff --check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.3-cheatsheets/70.3.05-system-design-cheat-sheet.md",
       "group": "70-interview-toolkit/70.3-cheatsheets",
       "title": "System Design Cheat Sheet",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "d65b18e3b250d697ba7c59e6d45f5bc66595bffe5727f16e02a7a102d43ff8b0",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "If an order commits but its email does not arrive, which state transition and retry path should the system own?",
+      "disposition": "Added an outbox and notification failure as the opening decision. Updated the Kafka consumer reference to the current 4.3.1 API documentation.",
+      "validation": [
+        "Re-read in category order; checked the practical/textbook definitions, First Principles, scenario flow, summary, revision companion, and cross-references.",
+        "Checked the Kafka offset link against the official Apache Kafka 4.3.1 KafkaConsumer API documentation.",
+        "Verified the applicable version-sensitive claims against current primary references; new or changed URLs are recorded in the citation baseline.",
+        "All 30 scripts/verify.sh gates passed; the standalone link check covered 10,825 links and 150 anchors with no failures.",
+        "Ruby 3.4 production Jekyll build passed; the site-wide rendered-heading check passed, and each of the seven rendered sheets has exactly one H1.",
+        "git diff --check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.3-cheatsheets/70.3.06-docker-kubernetes-cicd-cheat-sheet.md",
       "group": "70-interview-toolkit/70.3-cheatsheets",
       "title": "Docker, Kubernetes & CI/CD Cheat Sheet",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "0425252cc5b96658a3703370f26ca9c9344972e838edd1060e214afeeb1f828c",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What should you inspect when a CI-passing image deploys but its Pods never become Ready?",
+      "disposition": "Added a concrete failed-rollout opening. Clarified that the Docker base tag and Helm image tag are examples and that reproducible deploys must identify immutable artifacts.",
+      "validation": [
+        "Re-read in category order; checked the practical/textbook definitions, First Principles, scenario flow, summary, revision companion, and cross-references.",
+        "Checked the Node 24 LTS statement against the official Node.js release schedule; image pinning, readiness, and rollout guidance retain their existing primary references.",
+        "Verified the applicable version-sensitive claims against current primary references; new or changed URLs are recorded in the citation baseline.",
+        "All 30 scripts/verify.sh gates passed; the standalone link check covered 10,825 links and 150 anchors with no failures.",
+        "Ruby 3.4 production Jekyll build passed; the site-wide rendered-heading check passed, and each of the seven rendered sheets has exactly one H1.",
+        "git diff --check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.3-cheatsheets/70.3.07-sql-data-modeling-cheat-sheet.md",
       "group": "70-interview-toolkit/70.3-cheatsheets",
       "title": "SQL & Data Modeling Cheat Sheet",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "60da752483f0ff0fd6ba4b3f84a6681758b307c85acdfffd4ee019b79b9a130e",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Why can a customer appear more than once after joining customers to orders?",
+      "disposition": "Replaced the abstract order-count opener with join multiplicity, so the later join table and SQL examples answer the concrete reporting problem.",
+      "validation": [
+        "Re-read in category order; checked the practical/textbook definitions, First Principles, scenario flow, summary, revision companion, and cross-references.",
+        "Verified the applicable version-sensitive claims against current primary references; new or changed URLs are recorded in the citation baseline.",
+        "All 30 scripts/verify.sh gates passed; the standalone link check covered 10,825 links and 150 anchors with no failures.",
+        "Ruby 3.4 production Jekyll build passed; the site-wide rendered-heading check passed, and each of the seven rendered sheets has exactly one H1.",
+        "git diff --check passed."
+      ]
     }
   ]
 }

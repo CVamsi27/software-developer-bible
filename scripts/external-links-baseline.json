@@ -3674,9 +3674,6 @@
    "20-backend/20.9-message-brokers/20.9.02-kafka-internals-and-operations.md",
    "20-backend/20.9-message-brokers/INDEX.md"
   ],
-  "https://kafka.apache.org/42/javadoc/org/apache/kafka/clients/consumer/KafkaConsumer.html": [
-   "70-interview-toolkit/70.3-cheatsheets/70.3.05-system-design-cheat-sheet.md"
-  ],
   "https://kafka.apache.org/43/apis/": [
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.03-kafka.md",
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md",
@@ -3704,6 +3701,9 @@
   ],
   "https://kafka.apache.org/43/getting-started/zk2kraft/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.md"
+  ],
+  "https://kafka.apache.org/43/javadoc/org/apache/kafka/clients/consumer/KafkaConsumer.html": [
+   "70-interview-toolkit/70.3-cheatsheets/70.3.05-system-design-cheat-sheet.md"
   ],
   "https://kafka.apache.org/43/operations/consumer-rebalance-protocol/": [
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.03-kafka.md",
@@ -4546,7 +4546,8 @@
   ],
   "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports": [
    "20-backend/20.12-ai-engineering/20.12.04-agent-orchestration-patterns.md",
-   "20-backend/20.12-ai-engineering/20.12.07-interview-questions.md"
+   "20-backend/20.12-ai-engineering/20.12.07-interview-questions.md",
+   "70-interview-toolkit/70.3-cheatsheets/70.3.04-backend-cheat-sheet.md"
   ],
   "https://monorepo.tools/": [
    "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md",
@@ -4668,7 +4669,8 @@
   ],
   "https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config": [
    "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md",
-   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md",
+   "70-interview-toolkit/70.3-cheatsheets/70.3.03-react-nextjs-cheat-sheet.md"
   ],
   "https://nextjs.org/docs/app/api-reference/functions/generate-metadata": [
    "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.03-metadata.md"
@@ -4756,7 +4758,8 @@
   ],
   "https://nextjs.org/docs/app/guides/caching-without-cache-components": [
    "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.03-caching.md",
-   "10-frontend/10.4-next.js/05-interview-prep/10.4.5.01-interview-questions.md"
+   "10-frontend/10.4-next.js/05-interview-prep/10.4.5.01-interview-questions.md",
+   "70-interview-toolkit/70.3-cheatsheets/70.3.03-react-nextjs-cheat-sheet.md"
   ],
   "https://nextjs.org/docs/app/guides/client-side-data-fetching": [
    "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.01-data-fetching-patterns.md"
@@ -7678,6 +7681,7 @@
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.01-transactions.md",
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.03-optimistic-pessimistic-locking.md",
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.06-interview-questions.md",
+   "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.03-idempotency-keys.md",
    "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.06-idempotency-retry-deep-dive.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.04-backend-cheat-sheet.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.07-sql-data-modeling-cheat-sheet.md",

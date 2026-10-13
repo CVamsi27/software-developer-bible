@@ -37,7 +37,7 @@ Source: [React & Next.js Cheat Sheet](70.3.03-react-nextjs-cheat-sheet.md)
 
 **Q:** Which Next.js caching claim must be qualified by version?
 
-**A:** Persistent fetch caching defaults changed in Next.js 15. Render request memoization, route output, and Router Cache are separate mechanisms with their own invalidation scope.
+**A:** In the previous cache model, Next.js 15+ fetch is not persistent by default; explicit fetch and route settings govern reuse. With Next.js 16 Cache Components enabled, route-segment `revalidate` and `fetchCache` exports are removed and cached scopes use `'use cache'`, `cacheLife`, and `cacheTag`. Render request memoization, route output, and browser Router Cache remain distinct mechanisms.
 
 **Q:** Does marking a state update as a transition let React interrupt a long synchronous calculation inside the event handler?
 

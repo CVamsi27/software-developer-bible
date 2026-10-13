@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 241,
+    "revised": 244,
     "unchanged": 80,
-    "pending": 199,
-    "reviewed": 321,
+    "pending": 196,
+    "reviewed": 324,
     "topic_chapters": 520
   },
   "entries": [
@@ -4159,34 +4159,52 @@
       "path": "20-backend/20.8-caching/20.8.01-caching-deep-dive.md",
       "group": "20-backend/20.8-caching",
       "title": "Caching Deep-Dive — Redis, Strategies, Invalidation, Patterns",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "ec5971c6a4ac8716806239ed8f9771de29b75d381f490499f41bb9c200283eb7",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can a cache reuse work without serving the wrong version or overwhelming the source?",
+      "disposition": "Opened with a stale-fill race, reorganized cache decisions into identity, freshness, invalidation and load contracts, and made First Principles derive their cost and failure consequences. Aligned Redis examples with node-redis 6.3.0, corrected SCAN page/batch semantics, and removed duplicate Redis data-structure/session/presence lessons owned by Redis Fundamentals.",
+      "validation": [
+        "Re-read in category order with the Caching INDEX and REVISION companion; checked the practical and textbook definitions, First Principles, example order, summary and cross-references.",
+        "Checked client signatures against node-redis 6.3.0 declarations; TypeScript 7.0.2 type-check passed for the updated SET, SETEX, SCAN iterator and UNLINK examples.",
+        "Executed the cache-aside example: concurrent same-key reads coalesced, expiry reloaded the source, and a rejected load could be retried.",
+        "All 30 scripts/verify.sh gates passed; standalone link check covered 10,825 local links and 150 anchors with zero failures; citation baseline stayed at 2,509 URLs.",
+        "Ruby 3.4.11 production Jekyll build, the site-wide rendered-heading sweep, and one-H1 checks for all three reviewed pages passed."
+      ]
     },
     {
       "path": "20-backend/20.8-caching/20.8.02-redis-fundamentals.md",
       "group": "20-backend/20.8-caching",
       "title": "Redis for Backend Engineers",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "030796e19b5b16568800946331a572d9cf26526cb95821f3fffc0103be6e458a",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which guarantees does Redis provide inside a command, and which recovery guarantees remain with the application?",
+      "disposition": "Re-read the command, data-type, persistence, lease and Node.js client flows; updated the verified release/client check date, replaced generic section labels, used current node-redis expiration/condition options, and linked its official migration guide.",
+      "validation": [
+        "Re-read in category order with the Caching INDEX and REVISION companion; checked the practical and textbook definitions, First Principles, example order, summary and cross-references.",
+        "Checked client signatures against node-redis 6.3.0 declarations; TypeScript 7.0.2 type-check passed for the updated SET, SETEX, SCAN iterator and UNLINK examples.",
+        "Executed the cache-aside example: concurrent same-key reads coalesced, expiry reloaded the source, and a rejected load could be retried.",
+        "All 30 scripts/verify.sh gates passed; standalone link check covered 10,825 local links and 150 anchors with zero failures; citation baseline stayed at 2,509 URLs.",
+        "Ruby 3.4.11 production Jekyll build, the site-wide rendered-heading sweep, and one-H1 checks for all three reviewed pages passed."
+      ]
     },
     {
       "path": "20-backend/20.8-caching/20.8.03-advanced-redis-patterns.md",
       "group": "20-backend/20.8-caching",
       "title": "Advanced Redis Patterns — Distributed Locks, Rate Limiting, Pub/Sub, Streams, Lua Scripting",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "5bc41203d2241f0f6708834dd93cd4e8781c12121d772b92cfcb34d8d3629fdd",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Where do Redis leases, scripts and message delivery stop protecting the business effect?",
+      "disposition": "Added a lease-expiry scenario that leads into the resource-invariant discussion and used current node-redis SET options for the deduplication sketch. Kept the Redis-local versus external-effect boundary explicit across leases, Lua, Pub/Sub and Streams.",
+      "validation": [
+        "Re-read in category order with the Caching INDEX and REVISION companion; checked the practical and textbook definitions, First Principles, example order, summary and cross-references.",
+        "Checked client signatures against node-redis 6.3.0 declarations; TypeScript 7.0.2 type-check passed for the updated SET, SETEX, SCAN iterator and UNLINK examples.",
+        "Executed the cache-aside example: concurrent same-key reads coalesced, expiry reloaded the source, and a rejected load could be retried.",
+        "All 30 scripts/verify.sh gates passed; standalone link check covered 10,825 local links and 150 anchors with zero failures; citation baseline stayed at 2,509 URLs.",
+        "Ruby 3.4.11 production Jekyll build, the site-wide rendered-heading sweep, and one-H1 checks for all three reviewed pages passed."
+      ]
     },
     {
       "path": "20-backend/20.9-message-brokers/20.9.01-message-brokers.md",

@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "f981902f9fc0fdae34688ecfb45ae650d67635d954b2a363a6cba8ddb02b7bd9",
+ "corpus_digest": "9d7277273a53f1268f685d71d80a32f15d0bd75fe88f1cc9137b81bcf8dd3af1",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5275
+  "read_minutes": 5274
  },
  "chapters": [
   {
@@ -3312,7 +3312,7 @@
    "g": [
     "concept"
    ],
-   "m": 13
+   "m": 11
   },
   {
    "p": "20-backend/20.8-caching/20.8.02-redis-fundamentals.html",
@@ -3333,7 +3333,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "20-backend/20.8-caching/20.8.04-interview-questions.html",

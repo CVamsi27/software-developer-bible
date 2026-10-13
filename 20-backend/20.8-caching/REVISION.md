@@ -30,6 +30,10 @@ Source: [Caching Deep-Dive](20.8.01-caching-deep-dive.md).
 
 **A:** No. Entry sizes, retained result objects and in-flight responses vary. A count limit needs payload limits or a measured byte policy when memory is the constraint.
 
+**Q:** Does `SCAN COUNT 100` cap a reply at 100 keys or give a snapshot for tenant invalidation?
+
+**A:** Neither. `COUNT` is a work hint, and iteration can return duplicates while the keyspace changes. Split `UNLINK` into its own bounded batches; scan every primary in a cluster, or use a source-coordinated version when the old namespace must become unreachable atomically.
+
 **Q:** What must the service survive when an entire hot cache is empty?
 
 **A:** A burst of origin reads. Coalesce identical misses, cap origin concurrency, and shed/serve stale work under an explicit policy; merely adding retries amplifies the burst.

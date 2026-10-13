@@ -1,6 +1,6 @@
 # Caching — Index
 
-> **Study time:** ≈ 45 min of reading (5 files, ~9 min average).
+> **Study time:** ≈ 44 min of reading (5 files, ~9 min average).
 > **5 files** — cache contracts, invalidation, Redis data structures, operational patterns and interview practice.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../../INDEX.md)
@@ -57,9 +57,9 @@ Need to cache data?
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 1 | [Caching Deep Dive](20.8.01-caching-deep-dive.md) | Cache hierarchy, patterns (cache-aside, write-through, write-behind), invalidation strategies, stampede prevention, multi-tenant caching | Essential | Important | 13 min |
+| 1 | [Caching Deep Dive](20.8.01-caching-deep-dive.md) | Cache hierarchy, patterns (cache-aside, write-through, write-behind), invalidation strategies, stampede prevention, multi-tenant caching | Essential | Important | 11 min |
 | 2 | [Redis Fundamentals](20.8.02-redis-fundamentals.md) | Data structures (strings, hashes, lists, sets, sorted sets, streams), caching patterns with Redis, rate limiting, distributed locks, pub/sub | Essential | Important | 12 min |
-| 3 | [Advanced Redis Patterns](20.8.03-advanced-redis-patterns.md) | Lease assumptions, Lua rate limiting, Pub/Sub delivery, Redis Streams, scripting boundaries | Essential | Important | 9 min |
+| 3 | [Advanced Redis Patterns](20.8.03-advanced-redis-patterns.md) | Lease assumptions, Lua rate limiting, Pub/Sub delivery, Redis Streams, scripting boundaries | Essential | Important | 10 min |
 | 4 | [Interview Questions](20.8.04-interview-questions.md) | 25 senior Q&A: invalidation design, stampede physics, data-structure tradeoffs, hit-ratio forensics, persistence decisions | Essential | Important | 8 min |
 
 ---

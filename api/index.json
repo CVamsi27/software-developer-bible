@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "fa902bb5beec8f7d5363598223437e15d94149b3d8c554dbcf4f47e0fb2f679d",
+ "corpus_digest": "2620b9998c8169af67cb670db637256e6b0dada1462142ac5ca2f80995ce3735",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5381
+  "read_minutes": 5377
  },
  "chapters": [
   {
@@ -1079,7 +1079,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 9
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.02-server-actions.html",
@@ -1089,7 +1089,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 9
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.03-caching.html",
@@ -1109,7 +1109,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 6
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.05-incremental-static-regeneration.html",
@@ -1129,7 +1129,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 8
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/REVISION.html",

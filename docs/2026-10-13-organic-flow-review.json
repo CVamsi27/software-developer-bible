@@ -10,10 +10,10 @@
   },
   "counts": {
     "topic_chapters": 520,
-    "revised": 185,
+    "revised": 191,
     "unchanged": 69,
-    "pending": 266,
-    "reviewed": 254
+    "pending": 260,
+    "reviewed": 260
   },
   "entries": [
     {
@@ -1364,67 +1364,97 @@
       "path": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.01-data-fetching-patterns.md",
       "group": "10-frontend/10.4-next.js/03-data-and-caching",
       "title": "Data Fetching Patterns in Next.js (App Router)",
-      "status": "pending",
-      "baseline_sha256": "acc2c89ebe794ab12a4b41d37d4d22d7eb6de09a0121f568af2519f4a2744d0c",
+      "status": "revised",
+      "baseline_sha256": "6736917eeba746cd5f6aae58c95af161c9ffc4d1557c8d88a17c268472cb5c0c",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Where should each read run, what does it depend on, and may its result be reused?",
+      "disposition": "Replaced the generic waterfall/history opening, which falsely implied Next.js automatically parallelizes independent reads, with one product-page problem. Re-read the request-local deduplication, persistent cache, promise, client-query, authorization and mutation boundaries in context.",
+      "validation": [
+        "Directly re-read in category order; checked the practical and textbook definitions, distinct First Principles, cause-to-result flow, example placement, final Summary and See Also/References.",
+        "Checked current official Next.js documentation for Cache Components and Partial Prefetching, Server Actions, cache invalidation, streaming, ISR and static-export boundaries; relevant URLs already existed in the citation baseline.",
+        "All 30 repository verification gates passed; 10,848 internal links resolve, freshness is clean, and the citation baseline has no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed; six target pages each render one H1, preserve code blocks and contain no leaked Liquid tags."
+      ]
     },
     {
       "path": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.02-server-actions.md",
       "group": "10-frontend/10.4-next.js/03-data-and-caching",
       "title": "Server Actions in Next.js",
-      "status": "pending",
-      "baseline_sha256": "6a68690bed282dc5bb38531d79ed42cdc409a5b62c05857478b0b37456585c6b",
+      "status": "revised",
+      "baseline_sha256": "7a880eadda5d15afb1dce8a0fe841b9f60b5aa00c791a550e0448e3ffd3c35f4",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How does a server mutation preserve trust and keep the rendered view consistent?",
+      "disposition": "Replaced the long framework-praise opener with a direct form-to-action scenario. Preserved the mutation trace and checked runtime validation, authorization, durable-write ordering, revalidation, retry, redirect, serialization and upload boundaries.",
+      "validation": [
+        "Directly re-read in category order; checked the practical and textbook definitions, distinct First Principles, cause-to-result flow, example placement, final Summary and See Also/References.",
+        "Checked current official Next.js documentation for Cache Components and Partial Prefetching, Server Actions, cache invalidation, streaming, ISR and static-export boundaries; relevant URLs already existed in the citation baseline.",
+        "All 30 repository verification gates passed; 10,848 internal links resolve, freshness is clean, and the citation baseline has no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed; six target pages each render one H1, preserve code blocks and contain no leaked Liquid tags."
+      ]
     },
     {
       "path": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.03-caching.md",
       "group": "10-frontend/10.4-next.js/03-data-and-caching",
       "title": "Caching in Next.js",
-      "status": "pending",
-      "baseline_sha256": "4fbd9bf6f1519f9ebf92b6087bb23c0ec9eb3f4ea401f70f839059bdc73a401b",
+      "status": "revised",
+      "baseline_sha256": "664fef24c57dbcae8c4b72188065365c457bbe58bb3d47901e1a0dd7273cda20",
       "previous_depth_review": "reviewed",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "When may a result be reused safely, and what invalidates it?",
+      "disposition": "Merged repeated cache-risk framing into one public-versus-private data example. Distinguished traditional caching from Next.js 16 Cache Components, added the current Partial Prefetching configuration requirement, and retained the separate lifetime, identity and invalidation decisions.",
+      "validation": [
+        "Directly re-read in category order; checked the practical and textbook definitions, distinct First Principles, cause-to-result flow, example placement, final Summary and See Also/References.",
+        "Checked current official Next.js documentation for Cache Components and Partial Prefetching, Server Actions, cache invalidation, streaming, ISR and static-export boundaries; relevant URLs already existed in the citation baseline.",
+        "All 30 repository verification gates passed; 10,848 internal links resolve, freshness is clean, and the citation baseline has no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed; six target pages each render one H1, preserve code blocks and contain no leaked Liquid tags."
+      ]
     },
     {
       "path": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.04-streaming.md",
       "group": "10-frontend/10.4-next.js/03-data-and-caching",
       "title": "Streaming in Next.js",
-      "status": "pending",
-      "baseline_sha256": "09783743c38087cb464df86660451dafeb4d5b48328583da91cdd982cca3dcaf",
+      "status": "revised",
+      "baseline_sha256": "4d603b02c74bd66f4e05c16986f50321cc0c52728d3e5a69bc60bbe2a82ffa4a",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can useful UI arrive before a slow region without hiding errors or status?",
+      "disposition": "Replaced the long speculative dashboard opener with the actual waiting problem, removed its repeated setup, and corrected the transport explanation: Suspense defines progressive UI delivery while HTTP version and deployment infrastructure determine framing and buffering.",
+      "validation": [
+        "Directly re-read in category order; checked the practical and textbook definitions, distinct First Principles, cause-to-result flow, example placement, final Summary and See Also/References.",
+        "Checked current official Next.js documentation for Cache Components and Partial Prefetching, Server Actions, cache invalidation, streaming, ISR and static-export boundaries; relevant URLs already existed in the citation baseline.",
+        "All 30 repository verification gates passed; 10,848 internal links resolve, freshness is clean, and the citation baseline has no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed; six target pages each render one H1, preserve code blocks and contain no leaked Liquid tags."
+      ]
     },
     {
       "path": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.05-incremental-static-regeneration.md",
       "group": "10-frontend/10.4-next.js/03-data-and-caching",
       "title": "Incremental Static Regeneration (ISR)",
-      "status": "pending",
-      "baseline_sha256": "672499b017ec6d30923154e7b0e21c6fab8220c867f5311809e434c3a3894f9e",
+      "status": "revised",
+      "baseline_sha256": "0f757964eddd519b96be41bb9d637492b80c334c8f5f1170fcdf6999934e7483",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can a public route stay fresh without rebuilding the whole site?",
+      "disposition": "Replaced the inflated scale and latency claims with a bounded catalog scenario. Retained the build, first-request, stale-success, failed-regeneration, on-demand invalidation, proxy and multi-instance trace.",
+      "validation": [
+        "Directly re-read in category order; checked the practical and textbook definitions, distinct First Principles, cause-to-result flow, example placement, final Summary and See Also/References.",
+        "Checked current official Next.js documentation for Cache Components and Partial Prefetching, Server Actions, cache invalidation, streaming, ISR and static-export boundaries; relevant URLs already existed in the citation baseline.",
+        "All 30 repository verification gates passed; 10,848 internal links resolve, freshness is clean, and the citation baseline has no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed; six target pages each render one H1, preserve code blocks and contain no leaked Liquid tags."
+      ]
     },
     {
       "path": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.06-static-exports.md",
       "group": "10-frontend/10.4-next.js/03-data-and-caching",
       "title": "Static Exports in Next.js",
-      "status": "pending",
-      "baseline_sha256": "898ad0196621e9415aada892bd727d25931d0363cbfbbc56c0531455843cfe98",
+      "status": "revised",
+      "baseline_sha256": "1e04e5537ee0d331c1e3ca282965671a7a5951f525d0173420f4db29f6c74a78",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which work can happen at build time when no Next.js runtime serves requests?",
+      "disposition": "Replaced the promotional opener with the static-host constraint that drives the chapter. Kept route enumeration, build-time data, runtime/API, authorization, image and host-routing boundaries.",
+      "validation": [
+        "Directly re-read in category order; checked the practical and textbook definitions, distinct First Principles, cause-to-result flow, example placement, final Summary and See Also/References.",
+        "Checked current official Next.js documentation for Cache Components and Partial Prefetching, Server Actions, cache invalidation, streaming, ISR and static-export boundaries; relevant URLs already existed in the citation baseline.",
+        "All 30 repository verification gates passed; 10,848 internal links resolve, freshness is clean, and the citation baseline has no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed; six target pages each render one H1, preserve code blocks and contain no leaked Liquid tags."
+      ]
     },
     {
       "path": "10-frontend/10.4-next.js/04-production/10.4.4.01-authentication.md",

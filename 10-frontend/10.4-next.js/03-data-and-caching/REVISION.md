@@ -111,10 +111,10 @@ Source: [Caching in Next.js](10.4.3.03-caching.md)
    **A:** A tag groups entries for refresh, rather than assigning a distinct user key or granting access. Identity-aware keys and authorization are separate requirements.
 
 
-**Modern Paradigm: `use cache` and Partial Prerendering**
+**Cache Components and Partial Prefetching**
 
-5. **Q:** How does enabling Cache Components change the route design in Next.js 16?
-   **A:** Cache reusable functions/components explicitly and place uncached request-time work under Suspense. This uses the 16 cacheComponents configuration rather than stable 15.5 segment behavior.
+5. **Q:** What must an existing Next.js 16 app configure to use the current Cache Components and Partial Prefetching model?
+   **A:** Set both `cacheComponents: true` and `partialPrefetching: true`. Cache reusable functions or components explicitly and place uncached request-time work under Suspense; traditional dynamic/revalidate/fetchCache segment settings are not equivalent controls.
 
 6. **Q:** Which Next.js 16 invalidation choice gives a Server Action read-your-writes behavior?
    **A:** updateTag immediately expires tagged data for that action workflow. revalidateTag with max instead permits stale output while background refresh runs.

@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 288,
+    "revised": 289,
     "unchanged": 80,
-    "pending": 152,
-    "reviewed": 368,
+    "pending": 151,
+    "reviewed": 369,
     "topic_chapters": 520
   },
   "entries": [
@@ -4352,12 +4352,18 @@
       "path": "30-architecture/30.1-design-patterns/02-creational/30.1.2.03-builder.md",
       "group": "30-architecture/30.1-design-patterns/02-creational",
       "title": "Builder Pattern",
-      "status": "pending",
-      "baseline_sha256": "5c9c684862440b270502ff7c94063b3fbeccc1864badc1a7297278dd5667abd2",
+      "status": "revised",
+      "baseline_sha256": "bd0693909c2763c7480eb4ef9b9f17424630158e5c24686191f00747eec743f7",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "When does the final build boundary make a product valid, independent, and safe to reuse?",
+      "disposition": "Re-read with the creational INDEX and REVISION. Replaced a generic definition with a practical construction contract, removed repeated motivation, and consolidated validation, copying, reset, retry, and reuse guidance into one flow. Tightened the HTTP example with unknown body types, normalized header names, runtime method validation, safe JSON serialization, and an explicit Fetch-compatible GET/HEAD body policy. Updated the category summary and retrieval prompts.",
+      "validation": [
+        "Re-read the Builder chapter in category order with INDEX and REVISION; checked the practical/textbook definitions, House and HTTP traces, validation boundary, copy/reset behavior, summary and cross-references.",
+        "Strict TypeScript compilation passed for both examples. Runtime checks passed for copied headers, shared body references, case-normalized headers, invalid methods, GET/HEAD bodies and undefined JSON values.",
+        "Verified the GET/HEAD body constraint against the current WHATWG Fetch Standard and added its source to the chapter.",
+        "All 30 repository gates passed; standalone links checked 10,799 links and 152 anchors with zero failures; citation baseline stayed at 2,520 URLs with no drift.",
+        "Ruby 3.4 locked-bundle production Jekyll build and site-wide rendered-heading check passed; git diff --check passed."
+      ]
     },
     {
       "path": "30-architecture/30.1-design-patterns/02-creational/30.1.2.04-abstract-factory.md",

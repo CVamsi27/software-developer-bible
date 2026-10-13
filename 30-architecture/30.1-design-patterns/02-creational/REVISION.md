@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Design%20Patterns-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -65,6 +65,14 @@ Source: [Builder Pattern](30.1.2.03-builder.md)
 **Q:** What if the HTTP builder builds a POST, then changes only its URL before building again?
 
 **A:** Its `build` does not reset, so the second description retains the POST method, headers, body, timeout, and retry settings. Use `reset` or a new builder for an unrelated request. The consumer still implements timeout and retry safety.
+
+**Q:** What can still change in a built request if the builder or original body object is mutated?
+
+**A:** The builder copies the top-level request and header map, but `body()` keeps the supplied object reference. Mutating that object changes the built request's body; `json()` instead stores serialized text at call time.
+
+**Q:** Why does the example reject bodies for GET and HEAD, and where should read filters go?
+
+**A:** It follows Fetch's request-construction rule for client compatibility. Encode read filters in the URL with `URLSearchParams`; the builder describes a request and does not send it.
 
 ## Abstract Factory Pattern
 

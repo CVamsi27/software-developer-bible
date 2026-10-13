@@ -1,6 +1,6 @@
 # Creational Patterns
 
-> **Study time:** ≈ 1 h 4 m of reading (6 files, ~11 min average).
+> **Study time:** ≈ 1 h 5 m of reading (6 files, ~11 min average).
 > **6 files.** Object creation mechanisms. These patterns decouple "how to construct an object" from "what to do with the constructed thing." The goal: make a system independent of how its objects are created, composed, and represented.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](../../INDEX.md)
@@ -63,7 +63,7 @@ An overridable creation operation lets a base workflow use a product contract wi
 **Real-world examples:** A creator subclass implements the creation operation used by the base workflow. Conditional constructor selectors are simple factories.
 
 ### [Builder](30.1.2.03-builder.md)
-Separate the construction of a complex object from its representation so that the same construction process can create different representations.
+Keeps partial choices behind named steps and returns the product at a final construction boundary. Use it for ordered assembly, reusable recipes, or cross-field rules; an options object is simpler when callers can provide and validate all values together.
 
 **When to use:**
 - The object needs meaningful staged assembly or a reusable construction recipe

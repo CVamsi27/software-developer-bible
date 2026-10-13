@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 277,
+    "revised": 278,
     "unchanged": 80,
-    "pending": 163,
-    "reviewed": 357,
+    "pending": 162,
+    "reviewed": 358,
     "topic_chapters": 520
   },
   "entries": [
@@ -4948,12 +4948,17 @@
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.19-resilience-patterns-deep-dive.md",
       "group": "30-architecture/30.2-system-design/01-theory",
       "title": "Resilience Patterns Deep-Dive: Hedging, Load Shedding, Request Coalescing, Deadlines",
-      "status": "pending",
-      "baseline_sha256": "04d453652d99f0416884528a6884af92863989cf42a7f1870be6c97358141cd8",
+      "status": "revised",
+      "baseline_sha256": "aa3dfd18602bb6a574fbf419b42b65f27f8408cb08cfac3af41a64ee6a281c67",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which control contains the measured failure, and how does it change work, time or resource usage for other callers?",
+      "disposition": "Kept the problem-led sequence through hedging, load shedding, process-local coalescing, propagated deadlines and adaptive concurrency. Removed the repeated comparison matrix and tightened the final synthesis; preserved attempt/cancellation budgets, trusted shedding priority, authorization-safe keys, remaining-time propagation and controller limits. Added the relevant HTTP semantics RFC references.",
+      "validation": [
+        "Re-read in learning order with the system-design INDEX and REVISION companion; checked practical/textbook definitions, First Principles, Summary, See Also and References.",
+        "Checked current RFC 6585/9110 status semantics, gRPC deadline guidance, Envoy hedging/adaptive-concurrency docs and the Tail at Scale reference.",
+        "All 30 repository verification gates passed; standalone links checked 10,818 links and 150 anchors with 0 failures; citation baseline remained at 2,509 URLs with 0 drift.",
+        "Ruby 3.4.11 production Jekyll build and rendered-heading sweep passed; the edited page renders exactly one H1."
+      ]
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.20-multi-region-deployment.md",

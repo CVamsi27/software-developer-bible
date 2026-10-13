@@ -7898,7 +7898,8 @@
    "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc6585.html": [
-   "30-architecture/30.2-system-design/01-theory/30.2.1.13-backpressure-and-flow-control.md"
+   "30-architecture/30.2-system-design/01-theory/30.2.1.13-backpressure-and-flow-control.md",
+   "30-architecture/30.2-system-design/01-theory/30.2.1.19-resilience-patterns-deep-dive.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc6585.html#section-4": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.08-rate-limiting.md",
@@ -7970,7 +7971,8 @@
    "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.02-status-codes.md",
    "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.04-http-caching.md",
    "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.04-authentication.md",
-   "30-architecture/30.2-system-design/01-theory/30.2.1.13-backpressure-and-flow-control.md"
+   "30-architecture/30.2-system-design/01-theory/30.2.1.13-backpressure-and-flow-control.md",
+   "30-architecture/30.2-system-design/01-theory/30.2.1.19-resilience-patterns-deep-dive.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc9110.html#name-retry-after": [
    "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.02-retry-patterns.md"

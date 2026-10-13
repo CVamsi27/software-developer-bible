@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 266,
+    "revised": 268,
     "unchanged": 80,
-    "pending": 174,
-    "reviewed": 346,
+    "pending": 172,
+    "reviewed": 348,
     "topic_chapters": 520
   },
   "entries": [
@@ -4764,23 +4764,35 @@
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.07-distributed-transactions.md",
       "group": "30-architecture/30.2-system-design/01-theory",
       "title": "Distributed Transactions",
-      "status": "pending",
-      "baseline_sha256": "63c045aba95638ba44d41e8f55c48e2d60f941feded432ba74a458774f9dd499",
+      "status": "revised",
+      "baseline_sha256": "5a828594f6580af4d243089c7abb3caa8021cbf6c46cbf1bf20702e49ed87d6f",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "When checkout spans order and stock databases, must both participants share one atomic outcome or can a workflow recover visible local commits?",
+      "disposition": "Replaced the abstract opening with an uncertain checkout outcome that motivates atomic commit versus saga. Removed the consensus mistake repeated by the explanatory boundary while preserving the 2PC recovery trace, 3PC assumptions, compensation limits and durable workflow requirements.",
+      "validation": [
+        "Re-read in theory learning order with the parent/category INDEX and REVISION companion; checked practical/textbook definitions, First Principles, mechanism flow, decision/failure boundaries, summary and cross-references.",
+        "Checked the distributed-transaction boundary against current PostgreSQL prepared-transaction documentation and AWS saga guidance.",
+        "All 30 scripts/verify.sh gates passed. The standalone link check covered 10,827 links and 150 anchors with no failures; citation baseline diff was clean at 2,515 URLs.",
+        "Ruby 3.4 production Jekyll build and site-wide rendered-heading check passed; each reviewed page rendered with exactly one H1.",
+        "git diff --check passed."
+      ]
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.08-rate-limiting.md",
       "group": "30-architecture/30.2-system-design/01-theory",
       "title": "Rate Limiting",
-      "status": "pending",
-      "baseline_sha256": "c995445b5b01b5b423b0fe45b244f2bf52ca614de230e3deb76c13340a3f165d",
+      "status": "revised",
+      "baseline_sha256": "379c9112fa83219b550b8f0a902f392a783810e5df588ae836dfb1ccea1678e2",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Does this limit promise a per-instance allowance or one shared budget, and what burst, identity and failure behavior does that promise require?",
+      "disposition": "Opened with the six-replica budget multiplication example. Removed the generic rationale and duplicate pattern/interview lists, compressed the algorithm summary, explained atomic Redis token-bucket state and safe expiry, clarified the volumetric-traffic boundary, and replaced generic endpoint examples with a contract-and-failure table.",
+      "validation": [
+        "Re-read in theory learning order with the parent/category INDEX and REVISION companion; checked practical/textbook definitions, First Principles, mechanism flow, decision/failure boundaries, summary and cross-references.",
+        "Checked RFC 6585/9110 and the live IETF Datatracker draft, which remains an active Internet-Draft with no intended RFC status; verified NGINX, Envoy, AWS API Gateway and Redis implementation claims against official docs.",
+        "All 30 scripts/verify.sh gates passed. The standalone link check covered 10,827 links and 150 anchors with no failures; citation baseline diff was clean at 2,515 URLs.",
+        "Ruby 3.4 production Jekyll build and site-wide rendered-heading check passed; each reviewed page rendered with exactly one H1.",
+        "git diff --check passed."
+      ]
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.md",

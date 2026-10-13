@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "389ebb6868bd920ba10b492982f8e8bba65bba2a53415bbdb3d744d77e84ed0a",
+ "corpus_digest": "44f36f57d0e83cf0742a1640c044aab420b532b06926bc1991357a280cc5af7f",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5279
+  "read_minutes": 5278
  },
  "chapters": [
   {
@@ -3969,7 +3969,7 @@
     "scaling",
     "theory"
    ],
-   "m": 13
+   "m": 12
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.html",

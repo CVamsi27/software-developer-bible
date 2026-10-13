@@ -26,6 +26,10 @@ Source: [Service Discovery](20.6.1.01-service-discovery.md)
 
 **A:** An address can exist while the instance cannot serve the workload. Define health/readiness signals and expiry behavior, recognizing that cached information and network failures make availability uncertain.
 
+**Q:** When would you choose a Kubernetes Service, Consul or Eureka for discovery?
+
+**A:** Prefer the platform Service when cluster DNS and forwarding meet the routing need. Consul adds a catalog with health-aware DNS/API lookup for environments that need its registry model; Eureka fits Spring Cloud clients that register and query a replicated registry. In every case, verify the health signal, cache age and who selects the endpoint. See the [Kubernetes Service DNS contract](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/), [Consul discovery model](https://developer.hashicorp.com/consul/docs/discover) and [Spring Cloud Eureka behavior](https://docs.spring.io/spring-cloud-netflix/docs/current/reference/html/).
+
 ## API Gateway
 
 Source: [API Gateway](20.6.1.02-api-gateway.md)

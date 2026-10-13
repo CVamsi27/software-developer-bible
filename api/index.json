@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "5712940fa2453cb045d431983dc16c8763d0e65bd405c42073d6eabf647fdcea",
+ "corpus_digest": "d83c8a2cea58a0162a4d26cac5913fc4976915a30b9d71bb7226f0f04d766f7f",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5275
+  "read_minutes": 5274
  },
  "chapters": [
   {
@@ -2955,7 +2955,7 @@
    "g": [
     "concept"
    ],
-   "m": 5
+   "m": 6
   },
   {
    "p": "20-backend/20.6-microservices/01-service-topology/20.6.1.02-api-gateway.html",
@@ -2965,7 +2965,7 @@
    "g": [
     "concept"
    ],
-   "m": 5
+   "m": 4
   },
   {
    "p": "20-backend/20.6-microservices/01-service-topology/20.6.1.03-service-mesh.html",
@@ -2985,7 +2985,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 5
   },
   {
    "p": "20-backend/20.6-microservices/01-service-topology/REVISION.html",

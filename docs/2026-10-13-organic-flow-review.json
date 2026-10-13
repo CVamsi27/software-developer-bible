@@ -9,11 +9,11 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "topic_chapters": 520,
-    "revised": 216,
+    "revised": 220,
     "unchanged": 79,
-    "pending": 225,
-    "reviewed": 295
+    "pending": 221,
+    "reviewed": 299,
+    "topic_chapters": 520
   },
   "entries": [
     {
@@ -3723,45 +3723,65 @@
       "path": "20-backend/20.6-microservices/01-service-topology/20.6.1.01-service-discovery.md",
       "group": "20-backend/20.6-microservices/01-service-topology",
       "title": "Service Discovery",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "18540f559809d71044eee602e5ffa738179ec0031fec14674481f8f7dd3f8ea7",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which component owns membership, endpoint selection and freshness?",
+      "disposition": "Added a concrete stale-address opening, a concise Kubernetes/Consul/Eureka responsibility comparison, and precise readiness semantics. Corrected Docker image-registry and NestJS transport cross-references; retained cache, connection, health and retry-safety boundaries.",
+      "validation": [
+        "Directly re-read the four teaching chapters in learning order with the category INDEX, REVISION companion, parent index and relevant interview prompts.",
+        "Checked Kubernetes EndpointSlice readiness/termination and DNS, Consul discovery, Spring Cloud Eureka registration/health/cache behavior, Istio ambient data-plane boundaries, and RFC 9110 against primary documentation; each new external URL returned HTTP 200.",
+        "All 30 repository verification gates passed. Standalone link checking found 10,829 local links and 149 anchors with zero failures; the 2,515-URL external baseline and ten-writer fixed point are clean.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed; all four edited pages render one authored H1. No code example behavior changed in this documentation pass."
+      ]
     },
     {
       "path": "20-backend/20.6-microservices/01-service-topology/20.6.1.02-api-gateway.md",
       "group": "20-backend/20.6-microservices/01-service-topology",
       "title": "API Gateway",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "e2319facd7659691c7bbcc82d57ff85f70888366272f99a2cff766a8740b7d29",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What can a gateway centralize, and what authority must remain with the service?",
+      "disposition": "Added a client-route scenario and removed a recap table whose route-boundary, authorization, cache, retry and isolation cases are already explained with their mechanisms. Kept forwarding, policy rollout and downstream ownership details.",
+      "validation": [
+        "Directly re-read the four teaching chapters in learning order with the category INDEX, REVISION companion, parent index and relevant interview prompts.",
+        "Checked Kubernetes EndpointSlice readiness/termination and DNS, Consul discovery, Spring Cloud Eureka registration/health/cache behavior, Istio ambient data-plane boundaries, and RFC 9110 against primary documentation; each new external URL returned HTTP 200.",
+        "All 30 repository verification gates passed. Standalone link checking found 10,829 local links and 149 anchors with zero failures; the 2,515-URL external baseline and ten-writer fixed point are clean.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed; all four edited pages render one authored H1. No code example behavior changed in this documentation pass."
+      ]
     },
     {
       "path": "20-backend/20.6-microservices/01-service-topology/20.6.1.03-service-mesh.md",
       "group": "20-backend/20.6-microservices/01-service-topology",
       "title": "Service Mesh",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "3a84656e019bf49f259001f50585ae3372445cebe1f6a99773c70e9e36879dad",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which communication policies belong in the data plane, and which effects still belong to the application?",
+      "disposition": "Added a payment timeout scenario, shortened cross-references, and corrected the index to distinguish proxy telemetry from application context propagation. Retained sidecar/ambient costs, mTLS, authorization, retry safety and operations.",
+      "validation": [
+        "Directly re-read the four teaching chapters in learning order with the category INDEX, REVISION companion, parent index and relevant interview prompts.",
+        "Checked Kubernetes EndpointSlice readiness/termination and DNS, Consul discovery, Spring Cloud Eureka registration/health/cache behavior, Istio ambient data-plane boundaries, and RFC 9110 against primary documentation; each new external URL returned HTTP 200.",
+        "All 30 repository verification gates passed. Standalone link checking found 10,829 local links and 149 anchors with zero failures; the 2,515-URL external baseline and ten-writer fixed point are clean.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed; all four edited pages render one authored H1. No code example behavior changed in this documentation pass."
+      ]
     },
     {
       "path": "20-backend/20.6-microservices/01-service-topology/20.6.1.04-strangler-fig.md",
       "group": "20-backend/20.6-microservices/01-service-topology",
       "title": "Strangler Fig Pattern",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "ea312d74438846d2eab95d55cc9688fcd8e4c04ea8ae2906f89fdc8cd699aa5c",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can one capability move safely when a timeout cannot tell us whether a write committed?",
+      "disposition": "Added an unknown-outcome opening, clarified outbox versus database-log CDC, and removed a repeated mistake recap. Retained cohort selection, data reconciliation, rollback compatibility, shadow safety and retirement evidence.",
+      "validation": [
+        "Directly re-read the four teaching chapters in learning order with the category INDEX, REVISION companion, parent index and relevant interview prompts.",
+        "Checked Kubernetes EndpointSlice readiness/termination and DNS, Consul discovery, Spring Cloud Eureka registration/health/cache behavior, Istio ambient data-plane boundaries, and RFC 9110 against primary documentation; each new external URL returned HTTP 200.",
+        "All 30 repository verification gates passed. Standalone link checking found 10,829 local links and 149 anchors with zero failures; the 2,515-URL external baseline and ten-writer fixed point are clean.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed; all four edited pages render one authored H1. No code example behavior changed in this documentation pass."
+      ]
     },
     {
       "path": "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.01-grpc.md",

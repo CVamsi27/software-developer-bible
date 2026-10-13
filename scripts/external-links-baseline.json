@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-13",
- "url_count": 2511,
+ "url_count": 2510,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md",
@@ -303,7 +303,7 @@
   "https://cassandra.apache.org/doc/latest/": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.20-distributed-counter.md"
   ],
-  "https://cassandra.apache.org/doc/stable/cassandra/architecture/dynamo": [
+  "https://cassandra.apache.org/doc/latest/cassandra/architecture/dynamo": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.md"
   ],
   "https://cbor.io/": [
@@ -439,9 +439,6 @@
   ],
   "https://cloud.google.com/spanner/docs/replication": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.20-multi-region-deployment.md"
-  ],
-  "https://cloud.google.com/spanner/docs/true-time-external-consistency": [
-   "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.md"
   ],
   "https://commission.europa.eu/law/law-topic/data-protection/information-business-and-organisations/application-gdpr_en": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.10-hospital-management.md"
@@ -1471,6 +1468,7 @@
    "81-lanes-indian-sde-faang/81.18-amazon-interview-guide.md"
   ],
   "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_HowItWorks.html": [
+   "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.md",
    "30-architecture/30.2-system-design/01-theory/30.2.1.20-multi-region-deployment.md",
    "30-architecture/30.2-system-design/01-theory/REVISION.md"
   ],
@@ -1627,6 +1625,7 @@
    "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md"
   ],
   "https://docs.cloud.google.com/spanner/docs/true-time-external-consistency": [
+   "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.md",
    "81-lanes-indian-sde-faang/81.17-google-interview-guide.md"
   ],
   "https://docs.cohere.com/docs/rerank-overview": [
@@ -7333,11 +7332,11 @@
   "https://www.migrationsverket.se/en/word-explanations/salary-requirements-for-a-work-permit.html": [
    "80-lanes-abroad-full-stack/80.06-visa-relocation-playbook.md"
   ],
-  "https://www.mongodb.com/docs/manual/applications/replication/": [
-   "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.md"
-  ],
   "https://www.mongodb.com/docs/manual/core/index-ttl/": [
    "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.04-data-retention-archival.md"
+  ],
+  "https://www.mongodb.com/docs/manual/core/read-preference-mechanics/": [
+   "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.md"
   ],
   "https://www.mongodb.com/docs/manual/core/transactions/": [
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.04-nosql-vs-sql.md",

@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "5fafeccc59da67f136dc3529082bd5440058e242c3e4e239dd32bb57b478f9ee",
+ "corpus_digest": "627d3bc625cc5837e31e7cde7e1dbd9d62e5a16a51262c519901fc643d024f50",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5280
+  "read_minutes": 5279
  },
  "chapters": [
   {
@@ -3894,7 +3894,7 @@
     "distributed-systems",
     "theory"
    ],
-   "m": 13
+   "m": 12
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.html",

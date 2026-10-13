@@ -1,13 +1,13 @@
 # System Design — Foundational Theory
 
-> **Study time:** ≈ 5 h 27 m of reading (24 files, ~14 min average).
+> **Study time:** ≈ 5 h 26 m of reading (24 files, ~14 min average).
 > **Study time and file counts are generated from the current chapter set.**
 
 [![Files](https://img.shields.io/badge/files-24-blue)](../../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-Begin with problem framing and the network prerequisites when needed, then follow the foundational concepts and supporting deep-dives. Use the table below to follow the sequence; after this, move to [../02-case-studies/](../02-case-studies/INDEX.md).
+Begin with [How to Approach](30.2.1.15-how-to-approach.md) and [Capacity Planning](30.2.1.12-capacity-planning.md). Review the TCP, DNS and TLS prerequisites when a prompt depends on network behavior; then follow the consistency, placement, traffic and recovery sequence below. After the theory revision and separate interview drill, move to [../02-case-studies/](../02-case-studies/INDEX.md).
 
 ---
 
@@ -72,7 +72,7 @@ After the learning chapters, use [Theory revision](REVISION.md), then the separa
 
 ## Reading Path and Completion Check
 
-Begin with the problem-framing chapter, capacity estimates and network fundamentals. Then build the storage/consistency model before coordination, delivery and resilience mechanisms.
+Begin with problem framing and capacity estimates, then review network fundamentals as the design requires. Work through storage and consistency before coordination, delivery and resilience; return to the relevant prerequisite when a case exposes a dependency.
 
 Trace a partition, timeout and retry through a chosen design; state the exact invariant, authority and recovery mechanism. Then use [section revision](REVISION.md) without reopening the chapters. Interview banks, where present, are a separate drill after this check.
 

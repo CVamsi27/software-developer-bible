@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 260,
+    "revised": 263,
     "unchanged": 80,
-    "pending": 180,
-    "reviewed": 340,
+    "pending": 177,
+    "reviewed": 343,
     "topic_chapters": 520
   },
   "entries": [
@@ -4662,34 +4662,52 @@
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.md",
       "group": "30-architecture/30.2-system-design/01-theory",
       "title": "CAP Theorem & PACELC",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "8f59bf325f6c9752107e4ef4ae36fabffe24221d3b83cd9f7a086f64720df352",
       "previous_depth_review": "reviewed",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "When one clinic has booked the only slot but another clinic cannot reach it, what response preserves the booking contract?",
+      "disposition": "Moved the clinic partition scenario ahead of the definitions so the impossibility follows from the reader\u2019s concrete decision. Clarified that CAP availability is a data-operation liveness contract, separate from an endpoint-response SLO.",
+      "validation": [
+        "Re-read in theory learning order with the parent/category INDEX and revision companion; checked both definitions, First Principles, scenario-to-mechanism flow, summary and links.",
+        "Verified version-sensitive DynamoDB, MongoDB, Cassandra and Spanner statements against their current official documentation; all current citations are recorded in the external-link baseline.",
+        "All 30 scripts/verify.sh gates passed. The standalone link check covered 10,827 links and 150 anchors with no failures; citation baseline diff was clean at 2,510 URLs.",
+        "Ruby 3.4 production Jekyll build and site-wide rendered-heading check passed; each reviewed page rendered with exactly one H1.",
+        "git diff --check passed."
+      ]
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.02-consistency-models.md",
       "group": "30-architecture/30.2-system-design/01-theory",
       "title": "Data Consistency Models",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "ab2c47e16afc65c31b24408b2f8151161f8628195ec5383ddabf6800372112db",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What histories may readers observe after writes, and which guarantee prevents a session from moving backward?",
+      "disposition": "Removed a generic \u201cwhy it matters\u201d catalog that repeated the final decision table, and merged the repeated system-mixes-guarantees section into one bridge. Kept the six model traces, transaction/operation boundary, and the independent read-your-writes versus monotonic guarantees.",
+      "validation": [
+        "Re-read in theory learning order with the parent/category INDEX and revision companion; checked both definitions, First Principles, scenario-to-mechanism flow, summary and links.",
+        "Verified version-sensitive DynamoDB, MongoDB, Cassandra and Spanner statements against their current official documentation; all current citations are recorded in the external-link baseline.",
+        "All 30 scripts/verify.sh gates passed. The standalone link check covered 10,827 links and 150 anchors with no failures; citation baseline diff was clean at 2,510 URLs.",
+        "Ruby 3.4 production Jekyll build and site-wide rendered-heading check passed; each reviewed page rendered with exactly one H1.",
+        "git diff --check passed."
+      ]
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.md",
       "group": "30-architecture/30.2-system-design/01-theory",
       "title": "Sharding & Replication",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "9124b9d4c5ac1471e38cbf09408b592ccd60943888cfe252894c3e19a212a0b0",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which measured limit calls for sharding, and what consistency and recovery costs follow from each placement choice?",
+      "disposition": "Removed the repeated interview rationale and duplicate early sample answer while preserving the simpler-to-sharding decision ladder and final interview checklist. Updated DynamoDB global-table modes and transaction scope, refreshed current MongoDB/Cassandra/Spanner references, and aligned the theory/category study path.",
+      "validation": [
+        "Re-read in theory learning order with the parent/category INDEX and revision companion; checked both definitions, First Principles, scenario-to-mechanism flow, summary and links.",
+        "Verified version-sensitive DynamoDB, MongoDB, Cassandra and Spanner statements against their current official documentation; all current citations are recorded in the external-link baseline.",
+        "All 30 scripts/verify.sh gates passed. The standalone link check covered 10,827 links and 150 anchors with no failures; citation baseline diff was clean at 2,510 URLs.",
+        "Ruby 3.4 production Jekyll build and site-wide rendered-heading check passed; each reviewed page rendered with exactly one H1.",
+        "git diff --check passed."
+      ]
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.md",

@@ -16,7 +16,7 @@
   "consumers": ["repos/resume-generator", "repos/docita"],
   "corpus_digest": "<sha256 over every content file — see the table>",
   "totals":    { "chapters": 671, "sections": 47, "categories": 13,
-                 "read_minutes": 5280 },
+                 "read_minutes": 5279 },
   "chapters": [
     { "p": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.html",
       "t": "MVCC (Multi-Version Concurrency Control)",

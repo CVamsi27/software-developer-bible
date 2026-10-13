@@ -381,7 +381,7 @@ Source: [Multi-Region Deployment](30.2.1.20-multi-region-deployment.md)
 
 **Q:** What does DynamoDB's MRSC mode require, and what does its zero-RPO guarantee cost?
 
-**A:** MRSC requires exactly three Regions within one supported Region set, configured as three replicas or two replicas plus a witness. Cross-region coordination raises write and strong-read latency; transactions, TTL and local secondary indexes are unsupported. Competing same-item writes can fail with `ReplicatedWriteConflictException`; retry only with an application-safe, bounded policy. This is a DynamoDB contract, not a universal property of synchronous replication. See [AWS's global-table behavior](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_HowItWorks.html).
+**A:** MRSC requires exactly three supported Regions, configured as three replicas or two replicas plus a witness. Cross-region coordination raises write and strong-read latency; transactions, TTL and local secondary indexes are unsupported. Competing same-item writes can fail with `ReplicatedWriteConflictException`; retry only with an application-safe, bounded policy. This is a DynamoDB contract, not a universal property of synchronous replication. See [AWS's global-table behavior](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_HowItWorks.html).
 
 **Q:** Can a transaction written to an MREC replica be assumed atomic when read from another Region?
 

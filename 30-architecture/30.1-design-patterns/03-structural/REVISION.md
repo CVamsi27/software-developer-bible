@@ -90,9 +90,13 @@ Source: [Module Pattern](30.1.3.05-module-pattern.md)
 
 **A:** The barrel re-exports `area` from the circle module; that function calls private `computeArea`, which uses private `PI`. The consumer gets the exported contract, not those hidden bindings. Resolution of the emitted files still follows the runtime's module rules.
 
-**Q:** What if a cache module returns a mutable object stored in its private map?
+**Q:** A cache hides its `Map` but returns an object stored inside it. What can the caller still change?
 
-**A:** The caller can mutate that object's shared state even though it cannot name the map binding. Copying/freezing or an explicit shared-reference contract must address this separately; module visibility is not deep immutability or tenant isolation.
+**A:** The caller can mutate the returned object through its shared reference even though it cannot name the map. Copy or freeze values when that is the contract; module privacy alone provides neither deep immutability nor tenant isolation.
+
+**Q:** Why will a TypeScript `paths` alias not necessarily work in the emitted application?
+
+**A:** `paths` guides TypeScript resolution but does not rewrite emitted import specifiers. The runtime or bundler must resolve the alias too, or use a `package.json` `imports` entry where the runtime supports it.
 
 ## Composite Pattern
 

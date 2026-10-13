@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "164bfeabaea4206593a6288359884acd0b85990a7fcf2ca5202dfa844fbfacc5",
+ "corpus_digest": "ab5286889c8e3b6bee01a323e85e1c3033899ff05b9cbde3278092cc44b73794",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5192
+  "read_minutes": 5188
  },
  "chapters": [
   {
@@ -3580,7 +3580,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 7
   },
   {
    "p": "30-architecture/30.1-design-patterns/03-structural/30.1.3.06-composite.html",

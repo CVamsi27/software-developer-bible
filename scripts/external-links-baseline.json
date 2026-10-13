@@ -48,12 +48,6 @@
    "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.04-authentication.md",
    "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.md"
   ],
-  "https://addyosmani.com/blog/writing-modular-javascript/": [
-   "30-architecture/30.1-design-patterns/03-structural/30.1.3.05-module-pattern.md"
-  ],
-  "https://addyosmani.com/resources/essentialjsdesignpatterns/book/#revealingmodulepatternjavascript": [
-   "30-architecture/30.1-design-patterns/03-structural/30.1.3.05-module-pattern.md"
-  ],
   "https://adr.github.io/": [
    "70-interview-toolkit/70.1-behavioral/70.1.03-judgment-calls-ambiguity.md",
    "70-interview-toolkit/70.1-behavioral/70.1.04-system-design-behavioral.md"
@@ -1131,8 +1125,7 @@
    "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.04-currying-composition.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules": [
-   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.01-modules.md",
-   "30-architecture/30.1-design-patterns/03-structural/30.1.3.05-module-pattern.md"
+   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.01-modules.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain": [
    "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.02-prototypes.md"
@@ -7394,8 +7387,14 @@
   "https://www.oreilly.com/library/view/kubernetes-patterns/9781492050278/": [
    "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.02-deployments.md"
   ],
+  "https://www.oreilly.com/library/view/learning-javascript-design/9781449334840/ch09s02.html": [
+   "30-architecture/30.1-design-patterns/03-structural/30.1.3.05-module-pattern.md"
+  ],
   "https://www.oreilly.com/library/view/observability-engineering/9781492076438/": [
    "40-platform/40.4-observability/05-interview-prep/40.4.5.01-interview-questions.md"
+  ],
+  "https://www.oreilly.com/library/view/programming-javascript-applications/9781491950289/ch04.html": [
+   "30-architecture/30.1-design-patterns/03-structural/30.1.3.05-module-pattern.md"
   ],
   "https://www.oreilly.com/library/view/programming-kubernetes/9781492047096/": [
    "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.03-crds-operators-controller-patterns.md"
@@ -8205,9 +8204,6 @@
    "10-frontend/10.2-typescript/03-type-transformations/10.2.3.03-mapped-types.md",
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.05-advanced-patterns.md"
   ],
-  "https://www.typescriptlang.org/docs/handbook/2/modules.html": [
-   "30-architecture/30.1-design-patterns/03-structural/30.1.3.05-module-pattern.md"
-  ],
   "https://www.typescriptlang.org/docs/handbook/2/narrowing.html": [
    "10-frontend/10.2-typescript/01-foundations/10.2.1.03-type-narrowing.md",
    "10-frontend/10.2-typescript/05-interview-prep/10.2.5.01-interview-questions.md"
@@ -8241,6 +8237,9 @@
   "https://www.typescriptlang.org/docs/handbook/intro.html": [
    "10-frontend/10.2-typescript/05-interview-prep/10.2.5.01-interview-questions.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.02-typescript-cheat-sheet.md"
+  ],
+  "https://www.typescriptlang.org/docs/handbook/modules.html": [
+   "30-architecture/30.1-design-patterns/03-structural/30.1.3.05-module-pattern.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/modules/guides/choosing-compiler-options": [
    "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.01-modules.md"

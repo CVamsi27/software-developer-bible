@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 295,
+    "revised": 296,
     "unchanged": 80,
-    "pending": 145,
-    "reviewed": 375,
+    "pending": 144,
+    "reviewed": 376,
     "topic_chapters": 520
   },
   "entries": [
@@ -4483,12 +4483,18 @@
       "path": "30-architecture/30.1-design-patterns/03-structural/30.1.3.05-module-pattern.md",
       "group": "30-architecture/30.1-design-patterns/03-structural",
       "title": "Module Pattern",
-      "status": "pending",
-      "baseline_sha256": "7cd37fc7ee23c7defaae5ce2ad6a3eb3cfe6ceaa9ba99db86ff4f5242513d1b6",
+      "status": "revised",
+      "baseline_sha256": "f8d665345143644883b38b0a4962fae864e97c892b9df22b41d21ab0cdc7d7a2",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How does a module boundary keep its API stable without implying isolated or immutable state?",
+      "disposition": "Rebuilt the chapter around one ESM export trace, then distinguished the historical Revealing Module form, module-instance state, factory-owned state, mutable references and package/runtime boundaries. Removed repeated benefit, use-case and checklist sections; sourced the textbook definition and added a matching paths-alias revision question.",
+      "validation": [
+        "Re-read in learning order and checked the practical and textbook definitions, distinct First Principles, one ESM call trace, state ownership, summary and relevant cross-references.",
+        "Fresh-reader review confirmed the flow and technical distinctions; clarified the IIFE as the Revealing Module variation and named the package.json imports mapping precisely.",
+        "TypeScript 7.0.2 strict NodeNext compile and Node runtime checks passed for the barrel export, area result, independent cache instances and mutable stored-object reference.",
+        "All 30 repository gates passed; standalone links checked 10,797 links and 152 anchors with 0 failures; citation baseline diff had 0 added or removed URLs at 2,519.",
+        "Ruby 3.4 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "30-architecture/30.1-design-patterns/03-structural/30.1.3.06-composite.md",

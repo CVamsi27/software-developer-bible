@@ -1,6 +1,6 @@
 # Structural Patterns
 
-> **Study time:** ≈ 1 h 17 m of reading (9 files, ~9 min average).
+> **Study time:** ≈ 1 h 13 m of reading (9 files, ~8 min average).
 > **9 files.** Class and object composition. These patterns are about how to assemble larger structures from classes and objects while keeping the structure flexible and efficient.
 
 [![Files](https://img.shields.io/badge/files-9-blue)](../../INDEX.md)

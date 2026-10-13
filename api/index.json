@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "e6ec563e458a36913a2b27544fc19868845129cf9f1237c2ffe9145c9d154ae1",
+ "corpus_digest": "86024abeab88dc3ffcb373b4f890060ef8cb684848dc2a876935fa11f6a148bd",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5276
+  "read_minutes": 5275
  },
  "chapters": [
   {
@@ -3230,7 +3230,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "20-backend/20.7-graphql/02-execution/20.7.2.02-apollo-server.html",

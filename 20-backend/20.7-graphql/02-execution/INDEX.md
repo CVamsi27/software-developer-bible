@@ -1,6 +1,6 @@
 # Execution - GraphQL
 
-> **Study time:** ≈ 19 min of reading (3 files, ~6 min average).
+> **Study time:** ≈ 18 min of reading (3 files, ~6 min average).
 > **3 files.** How the server resolves fields, uses request-scoped batching for repeated relationship reads, and connects Apollo Server's plugin model, federation and subscription transports to HTTP.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)

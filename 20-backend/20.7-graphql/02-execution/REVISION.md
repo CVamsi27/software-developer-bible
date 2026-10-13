@@ -64,6 +64,10 @@ Source: [Apollo Server](20.7.2.02-apollo-server.md)
 
 **A:** No. It exercises GraphQL processing with supplied context, bypassing HTTP middleware. Use HTTP integration tests for credentials, body limits and CORS/CSRF boundaries, plus schema-execution tests for resource policy and null behavior.
 
+**Q:** How should the HTTP boundary handle malformed or oversized JSON before Apollo sees a request?
+
+**A:** Return the appropriate client status, such as 400 for malformed JSON or 413 for a body-limit rejection, with a safe message and no development stack trace. Test the Express parser and error handler through HTTP; a GraphQL execution test cannot reach failures that occur before parsing.
+
 **Q:** Can Apollo Server 5.5.1 use GraphQL.js 17.0.2 as its normal peer dependency?
 
 **A:** No. Its declared peer range is `^16.11.0`, so use a supported GraphQL.js 16 release such as 16.14.2. Verify the exact peer range when upgrading; a separately supported experimental incremental-delivery path has a different prerelease constraint.

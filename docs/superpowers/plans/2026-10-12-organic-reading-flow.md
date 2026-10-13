@@ -603,3 +603,13 @@ The CQRS full-state projection and database-change helper now distinguish older 
 All 30 repository gates passed. Standalone links checked 10,822 local links and 149 anchors with no failures; the 2,514-URL citation baseline and writer fixed point are clean. The Ruby 3.4.11 production Jekyll build, full rendered-heading sweep and focused one-H1 checks for all six edited pages passed.
 
 The review ledger now records 311 of 520 numbered topic chapters reviewed (231 revised, 80 retained unchanged; 209 pending). This closes the six teaching chapters in the Microservices data-and-consistency category only. Continue with the next pending group; the full corpus review remains open.
+
+## Editorial checkpoint — 13 October 2026 (Microservices resilience)
+
+Re-read Circuit Breaker and Bulkhead Pattern in learning order with the category index, revision guide and interview answers. Opened each with the failure it contains: provider slowdown filling caller connections, and reporting work consuming connections needed by login. Kept the state-machine and fail-fast limiter examples as canonical traces, with their limits explained beside them: breaker admission does not cap in-flight work or resolve ambiguous writes, and a bulkhead isolates only the resource it partitions.
+
+Checked current Resilience4j circuit-breaker/bulkhead and Microsoft bulkhead guidance. Executed both extracted JavaScript examples against open/recovery/late-result and permit-lifetime cases; the assertions passed. The existing index, revision prompts and interview answers already express these boundaries and required no content changes.
+
+All 30 repository gates passed. Standalone links checked 10,822 local links and 149 anchors with no failures; the 2,514-URL citation baseline and writer fixed point are clean. The Ruby 3.4.11 production Jekyll build, site-wide rendered-heading sweep and focused one-H1 checks for both pages passed.
+
+The ledger records 313 of 520 numbered topic chapters reviewed (233 revised, 80 retained unchanged; 207 pending). This closes the two teaching chapters in the Microservices resilience category only. Continue with the next pending group; the full corpus review remains open.

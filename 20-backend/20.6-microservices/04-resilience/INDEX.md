@@ -1,6 +1,6 @@
 # Resilience - Microservices
 
-> **Study time:** ≈ 14 min of reading (3 files, ~5 min average).
+> **Study time:** ≈ 15 min of reading (3 files, ~5 min average).
 > **3 files.** Surviving partial failure: use a circuit breaker to limit new calls to a failing dependency and partition resources to bound what one workload can consume.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
@@ -16,7 +16,7 @@ First follow breaker admission through counted failures and a controlled recover
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Circuit Breaker](20.6.4.01-circuit-breaker.md) | Closed/open/half-open states, threshold tuning, fallbacks, integration with retries/timeouts | Essential | Important | 6 min |
+| 01 | [Circuit Breaker](20.6.4.01-circuit-breaker.md) | Closed/open/half-open states, threshold tuning, fallbacks, integration with retries/timeouts | Essential | Important | 7 min |
 | 02 | [Bulkhead Pattern](20.6.4.02-bulkhead-pattern.md) | Thread pool/semaphore/connection partitioning, tenant isolation, pool sizing | Important | Important | 6 min |
 
 ---

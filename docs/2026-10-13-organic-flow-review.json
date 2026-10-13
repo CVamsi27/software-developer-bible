@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 231,
+    "revised": 233,
     "unchanged": 80,
-    "pending": 209,
-    "reviewed": 311,
+    "pending": 207,
+    "reviewed": 313,
     "topic_chapters": 520
   },
   "entries": [
@@ -3991,23 +3991,35 @@
       "path": "20-backend/20.6-microservices/04-resilience/20.6.4.01-circuit-breaker.md",
       "group": "20-backend/20.6-microservices/04-resilience",
       "title": "Circuit Breaker",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "6f10afaaac643287985b1034c84676b00895bfe18f30232d0c10e7b6594bbc48",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How should a caller limit new attempts when a payment provider slows down, while still reconciling work already in flight?",
+      "disposition": "Opened with connection-pool exhaustion during provider slowdown, then tied the breaker decision to classified outcomes, bounded probes and the separate resource/deadline controls. Kept the local state machine explicit about process scope and late completions.",
+      "validation": [
+        "Directly re-read the chapter in category order with INDEX.md, REVISION.md and the related microservices interview answers; checked the practical/textbook definitions, First Principles, state/resource trace, summary and references.",
+        "Executed the extracted state-machine and bulkhead examples against open/recovery/late-completion and permit-lifetime cases; all assertions passed.",
+        "Checked the current Resilience4j circuit-breaker and bulkhead documentation and Microsoft Bulkhead Pattern guidance; no new external citations were added.",
+        "All 30 repository gates passed; standalone links checked 10,822 local links and 149 anchors with no failures; citation baseline remained at 2,514 URLs with no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build, site-wide rendered-heading check and focused one-H1 checks for both pages passed."
+      ]
     },
     {
       "path": "20-backend/20.6-microservices/04-resilience/20.6.4.02-bulkhead-pattern.md",
       "group": "20-backend/20.6-microservices/04-resilience",
       "title": "Bulkhead Pattern",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "8d16c3670cd86950c354a04ffe2b9049a50a686ce7ce85271b0fea8bc0168524",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can a slow reporting workload avoid consuming the connections and worker capacity login needs?",
+      "disposition": "Opened with shared database-pool exhaustion, then clarified that partitioning protects only the resources actually separated. Preserved queue, cancellation, task-lifetime, fleet-capacity and downstream-sharing limits.",
+      "validation": [
+        "Directly re-read the chapter in category order with INDEX.md, REVISION.md and the related microservices interview answers; checked the practical/textbook definitions, First Principles, state/resource trace, summary and references.",
+        "Executed the extracted state-machine and bulkhead examples against open/recovery/late-completion and permit-lifetime cases; all assertions passed.",
+        "Checked the current Resilience4j circuit-breaker and bulkhead documentation and Microsoft Bulkhead Pattern guidance; no new external citations were added.",
+        "All 30 repository gates passed; standalone links checked 10,822 local links and 149 anchors with no failures; citation baseline remained at 2,514 URLs with no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build, site-wide rendered-heading check and focused one-H1 checks for both pages passed."
+      ]
     },
     {
       "path": "20-backend/20.7-graphql/01-fundamentals/20.7.1.01-graphql-overview.md",

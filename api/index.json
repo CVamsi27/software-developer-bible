@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "1c5d430a714cab18fdcb90f9224e43933862c2cb49e37ae54272b92c05bde2ca",
+ "corpus_digest": "6a3a67c0fd45b75748d5085a495a3fb5b23e24671592aa0744a6ab23a6e605be",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5278
+  "read_minutes": 5279
  },
  "chapters": [
   {
@@ -3149,7 +3149,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "20-backend/20.6-microservices/04-resilience/20.6.4.02-bulkhead-pattern.html",

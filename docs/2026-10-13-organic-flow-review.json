@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 293,
+    "revised": 294,
     "unchanged": 80,
-    "pending": 147,
-    "reviewed": 373,
+    "pending": 146,
+    "reviewed": 374,
     "topic_chapters": 520
   },
   "entries": [
@@ -851,14 +851,18 @@
       "baseline_sha256": "e361e894202bf4e4fc7ccdb7c530bc88304d2319f0a16584cd5fbd4623cd3b09",
       "previous_depth_review": "revised",
       "reader_question": "What does a decorator receive, replace and run under each TypeScript decorator model?",
-      "disposition": "Organized the chapter by decorator phase and compiler model, then traced method wrapping, auto-accessor validation, metadata, ordering, binding and operational trade-offs.",
+      "disposition": "Kept the phase-by-phase teaching flow and aligned terminology across the chapter, INDEX and REVISION: the TypeScript 5.0 convention is described as newer and TC39-proposal-based rather than as finalized ECMAScript standard syntax.",
       "validation": [
         "Re-read with the TypeScript learning flow, section index and revision companion; reconciled linked interview and recall material.",
         "Strict no-emit TypeScript 7.0.2 checks passed for eight fenced examples; a NodeNext declaration/consumer fixture with a negative type assertion passed.",
         "All 30 repository verification gates, standalone link and citation-baseline checks passed; production Jekyll build and site-wide rendered-heading sweep passed.",
         "Targeted rendered checks passed for all five pages: one H1, both definitions, First Principles, Summary, See Also and References.",
-        "Full repository verification passed all 30 gates; the Ruby 3.1 locked-bundle production Jekyll build passed."
-      ]
+        "Full repository verification passed all 30 gates; the Ruby 3.1 locked-bundle production Jekyll build passed.",
+        "Reconciled updated terminology with the TypeScript 5.0 release notes and the linked Decorator Pattern chapter.",
+        "Full repository verification, production Jekyll build and rendered-heading check passed after the terminology update."
+      ],
+      "reviewed_at": "2026-10-14",
+      "review_sha256": "8156824ab5ec512e3a5605ee3e3a872e133d8f4e4d97f57f6b7a89150dd693d9"
     },
     {
       "path": "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.04-declaration-files.md",
@@ -2617,14 +2621,16 @@
       "baseline_sha256": "d9af085b50359a170b5eb1ab6e31dba0c9388f143f9183add4f9eedf885bea8c",
       "previous_depth_review": "revised",
       "reader_question": "Follow a request from authenticated principal extraction through metadata declaration to its registered consumer; the chapter was reorganized around that flow and repeated interview/checklist content removed.",
-      "disposition": "Follow a request from authenticated principal extraction through metadata declaration to its registered consumer; the chapter was reorganized around that flow and repeated interview/checklist content removed.",
+      "disposition": "Clarified that the newer proposal-based TypeScript decorator convention has a different contract from the legacy decorators used by Nest APIs.",
       "validation": [
         "Current NestJS custom-decorator and execution-context docs checked",
         "Advanced index and revision drill reconciled",
-        "Full repository verification passed all 30 gates; the Ruby 3.1 locked-bundle production Jekyll build passed."
+        "Full repository verification passed all 30 gates; the Ruby 3.1 locked-bundle production Jekyll build passed.",
+        "Reconciled the wording with the TypeScript 5.0 release notes and the linked TypeScript decorator chapter.",
+        "Full repository verification, production Jekyll build and rendered-heading check passed after the terminology update."
       ],
-      "reviewed_at": "2026-10-13",
-      "review_sha256": "d9af085b50359a170b5eb1ab6e31dba0c9388f143f9183add4f9eedf885bea8c"
+      "reviewed_at": "2026-10-14",
+      "review_sha256": "5f261a2ca6f6fb3e2c3dc22661615ac6fb03be355ae4adf7d1a062879054e610"
     },
     {
       "path": "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.01-api-design-patterns.md",
@@ -4437,12 +4443,21 @@
       "path": "30-architecture/30.1-design-patterns/03-structural/30.1.3.03-decorator.md",
       "group": "30-architecture/30.1-design-patterns/03-structural",
       "title": "Decorator Pattern",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "493bc033dc5def70ce5003c0c94998add03be9ec2aa276690fa7c0d654e91ff7",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Why can adding the same fee and discount produce different results, and what contract must every wrapper preserve?",
+      "disposition": "Reframed the chapter around a price-order surprise and the exact GoF definition. Replaced repeated wrapper guidance with one flow covering ordering, authorization/cache hits, retries/idempotency, error policy, async and stream lifecycles. Clarified the distinction between GoF object composition and TypeScript declaration decorators; updated Structural INDEX and REVISION.",
+      "validation": [
+        "Re-read in structural-pattern order with the INDEX and REVISION companion.",
+        "Fresh-reader checks followed the price trace and confirmed the cache/auth, retry and TypeScript boundaries. A second fresh read confirmed the GoF source attribution, compiler-mode distinction and async completion/rejection wording; the redundant trace prose was shortened.",
+        "Verified the textbook wording in the publisher-hosted O\u2019Reilly excerpt and checked TypeScript 5.0 documentation for the newer and legacy decorator conventions.",
+        "The fenced TypeScript price example passed strict TypeScript 7.0.2 compilation and runtime output assertions, including the exact binary floating-point result.",
+        "All 30 repository verification gates passed; standalone links checked 10,801 links and 152 anchors with no failures; the citation baseline remained at 2,518 URLs with no drift.",
+        "Ruby 3.4 locked-bundle production Jekyll build and rendered-heading check passed; git diff --check passed."
+      ],
+      "reviewed_at": "2026-10-14",
+      "review_sha256": "f7b69f052b1ece2a0b4d5f82648f98d16cca0ab8e1f08902b7c88fb79c4d869e"
     },
     {
       "path": "30-architecture/30.1-design-patterns/03-structural/30.1.3.04-proxy.md",

@@ -100,14 +100,14 @@ Source: [Decorators](10.2.4.03-decorators.md)
 **Definition**
 
 1. **Q:** Which compiler choice determines the decorator calling convention?
-   **A:** Enabling `experimentalDecorators` selects the legacy convention. With it disabled, TypeScript 5.0 and later use the standard ECMAScript decorator convention for supported class elements.
+   **A:** Enabling `experimentalDecorators` selects the legacy convention. With it disabled, TypeScript 5.0 and later use the newer TC39-proposal-based convention for supported class elements.
 
 **How It Works**
 
 2. **Q:** Why does registering a parameter token not inject a value by itself?
    **A:** Registration records which argument position needs which dependency. A container must read that record and construct the class with resolved arguments.
 
-3. **Q:** How does the standard `bound` decorator preserve a receiver for detached calls?
+3. **Q:** How does a newer-convention `bound` decorator preserve a receiver for detached calls?
    **A:** It schedules an instance initializer that replaces the public method with a bound function. Each new instance therefore receives its own function linked to that instance. Reading the final method by name also preserves replacements made by stacked decorators.
 
 **Code Examples**

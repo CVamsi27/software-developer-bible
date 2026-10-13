@@ -48,7 +48,7 @@ Source: [Decorator Pattern](30.1.3.03-decorator.md)
 
 **Q:** What invariant lets multiple decorators compose around one component?
 
-**A:** Each exposes the component's expected interface while delegating and adding behavior. Ordering can still change semantics and should be explicit.
+**A:** Each exposes the component's expected contract while delegating and adding behavior. A wrapper may propagate, transform or handle errors, but must keep the service's promises; ordering can change semantics and should be explicit.
 
 **Q:** Trace a base price 10 through discount 20% then fee 2, and through the reversed wrappers.
 

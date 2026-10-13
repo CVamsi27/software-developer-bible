@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2517,
+ "url_count": 2518,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -3258,8 +3258,7 @@
    "10-frontend/10.5-form-handling/10.5.04-tanstack-form.md"
   ],
   "https://github.com/tc39/proposal-decorators": [
-   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.03-decorators.md",
-   "30-architecture/30.1-design-patterns/03-structural/30.1.3.03-decorator.md"
+   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.03-decorators.md"
   ],
   "https://github.com/tc39/proposals/blob/main/finished-proposals.md": [
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md"
@@ -6832,7 +6831,6 @@
    "30-architecture/30.1-design-patterns/02-creational/30.1.2.01-singleton.md",
    "30-architecture/30.1-design-patterns/02-creational/30.1.2.02-factory-method.md",
    "30-architecture/30.1-design-patterns/02-creational/30.1.2.03-builder.md",
-   "30-architecture/30.1-design-patterns/03-structural/30.1.3.03-decorator.md",
    "30-architecture/30.1-design-patterns/03-structural/30.1.3.04-proxy.md",
    "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.01-strategy.md",
    "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.02-observer.md",
@@ -7380,6 +7378,9 @@
   ],
   "https://www.oreilly.com/library/view/building-microservices/9781491950340/": [
    "20-backend/20.6-microservices/04-resilience/20.6.4.02-bulkhead-pattern.md"
+  ],
+  "https://www.oreilly.com/library/view/design-patterns-explained/0201715945/0201715945_ch15lev1sec3.html": [
+   "30-architecture/30.1-design-patterns/03-structural/30.1.3.03-decorator.md"
   ],
   "https://www.oreilly.com/library/view/design-patterns-explained/0321247140/ch06.html": [
    "30-architecture/30.1-design-patterns/03-structural/30.1.3.02-facade.md"
@@ -8283,7 +8284,8 @@
    "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.01-generics.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-0.html#decorators": [
-   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.03-decorators.md"
+   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.03-decorators.md",
+   "30-architecture/30.1-design-patterns/03-structural/30.1.3.03-decorator.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-2.html#decorator-metadata": [
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.03-decorators.md"

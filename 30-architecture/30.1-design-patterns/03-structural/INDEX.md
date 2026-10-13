@@ -28,7 +28,7 @@ Inheritance couples a subtype to a base contract and implementation. Structural 
 | --: | --------- | -------- | ---------- | ------------ | --- | --- |
 | 1 | [Adapter](30.1.3.01-adapter.md) | Translate an existing interface to the client's contract | 3rd-party SDK, legacy integration | Refactoring both sides already preserves compatibility | Important | Foundational |
 | 2 | [Facade](30.1.3.02-facade.md) | Simplify common access to a complex subsystem | Library/SDK, multi-subsystem workflow | Single subsystem, already simple | Important | Specialized |
-| 3 | [Decorator](30.1.3.03-decorator.md) | Add behavior dynamically | Cross-cutting concerns (logging, auth, caching) | Wrapper order obscures the contract | Important | Specialized |
+| 3 | [Decorator](30.1.3.03-decorator.md) | Add a responsibility around a component | Per-instance logging, metrics or transformation | Wrapper order obscures the contract | Important | Specialized |
 | 4 | [Proxy](30.1.3.04-proxy.md) | Controlled access (lazy, protection, remote, caching) | Image/DB lazy loading, RBAC checks, network stubs | Direct access is fine | Important | Specialized |
 | 5 | [Module](30.1.3.05-module-pattern.md) | Encapsulation at the file level | File/package visibility boundaries | N/A | Important | Specialized |
 | 6 | [Composite](30.1.3.06-composite.md) | Tree structures, treat part-whole uniformly | File system, UI tree, org chart, AST | Flat structures, no recursion | Important | Specialized |
@@ -78,7 +78,7 @@ These three look similar — they all wrap an object — but intent differs:
 | Property | Adapter | Decorator | Proxy |
 | -- | --------- | ----------- | -------- |
 | **Intent** | Make incompatible interface work | Add new behavior | Control access |
-| **Interface** | Changes the interface | Keeps or extends the interface | Keeps the interface |
+| **Interface** | Translates the interface | Preserves the component contract | Preserves the subject contract |
 | **Call-path decision** | Translate the required contract | Delegate or short-circuit under the component promise | Gate, delay, route, or reuse under the subject promise |
 | **Knows about clients** | No | No | Usually not, but can (auth proxy) |
 | **Example** | Wrap Stripe API in your `PaymentProvider` | Wrap a service with a logging object | Wrap a DB row for lazy loading |

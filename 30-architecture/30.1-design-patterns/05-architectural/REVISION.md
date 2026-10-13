@@ -38,6 +38,14 @@ Source: [CQRS & Dependency Injection](30.1.5.02-cqrs-di.md)
 
 **A:** The command trims and validates the name, then invokes the supplied write adapter. The query invokes the supplied read adapter. The visibility guarantee follows that store and transaction contract.
 
+**Q:** What does constructor injection solve if reads and writes still use one model?
+
+**A:** Injection separates dependency construction from use: the composition root chooses implementations and passes them to the handlers. The read and write contracts can remain together because CQRS is a separate decision.
+
+**Q:** Why can a TypeScript container not resolve an interface by its name at runtime?
+
+**A:** The compiler erases interfaces. Register a runtime class, symbol or other explicit token with the implementation at the composition root; keep the container optional when direct wiring is clearer.
+
 **Q:** What changes when details uses an asynchronous projection?
 
 **A:** Define write-to-projection propagation, durable progress, duplicates and read-after-write behavior. Return accepted state, use an authoritative read or wait for a known projection version when required.

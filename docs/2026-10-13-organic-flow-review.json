@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 312,
+    "revised": 313,
     "unchanged": 80,
-    "pending": 128,
-    "reviewed": 392,
+    "pending": 127,
+    "reviewed": 393,
     "topic_chapters": 520
   },
   "entries": [
@@ -4816,12 +4816,20 @@
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.02-cqrs-di.md",
       "group": "30-architecture/30.1-design-patterns/05-architectural",
       "title": "CQRS & Dependency Injection",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "0b78487153a2a06fa060074d64c42c4fc20d37d2875d5e8ba52b6bacedc979a5",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How should a write receipt, a screen-shaped read projection and injected adapters work together without adding needless infrastructure?",
+      "disposition": "Reframed the product rename/read decision, separated the textbook definitions, and traced distinct command and query contracts through injected adapters. Clarified atomic outbox capture, projection/checkpoint consistency, freshness choices, TypeScript runtime tokens and decorator modes; added focused DI questions to the revision companion.",
+      "validation": [
+        "Checked Fowler CQRS and Dependency Injection definitions and official TypeScript 5.0/5.2 decorator documentation; all cited URLs already existed in the external-link baseline.",
+        "The fenced TypeScript example compiled with TypeScript 5.9.3 in strict mode targeting ES2022.",
+        "Reviewed the chapter with its architectural INDEX and REVISION companion; added retrieval questions that distinguish DI from CQRS and cover runtime registration tokens.",
+        "All 30 repository verification gates passed. Standalone links checked 10,797 links and 152 anchors with zero failures; citation baseline had 0 additions or removals at 2,526 URLs.",
+        "Ruby 3.4 locked-bundle production Jekyll build, site-wide rendered-heading check, focused chapter heading/content/no-Liquid check and git diff --check passed."
+      ],
+      "reviewed_at": "2026-10-14",
+      "review_sha256": "bf81c102b0209e1836263001707eff030e48a3c5805c8c1551b0eaca2aebb691"
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.03-event-sourcing.md",

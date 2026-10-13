@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 313,
+    "revised": 314,
     "unchanged": 80,
-    "pending": 127,
-    "reviewed": 393,
+    "pending": 126,
+    "reviewed": 394,
     "topic_chapters": 520
   },
   "entries": [
@@ -4835,12 +4835,20 @@
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.03-event-sourcing.md",
       "group": "30-architecture/30.1-design-patterns/05-architectural",
       "title": "Event Sourcing Pattern",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "9e8204f2377453ef129f4aecb641e73d85b233953216ad6b4074931f6029b093",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What must remain true when a versioned account stream is replayed and projected for readers?",
+      "disposition": "Opened with a disputed balance and defined replay in reader language before the account reducer. Made stream envelopes, per-stream order, atomic expected-version append, command idempotency, domain versus integration events, snapshot limits, projection/checkpoint recovery, event corrections, schema evolution and retention part of one lifecycle.",
+      "validation": [
+        "Verified Fowler's event-sourcing definition and current Microsoft guidance on the pattern and its schema/retention tradeoffs; references already existed in the external-link baseline.",
+        "The fenced TypeScript example compiled with TypeScript 5.9.3 in strict mode targeting ES2022. Runtime assertions covered the 70 balance, deposits before opening, zero deposits and overdrafts.",
+        "Reviewed with the architectural INDEX and REVISION companion; added retrieval questions on projector recovery and stable integration-event contracts.",
+        "All 30 repository gates passed, including freshness, template, link-baseline and writer fixed-point checks. Standalone links checked 10,797 links and 152 anchors with zero failures; citation baseline had no drift at 2,526 URLs.",
+        "Ruby 3.4 locked-bundle production Jekyll build, site-wide rendered-heading check, focused chapter heading/content/no-Liquid check and git diff --check passed."
+      ],
+      "reviewed_at": "2026-10-14",
+      "review_sha256": "1625aa39e8a7f05a240a2b3a105d6155316bb737994b9ce1df89b064ddbd1417"
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.04-saga.md",

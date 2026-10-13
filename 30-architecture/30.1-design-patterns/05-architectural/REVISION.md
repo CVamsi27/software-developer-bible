@@ -66,6 +66,14 @@ Source: [Event Sourcing Pattern](30.1.5.03-event-sourcing.md)
 
 **A:** Only an atomic expected-version append can accept the first without losing concurrency evidence. The other reloads and reevaluates; blindly retrying an obsolete accepted decision is unsafe.
 
+**Q:** A projector writes a read-model row, then crashes before saving its checkpoint. What must recovery guarantee?
+
+**A:** Commit projection state and its checkpoint atomically when possible. Otherwise make replay safe through idempotent or version-checked updates; advancing progress before state is durable can lose work.
+
+**Q:** Why should an aggregate's stored domain events not automatically become public integration messages?
+
+**A:** Domain events serve aggregate reconstruction and may evolve with internal rules. Publish selected facts through a durable subscription or outbox as stable, versioned contracts, and make consumers safe to retry.
+
 ## Saga Pattern
 
 Source: [Saga Pattern](30.1.5.04-saga.md)

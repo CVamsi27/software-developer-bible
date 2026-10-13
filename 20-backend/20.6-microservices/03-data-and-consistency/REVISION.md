@@ -146,6 +146,10 @@ Sources: [event sourcing](20.6.3.03-event-sourcing.md), [CQRS](20.6.3.04-cqrs.md
 
 **A:** It can under a validated complete-state contract. A delta consumer cannot generally skip eleven because its missing operation may change the result.
 
+**Q:** Why should a full-state projection reject a different payload claiming an already stored version?
+
+**A:** A repeated version is safe only when it describes the same immutable state. A divergent payload signals a producer, ordering or data-integrity conflict and must not be silently treated as an ordinary duplicate.
+
 **Q:** Why must a lagging payment view not trigger another charge?
 
 **A:** Read-model lag is not evidence of rejected payment. Query authoritative status or reconcile the original stable operation identity before deciding on another effect.

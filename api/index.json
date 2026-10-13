@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "e3b506ab2958b6a9f24f46da5bd958247436ce89c68326e96ce15c79fa4dbaab",
+ "corpus_digest": "1c5d430a714cab18fdcb90f9224e43933862c2cb49e37ae54272b92c05bde2ca",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5276
+  "read_minutes": 5278
  },
  "chapters": [
   {
@@ -3106,7 +3106,7 @@
    "g": [
     "concept"
    ],
-   "m": 5
+   "m": 6
   },
   {
    "p": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.05-decomposing-monolith-database.html",
@@ -3129,7 +3129,7 @@
     "outbox",
     "reliability"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "20-backend/20.6-microservices/03-data-and-consistency/REVISION.html",

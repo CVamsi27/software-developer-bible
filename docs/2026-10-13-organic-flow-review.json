@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 225,
+    "revised": 231,
     "unchanged": 80,
-    "pending": 215,
-    "reviewed": 305,
+    "pending": 209,
+    "reviewed": 311,
     "topic_chapters": 520
   },
   "entries": [
@@ -3888,67 +3888,104 @@
       "path": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.01-saga-pattern.md",
       "group": "20-backend/20.6-microservices/03-data-and-consistency",
       "title": "Saga Pattern",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "c6de6e1d3358e6fa90f3ea7a1e9b0c436adcfed3d89562e1b1e36be844c9a49f",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How should an order recover when a payment timeout may hide a successful charge?",
+      "disposition": "Opened with the paid-but-unconfirmed order failure that motivates a saga, then kept compensation, uncertainty, local invariants and recovery attached to the checkout trace. Renamed the pure decision helper section so it no longer implies that the example itself persists workflow state.",
+      "validation": [
+        "Directly re-read the chapter in category learning order with INDEX.md, REVISION.md and the related microservices interview answers; verified the practical/textbook definitions, First Principles, single Summary, See Also and References.",
+        "Executed the extracted CQRS and database-change examples against stale, duplicate, tombstone and conflicting-version cases; all assertions passed.",
+        "Checked PostgreSQL PREPARE TRANSACTION, Debezium Outbox Event Router and Microsoft CQRS primary documentation; no new external citations were added.",
+        "All 30 repository gates passed; standalone links checked 10,822 local links and 149 anchors with no failures; citation baseline remained at 2,514 URLs with no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build, site-wide rendered-heading check and focused one-H1 checks for all six pages passed."
+      ]
     },
     {
       "path": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.02-distributed-transactions.md",
       "group": "20-backend/20.6-microservices/03-data-and-consistency",
       "title": "Distributed Transactions",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "9b55acc0be97cec6cbf18a6c40ac4a681da5980681dbae5415b725ae86ad26ee",
       "previous_depth_review": "reviewed",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which coordination contract fits when stock commits but a payment result is unknown?",
+      "disposition": "Opened with the concrete checkout uncertainty and tightened First Principles around choosing the invariant and atomic boundary. Preserved the distinctions among 2PC, sagas, outbox publication and local transactions.",
+      "validation": [
+        "Directly re-read the chapter in category learning order with INDEX.md, REVISION.md and the related microservices interview answers; verified the practical/textbook definitions, First Principles, single Summary, See Also and References.",
+        "Executed the extracted CQRS and database-change examples against stale, duplicate, tombstone and conflicting-version cases; all assertions passed.",
+        "Checked PostgreSQL PREPARE TRANSACTION, Debezium Outbox Event Router and Microsoft CQRS primary documentation; no new external citations were added.",
+        "All 30 repository gates passed; standalone links checked 10,822 local links and 149 anchors with no failures; citation baseline remained at 2,514 URLs with no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build, site-wide rendered-heading check and focused one-H1 checks for all six pages passed."
+      ]
     },
     {
       "path": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.03-event-sourcing.md",
       "group": "20-backend/20.6-microservices/03-data-and-consistency",
       "title": "Event Sourcing",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "5a92672990f23cc3294cd2a39d4e5f1b9ecb8c1c549c7c5824b1bad301a6e332",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What must be preserved if today’s balance must be explainable from accepted changes?",
+      "disposition": "Moved the balance-history problem ahead of the definition and made First Principles follow retention, deterministic replay and expected-version append. The full example and boundaries for snapshots, projections, schema evolution and retention remain canonical here.",
+      "validation": [
+        "Directly re-read the chapter in category learning order with INDEX.md, REVISION.md and the related microservices interview answers; verified the practical/textbook definitions, First Principles, single Summary, See Also and References.",
+        "Executed the extracted CQRS and database-change examples against stale, duplicate, tombstone and conflicting-version cases; all assertions passed.",
+        "Checked PostgreSQL PREPARE TRANSACTION, Debezium Outbox Event Router and Microsoft CQRS primary documentation; no new external citations were added.",
+        "All 30 repository gates passed; standalone links checked 10,822 local links and 149 anchors with no failures; citation baseline remained at 2,514 URLs with no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build, site-wide rendered-heading check and focused one-H1 checks for all six pages passed."
+      ]
     },
     {
       "path": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.04-cqrs.md",
       "group": "20-backend/20.6-microservices/03-data-and-consistency",
       "title": "CQRS (Command Query Responsibility Segregation)",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "d7213c041ee2fccb3b0c746661ff1010da9c1bfc4b4499d9dcfafdd5e5b7b4a9",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can write invariants and a user-facing read shape differ, and what freshness does that create?",
+      "disposition": "Opened with the order-write versus order-list decision, removed a repeated explanation, and made the full-state projection reject different payloads claiming the same version while ignoring older and identical duplicate snapshots. Reframed the ending around verifying the read contract.",
+      "validation": [
+        "Directly re-read the chapter in category learning order with INDEX.md, REVISION.md and the related microservices interview answers; verified the practical/textbook definitions, First Principles, single Summary, See Also and References.",
+        "Executed the extracted CQRS and database-change examples against stale, duplicate, tombstone and conflicting-version cases; all assertions passed.",
+        "Added a matching revision question for divergent full-state payloads claiming the same projection version; the existing interview answer remained accurate.",
+        "Checked PostgreSQL PREPARE TRANSACTION, Debezium Outbox Event Router and Microsoft CQRS primary documentation; no new external citations were added.",
+        "All 30 repository gates passed; standalone links checked 10,822 local links and 149 anchors with no failures; citation baseline remained at 2,514 URLs with no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build, site-wide rendered-heading check and focused one-H1 checks for all six pages passed."
+      ]
     },
     {
       "path": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.05-decomposing-monolith-database.md",
       "group": "20-backend/20.6-microservices/03-data-and-consistency",
       "title": "Decomposing the Monolith Database",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "aade099e4bd16984d40b2b32dda516d3e0a2d81fd85cd580874f9597f0802736",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can ownership move without a backfill overwriting newer changes or resurrecting deleted data?",
+      "disposition": "Retained the existing migration-led flow and made the worked per-key version helper distinguish stale changes, identical retries and conflicting same-version changes, including tombstones.",
+      "validation": [
+        "Directly re-read the chapter in category learning order with INDEX.md, REVISION.md and the related microservices interview answers; verified the practical/textbook definitions, First Principles, single Summary, See Also and References.",
+        "Executed the extracted CQRS and database-change examples against stale, duplicate, tombstone and conflicting-version cases; all assertions passed.",
+        "Checked PostgreSQL PREPARE TRANSACTION, Debezium Outbox Event Router and Microsoft CQRS primary documentation; no new external citations were added.",
+        "All 30 repository gates passed; standalone links checked 10,822 local links and 149 anchors with no failures; citation baseline remained at 2,514 URLs with no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build, site-wide rendered-heading check and focused one-H1 checks for all six pages passed."
+      ]
     },
     {
       "path": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.06-transactional-outbox.md",
       "group": "20-backend/20.6-microservices/03-data-and-consistency",
       "title": "Transactional Outbox Pattern",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "026569ef6600c7a3bacad5e2a99be66db82fb85a2c423ec88fce9747bfc674e1",
       "previous_depth_review": "reviewed",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What happens when business state commits but the publisher crashes before sending the event?",
+      "disposition": "Added a concrete crash opening, aligned the Prisma example with its stated schema-version contract, and clarified that event payloads need minimization, privacy, retention and erasure rules.",
+      "validation": [
+        "Directly re-read the chapter in category learning order with INDEX.md, REVISION.md and the related microservices interview answers; verified the practical/textbook definitions, First Principles, single Summary, See Also and References.",
+        "Executed the extracted CQRS and database-change examples against stale, duplicate, tombstone and conflicting-version cases; all assertions passed.",
+        "Checked PostgreSQL PREPARE TRANSACTION, Debezium Outbox Event Router and Microsoft CQRS primary documentation; no new external citations were added.",
+        "All 30 repository gates passed; standalone links checked 10,822 local links and 149 anchors with no failures; citation baseline remained at 2,514 URLs with no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build, site-wide rendered-heading check and focused one-H1 checks for all six pages passed."
+      ]
     },
     {
       "path": "20-backend/20.6-microservices/04-resilience/20.6.4.01-circuit-breaker.md",

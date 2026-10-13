@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "e81c4e5594586b7108bd91e56c806ab7d212cd3f0ca5b6d562e13637621c6293",
+ "corpus_digest": "59f66d6fd76146ce1887198fffbb56098c77c7ab27e71f99d17d84a79ce313c9",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5277
+  "read_minutes": 5280
  },
  "chapters": [
   {
@@ -4523,7 +4523,7 @@
    "g": [
     "concept"
    ],
-   "m": 5
+   "m": 6
   },
   {
    "p": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.02-retry-patterns.html",
@@ -4533,7 +4533,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.03-idempotency-keys.html",
@@ -4543,7 +4543,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.04-feature-flags-kill-switches.html",

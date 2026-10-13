@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 247,
+    "revised": 253,
     "unchanged": 80,
-    "pending": 193,
-    "reviewed": 327,
+    "pending": 187,
+    "reviewed": 333,
     "topic_chapters": 520
   },
   "entries": [
@@ -5256,67 +5256,91 @@
       "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.01-resilience-patterns.md",
       "group": "30-architecture/30.3-infra-patterns/02-failure-and-recovery",
       "title": "Resilience Patterns \u2014 Circuit Breaker, Bulkhead, Retry, Idempotency",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "341c4c367818a5861ac8ec248bf19eaed7fccf5f53bdc4156fc6db59390e2138",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do separate controls prevent one slow or failing dependency from consuming an entire service?",
+      "disposition": "Added a worker-pool/retry-storm opening, then traced admission, waiting, repeated effects and failure propagation through the pattern choices. Kept composition-specific breaker and bulkhead boundaries distinct instead of prescribing a universal wrapper order.",
+      "validation": [
+        "Re-read in section order with INDEX and REVISION; checked practical/textbook definitions, First Principles, scenario trace, boundaries, summary and cross-references.",
+        "Reviewed the six-chapter recovery flow alongside the resume-relevant retry, idempotency, outbox and incident-control material; confirmed the affected concepts have canonical companion chapters rather than repeated mechanisms.",
+        "Ran repository link, structure, freshness, definition/answer-depth and site build/render checks after editing the group."
+      ]
     },
     {
       "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.02-retry-patterns.md",
       "group": "30-architecture/30.3-infra-patterns/02-failure-and-recovery",
       "title": "Retry Patterns",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "ce7a09644b477617643bf4c403e37cb35fe58a15cb5c7b34323a5c56ebab29e5",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "When is a repeat safe and useful, and how do deadline, jitter and retry-budget limits contain its extra load?",
+      "disposition": "Added a synchronized-503 scenario to motivate classification and jitter. Preserved the bounded read-only Node fetch example and clarified that backoff, attempt caps, deadlines and process-local budgets enforce different contracts.",
+      "validation": [
+        "Re-read in section order with INDEX and REVISION; checked the operation classification, Retry-After handling, full-jitter math, deadline trace and failure caveats.",
+        "Verified Retry-After syntax against RFC 9110 and checked that the example labels GET as the intended read-only contract, keeps the timeout through response-body consumption, and does not claim remote cancellation.",
+        "Ran repository link, freshness, code-whitespace and example/template gates after editing the group."
+      ]
     },
     {
       "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.03-idempotency-keys.md",
       "group": "30-architecture/30.3-infra-patterns/02-failure-and-recovery",
       "title": "Idempotency Keys",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "8da7a8eca2150930e403e9af825a6de7930ef726953d3b7159f982ce0a8231e2",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How does a retry prove it is the same authorized mutation, and where does local deduplication stop?",
+      "disposition": "Opened with a committed appointment whose response is lost; retained the transaction-level claim/effect/result example and made the receiver-side limit explicit. Updated the standards note to the current Datatracker status of draft-07, and cited the PostgreSQL isolation contract used by the concurrency explanation.",
+      "validation": [
+        "Re-read in section order with INDEX and REVISION; checked key scope, fingerprinting, transaction commit/rollback, retention expiry, external effects and the client retry example.",
+        "Verified the latest listed Idempotency-Key draft is expired with no intended RFC status and checked the READ COMMITTED/ON CONFLICT explanation against current PostgreSQL documentation.",
+        "Ran repository link, structure, cross-reference, answer-depth and freshness gates after editing the group."
+      ]
     },
     {
       "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.04-feature-flags-kill-switches.md",
       "group": "30-architecture/30.3-infra-patterns/02-failure-and-recovery",
       "title": "Feature Flags & Kill Switches",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "bace2bb1b3e3586e429bf533f99347af4bafc6e3af4c94fe188aa1ada6e837e4",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What can a kill switch stop during an incident, and what already-started effects still require reconciliation?",
+      "disposition": "Added a checkout-total regression as the entry scenario and connected flag propagation to new admissions, in-flight work, committed writes and cohort measurement. Preserved the authorization boundary and explicit stale/default behavior.",
+      "validation": [
+        "Re-read in section order with INDEX and REVISION; checked definitions, flag types, snapshot freshness, sticky audience derivation, kill-switch polarity, propagation evidence and cleanup lifecycle.",
+        "Checked that rollout percentages are not presented as statistical evidence and that flags do not substitute for server authorization or reverse completed mutations.",
+        "Ran repository link, template, prose-hygiene and rendered-heading checks after editing the group."
+      ]
     },
     {
       "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.05-backup-strategy-restore-drills.md",
       "group": "30-architecture/30.3-infra-patterns/02-failure-and-recovery",
       "title": "Backup Strategy & Restore Drills",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "1ead4c0a6dd2305ec616c299b98f6a4630d2bd7af09ee9b26f61b6606d29cbed",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What evidence shows the selected backup point can restore usable service inside the agreed recovery objectives?",
+      "disposition": "Opened with replication of a destructive delete and corrected the 3-2-1 wording to specify different media types. Kept the recovery-point/recovery-time math tied to a chosen restore target, log chain, external-effect reconciliation and one writable authority.",
+      "validation": [
+        "Re-read in section order with INDEX and REVISION; checked RPO/RTO definitions, backup representations, restore-chain conditions, throughput arithmetic, artifact verification and cutover order.",
+        "Verified the 3-2-1 wording against the cited CISA backup guidance and checked PostgreSQL PITR and S3 Object Lock mode claims against current official documentation.",
+        "Ran repository link, freshness, code-whitespace and rendered-site checks after editing the group."
+      ]
     },
     {
       "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.06-idempotency-retry-deep-dive.md",
       "group": "30-architecture/30.3-infra-patterns/02-failure-and-recovery",
       "title": "Idempotency & Retry Patterns \u2014 Deep Dive",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "47c5bb6a6513a79f8738ac63302a32bfa1696390b6e6bd8e0a4b560c81794b8a",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do operation identity and durable evidence cross API, outbox, broker, consumer and provider boundaries?",
+      "disposition": "Added a relay-ack/provider-timeout scenario and organized the trace by each authority\u2019s commit boundary. Preserved distinct API, relay, inbox, provider, ordering, DLQ and replay contracts without duplicating the canonical SQL or retry implementation.",
+      "validation": [
+        "Re-read in section order with INDEX and REVISION; checked the end-to-end failure trace, stable identities, effect/ack order, replay horizon and injected-failure matrix.",
+        "Cross-checked the PostgreSQL isolation reference and verified that external-provider timeouts and DLQ replay are described as uncertain outcomes rather than proof of failure.",
+        "Ran repository cross-reference, duplication, definition/answer-depth, link and rendered-heading checks after editing the group."
+      ]
     },
     {
       "path": "30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.md",

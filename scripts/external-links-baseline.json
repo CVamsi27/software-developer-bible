@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2531,
+ "url_count": 2532,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -2612,9 +2612,6 @@
   ],
   "https://formik.org/docs/guides/form-submission": [
    "10-frontend/10.5-form-handling/10.5.03-formik.md"
-  ],
-  "https://fulloo.info/Documents/CoplienReenskaugASA2012.pdf": [
-   "30-architecture/30.1-design-patterns/05-architectural/30.1.5.08-presentation-patterns-mvc-mvp-mvvm.md"
   ],
   "https://gateway-api.sigs.k8s.io/guides/getting-started/introduction/": [
    "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.01-services-ingress.md"
@@ -5496,6 +5493,9 @@
    "10-frontend/10.3-react/01-react-internals/10.3.1.05-lifecycle.md",
    "10-frontend/10.3-react/02-core-hooks/10.3.2.02-useeffect.md"
   ],
+  "https://react.dev/learn/thinking-in-react": [
+   "30-architecture/30.1-design-patterns/05-architectural/30.1.5.08-presentation-patterns-mvc-mvp-mvvm.md"
+  ],
   "https://react.dev/learn/typescript": [
    "10-frontend/10.3-react/02-core-hooks/10.3.2.05-context-api.md"
   ],
@@ -5508,7 +5508,8 @@
   "https://react.dev/learn/you-might-not-need-an-effect": [
    "10-frontend/10.3-react/01-react-internals/10.3.1.05-lifecycle.md",
    "10-frontend/10.3-react/02-core-hooks/10.3.2.02-useeffect.md",
-   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.md"
+   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.md",
+   "30-architecture/30.1-design-patterns/05-architectural/30.1.5.08-presentation-patterns-mvc-mvp-mvvm.md"
   ],
   "https://react.dev/reference/react-dom/browser": [
    "10-frontend/10.3-react/04-modern-react/10.3.4.01-modern-hooks-react18-19.md"
@@ -8536,6 +8537,9 @@
   ],
   "https://yjs.dev/": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.22-real-time-collaboration.md"
+  ],
+  "https://zenodo.org/records/3676092/files/1979-12-MVC.pdf": [
+   "30-architecture/30.1-design-patterns/05-architectural/30.1.5.08-presentation-patterns-mvc-mvp-mvvm.md"
   ],
   "https://zipkin.io/": [
    "40-platform/40.4-observability/01-pillars/40.4.1.03-tracing.md"

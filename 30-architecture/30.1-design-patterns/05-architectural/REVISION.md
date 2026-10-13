@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Design%20Patterns-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -185,6 +185,14 @@ Source: [Presentation Patterns — MVC, MVP, MVVM](30.1.5.08-presentation-patter
 **Q:** What if an earlier asynchronous refresh completes after a newer one?
 
 **A:** Ignore or cancel obsolete results under an explicit request/version policy. Pattern names and bindings alone do not prevent stale presentation; authoritative validation remains outside this screen.
+
+**Q:** The total can be computed from current order lines. Should the view-model store another copy and update it with an Effect?
+
+**A:** No. Derive display state from the current lines during render unless it represents an independent user-editable value. Mirrored state can lag or loop; Effects are for synchronization with external systems.
+
+**Q:** What does a fake view test in passive-view MVP, and what still needs a rendered UI test?
+
+**A:** The fake verifies presenter decisions and calls such as showing USD 12.50 or an error. A rendered test still checks framework binding, formatting, accessibility and actual visible output.
 
 ## Summary
 

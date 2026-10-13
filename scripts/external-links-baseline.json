@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2529,
+ "url_count": 2531,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -4419,6 +4419,9 @@
    "30-architecture/30.1-design-patterns/05-architectural/30.1.5.02-cqrs-di.md",
    "30-architecture/30.1-design-patterns/05-architectural/30.1.5.07-service-locator-vs-dependency-injection.md"
   ],
+  "https://martinfowler.com/articles/injection.html#ServiceLocatorVsDependencyInjection": [
+   "30-architecture/30.1-design-patterns/05-architectural/30.1.5.07-service-locator-vs-dependency-injection.md"
+  ],
   "https://martinfowler.com/articles/injection.html#UsingaSingleton": [
    "30-architecture/30.1-design-patterns/02-creational/30.1.2.01-singleton.md"
   ],
@@ -8186,6 +8189,9 @@
   "https://www.typescriptlang.org/docs/handbook/2/basic-types": [
    "30-architecture/30.1-design-patterns/02-creational/30.1.2.02-factory-method.md",
    "30-architecture/30.1-design-patterns/02-creational/30.1.2.04-abstract-factory.md"
+  ],
+  "https://www.typescriptlang.org/docs/handbook/2/basic-types.html#erased-types": [
+   "30-architecture/30.1-design-patterns/05-architectural/30.1.5.07-service-locator-vs-dependency-injection.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/2/classes": [
    "30-architecture/30.1-design-patterns/01-foundations/30.1.1.03-oop-concepts.md"

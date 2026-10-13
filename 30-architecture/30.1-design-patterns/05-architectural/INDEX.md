@@ -1,6 +1,6 @@
 # Architectural Patterns
 
-> **Study time:** ≈ 49 min of reading (9 files, ~5 min average).
+> **Study time:** ≈ 50 min of reading (9 files, ~6 min average).
 > **9 files.** Modern, distributed-systems patterns plus DDD tactical design and UI architecture. These are NOT part of the original GoF set — they emerged as software engineering evolved to handle scale, distributed systems, domain-driven design, and rich frontends.
 
 [![Files](https://img.shields.io/badge/files-9-blue)](../../INDEX.md)
@@ -31,7 +31,7 @@ These show up heavily in:
 | 4 | [Saga](30.1.5.04-saga.md) | Recoverable workflows across local commits | Multi-service business flows | Single DB transaction works | Important | Specialized |
 | 5 | [DDD Tactical Patterns](30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.md) | Entities, value objects, aggregate boundaries | Complex domains with invariants to enforce | CRUD apps without business rules | Important | Specialized |
 | 6 | [Anti-Corruption Layer](30.1.5.06-anti-corruption-layer.md) | Isolate legacy/external models from your domain | Integrating legacy systems, vendors, strangler migrations | Models already share the required meaning | Important | Specialized |
-| 7 | [Service Locator vs Dependency Injection](30.1.5.07-service-locator-vs-dependency-injection.md) | How dependencies get resolved | Understanding hidden deps, choosing a wiring strategy | A broad locator hides fixed requirements | Important | Foundational |
+| 7 | [Service Locator vs Dependency Injection](30.1.5.07-service-locator-vs-dependency-injection.md) | Direct collaborator supply vs on-demand lookup | Making fixed requirements visible or selecting an approved capability at runtime | A whole-container lookup hides fixed requirements | Important | Foundational |
 | 8 | [Presentation Patterns MVC/MVP/MVVM](30.1.5.08-presentation-patterns-mvc-mvp-mvvm.md) | Separating UI state, logic, and rendering | Frontend architecture discussions and refactors | Trivial static UIs | Important | Specialized |
 
 ---

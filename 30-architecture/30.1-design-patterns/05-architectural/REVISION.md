@@ -154,6 +154,10 @@ Source: [Service Locator vs Dependency Injection](30.1.5.07-service-locator-vs-d
 
 **A:** The required dependencies appear in the constructor contract. Locator lookups hide them in runtime behavior and can defer missing-dependency errors.
 
+**Q:** If a report receives a registry in its constructor and calls `registry.orders()`, is it using DI or Service Locator?
+
+**A:** Both ideas are present: the registry was injected, while the report uses Service Locator to obtain `Orders`. Compare direct `Orders` injection with lookup at the point of use; the patterns are not mutually exclusive.
+
 **Q:** Trace the two reports returning count 3.
 
 **A:** LocatedReport requests Orders from its injected registry during run. InjectedReport calls its already supplied Orders. Both can use the same fake and neither needs a global.
@@ -161,6 +165,10 @@ Source: [Service Locator vs Dependency Injection](30.1.5.07-service-locator-vs-d
 **Q:** What if dependency construction is lazy or selection depends on an uploaded format?
 
 **A:** Lazy injection can fail after startup. Runtime format selection can justify a narrow injected registry with explicit unknown-name behavior; do not hide unrelated fixed dependencies in a whole-container lookup.
+
+**Q:** Why is a runtime-selected file parser a stronger case for a registry than a database client?
+
+**A:** The file's declared format can select one implementation from an allowlist at runtime. A database client is usually fixed by application configuration, so inject that requirement directly and keep environment-specific construction at the composition boundary.
 
 ## Presentation Patterns — MVC, MVP, MVVM
 

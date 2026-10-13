@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 317,
+    "revised": 318,
     "unchanged": 80,
-    "pending": 123,
-    "reviewed": 397,
+    "pending": 122,
+    "reviewed": 398,
     "topic_chapters": 520
   },
   "entries": [
@@ -4910,12 +4910,20 @@
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.07-service-locator-vs-dependency-injection.md",
       "group": "30-architecture/30.1-design-patterns/05-architectural",
       "title": "Service Locator vs Dependency Injection",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "c6a9680ee27e648be9ff30049e6164f214825b4e8181f2f4367918ff9aba84bb",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "If a consumer receives a registry in its constructor, is it using Dependency Injection, Service Locator, or both?",
+      "disposition": "Opened with two equivalent reports and clarified that an injected registry combines DI for the registry with Service Locator for the looked-up collaborator. Reworked the definition and code explanation around direct Orders injection versus lookup, corrected container-registration and erased-TypeScript claims, added runtime-selection and lifetime boundaries, and expanded companion retrieval questions.",
+      "validation": [
+        "Checked Fowler's original comparison, which explicitly says DI and Service Locator can be combined, the current NestJS provider and scope guidance, and the TypeScript Handbook's erased-types explanation. Verified both direct-page anchors and added the TypeScript source to the external-link baseline.",
+        "The fenced TypeScript example compiled with TypeScript 5.9.3 in strict mode targeting ES2022 and ran successfully; both paths returned 3.",
+        "Reviewed the architectural INDEX and REVISION companion; questions now test how an injected locator composes with DI and when runtime capability selection justifies a narrow registry.",
+        "All 30 repository verification gates passed; standalone links checked 10,797 links and 152 anchors with zero failures, and the external citation baseline had no drift after its update.",
+        "Ruby 3.4 locked-bundle production Jekyll build, rendered-heading unit tests and site-wide rendered-heading checks passed; this page renders one authored H1 and no unrendered Liquid markers."
+      ],
+      "reviewed_at": "2026-10-14",
+      "review_sha256": "27793c912a68e7bc8292b0d55f40844cbd3a4b8535352523b3e565f7c618e2f9"
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.08-presentation-patterns-mvc-mvp-mvvm.md",

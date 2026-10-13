@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 298,
+    "revised": 299,
     "unchanged": 80,
-    "pending": 142,
-    "reviewed": 378,
+    "pending": 141,
+    "reviewed": 379,
     "topic_chapters": 520
   },
   "entries": [
@@ -4536,12 +4536,21 @@
       "path": "30-architecture/30.1-design-patterns/03-structural/30.1.3.08-flyweight.md",
       "group": "30-architecture/30.1-design-patterns/03-structural",
       "title": "Flyweight Pattern",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "7efab2c89eaaba3ab6e689cecc26cecfdb733380098e3a92b9ca70b21d8c8593",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which parts of a tree placement can be shared without sharing its position, identity, or resource lifetime?",
+      "disposition": "Kept the tree-placement trace, complete appearance key, illustrative memory arithmetic and resource-lifetime boundaries. Replaced the paraphrased textbook definition with the canonical GoF intent, clarified WeakMap key types, linked publisher and MDN sources, and removed the redundant SourceMaking reference. The existing structural revision questions already trace the key and lifetime boundaries.",
+      "validation": [
+        "Fresh-reader review confirmed the state split, identity distinction, complete key, memory arithmetic and lifecycle caveats; it found no concrete flow or accuracy defect.",
+        "Verified the GoF intent in the publisher-hosted O\u2019Reilly chapter and WeakMap key/lifetime behavior in current MDN documentation.",
+        "The fenced TypeScript example passed strict TypeScript 7.0.2 NodeNext compilation; Node assertions confirmed key identity, independent placement state and live references after factory clear.",
+        "Read-time, alignment, citation-baseline, search-index and count writers ran; the fixpoint check confirmed generated writers leave the corpus stable.",
+        "All 30 repository verification gates passed; standalone links checked 10,797 links and 152 anchors with 0 failures; citation-baseline diff had 0 added or removed URLs at 2,517.",
+        "Ruby 3.4 locked-bundle production Jekyll build and rendered-heading check passed; git diff --check passed."
+      ],
+      "reviewed_at": "2026-10-14",
+      "review_sha256": "abc4089442b9da9b2e7744a30f2c0b83faa919495144461dd2ec2d1f9e6de692"
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.01-strategy.md",

@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "8bf6e912243c29ef825f59fd1863abbcad8ad3004af70b50bd4a11be08294297",
+ "corpus_digest": "d24fda8c7ae99fb4773bb51eec233911e224d9120df193326a003da42aff18c9",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5277
+  "read_minutes": 5274
  },
  "chapters": [
   {
@@ -4007,11 +4007,11 @@
     "patterns",
     "theory"
    ],
-   "m": 14
+   "m": 15
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.html",
-   "t": "Capacity Planning & Back-of-Envelope Estimation",
+   "t": "Capacity Planning and Back-of-the-Envelope Estimation",
    "s": "System Design",
    "c": "Architecture",
    "g": [
@@ -4019,7 +4019,7 @@
     "scaling",
     "theory"
    ],
-   "m": 12
+   "m": 8
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.13-backpressure-and-flow-control.html",

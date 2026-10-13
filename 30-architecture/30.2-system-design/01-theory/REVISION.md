@@ -228,9 +228,9 @@ Source: [Architecture Patterns — Monolith, Microservices, Event-Driven, Hexago
 
 **A:** A cohesive domain or operational ownership boundary whose independent evolution is worth its network, consistency and deployment costs.
 
-**Q:** Trace an HTTP request through a hexagonal stock reservation.
+**Q:** Trace a web request through a hexagonal stock reservation.
 
-**A:** The HTTP adapter calls a use case, which applies rules and uses a repository port. The PostgreSQL adapter implements that port; source dependency points toward the interface even though runtime calls reach the adapter.
+**A:** The web adapter calls a use case, which applies rules and uses a repository port. The PostgreSQL adapter implements that port; source dependency points toward the interface even though runtime calls reach the adapter.
 
 **Q:** What does an in-memory adapter test fail to establish?
 
@@ -252,6 +252,10 @@ Source: [Capacity Planning & Back-of-Envelope Estimation](30.2.1.12-capacity-pla
 **Q:** A tested instance serves 1K/s, demand is 35K/s, and one instance may fail. What is the minimum under those assumptions?
 
 **A:** 36 instances keep 35 tested instances after one loss. Zone-loss, autoscaling delay, traffic skew and downstream limits can require a different topology or more headroom.
+
+**Q:** In the same example, what capacity survives losing any one of three equal zones?
+
+**A:** Place 18 instances in each zone, 54 total. Losing one zone leaves 36 instances, enough for the 35K/s tested demand under the stated assumptions.
 
 
 ## Backpressure & Flow Control

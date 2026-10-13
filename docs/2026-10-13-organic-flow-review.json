@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 270,
+    "revised": 272,
     "unchanged": 80,
-    "pending": 170,
-    "reviewed": 350,
+    "pending": 168,
+    "reviewed": 352,
     "topic_chapters": 520
   },
   "entries": [
@@ -4832,23 +4832,35 @@
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.11-architecture-patterns.md",
       "group": "30-architecture/30.2-system-design/01-theory",
       "title": "Architecture Patterns and Boundaries",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "cf1334aa0e0651535fce8d00c1dbd3386f0e4ff89dc774c8fbfd30a78d288191",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which boundary should change independently, and what consistency, failure and operating costs follow?",
+      "disposition": "Reorganized the chapter by deployment, communication, internal dependency and extension boundaries. Opened with an order/payment uncertainty, clarified ownership and event contracts, removed repeated anti-pattern/comparison guidance, and made migration advice conditional on independent operation.",
+      "validation": [
+        "Re-read in learning order with the parent and category INDEX plus the REVISION companion; checked both definitions, First Principles, scenario-to-mechanism flow, trade-offs, Summary, See Also and references.",
+        "Checked the capacity arithmetic and units: 10 million users times 100 requests/day gives about 11,600 average and 35,000 peak requests/s; one year of the assumed writes is 36.5 TB logical and 109.5 TB at three stored copies; payload traffic is about 385 MB/s; CPU sizing is 280 provisioned cores at the stated target; instance-loss and three-zone-loss counts are 36 and 54.",
+        "All 30 scripts/verify.sh gates passed. The standalone link check covered 10,823 links and 150 anchors with no failures; the citation baseline had zero additions or removals at 2,514 URLs.",
+        "Ruby 3.4 production Jekyll build and site-wide rendered-heading check passed; each reviewed page rendered with exactly one H1.",
+        "git diff --check passed."
+      ]
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md",
       "group": "30-architecture/30.2-system-design/01-theory",
-      "title": "Capacity Planning & Back-of-Envelope Estimation",
-      "status": "pending",
+      "title": "Capacity Planning and Back-of-the-Envelope Estimation",
+      "status": "revised",
       "baseline_sha256": "7a02ce2e6f77510a890ae1652172e2447c686d7288384acfce88a3da6c49973b",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What peak workload and failure target drive capacity, and which measured bottleneck can invalidate the estimate?",
+      "disposition": "Replaced four disconnected product-scale scenarios and contradictory CPU/instance figures with one auditable workload trace. Corrected Little\u2019s Law boundary and units, separated replica from backup capacity, and added cache, network, CPU, instance-loss and zone-loss calculations plus validation and cost checks.",
+      "validation": [
+        "Re-read in learning order with the parent and category INDEX plus the REVISION companion; checked both definitions, First Principles, scenario-to-mechanism flow, trade-offs, Summary, See Also and references.",
+        "Checked the capacity arithmetic and units: 10 million users times 100 requests/day gives about 11,600 average and 35,000 peak requests/s; one year of the assumed writes is 36.5 TB logical and 109.5 TB at three stored copies; payload traffic is about 385 MB/s; CPU sizing is 280 provisioned cores at the stated target; instance-loss and three-zone-loss counts are 36 and 54.",
+        "All 30 scripts/verify.sh gates passed. The standalone link check covered 10,823 links and 150 anchors with no failures; the citation baseline had zero additions or removals at 2,514 URLs.",
+        "Ruby 3.4 production Jekyll build and site-wide rendered-heading check passed; each reviewed page rendered with exactly one H1.",
+        "git diff --check passed."
+      ]
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.13-backpressure-and-flow-control.md",

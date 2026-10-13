@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "50a370d27a12a74f11d22d33be13a4d2fd6557b34c2f0a580d837809a94808af",
+ "corpus_digest": "aa77cc735ea5eef98b103a680ebfff842a367249858a226a2b60c25a795fb034",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5268
+  "read_minutes": 5248
  },
  "chapters": [
   {
@@ -4055,7 +4055,7 @@
    "g": [
     "guide"
    ],
-   "m": 8
+   "m": 6
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.html",
@@ -4078,7 +4078,7 @@
     "distributed-systems",
     "theory"
    ],
-   "m": 29
+   "m": 10
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.18-outbox-and-cdc.html",
@@ -4167,7 +4167,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 11
+   "m": 12
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.01-url-shortener.html",

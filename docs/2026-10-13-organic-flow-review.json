@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 274,
+    "revised": 276,
     "unchanged": 80,
-    "pending": 166,
-    "reviewed": 354,
+    "pending": 164,
+    "reviewed": 356,
     "topic_chapters": 520
   },
   "entries": [
@@ -4900,23 +4900,33 @@
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.15-how-to-approach.md",
       "group": "30-architecture/30.2-system-design/01-theory",
       "title": "How to Approach Any System Design Problem",
-      "status": "pending",
-      "baseline_sha256": "0a63bd0f436f02c0b000478e949c38bd3e27fa74bf81ba8c2515862e9857cc29",
+      "status": "revised",
+      "baseline_sha256": "d3e0e0eb288c4f909656113ea97fdfe1606dc73bfb8f7f890a1c9061aca4078f",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do you turn an open-ended design prompt into a collaborative, evidence-based architecture within interview time?",
+      "disposition": "Rebuilt the chapter around one URL-shortener prompt and a 45-minute flow: clarify invariants, estimate only decision-changing load, sketch complete paths, investigate the highest-risk boundary, and close with operating evidence. Removed repeated generic mistakes, best practices, use cases and performance lists; checked the request-rate example and retained the practical/textbook definitions.",
+      "validation": [
+        "Re-read in learning order with the system-design INDEX and REVISION companion; checked the practical and textbook definitions, First Principles, single Summary, See Also and References.",
+        "Rechecked topic boundaries, arithmetic and failure contracts; revised the associated source-linked revision questions.",
+        "All 30 repository verification gates passed; standalone links checked 10,818 links and 150 anchors with 0 failures; citation baseline contains 2,509 URLs with 0 drift.",
+        "Ruby 3.4.11 production Jekyll build and rendered-heading sweep passed; each edited page renders exactly one H1."
+      ]
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.17-probabilistic-data-structures.md",
       "group": "30-architecture/30.2-system-design/01-theory",
       "title": "Probabilistic Data Structures",
-      "status": "pending",
-      "baseline_sha256": "ce99e951c4a61089f04fd0c61a8db8c5491d0c252eb767d08a03d79eb6b8d6ed",
+      "status": "revised",
+      "baseline_sha256": "982bfb01538e70d54bf57df0f1ef93305bdbf5df4a07e526fd7fbae80741b4fb",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which compact summary answers this query, what does its error mean, and how can it be merged or recovered safely?",
+      "disposition": "Reorganized Bloom, Cuckoo and XOR membership filters, HLL, Count-Min, KLL/t-digest/HDR quantile summaries and Merkle commitments by the question they answer. Removed repeated implementation sketches and use-case lists while keeping the sizing/error units, fixed-query and nonnegative-update assumptions, compatibility/merge rules, restart and exact-system boundaries. Added primary KLL and XOR references.",
+      "validation": [
+        "Re-read in learning order with the system-design INDEX and REVISION companion; checked the practical and textbook definitions, First Principles, single Summary, See Also and References.",
+        "Rechecked topic boundaries, arithmetic and failure contracts; revised the associated source-linked revision questions.",
+        "All 30 repository verification gates passed; standalone links checked 10,818 links and 150 anchors with 0 failures; citation baseline contains 2,509 URLs with 0 drift.",
+        "Ruby 3.4.11 production Jekyll build and rendered-heading sweep passed; each edited page renders exactly one H1."
+      ]
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.18-outbox-and-cdc.md",

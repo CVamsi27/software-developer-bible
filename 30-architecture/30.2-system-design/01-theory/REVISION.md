@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-11_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-12_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -307,11 +307,16 @@ Source: [How to Approach Any System Design Problem](30.2.1.15-how-to-approach.md
 
 **A:** Required invariants, access patterns and failure behavior determine storage tradeoffs. Choosing products first can produce a design that solves the wrong problem.
 
+**Q:** The interviewer adds globally unique custom aliases after you have sketched the redirect path. What should you do next?
+
+**A:** Restate the new uniqueness invariant, then trace its effect through alias creation, concurrent writes and redirect lookup. Keep unaffected parts of the design and revise only the decisions this requirement changes.
+
 ## Probabilistic Data Structures
 
 Source: [Probabilistic Data Structures](30.2.1.17-probabilistic-data-structures.md)
 
 Additional source: [Redis HyperLogLog documentation](https://redis.io/docs/latest/develop/data-types/probabilistic/hyperloglogs/)
+Additional source: [KLL quantile-sketch paper](https://arxiv.org/abs/1603.05346)
 
 **Q:** Why may a Bloom negative skip an exact read but not an authoritative uniqueness write?
 
@@ -332,6 +337,10 @@ Additional source: [Redis HyperLogLog documentation](https://redis.io/docs/lates
 **Q:** Does one HLL hash with a seven-bit rank mean eight distinct values were seen?
 
 **A:** No. Its rank updates one register's maximum. Cardinality is estimated from all registers together, with corrections for the estimator's range and implementation.
+
+**Q:** What does a KLL error of epsilon mean, and why is it not a percent error in latency?
+
+**A:** It bounds rank error by about epsilon times the number of samples, with the configured confidence. For one million observations and epsilon 0.01, the answer may be about 10,000 positions from the target rank; the latency value can differ by much more or much less than one percent.
 
 ## Outbox Pattern & Change Data Capture (CDC)
 

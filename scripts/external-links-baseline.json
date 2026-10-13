@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-13",
- "url_count": 2515,
+ "url_count": 2509,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -124,8 +124,15 @@
   "https://argoproj.github.io/argo-rollouts/features/canary/": [
    "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.01-blue-green-canary.md"
   ],
+  "https://arxiv.org/abs/1603.05346": [
+   "30-architecture/30.2-system-design/01-theory/30.2.1.17-probabilistic-data-structures.md",
+   "30-architecture/30.2-system-design/01-theory/REVISION.md"
+  ],
   "https://arxiv.org/abs/1603.09320": [
    "20-backend/20.12-ai-engineering/20.12.03-retrieval-quality-hybrid-search-reranking.md"
+  ],
+  "https://arxiv.org/abs/1912.08258": [
+   "30-architecture/30.2-system-design/01-theory/30.2.1.17-probabilistic-data-structures.md"
   ],
   "https://arxiv.org/abs/2210.03629": [
    "20-backend/20.12-ai-engineering/20.12.04-agent-orchestration-patterns.md"
@@ -2907,9 +2914,6 @@
   "https://github.com/aws-actions/configure-aws-credentials/releases/tag/v6.3.0": [
    "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.01-github-actions.md"
   ],
-  "https://github.com/barrust/count-min-sketch": [
-   "30-architecture/30.2-system-design/01-theory/30.2.1.17-probabilistic-data-structures.md"
-  ],
   "https://github.com/ben-manes/caffeine/wiki/Efficiency": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.05-caching-patterns.md"
   ],
@@ -3215,9 +3219,6 @@
   ],
   "https://github.com/recharts/recharts/blob/main/storybook/stories/API/Accessibility.mdx": [
    "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.md"
-  ],
-  "https://github.com/redis/redis/blob/unstable/src/hyperloglog.c": [
-   "30-architecture/30.2-system-design/01-theory/30.2.1.17-probabilistic-data-structures.md"
   ],
   "https://github.com/robertLichtnow/zod-formik-adapter": [
    "10-frontend/10.5-form-handling/10.5.03-formik.md"
@@ -4347,9 +4348,6 @@
   ],
   "https://leetcode.com/tag/union-find/": [
    "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids/70.2.2.03-union-find.md"
-  ],
-  "https://lemire.me/blog/2019/12/19/xor-filters-faster-and-smaller-than-bloom-filters/": [
-   "30-architecture/30.2-system-design/01-theory/30.2.1.17-probabilistic-data-structures.md"
   ],
   "https://lerna.js.org/": [
    "40-platform/40.8-monorepo/40.8.04-monorepo-tools.md"
@@ -5738,9 +5736,6 @@
   "https://redis.io/docs/latest/commands/info/": [
    "20-backend/20.8-caching/20.8.04-interview-questions.md"
   ],
-  "https://redis.io/docs/latest/commands/pfadd/": [
-   "30-architecture/30.2-system-design/01-theory/30.2.1.17-probabilistic-data-structures.md"
-  ],
   "https://redis.io/docs/latest/commands/set/": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.28-parking-lot.md"
   ],
@@ -6322,9 +6317,6 @@
   ],
   "https://swc.rs/docs/": [
    "40-platform/40.5-build-tools/02-compilers/40.5.2.02-esbuild-swc.md"
-  ],
-  "https://systemdesign.one/bloom-filters-explained/": [
-   "30-architecture/30.2-system-design/01-theory/30.2.1.17-probabilistic-data-structures.md"
   ],
   "https://tailwindcss.com/docs": [
    "10-frontend/10.7-html-css/10.7.06-css-architecture-styling-approaches.md"
@@ -7232,9 +7224,6 @@
   "https://www.haproxy.org/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.md"
   ],
-  "https://www.hellointerview.com/": [
-   "30-architecture/30.2-system-design/01-theory/30.2.1.15-how-to-approach.md"
-  ],
   "https://www.hhs.gov/hipaa/for-professionals/covered-entities/index.html": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.10-hospital-management.md"
   ],
@@ -8002,9 +7991,6 @@
   "https://www.rfc-editor.org/rfc/rfc9114.html": [
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.md"
   ],
-  "https://www.rfc-editor.org/rfc/rfc9162.html": [
-   "30-architecture/30.2-system-design/01-theory/30.2.1.17-probabilistic-data-structures.md"
-  ],
   "https://www.rfc-editor.org/rfc/rfc9207.html": [
    "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.md",
    "20-backend/20.5-security/01-auth/REVISION.md"
@@ -8443,9 +8429,6 @@
   "https://www.webpagetest.org/": [
    "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.04-http-caching.md",
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.md"
-  ],
-  "https://www.youtube.com/c/ByteByteGo": [
-   "30-architecture/30.2-system-design/01-theory/30.2.1.15-how-to-approach.md"
   ],
   "https://www.youtube.com/playlist?list=PLui3EUkuMTPgZcV0QhQrOcwMPcBCcd_Q1": [
    "docs/reference-coverage-audit.md"

@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 294,
+    "revised": 295,
     "unchanged": 80,
-    "pending": 146,
-    "reviewed": 374,
+    "pending": 145,
+    "reviewed": 375,
     "topic_chapters": 520
   },
   "entries": [
@@ -4463,12 +4463,21 @@
       "path": "30-architecture/30.1-design-patterns/03-structural/30.1.3.04-proxy.md",
       "group": "30-architecture/30.1-design-patterns/03-structural",
       "title": "Proxy Pattern",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "8e5196d28c02a56362d75b4d5095621cce7f223a561722a2dd278cee11de07d6",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What does a proxy promise about access, subject creation, failure and lifecycle for each caller?",
+      "disposition": "Rebuilt the chapter around one lazy image trace, replacing repeated need/cost and access-policy sections with a focused contract table. Added the exact textbook intent with a publisher excerpt, clarified cache-hit versus delegated work, and kept authorization, remote retry, async initialization, disposal and JavaScript Proxy boundaries explicit. Added an authorization/cache retrieval question.",
+      "validation": [
+        "Re-read in structural-pattern order with the INDEX and REVISION companion.",
+        "Fresh-reader review followed lazy creation, cache hit behavior, variant promises and async lifecycle; it caught the subject-work/cache-hit contradiction, which was corrected and passed focused re-check.",
+        "Verified the textbook definition against the publisher-hosted O\u2019Reilly excerpt; the linked JavaScript Proxy chapter covers language-level traps and invariants.",
+        "The fenced TypeScript example passed strict TypeScript 7.0.2 compilation and runtime assertions for metadata without loading, one lazy creation, and subject reuse.",
+        "All 30 repository verification gates passed; standalone links checked 10,799 links and 152 anchors with no failures; the citation baseline remained at 2,519 URLs with no drift.",
+        "Ruby 3.4 locked-bundle production Jekyll build and rendered-heading check passed; git diff --check passed."
+      ],
+      "reviewed_at": "2026-10-14",
+      "review_sha256": "38155c8dd97404854fdf9baf61fbcdc2bc8843eaff5efde8142b4053fc31a18f"
     },
     {
       "path": "30-architecture/30.1-design-patterns/03-structural/30.1.3.05-module-pattern.md",

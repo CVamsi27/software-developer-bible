@@ -70,6 +70,10 @@ Source: [Proxy Pattern](30.1.3.04-proxy.md)
 
 **A:** Construction stores a filename; the first display constructs and caches the real image before delegation. The second display reuses it. Metadata can be returned without loading under the common subject contract.
 
+**Q:** Why is a permission check inside an optional in-process proxy not a complete security boundary?
+
+**A:** A caller may bypass that proxy and reach the server operation directly. Enforce authorization at the authoritative boundary and ensure a cache hit cannot return protected data before permission is checked.
+
 **Q:** What happens if the synchronous subject constructor throws on first display?
 
 **A:** Assignment does not complete, so the subject remains absent and a later display attempts construction again. Define whether that retry is permitted; async initialization instead needs a shared pending attempt and lifecycle policy.

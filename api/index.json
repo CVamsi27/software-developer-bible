@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "dab8f9a8cb3b0fbae986c89c625894b9fade0805073b53577a15ebd829511236",
+ "corpus_digest": "7dabe149a27a5e3be219b6b51abe9850c7e9461fd80e3989d6c47dd29bb9a1b7",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5194
+  "read_minutes": 5196
  },
  "chapters": [
   {
@@ -3540,7 +3540,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 10
   },
   {
    "p": "30-architecture/30.1-design-patterns/03-structural/30.1.3.02-facade.html",

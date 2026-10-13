@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 291,
+    "revised": 292,
     "unchanged": 80,
-    "pending": 149,
-    "reviewed": 371,
+    "pending": 148,
+    "reviewed": 372,
     "topic_chapters": 520
   },
   "entries": [
@@ -4403,12 +4403,18 @@
       "path": "30-architecture/30.1-design-patterns/03-structural/30.1.3.01-adapter.md",
       "group": "30-architecture/30.1-design-patterns/03-structural",
       "title": "Adapter Pattern",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "d8419e9a0ad4a7a5fc5936151b9dd144a1d1d774c849c4f186396dc5697e0b0e",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can a boundary translate an existing component without changing the meaning promised to its client?",
+      "disposition": "Reframed the chapter around method/unit and profile-shape translation. Replaced the paraphrased textbook definition with the verified GoF intent; clarified object versus class adapters, stable IDs, blank/null fields, timestamp validation, and the distinction between an adapter and a broader anti-corruption layer. Updated the structural index and retrieval questions; removed redundant generic references.",
+      "validation": [
+        "Re-read in structural-pattern order with INDEX and REVISION; fresh-reader feedback prompted clearer class-adapter constraints and strict rejection of JavaScript date overflow.",
+        "Strict TypeScript 7.0.2 compilation and runtime assertions passed for unit conversion, null email preservation, blank-name fallback, and rejection of impossible, non-UTC, and unsupported-precision timestamps.",
+        "Verified the textbook intent against the publisher-hosted GoF excerpt on InformIT and confirmed the linked reference URLs.",
+        "All 30 repository gates passed; standalone links checked 10,803 links and 152 anchors with zero issues; citation baseline stayed at 2,517 URLs with no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and rendered-heading check passed; git diff --check passed."
+      ]
     },
     {
       "path": "30-architecture/30.1-design-patterns/03-structural/30.1.3.02-facade.md",

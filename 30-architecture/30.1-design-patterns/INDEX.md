@@ -1,6 +1,6 @@
 # Design Patterns — Index
 
-> **Study time:** ≈ 4 h 46 m of reading (43 files, ~7 min average).
+> **Study time:** ≈ 4 h 48 m of reading (43 files, ~7 min average).
 > **43 files — all 23 GoF patterns plus modern architectural ones, classified by GoF category and purpose.** Design patterns are reusable solutions to recurring problems in software design. The Gang of Four (GoF) formalized 23 classic patterns; we cover all 23 plus modern architectural patterns. Use the catalog to explain responsibilities and trade-offs in low-level and high-level design discussions.
 
 [![Files](https://img.shields.io/badge/files-43-blue)](../../INDEX.md)
@@ -74,7 +74,7 @@ Object creation. Decouple "how to construct" from "what to do with the construct
 ### [03 — Structural Patterns](03-structural/INDEX.md) (8 files)
 Class/object composition. Combine small pieces into larger structures while keeping them flexible.
 
-- [Adapter](03-structural/30.1.3.01-adapter.md) — bridge incompatible interfaces
+- [Adapter](03-structural/30.1.3.01-adapter.md) — translate an existing interface to the client's contract
 - [Facade](03-structural/30.1.3.02-facade.md) — simplified front for a complex subsystem
 - [Decorator](03-structural/30.1.3.03-decorator.md) — add behavior dynamically without subclassing
 - [Proxy](03-structural/30.1.3.04-proxy.md) — controlled access (lazy, protection, remote, caching)

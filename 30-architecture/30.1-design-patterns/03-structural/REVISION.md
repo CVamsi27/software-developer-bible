@@ -22,9 +22,9 @@ Source: [Adapter Pattern](30.1.3.01-adapter.md)
 
 **A:** The adapter calls `getPlaybackPosition` and divides by 1,000, returning 1.25 target seconds. The method-name translation alone would leave an incorrect unit.
 
-**Q:** What if a validated profile has no public email or an invalid creation date?
+**Q:** How does the profile adapter handle a blank display name, a null email, and an impossible UTC date such as February 30?
 
-**A:** A missing email remains `null`, preserving absence rather than inventing a value. An invalid date is rejected; mapping the shape does not verify authentication, email ownership, or an arbitrary provider timestamp format.
+**A:** A blank display name falls back to the required handle, a null email stays `null`, and the timestamp round-trip check rejects February 30 instead of allowing JavaScript to normalize it into March. Shape validation does not verify authentication or email ownership, and production code must follow the provider's documented timestamp format.
 
 ## Facade Pattern
 

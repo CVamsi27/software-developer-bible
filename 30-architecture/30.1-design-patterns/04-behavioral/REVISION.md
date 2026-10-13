@@ -134,6 +134,10 @@ Source: [Mediator Pattern](30.1.4.07-mediator.md)
 
 **A:** It can create a feedback loop. Compare before writing or distinguish event origin/version. UI enablement still does not establish server validation or permission.
 
+**Q:** Does routing field events through a message bus make it a Mediator?
+
+**A:** Not by itself. A mediator owns the interaction policy and chooses the resulting collaborator actions; a generic bus transports messages. A broker may define persistence, retries or cross-process delivery; the example only coordinates synchronous in-process calls.
+
 ## Memento Pattern
 
 Source: [Memento Pattern](30.1.4.08-memento.md)

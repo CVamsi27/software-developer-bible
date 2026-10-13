@@ -1,6 +1,6 @@
 # Behavioral Patterns
 
-> **Study time:** ≈ 1 h 5 m of reading (13 files, ~5 min average).
+> **Study time:** ≈ 1 h 6 m of reading (13 files, ~5 min average).
 > **13 files.** Object collaboration. These patterns are about algorithms and the assignment of responsibilities between objects. They characterize complex control flow that's harder to follow at runtime.
 
 [![Files](https://img.shields.io/badge/files-13-blue)](../../INDEX.md)
@@ -33,7 +33,7 @@ Creational and structural patterns are about "what" (objects) and "how" (composi
 | 4 | [State](30.1.4.04-state.md) | Keep legal lifecycle transitions explicit | Orders, requests, protocol states | One state-dependent branch with no evolving lifecycle | Important | Specialized |
 | 5 | [Template Method](30.1.4.05-template-method.md) | Skeleton + customizable steps | Algorithm with varying steps | Algorithm is fully fixed | Important | Specialized |
 | 6 | [Iterator](30.1.4.06-iterator.md) | Sequential access without exposing internals | Named tree traversals, lazy pipelines, cursor-backed reads | Existing iteration already satisfies the traversal contract | Important | Specialized |
-| 7 | [Mediator](30.1.4.07-mediator.md) | Central authority for object communication | Many-to-many object interactions, dialog boxes | Few objects, direct refs are fine | Important | Specialized |
+| 7 | [Mediator](30.1.4.07-mediator.md) | Coordinate interactions within a cohesive group | Peer dependencies spread across a form or workflow | Few participants with clear, stable direct calls | Important | Specialized |
 | 8 | [Memento](30.1.4.08-memento.md) | Capture/restore internal state | Undo and recoverable snapshots | No history needed | Important | Specialized |
 | 9 | [Command](30.1.4.09-command.md) | Encapsulate a request as an object | Undo/redo, queueing, macro recording, transactional ops | Simple one-shot operations | Important | Specialized |
 | 10 | [Visitor](30.1.4.10-visitor.md) | Add operations without modifying classes | ASTs, compilers, complex object structures | Class hierarchy is unstable | Important | Specialized |

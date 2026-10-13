@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 305,
+    "revised": 306,
     "unchanged": 80,
-    "pending": 135,
-    "reviewed": 385,
+    "pending": 134,
+    "reviewed": 386,
     "topic_chapters": 520
   },
   "entries": [
@@ -4676,12 +4676,21 @@
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.07-mediator.md",
       "group": "30-architecture/30.1-design-patterns/04-behavioral",
       "title": "Mediator Pattern",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "4352139dc0c398dccab8c6b6d818d24ad79662821d141c0e03931817a7a25e68",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can a group of components coordinate a shared interaction without each component owning its peers?",
+      "disposition": "Moved the exact title/body form problem before the definition and aligned it with the code trace. Replaced the paraphrased textbook line with the concise GoF intent from a publisher-hosted excerpt. Explained how coupling moves to a coordinator, narrowed the mediator-versus-bus distinction to the guarantees each example actually provides, and aligned the learning index and revision question.",
+      "validation": [
+        "Fresh-reader review confirmed the opening, GoF definition, three logged states, and companion alignment; clarified that the local example has synchronous in-process call ordering but no broker-style persistence, retries, or cross-process delivery.",
+        "Verified the GoF intent in the O\u2019Reilly-hosted chapter and checked the Refactoring Guru explanation; the citation baseline remained stable at 2,525 URLs.",
+        "The fenced TypeScript example compiled with TypeScript 7.0.2 under strict settings and emitted the documented initial, title-only and completed states.",
+        "Read-time, alignment, citation-baseline, search-index and count writers ran; the fixed-point check confirmed all 10 repair writers leave the corpus stable.",
+        "All 30 repository verification gates passed. Standalone links checked 10,797 local links and 152 anchors with no failures; citation-baseline diff had 0 added or removed URLs at 2,525.",
+        "Ruby 3.4 locked-bundle production Jekyll build, rendered-heading check and git diff --check passed."
+      ],
+      "reviewed_at": "2026-10-14",
+      "review_sha256": "305bf39b389f27cd365e29a4bb042c2e4c5d173d4810c9b7640c9fa79b10a1f5"
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.08-memento.md",

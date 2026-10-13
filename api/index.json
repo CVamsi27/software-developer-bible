@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "67e72f1fe046691c074acf6ef64fafb627142ef355165b16f1d83c0b816fa007",
+ "corpus_digest": "95059ceeb194eecbf488e2a2dc37b3bbd7c4349c4046b1218a3bdc69a33bf2a0",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5172
+  "read_minutes": 5173
  },
  "chapters": [
   {
@@ -3634,7 +3634,7 @@
    "g": [
     "concept"
    ],
-   "m": 4
+   "m": 5
   },
   {
    "p": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.02-observer.html",

@@ -24,7 +24,7 @@ Source: [Strategy Pattern](30.1.4.01-strategy.md)
 
 **Q:** What if the chosen policy returns NaN or begins calling a carrier API?
 
-**A:** The current workflow rejects NaN. An I/O-backed policy requires a compatible asynchronous contract with deadlines, failure, and cancellation rules; a shared function signature alone is insufficient.
+**A:** The current workflow rejects NaN, and an exception thrown by the selected policy propagates unchanged. An I/O-backed policy needs a compatible asynchronous contract with deadlines, failure, and cancellation rules; a shared function signature alone is insufficient.
 
 ## Observer Pattern
 

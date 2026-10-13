@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 299,
+    "revised": 300,
     "unchanged": 80,
-    "pending": 141,
-    "reviewed": 379,
+    "pending": 140,
+    "reviewed": 380,
     "topic_chapters": 520
   },
   "entries": [
@@ -4556,12 +4556,21 @@
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.01-strategy.md",
       "group": "30-architecture/30.1-design-patterns/04-behavioral",
       "title": "Strategy Pattern",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "e80cd7bc69213b87860190e941c66c9d3e549d5d30fb6e7651e6611c757102bc",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What must remain stable when checkout delegates a quote to different shipping policies?",
+      "disposition": "Replaced the paraphrased textbook definition with the canonical GoF intent. Clarified that policies can be selected at startup or per operation, closures can capture dependencies without a class, exceptions propagate, and raw parcel input needs a runtime boundary check. Updated the INDEX flowchart and revision answer to match.",
+      "validation": [
+        "Fresh-reader review found four contract gaps (selection timing, function closures, policy errors and null input); all were resolved and a focused re-read confirmed chapter, INDEX and revision consistency.",
+        "Verified the textbook intent in a publisher-hosted O\u2019Reilly excerpt; removed the retail listing and redundant SourceMaking reference.",
+        "The fenced TypeScript example passed strict TypeScript 7.0.2 NodeNext compilation; Node assertions covered standard/pickup results, null and numeric rejection, NaN rejection and unchanged policy-error propagation.",
+        "Read-time, alignment, citation-baseline, search-index and count writers ran; the fixpoint check confirmed generated writers leave the corpus stable.",
+        "All 30 repository verification gates passed; standalone links checked 10,797 links and 152 anchors with 0 failures; citation-baseline diff had 0 added or removed URLs at 2,517.",
+        "Ruby 3.4 locked-bundle production Jekyll build and rendered-heading check passed; git diff --check passed."
+      ],
+      "reviewed_at": "2026-10-14",
+      "review_sha256": "e3ca95f297e2af33f999d2942c20de1fcadbec4562303128d1295d028eb894dc"
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.02-observer.md",

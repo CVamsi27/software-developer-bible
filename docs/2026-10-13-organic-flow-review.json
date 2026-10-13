@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 310,
+    "revised": 311,
     "unchanged": 80,
-    "pending": 130,
-    "reviewed": 390,
+    "pending": 129,
+    "reviewed": 391,
     "topic_chapters": 520
   },
   "entries": [
@@ -4776,12 +4776,21 @@
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.12-null-object.md",
       "group": "30-architecture/30.1-design-patterns/04-behavioral",
       "title": "Null Object Pattern",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "ef4c609d7df9f7501b81a5def9d15b88b2abd7c91b74e920545aa32a0586ec53",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "When should an optional collaborator be replaced by a no-op implementation, and when must absence or failure stay explicit?",
+      "disposition": "Opened with the configured no-logging case and moved the fallback decision to the composition boundary. Replaced the unsourced definition with the published Null Object intent, clarified how strictNullChecks relates to a complete substitute contract, and distinguished an empty listener collection and assertion mock from a no-op collaborator. Replaced general or weaker links with the relevant book chapter and Fowler Special Case entry.",
+      "validation": [
+        "Re-read in behavioral-pattern order alongside Interpreter and the behavioral revision companion; retained the distinctions among intentional absence, missing data, failed initialization, guest identity and denied authorization.",
+        "Verified the quoted definition in the O\u2019Reilly-hosted *Design Patterns Companion* chapter and the Special Case relationship on Martin Fowler\u2019s catalog. The O\u2019Reilly content page is browser-readable but returned no response to automated probes; Fowler returned HTTP 200.",
+        "The fenced TypeScript example compiled strictly with TypeScript 5.8.3 targeting ES2022/CommonJS and produced no output for the no-op logger and the expected order message for the console logger.",
+        "Read-time, alignment, citation-baseline, search-index and count writers ran; the fixed-point check confirmed the repair writers leave the corpus stable.",
+        "All 30 repository verification gates passed. Standalone links checked 10,797 links and 152 anchors with 0 issues; citation-baseline diff had 0 added or removed URLs at 2,526.",
+        "Ruby 3.4 locked-bundle production Jekyll build, rendered-heading check and git diff --check passed."
+      ],
+      "reviewed_at": "2026-10-14",
+      "review_sha256": "b6dca8c8f0b2c0459b2b2ea3301440e223dd2bb74068dd7495f155d862dff80e"
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.01-repository.md",

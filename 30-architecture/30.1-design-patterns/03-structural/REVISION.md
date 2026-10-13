@@ -40,7 +40,7 @@ Source: [Facade Pattern](30.1.3.02-facade.md)
 
 **Q:** What changes if a facade's payment call succeeds but its order-finalization call fails?
 
-**A:** One entry point does not roll back independent effects. The workflow needs operation identity and durable recovery/reconciliation at the responsible services; reporting failure and blindly repeating everything can duplicate a committed operation.
+**A:** The facade cannot undo the payment. Persist workflow state and an operation ID; a durable workflow or Saga records progress and drives forward or compensating actions, while the payment owner reconciles an uncertain result. The facade may invoke that workflow, but it is not itself a transaction; use idempotency to prevent a duplicate charge.
 
 ## Decorator Pattern
 

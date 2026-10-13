@@ -1,6 +1,6 @@
 # Structural Patterns
 
-> **Study time:** ≈ 1 h 21 m of reading (9 files, ~9 min average).
+> **Study time:** ≈ 1 h 20 m of reading (9 files, ~9 min average).
 > **9 files.** Class and object composition. These patterns are about how to assemble larger structures from classes and objects while keeping the structure flexible and efficient.
 
 [![Files](https://img.shields.io/badge/files-9-blue)](../../INDEX.md)
@@ -27,7 +27,7 @@ Inheritance couples a subtype to a base contract and implementation. Structural 
 | # | Pattern | Intent | Use when | Avoid when | Role priority | General importance |
 | --: | --------- | -------- | ---------- | ------------ | --- | --- |
 | 1 | [Adapter](30.1.3.01-adapter.md) | Translate an existing interface to the client's contract | 3rd-party SDK, legacy integration | Refactoring both sides already preserves compatibility | Important | Foundational |
-| 2 | [Facade](30.1.3.02-facade.md) | Simplified front for complex system | Library/SDK, multi-subsystem workflow | Single subsystem, already simple | Important | Specialized |
+| 2 | [Facade](30.1.3.02-facade.md) | Simplify common access to a complex subsystem | Library/SDK, multi-subsystem workflow | Single subsystem, already simple | Important | Specialized |
 | 3 | [Decorator](30.1.3.03-decorator.md) | Add behavior dynamically | Cross-cutting concerns (logging, auth, caching) | Wrapper order obscures the contract | Important | Specialized |
 | 4 | [Proxy](30.1.3.04-proxy.md) | Controlled access (lazy, protection, remote, caching) | Image/DB lazy loading, RBAC checks, network stubs | Direct access is fine | Important | Specialized |
 | 5 | [Module](30.1.3.05-module-pattern.md) | Encapsulation at the file level | File/package visibility boundaries | N/A | Important | Specialized |
@@ -87,8 +87,8 @@ A common interview trap: "What's the difference between Decorator and Proxy?" Th
 
 ### Facade vs Adapter
 
-- **Facade** simplifies a complex subsystem (one-way: subsystem → simple API). Often introduces a new interface.
-- **Adapter** reconciles a caller's expected contract with an existing implementation. Translation may include validation and error mapping; bidirectional conversion is not required.
+- **Facade** simplifies common operations across a subsystem behind a higher-level entry point.
+- **Adapter** translates an existing interface to a client's expected contract; mapping may include data, units, errors or optional values.
 
 ### Composite vs Decorator
 
@@ -100,7 +100,7 @@ Both use recursive composition, but Composite's recursion is structural, Decorat
 ### Module vs Facade
 
 - **Module** organizes code at the file/package level (language-level encapsulation).
-- **Facade** is a runtime object that provides a simpler interface to a set of objects.
+- **Facade** is a client-facing entry point that coordinates subsystem behavior; it can be a class, function or module export.
 
 Modern TS: a `module.ts` file often *contains* a Facade.
 

@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-13",
- "url_count": 2515,
+ "url_count": 2514,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md",
@@ -3678,9 +3678,6 @@
    "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.04-authentication.md",
    "20-backend/20.5-security/01-auth/20.5.1.05-jwt.md"
   ],
-  "https://kafka.apache.org/35/getting-started/upgrade/": [
-   "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.md"
-  ],
   "https://kafka.apache.org/42/getting-started/upgrade/": [
    "20-backend/20.9-message-brokers/20.9.01-message-brokers.md",
    "20-backend/20.9-message-brokers/20.9.02-kafka-internals-and-operations.md",
@@ -3710,7 +3707,8 @@
    "20-backend/20.9-message-brokers/20.9.01-message-brokers.md",
    "20-backend/20.9-message-brokers/20.9.02-kafka-internals-and-operations.md",
    "20-backend/20.9-message-brokers/20.9.04-interview-questions.md",
-   "20-backend/20.9-message-brokers/INDEX.md"
+   "20-backend/20.9-message-brokers/INDEX.md",
+   "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.md"
   ],
   "https://kafka.apache.org/43/getting-started/zk2kraft/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.md"

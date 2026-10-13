@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 268,
+    "revised": 270,
     "unchanged": 80,
-    "pending": 172,
-    "reviewed": 348,
+    "pending": 170,
+    "reviewed": 350,
     "topic_chapters": 520
   },
   "entries": [
@@ -4798,23 +4798,35 @@
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.md",
       "group": "30-architecture/30.2-system-design/01-theory",
       "title": "Consensus & Leader Election",
-      "status": "pending",
-      "baseline_sha256": "5dca9d53f17a121377252d414add2cedb212283d053578eb499145f202121657",
+      "status": "revised",
+      "baseline_sha256": "7c005108707dfeddd89229c983f7d36fd3cf0f8b87958c3a55721b0881b4ee25",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "When can a new leader safely commit, and what can still let an old leader affect an external resource?",
+      "disposition": "Opened with a stale-leader inventory scenario. Removed repeated motivation and the duplicate First Principles example, consolidated quorum/timeout/fencing boundaries, stated the invariant and coordination cost that justify consensus, replaced canned interview answers with a design explanation sequence, and updated Kafka claims and references to the current KRaft-only 4.3 contract.",
+      "validation": [
+        "Re-read in theory learning order with the parent INDEX and REVISION companion; checked practical and textbook definitions, First Principles, Paxos/Raft/Zab mechanics, leader-change trace, decision boundaries, summary and cross-references.",
+        "Verified protocol and version claims against the Raft paper, current ZooKeeper internals, Apache Kafka 4.3 KRaft and upgrade documentation, and Redis distributed-lock guidance.",
+        "All 30 scripts/verify.sh gates passed. Standalone link check covered 10,827 links and 150 anchors with no failures; citation baseline is clean at 2,514 URLs.",
+        "Ruby 3.4 production Jekyll build and site-wide rendered-heading check passed; this page rendered with exactly one H1.",
+        "git diff --check passed."
+      ]
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.md",
       "group": "30-architecture/30.2-system-design/01-theory",
       "title": "Failure Modes",
-      "status": "pending",
-      "baseline_sha256": "727e66f8b667f32623e30874905d2222e68cf779b0dfbb4ec4617dfb13f638c9",
+      "status": "revised",
+      "baseline_sha256": "7df617392741010cf94403b25f3bc9fb739275fa89d65599929285b1b6a0470c",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What might a timeout tell us, and which data or external side effects may already have changed?",
+      "disposition": "Opened with an uncertain payment outcome and defined the fault \u2192 error \u2192 failure distinction. Replaced the repeated failure checklist with a five-step review and concrete database/API examples; ordered deadlines before retries, added the fleet-wide overload retry boundary, grouped all 15 failure cases by failure domain, and removed duplicate rationale and anti-pattern sections while retaining recovery, observability and every case.",
+      "validation": [
+        "Re-read in theory learning order with the parent INDEX and REVISION companion; checked practical and textbook definitions, First Principles, review sequence, retry/deadline/bulkhead/degradation patterns, all 15 cases, recovery objectives, summary and cross-references.",
+        "Verified retry/overload guidance against Google SRE Handling Overload and chaos-experiment stop conditions against current AWS Fault Injection Service documentation; checked the existing Chaos Monkey and DDIA references.",
+        "All 30 scripts/verify.sh gates passed. Standalone link check covered 10,827 links and 150 anchors with no failures; citation baseline is clean at 2,514 URLs.",
+        "Ruby 3.4 production Jekyll build and site-wide rendered-heading check passed; this page rendered with exactly one H1.",
+        "git diff --check passed."
+      ]
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.11-architecture-patterns.md",

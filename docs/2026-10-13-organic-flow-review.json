@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 315,
+    "revised": 316,
     "unchanged": 80,
-    "pending": 125,
-    "reviewed": 395,
+    "pending": 124,
+    "reviewed": 396,
     "topic_chapters": 520
   },
   "entries": [
@@ -4872,12 +4872,20 @@
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.md",
       "group": "30-architecture/30.1-design-patterns/05-architectural",
       "title": "DDD Tactical Patterns \u2014 Aggregates & Value Objects",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "a69fd387a07016b44ed9c4cc23e97e8a7a9d5e09b6b36e88eb16032d7a4fe454",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How should identity, value equality and atomic consistency shape a model for orders and money?",
+      "disposition": "Opened with the distinction between equal money values and order identity, defined bounded contexts, entities, value objects, aggregate invariants and domain events before using them, and linked the textbook definition to Evans's DDD Reference. Clarified invariant meaning and internal versus integration events; added a bounded-context retrieval question.",
+      "validation": [
+        "Checked Eric Evans's official DDD Reference, Fowler's Aggregate and Value Object explanations, and Microsoft Learn domain-event guidance; the new DDD Reference page returned HTTP 200 and its URL was added to the external-link baseline.",
+        "The fenced TypeScript example compiled with TypeScript 5.9.3 in strict mode targeting ES2022. Runtime checks covered equality, currency mismatch, freezing, invalid amounts/quantities and safe-integer overflow.",
+        "Reviewed with the architectural INDEX and REVISION companion; added a question that distinguishes bounded-context language from shared class identity.",
+        "All 30 repository verification gates passed; standalone links checked 10,797 links and 152 anchors with zero failures, and the external citation baseline had no drift after its update.",
+        "Ruby 3.4 locked-bundle production Jekyll build, rendered-heading unit tests, and the site-wide rendered-heading check passed; the DDD page contains one authored H1 and no unrendered Liquid markers."
+      ],
+      "reviewed_at": "2026-10-14",
+      "review_sha256": "aa098eeecfaf4424f546ec115b66807a95efd4e010780723578d3b84d8c21d45"
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.06-anti-corruption-layer.md",

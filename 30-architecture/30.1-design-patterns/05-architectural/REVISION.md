@@ -102,6 +102,10 @@ Source: [Saga Pattern](30.1.5.04-saga.md)
 
 Source: [DDD Tactical Patterns — Aggregates & Value Objects](30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.md)
 
+**Q:** Billing and delivery both use the word `Customer`. Should they share one domain class?
+
+**A:** Only when the identity, behavior and invariants align. Bounded contexts let a payer and recipient have different models; connect them through explicit identity and contracts instead of matching names alone.
+
 **Q:** What should commit together when an aggregate change must emit a domain event?
 
 **A:** The aggregate mutation and durable outbox intent should share the local transaction. Publication then retries, and receivers deduplicate; this does not guarantee immediate delivery.

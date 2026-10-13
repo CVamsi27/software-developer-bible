@@ -10,10 +10,10 @@
   },
   "counts": {
     "topic_chapters": 520,
-    "revised": 197,
-    "unchanged": 73,
-    "pending": 250,
-    "reviewed": 270
+    "revised": 200,
+    "unchanged": 78,
+    "pending": 242,
+    "reviewed": 278
   },
   "entries": [
     {
@@ -1722,89 +1722,129 @@
       "path": "10-frontend/10.7-html-css/10.7.01-html-fundamentals.md",
       "group": "10-frontend/10.7-html-css",
       "title": "HTML Fundamentals — Semantic HTML, Forms, Accessibility",
-      "status": "pending",
-      "baseline_sha256": "77902ad97b3aaedeb6deaec7df9ae12b9e936ee99ae98e4967e16bb052d8ee55",
+      "status": "revised",
+      "baseline_sha256": "616e00a8564bdc1fb976d8b96b90b86766e9ac2dbb15a4c56a9978219cdd7713",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do HTML semantics carry a submitted value from a control into an accessible, recoverable form interaction?",
+      "disposition": "Replaced the misleading “document outline is the API” claim with accurate heading/landmark navigation language. Kept the form trace, native constraints, named successful controls and accessible error state; moved page metadata after the form/accessibility flow and removed unrelated resource-hint detail.",
+      "validation": [
+        "Directly re-read in learning order with the HTML/CSS INDEX, REVISION.md and interview bank; checked definitions, First Principles, mechanism flow, summary and companion questions.",
+        "Current CSS reading-flow support was checked against MDN and the CSS Display specification; PWA install, background sync and push limitations were checked against current MDN API pages; current Google FAQ and Core Web Vitals guidance was checked against official sources.",
+        "All 30 repository verification gates passed; standalone link scan checked 10,848 links and 149 anchors with no failures; citation baseline has no drift at 2,514 URLs.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build passed; site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "10-frontend/10.7-html-css/10.7.02-css-fundamentals.md",
       "group": "10-frontend/10.7-html-css",
       "title": "CSS Fundamentals — Grid, Flexbox, Responsive Design, Variables",
-      "status": "pending",
-      "baseline_sha256": "6d509b1088f40b44b40824377c33ab609f2113a6f0ff95de748878636e9434bd",
+      "status": "revised",
+      "baseline_sha256": "0fb45ca0b14f13d24ce6385cfe415823c92098fe8fa1a61a9834395e646ffbff",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Why did a declaration win, and which layout model fits the content that follows?",
+      "disposition": "Moved cascade resolution before the layout trace so rule selection precedes box calculation. Replaced exhaustive flex/grid value catalogs with concise property-to-decision tables, preserving sizing, responsiveness, custom properties and cascade-layer boundaries. Added the current limited-support reading-flow caveat after checking the CSS Display spec and MDN.",
+      "validation": [
+        "Directly re-read in learning order with the HTML/CSS INDEX, REVISION.md and interview bank; checked definitions, First Principles, mechanism flow, summary and companion questions.",
+        "Current CSS reading-flow support was checked against MDN and the CSS Display specification; PWA install, background sync and push limitations were checked against current MDN API pages; current Google FAQ and Core Web Vitals guidance was checked against official sources.",
+        "All 30 repository verification gates passed; standalone link scan checked 10,848 links and 149 anchors with no failures; citation baseline has no drift at 2,514 URLs.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build passed; site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "10-frontend/10.7-html-css/10.7.03-browser-rendering.md",
       "group": "10-frontend/10.7-html-css",
       "title": "Browser Rendering — Critical Rendering Path, Reflow, Paint",
-      "status": "pending",
+      "status": "unchanged",
       "baseline_sha256": "69205d02c1d474f1c6fa3f8d4b324ac7abae1b19c7cfc6b53ea880f4540ec42d",
       "previous_depth_review": "reviewed",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which rendering work does a style or geometry change invalidate, and how can a trace prove it?",
+      "disposition": "Retained the compact style-to-layout-to-pixels flow, conditional compositing, read/write batching and measurement guidance. The distinction between a dirty layout read and a guaranteed full-page reflow is already explained next to the example.",
+      "validation": [
+        "Directly re-read in learning order with the HTML/CSS INDEX, REVISION.md and interview bank; checked definitions, First Principles, mechanism flow, summary and companion questions.",
+        "Current CSS reading-flow support was checked against MDN and the CSS Display specification; PWA install, background sync and push limitations were checked against current MDN API pages; current Google FAQ and Core Web Vitals guidance was checked against official sources.",
+        "All 30 repository verification gates passed; standalone link scan checked 10,848 links and 149 anchors with no failures; citation baseline has no drift at 2,514 URLs.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build passed; site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "10-frontend/10.7-html-css/10.7.04-seo.md",
       "group": "10-frontend/10.7-html-css",
       "title": "SEO — Meta Tags, Structured Data, Core Web Vitals",
-      "status": "pending",
+      "status": "unchanged",
       "baseline_sha256": "3f07373d0be2c8552ffe61a71f8c5894ef3f5180bc1802fa026b255900952ef8",
       "previous_depth_review": "reviewed",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What must happen between discovery of a public URL and a possible search result?",
+      "disposition": "Retained the causal discovery/retrieval/rendering/indexing sequence and distinctions between canonical signals, robots rules, noindex and access control. Verified the current Google FAQ-rich-result deprecation and the stable Core Web Vitals thresholds against official Google/web.dev sources.",
+      "validation": [
+        "Directly re-read in learning order with the HTML/CSS INDEX, REVISION.md and interview bank; checked definitions, First Principles, mechanism flow, summary and companion questions.",
+        "Current CSS reading-flow support was checked against MDN and the CSS Display specification; PWA install, background sync and push limitations were checked against current MDN API pages; current Google FAQ and Core Web Vitals guidance was checked against official sources.",
+        "All 30 repository verification gates passed; standalone link scan checked 10,848 links and 149 anchors with no failures; citation baseline has no drift at 2,514 URLs.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build passed; site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "10-frontend/10.7-html-css/10.7.05-pwa.md",
       "group": "10-frontend/10.7-html-css",
       "title": "Progressive Web Apps (PWA) — Service Workers, Manifest, Offline",
-      "status": "pending",
-      "baseline_sha256": "732b15a84dd2b9008cd877c42d4f8dded832a638bd374d273774f7b72c9e4b8e",
+      "status": "revised",
+      "baseline_sha256": "aa3df545160b3ea8a776112cea962e6dea65ca41ab232bf987ea4efff13db596",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can an app serve a safe offline response and replay a write without mixing worker versions or duplicating a server effect?",
+      "disposition": "Reduced the chapter from a detached catalog of long demos to one path: capability ownership, manifest, worker/client update compatibility, constrained request/cache behavior, idempotent offline writes, and optional install/push. Preserved secure-context/scope, Cache API versus HTTP cache, error/stale-data, privacy, permission, support and recovery boundaries. Hardened notification destinations to same-origin and distinguished local persistence from server acknowledgment.",
+      "validation": [
+        "Directly re-read in learning order with the HTML/CSS INDEX, REVISION.md and interview bank; checked definitions, First Principles, mechanism flow, summary and companion questions.",
+        "Current CSS reading-flow support was checked against MDN and the CSS Display specification; PWA install, background sync and push limitations were checked against current MDN API pages; current Google FAQ and Core Web Vitals guidance was checked against official sources.",
+        "All 30 repository verification gates passed; standalone link scan checked 10,848 links and 149 anchors with no failures; citation baseline has no drift at 2,514 URLs.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build passed; site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "10-frontend/10.7-html-css/10.7.06-css-architecture-styling-approaches.md",
       "group": "10-frontend/10.7-html-css",
       "title": "CSS Architecture & Styling Approaches",
-      "status": "pending",
+      "status": "unchanged",
       "baseline_sha256": "f6b666b2712c12dbf5e6d8d0451d5dba56cf6426a5d44dd7a3b6f4fbbe6ce6fb",
       "previous_depth_review": "reviewed",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do selector ownership, cascade precedence and shared values solve different styling conflicts?",
+      "disposition": "Retained the one-override walkthrough and the distinct roles of scoping, layers, tokens, CSS Modules, utilities and runtime styling. The Tailwind v4 setup and migration constraints already follow the version-sensitive choice that changes implementation.",
+      "validation": [
+        "Directly re-read in learning order with the HTML/CSS INDEX, REVISION.md and interview bank; checked definitions, First Principles, mechanism flow, summary and companion questions.",
+        "Current CSS reading-flow support was checked against MDN and the CSS Display specification; PWA install, background sync and push limitations were checked against current MDN API pages; current Google FAQ and Core Web Vitals guidance was checked against official sources.",
+        "All 30 repository verification gates passed; standalone link scan checked 10,848 links and 149 anchors with no failures; citation baseline has no drift at 2,514 URLs.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build passed; site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "10-frontend/10.7-html-css/10.7.07-theming-design-tokens.md",
       "group": "10-frontend/10.7-html-css",
       "title": "Theming & Design Tokens",
-      "status": "pending",
+      "status": "unchanged",
       "baseline_sha256": "3d70f25b00596cf61890ee2f999eca48b477b56b7156963b4600f3132f5ff069",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How does a user preference become the effective theme without a hydration flash or contrast regression?",
+      "disposition": "Retained the trace from choice/system preference through semantic values to component styles. Persistence, cross-tab changes, first paint, hydration, contrast and native controls are attached to the decisions they affect rather than repeated in a generic checklist.",
+      "validation": [
+        "Directly re-read in learning order with the HTML/CSS INDEX, REVISION.md and interview bank; checked definitions, First Principles, mechanism flow, summary and companion questions.",
+        "Current CSS reading-flow support was checked against MDN and the CSS Display specification; PWA install, background sync and push limitations were checked against current MDN API pages; current Google FAQ and Core Web Vitals guidance was checked against official sources.",
+        "All 30 repository verification gates passed; standalone link scan checked 10,848 links and 149 anchors with no failures; citation baseline has no drift at 2,514 URLs.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build passed; site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "10-frontend/10.7-html-css/10.7.08-browser-storage.md",
       "group": "10-frontend/10.7-html-css",
       "title": "Browser Storage",
-      "status": "pending",
+      "status": "unchanged",
       "baseline_sha256": "2844620ad83c4fc155db45e7da6d7d8bdfae6d734d340766c97edc9e6ef8878e",
       "previous_depth_review": "reviewed",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which store fits the data model and failure cost, and when is a write actually durable?",
+      "disposition": "Retained the preference-write trace, store comparison and IndexedDB lifecycle, cookie/XSS/CSRF, quota and recovery boundaries. The chapter complements the PWA cache/write example without duplicating its request lifecycle.",
+      "validation": [
+        "Directly re-read in learning order with the HTML/CSS INDEX, REVISION.md and interview bank; checked definitions, First Principles, mechanism flow, summary and companion questions.",
+        "Current CSS reading-flow support was checked against MDN and the CSS Display specification; PWA install, background sync and push limitations were checked against current MDN API pages; current Google FAQ and Core Web Vitals guidance was checked against official sources.",
+        "All 30 repository verification gates passed; standalone link scan checked 10,848 links and 149 anchors with no failures; citation baseline has no drift at 2,514 URLs.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build passed; site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "10-frontend/10.8-mobile/10.8.01-react-native-cross-platform.md",

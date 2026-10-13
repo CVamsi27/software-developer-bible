@@ -1,6 +1,6 @@
 # HTML/CSS & PWA — Index
 
-> **Study time:** ≈ 1 h 10 m of reading (10 files, ~7 min average).
+> **Study time:** ≈ 1 h 2 m of reading (10 files, ~6 min average).
 > **10 files** — HTML fundamentals, CSS layout, CSS architecture, theming/design tokens, browser storage, PWA, SEO, and browser rendering — the foundational web platform skills every senior frontend engineer needs.
 
 [![Files](https://img.shields.io/badge/files-10-blue)](../../INDEX.md)
@@ -27,7 +27,7 @@ Build a form that still has labels, submission behavior and understandable error
 
 [Browser Storage](10.7.08-browser-storage.md) compares stores by data model, access, lifetime and failure behavior. An HttpOnly cookie protects against direct script reads, but the complete session design must also address requests, CSRF and script injection.
 
-[PWA](10.7.05-pwa.md) adds a service-worker lifecycle, scoped HTTP caching and offline behavior. Trace which responses are safe to cache and how queued work becomes acknowledged server state.
+[PWA](10.7.05-pwa.md) adds a service-worker lifecycle, app-managed Cache API rules and offline behavior alongside the separate HTTP cache. Trace which responses are safe to store and how queued work becomes acknowledged server state.
 
 ## Pass 4 — make public pages discoverable
 

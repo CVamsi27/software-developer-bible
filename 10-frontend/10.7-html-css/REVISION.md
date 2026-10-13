@@ -26,6 +26,10 @@ Source: [CSS Fundamentals — Grid, Flexbox, Responsive Design, Variables](10.7.
 
 **A:** Cascade origin, importance and layer precedence are resolved before specificity. Normal unlayered author rules outrank normal layered rules; important layer ordering reverses.
 
+**Q:** Why should DOM order remain meaningful when a flex or grid layout visually reorders items?
+
+**A:** Visual placement does not rewrite source order. `reading-flow` can adjust sequential reading/navigation in supporting browsers, but it has limited availability; keep the source order sensible as the fallback and verify the actual browser and assistive technology.
+
 ## Browser Rendering — Critical Rendering Path, Reflow, Paint
 
 Source: [Browser Rendering — Critical Rendering Path, Reflow, Paint](10.7.03-browser-rendering.md)
@@ -49,6 +53,10 @@ Source: [Progressive Web Apps (PWA) — Service Workers, Manifest, Offline](10.7
 **Q:** Why may skipWaiting create a compatibility problem for open tabs?
 
 **A:** The new worker can control pages loaded with old assets or data assumptions. Design update activation and cache lifetime for mixed versions.
+
+**Q:** When is it safe to delete an offline write from IndexedDB?
+
+**A:** After the server acknowledges the result for that stable operation ID. The server must atomically enforce idempotency so a retry after a lost response returns the committed outcome; authentication, conflict and validation failures need foreground recovery.
 
 ## CSS Architecture & Styling Approaches
 

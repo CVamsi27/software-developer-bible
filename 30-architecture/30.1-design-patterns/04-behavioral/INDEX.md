@@ -1,6 +1,6 @@
 # Behavioral Patterns
 
-> **Study time:** ≈ 59 min of reading (13 files, ~5 min average).
+> **Study time:** ≈ 1 h of reading (13 files, ~5 min average).
 > **13 files.** Object collaboration. These patterns are about algorithms and the assignment of responsibilities between objects. They characterize complex control flow that's harder to follow at runtime.
 
 [![Files](https://img.shields.io/badge/files-13-blue)](../../INDEX.md)
@@ -28,7 +28,7 @@ Creational and structural patterns are about "what" (objects) and "how" (composi
 | # | Pattern | Intent | Use when | Avoid when | Role priority | General importance |
 | --: | --------- | -------- | ---------- | ------------ | --- | --- |
 | 1 | [Strategy](30.1.4.01-strategy.md) | Delegate to selected interchangeable policies | Multiple ways to do the same thing | Only one algorithm ever | Important | Foundational |
-| 2 | [Observer](30.1.4.02-observer.md) | Event-driven notification | UI events, pub/sub, reactive streams | Tight coupling is acceptable | Important | Foundational |
+| 2 | [Observer](30.1.4.02-observer.md) | One-to-many change notification | A local subject has multiple subscribers | Durable cross-process delivery is required without a broker | Important | Foundational |
 | 3 | [Chain of Responsibility](30.1.4.03-chain-of-responsibility.md) | Pass request along a chain | Middleware, validation pipelines, exception handling | Single handler always | Important | Specialized |
 | 4 | [State](30.1.4.04-state.md) | Behavior depends on state | State machines, workflow engines | Few states, no transitions | Important | Specialized |
 | 5 | [Template Method](30.1.4.05-template-method.md) | Skeleton + customizable steps | Algorithm with varying steps | Algorithm is fully fixed | Important | Specialized |

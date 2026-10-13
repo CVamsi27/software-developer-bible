@@ -40,7 +40,7 @@ Source: [Observer Pattern](30.1.4.02-observer.md)
 
 **Q:** What if an ordinary listener throws or returns an unresolved promise?
 
-**A:** A throw stops this synchronous emission. emit does not await returned promises; handle async errors explicitly or use documented rejection facilities. Observer alone does not choose a durable queued contract.
+**A:** A throw stops synchronous dispatch. `emit` does not await returned promises; `captureRejections` is opt-in and routes rejections asynchronously to the rejection hook or `'error'` event without making delivery awaitable. Observer alone does not choose a durable queued contract.
 
 ## Chain of Responsibility
 

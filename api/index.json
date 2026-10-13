@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "95059ceeb194eecbf488e2a2dc37b3bbd7c4349c4046b1218a3bdc69a33bf2a0",
+ "corpus_digest": "a80b068530d327258234471215cb166c480c5ab0a0d7fe363c4e7a39b31fef23",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5173
+  "read_minutes": 5174
  },
  "chapters": [
   {
@@ -3644,7 +3644,7 @@
    "g": [
     "concept"
    ],
-   "m": 4
+   "m": 5
   },
   {
    "p": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.03-chain-of-responsibility.html",

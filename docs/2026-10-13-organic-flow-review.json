@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 300,
+    "revised": 301,
     "unchanged": 80,
-    "pending": 140,
-    "reviewed": 380,
+    "pending": 139,
+    "reviewed": 381,
     "topic_chapters": 520
   },
   "entries": [
@@ -4576,12 +4576,21 @@
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.02-observer.md",
       "group": "30-architecture/30.1-design-patterns/04-behavioral",
       "title": "Observer Pattern",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "4f354898a69961717ea1083cc706df34ad1b005cb9f8bcd12365375a107a00d2",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What does Node\u2019s EventEmitter guarantee about listener ordering, cleanup and asynchronous failures?",
+      "disposition": "Replaced the generic textbook paraphrase with the published GoF intent. Clarified the shared listener contract, reentrant once behavior, duplicate cleanup, current-emission snapshots and opt-in asynchronous rejection routing. Kept broker and stream delivery guarantees distinct, then aligned the revision answer and INDEX decision boundary.",
+      "validation": [
+        "Fresh-reader review confirmed the main trace and identified gaps in rejection handling and listener removal during an active emission; both were resolved against the current Node API.",
+        "Verified the GoF intent against a publisher-hosted excerpt and the Node.js v26.11.1 events documentation; the chapter references both sources.",
+        "The fenced JavaScript example ran on Node v23.7.0 and produced the documented output. Focused assertions passed for once reentrancy, current-emission snapshots, duplicate registrations, synchronous throws, asynchronous captureRejections routing and unhandled error events.",
+        "Read-time, alignment, citation-baseline, search-index and count writers ran; the fixpoint check confirmed generated writers leave the corpus stable.",
+        "All 30 repository verification gates passed. Standalone links checked 10,797 links and 152 anchors with 0 failures; citation-baseline diff had 0 added or removed URLs at 2,518.",
+        "Ruby 3.4 locked-bundle production Jekyll build, rendered-heading check and git diff --check passed."
+      ],
+      "reviewed_at": "2026-10-14",
+      "review_sha256": "6a705cbf72c1aebc5199eb96b443764c3bf1c14b8077308eeb771cf40025ca46"
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.03-chain-of-responsibility.md",

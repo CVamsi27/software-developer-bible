@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 281,
+    "revised": 282,
     "unchanged": 80,
-    "pending": 159,
-    "reviewed": 361,
+    "pending": 158,
+    "reviewed": 362,
     "topic_chapters": 520
   },
   "entries": [
@@ -5013,12 +5013,17 @@
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.md",
       "group": "30-architecture/30.2-system-design/01-theory",
       "title": "TLS, HTTPS & the Certificate Lifecycle",
-      "status": "pending",
-      "baseline_sha256": "8da40629d5e5a4ba526613906c4fa1794bc4aff58939fb4b8792424d4bb11c44",
+      "status": "revised",
+      "baseline_sha256": "be68c03635ba189c0bb0965efcb4ae899617cfc33e11b7337ce3fd69243ea974",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How does a TLS connection prove the intended service identity, protect the session, and remain safe through termination and renewal?",
+      "disposition": "Reordered the chapter into a connection-to-operations flow and removed repeated rationale, use-case, mistake and best-practice catalogs. Clarified TLS 1.2 versus 1.3 handshake costs, CertificateVerify versus Finished, service-identity matching, PSK-only versus PSK-DHE resumption, 0-RTT replay, mTLS authorization boundaries, HSTS rollout, issuer-specific revocation, proxy trust, and end-to-end certificate deployment. Replaced the broken mTLS fragment with a concrete Nginx client-certificate example, added verified endpoint probing and renewal checks, and updated the study index and revision questions for July 2026 TLS guidance.",
+      "validation": [
+        "Re-read in learning order with the system-design INDEX and REVISION companion; verified distinct practical and textbook definitions, First Principles, one Summary, See Also and References.",
+        "Checked protocol guidance against RFC 8446, RFC 9325, RFC 9852 (July 2026), RFC 10015 (July 2026), RFC 9525 and RFC 9849; checked Nginx SSL directives, Let\u2019s Encrypt revocation status and Node.js v26.11.1 TLS APIs against their primary sources.",
+        "All 30 repository verification gates passed; standalone link scan checked 10,799 links and 150 anchors with 0 failures; citation baseline contains 2,514 URLs with 0 drift.",
+        "Ruby 3.4 production Jekyll build and site-wide rendered-heading check passed; edited page has exactly one H1."
+      ]
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.01-url-shortener.md",

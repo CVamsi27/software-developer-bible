@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-13",
- "url_count": 2513,
+ "url_count": 2514,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -4998,6 +4998,9 @@
   "https://nodejs.org/api/timers.html": [
    "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.md"
   ],
+  "https://nodejs.org/api/tls.html": [
+   "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.md"
+  ],
   "https://nodejs.org/api/typescript.html": [
    "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.02-web-streams-and-test-runner.md",
    "20-backend/20.1-node.js/01-runtime-and-async/REVISION.md"
@@ -7867,7 +7870,8 @@
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc10015.html": [
-   "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.md"
+   "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.md",
+   "30-architecture/30.2-system-design/01-theory/REVISION.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc1034.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.22-dns-and-name-resolution.md"
@@ -8081,7 +8085,8 @@
    "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc9852.html": [
-   "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.md"
+   "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.md",
+   "30-architecture/30.2-system-design/01-theory/REVISION.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc9989.html": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.07-transactional-email-and-notifications.md"

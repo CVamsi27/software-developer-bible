@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-12_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-13_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -534,6 +534,14 @@ Source: [TLS, HTTPS & the Certificate Lifecycle](30.2.1.23-tls-https-and-certifi
 **Q:** Does HTTP/3 carry application data in TLS records over TCP?
 
 **A:** No. QUIC uses the TLS 1.3 handshake and key schedule, then carries HTTP/3 in QUIC streams and protects QUIC packets. UDP carries those packets; QUIC provides the transport guarantees. See [RFC 9001](https://www.rfc-editor.org/rfc/rfc9001.html).
+
+**Q:** In TLS 1.3 PSK resumption, what security property changes between `psk_ke` and `psk_dhe_ke`?
+
+**A:** `psk_ke` uses only the pre-shared key and adds no fresh forward secrecy. `psk_dhe_ke` also uses fresh ephemeral Diffie–Hellman, providing forward secrecy for post-handshake application data; 0-RTT early data still lacks it. See [RFC 8446, Section 2.2](https://www.rfc-editor.org/rfc/rfc8446.html).
+
+**Q:** What do current TLS recommendations say about new protocols and TLS 1.2 key exchange?
+
+**A:** A new protocol using TLS must require TLS 1.3. Existing TLS 1.2 deployments need current BCP 195 configuration: RSA and finite-field DH key-exchange suites are deprecated, and static ECDH is discouraged. This does not prohibit RSA certificate signatures. See [RFC 9852](https://www.rfc-editor.org/rfc/rfc9852.html) and [RFC 10015](https://www.rfc-editor.org/rfc/rfc10015.html).
 
 ## Summary
 

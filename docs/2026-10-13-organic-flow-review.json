@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 276,
+    "revised": 277,
     "unchanged": 80,
-    "pending": 164,
-    "reviewed": 356,
+    "pending": 163,
+    "reviewed": 357,
     "topic_chapters": 520
   },
   "entries": [
@@ -4932,12 +4932,17 @@
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.18-outbox-and-cdc.md",
       "group": "30-architecture/30.2-system-design/01-theory",
       "title": "Outbox Pattern & Change Data Capture (CDC)",
-      "status": "pending",
-      "baseline_sha256": "d8dcec97d5d89bec05761491b5af93724083681fb5a33cb74a12397367206cd3",
+      "status": "revised",
+      "baseline_sha256": "9a59b8da7463a02f745b30fdd4a1ae3f874a04a4f753960ea3bd894031f27268",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do order changes and their events survive database, broker and connector failures without claiming end-to-end atomicity?",
+      "disposition": "Kept the event-to-crash-to-recovery flow and detailed CDC position contract; removed the repeated common-mistakes recap. Added recovery for an ambiguous database commit, clarified that the illustrative schema permits multiple ordered events per aggregate transition, included the ordinal in the claim query, and explained replica-identity, retained-WAL and offset limits in direct language.",
+      "validation": [
+        "Re-read in learning order with the system-design INDEX and REVISION companion; checked the practical/textbook definitions, First Principles, Summary, See Also and References.",
+        "Checked current PostgreSQL 18 logical-decoding/slot documentation and current Debezium PostgreSQL and outbox-router documentation for replay, snapshot, row-image and retention behavior.",
+        "All 30 repository verification gates passed; standalone links checked 10,818 links and 150 anchors with 0 failures; citation baseline remained at 2,509 URLs with 0 drift.",
+        "Ruby 3.4.11 production Jekyll build and rendered-heading sweep passed; the edited page renders exactly one H1."
+      ]
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.19-resilience-patterns-deep-dive.md",

@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "aa77cc735ea5eef98b103a680ebfff842a367249858a226a2b60c25a795fb034",
+ "corpus_digest": "98a52316191f2cc45a04c9f584229455c1849d99d104bae59f4e59696ba6bfe4",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5248
+  "read_minutes": 5249
  },
  "chapters": [
   {
@@ -4091,7 +4091,7 @@
     "distributed-systems",
     "theory"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.19-resilience-patterns-deep-dive.html",

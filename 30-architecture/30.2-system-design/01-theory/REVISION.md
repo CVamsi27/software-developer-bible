@@ -358,6 +358,10 @@ Source: [Outbox Pattern & Change Data Capture (CDC)](30.2.1.18-outbox-and-cdc.md
 
 **A:** No. Kafka preserves append order within its partition, not the desired order of competing relays. Serialize aggregate dispatch or enforce a durable consumer version/gap policy.
 
+**Q:** The API times out while committing the order and outbox row. Is retrying with a new request ID safe?
+
+**A:** No. The commit may have succeeded even though its response was lost. Retry with the same persisted idempotency key and resolve the existing outcome before creating another order or event.
+
 
 ## Resilience Patterns Deep-Dive: Hedging, Load Shedding, Request Coalescing, Deadlines
 

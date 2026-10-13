@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "d24fda8c7ae99fb4773bb51eec233911e224d9120df193326a003da42aff18c9",
+ "corpus_digest": "50a370d27a12a74f11d22d33be13a4d2fd6557b34c2f0a580d837809a94808af",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5274
+  "read_minutes": 5268
  },
  "chapters": [
   {
@@ -4023,7 +4023,7 @@
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.13-backpressure-and-flow-control.html",
-   "t": "Backpressure & Flow Control",
+   "t": "Backpressure and Flow Control",
    "s": "System Design",
    "c": "Architecture",
    "g": [
@@ -4032,11 +4032,11 @@
     "scaling",
     "theory"
    ],
-   "m": 12
+   "m": 6
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.html",
-   "t": "Distributed Locks & Coordination",
+   "t": "Distributed Locks and Coordination",
    "s": "System Design",
    "c": "Architecture",
    "g": [

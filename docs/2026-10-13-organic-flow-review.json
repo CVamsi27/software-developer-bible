@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 272,
+    "revised": 274,
     "unchanged": 80,
-    "pending": 168,
-    "reviewed": 352,
+    "pending": 166,
+    "reviewed": 354,
     "topic_chapters": 520
   },
   "entries": [
@@ -4865,24 +4865,36 @@
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.13-backpressure-and-flow-control.md",
       "group": "30-architecture/30.2-system-design/01-theory",
-      "title": "Backpressure & Flow Control",
-      "status": "pending",
+      "title": "Backpressure and Flow Control",
+      "status": "revised",
       "baseline_sha256": "87523801b4bd295aa4b2964a72e7003dbfbfd6023475f53240acb8cd6c6b17ca",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "When a queue is filling, who can slow the producer, and what acceptance, retry and loss contract applies?",
+      "disposition": "Rebuilt around arrival/completion rates and buffer fill time; separated feedback-based backpressure from admission, rate limiting and load shedding; and traced bounded work through HTTP, broker, TCP and Reactive Streams boundaries. Removed repeated resilience catalogs and a toy queue implementation that highlighted unbounded waiters without teaching the flow contract.",
+      "validation": [
+        "Re-read in learning order with the parent and category INDEX plus the REVISION companion; checked both definitions, First Principles, mechanism trace, boundary cases, Summary, See Also and references.",
+        "Verified protocol and implementation claims against primary sources: IETF RFC 9293, RFC 6585 and RFC 9110; Reactive Streams; current Redis distributed-lock documentation; ZooKeeper lock recipe; etcd v3.8 concurrency API; PostgreSQL explicit-locking documentation; and DynamoDB TTL documentation. Citations are recorded in the external-link baseline.",
+        "All 30 scripts/verify.sh gates passed. The standalone link check covered 10,819 links and 150 anchors with no failures; citation baseline diff was clean after its update at 2,515 URLs.",
+        "Ruby 3.4 production Jekyll build and site-wide rendered-heading check passed; each reviewed page rendered with exactly one H1.",
+        "git diff --check passed."
+      ]
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.md",
       "group": "30-architecture/30.2-system-design/01-theory",
-      "title": "Distributed Locks & Coordination",
-      "status": "pending",
+      "title": "Distributed Locks and Coordination",
+      "status": "revised",
       "baseline_sha256": "d6f2168139e91f4b8c5d69ef0da5249b8a33553e6d67a13465fb8c84eff42360",
       "previous_depth_review": "reviewed",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How does the protected resource reject a worker that resumes after its lease expired?",
+      "disposition": "Opened with a paused-worker failure, distinguished random release tokens from monotonically increasing fencing generations, and clarified that fencing only rejects stale writes after the target observes the newer generation. Added atomic enforcement and uncertain-acquisition boundaries and refreshed Redis 8.4 and etcd v3.8 guidance while retaining safer alternatives.",
+      "validation": [
+        "Re-read in learning order with the parent and category INDEX plus the REVISION companion; checked both definitions, First Principles, mechanism trace, boundary cases, Summary, See Also and references.",
+        "Verified protocol and implementation claims against primary sources: IETF RFC 9293, RFC 6585 and RFC 9110; Reactive Streams; current Redis distributed-lock documentation; ZooKeeper lock recipe; etcd v3.8 concurrency API; PostgreSQL explicit-locking documentation; and DynamoDB TTL documentation. Citations are recorded in the external-link baseline.",
+        "All 30 scripts/verify.sh gates passed. The standalone link check covered 10,819 links and 150 anchors with no failures; citation baseline diff was clean after its update at 2,515 URLs.",
+        "Ruby 3.4 production Jekyll build and site-wide rendered-heading check passed; each reviewed page rendered with exactly one H1.",
+        "git diff --check passed."
+      ]
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.15-how-to-approach.md",

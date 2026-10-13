@@ -258,34 +258,46 @@ Source: [Capacity Planning & Back-of-Envelope Estimation](30.2.1.12-capacity-pla
 **A:** Place 18 instances in each zone, 54 total. Losing one zone leaves 36 instances, enough for the 35K/s tested demand under the stated assumptions.
 
 
-## Backpressure & Flow Control
+## Backpressure and Flow Control
 
-Source: [Backpressure & Flow Control](30.2.1.13-backpressure-and-flow-control.md)
+Source: [Backpressure and Flow Control](30.2.1.13-backpressure-and-flow-control.md)
 
 **Q:** How can a push protocol provide backpressure without becoming a pull API?
 
 **A:** Credits, bounded windows or explicit pause/resume signals restrict producer progress to consumer capacity. The key is bounded admitted work and a defined overload policy.
 
-**Q:** A blocked enqueue wakes, but a newcomer fills the slot first. What must the awakened writer do?
+**Q:** Arrivals are 10,000 events/s, completions are 1,000/s, and the buffer has 10,000 free slots. About how long until it fills?
 
-**A:** Recheck the capacity condition before storing its item. One wakeup is not a reserved slot; an if-only check can overfill the queue.
+**A:** The backlog grows by 9,000 events/s, so 10,000 ÷ 9,000 ≈ 1.11 seconds, assuming constant rates and an initially empty buffer.
 
 **Q:** Does bounding stored items bound total process memory?
 
 **A:** No. Waiting producers, request bodies and in-flight jobs can still accumulate. Bound admission, waiters and deadlines as well as the stored queue.
 
+**Q:** When does an HTTP overload response actually slow its caller?
 
-## Distributed Locks & Coordination
+**A:** Only when the caller respects the rejection and retry delay. Bound attempts and deadlines, add jitter to spread retries, and make duplicate effects safe.
 
-Source: [Distributed Locks & Coordination](30.2.1.14-distributed-locks.md)
+
+## Distributed Locks and Coordination
+
+Source: [Distributed Locks and Coordination](30.2.1.14-distributed-locks.md)
 
 **Q:** Why is a lease insufficient to stop a paused worker writing after expiry?
 
 **A:** The worker may resume without noticing it lost the lease. The resource must reject stale authority, for example with fencing tokens, or use another transactional safety boundary.
 
+**Q:** Does a random owner token protect a resource from stale writes?
+
+**A:** No. It can make release conditional on the current owner, but a fencing generation must increase across acquisitions and the protected resource must enforce it atomically.
+
 **Q:** A lease expires, but the resource has never seen the replacement's higher epoch. Must an epoch-only fence reject the expired holder?
 
-**A:** No. The fence rejects epochs older than the newest accepted epoch. If each write must prove current ownership, check the authoritative lease and perform the mutation inside one protected transaction or equivalent resource-side condition.
+**A:** No. A fence rejects older epochs only after the resource has observed a newer one. A separate lease check followed by a write still races; ownership and mutation need one atomic enforcement boundary.
+
+**Q:** The acquisition call timed out. Is it safe to retry under a new owner identity and start work?
+
+**A:** No. The coordinator may have granted the first lease before its response was lost. Resolve ownership with a stable operation identity or wait for the possible lease to expire.
 
 ## How to Approach Any System Design Problem
 

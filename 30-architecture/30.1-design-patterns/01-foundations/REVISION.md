@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Design%20Patterns-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -66,11 +66,35 @@ Source: [DRY, KISS, YAGNI & Other Design Principles](30.1.1.02-dry-kiss-yagni.md
 
 **Q:** Trace registration from the HTTP controller to the public response. Where does the stored password hash disappear?
 
-**A:** The service hashes the password, sends only email and hash to the repository, then constructs `{id, email}` from the stored result. The response receives that public object, not the persistence record.
+**A:** The service hashes the password, sends the hash to the repository, then returns a public projection such as `{ id, email }`. The HTTP response uses that projection, never the persistence record or password hash.
 
 **Q:** Two clients already use one mandated validation rule. Must they wait for a third client before sharing it?
 
 **A:** No. The Rule of Three gathers evidence when the shared knowledge is uncertain; it is not an admission threshold. Conversely, three similar validators can remain separate when their rules change independently.
+
+**Q:** A CSV export may be requested later. What does YAGNI suggest, and which future conditions should still shape today's design?
+
+**A:** Defer the unused export behavior and its generic framework. Preserve constraints that already exist, such as a required retention period, security boundary, or committed data migration; those are current requirements, not imagined features.
+
+**Q:** A report currently meets its latency target with an in-memory sort. What would justify adding a cache or query framework?
+
+**A:** A measured volume or latency constraint could justify more machinery if the mechanism addresses it. A vague scale estimate does not; keep the adequate implementation until evidence shows which limit it reaches.
+
+**Q:** How should a senior engineer decide between a small function and a Strategy abstraction?
+
+**A:** Start with real variation and callers. A small function is simpler when one rule is stable; Strategy can isolate independently changing policies, but adds contracts and wiring that need a concrete benefit.
+
+**Q:** An implementation invokes Postel's Law to accept malformed protocol messages. What should you check?
+
+**A:** Check the protocol's defined acceptance rules and known compatibility needs. [RFC 9413](https://www.rfc-editor.org/rfc/rfc9413.html) warns that broad tolerance can entrench ambiguous behavior and security flaws; emit canonical output and reject unspecified input.
+
+**Q:** Why ask an account object to withdraw money, and what does that fail to guarantee across two processes?
+
+**A:** The account operation can keep validation and the balance invariant together. Separate processes still need a transaction or concurrency control that serializes the shared persisted balance; a method call alone is not atomic.
+
+**Q:** Does separation of concerns require one class for every operation?
+
+**A:** No. Separate decisions that change independently and keep each invariant with its owner. Additional classes are useful only when they reduce coupling or make a meaningful boundary easier to test and understand.
 
 ## OOP Concepts — Encapsulation, Inheritance, Polymorphism, Abstraction
 

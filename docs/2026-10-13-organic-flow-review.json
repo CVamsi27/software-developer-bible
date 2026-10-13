@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 283,
+    "revised": 284,
     "unchanged": 80,
-    "pending": 157,
-    "reviewed": 363,
+    "pending": 156,
+    "reviewed": 364,
     "topic_chapters": 520
   },
   "entries": [
@@ -4271,12 +4271,17 @@
       "path": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.02-dry-kiss-yagni.md",
       "group": "30-architecture/30.1-design-patterns/01-foundations",
       "title": "DRY, KISS, YAGNI & Other Design Principles",
-      "status": "pending",
-      "baseline_sha256": "d6a419b4f53adccbdb3d812bcee7372dedbe01f4b0361c76d044f602f6ee0554",
+      "status": "revised",
+      "baseline_sha256": "cf08e2c79c7bbc23f85ce722258fa454cf2c78801b49bd29b699aea4f6600a45",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "When should a senior engineer share a rule, add complexity, or defer a capability?",
+      "disposition": "Rebuilt the chapter as a decision flow from shared knowledge to adequate complexity and deferred capability. Kept the Rule of Three as evidence rather than a threshold; clarified known constraints, composition vs behavioral substitution, explicit side effects, separation by independent change, and the limits of Postel\u2019s Law under RFC 9413. Replaced the long parallel catalogs and generic LLD checklist with concise boundaries, one cross-cutting subtotal example, and a focused interview trace. Updated revision questions and replaced generic references with directly relevant sources.",
+      "validation": [
+        "All 30 repository gates passed with bash scripts/verify.sh, including template, definition, First Principles, and interview-answer depth checks.",
+        "Standalone link scan passed: 10,799 links checked, 152 anchors verified, no broken links or stale labels.",
+        "Citation baseline passed with 2,514 URLs and no drift; new primary references were probed at The Pragmatic Programmer, Martin Fowler, and RFC Editor.",
+        "git diff --check passed; Ruby 3.4 production Jekyll build and rendered-heading check passed."
+      ]
     },
     {
       "path": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.03-oop-concepts.md",

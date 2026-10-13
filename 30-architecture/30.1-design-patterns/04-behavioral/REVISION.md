@@ -66,6 +66,10 @@ Source: [State Pattern & State Machines](30.1.4.04-state.md)
 
 **A:** When behavior follows an object's lifecycle state and transitions between states are part of its rules. A Strategy usually represents a chosen interchangeable policy.
 
+**Q:** Does a union and `switch` implementation use the GoF State object structure?
+
+**A:** No. It can model the same finite states and legal transitions, but GoF State specifically delegates behavior from a context to a replaceable state object. Choose the representation that keeps the lifecycle rules clear.
+
 **Q:** Trace PAY then SHIP from pending.
 
 **A:** PAY returns paid with the supplied timestamp; SHIP from paid returns shipped with tracking and timestamp. SHIP directly from pending throws because no legal transition accepts it.

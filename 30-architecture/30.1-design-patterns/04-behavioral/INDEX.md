@@ -1,6 +1,6 @@
 # Behavioral Patterns
 
-> **Study time:** ≈ 1 h 1 m of reading (13 files, ~5 min average).
+> **Study time:** ≈ 1 h 2 m of reading (13 files, ~5 min average).
 > **13 files.** Object collaboration. These patterns are about algorithms and the assignment of responsibilities between objects. They characterize complex control flow that's harder to follow at runtime.
 
 [![Files](https://img.shields.io/badge/files-13-blue)](../../INDEX.md)
@@ -30,7 +30,7 @@ Creational and structural patterns are about "what" (objects) and "how" (composi
 | 1 | [Strategy](30.1.4.01-strategy.md) | Delegate to selected interchangeable policies | Multiple ways to do the same thing | Only one algorithm ever | Important | Foundational |
 | 2 | [Observer](30.1.4.02-observer.md) | One-to-many change notification | A local subject has multiple subscribers | Durable cross-process delivery is required without a broker | Important | Foundational |
 | 3 | [Chain of Responsibility](30.1.4.03-chain-of-responsibility.md) | Route through ordered potential receivers | Several handlers may claim or forward a request | The receiver is already known and order adds no policy | Important | Specialized |
-| 4 | [State](30.1.4.04-state.md) | Behavior depends on state | State machines, workflow engines | Few states, no transitions | Important | Specialized |
+| 4 | [State](30.1.4.04-state.md) | Keep legal lifecycle transitions explicit | Orders, requests, protocol states | One state-dependent branch with no evolving lifecycle | Important | Specialized |
 | 5 | [Template Method](30.1.4.05-template-method.md) | Skeleton + customizable steps | Algorithm with varying steps | Algorithm is fully fixed | Important | Specialized |
 | 6 | [Iterator](30.1.4.06-iterator.md) | Sequential access without exposing internals | Collections, lazy sequences | Existing iteration already satisfies the traversal contract | Important | Specialized |
 | 7 | [Mediator](30.1.4.07-mediator.md) | Central authority for object communication | Many-to-many object interactions, dialog boxes | Few objects, direct refs are fine | Important | Specialized |

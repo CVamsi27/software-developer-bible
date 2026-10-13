@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 302,
+    "revised": 303,
     "unchanged": 80,
-    "pending": 138,
-    "reviewed": 382,
+    "pending": 137,
+    "reviewed": 383,
     "topic_chapters": 520
   },
   "entries": [
@@ -4616,12 +4616,21 @@
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.04-state.md",
       "group": "30-architecture/30.1-design-patterns/04-behavioral",
       "title": "State Pattern & State Machines",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "5f3ec9080071d0d1cddd63a1014992ce9b513df39b58ef3830dad41fbd392b47",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "When should lifecycle behavior use the GoF State structure, and where do transition, persistence and side-effect guarantees stop?",
+      "disposition": "Separated the GoF State object pattern from the broader state-machine model, added the publisher-hosted textbook definition, and kept the order trace as the concrete path through accepted and rejected transitions. Replaced mismatched workflow/state-machine citations, updated invoked-services terminology, and clarified that persisted snapshots and their migration rules belong to the selected library release. Tightened the Behavioral INDEX row and added a revision question for the representation distinction.",
+      "validation": [
+        "Fresh-reader review found the chapter accurate and focused; it identified mismatched reference labels and legacy invoked-services terminology, which were corrected.",
+        "Verified the quoted GoF definition in the O\u2019Reilly-hosted textbook excerpt and checked the official Stately state-machine, persistence and invoked-actor pages against their labels and claims.",
+        "The fenced TypeScript example compiled with TypeScript 7.0.2 under strict NodeNext settings and passed runtime checks for PAY, SHIP, illegal SHIP, terminal-state rejection and the documented mutable Date reference.",
+        "Read-time, alignment, citation-baseline, search-index and count writers ran; the fixed-point check confirmed all 10 repair writers leave the corpus stable.",
+        "All 30 repository verification gates passed. Standalone links checked 10,797 links and 152 anchors with 0 issues; citation-baseline diff had 0 added or removed URLs at 2,522.",
+        "Ruby 3.4 locked-bundle production Jekyll build, rendered-heading check and git diff --check passed."
+      ],
+      "reviewed_at": "2026-10-14",
+      "review_sha256": "2a44ccb9beb7d5e32c9f20e0211a27c3a2a72d3fa056e119252bee0e615fbaf0"
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.05-template-method.md",

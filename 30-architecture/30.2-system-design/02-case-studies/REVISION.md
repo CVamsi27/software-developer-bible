@@ -58,6 +58,18 @@ Source: [Uber System Design](30.2.2.03-uber.md)
 
 **A:** Location discovery can tolerate freshness error. Assigning one driver to competing riders requires an atomic claim or equivalent invariant enforcement.
 
+**Q:** Why must a location report include a session generation and increasing sequence?
+
+**A:** An old connection can deliver a delayed report or disconnect after a newer session has taken ownership. Rejecting stale generations and out-of-order sequence numbers within a generation prevents old state from replacing the driver's current position or availability.
+
+**Q:** Why does the nearest geo-index result not prove the fastest pickup?
+
+**A:** A geo index ranks or filters by straight-line distance. Road barriers, traffic, eligibility and stale positions can change the useful ranking, so route estimates should be bounded and final assignment must recheck authoritative state.
+
+**Q:** What does `ST_DWithin` provide when a spatial index is available, and what does it not decide?
+
+**A:** It can filter rows within a radius using an applicable spatial index. It does not estimate road travel time, prove a driver's availability, or atomically reserve that driver for a ride.
+
 ## Netflix System Design
 
 Source: [Netflix System Design](30.2.2.04-netflix.md)

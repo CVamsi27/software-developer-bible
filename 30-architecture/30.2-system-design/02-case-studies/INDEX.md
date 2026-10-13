@@ -51,7 +51,7 @@ The 31 cases are grouped by the kind of reasoning they practice. Use the tiers a
 | --- | ----------------------------------------------------------------------- | --------------------- | --------------------------------------------------------------------------------------------------------- | ------------- | ------------------ |
 | 01 | [URL Shortener](30.2.2.01-url-shortener.md) | Web (foundational) | Code allocation, uniqueness, redirect caching, analytics durability | Important | Important |
 | 02 | [WhatsApp](30.2.2.02-whatsapp.md) | Messaging & Real-Time | Retry-safe acceptance, device delivery, E2EE, group membership | Important | Important |
-| 03 | [Uber](30.2.2.03-uber.md) | Ride-sharing & Geo | Ride matching, geospatial indexing, real-time tracking, ETA | Important | Important |
+| 03 | [Uber](30.2.2.03-uber.md) | Ride-sharing & Geo | Location freshness, geo discovery, road ETA, trip and payment boundaries | Important | Important |
 | 04 | [Netflix](30.2.2.04-netflix.md) | Streaming & Media | Video streaming, CDN, recommendation engine, content delivery | Important | Important |
 | 05 | [Google Drive](30.2.2.05-google-drive.md) | Storage & Sync | Staged upload publication, quota, permissions, version conflicts | Important | Important |
 | 06 | [Payment Gateway](30.2.2.06-payment-gateway.md) | Commerce & Fintech | Unknown outcomes, idempotency, ledger posting, refunds, reconciliation | Important | Important |

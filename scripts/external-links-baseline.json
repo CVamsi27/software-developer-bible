@@ -1,10 +1,9 @@
 {
  "generated": "2026-10-14",
- "url_count": 2532,
+ "url_count": 2534,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.03-uber.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.04-netflix.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.05-google-drive.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.06-payment-gateway.md",
@@ -5339,6 +5338,9 @@
   "https://postgis.net/docs/ST_Intersects.html": [
    "80-lanes-abroad-full-stack/80.34-germany-target-domain-primer.md"
   ],
+  "https://postgis.net/documentation/tips/st-dwithin/": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.03-uber.md"
+  ],
   "https://postmarkapp.com/developer": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.07-transactional-email-and-notifications.md"
   ],
@@ -5758,6 +5760,9 @@
   "https://redis.io/docs/latest/commands/expire/": [
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.04-nosql-vs-sql.md",
    "20-backend/20.8-caching/20.8.01-caching-deep-dive.md"
+  ],
+  "https://redis.io/docs/latest/commands/geosearch/": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.03-uber.md"
   ],
   "https://redis.io/docs/latest/commands/info/": [
    "20-backend/20.8-caching/20.8.04-interview-questions.md"

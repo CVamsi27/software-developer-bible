@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 314,
+    "revised": 315,
     "unchanged": 80,
-    "pending": 126,
-    "reviewed": 394,
+    "pending": 125,
+    "reviewed": 395,
     "topic_chapters": 520
   },
   "entries": [
@@ -4854,12 +4854,19 @@
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.04-saga.md",
       "group": "30-architecture/30.1-design-patterns/05-architectural",
       "title": "Saga Pattern",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "5af19e5e2556f215280a0c7dbd04e92a17e50e668b45288d3df510226c7383f3",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What recovery guarantees must a workflow preserve after a participant commits but its result is rejected or unknown?",
+      "disposition": "Opened with the flight-confirmed/hotel-rejected failure and sourced the textbook definition to Garcia-Molina and Salem. Tightened First Principles around visible partial commits, clarified pivot/forward-only recovery and two-phase-commit tradeoffs, and expanded revision practice for pivot recovery and atomic commit.",
+      "validation": [
+        "Checked Garcia-Molina and Salem's original saga paper and the current Microsoft Saga pattern guidance on local transactions, compensations and pivot steps; the paper PDF was reachable and its citation was added to the external-link baseline.",
+        "Reviewed the architectural INDEX, REVISION companion and detailed microservices Saga chapter to keep the overview distinct while aligning unknown-outcome, durable-progress and compensation guarantees.",
+        "All 30 repository verification gates passed, including freshness, template, links, external-link baseline and writer fixed-point checks. Standalone links checked 10,797 links and 152 anchors with zero failures; citation baseline had no drift at 2,527 URLs.",
+        "Ruby 3.4 locked-bundle production Jekyll build, site-wide rendered-heading check, focused chapter heading/content/no-Liquid check and git diff --check passed."
+      ],
+      "reviewed_at": "2026-10-14",
+      "review_sha256": "b2bf1822657dc50873ea5ef10af63d5fd81f86444fd9d41947fd2571e41b446b"
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.md",

@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Design%20Patterns-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -89,6 +89,14 @@ Source: [Saga Pattern](30.1.5.04-saga.md)
 **Q:** What if hotel booking times out instead of rejecting?
 
 **A:** Its outcome is unknown. Reconcile using stable operation identity or the provider idempotency/status contract before treating it as failed; a timeout does not cancel remote work.
+
+**Q:** A retryable step fails after the saga's pivot transaction succeeds. What is the recovery direction?
+
+**A:** Continue forward by retrying the remaining idempotent work; do not compensate earlier commits as if the workflow were still reversible. Keep progress visible and escalate when automated recovery cannot finish.
+
+**Q:** When can two-phase commit fit better than a saga?
+
+**A:** Use it when every participant supports a compatible atomic commit protocol and the business requires global atomicity. Coordinator failure can block participants; a saga instead accepts visible partial commits and compensating work.
 
 ## DDD Tactical Patterns — Aggregates & Value Objects
 

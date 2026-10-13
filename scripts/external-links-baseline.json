@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2526,
+ "url_count": 2527,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -4416,6 +4416,7 @@
   ],
   "https://martinfowler.com/articles/injection.html": [
    "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md",
+   "30-architecture/30.1-design-patterns/05-architectural/30.1.5.02-cqrs-di.md",
    "30-architecture/30.1-design-patterns/05-architectural/30.1.5.07-service-locator-vs-dependency-injection.md"
   ],
   "https://martinfowler.com/articles/injection.html#UsingaSingleton": [
@@ -4479,6 +4480,7 @@
    "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.12-null-object.md"
   ],
   "https://martinfowler.com/eaaDev/EventSourcing.html": [
+   "30-architecture/30.1-design-patterns/05-architectural/30.1.5.03-event-sourcing.md",
    "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.01-real-time-architecture.md"
   ],
   "https://martinfowler.com/eaaDev/PassiveScreen.html": [
@@ -7037,6 +7039,9 @@
   "https://www.cs.princeton.edu/courses/archive/spr05/cos598E/bib/p422-bloom.pdf": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.17-probabilistic-data-structures.md"
   ],
+  "https://www.cs.princeton.edu/techreports/1987/070.pdf": [
+   "30-architecture/30.1-design-patterns/05-architectural/30.1.5.04-saga.md"
+  ],
   "https://www.cs.umd.edu/~samir/498/vitter.pdf": [
    "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.05-quick-select-reservoir-sampling.md"
   ],
@@ -8305,10 +8310,12 @@
   ],
   "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-0.html#decorators": [
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.03-decorators.md",
-   "30-architecture/30.1-design-patterns/03-structural/30.1.3.03-decorator.md"
+   "30-architecture/30.1-design-patterns/03-structural/30.1.3.03-decorator.md",
+   "30-architecture/30.1-design-patterns/05-architectural/30.1.5.02-cqrs-di.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-2.html#decorator-metadata": [
-   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.03-decorators.md"
+   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.03-decorators.md",
+   "30-architecture/30.1-design-patterns/05-architectural/30.1.5.02-cqrs-di.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-4.html#the-noinfer-utility-type": [
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.02-branded-types.md"

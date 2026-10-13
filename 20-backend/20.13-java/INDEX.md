@@ -1,7 +1,7 @@
 # Java — Index
 
-> **Study time:** ≈ 1 h 50 m of reading (7 files, ~16 min average).
-> **7 files** — Java language fundamentals, OOP & SOLID, concurrency & multithreading, and JUnit/Mockito testing — the shared Java backend corpus, used by the SDE/FAANG lane and any Java-heavy EU full-stack target.
+> **Study time:** ≈ 1 h 28 m of reading (7 files, ~13 min average).
+> **7 files** — language, object design, concurrency, testing, Spring Boot, and interview practice form the shared Java backend path for Java-heavy roles.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Backend-blue)](#)
@@ -18,18 +18,18 @@
 | Language | [Java Language Fundamentals](20.13.01-java-language-fundamentals.md) | Types, control flow, strings, arrays, collections, streams, generics — the core tour | Deferred | Important |
 | OOP & Design | [OOP Principles, Interfaces & SOLID](20.13.02-java-oop-solid.md) | Encapsulation, inheritance, polymorphism, composition, SOLID | Deferred | Important |
 | Concurrency | [Concurrency & Multithreading](20.13.03-java-concurrency-multithreading.md) | Threads, synchronization, CompletableFuture, parallel streams, starvation | Deferred | Important |
-| Testing | [Testing with JUnit & Mockito](20.13.04-java-testing-junit-mockito.md) | JUnit 5, Mockito, test data builders, API/integration testing | Deferred | Important |
-| Framework | [Spring Boot Essentials](20.13.05-spring-boot.md) | DI, starters, MVC, Spring Data JPA, security filter chain, actuator | Deferred | Important |
+| Testing | [Testing with JUnit & Mockito](20.13.04-java-testing-junit-mockito.md) | JUnit 6, Mockito, Spring test slices, Testcontainers 2 | Deferred | Important |
+| Framework | [Spring Boot Essentials](20.13.05-spring-boot.md) | Boot 4, dependency wiring, MVC, transactions, security, Actuator | Deferred | Important |
 | Interview | [Java Interview Questions](20.13.06-interview-questions.md) | Thirty prompts across language, design, concurrency, testing and Spring | Deferred | Important |
 
 ---
 
 ## Read order
 
-1. **Build one correct object.** Read language fundamentals, then OOP. Trace identity, collection ordering, and account invariants before adding a framework.
-2. **Share and schedule work.** Read concurrency. Follow a full bounded-buffer put/take cycle, cancellation, and executor cleanup.
-3. **Wire a request boundary.** Read Spring Boot, then testing. Map HTTP → authorization → service transaction → repository and choose the smallest test that exercises each boundary.
-4. **Recall separately.** Use [Revision](REVISION.md), then the interview bank for spoken answers and follow-up tradeoffs.
+1. **Build valid values and contracts.** Read language fundamentals, then OOP. Trace identity, collection ordering, and account invariants before introducing a framework.
+2. **Share and schedule work safely.** Read concurrency. Follow the bounded-buffer cycle, then distinguish shared-state safety from task and downstream-resource limits.
+3. **Choose evidence for each boundary.** Read testing before Spring. Compare unit, MVC-slice, and real-database tests, then follow one request through authorization, transaction, repository, and commit.
+4. **Recall separately.** Use [Revision](REVISION.md), then the interview bank for spoken answers and boundary changes.
 
 ## See Also
 

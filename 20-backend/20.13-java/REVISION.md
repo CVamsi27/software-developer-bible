@@ -22,6 +22,10 @@ Source: [Language Fundamentals](20.13.01-java-language-fundamentals.md)
 
 **A:** The subtraction may overflow. Integer.compare expresses ordering without that arithmetic overflow.
 
+**Q:** Is primitive type pattern matching in `instanceof` and `switch` a production feature in Java 27?
+
+**A:** No. It remains a preview feature in Java 27; compile and run with preview enabled for that exact JDK release, or use the stable reference-type patterns.
+
 ## OOP and SOLID
 
 Source: [OOP and SOLID](20.13.02-java-oop-solid.md)
@@ -74,6 +78,10 @@ Source: [Concurrency](20.13.03-java-concurrency-multithreading.md)
 
 **A:** No. Unlock only after successful acquisition; unlocking an unowned ReentrantLock throws. Interrupted acquisition also leaves no ownership to release.
 
+**Q:** Does a `synchronized` block pin a virtual thread to its carrier on every supported JDK?
+
+**A:** No. JDK 24 removed monitor pinning while blocked in `synchronized`; native and foreign-function calls can still pin. JDK 21 and earlier have the older monitor behavior, so check the deployed runtime.
+
 ## Testing
 
 Source: [Testing](20.13.04-java-testing-junit-mockito.md)
@@ -85,6 +93,10 @@ Source: [Testing](20.13.04-java-testing-junit-mockito.md)
 **Q:** What does a database container establish, and what remains unproven?
 
 **A:** It exercises the selected database version and configuration. Deployment topology, production data distribution and unrepresented settings need additional checks.
+
+**Q:** A Boot 4 MVC slice fails to compile with the older `WebMvcTest` import. What changed?
+
+**A:** Boot 4 split web testing into a focused module; use the `spring-boot-webmvc-test` dependency and `org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest` package.
 
 ## Spring Boot
 
@@ -101,6 +113,10 @@ Source: [Spring Boot](20.13.05-spring-boot.md)
 **Q:** Will validated configuration reject every unknown property?
 
 **A:** No. Register the configuration type and validation first; missing required values can fail validation, but unknown properties are ignored by default unless configured otherwise.
+
+**Q:** Which starter should a new Spring Boot 4 MVC service use?
+
+**A:** `spring-boot-starter-webmvc`; Boot 4 deprecates `spring-boot-starter-web` in favor of the focused MVC starter.
 
 ## Follow a Trace and Change One Condition
 
@@ -141,6 +157,10 @@ Use these prompts for retrieval practice. The source chapters contain examples; 
 
 ## References & Learn More
 
-- [Java 21 documentation](https://docs.oracle.com/en/java/javase/21/)
+- [Java SE 27 documentation](https://docs.oracle.com/en/java/javase/27/)
 - [Java Language Specification, Java SE 27](https://docs.oracle.com/javase/specs/jls/se27/html/)
-- [Spring Boot reference](https://docs.spring.io/spring-boot/index.html)
+- [Spring Boot 4.1 reference](https://docs.spring.io/spring-boot/reference/index.html)
+- [Spring Framework 7 transaction proxy semantics](https://docs.spring.io/spring-framework/reference/7.0/data-access/transaction/declarative/annotations.html)
+- [JUnit 6.0.3 user guide](https://docs.junit.org/6.0.3/user-guide/)
+- [Testcontainers PostgreSQL module](https://java.testcontainers.org/modules/databases/postgres/)
+- [JEP 491: Synchronize Virtual Threads without Pinning](https://openjdk.org/jeps/491)

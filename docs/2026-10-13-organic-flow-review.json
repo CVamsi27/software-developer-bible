@@ -10,10 +10,10 @@
   },
   "counts": {
     "topic_chapters": 520,
-    "revised": 211,
+    "revised": 216,
     "unchanged": 79,
-    "pending": 230,
-    "reviewed": 290
+    "pending": 225,
+    "reviewed": 295
   },
   "entries": [
     {
@@ -2252,56 +2252,81 @@
       "path": "20-backend/20.13-java/20.13.01-java-language-fundamentals.md",
       "group": "20-backend/20.13-java",
       "title": "Java — Language Fundamentals",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "be2fd64535eadf6c30ba4773fa4d038ee87c60efaeb3ba6390601e2c025c566a",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do Java value, equality and collection contracts change what a caller observes?",
+      "disposition": "Rebuilt the chapter around one observable alias/equality/order trace, then connected values and control flow to text, arrays, collections, streams, absence, exceptions, enums and generics. Removed repeated API catalogs and duplicate interview algorithms while preserving UTF-16, comparator, hash-key, erasure and resource-ownership boundaries.",
+      "validation": [
+        "Re-read in dependency order with the Java INDEX, REVISION companion and separate interview bank; retained the practical and textbook definitions and one Summary per teaching chapter.",
+        "Verified Java SE/JLS 27 and JEP 491, Spring Boot 4.1.1 / Framework 7 behavior, JUnit 6.0.3 and Testcontainers 2.0.5 against primary documentation; probed every newly cited URL before updating the citation baseline.",
+        "All 30 repository verification gates passed; standalone link checking found 10,837 local links and 149 anchors with zero failures; the 2,517-URL external citation baseline and writer fixed-point check are clean.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build passed. Site-wide rendered-heading verification and focused checks for all eight Java group pages confirmed one authored H1 per page; git diff --check passed."
+      ]
     },
     {
       "path": "20-backend/20.13-java/20.13.02-java-oop-solid.md",
       "group": "20-backend/20.13-java",
       "title": "Java — OOP Principles, Interfaces & SOLID",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "ab9408466a88e92065a6ddb4d308029a86b49ecf8b442b1c49e31c7be47caa5d",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "When does an implementation actually preserve the contract its callers rely on?",
+      "disposition": "Opened with the mutable square/rectangle contract failure and kept OOP examples tied to invariants and substitution. Removed the duplicate composition section and merged the extra reading list into the single references section.",
+      "validation": [
+        "Re-read in dependency order with the Java INDEX, REVISION companion and separate interview bank; retained the practical and textbook definitions and one Summary per teaching chapter.",
+        "Verified Java SE/JLS 27 and JEP 491, Spring Boot 4.1.1 / Framework 7 behavior, JUnit 6.0.3 and Testcontainers 2.0.5 against primary documentation; probed every newly cited URL before updating the citation baseline.",
+        "All 30 repository verification gates passed; standalone link checking found 10,837 local links and 149 anchors with zero failures; the 2,517-URL external citation baseline and writer fixed-point check are clean.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build passed. Site-wide rendered-heading verification and focused checks for all eight Java group pages confirmed one authored H1 per page; git diff --check passed."
+      ]
     },
     {
       "path": "20-backend/20.13-java/20.13.03-java-concurrency-multithreading.md",
       "group": "20-backend/20.13-java",
       "title": "Java — Concurrency & Multithreading",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "a709cf5ec3661ed979bf0f4b3f09791f21caf2e9f53d81257b3a5d9756ad37b2",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What must hold for concurrent tasks to preserve shared invariants and still make progress?",
+      "disposition": "Rebuilt the opening around a lost reservation and connected happens-before, atomic state transitions, bounded-buffer coordination, task ownership, futures and progress failures. Replaced repeated catalogs and a misleading common-pool I/O example with an explicitly owned executor; retained downstream capacity, cancellation and JDK-version pinning limits.",
+      "validation": [
+        "Re-read in dependency order with the Java INDEX, REVISION companion and separate interview bank; retained the practical and textbook definitions and one Summary per teaching chapter.",
+        "Verified Java SE/JLS 27 and JEP 491, Spring Boot 4.1.1 / Framework 7 behavior, JUnit 6.0.3 and Testcontainers 2.0.5 against primary documentation; probed every newly cited URL before updating the citation baseline.",
+        "All 30 repository verification gates passed; standalone link checking found 10,837 local links and 149 anchors with zero failures; the 2,517-URL external citation baseline and writer fixed-point check are clean.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build passed. Site-wide rendered-heading verification and focused checks for all eight Java group pages confirmed one authored H1 per page; git diff --check passed."
+      ]
     },
     {
       "path": "20-backend/20.13-java/20.13.04-java-testing-junit-mockito.md",
       "group": "20-backend/20.13-java",
       "title": "Java — Testing with JUnit & Mockito",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "f9cd35e2f350cfba571b4660ee1a73af4534b47f6123f83fc73c58be1585382a",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which real contract can fail at this boundary, and what test provides evidence about it?",
+      "disposition": "Connected JUnit behavior checks and Mockito seams to increasing integration fidelity, then preserved concrete JUnit, Mockito, MVC, PostgreSQL-container and fixture examples. Updated Boot 4 and Testcontainers 2 package boundaries and removed duplicated end sections.",
+      "validation": [
+        "Re-read in dependency order with the Java INDEX, REVISION companion and separate interview bank; retained the practical and textbook definitions and one Summary per teaching chapter.",
+        "Verified Java SE/JLS 27 and JEP 491, Spring Boot 4.1.1 / Framework 7 behavior, JUnit 6.0.3 and Testcontainers 2.0.5 against primary documentation; probed every newly cited URL before updating the citation baseline.",
+        "All 30 repository verification gates passed; standalone link checking found 10,837 local links and 149 anchors with zero failures; the 2,517-URL external citation baseline and writer fixed-point check are clean.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build passed. Site-wide rendered-heading verification and focused checks for all eight Java group pages confirmed one authored H1 per page; git diff --check passed."
+      ]
     },
     {
       "path": "20-backend/20.13-java/20.13.05-spring-boot.md",
       "group": "20-backend/20.13-java",
       "title": "Java — Spring Boot Essentials",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "bc052a6bc6f308c3bc28b5bb5520ed887de2f7c9ec15ac984d3ff3fe01a2f591",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Where does one HTTP request gain or lose authorization, transaction ownership and persistence correctness?",
+      "disposition": "Followed one HTTP request through token verification, MVC validation, service transaction, tenant policy, persistence and commit. Clarified conditional wiring, OSIV/N+1, transaction rollback, proxy interception, CSRF and actuator exposure; removed a redundant understanding section and revised database advice around use-case fetch plans.",
+      "validation": [
+        "Re-read in dependency order with the Java INDEX, REVISION companion and separate interview bank; retained the practical and textbook definitions and one Summary per teaching chapter.",
+        "Verified Java SE/JLS 27 and JEP 491, Spring Boot 4.1.1 / Framework 7 behavior, JUnit 6.0.3 and Testcontainers 2.0.5 against primary documentation; probed every newly cited URL before updating the citation baseline.",
+        "All 30 repository verification gates passed; standalone link checking found 10,837 local links and 149 anchors with zero failures; the 2,517-URL external citation baseline and writer fixed-point check are clean.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build passed. Site-wide rendered-heading verification and focused checks for all eight Java group pages confirmed one authored H1 per page; git diff --check passed."
+      ]
     },
     {
       "path": "20-backend/20.2-nestjs/01-core-architecture/20.2.1.01-modules.md",

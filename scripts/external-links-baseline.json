@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-13",
- "url_count": 2520,
+ "url_count": 2517,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md",
@@ -1908,8 +1908,10 @@
   "https://docs.jfrog.com/artifactory/docs/repository-layouts": [
    "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md"
   ],
-  "https://docs.junit.org/current/user-guide/": [
-   "20-backend/20.13-java/20.13.04-java-testing-junit-mockito.md"
+  "https://docs.junit.org/6.0.3/user-guide/": [
+   "20-backend/20.13-java/20.13.04-java-testing-junit-mockito.md",
+   "20-backend/20.13-java/20.13.06-interview-questions.md",
+   "20-backend/20.13-java/REVISION.md"
   ],
   "https://docs.kernel.org/bpf/index.html": [
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.03-ebpf-observability.md"
@@ -2170,35 +2172,27 @@
   "https://docs.opensearch.org/latest/api-reference/document-apis/index-document/": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.05-search-infrastructure-at-scale.md"
   ],
-  "https://docs.oracle.com/en/java/javase/21/": [
-   "20-backend/20.13-java/20.13.01-java-language-fundamentals.md",
-   "20-backend/20.13-java/REVISION.md"
-  ],
   "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/locks/ReentrantLock.html": [
-   "20-backend/20.13-java/20.13.03-java-concurrency-multithreading.md",
    "81-lanes-indian-sde-faang/81.02-core-cs-fundamentals.md"
   ],
-  "https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/concurrent/locks/ReentrantReadWriteLock.html": [
+  "https://docs.oracle.com/en/java/javase/27/": [
+   "20-backend/20.13-java/20.13.01-java-language-fundamentals.md",
+   "20-backend/20.13-java/20.13.06-interview-questions.md",
+   "20-backend/20.13-java/REVISION.md"
+  ],
+  "https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/util/concurrent/locks/ReentrantLock.html": [
+   "20-backend/20.13-java/20.13.03-java-concurrency-multithreading.md"
+  ],
+  "https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/util/concurrent/locks/ReentrantReadWriteLock.html": [
    "20-backend/20.13-java/20.13.03-java-concurrency-multithreading.md"
   ],
   "https://docs.oracle.com/javase/specs/jls/se25/html/jls-6.html#jls-6.6": [
    "30-architecture/30.1-design-patterns/01-foundations/30.1.1.03-oop-concepts.md"
   ],
   "https://docs.oracle.com/javase/specs/jls/se27/html/": [
+   "20-backend/20.13-java/20.13.01-java-language-fundamentals.md",
    "20-backend/20.13-java/20.13.02-java-oop-solid.md",
    "20-backend/20.13-java/REVISION.md"
-  ],
-  "https://docs.oracle.com/javase/specs/jls/se27/html/jls-15.html": [
-   "20-backend/20.13-java/20.13.02-java-oop-solid.md"
-  ],
-  "https://docs.oracle.com/javase/specs/jls/se27/html/jls-8.html": [
-   "20-backend/20.13-java/20.13.02-java-oop-solid.md"
-  ],
-  "https://docs.oracle.com/javase/specs/jls/se27/html/jls-9.html": [
-   "20-backend/20.13-java/20.13.02-java-oop-solid.md"
-  ],
-  "https://docs.oracle.com/javase/tutorial/": [
-   "20-backend/20.13-java/20.13.01-java-language-fundamentals.md"
   ],
   "https://docs.pact.io/": [
    "50-quality/50.1-testing/03-test-levels/50.1.3.02-integration-testing.md"
@@ -2270,12 +2264,20 @@
   "https://docs.slack.dev/authentication/verifying-requests-from-slack/": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.05-webhooks.md"
   ],
-  "https://docs.spring.io/spring-boot/index.html": [
-   "20-backend/20.13-java/20.13.05-spring-boot.md",
-   "20-backend/20.13-java/REVISION.md"
-  ],
   "https://docs.spring.io/spring-boot/reference/actuator/monitoring.html": [
    "40-platform/40.4-observability/02-errors-and-health/40.4.2.02-health-checks.md"
+  ],
+  "https://docs.spring.io/spring-boot/reference/index.html": [
+   "20-backend/20.13-java/20.13.05-spring-boot.md",
+   "20-backend/20.13-java/20.13.06-interview-questions.md",
+   "20-backend/20.13-java/REVISION.md"
+  ],
+  "https://docs.spring.io/spring-boot/system-requirements.html": [
+   "20-backend/20.13-java/20.13.05-spring-boot.md"
+  ],
+  "https://docs.spring.io/spring-framework/reference/7.0/data-access/transaction/declarative/annotations.html": [
+   "20-backend/20.13-java/20.13.05-spring-boot.md",
+   "20-backend/20.13-java/REVISION.md"
   ],
   "https://docs.spring.io/spring-framework/reference/testing/annotations/integration-spring/annotation-mockitobean.html": [
    "20-backend/20.13-java/20.13.04-java-testing-junit-mockito.md"
@@ -3582,10 +3584,12 @@
    "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.01-event-loop.md"
   ],
   "https://java.testcontainers.org/": [
-   "20-backend/20.13-java/20.13.04-java-testing-junit-mockito.md"
+   "20-backend/20.13-java/20.13.04-java-testing-junit-mockito.md",
+   "20-backend/20.13-java/20.13.06-interview-questions.md"
   ],
-  "https://javabrains.io/": [
-   "20-backend/20.13-java/20.13.01-java-language-fundamentals.md"
+  "https://java.testcontainers.org/modules/databases/postgres/": [
+   "20-backend/20.13-java/20.13.04-java-testing-junit-mockito.md",
+   "20-backend/20.13-java/REVISION.md"
   ],
   "https://javascript.info/": [
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.md"
@@ -5099,6 +5103,10 @@
   ],
   "https://openjdk.org/jeps/444": [
    "20-backend/20.13-java/20.13.03-java-concurrency-multithreading.md"
+  ],
+  "https://openjdk.org/jeps/491": [
+   "20-backend/20.13-java/20.13.03-java-concurrency-multithreading.md",
+   "20-backend/20.13-java/REVISION.md"
   ],
   "https://openslo.com/": [
    "40-platform/40.4-observability/03-sre-targets/40.4.3.01-sli-slo-sla.md"
@@ -7004,9 +7012,6 @@
   "https://www.atlassian.com/git/tutorials/git-hooks": [
    "40-platform/40.6-git-advanced/40.6.04-git-hooks.md"
   ],
-  "https://www.baeldung.com/": [
-   "20-backend/20.13-java/20.13.01-java-language-fundamentals.md"
-  ],
   "https://www.baeldung.com/java-concurrency": [
    "20-backend/20.13-java/20.13.03-java-concurrency-multithreading.md"
   ],
@@ -8443,12 +8448,6 @@
   "https://www.webpagetest.org/": [
    "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.04-http-caching.md",
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.md"
-  ],
-  "https://www.youtube.com/@JakobJenkov": [
-   "20-backend/20.13-java/20.13.03-java-concurrency-multithreading.md"
-  ],
-  "https://www.youtube.com/@Telusko": [
-   "20-backend/20.13-java/20.13.01-java-language-fundamentals.md"
   ],
   "https://www.youtube.com/c/ByteByteGo": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.15-how-to-approach.md"

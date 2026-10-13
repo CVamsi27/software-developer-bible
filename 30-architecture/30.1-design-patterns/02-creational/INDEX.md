@@ -1,6 +1,6 @@
 # Creational Patterns
 
-> **Study time:** ≈ 1 h 5 m of reading (6 files, ~11 min average).
+> **Study time:** ≈ 55 min of reading (6 files, ~9 min average).
 > **6 files.** Object creation mechanisms. These patterns decouple "how to construct an object" from "what to do with the constructed thing." The goal: make a system independent of how its objects are created, composed, and represented.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](../../INDEX.md)
@@ -73,13 +73,10 @@ Keeps partial choices behind named steps and returns the product at a final cons
 
 **Real-world examples:** `new RequestBuilder().url('...').method('POST').header(...).body(...).build()`, SQL query builders, test data builders.
 
-### [Abstract Factory](30.1.2.04-abstract-factory.md) *(new)*
-Provide an interface for creating families of related or dependent objects without specifying their concrete classes.
+### [Abstract Factory](30.1.2.04-abstract-factory.md)
+Selects a compatible family once and exposes one creation operation per product kind. Use it when related products must vary together; two products can be enough.
 
-**When to use:**
-- A system must be configured with one of multiple families of products
-- A family of related product objects is designed to be used together
-- You want to enforce that certain products are always used together (e.g., Mac UI: MacButton + MacCheckbox + MacScrollbar)
+**Use when:** Several related product kinds must come from one configured platform, provider, or dialect. The factory implementation and tests establish the family promise; the interface alone does not.
 
 **Illustrative applications:** matching UI components, themed component families, or provider capabilities that require the same protocol/account context. Confirm the actual factory mechanism before naming a framework as an implementation.
 

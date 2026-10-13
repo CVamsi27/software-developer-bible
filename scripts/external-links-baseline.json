@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2520,
+ "url_count": 2519,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -6108,9 +6108,6 @@
   "https://sourcemaking.com/": [
    "30-architecture/30.1-design-patterns/06-interview-prep/30.1.6.01-interview-questions.md"
   ],
-  "https://sourcemaking.com/design_patterns/abstract_factory": [
-   "30-architecture/30.1-design-patterns/02-creational/30.1.2.04-abstract-factory.md"
-  ],
   "https://sourcemaking.com/design_patterns/adapter": [
    "30-architecture/30.1-design-patterns/03-structural/30.1.3.01-adapter.md"
   ],
@@ -8162,7 +8159,8 @@
    "20-backend/20.3-rest-apis/05-interview-drills/20.3.5.01-interview-questions.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/2/basic-types": [
-   "30-architecture/30.1-design-patterns/02-creational/30.1.2.02-factory-method.md"
+   "30-architecture/30.1-design-patterns/02-creational/30.1.2.02-factory-method.md",
+   "30-architecture/30.1-design-patterns/02-creational/30.1.2.04-abstract-factory.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/2/classes": [
    "30-architecture/30.1-design-patterns/01-foundations/30.1.1.03-oop-concepts.md"

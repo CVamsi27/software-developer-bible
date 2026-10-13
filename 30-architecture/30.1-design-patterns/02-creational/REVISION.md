@@ -78,7 +78,7 @@ Source: [Builder Pattern](30.1.2.03-builder.md)
 
 Source: [Abstract Factory Pattern](30.1.2.04-abstract-factory.md)
 
-**Q:** Why does adding a new product type cost more with Abstract Factory?
+**Q:** Which change is cheaper with Abstract Factory: adding another family or adding another product kind?
 
 **A:** Each concrete family factory must supply that product type. The pattern favors adding whole compatible families over adding new kinds of product.
 
@@ -86,9 +86,13 @@ Source: [Abstract Factory Pattern](30.1.2.04-abstract-factory.md)
 
 **A:** Setup chooses one factory; the client asks that factory for a button and checkbox, then renders both. Their coherent family is an implementation promise of the factory, not proved merely by two structurally compatible return interfaces.
 
-**Q:** What changes if all supported platforms now need a scrollbar?
+**Q:** Can TypeScript's `UIFactory` interface stop `MacFactory` from returning a Windows checkbox?
 
-**A:** The shared creation contract adds that product kind, every concrete family must implement it, and clients that use it need its product contract. Adding a whole new family instead preserves the existing product-kind interface while adding implementations and setup selection.
+**A:** No. Both checkbox classes satisfy the same structural interface. Keep concrete construction behind the factory and test each factory's actual product family.
+
+**Q:** Is choosing a factory through dependency injection by itself the Abstract Factory pattern?
+
+**A:** No. DI selects and supplies a factory; Abstract Factory defines the operations that create related products. DI does not prove those products are compatible.
 
 ## Prototype Pattern
 

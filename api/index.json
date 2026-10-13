@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "73055b03dc2fe28e0fed79b7b8acf21a8136352c7dd10e149547f6bd0407807a",
+ "corpus_digest": "bf5cfd37c4900b2b314fcdb09260bdd4429c1a07fce07ef908aebd56f072cbed",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5214
+  "read_minutes": 5204
  },
  "chapters": [
   {
@@ -3508,7 +3508,7 @@
     "concept",
     "gof"
    ],
-   "m": 15
+   "m": 5
   },
   {
    "p": "30-architecture/30.1-design-patterns/02-creational/30.1.2.05-prototype.html",

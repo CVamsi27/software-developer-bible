@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 289,
+    "revised": 290,
     "unchanged": 80,
-    "pending": 151,
-    "reviewed": 369,
+    "pending": 150,
+    "reviewed": 370,
     "topic_chapters": 520
   },
   "entries": [
@@ -4369,12 +4369,18 @@
       "path": "30-architecture/30.1-design-patterns/02-creational/30.1.2.04-abstract-factory.md",
       "group": "30-architecture/30.1-design-patterns/02-creational",
       "title": "Abstract Factory Pattern",
-      "status": "pending",
-      "baseline_sha256": "889983e56a7d04eca796a24b6f54ec9b12f007aa86f259c15886ce982c2b95bb",
+      "status": "revised",
+      "baseline_sha256": "24e297a7a0f2bf48fc7c28873ad54a5061c58766ff5d92bf4b31c6ce775820d4",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How does one factory selection keep related product kinds compatible, and where must that promise be enforced?",
+      "disposition": "Rebuilt the chapter around a concrete family mismatch, one executable UI trace, and the compatibility invariant. Removed repeated generic motivations, duplicate implementations, and long examples that were explicitly not Abstract Factory. Preserved database, payment, theme, and fixture boundaries in concise form; clarified the family-versus-product-kind change cost, DI relationship, TypeScript runtime limits, and comparisons with Factory Method, Builder, and Prototype. Updated the category INDEX and added retrieval prompts for family enforcement and extension cost.",
+      "validation": [
+        "Re-read the chapter in creational order with INDEX and REVISION; checked the practical/textbook definitions, family trace, compatibility promise, extension costs, related patterns, and cross-references.",
+        "Strict TypeScript compilation passed for the UI example; runtime checks confirmed each selected factory returns the expected product family.",
+        "Verified the TypeScript erasure reference against the current official handbook.",
+        "All 30 repository gates passed; standalone links checked 10,801 links and 152 anchors with zero failures; citation baseline stayed at 2,519 URLs with no drift.",
+        "Ruby 3.4 locked-bundle production Jekyll build and site-wide rendered-heading check passed; git diff --check passed."
+      ]
     },
     {
       "path": "30-architecture/30.1-design-patterns/02-creational/30.1.2.05-prototype.md",

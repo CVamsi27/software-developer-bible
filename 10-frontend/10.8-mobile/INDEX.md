@@ -1,6 +1,6 @@
 # Mobile & Cross-Platform — Index
 
-> **Study time:** ≈ 1 h 7 m of reading (8 files, ~8 min average).
+> **Study time:** ≈ 55 min of reading (8 files, ~7 min average).
 > **8 files** — React Native fluency for studio/agency loops (MVST-class): the architecture and platform-choice primer, plus deep linking, testing, release operations (EAS builds, OTA updates, store automation), and interview-question chapters covering what production mobile work actually adds.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)

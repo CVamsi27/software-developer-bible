@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "9bbe873db485e8891d7ee0d64740d7bc4f944f3e786f3671b094249c9aa4cf30",
+ "corpus_digest": "25d9890bbf3a278d46f90d22ef42abbd694f6dbcd027d9839ddd6dc9ee069e0d",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5322
+  "read_minutes": 5310
  },
  "chapters": [
   {
@@ -1496,7 +1496,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 8
   },
   {
    "p": "10-frontend/10.8-mobile/10.8.02-deep-linking-universal-links.html",
@@ -1507,7 +1507,7 @@
     "concept",
     "guide"
    ],
-   "m": 13
+   "m": 11
   },
   {
    "p": "10-frontend/10.8-mobile/10.8.03-testing-react-native-apps.html",
@@ -1518,18 +1518,18 @@
     "concept",
     "guide"
    ],
-   "m": 12
+   "m": 8
   },
   {
    "p": "10-frontend/10.8-mobile/10.8.04-expo-eas-builds.html",
-   "t": "Expo EAS Build — Cloud Builds, Profiles & Submitting",
+   "t": "Expo EAS Build — Cloud Builds, Profiles & Submission",
    "s": "Mobile",
    "c": "Frontend",
    "g": [
     "concept",
     "guide"
    ],
-   "m": 9
+   "m": 6
   },
   {
    "p": "10-frontend/10.8-mobile/10.8.05-codepush-ota-updates.html",
@@ -1544,14 +1544,14 @@
   },
   {
    "p": "10-frontend/10.8-mobile/10.8.06-app-store-release-automation.html",
-   "t": "App-Store Release Automation — Release Trains, Store Review & Rollout Safety",
+   "t": "App-Store Release Automation — Review, Rollout & Recovery",
    "s": "Mobile",
    "c": "Frontend",
    "g": [
     "concept",
     "guide"
    ],
-   "m": 8
+   "m": 5
   },
   {
    "p": "10-frontend/10.8-mobile/10.8.07-interview-questions.html",
@@ -1562,7 +1562,7 @@
     "interview-questions",
     "practice"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "10-frontend/10.8-mobile/REVISION.html",
@@ -1573,7 +1573,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 2
+   "m": 3
   },
   {
    "p": "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.html",

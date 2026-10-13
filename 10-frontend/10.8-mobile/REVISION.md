@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Frontend-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Optional-lightgrey)](../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../docs/topic-importance.md)
 
@@ -46,6 +46,10 @@ Source: [Testing React Native Apps](10.8.03-testing-react-native-apps.md)
 
 **A:** Denial/recovery behavior is hidden. Configure a denial case and assert the React response; device tests must still verify the actual OS prompt, settings and lifecycle behavior.
 
+**Q:** A React Native screen test passes, but a cold-start link fails on a device. What boundary was missing from the test evidence?
+
+**A:** The component test only exercised JavaScript-rendered host components. Add an installed-app test for the OS link handoff, app bootstrap and navigation readiness, then verify the HTTPS association on the target platform.
+
 ## Expo EAS Build — Cloud Builds, Profiles & Submitting
 
 Source: [Expo EAS Build — Cloud Builds, Profiles & Submitting](10.8.04-expo-eas-builds.md)
@@ -65,6 +69,10 @@ Source: [Expo EAS Build — Cloud Builds, Profiles & Submitting](10.8.04-expo-ea
 **Q:** A preview runs on an enrolled iPhone but cannot be submitted to TestFlight. Why is renaming its profile insufficient?
 
 **A:** The existing artifact carries its signing/distribution contract. Produce a store-compatible build from reviewed source, record its effective version and submit that exact artifact ID.
+
+**Q:** A CI log says an artifact was submitted successfully. Which identities should you retain before promoting it?
+
+**A:** Retain the source revision, build profile, platform build ID and effective store version, then confirm the store is reviewing that same artifact. Keep matching symbols and source maps so later crash reports can be diagnosed.
 
 ## Over-the-Air Updates — EAS Update, CodePush & the JS/Native Boundary
 
@@ -97,6 +105,10 @@ Source: [App-Store Release Automation — Release Trains, Store Review & Rollout
 **Q:** You pause an iOS phased release after a crash spike. Can you assume only the configured percentage has the binary?
 
 **A:** No. Apple’s phased schedule governs automatic updates; anyone can manually download it. Existing installations remain. Contain the feature and deliver a compatible repair or corrective binary, with adoption evidence.
+
+**Q:** Does a store's staged percentage tell you what share of active devices is running the release?
+
+**A:** No. Apple phases automatic updates while allowing manual downloads; Google staged rollout controls eligibility for an update. Measure installed-version adoption separately, and remember that halting distribution does not downgrade devices already updated.
 
 ## Summary
 

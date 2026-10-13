@@ -138,6 +138,14 @@ Source: [OOP Concepts — Encapsulation, Inheritance, Polymorphism, Abstraction]
 
 **A:** Aggregation is shared whole-part grouping. Composition models exclusive ownership and lifecycle responsibility. Runtime references, storage cleanup, and removal rules still need implementation; a diamond does not perform garbage collection or cascade database deletion.
 
+**Q:** In TypeScript, does `private` prevent a JavaScript caller from reading a field at runtime? When is `#field` different?
+
+**A:** TypeScript `private` is enforced by type checking, so ordinary emitted properties are still JavaScript properties. ECMAScript `#field` has runtime privacy; neither mechanism replaces authorization at a trust boundary.
+
+**Q:** What does a filled UML composition diamond mean, and what does it fail to implement?
+
+**A:** It models exclusive whole-part ownership: a part belongs to at most one composite at a time, and deleting the composite deletes its object parts unless they were removed first. Code and storage still implement that lifecycle.
+
 ## UML Basics — Class & Sequence Diagrams
 
 Source: [UML Basics — Class & Sequence Diagrams](30.1.1.04-uml-basics.md)

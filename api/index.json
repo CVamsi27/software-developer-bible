@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "e184a67a6cb03faf72d3f730bd13767560f936accb374759c42f88d8dc8ca311",
+ "corpus_digest": "58f89831db19ed50c778429c73bdee14ee9178b2f8915f25c925f0c9b4cc8cda",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5218
+  "read_minutes": 5211
  },
  "chapters": [
   {
@@ -3443,7 +3443,7 @@
     "oop",
     "theory"
    ],
-   "m": 18
+   "m": 11
   },
   {
    "p": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.04-uml-basics.html",

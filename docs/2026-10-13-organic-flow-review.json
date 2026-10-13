@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 284,
+    "revised": 285,
     "unchanged": 80,
-    "pending": 156,
-    "reviewed": 364,
+    "pending": 155,
+    "reviewed": 365,
     "topic_chapters": 520
   },
   "entries": [
@@ -4287,12 +4287,17 @@
       "path": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.03-oop-concepts.md",
       "group": "30-architecture/30.1-design-patterns/01-foundations",
       "title": "OOP Concepts \u2014 Encapsulation, Inheritance, Polymorphism, Abstraction",
-      "status": "pending",
-      "baseline_sha256": "734cfcee8156f68d8473f532e2a3aea695c54fe6236542ec9fe962cb6a8b3faa",
+      "status": "revised",
+      "baseline_sha256": "e2fcf1525b6de028e58c144fe0df2a968ff4ecfc28b5fad02f9fc97dcd397bca",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do state ownership, caller contracts, runtime dispatch, and object lifecycle fit together in an OOP design?",
+      "disposition": "Reordered the chapter as a cause-to-contract flow from invariant ownership through abstraction and dispatch to inheritance/composition and modeled lifecycle. Consolidated repeated encapsulation and composition explanations, replaced overlapping payment examples with one contract example, and retained the safe account trace, TypeScript/Java access differences, polymorphism forms, cohesion/coupling, and paradigm comparison. Tightened UML association/aggregation/composition definitions to match the formal lifecycle semantics and expanded revision prompts for TypeScript runtime privacy and UML composition. Updated the TypeScript Handbook link and Java Language Specification reference to SE 26, and added the official UML specification.",
+      "validation": [
+        "All 30 repository gates passed with bash scripts/verify.sh, including First Principles, definition, answer-depth, and duplication checks.",
+        "Standalone link scan passed: 10,798 links checked, 152 anchors verified, no broken links or stale labels.",
+        "Citation baseline passed with 2,515 URLs and no drift; current TypeScript Handbook, Java SE 26 Language Specification, and OMG UML 2.5.1 references were probed.",
+        "git diff --check passed; Ruby 3.4 production Jekyll build and rendered-heading check passed."
+      ]
     },
     {
       "path": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.04-uml-basics.md",

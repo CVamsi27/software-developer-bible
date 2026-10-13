@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2514,
+ "url_count": 2515,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -2202,7 +2202,7 @@
   "https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/util/concurrent/locks/ReentrantReadWriteLock.html": [
    "20-backend/20.13-java/20.13.03-java-concurrency-multithreading.md"
   ],
-  "https://docs.oracle.com/javase/specs/jls/se25/html/jls-6.html#jls-6.6": [
+  "https://docs.oracle.com/javase/specs/jls/se26/html/jls-6.html#jls-6.6": [
    "30-architecture/30.1-design-patterns/01-foundations/30.1.1.03-oop-concepts.md"
   ],
   "https://docs.oracle.com/javase/specs/jls/se27/html/": [
@@ -4457,7 +4457,6 @@
    "30-architecture/30.2-system-design/01-theory/30.2.1.11-architecture-patterns.md"
   ],
   "https://martinfowler.com/books/uml.html": [
-   "30-architecture/30.1-design-patterns/01-foundations/30.1.1.03-oop-concepts.md",
    "30-architecture/30.1-design-patterns/01-foundations/30.1.1.04-uml-basics.md"
   ],
   "https://martinfowler.com/eaaCatalog/": [
@@ -5839,7 +5838,6 @@
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.06-state-management.md"
   ],
   "https://refactoring.guru/design-patterns": [
-   "30-architecture/30.1-design-patterns/01-foundations/30.1.1.03-oop-concepts.md",
    "30-architecture/30.1-design-patterns/06-interview-prep/30.1.6.01-interview-questions.md"
   ],
   "https://refactoring.guru/design-patterns/abstract-factory": [
@@ -7365,6 +7363,9 @@
   "https://www.omg.org/spec/UML/2.5.1/": [
    "30-architecture/30.1-design-patterns/01-foundations/30.1.1.04-uml-basics.md"
   ],
+  "https://www.omg.org/spec/UML/2.5.1/PDF": [
+   "30-architecture/30.1-design-patterns/01-foundations/30.1.1.03-oop-concepts.md"
+  ],
   "https://www.openpolicyagent.org/docs/deploy": [
    "20-backend/20.5-security/01-auth/20.5.1.10-abac-access-control.md"
   ],
@@ -8151,7 +8152,7 @@
   "https://www.twilio.com/docs/usage/api": [
    "20-backend/20.3-rest-apis/05-interview-drills/20.3.5.01-interview-questions.md"
   ],
-  "https://www.typescriptlang.org/docs/handbook/2/classes.html": [
+  "https://www.typescriptlang.org/docs/handbook/2/classes": [
    "30-architecture/30.1-design-patterns/01-foundations/30.1.1.03-oop-concepts.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/2/classes.html#this-types": [

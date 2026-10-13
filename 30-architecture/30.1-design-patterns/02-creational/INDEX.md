@@ -1,6 +1,6 @@
 # Creational Patterns
 
-> **Study time:** ≈ 55 min of reading (6 files, ~9 min average).
+> **Study time:** ≈ 45 min of reading (6 files, ~8 min average).
 > **6 files.** Object creation mechanisms. These patterns decouple "how to construct an object" from "what to do with the constructed thing." The goal: make a system independent of how its objects are created, composed, and represented.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](../../INDEX.md)
@@ -80,16 +80,14 @@ Selects a compatible family once and exposes one creation operation per product 
 
 **Illustrative applications:** matching UI components, themed component families, or provider capabilities that require the same protocol/account context. Confirm the actual factory mechanism before naming a framework as an implementation.
 
-### [Prototype](30.1.2.05-prototype.md) *(new)*
-Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.
+### [Prototype](30.1.2.05-prototype.md)
+Copies a configured instance through an explicit `clone()` contract, so callers can request a similar object without choosing its constructor. The contract must define mutable state, shared resources, and identity; cloning is not automatically cheaper than construction.
 
 **When to use:**
-- Object creation is expensive (DB lookup, network call, complex init)
-- You need many similar objects that differ only in a few fields
-- Classes to instantiate are specified at runtime (e.g., dynamic loading)
-- You want to avoid building a class hierarchy of factories
+- A configured template is selected at runtime and must produce independent variants
+- Repeating setup is costly or error-prone, and the clone policy is explicit
 
-**Real-world examples:** Cloning a default config and overriding 2 fields, spawning enemies in a game that share base stats, document templates (clone the template, fill in blanks).
+**Example:** Derive worker-specific request settings from validated defaults while copying mutable headers and retry policy.
 
 ---
 
@@ -141,7 +139,7 @@ If construction is expensive and most new objects look like existing ones, Proto
 
 - A global Singleton accessor can hide dependencies and retain unscoped mutable state. Explicit injection can preserve a shared owner while exposing the dependency.
 - **Factory Method** for a single concrete class is over-engineering.
-- **Abstract Factory** when you have 1-2 products with no family relationships is overkill.
+- **Abstract Factory** when there is no compatibility invariant across product kinds is overkill.
 - **Builder** for a 2-field DTO is noise. Use a plain object literal.
 - **Prototype** when your classes are simple value objects — just use `new`.
 

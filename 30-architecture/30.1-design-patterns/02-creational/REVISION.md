@@ -98,13 +98,17 @@ Source: [Abstract Factory Pattern](30.1.2.04-abstract-factory.md)
 
 Source: [Prototype Pattern](30.1.2.05-prototype.md)
 
-**Q:** Why can spreading a prototype object fail as a clone strategy?
+**Q:** In the `RequestConfig` example, which parts of the source does `clone()` copy, and which part can it reuse?
 
-**A:** Spread is shallow and does not preserve arbitrary class behavior. Nested mutable objects may remain shared; choose cloning semantics for the actual data and identity rules.
+**A:** It constructs a new `RequestConfig` and shallow-copies both mutable nested records, `retry` and `headers`. It passes through `endpoint`'s immutable string value. The copies are independent because those records contain only primitive values; deeper mutable values would need another explicit copy rule.
 
-**Q:** Trace the enemy shallow clone's `inventory.push('shield')`. Which other object changes?
+**Q:** Why is `structuredClone()` not automatically a correct implementation of a domain object's `clone()` method?
 
-**A:** The shallow clone shares the base inventory reference, so the base also sees `shield`. The deep clone copies the known position object and string array, so mutations of those owned children remain independent.
+**A:** It copies supported data, but does not preserve arbitrary custom class behavior or private fields, re-run invariants, or decide identity and resource ownership. The domain clone contract must define those policies.
+
+**Q:** Should cloning an entity preserve its identifier?
+
+**A:** It depends on the operation. A new entity needs a new identity; a snapshot intended to restore the same entity may preserve its identity and version. Make that distinction explicit instead of copying every field by default.
 
 **Q:** What if a staging override supplies only `{features: {newDashboard: true}}`?
 

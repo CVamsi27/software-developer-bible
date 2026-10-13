@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2519,
+ "url_count": 2517,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -1012,12 +1012,12 @@
    "10-frontend/10.6-animation/10.6.07-canvas-svg-animation.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/API/Window/structuredClone": [
+   "30-architecture/30.1-design-patterns/02-creational/30.1.2.05-prototype.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.01-javascript-cheat-sheet.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/API/structuredClone": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.md",
-   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md",
-   "30-architecture/30.1-design-patterns/02-creational/30.1.2.05-prototype.md"
+   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/CSS/@layer": [
    "10-frontend/10.7-html-css/10.7.06-css-architecture-styling-approaches.md"
@@ -5898,9 +5898,6 @@
   "https://refactoring.guru/design-patterns/observer": [
    "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.02-observer.md"
   ],
-  "https://refactoring.guru/design-patterns/prototype": [
-   "30-architecture/30.1-design-patterns/02-creational/30.1.2.05-prototype.md"
-  ],
   "https://refactoring.guru/design-patterns/proxy": [
    "30-architecture/30.1-design-patterns/03-structural/30.1.3.04-proxy.md"
   ],
@@ -8167,9 +8164,6 @@
   ],
   "https://www.typescriptlang.org/docs/handbook/2/classes.html": [
    "30-architecture/30.1-design-patterns/02-creational/30.1.2.01-singleton.md"
-  ],
-  "https://www.typescriptlang.org/docs/handbook/2/classes.html#this-types": [
-   "30-architecture/30.1-design-patterns/02-creational/30.1.2.05-prototype.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/2/conditional-types.html": [
    "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.02-infer.md",

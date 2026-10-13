@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 290,
+    "revised": 291,
     "unchanged": 80,
-    "pending": 150,
-    "reviewed": 370,
+    "pending": 149,
+    "reviewed": 371,
     "topic_chapters": 520
   },
   "entries": [
@@ -4386,12 +4386,18 @@
       "path": "30-architecture/30.1-design-patterns/02-creational/30.1.2.05-prototype.md",
       "group": "30-architecture/30.1-design-patterns/02-creational",
       "title": "Prototype Pattern",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "a7e5c26a42b55b278f2ab27ec92cc51d98eb5a005124e5ea724f64a31e551886",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which state should a clone copy, share, or regenerate, and when is direct construction clearer?",
+      "disposition": "Rebuilt the chapter around one worker-configuration trace. Removed repeated clone demos, unrelated analogies, and a second registry implementation; clarified shallow-copy boundaries, TypeScript contract limits, structured-clone behavior, resource ownership, identity, template freshness, and the cost comparison with other creational patterns. Updated the category index and retrieval questions.",
+      "validation": [
+        "Re-read the chapter in creational order with INDEX and REVISION; checked practical and textbook definitions, First Principles, the clone trace, copy policy, JavaScript boundaries, pattern choices, summary, and references.",
+        "Strict TypeScript 7.0.2 compilation passed; the example ran and its assertions confirmed independent retry and header objects while leaving the template unchanged.",
+        "Verified structured-clone behavior and current source URLs against the WHATWG HTML Living Standard and MDN documentation.",
+        "All 30 repository gates passed; standalone links checked 10,802 links and 152 anchors with zero issues; citation baseline stayed at 2,517 URLs with no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and rendered-heading check passed; git diff --check passed."
+      ]
     },
     {
       "path": "30-architecture/30.1-design-patterns/03-structural/30.1.3.01-adapter.md",

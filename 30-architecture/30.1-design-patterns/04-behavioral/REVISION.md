@@ -100,15 +100,23 @@ Source: [Iterator Pattern](30.1.4.06-iterator.md)
 
 **Q:** What happens if a collection changes while an iterator is in use?
 
-**A:** It depends on what the collection promises. Snapshot iteration reads a fixed view, fail-fast iteration reports prohibited changes, and live iteration may observe changes as it proceeds. The Iterator pattern alone does not choose or guarantee these rules.
+**A:** The collection defines the rule. JavaScript Array iterators can visit appended elements; Map and Set iterators can visit new entries and skip entries deleted before visitation. Snapshot and fail-fast behavior are separate contracts a custom iterator may provide.
 
 **Q:** Trace range(1,3) when the consumer breaks at 2.
 
-**A:** Creating the generator does not run it. Each request produces one value; the loop consumes 1 and 2, then closes the generator so 3 is never produced.
+**A:** The generator's `<=` condition makes 3 the inclusive endpoint. Creating it runs no body; requests yield 1 and 2, and `break` closes it before 3 is produced.
 
 **Q:** What if an array appends items during live iteration?
 
 **A:** Its standard iterator reads current length while advancing and may visit appended items. Repeated appending can prevent completion; custom iterators may instead promise snapshots or reject mutation.
+
+**Q:** When does an iterator-helper pipeline allocate its result, and where can it run?
+
+**A:** `Iterator.from(iterable).map(...).filter(...).take(3)` pulls values lazily; `toArray()` consumes the pipeline and materializes the result. Helpers are methods on iterators, not arbitrary iterables, and older runtimes may lack ES2025 support.
+
+**Q:** Does breaking from `for await...of` cancel a page request?
+
+**A:** Early exit calls and awaits the iterator's `return()` method when present, allowing cleanup. That does not automatically abort the request; pass an `AbortSignal` and define who owns cancellation.
 
 ## Mediator Pattern
 

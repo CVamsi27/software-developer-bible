@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 304,
+    "revised": 305,
     "unchanged": 80,
-    "pending": 136,
-    "reviewed": 384,
+    "pending": 135,
+    "reviewed": 385,
     "topic_chapters": 520
   },
   "entries": [
@@ -4656,12 +4656,21 @@
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.06-iterator.md",
       "group": "30-architecture/30.1-design-patterns/04-behavioral",
       "title": "Iterator Pattern",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "0c1e3ec0ef151dd884652c4af9b21b920d2c489ca675cee0e4063c35deba71a3",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can consumers traverse arrays, trees and paginated sources without owning each source\u2019s traversal rules?",
+      "disposition": "Moved the storage problem ahead of the definition, clarified that the iterator owns traversal position, and stated the range\u2019s inclusive bound. Added the current ES2025 helper pipeline with its lazy/materialization boundary, clarified iterator cleanup versus aborting network I/O, and made Array versus Map/Set mutation rules concrete. Removed the unrelated React rendering aside and aligned the behavioral INDEX and REVISION companion.",
+      "validation": [
+        "Fresh-reader review confirmed the iterator, generator and async boundaries; moved the motivating tree/API problem to the opening and made the inclusive range endpoint explicit.",
+        "Verified the GoF intent against a publisher-hosted excerpt and checked MDN iterator-helper, iteration-protocol and for-await documentation; registered the three citations in the external-link baseline.",
+        "The documented helper pipeline passed Node 23.7.0 assertions for [4, 16, 36], pulling only source values 1 through 6; inclusive range early-close and live Map mutation assertions also passed.",
+        "Read-time, alignment, citation-baseline, search-index and count writers ran; the fixed-point check confirmed all 10 repair writers leave the corpus stable.",
+        "All 30 repository verification gates passed. Standalone links checked 10,797 local links and 152 anchors with no failures; citation-baseline diff had 0 added or removed URLs at 2,525.",
+        "Ruby 3.4 locked-bundle production Jekyll build, rendered-heading check and git diff --check passed."
+      ],
+      "reviewed_at": "2026-10-14",
+      "review_sha256": "97ef91afe5a5bf56ff805eb552f7a33318f7082bc511fffad755614516c48202"
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.07-mediator.md",

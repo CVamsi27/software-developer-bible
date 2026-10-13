@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2522,
+ "url_count": 2525,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -1149,6 +1149,9 @@
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator/return": [
    "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.03-generators.md"
   ],
+  "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator": [
+   "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.06-iterator.md"
+  ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.06-serialization-and-wire-formats.md"
   ],
@@ -1208,6 +1211,9 @@
   ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/block#block_scoping": [
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.02-scope.md"
+  ],
+  "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of": [
+   "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.06-iterator.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*": [
    "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.06-iterator.md"
@@ -7382,6 +7388,9 @@
   ],
   "https://www.oreilly.com/library/view/java-design-patterns/9781484218020/9781484218013_Ch06.xhtml": [
    "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.05-template-method.md"
+  ],
+  "https://www.oreilly.com/library/view/java-design-patterns/9781484218020/9781484218013_Ch10.xhtml": [
+   "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.06-iterator.md"
   ],
   "https://www.oreilly.com/library/view/java-design-patterns/9781484218020/9781484218013_Ch14.xhtml": [
    "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.04-state.md"

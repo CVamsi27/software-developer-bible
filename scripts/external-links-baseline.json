@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2519,
+ "url_count": 2518,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -6106,9 +6106,6 @@
   "https://sourcemaking.com/design_patterns/command": [
    "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.09-command.md"
   ],
-  "https://sourcemaking.com/design_patterns/composite": [
-   "30-architecture/30.1-design-patterns/03-structural/30.1.3.06-composite.md"
-  ],
   "https://sourcemaking.com/design_patterns/flyweight": [
    "30-architecture/30.1-design-patterns/03-structural/30.1.3.08-flyweight.md"
   ],
@@ -8206,7 +8203,8 @@
   ],
   "https://www.typescriptlang.org/docs/handbook/2/narrowing.html": [
    "10-frontend/10.2-typescript/01-foundations/10.2.1.03-type-narrowing.md",
-   "10-frontend/10.2-typescript/05-interview-prep/10.2.5.01-interview-questions.md"
+   "10-frontend/10.2-typescript/05-interview-prep/10.2.5.01-interview-questions.md",
+   "30-architecture/30.1-design-patterns/03-structural/30.1.3.06-composite.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html": [
    "10-frontend/10.2-typescript/03-type-transformations/10.2.3.04-template-literal-types.md"

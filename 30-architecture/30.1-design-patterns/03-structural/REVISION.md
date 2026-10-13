@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Design%20Patterns-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -109,6 +109,10 @@ Source: [Composite Pattern](30.1.3.06-composite.md)
 **Q:** Trace root size through home/user files and the root config file.
 
 **A:** User sums 1,024 + 500,000, home delegates that sum, and root adds 256 for 501,280. Both leaves and containers satisfy `size`; only the container recursively asks children.
+
+**Q:** Why does the example put `add` on `Container` instead of `Component`?
+
+**A:** A file can report its size but cannot accept children. The safe interface keeps that invalid operation off leaves; a transparent Composite can share child-management methods only if leaf behavior is clearly defined.
 
 **Q:** What if a directory adds an ancestor, or one leaf appears under two different parents?
 

@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "ab5286889c8e3b6bee01a323e85e1c3033899ff05b9cbde3278092cc44b73794",
+ "corpus_digest": "3575f085881fce4e76433ff9dfe0f23528ebbb5da4fa87874913b01536d6edae",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5188
+  "read_minutes": 5181
  },
  "chapters": [
   {
@@ -3591,7 +3591,7 @@
     "concept",
     "gof"
    ],
-   "m": 15
+   "m": 7
   },
   {
    "p": "30-architecture/30.1-design-patterns/03-structural/30.1.3.07-bridge.html",
@@ -3624,7 +3624,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 3
+   "m": 4
   },
   {
    "p": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.01-strategy.html",

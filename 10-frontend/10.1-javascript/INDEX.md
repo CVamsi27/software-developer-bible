@@ -1,6 +1,6 @@
 # JavaScript — Index
 
-> **Study time:** ≈ 6 h 19 m of reading (40 files, ~9 min average).
+> **Study time:** ≈ 4 h 9 m of reading (40 files, ~6 min average).
 > Core JavaScript concepts from execution context through async patterns, memory management, functional techniques, modern language APIs, cancellation, browser events, cross-tab coordination, and interview practice.
 
 [![Files](https://img.shields.io/badge/files-40-blue)](../../INDEX.md)
@@ -43,11 +43,11 @@ How JavaScript actually runs. These 6 files are the foundation — every other c
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Execution Context](01-execution-and-scope/10.1.1.01-execution-context.md) | Evaluation state, environment references, declaration setup, parameter bindings | Essential | Foundational | 9 min |
-| 02 | [Scope](01-execution-and-scope/10.1.1.02-scope.md) | Binding lookup, block boundaries, global/module scopes | Essential | Foundational | 6 min |
+| 01 | [Execution Context](01-execution-and-scope/10.1.1.01-execution-context.md) | Evaluation state, environment references, declaration setup, parameter bindings | Essential | Foundational | 5 min |
+| 02 | [Scope](01-execution-and-scope/10.1.1.02-scope.md) | Binding lookup, block boundaries, global/module scopes | Essential | Foundational | 5 min |
 | 03 | [Call Stack](01-execution-and-scope/10.1.1.03-call-stack.md) | LIFO, stack frames, stack overflow, max call stack size, debugging | Essential | Foundational | 6 min |
 | 04 | [Hoisting](01-execution-and-scope/10.1.1.04-hoisting.md) | `var`/`let`/`const` hoisting, temporal dead zone, function hoisting | Essential | Foundational | 7 min |
-| 05 | [Lexical Environment](01-execution-and-scope/10.1.1.05-lexical-environment.md) | Record hierarchy, outer lookup, global object versus module bindings | Essential | Foundational | 15 min |
+| 05 | [Lexical Environment](01-execution-and-scope/10.1.1.05-lexical-environment.md) | Record hierarchy, outer lookup, global object versus module bindings | Essential | Foundational | 5 min |
 | 06 | [Closures](01-execution-and-scope/10.1.1.06-closures.md) | Lexical scoping, closure lifecycle, module pattern, memory implications | Essential | Foundational | 6 min |
 
 **Read order:** Execution Context → Scope → Call Stack → Hoisting → Lexical Environment → Closures (matches the category's numbering and its read-order rationale — see [01-execution-and-scope/INDEX.md](01-execution-and-scope/INDEX.md)).
@@ -62,7 +62,7 @@ JavaScript object properties resolve through prototype chains; class syntax buil
 | --: | ------ | -------- | --- | --- | ----------: |
 | 07 | [`this` Keyword](02-objects-prototypes-this/10.1.2.01-this.md) | Implicit/explicit binding, arrow functions, `call`/`apply`/`bind` | Essential | Foundational | 8 min |
 | 08 | [Prototypes](02-objects-prototypes-this/10.1.2.02-prototypes.md) | Prototype chain, `__proto__`, `Object.create`, inheritance and `class` syntax | Essential | Foundational | 8 min |
-| 09 | [Proxy & Reflect](02-objects-prototypes-this/10.1.2.03-proxy-reflect.md) | Metaprogramming, traps, validation, reactive patterns (Vue 3 uses these!) | Important | Specialized | 9 min |
+| 09 | [Proxy & Reflect](02-objects-prototypes-this/10.1.2.03-proxy-reflect.md) | Operation interception, receiver forwarding, invariants, reactive dependencies | Important | Specialized | 5 min |
 
 ---
 
@@ -72,12 +72,12 @@ Async behavior is subtle and commonly tested. One agent runs one active synchron
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 10 | [Event Loop](03-async-concurrency/10.1.3.01-event-loop.md) | Microtasks vs macrotasks, callback queue, rendering pipeline, `requestAnimationFrame` | Essential | Foundational | 7 min |
-| 11 | [Promises](03-async-concurrency/10.1.3.02-promises.md) | Promise states, chaining, error handling, `Promise.all`/`race`/`allSettled`/`any` | Essential | Foundational | 9 min |
-| 12 | [Async/Await](03-async-concurrency/10.1.3.03-async-await.md) | Async functions, error handling, concurrency, sequential vs parallel, top-level await | Essential | Foundational | 8 min |
+| 10 | [Event Loop](03-async-concurrency/10.1.3.01-event-loop.md) | Synchronous tasks, microtask checkpoints, browser rendering, Node host loop | Essential | Foundational | 7 min |
+| 11 | [Promises](03-async-concurrency/10.1.3.02-promises.md) | Promise states, chaining, error handling, `Promise.all`/`race`/`allSettled`/`any` | Essential | Foundational | 8 min |
+| 12 | [Async/Await](03-async-concurrency/10.1.3.03-async-await.md) | Suspension, serial dependencies vs overlapping I/O, rejection paths and iterator cleanup | Essential | Foundational | 8 min |
 | 13 | [Error Handling](03-async-concurrency/10.1.3.04-error-handling.md) | try/catch/finally, custom errors, error propagation, async error handling, unhandled rejections | Essential | Foundational | 5 min |
 | 14 | [Aborting & Cancellation](03-async-concurrency/10.1.3.05-abort-and-cancellation.md) | AbortController/AbortSignal, stale-request races, `AbortSignal.timeout`/`any`, listener cleanup, cooperative cancellation | Essential | Foundational | 8 min |
-| 15 | [Bounded Concurrency](03-async-concurrency/10.1.3.06-bounded-concurrency.md) | Worker-pool ownership, failure and cancellation | Essential | Foundational | 8 min |
+| 15 | [Bounded Concurrency](03-async-concurrency/10.1.3.06-bounded-concurrency.md) | Task-start limit, failure policy, cancellation, result order and backpressure | Essential | Foundational | 8 min |
 
 **Read order:** Event Loop → Promises → Async/Await → Error Handling → Aborting & Cancellation → Bounded Concurrency. Together, these chapters explain scheduling, failure, cancellation and limits on parallel work.
 
@@ -89,14 +89,14 @@ Choosing the right collection and avoiding memory leaks.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 16 | [Pass by Value](04-memory-and-data/10.1.4.01-pass-by-value.md) | Primitive vs reference, value/reference semantics, mutation gotchas | Essential | Foundational | 6 min |
+| 16 | [Pass by Value](04-memory-and-data/10.1.4.01-pass-by-value.md) | Primitive vs reference, value/reference semantics, mutation gotchas | Essential | Foundational | 5 min |
 | 17 | [Map, Set, WeakMap, WeakSet](04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md) | Key identity and order, weak metadata, conversion, bounded eviction | Essential | Foundational | 7 min |
 | 18 | [Shallow vs Deep Copy](04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.md) | Reference graphs, structured cloning, transfer, JSON boundary, path copying | Essential | Foundational | 6 min |
 | 19 | [Debounce](04-memory-and-data/10.1.4.04-debounce.md) | Quiet-time scheduling, edge policies, cancellation, stale async results | Essential | Foundational | 6 min |
 | 20 | [Throttle](04-memory-and-data/10.1.4.05-throttle.md) | Periodic scheduling, edge policies, cancellation, concurrency boundaries | Essential | Foundational | 6 min |
 | 21 | [Memory Leaks](04-memory-and-data/10.1.4.06-memory-leaks.md) | Retaining paths, cleanup ownership, bounded caches, heap diagnosis | Essential | Foundational | 5 min |
 | 22 | [Garbage Collection](04-memory-and-data/10.1.4.07-garbage-collection.md) | Tracing, generations, scheduling, weak references, process memory | Essential | Foundational | 4 min |
-| 23 | [Hash Tables & HashMaps](04-memory-and-data/10.1.4.08-hash-tables-internals.md) | Collision resolution, load factor, rehashing, V8 internals, Robin Hood, interview patterns | Important | Specialized | 30 min |
+| 23 | [Hash Tables and Hash Maps](04-memory-and-data/10.1.4.08-hash-tables-internals.md) | Hashing, collision strategies, load factor, rehashing, JavaScript collection guarantees | Important | Specialized | 7 min |
 | 24 | [Equality & Coercion](04-memory-and-data/10.1.4.09-equality-and-coercion.md) | Equality, object-to-primitive conversion, truthiness, nullish defaults | Essential | Foundational | 5 min |
 
 ---
@@ -107,11 +107,11 @@ Patterns for explicit data flow, reusable computations, lazy iteration and funct
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 25 | [Modules](05-functional-patterns/10.1.5.01-modules.md) | ESM vs CommonJS, dynamic imports, tree shaking, barrel exports | Essential | Foundational | 19 min |
-| 26 | [Memoization](05-functional-patterns/10.1.5.02-memoization.md) | Caching, `_.memoize`, React.memo, useMemo, when to use | Essential | Foundational | 14 min |
-| 27 | [Generators](05-functional-patterns/10.1.5.03-generators.md) | `function*`, yield, iterators, async generators, lazy evaluation | Important | Specialized | 17 min |
-| 28 | [Currying & Composition](05-functional-patterns/10.1.5.04-currying-composition.md) | Currying, partial application, pipe, compose, functional patterns | Important | Specialized | 13 min |
-| 29 | [Recursion & Tail Call](05-functional-patterns/10.1.5.05-recursion-tail-call.md) | Recursive patterns, tail call optimization, trampolining, memoized recursion | Important | Specialized | 15 min |
+| 25 | [Modules](05-functional-patterns/10.1.5.01-modules.md) | ESM/CommonJS, module identity, resolution, dynamic import and tree shaking | Essential | Foundational | 6 min |
+| 26 | [Memoization](05-functional-patterns/10.1.5.02-memoization.md) | Key equivalence, cache lifetime, bounded retention, promises and React memoization | Essential | Foundational | 6 min |
+| 27 | [Generators](05-functional-patterns/10.1.5.03-generators.md) | Pull iteration, async pages, sent values and iterator cleanup | Important | Specialized | 6 min |
+| 28 | [Currying & Composition](05-functional-patterns/10.1.5.04-currying-composition.md) | Currying vs partial application, composition order and framework handlers | Important | Specialized | 4 min |
+| 29 | [Recursion & Tail Calls](05-functional-patterns/10.1.5.05-recursion-tail-call.md) | Base cases, proper tail calls, explicit stacks and depth limits | Important | Specialized | 5 min |
 
 ---
 
@@ -121,10 +121,10 @@ Selected recent APIs, browser execution/event models and interview practice.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------    : |
-| 30 | [Recent ECMAScript Features](06-modern-and-interview/10.1.6.01-es2024-features.md) | Selected ES2022–2026 APIs; distinguish language features from host APIs and runtime support | Important | Specialized | 18 min |
-| 31 | [Web Workers](06-modern-and-interview/10.1.6.02-web-workers.md) | Dedicated/Shared workers, OffscreenCanvas, Comlink, React hooks for workers | Important | Important | 11 min |
-| 32 | [DOM Events & Delegation](06-modern-and-interview/10.1.6.03-dom-events-delegation.md) | Capture/bubble phases, target vs currentTarget, delegation patterns, passive listeners, CustomEvent, React synthetic events | Essential | Foundational | 13 min |
-| 33 | [Cross-Tab Communication](06-modern-and-interview/10.1.6.04-cross-tab-communication.md) | BroadcastChannel, storage events, SharedWorker vs postMessage, non-atomic storage races and Web Locks, sync logout, IndexedDB payloads, service-worker messaging | Important | Specialized | 16 min |
+| 30 | [Recent ECMAScript Features](06-modern-and-interview/10.1.6.01-es2024-features.md) | Selected ES2022–2026 built-ins; compare ownership, evaluation, and runtime support | Important | Specialized | 6 min |
+| 31 | [Web Workers](06-modern-and-interview/10.1.6.02-web-workers.md) | Dedicated, shared, and service workers; message ownership and cancellation limits | Important | Important | 7 min |
+| 32 | [DOM Events & Delegation](06-modern-and-interview/10.1.6.03-dom-events-delegation.md) | Event path, target and listener ownership, delegation, propagation, default actions, and cleanup | Essential | Foundational | 5 min |
+| 33 | [Cross-Tab Communication](06-modern-and-interview/10.1.6.04-cross-tab-communication.md) | Transient messages, persistent recovery, shared owners, locks, and safe cross-tab session updates | Important | Specialized | 6 min |
 | 34 | [Interview Questions](06-modern-and-interview/10.1.6.05-interview-questions.md) | 62 questions with model answers, implementation prompts and changed-condition checks | Essential | Foundational | 12 min |
 
 ---

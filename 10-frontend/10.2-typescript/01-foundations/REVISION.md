@@ -119,16 +119,16 @@ Source: [tsconfig & Compiler Options](10.2.1.04-tsconfig-compiler-options.md)
 
 **Definition**
 
-1. **Q:** What four option families does a tsconfig organize into, and what can strict checks catch?
-   **A:** Strictness, modules/resolution, emit/build, and interop/tooling options. Checks such as `strictNullChecks` and `noImplicitAny` can expose nullable-value and implicit-`any` mistakes when the declarations preserve those uncertainties; explicit `any`, assertions, unchecked external data and runtime behavior remain outside that guarantee.
+1. **Q:** What does a `tsconfig` guarantee, and where does that guarantee stop?
+   **A:** It selects source files and sets the compiler’s checking, resolution and optional emit behavior. Strict checks can expose issues represented in the types, but explicit `any`, assertions, unvalidated input and the actual bundler/runtime remain outside that guarantee.
 
 **How It Works**
 
-2. **Q:** How do bundled, fixed Node 20 and current Node module settings differ, and how should a team choose?
-   **A:** Use `module: "preserve"` or `"esnext"` with `moduleResolution: "bundler"` when a bundler loads the application. For a package pinned to Node 20, use `module: "node20"` with `moduleResolution: "node16"`; `node20` is not a resolution value. Use `nodenext` for both settings when following the current Node rules modeled by that TypeScript release. Node ESM relative imports need runtime-valid extensions such as `.js`; package `exports` conditions and the actual loader must agree with the checker.
+2. **Q:** How do bundled, fixed Node and current Node module settings differ, and how should a team choose?
+   **A:** Use `module: "preserve"` or `"esnext"` with `moduleResolution: "bundler"` when a bundler loads the application. For a fixed Node 16/18/20 contract, use the matching `module` mode with `moduleResolution: "node16"`; the `node20` module mode models `require(ESM)` support available in newer Node 20 releases. Use `nodenext` for both settings when following current Node rules. Node ESM relative imports need runtime-valid extensions such as `.js`; package `exports` conditions and the actual loader must agree with the checker.
 
-3. **Q:** What does `isolatedModules: true` actually reject, and what does it merely warn you about by behavior?
-   **A:** It rejects type/value ambiguity a single-file transpiler can't resolve — chiefly type-only *re*-exports (`export { Foo }` → TS1205) and ambient const enum access (TS2748). Ordinary const-enum behavior depends on the emitting tool/options; do not promise cross-file inlining under a single-file transform.
+3. **Q:** Which type/value boundary errors does `isolatedModules` catch, and what must a project still verify?
+   **A:** It reports constructs that a file-at-a-time transform cannot interpret safely, including a type-only re-export written as a value export and ambient const-enum access. Ordinary const-enum emission depends on the tool; run `tsc --noEmit` and inspect the actual transform output.
 
 4. **Q:** How does `verbatimModuleSyntax` go further than `isolatedModules`?
    **A:** It requires `import type`/`export type` for every type-only import (not just re-exports) and prevents the emitter from rewriting module syntax, while explicitly type-only imports/exports and annotations are erased. It does not preserve every source byte.

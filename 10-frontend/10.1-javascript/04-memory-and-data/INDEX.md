@@ -1,6 +1,6 @@
 # Memory & Data — JavaScript
 
-> **Study time:** ≈ 1 h 25 m of reading (10 files, ~8 min average).
+> **Study time:** ≈ 1 h 1 m of reading (10 files, ~6 min average).
 > **10 files.** Follow values and object identity into collection choice and copying, then learn how timers, retaining paths, hash tables, equality rules, and garbage collection shape real JavaScript systems.
 
 [![Files](https://img.shields.io/badge/files-10-blue)](#files)
@@ -13,23 +13,21 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Pass by Value](10.1.4.01-pass-by-value.md) | Primitive vs reference, value/reference semantics, mutation gotchas | Essential | Foundational | 6 min |
+| 01 | [Pass by Value](10.1.4.01-pass-by-value.md) | Primitive vs reference, value/reference semantics, mutation gotchas | Essential | Foundational | 5 min |
 | 02 | [Map, Set, WeakMap, WeakSet](10.1.4.02-map-set-weakmap-weakset.md) | Key identity and order, weak metadata, conversion, bounded eviction | Essential | Foundational | 7 min |
 | 03 | [Shallow vs Deep Copy](10.1.4.03-shallow-vs-deep-copy.md) | Reference graphs, structured cloning, transfer, JSON boundary, path copying | Essential | Foundational | 6 min |
 | 04 | [Debounce](10.1.4.04-debounce.md) | Quiet-time scheduling, edge policies, cancellation, stale async results | Essential | Foundational | 6 min |
 | 05 | [Throttle](10.1.4.05-throttle.md) | Periodic scheduling, edge policies, cancellation, concurrency boundaries | Essential | Foundational | 6 min |
 | 06 | [Memory Leaks](10.1.4.06-memory-leaks.md) | Retaining paths, cleanup ownership, bounded caches, heap diagnosis | Essential | Foundational | 5 min |
 | 07 | [Garbage Collection](10.1.4.07-garbage-collection.md) | Tracing, generations, scheduling, weak references, process memory | Essential | Foundational | 4 min |
-| 08 | [Hash Tables & HashMaps](10.1.4.08-hash-tables-internals.md) | Collision resolution, load factor, rehashing, V8 internals, Robin Hood, interview patterns | Important | Specialized | 30 min |
+| 08 | [Hash Tables and Hash Maps](10.1.4.08-hash-tables-internals.md) | Hash lookup, collisions, growth costs, JavaScript collection guarantees | Important | Specialized | 7 min |
 | 09 | [Equality & Coercion](10.1.4.09-equality-and-coercion.md) | Conversion rules, truthiness, defaults, Object.is, numeric boundaries | Essential | Foundational | 5 min |
 
 ---
 
 ## Read order
 
-Start with **Pass by Value** to separate binding reassignment from shared-object mutation. Then **Shallow vs Deep Copy** explains which identities a copy separates. Read **Equality & Coercion** before **Map/Set/WeakMap/WeakSet**, so key identity and SameValueZero have a meaning; **Hash Tables** then derives collision handling behind a possible collection implementation.
-
-Read **Debounce** before **Throttle** to compare waiting for quiet with preserving execution spacing. Their pending callbacks introduce lifetime ownership. **Memory Leaks** follows that ownership into retaining paths, and **Garbage Collection** explains why unreachable data can be reclaimed while unwanted reachable data cannot. Finish with revision before returning to interview practice.
+Follow the numbered chapters. **Pass by Value** establishes the difference between rebinding and mutating shared identity; **Map/Set** applies identity to keys and ownership; **Shallow vs Deep Copy** then shows which references a copy separates. **Debounce** and **Throttle** compare waiting for quiet with admitting periodic work. Their pending callbacks lead into cleanup ownership in **Memory Leaks**, then reachability in **Garbage Collection**. Finish with **Hash Tables** for the collision and growth costs behind lookup, and **Equality & Coercion** for the distinct comparison algorithms. Use the revision companion to connect these topics before interview practice.
 
 ---
 

@@ -1,6 +1,6 @@
 # Optimization & Governance
 
-> **Study time:** ≈ 20 min of reading (3 files, ~7 min average).
+> **Study time:** ≈ 18 min of reading (3 files, ~6 min average).
 > **3 files.** Turning measurement into action: bundle analysis to find what to cut, and performance budgets so the wins survive contact with feature development.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
@@ -19,8 +19,8 @@ A page can become slower as each sprint adds more code and assets. A performance
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Bundle Analysis](50.3.3.01-bundle-analysis.md) | Bundle size, tree shaking, code splitting, bundlephobia, source-map-explorer | Important | Important | 9 min |
-| 02 | [Performance Budgets](50.3.3.02-performance-budgets.md) | artifact and route budgets, CI enforcement, explicit units, valid inputs and exception ownership | Important | Important | 9 min |
+| 01 | [Bundle Analysis](50.3.3.01-bundle-analysis.md) | Bundle size, tree shaking, code splitting, bundlephobia, source-map-explorer | Important | Important | 8 min |
+| 02 | [Performance Budgets](50.3.3.02-performance-budgets.md) | artifact and route budgets, CI enforcement, explicit units, valid inputs and exception ownership | Important | Important | 8 min |
 
 ---
 

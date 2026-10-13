@@ -1,6 +1,6 @@
 # Testing Foundations
 
-> **Study time:** ≈ 24 min of reading (3 files, ~8 min average).
+> **Study time:** ≈ 22 min of reading (3 files, ~7 min average).
 > **3 files.** The mental model before any tool: the testing pyramid, test types, TDD vs BDD, coverage trade-offs — and the data that feeds every suite. Everything else in the testing stack assumes this vocabulary.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
@@ -9,15 +9,9 @@
 
 ---
 
-## Why foundations first
+## Reading order
 
-Tool questions ("Jest or Vitest?") are cheap. Strategy questions ("what do you test, and why?") are what interviews and incidents actually probe. This category builds the strategy layer:
-
-- The **testing pyramid** — a cost-and-feedback starting model, not a required test ratio.
-- **Test types** — unit, integration, E2E, and where contract/smoke tests fit.
-- **TDD and BDD** — a short test/implementation/refactor cycle and collaborative discovery of concrete behavior; they are not mutually exclusive alternatives.
-- **Coverage** — what execution metrics reveal and why they cannot replace a useful test oracle.
-- **Test data** — factories, faker generators, anonymization versus pseudonymization, golden datasets.
+Start by deciding what behavior a test can claim and which boundary can expose its failure. Then choose controlled data that makes the test reproducible without carrying unnecessary personal information.
 
 ---
 
@@ -25,16 +19,8 @@ Tool questions ("Jest or Vitest?") are cheap. Strategy questions ("what do you t
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Testing Overview](50.1.1.01-testing-overview.md) | Test types, testing pyramid, TDD, BDD, coverage, strategies, when to write which test | Essential | Foundational | 11 min |
+| 01 | [Testing Overview](50.1.1.01-testing-overview.md) | Test types, testing pyramid, TDD, BDD, coverage, strategies, when to write which test | Essential | Foundational | 9 min |
 | 02 | [Test Data Management & Anonymization](50.1.1.02-test-data-management-anonymization.md) | Explicit fixtures, seeded variety, join-preserving pseudonyms, identification risk, golden oracles, refresh validation | Essential | Foundational | 11 min |
-
----
-
-## Key takeaways
-
-- The pyramid guides cost and feedback; choose the actual mix from the defect risks and boundaries you need to examine.
-- Coverage records execution, not correctness. Use uncovered critical paths to find missing scenarios, and inspect assertions for meaningful checks.
-- Assert the observable contract at the boundary that can expose the defect; test a collaborator interaction directly when that interaction is itself required behavior.
 
 ---
 

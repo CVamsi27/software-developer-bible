@@ -1,7 +1,7 @@
 {% raw %}
 # CI/CD — Index
 
-> **Study time:** ≈ 1 h 51 m of reading (14 files, ~8 min average).
+> **Study time:** ≈ 1 h 45 m of reading (14 files, ~8 min average).
 > **14 files** — a release path from GitHub Actions, GitLab CI/CD, Jenkins or Argo CD through build, artifact verification, production exposure and delivery measurement, followed by interview practice.
 
 [![Files](https://img.shields.io/badge/files-14-blue)](../../INDEX.md)
@@ -41,9 +41,9 @@ Start with the event, job graph and credential model of one platform. Compare th
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 05 | [Docker Build & Deploy](02-build-and-deploy/40.3.2.01-docker-build-deploy.md) | Docker build pipelines, registry (ECR/GCR/DockerHub), deployment strategies | Important | Important | 7 min |
-| 06 | [Pipeline Patterns](02-build-and-deploy/40.3.2.02-pipeline-patterns.md) | GitHub Actions CI/CD, GitLab CI, deployment pipelines, deployment strategies (rolling, blue-green, canary, feature flags) | Important | Important | 6 min |
-| 07 | [Artifact Registries & Release Promotion](02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md) | GHCR/ECR/Artifactory/NPM, immutable digests, build-once promotion dev->staging->prod, changelog automation, retention, pull-through caches | Important | Important | 11 min |
-| 08 | [Pipeline Supply-Chain Security & SLSA](02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.md) | Pipeline attack surface, SolarWinds/Codecov/xz, SLSA levels, SHA pinning + Dependabot, OIDC federation, provenance attestations | Important | Important | 14 min |
+| 06 | [Pipeline Patterns](02-build-and-deploy/40.3.2.02-pipeline-patterns.md) | GitHub Actions CI/CD, GitLab CI, deployment pipelines, deployment strategies (rolling, blue-green, canary, feature flags) | Important | Important | 5 min |
+| 07 | [Artifact Registries & Release Promotion](02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md) | GHCR/ECR/Artifactory/NPM, immutable digests, build-once promotion dev->staging->prod, changelog automation, retention, pull-through caches | Important | Important | 8 min |
+| 08 | [Pipeline Supply-Chain Security & SLSA](02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.md) | Pipeline trust boundaries, SLSA Build and Source tracks, immutable action pins, OIDC federation, provenance verification | Important | Important | 14 min |
 
 ---
 
@@ -54,7 +54,7 @@ Controlled exposure, measured outcomes and compatible recovery.
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 09 | [Blue-Green & Canary](03-releases-and-metrics/40.3.3.01-blue-green-canary.md) | Zero-downtime deployments, traffic shifting, rollback, feature flags | Important | Important | 7 min |
-| 10 | [DORA Metrics & Delivery Performance](03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md) | Five delivery measures including deployment rework rate, honest instrumentation, benchmarks, gaming pitfalls, error budgets | Important | Important | 16 min |
+| 10 | [DORA Metrics & Delivery Performance](03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md) | Five current delivery measures, service-level instrumentation, attribution limits and interpreting throughput alongside instability | Important | Important | 14 min |
 
 **Decision:** Choose exposure based on routing capability, traffic/sample size, capacity and state compatibility. Rolling replacement, retained blue-green capacity and analyzed canaries solve different constraints; none alone promises zero downtime or instant recovery.
 

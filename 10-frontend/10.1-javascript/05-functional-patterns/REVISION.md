@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-JavaScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-7_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-6_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -54,21 +54,21 @@ Source: [Memoization](10.1.5.02-memoization.md)
 
 **First Principles**
 
-1. **Q:** Why does an unbounded cache count as a leak rather than a slow-down?
-   **A:** High-cardinality inputs can retain results long after they are useful. Capacity eviction bounds entries; TTL bounds reuse freshness only if expired entries are actually removed. The chapter lazy TTL wrapper still needs capacity, sweeping or a lifetime boundary.
+1. **Q:** Why can a TTL cache still retain unbounded memory?
+   **A:** A TTL controls how long an entry may be reused, but a cold expired entry remains stored if expiry is checked only on reads. Add a capacity, a cleanup pass, or a shorter-lived owner to bound retention.
 
 2. **Q:** What breaks when a function reads module-level state you forgot to declare impure?
    **A:** The first call's answer is cached as if it were a function of its arguments alone, so every later hit returns a value computed under the old state — memoization cannot detect the hidden input; it just freezes whatever the first call observed.
 
 **How It Works**
 
-3. **Q:** Walk the second-call path of `memoize(fn)` when the arguments repeat.
-   **A:** The wrapper stringifies the arguments into a key, finds it in the cache Map, and returns the stored value without ever invoking `fn` — the body does not run, which is the whole point and also why side effects would be silently skipped.
+3. **Q:** What must happen on a cache hit, and what must the key preserve?
+   **A:** The wrapper derives the same domain key, finds it in the cache, and returns the stored value without invoking the function. That is correct only when equivalent keys represent calls with interchangeable results and hidden dependencies are handled.
 
 **Code Examples**
 
-4. **Q:** What actually differs between `fibonacci` and `fibonacciMemo`?
-   **A:** The naive version repeats the same subproblems along every branch — O(2^n) calls for fib(n) — while the memoized one computes each n once, O(n) states at O(1) lookup each; the manual version threads the cache as a parameter, the `memoize(fib)` version keeps it in closure state.
+4. **Q:** What repeated work does the Fibonacci cache eliminate?
+   **A:** It stores each computed input once, so later overlapping branches reuse that result instead of recursively recalculating it. For one input the example computes O(n) states and retains O(n) results; a larger result may still exceed Number precision or stack depth.
 
 **Common Mistakes**
 
@@ -80,8 +80,8 @@ Source: [Memoization](10.1.5.02-memoization.md)
 
 **Real-World Use Cases**
 
-7. **Q:** In the filtered-items example, why is the `useMemo` dependency list a correctness concern and not just an optimization knob?
-   **A:** The memoized filter only recomputes when a listed dep changes — drop `filter` from the deps and the component can render the previous filter’s items while looking perfectly healthy; a stale render reads as a data bug, not a cache bug.
+7. **Q:** Why can omitting a reactive value from `useMemo` dependencies return a stale result?
+   **A:** React reuses the prior value when listed dependencies compare equal. If the calculation also reads an omitted value, that value can change without invalidating the cache; include every reactive value used by the calculation.
 
 **Performance Considerations**
 
@@ -107,7 +107,7 @@ Source: [Generators](10.1.5.03-generators.md)
 
 **Code Examples**
 
-4. **Q:** In `inputProcessor`, what does `gen.next("Alice")` deliver, and where does the string end up?
+4. **Q:** In `askName`, what does `iterator.next("Sam")` deliver, and where does the string end up?
    **A:** The argument becomes the completion value of the `yield` expression the generator is parked on, so it is assigned to `name` — data sent in arrives on the far side of the pause, not as a return value.
 
 5. **Q:** Why does the paged-fetch example need `async function*` plus `for await`?
@@ -115,8 +115,8 @@ Source: [Generators](10.1.5.03-generators.md)
 
 **Common Mistakes**
 
-6. **Q:** Why is the `yield 3` after `return 2` unreachable, and what does that say about the generator's completion?
-   **A:** For the example yielding 1 then returning 2, the second next reports value:2/done:true; a later next reports undefined/done:true. The following yield 3 is unreachable. A yielding finally block would be a distinct completion path.
+6. **Q:** What does the iterator return after a generator has completed?
+   **A:** Later `next()` calls keep reporting `done: true`; the generator does not restart. A `finally` block that yields is a special completion path because its yielded value must be pulled before the return completes.
 
 **Best Practices**
 
@@ -150,13 +150,13 @@ Source: [Currying & Function Composition](10.1.5.04-currying-composition.md)
 
 **Code Examples**
 
-5. **Q:** Why does the generic `curry()` check `args.length >= fn.length` instead of demanding one argument per call?
-   **A:** Grouped arguments are accepted as a convenience beyond unary currying. The helper now compares against an explicit arity whose default is fn.length. Defaults and rest parameters make that default incomplete; pass the intended arity when needed.
+5. **Q:** Why is `Function.length` an unreliable default arity for a generic curry helper?
+   **A:** `Function.length` excludes parameters after the first default and excludes rest parameters. A helper can therefore run before the intended arguments arrive; use explicit arity or a documented helper contract.
 
 **Real-World Case Studies**
 
-6. **Q:** What is each level of a Redux middleware `(store) => (next) => (action) => …` responsible for fixing?
-   **A:** A different lifecycle moment: `store` once when the chain is built, `next` once per middleware wiring, `action` on every dispatch — currying used as staged dependency injection rather than as style.
+6. **Q:** In `requireRole('admin')`, what is fixed at setup and what does Express supply later?
+   **A:** The factory captures the required role once. Express later calls the returned handler with `(req, res, next)` for each request; this is a multi-argument middleware protocol, not a unary composition pipeline.
 
 **Common Mistakes**
 
@@ -166,9 +166,9 @@ Source: [Currying & Function Composition](10.1.5.04-currying-composition.md)
 8. **Q:** When does point-free or curried style start hurting instead of helping?
    **A:** When there is nothing to reuse. Currying a one-off call only adds a closure layer per argument; the payoff appears when the intermediate function is genuinely reused — pre-bound loggers, per-role guards, configured clients.
 
-## Recursion & Tail Call Optimization
+## Recursion and Tail Calls
 
-Source: [Recursion & Tail Call Optimization](10.1.5.05-recursion-tail-call.md)
+Source: [Recursion and Tail Calls](10.1.5.05-recursion-tail-call.md)
 
 **Definition**
 
@@ -180,18 +180,18 @@ Source: [Recursion & Tail Call Optimization](10.1.5.05-recursion-tail-call.md)
 2. **Q:** Why does `return n * factorial(n - 1)` keep the current frame alive while `return factorial(n - 1, n * acc)` can drop it?
    **A:** In the first form the multiplication still has to run *after* the inner call returns, so the frame's locals must survive; in the second nothing is left to do, so the engine is free to reuse the frame instead of allocating a new one.
 
-3. **Q:** What is the trampoline loop actually executing in `safeFactorial`, and what does it buy you?
-   **A:** Each step returns a function for the next step instead of making a nested recursive call. The loop `while (typeof r === 'function') r = r()` runs those steps iteratively. This avoids growing the call stack, but time and memory remain limited. Numeric range is separate: `100000!` still overflows Number to `Infinity`.
+3. **Q:** What does an explicit work stack change for an unbounded tree walk, and what does it not remove?
+   **A:** It stores pending nodes in application-managed memory instead of nested JavaScript call frames, allowing a depth or size limit and avoiding call-stack overflow. It still retains queued nodes and must define cycle handling; moving work off the call stack does not make it free.
 
 **Code Examples**
 
-4. **Q:** Why is naive `fibonacci(100)` hopeless while the memoized one returns instantly?
-   **A:** Repeated overlapping subproblems cause exponential growth in the naive version; memoization computes each bounded integer state once. There is no universal cutoff where execution never finishes. Number precision and recursion depth remain separate limits even when repeated work is removed.
+4. **Q:** What does memoization improve for recursive Fibonacci, and which limit remains?
+   **A:** It reuses overlapping subproblems so one call computes each smaller state once instead of recomputing branches. It reduces repeated work, not recursion depth or Number precision limits; use iteration when depth is unbounded.
 
 **Real-World Case Studies**
 
-5. **Q:** Why does the recursive tree-view component fit recursion so well, and where does it bite back?
-   **A:** Child component elements mirror the tree shape, but creating JSX does not directly invoke the child component recursively in the current parent frame. Deep/large trees still impose rendering work and memory costs; cyclic graph data must be rejected or handled with a traversal policy.
+5. **Q:** Why does a graph traversal need more than the tree's recursive base case?
+   **A:** A graph can contain cycles or shared nodes, so traversal needs an identity policy such as a visited set. For input-controlled depth, an explicit stack also avoids relying on the engine's call-stack limit.
 
 **Common Mistakes**
 
@@ -218,14 +218,14 @@ Sources: [Modules](10.1.5.01-modules.md), [Memoization](10.1.5.02-memoization.md
 **Q:** What happens if undefined is a legitimate computed result and a memoizer treats undefined as a miss?
 **A:** It recomputes on every call. Check key membership separately from the value, as in the bounded wrapper.
 
-**Q:** A yielded promise rejects, then the generator catch yields a fallback promise. What must its driver do?
-**A:** Resume with throw(error), inspect that step's IteratorResult, await the newly yielded promise and resume again. Calling throw without processing its result can leave the outer promise pending.
+**Q:** A consumer breaks from an async-generator page loop while a fetch is in progress. What stops, and what may continue?
+**A:** Iterator closure prevents future page steps and awaits the generator's close path. It does not cancel an already pending fetch unless the owner also aborts the request through its signal.
 
 **Q:** How does adding a default parameter change a curry helper that relies on fn.length?
 **A:** Function.length stops counting at the first default, so the helper may execute before all intended arguments arrive. An explicit completion arity states the intended grouping.
 
-**Q:** Why can a trampoline avoid stack overflow yet freeze a page or return Infinity?
-**A:** It executes steps in one synchronous loop, so it does not yield to input. It also changes call depth rather than Number range or total arithmetic work.
+**Q:** Why can replacing recursion with a work stack avoid stack overflow without reducing total work?
+**A:** It moves pending calls into an explicit data structure and still visits each required node. Memory and CPU costs remain proportional to the traversal; cycle handling and a maximum-work policy are still needed.
 
 ## Summary
 

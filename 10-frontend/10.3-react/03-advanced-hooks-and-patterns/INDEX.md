@@ -1,6 +1,6 @@
 # Advanced Hooks & Patterns — React
 
-> **Study time:** ≈ 1 h 18 m of reading (7 files, ~11 min average).
+> **Study time:** ≈ 47 min of reading (7 files, ~7 min average).
 > **7 files.** Production-grade patterns: Suspense, error boundaries, custom hooks, external stores via useSyncExternalStore, performance profiling and optimization, and state management.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](#files)
@@ -13,12 +13,12 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Suspense](10.3.3.01-suspense.md) | Suspense boundaries, data fetching, useTransition, streaming SSR | Important | Specialized | 16 min |
+| 01 | [Suspense](10.3.3.01-suspense.md) | Suspense boundaries, data fetching, useTransition, streaming SSR | Important | Specialized | 7 min |
 | 02 | [Error Boundary](10.3.3.02-error-boundary.md) | Class boundary, recovery scope, safe reporting, resource retry | Important | Important | 8 min |
 | 03 | [Custom Hooks](10.3.3.03-custom-hooks.md) | Per-caller state, Hook rules, effect ownership, shared-state boundaries, lifecycle tests | Essential | Important | 7 min |
-| 04 | [useSyncExternalStore](10.3.3.04-usesyncexternalstore.md) | Tearing in concurrent rendering, subscribe/getSnapshot contract, snapshot caching, Zustand/Redux integration, infinite-loop mistakes | Important | Specialized | 12 min |
-| 05 | [Performance](10.3.3.05-performance.md) | Profiling, memo boundaries, virtualization, code splitting, transitions | Essential | Foundational | 10 min |
-| 06 | [State Management](10.3.3.06-state-management.md) | Local/shared/server state, query caches, reducers, version conflicts and ownership boundaries | Essential | Important | 17 min |
+| 04 | [useSyncExternalStore](10.3.3.04-usesyncexternalstore.md) | Tearing in concurrent rendering, subscribe/getSnapshot contract, snapshot caching, Zustand/Redux integration, infinite-loop mistakes | Important | Specialized | 6 min |
+| 05 | [Performance](10.3.3.05-performance.md) | Profiling, memo boundaries, virtualization, code splitting, transitions | Essential | Foundational | 5 min |
+| 06 | [State Management](10.3.3.06-state-management.md) | Local/shared/server state, query caches, reducers, version conflicts and ownership boundaries | Essential | Important | 6 min |
 
 ---
 

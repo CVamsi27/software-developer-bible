@@ -38,6 +38,10 @@ Source: [Core Web Vitals](50.3.1.01-core-web-vitals.md)
 
 **A:** The first two shifts share a session window and sum to 0.3. The later shift follows a gap of more than one second and starts another window. CLS uses the largest window sum, rather than the lifetime total. A raw observer that adds every eligible entry reports a different measure.
 
+**Q:** A layout shift occurs 300 ms after a qualifying click. Does it contribute to CLS, and does exclusion mean the movement is harmless?
+
+**A:** It is excluded from CLS because it occurs within the 500 ms recent-input window. The user can still experience the movement, so assess the interaction itself and do not treat the metric exclusion as proof of good behavior. A later asynchronous shift can still count.
+
 ## Field aggregation and changed conditions
 
 Source: [Core Web Vitals](50.3.1.01-core-web-vitals.md)

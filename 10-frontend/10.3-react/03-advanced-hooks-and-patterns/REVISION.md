@@ -27,8 +27,8 @@ Source: [Suspense](10.3.3.01-suspense.md)
 
 **Code Examples**
 
-4. **Q:** What is missing when a lazy component has no local Suspense boundary?
-   **A:** The region has no intentional local fallback while its code is pending. A boundary defines which part of the interface can show loading UI; root behavior depends on the renderer.
+4. **Q:** What happens when a lazy child suspends but has no nearby boundary?
+   **A:** The nearest ancestor boundary owns the fallback, so it may replace a much larger region than intended. Add a closer boundary when that feature should load independently.
 
 5. **Q:** What does reading a stable Promise with `use` change compared with fetching in an Effect?
    **A:** The read can suspend during render, so the nearest Suspense boundary handles pending work and an Error Boundary handles rejection. The component's resolved rendering still needs to validate and display its data.
@@ -38,13 +38,13 @@ Source: [Suspense](10.3.3.01-suspense.md)
 6. **Q:** Why is a single full-page Suspense wrapper a bad default?
    **A:** Every async region then waits on the slowest one — the header spins behind the same fallback as the content. Per-section boundaries let each region show its own fallback and load independently.
 
-7. **Q:** When is lazy-loading a component *not* worth it?
-   **A:** When it's small and needed immediately — splitting can add requests and loading transitions without useful payload savings. Measure the built chunks and target connection; on-demand routes, editors, charts and modals are candidates rather than universal rules.
+7. **Q:** When is lazy-loading a component not worth the added chunk?
+   **A:** When the component is small and needed immediately, the separate request and first-use wait may outweigh the initial bundle savings. Measure the build and load path; route-level editors or charts are stronger candidates than tiny shared controls.
 
 **Best Practices**
 
-8. **Q:** What hides the extra network round-trip that code splitting introduces?
-   **A:** Preloading starts eligible resources before navigation, potentially reducing the wait. A cache hit, connection speed and actual chunk size determine the result; no fixed delay or elimination of a fallback is guaranteed.
+8. **Q:** What does declaring `lazy` at module scope guarantee, and what does it not guarantee?
+   **A:** It preserves one component type so rerenders do not reset its state. It does not preload the chunk or remove first-use latency; choose a fallback and measure whether preloading is needed.
 
 ## Error Boundary
 
@@ -146,11 +146,11 @@ Source: [useSyncExternalStore](10.3.3.04-usesyncexternalstore.md)
 
 **Code Examples**
 
-5. **Q:** In the viewport hook, where does referential stability come from?
-   **A:** The getter retains its cached object while dimensions match. The shared resize handler refreshes it and notifies subscribers; React avoids a render when the snapshot identity remains unchanged.
+5. **Q:** How should a browser-only snapshot behave during server rendering and hydration?
+   **A:** Use an explicit neutral value from `getServerSnapshot` on both the server and the initial client render, then let the subscription reconcile the browser value. Reading browser globals as server data can produce a hydration mismatch.
 
-6. **Q:** Why does the hand-rolled store assign `state = next` *before* notifying listeners?
-   **A:** Listeners synchronously re-read the snapshot when notified; notifying first would make them read the stale value and conclude nothing changed. The `Object.is` bail-out before the swap also keeps identical updates from waking subscribers at all.
+6. **Q:** Why must the counter update its stored value before notifying listeners?
+   **A:** Listeners re-read the snapshot synchronously when notified. If notification happens first, they read the old value; identical snapshots should return early without waking subscribers.
 
 **Common Mistakes**
 
@@ -168,35 +168,35 @@ Source: [React Performance Optimization](10.3.3.05-performance.md)
 
 **First Principles**
 
-1. **Q:** What two distinct diseases does a flamegraph let you tell apart, and why does it matter?
-   **A:** *Too-wide* renders — many components re-rendering (cure: memoization, state colocation) vs. *too-expensive* commits — heavy DOM churn (cure: virtualization, fewer nodes). Treating DOM churn with `React.memo` does nothing, because the components doing the rendering were never the bottleneck.
+1. **Q:** Which evidence separates expensive React rendering from browser layout and paint work?
+   **A:** The React Profiler shows which components rendered and how much React work they did. A browser Performance trace exposes long tasks, DOM updates, layout and paint. Use the tool that measures the stage users are waiting on.
 
 2. **Q:** Why is "reduce the work, don't memoize it" the right first instinct?
    **A:** Memoization only caches work you still perform, and it adds comparison and bookkeeping overhead to every render. Deleting the work — fewer rows in the DOM via virtualization, fewer bytes via code splitting, fewer components re-rendering via colocation — removes cost outright instead of relocating it.
 
 **Code Examples**
 
-3. **Q:** Why do stable data and callback identities matter at a React.memo boundary?
-   **A:** `memo` compares props shallowly with `Object.is`; an inline object or a re-created function is a fresh reference on every parent render, so the comparison always fails. Stabilizing both props is what lets the comparison succeed and skip the child's render.
+3. **Q:** Why can a fresh products array prevent the result subtree from skipping an urgent render?
+   **A:** `memo` compares each prop with `Object.is` by default. A new array reference counts as changed even if its entries look the same; state or Context consumed by the child can also render it.
 
 4. **Q:** What is the dimmed list in ProductSearch communicating to the user?
    **A:** `useDeferredValue(query)` lags behind the input while the heavy filter re-renders, so `query !== deferredQuery` means the visible list still matches an older query. Dropping its opacity tells the user "these results are behind your typing" instead of letting stale results look final or the UI look frozen.
 
 **Common Mistakes**
 
-5. **Q:** Why can deleting an index-keyed row transfer state to the wrong record?
-   **A:** React reuses positions whose index keys match, potentially assigning an old row's state to a different record after deletion. Stable domain keys preserve the intended row identities.
+5. **Q:** What do stable keys preserve in a virtualized list, and what problem remains?
+   **A:** A domain key preserves record identity when rows move or return, but virtualization can still unmount the focused row. The interface needs an explicit focus and keyboard-navigation policy.
 
-6. **Q:** Why doesn't `useMemo` let 1,000 chart instances compute a value once?
-   **A:** The cache lives in each instance's hook slots, so 1,000 instances mean 1,000 independent caches. Cross-instance sharing requires something outside the component — a module-level LRU or an external cache like TanStack Query.
+6. **Q:** Can `useMemo` interrupt one expensive calculation when its inputs change?
+   **A:** No. It may reuse a result when dependencies are unchanged, but the first calculation and a new-input calculation still run synchronously. Reduce the data, move suitable work to a worker, or query an indexed service.
 
 **Best Practices**
 
 7. **Q:** When does wrapping a tiny handler in `useCallback` actually hurt?
    **A:** When no identity-sensitive consumer uses its stable reference, the cache adds bookkeeping without skipping useful work. Effects, providers and custom Hook APIs can also supply legitimate consumers besides memoized children.
 
-8. **Q:** What is the correct order of operations before adding a memo layer?
-   **A:** Record a DevTools Profiler flamegraph of the real interaction, confirm whether render width or DOM work dominates, then apply the matching lever — memo for wide renders, virtualization for big trees, splitting for load. Unmeasured memoization only moves the bottleneck.
+8. **Q:** What evidence should you collect before adding a memo layer?
+   **A:** Profile the real interaction, separate React work from browser work, and choose the lever that addresses the measured cost. Compare the same workload after the change; unmeasured memoization may only move the bottleneck.
 
 ## State Management
 
@@ -223,13 +223,13 @@ Source: [State Management](10.3.3.06-state-management.md)
 5. **Q:** Why does the mutation example show pending text as an independent UI overlay instead of patching the query cache?
    **A:** The confirmed cache remains untouched while the request is pending, so a rollback cannot restore an old snapshot over a newer mutation. Mutation variables drive the temporary row label; the server's accepted response updates the cache, and conflicts require a deliberate rebase.
 
-6. **Q:** Why can separate selectors for state.todos and state.addTodo narrow subscriptions?
-   **A:** Each `useTodoStore(selector)` call compares its selected value to decide whether that store update requires a render. Selecting the whole store — or returning an inline-built object — would wake the component on every write, defeating the selector contract from First Principles.
+6. **Q:** How can a selector reduce store-driven renders without preventing every render?
+   **A:** It compares only the selected slice and can ignore an unrelated store update. The component may still render because of its parent, local state or Context.
 
 **Normalized client data**
 
-7. **Q:** Why does normalization matter more as the app grows?
-   **A:** Nested copies mean one entity update rebuilds ancestor paths, and duplicate entities can drift. An ID-keyed table keeps one client-owned record per identity and supports direct lookup; an ordered ID list preserves display order.
+7. **Q:** What shape keeps a large client-owned relational collection normalized?
+   **A:** Keep one record per ID in a lookup table and a separate ordered ID list. This avoids duplicate entities and supports direct lookup; remote records should remain with their query-cache owner.
 
 **Choosing an owner**
 

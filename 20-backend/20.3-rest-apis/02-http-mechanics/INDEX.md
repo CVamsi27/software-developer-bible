@@ -15,7 +15,7 @@ Start with intended request effects and repeatability, then choose responses tha
 ## Files
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------: |
+| -------- | ----------------------------------------- | -------------------------------------------------------- | ------------- | ------------------ | ---------: |
 | 01 | [HTTP Methods](20.3.2.01-http-methods.md) | GET/POST/PUT/PATCH/DELETE semantics, idempotency, safety | Essential | Foundational | 6 min |
 | 02 | [Status Codes](20.3.2.02-status-codes.md) | 2xx/4xx/5xx families, when to use which | Essential | Foundational | 8 min |
 | 03 | [CORS](20.3.2.03-cors.md) | Preflight, headers, credentials | Essential | Foundational | 6 min |

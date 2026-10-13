@@ -42,6 +42,10 @@ Source: [ARIA (Accessible Rich Internet Applications)](50.2.02-aria.md)
 
 **A:** No. It changes the accessibility representation, so an operable descendant can become unidentified. Use the appropriate visibility/inertness behavior instead of hiding its meaning alone.
 
+**Q:** Does following an APG pattern establish that a product conforms to WCAG?
+
+**A:** No. The APG is informative implementation guidance; WCAG and WAI-ARIA specifications define normative requirements. Follow the pattern where it fits, then evaluate the applicable criteria and the complete user task.
+
 ## Keyboard Navigation
 
 Source: [Keyboard Navigation](50.2.03-keyboard-navigation.md)

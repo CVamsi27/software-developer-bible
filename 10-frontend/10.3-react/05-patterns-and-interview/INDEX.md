@@ -1,7 +1,7 @@
 # Patterns & Interview Prep — React
 
-> **Study time:** ≈ 1 h 8 m of reading (4 files, ~17 min average).
-> **4 files.** Reusable composition patterns — portals and compound components — plus focused interview practice.
+> **Study time:** ≈ 28 min of reading (4 files, ~7 min average).
+> **4 files.** Learn where React ownership differs from DOM placement, then coordinate reusable parts through a clear shared-state contract before interview practice.
 
 [![Files](https://img.shields.io/badge/files-4-blue)](#files)
 [![Category](https://img.shields.io/badge/category-Patterns_and_Interview-orange)](../INDEX.md)
@@ -13,8 +13,8 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Portals](10.3.5.01-portals.md) | createPortal, event bubbling, modals, tooltips, overflow escape, SSR safety | Important | Specialized | 24 min |
-| 02 | [Compound Components](10.3.5.02-compound-components.md) | Context-based composition, tabs, accordion, choice popover, form fields, generics | Important | Specialized | 30 min |
+| 01 | [Portals](10.3.5.01-portals.md) | createPortal, event bubbling, modals, tooltips, overflow escape, SSR safety | Important | Specialized | 5 min |
+| 02 | [Compound Components](10.3.5.02-compound-components.md) | Context-based composition, tabs, accordion, choice popover, form fields, generics | Important | Specialized | 9 min |
 | 03 | [Interview Questions](10.3.5.03-interview-questions.md) | Curated mechanism, tradeoff and failure questions | Important | Specialized | 12 min |
 
 ---

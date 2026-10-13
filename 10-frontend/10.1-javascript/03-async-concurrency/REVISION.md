@@ -33,7 +33,7 @@ Source: [Event Loop](10.1.3.01-event-loop.md)
    **A:** The synchronous lines, then the microtask, then the timer — the stack empties, microtasks drain to exhaustion, and only then does the loop take one task off the timer queue.
 
 5. **Q:** Why does code after `await Promise.resolve()` start running after the caller's remaining synchronous code?
-   **A:** `await` hands a pending promise back to the caller and parks the rest of the function as a reaction, so the caller finishes on this stack and the continuation arrives in a later microtask drain.
+   **A:** Even though the promise is already fulfilled, `await` suspends the async function and schedules its continuation as a promise job. The caller finishes its current synchronous work before that continuation runs at a microtask checkpoint.
 
 **Common Mistakes**
 

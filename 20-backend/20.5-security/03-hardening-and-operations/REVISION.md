@@ -130,7 +130,7 @@ Sources: [OWASP Secrets Management Cheat Sheet](https://cheatsheetseries.owasp.o
 
 Source: [Vulnerability Management & Patch Governance](20.5.3.05-vulnerability-management-patch-governance.md)
 
-Sources: [FIRST CVSS v3.1](https://www.first.org/cvss/v3.1/specification-document) · [FIRST CVSS v4.0](https://www.first.org/cvss/v4.0/) · [FIRST EPSS](https://www.first.org/epss/) · [CISA KEV Catalog](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) · [Syft SBOM generator](https://github.com/anchore/syft) · [Trivy SBOM and scanning](https://trivy.dev/docs/latest/guide/supply-chain/sbom/)
+Sources: [FIRST CVSS v4.0](https://www.first.org/cvss/v4.0/) · [FIRST EPSS](https://www.first.org/epss/) · [CISA KEV Catalog](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) · [Syft SBOM generator](https://github.com/anchore/syft) · [Trivy SBOM and scanning](https://trivy.dev/docs/latest/guide/supply-chain/sbom/)
 
 **Q:** Why must vulnerability management include application dependencies?
 
@@ -142,7 +142,7 @@ Sources: [FIRST CVSS v3.1](https://www.first.org/cvss/v3.1/specification-documen
 
 **Q:** Why should vulnerability prioritization consider exposure and exploitability?
 
-**A:** Severity is one input alongside known exploitation, exposure, reachability and compensating controls. Document uncertainty and prioritize the concrete threat without dismissing a high-severity finding merely because exploitation has not been observed.
+**A:** Record the CVSS version, vector and metric group. Combine the score with known exploitation, exposure, reachability and compensating controls. Document uncertainty; a low EPSS estimate or absent KEV entry does not prove safety.
 
 **Q:** What does an SBOM prove about the deployed release?
 

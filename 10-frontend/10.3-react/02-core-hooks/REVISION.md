@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-React-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -66,8 +66,8 @@ Source: [useEffect](10.3.2.02-useeffect.md)
 
 **Code Examples**
 
-4. **Q:** Why must a stale fetch guard cover finally as well as success?
-   **A:** An obsolete request can finish its cleanup path while a newer request is pending. Its loading update would otherwise incorrectly mark that newer request complete.
+4. **Q:** How does the profile example keep an earlier response from replacing the requested profile?
+   **A:** Each result carries its requested user ID, and render only displays a result whose ID matches the current prop. Cleanup invalidates the old request; aborting also reduces supported work, while the identity guard prevents a late response from winning.
 
 **Real-World Use Cases**
 
@@ -118,12 +118,12 @@ Source: [useMemo & useCallback](10.3.2.03-usememo-usecallback.md)
 
 **Common Mistakes**
 
-6. **Q:** What is wrong with mutating a memoized output after render?
+7. **Q:** What is wrong with mutating a memoized output after render?
    **A:** The mutation changes a cached object outside the calculation without scheduling an update. Update the source state immutably and derive a new output instead.
 
 **Performance Considerations**
 
-7. **Q:** How do you decide whether caching is worth its bookkeeping?
+8. **Q:** How do you decide whether caching is worth its bookkeeping?
    **A:** Measure the cost and frequency of the work it actually skips. Dependency checks, retained data and complexity should earn a useful improvement.
 
 ## useRef
@@ -188,7 +188,7 @@ Source: [Context API](10.3.2.05-context-api.md)
 **Real-World Use Cases**
 
 5. **Q:** Why should locale-loading effects ignore obsolete imports?
-   **A:** A value read from client Context can control what the interface displays, but it does not authorize a protected request. A client can alter its own state, so the server must authenticate each request and authorize access to the requested resource.
+   **A:** When the selected locale changes, an earlier dynamic import can resolve later and overwrite the newest translations. Track the requested locale or ignore completion from a superseded request; dynamic import itself is not aborted by effect cleanup. See [useEffect async result ownership](10.3.2.02-useeffect.md#protect-asynchronous-result-ownership).
 
 **Common Mistakes**
 
@@ -199,6 +199,12 @@ Source: [Context API](10.3.2.05-context-api.md)
 
 7. **Q:** Why cannot React.memo block an update to context a component reads?
    **A:** Consumed context is a direct dependency independent of the prop comparison. Splitting contexts can reduce which readers are notified when one value changes.
+
+8. **Q:** What changed for Context providers in React 19.3 Server Components?
+   **A:** A Server Component can import a context created in a Client Component module and render it directly as a provider. Server Components still cannot create or read Context; Client Component descendants consume the value. See the [React 19.3 release notes](https://react.dev/blog/2026/09/09/react-19-3).
+
+9. **Q:** What must be true of a value a Server Component provides to client consumers?
+   **A:** It must be serializable across the server/client boundary and safe to expose to browser code. Context does not make private server data secret once it is sent to a Client Component.
 
 ## Changed contracts
 

@@ -48,7 +48,7 @@ Source: [Web Streams and Test Runner](20.1.1.02-web-streams-and-test-runner.md)
 
 **Q:** Does running native TypeScript tests prove the project type-checks?
 
-**A:** No. Native execution strips supported type syntax; run an actual TypeScript checker separately and account for unsupported transformations.
+**A:** No. Current Node releases stably strip erasable syntax by default, but do not type-check or apply `tsconfig` transformations. Run `tsc --noEmit` separately and use a compiler or loader when the project needs generated syntax or configuration support. Source: [Node.js TypeScript support](https://nodejs.org/api/typescript.html).
 
 **Q:** In the two-chunk Web Stream fixture, what happens before the returned pipeTo promise completes?
 

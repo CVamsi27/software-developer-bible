@@ -1,6 +1,6 @@
 # Quality & Operations - NestJS
 
-> **Study time:** ≈ 1 h 11 m of reading (6 files, ~12 min average).
+> **Study time:** ≈ 1 h 10 m of reading (6 files, ~12 min average).
 > **6 files.** Follow application settings from startup into request handling, choose tests by the behavior they can prove, then trace shutdown and background work through recovery. Finish by comparing generated OpenAPI with runtime behavior.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](../INDEX.md)
@@ -21,9 +21,9 @@
 | --   : | ------ | -------- | --- | --- | ----------: |
 | 01 | [Configuration & Validation](20.2.4.01-configuration-validation.md) | Startup schemas with Zod/Standard Schema (Joi 18+ supported); class DTO or schema-first request validation; settings vs authorization | Essential | Important | 8 min |
 | 02 | [Testing](20.2.4.02-testing.md) | Vitest/Jest, TestingModule, Supertest, Testcontainers; evidence at unit, integration, and HTTP boundaries | Essential | Important | 12 min |
-| 03 | [Lifecycle Hooks & Graceful Shutdown](20.2.4.03-lifecycle-hooks-graceful-shutdown.md) | OnModuleInit/OnApplicationBootstrap/OnModuleDestroy/BeforeApplicationShutdown/OnApplicationShutdown, ordering guarantees, `enableShutdownHooks()`, SIGTERM, Kubernetes terminationGracePeriod, draining connections, closing pools in order | Essential | Important | 13 min |
+| 03 | [Lifecycle Hooks & Graceful Shutdown](20.2.4.03-lifecycle-hooks-graceful-shutdown.md) | Startup/shutdown phases, Nest 12 hook-order migration, `enableShutdownHooks()`, SIGTERM, Kubernetes termination budget, draining connections, closing pools in order | Essential | Important | 13 min |
 | 04 | [Scheduling & Background Jobs](20.2.4.04-scheduling-background-jobs.md) | @nestjs/schedule (cron/interval/timeout + dynamic API), distributed cron locks (Redis NX / leader election), BullMQ queues, retries with backoff, rate limits, idempotent handlers, job observability | Essential | Important | 19 min |
-| 05 | [Swagger & OpenAPI](20.2.4.05-swagger-openapi-nestjs.md) | @nestjs/swagger, DTO and Standard Schema metadata, generics + @ApiExtraModels, security requirements, runtime validation boundaries, spec snapshots and CI contract checks | Essential | Important | 15 min |
+| 05 | [Swagger & OpenAPI](20.2.4.05-swagger-openapi-nestjs.md) | @nestjs/swagger, DTO and Standard Schema metadata, generics + @ApiExtraModels, security requirements, runtime validation boundaries, spec snapshots and CI contract checks | Essential | Important | 14 min |
 
 ---
 

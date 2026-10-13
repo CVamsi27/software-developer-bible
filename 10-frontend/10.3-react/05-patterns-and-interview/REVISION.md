@@ -103,9 +103,9 @@ Source: [Portals](10.3.5.01-portals.md), [Compound Components](10.3.5.02-compoun
 
 **A:** No. Stacking contexts, positioning and the browser top layer still govern visibility. A portal changes ancestry rather than granting global priority.
 
-**Q:** Why can switching the simple Tabs example discard an inner form draft?
+**Q:** What happens to a form draft if an inactive tab panel returns `null`?
 
-**A:** The inactive panel returns null, unmounting its inner content. Persist the draft above that content or deliberately keep it mounted when preservation is needed.
+**A:** React unmounts the panel’s children, so their local state is discarded. Keep the panel mounted or move the draft state to an owner that survives the tab switch; account for Effects that remain active in a hidden mounted panel.
 
 **Q:** What must change if compound tab children can be reordered?
 

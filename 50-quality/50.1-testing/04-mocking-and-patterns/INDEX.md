@@ -1,6 +1,6 @@
 # Mocking & Test Patterns
 
-> **Study time:** ≈ 23 min of reading (3 files, ~8 min average).
+> **Study time:** ≈ 22 min of reading (3 files, ~7 min average).
 > **3 files.** How to isolate code under test (mocks, spies, stubs, MSW) and how to structure tests that stay maintainable at scale (Arrange-Act-Assert, factories, fixtures, builders).
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
@@ -32,7 +32,7 @@ Complete the [section revision questions](REVISION.md) after both chapters. Chan
 
 ## Cross-References
 
-- [Frameworks](../02-frameworks/INDEX.md) — where jest.fn / vi.fn live.
+- [Frameworks](../02-frameworks/INDEX.md) — runner-specific APIs for creating and configuring test doubles.
 - [Foundations](../01-foundations/INDEX.md) — why boundary mocking follows from test strategy.
 
 ---

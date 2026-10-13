@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-NestJS-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
 
@@ -54,9 +54,9 @@ Source: [NestJS Pipes](20.2.2.03-pipes.md)
 
 **A:** Register ValidationPipe, use runtime DTO classes with suitable decorators/nested metadata, and select transform/whitelist/null/coercion policies. TypeScript annotations alone perform no runtime validation or authorization.
 
-**Q:** Why does the order of guards and pipes matter?
+**Q:** Why does the order of guards and pipes matter, and which argument is piped first in `update(@Body() body, @Param('id', ParseUUIDPipe) id)`?
 
-**A:** Guards execute before argument pipes. A guard reading raw IDs/body fields must validate the portion it relies on itself; it cannot assume a later ParseUUIDPipe has already succeeded.
+**A:** Guards execute before argument pipes, so they cannot assume a later ParseUUIDPipe has already validated raw input. Parameter pipes resolve from the last handler parameter to the first, so the ID is piped before the body. Avoid cross-parameter side effects that depend on this ordering.
 
 ## NestJS Interceptors
 
@@ -89,6 +89,10 @@ Source: [NestJS Exception Filters](20.2.2.05-exception-filters.md)
 **Q:** Where do exception filters fit when request processing throws?
 
 **A:** An uncaught supported request failure selects an applicable route, controller or global filter. A handled exception is not automatically forwarded through every outer filter, and detached work remains outside that request ownership.
+
+**Q:** Which filters can handle an exception thrown by Nest middleware?
+
+**A:** Only global exception filters apply because middleware runs before a route or controller is selected. A caught exception never enters the filter layer.
 
 ## Request Context & AsyncLocalStorage
 

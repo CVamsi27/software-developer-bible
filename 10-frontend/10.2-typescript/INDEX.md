@@ -1,6 +1,6 @@
 # TypeScript — Index
 
-> **Study time:** ≈ 4 h 47 m of reading (22 files, ~13 min average).
+> **Study time:** ≈ 2 h 58 m of reading (22 files, ~8 min average).
 > **22 files** — TypeScript type system mastery from basic types to branded types, template literals, declaration files, advanced generics, variance, decorators, the `satisfies` operator, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-22-blue)](../../INDEX.md)
@@ -44,10 +44,10 @@ How TypeScript represents types.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Types vs Interfaces](01-foundations/10.2.1.01-types-vs-interfaces.md) | Type aliases, interfaces, declaration merging, when to use each, performance | Essential | Foundational | 7 min |
-| 02 | [keyof / typeof](01-foundations/10.2.1.02-keyof-typeof.md) | Index type queries, typeof operator, enum types, indexed access types | Essential | Foundational | 17 min |
-| 03 | [Type Narrowing](01-foundations/10.2.1.03-type-narrowing.md) | typeof guards, instanceof, discriminated unions, type predicates, control flow analysis | Essential | Foundational | 19 min |
-| 04 | [tsconfig & Compiler Options](01-foundations/10.2.1.04-tsconfig-compiler-options.md) | strict flag family, moduleResolution bundler/node16/nodenext, isolatedModules, incremental/composite, skipLibCheck, annotated senior tsconfig | Essential | Foundational | 17 min |
+| 01 | [Types vs Interfaces](01-foundations/10.2.1.01-types-vs-interfaces.md) | Type aliases, interfaces, declaration merging, when to use each, performance | Essential | Foundational | 6 min |
+| 02 | [keyof / typeof](01-foundations/10.2.1.02-keyof-typeof.md) | Key unions, value-derived types, indexed access, safe dynamic lookup, mapped-type filtering | Essential | Foundational | 6 min |
+| 03 | [Type Narrowing](01-foundations/10.2.1.03-type-narrowing.md) | typeof guards, instanceof, discriminated unions, type predicates, control flow analysis | Essential | Foundational | 6 min |
+| 04 | [tsconfig & Compiler Options](01-foundations/10.2.1.04-tsconfig-compiler-options.md) | strict flag family, moduleResolution bundler/node16/nodenext, isolatedModules, incremental/composite, skipLibCheck, annotated senior tsconfig | Essential | Foundational | 6 min |
 
 ---
 
@@ -57,9 +57,9 @@ Reusable type operations.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 05 | [Generics](02-generics-and-inference/10.2.2.01-generics.md) | Generic functions, constraints, default type parameters, conditional generics | Essential | Foundational | 8 min |
+| 05 | [Generics](02-generics-and-inference/10.2.2.01-generics.md) | Generic functions, constraints, default type parameters, conditional generics | Essential | Foundational | 9 min |
 | 06 | [Infer](02-generics-and-inference/10.2.2.02-infer.md) | Type inference in conditional types, `ReturnType`, `Parameters`, `Awaited`, custom utility types | Important | Specialized | 6 min |
-| 07 | [Advanced Generics](02-generics-and-inference/10.2.2.03-advanced-generics.md) | Template literal types, variadic tuples, recursive types, builder patterns | Important | Specialized | 10 min |
+| 07 | [Advanced Generics](02-generics-and-inference/10.2.2.03-advanced-generics.md) | Template literal types, variadic tuples, recursive types, builder patterns | Important | Specialized | 9 min |
 | 08 | [Type Variance](02-generics-and-inference/10.2.2.04-type-variance.md) | Covariance/contravariance/invariance, strictFunctionTypes bivariance, unsound covariant arrays, in/out annotations, assignability puzzles | Important | Specialized | 7 min |
 
 ---
@@ -73,7 +73,7 @@ The composable operations that make TS powerful.
 | 09 | [Utility Types](03-type-transformations/10.2.3.01-utility-types.md) | `Partial`, `Required`, `Pick`, `Omit`, `Record`, `Exclude`, `Extract`, `NonNullable` | Essential | Foundational | 8 min |
 | 10 | [Conditional Types](03-type-transformations/10.2.3.02-conditional-types.md) | Ternary types, distributive conditional types, `infer` keyword, `never` | Important | Specialized | 8 min |
 | 11 | [Mapped Types](03-type-transformations/10.2.3.03-mapped-types.md) | Index signatures, mapping modifiers, `as` clause, key remapping | Essential | Foundational | 8 min |
-| 12 | [Template Literal Types](03-type-transformations/10.2.3.04-template-literal-types.md) | String manipulation, infer patterns, CSS types, route builders, recursive string types | Important | Specialized | 22 min |
+| 12 | [Template Literal Types](03-type-transformations/10.2.3.04-template-literal-types.md) | String manipulation, infer patterns, CSS types, route builders, recursive string types | Important | Specialized | 13 min |
 
 ---
 
@@ -83,11 +83,11 @@ Senior-level TS — types as a design tool.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 13 | [The `satisfies` Operator](04-advanced-patterns/10.2.4.01-satisfies-operator.md) | Type validation without widening, literal preservation, config objects, route tables | Essential | Foundational | 11 min |
-| 14 | [Branded Types](04-advanced-patterns/10.2.4.02-branded-types.md) | Nominal-like branding, units, boundary validation, flavoring, discriminated unions | Important | Specialized | 26 min |
-| 15 | [Decorators](04-advanced-patterns/10.2.4.03-decorators.md) | Class, method, accessor, property, parameter decorators, metadata reflection | Important | Specialized | 19 min |
-| 16 | [Declaration Files](04-advanced-patterns/10.2.4.04-declaration-files.md) | .d.ts syntax, module augmentation, global types, asset declarations, triple-slash directives | Important | Specialized | 25 min |
-| 17 | [Advanced Patterns](04-advanced-patterns/10.2.4.05-advanced-patterns.md) | Class/parameter decorators, typed event emitter, advanced utility combinations | Important | Specialized | 11 min |
+| 13 | [The `satisfies` Operator](04-advanced-patterns/10.2.4.01-satisfies-operator.md) | Type validation without widening, literal preservation, config objects, route tables | Essential | Foundational | 4 min |
+| 14 | [Branded Types](04-advanced-patterns/10.2.4.02-branded-types.md) | Nominal-like branding, units, boundary validation, flavoring, discriminated unions | Important | Specialized | 6 min |
+| 15 | [Decorators](04-advanced-patterns/10.2.4.03-decorators.md) | Class, method, accessor, property, parameter decorators, metadata reflection | Important | Specialized | 7 min |
+| 16 | [Declaration Files](04-advanced-patterns/10.2.4.04-declaration-files.md) | .d.ts syntax, module augmentation, global types, asset declarations, triple-slash directives | Important | Specialized | 6 min |
+| 17 | [Advanced Patterns](04-advanced-patterns/10.2.4.05-advanced-patterns.md) | Class/parameter decorators, typed event emitter, advanced utility combinations | Important | Specialized | 5 min |
 
 ---
 

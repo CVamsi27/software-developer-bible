@@ -32,7 +32,7 @@ Source: [NestJS Microservices](20.2.3.02-microservices.md)
 
 **Q:** Why should transport handlers delegate business rules to shared services?
 
-**A:** The controller abstraction extends to message patterns — `@EventPattern` handlers are controllers for the message transport, keeping business logic transport-agnostic.
+**A:** HTTP and message handlers translate their transport inputs and outcomes, then call the same application operation. This keeps product rules in one owner while each adapter retains its own authentication, acknowledgment and retry contract.
 
 **Q:** Which delivery behavior should be checked before choosing a Nest transport?
 

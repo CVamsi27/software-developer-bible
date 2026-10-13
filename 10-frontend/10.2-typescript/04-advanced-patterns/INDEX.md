@@ -1,6 +1,6 @@
 # Advanced Patterns — TypeScript
 
-> **Study time:** ≈ 1 h 37 m of reading (6 files, ~16 min average).
+> **Study time:** ≈ 33 min of reading (6 files, ~6 min average).
 > **6 files.** The senior toolkit: `satisfies`, branded types, decorators, declaration files, and combined type-level patterns.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](#files)
@@ -13,19 +13,19 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | ------ | ----------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ------------- | ------------------ | ----------: |
-| 01 | [The `satisfies` Operator](10.2.4.01-satisfies-operator.md) | Type validation without widening, literal preservation, config objects, route tables | Essential | Foundational | 11 min |
-| 02 | [Branded Types](10.2.4.02-branded-types.md) | Nominal-like branding, units, boundary validation, flavoring, discriminated unions | Important | Specialized | 26 min |
-| 03 | [Decorators](10.2.4.03-decorators.md) | Class, method, accessor, property, parameter decorators, metadata reflection | Important | Specialized | 19 min |
-| 04 | [Declaration Files](10.2.4.04-declaration-files.md) | .d.ts syntax, module augmentation, global types, asset declarations, triple-slash directives | Important | Specialized | 25 min |
-| 05 | [Advanced Patterns](10.2.4.05-advanced-patterns.md) | Class/parameter decorators, typed event emitter, advanced utility combinations | Important | Specialized | 11 min |
+| 01 | [The `satisfies` Operator](10.2.4.01-satisfies-operator.md) | Finite and open keys, contextual inference, route contracts | Essential | Foundational | 4 min |
+| 02 | [Branded Types](10.2.4.02-branded-types.md) | Opaque IDs, validated units and currency, runtime trust boundaries | Important | Specialized | 6 min |
+| 03 | [Decorators](10.2.4.03-decorators.md) | Standard and legacy modes, wrappers, accessors, metadata consumers | Important | Specialized | 7 min |
+| 04 | [Declaration Files](10.2.4.04-declaration-files.md) | .d.ts scope, module augmentation, bundler assets, package exports | Important | Specialized | 6 min |
+| 05 | [Advanced Patterns](10.2.4.05-advanced-patterns.md) | Composed event/payload contracts, dispatch, cleanup and failure policy | Important | Specialized | 5 min |
 
 ---
 
 ## Read order
 
-First check a configuration while keeping its written keys with `satisfies`; distinguish finite table keys from an open index signature. Then validate a value and trace how a brand protects later typed calls without installing a runtime tag.
+First check a route table against finite keys with `satisfies`, then follow a validated brand from input to later typed calls. Keep the marker’s static guarantee separate from runtime validation.
 
-Next follow a decorator through class definition, instance initialization and invocation. Compare the two compiler modes and identify the validator/container that reads metadata. Declaration files then connect a runtime export to its consumer contract; use the separate-file fixture and check package entry paths. Finish by composing an event name with its payload and tracing dispatch, cleanup and failures.
+Next follow a decorator through definition, initialization and invocation, and name the consumer of any metadata. Declaration files then connect a runtime export to its consumer contract; check both package entry paths. Finish by tracing an event name and payload through dispatch, cleanup and failure behavior.
 
 Use [revision](REVISION.md) after these passes, then move to [interview practice](../05-interview-prep/10.2.5.01-interview-questions.md).
 

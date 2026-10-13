@@ -1,6 +1,6 @@
 # Testing Frameworks
 
-> **Study time:** ≈ 37 min of reading (5 files, ~7 min average).
+> **Study time:** ≈ 34 min of reading (5 files, ~7 min average).
 > **5 files.** The runner-tier tools: Jest, Vitest, React Testing Library, and a head-to-head comparison so you can defend a stack choice in an interview.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../INDEX.md)
@@ -19,10 +19,10 @@ Choosing a framework affects the whole team for a long time: configuration, plug
 
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
-| 01 | [Jest](50.1.2.01-jest.md) | Configuration, matchers, snapshots, mocking, code coverage | Existing Jest suites; configured Node/DOM tests | Essential | Foundational | 10 min |
+| 01 | [Jest](50.1.2.01-jest.md) | Configuration, matchers, snapshots, mocking, code coverage | Existing Jest suites; configured Node/DOM tests | Essential | Foundational | 9 min |
 | 02 | [Vitest](50.1.2.02-vitest.md) | Module transforms, runtime choices, controlled retries, migration differences, worker pools | Vite-aligned tooling; verify runtime and measured performance | Essential | Foundational | 9 min |
-| 03 | [React Testing Library](50.1.2.03-react-testing-library.md) | Render, queries, events, async testing, accessibility (testing-library/jest-dom) | React component tests | Essential | Foundational | 11 min |
-| 04 | [Testing Frameworks Comparison](50.1.2.04-testing-frameworks-comparison.md) | Jest vs Vitest, Playwright for E2E, Supertest for APIs, choosing the right framework | Stack decisions | Essential | Foundational | 5 min |
+| 03 | [React Testing Library](50.1.2.03-react-testing-library.md) | Render, queries, events, async testing, accessibility (testing-library/jest-dom) | React component tests | Essential | Foundational | 10 min |
+| 04 | [Testing Frameworks Comparison](50.1.2.04-testing-frameworks-comparison.md) | Jest vs Vitest, Playwright for E2E, Supertest for APIs, choosing the right framework | Stack decisions | Essential | Foundational | 4 min |
 
 ---
 

@@ -1,6 +1,6 @@
 # Security — Index
 
-> **Study time:** ≈ 3 h 44 m of reading (24 files, ~9 min average).
+> **Study time:** ≈ 3 h 34 m of reading (24 files, ~9 min average).
 > **The senior security learning track.** Study in three passes: **I. Auth** (the [01-auth](01-auth/INDEX.md) deep-dive: fundamentals → Basic/Digest → API keys → sessions → JWT → OAuth/OIDC → SSO/SAML → MFA/passkeys → RBAC → ABAC) → **II. Attacks & Defense** (XSS, CSRF, SQL injection, API security) → **III. Hardening & Operations** (encryption/TLS, browser policy, threat modeling, secrets and vulnerability response). Finish with the interview banks.
 >
 > The 21 learning and interview files, plus three revision companions, cover HTTP authentication through passkeys, common application attacks, and production security operations.
@@ -47,8 +47,8 @@ Ten auth and authorization chapters build from credentials to policy enforcement
 | Order | File | Topics | Role priority | General importance | Read time |
 | ----: | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ------------- | ------------------ | --------: |
 | 1 | [Auth Fundamentals](01-auth/20.5.1.01-auth-fundamentals.md) | Identity vs permissions, hashing vs encryption vs signing, Argon2id, CSPRNG, TLS | Essential | Foundational | 7 min |
-| 2 | [HTTP Basic & Digest Auth](01-auth/20.5.1.02-http-basic-digest-auth.md) | Authorization header, Base64-over-TLS, 401 handshake, Digest challenge-response legacy, nginx patterns | Important | Specialized | 15 min |
-| 3 | [API Keys](01-auth/20.5.1.03-api-keys.md) | CSPRNG generation, hashing keys at rest, `sk_live_` prefixes, rotation windows, scopes, leak runbook | Essential | Foundational | 16 min |
+| 2 | [HTTP Basic & Digest Auth](01-auth/20.5.1.02-http-basic-digest-auth.md) | Authorization header, Base64-over-TLS, 401 handshake, Digest challenge-response legacy, nginx patterns | Important | Specialized | 12 min |
+| 3 | [API Keys](01-auth/20.5.1.03-api-keys.md) | CSPRNG generation, hashing keys at rest, `sk_live_` prefixes, rotation windows, scopes, leak runbook | Essential | Foundational | 13 min |
 | 4 | [Sessions & Cookies](01-auth/20.5.1.04-sessions-cookies.md) | Cookie flags, session stores, fixation/hijacking, timeouts | Essential | Foundational | 8 min |
 | 5 | [JWT](01-auth/20.5.1.05-jwt.md) | Token structure, signing algorithms, storage trade-offs, refresh rotation, revocation | Essential | Foundational | 9 min |
 | 6 | [OAuth2 / OIDC](01-auth/20.5.1.06-oauth2-oidc.md) | Grants, PKCE, scopes, social login, the OIDC identity layer | Essential | Foundational | 13 min |
@@ -77,10 +77,10 @@ Stage 10 is the auth question bank ([drills](01-auth/20.5.1.11-interview-questio
 | Order | File | Topics | Role priority | General importance | Read time |
 | ----: | --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------- | ------------------ | --------: |
 | — | [Encryption, Hashing & TLS](03-hardening-and-operations/20.5.3.01-encryption.md) | Symmetric/asymmetric, salting, AES/RSA, TLS handshake *(prerequisite for Pass I)* | Essential | Foundational | 45 min |
-| 15 | [Web Security](03-hardening-and-operations/20.5.3.02-web-security.md) | HTTPS, HSTS, CORS, CSP, security headers, OWASP Top 10 | Essential | Foundational | 10 min |
+| 15 | [Web Security](03-hardening-and-operations/20.5.3.02-web-security.md) | HTTPS, HSTS, CORS, CSP, security headers, OWASP Top 10 | Essential | Foundational | 8 min |
 | 16 | [Threat Modeling — STRIDE](03-hardening-and-operations/20.5.3.03-threat-modeling-stride.md) | STRIDE, data-flow diagrams, trust boundaries, attack trees | Important | Specialized | 7 min |
 | 17 | [Secrets Management](03-hardening-and-operations/20.5.3.04-secrets-management.md) | Vault, AWS/GCP secret managers, rotation, KMS, dynamic credentials | Essential | Foundational | 8 min |
-| 18 | [Vulnerability Management & Patch Governance](03-hardening-and-operations/20.5.3.05-vulnerability-management-patch-governance.md) | CVE/CVSS + EPSS/KEV triage, SBOM (CycloneDX/SPDX), scanner roles, patch SLAs, emergency process, base-image refresh, risk acceptance, MTTR | Important | Specialized | 14 min |
+| 18 | [Vulnerability Management & Patch Governance](03-hardening-and-operations/20.5.3.05-vulnerability-management-patch-governance.md) | CVE/CVSS + EPSS/KEV triage, SBOM (CycloneDX/SPDX), scanner roles, patch SLAs, emergency process, base-image refresh, risk acceptance, MTTR | Important | Specialized | 12 min |
 
 ---
 

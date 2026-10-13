@@ -1,6 +1,6 @@
 # Operations & Scaling - Database
 
-> **Study time:** ≈ 1 h 3 m of reading (7 files, ~9 min average).
+> **Study time:** ≈ 1 h 4 m of reading (7 files, ~9 min average).
 > **7 files.** Keeping the database healthy at scale: connection pooling, zero-downtime migrations, soft delete & tombstones, backups/PITR recovery, search infrastructure at scale — plus the interview question bank.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../INDEX.md)
@@ -25,7 +25,7 @@ Start with transaction, locking and WAL basics from the foundations/transactions
 | Order | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Connection Pooling](20.4.5.01-connection-pooling.md) | PgBouncer, connection lifecycle, pool sizing, transaction pooling, prepared statements | Important | Important | 10 min |
-| 02 | [Migration Strategies](20.4.5.02-migration-strategies.md) | Expand/contract, lock-aware migrations, backfills, zero-downtime, blue-green DB | Important | Important | 9 min |
+| 02 | [Migration Strategies](20.4.5.02-migration-strategies.md) | Expand/contract, lock-aware migrations, backfills, zero-downtime, blue-green DB | Important | Important | 10 min |
 | 03 | [Soft Delete & Tombstones](20.4.5.03-soft-delete-and-tombstones.md) | `deleted_at` columns, partial indexes, GDPR right-to-erasure, CDC tombstones, log compaction retention | Essential | Foundational | 11 min |
 | 04 | [Backups, PITR & Recovery](20.4.5.04-backups-pitr-recovery.md) | `pg_dump` vs physical backups, WAL archiving, incremental backup dependencies, `recovery_target_time` PITR, RPO/RTO targets and restore drills | Important | Important | 10 min |
 | 05 | [Search Infrastructure at Scale](20.4.5.05-search-infrastructure-at-scale.md) | Term analysis, PostgreSQL matching/ranking, measured engine choice, item/task outcomes, ordered deletion, snapshot/replay rebuilds | Essential | Foundational | 11 min |

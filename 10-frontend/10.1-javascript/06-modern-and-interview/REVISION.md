@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-JavaScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-7_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-6_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -17,18 +17,18 @@ Source: [Recent ECMAScript Features](10.1.6.01-es2024-features.md)
 **How It Works**
 
 1. **Q:** Where do `?.` and `??` draw their lines, and why does that split matter?
-   **A:** `?.` short-circuits the rest of the chain on the first `null`/`undefined`; `??` falls back only on those two values. A port of `0` or an empty-string name therefore survives `??` but is silently replaced by `||` — choosing between them means saying out loud whether `0`/`''`/`false` are real values to you.
+   **A:** Optional chaining short-circuits a continuous optional chain when its guarded base is nullish; add it at each link that may be absent. Nullish coalescing falls back only on null or undefined, so values such as zero, an empty string, and false survive it but not logical OR.
 
-2. **Q:** Why does the `withTimeout` example destructure all three of `promise`, `resolve`, and `reject`?
-   **A:** It has to both settle the wrapper (resolve on success, reject on timeout) and return it. A missing `resolve` is an undeclared identifier that TypeScript normally reports; unchecked JavaScript throws `ReferenceError: resolve is not defined` the instant the inner promise fulfills, which is exactly the boilerplate `withResolvers` was added to remove.
+2. **Q:** Why must a `Promise.withResolvers` owner retain the `promise` and both settlement functions?
+   **A:** The owner returns the promise to its caller and uses resolve or reject when the owned operation finishes. Dropping either settlement function makes one completion path impossible; the API does not start or cancel that operation.
 
 3. **Q:** What does `/^[\w--\d]+$/v` reject that the same pattern without `v` accepts, and what does that tell you about `v`?
-   **A:** With `v` the `--` is set subtraction, so the class means "word characters minus digits" and `'a1'` fails; in a non-Unicode legacy character class the repeated hyphens are accepted literally, `\d` still applies, and `'a1'` matches. The `v` (unicodeSets) flag is ES2024, and it changes what the same characters *mean*, not just which characters match.
+   **A:** With `v` the `--` is set subtraction, so the class means "word characters minus digits" and `'a1'` fails; in a non-Unicode legacy character class the repeated hyphens are accepted literally, `\d` still applies, and `'a1'` matches. The `v` (unicodeSets) flag is ES2024, and it changes what the same characters mean, not just which characters match.
 
 **Code Examples**
 
-4. **Q:** Why is `setItems(prev => prev.toSorted(cmp))` the shape you want in React, where does the old version go wrong?
-   **A:** `sort()` mutates the array in place, so React sees the same reference, may skip the re-render, and any shared reference sees reordered data underneath it. `toSorted` returns a fresh array, which is what both React's identity check and a reducer's purity expect.
+4. **Q:** Why choose `toSorted()` when a sorted view must not change the source array?
+   **A:** `sort()` mutates the source array, so every owner of that array sees the new order. `toSorted()` returns a new outer array while retaining the original row objects; it protects the source order, not nested object identity.
 
 **Real-World Use Cases**
 
@@ -37,13 +37,13 @@ Source: [Recent ECMAScript Features](10.1.6.01-es2024-features.md)
 
 **Common Mistakes**
 
-6. **Q:** Which contents does `JSON.parse(JSON.stringify(x))` destroy that `structuredClone(x)` keeps, and what does it do on cycles?
-   **A:** Dates become strings, Maps and Sets become empty objects, RegExps become `{}`, and anything non-JSON-valued is lost — while a circular structure makes `JSON.stringify` throw outright. `structuredClone` preserves Date/Map/Set/RegExp/typed arrays and follows cycles back to the same object.
+6. **Q:** What should decide between `structuredClone()` and a JSON round trip?
+   **A:** Their data contracts differ. `structuredClone()` supports cycles and a broader set of built-in values; JSON serialization only handles JSON data and throws on cycles. Choose the required representation first, then benchmark only if both preserve the needed meaning.
 
 **Best Practices**
 
-7. **Q:** The chapter recommends feature-detecting before adopting these APIs — what is the concrete support floor for the ES2024 trio called out here?
-   **A:** Check `Object.groupBy`, `Promise.withResolvers` and `ArrayBuffer.transfer` separately against the deployed browser and Node versions. Their support did not arrive together merely because they share a specification year. A method check such as `typeof Object.groupBy === "function"` can select a tested fallback. New syntax instead needs a compatible build or parser target.
+7. **Q:** Why does the edition year alone fail to establish that a new API is safe to deploy?
+   **A:** Browsers, server runtimes, parsers, and type declarations adopt features on different schedules. Check syntax support in the build and method support in every deployed runtime; a declaration does not install the implementation.
 
 **Performance Considerations**
 
@@ -94,18 +94,18 @@ Source: [Web Workers](10.1.6.02-web-workers.md)
 
 **Shared Worker**
 
-4. **Q:** How does the shared worker fan a message out to every connected tab?
-   **A:** Fan-out is an explicit application policy: retain eligible connected ports and post to each. The chapter's cache protocol replies on the requesting port instead. `port.start()` enables queued delivery when using `addEventListener`; assigning `onmessage` implicitly starts that port. Closing one tab's port does not close another's.
+4. **Q:** Why must a SharedWorker protocol choose between replying to the requesting tab and broadcasting to all tabs?
+   **A:** Each client connects through its own MessagePort. The worker must retain eligible ports and post to each for fan-out, or reply only through the requesting port; `BroadcastChannel` is a separate option when messages should be delivered to peers. With `addEventListener`, call `port.start()`; assigning `onmessage` starts delivery implicitly. Closing one tab's port does not close another's.
 
 **OffscreenCanvas**
 
-5. **Q:** Where does the rendering in the OffscreenCanvas example actually happen, and how does a frame reach the screen?
-   **A:** In the chapter's transferred-canvas path, the page calls `transferControlToOffscreen` and transfers that canvas to the worker, which draws into its own context. The browser presents it on the associated page canvas; no per-frame ImageBitmap reply is shown. Bitmap transfer is a separate presentation design.
+5. **Q:** What are the two OffscreenCanvas ownership paths, and who presents the result?
+   **A:** A page can transfer control of its visible canvas so the worker draws into the canvas the browser presents. Or the worker can draw to an independent OffscreenCanvas and send ImageBitmap frames back for the page to present. Bound frames in flight and close each bitmap after use.
 
 **When to Use Workers**
 
-6. **Q:** Why does `fetch` sit in the "No" column when it can easily take seconds?
-   **A:** It is network-bound, not CPU-bound — already asynchronous and off the UI path. A worker would add worker startup plus two message hops around work the event loop was going to await anyway.
+6. **Q:** Why does moving an asynchronous network wait to a worker rarely improve page responsiveness?
+   **A:** Waiting for `fetch()` does not occupy the page with a long synchronous calculation. A worker adds startup and message costs without moving the network wait off the UI path; use one when measured CPU work around the request blocks the page.
 
 **Common Mistakes**
 
@@ -141,8 +141,8 @@ Source: [DOM Events & Delegation](10.1.6.03-dom-events-delegation.md)
 
 **Real-World Use Cases**
 
-5. **Q:** Why does the chapter's analytics listener register with `{ capture: true }`?
-   **A:** An ancestor capture listener runs before descendant target/bubble listeners, so those later handlers cannot retroactively hide that click. An earlier capture listener can still stop propagation or immediate propagation; no location promises to observe every possible event.
+5. **Q:** What can an ancestor capture listener observe, and what can still prevent it from running?
+   **A:** It runs on the event path before target and bubbling listeners, so later handlers cannot retroactively hide the event. A capture listener earlier in the path can stop propagation; capture does not guarantee observation of every event.
 
 **Common Mistakes**
 
@@ -178,13 +178,13 @@ Source: [Cross-Tab Communication](10.1.6.04-cross-tab-communication.md)
 
 **Code Examples**
 
-4. **Q:** In `ThemeSync.set`, why call `this.apply(theme)` after already writing to storage and posting a message?
-   **A:** The writing tab receives no `storage` event of its own, so the local apply is what updates this tab; `localStorage.setItem` persists and notifies the others, and the BroadcastChannel provides another transient notification path. Neither channel guarantees a faster delivery, and duplicate application must be harmless.
+4. **Q:** In the theme-sync example, why does the writer apply the theme after saving and posting a message?
+   **A:** The writing tab receives no `storage` event of its own, so it applies the change locally. The other tabs may receive a storage event, a BroadcastChannel message, or both, so applying the same validated value must be harmless.
 
 **Real-World Use Cases**
 
-5. **Q:** Why does the sync-logout recipe do all three of broadcast, storage write, and server invalidation?
-   **A:** BroadcastChannel notifies eligible live tabs asynchronously, but delivery is not durable. An explicit startup read of the session-generation-aware marker helps later tabs catch up, and server-side invalidation revokes the session according to the server's credential-validation contract; a client message alone cannot revoke a copied credential.
+5. **Q:** What should an authentication-change message contain, and why must the server remain authoritative?
+   **A:** Send a public session-generation value and event ID, not a credential. Tabs can deduplicate the event and reject a marker from an older session; they must revalidate with the server because a browser message cannot revoke or prove the validity of a credential.
 
 **Common Mistakes**
 
@@ -215,8 +215,8 @@ Source: [DOM Events](10.1.6.03-dom-events-delegation.md)
 
 Source: [Modern Features](10.1.6.01-es2024-features.md)
 
-**Q:** Does a timeout around a promise stop the original operation, and do copied sorting methods duplicate nested items?
-**A:** No. Settlement and operation cancellation have separate ownership; use an abort contract if available. Copying array methods produce a new container while retaining nested identities.
+**Q:** A consumer needs only the first ten values from a sequence. How do `Iterator.concat()` and `Array.fromAsync()` differ?
+**A:** `Iterator.concat()` composes synchronous iterables lazily, so stopping after ten values leaves later values and sources unconsumed. `Array.fromAsync()` consumes its source and stores the complete result before the array is available.
 
 ## Summary
 

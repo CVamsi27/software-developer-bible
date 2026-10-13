@@ -40,7 +40,7 @@ Source: [Test Data Management & Anonymization](50.1.1.02-test-data-management-an
 
 **Q:** Why is replacing names with repeatable tokens usually pseudonymization?
 
-**A:** Stable tokens can preserve linkage, and a mapping/key may permit re-identification. Removing obvious identifiers does not prove the remaining data is anonymous.
+**A:** Stable tokens preserve linkage, and a mapping, key or available candidate inputs may permit re-identification. Under GDPR, assess whether identification is reasonably likely in the recipient's context; removing obvious identifiers alone does not establish anonymity.
 
 **Q:** Why can a seeded data factory still be nondeterministic?
 

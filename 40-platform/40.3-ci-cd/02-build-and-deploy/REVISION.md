@@ -46,6 +46,14 @@ Source: [Pipeline Supply-Chain Security & SLSA](40.3.2.04-pipeline-supply-chain-
 
 **A:** An attacker can sign their own artifact. Policy must bind the signature/provenance to the approved repository, workflow, builder, and digest.
 
+**Q:** Why must a SLSA claim name its track as well as its level?
+
+**A:** The Build and Source tracks describe different controls and have different levels. For example, Build L2 concerns authentic provenance from a hosted builder, while Source L2 concerns preserved change history and source provenance; one does not establish the other.
+
+**Q:** What can a consumer conclude from Build L1 provenance?
+
+**A:** The build generated and distributed provenance, but L1 does not require its authenticity or accuracy. Verify the builder and provenance against the applicable requirements before treating it as trusted evidence.
+
 Source: [Docker build and deploy](40.3.2.01-docker-build-deploy.md)
 
 **Q:** Why can a local image ID not substitute for a registry manifest digest?

@@ -1,6 +1,6 @@
 # Test Levels
 
-> **Study time:** ≈ 31 min of reading (4 files, ~8 min average).
+> **Study time:** ≈ 30 min of reading (4 files, ~8 min average).
 > **4 files.** Three test boundaries, three kinds of evidence: use unit, integration, and E2E tests where each can expose the failure that matters.
 
 [![Files](https://img.shields.io/badge/files-4-blue)](../INDEX.md)

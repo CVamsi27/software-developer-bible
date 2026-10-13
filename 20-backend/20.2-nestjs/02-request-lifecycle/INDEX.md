@@ -1,6 +1,6 @@
 # Request Lifecycle - NestJS
 
-> **Study time:** ≈ 48 min of reading (7 files, ~7 min average).
+> **Study time:** ≈ 49 min of reading (7 files, ~7 min average).
 > **7 files.** Follow an HTTP operation through middleware, guards, interceptor before-work, argument pipes, the handler and reverse result mapping; uncaught failures choose an applicable filter. AsyncLocalStorage associates context with the supported continuation, subject to identity and resource lifetime.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../INDEX.md)

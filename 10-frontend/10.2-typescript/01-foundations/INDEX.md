@@ -1,6 +1,6 @@
 # Foundations — TypeScript
 
-> **Study time:** ≈ 1 h 5 m of reading (5 files, ~13 min average).
+> **Study time:** ≈ 29 min of reading (5 files, ~6 min average).
 > **5 files.** Type aliases vs interfaces, `keyof`/`typeof`, control-flow-based narrowing, and the tsconfig compiler options that decide what actually gets checked.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#files)
@@ -13,10 +13,10 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | ------ | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ | ------------- | ------------------ | ----------: |
-| 01 | [Types vs Interfaces](10.2.1.01-types-vs-interfaces.md) | Type aliases, interfaces, declaration merging, when to use each, performance | Essential | Foundational | 7 min |
-| 02 | [keyof / typeof](10.2.1.02-keyof-typeof.md) | Index type queries, typeof operator, enum types, indexed access types | Essential | Foundational | 17 min |
-| 03 | [Type Narrowing](10.2.1.03-type-narrowing.md) | typeof guards, instanceof, discriminated unions, type predicates, control flow analysis | Essential | Foundational | 19 min |
-| 04 | [tsconfig & Compiler Options](10.2.1.04-tsconfig-compiler-options.md) | strict checks, bundler and compatible Node module modes, TypeScript 6/7 migration, build options and project references | Essential | Foundational | 17 min |
+| 01 | [Types vs Interfaces](10.2.1.01-types-vs-interfaces.md) | Type aliases, interfaces, declaration merging, when to use each, performance | Essential | Foundational | 6 min |
+| 02 | [keyof / typeof](10.2.1.02-keyof-typeof.md) | Key unions, value-derived types, indexed access, safe dynamic lookup, mapped-type filtering | Essential | Foundational | 6 min |
+| 03 | [Type Narrowing](10.2.1.03-type-narrowing.md) | typeof guards, instanceof, discriminated unions, type predicates, control flow analysis | Essential | Foundational | 6 min |
+| 04 | [tsconfig & Compiler Options](10.2.1.04-tsconfig-compiler-options.md) | strict checks, bundler and compatible Node module modes, TypeScript 6/7 migration, build options and project references | Essential | Foundational | 6 min |
 
 ---
 

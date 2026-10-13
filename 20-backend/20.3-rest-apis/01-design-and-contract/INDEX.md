@@ -15,7 +15,7 @@ Choose the interaction and client constraints first. Derive resource/HTTP semant
 ## Files
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------: |
+| -------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------- | ------------------ | ---------: |
 | 01 | [API Design Patterns](20.3.1.01-api-design-patterns.md) | REST vs GraphQL vs gRPC selection, resource naming, consistency, evolution | Essential | Foundational | 7 min |
 | 02 | [REST Principles](20.3.1.02-rest-principles.md) | Stateless, uniform interface, constraints | Essential | Foundational | 6 min |
 | 03 | [Versioning](20.3.1.03-versioning.md) | URL vs header vs query versioning, deprecation policy | Essential | Foundational | 6 min |

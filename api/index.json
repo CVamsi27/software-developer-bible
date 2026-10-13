@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "d667f852799803d9e890ed29c7084f3924e653a47567178ed929d4a036c76fcd",
+ "corpus_digest": "479dedfbb2acdeb005b05fb5bf3dbd942de548e8d1710e34bf0fc049eed6f823",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5997
+  "read_minutes": 5500
  },
  "chapters": [
   {
@@ -75,7 +75,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 5
   },
   {
    "p": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.02-scope.html",
@@ -85,7 +85,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 5
   },
   {
    "p": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.03-call-stack.html",
@@ -115,7 +115,7 @@
    "g": [
     "concept"
    ],
-   "m": 15
+   "m": 5
   },
   {
    "p": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.06-closures.html",
@@ -166,7 +166,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 5
   },
   {
    "p": "10-frontend/10.1-javascript/02-objects-prototypes-this/REVISION.html",
@@ -197,7 +197,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 8
   },
   {
    "p": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.03-async-await.html",
@@ -261,7 +261,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 5
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.html",
@@ -325,7 +325,7 @@
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.html",
-   "t": "Hash Tables & HashMaps — Internals, Collision Resolution & V8",
+   "t": "Hash Tables and Hash Maps",
    "s": "JavaScript",
    "c": "Core",
    "g": [
@@ -333,7 +333,7 @@
     "data-structures",
     "interview"
    ],
-   "m": 30
+   "m": 7
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.09-equality-and-coercion.html",
@@ -364,7 +364,7 @@
    "g": [
     "concept"
    ],
-   "m": 19
+   "m": 6
   },
   {
    "p": "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.02-memoization.html",
@@ -374,7 +374,7 @@
    "g": [
     "concept"
    ],
-   "m": 14
+   "m": 6
   },
   {
    "p": "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.03-generators.html",
@@ -384,27 +384,27 @@
    "g": [
     "concept"
    ],
-   "m": 17
+   "m": 6
   },
   {
    "p": "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.04-currying-composition.html",
-   "t": "Currying & Function Composition",
+   "t": "Currying and Function Composition",
    "s": "JavaScript",
    "c": "Core",
    "g": [
     "concept"
    ],
-   "m": 13
+   "m": 4
   },
   {
    "p": "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.05-recursion-tail-call.html",
-   "t": "Recursion & Tail Call Optimization",
+   "t": "Recursion and Tail Calls",
    "s": "JavaScript",
    "c": "Core",
    "g": [
     "concept"
    ],
-   "m": 15
+   "m": 5
   },
   {
    "p": "10-frontend/10.1-javascript/05-functional-patterns/REVISION.html",
@@ -415,7 +415,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 7
+   "m": 6
   },
   {
    "p": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.html",
@@ -426,7 +426,7 @@
     "concept",
     "reference"
    ],
-   "m": 18
+   "m": 7
   },
   {
    "p": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.02-web-workers.html",
@@ -436,7 +436,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 7
   },
   {
    "p": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.03-dom-events-delegation.html",
@@ -446,7 +446,7 @@
    "g": [
     "concept"
    ],
-   "m": 13
+   "m": 5
   },
   {
    "p": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.04-cross-tab-communication.html",
@@ -456,7 +456,7 @@
    "g": [
     "concept"
    ],
-   "m": 16
+   "m": 6
   },
   {
    "p": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.html",
@@ -478,7 +478,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 7
+   "m": 6
   },
   {
    "p": "10-frontend/10.2-typescript/01-foundations/10.2.1.01-types-vs-interfaces.html",
@@ -488,7 +488,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 6
   },
   {
    "p": "10-frontend/10.2-typescript/01-foundations/10.2.1.02-keyof-typeof.html",
@@ -498,7 +498,7 @@
    "g": [
     "concept"
    ],
-   "m": 17
+   "m": 6
   },
   {
    "p": "10-frontend/10.2-typescript/01-foundations/10.2.1.03-type-narrowing.html",
@@ -508,7 +508,7 @@
    "g": [
     "concept"
    ],
-   "m": 19
+   "m": 6
   },
   {
    "p": "10-frontend/10.2-typescript/01-foundations/10.2.1.04-tsconfig-compiler-options.html",
@@ -518,7 +518,7 @@
    "g": [
     "concept"
    ],
-   "m": 17
+   "m": 6
   },
   {
    "p": "10-frontend/10.2-typescript/01-foundations/REVISION.html",
@@ -559,7 +559,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 9
   },
   {
    "p": "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.04-type-variance.html",
@@ -580,7 +580,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 4
+   "m": 5
   },
   {
    "p": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.01-utility-types.html",
@@ -620,7 +620,7 @@
    "g": [
     "concept"
    ],
-   "m": 22
+   "m": 13
   },
   {
    "p": "10-frontend/10.2-typescript/03-type-transformations/REVISION.html",
@@ -641,7 +641,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 4
   },
   {
    "p": "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.02-branded-types.html",
@@ -651,7 +651,7 @@
    "g": [
     "concept"
    ],
-   "m": 26
+   "m": 6
   },
   {
    "p": "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.03-decorators.html",
@@ -661,7 +661,7 @@
    "g": [
     "concept"
    ],
-   "m": 19
+   "m": 7
   },
   {
    "p": "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.04-declaration-files.html",
@@ -671,17 +671,17 @@
    "g": [
     "concept"
    ],
-   "m": 25
+   "m": 6
   },
   {
    "p": "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.05-advanced-patterns.html",
-   "t": "TypeScript Advanced Patterns — Decorators, Middleware, Advanced Generics",
+   "t": "Composing Advanced TypeScript Patterns",
    "s": "TypeScript",
    "c": "Core",
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 5
   },
   {
    "p": "10-frontend/10.2-typescript/04-advanced-patterns/REVISION.html",
@@ -712,7 +712,7 @@
    "g": [
     "concept"
    ],
-   "m": 16
+   "m": 3
   },
   {
    "p": "10-frontend/10.3-react/01-react-internals/10.3.1.02-fiber.html",
@@ -722,7 +722,7 @@
    "g": [
     "concept"
    ],
-   "m": 23
+   "m": 3
   },
   {
    "p": "10-frontend/10.3-react/01-react-internals/10.3.1.03-reconciliation.html",
@@ -732,7 +732,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 3
   },
   {
    "p": "10-frontend/10.3-react/01-react-internals/10.3.1.04-rendering.html",
@@ -742,7 +742,7 @@
    "g": [
     "concept"
    ],
-   "m": 22
+   "m": 3
   },
   {
    "p": "10-frontend/10.3-react/01-react-internals/10.3.1.05-lifecycle.html",
@@ -752,7 +752,7 @@
    "g": [
     "concept"
    ],
-   "m": 27
+   "m": 3
   },
   {
    "p": "10-frontend/10.3-react/01-react-internals/REVISION.html",
@@ -773,7 +773,7 @@
    "g": [
     "concept"
    ],
-   "m": 15
+   "m": 5
   },
   {
    "p": "10-frontend/10.3-react/02-core-hooks/10.3.2.02-useeffect.html",
@@ -783,7 +783,7 @@
    "g": [
     "concept"
    ],
-   "m": 19
+   "m": 7
   },
   {
    "p": "10-frontend/10.3-react/02-core-hooks/10.3.2.03-usememo-usecallback.html",
@@ -803,7 +803,7 @@
    "g": [
     "concept"
    ],
-   "m": 27
+   "m": 6
   },
   {
    "p": "10-frontend/10.3-react/02-core-hooks/10.3.2.05-context-api.html",
@@ -813,7 +813,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "10-frontend/10.3-react/02-core-hooks/REVISION.html",
@@ -824,7 +824,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 4
+   "m": 5
   },
   {
    "p": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.01-suspense.html",
@@ -834,7 +834,7 @@
    "g": [
     "concept"
    ],
-   "m": 16
+   "m": 7
   },
   {
    "p": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.html",
@@ -864,7 +864,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 6
   },
   {
    "p": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.05-performance.html",
@@ -874,7 +874,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 5
   },
   {
    "p": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.06-state-management.html",
@@ -884,7 +884,7 @@
    "g": [
     "concept"
    ],
-   "m": 17
+   "m": 6
   },
   {
    "p": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/REVISION.html",
@@ -899,13 +899,13 @@
   },
   {
    "p": "10-frontend/10.3-react/04-modern-react/10.3.4.01-modern-hooks-react18-19.html",
-   "t": "Modern React Hooks: useTransition, useDeferredValue, use, useOptimistic, and React 19 APIs",
+   "t": "Modern React: Scheduling, Actions, and DOM APIs",
    "s": "React",
    "c": "Frontend",
    "g": [
     "concept"
    ],
-   "m": 20
+   "m": 13
   },
   {
    "p": "10-frontend/10.3-react/04-modern-react/10.3.4.02-web-components.html",
@@ -915,17 +915,17 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 7
   },
   {
    "p": "10-frontend/10.3-react/04-modern-react/10.3.4.03-react-router.html",
-   "t": "React Router v8 Data Mode",
+   "t": "React Router Data Mode",
    "s": "React",
    "c": "Frontend",
    "g": [
     "concept"
    ],
-   "m": 20
+   "m": 12
   },
   {
    "p": "10-frontend/10.3-react/04-modern-react/REVISION.html",
@@ -946,7 +946,7 @@
    "g": [
     "concept"
    ],
-   "m": 24
+   "m": 5
   },
   {
    "p": "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.02-compound-components.html",
@@ -956,7 +956,7 @@
    "g": [
     "concept"
    ],
-   "m": 30
+   "m": 9
   },
   {
    "p": "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.03-interview-questions.html",
@@ -1269,7 +1269,7 @@
     "interview-questions",
     "practice"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "10-frontend/10.5-form-handling/REVISION.html",
@@ -1583,7 +1583,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 6
   },
   {
    "p": "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.02-web-streams-and-test-runner.html",
@@ -1613,7 +1613,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 10
   },
   {
    "p": "20-backend/20.1-node.js/02-io-and-data/20.1.2.02-buffers.html",
@@ -1643,7 +1643,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 9
   },
   {
    "p": "20-backend/20.1-node.js/02-io-and-data/REVISION.html",
@@ -2017,7 +2017,7 @@
    "g": [
     "revision"
    ],
-   "m": 3
+   "m": 4
   },
   {
    "p": "20-backend/20.2-nestjs/03-patterns/20.2.3.01-cqrs.html",
@@ -2037,7 +2037,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "20-backend/20.2-nestjs/03-patterns/REVISION.html",
@@ -2097,7 +2097,7 @@
    "g": [
     "concept"
    ],
-   "m": 15
+   "m": 14
   },
   {
    "p": "20-backend/20.2-nestjs/04-quality-and-operations/REVISION.html",
@@ -2117,7 +2117,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 5
   },
   {
    "p": "20-backend/20.2-nestjs/05-advanced-and-interview/20.2.5.02-interview-questions.html",
@@ -2403,7 +2403,7 @@
    "g": [
     "interview-questions"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-postgresql.html",
@@ -2443,7 +2443,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 10
   },
   {
    "p": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.05-postgresql-performance.html",
@@ -2648,7 +2648,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "20-backend/20.4-database/05-operations-and-scaling/20.4.5.03-soft-delete-and-tombstones.html",
@@ -2722,7 +2722,7 @@
    "g": [
     "concept"
    ],
-   "m": 15
+   "m": 12
   },
   {
    "p": "20-backend/20.5-security/01-auth/20.5.1.03-api-keys.html",
@@ -2732,7 +2732,7 @@
    "g": [
     "concept"
    ],
-   "m": 16
+   "m": 13
   },
   {
    "p": "20-backend/20.5-security/01-auth/20.5.1.04-sessions-cookies.html",
@@ -2895,7 +2895,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 8
   },
   {
    "p": "20-backend/20.5-security/03-hardening-and-operations/20.5.3.03-threat-modeling-stride.html",
@@ -2925,7 +2925,7 @@
    "g": [
     "concept"
    ],
-   "m": 14
+   "m": 12
   },
   {
    "p": "20-backend/20.5-security/03-hardening-and-operations/REVISION.html",
@@ -5253,7 +5253,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 5
   },
   {
    "p": "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.html",
@@ -5267,7 +5267,7 @@
     "promotion",
     "registries"
    ],
-   "m": 11
+   "m": 8
   },
   {
    "p": "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.html",
@@ -5314,7 +5314,7 @@
     "dora",
     "metrics"
    ],
-   "m": 16
+   "m": 14
   },
   {
    "p": "40-platform/40.3-ci-cd/03-releases-and-metrics/REVISION.html",
@@ -6047,7 +6047,7 @@
     "concept",
     "overview"
    ],
-   "m": 11
+   "m": 9
   },
   {
    "p": "50-quality/50.1-testing/01-foundations/50.1.1.02-test-data-management-anonymization.html",
@@ -6081,7 +6081,7 @@
     "concept",
     "reference"
    ],
-   "m": 10
+   "m": 9
   },
   {
    "p": "50-quality/50.1-testing/02-frameworks/50.1.2.02-vitest.html",
@@ -6103,7 +6103,7 @@
     "concept",
     "reference"
    ],
-   "m": 11
+   "m": 10
   },
   {
    "p": "50-quality/50.1-testing/02-frameworks/50.1.2.04-testing-frameworks-comparison.html",
@@ -6113,7 +6113,7 @@
    "g": [
     "concept"
    ],
-   "m": 5
+   "m": 4
   },
   {
    "p": "50-quality/50.1-testing/02-frameworks/REVISION.html",
@@ -6154,7 +6154,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 10
   },
   {
    "p": "50-quality/50.1-testing/03-test-levels/REVISION.html",
@@ -6187,7 +6187,7 @@
     "concept",
     "reference"
    ],
-   "m": 11
+   "m": 10
   },
   {
    "p": "50-quality/50.1-testing/04-mocking-and-patterns/REVISION.html",
@@ -6222,7 +6222,7 @@
     "game-day",
     "resilience"
    ],
-   "m": 10
+   "m": 9
   },
   {
    "p": "50-quality/50.1-testing/05-advanced/REVISION.html",
@@ -6254,7 +6254,7 @@
     "concept",
     "reference"
    ],
-   "m": 5
+   "m": 4
   },
   {
    "p": "50-quality/50.2-accessibility/50.2.02-aria.html",
@@ -6276,7 +6276,7 @@
     "concept",
     "reference"
    ],
-   "m": 10
+   "m": 9
   },
   {
    "p": "50-quality/50.2-accessibility/50.2.04-color-and-contrast.html",
@@ -6300,7 +6300,7 @@
     "guide",
     "reference"
    ],
-   "m": 10
+   "m": 9
   },
   {
    "p": "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.html",
@@ -6312,7 +6312,7 @@
     "concept",
     "data-visualization"
    ],
-   "m": 9
+   "m": 8
   },
   {
    "p": "50-quality/50.2-accessibility/50.2.07-accessibility-design-systems.html",
@@ -6324,7 +6324,7 @@
     "design-systems",
     "governance"
    ],
-   "m": 8
+   "m": 6
   },
   {
    "p": "50-quality/50.2-accessibility/50.2.08-testing-a11y.html",
@@ -6336,7 +6336,7 @@
     "guide",
     "reference"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "50-quality/50.2-accessibility/50.2.09-interview-questions.html",
@@ -6347,7 +6347,7 @@
     "interview-questions",
     "practice"
    ],
-   "m": 8
+   "m": 5
   },
   {
    "p": "50-quality/50.2-accessibility/REVISION.html",
@@ -6403,7 +6403,7 @@
     "reference",
     "tool"
    ],
-   "m": 10
+   "m": 9
   },
   {
    "p": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.03-lighthouse-ci.html",
@@ -6440,7 +6440,7 @@
     "http3",
     "network"
    ],
-   "m": 9
+   "m": 8
   },
   {
    "p": "50-quality/50.3-performance-monitoring/02-measurement/REVISION.html",
@@ -6463,7 +6463,7 @@
     "guide",
     "tool"
    ],
-   "m": 9
+   "m": 8
   },
   {
    "p": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.02-performance-budgets.html",
@@ -6475,7 +6475,7 @@
     "guide",
     "reference"
    ],
-   "m": 9
+   "m": 8
   },
   {
    "p": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/REVISION.html",

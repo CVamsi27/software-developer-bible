@@ -1,6 +1,6 @@
 # PostgreSQL Foundations - Database
 
-> **Study time:** ≈ 1 h 13 m of reading (7 files, ~10 min average).
+> **Study time:** ≈ 1 h 12 m of reading (7 files, ~10 min average).
 > **7 files.** How PostgreSQL works under the hood: architecture and WAL, normalization, MVCC, SQL vs NoSQL trade-offs, performance tuning, and row-level security. This foundation supports the later querying, transaction and operations chapters.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../INDEX.md)
@@ -25,7 +25,7 @@
 | 01 | [PostgreSQL](20.4.1.01-postgresql.md) | Architecture, WAL, constraints, MVCC, vacuum, configuration | Essential | Foundational | 11 min |
 | 02 | [Normalization](20.4.1.02-normalization.md) | 1NF, 2NF, 3NF, BCNF, denormalization trade-offs | Important | Important | 10 min |
 | 03 | [MVCC](20.4.1.03-mvcc.md) | Statement and transaction snapshots, own writes, conflicts, cleanup | Important | Important | 13 min |
-| 04 | [SQL vs NoSQL](20.4.1.04-nosql-vs-sql.md) | Workload fit, consistency, query shape, product guarantees | Essential | Foundational | 11 min |
+| 04 | [SQL vs NoSQL](20.4.1.04-nosql-vs-sql.md) | Workload fit, consistency, query shape, product guarantees | Essential | Foundational | 10 min |
 | 05 | [PostgreSQL Performance](20.4.1.05-postgresql-performance.md) | Workload diagnosis, plans, memory, vacuum, partitioning | Essential | Foundational | 11 min |
 | 06 | [Row-Level Security](20.4.1.06-row-level-security.md) | Policy composition, tenant context, fail-open conditions, bypass roles, old/new row checks | Essential | Foundational | 12 min |
 

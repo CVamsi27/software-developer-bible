@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-TypeScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -99,21 +99,21 @@ Source: [Advanced Generics](10.2.2.03-advanced-generics.md)
 
 **Code Examples**
 
-4. **Q:** In add(1)(2)(3), why does the runtime stop after the third argument, and when is fn.length insufficient?
-   **A:** The chapter explicitly implements three unary stages matching its required tuple. A generic wrapper must use its real application contract; wrapper.length is not original arity, and defaults/rest make fn.length incomplete. The [canonical runtime curry](../../10.1-javascript/05-functional-patterns/10.1.5.04-currying-composition.md) supports explicit arity.
+4. **Q:** What does a fixed-tuple curry type guarantee, and why does it not settle runtime arity?
+   **A:** It describes nested unary call signatures for the tuple's required positions; it does not implement the calls. Runtime currying needs its own application contract because defaults and rest parameters make `function.length` incomplete. See the [canonical runtime curry](../../10.1-javascript/05-functional-patterns/10.1.5.04-currying-composition.md).
 
 5. **Q:** What goes wrong if a pipeline lacks a terminal case or checks every later input against its first output?
    **A:** A recursive calculation needs a defined final result. Compatibility also concerns adjacent stages: number→string→number is valid even though the last stage cannot accept the first output. Compatible walks each pair and LastResult captures the final return type.
 
 **Common Mistakes**
 
-6. **Q:** Your constraint reads `T extends object & { id: string } & { name: string } & { email: string }`. What's the better form, and why?
-   **A:** Extract it to a named `interface User` and write `T extends User` — identical checking, but readable error messages, a single edit point, and something callers can `implements`.
+6. **Q:** Why does `DeepReadonly<Date>` still allow `setTime`, while a `ReadonlyMap` view has no `set` method?
+   **A:** The example treats `Date` as a leaf to preserve its method surface, but those methods can mutate the date. It converts maps to a `ReadonlyMap` interface, which removes writes through that view; another mutable alias can still change the same map.
 
 **Best Practices**
 
-7. **Q:** When does `T extends HasId` genuinely beat `T extends { id: string }`?
-   **A:** When the constraint is a reusable contract: a named interface can be implemented, extended, and documented once, and errors print `HasId` instead of expanding the full inline shape every time.
+7. **Q:** What should you do when a recursive generic or a large union slows type checking?
+   **A:** Measure the consuming project with `tsc --extendedDiagnostics`, then bound recursion or remove branches the data model does not need. Keep a complicated helper only when its safety benefit justifies the checker and editor cost.
 
 ## Type Variance
 

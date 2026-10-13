@@ -1,6 +1,6 @@
 # Hardening & Operations - Security
 
-> **Study time:** ≈ 50 min of reading (6 files, ~8 min average).
+> **Study time:** ≈ 46 min of reading (6 files, ~8 min average).
 > **6 files.** Production hygiene: the encryption/hashing/TLS primer (prerequisite for the auth track), security headers and CSP, STRIDE threat modeling, secrets management, and vulnerability management & patch governance.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](../INDEX.md)
@@ -17,10 +17,10 @@ Start with confidentiality, integrity and key roles. Then trace one browser resp
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
 | 01 | [Encryption, Hashing & TLS](20.5.3.01-encryption.md) | Symmetric/asymmetric, salting, AES/RSA, TLS handshake *(prerequisite for the auth track)* | Essential | Foundational | 7 min |
-| 02 | [Web Security](20.5.3.02-web-security.md) | HTTPS/HSTS, CSP nonce policy, CORS, framing, redirects, SSRF and XXE boundaries | Essential | Foundational | 10 min |
+| 02 | [Web Security](20.5.3.02-web-security.md) | HTTPS/HSTS, CSP nonce policy, CORS, framing, redirects, SSRF and XXE boundaries | Essential | Foundational | 8 min |
 | 03 | [Threat Modeling — STRIDE](20.5.3.03-threat-modeling-stride.md) | STRIDE, data-flow diagrams, trust boundaries, attack trees | Important | Specialized | 7 min |
 | 04 | [Secrets Management](20.5.3.04-secrets-management.md) | Vault, AWS/GCP secret managers, rotation, KMS, dynamic credentials | Essential | Foundational | 8 min |
-| 05 | [Vulnerability Management & Patch Governance](20.5.3.05-vulnerability-management-patch-governance.md) | CVE/CVSS triage + EPSS/KEV, SBOM (CycloneDX/SPDX), npm audit/pip-audit/Snyk/Trivy roles, patch SLAs by severity, emergency patch process, base-image refresh, risk acceptance register, MTTR metrics | Important | Specialized | 14 min |
+| 05 | [Vulnerability Management & Patch Governance](20.5.3.05-vulnerability-management-patch-governance.md) | CVE/CVSS triage + EPSS/KEV, SBOM (CycloneDX/SPDX), npm audit/pip-audit/Snyk/Trivy roles, patch SLAs by severity, emergency patch process, base-image refresh, risk acceptance register, MTTR metrics | Important | Specialized | 12 min |
 
 ---
 

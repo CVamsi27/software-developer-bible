@@ -70,9 +70,9 @@ Source: [Lifecycle Hooks & Graceful Shutdown](20.2.4.03-lifecycle-hooks-graceful
 
 **A:** `onModuleInit` supports initialization after module dependencies are available. `onModuleDestroy` and `beforeApplicationShutdown` provide shutdown phases. `enableShutdownHooks` connects them to process signals; define resource ownership and order deliberately.
 
-**Q:** Does the order of modules in `imports` serialize every provider's startup hook?
+**Q:** What changed about lifecycle-hook ordering in Nest 12, and how should initialization dependencies be modeled?
 
-**A:** No. Nest awaits module lifecycle work in module-graph order, but provider hooks within a module are not a readiness dependency. Model the dependency explicitly and await it before accepting traffic.
+**A:** Nest 12 changed hook ordering to component hierarchy levels, so relative order can change from Nest 11. Do not rely on incidental module or provider order; inject the dependency and await an explicit readiness operation before accepting traffic.
 
 **Q:** Why must the application remain correct if graceful shutdown cannot run?
 

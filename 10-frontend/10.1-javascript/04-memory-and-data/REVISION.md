@@ -282,9 +282,9 @@ Source: [Garbage Collection](10.1.4.07-garbage-collection.md)
 8. **Q:** What does allocation rate actually control?
    **A:** Allocation contributes to heap pressure and collection work, alongside live size, object kinds and engine policy. Hot-loop allocation can cause pauses, but measured traces must establish whether it causes the observed frame drops.
 
-## Hash Tables & HashMaps — Internals, Collision Resolution & V8
+## Hash Tables and Hash Maps
 
-Source: [Hash Tables & HashMaps — Internals, Collision Resolution & V8](10.1.4.08-hash-tables-internals.md)
+Source: [Hash Tables and Hash Maps](10.1.4.08-hash-tables-internals.md)
 
 **First Principles**
 
@@ -311,11 +311,11 @@ Source: [Hash Tables & HashMaps — Internals, Collision Resolution & V8](10.1.4
 
 **Separate JavaScript key rules from V8's implementation choices**
 
-6. **Q:** How does V8's `Map`/`Set` actually resolve collisions, and how full does it let the table get?
-   **A:** Current V8 source links bucket entries to ordered data entries and tracks deleted entries. Its table representation provides two data-entry slots per bucket; that is not a `Map` API load threshold, and growth/compaction remain version-specific.
+6. **Q:** What can the JavaScript contract tell you about V8's `Map`/`Set` collision strategy and load threshold?
+   **A:** Nothing about their physical strategy or threshold. ECMAScript specifies observable key behavior and average sublinear access; inspect the source for the exact V8 version when investigating a measured performance issue.
 
-7. **Q:** What hash does V8 use for a key, and why does that choice matter?
-   **A:** ECMAScript specifies `Map` key equality with SameValueZero, not a hash algorithm. V8 uses internal hashes for ordered tables, but their algorithms and storage can change; do not rely on an assumed randomization scheme as a defense against hostile keys.
+7. **Q:** Does ECMAScript specify the hash algorithm used by `Map`, and why does that matter?
+   **A:** No. It specifies SameValueZero key equality and average sublinear access, not a hash algorithm. Runtime choices can change, so application code must not depend on an assumed algorithm or use it as a security boundary.
 
 **Common Mistakes**
 

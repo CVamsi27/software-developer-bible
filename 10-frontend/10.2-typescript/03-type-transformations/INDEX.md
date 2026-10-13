@@ -1,6 +1,6 @@
 # Type Transformations — TypeScript
 
-> **Study time:** ≈ 50 min of reading (5 files, ~10 min average).
+> **Study time:** ≈ 41 min of reading (5 files, ~8 min average).
 > **5 files.** The composable operations that make TS powerful: built-in utility types, conditional types, mapped types, and template literal types.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#files)
@@ -16,7 +16,7 @@
 | 01 | [Utility Types](10.2.3.01-utility-types.md) | `Partial`, `Required`, `Pick`, `Omit`, `Record`, `Exclude`, `Extract`, `NonNullable` | Essential | Foundational | 8 min |
 | 02 | [Conditional Types](10.2.3.02-conditional-types.md) | Ternary types, distributive conditional types, `infer` keyword, `never` | Important | Specialized | 8 min |
 | 03 | [Mapped Types](10.2.3.03-mapped-types.md) | Index signatures, mapping modifiers, `as` clause, key remapping | Essential | Foundational | 8 min |
-| 04 | [Template Literal Types](10.2.3.04-template-literal-types.md) | String manipulation, infer patterns, CSS types, route builders, recursive string types | Important | Specialized | 22 min |
+| 04 | [Template Literal Types](10.2.3.04-template-literal-types.md) | String manipulation, infer patterns, CSS types, route builders, recursive string types | Important | Specialized | 13 min |
 
 ---
 

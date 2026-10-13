@@ -124,11 +124,11 @@ Source: [Template Literal Types](10.2.3.04-template-literal-types.md)
 
 **How It Works**
 
-1. **Q:** How many combinations arise from three vertical and three horizontal positions?
-   **A:** Each vertical member combines with every horizontal member, yielding nine strings. Adding another interpolated union multiplies the count again.
+1. **Q:** How many strings can two color values combine with two size values to produce?
+   **A:** Four: each color combines once with each size, so the total is 2 × 2.
 
-2. **Q:** Does `on${Capitalize<string>}` restrict names to known DOM events?
-   **A:** It accepts a broad capitalization pattern. A finite source union is needed to whitelist particular event names.
+2. **Q:** Why does `on${Capitalize<string>}` still fail to whitelist known events?
+   **A:** `Capitalize<string>` widens to `string`, so this pattern accepts any string with the `on` prefix. A finite event-name union enumerates supported names and rejects other keys.
 
 **Code Examples**
 
@@ -138,8 +138,8 @@ Source: [Template Literal Types](10.2.3.04-template-literal-types.md)
 4. **Q:** Why does a key-remapping type apply `SnakeToCamel<K>` directly?
    **A:** A generic type alias cannot be passed as a first-class type function and invoked through another type parameter. The mapped type must apply a known alias or another explicitly modeled transformation.
 
-5. **Q:** What prefix must be removed to undo `PrefixedKeys<User, 'user'>`?
-   **A:** The exact lowercase prefix `user`. Template matching is case sensitive, so `User` leaves those generated keys unchanged.
+5. **Q:** Why does `CamelKeys<T>` preserve a key when it is not a string?
+   **A:** Its `as` branch maps non-string keys back to themselves. Mapping them to `never` would silently drop numeric and symbol properties from the derived type.
 
 6. **Q:** Why does `ReplaceAll` stop immediately for an empty search string?
    **A:** An empty pattern can keep matching without consuming input. The guard gives that case a defined result instead of relying on recursive progress.
@@ -176,8 +176,8 @@ Source: [Template Literal Types](10.2.3.04-template-literal-types.md)
 **Q:** Build /users/:userId/posts/:postId with userId=a/b, then omit postId at runtime. What happens?
 **A:** The builder substitutes whole segments and encodes a/b as a%2Fb. Missing or nonstring postId throws even if an unchecked caller bypassed the static contract; it cannot leave a trusted unresolved placeholder.
 
-**Q:** A translated name contains $&, or the same placeholder appears twice. Why use a replacement callback?
-**A:** The callback inserts the supplied value literally for every matched token, so replacement-string metacharacters do not change its meaning. Missing dictionary entries/parameters throw under this small plain-text grammar.
+**Q:** What does `Split<'a,', ','>` produce, and what does the helper return for an empty delimiter?
+**A:** It produces `['a']` under the stated trailing-delimiter policy. An empty delimiter returns `never`, so the helper rejects a case that cannot make recursive progress.
 
 **Q:** What does `Join` return for a readonly tuple versus an open-ended `string[]`?
 **A:** A finite readonly tuple preserves its exact joined literal, such as `"users/42"`; an open-ended array widens to `string` because its length and elements are unknown.

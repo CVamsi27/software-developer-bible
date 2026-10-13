@@ -46,6 +46,10 @@ Source: [Vitest](50.1.2.02-vitest.md)
 
 **A:** No. DOM emulators implement a subset of browser behavior. Vitest Browser Mode is a separate real-browser environment, stable since v4 and configured with a provider package; async Server Component routing/rendering needs the framework runtime, for which Next.js recommends E2E.
 
+**Q:** What does Vitest 5's default `clearMocks` do, and why can concurrent tests make it unsafe to share one mock?
+
+**A:** It clears recorded call history while preserving the mock implementation. If concurrent tests share that mock, automatic clearing can erase calls another test is still asserting; give each test its own mock or avoid that shared concurrent setup.
+
 
 ## React Testing Library
 

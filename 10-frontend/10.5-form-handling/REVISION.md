@@ -50,6 +50,10 @@ Source: [Server Actions & Modern Form Patterns](10.5.05-server-actions-and-form-
 
 **A:** The framework can preserve the server-function form path and return state before hydration. A client-only wrapper requires JavaScript and does not inherit that contract.
 
+**Q:** Why is an uploaded file's name or MIME type not enough to accept it?
+
+**A:** The browser submits both as untrusted metadata. Enforce size and format policy on the server, inspect and decode content as needed, generate a storage key, and authorize access. For larger files, use a scoped direct-upload path and validate it again before finalizing.
+
 ## Autosave & Draft Recovery
 
 Source: [Autosave & Draft Recovery](10.5.06-autosave-draft-recovery.md)

@@ -10,9 +10,9 @@
 
 Complete the learning chapters first, then answer these questions without reopening them. Use each source link to check an uncertain answer.
 
-## Modern React Hooks: useTransition, useDeferredValue, use, useOptimistic, and React 19 APIs
+## Modern React: Scheduling, Actions, and DOM APIs
 
-Source: [Modern React Hooks: useTransition, useDeferredValue, use, useOptimistic, and React 19 APIs](10.3.4.01-modern-hooks-react18-19.md)
+Source: [Modern React: Scheduling, Actions, and DOM APIs](10.3.4.01-modern-hooks-react18-19.md)
 
 **First Principles**
 
@@ -27,13 +27,13 @@ Source: [Modern React Hooks: useTransition, useDeferredValue, use, useOptimistic
 3. **Q:** What does `startTransition` actually mark as non-urgent, and what is the async caveat?
    **A:** Only updates scheduled *synchronously* inside the callback are marked as Transitions; work awaited inside is included, but a `set()` called after an `await` currently is not — React documents wrapping that call in a second `startTransition` as a known limitation. Interrupting typing restarts the transition rather than blocking input.
 
-4. **Q:** How does `useOptimistic` decide what is displayed once the action ends?
-   **A:** The `value` you pass in is post-action truth: on successful persistence the owner updates the base; on failure that base can remain unchanged, so React displays it again. Completion discards the temporary overlay in either case. The optional reducer recomputes the optimistic view against whatever the base is *now*, which keeps relative updates correct when the base changed mid-flight.
+4. **Q:** How does `useOptimistic` decide what is displayed once the Action ends?
+   **A:** The value passed as its base remains the confirmed state. When the Action ends, React drops the temporary overlay; the owner should update the base after a successful write, while a failure leaves the previous base visible. The optional reducer recomputes the optimistic view against the latest base when that value changes during the Action.
 
 **Code Examples**
 
-5. **Q:** Why must the optimistic setter run inside `startTransition`?
-   **A:** Without an enclosing Action there is nothing to hold the optimistic state while the request runs — React warns (*"An optimistic state update occurred outside a Transition or Action"*) and the value renders briefly before snapping straight back.
+5. **Q:** What keeps an optimistic value visible for the lifetime of an asynchronous write?
+   **A:** The optimistic setter must run inside an Action, such as a form Action or Transition. Outside an Action, the temporary value has no pending lifetime and React warns before reverting it.
 
 6. **Q:** What makes a promise safe to hand to `use(promise)`?
    **A:** Stability across renders — a cached or deduped promise (React Query, SWR, a framework loader). A promise created fresh during render is uncached: React can warn and discard or retry render work, with repeated requests or unstable loading behavior.
@@ -50,6 +50,15 @@ Source: [Modern React Hooks: useTransition, useDeferredValue, use, useOptimistic
 
 9. **Q:** Which `use` reads are supported in a Server Component, and what does that mean for a promise passed to a Client Component?
    **A:** `use(promise)` is supported in a Server Component, but `use(context)` is not. A Server Component can pass a promise to a Client Component for `use` to read; its resolved value must be serializable.
+
+10. **Q:** What is the React 19.3 purpose of a Fragment ref?
+   **A:** It exposes a limited FragmentInstance over a group of DOM children, allowing focus, observation or scrolling without inserting a wrapper that could alter layout or semantics.
+
+11. **Q:** When should a component call use(browser())?
+   **A:** Only when it cannot produce meaningful server output. It suspends that component during server rendering and continues in the browser; ordinary renderable data should still be loaded by the framework or server path.
+
+12. **Q:** What does Activity mode="hidden" preserve, and what happens to Effects?
+   **A:** It preserves the subtree’s component state while hiding it, disconnecting its Effects and deferring updates until it becomes visible again. Use it when that retention behavior is useful, not as a generic loading state.
 
 ## Web Components
 
@@ -80,10 +89,8 @@ Source: [Web Components](10.3.4.02-web-components.md)
 5. **Q:** What decides whether React 19 assigns `config` as an element property?
    **A:** The property must already exist on the custom-element instance when React initializes it. Otherwise React generally uses an attribute, losing the object's structure through serialization.
 
-6. **Q:** How do you listen to a custom `booked` event in React 19 JSX?
-   **A:** Pass an `onbooked` handler. The characters after `on` must match the dispatched event name, including its casing and dashes.
-
-**Common Mistakes**
+6. **Q:** How do you listen for the booking-confirmed custom event in React 19 JSX?
+   **A:** Use the on-prefixed prop with the event name’s exact case and dashes: onbooking-confirmed. Type the custom element’s intrinsic JSX props separately.
 
 7. **Q:** Why does interpolating user text into shadow-root `innerHTML` remain unsafe?
    **A:** A shadow tree does not sanitize markup or isolate script privileges. Insert untrusted text with `textContent`, and treat intentional HTML insertion as a separate sanitization problem.
@@ -104,14 +111,14 @@ Source: [React Router](10.3.4.03-react-router.md)
 
 **How It Works**
 
-2. **Q:** Can a parent layout loader prevent a child loader from starting its request?
-   **A:** No; matched loaders normally execute concurrently. Each protected data operation must check access itself, and the server API must authorize every request.
+2. **Q:** Can a parent loader prevent a child loader from starting, and what does Data Mode middleware change?
+   **A:** Matched loaders run concurrently, so a parent loader cannot gate a child loader. Data Mode middleware runs sequentially before route handlers and can coordinate a client redirect, but every protected API operation still authorizes on the server.
 
 3. **Q:** What changed about deferred loader data between v6 and v7/v8?
    **A:** V6 used `defer`; v7 and v8 return an object containing an unresolved promise. Await critical data explicitly, then render the slower value with `<Await>` beneath Suspense.
 
-4. **Q:** Why must a lazy Data Mode module export `Component` and `loader`?
-   **A:** `route.lazy` supplies route-object fields from named exports. A default component with `clientLoader` belongs to different Framework Mode conventions and will not populate those fields here.
+4. **Q:** What can route.lazy supply, and which route fields must be known before matching?
+   **A:** A lazy module can supply implementation fields such as Component, loader, action or ErrorBoundary. The router needs matching fields such as path and index before navigation; a route without a loader does not need to export one.
 
 5. **Q:** What does `useFetcher` add when submitting an inline rename?
    **A:** It runs a route action and exposes its pending/data state while keeping the current location. A navigation form instead participates in a route navigation.
@@ -131,6 +138,12 @@ Source: [React Router](10.3.4.03-react-router.md)
 
 9. **Q:** What should a v7 application check before moving to v8?
    **A:** Meet the Node 22.22+ and React/React DOM 19.2.7+ minimums; Framework Mode also requires Vite 7+. Replace `react-router-dom` imports: DOM provider APIs come from `react-router/dom` and other APIs from `react-router`. Review the official migration guide for flags and adapter-specific changes.
+
+10. **Q:** Is a v8 Data Mode middleware session check a security boundary?
+   **A:** No. It runs in the browser and can coordinate navigation and avoid unnecessary client loaders, but users can call an API directly. The API must authenticate and authorize each read and write.
+
+11. **Q:** When should an inline rename use a fetcher instead of a navigation Form?
+   **A:** Use a fetcher when the action should expose pending/result state without changing the current location. Use a navigation Form when the submission represents a route transition or should update browser history.
 
 ## API and lifetime boundaries
 

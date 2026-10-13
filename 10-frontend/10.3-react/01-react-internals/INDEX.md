@@ -1,7 +1,7 @@
 # React Internals — React
 
-> **Study time:** ≈ 1 h 39 m of reading (6 files, ~16 min average).
-> **6 files.** How React actually works under the hood: Virtual DOM diffing, the Fiber data structure, reconciliation heuristics, render/commit phases, and lifecycle.
+> **Study time:** ≈ 19 min of reading (6 files, ~3 min average).
+> Follow one accepted UI update from its element description, through retained identity and commit, to the external resources that must stay synchronized.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](#files)
 [![Category](https://img.shields.io/badge/category-React_Internals-orange)](../INDEX.md)
@@ -13,19 +13,19 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Virtual DOM](10.3.1.01-virtual-dom.md) | VDOM concept, diffing, batching, React elements vs components | Essential | Foundational | 16 min |
-| 02 | [Fiber](10.3.1.02-fiber.md) | Fiber architecture, work loop, priority lanes, time slicing | Important | Important | 23 min |
-| 03 | [Reconciliation](10.3.1.03-reconciliation.md) | Diffing algorithm, keys, component types, bailout | Essential | Foundational | 7 min |
-| 04 | [Rendering](10.3.1.04-rendering.md) | Render phases, commit phase, batching in React 18, automatic batching | Essential | Foundational | 22 min |
-| 05 | [Lifecycle](10.3.1.05-lifecycle.md) | Class lifecycle, hooks lifecycle, useEffect cleanup, strict mode double-invoke | Essential | Foundational | 27 min |
+| 01 | [Virtual DOM](10.3.1.01-virtual-dom.md) | Element descriptions versus committed host nodes | Essential | Foundational | 3 min |
+| 02 | [Fiber](10.3.1.02-fiber.md) | Retained work, cooperative scheduling and its limits | Important | Important | 3 min |
+| 03 | [Reconciliation](10.3.1.03-reconciliation.md) | Type, position and keys determine state identity | Essential | Foundational | 3 min |
+| 04 | [Rendering](10.3.1.04-rendering.md) | Render, commit and browser work are separate costs | Essential | Foundational | 3 min |
+| 05 | [Lifecycle](10.3.1.05-lifecycle.md) | Component lifetime versus Effect setup and cleanup | Essential | Foundational | 3 min |
 
 ---
 
 ## Read order
 
-1. **Separate descriptions from retained state.** Read Virtual DOM, then Fiber. Explain what an element describes and what a work record retains.
-2. **Follow a single accepted update.** Read Reconciliation, Rendering and Lifecycle. Track row identity, the render/commit boundary and the resource a cleanup releases.
-3. **Change one condition.** Complete the [revision](REVISION.md): reorder a keyed row, abandon a render or change an effect dependency. Then use the React interview bank for timed answers.
+1. **Separate the description from the retained work.** Read Virtual DOM, then Fiber. Explain why a new element object does not require a new DOM node, and where React can yield.
+2. **Follow identity through an update.** Read Reconciliation, then Rendering. Track a keyed row through a reorder and separate component execution from DOM commit and browser paint.
+3. **Follow the resource.** Read Lifecycle and trace a room change from old cleanup to new setup. Then use the [revision](REVISION.md) before timed interview practice.
 
 ---
 

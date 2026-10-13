@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-12",
- "url_count": 2572,
+ "generated": "2026-10-13",
+ "url_count": 2515,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md",
@@ -49,9 +49,6 @@
    "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.04-authentication.md",
    "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.md"
   ],
-  "https://abseil.io/about/design/swisstables": [
-   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md"
-  ],
   "https://addyosmani.com/blog/writing-modular-javascript/": [
    "30-architecture/30.1-design-patterns/03-structural/30.1.3.05-module-pattern.md"
   ],
@@ -91,6 +88,9 @@
   "https://api-security.owasp.org/editions/2023/en/0xaa-unsafe-consumption-of-apis/": [
    "20-backend/20.5-security/02-attacks-and-defense/20.5.2.04-api-security-best-practices.md",
    "20-backend/20.5-security/02-attacks-and-defense/REVISION.md"
+  ],
+  "https://api.reactrouter.com/v8/types/react-router.MiddlewareFunction.html": [
+   "10-frontend/10.3-react/04-modern-react/10.3.4.03-react-router.md"
   ],
   "https://argo-cd.readthedocs.io/": [
    "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.04-argocd.md",
@@ -153,8 +153,7 @@
    "20-backend/20.5-security/01-auth/20.5.1.05-jwt.md"
   ],
   "https://auth0.com/docs/secure/tokens/refresh-tokens/refresh-token-rotation": [
-   "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md",
-   "20-backend/20.5-security/01-auth/INDEX.md"
+   "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md"
   ],
   "https://auth0.com/intro-to-iam/saml-vs-openid-connect-oidc": [
    "20-backend/20.5-security/01-auth/20.5.1.07-sso-saml-federation.md"
@@ -210,17 +209,8 @@
   "https://basarat.gitbook.io/typescript/": [
    "10-frontend/10.2-typescript/05-interview-prep/10.2.5.01-interview-questions.md"
   ],
-  "https://basarat.gitbook.io/typescript/main-1/nominaltyping": [
-   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.02-branded-types.md"
-  ],
-  "https://basarat.gitbook.io/typescript/type-system/index-signatures": [
-   "10-frontend/10.2-typescript/01-foundations/10.2.1.02-keyof-typeof.md"
-  ],
   "https://bazel.build/": [
    "40-platform/40.8-monorepo/40.8.04-monorepo-tools.md"
-  ],
-  "https://blog.bitsrc.io/binary-data-in-node-js-you-need-to-know-ce04df27e190": [
-   "20-backend/20.1-node.js/02-io-and-data/20.1.2.02-buffers.md"
   ],
   "https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html": [
    "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md"
@@ -231,12 +221,6 @@
   ],
   "https://blog.hl7.org/topic/version-2": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.10-hospital-management.md"
-  ],
-  "https://blog.isquaredsoftware.com/2020/05/blogged-answers-a-mostly-complete-guide-to-react-rendering-behavior/": [
-   "10-frontend/10.3-react/01-react-internals/10.3.1.04-rendering.md"
-  ],
-  "https://blog.logrocket.com/commonjs-vs-es-modules-node-js/": [
-   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.01-modules.md"
   ],
   "https://blog.logrocket.com/fast-javascript-bundling-with-esbuild/": [
    "40-platform/40.5-build-tools/02-compilers/40.5.2.02-esbuild-swc.md"
@@ -343,12 +327,10 @@
    "20-backend/20.5-security/01-auth/20.5.1.02-http-basic-digest-auth.md",
    "20-backend/20.5-security/01-auth/20.5.1.03-api-keys.md",
    "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md",
-   "20-backend/20.5-security/01-auth/INDEX.md",
    "20-backend/20.5-security/01-auth/REVISION.md"
   ],
   "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html": [
    "20-backend/20.5-security/01-auth/20.5.1.09-rbac-abac.md",
-   "20-backend/20.5-security/01-auth/INDEX.md",
    "20-backend/20.5-security/01-auth/REVISION.md"
   ],
   "https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Patterns_Cheat_Sheet.html": [
@@ -376,6 +358,7 @@
    "20-backend/20.5-security/02-attacks-and-defense/20.5.2.01-xss.md"
   ],
   "https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html": [
+   "10-frontend/10.5-form-handling/10.5.05-server-actions-and-form-patterns.md",
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.04-file-upload-apis.md"
   ],
   "https://cheatsheetseries.owasp.org/cheatsheets/GraphQL_Cheat_Sheet.html": [
@@ -419,8 +402,7 @@
   ],
   "https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html": [
    "20-backend/20.5-security/01-auth/20.5.1.04-sessions-cookies.md",
-   "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md",
-   "20-backend/20.5-security/01-auth/INDEX.md"
+   "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md"
   ],
   "https://cheatsheetseries.owasp.org/cheatsheets/Threat_Modeling_Cheat_Sheet.html": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.03-threat-modeling-stride.md",
@@ -565,9 +547,6 @@
   "https://csrc.nist.gov/projects/cryptographic-standards-and-guidelines": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.01-encryption.md"
   ],
-  "https://csrc.nist.gov/projects/role-based-access-control": [
-   "20-backend/20.5-security/01-auth/INDEX.md"
-  ],
   "https://csrc.nist.gov/publications/detail/sp/800-162/final": [
    "20-backend/20.5-security/01-auth/20.5.1.10-abac-access-control.md",
    "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md",
@@ -655,8 +634,7 @@
   "https://datatracker.ietf.org/doc/html/rfc6749": [
    "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.04-authentication.md",
    "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.md",
-   "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md",
-   "20-backend/20.5-security/01-auth/INDEX.md"
+   "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md"
   ],
   "https://datatracker.ietf.org/doc/html/rfc7240": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.03-long-running-api-operations.md"
@@ -667,8 +645,7 @@
   "https://datatracker.ietf.org/doc/html/rfc7519": [
    "10-frontend/10.4-next.js/04-production/10.4.4.01-authentication.md",
    "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.04-authentication.md",
-   "20-backend/20.5-security/01-auth/20.5.1.05-jwt.md",
-   "20-backend/20.5-security/01-auth/INDEX.md"
+   "20-backend/20.5-security/01-auth/20.5.1.05-jwt.md"
   ],
   "https://datatracker.ietf.org/doc/html/rfc7578": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.04-file-upload-apis.md"
@@ -716,7 +693,6 @@
    "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.04-authentication.md",
    "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.md",
    "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md",
-   "20-backend/20.5-security/01-auth/INDEX.md",
    "20-backend/20.5-security/01-auth/REVISION.md"
   ],
   "https://debezium.io/documentation/reference/stable/connectors/postgresql.html": [
@@ -771,17 +747,8 @@
   "https://developer.apple.com/ios/universal-links/": [
    "10-frontend/10.8-mobile/10.8.02-deep-linking-universal-links.md"
   ],
-  "https://developer.chrome.com/blog/lighthouse-10-0/": [
-   "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.03-lighthouse-ci.md"
-  ],
   "https://developer.chrome.com/blog/removing-push": [
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.md"
-  ],
-  "https://developer.chrome.com/blog/scrolling-intervention": [
-   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.03-dom-events-delegation.md"
-  ],
-  "https://developer.chrome.com/blog/scrolling-intervention-2/": [
-   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.03-dom-events-delegation.md"
   ],
   "https://developer.chrome.com/docs/capabilities/web-apis/webtransport": [
    "60-realtime/60.1-websockets/01-transports/60.1.1.04-webtransport.md"
@@ -882,9 +849,6 @@
   "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout": [
    "10-frontend/10.7-html-css/10.7.09-interview-questions.md"
   ],
-  "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/Event_bubbling": [
-   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.03-dom-events-delegation.md"
-  ],
   "https://developer.mozilla.org/en-US/docs/Web/API/AbortController": [
    "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.05-abort-and-cancellation.md"
   ],
@@ -906,25 +870,16 @@
   "https://developer.mozilla.org/en-US/docs/Web/API/BeforeInstallPromptEvent": [
    "10-frontend/10.7-html-css/10.7.05-pwa.md"
   ],
-  "https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API": [
-   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.04-cross-tab-communication.md"
-  ],
   "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API": [
    "10-frontend/10.6-animation/10.6.07-canvas-svg-animation.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Optimizing_canvas": [
    "10-frontend/10.6-animation/10.6.07-canvas-svg-animation.md"
   ],
-  "https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent": [
-   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.03-dom-events-delegation.md"
-  ],
   "https://developer.mozilla.org/en-US/docs/Web/API/EventSource": [
    "60-realtime/60.1-websockets/01-transports/60.1.1.02-server-sent-events.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener": [
-   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.03-dom-events-delegation.md"
-  ],
-  "https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#improving_scrolling_performance_with_passive_listeners": [
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.03-dom-events-delegation.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide/In_depth": [
@@ -972,10 +927,6 @@
   ],
   "https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API": [
    "10-frontend/10.7-html-css/10.7.05-pwa.md"
-  ],
-  "https://developer.mozilla.org/en-US/docs/Web/API/SharedWorker": [
-   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.02-web-workers.md",
-   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.04-cross-tab-communication.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/API/StorageManager/persist": [
    "10-frontend/10.5-form-handling/10.5.06-autosave-draft-recovery.md"
@@ -1028,15 +979,9 @@
   "https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API": [
    "20-backend/20.5-security/01-auth/20.5.1.01-auth-fundamentals.md"
   ],
-  "https://developer.mozilla.org/en-US/docs/Web/API/Web_Locks_API": [
-   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.04-cross-tab-communication.md"
-  ],
   "https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API": [
    "10-frontend/10.5-form-handling/10.5.06-autosave-draft-recovery.md",
    "10-frontend/10.7-html-css/10.7.08-browser-storage.md"
-  ],
-  "https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API/Using_the_Web_Storage_API": [
-   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.04-cross-tab-communication.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API": [
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.02-web-workers.md"
@@ -1044,14 +989,20 @@
   "https://developer.mozilla.org/en-US/docs/Web/API/Web_components": [
    "10-frontend/10.3-react/04-modern-react/10.3.4.02-web-components.md"
   ],
+  "https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM": [
+   "10-frontend/10.3-react/04-modern-react/10.3.4.02-web-components.md"
+  ],
+  "https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots": [
+   "10-frontend/10.3-react/04-modern-react/10.3.4.02-web-components.md"
+  ],
   "https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeunload_event": [
    "10-frontend/10.5-form-handling/10.5.06-autosave-draft-recovery.md"
   ],
+  "https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage": [
+   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.04-cross-tab-communication.md"
+  ],
   "https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame": [
    "10-frontend/10.6-animation/10.6.07-canvas-svg-animation.md"
-  ],
-  "https://developer.mozilla.org/en-US/docs/Web/API/Window/storage_event": [
-   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.04-cross-tab-communication.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/API/Window/structuredClone": [
    "70-interview-toolkit/70.3-cheatsheets/70.3.01-javascript-cheat-sheet.md"
@@ -1101,6 +1052,9 @@
   ],
   "https://developer.mozilla.org/en-US/docs/Web/HTML/Element": [
    "10-frontend/10.7-html-css/10.7.01-html-fundamentals.md"
+  ],
+  "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog": [
+   "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.01-portals.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images": [
    "10-frontend/10.4-next.js/04-production/10.4.4.02-image-optimization.md"
@@ -1180,9 +1134,6 @@
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Execution_model": [
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.01-execution-context.md"
   ],
-  "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/toSorted": [
-   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md"
-  ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind": [
    "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.01-this.md"
   ],
@@ -1200,6 +1151,8 @@
   ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md",
+   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md",
+   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.02-memoization.md",
    "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.03-stack-queue-patterns.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign": [
@@ -1207,9 +1160,6 @@
   ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create": [
    "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.02-prototypes.md"
-  ],
-  "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/groupBy": [
-   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwn": [
    "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.02-prototypes.md"
@@ -1222,9 +1172,6 @@
   ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/allSettled": [
    "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.06-bounded-concurrency.md"
-  ],
-  "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/withResolvers": [
-   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy": [
    "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.03-proxy-reflect.md",
@@ -1394,12 +1341,6 @@
   ],
   "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai": [
    "80-lanes-abroad-full-stack/80.24-eu-regulatory-compliance.md"
-  ],
-  "https://dmitripavlutin.com/react-useref/": [
-   "10-frontend/10.3-react/02-core-hooks/10.3.2.04-useref.md"
-  ],
-  "https://dmitripavlutin.com/react-usestate-hook-guide/": [
-   "10-frontend/10.3-react/02-core-hooks/10.3.2.01-usestate.md"
   ],
   "https://docker-curriculum.com/": [
    "40-platform/40.1-docker/40.1.02-volumes-networks.md",
@@ -1907,6 +1848,9 @@
   "https://docs.github.com/en/webhooks/using-webhooks/validating-webhook-deliveries": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.05-webhooks.md"
   ],
+  "https://docs.gitlab.com/ci/": [
+   "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.02-gitlab-ci.md"
+  ],
   "https://docs.gitlab.com/ci/docker/using_buildkit/": [
    "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.02-gitlab-ci.md"
   ],
@@ -1919,10 +1863,7 @@
   "https://docs.gitlab.com/ci/secrets/id_token_authentication/": [
    "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.02-gitlab-ci.md"
   ],
-  "https://docs.gitlab.com/ee/ci/": [
-   "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.02-gitlab-ci.md"
-  ],
-  "https://docs.gitlab.com/ee/ci/yaml/": [
+  "https://docs.gitlab.com/ci/yaml/": [
    "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.02-gitlab-ci.md"
   ],
   "https://docs.gitlab.com/ee/topics/autodevops/": [
@@ -1995,7 +1936,6 @@
    "20-backend/20.2-nestjs/01-core-architecture/20.2.1.02-controllers.md"
   ],
   "https://docs.nestjs.com/custom-decorators": [
-   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.05-advanced-patterns.md",
    "20-backend/20.2-nestjs/05-advanced-and-interview/20.2.5.01-custom-decorators.md"
   ],
   "https://docs.nestjs.com/exception-filters": [
@@ -2007,6 +1947,7 @@
   "https://docs.nestjs.com/faq/request-lifecycle": [
    "20-backend/20.2-nestjs/01-core-architecture/20.2.1.02-controllers.md",
    "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.01-middleware.md",
+   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.03-pipes.md",
    "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.05-exception-filters.md",
    "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.06-request-context-and-async-local-storage.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.04-backend-cheat-sheet.md"
@@ -2083,6 +2024,10 @@
   "https://docs.nestjs.com/migration-guide": [
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.01-configuration-validation.md",
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.02-testing.md"
+  ],
+  "https://docs.nestjs.com/migration-guide#lifecycle-hook-ordering": [
+   "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.03-lifecycle-hooks-graceful-shutdown.md",
+   "20-backend/20.2-nestjs/05-advanced-and-interview/20.2.5.02-interview-questions.md"
   ],
   "https://docs.nestjs.com/modules": [
    "20-backend/20.2-nestjs/01-core-architecture/20.2.1.01-modules.md"
@@ -2403,9 +2348,6 @@
   "https://dora.dev/insights/dora-metrics-history/": [
    "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md"
   ],
-  "https://dora.dev/research/2023/dora-report/": [
-   "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md"
-  ],
   "https://drafts.csswg.org/": [
    "10-frontend/10.7-html-css/10.7.02-css-fundamentals.md"
   ],
@@ -2441,17 +2383,8 @@
   "https://en.wikipedia.org/wiki/Goodhart%27s_law": [
    "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md"
   ],
-  "https://en.wikipedia.org/wiki/Hash_table": [
-   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md"
-  ],
-  "https://en.wikipedia.org/wiki/Memoization": [
-   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.02-memoization.md"
-  ],
   "https://en.wikipedia.org/wiki/Quickselect": [
    "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.05-quick-select-reservoir-sampling.md"
-  ],
-  "https://en.wikipedia.org/wiki/Representational_state_transfer": [
-   "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.02-rest-principles.md"
   ],
   "https://en.wikipedia.org/wiki/Reservoir_sampling": [
    "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.05-quick-select-reservoir-sampling.md"
@@ -2832,9 +2765,6 @@
    "70-interview-toolkit/70.3-cheatsheets/INDEX.md",
    "70-interview-toolkit/INDEX.md"
   ],
-  "https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/README.md": [
-   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.04-declaration-files.md"
-  ],
   "https://github.com/GoogleChrome/lighthouse-ci": [
    "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.02-performance-budgets.md"
   ],
@@ -2853,14 +2783,8 @@
   "https://github.com/GoogleChromeLabs/comlink": [
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.02-web-workers.md"
   ],
-  "https://github.com/GoogleCloudPlatform/fourkeys": [
-   "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md"
-  ],
   "https://github.com/HdrHistogram/HdrHistogram": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.17-probabilistic-data-structures.md"
-  ],
-  "https://github.com/Microsoft/TypeScript/issues/202#issuecomment-566337388": [
-   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.02-branded-types.md"
   ],
   "https://github.com/Netflix/chaosmonkey": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.md"
@@ -2976,6 +2900,9 @@
   "https://github.com/dequelabs/axe-core": [
    "50-quality/50.2-accessibility/50.2.08-testing-a11y.md"
   ],
+  "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md": [
+   "50-quality/50.2-accessibility/50.2.08-testing-a11y.md"
+  ],
   "https://github.com/dequelabs/axe-core/blob/develop/doc/rule-descriptions.md": [
    "50-quality/50.2-accessibility/50.2.08-testing-a11y.md"
   ],
@@ -3018,6 +2945,9 @@
   ],
   "https://github.com/expo/expo-github-action": [
    "10-frontend/10.8-mobile/10.8.04-expo-eas-builds.md"
+  ],
+  "https://github.com/facebook/react/tree/main/packages/react-reconciler/src": [
+   "10-frontend/10.3-react/01-react-internals/10.3.1.02-fiber.md"
   ],
   "https://github.com/fastify/fast-json-stringify": [
    "20-backend/20.1-node.js/04-security-and-operations/20.1.4.03-express-fastify-internals.md"
@@ -3132,7 +3062,6 @@
   ],
   "https://github.com/microsoft/api-guidelines/blob/vNext/Guidelines.md": [
    "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.02-rest-principles.md",
-   "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.03-versioning.md",
    "20-backend/20.3-rest-apis/05-interview-drills/20.3.5.01-interview-questions.md"
   ],
   "https://github.com/microsoft/api-guidelines/blob/vNext/Guidelines.md#13-http-operations": [
@@ -3201,9 +3130,6 @@
   "https://github.com/opencontainers/runtime-spec": [
    "40-platform/40.1-docker/40.1.07-container-runtime-internals-namespaces-cgroups.md"
   ],
-  "https://github.com/openjdk/jdk/blob/master/src/java.base/share/classes/java/util/HashMap.java": [
-   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md"
-  ],
   "https://github.com/panva/jose/blob/main/docs/jwt/verify/interfaces/JWTVerifyOptions.md": [
    "10-frontend/10.4-next.js/04-production/10.4.4.01-authentication.md"
   ],
@@ -3216,9 +3142,6 @@
   ],
   "https://github.com/piscinajs/piscina/releases": [
    "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.02-child-processes-workers.md"
-  ],
-  "https://github.com/pmndrs/jotai": [
-   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.06-state-management.md"
   ],
   "https://github.com/pmndrs/use-gesture": [
    "10-frontend/10.6-animation/10.6.04-react-spring.md"
@@ -3240,9 +3163,6 @@
   ],
   "https://github.com/prometheus/client_js": [
    "40-platform/40.4-observability/01-pillars/40.4.1.02-monitoring.md"
-  ],
-  "https://github.com/python/cpython/blob/main/Objects/dictobject.c": [
-   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md"
   ],
   "https://github.com/react-hook-form/resolvers": [
    "10-frontend/10.5-form-handling/10.5.01-react-hook-form.md"
@@ -3290,33 +3210,9 @@
   "https://github.com/standard-schema/standard-schema": [
    "10-frontend/10.5-form-handling/10.5.04-tanstack-form.md"
   ],
-  "https://github.com/substack/stream-adventure": [
-   "20-backend/20.1-node.js/02-io-and-data/20.1.2.01-streams.md"
-  ],
-  "https://github.com/tc39/proposal-array-from-async": [
-   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md"
-  ],
-  "https://github.com/tc39/proposal-arraybuffer-base64": [
-   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md"
-  ],
   "https://github.com/tc39/proposal-decorators": [
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.03-decorators.md",
    "30-architecture/30.1-design-patterns/03-structural/30.1.3.03-decorator.md"
-  ],
-  "https://github.com/tc39/proposal-is-error": [
-   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md"
-  ],
-  "https://github.com/tc39/proposal-iterator-sequencing": [
-   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md"
-  ],
-  "https://github.com/tc39/proposal-json-parse-with-source": [
-   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md"
-  ],
-  "https://github.com/tc39/proposal-math-sum": [
-   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md"
-  ],
-  "https://github.com/tc39/proposal-upsert": [
-   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md"
   ],
   "https://github.com/tc39/proposals/blob/main/finished-proposals.md": [
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md"
@@ -3393,8 +3289,14 @@
   "https://grafana.com/docs/grafana-cloud/observe-and-act/send-data/profiles/traces-to-profiles/": [
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.02-continuous-profiling.md"
   ],
+  "https://grafana.com/docs/k6/latest/javascript-api/k6-metrics/rate/": [
+   "50-quality/50.1-testing/05-advanced/50.1.5.01-performance-load-testing.md"
+  ],
   "https://grafana.com/docs/k6/latest/javascript-api/k6-ws/": [
    "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.04-testing-realtime-systems.md"
+  ],
+  "https://grafana.com/docs/k6/latest/using-k6/metrics/reference/": [
+   "50-quality/50.1-testing/05-advanced/50.1.5.01-performance-load-testing.md"
   ],
   "https://grafana.com/docs/k6/latest/using-k6/scenarios/executors/constant-arrival-rate/": [
    "50-quality/50.1-testing/05-advanced/50.1.5.01-performance-load-testing.md"
@@ -3652,7 +3554,6 @@
    "40-platform/40.3-ci-cd/04-interview-prep/40.3.4.01-interview-questions.md"
   ],
   "https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/": [
-   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.01-execution-context.md",
    "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.01-event-loop.md"
   ],
   "https://java.testcontainers.org/": [
@@ -3674,20 +3575,8 @@
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.02-scope.md",
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.06-closures.md"
   ],
-  "https://javascript.info/currying-partials": [
-   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.04-currying-composition.md"
-  ],
   "https://javascript.info/event-loop": [
    "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.01-event-loop.md"
-  ],
-  "https://javascript.info/function-basics": [
-   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.02-memoization.md"
-  ],
-  "https://javascript.info/generators": [
-   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.03-generators.md"
-  ],
-  "https://javascript.info/modules-intro": [
-   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.01-modules.md"
   ],
   "https://javascript.info/object-copy": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.01-pass-by-value.md"
@@ -3702,8 +3591,7 @@
    "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.02-prototypes.md"
   ],
   "https://javascript.info/recursion": [
-   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.03-call-stack.md",
-   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.05-recursion-tail-call.md"
+   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.03-call-stack.md"
   ],
   "https://jcip.net/": [
    "20-backend/20.13-java/20.13.03-java-concurrency-multithreading.md"
@@ -4569,9 +4457,6 @@
   "https://mermaid.js.org/syntax/stateDiagram.html": [
    "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.04-state.md"
   ],
-  "https://michalzalecki.com/nominal-typing-in-typescript/": [
-   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.02-branded-types.md"
-  ],
   "https://microservices.io/": [
    "20-backend/20.6-microservices/01-service-topology/20.6.1.01-service-discovery.md",
    "20-backend/20.6-microservices/01-service-topology/20.6.1.02-api-gateway.md",
@@ -4717,7 +4602,8 @@
    "10-frontend/10.4-next.js/04-production/10.4.4.03-deploying-nextjs.md"
   ],
   "https://nextjs.org/docs/app/api-reference/config/next-config-js/serverActions": [
-   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.02-server-actions.md"
+   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.02-server-actions.md",
+   "10-frontend/10.5-form-handling/10.5.05-server-actions-and-form-patterns.md"
   ],
   "https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md"
@@ -4798,7 +4684,6 @@
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md"
   ],
   "https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations": [
-   "10-frontend/10.5-form-handling/10.5.05-server-actions-and-form-patterns.md",
    "10-frontend/10.5-form-handling/10.5.07-interview-questions.md"
   ],
   "https://nextjs.org/docs/app/getting-started/caching": [
@@ -4824,7 +4709,8 @@
    "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.03-metadata.md"
   ],
   "https://nextjs.org/docs/app/getting-started/mutating-data": [
-   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.02-server-actions.md"
+   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.02-server-actions.md",
+   "10-frontend/10.5-form-handling/10.5.05-server-actions-and-form-patterns.md"
   ],
   "https://nextjs.org/docs/app/getting-started/partial-prerendering": [
    "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md",
@@ -4893,6 +4779,9 @@
   "https://nextjs.org/docs/app/guides/self-hosting": [
    "10-frontend/10.4-next.js/04-production/10.4.4.03-deploying-nextjs.md",
    "10-frontend/10.4-next.js/05-interview-prep/10.4.5.01-interview-questions.md"
+  ],
+  "https://nextjs.org/docs/app/guides/server-actions": [
+   "10-frontend/10.5-form-handling/10.5.05-server-actions-and-form-patterns.md"
   ],
   "https://nextjs.org/docs/app/guides/static-exports": [
    "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.06-static-exports.md"
@@ -5017,7 +4906,6 @@
   ],
   "https://nodejs.org/api/esm.html": [
    "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.01-modules.md",
-   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md",
    "30-architecture/30.1-design-patterns/03-structural/30.1.3.05-module-pattern.md"
   ],
   "https://nodejs.org/api/esm.html#urls": [
@@ -5081,6 +4969,7 @@
    "20-backend/20.1-node.js/04-security-and-operations/20.1.4.02-debugging-profiling-nodejs.md"
   ],
   "https://nodejs.org/api/stream.html": [
+   "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.02-web-streams-and-test-runner.md",
    "20-backend/20.1-node.js/02-io-and-data/20.1.2.01-streams.md"
   ],
   "https://nodejs.org/api/test.html": [
@@ -5088,6 +4977,10 @@
   ],
   "https://nodejs.org/api/timers.html": [
    "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.md"
+  ],
+  "https://nodejs.org/api/typescript.html": [
+   "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.02-web-streams-and-test-runner.md",
+   "20-backend/20.1-node.js/01-runtime-and-async/REVISION.md"
   ],
   "https://nodejs.org/api/webstreams.html": [
    "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.02-web-streams-and-test-runner.md"
@@ -5274,22 +5167,12 @@
   "https://oss.callstack.com/react-native-testing-library/docs/start/quick-start": [
    "10-frontend/10.8-mobile/10.8.03-testing-react-native-apps.md"
   ],
-  "https://overreacted.io/a-complete-guide-to-useeffect/": [
-   "10-frontend/10.3-react/02-core-hooks/10.3.2.02-useeffect.md"
-  ],
   "https://owasp.org/API-Security/": [
    "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.04-authentication.md",
    "20-backend/20.5-security/01-auth/20.5.1.03-api-keys.md"
   ],
   "https://owasp.org/API-Security/editions/2023/en/0x11-t10/": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.03-threat-modeling-stride.md"
-  ],
-  "https://owasp.org/Top10/": [
-   "20-backend/20.5-security/03-hardening-and-operations/20.5.3.03-threat-modeling-stride.md",
-   "20-backend/20.5-security/04-interview-drills/20.5.4.01-interview-questions.md"
-  ],
-  "https://owasp.org/Top10/A02_2021-Cryptographic_Failures/": [
-   "20-backend/20.5-security/03-hardening-and-operations/20.5.3.01-encryption.md"
   ],
   "https://owasp.org/www-project-vulnerability-management-guide/": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.05-vulnerability-management-patch-governance.md"
@@ -5415,14 +5298,8 @@
    "50-quality/50.4-production-engineering/50.4.03-chaos-engineering.md",
    "50-quality/50.4-production-engineering/50.4.06-interview-questions.md"
   ],
-  "https://probablydance.com/2017/02/26/i-wrote-the-fastest-hashtable/": [
-   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md"
-  ],
   "https://project-osrm.org/": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.19-lyft.md"
-  ],
-  "https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/": [
-   "10-frontend/10.3-react/01-react-internals/10.3.1.05-lifecycle.md"
   ],
   "https://prometheus.io/docs/": [
    "40-platform/40.4-observability/01-pillars/40.4.1.02-monitoring.md"
@@ -5471,15 +5348,6 @@
   "https://raft.github.io/raft.pdf": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.md"
   ],
-  "https://ramdajs.com/docs/#compose": [
-   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.04-currying-composition.md"
-  ],
-  "https://raw.githubusercontent.com/facebook/react/main/packages/react-reconciler/src/ReactFiber.js": [
-   "10-frontend/10.3-react/01-react-internals/10.3.1.02-fiber.md"
-  ],
-  "https://raw.githubusercontent.com/facebook/react/main/packages/react-reconciler/src/ReactFiberLane.js": [
-   "10-frontend/10.3-react/01-react-internals/10.3.1.02-fiber.md"
-  ],
   "https://razorpay.com/docs/webhooks/best-practices/": [
    "projects/docita/04-payment-flows.md"
   ],
@@ -5501,11 +5369,20 @@
   ],
   "https://react.dev/blog/2024/12/05/react-19": [
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.md",
+   "10-frontend/10.3-react/04-modern-react/10.3.4.01-modern-hooks-react18-19.md",
+   "10-frontend/10.3-react/04-modern-react/10.3.4.02-web-components.md"
+  ],
+  "https://react.dev/blog/2025/10/01/react-19-2": [
    "10-frontend/10.3-react/04-modern-react/10.3.4.01-modern-hooks-react18-19.md"
   ],
   "https://react.dev/blog/2025/10/07/react-compiler-1": [
    "10-frontend/10.3-react/02-core-hooks/10.3.2.03-usememo-usecallback.md",
    "10-frontend/10.3-react/02-core-hooks/REVISION.md"
+  ],
+  "https://react.dev/blog/2026/09/09/react-19-3": [
+   "10-frontend/10.3-react/02-core-hooks/10.3.2.05-context-api.md",
+   "10-frontend/10.3-react/02-core-hooks/REVISION.md",
+   "10-frontend/10.3-react/04-modern-react/10.3.4.01-modern-hooks-react18-19.md"
   ],
   "https://react.dev/learn/keeping-components-pure": [
    "10-frontend/10.3-react/01-react-internals/10.3.1.01-virtual-dom.md",
@@ -5524,17 +5401,22 @@
    "10-frontend/10.3-react/01-react-internals/10.3.1.03-reconciliation.md",
    "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.03-interview-questions.md"
   ],
+  "https://react.dev/learn/queueing-a-series-of-state-updates": [
+   "10-frontend/10.3-react/02-core-hooks/10.3.2.01-usestate.md"
+  ],
   "https://react.dev/learn/react-compiler": [
    "10-frontend/10.3-react/02-core-hooks/10.3.2.03-usememo-usecallback.md",
+   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.05-performance.md",
    "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.03-interview-questions.md"
   ],
   "https://react.dev/learn/react-developer-tools": [
-   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.05-performance.md",
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.md"
+  ],
+  "https://react.dev/learn/removing-effect-dependencies": [
+   "10-frontend/10.3-react/02-core-hooks/10.3.2.02-useeffect.md"
   ],
   "https://react.dev/learn/render-and-commit": [
    "10-frontend/10.3-react/01-react-internals/10.3.1.01-virtual-dom.md",
-   "10-frontend/10.3-react/01-react-internals/10.3.1.02-fiber.md",
    "10-frontend/10.3-react/01-react-internals/10.3.1.04-rendering.md",
    "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.03-interview-questions.md"
   ],
@@ -5547,19 +5429,35 @@
   "https://react.dev/learn/reusing-logic-with-custom-hooks": [
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.md"
   ],
+  "https://react.dev/learn/state-as-a-snapshot": [
+   "10-frontend/10.3-react/02-core-hooks/10.3.2.01-usestate.md"
+  ],
+  "https://react.dev/learn/synchronizing-with-effects": [
+   "10-frontend/10.3-react/01-react-internals/10.3.1.05-lifecycle.md",
+   "10-frontend/10.3-react/02-core-hooks/10.3.2.02-useeffect.md"
+  ],
   "https://react.dev/learn/typescript": [
    "10-frontend/10.3-react/02-core-hooks/10.3.2.05-context-api.md"
+  ],
+  "https://react.dev/learn/updating-objects-in-state": [
+   "10-frontend/10.3-react/02-core-hooks/10.3.2.01-usestate.md"
   ],
   "https://react.dev/learn/writing-markup-with-jsx": [
    "10-frontend/10.3-react/01-react-internals/10.3.1.01-virtual-dom.md"
   ],
   "https://react.dev/learn/you-might-not-need-an-effect": [
+   "10-frontend/10.3-react/01-react-internals/10.3.1.05-lifecycle.md",
+   "10-frontend/10.3-react/02-core-hooks/10.3.2.02-useeffect.md",
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.md"
+  ],
+  "https://react.dev/reference/react-dom/browser": [
+   "10-frontend/10.3-react/04-modern-react/10.3.4.01-modern-hooks-react18-19.md"
   ],
   "https://react.dev/reference/react-dom/components#custom-html-elements": [
    "10-frontend/10.3-react/04-modern-react/10.3.4.02-web-components.md"
   ],
   "https://react.dev/reference/react-dom/components/common": [
+   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.03-dom-events-delegation.md",
    "20-backend/20.5-security/02-attacks-and-defense/20.5.2.01-xss.md"
   ],
   "https://react.dev/reference/react-dom/components/common#ref-callback": [
@@ -5571,12 +5469,11 @@
   "https://react.dev/reference/react-dom/createPortal": [
    "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.01-portals.md"
   ],
-  "https://react.dev/reference/react-dom/flushSync": [
-   "10-frontend/10.3-react/01-react-internals/10.3.1.02-fiber.md",
-   "10-frontend/10.3-react/01-react-internals/10.3.1.04-rendering.md"
-  ],
   "https://react.dev/reference/react-dom/hooks/useFormStatus": [
    "10-frontend/10.3-react/04-modern-react/10.3.4.01-modern-hooks-react18-19.md"
+  ],
+  "https://react.dev/reference/react-dom/server/renderToPipeableStream": [
+   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.01-suspense.md"
   ],
   "https://react.dev/reference/react/Children": [
    "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.02-compound-components.md"
@@ -5587,14 +5484,17 @@
   "https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary": [
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.md"
   ],
-  "https://react.dev/reference/react/Component#componentdidcatch": [
-   "10-frontend/10.3-react/01-react-internals/10.3.1.05-lifecycle.md"
+  "https://react.dev/reference/react/Fragment": [
+   "10-frontend/10.3-react/04-modern-react/10.3.4.01-modern-hooks-react18-19.md"
   ],
   "https://react.dev/reference/react/Profiler": [
+   "10-frontend/10.3-react/01-react-internals/10.3.1.04-rendering.md",
    "10-frontend/10.3-react/02-core-hooks/10.3.2.03-usememo-usecallback.md",
+   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.05-performance.md",
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.md"
   ],
   "https://react.dev/reference/react/StrictMode": [
+   "10-frontend/10.3-react/01-react-internals/10.3.1.04-rendering.md",
    "10-frontend/10.3-react/01-react-internals/10.3.1.05-lifecycle.md",
    "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.03-interview-questions.md"
   ],
@@ -5602,6 +5502,9 @@
    "10-frontend/10.3-react/01-react-internals/10.3.1.02-fiber.md",
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.01-suspense.md",
    "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.04-streaming.md"
+  ],
+  "https://react.dev/reference/react/ViewTransition": [
+   "10-frontend/10.3-react/04-modern-react/10.3.4.01-modern-hooks-react18-19.md"
   ],
   "https://react.dev/reference/react/cloneElement": [
    "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.02-compound-components.md"
@@ -5611,8 +5514,7 @@
   ],
   "https://react.dev/reference/react/forwardRef": [
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.md",
-   "10-frontend/10.3-react/02-core-hooks/10.3.2.04-useref.md",
-   "10-frontend/10.3-react/04-modern-react/10.3.4.01-modern-hooks-react18-19.md"
+   "10-frontend/10.3-react/02-core-hooks/10.3.2.04-useref.md"
   ],
   "https://react.dev/reference/react/hooks": [
    "70-interview-toolkit/70.3-cheatsheets/70.3.03-react-nextjs-cheat-sheet.md"
@@ -5648,11 +5550,13 @@
   ],
   "https://react.dev/reference/react/useDeferredValue": [
    "10-frontend/10.3-react/01-react-internals/10.3.1.02-fiber.md",
+   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.05-performance.md",
    "10-frontend/10.3-react/04-modern-react/10.3.4.01-modern-hooks-react18-19.md",
    "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.03-interview-questions.md"
   ],
   "https://react.dev/reference/react/useEffect": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.04-debounce.md",
+   "10-frontend/10.3-react/01-react-internals/10.3.1.04-rendering.md",
    "10-frontend/10.3-react/01-react-internals/10.3.1.05-lifecycle.md",
    "10-frontend/10.3-react/02-core-hooks/10.3.2.02-useeffect.md",
    "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.03-interview-questions.md"
@@ -5664,7 +5568,11 @@
   "https://react.dev/reference/react/useId": [
    "10-frontend/10.3-react/04-modern-react/10.3.4.01-modern-hooks-react18-19.md"
   ],
+  "https://react.dev/reference/react/useImperativeHandle": [
+   "10-frontend/10.3-react/02-core-hooks/10.3.2.04-useref.md"
+  ],
   "https://react.dev/reference/react/useLayoutEffect": [
+   "10-frontend/10.3-react/01-react-internals/10.3.1.04-rendering.md",
    "10-frontend/10.3-react/01-react-internals/10.3.1.05-lifecycle.md",
    "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.03-interview-questions.md"
   ],
@@ -5693,13 +5601,13 @@
   ],
   "https://react.dev/reference/react/useTransition": [
    "10-frontend/10.3-react/01-react-internals/10.3.1.02-fiber.md",
+   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.01-suspense.md",
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.md",
    "10-frontend/10.3-react/04-modern-react/10.3.4.01-modern-hooks-react18-19.md",
    "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.03-interview-questions.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.03-react-nextjs-cheat-sheet.md"
   ],
   "https://react.dev/reference/rsc/server-components": [
-   "10-frontend/10.3-react/04-modern-react/10.3.4.01-modern-hooks-react18-19.md",
    "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.03-interview-questions.md",
    "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.03-server-components.md"
   ],
@@ -5748,14 +5656,14 @@
   "https://reactrouter.com/explanation/race-conditions": [
    "10-frontend/10.3-react/04-modern-react/10.3.4.03-react-router.md"
   ],
+  "https://reactrouter.com/how-to/middleware": [
+   "10-frontend/10.3-react/04-modern-react/10.3.4.03-react-router.md"
+  ],
   "https://reactrouter.com/how-to/optimize-revalidation": [
    "10-frontend/10.3-react/04-modern-react/10.3.4.03-react-router.md"
   ],
   "https://reactrouter.com/how-to/view-transitions": [
    "10-frontend/10.6-animation/10.6.06-view-transitions-and-scroll-driven-animations.md"
-  ],
-  "https://reactrouter.com/start/changelog": [
-   "10-frontend/10.3-react/04-modern-react/10.3.4.03-react-router.md"
   ],
   "https://reactrouter.com/start/data/actions": [
    "10-frontend/10.3-react/04-modern-react/10.3.4.03-react-router.md"
@@ -5770,6 +5678,9 @@
    "10-frontend/10.5-form-handling/10.5.05-server-actions-and-form-patterns.md"
   ],
   "https://reactrouter.com/start/modes": [
+   "10-frontend/10.3-react/04-modern-react/10.3.4.03-react-router.md"
+  ],
+  "https://reactrouter.com/start/start/changelog": [
    "10-frontend/10.3-react/04-modern-react/10.3.4.03-react-router.md"
   ],
   "https://reactrouter.com/upgrading/v7": [
@@ -5886,9 +5797,6 @@
   "https://redux.js.org/toolkit/usage/usage-guide/": [
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.06-state-management.md"
   ],
-  "https://redux.js.org/usage/structuring-reducers/normalizing-state-shape": [
-   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.06-state-management.md"
-  ],
   "https://refactoring.guru/": [
    "30-architecture/30.1-design-patterns/01-foundations/30.1.1.02-dry-kiss-yagni.md"
   ],
@@ -5982,9 +5890,6 @@
   "https://research.google/pubs/pub43864/": [
    "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.02-data-pipelines.md"
   ],
-  "https://research.google/pubs/pub48190/": [
-   "20-backend/20.5-security/01-auth/INDEX.md"
-  ],
   "https://research.google/pubs/spanner-googles-globally-distributed-database-2/": [
    "81-lanes-indian-sde-faang/81.17-google-interview-guide.md"
   ],
@@ -6014,9 +5919,6 @@
   ],
   "https://response.pagerduty.com/": [
    "50-quality/50.4-production-engineering/50.4.05-on-call-without-burnout.md"
-  ],
-  "https://restfulapi.net/": [
-   "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.02-rest-principles.md"
   ],
   "https://rollupjs.org/": [
    "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md"
@@ -6127,7 +6029,13 @@
   "https://slsa.dev/spec/v1.1/levels": [
    "40-platform/40.1-docker/40.1.08-image-signing-sbom-supply-chain.md"
   ],
+  "https://slsa.dev/spec/v1.2/build-requirements": [
+   "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.md"
+  ],
   "https://slsa.dev/spec/v1.2/build-track-basics": [
+   "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.md"
+  ],
+  "https://slsa.dev/spec/v1.2/source-requirements": [
    "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.md"
   ],
   "https://slsa.dev/spec/v1.2/tracks": [
@@ -6302,9 +6210,6 @@
   "https://sst.dev/docs/": [
    "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md"
   ],
-  "https://stackoverflow.com/questions/34314327/what-is-the-difference-between-iterators-and-generators": [
-   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.03-generators.md"
-  ],
   "https://stacspec.org/en/about/stac-spec/": [
    "80-lanes-abroad-full-stack/80.34-germany-target-domain-primer.md"
   ],
@@ -6423,18 +6328,14 @@
   "https://tanstack.com/query/latest/docs/framework/react/guides/mutations": [
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.06-state-management.md"
   ],
-  "https://tanstack.com/query/latest/docs/framework/react/guides/optimistic-updates": [
-   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.06-state-management.md"
-  ],
   "https://tanstack.com/query/latest/docs/framework/react/guides/query-cancellation": [
-   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.md",
+   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.md"
+  ],
+  "https://tanstack.com/query/latest/docs/framework/react/guides/query-keys": [
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.06-state-management.md"
   ],
   "https://tanstack.com/query/latest/docs/framework/react/guides/suspense": [
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.md"
-  ],
-  "https://tanstack.com/virtual/latest/docs/framework/react/react-virtual": [
-   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.05-performance.md"
   ],
   "https://tc39.es/ecma262/": [
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.04-hoisting.md"
@@ -6445,7 +6346,7 @@
   "https://tc39.es/ecma262/#sec-map-objects": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md"
   ],
-  "https://tc39.es/ecma262/2026/": [
+  "https://tc39.es/ecma262/2026/multipage/": [
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md"
   ],
   "https://tc39.es/ecma262/2026/multipage/abstract-operations.html#sec-islooselyequal": [
@@ -6481,6 +6382,9 @@
   "https://tc39.es/ecma262/multipage/ordinary-and-exotic-objects-behaviours.html#sec-functiondeclarationinstantiation": [
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.01-execution-context.md",
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.01-pass-by-value.md"
+  ],
+  "https://tc39.es/ecma262/multipage/ordinary-and-exotic-objects-behaviours.html#sec-proxy-object-internal-methods-and-internal-slots": [
+   "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.03-proxy-reflect.md"
   ],
   "https://techdevguide.withgoogle.com/": [
    "00-strategy/INDEX.md"
@@ -6551,6 +6455,13 @@
   ],
   "https://timkadlec.com/": [
    "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.02-performance-budgets.md"
+  ],
+  "https://top10.owasp.org/2025/A04_2025-Cryptographic_Failures/": [
+   "20-backend/20.5-security/03-hardening-and-operations/20.5.3.01-encryption.md"
+  ],
+  "https://top10.owasp.org/2025/en/": [
+   "20-backend/20.5-security/03-hardening-and-operations/20.5.3.03-threat-modeling-stride.md",
+   "20-backend/20.5-security/04-interview-drills/20.5.4.01-interview-questions.md"
   ],
   "https://totaltypescript.com/": [
    "10-frontend/10.2-typescript/05-interview-prep/10.2.5.01-interview-questions.md"
@@ -6627,21 +6538,14 @@
   "https://v8.dev/": [
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.03-call-stack.md"
   ],
-  "https://v8.dev/blog": [
-   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.01-execution-context.md"
-  ],
   "https://v8.dev/blog/fast-properties": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md"
   ],
   "https://v8.dev/blog/hash-code": [
-   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md",
-   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md"
+   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md"
   ],
   "https://v8.dev/blog/javascript-code-coverage": [
    "50-quality/50.1-testing/02-frameworks/50.1.2.02-vitest.md"
-  ],
-  "https://v8.dev/blog/modern-javascript#proper-tail-calls": [
-   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.05-recursion-tail-call.md"
   ],
   "https://v8.dev/blog/trash-talk": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.07-garbage-collection.md"
@@ -6746,9 +6650,6 @@
   "https://web.archive.org/web/20120411161157/http://highscalability.com/blog/2012/4/9/the-instagram-architecture-facebook-bought-for-a-cool-billio.html": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.md"
   ],
-  "https://web.archive.org/web/20130820080546/https://github.com/substack/stream-handbook": [
-   "20-backend/20.1-node.js/02-io-and-data/20.1.2.01-streams.md"
-  ],
   "https://web.archive.org/web/20131217183346/http://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying": [
    "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.01-real-time-architecture.md"
   ],
@@ -6763,9 +6664,6 @@
   "https://web.dev/articles/color-and-contrast-accessibility": [
    "10-frontend/10.7-html-css/10.7.07-theming-design-tokens.md"
   ],
-  "https://web.dev/articles/fcp": [
-   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.05-performance.md"
-  ],
   "https://web.dev/articles/font-best-practices": [
    "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
   ],
@@ -6779,7 +6677,6 @@
    "50-quality/50.3-performance-monitoring/01-core-metrics/50.3.1.01-core-web-vitals.md"
   ],
   "https://web.dev/articles/offscreen-canvas": [
-   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.02-web-workers.md",
    "10-frontend/10.6-animation/10.6.07-canvas-svg-animation.md"
   ],
   "https://web.dev/articles/optimize-lcp": [
@@ -6790,8 +6687,7 @@
   ],
   "https://web.dev/articles/passkey-registration": [
    "20-backend/20.5-security/01-auth/20.5.1.08-mfa-passkeys-webauthn.md",
-   "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md",
-   "20-backend/20.5-security/01-auth/INDEX.md"
+   "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md"
   ],
   "https://web.dev/articles/performance-budgets-101": [
    "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.02-performance-budgets.md"
@@ -6805,9 +6701,6 @@
   ],
   "https://web.dev/articles/serve-responsive-images": [
    "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
-  ],
-  "https://web.dev/articles/shadowdom": [
-   "10-frontend/10.3-react/04-modern-react/10.3.4.02-web-components.md"
   ],
   "https://web.dev/articles/storage-for-the-web": [
    "10-frontend/10.7-html-css/10.7.08-browser-storage.md"
@@ -7195,9 +7088,6 @@
   "https://www.digitalocean.com/community/tutorials/http-status-codes": [
    "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.02-status-codes.md"
   ],
-  "https://www.digitalocean.com/community/tutorials/understanding-scope-and-closures-in-javascript-tutorial": [
-   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.02-scope.md"
-  ],
   "https://www.dropbox.com/developers/documentation": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.18-dropbox.md"
   ],
@@ -7249,10 +7139,6 @@
   "https://www.finops.org/framework/": [
    "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md"
   ],
-  "https://www.first.org/cvss/v3.1/specification-document": [
-   "20-backend/20.5-security/03-hardening-and-operations/20.5.3.05-vulnerability-management-patch-governance.md",
-   "20-backend/20.5-security/03-hardening-and-operations/REVISION.md"
-  ],
   "https://www.first.org/cvss/v4.0/": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.05-vulnerability-management-patch-governance.md",
    "20-backend/20.5-security/03-hardening-and-operations/REVISION.md"
@@ -7264,35 +7150,11 @@
   "https://www.freecodecamp.org/news/javascript-assigning-values-vs-assigning-references/": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.01-pass-by-value.md"
   ],
-  "https://www.freecodecamp.org/news/learn-react-hooks-with-example-code/": [
-   "10-frontend/10.3-react/02-core-hooks/10.3.2.04-useref.md"
-  ],
-  "https://www.freecodecamp.org/news/learn-react-usestate-hook-in-10-minutes/": [
-   "10-frontend/10.3-react/02-core-hooks/10.3.2.01-usestate.md"
-  ],
   "https://www.freecodecamp.org/news/lets-learn-javascript-closures-66feb44f6a44/": [
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.06-closures.md"
   ],
-  "https://www.freecodecamp.org/news/memoization-in-javascript-and-react/": [
-   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.02-memoization.md"
-  ],
-  "https://www.freecodecamp.org/news/node-js-streams-everything-you-need-to-know-c9141306be93/": [
-   "20-backend/20.1-node.js/02-io-and-data/20.1.2.02-buffers.md"
-  ],
-  "https://www.freecodecamp.org/news/react-performance-optimization-techniques/": [
-   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.05-performance.md"
-  ],
-  "https://www.freecodecamp.org/news/react-useeffect-absolute-beginners/": [
-   "10-frontend/10.3-react/02-core-hooks/10.3.2.02-useeffect.md"
-  ],
-  "https://www.freecodecamp.org/news/the-modern-react-data-fetching-handbook-suspense-use-and-errorboundary-explained/": [
-   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.01-suspense.md"
-  ],
   "https://www.freecodecamp.org/news/understanding-the-javascript-call-stack-861e41ae61d4/": [
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.03-call-stack.md"
-  ],
-  "https://www.freecodecamp.org/news/what-is-the-virtual-dom-in-react/": [
-   "10-frontend/10.3-react/01-react-internals/10.3.1.01-virtual-dom.md"
   ],
   "https://www.geeksforgeeks.org/backtracking-algorithms/": [
    "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization/70.2.3.01-backtracking.md"
@@ -7370,15 +7232,6 @@
    "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md",
    "40-platform/40.10-cdn/40.10.01-cdn-architecture.md"
   ],
-  "https://www.highcharts.com/docs/accessibility/accessibility-module": [
-   "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.md"
-  ],
-  "https://www.highcharts.com/docs/export-module/export-module-overview": [
-   "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.md"
-  ],
-  "https://www.highcharts.com/docs/getting-started/version-12": [
-   "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.md"
-  ],
   "https://www.honeycomb.io/blog/observability-101": [
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.01-opentelemetry.md"
   ],
@@ -7443,9 +7296,6 @@
   ],
   "https://www.joshwcomeau.com/animation/a-friendly-introduction-to-spring-physics/": [
    "10-frontend/10.6-animation/10.6.04-react-spring.md"
-  ],
-  "https://www.joshwcomeau.com/react/why-react-re-renders/": [
-   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.05-performance.md"
   ],
   "https://www.kernel.org/doc/html/latest/admin-guide/cgroup-v2.html": [
    "40-platform/40.1-docker/40.1.07-container-runtime-internals-namespaces-cgroups.md"
@@ -7517,9 +7367,6 @@
   ],
   "https://www.nist.gov/cyberframework": [
    "20-backend/20.5-security/04-interview-drills/20.5.4.01-interview-questions.md"
-  ],
-  "https://www.npmjs.com/package/use-sync-external-store": [
-   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.md"
   ],
   "https://www.omg.org/spec/UML/2.5.1/": [
    "30-architecture/30.1-design-patterns/01-foundations/30.1.1.04-uml-basics.md"
@@ -8122,6 +7969,7 @@
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.01-url-shortener.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc9110.html": [
+   "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.02-rest-principles.md",
    "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.01-http-methods.md",
    "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.02-status-codes.md",
    "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.04-http-caching.md",
@@ -8270,12 +8118,6 @@
   "https://www.thryve.health/about": [
    "80-lanes-abroad-full-stack/80.07-company-profiles.md"
   ],
-  "https://www.totaltypescript.com/four-essential-typescript-patterns": [
-   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.02-branded-types.md"
-  ],
-  "https://www.totaltypescript.com/tutorials/the-satisfies-operator": [
-   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.01-satisfies-operator.md"
-  ],
   "https://www.twilio.com/docs/api/errors": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.02-error-handling-design.md"
   ],
@@ -8316,12 +8158,16 @@
   "https://www.typescriptlang.org/docs/handbook/2/generics.html#variance-annotations": [
    "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.04-type-variance.md"
   ],
+  "https://www.typescriptlang.org/docs/handbook/2/indexed-access-types.html": [
+   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.05-advanced-patterns.md"
+  ],
   "https://www.typescriptlang.org/docs/handbook/2/keyof-types.html": [
    "10-frontend/10.2-typescript/01-foundations/10.2.1.02-keyof-typeof.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/2/mapped-types.html": [
    "10-frontend/10.2-typescript/03-type-transformations/10.2.3.01-utility-types.md",
-   "10-frontend/10.2-typescript/03-type-transformations/10.2.3.03-mapped-types.md"
+   "10-frontend/10.2-typescript/03-type-transformations/10.2.3.03-mapped-types.md",
+   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.05-advanced-patterns.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/2/modules.html": [
    "30-architecture/30.1-design-patterns/03-structural/30.1.3.05-module-pattern.md"
@@ -8330,9 +8176,6 @@
    "10-frontend/10.2-typescript/01-foundations/10.2.1.03-type-narrowing.md",
    "10-frontend/10.2-typescript/05-interview-prep/10.2.5.01-interview-questions.md"
   ],
-  "https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates": [
-   "10-frontend/10.2-typescript/01-foundations/10.2.1.03-type-narrowing.md"
-  ],
   "https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html": [
    "10-frontend/10.2-typescript/03-type-transformations/10.2.3.04-template-literal-types.md"
   ],
@@ -8340,7 +8183,6 @@
    "10-frontend/10.2-typescript/01-foundations/10.2.1.02-keyof-typeof.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/2/types-from-types.html": [
-   "10-frontend/10.2-typescript/01-foundations/10.2.1.03-type-narrowing.md",
    "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.03-advanced-generics.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/declaration-files/introduction.html": [
@@ -8353,18 +8195,14 @@
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.04-declaration-files.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/declaration-merging.html": [
-   "10-frontend/10.2-typescript/01-foundations/10.2.1.01-types-vs-interfaces.md"
-  ],
-  "https://www.typescriptlang.org/docs/handbook/declaration-merging.html#module-augmentation": [
+   "10-frontend/10.2-typescript/01-foundations/10.2.1.01-types-vs-interfaces.md",
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.04-declaration-files.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/decorators.html": [
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.03-decorators.md",
-   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.05-advanced-patterns.md",
    "20-backend/20.2-nestjs/05-advanced-and-interview/20.2.5.01-custom-decorators.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/intro.html": [
-   "10-frontend/10.2-typescript/01-foundations/10.2.1.01-types-vs-interfaces.md",
    "10-frontend/10.2-typescript/05-interview-prep/10.2.5.01-interview-questions.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.02-typescript-cheat-sheet.md"
   ],
@@ -8406,13 +8244,15 @@
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.01-satisfies-operator.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-0.html": [
-   "10-frontend/10.2-typescript/01-foundations/10.2.1.04-tsconfig-compiler-options.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.02-typescript-cheat-sheet.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-0.html#const-type-parameters": [
    "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.01-generics.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-0.html#decorators": [
+   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.03-decorators.md"
+  ],
+  "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-2.html#decorator-metadata": [
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.03-decorators.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-4.html#the-noinfer-utility-type": [
@@ -8428,7 +8268,7 @@
    "10-frontend/10.2-typescript/01-foundations/10.2.1.04-tsconfig-compiler-options.md",
    "10-frontend/10.2-typescript/01-foundations/REVISION.md"
   ],
-  "https://www.typescriptlang.org/docs/handbook/symbols.html#unique-symbol": [
+  "https://www.typescriptlang.org/docs/handbook/symbols.html": [
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.02-branded-types.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/type-compatibility.html": [
@@ -8442,14 +8282,8 @@
    "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.02-infer.md",
    "10-frontend/10.2-typescript/03-type-transformations/10.2.3.01-utility-types.md"
   ],
-  "https://www.typescriptlang.org/play#example/nominal-typing": [
-   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.02-branded-types.md"
-  ],
   "https://www.typescriptlang.org/tsconfig/": [
    "10-frontend/10.2-typescript/01-foundations/10.2.1.04-tsconfig-compiler-options.md"
-  ],
-  "https://www.typescriptlang.org/tsconfig/moduleDetection.html": [
-   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.04-declaration-files.md"
   ],
   "https://www.typescriptlang.org/tsconfig/noUncheckedIndexedAccess.html": [
    "10-frontend/10.2-typescript/01-foundations/10.2.1.02-keyof-typeof.md"
@@ -8467,7 +8301,8 @@
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.md"
   ],
   "https://www.w3.org/TR/WCAG22/": [
-   "50-quality/50.2-accessibility/50.2.01-wcag-overview.md"
+   "50-quality/50.2-accessibility/50.2.01-wcag-overview.md",
+   "50-quality/50.2-accessibility/50.2.09-interview-questions.md"
   ],
   "https://www.w3.org/TR/WCAG22/#dfn-contrast-ratio": [
    "50-quality/50.2-accessibility/50.2.04-color-and-contrast.md"
@@ -8492,7 +8327,8 @@
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.01-opentelemetry.md"
   ],
   "https://www.w3.org/TR/wai-aria/": [
-   "50-quality/50.2-accessibility/50.2.02-aria.md"
+   "50-quality/50.2-accessibility/50.2.02-aria.md",
+   "50-quality/50.2-accessibility/50.2.09-interview-questions.md"
   ],
   "https://www.w3.org/TR/web-locks/": [
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.04-cross-tab-communication.md"
@@ -8506,7 +8342,14 @@
    "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.03-webrtc-peer-to-peer.md"
   ],
   "https://www.w3.org/WAI/ARIA/apg/": [
+   "50-quality/50.2-accessibility/50.2.02-aria.md",
+   "50-quality/50.2-accessibility/50.2.09-interview-questions.md"
+  ],
+  "https://www.w3.org/WAI/ARIA/apg/about/introduction/": [
    "50-quality/50.2-accessibility/50.2.02-aria.md"
+  ],
+  "https://www.w3.org/WAI/ARIA/apg/patterns/accordion/": [
+   "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.02-compound-components.md"
   ],
   "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/": [
    "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.01-portals.md",
@@ -8516,19 +8359,20 @@
    "50-quality/50.2-accessibility/50.2.02-aria.md"
   ],
   "https://www.w3.org/WAI/ARIA/apg/patterns/tabs/": [
+   "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.02-compound-components.md",
    "50-quality/50.2-accessibility/50.2.03-keyboard-navigation.md"
   ],
   "https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/": [
    "50-quality/50.2-accessibility/50.2.03-keyboard-navigation.md"
   ],
-  "https://www.w3.org/WAI/ARIA/apg/practices/landmark-regions/": [
-   "50-quality/50.2-accessibility/50.2.09-interview-questions.md"
-  ],
   "https://www.w3.org/WAI/ARIA/apg/practices/names-and-descriptions/": [
    "50-quality/50.2-accessibility/50.2.02-aria.md"
   ],
-  "https://www.w3.org/WAI/ARIA/apg/practices/read-me-first/": [
-   "50-quality/50.2-accessibility/50.2.02-aria.md"
+  "https://www.w3.org/WAI/WCAG22/Understanding/accessible-authentication-minimum.html": [
+   "50-quality/50.2-accessibility/50.2.09-interview-questions.md"
+  ],
+  "https://www.w3.org/WAI/WCAG22/Understanding/character-key-shortcuts.html": [
+   "50-quality/50.2-accessibility/50.2.09-interview-questions.md"
   ],
   "https://www.w3.org/WAI/WCAG22/Understanding/conformance.html": [
    "50-quality/50.2-accessibility/50.2.01-wcag-overview.md",
@@ -8536,6 +8380,9 @@
   ],
   "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html": [
    "50-quality/50.2-accessibility/50.2.04-color-and-contrast.md"
+  ],
+  "https://www.w3.org/WAI/WCAG22/Understanding/error-prevention-legal-financial-data.html": [
+   "50-quality/50.2-accessibility/50.2.09-interview-questions.md"
   ],
   "https://www.w3.org/WAI/WCAG22/Understanding/identify-input-purpose.html": [
    "50-quality/50.2-accessibility/50.2.05-forms-and-labels.md"
@@ -8549,11 +8396,11 @@
   "https://www.w3.org/WAI/WCAG22/Understanding/non-text-contrast.html": [
    "50-quality/50.2-accessibility/50.2.04-color-and-contrast.md"
   ],
+  "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html": [
+   "50-quality/50.2-accessibility/50.2.09-interview-questions.md"
+  ],
   "https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html": [
    "50-quality/50.2-accessibility/50.2.04-color-and-contrast.md"
-  ],
-  "https://www.w3.org/WAI/media/av/": [
-   "50-quality/50.2-accessibility/50.2.09-interview-questions.md"
   ],
   "https://www.w3.org/WAI/standards-guidelines/wcag/": [
    "50-quality/50.2-accessibility/50.2.01-wcag-overview.md"
@@ -8561,15 +8408,13 @@
   "https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/": [
    "50-quality/50.2-accessibility/50.2.01-wcag-overview.md"
   ],
-  "https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/": [
-   "50-quality/50.2-accessibility/50.2.09-interview-questions.md"
-  ],
   "https://www.w3.org/WAI/test-evaluate/": [
    "50-quality/50.2-accessibility/50.2.08-testing-a11y.md"
   ],
   "https://www.w3.org/WAI/tutorials/forms/": [
    "10-frontend/10.5-form-handling/10.5.07-interview-questions.md",
-   "50-quality/50.2-accessibility/50.2.05-forms-and-labels.md"
+   "50-quality/50.2-accessibility/50.2.05-forms-and-labels.md",
+   "50-quality/50.2-accessibility/50.2.09-interview-questions.md"
   ],
   "https://www.w3.org/WAI/tutorials/forms/grouping/": [
    "50-quality/50.2-accessibility/50.2.05-forms-and-labels.md"
@@ -8582,9 +8427,6 @@
   ],
   "https://www.w3.org/WAI/tutorials/images/complex/": [
    "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.md"
-  ],
-  "https://www.w3.org/WAI/tutorials/images/decision-tree/": [
-   "50-quality/50.2-accessibility/50.2.09-interview-questions.md"
   ],
   "https://www.w3.org/community/design-tokens/": [
    "10-frontend/10.7-html-css/10.7.07-theming-design-tokens.md"
@@ -8617,9 +8459,6 @@
   "https://www.youtube.com/watch?v=W4EwfEU8CGA": [
    "docs/reference-coverage-audit.md"
   ],
-  "https://www.youtube.com/watch?v=iX8g4LqF8p8": [
-   "20-backend/20.5-security/01-auth/INDEX.md"
-  ],
   "https://www.youtube.com/watch?v=jedGi-VoiXc": [
    "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.03-bff.md"
   ],
@@ -8650,9 +8489,6 @@
   "https://zod.dev/packages/mini": [
    "10-frontend/10.5-form-handling/10.5.02-zod.md"
   ],
-  "https://zod.dev/v4": [
-   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.06-state-management.md"
-  ],
   "https://zod.dev/v4/changelog": [
    "10-frontend/10.5-form-handling/10.5.02-zod.md",
    "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.03-pipes.md"
@@ -8668,9 +8504,6 @@
   ],
   "https://zustand.docs.pmnd.rs/learn/guides/prevent-rerenders-with-use-shallow": [
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.md"
-  ],
-  "https://zustand.docs.pmnd.rs/reference/hooks/use-shallow": [
-   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.06-state-management.md"
   ]
  }
 }

@@ -64,7 +64,7 @@ Source: [Custom decorators](20.2.5.01-custom-decorators.md)
 
 ## Summary
 
-Use these prompts after the reading pass to recall the advanced and interview mechanisms and boundary constraints.
+Use these prompts after the reading pass to recall the advanced mechanisms and their boundary constraints.
 
 ## See Also
 

@@ -6123,9 +6123,6 @@
   "https://sourcemaking.com/design_patterns/null_object": [
    "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.12-null-object.md"
   ],
-  "https://sourcemaking.com/design_patterns/visitor": [
-   "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.10-visitor.md"
-  ],
   "https://spec.graphql.org/September2025/": [
    "20-backend/20.7-graphql/01-fundamentals/20.7.1.01-graphql-overview.md",
    "20-backend/20.7-graphql/01-fundamentals/20.7.1.02-schema-design.md",
@@ -7375,6 +7372,9 @@
   ],
   "https://www.oreilly.com/library/view/design-patterns-in/0321126971/ch11.html": [
    "30-architecture/30.1-design-patterns/03-structural/30.1.3.04-proxy.md"
+  ],
+  "https://www.oreilly.com/library/view/design-patterns-in/9781484260623/html/463942_2_En_13_Chapter.xhtml": [
+   "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.10-visitor.md"
   ],
   "https://www.oreilly.com/library/view/distributed-tracing-in/9781492056621/": [
    "40-platform/40.4-observability/01-pillars/40.4.1.03-tracing.md",

@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 308,
+    "revised": 309,
     "unchanged": 80,
-    "pending": 132,
-    "reviewed": 388,
+    "pending": 131,
+    "reviewed": 389,
     "topic_chapters": 520
   },
   "entries": [
@@ -4736,12 +4736,21 @@
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.10-visitor.md",
       "group": "30-architecture/30.1-design-patterns/04-behavioral",
       "title": "Visitor Pattern",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "bc30c74e76865a60882223ca6c48351964eaa63190617c32102f10b5fe6f2625",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can a new operation work across stable document-node types without adding that operation to each node class?",
+      "disposition": "Opened with the document-export problem and made the operation-versus-element-type tradeoff explicit. Reworked First Principles to explain type-specific dispatch, connected the code trace to the double-dispatch term, and removed the unrelated iterator row from the comparison. Added a concise GoF textbook definition and removed the weaker SourceMaking reference.",
+      "validation": [
+        "Re-read in behavioral-pattern order alongside Command and Interpreter; checked the operation/type tradeoff, TypeScript dispatch trace, traversal ownership, visitor-versus-parser distinctions, and the cost of adding node types.",
+        "Verified the GoF definition in the publisher-hosted O\u2019Reilly chapter excerpt. The citation endpoint returned no response to automated probes (bot wall); the search-indexed publisher excerpt exposed the exact GoF definition.",
+        "The fenced TypeScript example compiled strictly with TypeScript 5.8.3 targeting ES2022/CommonJS and printed the expected plain-text and outline traversals.",
+        "Read-time, alignment, citation-baseline, search-index and count writers ran; the fixed-point check confirmed the repair writers leave the corpus stable.",
+        "All 30 repository verification gates passed. Standalone links checked 10,797 links and 152 anchors with 0 issues; citation-baseline diff had 0 added or removed URLs at 2,526.",
+        "Ruby 3.4 locked-bundle production Jekyll build, rendered-heading check and git diff --check passed."
+      ],
+      "reviewed_at": "2026-10-14",
+      "review_sha256": "c5ea24a9cf4f8f9a90c9096e9d0605922838ec1a40d74cbcd387f2ef18c06d7c"
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.11-interpreter.md",

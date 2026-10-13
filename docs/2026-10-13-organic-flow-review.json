@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 287,
+    "revised": 288,
     "unchanged": 80,
-    "pending": 153,
-    "reviewed": 367,
+    "pending": 152,
+    "reviewed": 368,
     "topic_chapters": 520
   },
   "entries": [
@@ -4336,12 +4336,17 @@
       "path": "30-architecture/30.1-design-patterns/02-creational/30.1.2.02-factory-method.md",
       "group": "30-architecture/30.1-design-patterns/02-creational",
       "title": "Factory Method and Simple Factories",
-      "status": "pending",
-      "baseline_sha256": "a9eab226a58d8eee82947252357a54a4ad230df6ea739b9f66be8fa1ed728649",
+      "status": "revised",
+      "baseline_sha256": "440a911b490b2ad00f16747c3791ac94357cf7e535834fd7240d9cd0724a9e60",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "When does a stable creator workflow need subclass-supplied construction, and how is that different from a selector or registry?",
+      "disposition": "Removed generic benefit bullets that repeated the construction-boundary explanation and corrected the claim that multi-step complexity alone justifies Factory Method. Sharpened the chapter and category INDEX around the GoF mechanism, explained the erased TypeScript generic at the runtime-plugin boundary, linked the related Template Method chapter, fixed spacing, and added a retrieval question separating the two patterns.",
+      "validation": [
+        "Re-read the chapter in creational learning order with INDEX and REVISION; checked the practical/textbook definitions, simple-factory and Factory Method traces, registry boundary, summary and cross-references.",
+        "Verified TypeScript erased-type behavior against the current official handbook; linked Factory Method to the companion Template Method explanation.",
+        "All 30 repository gates passed; standalone links checked 10,799 links and 152 anchors with zero failures; citation baseline stayed at 2,519 URLs with no drift.",
+        "Ruby 3.4 locked-bundle production Jekyll build and site-wide rendered-heading check passed; git diff --check passed."
+      ]
     },
     {
       "path": "30-architecture/30.1-design-patterns/02-creational/30.1.2.03-builder.md",

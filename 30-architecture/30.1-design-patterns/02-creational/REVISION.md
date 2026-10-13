@@ -42,6 +42,10 @@ Source: [Factory Method and Simple Factories](30.1.2.02-factory-method.md)
 
 **A:** The inherited workflow calls `this.createVehicle`; dispatch reaches `CarFactory`, which constructs a car. The base workflow then reads the product through `Vehicle`. The client did not choose that constructor inside the workflow.
 
+**Q:** Must Factory Method define an entire fixed algorithm, as Template Method does?
+
+**A:** No. Factory Method is the overridable creation operation. A larger Template Method may call it as one step, but Factory Method does not require that whole algorithm.
+
 **Q:** A new notification channel must be chosen by configuration. Does the simple factory's switch violate the intended design?
 
 **A:** Not automatically. A small central switch can own a closed configuration choice. A plugin-registration requirement may justify a registry; subclass-supplied creation inside a base workflow is the distinct Factory Method mechanism.

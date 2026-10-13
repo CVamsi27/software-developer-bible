@@ -53,7 +53,7 @@ Shares one instance within a defined runtime scope. A module export or dependenc
 - An explicit injected shared instance already makes its lifetime clearer
 
 ### [Factory Method](30.1.2.02-factory-method.md)
-Define an interface for creating an object, but let subclasses decide which class to instantiate. Factory Method lets a class defer instantiation to subclasses.
+An overridable creation operation lets a base workflow use a product contract without choosing its concrete type. A configuration switch is a simple factory, not this GoF mechanism.
 
 **When to use:**
 - A class can't anticipate the class of objects it must create

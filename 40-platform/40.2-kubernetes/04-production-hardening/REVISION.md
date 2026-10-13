@@ -86,6 +86,10 @@ Source: [Resource Quotas](40.2.4.04-resource-quotas.md)
 
 **A:** Admission can reject Pod creation. The workload controller may exist with fewer Pods than desired; inspect its events. This differs from an existing Pending Pod that the scheduler cannot place.
 
+**Q:** Why can the node autoscaler do nothing when a quota rejects the fourth requested replica?
+
+**A:** Admission rejected the Pod before it existed, so there is no unschedulable Pod to trigger node provisioning. Fix the namespace budget or workload request first; a Pending Pod indicates a later scheduling-stage problem.
+
 **Q:** A namespace stays below its CPU-request quota. Can its running containers collectively use more CPU than that request total?
 
 **A:** Yes, when node capacity and their runtime limits permit it. Request accounting is not live usage accounting. Quotas restrict declared admission demand; runtime limits and node contention govern actual use.

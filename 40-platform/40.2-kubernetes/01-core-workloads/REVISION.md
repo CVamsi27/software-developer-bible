@@ -22,6 +22,10 @@ Source: [Kubernetes Pods & ReplicaSets](40.2.1.01-pods-replicasets.md)
 
 **A:** The kubelet can restart the container in that same Pod under its restart policy. Deleting a managed Pod instead prompts a workload controller to create a replacement with a new object identity; its process memory is not restored.
 
+**Q:** How does a native sidecar differ from an ordinary init container?
+
+**A:** An ordinary init container must finish before application containers start. A native sidecar is declared as an init container with `restartPolicy: Always`, starts before the application, and continues alongside it; the feature is stable since Kubernetes 1.33.
+
 ## Kubernetes Deployments
 
 Source: [Kubernetes Deployments](40.2.1.02-deployments.md)
@@ -73,6 +77,10 @@ Source: [Jobs & CronJobs](40.2.1.04-jobs-cronjobs.md)
 **Q:** A Job writes its output then crashes before successful exit. What must a replacement attempt assume?
 
 **A:** The prior business effect may already exist although Kubernetes recorded a failed attempt. Reuse a durable idempotency/index decision or otherwise make the effect safe to repeat; completion accounting is not a transaction over external data.
+
+**Q:** One shard in an Indexed Job repeatedly fails while other indexes are useful. How can the controller stop retrying that shard without immediately canceling its siblings?
+
+**A:** Use an Indexed Job with `backoffLimitPerIndex` and a `podFailurePolicy` rule with `FailIndex` for the relevant failure; `podFailurePolicy` requires `restartPolicy: Never`. Kubernetes marks that index failed and stops retrying it while other indexes continue. The Job fails after indexed completion if any index failed, or sooner if failed indexes exceed `maxFailedIndexes`; external effects must still be safe to retry.
 
 ## Summary
 

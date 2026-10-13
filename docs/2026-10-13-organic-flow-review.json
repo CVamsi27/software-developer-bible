@@ -10,10 +10,10 @@
   },
   "counts": {
     "topic_chapters": 520,
-    "revised": 160,
-    "unchanged": 67,
-    "pending": 293,
-    "reviewed": 227
+    "revised": 174,
+    "unchanged": 69,
+    "pending": 277,
+    "reviewed": 243
   },
   "entries": [
     {
@@ -5177,177 +5177,259 @@
       "path": "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.01-pods-replicasets.md",
       "group": "40-platform/40.2-kubernetes/01-core-workloads",
       "title": "Kubernetes Pods & ReplicaSets",
-      "status": "pending",
-      "baseline_sha256": "7a8cbba739be752c20996f535cc33da6307a30ee14ed05e61ca755b0f4bbfb71",
+      "status": "revised",
+      "baseline_sha256": "67ed9d3ded7a3f729f7cfd972bab861573df28f94a59412ff1d1d5b7ed58a770",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Why does deleting a Pod not move its process to a different machine?",
+      "disposition": "Rebuilt around three separate lifecycles: a container restart inside a Pod, a controller replacement Pod, and a Deployment rollout. Kept the shared Pod boundary, selector adoption, sidecar/resource caveats and one reconciliation trace.",
+      "validation": [
+        "Directly reviewed in category order for scenario-to-mechanism-to-decision flow, practical and textbook definitions, First Principles, summary and cross-references.",
+        "Version-sensitive Kubernetes claims checked against current primary documentation; the chapter set passed syntax/rendering checks and all repository gates.",
+        "All 30 repository verification gates passed; standalone link check found 10,847 links and 149 anchors with zero failures, and the 2,520-URL citation baseline had no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.02-deployments.md",
       "group": "40-platform/40.2-kubernetes/01-core-workloads",
       "title": "Kubernetes Deployments",
-      "status": "pending",
+      "status": "unchanged",
       "baseline_sha256": "5dd4613c96d81a2f5b2dacd2c29ffe9881c00a3f90f548ae51c093e06f1b62f2",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can a release preserve traffic while new Pods are being created and checked?",
+      "disposition": "Retained after direct review: one rollout trace connects the Pod template to readiness, replacement capacity and rollout status, then distinguishes deployment strategy, HPA ownership and eviction/application guarantees. The diagnostic and trade-off sections add distinct decisions.",
+      "validation": [
+        "Directly reviewed in category order for scenario-to-mechanism-to-decision flow, practical and textbook definitions, First Principles, summary and cross-references.",
+        "Version-sensitive Kubernetes claims checked against current primary documentation; the chapter set passed syntax/rendering checks and all repository gates.",
+        "All 30 repository verification gates passed; standalone link check found 10,847 links and 149 anchors with zero failures, and the 2,520-URL citation baseline had no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.03-statefulsets-daemonsets.md",
       "group": "40-platform/40.2-kubernetes/01-core-workloads",
       "title": "StatefulSets & DaemonSets",
-      "status": "pending",
-      "baseline_sha256": "2dee2164ae278cea5ff83907108b41b597c038c154c8bc9e0d6255c09ab68d20",
+      "status": "revised",
+      "baseline_sha256": "28b62e710adf3c9c47bc8b02acb6a15fab80cfea59c4cdfc6c9c110ab0d5edc4",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which workload identity must survive replacement, and which workload must cover every eligible node?",
+      "disposition": "Reorganized around two different placement guarantees: StatefulSet identity and storage versus DaemonSet node coverage. Kept ordered/parallel updates, partitions, PVC retention, rollout and security boundaries near the behavior they constrain.",
+      "validation": [
+        "Directly reviewed in category order for scenario-to-mechanism-to-decision flow, practical and textbook definitions, First Principles, summary and cross-references.",
+        "Version-sensitive Kubernetes claims checked against current primary documentation; the chapter set passed syntax/rendering checks and all repository gates.",
+        "All 30 repository verification gates passed; standalone link check found 10,847 links and 149 anchors with zero failures, and the 2,520-URL citation baseline had no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.04-jobs-cronjobs.md",
       "group": "40-platform/40.2-kubernetes/01-core-workloads",
       "title": "Jobs & CronJobs",
-      "status": "pending",
-      "baseline_sha256": "46ddbae261d9b771021608dd5dbac006328f96c7e889e7bab9b5c67a5169ea65",
+      "status": "revised",
+      "baseline_sha256": "0ea4efca56158f377202de081f107d95d33654ae13379346231488536bfea50e",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How should scheduled work behave when a Pod can fail after its external effect already happened?",
+      "disposition": "Reworked around finite work, scheduled attempts and business effects. Clarified Indexed Job retry accounting, pod failure policies, CronJob time/concurrency and missed-schedule limits, with idempotency and one migration/backup trace.",
+      "validation": [
+        "Directly reviewed in category order for scenario-to-mechanism-to-decision flow, practical and textbook definitions, First Principles, summary and cross-references.",
+        "Version-sensitive Kubernetes claims checked against current primary documentation; the chapter set passed syntax/rendering checks and all repository gates.",
+        "All 30 repository verification gates passed; standalone link check found 10,847 links and 149 anchors with zero failures, and the 2,520-URL citation baseline had no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.01-services-ingress.md",
       "group": "40-platform/40.2-kubernetes/02-networking-and-config",
       "title": "Kubernetes Services & Ingress",
-      "status": "pending",
-      "baseline_sha256": "74253e928af2dd78dc1b1b01ba160752f570b02ce4a979db145a15d75b37a9b9",
+      "status": "revised",
+      "baseline_sha256": "412ea2a24854f3319c7fbd00099f8ac3d3de124d80459b606b47b83eccd2851d",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can callers keep reaching an API after its Pods receive new IP addresses?",
+      "disposition": "Added the concrete request path first, then connected Service discovery/port mapping to HTTP routing and external exposure. Preserved distinctions among Service types, Ingress controller behavior, backend readiness and source-IP caveats.",
+      "validation": [
+        "Directly reviewed in category order for scenario-to-mechanism-to-decision flow, practical and textbook definitions, First Principles, summary and cross-references.",
+        "Version-sensitive Kubernetes claims checked against current primary documentation; the chapter set passed syntax/rendering checks and all repository gates.",
+        "All 30 repository verification gates passed; standalone link check found 10,847 links and 149 anchors with zero failures, and the 2,520-URL citation baseline had no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.02-configmaps-secrets.md",
       "group": "40-platform/40.2-kubernetes/02-networking-and-config",
       "title": "Kubernetes ConfigMaps & Secrets",
-      "status": "pending",
-      "baseline_sha256": "eb4da580bd54bd323667893c248b3c0f38dbf0ed811cac50e222ea511735ba4e",
+      "status": "revised",
+      "baseline_sha256": "e586dee81bb639fdcbb8eb810bfbb85de4369d8d14279307a9f374c39e944016",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "When does a rotated Secret actually become the value a running application uses?",
+      "disposition": "Reframed around the delivery path from API object through kubelet projection or environment creation to process memory. Kept update/rotation timing, confidentiality, permissions and workload-specific consumption at their decision points.",
+      "validation": [
+        "Directly reviewed in category order for scenario-to-mechanism-to-decision flow, practical and textbook definitions, First Principles, summary and cross-references.",
+        "Version-sensitive Kubernetes claims checked against current primary documentation; the chapter set passed syntax/rendering checks and all repository gates.",
+        "All 30 repository verification gates passed; standalone link check found 10,847 links and 149 anchors with zero failures, and the 2,520-URL citation baseline had no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.03-podpresets.md",
       "group": "40-platform/40.2-kubernetes/02-networking-and-config",
       "title": "PodPresets",
-      "status": "pending",
-      "baseline_sha256": "ac975af6ac8c7c64b65b52a344c3ab48c4ef4065b211ecc3c687338c438ebd67",
+      "status": "revised",
+      "baseline_sha256": "4fe00c65f9826dc22c7b7852b28240202cc3bd02ffcbf2d65d91ccb8bc4b5683",
       "previous_depth_review": "reviewed",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Why can an old PodPreset manifest be rejected by a current cluster, and where should shared defaults live now?",
+      "disposition": "Clarified that PodPreset was removed in Kubernetes 1.20. Reframed as a migration and ownership decision among workload templates, build-time transformations, mutation and validation; retained the historical scope and webhook failure boundary.",
+      "validation": [
+        "Directly reviewed in category order for scenario-to-mechanism-to-decision flow, practical and textbook definitions, First Principles, summary and cross-references.",
+        "Version-sensitive Kubernetes claims checked against current primary documentation; the chapter set passed syntax/rendering checks and all repository gates.",
+        "All 30 repository verification gates passed; standalone link check found 10,847 links and 149 anchors with zero failures, and the 2,520-URL citation baseline had no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "40-platform/40.2-kubernetes/03-scaling/40.2.3.01-hpa-scaling.md",
       "group": "40-platform/40.2-kubernetes/03-scaling",
       "title": "Kubernetes HPA & Scaling",
-      "status": "pending",
-      "baseline_sha256": "5cc7515031f8d253c7308d1817c0478a3ec304953edd5c318ed02c7afeaf2846",
+      "status": "revised",
+      "baseline_sha256": "e902f2885b65e30201e13fafe61e8778cf197fd0f6ca59484ffbba4481aa05a5",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "When do more replicas reduce the queue, and what limits the HPA from making that change?",
+      "disposition": "Removed a duplicate rationale section and tied the metric/request denominator, replica calculation, stabilization and scale-to-zero boundary to one path from observed load to ready capacity. Kept the bottleneck test beside the scaling decision.",
+      "validation": [
+        "Directly reviewed in category order for scenario-to-mechanism-to-decision flow, practical and textbook definitions, First Principles, summary and cross-references.",
+        "Version-sensitive Kubernetes claims checked against current primary documentation; the chapter set passed syntax/rendering checks and all repository gates.",
+        "All 30 repository verification gates passed; standalone link check found 10,847 links and 149 anchors with zero failures, and the 2,520-URL citation baseline had no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "40-platform/40.2-kubernetes/03-scaling/40.2.3.02-node-autoscaling-cluster-capacity.md",
       "group": "40-platform/40.2-kubernetes/03-scaling",
       "title": "Node Autoscaling & Cluster Capacity (Cluster Autoscaler, Karpenter)",
-      "status": "pending",
-      "baseline_sha256": "3ec04dddb922890bd6016e79c87fe2f977d77a90a44ecd98a9337a0e2f798bc7",
+      "status": "revised",
+      "baseline_sha256": "84fb0155749c401223df07dcde83df2cf1a0b80547ccc57a2481929496429477",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Why can desired replicas exceed running Pods even when the Deployment is healthy?",
+      "disposition": "Condensed the capacity story into scheduler fit, node provisioning, ready capacity and disruption-safe reclamation. Retained requests/constraints, pool selection, warm headroom, scale-to-zero and diagnosis without repeating generic autoscaler guidance.",
+      "validation": [
+        "Directly reviewed in category order for scenario-to-mechanism-to-decision flow, practical and textbook definitions, First Principles, summary and cross-references.",
+        "Version-sensitive Kubernetes claims checked against current primary documentation; the chapter set passed syntax/rendering checks and all repository gates.",
+        "All 30 repository verification gates passed; standalone link check found 10,847 links and 149 anchors with zero failures, and the 2,520-URL citation baseline had no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.01-health-checks.md",
       "group": "40-platform/40.2-kubernetes/04-production-hardening",
       "title": "Kubernetes Health Checks",
-      "status": "pending",
+      "status": "unchanged",
       "baseline_sha256": "246ea796101d7280468f902929e34adffb75e0e7e2b8c6f4bbb288ae4162fe67",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Should a starting, overloaded or deadlocked process receive traffic, be restarted, or get more time?",
+      "disposition": "Retained after direct review: the opening separates startup, readiness and liveness evidence, then follows each probe to the kubelet action. Workload-specific cases and observation/tuning add distinct operational judgment without repeating definitions.",
+      "validation": [
+        "Directly reviewed in category order for scenario-to-mechanism-to-decision flow, practical and textbook definitions, First Principles, summary and cross-references.",
+        "Version-sensitive Kubernetes claims checked against current primary documentation; the chapter set passed syntax/rendering checks and all repository gates.",
+        "All 30 repository verification gates passed; standalone link check found 10,847 links and 149 anchors with zero failures, and the 2,520-URL citation baseline had no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.02-pod-disruption-budgets.md",
       "group": "40-platform/40.2-kubernetes/04-production-hardening",
       "title": "Pod Disruption Budgets",
-      "status": "pending",
-      "baseline_sha256": "d20c76a282d120661911f85af9a20468bd646677ab8cfa55094c859ddd2b9412",
+      "status": "revised",
+      "baseline_sha256": "de175dd8cb1e973cb5351a07d253bc9cda95c2c318db61a6e318a3b9fe6050ac",
       "previous_depth_review": "reviewed",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What happens when a node drain requests eviction while the service still needs those replicas?",
+      "disposition": "Removed duplicate generic checklists and kept the eviction path, `disruptionsAllowed`, readiness/capacity relationship, workload examples and `AlwaysAllow` unhealthy-Pod behavior together. The chapter distinguishes voluntary API-mediated eviction from failures outside PDB control.",
+      "validation": [
+        "Directly reviewed in category order for scenario-to-mechanism-to-decision flow, practical and textbook definitions, First Principles, summary and cross-references.",
+        "Version-sensitive Kubernetes claims checked against current primary documentation; the chapter set passed syntax/rendering checks and all repository gates.",
+        "All 30 repository verification gates passed; standalone link check found 10,847 links and 149 anchors with zero failures, and the 2,520-URL citation baseline had no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.03-rbac-network-policies.md",
       "group": "40-platform/40.2-kubernetes/04-production-hardening",
       "title": "RBAC & Network Policies",
-      "status": "pending",
-      "baseline_sha256": "a89a9a610f4ac95168c874e00b52cd7535f78cc05e8ef64e8ad015e9cd7371ae",
+      "status": "revised",
+      "baseline_sha256": "ccff7448267d7552b690127e8e47fb803d089d90c4289696bc3e457ceffa76d2",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Why does removing an API permission fail to close a Pod network path to the database?",
+      "disposition": "Joined the two controls under one access scenario, then traced RBAC authorization and NetworkPolicy packet permissions separately. Clarified effective `policyTypes`, additive allows, required source-egress/destination-ingress and the CNI enforcement boundary.",
+      "validation": [
+        "Directly reviewed in category order for scenario-to-mechanism-to-decision flow, practical and textbook definitions, First Principles, summary and cross-references.",
+        "Version-sensitive Kubernetes claims checked against current primary documentation; the chapter set passed syntax/rendering checks and all repository gates.",
+        "All 30 repository verification gates passed; standalone link check found 10,847 links and 149 anchors with zero failures, and the 2,520-URL citation baseline had no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.04-resource-quotas.md",
       "group": "40-platform/40.2-kubernetes/04-production-hardening",
       "title": "Resource Quotas",
-      "status": "pending",
-      "baseline_sha256": "a18046664dd158296e821d23c3a995846b768195526d9018572a40fd6561d829",
+      "status": "revised",
+      "baseline_sha256": "299602928e71d3090b40d51d1a623511fd357652c8d3ae665f137c6c5f9f1cdc",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Why can a requested Pod be rejected before scheduling, leaving a node autoscaler nothing to fix?",
+      "disposition": "Rebuilt around admission rejection versus scheduler capacity and runtime usage. Kept one quota/LimitRange configuration, scoped budgets, rollout headroom and practical diagnosis; removed repeated generic best-practice catalogs.",
+      "validation": [
+        "Directly reviewed in category order for scenario-to-mechanism-to-decision flow, practical and textbook definitions, First Principles, summary and cross-references.",
+        "Version-sensitive Kubernetes claims checked against current primary documentation; the chapter set passed syntax/rendering checks and all repository gates.",
+        "All 30 repository verification gates passed; standalone link check found 10,847 links and 149 anchors with zero failures, and the 2,520-URL citation baseline had no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.01-helm.md",
       "group": "40-platform/40.2-kubernetes/05-packaging-and-extensibility",
       "title": "Kubernetes Helm",
-      "status": "pending",
-      "baseline_sha256": "d116694e88938c3a9c6609771b5121fe3769a6e1423a79d8f7d2be74cb6b17a5",
+      "status": "revised",
+      "baseline_sha256": "3b3e68d1c159c97b0b1fd32c3fb4e6aede5be2b38fdce0b2d319fbb8c608bab0",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can one packaged release support environment differences while retaining a reviewable upgrade and recovery path?",
+      "disposition": "Reorganized the chart, values and template example into one release flow; added the matching HPA template; separated development and production values. Clarified release-history limits, Helm 4 server-side apply, rollback side effects and CRD lifecycle.",
+      "validation": [
+        "Directly reviewed in category order for scenario-to-mechanism-to-decision flow, practical and textbook definitions, First Principles, summary and cross-references.",
+        "Version-sensitive Kubernetes claims checked against current primary documentation; the chapter set passed syntax/rendering checks and all repository gates.",
+        "All 30 repository verification gates passed; standalone link check found 10,847 links and 149 anchors with zero failures, and the 2,520-URL citation baseline had no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed.",
+        "Helm 4.3.0 lint and development/production renders confirmed the HPA is enabled only in production."
+      ]
     },
     {
       "path": "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.02-kustomize-overlays-packaging-tradeoffs.md",
       "group": "40-platform/40.2-kubernetes/05-packaging-and-extensibility",
       "title": "Kustomize Overlays & Packaging Trade-offs",
-      "status": "pending",
-      "baseline_sha256": "31bac88465690bb33f960e2782230194c008dc72e04a4e8e29b22aff2b023691",
+      "status": "revised",
+      "baseline_sha256": "0e6b3e6d71f0e6ece86df06633b2f1f963393523fa539e0ed8a8776af1a2103e",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How does changing one configuration input produce a rollout without templating the whole manifest?",
+      "disposition": "Rebuilt around a generated ConfigMap hash changing a Pod template, then explained patch and transformer boundaries, Helm input composition, secret handling and exact rendered-artifact validation. Restored First Principles and verified the production overlay build.",
+      "validation": [
+        "Directly reviewed in category order for scenario-to-mechanism-to-decision flow, practical and textbook definitions, First Principles, summary and cross-references.",
+        "Version-sensitive Kubernetes claims checked against current primary documentation; the chapter set passed syntax/rendering checks and all repository gates.",
+        "All 30 repository verification gates passed; standalone link check found 10,847 links and 149 anchors with zero failures, and the 2,520-URL citation baseline had no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed.",
+        "kubectl bundled Kustomize built the production overlay and confirmed namespace, replica patch and label output."
+      ]
     },
     {
       "path": "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.03-crds-operators-controller-patterns.md",
       "group": "40-platform/40.2-kubernetes/05-packaging-and-extensibility",
       "title": "CRDs, Operators & Controller Patterns",
-      "status": "pending",
-      "baseline_sha256": "d3f2dc78e28197974477d7525980ffcb6e212eeaa8f0a81f117354c9ca43a5b2",
+      "status": "revised",
+      "baseline_sha256": "890fb97a60af81b73ea13f31e7cf920dd37d1d7364ad9d1a3089dcb7fb9b6cf0",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Why can a custom resource be accepted by the API while no database is created?",
+      "disposition": "Rebuilt around the distinction between a stored API contract and the controller that performs work. Restored First Principles and retained schema/version/scale contracts, level-triggered reconciliation, cleanup ownership, controller shape and the decision to operate an operator.",
+      "validation": [
+        "Directly reviewed in category order for scenario-to-mechanism-to-decision flow, practical and textbook definitions, First Principles, summary and cross-references.",
+        "Version-sensitive Kubernetes claims checked against current primary documentation; the chapter set passed syntax/rendering checks and all repository gates.",
+        "All 30 repository verification gates passed; standalone link check found 10,847 links and 149 anchors with zero failures, and the 2,520-URL citation baseline had no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.01-github-actions.md",

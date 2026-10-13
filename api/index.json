@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "53577168ba7f6adc3710112b8b88325aaf2a58e62c9e748aa9903f6823161bde",
+ "corpus_digest": "ae7ef8f98ccc32c6700028bc3a92fdc6a44d48f3d5dff242eaeb6a0dcf3be4e1",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5450
+  "read_minutes": 5391
  },
  "chapters": [
   {
@@ -4967,7 +4967,7 @@
    "g": [
     "concept"
    ],
-   "m": 22
+   "m": 7
   },
   {
    "p": "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.02-deployments.html",
@@ -4987,7 +4987,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 7
   },
   {
    "p": "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.04-jobs-cronjobs.html",
@@ -4997,7 +4997,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "40-platform/40.2-kubernetes/01-core-workloads/REVISION.html",
@@ -5059,7 +5059,7 @@
    "g": [
     "concept"
    ],
-   "m": 16
+   "m": 15
   },
   {
    "p": "40-platform/40.2-kubernetes/03-scaling/40.2.3.02-node-autoscaling-cluster-capacity.html",
@@ -5069,7 +5069,7 @@
    "g": [
     "concept"
    ],
-   "m": 17
+   "m": 9
   },
   {
    "p": "40-platform/40.2-kubernetes/03-scaling/REVISION.html",
@@ -5110,7 +5110,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 10
   },
   {
    "p": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.04-resource-quotas.html",
@@ -5120,7 +5120,7 @@
    "g": [
     "concept"
    ],
-   "m": 21
+   "m": 6
   },
   {
    "p": "40-platform/40.2-kubernetes/04-production-hardening/REVISION.html",
@@ -5141,7 +5141,7 @@
    "g": [
     "concept"
    ],
-   "m": 19
+   "m": 17
   },
   {
    "p": "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.02-kustomize-overlays-packaging-tradeoffs.html",
@@ -5151,7 +5151,7 @@
    "g": [
     "concept"
    ],
-   "m": 13
+   "m": 8
   },
   {
    "p": "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.03-crds-operators-controller-patterns.html",
@@ -5161,7 +5161,7 @@
    "g": [
     "concept"
    ],
-   "m": 17
+   "m": 10
   },
   {
    "p": "40-platform/40.2-kubernetes/05-packaging-and-extensibility/REVISION.html",
@@ -5182,7 +5182,7 @@
    "g": [
     "interview-questions"
    ],
-   "m": 21
+   "m": 20
   },
   {
    "p": "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.01-github-actions.html",

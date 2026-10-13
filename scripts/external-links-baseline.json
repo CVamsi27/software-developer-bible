@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-13",
- "url_count": 2519,
+ "url_count": 2520,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md",
@@ -3439,6 +3439,9 @@
    "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.01-helm.md"
   ],
   "https://helm.sh/docs/helm/helm_upgrade/": [
+   "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.01-helm.md"
+  ],
+  "https://helm.sh/docs/overview/": [
    "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.01-helm.md"
   ],
   "https://helm.sh/docs/topics/charts/": [

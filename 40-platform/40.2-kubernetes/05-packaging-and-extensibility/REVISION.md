@@ -22,9 +22,13 @@ Source: [Kubernetes Helm](40.2.5.01-helm.md)
 
 **A:** Templates and chart defaults determine the actual manifests. Valid values are not proof that the rendered deployment has safe probes, selectors, permissions, or resource settings.
 
-**Q:** A Helm values file enables autoscaling but the chart has no HPA template. What exists after rendering?
+**Q:** A production values file enables autoscaling and the chart includes the matching HPA template. Which controller owns the replica count?
 
-**A:** Only resources consumed by actual templates exist. The Deployment may omit fixed replicas while no HPA is created. Inspect rendered objects and either disable the option or author the missing controller object; a value name is not behavior.
+**A:** The HPA owns the Deployment's scale subresource. The Deployment template omits a competing fixed `spec.replicas`; CPU utilization also requires suitable resource requests and a working metrics API.
+
+**Q:** How does Helm 4 choose an apply method for a new release versus an existing Helm 3 release?
+
+**A:** A new release uses server-side apply by default. An upgrade or rollback follows the release's prior apply method unless explicitly overridden, so an existing Helm 3 release stays on client-side apply by default. Test field ownership when other managers update the same resources.
 
 ## Kustomize Overlays & Packaging Trade-offs
 

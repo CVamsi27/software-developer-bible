@@ -1,6 +1,6 @@
 # Packaging & Extensibility
 
-> **Study time:** ≈ 51 min of reading (4 files, ~13 min average).
+> **Study time:** ≈ 37 min of reading (4 files, ~9 min average).
 > **4 files.** Distributing and extending Kubernetes itself: Helm charts and Kustomize overlays as the packaging layer, plus the extension surface (CRDs, controllers, operators) that turns Kubernetes into a platform for building platforms.
 
 [![Files](https://img.shields.io/badge/files-4-blue)](#file-index)
@@ -25,9 +25,9 @@ Packaging composes the objects to submit; controllers reconcile those objects in
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Helm](40.2.5.01-helm.md) | Charts, templates, values overrides, release revisions and rollback boundaries, dependencies, HTTP and OCI distribution | Optional | Specialized | 19 min |
-| 02 | [Kustomize Overlays & Packaging Trade-offs](40.2.5.02-kustomize-overlays-packaging-tradeoffs.md) | Bases and overlays, strategic-merge and JSON Patch, generated ConfigMap rollouts, transformers, Helm integration and secret boundaries | Optional | Specialized | 13 min |
-| 03 | [CRDs, Operators & Controller Patterns](40.2.5.03-crds-operators-controller-patterns.md) | CRD schema and versioning, reconciliation, controller ownership, garbage collection, finalizers and operator decision boundaries | Optional | Specialized | 17 min |
+| 01 | [Helm](40.2.5.01-helm.md) | Charts, templates, values overrides, release revisions and rollback boundaries, dependencies, HTTP and OCI distribution | Optional | Specialized | 17 min |
+| 02 | [Kustomize Overlays & Packaging Trade-offs](40.2.5.02-kustomize-overlays-packaging-tradeoffs.md) | Bases and overlays, strategic-merge and JSON Patch, generated ConfigMap rollouts, transformers, Helm integration and secret boundaries | Optional | Specialized | 8 min |
+| 03 | [CRDs, Operators & Controller Patterns](40.2.5.03-crds-operators-controller-patterns.md) | CRD schema and versioning, reconciliation, controller ownership, garbage collection, finalizers and operator decision boundaries | Optional | Specialized | 10 min |
 
 ---
 

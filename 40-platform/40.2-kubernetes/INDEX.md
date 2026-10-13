@@ -1,6 +1,6 @@
 # Kubernetes — Index
 
-> **Study time:** ≈ 3 h 53 m of reading (22 files, ~11 min average).
+> **Study time:** ≈ 2 h 54 m of reading (22 files, ~8 min average).
 > **22 files** — Kubernetes orchestration from pods and replica sets to deployments, services, ingress, ConfigMaps, HPA, node autoscaling (Karpenter/Cluster Autoscaler), health checks, Helm, Kustomize, CRDs/operators, security, batch workloads, PDBs, resource quotas, admission injection, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-22-blue)](../../INDEX.md)
@@ -30,10 +30,10 @@ What runs in K8s. Read these first.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Pods & ReplicaSets](01-core-workloads/40.2.1.01-pods-replicasets.md) | Pod lifecycle, init containers, sidecars, RS scaling | Optional | Specialized | 22 min |
+| 01 | [Pods & ReplicaSets](01-core-workloads/40.2.1.01-pods-replicasets.md) | Pod lifecycle, init containers, sidecars, RS scaling | Optional | Specialized | 7 min |
 | 02 | [Deployments](01-core-workloads/40.2.1.02-deployments.md) | Rolling updates, rollbacks, strategy, status management | Optional | Specialized | 9 min |
-| 03 | [StatefulSets & DaemonSets](01-core-workloads/40.2.1.03-statefulsets-daemonsets.md) | Stateful workloads (databases), stable network IDs, node-level agents (logging, monitoring) | Optional | Specialized | 10 min |
-| 04 | [Jobs & CronJobs](01-core-workloads/40.2.1.04-jobs-cronjobs.md) | Batch jobs, scheduled tasks, backoff, parallelism, completion mode | Optional | Specialized | 8 min |
+| 03 | [StatefulSets & DaemonSets](01-core-workloads/40.2.1.03-statefulsets-daemonsets.md) | Stateful workloads (databases), stable network IDs, node-level agents (logging, monitoring) | Optional | Specialized | 7 min |
+| 04 | [Jobs & CronJobs](01-core-workloads/40.2.1.04-jobs-cronjobs.md) | Batch jobs, scheduled tasks, backoff, parallelism, completion mode | Optional | Specialized | 7 min |
 
 ---
 
@@ -53,8 +53,8 @@ How traffic and configuration get in.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 08 | [HPA & Scaling](03-scaling/40.2.3.01-hpa-scaling.md) | Horizontal pod autoscaling, metrics server, custom metrics, VPA | Optional | Specialized | 16 min |
-| 09 | [Node Autoscaling & Cluster Capacity](03-scaling/40.2.3.02-node-autoscaling-cluster-capacity.md) | Cluster Autoscaler rules, Karpenter consolidation, node pools/taints, overprovisioning buffers, GPU/stateful caveats | Optional | Specialized | 17 min |
+| 08 | [HPA & Scaling](03-scaling/40.2.3.01-hpa-scaling.md) | Horizontal pod autoscaling, metrics server, custom metrics, VPA | Optional | Specialized | 15 min |
+| 09 | [Node Autoscaling & Cluster Capacity](03-scaling/40.2.3.02-node-autoscaling-cluster-capacity.md) | Cluster Autoscaler rules, Karpenter consolidation, node pools/taints, overprovisioning buffers, GPU/stateful caveats | Optional | Specialized | 9 min |
 
 ---
 
@@ -66,8 +66,8 @@ The senior-level reliability and security layer.
 | --: | ------ | -------- | --- | --- | ----------: |
 | 10 | [Health Checks](04-production-hardening/40.2.4.01-health-checks.md) | Liveness, readiness, startup probes, probe configuration, failure modes | Optional | Specialized | 9 min |
 | 11 | [Pod Disruption Budgets](04-production-hardening/40.2.4.02-pod-disruption-budgets.md) | minAvailable, maxUnavailable, voluntary disruptions, node drainage, availability | Optional | Specialized | 6 min |
-| 12 | [RBAC & Network Policies](04-production-hardening/40.2.4.03-rbac-network-policies.md) | Roles, ClusterRoles, Bindings, ServiceAccounts, NetworkPolicies, micro-segmentation | Optional | Specialized | 11 min |
-| 13 | [Resource Quotas](04-production-hardening/40.2.4.04-resource-quotas.md) | ResourceQuota, LimitRange, multi-tenant isolation, priority classes, monitoring | Optional | Specialized | 21 min |
+| 12 | [RBAC & Network Policies](04-production-hardening/40.2.4.03-rbac-network-policies.md) | Roles, ClusterRoles, Bindings, ServiceAccounts, NetworkPolicies, micro-segmentation | Optional | Specialized | 10 min |
+| 13 | [Resource Quotas](04-production-hardening/40.2.4.04-resource-quotas.md) | ResourceQuota, LimitRange, multi-tenant isolation, priority classes, monitoring | Optional | Specialized | 6 min |
 
 ---
 
@@ -75,9 +75,9 @@ The senior-level reliability and security layer.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 14 | [Helm](05-packaging-and-extensibility/40.2.5.01-helm.md) | Chart templates and values, release revisions, rollback limits, dependencies, HTTP and OCI distribution | Optional | Specialized | 19 min |
-| 15 | [Kustomize Overlays](05-packaging-and-extensibility/40.2.5.02-kustomize-overlays-packaging-tradeoffs.md) | Bases and overlays, strategic merge and JSON Patch, generators, transformers, Helm integration and secret handling | Optional | Specialized | 13 min |
-| 16 | [CRDs, Operators & Controller Patterns](05-packaging-and-extensibility/40.2.5.03-crds-operators-controller-patterns.md) | CRD schema and versioning, reconciliation, ownership and garbage collection, finalizers, operator decision boundaries | Optional | Specialized | 17 min |
+| 14 | [Helm](05-packaging-and-extensibility/40.2.5.01-helm.md) | Chart templates and values, release revisions, rollback limits, dependencies, HTTP and OCI distribution | Optional | Specialized | 17 min |
+| 15 | [Kustomize Overlays](05-packaging-and-extensibility/40.2.5.02-kustomize-overlays-packaging-tradeoffs.md) | Bases and overlays, strategic merge and JSON Patch, generators, transformers, Helm integration and secret handling | Optional | Specialized | 8 min |
+| 16 | [CRDs, Operators & Controller Patterns](05-packaging-and-extensibility/40.2.5.03-crds-operators-controller-patterns.md) | CRD schema and versioning, reconciliation, ownership and garbage collection, finalizers, operator decision boundaries | Optional | Specialized | 10 min |
 
 ---
 
@@ -85,7 +85,7 @@ The senior-level reliability and security layer.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 17 | [Interview Questions](06-interview-prep/40.2.6.01-interview-questions.md) | Curated questions with answers | Optional | Specialized | 21 min |
+| 17 | [Interview Questions](06-interview-prep/40.2.6.01-interview-questions.md) | Curated questions with answers | Optional | Specialized | 20 min |
 
 ---
 

@@ -1,6 +1,6 @@
 # Production Hardening
 
-> **Study time:** ≈ 49 min of reading (5 files, ~10 min average).
+> **Study time:** ≈ 33 min of reading (5 files, ~7 min average).
 > **Four learning chapters and one revision companion.** Connect runtime health, voluntary eviction, API authorization, Pod network reachability, and namespace resource limits.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#file-index)
@@ -21,8 +21,8 @@ A running replica can still be unable to serve, maintenance can remove useful ca
 | --   : | ------ | -------- | --- | --- | ----------: |
 | 01 | [Health Checks](40.2.4.01-health-checks.md) | Liveness, readiness, startup probes; probe configuration; failure modes; probe-induced outages | Optional | Specialized | 9 min |
 | 02 | [Pod Disruption Budgets](40.2.4.02-pod-disruption-budgets.md) | minAvailable/maxUnavailable, voluntary disruptions, node drains, availability during maintenance | Optional | Specialized | 6 min |
-| 03 | [RBAC & Network Policies](40.2.4.03-rbac-network-policies.md) | Roles, ClusterRoles, Bindings, ServiceAccounts; default-deny networking; micro-segmentation | Optional | Specialized | 11 min |
-| 04 | [Resource Quotas](40.2.4.04-resource-quotas.md) | ResourceQuota, LimitRange, multi-tenant isolation, priority classes, monitoring usage | Optional | Specialized | 21 min |
+| 03 | [RBAC & Network Policies](40.2.4.03-rbac-network-policies.md) | Roles, ClusterRoles, Bindings, ServiceAccounts; default-deny networking; micro-segmentation | Optional | Specialized | 10 min |
+| 04 | [Resource Quotas](40.2.4.04-resource-quotas.md) | ResourceQuota, LimitRange, multi-tenant isolation, priority classes, monitoring usage | Optional | Specialized | 6 min |
 
 ---
 

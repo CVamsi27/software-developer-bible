@@ -48,7 +48,7 @@ Source: [Chain of Responsibility](30.1.4.03-chain-of-responsibility.md)
 
 **Q:** What must a Chain of Responsibility define besides handler order?
 
-**A:** Whether a handler stops or forwards the request, what happens when none handles it, and how errors propagate. Middleware chains may deliberately run multiple handlers.
+**A:** Whether a handler stops or forwards the request, what happens when none handles it, and how errors propagate. Express 5 forwards rejected returned promises; Express 4 requires async failures to reach `next(err)`.
 
 **Q:** Trace an urgent billing ticket and an ordinary unknown ticket.
 

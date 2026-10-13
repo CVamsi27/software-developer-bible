@@ -1,6 +1,6 @@
 # Microservices & Distributed Patterns — Index
 
-> **Study time:** ≈ 2 h 6 m of reading (23 files, ~5 min average).
+> **Study time:** ≈ 2 h 8 m of reading (23 files, ~6 min average).
 > **23 files — the single home for distributed-systems patterns.** Learn service topology and communication first, then data ownership, partial-failure recovery and migration. Use each category’s revision companion before interview practice.
 >
 > Canonical source for saga, circuit breaker, bulkhead, strangler fig, service discovery, API gateway, CQRS/event sourcing, monolith database decomposition, gRPC — the thinner twins in `30.3-infra-patterns` were consolidated here.
@@ -53,7 +53,7 @@ After each learning pass, use its source-linked companion: [Topology](01-service
 | III | 09 | [Circuit Breaker](04-resilience/20.6.4.01-circuit-breaker.md) | States, fallbacks, resilience wiring | Essential | Important |
 | III | 10 | [Bulkhead Pattern](04-resilience/20.6.4.02-bulkhead-pattern.md) | Pool isolation, tenant isolation | Important | Important |
 | III | 11 | [Service Mesh](01-service-topology/20.6.1.03-service-mesh.md) | Istio, Linkerd, mTLS, sidecar and ambient data planes, traffic policy and application trace context | Important | Important |
-| IV | 12 | [Kafka](02-communication-and-messaging/20.6.2.03-kafka.md) | Topics, partitions, consumer groups, transactions within Kafka's boundary | Important | Important |
+| IV | 12 | [Kafka](02-communication-and-messaging/20.6.2.03-kafka.md) | Topics, partitions, classic/share consumers, ordering and transactions within Kafka's boundary | Important | Important |
 | IV | 13 | [RabbitMQ](02-communication-and-messaging/20.6.2.04-rabbitmq.md) | Exchanges, queues, durability | Important | Important |
 | IV | 14 | [Message Brokers](02-communication-and-messaging/20.6.2.05-message-brokers.md) | Kafka vs RabbitMQ, DLQ discipline | Important | Important |
 | IV | 15 | [Event-Driven Architecture](02-communication-and-messaging/20.6.2.06-event-driven-architecture.md) | Asynchronous facts, producer/consumer contracts, outbox and reprocessing | Essential | Important |

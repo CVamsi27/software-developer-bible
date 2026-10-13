@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 220,
-    "unchanged": 79,
-    "pending": 221,
-    "reviewed": 299,
+    "revised": 225,
+    "unchanged": 80,
+    "pending": 215,
+    "reviewed": 305,
     "topic_chapters": 520
   },
   "entries": [
@@ -3787,67 +3787,102 @@
       "path": "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.01-grpc.md",
       "group": "20-backend/20.6-microservices/02-communication-and-messaging",
       "title": "gRPC",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "04d18945ddcf2fb5848c0de560f29d322137f14733dbc386bed78304219f4447",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What contract does gRPC standardize across a remote call, and what remains a service responsibility?",
+      "disposition": "Added a cross-language checkout/pricing opening and shortened cross-references. Kept unary wire/status tracing, the runnable local contract, deadlines, cancellation, authorization, schema evolution and performance-measurement limits.",
+      "validation": [
+        "Directly re-read all six teaching chapters in learning order with the category INDEX, REVISION companion and relevant microservices interview answers.",
+        "Checked current gRPC RPC lifecycle/Node guide, Kafka 4.3 Share Consumer and producer configuration, Confluent JavaScript 1.11.0 API surface, and RabbitMQ 4.3.6 queue/retry contracts against primary docs; every newly introduced external URL returned HTTP 200.",
+        "Checked headings and chapter flow; retained practical/textbook definitions, separate First Principles and one Summary. Reconciled Share Consumer and strict queue-ordering coverage in the revision companion and both learning indexes.",
+        "All 30 repository verification gates passed. Standalone link checking found 10,822 local links and 149 anchors with zero failures; the 2,514-URL citation baseline and writer fixed point are clean.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed; all six edited pages render one authored H1. No live broker integration test was needed for this documentation-only flow pass."
+      ]
     },
     {
       "path": "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.02-grpc-streaming.md",
       "group": "20-backend/20.6-microservices/02-communication-and-messaging",
       "title": "gRPC Streaming",
-      "status": "pending",
+      "status": "unchanged",
       "baseline_sha256": "3a14ec52dda888a7b99921591f2e0505c87b7e8a9a95b5c481e61abf9e4786d3",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How does a long-lived call stop work and bound memory when producer and reader run at different rates?",
+      "disposition": "Re-read alongside unary gRPC; its feed example already motivates incremental results and cancellation before formal terms. Kept the focused flow-shape comparison, bounded backpressure/cancellation fixture, and explicit reconnect, authorization, buffer and terminal-outcome boundaries because each advances the reader question.",
+      "validation": [
+        "Directly re-read with the five edited communication chapters, category INDEX, REVISION companion and relevant microservices interview answers.",
+        "Checked gRPC core lifecycle and streaming semantics against the current primary guide; chapter example and local references were reviewed.",
+        "All 30 repository gates passed. Standalone links found 10,822 local links and 149 anchors with zero failures; 2,514 citation URLs have no baseline drift and writers reach a fixed point.",
+        "Ruby 3.4.11 production Jekyll build, site-wide rendered-heading sweep and focused one-H1 checks for all six category pages passed."
+      ]
     },
     {
       "path": "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.03-kafka.md",
       "group": "20-backend/20.6-microservices/02-communication-and-messaging",
       "title": "Apache Kafka",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "232abeabd906df9f310502540074bde311a7c427b610a14969f1190e06ea0b07",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What history and progress does Kafka retain, and which effects fall outside its transaction?",
+      "disposition": "Added a lagging-reader opening, removed duplicated generic references, corrected the excessive max-in-flight=1 prescription, and linked current Kafka APIs/configuration. Kept partition ordering, retention, rebalance, idempotence, transactional offset coordination and external-effect limits.",
+      "validation": [
+        "Directly re-read all six teaching chapters in learning order with the category INDEX, REVISION companion and relevant microservices interview answers.",
+        "Checked current gRPC RPC lifecycle/Node guide, Kafka 4.3 Share Consumer and producer configuration, Confluent JavaScript 1.11.0 API surface, and RabbitMQ 4.3.6 queue/retry contracts against primary docs; every newly introduced external URL returned HTTP 200.",
+        "Checked headings and chapter flow; retained practical/textbook definitions, separate First Principles and one Summary. Reconciled Share Consumer and strict queue-ordering coverage in the revision companion and both learning indexes.",
+        "All 30 repository verification gates passed. Standalone link checking found 10,822 local links and 149 anchors with zero failures; the 2,514-URL citation baseline and writer fixed point are clean.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed; all six edited pages render one authored H1. No live broker integration test was needed for this documentation-only flow pass."
+      ]
     },
     {
       "path": "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.04-rabbitmq.md",
       "group": "20-backend/20.6-microservices/02-communication-and-messaging",
       "title": "RabbitMQ",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "c7e2e12d6d81f7427796e9b28b5f1ef6670c6ed1d4dab09af5b332e72f2325b6",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which acknowledgment proves broker acceptance, and which proves a durable consumer effect?",
+      "disposition": "Added a worker-outage opening, clarified RabbitMQ 4.3 delayed retry and delivery-count behavior, and specified that one active consumer still needs prefetch one or serialized handling for strict effects. Removed duplicate generic references while retaining publish/return/confirm, ack, DLX, retry, request/reply and shutdown boundaries.",
+      "validation": [
+        "Directly re-read all six teaching chapters in learning order with the category INDEX, REVISION companion and relevant microservices interview answers.",
+        "Checked current gRPC RPC lifecycle/Node guide, Kafka 4.3 Share Consumer and producer configuration, Confluent JavaScript 1.11.0 API surface, and RabbitMQ 4.3.6 queue/retry contracts against primary docs; every newly introduced external URL returned HTTP 200.",
+        "Checked headings and chapter flow; retained practical/textbook definitions, separate First Principles and one Summary. Reconciled Share Consumer and strict queue-ordering coverage in the revision companion and both learning indexes.",
+        "All 30 repository verification gates passed. Standalone link checking found 10,822 local links and 149 anchors with zero failures; the 2,514-URL citation baseline and writer fixed point are clean.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed; all six edited pages render one authored H1. No live broker integration test was needed for this documentation-only flow pass."
+      ]
     },
     {
       "path": "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md",
       "group": "20-backend/20.6-microservices/02-communication-and-messaging",
       "title": "Message Brokers — Kafka vs RabbitMQ",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "fe2ae6418f314ec1a82a3432beabde3f73ca83f20595cf72d8854ffa4bff9f39",
       "previous_depth_review": "reviewed",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Does the workload need one worker to claim unfinished jobs, or independent readers to retain and replay history?",
+      "disposition": "Moved the invoice scenario ahead of the definitions; replaced stale Kafka Share Group version wording with the current Share Consumer model; made RabbitMQ prefetch and retry limits explicit; and removed duplicate/generic source links. Kept the comparison grounded in storage, retention, acknowledgment and delivery boundaries.",
+      "validation": [
+        "Directly re-read all six teaching chapters in learning order with the category INDEX, REVISION companion and relevant microservices interview answers.",
+        "Checked current gRPC RPC lifecycle/Node guide, Kafka 4.3 Share Consumer and producer configuration, Confluent JavaScript 1.11.0 API surface, and RabbitMQ 4.3.6 queue/retry contracts against primary docs; every newly introduced external URL returned HTTP 200.",
+        "Checked headings and chapter flow; retained practical/textbook definitions, separate First Principles and one Summary. Reconciled Share Consumer and strict queue-ordering coverage in the revision companion and both learning indexes.",
+        "All 30 repository verification gates passed. Standalone link checking found 10,822 local links and 149 anchors with zero failures; the 2,514-URL citation baseline and writer fixed point are clean.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed; all six edited pages render one authored H1. No live broker integration test was needed for this documentation-only flow pass."
+      ]
     },
     {
       "path": "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.06-event-driven-architecture.md",
       "group": "20-backend/20.6-microservices/02-communication-and-messaging",
       "title": "Event-Driven Architecture",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "60b492391eb4cdfe091c55c006d2af66d04bf6469ba7e4055e24386150de9aab",
       "previous_depth_review": "reviewed",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can downstream work follow a committed invoice without making billing wait for every consumer?",
+      "disposition": "Added a concrete invoice/PDF/analytics opening and removed the repeated example. Kept the connected commit-outbox-publish-consume trace, duplicate recovery, event identity, ordering/version, payload/privacy and replay decisions.",
+      "validation": [
+        "Directly re-read all six teaching chapters in learning order with the category INDEX, REVISION companion and relevant microservices interview answers.",
+        "Checked current gRPC RPC lifecycle/Node guide, Kafka 4.3 Share Consumer and producer configuration, Confluent JavaScript 1.11.0 API surface, and RabbitMQ 4.3.6 queue/retry contracts against primary docs; every newly introduced external URL returned HTTP 200.",
+        "Checked headings and chapter flow; retained practical/textbook definitions, separate First Principles and one Summary. Reconciled Share Consumer and strict queue-ordering coverage in the revision companion and both learning indexes.",
+        "All 30 repository verification gates passed. Standalone link checking found 10,822 local links and 149 anchors with zero failures; the 2,514-URL citation baseline and writer fixed point are clean.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed; all six edited pages render one authored H1. No live broker integration test was needed for this documentation-only flow pass."
+      ]
     },
     {
       "path": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.01-saga-pattern.md",

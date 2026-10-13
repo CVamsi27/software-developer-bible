@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-13",
- "url_count": 2515,
+ "url_count": 2514,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md",
@@ -1642,9 +1642,6 @@
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md",
    "20-backend/20.9-message-brokers/20.9.01-message-brokers.md",
    "20-backend/20.9-message-brokers/20.9.02-kafka-internals-and-operations.md"
-  ],
-  "https://docs.confluent.io/platform/current/": [
-   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.03-kafka.md"
   ],
   "https://docs.confluent.io/platform/current/clients/librdkafka/html/md_CONFIGURATION.html": [
    "20-backend/20.9-message-brokers/20.9.02-kafka-internals-and-operations.md"
@@ -3399,7 +3396,7 @@
    "30-architecture/30.2-system-design/01-theory/30.2.1.19-resilience-patterns-deep-dive.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.05-system-design-cheat-sheet.md"
   ],
-  "https://grpc.io/docs/languages/node/": [
+  "https://grpc.io/docs/languages/node/quickstart/": [
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.01-grpc.md"
   ],
   "https://grpc.io/docs/what-is-grpc/core-concepts/": [
@@ -3670,6 +3667,11 @@
   "https://kafka.apache.org/42/javadoc/org/apache/kafka/clients/consumer/KafkaConsumer.html": [
    "70-interview-toolkit/70.3-cheatsheets/70.3.05-system-design-cheat-sheet.md"
   ],
+  "https://kafka.apache.org/43/apis/": [
+   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.03-kafka.md",
+   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md",
+   "20-backend/20.6-microservices/02-communication-and-messaging/REVISION.md"
+  ],
   "https://kafka.apache.org/43/configuration/topic-configs/": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.03-soft-delete-and-tombstones.md"
   ],
@@ -3679,6 +3681,9 @@
   ],
   "https://kafka.apache.org/43/design/design/#transactions": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md"
+  ],
+  "https://kafka.apache.org/43/generated/producer_config.html": [
+   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.03-kafka.md"
   ],
   "https://kafka.apache.org/43/getting-started/upgrade/": [
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md",
@@ -3699,7 +3704,6 @@
    "20-backend/20.9-message-brokers/20.9.02-kafka-internals-and-operations.md"
   ],
   "https://kafka.apache.org/documentation/": [
-   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.03-kafka.md",
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md",
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.06-event-driven-architecture.md",
    "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md"
@@ -4462,8 +4466,6 @@
    "30-architecture/30.1-design-patterns/05-architectural/30.1.5.08-presentation-patterns-mvc-mvp-mvvm.md"
   ],
   "https://martinfowler.com/microservices/": [
-   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.03-kafka.md",
-   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.04-rabbitmq.md",
    "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.01-saga-pattern.md",
    "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.03-event-sourcing.md",
    "20-backend/20.6-microservices/04-resilience/20.6.4.01-circuit-breaker.md",
@@ -4476,8 +4478,6 @@
    "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.04-state.md"
   ],
   "https://microservices.io/": [
-   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.03-kafka.md",
-   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.04-rabbitmq.md",
    "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.01-saga-pattern.md",
    "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.03-event-sourcing.md",
    "20-backend/20.6-microservices/04-resilience/20.6.4.01-circuit-breaker.md",
@@ -6805,8 +6805,6 @@
   ],
   "https://www.amazon.com/Building-Microservices-designing-Systems/dp/1491950358": [
    "20-backend/20.6-microservices/01-service-topology/20.6.1.04-strangler-fig.md",
-   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.03-kafka.md",
-   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.04-rabbitmq.md",
    "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.01-saga-pattern.md",
    "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.03-event-sourcing.md",
    "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.04-cqrs.md",
@@ -6840,8 +6838,6 @@
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.12-twitter-feed.md"
   ],
   "https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215": [
-   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.03-kafka.md",
-   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.04-rabbitmq.md",
    "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.01-saga-pattern.md",
    "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.03-event-sourcing.md",
    "20-backend/20.6-microservices/04-resilience/20.6.4.01-circuit-breaker.md",
@@ -6854,9 +6850,6 @@
   "https://www.amazon.com/High-Output-Management-Andrew-Grove/dp/0679762884": [
    "70-interview-toolkit/70.1-behavioral/70.1.02-leadership-questions.md",
    "70-interview-toolkit/70.1-behavioral/70.1.03-judgment-calls-ambiguity.md"
-  ],
-  "https://www.amazon.com/Kafka-Definitive-Complete-Enterprise-Streaming/dp/1492043087": [
-   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.03-kafka.md"
   ],
   "https://www.amazon.com/Kubernetes-Patterns-Cloud-Native-Applications/dp/1492050288": [
    "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.01-pods-replicasets.md",
@@ -6873,8 +6866,6 @@
    "70-interview-toolkit/70.1-behavioral/70.1.01-stakeholder-management-stories.md"
   ],
   "https://www.amazon.com/Microservices-Patterns-designing-Chris-Richardson/dp/1617294543": [
-   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.03-kafka.md",
-   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.04-rabbitmq.md",
    "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.01-saga-pattern.md",
    "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.03-event-sourcing.md",
    "20-backend/20.6-microservices/04-resilience/20.6.4.01-circuit-breaker.md",
@@ -7331,9 +7322,6 @@
   ],
   "https://www.manning.com/books/dependency-injection-principles-practices-patterns": [
    "30-architecture/30.1-design-patterns/05-architectural/30.1.5.07-service-locator-vs-dependency-injection.md"
-  ],
-  "https://www.manning.com/books/rabbitmq-in-depth": [
-   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.04-rabbitmq.md"
   ],
   "https://www.meilisearch.com/docs/capabilities/indexing/tasks_and_batches/async_operations": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.05-search-infrastructure-at-scale.md"
@@ -7800,8 +7788,6 @@
    "20-backend/20.9-message-brokers/20.9.03-event-driven-patterns.md"
   ],
   "https://www.rabbitmq.com/docs": [
-   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.04-rabbitmq.md",
-   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md",
    "20-backend/20.9-message-brokers/20.9.01-message-brokers.md"
   ],
   "https://www.rabbitmq.com/docs/confirms": [
@@ -7825,6 +7811,10 @@
    "20-backend/20.9-message-brokers/20.9.04-interview-questions.md",
    "20-backend/20.9-message-brokers/INDEX.md"
   ],
+  "https://www.rabbitmq.com/docs/quorum-queues": [
+   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.04-rabbitmq.md",
+   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md"
+  ],
   "https://www.rabbitmq.com/docs/reliability": [
    "20-backend/20.9-message-brokers/20.9.01-message-brokers.md",
    "20-backend/20.9-message-brokers/20.9.04-interview-questions.md"
@@ -7834,9 +7824,6 @@
   ],
   "https://www.rabbitmq.com/docs/ttl": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md"
-  ],
-  "https://www.rabbitmq.com/documentation.html": [
-   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md"
   ],
   "https://www.rabbitmq.com/getstarted.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md"

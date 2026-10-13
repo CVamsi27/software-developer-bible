@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "d83c8a2cea58a0162a4d26cac5913fc4976915a30b9d71bb7226f0f04d766f7f",
+ "corpus_digest": "e3b506ab2958b6a9f24f46da5bd958247436ce89c68326e96ce15c79fa4dbaab",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5274
+  "read_minutes": 5276
  },
  "chapters": [
   {
@@ -3046,7 +3046,7 @@
     "concept",
     "messaging"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.06-event-driven-architecture.html",
@@ -3066,7 +3066,7 @@
    "g": [
     "revision"
    ],
-   "m": 3
+   "m": 4
   },
   {
    "p": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.01-saga-pattern.html",

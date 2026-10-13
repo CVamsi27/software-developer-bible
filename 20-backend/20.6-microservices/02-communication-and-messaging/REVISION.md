@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Microservices-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
 
@@ -74,6 +74,10 @@ Source: [RabbitMQ](20.6.2.04-rabbitmq.md)
 
 **A:** A queue fits routed jobs assigned to competing workers with per-delivery acknowledgments. Kafka and RabbitMQ Streams fit retained replay differently; compare the specific storage contract rather than the product name.
 
+**Q:** Why can a RabbitMQ single active consumer still complete effects out of order?
+
+**A:** One consumer can hold multiple unacknowledged deliveries and finish their handlers in a different order. Use prefetch one or serialize effects when the invariant requires strict sequence, then verify the queue's redelivery ordering contract.
+
 ## Message Brokers: Kafka vs RabbitMQ
 
 Source: [Message Brokers: Kafka vs RabbitMQ](20.6.2.05-message-brokers.md)
@@ -130,6 +134,10 @@ Source: [Learning chapter](20.6.2.05-message-brokers.md)
 
 **A:** No. Kafka retains partition records; ordinary RabbitMQ queues track unfinished deliveries, but RabbitMQ Streams also support retained log replay. Compare the actual storage type and retention contract.
 
+**Q:** What changes when a Kafka workload uses Share Consumers instead of a classic consumer group?
+
+**A:** A share group can let multiple members process records from the same partition and acknowledge records individually. That is queue-like work distribution with different ordering and progress rules; verify support in the cluster and client rather than assuming the classic group's partition assignment contract. See [Apache Kafka's Share Consumer API](https://kafka.apache.org/43/apis/).
+
 **Q:** What does a publisher confirm fail to establish?
 
 **A:** It does not prove consumer business completion. Unroutable-message handling is also distinct from broker acceptance; uncertain acknowledgments can require duplicate-safe retry.
@@ -169,7 +177,7 @@ Source: [Kafka](20.6.2.03-kafka.md), [RabbitMQ](20.6.2.04-rabbitmq.md).
 
 **Q:** Why does computing an incremented retry header before nack(false, false) not retry a message?
 
-**A:** A local variable changes no broker state. Reject-without-requeue follows the configured dead-letter path or discards the delivery. A delayed retry must actually route or republish work under the chosen acknowledgment policy.
+**A:** A local variable changes no broker state. Reject-without-requeue follows the configured dead-letter path or discards the delivery unless a supported broker-managed delay policy handles that return. Otherwise, a delayed retry needs a real route or republish under the chosen acknowledgment policy.
 
 ## Summary
 

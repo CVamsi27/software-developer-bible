@@ -174,6 +174,10 @@ Source: [Command Pattern](30.1.4.09-command.md)
 
 **A:** Blindly restoring prior state can erase the other actor's change; use conflict rules or compensation. Durable redelivery needs operation identity and idempotency beyond the Command pattern.
 
+**Q:** What must a queued command carry before a worker can execute it after a restart?
+
+**A:** Persist a versioned request with a stable identity and validated fields, then route it through an allowlisted handler that resolves the receiver. Define execution-time authorization and idempotency; an in-memory command object provides none of these durability guarantees by itself.
+
 ## Visitor Pattern
 
 Source: [Visitor Pattern](30.1.4.10-visitor.md)

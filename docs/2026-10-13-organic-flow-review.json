@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 307,
+    "revised": 308,
     "unchanged": 80,
-    "pending": 133,
-    "reviewed": 387,
+    "pending": 132,
+    "reviewed": 388,
     "topic_chapters": 520
   },
   "entries": [
@@ -4716,12 +4716,21 @@
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.09-command.md",
       "group": "30-architecture/30.1-design-patterns/04-behavioral",
       "title": "Command Pattern",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "5c20cdc338257a92e9f6c0f9befdf0e861b1aeb84334343d3b4da3158c9e35d5",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can a UI trigger be separated from an operation, and what extra guarantees are required before that operation can be queued, retried or undone?",
+      "disposition": "Opened with two UI triggers sharing a save request, then made client, invoker, command and receiver roles concrete in the undo trace. Distinguished an in-process command from a durable data request, and attached authorization, idempotency, retention and conflict boundaries to the queue and undo discussions. Added the exact GoF textbook intent, removed a weak reference, and added a companion question about restart-safe queued requests.",
+      "validation": [
+        "Re-read in behavioral-pattern order alongside Memento and Visitor; aligned the roles and diagram with the actual TypeScript trace and retained the distinction between request intent, accepted events, undo and distributed compensation.",
+        "Verified the textbook intent against the publisher-hosted O\u2019Reilly chapter excerpt. The citation endpoint returned no response to automated probes (bot wall); the search-indexed publisher excerpt exposed the exact quoted GoF intent.",
+        "The fenced TypeScript example compiled strictly with TypeScript 5.8.3 targeting ES2022/CommonJS and ran with the expected state transition: true, then false after undo.",
+        "Read-time, alignment, citation-baseline, search-index and count writers ran; the fixed-point check confirmed the repair writers leave the corpus stable.",
+        "All 30 repository verification gates passed. Standalone links checked 10,797 links and 152 anchors with 0 issues; citation-baseline diff had 0 added or removed URLs at 2,526.",
+        "Ruby 3.4 locked-bundle production Jekyll build, rendered-heading check and git diff --check passed."
+      ],
+      "reviewed_at": "2026-10-14",
+      "review_sha256": "113a3af9303d4b3fc53582dc03dd374d254270ad1e63664ddbcb2eaf19ac55fe"
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.10-visitor.md",

@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "a458cea5c026ca8f1f7db6e9951afc0c7e211046ab37c29e6d6d76ebe12b0e07",
+ "corpus_digest": "6d64b8596c2da8d5e8728930ec84eec6a5c6188cec133162b0828630dd0fad0a",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5249
+  "read_minutes": 5239
  },
  "chapters": [
   {
@@ -4117,7 +4117,7 @@
     "global-scale",
     "theory"
    ],
-   "m": 19
+   "m": 9
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.html",

@@ -1,6 +1,6 @@
 # System Design — Foundational Theory
 
-> **Study time:** ≈ 4 h 56 m of reading (24 files, ~12 min average).
+> **Study time:** ≈ 4 h 46 m of reading (24 files, ~12 min average).
 > **Study time and file counts are generated from the current chapter set.**
 
 [![Files](https://img.shields.io/badge/files-24-blue)](../../../INDEX.md)

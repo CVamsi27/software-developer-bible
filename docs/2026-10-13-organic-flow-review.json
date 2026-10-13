@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 278,
+    "revised": 279,
     "unchanged": 80,
-    "pending": 162,
-    "reviewed": 358,
+    "pending": 161,
+    "reviewed": 359,
     "topic_chapters": 520
   },
   "entries": [
@@ -4964,12 +4964,17 @@
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.20-multi-region-deployment.md",
       "group": "30-architecture/30.2-system-design/01-theory",
       "title": "Multi-Region Deployment",
-      "status": "pending",
-      "baseline_sha256": "b921945472738e86f6c8991c794f970173940909b0982cfcaf7a4ad9abd6b35a",
+      "status": "revised",
+      "baseline_sha256": "8adb98458b5aa70c2bb0297f7a106b01e4d74e115d89db5145533513de8aeba2",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do write authority, replica freshness, conflict resolution and recovery change when one system serves several regions?",
+      "disposition": "Rebuilt the chapter as a decision path from user contract through topology, routing, replication, write conflicts, data location and tested recovery. Removed repeated common-mistake, best-practice and performance recaps while preserving the CRDT ownership trace and vendor-specific DynamoDB contracts. Defined fencing, linearizability, quorum notation and TTL at first use; replaced the generic EU transfer link with the current EDPB guidance.",
+      "validation": [
+        "Re-read in learning order with the system-design INDEX and REVISION companion; checked practical/textbook definitions, First Principles, Summary, See Also and References.",
+        "Checked current AWS DynamoDB MREC/MRSC and disaster-recovery docs, Google Cloud Spanner replication docs and EDPB international-transfer guidance.",
+        "All 30 repository verification gates passed; standalone links checked 10,817 links and 150 anchors with 0 failures; citation baseline contains 2,508 URLs with 0 drift.",
+        "Ruby 3.4.11 production Jekyll build and rendered-heading sweep passed; the edited page renders exactly one H1."
+      ]
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.md",

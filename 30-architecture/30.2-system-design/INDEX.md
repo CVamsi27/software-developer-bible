@@ -1,6 +1,6 @@
 # System Design — Index
 
-> **Study time:** ≈ 10 h 56 m of reading (56 files, ~12 min average).
+> **Study time:** ≈ 10 h 46 m of reading (56 files, ~12 min average).
 > **56 files** — split into **theory** (foundational chapters in [01-theory/](01-theory/INDEX.md)) and **case studies** (31 applied examples in [02-case-studies/](02-case-studies/INDEX.md)).
 >
 > Study in three passes: **I. Interview method and workload assumptions** (How to Approach, capacity estimates, network prerequisites as needed) → **II. Theory mechanisms** (CAP → consistency → placement, traffic and recovery) → **III. Case studies** (pick by JD domain).

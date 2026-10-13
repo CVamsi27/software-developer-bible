@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-13",
- "url_count": 2509,
+ "url_count": 2508,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -456,9 +456,6 @@
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.03-soft-delete-and-tombstones.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.10-hospital-management.md",
    "80-lanes-abroad-full-stack/80.24-eu-regulatory-compliance.md"
-  ],
-  "https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/rules-international-data-transfers_en": [
-   "30-architecture/30.2-system-design/01-theory/30.2.1.20-multi-region-deployment.md"
   ],
   "https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection_en": [
    "80-lanes-abroad-full-stack/80.24-eu-regulatory-compliance.md"
@@ -7108,6 +7105,9 @@
   "https://www.edpb.europa.eu/sme/find-practical-info/faq_en": [
    "80-lanes-abroad-full-stack/80.24-eu-regulatory-compliance.md"
   ],
+  "https://www.edpb.europa.eu/topics/international-transfers-and-international-cooperation_en": [
+   "30-architecture/30.2-system-design/01-theory/30.2.1.20-multi-region-deployment.md"
+  ],
   "https://www.elastic.co/docs/manage-data/data-store/near-real-time-search": [
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.04-nosql-vs-sql.md"
   ],
@@ -8440,9 +8440,6 @@
   ],
   "https://www.youtube.com/watch?v=2snYdgNcxIg": [
    "docs/reference-coverage-audit.md"
-  ],
-  "https://www.youtube.com/watch?v=PN_C-V4UVXU": [
-   "30-architecture/30.2-system-design/01-theory/30.2.1.20-multi-region-deployment.md"
   ],
   "https://www.youtube.com/watch?v=W4EwfEU8CGA": [
    "docs/reference-coverage-audit.md"

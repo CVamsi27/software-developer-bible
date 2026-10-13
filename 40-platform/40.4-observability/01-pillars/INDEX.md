@@ -1,6 +1,6 @@
 # The 3 Pillars
 
-> **Study time:** ≈ 20 min of reading (4 files, ~5 min average).
+> **Study time:** ≈ 21 min of reading (4 files, ~5 min average).
 > **4 files.** Logs, metrics, traces — the three data types every observability system is built from. Each answers a different question; senior engineers know which pillar to reach for before opening a dashboard.
 
 [![Files](https://img.shields.io/badge/files-4-blue)](#file-index)
@@ -15,7 +15,7 @@
 - **Metrics** answer "how is the system performing?" — cheap numerical time series for dashboards and alerts.
 - **Traces** answer "where did the request spend its time?" — causal flow across services.
 
-Interviews at scale-focused companies open with "compare logs, metrics, and traces" precisely because teams that only have logs debug production by grep. These three chapters make each pillar concrete: formats, storage, tooling (ELK, Prometheus/Grafana, Jaeger), and cost trade-offs.
+Interviewers often ask candidates to compare logs, metrics and traces. A strong answer chooses evidence for the question and explains cost and coverage limits instead of treating the signals as interchangeable. These chapters make each pillar concrete through formats, storage, tooling (ELK, Prometheus/Grafana, Jaeger) and trade-offs.
 
 ---
 
@@ -26,7 +26,7 @@ Read one event log first, then aggregate request measurements, then connect time
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
 | 01 | [Logging](40.4.1.01-logging.md) | Structured logging, log levels, centralized logging, ELK stack, retention and cost | Important | Important | 6 min |
-| 02 | [Monitoring](40.4.1.02-monitoring.md) | Metrics, dashboards, Prometheus, Grafana, SLIs, cardinality | Important | Important | 6 min |
+| 02 | [Monitoring](40.4.1.02-monitoring.md) | Metrics, dashboards, Prometheus, Grafana, SLIs, cardinality | Important | Important | 7 min |
 | 03 | [Tracing](40.4.1.03-tracing.md) | Distributed tracing, spans, trace context propagation, OpenTelemetry, Jaeger | Important | Important | 6 min |
 
 ---

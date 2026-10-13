@@ -10,10 +10,10 @@
   },
   "counts": {
     "topic_chapters": 520,
-    "revised": 143,
-    "unchanged": 65,
-    "pending": 312,
-    "reviewed": 208
+    "revised": 152,
+    "unchanged": 66,
+    "pending": 302,
+    "reviewed": 218
   },
   "entries": [
     {
@@ -5462,111 +5462,161 @@
       "path": "40-platform/40.4-observability/01-pillars/40.4.1.01-logging.md",
       "group": "40-platform/40.4-observability/01-pillars",
       "title": "Logging",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "d8d01b842eddd741ab3fd8fe973d46662531b9921ac3619ca24bfebd531ac096",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do event fields and transport choices keep an incident record useful without turning it into an unsafe payload dump?",
+      "disposition": "Retained the bounded, privacy-aware event path and made the Kubernetes, performance and serverless cross-references state the operational connection instead of repeating generic claims.",
+      "validation": [
+        "Re-read in learning order with the category INDEX and REVISION companion; reconciled the related 50-question observability interview bank.",
+        "Full repository verification passed all 30 gates; standalone links checked 10,838 internal links and 149 anchors; the 2,515-URL citation baseline has no drift.",
+        "Ruby 3.4 locked-bundle production Jekyll build and site-wide rendered-heading check passed.",
+        "Executed the Pino logging example under Node 24 with the current package; checked redaction and shutdown behavior."
+      ]
     },
     {
       "path": "40-platform/40.4-observability/01-pillars/40.4.1.02-monitoring.md",
       "group": "40-platform/40.4-observability/01-pillars",
       "title": "Monitoring",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "428a3be0f2e28ee86d1fee5a328275434548fce767c82f52d4f1e86c53032a08",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How does the emitted histogram representation change the fleet percentile query?",
+      "disposition": "Added native-histogram behavior and a composite-sample PromQL query beside the classic histogram example; stated the end-to-end support boundary and clarified that query syntax must match the emitted metric.",
+      "validation": [
+        "Re-read in learning order with the category INDEX and REVISION companion; reconciled the related 50-question observability interview bank.",
+        "Full repository verification passed all 30 gates; standalone links checked 10,838 internal links and 149 anchors; the 2,515-URL citation baseline has no drift.",
+        "Ruby 3.4 locked-bundle production Jekyll build and site-wide rendered-heading check passed.",
+        "Executed the maintained Prometheus JavaScript client metrics example under Node 24; checked native and classic histogram claims against current Prometheus documentation."
+      ]
     },
     {
       "path": "40-platform/40.4-observability/01-pillars/40.4.1.03-tracing.md",
       "group": "40-platform/40.4-observability/01-pillars",
       "title": "Distributed Tracing",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "6295738c587cf801fc2afc48e4a08c36f42012c6d70b21f8a1aced3ee63c5147",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What does trace context connect, and which missing-data cases prevent a trace from proving the full request path?",
+      "disposition": "Kept the request-to-span mechanism and tightened cross-references so Kubernetes, browser measurements and managed functions describe propagation and evidence limits without implying that infrastructure telemetry creates business spans.",
+      "validation": [
+        "Re-read in learning order with the category INDEX and REVISION companion; reconciled the related 50-question observability interview bank.",
+        "Full repository verification passed all 30 gates; standalone links checked 10,838 internal links and 149 anchors; the 2,515-URL citation baseline has no drift.",
+        "Ruby 3.4 locked-bundle production Jekyll build and site-wide rendered-heading check passed.",
+        "Executed the tracing example with current OpenTelemetry packages under Node 24."
+      ]
     },
     {
       "path": "40-platform/40.4-observability/02-errors-and-health/40.4.2.01-error-tracking.md",
       "group": "40-platform/40.4-observability/02-errors-and-health",
       "title": "Error Tracking",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "b4f94bd9327f165a524ee4f84ed07e1850f216b43b8a22a2ea6726fbe30bafdb",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do grouped error reports add diagnosis context while aggregate metrics establish the impact?",
+      "disposition": "Retained the selected-error-to-owned-repair flow and clarified how pod restarts, error rates and provider events provide separate evidence rather than proving one another’s cause.",
+      "validation": [
+        "Re-read in learning order with the category INDEX and REVISION companion; reconciled the related 50-question observability interview bank.",
+        "Full repository verification passed all 30 gates; standalone links checked 10,838 internal links and 149 anchors; the 2,515-URL citation baseline has no drift.",
+        "Ruby 3.4 locked-bundle production Jekyll build and site-wide rendered-heading check passed.",
+        "Executed the Sentry/Pino error-reporting example under Node 24 with current packages."
+      ]
     },
     {
       "path": "40-platform/40.4-observability/02-errors-and-health/40.4.2.02-health-checks.md",
       "group": "40-platform/40.4-observability/02-errors-and-health",
       "title": "Health Checks",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "515461b72398b9a2898361786db53d44d3bcd6615d34896882ae145a562bc282",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which health-check result should restart a process, remove it from traffic, or test the public contract?",
+      "disposition": "Clarified the relationship between external uptime checks and in-process probes, and replaced outdated Spring Boot and Docker references with their current documentation pages.",
+      "validation": [
+        "Re-read in learning order with the category INDEX and REVISION companion; reconciled the related 50-question observability interview bank.",
+        "Full repository verification passed all 30 gates; standalone links checked 10,838 internal links and 149 anchors; the 2,515-URL citation baseline has no drift.",
+        "Ruby 3.4 locked-bundle production Jekyll build and site-wide rendered-heading check passed.",
+        "Executed the HTTP probe example against local servers, including success, redirect, body mismatch, size and timeout cases; verified the updated official references."
+      ]
     },
     {
       "path": "40-platform/40.4-observability/03-sre-targets/40.4.3.01-sli-slo-sla.md",
       "group": "40-platform/40.4-observability/03-sre-targets",
       "title": "SLI, SLO & SLA",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "c5182aea1316ab8a4153936d67883ed0bf567fddab88563ce1f65bf058104521",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "When does an error-budget complement apply, and why is a p99 objective a different contract?",
+      "disposition": "Distinguished percentile objectives from good/bad request ratios; removed duplicate percentile YAML and hypothetical tier/policy catalogs, then linked operational policy to its canonical production-engineering chapter and percentile queries to monitoring.",
+      "validation": [
+        "Re-read in learning order with the category INDEX and REVISION companion; reconciled the related 50-question observability interview bank.",
+        "Full repository verification passed all 30 gates; standalone links checked 10,838 internal links and 149 anchors; the 2,515-URL citation baseline has no drift.",
+        "Ruby 3.4 locked-bundle production Jekyll build and site-wide rendered-heading check passed.",
+        "Executed the request-budget example assertions; checked multi-window burn-rate and SLO guidance against current Google SRE sources."
+      ]
     },
     {
       "path": "40-platform/40.4-observability/03-sre-targets/40.4.3.02-alerting.md",
       "group": "40-platform/40.4-observability/03-sre-targets",
       "title": "Alerting",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "7b67cf18c75a895dfa90bdecc06e44ceb8f9cae5b0631c6046ed35b926c775c4",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which cluster signals need an operator response, and how is that decision tied to user impact?",
+      "disposition": "Retained the actionable-alert flow and made the Kubernetes cross-reference distinguish scheduling, restart and memory-pressure evidence before linking it to impact and ownership.",
+      "validation": [
+        "Re-read in learning order with the category INDEX and REVISION companion; reconciled the related 50-question observability interview bank.",
+        "Full repository verification passed all 30 gates; standalone links checked 10,838 internal links and 149 anchors; the 2,515-URL citation baseline has no drift.",
+        "Ruby 3.4 locked-bundle production Jekyll build and site-wide rendered-heading check passed.",
+        "Checked paired multi-window burn-rate guidance against the current Google SRE Workbook."
+      ]
     },
     {
       "path": "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.01-opentelemetry.md",
       "group": "40-platform/40.4-observability/04-advanced-telemetry",
       "title": "OpenTelemetry (OTel)",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "acbcb497ac6b23282b347f86e7f7bf7d3eb7377a9fca70a895455d100e38c957",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What remains vendor-specific after instrumentation and transport use OpenTelemetry?",
+      "disposition": "Retained the SDK-to-Collector pipeline and clarified the Twelve-Factor cross-reference around collector endpoints and deployment configuration.",
+      "validation": [
+        "Re-read in learning order with the category INDEX and REVISION companion; reconciled the related 50-question observability interview bank.",
+        "Full repository verification passed all 30 gates; standalone links checked 10,838 internal links and 149 anchors; the 2,515-URL citation baseline has no drift.",
+        "Ruby 3.4 locked-bundle production Jekyll build and site-wide rendered-heading check passed.",
+        "Executed the OpenTelemetry examples with current packages under Node 24; checked current specification status and signal support."
+      ]
     },
     {
       "path": "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.02-continuous-profiling.md",
       "group": "40-platform/40.4-observability/04-advanced-telemetry",
       "title": "Continuous Profiling",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "a926499da568012ba3bc21504c622f9695ca76cff4318607946258a55206e8aa",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do field measurements and profiles divide the work of locating a performance regression?",
+      "disposition": "Clarified the division between browser-cohort evidence and code-level resource attribution, preserved the profile-to-trace support boundary, and corrected the adjacent OpenTelemetry navigation label.",
+      "validation": [
+        "Re-read in learning order with the category INDEX and REVISION companion; reconciled the related 50-question observability interview bank.",
+        "Full repository verification passed all 30 gates; standalone links checked 10,838 internal links and 149 anchors; the 2,515-URL citation baseline has no drift.",
+        "Ruby 3.4 locked-bundle production Jekyll build and site-wide rendered-heading check passed.",
+        "Executed the CPU profiling demo under Node 24 and confirmed it generated a nonempty profile artifact."
+      ]
     },
     {
       "path": "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.03-ebpf-observability.md",
       "group": "40-platform/40.4-observability/04-advanced-telemetry",
       "title": "eBPF Observability",
-      "status": "pending",
+      "status": "unchanged",
       "baseline_sha256": "c938ee2b97a4ba69ab4ae39799d1afcac50a5513f8f9a2c7db31884baa2491bb",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What does eBPF add to kernel-level observation, and which verifier, privilege and runtime boundaries still apply?",
+      "disposition": "Retained after direct review: the chapter already follows kernel instrumentation through verifier constraints to Cilium/Hubble use and operational limits, including the distinction between L3/L4 visibility and policy-enabled L7 inspection. Runtime execution is unavailable on this macOS host, so the Linux boundary remains source-verified.",
+      "validation": [
+        "Re-read in learning order with the category INDEX and REVISION companion; reconciled the related 50-question observability interview bank.",
+        "Full repository verification passed all 30 gates; standalone links checked 10,838 internal links and 149 anchors; the 2,515-URL citation baseline has no drift.",
+        "Ruby 3.4 locked-bundle production Jekyll build and site-wide rendered-heading check passed.",
+        "Checked Linux verifier and Cilium Hubble details against current primary documentation; did not claim a local eBPF runtime test."
+      ]
     },
     {
       "path": "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md",

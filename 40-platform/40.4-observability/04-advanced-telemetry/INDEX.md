@@ -28,7 +28,7 @@ Instrumenting once per vendor does not survive the second vendor swap. OpenTelem
 ## Cross-References
 
 - [The 3 Pillars](../01-pillars/INDEX.md) — the signals OTel unifies
-- [Tracing](../01-pillars/INDEX.md) — trace semantics in depth
+- [Distributed Tracing](../01-pillars/40.4.1.03-tracing.md) — trace semantics in depth
 
 ---
 

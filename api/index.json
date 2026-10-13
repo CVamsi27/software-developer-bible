@@ -4,7 +4,7 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "479dedfbb2acdeb005b05fb5bf3dbd942de548e8d1710e34bf0fc049eed6f823",
+ "corpus_digest": "7fb81199717c5cbe5f15f1a1dc3858ded809a75021af94cff9266695d4547a5f",
  "totals": {
   "chapters": 671,
   "sections": 47,
@@ -5357,7 +5357,7 @@
     "concept",
     "reference"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "40-platform/40.4-observability/01-pillars/40.4.1.03-tracing.html",
@@ -5424,7 +5424,7 @@
     "guide",
     "reference"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "40-platform/40.4-observability/03-sre-targets/40.4.3.02-alerting.html",

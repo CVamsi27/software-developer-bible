@@ -26,6 +26,10 @@ Source: [Monitoring](40.4.1.02-monitoring.md)
 
 **A:** A small slow population may barely move the mean. Distributions and percentiles expose the tail; segment by relevant route/region without unbounded labels.
 
+**Q:** How do classic and native Prometheus histograms change a fleet-wide percentile query?
+
+**A:** Classic histograms expose cumulative buckets labeled with `le`; sum matching bucket rates across instances while retaining `le`, then pass them to `histogram_quantile`. A native histogram carries bucket observations in a composite sample, so aggregate that sample without `le`. Check client, server and backend support, and query the form the instrument actually emits.
+
 **Q:** Why avoid customer IDs as metric labels?
 
 **A:** Each value can create another time series. Unbounded cardinality increases storage/query cost and may expose personal data; logs/traces are often better for individual correlation.

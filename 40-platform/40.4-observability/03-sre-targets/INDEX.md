@@ -1,6 +1,6 @@
 # SRE Targets
 
-> **Study time:** ≈ 17 min of reading (3 files, ~6 min average).
+> **Study time:** ≈ 16 min of reading (3 files, ~5 min average).
 > **3 files.** The SRE framework for reliability: define SLIs/SLOs with real error budgets, then alert in a way that pages humans only when it matters.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](#file-index)
@@ -11,7 +11,7 @@
 
 ## Why this category exists
 
-"99.9% availability" is meaningless until you pick an SLI (which requests count?), a window (over 30 days?), and consequences (what stops when the budget burns?). This category covers the measurement layer — SLI/SLO/SLA distinctions, multi-window burn-rate math — and the response layer: alerting principles, runbooks, and how a page connects user impact to a clear owner and a safe response.
+"99.9% availability" is meaningless until you pick an SLI (which requests count?), a window (over 30 days?), and consequences (what changes when the budget burns?). This category covers SLI/SLO/SLA distinctions and multi-window burn-rate math. Keep percentile objectives distinct from good-request ratios, then connect actionable user impact to an owner and response.
 
 Quick distinction:
 - **SLI** = Service Level Indicator (the metric, e.g., "99.5% of requests succeed")
@@ -24,7 +24,7 @@ Quick distinction:
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [SLI / SLO / SLA](40.4.3.01-sli-slo-sla.md) | Reliability targets, error budgets, multi-window burn rates, SLO-driven alerting | Important | Important | 8 min |
+| 01 | [SLI / SLO / SLA](40.4.3.01-sli-slo-sla.md) | Reliability targets, error budgets, multi-window burn rates, SLO-driven alerting | Important | Important | 7 min |
 | 02 | [Alerting](40.4.3.02-alerting.md) | Alert principles, PagerDuty, Alertmanager, runbooks, symptom vs cause alerts | Important | Important | 7 min |
 
 ---

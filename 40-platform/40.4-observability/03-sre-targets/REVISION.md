@@ -22,6 +22,10 @@ Source: [SLI, SLO & SLA](40.4.3.01-sli-slo-sla.md)
 
 **A:** Request-based budgets count failed eligible requests. Time-based availability can translate to minutes, but the denominator and user traffic model determine the budget.
 
+**Q:** Is a p99 latency threshold the same as a good-request ratio for error-budget math?
+
+**A:** No. A p99 is a percentile objective over a defined population and window; the simple complement budget applies to a good/bad event ratio. Define a separate measurement and response policy or measure the fraction of eligible requests under a latency threshold.
+
 **Q:** A request SLO target is 99.9%. What fraction is the allowed bad-event budget?
 
 **A:** The complement, 0.1% of eligible requests. It is not the reciprocal of 99.9%; converting that request budget to downtime minutes would require a separate time-based objective and measurement model.

@@ -1689,9 +1689,6 @@
   "https://docs.docker.com/engine/network/drivers/bridge/": [
    "40-platform/40.1-docker/40.1.02-volumes-networks.md"
   ],
-  "https://docs.docker.com/engine/reference/builder/#healthcheck": [
-   "40-platform/40.4-observability/02-errors-and-health/40.4.2.02-health-checks.md"
-  ],
   "https://docs.docker.com/engine/release-notes/29": [
    "40-platform/40.1-docker/40.1.09-rootless-sandboxed-runtimes.md"
   ],
@@ -1727,6 +1724,9 @@
   ],
   "https://docs.docker.com/reference/dockerfile/": [
    "40-platform/40.1-docker/40.1.01-images-containers.md"
+  ],
+  "https://docs.docker.com/reference/dockerfile/#healthcheck": [
+   "40-platform/40.4-observability/02-errors-and-health/40.4.2.02-health-checks.md"
   ],
   "https://docs.dropboxapi.com/dropbox-api/docs/detecting-changes": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.18-dropbox.md"
@@ -2243,12 +2243,12 @@
   "https://docs.slack.dev/authentication/verifying-requests-from-slack/": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.05-webhooks.md"
   ],
-  "https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html": [
-   "40-platform/40.4-observability/02-errors-and-health/40.4.2.02-health-checks.md"
-  ],
   "https://docs.spring.io/spring-boot/index.html": [
    "20-backend/20.13-java/20.13.05-spring-boot.md",
    "20-backend/20.13-java/REVISION.md"
+  ],
+  "https://docs.spring.io/spring-boot/reference/actuator/monitoring.html": [
+   "40-platform/40.4-observability/02-errors-and-health/40.4.2.02-health-checks.md"
   ],
   "https://docs.spring.io/spring-framework/reference/testing/annotations/integration-spring/annotation-mockitobean.html": [
    "20-backend/20.13-java/20.13.04-java-testing-junit-mockito.md"
@@ -5316,7 +5316,8 @@
    "40-platform/40.4-observability/03-sre-targets/40.4.3.02-alerting.md"
   ],
   "https://prometheus.io/docs/practices/histograms/": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.md"
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.md",
+   "40-platform/40.4-observability/01-pillars/40.4.1.02-monitoring.md"
   ],
   "https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.md",

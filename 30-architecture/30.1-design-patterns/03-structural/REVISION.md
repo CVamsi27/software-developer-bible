@@ -126,6 +126,10 @@ Source: [Bridge Pattern](30.1.3.07-bridge.md)
 
 **A:** It separates the abstraction hierarchy from its implementation hierarchy and connects them through composition, so each dimension can vary independently.
 
+**Q:** When is Bridge more accurate than Strategy for a shape-and-renderer design?
+
+**A:** Bridge fits when both the shape abstraction and renderer implementation have independent variants. Strategy fits when only one behavior varies behind a stable context; counting classes alone does not decide the pattern.
+
 **Q:** Trace two circles with the same radius and different renderers.
 
 **A:** Each circle owns its radius and delegates draw to its chosen renderer. Vector and raster implementations return different descriptions while the circle API stays stable. Neither description creates a real image.

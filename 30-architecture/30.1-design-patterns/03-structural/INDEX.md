@@ -1,6 +1,6 @@
 # Structural Patterns
 
-> **Study time:** ≈ 1 h 6 m of reading (9 files, ~7 min average).
+> **Study time:** ≈ 57 min of reading (9 files, ~6 min average).
 > **9 files.** Class and object composition. These patterns are about how to assemble larger structures from classes and objects while keeping the structure flexible and efficient.
 
 [![Files](https://img.shields.io/badge/files-9-blue)](../../INDEX.md)
@@ -32,7 +32,7 @@ Inheritance couples a subtype to a base contract and implementation. Structural 
 | 4 | [Proxy](30.1.3.04-proxy.md) | Controlled access (lazy, protection, remote, caching) | Image/DB lazy loading, RBAC checks, network stubs | Direct access is fine | Important | Specialized |
 | 5 | [Module](30.1.3.05-module-pattern.md) | Encapsulation at the file level | File/package visibility boundaries | N/A | Important | Specialized |
 | 6 | [Composite](30.1.3.06-composite.md) | Apply shared operations across a part-whole tree | File and directory aggregation, AST operations, nested menus | Flat data or no meaningful common operation | Important | Specialized |
-| 7 | [Bridge](30.1.3.07-bridge.md) | Decouple abstraction from implementation | Multiple dimensions of variation (shape × color × renderer) | One dimension, stable axis | Important | Specialized |
+| 7 | [Bridge](30.1.3.07-bridge.md) | Separate a client abstraction from a varying implementation | Independent abstraction and implementation axes (shape × renderer) | One varying axis or a direct function suffices | Important | Specialized |
 | 8 | [Flyweight](30.1.3.08-flyweight.md) | Share state to support many fine-grained objects | Text rendering (chars), particle systems, glyph caches | Few objects, no memory pressure | Important | Specialized |
 
 ---

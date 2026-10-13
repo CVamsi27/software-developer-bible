@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Design%20Patterns-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -161,6 +161,15 @@ Source: [UML Basics — Class & Sequence Diagrams](30.1.1.04-uml-basics.md)
 **Q:** The lot reserved a spot but ticket creation failed. Why does the class diagram alone not settle the outcome?
 
 **A:** It describes allowed relationships, not the operation's recovery policy. The sequence exposes the failure point; the implementation must release the reservation or recover the same operation, and serialize competing reservations through the appropriate shared mechanism.
+
+
+**Q:** The parking-lot class diagram returns `Optional~Ticket~`, and the sequence includes a “no space” branch. What does the optional result allow, and when should it become an explicit result type?
+
+**A:** The operation must represent both outcomes, such as an optional ticket or an explicit result type. If callers need to distinguish a full lot, conflict, or service failure, model those cases instead of promising a ticket on every path.
+
+**Q:** Does a Mermaid arrow token by itself specify that a sequence message is a formal UML reply?
+
+**A:** No. Mermaid chooses rendered line and arrow shapes; it does not encode every UML message kind. Use the preceding call, message label, and interaction context to identify a reply, and use a UML-specific tool when exact symbol semantics matter.
 
 ## Summary
 

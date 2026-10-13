@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 285,
+    "revised": 286,
     "unchanged": 80,
-    "pending": 155,
-    "reviewed": 365,
+    "pending": 154,
+    "reviewed": 366,
     "topic_chapters": 520
   },
   "entries": [
@@ -4303,12 +4303,17 @@
       "path": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.04-uml-basics.md",
       "group": "30-architecture/30.1-design-patterns/01-foundations",
       "title": "UML Basics \u2014 Class & Sequence Diagrams",
-      "status": "pending",
-      "baseline_sha256": "91ad41a6f1cf9e7bedf2ed0fce1b7f0f1ca3fde8261e96e1db7c0c41041409a4",
+      "status": "revised",
+      "baseline_sha256": "f241353d358d5c2eb4b5752adde4d7307ccb6bf51a62a2ea5561c9db81e5e8de",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Do the class contracts and sequence responses describe the same outcomes and message meanings?",
+      "disposition": "Re-read the class and sequence traces together. Corrected the parking-lot operation results so the class view permits the no-space outcome shown in the interaction; documented Mermaid optional generic result syntax. Clarified how UML reply semantics differ from Mermaid rendering tokens, added the current official Mermaid class/sequence syntax references, and added retrieval questions for outcome contracts and arrow interpretation. Confirmed the linked UML 2.5.1 version remains the current formal OMG specification.",
+      "validation": [
+        "Re-read the chapter in category order with INDEX and REVISION; checked the class and sequence examples as one contract, the practical and textbook definitions, First Principles, summary and cross-references.",
+        "Verified current Mermaid class and sequence syntax against the official Mermaid documentation and confirmed UML 2.5.1 remains the current formal OMG specification.",
+        "All 30 repository gates passed; standalone link check covered 10,798 links and 152 anchors with zero failures; citation baseline remained at 2,517 URLs with no drift.",
+        "Ruby 3.4 locked-bundle production Jekyll build and site-wide rendered-heading check passed; git diff --check passed."
+      ]
     },
     {
       "path": "30-architecture/30.1-design-patterns/02-creational/30.1.2.01-singleton.md",

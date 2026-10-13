@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "58f89831db19ed50c778429c73bdee14ee9178b2f8915f25c925f0c9b4cc8cda",
+ "corpus_digest": "ef1662662bf9d44db9a4dd4f37d58d27167317f823797c768d0e8a10a603bb99",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5211
+  "read_minutes": 5213
  },
  "chapters": [
   {
@@ -3456,7 +3456,7 @@
     "theory",
     "uml"
    ],
-   "m": 13
+   "m": 14
   },
   {
    "p": "30-architecture/30.1-design-patterns/01-foundations/REVISION.html",
@@ -3467,7 +3467,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 4
+   "m": 5
   },
   {
    "p": "30-architecture/30.1-design-patterns/02-creational/30.1.2.01-singleton.html",

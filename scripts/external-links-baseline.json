@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-13",
- "url_count": 2513,
+ "url_count": 2511,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md",
@@ -3384,22 +3384,16 @@
   "https://gsap.com/": [
    "10-frontend/10.6-animation/10.6.08-interview-questions.md"
   ],
-  "https://gsap.com/cheatsheet/": [
-   "10-frontend/10.6-animation/10.6.03-gsap.md"
-  ],
-  "https://gsap.com/community/forum/": [
-   "10-frontend/10.6-animation/10.6.03-gsap.md"
-  ],
   "https://gsap.com/docs/": [
+   "10-frontend/10.6-animation/10.6.03-gsap.md"
+  ],
+  "https://gsap.com/docs/v3/GSAP/gsap.matchMedia()": [
    "10-frontend/10.6-animation/10.6.03-gsap.md"
   ],
   "https://gsap.com/docs/v3/Plugins/ScrollTrigger/": [
    "10-frontend/10.6-animation/10.6.03-gsap.md"
   ],
   "https://gsap.com/resources/React/": [
-   "10-frontend/10.6-animation/10.6.03-gsap.md"
-  ],
-  "https://gsap.com/showcase/": [
    "10-frontend/10.6-animation/10.6.03-gsap.md"
   ],
   "https://gvisor.dev/docs/": [

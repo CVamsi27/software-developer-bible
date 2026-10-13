@@ -30,6 +30,10 @@ Source: [Motion for React](10.6.02-framer-motion.md)
 
 **A:** React normally removes an unmounted element immediately. Presence management keeps it available for its exit phase before completing removal.
 
+**Q:** What does Motion for React’s reduced-motion hook report, and which effects does MotionConfig change?
+
+**A:** The hook reports and tracks the device preference. MotionConfig can disable transform and layout animation while leaving effects such as opacity in place; CSS, video, and Canvas motion need their own policy.
+
 ## GSAP (GreenSock Animation Platform)
 
 Source: [GSAP (GreenSock Animation Platform)](10.6.03-gsap.md)

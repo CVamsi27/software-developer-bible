@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "e682d6cfe9f4c7f8b5ae26889e0c66a11927ec36ae418ea990b61f23a4ba920d",
+ "corpus_digest": "bf303c969d45a01e16a1dab83f28aa5bc5e78cc3dcbf7f899e40e94c942d12c6",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5333
+  "read_minutes": 5330
  },
  "chapters": [
   {
@@ -1313,7 +1313,7 @@
     "concept",
     "reference"
    ],
-   "m": 10
+   "m": 7
   },
   {
    "p": "10-frontend/10.6-animation/10.6.04-react-spring.html",

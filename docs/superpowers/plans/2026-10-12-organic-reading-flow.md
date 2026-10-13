@@ -536,3 +536,11 @@ Re-read the authentication, image optimization and deployment chapters in produc
 Verified version-sensitive claims against the current official Next.js self-hosting and platform guides, cache handler documentation, and Node.js release status. All 30 verification gates passed; standalone link checking found 10,848 local links and 149 anchors without failures; freshness and the 2,513-URL citation baseline are clean. The Ruby 3.4.11 production Jekyll build and site-wide rendered-heading check passed; each edited chapter renders one H1 with no leaked Liquid markers or fences.
 
 The ledger records 263 of 520 topic chapters reviewed (194 revised, 69 retained after direct review); 257 remain pending. Continue through every remaining learning group; the complete corpus review is still open.
+
+## Editorial checkpoint — 13 October 2026 (animation)
+
+Re-read all seven animation teaching chapters with the category learning flow, revision companion, and interview bank. The CSS and Web Animations API chapters retain their state/playback-to-cleanup explanations; the View Transitions and Canvas/SVG chapters retain their distinct navigation, scroll, drawing, accessibility, and rendering boundaries. Their flow already connects each mechanism to a practical choice, so they remain unchanged.
+
+Reframed React Spring around an interrupted target and its value/controller/element trace. Corrected Motion for React and React Spring reduced-motion hook descriptions against their current official APIs: both expose the device preference as a boolean, and React Spring's utility sets global `skipAnimation`. Rebuilt the GSAP chapter around one overlapping hero timeline, then explained scroll control and React ownership/cleanup. Removed repeated catalogs that interrupted the mechanism and added the verified `gsap.matchMedia()` integration to the React lifecycle example. Added a matching revision question and replaced stale “newest topic” interview navigation wording.
+
+The animation group advances the fresh flow pass to 270/520 chapters (197 revised, 73 unchanged; 250 pending). Repository verification, production site build, and rendered checks are run for this checkpoint before publication; the whole-corpus pass remains open.

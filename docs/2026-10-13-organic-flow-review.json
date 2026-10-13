@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 263,
+    "revised": 266,
     "unchanged": 80,
-    "pending": 177,
-    "reviewed": 343,
+    "pending": 174,
+    "reviewed": 346,
     "topic_chapters": 520
   },
   "entries": [
@@ -4713,34 +4713,52 @@
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.md",
       "group": "30-architecture/30.2-system-design/01-theory",
       "title": "Load Balancing",
-      "status": "pending",
-      "baseline_sha256": "ee6c10e4a02ecd72a830c9b7a77802a46a2017d0185ceb3a325c3f688fa274a7",
+      "status": "revised",
+      "baseline_sha256": "b60a24420d23fd36dedb1136147e1782cff219353d9fe6ab0fef0a59d3ef5416",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "When several backends are available, what unit of work should the balancer route, and which signal keeps the choice safe under load and failure?",
+      "disposition": "Removed the generic rationale that repeated the opening and First Principles. Added measurement as the final principle, corrected the definition so client-side selection does not imply one shared address, and retained the protocol, connection/request, health, draining and failure-retry boundaries.",
+      "validation": [
+        "Re-read in theory learning order with the parent and category INDEX plus the REVISION companion; checked both definitions, First Principles, example flow, senior-level boundaries, summary and cross-references.",
+        "Checked current technical claims against official documentation for NGINX, AWS load balancing, Redis, PostgreSQL, Caffeine, Apache Kafka 4.3, RabbitMQ, Amazon SQS/SNS, Google Pub/Sub, Redis Streams, NATS and Apache Pulsar 5.0; cited sources are recorded in the external-link baseline.",
+        "All 30 scripts/verify.sh gates passed. The standalone link check covered 10,827 links and 150 anchors with no failures; citation baseline diff was clean at 2,515 URLs.",
+        "Ruby 3.4 production Jekyll build and site-wide rendered-heading check passed; each reviewed page rendered with exactly one H1.",
+        "git diff --check passed."
+      ]
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.05-caching-patterns.md",
       "group": "30-architecture/30.2-system-design/01-theory",
       "title": "Caching Patterns",
-      "status": "pending",
-      "baseline_sha256": "60f17c14b7e386b02c7965939518049b80d299c6528520439d605eb7eb86ccd3",
+      "status": "revised",
+      "baseline_sha256": "a837dff9482fb227f5f37ebfbeee52932b1dd268a64ca35455b8e1076e118172",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which reads may use an older copy, and how does the system recover when a write and cache update race?",
+      "disposition": "Removed repeated rationale and the duplicate stale-after-write anti-pattern while keeping the more precise refill race. Consolidated TTL and write-through explanations, clarified that expiry need not reclaim memory immediately, improved hot-key and memory guidance, and sharpened the summary around source-of-truth and freshness contracts.",
+      "validation": [
+        "Re-read in theory learning order with the parent and category INDEX plus the REVISION companion; checked both definitions, First Principles, example flow, senior-level boundaries, summary and cross-references.",
+        "Checked current technical claims against official documentation for NGINX, AWS load balancing, Redis, PostgreSQL, Caffeine, Apache Kafka 4.3, RabbitMQ, Amazon SQS/SNS, Google Pub/Sub, Redis Streams, NATS and Apache Pulsar 5.0; cited sources are recorded in the external-link baseline.",
+        "All 30 scripts/verify.sh gates passed. The standalone link check covered 10,827 links and 150 anchors with no failures; citation baseline diff was clean at 2,515 URLs.",
+        "Ruby 3.4 production Jekyll build and site-wide rendered-heading check passed; each reviewed page rendered with exactly one H1.",
+        "git diff --check passed."
+      ]
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md",
       "group": "30-architecture/30.2-system-design/01-theory",
       "title": "Message Queues & Async Patterns",
-      "status": "pending",
-      "baseline_sha256": "054b95ede9413bd2e15543611b98304edef03303b1472ce8a5b7820f3a75d4dd",
+      "status": "revised",
+      "baseline_sha256": "a65235e4bdfcb4e9e7dab7ae6773b07bea8fe0d45ee87541a736e63b5e04f365",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What exactly has completed when the API accepts a job, and how does the system recover if a worker fails between effect and acknowledgment?",
+      "disposition": "Removed the generic section that repeated the opening and sync/async comparison, made job status part of the acceptance contract, and distinguished Kafka retained-log work sharing from queue semantics. Replaced the vague throughput matrix with broker-specific delivery, ordering, acknowledgment and transaction boundaries, checked against current primary docs.",
+      "validation": [
+        "Re-read in theory learning order with the parent and category INDEX plus the REVISION companion; checked both definitions, First Principles, example flow, senior-level boundaries, summary and cross-references.",
+        "Checked current technical claims against official documentation for NGINX, AWS load balancing, Redis, PostgreSQL, Caffeine, Apache Kafka 4.3, RabbitMQ, Amazon SQS/SNS, Google Pub/Sub, Redis Streams, NATS and Apache Pulsar 5.0; cited sources are recorded in the external-link baseline.",
+        "All 30 scripts/verify.sh gates passed. The standalone link check covered 10,827 links and 150 anchors with no failures; citation baseline diff was clean at 2,515 URLs.",
+        "Ruby 3.4 production Jekyll build and site-wide rendered-heading check passed; each reviewed page rendered with exactly one H1.",
+        "git diff --check passed."
+      ]
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.07-distributed-transactions.md",

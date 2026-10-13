@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-13",
- "url_count": 2510,
+ "url_count": 2515,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md",
@@ -1383,11 +1383,15 @@
    "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md"
   ],
   "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html": [
+   "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md",
    "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
   ],
   "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html": [
    "81-lanes-indian-sde-faang/81.18-amazon-interview-guide.md"
+  ],
+  "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues.html": [
+   "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md"
   ],
   "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md"
@@ -1561,6 +1565,9 @@
   "https://docs.aws.amazon.com/ses/latest/dg/send-email.html": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.07-transactional-email-and-notifications.md"
   ],
+  "https://docs.aws.amazon.com/sns/latest/dg/fifo-topic-message-ordering.html": [
+   "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md"
+  ],
   "https://docs.aws.amazon.com/step-functions/": [
    "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md",
    "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md"
@@ -1622,6 +1629,9 @@
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.03-ebpf-observability.md"
   ],
   "https://docs.cloud.google.com/pubsub/docs/exactly-once-delivery": [
+   "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md"
+  ],
+  "https://docs.cloud.google.com/pubsub/docs/ordering": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md"
   ],
   "https://docs.cloud.google.com/spanner/docs/true-time-external-consistency": [
@@ -1954,6 +1964,9 @@
   ],
   "https://docs.microsoft.com/en-us/azure/architecture/patterns/gateway-aggregation": [
    "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.02-api-gateway.md"
+  ],
+  "https://docs.nats.io/concepts/jetstream": [
+   "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md"
   ],
   "https://docs.nestjs.com/": [
    "20-backend/20.2-nestjs/05-advanced-and-interview/20.2.5.02-interview-questions.md"
@@ -3683,6 +3696,7 @@
   ],
   "https://kafka.apache.org/43/design/design/": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.03-soft-delete-and-tombstones.md",
+   "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md",
    "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.02-data-pipelines.md"
   ],
   "https://kafka.apache.org/43/design/design/#transactions": [
@@ -5361,6 +5375,9 @@
    "81-lanes-indian-sde-faang/81.10-spaced-repetition-schedule.md",
    "81-lanes-indian-sde-faang/81.13-learning-guarantee-system.md"
   ],
+  "https://pulsar.apache.org/docs/5.0.x/concepts-messaging/": [
+   "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md"
+  ],
   "https://px.dev/": [
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.03-ebpf-observability.md"
   ],
@@ -5755,7 +5772,8 @@
    "70-interview-toolkit/70.3-cheatsheets/70.3.05-system-design-cheat-sheet.md"
   ],
   "https://redis.io/docs/latest/develop/data-types/streams/": [
-   "20-backend/20.8-caching/20.8.03-advanced-redis-patterns.md"
+   "20-backend/20.8-caching/20.8.03-advanced-redis-patterns.md",
+   "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md"
   ],
   "https://redis.io/docs/latest/develop/programmability/": [
    "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.01-rate-limiting.md"
@@ -7787,7 +7805,8 @@
   ],
   "https://www.rabbitmq.com/docs/confirms": [
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.04-rabbitmq.md",
-   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md"
+   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md",
+   "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md"
   ],
   "https://www.rabbitmq.com/docs/consumers": [
    "20-backend/20.9-message-brokers/20.9.01-message-brokers.md"

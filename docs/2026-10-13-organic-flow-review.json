@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 233,
+    "revised": 236,
     "unchanged": 80,
-    "pending": 207,
-    "reviewed": 313,
+    "pending": 204,
+    "reviewed": 316,
     "topic_chapters": 520
   },
   "entries": [
@@ -4025,34 +4025,53 @@
       "path": "20-backend/20.7-graphql/01-fundamentals/20.7.1.01-graphql-overview.md",
       "group": "20-backend/20.7-graphql/01-fundamentals",
       "title": "GraphQL Overview",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "9e23b67e07effa12804e5940ad4f6a25160afd4e79dc265efc069b7eb10106ae",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How does a client turn a requested field selection into a result, and which cost and access decisions remain server-owned?",
+      "disposition": "Moved the profile-versus-administration need ahead of the definition and tightened First Principles around schema validation versus resolver cost and authorization. Removed broad, overlapping references while keeping the core execution, security and transport sources.",
+      "validation": [
+        "Directly re-read the chapter in category order with INDEX.md, REVISION.md and related GraphQL interview questions; checked the practical/textbook definitions, First Principles, examples, one Summary, See Also and References.",
+        "Verified current GraphQL September 2025 specification, GraphQL.js 17.0.2 release, GraphQL.org mutation semantics and Apollo Server 5.5.1 peer dependency; newly added URLs were probed before the citation baseline update.",
+        "Executed the overview and mutation examples and validated the complete SDL with GraphQL.js 17.0.2 on Node.js 22.23.3. Confirmed OneOf accepts one non-null value and rejects empty, null and multi-field inputs before resolver execution; confirmed a non-null serial mutation failure prevents later root effects.",
+        "All 30 repository gates passed; standalone links checked 10,823 local links and 149 anchors with no failures; citation baseline remained at 2,509 URLs with no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build, site-wide rendered-heading check and focused one-H1 checks for all three pages passed."
+      ]
     },
     {
       "path": "20-backend/20.7-graphql/01-fundamentals/20.7.1.02-schema-design.md",
       "group": "20-backend/20.7-graphql/01-fundamentals",
       "title": "Schema Design",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "51bf58c879e2a182ea994fbeca2d3ad9cd9815ab107b8de3ef7981043c869eb1",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can the public API model a domain relationship and exclusive lookup choice without exposing storage or bypassing authorization?",
+      "disposition": "Opened with the author_id-to-author relationship, removed the repeated Why It Matters and generic mistakes/best-practices recaps, and added the September 2025 OneOf input and @specifiedBy scalar contracts. Corrected the current Apollo Server/GraphQL.js compatibility boundary and removed unrelated or duplicate references.",
+      "validation": [
+        "Directly re-read the chapter in category order with INDEX.md, REVISION.md and related GraphQL interview questions; checked the practical/textbook definitions, First Principles, examples, one Summary, See Also and References.",
+        "Verified current GraphQL September 2025 specification, GraphQL.js 17.0.2 release, GraphQL.org mutation semantics and Apollo Server 5.5.1 peer dependency; newly added URLs were probed before the citation baseline update.",
+        "Added source-linked OneOf recall to the revision guide and clarified the existing interview argument question; the interview bank remains at 50 prompts.",
+        "Executed the overview and mutation examples and validated the complete SDL with GraphQL.js 17.0.2 on Node.js 22.23.3. Confirmed OneOf accepts one non-null value and rejects empty, null and multi-field inputs before resolver execution; confirmed a non-null serial mutation failure prevents later root effects.",
+        "All 30 repository gates passed; standalone links checked 10,823 local links and 149 anchors with no failures; citation baseline remained at 2,509 URLs with no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build, site-wide rendered-heading check and focused one-H1 checks for all three pages passed."
+      ]
     },
     {
       "path": "20-backend/20.7-graphql/01-fundamentals/20.7.1.03-queries-mutations.md",
       "group": "20-backend/20.7-graphql/01-fundamentals",
       "title": "Queries & Mutations",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "d52c419c035399b58632c317197fb35805ec5454b93ea21991db0a6646dccd05",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What happens when a later mutation field fails after an earlier effect commits, and how should a client respond?",
+      "disposition": "Opened with the partial-commit retry risk, stated the specification’s side-effect-free/idempotent rule for non-root-mutation fields, shortened the repeated input-presence explanation and replaced generic recap lists with concrete contract tests.",
+      "validation": [
+        "Directly re-read the chapter in category order with INDEX.md, REVISION.md and related GraphQL interview questions; checked the practical/textbook definitions, First Principles, examples, one Summary, See Also and References.",
+        "Verified current GraphQL September 2025 specification, GraphQL.js 17.0.2 release, GraphQL.org mutation semantics and Apollo Server 5.5.1 peer dependency; newly added URLs were probed before the citation baseline update.",
+        "Executed the overview and mutation examples and validated the complete SDL with GraphQL.js 17.0.2 on Node.js 22.23.3. Confirmed OneOf accepts one non-null value and rejects empty, null and multi-field inputs before resolver execution; confirmed a non-null serial mutation failure prevents later root effects.",
+        "All 30 repository gates passed; standalone links checked 10,823 local links and 149 anchors with no failures; citation baseline remained at 2,509 URLs with no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build, site-wide rendered-heading check and focused one-H1 checks for all three pages passed."
+      ]
     },
     {
       "path": "20-backend/20.7-graphql/02-execution/20.7.2.01-resolvers.md",

@@ -613,3 +613,13 @@ Checked current Resilience4j circuit-breaker/bulkhead and Microsoft bulkhead gui
 All 30 repository gates passed. Standalone links checked 10,822 local links and 149 anchors with no failures; the 2,514-URL citation baseline and writer fixed point are clean. The Ruby 3.4.11 production Jekyll build, site-wide rendered-heading sweep and focused one-H1 checks for both pages passed.
 
 The ledger records 313 of 520 numbered topic chapters reviewed (233 revised, 80 retained unchanged; 207 pending). This closes the two teaching chapters in the Microservices resilience category only. Continue with the next pending group; the full corpus review remains open.
+
+## Editorial checkpoint — 13 October 2026 (GraphQL fundamentals)
+
+Re-read GraphQL Overview, Schema Design and Queries & Mutations in category order with their index, revision guide and interview bank. The flow now starts with differing client views, a storage-independent author relationship and the partial-commit risk of a multi-field mutation. Removed generic recap blocks where the same rules were already explained beside the mechanism. Kept the detailed nullable propagation, pagination, authorization, incremental-delivery, cache, idempotency and subscription boundaries.
+
+Updated schema coverage to the current September 2025 specification: OneOf inputs require one non-null alternative, and `@specifiedBy` documents a custom scalar's format without implementing validation. Clarified that resolver fields outside top-level mutations must be side-effect-free and idempotent, and that serial root mutations do not make effects atomic. Added source-linked revision for OneOf inputs and refined the matching interview prompt. Verified GraphQL.js 17.0.2 as the latest stable release and Apollo Server 5.5.1's GraphQL.js `^16.11.0` peer range against primary sources.
+
+Executed the overview and mutation examples and validated the complete SDL with GraphQL.js 17.0.2 on supported Node.js 22.23.3. OneOf tests covered accepted and invalid inputs; a non-null mutation error stopped later root fields. All 30 repository gates passed. Standalone links checked 10,823 local links and 149 anchors with no failures; the updated 2,509-URL citation baseline and writer fixed point are clean. The Ruby 3.4.11 production Jekyll build, site-wide rendered-heading sweep and focused one-H1 checks for all three pages passed.
+
+The ledger records 316 of 520 numbered topic chapters reviewed (236 revised, 80 retained unchanged; 204 pending). This closes the three teaching chapters in the GraphQL fundamentals category only. Continue with the next pending group; the full corpus review remains open.

@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "6a3a67c0fd45b75748d5085a495a3fb5b23e24671592aa0744a6ab23a6e605be",
+ "corpus_digest": "e6ec563e458a36913a2b27544fc19868845129cf9f1237c2ffe9145c9d154ae1",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5279
+  "read_minutes": 5276
  },
  "chapters": [
   {
@@ -3200,7 +3200,7 @@
    "g": [
     "concept"
    ],
-   "m": 13
+   "m": 12
   },
   {
    "p": "20-backend/20.7-graphql/01-fundamentals/20.7.1.03-queries-mutations.html",
@@ -3210,7 +3210,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 10
   },
   {
    "p": "20-backend/20.7-graphql/01-fundamentals/REVISION.html",

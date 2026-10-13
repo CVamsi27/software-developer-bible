@@ -42,6 +42,10 @@ Source: [Schema Design](20.7.1.02-schema-design.md)
 
 **A:** Interfaces expose shared fields across implementing object types; unions expose alternatives without shared fields. Clients use type conditions to select fields on the possible concrete results.
 
+**Q:** What does a OneOf input object (`@oneOf`) guarantee for a lookup?
+
+**A:** Exactly one alternative must be supplied and non-null. Its SDL fields stay nullable and have no defaults so the selected alternative remains distinguishable. The directive validates input shape; the resolver still checks authorization and existence.
+
 ## Queries & Mutations
 
 Source: [Queries & Mutations](20.7.1.03-queries-mutations.md)

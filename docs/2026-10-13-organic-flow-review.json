@@ -10,10 +10,10 @@
   },
   "counts": {
     "topic_chapters": 520,
-    "revised": 205,
+    "revised": 211,
     "unchanged": 79,
-    "pending": 236,
-    "reviewed": 284
+    "pending": 230,
+    "reviewed": 290
   },
   "entries": [
     {
@@ -2150,67 +2150,103 @@
       "path": "20-backend/20.12-ai-engineering/20.12.01-llm-app-architecture.md",
       "group": "20-backend/20.12-ai-engineering",
       "title": "LLM App Architecture",
-      "status": "pending",
-      "baseline_sha256": "7a1406f64bd9402dcab9b7bc71b00014f248ff6d6f1d20d1b09f48497b963636",
+      "status": "revised",
+      "baseline_sha256": "52d0f1842ff62d3fbe5c3257a347226c9e6a51129dd58ee5dabd2e63e0d686e6",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What does the application own between a user question and a delivered answer?",
+      "disposition": "Opened with a concrete “ask our policies” request and followed it through the three knowledge levers, authorized retrieval, streaming, structured outputs, provider boundaries and metering. Removed the duplicated agent-loop implementation in favor of the orchestration chapter and replaced repeated mistake/practice/performance catalogs with a release contract.",
+      "validation": [
+        "Re-read in learning order with the AI Engineering INDEX, REVISION companion and interview bank; checked definitions, First Principles, canonical topic ownership, explanation flow, Summary and source links.",
+        "Checked changing protocol, serving and regulatory details against the current MCP specification, vLLM CLI/security guidance and European Commission AI Act timeline; versions and limitations are explicit where behavior varies.",
+        "All 30 gates in bash scripts/verify.sh passed, including structure, freshness, duplication, generated search/API consistency, citation-baseline diff, and writer fixed point.",
+        "Standalone python3 scripts/check_links.py passed: 10,837 links, 149 anchors, zero broken references; external citation baseline is clean at 2,520 URLs.",
+        "Ruby 3.4.11 locked-bundle Jekyll production build succeeded; python3 scripts/test_rendered_headings.py _site passed. The build emitted only the existing non-fatal Faraday retry-middleware notice."
+      ]
     },
     {
       "path": "20-backend/20.12-ai-engineering/20.12.02-prompts-context-evals.md",
       "group": "20-backend/20.12-ai-engineering",
       "title": "Prompts, Context & Evals",
-      "status": "pending",
-      "baseline_sha256": "287d15a5e1868bb7dfe2981902565310505f5e0a980e5491cab80c3ebeb600c4",
+      "status": "revised",
+      "baseline_sha256": "df8f7116e3c56a302d4fad956415ad5d0329107da7f9118e3861dbae1c549aea",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can a team locate a quality regression when several model inputs changed?",
+      "disposition": "Connected prompt, complete serialized context and evaluation as one versioned request contract. Retained representative-set design, refusal/grounding checks, judge calibration and cost/latency measurement; removed duplicate generic advice and clarified causal attribution when more than one factor changes.",
+      "validation": [
+        "Re-read in learning order with the AI Engineering INDEX, REVISION companion and interview bank; checked definitions, First Principles, canonical topic ownership, explanation flow, Summary and source links.",
+        "Checked changing protocol, serving and regulatory details against the current MCP specification, vLLM CLI/security guidance and European Commission AI Act timeline; versions and limitations are explicit where behavior varies.",
+        "All 30 gates in bash scripts/verify.sh passed, including structure, freshness, duplication, generated search/API consistency, citation-baseline diff, and writer fixed point.",
+        "Standalone python3 scripts/check_links.py passed: 10,837 links, 149 anchors, zero broken references; external citation baseline is clean at 2,520 URLs.",
+        "Ruby 3.4.11 locked-bundle Jekyll production build succeeded; python3 scripts/test_rendered_headings.py _site passed. The build emitted only the existing non-fatal Faraday retry-middleware notice."
+      ]
     },
     {
       "path": "20-backend/20.12-ai-engineering/20.12.03-retrieval-quality-hybrid-search-reranking.md",
       "group": "20-backend/20.12-ai-engineering",
       "title": "Retrieval Quality — Hybrid Search & Reranking",
-      "status": "pending",
-      "baseline_sha256": "4a4d50150cba5e3507a8b7386949658bdbf31d945c201e34b7b68dcf18e84fc2",
+      "status": "revised",
+      "baseline_sha256": "c53d4e2eb349207cdfecf13f708272a2b4cdb3c9c38357a9e3b5a4f4161f2f66",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What evidence reaches the model, and where can retrieval silently lose it?",
+      "disposition": "Reordered the explanation from query failure to lexical/vector candidates, fusion, reranking and index trade-offs. Preserved the pgvector SQL and eval examples; consolidated repeated catalogs into a release check covering filtered recall, tenant isolation, source freshness, versioning, memory and latency.",
+      "validation": [
+        "Re-read in learning order with the AI Engineering INDEX, REVISION companion and interview bank; checked definitions, First Principles, canonical topic ownership, explanation flow, Summary and source links.",
+        "Checked changing protocol, serving and regulatory details against the current MCP specification, vLLM CLI/security guidance and European Commission AI Act timeline; versions and limitations are explicit where behavior varies.",
+        "All 30 gates in bash scripts/verify.sh passed, including structure, freshness, duplication, generated search/API consistency, citation-baseline diff, and writer fixed point.",
+        "Standalone python3 scripts/check_links.py passed: 10,837 links, 149 anchors, zero broken references; external citation baseline is clean at 2,520 URLs.",
+        "Ruby 3.4.11 locked-bundle Jekyll production build succeeded; python3 scripts/test_rendered_headings.py _site passed. The build emitted only the existing non-fatal Faraday retry-middleware notice."
+      ]
     },
     {
       "path": "20-backend/20.12-ai-engineering/20.12.04-agent-orchestration-patterns.md",
       "group": "20-backend/20.12-ai-engineering",
       "title": "Agent Orchestration Patterns",
-      "status": "pending",
-      "baseline_sha256": "050e6f71096e7f9a4403fa7128670a01d1f9bd13845403aff299ce64f792e1ba",
+      "status": "revised",
+      "baseline_sha256": "2a7e700c7fa4fd5563d695bcea42d36153419684dee2ef346fc4e3c061d90f14",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Who owns an action when a model can call tools and keep asking for more?",
+      "disposition": "Centered the chapter on the application-owned decision/action/observation loop, guards, state, tool effects and evaluation. Removed an SDK-specific MCP bridge and framework-shaped graph sample; updated MCP to the 2026-07-28 stateless revision and retained concurrency, topology, memory and trajectory decision boundaries without repeated end catalogs.",
+      "validation": [
+        "Re-read in learning order with the AI Engineering INDEX, REVISION companion and interview bank; checked definitions, First Principles, canonical topic ownership, explanation flow, Summary and source links.",
+        "Checked changing protocol, serving and regulatory details against the current MCP specification, vLLM CLI/security guidance and European Commission AI Act timeline; versions and limitations are explicit where behavior varies.",
+        "All 30 gates in bash scripts/verify.sh passed, including structure, freshness, duplication, generated search/API consistency, citation-baseline diff, and writer fixed point.",
+        "Standalone python3 scripts/check_links.py passed: 10,837 links, 149 anchors, zero broken references; external citation baseline is clean at 2,520 URLs.",
+        "Ruby 3.4.11 locked-bundle Jekyll production build succeeded; python3 scripts/test_rendered_headings.py _site passed. The build emitted only the existing non-fatal Faraday retry-middleware notice."
+      ]
     },
     {
       "path": "20-backend/20.12-ai-engineering/20.12.05-serving-models-hosted-vs-self-hosted.md",
       "group": "20-backend/20.12-ai-engineering",
       "title": "Serving Models — Hosted APIs vs Self-Hosted",
-      "status": "pending",
-      "baseline_sha256": "e4f2fc6bce0bd098f2392a8e5477cecfa316a20acbbe901f0712a195959cb8b0",
+      "status": "revised",
+      "baseline_sha256": "df9ba3a347dc58a7135f90485e83430234213c5d394a38e059edfe85ccef8e29",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which serving path meets this workload’s quality, data and SLO contract?",
+      "disposition": "Kept the decision matrix, PagedAttention/continuous batching, quantization conditions, VRAM arithmetic, routing and deployment sketches. Removed duplicate decision and checklist sections, consolidated workload validation, and corrected vLLM security guidance: its API key is not a complete perimeter and multi-node paths require isolation.",
+      "validation": [
+        "Re-read in learning order with the AI Engineering INDEX, REVISION companion and interview bank; checked definitions, First Principles, canonical topic ownership, explanation flow, Summary and source links.",
+        "Checked changing protocol, serving and regulatory details against the current MCP specification, vLLM CLI/security guidance and European Commission AI Act timeline; versions and limitations are explicit where behavior varies.",
+        "All 30 gates in bash scripts/verify.sh passed, including structure, freshness, duplication, generated search/API consistency, citation-baseline diff, and writer fixed point.",
+        "Standalone python3 scripts/check_links.py passed: 10,837 links, 149 anchors, zero broken references; external citation baseline is clean at 2,520 URLs.",
+        "Ruby 3.4.11 locked-bundle Jekyll production build succeeded; python3 scripts/test_rendered_headings.py _site passed. The build emitted only the existing non-fatal Faraday retry-middleware notice."
+      ]
     },
     {
       "path": "20-backend/20.12-ai-engineering/20.12.06-safety-cost-governance.md",
       "group": "20-backend/20.12-ai-engineering",
       "title": "AI Safety, Cost & Governance",
-      "status": "pending",
-      "baseline_sha256": "bbe55bad23f9c0790f4b8729a5b3f4ae5f3fc53c9d89df8309600405d02772ec",
+      "status": "revised",
+      "baseline_sha256": "5d85bbcfd5fe325684f5f13cb533e6de9ff0ea5d15e79d3ee980af78fcc8ccd1",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What must be enforced before sensitive data leaves the service or output changes state?",
+      "disposition": "Opened with a concrete sensitive-output/effect case and connected feature gate, authoritative data class, budget, authorization, review and audit. Preserved atomic admission, tool authorization, redaction limits and minimization examples; replaced repeated generic catalogs with testable release evidence and added the current staged EU AI Act timeline.",
+      "validation": [
+        "Re-read in learning order with the AI Engineering INDEX, REVISION companion and interview bank; checked definitions, First Principles, canonical topic ownership, explanation flow, Summary and source links.",
+        "Checked changing protocol, serving and regulatory details against the current MCP specification, vLLM CLI/security guidance and European Commission AI Act timeline; versions and limitations are explicit where behavior varies.",
+        "All 30 gates in bash scripts/verify.sh passed, including structure, freshness, duplication, generated search/API consistency, citation-baseline diff, and writer fixed point.",
+        "Standalone python3 scripts/check_links.py passed: 10,837 links, 149 anchors, zero broken references; external citation baseline is clean at 2,520 URLs.",
+        "Ruby 3.4.11 locked-bundle Jekyll production build succeeded; python3 scripts/test_rendered_headings.py _site passed. The build emitted only the existing non-fatal Faraday retry-middleware notice."
+      ]
     },
     {
       "path": "20-backend/20.13-java/20.13.01-java-language-fundamentals.md",

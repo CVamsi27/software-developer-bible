@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-13",
- "url_count": 2517,
+ "url_count": 2520,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md",
@@ -1346,6 +1346,7 @@
    "80-lanes-abroad-full-stack/80.24-eu-regulatory-compliance.md"
   ],
   "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai": [
+   "20-backend/20.12-ai-engineering/20.12.06-safety-cost-governance.md",
    "80-lanes-abroad-full-stack/80.24-eu-regulatory-compliance.md"
   ],
   "https://docker-curriculum.com/": [
@@ -2348,6 +2349,12 @@
    "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.03-rbac-network-policies.md"
   ],
   "https://docs.vllm.ai/en/latest/": [
+   "20-backend/20.12-ai-engineering/20.12.05-serving-models-hosted-vs-self-hosted.md"
+  ],
+  "https://docs.vllm.ai/en/latest/cli/serve/": [
+   "20-backend/20.12-ai-engineering/20.12.05-serving-models-hosted-vs-self-hosted.md"
+  ],
+  "https://docs.vllm.ai/en/latest/usage/security/": [
    "20-backend/20.12-ai-engineering/20.12.05-serving-models-hosted-vs-self-hosted.md"
   ],
   "https://docs.yjs.dev/api/document-updates": [
@@ -4525,9 +4532,11 @@
    "20-backend/20.12-ai-engineering/20.12.04-agent-orchestration-patterns.md"
   ],
   "https://modelcontextprotocol.io/specification/2025-11-25/basic/transports": [
-   "20-backend/20.12-ai-engineering/20.12.04-agent-orchestration-patterns.md",
-   "20-backend/20.12-ai-engineering/20.12.07-interview-questions.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.04-backend-cheat-sheet.md"
+  ],
+  "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports": [
+   "20-backend/20.12-ai-engineering/20.12.04-agent-orchestration-patterns.md",
+   "20-backend/20.12-ai-engineering/20.12.07-interview-questions.md"
   ],
   "https://monorepo.tools/": [
    "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md",

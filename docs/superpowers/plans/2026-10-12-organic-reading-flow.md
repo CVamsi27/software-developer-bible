@@ -560,3 +560,12 @@ Re-read all six mobile teaching chapters with the learning index, revision compa
 Checked current React Native/RNTL and Expo guidance, Apple AASA caching and phased-release behavior, and Android Dynamic App Links and staged-rollout behavior against primary sources. Updated the citation baseline only after probing each newly introduced URL. All 30 repository gates passed; standalone link checking found 10,836 links and 149 anchors with no failures; the 2,517-URL citation baseline and writer fixed-point check are clean. The Ruby 3.4.11 locked-bundle production build and site-wide rendered-heading check passed. No live EAS build, device test or store submission was performed.
 
 The ledger now records 284 of 520 teaching chapters reviewed (205 revised, 79 unchanged; 236 pending). Continue with the next pending learning group; the all-topic review remains open.
+
+
+## Editorial checkpoint — 13 October 2026 (AI engineering)
+
+Re-read all six AI Engineering teaching chapters with the group INDEX, REVISION companion and interview bank. Rebuilt the learning index around the request path; tightened architecture, prompt/context evaluation, retrieval, orchestration, serving, and governance into topic-led explanations while retaining the code and senior failure boundaries that belong in each chapter. Removed repeated generic end sections and an overlapping agent loop/SDK bridge. Updated MCP to the current `2026-07-28` stateless protocol and corrected vLLM's API-key and multi-node network-security boundaries. Added the European Commission's current staged AI Act timeline and a senior-level interview question about scoping intended use and provider/deployer responsibilities.
+
+Probed the current MCP specification and transports, vLLM serve options/security guidance, and European Commission timeline before updating the external-link baseline. The full `bash scripts/verify.sh` passed all 30 gates; standalone links passed with 10,837 links and 149 anchors, and the 2,520-URL baseline and fixed-point gate are clean. The Ruby 3.4.11 production Jekyll build and rendered-heading check passed. The metadata writer sequence required one additional `gen_master_index.py` pass after the count/API-contract restamp; the fixed-point gate then passed.
+
+The ledger now records 290 of 520 topic chapters reviewed (211 revised, 79 unchanged; 230 pending). Continue with the next pending learning group; this checkpoint does not close the all-topic review.

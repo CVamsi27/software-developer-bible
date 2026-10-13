@@ -1,6 +1,6 @@
 # AI Engineering — Index
 
-> **Study time:** ≈ 1 h 37 m of reading (8 files, ~12 min average).
+> **Study time:** ≈ 1 h 24 m of reading (8 files, ~10 min average).
 > **Building products with language models** — this track focuses on application architecture, retrieval, evaluation, serving, and governance rather than model training. Learn the mechanisms in order, then practice explaining their trade-offs with evidence from systems you have actually worked on.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)
@@ -9,45 +9,23 @@
 
 ---
 
-## Topic Categories
+## Read the track in this order
 
-The 7 content files classify into 4 conceptual categories + drills — a route through architecture, quality, orchestration, and governance.
+Start by framing the model as a dependency inside an application. Then follow the request through context selection, retrieval, orchestration, serving, and governance. Each chapter adds a boundary the previous one relies on.
 
-| Category | Files | Why it matters |
-| -------------------- | ----: | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Architecture** | 2 | LLM app architecture (RAG vs fine-tuning vs prompting, streaming, function calling) + serving strategy (hosted vs self-hosted, vLLM, quantization) |
-| **Orchestration** | 1 | Agent orchestration — ReAct loops, budgets/guards, multi-agent topologies, trajectory evals |
-| **Quality** | 2 | Prompts/context/evals + retrieval quality (hybrid search, reranking) — how you *prove* the thing works |
-| **Governance** | 1 | Safety, cost, PII, kill-switches — the regulated-domain story |
-| **Interview Drills** | 1 | 25+ Q&A with follow-up traps |
-
----
-
-## Study Order
-
-| # | File | You can defend… | Role priority | General importance |
-| --- | ----------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------ |
-| 1 | [LLM App Architecture](20.12.01-llm-app-architecture.md) | RAG vs fine-tuning vs prompting; embeddings; streaming; function calling | Important | Specialized |
-| 2 | [Prompts, Context & Evals](20.12.02-prompts-context-evals.md) | Prompt structure, context-window budgeting, how to prove quality (evals) | Important | Specialized |
-| 3 | [Retrieval Quality: Hybrid Search & Reranking](20.12.03-retrieval-quality-hybrid-search-reranking.md) | Why pure vector fails; hybrid BM25+vector fusion (RRF); rerankers; HNSW/IVF; chunking; recall@k/MRR harness; pgvector hybrid example | Important | Specialized |
-| 4 | [Agent Orchestration Patterns](20.12.04-agent-orchestration-patterns.md) | ReAct plan-act-observe loops; state machines vs graph orchestration; tool-calling (parallel/chained); step/token budgets + circuit breakers; supervisor/debate/handoff topologies; memory tiers; trajectory evals | Important | Specialized |
-| 5 | [Serving Models: Hosted vs Self-Hosted](20.12.05-serving-models-hosted-vs-self-hosted.md) | Decision matrix (cost/latency/residency/control); vLLM PagedAttention + continuous batching; quantization ladder; VRAM math; TTFT/TPOT; provider routing/fallback; EU-GDPR hybrid pattern | Important | Specialized |
-| 6 | [Safety, Cost & Governance](20.12.06-safety-cost-governance.md) | Data classification, egress policy, spend guards, authorization, human review, and minimized audit evidence | Important | Specialized |
-| 7 | [Interview Questions](20.12.07-interview-questions.md) | 25+ Q&A with follow-up traps | Important | Specialized |
+| Step | Read | Be ready to explain |
+| ---- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| 1 | [LLM App Architecture](20.12.01-llm-app-architecture.md) | Which problem calls for prompting, retrieval, or tuning; where validation and authorization belong |
+| 2 | [Prompts, Context & Evals](20.12.02-prompts-context-evals.md) | How to budget a serialized request and measure quality, refusal, cost, and latency |
+| 3 | [Retrieval Quality: Hybrid Search & Reranking](20.12.03-retrieval-quality-hybrid-search-reranking.md) | How lexical/vector candidates, fusion, reranking, chunking, and tenant filters affect evidence quality |
+| 4 | [Agent Orchestration Patterns](20.12.04-agent-orchestration-patterns.md) | How application code bounds tool use, state, side effects, and recovery |
+| 5 | [Serving Models: Hosted vs Self-Hosted](20.12.05-serving-models-hosted-vs-self-hosted.md) | How quality, full cost, latency, data handling, and operations determine the serving path |
+| 6 | [Safety, Cost & Governance](20.12.06-safety-cost-governance.md) | How to enforce egress, authorization, budget, review, and audit controls |
+| 7 | [Interview Questions](20.12.07-interview-questions.md) | How to state a design decision, the failure boundary, and the evidence that would change it |
 
 ## Choose Your First Pass
 
-For an interactive docs feature, read architecture → prompts/evals → retrieval. For tool-driven workflows, add orchestration. Before any provider egress, read governance and serving policy. Then use the [separate Revision](REVISION.md) to explain mechanisms from memory and the interview bank for spoken trade-off answers.
-
-## The Decision Map
-
-```text
-Task needs world knowledge you don't have? → RAG (retrieval + grounding)
-Task is narrow/repetitive/format-fixed? → Prompting + structured output
-Task has measured recurring behavioral failures? → Evaluate fine-tuning (data + cost + ops burden)
-Output feeds code/DB/UI? → JSON schema / function calling — never parse prose
-Sensitive or regulated data involved? → Apply authoritative data policy before selecting a provider (see file 6)
-```
+For an interactive document assistant, begin with architecture → prompts/evals → retrieval. Add orchestration when the feature needs tools or multi-step work. Before provider egress or fallback design, read governance and serving. Use the [separate Revision](REVISION.md) to retrieve mechanisms from memory, then practice trade-offs in the interview bank.
 
 ## The Production Stack in One Diagram
 

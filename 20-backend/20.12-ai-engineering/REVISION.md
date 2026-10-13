@@ -54,9 +54,9 @@ Source: [Agent Orchestration](20.12.04-agent-orchestration-patterns.md).
 
 **A:** Each proposal still requires an inference call. Counting only executed tools lets repeated/invalid turns bypass the intended loop bound and keep spending.
 
-**Q:** Does running an MCP stdio server make its tools sandboxed?
+**Q:** What should an engineer verify when upgrading an MCP integration to a newer protocol revision?
 
-**A:** No. It launches a subprocess with inherited permissions unless the host applies separate isolation. Review its trusted command configuration, capabilities, authorization, and filesystem/network access.
+**A:** Pin and inspect both the specification and SDK version, then test transport, session/state, discovery, cancellation, and backward-compatibility behavior. The `2026-07-28` revision defines stateless requests and standard `stdio`/Streamable HTTP transports; older peers can follow different rules. Regardless of revision, the host must authorize operations and isolate subprocesses explicitly.
 
 ## Serving Models
 

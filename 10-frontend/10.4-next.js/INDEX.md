@@ -1,6 +1,6 @@
 # Next.js — Index
 
-> **Study time:** ≈ 4 h 18 m of reading (21 files, ~12 min average).
+> **Study time:** ≈ 4 h 8 m of reading (21 files, ~12 min average).
 > **21 files** — App Router, rendering strategies, server components, data fetching patterns, caching, streaming, ISR, authentication, static exports, deployment (Docker/Vercel/self-hosted), and interview questions.
 
 [![Files](https://img.shields.io/badge/files-21-blue)](../../INDEX.md)
@@ -16,9 +16,9 @@
 The 17 files are organized into 5 category folders — read in order.
 
 | Category | Files | Why it matters |
-| ------------------------------------------------------------ | ----: | ------------------------------------------------------------------------------------ |
+| -------------------------------------------------------------- | ----: | ------------------------------------------------------------------------------------ |
 | [Rendering Fundamentals](01-rendering-fundamentals/INDEX.md) | 4 | Request rendering, reusable output, streaming, and server/client boundaries |
-| [Routing & Middleware](02-routing-and-middleware/INDEX.md) | 3 | Next.js 16 Proxy, legacy Middleware, Route Handlers, and metadata |
+| [Routing, HTTP & Metadata](02-routing-and-middleware/INDEX.md) | 3 | Next.js 16 Proxy, Route Handlers, and page metadata |
 | [Data & Caching](03-data-and-caching/INDEX.md) | 6 | Data access, mutations, two cache models, streaming, regeneration, and static export |
 | [Production](04-production/INDEX.md) | 3 | Authentication, image optimization, deployment |
 | [Interview Prep](05-interview-prep/INDEX.md) | 1 | 40 interview questions |
@@ -55,9 +55,9 @@ Trace how a URL reaches a page or handler, then place request-specific policy at
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 05 | [Proxy and Middleware](02-routing-and-middleware/10.4.2.01-middleware.md) | Next.js 16 Proxy, earlier Middleware, matchers, redirects, rewrites, early routing versus authorization | Important | Specialized | 11 min |
-| 06 | [Route Handlers](02-routing-and-middleware/10.4.2.02-route-handlers.md) | API routes, request/response, caching, dynamic vs static | Important | Important | 16 min |
-| 07 | [Metadata](02-routing-and-middleware/10.4.2.03-metadata.md) | Static/dynamic metadata, SEO, Open Graph, robots, sitemaps | Important | Specialized | 20 min |
+| 05 | [Proxy and Middleware](02-routing-and-middleware/10.4.2.01-middleware.md) | Next.js 16 Proxy, earlier Middleware, matchers, redirects, rewrites, early routing versus authorization | Important | Specialized | 9 min |
+| 06 | [Route Handlers](02-routing-and-middleware/10.4.2.02-route-handlers.md) | API routes, request/response, caching, dynamic vs static | Important | Important | 15 min |
+| 07 | [Metadata](02-routing-and-middleware/10.4.2.03-metadata.md) | Static/dynamic metadata, SEO, Open Graph, robots, sitemaps | Important | Specialized | 13 min |
 
 ---
 

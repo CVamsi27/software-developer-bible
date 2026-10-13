@@ -6,7 +6,7 @@
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
 
-# Routing & Middleware — Next.js — Revision
+# Routing, HTTP & Metadata — Next.js — Revision
 
 Complete the learning chapters first, then answer these questions without reopening them. Use each source link to check an uncertain answer.
 
@@ -37,8 +37,8 @@ Source: [Proxy in Next.js](10.4.2.01-middleware.md)
 
 **Common Mistakes**
 
-5. **Q:** Why is an in-memory IP limiter insufficient across replicas?
-   **A:** Each process has independent counters and lifetimes. Shared atomic storage, expiry, and a trustworthy client-IP source are required for consistent enforcement.
+5. **Q:** Why must a distributed rate limiter make its check-and-increment atomic?
+   **A:** Concurrent requests can all observe a count below the limit and over-accept unless the shared store performs the decision as one operation. The key, window, expiry and trusted identity source also define who shares a quota.
 
 
 **Best Practices**
@@ -137,8 +137,8 @@ Source: [Proxy](10.4.2.01-middleware.md), [Route Handlers](10.4.2.02-route-handl
 **Q:** Why clone a rewrite URL before replacing its pathname?
 **A:** The existing URL carries query parameters and other routing context. A path-only construction can silently lose pagination or search inputs.
 
-**Q:** What makes an in-memory fixed-window limiter pass request 100 but reject 101?
-**A:** The first request initializes count 1; accepted requests increment it until the maximum. Later requests in that window reject; a new window resets the record. Replicas still need a shared atomic policy.
+**Q:** Why should Proxy's matcher and a shared rate-limit key be reviewed together?
+**A:** A matcher decides which routes reach early logic, while the key decides which requests share a quota. Excluding a path bypasses Proxy; using an untrusted client-supplied identity can let callers evade the quota.
 
 **Q:** Why is putting JSON directly into an ORM update unsafe even after authentication?
 **A:** Identity does not restrict supplied field names. Parse an allowlist and authorize the resource so protected fields such as roles cannot be mass-assigned.

@@ -10,10 +10,10 @@
   },
   "counts": {
     "topic_chapters": 520,
-    "revised": 182,
+    "revised": 185,
     "unchanged": 69,
-    "pending": 269,
-    "reviewed": 251
+    "pending": 266,
+    "reviewed": 254
   },
   "entries": [
     {
@@ -1313,34 +1313,52 @@
       "path": "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.01-middleware.md",
       "group": "10-frontend/10.4-next.js/02-routing-and-middleware",
       "title": "Proxy (formerly Middleware) in Next.js",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "29e6f2f4a9e89c3deb994edf659a485f9ccd80ce868af9dad5145a44b1956eaf",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can a request be redirected or rewritten early without turning Proxy into an application bottleneck or security boundary?",
+      "disposition": "Reframed Proxy around one request entering the routing layer. Made matcher coverage and execution order explicit, fixed the experiment rewrite to preserve query context and set its cookie on the returned response, replaced the process-local limiter demo with the shared atomic boundary, and attached runtime and authorization limits to the decisions they govern.",
+      "validation": [
+        "Directly re-read the three chapters in learning order with their INDEX and REVISION companions and the relevant Next.js interview-bank answers; checked each retained example against the surrounding explanation.",
+        "Verified version-sensitive behavior against current official Next.js 16.4 documentation: Proxy runtime and execution order, Route Handler caching and Cache Components setup, metadata inheritance and streaming. Recommended create-next-app defaults enable Cache Components and Partial Prefetching; existing/manual apps must set both explicitly.",
+        "The study repository has no runnable Next.js application fixture for these routes; the TypeScript/API examples were reviewed against current framework contracts rather than claimed as end-to-end executed.",
+        "All 30 repository verification gates pass; standalone link scan reports 10,848 links and 149 anchors with zero failures, freshness scan is clean, and the 2,519-URL citation baseline has no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check pass. All three edited pages render exactly one H1, required learning sections, code blocks and no leaked Liquid markers."
+      ]
     },
     {
       "path": "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.02-route-handlers.md",
       "group": "10-frontend/10.4-next.js/02-routing-and-middleware",
       "title": "Route Handlers in Next.js",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "94b424794247ccabf610091f55189f4383255bd2dc3ab745e6d6845bb55e2709",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "When does a caller need an HTTP endpoint, and what contract must the handler own from untrusted request to response?",
+      "disposition": "Reopened the chapter around a real webhook request, then followed method, route params, authorization, validation, status, cache policy and response. Kept distinct examples for pagination, streams, signed/idempotent webhook handling, uploads and CORS; removed the duplicate error-handling sample and summary table. Clarified Next.js 16 Cache Components and HTTP-cache boundaries.",
+      "validation": [
+        "Directly re-read the three chapters in learning order with their INDEX and REVISION companions and the relevant Next.js interview-bank answers; checked each retained example against the surrounding explanation.",
+        "Verified version-sensitive behavior against current official Next.js 16.4 documentation: Proxy runtime and execution order, Route Handler caching and Cache Components setup, metadata inheritance and streaming. Recommended create-next-app defaults enable Cache Components and Partial Prefetching; existing/manual apps must set both explicitly.",
+        "The study repository has no runnable Next.js application fixture for these routes; the TypeScript/API examples were reviewed against current framework contracts rather than claimed as end-to-end executed.",
+        "All 30 repository verification gates pass; standalone link scan reports 10,848 links and 149 anchors with zero failures, freshness scan is clean, and the 2,519-URL citation baseline has no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check pass. All three edited pages render exactly one H1, required learning sections, code blocks and no leaked Liquid markers."
+      ]
     },
     {
       "path": "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.03-metadata.md",
       "group": "10-frontend/10.4-next.js/02-routing-and-middleware",
       "title": "Metadata API in Next.js",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "cca9c82dfd20537bb6d81b989865a6b060596ca2e8210cc8db06107efa97c558",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can the document head and crawler/share outputs describe the same page data as its visible content?",
+      "disposition": "Replaced the generic SEO introduction with a mismatched product-preview problem. Consolidated duplicate title, canonical, Open Graph and metadataBase examples into one shared-default path and one validated dynamic-data path; preserved shallow merge, metadata streaming and HTML-limited bot behavior, language alternates, safe JSON-LD, robots, sitemap and image boundaries.",
+      "validation": [
+        "Directly re-read the three chapters in learning order with their INDEX and REVISION companions and the relevant Next.js interview-bank answers; checked each retained example against the surrounding explanation.",
+        "Verified version-sensitive behavior against current official Next.js 16.4 documentation: Proxy runtime and execution order, Route Handler caching and Cache Components setup, metadata inheritance and streaming. Recommended create-next-app defaults enable Cache Components and Partial Prefetching; existing/manual apps must set both explicitly.",
+        "The study repository has no runnable Next.js application fixture for these routes; the TypeScript/API examples were reviewed against current framework contracts rather than claimed as end-to-end executed.",
+        "All 30 repository verification gates pass; standalone link scan reports 10,848 links and 149 anchors with zero failures, freshness scan is clean, and the 2,519-URL citation baseline has no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check pass. All three edited pages render exactly one H1, required learning sections, code blocks and no leaked Liquid markers."
+      ]
     },
     {
       "path": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.01-data-fetching-patterns.md",

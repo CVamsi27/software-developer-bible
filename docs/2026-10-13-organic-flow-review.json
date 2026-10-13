@@ -10,55 +10,75 @@
   },
   "counts": {
     "topic_chapters": 520,
-    "revised": 174,
+    "revised": 178,
     "unchanged": 69,
-    "pending": 277,
-    "reviewed": 243
+    "pending": 273,
+    "reviewed": 247
   },
   "entries": [
     {
       "path": "00-strategy/00.01-communication.md",
       "group": "00-strategy",
       "title": "Communication Skills for Senior Engineer Interviews",
-      "status": "pending",
-      "baseline_sha256": "ba3af1a63ef6b3c3d7339f14eca9f37a1965a88afdc175542f74688a2b99e488",
+      "status": "revised",
+      "baseline_sha256": "7335f3d6acb775d4e30557ef5a0c4993a39358b6ecf893045bcb539f2a7e66a5",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can you explain one technical decision clearly without narrating every thought?",
+      "disposition": "Removed an unexplained communication acronym and linked the advice to the concrete sequence already established: answer, evidence, trade-off and optional depth. Simplified cross-references so they support the conversation rather than promise interview scoring.",
+      "validation": [
+        "Directly re-read in learning order; checked the practical/textbook definition, First Principles, scenario flow, summary and cross-references.",
+        "The four chapters retain truthful, evidence-based guidance; the offer arithmetic and index reading-time label were checked explicitly.",
+        "All 30 repository gates passed; standalone links checked 10,847 local links and 149 anchors with no failures; citation baseline remained at 2,520 URLs with no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "00-strategy/00.02-resume-tips.md",
       "group": "00-strategy",
       "title": "Resume Tips for Senior Full Stack Engineers",
-      "status": "pending",
-      "baseline_sha256": "eb8dc7b3bef4558474188dff924cde6f7737d16638075f57fdfb445b62e2a8da",
+      "status": "revised",
+      "baseline_sha256": "1fecf8d582179ecd4d44e304879f7c29d83edc16926e34d0bc8ce1104717b1ba",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What makes a senior-level resume claim both relevant and defensible?",
+      "disposition": "Added concrete senior evidence—ownership boundary, scale or risk, decision, cross-team alignment and operational outcome—and described mentoring through observable results. Replaced overlong, FAANG-specific cross-reference descriptions with the applicable behavioral and abroad preparation paths.",
+      "validation": [
+        "Directly re-read in learning order; checked the practical/textbook definition, First Principles, scenario flow, summary and cross-references.",
+        "The four chapters retain truthful, evidence-based guidance; the offer arithmetic and index reading-time label were checked explicitly.",
+        "All 30 repository gates passed; standalone links checked 10,847 local links and 149 anchors with no failures; citation baseline remained at 2,520 URLs with no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "00-strategy/00.03-star-method.md",
       "group": "00-strategy",
       "title": "STAR Method: Complete Guide for Senior Engineers",
-      "status": "pending",
-      "baseline_sha256": "c09f40bcca387973fdcdccc7da7a25dfecf404ed81ddc8d8d61b6a5eae248c18",
+      "status": "revised",
+      "baseline_sha256": "5c035fa456f9c55bf0cfe4600bf1ed41cb5b7ed55758011b9e3cd825f7a89bfe",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do you make a behavioral story show your own judgment while crediting the team?",
+      "disposition": "Retained the scenario-led story trace and the distinction among situation, responsibility, action, evidence and lesson. Simplified over-specific cross-reference descriptions and connected the chapter to the abroad interview path.",
+      "validation": [
+        "Directly re-read in learning order; checked the practical/textbook definition, First Principles, scenario flow, summary and cross-references.",
+        "The four chapters retain truthful, evidence-based guidance; the offer arithmetic and index reading-time label were checked explicitly.",
+        "All 30 repository gates passed; standalone links checked 10,847 local links and 149 anchors with no failures; citation baseline remained at 2,520 URLs with no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "00-strategy/00.04-hr-questions.md",
       "group": "00-strategy",
       "title": "HR Round Strategy for Senior Full Stack Engineers",
-      "status": "pending",
-      "baseline_sha256": "74e1c7a367759456374d4b59f28391f22ab9eebd7ed8a6e9e8d16d8d3fc1a930",
+      "status": "revised",
+      "baseline_sha256": "aa947d42ddb29c50aa3371b13f7702572c8f82f668c712b05b0278158529e691",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can you compare an offer without confusing a target, an estimate or a one-time payment with salary?",
+      "disposition": "Changed the compensation example to arbitrary units so its arithmetic does not imply a US market benchmark. Distinguished target gross cash, estimated equity, sign-on and benefits, and added the destination-specific preparation path.",
+      "validation": [
+        "Directly re-read in learning order; checked the practical/textbook definition, First Principles, scenario flow, summary and cross-references.",
+        "The four chapters retain truthful, evidence-based guidance; the offer arithmetic and index reading-time label were checked explicitly.",
+        "All 30 repository gates passed; standalone links checked 10,847 local links and 149 anchors with no failures; citation baseline remained at 2,520 URLs with no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.01-execution-context.md",

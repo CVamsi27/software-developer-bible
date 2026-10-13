@@ -491,3 +491,12 @@ Re-read all 16 numbered teaching chapters in `40.2-kubernetes` in category order
 Checked current version-sensitive Kubernetes and Helm behavior against primary documentation. Parsed all 45 YAML fences in the changed Kubernetes Markdown; the production Kustomize overlay built with `kubectl`, and the extracted chart passed Helm 4.3.0 lint plus development and production render assertions. The full repository suite passed all 30 gates, including 10,847 local links and 149 anchors, freshness, structure, template, First Principles, fixed-point and citation-baseline checks (2,520 URLs, no drift). A Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed.
 
 The ledger records 243 of 520 topic chapters reviewed (174 revised, 69 retained after direct review); 277 remain pending. This closes the Kubernetes checkpoint only. Continue with the next pending resume-priority group and then every remaining learning group; the 520-chapter review remains open.
+
+
+## Editorial checkpoint — 13 October 2026 (Senior interview strategy)
+
+Re-read the four essential chapters in `00-strategy` and their section index and revision drill. Added concrete evidence signals for senior ownership and mentoring, removed an unexplained mnemonic, simplified cross-links, and replaced US-dollar offer figures with currency-neutral arithmetic. Corrected the index badge from a stale two-hour label to the generated 18-minute reading estimate. The section now connects resume claims to interview stories and destination-specific preparation without prescribing one interview script or salary market.
+
+The arithmetic and required definition/First Principles/Summary sections were checked directly. The full repository suite passed all 30 gates; standalone link checking found 10,847 links and 149 anchors with no failures, with no citation-baseline drift (2,520 URLs). The Ruby 3.4.11 locked-bundle production build and site-wide rendered-heading check passed.
+
+The ledger records 247 of 520 chapters reviewed (178 revised, 69 retained after direct review); 273 remain pending. Continue in the pending resume-priority order with Next.js Rendering Fundamentals; this checkpoint does not close the corpus review.

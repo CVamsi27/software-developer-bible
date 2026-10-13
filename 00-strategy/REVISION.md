@@ -26,6 +26,10 @@ Source: [Resume Tips for Senior Full Stack Engineers](00.02-resume-tips.md)
 
 **A:** Ask whether each prominent claim answers that role's requirements and whether a reader can find your scope, evidence and contribution quickly. Tailor truthful emphasis rather than copying unsupported keywords.
 
+**Q:** A resume says you “led architecture,” but the scope is unclear. What evidence would make the claim credible for a senior role?
+
+**A:** Name the system boundary, scale or risk, decisions you owned, teams you aligned and the operational outcome. Support the result with measurements or another verifiable signal, and be ready to explain your contribution separately from the team's.
+
 **Q:** How can an impact bullet remain credible when you lack a precise percentage?
 
 **A:** Describe the change, scope and observable outcome with verifiable evidence. Use counts, adoption or a concrete before/after if available; never invent a metric to satisfy a template.

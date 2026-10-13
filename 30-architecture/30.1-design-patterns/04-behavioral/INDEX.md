@@ -37,7 +37,7 @@ Creational and structural patterns are about "what" (objects) and "how" (composi
 | 8 | [Memento](30.1.4.08-memento.md) | Originator-owned snapshots; caretaker-managed history | Undo while keeping state representation private | No restore/history requirement | Important | Specialized |
 | 9 | [Command](30.1.4.09-command.md) | Encapsulate a request as an object | Undo/redo, queueing, macro recording, transactional ops | Simple one-shot operations | Important | Specialized |
 | 10 | [Visitor](30.1.4.10-visitor.md) | Add operations without modifying classes | ASTs, compilers, complex object structures | Class hierarchy is unstable | Important | Specialized |
-| 11 | [Interpreter](30.1.4.11-interpreter.md) | Grammar + interpreter for a DSL | DSLs, config formats, regex-like languages | A standard language implementation is already suitable | Important | Specialized |
+| 11 | [Interpreter](30.1.4.11-interpreter.md) | Define and evaluate a small language | Rules, filters, formulas | A standard language implementation is already suitable | Important | Specialized |
 | 12 | [Null Object](30.1.4.12-null-object.md) | Encapsulated no-op behavior instead of null | Sensible neutral defaults (no-op loggers), branch-free chains | Absence must surface (silence hides bugs) | Important | Specialized |
 
 ---

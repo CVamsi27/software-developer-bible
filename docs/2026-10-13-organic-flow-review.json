@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 309,
+    "revised": 310,
     "unchanged": 80,
-    "pending": 131,
-    "reviewed": 389,
+    "pending": 130,
+    "reviewed": 390,
     "topic_chapters": 520
   },
   "entries": [
@@ -4756,12 +4756,21 @@
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.11-interpreter.md",
       "group": "30-architecture/30.1-design-patterns/04-behavioral",
       "title": "Interpreter Pattern",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "6fe34c83f1d9fe7aae9874ee702a2bc2f7920a20388400327169f28603a1df29",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can a rule language define exactly what an expression may do, while keeping parsing separate from evaluation?",
+      "disposition": "Opened with a pricing-rule expression and the risk of evaluating user text as host-language code. Replaced the paraphrased textbook definition with the GoF intent, then traced grammar representation, evaluation and parsing as separate responsibilities. Tightened product examples so they no longer imply that every query, regex or template engine is a tree-walking interpreter; simplified the learning-index use cases.",
+      "validation": [
+        "Re-read in behavioral-pattern order alongside Visitor and Null Object; checked the expression trace, precedence example, parser/evaluator boundary, untrusted-tree limits and caching guidance.",
+        "Verified the GoF definition in the publisher-hosted O\u2019Reilly Java Design Patterns chapter excerpt. The citation endpoint returned no response to automated probes (bot wall); the search-indexed publisher excerpt exposed the exact GoF definition.",
+        "The fenced TypeScript example compiled strictly with TypeScript 5.8.3 targeting ES2022/CommonJS and evaluated the expression to 16.",
+        "Read-time, alignment, citation-baseline, search-index and count writers ran; the fixed-point check confirmed the repair writers leave the corpus stable.",
+        "All 30 repository verification gates passed. Standalone links checked 10,797 links and 152 anchors with 0 issues; citation-baseline diff had 0 added or removed URLs at 2,526.",
+        "Ruby 3.4 locked-bundle production Jekyll build, rendered-heading check and git diff --check passed."
+      ],
+      "reviewed_at": "2026-10-14",
+      "review_sha256": "ef1339a4b99f098b8e01444cb4ece472863a2d13ce53d1c8d1404e38d03264db"
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.12-null-object.md",

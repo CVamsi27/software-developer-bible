@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2517,
+ "url_count": 2518,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -8160,6 +8160,9 @@
   ],
   "https://www.typescriptlang.org/docs/handbook/2/classes": [
    "30-architecture/30.1-design-patterns/01-foundations/30.1.1.03-oop-concepts.md"
+  ],
+  "https://www.typescriptlang.org/docs/handbook/2/classes.html": [
+   "30-architecture/30.1-design-patterns/02-creational/30.1.2.01-singleton.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/2/classes.html#this-types": [
    "30-architecture/30.1-design-patterns/02-creational/30.1.2.05-prototype.md"

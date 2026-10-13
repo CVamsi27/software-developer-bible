@@ -18,6 +18,10 @@ Source: [Singleton Pattern](30.1.2.01-singleton.md)
 
 **A:** No. Its scope is the module/runtime instance. Separate processes or module copies can have separate instances; distributed coordination needs another mechanism.
 
+**Q:** Does a TypeScript `private` constructor stop JavaScript code from constructing another instance?
+
+**A:** No. TypeScript checks the modifier at compile time, while emitted JavaScript still has a callable constructor. The modifier prevents accidental construction in checked TypeScript; it is not runtime access control.
+
 **Q:** Trace two concurrent calls to `sharedAsyncResource`. Which operation is shared, and when can a retry start?
 
 **A:** The first call stores a promise before its loader runs; the second returns that same promise. A rejected load clears the cached promise, allowing a later call to start a fresh attempt. Success keeps the result shared until an explicit lifecycle policy changes it.

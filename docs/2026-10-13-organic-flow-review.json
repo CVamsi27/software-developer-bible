@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 286,
+    "revised": 287,
     "unchanged": 80,
-    "pending": 154,
-    "reviewed": 366,
+    "pending": 153,
+    "reviewed": 367,
     "topic_chapters": 520
   },
   "entries": [
@@ -4319,12 +4319,18 @@
       "path": "30-architecture/30.1-design-patterns/02-creational/30.1.2.01-singleton.md",
       "group": "30-architecture/30.1-design-patterns/02-creational",
       "title": "Singleton Pattern",
-      "status": "pending",
-      "baseline_sha256": "67bdb7abfea6182dc93586d141879b0da5a3ed3a4d79467c23f04fa38295ba2c",
+      "status": "revised",
+      "baseline_sha256": "dc7dc82caaccadf1a166abc9592ff017fdeec3cf5344b9875bc6cc81e1ac19c8",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What exactly does one instance mean across callers, async startup, and JavaScript runtime boundaries?",
+      "disposition": "The chapter already had a clear problem-to-mechanism flow and correctly scoped module and DI lifetimes. Tightened the TypeScript private-constructor statement to distinguish compile-time checking from emitted JavaScript, added the official handbook reference and a retrieval question, and removed spacing noise in See Also.",
+      "validation": [
+        "Re-read the Singleton chapter in category learning order with INDEX and REVISION; checked the practical/textbook definitions, runtime scope, construction trace, async failure path, summary and cross-references.",
+        "Verified TypeScript private-member behavior in the current official handbook and Node.js module URL identity in the current official Node.js documentation.",
+        "Executed sharedAsyncResource in Node.js v23.7.0: concurrent calls shared one open and result, rejected callers shared the failure, and a later call retried successfully.",
+        "All 30 repository gates passed; standalone links checked 10,798 links and 152 anchors with zero failures; citation baseline stayed at 2,518 URLs with no drift.",
+        "Ruby 3.4 locked-bundle production Jekyll build and site-wide rendered-heading check passed; git diff --check passed."
+      ]
     },
     {
       "path": "30-architecture/30.1-design-patterns/02-creational/30.1.2.02-factory-method.md",

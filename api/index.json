@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "4132a0850baad00981a748b42eefca369cd9b6362e491eb059db93f219617166",
+ "corpus_digest": "a5557ed95d337ff5ea61246022d4073b6d4e326608b5ff683b92fe7bac7f8a93",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5237
+  "read_minutes": 5232
  },
  "chapters": [
   {
@@ -4142,7 +4142,7 @@
     "networking",
     "theory"
    ],
-   "m": 16
+   "m": 11
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.html",

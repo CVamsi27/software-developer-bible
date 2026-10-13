@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 280,
+    "revised": 281,
     "unchanged": 80,
-    "pending": 160,
-    "reviewed": 360,
+    "pending": 159,
+    "reviewed": 361,
     "topic_chapters": 520
   },
   "entries": [
@@ -4996,12 +4996,18 @@
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.22-dns-and-name-resolution.md",
       "group": "30-architecture/30.2-system-design/01-theory",
       "title": "DNS & Name Resolution",
-      "status": "pending",
-      "baseline_sha256": "9c67c63d7f117def1d1b50dfbaec47abd7dac243ac27a3d25ca2be8c556ca98c",
+      "status": "revised",
+      "baseline_sha256": "4908f18bbc17f358914248dd541b4d5289e6969ba596f39cff04dd07df840c27",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "When an authoritative DNS answer changes, which caches, failures, resolver policies and existing connections still control where a client goes?",
+      "disposition": "Rebuilt the chapter around one lookup and a planned traffic cutover. Removed repeated Why It Matters, use-case, mistakes and best-practice recaps, plus an unbounded hand-written DNS cache and incomplete failover YAML. Added precise record boundaries, in-domain glue, serve-stale and negative-cache behavior, DNSSEC chain records, authoritative TCP support, Kubernetes ndots behavior and the Node OS-lookup/threadpool distinction. Updated the index and source-linked revision questions.",
+      "validation": [
+        "Re-read in learning order with the system-design INDEX and REVISION companion; checked practical/textbook definitions, First Principles, Summary, See Also and References.",
+        "Verified current primary RFCs for DNS delegation, TCP transport, glue, negative and stale caching, service bindings, encrypted DNS and DNSSEC; checked current Node.js v26.11.1 and Kubernetes documentation.",
+        "Executed the Node.js resolve4/lookup examples and the authoritative dig query; both lookup paths returned expected address data.",
+        "All 30 repository verification gates passed; standalone links checked 10,808 links and 150 anchors with 0 failures; citation baseline contains 2,513 URLs with 0 drift.",
+        "Ruby 3.4 production Jekyll build and rendered-heading sweep passed; the edited page renders exactly one H1."
+      ]
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.md",

@@ -482,6 +482,22 @@ Source: [DNS & Name Resolution](30.2.1.22-dns-and-name-resolution.md)
 
 **A:** No. HTTPS/SVCB records can advertise a target, port, ALPN and ECH configuration, but the client still validates the certificate against its intended service identity. ECH can hide the inner SNI when negotiated; the chosen DNS resolver still sees its query. See [RFC 9460](https://www.rfc-editor.org/rfc/rfc9460.html), [RFC 9848](https://www.rfc-editor.org/rfc/rfc9848.html), and [RFC 9525](https://www.rfc-editor.org/rfc/rfc9525.html).
 
+**Q:** Can a recursive resolver return an address after its TTL expires?
+
+**A:** Yes. If it cannot refresh an expired answer from an authority, a resolver configured for serve-stale may return that answer to preserve availability. The policy trades freshness for resilience, so TTL is not an exact failover clock; see [RFC 8767](https://www.rfc-editor.org/rfc/rfc8767.html).
+
+**Q:** Does SERVFAIL mean the domain does not exist, and should it be cached like NXDOMAIN?
+
+**A:** No. NXDOMAIN means the queried name is absent; NODATA means it exists without the requested type; SERVFAIL means resolution could not complete. Failure caching has separate rules; see [RFC 2308](https://www.rfc-editor.org/rfc/rfc2308.html) and [RFC 9520](https://www.rfc-editor.org/rfc/rfc9520.html).
+
+**Q:** Why might Node.js `dns.lookup()` disagree with `dns.resolve4()` or `dig`?
+
+**A:** `dns.lookup()` uses operating-system name-resolution facilities, which may consult hosts files and other local sources. `dns.resolve4()` sends a DNS query through its configured resolver. Compare the same lookup path your application uses; see the [Node.js DNS API](https://nodejs.org/api/dns.html).
+
+**Q:** What connects a DNSSEC trust chain across a zone delegation?
+
+**A:** The signed parent zone publishes a `DS` digest that the validator matches to a `DNSKEY` in the child zone. The child key validates `RRSIG` records; `NSEC` or `NSEC3` can prove authenticated absence. See [RFC 9364](https://www.rfc-editor.org/rfc/rfc9364.html).
+
 ## TLS, HTTPS & the Certificate Lifecycle
 
 Source: [TLS, HTTPS & the Certificate Lifecycle](30.2.1.23-tls-https-and-certificates.md)

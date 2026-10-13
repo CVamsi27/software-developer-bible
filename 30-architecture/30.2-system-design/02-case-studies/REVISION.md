@@ -22,6 +22,14 @@ Source: [URL Shortener System Design](30.2.2.01-url-shortener.md)
 
 **A:** The authoritative unique insertion admits one. The other returns a conflict or retries under policy; a lost successful response needs stable request identity, not a new alias allocation.
 
+**Q:** Why can a CDN purge fail to enforce immediate link revocation?
+
+**A:** A browser may already have cached the redirect and never contact the service or CDN again. The redirect's cache lifetime must fit the revocation promise, or the product must accept that a previously cached destination can remain reachable.
+
+**Q:** What does a unique constraint guarantee for randomly generated codes, and what does it not guarantee?
+
+**A:** It prevents two committed mappings from owning the same code and gives the creator a collision signal to retry. It does not make collisions improbable; code-space size and randomness determine collision risk, while the constraint preserves correctness.
+
 ## WhatsApp System Design
 
 Source: [WhatsApp System Design](30.2.2.02-whatsapp.md)

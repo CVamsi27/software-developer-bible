@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "025d30685ccdd62984b4a4e61e5b95355fc02790f17d47193714d5b15dc0b6f7",
+ "corpus_digest": "0560764cde46a13caf4926a764036d0882c39a2e0a75f776a5ce8a5a72d42c0f",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5189
+  "read_minutes": 5190
  },
  "chapters": [
   {
@@ -4179,7 +4179,7 @@
     "interview",
     "url-shortener"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.02-whatsapp.html",

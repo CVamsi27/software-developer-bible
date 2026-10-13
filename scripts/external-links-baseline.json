@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-13",
- "url_count": 2520,
+ "url_count": 2519,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md",
@@ -4697,6 +4697,9 @@
    "10-frontend/10.5-form-handling/10.5.07-interview-questions.md"
   ],
   "https://nextjs.org/docs/app/getting-started/caching": [
+   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md",
+   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md",
+   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.03-server-components.md",
    "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.02-route-handlers.md",
    "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.01-data-fetching-patterns.md",
    "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.03-caching.md"
@@ -4721,11 +4724,6 @@
   "https://nextjs.org/docs/app/getting-started/mutating-data": [
    "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.02-server-actions.md",
    "10-frontend/10.5-form-handling/10.5.05-server-actions-and-form-patterns.md"
-  ],
-  "https://nextjs.org/docs/app/getting-started/partial-prerendering": [
-   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md",
-   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md",
-   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.03-server-components.md"
   ],
   "https://nextjs.org/docs/app/getting-started/proxy": [
    "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.01-middleware.md"

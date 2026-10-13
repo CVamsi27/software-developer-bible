@@ -10,10 +10,10 @@
   },
   "counts": {
     "topic_chapters": 520,
-    "revised": 178,
+    "revised": 182,
     "unchanged": 69,
-    "pending": 273,
-    "reviewed": 247
+    "pending": 269,
+    "reviewed": 251
   },
   "entries": [
     {
@@ -1249,45 +1249,65 @@
       "path": "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md",
       "group": "10-frontend/10.4-next.js/01-rendering-fundamentals",
       "title": "SSR, CSR, SSG, and ISR in Next.js",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "e93d6b2930b85f616ec593ccec453addd26bac1fcb139d6ff7c7e3f6895227f5",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Given public product copy, request-scoped pricing, stale-tolerant stock and a cart, which work is static, request-time, cached or client-side, and when is sharing safe?",
+      "disposition": "Separated rendering time, cache freshness and component module boundaries; corrected the previous App Router model versus Next.js 16 Cache Components distinction, current create-next-app defaults, request-time freshness limits and revalidationTag guidance. Kept ISR mechanics linked to its canonical chapter.",
+      "validation": [
+        "Re-read the four chapters in learning order with their INDEX, REVISION and relevant interview-bank guidance; aligned the rendering, route, RSC and client-boundary explanations and the revision answers.",
+        "Checked current official Next.js 16.4 documentation for Cache Components defaults, route-segment config and parallel-route fallbacks, and the React reference for supported RSC serialization types.",
+        "All 30 repository gates passed; standalone link checking verified 10,848 local links and 149 anchors with zero broken/stale results; the 2,519-URL citation baseline has no drift.",
+        "Ruby 3.4.11 production Jekyll build and site-wide rendered-heading check passed. Focused fence, read-time and prose-scan tests passed; no personal files appeared in the build output."
+      ]
     },
     {
       "path": "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md",
       "group": "10-frontend/10.4-next.js/01-rendering-fundamentals",
       "title": "App Router in Next.js",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "7f123a828c4f80346d3b206b1f2f6c807928960055a79897dc1d3e01ee8d3fb5",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What survives navigation between dashboard child routes, and how does a direct reload change unmatched parallel-slot rendering?",
+      "disposition": "Rebuilt the explanation around a shared dashboard route tree. Qualified layout reuse and template remount behavior, clarified loading/error boundary scope and authorization placement, corrected unmatched parallel-slot fallback behavior, and updated Next.js 16 route-config conditions.",
+      "validation": [
+        "Re-read the four chapters in learning order with their INDEX, REVISION and relevant interview-bank guidance; aligned the rendering, route, RSC and client-boundary explanations and the revision answers.",
+        "Checked current official Next.js 16.4 documentation for Cache Components defaults, route-segment config and parallel-route fallbacks, and the React reference for supported RSC serialization types.",
+        "All 30 repository gates passed; standalone link checking verified 10,848 local links and 149 anchors with zero broken/stale results; the 2,519-URL citation baseline has no drift.",
+        "Ruby 3.4.11 production Jekyll build and site-wide rendered-heading check passed. Focused fence, read-time and prose-scan tests passed; no personal files appeared in the build output."
+      ]
     },
     {
       "path": "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.03-server-components.md",
       "group": "10-frontend/10.4-next.js/01-rendering-fundamentals",
       "title": "Server Components in Next.js",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "1ba9b64e25fdb5382f33ddbfe025ef89a5f365eeb38713ce4b0d45009313793a",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which implementation, rendered output and props cross from a Server Component to a Client Component, and when can Suspense reveal the page shell?",
+      "disposition": "Removed claims that server execution automatically caches work or eliminates delivery cost. Clarified the RSC payload, import-graph composition, React serialization types and Server Function exception, authorization/data exposure, and the placement of awaited work beneath Suspense.",
+      "validation": [
+        "Re-read the four chapters in learning order with their INDEX, REVISION and relevant interview-bank guidance; aligned the rendering, route, RSC and client-boundary explanations and the revision answers.",
+        "Checked current official Next.js 16.4 documentation for Cache Components defaults, route-segment config and parallel-route fallbacks, and the React reference for supported RSC serialization types.",
+        "All 30 repository gates passed; standalone link checking verified 10,848 local links and 149 anchors with zero broken/stale results; the 2,519-URL citation baseline has no drift.",
+        "Ruby 3.4.11 production Jekyll build and site-wide rendered-heading check passed. Focused fence, read-time and prose-scan tests passed; no personal files appeared in the build output."
+      ]
     },
     {
       "path": "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.04-client-components.md",
       "group": "10-frontend/10.4-next.js/01-rendering-fundamentals",
       "title": "Client Components in Next.js",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "a3d1d9423b07306b76c884f074ddf30d0eca70760d59fe3facc26d5b90a6f5d7",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What does use client place in the client graph, what still prerenders, and which values may cross the server/client boundary?",
+      "disposition": "Reframed the chapter around a product quantity control. Defined the client module boundary without equating it with browser-only rendering, added an out-of-stock case and server-side write validation, and clarified provider composition, hydration mismatches and ordinary callback limits.",
+      "validation": [
+        "Re-read the four chapters in learning order with their INDEX, REVISION and relevant interview-bank guidance; aligned the rendering, route, RSC and client-boundary explanations and the revision answers.",
+        "Checked current official Next.js 16.4 documentation for Cache Components defaults, route-segment config and parallel-route fallbacks, and the React reference for supported RSC serialization types.",
+        "All 30 repository gates passed; standalone link checking verified 10,848 local links and 149 anchors with zero broken/stale results; the 2,519-URL citation baseline has no drift.",
+        "Ruby 3.4.11 production Jekyll build and site-wide rendered-heading check passed. Focused fence, read-time and prose-scan tests passed; no personal files appeared in the build output."
+      ]
     },
     {
       "path": "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.01-middleware.md",

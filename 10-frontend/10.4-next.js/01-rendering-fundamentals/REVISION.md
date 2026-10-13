@@ -16,8 +16,8 @@ Source: [SSR, CSR, SSG, and ISR in Next.js](10.4.1.01-ssr-csr-ssg-isr.md)
 
 **Definition**
 
-1. **Q:** What distinguishes the four strategies before JavaScript runs?
-   **A:** CSR waits for browser work to create its data-driven UI; SSR renders per request, SSG creates a build snapshot, and ISR reuses a snapshot until regeneration.
+1. **Q:** How do rendering time and freshness differ across static rendering, SSR, CSR and ISR?
+   **A:** Static output is produced before a request; SSR produces request-dependent output; CSR produces or updates UI in the browser; ISR revalidates cached static output. ISR is a freshness policy, and a Client Component can still appear in the initial server-rendered HTML.
 
 
 **How It Works**
@@ -67,8 +67,8 @@ Source: [App Router in Next.js](10.4.1.02-app-router.md)
 3. **Q:** How should a server page read a dynamic segment in Next.js 15 and 16?
    **A:** Receive params as a Promise and await it before reading the field. The temporary synchronous compatibility in 15 does not extend to 16.
 
-4. **Q:** Why does Next.js 16 require parallel-route defaults, and what happens to an unmatched slot on hard navigation?
-   **A:** The build requires an explicit `default.tsx` for each parallel-route slot. On hard navigation, an unmatched slot renders that default because Next cannot recover its prior active state. Return `notFound()` from the default to preserve a 404; the implicit `children` slot can need one too.
+4. **Q:** What does a parallel-route `default.tsx` do on a hard load, and what happens if an unmatched slot has none?
+   **A:** It provides fallback UI when Next cannot recover the slot's previous active state. Without a default, an unmatched slot returns a 404; the implicit `children` slot may need a default too. Return `null` for an intentionally empty slot or call `notFound()` when the route should be absent.
 
 5. **Q:** If a layout checks a role and returns only the `admin` or `user` slot, has it prevented the other slot's server work?
    **A:** No. Next renders every slot at that segment even when the layout does not return its output. Authorize inside each slot's data-access path, and do not mix prerendered and dynamically rendered slots at one segment.
@@ -77,7 +77,7 @@ Source: [App Router in Next.js](10.4.1.02-app-router.md)
 **Common Mistakes**
 
 6. **Q:** Why does the current segment's error.tsx fail to catch an error in its layout?
-   **A:** The error boundary is nested beneath that layout. A parent boundary, or global-error.tsx for root-layout failure, must cover the failing ancestor.
+   **A:** The error boundary is nested beneath that layout and catches the page and descendants. Use an ancestor boundary for layout or template errors; `global-error.tsx` can cover root-layout failure and must define its own `<html>` and `<body>`.
 
 
 **Code Examples**

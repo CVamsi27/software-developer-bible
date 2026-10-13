@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-14_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-15_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
 
@@ -37,6 +37,18 @@ Source: [WhatsApp System Design](30.2.2.02-whatsapp.md)
 **Q:** What should reconnecting chat clients use to discover missed messages?
 
 **A:** A durable conversation sequence or cursor and a synchronization contract. A live WebSocket connection alone does not preserve history across disconnects.
+
+**Q:** What does the sender know when the server acknowledges a message commit?
+
+**A:** Only that the service durably accepted that message identity. A later device receipt is evidence that a recipient device stored it; a read marker is a separate client action. A socket write alone proves neither.
+
+**Q:** Why can a database row with one `ciphertext` field be only a teaching model for encrypted multi-device delivery?
+
+**A:** A protocol may encrypt one group payload and distribute different key envelopes to authorized devices, or store other protocol-specific state. The schema's opaque field illustrates durable message identity, not the protocol's device-key, envelope or group-epoch model.
+
+**Q:** What does a membership-removal transaction guarantee, and what can it not undo?
+
+**A:** It can define the authorization boundary for later accepted messages and prevent future key material from reaching the removed member under the chosen protocol. It cannot retract ciphertext or plaintext already delivered and stored on that member's device.
 
 ## Uber System Design
 

@@ -1,6 +1,6 @@
 # System Design — Case Studies
 
-> **Study time:** ≈ 6 h 1 m of reading (32 files, ~11 min average).
+> **Study time:** ≈ 6 h 3 m of reading (32 files, ~11 min average).
 Applied examples of system design interviews. Read [../01-theory/](../01-theory/INDEX.md) first, then choose cases that match your interview goals.
 
 [![Files](https://img.shields.io/badge/files-32-blue)](../../../INDEX.md)
@@ -50,7 +50,7 @@ The 31 cases are grouped by the kind of reasoning they practice. Use the tiers a
 | # | File | Domain | Key topics | Role priority | General importance |
 | --- | ----------------------------------------------------------------------- | --------------------- | --------------------------------------------------------------------------------------------------------- | ------------- | ------------------ |
 | 01 | [URL Shortener](30.2.2.01-url-shortener.md) | Web (foundational) | Code allocation, uniqueness, redirect caching, analytics durability | Important | Important |
-| 02 | [WhatsApp](30.2.2.02-whatsapp.md) | Messaging & Real-Time | Real-time messaging, end-to-end encryption, last-seen, group chats | Important | Important |
+| 02 | [WhatsApp](30.2.2.02-whatsapp.md) | Messaging & Real-Time | Retry-safe acceptance, device delivery, E2EE, group membership | Important | Important |
 | 03 | [Uber](30.2.2.03-uber.md) | Ride-sharing & Geo | Ride matching, geospatial indexing, real-time tracking, ETA | Important | Important |
 | 04 | [Netflix](30.2.2.04-netflix.md) | Streaming & Media | Video streaming, CDN, recommendation engine, content delivery | Important | Important |
 | 05 | [Google Drive](30.2.2.05-google-drive.md) | Storage & Sync | Staged upload publication, quota, permissions, version conflicts | Important | Important |

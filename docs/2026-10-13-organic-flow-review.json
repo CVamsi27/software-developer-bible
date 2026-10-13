@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 303,
+    "revised": 304,
     "unchanged": 80,
-    "pending": 137,
-    "reviewed": 383,
+    "pending": 136,
+    "reviewed": 384,
     "topic_chapters": 520
   },
   "entries": [
@@ -4636,12 +4636,21 @@
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.05-template-method.md",
       "group": "30-architecture/30.1-design-patterns/04-behavioral",
       "title": "Template Method Pattern",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "109898b16fd9614c246ed825568ddbdebc36cdf13f60a80a4bb830df6342983d",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can a base algorithm keep its order fixed while subclasses vary selected steps without hiding failure and cleanup behavior?",
+      "disposition": "Moved the exporter problem ahead of the definition, aligned it with the actual normalize-format-hook-return trace, and marked both the required format step and optional hook in the diagram. Replaced the paraphrased textbook definition with the GoF intent from a publisher-hosted excerpt. Clarified the asynchronous-step contract and how cleanup failures interact with the original error; retained the TypeScript override boundary, composition alternative and pattern comparisons.",
+      "validation": [
+        "Fresh-reader review confirmed the GoF intent, composition alternative and technical boundaries; its flow findings about the delayed exporter scenario, nonexistent delivery step and unmarked optional hook were corrected.",
+        "Verified the textbook definition in the O\u2019Reilly-hosted chapter and checked the official TypeScript classes documentation and linked pattern reference.",
+        "The fenced TypeScript example compiled with TypeScript 7.0.2 under strict NodeNext settings and passed runtime checks for fixed order, subclass variation, format failure and hook failure.",
+        "Read-time, alignment, citation-baseline, search-index and count writers ran; the fixed-point check confirmed all 10 repair writers leave the corpus stable.",
+        "All 30 repository verification gates passed. Standalone links checked 10,797 links and 152 anchors with 0 issues; citation-baseline diff had 0 added or removed URLs at 2,522.",
+        "Ruby 3.4 locked-bundle production Jekyll build, rendered-heading check and git diff --check passed."
+      ],
+      "reviewed_at": "2026-10-14",
+      "review_sha256": "000acf0a16edb6ba9e7e84778b392baedccb68572df3e89ea485af35f6ba2565"
     },
     {
       "path": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.06-iterator.md",

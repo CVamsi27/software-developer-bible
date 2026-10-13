@@ -6123,9 +6123,6 @@
   "https://sourcemaking.com/design_patterns/null_object": [
    "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.12-null-object.md"
   ],
-  "https://sourcemaking.com/design_patterns/template_method": [
-   "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.05-template-method.md"
-  ],
   "https://sourcemaking.com/design_patterns/visitor": [
    "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.10-visitor.md"
   ],
@@ -7383,6 +7380,9 @@
    "40-platform/40.4-observability/01-pillars/40.4.1.03-tracing.md",
    "40-platform/40.4-observability/05-interview-prep/40.4.5.01-interview-questions.md"
   ],
+  "https://www.oreilly.com/library/view/java-design-patterns/9781484218020/9781484218013_Ch06.xhtml": [
+   "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.05-template-method.md"
+  ],
   "https://www.oreilly.com/library/view/java-design-patterns/9781484218020/9781484218013_Ch14.xhtml": [
    "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.04-state.md"
   ],
@@ -8168,7 +8168,8 @@
    "30-architecture/30.1-design-patterns/01-foundations/30.1.1.03-oop-concepts.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/2/classes.html": [
-   "30-architecture/30.1-design-patterns/02-creational/30.1.2.01-singleton.md"
+   "30-architecture/30.1-design-patterns/02-creational/30.1.2.01-singleton.md",
+   "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.05-template-method.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/2/conditional-types.html": [
    "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.02-infer.md",

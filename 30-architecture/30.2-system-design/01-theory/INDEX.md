@@ -1,6 +1,6 @@
 # System Design — Foundational Theory
 
-> **Study time:** ≈ 4 h 46 m of reading (24 files, ~12 min average).
+> **Study time:** ≈ 4 h 44 m of reading (24 files, ~12 min average).
 > **Study time and file counts are generated from the current chapter set.**
 
 [![Files](https://img.shields.io/badge/files-24-blue)](../../../INDEX.md)
@@ -56,7 +56,7 @@ These chapters supply the main building blocks. The sequence moves from data gua
 | 18 | [Outbox & CDC](30.2.1.18-outbox-and-cdc.md) | Transactional outbox + change data capture — solving the dual-write problem for reliable event publication | Essential | Foundational |
 | 19 | [Resilience Patterns Deep-Dive](30.2.1.19-resilience-patterns-deep-dive.md) | Tail latency and overload controls: hedging, bounded admission, coalescing, deadlines, adaptive concurrency | Essential | Foundational |
 | 20 | [Multi-Region Deployment](30.2.1.20-multi-region-deployment.md) | Active-passive vs active-active, geo-routing, cross-region replication, conflict resolution, explicit data-location requirements, RPO/RTO | Essential | Foundational |
-| 21 | [TCP & UDP Transport Fundamentals](30.2.1.21-tcp-udp-transport-fundamentals.md) | Where transport sits, three-way handshake + cost arithmetic, seq/ack retransmission, flow/congestion control (slow start/AIMD), UDP datagram model, TCP-vs-UDP decision table, HOL blocking, connection reuse economics, TLS-on-TCP, QUIC rationale | Essential | Foundational |
+| 21 | [TCP & UDP Transport Fundamentals](30.2.1.21-tcp-udp-transport-fundamentals.md) | TCP stream guarantees and handshake cost, flow vs congestion control, UDP trade-offs, QUIC stream isolation, connection pooling, TLS and routing boundaries | Essential | Foundational |
 | 22 | [DNS & Name Resolution](30.2.1.22-dns-and-name-resolution.md) | Hierarchy and delegation, the resolution walk (stub → recursive → root → TLD → authoritative), record types, TTL as the agility-vs-cache trade, negative caching and the propagation myth, DNS as traffic steering with measured recovery behavior, anycast, DoH/DoT, DNSSEC, Kubernetes `ndots` traps | Essential | Foundational |
 | 23 | [TLS, HTTPS & the Certificate Lifecycle](30.2.1.23-tls-https-and-certificates.md) | Handshake vs record layer, hybrid crypto (ECDHE + AEAD), certificates and the chain of trust, DV/OV/EV, forward secrecy, resumption and 0-RTT replay risk, revocation/HSTS, termination points and mTLS, ACME automation | Essential | Foundational |
 

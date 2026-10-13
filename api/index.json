@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "6d64b8596c2da8d5e8728930ec84eec6a5c6188cec133162b0828630dd0fad0a",
+ "corpus_digest": "4132a0850baad00981a748b42eefca369cd9b6362e491eb059db93f219617166",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5239
+  "read_minutes": 5237
  },
  "chapters": [
   {
@@ -4129,7 +4129,7 @@
     "networking",
     "theory"
    ],
-   "m": 15
+   "m": 13
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.22-dns-and-name-resolution.html",

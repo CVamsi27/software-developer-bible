@@ -445,6 +445,14 @@ Source: [TCP & UDP Transport Fundamentals](30.2.1.21-tcp-udp-transport-fundament
 
 **A:** QUIC provides reliable ordered streams, flow control, congestion control, encryption, and connection migration. UDP is its carrier, not the source of those guarantees; see [RFC 9000](https://www.rfc-editor.org/rfc/rfc9000.html) and [RFC 9001](https://www.rfc-editor.org/rfc/rfc9001.html).
 
+**Q:** A TCP sender has outstanding data and wants to send more. How do the receive window and congestion window constrain it?
+
+**A:** The amount in flight is bounded by the smaller of rwnd and cwnd: rwnd reflects receiver capacity, while cwnd limits pressure on the network. Check both before diagnosing a stalled sender; see [RFC 9293](https://www.rfc-editor.org/rfc/rfc9293.html) and [RFC 5681](https://www.rfc-editor.org/rfc/rfc5681.html).
+
+**Q:** Does HTTP/3 make packet loss irrelevant because its streams are independent?
+
+**A:** No. Loss can delay later bytes in the affected ordered stream, and every stream still shares connection congestion control. QUIC avoids TCP's connection-wide ordered-byte blocking across streams; it does not remove path congestion or retransmission; see [RFC 9000](https://www.rfc-editor.org/rfc/rfc9000.html) and [RFC 9114](https://www.rfc-editor.org/rfc/rfc9114.html).
+
 ## DNS & Name Resolution
 
 Source: [DNS & Name Resolution](30.2.1.22-dns-and-name-resolution.md)

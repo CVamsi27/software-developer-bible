@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 279,
+    "revised": 280,
     "unchanged": 80,
-    "pending": 161,
-    "reviewed": 359,
+    "pending": 160,
+    "reviewed": 360,
     "topic_chapters": 520
   },
   "entries": [
@@ -4980,12 +4980,17 @@
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.md",
       "group": "30-architecture/30.2-system-design/01-theory",
       "title": "TCP & UDP Transport Fundamentals",
-      "status": "pending",
-      "baseline_sha256": "336b69dac0b91e336768d981147b290d965116f683b85c303e00111e1ba92246",
+      "status": "revised",
+      "baseline_sha256": "2e9260d190e7529fcb855b294b4a74fcb9ba0589c4cc912346640fe337c317f1",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "When does each transport guarantee stop, and how do TCP, UDP and QUIC change the work the application must handle?",
+      "disposition": "Rebuilt the chapter as a request path from transport contracts through TCP setup, delivery and windows, then UDP and QUIC trade-offs. Removed overlapping use-case, mistake and best-practice recaps; corrected the unbounded Node pool example and replaced the non-receiving UDP sample with a working peer/sender pair. Added precise HTTP/2 loss behavior, QUIC migration and TLS/ECH routing boundaries, plus focused revision questions.",
+      "validation": [
+        "Re-read in learning order with the system-design INDEX and REVISION companion; checked practical/textbook definitions, First Principles, Summary, See Also and References.",
+        "Verified current primary RFC references for TCP, UDP, TLS 1.2/1.3, congestion control, QUIC, HTTP/2, HTTP/3 and Encrypted Client Hello; checked Node.js v26.11.1 Agent limits.",
+        "All 30 repository verification gates passed; standalone links checked 10,813 links and 150 anchors with 0 failures; citation baseline contains 2,510 URLs with 0 drift.",
+        "Ruby 3.4 production Jekyll build and rendered-heading sweep passed; the edited page renders exactly one H1."
+      ]
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.22-dns-and-name-resolution.md",

@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-13",
- "url_count": 2508,
+ "url_count": 2510,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -4944,7 +4944,8 @@
   ],
   "https://nodejs.org/api/http.html": [
    "20-backend/20.1-node.js/02-io-and-data/20.1.2.04-http-module.md",
-   "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.02-api-gateway.md"
+   "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.02-api-gateway.md",
+   "30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.md"
   ],
   "https://nodejs.org/api/http.html#serverclosecallback": [
    "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.md"
@@ -7884,6 +7885,13 @@
   "https://www.rfc-editor.org/rfc/rfc5246": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.md"
   ],
+  "https://www.rfc-editor.org/rfc/rfc5246.html": [
+   "30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.md"
+  ],
+  "https://www.rfc-editor.org/rfc/rfc5681.html": [
+   "30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.md",
+   "30-architecture/30.2-system-design/01-theory/REVISION.md"
+  ],
   "https://www.rfc-editor.org/rfc/rfc6066": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.md"
   ],
@@ -7988,9 +7996,12 @@
    "40-platform/40.10-cdn/40.10.01-cdn-architecture.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc9113.html": [
+   "30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.md",
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc9114.html": [
+   "30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.md",
+   "30-architecture/30.2-system-design/01-theory/REVISION.md",
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc9207.html": [
@@ -8054,6 +8065,7 @@
    "30-architecture/30.2-system-design/01-theory/REVISION.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc9849.html": [
+   "30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.md",
    "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc9852.html": [

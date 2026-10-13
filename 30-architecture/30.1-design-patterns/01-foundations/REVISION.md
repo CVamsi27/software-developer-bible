@@ -18,6 +18,10 @@ Source: [SOLID Principles](30.1.1.01-solid-principles.md)
 
 **A:** Clients depend only on the operations they need, so unrelated changes do not impose implementation or coupling costs. Splitting is useful when it follows actual client responsibilities.
 
+**Q:** The `Developer` throws for `manage()` and `design()`. What shows the ISP problem in this example?
+
+**A:** `startShift` is typed against `Worker` even though it calls only `work`, so its contract exposes unrelated operations and forces irrelevant implementations. Give the scheduler a `Workable` contract; split only where a real client benefits.
+
 **Q:** When should a design principle yield to a concrete requirement?
 
 **A:** Principles are heuristics. Compare their coupling, complexity and change costs against the actual constraints; explain the tradeoff rather than claiming a slogan proves the design.

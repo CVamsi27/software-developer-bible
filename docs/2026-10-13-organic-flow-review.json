@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 282,
+    "revised": 283,
     "unchanged": 80,
-    "pending": 158,
-    "reviewed": 362,
+    "pending": 157,
+    "reviewed": 363,
     "topic_chapters": 520
   },
   "entries": [
@@ -4255,12 +4255,17 @@
       "path": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md",
       "group": "30-architecture/30.1-design-patterns/01-foundations",
       "title": "SOLID Principles",
-      "status": "pending",
-      "baseline_sha256": "c36fb53d5241f450df93dab81562a9fc1cf896c1af7706ebce67c65266746104",
+      "status": "revised",
+      "baseline_sha256": "0f5c4f258c98c52a95349fb2a34d2a3a1c675eec7cfd2f4a3d9e3248cb78e756",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do the SOLID principles guide a small design boundary without turning them into a checklist?",
+      "disposition": "Reworked the chapter around caller contracts and real changes. Clarified Liskov substitution in precondition and postcondition terms, made the interface-segregation example show an actual client forced to depend on unused operations, and replaced the incomplete parking-lot sketches and repeated catalogs with one change-driven LLD walkthrough. Added an ISP revision question while preserving the practical and textbook definitions, first-principles derivation, principle examples, summary, and references.",
+      "validation": [
+        "All 30 repository gates passed with bash scripts/verify.sh.",
+        "Standalone link scan passed: 10,799 links checked, 150 anchors verified, no broken links or stale labels.",
+        "Citation baseline passed with 2,514 URLs and no drift; git diff --check passed.",
+        "Ruby 3.4 production Jekyll build and rendered-heading check passed."
+      ]
     },
     {
       "path": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.02-dry-kiss-yagni.md",

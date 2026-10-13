@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "09d71c6c30bf224cf33702ad7410529752cb0b19166f868225fc754594b98153",
+ "corpus_digest": "af6d31ea17ada02d9ec9d4e14e861b2d8a6b361513a7f27e792e3b6116515baa",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5185
+  "read_minutes": 5186
  },
  "chapters": [
   {
@@ -3829,7 +3829,7 @@
     "concept",
     "ddd"
    ],
-   "m": 5
+   "m": 6
   },
   {
    "p": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.07-service-locator-vs-dependency-injection.html",

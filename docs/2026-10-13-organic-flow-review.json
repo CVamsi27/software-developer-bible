@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 316,
+    "revised": 317,
     "unchanged": 80,
-    "pending": 124,
-    "reviewed": 396,
+    "pending": 123,
+    "reviewed": 397,
     "topic_chapters": 520
   },
   "entries": [
@@ -4891,12 +4891,20 @@
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.06-anti-corruption-layer.md",
       "group": "30-architecture/30.1-design-patterns/05-architectural",
       "title": "Anti-Corruption Layer (ACL)",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "696ee4beda22f84947e38fbf07bca80555ec20fe65981a5f4022d0fb47b4d89b",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do you translate a vendor account state without letting it decide local subscription eligibility?",
+      "disposition": "Opened with a billing-state mismatch and changed the example to map the vendor fact to profileState: open rather than treating it as product eligibility. Clarified the Evans context-mapping definition, port/adapter/translator ownership, bidirectional mapping, error and retry contracts, contract monitoring, service deployment costs and ACL retirement during strangler migration. Added source-linked retrieval questions and corrected adjacent navigation labels.",
+      "validation": [
+        "Checked Evans's DDD Reference Anticorruption Layer section and the current Microsoft Learn pattern guidance; the PDF returned HTTP 200 and its citation was added to the external-link baseline.",
+        "The fenced TypeScript example compiled with TypeScript 5.9.3 in strict mode targeting ES2022. Runtime checks covered semantic mapping, leading-zero identity, immutability, malformed payloads and unknown status codes.",
+        "Reviewed the architectural INDEX, REVISION companion, adapter chapter and neighboring navigation; the added questions test local policy separation and adapter ownership.",
+        "All 30 repository verification gates passed; standalone links checked 10,797 links and 152 anchors with zero failures, and the external citation baseline had no drift after its update.",
+        "Ruby 3.4 locked-bundle production Jekyll build, rendered-heading unit tests and the site-wide rendered-heading check passed; the ACL page renders one authored H1 and no unrendered Liquid markers."
+      ],
+      "reviewed_at": "2026-10-14",
+      "review_sha256": "37e4bc276207ad7a0c012dcbe2cae036dcc146a267d56bec7176d824700815a2"
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.07-service-locator-vs-dependency-injection.md",

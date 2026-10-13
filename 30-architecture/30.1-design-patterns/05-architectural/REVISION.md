@@ -134,13 +134,17 @@ Source: [Anti-Corruption Layer (ACL)](30.1.5.06-anti-corruption-layer.md)
 
 **A:** Its purpose is to protect the local domain model from the external model's assumptions. Renaming fields alone still leaves local code dependent on what those external fields mean and how they behave.
 
-**Q:** Translate CU-000123, spaced Clinic name and status A.
+**Q:** Translate CU-000123, a spaced Clinic name and status A. What does the result establish?
 
-**A:** Validate the identity and name, map A to local active, preserve string 000123, trim Clinic and freeze the flat local record. The mapping assumes the documented illustrative billing meaning.
+**A:** Validate the identity and name, map A to `profileState: open`, preserve string 000123, trim Clinic and freeze the local record. This says the vendor profile is open; it does not establish that a product invoice is paid.
 
 **Q:** What if status becomes a new code or a second vendor uses CU-000123?
 
 **A:** Reject or deliberately extend the unknown status mapping. Preserve vendor namespace or use an explicit identity map; identical foreign strings do not establish the same local entity.
+
+**Q:** Where should the vendor client, translation and application contract sit?
+
+**A:** The use case depends on a local port. Its ACL adapter calls the vendor client, validates the response and translates it into the local model. Keep this as an in-process boundary unless separate ownership, scaling or release needs justify a service hop.
 
 ## Service Locator vs Dependency Injection
 

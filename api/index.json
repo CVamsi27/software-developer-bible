@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "7fb81199717c5cbe5f15f1a1dc3858ded809a75021af94cff9266695d4547a5f",
+ "corpus_digest": "53577168ba7f6adc3710112b8b88325aaf2a58e62c9e748aa9903f6823161bde",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5500
+  "read_minutes": 5450
  },
  "chapters": [
   {
@@ -4743,7 +4743,7 @@
    "g": [
     "concept"
    ],
-   "m": 15
+   "m": 4
   },
   {
    "p": "40-platform/40.1-docker/40.1.03-compose.html",
@@ -4753,7 +4753,7 @@
    "g": [
     "concept"
    ],
-   "m": 21
+   "m": 8
   },
   {
    "p": "40-platform/40.1-docker/40.1.04-multi-stage-builds.html",
@@ -4763,7 +4763,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 6
   },
   {
    "p": "40-platform/40.1-docker/40.1.05-dockerfile-best-practices.html",
@@ -4773,7 +4773,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 6
   },
   {
    "p": "40-platform/40.1-docker/40.1.06-production-patterns.html",
@@ -4783,17 +4783,17 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 5
   },
   {
    "p": "40-platform/40.1-docker/40.1.07-container-runtime-internals-namespaces-cgroups.html",
-   "t": "Container Runtime Internals — Namespaces, cgroups, OverlayFS",
+   "t": "Container Runtime Internals — Namespaces, cgroups and OverlayFS",
    "s": "Docker",
    "c": "DevOps",
    "g": [
     "concept"
    ],
-   "m": 15
+   "m": 8
   },
   {
    "p": "40-platform/40.1-docker/40.1.08-image-signing-sbom-supply-chain.html",
@@ -4803,7 +4803,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 6
   },
   {
    "p": "40-platform/40.1-docker/40.1.09-rootless-sandboxed-runtimes.html",
@@ -4813,7 +4813,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 11
   },
   {
    "p": "40-platform/40.1-docker/40.1.10-interview-questions.html",
@@ -4834,7 +4834,7 @@
     "practice",
     "revision"
    ],
-   "m": 2
+   "m": 3
   },
   {
    "p": "40-platform/40.10-cdn/40.10.01-cdn-architecture.html",

@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-13",
- "url_count": 2515,
+ "url_count": 2519,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md",
@@ -1343,9 +1343,6 @@
    "80-lanes-abroad-full-stack/80.24-eu-regulatory-compliance.md"
   ],
   "https://docker-curriculum.com/": [
-   "40-platform/40.1-docker/40.1.02-volumes-networks.md",
-   "40-platform/40.1-docker/40.1.03-compose.md",
-   "40-platform/40.1-docker/40.1.04-multi-stage-builds.md",
    "40-platform/40.1-docker/40.1.10-interview-questions.md"
   ],
   "https://docs.ankiweb.net/deck-options.html": [
@@ -1651,9 +1648,6 @@
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.01-opentelemetry.md"
   ],
   "https://docs.docker.com/": [
-   "40-platform/40.1-docker/40.1.02-volumes-networks.md",
-   "40-platform/40.1-docker/40.1.03-compose.md",
-   "40-platform/40.1-docker/40.1.04-multi-stage-builds.md",
    "40-platform/40.1-docker/40.1.10-interview-questions.md",
    "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.01-docker-build-deploy.md",
    "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.01-blue-green-canary.md",
@@ -1661,20 +1655,25 @@
   ],
   "https://docs.docker.com/build/building/best-practices/": [
    "40-platform/40.1-docker/40.1.01-images-containers.md",
-   "40-platform/40.1-docker/40.1.02-volumes-networks.md",
-   "40-platform/40.1-docker/40.1.03-compose.md",
    "40-platform/40.1-docker/40.1.04-multi-stage-builds.md",
    "40-platform/40.1-docker/40.1.05-dockerfile-best-practices.md",
    "40-platform/40.1-docker/40.1.06-production-patterns.md",
    "40-platform/40.1-docker/40.1.10-interview-questions.md"
   ],
   "https://docs.docker.com/build/building/multi-stage/": [
+   "40-platform/40.1-docker/40.1.04-multi-stage-builds.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.06-docker-kubernetes-cicd-cheat-sheet.md"
+  ],
+  "https://docs.docker.com/build/building/secrets/": [
+   "40-platform/40.1-docker/40.1.05-dockerfile-best-practices.md"
   ],
   "https://docs.docker.com/build/metadata/attestations/": [
    "40-platform/40.1-docker/40.1.08-image-signing-sbom-supply-chain.md"
   ],
   "https://docs.docker.com/compose/how-tos/environment-variables/variable-interpolation/": [
+   "40-platform/40.1-docker/40.1.03-compose.md"
+  ],
+  "https://docs.docker.com/compose/how-tos/file-watch/": [
    "40-platform/40.1-docker/40.1.03-compose.md"
   ],
   "https://docs.docker.com/compose/how-tos/startup-order/": [
@@ -1689,12 +1688,16 @@
   "https://docs.docker.com/engine/network/drivers/bridge/": [
    "40-platform/40.1-docker/40.1.02-volumes-networks.md"
   ],
+  "https://docs.docker.com/engine/network/port-publishing/": [
+   "40-platform/40.1-docker/40.1.02-volumes-networks.md"
+  ],
   "https://docs.docker.com/engine/release-notes/29": [
    "40-platform/40.1-docker/40.1.09-rootless-sandboxed-runtimes.md"
   ],
   "https://docs.docker.com/engine/security/": [
    "40-platform/40.1-docker/40.1.01-images-containers.md",
    "40-platform/40.1-docker/40.1.05-dockerfile-best-practices.md",
+   "40-platform/40.1-docker/40.1.06-production-patterns.md",
    "40-platform/40.1-docker/40.1.07-container-runtime-internals-namespaces-cgroups.md"
   ],
   "https://docs.docker.com/engine/security/rootless/": [
@@ -1717,13 +1720,16 @@
    "40-platform/40.1-docker/40.1.01-images-containers.md"
   ],
   "https://docs.docker.com/reference/compose-file/services/": [
-   "40-platform/40.1-docker/40.1.03-compose.md"
+   "40-platform/40.1-docker/40.1.03-compose.md",
+   "40-platform/40.1-docker/40.1.06-production-patterns.md"
   ],
   "https://docs.docker.com/reference/compose-file/version-and-name/": [
    "docs/2026-09-19-corpus-health-report.md"
   ],
   "https://docs.docker.com/reference/dockerfile/": [
-   "40-platform/40.1-docker/40.1.01-images-containers.md"
+   "40-platform/40.1-docker/40.1.01-images-containers.md",
+   "40-platform/40.1-docker/40.1.04-multi-stage-builds.md",
+   "40-platform/40.1-docker/40.1.05-dockerfile-best-practices.md"
   ],
   "https://docs.docker.com/reference/dockerfile/#healthcheck": [
    "40-platform/40.4-observability/02-errors-and-health/40.4.2.02-health-checks.md"
@@ -2228,11 +2234,11 @@
   "https://docs.sentry.io/product/releases/": [
    "40-platform/40.4-observability/02-errors-and-health/40.4.2.01-error-tracking.md"
   ],
-  "https://docs.sigstore.dev/": [
-   "40-platform/40.1-docker/40.1.08-image-signing-sbom-supply-chain.md"
-  ],
   "https://docs.sigstore.dev/cosign/signing/overview/": [
    "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md"
+  ],
+  "https://docs.sigstore.dev/cosign/verifying/attestation/": [
+   "40-platform/40.1-docker/40.1.08-image-signing-sbom-supply-chain.md"
   ],
   "https://docs.sigstore.dev/cosign/verifying/verify/": [
    "40-platform/40.1-docker/40.1.08-image-signing-sbom-supply-chain.md"
@@ -2783,6 +2789,9 @@
   "https://github.com/GoogleChromeLabs/comlink": [
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.02-web-workers.md"
   ],
+  "https://github.com/GoogleContainerTools/distroless": [
+   "40-platform/40.1-docker/40.1.04-multi-stage-builds.md"
+  ],
   "https://github.com/HdrHistogram/HdrHistogram": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.17-probabilistic-data-structures.md"
   ],
@@ -3107,7 +3116,8 @@
    "20-backend/20.5-security/01-auth/20.5.1.07-sso-saml-federation.md"
   ],
   "https://github.com/nodejs/docker-node": [
-   "40-platform/40.1-docker/40.1.01-images-containers.md"
+   "40-platform/40.1-docker/40.1.01-images-containers.md",
+   "40-platform/40.1-docker/40.1.05-dockerfile-best-practices.md"
   ],
   "https://github.com/nrwl/nx": [
    "40-platform/40.8-monorepo/40.8.03-nx.md"
@@ -3275,6 +3285,9 @@
   ],
   "https://github.com/yjs/yjs": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.20-multi-region-deployment.md"
+  ],
+  "https://go.dev/doc/go1.27": [
+   "40-platform/40.1-docker/40.1.04-multi-stage-builds.md"
   ],
   "https://google.aip.dev/151": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.03-long-running-api-operations.md"
@@ -3902,9 +3915,6 @@
    "40-platform/40.1-docker/40.1.08-image-signing-sbom-supply-chain.md"
   ],
   "https://labs.play-with-docker.com/": [
-   "40-platform/40.1-docker/40.1.02-volumes-networks.md",
-   "40-platform/40.1-docker/40.1.03-compose.md",
-   "40-platform/40.1-docker/40.1.04-multi-stage-builds.md",
    "40-platform/40.1-docker/40.1.10-interview-questions.md"
   ],
   "https://lamport.azurewebsites.net/pubs/paxos-simple.pdf": [
@@ -3935,9 +3945,6 @@
    "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.01-event-loop.md"
   ],
   "https://leanpub.com/dockerdeepdive": [
-   "40-platform/40.1-docker/40.1.02-volumes-networks.md",
-   "40-platform/40.1-docker/40.1.03-compose.md",
-   "40-platform/40.1-docker/40.1.04-multi-stage-builds.md",
    "40-platform/40.1-docker/40.1.10-interview-questions.md"
   ],
   "https://learn.microsoft.com/en-us/appcenter/retirement": [
@@ -6024,16 +6031,16 @@
    "20-backend/20.13-java/20.13.04-java-testing-junit-mockito.md"
   ],
   "https://slsa.dev/": [
-   "40-platform/40.1-docker/40.1.08-image-signing-sbom-supply-chain.md",
    "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.md"
   ],
-  "https://slsa.dev/spec/v1.1/levels": [
+  "https://slsa.dev/spec/v1.2/": [
    "40-platform/40.1-docker/40.1.08-image-signing-sbom-supply-chain.md"
   ],
   "https://slsa.dev/spec/v1.2/build-requirements": [
    "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.md"
   ],
   "https://slsa.dev/spec/v1.2/build-track-basics": [
+   "40-platform/40.1-docker/40.1.08-image-signing-sbom-supply-chain.md",
    "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.md"
   ],
   "https://slsa.dev/spec/v1.2/source-requirements": [
@@ -6041,9 +6048,6 @@
   ],
   "https://slsa.dev/spec/v1.2/tracks": [
    "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.md"
-  ],
-  "https://snyk.io/learn/container-security/": [
-   "40-platform/40.1-docker/40.1.05-dockerfile-best-practices.md"
   ],
   "https://socket.io/docs/v4/": [
    "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.md",

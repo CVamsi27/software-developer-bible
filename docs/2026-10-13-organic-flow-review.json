@@ -10,10 +10,10 @@
   },
   "counts": {
     "topic_chapters": 520,
-    "revised": 152,
-    "unchanged": 66,
-    "pending": 302,
-    "reviewed": 218
+    "revised": 160,
+    "unchanged": 67,
+    "pending": 293,
+    "reviewed": 227
   },
   "entries": [
     {
@@ -4972,100 +4972,151 @@
       "path": "40-platform/40.1-docker/40.1.01-images-containers.md",
       "group": "40-platform/40.1-docker",
       "title": "Docker Images & Containers",
-      "status": "pending",
+      "status": "unchanged",
       "baseline_sha256": "f6c1b9b9917c010ed9d35ed9ca607937299dbfea955b0f5d61bf8137fc4bd987",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What changes when an image is rebuilt, a container is removed, or data is mounted elsewhere?",
+      "disposition": "Retained after direct review: the chapter follows image creation into process startup, writable state, port publishing and the isolation boundary. Its definitions and examples are concise and the first topic establishes terms needed by the rest of the Docker path.",
+      "validation": [
+        "Re-read in Docker learning order with the category INDEX, revision drill and separate interview bank.",
+        "Confirmed one clear image-to-process flow and retained the practical and textbook definitions.",
+        "Full repository verification passed all 30 gates; standalone link checking reported 10,847 local links and 149 anchors with zero failures.",
+        "Ruby 3.4 locked-bundle production Jekyll build and rendered-heading checks passed site-wide and on all nine Docker chapters."
+      ]
     },
     {
       "path": "40-platform/40.1-docker/40.1.02-volumes-networks.md",
       "group": "40-platform/40.1-docker",
       "title": "Docker Volumes & Networks",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "4e3b8f05bf3714ca0752cfb18929626fee20fbde4f0ff5ff44f7cc4da9ed7825",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What survives container replacement, and how does another service find the database?",
+      "disposition": "Rebuilt the explanation around the observed empty-database and localhost failures. Separated mount lifetime from network reachability, clarified volume backup boundaries and host-port exposure, and added a live name-resolution example.",
+      "validation": [
+        "Re-read in Docker learning order with the category INDEX, revision drill and separate interview bank.",
+        "Executed the user-defined-bridge name-resolution example successfully.",
+        "Verified PostgreSQL 18 data survived container replacement on the documented /var/lib/postgresql volume target.",
+        "Full repository verification passed all 30 gates; standalone link checking reported 10,847 local links and 149 anchors with zero failures.",
+        "Ruby 3.4 locked-bundle production Jekyll build and rendered-heading checks passed site-wide and on all nine Docker chapters."
+      ]
     },
     {
       "path": "40-platform/40.1-docker/40.1.03-compose.md",
       "group": "40-platform/40.1-docker",
       "title": "Docker Compose",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "ef16f905f5188811b2fba660742f0868ef28e36ace649d2c6c0a27180aff409e",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which dependency conditions order startup, and what must the application still handle later?",
+      "disposition": "Reorganized around one API, migration and database graph, then explained startup versus runtime failure, configuration interpolation, secret files, tests and single-host production ownership. Added the PostgreSQL 18 volume boundary and removed duplicated examples.",
+      "validation": [
+        "Re-read in Docker learning order with the category INDEX, revision drill and separate interview bank.",
+        "docker compose config --quiet accepted the authored service model.",
+        "Verified official Compose references for dependency conditions, interpolation, secrets and Watch version requirements.",
+        "Full repository verification passed all 30 gates; standalone link checking reported 10,847 local links and 149 anchors with zero failures.",
+        "Ruby 3.4 locked-bundle production Jekyll build and rendered-heading checks passed site-wide and on all nine Docker chapters."
+      ]
     },
     {
       "path": "40-platform/40.1-docker/40.1.04-multi-stage-builds.md",
       "group": "40-platform/40.1-docker",
       "title": "Docker Multi-Stage Builds",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "519b7dea5bbbee30f8a2ebe09b279b68ade5bcd9da8a6feefe38c6d3136d085b",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which exact files and runtime requirements cross the stage boundary?",
+      "disposition": "Reframed the Node and Go examples around the builder/runtime boundary, explicitly traced required artifacts and configuration, updated the Debian 13 distroless base, and added ABI, target-platform, cache and test-target limits.",
+      "validation": [
+        "Re-read in Docker learning order with the category INDEX, revision drill and separate interview bank.",
+        "Buildx static checks passed for the Node multi-stage and Go 1.27/distroless examples.",
+        "Verified the Go release and Distroless base references against their official sources.",
+        "Full repository verification passed all 30 gates; standalone link checking reported 10,847 local links and 149 anchors with zero failures.",
+        "Ruby 3.4 locked-bundle production Jekyll build and rendered-heading checks passed site-wide and on all nine Docker chapters."
+      ]
     },
     {
       "path": "40-platform/40.1-docker/40.1.05-dockerfile-best-practices.md",
       "group": "40-platform/40.1-docker",
       "title": "Dockerfile Best Practices & Security",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "1f33e9abd31bfaf2be8a7fd9acf2e10ba5421d89380b8d14f086a5ea04213b5d",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do build context, cache, secret handling and runtime privilege change the final artifact?",
+      "disposition": "Replaced the generic best-practice catalog with one path from build inputs through cache and credentials to runtime behavior and artifact review. Kept distinct layer, native-library, non-root, shutdown, health-check and digest constraints beside the decisions they explain.",
+      "validation": [
+        "Re-read in Docker learning order with the category INDEX, revision drill and separate interview bank.",
+        "Buildx static validation passed for the BuildKit cache-mount example.",
+        "Verified the new Docker build-secret reference against current Docker documentation.",
+        "Full repository verification passed all 30 gates; standalone link checking reported 10,847 local links and 149 anchors with zero failures.",
+        "Ruby 3.4 locked-bundle production Jekyll build and rendered-heading checks passed site-wide and on all nine Docker chapters."
+      ]
     },
     {
       "path": "40-platform/40.1-docker/40.1.06-production-patterns.md",
       "group": "40-platform/40.1-docker",
       "title": "Docker Production Patterns — Security, Optimization, Multi-Stage",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "398f54e5f0fe4df9ada7d359e64dde8d1028912a57f1604ec31440582da2142d",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What must remain true as one image digest moves through runtime, failure and rollback?",
+      "disposition": "Restructured production guidance around promoting one immutable artifact, limiting its permissions and resources, handling health and shutdown, keeping state recoverable, and using operational evidence. Removed duplicated Compose and multi-stage recipes.",
+      "validation": [
+        "Re-read in Docker learning order with the category INDEX, revision drill and separate interview bank.",
+        "Checked the image promotion, runtime permission, process shutdown, state and rollback boundaries against adjacent chapters.",
+        "Full repository verification passed all 30 gates; standalone link checking reported 10,847 local links and 149 anchors with zero failures.",
+        "Ruby 3.4 locked-bundle production Jekyll build and rendered-heading checks passed site-wide and on all nine Docker chapters."
+      ]
     },
     {
       "path": "40-platform/40.1-docker/40.1.07-container-runtime-internals-namespaces-cgroups.md",
       "group": "40-platform/40.1-docker",
       "title": "Container Runtime Internals — Namespaces, cgroups, OverlayFS",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "1f58f4a278d0149a503625905474f8011e8fb1175aaa222206bf841b85e659ba",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which kernel view, resource controller or filesystem layer explains the observed failure?",
+      "disposition": "Rebuilt the long chapter as a path from exit-137 evidence to namespaces, cgroup v2, copy-on-write layers, runtime supervision and the container/VM decision. Removed repeated generic mistake, best-practice and performance lists while preserving the core failure cases.",
+      "validation": [
+        "Re-read in Docker learning order with the category INDEX and revision drill.",
+        "Checked cgroup, namespace, OverlayFS and OCI-runtime claims against primary documentation; did not claim a Linux-host runtime exercise.",
+        "Full repository verification passed all 30 gates; standalone link checking reported 10,847 local links and 149 anchors with zero failures.",
+        "Ruby 3.4 locked-bundle production Jekyll build and rendered-heading checks passed site-wide and on all nine Docker chapters."
+      ]
     },
     {
       "path": "40-platform/40.1-docker/40.1.08-image-signing-sbom-supply-chain.md",
       "group": "40-platform/40.1-docker",
       "title": "Image Signing, SBOM & Supply Chain Security",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "276d976fd6d613b6feca666c66eaf6a748370d5805ef4826cacfe7ef12351347",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How does the exact digest connect signer identity, SBOM, provenance and admission policy?",
+      "disposition": "Rebuilt the release trace around one immutable digest and separated what signatures, SBOMs and provenance establish. Corrected SLSA to v1.2 including Build L0, clarified BuildKit attestation storage, and connected evidence checks to the deployment boundary.",
+      "validation": [
+        "Re-read in Docker learning order with the category INDEX, revision drill and separate interview bank.",
+        "Verified the newly added SLSA v1.2, Sigstore attestation and Docker Build attestations references against primary sources.",
+        "Updated the revision drill with a source-linked SLSA Build L0-L3 question.",
+        "Full repository verification passed all 30 gates; standalone link checking reported 10,847 local links and 149 anchors with zero failures.",
+        "Ruby 3.4 locked-bundle production Jekyll build and rendered-heading checks passed site-wide and on all nine Docker chapters."
+      ]
     },
     {
       "path": "40-platform/40.1-docker/40.1.09-rootless-sandboxed-runtimes.md",
       "group": "40-platform/40.1-docker",
       "title": "Rootless Mode & Sandboxed Runtimes (gVisor, Kata)",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "963893ceb3130827703a17ab7ae4c9deabe057df22746319c2192d3553019bd8",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which host privilege or kernel boundary does this workload actually require?",
+      "disposition": "Added a concrete untrusted-job opening, distinguished rootless privilege reduction from gVisor syscall mediation and Kata guest-kernel isolation, and replaced repeated why/mistake/practice catalogs with a workload-selection table and validation criteria.",
+      "validation": [
+        "Re-read in Docker learning order with the category INDEX and revision drill.",
+        "Checked the runtime version boundaries against current Docker, gVisor and Kubernetes documentation.",
+        "Replaced the personal example username with a generic developer identity.",
+        "Full repository verification passed all 30 gates; standalone link checking reported 10,847 local links and 149 anchors with zero failures.",
+        "Ruby 3.4 locked-bundle production Jekyll build and rendered-heading checks passed site-wide and on all nine Docker chapters."
+      ]
     },
     {
       "path": "40-platform/40.10-cdn/40.10.01-cdn-architecture.md",

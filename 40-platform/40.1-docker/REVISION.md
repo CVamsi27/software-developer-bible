@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Docker-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../docs/topic-importance.md)
 
@@ -77,6 +77,10 @@ Source: [Image Signing, SBOM & Supply Chain Security](40.1.08-image-signing-sbom
 **Q:** Why is a valid image signature insufficient to approve deployment?
 
 **A:** It authenticates a digest under an identity/key policy. Approval also needs expected provenance, source/build identity, contents, and vulnerability policy.
+
+**Q:** What distinguishes SLSA Build L0 through L3 in version 1.2?
+
+**A:** L0 makes no SLSA claim; L1 requires provenance but it may be incomplete or unsigned; L2 requires signed provenance from a hosted build platform; L3 adds a hardened platform that isolates runs and protects signing material. The consumer must verify the evidence and platform requirements rather than infer a level from the presence of provenance.
 
 ## Rootless Mode & Sandboxed Runtimes (gVisor, Kata)
 

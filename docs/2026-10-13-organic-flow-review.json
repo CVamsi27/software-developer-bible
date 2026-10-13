@@ -10,10 +10,10 @@
   },
   "counts": {
     "topic_chapters": 520,
-    "revised": 191,
+    "revised": 194,
     "unchanged": 69,
-    "pending": 260,
-    "reviewed": 260
+    "pending": 257,
+    "reviewed": 263
   },
   "entries": [
     {
@@ -40,7 +40,7 @@
       "baseline_sha256": "1fecf8d582179ecd4d44e304879f7c29d83edc16926e34d0bc8ce1104717b1ba",
       "previous_depth_review": "revised",
       "reader_question": "What makes a senior-level resume claim both relevant and defensible?",
-      "disposition": "Added concrete senior evidence—ownership boundary, scale or risk, decision, cross-team alignment and operational outcome—and described mentoring through observable results. Replaced overlong, FAANG-specific cross-reference descriptions with the applicable behavioral and abroad preparation paths.",
+      "disposition": "Added concrete senior evidence\u2014ownership boundary, scale or risk, decision, cross-team alignment and operational outcome\u2014and described mentoring through observable results. Replaced overlong, FAANG-specific cross-reference descriptions with the applicable behavioral and abroad preparation paths.",
       "validation": [
         "Directly re-read in learning order; checked the practical/textbook definition, First Principles, scenario flow, summary and cross-references.",
         "The four chapters retain truthful, evidence-based guidance; the offer arithmetic and index reading-time label were checked explicitly.",
@@ -440,7 +440,7 @@
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md",
       "group": "10-frontend/10.1-javascript/04-memory-and-data",
-      "title": "Hash Tables & HashMaps — Internals, Collision Resolution & V8",
+      "title": "Hash Tables & HashMaps \u2014 Internals, Collision Resolution & V8",
       "status": "revised",
       "baseline_sha256": "7624eb0c6e6836a58fc1124bda3932cf70a62bf84df748700d320ee85423d750",
       "previous_depth_review": "revised",
@@ -552,7 +552,7 @@
     {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md",
       "group": "10-frontend/10.1-javascript/06-modern-and-interview",
-      "title": "Recent ECMAScript Features (ES2022–ES2026)",
+      "title": "Recent ECMAScript Features (ES2022\u2013ES2026)",
       "status": "revised",
       "baseline_sha256": "1f536760aba81b153d96ace28843bfa11261efe51a28ea3a82efe37125e80407",
       "previous_depth_review": "revised",
@@ -880,7 +880,7 @@
     {
       "path": "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.05-advanced-patterns.md",
       "group": "10-frontend/10.2-typescript/04-advanced-patterns",
-      "title": "TypeScript Advanced Patterns — Decorators, Middleware, Advanced Generics",
+      "title": "TypeScript Advanced Patterns \u2014 Decorators, Middleware, Advanced Generics",
       "status": "revised",
       "baseline_sha256": "db71ce14d1ee230c2810020a51179771acbc84b52d097f75360c4c1e8c764644",
       "previous_depth_review": "revised",
@@ -1460,34 +1460,49 @@
       "path": "10-frontend/10.4-next.js/04-production/10.4.4.01-authentication.md",
       "group": "10-frontend/10.4-next.js/04-production",
       "title": "Authentication in Next.js",
-      "status": "pending",
-      "baseline_sha256": "e9240550d35f40299e45f2c98b82517e7b4bfc772027d19973950adc630b6507",
+      "status": "revised",
+      "baseline_sha256": "9f8c98d9b1a0ab05ac786a29ccd9087ec906a831abcea95d81242a68185d7841",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How does a protected Next.js request establish identity, enforce current resource permission, and keep client state in its proper role?",
+      "disposition": "Rebuilt the chapter around one protected report request. Separated credential verification, session continuity and authorization; placed resource checks beside data and in each mutation entry point; limited Proxy and client state to their proper feedback roles; clarified revocation, CSRF, cache isolation and version-pinned Auth.js integration.",
+      "validation": [
+        "Re-read all three production chapters in learning order with their INDEX, REVISION and relevant interview-bank answers; reconciled definitions, First Principles, examples, summaries, source links and the user-facing learning flow.",
+        "Verified current official Next.js self-hosting and deployment-platform guidance, cache handler contracts and Node.js release status. The corpus has no runnable Next.js application fixture, so the framework snippets were checked against primary documentation rather than claimed as end-to-end executed.",
+        "All 30 repository verification gates passed. Standalone link checking verified 10,848 local links and 149 anchors with zero failures; freshness passed; the 2,513-URL external citation baseline has no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed. Each edited chapter renders one H1 with code fences and Liquid wrappers handled correctly."
+      ]
     },
     {
       "path": "10-frontend/10.4-next.js/04-production/10.4.4.02-image-optimization.md",
       "group": "10-frontend/10.4-next.js/04-production",
       "title": "Image Optimization in Next.js",
-      "status": "pending",
-      "baseline_sha256": "5b420b8c303cde2e1c146f08e163ba209b88fc7ffcb181b3b37f7aa29840e866",
+      "status": "revised",
+      "baseline_sha256": "9f14959a9bef51857e8d7844e21f63035665b8d60deaea3923dad50dbc58dab4",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which image candidate fits the real layout, who creates it, and how are source, cache and loading costs bounded?",
+      "disposition": "Removed a duplicated partial rewrite and traced one image from CSS slot through srcset selection, on-demand optimization and browser decode. Clarified fill geometry, remote source allowlists and redirects, cache refresh, Next.js 16 loading hints, accessible alternatives and the static-host boundary.",
+      "validation": [
+        "Re-read all three production chapters in learning order with their INDEX, REVISION and relevant interview-bank answers; reconciled definitions, First Principles, examples, summaries, source links and the user-facing learning flow.",
+        "Verified current official Next.js self-hosting and deployment-platform guidance, cache handler contracts and Node.js release status. The corpus has no runnable Next.js application fixture, so the framework snippets were checked against primary documentation rather than claimed as end-to-end executed.",
+        "All 30 repository verification gates passed. Standalone link checking verified 10,848 local links and 149 anchors with zero failures; freshness passed; the 2,513-URL external citation baseline has no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed. Each edited chapter renders one H1 with code fences and Liquid wrappers handled correctly."
+      ]
     },
     {
       "path": "10-frontend/10.4-next.js/04-production/10.4.4.03-deploying-nextjs.md",
       "group": "10-frontend/10.4-next.js/04-production",
       "title": "Deploying Next.js",
-      "status": "pending",
-      "baseline_sha256": "2754b543731a1ff014dbf988b8fc1434157fa5ebe44134e20bb1c8f7ce2325eb",
+      "status": "revised",
+      "baseline_sha256": "bd89f0de040696de706e844b2281e564e19d92ba3e61db087ce9becfefbda687",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which runtime, artifact, cache and rollout guarantees must hold as one Next.js build moves across environments and replicas?",
+      "disposition": "Replaced repetitive framework ladders with a cause-to-release flow: select static or server execution, package and promote one artifact, choose the handler for each cache path, preserve release overlap, and verify ingress, streaming and shutdown. Corrected the current cacheHandler/cacheHandlers distinction and multi-instance refreshTags guidance.",
+      "validation": [
+        "Re-read all three production chapters in learning order with their INDEX, REVISION and relevant interview-bank answers; reconciled definitions, First Principles, examples, summaries, source links and the user-facing learning flow.",
+        "Verified current official Next.js self-hosting and deployment-platform guidance, cache handler contracts and Node.js release status. The corpus has no runnable Next.js application fixture, so the framework snippets were checked against primary documentation rather than claimed as end-to-end executed.",
+        "All 30 repository verification gates passed. Standalone link checking verified 10,848 local links and 149 anchors with zero failures; freshness passed; the 2,513-URL external citation baseline has no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed. Each edited chapter renders one H1 with code fences and Liquid wrappers handled correctly."
+      ]
     },
     {
       "path": "10-frontend/10.5-form-handling/10.5.01-react-hook-form.md",
@@ -1531,7 +1546,7 @@
       "baseline_sha256": "d6f7391c035755148066b5108c82a4d442a78ba4a8229cdd05d91e43be4bf85d",
       "previous_depth_review": "revised",
       "reader_question": "How do value changes, blur, submit and server rejection differ in Formik?",
-      "disposition": "Removed a repeated library-comparison matrix and a generic mistake catalog. The chapter now keeps one controlled-state lifecycle and closes with a short fit boundary covering migration cost, context updates and FastField’s independence requirement.",
+      "disposition": "Removed a repeated library-comparison matrix and a generic mistake catalog. The chapter now keeps one controlled-state lifecycle and closes with a short fit boundary covering migration cost, context updates and FastField\u2019s independence requirement.",
       "validation": [
         "Re-read all six topic chapters in study order with the group INDEX, REVISION companion and interview bank; preserved textbook definitions and the distinct First Principles sections.",
         "Five representative TypeScript/TSX examples passed strict no-emit compilation with TypeScript 7.0.2, React 19.3.0 and the selected current form-library types.",
@@ -1565,7 +1580,7 @@
       "baseline_sha256": "52bf54552dad31143964ec60205c4c904e570b70fdbe3a4a2fa9bc572431c7f7",
       "previous_depth_review": "revised",
       "reader_question": "How does a field or uploaded file move from FormData into an authorized, recoverable mutation?",
-      "disposition": "Added the missing file-upload policy at the server boundary: treat browser metadata as hints, validate size and content, generate storage names, authorize access, and use scoped direct uploads for files above Next.js’s default 1 MB action body limit. Removed a duplicate cross-reference and aligned the current documentation links.",
+      "disposition": "Added the missing file-upload policy at the server boundary: treat browser metadata as hints, validate size and content, generate storage names, authorize access, and use scoped direct uploads for files above Next.js\u2019s default 1 MB action body limit. Removed a duplicate cross-reference and aligned the current documentation links.",
       "validation": [
         "Re-read all six topic chapters in study order with the group INDEX, REVISION companion and interview bank; preserved textbook definitions and the distinct First Principles sections.",
         "Five representative TypeScript/TSX examples passed strict no-emit compilation with TypeScript 7.0.2, React 19.3.0 and the selected current form-library types.",
@@ -1582,7 +1597,7 @@
       "baseline_sha256": "7df6ca7a14eced3c0d47ec44bd6174082d2397f0eb316b75e6576899f64c8725",
       "previous_depth_review": "revised",
       "reader_question": "How does a draft recover safely across delayed writes and a failed commit?",
-      "disposition": "The chapter follows draft ownership through delayed writes, version ordering, persistence failure and final commit recovery. Its detailed writer example is necessary to show the race and recovery contract; no sections repeat another chapter’s lesson.",
+      "disposition": "The chapter follows draft ownership through delayed writes, version ordering, persistence failure and final commit recovery. Its detailed writer example is necessary to show the race and recovery contract; no sections repeat another chapter\u2019s lesson.",
       "validation": [
         "Re-read all six topic chapters in study order with the group INDEX, REVISION companion and interview bank; preserved textbook definitions and the distinct First Principles sections.",
         "Five representative TypeScript/TSX examples passed strict no-emit compilation with TypeScript 7.0.2, React 19.3.0 and the selected current form-library types.",
@@ -1671,7 +1686,7 @@
     {
       "path": "10-frontend/10.7-html-css/10.7.01-html-fundamentals.md",
       "group": "10-frontend/10.7-html-css",
-      "title": "HTML Fundamentals — Semantic HTML, Forms, Accessibility",
+      "title": "HTML Fundamentals \u2014 Semantic HTML, Forms, Accessibility",
       "status": "pending",
       "baseline_sha256": "77902ad97b3aaedeb6deaec7df9ae12b9e936ee99ae98e4967e16bb052d8ee55",
       "previous_depth_review": "revised",
@@ -1682,7 +1697,7 @@
     {
       "path": "10-frontend/10.7-html-css/10.7.02-css-fundamentals.md",
       "group": "10-frontend/10.7-html-css",
-      "title": "CSS Fundamentals — Grid, Flexbox, Responsive Design, Variables",
+      "title": "CSS Fundamentals \u2014 Grid, Flexbox, Responsive Design, Variables",
       "status": "pending",
       "baseline_sha256": "6d509b1088f40b44b40824377c33ab609f2113a6f0ff95de748878636e9434bd",
       "previous_depth_review": "revised",
@@ -1693,7 +1708,7 @@
     {
       "path": "10-frontend/10.7-html-css/10.7.03-browser-rendering.md",
       "group": "10-frontend/10.7-html-css",
-      "title": "Browser Rendering — Critical Rendering Path, Reflow, Paint",
+      "title": "Browser Rendering \u2014 Critical Rendering Path, Reflow, Paint",
       "status": "pending",
       "baseline_sha256": "69205d02c1d474f1c6fa3f8d4b324ac7abae1b19c7cfc6b53ea880f4540ec42d",
       "previous_depth_review": "reviewed",
@@ -1704,7 +1719,7 @@
     {
       "path": "10-frontend/10.7-html-css/10.7.04-seo.md",
       "group": "10-frontend/10.7-html-css",
-      "title": "SEO — Meta Tags, Structured Data, Core Web Vitals",
+      "title": "SEO \u2014 Meta Tags, Structured Data, Core Web Vitals",
       "status": "pending",
       "baseline_sha256": "3f07373d0be2c8552ffe61a71f8c5894ef3f5180bc1802fa026b255900952ef8",
       "previous_depth_review": "reviewed",
@@ -1715,7 +1730,7 @@
     {
       "path": "10-frontend/10.7-html-css/10.7.05-pwa.md",
       "group": "10-frontend/10.7-html-css",
-      "title": "Progressive Web Apps (PWA) — Service Workers, Manifest, Offline",
+      "title": "Progressive Web Apps (PWA) \u2014 Service Workers, Manifest, Offline",
       "status": "pending",
       "baseline_sha256": "732b15a84dd2b9008cd877c42d4f8dded832a638bd374d273774f7b72c9e4b8e",
       "previous_depth_review": "revised",
@@ -1792,7 +1807,7 @@
     {
       "path": "10-frontend/10.8-mobile/10.8.04-expo-eas-builds.md",
       "group": "10-frontend/10.8-mobile",
-      "title": "Expo EAS Build — Cloud Builds, Profiles & Submitting",
+      "title": "Expo EAS Build \u2014 Cloud Builds, Profiles & Submitting",
       "status": "pending",
       "baseline_sha256": "0fd23916413125f75d4a805c9fc835d4eacda1af606aeb67bf5ebe003e0551c5",
       "previous_depth_review": "revised",
@@ -1803,7 +1818,7 @@
     {
       "path": "10-frontend/10.8-mobile/10.8.05-codepush-ota-updates.md",
       "group": "10-frontend/10.8-mobile",
-      "title": "Over-the-Air Updates — EAS Update, CodePush & the JS/Native Boundary",
+      "title": "Over-the-Air Updates \u2014 EAS Update, CodePush & the JS/Native Boundary",
       "status": "pending",
       "baseline_sha256": "3b24a1b01b8894abf2f3013b66abd1e2a852069c0d988ed0543a0348c6be7336",
       "previous_depth_review": "revised",
@@ -1814,7 +1829,7 @@
     {
       "path": "10-frontend/10.8-mobile/10.8.06-app-store-release-automation.md",
       "group": "10-frontend/10.8-mobile",
-      "title": "App-Store Release Automation — Release Trains, Store Review & Rollout Safety",
+      "title": "App-Store Release Automation \u2014 Release Trains, Store Review & Rollout Safety",
       "status": "pending",
       "baseline_sha256": "517afc4a2e4229bcb3ec04120f07b608bc51651fac316010b338ff31d904865a",
       "previous_depth_review": "revised",
@@ -2051,7 +2066,7 @@
     {
       "path": "20-backend/20.12-ai-engineering/20.12.03-retrieval-quality-hybrid-search-reranking.md",
       "group": "20-backend/20.12-ai-engineering",
-      "title": "Retrieval Quality — Hybrid Search & Reranking",
+      "title": "Retrieval Quality \u2014 Hybrid Search & Reranking",
       "status": "pending",
       "baseline_sha256": "4a4d50150cba5e3507a8b7386949658bdbf31d945c201e34b7b68dcf18e84fc2",
       "previous_depth_review": "revised",
@@ -2073,7 +2088,7 @@
     {
       "path": "20-backend/20.12-ai-engineering/20.12.05-serving-models-hosted-vs-self-hosted.md",
       "group": "20-backend/20.12-ai-engineering",
-      "title": "Serving Models — Hosted APIs vs Self-Hosted",
+      "title": "Serving Models \u2014 Hosted APIs vs Self-Hosted",
       "status": "pending",
       "baseline_sha256": "e4f2fc6bce0bd098f2392a8e5477cecfa316a20acbbe901f0712a195959cb8b0",
       "previous_depth_review": "revised",
@@ -2095,7 +2110,7 @@
     {
       "path": "20-backend/20.13-java/20.13.01-java-language-fundamentals.md",
       "group": "20-backend/20.13-java",
-      "title": "Java — Language Fundamentals",
+      "title": "Java \u2014 Language Fundamentals",
       "status": "pending",
       "baseline_sha256": "be2fd64535eadf6c30ba4773fa4d038ee87c60efaeb3ba6390601e2c025c566a",
       "previous_depth_review": "revised",
@@ -2106,7 +2121,7 @@
     {
       "path": "20-backend/20.13-java/20.13.02-java-oop-solid.md",
       "group": "20-backend/20.13-java",
-      "title": "Java — OOP Principles, Interfaces & SOLID",
+      "title": "Java \u2014 OOP Principles, Interfaces & SOLID",
       "status": "pending",
       "baseline_sha256": "ab9408466a88e92065a6ddb4d308029a86b49ecf8b442b1c49e31c7be47caa5d",
       "previous_depth_review": "revised",
@@ -2117,7 +2132,7 @@
     {
       "path": "20-backend/20.13-java/20.13.03-java-concurrency-multithreading.md",
       "group": "20-backend/20.13-java",
-      "title": "Java — Concurrency & Multithreading",
+      "title": "Java \u2014 Concurrency & Multithreading",
       "status": "pending",
       "baseline_sha256": "a709cf5ec3661ed979bf0f4b3f09791f21caf2e9f53d81257b3a5d9756ad37b2",
       "previous_depth_review": "revised",
@@ -2128,7 +2143,7 @@
     {
       "path": "20-backend/20.13-java/20.13.04-java-testing-junit-mockito.md",
       "group": "20-backend/20.13-java",
-      "title": "Java — Testing with JUnit & Mockito",
+      "title": "Java \u2014 Testing with JUnit & Mockito",
       "status": "pending",
       "baseline_sha256": "f9cd35e2f350cfba571b4660ee1a73af4534b47f6123f83fc73c58be1585382a",
       "previous_depth_review": "revised",
@@ -2139,7 +2154,7 @@
     {
       "path": "20-backend/20.13-java/20.13.05-spring-boot.md",
       "group": "20-backend/20.13-java",
-      "title": "Java — Spring Boot Essentials",
+      "title": "Java \u2014 Spring Boot Essentials",
       "status": "pending",
       "baseline_sha256": "bc052a6bc6f308c3bc28b5bb5520ed887de2f7c9ec15ac984d3ff3fe01a2f591",
       "previous_depth_review": "revised",
@@ -2448,7 +2463,7 @@
     {
       "path": "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.01-api-design-patterns.md",
       "group": "20-backend/20.3-rest-apis/01-design-and-contract",
-      "title": "API Design Patterns — REST, GraphQL, gRPC, Webhooks",
+      "title": "API Design Patterns \u2014 REST, GraphQL, gRPC, Webhooks",
       "status": "unchanged",
       "baseline_sha256": "f97828e4741b634f4112cfb0e49072d239ea2accd5657931e35c04587a2e667d",
       "previous_depth_review": "revised",
@@ -2470,7 +2485,7 @@
       "baseline_sha256": "e7a476682ba5dea9cc391a2f5c3c4515dfb26c198f6a6de614a0b14acebe0d5b",
       "previous_depth_review": "revised",
       "reader_question": "What does the REST uniform interface add beyond consistent HTTP route naming?",
-      "disposition": "Retained the resource-to-representation trace and the constraints table; replaced generic secondary references with the governing HTTP semantics source and Fielding’s dissertation.",
+      "disposition": "Retained the resource-to-representation trace and the constraints table; replaced generic secondary references with the governing HTTP semantics source and Fielding\u2019s dissertation.",
       "validation": [
         "Re-read in category order with INDEX.md and REVISION.md.",
         "Checked practical and textbook definitions, First Principles, causal explanation, one Summary, See Also and references; retained senior-level trade-offs and canonical topic links.",
@@ -2521,7 +2536,7 @@
       "baseline_sha256": "722d93133d51319c8ccd0f82c734ad7b177de2714cfc92237b1185bbacd20a8f",
       "previous_depth_review": "revised",
       "reader_question": "Why can a generated client still disagree with the running service?",
-      "disposition": "Kept the spec-to-tool-to-runtime evidence flow and the complete contract example; aligned the “latest version” date to the review date and confirmed the official 3.2.1 specification.",
+      "disposition": "Kept the spec-to-tool-to-runtime evidence flow and the complete contract example; aligned the \u201clatest version\u201d date to the review date and confirmed the official 3.2.1 specification.",
       "validation": [
         "Re-read in category order with INDEX.md and REVISION.md.",
         "Checked practical and textbook definitions, First Principles, causal explanation, one Summary, See Also and references; retained senior-level trade-offs and canonical topic links.",
@@ -2769,7 +2784,7 @@
     {
       "path": "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.03-bff.md",
       "group": "20-backend/20.3-rest-apis/04-edge-and-scale",
-      "title": "BFF — Backend for Frontend",
+      "title": "BFF \u2014 Backend for Frontend",
       "status": "unchanged",
       "baseline_sha256": "2404557da28e2d873d7ec7254dfd97cf848f47fe79862ae8042ec22274525fcd",
       "previous_depth_review": "revised",
@@ -2862,7 +2877,7 @@
     {
       "path": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.04-nosql-vs-sql.md",
       "group": "20-backend/20.4-database/01-postgresql-foundations",
-      "title": "SQL vs NoSQL — Choosing the Right Database",
+      "title": "SQL vs NoSQL \u2014 Choosing the Right Database",
       "status": "revised",
       "baseline_sha256": "de43c49cf3ca168f393ad4abeb1015c7eae1db47ffe03b169c568c55d9155de4",
       "previous_depth_review": "revised",
@@ -3023,8 +3038,8 @@
       "status": "unchanged",
       "baseline_sha256": "78ffdba7f23b92f3e315f106b477eb5ba2e68418a7fb0e0588a38bd5cca144e9",
       "previous_depth_review": "reviewed",
-      "reader_question": "Database Transactions — can a reader follow the concurrency or freshness guarantee from a concrete failure to the mechanism and the recovery boundary?",
-      "disposition": "Re-read the complete chapter, index and revision flow. The transfer → isolation anomaly → recovery path is coherent; deadlock diagnosis follows the two-session cycle; locking compares stale writes, short locks and atomic predicates; replication separates copied data, acknowledgment and read freshness. SQL examples and PostgreSQL 18 claims checked against official documentation. No content change was needed.",
+      "reader_question": "Database Transactions \u2014 can a reader follow the concurrency or freshness guarantee from a concrete failure to the mechanism and the recovery boundary?",
+      "disposition": "Re-read the complete chapter, index and revision flow. The transfer \u2192 isolation anomaly \u2192 recovery path is coherent; deadlock diagnosis follows the two-session cycle; locking compares stale writes, short locks and atomic predicates; replication separates copied data, acknowledgment and read freshness. SQL examples and PostgreSQL 18 claims checked against official documentation. No content change was needed.",
       "validation": [
         "Reviewed headings alone and prose in sequence; definitions, first-principles derivations, one summary, See Also and references are present.",
         "Checked transaction isolation and retry behavior against PostgreSQL 18 transaction documentation.",
@@ -3044,8 +3059,8 @@
       "status": "unchanged",
       "baseline_sha256": "39d1e383196168e6f50cdd96eb3205a6396b981f5737c1fef4a637fd982be7a7",
       "previous_depth_review": "reviewed",
-      "reader_question": "Deadlocks — can a reader follow the concurrency or freshness guarantee from a concrete failure to the mechanism and the recovery boundary?",
-      "disposition": "Re-read the complete chapter, index and revision flow. The transfer → isolation anomaly → recovery path is coherent; deadlock diagnosis follows the two-session cycle; locking compares stale writes, short locks and atomic predicates; replication separates copied data, acknowledgment and read freshness. SQL examples and PostgreSQL 18 claims checked against official documentation. No content change was needed.",
+      "reader_question": "Deadlocks \u2014 can a reader follow the concurrency or freshness guarantee from a concrete failure to the mechanism and the recovery boundary?",
+      "disposition": "Re-read the complete chapter, index and revision flow. The transfer \u2192 isolation anomaly \u2192 recovery path is coherent; deadlock diagnosis follows the two-session cycle; locking compares stale writes, short locks and atomic predicates; replication separates copied data, acknowledgment and read freshness. SQL examples and PostgreSQL 18 claims checked against official documentation. No content change was needed.",
       "validation": [
         "Reviewed headings alone and prose in sequence; definitions, first-principles derivations, one summary, See Also and references are present.",
         "Checked transaction isolation and retry behavior against PostgreSQL 18 transaction documentation.",
@@ -3065,8 +3080,8 @@
       "status": "unchanged",
       "baseline_sha256": "9047f79947b8ef59e1ff3e09fe220b135dcb0616d22a4cf98aa3ba2008a5bda3",
       "previous_depth_review": "reviewed",
-      "reader_question": "Optimistic & Pessimistic Locking — can a reader follow the concurrency or freshness guarantee from a concrete failure to the mechanism and the recovery boundary?",
-      "disposition": "Re-read the complete chapter, index and revision flow. The transfer → isolation anomaly → recovery path is coherent; deadlock diagnosis follows the two-session cycle; locking compares stale writes, short locks and atomic predicates; replication separates copied data, acknowledgment and read freshness. SQL examples and PostgreSQL 18 claims checked against official documentation. No content change was needed.",
+      "reader_question": "Optimistic & Pessimistic Locking \u2014 can a reader follow the concurrency or freshness guarantee from a concrete failure to the mechanism and the recovery boundary?",
+      "disposition": "Re-read the complete chapter, index and revision flow. The transfer \u2192 isolation anomaly \u2192 recovery path is coherent; deadlock diagnosis follows the two-session cycle; locking compares stale writes, short locks and atomic predicates; replication separates copied data, acknowledgment and read freshness. SQL examples and PostgreSQL 18 claims checked against official documentation. No content change was needed.",
       "validation": [
         "Reviewed headings alone and prose in sequence; definitions, first-principles derivations, one summary, See Also and references are present.",
         "Checked transaction isolation and retry behavior against PostgreSQL 18 transaction documentation.",
@@ -3086,8 +3101,8 @@
       "status": "unchanged",
       "baseline_sha256": "261c01316b3c4e900b299e219fd6790b54182cafb686bdc39f6274ed31d3ec9c",
       "previous_depth_review": "reviewed",
-      "reader_question": "Database Replication Patterns — can a reader follow the concurrency or freshness guarantee from a concrete failure to the mechanism and the recovery boundary?",
-      "disposition": "Re-read the complete chapter, index and revision flow. The transfer → isolation anomaly → recovery path is coherent; deadlock diagnosis follows the two-session cycle; locking compares stale writes, short locks and atomic predicates; replication separates copied data, acknowledgment and read freshness. SQL examples and PostgreSQL 18 claims checked against official documentation. No content change was needed.",
+      "reader_question": "Database Replication Patterns \u2014 can a reader follow the concurrency or freshness guarantee from a concrete failure to the mechanism and the recovery boundary?",
+      "disposition": "Re-read the complete chapter, index and revision flow. The transfer \u2192 isolation anomaly \u2192 recovery path is coherent; deadlock diagnosis follows the two-session cycle; locking compares stale writes, short locks and atomic predicates; replication separates copied data, acknowledgment and read freshness. SQL examples and PostgreSQL 18 claims checked against official documentation. No content change was needed.",
       "validation": [
         "Reviewed headings alone and prose in sequence; definitions, first-principles derivations, one summary, See Also and references are present.",
         "Checked transaction isolation and retry behavior against PostgreSQL 18 transaction documentation.",
@@ -3108,7 +3123,7 @@
       "baseline_sha256": "cdfdc48951acd199dbe17f1c608a0b41e5bd361068892ec1a8a6342060270c17",
       "previous_depth_review": "revised",
       "reader_question": "Can the reader trace a model through generated types, migration SQL, bounded queries and the database guarantees that remain authoritative?",
-      "disposition": "The schema → generated client/migration → query → transaction/pool sequence is coherent. It keeps application types, deployed DDL and database constraints distinct, with focused examples for pagination, raw results and concurrency boundaries.",
+      "disposition": "The schema \u2192 generated client/migration \u2192 query \u2192 transaction/pool sequence is coherent. It keeps application types, deployed DDL and database constraints distinct, with focused examples for pagination, raw results and concurrency boundaries.",
       "validation": [
         "Re-read category index, every chapter and revision companion in learning order; practical/textbook definitions, First Principles and required chapter endings are present.",
         "Checked Prisma ORM 7.10 stable and Prisma ORM 8 release-candidate status against current official Prisma release documentation.",
@@ -3122,7 +3137,7 @@
     {
       "path": "20-backend/20.4-database/04-orm-and-access/20.4.4.02-prisma-advanced.md",
       "group": "20-backend/20.4-database/04-orm-and-access",
-      "title": "Prisma Advanced — Concurrent Writes, Raw SQL and Tenant Context",
+      "title": "Prisma Advanced \u2014 Concurrent Writes, Raw SQL and Tenant Context",
       "status": "unchanged",
       "baseline_sha256": "f297e227e1db26ab210a277ffb8704a98474509e12bcfab0406839968f6ae02c",
       "previous_depth_review": "revised",
@@ -3141,7 +3156,7 @@
     {
       "path": "20-backend/20.4-database/04-orm-and-access/20.4.4.03-orm-query-builder-landscape.md",
       "group": "20-backend/20.4-database/04-orm-and-access",
-      "title": "ORM & Query Builder Landscape — Choose the Boundary You Need",
+      "title": "ORM & Query Builder Landscape \u2014 Choose the Boundary You Need",
       "status": "unchanged",
       "baseline_sha256": "9792dc20739e66b22e6695b5366afbc88cbd6401e566ba3b47b7e1e9da1eb4f2",
       "previous_depth_review": "revised",
@@ -3255,7 +3270,7 @@
     {
       "path": "20-backend/20.5-security/01-auth/20.5.1.01-auth-fundamentals.md",
       "group": "20-backend/20.5-security/01-auth",
-      "title": "Auth Fundamentals — Identity, Credentials & Crypto Primitives",
+      "title": "Auth Fundamentals \u2014 Identity, Credentials & Crypto Primitives",
       "status": "revised",
       "baseline_sha256": "d70a070bbe57aff85be6bb3eab03cd21a2b06cf42c23455b2bcd882fd6063618",
       "previous_depth_review": "revised",
@@ -3493,7 +3508,7 @@
     {
       "path": "20-backend/20.5-security/03-hardening-and-operations/20.5.3.03-threat-modeling-stride.md",
       "group": "20-backend/20.5-security/03-hardening-and-operations",
-      "title": "Threat Modeling — STRIDE & Attack Surfaces",
+      "title": "Threat Modeling \u2014 STRIDE & Attack Surfaces",
       "status": "revised",
       "baseline_sha256": "027517dcfaf83c7396baf0e0b23a96108788429cfba7c2a5e30f6c4cf4ca09cb",
       "previous_depth_review": "revised",
@@ -3629,7 +3644,7 @@
     {
       "path": "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md",
       "group": "20-backend/20.6-microservices/02-communication-and-messaging",
-      "title": "Message Brokers — Kafka vs RabbitMQ",
+      "title": "Message Brokers \u2014 Kafka vs RabbitMQ",
       "status": "pending",
       "baseline_sha256": "fe2ae6418f314ec1a82a3432beabde3f73ca83f20595cf72d8854ffa4bff9f39",
       "previous_depth_review": "reviewed",
@@ -3827,7 +3842,7 @@
     {
       "path": "20-backend/20.8-caching/20.8.01-caching-deep-dive.md",
       "group": "20-backend/20.8-caching",
-      "title": "Caching Deep-Dive — Redis, Strategies, Invalidation, Patterns",
+      "title": "Caching Deep-Dive \u2014 Redis, Strategies, Invalidation, Patterns",
       "status": "pending",
       "baseline_sha256": "ec5971c6a4ac8716806239ed8f9771de29b75d381f490499f41bb9c200283eb7",
       "previous_depth_review": "revised",
@@ -3849,7 +3864,7 @@
     {
       "path": "20-backend/20.8-caching/20.8.03-advanced-redis-patterns.md",
       "group": "20-backend/20.8-caching",
-      "title": "Advanced Redis Patterns — Distributed Locks, Rate Limiting, Pub/Sub, Streams, Lua Scripting",
+      "title": "Advanced Redis Patterns \u2014 Distributed Locks, Rate Limiting, Pub/Sub, Streams, Lua Scripting",
       "status": "pending",
       "baseline_sha256": "5bc41203d2241f0f6708834dd93cd4e8781c12121d772b92cfcb34d8d3629fdd",
       "previous_depth_review": "revised",
@@ -3915,7 +3930,7 @@
     {
       "path": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.03-oop-concepts.md",
       "group": "30-architecture/30.1-design-patterns/01-foundations",
-      "title": "OOP Concepts — Encapsulation, Inheritance, Polymorphism, Abstraction",
+      "title": "OOP Concepts \u2014 Encapsulation, Inheritance, Polymorphism, Abstraction",
       "status": "pending",
       "baseline_sha256": "734cfcee8156f68d8473f532e2a3aea695c54fe6236542ec9fe962cb6a8b3faa",
       "previous_depth_review": "revised",
@@ -3926,7 +3941,7 @@
     {
       "path": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.04-uml-basics.md",
       "group": "30-architecture/30.1-design-patterns/01-foundations",
-      "title": "UML Basics — Class & Sequence Diagrams",
+      "title": "UML Basics \u2014 Class & Sequence Diagrams",
       "status": "pending",
       "baseline_sha256": "91ad41a6f1cf9e7bedf2ed0fce1b7f0f1ca3fde8261e96e1db7c0c41041409a4",
       "previous_depth_review": "revised",
@@ -4256,7 +4271,7 @@
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.05-ddd-tactical-patterns-aggregates-value-objects.md",
       "group": "30-architecture/30.1-design-patterns/05-architectural",
-      "title": "DDD Tactical Patterns — Aggregates & Value Objects",
+      "title": "DDD Tactical Patterns \u2014 Aggregates & Value Objects",
       "status": "pending",
       "baseline_sha256": "a69fd387a07016b44ed9c4cc23e97e8a7a9d5e09b6b36e88eb16032d7a4fe454",
       "previous_depth_review": "revised",
@@ -4289,7 +4304,7 @@
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.08-presentation-patterns-mvc-mvp-mvvm.md",
       "group": "30-architecture/30.1-design-patterns/05-architectural",
-      "title": "Presentation Patterns — MVC, MVP, MVVM",
+      "title": "Presentation Patterns \u2014 MVC, MVP, MVVM",
       "status": "pending",
       "baseline_sha256": "d22f2981a4726dfd2036a1df31b64b7c783afa12668631f589fb9d20156caf70",
       "previous_depth_review": "revised",
@@ -4762,7 +4777,7 @@
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.21-workflow-engine.md",
       "group": "30-architecture/30.2-system-design/02-case-studies",
-      "title": "Workflow Engine — System Design Case Study",
+      "title": "Workflow Engine \u2014 System Design Case Study",
       "status": "pending",
       "baseline_sha256": "497b69014ea12b4bbfbd415917e4151631445a5ddffec7778b34752a8915c7f0",
       "previous_depth_review": "revised",
@@ -4773,7 +4788,7 @@
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.22-real-time-collaboration.md",
       "group": "30-architecture/30.2-system-design/02-case-studies",
-      "title": "Real-Time Collaboration — System Design Case Study",
+      "title": "Real-Time Collaboration \u2014 System Design Case Study",
       "status": "pending",
       "baseline_sha256": "ad4c34bd709d7bce5417e5dfaa526ccc47f67142248d8e6c366026fc8b65766d",
       "previous_depth_review": "revised",
@@ -4883,7 +4898,7 @@
     {
       "path": "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.md",
       "group": "30-architecture/30.3-infra-patterns/01-liveness-lifecycle",
-      "title": "Health Checks & Graceful Shutdown — Liveness, Readiness, SIGTERM",
+      "title": "Health Checks & Graceful Shutdown \u2014 Liveness, Readiness, SIGTERM",
       "status": "pending",
       "baseline_sha256": "df1074effe826e8870fa201058852254479aebb6bbd97274d967b3678ac04b95",
       "previous_depth_review": "revised",
@@ -4894,7 +4909,7 @@
     {
       "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.01-resilience-patterns.md",
       "group": "30-architecture/30.3-infra-patterns/02-failure-and-recovery",
-      "title": "Resilience Patterns — Circuit Breaker, Bulkhead, Retry, Idempotency",
+      "title": "Resilience Patterns \u2014 Circuit Breaker, Bulkhead, Retry, Idempotency",
       "status": "pending",
       "baseline_sha256": "341c4c367818a5861ac8ec248bf19eaed7fccf5f53bdc4156fc6db59390e2138",
       "previous_depth_review": "revised",
@@ -4949,7 +4964,7 @@
     {
       "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.06-idempotency-retry-deep-dive.md",
       "group": "30-architecture/30.3-infra-patterns/02-failure-and-recovery",
-      "title": "Idempotency & Retry Patterns — Deep Dive",
+      "title": "Idempotency & Retry Patterns \u2014 Deep Dive",
       "status": "pending",
       "baseline_sha256": "47c5bb6a6513a79f8738ac63302a32bfa1696390b6e6bd8e0a4b560c81794b8a",
       "previous_depth_review": "revised",
@@ -4960,7 +4975,7 @@
     {
       "path": "30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.md",
       "group": "30-architecture/30.3-infra-patterns/03-coordination",
-      "title": "Leader Election & Consensus — Raft, Paxos, Practical Patterns",
+      "title": "Leader Election & Consensus \u2014 Raft, Paxos, Practical Patterns",
       "status": "pending",
       "baseline_sha256": "16e298005bc26b37c2964964cf1522d3b0144574fa0edff02e82654a5831fce5",
       "previous_depth_review": "revised",
@@ -4971,7 +4986,7 @@
     {
       "path": "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md",
       "group": "30-architecture/30.3-infra-patterns/04-data-at-scale",
-      "title": "Database Scaling — Partitioning, Replication, Connection Pooling, Query Optimization",
+      "title": "Database Scaling \u2014 Partitioning, Replication, Connection Pooling, Query Optimization",
       "status": "pending",
       "baseline_sha256": "031351759bec53881ca61be23fbb8afc21652df6e8e9ac1b4a450cab6d4a2ffa",
       "previous_depth_review": "revised",
@@ -4982,7 +4997,7 @@
     {
       "path": "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.02-data-pipelines.md",
       "group": "30-architecture/30.3-infra-patterns/04-data-at-scale",
-      "title": "Data Pipelines — ETL, Stream Processing, Data Lake",
+      "title": "Data Pipelines \u2014 ETL, Stream Processing, Data Lake",
       "status": "pending",
       "baseline_sha256": "7bf096fba36b8941a3a142e169bd1b4aa69c4c3a3c4b658e9c0ecc9645e9fd62",
       "previous_depth_review": "revised",
@@ -4993,7 +5008,7 @@
     {
       "path": "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md",
       "group": "30-architecture/30.3-infra-patterns/04-data-at-scale",
-      "title": "CDN Architecture — Edge Caching, Geographic Distribution, Cache Invalidation",
+      "title": "CDN Architecture \u2014 Edge Caching, Geographic Distribution, Cache Invalidation",
       "status": "pending",
       "baseline_sha256": "41a72793d9ffa602c7dca6f19d1bbf925b41be76e9850798b09244ea4fdeb32c",
       "previous_depth_review": "revised",
@@ -5015,7 +5030,7 @@
     {
       "path": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.md",
       "group": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution",
-      "title": "Zero-Downtime Deployments — Blue-Green, Canary, Rolling, Feature Flags",
+      "title": "Zero-Downtime Deployments \u2014 Blue-Green, Canary, Rolling, Feature Flags",
       "status": "pending",
       "baseline_sha256": "f386e3c8bf9c48ea2c7f72035ecd18e6bdddde754d4b87603d078c804af8ee7e",
       "previous_depth_review": "revised",
@@ -5026,7 +5041,7 @@
     {
       "path": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.02-technical-debt.md",
       "group": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution",
-      "title": "Technical Debt — Identification, Prioritization, Remediation",
+      "title": "Technical Debt \u2014 Identification, Prioritization, Remediation",
       "status": "pending",
       "baseline_sha256": "683e257055974cb6bd034100ad03ab083668da65299238bb150fe41f13fe5d28",
       "previous_depth_review": "revised",
@@ -5143,7 +5158,7 @@
     {
       "path": "40-platform/40.1-docker/40.1.06-production-patterns.md",
       "group": "40-platform/40.1-docker",
-      "title": "Docker Production Patterns — Security, Optimization, Multi-Stage",
+      "title": "Docker Production Patterns \u2014 Security, Optimization, Multi-Stage",
       "status": "revised",
       "baseline_sha256": "398f54e5f0fe4df9ada7d359e64dde8d1028912a57f1604ec31440582da2142d",
       "previous_depth_review": "revised",
@@ -5159,7 +5174,7 @@
     {
       "path": "40-platform/40.1-docker/40.1.07-container-runtime-internals-namespaces-cgroups.md",
       "group": "40-platform/40.1-docker",
-      "title": "Container Runtime Internals — Namespaces, cgroups, OverlayFS",
+      "title": "Container Runtime Internals \u2014 Namespaces, cgroups, OverlayFS",
       "status": "revised",
       "baseline_sha256": "1f58f4a278d0149a503625905474f8011e8fb1175aaa222206bf841b85e659ba",
       "previous_depth_review": "revised",
@@ -5253,7 +5268,7 @@
     {
       "path": "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md",
       "group": "40-platform/40.12-iac",
-      "title": "40.12.01 — Infrastructure as Code & Terraform Fundamentals",
+      "title": "40.12.01 \u2014 Infrastructure as Code & Terraform Fundamentals",
       "status": "pending",
       "baseline_sha256": "5e3be2b25134912b974333cd6f526d02cdd112229090a6921d9942781eba1a92",
       "previous_depth_review": "revised",
@@ -5602,7 +5617,7 @@
     {
       "path": "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.02-pipeline-patterns.md",
       "group": "40-platform/40.3-ci-cd/02-build-and-deploy",
-      "title": "CI/CD Pipeline Patterns — GitHub Actions, GitLab CI, Deployment Strategies",
+      "title": "CI/CD Pipeline Patterns \u2014 GitHub Actions, GitLab CI, Deployment Strategies",
       "status": "revised",
       "baseline_sha256": "2361151a575f31d1e65b47ed9209865bffaefbe5dd1aeac2875207be456670b4",
       "previous_depth_review": "revised",
@@ -5735,7 +5750,7 @@
       "baseline_sha256": "b4f94bd9327f165a524ee4f84ed07e1850f216b43b8a22a2ea6726fbe30bafdb",
       "previous_depth_review": "revised",
       "reader_question": "How do grouped error reports add diagnosis context while aggregate metrics establish the impact?",
-      "disposition": "Retained the selected-error-to-owned-repair flow and clarified how pod restarts, error rates and provider events provide separate evidence rather than proving one another’s cause.",
+      "disposition": "Retained the selected-error-to-owned-repair flow and clarified how pod restarts, error rates and provider events provide separate evidence rather than proving one another\u2019s cause.",
       "validation": [
         "Re-read in learning order with the category INDEX and REVISION companion; reconciled the related 50-question observability interview bank.",
         "Full repository verification passed all 30 gates; standalone links checked 10,838 internal links and 149 anchors; the 2,515-URL citation baseline has no drift.",
@@ -5919,7 +5934,7 @@
     {
       "path": "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md",
       "group": "40-platform/40.5-build-tools/03-optimization-and-comparison",
-      "title": "Asset Pipelines — CSS, Images & Fonts",
+      "title": "Asset Pipelines \u2014 CSS, Images & Fonts",
       "status": "pending",
       "baseline_sha256": "3dfc47bb709646808eb86af9b6c6eabe869aac88402ba9414d5ca56b476ee96e",
       "previous_depth_review": "revised",
@@ -6310,7 +6325,7 @@
       "baseline_sha256": "3ebf0534434260f480453d7429ad311652c8f5514ff2b5b88e35c601681ad834",
       "previous_depth_review": "revised",
       "reader_question": "What behavior boundary does a unit test preserve, and which collaborators must it control to make failures interpretable?",
-      "disposition": "Replaced the “smallest testable part” wording with an explicit behavioral boundary; clarified FIRST as Independent (also called Isolated); removed unrelated and imprecise See Also descriptions.",
+      "disposition": "Replaced the \u201csmallest testable part\u201d wording with an explicit behavioral boundary; clarified FIRST as Independent (also called Isolated); removed unrelated and imprecise See Also descriptions.",
       "validation": [
         "Re-read in stack order with the Test Levels INDEX.md and REVISION.md; reconciled the Testing interview bank.",
         "Checked the flow, textbook definition, First Principles, scenario/code boundaries, one Summary and required References.",
@@ -6689,7 +6704,7 @@
     {
       "path": "50-quality/50.4-production-engineering/50.4.01-incident-response.md",
       "group": "50-quality/50.4-production-engineering",
-      "title": "Incident Response — Triage, Communication, Postmortems",
+      "title": "Incident Response \u2014 Triage, Communication, Postmortems",
       "status": "pending",
       "baseline_sha256": "bc698e731b79fb466f123d1ef87591546b1bda24b7f4eb917a7f3157a068045f",
       "previous_depth_review": "revised",
@@ -6711,7 +6726,7 @@
     {
       "path": "50-quality/50.4-production-engineering/50.4.03-chaos-engineering.md",
       "group": "50-quality/50.4-production-engineering",
-      "title": "Chaos Engineering in Production — Game Days, Automation, Resilience Metrics",
+      "title": "Chaos Engineering in Production \u2014 Game Days, Automation, Resilience Metrics",
       "status": "pending",
       "baseline_sha256": "056fcba44ee9a9588be50e72f385b25cdd9a14d585c639ade272b4a7fce855d9",
       "previous_depth_review": "revised",
@@ -6975,7 +6990,7 @@
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.07-string-search-kmp-rabin-karp.md",
       "group": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures",
-      "title": "String Search — KMP & Rabin-Karp",
+      "title": "String Search \u2014 KMP & Rabin-Karp",
       "status": "pending",
       "baseline_sha256": "18e03d667ad45b5d7934d2a345ddf8c97b10f85bd8cb9e612ab7b2b27b4b9387",
       "previous_depth_review": "revised",

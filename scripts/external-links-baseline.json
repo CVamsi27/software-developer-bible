@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-13",
- "url_count": 2519,
+ "url_count": 2513,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md",
@@ -421,9 +421,6 @@
   "https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.02-web-security.md",
    "20-backend/20.5-security/03-hardening-and-operations/REVISION.md"
-  ],
-  "https://clerk.com/docs": [
-   "10-frontend/10.4-next.js/04-production/10.4.4.01-authentication.md"
   ],
   "https://clickhouse.com/": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.20-distributed-counter.md"
@@ -3140,9 +3137,6 @@
   "https://github.com/opencontainers/runtime-spec": [
    "40-platform/40.1-docker/40.1.07-container-runtime-internals-namespaces-cgroups.md"
   ],
-  "https://github.com/panva/jose/blob/main/docs/jwt/verify/interfaces/JWTVerifyOptions.md": [
-   "10-frontend/10.4-next.js/04-production/10.4.4.01-authentication.md"
-  ],
   "https://github.com/pgvector/pgvector": [
    "20-backend/20.12-ai-engineering/20.12.01-llm-app-architecture.md",
    "20-backend/20.12-ai-engineering/20.12.03-retrieval-quality-hybrid-search-reranking.md"
@@ -4597,19 +4591,14 @@
    "10-frontend/10.4-next.js/05-interview-prep/10.4.5.01-interview-questions.md"
   ],
   "https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheComponents": [
-   "10-frontend/10.4-next.js/04-production/10.4.4.03-deploying-nextjs.md",
    "10-frontend/10.4-next.js/05-interview-prep/10.4.5.01-interview-questions.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.03-react-nextjs-cheat-sheet.md"
   ],
   "https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheHandlers": [
    "10-frontend/10.4-next.js/04-production/10.4.4.03-deploying-nextjs.md"
   ],
-  "https://nextjs.org/docs/app/api-reference/config/next-config-js/deploymentId": [
-   "10-frontend/10.4-next.js/04-production/10.4.4.03-deploying-nextjs.md"
-  ],
   "https://nextjs.org/docs/app/api-reference/config/next-config-js/output": [
-   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.06-static-exports.md",
-   "10-frontend/10.4-next.js/04-production/10.4.4.03-deploying-nextjs.md"
+   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.06-static-exports.md"
   ],
   "https://nextjs.org/docs/app/api-reference/config/next-config-js/serverActions": [
    "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.02-server-actions.md",
@@ -4630,9 +4619,6 @@
   "https://nextjs.org/docs/app/api-reference/file-conventions/dynamic-routes": [
    "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md"
   ],
-  "https://nextjs.org/docs/app/api-reference/file-conventions/instrumentation": [
-   "10-frontend/10.4-next.js/04-production/10.4.4.03-deploying-nextjs.md"
-  ],
   "https://nextjs.org/docs/app/api-reference/file-conventions/intercepting-routes": [
    "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.03-react-nextjs-cheat-sheet.md"
@@ -4647,7 +4633,6 @@
   "https://nextjs.org/docs/app/api-reference/file-conventions/proxy": [
    "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.01-middleware.md",
    "10-frontend/10.4-next.js/04-production/10.4.4.01-authentication.md",
-   "10-frontend/10.4-next.js/04-production/10.4.4.03-deploying-nextjs.md",
    "10-frontend/10.4-next.js/05-interview-prep/10.4.5.01-interview-questions.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.03-react-nextjs-cheat-sheet.md"
   ],
@@ -4777,12 +4762,6 @@
   ],
   "https://nextjs.org/docs/app/guides/migrating/app-router-migration": [
    "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.03-interview-questions.md"
-  ],
-  "https://nextjs.org/docs/app/guides/multi-zones": [
-   "10-frontend/10.4-next.js/04-production/10.4.4.03-deploying-nextjs.md"
-  ],
-  "https://nextjs.org/docs/app/guides/open-telemetry": [
-   "10-frontend/10.4-next.js/04-production/10.4.4.03-deploying-nextjs.md"
   ],
   "https://nextjs.org/docs/app/guides/self-hosting": [
    "10-frontend/10.4-next.js/04-production/10.4.4.03-deploying-nextjs.md",
@@ -5001,6 +4980,7 @@
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.05-vulnerability-management-patch-governance.md"
   ],
   "https://nodejs.org/en/about/previous-releases": [
+   "10-frontend/10.4-next.js/04-production/10.4.4.03-deploying-nextjs.md",
    "40-platform/40.1-docker/40.1.01-images-containers.md",
    "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.01-github-actions.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.06-docker-kubernetes-cicd-cheat-sheet.md"

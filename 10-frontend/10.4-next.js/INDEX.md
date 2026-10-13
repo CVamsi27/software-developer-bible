@@ -1,6 +1,6 @@
 # Next.js — Index
 
-> **Study time:** ≈ 4 h 4 m of reading (21 files, ~12 min average).
+> **Study time:** ≈ 3 h 20 m of reading (21 files, ~10 min average).
 > **21 files** — App Router, rendering strategies, server components, data fetching patterns, caching, streaming, ISR, authentication, static exports, deployment (Docker/Vercel/self-hosted), and interview questions.
 
 [![Files](https://img.shields.io/badge/files-21-blue)](../../INDEX.md)
@@ -16,11 +16,11 @@
 The 17 files are organized into 5 category folders — read in order.
 
 | Category | Files | Why it matters |
-| -------------------------------------------------------------- | ----: | ------------------------------------------------------------------------------------ |
+| -------------------------------------------------------------- | ----: | ----------------------------------------------------------------------------------------------------- |
 | [Rendering Fundamentals](01-rendering-fundamentals/INDEX.md) | 4 | Request rendering, reusable output, streaming, and server/client boundaries |
 | [Routing, HTTP & Metadata](02-routing-and-middleware/INDEX.md) | 3 | Next.js 16 Proxy, Route Handlers, and page metadata |
 | [Data & Caching](03-data-and-caching/INDEX.md) | 6 | Data access, mutations, two cache models, streaming, regeneration, and static export |
-| [Production](04-production/INDEX.md) | 3 | Authentication, image optimization, deployment |
+| [Production](04-production/INDEX.md) | 3 | Session-to-resource authorization, responsive image delivery, deployment runtime and cache operations |
 | [Interview Prep](05-interview-prep/INDEX.md) | 1 | 40 interview questions |
 
 ---
@@ -82,9 +82,9 @@ Protect current identity/resource boundaries, deliver appropriate image variants
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 14 | [Authentication](04-production/10.4.4.01-authentication.md) | Proxy redirects, session verification, data-boundary authorization, CSRF, NextAuth.js v4 | Important | Important | 32 min |
-| 15 | [Image Optimization](04-production/10.4.4.02-image-optimization.md) | `next/image`, lazy loading, responsive images, AVIF/WebP | Important | Specialized | 18 min |
-| 16 | [Deploying Next.js](04-production/10.4.4.03-deploying-nextjs.md) | Standalone output, managed vs self-hosted, Edge limits, cacheHandler vs cacheHandlers, replica coordination, rolling releases, multi-zone, runtime configuration, observability | Important | Specialized | 17 min |
+| 14 | [Authentication](04-production/10.4.4.01-authentication.md) | Session verification, resource authorization, cookie and CSRF boundaries, version-pinned Auth.js | Important | Important | 9 min |
+| 15 | [Image Optimization](04-production/10.4.4.02-image-optimization.md) | `next/image`, lazy loading, responsive images, AVIF/WebP | Important | Specialized | 7 min |
+| 16 | [Deploying Next.js](04-production/10.4.4.03-deploying-nextjs.md) | Static vs server runtime, standalone artifact, cacheHandler vs cacheHandlers, replica coordination, version skew, runtime configuration, streaming and shutdown | Important | Specialized | 7 min |
 
 ---
 

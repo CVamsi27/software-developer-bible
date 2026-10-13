@@ -14,34 +14,34 @@ Complete the learning chapters first, then answer these questions without reopen
 
 Source: [Authentication in Next.js](10.4.4.01-authentication.md)
 
-**Definition**
+**Identity and permission**
 
 1. **Q:** What proves identity beyond the presence of a session cookie?
    **A:** A verified, unexpired token or valid stored session plus current account checks. Protected resources also need authorization for that verified identity.
 
 
-**How It Works**
+**Credential boundaries**
 
 2. **Q:** Why does httpOnly not make an application immune to XSS?
    **A:** It prevents JavaScript from reading the token directly. Injected code may still issue authenticated requests or read exposed page data.
 
 
-**Code Examples**
+**Authorization boundaries**
 
-3. **Q:** Which route should be considered first when /admin and /admin/users have different roles?
-   **A:** Evaluate the most specific matching segment path first. Otherwise the broad admin rule can shadow the stricter users rule.
+3. **Q:** Why must a protected data read authorize its resource even after Proxy redirects anonymous visitors?
+   **A:** Proxy is an early routing hint and may not cover every Route Handler or Server Action. The data-access layer must resolve the current principal and enforce tenant/resource permissions where data is read or changed.
 
 4. **Q:** Why is a reusable JWT labeled csrf an inadequate CSRF protocol?
    **A:** It is not tied to the visitor's session and can be replayed. Use a trusted origin check or the library's session-bound token protocol.
 
 
-**Common Mistakes**
+**Revocation and integration**
 
 5. **Q:** Does clearing a signed-token cookie revoke a stolen copy?
    **A:** No. Another holder can use it until expiry unless the server implements revocation or related session checks.
 
 
-**Best Practices**
+**Versioned integration**
 
 6. **Q:** What differs between the shown NextAuth.js v4 integration and Auth.js v5?
    **A:** The shown v4 configuration returns an HTTP handler and uses its compatible adapter. v5 exposes handlers/auth helpers differently, so examples and adapter packages must match the pinned version.
@@ -50,19 +50,19 @@ Source: [Authentication in Next.js](10.4.4.01-authentication.md)
 
 Source: [Image Optimization in Next.js](10.4.4.02-image-optimization.md)
 
-**Definition**
+**Candidate selection**
 
 1. **Q:** Does the default image optimizer transform every image during the build?
    **A:** No. Requested variants are transformed on demand and then cached. External custom loaders can use a different optimization service.
 
 
-**How It Works**
+**Layout and loading**
 
 2. **Q:** Why must sizes describe the image's real displayed width?
    **A:** The browser uses that hint to choose a srcset candidate. An inaccurate hint can download a much larger image than the layout needs.
 
 
-**Code Examples**
+**Metadata and cache**
 
 3. **Q:** When can dimensions and blur data come from a static import?
    **A:** Supported static JPEG/PNG/WebP/AVIF imports can provide dimensions and blur metadata automatically; animated sources do not get that blur treatment.
@@ -71,7 +71,7 @@ Source: [Image Optimization in Next.js](10.4.4.02-image-optimization.md)
    **A:** A positioned container needs a defined size or aspect ratio. The image can fill it without determining the container's height itself.
 
 
-**Common Mistakes**
+**LCP hints**
 
 5. **Q:** How does image preload guidance differ between Next.js 15 and 16?
    **A:** Next.js 15 examples may use `priority`; Next.js 16 deprecates it. Prefer `loading="eager"` or `fetchPriority="high"` in most cases, and use `preload` only when the LCP image is unambiguous. Do not combine the hints.
@@ -80,7 +80,7 @@ Source: [Image Optimization in Next.js](10.4.4.02-image-optimization.md)
    **A:** The optimizer accepts only configured `qualities`; restricting the choices bounds which output variants callers can request and prevents arbitrary quality values from expanding optimization work.
 
 
-**Best Practices**
+**Source refresh**
 
 7. **Q:** How can changed images become visible before a long optimizer TTL ends?
    **A:** Version or change the source URL so it selects a new variant key. Route tag revalidation does not purge the image optimizer cache.
@@ -89,37 +89,37 @@ Source: [Image Optimization in Next.js](10.4.4.02-image-optimization.md)
 
 Source: [Deploying Next.js](10.4.4.03-deploying-nextjs.md)
 
-**Definition**
+**Runtime choice**
 
 1. **Q:** Which responsibilities remain when leaving managed hosting for Node containers?
    **A:** Own deployment, shared caching, runtime dependencies, network access, and observability. Standalone output reduces packaging work but does not provide those operations.
 
 
-**How It Works**
+**Artifact and cache behavior**
 
 2. **Q:** Why copy public and .next/static after copying standalone output?
    **A:** Output tracing does not include those static asset directories by default. Missing them leaves HTML without its expected files.
 
-3. **Q:** Which tag sources and values must a previous-model cache handler preserve?
-   **A:** Page/route entries carry tags in `data.headers` (`x-next-cache-tags`); cached `fetch` entries use `ctx.tags`. Preserve the full cache value and timestamp, serialize values such as `Buffer` and `Map`, and synchronize invalidations across replicas.
+3. **Q:** Which tag data and coordination must a previous-model cache handler preserve across replicas?
+   **A:** Preserve the full cache value and timestamp. Page and route tags are in the data headers under x-next-cache-tags; cached fetch tags come from ctx.tags. Preserve types such as Buffer and Map, and implement the documented refreshTags() synchronization so invalidations on one replica reach the others.
 
-4. **Q:** What must match across replicas when they serve the same build?
-   **A:** Run the same build and Server Action encryption key on every instance. Use a deployment ID during rolling releases to detect version skew, and retain the corresponding immutable assets.
+4. **Q:** What must match across replicas that serve one build, and what does deploymentId do during a rollout?
+   **A:** Replicas use the same artifact and embedded Server Action encryption key. A deploymentId helps detect version skew and trigger a hard navigation; it does not route an old client to an old server. Keep immutable assets available during overlap.
 
 
-**Code Examples**
+**Build-time and runtime values**
 
 5. **Q:** Why can changing a container variable leave a NEXT_PUBLIC URL unchanged?
    **A:** Its browser value was inlined during build. Rebuild the client bundle or read configurable values through request-time server code.
 
 
-**Common Mistakes**
+**Static-host boundary**
 
-6. **Q:** Why is a rewrite back to the same local path insufficient for a zone split?
-   **A:** It never forwards to the independent deployment. Route the path and asset namespace to that zone's actual origin.
+6. **Q:** Which request-time features disappear when the app is deployed as a static export?
+   **A:** There is no Next.js server to run per-request authorization, Server Actions, Route Handlers, Proxy, runtime regeneration, or the default image optimizer. Move required behavior to an external service/loader or choose a server-capable deployment.
 
 
-**Best Practices**
+**Release verification**
 
 7. **Q:** What proves that a self-hosted shutdown drains real work?
    **A:** Send `SIGTERM` or `SIGINT` to the process that owns the Next.js server, allow the configured drain interval, and test with requests in flight. A Kubernetes `preStop` delay alone does not prove ingress has stopped sending traffic.

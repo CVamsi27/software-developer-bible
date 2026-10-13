@@ -527,3 +527,12 @@ Re-read all six numbered chapters in `10.4-next.js/03-data-and-caching` in learn
 Verified current official Next.js documentation for the data, Server Action, caching, streaming, ISR, and static-export behavior. Regenerated reading times and search/API data, restamped the API-contract total, and checked table alignment. All 30 repository gates pass; standalone links report 10,848 local links and 149 anchors with no failures, freshness is clean, and the 2,519-URL citation baseline has no drift. The Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check pass; each of the six pages renders exactly one authored H1, retains code examples, and has no Liquid leakage.
 
 The ledger records 260 of 520 numbered chapters reviewed (191 revised, 69 retained after direct review); 260 remain pending. Continue with the next pending learning group and keep the complete corpus audit open.
+
+
+## Editorial checkpoint — 13 October 2026 (Next.js production)
+
+Re-read the authentication, image optimization and deployment chapters in production order with the category INDEX, revision drill and relevant interview-bank answers. Rebuilt authentication around credential verification through current resource authorization, keeping Proxy as an early redirect and client state as feedback. Reorganized image delivery around rendered geometry, srcset selection, optimizer/cache work and browser decode; removed the duplicated partial rewrite. Reframed deployment around runtime choice, one promoted artifact, distinct cache-handler paths, version overlap, ingress, streaming and shutdown. Updated the matching revision questions, the image anchor used by metadata, the authentication twin link, interview-bank ownership and generated reading metadata.
+
+Verified version-sensitive claims against the current official Next.js self-hosting and platform guides, cache handler documentation, and Node.js release status. All 30 verification gates passed; standalone link checking found 10,848 local links and 149 anchors without failures; freshness and the 2,513-URL citation baseline are clean. The Ruby 3.4.11 production Jekyll build and site-wide rendered-heading check passed; each edited chapter renders one H1 with no leaked Liquid markers or fences.
+
+The ledger records 263 of 520 topic chapters reviewed (194 revised, 69 retained after direct review); 257 remain pending. Continue through every remaining learning group; the complete corpus review is still open.

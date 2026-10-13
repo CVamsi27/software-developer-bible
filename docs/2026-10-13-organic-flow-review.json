@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 238,
+    "revised": 241,
     "unchanged": 80,
-    "pending": 202,
-    "reviewed": 318,
+    "pending": 199,
+    "reviewed": 321,
     "topic_chapters": 520
   },
   "entries": [
@@ -4111,34 +4111,49 @@
       "path": "20-backend/20.7-graphql/03-clients-and-production/20.7.3.01-apollo-client.md",
       "group": "20-backend/20.7-graphql/03-clients-and-production",
       "title": "Apollo Client",
-      "status": "pending",
-      "baseline_sha256": "a1bc40b1714f803f9da622da3c81b8bb12d1ef8672804e78f50e71264cacd819",
+      "status": "revised",
+      "baseline_sha256": "5187bfb9d3512761093650fcaf9f6d0b7e4bb17143e84a60ed1d18aac61fb182",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "When can a normalized entity update still leave the visible lists wrong?",
+      "disposition": "Opened with a task moving between projects, then follows normalized identity through optimistic results, fetch policies, list/pagination updates and account transitions. Removed repeated mistake checklists and kept the distinct state-transition tests.",
+      "validation": [
+        "Re-read in category learning order with INDEX, REVISION and the related interview bank; checked the practical/textbook definitions, First Principles, summary and cross-references.",
+        "Verified current Apollo Client 4.3.3, React 19.3.0, GraphQL.js 17.0.2, RxJS 7.8.2 and TypeScript 7.0.2 package metadata and official API guidance.",
+        "Type-checked the complete React/Apollo example with TypeScript 7.0.2 and the documented dependency versions.",
+        "All 30 repository gates passed; standalone links checked 10,823 local links and 149 anchors with zero failures; Ruby 3.4.11 production build and rendered-heading checks passed."
+      ]
     },
     {
       "path": "20-backend/20.7-graphql/03-clients-and-production/20.7.3.02-performance-security.md",
       "group": "20-backend/20.7-graphql/03-clients-and-production",
       "title": "GraphQL Performance and Security",
-      "status": "pending",
-      "baseline_sha256": "49709915e90c184605bf408552da86f53e6b8d3551c26460e6226c9580fcb6fc",
+      "status": "revised",
+      "baseline_sha256": "14bcd5c49c23695eb01f853945458444a15bc68d0648ce39cc017ee0b295a813",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can a valid GraphQL operation exceed the service budget or cross a tenant boundary?",
+      "disposition": "Opened with nested fan-out and identity-sensitive caching, then follows document controls, per-request variable bounds, resource authorization, cache scope and rollout. Removed the generic mistakes list and retained the executable trusted-manifest example and operational limits.",
+      "validation": [
+        "Re-read in category learning order with INDEX, REVISION and the related interview bank; checked the practical/textbook definitions, First Principles, summary and cross-references.",
+        "Verified current Apollo Server 5.5.1 and GraphQL.js 16.14.2 peer compatibility against official docs and npm metadata.",
+        "Executed the admission example on Node.js 22.23.3; the in-range operation returned two records and the out-of-range variable returned BAD_USER_INPUT.",
+        "All 30 repository gates passed; standalone links checked 10,823 local links and 149 anchors with zero failures; Ruby 3.4.11 production build and rendered-heading checks passed."
+      ]
     },
     {
       "path": "20-backend/20.7-graphql/03-clients-and-production/20.7.3.03-codegen-schema-safety-ci.md",
       "group": "20-backend/20.7-graphql/03-clients-and-production",
       "title": "Code Generation, Schema Safety and CI",
-      "status": "pending",
-      "baseline_sha256": "1f8d3950aad18f9957953e5d780c29f8a822a224516384ecd86506ed14137403",
+      "status": "revised",
+      "baseline_sha256": "e44d48074d8072cade97202e05733757fa44d3f3693dc83b20884e6a2a1e3a58",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can a build prove that client operations match the intended schema contract?",
+      "disposition": "Opened with a selected-field mismatch to show why schema-wide types are too broad. Separated generated selection types, runtime decoding, contract compatibility and deployment behavior; made the Inspector CLI dependency explicit and folded the negative contract check into the CI flow.",
+      "validation": [
+        "Re-read in category learning order with INDEX, REVISION and the related interview bank; checked the practical/textbook definitions, First Principles, summary and cross-references.",
+        "Verified current GraphQL Code Generator CLI 7.4.6, client preset 6.2.3, GraphQL Inspector CLI 7.0.1 and TypeScript 7.0.2 package metadata against official docs and npm metadata.",
+        "Generated the documented client-preset artifacts, type-checked the consuming React component, and confirmed GraphQL Inspector exits nonzero for a breaking field removal.",
+        "All 30 repository gates passed; standalone links checked 10,823 local links and 149 anchors with zero failures; Ruby 3.4.11 production build and rendered-heading checks passed."
+      ]
     },
     {
       "path": "20-backend/20.8-caching/20.8.01-caching-deep-dive.md",

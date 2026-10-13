@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 311,
+    "revised": 312,
     "unchanged": 80,
-    "pending": 129,
-    "reviewed": 391,
+    "pending": 128,
+    "reviewed": 392,
     "topic_chapters": 520
   },
   "entries": [
@@ -4796,12 +4796,21 @@
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.01-repository.md",
       "group": "30-architecture/30.1-design-patterns/05-architectural",
       "title": "Repository Pattern",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "cb1867cbf92272f3a08d86633cfcf6a95bcf77619dde448cc73cac94b67009e5",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can a persistence boundary preserve domain decisions while still exposing misses, database failures and concurrent writes accurately?",
+      "disposition": "Replaced the abstract opening and paraphrased textbook definition with the order-payment failure case and Fowler\u2019s collection-like repository definition. Clarified that storage and concurrency semantics remain observable through the contract, distinguished not-found/storage/conflict outcomes, tightened pagination guidance for changing data, and corrected the JavaScript and interview cross-reference labels.",
+      "validation": [
+        "Re-read with the architectural-pattern index and revision companion; checked the service/domain/adapter division, optimistic concurrency requirement, transaction-scoped Unit of Work, query boundaries, cache ownership and database-backed test limits.",
+        "Verified Fowler\u2019s Repository definition against the live Enterprise Application Architecture catalog and checked the aggregate-root/persistence-layer discussion in Microsoft Learn.",
+        "The fenced TypeScript example compiled strictly with TypeScript 5.8.3 targeting ES2022/CommonJS. Runtime checks covered version-4 save, the returned version-5 state, missing order and invalid status transition.",
+        "Read-time, alignment, citation-baseline, search-index and count writers ran; the fixed-point check confirmed the repair writers leave the corpus stable.",
+        "All 30 repository verification gates passed. Standalone links checked 10,797 links and 152 anchors with 0 issues; citation-baseline diff had 0 added or removed URLs at 2,526.",
+        "Ruby 3.4 locked-bundle production Jekyll build, rendered-heading check and git diff --check passed."
+      ],
+      "reviewed_at": "2026-10-14",
+      "review_sha256": "cbd9009912377ba84c3b9afb491eece9c78ac6772b7959aceb702c1315edb19a"
     },
     {
       "path": "30-architecture/30.1-design-patterns/05-architectural/30.1.5.02-cqrs-di.md",

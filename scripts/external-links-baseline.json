@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2540,
+ "url_count": 2541,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -7547,6 +7547,7 @@
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-postgresql.md",
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.02-normalization.md",
    "20-backend/20.4-database/02-querying-and-optimization/20.4.2.05-jsonb.md",
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.08-ticket-booking.md",
    "80-lanes-abroad-full-stack/80.17-docita-interview-evidence-pack.md"
   ],
   "https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-EXCLUSION": [
@@ -7569,7 +7570,8 @@
   "https://www.postgresql.org/docs/current/explicit-locking.html": [
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.02-deadlocks.md",
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.03-optimistic-pessimistic-locking.md",
-   "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.md"
+   "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.md",
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.08-ticket-booking.md"
   ],
   "https://www.postgresql.org/docs/current/functions-admin.html": [
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.04-database-replication.md",
@@ -7577,6 +7579,9 @@
   ],
   "https://www.postgresql.org/docs/current/functions-admin.html#FUNCTIONS-ADMIN-SET": [
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.06-row-level-security.md"
+  ],
+  "https://www.postgresql.org/docs/current/functions-array.html": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.08-ticket-booking.md"
   ],
   "https://www.postgresql.org/docs/current/functions-comparisons.html#ROW-WISE-COMPARISON": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.01-pagination.md"

@@ -1,6 +1,6 @@
 # System Design — Case Studies
 
-> **Study time:** ≈ 6 h 8 m of reading (32 files, ~12 min average).
+> **Study time:** ≈ 6 h 10 m of reading (32 files, ~12 min average).
 Applied examples of system design interviews. Read [../01-theory/](../01-theory/INDEX.md) first, then choose cases that match your interview goals.
 
 [![Files](https://img.shields.io/badge/files-32-blue)](../../../INDEX.md)
@@ -56,7 +56,7 @@ The 31 cases are grouped by the kind of reasoning they practice. Use the tiers a
 | 05 | [Google Drive](30.2.2.05-google-drive.md) | Storage & Sync | Staged publication, inherited access, quota races, version conflicts and replay | Important | Important |
 | 06 | [Payment Gateway](30.2.2.06-payment-gateway.md) | Commerce & Fintech | Unknown outcomes, scoped idempotency, balanced ledger, webhook replay and refunds | Important | Important |
 | 07 | [Notification Service](30.2.2.07-notification-service.md) | Messaging & Real-Time | Per-channel identity, fresh consent, quiet hours, outcomes and retries | Important | Important |
-| 08 | [Ticket Booking](30.2.2.08-ticket-booking.md) | Commerce & Fintech | Conditional holds, expiry ownership, payment compensation | Important | Important |
+| 08 | [Ticket Booking](30.2.2.08-ticket-booking.md) | Commerce & Fintech | Atomic seat groups, expiry-safe holds, payment recovery, single-use admission | Important | Important |
 | 09 | [E-Commerce](30.2.2.09-e-commerce.md) | Commerce & Fintech | Product catalog, cart, inventory, order management, payment flow | Important | Important |
 | 10 | [Hospital Management](30.2.2.10-hospital-management.md) | Healthcare & Vertical | Appointment scheduling, EHR, billing, interoperability | Important | Important |
 | 11 | [Live Betting](30.2.2.11-live-betting.md) | Commerce & Fintech | Real-time odds, event processing, concurrency, consistency | Important | Important |

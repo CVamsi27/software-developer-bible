@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-17_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-18_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
 
@@ -173,6 +173,30 @@ Source: [Ticket Booking System Design](30.2.2.08-ticket-booking.md)
 **Q:** Why should ticket holds expire conditionally on their current owner/version?
 
 **A:** A late cleanup task must release a seat only if it is still held by that exact hold and its authoritative deadline has passed. Event scope and the copied seat deadline must match the hold record; renewal updates both under the same transaction so stale cleanup cannot release a newer owner.
+
+**Q:** How does the example make a multi-seat hold all-or-none?
+
+**A:** It locks the requested seat rows in deterministic order, updates only available or expired seats, and compares the affected-row count with the requested count. A missing or unavailable seat raises an error, rolling back the statement's hold insert and every partial update. A retry still needs a separate idempotency contract.
+
+**Q:** What do the composite foreign keys protect, and what do they not decide?
+
+**A:** `(event_id, hold_id)` prevents a seat from referencing a hold for another event, while `(hold_id, hold_until)` keeps the seat's copied expiry equal to the hold's expiry. They do not prove that the hold is still current or unexpired; confirmation checks current state and time.
+
+**Q:** Why must every workflow lock seat rows in the same order?
+
+**A:** Two multi-seat transactions can deadlock if they acquire overlapping rows in opposite orders. A common event/seat order reduces that cycle; deadlocks can still arise through other resources, so retry the entire aborted transaction under its stable request identity.
+
+**Q:** Why does a hold ID not replace request idempotency?
+
+**A:** The hold ID names a reservation, while the request key recovers the result of one client command after a lost response. Bind the key to a canonical event, seat group and buyer fingerprint; return the existing hold for a matching retry and conflict on changed input.
+
+**Q:** What should happen when the payment result is unknown as the hold expires?
+
+**A:** Reconcile the existing provider command instead of treating timeout as decline or issuing a second charge. If the hold is reassigned before a late success arrives, preserve the new owner's seats and follow the defined void/refund or manual-resolution path.
+
+**Q:** Why does a signed QR code not guarantee single-use admission?
+
+**A:** A signature can prove the claim was issued by the system and was not altered, but two gates can still present the same valid code at once. Admission needs an authoritative atomic valid-to-used transition, unless the event explicitly allows multiple entries.
 
 ## E-Commerce System Design
 
@@ -677,9 +701,9 @@ Source: [30.2.2.16-instagram](30.2.2.16-instagram.md)
 
 Source: [Ticket booking](30.2.2.08-ticket-booking.md)
 
-**Q:** Why must a late successful payment not reclaim an expired hold's seats?
+**Q:** Why can a valid signed ticket still be rejected at the gate?
 
-**A:** Another buyer may already hold or own those seats. Confirmation must recheck the exact current hold and expiry. Reconcile/cancel/refund the payment under the compensation policy instead of taking another buyer's inventory.
+**A:** The ticket may already be used, cancelled or outside its event policy. The gate checks current entitlement state and performs the single-use admission transition; signature validity alone does not establish that the ticket remains redeemable.
 
 Source: [E-commerce](30.2.2.09-e-commerce.md)
 

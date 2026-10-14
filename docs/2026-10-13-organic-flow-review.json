@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 80,
+    "pending": 79,
     "unchanged": 80,
-    "revised": 360,
-    "reviewed": 440,
+    "revised": 361,
+    "reviewed": 441,
     "topic_chapters": 520
   },
   "entries": [
@@ -6232,12 +6232,18 @@
       "path": "40-platform/40.10-cdn/40.10.01-cdn-architecture.md",
       "group": "40-platform/40.10-cdn",
       "title": "CDN Architecture",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "7a194b48539a7638440350e517a965d229eb96693163df2877e7cea9d33e3ef5",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which responses are safe to reuse across users, and where must authorization run?",
+      "disposition": "Removed the repeated Mistakes/Best Practices ending and followed one public asset through deployment. Made freshness and representation identity explicit, separated origin shielding from request collapsing, and clarified that a per-user key does not reauthorize a protected hit. Scoped HIPAA location claims and linked the relevant cache, stale-content and provider contracts; aligned the INDEX and REVISION questions.",
+      "validation": [
+        "Re-read the chapter in learning order with the CDN INDEX and REVISION; checked the sibling system-design treatment to preserve canonical cache-key depth.",
+        "Verified HTTP caching, stale-while-revalidate, immutable, CloudFront Origin Shield/request collapsing and HHS cloud guidance against primary sources; every new external URL was directly probed.",
+        "A fresh reader confirmed the cache-authorization and HIPAA residency clarifications resolve the material issues.",
+        "All 30 repository verification gates passed; standalone link checking found 10,800 local links and 152 anchors with zero failures, and the 2,555-URL citation baseline has no drift.",
+        "Ruby 3.4.11 production Jekyll build, site-wide rendered-heading check and focused CDN render assertions passed."
+      ]
     },
     {
       "path": "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md",

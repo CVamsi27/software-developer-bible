@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2553,
+ "url_count": 2555,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -1409,8 +1409,11 @@
    "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md"
   ],
   "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.31-api-gateway.md",
-   "40-platform/40.10-cdn/40.10.01-cdn-architecture.md"
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.31-api-gateway.md"
+  ],
+  "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#simultaneous-requests-for-the-same-object-request-collapsing": [
+   "40-platform/40.10-cdn/40.10.01-cdn-architecture.md",
+   "40-platform/40.10-cdn/REVISION.md"
   ],
   "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/best-practices.html": [
    "40-platform/40.10-cdn/40.10.04-interview-questions.md"
@@ -1422,7 +1425,9 @@
    "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
   ],
   "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html": [
-   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md"
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md",
+   "40-platform/40.10-cdn/40.10.01-cdn-architecture.md",
+   "40-platform/40.10-cdn/REVISION.md"
   ],
   "https://docs.aws.amazon.com/AmazonECR/latest/userguide/lifecycle_policies.html": [
    "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md"
@@ -7260,7 +7265,8 @@
   ],
   "https://www.hhs.gov/hipaa/for-professionals/special-topics/health-information-technology/cloud-computing/index.html": [
    "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md",
-   "40-platform/40.10-cdn/40.10.01-cdn-architecture.md"
+   "40-platform/40.10-cdn/40.10.01-cdn-architecture.md",
+   "40-platform/40.10-cdn/REVISION.md"
   ],
   "https://www.honeycomb.io/blog/observability-101": [
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.01-opentelemetry.md"
@@ -8013,7 +8019,8 @@
    "30-architecture/30.2-system-design/01-theory/REVISION.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc5861.html": [
-   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md"
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md",
+   "40-platform/40.10-cdn/40.10.01-cdn-architecture.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc6066": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.md"
@@ -8056,6 +8063,9 @@
   ],
   "https://www.rfc-editor.org/rfc/rfc8216.html": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.17-youtube.md"
+  ],
+  "https://www.rfc-editor.org/rfc/rfc8246.html": [
+   "40-platform/40.10-cdn/40.10.01-cdn-architecture.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc8259": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.06-serialization-and-wire-formats.md"

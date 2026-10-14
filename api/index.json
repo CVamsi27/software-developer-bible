@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "605cbaee3f73320a8ef5e2ad98d217f767c6d8983b4447f2fcff0511ae490500",
+ "corpus_digest": "11ff1d2cf86ae0d7c5d83e3b719e1af3c7e9d197a3a0f0f4b3eccab916462e40",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5237
+  "read_minutes": 5238
  },
  "chapters": [
   {
@@ -4844,7 +4844,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.html",

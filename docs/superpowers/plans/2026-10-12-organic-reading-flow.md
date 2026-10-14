@@ -631,3 +631,12 @@ Re-read Data Retention & Archival with the shipping INDEX and revision drill. Op
 Checked current ICO, HHS, Amazon S3, MongoDB, DynamoDB and NIST primary documentation. All 30 repository gates passed; the standalone link check found zero broken references, the 2,553-URL citation baseline has no drift, and the writer fixed-point check passed. The Ruby 3.4.11 locked-bundle production build, site-wide rendered-heading scan and targeted rendered-content checks passed. A fresh reader confirmed the final clarifications resolved the remaining gaps.
 
 The flow ledger now records 440 of 520 topic chapters reviewed (360 revised, 80 retained unchanged; 80 pending). Continue with the next pending resume-priority chapter, CDN Architecture; the complete corpus review remains open.
+
+
+## Editorial checkpoint — 14 October 2026 (CDN Architecture)
+
+Re-read CDN Architecture with its learning index and revision companion. Removed the repeated mistakes/best-practices ending and followed one public asset through deployment. Clarified freshness and representation identity, separated an origin shield cache tier from request collapsing, and made the authorization boundary explicit: a per-user cache key prevents representation mixing but does not recheck current permission. Scoped HIPAA's location claims to its actual guidance, while separating risk analysis from additional legal, contractual or organizational residency limits. Updated the index and added source-linked recall for cache authorization, shield behavior and location requirements.
+
+Checked RFC 9111, RFC 5861 and RFC 8246, current CloudFront Origin Shield/request-collapsing documentation, and HHS cloud guidance. Directly probed every new external URL. All 30 repository gates passed; standalone links found 10,800 local links and 152 anchors with zero failures, and the 2,555-URL citation baseline has no drift. The Ruby 3.4.11 production build, site-wide rendered-heading check and focused CDN rendered-content assertions passed. A fresh reader confirmed the corrected authorization and HIPAA boundaries.
+
+The ledger now records 441 of 520 topic chapters reviewed (361 revised, 80 retained unchanged; 79 pending). Continue with Multi-CDN Traffic Steering; the full corpus review remains open.

@@ -16,33 +16,37 @@ Source: [CDN Architecture](40.10.01-cdn-architecture.md)
 
 **Q:** Why can the cache key cause a data leak even when the origin authenticates?
 
-**A:** A shared cached response can bypass the origin on later hits. Keying and caching policy must distinguish authorized variants or exclude personalized responses.
+**A:** A cache hit can bypass origin authentication. A per-user key prevents cross-user representation mixing but does not recheck an expired token, revoked grant or changed entitlement. Authorize each protected request before serving the hit, or bypass shared caching if the edge cannot check current permission.
 
-**Q:** What does an origin shield protect during a popular-object miss?
+**Q:** How does an origin shield differ from request collapsing during a popular-object miss?
 
-**A:** It aggregates/coalesces eligible misses before the origin. It does not repair uncacheable traffic or compensate for a wrong key/TTL policy.
+**A:** An origin shield is an additional cache tier that can reuse objects across edge regions and reduce origin fetches. Request collapsing combines simultaneous misses for the same cache key at a cache node. Provider scope and eligibility differ; neither helps distinct keys or guarantees protection for uncacheable traffic. See [CloudFront Origin Shield](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html) and [request collapsing](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#simultaneous-requests-for-the-same-object-request-collapsing).
 
 **Q:** Does using POST with no-store prove a patient response avoids sensitive processing at the edge?
 
 **A:** No. Intermediaries may process bodies, headers and telemetry even without caching. Verify actual bypass rules, data flow, logs and applicable service obligations.
 
-**Q:** New hashed JS is published. Can the old asset and API behavior immediately disappear?
+**Q:** New hashed JavaScript is published. Can the old asset and application programming interface (API) behavior immediately disappear?
 
-**A:** No. Old tabs/HTML/service workers may still reference them. Keep the chosen compatibility/retention window; versioned identity does not update every client.
+**A:** No. Old tabs, HTML and service workers may still reference them. Keep the chosen compatibility/retention window; versioned identity does not update every client.
 
-**Q:** How do you handle cache invalidation for a SPA?
+**Q:** How do you handle cache invalidation for a single-page application (SPA)?
 
 **A:** Publish immutable versioned assets before references, select the HTML freshness/revalidation policy and retain old clients' supported assets/API behavior. Purge corrections under a verified recovery path.
 
-**Q:** How do you prevent PHI from being cached at the CDN edge?
+**Q:** How do you prevent protected health information (PHI) from being cached at the CDN edge?
 
 **A:** Use an explicit no-store/bypass policy and test every protected response path. Method choice is insufficient; validate keys/custom code, processing and telemetry obligations separately.
+
+**Q:** Does HIPAA itself require all electronic PHI to stay in the United States?
+
+**A:** HHS guidance states that HIPAA has no specific U.S.-location requirement for ePHI processed or stored by a cloud provider. Location still affects required risk analysis; other laws, contracts or organizational policy may impose stricter boundaries. Verify the actual processing, storage and support paths. See [HHS HIPAA and Cloud Computing guidance](https://www.hhs.gov/hipaa/for-professionals/special-topics/health-information-technology/cloud-computing/index.html).
 
 ## Multi-CDN Traffic Steering
 
 Source: [Multi-CDN Traffic Steering](40.10.02-multi-cdn-traffic-steering.md)
 
-**Q:** Why is a DNS TTL not a guaranteed failover deadline?
+**Q:** Why is a Domain Name System (DNS) time-to-live (TTL) not a guaranteed failover deadline?
 
 **A:** Resolver/client caches, connection reuse, propagation, and health detection also affect when traffic moves. Validate behavior from the users' paths.
 

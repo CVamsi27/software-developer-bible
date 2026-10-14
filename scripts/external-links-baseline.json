@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2538,
+ "url_count": 2539,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -2323,6 +2323,9 @@
    "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.06-idempotency-retry-deep-dive.md",
    "70-interview-toolkit/70.1-behavioral/70.1.04-system-design-behavioral.md"
   ],
+  "https://docs.stripe.com/events/manage-webhook-endpoints": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.06-payment-gateway.md"
+  ],
   "https://docs.stripe.com/keys": [
    "20-backend/20.5-security/01-auth/20.5.1.03-api-keys.md"
   ],
@@ -2337,7 +2340,6 @@
    "20-backend/20.1-node.js/04-security-and-operations/20.1.4.04-interview-questions.md",
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.05-webhooks.md",
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.06-payment-gateway.md",
    "70-interview-toolkit/70.1-behavioral/70.1.04-system-design-behavioral.md"
   ],
   "https://docs.swift.org/swift-book/documentation/the-swift-programming-language/automaticreferencecounting/": [

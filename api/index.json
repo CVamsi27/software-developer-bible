@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "b19f3ab44c73c7bc387767c4b9af46dda124ee03d3e7e190f85af10e3c876e39",
+ "corpus_digest": "603f699b7208bac08a93f6e2d9742f246b229ea82a12151ed775dfa5c6867b0c",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5195
+  "read_minutes": 5196
  },
  "chapters": [
   {
@@ -4229,7 +4229,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 12
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.07-notification-service.html",

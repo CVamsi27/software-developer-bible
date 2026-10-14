@@ -122,6 +122,22 @@ Source: [Payment Gateway System Design](30.2.2.06-payment-gateway.md)
 
 **A:** Return a conflict and preserve the original command. The key identifies one intended operation; interpreting it again with a different amount, target or token can produce a charge the caller did not intend.
 
+**Q:** Why does the gateway keep an unknown payment outcome instead of treating a timeout as failure?
+
+**A:** The provider may have completed the charge before its response was lost. Reconcile or retry under the same provider-account identity; after the provider's idempotency window expires, resolve the old attempt before issuing another charge.
+
+**Q:** How do the merchant idempotency key and provider idempotency key differ?
+
+**A:** The merchant key recognizes retries of one intended business action. The provider key protects attempts in the provider's own namespace and may have a shorter retention window. Store both on the durable command and scope the provider key to the selected provider account.
+
+**Q:** Why must the ledger posting boundary verify balance across journal lines?
+
+**A:** A row-level check cannot compare the sum of all debit and credit lines for a journal. Validate the complete posting atomically, enforce one source-operation identity and balance separately by currency; correct posted history with linked reversal entries.
+
+**Q:** Why verify a Stripe webhook against the raw request before parsing it?
+
+**A:** Stripe's signature covers the exact request body and includes a timestamp. Parsing or reserializing JSON can change signed bytes, so verify the unmodified body with the official library before trusting event fields, then persist and deduplicate the event before processing it.
+
 ## Notification Service System Design
 
 Source: [Notification Service System Design](30.2.2.07-notification-service.md)

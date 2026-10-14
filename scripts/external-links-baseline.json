@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2624,
+ "url_count": 2638,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -1286,15 +1286,32 @@
    "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md",
    "40-platform/40.10-cdn/40.10.01-cdn-architecture.md"
   ],
-  "https://developers.cloudflare.com/durable-objects/": [
+  "https://developers.cloudflare.com/d1/": [
    "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
+  ],
+  "https://developers.cloudflare.com/durable-objects/api/sqlite-storage-api/": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
+  ],
+  "https://developers.cloudflare.com/durable-objects/best-practices/rules-of-durable-objects/": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
   ],
   "https://developers.cloudflare.com/durable-objects/best-practices/websockets/": [
    "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.02-scaling-patterns.md"
   ],
+  "https://developers.cloudflare.com/durable-objects/concepts/": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
+  ],
+  "https://developers.cloudflare.com/durable-objects/concepts/durable-object-lifecycle/": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
+  ],
   "https://developers.cloudflare.com/images/optimization/features/": [
    "40-platform/40.10-cdn/40.10.03-media-optimization-at-the-edge.md",
    "40-platform/40.10-cdn/REVISION.md"
+  ],
+  "https://developers.cloudflare.com/kv/concepts/how-kv-works/": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
   ],
   "https://developers.cloudflare.com/load-balancing/understand-basics/health-details/": [
    "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md"
@@ -1317,11 +1334,16 @@
   "https://developers.cloudflare.com/pages/configuration/git-integration/": [
    "docs/deployment.md"
   ],
+  "https://developers.cloudflare.com/queues/configuration/batching-retries/": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
+  ],
+  "https://developers.cloudflare.com/r2/": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
+  ],
   "https://developers.cloudflare.com/r2/api/s3/presigned-urls/": [
    "projects/docita/19-documents-and-uploads.md"
   ],
   "https://developers.cloudflare.com/workers/": [
-   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md",
    "40-platform/40.7-serverless-edge/40.7.08-interview-questions.md"
   ],
   "https://developers.cloudflare.com/workers/best-practices/workers-best-practices/": [
@@ -1329,18 +1351,31 @@
    "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md",
    "projects/docita/10-deployment-infrastructure.md"
   ],
+  "https://developers.cloudflare.com/workers/configuration/compatibility-dates/": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
+  ],
   "https://developers.cloudflare.com/workers/examples/": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.05-webhooks.md"
-  ],
-  "https://developers.cloudflare.com/workers/learning/how-kv-works/": [
-   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
   ],
   "https://developers.cloudflare.com/workers/platform/limits/": [
    "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md",
    "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md",
    "projects/docita/10-deployment-infrastructure.md"
   ],
+  "https://developers.cloudflare.com/workers/reference/how-the-cache-works/": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
+  ],
   "https://developers.cloudflare.com/workers/reference/how-workers-works/": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
+  ],
+  "https://developers.cloudflare.com/workers/runtime-apis/cache/": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
+  ],
+  "https://developers.cloudflare.com/workers/runtime-apis/context/": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
+  ],
+  "https://developers.cloudflare.com/workers/runtime-apis/nodejs/": [
    "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
   ],
   "https://developers.cloudflare.com/workers/static-assets/routing/single-page-application/": [
@@ -1351,6 +1386,9 @@
   ],
   "https://developers.cloudflare.com/workers/vite-plugin/": [
    "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md"
+  ],
+  "https://developers.cloudflare.com/workers/wrangler/commands/workers/": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
   ],
   "https://developers.google.com/search/docs": [
    "10-frontend/10.7-html-css/10.7.04-seo.md"
@@ -1461,10 +1499,19 @@
   "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/best-practices.html": [
    "40-platform/40.10-cdn/40.10.04-interview-questions.md"
   ],
+  "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-functions.html": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
+  ],
+  "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/edge-functions-choosing.html": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
+  ],
   "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/edge-functions.html": [
    "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md"
   ],
   "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-at-edge-function-restrictions.html": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
+  ],
+  "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-at-the-edge.html": [
    "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
   ],
   "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html": [
@@ -4901,7 +4948,6 @@
   ],
   "https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config": [
    "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md",
-   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.03-react-nextjs-cheat-sheet.md"
   ],
   "https://nextjs.org/docs/app/api-reference/functions/generate-metadata": [
@@ -6842,11 +6888,7 @@
    "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md"
   ],
   "https://vercel.com/docs/functions/edge-functions": [
-   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md",
    "40-platform/40.7-serverless-edge/40.7.08-interview-questions.md"
-  ],
-  "https://vercel.com/docs/functions/edge-functions/edge-functions": [
-   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
   ],
   "https://vercel.com/docs/functions/runtimes/edge": [
    "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md",

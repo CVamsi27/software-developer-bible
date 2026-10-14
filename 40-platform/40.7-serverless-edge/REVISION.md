@@ -70,6 +70,18 @@ Source: [Edge Functions](40.7.04-edge-functions.md)
 
 **A:** Cache misses, remote data access, network conditions, and compute still contribute. Runtime/API limits and actual dependencies determine the useful latency gain.
 
+**Q:** Why can a single-threaded Durable Object still lose an invariant between an `await` and the next write?
+
+**A:** Awaiting external I/O yields the event loop, allowing another request to interleave before the first resumes. Put the invariant inside a storage transaction or an input gate; if a successful write can be retried after its response is lost, also persist a stable operation identity. See Cloudflare's [Durable Object concurrency guidance](https://developers.cloudflare.com/durable-objects/best-practices/rules-of-durable-objects/).
+
+**Q:** Why is Workers KV a poor authority for immediate session revocation?
+
+**A:** KV is eventually consistent, and both present and missing reads can be cached. Another location may therefore keep accepting an old value after a write. Use an authority with the consistency required by the security decision or define a bounded token lifetime and its risk window. See Cloudflare's [KV consistency model](https://developers.cloudflare.com/kv/concepts/how-kv-works/).
+
+**Q:** When is `ctx.waitUntil()` sufficient, and when should work go to a queue?
+
+**A:** Use it for short, bounded work that can be lost without violating the user's operation, such as analytics. Cloudflare currently cancels HTTP `waitUntil()` work after 30 seconds beyond response completion. Work that must retry or survive runtime failure belongs in a durable queue. See the [Worker context lifecycle](https://developers.cloudflare.com/workers/runtime-apis/context/).
+
 ## Serverless Patterns
 
 Source: [Serverless Patterns](40.7.05-serverless-patterns.md)

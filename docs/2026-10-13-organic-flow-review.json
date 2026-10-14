@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 54,
+    "pending": 53,
     "unchanged": 80,
-    "revised": 386,
-    "reviewed": 466,
+    "revised": 387,
+    "reviewed": 467,
     "topic_chapters": 520
   },
   "entries": [
@@ -7227,12 +7227,17 @@
       "path": "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md",
       "group": "40-platform/40.7-serverless-edge",
       "title": "Edge Functions",
-      "status": "pending",
-      "baseline_sha256": "619418367c41ee4f6a160aa54f7af24745a101bec6bc2c3587aa6af709b4d7ae",
+      "status": "revised",
+      "baseline_sha256": "125557bd40e3da99e757fb159ac49751e762469ebe0a418e04d27b4c26026f02",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which decisions can safely happen near ingress, and what runtime, cache, state, identity, and retry contracts constrain them?",
+      "disposition": "Reordered the chapter around two concrete request paths, then explained edge placement, non-portable provider contracts, state consistency, authorization, and recoverable work in that order. Added current Cloudflare limits/runtime guidance, corrected Vercel Edge and Next.js 16 distinctions, made Lambda@Edge and CloudFront Functions boundaries explicit, and clarified that a Durable Object single-threaded event loop can still interleave handlers across awaits. Replaced the generic Worker sample with the request trace, and aligned the section INDEX and sourced revision questions.",
+      "validation": [
+        "Re-read in learning order with the Serverless Overview, Vercel Deployments, Vite SPA on Cloudflare Workers, category INDEX, and REVISION companion; retained practical and textbook definitions, distinct First Principles, one Summary, See Also, and primary References.",
+        "Checked current official Cloudflare documentation for Worker isolation, limits, compatibility dates, cache locality, KV consistency, Durable Object SQLite storage/concurrency, context lifetime, queues, and Wrangler; checked Vercel Edge/Next.js 16 and AWS CloudFront event/runtime restrictions. All 23 referenced official URLs returned HTTP 200.",
+        "All 30 repository verification gates passed; standalone link scan checked 10,836 links and 185 anchors with zero failures; citation baseline has 2,638 URLs with no drift; all 10 corpus writers reached a fixed point.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md",

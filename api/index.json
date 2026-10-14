@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "114cc88030d6c527a02e2d34f4352eead0ba2cfbdea82b5eafadbeb01d12e07b",
+ "corpus_digest": "629bf4bfcb845b741d9bfbc31fe4163e59274950e842b543a97c943deeb59aae",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5241
+  "read_minutes": 5242
  },
  "chapters": [
   {
@@ -5836,7 +5836,7 @@
     "concept",
     "reference"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.html",

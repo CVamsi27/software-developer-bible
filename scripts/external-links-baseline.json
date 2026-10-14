@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2565,
+ "url_count": 2569,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -3374,12 +3374,6 @@
   "https://github.com/webpack-contrib/webpack-bundle-analyzer": [
    "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.01-bundle-analysis.md"
   ],
-  "https://github.com/webpack/webpack": [
-   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md"
-  ],
-  "https://github.com/webpack/webpack/tree/main/examples": [
-   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md"
-  ],
   "https://github.com/websockets/ws": [
    "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.md",
    "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.04-testing-realtime-systems.md"
@@ -4914,6 +4908,7 @@
    "50-quality/50.1-testing/02-frameworks/50.1.2.02-vitest.md"
   ],
   "https://nextjs.org/docs/app/guides/upgrading/version-16": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md",
    "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
   ],
   "https://nextjs.org/docs/pages/building-your-application/data-fetching": [
@@ -6403,9 +6398,6 @@
   "https://support.google.com/googleplay/android-developer/answer/6346149": [
    "10-frontend/10.8-mobile/10.8.06-app-store-release-automation.md"
   ],
-  "https://survivejs.com/webpack/": [
-   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md"
-  ],
   "https://swagger.io/specification/": [
    "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.05-openapi-swagger.md"
   ],
@@ -6851,21 +6843,46 @@
   "https://webkit.org/blog/6240/ecmascript-6-proper-tail-calls-in-webkit/": [
    "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.05-recursion-tail-call.md"
   ],
-  "https://webpack.academy/": [
-   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md"
-  ],
   "https://webpack.js.org/": [
-   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md",
    "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.01-build-optimization.md",
    "40-platform/40.5-build-tools/04-interview-prep/40.5.4.01-interview-questions.md"
   ],
+  "https://webpack.js.org/concepts/": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md"
+  ],
+  "https://webpack.js.org/concepts/loaders/": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md"
+  ],
+  "https://webpack.js.org/concepts/module-federation/": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md"
+  ],
+  "https://webpack.js.org/concepts/plugins/": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md"
+  ],
   "https://webpack.js.org/guides/asset-modules/": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md",
+   "40-platform/40.5-build-tools/01-bundlers/REVISION.md",
    "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
+  ],
+  "https://webpack.js.org/guides/caching/": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md",
+   "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
+  ],
+  "https://webpack.js.org/guides/code-splitting/": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md"
+  ],
+  "https://webpack.js.org/guides/hot-module-replacement/": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md",
+   "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
   ],
   "https://webpack.js.org/guides/tree-shaking/": [
    "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.01-modules.md",
    "30-architecture/30.1-design-patterns/03-structural/30.1.3.05-module-pattern.md",
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md",
    "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.01-bundle-analysis.md"
+  ],
+  "https://webpack.js.org/plugins/define-plugin/": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md"
   ],
   "https://webrtc.org/getting-started/overview": [
    "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.03-webrtc-peer-to-peer.md"

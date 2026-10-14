@@ -1,6 +1,6 @@
 # Bundlers
 
-> **Study time:** ≈ 20 min of reading (5 files, ~4 min average).
+> **Study time:** ≈ 23 min of reading (5 files, ~5 min average).
 > **5 files.** Four widely used bundler paths: Webpack, Vite, Next.js-integrated Turbopack, and Webpack-oriented Rspack. Choose against framework support and required integrations.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#file-index)
@@ -26,7 +26,7 @@ Framework requirement -> supported default -> required extension inventory
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Webpack](40.5.1.01-webpack.md) | Configuration, loaders, plugins, code splitting, HMR | Important | Specialized | 4 min |
+| 01 | [Webpack](40.5.1.01-webpack.md) | Dependency graph, transforms, Asset Modules, lazy chunks, HMR and deployment | Important | Specialized | 7 min |
 | 02 | [Vite](40.5.1.02-vite.md) | Dev server, native ESM in dev, Rolldown/Oxc production, plugins, SSR | Important | Specialized | 5 min |
 | 03 | [Turbopack](40.5.1.03-turbopack.md) | Incremental computation, development/build caching, Rust-based bundling | Important | Specialized | 5 min |
 | 04 | [Rspack](40.5.1.04-rspack.md) | Rust-based Webpack-compatible bundler, module federation | Important | Specialized | 4 min |

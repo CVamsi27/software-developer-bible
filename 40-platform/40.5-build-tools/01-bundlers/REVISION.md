@@ -14,9 +14,21 @@ Read the chapters in the [section learning flow](INDEX.md), then close them and 
 
 Source: [Webpack](40.5.1.01-webpack.md)
 
-**Q:** Why do ESM and sideEffects metadata affect different pruning decisions?
+**Q:** Why do ESM export analysis and `sideEffects` metadata affect different pruning decisions?
 
-**A:** Static exports enable unused-export analysis; sideEffects describes whether evaluating an otherwise unused module must be preserved. Incorrect metadata can remove required CSS or registration.
+**A:** Static ESM exports let Webpack identify unused exports inside a module. `sideEffects` describes whether evaluating a module can be skipped entirely. Incorrect metadata can remove required CSS imports or registration code. See [Webpack tree shaking](40.5.1.01-webpack.md#follow-one-import-through-the-build).
+
+**Q:** Why can an HMR update still cause a full page reload?
+
+**A:** The runtime can replace changed code only if the changed module or a dependency boundary accepts the update and its side effects can be handled. An unaccepted update cannot safely propagate, so the development client may reload the page. See [Webpack HMR](40.5.1.01-webpack.md#development-updates-and-production-boundaries) and the [official HMR guide](https://webpack.js.org/guides/hot-module-replacement/).
+
+**Q:** Why retain prior content-hashed chunks after deploying a new build?
+
+**A:** A tab can keep the old entry code in memory and later request a chunk whose old content-hashed URL it already knows. If deployment deletes that asset immediately, the request fails even though the new build works for fresh visits. See [Webpack's lazy-chunk deployment boundary](40.5.1.01-webpack.md#example-load-a-feature-on-demand) and the [official caching guide](https://webpack.js.org/guides/caching/).
+
+**Q:** When should an imported image use `asset/resource` rather than `asset/inline`?
+
+**A:** `asset/resource` emits a separately cacheable file and exports its URL; `asset/inline` puts a data URI into the referring output. The automatic `asset` type chooses between these forms by a size threshold. See [Webpack Asset Modules](40.5.1.01-webpack.md#follow-one-import-through-the-build) and the [official Asset Modules guide](https://webpack.js.org/guides/asset-modules/).
 
 ## Vite
 

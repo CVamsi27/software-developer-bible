@@ -13982,19 +13982,32 @@
       "path": "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md",
       "genre": "teaching",
       "baseline_sha256": "d9dd04cb6ad6ffe1dedaa44de0675603cd0e77927c20b5630cbf0bd281fbf92d",
-      "state": "reviewed",
+      "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Definition and terminology",
-        "Mechanism and boundaries",
-        "Examples and failure cases",
-        "Version/tooling claims",
-        "Internal and source links"
+        "Entry-to-module graph, native CSS/HTML maturity boundary, Webpack 5 Asset Module types, loader order and compiler/compilation plugin scope",
+        "Transpilation versus type checking; static ESM export analysis versus package sideEffects metadata",
+        "Dynamic import promise, hashed chunk, publicPath, explicit runtime failure state and old-client deployment availability",
+        "HMR acceptance and development reload boundary; compiler cache versus HTTP/browser cache",
+        "Build-time DefinePlugin exposure, Module Federation integration limits and current Next.js 16 bundler default",
+        "Executable sample behavior, category index/revision alignment and source links"
       ],
-      "sources": [],
-      "disposition": "Read end to end; definitions, examples, boundaries, and navigation are accurate and no substantive edit was needed.",
-      "validation": "Manual technical review; webpack 5.111.1 production build emitted a hashed lazy chunk.",
-      "current_sha256": "d9dd04cb6ad6ffe1dedaa44de0675603cd0e77927c20b5630cbf0bd281fbf92d"
+      "sources": [
+        "https://webpack.js.org/concepts/",
+        "https://webpack.js.org/concepts/loaders/",
+        "https://webpack.js.org/concepts/plugins/",
+        "https://webpack.js.org/concepts/module-federation/",
+        "https://webpack.js.org/guides/asset-modules/",
+        "https://webpack.js.org/guides/code-splitting/",
+        "https://webpack.js.org/guides/tree-shaking/",
+        "https://webpack.js.org/guides/hot-module-replacement/",
+        "https://webpack.js.org/guides/caching/",
+        "https://webpack.js.org/plugins/define-plugin/",
+        "https://nextjs.org/docs/app/guides/upgrading/version-16"
+      ],
+      "disposition": "Rebuilt the flow around the decision to defer a rarely used feature. Added a verified lazy-chunk example and clarified graph construction, built-in and asset resource handling, loader and plugin boundaries, type-check separation, side-effect metadata, HMR acceptance, deployment retention, build versus browser caching, and framework-owned bundlers. Updated the category index, source-linked recall questions and generated reading-time/search metadata; replaced broad/non-primary references with current official docs.",
+      "validation": "Isolated production build with webpack 5.111.1 emitted main.js and feature.59fd5fb86fd694500e52.js; assertions confirmed the lazy module is in the hashed chunk and the output page references main.js. The eight newly added Webpack URLs and the already-baselined Asset Modules guide returned HTTP 200. All 30 repository gates passed; standalone links found 10,803 links and 156 anchors with zero failures; the 2,569-URL citation baseline has no drift. Ruby 3.4.11 production Jekyll build, site-wide heading scan, focused rendered-page assertions and writer fixed-point check passed.",
+      "current_sha256": "887a3c54c8e27a76bdb4737ca05bd808a21107ab98a5f55d88674e5ecb93efd3"
     },
     {
       "path": "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.md",

@@ -1399,14 +1399,14 @@
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md",
    "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
   ],
+  "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-types.html": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md"
+  ],
   "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html": [
    "81-lanes-indian-sde-faang/81.18-amazon-interview-guide.md"
   ],
   "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md"
-  ],
-  "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md"
   ],
   "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.31-api-gateway.md",
@@ -3709,7 +3709,12 @@
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md"
   ],
   "https://kafka.apache.org/43/generated/producer_config.html": [
-   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.03-kafka.md"
+   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.03-kafka.md",
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md"
+  ],
+  "https://kafka.apache.org/43/generated/topic_config.html": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md",
+   "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
   ],
   "https://kafka.apache.org/43/getting-started/upgrade/": [
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md",
@@ -7851,7 +7856,9 @@
   "https://www.rabbitmq.com/docs/confirms": [
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.04-rabbitmq.md",
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md",
-   "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md"
+   "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md",
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md",
+   "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
   ],
   "https://www.rabbitmq.com/docs/consumers": [
    "20-backend/20.9-message-brokers/20.9.01-message-brokers.md"
@@ -7890,9 +7897,6 @@
   ],
   "https://www.rabbitmq.com/release-information": [
    "20-backend/20.9-message-brokers/20.9.01-message-brokers.md"
-  ],
-  "https://www.rabbitmq.com/tutorials/tutorial-one-python": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md"
   ],
   "https://www.radix-ui.com/primitives/docs/components/dialog": [
    "50-quality/50.2-accessibility/50.2.07-accessibility-design-systems.md"

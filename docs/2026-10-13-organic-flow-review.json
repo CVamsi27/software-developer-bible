@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 92,
+    "pending": 91,
     "unchanged": 80,
-    "revised": 348,
-    "reviewed": 428,
+    "revised": 349,
+    "reviewed": 429,
     "topic_chapters": 520
   },
   "entries": [
@@ -5797,12 +5797,17 @@
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md",
       "group": "30-architecture/30.2-system-design/02-case-studies",
       "title": "Message Queue System Design",
-      "status": "pending",
-      "baseline_sha256": "b30a25c61f7ca3a5ede0b2ec00fe55d1d990cb7b0d96b77079b34480e3e2025d",
+      "status": "revised",
+      "baseline_sha256": "820c15e041adfe9f073d8f00d3c53dfb663345cb7e966a8ce4d77731d255d96a",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What does a broker acceptance prove, and which consumer-side guarantees are still needed before a business effect is safe to retry?",
+      "disposition": "Made the capacity example explicitly decimal, expanded the Kafka ISR and minimum-replica example, and pinned the Java producer default to Kafka 4.3 while warning readers to inspect deployed settings. Tightened current broker references, added topic/group authorization requirements, and expanded the revision companion with source-linked Kafka and RabbitMQ guarantee questions.",
+      "validation": [
+        "Re-read the chapter from capacity assumptions through consumer recovery, retention, poison messages, model comparison, and summary; checked the index and revision companion.",
+        "Verified current Kafka 4.3 producer/topic configuration, transactions and consumer-group references; RabbitMQ 4.3 acknowledgment docs; and current SQS queue-type and FIFO deduplication docs. New and replacement citations returned HTTP 200 and the baseline was updated.",
+        "All 30 repository gates passed; standalone link scan checked 10,798 links and 152 anchors with no failures, and the citation baseline has no drift.",
+        "Ruby 3.4 locked-bundle Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.31-api-gateway.md",

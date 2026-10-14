@@ -1,6 +1,6 @@
 # System Design — Case Studies
 
-> **Study time:** ≈ 6 h 33 m of reading (32 files, ~12 min average).
+> **Study time:** ≈ 6 h 34 m of reading (32 files, ~12 min average).
 Applied examples of system design interviews. Read [../01-theory/](../01-theory/INDEX.md) first, then choose cases that match your interview goals.
 
 [![Files](https://img.shields.io/badge/files-32-blue)](../../../INDEX.md)
@@ -78,7 +78,7 @@ The 31 cases are grouped by the kind of reasoning they practice. Use the tiers a
 | 27 | [Ad Click Aggregator](30.2.2.27-ad-click-aggregator.md) | Platform & Telemetry | Producer identity, exact dedup, late-event corrections, revisioned totals, auditable settlement | Important | Important |
 | 28 | [Parking Lot](30.2.2.28-parking-lot.md) | Infrastructure & LLD | Atomic spot ownership, compatible allocation, versioned fees, payment outcomes, physical reconciliation | Important | Important |
 | 29 | [Distributed Cache](30.2.2.29-distributed-cache.md) | Infrastructure & LLD | Scoped keys, stale-fill races, partition and failover, hot-key control, origin-safe recovery | Important | Important |
-| 30 | [Message Queue](30.2.2.30-message-queue.md) | Infrastructure & LLD | WAL, consumer groups, delivery guarantees, backpressure, Kafka vs RabbitMQ comparison | Important | Important |
+| 30 | [Message Queue](30.2.2.30-message-queue.md) | Infrastructure & LLD | ISR acknowledgments, partition ordering, idempotent effects, retention, poison messages, broker boundaries | Important | Important |
 | 31 | [API Gateway](30.2.2.31-api-gateway.md) | Infrastructure & LLD | Routing, rate limiting, JWT validation, BFF pattern, circuit breaker, protocol translation | Important | Important |
 
 ---

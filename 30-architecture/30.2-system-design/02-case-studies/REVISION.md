@@ -774,6 +774,14 @@ Source: [Message Queue System Design](30.2.2.30-message-queue.md)
 
 **A:** Nothing about a later retry after its five-minute window, and nothing about an external database or payment effect. Persist a stable business idempotency key at the consumer boundary as well. See [SQS FIFO deduplication](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html).
 
+**Q:** What do `acks=all` and `min.insync.replicas` each require in Kafka?
+
+**A:** `acks=all` waits for every current in-sync replica; `min.insync.replicas` sets the minimum ISR count for an all-acks write to succeed. Neither means every configured replica is available or that all brokers fsynced every record. See [Kafka 4.3 topic configuration](https://kafka.apache.org/43/generated/topic_config.html).
+
+**Q:** Is a RabbitMQ publisher confirm the same as a consumer acknowledgment?
+
+**A:** No. A publisher confirm reports broker-side handling of a publish; a consumer acknowledgment reports that a delivery was processed and may be removed. Neither confirms the other side's work. See [RabbitMQ acknowledgments and publisher confirms](https://www.rabbitmq.com/docs/confirms).
+
 ## API Gateway System Design
 
 Source: [API Gateway System Design](30.2.2.31-api-gateway.md)

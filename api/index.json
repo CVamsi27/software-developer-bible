@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "807a4953e5882dfc22f1e2fe59212e2ee42b0275bd309d4def901425937a7086",
+ "corpus_digest": "0d424d92385108103604a2375bd002284cb414fbe8744584e518ddef8e5776ed",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5223
+  "read_minutes": 5224
  },
  "chapters": [
   {
@@ -4471,7 +4471,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.31-api-gateway.html",

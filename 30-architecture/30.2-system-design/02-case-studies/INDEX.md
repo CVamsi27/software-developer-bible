@@ -63,7 +63,7 @@ The 31 cases are grouped by the kind of reasoning they practice. Use the tiers a
 | 12 | [Twitter Feed](30.2.2.12-twitter-feed.md) | Social & Feed | Hybrid fan-out, stable pagination, visibility rechecks, tombstones, trend windows | Important | Important |
 | 13 | [Rate Limiter](30.2.2.13-rate-limiter.md) | Web (foundational) | Token-bucket request trace, atomic shared budgets, failover overshoot, 429 handling | Important | Important |
 | 14 | [Web Crawler](30.2.2.14-web-crawler.md) | Search & Data | Bounded frontier, per-origin scheduling, lease fencing, robots policy, SSRF-safe fetching | Important | Important |
-| 15 | [Chat System](30.2.2.15-chat-system.md) | Messaging & Real-Time | WebSocket messaging, presence, typing indicators, offline sync | Important | Important |
+| 15 | [Chat System](30.2.2.15-chat-system.md) | Messaging & Real-Time | Durable acceptance, ordered history, device receipts, change cursors, membership, E2EE and group fan-out | Important | Important |
 | 16 | [Instagram](30.2.2.16-instagram.md) | Social & Feed | Photo/video sharing, fan-out feed, media pipeline, social graph | Important | Important |
 | 17 | [YouTube](30.2.2.17-youtube.md) | Streaming & Media | Video transcoding ladder, HLS/DASH streaming, CDN economics, recommendations | Important | Important |
 | 18 | [Dropbox](30.2.2.18-dropbox.md) | Storage & Sync | Block-level sync, content-addressable storage, conflict resolution, cursors | Important | Important |

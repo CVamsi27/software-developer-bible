@@ -114,6 +114,10 @@ Source: [Lexical Environment](10.1.1.05-lexical-environment.md)
 
 **A:** No. They are different kinds of record for different situations. Function and Module records are specialized Declarative records, not additional stores inside every block. A Global record combines declarative bindings with object-backed global names.
 
+**Q:** Where does the current specification put the outer link used for identifier lookup?
+
+**A:** In the Environment Record's `[[OuterEnv]]` field. The execution context's LexicalEnvironment identifies the current record; identifier resolution follows record-to-record links until it finds a binding or reaches null.
+
 **Q:** Does the scope-chain diagram show exactly how an engine stores variables or how fast lookup will be?
 
 **A:** No. It explains which variable a read should find. An engine can store variables and find them differently while keeping that behavior. Use performance and memory tools to check speed and what stays in memory.

@@ -241,7 +241,11 @@ Source: [TypeScript Compiler Pipeline](10.2.4.06-typescript-compiler-pipeline.md
 
 **Q:** How do the parser, binder, and checker contribute different information?
 
-**A:** The parser creates syntax trees; the binder connects declarations to symbols and scopes; the checker follows those relationships to determine types and report semantic diagnostics. The emitter then produces configured output.
+**A:** The parser creates syntax trees while dependency resolution grows the source graph. The binder connects declarations to symbols and scopes; the checker follows those relationships to determine types and report semantic diagnostics. Emission has its own output controls.
+
+**Q:** Can a tool using the TypeScript 6 `CompilerHost` API simply switch its compiler dependency to TypeScript 7.0?
+
+**A:** No. TypeScript 7.0 does not ship that JavaScript Compiler API. A tool that embeds it needs a compatible TypeScript 6 package or a deliberate integration with the newer versioned API; CLI compatibility does not imply API compatibility.
 
 **Q:** Why might `tsc` report an error and still write JavaScript?
 

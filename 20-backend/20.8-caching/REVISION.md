@@ -72,7 +72,7 @@ Source: [Redis Fundamentals](20.8.02-redis-fundamentals.md), [Redis data types](
 
 **Q:** Does a successful primary reply prove a write survives restart and failover?
 
-**A:** No. RDB snapshots, AOF fsync policy, asynchronous replica progress, and failover are separate durability boundaries. `WAIT` can confirm replica acknowledgments but does not make Redis strongly consistent.
+**A:** No. RDB snapshots, AOF fsync policy, asynchronous replica progress, and failover are separate durability boundaries. `WAIT` returns the actual acknowledgment count, which can fall below the requested count at timeout; even sufficient acknowledgments do not make Redis strongly consistent.
 
 **Q:** What changes when two keys hash to different Redis Cluster slots?
 

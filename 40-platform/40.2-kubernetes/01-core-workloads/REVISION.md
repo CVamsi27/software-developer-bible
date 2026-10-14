@@ -32,7 +32,7 @@ Source: [Kubernetes Pods & ReplicaSets](40.2.1.01-pods-replicasets.md)
 
 **Q:** Why can an API write succeed while the replacement is still unavailable?
 
-**A:** API acceptance proves the object passed the API boundary and was stored. A controller must reconcile it, the scheduler must find a feasible node, the kubelet and runtime must start it, and readiness must pass before it becomes a serving endpoint.
+**A:** API acceptance proves the object passed the API boundary and was stored. Reconciliation, placement, startup, and readiness still take time. An EndpointSlice can already contain the Pod with `ready: false`; under normal Service routing, its existence does not make it eligible for new traffic.
 
 **Q:** Where should you investigate when there is no Pod object versus a Pod stuck in `Pending`?
 

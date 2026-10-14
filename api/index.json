@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "08aa671398551fff658bc0308371f3dea565950c06a2902a8df2ade02822ba77",
+ "corpus_digest": "7005cc71098a8e176c684c347783877f8fceb549918a394459c250142c4ac790",
  "totals": {
   "chapters": 675,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5253
+  "read_minutes": 5254
  },
  "chapters": [
   {
@@ -3365,7 +3365,7 @@
     "caching",
     "concept"
    ],
-   "m": 15
+   "m": 16
   },
   {
    "p": "20-backend/20.8-caching/20.8.03-advanced-redis-patterns.html",

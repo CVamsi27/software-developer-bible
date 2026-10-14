@@ -11,9 +11,9 @@
   "counts": {
     "pending": 0,
     "unchanged": 186,
-    "revised": 334,
-    "reviewed": 520,
-    "topic_chapters": 520
+    "revised": 338,
+    "reviewed": 524,
+    "topic_chapters": 524
   },
   "entries": [
     {
@@ -158,7 +158,12 @@
         "Checked cross-topic ownership and preserved the practical and textbook definitions.",
         "Full verification passed all 30 gates; standalone links checked 10,967 links and 186 anchors; Jekyll build and site-wide rendered-heading sweep passed.",
         "Full repository verification passed all 30 gates; the Ruby 3.1 locked-bundle production Jekyll build passed."
-      ]
+      ],
+      "final_pass": {
+        "date": "2026-10-14",
+        "scope": "Re-read the full chapter and corrected its practical/textbook definition to the current Environment Record representation, including the record-owned [[OuterEnv]] link; retained the concrete lookup and TDZ traces.",
+        "review_sha256": "071add2323ac5596ad30bbccd9db6e5442d3fce1ccef7fece84c29156cc2cf66"
+      }
     },
     {
       "path": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.06-closures.md",
@@ -175,6 +180,22 @@
         "Full verification passed all 30 gates; standalone links checked 10,967 links and 186 anchors; Jekyll build and site-wide rendered-heading sweep passed.",
         "Full repository verification passed all 30 gates; the Ruby 3.1 locked-bundle production Jekyll build passed."
       ]
+    },
+    {
+      "path": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md",
+      "group": "10-frontend/10.1-javascript/01-execution-and-scope",
+      "title": "V8 Execution and Optimization",
+      "status": "revised",
+      "baseline_sha256": "b73309dd6b3c700479a9b92d5fe2127bf426a65ff0fdb150bcc7bae535e416c6",
+      "previous_depth_review": "not-in-original-inventory",
+      "reader_question": "How does runtime feedback change execution without changing JavaScript behavior?",
+      "disposition": "Introduced bytecode before compiler tiers and made slower-path fallback distinct from deoptimization; retained one property-access example and measured-performance decisions.",
+      "validation": [
+        "Read the complete new chapter with its learning index and source-linked revision questions.",
+        "Compared mechanism and failure-boundary claims with the linked primary documentation."
+      ],
+      "review_date": "2026-10-14",
+      "review_sha256": "d2cdc91ce8a4cdc194ed0266797ad31bad337781ac141a0b0f6dc6ff89b8d04b"
     },
     {
       "path": "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.01-this.md",
@@ -893,6 +914,22 @@
         "Targeted rendered checks passed for all five pages: one H1, both definitions, First Principles, Summary, See Also and References.",
         "Full repository verification passed all 30 gates; the Ruby 3.1 locked-bundle production Jekyll build passed."
       ]
+    },
+    {
+      "path": "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.06-typescript-compiler-pipeline.md",
+      "group": "10-frontend/10.2-typescript/04-advanced-patterns",
+      "title": "TypeScript Compiler Pipeline",
+      "status": "revised",
+      "baseline_sha256": "67b739f048f906c656b8028e6510c374716511d012f920da022d73ff7676e56a",
+      "previous_depth_review": "not-in-original-inventory",
+      "reader_question": "How do configured roots become a checked program and a runtime artifact?",
+      "disposition": "Corrected the dependency graph to grow through parsing and resolution together; separated bind/check/emit, runtime loading, editor state, and TypeScript 6 versus 7 programmatic APIs.",
+      "validation": [
+        "Read the complete new chapter with its learning index and source-linked revision questions.",
+        "Compared mechanism and failure-boundary claims with the linked primary documentation."
+      ],
+      "review_date": "2026-10-14",
+      "review_sha256": "69a9ac8aea90abc344cf14e106b276e9856eb949b7c674e03cf083a2d8731f67"
     },
     {
       "path": "10-frontend/10.3-react/01-react-internals/10.3.1.01-virtual-dom.md",
@@ -2102,6 +2139,38 @@
       ]
     },
     {
+      "path": "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.04-pm2-process-supervision.md",
+      "group": "20-backend/20.1-node.js/03-processes-and-concurrency",
+      "title": "PM2 Process Supervision",
+      "status": "revised",
+      "baseline_sha256": "f3ad853905fdf0ae0a0a740aa9244843e6d1b1aa5e3f0d0891355d379b30ac41",
+      "previous_depth_review": "not-in-original-inventory",
+      "reader_question": "Which failures can a process supervisor recover, and what remains application-owned?",
+      "disposition": "Opened with a committed payment and lost response, then followed daemon ownership, fork/cluster boundaries, readiness, reload, restart policy, and host failure.",
+      "validation": [
+        "Read the complete new chapter with its learning index and source-linked revision questions.",
+        "Compared mechanism and failure-boundary claims with the linked primary documentation."
+      ],
+      "review_date": "2026-10-14",
+      "review_sha256": "caa1d3cd79fded9a14d19340e23a38b5cb885b5aefd0abd14944f744dfdcbc4e"
+    },
+    {
+      "path": "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.05-watt-runtime-architecture.md",
+      "group": "20-backend/20.1-node.js/03-processes-and-concurrency",
+      "title": "Watt Runtime Architecture",
+      "status": "revised",
+      "baseline_sha256": "4dc182c64b575ebce98ada9bd2ae9839c60345db12fa1099ae3ad2db8c867ba0",
+      "previous_depth_review": "not-in-original-inventory",
+      "reader_question": "What isolation do application workers provide inside one Node process?",
+      "disposition": "Opened with the deployment decision, then followed separate isolates, internal HTTP-shaped routing, worker replacement, and shared process/release boundaries.",
+      "validation": [
+        "Read the complete new chapter with its learning index and source-linked revision questions.",
+        "Compared mechanism and failure-boundary claims with the linked primary documentation."
+      ],
+      "review_date": "2026-10-14",
+      "review_sha256": "9a1b0001143c7419de5f15ff7039333c4e987a0abf4af6097923aab04013dbef"
+    },
+    {
       "path": "20-backend/20.1-node.js/04-security-and-operations/20.1.4.01-node-security.md",
       "group": "20-backend/20.1-node.js/04-security-and-operations",
       "title": "Node.js Security",
@@ -2261,7 +2330,12 @@
         "Re-read the full chapter in learning order alongside the Java index, revision companion, and interview bank.",
         "Verified Java SE 27 preview-feature status and Arrays.binarySearch contract against Oracle Java SE 27 documentation.",
         "Extracted the generics code example for compilation; this machine has no installed Java runtime/compiler, so compile execution is unavailable."
-      ]
+      ],
+      "final_pass": {
+        "date": "2026-10-14",
+        "scope": "Re-read the added JVM trace, removed duplicate Java-baseline paragraphs, included the runtime boundary in the Summary, and aligned the safepoint revision question.",
+        "review_sha256": "9f2c4b560402d7729443d8d025e0e3bfddcb88be668fc2d7775540557bbdb8e7"
+      }
     },
     {
       "path": "20-backend/20.13-java/20.13.02-java-oop-solid.md",
@@ -4138,7 +4212,12 @@
         "Checked command atomicity versus multi-command/external transactions; data types, expiration, persistence, replication, leases, Pub/Sub, Streams, bounded scans, eviction and operational failure policies.",
         "Verified Redis Open Source 8.10.1 release notes, node-redis releases and Redis client guidance against official sources; updated the external-link baseline."
       ],
-      "review_date": "2026-10-14"
+      "review_date": "2026-10-14",
+      "final_pass": {
+        "date": "2026-10-14",
+        "scope": "Re-read the updated command, durability, and Cluster sections; corrected reply-versus-fsync ordering and the WAIT returned-count contract, then aligned the revision answer.",
+        "review_sha256": "ef4b95d507c3f7726f56a6fa72d8432b98098ce45bc6d6257532c17efb1686b7"
+      }
     },
     {
       "path": "20-backend/20.8-caching/20.8.03-advanced-redis-patterns.md",
@@ -6177,7 +6256,12 @@
         "Version-sensitive Kubernetes claims checked against current primary documentation; the chapter set passed syntax/rendering checks and all repository gates.",
         "All 30 repository verification gates passed; standalone link check found 10,847 links and 149 anchors with zero failures, and the 2,520-URL citation baseline had no drift.",
         "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
-      ]
+      ],
+      "final_pass": {
+        "date": "2026-10-14",
+        "scope": "Re-read the full chapter; distinguished deletion/replacement from initial creation and EndpointSlice publication from readiness-based Service routing, with matching revision wording.",
+        "review_sha256": "0165b0882021d3d8e1de51ca4566dbbe87c17f27210d07fc45ead53d0bbf8a2a"
+      }
     },
     {
       "path": "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.02-deployments.md",
@@ -8486,5 +8570,7 @@
         "Verified contemporary or version-sensitive claims against primary project/specification documentation where applicable."
       ]
     }
-  ]
+  ],
+  "final_pass_base_commit": "ce359ec6",
+  "final_pass_scope": "Four new runtime chapters reviewed in full; Lexical Environment and Pods/ReplicaSets re-read in full; changed JVM and Redis mechanisms rechecked with companion questions. Existing dispositions remain the historical review record for other chapters."
 }

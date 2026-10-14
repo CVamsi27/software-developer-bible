@@ -26,6 +26,10 @@ Source: [Language Fundamentals](20.13.01-java-language-fundamentals.md)
 
 **A:** HotSpot can collect execution feedback and compile hot methods while the service runs. A cold measurement includes startup and interpreter work; a warmed measurement may include compiled code. Compare both against the actual workload and JDK.
 
+**Q:** Why is a request pause not automatically equal to the logged garbage-collection pause?
+
+**A:** HotSpot may spend time bringing threads to a safepoint before coordinated work begins. Application latency can also include scheduling, compilation, and I/O delays. Compare GC and safepoint logs with Flight Recorder data rather than attributing the entire delay to collection.
+
 **Q:** A two-character-looking string has length four. What does length measure?
 
 **A:** UTF-16 code units, not grapheme clusters. Select code-point or grapheme-aware processing according to the requirement.

@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 327,
+    "revised": 328,
     "unchanged": 80,
-    "pending": 113,
-    "reviewed": 407,
+    "pending": 112,
+    "reviewed": 408,
     "topic_chapters": 520
   },
   "entries": [
@@ -5446,12 +5446,18 @@
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.09-e-commerce.md",
       "group": "30-architecture/30.2-system-design/02-case-studies",
       "title": "E-Commerce System Design",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "1de4d3178c5e2f6e149ce09a59621b3fb9b9d3d4329a854a7677ad11777aa181",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How does checkout preserve one accepted order when stock is contested, catalog data changes, or payment and fulfillment return ambiguous outcomes?",
+      "disposition": "Opened with two buyers racing for the final unit. Clarified the order-size assumptions, added a payment-data boundary, explained PostgreSQL READ COMMITTED rechecks and whole-transaction retries at stronger isolation, and replaced repeated warning lists with purchase-contract tests. Expanded source-linked revision practice for reservations, idempotency, snapshots and payment recovery; aligned the case-study index.",
+      "validation": [
+        "Re-read in learning order with the case-study INDEX and REVISION companion; checked cart intent vs. reservation ownership, immutable order terms, inventory movement, payment state, fulfillment and derived search views.",
+        "Verified PostgreSQL READ COMMITTED and serialization-retry behavior against current official documentation; all three cited PostgreSQL pages returned HTTP 200 and the citation baseline was regenerated.",
+        "Executed the schema and reservation function on PostgreSQL 16. Verified simultaneous final-unit claims have one winner, non-positive quantities reject, and a failed second SKU rolls back the first reservation in a shared transaction.",
+        "Checked daily storage, request-rate and bandwidth arithmetic and regenerated read-time badges, search/API indexes and count claims; link, freshness, structure and baseline checks passed.",
+        "Production Jekyll build, site-wide rendered-heading checks and all 30 scripts/verify.sh gates passed."
+      ]
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.10-hospital-management.md",

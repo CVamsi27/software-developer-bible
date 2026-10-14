@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-18_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-19_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
 
@@ -205,6 +205,30 @@ Source: [E-Commerce System Design](30.2.2.09-e-commerce.md)
 **Q:** Why is a shopping cart a different consistency problem from inventory reservation?
 
 **A:** The cart expresses mutable intent and can tolerate stale availability. A reservation conditionally decrements authoritative stock and records a stable order/SKU identity; a retry returns that outcome, while a competing buyer cannot allocate the same final unit.
+
+**Q:** Why does the final-unit update include `available >= quantity` in the `WHERE` clause?
+
+**A:** The predicate and decrement happen in one database update, so a competing request cannot both read the old count and later spend it. The caller must check the affected-row count; zero rows means no reservation and the surrounding order operation must handle that outcome.
+
+**Q:** Why should a failed line roll back the other reservations in a multi-item checkout?
+
+**A:** If all lines share one transactional inventory authority, commit them together so the order does not hold only part of its requested basket. Across separate authorities, local rollback cannot undo another service's commit; use durable reservation steps, expiries and compensating releases.
+
+**Q:** What does `UNIQUE(order_id, sku)` prove, and what must the retry API still check?
+
+**A:** It prevents two reservation rows for the same order/SKU, but does not prove a repeated request has the same quantity or other payload. Bind a stable checkout key to a canonical fingerprint; return the original result for a match and conflict on changed input.
+
+**Q:** What should the service do after a checkout payment timeout?
+
+**A:** Keep the durable order and provider command in an unknown state, then reconcile or retry under that same provider identity. Do not release inventory and issue a second charge merely because the response was lost; if the reservation expires before a late success, apply the defined compensation policy.
+
+**Q:** Why snapshot price and address data into the order?
+
+**A:** Catalog and profile rows change after checkout. The order must preserve the exact items, amounts, tax/shipping calculation and delivery address the buyer accepted, with restricted access and retention for personal data.
+
+**Q:** Which retry is required after a PostgreSQL serialization failure?
+
+**A:** Abort and retry the entire transaction from its beginning, preserving the same checkout command identity. Continuing after the error or creating a new key can duplicate reservations or turn one intended checkout into a second order.
 
 ## Hospital Management System Design
 

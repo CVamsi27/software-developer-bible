@@ -7548,6 +7548,7 @@
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.02-normalization.md",
    "20-backend/20.4-database/02-querying-and-optimization/20.4.2.05-jsonb.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.08-ticket-booking.md",
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.09-e-commerce.md",
    "80-lanes-abroad-full-stack/80.17-docita-interview-evidence-pack.md"
   ],
   "https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-EXCLUSION": [
@@ -7571,7 +7572,8 @@
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.02-deadlocks.md",
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.03-optimistic-pessimistic-locking.md",
    "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.md",
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.08-ticket-booking.md"
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.08-ticket-booking.md",
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.09-e-commerce.md"
   ],
   "https://www.postgresql.org/docs/current/functions-admin.html": [
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.04-database-replication.md",
@@ -7746,6 +7748,7 @@
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.01-transactions.md",
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.03-optimistic-pessimistic-locking.md",
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.06-interview-questions.md",
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.09-e-commerce.md",
    "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.03-idempotency-keys.md",
    "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.06-idempotency-retry-deep-dive.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.04-backend-cheat-sheet.md",

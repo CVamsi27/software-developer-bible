@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2541,
+ "url_count": 2542,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -3516,6 +3516,9 @@
   "https://hl7.org/fhir/R5/overview.html": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.10-hospital-management.md",
    "80-lanes-abroad-full-stack/80.34-germany-target-domain-primer.md"
+  ],
+  "https://hl7.org/fhir/directory.html": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.10-hospital-management.md"
   ],
   "https://hono.dev/docs/getting-started/cloudflare-workers": [
    "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md"
@@ -7560,7 +7563,8 @@
   ],
   "https://www.postgresql.org/docs/current/ddl-rowsecurity.html": [
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.06-row-level-security.md",
-   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.06-interview-questions.md"
+   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.06-interview-questions.md",
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.10-hospital-management.md"
   ],
   "https://www.postgresql.org/docs/current/ddl-system-columns.html": [
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.md"

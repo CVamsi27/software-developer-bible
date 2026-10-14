@@ -258,6 +258,14 @@ Source: [Hospital Management System Design](30.2.2.10-hospital-management.md)
 
 **A:** Appointment represents a planned booking; the visit and clinical documentation follow a separate lifecycle. Treating a scheduled resource as completed care can create false clinical and billing state.
 
+**Q:** Why does `FORCE ROW LEVEL SECURITY` still not constrain every database role?
+
+**A:** It can make the table owner subject to policies, but superusers and roles with `BYPASSRLS` always bypass them. Run application queries as a non-owner role without that attribute and test the tenant policy using the deployed role.
+
+**Q:** Why should an integration name its FHIR release and profile instead of saying only “FHIR”?
+
+**A:** Resource fields, terminology and workflow requirements vary by release and implementation guide. At this review R5 is the current published release while R6 is still in ballot; the partner contract determines the version and profile that the adapter must validate.
+
 ## Live Betting System Design
 
 Source: [Live Betting System Design](30.2.2.11-live-betting.md)

@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "eec50ea3991f525ef181c2721eed473efc7bc35e972388836cef6b2a017c5a43",
+ "corpus_digest": "a00f5416d5fe6605e6ac7e86048889197dabfe0e99c801bfbb72fcfa205ec374",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5212
+  "read_minutes": 5213
  },
  "chapters": [
   {
@@ -4381,7 +4381,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.22-real-time-collaboration.html",

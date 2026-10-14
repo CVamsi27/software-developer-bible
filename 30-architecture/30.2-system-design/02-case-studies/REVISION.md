@@ -566,6 +566,10 @@ Source: [Workflow Engine — System Design Case Study](30.2.2.21-workflow-engine
 
 **A:** Temporal reconstructs workflow state by replaying its event history. Incompatible code can produce different commands for old history, so external I/O belongs in activities and in-flight workflow changes need a compatible versioning strategy. See [Temporal's workflow-definition guidance](https://docs.temporal.io/workflow-definition).
 
+**Q:** Why does a running workflow enter a cancellation-pending state instead of immediately becoming cancelled?
+
+**A:** The workflow must stop scheduling new steps and settle or reconcile active effects first. A remote action may finish after the request or resist cancellation; only then can the engine decide whether to close as cancelled, compensate, or expose an unresolved outcome. See [Temporal's cancellation guidance](https://docs.temporal.io/encyclopedia/workflow/cancellation-and-termination).
+
 ## Real-Time Collaboration — System Design Case Study
 
 Source: [Real-Time Collaboration — System Design Case Study](30.2.2.22-real-time-collaboration.md)

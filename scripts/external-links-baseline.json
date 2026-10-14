@@ -1630,7 +1630,7 @@
   "https://docs.bullmq.io/guide/workers/stalled-jobs": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.25-distributed-job-scheduler.md"
   ],
-  "https://docs.camunda.org/manual/latest/": [
+  "https://docs.camunda.org/manual/7.24/": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.21-workflow-engine.md"
   ],
   "https://docs.cilium.io/": [
@@ -2373,15 +2373,16 @@
   "https://docs.temporal.io/encyclopedia/architecture/temporal-architecture": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.25-distributed-job-scheduler.md"
   ],
+  "https://docs.temporal.io/encyclopedia/workflow/cancellation-and-termination": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.21-workflow-engine.md",
+   "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
+  ],
   "https://docs.temporal.io/workflow-definition": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.21-workflow-engine.md",
    "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
   ],
   "https://docs.temporal.io/workflow-definition#determinism-constraints": [
    "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md"
-  ],
-  "https://docs.temporal.io/workflows": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.21-workflow-engine.md"
   ],
   "https://docs.tigera.io/calico/latest/about/": [
    "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.03-rbac-network-policies.md"

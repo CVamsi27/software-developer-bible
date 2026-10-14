@@ -137,6 +137,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var code = block.querySelector('pre code');
     if (code) {
       var numbers = document.createElement('span'); numbers.className = 'code-line-numbers'; numbers.setAttribute('aria-hidden', 'true');
+      var pre = block.querySelector('pre'); pre.setAttribute('tabindex', '0'); pre.setAttribute('role', 'region'); pre.setAttribute('aria-label', caption.textContent + ' code');
       var count = code.textContent.replace(/\n$/, '').split('\n').length;
       numbers.textContent = Array.from({length: count}, function (_, index) { return index + 1; }).join('\n');
       block.querySelector('pre').before(numbers); block.classList.add('has-line-numbers');
@@ -152,6 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var item = document.createElement('li'), link = document.createElement('a');
     link.textContent = headingText(heading); link.href = '#' + heading.id;
     link.addEventListener('click', function () {
+      if (!window.matchMedia('(min-width: 1200px)').matches) outline.open = false;
       heading.setAttribute('tabindex', '-1'); heading.focus({preventScroll: true});
       document.dispatchEvent(new CustomEvent('study:section', {detail: {heading: heading, deliberate: true}}));
     });
@@ -160,9 +162,11 @@ document.addEventListener('DOMContentLoaded', function () {
   nav.append(list); outline.append(outlineSummary, nav);
   var layout = document.createElement('div'); layout.className = 'reader-layout'; content.before(layout); layout.append(content, outline);
   var desktop = window.matchMedia('(min-width: 1200px)');
+  outlineSummary.addEventListener('click', function (event) { if (desktop.matches) event.preventDefault(); });
   function syncOutline() {
     if (desktop.matches) layout.append(outline); else meta.after(outline);
     outline.open = desktop.matches;
+    if (desktop.matches) outlineSummary.setAttribute('tabindex', '-1'); else outlineSummary.removeAttribute('tabindex');
   }
   syncOutline(); if (desktop.addEventListener) desktop.addEventListener('change', syncOutline);
   var scheduled = false;

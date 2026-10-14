@@ -157,3 +157,22 @@ test('reference reader exposes metadata tokens and decorative line numbers witho
  assert.equal(d.querySelector('pre code').textContent,code);
  dom.window.close();
 });
+test('code panels are named keyboard scroll regions and mobile outline closes after navigation',()=>{
+ const panel='<div class="language-javascript highlighter-rouge"><div class="highlight"><pre><code>const value = 1;\n</code></pre></div></div>';
+ const dom=boot(article.replace('<p>Original prose.</p>',panel),chapter,['reading-ui.js']);
+ const d=dom.window.document,pre=d.querySelector('pre');
+ assert.equal(pre.getAttribute('tabindex'),'0');
+ assert.equal(pre.getAttribute('role'),'region');
+ assert.equal(pre.getAttribute('aria-label'),'JavaScript code');
+ const outline=d.querySelector('.chapter-outline'); outline.open=true;
+ outline.querySelector('a').click();
+ assert.equal(outline.open,false);
+ assert.equal(d.activeElement.id,'definition');
+ dom.window.close();
+});
+test('desktop outline stays open when its heading is clicked',()=>{
+ const dom=boot(article,chapter,['reading-ui.js'],w=>{w.matchMedia=()=>({matches:true,addEventListener(){}});});
+ const outline=dom.window.document.querySelector('.chapter-outline');
+ assert.equal(outline.open,true);outline.querySelector('summary').click();assert.equal(outline.open,true);
+ dom.window.close();
+});

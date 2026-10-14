@@ -24,3 +24,14 @@
 - [x] Load a focused final stylesheet for screenshot geometry, typography, controls, outline, dividers and code syntax colors.
 - [x] Run focused tests, render actual clean chapter URL at desktop and mobile sizes, capture screenshot, refine visible differences.
 - [x] Run repository gates, generated metadata/count checks, and Jekyll build. Keep the result in the isolated branch for later review and merge.
+
+
+## Full refinement pass
+
+The user requested refinement of all elements including mobile views. Keep the approved reference and canonical content.
+
+- [x] Consolidate the reference stylesheet, including light/dark tokens, tablet sizing, mobile header/toolbar, metadata wrapping, disclosure and continuation targets.
+- [x] Give code panels named keyboard scroll regions; close mobile outline only after deliberate section selection; make the search shortcut focus the visible field.
+- [x] Replace placeholder icons, refine syntax, and keep copied/narrated code unchanged.
+- [x] Check 320, 390, 768, 1024 and 1487px layouts; inspect both themes, metadata expansion, outline navigation, search, copy and keyboard access.
+- [x] Capture desktop and mobile evidence, run focused tests, pinned build and repository gates, then commit on the isolated branch.

@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2535,
+ "url_count": 2536,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -4875,10 +4875,12 @@
    "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.02-scaling-patterns.md"
   ],
   "https://nightlies.apache.org/flink/flink-docs-stable/docs/dev/datastream/event-time/built_in/": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.27-ad-click-aggregator.md"
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.27-ad-click-aggregator.md",
+   "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
   ],
   "https://nightlies.apache.org/flink/flink-docs-stable/docs/learn-flink/fault_tolerance/": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.27-ad-click-aggregator.md"
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.27-ad-click-aggregator.md",
+   "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
   ],
   "https://node-postgres.com/": [
    "20-backend/20.4-database/04-orm-and-access/20.4.4.03-orm-query-builder-landscape.md"
@@ -6286,6 +6288,9 @@
   ],
   "https://stylelint.io/": [
    "10-frontend/10.7-html-css/10.7.06-css-architecture-styling-approaches.md"
+  ],
+  "https://support.google.com/google-ads/answer/42995?hl=en": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.27-ad-click-aggregator.md"
   ],
   "https://support.google.com/googlecareers/answer/6095391?hl=en": [
    "81-lanes-indian-sde-faang/81.15-resume-negotiation.md",

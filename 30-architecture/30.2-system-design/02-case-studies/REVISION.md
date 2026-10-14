@@ -702,6 +702,14 @@ Source: [Ad Click Aggregator System Design](30.2.2.27-ad-click-aggregator.md)
 
 **A:** It describes the chance that a previously unseen identity tests positive. It does not mean one percent of all positive checks are false, and it cannot authorize dropping exact deduplication. Repeated events can make most lookups positive because they are genuine repeats.
 
+**Q:** Why can a watermark pass an hourly window without making its billing total final?
+
+**A:** A watermark estimates event-time progress; a bounded-out-of-order strategy does not prove that no older event will arrive. Keep the window correctable for the allowed-lateness period and reconcile later arrivals afterward. See [Flink's watermark guidance](https://nightlies.apache.org/flink/flink-docs-stable/docs/dev/datastream/event-time/built_in/).
+
+**Q:** What does “exactly once” mean for a checkpointed stream processor, and what else is needed for the billing sink?
+
+**A:** Checkpoint recovery can make each replayed event affect managed state once. End-to-end effects also require a replayable source and a transactional or idempotent sink; otherwise a retried write can still duplicate an external effect. See [Flink fault tolerance](https://nightlies.apache.org/flink/flink-docs-stable/docs/learn-flink/fault_tolerance/).
+
 ## Parking Lot System Design
 
 Source: [Parking Lot System Design](30.2.2.28-parking-lot.md)

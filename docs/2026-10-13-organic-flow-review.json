@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 85,
+    "pending": 84,
     "unchanged": 80,
-    "revised": 355,
-    "reviewed": 435,
+    "revised": 356,
+    "reviewed": 436,
     "topic_chapters": 520
   },
   "entries": [
@@ -6002,12 +6002,17 @@
       "path": "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.04-multi-tenant-saas-architecture.md",
       "group": "30-architecture/30.3-infra-patterns/04-data-at-scale",
       "title": "Multi-Tenant SaaS Architecture",
-      "status": "pending",
-      "baseline_sha256": "175b438b986a8be122210e574b2ac09b50a29e12778fe0ecb049405649ca0e08",
+      "status": "revised",
+      "baseline_sha256": "3d94a2411f8785163b6ec8746494d3101676e2862f85d117b6f4f532c901927c",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Can you explain how a tenant boundary reaches a request, database transaction, cache, object store, job and restore path?",
+      "disposition": "Reframed the chapter around one tenant boundary from verified membership through database, cache, object storage, jobs and lifecycle operations. Distinguished pool, bridge and silo choices, clarified pooled restore and RLS threat boundaries, removed repeated cache/storage explanations, and isolated Prisma version details in their own short section. Updated the learning path and source-linked revision question.",
+      "validation": [
+        "Fresh-reader check confirmed the end-to-end path was understandable; incorporated feedback on pattern naming, RLS limits and repeated cache/storage explanation.",
+        "Verified current Prisma ORM 8 release-candidate status and middleware configuration against official Prisma documentation; confirmed Node.js async-context reference and AWS SaaS Lens source.",
+        "All 30 repository verification gates passed; the standalone scan checked 10,797 links and 152 anchors with no failures. The external citation baseline has 2,548 URLs and no drift; the new Prisma middleware link returned HTTP 200.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.md",

@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "ebc7543e04fc8873cf90346077ab7537ed338e239d826f4281f8ffcaccd851b8",
+ "corpus_digest": "ae614eca1c41faa8cb46a025610cbd3901a8d51f3ed03a2a06a751bc9f38e0ce",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5231
+  "read_minutes": 5233
  },
  "chapters": [
   {
@@ -4650,7 +4650,7 @@
     "multi-tenancy",
     "saas"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "30-architecture/30.3-infra-patterns/04-data-at-scale/REVISION.html",
@@ -4661,7 +4661,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 2
+   "m": 3
   },
   {
    "p": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.html",

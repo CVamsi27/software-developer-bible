@@ -1,6 +1,6 @@
 # Infra & Ops Patterns — Index
 
-> **Study time:** ≈ 2 h 16 m of reading (22 files, ~6 min average).
+> **Study time:** ≈ 2 h 18 m of reading (22 files, ~6 min average).
 > **22 files across 6 categories — operations-level patterns that sit *around* your services**: health checks and graceful shutdown, retries and idempotency, feature flags and kill switches, backups proven by restore drills, idempotency-retry deep dive, leader election, data-at-scale levers (including multi-tenant SaaS), zero-downtime deploys, technical debt management, cost engineering (FinOps), data retention/archival, and the interview bank that drills all of it.
 >
 > **Scope note:** the distributed-systems patterns (saga, circuit breaker deep-dives, bulkhead, API gateway, service discovery, strangler fig, event sourcing/CQRS, distributed transactions) live in [20.6-microservices](../../20-backend/20.6-microservices/INDEX.md) — this folder was deduplicated against it.
@@ -58,7 +58,7 @@ Each category REVISION follows its learning chapters
 | 09 | [Database Scaling](04-data-at-scale/30.3.4.01-database-scaling.md) | Read and write bottlenecks, partitioning, replication, pooling and query plans | Important | Specialized | 11 min |
 | 10 | [Data Pipelines](04-data-at-scale/30.3.4.02-data-pipelines.md) | Checkpoints, replay, late events, backfills and data quality | Important | Specialized | 10 min |
 | 11 | [CDN Architecture](04-data-at-scale/30.3.4.03-cdn-architecture.md) | Edge caching strategy (also: [40.10 CDN](../../40-platform/40.10-cdn/INDEX.md)) | Important | Specialized | 7 min |
-| 12 | [Multi-Tenant SaaS Architecture](04-data-at-scale/30.3.4.04-multi-tenant-saas-architecture.md) | Verified request context, transaction-local RLS, caches/jobs and shared capacity | Important | Specialized | 6 min |
+| 12 | [Multi-Tenant SaaS Architecture](04-data-at-scale/30.3.4.04-multi-tenant-saas-architecture.md) | Verified request context, transaction-local RLS, caches/jobs and shared capacity | Important | Specialized | 7 min |
 | 13 | [Zero-Downtime Deployments](05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.md) | Blue-green, canary, expand/contract migrations | Important | Specialized | 6 min |
 | 14 | [Technical Debt](05-shipping-and-evolution/30.3.5.02-technical-debt.md) | Quadrants, remediation strategy | Important | Specialized | 6 min |
 | 15 | [Cost Engineering & FinOps](05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md) | Rightsizing, spot strategy, unit economics, cost checks in CI | Important | Specialized | 6 min |

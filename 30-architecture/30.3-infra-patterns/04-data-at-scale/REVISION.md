@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Architecture-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../../docs/topic-importance.md)
 
@@ -82,17 +82,21 @@ Source: [CDN Architecture — Edge Caching, Geographic Distribution, Cache Inval
 
 Source: [Multi-Tenant SaaS Architecture](30.3.4.04-multi-tenant-saas-architecture.md)
 
-**Q:** Why must an RLS tenant setting and queries share one transaction connection?
+**Q:** Why must a row-level security (RLS) tenant setting and its queries share one transaction connection?
 
 **A:** Transaction-local context does not follow a query onto another pooled connection. Pin both operations together and use a runtime role that cannot bypass the policy.
 
 **Q:** Why should a tenant filter built with Prisma middleware or an extension name its supported major version and operations?
 
-**A:** Prisma ORM 7 removed the legacy `$use` API, while Prisma ORM 8 provides a different middleware configuration. A filter covering selected operations is not proof that nested, raw or relationship paths enforce the same tenant boundary.
+**A:** Prisma ORM 7 removed the legacy `$use` middleware hook. Prisma ORM 8 has a separate [middleware configuration](https://docs.prisma.io/docs/orm/v8/middleware/how-middleware-works) and is still a release candidate as of October 2026; verify the current [release status](https://www.prisma.io/docs/orm/release-status). A filter or middleware covering selected paths is not proof that every database access enforces the tenant boundary.
 
 **Q:** Does installing a transaction-local tenant setting protect a later query on another pooled connection?
 
-**A:** No. Context installation and protected statements must use the same transaction/connection. Authorized application context and an RLS-constrained runtime role are also necessary; RLS cannot make SQL injection safe.
+**A:** No. Context installation and protected statements must use the same transaction/connection. Authorized application context and an RLS-constrained runtime role are also necessary; RLS cannot make query injection safe.
+
+**Q:** Why might a SaaS use a pooled database for ordinary tenants and a silo for a high-load or contract-sensitive tenant?
+
+**A:** Tenant and service workloads can have different isolation, recovery and capacity requirements. Choose a model per resource and service, and account for the added routing and operating cost. The [AWS SaaS Lens](https://docs.aws.amazon.com/wellarchitected/latest/saas-lens/general-design-principles.html) discusses pooling and siloing by service profile.
 
 ## Summary
 

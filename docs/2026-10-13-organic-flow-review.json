@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 88,
+    "pending": 87,
     "unchanged": 80,
-    "revised": 352,
-    "reviewed": 432,
+    "revised": 353,
+    "reviewed": 433,
     "topic_chapters": 520
   },
   "entries": [
@@ -5951,12 +5951,18 @@
       "path": "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md",
       "group": "30-architecture/30.3-infra-patterns/04-data-at-scale",
       "title": "Database Scaling — Partitioning, Replication, Connection Pooling, Query Optimization",
-      "status": "pending",
-      "baseline_sha256": "031351759bec53881ca61be23fbb8afc21652df6e8e9ac1b4a450cab6d4a2ffa",
+      "status": "revised",
+      "baseline_sha256": "7ef29e4ea61f15f82ea2ee64388743b669b8460172d5ac665d0048474db97acb",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do I identify the database constraint first, then choose among query tuning, pooling, replicas, partitioning, vertical growth and sharding without breaking consistency or recovery guarantees?",
+      "disposition": "Reordered the chapter from request symptoms to measurements and matching levers, then explained query plans, pool budgets, replica freshness/failover, partition boundaries and the point where sharding is warranted. Repaired the undeclared PL/pgSQL variable, made the partition key and uniqueness limit explicit, and added the missing PgBouncer transaction-pooling and Prisma-version boundaries. Added a source-linked retrieval question while preserving the existing revision questions.",
+      "validation": [
+        "Re-read in learning order; checked the definitions, First Principles, evidence-to-lever path, SQL examples, failure boundaries, one Summary and focused cross-references.",
+        "Verified new PostgreSQL, PgBouncer and Prisma references against current official documentation; all five candidate links returned HTTP 200.",
+        "Fresh-reader check answered the four diagnostic, mechanism and SQL questions without surfacing concrete ambiguity or a missing essential caveat.",
+        "All 30 repository verification gates passed; standalone link check found 0 broken links across 10,795 links and 152 anchors; citation baseline has 2,546 URLs with no drift.",
+        "Production Jekyll build and site-wide rendered-heading validation passed."
+      ]
     },
     {
       "path": "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.02-data-pipelines.md",

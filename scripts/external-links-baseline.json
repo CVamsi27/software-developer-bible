@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2543,
+ "url_count": 2546,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -1434,7 +1434,6 @@
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.29-distributed-cache.md"
   ],
   "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html": [
-   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md",
    "80-lanes-abroad-full-stack/80.08-system-design-case-bank.md"
   ],
   "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html": [
@@ -2238,6 +2237,9 @@
   ],
   "https://docs.prisma.io/docs/orm/middleware/how-middleware-works": [
    "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.04-multi-tenant-saas-architecture.md"
+  ],
+  "https://docs.prisma.io/docs/orm/prisma-client/setup-and-configuration/databases-connections/connection-pool": [
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md"
   ],
   "https://docs.python.org/3/library/urllib.parse.html": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.md"
@@ -6194,8 +6196,7 @@
    "50-quality/50.4-production-engineering/50.4.05-on-call-without-burnout.md"
   ],
   "https://sre.google/sre-book/data-integrity/": [
-   "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.05-decomposing-monolith-database.md",
-   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md"
+   "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.05-decomposing-monolith-database.md"
   ],
   "https://sre.google/sre-book/evolving-sre-engagement-model/": [
    "50-quality/50.4-production-engineering/50.4.04-production-readiness-reviews.md"
@@ -7472,6 +7473,9 @@
   "https://www.patterns.dev/": [
    "30-architecture/30.1-design-patterns/06-interview-prep/30.1.6.01-interview-questions.md"
   ],
+  "https://www.pgbouncer.org/config": [
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md"
+  ],
   "https://www.pgbouncer.org/config.html": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.01-connection-pooling.md"
   ],
@@ -7480,6 +7484,7 @@
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.01-connection-pooling.md",
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.06-interview-questions.md",
    "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md",
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/REVISION.md",
    "80-lanes-abroad-full-stack/80.08-system-design-case-bank.md"
   ],
   "https://www.pgbouncer.org/usage.html": [
@@ -7666,7 +7671,8 @@
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.md"
   ],
   "https://www.postgresql.org/docs/current/pgstatstatements.html": [
-   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.05-postgresql-performance.md"
+   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.05-postgresql-performance.md",
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md"
   ],
   "https://www.postgresql.org/docs/current/pgtrgm.html#PGTRGM-INDEX": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.01-pagination.md"
@@ -7694,6 +7700,9 @@
   ],
   "https://www.postgresql.org/docs/current/runtime-config-locks.html": [
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.02-deadlocks.md"
+  ],
+  "https://www.postgresql.org/docs/current/runtime-config-replication.html": [
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md"
   ],
   "https://www.postgresql.org/docs/current/runtime-config-resource.html": [
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-postgresql.md",
@@ -7787,7 +7796,8 @@
   ],
   "https://www.postgresql.org/docs/current/using-explain.html": [
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.05-postgresql-performance.md",
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.03-execution-plans.md"
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.03-execution-plans.md",
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md"
   ],
   "https://www.postgresql.org/docs/current/view-pg-locks.html": [
    "20-backend/20.4-database/04-orm-and-access/20.4.4.02-prisma-advanced.md"

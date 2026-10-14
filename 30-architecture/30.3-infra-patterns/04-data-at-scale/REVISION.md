@@ -30,6 +30,10 @@ Source: [Database Scaling — Partitioning, Replication, Connection Pooling, Que
 
 **A:** No. The size is per user/database pool, with other pools/reserve configuration and direct clients adding demand. Budget fleet-wide useful execution and queueing, not just one setting.
 
+**Q:** In PgBouncer transaction mode, which session assumptions must an application avoid, and when can it use named prepared statements?
+
+**A:** The server connection is released at transaction end, so session `SET` state and session-level advisory locks do not follow the client to its next transaction. PgBouncer supports protocol-level named prepared statements in this mode only when `max_prepared_statements` is nonzero; SQL `PREPARE`/`DEALLOCATE` remains incompatible. Verify the driver's protocol behavior against the [PgBouncer feature matrix](https://www.pgbouncer.org/features.html).
+
 ## Data Pipelines — ETL, Stream Processing, Data Lake
 
 Source: [Data Pipelines — ETL, Stream Processing, Data Lake](30.3.4.02-data-pipelines.md)

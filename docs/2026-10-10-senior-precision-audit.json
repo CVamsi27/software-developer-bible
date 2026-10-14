@@ -14071,19 +14071,27 @@
       "path": "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md",
       "genre": "teaching",
       "baseline_sha256": "c6c1ab305a9ee2742915ea1c89f568e9c0c7360803a005c5578bb90ed92b393c",
-      "state": "reviewed",
+      "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Definition and terminology",
-        "Mechanism and boundaries",
-        "Examples and failure cases",
-        "Version/tooling claims",
-        "Internal and source links"
+        "Practical and textbook bundler definitions plus First Principles",
+        "Rspack 2.2 release status and Node.js 2.x runtime requirements",
+        "Built-in SWC transform versus whole-program TypeScript checking",
+        "Rspack 2 cache and incremental mechanisms, defaults and invalidation",
+        "Webpack loader/plugin migration limits and Module Federation runtime boundary",
+        "Runnable compiler fixture, index, revision questions, interview bank and navigation"
       ],
-      "sources": [],
-      "disposition": "Read end to end; definitions, examples, boundaries, and navigation are accurate and no substantive edit was needed.",
-      "validation": "Manual technical review; Rspack 2.2 fixture compiled and ran under Node.js 22.",
-      "current_sha256": "c6c1ab305a9ee2742915ea1c89f568e9c0c7360803a005c5578bb90ed92b393c"
+      "sources": [
+        "https://rspack.rs/blog/announcing-2-2",
+        "https://rspack.rs/guide/migration/webpack",
+        "https://rspack.rs/guide/features/builtin-swc-loader",
+        "https://rspack.rs/config/cache",
+        "https://rspack.rs/api/javascript-api/compiler",
+        "https://rspack.rs/guide/features/plugin"
+      ],
+      "disposition": "Rebuilt the chapter around an existing Webpack application evaluating a measured migration. Preserved and strengthened the runnable typed-module fixture, hardened compiler failure/close handling, added the Rspack 2.2 and Node support baseline, made cache versus incremental behavior and migration/runtime proof explicit, and updated the bundlers index, revision companion and interview bank.",
+      "validation": "All five newly cited Rspack documentation URLs returned HTTP 200. The exact fixture compiled and ran in isolation with @rspack/core 2.2.9 on Node.js 23.7.0. All 30 repository gates passed; standalone link checking found 10,818 links and 172 anchors with zero issues; the 2,582-URL baseline has no drift. Writer fixed-point, Ruby 3.4.11 production Jekyll build, site-wide rendered-heading scan, focused one-H1/section assertions, and git diff --check passed.",
+      "current_sha256": "e26b711a1468d42346ffd4e14baf84f0c6582f8afd199364c60a8d01df461790"
     },
     {
       "path": "40-platform/40.5-build-tools/01-bundlers/INDEX.md",

@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "6e6bc5f5e1033793bf636e1ef69425ff625d2464e10bdad4f72a3c7a69aceb73",
+ "corpus_digest": "902b3d27399e905ec5d98d59824abd323d219e2df964aae5a1ac80db5ef4dc8b",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5236
+  "read_minutes": 5238
  },
  "chapters": [
   {
@@ -5557,7 +5557,7 @@
     "reference",
     "tool"
    ],
-   "m": 4
+   "m": 5
   },
   {
    "p": "40-platform/40.5-build-tools/01-bundlers/REVISION.html",
@@ -5568,7 +5568,7 @@
     "practice",
     "revision"
    ],
-   "m": 2
+   "m": 3
   },
   {
    "p": "40-platform/40.5-build-tools/02-compilers/40.5.2.01-babel.html",

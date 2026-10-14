@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2580,
+ "url_count": 2582,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -6107,14 +6107,25 @@
   "https://rsbuild.dev/": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md"
   ],
-  "https://rspack.rs/blog": [
+  "https://rspack.rs/api/javascript-api/compiler": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md"
   ],
   "https://rspack.rs/blog/announcing-2-0": [
    "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md"
   ],
-  "https://rspack.rs/guide/advanced/module-federation": [
+  "https://rspack.rs/blog/announcing-2-2": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md"
+  ],
+  "https://rspack.rs/config/cache": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md",
+   "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
+  ],
+  "https://rspack.rs/guide/features/builtin-swc-loader": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md"
+  ],
+  "https://rspack.rs/guide/features/plugin": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md",
+   "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
   ],
   "https://rspack.rs/guide/migration/webpack": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md"
@@ -8354,9 +8365,6 @@
   ],
   "https://www.robustperception.io/": [
    "40-platform/40.4-observability/03-sre-targets/40.4.3.02-alerting.md"
-  ],
-  "https://www.rspack.dev/": [
-   "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md"
   ],
   "https://www.ruby-lang.org/en/downloads/releases/": [
    "docs/deployment.md"

@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Build%20Tools-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../../docs/topic-importance.md)
 
@@ -81,6 +81,18 @@ Source: [Rspack](40.5.1.04-rspack.md)
 **Q:** Why test every required Webpack integration during a Rspack migration?
 
 **A:** Compatibility is broad but not universal. Custom plugins, loader behavior, and output semantics must be demonstrated on the application rather than inferred from similar configuration.
+
+**Q:** In Rspack 2, how do `cache` and `incremental` differ?
+
+**A:** `cache` reuses fine-grained compilation results from memory or persistent storage. `incremental` recovers work between development rebuilds and updates affected passes. They are independent: disabling `cache` does not disable `incremental`, so a fully cold comparison must disable both. See [Rspack's cache boundaries](40.5.1.04-rspack.md#keep-cache-mechanisms-separate) and the [official cache reference](https://rspack.rs/config/cache).
+
+**Q:** Why does a successful Webpack-plugin load not complete a Rspack migration test?
+
+**A:** Rspack supports many, but not all, Webpack plugins and configuration behaviors. A plugin may rely on internal Webpack APIs, while Module Federation can compile but still fail at runtime because a remote is unavailable or shared package versions do not match. Check the versioned compatibility information and exercise real production routes. See [the integration boundary](40.5.1.04-rspack.md#migrate-the-integration-not-just-the-config) and the [plugin documentation](https://rspack.rs/guide/features/plugin).
+
+**Q:** Which dependencies should invalidate a Rspack persistent cache?
+
+**A:** Include configuration and other external files whose contents can affect resolution or transforms. The CLI adds its config file automatically; direct API users and setups that load additional build-configuration files must list those paths in `cache.buildDependencies`. See [the cache migration path](40.5.1.04-rspack.md#keep-cache-mechanisms-separate) and [Rspack's cache reference](https://rspack.rs/config/cache).
 
 ## Summary
 

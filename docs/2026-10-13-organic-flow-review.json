@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 67,
+    "pending": 65,
     "unchanged": 80,
-    "revised": 373,
-    "reviewed": 453,
+    "revised": 375,
+    "reviewed": 455,
     "topic_chapters": 520
   },
   "entries": [
@@ -6955,23 +6955,31 @@
       "path": "40-platform/40.5-build-tools/02-compilers/40.5.2.01-babel.md",
       "group": "40-platform/40.5-build-tools/02-compilers",
       "title": "Babel",
-      "status": "pending",
-      "baseline_sha256": "1af87069054b4cf0cd4285964a05db26ccfbb680b189d421e237282addb2389f",
+      "status": "revised",
+      "baseline_sha256": "1fbfc98692a0e7b73d72f3f4875aaac3dfa3358813ba50d7ed976be5eb3c67b0",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do syntax lowering, runtime polyfills and type checking differ, and what changes when a Babel 7 pipeline moves to Babel 8?",
+      "disposition": "Rebuilt the chapter around a browser compatibility failure and one class-transform trace. Reconciled the example with Babel 8 ESM and Node requirements, corrected default target/module behavior, distinguished Babel 7 polyfill options from the Babel 8 plugin path, retained monorepo config discovery and helper-runtime ownership, and aligned the revision drill and compiler index.",
+      "validation": [
+        "Babel 8 transform example passed under Node.js 24.11.1 with @babel/core 8 and @babel/preset-env 8; private-field behavior and source-map source assertion passed.",
+        "Official Babel 8 release, migration, preset-env and transform-runtime documentation reviewed; all newly cited external URLs returned HTTP 200.",
+        "All 30 repository gates passed, including writer fixed-point and citation-baseline diff; standalone check_links.py verified 10,824 links and 185 anchors with zero issues. Ruby 3.4.11 Jekyll production build, site-wide rendered-heading sweep, focused rendered checks, and git diff --check passed."
+      ]
     },
     {
       "path": "40-platform/40.5-build-tools/02-compilers/40.5.2.02-esbuild-swc.md",
       "group": "40-platform/40.5-build-tools/02-compilers",
       "title": "esbuild and SWC",
-      "status": "pending",
-      "baseline_sha256": "1bcafc0c8b67b2841e60623567fc1fed1a2158612651b4f4f03c1601585d8f06",
+      "status": "revised",
+      "baseline_sha256": "ab8c89151d40e042881fcb5847ef55e3ce5add69489a3fd830ec67b97b6e850b",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What does a successful esbuild/SWC transform prove, and which bundling, target, polyfill, type and packaging responsibilities remain?",
+      "disposition": "Reorganized the comparison around a concrete TypeScript error that both transforms accept. Clarified esbuild build-plugin and ES5 limits, SWC target/polyfill configuration, separate type/declaration gates, ESM code-splitting constraints, decorator metadata and Vite 8 pipeline ownership; updated the learning index and source-linked revision question.",
+      "validation": [
+        "The executable esbuild/SWC transform example passed under Node.js 24.11.1 and preserved the runtime string while stripping its TypeScript annotation.",
+        "Official esbuild API/plugins, SWC compilation/supported-browser and Vite 8 documentation reviewed; all newly cited external URLs returned HTTP 200.",
+        "All 30 repository gates passed, including writer fixed-point and citation-baseline diff; standalone check_links.py verified 10,824 links and 185 anchors with zero issues. Ruby 3.4.11 Jekyll production build, site-wide rendered-heading sweep, focused rendered checks, and git diff --check passed."
+      ]
     },
     {
       "path": "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.01-build-optimization.md",

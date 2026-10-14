@@ -1,7 +1,7 @@
 # Build Tools — Index
 
-> **Study time:** ≈ 1 h 5 m of reading (13 files, ~5 min average).
-> **13 files** — Frontend build tooling from Webpack, Vite, Turbopack, Rspack to Babel, ESBuild, SWC, build optimization, asset pipelines (CSS/images/fonts), tool comparison, and interview questions.
+> **Study time:** ≈ 1 h 7 m of reading (13 files, ~5 min average).
+> **13 files** — Frontend build tooling from Webpack, Vite, Turbopack and Rspack through Babel, esbuild and SWC; then build optimization, asset pipelines, tool comparison and interview practice.
 
 [![Files](https://img.shields.io/badge/files-13-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Tooling-%2364748b)](#)
@@ -16,7 +16,7 @@
 | Category | Folder | Files | What it covers |
 | ------------------------- | -------------------------------------------------------------------------- | ----: | ---------------------------------------------------------------------------------------------------- |
 | Bundlers | [01-bundlers/](01-bundlers/INDEX.md) | 4 | Webpack, Vite, Turbopack, Rspack — the main options |
-| Compilers | [02-compilers/](02-compilers/INDEX.md) | 2 | Babel, ESBuild/SWC — how JSX + TS get to JS |
+| Compilers | [02-compilers/](02-compilers/INDEX.md) | 2 | Babel, esbuild and SWC — syntax transforms, bundling and runtime/type-check boundaries |
 | Optimization & Comparison | [03-optimization-and-comparison/](03-optimization-and-comparison/INDEX.md) | 3 | Build optimization, asset pipelines (CSS/images/fonts), tool comparison — fast builds, small bundles |
 | Interview Prep | [04-interview-prep/](04-interview-prep/INDEX.md) | 1 | 44 Qs |
 
@@ -48,8 +48,8 @@ How TS/JSX become browser-compatible JS.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 05 | [Babel](02-compilers/40.5.2.01-babel.md) | Compilation, presets, plugins, polyfills, browserslist | Important | Specialized | 4 min |
-| 06 | [ESBuild & SWC](02-compilers/40.5.2.02-esbuild-swc.md) | Bundler/compiler roles, semantics, type-check boundary | Important | Specialized | 3 min |
+| 05 | [Babel](02-compilers/40.5.2.01-babel.md) | AST transforms, target output, Babel 7-to-8 changes, explicit polyfill and type-check boundaries | Important | Specialized | 5 min |
+| 06 | [ESBuild & SWC](02-compilers/40.5.2.02-esbuild-swc.md) | Bundling versus transforms, type erasure, syntax targets, SWC's opt-in `core-js` injection | Important | Specialized | 4 min |
 
 ---
 
@@ -76,7 +76,7 @@ How TS/JSX become browser-compatible JS.
 1. **Webpack + Vite** — the two main ones
 2. **Build Optimization** — tree shaking, code splitting
 3. **Asset Pipelines** — CSS/images/fonts, where page weight actually lives
-4. **Babel + ESBuild/SWC** — the transpilers
+4. **Babel + esbuild/SWC** — source transformation, type-erasure boundaries and generated output
 5. **Turbopack + Rspack** — the new Rust-based options
 6. **Tool Comparison** — when to use what
 7. **Revision** — [Bundlers](01-bundlers/REVISION.md), [Compilers](02-compilers/REVISION.md), [Optimization](03-optimization-and-comparison/REVISION.md)

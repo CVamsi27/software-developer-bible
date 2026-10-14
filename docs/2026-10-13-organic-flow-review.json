@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 60,
+    "pending": 59,
     "unchanged": 80,
-    "revised": 380,
-    "reviewed": 460,
+    "revised": 381,
+    "reviewed": 461,
     "topic_chapters": 520
   },
   "entries": [
@@ -7096,7 +7096,7 @@
       "group": "40-platform/40.6-git-advanced",
       "title": "Git Advanced Commands",
       "status": "revised",
-      "baseline_sha256": "cc294ec3bc74517d484a1f98fdb5eb342b25fb7a01dd134477b36b7d5c3933c4",
+      "baseline_sha256": "4ffad5fc2e5049a22b5cf1351b7260f895af63f7e0fae6853bc945873887e514",
       "previous_depth_review": "revised",
       "reader_question": "When a regression appears while work is unfinished, how do I find the introducing commit, recover only what Git saved, choose stash or worktree, restore a dependency pin, and undo shared changes safely?",
       "disposition": "Rebuilt the chapter as one production investigation and recovery flow: establish a stable bisect test, preserve an earlier commit with reflog, separate short interruptions from parallel work, restore a superproject-pinned submodule, and choose reset or revert by branch audience. Clarified exit-code and skipped-candidate ambiguity, local reflog/object limits, stash coverage, shared worktree storage, submodule --remote behavior, and reset/revert effects. Removed duplicated log, diff, blame, sparse-checkout and cherry-pick catalogs owned by adjacent chapters. Updated the Git Advanced index, source-linked revision questions, and interview source paths, including the previously incorrect git-subtree reference.",
@@ -7105,7 +7105,8 @@
         "Checked current Git 2.56 manuals for bisect, reflog, stash, worktree, submodule, reset and revert. Probed all three newly cited URLs; each returned HTTP 200. Corrected the interview bank source for git subtree to the Git project documentation.",
         "Isolated Git repositories passed bisect-run first-bad detection, reflog commit recovery after reset, stash restoration including an untracked file, linked-worktree creation/removal, soft/mixed/hard reset state checks, revert behavior, pinned submodule initialization and deliberate --remote advancement.",
         "All 30 repository verification gates passed, including all 95 gate self-tests and writer fixed-point. Standalone link checking verified 10,835 links and 185 anchors with zero issues; citation baseline is clean at 2,603 URLs.",
-        "Ruby 3.4.11 production Jekyll build, site-wide rendered-heading scan, focused one-H1/section assertions for this chapter, and git diff --check passed."
+        "Ruby 3.4.11 production Jekyll build, site-wide rendered-heading scan, focused one-H1/section assertions for this chapter, and git diff --check passed.",
+        "Synchronized the next-chapter navigation title with Git Patch, Bundle & Archive."
       ]
     },
     {
@@ -7129,19 +7130,25 @@
       "path": "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md",
       "group": "40-platform/40.6-git-advanced",
       "title": "Git Code Archaeology",
-      "status": "pending",
-      "baseline_sha256": "102584adc2f3b79a9dedba3f470d2d5979b81846a4a880a140197ba5160120ff",
+      "status": "revised",
+      "baseline_sha256": "149b35c852ed53b00ed05be85c1ce51e12c08b95ed1fe53a7f88e2bf2d684bfb",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do I move from a reported behavior to the change that altered it, then validate the explanation without mistaking line attribution for rationale?",
+      "disposition": "Rebuilt the 375-line command catalog as a concise investigation: bound the behavior and revision range, attribute only relevant lines, inspect the candidate diff, search deleted/changed text with the distinct -S and -G semantics, and follow file/function history with explicit -M/-C, --follow and -L limits. Moved bisect and reflog mechanics back to the adjacent Advanced Commands owner, removed overlapping use-case/common-mistake/best-practice lists and irrelevant recovery/submodule references, and added review-record, partial-history, attribution-trust, license and exposed-secret boundaries. Aligned the INDEX topic summary, five source-linked revision questions, interview answers and adjacent navigation labels.",
+      "validation": [
+        "Re-read in category order and preserved practical and textbook definitions, separate First Principles, one coherent investigation flow, one Summary, focused See Also links and current primary references.",
+        "Checked the current Git 2.56 blame, log, show, bisect and partial-clone manuals. Probed the newly cited git-show manual; it returned HTTP 200. The citation baseline has no drift at 2,603 URLs.",
+        "A disposable Git 2.48.1 fixture passed known-formatting blame suppression, moved-code attribution with -M/-C, single-file --follow history, -L line-range history, git-show inspection, and the distinct -S occurrence-count versus -G changed-line behavior.",
+        "All 30 repository verification gates passed, including alignment, link/cross-reference, template, duplication, read-time, generated-index and writer fixed-point checks. Standalone link checking verified 10,836 links and 185 anchors with no broken links, stale labels or inline paths.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading scan passed. Focused render checks confirmed one authored H1, required chapter sections and history queries, and removal of the old command-catalog sections; git diff --check passed."
+      ]
     },
     {
       "path": "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.md",
       "group": "40-platform/40.6-git-advanced",
       "title": "Git at Scale: LFS & Partial Clones",
       "status": "pending",
-      "baseline_sha256": "d4b04c4bea64181cbfa74e2ea329c7fcd0b63fd5a7975abd95d98e5f69a33bbb",
+      "baseline_sha256": "48efccb825ca0d5e5154a46376e3f9eceeb714fc6cfbb516da226a44242011b2",
       "previous_depth_review": "revised",
       "reader_question": "",
       "disposition": "",

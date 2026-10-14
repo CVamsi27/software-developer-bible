@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "796e5a9e6d7feb425da06d915acef9b5de3e7baad56a080cf5212f481d9143f0",
+ "corpus_digest": "c8511afbfc115dabd7761211bad7dd1a8cbd6d0cbbfeae2778695272c2740274",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5238
+  "read_minutes": 5232
  },
  "chapters": [
   {
@@ -5746,7 +5746,7 @@
     "guide",
     "reference"
    ],
-   "m": 12
+   "m": 5
   },
   {
    "p": "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.html",
@@ -5792,7 +5792,7 @@
     "practice",
     "revision"
    ],
-   "m": 5
+   "m": 6
   },
   {
    "p": "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.html",

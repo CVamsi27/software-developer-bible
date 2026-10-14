@@ -1,6 +1,6 @@
 # Git Advanced — Index
 
-> **Study time:** ≈ 1 h 23 m of reading (11 files, ~8 min average).
+> **Study time:** ≈ 1 h 17 m of reading (11 files, ~7 min average).
 > **11 files** — Advanced Git operations from the object model, branching strategies, rebase, cherry-pick, hooks, bisect, reflog, format-patch, code archaeology, LFS/partial clones, and commit signing to interview questions.
 
 [![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
@@ -83,7 +83,7 @@ The power tools.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 07 | [Code Archaeology](40.6.07-code-archaeology.md) | `git blame`, `git log -S`, `git bisect`, `git reflog`, history investigation | Important | Foundational | 12 min |
+| 07 | [Code Archaeology](40.6.07-code-archaeology.md) | Line attribution limits, moved-code detection, `-S` vs `-G`, path/function history, review evidence | Important | Foundational | 5 min |
 
 ---
 

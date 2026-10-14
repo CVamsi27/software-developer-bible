@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2605,
+ "url_count": 2603,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -2729,14 +2729,8 @@
   "https://git-scm.com/book/en/v2/Git-Internals-Packfiles": [
    "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md"
   ],
-  "https://git-scm.com/book/en/v2/Git-Tools-Revision-Selection": [
-   "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md"
-  ],
   "https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work": [
    "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.md"
-  ],
-  "https://git-scm.com/book/en/v2/Git-Tools-Submodules": [
-   "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md"
   ],
   "https://git-scm.com/docs": [
    "40-platform/40.6-git-advanced/40.6.10-interview-questions.md"
@@ -2755,7 +2749,8 @@
    "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://git-scm.com/docs/git-blame": [
-   "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md"
+   "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://git-scm.com/docs/git-bundle": [
    "40-platform/40.6-git-advanced/40.6.06-patch-and-bundle.md",
@@ -2785,7 +2780,8 @@
    "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md"
   ],
   "https://git-scm.com/docs/git-log": [
-   "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md"
+   "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://git-scm.com/docs/git-mktree": [
    "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md"
@@ -2819,6 +2815,10 @@
   ],
   "https://git-scm.com/docs/git-send-email": [
    "40-platform/40.6-git-advanced/40.6.06-patch-and-bundle.md"
+  ],
+  "https://git-scm.com/docs/git-show": [
+   "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://git-scm.com/docs/git-sparse-checkout": [
    "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.md"
@@ -2861,7 +2861,9 @@
    "40-platform/40.6-git-advanced/40.6.03-rebase-cherry-pick.md"
   ],
   "https://git-scm.com/docs/partial-clone": [
-   "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.md"
+   "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md",
+   "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://github.blog/changelog/2026-09-23-node-20-is-no-longer-available-in-github-actions/": [
    "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.01-github-actions.md"
@@ -5297,9 +5299,6 @@
   ],
   "https://nx.dev/docs/kb/local-generators": [
    "40-platform/40.8-monorepo/40.8.03-nx.md"
-  ],
-  "https://ohshitgit.com/": [
-   "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md"
   ],
   "https://olm.operatorframework.io/docs/": [
    "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.03-crds-operators-controller-patterns.md"

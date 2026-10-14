@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Git%20Advanced-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-6_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../docs/topic-importance.md)
 
@@ -150,9 +150,25 @@ Source: [Git Patch, Bundle & Archive](40.6.06-patch-and-bundle.md)
 
 Source: [Git Code Archaeology](40.6.07-code-archaeology.md)
 
-**Q:** Why should blame be followed by the introducing commit and its context?
+**Q:** What does `git blame` establish, and what evidence is needed before you explain a behavior change?
 
-**A:** The last line edit may be formatting or refactoring. The relevant change's diff, message, surrounding code, and tests explain intent better than author attribution alone.
+**A:** Blame attributes each current line to a recorded change. It does not identify the behavior-changing commit when a later refactor touched the line, and its author fields do not prove identity or intent. Inspect the candidate diff, tests and linked review/incident records. See the [git-blame](https://git-scm.com/docs/git-blame) and [git-show](https://git-scm.com/docs/git-show) manuals.
+
+**Q:** When should you use `git log -S` instead of `git log -G`?
+
+**A:** `-S` finds commits that change the number of occurrences of an exact string. `-G` finds commits whose added or removed patch lines match a regular expression, even when the match count stays the same. Inspect the patch before treating a match as causal. See the [git-log manual](https://git-scm.com/docs/git-log).
+
+**Q:** How do `git blame -M`, `-C`, and `git log --follow` differ?
+
+**A:** `-M` detects moved or copied lines within a file; `-C` also searches other files, with repeated `-C` widening the search. `--follow` continues one file's log across detected renames and accepts only a single path. These are heuristics, so inspect the resulting commits. See the [git-blame](https://git-scm.com/docs/git-blame) and [git-log](https://git-scm.com/docs/git-log) manuals.
+
+**Q:** What does `git log -L` show, and what limits should shape its use?
+
+**A:** It traces and prints patches for one line range or function in a file. The range must exist at the starting revision; the walk starts from at most one positive revision and cannot be combined with path limiters. See the [git-log manual](https://git-scm.com/docs/git-log).
+
+**Q:** Why can `git log --all` still miss the history you need?
+
+**A:** `--all` searches refs already present in the local repository. It cannot retrieve deleted or unfetched remote refs, and a shallow clone stops at its history boundary. Fetch relevant refs or deepen/unshallow the repository, then verify that the required objects are available. See the [git-log](https://git-scm.com/docs/git-log) and [partial-clone](https://git-scm.com/docs/partial-clone) manuals.
 
 ## Git at Scale: LFS & Partial Clones
 

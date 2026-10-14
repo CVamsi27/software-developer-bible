@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-19_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-20_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
 
@@ -352,7 +352,11 @@ Source: [Rate Limiter System Design](30.2.2.13-rate-limiter.md)
 
 **Q:** When is `Retry-After` useful in a 429 response?
 
-**A:** It is useful when the limiter can give a defensible retry delay. A policy reset timestamp and a delay are different values, so return the header only with the meaning and units the API contract promises.
+**A:** It is useful when the limiter can give a defensible retry delay. For a token bucket, divide the missing request cost by the refill rate and round up to the response's delay unit. A policy reset timestamp and a delay are different values, so return the header only with the meaning and units the API contract promises. [RFC 9110](https://datatracker.ietf.org/doc/html/rfc9110#section-10.2.3) defines the field as delay-seconds or an HTTP date; [RFC 6585](https://datatracker.ietf.org/doc/html/rfc6585#section-4) permits it on 429 but does not define the caller identity or counting policy.
+
+**Q:** What state does a token bucket need, and why must its update be atomic?
+
+**A:** Keep the current credit and last-refill time. Refill from one authoritative clock, cap credit at the burst capacity, compare against request cost and spend only on admission. A cost above capacity can never pass. If concurrent requests read the same old balance, they can all spend one token. A Redis script makes the check/update atomic on the executing primary, but [Redis replication is asynchronous](https://redis.io/docs/latest/operate/oss_and_stack/management/replication/) and can lose a recent acknowledged write during failover; atomicity does not promise durable global quota enforcement.
 
 ## Web Crawler System Design
 

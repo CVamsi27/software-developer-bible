@@ -798,6 +798,14 @@ Source: [API Gateway System Design](30.2.2.31-api-gateway.md)
 
 **A:** The orders service should authorize the authenticated principal against order 7 and its tenant or ownership policy. The gateway can authenticate and admit the request, but route access alone does not grant object access.
 
+**Q:** Why can a correctly signed JWT still be invalid for this API?
+
+**A:** Its signature proves that a trusted key signed the token, not that this API is its intended audience. Validate the expected issuer, audience, approved algorithm/key, expiry, and token type before trusting its claims. See [RFC 8725, Section 3.9](https://www.rfc-editor.org/rfc/rfc8725.html#section-3.9).
+
+**Q:** What should the gateway do when an upstream times out after a `POST` may have committed?
+
+**A:** Treat the outcome as unknown. Do not replay the operation with a new identity; reconcile or retry with a stable idempotency key enforced by the owning service.
+
 ## Additional case traces
 
 Source: [30.2.2.02-whatsapp](30.2.2.02-whatsapp.md)

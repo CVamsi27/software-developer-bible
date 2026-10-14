@@ -1,6 +1,6 @@
 # System Design — Case Studies
 
-> **Study time:** ≈ 6 h 34 m of reading (32 files, ~12 min average).
+> **Study time:** ≈ 6 h 35 m of reading (32 files, ~12 min average).
 Applied examples of system design interviews. Read [../01-theory/](../01-theory/INDEX.md) first, then choose cases that match your interview goals.
 
 [![Files](https://img.shields.io/badge/files-32-blue)](../../../INDEX.md)
@@ -48,7 +48,7 @@ The 31 cases are grouped by the kind of reasoning they practice. Use the tiers a
 ## Case studies
 
 | # | File | Domain | Key topics | Role priority | General importance |
-| --- | ----------------------------------------------------------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------ |
+| --- | ----------------------------------------------------------------------- | --------------------- | -------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------ |
 | 01 | [URL Shortener](30.2.2.01-url-shortener.md) | Web (foundational) | Code allocation, uniqueness, redirect caching, analytics durability | Important | Important |
 | 02 | [WhatsApp](30.2.2.02-whatsapp.md) | Messaging & Real-Time | Retry-safe acceptance, device delivery, E2EE, group membership | Important | Important |
 | 03 | [Uber](30.2.2.03-uber.md) | Ride-sharing & Geo | Location freshness, geo discovery, road ETA, trip and payment boundaries | Important | Important |
@@ -79,7 +79,7 @@ The 31 cases are grouped by the kind of reasoning they practice. Use the tiers a
 | 28 | [Parking Lot](30.2.2.28-parking-lot.md) | Infrastructure & LLD | Atomic spot ownership, compatible allocation, versioned fees, payment outcomes, physical reconciliation | Important | Important |
 | 29 | [Distributed Cache](30.2.2.29-distributed-cache.md) | Infrastructure & LLD | Scoped keys, stale-fill races, partition and failover, hot-key control, origin-safe recovery | Important | Important |
 | 30 | [Message Queue](30.2.2.30-message-queue.md) | Infrastructure & LLD | ISR acknowledgments, partition ordering, idempotent effects, retention, poison messages, broker boundaries | Important | Important |
-| 31 | [API Gateway](30.2.2.31-api-gateway.md) | Infrastructure & LLD | Routing, rate limiting, JWT validation, BFF pattern, circuit breaker, protocol translation | Important | Important |
+| 31 | [API Gateway](30.2.2.31-api-gateway.md) | Infrastructure & LLD | JWT trust vs resource authorization, route normalization, deadlines and retries, scoped caching, BFF failure budgets | Important | Important |
 
 ---
 

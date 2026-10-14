@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2536,
+ "url_count": 2538,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -8020,6 +8020,12 @@
   ],
   "https://www.rfc-editor.org/rfc/rfc8594.html": [
    "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.03-versioning.md"
+  ],
+  "https://www.rfc-editor.org/rfc/rfc8725.html": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.31-api-gateway.md"
+  ],
+  "https://www.rfc-editor.org/rfc/rfc8725.html#section-3.9": [
+   "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc8767.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.22-dns-and-name-resolution.md",

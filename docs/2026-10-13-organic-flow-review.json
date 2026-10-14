@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 58,
+    "pending": 57,
     "unchanged": 80,
-    "revised": 382,
-    "reviewed": 462,
+    "revised": 383,
+    "reviewed": 463,
     "topic_chapters": 520
   },
   "entries": [
@@ -7163,12 +7163,17 @@
       "path": "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.md",
       "group": "40-platform/40.6-git-advanced",
       "title": "Signed Commits & Repository Security",
-      "status": "pending",
-      "baseline_sha256": "303a0b5e0aafd34d5d15368ae022dc252b730b06e31e3de20d4891767067b70c",
+      "status": "revised",
+      "baseline_sha256": "842d3c01076a238971fb40d8f50dbc3314a878c6be94b1bdcf5903850dc4db80",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Why can generic Git signature verification accept a Gitsign commit without proving the certificate identity expected by release policy?",
+      "disposition": "Added S/MIME to the scheme comparison and made the Gitsign verifier boundary executable: each keyless commit needs `gitsign verify` with the expected certificate identity and OIDC issuer because `git verify-commit` does not validate those certificate claims. Clarified GitHub Verified as saved host evidence that remains after key revocation, connected that behavior to incident response, removed a generic subsection heading, and retained server-side authorization and artifact-provenance boundaries.",
+      "validation": [
+        "Read the complete chapter, Git Advanced index and revision companion; checked the SSH signing example, contribution range, host-specific status and release-policy boundaries.",
+        "Checked current Git, GitHub and Gitsign primary documentation for verifier behavior, accepted host formats, Gitsign certificate-claim validation and persistent verification records; new Git manual citations were live and the baseline is synchronized at 2,609 URLs.",
+        "Disposable SSH-signed repository verified the actual shell range check: trusted signature succeeds; empty range succeeds; unsigned commit, untrusted signing key and missing base fail.",
+        "Generated reading-time and search metadata were synchronized; all 30 repository verification gates passed, the link gate checked 10,836 local links and 185 anchors with no failures, and the Ruby 3.4.11 production Jekyll build plus sitewide rendered-heading check passed."
+      ]
     },
     {
       "path": "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md",

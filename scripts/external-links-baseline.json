@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2607,
+ "url_count": 2609,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -1927,7 +1927,8 @@
    "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.md"
   ],
   "https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification": [
-   "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.md"
+   "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://docs.github.com/en/code-security/secret-scanning": [
    "20-backend/20.5-security/01-auth/20.5.1.03-api-keys.md"
@@ -2845,6 +2846,12 @@
   "https://git-scm.com/docs/git-update-ref": [
    "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md"
   ],
+  "https://git-scm.com/docs/git-verify-commit": [
+   "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.md"
+  ],
+  "https://git-scm.com/docs/git-verify-tag": [
+   "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.md"
+  ],
   "https://git-scm.com/docs/git-worktree": [
    "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md",
    "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.md",
@@ -3393,7 +3400,8 @@
    "50-quality/50.1-testing/02-frameworks/50.1.2.01-jest.md"
   ],
   "https://github.com/sigstore/gitsign": [
-   "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.md"
+   "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://github.com/sindresorhus/awesome-nodejs": [
    "20-backend/20.1-node.js/04-security-and-operations/20.1.4.04-interview-questions.md"

@@ -190,6 +190,14 @@ Source: [Signed Commits & Repository Security](40.6.09-signed-commits-repository
 
 **A:** It binds commit content to control of a trusted signing identity/key under a verification policy. It does not independently prove that the author field's human wrote or reviewed the code.
 
+**Q:** Why should a Gitsign policy call `gitsign verify` with an expected identity and issuer?
+
+**A:** `git verify-commit` can validate the signature and transparency entry without validating that the certificate claims match the intended signer. Pass the release workflow's exact certificate identity and OIDC issuer to `gitsign verify`. See the [Gitsign verification guide](https://github.com/sigstore/gitsign).
+
+**Q:** Does revoking a signing key necessarily remove a host's earlier Verified badge?
+
+**A:** No. GitHub stores a verification record at verification time and does not retroactively change it when a key is revoked or expires. Keep live authorization in a verifier policy that can be updated. See [GitHub's signature-verification behavior](https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification).
+
 ## Recovery and verification cases
 
 Source: [Advanced commands](40.6.05-git-advanced-commands.md), [bundles](40.6.06-patch-and-bundle.md), [scale](40.6.08-git-at-scale-lfs-partial-clones.md), and [signing](40.6.09-signed-commits-repository-security.md).

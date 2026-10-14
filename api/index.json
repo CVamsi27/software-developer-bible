@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "089bbed9617c217400079d871b4aba1026171013bf7e437028e21c29087d7b79",
+ "corpus_digest": "7a0b858f84e9dddb3ce21f1ed53a1c2d41fbfafc1b36e631b23ef0e0df616108",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5233
+  "read_minutes": 5234
  },
  "chapters": [
   {
@@ -5770,7 +5770,7 @@
     "reference",
     "security"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "40-platform/40.6-git-advanced/40.6.10-interview-questions.html",

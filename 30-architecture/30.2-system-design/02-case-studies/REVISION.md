@@ -676,7 +676,15 @@ Source: [Distributed ID Generator System Design](30.2.2.26-distributed-id-genera
 
 **Q:** Does a worker ID make a Snowflake-style generator safe after its lease expires?
 
-**A:** No. If an old process keeps issuing after the identity is reassigned, both owners can emit the same worker/time/sequence tuple. The old process must stop at a conservative lease deadline, or identities must not be reused under the chosen protocol.
+**A:** No. A paused old process can resume after reassignment and emit the same worker/time/sequence tuple. The reuse protocol must prevent that stale issuer from continuing, for example by confirming termination, reserving non-overlapping durable time ranges, or encoding a non-reused generation.
+
+**Q:** What does UUIDv7 ordering guarantee within one millisecond?
+
+**A:** RFC 9562 puts the Unix-millisecond timestamp first, but order among UUIDs from the same millisecond depends on how the implementation generates the remaining fields. See [RFC 9562, Section 5.7](https://www.rfc-editor.org/rfc/rfc9562.html#section-5.7).
+
+**Q:** Why should a range allocator reserve IDs with one atomic cursor update instead of `SELECT MAX(id)`?
+
+**A:** Concurrent `MAX` readers can see the same value and choose overlapping blocks. A single conditional `UPDATE ... RETURNING` serializes on the allocator row and returns a distinct half-open range to each caller.
 
 ## Ad Click Aggregator System Design
 

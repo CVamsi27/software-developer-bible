@@ -1,6 +1,6 @@
 # System Design — Case Studies
 
-> **Study time:** ≈ 6 h 28 m of reading (32 files, ~12 min average).
+> **Study time:** ≈ 6 h 30 m of reading (32 files, ~12 min average).
 Applied examples of system design interviews. Read [../01-theory/](../01-theory/INDEX.md) first, then choose cases that match your interview goals.
 
 [![Files](https://img.shields.io/badge/files-32-blue)](../../../INDEX.md)
@@ -74,7 +74,7 @@ The 31 cases are grouped by the kind of reasoning they practice. Use the tiers a
 | 23 | [Typeahead Autocomplete](30.2.2.23-typeahead-autocomplete.md) | Search & Data | Trie/radix/FST, bounded typo matching, deterministic ranking, visibility-scoped candidates, versioned index rollout | Important | Important |
 | 24 | [Metrics Monitoring Pipeline](30.2.2.24-metrics-monitoring-pipeline.md) | Platform & Telemetry | TSDB ingestion, OTel identity and temporality, exact cardinality admission, late samples, rollups, alert lifecycle | Important | Important |
 | 25 | [Distributed Job Scheduler](30.2.2.25-distributed-job-scheduler.md) | Automation | Occurrence identity, leases and fencing scope, outbox recovery, DST/misfire policy, retries, tenant fairness | Important | Important |
-| 26 | [Distributed ID Generator](30.2.2.26-distributed-id-generator.md) | Web (foundational) | Snowflake bit layout, clock rollback, worker identity, timestamp ordering limits, UUIDv7 comparison | Important | Important |
+| 26 | [Distributed ID Generator](30.2.2.26-distributed-id-generator.md) | Web (foundational) | Snowflake capacity, restart-safe clocks, stale-owner fencing, range allocation, UUIDv7 ordering | Important | Important |
 | 27 | [Ad Click Aggregator](30.2.2.27-ad-click-aggregator.md) | Platform & Telemetry | Stable event identity, watermarks, revisioned reporting, fraud decisions, settlement | Important | Important |
 | 28 | [Parking Lot](30.2.2.28-parking-lot.md) | Infrastructure & LLD | Compatible allocation, live sessions, physical evidence, fee boundaries, payment | Important | Important |
 | 29 | [Distributed Cache](30.2.2.29-distributed-cache.md) | Infrastructure & LLD | Consistent hashing, replication, eviction policies, cache stampede, hot key handling | Important | Important |

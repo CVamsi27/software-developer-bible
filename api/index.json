@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "e3a87dba93fbd60a9907adf5345589e4b3f214e3ca9ba496370d9c7e5becdc15",
+ "corpus_digest": "950aa7e44e7047a3c581bc5087a8cd842cc0a5e92471f3fd5ae9fa14331e5d2f",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5218
+  "read_minutes": 5220
  },
  "chapters": [
   {
@@ -4431,7 +4431,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 11
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.27-ad-click-aggregator.html",

@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2534,
+ "url_count": 2535,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -8128,6 +8128,9 @@
   "https://www.rfc-editor.org/rfc/rfc9562.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.26-distributed-id-generator.md"
+  ],
+  "https://www.rfc-editor.org/rfc/rfc9562.html#section-5.7": [
+   "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc9745.txt": [
    "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.03-versioning.md"

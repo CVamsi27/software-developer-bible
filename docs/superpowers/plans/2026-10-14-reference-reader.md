@@ -35,3 +35,13 @@ The user requested refinement of all elements including mobile views. Keep the a
 - [x] Replace placeholder icons, refine syntax, and keep copied/narrated code unchanged.
 - [x] Check 320, 390, 768, 1024 and 1487px layouts; inspect both themes, metadata expansion, outline navigation, search, copy and keyboard access.
 - [x] Capture desktop and mobile evidence, run focused tests, pinned build and repository gates, then commit on the isolated branch.
+
+
+## Measured visual fidelity correction
+
+The user clarified that the complete authored lesson must remain unchanged. Use a temporary content-matched fixture only to isolate CSS geometry; it is not the delivered chapter.
+
+- [x] Compare at 1487 by 1058 with settled fonts, preserving actual lesson content in the delivered page.
+- [x] Bundle the Inter font and its OFL license; remove the inherited clearfix flex item and heading bottom padding.
+- [x] Correct header/search coordinates, article and outline widths, title tracking, metadata baseline, section spacing and toolbar alignment.
+- [x] Verify actual chapter and responsive breakpoints with the locally bundled font; capture real-page evidence and rerun tests, build and repository gates.

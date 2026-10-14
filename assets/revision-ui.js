@@ -1,6 +1,6 @@
 /* Reveal only explicit authored Q/A groups in category revision companions. */
 document.addEventListener('DOMContentLoaded', function () {
-  if (!/\/REVISION\.html$/i.test(location.pathname)) return;
+  if (!/\/REVISION(?:\.html)?$/i.test(location.pathname)) return;
   var content = document.querySelector('.post-content');
   if (!content || content.querySelector('.revision-controls')) return;
   function marker(node, kind) { return node && node.tagName === 'P' && node.firstElementChild && node.firstElementChild.tagName === 'STRONG' && node.firstElementChild.textContent.trim() === kind + ':' && !node.firstChild.textContent.trim().replace(kind + ':', ''); }

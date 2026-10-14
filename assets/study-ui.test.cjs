@@ -128,3 +128,22 @@ test('chapter details moves only the original header badges, leaving lesson badg
  assert.equal(d.getElementById('body-badge').closest('.chapter-details'),null);
  assert.equal(d.getElementById('body-badge').previousElementSibling.id,'definition');dom.window.close();
 });
+
+test('Cloudflare clean chapter routes mount reader and save a canonical resume path',()=>{
+ const clean=chapter.replace(/\.html$/, '');
+ const dom=boot(article,clean,['reading-ui.js','read-aloud.js','study-resume.js']);
+ const w=dom.window,d=w.document;
+ assert.ok(d.querySelector('[aria-label="Reading width"]'));
+ assert.ok(d.querySelector('.read-aloud'));
+ d.dispatchEvent(new w.CustomEvent('study:section',{detail:{heading:d.getElementById('summary'),deliberate:true}}));
+ w.dispatchEvent(new w.Event('pagehide'));
+ assert.equal(w.StudyResumeStore.read().path,chapter);
+ dom.window.close();
+});
+test('Cloudflare clean revision routes reveal answers and mount the reader',()=>{
+ const dom=boot('<div class="post-content"><h1>Revision</h1><h2 id="topic">Topic</h2><p><strong>Q:</strong> Explain?</p><p><strong>A:</strong> Answer.</p></div>',revision.replace(/\.html$/, ''),['reading-ui.js','revision-ui.js','read-aloud.js']);
+ assert.ok(dom.window.document.querySelector('.revision-answer'));
+ assert.equal(dom.window.document.querySelector('.post-content').dataset.studyReader,'true');
+ assert.ok(dom.window.document.querySelector('.read-aloud'));
+ dom.window.close();
+});

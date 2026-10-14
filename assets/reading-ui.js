@@ -53,8 +53,9 @@ document.addEventListener('DOMContentLoaded', function () {
     link.href = roadmap.chapterWithContext(link.href, window.location.search);
   });
   var state = window.StudyState, paths = window.StudyPublishedPaths || [];
-  var learning = state && state.isLearningPath(location.pathname) && paths.includes(location.pathname);
-  var revision = /\/REVISION\.html$/i.test(location.pathname);
+  var published = state && state.publishedPath(location.pathname, paths);
+  var learning = published && state.isLearningPath(published);
+  var revision = published && /\/REVISION\.html$/i.test(published);
   if (!learning && !revision) return;
   if (content.dataset.studyReader) return;
   content.dataset.studyReader = 'true';

@@ -33,11 +33,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     render();
   }
+  var published = window.StudyState.publishedPath(location.pathname, window.StudyPublishedPaths);
   var content = document.querySelector('.post-content');
-  if (!content || !window.StudyState.isLearningPath(location.pathname) || !window.StudyPublishedPaths.includes(location.pathname) || content.dataset.resumeMounted) return;
+  if (!content || !published || !window.StudyState.isLearningPath(published) || content.dataset.resumeMounted) return;
   content.dataset.resumeMounted = 'true';
   var saved = store.read();
-  if (new URLSearchParams(location.search).get('resume') === '1' && !location.hash && saved && saved.path === location.pathname) {
+  if (new URLSearchParams(location.search).get('resume') === '1' && !location.hash && saved && saved.path === published) {
     var destination = saved.anchor ? document.getElementById(saved.anchor) : content.querySelector('h1');
     if (destination && content.contains(destination)) {
       destination.scrollIntoView({block: 'start', behavior: 'auto'});
@@ -62,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function save(heading) {
     var title = content.querySelector('h1');
     if (!title || !heading || !content.contains(heading)) return;
-    pending = {version: 1, path: location.pathname, anchor: heading.id || '', title: text(title), section: text(heading), savedAt: Date.now()};
+    pending = {version: 1, path: published, anchor: heading.id || '', title: text(title), section: text(heading), savedAt: Date.now()};
     clearTimeout(timer); timer = setTimeout(flush, 400);
   }
   document.addEventListener('study:section', function (event) {

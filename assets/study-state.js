@@ -8,6 +8,13 @@
     if (row.c === 'Reference' || (row.g || []).includes('reference')) return 'reference';
     return 'learn';
   }
+  // Pages redirects .html assets to clean URLs. Resolve only known publications.
+  function publishedPath(path, paths) {
+    if (typeof path !== 'string' || !Array.isArray(paths) || /[?#]/.test(path)) return null;
+    if (paths.includes(path)) return path;
+    var asset = path + '.html';
+    return paths.includes(asset) ? asset : null;
+  }
   function isLearningPath(path) {
     return typeof path === 'string' && /^\/(?:\d{2}(?:\.\d+)?-[^/]+\/)+\d{2}(?:\.\d+)+-[a-z0-9-]+\.html$/.test(path) &&
       !/\/personal\/|interview-questions|\/auth\//i.test(path);
@@ -46,7 +53,7 @@
     }
     return {read: read, write: write, clear: clear};
   }
-  var api = {material: material, isLearningPath: isLearningPath, createStore: createStore};
+  var api = {material: material, publishedPath: publishedPath, isLearningPath: isLearningPath, createStore: createStore};
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
   else root.StudyState = api;
 })(typeof window === 'undefined' ? globalThis : window);

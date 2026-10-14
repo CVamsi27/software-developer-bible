@@ -21,3 +21,9 @@ test('malformed state is ignored and storage refusal retains a reversible in-mem
  const denied=createStore({getItem(){throw Error()},setItem(){throw Error()},removeItem(){throw Error()}},[path]);
  assert.equal(denied.read(),null);denied.write(record);const prior=denied.clear();assert.equal(denied.read(),null);denied.write(prior);assert.deepEqual(denied.read(),record);
 });
+test('clean URL resolution requires an exact published asset and rejects query or private paths',()=>{
+ const {publishedPath}=require('./study-state.js');
+ assert.equal(publishedPath(path.replace(/\.html$/, ''),[path]),path);
+ assert.equal(publishedPath(path,[path]),path);
+ for(const route of ['/missing','/auth/login',path+'?q=private',path+'#summary'])assert.equal(publishedPath(route,[path]),null);
+});

@@ -14276,21 +14276,35 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Definition and terminology",
-        "Mechanism and boundaries",
-        "Examples and failure cases",
-        "Version/tooling claims",
-        "Internal and source links"
+        "Definitions and distinct layers: framework, dev/build tool, bundler, compiler/transformer and task orchestrator.",
+        "Current Vite 8.3/Rolldown/Oxc, Next.js 16/Turbopack, Webpack 5 and Rspack 2.2 roles and supported migration boundaries.",
+        "Equivalent cold/warm build, development startup, route compilation, HMR and production-behavior benchmark controls.",
+        "Representative migration slice acceptance: integrations, output, source maps, type checking, tests, browser routes and rollback."
       ],
       "sources": [
-        "https://vite.dev/releases/",
-        "https://vite.dev/guide/migration.html",
-        "https://nextjs.org/blog",
-        "https://www.rspack.dev/blog/"
+        "Vite releases: https://vite.dev/releases",
+        "Vite 8 announcement: https://vite.dev/blog/announcing-vite8.html",
+        "Vite architecture: https://vite.dev/guide/why",
+        "Next.js 16: https://nextjs.org/blog/next-16",
+        "Next.js Turbopack API: https://nextjs.org/docs/app/api-reference/turbopack",
+        "Next.js 16.4: https://nextjs.org/blog/next-16-4",
+        "Webpack releases: https://webpack.js.org/blog/",
+        "Rspack Webpack migration: https://rspack.rs/guide/migration/webpack",
+        "Rspack 2.2: https://rspack.rs/blog/announcing-2-2",
+        "esbuild: https://esbuild.github.io/",
+        "Rollup: https://rollupjs.org/",
+        "Turborepo: https://turborepo.dev/docs",
+        "Turborepo caching: https://turborepo.dev/docs/crafting-your-repository/caching",
+        "Nx: https://nx.dev/docs"
       ],
-      "disposition": "Read end to end. Corrected technical wording, stale version context, or a sample where noted; retained accurate material.",
-      "validation": "Manual technical review.",
-      "current_sha256": "2d70f2b3cf45b7190cfc380b33746f2f8db9ff1553907b2b1b5e40d00198e8bc"
+      "disposition": "Rebuilt the chapter around one decision path: identify the tool layer, define an equivalent workload, then prove compatibility and output on a representative migration slice. Removed the weak unmatched build/dev command example and generic mistakes/best-practice sections. Replaced point-version comparison claims with current supported toolchain roles, updated the learning index, and added source-linked revision and interview questions.",
+      "validation": [
+        "All cited external references were directly probed successfully (HTTP 200 or 206 for requested byte ranges).",
+        "Version and default-tool claims checked against current official Vite, Next.js, Webpack and Rspack documentation; vendor benchmark ratios were not reused as universal evidence.",
+        "All 30 repository verification gates passed; standalone links found 10824 links and 184 anchors with zero failures; the 2582-URL citation baseline has no drift.",
+        "Writer fixed point and Ruby 3.4.11 production Jekyll build passed; site-wide rendered-heading and focused one-H1/tool-layer/workload/migration assertions passed. No candidate application benchmark is claimed."
+      ],
+      "current_sha256": "f05a5bbd46193570c220cbdd23630c3e7bb32ea442878180e5417dc7089a67bd"
     },
     {
       "path": "40-platform/40.5-build-tools/03-optimization-and-comparison/INDEX.md",

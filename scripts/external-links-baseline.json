@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2578,
+ "url_count": 2582,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -4695,12 +4695,16 @@
   "https://next-auth.js.org/": [
    "10-frontend/10.4-next.js/04-production/10.4.4.01-authentication.md"
   ],
+  "https://nextjs.org/blog/next-16": [
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md"
+  ],
   "https://nextjs.org/blog/next-16-3": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md",
    "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
   ],
   "https://nextjs.org/blog/next-16-4": [
-   "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md"
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md"
   ],
   "https://nextjs.org/blog/turbopack-incremental-computation": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md"
@@ -4802,7 +4806,8 @@
   ],
   "https://nextjs.org/docs/app/api-reference/turbopack": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md",
-   "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
+   "40-platform/40.5-build-tools/01-bundlers/REVISION.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md"
   ],
   "https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations": [
    "10-frontend/10.5-form-handling/10.5.07-interview-questions.md"
@@ -5202,6 +5207,9 @@
   ],
   "https://nx.dev/ci/features/affected": [
    "40-platform/40.8-monorepo/40.8.03-nx.md"
+  ],
+  "https://nx.dev/docs": [
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md"
   ],
   "https://nx.dev/docs/features/enforce-module-boundaries": [
    "40-platform/40.8-monorepo/40.8.03-nx.md"
@@ -6100,11 +6108,9 @@
   "https://rspack.rs/api/javascript-api/compiler": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md"
   ],
-  "https://rspack.rs/blog/announcing-2-0": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md"
-  ],
   "https://rspack.rs/blog/announcing-2-2": [
-   "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md"
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md"
   ],
   "https://rspack.rs/config/cache": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md",
@@ -6118,7 +6124,9 @@
    "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
   ],
   "https://rspack.rs/guide/migration/webpack": [
-   "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md"
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md"
   ],
   "https://rsync.samba.org/tech_report.html": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.18-dropbox.md"
@@ -6612,14 +6620,17 @@
   "https://turbo.build/pack": [
    "40-platform/40.5-build-tools/04-interview-prep/40.5.4.01-interview-questions.md"
   ],
-  "https://turbo.build/pack/docs/benchmarks": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md"
-  ],
   "https://turbo.build/reference/configuration": [
    "40-platform/40.8-monorepo/40.8.02-turborepo.md"
   ],
   "https://turbo.build/repo": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md"
+  ],
+  "https://turborepo.dev/docs": [
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md"
+  ],
+  "https://turborepo.dev/docs/crafting-your-repository/caching": [
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md"
   ],
   "https://turborepo.org/docs": [
    "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md"
@@ -6709,6 +6720,9 @@
   "https://vite.dev/blog/announcing-vite8-1": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.md"
   ],
+  "https://vite.dev/blog/announcing-vite8.html": [
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md"
+  ],
   "https://vite.dev/config/build-options": [
    "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md",
    "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md"
@@ -6734,9 +6748,6 @@
   "https://vite.dev/guide/build.html": [
    "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md"
   ],
-  "https://vite.dev/guide/comparisons.html": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md"
-  ],
   "https://vite.dev/guide/dep-pre-bundling": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.md",
    "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
@@ -6756,8 +6767,13 @@
   "https://vite.dev/guide/ssr": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.md"
   ],
+  "https://vite.dev/guide/why": [
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md"
+  ],
   "https://vite.dev/releases": [
-   "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.md"
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md"
   ],
   "https://vitest.dev/": [
    "50-quality/50.1-testing/02-frameworks/50.1.2.02-vitest.md",
@@ -6887,6 +6903,9 @@
   ],
   "https://webpack.js.org/": [
    "40-platform/40.5-build-tools/04-interview-prep/40.5.4.01-interview-questions.md"
+  ],
+  "https://webpack.js.org/blog/": [
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md"
   ],
   "https://webpack.js.org/concepts/": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md"

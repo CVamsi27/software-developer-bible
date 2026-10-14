@@ -727,3 +727,12 @@ Rebuilt the chapter as a release path from source reference through transformati
 Checked current Vite, Tailwind and sharp documentation, responsive-image and font guidance, the CSS Fonts specification, MDN fetch-priority/cache references, and Sentry's source-map guide. All twelve citations were directly probed successfully (HTTP 200 or 206 for byte-range requests). Ran the exact sharp example on Node.js 23.7.0 with sharp in an isolated directory; the 4-by-3 SVG produced a verified WebP output and nested output directory. All 30 repository gates passed. Standalone link checking found 10,824 local links and 180 anchors with zero failures; the 2,578-URL external citation baseline has no drift. The writer fixed point, Ruby 3.4.11 production Jekyll build, site-wide rendered-heading scan, focused one-H1/content assertions, and `git diff --check` passed. The isolated `sharp` conversion fixture also passed.
 
 The flow ledger now records 451 of 520 numbered teaching chapters reviewed (371 revised, 80 retained unchanged; 69 pending). The all-topic review remains open.
+
+
+## Editorial checkpoint — 14 October 2026 (Build Tool Comparison)
+
+Rebuilt the comparison as a senior decision path: distinguish framework, development/build workflow, module bundler, compiler, and task orchestrator; define matching cold/warm and interactive workloads; then prove a migration on a representative slice. Replaced the unmatched `build`/`dev` command sample and generic mistake/best-practice sections. Updated current Vite 8.3/Rolldown/Oxc, Next.js 16/Turbopack, Webpack 5 and Rspack 2.2 context, the learning index, source-linked revision prompts and interview question.
+
+Checked official release and migration guidance for Vite, Next.js, Webpack and Rspack, plus esbuild, Rollup, Turborepo and Nx documentation. All citations were directly probed successfully. All 30 repository gates passed; standalone links found 10824 links and 184 anchors with zero failures, and the 2582-URL citation baseline has no drift. The writer fixed point, Ruby 3.4.11 production Jekyll build, site-wide rendered-heading scan, focused one-H1/current-toolchain/workload/migration assertions, and `git diff --check` passed. No candidate application benchmark is claimed.
+
+The flow ledger now records 452 of 520 numbered teaching chapters reviewed (372 revised, 80 retained unchanged; 68 pending). The all-topic review remains open.

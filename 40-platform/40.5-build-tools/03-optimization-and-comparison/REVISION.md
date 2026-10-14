@@ -70,6 +70,18 @@ Source: [Build Tool Comparison](40.5.3.03-build-tool-comparison.md)
 
 **A:** Framework support, extension compatibility, output behavior, memory, and migration cost determine whether the measured gain is useful and safe.
 
+**Q:** Why can't a `vite dev` startup time be compared with a Webpack production build time?
+
+**A:** They perform different work. Development startup includes server readiness and requested-route compilation; a production build resolves and emits the application output. Compare matching workloads and report cache state for both rather than ranking tools from unlike commands. See [equivalent workload measurement](40.5.3.03-build-tool-comparison.md#measure-equivalent-work) and [Vite's toolchain explanation](https://vite.dev/guide/why).
+
+**Q:** What evidence distinguishes slow bundling from repeated package-task work in CI?
+
+**A:** Time a single representative package build separately from the orchestrated workspace run, then inspect task cache hits and which input changes invalidate each output. A task orchestrator can reuse package work without changing module resolution or the bundler. See [the tool-layer map](40.5.3.03-build-tool-comparison.md#name-the-layer-before-comparing-tools) and [Turborepo caching](https://turborepo.dev/docs/crafting-your-repository/caching).
+
+**Q:** What must pass before calling a Webpack-to-Rspack migration compatible?
+
+**A:** Verify every required loader, plugin hook, alias, asset rule, target, and runtime integration on a representative slice. Then run the same type checks and tests, inspect production output and maps, and compare the same cold or warm workload. See [the migration proof](40.5.3.03-build-tool-comparison.md#prove-the-migration-on-a-representative-slice) and [Rspack's compatibility guidance](https://rspack.rs/guide/migration/webpack).
+
 ## Summary
 
 Use the answers to check your reasoning, then revisit the source mechanism and reproduce any relevant example without copying it. A remembered label is useful only when you can explain its limits.

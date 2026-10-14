@@ -21,7 +21,7 @@ Tool choice gets debated endlessly; bundle size regressions ship silently. This 
 | --   : | ------ | -------- | --- | --- | ----------: |
 | 01 | [Build Optimization](40.5.3.01-build-optimization.md) | Route graphs, tree shaking, async chunks, encoded budgets, cache identity and Web Vitals | Important | Specialized | 5 min |
 | 02 | [Asset Pipelines — CSS, Images & Fonts](40.5.3.02-asset-pipelines-css-images-fonts.md) | CSS transforms and Tailwind sources, responsive images, bounded processing, font coverage and layout, immutable release assets | Important | Specialized | 8 min |
-| 03 | [Build Tool Comparison](40.5.3.03-build-tool-comparison.md) | Webpack vs Vite vs Turbopack vs Rspack trade-offs, migration paths, when to use each | Important | Specialized | 4 min |
+| 03 | [Build Tool Comparison](40.5.3.03-build-tool-comparison.md) | Tool layers, matched benchmarks, migration proof, compatibility, and framework-owned defaults | Important | Specialized | 4 min |
 
 ---
 

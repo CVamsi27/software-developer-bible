@@ -54,6 +54,10 @@ Source: [Technical Debt — Identification, Prioritization, Remediation](30.3.5.
 
 **A:** When both execute authoritative writes or remote effects, such as charging a payment. Use pure reads/calculations or isolated/suppressed side effects and a deliberate ownership transition.
 
+**Q:** What must precede consolidating divergent booking checks, and where should concurrency be enforced?
+
+**A:** Derive the intended rule from booking policy before choosing which behavior to keep. Then enforce the no-overlap invariant at the authoritative write boundary: two requests can both pass a preflight check before either writes. Use a storage constraint or transaction/locking mechanism suited to the data model and test competing requests. See [Technical Debt](30.3.5.02-technical-debt.md).
+
 ## Cost Engineering & FinOps
 
 Source: [Cost Engineering & FinOps](30.3.5.03-cost-engineering-finops.md)

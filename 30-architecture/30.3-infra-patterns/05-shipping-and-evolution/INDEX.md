@@ -20,7 +20,7 @@ Shipping is not `git push` to prod. Users are mid-request while you deploy; sche
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
 | 01 | [Zero-Downtime Deployments](30.3.5.01-zero-downtime-deployments.md) | Deployment vs release; rolling, blue-green, canary and flags; expand/migrate/contract; drain and rollback boundaries | Important | Specialized | 7 min |
-| 02 | [Technical Debt](30.3.5.02-technical-debt.md) | Debt quadrants, intentional vs accidental debt, remediation strategy, communicating debt to stakeholders | Important | Specialized | 6 min |
+| 02 | [Technical Debt](30.3.5.02-technical-debt.md) | Evidence-based debt items, cost and risk prioritization, strangler and abstraction migrations, tests and exit conditions | Important | Specialized | 6 min |
 | 03 | [Cost Engineering & FinOps](30.3.5.03-cost-engineering-finops.md) | Rightsizing, storage tiering, spot strategy, autoscaling traps, tagging/allocation, unit economics, cost checks in CI | Important | Specialized | 6 min |
 | 04 | [Data Retention & Archival](30.3.5.04-data-retention-archival.md) | Retention drivers, log/metric tiers, hot/warm/cold storage, DB TTLs, legal hold, right-to-erasure pipelines, runbooks | Important | Specialized | 7 min |
 
@@ -28,7 +28,7 @@ Shipping is not `git push` to prod. Users are mid-request while you deploy; sche
 
 ## Reading Path and Completion Check
 
-Separate deployment from behavior release, then trace compatibility through rollout and migration. Use representative evidence to promote a canary and know when rollback must become forward repair. Then prioritize technical debt by the time, failures or cost it causes. For resource costs and data retention, identify who decides and who checks the result.
+Separate deployment from behavior release, then trace compatibility through rollout and migration. Use representative evidence to promote a canary and know when rollback must become forward repair. Turn one recurring debt cost into an owned item, compare it with affected future work, then move the boundary in stages and verify the result. For resource costs and data retention, identify who decides and who checks the result.
 
 Describe a reversible release, an evidence-backed debt decision and an expiry path constrained by retention and holds. Then use [section revision](REVISION.md) without reopening the chapters. Interview banks, where present, are a separate drill after this check.
 

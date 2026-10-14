@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 83,
+    "pending": 82,
     "unchanged": 80,
-    "revised": 357,
-    "reviewed": 437,
+    "revised": 358,
+    "reviewed": 438,
     "topic_chapters": 520
   },
   "entries": [
@@ -6034,12 +6034,17 @@
       "path": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.02-technical-debt.md",
       "group": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution",
       "title": "Technical Debt — Identification, Prioritization, Remediation",
-      "status": "pending",
-      "baseline_sha256": "683e257055974cb6bd034100ad03ab083668da65299238bb150fe41f13fe5d28",
+      "status": "revised",
+      "baseline_sha256": "d249f2f75b714ed09ff459578b9bba10931bb94f21790759beb842a3ae31e219",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "When is repeated booking validation debt, and how can it be repaid without choosing the wrong business rule?",
+      "disposition": "Opened with divergent booking behavior, clarified the debt quadrants using evidence available at decision time, and made the booking example derive policy before consolidation. Focused the migration section on ownership boundaries, deferred rollout mechanics to the deployment chapter, and aligned revision practice with the write-boundary invariant.",
+      "validation": [
+        "Re-read in learning order; checked practical and textbook definitions, First Principles, the booking decision, summary, and cross-references.",
+        "A fresh reader verified the policy-first booking flow, non-hindsight quadrant example, and concise migration scope; no actionable issue remained.",
+        "All 30 repository verification gates passed. Standalone link scan checked 10,799 links and 152 anchors with no failures; freshness scan was clean. The 2,548-URL citation baseline had no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md",

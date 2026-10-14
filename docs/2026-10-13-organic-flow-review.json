@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 336,
+    "revised": 337,
     "unchanged": 80,
-    "pending": 104,
-    "reviewed": 416,
+    "pending": 103,
+    "reviewed": 417,
     "topic_chapters": 520
   },
   "entries": [
@@ -5597,12 +5597,17 @@
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.18-dropbox.md",
       "group": "30-architecture/30.2-system-design/02-case-studies",
       "title": "Dropbox System Design",
-      "status": "pending",
-      "baseline_sha256": "3af97ebfb5aebccc37ebef531a779ba408f8cd7ac8595cc8299c3a9dbded2f59",
+      "status": "revised",
+      "baseline_sha256": "924e6c9296b54009447ad09a76e7afed137e2ead632cd91adc020cde65e48394",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Can you explain how a retry-safe file version becomes authoritative without losing concurrent edits?",
+      "disposition": "Re-read the chapter and case-study revision questions against the current Dropbox API documentation. Made the edit path explicitly increment the current revision with a base-revision compare-and-set and use RETURNING for the manifest/change records; removed four generic or historical references that did not support specific claims. Preserved the existing conflict, cursor, chunking, integrity and garbage-collection flow.",
+      "validation": [
+        "Verified the Dropbox content-hash and change-detection statements against the current official API documentation; removed citations had no supporting claims in this chapter.",
+        "Executed the conditional revision-update example on PostgreSQL 18: a matching base advanced 7 to 8 and a stale base returned no row.",
+        "All 30 repository verification gates passed; standalone link scan checked 10,799 links and 152 anchors with zero broken links, stale labels or inline paths.",
+        "Production Jekyll build and site-wide rendered-heading check passed; the 2,539-URL external-link baseline has zero drift."
+      ]
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.19-lyft.md",

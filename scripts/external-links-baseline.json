@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2543,
+ "url_count": 2539,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -268,7 +268,6 @@
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.08-ticket-booking.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.09-e-commerce.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.11-live-betting.md",
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.18-dropbox.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.19-lyft.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.20-distributed-counter.md"
   ],
@@ -2430,9 +2429,6 @@
   "https://drafts.csswg.org/": [
    "10-frontend/10.7-html-css/10.7.02-css-fundamentals.md"
   ],
-  "https://dropbox.tech/": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.18-dropbox.md"
-  ],
   "https://dsf.berkeley.edu/cs286/papers/crdt-tr2011.pdf": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.20-distributed-counter.md",
    "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
@@ -3019,9 +3015,6 @@
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.12-twitter-feed.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.md"
-  ],
-  "https://github.com/donnemartin/system-design-primer#design-dropbox": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.18-dropbox.md"
   ],
   "https://github.com/donnemartin/system-design-primer#design-instagram": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.md"
@@ -6672,9 +6665,6 @@
   "https://wave-protocol.org/whitepaper.html": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.22-real-time-collaboration.md"
   ],
-  "https://web.archive.org/web/20110317010636/http://highscalability.com/blog/2011/3/14/6-lessons-from-dropbox-one-million-files-saved-every-15-minu.html": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.18-dropbox.md"
-  ],
   "https://web.archive.org/web/20131217183346/http://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying": [
    "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.01-real-time-architecture.md"
   ],
@@ -7088,9 +7078,6 @@
   ],
   "https://www.domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf": [
    "30-architecture/30.1-design-patterns/05-architectural/30.1.5.06-anti-corruption-layer.md"
-  ],
-  "https://www.dropbox.com/developers/documentation": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.18-dropbox.md"
   ],
   "https://www.edpb.europa.eu/sme/assess-the-risks/data-breaches_en": [
    "80-lanes-abroad-full-stack/80.24-eu-regulatory-compliance.md"

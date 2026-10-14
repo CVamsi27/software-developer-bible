@@ -498,9 +498,9 @@ Source: [Dropbox System Design](30.2.2.18-dropbox.md)
 
 **A:** A sequence assigned under the namespace-head transaction gives a committed cursor order even when clocks tie or differ. It also makes the serialization cost visible: one hot namespace has a single ordering point and may need a partition-aware cursor design to scale further.
 
-**Q:** Why bind the current file revision to a row in `file_versions` with a deferred foreign key?
+**Q:** Why should an edit increment the revision with a conditional update and bind that pointer to a `file_versions` row?
 
-**A:** A version update changes the current pointer and inserts its manifest record in one transaction. Deferral permits either write order inside that transaction while rejecting a commit whose pointer has no corresponding version.
+**A:** The conditional update succeeds only when the caller's base revision is still current, and `RETURNING revision` supplies the next revision for the manifest and change record. The deferred foreign key permits the pointer and version row to be written in either order inside one transaction, while rejecting a commit whose pointer has no corresponding version.
 
 **Q:** Why keep a sync-operation result separate from the change cursor?
 

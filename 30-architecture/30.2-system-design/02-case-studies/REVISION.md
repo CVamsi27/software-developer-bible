@@ -322,6 +322,10 @@ Source: [Twitter Feed System Design](30.2.2.12-twitter-feed.md)
 
 **A:** Derived consumers compare monotonic object versions and retain the delete version. A stale create with an earlier version is discarded instead of replacing the tombstone.
 
+**Q:** What does a chronological cursor guarantee, and what does it not freeze?
+
+**A:** A complete `(created_at, post_id)` tuple keeps page boundaries stable when timestamps tie and newer posts arrive. It does not freeze follow, visibility or ranking state; a ranked feed needs a session snapshot or an explicit policy for changes between pages.
+
 **Q:** Why is lifetime hashtag volume a poor definition of a trend?
 
 **A:** It rewards old popularity instead of recent acceleration. A trend needs a defined time window or decay model, event-time lateness handling, deduplication and abuse controls.
@@ -765,9 +769,9 @@ Source: [Live betting](30.2.2.11-live-betting.md)
 
 Source: [Twitter feed](30.2.2.12-twitter-feed.md)
 
-**Q:** Why does a chronological cursor include the post ID as well as time?
+**Q:** Why can visibility filtering require fetching more candidate IDs than the requested page size?
 
-**A:** Two posts can share a timestamp. Ordering and filtering by the same complete tuple preserve the boundary; time-only filtering can skip a tied post. Ranked feeds additionally need a session/snapshot contract.
+**A:** Deleted, blocked or protected posts may be filtered after candidate retrieval. Fetch bounded continuation batches until the page is full or the scan/deadline budget is exhausted, and report another page only when an eligible continuation exists.
 
 Source: [Web crawler](30.2.2.14-web-crawler.md)
 

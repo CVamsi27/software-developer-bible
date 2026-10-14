@@ -640,3 +640,14 @@ Re-read CDN Architecture with its learning index and revision companion. Removed
 Checked RFC 9111, RFC 5861 and RFC 8246, current CloudFront Origin Shield/request-collapsing documentation, and HHS cloud guidance. Directly probed every new external URL. All 30 repository gates passed; standalone links found 10,800 local links and 152 anchors with zero failures, and the 2,555-URL citation baseline has no drift. The Ruby 3.4.11 production build, site-wide rendered-heading check and focused CDN rendered-content assertions passed. A fresh reader confirmed the corrected authorization and HIPAA boundaries.
 
 The ledger now records 441 of 520 topic chapters reviewed (361 revised, 80 retained unchanged; 79 pending). Continue with Multi-CDN Traffic Steering; the full corpus review remains open.
+
+
+## Editorial checkpoint — 14 October 2026 (Multi-CDN traffic steering)
+
+Re-read Multi-CDN Traffic Steering with the CDN index, revision drill and interview Q6. Rebuilt the chapter around the production decision: identify the failure, select a control point, prove the alternate path, compare representative measurements and reconcile provider state. Removed repeated mistakes/best-practice/performance catalogs and incomplete measurement code. Clarified that RUM and probes are evidence, not steering mechanisms; relative DNS weights do not guarantee user or byte shares; recursive resolvers may serve stale data after TTL expiry; and provider health is not user-visible success. Added the shared-origin, cold-cache, residency, measurement-bias and partial-purge boundaries where they affect the decision.
+
+Verified DNS caching and serve-stale, Route 53 relative weights, Cloudflare dynamic steering and health checks, and the Server-Timing browser contract against RFC, provider and W3C primary sources. Every new reference was directly opened. A fresh reader found no actionable issue in the chapter or its companions.
+
+The ledger now records 442 of 520 topic chapters reviewed (362 revised, 80 retained unchanged; 78 pending). Continue with Media Optimization at the Edge; the all-topic review remains open.
+
+Release validation: all 30 repository gates passed; standalone link checking found 10,800 local links and 152 anchors with zero issues, and the 2,554-URL citation baseline has no drift. The Ruby 3.4.11 production Jekyll build, site-wide rendered-heading check, targeted built-page content checks and `git diff --check` passed.

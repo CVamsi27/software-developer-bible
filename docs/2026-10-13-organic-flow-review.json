@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 79,
+    "pending": 78,
     "unchanged": 80,
-    "revised": 361,
-    "reviewed": 441,
+    "revised": 362,
+    "reviewed": 442,
     "topic_chapters": 520
   },
   "entries": [
@@ -6249,12 +6249,19 @@
       "path": "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md",
       "group": "40-platform/40.10-cdn",
       "title": "Multi-CDN Traffic Steering",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "8dc5d51655d398c74c4c991b4dc254107f0e9b1fd607da264178b47b89c972b1",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which control point can move requests to a verified alternate provider, and what evidence proves the move helped?",
+      "disposition": "Rebuilt the chapter around the operator flow from failure signal through steering, alternate-path validation, comparable measurement and purge reconciliation. Removed repeated generic mistake/best-practice/performance lists and incomplete telemetry examples. Clarified that RUM and probes are evidence rather than steering mechanisms, DNS weights do not promise user/byte shares, DNS TTL is not a convergence deadline, and provider health is distinct from user-visible success. Reconciled the learning index, revision drill and interview answer.",
+      "validation": [
+        "Re-read the chapter with the CDN learning index, revision companion and interview Q6; retained the single-CDN cache mechanics in the canonical CDN Architecture chapter.",
+        "Verified DNS caching and serve-stale, Route 53 relative weights, Cloudflare dynamic steering/health checks and the Server-Timing browser contract against RFC, provider and W3C primary sources; all six new references were opened directly.",
+        "A fresh reader found no actionable issue in the revised chapter or companions.",
+        "All 30 repository verification gates passed; standalone link checking found 10,800 local links and 152 anchors with zero issues, and the 2,554-URL citation baseline has no drift.",
+        "The Ruby 3.4.11 production Jekyll build and site-wide rendered-heading check passed; targeted built-page checks confirmed one H1, no leaked Markdown, and the expected serve-stale, shared-origin, success-measurement and independent-purge explanations.",
+        "git diff --check passed."
+      ]
     },
     {
       "path": "40-platform/40.10-cdn/40.10.03-media-optimization-at-the-edge.md",

@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "11ff1d2cf86ae0d7c5d83e3b719e1af3c7e9d197a3a0f0f4b3eccab916462e40",
+ "corpus_digest": "16ce1e41baf213548b6003d0f10ec46a8b713fa4ebcc161fac3a222079112c23",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5238
+  "read_minutes": 5235
  },
  "chapters": [
   {
@@ -4856,7 +4856,7 @@
     "concept",
     "reference"
    ],
-   "m": 11
+   "m": 8
   },
   {
    "p": "40-platform/40.10-cdn/40.10.03-media-optimization-at-the-edge.html",

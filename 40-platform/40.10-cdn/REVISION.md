@@ -48,11 +48,11 @@ Source: [Multi-CDN Traffic Steering](40.10.02-multi-cdn-traffic-steering.md)
 
 **Q:** Why is a Domain Name System (DNS) time-to-live (TTL) not a guaranteed failover deadline?
 
-**A:** Resolver/client caches, connection reuse, propagation, and health detection also affect when traffic moves. Validate behavior from the users' paths.
+**A:** The DNS answer is cached by recursive resolvers, while clients can reuse live connections. Some resolvers may serve stale data after expiry if they cannot refresh the authoritative answer. A shorter TTL can help a planned change but does not bound total user-visible convergence. See [RFC 8767](https://www.rfc-editor.org/rfc/rfc8767.html).
 
 **Q:** Why warm a secondary CDN before deliberately shifting major traffic?
 
-**A:** A cold secondary can surge the origin and have worse latency during failover. Health, cache policy, certificates, and routing need parity before the switch.
+**A:** A cold secondary can surge a shared origin and have worse latency during failover. Verify cache policy, authorization, certificates, routing and origin capacity on the alternate path; warming helps where supported but does not guarantee every cache stays warm.
 
 **Q:** A purge submits on A and fails on B. Is the operation atomic or worse than no purge by definition?
 
@@ -60,7 +60,11 @@ Source: [Multi-CDN Traffic Steering](40.10.02-multi-cdn-traffic-steering.md)
 
 **Q:** Does an 80:20 DNS weight mean exactly eighty percent of users receive A?
 
-**A:** No. It affects eligible DNS answer selection. Resolver caching, user grouping, live connections and health policy change observed request/byte shares.
+**A:** No. A weight such as 80:20 is a relative share of eligible DNS answers under that provider's policy, not a guarantee about people, requests or bytes. Resolver caching, connection reuse, geography and retries change observed traffic. See [Route 53 weighted routing](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-weighted.html) for one provider's contract.
+
+**Q:** A successful-page real-user monitoring (RUM) dashboard says B is faster, but probes report more failures. Is that enough evidence to move traffic?
+
+**A:** No. Page beacons can miss users whose requests fail before the page can report, making successful samples look faster. Compare the same audience/content cohorts, include success and error rates, test the unselected path synthetically, and verify shared-origin load before a controlled shift. See the [Server Timing specification](https://www.w3.org/TR/server-timing/) for the browser metric interface and its privacy boundary.
 
 ## Media Optimization at the Edge
 

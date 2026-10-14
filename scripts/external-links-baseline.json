@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2555,
+ "url_count": 2554,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -1094,9 +1094,6 @@
   "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Disposition": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.04-file-upload-apis.md"
   ],
-  "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Server-Timing": [
-   "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md"
-  ],
   "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie": [
    "20-backend/20.5-security/01-auth/20.5.1.04-sessions-cookies.md"
   ],
@@ -1258,6 +1255,12 @@
   ],
   "https://developers.cloudflare.com/images/transform-images/transform-via-url/": [
    "40-platform/40.10-cdn/40.10.03-media-optimization-at-the-edge.md"
+  ],
+  "https://developers.cloudflare.com/load-balancing/understand-basics/health-details/": [
+   "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md"
+  ],
+  "https://developers.cloudflare.com/load-balancing/understand-basics/traffic-steering/steering-policies/dynamic-steering/": [
+   "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md"
   ],
   "https://developers.cloudflare.com/pages/": [
    "docs/deployment.md"
@@ -1475,10 +1478,8 @@
    "30-architecture/30.2-system-design/01-theory/30.2.1.20-multi-region-deployment.md"
   ],
   "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-weighted.html": [
-   "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md"
-  ],
-  "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-policies.html": [
-   "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md"
+   "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md",
+   "40-platform/40.10-cdn/REVISION.md"
   ],
   "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html": [
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.04-nosql-vs-sql.md",
@@ -7062,9 +7063,6 @@
   "https://www.cisa.gov/sites/default/files/publications/data_backup_options.pdf": [
    "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.05-backup-strategy-restore-drills.md"
   ],
-  "https://www.cloudflare.com/learning/cdn/what-is-a-cdn/": [
-   "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md"
-  ],
   "https://www.cloudflare.com/learning/ssl/transport-layer-security-tls/": [
    "20-backend/20.5-security/01-auth/20.5.1.01-auth-fundamentals.md"
   ],
@@ -7158,9 +7156,6 @@
   ],
   "https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/other_features/global_rate_limiting": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.08-rate-limiting.md"
-  ],
-  "https://www.fastly.com/documentation/guides/": [
-   "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md"
   ],
   "https://www.fastly.com/documentation/guides/full-site-delivery/caching/caching-best-practices/": [
    "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.04-http-caching.md"
@@ -7999,7 +7994,8 @@
    "30-architecture/30.2-system-design/01-theory/30.2.1.22-dns-and-name-resolution.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc1035.html": [
-   "30-architecture/30.2-system-design/01-theory/30.2.1.22-dns-and-name-resolution.md"
+   "30-architecture/30.2-system-design/01-theory/30.2.1.22-dns-and-name-resolution.md",
+   "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc2308.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.22-dns-and-name-resolution.md",
@@ -8102,7 +8098,9 @@
   ],
   "https://www.rfc-editor.org/rfc/rfc8767.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.22-dns-and-name-resolution.md",
-   "30-architecture/30.2-system-design/01-theory/REVISION.md"
+   "30-architecture/30.2-system-design/01-theory/REVISION.md",
+   "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md",
+   "40-platform/40.10-cdn/REVISION.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc9000.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.md",
@@ -8503,6 +8501,10 @@
   ],
   "https://www.w3.org/TR/png-3/#11IHDR": [
    "20-backend/20.1-node.js/02-io-and-data/20.1.2.02-buffers.md"
+  ],
+  "https://www.w3.org/TR/server-timing/": [
+   "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md",
+   "40-platform/40.10-cdn/REVISION.md"
   ],
   "https://www.w3.org/TR/trace-context/": [
    "40-platform/40.4-observability/01-pillars/40.4.1.03-tracing.md",

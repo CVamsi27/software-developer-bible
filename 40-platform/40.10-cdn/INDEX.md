@@ -1,6 +1,6 @@
 # CDN & Edge Computing — Index
 
-> **Study time:** ≈ 35 min of reading (5 files, ~7 min average).
+> **Study time:** ≈ 32 min of reading (5 files, ~6 min average).
 > **Content delivery networks, edge functions, cache invalidation, multi-CDN steering, media optimization and protected health information (PHI) considerations.**
 >
 > Three deep chapters, but the *concepts inside them* classify like a pattern catalog. Follow each mechanism, then test a changed condition in the separate revision.
@@ -29,7 +29,7 @@
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [40.10.01-cdn-architecture.md](40.10.01-cdn-architecture.md) | Content delivery network (CDN) caching strategies, invalidation, edge computing (Cloudflare Workers, Vercel Edge), protected health information (PHI), provider evaluation | Important | Specialized | 8 min |
-| 02 | [40.10.02-multi-cdn-traffic-steering.md](40.10.02-multi-cdn-traffic-steering.md) | Why multi-CDN, DNS/GSLB vs RUM vs edge-orchestrator steering, failover hazards, cross-CDN invalidation, cost arbitration, measurement infrastructure | Important | Specialized | 11 min |
+| 02 | [40.10.02-multi-cdn-traffic-steering.md](40.10.02-multi-cdn-traffic-steering.md) | When a second provider pays off, DNS/client/managed steering, RUM and synthetic evidence, failover readiness, per-provider purge state and cost | Important | Specialized | 8 min |
 | 03 | [40.10.03-media-optimization-at-the-edge.md](40.10.03-media-optimization-at-the-edge.md) | Image CDNs (on-the-fly transforms), AVIF/WebP negotiation, HTTP Live Streaming (HLS)/Dynamic Adaptive Streaming over HTTP (DASH) adaptive bitrate (ABR) ladders, origin shields, signed URLs/hotlink protection, transformation cache keys and cost levers | Important | Specialized | 8 min |
 | 04 | [Interview Questions](40.10.04-interview-questions.md) | Applied Q&A: cache-key design, purge strategy, origin shields, dynamic edge caching, media delivery, multi-CDN steering | Important | Specialized | 6 min |
 
@@ -51,7 +51,7 @@
 ## Reading Passes
 
 - **Before any system-design interview with a "global users" angle** — pairs with [HTTP caching](../../20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.04-http-caching.md)
-- Chapter 01 first (7 min); chapters 02/03 for scale-, cost-, or media-heavy roles
+- Chapter 01 first (8 min); chapters 02/03 for scale-, cost-, or media-heavy roles
 - Skim the provider evaluation criteria if pressed for time
 
 ## Common interview questions

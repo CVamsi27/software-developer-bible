@@ -14236,19 +14236,38 @@
       "path": "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md",
       "genre": "teaching",
       "baseline_sha256": "3dfc47bb709646808eb86af9b6c6eabe869aac88402ba9414d5ca56b476ee96e",
-      "state": "reviewed",
+      "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Definition and terminology",
-        "Mechanism and boundaries",
-        "Examples and failure cases",
-        "Version/tooling claims",
-        "Internal and source links"
+        "Asset pipeline stages preserve the relationship between transformed bytes, emitted references, manifests, cache identity and deployment.",
+        "Current Vite CSS behavior: PostCSS default transformer, Lightning CSS production minifier default, experimental full-transform opt-in; Tailwind v4 scans complete class tokens and explicit sources.",
+        "Responsive source selection uses width-described srcset candidates and truthful sizes; picture format fallback, intrinsic dimensions and fetch priority have distinct roles.",
+        "sharp resize/orientation/output behavior and input pixel limits; metadata trust means that pixel limits alone do not secure untrusted uploads.",
+        "Unicode font subsets, font-display swap, fallback metric descriptors and preload request matching.",
+        "Immutable content-hashed output, reference refresh, old-asset retention, post-build hash/source-map pairing and public-map exposure."
       ],
-      "sources": [],
-      "disposition": "Read end to end; definitions, examples, boundaries, and navigation are accurate and no substantive edit was needed.",
-      "validation": "Manual technical review.",
-      "current_sha256": "3dfc47bb709646808eb86af9b6c6eabe869aac88402ba9414d5ca56b476ee96e"
+      "sources": [
+        "Vite static asset handling: https://vite.dev/guide/assets",
+        "Vite shared CSS options: https://vite.dev/config/shared-options",
+        "Vite build options: https://vite.dev/config/build-options",
+        "Tailwind CSS source detection: https://tailwindcss.com/docs/detecting-classes-in-source-files",
+        "sharp resize: https://sharp.pixelplumbing.com/api-resize/",
+        "sharp input limits: https://sharp.pixelplumbing.com/api-constructor/",
+        "Responsive images: https://web.dev/articles/serve-responsive-images",
+        "Image fetch priority: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority",
+        "Font best practices: https://web.dev/articles/font-best-practices",
+        "CSS Fonts module: https://www.w3.org/TR/css-fonts-4/",
+        "HTTP Cache-Control: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control",
+        "Sentry JavaScript source maps: https://docs.sentry.io/platforms/javascript/sourcemaps/"
+      ],
+      "disposition": "Rebuilt as one path from source reference through CSS/image/font transformation to browser selection and release. Corrected the current Vite transformer/minifier distinction, added readable responsive-image and upload-safety boundaries, clarified font metrics and preload matching, and removed the repetitive decision table and generic mistakes list. Updated the section index, source-linked revision drill and interview prompt.",
+      "validation": [
+        "All twelve cited references were directly probed successfully (HTTP 200 or 206 for requested byte ranges).",
+        "Executed the exact sharp example on Node.js 23.7.0 with sharp in an isolated directory; converted a 4 by 3 SVG to WebP and verified dimensions, output bytes and nested output-directory creation.",
+        "All 30 repository verification gates passed; standalone link and citation-baseline results recorded in the plan checkpoint.",
+        "Writer fixed point and Ruby 3.4.11 production build passed; site-wide rendered-heading and focused rendered-content assertions passed."
+      ],
+      "current_sha256": "3a7e1c5a202ad47be6b17bf2d1df55df9b76e4881b52e96bb61fa3dba1773580"
     },
     {
       "path": "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md",

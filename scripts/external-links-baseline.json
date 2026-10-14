@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2583,
+ "url_count": 2578,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -1099,6 +1099,9 @@
    "40-platform/40.10-cdn/40.10.03-media-optimization-at-the-edge.md",
    "40-platform/40.10-cdn/REVISION.md"
   ],
+  "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority": [
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
+  ],
   "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog": [
    "50-quality/50.2-accessibility/50.2.03-keyboard-navigation.md"
   ],
@@ -1118,9 +1121,6 @@
   "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies": [
    "10-frontend/10.7-html-css/10.7.08-browser-storage.md"
   ],
-  "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
-  ],
   "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Disposition": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.04-file-upload-apis.md"
   ],
@@ -1129,6 +1129,9 @@
   ],
   "https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods": [
    "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.01-http-methods.md"
+  ],
+  "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control": [
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie": [
    "20-backend/20.5-security/02-attacks-and-defense/20.5.2.02-csrf.md"
@@ -3266,9 +3269,6 @@
   "https://github.com/pmndrs/use-gesture": [
    "10-frontend/10.6-animation/10.6.04-react-spring.md"
   ],
-  "https://github.com/postcss/autoprefixer": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
-  ],
   "https://github.com/prisma/orm/releases": [
    "20-backend/20.4-database/04-orm-and-access/20.4.4.01-prisma.md"
   ],
@@ -3360,9 +3360,6 @@
   ],
   "https://github.com/video-dev/hls.js/blob/master/docs/API.md": [
    "40-platform/40.10-cdn/40.10.03-media-optimization-at-the-edge.md"
-  ],
-  "https://github.com/webpack-contrib/image-minimizer-webpack-plugin": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
   ],
   "https://github.com/webpack-contrib/webpack-bundle-analyzer": [
    "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.01-bundle-analysis.md"
@@ -4432,9 +4429,6 @@
   "https://letsencrypt.org/2025/08/06/ocsp-service-has-reached-end-of-life": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.md"
   ],
-  "https://lightningcss.dev/": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
-  ],
   "https://linkerd.io/docs/": [
    "20-backend/20.6-microservices/01-service-topology/20.6.1.03-service-mesh.md"
   ],
@@ -5436,9 +5430,6 @@
   "https://portswigger.net/web-security/sql-injection": [
    "20-backend/20.5-security/02-attacks-and-defense/20.5.2.03-sql-injection.md"
   ],
-  "https://postcss.org/": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
-  ],
   "https://postgis.net/docs/ST_AsMVT.html": [
    "80-lanes-abroad-full-stack/80.34-germany-target-domain-primer.md"
   ],
@@ -6169,10 +6160,9 @@
    "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md"
   ],
   "https://sharp.pixelplumbing.com/api-constructor/": [
-   "20-backend/20.1-node.js/02-io-and-data/20.1.2.01-streams.md"
-  ],
-  "https://sharp.pixelplumbing.com/api-output": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
+   "20-backend/20.1-node.js/02-io-and-data/20.1.2.01-streams.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md"
   ],
   "https://sharp.pixelplumbing.com/api-output/": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.04-file-upload-apis.md"
@@ -6437,9 +6427,6 @@
    "10-frontend/10.7-html-css/10.7.07-theming-design-tokens.md"
   ],
   "https://tailwindcss.com/docs/detecting-classes-in-source-files": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
-  ],
-  "https://tailwindcss.com/docs/installation": [
    "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
   ],
   "https://tailwindcss.com/docs/theme": [
@@ -6722,11 +6709,13 @@
   "https://vite.dev/blog/announcing-vite8-1": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.md"
   ],
-  "https://vite.dev/config/build-options.html": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
+  "https://vite.dev/config/build-options": [
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md"
   ],
-  "https://vite.dev/config/shared-options.html": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
+  "https://vite.dev/config/shared-options": [
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md"
   ],
   "https://vite.dev/guide/api-hmr": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.md"
@@ -6734,7 +6723,7 @@
   "https://vite.dev/guide/api-plugin": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.md"
   ],
-  "https://vite.dev/guide/assets.html": [
+  "https://vite.dev/guide/assets": [
    "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
   ],
   "https://vite.dev/guide/build": [
@@ -6816,7 +6805,8 @@
    "10-frontend/10.7-html-css/10.7.07-theming-design-tokens.md"
   ],
   "https://web.dev/articles/font-best-practices": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md"
   ],
   "https://web.dev/articles/http-cache": [
    "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.04-http-caching.md"
@@ -6834,9 +6824,6 @@
    "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.01-build-optimization.md",
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.md"
   ],
-  "https://web.dev/articles/optimize-webfont-loading": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
-  ],
   "https://web.dev/articles/passkey-registration": [
    "20-backend/20.5-security/01-auth/20.5.1.08-mfa-passkeys-webauthn.md",
    "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md"
@@ -6852,7 +6839,8 @@
    "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md"
   ],
   "https://web.dev/articles/serve-responsive-images": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md"
   ],
   "https://web.dev/articles/storage-for-the-web": [
    "10-frontend/10.7-html-css/10.7.08-browser-storage.md"
@@ -6914,8 +6902,7 @@
   ],
   "https://webpack.js.org/guides/asset-modules/": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md",
-   "40-platform/40.5-build-tools/01-bundlers/REVISION.md",
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
+   "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
   ],
   "https://webpack.js.org/guides/caching/": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md",
@@ -8619,6 +8606,10 @@
   ],
   "https://www.w3.org/TR/baggage/": [
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.01-opentelemetry.md"
+  ],
+  "https://www.w3.org/TR/css-fonts-4/": [
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md"
   ],
   "https://www.w3.org/TR/navigation-timing-2/": [
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.01-performance-apis.md"

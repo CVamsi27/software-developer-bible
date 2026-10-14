@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 50,
+    "pending": 48,
     "unchanged": 80,
-    "revised": 390,
-    "reviewed": 470,
+    "revised": 392,
+    "reviewed": 472,
     "topic_chapters": 520
   },
   "entries": [
@@ -7291,23 +7291,33 @@
       "path": "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.md",
       "group": "40-platform/40.7-serverless-edge",
       "title": "Fly.io Deployment Patterns",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "4042ff3976d95f391fa3eb102c8d11c328bb03ea017f1dd3ebc1f2be1fe27019",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What does Fly guarantee about routing, capacity wake-up, storage, health checks, and a release command?",
+      "disposition": "Added a concrete lifecycle/data-loss scenario, explained Machine and volume ownership, distinguished service checks from Machine health and process restarts, clarified autostart capacity boundaries and suspend snapshots, and detailed release-command and best-effort shutdown contracts. Added a retry-safe migration example, refreshed current official Fly references, and linked the revision drill to health, storage, capacity, and release behavior.",
+      "validation": [
+        "Re-read in learning order with the Serverless & Edge INDEX and REVISION companion; checked definitions, First Principles, worked routing/lifecycle traces, Summary, and cross-references.",
+        "Verified new vendor citations with direct HTTP GETs (200); citation-baseline diff is clean.",
+        "All 30 repository verification gates passed; standalone link scan checked 10,835 links and 185 anchors with no failures.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md",
       "group": "40-platform/40.7-serverless-edge",
       "title": "Vite SPA on Cloudflare Workers",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "de08a737745e16344292717641921aaa6478e4fda853ab42e2eb22bf240f831b",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do SPA fallback and Worker-first routing keep browser routes and API paths from receiving the wrong response, and where does backend trust still belong?",
+      "disposition": "Opened with the conflicting navigation/API paths, traced the routing order, removed the unused asset binding and unrelated Hono details, clarified generated bindings and compatibility-date policy, expanded proxy identity-header and backend authorization boundaries, and consolidated repeated best-practice/mistake material into release checks. Revalidated the uncompressed Worker limit and Vite 8 bundler guidance against current primary docs, updated the stage synopsis, and refreshed the source-linked revision question.",
+      "validation": [
+        "Re-read in learning order with the Serverless & Edge INDEX and REVISION companion; checked definitions, First Principles, worked routing/lifecycle traces, Summary, and cross-references.",
+        "Verified new vendor citations with direct HTTP GETs (200); citation-baseline diff is clean.",
+        "All 30 repository verification gates passed; standalone link scan checked 10,835 links and 185 anchors with no failures.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md",

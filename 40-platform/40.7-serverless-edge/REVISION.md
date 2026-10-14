@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Serverless%20%26%20Edge-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-6_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-7_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../docs/topic-importance.md)
 
@@ -172,11 +172,19 @@ Source: [Fly.io Deployment Patterns](40.7.09-flyio-deployment.md)
 
 **Q:** Why should a stateful Fly application not rely on process memory after scaling or deploy?
 
-**A:** Machines are replaceable and requests can reach different instances. Store durable/shared state deliberately and account for per-machine storage placement.
+**A:** Machines can stop, restart, or be replaced, and each attached Fly Volume belongs to one Machine. Keep durable/shared state in a deliberate data authority; separately plan volume replication, backup, and recovery. See Fly's [Machine suspend/resume](https://docs.fly.io/reference/suspend-resume/) and [volume storage](https://docs.fly.io/launch/volume-storage/) guidance.
 
 **Q:** Does Fly Proxy autostart create more Machines when all configured Machines are busy?
 
-**A:** It starts existing stopped or suspended Machines. Provisioning additional Machines is a separate capacity action. A minimum running count keeps capacity warm in the primary region, so check other regions and failure recovery separately.
+**A:** It starts existing stopped or suspended Machines; it does not provision another Machine when configured capacity is busy. `min_machines_running` applies in the primary region, so check other regions and failure recovery separately. See Fly's [autostop/autostart contract](https://docs.fly.io/reference/fly-proxy-autostop-autostart/).
+
+**Q:** What happens when a Fly service health check fails, and what does not happen automatically?
+
+**A:** Fly removes that Machine from service routing, but the failed check does not restart its process. Top-level Machine checks also do not control request routing. See Fly's [health-check behavior](https://docs.fly.io/reference/health-checks/).
+
+**Q:** What must a Fly `release_command` migration account for before it can safely gate deployment?
+
+**A:** It runs once per deploy attempt in a temporary Machine with the new image, environment, secrets, and network access, but no persistent volumes. A non-zero exit stops deployment, and the default timeout is five minutes. Keep it retry-safe and backward-compatible with the running release. See Fly's [release command configuration](https://docs.fly.io/reference/configuration/).
 
 ## Vite SPA on Cloudflare Workers
 
@@ -186,9 +194,9 @@ Source: [Vite SPA on Cloudflare Workers](40.7.10-vite-spa-cloudflare-workers.md)
 
 **A:** Otherwise an unmatched API request can receive index.html and appear to succeed with the wrong content. Route API paths explicitly and reserve HTML fallback for navigation.
 
-**Q:** Which Worker bundle measurement should be compared with the current platform limit?
+**Q:** Which Worker bundle measurement should be compared with Cloudflare's current platform limit?
 
-**A:** As verified on 2026-10-02, compare uncompressed Total Upload with the 64 MiB limit for either plan. The gzip number is informational; static asset limits and browser bundle budgets are separate.
+**A:** On the limit page checked 2026-10-14, compare Wrangler's uncompressed `Total Upload` with the 64 MiB limit for either plan. Gzip is informational; Static Assets and browser JavaScript have separate limits and performance budgets. See Cloudflare's [Workers limits](https://developers.cloudflare.com/workers/platform/limits/).
 
 **Q:** Why can a same-origin API proxy still have an authentication or CSRF defect?
 

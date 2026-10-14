@@ -1351,6 +1351,7 @@
   "https://developers.cloudflare.com/workers/platform/limits/": [
    "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md",
    "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md",
+   "40-platform/40.7-serverless-edge/REVISION.md",
    "projects/docita/10-deployment-infrastructure.md"
   ],
   "https://developers.cloudflare.com/workers/reference/how-the-cache-works/": [
@@ -1369,13 +1370,13 @@
   "https://developers.cloudflare.com/workers/runtime-apis/nodejs/": [
    "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
   ],
-  "https://developers.cloudflare.com/workers/static-assets/routing/single-page-application/": [
+  "https://developers.cloudflare.com/workers/static-assets/": [
    "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md"
   ],
-  "https://developers.cloudflare.com/workers/static-assets/routing/worker-script/": [
+  "https://developers.cloudflare.com/workers/vite-plugin/tutorial/": [
    "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md"
   ],
-  "https://developers.cloudflare.com/workers/vite-plugin/": [
+  "https://developers.cloudflare.com/workers/wrangler/commands/": [
    "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md"
   ],
   "https://developers.cloudflare.com/workers/wrangler/commands/workers/": [
@@ -1979,6 +1980,29 @@
   ],
   "https://docs.fly.io/launch/autostop-autostart": [
    "projects/docita/10-deployment-infrastructure.md"
+  ],
+  "https://docs.fly.io/launch/volume-storage/": [
+   "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
+  ],
+  "https://docs.fly.io/postgres/": [
+   "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.md"
+  ],
+  "https://docs.fly.io/reference/configuration/": [
+   "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
+  ],
+  "https://docs.fly.io/reference/fly-proxy-autostop-autostart/": [
+   "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
+  ],
+  "https://docs.fly.io/reference/health-checks/": [
+   "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
+  ],
+  "https://docs.fly.io/reference/suspend-resume/": [
+   "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
   ],
   "https://docs.github.com/en/actions": [
    "40-platform/40.12-iac/40.12.02-interview-questions.md",
@@ -2770,21 +2794,8 @@
   "https://fidoalliance.org/fido2/": [
    "20-backend/20.5-security/01-auth/20.5.1.08-mfa-passkeys-webauthn.md"
   ],
-  "https://fly.io/docs/": [
-   "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.md"
-  ],
-  "https://fly.io/docs/machines/": [
-   "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.md"
-  ],
-  "https://fly.io/docs/mpg/": [
-   "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.md"
-  ],
-  "https://fly.io/docs/reference/configuration/#checks": [
-   "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.md"
-  ],
   "https://fly.io/docs/reference/fly-proxy-autostop-autostart/": [
-   "40-platform/40.2-kubernetes/03-scaling/INDEX.md",
-   "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.md"
+   "40-platform/40.2-kubernetes/03-scaling/INDEX.md"
   ],
   "https://formik.org/": [
    "10-frontend/10.5-form-handling/10.5.03-formik.md",
@@ -3754,9 +3765,6 @@
   ],
   "https://hl7.org/fhir/directory.html": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.10-hospital-management.md"
-  ],
-  "https://hono.dev/docs/getting-started/cloudflare-workers": [
-   "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md"
   ],
   "https://hpbn.co/building-blocks-of-tcp/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.md"
@@ -6966,9 +6974,7 @@
   "https://vite.dev/guide/build": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.md",
    "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.01-build-optimization.md",
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md"
-  ],
-  "https://vite.dev/guide/build.html": [
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md",
    "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md"
   ],
   "https://vite.dev/guide/dep-pre-bundling": [
@@ -6986,6 +6992,7 @@
   "https://vite.dev/guide/migration.html": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.md",
    "40-platform/40.5-build-tools/02-compilers/40.5.2.02-esbuild-swc.md",
+   "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md",
    "70-interview-toolkit/70.1-behavioral/70.1.04-system-design-behavioral.md"
   ],
   "https://vite.dev/guide/ssr": [

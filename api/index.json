@@ -4,7 +4,7 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "d546a52ed0aaaf3b596b603c02e2f366187f92b8de5aaa0046fa20d6fc0031fd",
+ "corpus_digest": "891124612aad89f9144c249a45a4657256212b75b6ab7d8ce101c7458165f5e8",
  "totals": {
   "chapters": 671,
   "sections": 47,
@@ -5895,7 +5895,7 @@
     "deployment",
     "flyio"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.html",
@@ -5909,7 +5909,7 @@
     "spa",
     "vite"
    ],
-   "m": 9
+   "m": 7
   },
   {
    "p": "40-platform/40.7-serverless-edge/REVISION.html",
@@ -5920,7 +5920,7 @@
     "practice",
     "revision"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "40-platform/40.8-monorepo/40.8.01-monorepo-overview.html",

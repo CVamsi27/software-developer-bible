@@ -65,8 +65,8 @@ Deploy choice?
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 09 | [Fly.io Deployment](40.7.09-flyio-deployment.md) | Container deployment, auto-stop/start, health checks, multi-region, Docker multi-stage builds | Important | Specialized | 6 min |
-| 10 | [Vite SPA on Cloudflare Workers](40.7.10-vite-spa-cloudflare-workers.md) | Static Assets, Hono proxy, SPA fallback, bundle size limits, same-domain API proxying | Important | Specialized | 9 min |
+| 09 | [Fly.io Deployment](40.7.09-flyio-deployment.md) | Machine lifecycle, routing and health, release commands, volume ownership, regional recovery | Important | Specialized | 7 min |
+| 10 | [Vite SPA on Cloudflare Workers](40.7.10-vite-spa-cloudflare-workers.md) | Asset/API routing, SPA fallback, same-origin proxy trust, release checks and current bundle limits | Important | Specialized | 7 min |
 
 ---
 

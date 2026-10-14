@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "1535ac68f4edd56187b7f9bf8c1345364278f17369314efc8857df960d2c4e33",
+ "corpus_digest": "376eb34d69d17c65b47d729aad838b7588ab78581709263f77683796ecd43aaa",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5237
+  "read_minutes": 5228
  },
  "chapters": [
   {
@@ -4903,7 +4903,7 @@
     "nginx",
     "reverse-proxy"
    ],
-   "m": 20
+   "m": 11
   },
   {
    "p": "40-platform/40.11-reverse-proxy/40.11.02-interview-questions.html",

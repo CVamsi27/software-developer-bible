@@ -14,13 +14,13 @@ Read the chapters in the [section learning flow](INDEX.md), then close them and 
 
 Source: [Nginx Reverse Proxy Internals](40.11.01-nginx-reverse-proxy-internals.md)
 
-**Q:** Why can one slow operation damage many Nginx requests?
+**Q:** When can one slow operation delay many requests assigned to the same NGINX worker?
 
-**A:** A worker multiplexes many connections. Blocking work on that worker delays unrelated clients; use supported asynchronous/offloaded paths and move heavy application work downstream.
+**A:** A worker multiplexes many connections. A blocking file operation, CPU-heavy filter, or synchronous plugin occupies that worker and delays its other scheduled work. Supported file operations can use `aio threads`; CPU-heavy application logic belongs downstream. See [NGINX core I/O directives](https://nginx.org/en/docs/http/ngx_http_core_module.html).
 
 **Q:** Why validate before reloading Nginx?
 
-**A:** Syntax/configuration validation prevents a malformed replacement configuration. A reload then starts new workers and drains old ones; runtime semantics still need probes.
+**A:** `nginx -t` catches configuration errors before the reload. A successful reload starts new workers and drains old ones, but valid syntax can still route to the wrong service. Probe the changed behavior after reload. See [NGINX process control](https://nginx.org/en/docs/control.html).
 
 **Q:** When is response buffering useful and when is it harmful?
 
@@ -32,7 +32,15 @@ Source: [Nginx Reverse Proxy Internals](40.11.01-nginx-reverse-proxy-internals.m
 
 **Q:** Why is upstream keepalive separate from client keepalive?
 
-**A:** They are different connection pools on opposite sides of the proxy. Reusing a browser connection does not automatically reuse an upstream connection.
+**A:** They are separate connections on opposite sides of the proxy. NGINX 1.29.7 changed upstream proxying to HTTP/1.1 with keepalive by default; older releases commonly need explicit HTTP/1.1, cleared `Connection`, and an upstream `keepalive` cache. See the [upstream module](https://nginx.org/en/docs/http/ngx_http_upstream_module.html).
+
+**Q:** What must be configured before HTTPS upstream traffic is authenticated?
+
+**A:** NGINX encrypts an HTTPS upstream connection, but certificate verification and SNI are off by default. Enable verification, trust the intended CA, and send the expected SNI/name so the certificate is checked for the intended service. See the [proxy TLS directives](https://nginx.org/en/docs/http/ngx_http_proxy_module.html).
+
+**Q:** Why is `worker_connections` not a direct estimate of proxied request capacity?
+
+**A:** It counts every connection opened by a worker, including client and upstream sockets, and the open-file limit can lower the actual ceiling. A typical proxied request uses two sockets; HTTP/2 can carry multiple streams on one client connection. See the [NGINX core module](https://nginx.org/en/docs/ngx_core_module.html).
 
 **Q:** Did the ingress-nginx retirement remove Kubernetes Ingress or every NGINX-based controller?
 

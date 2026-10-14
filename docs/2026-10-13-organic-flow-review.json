@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 77,
+    "pending": 76,
     "unchanged": 80,
-    "revised": 363,
-    "reviewed": 443,
+    "revised": 364,
+    "reviewed": 444,
     "topic_chapters": 520
   },
   "entries": [
@@ -6284,12 +6284,17 @@
       "path": "40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md",
       "group": "40-platform/40.11-reverse-proxy",
       "title": "Nginx Reverse Proxy Internals",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "0d19ec80d1423eecc64422c8942356375f2334f708c867c1cb47aab9c83ef5b8",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How does NGINX move one request through a worker, upstream, and response path without losing track of capacity, trust, or failure boundaries?",
+      "disposition": "Rebuilt the chapter around one request lifecycle and removed the duplicate full configuration and generic mistakes/best-practices catalogs. Preserved the decision-critical mechanics: worker and descriptor capacity, URI mapping, version-specific upstream keepalive since 1.29.7, passive versus active health checks, uncertain retries, timeout intervals, request/response buffering, trusted client identity, rate-limit scope, cache isolation, verified upstream TLS, and bounded graceful drain. Updated the learning index, revision questions, and WebSocket/keepalive interview answers.",
+      "validation": [
+        "Directly re-read the chapter with its index, revision companion, and interview bank; the revised flow starts with an export/client problem, then follows the request through routing, backend selection, waiting, trust policy, and reload/recovery.",
+        "Checked current official NGINX documentation for upstream keepalive and HTTP version defaults (1.29.7), URI mapping, timeout/retry behavior, TLS verification/SNI defaults, worker connection limits, thread-offloaded file I/O, rate limiting, header inheritance, active health-check availability, and worker draining. Verified the Kubernetes ingress-nginx retirement scope against the Kubernetes announcement.",
+        "All 30 repository verification gates passed; standalone link checking found 10,796 links and 152 anchors with zero failures; the 2,556-URL external citation baseline has no drift.",
+        "Ruby 3.4.11 production Jekyll build, site-wide rendered-heading check, targeted rendered NGINX content assertions, and git diff --check passed."
+      ]
     },
     {
       "path": "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md",

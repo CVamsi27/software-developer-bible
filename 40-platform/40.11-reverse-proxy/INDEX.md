@@ -1,7 +1,7 @@
 # Reverse Proxy — Index
 
-> **Study time:** ≈ 28 min of reading (3 files, ~9 min average).
-> **1 file** — Nginx as the production front door: the C10K origin story, the master–worker event-loop model, config context hierarchy, upstream load balancing, TLS termination, buffering, rate limiting, caching, and graceful worker replacement.
+> **Study time:** ≈ 19 min of reading (3 files, ~6 min average).
+> **1 teaching chapter** — Follow a request from worker and route selection through upstream handling, backpressure, trust boundaries, and graceful reloads. Use the revision companion and interview bank to test the mechanisms afterward.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Platform-blue)](#)
@@ -15,16 +15,17 @@ A proxy separates client-facing HTTP policy from backend request handling. Read 
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Nginx Reverse Proxy Internals](40.11.01-nginx-reverse-proxy-internals.md) | Forward vs reverse proxy, C10K, master–worker model, readiness event loop and resource boundaries, blocking-is-poison (aio threads), main/events/http/server/location contexts, sendfile vs proxy_pass, upstream LB algorithms (round robin, least_conn, ip_hash, weights), passive/active health checks, TLS termination, gzip/brotli, proxy buffering, limit_req burst nodelay, proxy_cache, SIGHUP worker replacement, nginx vs HAProxy vs Envoy vs cloud ALB | Important | Specialized | 20 min |
-| 02 | [Nginx Reverse Proxy Interview Questions](40.11.02-interview-questions.md) | Focused Q&A: event-loop failure modes, reload semantics, buffering/keepalive defaults that bite, health checks, rate limiting, the nginx-vs-alternatives decision, scenario drills (502 diagnosis, outage story, "is nginx still relevant?") | Important | Specialized | 6 min |
+| 01 | [Nginx Reverse Proxy Internals](40.11.01-nginx-reverse-proxy-internals.md) | Request routing, worker capacity, upstream selection and version-specific connection reuse, timeout and retry boundaries, buffering, trusted client identity, TLS, rate limiting, caching, and graceful reloads | Important | Specialized | 11 min |
+| — | [Revision questions](REVISION.md) | Recall checks for routing, keepalive versions, buffering, trusted identity, timeouts, caching, and safe retries | Important | Specialized | 2 min |
+| 02 | [Nginx Reverse Proxy Interview Questions](40.11.02-interview-questions.md) | Scenario-driven practice for worker stalls, reloads, WebSockets, upstream health, rate limiting, 502 diagnosis, and proxy selection | Important | Specialized | 6 min |
 
 ---
 
 ## Reading Passes
 
-1. **Follow the request:** identify the master/worker roles and trace a request through location selection, upstream forwarding and response delivery in [the chapter](40.11.01-nginx-reverse-proxy-internals.md).
-2. **Explain a failure:** change one condition — slow client, unavailable upstream, wrong header inheritance or draining WebSocket — and predict which boundary needs configuration or measurement.
-3. **Check recall, then practice:** finish [the separate revision](REVISION.md) before using [the interview bank](40.11.02-interview-questions.md). Use your own incident evidence for behavioral answers.
+1. **Follow the request:** trace a client through the worker, location, upstream, and response path in [the chapter](40.11.01-nginx-reverse-proxy-internals.md).
+2. **Change one condition:** predict what changes for a slow client, unavailable upstream, untrusted forwarding header, or WebSocket held during reload.
+3. **Retrieve, then practice:** complete [the revision questions](REVISION.md), then use [the interview bank](40.11.02-interview-questions.md). Support behavioral answers with your own evidence.
 
 ## Cross-References
 

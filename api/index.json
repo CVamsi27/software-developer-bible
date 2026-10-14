@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "1849f0a1e2c3e1cad019ce2af82ebae8eabf6d0eef2eb9cf2b0cd2422f4979fc",
+ "corpus_digest": "d546a52ed0aaaf3b596b603c02e2f366187f92b8de5aaa0046fa20d6fc0031fd",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5249
+  "read_minutes": 5250
  },
  "chapters": [
   {
@@ -5871,7 +5871,7 @@
     "pattern",
     "reference"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "40-platform/40.7-serverless-edge/40.7.08-interview-questions.html",

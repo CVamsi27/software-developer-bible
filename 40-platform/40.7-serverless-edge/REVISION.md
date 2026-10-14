@@ -150,6 +150,22 @@ Source: [Durable Execution: Temporal & Inngest](40.7.07-durable-execution-tempor
 
 **A:** No. The TypeScript Workflow sandbox replaces them with replay-safe implementations. External I/O and unsupported APIs remain separate concerns. Apply the rules for the actual SDK, and replay recorded histories against changed code.
 
+**Q:** When can a completed Temporal Activity run again, even though Workflow replay normally reuses its result?
+
+**A:** If the Activity changes an external system but fails before its completion reaches Temporal, the server has no recorded result and may retry it. Completed Activity results are reused during Workflow replay, but that does not make an unacknowledged payment exactly once. Make the Activity idempotent at the receiver. See Temporal's [Activity idempotency guidance](https://docs.temporal.io/activity-definition).
+
+**Q:** If an Inngest `step.run` succeeds and a later step fails, which work is retried?
+
+**A:** The completed step's saved result is reused, and the failed step retries independently. If the first step performed an external effect but failed before its result was saved, it can run again. Preserve step names and use a receiver-enforced operation key for external writes. See Inngest's [retry behavior](https://www.inngest.com/docs/durable-execution/guides-and-advanced/error-handling/retries).
+
+**Q:** What does Step Functions Standard's exactly-once execution guarantee cover, and when can a state run again?
+
+**A:** The guarantee is at the workflow-state level: a state runs once unless its definition configures `Retry`. That does not atomically commit the state's remote side effect with Step Functions history. The workflow can run for up to one year, while its completed execution history is available through the API for 90 days. See AWS's [workflow-type and execution guarantees](https://docs.aws.amazon.com/step-functions/latest/dg/choosing-workflow-type.html).
+
+**Q:** Why must Temporal workflow code be versioned against executions already in flight?
+
+**A:** A Worker replays workflow code against each execution's recorded history. A change that emits different commands for old history can make replay fail, so use a supported versioning strategy and test representative histories before rollout. See Temporal's [TypeScript workflow versioning guidance](https://docs.temporal.io/develop/typescript/workflows/versioning).
+
 ## Fly.io Deployment Patterns
 
 Source: [Fly.io Deployment Patterns](40.7.09-flyio-deployment.md)

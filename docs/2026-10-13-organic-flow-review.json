@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 51,
+    "pending": 50,
     "unchanged": 80,
-    "revised": 389,
-    "reviewed": 469,
+    "revised": 390,
+    "reviewed": 470,
     "topic_chapters": 520
   },
   "entries": [
@@ -7275,12 +7275,17 @@
       "path": "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md",
       "group": "40-platform/40.7-serverless-edge",
       "title": "Durable Execution: Temporal & Inngest",
-      "status": "pending",
-      "baseline_sha256": "613b757c3bd6b6da7eb298c1cc396eb82547b985857c16d2ac43e87114fdc3f7",
+      "status": "revised",
+      "baseline_sha256": "9fb620f5d49f2f2b957a7a60af4181d21eb6af958993f555d9070bad7ede1322",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "When a durable workflow resumes, which results does it trust, which code may run again, and how does it avoid repeating an external effect?",
+      "disposition": "Rebuilt the chapter around an approval deadline followed by a payment with a lost acknowledgment. Explained Temporal event-history replay, Activity boundaries/timeouts/version compatibility, Inngest step-result identity and retries, and Step Functions execution/history guarantees. Consolidated generic best-practice sections into concrete recovery tests, corrected and sourced current SDK/provider details, and expanded the revision companion with engine-specific failure questions.",
+      "validation": [
+        "Re-read in learning order with the adjacent serverless patterns/frameworks chapters and revision companion; checked definitions, approval-to-payment trace, retry boundaries, comparison table, summary, and cross-references.",
+        "Checked current Temporal TypeScript, Inngest TypeScript SDK v4, and AWS Step Functions primary documentation; directly GET-probed all nine cited URLs and received HTTP 200 for each.",
+        "All 30 repository verification gates passed; standalone link scan checked 10,836 links and 185 anchors with no failures; writer fixed-point check passed.",
+        "Citation baseline is synchronized at 2,645 URLs; locked-bundle Ruby 3.4.11 production Jekyll build and rendered-heading check passed."
+      ]
     },
     {
       "path": "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.md",

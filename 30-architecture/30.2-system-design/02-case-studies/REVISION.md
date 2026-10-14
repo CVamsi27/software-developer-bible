@@ -378,9 +378,13 @@ Source: [Web Crawler System Design](30.2.2.14-web-crawler.md)
 
 **A:** The old worker may finish after a new worker owns the URL. A monotonically increasing generation fences that stale completion so it cannot overwrite the newer claim's result.
 
-**Q:** Why normalize a trailing DNS dot while preserving path and query distinctions?
+**Q:** Why normalize host spellings while preserving path and query distinctions?
 
-**A:** `example.com.` and `example.com` name the same DNS host and should share politeness state. Paths and query components can identify different resources, so removing their meaningful differences can collapse distinct crawl targets.
+**A:** DNS case, a trailing root dot, default ports and equivalent IPv6 spellings can share one host identity. Paths and query components can identify different resources, so removing their meaningful differences can collapse distinct crawl targets. Reject malformed percent escapes before another parser changes their meaning; URL identity still does not establish that the resolved destination is safe.
+
+**Q:** What should a crawler do when `robots.txt` is unavailable or unreachable?
+
+**A:** [RFC 9309](https://www.rfc-editor.org/rfc/rfc9309.html#section-2.3.1) permits access when the response is 4xx, but requires complete disallow initially for network or 5xx failures; cached rules normally expire after 24 hours unless the file remains unreachable. Treat 429 as an overload signal and back off rather than using the general 4xx allowance to increase demand. Follow permitted redirects with destination checks at every hop.
 
 ## Chat System Design
 

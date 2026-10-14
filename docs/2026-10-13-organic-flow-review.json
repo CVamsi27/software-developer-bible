@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 332,
+    "revised": 333,
     "unchanged": 80,
-    "pending": 108,
-    "reviewed": 412,
+    "pending": 107,
+    "reviewed": 413,
     "topic_chapters": 520
   },
   "entries": [
@@ -5531,12 +5531,19 @@
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.md",
       "group": "30-architecture/30.2-system-design/02-case-studies",
       "title": "Web Crawler System Design",
-      "status": "pending",
-      "baseline_sha256": "7be7422b0a43fcf58e7850cde2d79f4bd50f3ebb05b9fc2f2e3b38c1421c8949",
+      "status": "revised",
+      "baseline_sha256": "e00389f9b6742a7b156d49a66a11d26ed19ae189d12b7be97866c4e2c2059913",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can a crawler expand a durable frontier without overloading origins or losing work after a crash?",
+      "disposition": "Opened with a calendar-generated crawl trap and tied it to bounded admission, origin scheduling and lease recovery. Made the decimal traffic sizing and 10-Gbps headroom explicit; clarified RFC 9309 matching, redirects, caching and the 429 overload exception; tightened SSRF defenses around the address actually used by the socket. Fixed the URL helper to canonicalize IPv6 and reject scoped IPv6 and malformed percent escapes. Replaced generic mistakes prose with outcome-focused tests and aligned the case-study index, revision drill and senior interview follow-up.",
+      "validation": [
+        "Re-read the complete chapter with the case-study INDEX, REVISION companion and senior interview bank; retained distinct frontier, origin politeness, robots, SSRF, URL identity, lease fencing, deduplication and revisit boundaries.",
+        "The documented URL identity helper passed 12 executable checks for IPv6, default ports, host case/root dots, fragments, path/query distinctions, percent escapes, credentials, invalid IPv4, scoped IPv6 and invalid ports. Decimal workload sizing assertions passed for request rate, bandwidth, candidate rate and in-flight occupancy.",
+        "Checked robots semantics against RFC 9309, overload and Retry-After against RFC 6585/RFC 9110, parser behavior against Python urllib.parse, and DNS/socket protections against OWASP SSRF guidance. The new Scrapy scheduler and RFC 9309 section URLs returned HTTP 200; citations are in the external-link baseline.",
+        "All 30 scripts/verify.sh gates passed; standalone links checked 10,799 local links and 152 anchors with zero failures; citation baseline has no drift and the writer fixed-point gate passes.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build passed; site-wide rendered-heading check passed, and the rendered chapter has one H1 with the worked helper and test matrix present.",
+        "git diff --check passed."
+      ]
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.md",

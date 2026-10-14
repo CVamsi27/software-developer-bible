@@ -391,7 +391,8 @@
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.05-webhooks.md",
    "20-backend/20.5-security/02-attacks-and-defense/20.5.2.04-api-security-best-practices.md",
    "20-backend/20.5-security/02-attacks-and-defense/REVISION.md",
-   "20-backend/20.5-security/03-hardening-and-operations/20.5.3.02-web-security.md"
+   "20-backend/20.5-security/03-hardening-and-operations/20.5.3.02-web-security.md",
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.md"
   ],
   "https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html": [
    "20-backend/20.5-security/01-auth/20.5.1.04-sessions-cookies.md",
@@ -617,6 +618,7 @@
   ],
   "https://datatracker.ietf.org/doc/html/rfc6585#section-4": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.13-rate-limiter.md",
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.md",
    "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
   ],
   "https://datatracker.ietf.org/doc/html/rfc6749": [
@@ -676,6 +678,7 @@
   ],
   "https://datatracker.ietf.org/doc/html/rfc9110#section-10.2.3": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.13-rate-limiter.md",
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.md",
    "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
   ],
   "https://datatracker.ietf.org/doc/html/rfc9111": [
@@ -2256,6 +2259,9 @@
   "https://docs.renovatebot.com/configuration-options/": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.05-vulnerability-management-patch-governance.md"
   ],
+  "https://docs.scrapy.org/en/latest/topics/scheduler.html": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.md"
+  ],
   "https://docs.sentry.io/": [
    "40-platform/40.4-observability/02-errors-and-health/40.4.2.01-error-tracking.md",
    "40-platform/40.4-observability/05-interview-prep/40.4.5.01-interview-questions.md"
@@ -3005,7 +3011,6 @@
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.09-e-commerce.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.11-live-betting.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.12-twitter-feed.md",
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.md"
   ],
@@ -6048,9 +6053,6 @@
   "https://schemathesis.readthedocs.io/": [
    "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.05-openapi-swagger.md"
   ],
-  "https://scrapy.org/": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.md"
-  ],
   "https://sdk.operatorframework.io/docs/overview/operator-capabilities/": [
    "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.03-crds-operators-controller-patterns.md"
   ],
@@ -6898,7 +6900,6 @@
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.09-e-commerce.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.11-live-betting.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.12-twitter-feed.md",
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.md"
   ],
   "https://www.amazon.com/Talk-Like-TED-Public-Speaking/dp/1250061539": [
@@ -7941,9 +7942,6 @@
   "https://www.redpanda.com/guides/kafka-performance-kafka-rebalancing": [
    "20-backend/20.9-message-brokers/20.9.02-kafka-internals-and-operations.md"
   ],
-  "https://www.researchgate.net/publication/225076539_Mercator_A_scalable_extensible_web_crawler": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.md"
-  ],
   "https://www.rfc-editor.org/rfc/rfc10015.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.md",
    "30-architecture/30.2-system-design/01-theory/REVISION.md"
@@ -8113,6 +8111,9 @@
   "https://www.rfc-editor.org/rfc/rfc9309.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.md"
+  ],
+  "https://www.rfc-editor.org/rfc/rfc9309.html#section-2.3.1": [
+   "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc9325.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.md"

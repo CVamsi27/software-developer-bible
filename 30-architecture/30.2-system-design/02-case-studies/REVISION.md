@@ -606,6 +606,14 @@ Source: [Typeahead / Autocomplete System Design](30.2.2.23-typeahead-autocomplet
 
 **A:** A query normalized differently from the built keys can miss a valid prefix or collide with another key. Pin the normalization form and version, and reject collisions before publication. See [Unicode normalization](https://unicode.org/reports/tr15/).
 
+**Q:** Why should equal-score suggestions use a stable tie-break?
+
+**A:** Host-dependent collation can reorder equal-score results across builds, creating noisy artifacts and cache changes. Use a documented stable ordering, or pin the locale and collation version in the artifact metadata.
+
+**Q:** Why apply tenant visibility while retrieving autocomplete candidates?
+
+**A:** A global top list may omit an authorized match before a later filter sees it. Cross-tenant candidates can also affect observable result counts or timing, so scope retrieval to the caller's allowed data.
+
 ## Metrics & Monitoring Pipeline System Design
 
 Source: [Metrics & Monitoring Pipeline System Design](30.2.2.24-metrics-monitoring-pipeline.md)

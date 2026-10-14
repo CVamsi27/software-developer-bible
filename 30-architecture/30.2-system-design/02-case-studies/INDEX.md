@@ -1,6 +1,6 @@
 # System Design — Case Studies
 
-> **Study time:** ≈ 6 h 24 m of reading (32 files, ~12 min average).
+> **Study time:** ≈ 6 h 26 m of reading (32 files, ~12 min average).
 Applied examples of system design interviews. Read [../01-theory/](../01-theory/INDEX.md) first, then choose cases that match your interview goals.
 
 [![Files](https://img.shields.io/badge/files-32-blue)](../../../INDEX.md)
@@ -48,7 +48,7 @@ The 31 cases are grouped by the kind of reasoning they practice. Use the tiers a
 ## Case studies
 
 | # | File | Domain | Key topics | Role priority | General importance |
-| --- | ----------------------------------------------------------------------- | --------------------- | ---------------------------------------------------------------------------------------------------------- | ------------- | ------------------ |
+| --- | ----------------------------------------------------------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------ |
 | 01 | [URL Shortener](30.2.2.01-url-shortener.md) | Web (foundational) | Code allocation, uniqueness, redirect caching, analytics durability | Important | Important |
 | 02 | [WhatsApp](30.2.2.02-whatsapp.md) | Messaging & Real-Time | Retry-safe acceptance, device delivery, E2EE, group membership | Important | Important |
 | 03 | [Uber](30.2.2.03-uber.md) | Ride-sharing & Geo | Location freshness, geo discovery, road ETA, trip and payment boundaries | Important | Important |
@@ -71,7 +71,7 @@ The 31 cases are grouped by the kind of reasoning they practice. Use the tiers a
 | 20 | [Distributed Counter](30.2.2.20-distributed-counter.md) | Web (foundational) | Stable event identity, hot-key sharding, CRDT merge, read contracts | Important | Important |
 | 21 | [Workflow Engine](30.2.2.21-workflow-engine.md) | Automation | Dependency eligibility, durable state, action identity, waits, compensation | Important | Important |
 | 22 | [Real-Time Collaboration](30.2.2.22-real-time-collaboration.md) | Messaging & Real-Time | OT vs CRDT, WebSocket protocol, Redis Pub/Sub, version history, offline support | Important | Important |
-| 23 | [Typeahead Autocomplete](30.2.2.23-typeahead-autocomplete.md) | Search & Data | Trie/prefix index, offline top-k ranking, geo-sharded indexes, freshness vs latency, personalization | Important | Important |
+| 23 | [Typeahead Autocomplete](30.2.2.23-typeahead-autocomplete.md) | Search & Data | Trie/radix/FST, bounded typo matching, deterministic ranking, visibility-scoped candidates, versioned index rollout | Important | Important |
 | 24 | [Metrics Monitoring Pipeline](30.2.2.24-metrics-monitoring-pipeline.md) | Platform & Telemetry | TSDB ingestion path, downsampling, cardinality explosion control, push vs pull, alert evaluation at scale | Important | Important |
 | 25 | [Distributed Job Scheduler](30.2.2.25-distributed-job-scheduler.md) | Automation | Cron at scale, leader election, task leases & fencing, dedup, delayed jobs, fairness/starvation | Important | Important |
 | 26 | [Distributed ID Generator](30.2.2.26-distributed-id-generator.md) | Web (foundational) | Snowflake bit layout, clock rollback, worker identity, timestamp ordering limits, UUIDv7 comparison | Important | Important |

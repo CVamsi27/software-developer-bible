@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "revised": 341,
+    "pending": 98,
     "unchanged": 80,
-    "pending": 99,
-    "reviewed": 421,
+    "revised": 342,
+    "reviewed": 422,
     "topic_chapters": 520
   },
   "entries": [
@@ -5677,12 +5677,19 @@
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.23-typeahead-autocomplete.md",
       "group": "30-architecture/30.2-system-design/02-case-studies",
       "title": "Typeahead / Autocomplete System Design",
-      "status": "pending",
-      "baseline_sha256": "022504c5949ebc79e8e3aeaabf75eedb59cb7aa6e0ea1675b69cb2c3d9a5a57b",
+      "status": "revised",
+      "baseline_sha256": "876eae4f8b05fdd2217430d7ca83c4184c192174ee8ffbcb9a548cb9f8eb9809",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do you keep suggestions fast, current, authorized, and tied to the text the user is still typing?",
+      "disposition": "Made the exact-prefix example validate stable candidate IDs and finite scores, use deterministic tie-breaking, and fail on invalid input. Clarified visibility-scoped retrieval, Elasticsearch completion-index trade-offs, cache/build boundaries, and corrected the case-study index and revision questions.",
+      "validation": [
+        "Re-read in case-study order; reconciled definitions, serving flow, ranking, visibility, freshness, and cross-references with the category INDEX and REVISION companion.",
+        "Executed the strict TypeScript example with Node.js v23.7 type stripping; NFKC lookup, missing-prefix behavior, stable ties, and rejection of blank, non-finite, or duplicate candidate data passed.",
+        "Checked Unicode Standard Annex #15 version 18 and the current Elasticsearch completion-suggester documentation for normalization, in-memory completion indexing, fuzzy queries, and scoped contexts.",
+        "All 30 scripts/verify.sh gates passed; standalone link check covered 10,800 links and 152 anchors with no failures; citation baseline remained at 2,533 URLs with no drift.",
+        "Ruby 3.4 production Jekyll build and site-wide rendered-heading plus focused Typeahead render checks passed.",
+        "Generated read-time/search metadata, writer fixpoint, and git diff --check passed."
+      ]
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.md",

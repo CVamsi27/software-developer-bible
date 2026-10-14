@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "e7a2f1ed055b87b931a702b2881b694cbf72ccef127c5c7d141ef0a4f48dffdb",
+ "corpus_digest": "dfcfafd2c0f1ce386ca19d7fe4853f4b8982d093513ad7df66a53695c81f1b83",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5214
+  "read_minutes": 5216
  },
  "chapters": [
   {
@@ -4401,7 +4401,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 12
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.html",

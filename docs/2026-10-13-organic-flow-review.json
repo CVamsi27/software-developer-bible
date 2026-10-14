@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 89,
+    "pending": 88,
     "unchanged": 80,
-    "revised": 351,
-    "reviewed": 431,
+    "revised": 352,
+    "reviewed": 432,
     "topic_chapters": 520
   },
   "entries": [
@@ -5935,12 +5935,17 @@
       "path": "30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.md",
       "group": "30-architecture/30.3-infra-patterns/03-coordination",
       "title": "Leader Election & Consensus — Raft, Paxos, Practical Patterns",
-      "status": "pending",
-      "baseline_sha256": "16e298005bc26b37c2964964cf1522d3b0144574fa0edff02e82654a5831fce5",
+      "status": "revised",
+      "baseline_sha256": "efb038972a90819754692a2ba5359fa91d412e94a98cc4f0eee1b2a00bd96cd4",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "When may a stale leader still commit a write after its lease expires, and where must the newer epoch be enforced?",
+      "disposition": "Opened with a paused settlement worker and followed the authority race into the protected write. Clarified Raft/Paxos quorum roles, etcd revision restore behavior, PostgreSQL lease-row fencing, and the limits of Redis TTL leases; replaced repeated failure/best-practice catalogs with boundary-focused tests and added current primary references.",
+      "validation": [
+        "Re-read in category order with INDEX and REVISION; checked definitions, Raft/Paxos scope, primitive boundaries, lease acquisition/renewal, PostgreSQL fencing, Redis renewal, failure tests and cross-references.",
+        "Verified the Raft and Paxos papers, etcd v3.6 election/revision/recovery docs, ZooKeeper recipes, PostgreSQL locking docs, Redis lock guidance and Kubernetes Lease docs. The repository probe marked the Paxos PDF HTTP 406 as bot-blocked; the official PDF opened and its cited content was verified in the browser.",
+        "All 30 repository gates passed; the standalone link scan checked 10,797 links and 152 anchors with no failures, and the citation baseline had zero drift after the five new URLs were added.",
+        "The locked-bundle production Jekyll build and site-wide rendered-heading check passed; git diff --check passed."
+      ]
     },
     {
       "path": "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md",

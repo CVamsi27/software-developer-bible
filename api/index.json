@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "059c62fd4c054dc3454312f6655775ab8f1b0b435a794e79df59f7529085ef9b",
+ "corpus_digest": "38805675c4447a695190ccd6aca4c8baab5396e10b3aa596e1c8e87a8912b490",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5225
+  "read_minutes": 5228
  },
  "chapters": [
   {
@@ -4597,7 +4597,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 10
   },
   {
    "p": "30-architecture/30.3-infra-patterns/03-coordination/REVISION.html",

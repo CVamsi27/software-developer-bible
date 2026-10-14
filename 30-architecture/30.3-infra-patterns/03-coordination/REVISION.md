@@ -42,6 +42,10 @@ Source: [Leader Election & Consensus — Raft, Paxos, Practical Patterns](30.3.3
 
 **A:** No. It rejects stale epochs after a newer one reaches the resource. Current ownership needs a checked owner/epoch/expiry boundary serialized with replacement, and an external effect needs its own contract.
 
+**Q:** What does etcd's `LeaderKey.rev` prove, and what does it not prove about a database write?
+
+**A:** The creation revision can be compared in an etcd transaction to verify that the election key still represents the current leader. A separate database must still enforce the revision as a fence or check current ownership with the mutation; after snapshot restore, configure a revision bump if that revision is used for ordering. See the [etcd concurrency API](https://etcd.io/docs/v3.6/dev-guide/api_concurrency_reference_v3/) and [recovery guidance](https://etcd.io/docs/v3.6/op-guide/recovery/).
+
 ## Summary
 
 A useful answer names the guarantee, the mechanism that enforces it, and the failure boundary. Revisit the source when any of those is unclear.

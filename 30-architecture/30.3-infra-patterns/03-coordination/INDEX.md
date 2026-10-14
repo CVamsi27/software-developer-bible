@@ -1,6 +1,6 @@
 # Coordination
 
-> **Study time:** ≈ 9 min of reading (2 files, ~4 min average).
+> **Study time:** ≈ 12 min of reading (2 files, ~6 min average).
 > **1 file.** Who runs the cron? Who processes the queue? Multiple workers can share a queue through atomic claims; some tasks instead require a single owner. Learn which invariant needs coordination and how stale owners are rejected.
 
 [![Files](https://img.shields.io/badge/files-2-blue)](#file-index)
@@ -19,7 +19,7 @@ Running five application instances can cause a scheduled job to run five times o
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Leader Election & Consensus](30.3.3.01-leader-election-consensus.md) | Leases, fencing tokens, Raft/Paxos at a distance, split brain, cron and queue coordination | Important | Specialized | 6 min |
+| 01 | [Leader Election & Consensus](30.3.3.01-leader-election-consensus.md) | Leases, fencing tokens, Raft/Paxos at a distance, split brain, cron and queue coordination | Important | Specialized | 10 min |
 
 ---
 

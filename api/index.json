@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "603f699b7208bac08a93f6e2d9742f246b229ea82a12151ed775dfa5c6867b0c",
+ "corpus_digest": "11cafa8581bcfbf058c4ad744edbef1c496bd9c8ed9c3147be703cfab7c12c0b",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5196
+  "read_minutes": 5197
  },
  "chapters": [
   {
@@ -4492,7 +4492,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 16
+   "m": 17
   },
   {
    "p": "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.html",

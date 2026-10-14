@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-16_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-17_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
 
@@ -153,6 +153,18 @@ Source: [Notification Service System Design](30.2.2.07-notification-service.md)
 **Q:** Why store an IANA timezone for quiet hours instead of a UTC offset?
 
 **A:** Offsets can change with daylight-saving rules and legislation. An IANA zone lets the scheduler apply date-specific transitions, but skipped and repeated local times still need an explicit delivery policy.
+
+**Q:** Why does one domain event need separate identities for each channel delivery?
+
+**A:** Email, push and in-app work can succeed or fail independently. Deduplicate producer retries at the intent boundary, then track each recipient, channel and target separately so retrying one failed delivery does not recreate another successful one.
+
+**Q:** What should the service do after a provider accepts a message but the response is lost?
+
+**A:** Keep that delivery in an unknown state and recover it through the same provider attempt identity or a provider lookup. A blind retry can duplicate a human-visible message; another channel's successful delivery should remain unchanged.
+
+**Q:** Why is Jinja's default autoescape behavior unsafe to assume for email HTML?
+
+**A:** Jinja does not enable autoescaping by default. Configure it for HTML templates with `select_autoescape`, then validate URLs and header values separately because HTML escaping does not protect those contexts.
 
 ## Ticket Booking System Design
 

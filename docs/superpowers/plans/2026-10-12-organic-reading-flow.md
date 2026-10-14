@@ -709,3 +709,12 @@ Rebuilt Rspack around the decision a Webpack team actually faces: whether the ex
 Checked the Rspack 2.2 release, Webpack migration, SWC loader, cache, compiler lifecycle and plugin documentation. All five newly cited URLs returned HTTP 200. Ran the exact typed-module fixture in isolation with `@rspack/core` 2.2.9 on Node.js 23.7.0; it emitted and executed the expected output. All 30 repository gates passed; standalone link checking found 10,818 links and 172 anchors with zero issues; the 2,582-URL baseline has no drift. The writer fixed-point, Ruby 3.4.11 production Jekyll build, site-wide heading scan, focused one-H1 and section assertions, and `git diff --check` passed.
 
 The flow ledger now records 449 of 520 numbered teaching chapters reviewed (369 revised, 80 retained unchanged; 71 pending). The full corpus review remains open.
+
+
+## Editorial checkpoint — 14 October 2026 (Build Optimization)
+
+Rebuilt Build Optimization as one route trace from its module graph to deployment. The chapter now separates compiler work, emitted file bytes, route transfer, browser work and rendered experience; explains export-use analysis versus `sideEffects`, async chunk trade-offs, manifest-backed route budgets, cache identity, field versus lab LCP/INP evidence, compression negotiation and safe hashed-asset rollout. Removed generic repeated advice catalogs and updated the category index, source-linked revision questions and interview prompt.
+
+Checked the current Webpack tree-shaking and code-splitting guides, Vite production-build guide, web.dev LCP and Web Vitals guides, RFC 9110 and Node.js zlib docs. All seven new references were directly probed successfully (HTTP 200 or 206 for byte-range responses). Ran the documented measurement example against an isolated asset; raw/gzip/Brotli counts were 3200/76/40 bytes. All 30 repository gates passed; standalone links found 10822 links and 176 anchors with zero failures, and the 2583-URL baseline has no drift. The writer fixed point, Ruby 3.4.11 production build and site-wide rendered-heading check passed.
+
+The flow ledger now records 450 of 520 numbered teaching chapters reviewed (370 revised, 80 retained unchanged; 70 pending). The all-topic review remains open.

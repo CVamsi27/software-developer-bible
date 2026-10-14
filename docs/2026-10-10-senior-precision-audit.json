@@ -14208,16 +14208,29 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Definition and terminology",
-        "Mechanism and boundaries",
-        "Examples and failure cases",
-        "Version/tooling claims",
-        "Internal and source links"
+        "Practical/textbook definitions and the distinct cost model for compiler work versus browser route work.",
+        "ES-module export analysis versus package sideEffects metadata; asynchronous chunk trade-offs and route dependency waterfalls.",
+        "File-level raw/gzip/Brotli measurements versus manifest-derived route budgets and missing-evidence failure.",
+        "Cold/warm build evidence, cache-key inputs, LCP/INP measurement boundaries, syntax lowering versus Web API polyfills, and negotiated HTTP content encoding.",
+        "Content-hashed asset immutability, HTML revalidation, old-chunk retention and source-map publication boundary."
       ],
-      "sources": [],
-      "disposition": "Read end to end. Corrected technical wording, stale version context, or a sample where noted; retained accurate material.",
-      "validation": "Manual technical review.",
-      "current_sha256": "ad77c0f7e7e1cb8beb5faa231587fb88d056526d58908319ca401c88b739c6c9"
+      "sources": [
+        "Webpack tree shaking: https://webpack.js.org/guides/tree-shaking/",
+        "Webpack code splitting: https://webpack.js.org/guides/code-splitting/",
+        "Vite production build: https://vite.dev/guide/build",
+        "web.dev Optimize LCP: https://web.dev/articles/optimize-lcp",
+        "web.dev Measure Web Vitals: https://web.dev/articles/vitals-measurement-getting-started",
+        "RFC 9110 content negotiation: https://www.rfc-editor.org/rfc/rfc9110.html",
+        "Node.js zlib APIs: https://nodejs.org/api/zlib.html"
+      ],
+      "disposition": "Rebuilt around one route from module graph to deployment. Removed generic repeated best-practice catalogs and separated compiler speed, encoded file size, route transfer, browser work and rendered experience. Kept side-effect, cache identity, missing-budget evidence, browser-compatibility and rollout boundaries where they change the engineering decision; updated the section index, revision drill and interview bank.",
+      "validation": [
+        "All seven external references directly probed successfully (HTTP 200 or 206 for requested byte ranges).",
+        "The chapter measurement example ran against a temporary emitted-asset fixture and returned validated raw, gzip and Brotli byte counts (3200, 76 and 40 bytes).",
+        "All 30 repository verification gates passed; standalone link check found 10822 links and 176 anchors with zero failures; citation baseline is clean at 2583 URLs.",
+        "Writer fixed point passed. Ruby 3.4.11 production Jekyll build and site-wide rendered-heading check passed."
+      ],
+      "current_sha256": "ea2ab7ee5f984a9a2d75096484195a68b1ea151793d4d8d73602bee65343a069"
     },
     {
       "path": "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md",

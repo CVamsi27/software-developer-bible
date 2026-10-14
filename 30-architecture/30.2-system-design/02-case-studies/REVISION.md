@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-15_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-16_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
 
@@ -93,6 +93,22 @@ Source: [Google Drive System Design](30.2.2.05-google-drive.md)
 **Q:** Why is a completed object upload not the point at which a new file version becomes visible?
 
 **A:** Upload completion proves only that storage received an object. The service must still verify it, recheck permission, expected version and quota, then atomically publish the version pointer and change record. A failed publication stays invisible and can be retried or safely reclaimed.
+
+**Q:** Why is a file's pathname a poor identity for versioning and synchronization?
+
+**A:** A rename or folder move changes the path without creating a different file. Keep a stable file ID and represent placement as mutable metadata so versions, grants and replay references survive moves.
+
+**Q:** What should a client do when an offline edit reconnects after permission was revoked?
+
+**A:** The server must reject publication under current authorization, even if the bytes were uploaded. Preserve the local edit and explain the conflict; do not silently discard it or grant access because the operation was queued while the user was authorized.
+
+**Q:** Why should a sync client advance its cursor only after it applies the corresponding change page?
+
+**A:** Persisting the cursor first can skip unapplied changes after a crash. Apply records idempotently, commit the cursor with the resulting local state where possible, and replay safely after an uncertain failure.
+
+**Q:** What does the parent foreign key in the teaching schema fail to guarantee?
+
+**A:** It proves that a parent row exists, but not that the row is a folder, belongs to the right ownership scope or leaves the hierarchy acyclic. Moves need authoritative validation and concurrency control over the affected ancestry.
 
 ## Payment Gateway System Design
 

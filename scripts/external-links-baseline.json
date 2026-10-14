@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2546,
+ "url_count": 2549,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -207,6 +207,9 @@
   ],
   "https://bazel.build/": [
    "40-platform/40.8-monorepo/40.8.04-monorepo-tools.md"
+  ],
+  "https://beam.apache.org/documentation/programming-guide/#watermarks-and-late-data": [
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.02-data-pipelines.md"
   ],
   "https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html": [
    "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md"
@@ -3746,6 +3749,10 @@
   "https://kafka.apache.org/43/operations/consumer-rebalance-protocol/": [
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.03-kafka.md",
    "20-backend/20.9-message-brokers/20.9.02-kafka-internals-and-operations.md"
+  ],
+  "https://kafka.apache.org/43/streams/core-concepts/": [
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.02-data-pipelines.md",
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/REVISION.md"
   ],
   "https://kafka.apache.org/community/downloads/": [
    "20-backend/20.9-message-brokers/20.9.01-message-brokers.md",
@@ -7801,6 +7808,9 @@
   ],
   "https://www.postgresql.org/docs/current/view-pg-locks.html": [
    "20-backend/20.4-database/04-orm-and-access/20.4.4.02-prisma-advanced.md"
+  ],
+  "https://www.postgresql.org/docs/current/view-pg-replication-slots.html": [
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.02-data-pipelines.md"
   ],
   "https://www.postgresql.org/docs/current/wal-intro.html": [
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-postgresql.md"

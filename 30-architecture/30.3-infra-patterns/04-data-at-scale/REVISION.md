@@ -50,9 +50,13 @@ Source: [Data Pipelines — ETL, Stream Processing, Data Lake](30.3.4.02-data-pi
 
 **A:** Yes. Without the retained higher deletion version, an older image can insert again. Match tombstone retention to the replay/correction contract and required deletion policy.
 
-**Q:** Is a five-minute floor(timestamp / interval) bucket a sliding window?
+**Q:** Is a fixed, non-overlapping five-minute window a sliding window?
 
 **A:** It is a tumbling window. Sliding windows overlap; late data and watermark/correction behavior require additional explicit policies.
+
+**Q:** What does Kafka's exactly-once transaction cover when the sink is PostgreSQL?
+
+**A:** Kafka can atomically commit consumed offsets and output records within Kafka. A PostgreSQL write is outside that transaction: commit the projection and checkpoint together in PostgreSQL, then make source redelivery safe until its offset catches up. See [Kafka Streams' processing guarantees](https://kafka.apache.org/43/streams/core-concepts/).
 
 ## CDN Architecture — Edge Caching, Geographic Distribution, Cache Invalidation
 

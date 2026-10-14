@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "3588373da5268ccc00ee4dfdca14daf09a787e3d31e1df991f22f0c91c08dcd7",
+ "corpus_digest": "d8b638f36a8c774a9495391eb7a592097eb0762365c8164cb55e7733611676bd",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5228
+  "read_minutes": 5230
  },
  "chapters": [
   {
@@ -4628,7 +4628,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 10
   },
   {
    "p": "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.html",

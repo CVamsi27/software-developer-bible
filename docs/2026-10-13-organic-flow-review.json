@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 87,
+    "pending": 86,
     "unchanged": 80,
-    "revised": 353,
-    "reviewed": 433,
+    "revised": 354,
+    "reviewed": 434,
     "topic_chapters": 520
   },
   "entries": [
@@ -5968,12 +5968,18 @@
       "path": "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.02-data-pipelines.md",
       "group": "30-architecture/30.3-infra-patterns/04-data-at-scale",
       "title": "Data Pipelines — ETL, Stream Processing, Data Lake",
-      "status": "pending",
-      "baseline_sha256": "7bf096fba36b8941a3a142e169bd1b4aa69c4c3a3c4b658e9c0ecc9645e9fd62",
+      "status": "revised",
+      "baseline_sha256": "92bd8f9526e94c1c74713cb8a45d64ad28332d94c962482f8958c0605e523e55",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do I define a replayable data pipeline across snapshots, change capture, transformations, checkpoints and late events without losing data or applying effects twice?",
+      "disposition": "Opened with a concrete crash/replay problem, then connected delivery semantics to output/checkpoint ordering. Clarified ETL/ELT, CDC and source-partition ordering; aligned the parameterized SQL example with its binding explanation; bounded the Kafka exactly-once claim; added CDC slot-retention, backfill-gap, watermark and schema-registry boundaries. Updated the companion INDEX description and added a source-linked revision question.",
+      "validation": [
+        "Re-read the chapter and its category INDEX/revision companion; checked the stage-to-contract flow, definitions, first principles, parameterized SQL, failure boundaries and final summary.",
+        "Verified official Apache Beam, Kafka 4.3 and PostgreSQL replication-slot sources; all three newly added URLs returned HTTP 200.",
+        "Fresh-reader answered the snapshot-boundary, delivery-guarantee, image-versus-delta, and late-data/retention questions; its wording note on watermarks was incorporated.",
+        "All 30 repository verification gates passed; standalone link check found 0 broken links across 10,795 links and 152 anchors; citation baseline has 2,549 URLs with no drift.",
+        "Production Jekyll build and site-wide rendered-heading validation passed."
+      ]
     },
     {
       "path": "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md",

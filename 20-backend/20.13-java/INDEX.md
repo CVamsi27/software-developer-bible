@@ -1,6 +1,6 @@
 # Java — Index
 
-> **Study time:** ≈ 1 h 28 m of reading (7 files, ~13 min average).
+> **Study time:** ≈ 1 h 32 m of reading (7 files, ~13 min average).
 > **7 files** — language, object design, concurrency, testing, Spring Boot, and interview practice form the shared Java backend path for Java-heavy roles.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../INDEX.md)
@@ -14,8 +14,8 @@
 ## Topic Categories
 
 | Category | File | Why it matters | Role priority | General importance |
-| ---------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ------------- | ------------------ |
-| Language | [Java Language Fundamentals](20.13.01-java-language-fundamentals.md) | Types, control flow, strings, arrays, collections, streams, generics — the core tour | Deferred | Important |
+| ----------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | ------------- | ------------------ |
+| Language & JVM boundary | [Java Language Fundamentals](20.13.01-java-language-fundamentals.md) | Values, types, collections, streams, generics, and a source-to-execution JVM trace | Deferred | Important |
 | OOP & Design | [OOP Principles, Interfaces & SOLID](20.13.02-java-oop-solid.md) | Encapsulation, inheritance, polymorphism, composition, SOLID | Deferred | Important |
 | Concurrency | [Concurrency & Multithreading](20.13.03-java-concurrency-multithreading.md) | Threads, synchronization, CompletableFuture, parallel streams, starvation | Deferred | Important |
 | Testing | [Testing with JUnit & Mockito](20.13.04-java-testing-junit-mockito.md) | JUnit 6, Mockito, Spring test slices, Testcontainers 2 | Deferred | Important |
@@ -26,7 +26,7 @@
 
 ## Read order
 
-1. **Build valid values and contracts.** Read language fundamentals, then OOP. Trace identity, collection ordering, and account invariants before introducing a framework.
+1. **Build valid values and contracts.** Read language fundamentals and follow one class through loading, initialization, execution, and HotSpot optimization; then read OOP. Keep VM implementation behavior separate from Java language guarantees.
 2. **Share and schedule work safely.** Read concurrency. Follow the bounded-buffer cycle, then distinguish shared-state safety from task and downstream-resource limits.
 3. **Choose evidence for each boundary.** Read testing before Spring. Compare unit, MVC-slice, and real-database tests, then follow one request through authorization, transaction, repository, and commit.
 4. **Recall separately.** Use [Revision](REVISION.md), then the interview bank for spoken answers and boundary changes.

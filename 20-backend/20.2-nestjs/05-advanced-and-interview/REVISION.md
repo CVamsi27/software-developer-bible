@@ -26,6 +26,10 @@ Source: [NestJS Custom Decorators](20.2.5.01-custom-decorators.md)
 
 **A:** The decorator attaches metadata when the class is defined. Nest invokes a custom parameter decorator extraction callback for each request. Put business logic in services and access checks in registered guards or interceptors.
 
+**Q:** Why might `ValidationPipe` accept an invalid value extracted by a custom parameter decorator?
+
+**A:** It skips custom-decorator arguments by default. Enable `validateCustomDecorators` or attach an appropriate pipe; authentication and authorization still belong to their own request-lifecycle components.
+
 ## NestJS Custom Decorators Edge Cases
 
 Source: [NestJS Custom Decorators](20.2.5.01-custom-decorators.md)

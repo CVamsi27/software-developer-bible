@@ -1,6 +1,6 @@
 # System Design — Case Studies
 
-> **Study time:** ≈ 6 h 18 m of reading (32 files, ~12 min average).
+> **Study time:** ≈ 6 h 23 m of reading (32 files, ~12 min average).
 Applied examples of system design interviews. Read [../01-theory/](../01-theory/INDEX.md) first, then choose cases that match your interview goals.
 
 [![Files](https://img.shields.io/badge/files-32-blue)](../../../INDEX.md)
@@ -48,7 +48,7 @@ The 31 cases are grouped by the kind of reasoning they practice. Use the tiers a
 ## Case studies
 
 | # | File | Domain | Key topics | Role priority | General importance |
-| --- | ----------------------------------------------------------------------- | --------------------- | --------------------------------------------------------------------------------------------------------- | ------------- | ------------------ |
+| --- | ----------------------------------------------------------------------- | --------------------- | -------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------ |
 | 01 | [URL Shortener](30.2.2.01-url-shortener.md) | Web (foundational) | Code allocation, uniqueness, redirect caching, analytics durability | Important | Important |
 | 02 | [WhatsApp](30.2.2.02-whatsapp.md) | Messaging & Real-Time | Retry-safe acceptance, device delivery, E2EE, group membership | Important | Important |
 | 03 | [Uber](30.2.2.03-uber.md) | Ride-sharing & Geo | Location freshness, geo discovery, road ETA, trip and payment boundaries | Important | Important |
@@ -62,24 +62,24 @@ The 31 cases are grouped by the kind of reasoning they practice. Use the tiers a
 | 11 | [Live Betting](30.2.2.11-live-betting.md) | Commerce & Fintech | Versioned odds acceptance, idempotent debits, terminal settlement, feed-gap recovery | Important | Important |
 | 12 | [Twitter Feed](30.2.2.12-twitter-feed.md) | Social & Feed | Hybrid fan-out, stable pagination, visibility rechecks, tombstones, trend windows | Important | Important |
 | 13 | [Rate Limiter](30.2.2.13-rate-limiter.md) | Web (foundational) | Token-bucket request trace, atomic shared budgets, failover overshoot, 429 handling | Important | Important |
-| 14 | [Web Crawler](30.2.2.14-web-crawler.md) | Search & Data | URL frontier, politeness, content dedup, robots.txt, simhash | Important | Important |
-| 15 | [Chat System](30.2.2.15-chat-system.md) | Messaging & Real-Time | WebSocket messaging, presence, typing indicators, offline sync | Important | Important |
-| 16 | [Instagram](30.2.2.16-instagram.md) | Social & Feed | Photo/video sharing, fan-out feed, media pipeline, social graph | Important | Important |
-| 17 | [YouTube](30.2.2.17-youtube.md) | Streaming & Media | Video transcoding ladder, HLS/DASH streaming, CDN economics, recommendations | Important | Important |
+| 14 | [Web Crawler](30.2.2.14-web-crawler.md) | Search & Data | Bounded frontier, per-origin scheduling, lease fencing, robots policy, SSRF-safe fetching | Important | Important |
+| 15 | [Chat System](30.2.2.15-chat-system.md) | Messaging & Real-Time | Durable acceptance, ordered history, device receipts, change cursors, membership, E2EE and group fan-out | Important | Important |
+| 16 | [Instagram](30.2.2.16-instagram.md) | Social & Feed | Validated media publication, hybrid feeds, visibility checks, stable cursors and retry-safe interactions | Important | Important |
+| 17 | [YouTube](30.2.2.17-youtube.md) | Streaming & Media | Version-fenced uploads, HLS/DASH adaptive playback, manifest publication, authorized delivery and capacity | Important | Important |
 | 18 | [Dropbox](30.2.2.18-dropbox.md) | Storage & Sync | Block-level sync, content-addressable storage, conflict resolution, cursors | Important | Important |
 | 19 | [Lyft](30.2.2.19-lyft.md) | Ride-sharing & Geo | S2/H3 geo indexing, dispatch algorithm, ETA service, surge pricing | Important | Important |
 | 20 | [Distributed Counter](30.2.2.20-distributed-counter.md) | Web (foundational) | Stable event identity, hot-key sharding, CRDT merge, read contracts | Important | Important |
 | 21 | [Workflow Engine](30.2.2.21-workflow-engine.md) | Automation | Dependency eligibility, durable state, action identity, waits, compensation | Important | Important |
 | 22 | [Real-Time Collaboration](30.2.2.22-real-time-collaboration.md) | Messaging & Real-Time | OT vs CRDT, WebSocket protocol, Redis Pub/Sub, version history, offline support | Important | Important |
-| 23 | [Typeahead Autocomplete](30.2.2.23-typeahead-autocomplete.md) | Search & Data | Trie/prefix index, offline top-k ranking, geo-sharded indexes, freshness vs latency, personalization | Important | Important |
-| 24 | [Metrics Monitoring Pipeline](30.2.2.24-metrics-monitoring-pipeline.md) | Platform & Telemetry | TSDB ingestion path, downsampling, cardinality explosion control, push vs pull, alert evaluation at scale | Important | Important |
-| 25 | [Distributed Job Scheduler](30.2.2.25-distributed-job-scheduler.md) | Automation | Cron at scale, leader election, task leases & fencing, dedup, delayed jobs, fairness/starvation | Important | Important |
-| 26 | [Distributed ID Generator](30.2.2.26-distributed-id-generator.md) | Web (foundational) | Snowflake bit layout, clock rollback, worker identity, timestamp ordering limits, UUIDv7 comparison | Important | Important |
-| 27 | [Ad Click Aggregator](30.2.2.27-ad-click-aggregator.md) | Platform & Telemetry | Stable event identity, watermarks, revisioned reporting, fraud decisions, settlement | Important | Important |
-| 28 | [Parking Lot](30.2.2.28-parking-lot.md) | Infrastructure & LLD | Compatible allocation, live sessions, physical evidence, fee boundaries, payment | Important | Important |
-| 29 | [Distributed Cache](30.2.2.29-distributed-cache.md) | Infrastructure & LLD | Consistent hashing, replication, eviction policies, cache stampede, hot key handling | Important | Important |
-| 30 | [Message Queue](30.2.2.30-message-queue.md) | Infrastructure & LLD | WAL, consumer groups, delivery guarantees, backpressure, Kafka vs RabbitMQ comparison | Important | Important |
-| 31 | [API Gateway](30.2.2.31-api-gateway.md) | Infrastructure & LLD | Routing, rate limiting, JWT validation, BFF pattern, circuit breaker, protocol translation | Important | Important |
+| 23 | [Typeahead Autocomplete](30.2.2.23-typeahead-autocomplete.md) | Search & Data | Trie/radix/FST, bounded typo matching, deterministic ranking, visibility-scoped candidates, versioned index rollout | Important | Important |
+| 24 | [Metrics Monitoring Pipeline](30.2.2.24-metrics-monitoring-pipeline.md) | Platform & Telemetry | TSDB ingestion, OTel identity and temporality, exact cardinality admission, late samples, rollups, alert lifecycle | Important | Important |
+| 25 | [Distributed Job Scheduler](30.2.2.25-distributed-job-scheduler.md) | Automation | Occurrence identity, leases and fencing scope, outbox recovery, DST/misfire policy, retries, tenant fairness | Important | Important |
+| 26 | [Distributed ID Generator](30.2.2.26-distributed-id-generator.md) | Web (foundational) | Snowflake capacity, restart-safe clocks, stale-owner fencing, range allocation, UUIDv7 ordering | Important | Important |
+| 27 | [Ad Click Aggregator](30.2.2.27-ad-click-aggregator.md) | Platform & Telemetry | Producer identity, exact dedup, late-event corrections, revisioned totals, auditable settlement | Important | Important |
+| 28 | [Parking Lot](30.2.2.28-parking-lot.md) | Infrastructure & LLD | Atomic spot ownership, compatible allocation, versioned fees, payment outcomes, physical reconciliation | Important | Important |
+| 29 | [Distributed Cache](30.2.2.29-distributed-cache.md) | Infrastructure & LLD | Scoped keys, stale-fill races, partition and failover, hot-key control, origin-safe recovery | Important | Important |
+| 30 | [Message Queue](30.2.2.30-message-queue.md) | Infrastructure & LLD | ISR acknowledgments, partition ordering, idempotent effects, retention, poison messages, broker boundaries | Important | Important |
+| 31 | [API Gateway](30.2.2.31-api-gateway.md) | Infrastructure & LLD | JWT trust vs resource authorization, route normalization, deadlines and retries, scoped caching, BFF failure budgets | Important | Important |
 
 ---
 

@@ -1,6 +1,6 @@
 # Shipping & Evolution
 
-> **Study time:** ≈ 27 min of reading (5 files, ~5 min average).
+> **Study time:** ≈ 31 min of reading (5 files, ~6 min average).
 > **5 files.** Change without breakage and grow without waste: deploying new versions with zero downtime, paying down technical debt deliberately, treating cloud spend as an engineering metric (FinOps), and managing data lifecycle from hot storage to legal-hold-compliant deletion.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#file-index)
@@ -19,16 +19,20 @@ Shipping is not `git push` to prod. Users are mid-request while you deploy; sche
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Zero-Downtime Deployments](30.3.5.01-zero-downtime-deployments.md) | Rolling vs blue-green vs canary, expand/contract migrations, health-gated rollouts, rollback paths | Important | Specialized | 6 min |
-| 02 | [Technical Debt](30.3.5.02-technical-debt.md) | Debt quadrants, intentional vs accidental debt, remediation strategy, communicating debt to stakeholders | Important | Specialized | 6 min |
-| 03 | [Cost Engineering & FinOps](30.3.5.03-cost-engineering-finops.md) | Rightsizing, storage tiering, spot strategy, autoscaling traps, tagging/allocation, unit economics, cost checks in CI | Important | Specialized | 6 min |
-| 04 | [Data Retention & Archival](30.3.5.04-data-retention-archival.md) | Retention drivers, log/metric tiers, hot/warm/cold storage, DB TTLs, legal hold, right-to-erasure pipelines, runbooks | Important | Specialized | 7 min |
+| 01 | [Zero-Downtime Deployments](30.3.5.01-zero-downtime-deployments.md) | Deployment vs release; rolling, blue-green, canary and flags; expand/migrate/contract; drain and rollback boundaries | Important | Specialized | 7 min |
+| 02 | [Technical Debt](30.3.5.02-technical-debt.md) | Evidence-based debt items, cost and risk prioritization, strangler and abstraction migrations, tests and exit conditions | Important | Specialized | 6 min |
+| 03 | [Cost Engineering & FinOps](30.3.5.03-cost-engineering-finops.md) | Cost allocation, capacity and storage trade-offs, interruptible work, autoscaling signals, unit economics and estimate limits | Important | Specialized | 7 min |
+| 04 | [Data Retention & Archival](30.3.5.04-data-retention-archival.md) | Per-class policies and clocks; telemetry tiers; archive retrieval and cost; database expiry lag; serialized holds; deletion across recipients, backups and restores | Important | Specialized | 9 min |
 
 ---
 
 ## Reading Path and Completion Check
 
-Start with keeping old and new versions compatible during deployment and deciding how to roll back. Then prioritize technical debt by the time, failures or cost it causes. For resource costs and data retention, identify who makes the decision and who checks that it is carried out.
+Separate deployment from behavior release. Trace compatibility through rollout and migration; use representative evidence to promote a canary, and know when rollback must become forward repair.
+
+For technical debt, turn a recurring cost or risk into an owned item, compare it with affected future work, then migrate in stages with verification. For FinOps, trace billed quantities to an owner and useful output. Evaluate capacity, storage and interruptible-work choices against service and recovery needs, then validate estimates against actual spend.
+
+For retention, define a policy and clock for each data class and map every copy. Verify archive readability, serialize holds with deletion, and follow expiry through backup and restore paths.
 
 Describe a reversible release, an evidence-backed debt decision and an expiry path constrained by retention and holds. Then use [section revision](REVISION.md) without reopening the chapters. Interview banks, where present, are a separate drill after this check.
 

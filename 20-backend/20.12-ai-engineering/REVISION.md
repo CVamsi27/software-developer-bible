@@ -30,6 +30,10 @@ Source: [Prompts, Context and Evals](20.12.02-prompts-context-evals.md).
 
 **A:** Message framing, instructions, tool definitions, schemas, history, and reserved output tokens also consume capacity. Count the actual serialized request for the selected model and leave a conservative output reserve.
 
+**Q:** Why cap the raw model response before parsing JSON?
+
+**A:** Schema and field limits apply only after parsing. A byte limit prevents an oversized response from consuming unbounded parsing and validation work.
+
 **Q:** Why is the word “cannot” in an answer insufficient evidence of a safe refusal?
 
 **A:** The answer may still provide the prohibited assistance. Evaluate the whole output against the task-specific refusal/forbidden-content contract, with human-calibrated adversarial cases.
@@ -56,7 +60,7 @@ Source: [Agent Orchestration](20.12.04-agent-orchestration-patterns.md).
 
 **Q:** What should an engineer verify when upgrading an MCP integration to a newer protocol revision?
 
-**A:** Pin and inspect both the specification and SDK version, then test transport, session/state, discovery, cancellation, and backward-compatibility behavior. The `2026-07-28` revision defines stateless requests and standard `stdio`/Streamable HTTP transports; older peers can follow different rules. Regardless of revision, the host must authorize operations and isolate subprocesses explicitly.
+**A:** Pin and inspect both specification and SDK, then test transport, state, discovery, cancellation, and backward compatibility. The `2026-07-28` revision uses stateless requests over standard `stdio`/Streamable HTTP; elicitation uses a multi-round-trip `input_required` result rather than server-initiated JSON-RPC. Older peers can follow different rules. The host must authorize operations and isolate subprocesses explicitly.
 
 ## Serving Models
 

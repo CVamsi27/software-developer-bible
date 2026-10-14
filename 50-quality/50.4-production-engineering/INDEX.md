@@ -36,13 +36,13 @@ Close the chapters and complete [REVISION](REVISION.md), returning to the linked
 [Docita](https://github.com/CVamsi27/docita) is the companion repository. The paths below point to operational artifacts, not a claim that every listed control is currently passing or that a reader personally authored it. Check the artifact and its evidence before using it in an interview.
 
 | Topic | Docita evidence |
-| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Runbooks | `docs/runbooks/` (`abdm-onboarding.md`, `abdm-sandbox-setup.md`) |
 | Incident playbooks | `docs/operations/playbooks/` (`db-connection-exhaustion.md`, `razorpay-outage.md`, `pdf-queue-backlog.md`, …) |
-| Release evidence practice | `docs/operations/releases/2026-08-06-p5-closure.md` + `RELEASE_EVIDENCE_CHECKLIST.md` |
+| Release evidence practice | `docs/operations/releases/2026-08-06-p5-closure.md` + `docs/operations/RELEASE_EVIDENCE_CHECKLIST.md` |
 | Audits | `docs/audits/2026-08-19-comprehensive-audit.md` (+ evidence dir) |
 | ADR process as review gate | `docs/architecture/decisions/` — numbered records including reversals (`0009-vercel-retired.md`) |
-| Compliance automation | `apps/api/src/shared/modules/compliance/data-retention.scheduler.ts` + `archival.service.ts`; ops alerting via `ops-alert.listener.ts` |
+| Compliance automation | `apps/api/src/shared/modules/compliance/data-retention.scheduler.ts` + `archival.service.ts`; operational alerts via `apps/api/src/shared/modules/monitoring/monitoring/listeners/ops-alert.listener.ts` |
 
 ## Navigation
 

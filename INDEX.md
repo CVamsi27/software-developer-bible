@@ -1,6 +1,6 @@
 # Senior Full Stack Interview Bible — Index
 
-> **Study time:** ≈ 86 h 48 m of reading (671 files, ~8 min average).
+> **Study time:** ≈ 87 h 34 m of reading (675 files, ~8 min average).
 > **Start here: [ROADMAP.md](ROADMAP.md) — the canonical study path with phases, checkpoints, and weekly schedule.**
 >
 > **Pick your lane first.** The bible is organized into **2 interview lanes** (`80-lanes-abroad-full-stack`, `81-lanes-indian-sde-faang`) that draw from **7 shared study stacks** — plus the [00-strategy](00-strategy/INDEX.md) **strategy folder** everyone starts with. Each lane has its own preparation strategy; the stacks are the technical material both lanes share.
@@ -9,7 +9,7 @@
 
 [![Lanes](https://img.shields.io/badge/lanes-2-blue)](lanes/INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](#the-7-study-stacks-numbered-for-study-order)
-[![Files](https://img.shields.io/badge/files-1028-orange)](#the-7-study-stacks-numbered-for-study-order)
+[![Files](https://img.shields.io/badge/files-1035-orange)](#the-7-study-stacks-numbered-for-study-order)
 [![Design Patterns](https://img.shields.io/badge/GoF%20Coverage-23%2F23-success)](30-architecture/30.1-design-patterns/INDEX.md)
 [![Last Updated](https://img.shields.io/badge/last%20updated-October%202026-purple)](#)
 
@@ -62,12 +62,12 @@ These are sample scheduling blocks, not readiness estimates. Use [ROADMAP checkp
 
 ---
 
-### 10-frontend — Frontend (145 files in 8 sub-stacks)
+### 10-frontend — Frontend (147 files in 8 sub-stacks)
 
 | Order | Sub-stack | Files | Topics |
 | ----- | ----------------------------------------------------------- | ----: | --------------------------------------------------------------------------------------------------------------------------------- |
-| 10.1 | [JavaScript](10-frontend/10.1-javascript/INDEX.md) | 34 | Execution context, closures, prototypes, event loop, promises, async/await, cancellation, ES2024, hash tables |
-| 10.2 | [TypeScript](10-frontend/10.2-typescript/INDEX.md) | 18 | Generics, utility types, conditional types, narrowing, `satisfies` operator |
+| 10.1 | [JavaScript](10-frontend/10.1-javascript/INDEX.md) | 35 | Execution context, closures, prototypes, event loop, promises, async/await, cancellation, ES2024, hash tables |
+| 10.2 | [TypeScript](10-frontend/10.2-typescript/INDEX.md) | 19 | Generics, utility types, conditional types, narrowing, `satisfies` operator |
 | 10.3 | [React](10-frontend/10.3-react/INDEX.md) | 22 | Virtual DOM, Fiber, hooks (18-19), Suspense, performance, state management |
 | 10.4 | [Next.js](10-frontend/10.4-next.js/INDEX.md) | 17 | App Router, Server Components, Server Actions, Middleware, caching, streaming |
 | 10.5 | [Form Handling](10-frontend/10.5-form-handling/INDEX.md) | 7 | React Hook Form, Zod, Formik, TanStack Form, Server Actions |
@@ -75,11 +75,11 @@ These are sample scheduling blocks, not readiness estimates. Use [ROADMAP checkp
 | 10.7 | [HTML/CSS & PWA](10-frontend/10.7-html-css/INDEX.md) | 9 | Semantic HTML, CSS layout/responsive, service workers, SEO, browser rendering |
 | 10.8 | [Mobile & Cross-Platform](10-frontend/10.8-mobile/INDEX.md) | 7 | React Native (JSI/Fabric), Expo decision matrix, RN vs native vs PWA, EAS builds, OTA updates, store release, interview questions |
 
-### 20-backend — Backend (179 files in 11 sub-stacks)
+### 20-backend — Backend (181 files in 11 sub-stacks)
 
 | Order | Sub-stack | Files | Topics |
 | ----- | ------------------------------------------------------------------------------ | ----: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| 20.1 | [Node.js](20-backend/20.1-node.js/INDEX.md) | 13 | Event loop, streams, clustering, web streams, child processes, test runner |
+| 20.1 | [Node.js](20-backend/20.1-node.js/INDEX.md) | 15 | Event loop, streams, clustering, web streams, child processes, test runner |
 | 20.2 | [NestJS](20-backend/20.2-nestjs/INDEX.md) | 19 | Modules, DI, guards, pipes, interceptors, CQRS, microservices |
 | 20.3 | [REST APIs](20-backend/20.3-rest-apis/INDEX.md) | 21 | HTTP methods, status codes, versioning, pagination, rate limiting, RFC 9457 Problem Details, webhooks, HTTP caching, maturity model |
 | 20.4 | [Database](20-backend/20.4-database/INDEX.md) | 24 | PostgreSQL, indexes, transactions, MVCC, Prisma, pooling, replication, row-level security |
@@ -111,7 +111,7 @@ These are sample scheduling blocks, not readiness estimates. Use [ROADMAP checkp
 | [Git Advanced](40-platform/40.6-git-advanced/INDEX.md) | 10 | Branching, rebase, cherry-pick, hooks, patch workflow, code archaeology |
 | [Serverless & Edge](40-platform/40.7-serverless-edge/INDEX.md) | 10 | Lambda, Vercel Edge, serverless patterns, SAM/CDK/SST, Fly.io, Vite SPA on Cloudflare |
 | [Monorepo](40-platform/40.8-monorepo/INDEX.md) | 6 | Turborepo, Nx, pnpm, Rush, Bazel |
-| [Twelve-Factor App](40-platform/40.9-twelve-factor/INDEX.md) | 2 | The canonical cloud-native methodology — codebase, dependencies, config, backing services, build/release/run, processes, port binding, concurrency, disposability, dev/prod parity, logs, admin processes |
+| [Twelve-Factor App](40-platform/40.9-twelve-factor/INDEX.md) | 2 | The original twelve-factor methodology: deployment inputs, resource bindings, release stages, process lifecycle, and operational trade-offs; refresh in progress |
 | [CDN & Edge](40-platform/40.10-cdn/INDEX.md) | 4 | CDN caching strategies, invalidation, edge functions, PHI-at-edge considerations |
 | [Reverse Proxy](40-platform/40.11-reverse-proxy/INDEX.md) | 2 | Nginx internals: C10K, master–worker + epoll event loop, config contexts, upstream LB, TLS termination, buffering, rate limiting, proxy_cache, nginx vs HAProxy vs Envoy |
 | [IaC & Terraform](40-platform/40.12-iac/INDEX.md) | 2 | Infrastructure as Code, HCL, state & drift, plan/apply, backends & locking, modules, workspaces, import, OpenTofu/Pulumi/CDKTF, IaC in CI/CD |
@@ -202,4 +202,4 @@ projects → Docita architecture deep-dives, interview defense
 
 ---
 
-*Last updated: October 2026 — 1028 files, 159K lines, 0 broken links — folders numbered for study order. Every large stack is organized into numbered category subfolders; the auth track covers passkeys/SAML; sequences are contiguous inside each stack folder. The 80.x lane numbering intentionally leaves room for project-preparation chapters.
+*Last updated: October 2026 — 1035 files, 158K lines, 0 broken links — folders numbered for study order. Every large stack is organized into numbered category subfolders; the auth track covers passkeys/SAML; sequences are contiguous inside each stack folder. The 80.x lane numbering intentionally leaves room for project-preparation chapters.

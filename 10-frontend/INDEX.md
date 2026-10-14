@@ -1,13 +1,13 @@
 # Frontend Stack
 
-> **Study time:** ≈ 17 h 12 m of reading (145 files, ~7 min average).
+> **Study time:** ≈ 17 h 26 m of reading (147 files, ~7 min average).
 > **JavaScript, TypeScript, React, Next.js, Form Handling, Animation, HTML/CSS/PWA, Mobile** — the frontend foundation for the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
-> 145 files across 8 sub-stacks, organized by what you need to know in what order.
+> 147 files across 8 sub-stacks, organized by what you need to know in what order.
 
 **Real-world anchor:** category anchor tables link available [Docita evidence](https://github.com/CVamsi27/docita) and identify topics without a direct implementation. Read those gaps before claiming production experience.
 
-[![Files](https://img.shields.io/badge/files-145-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-147-blue)](../INDEX.md)
 [![Sub-stacks](https://img.shields.io/badge/sub--stacks-8-green)](#the-8-sub-stacks-in-study-order)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -25,8 +25,8 @@ The category indexes below guide each mechanism in study order. Their source-lin
 
 | Order | Sub-stack | Files | Categories | Topics |
 | ----: | ----------------------------------------------- | ----: | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1 | [JavaScript](10.1-javascript/INDEX.md) | 34 | 6 categories | [Execution & Scope](10.1-javascript/01-execution-and-scope/INDEX.md), [Objects/Prototypes/`this`](10.1-javascript/02-objects-prototypes-this/INDEX.md), [Async & Concurrency](10.1-javascript/03-async-concurrency/INDEX.md), [Memory & Data](10.1-javascript/04-memory-and-data/INDEX.md), [Functional Patterns](10.1-javascript/05-functional-patterns/INDEX.md), [Modern JS](10.1-javascript/06-modern-and-interview/INDEX.md) |
-| 2 | [TypeScript](10.2-typescript/INDEX.md) | 18 | 5 categories | [Foundations](10.2-typescript/01-foundations/INDEX.md), [Generics & Inference](10.2-typescript/02-generics-and-inference/INDEX.md), [Type Transformations](10.2-typescript/03-type-transformations/INDEX.md), [Advanced Patterns](10.2-typescript/04-advanced-patterns/INDEX.md), [Interview Prep](10.2-typescript/05-interview-prep/INDEX.md) |
+| 1 | [JavaScript](10.1-javascript/INDEX.md) | 35 | 6 categories | [Execution & Scope](10.1-javascript/01-execution-and-scope/INDEX.md), [Objects/Prototypes/`this`](10.1-javascript/02-objects-prototypes-this/INDEX.md), [Async & Concurrency](10.1-javascript/03-async-concurrency/INDEX.md), [Memory & Data](10.1-javascript/04-memory-and-data/INDEX.md), [Functional Patterns](10.1-javascript/05-functional-patterns/INDEX.md), [Modern JS](10.1-javascript/06-modern-and-interview/INDEX.md) |
+| 2 | [TypeScript](10.2-typescript/INDEX.md) | 19 | 5 categories | [Foundations](10.2-typescript/01-foundations/INDEX.md), [Generics & Inference](10.2-typescript/02-generics-and-inference/INDEX.md), [Type Transformations](10.2-typescript/03-type-transformations/INDEX.md), [Advanced Patterns](10.2-typescript/04-advanced-patterns/INDEX.md), [Interview Prep](10.2-typescript/05-interview-prep/INDEX.md) |
 | 3 | [React](10.3-react/INDEX.md) | 22 | 5 categories | [React Internals](10.3-react/01-react-internals/INDEX.md), [Core Hooks](10.3-react/02-core-hooks/INDEX.md), [Advanced Hooks & Patterns](10.3-react/03-advanced-hooks-and-patterns/INDEX.md), [Modern React](10.3-react/04-modern-react/INDEX.md), [Patterns & Interview Prep](10.3-react/05-patterns-and-interview/INDEX.md) |
 | 4 | [Next.js](10.4-next.js/INDEX.md) | 17 | 5 categories | [Rendering Fundamentals](10.4-next.js/01-rendering-fundamentals/INDEX.md), [Routing & Middleware](10.4-next.js/02-routing-and-middleware/INDEX.md), [Data & Caching](10.4-next.js/03-data-and-caching/INDEX.md), [Production](10.4-next.js/04-production/INDEX.md), [Interview Prep](10.4-next.js/05-interview-prep/INDEX.md) |
 | 5 | [Form Handling](10.5-form-handling/INDEX.md) | 7 | — | React Hook Form, Zod, Formik, TanStack Form, Server Actions, Autosave & Draft Recovery |

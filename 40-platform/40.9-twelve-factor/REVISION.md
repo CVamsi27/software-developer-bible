@@ -12,7 +12,7 @@ Read the chapters in the [section learning flow](INDEX.md), then close them and 
 
 ## The Twelve-Factor App
 
-Source: [The Twelve-Factor App](40.9.01-the-twelve-factor-app.md)
+Source: [The Twelve-Factor App](40.9.01-the-twelve-factor-app.md) · [Original factor text](https://12factor.net/) · [Community refresh announcement](https://12factor.net/blog/open-source-announcement) · [Manifesto repository](https://github.com/twelve-factor/twelve-factor)
 
 **Q:** What separates a build from a release?
 
@@ -46,13 +46,17 @@ Source: [The Twelve-Factor App](40.9.01-the-twelve-factor-app.md)
 
 **A:** No. The methodology favors fast start and graceful stop; measure workload readiness and configure the runtime deadline. Sudden death still requires durable recovery.
 
+**Q:** What is the current status of the original Twelve-Factor text?
+
+**A:** It was published in 2011, and the original pages state they were last updated in 2017. A community refresh began in 2024; its repository says the working updates remain on `next` until maintainers agree the round is complete. Treat the original as a useful baseline and describe adaptations without presenting later proposals as a finalized replacement.
+
 **Q:** Is a secret fetched into memory safe from crash dumps?
 
 **A:** No. Delivery avoids embedding it in the artifact but does not remove its in-memory value. Control diagnostics, lifetime, access and redaction.
 
 ## Deployment Prompts Moved from the Learning Chapter
 
-Source: [The Twelve-Factor App](40.9.01-the-twelve-factor-app.md)
+Source: [The Twelve-Factor App](40.9.01-the-twelve-factor-app.md) · [Original factor text](https://12factor.net/)
 
 **Q:** Walk me through your deployment pipeline.
 

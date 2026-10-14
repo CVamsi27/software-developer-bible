@@ -1,6 +1,6 @@
 # Git Advanced — Index
 
-> **Study time:** ≈ 1 h 26 m of reading (11 files, ~8 min average).
+> **Study time:** ≈ 1 h 19 m of reading (11 files, ~7 min average).
 > **11 files** — Advanced Git operations from the object model, branching strategies, rebase, cherry-pick, hooks, bisect, reflog, format-patch, code archaeology, LFS/partial clones, and commit signing to interview questions.
 
 [![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
@@ -16,7 +16,7 @@
 | Category | Files | Why it matters |
 | ------------------------------------------ | ----: | ----------------------------------------------------------------------- |
 | [Internals](#internals) | 1 | Objects, refs, packfiles — the mental model behind every command |
-| [Branching & History](#branching--history) | 2 | Branching strategies + rebase/cherry-pick — the day-to-day |
+| [Branching & History](#branching--history) | 2 | Choose an integration/release path, then move or port commits safely |
 | [Automation](#automation) | 1 | Git hooks, Husky, commitlint — enforce standards |
 | [Advanced Commands](#advanced-commands) | 2 | Bisect, reflog, worktree, patches — the power tools |
 | [Investigation](#investigation) | 1 | Code archaeology — finding who/when/why |
@@ -31,7 +31,7 @@ Understand this once and `reset`, `rebase`, and recovery stop being scary.
 
 | # | File | Topics | When to read | Role priority | General importance | Read time |
 | --: | ------ | -------- | -------------- | --- | --- | ----------: |
-| 01 | [Git Internals: Objects, Refs & Packfiles](40.6.01-git-internals-objects-refs-packfiles.md) | blob/tree/commit/tag model, `hash-object`/`mktree` demos, HEAD & refs, packfiles/deltas, reflog safety net, gc/repack, how reset/rebase move refs, `.git` directory tour | First — it unlocks everything else | Important | Foundational | 14 min |
+| 01 | [Git Internals: Objects, Refs & Packfiles](40.6.01-git-internals-objects-refs-packfiles.md) | file-to-commit trace, object identities, refs and HEAD, pack storage, reset/rebase effects, reflog recovery limits, linked worktrees | First — it unlocks everything else | Important | Foundational | 10 min |
 
 ---
 
@@ -41,17 +41,21 @@ How your team organizes work.
 
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
-| 02 | [Branching Strategies](40.6.02-branching-strategies.md) | Git Flow, GitHub Flow, trunk-based development, release branches | Pick the model for your team | Important | Foundational | 7 min |
-| 03 | [Rebase & Cherry-Pick](40.6.03-rebase-cherry-pick.md) | Interactive rebase, conflict resolution, cherry-pick workflows | Linear history, porting fixes | Important | Foundational | 8 min |
+| 02 | [Branching Strategies](40.6.02-branching-strategies.md) | Integration cadence, review policy, Git Flow, trunk-based delivery, supported release lines | Choose from release and support needs, not team-size labels | Important | Foundational | 6 min |
+| 03 | [Rebase & Cherry-Pick](40.6.03-rebase-cherry-pick.md) | Rewrite private patch series, compare rebases, backport fixes, resolve replay conflicts | Update a topic branch or move one fix to a supported release | Important | Foundational | 8 min |
+
+GitHub Flow and trunk-based development can coexist: one describes a pull-request review path, while the other emphasizes short integration cycles. Choose review controls and release-line ownership separately.
 
 **Decision:**
 
 ```text
-What branching model?
-├── Open-source / many contributors → GitHub Flow (PR per feature)
-├── Multiple production versions → Git Flow (develop/release/hotfix)
-├── High-velocity team / strong CI → Trunk-based (short-lived branches, feature flags)
-└── Independent release lines → evaluate scoped support branches and explicit backports
+What does the product need?
+├── One active release line, frequent integration → trunk-based development
+│   └── Use reviewed short-lived branches when the repository requires a PR
+├── A clear PR loop, releases from the default branch → GitHub Flow
+├── Planned version preparation plus a separate integration line → Git Flow
+└── Several older versions still supported → trunk + scoped release branches
+    └── Define who backports, what runs on each line, and when each line closes
 ```
 
 ---
@@ -60,7 +64,7 @@ What branching model?
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 04 | [Git Hooks](40.6.04-git-hooks.md) | Client/server hooks, pre-commit, Husky, commitlint, lint-staged | Important | Foundational | 5 min |
+| 04 | [Git Hooks](40.6.04-git-hooks.md) | Staged/message checks, Husky/lint-staged, receiver policy, post-receive boundary—choose by event and authority | Important | Foundational | 7 min |
 
 ---
 
@@ -70,8 +74,8 @@ The power tools.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 05 | [Advanced Commands](40.6.05-git-advanced-commands.md) | `git bisect`, `git reflog`, `git worktree`, `git submodule`, recovery-state boundaries | Important | Foundational | 12 min |
-| 06 | [Patch & Bundle](40.6.06-patch-and-bundle.md) | `format-patch`, `am`, `send-email`, bundles, OSS contribution workflow | Important | Foundational | 5 min |
+| 05 | [Advanced Commands](40.6.05-git-advanced-commands.md) | Bisect’s test contract, reflog recovery limits, stash vs worktree, pinned submodules, reset vs revert | Important | Foundational | 6 min |
+| 06 | [Patch, Bundle & Archive](40.6.06-patch-and-bundle.md) | Ordered mbox replay, sign-off vs signature, bundle prerequisites and limits, tracked-tree release archives | Important | Foundational | 7 min |
 
 ---
 
@@ -79,7 +83,7 @@ The power tools.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 07 | [Code Archaeology](40.6.07-code-archaeology.md) | `git blame`, `git log -S`, `git bisect`, `git reflog`, history investigation | Important | Foundational | 12 min |
+| 07 | [Code Archaeology](40.6.07-code-archaeology.md) | Line attribution limits, moved-code detection, `-S` vs `-G`, path/function history, review evidence | Important | Foundational | 5 min |
 
 ---
 
@@ -89,8 +93,8 @@ Keeping large repositories fast and history trustworthy.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 08 | [Git at Scale: LFS & Partial Clones](40.6.08-git-at-scale-lfs-partial-clones.md) | LFS pointer files/smudge-clean filters, partial clone (`--filter=blob:none`), sparse-checkout, Scalar, CI shallow clones (`fetch-depth`), repo size audits | Important | Foundational | 8 min |
-| 09 | [Signed Commits & Repository Security](40.6.09-signed-commits-repository-security.md) | GPG vs SSH vs Sigstore signing, Verified badges, branch protection enforcement, mailmap identity hygiene, CI verify steps, supply-chain context | Important | Foundational | 7 min |
+| 08 | [Git at Scale: LFS & Partial Clones](40.6.08-git-at-scale-lfs-partial-clones.md) | LFS tracking, migration and payload recovery; partial clone, cone sparse checkout and promisor fetches; explicit shallow-history refs; Scalar maintenance and object-size audits | Important | Foundational | 9 min |
+| 09 | [Signed Commits & Repository Security](40.6.09-signed-commits-repository-security.md) | GPG vs SSH vs Sigstore signing, Verified badges, branch protection enforcement, mailmap identity hygiene, CI verify steps, supply-chain context | Important | Foundational | 8 min |
 
 ---
 
@@ -98,19 +102,19 @@ Keeping large repositories fast and history trustworthy.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 10 | [Interview Questions](40.6.10-interview-questions.md) | 40 source-linked questions with answers | Important | Foundational | 6 min |
+| 10 | [Interview Questions](40.6.10-interview-questions.md) | 40 source-linked questions with answers | Important | Foundational | 7 min |
 
 ---
 
 ## Suggested Study Order
 
 1. **Git Internals** — the object model makes everything else click
-2. **Branching Strategies** — must know (you'll be asked what your team uses)
+2. **Branching Strategies** — explain integration cadence, review gates, and supported releases before naming a model
 3. **Rebase & Cherry-Pick** — must know
 4. **Git Hooks** — for senior roles
 5. **Advanced Commands** — for the "what would you do if…" questions
 6. **Code Archaeology** — for debugging questions
-7. **Patch & Bundle** — for OSS contribution
+7. **Patch, Bundle & Archive** — choose the right artifact for review, offline history transfer, or a source release
 8. **LFS & Partial Clones** — for platform/scale roles
 9. **Signed Commits** — for security-minded teams
 10. **[Section revision](REVISION.md)** — explain each state transition without copying
@@ -126,6 +130,7 @@ Keeping large repositories fast and history trustworthy.
 - "How do you undo a commit? What about an already-pushed commit?"
 - "How do you resolve a merge conflict?"
 - "What does `git reflog` do? How has it saved you?"
+- "Should this change move as a patch, bundle, or source archive?"
 - "Walk me through your team's branching strategy."
 - "How would you keep a multi-GB repository cloneable?" (LFS, partial clones, shallow CI)
 

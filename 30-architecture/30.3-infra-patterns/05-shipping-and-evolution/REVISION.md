@@ -26,6 +26,10 @@ Source: [Zero-Downtime Deployments — Blue-Green, Canary, Rolling, Feature Flag
 
 **A:** No. It constrains available rollout capacity under readiness rules. Spare scheduling capacity, routing convergence, business correctness and bounded in-flight drain remain separate requirements.
 
+**Q:** What does `ProgressDeadlineExceeded` do when a Kubernetes Deployment stalls?
+
+**A:** It reports stalled progress while the controller keeps reconciling; it does not automatically roll back. A release owner or higher-level controller must decide whether to pause, roll back or repair forward. See the [Kubernetes Deployment documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/).
+
 **Q:** Why can a one-time old-to-new-column backfill become stale before reader cutover?
 
 **A:** Old writers may keep modifying only the old column. Bridge/upgrade every writer, capture concurrent changes and revalidate meaning before making the new field authoritative.
@@ -50,6 +54,10 @@ Source: [Technical Debt — Identification, Prioritization, Remediation](30.3.5.
 
 **A:** When both execute authoritative writes or remote effects, such as charging a payment. Use pure reads/calculations or isolated/suppressed side effects and a deliberate ownership transition.
 
+**Q:** What must precede consolidating divergent booking checks, and where should concurrency be enforced?
+
+**A:** Derive the intended rule from booking policy before choosing which behavior to keep. Then enforce the no-overlap invariant at the authoritative write boundary: two requests can both pass a preflight check before either writes. Use a storage constraint or transaction/locking mechanism suited to the data model and test competing requests. See [Technical Debt](30.3.5.02-technical-debt.md).
+
 ## Cost Engineering & FinOps
 
 Source: [Cost Engineering & FinOps](30.3.5.03-cost-engineering-finops.md)
@@ -64,7 +72,11 @@ Source: [Cost Engineering & FinOps](30.3.5.03-cost-engineering-finops.md)
 
 **Q:** Should checkpoint recovery depend on receiving an interruption warning?
 
-**A:** No. Warnings differ by provider/behavior and abrupt loss remains possible. Commit output/progress consistently and recover safely from redelivery without the notice.
+**A:** No. Notices are provider-specific and may be best-effort. Commit output and checkpoint atomically when they share a datastore; across systems, make replay idempotent or deduplicated and reconcile before acknowledging the job.
+
+**Q:** What does a passing infrastructure cost estimate establish?
+
+**A:** It estimates supported resource changes under its pricing and usage assumptions. It does not predict actual traffic, every runtime charge or the next invoice; a separate policy must decide whether the estimate blocks review or release. See [Cost Engineering & FinOps](30.3.5.03-cost-engineering-finops.md).
 
 ## Data Retention & Archival
 
@@ -85,6 +97,10 @@ Source: [Data Retention & Archival](30.3.5.04-data-retention-archival.md)
 **Q:** Does deleting a current S3 object guarantee all earlier versions are gone?
 
 **A:** No. A delete marker/current expiration can leave noncurrent versions, while holds/retention can protect others. Verify relevant versions and the asynchronous policy outcome.
+
+**Q:** Does the United Kingdom's one-month response period mean every backup must be physically erased within that month?
+
+**A:** No. The [Information Commissioner's Office (ICO) guidance](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/individual-rights/individual-rights/right-to-erasure/) describes when to respond, not a universal physical-erasure deadline. Determine scope, exceptions and deadlines under the applicable rules; where permitted, keep delayed backup copies inaccessible and beyond use until their established overwrite schedule.
 
 **Q:** What can defeat cryptographic erasure after a key is deleted?
 

@@ -1,27 +1,27 @@
 # Twelve-Factor App — Index
 
-> **Study time:** ≈ 15 min of reading (3 files, ~5 min average).
-> **1 file** — The canonical cloud-native methodology. The vocabulary of modern DevOps, platform engineering, and senior backend interviews. Use the factors to diagnose the relationship between deployment inputs, durable resources and replaceable processes.
+> **Study time:** ≈ 16 min of reading (3 files, ~5 min average).
+> **3 files** — Read the original twelve-factor methodology, then use its interview bank and revision guide to diagnose deployment inputs, durable resources, and replaceable processes. A community refresh is underway; this section distinguishes the original text from later proposals.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Why Twelve-Factor:** This is the **vocabulary** of modern cloud-native apps. When a senior interviewer says "is this app twelve-factor?" they mean: does it follow the principles that make cloud deployment work? Read this file once — it's the lingua franca of platform engineering.
+**Why study Twelve-Factor:** The original factors provide a shared vocabulary for discussing service portability, deployment inputs, attached resources, and process lifecycle. Use them to identify a design boundary and its trade-offs; they are not a compliance certificate. The original text remains published while its community refresh is in progress.
 
 ---
 
 ## Factor Categories
 
-The 12 (+3) factors classify into 4 conceptual families — the way to *recall* them under pressure.
+The original twelve factors are grouped here into four study categories. This grouping is editorial, not an extra part of the methodology.
 
-| Category | Factors | The principle in one line |
+| Category | Original factors | The principle in one line |
 | ---------------------------------------- | -------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
-| [Build & Ship](#factor-categories) | 1 Codebase · 2 Dependencies · 5 Build/Release/Run | One repo → deterministic build → immutable release |
+| [Build & Ship](#factor-categories) | 1 Codebase · 2 Dependencies · 5 Build/Release/Run | One codebase per app; declare dependencies and separate build from release and run |
 | [Config & Bindings](#factor-categories) | 3 Config · 4 Backing services | The original recommends env vars; bindings select compatible attached resources |
 | [Runtime Model](#factor-categories) | 6 Processes · 7 Port binding · 8 Concurrency · 9 Disposability | Stateless processes, self-port-binding, scale by process count, die gracefully |
 | [Operational Parity](#factor-categories) | 10 Dev/prod parity · 11 Logs · 12 Admin processes | Reduce relevant differences between environments; logs are event streams; admin = one-off processes |
-| *(15-factor extension)* | API first · Telemetry · Auth | The modern add-ons for API + observability + security concerns |
+| Optional book extensions | API first · Telemetry · Authentication and authorization | Additional concerns discussed in a 2016 book; not part of the original twelve or an official update |
 
 ---
 
@@ -42,18 +42,16 @@ The 12 (+3) factors classify into 4 conceptual families — the way to *recall* 
 | 11 | **Logs** | Treat logs as event streams |
 | 12 | **Admin processes** | Run admin/maintenance tasks as one-off processes |
 
-**Plus the unofficial 15-factor extension:**
-- **API first** — design the API contract before implementation
-- **Telemetry** — instrument everything (metrics, traces, logs)
-- **Auth** — authentication as a separate concern
+**Beyond the original factors:** Kevin Hoffman’s 2016 book discusses API first, telemetry, and authentication/authorization as additional concerns. They are useful topics, not an official replacement factor list. The [community refresh](https://github.com/twelve-factor/twelve-factor) remains in progress.
 
 ---
 
-## The File
+## The Files
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [The Twelve-Factor App](40.9.01-the-twelve-factor-app.md) | All 12 factors + the 15-factor extension, with examples, anti-patterns, and "how to comply" guidance | Important | Important | 8 min |
+| 01 | [The Twelve-Factor App](40.9.01-the-twelve-factor-app.md) | Original factors, current status, operational examples, and clearly labeled later proposals | Important | Important | 9 min |
+| — | [Section revision](REVISION.md) | Retrieval prompts for release identity, process replacement, configuration, logs, and operational boundaries | Important | Important | 2 min |
 | 02 | [Twelve-Factor App Interview Questions](40.9.02-interview-questions.md) | Diagnostic Q&A: the factors as diagnosis (violation → incident → fix), build/release/run immutability, process-type scaling, migrations as one-off releases, K8s/serverless mapping, scenario drills (slow-boot autoscaling, MemoryStore incident, "is 12-factor obsolete?") | Important | Important | 5 min |
 
 ---
@@ -98,13 +96,13 @@ The full bank with model answers: → [40.9.02 Interview Questions](40.9.02-inte
 These existing [Docita](https://github.com/CVamsi27/docita) pointers locate related configuration and deployment code. They are investigation starting points; the paths alone do not establish production readiness or measured compliance.
 
 | Topic | Docita evidence |
-| ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| III. Config in env | `shared/modules/config/env-schema.ts` validates env; turbo `globalEnv` allowlists exactly which vars bust caches |
+| ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| III. Config in env | `apps/api/src/shared/modules/config/env-schema.ts` validates runtime env; `turbo.json` declares shared env inputs for task hashing and passthrough, with additional task-level inputs |
 | IV. Backing services as attached resources | Swapped by env: `QUEUE_BACKEND=postgres`, `CACHE_BACKEND=memory`, `STORAGE_PROVIDER=r2` (fly.toml) |
 | VI. Processes | Stateless API + separate worker app; inspect replacement and accepted-work recovery; `auto_stop_machines` alone does not prove disposability |
-| V. Build/release/run | Turbo build → CI deploy workflow → migration gate (`db-migrations.yml`) before rollout |
-| XI. Logs | Pino structured logs to stdout; PHI redaction before emit |
-| X. Dev/prod parity | `docker-compose.yml` Postgres locally mirrors managed prod Postgres |
+| V. Build/release/run | `turbo.json` defines build task inputs/outputs. `.github/workflows/deploy.yml` runs a `migrate-db` job before API/worker deployment; API deploy also depends on startup-smoke and latency gates. The separate migration-validation job in `ci.yml` is manually triggered. |
+| XI. Logs | Pino defaults to stdout; its options disable automatic request logs and configure request serializers plus patient health information (PHI) redaction for payloads and errors in `apps/api/src/shared/modules/observability/`. This code does not establish collector durability or retention. |
+| X. Dev/prod parity | `docker-compose.yml` provides local PostgreSQL 15 with `pg_stat_statements`; this does not prove parity. Compare the deployed database and test production-specific permissions, latency, scale, and failure behavior. |
 
 ## Finish This Section
 

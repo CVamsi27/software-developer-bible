@@ -1,7 +1,7 @@
 # Compilers
 
-> **Study time:** ≈ 9 min of reading (3 files, ~3 min average).
-> **3 files.** How TypeScript and JSX syntax become JavaScript, and which checks and runtime APIs remain separate.
+> **Study time:** ≈ 11 min of reading (3 files, ~4 min average).
+> **3 files.** How JavaScript-family syntax becomes output, where Babel 8 polyfill settings differ from Babel 7, and which type/runtime checks remain separate.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Compilers-%2364748b)](../INDEX.md)
@@ -11,7 +11,7 @@
 
 ## Why this category exists
 
-TypeScript and JSX require supported transforms, while emitted JavaScript still needs its runtime APIs. Read Babel’s parse/transform/generate mechanism, then compare esbuild/SWC semantics and explicit type checks. A compiler does not automatically inject every required polyfill or guarantee a fixed speedup.
+TypeScript and JSX need syntax transforms, but emitted JavaScript still needs runtime APIs and TypeScript still needs a checker. Read Babel's current output and polyfill contract first, then compare what esbuild and SWC own. The key decision is which stage each tool handles and which checks remain explicit.
 
 ---
 
@@ -19,8 +19,8 @@ TypeScript and JSX require supported transforms, while emitted JavaScript still 
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Babel](40.5.2.01-babel.md) | Compilation pipeline, presets, plugins, polyfills, browserslist, `@babel/preset-env` | Important | Specialized | 4 min |
-| 02 | [ESBuild & SWC](40.5.2.02-esbuild-swc.md) | Go/Rust toolchains, performance model, configuration, where each is embedded | Important | Specialized | 3 min |
+| 01 | [Babel](40.5.2.01-babel.md) | AST transforms, target output, Babel 7-to-8 changes, explicit polyfill and type-check boundaries | Important | Specialized | 5 min |
+| 02 | [ESBuild & SWC](40.5.2.02-esbuild-swc.md) | Bundling versus transforms, type erasure, syntax targets, SWC's opt-in `core-js` injection | Important | Specialized | 4 min |
 
 ---
 

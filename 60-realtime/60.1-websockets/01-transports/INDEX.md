@@ -55,8 +55,8 @@ Close the chapters and work through [section revision questions](REVISION.md). E
 [Docita](https://github.com/CVamsi27/docita) is a companion project. These source paths identify implementation evidence; they do not establish a deployed topology or successful recovery drill.
 
 | Topic | Docita evidence |
-| --------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | Socket.IO as chosen transport | `socket.io` dependency in `apps/api/package.json`, wired in `apps/api/src/websockets/websockets.module.ts` |
-| SSE (one real, narrow use) | `apps/api/src/shared/modules/ai/ai.controller.ts` streams `text/event-stream` for AI responses |
+| SSE (AI response stream) | `@Post('ask')` in `apps/api/src/shared/modules/ai/ai.controller.ts` sets `text/event-stream` and emits `delta`, `done` and `error` events |
 | Transport-choice rationale | `docs/operations/WEBSOCKET_SCALING.md` — sockets trigger React Query invalidation only |
 | Handshake auth at transport level | `apps/api/src/websockets/base-websocket.gateway.ts` (bearer token from `handshake.auth.token`) |

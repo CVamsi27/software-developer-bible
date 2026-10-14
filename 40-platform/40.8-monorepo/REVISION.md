@@ -18,13 +18,17 @@ Source: [Monorepo Overview](40.8.01-monorepo-overview.md)
 
 **A:** A commit can change related packages together. Runtime deployment, database changes, and publication still require compatibility and release coordination.
 
+**Q:** Why can a workspace package import work locally but fail for a registry consumer?
+
+**A:** The workspace link may expose files that were never built or exported in the package manifest. Build the package, inspect its tarball and workspace-range rewrites, then install it in a clean consumer. See pnpm's [workspace protocol](https://pnpm.io/workspaces) and Node's [package entry-point rules](https://nodejs.org/api/packages.html).
+
 ## Turborepo
 
 Source: [Turborepo](40.8.02-turborepo.md)
 
 **Q:** Why can an undeclared environment input produce a wrong cache hit?
 
-**A:** The hash may treat different build behavior as identical and restore an artifact from another configuration. Declare output-affecting inputs and avoid caching side-effecting tasks.
+**A:** The hash may treat different build behavior as identical and restore an artifact from another configuration. Declare output-affecting inputs and avoid caching side-effecting tasks. See Turborepo’s [cache inputs and outputs](https://turborepo.dev/docs/crafting-your-repository/caching) and [task configuration](https://turborepo.dev/docs/reference/configuration).
 
 ## Nx
 
@@ -32,7 +36,7 @@ Source: [Nx](40.8.03-nx.md)
 
 **Q:** Why are dependency boundaries needed even with an accurate project graph?
 
-**A:** A graph describes coupling; it does not prevent unwanted coupling. Tags/rules and code review establish which dependencies are allowed.
+**A:** A graph describes coupling; it does not prevent unwanted coupling. Tags and rules establish which dependencies are allowed, and lint or conformance must run as a required check. See Nx’s [module-boundary enforcement](https://nx.dev/docs/features/enforce-module-boundaries).
 
 ## Monorepo Tools Deep-Dive (Lerna, pnpm, Yarn, Rush, Bazel)
 
@@ -40,11 +44,11 @@ Source: [Monorepo Tools Deep-Dive (Lerna, pnpm, Yarn, Rush, Bazel)](40.8.04-mono
 
 **Q:** What are the three toolchain layers you should keep separate?
 
-**A:** Package management resolves/links dependencies, task orchestration schedules/caches work, and compilers/bundlers produce artifacts. Some tools overlap, but each contract still needs an owner.
+**A:** Package management resolves/links dependencies, task orchestration schedules/caches work, and compilers/bundlers produce artifacts. Some tools overlap, but each contract still needs an owner. The [Nx mental model](https://nx.dev/docs/concepts/mental-model) shows why project and task graphs answer different questions.
 
 **Q:** Can engineer count determine whether a repository needs Bazel?
 
-**A:** No. Compare declared toolchains, generated inputs and reproducibility needs with supported rules and maintenance cost. A small repository can need those controls; a large one can still have a simple script graph.
+**A:** No. Compare declared toolchains, generated inputs and reproducibility needs with supported rules and maintenance cost. A small repository can need those controls; a large one can still have a simple script graph. Bazel’s [build model](https://bazel.build/) makes targets and actions explicit, so pilot the rules required by your languages.
 
 **Q:** What should a monorepo tooling pilot prove before trusting remote cache hits?
 
@@ -56,7 +60,7 @@ Source: [Versioning & Publishing Strategies](40.8.05-versioning-publishing-strat
 
 **Q:** Why does a package release need dependency-range changes as well as a new version?
 
-**A:** Consumers need compatible dependency/peer ranges and valid registry references. Bumping the package alone may leave workspace-only references or incompatible dependents.
+**A:** Consumers need compatible dependency and peer ranges, and the packed manifest must contain registry-resolvable references. Bumping the package alone may leave workspace-only references or incompatible dependents. Review the [Changesets versioning flow](https://changesets.dev/guide/versioning-and-publishing) and the [SemVer contract](https://semver.org/).
 
 ## Boundaries to Recheck
 
@@ -76,7 +80,7 @@ Source: [Versioning & Publishing](40.8.05-versioning-publishing-strategies.md)
 
 **Q:** Does enabling npm provenance remove the need for publish authorization?
 
-**A:** No. Provenance attests origin. Token credentials or explicitly configured trusted publishing authorize the registry operation; validate the tarball and exact version set independently.
+**A:** No. Provenance supplies verifiable build-origin information; trusted publishing or a scoped credential authorizes the registry operation. Verify both independently against npm’s [trusted-publisher](https://docs.npmjs.com/trusted-publishers/) and [provenance](https://docs.npmjs.com/generating-provenance-statements/) guidance.
 
 ## Summary
 

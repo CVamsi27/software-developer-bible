@@ -26,6 +26,10 @@ Source: [Babel](40.5.2.01-babel.md)
 
 **A:** It determines which syntax needs lowering and which optional polyfills are selected. Broadening targets can add compatibility code that modern-only output does not need.
 
+**Q:** A Babel 7 project used `useBuiltIns` and `corejs` in `preset-env`. What must be checked before moving to Babel 8?
+
+**A:** Babel 8 removed those options from `preset-env` and removed `corejs` from `transform-runtime`; configure `babel-plugin-polyfill-corejs3` for Babel-managed `core-js` injection. Also check the new default targets/module output and Babel 8's Node.js minimum. See the [Babel 8 migration guide](https://babeljs.io/docs/v8-migration/).
+
 ## ESBuild & SWC
 
 Source: [ESBuild & SWC](40.5.2.02-esbuild-swc.md)
@@ -37,6 +41,10 @@ Source: [ESBuild & SWC](40.5.2.02-esbuild-swc.md)
 **Q:** Why compare compiler output as well as elapsed time?
 
 **A:** Class fields, decorators, target lowering, interop, and source maps can differ. A faster transform must preserve the application's required runtime behavior.
+
+**Q:** How do esbuild and SWC differ when a project needs browser API polyfills?
+
+**A:** esbuild transforms syntax but leaves API polyfills to another stage. SWC can opt in through `env.mode` with a pinned `env.coreJs` version; this does not cover every Web API. Compare the [esbuild target contract](https://esbuild.github.io/api/#target) with [SWC's supported-browser configuration](https://swc.rs/docs/configuration/supported-browsers).
 
 ## Summary
 

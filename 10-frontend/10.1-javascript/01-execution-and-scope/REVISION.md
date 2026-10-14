@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-JavaScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -114,6 +114,10 @@ Source: [Lexical Environment](10.1.1.05-lexical-environment.md)
 
 **A:** No. They are different kinds of record for different situations. Function and Module records are specialized Declarative records, not additional stores inside every block. A Global record combines declarative bindings with object-backed global names.
 
+**Q:** Where does the current specification put the outer link used for identifier lookup?
+
+**A:** In the Environment Record's `[[OuterEnv]]` field. The execution context's LexicalEnvironment identifies the current record; identifier resolution follows record-to-record links until it finds a binding or reaches null.
+
 **Q:** Does the scope-chain diagram show exactly how an engine stores variables or how fast lookup will be?
 
 **A:** No. It explains which variable a read should find. An engine can store variables and find them differently while keeping that behavior. Use performance and memory tools to check speed and what stays in memory.
@@ -157,6 +161,30 @@ Source: [Closures](10.1.1.06-closures.md)
 **Q:** Does a closure prove that every nearby local variable remains in memory?
 
 **A:** No. Engines can avoid retaining unused values. Inspect retaining paths and release long-lived owners or capture smaller state when diagnosing memory use.
+
+## V8 Execution and Optimization
+
+Source: [V8 Execution and Optimization](10.1.1.07-v8-execution-and-optimization.md)
+
+**Q:** Does the ECMAScript specification require V8 to use Ignition, Maglev, or TurboFan?
+
+**A:** No. The specification defines observable language behavior. Interpreter and compiler tiers are V8 implementation choices and can change between releases.
+
+**Q:** What does an inline cache learn at a property access site?
+
+**A:** It records feedback such as the object shapes observed there. V8 can use repeated compatible shapes to select a guarded fast path; a new shape can require a slower path or invalidate an optimization.
+
+**Q:** Why can an optimized function deoptimize without changing its result?
+
+**A:** The optimized code guards assumptions inferred from past calls. If a guard fails, V8 reconstructs the program state and resumes through a less specialized path that still follows JavaScript semantics.
+
+**Q:** Two objects have the same keys but were created in different property orders. What may V8 observe?
+
+**A:** They can have different Maps because their property layouts were constructed differently. That may increase shape diversity at a hot access site, but the performance consequence depends on the real workload and must be measured.
+
+**Q:** What should a senior engineer measure before attempting a V8-specific optimization?
+
+**A:** Profile representative startup and steady-state workloads, identify whether JavaScript CPU is material, and compare end-to-end latency and memory after the change. Source-level intuition or a narrow microbenchmark is insufficient evidence.
 
 ## Summary
 

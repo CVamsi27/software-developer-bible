@@ -1,9 +1,9 @@
 # TypeScript — Index
 
-> **Study time:** ≈ 2 h 58 m of reading (22 files, ~8 min average).
-> **22 files** — TypeScript type system mastery from basic types to branded types, template literals, declaration files, advanced generics, variance, decorators, the `satisfies` operator, and interview questions.
+> **Study time:** ≈ 3 h 6 m of reading (23 files, ~8 min average).
+> **23 files** — TypeScript type system mastery from basic types to branded types, template literals, declaration files, advanced generics, variance, decorators, the `satisfies` operator, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-22-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-23-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Core-blueviolet)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -20,7 +20,7 @@ The 18 files are organized into 5 category folders — read in order.
 | [Foundations](01-foundations/INDEX.md) | 4 | Types vs interfaces, keyof/typeof, type narrowing, tsconfig options — every interview starts here |
 | [Generics & Inference](02-generics-and-inference/INDEX.md) | 4 | Generics, infer, advanced generics, variance — the heart of reusable TS code |
 | [Type Transformations](03-type-transformations/INDEX.md) | 4 | Utility types, conditional types, mapped types, template literals — composable type operations |
-| [Advanced Patterns](04-advanced-patterns/INDEX.md) | 5 | Satisfies, branded types, decorators, declaration files — the senior toolkit |
+| [Advanced Patterns](04-advanced-patterns/INDEX.md) | 6 | Satisfies, branded types, decorators, declaration files — the senior toolkit |
 | [Interview Prep](05-interview-prep/INDEX.md) | 1 | 50 curated Q&A |
 
 ---
@@ -85,9 +85,9 @@ Senior-level TS — types as a design tool.
 | --: | ------ | -------- | --- | --- | ----------: |
 | 13 | [The `satisfies` Operator](04-advanced-patterns/10.2.4.01-satisfies-operator.md) | Type validation without widening, literal preservation, config objects, route tables | Essential | Foundational | 4 min |
 | 14 | [Branded Types](04-advanced-patterns/10.2.4.02-branded-types.md) | Nominal-like branding, units, boundary validation, flavoring, discriminated unions | Important | Specialized | 6 min |
-| 15 | [Decorators](04-advanced-patterns/10.2.4.03-decorators.md) | Class, method, accessor, property, parameter decorators, metadata reflection | Important | Specialized | 7 min |
+| 15 | [Decorators](04-advanced-patterns/10.2.4.03-decorators.md) | Newer and legacy conventions, wrappers, accessors and metadata consumers | Important | Specialized | 7 min |
 | 16 | [Declaration Files](04-advanced-patterns/10.2.4.04-declaration-files.md) | .d.ts syntax, module augmentation, global types, asset declarations, triple-slash directives | Important | Specialized | 6 min |
-| 17 | [Advanced Patterns](04-advanced-patterns/10.2.4.05-advanced-patterns.md) | Class/parameter decorators, typed event emitter, advanced utility combinations | Important | Specialized | 5 min |
+| 17 | [Advanced Patterns](04-advanced-patterns/10.2.4.05-advanced-patterns.md) | Class/parameter decorators, typed event emitter, advanced utility combinations | Important | Specialized | 6 min |
 
 ---
 

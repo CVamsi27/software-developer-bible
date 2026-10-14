@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2544,
+ "url_count": 2677,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -13,13 +13,18 @@
    "30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.md"
   ],
   "https://12factor.net/": [
-   "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md",
    "40-platform/40.9-twelve-factor/40.9.01-the-twelve-factor-app.md",
    "40-platform/40.9-twelve-factor/40.9.02-interview-questions.md",
+   "40-platform/40.9-twelve-factor/REVISION.md",
    "50-quality/50.4-production-engineering/50.4.04-production-readiness-reviews.md"
   ],
   "https://12factor.net/admin-processes": [
    "40-platform/40.9-twelve-factor/40.9.01-the-twelve-factor-app.md"
+  ],
+  "https://12factor.net/blog/open-source-announcement": [
+   "40-platform/40.9-twelve-factor/40.9.01-the-twelve-factor-app.md",
+   "40-platform/40.9-twelve-factor/40.9.02-interview-questions.md",
+   "40-platform/40.9-twelve-factor/REVISION.md"
   ],
   "https://12factor.net/codebase": [
    "40-platform/40.9-twelve-factor/40.9.01-the-twelve-factor-app.md"
@@ -178,19 +183,19 @@
    "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.01-resilience-patterns.md",
    "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.02-retry-patterns.md"
   ],
-  "https://aws.amazon.com/cdk/": [
-   "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md"
-  ],
   "https://aws.amazon.com/elasticache/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.05-caching-patterns.md"
-  ],
-  "https://aws.amazon.com/event-driven-architecture/": [
-   "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md"
   ],
   "https://aws.amazon.com/secrets-manager/": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.04-secrets-management.md"
   ],
+  "https://babeljs.io/blog/2026/06/16/8.0.0/": [
+   "40-platform/40.5-build-tools/02-compilers/40.5.2.01-babel.md"
+  ],
   "https://babeljs.io/docs/": [
+   "40-platform/40.5-build-tools/02-compilers/40.5.2.01-babel.md"
+  ],
+  "https://babeljs.io/docs/babel-plugin-transform-runtime/": [
    "40-platform/40.5-build-tools/02-compilers/40.5.2.01-babel.md"
   ],
   "https://babeljs.io/docs/babel-preset-env": [
@@ -199,6 +204,10 @@
   "https://babeljs.io/docs/plugins-list": [
    "40-platform/40.5-build-tools/02-compilers/40.5.2.01-babel.md"
   ],
+  "https://babeljs.io/docs/v8-migration/": [
+   "40-platform/40.5-build-tools/02-compilers/40.5.2.01-babel.md",
+   "40-platform/40.5-build-tools/02-compilers/REVISION.md"
+  ],
   "https://ballerina.io/use-cases/bff/": [
    "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.03-bff.md"
   ],
@@ -206,7 +215,11 @@
    "10-frontend/10.2-typescript/05-interview-prep/10.2.5.01-interview-questions.md"
   ],
   "https://bazel.build/": [
-   "40-platform/40.8-monorepo/40.8.04-monorepo-tools.md"
+   "40-platform/40.8-monorepo/40.8.04-monorepo-tools.md",
+   "40-platform/40.8-monorepo/REVISION.md"
+  ],
+  "https://beam.apache.org/documentation/programming-guide/#watermarks-and-late-data": [
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.02-data-pipelines.md"
   ],
   "https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html": [
    "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md"
@@ -218,18 +231,15 @@
   "https://blog.hl7.org/topic/version-2": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.10-hospital-management.md"
   ],
-  "https://blog.logrocket.com/fast-javascript-bundling-with-esbuild/": [
-   "40-platform/40.5-build-tools/02-compilers/40.5.2.02-esbuild-swc.md"
-  ],
   "https://blog.modelcontextprotocol.io/posts/2026-07-28/": [
    "70-interview-toolkit/70.3-cheatsheets/70.3.04-backend-cheat-sheet.md"
   ],
   "https://blog.nginx.org/blog/inside-nginx-how-we-designed-for-performance-scale": [
-   "40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md",
    "40-platform/40.11-reverse-proxy/40.11.02-interview-questions.md"
   ],
-  "https://blog.nrwl.io/turborepo-vs-nx-why-you-should-use-nx-for-your-next-monorepo-d04ccb54a2d4": [
-   "40-platform/40.8-monorepo/40.8.04-monorepo-tools.md"
+  "https://blog.nginx.org/blog/keep-alive-to-upstreams-is-now-default-in-nginx-1-29-7": [
+   "40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md",
+   "40-platform/40.11-reverse-proxy/40.11.02-interview-questions.md"
   ],
   "https://blog.x.com/engineering/en_us/a/2010/announcing-snowflake": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.26-distributed-id-generator.md"
@@ -239,9 +249,6 @@
   ],
   "https://blog.x.com/engineering/en_us/topics/insights/2017/using-deep-learning-at-scale-in-twitters-timelines": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.12-twitter-feed.md"
-  ],
-  "https://blog.youtube/": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.17-youtube.md"
   ],
   "https://book.kubebuilder.io/": [
    "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.03-crds-operators-controller-patterns.md"
@@ -253,7 +260,6 @@
    "70-interview-toolkit/70.2-coding-patterns/05-math-and-number-theory/70.2.5.01-number-theory-combinatorics.md"
   ],
   "https://bundlephobia.com/": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.01-build-optimization.md",
    "40-platform/40.5-build-tools/04-interview-prep/40.5.4.01-interview-questions.md",
    "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.01-bundle-analysis.md",
    "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.02-performance-budgets.md"
@@ -271,11 +277,7 @@
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.08-ticket-booking.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.09-e-commerce.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.11-live-betting.md",
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.md",
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.17-youtube.md",
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.18-dropbox.md",
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.19-lyft.md",
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.20-distributed-counter.md"
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.19-lyft.md"
   ],
   "https://bytebytego.com/courses/system-design-interview": [
    "60-realtime/60.1-websockets/04-interview-prep/60.1.4.01-interview-questions.md"
@@ -296,17 +298,22 @@
   "https://careers.microsoft.com/v2/global/en/hiring-tips/technical-interviewing.html?gcsPageView=support": [
    "81-lanes-indian-sde-faang/81.16-microsoft-azure-interview-guide.md"
   ],
-  "https://cassandra.apache.org/doc/latest/": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.20-distributed-counter.md"
-  ],
   "https://cassandra.apache.org/doc/latest/cassandra/architecture/dynamo": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.md"
   ],
   "https://cbor.io/": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.06-serialization-and-wire-formats.md"
   ],
-  "https://cdkpatterns.com/": [
-   "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md"
+  "https://changesets.dev/guide/config": [
+   "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md"
+  ],
+  "https://changesets.dev/guide/prereleases": [
+   "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.md"
+  ],
+  "https://changesets.dev/guide/versioning-and-publishing": [
+   "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.md",
+   "40-platform/40.8-monorepo/40.8.06-interview-questions.md",
+   "40-platform/40.8-monorepo/REVISION.md"
   ],
   "https://chaos-mesh.org/docs/define-scheduling-rules/": [
    "50-quality/50.4-production-engineering/50.4.03-chaos-engineering.md"
@@ -391,7 +398,8 @@
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.05-webhooks.md",
    "20-backend/20.5-security/02-attacks-and-defense/20.5.2.04-api-security-best-practices.md",
    "20-backend/20.5-security/02-attacks-and-defense/REVISION.md",
-   "20-backend/20.5-security/03-hardening-and-operations/20.5.3.02-web-security.md"
+   "20-backend/20.5-security/03-hardening-and-operations/20.5.3.02-web-security.md",
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.md"
   ],
   "https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html": [
    "20-backend/20.5-security/01-auth/20.5.1.04-sessions-cookies.md",
@@ -414,9 +422,6 @@
   "https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.02-web-security.md",
    "20-backend/20.5-security/03-hardening-and-operations/REVISION.md"
-  ],
-  "https://clickhouse.com/": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.20-distributed-counter.md"
   ],
   "https://clickhouse.com/docs/reference/engines/table-engines/mergetree-family/replacingmergetree": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.27-ad-click-aggregator.md"
@@ -450,7 +455,7 @@
   "https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection_en": [
    "80-lanes-abroad-full-stack/80.24-eu-regulatory-compliance.md"
   ],
-  "https://commitlint.js.org/": [
+  "https://commitlint.js.org/guides/local-setup": [
    "40-platform/40.6-git-advanced/40.6.04-git-hooks.md"
   ],
   "https://cookbook.openai.com/": [
@@ -539,6 +544,11 @@
   "https://csrc.nist.gov/publications/detail/sp/800-190/final": [
    "40-platform/40.1-docker/40.1.08-image-signing-sbom-supply-chain.md"
   ],
+  "https://csrc.nist.gov/pubs/sp/800/61/r3/final": [
+   "50-quality/50.4-production-engineering/50.4.01-incident-response.md",
+   "50-quality/50.4-production-engineering/50.4.06-interview-questions.md",
+   "50-quality/50.4-production-engineering/REVISION.md"
+  ],
   "https://csrc.nist.gov/pubs/sp/800/88/r2/final": [
    "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.04-data-retention-archival.md"
   ],
@@ -564,7 +574,7 @@
   "https://cyclonedx.org/specification/overview/": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.05-vulnerability-management-patch-governance.md"
   ],
-  "https://dashif.org/": [
+  "https://dashif.org/guidelines/iop-v5/": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.17-youtube.md"
   ],
   "https://dataintensive.net/": [
@@ -595,6 +605,9 @@
    "30-architecture/30.2-system-design/01-theory/30.2.1.08-rate-limiting.md",
    "30-architecture/30.2-system-design/01-theory/REVISION.md"
   ],
+  "https://datatracker.ietf.org/doc/draft-pantos-hls-rfc8216bis/22/": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.17-youtube.md"
+  ],
   "https://datatracker.ietf.org/doc/html/draft-ietf-webtrans-http3": [
    "60-realtime/60.1-websockets/01-transports/60.1.1.04-webtransport.md"
   ],
@@ -617,6 +630,7 @@
   ],
   "https://datatracker.ietf.org/doc/html/rfc6585#section-4": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.13-rate-limiter.md",
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.md",
    "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
   ],
   "https://datatracker.ietf.org/doc/html/rfc6749": [
@@ -650,9 +664,6 @@
   "https://datatracker.ietf.org/doc/html/rfc7644": [
    "20-backend/20.5-security/01-auth/20.5.1.07-sso-saml-federation.md"
   ],
-  "https://datatracker.ietf.org/doc/html/rfc8216": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.17-youtube.md"
-  ],
   "https://datatracker.ietf.org/doc/html/rfc8446": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.01-encryption.md"
   ],
@@ -676,6 +687,7 @@
   ],
   "https://datatracker.ietf.org/doc/html/rfc9110#section-10.2.3": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.13-rate-limiter.md",
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.md",
    "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
   ],
   "https://datatracker.ietf.org/doc/html/rfc9111": [
@@ -706,10 +718,8 @@
   ],
   "https://devblogs.microsoft.com/typescript/announcing-typescript-7-0/": [
    "10-frontend/10.2-typescript/01-foundations/10.2.1.04-tsconfig-compiler-options.md",
-   "10-frontend/10.2-typescript/01-foundations/REVISION.md"
-  ],
-  "https://devcenter.heroku.com/articles/architecting-apps": [
-   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.04-multi-tenant-saas-architecture.md"
+   "10-frontend/10.2-typescript/01-foundations/REVISION.md",
+   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.06-typescript-compiler-pipeline.md"
   ],
   "https://developer.android.com/training/app-links/about": [
    "10-frontend/10.8-mobile/10.8.07-interview-questions.md"
@@ -730,11 +740,13 @@
   "https://developer.apple.com/documentation/appstoreconnectapi": [
    "10-frontend/10.8-mobile/10.8.06-app-store-release-automation.md"
   ],
-  "https://developer.apple.com/documentation/http-live-streaming/hls-authoring-specification-for-apple-devices/": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.04-netflix.md"
-  ],
-  "https://developer.apple.com/documentation/http_live_streaming/http_live_streaming_hls_authoring_specification_for_apple_devices": [
+  "https://developer.apple.com/documentation/http-live-streaming/about-the-common-media-application-format-with-http-live-streaming-hls/": [
    "40-platform/40.10-cdn/40.10.03-media-optimization-at-the-edge.md"
+  ],
+  "https://developer.apple.com/documentation/http-live-streaming/hls-authoring-specification-for-apple-devices/": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.04-netflix.md",
+   "40-platform/40.10-cdn/40.10.03-media-optimization-at-the-edge.md",
+   "40-platform/40.10-cdn/REVISION.md"
   ],
   "https://developer.apple.com/documentation/technotes/tn3155-debugging-universal-links": [
    "10-frontend/10.8-mobile/10.8.02-deep-linking-universal-links.md"
@@ -744,6 +756,9 @@
   ],
   "https://developer.apple.com/ios/universal-links/": [
    "10-frontend/10.8-mobile/10.8.02-deep-linking-universal-links.md"
+  ],
+  "https://developer.apple.com/streaming/hls-authoring-specification-for-apple-devices.html": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.17-youtube.md"
   ],
   "https://developer.chrome.com/blog/removing-push": [
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.md"
@@ -777,9 +792,6 @@
   "https://developer.chrome.com/docs/devtools/performance/reference/": [
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.md"
   ],
-  "https://developer.chrome.com/docs/lighthouse/overview": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.01-build-optimization.md"
-  ],
   "https://developer.chrome.com/docs/lighthouse/overview/": [
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.md",
    "50-quality/50.3-performance-monitoring/04-interview-prep/50.3.4.01-interview-questions.md"
@@ -801,24 +813,54 @@
   "https://developer.hashicorp.com/terraform/cdktf": [
    "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md"
   ],
-  "https://developer.hashicorp.com/terraform/cli/commands/plan": [
+  "https://developer.hashicorp.com/terraform/cli/commands/apply": [
    "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md"
+  ],
+  "https://developer.hashicorp.com/terraform/cli/commands/plan": [
+   "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md",
+   "40-platform/40.12-iac/REVISION.md"
+  ],
+  "https://developer.hashicorp.com/terraform/cli/commands/test": [
+   "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md",
+   "40-platform/40.12-iac/40.12.02-interview-questions.md"
   ],
   "https://developer.hashicorp.com/terraform/docs": [
    "40-platform/40.12-iac/40.12.02-interview-questions.md"
   ],
   "https://developer.hashicorp.com/terraform/language/backend/s3": [
    "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md",
+   "40-platform/40.12-iac/REVISION.md",
    "40-platform/40.3-ci-cd/04-interview-prep/40.3.4.01-interview-questions.md"
   ],
+  "https://developer.hashicorp.com/terraform/language/files/dependency-lock": [
+   "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md",
+   "40-platform/40.12-iac/40.12.02-interview-questions.md",
+   "40-platform/40.12-iac/REVISION.md"
+  ],
+  "https://developer.hashicorp.com/terraform/language/import": [
+   "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md",
+   "40-platform/40.12-iac/REVISION.md"
+  ],
   "https://developer.hashicorp.com/terraform/language/manage-sensitive-data": [
+   "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md",
+   "40-platform/40.12-iac/REVISION.md"
+  ],
+  "https://developer.hashicorp.com/terraform/language/modules/configuration": [
    "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md"
+  ],
+  "https://developer.hashicorp.com/terraform/language/modules/develop/refactoring": [
+   "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md",
+   "40-platform/40.12-iac/REVISION.md"
   ],
   "https://developer.hashicorp.com/terraform/language/resources/terraform-data": [
    "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md"
   ],
   "https://developer.hashicorp.com/terraform/language/state": [
    "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md"
+  ],
+  "https://developer.hashicorp.com/terraform/language/state/locking": [
+   "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md",
+   "40-platform/40.12-iac/REVISION.md"
   ],
   "https://developer.hashicorp.com/vault/docs/secrets/databases/postgresql": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.04-secrets-management.md"
@@ -1071,13 +1113,15 @@
    "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.01-portals.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images": [
-   "10-frontend/10.4-next.js/04-production/10.4.4.02-image-optimization.md"
+   "10-frontend/10.4-next.js/04-production/10.4.4.02-image-optimization.md",
+   "40-platform/40.10-cdn/40.10.03-media-optimization-at-the-edge.md",
+   "40-platform/40.10-cdn/REVISION.md"
+  ],
+  "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority": [
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog": [
    "50-quality/50.2-accessibility/50.2.03-keyboard-navigation.md"
-  ],
-  "https://developer.mozilla.org/en-US/docs/Web/HTML/Responsive_images": [
-   "40-platform/40.10-cdn/40.10.03-media-optimization-at-the-edge.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication": [
    "20-backend/20.5-security/01-auth/20.5.1.02-http-basic-digest-auth.md"
@@ -1095,20 +1139,17 @@
   "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies": [
    "10-frontend/10.7-html-css/10.7.08-browser-storage.md"
   ],
-  "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
-  ],
   "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Disposition": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.04-file-upload-apis.md"
-  ],
-  "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Server-Timing": [
-   "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie": [
    "20-backend/20.5-security/01-auth/20.5.1.04-sessions-cookies.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods": [
    "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.01-http-methods.md"
+  ],
+  "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control": [
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Set-Cookie": [
    "20-backend/20.5-security/02-attacks-and-defense/20.5.2.02-csrf.md"
@@ -1257,14 +1298,38 @@
    "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md",
    "40-platform/40.10-cdn/40.10.01-cdn-architecture.md"
   ],
-  "https://developers.cloudflare.com/durable-objects/": [
+  "https://developers.cloudflare.com/d1/": [
    "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
+  ],
+  "https://developers.cloudflare.com/durable-objects/api/sqlite-storage-api/": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
+  ],
+  "https://developers.cloudflare.com/durable-objects/best-practices/rules-of-durable-objects/": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
   ],
   "https://developers.cloudflare.com/durable-objects/best-practices/websockets/": [
    "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.02-scaling-patterns.md"
   ],
-  "https://developers.cloudflare.com/images/transform-images/transform-via-url/": [
-   "40-platform/40.10-cdn/40.10.03-media-optimization-at-the-edge.md"
+  "https://developers.cloudflare.com/durable-objects/concepts/": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
+  ],
+  "https://developers.cloudflare.com/durable-objects/concepts/durable-object-lifecycle/": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
+  ],
+  "https://developers.cloudflare.com/images/optimization/features/": [
+   "40-platform/40.10-cdn/40.10.03-media-optimization-at-the-edge.md",
+   "40-platform/40.10-cdn/REVISION.md"
+  ],
+  "https://developers.cloudflare.com/kv/concepts/how-kv-works/": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
+  ],
+  "https://developers.cloudflare.com/load-balancing/understand-basics/health-details/": [
+   "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md"
+  ],
+  "https://developers.cloudflare.com/load-balancing/understand-basics/traffic-steering/steering-policies/dynamic-steering/": [
+   "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md"
   ],
   "https://developers.cloudflare.com/pages/": [
    "docs/deployment.md"
@@ -1281,11 +1346,16 @@
   "https://developers.cloudflare.com/pages/configuration/git-integration/": [
    "docs/deployment.md"
   ],
+  "https://developers.cloudflare.com/queues/configuration/batching-retries/": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
+  ],
+  "https://developers.cloudflare.com/r2/": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
+  ],
   "https://developers.cloudflare.com/r2/api/s3/presigned-urls/": [
    "projects/docita/19-documents-and-uploads.md"
   ],
   "https://developers.cloudflare.com/workers/": [
-   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md",
    "40-platform/40.7-serverless-edge/40.7.08-interview-questions.md"
   ],
   "https://developers.cloudflare.com/workers/best-practices/workers-best-practices/": [
@@ -1293,28 +1363,45 @@
    "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md",
    "projects/docita/10-deployment-infrastructure.md"
   ],
+  "https://developers.cloudflare.com/workers/configuration/compatibility-dates/": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
+  ],
   "https://developers.cloudflare.com/workers/examples/": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.05-webhooks.md"
-  ],
-  "https://developers.cloudflare.com/workers/learning/how-kv-works/": [
-   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
   ],
   "https://developers.cloudflare.com/workers/platform/limits/": [
    "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md",
    "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md",
+   "40-platform/40.7-serverless-edge/REVISION.md",
    "projects/docita/10-deployment-infrastructure.md"
   ],
+  "https://developers.cloudflare.com/workers/reference/how-the-cache-works/": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
+  ],
   "https://developers.cloudflare.com/workers/reference/how-workers-works/": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
+  ],
+  "https://developers.cloudflare.com/workers/runtime-apis/cache/": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
+  ],
+  "https://developers.cloudflare.com/workers/runtime-apis/context/": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
+  ],
+  "https://developers.cloudflare.com/workers/runtime-apis/nodejs/": [
    "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
   ],
   "https://developers.cloudflare.com/workers/static-assets/routing/single-page-application/": [
    "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md"
   ],
-  "https://developers.cloudflare.com/workers/static-assets/routing/worker-script/": [
+  "https://developers.cloudflare.com/workers/vite-plugin/tutorial/": [
    "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md"
   ],
-  "https://developers.cloudflare.com/workers/vite-plugin/": [
+  "https://developers.cloudflare.com/workers/wrangler/commands/": [
    "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md"
+  ],
+  "https://developers.cloudflare.com/workers/wrangler/commands/workers/": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
   ],
   "https://developers.google.com/search/docs": [
    "10-frontend/10.7-html-css/10.7.04-seo.md"
@@ -1401,10 +1488,16 @@
   "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-instance-termination-notices.html": [
    "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md"
   ],
+  "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-key-terms.html": [
+   "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md"
+  ],
   "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md",
    "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
+  ],
+  "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-types.html": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md"
   ],
   "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html": [
    "81-lanes-indian-sde-faang/81.18-amazon-interview-guide.md"
@@ -1412,15 +1505,21 @@
   "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md"
   ],
-  "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md"
-  ],
   "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.31-api-gateway.md",
-   "40-platform/40.10-cdn/40.10.01-cdn-architecture.md"
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.31-api-gateway.md"
+  ],
+  "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/RequestAndResponseBehaviorCustomOrigin.html#simultaneous-requests-for-the-same-object-request-collapsing": [
+   "40-platform/40.10-cdn/40.10.01-cdn-architecture.md",
+   "40-platform/40.10-cdn/REVISION.md"
   ],
   "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/best-practices.html": [
    "40-platform/40.10-cdn/40.10.04-interview-questions.md"
+  ],
+  "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-functions.html": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
+  ],
+  "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/edge-functions-choosing.html": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
   ],
   "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/edge-functions.html": [
    "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md"
@@ -1428,8 +1527,13 @@
   "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-at-edge-function-restrictions.html": [
    "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
   ],
+  "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-at-the-edge.html": [
+   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
+  ],
   "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html": [
-   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md"
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md",
+   "40-platform/40.10-cdn/40.10.01-cdn-architecture.md",
+   "40-platform/40.10-cdn/REVISION.md"
   ],
   "https://docs.aws.amazon.com/AmazonECR/latest/userguide/lifecycle_policies.html": [
    "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md"
@@ -1437,11 +1541,10 @@
   "https://docs.aws.amazon.com/AmazonECR/latest/userguide/pull-through-cache.html": [
    "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md"
   ],
-  "https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/WhatIs.html": [
+  "https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/WhatIs.html": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.29-distributed-cache.md"
   ],
   "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html": [
-   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md",
    "80-lanes-abroad-full-stack/80.08-system-design-case-bank.md"
   ],
   "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html": [
@@ -1457,14 +1560,16 @@
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.17-youtube.md"
   ],
   "https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html": [
-   "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.05-backup-strategy-restore-drills.md"
+   "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.05-backup-strategy-restore-drills.md",
+   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.04-data-retention-archival.md"
   ],
   "https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html": [
    "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md",
    "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.04-data-retention-archival.md"
   ],
   "https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html": [
-   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.04-file-upload-apis.md"
+   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.04-file-upload-apis.md",
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.md"
   ],
   "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html": [
    "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.md"
@@ -1476,10 +1581,8 @@
    "30-architecture/30.2-system-design/01-theory/30.2.1.20-multi-region-deployment.md"
   ],
   "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-policy-weighted.html": [
-   "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md"
-  ],
-  "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/traffic-policies.html": [
-   "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md"
+   "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md",
+   "40-platform/40.10-cdn/REVISION.md"
   ],
   "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html": [
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.04-nosql-vs-sql.md",
@@ -1516,8 +1619,18 @@
   "https://docs.aws.amazon.com/cdk/v2/guide/core-concepts.html": [
    "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md"
   ],
+  "https://docs.aws.amazon.com/cdk/v2/guide/deploy.html": [
+   "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
+  ],
+  "https://docs.aws.amazon.com/cdk/v2/guide/ref-cli-cmd-diff.html": [
+   "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md"
+  ],
   "https://docs.aws.amazon.com/cli/latest/reference/s3api/put-bucket-lifecycle-configuration.html": [
    "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.04-data-retention-archival.md"
+  ],
+  "https://docs.aws.amazon.com/eks/latest/best-practices/cost-opt-networking.html": [
+   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md"
   ],
   "https://docs.aws.amazon.com/eks/latest/best-practices/scaling-cluster-services.html": [
    "40-platform/40.2-kubernetes/03-scaling/40.2.3.02-node-autoscaling-cluster-capacity.md"
@@ -1531,6 +1644,10 @@
   "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html": [
    "40-platform/40.4-observability/02-errors-and-health/40.4.2.02-health-checks.md"
   ],
+  "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-putevents.html": [
+   "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
+  ],
   "https://docs.aws.amazon.com/fis/latest/userguide/stop-conditions.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.md"
   ],
@@ -1539,7 +1656,6 @@
    "20-backend/20.5-security/03-hardening-and-operations/REVISION.md"
   ],
   "https://docs.aws.amazon.com/lambda/": [
-   "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md",
    "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md",
    "40-platform/40.7-serverless-edge/40.7.08-interview-questions.md"
   ],
@@ -1549,7 +1665,31 @@
    "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md",
    "40-platform/40.7-serverless-edge/40.7.08-interview-questions.md"
   ],
+  "https://docs.aws.amazon.com/lambda/latest/dg/concepts-application-design.html": [
+   "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md"
+  ],
+  "https://docs.aws.amazon.com/lambda/latest/dg/concepts-basics.html": [
+   "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md"
+  ],
+  "https://docs.aws.amazon.com/lambda/latest/dg/durable-invoking-esm.html": [
+   "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md"
+  ],
+  "https://docs.aws.amazon.com/lambda/latest/dg/foundation-progmodel.html": [
+   "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md"
+  ],
+  "https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html": [
+   "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md"
+  ],
   "https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations": [
+   "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md"
+  ],
+  "https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html": [
+   "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md"
+  ],
+  "https://docs.aws.amazon.com/lambda/latest/dg/lambda-managed-instances-core-concepts.html": [
+   "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md"
+  ],
+  "https://docs.aws.amazon.com/lambda/latest/dg/lambda-managed-instances-execution-environment.html": [
    "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md"
   ],
   "https://docs.aws.amazon.com/lambda/latest/dg/lambda-nodejs.html": [
@@ -1559,7 +1699,11 @@
   "https://docs.aws.amazon.com/lambda/latest/dg/scaling-behavior.html": [
    "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md"
   ],
+  "https://docs.aws.amazon.com/lambda/latest/dg/services-sqs-configure.html": [
+   "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md"
+  ],
   "https://docs.aws.amazon.com/lambda/latest/dg/services-sqs-errorhandling.html": [
+   "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md",
    "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md"
   ],
   "https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html": [
@@ -1575,10 +1719,19 @@
    "20-backend/20.6-microservices/01-service-topology/20.6.1.04-strangler-fig.md"
   ],
   "https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/transactional-outbox.html": [
-   "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.06-transactional-outbox.md"
+   "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.06-transactional-outbox.md",
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.md",
+   "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
   ],
   "https://docs.aws.amazon.com/serverless-application-model/": [
-   "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md",
+   "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md"
+  ],
+  "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-validate.html": [
+   "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
+  ],
+  "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-template-anatomy.html": [
    "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md"
   ],
   "https://docs.aws.amazon.com/ses/latest/dg/send-email.html": [
@@ -1587,9 +1740,16 @@
   "https://docs.aws.amazon.com/sns/latest/dg/fifo-topic-message-ordering.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md"
   ],
+  "https://docs.aws.amazon.com/sns/latest/dg/sns-sqs-as-subscriber.html": [
+   "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md"
+  ],
   "https://docs.aws.amazon.com/step-functions/": [
+   "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md"
+  ],
+  "https://docs.aws.amazon.com/step-functions/latest/dg/choosing-workflow-type.html": [
    "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md",
-   "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md"
+   "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
   ],
   "https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/welcome.html": [
    "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md"
@@ -1602,7 +1762,8 @@
    "50-quality/50.1-testing/05-advanced/50.1.5.02-chaos-engineering.md"
   ],
   "https://docs.aws.amazon.com/wellarchitected/latest/saas-lens/general-design-principles.html": [
-   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.04-multi-tenant-saas-architecture.md"
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.04-multi-tenant-saas-architecture.md",
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/REVISION.md"
   ],
   "https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-options-in-the-cloud.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.20-multi-region-deployment.md",
@@ -1635,7 +1796,7 @@
   "https://docs.bullmq.io/guide/workers/stalled-jobs": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.25-distributed-job-scheduler.md"
   ],
-  "https://docs.camunda.org/manual/latest/": [
+  "https://docs.camunda.org/manual/7.24/": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.21-workflow-engine.md"
   ],
   "https://docs.cilium.io/": [
@@ -1841,6 +2002,29 @@
   "https://docs.fly.io/launch/autostop-autostart": [
    "projects/docita/10-deployment-infrastructure.md"
   ],
+  "https://docs.fly.io/launch/volume-storage/": [
+   "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
+  ],
+  "https://docs.fly.io/postgres/": [
+   "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.md"
+  ],
+  "https://docs.fly.io/reference/configuration/": [
+   "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
+  ],
+  "https://docs.fly.io/reference/fly-proxy-autostop-autostart/": [
+   "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
+  ],
+  "https://docs.fly.io/reference/health-checks/": [
+   "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
+  ],
+  "https://docs.fly.io/reference/suspend-resume/": [
+   "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
+  ],
   "https://docs.github.com/en/actions": [
    "40-platform/40.12-iac/40.12.02-interview-questions.md",
    "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.01-docker-build-deploy.md",
@@ -1881,16 +2065,21 @@
    "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.md"
   ],
   "https://docs.github.com/en/authentication/managing-commit-signature-verification/about-commit-signature-verification": [
-   "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.md"
+   "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://docs.github.com/en/code-security/secret-scanning": [
    "20-backend/20.5-security/01-auth/20.5.1.03-api-keys.md"
   ],
   "https://docs.github.com/en/get-started/using-github/github-flow": [
-   "40-platform/40.6-git-advanced/40.6.02-branching-strategies.md"
+   "40-platform/40.6-git-advanced/40.6.02-branching-strategies.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry": [
    "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md"
+  ],
+  "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners": [
+   "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md"
   ],
   "https://docs.github.com/en/rest/about-the-rest-api/api-versions": [
    "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.03-versioning.md"
@@ -1927,9 +2116,6 @@
   ],
   "https://docs.gitlab.com/runner/": [
    "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.02-gitlab-ci.md"
-  ],
-  "https://docs.haproxy.org/": [
-   "40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md"
   ],
   "https://docs.honeycomb.io/manage-data-volume/sampling/": [
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.01-opentelemetry.md"
@@ -2084,7 +2270,8 @@
   ],
   "https://docs.nestjs.com/migration-guide": [
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.01-configuration-validation.md",
-   "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.02-testing.md"
+   "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.02-testing.md",
+   "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.01-nestjs-websockets.md"
   ],
   "https://docs.nestjs.com/migration-guide#lifecycle-hook-ordering": [
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.03-lifecycle-hooks-graceful-shutdown.md",
@@ -2183,8 +2370,18 @@
   "https://docs.npmjs.com/auditing-package-dependencies-for-security-vulnerabilities": [
    "20-backend/20.1-node.js/04-security-and-operations/20.1.4.01-node-security.md"
   ],
+  "https://docs.npmjs.com/cli/using-npm/workspaces/": [
+   "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md"
+  ],
   "https://docs.npmjs.com/generating-provenance-statements/": [
-   "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.md"
+   "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.md",
+   "40-platform/40.8-monorepo/40.8.06-interview-questions.md",
+   "40-platform/40.8-monorepo/REVISION.md"
+  ],
+  "https://docs.npmjs.com/trusted-publishers/": [
+   "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.md",
+   "40-platform/40.8-monorepo/40.8.06-interview-questions.md",
+   "40-platform/40.8-monorepo/REVISION.md"
   ],
   "https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf": [
    "20-backend/20.5-security/01-auth/20.5.1.07-sso-saml-federation.md"
@@ -2218,6 +2415,12 @@
   "https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/util/concurrent/locks/ReentrantReadWriteLock.html": [
    "20-backend/20.13-java/20.13.03-java-concurrency-multithreading.md"
   ],
+  "https://docs.oracle.com/en/java/javase/27/gctuning/other-considerations.html": [
+   "20-backend/20.13-java/20.13.01-java-language-fundamentals.md"
+  ],
+  "https://docs.oracle.com/en/java/javase/27/vm/java-virtual-machine-guide.pdf": [
+   "20-backend/20.13-java/20.13.01-java-language-fundamentals.md"
+  ],
   "https://docs.oracle.com/javase/specs/jls/se26/html/jls-6.html#jls-6.6": [
    "30-architecture/30.1-design-patterns/01-foundations/30.1.1.03-oop-concepts.md"
   ],
@@ -2226,11 +2429,18 @@
    "20-backend/20.13-java/20.13.02-java-oop-solid.md",
    "20-backend/20.13-java/REVISION.md"
   ],
+  "https://docs.oracle.com/javase/specs/jvms/se27/html/": [
+   "20-backend/20.13-java/20.13.01-java-language-fundamentals.md"
+  ],
   "https://docs.pact.io/": [
    "50-quality/50.1-testing/03-test-levels/50.1.3.02-integration-testing.md"
   ],
   "https://docs.pact.io/getting_started/how_pact_works": [
    "50-quality/50.1-testing/06-interview-prep/50.1.6.01-interview-questions.md"
+  ],
+  "https://docs.platformatic.dev/docs/concepts/watt-architecture": [
+   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.05-watt-runtime-architecture.md",
+   "20-backend/20.1-node.js/03-processes-and-concurrency/REVISION.md"
   ],
   "https://docs.podman.io/": [
    "40-platform/40.1-docker/40.1.09-rootless-sandboxed-runtimes.md"
@@ -2241,8 +2451,12 @@
   "https://docs.prisma.io/docs/guides/upgrade-prisma-orm/v7": [
    "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.04-multi-tenant-saas-architecture.md"
   ],
-  "https://docs.prisma.io/docs/orm/middleware/how-middleware-works": [
-   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.04-multi-tenant-saas-architecture.md"
+  "https://docs.prisma.io/docs/orm/prisma-client/setup-and-configuration/databases-connections/connection-pool": [
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md"
+  ],
+  "https://docs.prisma.io/docs/orm/v8/middleware/how-middleware-works": [
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.04-multi-tenant-saas-architecture.md",
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/REVISION.md"
   ],
   "https://docs.python.org/3/library/urllib.parse.html": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.md"
@@ -2255,6 +2469,9 @@
   ],
   "https://docs.renovatebot.com/configuration-options/": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.05-vulnerability-management-patch-governance.md"
+  ],
+  "https://docs.scrapy.org/en/latest/topics/scheduler.html": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.md"
   ],
   "https://docs.sentry.io/": [
    "40-platform/40.4-observability/02-errors-and-health/40.4.2.01-error-tracking.md",
@@ -2363,27 +2580,32 @@
    "10-frontend/10.8-mobile/10.8.01-react-native-cross-platform.md"
   ],
   "https://docs.temporal.io/": [
-   "30-architecture/30.1-design-patterns/05-architectural/30.1.5.04-saga.md",
-   "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md"
+   "30-architecture/30.1-design-patterns/05-architectural/30.1.5.04-saga.md"
   ],
   "https://docs.temporal.io/activity-definition": [
+   "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
+  ],
+  "https://docs.temporal.io/develop/typescript/activities/timeouts": [
    "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md"
   ],
   "https://docs.temporal.io/develop/typescript/workflows/basics": [
    "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md"
   ],
+  "https://docs.temporal.io/develop/typescript/workflows/versioning": [
+   "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
+  ],
   "https://docs.temporal.io/encyclopedia/architecture/temporal-architecture": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.25-distributed-job-scheduler.md"
+  ],
+  "https://docs.temporal.io/encyclopedia/workflow/cancellation-and-termination": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.21-workflow-engine.md",
+   "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
   ],
   "https://docs.temporal.io/workflow-definition": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.21-workflow-engine.md",
    "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
-  ],
-  "https://docs.temporal.io/workflow-definition#determinism-constraints": [
-   "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md"
-  ],
-  "https://docs.temporal.io/workflows": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.21-workflow-engine.md"
   ],
   "https://docs.tigera.io/calico/latest/about/": [
    "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.03-rbac-network-policies.md"
@@ -2411,10 +2633,10 @@
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.03-dom-events-delegation.md"
   ],
   "https://dora.dev/": [
-   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.02-technical-debt.md",
    "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md"
   ],
   "https://dora.dev/guides/dora-metrics/": [
+   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.02-technical-debt.md",
    "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md",
    "40-platform/40.3-ci-cd/04-interview-prep/40.3.4.01-interview-questions.md"
   ],
@@ -2423,9 +2645,6 @@
   ],
   "https://drafts.csswg.org/": [
    "10-frontend/10.7-html-css/10.7.02-css-fundamentals.md"
-  ],
-  "https://dropbox.tech/": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.18-dropbox.md"
   ],
   "https://dsf.berkeley.edu/cs286/papers/crdt-tr2011.pdf": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.20-distributed-counter.md",
@@ -2438,7 +2657,6 @@
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.03-ebpf-observability.md"
   ],
   "https://education.github.com/git-cheat-sheet-education.pdf": [
-   "40-platform/40.6-git-advanced/40.6.03-rebase-cherry-pick.md",
    "40-platform/40.6-git-advanced/40.6.10-interview-questions.md"
   ],
   "https://eloquentjavascript.net/": [
@@ -2471,14 +2689,17 @@
   "https://endoflife.date/rust": [
    "docs/2026-09-19-corpus-health-report.md"
   ],
-  "https://eng.lyft.com/": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.19-lyft.md"
-  ],
   "https://engineering.fb.com/2020/03/02/data-infrastructure/messenger/": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.md"
   ],
   "https://engineering.fb.com/2021/01/26/ml-applications/news-feed-ranking/": [
    "81-lanes-indian-sde-faang/81.19-meta-interview-guide.md"
+  ],
+  "https://engineering.fb.com/2025/05/21/production-engineering/journey-to-1000-models-scaling-instagrams-recommendation-system/": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.md"
+  ],
+  "https://engineering.fb.com/2025/11/17/ios/enhancing-hdr-on-instagram-for-ios-with-dolby-vision/": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.md"
   ],
   "https://engineering.fb.com/category/core-infra/": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.md"
@@ -2487,11 +2708,30 @@
    "80-lanes-abroad-full-stack/80.06-visa-relocation-playbook.md"
   ],
   "https://esbuild.github.io/": [
-   "40-platform/40.5-build-tools/02-compilers/40.5.2.02-esbuild-swc.md",
    "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md"
+  ],
+  "https://esbuild.github.io/api/": [
+   "40-platform/40.5-build-tools/02-compilers/40.5.2.02-esbuild-swc.md"
   ],
   "https://esbuild.github.io/api/#metafile": [
    "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.01-bundle-analysis.md"
+  ],
+  "https://esbuild.github.io/api/#target": [
+   "40-platform/40.5-build-tools/02-compilers/REVISION.md"
+  ],
+  "https://esbuild.github.io/plugins/": [
+   "40-platform/40.5-build-tools/02-compilers/40.5.2.02-esbuild-swc.md"
+  ],
+  "https://etcd.io/docs/v3.6/dev-guide/api_concurrency_reference_v3/": [
+   "30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.md",
+   "30-architecture/30.3-infra-patterns/03-coordination/REVISION.md"
+  ],
+  "https://etcd.io/docs/v3.6/learning/api/": [
+   "30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.md"
+  ],
+  "https://etcd.io/docs/v3.6/op-guide/recovery/": [
+   "30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.md",
+   "30-architecture/30.3-infra-patterns/03-coordination/REVISION.md"
   ],
   "https://etcd.io/docs/v3.8/dev-guide/api_concurrency_reference_v3/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.md"
@@ -2602,21 +2842,8 @@
   "https://fidoalliance.org/fido2/": [
    "20-backend/20.5-security/01-auth/20.5.1.08-mfa-passkeys-webauthn.md"
   ],
-  "https://fly.io/docs/": [
-   "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.md"
-  ],
-  "https://fly.io/docs/machines/": [
-   "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.md"
-  ],
-  "https://fly.io/docs/mpg/": [
-   "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.md"
-  ],
-  "https://fly.io/docs/reference/configuration/#checks": [
-   "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.md"
-  ],
   "https://fly.io/docs/reference/fly-proxy-autostop-autostart/": [
-   "40-platform/40.2-kubernetes/03-scaling/INDEX.md",
-   "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.md"
+   "40-platform/40.2-kubernetes/03-scaling/INDEX.md"
   ],
   "https://formik.org/": [
    "10-frontend/10.5-form-handling/10.5.03-formik.md",
@@ -2648,7 +2875,6 @@
    "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.md"
   ],
   "https://git-scm.com/book/": [
-   "40-platform/40.6-git-advanced/40.6.03-rebase-cherry-pick.md",
    "40-platform/40.6-git-advanced/40.6.10-interview-questions.md"
   ],
   "https://git-scm.com/book/en/v2/Git-Internals-Git-Objects": [
@@ -2660,83 +2886,164 @@
   "https://git-scm.com/book/en/v2/Git-Internals-Packfiles": [
    "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md"
   ],
-  "https://git-scm.com/book/en/v2/Git-Tools-Revision-Selection": [
-   "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md"
-  ],
   "https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work": [
    "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.md"
   ],
-  "https://git-scm.com/book/en/v2/Git-Tools-Submodules": [
-   "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md"
-  ],
   "https://git-scm.com/docs": [
-   "40-platform/40.6-git-advanced/40.6.02-branching-strategies.md",
-   "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.md",
    "40-platform/40.6-git-advanced/40.6.10-interview-questions.md"
   ],
   "https://git-scm.com/docs/git-am": [
-   "40-platform/40.6-git-advanced/40.6.06-patch-and-bundle.md"
+   "40-platform/40.6-git-advanced/40.6.06-patch-and-bundle.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
+  ],
+  "https://git-scm.com/docs/git-archive": [
+   "40-platform/40.6-git-advanced/40.6.06-patch-and-bundle.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://git-scm.com/docs/git-bisect": [
    "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.md",
-   "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md"
+   "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://git-scm.com/docs/git-blame": [
-   "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md"
+   "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://git-scm.com/docs/git-bundle": [
-   "40-platform/40.6-git-advanced/40.6.06-patch-and-bundle.md"
+   "40-platform/40.6-git-advanced/40.6.06-patch-and-bundle.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
+  ],
+  "https://git-scm.com/docs/git-cat-file": [
+   "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md"
   ],
   "https://git-scm.com/docs/git-cherry-pick": [
-   "40-platform/40.6-git-advanced/40.6.03-rebase-cherry-pick.md"
+   "40-platform/40.6-git-advanced/40.6.03-rebase-cherry-pick.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
+  ],
+  "https://git-scm.com/docs/git-commit-tree": [
+   "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md"
+  ],
+  "https://git-scm.com/docs/git-config": [
+   "40-platform/40.6-git-advanced/40.6.04-git-hooks.md"
+  ],
+  "https://git-scm.com/docs/git-fetch": [
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://git-scm.com/docs/git-format-patch": [
-   "40-platform/40.6-git-advanced/40.6.06-patch-and-bundle.md"
+   "40-platform/40.6-git-advanced/40.6.06-patch-and-bundle.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://git-scm.com/docs/git-gc": [
    "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md"
   ],
+  "https://git-scm.com/docs/git-hash-object": [
+   "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md"
+  ],
   "https://git-scm.com/docs/git-log": [
-   "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md"
+   "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md",
+   "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
+  ],
+  "https://git-scm.com/docs/git-mktree": [
+   "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md"
+  ],
+  "https://git-scm.com/docs/git-push": [
+   "40-platform/40.6-git-advanced/40.6.02-branching-strategies.md",
+   "40-platform/40.6-git-advanced/40.6.03-rebase-cherry-pick.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
+  ],
+  "https://git-scm.com/docs/git-range-diff": [
+   "40-platform/40.6-git-advanced/40.6.03-rebase-cherry-pick.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://git-scm.com/docs/git-rebase": [
-   "40-platform/40.6-git-advanced/40.6.03-rebase-cherry-pick.md"
+   "40-platform/40.6-git-advanced/40.6.03-rebase-cherry-pick.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://git-scm.com/docs/git-reflog": [
-   "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.md"
+   "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md",
+   "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://git-scm.com/docs/git-reset": [
-   "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md"
+   "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md",
+   "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
+  ],
+  "https://git-scm.com/docs/git-rev-list": [
+   "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.md"
+  ],
+  "https://git-scm.com/docs/git-revert": [
+   "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://git-scm.com/docs/git-send-email": [
    "40-platform/40.6-git-advanced/40.6.06-patch-and-bundle.md"
   ],
+  "https://git-scm.com/docs/git-show": [
+   "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
+  ],
   "https://git-scm.com/docs/git-sparse-checkout": [
    "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.md"
   ],
+  "https://git-scm.com/docs/git-stash": [
+   "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.md",
+   "40-platform/40.6-git-advanced/40.6.06-patch-and-bundle.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
+  ],
   "https://git-scm.com/docs/git-submodule": [
-   "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.md"
+   "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
+  ],
+  "https://git-scm.com/docs/git-switch": [
+   "40-platform/40.6-git-advanced/40.6.02-branching-strategies.md"
+  ],
+  "https://git-scm.com/docs/git-update-ref": [
+   "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md"
+  ],
+  "https://git-scm.com/docs/git-verify-commit": [
+   "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.md"
+  ],
+  "https://git-scm.com/docs/git-verify-tag": [
+   "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.md"
   ],
   "https://git-scm.com/docs/git-worktree": [
-   "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.md"
+   "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md",
+   "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://git-scm.com/docs/gitformat-pack": [
    "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md"
   ],
   "https://git-scm.com/docs/githooks": [
-   "40-platform/40.6-git-advanced/40.6.04-git-hooks.md"
+   "40-platform/40.6-git-advanced/40.6.04-git-hooks.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://git-scm.com/docs/gitmailmap": [
    "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.md"
   ],
   "https://git-scm.com/docs/gitrepository-layout": [
-   "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md"
+   "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
+  ],
+  "https://git-scm.com/docs/gitrevisions": [
+   "40-platform/40.6-git-advanced/40.6.03-rebase-cherry-pick.md"
   ],
   "https://git-scm.com/docs/partial-clone": [
+   "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md",
+   "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
+  ],
+  "https://git-scm.com/docs/scalar": [
    "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.md"
   ],
   "https://github.blog/changelog/2026-09-23-node-20-is-no-longer-available-in-github-actions/": [
    "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.01-github-actions.md"
+  ],
+  "https://github.blog/open-source/git/highlights-from-git-2-51/": [
+   "40-platform/40.6-git-advanced/40.6.06-patch-and-bundle.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://github.com/CVamsi27/docita": [
    "10-frontend/10.1-javascript/01-execution-and-scope/INDEX.md",
@@ -2944,11 +3251,7 @@
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.03-ebpf-observability.md"
   ],
   "https://github.com/changesets/changesets": [
-   "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md",
-   "40-platform/40.8-monorepo/40.8.06-interview-questions.md"
-  ],
-  "https://github.com/changesets/changesets/blob/main/README.md": [
-   "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.md"
+   "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md"
   ],
   "https://github.com/clinicjs/node-clinic": [
    "20-backend/20.1-node.js/04-security-and-operations/20.1.4.02-debugging-profiling-nodejs.md"
@@ -3005,12 +3308,7 @@
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.09-e-commerce.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.11-live-betting.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.12-twitter-feed.md",
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.md",
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.md",
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.md"
-  ],
-  "https://github.com/donnemartin/system-design-primer#design-dropbox": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.18-dropbox.md"
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.md"
   ],
   "https://github.com/donnemartin/system-design-primer#design-instagram": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.md"
@@ -3030,7 +3328,16 @@
   "https://github.com/getify/You-Dont-Know-JS": [
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.md"
   ],
+  "https://github.com/git-lfs/git-lfs/blob/main/docs/man/git-lfs-migrate.adoc": [
+   "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.md"
+  ],
+  "https://github.com/git-lfs/git-lfs/blob/main/docs/man/git-lfs-pull.adoc": [
+   "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.md"
+  ],
   "https://github.com/git-tips/tips": [
+   "40-platform/40.6-git-advanced/40.6.10-interview-questions.md"
+  ],
+  "https://github.com/git/git/blob/master/contrib/subtree/git-subtree.adoc": [
    "40-platform/40.6-git-advanced/40.6.10-interview-questions.md"
   ],
   "https://github.com/github/git-sizer": [
@@ -3055,7 +3362,8 @@
    "20-backend/20.7-graphql/02-execution/20.7.2.01-resolvers.md"
   ],
   "https://github.com/graphql/graphql-js/releases": [
-   "20-backend/20.7-graphql/01-fundamentals/20.7.1.02-schema-design.md"
+   "20-backend/20.7-graphql/01-fundamentals/20.7.1.02-schema-design.md",
+   "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.02-graphql-subscriptions-live-queries.md"
   ],
   "https://github.com/gregoryyoung/m-r": [
    "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.04-cqrs.md"
@@ -3096,9 +3404,6 @@
    "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.01-services-ingress.md",
    "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.02-configmaps-secrets.md"
   ],
-  "https://github.com/kolomied/awesome-cdk": [
-   "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md"
-  ],
   "https://github.com/kubernetes-sigs/kustomize": [
    "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.02-kustomize-overlays-packaging-tradeoffs.md"
   ],
@@ -3126,11 +3431,27 @@
   "https://github.com/leonardomso/33-js-concepts": [
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.md"
   ],
+  "https://github.com/lint-staged/lint-staged": [
+   "40-platform/40.6-git-advanced/40.6.04-git-hooks.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
+  ],
+  "https://github.com/microsoft/TypeScript-Compiler-Notes": [
+   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.06-typescript-compiler-pipeline.md"
+  ],
+  "https://github.com/microsoft/TypeScript/issues/63703": [
+   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.06-typescript-compiler-pipeline.md"
+  ],
   "https://github.com/microsoft/TypeScript/pull/46883": [
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.01-satisfies-operator.md"
   ],
   "https://github.com/microsoft/TypeScript/wiki/Performance": [
    "10-frontend/10.2-typescript/01-foundations/10.2.1.01-types-vs-interfaces.md"
+  ],
+  "https://github.com/microsoft/TypeScript/wiki/Using-the-Compiler-API": [
+   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.06-typescript-compiler-pipeline.md"
+  ],
+  "https://github.com/microsoft/TypeScript/wiki/Using-the-Language-Service-API": [
+   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.06-typescript-compiler-pipeline.md"
   ],
   "https://github.com/microsoft/api-guidelines": [
    "20-backend/20.3-rest-apis/05-interview-drills/20.3.5.01-interview-questions.md"
@@ -3160,9 +3481,6 @@
   "https://github.com/microsoft/react-native-code-push": [
    "10-frontend/10.8-mobile/10.8.05-codepush-ota-updates.md"
   ],
-  "https://github.com/microsoft/scalar": [
-   "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.md"
-  ],
   "https://github.com/nestjs/awesome-nestjs": [
    "20-backend/20.2-nestjs/05-advanced-and-interview/20.2.5.02-interview-questions.md"
   ],
@@ -3185,14 +3503,8 @@
    "40-platform/40.1-docker/40.1.01-images-containers.md",
    "40-platform/40.1-docker/40.1.05-dockerfile-best-practices.md"
   ],
-  "https://github.com/nrwl/nx": [
-   "40-platform/40.8-monorepo/40.8.03-nx.md"
-  ],
   "https://github.com/oasdiff/oasdiff": [
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.05-swagger-openapi-nestjs.md"
-  ],
-  "https://github.com/okonet/lint-staged": [
-   "40-platform/40.6-git-advanced/40.6.04-git-hooks.md"
   ],
   "https://github.com/open-telemetry/opentelemetry-specification": [
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.01-opentelemetry.md"
@@ -3219,9 +3531,6 @@
   "https://github.com/pmndrs/use-gesture": [
    "10-frontend/10.6-animation/10.6.04-react-spring.md"
   ],
-  "https://github.com/postcss/autoprefixer": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
-  ],
   "https://github.com/prisma/orm/releases": [
    "20-backend/20.4-database/04-orm-and-access/20.4.4.01-prisma.md"
   ],
@@ -3243,17 +3552,18 @@
   "https://github.com/recharts/recharts/blob/main/storybook/stories/API/Accessibility.mdx": [
    "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.md"
   ],
+  "https://github.com/redis/node-redis/releases": [
+   "20-backend/20.8-caching/20.8.02-redis-fundamentals.md"
+  ],
   "https://github.com/robertLichtnow/zod-formik-adapter": [
    "10-frontend/10.5-form-handling/10.5.03-formik.md"
   ],
   "https://github.com/sapegin/jest-cheat-sheet": [
    "50-quality/50.1-testing/02-frameworks/50.1.2.01-jest.md"
   ],
-  "https://github.com/sidekiq/sidekiq/wiki": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.25-distributed-job-scheduler.md"
-  ],
   "https://github.com/sigstore/gitsign": [
-   "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.md"
+   "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://github.com/sindresorhus/awesome-nodejs": [
    "20-backend/20.1-node.js/04-security-and-operations/20.1.4.04-interview-questions.md"
@@ -3295,6 +3605,12 @@
   "https://github.com/trufflehog/trufflehog": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.04-secrets-management.md"
   ],
+  "https://github.com/twelve-factor/twelve-factor": [
+   "40-platform/40.9-twelve-factor/40.9.01-the-twelve-factor-app.md",
+   "40-platform/40.9-twelve-factor/40.9.02-interview-questions.md",
+   "40-platform/40.9-twelve-factor/INDEX.md",
+   "40-platform/40.9-twelve-factor/REVISION.md"
+  ],
   "https://github.com/type-challenges/type-challenges": [
    "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.03-advanced-generics.md",
    "10-frontend/10.2-typescript/03-type-transformations/10.2.3.04-template-literal-types.md"
@@ -3308,29 +3624,14 @@
   "https://github.com/v8/v8/blob/main/src/objects/ordered-hash-table.h": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md"
   ],
-  "https://github.com/vercel/turborepo": [
-   "40-platform/40.8-monorepo/40.8.02-turborepo.md"
-  ],
   "https://github.com/vercel/turborepo/tree/main/examples": [
    "40-platform/40.8-monorepo/40.8.02-turborepo.md"
   ],
   "https://github.com/video-dev/hls.js/blob/master/docs/API.md": [
    "40-platform/40.10-cdn/40.10.03-media-optimization-at-the-edge.md"
   ],
-  "https://github.com/vitejs/vite": [
-   "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.md"
-  ],
-  "https://github.com/webpack-contrib/image-minimizer-webpack-plugin": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
-  ],
   "https://github.com/webpack-contrib/webpack-bundle-analyzer": [
    "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.01-bundle-analysis.md"
-  ],
-  "https://github.com/webpack/webpack": [
-   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md"
-  ],
-  "https://github.com/webpack/webpack/tree/main/examples": [
-   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md"
   ],
   "https://github.com/websockets/ws": [
    "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.md",
@@ -3469,7 +3770,7 @@
   "https://gvisor.dev/docs/architecture_guide/platforms/": [
    "40-platform/40.1-docker/40.1.09-rootless-sandboxed-runtimes.md"
   ],
-  "https://h3geo.org/": [
+  "https://h3geo.org/docs/core-library/overview/": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.19-lyft.md"
   ],
   "https://hamel.dev/blog/posts/evals/": [
@@ -3515,9 +3816,6 @@
   "https://highscalability.com/": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.11-live-betting.md"
   ],
-  "https://highscalability.com/youtube-architecture/": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.17-youtube.md"
-  ],
   "https://hl7.org/fhir/R5/appointment.html": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.10-hospital-management.md"
   ],
@@ -3527,9 +3825,6 @@
   ],
   "https://hl7.org/fhir/directory.html": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.10-hospital-management.md"
-  ],
-  "https://hono.dev/docs/getting-started/cloudflare-workers": [
-   "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md"
   ],
   "https://hpbn.co/building-blocks-of-tcp/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.md"
@@ -3586,16 +3881,11 @@
    "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.04-data-retention-archival.md"
   ],
   "https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/individual-rights/individual-rights/right-to-erasure/": [
-   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.04-data-retention-archival.md"
+   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.04-data-retention-archival.md",
+   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/REVISION.md"
   ],
   "https://ind.nl/en/required-amounts-income-requirements": [
    "80-lanes-abroad-full-stack/80.06-visa-relocation-playbook.md"
-  ],
-  "https://instagram-engineering.com/": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.md"
-  ],
-  "https://instagram-engineering.com/what-powers-instagram-hundreds-of-instances-dozens-of-technologies-62c0a4f5579f": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.md"
   ],
   "https://int.bahn.de/en/offers/regional/deutschland-ticket/": [
    "80-lanes-abroad-full-stack/80.14-berlin-dual-career-plan.md"
@@ -3727,7 +4017,12 @@
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md"
   ],
   "https://kafka.apache.org/43/generated/producer_config.html": [
-   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.03-kafka.md"
+   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.03-kafka.md",
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md"
+  ],
+  "https://kafka.apache.org/43/generated/topic_config.html": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md",
+   "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
   ],
   "https://kafka.apache.org/43/getting-started/upgrade/": [
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md",
@@ -3746,6 +4041,10 @@
   "https://kafka.apache.org/43/operations/consumer-rebalance-protocol/": [
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.03-kafka.md",
    "20-backend/20.9-message-brokers/20.9.02-kafka-internals-and-operations.md"
+  ],
+  "https://kafka.apache.org/43/streams/core-concepts/": [
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.02-data-pipelines.md",
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/REVISION.md"
   ],
   "https://kafka.apache.org/community/downloads/": [
    "20-backend/20.9-message-brokers/20.9.01-message-brokers.md",
@@ -3829,12 +4128,18 @@
    "20-backend/20.5-security/03-hardening-and-operations/REVISION.md",
    "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.02-configmaps-secrets.md"
   ],
+  "https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/": [
+   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.md"
+  ],
   "https://kubernetes.io/docs/concepts/containers/runtime-class/": [
    "40-platform/40.1-docker/40.1.09-rootless-sandboxed-runtimes.md"
   ],
   "https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/": [
    "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.03-crds-operators-controller-patterns.md",
    "40-platform/40.2-kubernetes/06-interview-prep/40.2.6.01-interview-questions.md"
+  ],
+  "https://kubernetes.io/docs/concepts/overview/components/": [
+   "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.01-pods-replicasets.md"
   ],
   "https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/": [
    "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.01-pods-replicasets.md"
@@ -3848,8 +4153,14 @@
   "https://kubernetes.io/docs/concepts/policy/resource-quotas/#quota-scopes": [
    "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.04-resource-quotas.md"
   ],
+  "https://kubernetes.io/docs/concepts/resource-management/pod-level-resource-managers/": [
+   "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.01-pods-replicasets.md"
+  ],
   "https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/": [
    "40-platform/40.2-kubernetes/03-scaling/40.2.3.02-node-autoscaling-cluster-capacity.md"
+  ],
+  "https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/": [
+   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md"
   ],
   "https://kubernetes.io/docs/concepts/security/multi-tenancy/": [
    "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.04-resource-quotas.md"
@@ -3867,7 +4178,8 @@
    "30-architecture/30.2-system-design/01-theory/REVISION.md"
   ],
   "https://kubernetes.io/docs/concepts/services-networking/endpoint-slices/": [
-   "20-backend/20.6-microservices/01-service-topology/20.6.1.01-service-discovery.md"
+   "20-backend/20.6-microservices/01-service-topology/20.6.1.01-service-discovery.md",
+   "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.01-pods-replicasets.md"
   ],
   "https://kubernetes.io/docs/concepts/services-networking/ingress/": [
    "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.01-services-ingress.md"
@@ -3878,7 +4190,11 @@
   "https://kubernetes.io/docs/concepts/services-networking/service/": [
    "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.01-services-ingress.md"
   ],
+  "https://kubernetes.io/docs/concepts/workloads/autoscaling/": [
+   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md"
+  ],
   "https://kubernetes.io/docs/concepts/workloads/autoscaling/horizontal-pod-autoscale/": [
+   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md",
    "40-platform/40.2-kubernetes/03-scaling/40.2.3.01-hpa-scaling.md",
    "40-platform/40.2-kubernetes/06-interview-prep/40.2.6.01-interview-questions.md"
   ],
@@ -3892,10 +4208,9 @@
    "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.03-statefulsets-daemonsets.md"
   ],
   "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/": [
+   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.md",
+   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/REVISION.md",
    "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.02-deployments.md"
-  ],
-  "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#strategy": [
-   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.md"
   ],
   "https://kubernetes.io/docs/concepts/workloads/controllers/job/": [
    "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.04-jobs-cronjobs.md"
@@ -3914,6 +4229,7 @@
   ],
   "https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/": [
    "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.md",
+   "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/REVISION.md",
    "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.01-pods-replicasets.md"
   ],
   "https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#pod-termination": [
@@ -3989,7 +4305,8 @@
    "40-platform/40.1-docker/40.1.10-interview-questions.md"
   ],
   "https://lamport.azurewebsites.net/pubs/paxos-simple.pdf": [
-   "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.md"
+   "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.md",
+   "30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.md"
   ],
   "https://landscape.cncf.io/": [
    "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.01-pods-replicasets.md",
@@ -4379,14 +4696,8 @@
   "https://lerna.js.org/": [
    "40-platform/40.8-monorepo/40.8.04-monorepo-tools.md"
   ],
-  "https://lerna.js.org/docs/features/version-and-publish": [
-   "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.md"
-  ],
   "https://letsencrypt.org/2025/08/06/ocsp-service-has-reached-end-of-life": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.md"
-  ],
-  "https://lightningcss.dev/": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
   ],
   "https://linkerd.io/docs/": [
    "20-backend/20.6-microservices/01-service-topology/20.6.1.03-service-mesh.md"
@@ -4596,10 +4907,6 @@
    "20-backend/20.12-ai-engineering/20.12.07-interview-questions.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.04-backend-cheat-sheet.md"
   ],
-  "https://monorepo.tools/": [
-   "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md",
-   "40-platform/40.8-monorepo/40.8.06-interview-questions.md"
-  ],
   "https://motion.dev/docs/react": [
    "10-frontend/10.6-animation/10.6.02-framer-motion.md",
    "10-frontend/10.6-animation/10.6.08-interview-questions.md"
@@ -4654,13 +4961,28 @@
   "https://next-auth.js.org/": [
    "10-frontend/10.4-next.js/04-production/10.4.4.01-authentication.md"
   ],
+  "https://nextjs.org/blog/next-16": [
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md"
+  ],
+  "https://nextjs.org/blog/next-16-3": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md",
+   "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
+  ],
+  "https://nextjs.org/blog/next-16-4": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md"
+  ],
+  "https://nextjs.org/blog/turbopack-incremental-computation": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md"
+  ],
   "https://nextjs.org/docs/app": [
    "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md"
   ],
   "https://nextjs.org/docs/app/api-reference/components/image": [
    "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.06-static-exports.md",
    "10-frontend/10.4-next.js/04-production/10.4.4.02-image-optimization.md",
-   "10-frontend/10.4-next.js/05-interview-prep/10.4.5.01-interview-questions.md"
+   "10-frontend/10.4-next.js/05-interview-prep/10.4.5.01-interview-questions.md",
+   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
   ],
   "https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheComponents": [
    "10-frontend/10.4-next.js/05-interview-prep/10.4.5.01-interview-questions.md",
@@ -4677,10 +4999,12 @@
    "10-frontend/10.5-form-handling/10.5.05-server-actions-and-form-patterns.md"
   ],
   "https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack": [
-   "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md"
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md",
+   "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
   ],
   "https://nextjs.org/docs/app/api-reference/directives/use-cache": [
-   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md"
+   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md",
+   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
   ],
   "https://nextjs.org/docs/app/api-reference/directives/use-client": [
    "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.04-client-components.md"
@@ -4716,7 +5040,6 @@
   ],
   "https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config": [
    "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md",
-   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.03-react-nextjs-cheat-sheet.md"
   ],
   "https://nextjs.org/docs/app/api-reference/functions/generate-metadata": [
@@ -4733,8 +5056,7 @@
    "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.03-metadata.md"
   ],
   "https://nextjs.org/docs/app/api-reference/functions/next-request": [
-   "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.01-middleware.md",
-   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
+   "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.01-middleware.md"
   ],
   "https://nextjs.org/docs/app/api-reference/functions/next-response": [
    "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.01-middleware.md",
@@ -4749,7 +5071,9 @@
    "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.05-incremental-static-regeneration.md"
   ],
   "https://nextjs.org/docs/app/api-reference/turbopack": [
-   "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md"
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md",
+   "40-platform/40.5-build-tools/01-bundlers/REVISION.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md"
   ],
   "https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations": [
    "10-frontend/10.5-form-handling/10.5.07-interview-questions.md"
@@ -4784,7 +5108,8 @@
    "10-frontend/10.5-form-handling/10.5.05-server-actions-and-form-patterns.md"
   ],
   "https://nextjs.org/docs/app/getting-started/proxy": [
-   "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.01-middleware.md"
+   "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.01-middleware.md",
+   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
   ],
   "https://nextjs.org/docs/app/getting-started/route-handlers": [
    "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.02-route-handlers.md"
@@ -4819,8 +5144,7 @@
   ],
   "https://nextjs.org/docs/app/guides/incremental-static-regeneration": [
    "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md",
-   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.05-incremental-static-regeneration.md",
-   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
+   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.05-incremental-static-regeneration.md"
   ],
   "https://nextjs.org/docs/app/guides/incremental-static-regeneration-cache-components": [
    "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.05-incremental-static-regeneration.md"
@@ -4833,6 +5157,10 @@
   ],
   "https://nextjs.org/docs/app/guides/lazy-loading": [
    "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.04-client-components.md"
+  ],
+  "https://nextjs.org/docs/app/guides/local-development": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md",
+   "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
   ],
   "https://nextjs.org/docs/app/guides/migrating/app-router-migration": [
    "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.03-interview-questions.md"
@@ -4854,6 +5182,8 @@
    "50-quality/50.1-testing/02-frameworks/50.1.2.02-vitest.md"
   ],
   "https://nextjs.org/docs/app/guides/upgrading/version-16": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md",
+   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md",
    "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
   ],
   "https://nextjs.org/docs/pages/building-your-application/data-fetching": [
@@ -4863,10 +5193,14 @@
    "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.05-incremental-static-regeneration.md"
   ],
   "https://nginx.org/en/docs/control.html": [
-   "40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md"
+   "40-platform/40.11-reverse-proxy/REVISION.md"
   ],
   "https://nginx.org/en/docs/http/ngx_http_auth_basic_module.html": [
    "20-backend/20.5-security/01-auth/20.5.1.02-http-basic-digest-auth.md"
+  ],
+  "https://nginx.org/en/docs/http/ngx_http_core_module.html": [
+   "40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md",
+   "40-platform/40.11-reverse-proxy/REVISION.md"
   ],
   "https://nginx.org/en/docs/http/ngx_http_headers_module.html": [
    "40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md"
@@ -4878,13 +5212,18 @@
   ],
   "https://nginx.org/en/docs/http/ngx_http_proxy_module.html": [
    "40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md",
-   "40-platform/40.11-reverse-proxy/40.11.02-interview-questions.md"
+   "40-platform/40.11-reverse-proxy/40.11.02-interview-questions.md",
+   "40-platform/40.11-reverse-proxy/REVISION.md"
   ],
   "https://nginx.org/en/docs/http/ngx_http_ssl_module.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.md"
   ],
-  "https://nginx.org/en/docs/http/ngx_http_upstream_module.html": [
+  "https://nginx.org/en/docs/http/ngx_http_upstream_hc_module.html": [
    "40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md"
+  ],
+  "https://nginx.org/en/docs/http/ngx_http_upstream_module.html": [
+   "40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md",
+   "40-platform/40.11-reverse-proxy/REVISION.md"
   ],
   "https://nginx.org/en/docs/http/ngx_http_v3_module.html": [
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.md"
@@ -4892,11 +5231,17 @@
   "https://nginx.org/en/docs/http/websocket.html": [
    "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.02-scaling-patterns.md"
   ],
+  "https://nginx.org/en/docs/ngx_core_module.html": [
+   "40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md",
+   "40-platform/40.11-reverse-proxy/REVISION.md"
+  ],
   "https://nightlies.apache.org/flink/flink-docs-stable/docs/dev/datastream/event-time/built_in/": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.27-ad-click-aggregator.md"
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.27-ad-click-aggregator.md",
+   "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
   ],
   "https://nightlies.apache.org/flink/flink-docs-stable/docs/learn-flink/fault_tolerance/": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.27-ad-click-aggregator.md"
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.27-ad-click-aggregator.md",
+   "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
   ],
   "https://node-postgres.com/": [
    "20-backend/20.4-database/04-orm-and-access/20.4.4.03-orm-query-builder-landscape.md"
@@ -4926,7 +5271,8 @@
    "50-quality/50.1-testing/03-test-levels/50.1.3.01-unit-testing.md"
   ],
   "https://nodejs.org/api/async_context.html": [
-   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.06-request-context-and-async-local-storage.md"
+   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.06-request-context-and-async-local-storage.md",
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.04-multi-tenant-saas-architecture.md"
   ],
   "https://nodejs.org/api/buffer.html": [
    "20-backend/20.1-node.js/02-io-and-data/20.1.2.02-buffers.md"
@@ -4941,7 +5287,8 @@
    "20-backend/20.1-node.js/04-security-and-operations/20.1.4.02-debugging-profiling-nodejs.md"
   ],
   "https://nodejs.org/api/cluster.html": [
-   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.01-clustering.md"
+   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.01-clustering.md",
+   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.04-pm2-process-supervision.md"
   ],
   "https://nodejs.org/api/cluster.html#clusterExample": [
    "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.01-clustering.md"
@@ -4956,7 +5303,8 @@
    "20-backend/20.5-security/01-auth/20.5.1.03-api-keys.md"
   ],
   "https://nodejs.org/api/crypto.html#cryptotimingsafeequala-b": [
-   "40-platform/40.10-cdn/40.10.03-media-optimization-at-the-edge.md"
+   "40-platform/40.10-cdn/40.10.03-media-optimization-at-the-edge.md",
+   "40-platform/40.10-cdn/REVISION.md"
   ],
   "https://nodejs.org/api/dns.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.22-dns-and-name-resolution.md",
@@ -5006,7 +5354,10 @@
    "20-backend/20.1-node.js/04-security-and-operations/20.1.4.02-debugging-profiling-nodejs.md"
   ],
   "https://nodejs.org/api/packages.html": [
-   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.01-modules.md"
+   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.01-modules.md",
+   "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md",
+   "40-platform/40.8-monorepo/40.8.06-interview-questions.md",
+   "40-platform/40.8-monorepo/REVISION.md"
   ],
   "https://nodejs.org/api/path.html": [
    "20-backend/20.1-node.js/02-io-and-data/20.1.2.03-file-system.md"
@@ -5053,7 +5404,11 @@
   ],
   "https://nodejs.org/api/worker_threads.html": [
    "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.01-clustering.md",
-   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.02-child-processes-workers.md"
+   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.02-child-processes-workers.md",
+   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.05-watt-runtime-architecture.md"
+  ],
+  "https://nodejs.org/api/zlib.html": [
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.01-build-optimization.md"
   ],
   "https://nodejs.org/en/about/eol": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.05-vulnerability-management-patch-governance.md"
@@ -5062,6 +5417,8 @@
    "10-frontend/10.4-next.js/04-production/10.4.4.03-deploying-nextjs.md",
    "40-platform/40.1-docker/40.1.01-images-containers.md",
    "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.01-github-actions.md",
+   "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.01-nestjs-websockets.md",
+   "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.02-graphql-subscriptions-live-queries.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.06-docker-kubernetes-cicd-cheat-sheet.md"
   ],
   "https://nodejs.org/en/docs": [
@@ -5082,9 +5439,6 @@
   ],
   "https://nodejs.org/en/learn/getting-started/debugging": [
    "20-backend/20.1-node.js/04-security-and-operations/20.1.4.02-debugging-profiling-nodejs.md"
-  ],
-  "https://nodejs.org/en/learn/getting-started/introduction-to-nodejs/": [
-   "60-realtime/60.1-websockets/01-transports/60.1.1.02-server-sent-events.md"
   ],
   "https://nodejs.org/en/learn/getting-started/security-best-practices": [
    "20-backend/20.1-node.js/04-security-and-operations/20.1.4.01-node-security.md"
@@ -5114,26 +5468,29 @@
   "https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-125a.pdf": [
    "40-platform/40.1-docker/40.1.07-container-runtime-internals-namespaces-cgroups.md"
   ],
-  "https://nx.app/": [
-   "40-platform/40.8-monorepo/40.8.03-nx.md"
+  "https://nx.dev/docs": [
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md"
   ],
-  "https://nx.dev/": [
-   "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md",
+  "https://nx.dev/docs/concepts/mental-model": [
+   "40-platform/40.8-monorepo/40.8.03-nx.md",
+   "40-platform/40.8-monorepo/40.8.06-interview-questions.md",
+   "40-platform/40.8-monorepo/REVISION.md"
+  ],
+  "https://nx.dev/docs/features/ci-features/affected": [
    "40-platform/40.8-monorepo/40.8.03-nx.md",
    "40-platform/40.8-monorepo/40.8.06-interview-questions.md"
   ],
-  "https://nx.dev/ci/features/affected": [
+  "https://nx.dev/docs/features/ci-features/remote-cache": [
    "40-platform/40.8-monorepo/40.8.03-nx.md"
   ],
   "https://nx.dev/docs/features/enforce-module-boundaries": [
-   "40-platform/40.8-monorepo/40.8.03-nx.md"
+   "40-platform/40.8-monorepo/40.8.03-nx.md",
+   "40-platform/40.8-monorepo/40.8.06-interview-questions.md",
+   "40-platform/40.8-monorepo/REVISION.md"
   ],
-  "https://nx.dev/docs/kb/local-generators": [
-   "40-platform/40.8-monorepo/40.8.03-nx.md"
-  ],
-  "https://ohshitgit.com/": [
-   "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md",
-   "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md"
+  "https://nx.dev/docs/features/generate-code": [
+   "40-platform/40.8-monorepo/40.8.03-nx.md",
+   "40-platform/40.8-monorepo/40.8.06-interview-questions.md"
   ],
   "https://olm.operatorframework.io/docs/": [
    "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.03-crds-operators-controller-patterns.md"
@@ -5225,6 +5582,9 @@
   "https://opentelemetry.io/docs/specs/status/": [
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.01-opentelemetry.md",
    "40-platform/40.4-observability/04-advanced-telemetry/REVISION.md"
+  ],
+  "https://opentofu.org/docs/": [
+   "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md"
   ],
   "https://orm.drizzle.team/docs/kit-overview": [
    "20-backend/20.4-database/04-orm-and-access/20.4.4.03-orm-query-builder-landscape.md"
@@ -5332,25 +5692,35 @@
   "https://plg.uwaterloo.ca/~gvcormac/cormacksigir09-rrf.pdf": [
    "20-backend/20.12-ai-engineering/20.12.03-retrieval-quality-hybrid-search-reranking.md"
   ],
-  "https://pm2.keymetrics.io/": [
-   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.01-clustering.md"
+  "https://pm2.io/docs/runtime/best-practices/graceful-shutdown/": [
+   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.04-pm2-process-supervision.md",
+   "20-backend/20.1-node.js/03-processes-and-concurrency/REVISION.md"
+  ],
+  "https://pm2.io/docs/runtime/guide/load-balancing/": [
+   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.04-pm2-process-supervision.md"
+  ],
+  "https://pm2.io/docs/runtime/guide/process-management/": [
+   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.01-clustering.md",
+   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.04-pm2-process-supervision.md",
+   "20-backend/20.1-node.js/03-processes-and-concurrency/REVISION.md"
   ],
   "https://pnpm.io/": [
    "40-platform/40.8-monorepo/40.8.04-monorepo-tools.md"
   ],
+  "https://pnpm.io/filtering": [
+   "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md"
+  ],
   "https://pnpm.io/workspaces": [
    "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md",
    "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.md",
-   "40-platform/40.8-monorepo/40.8.06-interview-questions.md"
+   "40-platform/40.8-monorepo/40.8.06-interview-questions.md",
+   "40-platform/40.8-monorepo/REVISION.md"
   ],
   "https://portswigger.net/web-security": [
    "20-backend/20.5-security/04-interview-drills/20.5.4.01-interview-questions.md"
   ],
   "https://portswigger.net/web-security/sql-injection": [
    "20-backend/20.5-security/02-attacks-and-defense/20.5.2.03-sql-injection.md"
-  ],
-  "https://postcss.org/": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
   ],
   "https://postgis.net/docs/ST_AsMVT.html": [
    "80-lanes-abroad-full-stack/80.34-germany-target-domain-primer.md"
@@ -5385,6 +5755,9 @@
    "40-platform/40.4-observability/03-sre-targets/40.4.3.02-alerting.md",
    "50-quality/50.4-production-engineering/50.4.05-on-call-without-burnout.md"
   ],
+  "https://prometheus.io/docs/instrumenting/exposition_formats/": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.md"
+  ],
   "https://prometheus.io/docs/introduction/overview/": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.md"
   ],
@@ -5405,6 +5778,10 @@
   ],
   "https://prometheus.io/docs/prometheus/latest/querying/functions/": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.md"
+  ],
+  "https://prometheus.io/docs/specs/om/open_metrics_spec/": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.md",
+   "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
   ],
   "https://protobuf.dev/programming-guides/encoding/": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.06-serialization-and-wire-formats.md"
@@ -5427,7 +5804,8 @@
    "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.md"
   ],
   "https://raft.github.io/raft.pdf": [
-   "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.md"
+   "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.md",
+   "30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.md"
   ],
   "https://razorpay.com/docs/webhooks/best-practices/": [
    "projects/docita/04-payment-flows.md"
@@ -5774,8 +6152,8 @@
   "https://reactrouter.com/upgrading/v7": [
    "10-frontend/10.3-react/04-modern-react/10.3.4.03-react-router.md"
   ],
-  "https://redis.io/commands/incr/": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.20-distributed-counter.md"
+  "https://redis.io/blog/redis-8-ga/": [
+   "20-backend/20.8-caching/20.8.02-redis-fundamentals.md"
   ],
   "https://redis.io/docs/latest/": [
    "20-backend/20.8-caching/20.8.04-interview-questions.md"
@@ -5787,11 +6165,23 @@
   "https://redis.io/docs/latest/commands/geosearch/": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.03-uber.md"
   ],
+  "https://redis.io/docs/latest/commands/incr/": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.20-distributed-counter.md"
+  ],
   "https://redis.io/docs/latest/commands/info/": [
    "20-backend/20.8-caching/20.8.04-interview-questions.md"
   ],
+  "https://redis.io/docs/latest/commands/memory-usage/": [
+   "20-backend/20.8-caching/20.8.02-redis-fundamentals.md"
+  ],
+  "https://redis.io/docs/latest/commands/object-encoding/": [
+   "20-backend/20.8-caching/20.8.02-redis-fundamentals.md"
+  ],
   "https://redis.io/docs/latest/commands/set/": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.28-parking-lot.md"
+  ],
+  "https://redis.io/docs/latest/commands/wait/": [
+   "20-backend/20.8-caching/20.8.02-redis-fundamentals.md"
   ],
   "https://redis.io/docs/latest/develop/clients/nodejs/": [
    "20-backend/20.8-caching/20.8.01-caching-deep-dive.md",
@@ -5805,6 +6195,7 @@
   "https://redis.io/docs/latest/develop/clients/patterns/distributed-locks/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.md",
    "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.md",
+   "30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.05-system-design-cheat-sheet.md"
   ],
   "https://redis.io/docs/latest/develop/data-types/": [
@@ -5848,10 +6239,14 @@
   "https://redis.io/docs/latest/operate/": [
    "20-backend/20.8-caching/20.8.01-caching-deep-dive.md"
   ],
+  "https://redis.io/docs/latest/operate/oss_and_stack/management/optimization/latency/": [
+   "20-backend/20.8-caching/20.8.02-redis-fundamentals.md"
+  ],
   "https://redis.io/docs/latest/operate/oss_and_stack/management/persistence/": [
    "20-backend/20.8-caching/20.8.02-redis-fundamentals.md"
   ],
   "https://redis.io/docs/latest/operate/oss_and_stack/management/replication/": [
+   "20-backend/20.8-caching/20.8.02-redis-fundamentals.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.13-rate-limiter.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.20-distributed-counter.md",
    "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
@@ -5861,7 +6256,9 @@
   ],
   "https://redis.io/docs/latest/operate/oss_and_stack/reference/cluster-spec/": [
    "20-backend/20.1-node.js/04-security-and-operations/20.1.4.04-interview-questions.md",
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.29-distributed-cache.md"
+   "20-backend/20.8-caching/20.8.02-redis-fundamentals.md",
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.29-distributed-cache.md",
+   "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
   ],
   "https://redis.io/docs/latest/operate/oss_and_stack/stack-with-enterprise/release-notes/redisce/redisos-8.0-release-notes/": [
    "20-backend/20.8-caching/20.8.02-redis-fundamentals.md"
@@ -6009,17 +6406,28 @@
   "https://rsbuild.dev/": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md"
   ],
-  "https://rspack.rs/blog": [
+  "https://rspack.rs/api/javascript-api/compiler": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md"
   ],
-  "https://rspack.rs/blog/announcing-2-0": [
+  "https://rspack.rs/blog/announcing-2-2": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md",
    "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md"
   ],
-  "https://rspack.rs/guide/advanced/module-federation": [
+  "https://rspack.rs/config/cache": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md",
+   "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
+  ],
+  "https://rspack.rs/guide/features/builtin-swc-loader": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md"
   ],
+  "https://rspack.rs/guide/features/plugin": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md",
+   "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
+  ],
   "https://rspack.rs/guide/migration/webpack": [
-   "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md"
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md"
   ],
   "https://rsync.samba.org/tech_report.html": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.18-dropbox.md"
@@ -6048,9 +6456,6 @@
   "https://schemathesis.readthedocs.io/": [
    "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.05-openapi-swagger.md"
   ],
-  "https://scrapy.org/": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.md"
-  ],
   "https://sdk.operatorframework.io/docs/overview/operator-capabilities/": [
    "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.03-crds-operators-controller-patterns.md"
   ],
@@ -6058,16 +6463,16 @@
    "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.md"
   ],
   "https://semver.org/": [
-   "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.md"
+   "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.md",
+   "40-platform/40.8-monorepo/REVISION.md"
   ],
   "https://serverlessland.com/patterns": [
    "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md"
   ],
   "https://sharp.pixelplumbing.com/api-constructor/": [
-   "20-backend/20.1-node.js/02-io-and-data/20.1.2.01-streams.md"
-  ],
-  "https://sharp.pixelplumbing.com/api-output": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
+   "20-backend/20.1-node.js/02-io-and-data/20.1.2.01-streams.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md"
   ],
   "https://sharp.pixelplumbing.com/api-output/": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.04-file-upload-apis.md"
@@ -6128,7 +6533,8 @@
    "60-realtime/60.1-websockets/04-interview-prep/60.1.4.01-interview-questions.md"
   ],
   "https://socket.io/docs/v4/client-api/": [
-   "60-realtime/60.1-websockets/01-transports/60.1.1.03-socket-io.md"
+   "60-realtime/60.1-websockets/01-transports/60.1.1.03-socket-io.md",
+   "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.01-nestjs-websockets.md"
   ],
   "https://socket.io/docs/v4/client-options/": [
    "60-realtime/60.1-websockets/01-transports/60.1.1.03-socket-io.md"
@@ -6185,8 +6591,7 @@
    "50-quality/50.4-production-engineering/50.4.05-on-call-without-burnout.md"
   ],
   "https://sre.google/sre-book/data-integrity/": [
-   "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.05-decomposing-monolith-database.md",
-   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md"
+   "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.05-decomposing-monolith-database.md"
   ],
   "https://sre.google/sre-book/evolving-sre-engagement-model/": [
    "50-quality/50.4-production-engineering/50.4.04-production-readiness-reviews.md"
@@ -6224,10 +6629,14 @@
    "30-architecture/30.3-infra-patterns/06-interview-prep/30.3.6.01-interview-questions.md",
    "40-platform/40.4-observability/01-pillars/40.4.1.02-monitoring.md",
    "40-platform/40.4-observability/03-sre-targets/40.4.3.02-alerting.md",
+   "50-quality/50.4-production-engineering/50.4.02-sli-slo-error-budgets.md",
    "50-quality/50.4-production-engineering/50.4.05-on-call-without-burnout.md"
   ],
   "https://sre.google/workbook/canarying-releases/": [
    "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.md"
+  ],
+  "https://sre.google/workbook/error-budget-policy/": [
+   "50-quality/50.4-production-engineering/50.4.02-sli-slo-error-budgets.md"
   ],
   "https://sre.google/workbook/implementing-slos/": [
    "40-platform/40.4-observability/03-sre-targets/40.4.3.01-sli-slo-sla.md",
@@ -6239,11 +6648,12 @@
   "https://sre.google/workbook/table-of-contents/": [
    "50-quality/50.4-production-engineering/50.4.06-interview-questions.md"
   ],
-  "https://sst.dev/": [
+  "https://sst.dev/docs/all-providers": [
    "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md"
   ],
-  "https://sst.dev/docs/": [
-   "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md"
+  "https://sst.dev/docs/linking/": [
+   "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
   ],
   "https://stacspec.org/en/about/stac-spec/": [
    "80-lanes-abroad-full-stack/80.34-germany-target-domain-primer.md"
@@ -6301,6 +6711,9 @@
   "https://stylelint.io/": [
    "10-frontend/10.7-html-css/10.7.06-css-architecture-styling-approaches.md"
   ],
+  "https://support.google.com/google-ads/answer/42995?hl=en": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.27-ad-click-aggregator.md"
+  ],
   "https://support.google.com/googlecareers/answer/6095391?hl=en": [
    "81-lanes-indian-sde-faang/81.15-resume-negotiation.md",
    "81-lanes-indian-sde-faang/81.17-google-interview-guide.md"
@@ -6314,17 +6727,18 @@
   "https://support.google.com/googleplay/android-developer/answer/6346149": [
    "10-frontend/10.8-mobile/10.8.06-app-store-release-automation.md"
   ],
-  "https://survivejs.com/webpack/": [
-   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md"
-  ],
   "https://swagger.io/specification/": [
    "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.05-openapi-swagger.md"
   ],
   "https://swagger.io/tools/swagger-ui/": [
    "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.05-openapi-swagger.md"
   ],
-  "https://swc.rs/docs/": [
+  "https://swc.rs/docs/configuration/compilation": [
    "40-platform/40.5-build-tools/02-compilers/40.5.2.02-esbuild-swc.md"
+  ],
+  "https://swc.rs/docs/configuration/supported-browsers": [
+   "40-platform/40.5-build-tools/02-compilers/40.5.2.02-esbuild-swc.md",
+   "40-platform/40.5-build-tools/02-compilers/REVISION.md"
   ],
   "https://tailwindcss.com/docs": [
    "10-frontend/10.7-html-css/10.7.06-css-architecture-styling-approaches.md"
@@ -6333,9 +6747,6 @@
    "10-frontend/10.7-html-css/10.7.07-theming-design-tokens.md"
   ],
   "https://tailwindcss.com/docs/detecting-classes-in-source-files": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
-  ],
-  "https://tailwindcss.com/docs/installation": [
    "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
   ],
   "https://tailwindcss.com/docs/theme": [
@@ -6373,7 +6784,8 @@
    "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.md"
   ],
   "https://tc39.es/ecma262/": [
-   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.04-hoisting.md"
+   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.04-hoisting.md",
+   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md"
   ],
   "https://tc39.es/ecma262/#sec-generator-function-definitions": [
    "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.03-generators.md"
@@ -6473,6 +6885,9 @@
   "https://the-guild.dev/graphql/mesh": [
    "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.03-bff.md"
   ],
+  "https://the-guild.dev/graphql/tools/docs/api/schema/src/functions/makeexecutableschema": [
+   "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.02-graphql-subscriptions-live-queries.md"
+  ],
   "https://the-guild.dev/graphql/ws": [
    "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.02-graphql-subscriptions-live-queries.md"
   ],
@@ -6498,9 +6913,6 @@
   "https://totaltypescript.com/": [
    "10-frontend/10.2-typescript/05-interview-prep/10.2.5.01-interview-questions.md"
   ],
-  "https://trac.ffmpeg.org/wiki/EncodingForStreamingSites": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.17-youtube.md"
-  ],
   "https://trilon.io/blog": [
    "20-backend/20.2-nestjs/05-advanced-and-interview/20.2.5.02-interview-questions.md"
   ],
@@ -6511,30 +6923,48 @@
   "https://trpc.io/docs/": [
    "10-frontend/10.5-form-handling/10.5.02-zod.md"
   ],
-  "https://trunkbaseddevelopment.com/": [
-   "40-platform/40.6-git-advanced/40.6.02-branching-strategies.md"
+  "https://trunkbaseddevelopment.com/branch-for-release/": [
+   "40-platform/40.6-git-advanced/40.6.02-branching-strategies.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
-  "https://turbo.build/": [
-   "40-platform/40.8-monorepo/40.8.02-turborepo.md",
-   "40-platform/40.8-monorepo/40.8.06-interview-questions.md"
+  "https://trunkbaseddevelopment.com/short-lived-feature-branches/": [
+   "40-platform/40.6-git-advanced/40.6.02-branching-strategies.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
-  "https://turbo.build/docs/core-concepts/remote-caching": [
-   "40-platform/40.8-monorepo/40.8.02-turborepo.md"
+  "https://ts.sdk.modelcontextprotocol.io/v2/migration/support-2026-07-28": [
+   "20-backend/20.12-ai-engineering/20.12.04-agent-orchestration-patterns.md",
+   "20-backend/20.12-ai-engineering/20.12.07-interview-questions.md"
   ],
   "https://turbo.build/pack": [
    "40-platform/40.5-build-tools/04-interview-prep/40.5.4.01-interview-questions.md"
   ],
-  "https://turbo.build/pack/docs/benchmarks": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md"
-  ],
-  "https://turbo.build/reference/configuration": [
-   "40-platform/40.8-monorepo/40.8.02-turborepo.md"
-  ],
   "https://turbo.build/repo": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md"
   ],
-  "https://turborepo.org/docs": [
-   "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md"
+  "https://turborepo.dev/docs": [
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md"
+  ],
+  "https://turborepo.dev/docs/core-concepts/remote-caching": [
+   "40-platform/40.8-monorepo/40.8.02-turborepo.md"
+  ],
+  "https://turborepo.dev/docs/crafting-your-repository/caching": [
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md",
+   "40-platform/40.8-monorepo/40.8.02-turborepo.md",
+   "40-platform/40.8-monorepo/40.8.06-interview-questions.md",
+   "40-platform/40.8-monorepo/REVISION.md"
+  ],
+  "https://turborepo.dev/docs/crafting-your-repository/running-tasks": [
+   "40-platform/40.8-monorepo/40.8.02-turborepo.md"
+  ],
+  "https://turborepo.dev/docs/crafting-your-repository/using-environment-variables": [
+   "40-platform/40.8-monorepo/40.8.02-turborepo.md"
+  ],
+  "https://turborepo.dev/docs/reference/configuration": [
+   "40-platform/40.8-monorepo/40.8.02-turborepo.md",
+   "40-platform/40.8-monorepo/REVISION.md"
+  ],
+  "https://turborepo.dev/docs/reference/package-configurations": [
+   "40-platform/40.8-monorepo/40.8.02-turborepo.md"
   ],
   "https://tus.io/protocols/resumable-upload": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.04-file-upload-apis.md"
@@ -6551,7 +6981,7 @@
   "https://typescript.temporal.io/api/classes/worker.Worker": [
    "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md"
   ],
-  "https://typicode.github.io/husky/": [
+  "https://typicode.github.io/husky/get-started.html": [
    "40-platform/40.6-git-advanced/40.6.04-git-hooks.md"
   ],
   "https://unicode.org/reports/tr15/": [
@@ -6571,6 +7001,7 @@
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.03-call-stack.md"
   ],
   "https://v8.dev/blog/fast-properties": [
+   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md",
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md"
   ],
   "https://v8.dev/blog/hash-code": [
@@ -6579,34 +7010,61 @@
   "https://v8.dev/blog/javascript-code-coverage": [
    "50-quality/50.1-testing/02-frameworks/50.1.2.02-vitest.md"
   ],
+  "https://v8.dev/blog/leaving-the-sea-of-nodes": [
+   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md"
+  ],
+  "https://v8.dev/blog/maglev": [
+   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md"
+  ],
+  "https://v8.dev/blog/sparkplug": [
+   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md"
+  ],
   "https://v8.dev/blog/trash-talk": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.07-garbage-collection.md"
   ],
-  "https://vercel.com/docs": [
+  "https://vercel.com/docs/cron-jobs/manage-cron-jobs": [
+   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
+  ],
+  "https://vercel.com/docs/cron-jobs/quickstart": [
+   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
+  ],
+  "https://vercel.com/docs/deployment-protection": [
+   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
+  ],
+  "https://vercel.com/docs/deployments/overview": [
+   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
+  ],
+  "https://vercel.com/docs/deployments/promoting-a-deployment": [
+   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
+  ],
+  "https://vercel.com/docs/environment-variables": [
+   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
+  ],
+  "https://vercel.com/docs/fluid-compute": [
    "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
   ],
   "https://vercel.com/docs/functions": [
    "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md"
   ],
   "https://vercel.com/docs/functions/edge-functions": [
-   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md",
-   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md",
    "40-platform/40.7-serverless-edge/40.7.08-interview-questions.md"
-  ],
-  "https://vercel.com/docs/functions/edge-functions/edge-functions": [
-   "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
-  ],
-  "https://vercel.com/docs/functions/edge-middleware": [
-   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
-  ],
-  "https://vercel.com/docs/functions/fluid-compute": [
-   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
   ],
   "https://vercel.com/docs/functions/runtimes/edge": [
    "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md",
    "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
   ],
-  "https://vercel.com/docs/pricing": [
+  "https://vercel.com/docs/functions/runtimes/node-js": [
+   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
+  ],
+  "https://vercel.com/docs/functions/usage-and-pricing": [
+   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
+  ],
+  "https://vercel.com/docs/git": [
+   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
+  ],
+  "https://vercel.com/docs/incremental-static-regeneration": [
    "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
   ],
   "https://visualgo.net/en/array": [
@@ -6616,31 +7074,68 @@
    "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.04-linked-list-manipulation-patterns.md"
   ],
   "https://vite.dev/": [
-   "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.md",
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.01-build-optimization.md",
    "40-platform/40.5-build-tools/04-interview-prep/40.5.4.01-interview-questions.md"
   ],
-  "https://vite.dev/config/build-options.html": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
-  ],
-  "https://vite.dev/config/shared-options.html": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
-  ],
-  "https://vite.dev/guide/api-plugin.html": [
-   "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.md"
-  ],
-  "https://vite.dev/guide/assets.html": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
-  ],
-  "https://vite.dev/guide/build.html": [
+  "https://vite.dev/blog/announcing-vite8": [
    "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md"
   ],
-  "https://vite.dev/guide/comparisons.html": [
+  "https://vite.dev/blog/announcing-vite8-1": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.md"
+  ],
+  "https://vite.dev/blog/announcing-vite8.html": [
    "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md"
+  ],
+  "https://vite.dev/config/build-options": [
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md"
+  ],
+  "https://vite.dev/config/shared-options": [
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md"
+  ],
+  "https://vite.dev/guide/api-hmr": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.md"
+  ],
+  "https://vite.dev/guide/api-plugin": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.md"
+  ],
+  "https://vite.dev/guide/assets": [
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
+  ],
+  "https://vite.dev/guide/build": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.01-build-optimization.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md",
+   "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md"
+  ],
+  "https://vite.dev/guide/dep-pre-bundling": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.md",
+   "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
+  ],
+  "https://vite.dev/guide/env-and-mode": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.md",
+   "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
+  ],
+  "https://vite.dev/guide/features": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.md",
+   "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
   ],
   "https://vite.dev/guide/migration.html": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.md",
+   "40-platform/40.5-build-tools/02-compilers/40.5.2.02-esbuild-swc.md",
+   "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md",
    "70-interview-toolkit/70.1-behavioral/70.1.04-system-design-behavioral.md"
+  ],
+  "https://vite.dev/guide/ssr": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.md"
+  ],
+  "https://vite.dev/guide/why": [
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md"
+  ],
+  "https://vite.dev/releases": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md"
   ],
   "https://vitest.dev/": [
    "50-quality/50.1-testing/02-frameworks/50.1.2.02-vitest.md",
@@ -6673,15 +7168,6 @@
   "https://w3c.github.io/webtransport/": [
    "60-realtime/60.1-websockets/01-transports/60.1.1.04-webtransport.md"
   ],
-  "https://wave-protocol.org/whitepaper.html": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.22-real-time-collaboration.md"
-  ],
-  "https://web.archive.org/web/20110317010636/http://highscalability.com/blog/2011/3/14/6-lessons-from-dropbox-one-million-files-saved-every-15-minu.html": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.18-dropbox.md"
-  ],
-  "https://web.archive.org/web/20120411161157/http://highscalability.com/blog/2012/4/9/the-instagram-architecture-facebook-bought-for-a-cool-billio.html": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.md"
-  ],
   "https://web.archive.org/web/20131217183346/http://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying": [
    "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.01-real-time-architecture.md"
   ],
@@ -6697,7 +7183,8 @@
    "10-frontend/10.7-html-css/10.7.07-theming-design-tokens.md"
   ],
   "https://web.dev/articles/font-best-practices": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md"
   ],
   "https://web.dev/articles/http-cache": [
    "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.04-http-caching.md"
@@ -6712,10 +7199,8 @@
    "10-frontend/10.6-animation/10.6.07-canvas-svg-animation.md"
   ],
   "https://web.dev/articles/optimize-lcp": [
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.01-build-optimization.md",
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.md"
-  ],
-  "https://web.dev/articles/optimize-webfont-loading": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
   ],
   "https://web.dev/articles/passkey-registration": [
    "20-backend/20.5-security/01-auth/20.5.1.08-mfa-passkeys-webauthn.md",
@@ -6732,7 +7217,8 @@
    "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md"
   ],
   "https://web.dev/articles/serve-responsive-images": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md"
   ],
   "https://web.dev/articles/storage-for-the-web": [
    "10-frontend/10.7-html-css/10.7.08-browser-storage.md"
@@ -6748,6 +7234,10 @@
    "10-frontend/10.7-html-css/10.7.04-seo.md",
    "50-quality/50.3-performance-monitoring/04-interview-prep/50.3.4.01-interview-questions.md"
   ],
+  "https://web.dev/articles/vitals-measurement-getting-started": [
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.01-build-optimization.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md"
+  ],
   "https://web.dev/learn/css": [
    "10-frontend/10.7-html-css/10.7.02-css-fundamentals.md"
   ],
@@ -6758,7 +7248,6 @@
    "10-frontend/10.7-html-css/10.7.05-pwa.md"
   ],
   "https://web.dev/performance/": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.01-build-optimization.md",
    "40-platform/40.5-build-tools/04-interview-prep/40.5.4.01-interview-questions.md",
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.md"
   ],
@@ -6774,21 +7263,58 @@
   "https://webkit.org/blog/6240/ecmascript-6-proper-tail-calls-in-webkit/": [
    "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.05-recursion-tail-call.md"
   ],
-  "https://webpack.academy/": [
-   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md"
-  ],
   "https://webpack.js.org/": [
-   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md",
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.01-build-optimization.md",
    "40-platform/40.5-build-tools/04-interview-prep/40.5.4.01-interview-questions.md"
   ],
+  "https://webpack.js.org/blog/": [
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md"
+  ],
+  "https://webpack.js.org/concepts/": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md"
+  ],
+  "https://webpack.js.org/concepts/loaders/": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md"
+  ],
+  "https://webpack.js.org/concepts/module-federation/": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md"
+  ],
+  "https://webpack.js.org/concepts/plugins/": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md"
+  ],
   "https://webpack.js.org/guides/asset-modules/": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md"
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md",
+   "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
+  ],
+  "https://webpack.js.org/guides/caching/": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md",
+   "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
+  ],
+  "https://webpack.js.org/guides/code-splitting/": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.01-build-optimization.md"
+  ],
+  "https://webpack.js.org/guides/hot-module-replacement/": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md",
+   "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
+  ],
+  "https://webpack.js.org/guides/native-css/": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md",
+   "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
+  ],
+  "https://webpack.js.org/guides/native-html/": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md",
+   "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
   ],
   "https://webpack.js.org/guides/tree-shaking/": [
    "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.01-modules.md",
    "30-architecture/30.1-design-patterns/03-structural/30.1.3.05-module-pattern.md",
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.01-build-optimization.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md",
    "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.01-bundle-analysis.md"
+  ],
+  "https://webpack.js.org/plugins/define-plugin/": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md"
   ],
   "https://webrtc.org/getting-started/overview": [
    "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.03-webrtc-peer-to-peer.md"
@@ -6898,7 +7424,6 @@
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.09-e-commerce.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.11-live-betting.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.12-twitter-feed.md",
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.md"
   ],
   "https://www.amazon.com/Talk-Like-TED-Public-Speaking/dp/1250061539": [
@@ -6991,12 +7516,7 @@
    "40-platform/40.4-observability/05-interview-prep/40.4.5.01-interview-questions.md"
   ],
   "https://www.atlassian.com/git/tutorials": [
-   "40-platform/40.6-git-advanced/40.6.02-branching-strategies.md",
-   "40-platform/40.6-git-advanced/40.6.03-rebase-cherry-pick.md",
    "40-platform/40.6-git-advanced/40.6.10-interview-questions.md"
-  ],
-  "https://www.atlassian.com/git/tutorials/git-hooks": [
-   "40-platform/40.6-git-advanced/40.6.04-git-hooks.md"
   ],
   "https://www.baeldung.com/java-concurrency": [
    "20-backend/20.13-java/20.13.03-java-concurrency-multithreading.md"
@@ -7035,9 +7555,6 @@
   ],
   "https://www.cisa.gov/sites/default/files/publications/data_backup_options.pdf": [
    "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.05-backup-strategy-restore-drills.md"
-  ],
-  "https://www.cloudflare.com/learning/cdn/what-is-a-cdn/": [
-   "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md"
   ],
   "https://www.cloudflare.com/learning/ssl/transport-layer-security-tls/": [
    "20-backend/20.5-security/01-auth/20.5.1.01-auth-fundamentals.md"
@@ -7097,9 +7614,6 @@
   "https://www.domainlanguage.com/wp-content/uploads/2016/05/DDD_Reference_2015-03.pdf": [
    "30-architecture/30.1-design-patterns/05-architectural/30.1.5.06-anti-corruption-layer.md"
   ],
-  "https://www.dropbox.com/developers/documentation": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.18-dropbox.md"
-  ],
   "https://www.edpb.europa.eu/sme/assess-the-risks/data-breaches_en": [
    "80-lanes-abroad-full-stack/80.24-eu-regulatory-compliance.md"
   ],
@@ -7124,9 +7638,6 @@
   "https://www.elastic.co/guide/en/elasticsearch/reference/current/search-suggesters.html": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.23-typeahead-autocomplete.md"
   ],
-  "https://www.envoyproxy.io/docs": [
-   "40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md"
-  ],
   "https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/adaptive_concurrency_filter.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.19-resilience-patterns-deep-dive.md"
   ],
@@ -7135,9 +7646,6 @@
   ],
   "https://www.envoyproxy.io/docs/envoy/latest/intro/arch_overview/other_features/global_rate_limiting": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.08-rate-limiting.md"
-  ],
-  "https://www.fastly.com/documentation/guides/": [
-   "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md"
   ],
   "https://www.fastly.com/documentation/guides/full-site-delivery/caching/caching-best-practices/": [
    "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.04-http-caching.md"
@@ -7234,9 +7742,16 @@
   "https://www.hhs.gov/hipaa/for-professionals/covered-entities/index.html": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.10-hospital-management.md"
   ],
+  "https://www.hhs.gov/hipaa/for-professionals/faq/does-hipaa-require-covered-entities-to-keep-medical-records-for-any-period/index.html": [
+   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.04-data-retention-archival.md"
+  ],
+  "https://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/index.html": [
+   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.04-data-retention-archival.md"
+  ],
   "https://www.hhs.gov/hipaa/for-professionals/special-topics/health-information-technology/cloud-computing/index.html": [
    "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md",
-   "40-platform/40.10-cdn/40.10.01-cdn-architecture.md"
+   "40-platform/40.10-cdn/40.10.01-cdn-architecture.md",
+   "40-platform/40.10-cdn/REVISION.md"
   ],
   "https://www.honeycomb.io/blog/observability-101": [
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.01-opentelemetry.md"
@@ -7261,8 +7776,9 @@
   "https://www.infracost.io/docs/": [
    "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md"
   ],
-  "https://www.inngest.com/docs": [
-   "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md"
+  "https://www.inngest.com/docs/durable-execution/guides-and-advanced/error-handling/retries": [
+   "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
   ],
   "https://www.inngest.com/docs/reference/typescript/v4/functions/create": [
    "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md"
@@ -7476,6 +7992,9 @@
   "https://www.patterns.dev/": [
    "30-architecture/30.1-design-patterns/06-interview-prep/30.1.6.01-interview-questions.md"
   ],
+  "https://www.pgbouncer.org/config": [
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md"
+  ],
   "https://www.pgbouncer.org/config.html": [
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.01-connection-pooling.md"
   ],
@@ -7484,6 +8003,7 @@
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.01-connection-pooling.md",
    "20-backend/20.4-database/05-operations-and-scaling/20.4.5.06-interview-questions.md",
    "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md",
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/REVISION.md",
    "80-lanes-abroad-full-stack/80.08-system-design-case-bank.md"
   ],
   "https://www.pgbouncer.org/usage.html": [
@@ -7564,6 +8084,10 @@
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.09-e-commerce.md",
    "80-lanes-abroad-full-stack/80.17-docita-interview-evidence-pack.md"
   ],
+  "https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-CHECK-CONSTRAINTS": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.17-youtube.md",
+   "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
+  ],
   "https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-EXCLUSION": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.10-hospital-management.md"
   ],
@@ -7588,6 +8112,9 @@
    "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.08-ticket-booking.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.09-e-commerce.md"
+  ],
+  "https://www.postgresql.org/docs/current/explicit-locking.html#ADVISORY-LOCKS": [
+   "30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.md"
   ],
   "https://www.postgresql.org/docs/current/functions-admin.html": [
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.04-database-replication.md",
@@ -7663,7 +8190,8 @@
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.md"
   ],
   "https://www.postgresql.org/docs/current/pgstatstatements.html": [
-   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.05-postgresql-performance.md"
+   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.05-postgresql-performance.md",
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md"
   ],
   "https://www.postgresql.org/docs/current/pgtrgm.html#PGTRGM-INDEX": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.01-pagination.md"
@@ -7691,6 +8219,9 @@
   ],
   "https://www.postgresql.org/docs/current/runtime-config-locks.html": [
    "20-backend/20.4-database/03-transactions-and-replication/20.4.3.02-deadlocks.md"
+  ],
+  "https://www.postgresql.org/docs/current/runtime-config-replication.html": [
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md"
   ],
   "https://www.postgresql.org/docs/current/runtime-config-resource.html": [
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-postgresql.md",
@@ -7784,10 +8315,14 @@
   ],
   "https://www.postgresql.org/docs/current/using-explain.html": [
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.05-postgresql-performance.md",
-   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.03-execution-plans.md"
+   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.03-execution-plans.md",
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md"
   ],
   "https://www.postgresql.org/docs/current/view-pg-locks.html": [
    "20-backend/20.4-database/04-orm-and-access/20.4.4.02-prisma-advanced.md"
+  ],
+  "https://www.postgresql.org/docs/current/view-pg-replication-slots.html": [
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.02-data-pipelines.md"
   ],
   "https://www.postgresql.org/docs/current/wal-intro.html": [
    "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-postgresql.md"
@@ -7822,7 +8357,9 @@
    "20-backend/20.4-database/04-orm-and-access/20.4.4.02-prisma-advanced.md",
    "20-backend/20.4-database/04-orm-and-access/20.4.4.03-orm-query-builder-landscape.md",
    "20-backend/20.4-database/04-orm-and-access/INDEX.md",
-   "20-backend/20.4-database/04-orm-and-access/REVISION.md"
+   "20-backend/20.4-database/04-orm-and-access/REVISION.md",
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.04-multi-tenant-saas-architecture.md",
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/REVISION.md"
   ],
   "https://www.prisma.io/docs/orm/supported-databases": [
    "20-backend/20.4-database/04-orm-and-access/20.4.4.01-prisma.md",
@@ -7860,6 +8397,9 @@
   "https://www.prisma.io/docs/orm/v8/reference/transactions-and-runtime": [
    "20-backend/20.4-database/04-orm-and-access/20.4.4.02-prisma-advanced.md"
   ],
+  "https://www.pulumi.com/docs/iac/concepts/": [
+   "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md"
+  ],
   "https://www.rabbitmq.com/blog/2026/04/23/rabbitmq-4.3-release": [
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.04-rabbitmq.md",
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md",
@@ -7871,7 +8411,9 @@
   "https://www.rabbitmq.com/docs/confirms": [
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.04-rabbitmq.md",
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md",
-   "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md"
+   "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md",
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md",
+   "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
   ],
   "https://www.rabbitmq.com/docs/consumers": [
    "20-backend/20.9-message-brokers/20.9.01-message-brokers.md"
@@ -7911,9 +8453,6 @@
   "https://www.rabbitmq.com/release-information": [
    "20-backend/20.9-message-brokers/20.9.01-message-brokers.md"
   ],
-  "https://www.rabbitmq.com/tutorials/tutorial-one-python": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md"
-  ],
   "https://www.radix-ui.com/primitives/docs/components/dialog": [
    "50-quality/50.2-accessibility/50.2.07-accessibility-design-systems.md"
   ],
@@ -7941,9 +8480,6 @@
   "https://www.redpanda.com/guides/kafka-performance-kafka-rebalancing": [
    "20-backend/20.9-message-brokers/20.9.02-kafka-internals-and-operations.md"
   ],
-  "https://www.researchgate.net/publication/225076539_Mercator_A_scalable_extensible_web_crawler": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.md"
-  ],
   "https://www.rfc-editor.org/rfc/rfc10015.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.md",
    "30-architecture/30.2-system-design/01-theory/REVISION.md"
@@ -7952,7 +8488,8 @@
    "30-architecture/30.2-system-design/01-theory/30.2.1.22-dns-and-name-resolution.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc1035.html": [
-   "30-architecture/30.2-system-design/01-theory/30.2.1.22-dns-and-name-resolution.md"
+   "30-architecture/30.2-system-design/01-theory/30.2.1.22-dns-and-name-resolution.md",
+   "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc2308.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.22-dns-and-name-resolution.md",
@@ -7970,6 +8507,10 @@
   "https://www.rfc-editor.org/rfc/rfc5681.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.md",
    "30-architecture/30.2-system-design/01-theory/REVISION.md"
+  ],
+  "https://www.rfc-editor.org/rfc/rfc5861.html": [
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md",
+   "40-platform/40.10-cdn/40.10.01-cdn-architecture.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc6066": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.md"
@@ -8010,6 +8551,12 @@
   "https://www.rfc-editor.org/rfc/rfc7858.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.22-dns-and-name-resolution.md"
   ],
+  "https://www.rfc-editor.org/rfc/rfc8216.html": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.17-youtube.md"
+  ],
+  "https://www.rfc-editor.org/rfc/rfc8246.html": [
+   "40-platform/40.10-cdn/40.10.01-cdn-architecture.md"
+  ],
   "https://www.rfc-editor.org/rfc/rfc8259": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.06-serialization-and-wire-formats.md"
   ],
@@ -8037,9 +8584,17 @@
   "https://www.rfc-editor.org/rfc/rfc8594.html": [
    "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.03-versioning.md"
   ],
+  "https://www.rfc-editor.org/rfc/rfc8725.html": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.31-api-gateway.md"
+  ],
+  "https://www.rfc-editor.org/rfc/rfc8725.html#section-3.9": [
+   "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
+  ],
   "https://www.rfc-editor.org/rfc/rfc8767.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.22-dns-and-name-resolution.md",
-   "30-architecture/30.2-system-design/01-theory/REVISION.md"
+   "30-architecture/30.2-system-design/01-theory/REVISION.md",
+   "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md",
+   "40-platform/40.10-cdn/REVISION.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc9000.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.md",
@@ -8066,7 +8621,12 @@
    "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.04-http-caching.md",
    "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.04-authentication.md",
    "30-architecture/30.2-system-design/01-theory/30.2.1.13-backpressure-and-flow-control.md",
-   "30-architecture/30.2-system-design/01-theory/30.2.1.19-resilience-patterns-deep-dive.md"
+   "30-architecture/30.2-system-design/01-theory/30.2.1.19-resilience-patterns-deep-dive.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.01-build-optimization.md"
+  ],
+  "https://www.rfc-editor.org/rfc/rfc9110.html#name-accept": [
+   "40-platform/40.10-cdn/40.10.03-media-optimization-at-the-edge.md",
+   "40-platform/40.10-cdn/REVISION.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc9110.html#name-retry-after": [
    "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.02-retry-patterns.md"
@@ -8075,10 +8635,9 @@
    "30-architecture/30.2-system-design/01-theory/30.2.1.08-rate-limiting.md",
    "30-architecture/30.2-system-design/01-theory/REVISION.md"
   ],
-  "https://www.rfc-editor.org/rfc/rfc9111": [
-   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md"
-  ],
   "https://www.rfc-editor.org/rfc/rfc9111.html": [
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md",
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/REVISION.md",
    "40-platform/40.10-cdn/40.10.01-cdn-architecture.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc9113.html": [
@@ -8101,6 +8660,13 @@
    "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.md",
    "60-realtime/60.1-websockets/01-transports/INDEX.md"
   ],
+  "https://www.rfc-editor.org/rfc/rfc9221.html": [
+   "60-realtime/60.1-websockets/01-transports/60.1.1.04-webtransport.md"
+  ],
+  "https://www.rfc-editor.org/rfc/rfc9221.html#section-5.2": [
+   "60-realtime/60.1-websockets/01-transports/60.1.1.04-webtransport.md",
+   "60-realtime/60.1-websockets/01-transports/REVISION.md"
+  ],
   "https://www.rfc-editor.org/rfc/rfc9250.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.22-dns-and-name-resolution.md"
   ],
@@ -8113,6 +8679,9 @@
   "https://www.rfc-editor.org/rfc/rfc9309.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.md"
+  ],
+  "https://www.rfc-editor.org/rfc/rfc9309.html#section-2.3.1": [
+   "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc9325.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.md"
@@ -8152,6 +8721,9 @@
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.26-distributed-id-generator.md"
   ],
+  "https://www.rfc-editor.org/rfc/rfc9562.html#section-5.7": [
+   "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
+  ],
   "https://www.rfc-editor.org/rfc/rfc9745.txt": [
    "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.03-versioning.md"
   ],
@@ -8180,9 +8752,6 @@
   "https://www.robustperception.io/": [
    "40-platform/40.4-observability/03-sre-targets/40.4.3.02-alerting.md"
   ],
-  "https://www.rspack.dev/": [
-   "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md"
-  ],
   "https://www.ruby-lang.org/en/downloads/releases/": [
    "docs/deployment.md"
   ],
@@ -8193,12 +8762,15 @@
    "80-lanes-abroad-full-stack/80.06-visa-relocation-playbook.md"
   ],
   "https://www.serverless.com/": [
-   "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md",
-   "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md",
    "40-platform/40.7-serverless-edge/40.7.08-interview-questions.md"
   ],
-  "https://www.serverless.com/framework/docs/": [
-   "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md"
+  "https://www.serverless.com/framework/docs/guides/upgrading-v4": [
+   "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
+  ],
+  "https://www.serverless.com/framework/docs/providers/aws/guide/deploying": [
+   "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
   ],
   "https://www.sigstore.dev/": [
    "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.md"
@@ -8328,10 +8900,12 @@
   ],
   "https://www.typescriptlang.org/docs/handbook/modules/reference.html": [
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.04-declaration-files.md",
+   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.06-typescript-compiler-pipeline.md",
    "10-frontend/10.2-typescript/05-interview-prep/10.2.5.01-interview-questions.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/project-references.html": [
-   "10-frontend/10.2-typescript/01-foundations/10.2.1.04-tsconfig-compiler-options.md"
+   "10-frontend/10.2-typescript/01-foundations/10.2.1.04-tsconfig-compiler-options.md",
+   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.06-typescript-compiler-pipeline.md"
   ],
   "https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-6.html#strict-function-types": [
    "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.04-type-variance.md"
@@ -8400,16 +8974,14 @@
    "10-frontend/10.2-typescript/03-type-transformations/10.2.3.01-utility-types.md"
   ],
   "https://www.typescriptlang.org/tsconfig/": [
-   "10-frontend/10.2-typescript/01-foundations/10.2.1.04-tsconfig-compiler-options.md"
+   "10-frontend/10.2-typescript/01-foundations/10.2.1.04-tsconfig-compiler-options.md",
+   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.06-typescript-compiler-pipeline.md"
   ],
   "https://www.typescriptlang.org/tsconfig/noUncheckedIndexedAccess.html": [
    "10-frontend/10.2-typescript/01-foundations/10.2.1.02-keyof-typeof.md"
   ],
   "https://www.typescriptlang.org/tsconfig/paths.html": [
    "30-architecture/30.1-design-patterns/03-structural/30.1.3.05-module-pattern.md"
-  ],
-  "https://www.uber.com/blog/engineering/": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.19-lyft.md"
   ],
   "https://www.vaultproject.io/": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.04-secrets-management.md"
@@ -8433,11 +9005,19 @@
   "https://www.w3.org/TR/baggage/": [
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.01-opentelemetry.md"
   ],
+  "https://www.w3.org/TR/css-fonts-4/": [
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md",
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md"
+  ],
   "https://www.w3.org/TR/navigation-timing-2/": [
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.01-performance-apis.md"
   ],
   "https://www.w3.org/TR/png-3/#11IHDR": [
    "20-backend/20.1-node.js/02-io-and-data/20.1.2.02-buffers.md"
+  ],
+  "https://www.w3.org/TR/server-timing/": [
+   "40-platform/40.10-cdn/40.10.02-multi-cdn-traffic-steering.md",
+   "40-platform/40.10-cdn/REVISION.md"
   ],
   "https://www.w3.org/TR/trace-context/": [
    "40-platform/40.4-observability/01-pillars/40.4.1.03-tracing.md",
@@ -8573,12 +9153,11 @@
   "https://yarnpkg.com/": [
    "40-platform/40.8-monorepo/40.8.04-monorepo-tools.md"
   ],
-  "https://yarnpkg.com/features/workspaces": [
-   "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md",
-   "40-platform/40.8-monorepo/40.8.06-interview-questions.md"
+  "https://yarnpkg.com/cli/workspaces/foreach": [
+   "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md"
   ],
-  "https://yjs.dev/": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.22-real-time-collaboration.md"
+  "https://yarnpkg.com/features/workspaces": [
+   "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md"
   ],
   "https://zenodo.org/records/3676092/files/1979-12-MVC.pdf": [
    "30-architecture/30.1-design-patterns/05-architectural/30.1.5.08-presentation-patterns-mvc-mvp-mvvm.md"
@@ -8600,6 +9179,9 @@
   "https://zod.dev/v4/changelog": [
    "10-frontend/10.5-form-handling/10.5.02-zod.md",
    "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.03-pipes.md"
+  ],
+  "https://zookeeper.apache.org/doc/current/recipes.html": [
+   "30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.md"
   ],
   "https://zookeeper.apache.org/doc/current/recipes.html#sc_recipes_Locks": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.md"

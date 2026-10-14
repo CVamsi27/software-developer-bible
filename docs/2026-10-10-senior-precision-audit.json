@@ -13982,19 +13982,32 @@
       "path": "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md",
       "genre": "teaching",
       "baseline_sha256": "d9dd04cb6ad6ffe1dedaa44de0675603cd0e77927c20b5630cbf0bd281fbf92d",
-      "state": "reviewed",
+      "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Definition and terminology",
-        "Mechanism and boundaries",
-        "Examples and failure cases",
-        "Version/tooling claims",
-        "Internal and source links"
+        "Entry-to-module graph, native CSS/HTML maturity boundary, Webpack 5 Asset Module types, loader order and compiler/compilation plugin scope",
+        "Transpilation versus type checking; static ESM export analysis versus package sideEffects metadata",
+        "Dynamic import promise, hashed chunk, publicPath, explicit runtime failure state and old-client deployment availability",
+        "HMR acceptance and development reload boundary; compiler cache versus HTTP/browser cache",
+        "Build-time DefinePlugin exposure, Module Federation integration limits and current Next.js 16 bundler default",
+        "Executable sample behavior, category index/revision alignment and source links"
       ],
-      "sources": [],
-      "disposition": "Read end to end; definitions, examples, boundaries, and navigation are accurate and no substantive edit was needed.",
-      "validation": "Manual technical review; webpack 5.111.1 production build emitted a hashed lazy chunk.",
-      "current_sha256": "d9dd04cb6ad6ffe1dedaa44de0675603cd0e77927c20b5630cbf0bd281fbf92d"
+      "sources": [
+        "https://webpack.js.org/concepts/",
+        "https://webpack.js.org/concepts/loaders/",
+        "https://webpack.js.org/concepts/plugins/",
+        "https://webpack.js.org/concepts/module-federation/",
+        "https://webpack.js.org/guides/asset-modules/",
+        "https://webpack.js.org/guides/code-splitting/",
+        "https://webpack.js.org/guides/tree-shaking/",
+        "https://webpack.js.org/guides/hot-module-replacement/",
+        "https://webpack.js.org/guides/caching/",
+        "https://webpack.js.org/plugins/define-plugin/",
+        "https://nextjs.org/docs/app/guides/upgrading/version-16"
+      ],
+      "disposition": "Rebuilt the flow around the decision to defer a rarely used feature. Added a verified lazy-chunk example and clarified graph construction, built-in and asset resource handling, loader and plugin boundaries, type-check separation, side-effect metadata, HMR acceptance, deployment retention, build versus browser caching, and framework-owned bundlers. Updated the category index, source-linked recall questions and generated reading-time/search metadata; replaced broad/non-primary references with current official docs.",
+      "validation": "Isolated production build with webpack 5.111.1 emitted main.js and feature.59fd5fb86fd694500e52.js; assertions confirmed the lazy module is in the hashed chunk and the output page references main.js. The eight newly added Webpack URLs and the already-baselined Asset Modules guide returned HTTP 200. All 30 repository gates passed; standalone links found 10,803 links and 156 anchors with zero failures; the 2,569-URL citation baseline has no drift. Ruby 3.4.11 production Jekyll build, site-wide heading scan, focused rendered-page assertions and writer fixed-point check passed.",
+      "current_sha256": "887a3c54c8e27a76bdb4737ca05bd808a21107ab98a5f55d88674e5ecb93efd3"
     },
     {
       "path": "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.md",
@@ -14003,21 +14016,28 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Definition and terminology",
-        "Mechanism and boundaries",
-        "Examples and failure cases",
-        "Version/tooling claims",
-        "Internal and source links"
+        "Practical and textbook definitions plus first-principles derivation",
+        "HTML entry, browser module requests, dependency pre-bundling and HMR",
+        "Vite 8.3 support status, Rolldown/Oxc/Lightning CSS and experimental bundled dev",
+        "Production chunking, TypeScript checking, mode and client-visible environment values",
+        "Base paths, proxy ownership, source-map exposure, stale chunks, plugins and SSR runtime boundary",
+        "Index, revision companion, interview coverage and internal/source links"
       ],
       "sources": [
         "https://vite.dev/releases/",
         "https://vite.dev/guide/migration.html",
-        "https://nextjs.org/blog",
-        "https://www.rspack.dev/blog/"
+        "https://vite.dev/guide/dep-pre-bundling",
+        "https://vite.dev/guide/features",
+        "https://vite.dev/guide/env-and-mode",
+        "https://vite.dev/guide/build",
+        "https://vite.dev/guide/api-plugin",
+        "https://vite.dev/guide/api-hmr",
+        "https://vite.dev/guide/ssr",
+        "https://vite.dev/blog/announcing-vite8-1"
       ],
-      "disposition": "Read end to end. Corrected technical wording, stale version context, or a sample where noted; retained accurate material.",
-      "validation": "Manual technical review.",
-      "current_sha256": "39701424e34a034cb765dc556f4e59982fe54334512ca2bb9122be325f58afd3"
+      "disposition": "Rebuilt the chapter around the editor and browser paying different costs: derive the two pipelines, trace index.html through module requests and dependency pre-bundling, then explain HMR, production output and deployment failure boundaries. Updated current Vite 8.3 engine and support claims, migration boundaries, environment and type-check guidance, the SSR runtime distinction, category index, revision questions and senior interview coverage.",
+      "validation": "Checked current official Vite documentation and release/support policy; all nine new official URLs returned HTTP 200. An isolated React app built with Vite 8.3.4 and output assertions verified the configured /app/ base plus JavaScript and CSS. All 30 repository gates passed; standalone link checking found 10,811 links and 162 anchors with zero issues; the 2,576-URL baseline has no drift. Writer fixed-point, Ruby 3.4.11 production Jekyll build, site-wide rendered-heading scan, focused one-H1/section assertions, and git diff --check passed.",
+      "current_sha256": "c757abef22c9426a1fc63337db9487e64864f6945c18b3d26d7542103ac96f23"
     },
     {
       "path": "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md",
@@ -14026,37 +14046,52 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Definition and terminology",
-        "Mechanism and boundaries",
-        "Examples and failure cases",
-        "Version/tooling claims",
-        "Internal and source links"
+        "Practical and textbook definitions plus first-principles derivation",
+        "Incremental invalidation across Next.js client, server and RSC outputs",
+        "Next.js 16.4 default bundler status and version-specific cache behavior",
+        "Development and build filesystem-cache lifetimes and CI persistence",
+        "Webpack loader/plugin compatibility, aliases and extension resolution",
+        "Next.js 16.4 lazy dynamic-import scope and Turbopack trace workflow",
+        "Bundlers index, revision companion, interview coverage and references"
       ],
       "sources": [
-        "https://nextjs.org/blog",
-        "https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack"
+        "https://nextjs.org/docs/app/api-reference/turbopack",
+        "https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack",
+        "https://nextjs.org/blog/next-16-3",
+        "https://nextjs.org/blog/next-16-4",
+        "https://nextjs.org/blog/turbopack-incremental-computation",
+        "https://nextjs.org/docs/app/guides/local-development",
+        "https://turbo.build/repo"
       ],
-      "disposition": "Read end to end. Corrected technical wording, stale version context, or a sample where noted; retained accurate material.",
-      "validation": "Manual technical review.",
-      "current_sha256": "283641ea3362bfe4776985f75dcaaafd6ecd28d0b27616658f232c6c164ec456"
+      "disposition": "Rebuilt the chapter as one edit-to-output trace. Preserved the practical and textbook definitions and separate First Principles derivation; explained fine-grained invalidation, browser/server/RSC targets, dev and build cache lifetimes, Next 16.4 changes, loader/plugin migration limits, realistic benchmark states and traces. Updated the category index, source-linked revision questions and senior interview bank. Corrected and bounded current-version claims against current Next.js documentation.",
+      "validation": "Checked Next.js 16.3 and 16.4 release notes, current Turbopack API/configuration references, the incremental-computation article and local-development tracing guide; all four new official URLs returned HTTP 200. All 30 repository gates passed; standalone link checking found 10,816 links and 167 anchors with zero issues; the 2,580-URL baseline has no drift. Writer fixed-point, Ruby 3.4.11 production Jekyll build, site-wide rendered-heading scan, focused one-H1/section assertions, and git diff --check passed. The config example was checked against current docs; no Next.js app build is claimed.",
+      "current_sha256": "ee36cdd5e7c2d215375df0fdedf538ac0d52180620ae53406c6a4e6027cb5ef5"
     },
     {
       "path": "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md",
       "genre": "teaching",
       "baseline_sha256": "c6c1ab305a9ee2742915ea1c89f568e9c0c7360803a005c5578bb90ed92b393c",
-      "state": "reviewed",
+      "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Definition and terminology",
-        "Mechanism and boundaries",
-        "Examples and failure cases",
-        "Version/tooling claims",
-        "Internal and source links"
+        "Practical and textbook bundler definitions plus First Principles",
+        "Rspack 2.2 release status and Node.js 2.x runtime requirements",
+        "Built-in SWC transform versus whole-program TypeScript checking",
+        "Rspack 2 cache and incremental mechanisms, defaults and invalidation",
+        "Webpack loader/plugin migration limits and Module Federation runtime boundary",
+        "Runnable compiler fixture, index, revision questions, interview bank and navigation"
       ],
-      "sources": [],
-      "disposition": "Read end to end; definitions, examples, boundaries, and navigation are accurate and no substantive edit was needed.",
-      "validation": "Manual technical review; Rspack 2.2 fixture compiled and ran under Node.js 22.",
-      "current_sha256": "c6c1ab305a9ee2742915ea1c89f568e9c0c7360803a005c5578bb90ed92b393c"
+      "sources": [
+        "https://rspack.rs/blog/announcing-2-2",
+        "https://rspack.rs/guide/migration/webpack",
+        "https://rspack.rs/guide/features/builtin-swc-loader",
+        "https://rspack.rs/config/cache",
+        "https://rspack.rs/api/javascript-api/compiler",
+        "https://rspack.rs/guide/features/plugin"
+      ],
+      "disposition": "Rebuilt the chapter around an existing Webpack application evaluating a measured migration. Preserved and strengthened the runnable typed-module fixture, hardened compiler failure/close handling, added the Rspack 2.2 and Node support baseline, made cache versus incremental behavior and migration/runtime proof explicit, and updated the bundlers index, revision companion and interview bank.",
+      "validation": "All five newly cited Rspack documentation URLs returned HTTP 200. The exact fixture compiled and ran in isolation with @rspack/core 2.2.9 on Node.js 23.7.0. All 30 repository gates passed; standalone link checking found 10,818 links and 172 anchors with zero issues; the 2,582-URL baseline has no drift. Writer fixed-point, Ruby 3.4.11 production Jekyll build, site-wide rendered-heading scan, focused one-H1/section assertions, and git diff --check passed.",
+      "current_sha256": "e26b711a1468d42346ffd4e14baf84f0c6582f8afd199364c60a8d01df461790"
     },
     {
       "path": "40-platform/40.5-build-tools/01-bundlers/INDEX.md",
@@ -14173,34 +14208,66 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Definition and terminology",
-        "Mechanism and boundaries",
-        "Examples and failure cases",
-        "Version/tooling claims",
-        "Internal and source links"
+        "Practical/textbook definitions and the distinct cost model for compiler work versus browser route work.",
+        "ES-module export analysis versus package sideEffects metadata; asynchronous chunk trade-offs and route dependency waterfalls.",
+        "File-level raw/gzip/Brotli measurements versus manifest-derived route budgets and missing-evidence failure.",
+        "Cold/warm build evidence, cache-key inputs, LCP/INP measurement boundaries, syntax lowering versus Web API polyfills, and negotiated HTTP content encoding.",
+        "Content-hashed asset immutability, HTML revalidation, old-chunk retention and source-map publication boundary."
       ],
-      "sources": [],
-      "disposition": "Read end to end. Corrected technical wording, stale version context, or a sample where noted; retained accurate material.",
-      "validation": "Manual technical review.",
-      "current_sha256": "ad77c0f7e7e1cb8beb5faa231587fb88d056526d58908319ca401c88b739c6c9"
+      "sources": [
+        "Webpack tree shaking: https://webpack.js.org/guides/tree-shaking/",
+        "Webpack code splitting: https://webpack.js.org/guides/code-splitting/",
+        "Vite production build: https://vite.dev/guide/build",
+        "web.dev Optimize LCP: https://web.dev/articles/optimize-lcp",
+        "web.dev Measure Web Vitals: https://web.dev/articles/vitals-measurement-getting-started",
+        "RFC 9110 content negotiation: https://www.rfc-editor.org/rfc/rfc9110.html",
+        "Node.js zlib APIs: https://nodejs.org/api/zlib.html"
+      ],
+      "disposition": "Rebuilt around one route from module graph to deployment. Removed generic repeated best-practice catalogs and separated compiler speed, encoded file size, route transfer, browser work and rendered experience. Kept side-effect, cache identity, missing-budget evidence, browser-compatibility and rollout boundaries where they change the engineering decision; updated the section index, revision drill and interview bank.",
+      "validation": [
+        "All seven external references directly probed successfully (HTTP 200 or 206 for requested byte ranges).",
+        "The chapter measurement example ran against a temporary emitted-asset fixture and returned validated raw, gzip and Brotli byte counts (3200, 76 and 40 bytes).",
+        "All 30 repository verification gates passed; standalone link check found 10822 links and 176 anchors with zero failures; citation baseline is clean at 2583 URLs.",
+        "Writer fixed point passed. Ruby 3.4.11 production Jekyll build and site-wide rendered-heading check passed."
+      ],
+      "current_sha256": "ea2ab7ee5f984a9a2d75096484195a68b1ea151793d4d8d73602bee65343a069"
     },
     {
       "path": "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md",
       "genre": "teaching",
       "baseline_sha256": "3dfc47bb709646808eb86af9b6c6eabe869aac88402ba9414d5ca56b476ee96e",
-      "state": "reviewed",
+      "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Definition and terminology",
-        "Mechanism and boundaries",
-        "Examples and failure cases",
-        "Version/tooling claims",
-        "Internal and source links"
+        "Asset pipeline stages preserve the relationship between transformed bytes, emitted references, manifests, cache identity and deployment.",
+        "Current Vite CSS behavior: PostCSS default transformer, Lightning CSS production minifier default, experimental full-transform opt-in; Tailwind v4 scans complete class tokens and explicit sources.",
+        "Responsive source selection uses width-described srcset candidates and truthful sizes; picture format fallback, intrinsic dimensions and fetch priority have distinct roles.",
+        "sharp resize/orientation/output behavior and input pixel limits; metadata trust means that pixel limits alone do not secure untrusted uploads.",
+        "Unicode font subsets, font-display swap, fallback metric descriptors and preload request matching.",
+        "Immutable content-hashed output, reference refresh, old-asset retention, post-build hash/source-map pairing and public-map exposure."
       ],
-      "sources": [],
-      "disposition": "Read end to end; definitions, examples, boundaries, and navigation are accurate and no substantive edit was needed.",
-      "validation": "Manual technical review.",
-      "current_sha256": "3dfc47bb709646808eb86af9b6c6eabe869aac88402ba9414d5ca56b476ee96e"
+      "sources": [
+        "Vite static asset handling: https://vite.dev/guide/assets",
+        "Vite shared CSS options: https://vite.dev/config/shared-options",
+        "Vite build options: https://vite.dev/config/build-options",
+        "Tailwind CSS source detection: https://tailwindcss.com/docs/detecting-classes-in-source-files",
+        "sharp resize: https://sharp.pixelplumbing.com/api-resize/",
+        "sharp input limits: https://sharp.pixelplumbing.com/api-constructor/",
+        "Responsive images: https://web.dev/articles/serve-responsive-images",
+        "Image fetch priority: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/fetchpriority",
+        "Font best practices: https://web.dev/articles/font-best-practices",
+        "CSS Fonts module: https://www.w3.org/TR/css-fonts-4/",
+        "HTTP Cache-Control: https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control",
+        "Sentry JavaScript source maps: https://docs.sentry.io/platforms/javascript/sourcemaps/"
+      ],
+      "disposition": "Rebuilt as one path from source reference through CSS/image/font transformation to browser selection and release. Corrected the current Vite transformer/minifier distinction, added readable responsive-image and upload-safety boundaries, clarified font metrics and preload matching, and removed the repetitive decision table and generic mistakes list. Updated the section index, source-linked revision drill and interview prompt.",
+      "validation": [
+        "All twelve cited references were directly probed successfully (HTTP 200 or 206 for requested byte ranges).",
+        "Executed the exact sharp example on Node.js 23.7.0 with sharp in an isolated directory; converted a 4 by 3 SVG to WebP and verified dimensions, output bytes and nested output-directory creation.",
+        "All 30 repository verification gates passed; standalone link and citation-baseline results recorded in the plan checkpoint.",
+        "Writer fixed point and Ruby 3.4.11 production build passed; site-wide rendered-heading and focused rendered-content assertions passed."
+      ],
+      "current_sha256": "3a7e1c5a202ad47be6b17bf2d1df55df9b76e4881b52e96bb61fa3dba1773580"
     },
     {
       "path": "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md",
@@ -14209,21 +14276,35 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Definition and terminology",
-        "Mechanism and boundaries",
-        "Examples and failure cases",
-        "Version/tooling claims",
-        "Internal and source links"
+        "Definitions and distinct layers: framework, dev/build tool, bundler, compiler/transformer and task orchestrator.",
+        "Current Vite 8.3/Rolldown/Oxc, Next.js 16/Turbopack, Webpack 5 and Rspack 2.2 roles and supported migration boundaries.",
+        "Equivalent cold/warm build, development startup, route compilation, HMR and production-behavior benchmark controls.",
+        "Representative migration slice acceptance: integrations, output, source maps, type checking, tests, browser routes and rollback."
       ],
       "sources": [
-        "https://vite.dev/releases/",
-        "https://vite.dev/guide/migration.html",
-        "https://nextjs.org/blog",
-        "https://www.rspack.dev/blog/"
+        "Vite releases: https://vite.dev/releases",
+        "Vite 8 announcement: https://vite.dev/blog/announcing-vite8.html",
+        "Vite architecture: https://vite.dev/guide/why",
+        "Next.js 16: https://nextjs.org/blog/next-16",
+        "Next.js Turbopack API: https://nextjs.org/docs/app/api-reference/turbopack",
+        "Next.js 16.4: https://nextjs.org/blog/next-16-4",
+        "Webpack releases: https://webpack.js.org/blog/",
+        "Rspack Webpack migration: https://rspack.rs/guide/migration/webpack",
+        "Rspack 2.2: https://rspack.rs/blog/announcing-2-2",
+        "esbuild: https://esbuild.github.io/",
+        "Rollup: https://rollupjs.org/",
+        "Turborepo: https://turborepo.dev/docs",
+        "Turborepo caching: https://turborepo.dev/docs/crafting-your-repository/caching",
+        "Nx: https://nx.dev/docs"
       ],
-      "disposition": "Read end to end. Corrected technical wording, stale version context, or a sample where noted; retained accurate material.",
-      "validation": "Manual technical review.",
-      "current_sha256": "2d70f2b3cf45b7190cfc380b33746f2f8db9ff1553907b2b1b5e40d00198e8bc"
+      "disposition": "Rebuilt the chapter around one decision path: identify the tool layer, define an equivalent workload, then prove compatibility and output on a representative migration slice. Removed the weak unmatched build/dev command example and generic mistakes/best-practice sections. Replaced point-version comparison claims with current supported toolchain roles, updated the learning index, and added source-linked revision and interview questions.",
+      "validation": [
+        "All cited external references were directly probed successfully (HTTP 200 or 206 for requested byte ranges).",
+        "Version and default-tool claims checked against current official Vite, Next.js, Webpack and Rspack documentation; vendor benchmark ratios were not reused as universal evidence.",
+        "All 30 repository verification gates passed; standalone links found 10824 links and 184 anchors with zero failures; the 2582-URL citation baseline has no drift.",
+        "Writer fixed point and Ruby 3.4.11 production Jekyll build passed; site-wide rendered-heading and focused one-H1/tool-layer/workload/migration assertions passed. No candidate application benchmark is claimed."
+      ],
+      "current_sha256": "f05a5bbd46193570c220cbdd23630c3e7bb32ea442878180e5417dc7089a67bd"
     },
     {
       "path": "40-platform/40.5-build-tools/03-optimization-and-comparison/INDEX.md",

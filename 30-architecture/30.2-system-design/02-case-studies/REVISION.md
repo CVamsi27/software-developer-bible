@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-20_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-23_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
 
@@ -378,9 +378,13 @@ Source: [Web Crawler System Design](30.2.2.14-web-crawler.md)
 
 **A:** The old worker may finish after a new worker owns the URL. A monotonically increasing generation fences that stale completion so it cannot overwrite the newer claim's result.
 
-**Q:** Why normalize a trailing DNS dot while preserving path and query distinctions?
+**Q:** Why normalize host spellings while preserving path and query distinctions?
 
-**A:** `example.com.` and `example.com` name the same DNS host and should share politeness state. Paths and query components can identify different resources, so removing their meaningful differences can collapse distinct crawl targets.
+**A:** DNS case, a trailing root dot, default ports and equivalent IPv6 spellings can share one host identity. Paths and query components can identify different resources, so removing their meaningful differences can collapse distinct crawl targets. Reject malformed percent escapes before another parser changes their meaning; URL identity still does not establish that the resolved destination is safe.
+
+**Q:** What should a crawler do when `robots.txt` is unavailable or unreachable?
+
+**A:** [RFC 9309](https://www.rfc-editor.org/rfc/rfc9309.html#section-2.3.1) permits access when the response is 4xx, but requires complete disallow initially for network or 5xx failures; cached rules normally expire after 24 hours unless the file remains unreachable. Treat 429 as an overload signal and back off rather than using the general 4xx allowance to increase demand. Follow permitted redirects with destination checks at every hop.
 
 ## Chat System Design
 
@@ -446,6 +450,10 @@ Source: [Instagram System Design](30.2.2.16-instagram.md)
 
 **A:** Push works when the active follower fan-out is affordable and gives readers a prepared candidate list. Pull avoids enormous write amplification for high-fan-out authors but adds read work. Choose the boundary from measured active-follower cost and read latency, then bound and rank the merged candidates.
 
+**Q:** How can the author see a committed post immediately while follower feeds are eventually consistent?
+
+**A:** Commit the post to canonical storage, then serve the author's own recent posts as an overlay until follower fan-out catches up. This preserves read-your-writes for the author without making every follower-cache update part of the publication transaction.
+
 **Q:** How does the design enforce a 24-hour story lifetime if cleanup is delayed?
 
 **A:** Reads reject a story once `expires_at` has passed; cleanup only reclaims storage. Cache hits, search results and signed media delivery must follow the same expiry decision, or a stale copy can outlive the record's intended visibility.
@@ -470,6 +478,10 @@ Source: [YouTube System Design](30.2.2.17-youtube.md)
 
 **A:** Every required playlist and referenced segment must exist, pass validation and belong to the same source/rendition generation. A manifest that points to partial or mixed-version objects turns a successful database update into a broken playback path.
 
+**Q:** Why must a PostgreSQL `CHECK` for a ready video explicitly reject a `NULL` version?
+
+**A:** PostgreSQL considers a check satisfied when its expression is true or null. If `ready_version` is null, `ready_version = source_version` is null rather than false; require `ready_version IS NOT NULL` as well as equality. This still cannot prove the referenced object-store files exist. See [PostgreSQL constraint semantics](https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-CHECK-CONSTRAINTS).
+
 ## Dropbox System Design
 
 Source: [Dropbox System Design](30.2.2.18-dropbox.md)
@@ -486,9 +498,9 @@ Source: [Dropbox System Design](30.2.2.18-dropbox.md)
 
 **A:** A sequence assigned under the namespace-head transaction gives a committed cursor order even when clocks tie or differ. It also makes the serialization cost visible: one hot namespace has a single ordering point and may need a partition-aware cursor design to scale further.
 
-**Q:** Why bind the current file revision to a row in `file_versions` with a deferred foreign key?
+**Q:** Why should an edit increment the revision with a conditional update and bind that pointer to a `file_versions` row?
 
-**A:** A version update changes the current pointer and inserts its manifest record in one transaction. Deferral permits either write order inside that transaction while rejecting a commit whose pointer has no corresponding version.
+**A:** The conditional update succeeds only when the caller's base revision is still current, and `RETURNING revision` supplies the next revision for the manifest and change record. The deferred foreign key permits the pointer and version row to be written in either order inside one transaction, while rejecting a commit whose pointer has no corresponding version.
 
 **Q:** Why keep a sync-operation result separate from the change cursor?
 
@@ -510,6 +522,14 @@ Source: [Lyft / Ride-Sharing System Design](30.2.2.19-lyft.md)
 
 **A:** Straight-line distance ignores road topology, traffic and barriers such as rivers or one-way roads. Use cells to bound candidate discovery, then compare a limited set with road-time estimates and keep a clear fallback if routing is unavailable.
 
+**Q:** Why should a location report carry a session generation as well as a sequence number?
+
+**A:** A sequence orders reports only within its session. After reconnect, a new session may restart its counter while a delayed report or disconnect from the old session is still in flight; a server-issued generation fences that stale session from changing current position or availability.
+
+**Q:** Why should assignment release share a version-checked transaction with trip completion or cancellation?
+
+**A:** A worker lease expiring says the worker stopped owning a task, not that the ride ended. Release the driver only during an authorized terminal transition, under the same driver-then-ride lock order as acceptance; update availability and publish the transition intent atomically so recovery cannot make an occupied driver look free.
+
 ## Distributed Counter / Metrics Aggregation System Design
 
 Source: [Distributed Counter / Metrics Aggregation System Design](30.2.2.20-distributed-counter.md)
@@ -525,6 +545,10 @@ Source: [Distributed Counter / Metrics Aggregation System Design](30.2.2.20-dist
 **Q:** Why must each G-Counter writer keep its identity unique across concurrent writers and restarts?
 
 **A:** Merge compares values within the same writer slot. Two concurrent writers sharing a slot can overwrite one another, while resetting a slot can make the merged state forget prior increments. Use durable identity or a new epoch and a safe protocol before compacting old slots. See the [CRDT counter model](https://dsf.berkeley.edu/cs286/papers/crdt-tr2011.pdf).
+
+**Q:** Why is `ON CONFLICT DO NOTHING` not a complete idempotency policy for a counter event?
+
+**A:** It suppresses a second increment for the same event ID, but by itself cannot tell whether a retry carries the original key and delta. Compare the stored payload: return the original outcome for an exact match and reject an ID reused with different meaning.
 
 ## Workflow Engine — System Design Case Study
 
@@ -542,6 +566,10 @@ Source: [Workflow Engine — System Design Case Study](30.2.2.21-workflow-engine
 
 **A:** Temporal reconstructs workflow state by replaying its event history. Incompatible code can produce different commands for old history, so external I/O belongs in activities and in-flight workflow changes need a compatible versioning strategy. See [Temporal's workflow-definition guidance](https://docs.temporal.io/workflow-definition).
 
+**Q:** Why does a running workflow enter a cancellation-pending state instead of immediately becoming cancelled?
+
+**A:** The workflow must stop scheduling new steps and settle or reconcile active effects first. A remote action may finish after the request or resist cancellation; only then can the engine decide whether to close as cancelled, compensate, or expose an unresolved outcome. See [Temporal's cancellation guidance](https://docs.temporal.io/encyclopedia/workflow/cancellation-and-termination).
+
 ## Real-Time Collaboration — System Design Case Study
 
 Source: [Real-Time Collaboration — System Design Case Study](30.2.2.22-real-time-collaboration.md)
@@ -557,6 +585,10 @@ Source: [Real-Time Collaboration — System Design Case Study](30.2.2.22-real-ti
 **Q:** What does a Yjs state vector establish during reconnect, and what does it leave unproven?
 
 **A:** It summarizes the replica state so a peer can compute missing updates. It does not prove those updates were durably committed or that the caller is authorized to apply them. See [Yjs document updates](https://docs.yjs.dev/api/document-updates).
+
+**Q:** Why must a snapshot record the update sequence it covers before the log is compacted?
+
+**A:** A state vector helps compute CRDT differences, while the covered sequence identifies the durable log prefix represented by the snapshot. Build through a captured high-water mark, publish that checkpoint, and retain later updates so concurrent writes are not lost.
 
 ## Typeahead / Autocomplete System Design
 
@@ -574,13 +606,21 @@ Source: [Typeahead / Autocomplete System Design](30.2.2.23-typeahead-autocomplet
 
 **A:** A query normalized differently from the built keys can miss a valid prefix or collide with another key. Pin the normalization form and version, and reject collisions before publication. See [Unicode normalization](https://unicode.org/reports/tr15/).
 
+**Q:** Why should equal-score suggestions use a stable tie-break?
+
+**A:** Host-dependent collation can reorder equal-score results across builds, creating noisy artifacts and cache changes. Use a documented stable ordering, or pin the locale and collation version in the artifact metadata.
+
+**Q:** Why apply tenant visibility while retrieving autocomplete candidates?
+
+**A:** A global top list may omit an authorized match before a later filter sees it. Cross-tenant candidates can also affect observable result counts or timing, so scope retrieval to the caller's allowed data.
+
 ## Metrics & Monitoring Pipeline System Design
 
 Source: [Metrics & Monitoring Pipeline System Design](30.2.2.24-metrics-monitoring-pipeline.md)
 
 **Q:** Why must a metrics pipeline distinguish event time from ingestion time?
 
-**A:** Late and reordered samples affect windows and alerts differently. Define watermark, lateness and correction policies rather than treating arrival as occurrence.
+**A:** The sample timestamp assigns a measurement to event time; the collector receive time shows when the pipeline learned of it. Track their difference as ingestion lag, then define clock-skew, lateness, and correction policies so delayed arrivals do not silently distort windows or freshness.
 
 **Q:** Why cannot a Bloom-filter match prove series quota admission?
 
@@ -589,6 +629,14 @@ Source: [Metrics & Monitoring Pipeline System Design](30.2.2.24-metrics-monitori
 **Q:** How does delta temporality change counter or histogram rate processing?
 
 **A:** Each delta covers a non-overlapping interval, while cumulative points cover an interval from a start time. Preserve those boundaries and detect gaps/resets before aggregation; applying cumulative reset logic to deltas can double-count or lose samples. See the [OpenTelemetry metrics data model](https://opentelemetry.io/docs/specs/otel/metrics/data-model/).
+
+**Q:** Which identity fields can be lost when mapping an OpenTelemetry stream into Prometheus labels?
+
+**A:** Resource attributes and instrumentation scope identify the stream; point attributes further distinguish its series. Preserve them in mapped labels or remove them deliberately through an aggregation view, or independent producers can collide. See the [OpenTelemetry metrics data model](https://opentelemetry.io/docs/specs/otel/metrics/data-model/).
+
+**Q:** Is `NaN` a portable marker for missing metrics data?
+
+**A:** No. Prometheus text and OpenMetrics accept non-finite sample values, but OpenMetrics does not assign `NaN` a missing-data meaning; Prometheus staleness uses a distinct internal NaN bit pattern. Interpret values by protocol and metric type. See the [OpenMetrics specification](https://prometheus.io/docs/specs/om/open_metrics_spec/).
 
 ## Distributed Job Scheduler System Design
 
@@ -606,6 +654,14 @@ Source: [Distributed Job Scheduler System Design](30.2.2.25-distributed-job-sche
 
 **A:** It prevents two current runs from owning the same job occurrence. The transaction must still verify the schedule version, insert the run, advance the next-fire cursor, and write publication intent together. See [PostgreSQL partial indexes](https://www.postgresql.org/docs/current/indexes-partial.html).
 
+**Q:** When is a per-run fencing token insufficient for an external effect?
+
+**A:** It orders attempts of that run, but not separate runs that mutate the same resource. Allocate the token in the protected resource's ownership scope and have the resource reject older tokens, or use a resource-side version check.
+
+**Q:** What must a recurring schedule define for daylight-saving transitions?
+
+**A:** Store its IANA timezone and choose what a nonexistent local time does during a spring jump and whether a repeated local time fires once or twice. Also define overlap and missed-run behavior so retries or outages cannot invent occurrences.
+
 ## Distributed ID Generator System Design
 
 Source: [Distributed ID Generator System Design](30.2.2.26-distributed-id-generator.md)
@@ -620,7 +676,15 @@ Source: [Distributed ID Generator System Design](30.2.2.26-distributed-id-genera
 
 **Q:** Does a worker ID make a Snowflake-style generator safe after its lease expires?
 
-**A:** No. If an old process keeps issuing after the identity is reassigned, both owners can emit the same worker/time/sequence tuple. The old process must stop at a conservative lease deadline, or identities must not be reused under the chosen protocol.
+**A:** No. A paused old process can resume after reassignment and emit the same worker/time/sequence tuple. The reuse protocol must prevent that stale issuer from continuing, for example by confirming termination, reserving non-overlapping durable time ranges, or encoding a non-reused generation.
+
+**Q:** What does UUIDv7 ordering guarantee within one millisecond?
+
+**A:** RFC 9562 puts the Unix-millisecond timestamp first, but order among UUIDs from the same millisecond depends on how the implementation generates the remaining fields. See [RFC 9562, Section 5.7](https://www.rfc-editor.org/rfc/rfc9562.html#section-5.7).
+
+**Q:** Why should a range allocator reserve IDs with one atomic cursor update instead of `SELECT MAX(id)`?
+
+**A:** Concurrent `MAX` readers can see the same value and choose overlapping blocks. A single conditional `UPDATE ... RETURNING` serializes on the allocator row and returns a distinct half-open range to each caller.
 
 ## Ad Click Aggregator System Design
 
@@ -638,6 +702,14 @@ Source: [Ad Click Aggregator System Design](30.2.2.27-ad-click-aggregator.md)
 
 **A:** It describes the chance that a previously unseen identity tests positive. It does not mean one percent of all positive checks are false, and it cannot authorize dropping exact deduplication. Repeated events can make most lookups positive because they are genuine repeats.
 
+**Q:** Why can a watermark pass an hourly window without making its billing total final?
+
+**A:** A watermark estimates event-time progress; a bounded-out-of-order strategy does not prove that no older event will arrive. Keep the window correctable for the allowed-lateness period and reconcile later arrivals afterward. See [Flink's watermark guidance](https://nightlies.apache.org/flink/flink-docs-stable/docs/dev/datastream/event-time/built_in/).
+
+**Q:** What does “exactly once” mean for a checkpointed stream processor, and what else is needed for the billing sink?
+
+**A:** Checkpoint recovery can make each replayed event affect managed state once. End-to-end effects also require a replayable source and a transactional or idempotent sink; otherwise a retried write can still duplicate an external effect. See [Flink fault tolerance](https://nightlies.apache.org/flink/flink-docs-stable/docs/learn-flink/fault_tolerance/).
+
 ## Parking Lot System Design
 
 Source: [Parking Lot System Design](30.2.2.28-parking-lot.md)
@@ -653,6 +725,14 @@ Source: [Parking Lot System Design](30.2.2.28-parking-lot.md)
 **Q:** Why are `assigned_at` and `entered_at` separate timestamps?
 
 **A:** A database can reserve a space before the car crosses the barrier. Recording entry only after passage keeps the software decision distinct from physical evidence; a lost acknowledgment needs reconciliation rather than a fabricated arrival time.
+
+**Q:** What invariant does the partial unique index enforce, and what does it leave to physical reconciliation?
+
+**A:** It prevents two persisted live sessions from owning one spot. It cannot prove whether a vehicle actually entered or left; sensors, controller acknowledgments, and operator policy settle those facts. See [PostgreSQL partial indexes](https://www.postgresql.org/docs/current/indexes-partial.html).
+
+**Q:** Under the example tariff, what is charged when a 15-minute grace period is exceeded by one second?
+
+**A:** The entire stay is rounded up to the first started hour, so a 901-second stay costs one hourly unit. The grace is not subtracted from the billable duration, and each subsequent 24-hour block has its own cap.
 
 ## Distributed Cache System Design
 
@@ -670,6 +750,14 @@ Source: [Distributed Cache System Design](30.2.2.29-distributed-cache.md)
 
 **A:** No. TTL measures time since insertion. A slow loader can insert an old origin snapshot just before insertion and keep it for another five minutes; record source version/observation time when source age matters.
 
+**Q:** What does a Redis Cluster hash tag enable for a multi-key command, and what can it cost?
+
+**A:** It maps the selected keys to the same hash slot so a supported multi-key command can run on one owner. Concentrating keys also concentrates traffic and can create a hot slot. See the [Redis Cluster specification](https://redis.io/docs/latest/operate/oss_and_stack/reference/cluster-spec/).
+
+**Q:** Why can reading from a cache replica return an older value after an acknowledged write?
+
+**A:** Redis Cluster replicates asynchronously, so a primary can acknowledge a write before its replica receives it; failover may also lose an acknowledged write. Use replica reads only when that staleness and loss contract is acceptable. See the [Redis Cluster specification](https://redis.io/docs/latest/operate/oss_and_stack/reference/cluster-spec/).
+
 ## Message Queue System Design
 
 Source: [Message Queue System Design](30.2.2.30-message-queue.md)
@@ -686,6 +774,14 @@ Source: [Message Queue System Design](30.2.2.30-message-queue.md)
 
 **A:** Nothing about a later retry after its five-minute window, and nothing about an external database or payment effect. Persist a stable business idempotency key at the consumer boundary as well. See [SQS FIFO deduplication](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html).
 
+**Q:** What do `acks=all` and `min.insync.replicas` each require in Kafka?
+
+**A:** `acks=all` waits for every current in-sync replica; `min.insync.replicas` sets the minimum ISR count for an all-acks write to succeed. Neither means every configured replica is available or that all brokers fsynced every record. See [Kafka 4.3 topic configuration](https://kafka.apache.org/43/generated/topic_config.html).
+
+**Q:** Is a RabbitMQ publisher confirm the same as a consumer acknowledgment?
+
+**A:** No. A publisher confirm reports broker-side handling of a publish; a consumer acknowledgment reports that a delivery was processed and may be removed. Neither confirms the other side's work. See [RabbitMQ acknowledgments and publisher confirms](https://www.rabbitmq.com/docs/confirms).
+
 ## API Gateway System Design
 
 Source: [API Gateway System Design](30.2.2.31-api-gateway.md)
@@ -701,6 +797,14 @@ Source: [API Gateway System Design](30.2.2.31-api-gateway.md)
 **Q:** Where should the final decision to read `/orders/7` be made?
 
 **A:** The orders service should authorize the authenticated principal against order 7 and its tenant or ownership policy. The gateway can authenticate and admit the request, but route access alone does not grant object access.
+
+**Q:** Why can a correctly signed JWT still be invalid for this API?
+
+**A:** Its signature proves that a trusted key signed the token, not that this API is its intended audience. Validate the expected issuer, audience, approved algorithm/key, expiry, and token type before trusting its claims. See [RFC 8725, Section 3.9](https://www.rfc-editor.org/rfc/rfc8725.html#section-3.9).
+
+**Q:** What should the gateway do when an upstream times out after a `POST` may have committed?
+
+**A:** Treat the outcome as unknown. Do not replay the operation with a new identity; reconcile or retry with a stable idempotency key enforced by the owning service.
 
 ## Additional case traces
 

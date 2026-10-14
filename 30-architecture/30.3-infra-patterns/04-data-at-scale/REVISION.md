@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Architecture-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../../docs/topic-importance.md)
 
@@ -30,6 +30,10 @@ Source: [Database Scaling — Partitioning, Replication, Connection Pooling, Que
 
 **A:** No. The size is per user/database pool, with other pools/reserve configuration and direct clients adding demand. Budget fleet-wide useful execution and queueing, not just one setting.
 
+**Q:** In PgBouncer transaction mode, which session assumptions must an application avoid, and when can it use named prepared statements?
+
+**A:** The server connection is released at transaction end, so session `SET` state and session-level advisory locks do not follow the client to its next transaction. PgBouncer supports protocol-level named prepared statements in this mode only when `max_prepared_statements` is nonzero; SQL `PREPARE`/`DEALLOCATE` remains incompatible. Verify the driver's protocol behavior against the [PgBouncer feature matrix](https://www.pgbouncer.org/features.html).
+
 ## Data Pipelines — ETL, Stream Processing, Data Lake
 
 Source: [Data Pipelines — ETL, Stream Processing, Data Lake](30.3.4.02-data-pipelines.md)
@@ -46,9 +50,13 @@ Source: [Data Pipelines — ETL, Stream Processing, Data Lake](30.3.4.02-data-pi
 
 **A:** Yes. Without the retained higher deletion version, an older image can insert again. Match tombstone retention to the replay/correction contract and required deletion policy.
 
-**Q:** Is a five-minute floor(timestamp / interval) bucket a sliding window?
+**Q:** Is a fixed, non-overlapping five-minute window a sliding window?
 
 **A:** It is a tumbling window. Sliding windows overlap; late data and watermark/correction behavior require additional explicit policies.
+
+**Q:** What does Kafka's exactly-once transaction cover when the sink is PostgreSQL?
+
+**A:** Kafka can atomically commit consumed offsets and output records within Kafka. A PostgreSQL write is outside that transaction: commit the projection and checkpoint together in PostgreSQL, then make source redelivery safe until its offset catches up. See [Kafka Streams' processing guarantees](https://kafka.apache.org/43/streams/core-concepts/).
 
 ## CDN Architecture — Edge Caching, Geographic Distribution, Cache Invalidation
 
@@ -62,6 +70,10 @@ Source: [CDN Architecture — Edge Caching, Geographic Distribution, Cache Inval
 
 **A:** Distinct responses merge, potentially leaking private data or serving the wrong variant. Too many irrelevant variations instead fragment reuse. Neither key choice supplies access authorization.
 
+**Q:** What does a cache key prove about a protected response, and what must happen before returning a hit?
+
+**A:** The key selects a stored representation from request fields; it does not establish permission. Enforce the required policy on every protected delivery, including hits, with a defined revocation delay. Deny when a required check fails unless an explicit bounded offline-access policy meets the contract; a cache hit is not authorization. [RFC 9111](https://www.rfc-editor.org/rfc/rfc9111.html) defines the HTTP key and shared-cache rules; provider cache configuration still needs a separate audit.
+
 **Q:** Does serving through a chosen region prove where sensitive data is retained?
 
 **A:** No. Origin, backups, logs, telemetry and provider processing have separate location/trust contracts. No-store controls relevant caching, not all processing or compliance.
@@ -70,17 +82,21 @@ Source: [CDN Architecture — Edge Caching, Geographic Distribution, Cache Inval
 
 Source: [Multi-Tenant SaaS Architecture](30.3.4.04-multi-tenant-saas-architecture.md)
 
-**Q:** Why must an RLS tenant setting and queries share one transaction connection?
+**Q:** Why must a row-level security (RLS) tenant setting and its queries share one transaction connection?
 
 **A:** Transaction-local context does not follow a query onto another pooled connection. Pin both operations together and use a runtime role that cannot bypass the policy.
 
 **Q:** Why should a tenant filter built with Prisma middleware or an extension name its supported major version and operations?
 
-**A:** Prisma ORM 7 removed the legacy `$use` API, while Prisma ORM 8 provides a different middleware configuration. A filter covering selected operations is not proof that nested, raw or relationship paths enforce the same tenant boundary.
+**A:** Prisma ORM 7 removed the legacy `$use` middleware hook. Prisma ORM 8 has a separate [middleware configuration](https://docs.prisma.io/docs/orm/v8/middleware/how-middleware-works) and is still a release candidate as of October 2026; verify the current [release status](https://www.prisma.io/docs/orm/release-status). A filter or middleware covering selected paths is not proof that every database access enforces the tenant boundary.
 
 **Q:** Does installing a transaction-local tenant setting protect a later query on another pooled connection?
 
-**A:** No. Context installation and protected statements must use the same transaction/connection. Authorized application context and an RLS-constrained runtime role are also necessary; RLS cannot make SQL injection safe.
+**A:** No. Context installation and protected statements must use the same transaction/connection. Authorized application context and an RLS-constrained runtime role are also necessary; RLS cannot make query injection safe.
+
+**Q:** Why might a SaaS use a pooled database for ordinary tenants and a silo for a high-load or contract-sensitive tenant?
+
+**A:** Tenant and service workloads can have different isolation, recovery and capacity requirements. Choose a model per resource and service, and account for the added routing and operating cost. The [AWS SaaS Lens](https://docs.aws.amazon.com/wellarchitected/latest/saas-lens/general-design-principles.html) discusses pooling and siloing by service profile.
 
 ## Summary
 

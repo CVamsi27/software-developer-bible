@@ -1,6 +1,6 @@
 # Coding Patterns — Index
 
-> **Study time:** ≈ 5 h 20 m of reading (27 files, ~12 min average).
+> **Study time:** ≈ 5 h 22 m of reading (27 files, ~12 min average).
 > **27 files across 5 categories.** Essential coding patterns for technical interviews from sliding window and two pointers to dynamic programming, advanced data structures (monotonic stack, segment tree, bit manipulation), number theory & combinatorics, and streaming algorithms (reservoir sampling).
 
 [![Files](https://img.shields.io/badge/files-27-blue)](../../INDEX.md)
@@ -36,7 +36,7 @@ Use these links after choosing a category pass above. The signals narrow the can
 
 | # | Pattern | Category | When to recognize | Role priority | General importance | Read time |
 | --: | --------- | ---------- | ------------------- | --- | --- | ----------: |
-| 01 | [Sliding Window](01-linear-structures/70.2.1.01-sliding-window.md) | Linear | "Longest/shortest subarray/substring" | Essential | Important | 10 min |
+| 01 | [Sliding Window](01-linear-structures/70.2.1.01-sliding-window.md) | Linear | "Longest/shortest subarray/substring" | Essential | Important | 11 min |
 | 02 | [Two Pointers](01-linear-structures/70.2.1.02-two-pointers.md) | Linear | "Sorted array, find pair/triplet" | Essential | Important | 10 min |
 | 03 | [Binary Search](01-linear-structures/70.2.1.03-binary-search.md) | Linear | "Find first/last position", rotated array | Essential | Important | 13 min |
 | 04 | [DFS & BFS](02-graphs-trees-grids/70.2.2.01-dfs-bfs.md) | Graphs | "Tree/graph traversal", shortest path, components | Essential | Important | 18 min |
@@ -45,8 +45,8 @@ Use these links after choosing a category pass above. The signals narrow the can
 | 07 | [Heap](04-heaps-stacks-selection/70.2.4.01-heap.md) | Selection | "Top K, K-way merge, median of stream" | Essential | Important | 14 min |
 | 08 | [Trie](02-graphs-trees-grids/70.2.2.05-trie.md) | Graphs | "Prefix search, autocomplete, word dictionary" | Essential | Important | 17 min |
 | 09 | [Union Find](02-graphs-trees-grids/70.2.2.03-union-find.md) | Graphs | "Connected components, redundant connections" | Optional | Specialized | 15 min |
-| 10 | [Topological Sort](02-graphs-trees-grids/70.2.2.04-topological-sort.md) | Graphs | "Dependency resolution, course schedule" | Essential | Important | 14 min |
-| 11 | [Intervals](01-linear-structures/70.2.1.05-intervals.md) | Linear | "Merge intervals, meeting rooms, overlapping" | Essential | Important | 11 min |
+| 10 | [Topological Sort](02-graphs-trees-grids/70.2.2.04-topological-sort.md) | Graphs | "Dependency resolution, course schedule" | Essential | Important | 15 min |
+| 11 | [Intervals](01-linear-structures/70.2.1.05-intervals.md) | Linear | "Merge intervals, meeting rooms, overlapping" | Essential | Important | 12 min |
 | 12 | [Greedy & Prefix Sum](01-linear-structures/70.2.1.06-greedy-prefix-sum.md) | Linear | "Jump game, partition, range sum queries" | Essential | Important | 13 min |
 
 ---
@@ -57,11 +57,11 @@ Use these when a simpler scan, traversal, or recurrence cannot meet the stated o
 
 | # | Pattern | Category | When to recognize | Role priority | General importance | Read time |
 | --: | --------- | ---------- | ------------------- | --- | --- | ----------: |
-| 13 | [Monotonic Stack](04-heaps-stacks-selection/70.2.4.02-monotonic-stack.md) | Heaps/Stacks | "Next greater/smaller element, histogram" | Essential | Important | 13 min |
+| 13 | [Monotonic Stack](04-heaps-stacks-selection/70.2.4.02-monotonic-stack.md) | Heaps/Stacks | "Next greater/smaller element, histogram" | Essential | Important | 12 min |
 | 14 | [Segment Tree & BIT](04-heaps-stacks-selection/70.2.4.04-segment-tree.md) | Heaps/Stacks | "Range query + point update" | Optional | Specialized | 17 min |
 | 15 | [Bit Manipulation](03-recursion-and-optimization/70.2.3.03-bit-manipulation.md) | Recursion | "XOR, bitmask, subset enumeration, popcount" | Optional | Specialized | 14 min |
 | 16 | [String Search — KMP & Rabin-Karp](01-linear-structures/70.2.1.07-string-search-kmp-rabin-karp.md) | Linear | "Find substring, pattern matching" | Optional | Specialized | 14 min |
-| 17 | [Quick Select & Reservoir Sampling](04-heaps-stacks-selection/70.2.4.05-quick-select-reservoir-sampling.md) | Heaps/Stacks | "K-th largest, sample from stream" | Essential | Important | 15 min |
+| 17 | [Quick Select & Reservoir Sampling](04-heaps-stacks-selection/70.2.4.05-quick-select-reservoir-sampling.md) | Heaps/Stacks | "K-th largest, sample from stream" | Essential | Important | 14 min |
 | 18 | [Stack & Queue Patterns](04-heaps-stacks-selection/70.2.4.03-stack-queue-patterns.md) | Heaps/Stacks | "LRU cache, sliding window max, min stack" | Essential | Important | 16 min |
 | 19 | [Linked List Manipulation Patterns](01-linear-structures/70.2.1.04-linked-list-manipulation-patterns.md) | Linear | "Reverse/reorder list, cycle entry, O(1)-space surgery" | Essential | Important | 15 min |
 | 20 | [Shortest Paths — Dijkstra & Bellman-Ford](02-graphs-trees-grids/70.2.2.02-shortest-paths-dijkstra-bellman-ford.md) | Graphs | "Weighted shortest path, K stops, negative edges/arbitrage" | Optional | Specialized | 16 min |

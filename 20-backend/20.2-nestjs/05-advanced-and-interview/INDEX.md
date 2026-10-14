@@ -16,7 +16,7 @@ First trace a parameter extractor after authentication and distinguish extractio
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Custom Decorators](20.2.5.01-custom-decorators.md) | Parameter decorators (@CurrentUser, @ClinicId, @Pagination), method decorators (@RateLimit, @Cache, @Audit), decorator composition | Essential | Important | 5 min |
+| 01 | [Custom Decorators](20.2.5.01-custom-decorators.md) | Request-value extraction, metadata consumers, validation boundaries and decorator composition | Essential | Important | 5 min |
 | Revision | [Category recall](REVISION.md) | Extraction, metadata and enforcement boundaries before the interview drill | Essential | Important | — |
 | 02 | [Interview Questions](20.2.5.02-interview-questions.md) | 40 practice questions with answers | Essential | Important | 7 min |
 

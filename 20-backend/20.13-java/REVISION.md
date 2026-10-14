@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Java-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Deferred-lightgrey)](../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../docs/topic-importance.md)
 
@@ -14,6 +14,22 @@ After each reading pass, explain the failure first, then the mechanism that prev
 
 Source: [Language Fundamentals](20.13.01-java-language-fundamentals.md)
 
+**Q:** Does successful class loading prove the class can initialize and run?
+
+**A:** No. Loading obtains the class definition; linking includes verification, preparation, and resolution, and initialization later runs the class initializer. Resolution may be deferred, so a failure can surface only when a symbolic reference is first used.
+
+**Q:** Which run-time areas are part of the JVM contract, and which details belong to HotSpot?
+
+**A:** The JVM specification defines logical areas such as per-thread stacks, the heap, and the method area, but not their physical layout. HotSpot's Metaspace, compilation tiers, collector, and pause profile are implementation choices. Diagnose them with the target JDK's logs and profiling data.
+
+**Q:** Why can a Java service benchmark faster after warm-up?
+
+**A:** HotSpot can collect execution feedback and compile hot methods while the service runs. A cold measurement includes startup and interpreter work; a warmed measurement may include compiled code. Compare both against the actual workload and JDK.
+
+**Q:** Why is a request pause not automatically equal to the logged garbage-collection pause?
+
+**A:** HotSpot may spend time bringing threads to a safepoint before coordinated work begins. Application latency can also include scheduling, compilation, and I/O delays. Compare GC and safepoint logs with Flight Recorder data rather than attributing the entire delay to collection.
+
 **Q:** A two-character-looking string has length four. What does length measure?
 
 **A:** UTF-16 code units, not grapheme clusters. Select code-point or grapheme-aware processing according to the requirement.
@@ -21,6 +37,10 @@ Source: [Language Fundamentals](20.13.01-java-language-fundamentals.md)
 **Q:** Why can subtracting two integer sort keys reverse their intended ordering?
 
 **A:** The subtraction may overflow. Integer.compare expresses ordering without that arithmetic overflow.
+
+**Q:** What must be true before calling `Arrays.binarySearch` with a comparator?
+
+**A:** The array must already be sorted using the same ordering. Searching an unsorted array, or one sorted with a different comparator, does not promise a correct match or insertion point.
 
 **Q:** Is primitive type pattern matching in `instanceof` and `switch` a production feature in Java 27?
 

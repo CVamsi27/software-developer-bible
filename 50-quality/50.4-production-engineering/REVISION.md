@@ -12,11 +12,15 @@ Read the chapters in the [section learning flow](INDEX.md), then close them and 
 
 ## Incident Response — Triage, Communication, Postmortems
 
-Source: [Incident Response — Triage, Communication, Postmortems](50.4.01-incident-response.md)
+Source: [Incident Response — Triage, Communication, Postmortems](50.4.01-incident-response.md) · [NIST SP 800-61 Rev. 3](https://csrc.nist.gov/pubs/sp/800/61/r3/final)
 
 **Q:** Why separate incident command from detailed debugging?
 
 **A:** The commander maintains priorities, communication, and coordination while responders investigate. One person doing all roles can lose the shared state under pressure. Small teams may combine roles initially, then hand them off explicitly as response capacity becomes available.
+
+**Q:** How does a cybersecurity incident response plan relate to service incident coordination?
+
+**A:** They share impact assessment, coordination and recovery needs, but a suspected security event may require containment and evidence preservation before destructive rollback or cleanup. Follow the organization's security authority and evidence process; NIST SP 800-61 Rev. 3 integrates cybersecurity response into CSF 2.0 risk management rather than replacing service runbooks.
 
 ## SLIs, SLOs, and Error Budgets
 
@@ -106,9 +110,9 @@ Source: [Production Readiness Reviews](50.4.04-production-readiness-reviews.md)
 
 Source: [On-Call Without Burnout](50.4.05-on-call-without-burnout.md)
 
-**Q:** What is wrong with calculating p90 pages per shift from one total page count?
+**Q:** What is wrong with estimating p90 pages per shift from one shift's total page count?
 
-**A:** A percentile needs multiple shift observations. Include quiet shifts and define the counting unit; otherwise the population is missing or biased toward busy shifts.
+**A:** One shift total cannot estimate the distribution across shifts. Include quiet shifts and define the counting unit; otherwise the sample is too small or biased toward busy shifts.
 
 **Q:** Why report unacknowledged pages separately from acknowledgment latency?
 

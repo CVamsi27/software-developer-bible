@@ -1,7 +1,7 @@
 # Interview Prep — Build Tools
 
-> **Study time:** ≈ 7 min of reading (1 file, ~7 min average).
-> **1 file, 35 curated questions with answers.** Tree shaking internals, code-splitting strategy, and tool-selection judgment.
+> **Study time:** ≈ 8 min of reading (1 file, ~8 min average).
+> **1 file, 44 curated questions with answers.** Tree shaking internals, code-splitting strategy, and tool-selection judgment.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Interview%20Prep-%2364748b)](../INDEX.md)
@@ -23,7 +23,7 @@ Questions across all three content categories:
 
 ### [Build Tools Interview Questions](40.5.4.01-interview-questions.md)
 
-35 curated questions with answers. Work them after the content categories and their revision companions. Use one normal output trace and one changed condition per answer.
+44 curated questions with answers. Work them after the content categories and their revision companions. Use one normal output trace and one changed condition per answer.
 
 ---
 

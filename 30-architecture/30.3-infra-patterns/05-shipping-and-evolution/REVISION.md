@@ -98,6 +98,10 @@ Source: [Data Retention & Archival](30.3.5.04-data-retention-archival.md)
 
 **A:** No. A delete marker/current expiration can leave noncurrent versions, while holds/retention can protect others. Verify relevant versions and the asynchronous policy outcome.
 
+**Q:** Does the United Kingdom's one-month response period mean every backup must be physically erased within that month?
+
+**A:** No. The [Information Commissioner's Office (ICO) guidance](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/individual-rights/individual-rights/right-to-erasure/) describes when to respond, not a universal physical-erasure deadline. Determine scope, exceptions and deadlines under the applicable rules; where permitted, keep delayed backup copies inaccessible and beyond use until their established overwrite schedule.
+
 **Q:** What can defeat cryptographic erasure after a key is deleted?
 
 **A:** Other usable/wrapped/cached/backed-up keys or plaintext copies can still expose the data. Scope and verify every decryption path; deleting one key is not evidence that all copies are unreadable.

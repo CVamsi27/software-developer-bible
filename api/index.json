@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "e7bf77489633578049943d29ffa29408f464e659fcf5155b5093ff8b14d079dc",
+ "corpus_digest": "605cbaee3f73320a8ef5e2ad98d217f767c6d8983b4447f2fcff0511ae490500",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5235
+  "read_minutes": 5237
  },
  "chapters": [
   {
@@ -4701,7 +4701,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 9
   },
   {
    "p": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/REVISION.html",

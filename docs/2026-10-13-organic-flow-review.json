@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 81,
+    "pending": 80,
     "unchanged": 80,
-    "revised": 359,
-    "reviewed": 439,
+    "revised": 360,
+    "reviewed": 440,
     "topic_chapters": 520
   },
   "entries": [
@@ -6066,12 +6066,17 @@
       "path": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.04-data-retention-archival.md",
       "group": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution",
       "title": "Data Retention & Archival",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "5a6e87c76f8b069290d07b1c4add4094be8f8495e3ab490b59c04b4463c1dce1",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do you enforce per-class retention and prove erasure across copies, recipients, holds, backups and restore paths when expiry is asynchronous?",
+      "disposition": "Reframed the chapter around a restore-resurrection failure and the sequence policy → storage → expiry → hold serialization → request/recovery → archive verification. Corrected HIPAA’s six-year scope; separated UK response timing from physical erasure; clarified S3 versioning and lifecycle propagation, downstream recipients, expiry lag, pseudonymization and k-anonymity. Updated the shipping INDEX and REVISION companion.",
+      "validation": [
+        "Fresh-reader review confirmed the revised quasi-identifier example, identity-check boundary and lifecycle propagation explanation were clear.",
+        "Checked current ICO, HHS, Amazon S3, MongoDB, DynamoDB and NIST primary documentation; scoped the legal timing claims to current UK ICO guidance.",
+        "All 30 repository verification gates passed; the 2,553-URL citation baseline has no drift and writer fixed-point checks pass.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build, site-wide rendered-heading scan and targeted rendered-content checks passed."
+      ]
     },
     {
       "path": "40-platform/40.1-docker/40.1.01-images-containers.md",

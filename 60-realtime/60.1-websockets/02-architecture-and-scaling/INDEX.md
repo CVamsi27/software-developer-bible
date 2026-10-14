@@ -15,7 +15,7 @@ Start with a durable change and trace how an authorized client learns about it. 
 
 ---
 
-## The 2 files
+## Two learning chapters
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
@@ -49,7 +49,7 @@ A cross-node audience needs routing that reaches its owning gateways. A broker/a
 
 ## Docita Anchor
 
-[Docita](https://github.com/CVamsi27/docita) is a companion project. The paths below were checked in the local checkout on 9 October 2026; source presence does not establish a deployed topology or successful recovery drill.
+[Docita](https://github.com/CVamsi27/docita) is a companion project. The paths below were checked in the local checkout on 14 October 2026; source presence does not establish a deployed topology or successful recovery drill.
 
 | Topic | Docita evidence |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

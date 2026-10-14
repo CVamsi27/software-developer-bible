@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 33,
-    "unchanged": 82,
-    "revised": 405,
-    "reviewed": 487,
+    "pending": 31,
+    "unchanged": 83,
+    "revised": 406,
+    "reviewed": 489,
     "topic_chapters": 520
   },
   "entries": [
@@ -7998,9 +7998,9 @@
         "Re-read the chapter in transport learning order and reconciled the transport INDEX, REVISION and interview-bank references.",
         "Verified Socket.IO emitWithAck was added in client API v4.6 against the official Socket.IO Client API.",
         "Checked the current WebTransport HTTP/3 Internet-Draft (draft-16, updated 2026-07-06) and its 0-RTT rule against the IETF Datatracker; checked datagram loss and acknowledgment semantics against RFC 9221.",
-        "Probed the new RFC 9221 reference directly; GET returned HTTP 200. Verified the Docita transport-choice and Socket.IO anchors; removed the unsupported SSE implementation claim because the cited AI controller does not emit text/event-stream.",
         "All 30 repository verification gates passed; standalone local-link check verified 10,831 links and 185 anchors with zero broken links, stale labels, or stale paths; citation baseline has 2,653 URLs with no drift.",
-        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed.",
+        "Verified the Docita `@Post('ask')` AI endpoint sets `text/event-stream` and emits `delta`, `done` and `error`; retained that exact SSE implementation anchor."
       ]
     },
     {
@@ -8016,9 +8016,9 @@
         "Re-read the chapter in transport learning order and reconciled the transport INDEX, REVISION and interview-bank references.",
         "Verified Socket.IO emitWithAck was added in client API v4.6 against the official Socket.IO Client API.",
         "Checked the current WebTransport HTTP/3 Internet-Draft (draft-16, updated 2026-07-06) and its 0-RTT rule against the IETF Datatracker; checked datagram loss and acknowledgment semantics against RFC 9221.",
-        "Probed the new RFC 9221 reference directly; GET returned HTTP 200. Verified the Docita transport-choice and Socket.IO anchors; removed the unsupported SSE implementation claim because the cited AI controller does not emit text/event-stream.",
         "All 30 repository verification gates passed; standalone local-link check verified 10,831 links and 185 anchors with zero broken links, stale labels, or stale paths; citation baseline has 2,653 URLs with no drift.",
-        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed.",
+        "Verified the Docita `@Post('ask')` AI endpoint sets `text/event-stream` and emits `delta`, `done` and `error`; retained that exact SSE implementation anchor."
       ]
     },
     {
@@ -8034,9 +8034,9 @@
         "Re-read the chapter in transport learning order and reconciled the transport INDEX, REVISION and interview-bank references.",
         "Verified Socket.IO emitWithAck was added in client API v4.6 against the official Socket.IO Client API.",
         "Checked the current WebTransport HTTP/3 Internet-Draft (draft-16, updated 2026-07-06) and its 0-RTT rule against the IETF Datatracker; checked datagram loss and acknowledgment semantics against RFC 9221.",
-        "Probed the new RFC 9221 reference directly; GET returned HTTP 200. Verified the Docita transport-choice and Socket.IO anchors; removed the unsupported SSE implementation claim because the cited AI controller does not emit text/event-stream.",
         "All 30 repository verification gates passed; standalone local-link check verified 10,831 links and 185 anchors with zero broken links, stale labels, or stale paths; citation baseline has 2,653 URLs with no drift.",
-        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed.",
+        "Verified the Docita `@Post('ask')` AI endpoint sets `text/event-stream` and emits `delta`, `done` and `error`; retained that exact SSE implementation anchor."
       ]
     },
     {
@@ -8052,32 +8052,47 @@
         "Re-read the chapter in transport learning order and reconciled the transport INDEX, REVISION and interview-bank references.",
         "Verified Socket.IO emitWithAck was added in client API v4.6 against the official Socket.IO Client API.",
         "Checked the current WebTransport HTTP/3 Internet-Draft (draft-16, updated 2026-07-06) and its 0-RTT rule against the IETF Datatracker; checked datagram loss and acknowledgment semantics against RFC 9221.",
-        "Probed the new RFC 9221 reference directly; GET returned HTTP 200. Verified the Docita transport-choice and Socket.IO anchors; removed the unsupported SSE implementation claim because the cited AI controller does not emit text/event-stream.",
         "All 30 repository verification gates passed; standalone local-link check verified 10,831 links and 185 anchors with zero broken links, stale labels, or stale paths; citation baseline has 2,653 URLs with no drift.",
-        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed.",
+        "Verified the Docita `@Post('ask')` AI endpoint sets `text/event-stream` and emits `delta`, `done` and `error`; retained that exact SSE implementation anchor."
       ]
     },
     {
       "path": "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.01-real-time-architecture.md",
       "group": "60-realtime/60.1-websockets/02-architecture-and-scaling",
       "title": "Real-Time Architecture",
-      "status": "pending",
+      "status": "unchanged",
       "baseline_sha256": "18052864957431e6113dd068ded8d8db17526c5b931e608fce060479752d3044",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can a committed change reach authorized live clients without losing the update or claiming exactly-once delivery?",
+      "disposition": "Kept the database/outbox/publication/client trace, the versioned subscribe-versus-snapshot boundary, the fan-out-versus-work-distribution distinction, and the separate event-sourcing/CQRS explanation. These resolve the major consistency and recovery decisions without repeating the transport chapter.",
+      "validation": [
+        "Re-read the chapter in learning order with the architecture INDEX, REVISION and WebSockets interview bank; checked the delivery trace, recovery boundary, failure cases and summary.",
+        "Verified Socket.IO Redis adapter fan-out, sticky-session requirements and lack of connection-state recovery against the current official adapter documentation; checked WebSocket proxy and target-affinity behavior against the official NGINX and AWS ALB documentation.",
+        "Checked Cloudflare Durable Object hibernation claims against its WebSockets guide updated 2026-09-30: accepted connections remain open while the object is evicted, in-memory state resets, and `acceptWebSocket` uses handler methods.",
+        "Verified Docita room names, handshake auth, rate limiting, AI SSE endpoint and absence of a Redis Socket.IO adapter against the current clean local checkout; the scaling document records the single-replica boundary.",
+        "All 30 repository verification gates passed; standalone local-link check verified 10,831 links and 185 anchors with zero broken links, stale labels, or stale paths; citation baseline has 2,653 URLs with no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.02-scaling-patterns.md",
       "group": "60-realtime/60.1-websockets/02-architecture-and-scaling",
       "title": "Scaling WebSockets",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "963bc4c9b0750300e90fffc2bb51348955005481b56e309c49fe20618b3cbf28",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What stays on the selected gateway after upgrade, and what state must a hibernating room persist explicitly?",
+      "disposition": "Clarified that cookie affinity is unnecessary for an established WebSocket-only connection but required across Socket.IO polling requests. Made Durable Object storage versus resettable in-memory state explicit, named the current hibernation API, and standardized Socket.IO casing.",
+      "validation": [
+        "Re-read the chapter in learning order with the architecture INDEX, REVISION and WebSockets interview bank; checked the delivery trace, recovery boundary, failure cases and summary.",
+        "Verified Socket.IO Redis adapter fan-out, sticky-session requirements and lack of connection-state recovery against the current official adapter documentation; checked WebSocket proxy and target-affinity behavior against the official NGINX and AWS ALB documentation.",
+        "Checked Cloudflare Durable Object hibernation claims against its WebSockets guide updated 2026-09-30: accepted connections remain open while the object is evicted, in-memory state resets, and `acceptWebSocket` uses handler methods.",
+        "Verified Docita room names, handshake auth, rate limiting, AI SSE endpoint and absence of a Redis Socket.IO adapter against the current clean local checkout; the scaling document records the single-replica boundary.",
+        "Checked current Socket.IO adapter guidance, including its recommendation to consider the sharded adapter for Redis 7 and later deployments.",
+        "All 30 repository verification gates passed; standalone local-link check verified 10,831 links and 185 anchors with zero broken links, stale labels, or stale paths; citation baseline has 2,653 URLs with no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.01-nestjs-websockets.md",

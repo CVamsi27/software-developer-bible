@@ -72,7 +72,11 @@ Source: [Cost Engineering & FinOps](30.3.5.03-cost-engineering-finops.md)
 
 **Q:** Should checkpoint recovery depend on receiving an interruption warning?
 
-**A:** No. Warnings differ by provider/behavior and abrupt loss remains possible. Commit output/progress consistently and recover safely from redelivery without the notice.
+**A:** No. Notices are provider-specific and may be best-effort. Commit output and checkpoint atomically when they share a datastore; across systems, make replay idempotent or deduplicated and reconcile before acknowledging the job.
+
+**Q:** What does a passing infrastructure cost estimate establish?
+
+**A:** It estimates supported resource changes under its pricing and usage assumptions. It does not predict actual traffic, every runtime charge or the next invoice; a separate policy must decide whether the estimate blocks review or release. See [Cost Engineering & FinOps](30.3.5.03-cost-engineering-finops.md).
 
 ## Data Retention & Archival
 

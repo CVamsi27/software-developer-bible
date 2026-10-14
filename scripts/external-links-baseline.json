@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2548,
+ "url_count": 2551,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -1512,6 +1512,9 @@
   "https://docs.aws.amazon.com/cli/latest/reference/s3api/put-bucket-lifecycle-configuration.html": [
    "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.04-data-retention-archival.md"
   ],
+  "https://docs.aws.amazon.com/eks/latest/best-practices/cost-opt-networking.html": [
+   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md"
+  ],
   "https://docs.aws.amazon.com/eks/latest/best-practices/scaling-cluster-services.html": [
    "40-platform/40.2-kubernetes/03-scaling/40.2.3.02-node-autoscaling-cluster-capacity.md"
   ],
@@ -2414,10 +2417,10 @@
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.03-dom-events-delegation.md"
   ],
   "https://dora.dev/": [
-   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.02-technical-debt.md",
    "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md"
   ],
   "https://dora.dev/guides/dora-metrics/": [
+   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.02-technical-debt.md",
    "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md",
    "40-platform/40.3-ci-cd/04-interview-prep/40.3.4.01-interview-questions.md"
   ],
@@ -3860,6 +3863,9 @@
   "https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/": [
    "40-platform/40.2-kubernetes/03-scaling/40.2.3.02-node-autoscaling-cluster-capacity.md"
   ],
+  "https://kubernetes.io/docs/concepts/scheduling-eviction/kube-scheduler/": [
+   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md"
+  ],
   "https://kubernetes.io/docs/concepts/security/multi-tenancy/": [
    "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.04-resource-quotas.md"
   ],
@@ -3887,7 +3893,11 @@
   "https://kubernetes.io/docs/concepts/services-networking/service/": [
    "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.01-services-ingress.md"
   ],
+  "https://kubernetes.io/docs/concepts/workloads/autoscaling/": [
+   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md"
+  ],
   "https://kubernetes.io/docs/concepts/workloads/autoscaling/horizontal-pod-autoscale/": [
+   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md",
    "40-platform/40.2-kubernetes/03-scaling/40.2.3.01-hpa-scaling.md",
    "40-platform/40.2-kubernetes/06-interview-prep/40.2.6.01-interview-questions.md"
   ],

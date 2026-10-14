@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 82,
+    "pending": 81,
     "unchanged": 80,
-    "revised": 358,
-    "reviewed": 438,
+    "revised": 359,
+    "reviewed": 439,
     "topic_chapters": 520
   },
   "entries": [
@@ -6050,12 +6050,17 @@
       "path": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md",
       "group": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution",
       "title": "Cost Engineering & FinOps",
-      "status": "pending",
-      "baseline_sha256": "9ad2937b370a098f6da664954955b744ce9b470ee97195d3cbe2170d446b50ca",
+      "status": "revised",
+      "baseline_sha256": "927b46b8374e35e80bbb5eadc23b4716093589d081df62342eb68616fd2008d9",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can a lower cloud bill hide worse unit economics, and what evidence separates efficiency from reduced demand?",
+      "disposition": "Opened with a concrete spend/output scenario and carried the same figures through the unit-cost calculation. Updated the textbook definition to the current FinOps Foundation framing, corrected the distinction between contribution and gross profit, clarified Kubernetes request/scaling effects and provider-specific interruption behavior, explained safe checkpoint recovery, and specified AWS endpoint cost differences. Reconciled the learning path and revision question.",
+      "validation": [
+        "Re-read in learning order; checked the definitions, charge-to-owner model, capacity/storage/interruptible-work tradeoffs, unit economics, estimate limits, summary and references.",
+        "A fresh reader verified that the opening scenario carries through the calculation, checkpoint safeguards are actionable, horizontal/vertical scaling and AWS endpoint costs are precise, and companions match; no actionable issue remained.",
+        "Verified the new Kubernetes scheduling/autoscaling and AWS EKS networking references live (HTTP 200). All 30 repository gates passed; standalone link scan checked 10,800 links and 152 anchors with no failures. Freshness scan was clean; the 2,551-URL citation baseline had no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.04-data-retention-archival.md",

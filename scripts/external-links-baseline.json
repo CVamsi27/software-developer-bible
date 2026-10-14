@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2645,
+ "url_count": 2648,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -209,7 +209,8 @@
    "10-frontend/10.2-typescript/05-interview-prep/10.2.5.01-interview-questions.md"
   ],
   "https://bazel.build/": [
-   "40-platform/40.8-monorepo/40.8.04-monorepo-tools.md"
+   "40-platform/40.8-monorepo/40.8.04-monorepo-tools.md",
+   "40-platform/40.8-monorepo/REVISION.md"
   ],
   "https://beam.apache.org/documentation/programming-guide/#watermarks-and-late-data": [
    "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.02-data-pipelines.md"
@@ -233,9 +234,6 @@
   "https://blog.nginx.org/blog/keep-alive-to-upstreams-is-now-default-in-nginx-1-29-7": [
    "40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md",
    "40-platform/40.11-reverse-proxy/40.11.02-interview-questions.md"
-  ],
-  "https://blog.nrwl.io/turborepo-vs-nx-why-you-should-use-nx-for-your-next-monorepo-d04ccb54a2d4": [
-   "40-platform/40.8-monorepo/40.8.04-monorepo-tools.md"
   ],
   "https://blog.x.com/engineering/en_us/a/2010/announcing-snowflake": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.26-distributed-id-generator.md"
@@ -299,6 +297,17 @@
   ],
   "https://cbor.io/": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.06-serialization-and-wire-formats.md"
+  ],
+  "https://changesets.dev/guide/config": [
+   "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md"
+  ],
+  "https://changesets.dev/guide/prereleases": [
+   "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.md"
+  ],
+  "https://changesets.dev/guide/versioning-and-publishing": [
+   "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.md",
+   "40-platform/40.8-monorepo/40.8.06-interview-questions.md",
+   "40-platform/40.8-monorepo/REVISION.md"
   ],
   "https://chaos-mesh.org/docs/define-scheduling-rules/": [
    "50-quality/50.4-production-engineering/50.4.03-chaos-engineering.md"
@@ -2057,6 +2066,9 @@
   "https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry": [
    "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md"
   ],
+  "https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners": [
+   "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md"
+  ],
   "https://docs.github.com/en/rest/about-the-rest-api/api-versions": [
    "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.03-versioning.md"
   ],
@@ -2345,8 +2357,18 @@
   "https://docs.npmjs.com/auditing-package-dependencies-for-security-vulnerabilities": [
    "20-backend/20.1-node.js/04-security-and-operations/20.1.4.01-node-security.md"
   ],
+  "https://docs.npmjs.com/cli/using-npm/workspaces/": [
+   "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md"
+  ],
   "https://docs.npmjs.com/generating-provenance-statements/": [
-   "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.md"
+   "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.md",
+   "40-platform/40.8-monorepo/40.8.06-interview-questions.md",
+   "40-platform/40.8-monorepo/REVISION.md"
+  ],
+  "https://docs.npmjs.com/trusted-publishers/": [
+   "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.md",
+   "40-platform/40.8-monorepo/40.8.06-interview-questions.md",
+   "40-platform/40.8-monorepo/REVISION.md"
   ],
   "https://docs.oasis-open.org/security/saml/v2.0/saml-core-2.0-os.pdf": [
    "20-backend/20.5-security/01-auth/20.5.1.07-sso-saml-federation.md"
@@ -3203,11 +3225,7 @@
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.03-ebpf-observability.md"
   ],
   "https://github.com/changesets/changesets": [
-   "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md",
-   "40-platform/40.8-monorepo/40.8.06-interview-questions.md"
-  ],
-  "https://github.com/changesets/changesets/blob/main/README.md": [
-   "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.md"
+   "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md"
   ],
   "https://github.com/clinicjs/node-clinic": [
    "20-backend/20.1-node.js/04-security-and-operations/20.1.4.02-debugging-profiling-nodejs.md"
@@ -3446,9 +3464,6 @@
    "40-platform/40.1-docker/40.1.01-images-containers.md",
    "40-platform/40.1-docker/40.1.05-dockerfile-best-practices.md"
   ],
-  "https://github.com/nrwl/nx": [
-   "40-platform/40.8-monorepo/40.8.03-nx.md"
-  ],
   "https://github.com/oasdiff/oasdiff": [
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.05-swagger-openapi-nestjs.md"
   ],
@@ -3560,9 +3575,6 @@
   ],
   "https://github.com/v8/v8/blob/main/src/objects/ordered-hash-table.h": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md"
-  ],
-  "https://github.com/vercel/turborepo": [
-   "40-platform/40.8-monorepo/40.8.02-turborepo.md"
   ],
   "https://github.com/vercel/turborepo/tree/main/examples": [
    "40-platform/40.8-monorepo/40.8.02-turborepo.md"
@@ -4629,9 +4641,6 @@
   "https://lerna.js.org/": [
    "40-platform/40.8-monorepo/40.8.04-monorepo-tools.md"
   ],
-  "https://lerna.js.org/docs/features/version-and-publish": [
-   "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.md"
-  ],
   "https://letsencrypt.org/2025/08/06/ocsp-service-has-reached-end-of-life": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.md"
   ],
@@ -4842,10 +4851,6 @@
    "20-backend/20.12-ai-engineering/20.12.04-agent-orchestration-patterns.md",
    "20-backend/20.12-ai-engineering/20.12.07-interview-questions.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.04-backend-cheat-sheet.md"
-  ],
-  "https://monorepo.tools/": [
-   "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md",
-   "40-platform/40.8-monorepo/40.8.06-interview-questions.md"
   ],
   "https://motion.dev/docs/react": [
    "10-frontend/10.6-animation/10.6.02-framer-motion.md",
@@ -5293,7 +5298,10 @@
    "20-backend/20.1-node.js/04-security-and-operations/20.1.4.02-debugging-profiling-nodejs.md"
   ],
   "https://nodejs.org/api/packages.html": [
-   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.01-modules.md"
+   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.01-modules.md",
+   "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md",
+   "40-platform/40.8-monorepo/40.8.06-interview-questions.md",
+   "40-platform/40.8-monorepo/REVISION.md"
   ],
   "https://nodejs.org/api/path.html": [
    "20-backend/20.1-node.js/02-io-and-data/20.1.2.03-file-system.md"
@@ -5404,25 +5412,29 @@
   "https://nvlpubs.nist.gov/nistpubs/specialpublications/nist.sp.800-125a.pdf": [
    "40-platform/40.1-docker/40.1.07-container-runtime-internals-namespaces-cgroups.md"
   ],
-  "https://nx.app/": [
-   "40-platform/40.8-monorepo/40.8.03-nx.md"
-  ],
-  "https://nx.dev/": [
-   "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md",
-   "40-platform/40.8-monorepo/40.8.03-nx.md",
-   "40-platform/40.8-monorepo/40.8.06-interview-questions.md"
-  ],
-  "https://nx.dev/ci/features/affected": [
-   "40-platform/40.8-monorepo/40.8.03-nx.md"
-  ],
   "https://nx.dev/docs": [
    "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md"
   ],
-  "https://nx.dev/docs/features/enforce-module-boundaries": [
+  "https://nx.dev/docs/concepts/mental-model": [
+   "40-platform/40.8-monorepo/40.8.03-nx.md",
+   "40-platform/40.8-monorepo/40.8.06-interview-questions.md",
+   "40-platform/40.8-monorepo/REVISION.md"
+  ],
+  "https://nx.dev/docs/features/ci-features/affected": [
+   "40-platform/40.8-monorepo/40.8.03-nx.md",
+   "40-platform/40.8-monorepo/40.8.06-interview-questions.md"
+  ],
+  "https://nx.dev/docs/features/ci-features/remote-cache": [
    "40-platform/40.8-monorepo/40.8.03-nx.md"
   ],
-  "https://nx.dev/docs/kb/local-generators": [
-   "40-platform/40.8-monorepo/40.8.03-nx.md"
+  "https://nx.dev/docs/features/enforce-module-boundaries": [
+   "40-platform/40.8-monorepo/40.8.03-nx.md",
+   "40-platform/40.8-monorepo/40.8.06-interview-questions.md",
+   "40-platform/40.8-monorepo/REVISION.md"
+  ],
+  "https://nx.dev/docs/features/generate-code": [
+   "40-platform/40.8-monorepo/40.8.03-nx.md",
+   "40-platform/40.8-monorepo/40.8.06-interview-questions.md"
   ],
   "https://olm.operatorframework.io/docs/": [
    "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.03-crds-operators-controller-patterns.md"
@@ -5630,10 +5642,14 @@
   "https://pnpm.io/": [
    "40-platform/40.8-monorepo/40.8.04-monorepo-tools.md"
   ],
+  "https://pnpm.io/filtering": [
+   "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md"
+  ],
   "https://pnpm.io/workspaces": [
    "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md",
    "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.md",
-   "40-platform/40.8-monorepo/40.8.06-interview-questions.md"
+   "40-platform/40.8-monorepo/40.8.06-interview-questions.md",
+   "40-platform/40.8-monorepo/REVISION.md"
   ],
   "https://portswigger.net/web-security": [
    "20-backend/20.5-security/04-interview-drills/20.5.4.01-interview-questions.md"
@@ -6365,7 +6381,8 @@
    "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.md"
   ],
   "https://semver.org/": [
-   "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.md"
+   "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.md",
+   "40-platform/40.8-monorepo/REVISION.md"
   ],
   "https://serverlessland.com/patterns": [
    "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md"
@@ -6823,18 +6840,8 @@
    "40-platform/40.6-git-advanced/40.6.02-branching-strategies.md",
    "40-platform/40.6-git-advanced/REVISION.md"
   ],
-  "https://turbo.build/": [
-   "40-platform/40.8-monorepo/40.8.02-turborepo.md",
-   "40-platform/40.8-monorepo/40.8.06-interview-questions.md"
-  ],
-  "https://turbo.build/docs/core-concepts/remote-caching": [
-   "40-platform/40.8-monorepo/40.8.02-turborepo.md"
-  ],
   "https://turbo.build/pack": [
    "40-platform/40.5-build-tools/04-interview-prep/40.5.4.01-interview-questions.md"
-  ],
-  "https://turbo.build/reference/configuration": [
-   "40-platform/40.8-monorepo/40.8.02-turborepo.md"
   ],
   "https://turbo.build/repo": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md"
@@ -6842,11 +6849,27 @@
   "https://turborepo.dev/docs": [
    "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md"
   ],
-  "https://turborepo.dev/docs/crafting-your-repository/caching": [
-   "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md"
+  "https://turborepo.dev/docs/core-concepts/remote-caching": [
+   "40-platform/40.8-monorepo/40.8.02-turborepo.md"
   ],
-  "https://turborepo.org/docs": [
-   "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md"
+  "https://turborepo.dev/docs/crafting-your-repository/caching": [
+   "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md",
+   "40-platform/40.8-monorepo/40.8.02-turborepo.md",
+   "40-platform/40.8-monorepo/40.8.06-interview-questions.md",
+   "40-platform/40.8-monorepo/REVISION.md"
+  ],
+  "https://turborepo.dev/docs/crafting-your-repository/running-tasks": [
+   "40-platform/40.8-monorepo/40.8.02-turborepo.md"
+  ],
+  "https://turborepo.dev/docs/crafting-your-repository/using-environment-variables": [
+   "40-platform/40.8-monorepo/40.8.02-turborepo.md"
+  ],
+  "https://turborepo.dev/docs/reference/configuration": [
+   "40-platform/40.8-monorepo/40.8.02-turborepo.md",
+   "40-platform/40.8-monorepo/REVISION.md"
+  ],
+  "https://turborepo.dev/docs/reference/package-configurations": [
+   "40-platform/40.8-monorepo/40.8.02-turborepo.md"
   ],
   "https://tus.io/protocols/resumable-upload": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.04-file-upload-apis.md"
@@ -9012,9 +9035,11 @@
   "https://yarnpkg.com/": [
    "40-platform/40.8-monorepo/40.8.04-monorepo-tools.md"
   ],
+  "https://yarnpkg.com/cli/workspaces/foreach": [
+   "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md"
+  ],
   "https://yarnpkg.com/features/workspaces": [
-   "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md",
-   "40-platform/40.8-monorepo/40.8.06-interview-questions.md"
+   "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md"
   ],
   "https://zenodo.org/records/3676092/files/1979-12-MVC.pdf": [
    "30-architecture/30.1-design-patterns/05-architectural/30.1.5.08-presentation-patterns-mvc-mvp-mvvm.md"

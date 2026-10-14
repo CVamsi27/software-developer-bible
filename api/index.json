@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "891124612aad89f9144c249a45a4657256212b75b6ab7d8ce101c7458165f5e8",
+ "corpus_digest": "103032201559a5be3ae70126c68c635cc2e155c4d674563d05c4a87540117ffb",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5250
+  "read_minutes": 5227
  },
  "chapters": [
   {
@@ -5931,7 +5931,7 @@
     "concept",
     "overview"
    ],
-   "m": 13
+   "m": 7
   },
   {
    "p": "40-platform/40.8-monorepo/40.8.02-turborepo.html",
@@ -5943,7 +5943,7 @@
     "reference",
     "tool"
    ],
-   "m": 12
+   "m": 8
   },
   {
    "p": "40-platform/40.8-monorepo/40.8.03-nx.html",
@@ -5955,7 +5955,7 @@
     "reference",
     "tool"
    ],
-   "m": 12
+   "m": 7
   },
   {
    "p": "40-platform/40.8-monorepo/40.8.04-monorepo-tools.html",
@@ -5979,7 +5979,7 @@
     "reference",
     "release"
    ],
-   "m": 14
+   "m": 7
   },
   {
    "p": "40-platform/40.8-monorepo/40.8.06-interview-questions.html",
@@ -5990,7 +5990,7 @@
     "interview-questions",
     "practice"
    ],
-   "m": 7
+   "m": 6
   },
   {
    "p": "40-platform/40.8-monorepo/REVISION.html",

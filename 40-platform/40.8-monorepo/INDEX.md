@@ -1,25 +1,25 @@
 # Monorepo — Index
 
-> **Study time:** ≈ 1 h 7 m of reading (7 files, ~10 min average).
-> **7 files** — Monorepo architecture from overview and Turborepo to Nx, workspace tooling deep-dive, versioning & publishing strategies, and curated interview questions.
+> **Study time:** ≈ 44 min of reading (7 files, ~6 min average).
+> **7 files** — Learn repository and package boundaries, compare task-graph tools, evaluate workspace/build systems, then follow a package change through publication and interview practice.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Why monorepo:** More teams are using monorepos (pnpm workspaces, Turborepo, Nx) for shared code, atomic refactors, and consistent tooling. Senior interviews at scale-focused companies (and at modern startups) test monorepo architecture: workspace setup, caching, affected commands, dependency graph.
+**Why study monorepos:** A shared repository can coordinate source changes and tooling, but it does not define package resolution, build order, access control, or deployment. Senior discussions probe how those boundaries interact and how you verify them.
 
 ---
 
 ## Topic Categories
 
 | Category | Files | Why it matters |
-| -------------------------------------------------- | ----: | ----------------------------------------------------- |
-| [Foundations](#foundations) | 1 | Monorepo vs polyrepo, pnpm/Yarn/npm workspaces |
-| [Build Orchestrators](#build-orchestrators) | 2 | Turborepo, Nx — the two main options |
+| -------------------------------------------------- | ----: | --------------------------------------------------------------------------------------- |
+| [Foundations](#foundations) | 1 | Repository boundaries, package/task/release graphs, workspace linking, consumer exports |
+| [Build Orchestrators](#build-orchestrators) | 2 | Compare task graphs, affected selection, cache contracts, generators, and boundaries |
 | [Tools & Deep-Dive](#tools--deep-dive) | 1 | pnpm, Yarn Berry, Lerna, Rush, Bazel |
 | [Versioning & Publishing](#versioning--publishing) | 1 | Changesets, fixed vs independent versions, provenance |
-| [Interview Prep](#interview-prep) | 1 | 30+ Qs |
+| [Interview Prep](#interview-prep) | 1 | 30+ interview prompts |
 
 ---
 
@@ -27,27 +27,27 @@
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Monorepo Overview](40.8.01-monorepo-overview.md) | Monorepo vs polyrepo, pnpm/Yarn/npm workspaces, workspace protocol, when to use | Important | Specialized | 13 min |
+| 01 | [Monorepo Overview](40.8.01-monorepo-overview.md) | Monorepo vs polyrepo, pnpm/Yarn/npm workspaces, workspace protocol, when to use | Important | Specialized | 7 min |
 
 ---
 
 ## Build Orchestrators
 
-The two main build/cache systems for monorepos.
+Two task-graph approaches; choose by the contracts your workspace needs.
 
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
-| 02 | [Turborepo](40.8.02-turborepo.md) | Pipeline, content-hash caching, remote cache, filter, Docker layer caching | Vercel ecosystem, JS/TS monorepos | Important | Specialized | 12 min |
-| 03 | [Nx](40.8.03-nx.md) | Generators, dependency graph, affected commands, module boundaries, Nx Cloud | Large JS/TS monorepos with strict boundaries | Important | Specialized | 12 min |
+| 02 | [Turborepo](40.8.02-turborepo.md) | Task dependencies, input/output hashes, filtering, affected selection, remote cache | A workspace that benefits from a compact task graph and cache model | Important | Specialized | 8 min |
+| 03 | [Nx](40.8.03-nx.md) | Project discovery, inferred targets, task ordering, affected selection, cache correctness, generators, module boundaries | Workspaces that benefit from plugins, architectural constraints, and richer project/task graphs | Important | Specialized | 7 min |
 
 **Decision:**
 
 ```text
 Monorepo tool?
-├── Small/medium JS/TS, Vercel user → Turborepo
-├── Large JS/TS with strict module boundaries → Nx
-├── Polyglot (JS + Go + Python + ...) → Bazel / Nx
-└── Just need workspaces, no build orchestration → pnpm/Yarn workspaces
+├── Need workspace linking and scripts only → package-manager workspaces
+├── Need a compact task graph and output cache → evaluate Turborepo
+├── Need inferred targets, generators, or enforceable project boundaries → evaluate Nx
+└── Need explicitly declared actions across toolchains → evaluate Bazel and maintained rules
 ```
 
 ---
@@ -56,7 +56,7 @@ Monorepo tool?
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 04 | [Monorepo Tools Deep-Dive](40.8.04-monorepo-tools.md) | pnpm, Yarn Berry, Lerna, Rush, Bazel — when each wins | Important | Specialized | 7 min |
+| 04 | [Monorepo Tools Deep-Dive](40.8.04-monorepo-tools.md) | Workspace resolution, task runners, package-release tooling, declared multi-language builds | Important | Specialized | 7 min |
 
 ---
 
@@ -64,7 +64,7 @@ Monorepo tool?
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 05 | [Versioning & Publishing Strategies](40.8.05-versioning-publishing-strategies.md) | Fixed vs independent versioning, changesets workflow (version PRs, publish, prereleases), private packages & scopes, npm provenance, lockstep decision matrix, breaking-change policy | Important | Specialized | 14 min |
+| 05 | [Versioning & Publishing Strategies](40.8.05-versioning-publishing-strategies.md) | Consumer-driven version policy, Changesets, workspace-to-registry artifacts, prereleases, OIDC publishing, provenance, release verification | Important | Specialized | 7 min |
 
 ---
 
@@ -72,7 +72,7 @@ Monorepo tool?
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 06 | [Interview Questions](40.8.06-interview-questions.md) | 30+ curated questions with answers | Important | Specialized | 7 min |
+| 06 | [Interview Questions](40.8.06-interview-questions.md) | 30+ curated questions with answers | Important | Specialized | 6 min |
 
 ---
 

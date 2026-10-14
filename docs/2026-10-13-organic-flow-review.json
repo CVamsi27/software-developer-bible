@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 48,
+    "pending": 43,
     "unchanged": 80,
-    "revised": 392,
-    "reviewed": 472,
+    "revised": 397,
+    "reviewed": 477,
     "topic_chapters": 520
   },
   "entries": [
@@ -7323,56 +7323,81 @@
       "path": "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md",
       "group": "40-platform/40.8-monorepo",
       "title": "Monorepo Overview",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "3e51c065481d5d3447910cd4aa2ca31bffbe7d25a4035c0f8c8b193c47a7e8ca",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Can one repository make a package change and its consumers safe to deploy together?",
+      "disposition": "Re-read and clarified the separate package, task, and release graphs; added First Principles deriving the package-to-artifact boundary and tied workspace examples to clean-consumer validation.",
+      "validation": [
+        "Re-read in learning order; checked practical and textbook definitions, distinct First Principles, example flow, summary, and related revision/interview questions.",
+        "Verified current Nx, Changesets, npm, pnpm, and Semantic Versioning primary references; all ten added or changed citation URLs returned HTTP 200.",
+        "All 30 scripts/verify.sh gates passed; standalone link check covered 10,830 links and 185 anchors with zero broken references; citation baseline has 2,648 URLs and zero additions or removals.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build passed; rendered heading check and git diff --check passed."
+      ]
     },
     {
       "path": "40-platform/40.8-monorepo/40.8.02-turborepo.md",
       "group": "40-platform/40.8-monorepo",
       "title": "Turborepo",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "2fa22316c6e06491b62ffce57d1aec83e3b255424efb8af7da1615eae18e28a7",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What must match before Turborepo can safely reuse a task result?",
+      "disposition": "Re-read and added the required First Principles; the chapter distinguishes task selection from caching and explains input, output, environment, dependency-order, and cache-writer trust contracts.",
+      "validation": [
+        "Re-read in learning order; checked practical and textbook definitions, distinct First Principles, example flow, summary, and related revision/interview questions.",
+        "Verified current Nx, Changesets, npm, pnpm, and Semantic Versioning primary references; all ten added or changed citation URLs returned HTTP 200.",
+        "All 30 scripts/verify.sh gates passed; standalone link check covered 10,830 links and 185 anchors with zero broken references; citation baseline has 2,648 URLs and zero additions or removals.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build passed; rendered heading check and git diff --check passed."
+      ]
     },
     {
       "path": "40-platform/40.8-monorepo/40.8.03-nx.md",
       "group": "40-platform/40.8-monorepo",
       "title": "Nx",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "313b0afe8c3554db5484130725053a6a3e980079d0a59c601dc2d5ca992317f5",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "When can an Nx affected run select too little work or reuse the wrong result?",
+      "disposition": "Replaced the stale tool-comparison survey with a concrete trace through project discovery, inferred targets, task ordering, Git base/head selection, current task-level affected behavior, cache safety, generators, and module boundaries.",
+      "validation": [
+        "Re-read in learning order; checked practical and textbook definitions, distinct First Principles, example flow, summary, and related revision/interview questions.",
+        "Verified current Nx, Changesets, npm, pnpm, and Semantic Versioning primary references; all ten added or changed citation URLs returned HTTP 200.",
+        "All 30 scripts/verify.sh gates passed; standalone link check covered 10,830 links and 185 anchors with zero broken references; citation baseline has 2,648 URLs and zero additions or removals.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build passed; rendered heading check and git diff --check passed."
+      ]
     },
     {
       "path": "40-platform/40.8-monorepo/40.8.04-monorepo-tools.md",
       "group": "40-platform/40.8-monorepo",
       "title": "Monorepo Tools Deep-Dive (Lerna, pnpm, Yarn, Rush, Bazel)",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "cc0808a2ce36e871ae3a51ff28fbf2dcad22091a7f25f929644f9984c334fec6",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which workspace-resolution differences can make a package pass locally but fail for consumers?",
+      "disposition": "Re-read the tool comparison and removed static dependency-layout claims that obscured linker configuration; now directs readers to test package isolation and the packed artifact under the exact resolver.",
+      "validation": [
+        "Re-read in learning order; checked practical and textbook definitions, distinct First Principles, example flow, summary, and related revision/interview questions.",
+        "Verified current Nx, Changesets, npm, pnpm, and Semantic Versioning primary references; all ten added or changed citation URLs returned HTTP 200.",
+        "All 30 scripts/verify.sh gates passed; standalone link check covered 10,830 links and 185 anchors with zero broken references; citation baseline has 2,648 URLs and zero additions or removals.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build passed; rendered heading check and git diff --check passed."
+      ]
     },
     {
       "path": "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.md",
       "group": "40-platform/40.8-monorepo",
       "title": "Versioning & Publishing Strategies",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "747044b8c0d48ec06ae8377452f969d1c4dd11f047d25bd5834d4e102f738c71",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What evidence proves that the package authorized for release is the package consumers can install?",
+      "disposition": "Replaced duplicated policy and stale workflow boilerplate with one release path from consumer-driven SemVer intent through reviewed package set, tarball validation, trusted publishing, provenance, and registry verification.",
+      "validation": [
+        "Re-read in learning order; checked practical and textbook definitions, distinct First Principles, example flow, summary, and related revision/interview questions.",
+        "Verified current Nx, Changesets, npm, pnpm, and Semantic Versioning primary references; all ten added or changed citation URLs returned HTTP 200.",
+        "All 30 scripts/verify.sh gates passed; standalone link check covered 10,830 links and 185 anchors with zero broken references; citation baseline has 2,648 URLs and zero additions or removals.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build passed; rendered heading check and git diff --check passed."
+      ]
     },
     {
       "path": "40-platform/40.9-twelve-factor/40.9.01-the-twelve-factor-app.md",

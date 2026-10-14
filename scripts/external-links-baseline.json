@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2641,
+ "url_count": 2644,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -177,9 +177,6 @@
    "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.01-resilience-patterns.md",
    "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.02-retry-patterns.md"
   ],
-  "https://aws.amazon.com/cdk/": [
-   "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md"
-  ],
   "https://aws.amazon.com/elasticache/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.05-caching-patterns.md"
   ],
@@ -302,9 +299,6 @@
   ],
   "https://cbor.io/": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.06-serialization-and-wire-formats.md"
-  ],
-  "https://cdkpatterns.com/": [
-   "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md"
   ],
   "https://chaos-mesh.org/docs/define-scheduling-rules/": [
    "50-quality/50.4-production-engineering/50.4.03-chaos-engineering.md"
@@ -1603,6 +1597,13 @@
   "https://docs.aws.amazon.com/cdk/v2/guide/core-concepts.html": [
    "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md"
   ],
+  "https://docs.aws.amazon.com/cdk/v2/guide/deploy.html": [
+   "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
+  ],
+  "https://docs.aws.amazon.com/cdk/v2/guide/ref-cli-cmd-diff.html": [
+   "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md"
+  ],
   "https://docs.aws.amazon.com/cli/latest/reference/s3api/put-bucket-lifecycle-configuration.html": [
    "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.04-data-retention-archival.md"
   ],
@@ -1702,7 +1703,13 @@
    "40-platform/40.7-serverless-edge/REVISION.md"
   ],
   "https://docs.aws.amazon.com/serverless-application-model/": [
-   "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md",
+   "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md"
+  ],
+  "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-validate.html": [
+   "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
+  ],
+  "https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-specification-template-anatomy.html": [
    "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md"
   ],
   "https://docs.aws.amazon.com/ses/latest/dg/send-email.html": [
@@ -3336,9 +3343,6 @@
    "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.01-pods-replicasets.md",
    "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.01-services-ingress.md",
    "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.02-configmaps-secrets.md"
-  ],
-  "https://github.com/kolomied/awesome-cdk": [
-   "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md"
   ],
   "https://github.com/kubernetes-sigs/kustomize": [
    "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.02-kustomize-overlays-packaging-tradeoffs.md"
@@ -6528,11 +6532,12 @@
   "https://sre.google/workbook/table-of-contents/": [
    "50-quality/50.4-production-engineering/50.4.06-interview-questions.md"
   ],
-  "https://sst.dev/": [
+  "https://sst.dev/docs/all-providers": [
    "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md"
   ],
-  "https://sst.dev/docs/": [
-   "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md"
+  "https://sst.dev/docs/linking/": [
+   "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
   ],
   "https://stacspec.org/en/about/stac-spec/": [
    "80-lanes-abroad-full-stack/80.34-germany-target-domain-primer.md"
@@ -8607,8 +8612,15 @@
    "80-lanes-abroad-full-stack/80.06-visa-relocation-playbook.md"
   ],
   "https://www.serverless.com/": [
-   "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md",
    "40-platform/40.7-serverless-edge/40.7.08-interview-questions.md"
+  ],
+  "https://www.serverless.com/framework/docs/guides/upgrading-v4": [
+   "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
+  ],
+  "https://www.serverless.com/framework/docs/providers/aws/guide/deploying": [
+   "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
   ],
   "https://www.sigstore.dev/": [
    "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.md"

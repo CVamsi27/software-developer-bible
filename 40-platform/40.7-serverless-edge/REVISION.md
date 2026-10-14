@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Serverless%20%26%20Edge-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-6_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../docs/topic-importance.md)
 
@@ -113,6 +113,22 @@ Source: [Serverless Frameworks (SAM, CDK, SST, Serverless Framework)](40.7.06-se
 **Q:** Why is local emulation insufficient for release verification?
 
 **A:** Provider IAM, event delivery, network paths, quotas, and managed service behavior can differ. Combine fast local tests with targeted deployed integration checks.
+
+**Q:** What does `cdk synth` establish, and what must still be checked before a production deploy?
+
+**A:** It runs the CDK app and emits a CloudFormation cloud assembly, including templates and deployment artifacts. Review the resulting resources and permissions, compare the planned change with the deployed stack, and verify the package and live event path in an isolated environment. Synthesis cannot prove that production IAM, routing, or runtime behavior is correct. See AWS's [CDK deployment lifecycle](https://docs.aws.amazon.com/cdk/v2/guide/deploy.html).
+
+**Q:** Why does a valid SAM template not prove the function can serve its intended HTTP route?
+
+**A:** Validation checks the template shape. The build artifact still needs the expected handler and dependencies, while the deployed stack needs the generated route, invocation permission, and supported runtime. Test a representative event locally, then verify the live route and permissions after deployment. See AWS's [`sam validate` reference](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/sam-cli-command-reference-sam-validate.html).
+
+**Q:** What must a team check before adopting Serverless Framework v4 for a service?
+
+**A:** Confirm that AWS is the target provider, plan for the CLI's required authentication and applicable license terms, and verify that installed plugins support the selected version. The v4 AWS deployment path packages the service and updates its CloudFormation stack; a v3 configuration or provider claim should not be assumed to carry forward. See the [v4 upgrade guide](https://www.serverless.com/framework/docs/guides/upgrading-v4) and [AWS deployment model](https://www.serverless.com/framework/docs/providers/aws/guide/deploying).
+
+**Q:** What does SST resource linking provide, and what security review remains necessary?
+
+**A:** Linking can make declared resource configuration available to supported application components and add the required permissions. Review the generated scope, isolate development credentials from production data, and verify the provider resources created by the installed SST version. See SST's [resource-linking contract](https://sst.dev/docs/linking/).
 
 ## Durable Execution: Temporal & Inngest
 

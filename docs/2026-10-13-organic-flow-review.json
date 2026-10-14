@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 52,
+    "pending": 51,
     "unchanged": 80,
-    "revised": 388,
-    "reviewed": 468,
+    "revised": 389,
+    "reviewed": 469,
     "topic_chapters": 520
   },
   "entries": [
@@ -7259,12 +7259,17 @@
       "path": "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md",
       "group": "40-platform/40.7-serverless-edge",
       "title": "Serverless Frameworks (SAM, CDK, SST, Serverless Framework)",
-      "status": "pending",
-      "baseline_sha256": "c526f6860a14942a731bf92c0286dbf4fa2609f92133ac7c779cc7d3c3a72b82",
+      "status": "revised",
+      "baseline_sha256": "604f1a524e5a3ae400da3b1f8da632ec9d2a5ad1be1a6493ac5aafc9caa29d66",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How does a serverless framework turn handler intent into deployed resources, and what must an engineer still verify at each boundary?",
+      "disposition": "Reframed the chapter around a function moving from code to provider invocation, then compared SAM, CDK, SST, and Serverless Framework v4 by authored model, generated deployment model, and operational contract. Clarified v4 AWS-only/authentication/licensing behavior, current SST resource linking, SAM/CDK validation boundaries, deployment previews, state ownership, rollback, and local-versus-live verification. Refreshed the Node.js runtime example and added source-linked framework revision questions.",
+      "validation": [
+        "Re-read in learning order alongside the serverless overview, Lambda, edge, patterns, durable-execution chapters, category index, and revision companion; checked definitions, one-handler deployment flow, summary, and See Also links.",
+        "Verified AWS, SST, and Serverless Framework primary documentation and directly GET-probed all eight cited URLs; each returned HTTP 200.",
+        "All 30 repository verification gates passed; standalone link scan checked 10,836 links and 185 anchors with no failures; fixed-point check passed.",
+        "Citation baseline is synchronized at 2,644 URLs; locked-bundle Ruby 3.4.11 production Jekyll build and rendered-heading check passed."
+      ]
     },
     {
       "path": "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md",

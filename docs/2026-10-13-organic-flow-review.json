@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 55,
+    "pending": 54,
     "unchanged": 80,
-    "revised": 385,
-    "reviewed": 465,
+    "revised": 386,
+    "reviewed": 466,
     "topic_chapters": 520
   },
   "entries": [
@@ -7211,12 +7211,17 @@
       "path": "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md",
       "group": "40-platform/40.7-serverless-edge",
       "title": "Vercel Deployments",
-      "status": "pending",
-      "baseline_sha256": "37262235861fea02d651226db5e1d5b511444c7800b809d2e7b0bfe961804a55",
+      "status": "revised",
+      "baseline_sha256": "eafbc912563e938bf3162c98451994f101d437849755ad4146c0367ca9546656",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do preview isolation, runtime choice, caching, cron delivery, and rollback change what a Vercel release can safely do?",
+      "disposition": "Rebuilt the chapter around the release lifecycle, replacing the generic route sample and scattered platform notes with a connected explanation of build identity, preview safety, runtime placement, cache correctness, recoverable cron work, and data-compatible promotion/rollback. Distinguished the deprecated standalone Edge Functions product from the still-supported Edge runtime, applied the Next.js 16 Proxy and Cache Components boundaries, and aligned the section INDEX and sourced revision questions.",
+      "validation": [
+        "Re-read in learning order with the Serverless Overview, AWS Lambda, Edge Functions, category INDEX, and REVISION companion; retained practical and textbook definitions, distinct First Principles, one Summary, See Also, and primary References.",
+        "Checked current official Vercel and Next.js documentation for deployment environments and protection, Node.js versus Edge runtime, Next.js 16 Proxy and Cache Components, Fluid Compute concurrency and billing, ISR, cron production-only delivery and recovery, image configuration, and promotion/rollback. All 16 referenced official URLs returned HTTP 200.",
+        "All 30 repository verification gates passed; standalone link scan checked 10,836 links and 185 anchors with zero failures; citation baseline has 2,624 URLs with no drift; all 10 corpus writers reached a fixed point.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md",

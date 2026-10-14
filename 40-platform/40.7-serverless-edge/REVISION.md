@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Serverless%20%26%20Edge-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../docs/topic-importance.md)
 
@@ -49,6 +49,18 @@ Source: [Vercel Deployments](40.7.03-vercel-deployments.md)
 **Q:** Why place a managed function near its database rather than only near users?
 
 **A:** Repeated cross-region database round trips can dominate end-to-end latency. Measure the whole dependency path and choose the deployment region accordingly.
+
+**Q:** A preview has its own URL and deployment protection. Is it isolated from production effects?
+
+**A:** Not automatically. The preview can still hold production credentials or call production services. Scope its database, secrets, webhooks, and scheduled work separately; deployment protection controls who can reach the preview, not what systems its code can reach.
+
+**Q:** What should a Vercel cron handler do after missing a scheduled run or receiving the same run twice?
+
+**A:** Reconcile durable work by a stable period or item identity so the next run can catch up safely. Vercel Cron delivery is best effort, may miss or duplicate a trigger, and does not automatically retry a failed invocation. Use a lock for overlapping work and idempotent effects for replay safety. See [Vercel's Cron delivery and recovery guidance](https://vercel.com/docs/cron-jobs/manage-cron-jobs).
+
+**Q:** Does an instant rollback return the system to its previous state?
+
+**A:** It restores an earlier application deployment by changing the production routing target; it does not reverse database migrations, external effects, or current environment-variable changes. Verify schema compatibility and compensate irreversible effects separately. See [Vercel's promotion and rollback behavior](https://vercel.com/docs/deployments/promoting-a-deployment).
 
 ## Edge Functions
 

@@ -1,6 +1,6 @@
 # Serverless & Edge — Index
 
-> **Study time:** ≈ 1 h 15 m of reading (11 files, ~7 min average).
+> **Study time:** ≈ 1 h 17 m of reading (11 files, ~7 min average).
 > **11 files** — Serverless and edge computing fundamentals, from overview and edge functions to AWS Lambda, Vercel, serverless patterns, IaC frameworks, durable execution, Fly.io deployment, Vite SPA on Cloudflare, and curated interview questions.
 
 [![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
@@ -47,7 +47,7 @@ Deploy choice?
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
 | 03 | [AWS Lambda](40.7.02-aws-lambda.md) | Default environments, Managed Instances, Durable Functions, event-source retries, concurrency, SnapStart, aliases | AWS-heavy stacks | Important | Specialized | 10 min |
-| 04 | [Vercel Deployments](40.7.03-vercel-deployments.md) | Current runtime contract, caching/ISR, preview deploys, Fluid Compute | Next.js apps | Important | Specialized | 7 min |
+| 04 | [Vercel Deployments](40.7.03-vercel-deployments.md) | Deployment identity, preview isolation, runtime placement, caching, cron recovery, promotion and rollback | Next.js apps | Important | Specialized | 8 min |
 
 ---
 

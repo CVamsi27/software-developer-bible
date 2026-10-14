@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2617,
+ "url_count": 2624,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -4842,7 +4842,8 @@
   "https://nextjs.org/docs/app/api-reference/components/image": [
    "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.06-static-exports.md",
    "10-frontend/10.4-next.js/04-production/10.4.4.02-image-optimization.md",
-   "10-frontend/10.4-next.js/05-interview-prep/10.4.5.01-interview-questions.md"
+   "10-frontend/10.4-next.js/05-interview-prep/10.4.5.01-interview-questions.md",
+   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
   ],
   "https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheComponents": [
    "10-frontend/10.4-next.js/05-interview-prep/10.4.5.01-interview-questions.md",
@@ -4863,7 +4864,8 @@
    "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
   ],
   "https://nextjs.org/docs/app/api-reference/directives/use-cache": [
-   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md"
+   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md",
+   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
   ],
   "https://nextjs.org/docs/app/api-reference/directives/use-client": [
    "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.04-client-components.md"
@@ -4916,8 +4918,7 @@
    "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.03-metadata.md"
   ],
   "https://nextjs.org/docs/app/api-reference/functions/next-request": [
-   "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.01-middleware.md",
-   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
+   "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.01-middleware.md"
   ],
   "https://nextjs.org/docs/app/api-reference/functions/next-response": [
    "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.01-middleware.md",
@@ -4969,7 +4970,8 @@
    "10-frontend/10.5-form-handling/10.5.05-server-actions-and-form-patterns.md"
   ],
   "https://nextjs.org/docs/app/getting-started/proxy": [
-   "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.01-middleware.md"
+   "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.01-middleware.md",
+   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
   ],
   "https://nextjs.org/docs/app/getting-started/route-handlers": [
    "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.02-route-handlers.md"
@@ -5004,8 +5006,7 @@
   ],
   "https://nextjs.org/docs/app/guides/incremental-static-regeneration": [
    "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md",
-   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.05-incremental-static-regeneration.md",
-   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
+   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.05-incremental-static-regeneration.md"
   ],
   "https://nextjs.org/docs/app/guides/incremental-static-regeneration-cache-components": [
    "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.05-incremental-static-regeneration.md"
@@ -5044,6 +5045,7 @@
   ],
   "https://nextjs.org/docs/app/guides/upgrading/version-16": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md",
+   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md",
    "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
   ],
   "https://nextjs.org/docs/pages/building-your-application/data-fetching": [
@@ -6813,31 +6815,53 @@
   "https://v8.dev/blog/trash-talk": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.07-garbage-collection.md"
   ],
-  "https://vercel.com/docs": [
+  "https://vercel.com/docs/cron-jobs/manage-cron-jobs": [
+   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
+  ],
+  "https://vercel.com/docs/cron-jobs/quickstart": [
+   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
+  ],
+  "https://vercel.com/docs/deployment-protection": [
+   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
+  ],
+  "https://vercel.com/docs/deployments/overview": [
+   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
+  ],
+  "https://vercel.com/docs/deployments/promoting-a-deployment": [
+   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
+  ],
+  "https://vercel.com/docs/environment-variables": [
+   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
+  ],
+  "https://vercel.com/docs/fluid-compute": [
    "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
   ],
   "https://vercel.com/docs/functions": [
    "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md"
   ],
   "https://vercel.com/docs/functions/edge-functions": [
-   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md",
    "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md",
    "40-platform/40.7-serverless-edge/40.7.08-interview-questions.md"
   ],
   "https://vercel.com/docs/functions/edge-functions/edge-functions": [
    "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
   ],
-  "https://vercel.com/docs/functions/edge-middleware": [
-   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
-  ],
-  "https://vercel.com/docs/functions/fluid-compute": [
-   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
-  ],
   "https://vercel.com/docs/functions/runtimes/edge": [
    "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md",
    "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
   ],
-  "https://vercel.com/docs/pricing": [
+  "https://vercel.com/docs/functions/runtimes/node-js": [
+   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
+  ],
+  "https://vercel.com/docs/functions/usage-and-pricing": [
+   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
+  ],
+  "https://vercel.com/docs/git": [
+   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
+  ],
+  "https://vercel.com/docs/incremental-static-regeneration": [
    "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md"
   ],
   "https://visualgo.net/en/array": [

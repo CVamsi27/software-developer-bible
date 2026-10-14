@@ -178,6 +178,10 @@ Source: [Git at Scale: LFS & Partial Clones](40.6.08-git-at-scale-lfs-partial-cl
 
 **A:** Partial clone can omit objects until needed; sparse checkout limits checked-out paths. A small working tree does not by itself shrink downloaded history.
 
+**Q:** Why should a CI job use an explicit destination refspec when it deepens the branch used by `git merge-base`?
+
+**A:** `git fetch origin main` always records the fetched commit in `FETCH_HEAD`, while updating `origin/main` depends on the remote's configured ref mapping. An explicit source-to-destination refspec guarantees the intended tracking ref is refreshed; then check the merge-base result. See the [git-fetch manual](https://git-scm.com/docs/git-fetch).
+
 ## Signed Commits & Repository Security
 
 Source: [Signed Commits & Repository Security](40.6.09-signed-commits-repository-security.md)

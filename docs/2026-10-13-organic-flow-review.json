@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 59,
+    "pending": 58,
     "unchanged": 80,
-    "revised": 381,
-    "reviewed": 461,
+    "revised": 382,
+    "reviewed": 462,
     "topic_chapters": 520
   },
   "entries": [
@@ -7147,12 +7147,17 @@
       "path": "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.md",
       "group": "40-platform/40.6-git-advanced",
       "title": "Git at Scale: LFS & Partial Clones",
-      "status": "pending",
-      "baseline_sha256": "48efccb825ca0d5e5154a46376e3f9eceeb714fc6cfbb516da226a44242011b2",
+      "status": "revised",
+      "baseline_sha256": "b03fd6deb52e47b0f0edb6cb41eb2fe0e7ce4681e1f1539220da3e4d0713d3e5",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Why can a completed Git LFS history rewrite still leave a fresh clone unable to check out its files?",
+      "disposition": "Reordered the chapter around the repository cost being reduced. Matched the LFS pull path to its tracked file, separated Git history from LFS payload recovery, clarified which refs migration rewrites, replaced deprecated two-step sparse setup with the current cone command, made cone contents and server-filter verification explicit, and used a full shallow-fetch refspec so CI checks the intended tracking ref. Replaced the scenario list with a concise bottleneck-to-tool decision table and added a source-linked fetch question.",
+      "validation": [
+        "Read the full chapter with its Git Advanced INDEX and REVISION context; retained the separate object, working-tree, history and scan costs.",
+        "Checked current Git clone, partial-clone, sparse-checkout, fetch, rev-list, log and Scalar manuals, plus Git LFS pull/migration manuals; all new external citations were GET-verified and the citation baseline is synchronized at 2,607 URLs.",
+        "Disposable Git repositories verified filtered object omission, promisor configuration, modern cone sparse checkout, exact shallow-ref deepening/unshallow/merge-base behavior, and the blob-size gate pass/failure cases; git log --find-object located the affected path.",
+        "All 30 repository gates passed; the fence-aware link gate checked 10,836 local links and 185 anchors with no broken links. Ruby 3.4.11 production Jekyll build and sitewide rendered-heading check passed."
+      ]
     },
     {
       "path": "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.md",

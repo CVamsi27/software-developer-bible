@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "8e58384918ed0424692c32905ea7303db375cdd6aed21796d5219f1c65df35f4",
+ "corpus_digest": "9129d5727ff626d45f81da18cf568ba45923f2ca273ecb280abd8936d5946f83",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5232
+  "read_minutes": 5234
  },
  "chapters": [
   {
@@ -5533,7 +5533,7 @@
     "reference",
     "tool"
    ],
-   "m": 5
+   "m": 7
   },
   {
    "p": "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.html",

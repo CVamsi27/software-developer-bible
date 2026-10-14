@@ -14016,21 +14016,28 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Definition and terminology",
-        "Mechanism and boundaries",
-        "Examples and failure cases",
-        "Version/tooling claims",
-        "Internal and source links"
+        "Practical and textbook definitions plus first-principles derivation",
+        "HTML entry, browser module requests, dependency pre-bundling and HMR",
+        "Vite 8.3 support status, Rolldown/Oxc/Lightning CSS and experimental bundled dev",
+        "Production chunking, TypeScript checking, mode and client-visible environment values",
+        "Base paths, proxy ownership, source-map exposure, stale chunks, plugins and SSR runtime boundary",
+        "Index, revision companion, interview coverage and internal/source links"
       ],
       "sources": [
         "https://vite.dev/releases/",
         "https://vite.dev/guide/migration.html",
-        "https://nextjs.org/blog",
-        "https://www.rspack.dev/blog/"
+        "https://vite.dev/guide/dep-pre-bundling",
+        "https://vite.dev/guide/features",
+        "https://vite.dev/guide/env-and-mode",
+        "https://vite.dev/guide/build",
+        "https://vite.dev/guide/api-plugin",
+        "https://vite.dev/guide/api-hmr",
+        "https://vite.dev/guide/ssr",
+        "https://vite.dev/blog/announcing-vite8-1"
       ],
-      "disposition": "Read end to end. Corrected technical wording, stale version context, or a sample where noted; retained accurate material.",
-      "validation": "Manual technical review.",
-      "current_sha256": "39701424e34a034cb765dc556f4e59982fe54334512ca2bb9122be325f58afd3"
+      "disposition": "Rebuilt the chapter around the editor and browser paying different costs: derive the two pipelines, trace index.html through module requests and dependency pre-bundling, then explain HMR, production output and deployment failure boundaries. Updated current Vite 8.3 engine and support claims, migration boundaries, environment and type-check guidance, the SSR runtime distinction, category index, revision questions and senior interview coverage.",
+      "validation": "Checked current official Vite documentation and release/support policy; all nine new official URLs returned HTTP 200. An isolated React app built with Vite 8.3.4 and output assertions verified the configured /app/ base plus JavaScript and CSS. All 30 repository gates passed; standalone link checking found 10,811 links and 162 anchors with zero issues; the 2,576-URL baseline has no drift. Writer fixed-point, Ruby 3.4.11 production Jekyll build, site-wide rendered-heading scan, focused one-H1/section assertions, and git diff --check passed.",
+      "current_sha256": "c757abef22c9426a1fc63337db9487e64864f6945c18b3d26d7542103ac96f23"
     },
     {
       "path": "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md",

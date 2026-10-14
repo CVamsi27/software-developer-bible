@@ -36,11 +36,23 @@ Source: [Vite](40.5.1.02-vite.md)
 
 **Q:** What changed in Vite 8 without removing the dev/build split?
 
-**A:** Rolldown replaced Rollup/dependency optimization and Oxc replaced JavaScript transforms/minification. Development still defers source work while production optimizes deployable output.
+**A:** Rolldown now handles dependency optimization and production bundling; Oxc handles JavaScript/TypeScript transforms and JavaScript minification, while Lightning CSS handles CSS minification. The default development flow still serves application modules on demand. Vite 8.1's bundled-development mode is experimental and opt-in.
+
+**Q:** Why does Vite pre-bundle packages when it still serves application source modules separately?
+
+**A:** Browsers cannot resolve bare package names and some dependencies ship as CommonJS or UMD, so Vite must rewrite them into browser-loadable ESM. Pre-bundling also reduces the request count for packages split into many ESM files. It optimizes dependencies, not the application source graph. See [Vite's dependency path](40.5.1.02-vite.md#from-the-html-entry-to-an-edit) and the [official guide](https://vite.dev/guide/dep-pre-bundling).
 
 **Q:** Why is a development proxy insufficient after deploying dist?
 
-**A:** It belongs to the dev server. Static production hosting needs its own API routing/reverse proxy, CORS policy, and SPA fallback.
+**A:** It belongs to the dev server and is not copied into `dist`. Production needs its own API routing; configure CORS only if the deployed browser request is cross-origin, and configure the static host's SPA fallback for client routes. See [Vite's deployment boundaries](40.5.1.02-vite.md#configuration-and-deployment-boundaries).
+
+**Q:** Why does a successful Vite build not prove that TypeScript types are correct?
+
+**A:** Vite's Oxc transform removes TypeScript syntax per file so the browser can execute the result; it does not analyze the whole TypeScript program. Run `tsc --noEmit` as a separate CI/build gate. See [Vite's transform boundary](40.5.1.02-vite.md#configuration-and-deployment-boundaries) and the [official feature guide](https://vite.dev/guide/features).
+
+**Q:** Why is `vite build --mode staging` still normally an optimized production build?
+
+**A:** Vite mode selects `.env.[mode]` files, while `NODE_ENV` controls a separate set of production/development constants. `--mode staging` loads `.env.staging` without changing the build command's production behavior by itself. Any `VITE_` value used in browser code is public build output. See [Vite environment and deployment rules](40.5.1.02-vite.md#configuration-and-deployment-boundaries) and the [official modes guide](https://vite.dev/guide/env-and-mode).
 
 ## Turbopack
 

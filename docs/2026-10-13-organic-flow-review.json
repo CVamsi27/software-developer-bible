@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 78,
+    "pending": 77,
     "unchanged": 80,
-    "revised": 362,
-    "reviewed": 442,
+    "revised": 363,
+    "reviewed": 443,
     "topic_chapters": 520
   },
   "entries": [
@@ -6267,12 +6267,18 @@
       "path": "40-platform/40.10-cdn/40.10.03-media-optimization-at-the-edge.md",
       "group": "40-platform/40.10-cdn",
       "title": "Media Optimization at the Edge",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "aec39ffe206ab93de45292dcfaf597b5273b64da6abaffdc79be4530250a7fd0",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do you serve the right media representation without creating unbounded transforms or bypassing current access checks?",
+      "disposition": "Rebuilt the chapter around browser image selection, bounded transformation identity, protected-media authorization, and the separate video packaging and freshness path. Added source-revision and transform-policy versions to the cache-key example, clarified origin allowlisting, token revocation and browser-local caching, and removed duplicated generic mistakes/best-practice lists and repeated player explanation. Reconciled responsive image, HLS and cache-policy coverage into the INDEX, REVISION and interview Q17.",
+      "validation": [
+        "Re-read the chapter with its learning index, revision companion and interview Q17; preserved the single-CDN caching contract in CDN Architecture.",
+        "Checked RFC 9110 Accept and quality values, current Cloudflare Images transformation documentation, Node.js crypto timingSafeEqual behavior, Apple HLS/CMAF guidance, hls.js lifecycle and MDN responsive-image behavior against primary or maintained documentation; opened the changed reference URLs.",
+        "All 30 repository verification gates passed; standalone link checking found 10,800 local links and 152 anchors with zero issues, and the 2,554-URL citation baseline has no drift.",
+        "The Ruby 3.4.11 production Jekyll build and site-wide rendered-heading check passed; focused rendered-page checks confirmed one H1, no leaked Markdown and the source-version, authorization and live-manifest explanations.",
+        "git diff --check passed."
+      ]
     },
     {
       "path": "40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md",

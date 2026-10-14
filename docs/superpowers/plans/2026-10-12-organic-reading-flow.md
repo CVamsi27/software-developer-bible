@@ -651,3 +651,11 @@ Verified DNS caching and serve-stale, Route 53 relative weights, Cloudflare dyna
 The ledger now records 442 of 520 topic chapters reviewed (362 revised, 80 retained unchanged; 78 pending). Continue with Media Optimization at the Edge; the all-topic review remains open.
 
 Release validation: all 30 repository gates passed; standalone link checking found 10,800 local links and 152 anchors with zero issues, and the 2,554-URL citation baseline has no drift. The Ruby 3.4.11 production Jekyll build, site-wide rendered-heading check, targeted built-page content checks and `git diff --check` passed.
+
+## Editorial checkpoint — 14 October 2026 (Media optimization at the edge)
+
+Re-read Media Optimization at the Edge with its learning index, revision companion and interview Q17. Rebuilt the flow from responsive browser selection through bounded transforms and cache identity, protected-media authorization, then the separate video packaging and freshness path. Added source-revision and transform-policy versions to the cache-key example, made the configured origin boundary explicit, clarified token revocation and browser-local reuse, and removed duplicated generic mistakes/best-practice lists and repeated player-selection explanation. Updated the related index, source-linked revision questions and interview answer.
+
+Checked RFC 9110 Accept and quality-value semantics, current Cloudflare Images transformation documentation, Node.js crypto timingSafeEqual behavior, Apple HLS/CMAF guidance, hls.js lifecycle and MDN responsive-image behavior against primary or maintained sources; opened the changed reference URLs. All 30 repository gates passed. Standalone links found 10,800 local links and 152 anchors with zero issues; the 2,554-URL citation baseline and writer fixed point are clean. The Ruby 3.4.11 production build, site-wide rendered-heading check, targeted rendered-page assertions and `git diff --check` passed.
+
+The ledger now records 443 of 520 topic chapters reviewed (363 revised, 80 retained unchanged; 77 pending). Continue with Nginx Reverse Proxy Internals (`40-platform/40.11-reverse-proxy/40.11.01-nginx-reverse-proxy-internals.md`); the all-topic review remains open.

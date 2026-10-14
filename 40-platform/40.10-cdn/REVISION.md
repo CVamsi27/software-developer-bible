@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-CDN%20%26%20Edge%20Computing-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../docs/topic-importance.md)
 
@@ -72,23 +72,31 @@ Source: [Media Optimization at the Edge](40.10.03-media-optimization-at-the-edge
 
 **Q:** Why must format negotiation participate in cache identity?
 
-**A:** Different Accept capabilities may select different representations at the same URL. A matching Vary/key rule keeps caches from serving the wrong variant.
+**A:** Different `Accept` preferences can select different bytes at one URL. Return the matching `Vary: Accept` signal and configure the CDN key to include the selected format; verify both because downstream `Vary` does not configure every provider key. See [RFC 9110](https://www.rfc-editor.org/rfc/rfc9110.html#name-accept) and [Cloudflare's image format options](https://developers.cloudflare.com/images/optimization/features/).
 
-**Q:** A valid signature is checked only on a cache miss. What happens on a hit after expiry?
+**Q:** What do `srcset` and `sizes` tell a browser that one `src` cannot?
 
-**A:** The hit can bypass the expired grant unless authorization runs first for every request. Shared content identity and caller permission are separate.
+**A:** `srcset` offers image candidates with intrinsic widths; `sizes` describes the layout slot so the browser can choose a candidate for the viewport and display density. Keep intrinsic dimensions on the image to reserve layout space. See [MDN's responsive image guide](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Responsive_images).
+
+**Q:** A signature is verified only on a cache miss. What can happen when a cached hit is requested after token expiry?
+
+**A:** The hit can bypass the expired grant unless authorization runs first for every request. Shared content identity and caller permission are separate. Set browser cache lifetime to fit the access policy; an edge check cannot stop reuse of an already cached local copy.
 
 **Q:** Width 420 normalizes to bucket 480. Which width must the renderer use?
 
-**A:** 480. Key and renderer inputs must match; otherwise one key can represent different bytes. Source/transform version and selected format also participate.
+**A:** 480. Key and renderer inputs must match; otherwise one key can represent different bytes. Include source revision, transform-policy version and selected format in identity. See [Cloudflare's transform parameters](https://developers.cloudflare.com/images/optimization/features/) for one provider's option contract.
 
 **Q:** Does Accept: image/avif;q=0 permit choosing AVIF by substring?
 
-**A:** No. q=0 excludes that representation. Use supported negotiation and preserve the resolved format in cache identity.
+**A:** No. A quality value of zero means the representation is unacceptable. Parse `Accept` according to [RFC 9110](https://www.rfc-editor.org/rfc/rfc9110.html#name-accept) and preserve the resolved format in cache identity.
 
 **Q:** Why reject malformed signature length before timingSafeEqual?
 
-**A:** The API compares equal-length byte buffers and throws for unequal lengths. Validate encoded shape, decode to bytes and reject malformed grants before comparison.
+**A:** The API compares equal-length byte buffers and throws for unequal lengths. Validate encoded shape, decode to bytes and reject malformed grants before comparison. See [Node.js `timingSafeEqual`](https://nodejs.org/api/crypto.html#cryptotimingsafeequala-b).
+
+**Q:** Why give a live HLS manifest and its media segments different cache policies?
+
+**A:** The live manifest changes as new segments become available, while versioned segments can remain immutable. Give each resource a freshness rule that matches its update behavior and access policy. Check the current [HLS authoring specification](https://developer.apple.com/documentation/http-live-streaming/hls-authoring-specification-for-apple-devices/) for playlist and device constraints.
 
 ## Summary
 

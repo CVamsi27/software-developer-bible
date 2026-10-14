@@ -1,9 +1,9 @@
 # CDN & Edge Computing — Index
 
-> **Study time:** ≈ 32 min of reading (5 files, ~6 min average).
+> **Study time:** ≈ 34 min of reading (5 files, ~7 min average).
 > **Content delivery networks, edge functions, cache invalidation, multi-CDN steering, media optimization and protected health information (PHI) considerations.**
 >
-> Three deep chapters, but the *concepts inside them* classify like a pattern catalog. Follow each mechanism, then test a changed condition in the separate revision.
+> Read the three chapters in order: establish cache identity and freshness, add multi-provider failover, then follow image and video delivery. Finish with the separate revision questions to test each boundary.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Platform-blue)](#)
@@ -19,7 +19,7 @@
 | **Invalidation & Versioning** | Tag/URL purge APIs, content-hashed URLs, deploy-time invalidation | Purge by the provider's exact selector contract; versioned assets avoid replacing bytes under an existing identity |
 | **Edge Compute** | Cloudflare Workers and provider-specific edge runtimes | Put bounded logic at the edge when runtime, dependency latency and data authority fit the request contract |
 | **Multi-CDN Steering** | Domain Name System (DNS), global server load balancing (GSLB), real-user monitoring (RUM), failover health checks and cost arbitration | Steer from measured user paths; test health detection, resolver/client behavior and cold-cache origin load before relying on failover |
-| **Media at the Edge** | Image CDNs, AVIF/WebP negotiation, HTTP Live Streaming (HLS)/Dynamic Adaptive Streaming over HTTP (DASH), signed URLs, transform keys and cost | Normalize transform inputs into bounded cache identities and map each negotiated format to the correct representation |
+| **Media at the Edge** | Responsive images, bounded transforms, HTTP Live Streaming (HLS)/Dynamic Adaptive Streaming over HTTP (DASH), signed access and delivery cost | Version the source and transform policy in the cache key; negotiate the correct format and authorize every protected hit |
 | **Compliance & PHI** | Protected health information (PHI), sensitive logging, residency and provider processing | Include edge processing and telemetry in the data-flow analysis; cache only when authorization and applicable obligations are enforced |
 
 ---
@@ -30,7 +30,7 @@
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [40.10.01-cdn-architecture.md](40.10.01-cdn-architecture.md) | Content delivery network (CDN) caching strategies, invalidation, edge computing (Cloudflare Workers, Vercel Edge), protected health information (PHI), provider evaluation | Important | Specialized | 8 min |
 | 02 | [40.10.02-multi-cdn-traffic-steering.md](40.10.02-multi-cdn-traffic-steering.md) | When a second provider pays off, DNS/client/managed steering, RUM and synthetic evidence, failover readiness, per-provider purge state and cost | Important | Specialized | 8 min |
-| 03 | [40.10.03-media-optimization-at-the-edge.md](40.10.03-media-optimization-at-the-edge.md) | Image CDNs (on-the-fly transforms), AVIF/WebP negotiation, HTTP Live Streaming (HLS)/Dynamic Adaptive Streaming over HTTP (DASH) adaptive bitrate (ABR) ladders, origin shields, signed URLs/hotlink protection, transformation cache keys and cost levers | Important | Specialized | 8 min |
+| 03 | [40.10.03-media-optimization-at-the-edge.md](40.10.03-media-optimization-at-the-edge.md) | Responsive image selection, bounded transforms and versioned cache keys, signed access, HLS/DASH streaming with adaptive bitrate (ABR), manifest and segment freshness | Important | Specialized | 9 min |
 | 04 | [Interview Questions](40.10.04-interview-questions.md) | Applied Q&A: cache-key design, purge strategy, origin shields, dynamic edge caching, media delivery, multi-CDN steering | Important | Specialized | 6 min |
 
 ---
@@ -43,7 +43,7 @@
 | How should private or regulated data be handled? | Keep caller-specific responses out of shared caching unless every hit enforces authorization and the provider's processing, logging, retention and location obligations are satisfied |
 | How do you invalidate? | Use provider-specific selectors and completion checks; publish immutable hashed assets before referencing HTML, and use short freshness only where stale behavior is acceptable |
 | Why multi-CDN? | Use measured path and availability evidence to justify resilience or regional performance; include steering lag, cache coldness and egress cost |
-| How do you serve media fast? | Normalize image dimensions/quality/format into a bounded transform key; serve video renditions under a tested adaptive-bitrate and authorization policy |
+| How do you serve media fast? | Select responsive images, key bounded transforms by source and policy version, authorize protected hits, and give manifests and segments separate freshness policies |
 | Real example to cite | Publish new hashed assets before HTML references them, retain old assets through client overlap, and verify rollback and origin load |
 
 ---

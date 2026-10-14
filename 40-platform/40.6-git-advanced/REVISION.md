@@ -58,9 +58,21 @@ Source: [Branching Strategies](40.6.02-branching-strategies.md)
 
 Source: [Rebase & Cherry-Pick](40.6.03-rebase-cherry-pick.md)
 
-**Q:** Why does rebasing change commit identities?
+**Q:** After rebasing a private feature branch, how do you check that the intended patch series survived?
 
-**A:** The rewritten commit's parents or metadata/content change, producing different object IDs. Coordinate before rewriting history others have based work on.
+**A:** Save the old tip and base before replay, compare the old and new ranges with `git range-diff`, then run the feature tests on the new base. Rebase can omit patches already present upstream or flatten merges unless merge preservation is requested. See [git-rebase](https://git-scm.com/docs/git-rebase) and [git-range-diff](https://git-scm.com/docs/git-range-diff).
+
+**Q:** A fix must be backported to a maintained release. What does cherry-pick carry over, and what must you verify?
+
+**A:** Cherry-pick reapplies the selected commit's change relative to its parent; it does not bring prerequisite commits or original ancestry. Use `-x` for a clean cross-branch pick, check dependencies, and run the destination release's tests. See [git-cherry-pick](https://git-scm.com/docs/git-cherry-pick).
+
+**Q:** Why does `git cherry-pick -m 1 <merge>` not reproduce the original merge?
+
+**A:** `-m 1` computes the merge commit's change relative to its first parent and applies that patch to the current branch. It neither preserves the original merge ancestry nor guarantees the selected diff is limited to the desired fix. See the [git-cherry-pick manual](https://git-scm.com/docs/git-cherry-pick).
+
+**Q:** After rewriting a branch that already exists on the remote, what makes the update safer, and what does it not make safe?
+
+**A:** Coordinate because collaborators may depend on the old IDs. Capture the expected remote tip and use an explicit `--force-with-lease` so a concurrent remote update is rejected; this does not authorize rewriting a shared branch or bypass server policy. See [git-push](https://git-scm.com/docs/git-push).
 
 ## Git Hooks
 

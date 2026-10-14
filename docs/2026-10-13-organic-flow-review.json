@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 64,
+    "pending": 63,
     "unchanged": 80,
-    "revised": 376,
-    "reviewed": 456,
+    "revised": 377,
+    "reviewed": 457,
     "topic_chapters": 520
   },
   "entries": [
@@ -7063,12 +7063,17 @@
       "path": "40-platform/40.6-git-advanced/40.6.03-rebase-cherry-pick.md",
       "group": "40-platform/40.6-git-advanced",
       "title": "Rebase & Cherry-Pick",
-      "status": "pending",
-      "baseline_sha256": "02cd9743771d4ea48da1abfe11d2c619fad1814caece19f78358bd1ee5a9e675",
+      "status": "revised",
+      "baseline_sha256": "006cdc96606963b7cae1520bdf21b89e4618b6a2f162d87a5103be3570b6f373",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can a team update one private patch series or carry one fix to an older release without losing review, provenance or destination-specific validation?",
+      "disposition": "Reorganized the chapter around a private-branch rebase and a release backport. Explained commit identity and signature changes, --onto for dependent branches, interactive fixup/autosquash, range-diff, conflict state and ours/theirs, explicit lease updates, cherry-pick -x, range selection and merge-parent behavior. Removed the repeated command catalog, generic mistakes/best-practices lists and performance filler; updated the category index and source-linked revision questions.",
+      "validation": [
+        "Re-read in learning order; checked the practical/textbook definitions, First Principles, common rebase flow, dependent-branch transplant, interactive cleanup, backport flow, conflict controls and cross-references.",
+        "Checked the current Git 2.56 manuals for rebase, cherry-pick, range-diff, push and revision ranges. Isolated bare-remote tests passed rebase/range-diff, exact force-with-lease, cherry-pick -x backport, conflict abort, --onto, autosquash and cherry-pick --ff.",
+        "All 30 repository verification gates passed, including writer fixed-point; standalone link check verified 10,831 links and 185 anchors with zero failures; citation baseline is clean at 2,600 URLs.",
+        "Ruby 3.4.11 production Jekyll build, site-wide rendered-heading scan, focused one-H1/section/command assertions, and git diff --check passed."
+      ]
     },
     {
       "path": "40-platform/40.6-git-advanced/40.6.04-git-hooks.md",

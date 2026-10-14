@@ -42,7 +42,7 @@ How your team organizes work.
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
 | 02 | [Branching Strategies](40.6.02-branching-strategies.md) | Integration cadence, review policy, Git Flow, trunk-based delivery, supported release lines | Choose from release and support needs, not team-size labels | Important | Foundational | 6 min |
-| 03 | [Rebase & Cherry-Pick](40.6.03-rebase-cherry-pick.md) | Interactive rebase, conflict resolution, cherry-pick workflows | Linear history, porting fixes | Important | Foundational | 8 min |
+| 03 | [Rebase & Cherry-Pick](40.6.03-rebase-cherry-pick.md) | Rewrite private patch series, compare rebases, backport fixes, resolve replay conflicts | Update a topic branch or move one fix to a supported release | Important | Foundational | 8 min |
 
 GitHub Flow and trunk-based development can coexist: one describes a pull-request review path, while the other emphasizes short integration cycles. Choose review controls and release-line ownership separately.
 

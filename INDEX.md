@@ -1,6 +1,6 @@
 # Senior Full Stack Interview Bible — Index
 
-> **Study time:** ≈ 87 h 7 m of reading (671 files, ~8 min average).
+> **Study time:** ≈ 87 h 8 m of reading (671 files, ~8 min average).
 > **Start here: [ROADMAP.md](ROADMAP.md) — the canonical study path with phases, checkpoints, and weekly schedule.**
 >
 > **Pick your lane first.** The bible is organized into **2 interview lanes** (`80-lanes-abroad-full-stack`, `81-lanes-indian-sde-faang`) that draw from **7 shared study stacks** — plus the [00-strategy](00-strategy/INDEX.md) **strategy folder** everyone starts with. Each lane has its own preparation strategy; the stacks are the technical material both lanes share.
@@ -111,7 +111,7 @@ These are sample scheduling blocks, not readiness estimates. Use [ROADMAP checkp
 | [Git Advanced](40-platform/40.6-git-advanced/INDEX.md) | 10 | Branching, rebase, cherry-pick, hooks, patch workflow, code archaeology |
 | [Serverless & Edge](40-platform/40.7-serverless-edge/INDEX.md) | 10 | Lambda, Vercel Edge, serverless patterns, SAM/CDK/SST, Fly.io, Vite SPA on Cloudflare |
 | [Monorepo](40-platform/40.8-monorepo/INDEX.md) | 6 | Turborepo, Nx, pnpm, Rush, Bazel |
-| [Twelve-Factor App](40-platform/40.9-twelve-factor/INDEX.md) | 2 | The canonical cloud-native methodology — codebase, dependencies, config, backing services, build/release/run, processes, port binding, concurrency, disposability, dev/prod parity, logs, admin processes |
+| [Twelve-Factor App](40-platform/40.9-twelve-factor/INDEX.md) | 2 | The original twelve-factor methodology: deployment inputs, resource bindings, release stages, process lifecycle, and operational trade-offs; refresh in progress |
 | [CDN & Edge](40-platform/40.10-cdn/INDEX.md) | 4 | CDN caching strategies, invalidation, edge functions, PHI-at-edge considerations |
 | [Reverse Proxy](40-platform/40.11-reverse-proxy/INDEX.md) | 2 | Nginx internals: C10K, master–worker + epoll event loop, config contexts, upstream LB, TLS termination, buffering, rate limiting, proxy_cache, nginx vs HAProxy vs Envoy |
 | [IaC & Terraform](40-platform/40.12-iac/INDEX.md) | 2 | Infrastructure as Code, HCL, state & drift, plan/apply, backends & locking, modules, workspaces, import, OpenTofu/Pulumi/CDKTF, IaC in CI/CD |

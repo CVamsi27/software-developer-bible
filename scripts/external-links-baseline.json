@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2648,
+ "url_count": 2650,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -15,10 +15,16 @@
   "https://12factor.net/": [
    "40-platform/40.9-twelve-factor/40.9.01-the-twelve-factor-app.md",
    "40-platform/40.9-twelve-factor/40.9.02-interview-questions.md",
+   "40-platform/40.9-twelve-factor/REVISION.md",
    "50-quality/50.4-production-engineering/50.4.04-production-readiness-reviews.md"
   ],
   "https://12factor.net/admin-processes": [
    "40-platform/40.9-twelve-factor/40.9.01-the-twelve-factor-app.md"
+  ],
+  "https://12factor.net/blog/open-source-announcement": [
+   "40-platform/40.9-twelve-factor/40.9.01-the-twelve-factor-app.md",
+   "40-platform/40.9-twelve-factor/40.9.02-interview-questions.md",
+   "40-platform/40.9-twelve-factor/REVISION.md"
   ],
   "https://12factor.net/codebase": [
    "40-platform/40.9-twelve-factor/40.9.01-the-twelve-factor-app.md"
@@ -3562,6 +3568,12 @@
   ],
   "https://github.com/trufflehog/trufflehog": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.04-secrets-management.md"
+  ],
+  "https://github.com/twelve-factor/twelve-factor": [
+   "40-platform/40.9-twelve-factor/40.9.01-the-twelve-factor-app.md",
+   "40-platform/40.9-twelve-factor/40.9.02-interview-questions.md",
+   "40-platform/40.9-twelve-factor/INDEX.md",
+   "40-platform/40.9-twelve-factor/REVISION.md"
   ],
   "https://github.com/type-challenges/type-challenges": [
    "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.03-advanced-generics.md",

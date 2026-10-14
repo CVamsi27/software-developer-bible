@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 43,
+    "pending": 42,
     "unchanged": 80,
-    "revised": 397,
-    "reviewed": 477,
+    "revised": 398,
+    "reviewed": 478,
     "topic_chapters": 520
   },
   "entries": [
@@ -7403,12 +7403,18 @@
       "path": "40-platform/40.9-twelve-factor/40.9.01-the-twelve-factor-app.md",
       "group": "40-platform/40.9-twelve-factor",
       "title": "The Twelve-Factor App",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "adb047f45ba1a0faf51a8c627322dde354e800cbb4e3cd40d7e6e18b579c329a",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do deployment boundaries make a process replaceable without hiding durability, resource, or release risks?",
+      "disposition": "Kept the factor-by-factor path and worker-recovery example while removing a repeated rationale section. Clarified the original methodology versus its in-progress community refresh and book extensions; corrected the linked interview/revision material and verified the Docita configuration, migration, logging, and local-database pointers against the current checkout.",
+      "validation": [
+        "Re-read the chapter and its INDEX, REVISION, and interview companion in learning order; checked definition, First Principles, factor sequence, example, summary, and source links.",
+        "Verified original publication/update and community-refresh status against 12factor.net and the official manifesto repository; direct GET probes for the two newly added links returned HTTP 200.",
+        "Checked cited Docita paths and claims against the current repository checkout; deployment job dependencies, Pino redaction setup, Turbo environment inputs, and Compose PostgreSQL version were confirmed.",
+        "All 30 repository verification gates passed; standalone local-link check passed with 10,831 links and 185 anchors verified, zero broken links, zero stale labels and zero stale paths; citation baseline has 2,650 URLs with no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "50-quality/50.1-testing/01-foundations/50.1.1.01-testing-overview.md",

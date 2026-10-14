@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2535,
+ "url_count": 2533,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -6653,9 +6653,6 @@
   "https://w3c.github.io/webtransport/": [
    "60-realtime/60.1-websockets/01-transports/60.1.1.04-webtransport.md"
   ],
-  "https://wave-protocol.org/whitepaper.html": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.22-real-time-collaboration.md"
-  ],
   "https://web.archive.org/web/20131217183346/http://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying": [
    "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.01-real-time-architecture.md"
   ],
@@ -8550,9 +8547,6 @@
   "https://yarnpkg.com/features/workspaces": [
    "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md",
    "40-platform/40.8-monorepo/40.8.06-interview-questions.md"
-  ],
-  "https://yjs.dev/": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.22-real-time-collaboration.md"
   ],
   "https://zenodo.org/records/3676092/files/1979-12-MVC.pdf": [
    "30-architecture/30.1-design-patterns/05-architectural/30.1.5.08-presentation-patterns-mvc-mvp-mvvm.md"

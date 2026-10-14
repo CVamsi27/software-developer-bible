@@ -586,6 +586,10 @@ Source: [Real-Time Collaboration — System Design Case Study](30.2.2.22-real-ti
 
 **A:** It summarizes the replica state so a peer can compute missing updates. It does not prove those updates were durably committed or that the caller is authorized to apply them. See [Yjs document updates](https://docs.yjs.dev/api/document-updates).
 
+**Q:** Why must a snapshot record the update sequence it covers before the log is compacted?
+
+**A:** A state vector helps compute CRDT differences, while the covered sequence identifies the durable log prefix represented by the snapshot. Build through a captured high-water mark, publish that checkpoint, and retain later updates so concurrent writes are not lost.
+
 ## Typeahead / Autocomplete System Design
 
 Source: [Typeahead / Autocomplete System Design](30.2.2.23-typeahead-autocomplete.md)

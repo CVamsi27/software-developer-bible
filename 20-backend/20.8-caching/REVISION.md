@@ -66,6 +66,22 @@ Source: [Redis Fundamentals](20.8.02-redis-fundamentals.md), [Redis data types](
 
 **A:** Redis recommends node-redis for new projects and continues to maintain ioredis. Their command names, option objects and return types differ; pin the client version and test examples against its API.
 
+**Q:** Why can one slow command raise latency for unrelated clients on the same Redis node?
+
+**A:** Redis serializes command execution against that node's keyspace. I/O threads improve network work, but a large scan, expensive command, or long script can still occupy its command path. Bound work and inspect `SLOWLOG` and latency metrics.
+
+**Q:** Does a successful primary reply prove a write survives restart and failover?
+
+**A:** No. RDB snapshots, AOF fsync policy, asynchronous replica progress, and failover are separate durability boundaries. `WAIT` can confirm replica acknowledgments but does not make Redis strongly consistent.
+
+**Q:** What changes when two keys hash to different Redis Cluster slots?
+
+**A:** They may be owned by different primaries, so a multi-key atomic operation cannot generally span them. A hash tag can place keys in one slot when the operation requires co-location, at the cost of concentrating that key family on one shard.
+
+**Q:** What is the difference between `MOVED` and `ASK` during Cluster routing?
+
+**A:** `MOVED` tells the client that the slot's owner has changed and it should refresh its map. `ASK` is a temporary redirect during migration for the current request; the client uses `ASKING` and should not treat the destination as the permanent owner.
+
 ## Advanced Redis Patterns
 
 Source: [Advanced Redis Patterns](20.8.03-advanced-redis-patterns.md).

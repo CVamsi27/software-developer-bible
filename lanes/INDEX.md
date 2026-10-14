@@ -3,7 +3,7 @@
 Both lanes use the same technical chapters. Start with [interview strategy](../00-strategy/INDEX.md), confirm the assessment and choose the lane matching the work.
 
 [![Lanes](https://img.shields.io/badge/lanes-2-blue)](#choose-the-assessed-work)
-[![Files](https://img.shields.io/badge/files-1028-orange)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-1034-orange)](../INDEX.md)
 
 ## Choose the assessed work
 

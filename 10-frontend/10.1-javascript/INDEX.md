@@ -1,9 +1,9 @@
 # JavaScript — Index
 
-> **Study time:** ≈ 4 h 9 m of reading (40 files, ~6 min average).
+> **Study time:** ≈ 4 h 15 m of reading (41 files, ~6 min average).
 > Core JavaScript concepts from execution context through async patterns, memory management, functional techniques, modern language APIs, cancellation, browser events, cross-tab coordination, and interview practice.
 
-[![Files](https://img.shields.io/badge/files-40-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-41-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Core-blueviolet)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -17,7 +17,7 @@ The numbered chapters are organized into six category folders. Files in the same
 
 | Category | Files | Why it matters |
 | ------------------------------------------------------------------------ | ----: | ----------------------------------------------------------------------------------------------- |
-| [Execution & Scope](01-execution-and-scope/INDEX.md) | 6 | The language's binding, lookup, execution and lifetime model |
+| [Execution & Scope](01-execution-and-scope/INDEX.md) | 7 | The language's binding, lookup, execution and lifetime model |
 | [Objects, Prototypes & `this`](02-objects-prototypes-this/INDEX.md) | 3 | Property lookup, prototype links, method calls and `this` |
 | [Async & Concurrency](03-async-concurrency/INDEX.md) | 6 | Event-loop scheduling, promises, async/await, cancellation and bounded work |
 | [Memory & Data](04-memory-and-data/INDEX.md) | 9 | Choosing the right collection, hash table internals, avoiding memory leaks, understanding GC |
@@ -121,7 +121,7 @@ Selected recent APIs, browser execution/event models and interview practice.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------    : |
-| 30 | [Recent ECMAScript Features](06-modern-and-interview/10.1.6.01-es2024-features.md) | Selected ES2022–2026 built-ins; compare ownership, evaluation, and runtime support | Important | Specialized | 6 min |
+| 30 | [Recent ECMAScript Features](06-modern-and-interview/10.1.6.01-es2024-features.md) | Selected ES2022–2026 built-ins; compare ownership, evaluation, and runtime support | Important | Specialized | 7 min |
 | 31 | [Web Workers](06-modern-and-interview/10.1.6.02-web-workers.md) | Dedicated, shared, and service workers; message ownership and cancellation limits | Important | Important | 7 min |
 | 32 | [DOM Events & Delegation](06-modern-and-interview/10.1.6.03-dom-events-delegation.md) | Event path, target and listener ownership, delegation, propagation, default actions, and cleanup | Essential | Foundational | 5 min |
 | 33 | [Cross-Tab Communication](06-modern-and-interview/10.1.6.04-cross-tab-communication.md) | Transient messages, persistent recovery, shared owners, locks, and safe cross-tab session updates | Important | Specialized | 6 min |

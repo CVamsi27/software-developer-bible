@@ -26,6 +26,18 @@ Source: [Kubernetes Pods & ReplicaSets](40.2.1.01-pods-replicasets.md)
 
 **A:** An ordinary init container must finish before application containers start. A native sidecar is declared as an init container with `restartPolicy: Always`, starts before the application, and continues alongside it; the feature is stable since Kubernetes 1.33.
 
+**Q:** A ReplicaSet creates a Pod, but no process starts. Which components own the next steps?
+
+**A:** The API server admits and stores the Pod; the scheduler selects a node and records the binding; the node's kubelet observes that assignment and asks its container runtime to start the containers through CRI. The scheduler does not run the process.
+
+**Q:** Why can an API write succeed while the replacement is still unavailable?
+
+**A:** API acceptance proves the object passed the API boundary and was stored. A controller must reconcile it, the scheduler must find a feasible node, the kubelet and runtime must start it, and readiness must pass before it becomes a serving endpoint.
+
+**Q:** Where should you investigate when there is no Pod object versus a Pod stuck in `Pending`?
+
+**A:** With no Pod, inspect admission and the owning controller's events or status. A `Pending` Pod exists but has not become runnable; inspect scheduling events and the specific image, storage, or node setup state. These states identify different boundaries.
+
 ## Kubernetes Deployments
 
 Source: [Kubernetes Deployments](40.2.1.02-deployments.md)

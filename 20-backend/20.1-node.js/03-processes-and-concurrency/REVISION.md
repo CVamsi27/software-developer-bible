@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Node.js-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-success)](#)
 [![Tags](https://img.shields.io/badge/tags-revision-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
 
@@ -81,6 +81,38 @@ Source: [Process & Environment](20.1.3.03-process-environment.md)
 **Q:** What happens when shutdown is called twice while resource cleanup hangs?
 
 **A:** Both calls return the same operation, admission is draining, and the deadline covers server drain plus resource close. If cleanup cannot finish, the forced failure path owns termination; process exitCode alone cannot release a leaked handle.
+
+## PM2 Process Supervision
+
+Source: [PM2 Process Supervision](20.1.3.04-pm2-process-supervision.md), [PM2 process management](https://pm2.io/docs/runtime/guide/process-management/) and [PM2 graceful startup and shutdown](https://pm2.io/docs/runtime/best-practices/graceful-shutdown/)
+
+**Q:** What does `pm2 save` preserve, and what must be configured for a host reboot?
+
+**A:** It saves the PM2 process list so it can be resurrected. A host startup integration must also invoke resurrection after reboot. Neither restores process memory, database state or an in-flight request.
+
+**Q:** A worker has opened its port but cannot reach its database. Should a rolling reload treat it as ready?
+
+**A:** No. Listening proves that the socket is open, not that the service can safely accept its required work. Use an application readiness signal after required initialization. Treat `listen_timeout` as a bound, not proof of health: PM2 may mark the worker ready when it expires, so the deployment must detect and reject an unhealthy release.
+
+**Q:** A payment request times out while its worker is being replaced. What does restarting the worker tell the client?
+
+**A:** Only that PM2 restored a process slot. It does not reveal whether the database commit happened before the connection closed. Resolve the outcome by idempotency key or reconciliation; blind retry can duplicate an effect.
+
+## Watt Runtime Architecture
+
+Source: [Watt Runtime Architecture](20.1.3.05-watt-runtime-architecture.md) and [Watt architecture](https://docs.platformatic.dev/docs/concepts/watt-architecture)
+
+**Q:** Does a `.plt.local` fetch use the operating system's network stack?
+
+**A:** In Watt's documented internal mesh, an Undici dispatcher routes the HTTP-shaped request over a `MessagePort` to the target worker. It avoids TCP and DNS, but request and response data still cross a thread boundary and consume resources.
+
+**Q:** A Watt worker is replaced after a crash. Which state and failures should you inspect?
+
+**A:** The replacement has a new isolate and does not recover the old worker's in-memory objects. Other workers may remain active, but a native crash, process-wide memory exhaustion or runtime exit can affect the whole Watt process.
+
+**Q:** Two Watt applications share a runtime but need different release schedules. Does a worker boundary provide that independence?
+
+**A:** No. Worker threads separate JavaScript heaps and event loops, but applications in one runtime share its process and deployment lifecycle. Move one to a separate runtime or service if release, scaling, compliance or process-failure boundaries must be independent.
 
 ## Summary
 

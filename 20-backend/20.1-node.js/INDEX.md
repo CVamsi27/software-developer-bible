@@ -1,9 +1,9 @@
 # Node.js — Index
 
-> **Study time:** ≈ 2 h 11 m of reading (17 files, ~8 min average).
-> **17 files** — Event loop internals, streams (Node + Web), buffers, file system, HTTP servers, parallel processing, process management, security, debugging/profiling, Express/Fastify internals, the built-in test runner, and interview questions.
+> **Study time:** ≈ 2 h 23 m of reading (19 files, ~8 min average).
+> **19 files** — Event loop internals, streams (Node + Web), buffers, file system, HTTP servers, parallel processing, process management, security, debugging/profiling, Express/Fastify internals, the built-in test runner, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-17-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-19-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Backend-success)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -19,7 +19,7 @@ The learning chapters are organized into four categories, each with a reading-fl
 | ---------------------------------------------------------------- | ----: | ------------------------------------------------------------------------------------------- |
 | [Runtime & Async](01-runtime-and-async/INDEX.md) | 2 | Scheduling, stream demand and test completion explain request latency and resource lifetime |
 | [I/O & Data](02-io-and-data/INDEX.md) | 4 | Streams, buffers, file system, HTTP — the I/O primitives |
-| [Processes & Concurrency](03-processes-and-concurrency/INDEX.md) | 3 | Clustering, child processes/worker threads, lifecycle — production concerns |
+| [Processes & Concurrency](03-processes-and-concurrency/INDEX.md) | 5 | Clustering, child processes/worker threads, lifecycle — production concerns |
 | [Security & Operations](04-security-and-operations/INDEX.md) | 4 | Security, diagnostics (debug/profiling), framework internals, full-stack self-test |
 
 ---
@@ -28,7 +28,7 @@ The learning chapters are organized into four categories, each with a reading-fl
 
 **Pass 1 — Follow one request.** Start with [event-loop execution](01-runtime-and-async/20.1.1.01-event-loop.md), [HTTP ownership](02-io-and-data/20.1.2.04-http-module.md) and [framework dispatch](04-security-and-operations/20.1.4.03-express-fastify-internals.md). Explain what executes now, what waits and who completes the response.
 
-**Pass 2 — Bound bytes and lifetimes.** Follow the [I/O category](02-io-and-data/INDEX.md) through streams, buffers and filesystem handles. Then read [startup/shutdown](03-processes-and-concurrency/20.1.3.03-process-environment.md), task offload and cluster replication. Track which component owns each allocation, connection and pending task.
+**Pass 2 — Bound bytes and lifetimes.** Follow the [I/O category](02-io-and-data/INDEX.md) through streams, buffers and filesystem handles. Then compare [startup/shutdown](03-processes-and-concurrency/20.1.3.03-process-environment.md), task offload, [cluster replication](03-processes-and-concurrency/20.1.3.01-clustering.md), [PM2 process supervision](03-processes-and-concurrency/20.1.3.04-pm2-process-supervision.md) and [Watt's application workers](03-processes-and-concurrency/20.1.3.05-watt-runtime-architecture.md). Track which component owns each allocation, connection, pending task and recovery decision.
 
 **Pass 3 — Test the boundaries.** Use [security and diagnostics](04-security-and-operations/INDEX.md) to reject forbidden/oversized work and measure one suspected bottleneck. Each category ends in a separate revision companion; the interview bank is the final explanation drill.
 
@@ -65,6 +65,8 @@ Production concerns — making Node.js scale and stay healthy. Category INDEX: [
 | 01 | [Clustering](03-processes-and-concurrency/20.1.3.01-clustering.md) | Cluster module, worker processes, IPC, load balancing, PM2, graceful restart | Important | Important | 9 min |
 | 02 | [Child Processes & Workers](03-processes-and-concurrency/20.1.3.02-child-processes-workers.md) | `spawn`/`fork`/`exec`, `worker_threads`, SharedArrayBuffer, thread pool, when to use what | Important | Important | 10 min |
 | 03 | [Process & Environment](03-processes-and-concurrency/20.1.3.03-process-environment.md) | `process.env`, `argv`, lifecycle, signals (SIGTERM/SIGINT), graceful shutdown, exit codes | Important | Important | 9 min |
+| 04 | [PM2 Process Supervision](03-processes-and-concurrency/20.1.3.04-pm2-process-supervision.md) | Daemon/process list, fork and cluster modes, readiness, reload limits, restart policy | Important | Important | 5 min |
+| 05 | [Watt Runtime Architecture](03-processes-and-concurrency/20.1.3.05-watt-runtime-architecture.md) | Worker-thread applications, V8 isolates, `.plt.local` routing, health supervision and process-wide failure boundaries | Important | Important | 5 min |
 
 ---
 
@@ -77,7 +79,7 @@ Category INDEX: [Security & Operations](04-security-and-operations/INDEX.md).
 | 01 | [Node.js Security](04-security-and-operations/20.1.4.01-node-security.md) | Input validation, Helmet.js, rate limiting, prototype pollution, dependency vulnerabilities, npm audit | Essential | Foundational | 10 min |
 | 02 | [Debugging & Profiling](04-security-and-operations/20.1.4.02-debugging-profiling-nodejs.md) | `--inspect` + Chrome DevTools, `--prof` tick logs, heap snapshot comparison and capture costs, event-loop lag monitoring, SIGUSR2 diagnostics reports | Essential | Foundational | 10 min |
 | 03 | [Express & Fastify Internals](04-security-and-operations/20.1.4.03-express-fastify-internals.md) | Middleware chain + arity-4 error handlers, mount paths, Fastify hooks + plugin encapsulation, schema serialization, benchmark caveats, migration notes | Essential | Foundational | 13 min |
-| 04 | [Interview Questions](04-security-and-operations/20.1.4.04-interview-questions.md) | 40 curated questions with answers | Essential | Foundational | 10 min |
+| 04 | [Interview Questions](04-security-and-operations/20.1.4.04-interview-questions.md) | 44 curated questions with answers | Essential | Foundational | 11 min |
 
 ---
 

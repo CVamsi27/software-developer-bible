@@ -1,9 +1,9 @@
 # Execution & Scope — JavaScript
 
-> **Study time:** ≈ 38 min of reading (7 files, ~5 min average).
+> **Study time:** ≈ 44 min of reading (8 files, ~6 min average).
 > Follow a JavaScript evaluation from its active call to the names it can read, then see how declaration timing and closures change what remains accessible.
 
-[![Files](https://img.shields.io/badge/files-7-blue)](#files)
+[![Files](https://img.shields.io/badge/files-8-blue)](#files)
 [![Category](https://img.shields.io/badge/category-Execution_and_Scope-orange)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -19,14 +19,15 @@
 | 04 | [Hoisting](10.1.1.04-hoisting.md) | Declaration setup, temporal dead zone, function and resource declarations | Essential | Foundational | 7 min |
 | 05 | [Lexical Environment](10.1.1.05-lexical-environment.md) | One lookup trace, the record roles behind names, global and module boundaries | Essential | Foundational | 5 min |
 | 06 | [Closures](10.1.1.06-closures.md) | Lexical scoping, closure lifecycle, module pattern, memory implications | Essential | Foundational | 6 min |
+| 07 | [V8 Execution and Optimization](10.1.1.07-v8-execution-and-optimization.md) | Interpreter and compiler tiers, feedback, inline caches, object shapes, and deoptimization | Important | Specialized | 5 min |
 
 ---
 
 ## Read order
 
-Execution Context → Scope → Call Stack → Hoisting → Lexical Environment → Closures.
+Execution Context → Scope → Call Stack → Hoisting → Lexical Environment → Closures → V8 Execution and Optimization.
 
-Why this order: **Execution Context** introduces the state of one evaluation. **Scope** answers where names are visible, and **Call Stack** follows active calls and returns. **Hoisting** explains when bindings are established and initialized; **Lexical Environment** traces how a read finds one. **Closures** finishes the path by showing why a returned function can still reach its defining bindings.
+Why this order: **Execution Context** introduces the state of one evaluation. **Scope** answers where names are visible, and **Call Stack** follows active calls and returns. **Hoisting** explains when bindings are established and initialized; **Lexical Environment** traces how a read finds one. **Closures** finishes the language-level lifetime path. **V8 Execution and Optimization** then separates that portable model from one engine's changing implementation choices.
 
 ---
 

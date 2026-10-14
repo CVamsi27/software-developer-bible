@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-TypeScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-6_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -230,6 +230,30 @@ Source: [Composing Advanced TypeScript Patterns](10.2.4.05-advanced-patterns.md)
 
 10. **Q:** Why build a union of event/payload tuples rather than two independent union parameters?
    **A:** Each tuple retains a valid pairing. Independent unions could admit a name from one case with a payload from another. [Correlated contract](10.2.4.05-advanced-patterns.md#first-principles).
+
+## TypeScript Compiler Pipeline
+
+Source: [TypeScript Compiler Pipeline](10.2.4.06-typescript-compiler-pipeline.md)
+
+**Q:** What belongs to a TypeScript `Program`?
+
+**A:** Its configured root files, resolved dependencies, and compiler options. Inspect the selected project and file graph before assuming an editor or command-line invocation checked a particular file.
+
+**Q:** How do the parser, binder, and checker contribute different information?
+
+**A:** The parser creates syntax trees; the binder connects declarations to symbols and scopes; the checker follows those relationships to determine types and report semantic diagnostics. The emitter then produces configured output.
+
+**Q:** Why might `tsc` report an error and still write JavaScript?
+
+**A:** Diagnostics and emission have separate controls. `noEmit` suppresses output entirely, while `noEmitOnError` blocks output when errors exist. A release pipeline must set and enforce the intended policy.
+
+**Q:** The import type-checks but Node cannot load the built package. What boundary should you compare?
+
+**A:** Compare TypeScript's configured module resolution with the runtime's emitted files, package exports, extensions, and actual entry point. Type checking does not prove the runtime can load a module.
+
+**Q:** Why can an editor show no error while a clean build fails?
+
+**A:** The language service serves incremental editor requests and may use an inferred or different configured project. A clean build applies the selected project graph and build options; run it as a separate release gate.
 
 ## Summary
 

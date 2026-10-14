@@ -18,6 +18,10 @@ Source: [Serverless Overview](40.7.01-serverless-overview.md)
 
 **A:** Concurrency quotas, downstream connection/request budgets, cold-start behavior, scaling limits, and cost. Provider-managed servers do not eliminate those constraints.
 
+**Q:** A queue worker writes a resized image, then crashes before acknowledging the message. How do you prevent a retry from creating the wrong or duplicate result?
+
+**A:** Give the input an immutable identity such as object key plus version, include the transform version, and make the output/status operation idempotent or conditional. Let the queue retry, and acknowledge only after durable completion. If the effect is an external API call, reuse a receiver-enforced idempotency key or reconcile its result first.
+
 ## AWS Lambda
 
 Source: [AWS Lambda](40.7.02-aws-lambda.md)

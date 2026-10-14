@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2609,
+ "url_count": 2612,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -13,7 +13,6 @@
    "30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.md"
   ],
   "https://12factor.net/": [
-   "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md",
    "40-platform/40.9-twelve-factor/40.9.01-the-twelve-factor-app.md",
    "40-platform/40.9-twelve-factor/40.9.02-interview-questions.md",
    "50-quality/50.4-production-engineering/50.4.04-production-readiness-reviews.md"
@@ -1583,7 +1582,6 @@
    "20-backend/20.5-security/03-hardening-and-operations/REVISION.md"
   ],
   "https://docs.aws.amazon.com/lambda/": [
-   "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md",
    "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md",
    "40-platform/40.7-serverless-edge/40.7.08-interview-questions.md"
   ],
@@ -1593,8 +1591,17 @@
    "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md",
    "40-platform/40.7-serverless-edge/40.7.08-interview-questions.md"
   ],
+  "https://docs.aws.amazon.com/lambda/latest/dg/concepts-application-design.html": [
+   "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md"
+  ],
+  "https://docs.aws.amazon.com/lambda/latest/dg/concepts-basics.html": [
+   "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md"
+  ],
   "https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations": [
    "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md"
+  ],
+  "https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html": [
+   "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md"
   ],
   "https://docs.aws.amazon.com/lambda/latest/dg/lambda-nodejs.html": [
    "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md",
@@ -8502,7 +8509,6 @@
    "80-lanes-abroad-full-stack/80.06-visa-relocation-playbook.md"
   ],
   "https://www.serverless.com/": [
-   "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md",
    "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md",
    "40-platform/40.7-serverless-edge/40.7.08-interview-questions.md"
   ],

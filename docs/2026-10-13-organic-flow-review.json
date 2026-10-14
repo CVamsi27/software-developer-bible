@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 57,
+    "pending": 56,
     "unchanged": 80,
-    "revised": 383,
-    "reviewed": 463,
+    "revised": 384,
+    "reviewed": 464,
     "topic_chapters": 520
   },
   "entries": [
@@ -7179,12 +7179,17 @@
       "path": "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md",
       "group": "40-platform/40.7-serverless-edge",
       "title": "Serverless Overview",
-      "status": "pending",
-      "baseline_sha256": "de5f326391fc44f04633fd8adc1056776365d8dc1ec6b25b9d1b634157d13db9",
+      "status": "revised",
+      "baseline_sha256": "c712d87969da1aaef7c5888f6fb7dc9c6acac0d3414ff248c071ab22c195e7f0",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How does one serverless job reach durable completion safely when executions can be replaced, retried, or scaled independently?",
+      "disposition": "Rebuilt the explanation around a single image-processing request from durable upload through worker acknowledgment. Defined the serverless model before deriving its boundaries, then connected event contracts, idempotent effects, downstream concurrency, cold-start latency, placement, cost, and runtime choice in one reading path. Removed repeated generic best-practice lists, tightened neighboring references, and aligned the INDEX topic summary with the chapter.",
+      "validation": [
+        "Re-read in learning order with the category INDEX and REVISION companion, plus adjacent Lambda and Edge chapters; preserved practical and textbook definitions, a distinct First Principles derivation, one Summary, See Also, and References.",
+        "Checked Lambda lifecycle, event payload and invocation distinctions, state/reuse, and application-design boundaries against current AWS documentation; new AWS and Vercel citations returned HTTP 200.",
+        "All 30 repository gates passed; standalone link scan checked 10,836 links and 185 anchors with zero broken links; citation baseline has 2,612 URLs with no drift; all 10 corpus writers reached a fixed point.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md",

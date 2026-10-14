@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 90,
+    "pending": 89,
     "unchanged": 80,
-    "revised": 350,
-    "reviewed": 430,
+    "revised": 351,
+    "reviewed": 431,
     "topic_chapters": 520
   },
   "entries": [
@@ -5829,12 +5829,17 @@
       "path": "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.md",
       "group": "30-architecture/30.3-infra-patterns/01-liveness-lifecycle",
       "title": "Health Checks & Graceful Shutdown — Liveness, Readiness, SIGTERM",
-      "status": "pending",
-      "baseline_sha256": "df1074effe826e8870fa201058852254479aebb6bbd97274d967b3678ac04b95",
+      "status": "revised",
+      "baseline_sha256": "95e6b9b34de637fcb57775fc4dd7557adcaf0bb8d0abb800f27cb973390f487a",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do probe signals and a bounded shutdown keep recovery from turning into a restart storm or lost work?",
+      "disposition": "Removed repeated warning lists and tied the ending to an observable shutdown test: withdraw, reject new work, drain while dependencies stay open, then clean up under the deadline. Aligned the Node example with the documented close-before-idle-sweep order and added a source-linked Kubernetes grace-period question.",
+      "validation": [
+        "Re-read in category order with INDEX and REVISION; checked the practical and textbook definitions, probe boundaries, request trace, Node example, Kubernetes fragment, summary and cross-references.",
+        "Checked the current official Node.js v26.11.1 HTTP documentation for the v18.2 API floor, Node 19 idle-connection behavior and upgraded-socket boundary; checked current Kubernetes probe and Pod termination documentation.",
+        "All 30 repository gates passed; the standalone link scan checked 10,797 links and 152 anchors with no failures, and the citation baseline had zero drift.",
+        "The locked-bundle production Jekyll build and site-wide rendered-heading check passed; git diff --check passed."
+      ]
     },
     {
       "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.01-resilience-patterns.md",

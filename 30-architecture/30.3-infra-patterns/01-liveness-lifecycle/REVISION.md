@@ -58,6 +58,10 @@ Source: [Health Checks & Graceful Shutdown — Liveness, Readiness, SIGTERM](30.
 
 **A:** Accepted work may be interrupted and replies lost. Durable transactions can survive while callers remain uncertain; recovery/deduplication matters rather than assuming every interruption is a 500 or data corruption.
 
+**Q:** Does a Kubernetes `preStop` hook add time before the termination grace period starts?
+
+**A:** No. The hook runs inside the same termination budget. A twenty-second sleep in a thirty-second grace period leaves roughly ten seconds for signal handling and application cleanup, so measure the real drain instead. See [Pod termination lifecycle](https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/).
+
 ## Summary
 
 A useful answer names the guarantee, the mechanism that enforces it, and the failure boundary. Revisit the source when any of those is unclear.

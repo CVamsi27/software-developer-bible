@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "376eb34d69d17c65b47d729aad838b7588ab78581709263f77683796ecd43aaa",
+ "corpus_digest": "a0e3ea76d21a589c570b6ee35e0a73bb94e930b73243c5d28312896e0cecdfee",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5228
+  "read_minutes": 5229
  },
  "chapters": [
   {
@@ -4935,7 +4935,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "40-platform/40.12-iac/40.12.02-interview-questions.html",

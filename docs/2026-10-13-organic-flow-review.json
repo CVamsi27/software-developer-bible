@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 76,
+    "pending": 75,
     "unchanged": 80,
-    "revised": 364,
-    "reviewed": 444,
+    "revised": 365,
+    "reviewed": 445,
     "topic_chapters": 520
   },
   "entries": [
@@ -6300,12 +6300,18 @@
       "path": "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md",
       "group": "40-platform/40.12-iac",
       "title": "40.12.01 — Infrastructure as Code & Terraform Fundamentals",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "5e3be2b25134912b974333cd6f526d02cdd112229090a6921d9942781eba1a92",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How does Terraform decide whether a declaration changes an existing remote object, and what makes a proposed change safe to apply?",
+      "disposition": "Rebuilt the chapter around a concrete address-to-remote-ID replacement problem, then followed configuration, state, provider reads, dependency ordering, plan review, apply, and service verification. Added explicit explanations of unknown plan values, provider-required replacement, saved-plan exposure and staleness, partial API success, state ownership and locking, opt-in S3 lockfiles, provider-versus-module version selection, secret persistence, environment permissions, and exceptional targeting. Removed the standalone generic mistakes and best-practices lists after carrying their distinct safety decisions into the lifecycle where they apply. Reconciled the learning flow, quick reference, revision questions, and interview answers.",
+      "validation": [
+        "Directly re-read the chapter with its INDEX, REVISION, and interview bank. The main explanation now follows one resource identity through planning, execution, and verification.",
+        "Checked current official Terraform documentation for state identity, plan/apply behavior and saved-plan contents, S3 lockfile defaults/permissions, sensitive and ephemeral values, terraform_data, provider lockfiles versus module versions, import/refactoring, testing, and CDKTF retirement. Checked current AWS CDK, Pulumi, and OpenTofu documentation for tool-model descriptions.",
+        "The Terraform executable is not installed in this checkout; the isolated terraform_data commands were reviewed against current official references but could not be executed locally.",
+        "All 30 repository verification gates passed, including structure, template compliance, freshness, duplication, fixed-point checks, and all counts; standalone links found 10,797 links and 152 anchors with no failures, and the 2,565-URL citation baseline has no drift.",
+        "Ruby 3.4.11 production Jekyll build, site-wide rendered-heading check, targeted rendered-content assertions, and git diff --check passed."
+      ]
     },
     {
       "path": "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.01-pods-replicasets.md",

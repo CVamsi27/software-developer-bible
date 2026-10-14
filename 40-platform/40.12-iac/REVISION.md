@@ -16,23 +16,23 @@ Source: [40.12.01 — Infrastructure as Code & Terraform Fundamentals](40.12.01-
 
 **Q:** Why is Terraform state sensitive even when values are marked sensitive?
 
-**A:** Sensitive marks control presentation, not necessarily storage. State can contain secrets and resource details, so secure access, encryption, backups, and locking.
+**A:** A `sensitive` mark redacts output; it does not by itself omit the value from state or saved plans. Ephemeral values and write-only arguments can avoid persistence when their supported contexts fit. Protect the remaining artifacts. See [managing sensitive data](https://developer.hashicorp.com/terraform/language/manage-sensitive-data).
 
 **Q:** What does a saved plan bind, and what can still change before apply?
 
-**A:** It records the intended resource diff for known inputs/state. Provider behavior, external changes, credentials, and time-dependent conditions still require controlled application and verification.
+**A:** It stores the configuration and planned values with the selected actions, so protect it as a potentially secret-bearing artifact and apply only to the reviewed target. Terraform can reject it if state changed, but it does not re-plan against every external edit after planning. Regenerate the plan when its assumptions are no longer current. See [plan files](https://developer.hashicorp.com/terraform/cli/commands/plan).
 
 **Q:** Why lock shared state during mutation?
 
-**A:** Concurrent writers can race on the same resource mapping and overwrite assumptions. Locking serializes supported operations but does not replace review or backup.
+**A:** Concurrent writers can race on the same resource mapping and overwrite assumptions. Locking serializes supported Terraform operations but not console edits or another state; see [state locking](https://developer.hashicorp.com/terraform/language/state/locking).
 
 **Q:** What is the difference between import and configuration reconciliation?
 
-**A:** Import records an existing resource's identity in state. The configuration must still describe the intended settings or a later plan may change or destroy it.
+**A:** Import binds an existing remote ID to a Terraform address. The configuration must still describe the intended settings or a later plan may change or destroy it. A `moved` block handles an address refactor for an object already tracked by Terraform. See [import](https://developer.hashicorp.com/terraform/language/import) and [refactoring](https://developer.hashicorp.com/terraform/language/modules/develop/refactoring).
 
 **Q:** Why are remote API results necessary after a successful apply?
 
-**A:** The command establishes what the provider reported. Service behavior, propagation, access, and readiness must be observed through deployment-specific checks.
+**A:** The command establishes which provider operations reported success. Service behavior, propagation, access, and readiness need deployment-specific checks; Terraform apply is not a transaction or service-level health test.
 
 **Q:** Plan observes an object, then someone edits it before apply. Does the saved plan stop that edit?
 
@@ -40,19 +40,27 @@ Source: [40.12.01 — Infrastructure as Code & Terraform Fundamentals](40.12.01-
 
 **Q:** Does reading a secret-manager value keep it out of ordinary state?
 
-**A:** Not necessarily. A provider data result can be persisted. sensitive marks redact display; use supported ephemeral/write-only contracts where needed and protect state/plans regardless.
+**A:** Not necessarily. A provider data result can be persisted. `sensitive` redacts display; supported ephemeral/write-only contracts can omit values from plan and state files. Protect the remaining artifacts. See [sensitive data handling](https://developer.hashicorp.com/terraform/language/manage-sensitive-data).
 
-**Q:** Which current S3 backend setting enables a native state lock?
+**Q:** Which Amazon S3 backend setting enables native state locking?
 
-**A:** use_lockfile = true, with the necessary lockfile permissions. Selecting S3 alone does not enable it; the older DynamoDB lock mechanism is deprecated.
+**A:** `use_lockfile = true` opts into S3 lock files and requires read/write/delete permissions on the `.tflock` object. S3 does not enable locking by default; DynamoDB locking is deprecated. See the [S3 backend requirements](https://developer.hashicorp.com/terraform/language/backend/s3).
 
-**Q:** Is CDKTF a maintained new-project option?
+**Q:** Is the Cloud Development Kit for Terraform (CDKTF) maintained for new projects?
 
 **A:** HashiCorp deprecated it on 10 December 2025 and stopped maintaining it. Existing projects need an explicit support/migration choice. AWS CDK is a different tool and synthesizes CloudFormation.
 
 **Q:** Why might retrying after a partial apply need import rather than another create?
 
-**A:** The remote creation might have succeeded before its identity was persisted. Inspect remote state and ownership, recover the mapping if needed, then produce a fresh plan.
+**A:** A remote create may succeed before Terraform records its identity. Inspect the provider and state, recover or import the binding if necessary, then create and review a fresh plan instead of blindly retrying.
+
+**Q:** What does `.terraform.lock.hcl` pin, and what must you pin separately?
+
+**A:** It records selected provider versions and checksums. It does not select and remember remote module versions, so declare constraints separately and use exact versions or immutable revisions when reproducibility requires them. See the [dependency lock file reference](https://developer.hashicorp.com/terraform/language/files/dependency-lock).
+
+**Q:** Does Terraform's command-line interface (CLI) continuously repair drift after apply?
+
+**A:** No. The CLI plans when invoked; a scheduled run service can add cadence. A GitOps controller continuously reconciles its declared resources, so define one owner for each resource or field to prevent competing writers.
 
 ## Summary
 

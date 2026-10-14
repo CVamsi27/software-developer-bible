@@ -1,7 +1,7 @@
 # IaC & Terraform — Index
 
-> **Study time:** ≈ 15 min of reading (3 files, ~5 min average).
-> **Infrastructure as Code fundamentals, Terraform state/plan/apply, modules, drift, backends, CI/CD safety, OpenTofu/Pulumi comparisons.**
+> **Study time:** ≈ 16 min of reading (3 files, ~5 min average).
+> **1 teaching chapter** — Follow a resource from configuration through state, planning, apply, and verification. Then use the revision companion and interview bank to test identity, failure recovery, and access boundaries.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Platform-blue)](#)
@@ -15,13 +15,11 @@ Every other sub-stack in Platform assumes infrastructure *exists*. This one answ
 
 ## Learning flow (passes)
 
-**Pass 1 — The model (30 min):** Read the definition and one Terraform example in [40.12.01-iac-fundamentals-terraform.md](40.12.01-iac-fundamentals-terraform.md), then trace its plan and apply steps. You must be able to explain *state, drift, plan/apply, declarative vs imperative* in one sentence each.
+**Pass 1 — Trace a change (15 min):** Read [the chapter](40.12.01-iac-fundamentals-terraform.md) and follow one resource from address to remote identifier, through planning, and into verification. Explain what configuration, state, and provider observation each tell you.
 
-**Pass 2 — Hands-on mental reps (30 min):** Trace the command lifecycle (`init → validate → plan → apply`) and the CI/CD workflow. Explain to yourself what happens when two engineers run `apply` without locking.
+**Pass 2 — Safe local experiment (15 min):** Run the isolated `terraform_data` example in a temporary directory. Change its input, inspect the plan, apply the saved plan, and confirm the next plan is empty. Then rename its address and explain why a `moved` block changes the identity interpretation.
 
-**Pass 3 — Retrieval and interviews:** Work [40.12.02-interview-questions.md](40.12.02-interview-questions.md). The three that recur: state & drift, brownfield adoption (`import`), and IaC in CI.
-
-**Revision before practice:** Close the chapter and use [section revision](REVISION.md), then attempt the separate interview bank. Check identity, partial failure and exposure boundaries.
+**Pass 3 — Retrieve and practice:** Close the chapter and complete [section revision](REVISION.md), then use [the interview bank](40.12.02-interview-questions.md). Focus on partial apply, stale plans, brownfield adoption, and how state boundaries relate to access control.
 
 ---
 
@@ -29,23 +27,24 @@ Every other sub-stack in Platform assumes infrastructure *exists*. This one answ
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [40.12.01-iac-fundamentals-terraform.md](40.12.01-iac-fundamentals-terraform.md) | IaC model, HCL, state & drift, plan/apply, providers, backends, modules, workspaces, OpenTofu/Pulumi and CDKTF deprecation, mistakes, best practices | Optional | Specialized | 8 min |
-| 02 | [40.12.02-interview-questions.md](40.12.02-interview-questions.md) | Applied Q&A: state, drift, declarative vs imperative, brownfield import, environments, modules, GitOps, CI safety, tool comparison + behavioral story | Optional | Specialized | 5 min |
+| 01 | [40.12.01-iac-fundamentals-terraform.md](40.12.01-iac-fundamentals-terraform.md) | Configuration, addresses and state, dependency graph, plan/apply, saved artifacts, partial failure, locking, environment boundaries, secrets, modules and tool lifecycle | Optional | Specialized | 9 min |
+| — | [Revision questions](REVISION.md) | Recall checks for identity, stale plans, locking, secrets, imports, and post-apply verification | Optional | Specialized | 2 min |
+| 02 | [40.12.02-interview-questions.md](40.12.02-interview-questions.md) | Applied scenarios for drift, adoption, CI safety, module contracts, workspaces, state migration, and recovery | Optional | Specialized | 5 min |
 
 ---
 
 ## Quick Reference
 
 | Concept | One-liner |
-| ---------- | -------------------------------------------------------------------- |
-| IaC | Infrastructure declared as reviewable, versioned code |
-| State | Recorded identity/attribute mapping; remote observations can differ |
-| Drift | Config vs reality mismatch; `plan` reveals it |
-| Plan | Proposed resource actions; protected artifact and API/backend access |
-| Apply | Executes the selected resource changes |
-| Backend | State storage with explicitly configured protection/locking |
-| Module | Reusable, parameterized infra function |
-| Brownfield | Adopt IDs and reconcile configuration before changing resources |
+| ---------- | -------------------------------------------------------------------------------------------------------- |
+| IaC | Versioned definitions for creating and changing infrastructure |
+| State | Address-to-remote-object mapping; it can lag behind reality |
+| Drift | Provider-readable difference between configuration, state, and remote attributes |
+| Plan | Proposed actions based on configuration, state, and provider reads |
+| Apply | Executes a new approved plan or the exact supplied saved plan |
+| Backend | State storage; locking and access controls depend on backend configuration |
+| Module | Reusable resources with declared inputs and outputs |
+| Brownfield | Import a remote ID, match configuration, review the changes |
 
 ---
 

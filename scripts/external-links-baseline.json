@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2556,
+ "url_count": 2565,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -799,24 +799,54 @@
   "https://developer.hashicorp.com/terraform/cdktf": [
    "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md"
   ],
-  "https://developer.hashicorp.com/terraform/cli/commands/plan": [
+  "https://developer.hashicorp.com/terraform/cli/commands/apply": [
    "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md"
+  ],
+  "https://developer.hashicorp.com/terraform/cli/commands/plan": [
+   "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md",
+   "40-platform/40.12-iac/REVISION.md"
+  ],
+  "https://developer.hashicorp.com/terraform/cli/commands/test": [
+   "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md",
+   "40-platform/40.12-iac/40.12.02-interview-questions.md"
   ],
   "https://developer.hashicorp.com/terraform/docs": [
    "40-platform/40.12-iac/40.12.02-interview-questions.md"
   ],
   "https://developer.hashicorp.com/terraform/language/backend/s3": [
    "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md",
+   "40-platform/40.12-iac/REVISION.md",
    "40-platform/40.3-ci-cd/04-interview-prep/40.3.4.01-interview-questions.md"
   ],
+  "https://developer.hashicorp.com/terraform/language/files/dependency-lock": [
+   "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md",
+   "40-platform/40.12-iac/40.12.02-interview-questions.md",
+   "40-platform/40.12-iac/REVISION.md"
+  ],
+  "https://developer.hashicorp.com/terraform/language/import": [
+   "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md",
+   "40-platform/40.12-iac/REVISION.md"
+  ],
   "https://developer.hashicorp.com/terraform/language/manage-sensitive-data": [
+   "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md",
+   "40-platform/40.12-iac/REVISION.md"
+  ],
+  "https://developer.hashicorp.com/terraform/language/modules/configuration": [
    "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md"
+  ],
+  "https://developer.hashicorp.com/terraform/language/modules/develop/refactoring": [
+   "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md",
+   "40-platform/40.12-iac/REVISION.md"
   ],
   "https://developer.hashicorp.com/terraform/language/resources/terraform-data": [
    "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md"
   ],
   "https://developer.hashicorp.com/terraform/language/state": [
    "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md"
+  ],
+  "https://developer.hashicorp.com/terraform/language/state/locking": [
+   "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md",
+   "40-platform/40.12-iac/REVISION.md"
   ],
   "https://developer.hashicorp.com/vault/docs/secrets/databases/postgresql": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.04-secrets-management.md"
@@ -5273,6 +5303,9 @@
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.01-opentelemetry.md",
    "40-platform/40.4-observability/04-advanced-telemetry/REVISION.md"
   ],
+  "https://opentofu.org/docs/": [
+   "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md"
+  ],
   "https://orm.drizzle.team/docs/kit-overview": [
    "20-backend/20.4-database/04-orm-and-access/20.4.4.03-orm-query-builder-landscape.md"
   ],
@@ -7918,6 +7951,9 @@
   ],
   "https://www.prisma.io/docs/orm/v8/reference/transactions-and-runtime": [
    "20-backend/20.4-database/04-orm-and-access/20.4.4.02-prisma-advanced.md"
+  ],
+  "https://www.pulumi.com/docs/iac/concepts/": [
+   "40-platform/40.12-iac/40.12.01-iac-fundamentals-terraform.md"
   ],
   "https://www.rabbitmq.com/blog/2026/04/23/rabbitmq-4.3-release": [
    "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.04-rabbitmq.md",

@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "97117bbbc85a74aa1805b3cb25cc100649a0a3c5786d247d0e79e77eb9dd42a8",
+ "corpus_digest": "bc0bd52c6bb4e2bb2f175fe004611e183a77c474a0b304cbc8bd2c99a58ec313",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5202
+  "read_minutes": 5203
  },
  "chapters": [
   {
@@ -4279,7 +4279,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.12-twitter-feed.html",

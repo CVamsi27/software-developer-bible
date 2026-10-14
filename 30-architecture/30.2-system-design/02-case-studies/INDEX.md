@@ -1,6 +1,6 @@
 # System Design — Case Studies
 
-> **Study time:** ≈ 6 h 13 m of reading (32 files, ~12 min average).
+> **Study time:** ≈ 6 h 14 m of reading (32 files, ~12 min average).
 Applied examples of system design interviews. Read [../01-theory/](../01-theory/INDEX.md) first, then choose cases that match your interview goals.
 
 [![Files](https://img.shields.io/badge/files-32-blue)](../../../INDEX.md)
@@ -59,7 +59,7 @@ The 31 cases are grouped by the kind of reasoning they practice. Use the tiers a
 | 08 | [Ticket Booking](30.2.2.08-ticket-booking.md) | Commerce & Fintech | Atomic seat groups, expiry-safe holds, payment recovery, single-use admission | Important | Important |
 | 09 | [E-Commerce](30.2.2.09-e-commerce.md) | Commerce & Fintech | Checkout snapshots, atomic stock reservations, payment recovery, fulfillment saga | Important | Important |
 | 10 | [Hospital Management](30.2.2.10-hospital-management.md) | Healthcare & Vertical | Tenant-safe clinical access, interval constraints, idempotent booking, FHIR adapters | Important | Important |
-| 11 | [Live Betting](30.2.2.11-live-betting.md) | Commerce & Fintech | Real-time odds, event processing, concurrency, consistency | Important | Important |
+| 11 | [Live Betting](30.2.2.11-live-betting.md) | Commerce & Fintech | Versioned odds acceptance, idempotent debits, terminal settlement, feed-gap recovery | Important | Important |
 | 12 | [Twitter Feed](30.2.2.12-twitter-feed.md) | Social & Feed | News feed fanout, timeline caching, trending topics, hashtag search | Important | Important |
 | 13 | [Rate Limiter](30.2.2.13-rate-limiter.md) | Web (foundational) | Token bucket, sliding window, distributed rate limit, 429 handling | Important | Important |
 | 14 | [Web Crawler](30.2.2.14-web-crawler.md) | Search & Data | URL frontier, politeness, content dedup, robots.txt, simhash | Important | Important |

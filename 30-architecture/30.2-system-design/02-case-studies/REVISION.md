@@ -274,6 +274,10 @@ Source: [Live Betting System Design](30.2.2.11-live-betting.md)
 
 **A:** The acceptance records the exact offered terms under which the stake was committed. A later price update must not silently change an accepted bet.
 
+**Q:** What should the command path do when its expected market version is stale?
+
+**A:** Recheck the authoritative market and outcome inside the same transaction as the debit. Reject the stale request and return a fresh quote for explicit consent; never silently accept different odds or rely on a cached display value.
+
 **Q:** Why does the baseline keep the market version, wallet debit, wager and journal in one transactional authority?
 
 **A:** The service must not accept a price while failing the debit, or debit funds without a durable wager. Local database commits cannot make two service-owned databases atomic; a split design needs explicit reservations, expiry, compensation and recovery.
@@ -289,6 +293,10 @@ Source: [Live Betting System Design](30.2.2.11-live-betting.md)
 **Q:** How should an operator represent a corrected final result after settlement?
 
 **A:** Preserve the original posting and add an auditable reversal or adjustment linked to it. Editing history or replaying the original payout can hide the reason for the balance change or pay twice.
+
+**Q:** Why should a feed sequence gap suspend only the affected market until reconciliation?
+
+**A:** Missing odds or status events can leave the displayed version behind the authoritative source. Keep the market unavailable for new wagers, fetch a consistent snapshot and catch up its sequence before reopening; a socket reconnect alone does not repair state.
 
 ## Twitter Feed System Design
 
@@ -751,9 +759,9 @@ Source: [Hospital management](30.2.2.10-hospital-management.md)
 
 Source: [Live betting](30.2.2.11-live-betting.md)
 
-**Q:** Why must cash-out and settlement share a terminal-state decision?
+**Q:** Why must a market remain closed after an odds-feed sequence gap?
 
-**A:** Both can credit the same open wager. Compare the authoritative wager state/version and post the winning transition and journal atomically; a competing retry retrieves the recorded result rather than crediting it again.
+**A:** A missing update may contain a suspension or price change. Reconcile the authoritative version and sequence before accepting more wagers; a reconnect or fresh client snapshot cannot prove the server's market state is current.
 
 Source: [Twitter feed](30.2.2.12-twitter-feed.md)
 

@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2544,
+ "url_count": 2543,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -271,7 +271,6 @@
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.08-ticket-booking.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.09-e-commerce.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.11-live-betting.md",
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.17-youtube.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.18-dropbox.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.19-lyft.md",
@@ -1467,7 +1466,8 @@
    "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.04-data-retention-archival.md"
   ],
   "https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html": [
-   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.04-file-upload-apis.md"
+   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.04-file-upload-apis.md",
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.md"
   ],
   "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html": [
    "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.md"
@@ -1578,7 +1578,8 @@
    "20-backend/20.6-microservices/01-service-topology/20.6.1.04-strangler-fig.md"
   ],
   "https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/transactional-outbox.html": [
-   "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.06-transactional-outbox.md"
+   "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.06-transactional-outbox.md",
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.md"
   ],
   "https://docs.aws.amazon.com/serverless-application-model/": [
    "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md",
@@ -2485,6 +2486,12 @@
   ],
   "https://engineering.fb.com/2021/01/26/ml-applications/news-feed-ranking/": [
    "81-lanes-indian-sde-faang/81.19-meta-interview-guide.md"
+  ],
+  "https://engineering.fb.com/2025/05/21/production-engineering/journey-to-1000-models-scaling-instagrams-recommendation-system/": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.md"
+  ],
+  "https://engineering.fb.com/2025/11/17/ios/enhancing-hdr-on-instagram-for-ios-with-dolby-vision/": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.md"
   ],
   "https://engineering.fb.com/category/core-infra/": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.md"
@@ -3595,12 +3602,6 @@
   ],
   "https://ind.nl/en/required-amounts-income-requirements": [
    "80-lanes-abroad-full-stack/80.06-visa-relocation-playbook.md"
-  ],
-  "https://instagram-engineering.com/": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.md"
-  ],
-  "https://instagram-engineering.com/what-powers-instagram-hundreds-of-instances-dozens-of-technologies-62c0a4f5579f": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.md"
   ],
   "https://int.bahn.de/en/offers/regional/deutschland-ticket/": [
    "80-lanes-abroad-full-stack/80.14-berlin-dual-career-plan.md"
@@ -6680,9 +6681,6 @@
   ],
   "https://web.archive.org/web/20110317010636/http://highscalability.com/blog/2011/3/14/6-lessons-from-dropbox-one-million-files-saved-every-15-minu.html": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.18-dropbox.md"
-  ],
-  "https://web.archive.org/web/20120411161157/http://highscalability.com/blog/2012/4/9/the-instagram-architecture-facebook-bought-for-a-cool-billio.html": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.md"
   ],
   "https://web.archive.org/web/20131217183346/http://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying": [
    "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.01-real-time-architecture.md"

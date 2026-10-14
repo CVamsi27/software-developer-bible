@@ -450,6 +450,10 @@ Source: [Instagram System Design](30.2.2.16-instagram.md)
 
 **A:** Push works when the active follower fan-out is affordable and gives readers a prepared candidate list. Pull avoids enormous write amplification for high-fan-out authors but adds read work. Choose the boundary from measured active-follower cost and read latency, then bound and rank the merged candidates.
 
+**Q:** How can the author see a committed post immediately while follower feeds are eventually consistent?
+
+**A:** Commit the post to canonical storage, then serve the author's own recent posts as an overlay until follower fan-out catches up. This preserves read-your-writes for the author without making every follower-cache update part of the publication transaction.
+
 **Q:** How does the design enforce a 24-hour story lifetime if cleanup is delayed?
 
 **A:** Reads reject a story once `expires_at` has passed; cleanup only reclaims storage. Cache hits, search results and signed media delivery must follow the same expiry decision, or a stale copy can outlive the record's intended visibility.

@@ -1,6 +1,6 @@
 # System Design — Case Studies
 
-> **Study time:** ≈ 6 h 32 m of reading (32 files, ~12 min average).
+> **Study time:** ≈ 6 h 33 m of reading (32 files, ~12 min average).
 Applied examples of system design interviews. Read [../01-theory/](../01-theory/INDEX.md) first, then choose cases that match your interview goals.
 
 [![Files](https://img.shields.io/badge/files-32-blue)](../../../INDEX.md)
@@ -77,7 +77,7 @@ The 31 cases are grouped by the kind of reasoning they practice. Use the tiers a
 | 26 | [Distributed ID Generator](30.2.2.26-distributed-id-generator.md) | Web (foundational) | Snowflake capacity, restart-safe clocks, stale-owner fencing, range allocation, UUIDv7 ordering | Important | Important |
 | 27 | [Ad Click Aggregator](30.2.2.27-ad-click-aggregator.md) | Platform & Telemetry | Producer identity, exact dedup, late-event corrections, revisioned totals, auditable settlement | Important | Important |
 | 28 | [Parking Lot](30.2.2.28-parking-lot.md) | Infrastructure & LLD | Atomic spot ownership, compatible allocation, versioned fees, payment outcomes, physical reconciliation | Important | Important |
-| 29 | [Distributed Cache](30.2.2.29-distributed-cache.md) | Infrastructure & LLD | Consistent hashing, replication, eviction policies, cache stampede, hot key handling | Important | Important |
+| 29 | [Distributed Cache](30.2.2.29-distributed-cache.md) | Infrastructure & LLD | Scoped keys, stale-fill races, partition and failover, hot-key control, origin-safe recovery | Important | Important |
 | 30 | [Message Queue](30.2.2.30-message-queue.md) | Infrastructure & LLD | WAL, consumer groups, delivery guarantees, backpressure, Kafka vs RabbitMQ comparison | Important | Important |
 | 31 | [API Gateway](30.2.2.31-api-gateway.md) | Infrastructure & LLD | Routing, rate limiting, JWT validation, BFF pattern, circuit breaker, protocol translation | Important | Important |
 

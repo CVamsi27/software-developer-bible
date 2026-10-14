@@ -1430,7 +1430,7 @@
   "https://docs.aws.amazon.com/AmazonECR/latest/userguide/pull-through-cache.html": [
    "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md"
   ],
-  "https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/WhatIs.html": [
+  "https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/WhatIs.html": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.29-distributed-cache.md"
   ],
   "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html": [
@@ -5852,7 +5852,8 @@
   ],
   "https://redis.io/docs/latest/operate/oss_and_stack/reference/cluster-spec/": [
    "20-backend/20.1-node.js/04-security-and-operations/20.1.4.04-interview-questions.md",
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.29-distributed-cache.md"
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.29-distributed-cache.md",
+   "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
   ],
   "https://redis.io/docs/latest/operate/oss_and_stack/stack-with-enterprise/release-notes/redisce/redisos-8.0-release-notes/": [
    "20-backend/20.8-caching/20.8.02-redis-fundamentals.md"

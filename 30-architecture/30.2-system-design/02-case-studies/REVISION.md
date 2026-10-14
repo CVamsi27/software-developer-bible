@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-22_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-23_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
 
@@ -749,6 +749,14 @@ Source: [Distributed Cache System Design](30.2.2.29-distributed-cache.md)
 **Q:** Does a five-minute TTL guarantee the cached value is at most five minutes old?
 
 **A:** No. TTL measures time since insertion. A slow loader can insert an old origin snapshot just before insertion and keep it for another five minutes; record source version/observation time when source age matters.
+
+**Q:** What does a Redis Cluster hash tag enable for a multi-key command, and what can it cost?
+
+**A:** It maps the selected keys to the same hash slot so a supported multi-key command can run on one owner. Concentrating keys also concentrates traffic and can create a hot slot. See the [Redis Cluster specification](https://redis.io/docs/latest/operate/oss_and_stack/reference/cluster-spec/).
+
+**Q:** Why can reading from a cache replica return an older value after an acknowledged write?
+
+**A:** Redis Cluster replicates asynchronously, so a primary can acknowledge a write before its replica receives it; failover may also lose an acknowledged write. Use replica reads only when that staleness and loss contract is acceptable. See the [Redis Cluster specification](https://redis.io/docs/latest/operate/oss_and_stack/reference/cluster-spec/).
 
 ## Message Queue System Design
 

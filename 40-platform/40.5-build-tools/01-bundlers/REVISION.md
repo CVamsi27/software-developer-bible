@@ -62,6 +62,18 @@ Source: [Turbopack](40.5.1.03-turbopack.md)
 
 **A:** Turbopack bundles module graphs inside Next.js. Turborepo schedules workspace tasks and caches their declared outputs, which may be produced by Turbopack or another tool.
 
+**Q:** How should a team compare Turbopack build-cache results across local development and CI?
+
+**A:** Development filesystem caching is stable and on by default from Next.js 16.1; build filesystem caching is on by default from 16.3. The build cache is useful only when CI preserves `.next/cache`, so report cold and warm runs separately and use a cache key tied to the lockfile, Next.js version, and build configuration. See [Turbopack's cache lifetimes](40.5.1.03-turbopack.md#the-cache-has-two-lifetimes), the [official API reference](https://nextjs.org/docs/app/api-reference/turbopack), and the [Next.js 16.3 release](https://nextjs.org/blog/next-16-3).
+
+**Q:** What must be verified when a Next.js app depends on a Webpack loader or plugin?
+
+**A:** Turbopack supports only part of the Webpack loader API, requires loaders to emit JavaScript, and does not run Webpack plugins. Exercise each needed rule in both `next dev` and `next build`; keep `--webpack` for an unsupported required integration until an alternative is tested. See [the compatibility boundary](40.5.1.03-turbopack.md#keep-migration-compatibility-explicit) and the [official reference](https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack).
+
+**Q:** What can a Turbopack trace establish, and what does it not establish?
+
+**A:** A trace shows where a particular development run spent time and how module work is related. It helps locate a slow route or update, but it does not prove a migration improves the user-facing workload; collect comparable measurements and inspect paths and workload details before sharing it. See [the measurement path](40.5.1.03-turbopack.md#measure-the-actual-task) and the [official tracing guide](https://nextjs.org/docs/app/guides/local-development).
+
 ## Rspack
 
 Source: [Rspack](40.5.1.04-rspack.md)

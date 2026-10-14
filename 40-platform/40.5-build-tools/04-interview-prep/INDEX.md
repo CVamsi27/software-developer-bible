@@ -1,6 +1,6 @@
 # Interview Prep — Build Tools
 
-> **Study time:** ≈ 7 min of reading (1 file, ~7 min average).
+> **Study time:** ≈ 8 min of reading (1 file, ~8 min average).
 > **1 file, 35 curated questions with answers.** Tree shaking internals, code-splitting strategy, and tool-selection judgment.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](#file-index)

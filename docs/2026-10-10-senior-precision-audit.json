@@ -14046,19 +14046,26 @@
       "state": "revised",
       "scan_candidates": [],
       "claims_checked": [
-        "Definition and terminology",
-        "Mechanism and boundaries",
-        "Examples and failure cases",
-        "Version/tooling claims",
-        "Internal and source links"
+        "Practical and textbook definitions plus first-principles derivation",
+        "Incremental invalidation across Next.js client, server and RSC outputs",
+        "Next.js 16.4 default bundler status and version-specific cache behavior",
+        "Development and build filesystem-cache lifetimes and CI persistence",
+        "Webpack loader/plugin compatibility, aliases and extension resolution",
+        "Next.js 16.4 lazy dynamic-import scope and Turbopack trace workflow",
+        "Bundlers index, revision companion, interview coverage and references"
       ],
       "sources": [
-        "https://nextjs.org/blog",
-        "https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack"
+        "https://nextjs.org/docs/app/api-reference/turbopack",
+        "https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack",
+        "https://nextjs.org/blog/next-16-3",
+        "https://nextjs.org/blog/next-16-4",
+        "https://nextjs.org/blog/turbopack-incremental-computation",
+        "https://nextjs.org/docs/app/guides/local-development",
+        "https://turbo.build/repo"
       ],
-      "disposition": "Read end to end. Corrected technical wording, stale version context, or a sample where noted; retained accurate material.",
-      "validation": "Manual technical review.",
-      "current_sha256": "283641ea3362bfe4776985f75dcaaafd6ecd28d0b27616658f232c6c164ec456"
+      "disposition": "Rebuilt the chapter as one edit-to-output trace. Preserved the practical and textbook definitions and separate First Principles derivation; explained fine-grained invalidation, browser/server/RSC targets, dev and build cache lifetimes, Next 16.4 changes, loader/plugin migration limits, realistic benchmark states and traces. Updated the category index, source-linked revision questions and senior interview bank. Corrected and bounded current-version claims against current Next.js documentation.",
+      "validation": "Checked Next.js 16.3 and 16.4 release notes, current Turbopack API/configuration references, the incremental-computation article and local-development tracing guide; all four new official URLs returned HTTP 200. All 30 repository gates passed; standalone link checking found 10,816 links and 167 anchors with zero issues; the 2,580-URL baseline has no drift. Writer fixed-point, Ruby 3.4.11 production Jekyll build, site-wide rendered-heading scan, focused one-H1/section assertions, and git diff --check passed. The config example was checked against current docs; no Next.js app build is claimed.",
+      "current_sha256": "ee36cdd5e7c2d215375df0fdedf538ac0d52180620ae53406c6a4e6027cb5ef5"
     },
     {
       "path": "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md",

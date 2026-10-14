@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2576,
+ "url_count": 2580,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -4705,6 +4705,16 @@
   "https://next-auth.js.org/": [
    "10-frontend/10.4-next.js/04-production/10.4.4.01-authentication.md"
   ],
+  "https://nextjs.org/blog/next-16-3": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md",
+   "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
+  ],
+  "https://nextjs.org/blog/next-16-4": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md"
+  ],
+  "https://nextjs.org/blog/turbopack-incremental-computation": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md"
+  ],
   "https://nextjs.org/docs/app": [
    "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md"
   ],
@@ -4728,7 +4738,8 @@
    "10-frontend/10.5-form-handling/10.5.05-server-actions-and-form-patterns.md"
   ],
   "https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack": [
-   "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md"
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md",
+   "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
   ],
   "https://nextjs.org/docs/app/api-reference/directives/use-cache": [
    "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md"
@@ -4800,7 +4811,8 @@
    "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.05-incremental-static-regeneration.md"
   ],
   "https://nextjs.org/docs/app/api-reference/turbopack": [
-   "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md"
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md",
+   "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
   ],
   "https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations": [
    "10-frontend/10.5-form-handling/10.5.07-interview-questions.md"
@@ -4884,6 +4896,10 @@
   ],
   "https://nextjs.org/docs/app/guides/lazy-loading": [
    "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.04-client-components.md"
+  ],
+  "https://nextjs.org/docs/app/guides/local-development": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md",
+   "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
   ],
   "https://nextjs.org/docs/app/guides/migrating/app-router-migration": [
    "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.03-interview-questions.md"

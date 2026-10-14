@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2582,
+ "url_count": 2587,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -2742,8 +2742,14 @@
   "https://git-scm.com/docs/git-bundle": [
    "40-platform/40.6-git-advanced/40.6.06-patch-and-bundle.md"
   ],
+  "https://git-scm.com/docs/git-cat-file": [
+   "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md"
+  ],
   "https://git-scm.com/docs/git-cherry-pick": [
    "40-platform/40.6-git-advanced/40.6.03-rebase-cherry-pick.md"
+  ],
+  "https://git-scm.com/docs/git-commit-tree": [
+   "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md"
   ],
   "https://git-scm.com/docs/git-format-patch": [
    "40-platform/40.6-git-advanced/40.6.06-patch-and-bundle.md"
@@ -2751,14 +2757,22 @@
   "https://git-scm.com/docs/git-gc": [
    "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md"
   ],
+  "https://git-scm.com/docs/git-hash-object": [
+   "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md"
+  ],
   "https://git-scm.com/docs/git-log": [
    "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md"
+  ],
+  "https://git-scm.com/docs/git-mktree": [
+   "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md"
   ],
   "https://git-scm.com/docs/git-rebase": [
    "40-platform/40.6-git-advanced/40.6.03-rebase-cherry-pick.md"
   ],
   "https://git-scm.com/docs/git-reflog": [
-   "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.md"
+   "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md",
+   "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://git-scm.com/docs/git-reset": [
    "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md"
@@ -2772,8 +2786,13 @@
   "https://git-scm.com/docs/git-submodule": [
    "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.md"
   ],
+  "https://git-scm.com/docs/git-update-ref": [
+   "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md"
+  ],
   "https://git-scm.com/docs/git-worktree": [
-   "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.md"
+   "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md",
+   "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://git-scm.com/docs/gitformat-pack": [
    "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md"
@@ -2785,7 +2804,8 @@
    "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.md"
   ],
   "https://git-scm.com/docs/gitrepository-layout": [
-   "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md"
+   "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://git-scm.com/docs/partial-clone": [
    "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.md"
@@ -5218,7 +5238,6 @@
    "40-platform/40.8-monorepo/40.8.03-nx.md"
   ],
   "https://ohshitgit.com/": [
-   "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md",
    "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md"
   ],
   "https://olm.operatorframework.io/docs/": [

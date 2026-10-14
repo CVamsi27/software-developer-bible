@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Git%20Advanced-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../docs/topic-importance.md)
 
@@ -25,6 +25,18 @@ Source: [Git Internals: Objects, Refs & Packfiles](40.6.01-git-internals-objects
 **Q:** Why should a repository tool not assume every branch is a 41-byte file?
 
 **A:** That describes a loose SHA-1 ref in the traditional files backend. References can be packed or use another backend, and object-ID length depends on repository format. Use Git's ref and object APIs rather than assuming on-disk filenames or byte lengths.
+
+**Q:** Why can `git reflog` fail to recover work after `git reset --hard`?
+
+**A:** A reflog records local ref movements; it does not store uncommitted file bytes. It can help locate a commit only while the entry and its objects remain available, and entries expire according to repository configuration. Preserve valuable work in a commit or verified backup. See [git-reflog](https://git-scm.com/docs/git-reflog).
+
+**Q:** Why can deleting a large file and committing the deletion leave the repository just as large?
+
+**A:** Earlier commits still reference the file's blob, so it remains reachable through retained history. Removing it from old history requires a coordinated rewrite, and storage is reclaimed only after all retained refs and cleanup policies allow it. See [Git at Scale](40.6.08-git-at-scale-lfs-partial-clones.md).
+
+**Q:** Why might `.git` be a file in a linked worktree, and where are its objects?
+
+**A:** A linked worktree uses a gitfile that points to per-worktree metadata. Its HEAD and index are separate, while the common Git directory holds shared objects and most repository metadata. Ask Git for paths with `git rev-parse --git-dir --git-common-dir`; see [repository layout](https://git-scm.com/docs/gitrepository-layout) and [git-worktree](https://git-scm.com/docs/git-worktree).
 
 ## Branching Strategies
 

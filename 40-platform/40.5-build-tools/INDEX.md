@@ -18,7 +18,7 @@
 | Bundlers | [01-bundlers/](01-bundlers/INDEX.md) | 4 | Webpack, Vite, Turbopack, Rspack — the main options |
 | Compilers | [02-compilers/](02-compilers/INDEX.md) | 2 | Babel, ESBuild/SWC — how JSX + TS get to JS |
 | Optimization & Comparison | [03-optimization-and-comparison/](03-optimization-and-comparison/INDEX.md) | 3 | Build optimization, asset pipelines (CSS/images/fonts), tool comparison — fast builds, small bundles |
-| Interview Prep | [04-interview-prep/](04-interview-prep/INDEX.md) | 1 | 35 Qs |
+| Interview Prep | [04-interview-prep/](04-interview-prep/INDEX.md) | 1 | 44 Qs |
 
 ---
 
@@ -67,7 +67,7 @@ How TS/JSX become browser-compatible JS.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 10 | [Interview Questions](04-interview-prep/40.5.4.01-interview-questions.md) | 35 curated questions with answers | Important | Specialized | 8 min |
+| 10 | [Interview Questions](04-interview-prep/40.5.4.01-interview-questions.md) | 44 curated questions with answers | Important | Specialized | 8 min |
 
 ---
 

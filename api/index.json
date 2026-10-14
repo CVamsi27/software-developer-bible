@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "a24e49164b844146e609d549c4194616c857eeef7e7e3ea2aa7aa6bd1192eea0",
+ "corpus_digest": "ef915e3fdc30b1816b13d596067f6047926254a65f86872f37d86870b8d099ff",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5238
+  "read_minutes": 5235
  },
  "chapters": [
   {
@@ -5676,7 +5676,7 @@
     "guide",
     "reference"
    ],
-   "m": 14
+   "m": 10
   },
   {
    "p": "40-platform/40.6-git-advanced/40.6.02-branching-strategies.html",
@@ -5792,7 +5792,7 @@
     "practice",
     "revision"
    ],
-   "m": 2
+   "m": 3
   },
   {
    "p": "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.html",

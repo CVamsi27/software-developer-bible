@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 75,
+    "pending": 74,
     "unchanged": 80,
-    "revised": 365,
-    "reviewed": 445,
+    "revised": 366,
+    "reviewed": 446,
     "topic_chapters": 520
   },
   "entries": [
@@ -6994,12 +6994,18 @@
       "path": "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md",
       "group": "40-platform/40.6-git-advanced",
       "title": "Git Internals: Objects, Refs & Packfiles",
-      "status": "pending",
-      "baseline_sha256": "6863ed57802ace42dff39a9a9bca8773eea2471397f85a7b4acc8535579f8564",
+      "status": "revised",
+      "baseline_sha256": "e67de7499f50e4586931ee9c6d4b0d262a5dc946ab58ccdd8485707487d83377",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do working-tree files and index entries become Git objects and a movable branch ref, and what can reflog recovery guarantee?",
+      "disposition": "Rebuilt the chapter as a file-to-index-to-object-to-commit-to-ref-to-pack/recovery trace. Clarified object types and identities, index versus commit snapshots, HEAD and tag behavior, linked-worktree state, reset/rebase/revert effects, and reflog expiry and recovery limits. Removed repeated catalogs; aligned the category index and added source-linked revision questions.",
+      "validation": [
+        "Current Git 2.56 manuals and Pro Git internals chapters checked; five new manual URLs returned HTTP 200.",
+        "Documented plumbing example executed in an isolated repository with Git 2.48.1 and an explicit author identity.",
+        "Fresh reader answered six object, ref, recovery, historical-blob and worktree questions; worktree state distinction clarified from feedback.",
+        "All 30 repository gates passed, including fixed-point; 10,823 local links and 184 anchors passed; 2,587-URL citation baseline clean.",
+        "Ruby 3.4.11 production Jekyll build, site-wide rendered-heading check and focused chapter assertions passed."
+      ]
     },
     {
       "path": "40-platform/40.6-git-advanced/40.6.02-branching-strategies.md",

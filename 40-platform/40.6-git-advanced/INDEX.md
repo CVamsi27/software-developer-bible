@@ -1,6 +1,6 @@
 # Git Advanced — Index
 
-> **Study time:** ≈ 1 h 26 m of reading (11 files, ~8 min average).
+> **Study time:** ≈ 1 h 23 m of reading (11 files, ~8 min average).
 > **11 files** — Advanced Git operations from the object model, branching strategies, rebase, cherry-pick, hooks, bisect, reflog, format-patch, code archaeology, LFS/partial clones, and commit signing to interview questions.
 
 [![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
@@ -31,7 +31,7 @@ Understand this once and `reset`, `rebase`, and recovery stop being scary.
 
 | # | File | Topics | When to read | Role priority | General importance | Read time |
 | --: | ------ | -------- | -------------- | --- | --- | ----------: |
-| 01 | [Git Internals: Objects, Refs & Packfiles](40.6.01-git-internals-objects-refs-packfiles.md) | blob/tree/commit/tag model, `hash-object`/`mktree` demos, HEAD & refs, packfiles/deltas, reflog safety net, gc/repack, how reset/rebase move refs, `.git` directory tour | First — it unlocks everything else | Important | Foundational | 14 min |
+| 01 | [Git Internals: Objects, Refs & Packfiles](40.6.01-git-internals-objects-refs-packfiles.md) | file-to-commit trace, object identities, refs and HEAD, pack storage, reset/rebase effects, reflog recovery limits, linked worktrees | First — it unlocks everything else | Important | Foundational | 10 min |
 
 ---
 

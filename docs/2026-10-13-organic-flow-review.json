@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 65,
+    "pending": 64,
     "unchanged": 80,
-    "revised": 375,
-    "reviewed": 455,
+    "revised": 376,
+    "reviewed": 456,
     "topic_chapters": 520
   },
   "entries": [
@@ -7047,12 +7047,17 @@
       "path": "40-platform/40.6-git-advanced/40.6.02-branching-strategies.md",
       "group": "40-platform/40.6-git-advanced",
       "title": "Branching Strategies",
-      "status": "pending",
-      "baseline_sha256": "6dda085e90efdf8f246c4f5ece162fe578bacc6b6ad58289e8f848446961fe9e",
+      "status": "revised",
+      "baseline_sha256": "2b21ae8ad89b90f8b92e9f6d51407d5e10b17e3599683a5eae359a3de7e4064e",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How should one reviewed change reach production and every still-supported release without bypassing review or validating the wrong dependency set?",
+      "disposition": "Rebuilt the chapter around the integration/release decision, clarified that GitHub Flow and trunk-based development can coexist, made classic Git Flow merge directions explicit, and replaced direct-to-main commands with a protected pull-request workflow. Added backport validation, release identity, flag retirement and branch-cleanup boundaries; updated the learning index and source-linked revision prompts.",
+      "validation": [
+        "Re-read in learning order; checked practical and textbook definitions, First Principles, one traced review workflow, release/backport boundaries, Summary and cross-references.",
+        "Checked GitHub Flow, trunk-based short-lived/release branches, Git Flow and Git command references; all four added citation URLs returned HTTP 200. An isolated bare-remote test passed branch creation, commit and upstream push.",
+        "All 30 repository verification gates passed, including writer fixed-point; standalone link check verified 10,828 links and 185 anchors with zero failures; citation baseline is clean at 2,598 URLs.",
+        "Ruby 3.4.11 production Jekyll build, site-wide rendered-heading scan, focused one-H1/section/workflow assertions, and git diff --check passed."
+      ]
     },
     {
       "path": "40-platform/40.6-git-advanced/40.6.03-rebase-cherry-pick.md",

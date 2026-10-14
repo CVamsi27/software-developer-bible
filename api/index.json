@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "b97829db3da4398df911368184d5790e20414fdd6ec9be7239205f79e33d474e",
+ "corpus_digest": "471232f082ad15cb2bf60bb094cfee020c5055cae4ef014f93e99e9a956efe25",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5238
+  "read_minutes": 5237
  },
  "chapters": [
   {
@@ -5688,7 +5688,7 @@
     "guide",
     "reference"
    ],
-   "m": 7
+   "m": 6
   },
   {
    "p": "40-platform/40.6-git-advanced/40.6.03-rebase-cherry-pick.html",

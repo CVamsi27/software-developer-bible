@@ -44,7 +44,15 @@ Source: [Branching Strategies](40.6.02-branching-strategies.md)
 
 **Q:** What should determine a branching strategy?
 
-**A:** Release cadence, integration frequency, support branches, and review/deployment controls. A named strategy cannot resolve those product constraints by itself.
+**A:** Start with integration frequency, number of versions still supported, release timing, and required review/CI controls. GitHub Flow describes a pull-request loop; trunk-based development describes frequent integration, so short reviewed branches can satisfy both. See [GitHub Flow](https://docs.github.com/en/get-started/using-github/github-flow) and [short-lived trunk branches](https://trunkbaseddevelopment.com/short-lived-feature-branches/).
+
+**Q:** A tested fix is on the trunk, but versions 2.4 and 2.5 are still supported. How should it reach them?
+
+**A:** Backport only the fix to each affected release line, then run that line's tests and release checks; the trunk result cannot validate older dependencies. Record the source and destination commits, owner, and artifact released. See the [release-branch guidance](https://trunkbaseddevelopment.com/branch-for-release/) and [Rebase & Cherry-Pick](40.6.03-rebase-cherry-pick.md).
+
+**Q:** Why does deleting a merged topic branch not identify what is deployed?
+
+**A:** A branch name is a movable reference and may be deleted after review. A release must record its exact source commit and artifact digest; deployment and rollback use those immutable identities rather than a branch label.
 
 ## Rebase & Cherry-Pick
 

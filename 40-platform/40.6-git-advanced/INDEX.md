@@ -1,6 +1,6 @@
 # Git Advanced — Index
 
-> **Study time:** ≈ 1 h 23 m of reading (11 files, ~8 min average).
+> **Study time:** ≈ 1 h 22 m of reading (11 files, ~7 min average).
 > **11 files** — Advanced Git operations from the object model, branching strategies, rebase, cherry-pick, hooks, bisect, reflog, format-patch, code archaeology, LFS/partial clones, and commit signing to interview questions.
 
 [![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
@@ -16,7 +16,7 @@
 | Category | Files | Why it matters |
 | ------------------------------------------ | ----: | ----------------------------------------------------------------------- |
 | [Internals](#internals) | 1 | Objects, refs, packfiles — the mental model behind every command |
-| [Branching & History](#branching--history) | 2 | Branching strategies + rebase/cherry-pick — the day-to-day |
+| [Branching & History](#branching--history) | 2 | Choose an integration/release path, then move or port commits safely |
 | [Automation](#automation) | 1 | Git hooks, Husky, commitlint — enforce standards |
 | [Advanced Commands](#advanced-commands) | 2 | Bisect, reflog, worktree, patches — the power tools |
 | [Investigation](#investigation) | 1 | Code archaeology — finding who/when/why |
@@ -41,17 +41,21 @@ How your team organizes work.
 
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
-| 02 | [Branching Strategies](40.6.02-branching-strategies.md) | Git Flow, GitHub Flow, trunk-based development, release branches | Pick the model for your team | Important | Foundational | 7 min |
+| 02 | [Branching Strategies](40.6.02-branching-strategies.md) | Integration cadence, review policy, Git Flow, trunk-based delivery, supported release lines | Choose from release and support needs, not team-size labels | Important | Foundational | 6 min |
 | 03 | [Rebase & Cherry-Pick](40.6.03-rebase-cherry-pick.md) | Interactive rebase, conflict resolution, cherry-pick workflows | Linear history, porting fixes | Important | Foundational | 8 min |
+
+GitHub Flow and trunk-based development can coexist: one describes a pull-request review path, while the other emphasizes short integration cycles. Choose review controls and release-line ownership separately.
 
 **Decision:**
 
 ```text
-What branching model?
-├── Open-source / many contributors → GitHub Flow (PR per feature)
-├── Multiple production versions → Git Flow (develop/release/hotfix)
-├── High-velocity team / strong CI → Trunk-based (short-lived branches, feature flags)
-└── Independent release lines → evaluate scoped support branches and explicit backports
+What does the product need?
+├── One active release line, frequent integration → trunk-based development
+│   └── Use reviewed short-lived branches when the repository requires a PR
+├── A clear PR loop, releases from the default branch → GitHub Flow
+├── Planned version preparation plus a separate integration line → Git Flow
+└── Several older versions still supported → trunk + scoped release branches
+    └── Define who backports, what runs on each line, and when each line closes
 ```
 
 ---
@@ -105,7 +109,7 @@ Keeping large repositories fast and history trustworthy.
 ## Suggested Study Order
 
 1. **Git Internals** — the object model makes everything else click
-2. **Branching Strategies** — must know (you'll be asked what your team uses)
+2. **Branching Strategies** — explain integration cadence, review gates, and supported releases before naming a model
 3. **Rebase & Cherry-Pick** — must know
 4. **Git Hooks** — for senior roles
 5. **Advanced Commands** — for the "what would you do if…" questions

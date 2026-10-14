@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2595,
+ "url_count": 2598,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -1933,7 +1933,8 @@
    "20-backend/20.5-security/01-auth/20.5.1.03-api-keys.md"
   ],
   "https://docs.github.com/en/get-started/using-github/github-flow": [
-   "40-platform/40.6-git-advanced/40.6.02-branching-strategies.md"
+   "40-platform/40.6-git-advanced/40.6.02-branching-strategies.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry": [
    "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md"
@@ -2740,7 +2741,6 @@
    "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md"
   ],
   "https://git-scm.com/docs": [
-   "40-platform/40.6-git-advanced/40.6.02-branching-strategies.md",
    "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.md",
    "40-platform/40.6-git-advanced/40.6.10-interview-questions.md"
   ],
@@ -2781,6 +2781,9 @@
   "https://git-scm.com/docs/git-mktree": [
    "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md"
   ],
+  "https://git-scm.com/docs/git-push": [
+   "40-platform/40.6-git-advanced/40.6.02-branching-strategies.md"
+  ],
   "https://git-scm.com/docs/git-rebase": [
    "40-platform/40.6-git-advanced/40.6.03-rebase-cherry-pick.md"
   ],
@@ -2800,6 +2803,9 @@
   ],
   "https://git-scm.com/docs/git-submodule": [
    "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.md"
+  ],
+  "https://git-scm.com/docs/git-switch": [
+   "40-platform/40.6-git-advanced/40.6.02-branching-strategies.md"
   ],
   "https://git-scm.com/docs/git-update-ref": [
    "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md"
@@ -6645,8 +6651,13 @@
   "https://trpc.io/docs/": [
    "10-frontend/10.5-form-handling/10.5.02-zod.md"
   ],
-  "https://trunkbaseddevelopment.com/": [
-   "40-platform/40.6-git-advanced/40.6.02-branching-strategies.md"
+  "https://trunkbaseddevelopment.com/branch-for-release/": [
+   "40-platform/40.6-git-advanced/40.6.02-branching-strategies.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
+  ],
+  "https://trunkbaseddevelopment.com/short-lived-feature-branches/": [
+   "40-platform/40.6-git-advanced/40.6.02-branching-strategies.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://turbo.build/": [
    "40-platform/40.8-monorepo/40.8.02-turborepo.md",
@@ -7193,7 +7204,6 @@
    "40-platform/40.4-observability/05-interview-prep/40.4.5.01-interview-questions.md"
   ],
   "https://www.atlassian.com/git/tutorials": [
-   "40-platform/40.6-git-advanced/40.6.02-branching-strategies.md",
    "40-platform/40.6-git-advanced/40.6.03-rebase-cherry-pick.md",
    "40-platform/40.6-git-advanced/40.6.10-interview-questions.md"
   ],

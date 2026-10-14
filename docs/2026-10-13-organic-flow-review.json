@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 74,
+    "pending": 67,
     "unchanged": 80,
-    "revised": 366,
-    "reviewed": 446,
+    "revised": 373,
+    "reviewed": 453,
     "topic_chapters": 520
   },
   "entries": [
@@ -6895,45 +6895,61 @@
       "path": "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md",
       "group": "40-platform/40.5-build-tools/01-bundlers",
       "title": "Webpack",
-      "status": "pending",
-      "baseline_sha256": "d9dd04cb6ad6ffe1dedaa44de0675603cd0e77927c20b5630cbf0bd281fbf92d",
+      "status": "revised",
+      "baseline_sha256": "170afd0633e44ca1bfd59bcd122ac970accdeb40161cf487c327690c61ac78e3",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How does a static import become emitted output, and when do lazy chunks, native CSS/HTML handling, or HMR change the result?",
+      "disposition": "Re-read the entry-to-graph-to-chunk path and the feature-on-demand example. Made the 5.109+ native CSS/HTML auto behavior precise, retained the experimental compatibility limits, added official guides and a source-linked recall prompt, and opened with the user-visible chunk-loading trade-off.",
+      "validation": [
+        "Webpack 5.111.1 feature-chunk fixture and output assertions passed in an isolated directory in the original chapter checkpoint.",
+        "Directly checked the current official native CSS and native HTML guides: both default to auto since 5.109 but remain experimental and have compatibility gaps.",
+        "All 30 repository gates passed, including writer fixed-point; standalone link checking verified 10,824 links and 185 anchors with zero failures; citation baseline is clean at 2,589 URLs. Ruby 3.4.11 production Jekyll build, site-wide rendered-heading sweep, 13 focused rendered assertions and git diff --check passed."
+      ]
     },
     {
       "path": "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.md",
       "group": "40-platform/40.5-build-tools/01-bundlers",
       "title": "Vite",
-      "status": "pending",
-      "baseline_sha256": "39701424e34a034cb765dc556f4e59982fe54334512ca2bb9122be325f58afd3",
+      "status": "revised",
+      "baseline_sha256": "c757abef22c9426a1fc63337db9487e64864f6945c18b3d26d7542103ac96f23",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Why does Vite serve application modules on demand in development while pre-bundling dependencies and bundling production output?",
+      "disposition": "Re-read the chapter with its Bundlers index and revision companion, following one import from HTML entry through dependency pre-bundling, HMR, production output and deployment. Retained the distinct Vite 8.3/Rolldown/Oxc roles and explicit mode, type-checking, plugin and old-chunk boundaries.",
+      "validation": [
+        "Current Vite release policy confirms 8.3 is supported and Vite 8.1 bundled development remains experimental and opt-in.",
+        "The isolated React fixture built with Vite 8.3.4 and verified base-path asset URLs plus JavaScript and CSS output in the original chapter checkpoint.",
+        "All 30 repository gates passed, including writer fixed-point; standalone link checking verified 10,824 links and 185 anchors with zero failures; citation baseline is clean at 2,589 URLs. Ruby 3.4.11 production Jekyll build, site-wide rendered-heading sweep, 13 focused rendered assertions and git diff --check passed."
+      ]
     },
     {
       "path": "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md",
       "group": "40-platform/40.5-build-tools/01-bundlers",
       "title": "Turbopack",
-      "status": "pending",
-      "baseline_sha256": "283641ea3362bfe4776985f75dcaaafd6ecd28d0b27616658f232c6c164ec456",
+      "status": "revised",
+      "baseline_sha256": "2fbbdb1086fc15982c1c0521cccba7561e5d1ec4b5b4cc9bf6851059e76e26ab",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How should incremental invalidation, cache lifetime, framework compatibility and runtime output shape a Turbopack decision?",
+      "disposition": "Re-read the edit-to-output flow and current Next.js 16.3/16.4 boundaries. Clarified the official-source disagreement: 16.3 release notes say build filesystem caching is enabled by default, while the current API reference still labels it opt-in; advise checking the exact version-matched documentation before CI changes.",
+      "validation": [
+        "Directly checked the official Next.js 16.3 and 16.4 release posts, Turbopack API/config references and trace guidance; current sources support the lazy server update, shared runtime and lazy dynamic-import limits.",
+        "The documented configuration was reviewed against current references; no Next.js application build is claimed.",
+        "All 30 repository gates passed, including writer fixed-point; standalone link checking verified 10,824 links and 185 anchors with zero failures; citation baseline is clean at 2,589 URLs. Ruby 3.4.11 production Jekyll build, site-wide rendered-heading sweep, 13 focused rendered assertions and git diff --check passed."
+      ]
     },
     {
       "path": "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md",
       "group": "40-platform/40.5-build-tools/01-bundlers",
       "title": "Rspack",
-      "status": "pending",
-      "baseline_sha256": "c6c1ab305a9ee2742915ea1c89f568e9c0c7360803a005c5578bb90ed92b393c",
+      "status": "revised",
+      "baseline_sha256": "e26b711a1468d42346ffd4e14baf84f0c6582f8afd199364c60a8d01df461790",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can a Webpack team prove that Rspack preserves required compiler, plugin, cache and runtime behavior?",
+      "disposition": "Re-read the typed-module fixture, migration path, cache distinction and runtime federation boundary with the bundler index and revision companion. Kept the Webpack-compatible interface as a migration hypothesis to test, not a guarantee, and separated SWC transformation from program type checking.",
+      "validation": [
+        "Checked current Rspack 2.2 release, migration, cache, built-in SWC loader, compiler lifecycle and plugin references in the original chapter checkpoint.",
+        "Ran the exact typed-module fixture with @rspack/core 2.2.9 on Node.js 23.7.0; it emitted and executed the expected output.",
+        "All 30 repository gates passed, including writer fixed-point; standalone link checking verified 10,824 links and 185 anchors with zero failures; citation baseline is clean at 2,589 URLs. Ruby 3.4.11 production Jekyll build, site-wide rendered-heading sweep, 13 focused rendered assertions and git diff --check passed."
+      ]
     },
     {
       "path": "40-platform/40.5-build-tools/02-compilers/40.5.2.01-babel.md",
@@ -6961,34 +6977,46 @@
       "path": "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.01-build-optimization.md",
       "group": "40-platform/40.5-build-tools/03-optimization-and-comparison",
       "title": "Build Optimization",
-      "status": "pending",
-      "baseline_sha256": "ad77c0f7e7e1cb8beb5faa231587fb88d056526d58908319ca401c88b739c6c9",
+      "status": "revised",
+      "baseline_sha256": "ea2ab7ee5f984a9a2d75096484195a68b1ea151793d4d8d73602bee65343a069",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do you trace an optimization from module reachability through emitted assets to route-level browser evidence?",
+      "disposition": "Re-read as one route trace, keeping compiler work, encoded asset size, route transfer and user-facing metrics distinct. Preserved the failure behavior for missing manifest evidence, the `sideEffects` boundary, cache identity and safe hashed-asset rollout.",
+      "validation": [
+        "Checked current Webpack tree-shaking/code-splitting, Vite build, web.dev LCP/Web Vitals, RFC 9110 and Node.js zlib sources in the original chapter checkpoint.",
+        "The measurement fixture produced raw/gzip/Brotli sizes of 3200/76/40 bytes; this is a file-size sample, not a route-performance claim.",
+        "All 30 repository gates passed, including writer fixed-point; standalone link checking verified 10,824 links and 185 anchors with zero failures; citation baseline is clean at 2,589 URLs. Ruby 3.4.11 production Jekyll build, site-wide rendered-heading sweep, 13 focused rendered assertions and git diff --check passed."
+      ]
     },
     {
       "path": "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md",
       "group": "40-platform/40.5-build-tools/03-optimization-and-comparison",
       "title": "Asset Pipelines — CSS, Images & Fonts",
-      "status": "pending",
-      "baseline_sha256": "3dfc47bb709646808eb86af9b6c6eabe869aac88402ba9414d5ca56b476ee96e",
+      "status": "revised",
+      "baseline_sha256": "3a7e1c5a202ad47be6b17bf2d1df55df9b76e4881b52e96bb61fa3dba1773580",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How does an asset move from source through transformation and browser selection to a safe deployed URL?",
+      "disposition": "Re-read the source-to-request-to-release flow alongside the category index and revision companion. Kept responsive image selection, font coverage/metric shifts, bounded image processing, CSS pipeline roles and immutable deployment identity attached to the relevant decision.",
+      "validation": [
+        "Checked current Vite, Tailwind, sharp, responsive-image, fetch-priority, CSS Fonts, cache-header and source-map documentation in the original chapter checkpoint.",
+        "Ran the documented sharp example on Node.js 23.7.0; the fixture emitted a verified WebP and nested output directory.",
+        "All 30 repository gates passed, including writer fixed-point; standalone link checking verified 10,824 links and 185 anchors with zero failures; citation baseline is clean at 2,589 URLs. Ruby 3.4.11 production Jekyll build, site-wide rendered-heading sweep, 13 focused rendered assertions and git diff --check passed."
+      ]
     },
     {
       "path": "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md",
       "group": "40-platform/40.5-build-tools/03-optimization-and-comparison",
       "title": "Build Tool Comparison",
-      "status": "pending",
-      "baseline_sha256": "2d70f2b3cf45b7190cfc380b33746f2f8db9ff1553907b2b1b5e40d00198e8bc",
+      "status": "revised",
+      "baseline_sha256": "f05a5bbd46193570c220cbdd23630c3e7bb32ea442878180e5417dc7089a67bd",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do you compare build tools that own different layers and prove a migration on equivalent work?",
+      "disposition": "Re-read the layer map, controlled workload matrix and representative migration slice with the comparison index and revision companion. Preserved the distinction between framework, dev/build workflow, bundler, compiler and task orchestration; made no unsupported application speedup claim.",
+      "validation": [
+        "Checked current official Vite, Next.js, Webpack and Rspack release/migration sources, plus esbuild, Rollup, Turborepo and Nx references in the original chapter checkpoint.",
+        "The benchmark guidance compares the same source, toolchain, machine, integration set and cache state; no candidate application benchmark is claimed.",
+        "All 30 repository gates passed, including writer fixed-point; standalone link checking verified 10,824 links and 185 anchors with zero failures; citation baseline is clean at 2,589 URLs. Ruby 3.4.11 production Jekyll build, site-wide rendered-heading sweep, 13 focused rendered assertions and git diff --check passed."
+      ]
     },
     {
       "path": "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md",

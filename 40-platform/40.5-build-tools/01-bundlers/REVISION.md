@@ -30,6 +30,10 @@ Source: [Webpack](40.5.1.01-webpack.md)
 
 **A:** `asset/resource` emits a separately cacheable file and exports its URL; `asset/inline` puts a data URI into the referring output. The automatic `asset` type chooses between these forms by a size threshold. See [Webpack Asset Modules](40.5.1.01-webpack.md#follow-one-import-through-the-build) and the [official Asset Modules guide](https://webpack.js.org/guides/asset-modules/).
 
+**Q:** In Webpack 5.109 and later, does native CSS/HTML handling in `auto` mode mean existing loaders and plugins can always be removed?
+
+**A:** No. A matching rule can keep the existing loader path, and the built-in CSS and HTML features remain experimental with gaps in loader and plugin behavior. Check the pinned release and migrate one rule or entry at a time. See [Webpack's native CSS and HTML boundary](40.5.1.01-webpack.md#follow-one-import-through-the-build), the [native CSS guide](https://webpack.js.org/guides/native-css/) and the [native HTML guide](https://webpack.js.org/guides/native-html/).
+
 ## Vite
 
 Source: [Vite](40.5.1.02-vite.md)
@@ -64,7 +68,7 @@ Source: [Turbopack](40.5.1.03-turbopack.md)
 
 **Q:** How should a team compare Turbopack build-cache results across local development and CI?
 
-**A:** Development filesystem caching is stable and on by default from Next.js 16.1; build filesystem caching is on by default from 16.3. The build cache is useful only when CI preserves `.next/cache`, so report cold and warm runs separately and use a cache key tied to the lockfile, Next.js version, and build configuration. See [Turbopack's cache lifetimes](40.5.1.03-turbopack.md#the-cache-has-two-lifetimes), the [official API reference](https://nextjs.org/docs/app/api-reference/turbopack), and the [Next.js 16.3 release](https://nextjs.org/blog/next-16-3).
+**A:** Next.js 16.1 made development filesystem caching stable and enabled it by default. The 16.3 release notes say build filesystem caching works and is enabled by default, while the current API reference still calls the build option opt-in. Verify the version-matched behavior before changing CI configuration; when caching is enabled, CI must preserve `.next/cache` for warm builds. Compare cold and warm runs separately and key the cache to the lockfile, Next.js version and build configuration. See [Turbopack's cache lifetimes](40.5.1.03-turbopack.md#the-cache-has-two-lifetimes), the [official API reference](https://nextjs.org/docs/app/api-reference/turbopack), and the [Next.js 16.3 release](https://nextjs.org/blog/next-16-3).
 
 **Q:** What must be verified when a Next.js app depends on a Webpack loader or plugin?
 

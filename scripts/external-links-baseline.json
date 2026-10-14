@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2587,
+ "url_count": 2589,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -6951,6 +6951,14 @@
    "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.01-build-optimization.md"
   ],
   "https://webpack.js.org/guides/hot-module-replacement/": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md",
+   "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
+  ],
+  "https://webpack.js.org/guides/native-css/": [
+   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md",
+   "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
+  ],
+  "https://webpack.js.org/guides/native-html/": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md",
    "40-platform/40.5-build-tools/01-bundlers/REVISION.md"
   ],

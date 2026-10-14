@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "ef915e3fdc30b1816b13d596067f6047926254a65f86872f37d86870b8d099ff",
+ "corpus_digest": "5fb8bd17c5241aeaeeefd9ec53baf670255d0f18e326cfcb13bdb704ab2ba52a",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5235
+  "read_minutes": 5236
  },
  "chapters": [
   {
@@ -5521,7 +5521,7 @@
     "reference",
     "tool"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.html",

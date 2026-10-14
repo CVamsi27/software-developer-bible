@@ -55,3 +55,11 @@ The user clarified that the complete authored lesson must remain unchanged. Use 
 - [x] Version the theme script through its existing config owner so cached clients receive updated behavior.
 - [x] Reproduce and fix final-section outline highlighting at the document bottom.
 - [x] Verify real tab order, keyboard code scrolling, end-of-chapter focus/highlighting and both themes; run focused tests, build and repository verification.
+
+
+## Listen and width refinement
+
+- [x] Align playback border joins, icons, typography, hover and focus states.
+- [x] Widen the width selector so Comfortable is visible in full; preserve native select behavior.
+- [x] Wrap independent playback and width groups on phones; verify 44px targets, both themes and persisted settings.
+- [x] Save desktop/mobile evidence, run tests, build and repository gates; commit in the isolated branch.

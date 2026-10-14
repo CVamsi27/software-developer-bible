@@ -66,7 +66,7 @@ PAGE = """<!DOCTYPE html>
 <script src="{THEME_SRC}"></script>
 <link rel="stylesheet" href="assets/search-ui.css?v=study-flow-9">
 <link rel="stylesheet" href="assets/reading-ui.css?v=study-flow-9">
-<link rel="stylesheet" href="assets/reference-reader.css?v=reference-6">
+<link rel="stylesheet" href="assets/reference-reader.css?v=reference-8">
 <script src="assets/study-state.js" defer></script>
 <script src="assets/roadmap-return.js?v=study-flow-9" defer></script>
 <script src="assets/reading-ui.js?v=study-flow-9" defer></script>

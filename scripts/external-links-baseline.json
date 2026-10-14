@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2600,
+ "url_count": 2603,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -2739,7 +2739,6 @@
    "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md"
   ],
   "https://git-scm.com/docs": [
-   "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.md",
    "40-platform/40.6-git-advanced/40.6.10-interview-questions.md"
   ],
   "https://git-scm.com/docs/git-am": [
@@ -2747,7 +2746,8 @@
   ],
   "https://git-scm.com/docs/git-bisect": [
    "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.md",
-   "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md"
+   "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://git-scm.com/docs/git-blame": [
    "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md"
@@ -2802,7 +2802,13 @@
    "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://git-scm.com/docs/git-reset": [
-   "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md"
+   "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md",
+   "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
+  ],
+  "https://git-scm.com/docs/git-revert": [
+   "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://git-scm.com/docs/git-send-email": [
    "40-platform/40.6-git-advanced/40.6.06-patch-and-bundle.md"
@@ -2810,8 +2816,13 @@
   "https://git-scm.com/docs/git-sparse-checkout": [
    "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.md"
   ],
+  "https://git-scm.com/docs/git-stash": [
+   "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
+  ],
   "https://git-scm.com/docs/git-submodule": [
-   "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.md"
+   "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://git-scm.com/docs/git-switch": [
    "40-platform/40.6-git-advanced/40.6.02-branching-strategies.md"
@@ -3135,6 +3146,9 @@
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.md"
   ],
   "https://github.com/git-tips/tips": [
+   "40-platform/40.6-git-advanced/40.6.10-interview-questions.md"
+  ],
+  "https://github.com/git/git/blob/master/contrib/subtree/git-subtree.adoc": [
    "40-platform/40.6-git-advanced/40.6.10-interview-questions.md"
   ],
   "https://github.com/github/git-sizer": [

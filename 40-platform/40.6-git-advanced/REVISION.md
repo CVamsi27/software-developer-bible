@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Git%20Advanced-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../docs/topic-importance.md)
 
@@ -101,6 +101,26 @@ Source: [Git Advanced Commands](40.6.05-git-advanced-commands.md)
 **Q:** When is revert safer than reset on a shared branch?
 
 **A:** Revert adds a compensating commit without removing shared history. Reset moves a ref and can discard or require rewriting commits others already use.
+
+**Q:** What must remain true for `git bisect` to identify the first commit that changed a property?
+
+**A:** The good and bad endpoints must be correct, and every tested revision must be classified against the same observable test. If the test setup fails for an unrelated reason, skip that revision instead of calling it bad; skips near the transition can leave multiple candidates. See the [git-bisect manual](https://git-scm.com/docs/git-bisect).
+
+**Q:** What can a reflog recover after a reset, and what evidence should you check before relying on it?
+
+**A:** A reflog can name a previous local ref value. Inspect whether its object still exists, then create a rescue branch before changing the checkout. Reflog entries expire and do not contain uncommitted file bytes. See the [git-reflog manual](https://git-scm.com/docs/git-reflog).
+
+**Q:** When is a stash a better fit than a worktree, and what does each preserve?
+
+**A:** A stash is a local snapshot for briefly clearing one checkout; include untracked or ignored files explicitly and inspect the result before dropping it. A linked worktree gives a second checkout with its own index and `HEAD`, but shares repository storage and is not a backup. See the [git-stash](https://git-scm.com/docs/git-stash) and [git-worktree](https://git-scm.com/docs/git-worktree) manuals.
+
+**Q:** How does `git submodule update --remote` differ from the default update?
+
+**A:** The default restores the commit recorded by the superproject’s gitlink. `--remote` selects a configured remote-tracking tip, which can change the gitlink and therefore requires review and a parent-repository commit. See the [git-submodule manual](https://git-scm.com/docs/git-submodule).
+
+**Q:** Why does reset’s `--hard` mode require more care than revert on a published branch?
+
+**A:** `reset --hard` moves the current branch and replaces the index and tracked working files with the target, potentially overwriting untracked paths. Revert records a new inverse-change commit, so collaborators can keep using the published ancestry. A merge revert also needs an intentional mainline choice. See the [git-reset](https://git-scm.com/docs/git-reset) and [git-revert](https://git-scm.com/docs/git-revert) manuals.
 
 ## Git Patch & Bundle
 

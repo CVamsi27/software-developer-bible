@@ -1,6 +1,6 @@
 # Git Advanced — Index
 
-> **Study time:** ≈ 1 h 26 m of reading (11 files, ~8 min average).
+> **Study time:** ≈ 1 h 21 m of reading (11 files, ~7 min average).
 > **11 files** — Advanced Git operations from the object model, branching strategies, rebase, cherry-pick, hooks, bisect, reflog, format-patch, code archaeology, LFS/partial clones, and commit signing to interview questions.
 
 [![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
@@ -74,7 +74,7 @@ The power tools.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 05 | [Advanced Commands](40.6.05-git-advanced-commands.md) | `git bisect`, `git reflog`, `git worktree`, `git submodule`, recovery-state boundaries | Important | Foundational | 12 min |
+| 05 | [Advanced Commands](40.6.05-git-advanced-commands.md) | Bisect’s test contract, reflog recovery limits, stash vs worktree, pinned submodules, reset vs revert | Important | Foundational | 6 min |
 | 06 | [Patch & Bundle](40.6.06-patch-and-bundle.md) | `format-patch`, `am`, `send-email`, bundles, OSS contribution workflow | Important | Foundational | 5 min |
 
 ---

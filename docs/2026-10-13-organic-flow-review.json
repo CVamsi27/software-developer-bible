@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 62,
+    "pending": 61,
     "unchanged": 80,
-    "revised": 378,
-    "reviewed": 458,
+    "revised": 379,
+    "reviewed": 459,
     "topic_chapters": 520
   },
   "entries": [
@@ -7095,12 +7095,18 @@
       "path": "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.md",
       "group": "40-platform/40.6-git-advanced",
       "title": "Git Advanced Commands",
-      "status": "pending",
-      "baseline_sha256": "786f12379cfd2eb989913efd211ad4c75be5bb7ac0cdf8224a1ef7526deefaa2",
+      "status": "revised",
+      "baseline_sha256": "cc294ec3bc74517d484a1f98fdb5eb342b25fb7a01dd134477b36b7d5c3933c4",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "When a regression appears while work is unfinished, how do I find the introducing commit, recover only what Git saved, choose stash or worktree, restore a dependency pin, and undo shared changes safely?",
+      "disposition": "Rebuilt the chapter as one production investigation and recovery flow: establish a stable bisect test, preserve an earlier commit with reflog, separate short interruptions from parallel work, restore a superproject-pinned submodule, and choose reset or revert by branch audience. Clarified exit-code and skipped-candidate ambiguity, local reflog/object limits, stash coverage, shared worktree storage, submodule --remote behavior, and reset/revert effects. Removed duplicated log, diff, blame, sparse-checkout and cherry-pick catalogs owned by adjacent chapters. Updated the Git Advanced index, source-linked revision questions, and interview source paths, including the previously incorrect git-subtree reference.",
+      "validation": [
+        "Re-read in category learning order; checked practical and textbook definitions, separate First Principles, one coherent investigation/recovery flow, Summary, See Also and cross-references. Removed material already taught in Code Archaeology, Git at Scale and Rebase & Cherry-Pick.",
+        "Checked current Git 2.56 manuals for bisect, reflog, stash, worktree, submodule, reset and revert. Probed all three newly cited URLs; each returned HTTP 200. Corrected the interview bank source for git subtree to the Git project documentation.",
+        "Isolated Git repositories passed bisect-run first-bad detection, reflog commit recovery after reset, stash restoration including an untracked file, linked-worktree creation/removal, soft/mixed/hard reset state checks, revert behavior, pinned submodule initialization and deliberate --remote advancement.",
+        "All 30 repository verification gates passed, including all 95 gate self-tests and writer fixed-point. Standalone link checking verified 10,835 links and 185 anchors with zero issues; citation baseline is clean at 2,603 URLs.",
+        "Ruby 3.4.11 production Jekyll build, site-wide rendered-heading scan, focused one-H1/section assertions for this chapter, and git diff --check passed."
+      ]
     },
     {
       "path": "40-platform/40.6-git-advanced/40.6.06-patch-and-bundle.md",

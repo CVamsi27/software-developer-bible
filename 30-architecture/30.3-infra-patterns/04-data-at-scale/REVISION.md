@@ -70,6 +70,10 @@ Source: [CDN Architecture — Edge Caching, Geographic Distribution, Cache Inval
 
 **A:** Distinct responses merge, potentially leaking private data or serving the wrong variant. Too many irrelevant variations instead fragment reuse. Neither key choice supplies access authorization.
 
+**Q:** What does a cache key prove about a protected response, and what must happen before returning a hit?
+
+**A:** The key selects a stored representation from request fields; it does not establish permission. Enforce the required policy on every protected delivery, including hits, with a defined revocation delay. Deny when a required check fails unless an explicit bounded offline-access policy meets the contract; a cache hit is not authorization. [RFC 9111](https://www.rfc-editor.org/rfc/rfc9111.html) defines the HTTP key and shared-cache rules; provider cache configuration still needs a separate audit.
+
 **Q:** Does serving through a chosen region prove where sensitive data is retained?
 
 **A:** No. Origin, backups, logs, telemetry and provider processing have separate location/trust contracts. No-store controls relevant caching, not all processing or compliance.

@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 86,
+    "pending": 85,
     "unchanged": 80,
-    "revised": 354,
-    "reviewed": 434,
+    "revised": 355,
+    "reviewed": 435,
     "topic_chapters": 520
   },
   "entries": [
@@ -5985,12 +5985,18 @@
       "path": "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md",
       "group": "30-architecture/30.3-infra-patterns/04-data-at-scale",
       "title": "CDN Architecture — Edge Caching, Geographic Distribution, Cache Invalidation",
-      "status": "pending",
-      "baseline_sha256": "41a72793d9ffa602c7dca6f19d1bbf925b41be76e9850798b09244ea4fdeb32c",
+      "status": "revised",
+      "baseline_sha256": "5e06e605a6de3b5ca594672393b86b6928fd8059b6d09e0f50f1dfe7db60d921",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do I reuse CDN responses for speed without leaking private variants or relying on stale authorization and deployment state?",
+      "disposition": "Opened with a path-only /profile leak scenario, then traced the request through routing, authorization and shared cache lookup. Defined the cache key before the response-class decisions; separated freshness, invalidation and stale-serving policies; connected versioned releases to old-client compatibility; and made protected-hit authorization, revocation delay and outage behavior explicit. Preserved provider-specific examples in the platform chapter.",
+      "validation": [
+        "Re-read the chapter with the Data at Scale INDEX and REVISION companion; checked the hook-to-mechanism flow, textbook definition, first principles, response policy, rollout sequence, trust boundary and final summary.",
+        "Verified the official RFC 9111 and RFC 5861 pages, Cloudflare purge documentation, CloudFront Origin Shield documentation, and HHS cloud-computing guidance; the new RFC 5861 citation is live.",
+        "Fresh reader answered all five cache-key, freshness, rollout, shielding/coalescing and stale-serving questions. Its access-outage ambiguity was fixed with an explicit deny-by-default rule and a bounded offline-policy exception; the reader confirmed the boundary is now clear.",
+        "All 30 repository verification gates passed; standalone link check found 0 broken links across 10,795 links and 152 anchors; citation baseline has 2,549 URLs with no drift.",
+        "Production Jekyll build and site-wide rendered-heading validation passed."
+      ]
     },
     {
       "path": "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.04-multi-tenant-saas-architecture.md",

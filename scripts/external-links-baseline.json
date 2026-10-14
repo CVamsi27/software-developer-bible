@@ -7990,6 +7990,9 @@
    "30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.md",
    "30-architecture/30.2-system-design/01-theory/REVISION.md"
   ],
+  "https://www.rfc-editor.org/rfc/rfc5861.html": [
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md"
+  ],
   "https://www.rfc-editor.org/rfc/rfc6066": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.md"
   ],
@@ -8103,10 +8106,9 @@
    "30-architecture/30.2-system-design/01-theory/30.2.1.08-rate-limiting.md",
    "30-architecture/30.2-system-design/01-theory/REVISION.md"
   ],
-  "https://www.rfc-editor.org/rfc/rfc9111": [
-   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md"
-  ],
   "https://www.rfc-editor.org/rfc/rfc9111.html": [
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md",
+   "30-architecture/30.3-infra-patterns/04-data-at-scale/REVISION.md",
    "40-platform/40.10-cdn/40.10.01-cdn-architecture.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc9113.html": [

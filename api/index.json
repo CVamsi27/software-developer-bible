@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "d8b638f36a8c774a9495391eb7a592097eb0762365c8164cb55e7733611676bd",
+ "corpus_digest": "ebc7543e04fc8873cf90346077ab7537ed338e239d826f4281f8ffcaccd851b8",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5230
+  "read_minutes": 5231
  },
  "chapters": [
   {
@@ -4638,7 +4638,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.04-multi-tenant-saas-architecture.html",

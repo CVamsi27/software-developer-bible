@@ -22,6 +22,10 @@ Source: [Language Fundamentals](20.13.01-java-language-fundamentals.md)
 
 **A:** The subtraction may overflow. Integer.compare expresses ordering without that arithmetic overflow.
 
+**Q:** What must be true before calling `Arrays.binarySearch` with a comparator?
+
+**A:** The array must already be sorted using the same ordering. Searching an unsorted array, or one sorted with a different comparator, does not promise a correct match or insertion point.
+
 **Q:** Is primitive type pattern matching in `instanceof` and `switch` a production feature in Java 27?
 
 **A:** No. It remains a preview feature in Java 27; compile and run with preview enabled for that exact JDK release, or use the stable reference-type patterns.

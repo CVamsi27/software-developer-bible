@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "4b82f2b6cd472ea6a943d453cc599e18c715bc6d0a323334122fafb0c018f026",
+ "corpus_digest": "1658c9294ea4434984a62ab6808abf0a2aa64b4a11acc9c9089249fc7e2e6090",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5230
+  "read_minutes": 5220
  },
  "chapters": [
   {
@@ -1753,7 +1753,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "20-backend/20.12-ai-engineering/20.12.02-prompts-context-evals.html",
@@ -3323,7 +3323,7 @@
     "caching",
     "concept"
    ],
-   "m": 12
+   "m": 13
   },
   {
    "p": "20-backend/20.8-caching/20.8.03-advanced-redis-patterns.html",
@@ -4269,7 +4269,7 @@
    "g": [
     "concept"
    ],
-   "m": 37
+   "m": 25
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.11-live-betting.html",

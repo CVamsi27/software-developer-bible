@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2654,
+ "url_count": 2657,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -1390,7 +1390,7 @@
   "https://developers.cloudflare.com/workers/runtime-apis/nodejs/": [
    "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
   ],
-  "https://developers.cloudflare.com/workers/static-assets/": [
+  "https://developers.cloudflare.com/workers/static-assets/routing/single-page-application/": [
    "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md"
   ],
   "https://developers.cloudflare.com/workers/vite-plugin/tutorial/": [
@@ -3525,6 +3525,9 @@
   ],
   "https://github.com/recharts/recharts/blob/main/storybook/stories/API/Accessibility.mdx": [
    "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.md"
+  ],
+  "https://github.com/redis/node-redis/releases": [
+   "20-backend/20.8-caching/20.8.02-redis-fundamentals.md"
   ],
   "https://github.com/robertLichtnow/zod-formik-adapter": [
    "10-frontend/10.5-form-handling/10.5.03-formik.md"
@@ -6866,6 +6869,10 @@
    "40-platform/40.6-git-advanced/40.6.02-branching-strategies.md",
    "40-platform/40.6-git-advanced/REVISION.md"
   ],
+  "https://ts.sdk.modelcontextprotocol.io/v2/migration/support-2026-07-28": [
+   "20-backend/20.12-ai-engineering/20.12.04-agent-orchestration-patterns.md",
+   "20-backend/20.12-ai-engineering/20.12.07-interview-questions.md"
+  ],
   "https://turbo.build/pack": [
    "40-platform/40.5-build-tools/04-interview-prep/40.5.4.01-interview-questions.md"
   ],
@@ -6996,6 +7003,9 @@
   ],
   "https://vite.dev/": [
    "40-platform/40.5-build-tools/04-interview-prep/40.5.4.01-interview-questions.md"
+  ],
+  "https://vite.dev/blog/announcing-vite8": [
+   "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md"
   ],
   "https://vite.dev/blog/announcing-vite8-1": [
    "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.md"

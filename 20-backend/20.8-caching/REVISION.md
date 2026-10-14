@@ -64,7 +64,7 @@ Source: [Redis Fundamentals](20.8.02-redis-fundamentals.md), [Redis data types](
 
 **Q:** Which Node.js client does Redis recommend for new applications, and why should you avoid mixing examples from different clients?
 
-**A:** Redis recommends node-redis and describes ioredis as an older client deprecated in its favor. Their command names, option objects and return types differ; pin the client version and test examples against its API.
+**A:** Redis recommends node-redis for new projects and continues to maintain ioredis. Their command names, option objects and return types differ; pin the client version and test examples against its API.
 
 ## Advanced Redis Patterns
 

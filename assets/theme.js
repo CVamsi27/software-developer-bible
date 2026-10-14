@@ -83,9 +83,21 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!created) return;
   var siteNav = document.querySelector(".site-nav");
   var headerWrapper = document.querySelector(".site-header .wrapper");
-  if (siteNav && siteNav.parentNode) {
-    siteNav.insertAdjacentElement("afterend", themeBtn);
-  } else if (headerWrapper) {
-    headerWrapper.appendChild(themeBtn);
-  }
+  var headerSearch = headerWrapper && headerWrapper.querySelector(".header-search");
+  var phoneHeader = window.matchMedia && window.matchMedia("(max-width: 700px)");
+  var placeThemeButton = function () {
+    var hadFocus = document.activeElement === themeBtn;
+    var brand = headerWrapper && headerWrapper.querySelector(".site-title");
+    if (headerSearch) {
+      var sibling = phoneHeader && phoneHeader.matches && brand ? brand : headerSearch;
+      sibling.insertAdjacentElement("afterend", themeBtn);
+    } else if (siteNav && siteNav.parentNode) {
+      siteNav.insertAdjacentElement("afterend", themeBtn);
+    } else if (headerWrapper) {
+      headerWrapper.appendChild(themeBtn);
+    }
+    if (hadFocus) themeBtn.focus({preventScroll: true});
+  };
+  placeThemeButton();
+  if (phoneHeader && phoneHeader.addEventListener) phoneHeader.addEventListener("change", placeThemeButton);
 });

@@ -16,6 +16,8 @@ baseurl: ""
 # document-relative so the committed search page also works from file://.
 # Do not restate the path in either consumer.
 theme_asset: /assets/theme.js
+# Bump when theme behavior changes so cached clients receive the same header.
+theme_version: reader-final-1
 theme: minima
 header_pages:
   - INDEX.md

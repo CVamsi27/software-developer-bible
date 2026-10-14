@@ -64,12 +64,12 @@ PAGE = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Search the library — {TITLE}</title>
 <script src="{THEME_SRC}"></script>
-<link rel="stylesheet" href="assets/search-ui.css?v=study-flow-5">
-<link rel="stylesheet" href="assets/reading-ui.css?v=study-flow-5">
+<link rel="stylesheet" href="assets/search-ui.css?v=study-flow-9">
+<link rel="stylesheet" href="assets/reading-ui.css?v=study-flow-9">
 <link rel="stylesheet" href="assets/reference-reader.css?v=reference-6">
 <script src="assets/study-state.js" defer></script>
-<script src="assets/roadmap-return.js?v=study-flow-5" defer></script>
-<script src="assets/reading-ui.js?v=study-flow-5" defer></script>
+<script src="assets/roadmap-return.js?v=study-flow-9" defer></script>
+<script src="assets/reading-ui.js?v=study-flow-9" defer></script>
 <script src="assets/search-ui.js" defer></script>
 </head>
 <body>
@@ -134,13 +134,16 @@ def theme_src():
     """
     try:
         with open(CONFIG, encoding='utf-8') as handle:
-            declared = THEME_ASSET_RE.search(handle.read())
+            config_text = handle.read()
+            declared = THEME_ASSET_RE.search(config_text)
+            version = re.search(r'^theme_version:\s*([a-zA-Z0-9_-]+)\s*$', config_text, re.M)
     except OSError:
         declared = None
+        version = None
     if declared is None:
         sys.exit('_config.yml must define theme_asset: <path> '
                  '(rule 13 owns the theme load path there)')
-    return declared.group(1).lstrip('/')
+    return declared.group(1).lstrip('/') + ('?v=' + version.group(1) if version else '')
 
 
 def render(rows):

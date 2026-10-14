@@ -174,6 +174,8 @@ document.addEventListener('DOMContentLoaded', function () {
     scheduled = false;
     var current = headings[0];
     headings.forEach(function (heading) { if (heading.getBoundingClientRect().top <= 150) current = heading; });
+    var pageHeight = document.documentElement.scrollHeight;
+    if (pageHeight > window.innerHeight && window.scrollY + window.innerHeight >= pageHeight - 2) current = headings[headings.length - 1];
     links.forEach(function (link, index) { if (headings[index] === current) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current'); });
     document.dispatchEvent(new CustomEvent('study:section', {detail: {heading: current, deliberate: false}}));
   }

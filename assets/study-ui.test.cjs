@@ -176,3 +176,59 @@ test('desktop outline stays open when its heading is clicked',()=>{
  assert.equal(outline.open,true);outline.querySelector('summary').click();assert.equal(outline.open,true);
  dom.window.close();
 });
+test('copy reports a live confirmation while preserving code text and focus',async()=>{
+ const dom=boot('<div class="language-javascript highlighter-rouge"><pre><code>const count = 1;\n</code></pre></div>',chapter,[]);
+ const w=dom.window,d=w.document;let copied;
+ w.navigator.clipboard={writeText:async text=>{copied=text;}};
+ const head=fs.readFileSync(path.join(root,'_includes/head-custom.html'),'utf8');
+ const start=head.indexOf('var codeContainers ='),end=head.indexOf('// 5. GitHub Alert',start);
+ assert.ok(start>=0 && end>start);w.eval(head.slice(start,end));
+ const button=d.querySelector('.copy-code-btn');button.focus();button.click();
+ await Promise.resolve();
+ assert.equal(copied,'const count = 1;\n');
+ assert.equal(d.activeElement,button);
+ assert.equal(d.querySelector('[role="status"]').textContent,'Code copied to clipboard.');
+ assert.equal(button.getAttribute('aria-label'),'Code copied');
+ dom.window.close();
+});
+test('theme button DOM order follows the desktop and phone header layouts',()=>{
+ const html='<header class="site-header"><div class="wrapper"><a class="site-title" href="/">Developer Bible</a><nav class="site-nav">Library</nav><form class="header-search"><input name="q"></form></div></header>';
+ for(const mobile of [false,true]){
+  const dom=boot(html,chapter,['theme.js'],w=>{w.matchMedia=query=>({matches:query==='(max-width: 700px)' && mobile,addEventListener(){}});});
+  const wrapper=dom.window.document.querySelector('.wrapper');
+  assert.equal(wrapper.children[mobile?1:3].className,'theme-toggle-btn');
+  dom.window.close();
+ }
+});
+test('copy failures give recovery guidance and feedback is excluded from narration',async()=>{
+ for(const unavailable of [false,true]){
+  const dom=boot('<div class="post-content"><h1>Lesson</h1><p>Authored explanation.</p><div class="highlighter-rouge"><pre><code>const value = 1;</code></pre></div></div>',chapter,['read-aloud.js']);
+  const w=dom.window,d=w.document;
+  if(!unavailable)w.navigator.clipboard={writeText:async()=>{throw Error('denied');}};
+  const head=fs.readFileSync(path.join(root,'_includes/head-custom.html'),'utf8');
+  const start=head.indexOf('var codeContainers ='),end=head.indexOf('// 5. GitHub Alert',start);w.eval(head.slice(start,end));
+  d.querySelector('.copy-code-btn').click();await new Promise(resolve=>setImmediate(resolve));
+  assert.match(d.querySelector('.copy-feedback').textContent,/Select the code and copy it manually/);
+  const spoken=w.SDBReadAloud.extractChapter(d.querySelector('.post-content')).map(group=>group.text).join(' ');
+  assert.ok(spoken.includes('Authored explanation.'));
+  assert.ok(!spoken.includes('copy it manually'));
+  dom.window.close();
+ }
+});
+test('the last outline section is current at the document bottom even below the header threshold',()=>{
+ const html=article.replace('</div></main>','<h2 id="references">References</h2><p>Source links.</p></div></main>');
+ const dom=boot(html,chapter,['reading-ui.js'],w=>{
+  w.innerHeight=1000;w.scrollY=2000;
+  Object.defineProperty(w.document.documentElement,'scrollHeight',{value:3000});
+  w.document.querySelectorAll('h2').forEach(h=>{h.getBoundingClientRect=()=>({top:h.id==='references'?250:100});});
+ });
+ assert.equal(dom.window.document.querySelector('.chapter-outline a[aria-current]').hash,'#references');
+ dom.window.close();
+});
+test('narration skips decorative language captions while retaining authored prose',()=>{
+ const html=article.replace('<p>Original prose.</p>','<p>Original prose.</p><div class="language-javascript highlighter-rouge"><pre><code>const count = 1;</code></pre></div>');
+ const dom=boot(html,chapter,['reading-ui.js','read-aloud.js']);
+ const spoken=dom.window.SDBReadAloud.extractChapter(dom.window.document.querySelector('.post-content')).map(group=>group.text).join(' ');
+ assert.ok(spoken.includes('Original prose.'));assert.ok(!spoken.includes('JavaScript'));
+ dom.window.close();
+});

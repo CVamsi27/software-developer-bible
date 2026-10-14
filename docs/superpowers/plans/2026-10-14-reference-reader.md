@@ -45,3 +45,13 @@ The user clarified that the complete authored lesson must remain unchanged. Use 
 - [x] Bundle the Inter font and its OFL license; remove the inherited clearfix flex item and heading bottom padding.
 - [x] Correct header/search coordinates, article and outline widths, title tracking, metadata baseline, section spacing and toolbar alignment.
 - [x] Verify actual chapter and responsive breakpoints with the locally bundled font; capture real-page evidence and rerun tests, build and repository gates.
+
+
+## Final detail pass
+
+- [x] Inspect visual anchors, font loading, metadata expansion, light/dark contrast and copy accuracy.
+- [x] Add live copy success/failure feedback and exclude that feedback from narration; verify with DOM tests.
+- [x] Align theme-button DOM order with desktop/mobile visual order and preserve focus across the breakpoint.
+- [x] Version the theme script through its existing config owner so cached clients receive updated behavior.
+- [x] Reproduce and fix final-section outline highlighting at the document bottom.
+- [x] Verify real tab order, keyboard code scrolling, end-of-chapter focus/highlighting and both themes; run focused tests, build and repository verification.

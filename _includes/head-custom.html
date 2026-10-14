@@ -5,9 +5,9 @@
 <script>
   window.__SDB_SEARCH_URL__ = "{{ '/search.html' | relative_url }}";
 </script>
-<script src="{{ site.theme_asset | relative_url }}"></script>
+<script src="{{ site.theme_asset | relative_url }}?v={{ site.theme_version }}"></script>
 
-<link rel="stylesheet" href="{{ '/assets/read-aloud.css' | relative_url }}?v=study-flow-7">
+<link rel="stylesheet" href="{{ '/assets/read-aloud.css' | relative_url }}?v=study-flow-9">
 
 {% raw %}
 <style>
@@ -836,25 +836,38 @@
       btn.type = "button";
       btn.setAttribute("aria-label", "Copy code");
       btn.textContent = "Copy";
+      var feedback = document.createElement("span");
+      feedback.className = "read-aloud-status copy-feedback";
+      feedback.setAttribute("role", "status");
+      feedback.setAttribute("aria-live", "polite");
 
       btn.addEventListener("click", function() {
+        feedback.textContent = "";
         var code = pre.querySelector("code") || pre;
         var text = code.innerText || code.textContent;
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(text).then(function() {
             btn.textContent = "✓ Copied";
+            btn.setAttribute("aria-label", "Code copied");
+            feedback.textContent = "Code copied to clipboard.";
             btn.classList.add("copied");
             setTimeout(function() {
               btn.textContent = "Copy";
+              btn.setAttribute("aria-label", "Copy code");
               btn.classList.remove("copied");
             }, 2000);
           }).catch(function() {
             btn.textContent = "Failed";
+            btn.setAttribute("aria-label", "Copy failed");
+            feedback.textContent = "Copy failed. Select the code and copy it manually.";
           });
+        } else {
+          feedback.textContent = "Clipboard access is unavailable. Select the code and copy it manually.";
         }
       });
 
       container.appendChild(btn);
+      container.appendChild(feedback);
     });
 
     // 5. GitHub Alert / Callout transform (> [!NOTE], > [!TIP], etc.)
@@ -984,13 +997,13 @@
 </script>
 {% endraw %}
 
-<link rel="stylesheet" href="{{ '/assets/reading-ui.css' | relative_url }}?v=study-flow-7">
-<script src="{{ '/assets/roadmap-return.js' | relative_url }}?v=study-flow-7" defer></script>
+<link rel="stylesheet" href="{{ '/assets/reading-ui.css' | relative_url }}?v=study-flow-9">
+<script src="{{ '/assets/roadmap-return.js' | relative_url }}?v=study-flow-9" defer></script>
 <script src="{{ '/assets/study-catalog.js' | relative_url }}" defer></script>
-<script src="{{ '/assets/study-state.js' | relative_url }}?v=study-flow-7" defer></script>
-<script src="{{ '/assets/read-aloud.js' | relative_url }}?v=study-flow-7" defer></script>
-<script src="{{ '/assets/reading-ui.js' | relative_url }}?v=study-flow-7" defer></script>
-<script src="{{ '/assets/revision-ui.js' | relative_url }}?v=study-flow-7" defer></script>
-<script src="{{ '/assets/study-resume.js' | relative_url }}?v=study-flow-7" defer></script>
+<script src="{{ '/assets/study-state.js' | relative_url }}?v=study-flow-9" defer></script>
+<script src="{{ '/assets/read-aloud.js' | relative_url }}?v=study-flow-9" defer></script>
+<script src="{{ '/assets/reading-ui.js' | relative_url }}?v=study-flow-9" defer></script>
+<script src="{{ '/assets/revision-ui.js' | relative_url }}?v=study-flow-9" defer></script>
+<script src="{{ '/assets/study-resume.js' | relative_url }}?v=study-flow-9" defer></script>
 
 <link rel="stylesheet" href="{{ '/assets/reference-reader.css' | relative_url }}?v=reference-6">

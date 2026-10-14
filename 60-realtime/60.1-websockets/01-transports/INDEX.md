@@ -57,6 +57,5 @@ Close the chapters and work through [section revision questions](REVISION.md). E
 | Topic | Docita evidence |
 | --------------------------------- | ---------------------------------------------------------------------------------------------------------- |
 | Socket.IO as chosen transport | `socket.io` dependency in `apps/api/package.json`, wired in `apps/api/src/websockets/websockets.module.ts` |
-| SSE (one real, narrow use) | `apps/api/src/shared/modules/ai/ai.controller.ts` streams `text/event-stream` for AI responses |
 | Transport-choice rationale | `docs/operations/WEBSOCKET_SCALING.md` — sockets trigger React Query invalidation only |
 | Handshake auth at transport level | `apps/api/src/websockets/base-websocket.gateway.ts` (bearer token from `handshake.auth.token`) |

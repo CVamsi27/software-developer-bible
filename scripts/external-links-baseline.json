@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2652,
+ "url_count": 2653,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -5398,9 +5398,6 @@
   "https://nodejs.org/en/learn/getting-started/debugging": [
    "20-backend/20.1-node.js/04-security-and-operations/20.1.4.02-debugging-profiling-nodejs.md"
   ],
-  "https://nodejs.org/en/learn/getting-started/introduction-to-nodejs/": [
-   "60-realtime/60.1-websockets/01-transports/60.1.1.02-server-sent-events.md"
-  ],
   "https://nodejs.org/en/learn/getting-started/security-best-practices": [
    "20-backend/20.1-node.js/04-security-and-operations/20.1.4.01-node-security.md"
   ],
@@ -8572,6 +8569,13 @@
   "https://www.rfc-editor.org/rfc/rfc9220.html": [
    "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.md",
    "60-realtime/60.1-websockets/01-transports/INDEX.md"
+  ],
+  "https://www.rfc-editor.org/rfc/rfc9221.html": [
+   "60-realtime/60.1-websockets/01-transports/60.1.1.04-webtransport.md"
+  ],
+  "https://www.rfc-editor.org/rfc/rfc9221.html#section-5.2": [
+   "60-realtime/60.1-websockets/01-transports/60.1.1.04-webtransport.md",
+   "60-realtime/60.1-websockets/01-transports/REVISION.md"
   ],
   "https://www.rfc-editor.org/rfc/rfc9250.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.22-dns-and-name-resolution.md"

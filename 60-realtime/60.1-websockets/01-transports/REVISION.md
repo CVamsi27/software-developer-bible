@@ -54,9 +54,9 @@ Source: [Server-Sent Events (SSE)](60.1.1.02-server-sent-events.md)
 
 **A:** No. It is a transport replay cursor. Handler validation, application processing and durable acknowledgment are separate. The display validates and applies before updating its own deduplication cursor.
 
-## Socket.io
+## Socket.IO
 
-Source: [Socket.io](60.1.1.03-socket-io.md)
+Source: [Socket.IO](60.1.1.03-socket-io.md)
 
 **Q:** Why does Socket.IO polling need affinity while a WebSocket-only session does not?
 
@@ -97,6 +97,10 @@ Source: [WebTransport](60.1.1.04-webtransport.md)
 **Q:** Does a successful stream write prove a chat message was stored?
 
 **A:** No. It reports the local write operation, not a durable server effect. Define and observe an acknowledgment whose meaning includes the required business result.
+
+**Q:** Does a QUIC acknowledgment of a datagram prove the receiving application applied it?
+
+**A:** No. It confirms transport-layer handling, not application processing. If application behavior matters, send an application-level acknowledgment after the required processing step; see [RFC 9221, Section 5.2](https://www.rfc-editor.org/rfc/rfc9221.html#section-5.2).
 
 ## Socket.IO Event Boundaries
 

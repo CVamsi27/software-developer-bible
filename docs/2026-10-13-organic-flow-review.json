@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 37,
+    "pending": 33,
     "unchanged": 82,
-    "revised": 401,
-    "reviewed": 483,
+    "revised": 405,
+    "reviewed": 487,
     "topic_chapters": 520
   },
   "entries": [
@@ -7989,45 +7989,73 @@
       "path": "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.md",
       "group": "60-realtime/60.1-websockets/01-transports",
       "title": "WebSockets Overview",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "48b279a90db91c7f801ac42a5db365594f605519af8a2524417e4dcdc2427232",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which WebSocket close code fits malformed JSON, and what does the send buffer say about delivery?",
+      "disposition": "Corrected malformed-JSON handling to use 1008 for an application-policy violation and clarified that 1007 is for invalid message data such as non-UTF-8 text. Preserved the distinction between locally queued bytes and application acknowledgment.",
+      "validation": [
+        "Re-read the chapter in transport learning order and reconciled the transport INDEX, REVISION and interview-bank references.",
+        "Verified Socket.IO emitWithAck was added in client API v4.6 against the official Socket.IO Client API.",
+        "Checked the current WebTransport HTTP/3 Internet-Draft (draft-16, updated 2026-07-06) and its 0-RTT rule against the IETF Datatracker; checked datagram loss and acknowledgment semantics against RFC 9221.",
+        "Probed the new RFC 9221 reference directly; GET returned HTTP 200. Verified the Docita transport-choice and Socket.IO anchors; removed the unsupported SSE implementation claim because the cited AI controller does not emit text/event-stream.",
+        "All 30 repository verification gates passed; standalone local-link check verified 10,831 links and 185 anchors with zero broken links, stale labels, or stale paths; citation baseline has 2,653 URLs with no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "60-realtime/60.1-websockets/01-transports/60.1.1.02-server-sent-events.md",
       "group": "60-realtime/60.1-websockets/01-transports",
       "title": "Server-Sent Events (SSE)",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "b9e30ddcef15738a9a1e32bddd2516e4d06c72413fb5f4e0387123d536c1d89d",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What does EventSource remember after reconnecting, and what must the server retain to replay missed events?",
+      "disposition": "Kept the event framing, cursor, replay and slow-consumer explanation intact; removed a Node.js getting-started link that did not document SSE.",
+      "validation": [
+        "Re-read the chapter in transport learning order and reconciled the transport INDEX, REVISION and interview-bank references.",
+        "Verified Socket.IO emitWithAck was added in client API v4.6 against the official Socket.IO Client API.",
+        "Checked the current WebTransport HTTP/3 Internet-Draft (draft-16, updated 2026-07-06) and its 0-RTT rule against the IETF Datatracker; checked datagram loss and acknowledgment semantics against RFC 9221.",
+        "Probed the new RFC 9221 reference directly; GET returned HTTP 200. Verified the Docita transport-choice and Socket.IO anchors; removed the unsupported SSE implementation claim because the cited AI controller does not emit text/event-stream.",
+        "All 30 repository verification gates passed; standalone local-link check verified 10,831 links and 185 anchors with zero broken links, stale labels, or stale paths; citation baseline has 2,653 URLs with no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "60-realtime/60.1-websockets/01-transports/60.1.1.03-socket-io.md",
       "group": "60-realtime/60.1-websockets/01-transports",
       "title": "Socket.IO",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "74ee3f602430e0e11bccc56bce750af91536d859aa2bab384651ed84975cc120",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Why does this example require Socket.IO client 4.6+, and what does an acknowledgment still leave uncertain?",
+      "disposition": "Pinned the example’s client requirement to 4.6 because it uses emitWithAck, standardized the product name, and retained the distinction between transport acknowledgment, command acceptance and durable effects.",
+      "validation": [
+        "Re-read the chapter in transport learning order and reconciled the transport INDEX, REVISION and interview-bank references.",
+        "Verified Socket.IO emitWithAck was added in client API v4.6 against the official Socket.IO Client API.",
+        "Checked the current WebTransport HTTP/3 Internet-Draft (draft-16, updated 2026-07-06) and its 0-RTT rule against the IETF Datatracker; checked datagram loss and acknowledgment semantics against RFC 9221.",
+        "Probed the new RFC 9221 reference directly; GET returned HTTP 200. Verified the Docita transport-choice and Socket.IO anchors; removed the unsupported SSE implementation claim because the cited AI controller does not emit text/event-stream.",
+        "All 30 repository verification gates passed; standalone local-link check verified 10,831 links and 185 anchors with zero broken links, stale labels, or stale paths; citation baseline has 2,653 URLs with no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "60-realtime/60.1-websockets/01-transports/60.1.1.04-webtransport.md",
       "group": "60-realtime/60.1-websockets/01-transports",
       "title": "WebTransport",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "83ed605abf9101aa7edda7801f90f5c627f1a7f29efa9e3ac8fece3dd847db10",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Can a datagram be lost or arrive out of order, and does QUIC acknowledgment prove application processing?",
+      "disposition": "Replaced an overbroad duplicate-delivery claim with the QUIC no-retransmission, loss and reordering contract; explained that retries may duplicate application messages and that transport acknowledgments do not prove application processing. Added RFC 9221 to the chapter and revision drill.",
+      "validation": [
+        "Re-read the chapter in transport learning order and reconciled the transport INDEX, REVISION and interview-bank references.",
+        "Verified Socket.IO emitWithAck was added in client API v4.6 against the official Socket.IO Client API.",
+        "Checked the current WebTransport HTTP/3 Internet-Draft (draft-16, updated 2026-07-06) and its 0-RTT rule against the IETF Datatracker; checked datagram loss and acknowledgment semantics against RFC 9221.",
+        "Probed the new RFC 9221 reference directly; GET returned HTTP 200. Verified the Docita transport-choice and Socket.IO anchors; removed the unsupported SSE implementation claim because the cited AI controller does not emit text/event-stream.",
+        "All 30 repository verification gates passed; standalone local-link check verified 10,831 links and 185 anchors with zero broken links, stale labels, or stale paths; citation baseline has 2,653 URLs with no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.01-real-time-architecture.md",

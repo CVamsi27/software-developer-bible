@@ -478,6 +478,10 @@ Source: [YouTube System Design](30.2.2.17-youtube.md)
 
 **A:** Every required playlist and referenced segment must exist, pass validation and belong to the same source/rendition generation. A manifest that points to partial or mixed-version objects turns a successful database update into a broken playback path.
 
+**Q:** Why must a PostgreSQL `CHECK` for a ready video explicitly reject a `NULL` version?
+
+**A:** PostgreSQL considers a check satisfied when its expression is true or null. If `ready_version` is null, `ready_version = source_version` is null rather than false; require `ready_version IS NOT NULL` as well as equality. This still cannot prove the referenced object-store files exist. See [PostgreSQL constraint semantics](https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-CHECK-CONSTRAINTS).
+
 ## Dropbox System Design
 
 Source: [Dropbox System Design](30.2.2.18-dropbox.md)

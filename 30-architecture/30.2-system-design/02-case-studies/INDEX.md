@@ -48,7 +48,7 @@ The 31 cases are grouped by the kind of reasoning they practice. Use the tiers a
 ## Case studies
 
 | # | File | Domain | Key topics | Role priority | General importance |
-| --- | ----------------------------------------------------------------------- | --------------------- | --------------------------------------------------------------------------------------------------------- | ------------- | ------------------ |
+| --- | ----------------------------------------------------------------------- | --------------------- | ---------------------------------------------------------------------------------------------------------- | ------------- | ------------------ |
 | 01 | [URL Shortener](30.2.2.01-url-shortener.md) | Web (foundational) | Code allocation, uniqueness, redirect caching, analytics durability | Important | Important |
 | 02 | [WhatsApp](30.2.2.02-whatsapp.md) | Messaging & Real-Time | Retry-safe acceptance, device delivery, E2EE, group membership | Important | Important |
 | 03 | [Uber](30.2.2.03-uber.md) | Ride-sharing & Geo | Location freshness, geo discovery, road ETA, trip and payment boundaries | Important | Important |
@@ -65,7 +65,7 @@ The 31 cases are grouped by the kind of reasoning they practice. Use the tiers a
 | 14 | [Web Crawler](30.2.2.14-web-crawler.md) | Search & Data | Bounded frontier, per-origin scheduling, lease fencing, robots policy, SSRF-safe fetching | Important | Important |
 | 15 | [Chat System](30.2.2.15-chat-system.md) | Messaging & Real-Time | Durable acceptance, ordered history, device receipts, change cursors, membership, E2EE and group fan-out | Important | Important |
 | 16 | [Instagram](30.2.2.16-instagram.md) | Social & Feed | Validated media publication, hybrid feeds, visibility checks, stable cursors and retry-safe interactions | Important | Important |
-| 17 | [YouTube](30.2.2.17-youtube.md) | Streaming & Media | Video transcoding ladder, HLS/DASH streaming, CDN economics, recommendations | Important | Important |
+| 17 | [YouTube](30.2.2.17-youtube.md) | Streaming & Media | Version-fenced uploads, HLS/DASH adaptive playback, manifest publication, authorized delivery and capacity | Important | Important |
 | 18 | [Dropbox](30.2.2.18-dropbox.md) | Storage & Sync | Block-level sync, content-addressable storage, conflict resolution, cursors | Important | Important |
 | 19 | [Lyft](30.2.2.19-lyft.md) | Ride-sharing & Geo | S2/H3 geo indexing, dispatch algorithm, ETA service, surge pricing | Important | Important |
 | 20 | [Distributed Counter](30.2.2.20-distributed-counter.md) | Web (foundational) | Stable event identity, hot-key sharding, CRDT merge, read contracts | Important | Important |

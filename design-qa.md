@@ -59,3 +59,12 @@ Implementation checklist: search, reader, revision, resume, responsive inspectio
 ## Remaining limits
 
 The authenticated production site was not inspected. Linux/case-sensitive root and Library routing still need the normal deployment check. No live deployment was performed. The user subsequently authorized committing and pushing the changes on the study-flow branch. Storage denied by the browser cannot provide cross-page or cross-session persistence; the controls remain usable in memory within the current page. No reading completion, cross-device sync, semantic search or analytics is implied.
+
+
+## October 14 reference implementation
+
+The user supplied an explicit visual reference, superseding the earlier approximate reader styling. [Reference](docs/superpowers/specs/assets/2026-10-14-reference-reader/reference.png), [desktop implementation](docs/superpowers/specs/assets/2026-10-14-reference-reader/desktop.png), and [mobile light implementation](docs/superpowers/specs/assets/2026-10-14-reference-reader/mobile-light.png) record the final comparison.
+
+Implemented the header search field, Library/Roadmap navigation, segmented Listen/speed controls, width separator, colored metadata, compact breadcrumb, persistent right outline, section rules, code caption and decorative line numbers. The authored chapter currently opens with a problem and code example before Definition; that content and its real five-minute estimate are preserved, so the section positions differ from the abbreviated reference. No lesson content was hidden to imitate the image.
+
+The real clean chapter URL renders the reader controls. Header search for closures returns one matching result with the query retained. Copy returns the original code without line numbers. At 390px, the outline is collapsed, navigation remains visible, and the document has no horizontal overflow in either theme. Desktop comparison uses the reference’s 1487 by 1058 viewport. All 28 focused tests pass, including metadata and code-preservation coverage. The pinned Ruby 3.4 Jekyll build and repository gates pass. This implementation remains isolated in the study-ui-restoration worktree for later merging; production has not been changed.

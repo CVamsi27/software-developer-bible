@@ -147,3 +147,13 @@ test('Cloudflare clean revision routes reveal answers and mount the reader',()=>
  assert.ok(dom.window.document.querySelector('.read-aloud'));
  dom.window.close();
 });
+test('reference reader exposes metadata tokens and decorative line numbers without changing code',()=>{
+ const code='const label = 1;\nconsole.log(label);\n';
+ const dom=boot(article.replace('<p>Original prose.</p>','<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'+code+'</code></pre></div></div>'),chapter,['reading-ui.js']);
+ const d=dom.window.document;
+ assert.equal(d.querySelector('.reader-meta-section').textContent,'JavaScript');
+ assert.equal(d.querySelector('.code-line-numbers').getAttribute('aria-hidden'),'true');
+ assert.equal(d.querySelector('.code-line-numbers').textContent,'1\n2');
+ assert.equal(d.querySelector('pre code').textContent,code);
+ dom.window.close();
+});

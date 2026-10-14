@@ -75,7 +75,10 @@ document.addEventListener('DOMContentLoaded', function () {
     if (match) values[match[1]] = match[2].replace(/--/g, '-').replace(/_/g, ' ');
   }); });
   var meta = document.createElement('div'); meta.className = 'reader-meta';
-  var line = document.createElement('span'); line.textContent = [values.section, values['role--priority'], values['read--time'] && values['read--time'] + ' read'].filter(Boolean).join(' · '); meta.append(line);
+  [['section', values.section], ['priority', values['role--priority']], ['time', values['read--time'] && values['read--time'] + ' read']].forEach(function (entry) {
+    if (!entry[1]) return;
+    var token = document.createElement('span'); token.className = 'reader-meta-' + entry[0]; token.textContent = entry[1]; meta.append(token);
+  });
   if (badges.length) {
     var details = document.createElement('details'); details.className = 'chapter-details';
     var summary = document.createElement('summary'); summary.textContent = 'Chapter details'; details.append(summary);
@@ -84,13 +87,13 @@ document.addEventListener('DOMContentLoaded', function () {
   if (titleRow) titleRow.after(meta); else content.prepend(meta);
   var breadcrumb = document.createElement('nav'); breadcrumb.className = 'reader-breadcrumb'; breadcrumb.setAttribute('aria-label', 'Breadcrumb');
   var dirs = location.pathname.split('/').filter(Boolean); dirs.pop();
-  var library = document.createElement('a'); library.href = '/INDEX.html'; library.textContent = 'Library'; breadcrumb.append(library);
+
   dirs.forEach(function (dir, index) {
     var target = '/' + dirs.slice(0, index + 1).join('/') + '/INDEX.html';
     if (!paths.includes(target)) return;
     var link = document.createElement('a'); link.href = target;
     link.textContent = index === 1 && values.section ? values.section : dir.replace(/^\d+(?:\.\d+)*-/, '').split('-').map(function (word) { return word === 'and' ? '&' : word.charAt(0).toUpperCase() + word.slice(1); }).join(' ');
-    var separator = document.createElement('span'); separator.textContent = '/'; separator.setAttribute('aria-hidden', 'true'); breadcrumb.append(separator, link);
+    if (breadcrumb.children.length) { var separator = document.createElement('span'); separator.textContent = '/'; separator.setAttribute('aria-hidden', 'true'); breadcrumb.append(separator); } breadcrumb.append(link);
   });
   if (roadmap) {
     var back = document.createElement('a'); back.className = 'roadmap-return'; back.href = roadmap.roadmapReturnUrl(location.search);
@@ -131,6 +134,13 @@ document.addEventListener('DOMContentLoaded', function () {
     var names = {javascript: 'JavaScript', typescript: 'TypeScript', jsx: 'JSX', tsx: 'TSX', json: 'JSON', html: 'HTML', css: 'CSS', sql: 'SQL', plaintext: 'Plain text'};
     var value = language.slice(9), caption = document.createElement('span'); caption.className = 'code-caption';
     caption.textContent = names[value] || value.charAt(0).toUpperCase() + value.slice(1); block.prepend(caption);
+    var code = block.querySelector('pre code');
+    if (code) {
+      var numbers = document.createElement('span'); numbers.className = 'code-line-numbers'; numbers.setAttribute('aria-hidden', 'true');
+      var count = code.textContent.replace(/\n$/, '').split('\n').length;
+      numbers.textContent = Array.from({length: count}, function (_, index) { return index + 1; }).join('\n');
+      block.querySelector('pre').before(numbers); block.classList.add('has-line-numbers');
+    }
   });
   var headings = Array.from(content.querySelectorAll('h2[id]'));
   if (!headings.length) return;

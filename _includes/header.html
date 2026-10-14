@@ -11,11 +11,15 @@
           </span>
         </label>
       <div class="trigger">
-        <a class="page-link" href="{{ '/' | relative_url }}">Home</a>
         <a class="page-link" href="{{ '/INDEX.html' | relative_url }}">Library</a>
         <a class="page-link" href="{{ '/ROADMAP.html' | relative_url }}">Roadmap</a>
-        <a class="page-link" href="{{ '/search.html' | relative_url }}">Search</a>
+
       </div>
     </nav>
+    <form class="header-search" action="{{ '/search.html' | relative_url }}" role="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="m15 15 6 6"/></svg>
+      <label class="read-aloud-status" for="header-topic">Search topics</label>
+      <input id="header-topic" type="search" name="q" placeholder="Search topics, e.g. closures, APIs, system design…">
+    </form>
   </div>
 </header>

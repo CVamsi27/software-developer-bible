@@ -66,6 +66,7 @@ PAGE = """<!DOCTYPE html>
 <script src="{THEME_SRC}"></script>
 <link rel="stylesheet" href="assets/search-ui.css?v=study-flow-5">
 <link rel="stylesheet" href="assets/reading-ui.css?v=study-flow-5">
+<link rel="stylesheet" href="assets/reference-reader.css?v=reference-1">
 <script src="assets/study-state.js" defer></script>
 <script src="assets/roadmap-return.js?v=study-flow-5" defer></script>
 <script src="assets/reading-ui.js?v=study-flow-5" defer></script>
@@ -85,12 +86,15 @@ PAGE = """<!DOCTYPE html>
           </span>
         </label>
       <div class="trigger">
-        <a class="page-link" href="index.html">Home</a>
         <a class="page-link" href="INDEX.html">Library</a>
         <a class="page-link" href="ROADMAP.html">Roadmap</a>
-        <a class="page-link" href="search.html">Search</a>
       </div>
     </nav>
+    <form class="header-search" action="search.html" role="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="m15 15 6 6"/></svg>
+      <label class="read-aloud-status" for="header-topic">Search topics</label>
+      <input id="header-topic" type="search" name="q" placeholder="Search topics, e.g. closures, APIs, system design…">
+    </form>
   </div>
 </header>
 

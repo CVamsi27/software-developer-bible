@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 42,
-    "unchanged": 80,
-    "revised": 398,
-    "reviewed": 478,
+    "pending": 37,
+    "unchanged": 82,
+    "revised": 401,
+    "reviewed": 483,
     "topic_chapters": 520
   },
   "entries": [
@@ -7904,56 +7904,86 @@
       "path": "50-quality/50.4-production-engineering/50.4.01-incident-response.md",
       "group": "50-quality/50.4-production-engineering",
       "title": "Incident Response — Triage, Communication, Postmortems",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "bc698e731b79fb466f123d1ef87591546b1bda24b7f4eb917a7f3157a068045f",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do you restore user service while coordinating investigation, communication, recovery, and security evidence?",
+      "disposition": "Removed a repeated rationale section and distinguished suspected cybersecurity response from ordinary availability mitigation. Added the current NIST SP 800-61 Rev. 3 reference while preserving the incident-command, database-diagnostic, rollback-precondition, and verified-recovery path.",
+      "validation": [
+        "Re-read the chapter in the section learning flow and checked practical/textbook definitions, First Principles, mechanism, trade-offs, example, summary, See Also and references.",
+        "Reconciled the production-engineering INDEX, REVISION and interview bank; verified all Docita path pointers against the current Docita checkout.",
+        "Checked the new NIST and Google SRE citations with direct GET probes; all returned HTTP 200.",
+        "All 30 repository gates passed; standalone local-link check verified 10,831 links and 185 anchors with zero broken links, stale labels, or stale paths; citation baseline has 2,652 URLs with no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "50-quality/50.4-production-engineering/50.4.02-sli-slo-error-budgets.md",
       "group": "50-quality/50.4-production-engineering",
       "title": "SLIs, SLOs, and Error Budgets",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "68f4eb9ef563d4fce14cea5d02f2cd41452d5b899c6b2bffb7f7cb3a974bcf19",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What exactly is one permitted failure, and how does its measured budget become an alert or release decision?",
+      "disposition": "Expanded the textbook definition to distinguish an internal objective and its budget from an external SLA. Added primary Google SRE Workbook references for multi-window SLO alerting and policy, which support the chapter’s exact burn-rate example and its separation of measurement from action.",
+      "validation": [
+        "Re-read the chapter in the section learning flow and checked practical/textbook definitions, First Principles, mechanism, trade-offs, example, summary, See Also and references.",
+        "Reconciled the production-engineering INDEX, REVISION and interview bank; verified all Docita path pointers against the current Docita checkout.",
+        "Checked the new NIST and Google SRE citations with direct GET probes; all returned HTTP 200.",
+        "All 30 repository gates passed; standalone local-link check verified 10,831 links and 185 anchors with zero broken links, stale labels, or stale paths; citation baseline has 2,652 URLs with no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "50-quality/50.4-production-engineering/50.4.03-chaos-engineering.md",
       "group": "50-quality/50.4-production-engineering",
       "title": "Chaos Engineering in Production — Game Days, Automation, Resilience Metrics",
-      "status": "pending",
+      "status": "unchanged",
       "baseline_sha256": "056fcba44ee9a9588be50e72f385b25cdd9a14d585c639ade272b4a7fce855d9",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What evidence supports a resilience hypothesis, and who can stop the experiment and verify recovery?",
+      "disposition": "Re-read the hypothesis-to-verdict flow and retained the bounded cache-loss rehearsal, shared-dependency blast-radius condition, expiry independent of the runner, separate post-fault recovery check, and explicit inconclusive outcome. The official Principles of Chaos Engineering and Chaos Mesh references match the claims.",
+      "validation": [
+        "Re-read the chapter in the section learning flow and checked practical/textbook definitions, First Principles, mechanism, trade-offs, example, summary, See Also and references.",
+        "Reconciled the production-engineering INDEX, REVISION and interview bank; verified all Docita path pointers against the current Docita checkout.",
+        "Checked the new NIST and Google SRE citations with direct GET probes; all returned HTTP 200.",
+        "All 30 repository gates passed; standalone local-link check verified 10,831 links and 185 anchors with zero broken links, stale labels, or stale paths; citation baseline has 2,652 URLs with no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "50-quality/50.4-production-engineering/50.4.04-production-readiness-reviews.md",
       "group": "50-quality/50.4-production-engineering",
       "title": "Production Readiness Reviews",
-      "status": "pending",
+      "status": "unchanged",
       "baseline_sha256": "00c4d362be7f9f55fade4ffa26868f150017a9033dad5985314aa9c6b853639e",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What operational evidence makes a particular service change ready for its intended workload?",
+      "disposition": "Re-read the evidence table, conditional-launch trace, and sample release gate. Retained the distinction between checking reviewed-change metadata and judging whether tests or recovery evidence are adequate; the typed-input and scoped-approval boundaries are explicit and the Google/AWS references support the review model.",
+      "validation": [
+        "Re-read the chapter in the section learning flow and checked practical/textbook definitions, First Principles, mechanism, trade-offs, example, summary, See Also and references.",
+        "Reconciled the production-engineering INDEX, REVISION and interview bank; verified all Docita path pointers against the current Docita checkout.",
+        "Checked the new NIST and Google SRE citations with direct GET probes; all returned HTTP 200.",
+        "All 30 repository gates passed; standalone local-link check verified 10,831 links and 185 anchors with zero broken links, stale labels, or stale paths; citation baseline has 2,652 URLs with no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "50-quality/50.4-production-engineering/50.4.05-on-call-without-burnout.md",
       "group": "50-quality/50.4-production-engineering",
       "title": "On-Call Without Burnout",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "720ba2b818832126bcdb9b127d5e310c5e27ecc6529af6af2249f661260ee13c",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Does the rotation provide safe response capability without relying on one exhausted person?",
+      "disposition": "Replaced a vague appeal to Google-specific limits with workload-based coverage criteria. Defined page, night-interruption, and acknowledgment units so the sample code’s subset and count invariants are interpretable; corrected the percentile prompt to distinguish one shift total from a cross-shift distribution.",
+      "validation": [
+        "Re-read the chapter in the section learning flow and checked practical/textbook definitions, First Principles, mechanism, trade-offs, example, summary, See Also and references.",
+        "Reconciled the production-engineering INDEX, REVISION and interview bank; verified all Docita path pointers against the current Docita checkout.",
+        "Checked the new NIST and Google SRE citations with direct GET probes; all returned HTTP 200.",
+        "All 30 repository gates passed; standalone local-link check verified 10,831 links and 185 anchors with zero broken links, stale labels, or stale paths; citation baseline has 2,652 URLs with no drift.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.md",

@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 31,
-    "unchanged": 83,
-    "revised": 406,
-    "reviewed": 489,
+    "pending": 27,
+    "unchanged": 85,
+    "revised": 408,
+    "reviewed": 493,
     "topic_chapters": 520
   },
   "entries": [
@@ -8098,45 +8098,66 @@
       "path": "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.01-nestjs-websockets.md",
       "group": "60-realtime/60.1-websockets/03-frameworks-and-paradigms",
       "title": "NestJS WebSockets",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "c1831fc4477c3668037744ec5a20adf01013510fc9a6d7b0951f0244b9f69f66",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do the Nest gateway, message pipeline and injected service divide authentication, payload validation and room authorization?",
+      "disposition": "Updated the runnable fixture from NestJS 11 to NestJS 12, clarified the Node 24 ESM TypeScript setup, and documented the Socket.IO client 4.6 minimum for emitWithAck. Added official runtime and client references.",
+      "validation": [
+        "Compiled the chapter fixture with TypeScript 6 and matching NestJS 12.1.3 packages on Node.js 24.21.0; a live Socket.IO integration verified authenticated room join, snapshot acknowledgment and forbidden-room rejection.",
+        "All 30 scripts/verify.sh gates passed; the standalone link check covered 10,831 links and 185 anchors with no failures, and the citation baseline reports 2,654 verified URLs.",
+        "Ruby 3.4 production Jekyll build passed; the site-wide rendered-heading check passed.",
+        "git diff --check passed."
+      ]
     },
     {
       "path": "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.02-graphql-subscriptions-live-queries.md",
       "group": "60-realtime/60.1-websockets/03-frameworks-and-paradigms",
       "title": "GraphQL Subscriptions and Live Queries",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "9fdecea12f214b4014ddcfe82d29556872a909d21a384251df26908d4d61c154",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What state does a subscription stream, what does a live query recompute, and how does each recover after a missed update?",
+      "disposition": "Replaced the end-of-life Node 20 and older GraphQL guidance with a tested Node 24 LTS and current compatible package set; added official Node, GraphQL.js and GraphQL Tools references.",
+      "validation": [
+        "Ran the chapter server, client and companion test suite on Node.js 24.21.0 with GraphQL.js 17.0.2, graphql-ws 6.4.0, ws 8.22.0 and @graphql-tools/schema 10.1.4; all three authorization, ordered-result and invalid-credential tests passed.",
+        "All 30 scripts/verify.sh gates passed; the standalone link check covered 10,831 links and 185 anchors with no failures, and the citation baseline reports 2,654 verified URLs.",
+        "Ruby 3.4 production Jekyll build passed; the site-wide rendered-heading check passed.",
+        "git diff --check passed."
+      ]
     },
     {
       "path": "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.03-webrtc-peer-to-peer.md",
       "group": "60-realtime/60.1-websockets/03-frameworks-and-paradigms",
       "title": "WebRTC Peer-to-Peer",
-      "status": "pending",
+      "status": "unchanged",
       "baseline_sha256": "7e0870a927f4b08f71f6ac2daf931ae706490bacd1ebd9f17ad50163853356e1",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do signaling, ICE route checks, DTLS/SRTP and relay fallback combine to establish a protected peer path, and where do they still fail?",
+      "disposition": "Retained the chapter after checking its progression from negotiation and connectivity to transport, data-channel semantics, conferencing topology and operational limits; no content change was needed.",
+      "validation": [
+        "Re-read in category order and checked the practical/textbook definitions, First Principles, end-to-end call trace, topology trade-offs, failure cases, summary and companion links.",
+        "All 30 scripts/verify.sh gates passed; the standalone link check covered 10,831 links and 185 anchors with no failures.",
+        "Ruby 3.4 production Jekyll build passed; the site-wide rendered-heading check passed.",
+        "git diff --check passed."
+      ]
     },
     {
       "path": "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.04-testing-realtime-systems.md",
       "group": "60-realtime/60.1-websockets/03-frameworks-and-paradigms",
       "title": "Testing Real-Time Systems",
-      "status": "pending",
+      "status": "unchanged",
       "baseline_sha256": "f5eb2811e1a5779eb7e797d8c0593b2b1a246d960e0784f033340e68fbe24776",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can a test distinguish an open socket from correct delivery, recovery and bounded resource use?",
+      "disposition": "Retained the chapter after checking its progression from protocol-aware tests through load, recovery and soak evidence; the linked GraphQL subscription suite was also executed successfully.",
+      "validation": [
+        "Re-read in category order and checked the practical/textbook definitions, measurement model, protocol test flow, recovery drill, failure cases, summary and companion links.",
+        "Executed the linked GraphQL fixture integration suite on Node.js 24.21.0; all three result, authorization and invalid-credential tests passed.",
+        "All 30 scripts/verify.sh gates passed; the standalone link check covered 10,831 links and 185 anchors with no failures.",
+        "Ruby 3.4 production Jekyll build passed; the site-wide rendered-heading check passed.",
+        "git diff --check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.1-behavioral/70.1.01-stakeholder-management-stories.md",

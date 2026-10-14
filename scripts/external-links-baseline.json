@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2653,
+ "url_count": 2654,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -2269,7 +2269,8 @@
   ],
   "https://docs.nestjs.com/migration-guide": [
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.01-configuration-validation.md",
-   "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.02-testing.md"
+   "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.02-testing.md",
+   "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.01-nestjs-websockets.md"
   ],
   "https://docs.nestjs.com/migration-guide#lifecycle-hook-ordering": [
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.03-lifecycle-hooks-graceful-shutdown.md",
@@ -3347,7 +3348,8 @@
    "20-backend/20.7-graphql/02-execution/20.7.2.01-resolvers.md"
   ],
   "https://github.com/graphql/graphql-js/releases": [
-   "20-backend/20.7-graphql/01-fundamentals/20.7.1.02-schema-design.md"
+   "20-backend/20.7-graphql/01-fundamentals/20.7.1.02-schema-design.md",
+   "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.02-graphql-subscriptions-live-queries.md"
   ],
   "https://github.com/gregoryyoung/m-r": [
    "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.04-cqrs.md"
@@ -5377,6 +5379,8 @@
    "10-frontend/10.4-next.js/04-production/10.4.4.03-deploying-nextjs.md",
    "40-platform/40.1-docker/40.1.01-images-containers.md",
    "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.01-github-actions.md",
+   "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.01-nestjs-websockets.md",
+   "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.02-graphql-subscriptions-live-queries.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.06-docker-kubernetes-cicd-cheat-sheet.md"
   ],
   "https://nodejs.org/en/docs": [
@@ -6465,7 +6469,8 @@
    "60-realtime/60.1-websockets/04-interview-prep/60.1.4.01-interview-questions.md"
   ],
   "https://socket.io/docs/v4/client-api/": [
-   "60-realtime/60.1-websockets/01-transports/60.1.1.03-socket-io.md"
+   "60-realtime/60.1-websockets/01-transports/60.1.1.03-socket-io.md",
+   "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.01-nestjs-websockets.md"
   ],
   "https://socket.io/docs/v4/client-options/": [
    "60-realtime/60.1-websockets/01-transports/60.1.1.03-socket-io.md"
@@ -6814,6 +6819,9 @@
   ],
   "https://the-guild.dev/graphql/mesh": [
    "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.03-bff.md"
+  ],
+  "https://the-guild.dev/graphql/tools/docs/api/schema/src/functions/makeexecutableschema": [
+   "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.02-graphql-subscriptions-live-queries.md"
   ],
   "https://the-guild.dev/graphql/ws": [
    "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.02-graphql-subscriptions-live-queries.md"

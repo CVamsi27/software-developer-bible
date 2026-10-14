@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Serverless%20%26%20Edge-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../docs/topic-importance.md)
 
@@ -89,6 +89,22 @@ Source: [Serverless Patterns](40.7.05-serverless-patterns.md)
 **Q:** Why persist an idempotency decision with the side effect?
 
 **A:** A crash between the business write and a separate processed flag allows replay to duplicate the effect. Use an atomic transaction or a recoverable operation protocol.
+
+**Q:** In a Standard SQS batch, A succeeds and B fails. What does a partial-batch response save, and what can still repeat?
+
+**A:** With `ReportBatchItemFailures` enabled on the event-source mapping, report B so successfully completed records need not be retried with it. If the invocation crashes before its response is accepted, A may still be delivered again. Make the business effect idempotent using a stable command identity; the SQS message ID identifies a transport record, not the business operation.
+
+**Q:** What failure does a transactional outbox prevent, and why can it still publish twice?
+
+**A:** Writing the business row and the outbox row in one database transaction prevents a committed change from losing its publication intent. A relay can publish, crash before marking the row delivered, and publish again. Consumers still need the same stable business operation identity and idempotent effects. See AWS's [transactional outbox guidance](https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/transactional-outbox.html).
+
+**Q:** Why is `FailedEntryCount === 0` not sufficient evidence that EventBridge received an event?
+
+**A:** It reports entry-level publishing errors, but publishing to a nonexistent bus can return status 200 and silently drop the event. Verify the bus and rule/target path, then monitor delivery after the producer call. See AWS's [`PutEvents` behavior](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-putevents.html).
+
+**Q:** When would you choose Step Functions Standard instead of Express, and what does its execution guarantee cover?
+
+**A:** Standard fits long-running, auditable workflows up to one year and executes a task once by default unless a `Retry` is configured. Express runs for up to five minutes; asynchronous execution is at-least-once, while synchronous execution is at-most-once. These workflow contracts do not make a remote provider's side effect atomic with workflow history, so task retries still need idempotency or reconciliation. See AWS's [workflow-type comparison](https://docs.aws.amazon.com/step-functions/latest/dg/choosing-workflow-type.html).
 
 ## Serverless Frameworks (SAM, CDK, SST, Serverless Framework)
 

@@ -1,6 +1,6 @@
 # Serverless & Edge — Index
 
-> **Study time:** ≈ 1 h 18 m of reading (11 files, ~7 min average).
+> **Study time:** ≈ 1 h 22 m of reading (11 files, ~7 min average).
 > **11 files** — Serverless and edge computing fundamentals, from overview and edge functions to AWS Lambda, Vercel, serverless patterns, IaC frameworks, durable execution, Fly.io deployment, Vite SPA on Cloudflare, and curated interview questions.
 
 [![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
@@ -55,7 +55,7 @@ Deploy choice?
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 05 | [Serverless Patterns](40.7.05-serverless-patterns.md) | API patterns, event-driven, orchestration (Step Functions), Saga, CQRS | Important | Specialized | 6 min |
+| 05 | [Serverless Patterns](40.7.05-serverless-patterns.md) | Transactional outbox, business idempotency, SQS partial batches, publication acknowledgments, workflow guarantees, CQRS, and fan-in | Important | Specialized | 9 min |
 | 06 | [Serverless Frameworks](40.7.06-serverless-frameworks.md) | SAM, CDK, Serverless Framework, SST — IaC for serverless | Important | Specialized | 6 min |
 | 07 | [Durable Execution: Temporal & Inngest](40.7.07-durable-execution-temporal-inngest.md) | Event-sourced replay, workflow/activity split, determinism rules, signals/queries, Inngest steps, retries/timeouts, Step Functions vs code-first trade-offs | Important | Specialized | 8 min |
 

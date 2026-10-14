@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 53,
+    "pending": 52,
     "unchanged": 80,
-    "revised": 387,
-    "reviewed": 467,
+    "revised": 388,
+    "reviewed": 468,
     "topic_chapters": 520
   },
   "entries": [
@@ -7243,12 +7243,17 @@
       "path": "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md",
       "group": "40-platform/40.7-serverless-edge",
       "title": "Serverless Patterns",
-      "status": "pending",
-      "baseline_sha256": "a2ba4fe4db824e9f6407c563667ca8d846755644d9e5ae6c63f80adb925fedd0",
+      "status": "revised",
+      "baseline_sha256": "ce1a48cd49d7b1c573f0ebd4238aab19e5243d0c8485f5241d9778f20e5efbd1",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do durable intent, stable business identity, delivery semantics, and orchestration prevent one checkout from being lost or applied twice?",
+      "disposition": "Rebuilt the chapter around the checkout publication and payment-acknowledgment failure boundaries. Clarified what the outbox guarantees versus what requires business idempotency or reconciliation; added concrete SQS partial-batch and FIFO behavior, EventBridge acknowledgment pitfalls, SNS fan-out, Step Functions execution contracts, and durable projection/fan-in conditions. Updated the category learning flow and sourced revision questions.",
+      "validation": [
+        "Re-read in category order with the adjacent Lambda, Vercel, edge, durable-execution chapters and revision companion; verified the definitions, checkout trace, summary, and See Also flow.",
+        "Checked AWS primary documentation for SQS partial-batch responses, event-source timeout guidance, FIFO groups and deduplication, SNS-to-SQS fan-out, EventBridge PutEvents handling, Step Functions workflow types, and transactional outbox; all seven new citations returned HTTP 200.",
+        "All 30 repository verification gates passed; standalone link scan and locked-bundle production Jekyll/rendered-heading checks passed.",
+        "Citation baseline is synchronized at 2,641 URLs; corpus writer fixed-point check passed."
+      ]
     },
     {
       "path": "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md",

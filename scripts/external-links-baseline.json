@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2638,
+ "url_count": 2641,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -182,9 +182,6 @@
   ],
   "https://aws.amazon.com/elasticache/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.05-caching-patterns.md"
-  ],
-  "https://aws.amazon.com/event-driven-architecture/": [
-   "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md"
   ],
   "https://aws.amazon.com/secrets-manager/": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.04-secrets-management.md"
@@ -1475,6 +1472,9 @@
   "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-instance-termination-notices.html": [
    "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md"
   ],
+  "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-key-terms.html": [
+   "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md"
+  ],
   "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md",
@@ -1621,6 +1621,10 @@
   "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html": [
    "40-platform/40.4-observability/02-errors-and-health/40.4.2.02-health-checks.md"
   ],
+  "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-putevents.html": [
+   "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
+  ],
   "https://docs.aws.amazon.com/fis/latest/userguide/stop-conditions.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.md"
   ],
@@ -1672,6 +1676,9 @@
   "https://docs.aws.amazon.com/lambda/latest/dg/scaling-behavior.html": [
    "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md"
   ],
+  "https://docs.aws.amazon.com/lambda/latest/dg/services-sqs-configure.html": [
+   "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md"
+  ],
   "https://docs.aws.amazon.com/lambda/latest/dg/services-sqs-errorhandling.html": [
    "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md",
    "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md"
@@ -1690,7 +1697,9 @@
   ],
   "https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/transactional-outbox.html": [
    "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.06-transactional-outbox.md",
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.md"
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.md",
+   "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
   ],
   "https://docs.aws.amazon.com/serverless-application-model/": [
    "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md",
@@ -1702,9 +1711,16 @@
   "https://docs.aws.amazon.com/sns/latest/dg/fifo-topic-message-ordering.html": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md"
   ],
+  "https://docs.aws.amazon.com/sns/latest/dg/sns-sqs-as-subscriber.html": [
+   "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md"
+  ],
   "https://docs.aws.amazon.com/step-functions/": [
    "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md",
    "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md"
+  ],
+  "https://docs.aws.amazon.com/step-functions/latest/dg/choosing-workflow-type.html": [
+   "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md",
+   "40-platform/40.7-serverless-edge/REVISION.md"
   ],
   "https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/welcome.html": [
    "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md"
@@ -8593,9 +8609,6 @@
   "https://www.serverless.com/": [
    "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.md",
    "40-platform/40.7-serverless-edge/40.7.08-interview-questions.md"
-  ],
-  "https://www.serverless.com/framework/docs/": [
-   "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md"
   ],
   "https://www.sigstore.dev/": [
    "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.md"

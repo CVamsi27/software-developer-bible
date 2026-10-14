@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "629bf4bfcb845b741d9bfbc31fe4163e59274950e842b543a97c943deeb59aae",
+ "corpus_digest": "861cf7ffb6c532cad7a84da1adfd887431c449b55d9131805d61748676e7ee8b",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5242
+  "read_minutes": 5246
  },
  "chapters": [
   {
@@ -5847,7 +5847,7 @@
     "concept",
     "reference"
    ],
-   "m": 6
+   "m": 9
   },
   {
    "p": "40-platform/40.7-serverless-edge/40.7.06-serverless-frameworks.html",
@@ -5920,7 +5920,7 @@
     "practice",
     "revision"
    ],
-   "m": 4
+   "m": 5
   },
   {
    "p": "40-platform/40.8-monorepo/40.8.01-monorepo-overview.html",

@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "a5fd175d7d4d4967ba1275c59ef09cd92d1b87498702061f7fc89bc3ecd921b8",
+ "corpus_digest": "533fee5bb7e2f847d43bb21cd8927d80856a3bf170fce427b974915923e35bcc",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5192
+  "read_minutes": 5193
  },
  "chapters": [
   {
@@ -4209,7 +4209,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.05-google-drive.html",

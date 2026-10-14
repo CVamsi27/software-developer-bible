@@ -78,6 +78,14 @@ Source: [Netflix System Design](30.2.2.04-netflix.md)
 
 **A:** Cold misses, purge storms, unpopular objects and failover still reach the origin. Cache-hit averages can hide burst amplification.
 
+**Q:** How does a DRM license differ from a title's content rights?
+
+**A:** Content rights and account policy decide whether a profile may play a title in a territory and time window. A DRM license supplies or authorizes device decryption keys. A successful DRM exchange does not grant the contractual right to play, and an entitlement decision does not provide decryption keys.
+
+**Q:** Why is the quality-selection example not a production adaptive-bitrate controller?
+
+**A:** It filters a fixed rendition list by nominal bitrate and height. A player must also use actual codec/DRM support, segment availability, buffer occupancy and changing throughput, then control switching to avoid oscillation.
+
 ## Google Drive System Design
 
 Source: [Google Drive System Design](30.2.2.05-google-drive.md)

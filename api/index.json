@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "ae614eca1c41faa8cb46a025610cbd3901a8d51f3ed03a2a06a751bc9f38e0ce",
+ "corpus_digest": "00db903a948c63410df3d0fa6285314e742024254264dfd7db62322f7260ab2f",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5233
+  "read_minutes": 5234
  },
  "chapters": [
   {
@@ -4671,7 +4671,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.02-technical-debt.html",

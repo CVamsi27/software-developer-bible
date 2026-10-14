@@ -26,6 +26,10 @@ Source: [Zero-Downtime Deployments — Blue-Green, Canary, Rolling, Feature Flag
 
 **A:** No. It constrains available rollout capacity under readiness rules. Spare scheduling capacity, routing convergence, business correctness and bounded in-flight drain remain separate requirements.
 
+**Q:** What does `ProgressDeadlineExceeded` do when a Kubernetes Deployment stalls?
+
+**A:** It reports stalled progress while the controller keeps reconciling; it does not automatically roll back. A release owner or higher-level controller must decide whether to pause, roll back or repair forward. See the [Kubernetes Deployment documentation](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/).
+
 **Q:** Why can a one-time old-to-new-column backfill become stale before reader cutover?
 
 **A:** Old writers may keep modifying only the old column. Bridge/upgrade every writer, capture concurrent changes and revalidate meaning before making the new field authoritative.

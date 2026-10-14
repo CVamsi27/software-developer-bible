@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 84,
+    "pending": 83,
     "unchanged": 80,
-    "revised": 356,
-    "reviewed": 436,
+    "revised": 357,
+    "reviewed": 437,
     "topic_chapters": 520
   },
   "entries": [
@@ -6003,7 +6003,7 @@
       "group": "30-architecture/30.3-infra-patterns/04-data-at-scale",
       "title": "Multi-Tenant SaaS Architecture",
       "status": "revised",
-      "baseline_sha256": "3d94a2411f8785163b6ec8746494d3101676e2862f85d117b6f4f532c901927c",
+      "baseline_sha256": "9b3a8ebaca209f2c285d19cec5c8d4d02d18c86d9ff2ae061a04f766bba8a628",
       "previous_depth_review": "revised",
       "reader_question": "Can you explain how a tenant boundary reaches a request, database transaction, cache, object store, job and restore path?",
       "disposition": "Reframed the chapter around one tenant boundary from verified membership through database, cache, object storage, jobs and lifecycle operations. Distinguished pool, bridge and silo choices, clarified pooled restore and RLS threat boundaries, removed repeated cache/storage explanations, and isolated Prisma version details in their own short section. Updated the learning path and source-linked revision question.",
@@ -6018,12 +6018,17 @@
       "path": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.md",
       "group": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution",
       "title": "Zero-Downtime Deployments — Blue-Green, Canary, Rolling, Feature Flags",
-      "status": "pending",
-      "baseline_sha256": "f386e3c8bf9c48ea2c7f72035ecd18e6bdddde754d4b87603d078c804af8ee7e",
+      "status": "revised",
+      "baseline_sha256": "57580a0170931a92140d3da110ace074e1b14ab3014af081335a8651d8a460cd",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do you prove old and new code can coexist safely through requests, jobs, schema changes and rollback?",
+      "disposition": "Opened with a queued-work rollback failure, distinguished deployment from behavior release, added a blue-green trace and made drain events concrete. Clarified Kubernetes surge, termination and stalled-rollout behavior from current official docs; made the expand/migrate/contract order explicit, clarified when a canary gate can stop exposure, and replaced generic tips with failure-path tests. Updated the shipping learning path and added a source-linked stalled-rollout revision question.",
+      "validation": [
+        "Fresh-reader review and a second focused read found the main flow understandable and confirmed the requested clarifications resolved the slow points.",
+        "Verified Kubernetes Deployment, container lifecycle and progress-deadline behavior; PostgreSQL concurrent-index constraints; and Google SRE canary guidance against primary documentation.",
+        "All 30 repository verification gates passed; standalone links checked 10,797 links and 152 anchors with no failures. The 2,548-URL citation baseline has no drift; the new Kubernetes lifecycle link returned HTTP 200.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.02-technical-debt.md",

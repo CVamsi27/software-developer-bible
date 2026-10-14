@@ -3835,6 +3835,9 @@
    "20-backend/20.5-security/03-hardening-and-operations/REVISION.md",
    "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.02-configmaps-secrets.md"
   ],
+  "https://kubernetes.io/docs/concepts/containers/container-lifecycle-hooks/": [
+   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.md"
+  ],
   "https://kubernetes.io/docs/concepts/containers/runtime-class/": [
    "40-platform/40.1-docker/40.1.09-rootless-sandboxed-runtimes.md"
   ],
@@ -3898,10 +3901,9 @@
    "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.03-statefulsets-daemonsets.md"
   ],
   "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/": [
+   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.md",
+   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/REVISION.md",
    "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.02-deployments.md"
-  ],
-  "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/#strategy": [
-   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.md"
   ],
   "https://kubernetes.io/docs/concepts/workloads/controllers/job/": [
    "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.04-jobs-cronjobs.md"

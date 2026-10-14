@@ -1,6 +1,6 @@
 # Platform Stack
 
-> **Study time:** ≈ 13 h 28 m of reading (118 files, ~7 min average).
+> **Study time:** ≈ 13 h 32 m of reading (118 files, ~7 min average).
 > **Docker, Kubernetes, CI/CD, Observability, Build Tools, Git, Serverless, Monorepo, 12-Factor, CDN, Reverse Proxy, IaC** — shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
 > 118 files across 12 sub-stacks — the "how it runs" layer of the bible.

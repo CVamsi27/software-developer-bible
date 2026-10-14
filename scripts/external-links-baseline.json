@@ -450,7 +450,7 @@
   "https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection_en": [
    "80-lanes-abroad-full-stack/80.24-eu-regulatory-compliance.md"
   ],
-  "https://commitlint.js.org/": [
+  "https://commitlint.js.org/guides/local-setup": [
    "40-platform/40.6-git-advanced/40.6.04-git-hooks.md"
   ],
   "https://cookbook.openai.com/": [
@@ -2765,6 +2765,9 @@
   "https://git-scm.com/docs/git-commit-tree": [
    "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md"
   ],
+  "https://git-scm.com/docs/git-config": [
+   "40-platform/40.6-git-advanced/40.6.04-git-hooks.md"
+  ],
   "https://git-scm.com/docs/git-format-patch": [
    "40-platform/40.6-git-advanced/40.6.06-patch-and-bundle.md"
   ],
@@ -2825,7 +2828,8 @@
    "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md"
   ],
   "https://git-scm.com/docs/githooks": [
-   "40-platform/40.6-git-advanced/40.6.04-git-hooks.md"
+   "40-platform/40.6-git-advanced/40.6.04-git-hooks.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://git-scm.com/docs/gitmailmap": [
    "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.md"
@@ -3226,6 +3230,10 @@
   "https://github.com/leonardomso/33-js-concepts": [
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.md"
   ],
+  "https://github.com/lint-staged/lint-staged": [
+   "40-platform/40.6-git-advanced/40.6.04-git-hooks.md",
+   "40-platform/40.6-git-advanced/REVISION.md"
+  ],
   "https://github.com/microsoft/TypeScript/pull/46883": [
    "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.01-satisfies-operator.md"
   ],
@@ -3290,9 +3298,6 @@
   ],
   "https://github.com/oasdiff/oasdiff": [
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.05-swagger-openapi-nestjs.md"
-  ],
-  "https://github.com/okonet/lint-staged": [
-   "40-platform/40.6-git-advanced/40.6.04-git-hooks.md"
   ],
   "https://github.com/open-telemetry/opentelemetry-specification": [
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.01-opentelemetry.md"
@@ -6708,7 +6713,7 @@
   "https://typescript.temporal.io/api/classes/worker.Worker": [
    "40-platform/40.7-serverless-edge/40.7.07-durable-execution-temporal-inngest.md"
   ],
-  "https://typicode.github.io/husky/": [
+  "https://typicode.github.io/husky/get-started.html": [
    "40-platform/40.6-git-advanced/40.6.04-git-hooks.md"
   ],
   "https://unicode.org/reports/tr15/": [
@@ -7214,9 +7219,6 @@
   ],
   "https://www.atlassian.com/git/tutorials": [
    "40-platform/40.6-git-advanced/40.6.10-interview-questions.md"
-  ],
-  "https://www.atlassian.com/git/tutorials/git-hooks": [
-   "40-platform/40.6-git-advanced/40.6.04-git-hooks.md"
   ],
   "https://www.baeldung.com/java-concurrency": [
    "20-backend/20.13-java/20.13.03-java-concurrency-multithreading.md"

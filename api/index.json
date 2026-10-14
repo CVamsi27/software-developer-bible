@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "9da73e9330bc1865e06c85ba5269724781d3304f1f80ae1f2b9febfe9df14c7e",
+ "corpus_digest": "315980c8b7143773b184d1357b232ae87edadb009f0d58bc0fb3a860e47a045e",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5237
+  "read_minutes": 5241
  },
  "chapters": [
   {
@@ -5711,7 +5711,7 @@
     "reference",
     "tool"
    ],
-   "m": 5
+   "m": 7
   },
   {
    "p": "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.html",
@@ -5781,7 +5781,7 @@
     "interview-questions",
     "practice"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "40-platform/40.6-git-advanced/REVISION.html",
@@ -5792,7 +5792,7 @@
     "practice",
     "revision"
    ],
-   "m": 3
+   "m": 4
   },
   {
    "p": "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.html",

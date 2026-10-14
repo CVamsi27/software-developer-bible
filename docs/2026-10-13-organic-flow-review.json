@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 63,
+    "pending": 62,
     "unchanged": 80,
-    "revised": 377,
-    "reviewed": 457,
+    "revised": 378,
+    "reviewed": 458,
     "topic_chapters": 520
   },
   "entries": [
@@ -7079,12 +7079,17 @@
       "path": "40-platform/40.6-git-advanced/40.6.04-git-hooks.md",
       "group": "40-platform/40.6-git-advanced",
       "title": "Git Hooks",
-      "status": "pending",
-      "baseline_sha256": "a2a89e12b28ef2fc044c93e2fba2cd5ca26be6e2222c210b371b07ea9caa32da",
+      "status": "revised",
+      "baseline_sha256": "aaa6f32eee006972f68f51fc5754141df0a5938d296ff9ae4571b53c8b768f26",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which hook should check staged bytes, which hook can reject a whole or partial ref update, and what can never be enforced by a developer-controlled local hook?",
+      "disposition": "Rebuilt the chapter as an event-to-authority path from the index through local commit and server push. Clarified regular versus merge commit order, exact staged-snapshot checks, clone and core.hooksPath behavior, no-verify limits, current Husky setup and lint-staged handling of partial staging, pre-receive versus per-ref update (including atomic push), zero OIDs, bare-server context, and post-receive irreversibility. Retained and checked a commit-msg example and a self-hosted server policy; removed generic tutorial references and repetitive advice. Updated the category index, revision drill and senior interview answer.",
+      "validation": [
+        "Re-read in learning order; checked practical/textbook definitions, First Principles, commit and push lifecycles, hook installation, staged data, server ref policy, post-operation boundaries and related interview/revision content.",
+        "Reviewed current Git hook/config manuals plus Husky, lint-staged and commitlint setup docs. Isolated repositories verified commit-msg subject rejection (including body-only false rescue), explicit no-verify bypass, protected pre-receive rejection, accepted topic ref and whole-push rejection when a protected ref is included.",
+        "All 30 repository verification gates passed, including writer fixed-point; standalone link check verified 10,831 links and 185 anchors with zero failures; citation baseline is clean at 2,600 URLs.",
+        "Ruby 3.4.11 production Jekyll build, site-wide rendered-heading scan, focused one-H1/section/hook-example assertions, and git diff --check passed."
+      ]
     },
     {
       "path": "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.md",

@@ -1,6 +1,6 @@
 # Git Advanced — Index
 
-> **Study time:** ≈ 1 h 22 m of reading (11 files, ~7 min average).
+> **Study time:** ≈ 1 h 26 m of reading (11 files, ~8 min average).
 > **11 files** — Advanced Git operations from the object model, branching strategies, rebase, cherry-pick, hooks, bisect, reflog, format-patch, code archaeology, LFS/partial clones, and commit signing to interview questions.
 
 [![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
@@ -64,7 +64,7 @@ What does the product need?
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 04 | [Git Hooks](40.6.04-git-hooks.md) | Client/server hooks, pre-commit, Husky, commitlint, lint-staged | Important | Foundational | 5 min |
+| 04 | [Git Hooks](40.6.04-git-hooks.md) | Staged/message checks, Husky/lint-staged, receiver policy, post-receive boundary—choose by event and authority | Important | Foundational | 7 min |
 
 ---
 
@@ -102,7 +102,7 @@ Keeping large repositories fast and history trustworthy.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 10 | [Interview Questions](40.6.10-interview-questions.md) | 40 source-linked questions with answers | Important | Foundational | 6 min |
+| 10 | [Interview Questions](40.6.10-interview-questions.md) | 40 source-linked questions with answers | Important | Foundational | 7 min |
 
 ---
 

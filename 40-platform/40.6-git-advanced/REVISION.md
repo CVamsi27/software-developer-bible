@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Git%20Advanced-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../docs/topic-importance.md)
 
@@ -81,6 +81,18 @@ Source: [Git Hooks](40.6.04-git-hooks.md)
 **Q:** Why are local hooks not a complete policy enforcement mechanism?
 
 **A:** They can be absent or bypassed. Enforce required checks and access policy at the shared integration boundary while using hooks for quick local feedback.
+
+**Q:** Why can a passing worktree formatter fail to validate the snapshot a commit will contain?
+
+**A:** The index is the commit snapshot; partially staged files can also contain unstaged worktree changes. Run the tool against staged content, then inspect the final index because formatters can modify what will be committed. See [lint-staged](https://github.com/lint-staged/lint-staged).
+
+**Q:** A push updates `main` and a feature ref. How do `pre-receive` and `update` differ if policy rejects `main`?
+
+**A:** `pre-receive` runs once for the receive operation, and a nonzero exit rejects every ref in that push. With a normal non-atomic push, `update` runs for each ref and can reject `main` while allowing the feature ref; `--atomic` makes the set all-or-nothing. See the [Git Hooks manual](https://git-scm.com/docs/githooks).
+
+**Q:** A deployment notifier fails after a push succeeds. Did Git reject or roll back the push?
+
+**A:** No. `post-receive` runs after refs are updated and cannot change the result. Treat downstream work as a separately monitored, retryable operation; do not report the accepted push as rejected. See the [post-receive hook](https://git-scm.com/docs/githooks).
 
 ## Git Advanced Commands
 

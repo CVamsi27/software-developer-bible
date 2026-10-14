@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 61,
+    "pending": 60,
     "unchanged": 80,
-    "revised": 379,
-    "reviewed": 459,
+    "revised": 380,
+    "reviewed": 460,
     "topic_chapters": 520
   },
   "entries": [
@@ -7111,13 +7111,19 @@
     {
       "path": "40-platform/40.6-git-advanced/40.6.06-patch-and-bundle.md",
       "group": "40-platform/40.6-git-advanced",
-      "title": "Git Patch & Bundle",
-      "status": "pending",
-      "baseline_sha256": "5ed94e213b20b1506ea648f3d09de6ed8a4091d318591ffd3d79059115989a70",
+      "title": "Git Patch, Bundle & Archive",
+      "status": "revised",
+      "baseline_sha256": "ae432bdce227e370315fe8db2e8d0e92001523e50ed4e12ed23aec0a6b1e5f08",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which Git artifact preserves review context, commit history, or only release files—and what must the recipient restore separately?",
+      "disposition": "Rebuilt the chapter around choosing and restoring the right artifact: an ordered format-patch series for reviewed replay, a bundle for selected history, and git archive for a tree snapshot. Clarified patch replay metadata and commit identity, mail sign-off versus cryptographic proof, recipient-side prerequisite verification, and archive attributes/LFS boundaries. Corrected the --all/stash explanation against a Git 2.48.1 fixture: refs/stash was advertised, but bundle clone did not restore the stash ref/list. Added the Git 2.51+ stash export/import path for explicit transfer. Updated the Git Advanced index, revision drill, interview answer, citation baseline and generated read-time/search/count data.",
+      "validation": [
+        "Re-read in category order with practical and textbook definitions, separate First Principles, one artifact-selection flow, one Summary and focused See Also/References. The comparison table maps each format to the information it preserves.",
+        "Checked current Git format-patch, am, bundle, archive and stash manuals plus the Linux kernel submission guide. Verified that Git 2.51 introduced stash export/import against the Git 2.51 release overview. Both added citation URLs returned HTTP 200; the citation baseline has no drift at 2,605 URLs.",
+        "An isolated Git 2.48.1 fixture passed format-patch/git am replay, bundle verification/listing and git archive output. It confirmed --all advertised refs/stash while cloning restored neither refs/stash nor a stash list. The newer stash export/import flow is documented for Git 2.51+ and was not executable in the local Git 2.48.1 runtime.",
+        "All 30 repository verification gates passed, including fixed-point. Standalone link checking verified 10,838 links and 185 anchors with zero broken links, stale labels or inline paths.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading scan passed. The rendered chapter has exactly one H1 and includes its textbook definition, stash-transfer boundary, Summary and references; git diff --check passed."
+      ]
     },
     {
       "path": "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md",

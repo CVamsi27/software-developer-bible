@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "90b6494431fd08673bb8192d062838e8e055e7d86c9e0d104b17c10e41aee0dd",
+ "corpus_digest": "796e5a9e6d7feb425da06d915acef9b5de3e7baad56a080cf5212f481d9143f0",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5236
+  "read_minutes": 5238
  },
  "chapters": [
   {
@@ -5726,7 +5726,7 @@
   },
   {
    "p": "40-platform/40.6-git-advanced/40.6.06-patch-and-bundle.html",
-   "t": "Git Patch & Bundle",
+   "t": "Git Patch, Bundle & Archive",
    "s": "Git Advanced",
    "c": "Tooling",
    "g": [
@@ -5734,7 +5734,7 @@
     "guide",
     "reference"
    ],
-   "m": 5
+   "m": 7
   },
   {
    "p": "40-platform/40.6-git-advanced/40.6.07-code-archaeology.html",

@@ -1,6 +1,6 @@
 # Git Advanced — Index
 
-> **Study time:** ≈ 1 h 21 m of reading (11 files, ~7 min average).
+> **Study time:** ≈ 1 h 23 m of reading (11 files, ~8 min average).
 > **11 files** — Advanced Git operations from the object model, branching strategies, rebase, cherry-pick, hooks, bisect, reflog, format-patch, code archaeology, LFS/partial clones, and commit signing to interview questions.
 
 [![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
@@ -75,7 +75,7 @@ The power tools.
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 05 | [Advanced Commands](40.6.05-git-advanced-commands.md) | Bisect’s test contract, reflog recovery limits, stash vs worktree, pinned submodules, reset vs revert | Important | Foundational | 6 min |
-| 06 | [Patch & Bundle](40.6.06-patch-and-bundle.md) | `format-patch`, `am`, `send-email`, bundles, OSS contribution workflow | Important | Foundational | 5 min |
+| 06 | [Patch, Bundle & Archive](40.6.06-patch-and-bundle.md) | Ordered mbox replay, sign-off vs signature, bundle prerequisites and limits, tracked-tree release archives | Important | Foundational | 7 min |
 
 ---
 
@@ -114,7 +114,7 @@ Keeping large repositories fast and history trustworthy.
 4. **Git Hooks** — for senior roles
 5. **Advanced Commands** — for the "what would you do if…" questions
 6. **Code Archaeology** — for debugging questions
-7. **Patch & Bundle** — for OSS contribution
+7. **Patch, Bundle & Archive** — choose the right artifact for review, offline history transfer, or a source release
 8. **LFS & Partial Clones** — for platform/scale roles
 9. **Signed Commits** — for security-minded teams
 10. **[Section revision](REVISION.md)** — explain each state transition without copying
@@ -130,6 +130,7 @@ Keeping large repositories fast and history trustworthy.
 - "How do you undo a commit? What about an already-pushed commit?"
 - "How do you resolve a merge conflict?"
 - "What does `git reflog` do? How has it saved you?"
+- "Should this change move as a patch, bundle, or source archive?"
 - "Walk me through your team's branching strategy."
 - "How would you keep a multi-GB repository cloneable?" (LFS, partial clones, shallow CI)
 

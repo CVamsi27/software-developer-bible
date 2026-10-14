@@ -122,13 +122,29 @@ Source: [Git Advanced Commands](40.6.05-git-advanced-commands.md)
 
 **A:** `reset --hard` moves the current branch and replaces the index and tracked working files with the target, potentially overwriting untracked paths. Revert records a new inverse-change commit, so collaborators can keep using the published ancestry. A merge revert also needs an intentional mainline choice. See the [git-reset](https://git-scm.com/docs/git-reset) and [git-revert](https://git-scm.com/docs/git-revert) manuals.
 
-## Git Patch & Bundle
+## Git Patch, Bundle & Archive
 
-Source: [Git Patch & Bundle](40.6.06-patch-and-bundle.md)
+Source: [Git Patch, Bundle & Archive](40.6.06-patch-and-bundle.md)
 
-**Q:** How do a patch and a bundle transfer different information?
+**Q:** What does applying a `format-patch` series preserve, and why do the resulting commit IDs differ?
 
-**A:** A patch describes changes, often replayed onto existing history. A bundle can carry Git objects and refs with prerequisites, enabling offline repository/history transfer.
+**A:** Each mail carries a commit’s author/message and patch. `git am` replays it on the recipient’s base and creates a commit from the result. Its ID commonly changes when the parent or committer metadata changes; the original commit object and signature are not transferred. See the [git-format-patch](https://git-scm.com/docs/git-format-patch) and [git-am](https://git-scm.com/docs/git-am) manuals.
+
+**Q:** Why must an incremental bundle be verified in the receiving repository?
+
+**A:** Its excluded base commits are prerequisites. The sender already has them, so verification there proves nothing about the recipient. Verify in the actual target, then fetch and inspect the offered ref before integrating it. See the [git-bundle manual](https://git-scm.com/docs/git-bundle).
+
+**Q:** What does a bundle created with `--all` fail to preserve?
+
+**A:** It carries selected refs and reachable commits, not the index, working tree, reflogs, hooks or repository configuration. A bundle clone does not reliably reconstruct the stash list. Git 2.51 added `stash export`/`import` for explicit transfer; confirm both ends run 2.51+ and test the restore. LFS payloads and submodule repositories need separate backups. See the [git-bundle](https://git-scm.com/docs/git-bundle) and [Git 2.51 release notes](https://github.blog/open-source/git/highlights-from-git-2-51/).
+
+**Q:** When should a release use `git archive` rather than a bundle?
+
+**A:** Use an archive when the build needs the files from a specific tree but not Git history. It cannot restore refs or commits, and `export-ignore` or `export-subst` attributes can change its contents. Check LFS payload requirements separately. See [git-archive](https://git-scm.com/docs/git-archive) and [Git at Scale](40.6.08-git-at-scale-lfs-partial-clones.md).
+
+**Q:** What does a `Signed-off-by` trailer establish, and how does it differ from a commit signature?
+
+**A:** A sign-off is a contributor’s textual declaration required by some project policies; it is not cryptographic proof. A verified commit signature depends on a trusted key and policy. `format-patch --signature` is only a message footer. See [git-format-patch](https://git-scm.com/docs/git-format-patch) and [signed commits](40.6.09-signed-commits-repository-security.md).
 
 ## Git Code Archaeology
 

@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2535,
+ "url_count": 2534,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -3242,9 +3242,6 @@
   ],
   "https://github.com/sapegin/jest-cheat-sheet": [
    "50-quality/50.1-testing/02-frameworks/50.1.2.01-jest.md"
-  ],
-  "https://github.com/sidekiq/sidekiq/wiki": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.25-distributed-job-scheduler.md"
   ],
   "https://github.com/sigstore/gitsign": [
    "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.md"

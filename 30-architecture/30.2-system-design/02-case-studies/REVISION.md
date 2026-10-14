@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-21_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-22_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
 
@@ -653,6 +653,14 @@ Source: [Distributed Job Scheduler System Design](30.2.2.25-distributed-job-sche
 **Q:** What does the unique live-run index protect, and what does it leave to the scheduler transaction?
 
 **A:** It prevents two current runs from owning the same job occurrence. The transaction must still verify the schedule version, insert the run, advance the next-fire cursor, and write publication intent together. See [PostgreSQL partial indexes](https://www.postgresql.org/docs/current/indexes-partial.html).
+
+**Q:** When is a per-run fencing token insufficient for an external effect?
+
+**A:** It orders attempts of that run, but not separate runs that mutate the same resource. Allocate the token in the protected resource's ownership scope and have the resource reject older tokens, or use a resource-side version check.
+
+**Q:** What must a recurring schedule define for daylight-saving transitions?
+
+**A:** Store its IANA timezone and choose what a nonexistent local time does during a spring jump and whether a repeated local time fires once or twice. Also define overlap and missed-run behavior so retries or outages cannot invent occurrences.
 
 ## Distributed ID Generator System Design
 

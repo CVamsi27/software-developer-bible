@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-System%20Design-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-20_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-21_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
 
@@ -545,6 +545,10 @@ Source: [Distributed Counter / Metrics Aggregation System Design](30.2.2.20-dist
 **Q:** Why must each G-Counter writer keep its identity unique across concurrent writers and restarts?
 
 **A:** Merge compares values within the same writer slot. Two concurrent writers sharing a slot can overwrite one another, while resetting a slot can make the merged state forget prior increments. Use durable identity or a new epoch and a safe protocol before compacting old slots. See the [CRDT counter model](https://dsf.berkeley.edu/cs286/papers/crdt-tr2011.pdf).
+
+**Q:** Why is `ON CONFLICT DO NOTHING` not a complete idempotency policy for a counter event?
+
+**A:** It suppresses a second increment for the same event ID, but by itself cannot tell whether a retry carries the original key and delta. Compare the stored payload: return the original outcome for an exact match and reject an ID reused with different meaning.
 
 ## Workflow Engine — System Design Case Study
 

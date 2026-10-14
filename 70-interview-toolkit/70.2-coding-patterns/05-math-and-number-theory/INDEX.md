@@ -1,6 +1,6 @@
 # Math & Number Theory
 
-> **Study time:** ≈ 14 min of reading (2 files, ~7 min average).
+> **Study time:** ≈ 15 min of reading (2 files, ~8 min average).
 > **1 file.** Number theory and combinatorics for interviews: primes, GCD/LCM, modular arithmetic, combinatorics and probability — the math that turns up in medium/hard problems once the data-structure patterns are mastered.
 
 [![Files](https://img.shields.io/badge/files-2-blue)](../INDEX.md)
@@ -17,7 +17,7 @@ Follow why each step of Euclid’s algorithm preserves the greatest common divis
 
 | # | File | When to use | Role priority | General importance | Read time |
 | --: | ------ | ------------------- | --- | --- | ----------: |
-| 01 | [Number Theory & Combinatorics](70.2.5.01-number-theory-combinatorics.md) | Primality, GCD, modular exponentiation, counting/probability in competitive problems | Optional | Specialized | 12 min |
+| 01 | [Number Theory & Combinatorics](70.2.5.01-number-theory-combinatorics.md) | Primality, GCD, modular exponentiation, counting/probability in competitive problems | Optional | Specialized | 13 min |
 
 ---
 

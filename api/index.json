@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "c8e2462976c930d54e51947e56642274315d04ca9ec047235f6c2446f27e7bea",
+ "corpus_digest": "4b82f2b6cd472ea6a943d453cc599e18c715bc6d0a323334122fafb0c018f026",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5228
+  "read_minutes": 5230
  },
  "chapters": [
   {
@@ -6812,7 +6812,7 @@
     "concept",
     "practice"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.02-two-pointers.html",
@@ -6856,7 +6856,7 @@
     "concept",
     "practice"
    ],
-   "m": 11
+   "m": 12
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.06-greedy-prefix-sum.html",
@@ -6933,7 +6933,7 @@
     "concept",
     "practice"
    ],
-   "m": 14
+   "m": 15
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids/70.2.2.05-trie.html",
@@ -7032,7 +7032,7 @@
     "concept",
     "practice"
    ],
-   "m": 13
+   "m": 12
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.03-stack-queue-patterns.html",
@@ -7065,7 +7065,7 @@
     "concept",
     "practice"
    ],
-   "m": 15
+   "m": 14
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/REVISION.html",
@@ -7086,7 +7086,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 13
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/05-math-and-number-theory/REVISION.html",

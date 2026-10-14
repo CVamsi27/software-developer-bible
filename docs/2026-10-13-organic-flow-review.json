@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 27,
+    "pending": 0,
     "unchanged": 85,
-    "revised": 408,
-    "reviewed": 493,
+    "revised": 435,
+    "reviewed": 520,
     "topic_chapters": 520
   },
   "entries": [
@@ -8163,298 +8163,406 @@
       "path": "70-interview-toolkit/70.1-behavioral/70.1.01-stakeholder-management-stories.md",
       "group": "70-interview-toolkit/70.1-behavioral",
       "title": "Stakeholder Management Stories: Product Partnership, Influence, and Trade-off Communication",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "e1d769d5a49cd0c0ef2340ad90178d9631e32644b767658abff0266e8d3a734d",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can I explain a disagreement or missed commitment with evidence and without claiming credit I did not earn?",
+      "disposition": "Added a concrete deadline/dependency opening; clarified decision ownership and evidence; labeled the worked trust-recovery scenario as fictional and removed its inflated “everyone needs” framing.",
+      "validation": [
+        "Re-read the chapter with its behavioral INDEX and REVISION companion; checked that the opening, definition, example sequence, summary and cross-links support one interview question.",
+        "Verified that fictional scenarios are labeled and that advice distinguishes personal evidence, decision authority, measurable outcomes and uncertainty.",
+        "All 30 repository gates passed; standalone link scan checked 10,838 links and 185 anchors with 0 failures; citation baseline stayed at 2,654 URLs. Ruby 3.4.11 locked-bundle production Jekyll build and the rendered-heading check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.1-behavioral/70.1.02-leadership-questions.md",
       "group": "70-interview-toolkit/70.1-behavioral",
       "title": "Leadership Questions: Decisions, Influence & Team Outcomes",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "c5962f86f2eca720e8af6d20ef853f2558e4b11c9fd3acd709fe43ae8cb92f3a",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do I show leadership through a team outcome when I was not the manager?",
+      "disposition": "Added a concrete staffing trade-off opening and checked the question bank against the stated ownership boundaries and fictional-example disclaimer.",
+      "validation": [
+        "Re-read the chapter with its behavioral INDEX and REVISION companion; checked that the opening, definition, example sequence, summary and cross-links support one interview question.",
+        "Verified that fictional scenarios are labeled and that advice distinguishes personal evidence, decision authority, measurable outcomes and uncertainty.",
+        "All 30 repository gates passed; standalone link scan checked 10,838 links and 185 anchors with 0 failures; citation baseline stayed at 2,654 URLs. Ruby 3.4.11 locked-bundle production Jekyll build and the rendered-heading check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.1-behavioral/70.1.03-judgment-calls-ambiguity.md",
       "group": "70-interview-toolkit/70.1-behavioral",
       "title": "Judgment Calls & Ambiguity: Deciding Under Incomplete Data",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "3177e202cf525c0571e2afdc8d42be2581188c8b6569c7bca8710ad749dd01e2",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What evidence is enough to act when a decision is costly to reverse or the data is incomplete?",
+      "disposition": "Added an experiment-framing opening; removed the universal 70% heuristic and repetitive explanation; corrected one-way-door language and rewrote examples to show bounded evidence, uncertainty and reversal triggers.",
+      "validation": [
+        "Re-read the chapter with its behavioral INDEX and REVISION companion; checked that the opening, definition, example sequence, summary and cross-links support one interview question.",
+        "Verified that fictional scenarios are labeled and that advice distinguishes personal evidence, decision authority, measurable outcomes and uncertainty.",
+        "All 30 repository gates passed; standalone link scan checked 10,838 links and 185 anchors with 0 failures; citation baseline stayed at 2,654 URLs. Ruby 3.4.11 locked-bundle production Jekyll build and the rendered-heading check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.1-behavioral/70.1.04-system-design-behavioral.md",
       "group": "70-interview-toolkit/70.1-behavioral",
       "title": "Technical Decision Stories: From Constraint to Verified Outcome",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "4a136ef1bb4e745f35d8a863617e5e9922dd1b5409b2e637bafe48a504b8501a",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do I explain a technical decision as evidence from real system behavior?",
+      "disposition": "Added a measurable latency/bottleneck opening and checked that the example prompts connect constraints, decision, implementation and observable outcome.",
+      "validation": [
+        "Re-read the chapter with its behavioral INDEX and REVISION companion; checked that the opening, definition, example sequence, summary and cross-links support one interview question.",
+        "Verified that fictional scenarios are labeled and that advice distinguishes personal evidence, decision authority, measurable outcomes and uncertainty.",
+        "All 30 repository gates passed; standalone link scan checked 10,838 links and 185 anchors with 0 failures; citation baseline stayed at 2,654 URLs. Ruby 3.4.11 locked-bundle production Jekyll build and the rendered-heading check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.1-behavioral/70.1.05-behavioral-anti-patterns-checklist.md",
       "group": "70-interview-toolkit/70.1-behavioral",
       "title": "Behavioral Anti-Patterns: Make the Evidence Easy to Follow",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "173760b3359cb5776191d690ce64691f1e1c2b8af482162e6b4411962cca2697",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What is missing when an interview answer sounds polished but is hard to verify?",
+      "disposition": "Added a concrete ownership/evidence opening and retained the checklist as a focused diagnostic rather than a second story guide.",
+      "validation": [
+        "Re-read the chapter with its behavioral INDEX and REVISION companion; checked that the opening, definition, example sequence, summary and cross-links support one interview question.",
+        "Verified that fictional scenarios are labeled and that advice distinguishes personal evidence, decision authority, measurable outcomes and uncertainty.",
+        "All 30 repository gates passed; standalone link scan checked 10,838 links and 185 anchors with 0 failures; citation baseline stayed at 2,654 URLs. Ruby 3.4.11 locked-bundle production Jekyll build and the rendered-heading check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.01-sliding-window.md",
       "group": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures",
       "title": "Sliding Window",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "a4a03ba7c9d60b48cd03528551b17cbb4338b34f6ec7a4a421e9dca634b91aba",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "When can a contiguous range be updated incrementally instead of recomputed?",
+      "disposition": "Added a shared-work example; made the window definition and boundary movement explicit; clarified frequency-state and invalid-size mistakes.",
+      "validation": [
+        "Re-read the chapter in learning order with its category INDEX and REVISION companion; checked the definition, first-principles chain, worked trace, edge cases, summary and cross-links.",
+        "The linear and graph code examples were compiled and executed in their earlier group review; the recursion and heaps/stacks TypeScript examples passed Deno 2.8.3 type-checking and execution with TypeScript 6.0.3.",
+        "All 30 repository gates passed; standalone link scan checked 10,838 links and 185 anchors with 0 failures; citation baseline stayed at 2,654 URLs. Ruby 3.4.11 locked-bundle production Jekyll build and the rendered-heading check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.02-two-pointers.md",
       "group": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures",
       "title": "Two Pointers",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "a43a2c11577c3eda5c793565a889be40a3931cad2479ed868ec2ef86ffe38feb",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What proof lets one pointer move without discarding a valid answer?",
+      "disposition": "Added the sorted-pair candidate-elimination example; clarified the required invariant, equal-height choice and full Three Sum costs.",
+      "validation": [
+        "Re-read the chapter in learning order with its category INDEX and REVISION companion; checked the definition, first-principles chain, worked trace, edge cases, summary and cross-links.",
+        "The linear and graph code examples were compiled and executed in their earlier group review; the recursion and heaps/stacks TypeScript examples passed Deno 2.8.3 type-checking and execution with TypeScript 6.0.3.",
+        "All 30 repository gates passed; standalone link scan checked 10,838 links and 185 anchors with 0 failures; citation baseline stayed at 2,654 URLs. Ruby 3.4.11 locked-bundle production Jekyll build and the rendered-heading check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.03-binary-search.md",
       "group": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures",
       "title": "Binary Search",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "3296c2687b814984a4a5323cb27fe6ce41ea07b0bf810e0fbaf038d6f7e3c0a2",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "What monotone boundary lets me discard half of an ordered search space?",
+      "disposition": "Added a capacity-feasibility example and re-read the boundary definitions and implementation contracts in context.",
+      "validation": [
+        "Re-read the chapter in learning order with its category INDEX and REVISION companion; checked the definition, first-principles chain, worked trace, edge cases, summary and cross-links.",
+        "The linear and graph code examples were compiled and executed in their earlier group review; the recursion and heaps/stacks TypeScript examples passed Deno 2.8.3 type-checking and execution with TypeScript 6.0.3.",
+        "All 30 repository gates passed; standalone link scan checked 10,838 links and 185 anchors with 0 failures; citation baseline stayed at 2,654 URLs. Ruby 3.4.11 locked-bundle production Jekyll build and the rendered-heading check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.04-linked-list-manipulation-patterns.md",
       "group": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures",
       "title": "Linked List Manipulation Patterns",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "117799e98cc4a79fad016cbe1def9fe61208be345e04738efc4e16d2018864c3",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do I mutate links without losing nodes or changing the caller’s intended list?",
+      "disposition": "Added a pointer-rewiring failure example; clarified cycle-entry movement, dummy-node purpose, input mutation and list-shape preconditions.",
+      "validation": [
+        "Re-read the chapter in learning order with its category INDEX and REVISION companion; checked the definition, first-principles chain, worked trace, edge cases, summary and cross-links.",
+        "The linear and graph code examples were compiled and executed in their earlier group review; the recursion and heaps/stacks TypeScript examples passed Deno 2.8.3 type-checking and execution with TypeScript 6.0.3.",
+        "All 30 repository gates passed; standalone link scan checked 10,838 links and 185 anchors with 0 failures; citation baseline stayed at 2,654 URLs. Ruby 3.4.11 locked-bundle production Jekyll build and the rendered-heading check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.05-intervals.md",
       "group": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures",
       "title": "Intervals",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "88f3f51bfd4a4bd8589c234caae92c97b1162192ffd036893d79776688abf065",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which endpoint convention determines whether touching ranges overlap?",
+      "disposition": "Added a closed-versus-half-open example; stated contracts beside the affected algorithms and expanded costs for each interval operation.",
+      "validation": [
+        "Re-read the chapter in learning order with its category INDEX and REVISION companion; checked the definition, first-principles chain, worked trace, edge cases, summary and cross-links.",
+        "The linear and graph code examples were compiled and executed in their earlier group review; the recursion and heaps/stacks TypeScript examples passed Deno 2.8.3 type-checking and execution with TypeScript 6.0.3.",
+        "All 30 repository gates passed; standalone link scan checked 10,838 links and 185 anchors with 0 failures; citation baseline stayed at 2,654 URLs. Ruby 3.4.11 locked-bundle production Jekyll build and the rendered-heading check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.06-greedy-prefix-sum.md",
       "group": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures",
       "title": "Greedy & Prefix Sum",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "3539a10043469eb1b20e31ce007aa408ffba1e8c9eef690f0af97230aa792c77",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "When is a local greedy choice provably safe, and when should cumulative state answer a query?",
+      "disposition": "Added a counterexample to greedy coin selection; corrected exclusive-prefix notation and output behavior; removed unrelated practice references and clarified operation costs.",
+      "validation": [
+        "Re-read the chapter in learning order with its category INDEX and REVISION companion; checked the definition, first-principles chain, worked trace, edge cases, summary and cross-links.",
+        "The linear and graph code examples were compiled and executed in their earlier group review; the recursion and heaps/stacks TypeScript examples passed Deno 2.8.3 type-checking and execution with TypeScript 6.0.3.",
+        "All 30 repository gates passed; standalone link scan checked 10,838 links and 185 anchors with 0 failures; citation baseline stayed at 2,654 URLs. Ruby 3.4.11 locked-bundle production Jekyll build and the rendered-heading check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.07-string-search-kmp-rabin-karp.md",
       "group": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures",
       "title": "String Search — KMP & Rabin-Karp",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "18e03d667ad45b5d7934d2a345ddf8c97b10f85bd8cb9e612ab7b2b27b4b9387",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can a matcher reuse a prefix after a partial mismatch, and when is hashing preferable?",
+      "disposition": "Added a concrete KMP fallback example and removed a redundant general pattern-signature line while preserving the collision and complexity boundaries.",
+      "validation": [
+        "Re-read the chapter in learning order with its category INDEX and REVISION companion; checked the definition, first-principles chain, worked trace, edge cases, summary and cross-links.",
+        "The linear and graph code examples were compiled and executed in their earlier group review; the recursion and heaps/stacks TypeScript examples passed Deno 2.8.3 type-checking and execution with TypeScript 6.0.3.",
+        "All 30 repository gates passed; standalone link scan checked 10,838 links and 185 anchors with 0 failures; citation baseline stayed at 2,654 URLs. Ruby 3.4.11 locked-bundle production Jekyll build and the rendered-heading check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids/70.2.2.01-dfs-bfs.md",
       "group": "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids",
       "title": "DFS & BFS",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "112549ee8be8045d51600ff3c98a0660ec69dbd641a81fb071c34b3c14f8612f",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do I visit each reachable state once, and which frontier order matches the problem?",
+      "disposition": "Added a grid-island traversal opening and made discovery-time marking and the choice between stack and queue explicit.",
+      "validation": [
+        "Re-read the chapter in learning order with its category INDEX and REVISION companion; checked the definition, first-principles chain, worked trace, edge cases, summary and cross-links.",
+        "The linear and graph code examples were compiled and executed in their earlier group review; the recursion and heaps/stacks TypeScript examples passed Deno 2.8.3 type-checking and execution with TypeScript 6.0.3.",
+        "All 30 repository gates passed; standalone link scan checked 10,838 links and 185 anchors with 0 failures; citation baseline stayed at 2,654 URLs. Ruby 3.4.11 locked-bundle production Jekyll build and the rendered-heading check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids/70.2.2.02-shortest-paths-dijkstra-bellman-ford.md",
       "group": "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids",
       "title": "Shortest Paths: Dijkstra & Bellman-Ford",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "e75a8c9e095eb43dab3fa9c45ffaf954717621783018de6790d0b1b54db965a6",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which edge-weight constraints make Dijkstra safe, and when must negative edges be handled?",
+      "disposition": "Added a route-cost boundary and reordered Dijkstra’s stale-entry check before accepting a destination; retained Bellman–Ford and 0–1 BFS distinctions.",
+      "validation": [
+        "Re-read the chapter in learning order with its category INDEX and REVISION companion; checked the definition, first-principles chain, worked trace, edge cases, summary and cross-links.",
+        "The linear and graph code examples were compiled and executed in their earlier group review; the recursion and heaps/stacks TypeScript examples passed Deno 2.8.3 type-checking and execution with TypeScript 6.0.3.",
+        "All 30 repository gates passed; standalone link scan checked 10,838 links and 185 anchors with 0 failures; citation baseline stayed at 2,654 URLs. Ruby 3.4.11 locked-bundle production Jekyll build and the rendered-heading check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids/70.2.2.03-union-find.md",
       "group": "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids",
       "title": "Union-Find",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "542d27e613e4158aa4cdc0f2eb409f8f5cfdfb61f702e4b2c289fd329f7b5141",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can repeated connectivity queries avoid rescanning the graph after every added edge?",
+      "disposition": "Added a repeated-connection scenario and removed duplicate practice problems while retaining the structure’s cycle and incremental-connectivity cases.",
+      "validation": [
+        "Re-read the chapter in learning order with its category INDEX and REVISION companion; checked the definition, first-principles chain, worked trace, edge cases, summary and cross-links.",
+        "The linear and graph code examples were compiled and executed in their earlier group review; the recursion and heaps/stacks TypeScript examples passed Deno 2.8.3 type-checking and execution with TypeScript 6.0.3.",
+        "All 30 repository gates passed; standalone link scan checked 10,838 links and 185 anchors with 0 failures; citation baseline stayed at 2,654 URLs. Ruby 3.4.11 locked-bundle production Jekyll build and the rendered-heading check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids/70.2.2.04-topological-sort.md",
       "group": "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids",
       "title": "Topological Sort",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "cd5fbcd973dfbd48bf3e0d19e8efd9edb05a1e26481d9e4097f3afb711404b9a",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can prerequisite relationships produce a valid order, and how does the algorithm expose a cycle?",
+      "disposition": "Added a dependency-build opening, defined in-degree in plain language and tightened the cycle/complexity explanation.",
+      "validation": [
+        "Re-read the chapter in learning order with its category INDEX and REVISION companion; checked the definition, first-principles chain, worked trace, edge cases, summary and cross-links.",
+        "The linear and graph code examples were compiled and executed in their earlier group review; the recursion and heaps/stacks TypeScript examples passed Deno 2.8.3 type-checking and execution with TypeScript 6.0.3.",
+        "All 30 repository gates passed; standalone link scan checked 10,838 links and 185 anchors with 0 failures; citation baseline stayed at 2,654 URLs. Ruby 3.4.11 locked-bundle production Jekyll build and the rendered-heading check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids/70.2.2.05-trie.md",
       "group": "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids",
       "title": "Trie",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "7640df2f6434b29dbd7f86254047d40046d1e4c71929525337cb778615739058",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How does a trie distinguish a stored word from a prefix shared by longer words?",
+      "disposition": "Added the app/apple terminal-marker example; removed unrelated or duplicate practice items and clarified the limits of prefix and wildcard queries.",
+      "validation": [
+        "Re-read the chapter in learning order with its category INDEX and REVISION companion; checked the definition, first-principles chain, worked trace, edge cases, summary and cross-links.",
+        "The linear and graph code examples were compiled and executed in their earlier group review; the recursion and heaps/stacks TypeScript examples passed Deno 2.8.3 type-checking and execution with TypeScript 6.0.3.",
+        "All 30 repository gates passed; standalone link scan checked 10,838 links and 185 anchors with 0 failures; citation baseline stayed at 2,654 URLs. Ruby 3.4.11 locked-bundle production Jekyll build and the rendered-heading check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids/70.2.2.06-matrix-traversal-simulation.md",
       "group": "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids",
       "title": "Matrix Traversal & Simulation",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "0a31b5463d90730af6dd4d78620491aae42c978e18e6b3a596dbc426f9d4f766",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do boundary updates guarantee every matrix cell is processed exactly once?",
+      "disposition": "Added a one-row spiral failure example and replaced hiring-rubric language with an objective explanation of layout and simulation trade-offs.",
+      "validation": [
+        "Re-read the chapter in learning order with its category INDEX and REVISION companion; checked the definition, first-principles chain, worked trace, edge cases, summary and cross-links.",
+        "The linear and graph code examples were compiled and executed in their earlier group review; the recursion and heaps/stacks TypeScript examples passed Deno 2.8.3 type-checking and execution with TypeScript 6.0.3.",
+        "All 30 repository gates passed; standalone link scan checked 10,838 links and 185 anchors with 0 failures; citation baseline stayed at 2,654 URLs. Ruby 3.4.11 locked-bundle production Jekyll build and the rendered-heading check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization/70.2.3.01-backtracking.md",
       "group": "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization",
       "title": "Backtracking",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "79ba09b0ec0670fd8d12d13edf8f7d0c223d0ce3a11aea302c925774a8945a8b",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How does a search explore alternatives while keeping sibling branches independent?",
+      "disposition": "Added a shared-prefix permutation example; made pruning require a correctness argument and clarified the successful-versus-failed return and mutation contract.",
+      "validation": [
+        "Re-read the chapter in learning order with its category INDEX and REVISION companion; checked the definition, first-principles chain, worked trace, edge cases, summary and cross-links.",
+        "The linear and graph code examples were compiled and executed in their earlier group review; the recursion and heaps/stacks TypeScript examples passed Deno 2.8.3 type-checking and execution with TypeScript 6.0.3.",
+        "All 30 repository gates passed; standalone link scan checked 10,838 links and 185 anchors with 0 failures; citation baseline stayed at 2,654 URLs. Ruby 3.4.11 locked-bundle production Jekyll build and the rendered-heading check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization/70.2.3.02-dynamic-programming.md",
       "group": "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization",
       "title": "Dynamic Programming",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "0d9cf1cf33da8dc88ae7c1700bdff844ef60626ea6028d71c7b6188581048d7b",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which repeated subproblem should the state represent, and where does its recurrence lead?",
+      "disposition": "Added the repeated Fibonacci computation as an opening and replaced generic variant lists with a state/recurrence/base-case/answer-location workflow.",
+      "validation": [
+        "Re-read the chapter in learning order with its category INDEX and REVISION companion; checked the definition, first-principles chain, worked trace, edge cases, summary and cross-links.",
+        "The linear and graph code examples were compiled and executed in their earlier group review; the recursion and heaps/stacks TypeScript examples passed Deno 2.8.3 type-checking and execution with TypeScript 6.0.3.",
+        "All 30 repository gates passed; standalone link scan checked 10,838 links and 185 anchors with 0 failures; citation baseline stayed at 2,654 URLs. Ruby 3.4.11 locked-bundle production Jekyll build and the rendered-heading check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization/70.2.3.03-bit-manipulation.md",
       "group": "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization",
       "title": "Bit Manipulation",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "ed5c796b77d8a419d93ce3a31fb7f6917643310099fdd2a5fc248e6007e016ca",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "When does a bit-level operation preserve the intended integer value in JavaScript?",
+      "disposition": "Added a duplicate-cancellation proof cue; corrected the power-of-two operator precedence example and made the 32-bit contract explicit in the recognition and summary text.",
+      "validation": [
+        "Re-read the chapter in learning order with its category INDEX and REVISION companion; checked the definition, first-principles chain, worked trace, edge cases, summary and cross-links.",
+        "The linear and graph code examples were compiled and executed in their earlier group review; the recursion and heaps/stacks TypeScript examples passed Deno 2.8.3 type-checking and execution with TypeScript 6.0.3.",
+        "All 30 repository gates passed; standalone link scan checked 10,838 links and 185 anchors with 0 failures; citation baseline stayed at 2,654 URLs. Ruby 3.4.11 locked-bundle production Jekyll build and the rendered-heading check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.01-heap.md",
       "group": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection",
       "title": "Heap",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "3da3908b2543ea5377ac794466730efbe48805d28915c84a668d2cf8b0bd6e95",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can a changing set of priorities expose its next minimum or maximum without sorting everything?",
+      "disposition": "Added an arrival/prioritization opening; removed the repeated generic “why” section and connected repeated heap extraction to the single-rank Quickselect alternative.",
+      "validation": [
+        "Re-read the chapter in learning order with its category INDEX and REVISION companion; checked the definition, first-principles chain, worked trace, edge cases, summary and cross-links.",
+        "The linear and graph code examples were compiled and executed in their earlier group review; the recursion and heaps/stacks TypeScript examples passed Deno 2.8.3 type-checking and execution with TypeScript 6.0.3.",
+        "All 30 repository gates passed; standalone link scan checked 10,838 links and 185 anchors with 0 failures; citation baseline stayed at 2,654 URLs. Ruby 3.4.11 locked-bundle production Jekyll build and the rendered-heading check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.02-monotonic-stack.md",
       "group": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection",
       "title": "Monotonic Stack",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "ee36832d20a4f65277f491666725a65b75ab03d4f2853538ed9cde321a9fcedf",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can one left-to-right pass resolve nearest greater or smaller neighbors?",
+      "disposition": "Added a daily-temperature opening; explained the amortized total-pop bound and the distinct boundary meaning of a histogram pop; removed the redundant use-case recap.",
+      "validation": [
+        "Re-read the chapter in learning order with its category INDEX and REVISION companion; checked the definition, first-principles chain, worked trace, edge cases, summary and cross-links.",
+        "The linear and graph code examples were compiled and executed in their earlier group review; the recursion and heaps/stacks TypeScript examples passed Deno 2.8.3 type-checking and execution with TypeScript 6.0.3.",
+        "All 30 repository gates passed; standalone link scan checked 10,838 links and 185 anchors with 0 failures; citation baseline stayed at 2,654 URLs. Ruby 3.4.11 locked-bundle production Jekyll build and the rendered-heading check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.03-stack-queue-patterns.md",
       "group": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection",
       "title": "Stack & Queue Patterns",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "7c348df6e8299497f444f22ed8913a6e9534bfc439138ad880362f3a9cf0b8f7",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Does the problem need the newest unmatched item or the oldest waiting item next?",
+      "disposition": "Added a bracket-versus-work-queue opening; explained LIFO/FIFO and the two-stack amortized transfer; removed the repeated generic rationale section.",
+      "validation": [
+        "Re-read the chapter in learning order with its category INDEX and REVISION companion; checked the definition, first-principles chain, worked trace, edge cases, summary and cross-links.",
+        "The linear and graph code examples were compiled and executed in their earlier group review; the recursion and heaps/stacks TypeScript examples passed Deno 2.8.3 type-checking and execution with TypeScript 6.0.3.",
+        "All 30 repository gates passed; standalone link scan checked 10,838 links and 185 anchors with 0 failures; citation baseline stayed at 2,654 URLs. Ruby 3.4.11 locked-bundle production Jekyll build and the rendered-heading check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.04-segment-tree.md",
       "group": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection",
       "title": "Segment Tree & Binary Indexed Tree (BIT)",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "d7457b792b7bdfa0be7c7a233f7c2cd7d2046efa5b31aa90938ddfaf0fa4ffd4",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How can range queries remain efficient when values are updated between queries?",
+      "disposition": "Added the update/query workload; explained the node aggregate and pending-tag invariant; removed an incorrect cross-reference to a database backup chapter and a redundant rationale section.",
+      "validation": [
+        "Re-read the chapter in learning order with its category INDEX and REVISION companion; checked the definition, first-principles chain, worked trace, edge cases, summary and cross-links.",
+        "The linear and graph code examples were compiled and executed in their earlier group review; the recursion and heaps/stacks TypeScript examples passed Deno 2.8.3 type-checking and execution with TypeScript 6.0.3.",
+        "All 30 repository gates passed; standalone link scan checked 10,838 links and 185 anchors with 0 failures; citation baseline stayed at 2,654 URLs. Ruby 3.4.11 locked-bundle production Jekyll build and the rendered-heading check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.05-quick-select-reservoir-sampling.md",
       "group": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection",
       "title": "Quick Select & Reservoir Sampling",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "9473cf398b57c0222d324853e2325fef3fb7b90a50a322fd7fd1d7c5fd20f697",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Do I need one rank from an available array, or a uniform sample from an unknown-length stream?",
+      "disposition": "Added a two-constraint opening; stated Quickselect’s expected and worst-case guarantees precisely, removed an unrelated linked-list shuffle implementation and clarified the stream-index probability.",
+      "validation": [
+        "Re-read the chapter in learning order with its category INDEX and REVISION companion; checked the definition, first-principles chain, worked trace, edge cases, summary and cross-links.",
+        "The linear and graph code examples were compiled and executed in their earlier group review; the recursion and heaps/stacks TypeScript examples passed Deno 2.8.3 type-checking and execution with TypeScript 6.0.3.",
+        "All 30 repository gates passed; standalone link scan checked 10,838 links and 185 anchors with 0 failures; citation baseline stayed at 2,654 URLs. Ruby 3.4.11 locked-bundle production Jekyll build and the rendered-heading check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/05-math-and-number-theory/70.2.5.01-number-theory-combinatorics.md",
       "group": "70-interview-toolkit/70.2-coding-patterns/05-math-and-number-theory",
       "title": "Number Theory & Combinatorics",
-      "status": "pending",
+      "status": "revised",
       "baseline_sha256": "a7d72daedd159efc42f050593c9abf0d87a9c4ef2acd7275bb2e8b4a393f13de",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do I count a large set of outcomes without enumerating them or overflowing intermediate arithmetic?",
+      "disposition": "Added a concrete counting/modulo opening and re-read the primality, GCD/LCM, modular-inverse, combination and probability contracts for boundary consistency.",
+      "validation": [
+        "Re-read the chapter in learning order with the coding-pattern INDEX and REVISION companion; checked the counting arguments, numeric bounds, worked examples and cross-links.",
+        "Manually checked the Java fragments for the stated input and overflow contracts; a JDK was unavailable in this workspace, so Java compilation was not claimed.",
+        "All 30 repository gates passed; standalone link scan checked 10,838 links and 185 anchors with 0 failures; citation baseline stayed at 2,654 URLs. Ruby 3.4.11 locked-bundle production Jekyll build and the rendered-heading check passed."
+      ]
     },
     {
       "path": "70-interview-toolkit/70.3-cheatsheets/70.3.01-javascript-cheat-sheet.md",

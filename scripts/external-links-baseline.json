@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2612,
+ "url_count": 2617,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -1597,11 +1597,26 @@
   "https://docs.aws.amazon.com/lambda/latest/dg/concepts-basics.html": [
    "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md"
   ],
+  "https://docs.aws.amazon.com/lambda/latest/dg/durable-invoking-esm.html": [
+   "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md"
+  ],
+  "https://docs.aws.amazon.com/lambda/latest/dg/foundation-progmodel.html": [
+   "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md"
+  ],
+  "https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html": [
+   "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md"
+  ],
   "https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations": [
    "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md"
   ],
   "https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html": [
    "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md"
+  ],
+  "https://docs.aws.amazon.com/lambda/latest/dg/lambda-managed-instances-core-concepts.html": [
+   "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md"
+  ],
+  "https://docs.aws.amazon.com/lambda/latest/dg/lambda-managed-instances-execution-environment.html": [
+   "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md"
   ],
   "https://docs.aws.amazon.com/lambda/latest/dg/lambda-nodejs.html": [
    "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md",
@@ -1611,6 +1626,7 @@
    "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md"
   ],
   "https://docs.aws.amazon.com/lambda/latest/dg/services-sqs-errorhandling.html": [
+   "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md",
    "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md"
   ],
   "https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html": [

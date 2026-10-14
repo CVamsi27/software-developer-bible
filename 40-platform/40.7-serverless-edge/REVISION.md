@@ -30,6 +30,18 @@ Source: [AWS Lambda](40.7.02-aws-lambda.md)
 
 **A:** A warm execution environment can reuse them, reducing repeated setup. Reuse is opportunistic; reconnect, timeout, and idempotency behavior still need explicit handling.
 
+**Q:** Why can code that is safe under standard Lambda become unsafe on Lambda Managed Instances?
+
+**A:** Managed Instances can run multiple invocations concurrently inside one environment. Mutable globals and shared clients therefore need thread-safety and request-context isolation; the standard one-invocation-per-environment assumption no longer applies.
+
+**Q:** Does Lambda Durable Functions simply raise the timeout for an ordinary handler?
+
+**A:** No. It is a checkpointed workflow model with a separate total execution timeout: completed steps can resume from saved results and waits can release compute. Each invocation still has its own limit, and an event-source mapping can impose a shorter overall ceiling. External side effects still need stable idempotency because a checkpoint cannot atomically commit a remote provider's effect.
+
+**Q:** Why can retrying immediately after a Managed Instances timeout duplicate an effect?
+
+**A:** Lambda reports the invocation failure without forcibly stopping the handler. The original code can continue to commit an effect while the caller retries. Check remaining time, stop at a safe boundary, and use a stable idempotency key or reconcile the authoritative result before retrying.
+
 ## Vercel Deployments
 
 Source: [Vercel Deployments](40.7.03-vercel-deployments.md)

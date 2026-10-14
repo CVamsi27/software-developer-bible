@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 56,
+    "pending": 55,
     "unchanged": 80,
-    "revised": 384,
-    "reviewed": 464,
+    "revised": 385,
+    "reviewed": 465,
     "topic_chapters": 520
   },
   "entries": [
@@ -7195,12 +7195,17 @@
       "path": "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md",
       "group": "40-platform/40.7-serverless-edge",
       "title": "AWS Lambda",
-      "status": "pending",
-      "baseline_sha256": "eabb889a74a73ec30400401cd626143a2450e4f3d1b358d3519d2cc2b72ee366",
+      "status": "revised",
+      "baseline_sha256": "aff2d89c3cd90860da4e9e816eb7774f06d79905f2b1d0ddc3b62596e5a79a09",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "Which Lambda execution contract owns concurrency, timeout, replay, and side-effect recovery for this function?",
+      "disposition": "Reordered the chapter around a concrete fan-out and payment-timeout problem. Scoped environment reuse to the default mode, distinguished Managed Instances concurrency and timeout behavior from Durable Functions checkpointed workflows, and made invocation duration mode- and trigger-specific. Kept the validated HTTP API example, clarified event-source retry/checkpoint boundaries, corrected acronym introductions and package wording, and aligned the INDEX and revision drill with the current AWS model.",
+      "validation": [
+        "Re-read in learning order with the category INDEX and REVISION companion and the adjacent Serverless Overview and Durable Execution chapters; preserved practical and textbook definitions, distinct First Principles, one Summary, See Also, and References.",
+        "Checked current AWS documentation for environment lifecycle, Managed Instances concurrency and timeout behavior, Durable Functions, function quotas, SnapStart eligibility, and SQS partial-batch failures; all six added AWS reference URLs returned HTTP 200.",
+        "All 30 repository gates passed; standalone link scan checked 10,837 links and 185 anchors with zero failures; citation baseline has 2,617 URLs with no drift; all 10 corpus writers reached a fixed point.",
+        "Ruby 3.4.11 locked-bundle production Jekyll build and site-wide rendered-heading check passed."
+      ]
     },
     {
       "path": "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md",
@@ -7251,7 +7256,7 @@
       "group": "40-platform/40.7-serverless-edge",
       "title": "Durable Execution: Temporal & Inngest",
       "status": "pending",
-      "baseline_sha256": "95203692057d4b1ae360f23c7e35bd90db67c4174464d097297daa9b7a486fd9",
+      "baseline_sha256": "613b757c3bd6b6da7eb298c1cc396eb82547b985857c16d2ac43e87114fdc3f7",
       "previous_depth_review": "revised",
       "reader_question": "",
       "disposition": "",

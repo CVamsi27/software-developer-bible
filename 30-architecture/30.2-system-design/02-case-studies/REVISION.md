@@ -620,7 +620,7 @@ Source: [Metrics & Monitoring Pipeline System Design](30.2.2.24-metrics-monitori
 
 **Q:** Why must a metrics pipeline distinguish event time from ingestion time?
 
-**A:** Late and reordered samples affect windows and alerts differently. Define watermark, lateness and correction policies rather than treating arrival as occurrence.
+**A:** The sample timestamp assigns a measurement to event time; the collector receive time shows when the pipeline learned of it. Track their difference as ingestion lag, then define clock-skew, lateness, and correction policies so delayed arrivals do not silently distort windows or freshness.
 
 **Q:** Why cannot a Bloom-filter match prove series quota admission?
 
@@ -629,6 +629,14 @@ Source: [Metrics & Monitoring Pipeline System Design](30.2.2.24-metrics-monitori
 **Q:** How does delta temporality change counter or histogram rate processing?
 
 **A:** Each delta covers a non-overlapping interval, while cumulative points cover an interval from a start time. Preserve those boundaries and detect gaps/resets before aggregation; applying cumulative reset logic to deltas can double-count or lose samples. See the [OpenTelemetry metrics data model](https://opentelemetry.io/docs/specs/otel/metrics/data-model/).
+
+**Q:** Which identity fields can be lost when mapping an OpenTelemetry stream into Prometheus labels?
+
+**A:** Resource attributes and instrumentation scope identify the stream; point attributes further distinguish its series. Preserve them in mapped labels or remove them deliberately through an aggregation view, or independent producers can collide. See the [OpenTelemetry metrics data model](https://opentelemetry.io/docs/specs/otel/metrics/data-model/).
+
+**Q:** Is `NaN` a portable marker for missing metrics data?
+
+**A:** No. Prometheus text and OpenMetrics accept non-finite sample values, but OpenMetrics does not assign `NaN` a missing-data meaning; Prometheus staleness uses a distinct internal NaN bit pattern. Interpret values by protocol and metric type. See the [OpenMetrics specification](https://prometheus.io/docs/specs/om/open_metrics_spec/).
 
 ## Distributed Job Scheduler System Design
 

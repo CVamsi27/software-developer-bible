@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2533,
+ "url_count": 2535,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -3004,8 +3004,7 @@
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.09-e-commerce.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.11-live-betting.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.12-twitter-feed.md",
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.md",
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.md"
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.md"
   ],
   "https://github.com/donnemartin/system-design-primer#design-instagram": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.md"
@@ -5371,6 +5370,9 @@
    "40-platform/40.4-observability/03-sre-targets/40.4.3.02-alerting.md",
    "50-quality/50.4-production-engineering/50.4.05-on-call-without-burnout.md"
   ],
+  "https://prometheus.io/docs/instrumenting/exposition_formats/": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.md"
+  ],
   "https://prometheus.io/docs/introduction/overview/": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.md"
   ],
@@ -5391,6 +5393,10 @@
   ],
   "https://prometheus.io/docs/prometheus/latest/querying/functions/": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.md"
+  ],
+  "https://prometheus.io/docs/specs/om/open_metrics_spec/": [
+   "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.md",
+   "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
   ],
   "https://protobuf.dev/programming-guides/encoding/": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.06-serialization-and-wire-formats.md"

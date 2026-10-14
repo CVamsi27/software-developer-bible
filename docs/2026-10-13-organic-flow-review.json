@@ -9,10 +9,10 @@
     "revised": "Re-read and edited; disposition and validation recorded."
   },
   "counts": {
-    "pending": 98,
+    "pending": 97,
     "unchanged": 80,
-    "revised": 342,
-    "reviewed": 422,
+    "revised": 343,
+    "reviewed": 423,
     "topic_chapters": 520
   },
   "entries": [
@@ -5695,12 +5695,19 @@
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.md",
       "group": "30-architecture/30.2-system-design/02-case-studies",
       "title": "Metrics & Monitoring Pipeline System Design",
-      "status": "pending",
-      "baseline_sha256": "367ced364f69455bbba80de9664a4ab89012ff8274d907198bd6e4c78389cdee",
+      "status": "revised",
+      "baseline_sha256": "00a8aa20be8f3e4a4ff6727cbc31624ab9c14b32baa50f43fa7f70ae261d5ec1",
       "previous_depth_review": "revised",
-      "reader_question": "",
-      "disposition": "",
-      "validation": []
+      "reader_question": "How do you preserve metric meaning and alert on both bad values and missing telemetry?",
+      "disposition": "Made the three concurrent retention tiers and their storage arithmetic explicit; clarified OpenTelemetry stream identity, sample versus receive time, and protocol-specific NaN/staleness semantics. Tightened alert identity and missing-data behavior, updated the case index and revision questions, added two current protocol references, and removed a generic reference.",
+      "validation": [
+        "Re-read in case-study order with its INDEX and REVISION companion; checked definitions, data flow, series identity, cardinality admission, durability, query isolation, alert lifecycle, recovery, and cross-references.",
+        "Recomputed the 25-million-series sample rate, byte rates, and three concurrent retention-tier volumes; all arithmetic matches the stated assumptions.",
+        "Checked current Prometheus histogram, exposition, OpenMetrics, alert-rule, and OpenTelemetry metric-model specifications. New exposition/OpenMetrics references passed GET probes with HTTP 200; citation baseline is 2,535 URLs with no drift.",
+        "Parsed the Prometheus alert example with Ruby Psych and checked alert identity, hold duration, and quantile expression.",
+        "All 30 scripts/verify.sh gates passed; standalone link check covered 10,800 links and 152 anchors with no failures.",
+        "Ruby 3.4 production Jekyll build, site-wide rendered-heading check, and focused Metrics render checks passed; writer fixpoint and git diff --check passed."
+      ]
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.25-distributed-job-scheduler.md",

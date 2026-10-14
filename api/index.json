@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "60aeb6de151abc3a672b9c3b1c2eee8a297bdf50f2d11bad2b6411721a493d21",
+ "corpus_digest": "7bf53af0fc8209e71ef0f4fe6af5170782ae0eaeca40c61b0128c44eaff54b60",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5221
+  "read_minutes": 5222
  },
  "chapters": [
   {
@@ -4451,7 +4451,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.29-distributed-cache.html",

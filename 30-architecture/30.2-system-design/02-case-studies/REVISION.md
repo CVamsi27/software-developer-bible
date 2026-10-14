@@ -726,6 +726,14 @@ Source: [Parking Lot System Design](30.2.2.28-parking-lot.md)
 
 **A:** A database can reserve a space before the car crosses the barrier. Recording entry only after passage keeps the software decision distinct from physical evidence; a lost acknowledgment needs reconciliation rather than a fabricated arrival time.
 
+**Q:** What invariant does the partial unique index enforce, and what does it leave to physical reconciliation?
+
+**A:** It prevents two persisted live sessions from owning one spot. It cannot prove whether a vehicle actually entered or left; sensors, controller acknowledgments, and operator policy settle those facts. See [PostgreSQL partial indexes](https://www.postgresql.org/docs/current/indexes-partial.html).
+
+**Q:** Under the example tariff, what is charged when a 15-minute grace period is exceeded by one second?
+
+**A:** The entire stay is rounded up to the first started hour, so a 901-second stay costs one hourly unit. The grace is not subtracted from the billable duration, and each subsequent 24-hour block has its own cap.
+
 ## Distributed Cache System Design
 
 Source: [Distributed Cache System Design](30.2.2.29-distributed-cache.md)

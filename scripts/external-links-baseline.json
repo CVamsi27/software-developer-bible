@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-14",
- "url_count": 2539,
+ "url_count": 2537,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -2473,9 +2473,6 @@
   "https://endoflife.date/rust": [
    "docs/2026-09-19-corpus-health-report.md"
   ],
-  "https://eng.lyft.com/": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.19-lyft.md"
-  ],
   "https://engineering.fb.com/2020/03/02/data-infrastructure/messenger/": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.md"
   ],
@@ -3473,7 +3470,7 @@
   "https://gvisor.dev/docs/architecture_guide/platforms/": [
    "40-platform/40.1-docker/40.1.09-rootless-sandboxed-runtimes.md"
   ],
-  "https://h3geo.org/": [
+  "https://h3geo.org/docs/core-library/overview/": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.19-lyft.md"
   ],
   "https://hamel.dev/blog/posts/evals/": [
@@ -8393,9 +8390,6 @@
   ],
   "https://www.typescriptlang.org/tsconfig/paths.html": [
    "30-architecture/30.1-design-patterns/03-structural/30.1.3.05-module-pattern.md"
-  ],
-  "https://www.uber.com/blog/engineering/": [
-   "30-architecture/30.2-system-design/02-case-studies/30.2.2.19-lyft.md"
   ],
   "https://www.vaultproject.io/": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.04-secrets-management.md"

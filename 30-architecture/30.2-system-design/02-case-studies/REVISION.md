@@ -522,6 +522,14 @@ Source: [Lyft / Ride-Sharing System Design](30.2.2.19-lyft.md)
 
 **A:** Straight-line distance ignores road topology, traffic and barriers such as rivers or one-way roads. Use cells to bound candidate discovery, then compare a limited set with road-time estimates and keep a clear fallback if routing is unavailable.
 
+**Q:** Why should a location report carry a session generation as well as a sequence number?
+
+**A:** A sequence orders reports only within its session. After reconnect, a new session may restart its counter while a delayed report or disconnect from the old session is still in flight; a server-issued generation fences that stale session from changing current position or availability.
+
+**Q:** Why should assignment release share a version-checked transaction with trip completion or cancellation?
+
+**A:** A worker lease expiring says the worker stopped owning a task, not that the ride ended. Release the driver only during an authorized terminal transition, under the same driver-then-ride lock order as acceptance; update availability and publish the transition intent atomically so recovery cannot make an occupied driver look free.
+
 ## Distributed Counter / Metrics Aggregation System Design
 
 Source: [Distributed Counter / Metrics Aggregation System Design](30.2.2.20-distributed-counter.md)

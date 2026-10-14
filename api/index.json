@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "0cabdf5efe6a0f3eced0dc77e082a934f5ce69c3eb11c4b109cfa0e0266e2dd1",
+ "corpus_digest": "91d5ed93625684be6657bcadf768e84e7b2c6d44a932cea42a45f99407730dc9",
  "totals": {
   "chapters": 671,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5210
+  "read_minutes": 5211
  },
  "chapters": [
   {
@@ -4361,7 +4361,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.20-distributed-counter.html",

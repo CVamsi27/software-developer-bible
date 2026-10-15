@@ -14,3 +14,4 @@ __pycache__/
 
 # Local owner-data release backups remain private and are not active source data.
 /80-lanes-abroad-full-stack/personal/reports/*-germany-roadmap-before-*.json
+/80-lanes-abroad-full-stack/personal/reports/germany-roadmap-before-*.json

@@ -13,7 +13,9 @@ A resume walkthrough connects a concise application claim to a product problem, 
 
 Start with one clinic visit: a receptionist books an appointment, a clinician opens the record and writes a prescription, billing records the charge, and background work creates or delivers documents. Explain the user-visible behavior before naming infrastructure.
 
-The current resume contains five Docita bullets. The cases below map to their order. Source inspection establishes that code exists; the candidate must identify which changes they personally designed, implemented, reviewed or operated. Deployment, adoption and business outcomes require separate evidence.
+The cases below cover the Docita resume's product, frontend, persistence, reliability and delivery themes. Source inspection establishes that code exists; the candidate must identify which changes they personally designed, implemented, reviewed or operated. Deployment, adoption and business outcomes require separate evidence.
+
+A scoped **15 October 2026** refresh inspected clean Docita HEAD `4e3032c2d0fd9d2ee74e7c74536fefef454d5a65` and ran 104 focused local tests across the frontend, tenant boundaries, appointment writes, invoice settlement, queue and outbox. It updates the claim-fencing discussion below; the linked cases retain their own inspection dates and limits. These tests establish neither personal ownership nor production readiness. Record an own-contribution map before strengthening any application claim: change or work artifact, your action, shared responsibility, check, observed result and remaining limit.
 
 ## First Principles
 
@@ -67,7 +69,9 @@ For one query, show its filters and join scope, pagination ordering, index ratio
 
 Read [async processing](03-async-processing.md), [payments](04-payment-flows.md), [WhatsApp](06-whatsapp-integration.md) and [uploads](19-documents-and-uploads.md). Trace a business write, durable intent, claim, effect and acknowledgment.
 
-The inspected queue's completed-job lookup does not enforce effect-level idempotency. Not every producer demonstrably shares a transaction with business state. The 9 October recheck shows the outbox relay now awaits `emitAsync` under a 30-second timeout. That observes returned listener promises, but required-handler registration, failure propagation and non-cancelled work still need verification through the real listener wiring. Recovery without claim fencing can permit repeated work. Explain these current gaps before recommending leases, conditional completion and durable handoff.
+The queue's completed-job lookup does not enforce effect-level idempotency, and not every producer demonstrably shares a transaction with business state. The **15 October** source does implement claim fencing: each claimed job receives a fresh `claimToken`; completion, retry, dead-letter and duplicate-skip acknowledgments require the matching token and `ACTIVE` status. Stale recovery clears the old token, so a late worker cannot overwrite its replacement's local job state. The focused mock-based regressions passed for these acknowledgment paths. This does not cancel an old handler or prevent repeated provider effects; verify the actual SQL with competing database connections before treating that exercise as completed evidence.
+
+The outbox relay awaits `emitAsync` under a 30-second timeout and now refuses to acknowledge an event with no registered listener. That guards an empty consumer set, but does not establish that every required consumer is present or propagates failure. A keyed outbox append uses conflict-safe `createMany` with `skipDuplicates`, rather than catching `P2002` inside the transaction. Returned listener promises, real Nest error propagation, producer transaction boundaries and effect-level idempotency still require path-specific checks. Timed-out listeners keep running, delivery remains at least once, some appointment events retain allowed direct emits, and automatic dead-letter replay is not wired; manual replay remains the recovery path. Explain those current limits before proposing renewable leases or stronger durable handoff.
 
 Verify a payment signature against the exact raw payload and appropriate merchant secret. Then separately establish event ownership, duplicate business effects, ordering and reconciliation. A valid signature is not proof that an event is authorized for every clinic or that a payment settled.
 
@@ -134,6 +138,7 @@ Explain Docita as a product operation crossing real boundaries. Each resume bull
 - [Case-study index](INDEX.md) — all implementation assessments.
 - [Hypothetical workload model](23-hypothetical-clinic-metrics.md) — changed-load exercises, not adoption evidence.
 - [Private resume source](../../80-lanes-abroad-full-stack/personal/resume/generator/resume_content.py) — current wording.
+- [Private hiring-evidence report](../../80-lanes-abroad-full-stack/personal/reports/2026-10-15-docita-hiring-evidence.md) — exact source pointers, focused test commands and a bounded proof sprint.
 
 ## References
 
@@ -141,4 +146,5 @@ The linked cases contain source paths and inspection qualifications. Recheck the
 
 - `apps/app/src/` — current React/Vite client; inspect actual forms and query callers.
 - `apps/api/src/` — API domains, security, jobs, outbox and provider adapters.
+- `apps/api/src/shared/modules/queue/queue-job-lifecycle.ts` and `apps/api/src/shared/modules/queue/infrastructure/prisma-queue-job.repository.ts` — token-fenced acknowledgments rechecked on 15 October.
 - `packages/db/prisma/schema.prisma` — persisted states and constraints.

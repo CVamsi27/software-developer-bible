@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "302306dd2e82993077d1fc1c34526817a224ba637c2019fa3db31588df7a623b",
+ "corpus_digest": "26367e61d69fe8fce4e925d9c42d50a28cc1f54d8db251423fa1adf73f19a2a8",
  "totals": {
   "chapters": 675,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5269
+  "read_minutes": 5273
  },
  "chapters": [
   {
@@ -157,7 +157,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.02-prototypes.html",
@@ -177,7 +177,7 @@
    "g": [
     "concept"
    ],
-   "m": 5
+   "m": 8
   },
   {
    "p": "10-frontend/10.1-javascript/02-objects-prototypes-this/REVISION.html",

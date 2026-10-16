@@ -1,6 +1,6 @@
 # JavaScript — Index
 
-> **Study time:** ≈ 4 h 30 m of reading (41 files, ~7 min average).
+> **Study time:** ≈ 4 h 34 m of reading (41 files, ~7 min average).
 > Core JavaScript concepts from execution context through async patterns, memory management, functional techniques, modern language APIs, cancellation, browser events, cross-tab coordination, and interview practice.
 
 [![Files](https://img.shields.io/badge/files-41-blue)](../../INDEX.md)
@@ -60,9 +60,9 @@ JavaScript object properties resolve through prototype chains; class syntax buil
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 07 | [`this` Keyword](02-objects-prototypes-this/10.1.2.01-this.md) | Implicit/explicit binding, arrow functions, `call`/`apply`/`bind` | Essential | Foundational | 8 min |
+| 07 | [`this` Keyword](02-objects-prototypes-this/10.1.2.01-this.md) | Implicit/explicit binding, arrow functions, `call`/`apply`/`bind` | Essential | Foundational | 9 min |
 | 08 | [Prototypes](02-objects-prototypes-this/10.1.2.02-prototypes.md) | Prototype chain, `__proto__`, `Object.create`, inheritance and `class` syntax | Essential | Foundational | 8 min |
-| 09 | [Proxy & Reflect](02-objects-prototypes-this/10.1.2.03-proxy-reflect.md) | Operation interception, receiver forwarding, invariants, reactive dependencies | Important | Specialized | 5 min |
+| 09 | [Proxy & Reflect](02-objects-prototypes-this/10.1.2.03-proxy-reflect.md) | Operation interception, receiver forwarding, invariants, reactive dependencies | Important | Specialized | 8 min |
 
 ---
 

@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "83f549d7fefffa7806ebd55e266688629973a0ec39a3394fb4ce7cac38f0f581",
+ "corpus_digest": "ce07eea1774e063a3551f280bc2f1a5582ddecd5b383d0e25bc5b172ffeceff8",
  "totals": {
   "chapters": 675,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5307
+  "read_minutes": 5306
  },
  "chapters": [
   {
@@ -344,7 +344,7 @@
     "data-structures",
     "interview"
    ],
-   "m": 7
+   "m": 6
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.09-equality-and-coercion.html",

@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "feb4c73ab36b3c2711b107abf1ff1916523e3a29dcf2d5c8621ea2f6de3c00d9",
+ "corpus_digest": "9effd45bc7c5edfdff31e2e2677a211de4f406f339f21e51e741ba28b4f8100f",
  "totals": {
   "chapters": 675,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5289
+  "read_minutes": 5291
  },
  "chapters": [
   {
@@ -272,7 +272,7 @@
    "g": [
     "concept"
    ],
-   "m": 5
+   "m": 7
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.html",

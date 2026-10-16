@@ -1,6 +1,6 @@
 # Memory & Data — JavaScript
 
-> **Study time:** ≈ 1 h 1 m of reading (10 files, ~6 min average).
+> **Study time:** ≈ 1 h 3 m of reading (10 files, ~6 min average).
 > **10 files.** Follow values and object identity into collection choice and copying, then learn how timers, retaining paths, hash tables, equality rules, and garbage collection shape real JavaScript systems.
 
 [![Files](https://img.shields.io/badge/files-10-blue)](#files)
@@ -13,7 +13,7 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Pass by Value](10.1.4.01-pass-by-value.md) | Primitive vs reference, value/reference semantics, mutation gotchas | Essential | Foundational | 5 min |
+| 01 | [Pass by Value](10.1.4.01-pass-by-value.md) | Primitive vs reference, value/reference semantics, mutation gotchas | Essential | Foundational | 7 min |
 | 02 | [Map, Set, WeakMap, WeakSet](10.1.4.02-map-set-weakmap-weakset.md) | Key identity and order, weak metadata, conversion, bounded eviction | Essential | Foundational | 7 min |
 | 03 | [Shallow vs Deep Copy](10.1.4.03-shallow-vs-deep-copy.md) | Reference graphs, structured cloning, transfer, JSON boundary, path copying | Essential | Foundational | 6 min |
 | 04 | [Debounce](10.1.4.04-debounce.md) | Quiet-time scheduling, edge policies, cancellation, stale async results | Essential | Foundational | 6 min |

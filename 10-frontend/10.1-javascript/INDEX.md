@@ -1,6 +1,6 @@
 # JavaScript — Index
 
-> **Study time:** ≈ 4 h 34 m of reading (41 files, ~7 min average).
+> **Study time:** ≈ 4 h 38 m of reading (41 files, ~7 min average).
 > Core JavaScript concepts from execution context through async patterns, memory management, functional techniques, modern language APIs, cancellation, browser events, cross-tab coordination, and interview practice.
 
 [![Files](https://img.shields.io/badge/files-41-blue)](../../INDEX.md)
@@ -72,7 +72,7 @@ Async behavior is subtle and commonly tested. One agent runs one active synchron
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 10 | [Event Loop](03-async-concurrency/10.1.3.01-event-loop.md) | Synchronous tasks, microtask checkpoints, browser rendering, Node host loop | Essential | Foundational | 7 min |
+| 10 | [Event Loop](03-async-concurrency/10.1.3.01-event-loop.md) | Synchronous tasks, microtask checkpoints, browser rendering, Node host loop | Essential | Foundational | 11 min |
 | 11 | [Promises](03-async-concurrency/10.1.3.02-promises.md) | Promise states, chaining, error handling, `Promise.all`/`race`/`allSettled`/`any` | Essential | Foundational | 8 min |
 | 12 | [Async/Await](03-async-concurrency/10.1.3.03-async-await.md) | Suspension, serial dependencies vs overlapping I/O, rejection paths and iterator cleanup | Essential | Foundational | 8 min |
 | 13 | [Error Handling](03-async-concurrency/10.1.3.04-error-handling.md) | try/catch/finally, custom errors, error propagation, async error handling, unhandled rejections | Essential | Foundational | 5 min |

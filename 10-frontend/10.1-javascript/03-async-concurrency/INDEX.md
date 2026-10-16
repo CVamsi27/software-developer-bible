@@ -1,6 +1,6 @@
 # Async & Concurrency — JavaScript
 
-> **Study time:** ≈ 50 min of reading (7 files, ~7 min average).
+> **Study time:** ≈ 54 min of reading (7 files, ~8 min average).
 > **7 files.** Trace how host scheduling runs promise work, how failures travel, when cancellation stops supported work, and how a pool limits task starts and buffered results.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](#files)
@@ -13,7 +13,7 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Event Loop](10.1.3.01-event-loop.md) | Synchronous tasks, microtask checkpoints, browser rendering, Node host loop | Essential | Foundational | 7 min |
+| 01 | [Event Loop](10.1.3.01-event-loop.md) | Synchronous tasks, microtask checkpoints, browser rendering, Node host loop | Essential | Foundational | 11 min |
 | 02 | [Promises](10.1.3.02-promises.md) | Promise states, chaining, error handling, `Promise.all`/`race`/`allSettled`/`any` | Essential | Foundational | 8 min |
 | 03 | [Async/Await](10.1.3.03-async-await.md) | Async functions, error handling, concurrency, sequential vs parallel, top-level await | Essential | Foundational | 8 min |
 | 04 | [Error Handling](10.1.3.04-error-handling.md) | try/catch/finally, custom errors, error propagation, async error handling, unhandled rejections | Essential | Foundational | 5 min |

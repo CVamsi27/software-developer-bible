@@ -1,6 +1,6 @@
 # Cheat Sheets — Index
 
-> **Study time:** ≈ 49 min of reading (8 files, ~6 min average).
+> **Study time:** ≈ 47 min of reading (8 files, ~6 min average).
 > **8 files** — Quick reference cheat sheets covering JavaScript, TypeScript, React/Next.js, Backend, System Design, Docker/K8s/CI-CD, and SQL/Data Modeling for rapid interview review.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)
@@ -38,10 +38,10 @@ Pick a sheet by the operation you need to explain; the passes above show how the
 | --: | ------ | ---------------- | ------------- | --- | --- | ----------: |
 | 01 | [JavaScript Cheat Sheet](70.3.01-javascript-cheat-sheet.md) | ES6+, promises, async/await, closures, event loop, prototype chain, this binding | Frontend interview, JS fundamentals round | Essential | Important | 4 min |
 | 02 | [TypeScript Cheat Sheet](70.3.02-typescript-cheat-sheet.md) | Types, generics, utility types, decorators, configuration, `satisfies`, `infer` | Frontend interview with TS focus | Essential | Important | 5 min |
-| 03 | [React & Next.js Cheat Sheet](70.3.03-react-nextjs-cheat-sheet.md) | Hooks, component patterns, App Router, server components, RSC, caching | React/Next.js interview | Essential | Important | 11 min |
-| 04 | [Backend Cheat Sheet](70.3.04-backend-cheat-sheet.md) | Node.js, NestJS, PostgreSQL, Prisma, REST APIs, Auth, Microservices | Backend interview | Essential | Important | 6 min |
-| 05 | [System Design Cheat Sheet](70.3.05-system-design-cheat-sheet.md) | CAP theorem, caching, database sharding, load balancing, CDN, message queues, rate limiting | System design interview | Essential | Important | 5 min |
-| 06 | [Docker, Kubernetes & CI/CD Cheat Sheet](70.3.06-docker-kubernetes-cicd-cheat-sheet.md) | Multi-stage Dockerfiles, kubectl debugging/rollouts, probes/PDB/resources, Helm, GitHub Actions caching, Argo CD sync | DevOps-adjacent and platform-heavy full-stack loops | Essential | Important | 8 min |
+| 03 | [React & Next.js Cheat Sheet](70.3.03-react-nextjs-cheat-sheet.md) | Hooks, component patterns, App Router, server components, RSC, caching | React/Next.js interview | Essential | Important | 12 min |
+| 04 | [Backend Cheat Sheet](70.3.04-backend-cheat-sheet.md) | Node.js, NestJS, PostgreSQL, Prisma, REST APIs, Auth, Microservices | Backend interview | Essential | Important | 5 min |
+| 05 | [System Design Cheat Sheet](70.3.05-system-design-cheat-sheet.md) | CAP theorem, caching, database sharding, load balancing, CDN, message queues, rate limiting | System design interview | Essential | Important | 4 min |
+| 06 | [Docker, Kubernetes & CI/CD Cheat Sheet](70.3.06-docker-kubernetes-cicd-cheat-sheet.md) | Multi-stage Dockerfiles, kubectl debugging/rollouts, probes/PDB/resources, Helm, GitHub Actions caching, Argo CD sync | DevOps-adjacent and platform-heavy full-stack loops | Essential | Important | 7 min |
 | 07 | [SQL & Data Modeling Cheat Sheet](70.3.07-sql-data-modeling-cheat-sheet.md) | Join types, window functions, indexing rules, EXPLAIN reading, normal forms, audit/soft-delete/junction patterns, isolation levels | Data-heavy backend loops and system design DB deep-dives | Essential | Important | 7 min |
 
 ---

@@ -1,6 +1,6 @@
 # Animation — Index
 
-> **Study time:** ≈ 56 min of reading (9 files, ~6 min average).
+> **Study time:** ≈ 1 h 1 m of reading (9 files, ~7 min average).
 > **9 files** — CSS and browser animation APIs, Motion for React (formerly Framer Motion), GSAP, React Spring, Canvas/SVG rendering, and interview practice.
 
 [![Files](https://img.shields.io/badge/files-9-blue)](../../INDEX.md)

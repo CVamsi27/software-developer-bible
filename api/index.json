@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "40a30581e7f282f5ecf4f643e092f6b3169bb5809bfc75c1f0351cd91bd81409",
+ "corpus_digest": "2da7cb32c54ed3359441e92b323464351c5c5dd06eab559c27ac210b707c2d35",
  "totals": {
   "chapters": 675,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5308
+  "read_minutes": 5259
  },
  "chapters": [
   {
@@ -54,7 +54,7 @@
     "concept",
     "guide"
    ],
-   "m": 4
+   "m": 5
   },
   {
    "p": "00-strategy/REVISION.html",
@@ -95,7 +95,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.04-hoisting.html",
@@ -105,7 +105,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 6
   },
   {
    "p": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.05-lexical-environment.html",
@@ -125,7 +125,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.html",
@@ -136,7 +136,7 @@
     "concept",
     "runtime"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "10-frontend/10.1-javascript/01-execution-and-scope/REVISION.html",
@@ -157,7 +157,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 8
   },
   {
    "p": "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.02-prototypes.html",
@@ -167,7 +167,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.03-proxy-reflect.html",
@@ -177,7 +177,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "10-frontend/10.1-javascript/02-objects-prototypes-this/REVISION.html",
@@ -198,7 +198,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 9
   },
   {
    "p": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.02-promises.html",
@@ -208,7 +208,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 9
   },
   {
    "p": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.03-async-await.html",
@@ -218,7 +218,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 11
   },
   {
    "p": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.04-error-handling.html",
@@ -228,7 +228,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 9
   },
   {
    "p": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.05-abort-and-cancellation.html",
@@ -238,7 +238,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 8
   },
   {
    "p": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.06-bounded-concurrency.html",
@@ -251,7 +251,7 @@
     "concurrency",
     "interview"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "10-frontend/10.1-javascript/03-async-concurrency/REVISION.html",
@@ -272,27 +272,27 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 6
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.html",
-   "t": "Map, Set, WeakMap, WeakSet",
+   "t": "Map, Set, WeakMap, and WeakSet",
    "s": "JavaScript",
    "c": "Core",
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 5
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.html",
-   "t": "Shallow Copy vs Deep Copy",
+   "t": "Shallow vs Deep Copy",
    "s": "JavaScript",
    "c": "Core",
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 6
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.04-debounce.html",
@@ -302,7 +302,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 9
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.05-throttle.html",
@@ -322,7 +322,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.07-garbage-collection.html",
@@ -332,7 +332,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 5
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.html",
@@ -344,7 +344,7 @@
     "data-structures",
     "interview"
    ],
-   "m": 6
+   "m": 5
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.09-equality-and-coercion.html",
@@ -354,7 +354,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 6
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/REVISION.html",
@@ -457,7 +457,7 @@
    "g": [
     "concept"
    ],
-   "m": 5
+   "m": 6
   },
   {
    "p": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.04-cross-tab-communication.html",
@@ -467,7 +467,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.html",
@@ -662,7 +662,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.03-decorators.html",
@@ -774,7 +774,7 @@
    "g": [
     "concept"
    ],
-   "m": 3
+   "m": 4
   },
   {
    "p": "10-frontend/10.3-react/01-react-internals/REVISION.html",
@@ -825,7 +825,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "10-frontend/10.3-react/02-core-hooks/10.3.2.05-context-api.html",
@@ -835,7 +835,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "10-frontend/10.3-react/02-core-hooks/REVISION.html",
@@ -968,7 +968,7 @@
    "g": [
     "concept"
    ],
-   "m": 5
+   "m": 6
   },
   {
    "p": "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.02-compound-components.html",
@@ -1029,7 +1029,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 9
   },
   {
    "p": "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.04-client-components.html",
@@ -1101,7 +1101,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.02-server-actions.html",
@@ -1131,7 +1131,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.05-incremental-static-regeneration.html",
@@ -1224,7 +1224,7 @@
     "concept",
     "reference"
    ],
-   "m": 11
+   "m": 12
   },
   {
    "p": "10-frontend/10.5-form-handling/10.5.02-zod.html",
@@ -1258,7 +1258,7 @@
     "reference",
     "tool"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "10-frontend/10.5-form-handling/10.5.05-server-actions-and-form-patterns.html",
@@ -1269,7 +1269,7 @@
     "concept",
     "guide"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "10-frontend/10.5-form-handling/10.5.06-autosave-draft-recovery.html",
@@ -1313,7 +1313,7 @@
     "concept",
     "reference"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "10-frontend/10.6-animation/10.6.02-framer-motion.html",
@@ -1324,7 +1324,7 @@
     "concept",
     "reference"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "10-frontend/10.6-animation/10.6.03-gsap.html",
@@ -1335,7 +1335,7 @@
     "concept",
     "reference"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "10-frontend/10.6-animation/10.6.04-react-spring.html",
@@ -1346,7 +1346,7 @@
     "concept",
     "reference"
    ],
-   "m": 5
+   "m": 6
   },
   {
    "p": "10-frontend/10.6-animation/10.6.05-web-animations-api.html",
@@ -1368,7 +1368,7 @@
     "concept",
     "reference"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "10-frontend/10.6-animation/10.6.07-canvas-svg-animation.html",
@@ -1441,7 +1441,7 @@
    "g": [
     "concept"
    ],
-   "m": 4
+   "m": 5
   },
   {
    "p": "10-frontend/10.7-html-css/10.7.05-pwa.html",
@@ -1518,7 +1518,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "10-frontend/10.8-mobile/10.8.02-deep-linking-universal-links.html",
@@ -1540,7 +1540,7 @@
     "concept",
     "guide"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "10-frontend/10.8-mobile/10.8.04-expo-eas-builds.html",
@@ -1551,7 +1551,7 @@
     "concept",
     "guide"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "10-frontend/10.8-mobile/10.8.05-codepush-ota-updates.html",
@@ -1562,7 +1562,7 @@
     "concept",
     "guide"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "10-frontend/10.8-mobile/10.8.06-app-store-release-automation.html",
@@ -1605,7 +1605,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.02-web-streams-and-test-runner.html",
@@ -1665,7 +1665,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "20-backend/20.1-node.js/02-io-and-data/REVISION.html",
@@ -1755,7 +1755,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "20-backend/20.1-node.js/04-security-and-operations/20.1.4.03-express-fastify-internals.html",
@@ -1795,7 +1795,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 9
   },
   {
    "p": "20-backend/20.12-ai-engineering/20.12.02-prompts-context-evals.html",
@@ -1875,7 +1875,7 @@
    "g": [
     "concept"
    ],
-   "m": 28
+   "m": 25
   },
   {
    "p": "20-backend/20.13-java/20.13.02-java-oop-solid.html",
@@ -1996,7 +1996,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.02-guards.html",
@@ -2049,7 +2049,7 @@
     "cross-cutting",
     "request-context"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "20-backend/20.2-nestjs/02-request-lifecycle/REVISION.html",
@@ -2301,7 +2301,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.02-error-handling-design.html",
@@ -2372,7 +2372,7 @@
     "email",
     "notifications"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "20-backend/20.3-rest-apis/03-payloads-errors-integration/REVISION.html",
@@ -3158,7 +3158,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.06-transactional-outbox.html",
@@ -3365,7 +3365,7 @@
     "caching",
     "concept"
    ],
-   "m": 16
+   "m": 13
   },
   {
    "p": "20-backend/20.8-caching/20.8.03-advanced-redis-patterns.html",
@@ -3485,7 +3485,7 @@
     "oop",
     "theory"
    ],
-   "m": 11
+   "m": 10
   },
   {
    "p": "30-architecture/30.1-design-patterns/01-foundations/30.1.1.04-uml-basics.html",
@@ -3498,7 +3498,7 @@
     "theory",
     "uml"
    ],
-   "m": 14
+   "m": 13
   },
   {
    "p": "30-architecture/30.1-design-patterns/01-foundations/REVISION.html",
@@ -3550,7 +3550,7 @@
     "concept",
     "gof"
    ],
-   "m": 5
+   "m": 6
   },
   {
    "p": "30-architecture/30.1-design-patterns/02-creational/30.1.2.05-prototype.html",
@@ -3761,7 +3761,7 @@
     "concept",
     "gof"
    ],
-   "m": 5
+   "m": 6
   },
   {
    "p": "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.10-visitor.html",
@@ -3924,7 +3924,7 @@
     "distributed-systems",
     "theory"
    ],
-   "m": 5
+   "m": 6
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.02-consistency-models.html",
@@ -3936,7 +3936,7 @@
     "distributed-systems",
     "theory"
    ],
-   "m": 12
+   "m": 11
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.html",
@@ -3949,7 +3949,7 @@
     "scaling",
     "theory"
    ],
-   "m": 16
+   "m": 15
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.html",
@@ -3961,7 +3961,7 @@
     "scaling",
     "theory"
    ],
-   "m": 11
+   "m": 10
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.05-caching-patterns.html",
@@ -3973,7 +3973,7 @@
     "performance",
     "theory"
    ],
-   "m": 14
+   "m": 12
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.html",
@@ -3986,7 +3986,7 @@
     "messaging",
     "theory"
    ],
-   "m": 15
+   "m": 14
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.07-distributed-transactions.html",
@@ -4023,7 +4023,7 @@
     "distributed-systems",
     "theory"
    ],
-   "m": 11
+   "m": 10
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.html",
@@ -4036,7 +4036,7 @@
     "reliability",
     "theory"
    ],
-   "m": 14
+   "m": 12
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.11-architecture-patterns.html",
@@ -4049,7 +4049,7 @@
     "patterns",
     "theory"
    ],
-   "m": 15
+   "m": 14
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.html",
@@ -4074,7 +4074,7 @@
     "scaling",
     "theory"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.html",
@@ -4198,7 +4198,7 @@
     "theory",
     "tls"
    ],
-   "m": 18
+   "m": 17
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/REVISION.html",
@@ -4393,7 +4393,7 @@
    "g": [
     "concept"
    ],
-   "m": 13
+   "m": 14
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.19-lyft.html",
@@ -4483,7 +4483,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 12
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.28-parking-lot.html",
@@ -4855,7 +4855,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 10
   },
   {
    "p": "40-platform/40.1-docker/40.1.10-interview-questions.html",
@@ -4910,7 +4910,7 @@
     "performance",
     "reference"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "40-platform/40.10-cdn/40.10.04-interview-questions.html",
@@ -5029,7 +5029,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.04-jobs-cronjobs.html",
@@ -5410,7 +5410,7 @@
     "concept",
     "reference"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "40-platform/40.4-observability/01-pillars/REVISION.html",
@@ -5599,7 +5599,7 @@
     "reference",
     "tool"
    ],
-   "m": 5
+   "m": 6
   },
   {
    "p": "40-platform/40.5-build-tools/01-bundlers/REVISION.html",
@@ -5878,7 +5878,7 @@
     "concept",
     "reference"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.html",
@@ -6089,7 +6089,7 @@
     "concept",
     "overview"
    ],
-   "m": 9
+   "m": 8
   },
   {
    "p": "50-quality/50.1-testing/01-foundations/50.1.1.02-test-data-management-anonymization.html",
@@ -6101,7 +6101,7 @@
     "data",
     "privacy"
    ],
-   "m": 11
+   "m": 9
   },
   {
    "p": "50-quality/50.1-testing/01-foundations/REVISION.html",
@@ -6123,7 +6123,7 @@
     "concept",
     "reference"
    ],
-   "m": 9
+   "m": 8
   },
   {
    "p": "50-quality/50.1-testing/02-frameworks/50.1.2.02-vitest.html",
@@ -6134,7 +6134,7 @@
     "concept",
     "reference"
    ],
-   "m": 9
+   "m": 8
   },
   {
    "p": "50-quality/50.1-testing/02-frameworks/50.1.2.03-react-testing-library.html",
@@ -6176,7 +6176,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 7
   },
   {
    "p": "50-quality/50.1-testing/03-test-levels/50.1.3.02-integration-testing.html",
@@ -6196,7 +6196,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 9
   },
   {
    "p": "50-quality/50.1-testing/03-test-levels/REVISION.html",
@@ -6218,7 +6218,7 @@
     "concept",
     "reference"
    ],
-   "m": 10
+   "m": 9
   },
   {
    "p": "50-quality/50.1-testing/04-mocking-and-patterns/50.1.4.02-test-patterns.html",
@@ -6229,7 +6229,7 @@
     "concept",
     "reference"
    ],
-   "m": 10
+   "m": 9
   },
   {
    "p": "50-quality/50.1-testing/04-mocking-and-patterns/REVISION.html",
@@ -6251,7 +6251,7 @@
     "concept",
     "reference"
    ],
-   "m": 10
+   "m": 9
   },
   {
    "p": "50-quality/50.1-testing/05-advanced/50.1.5.02-chaos-engineering.html",
@@ -6264,7 +6264,7 @@
     "game-day",
     "resilience"
    ],
-   "m": 9
+   "m": 8
   },
   {
    "p": "50-quality/50.1-testing/05-advanced/REVISION.html",
@@ -6445,7 +6445,7 @@
     "reference",
     "tool"
    ],
-   "m": 9
+   "m": 8
   },
   {
    "p": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.03-lighthouse-ci.html",
@@ -6457,7 +6457,7 @@
     "guide",
     "tool"
    ],
-   "m": 7
+   "m": 6
   },
   {
    "p": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.04-real-user-monitoring.html",
@@ -6469,7 +6469,7 @@
     "guide",
     "reference"
    ],
-   "m": 11
+   "m": 10
   },
   {
    "p": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.html",
@@ -6517,7 +6517,7 @@
     "guide",
     "reference"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/REVISION.html",
@@ -6549,7 +6549,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 8
   },
   {
    "p": "50-quality/50.4-production-engineering/50.4.02-sli-slo-error-budgets.html",
@@ -6581,7 +6581,7 @@
     "launch",
     "reliability"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "50-quality/50.4-production-engineering/50.4.05-on-call-without-burnout.html",
@@ -6638,7 +6638,7 @@
     "concept",
     "reference"
    ],
-   "m": 12
+   "m": 10
   },
   {
    "p": "60-realtime/60.1-websockets/01-transports/60.1.1.03-socket-io.html",
@@ -6650,7 +6650,7 @@
     "reference",
     "tool"
    ],
-   "m": 13
+   "m": 12
   },
   {
    "p": "60-realtime/60.1-websockets/01-transports/60.1.1.04-webtransport.html",
@@ -6684,7 +6684,7 @@
     "guide",
     "reference"
    ],
-   "m": 9
+   "m": 8
   },
   {
    "p": "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.02-scaling-patterns.html",
@@ -6730,7 +6730,7 @@
     "graphql",
     "subscriptions"
    ],
-   "m": 11
+   "m": 10
   },
   {
    "p": "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.03-webrtc-peer-to-peer.html",
@@ -6788,7 +6788,7 @@
     "stakeholder-management",
     "star-stories"
    ],
-   "m": 9
+   "m": 8
   },
   {
    "p": "70-interview-toolkit/70.1-behavioral/70.1.02-leadership-questions.html",
@@ -6799,7 +6799,7 @@
     "interview-questions",
     "practice"
    ],
-   "m": 9
+   "m": 8
   },
   {
    "p": "70-interview-toolkit/70.1-behavioral/70.1.03-judgment-calls-ambiguity.html",
@@ -6810,7 +6810,7 @@
     "decision-making",
     "judgment"
    ],
-   "m": 14
+   "m": 11
   },
   {
    "p": "70-interview-toolkit/70.1-behavioral/70.1.04-system-design-behavioral.html",
@@ -6821,7 +6821,7 @@
     "interview-questions",
     "practice"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "70-interview-toolkit/70.1-behavioral/70.1.05-behavioral-anti-patterns-checklist.html",
@@ -6832,7 +6832,7 @@
     "practice",
     "self-audit"
    ],
-   "m": 4
+   "m": 5
   },
   {
    "p": "70-interview-toolkit/70.1-behavioral/REVISION.html",
@@ -6854,7 +6854,7 @@
     "concept",
     "practice"
    ],
-   "m": 11
+   "m": 10
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.02-two-pointers.html",
@@ -6887,7 +6887,7 @@
     "concept",
     "practice"
    ],
-   "m": 15
+   "m": 14
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.05-intervals.html",
@@ -6898,7 +6898,7 @@
     "concept",
     "practice"
    ],
-   "m": 12
+   "m": 11
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.06-greedy-prefix-sum.html",
@@ -6909,7 +6909,7 @@
     "concept",
     "practice"
    ],
-   "m": 13
+   "m": 12
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.07-string-search-kmp-rabin-karp.html",
@@ -6920,7 +6920,7 @@
     "concept",
     "practice"
    ],
-   "m": 14
+   "m": 13
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/REVISION.html",
@@ -6964,7 +6964,7 @@
     "concept",
     "practice"
    ],
-   "m": 15
+   "m": 14
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids/70.2.2.04-topological-sort.html",
@@ -6975,7 +6975,7 @@
     "concept",
     "practice"
    ],
-   "m": 15
+   "m": 14
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids/70.2.2.05-trie.html",
@@ -7030,7 +7030,7 @@
     "concept",
     "practice"
    ],
-   "m": 13
+   "m": 12
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization/70.2.3.03-bit-manipulation.html",
@@ -7041,7 +7041,7 @@
     "concept",
     "practice"
    ],
-   "m": 14
+   "m": 13
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization/REVISION.html",
@@ -7063,7 +7063,7 @@
     "concept",
     "practice"
    ],
-   "m": 14
+   "m": 13
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.02-monotonic-stack.html",
@@ -7074,7 +7074,7 @@
     "concept",
     "practice"
    ],
-   "m": 12
+   "m": 11
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.03-stack-queue-patterns.html",
@@ -7085,7 +7085,7 @@
     "concept",
     "practice"
    ],
-   "m": 16
+   "m": 15
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.04-segment-tree.html",
@@ -7096,7 +7096,7 @@
     "concept",
     "practice"
    ],
-   "m": 17
+   "m": 16
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.05-quick-select-reservoir-sampling.html",
@@ -7107,7 +7107,7 @@
     "concept",
     "practice"
    ],
-   "m": 14
+   "m": 13
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/REVISION.html",
@@ -7172,7 +7172,7 @@
     "cheat-sheet",
     "reference"
    ],
-   "m": 11
+   "m": 12
   },
   {
    "p": "70-interview-toolkit/70.3-cheatsheets/70.3.04-backend-cheat-sheet.html",
@@ -7183,7 +7183,7 @@
     "cheat-sheet",
     "reference"
    ],
-   "m": 6
+   "m": 5
   },
   {
    "p": "70-interview-toolkit/70.3-cheatsheets/70.3.05-system-design-cheat-sheet.html",
@@ -7194,7 +7194,7 @@
     "cheat-sheet",
     "reference"
    ],
-   "m": 5
+   "m": 4
   },
   {
    "p": "70-interview-toolkit/70.3-cheatsheets/70.3.06-docker-kubernetes-cicd-cheat-sheet.html",
@@ -7205,7 +7205,7 @@
     "cheat-sheet",
     "devops"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "70-interview-toolkit/70.3-cheatsheets/70.3.07-sql-data-modeling-cheat-sheet.html",

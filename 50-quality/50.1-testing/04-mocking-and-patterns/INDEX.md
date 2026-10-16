@@ -1,6 +1,6 @@
 # Mocking & Test Patterns
 
-> **Study time:** ≈ 22 min of reading (3 files, ~7 min average).
+> **Study time:** ≈ 20 min of reading (3 files, ~7 min average).
 > **3 files.** How to isolate code under test (mocks, spies, stubs, MSW) and how to structure tests that stay maintainable at scale (Arrange-Act-Assert, factories, fixtures, builders).
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)

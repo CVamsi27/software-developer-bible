@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-16",
- "url_count": 2676,
+ "url_count": 2669,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -1034,6 +1034,7 @@
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.02-web-workers.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Structured_clone_algorithm": [
+   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.md",
    "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.08-memento.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/API/Web_components": [
@@ -1062,7 +1063,6 @@
    "70-interview-toolkit/70.3-cheatsheets/70.3.01-javascript-cheat-sheet.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/API/structuredClone": [
-   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.md",
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/CSS/@layer": [
@@ -1206,14 +1206,14 @@
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.06-serialization-and-wire-formats.md"
   ],
+  "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify": [
+   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.md"
+  ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md",
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md",
    "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.02-memoization.md",
    "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.03-stack-queue-patterns.md"
-  ],
-  "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign": [
-   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create": [
    "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.02-prototypes.md"
@@ -1237,16 +1237,19 @@
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect": [
    "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.03-proxy-reflect.md"
   ],
+  "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set": [
+   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md"
+  ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md",
    "30-architecture/30.1-design-patterns/03-structural/30.1.3.08-flyweight.md",
    "70-interview-toolkit/70.3-cheatsheets/70.3.01-javascript-cheat-sheet.md"
   ],
+  "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet": [
+   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md"
+  ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols": [
    "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.06-iterator.md"
-  ],
-  "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax": [
-   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await": [
    "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.03-async-await.md"
@@ -2415,12 +2418,6 @@
   "https://docs.oracle.com/en/java/javase/27/docs/api/java.base/java/util/concurrent/locks/ReentrantReadWriteLock.html": [
    "20-backend/20.13-java/20.13.03-java-concurrency-multithreading.md"
   ],
-  "https://docs.oracle.com/en/java/javase/27/gctuning/other-considerations.html": [
-   "20-backend/20.13-java/20.13.01-java-language-fundamentals.md"
-  ],
-  "https://docs.oracle.com/en/java/javase/27/vm/java-virtual-machine-guide.pdf": [
-   "20-backend/20.13-java/20.13.01-java-language-fundamentals.md"
-  ],
   "https://docs.oracle.com/javase/specs/jls/se26/html/jls-6.html#jls-6.6": [
    "30-architecture/30.1-design-patterns/01-foundations/30.1.1.03-oop-concepts.md"
   ],
@@ -2428,9 +2425,6 @@
    "20-backend/20.13-java/20.13.01-java-language-fundamentals.md",
    "20-backend/20.13-java/20.13.02-java-oop-solid.md",
    "20-backend/20.13-java/REVISION.md"
-  ],
-  "https://docs.oracle.com/javase/specs/jvms/se27/html/": [
-   "20-backend/20.13-java/20.13.01-java-language-fundamentals.md"
   ],
   "https://docs.pact.io/": [
    "50-quality/50.1-testing/03-test-levels/50.1.3.02-integration-testing.md"
@@ -3552,9 +3546,6 @@
   "https://github.com/recharts/recharts/blob/main/storybook/stories/API/Accessibility.mdx": [
    "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.md"
   ],
-  "https://github.com/redis/node-redis/releases": [
-   "20-backend/20.8-caching/20.8.02-redis-fundamentals.md"
-  ],
   "https://github.com/robertLichtnow/zod-formik-adapter": [
    "10-frontend/10.5-form-handling/10.5.03-formik.md"
   ],
@@ -3837,9 +3828,6 @@
   ],
   "https://html.spec.whatwg.org/multipage/server-sent-events.html": [
    "60-realtime/60.1-websockets/01-transports/60.1.1.02-server-sent-events.md"
-  ],
-  "https://html.spec.whatwg.org/multipage/structured-data.html": [
-   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.md"
   ],
   "https://html.spec.whatwg.org/multipage/structured-data.html#structured-cloning": [
    "30-architecture/30.1-design-patterns/02-creational/30.1.2.05-prototype.md"
@@ -5700,9 +5688,11 @@
    "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.04-pm2-process-supervision.md"
   ],
   "https://pm2.io/docs/runtime/guide/process-management/": [
-   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.01-clustering.md",
    "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.04-pm2-process-supervision.md",
    "20-backend/20.1-node.js/03-processes-and-concurrency/REVISION.md"
+  ],
+  "https://pm2.keymetrics.io/": [
+   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.01-clustering.md"
   ],
   "https://pnpm.io/": [
    "40-platform/40.8-monorepo/40.8.04-monorepo-tools.md"
@@ -6152,9 +6142,6 @@
   "https://reactrouter.com/upgrading/v7": [
    "10-frontend/10.3-react/04-modern-react/10.3.4.03-react-router.md"
   ],
-  "https://redis.io/blog/redis-8-ga/": [
-   "20-backend/20.8-caching/20.8.02-redis-fundamentals.md"
-  ],
   "https://redis.io/docs/latest/": [
    "20-backend/20.8-caching/20.8.04-interview-questions.md"
   ],
@@ -6171,17 +6158,8 @@
   "https://redis.io/docs/latest/commands/info/": [
    "20-backend/20.8-caching/20.8.04-interview-questions.md"
   ],
-  "https://redis.io/docs/latest/commands/memory-usage/": [
-   "20-backend/20.8-caching/20.8.02-redis-fundamentals.md"
-  ],
-  "https://redis.io/docs/latest/commands/object-encoding/": [
-   "20-backend/20.8-caching/20.8.02-redis-fundamentals.md"
-  ],
   "https://redis.io/docs/latest/commands/set/": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.28-parking-lot.md"
-  ],
-  "https://redis.io/docs/latest/commands/wait/": [
-   "20-backend/20.8-caching/20.8.02-redis-fundamentals.md"
   ],
   "https://redis.io/docs/latest/develop/clients/nodejs/": [
    "20-backend/20.8-caching/20.8.01-caching-deep-dive.md",
@@ -6239,14 +6217,10 @@
   "https://redis.io/docs/latest/operate/": [
    "20-backend/20.8-caching/20.8.01-caching-deep-dive.md"
   ],
-  "https://redis.io/docs/latest/operate/oss_and_stack/management/optimization/latency/": [
-   "20-backend/20.8-caching/20.8.02-redis-fundamentals.md"
-  ],
   "https://redis.io/docs/latest/operate/oss_and_stack/management/persistence/": [
    "20-backend/20.8-caching/20.8.02-redis-fundamentals.md"
   ],
   "https://redis.io/docs/latest/operate/oss_and_stack/management/replication/": [
-   "20-backend/20.8-caching/20.8.02-redis-fundamentals.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.13-rate-limiter.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.20-distributed-counter.md",
    "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
@@ -6256,7 +6230,6 @@
   ],
   "https://redis.io/docs/latest/operate/oss_and_stack/reference/cluster-spec/": [
    "20-backend/20.1-node.js/04-security-and-operations/20.1.4.04-interview-questions.md",
-   "20-backend/20.8-caching/20.8.02-redis-fundamentals.md",
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.29-distributed-cache.md",
    "30-architecture/30.2-system-design/02-case-studies/REVISION.md"
   ],
@@ -6791,7 +6764,17 @@
    "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.03-generators.md"
   ],
   "https://tc39.es/ecma262/#sec-map-objects": [
+   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md",
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md"
+  ],
+  "https://tc39.es/ecma262/#sec-set-objects": [
+   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md"
+  ],
+  "https://tc39.es/ecma262/#sec-structured-clone": [
+   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.md"
+  ],
+  "https://tc39.es/ecma262/#sec-weakref-and-finalizationregistry": [
+   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md"
   ],
   "https://tc39.es/ecma262/2026/multipage/": [
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md"
@@ -6801,9 +6784,6 @@
   ],
   "https://tc39.es/ecma262/2026/multipage/ecmascript-language-functions-and-classes.html#sec-tail-position-calls": [
    "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.05-recursion-tail-call.md"
-  ],
-  "https://tc39.es/ecma262/2026/multipage/keyed-collections.html": [
-   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md"
   ],
   "https://tc39.es/ecma262/2026/multipage/managing-memory.html": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.07-garbage-collection.md"
@@ -6928,7 +6908,6 @@
    "40-platform/40.6-git-advanced/REVISION.md"
   ],
   "https://ts.sdk.modelcontextprotocol.io/v2/migration/support-2026-07-28": [
-   "20-backend/20.12-ai-engineering/20.12.04-agent-orchestration-patterns.md",
    "20-backend/20.12-ai-engineering/20.12.07-interview-questions.md"
   ],
   "https://turbo.build/pack": [
@@ -6998,10 +6977,8 @@
   ],
   "https://v8.dev/blog/fast-properties": [
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md",
+   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.md",
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md"
-  ],
-  "https://v8.dev/blog/hash-code": [
-   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md"
   ],
   "https://v8.dev/blog/javascript-code-coverage": [
    "50-quality/50.1-testing/02-frameworks/50.1.2.02-vitest.md"

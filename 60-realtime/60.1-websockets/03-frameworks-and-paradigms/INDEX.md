@@ -1,6 +1,6 @@
 # Frameworks & Paradigms
 
-> **Study time:** ≈ 45 min of reading (5 files, ~9 min average).
+> **Study time:** ≈ 44 min of reading (5 files, ~9 min average).
 > **5 files.** Where transports meet application code: NestJS gateway wiring, GraphQL subscriptions over pub-sub, WebRTC peer-to-peer media, and how to test all of it under load.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../INDEX.md)
@@ -14,7 +14,7 @@
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [NestJS WebSockets](60.1.3.01-nestjs-websockets.md) | Gateways, adapters (Socket.IO / WS), guards, pipes, exception filters | Important | Specialized | 11 min |
-| 02 | [GraphQL Subscriptions & Live Queries](60.1.3.02-graphql-subscriptions-live-queries.md) | graphql-ws protocol, Redis pub-sub, withFilter server-side authz, live queries vs subscriptions, fan-out scaling, over-emitting costs | Optional | Specialized | 11 min |
+| 02 | [GraphQL Subscriptions & Live Queries](60.1.3.02-graphql-subscriptions-live-queries.md) | graphql-ws protocol, Redis pub-sub, withFilter server-side authz, live queries vs subscriptions, fan-out scaling, over-emitting costs | Optional | Specialized | 10 min |
 | 03 | [WebRTC Peer-to-Peer](60.1.3.03-webrtc-peer-to-peer.md) | getUserMedia / RTCPeerConnection / RTCDataChannel, signaling, ICE/STUN/TURN, mesh vs SFU vs MCU cost math, route discovery | Optional | Specialized | 11 min |
 | 04 | [Testing Real-Time Systems](60.1.3.04-testing-realtime-systems.md) | Protocol smoke tests, workload/ramp/churn design, state-recovery oracles, slow consumers and resource trends | Important | Specialized | 10 min |
 

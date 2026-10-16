@@ -1,6 +1,6 @@
 # WebSockets — Index
 
-> **Study time:** ≈ 2 h 1 m of reading (14 files, ~9 min average).
+> **Study time:** ≈ 1 h 56 m of reading (14 files, ~8 min average).
 > **14 files across 4 categories.** Real-time communication from WebSocket fundamentals and Socket.IO to Server-Sent Events, real-time architecture, NestJS WebSockets, GraphQL subscriptions, WebRTC peer-to-peer, testing realtime systems, WebTransport, scaling patterns, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-14-blue)](../../INDEX.md)
@@ -29,8 +29,8 @@ Transport options and the Socket.IO library built above them.
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
 | 01 | [WebSockets Overview](01-transports/60.1.1.01-websockets-overview.md) | Protocol, handshake (HTTP Upgrade), frames, vs HTTP, use cases | Bidirectional real-time | Important | Specialized | 12 min |
-| 02 | [Server-Sent Events](01-transports/60.1.1.02-server-sent-events.md) | EventSource API, auto-reconnect, vs WebSockets, use cases | Server→client only (notifications, live updates) | Important | Specialized | 12 min |
-| 03 | [Socket.IO](01-transports/60.1.1.03-socket-io.md) | Client/server setup, rooms, namespaces, events, fallback to polling | Quick bidirectional with rich features | Important | Specialized | 13 min |
+| 02 | [Server-Sent Events](01-transports/60.1.1.02-server-sent-events.md) | EventSource API, auto-reconnect, vs WebSockets, use cases | Server→client only (notifications, live updates) | Important | Specialized | 10 min |
+| 03 | [Socket.IO](01-transports/60.1.1.03-socket-io.md) | Client/server setup, rooms, namespaces, events, fallback to polling | Quick bidirectional with rich features | Important | Specialized | 12 min |
 | 04 | [WebTransport](01-transports/60.1.1.04-webtransport.md) | QUIC-based transport, datagrams, streams, vs WebSocket | Independent reliable streams or replaceable datagrams | Optional | Specialized | 9 min |
 
 **Decision tree:**
@@ -52,7 +52,7 @@ The hard part — making it work at scale.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Real-Time Architecture](02-architecture-and-scaling/60.1.2.01-real-time-architecture.md) | Pub/sub, message brokers, scaling WebSockets, state sync, presence | Important | Specialized | 9 min |
+| 01 | [Real-Time Architecture](02-architecture-and-scaling/60.1.2.01-real-time-architecture.md) | Pub/sub, message brokers, scaling WebSockets, state sync, presence | Important | Specialized | 8 min |
 | 02 | [Scaling Patterns](02-architecture-and-scaling/60.1.2.02-scaling-patterns.md) | Sticky sessions, Redis adapter, sharding, edge platforms (Cloudflare Durable Objects) | Important | Specialized | 8 min |
 
 ---
@@ -62,7 +62,7 @@ The hard part — making it work at scale.
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [NestJS WebSockets](03-frameworks-and-paradigms/60.1.3.01-nestjs-websockets.md) | Gateways, adapters (Socket.IO / WS), guards, pipes, exception filters | Important | Specialized | 11 min |
-| 02 | [GraphQL Subscriptions & Live Queries](03-frameworks-and-paradigms/60.1.3.02-graphql-subscriptions-live-queries.md) | graphql-ws protocol, Redis pub-sub, withFilter, live queries, fan-out scaling | Optional | Specialized | 11 min |
+| 02 | [GraphQL Subscriptions & Live Queries](03-frameworks-and-paradigms/60.1.3.02-graphql-subscriptions-live-queries.md) | graphql-ws protocol, Redis pub-sub, withFilter, live queries, fan-out scaling | Optional | Specialized | 10 min |
 | 03 | [WebRTC Peer-to-Peer](03-frameworks-and-paradigms/60.1.3.03-webrtc-peer-to-peer.md) | getUserMedia, RTCPeerConnection, RTCDataChannel, ICE/STUN/TURN, mesh vs SFU vs MCU | Optional | Specialized | 11 min |
 | 04 | [Testing Real-Time Systems](03-frameworks-and-paradigms/60.1.3.04-testing-realtime-systems.md) | Protocol smoke checks, workload/churn design, recovery oracles and soak evidence | Important | Specialized | 10 min |
 

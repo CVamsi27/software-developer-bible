@@ -1,6 +1,6 @@
 # Data & Caching — Next.js
 
-> **Study time:** ≈ 56 min of reading (7 files, ~8 min average).
+> **Study time:** ≈ 58 min of reading (7 files, ~8 min average).
 > **7 files.** Follow a read from its execution boundary through reuse, mutation, delivery and deployment constraints.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](#files)
@@ -13,10 +13,10 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Data Fetching Patterns](10.4.3.01-data-fetching-patterns.md) | Server and client reads, dependencies, request reuse, React `use()`, interactive queries | Important | Important | 9 min |
+| 01 | [Data Fetching Patterns](10.4.3.01-data-fetching-patterns.md) | Server and client reads, dependencies, request reuse, React `use()`, interactive queries | Important | Important | 10 min |
 | 02 | [Server Actions](10.4.3.02-server-actions.md) | Mutation validation, authorization, form state, idempotency, and cache refresh | Important | Important | 9 min |
 | 03 | [Caching](10.4.3.03-caching.md) | Data cache, full route cache, revalidation, stale-while-revalidate, cache tags | Important | Important | 9 min |
-| 04 | [Streaming](10.4.3.04-streaming.md) | Suspense boundaries, useful fallbacks, HTTP commitment, crawler and host behavior | Important | Specialized | 6 min |
+| 04 | [Streaming](10.4.3.04-streaming.md) | Suspense boundaries, useful fallbacks, HTTP commitment, crawler and host behavior | Important | Specialized | 7 min |
 | 05 | [Incremental Static Regeneration](10.4.3.05-incremental-static-regeneration.md) | SWR, on-demand revalidation, cache tags, `generateStaticParams`, fallback | Important | Specialized | 10 min |
 | 06 | [Static Exports](10.4.3.06-static-exports.md) | `output: 'export'`, build-time routes, static GET files, host routing | Important | Specialized | 8 min |
 

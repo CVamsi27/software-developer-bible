@@ -1,6 +1,6 @@
 # Behavioral — Index
 
-> **Study time:** ≈ 46 min of reading (6 files, ~8 min average).
+> **Study time:** ≈ 41 min of reading (6 files, ~7 min average).
 > **Interview-depth behavioral prep.** The universal basics (STAR framework, HR questions, resume) live in [00-strategy](../../00-strategy/INDEX.md); this folder holds the deeper material you use once the basics are internalized.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](../../INDEX.md)

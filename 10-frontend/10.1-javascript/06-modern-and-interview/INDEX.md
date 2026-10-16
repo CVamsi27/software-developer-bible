@@ -1,6 +1,6 @@
 # Modern JS & Interview Prep — JavaScript
 
-> **Study time:** ≈ 43 min of reading (6 files, ~7 min average).
+> **Study time:** ≈ 45 min of reading (6 files, ~8 min average).
 > **6 files.** Selected ECMAScript 2022–2026 features and separate host APIs, Web Workers, DOM events, cross-tab coordination, and a 62-question interview bank.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](#files)
@@ -13,10 +13,10 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Recent ECMAScript Features](10.1.6.01-es2024-features.md) | Selected ES2022–2026 built-ins, ownership and evaluation contracts, plus host/runtime boundaries | Important | Specialized | 6 min |
+| 01 | [Recent ECMAScript Features](10.1.6.01-es2024-features.md) | Selected ES2022–2026 built-ins, ownership and evaluation contracts, plus host/runtime boundaries | Important | Specialized | 7 min |
 | 02 | [Web Workers](10.1.6.02-web-workers.md) | Dedicated, shared, and service workers; request ownership, transfer, and cancellation limits | Important | Important | 7 min |
-| 03 | [DOM Events & Delegation](10.1.6.03-dom-events-delegation.md) | Event path, target and listener ownership, delegated actions, propagation, defaults, and cleanup | Essential | Foundational | 5 min |
-| 04 | [Cross-Tab Communication](10.1.6.04-cross-tab-communication.md) | Transient messages, stored recovery, shared owners, locks, and safe cross-tab session updates | Important | Specialized | 6 min |
+| 03 | [DOM Events & Delegation](10.1.6.03-dom-events-delegation.md) | Event path, target and listener ownership, delegated actions, propagation, defaults, and cleanup | Essential | Foundational | 6 min |
+| 04 | [Cross-Tab Communication](10.1.6.04-cross-tab-communication.md) | Transient messages, stored recovery, shared owners, locks, and safe cross-tab session updates | Important | Specialized | 7 min |
 | 05 | [Interview Questions](10.1.6.05-interview-questions.md) | 62 curated questions with answers and changed-condition checks | Essential | Foundational | 12 min |
 
 ---

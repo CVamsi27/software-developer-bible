@@ -1,6 +1,6 @@
 # React Internals — React
 
-> **Study time:** ≈ 19 min of reading (6 files, ~3 min average).
+> **Study time:** ≈ 20 min of reading (6 files, ~3 min average).
 > Follow one accepted UI update from its element description, through retained identity and commit, to the external resources that must stay synchronized.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](#files)
@@ -17,7 +17,7 @@
 | 02 | [Fiber](10.3.1.02-fiber.md) | Retained work, cooperative scheduling and its limits | Important | Important | 3 min |
 | 03 | [Reconciliation](10.3.1.03-reconciliation.md) | Type, position and keys determine state identity | Essential | Foundational | 3 min |
 | 04 | [Rendering](10.3.1.04-rendering.md) | Render, commit and browser work are separate costs | Essential | Foundational | 3 min |
-| 05 | [Lifecycle](10.3.1.05-lifecycle.md) | Component lifetime versus Effect setup and cleanup | Essential | Foundational | 3 min |
+| 05 | [Lifecycle](10.3.1.05-lifecycle.md) | Component lifetime versus Effect setup and cleanup | Essential | Foundational | 4 min |
 
 ---
 

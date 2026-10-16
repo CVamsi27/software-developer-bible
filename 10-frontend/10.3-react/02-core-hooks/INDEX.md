@@ -1,6 +1,6 @@
 # Core Hooks — React
 
-> **Study time:** ≈ 38 min of reading (6 files, ~6 min average).
+> **Study time:** ≈ 40 min of reading (6 files, ~7 min average).
 > Follow state from one render snapshot to the next, synchronize external work safely, then choose which values belong in refs, memoized calculations or context.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](#files)
@@ -16,8 +16,8 @@
 | 01 | [useState](10.3.2.01-usestate.md) | Render snapshots, queued updates, immutable state and ownership | Essential | Foundational | 5 min |
 | 02 | [useEffect](10.3.2.02-useeffect.md) | External synchronization, dependency changes and stale-result guards | Essential | Foundational | 7 min |
 | 03 | [useMemo / useCallback](10.3.2.03-usememo-usecallback.md) | Measured render caches and the React Compiler boundary | Important | Important | 7 min |
-| 04 | [useRef](10.3.2.04-useref.md) | Imperative handles, callback cleanup and React 19 ref props | Essential | Foundational | 6 min |
-| 05 | [Context API](10.3.2.05-context-api.md) | Provider scope, value identity, consumer updates and the React 19.3 Server Component boundary | Important | Important | 8 min |
+| 04 | [useRef](10.3.2.04-useref.md) | Imperative handles, callback cleanup and React 19 ref props | Essential | Foundational | 7 min |
+| 05 | [Context API](10.3.2.05-context-api.md) | Provider scope, value identity, consumer updates and the React 19.3 Server Component boundary | Important | Important | 9 min |
 
 ---
 

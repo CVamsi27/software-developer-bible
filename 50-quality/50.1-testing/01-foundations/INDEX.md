@@ -1,6 +1,6 @@
 # Testing Foundations
 
-> **Study time:** ≈ 22 min of reading (3 files, ~7 min average).
+> **Study time:** ≈ 19 min of reading (3 files, ~6 min average).
 > **3 files.** The mental model before any tool: the testing pyramid, test types, TDD vs BDD, coverage trade-offs — and the data that feeds every suite. Everything else in the testing stack assumes this vocabulary.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
@@ -19,8 +19,8 @@ Start by deciding what behavior a test can claim and which boundary can expose i
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Testing Overview](50.1.1.01-testing-overview.md) | Test types, testing pyramid, TDD, BDD, coverage, strategies, when to write which test | Essential | Foundational | 9 min |
-| 02 | [Test Data Management & Anonymization](50.1.1.02-test-data-management-anonymization.md) | Explicit fixtures, seeded variety, join-preserving pseudonyms, identification risk, golden oracles, refresh validation | Essential | Foundational | 11 min |
+| 01 | [Testing Overview](50.1.1.01-testing-overview.md) | Test types, testing pyramid, TDD, BDD, coverage, strategies, when to write which test | Essential | Foundational | 8 min |
+| 02 | [Test Data Management & Anonymization](50.1.1.02-test-data-management-anonymization.md) | Explicit fixtures, seeded variety, join-preserving pseudonyms, identification risk, golden oracles, refresh validation | Essential | Foundational | 9 min |
 
 ---
 

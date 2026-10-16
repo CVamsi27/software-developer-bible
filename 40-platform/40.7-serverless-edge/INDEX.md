@@ -1,6 +1,6 @@
 # Serverless & Edge — Index
 
-> **Study time:** ≈ 1 h 26 m of reading (11 files, ~8 min average).
+> **Study time:** ≈ 1 h 27 m of reading (11 files, ~8 min average).
 > **11 files** — Serverless and edge computing fundamentals, from overview and edge functions to AWS Lambda, Vercel, serverless patterns, IaC frameworks, durable execution, Fly.io deployment, Vite SPA on Cloudflare, and curated interview questions.
 
 [![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
@@ -28,7 +28,7 @@
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Serverless Overview](40.7.01-serverless-overview.md) | Request and event model, execution lifetime, retries, durable state, downstream capacity, cost, and runtime choice | Important | Specialized | 8 min |
-| 02 | [Edge Functions](40.7.04-edge-functions.md) | Provider contracts, runtime limits, cache and KV consistency, Durable Object coordination, identity, and recovery | Important | Specialized | 8 min |
+| 02 | [Edge Functions](40.7.04-edge-functions.md) | Provider contracts, runtime limits, cache and KV consistency, Durable Object coordination, identity, and recovery | Important | Specialized | 9 min |
 
 **Decision tree:**
 

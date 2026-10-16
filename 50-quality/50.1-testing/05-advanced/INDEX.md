@@ -1,6 +1,6 @@
 # Advanced Testing
 
-> **Study time:** ≈ 21 min of reading (3 files, ~7 min average).
+> **Study time:** ≈ 19 min of reading (3 files, ~6 min average).
 > **3 files.** Testing beyond correctness: performance/load testing (k6, Artillery, Locust) and chaos engineering — measuring behavior under stated load and failure conditions.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)

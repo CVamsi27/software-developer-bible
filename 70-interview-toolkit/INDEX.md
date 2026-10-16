@@ -1,6 +1,6 @@
 # Interview Toolkit
 
-> **Study time:** ≈ 6 h 57 m of reading (41 files, ~10 min average).
+> **Study time:** ≈ 6 h 36 m of reading (41 files, ~10 min average).
 > **Behavioral, coding patterns, cheat sheets** — the "last-mile" stack. Use it to turn studied mechanisms and real work into explanations you can test. Shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
 > 41 files across 3 sub-stacks.

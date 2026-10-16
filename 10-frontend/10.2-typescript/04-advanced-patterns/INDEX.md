@@ -1,6 +1,6 @@
 # Advanced Patterns — TypeScript
 
-> **Study time:** ≈ 41 min of reading (7 files, ~6 min average).
+> **Study time:** ≈ 42 min of reading (7 files, ~6 min average).
 > **7 files.** The senior toolkit: `satisfies`, branded types, decorators, declarations, composed type patterns, and the compiler pipeline that checks and emits them.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](#files)
@@ -14,7 +14,7 @@
 | Order | File | Topics | Role priority | General importance | Read time |
 | ------ | ------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | ------------- | ------------------ | ----------: |
 | 01 | [The `satisfies` Operator](10.2.4.01-satisfies-operator.md) | Finite and open keys, contextual inference, route contracts | Essential | Foundational | 4 min |
-| 02 | [Branded Types](10.2.4.02-branded-types.md) | Opaque IDs, validated units and currency, runtime trust boundaries | Important | Specialized | 6 min |
+| 02 | [Branded Types](10.2.4.02-branded-types.md) | Opaque IDs, validated units and currency, runtime trust boundaries | Important | Specialized | 7 min |
 | 03 | [Decorators](10.2.4.03-decorators.md) | Newer and legacy modes, wrappers, accessors, metadata consumers | Important | Specialized | 7 min |
 | 04 | [Declaration Files](10.2.4.04-declaration-files.md) | .d.ts scope, module augmentation, bundler assets, package exports | Important | Specialized | 6 min |
 | 05 | [Advanced Patterns](10.2.4.05-advanced-patterns.md) | Composed event/payload contracts, dispatch, cleanup and failure policy | Important | Specialized | 6 min |

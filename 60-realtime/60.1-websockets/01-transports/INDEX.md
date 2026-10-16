@@ -1,6 +1,6 @@
 # Transports
 
-> **Study time:** ≈ 49 min of reading (5 files, ~10 min average).
+> **Study time:** ≈ 46 min of reading (5 files, ~9 min average).
 > **5 files.** The four real-time transport options — raw WebSockets, Server-Sent Events, Socket.IO, and WebTransport — and the decision framework for picking between them.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../INDEX.md)

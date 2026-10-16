@@ -1,6 +1,6 @@
 # Payloads, Errors & Integration - REST APIs
 
-> **Study time:** ≈ 58 min of reading (8 files, ~7 min average).
+> **Study time:** ≈ 1 h of reading (8 files, ~8 min average).
 > **8 files.** The contract details clients feel daily: pagination strategies (offset vs cursor vs keyset), RFC 9457 Problem Details, long-running operations (202 Accepted + operation resources), file upload architectures (proxy multipart vs presigned direct-to-S3), webhook retries and verification, **serialization & wire formats**, and **transactional email delivery**.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](../INDEX.md)
@@ -16,13 +16,13 @@ Bound collection reads first, then define failures and asynchronous outcomes. Up
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | -------- | ------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------ | ---------: |
-| 01 | [Pagination](20.3.3.01-pagination.md) | Offset vs cursor vs keyset — deep dive | Essential | Foundational | 8 min |
+| 01 | [Pagination](20.3.3.01-pagination.md) | Offset vs cursor vs keyset — deep dive | Essential | Foundational | 9 min |
 | 02 | [Error Handling Design](20.3.3.02-error-handling-design.md) | RFC 9457 Problem Details, validation errors | Essential | Foundational | 7 min |
 | 03 | [Long-Running API Operations](20.3.3.03-long-running-api-operations.md) | `202 Accepted` pattern, operation resource schema, polling vs webhook completion, progress & partial results, idempotent resubmission, cancellation and a bounded polling client | Essential | Foundational | 8 min |
 | 04 | [File Upload APIs](20.3.3.04-file-upload-apis.md) | Multipart streaming, presigned S3 direct uploads, resumable offsets and tus, immutable-version scan gates, metadata, checksums and resource limits | Essential | Foundational | 7 min |
 | 05 | [Webhooks](20.3.3.05-webhooks.md) | Delivery retries, signature verification, replay controls, ordering and duplicate-safe processing | Important | Important | 10 min |
 | 06 | [Serialization & Wire Formats](20.3.3.06-serialization-and-wire-formats.md) | JSON limits (64-bit precision, dates, undefined), protobuf field-number contracts, MessagePack/CBOR/Avro, schema evolution, body limits before parsing, compressed-size comparison | Essential | Foundational | 7 min |
-| 07 | [Transactional Email & Notification Delivery](20.3.3.07-transactional-email-and-notifications.md) | Outbox → queue → worker pipeline, unknown acceptance and stable business identity, SPF/DKIM/DMARC, bounce + complaint webhooks, suppression lists, deliverability metrics | Essential | Foundational | 7 min |
+| 07 | [Transactional Email & Notification Delivery](20.3.3.07-transactional-email-and-notifications.md) | Outbox → queue → worker pipeline, unknown acceptance and stable business identity, SPF/DKIM/DMARC, bounce + complaint webhooks, suppression lists, deliverability metrics | Essential | Foundational | 8 min |
 | Revision | [Category recall](REVISION.md) | Practice data, outcome and integration boundaries | Essential | Foundational | — |
 
 ---

@@ -1,6 +1,6 @@
 # AI Engineering — Index
 
-> **Study time:** ≈ 1 h 25 m of reading (8 files, ~11 min average).
+> **Study time:** ≈ 1 h 24 m of reading (8 files, ~10 min average).
 > **Building products with language models** — this track focuses on application architecture, retrieval, evaluation, serving, and governance rather than model training. Learn the mechanisms in order, then practice explaining their trade-offs with evidence from systems you have actually worked on.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)

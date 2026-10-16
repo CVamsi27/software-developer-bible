@@ -1,6 +1,6 @@
 # Docker — Index
 
-> **Study time:** ≈ 1 h 9 m of reading (11 files, ~6 min average).
+> **Study time:** ≈ 1 h 8 m of reading (11 files, ~6 min average).
 > **11 files** — Docker fundamentals from images and containers to volumes, networks, Compose, multi-stage builds, runtime internals (namespaces/cgroups), supply chain security (signing/SBOM), rootless & sandboxed runtimes, production patterns, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
@@ -52,7 +52,7 @@ Production workflows.
 | 06 | [Production Patterns](40.1.06-production-patterns.md) | Multi-stage builds (advanced), Docker Compose in production, image optimization, container security checklist | Important | Important | 5 min |
 | 07 | [Container Runtime Internals](40.1.07-container-runtime-internals-namespaces-cgroups.md) | Namespaces (pid/net/mnt/uts/ipc/user), cgroups v2 limits, OverlayFS copy-on-write layers, runc/containerd stack, container vs VM | Optional | Specialized | 8 min |
 | 08 | [Image Signing, SBOM & Supply Chain](40.1.08-image-signing-sbom-supply-chain.md) | Cosign signing + admission verification, SBOM (syft, BuildKit attestations), SLSA provenance levels, registry policy, CI gates | Optional | Specialized | 6 min |
-| 09 | [Rootless & Sandboxed Runtimes](40.1.09-rootless-sandboxed-runtimes.md) | Rootless mode and user namespaces, version-dependent network backends, gVisor vs Kata boundaries, multi-tenant isolation, RuntimeClass | Optional | Specialized | 11 min |
+| 09 | [Rootless & Sandboxed Runtimes](40.1.09-rootless-sandboxed-runtimes.md) | Rootless mode and user namespaces, version-dependent network backends, gVisor vs Kata boundaries, multi-tenant isolation, RuntimeClass | Optional | Specialized | 10 min |
 
 ---
 

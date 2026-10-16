@@ -1,6 +1,6 @@
 # Data & Consistency - Microservices
 
-> **Study time:** ≈ 42 min of reading (7 files, ~6 min average).
+> **Study time:** ≈ 43 min of reading (7 files, ~6 min average).
 > **7 files.** Atomicity and truth across service boundaries: saga with compensating transactions, distributed transaction patterns (outbox vs 2PC), event sourcing, CQRS, decomposing the monolith database, and the transactional outbox deep dive.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../INDEX.md)
@@ -20,7 +20,7 @@ Start with visible saga progress and compare it with atomic commit. Then follow 
 | 02 | [Distributed Transactions](20.6.3.02-distributed-transactions.md) | 2PC trade-offs, saga, outbox pattern, idempotent consumers and the limits of locks | Important | Important | 6 min |
 | 03 | [Event Sourcing](20.6.3.03-event-sourcing.md) | Event store design, rebuilding state by replay, snapshots, projection rebuilds | Important | Important | 6 min |
 | 04 | [CQRS](20.6.3.04-cqrs.md) | Command/query separation, read models, eventual consistency, projection lag | Important | Important | 6 min |
-| 05 | [Decomposing the Monolith Database](20.6.3.05-decomposing-monolith-database.md) | Shared-DB hazards, strangulation order for data, schema extraction steps, dual-write vs CDC sync, backfill strategies, cross-service referential integrity | Important | Important | 7 min |
+| 05 | [Decomposing the Monolith Database](20.6.3.05-decomposing-monolith-database.md) | Shared-DB hazards, strangulation order for data, schema extraction steps, dual-write vs CDC sync, backfill strategies, cross-service referential integrity | Important | Important | 8 min |
 | 06 | [Transactional Outbox](20.6.3.06-transactional-outbox.md) | Dual-write problem, outbox table, polling vs CDC relay, idempotent consumers, DLQ handling, production patterns | Essential | Important | 8 min |
 
 ---

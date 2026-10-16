@@ -1,6 +1,6 @@
 # Graphs, Trees & Grids
 
-> **Study time:** ≈ 1 h 37 m of reading (7 files, ~14 min average).
+> **Study time:** ≈ 1 h 35 m of reading (7 files, ~14 min average).
 > **7 files.** Traversal, connectivity, weighted paths, and grid simulation: DFS/BFS, Dijkstra/Bellman-Ford, union-find, topological sort, tries, and the matrix-index patterns that unlock most grid problems.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../INDEX.md)
@@ -19,8 +19,8 @@ Begin with depth-first search (DFS) and breadth-first search (BFS): compare whic
 | --: | ------ | ------------------- | --- | --- | ----------: |
 | 01 | [DFS & BFS](70.2.2.01-dfs-bfs.md) | "Tree/graph traversal", connected components, level-order, shortest unweighted path | Essential | Important | 18 min |
 | 02 | [Shortest Paths — Dijkstra & Bellman-Ford](70.2.2.02-shortest-paths-dijkstra-bellman-ford.md) | Weighted shortest path, "cheapest with K stops", negative edges/arbitrage, 0-1 weights | Optional | Specialized | 16 min |
-| 03 | [Union Find](70.2.2.03-union-find.md) | "Connected components online", redundant connections, accounts merge | Optional | Specialized | 15 min |
-| 04 | [Topological Sort](70.2.2.04-topological-sort.md) | "Dependency resolution, course schedule, build order" | Essential | Important | 15 min |
+| 03 | [Union Find](70.2.2.03-union-find.md) | "Connected components online", redundant connections, accounts merge | Optional | Specialized | 14 min |
+| 04 | [Topological Sort](70.2.2.04-topological-sort.md) | "Dependency resolution, course schedule, build order" | Essential | Important | 14 min |
 | 05 | [Trie](70.2.2.05-trie.md) | "Prefix search, autocomplete, word dictionary" | Essential | Important | 17 min |
 | 06 | [Matrix Traversal & Simulation](70.2.2.06-matrix-traversal-simulation.md) | Spiral order, rotate in place, set zeroes O(1), diagonal traversal, direction vectors | Essential | Important | 14 min |
 

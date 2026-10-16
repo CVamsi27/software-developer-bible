@@ -1,6 +1,6 @@
 # JavaScript — Index
 
-> **Study time:** ≈ 4 h 56 m of reading (41 files, ~7 min average).
+> **Study time:** ≈ 5 h of reading (41 files, ~7 min average).
 > Core JavaScript concepts from execution context through async patterns, memory management, functional techniques, modern language APIs, cancellation, browser events, cross-tab coordination, and interview practice.
 
 [![Files](https://img.shields.io/badge/files-41-blue)](../../INDEX.md)
@@ -92,7 +92,7 @@ Choosing the right collection and avoiding memory leaks.
 | 16 | [Pass by Value](04-memory-and-data/10.1.4.01-pass-by-value.md) | Primitive vs reference, value/reference semantics, mutation gotchas | Essential | Foundational | 7 min |
 | 17 | [Map, Set, WeakMap, WeakSet](04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md) | Key identity and order, weak metadata, conversion, bounded eviction | Essential | Foundational | 9 min |
 | 18 | [Shallow vs Deep Copy](04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.md) | Reference graphs, structured cloning, transfer, JSON boundary, path copying | Essential | Foundational | 8 min |
-| 19 | [Debounce](04-memory-and-data/10.1.4.04-debounce.md) | Quiet-time scheduling, edge policies, cancellation, stale async results | Essential | Foundational | 6 min |
+| 19 | [Debounce](04-memory-and-data/10.1.4.04-debounce.md) | Quiet-time scheduling, edge policies, cancellation, stale async results | Essential | Foundational | 10 min |
 | 20 | [Throttle](04-memory-and-data/10.1.4.05-throttle.md) | Periodic scheduling, edge policies, cancellation, concurrency boundaries | Essential | Foundational | 6 min |
 | 21 | [Memory Leaks](04-memory-and-data/10.1.4.06-memory-leaks.md) | Retaining paths, cleanup ownership, bounded caches, heap diagnosis | Essential | Foundational | 5 min |
 | 22 | [Garbage Collection](04-memory-and-data/10.1.4.07-garbage-collection.md) | Tracing, generations, scheduling, weak references, process memory | Essential | Foundational | 4 min |

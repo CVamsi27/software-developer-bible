@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "9d84e5ac5c5901b3121f01a6e1df77745e29e9ade9c5b3c235a2b9b9c684bd76",
+ "corpus_digest": "83f549d7fefffa7806ebd55e266688629973a0ec39a3394fb4ce7cac38f0f581",
  "totals": {
   "chapters": 675,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5304
+  "read_minutes": 5307
  },
  "chapters": [
   {
@@ -332,7 +332,7 @@
    "g": [
     "concept"
    ],
-   "m": 4
+   "m": 7
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.html",

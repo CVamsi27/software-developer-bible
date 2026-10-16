@@ -202,4 +202,4 @@ projects → Docita architecture deep-dives, interview defense
 
 ---
 
-*Last updated: October 2026 — 1051 files, 173K lines, 0 broken links — folders numbered for study order. Every large stack is organized into numbered category subfolders; the auth track covers passkeys/SAML; sequences are contiguous inside each stack folder. The 80.x lane numbering intentionally leaves room for project-preparation chapters.
+*Last updated: October 2026 — 1051 files, 174K lines, 0 broken links — folders numbered for study order. Every large stack is organized into numbered category subfolders; the auth track covers passkeys/SAML; sequences are contiguous inside each stack folder. The 80.x lane numbering intentionally leaves room for project-preparation chapters.

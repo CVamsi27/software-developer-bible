@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "7005cc71098a8e176c684c347783877f8fceb549918a394459c250142c4ac790",
+ "corpus_digest": "302306dd2e82993077d1fc1c34526817a224ba637c2019fa3db31588df7a623b",
  "totals": {
   "chapters": 675,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5254
+  "read_minutes": 5269
  },
  "chapters": [
   {
@@ -75,7 +75,7 @@
    "g": [
     "concept"
    ],
-   "m": 5
+   "m": 7
   },
   {
    "p": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.02-scope.html",
@@ -85,7 +85,7 @@
    "g": [
     "concept"
    ],
-   "m": 5
+   "m": 7
   },
   {
    "p": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.03-call-stack.html",
@@ -95,7 +95,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 8
   },
   {
    "p": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.04-hoisting.html",
@@ -115,7 +115,7 @@
    "g": [
     "concept"
    ],
-   "m": 5
+   "m": 9
   },
   {
    "p": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.06-closures.html",
@@ -125,7 +125,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 8
   },
   {
    "p": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.html",
@@ -136,7 +136,7 @@
     "concept",
     "runtime"
    ],
-   "m": 5
+   "m": 8
   },
   {
    "p": "10-frontend/10.1-javascript/01-execution-and-scope/REVISION.html",

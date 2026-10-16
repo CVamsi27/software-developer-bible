@@ -1,6 +1,6 @@
 # JavaScript — Index
 
-> **Study time:** ≈ 4 h 44 m of reading (41 files, ~7 min average).
+> **Study time:** ≈ 4 h 49 m of reading (41 files, ~7 min average).
 > Core JavaScript concepts from execution context through async patterns, memory management, functional techniques, modern language APIs, cancellation, browser events, cross-tab coordination, and interview practice.
 
 [![Files](https://img.shields.io/badge/files-41-blue)](../../INDEX.md)
@@ -75,7 +75,7 @@ Async behavior is subtle and commonly tested. One agent runs one active synchron
 | 10 | [Event Loop](03-async-concurrency/10.1.3.01-event-loop.md) | Synchronous tasks, microtask checkpoints, browser rendering, Node host loop | Essential | Foundational | 11 min |
 | 11 | [Promises](03-async-concurrency/10.1.3.02-promises.md) | Promise states, chaining, error handling, `Promise.all`/`race`/`allSettled`/`any` | Essential | Foundational | 10 min |
 | 12 | [Async/Await](03-async-concurrency/10.1.3.03-async-await.md) | Suspension, serial dependencies vs overlapping I/O, rejection paths and iterator cleanup | Essential | Foundational | 12 min |
-| 13 | [Error Handling](03-async-concurrency/10.1.3.04-error-handling.md) | try/catch/finally, custom errors, error propagation, async error handling, unhandled rejections | Essential | Foundational | 5 min |
+| 13 | [Error Handling](03-async-concurrency/10.1.3.04-error-handling.md) | try/catch/finally, custom errors, error propagation, async error handling, unhandled rejections | Essential | Foundational | 10 min |
 | 14 | [Aborting & Cancellation](03-async-concurrency/10.1.3.05-abort-and-cancellation.md) | AbortController/AbortSignal, stale-request races, `AbortSignal.timeout`/`any`, listener cleanup, cooperative cancellation | Essential | Foundational | 8 min |
 | 15 | [Bounded Concurrency](03-async-concurrency/10.1.3.06-bounded-concurrency.md) | Task-start limit, failure policy, cancellation, result order and backpressure | Essential | Foundational | 8 min |
 

@@ -1,6 +1,6 @@
 # Memory & Data — JavaScript
 
-> **Study time:** ≈ 1 h 13 m of reading (10 files, ~7 min average).
+> **Study time:** ≈ 1 h 16 m of reading (10 files, ~8 min average).
 > **10 files.** Follow values and object identity into collection choice and copying, then learn how timers, retaining paths, hash tables, equality rules, and garbage collection shape real JavaScript systems.
 
 [![Files](https://img.shields.io/badge/files-10-blue)](#files)
@@ -18,7 +18,7 @@
 | 03 | [Shallow vs Deep Copy](10.1.4.03-shallow-vs-deep-copy.md) | Reference graphs, structured cloning, transfer, JSON boundary, path copying | Essential | Foundational | 8 min |
 | 04 | [Debounce](10.1.4.04-debounce.md) | Quiet-time scheduling, edge policies, cancellation, stale async results | Essential | Foundational | 10 min |
 | 05 | [Throttle](10.1.4.05-throttle.md) | Periodic scheduling, edge policies, cancellation, concurrency boundaries | Essential | Foundational | 8 min |
-| 06 | [Memory Leaks](10.1.4.06-memory-leaks.md) | Retaining paths, cleanup ownership, bounded caches, heap diagnosis | Essential | Foundational | 5 min |
+| 06 | [Memory Leaks](10.1.4.06-memory-leaks.md) | Retaining paths, cleanup ownership, bounded caches, heap diagnosis | Essential | Foundational | 8 min |
 | 07 | [Garbage Collection](10.1.4.07-garbage-collection.md) | Tracing, generations, scheduling, weak references, process memory | Essential | Foundational | 4 min |
 | 08 | [Hash Tables and Hash Maps](10.1.4.08-hash-tables-internals.md) | Hash lookup, collisions, growth costs, JavaScript collection guarantees | Important | Specialized | 7 min |
 | 09 | [Equality & Coercion](10.1.4.09-equality-and-coercion.md) | Conversion rules, truthiness, defaults, Object.is, numeric boundaries | Essential | Foundational | 5 min |

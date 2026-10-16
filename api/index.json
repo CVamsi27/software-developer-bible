@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "d8a314e8bfe2a149e62adf3107475c527643cb64f328ece2fc841e0588a5d62b",
+ "corpus_digest": "9d84e5ac5c5901b3121f01a6e1df77745e29e9ade9c5b3c235a2b9b9c684bd76",
  "totals": {
   "chapters": 675,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5301
+  "read_minutes": 5304
  },
  "chapters": [
   {
@@ -322,7 +322,7 @@
    "g": [
     "concept"
    ],
-   "m": 5
+   "m": 8
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.07-garbage-collection.html",

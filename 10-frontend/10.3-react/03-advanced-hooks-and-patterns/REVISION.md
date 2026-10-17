@@ -236,6 +236,22 @@ Source: [State Management](10.3.3.06-state-management.md)
 8. **Q:** State appears and the team asks "where does it go?" — give the decision rule.
    **A:** Component-only → `useState`/`useReducer`; shared by siblings → lift to the common ancestor; shared provider values → Context; independently selected external state or action tooling → a suitable store; remote copies needing freshness/invalidation → a server-state cache; shareable filters → validated URL state. Frequency and complexity are considerations rather than rigid library boundaries.
 
+## TanStack Query — Server State Ownership
+
+Source: [TanStack Query: Server State Ownership](10.3.3.07-tanstack-query.md)
+
+**Q:** Why do two components reading the same query key trigger one network call, not two?
+
+**A:** Identical keys share one cached record and one in-flight fetch; concurrent requests for the same key dedupe into a single network call.
+
+**Q:** What happens if an optimistic update succeeds in the UI but the server rejects the mutation?
+
+**A:** `onError` restores the snapshot captured in `onMutate`, rolling the UI back to the last confirmed server record.
+
+**Q:** Why must `staleTime` agree between server (`dehydrate`) and client (`rehydrate`)?
+
+**A:** A mismatch causes hydration warnings or duplicate fetches: the first render must match the server output without a waterfall.
+
 ## Ownership under changed conditions
 
 Source: [Custom Hooks](10.3.3.03-custom-hooks.md), [Suspense](10.3.3.01-suspense.md), [External stores](10.3.3.04-usesyncexternalstore.md), [State management](10.3.3.06-state-management.md)

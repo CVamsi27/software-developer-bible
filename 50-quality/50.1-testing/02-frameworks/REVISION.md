@@ -79,6 +79,22 @@ Source: [Testing Frameworks Comparison](50.1.2.04-testing-frameworks-comparison.
 
 **A:** No. It checks an existing-conflict path. Race safety needs overlapping operations against the real persistence constraint/transaction and an assertion on the durable invariant.
 
+## Playwright — End-to-End Browser Journeys
+
+Source: [Playwright: End-to-End Browser Journeys](50.1.2.05-playwright.md)
+
+**Q:** Why does a Playwright locator action rarely need an explicit wait?
+
+**A:** Locators auto-wait until the element is visible, stable and enabled before acting, and assertions retry until they pass or time out.
+
+**Q:** Why does `storageState` save a login for later tests?
+
+**A:** It persists cookies and localStorage after one authenticated session so later tests skip the login flow and keep each test's browser context isolated.
+
+**Q:** Why reserve pixel-perfect visual regression for stable design-token surfaces?
+
+**A:** Anti-aliasing, fonts and dynamic content break visual diffs; use tracing, video and screenshots on failure instead for journey evidence.
+
 ## Summary
 
 Check which runtime, dependency and observation each test actually reaches. Reproduce the pending/error cases, then explain where integration or browser evidence is still required.

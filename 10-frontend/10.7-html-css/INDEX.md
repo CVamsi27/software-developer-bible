@@ -1,9 +1,9 @@
 # HTML/CSS & PWA — Index
 
-> **Study time:** ≈ 1 h 3 m of reading (10 files, ~6 min average).
-> **10 files** — HTML fundamentals, CSS layout, CSS architecture, theming/design tokens, browser storage, PWA, SEO, and browser rendering — the foundational web platform skills every senior frontend engineer needs.
+> **Study time:** ≈ 1 h 8 m of reading (11 files, ~6 min average).
+> **11 files** — HTML fundamentals, CSS layout, CSS architecture, theming/design tokens, utility-first styling, browser storage, PWA, SEO, and browser rendering — the foundational web platform skills every senior frontend engineer needs.
 
-[![Files](https://img.shields.io/badge/files-10-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -21,7 +21,7 @@ Build a form that still has labels, submission behavior and understandable error
 
 [Browser Rendering](10.7.03-browser-rendering.md) traces style calculation, layout, paint and composition. Use that model when evaluating a slow interaction.
 
-[CSS Architecture & Styling Approaches](10.7.06-css-architecture-styling-approaches.md) assigns ownership and precedence to growing stylesheets. [Theming & Design Tokens](10.7.07-theming-design-tokens.md) connects visual roles to values and distinguishes a user's chosen theme from the effective system theme.
+[CSS Architecture & Styling Approaches](10.7.06-css-architecture-styling-approaches.md) assigns ownership and precedence to growing stylesheets. [Theming & Design Tokens](10.7.07-theming-design-tokens.md) connects visual roles to values and distinguishes a user's chosen theme from the effective system theme. [Tailwind CSS](10.7.09-tailwind-css.md) compiles those tokens into utility classes your markup actually uses, tree-shaking everything else.
 
 ## Pass 3 — decide what survives navigation and reload
 
@@ -35,7 +35,7 @@ Build a form that still has labels, submission behavior and understandable error
 
 ## Finish with revision, then interview practice
 
-Trace a page from accessible markup through layout, paint, storage and reload. Explain its behavior when optional APIs or persistence fail. Use [section revision](REVISION.md) to recall the mechanisms, then [interview questions](10.7.09-interview-questions.md) to compare alternatives.
+Trace a page from accessible markup through layout, paint, storage and reload. Explain its behavior when optional APIs or persistence fail. Use [section revision](REVISION.md) to recall the mechanisms, then [interview questions](10.7.10-interview-questions.md) to compare alternatives.
 
 ## Cross-References
 

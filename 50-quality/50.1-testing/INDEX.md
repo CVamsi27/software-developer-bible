@@ -1,9 +1,9 @@
 # Testing — Index
 
-> **Study time:** ≈ 2 h 8 m of reading (19 files, ~7 min average).
-> **19 files across six categories.** Learn testing fundamentals, framework behavior, unit/integration/E2E boundaries, test data, mocking, reusable patterns, load and fault experiments, then practice the interview bank.
+> **Study time:** ≈ 2 h 12 m of reading (20 files, ~7 min average).
+> **20 files across six categories.** Learn testing fundamentals, framework behavior, unit/integration/E2E boundaries, test data, mocking, reusable patterns, load and fault experiments, then practice the interview bank.
 
-[![Files](https://img.shields.io/badge/files-19-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-20-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Quality-green)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -16,7 +16,7 @@ A test observes selected behavior under a controlled arrangement. Start with the
 | Category | Files | Purpose |
 | ----------------------------------------------------------- | ----: | ------------------------------------------------------------------------------------------------------------------ |
 | [01 — Foundations](01-foundations/INDEX.md) | 2 | Test types, testing pyramid, TDD vs BDD, coverage, test data management — contract, observation and data ownership |
-| [02 — Frameworks](02-frameworks/INDEX.md) | 4 | Jest, Vitest, RTL, comparison — execution, module behavior and awaited UI observations |
+| [02 — Frameworks](02-frameworks/INDEX.md) | 5 | Jest, Vitest, RTL, comparison — execution, module behavior and awaited UI observations |
 | [03 — Test Levels](03-test-levels/INDEX.md) | 3 | Unit, integration, E2E — scope and real-boundary evidence |
 | [04 — Mocking & Patterns](04-mocking-and-patterns/INDEX.md) | 2 | Controlled collaborators, visible scenarios and resource ownership |
 | [05 — Advanced](05-advanced/INDEX.md) | 2 | Workload models, semantic thresholds and bounded fault experiments |

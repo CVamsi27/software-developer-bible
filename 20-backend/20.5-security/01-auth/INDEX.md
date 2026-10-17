@@ -1,6 +1,6 @@
 # Auth - Security
 
-> **Study time:** ≈ 2 h 7 m of reading (12 files, ~11 min average).
+> **Study time:** ≈ 2 h 9 m of reading (12 files, ~11 min average).
 > The table gives the intended study order; revision and timed practice are separate activities.
 > **Prerequisite:** [Encryption & Hashing](../03-hardening-and-operations/20.5.3.01-encryption.md).
 >

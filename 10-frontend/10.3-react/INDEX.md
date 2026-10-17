@@ -1,9 +1,9 @@
 # React — Index
 
-> **Study time:** ≈ 2 h 52 m of reading (27 files, ~6 min average).
-> **27 files** — React internals from Virtual DOM to Fiber, hooks, patterns, custom hooks, portals, compound components, external stores, React Router data routers, React 18/19 concurrent APIs, performance, state management, and interview questions.
+> **Study time:** ≈ 2 h 57 m of reading (28 files, ~6 min average).
+> **28 files** — React internals from Virtual DOM to Fiber, hooks, patterns, custom hooks, portals, compound components, external stores, React Router data routers, React 18/19 concurrent APIs, performance, state management, and interview questions.
 
-[![Files](https://img.shields.io/badge/files-27-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-28-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -19,7 +19,7 @@ The 22 files are organized into 5 category folders — read in order within a ca
 | -------------------------------------------------------------------- | ----: | ---------------------------------------------------------------------------------------------------------------------- |
 | [React Internals](01-react-internals/INDEX.md) | 5 | How React turns updates into committed UI, and how identity, scheduling and state ownership change observable behavior |
 | [Core Hooks](02-core-hooks/INDEX.md) | 5 | The 5 essential hooks (state, effect, memo, ref, context) — used daily |
-| [Advanced Hooks & Patterns](03-advanced-hooks-and-patterns/INDEX.md) | 6 | Suspense, Error Boundary, Custom Hooks, useSyncExternalStore, Performance, State Management |
+| [Advanced Hooks & Patterns](03-advanced-hooks-and-patterns/INDEX.md) | 7 | Suspense, Error Boundary, Custom Hooks, useSyncExternalStore, Performance, State Management |
 | [Modern React](04-modern-react/INDEX.md) | 3 | Concurrent rendering, transitions, server components, `use(promise)`, React Router data routers |
 | [Patterns & Interview Prep](05-patterns-and-interview/INDEX.md) | 3 | Portals, compound components, Interview drills |
 

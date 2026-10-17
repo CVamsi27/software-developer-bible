@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-HTML/CSS-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../docs/topic-importance.md)
 
@@ -81,6 +81,22 @@ Source: [Browser Storage](10.7.08-browser-storage.md)
 **Q:** What protection does an HttpOnly cookie provide, and what remains?
 
 **A:** JavaScript cannot directly read that cookie. XSS may still act as the user, and cookie-based requests still require an appropriate CSRF and authorization design.
+
+## Tailwind CSS — Utility-First Styling with Design Tokens
+
+Source: [Tailwind CSS — Utility-First Styling with Design Tokens](10.7.09-tailwind-css.md)
+
+**Q:** Why does changing one brand color require only the config file, not every component?
+
+**A:** Components reference semantic roles (`bg-surface`, `text-error`) defined in `tailwind.config.ts`; updating a token rebuilds every element that uses it.
+
+**Q:** Why can a class written at runtime (`bg-${color}-500`) produce missing styles?
+
+**A:** The JIT compiler scans static class strings in the configured `content` paths; concatenated classes are invisible unless safelisted.
+
+**Q:** Why prefer extracting repeated utility lists into components instead of `@apply`?
+
+**A:** `@apply` hides the token chain and the compiled output; components keep tokens visible in markup while removing repetition.
 
 ## Trace reload, metadata and layout conditions
 

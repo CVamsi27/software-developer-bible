@@ -1,9 +1,9 @@
 # Testing Frameworks
 
-> **Study time:** ≈ 32 min of reading (5 files, ~6 min average).
-> **5 files.** The runner-tier tools: Jest, Vitest, React Testing Library, and a head-to-head comparison so you can defend a stack choice in an interview.
+> **Study time:** ≈ 36 min of reading (6 files, ~6 min average).
+> **6 files.** The runner-tier tools: Jest, Vitest, React Testing Library, Playwright for cross-browser E2E journeys, and a head-to-head comparison so you can defend a stack choice in an interview.
 
-[![Files](https://img.shields.io/badge/files-5-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-6-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Quality-green)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
@@ -23,6 +23,7 @@ Choosing a framework affects the whole team for a long time: configuration, plug
 | 02 | [Vitest](50.1.2.02-vitest.md) | Module transforms, runtime choices, controlled retries, migration differences, worker pools | Vite-aligned tooling; verify runtime and measured performance | Essential | Foundational | 8 min |
 | 03 | [React Testing Library](50.1.2.03-react-testing-library.md) | Render, queries, events, async testing, accessibility (testing-library/jest-dom) | React component tests | Essential | Foundational | 10 min |
 | 04 | [Testing Frameworks Comparison](50.1.2.04-testing-frameworks-comparison.md) | Jest vs Vitest, Playwright for E2E, Supertest for APIs, choosing the right framework | Stack decisions | Essential | Foundational | 4 min |
+| 05 | [Playwright](50.1.2.05-playwright.md) | Locators, auto-waiting, fixtures, network interception, storageState, CI sharding | Cross-browser E2E journeys | Essential | Foundational | 4 min |
 
 ---
 

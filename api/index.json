@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "2da7cb32c54ed3359441e92b323464351c5c5dd06eab559c27ac210b707c2d35",
+ "corpus_digest": "02874642f54322703bebd046509fdf9afe4bd129456b8d521dc8831a5411d44d",
  "totals": {
-  "chapters": 675,
+  "chapters": 678,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5259
+  "read_minutes": 5276
  },
  "chapters": [
   {
@@ -909,6 +909,16 @@
    "m": 6
   },
   {
+   "p": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.07-tanstack-query.html",
+   "t": "TanStack Query: Server State Ownership",
+   "s": "React",
+   "c": "Frontend",
+   "g": [
+    "concept"
+   ],
+   "m": 5
+  },
+  {
    "p": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/REVISION.html",
    "t": "Advanced Hooks & Patterns — React — Revision",
    "s": "React",
@@ -1489,7 +1499,18 @@
    "m": 7
   },
   {
-   "p": "10-frontend/10.7-html-css/10.7.09-interview-questions.html",
+   "p": "10-frontend/10.7-html-css/10.7.09-tailwind-css.html",
+   "t": "Tailwind CSS: Utility-First Styling with Design Tokens",
+   "s": "HTML/CSS",
+   "c": "Frontend",
+   "g": [
+    "concept",
+    "styling"
+   ],
+   "m": 4
+  },
+  {
+   "p": "10-frontend/10.7-html-css/10.7.10-interview-questions.html",
    "t": "HTML/CSS Interview Questions",
    "s": "HTML/CSS",
    "c": "Frontend",
@@ -1508,7 +1529,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 2
+   "m": 3
   },
   {
    "p": "10-frontend/10.8-mobile/10.8.01-react-native-cross-platform.html",
@@ -2344,7 +2365,7 @@
     "integration",
     "webhooks"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.06-serialization-and-wire-formats.html",
@@ -2847,7 +2868,7 @@
     "concept",
     "policies"
    ],
-   "m": 9
+   "m": 11
   },
   {
    "p": "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.html",
@@ -6150,6 +6171,16 @@
   {
    "p": "50-quality/50.1-testing/02-frameworks/50.1.2.04-testing-frameworks-comparison.html",
    "t": "Testing Frameworks Comparison",
+   "s": "Testing",
+   "c": "Quality",
+   "g": [
+    "concept"
+   ],
+   "m": 4
+  },
+  {
+   "p": "50-quality/50.1-testing/02-frameworks/50.1.2.05-playwright.html",
+   "t": "Playwright: End-to-End Browser Journeys",
    "s": "Testing",
    "c": "Quality",
    "g": [

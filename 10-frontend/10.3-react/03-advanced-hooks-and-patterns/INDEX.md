@@ -1,9 +1,9 @@
 # Advanced Hooks & Patterns — React
 
-> **Study time:** ≈ 47 min of reading (7 files, ~7 min average).
-> **7 files.** Production-grade patterns: Suspense, error boundaries, custom hooks, external stores via useSyncExternalStore, performance profiling and optimization, and state management.
+> **Study time:** ≈ 52 min of reading (8 files, ~6 min average).
+> **8 files.** Production-grade patterns: Suspense, error boundaries, custom hooks, external stores via useSyncExternalStore, performance profiling and optimization, state management, and server-state ownership with TanStack Query.
 
-[![Files](https://img.shields.io/badge/files-7-blue)](#files)
+[![Files](https://img.shields.io/badge/files-8-blue)](#files)
 [![Category](https://img.shields.io/badge/category-Advanced_Hooks_and_Patterns-orange)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-wip-yellow)](#)
 
@@ -19,6 +19,7 @@
 | 04 | [useSyncExternalStore](10.3.3.04-usesyncexternalstore.md) | Tearing in concurrent rendering, subscribe/getSnapshot contract, snapshot caching, Zustand/Redux integration, infinite-loop mistakes | Important | Specialized | 6 min |
 | 05 | [Performance](10.3.3.05-performance.md) | Profiling, memo boundaries, virtualization, code splitting, transitions | Essential | Foundational | 5 min |
 | 06 | [State Management](10.3.3.06-state-management.md) | Local/shared/server state, query caches, reducers, version conflicts and ownership boundaries | Essential | Important | 6 min |
+| 07 | [TanStack Query](10.3.3.07-tanstack-query.md) | Query keys, stale-while-revalidate, retries, dedupe, optimistic updates, SSR hydration | Essential | Important | 5 min |
 
 ---
 

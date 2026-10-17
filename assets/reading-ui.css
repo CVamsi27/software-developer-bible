@@ -4,10 +4,10 @@
   --theme-action-bg: #2563eb;
   --theme-action-text: #ffffff;
   --syntax-comment: #5b6b7f;
-  --syntax-keyword: #7934a1;
-  --syntax-string: #17613a;
+  --syntax-keyword: #9c267c;
+  --syntax-string: #8c4f00;
   --syntax-number: #8c470b;
-  --syntax-name: #155c91;
+  --syntax-name: #0b6093;
   --syntax-error: #ad283d;
 }
 @media (prefers-color-scheme: dark) {

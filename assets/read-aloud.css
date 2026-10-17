@@ -17,7 +17,7 @@
   align-items: center;
   flex: 0 0 auto;
   margin-block-start: 1rem;
-  color: var(--theme-text, #1f2937);
+  color: var(--theme-text, #253242);
   font: 14px/1.4 var(--font-sans, sans-serif);
 }
 .read-aloud-controls {
@@ -29,10 +29,10 @@
 .read-aloud select {
   box-sizing: border-box;
   min-height: 36px;
-  border: 1px solid var(--theme-border, #d1d5db);
+  border: 1px solid var(--theme-border, #dfe6ee);
   border-radius: 7px;
-  background: var(--card-bg, #fff);
-  color: var(--theme-text, #1f2937);
+  background: var(--card-bg, #ffffff);
+  color: var(--theme-text, #253242);
   color-scheme: inherit;
   font: inherit;
 }
@@ -71,8 +71,8 @@
 }
 [data-read-aloud-active="true"] {
   border-radius: 4px;
-  background: var(--theme-border-subtle, #f3f4f6);
-  background: color-mix(in srgb, var(--theme-link, #2563eb) 10%, var(--theme-bg, #fff));
+  background: var(--theme-border-subtle, #eef2f6);
+  background: color-mix(in srgb, var(--theme-link, #2563eb) 10%, var(--theme-bg, #f8fafc));
   box-shadow: inset 3px 0 var(--theme-link, #2563eb);
   scroll-margin-block: 120px;
 }

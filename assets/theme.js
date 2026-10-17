@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var updateThemeColorMeta = function (theme) {
     var meta = document.querySelector('meta[name="theme-color"]');
     if (meta) {
-      meta.setAttribute("content", theme === "dark" ? "#111820" : "#ffffff");
+      meta.setAttribute("content", theme === "dark" ? "#0d1720" : "#f8fafc");
     }
   };
 

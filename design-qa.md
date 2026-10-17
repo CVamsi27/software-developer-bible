@@ -100,3 +100,20 @@ Sampled contrast against the declared page surface: dark body 14.21:1, section/a
 ### Listen and width toolbar refinement
 
 Refined playback into a consistent segmented group with matching Listen/Pause/Stop icons, borders, type and hover/focus states. Separated the width choice with a desktop divider and widened its native select to show Comfortable without truncation. Both groups retain independent wrapping on small phones; controls use 44px heights on mobile. Verified Listen, Pause, Stop, both themes, and persisted Comfortable after reload at 320px, without page overflow. Desktop controls align at 40px. Current evidence: [toolbar desktop](docs/superpowers/specs/assets/2026-10-14-reference-reader/toolbar-desktop.png) and [toolbar mobile](docs/superpowers/specs/assets/2026-10-14-reference-reader/toolbar-mobile.png). No playback/state logic or chapter content changed. All 35 focused tests, the pinned build and repository gates pass.
+
+### Reskin follow-up: token unification and straggler cleanup
+
+The slate reskin (commit 444e8a9f) declared one coherent token set across `head-custom`, `search-ui`, `reading-ui` and `reference-reader.css`, but several surfaces still carried pre-reskin values. One was visible: the same light-theme chapter rendered two different syntax palettes depending on whether the visitor had ever toggled the theme — `reading-ui.css`'s green-string set for the default state, `reference-reader.css`'s magenta/amber set once `sdb-theme` was stored. [Before: default](docs/superpowers/specs/assets/2026-10-17-reskin-followup/light-code-before-default.png) versus [before: stored preference](docs/superpowers/specs/assets/2026-10-17-reskin-followup/light-code-before-stored.png).
+
+The reference reader's set now owns light syntax in every state: its three values moved into the `reading-ui.css` light block as the single definition site and the duplicate override was removed. The after capture is byte-identical to the previous stored-preference rendering, so toggled readers see no change while the default state now matches it. [After: light syntax](docs/superpowers/specs/assets/2026-10-17-reskin-followup/light-code-after.png); dark syntax unchanged.
+
+The remaining drifts were invisible within any single theme view:
+
+- `reference-reader.css` (loaded on every page, last) shadowed the reskin's dark text/heading/muted/border tokens with 1–2-unit variants (`#dce5ee`, `#f6f8fb`, `#a5b4c3`, `#2b3d4c`); aligned to the reskin set.
+- Its dark `--header-bg` was fully opaque on every page while light keeps the frosted translucent header; aligned to `rgba(13, 23, 32, 0.96)`.
+- `theme.js` still reported the pre-reskin browser-chrome colors (`#111820` dark, `#ffffff` light); now `#0d1720` and `#f8fafc`, matching the initial meta tag.
+- `read-aloud.css` kept pre-reskin fallback greys (`#1f2937`, `#d1d5db`, `#fff`, `#f3f4f6`); aligned to the current tokens.
+
+The emoji-removal pass removed literal emoji but missed entity-encoded ones: the home page kept the `&#128279;` HTML entity (a link symbol) before "Full index with every file". Removed, and no other emoji-range entities remain. [Home links row](docs/superpowers/specs/assets/2026-10-17-reskin-followup/home-links-after.png).
+
+Verified with the pinned Jekyll build in a Ruby 3.4 container and Playwright captures across both themes, with and without a stored preference. `search.html` and `api/index.json` were regenerated and the shared cache parameters bumped (`study-flow-12`, `reference-11`, `reader-final-2`) in `_config.yml`, `_includes/head-custom.html`, `search.html` and `scripts/gen_master_index.py`. All repository gates pass.

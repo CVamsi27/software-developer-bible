@@ -17,8 +17,6 @@
 
 ---
 
----
-
 ## Practice order
 
 1. Complete each learning category and its revision companion.

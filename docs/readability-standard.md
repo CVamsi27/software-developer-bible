@@ -14,9 +14,13 @@ Every teaching chapter must read like it: scannable, concrete, senior-deep.
    then a `> **Textbook Definition:**` quote for the formal version.
 4. **## First Principles**: short — why the mechanism must exist (failure it prevents).
 5. **## How It Works**: the mechanism as **numbered `### N. Title` subsections**
-   (N = 3–7). Each subsection: one idea, bold lead-ins, a tiny code/config snippet
+   (N = 2–7). Each subsection: one idea, bold lead-ins, a tiny code/config snippet
    proving it, then 1–3 sentences of consequence. Tables ONLY for genuine
    comparisons (2–6 rows); never a table followed by paragraphs restating it.
+   Subsections cited by a stable `#anchor` (from REVISION companions or interview
+   banks) keep their descriptive titles without a number, worked examples may
+   continue in the optional `## Code Examples` section, and system-design case
+   studies use their own requirements→design→trace walkthrough template.
 6. **## Summary**: dense 3–6 sentence recap, no new facts.
 7. **## See Also / ## References & Learn More / prev-next footer**: preserved
    (see section 2).

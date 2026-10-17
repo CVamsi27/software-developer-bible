@@ -847,7 +847,7 @@
         var text = code.innerText || code.textContent;
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(text).then(function() {
-            btn.textContent = "✓ Copied";
+            btn.textContent = "Copied";
             btn.setAttribute("aria-label", "Code copied");
             feedback.textContent = "Code copied to clipboard.";
             btn.classList.add("copied");
@@ -872,11 +872,11 @@
 
     // 5. GitHub Alert / Callout transform (> [!NOTE], > [!TIP], etc.)
     var alertMeta = {
-      NOTE: { title: "Note", icon: "ℹ️", cls: "alert-note" },
-      TIP: { title: "Tip", icon: "💡", cls: "alert-tip" },
-      IMPORTANT: { title: "Important", icon: "📌", cls: "alert-important" },
-      WARNING: { title: "Warning", icon: "⚠️", cls: "alert-warning" },
-      CAUTION: { title: "Caution", icon: "🛑", cls: "alert-caution" }
+      NOTE: { title: "Note", icon: "", cls: "alert-note" },
+      TIP: { title: "Tip", icon: "", cls: "alert-tip" },
+      IMPORTANT: { title: "Important", icon: "", cls: "alert-important" },
+      WARNING: { title: "Warning", icon: "", cls: "alert-warning" },
+      CAUTION: { title: "Caution", icon: "", cls: "alert-caution" }
     };
 
     var blockquotes = document.querySelectorAll("blockquote");
@@ -945,7 +945,7 @@
         var url = window.location.origin + window.location.pathname + "#" + h.id;
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(url).then(function() {
-            showToast("✓ Copied section link to clipboard");
+            showToast("Copied section link to clipboard");
           });
         }
         try {

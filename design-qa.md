@@ -4,7 +4,7 @@
 
 **Repository verification:** all 30 verification gates pass, including the refreshed citation baseline.
 
-**Source visual truth:** [Refined reader](docs/superpowers/specs/assets/2026-10-11-study-flow/focused-reader-final.png), supported by the [approved behavior specification](docs/superpowers/specs/2026-10-11-study-flow-uiux-design.md).
+**Source visual truth:** [Refined reader](docs/superpowers/specs/assets/2026-10-11-study-flow/focused-reader-final.png).
 
 **Implementation:** Existing Jekyll site built locally at `http://127.0.0.1:4340/`. The separately rendered home preview is `http://127.0.0.1:4340/home-preview.html` because the macOS filesystem cannot distinguish index.html from INDEX.html. The temporary local review server maps Home to that rendered preview and serves Library separately, so the complete local journey works. Production routes remain unchanged.
 

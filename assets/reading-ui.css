@@ -3,7 +3,7 @@
   color-scheme: light;
   --theme-action-bg: #2563eb;
   --theme-action-text: #ffffff;
-  --syntax-comment: #52647a;
+  --syntax-comment: #5b6b7f;
   --syntax-keyword: #7934a1;
   --syntax-string: #17613a;
   --syntax-number: #8c470b;
@@ -13,21 +13,21 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
     color-scheme: dark;
-    --syntax-comment: #9cacbf;
-    --syntax-keyword: #d5a6ff;
-    --syntax-string: #98d7b0;
+    --syntax-comment: #8da6bb;
+    --syntax-keyword: #ff76c8;
+    --syntax-string: #ffca45;
     --syntax-number: #efc08d;
-    --syntax-name: #9cccff;
+    --syntax-name: #6bd0ff;
     --syntax-error: #ff9eae;
   }
 }
 html[data-theme="dark"] {
   color-scheme: dark;
-  --syntax-comment: #9cacbf;
-  --syntax-keyword: #d5a6ff;
-  --syntax-string: #98d7b0;
+  --syntax-comment: #8da6bb;
+  --syntax-keyword: #ff76c8;
+  --syntax-string: #ffca45;
   --syntax-number: #efc08d;
-  --syntax-name: #9cccff;
+  --syntax-name: #6bd0ff;
   --syntax-error: #ff9eae;
 }
 html[data-theme="light"] { color-scheme: light; }

@@ -2,7 +2,11 @@
  font-family:"Inter"; src:url("fonts/InterVariable.woff2") format("woff2");
  font-style:normal; font-weight:100 900; font-display:swap;
 }
-:root, html[data-theme] { --font-sans:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif; }
+@font-face {
+ font-family:"JetBrains Mono"; src:url("fonts/JetBrainsMono-Variable.woff2") format("woff2");
+ font-style:normal; font-weight:100 800; font-display:swap;
+}
+:root, html[data-theme] { --font-sans:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif; --font-mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace; }
 body { font-family:var(--font-sans); }
 /* Visual contract: supplied reference reader, with canonical authored content. */
 html[data-theme="dark"] {

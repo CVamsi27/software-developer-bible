@@ -95,11 +95,10 @@ document.addEventListener('DOMContentLoaded', function () {
     link.textContent = index === 1 && values.section ? values.section : dir.replace(/^\d+(?:\.\d+)*-/, '').split('-').map(function (word) { return word === 'and' ? '&' : word.charAt(0).toUpperCase() + word.slice(1); }).join(' ');
     if (breadcrumb.children.length) { var separator = document.createElement('span'); separator.textContent = '/'; separator.setAttribute('aria-hidden', 'true'); breadcrumb.append(separator); } breadcrumb.append(link);
   });
-  if (roadmap) {
+  if (roadmap && roadmap.context(location.search)) {
     var back = document.createElement('a'); back.className = 'roadmap-return'; back.href = roadmap.roadmapReturnUrl(location.search);
-    var hasContext = roadmap.context(location.search);
-    back.textContent = hasContext ? 'Return to personal roadmap' : 'Personal roadmap';
-    if (hasContext) breadcrumb.append(back); else content.append(back);
+    back.textContent = 'Return to personal roadmap';
+    breadcrumb.append(back);
   }
   if (roadmap) breadcrumb.querySelectorAll('a[href]').forEach(function (link) { link.href = roadmap.chapterWithContext(link.href, location.search); });
   content.prepend(breadcrumb);

@@ -56,7 +56,7 @@
 | 5 | `check_freshness.py` | Known stale API signatures and date-gated EOL tables | a known stale signature appears |
 | 6 | `link_baseline.py` (diff) | Every cited external URL is in the probe-verified baseline | an unverified URL is cited |
 | 6b | `check_template.py` | Template sections/order, metadata contract, empty sections, question-claim contract, 25-question floor, fence grammar | a chapter or bank violates the contract |
-| 7 | `check_claims.py` | Campaign-material claims integrity (purged phrases stay purged) | a purged claim re-enters active docs |
+| 7 | `check_private_refs.py` | No references back into the private workspace (retired in-repo path, private-repo links; dated records exempt) | a public doc points back at private campaign material |
 | 8 | `check_code_whitespace.py` | Trailing WS + paste-shift bases inside fenced code | code hygiene regresses |
 | 8b | `fix_box_code_indent.py --check` | Code embedded in box walls keeps indentation | box code renders flat |
 | 8c | `fix_box_width.py --check` | Boxes stay within screen width | a box wraps on laptop screens |

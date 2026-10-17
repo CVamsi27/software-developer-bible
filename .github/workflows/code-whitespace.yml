@@ -3,9 +3,10 @@
 #
 # The steps below run the content gates (whitespace, box geometry, template
 # compliance, cross-references, duplication, topic twins, read time,
-# search-page freshness, harness wiring); gate 7 (claims integrity) lives in
-# claims-integrity.yml. The **final step runs `bash scripts/verify.sh`**,
-# which executes the whole suite — so no gate can be silently absent from CI.
+# search-page freshness, harness wiring). The **final step runs
+# `bash scripts/verify.sh`**, which executes the whole suite — including
+# gate 7, the private-workspace reference scan — so no gate can be silently
+# absent from CI.
 # That backstop closed a real gap: gates 1-6, 6b and 9 had no CI step at all,
 # leaving count drift, misaligned tables, broken numbering, broken links,
 # stale APIs, unbaselined citations and First-Principles regressions all
@@ -54,7 +55,7 @@ on:
       - '.github/workflows/**'
       - 'search.html'
   schedule:
-    - cron: '0 7 4 * *' # 07:00 UTC on the 4th, right after the claims gate
+    - cron: '0 7 4 * *' # 07:00 UTC on the 4th
   workflow_dispatch: {}
 
 permissions:

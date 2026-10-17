@@ -118,9 +118,9 @@ The MAQ preparation path builds technical depth around recorded work while requi
 - [Category revision](REVISION.md) — follow-ups and answer boundaries.
 - [MAQ learning index](INDEX.md) — reconstruction before practice.
 - [Docita claim walkthrough](../docita/24-resume-claim-walkthrough.md) — source-backed implementation study kept distinct from MAQ.
-- [Private resume source](../../80-lanes-abroad-full-stack/personal/resume/generator/resume_content.py) — exact application wording.
+- Private resume source — exact application wording.
 
 ## References
 
-- [Candidate's canonical CV](../../80-lanes-abroad-full-stack/personal/cv.md) — authored experience, not independently verified employer evidence.
-- [Historical metric discussion](../../80-lanes-abroad-full-stack/personal/resume/METRICS.md) — definitions and missing measurement records.
+- Candidate's canonical CV — authored experience, not independently verified employer evidence.
+- Historical metric discussion — definitions and missing measurement records.

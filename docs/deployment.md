@@ -37,20 +37,20 @@ Every push to `main` triggers two builds of the same command:
 
    ```bash
    test -z "$(find _site -path '*personal*' -print -quit)"
-   test ! -e _site/80-lanes-abroad-full-stack/personal
-   test ! -e _site/81-lanes-indian-sde-faang/personal
    test -s _site/index.html && test -s _site/search.html
    # plus: fails on any Liquid warning (a literal {{ }} that collided and
    # would otherwise render as empty text and ship silently)
    grep -E "Liquid (Warning|Exception)" /tmp/jekyll-build.log && exit 1 || true
    ```
 
-   The `personal/` tree (CV, applications tracker, outreach playbook) and
-   the entire `81-lanes-indian-sde-faang/` tree are excluded from every
+   The entire `81-lanes-indian-sde-faang/` tree is excluded from every
    build via `exclude:` in `_config.yml` — Pages honors it exactly as CI
-   does (same config, same command), and the gate fails if that ever stops
-   being true. Generated artifacts (`search.html`, `api/index.json`) were
-   audited: zero personal strings, zero lane chapters.
+   does (same config, same command). The private campaign workspace (CV,
+   applications tracker, outreach playbook) left this repository on
+   2026-10-17 for its own private repo, and the render assertion fails if
+   any personal artifact ever appears in `_site/` again. Generated
+   artifacts (`search.html`, `api/index.json`) were audited: zero personal
+   strings, zero lane chapters.
 
    If the gate goes red beside a green Pages build, that deployment is live
    without its guards — treat it as suspect: fix forward or roll back from

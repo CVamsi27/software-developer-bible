@@ -12,7 +12,7 @@ For an imminent interview, start with its brief and a gap diagnosis below. For a
 
 ## 1. Establish the role and constraints
 
-**Result:** a live vacancy, known requirements and explicit uncertainties. Personal statuses stay in the [canonical workspace](personal/README.md).
+**Result:** a live vacancy, known requirements and explicit uncertainties. Personal statuses stay in the canonical workspace.
 
 | Read | Purpose | Role priority | General importance |
 | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------- | ------------- | ------------------ |
@@ -111,7 +111,7 @@ After the learning stages, use [category revision](REVISION.md) to test the deci
 | Verification and operations | [Testing](../50-quality/50.1-testing/INDEX.md), [Observability](../40-platform/40.4-observability/INDEX.md) |
 | Product implementation details | [Docita deep dives](../projects/docita/INDEX.md) |
 
-Keep personal CVs, application versions, contacts, relocation records and outcomes in [personal/](personal/README.md). Add general teaching material here only when it has a distinct purpose and links back to the appropriate shared concept.
+Keep personal CVs, application versions, contacts, relocation records and outcomes in the private workspace (kept outside this repository). Add general teaching material here only when it has a distinct purpose and links back to the appropriate shared concept.
 
 ---
 

@@ -87,7 +87,7 @@ Demonstrate that no samples produces unavailable latency/error rate, a database 
 
 The recorded production query contained 158 retained requests with partial coverage, and no appointment/invoice/job activity in its selected window. This supports explaining the measurement implementation; it does not support 25 active clinics or a performance-improvement percentage. Verify the deployed revision before describing the dashboard as live.
 
-The [local appointment-index benchmark](../../80-lanes-abroad-full-stack/personal/resume/benchmarks/README.md) remains a separate reproducible SQL exercise. It is separate technical practice evidence and is omitted from the application resume.
+The local appointment-index benchmark remains a separate reproducible SQL exercise. It is separate technical practice evidence and is omitted from the application resume.
 
 ## Bullet 5 Continued: Explain What a Release Check Actually Establishes
 
@@ -137,8 +137,8 @@ Explain Docita as a product operation crossing real boundaries. Each resume bull
 - [Category revision](REVISION.md) — resume-bullet follow-ups kept outside this walkthrough.
 - [Case-study index](INDEX.md) — all implementation assessments.
 - [Hypothetical workload model](23-hypothetical-clinic-metrics.md) — changed-load exercises, not adoption evidence.
-- [Private resume source](../../80-lanes-abroad-full-stack/personal/resume/generator/resume_content.py) — current wording.
-- [Private hiring-evidence report](../../80-lanes-abroad-full-stack/personal/reports/2026-10-15-docita-hiring-evidence.md) — exact source pointers, focused test commands and a bounded proof sprint.
+- Private resume source — current wording.
+- Private hiring-evidence report — exact source pointers, focused test commands and a bounded proof sprint.
 
 ## References
 

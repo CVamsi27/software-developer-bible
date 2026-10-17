@@ -28,7 +28,7 @@ General importance is independent of your role priority. A specialized mechanism
 5. **Working delivery depth:** Docker, CI/CD, observability, release compatibility and rollback; learn the tools you operate before deeper platform specialization.
 6. **Conditional specialization:** GraphQL, Kubernetes/IaC, deeper broker administration, AI serving, mobile and motion libraries when a relevant role needs them.
 
-Continue applying while studying. Essential is a learning queue, not a requirement to finish the entire corpus before submitting an application. Use the [personal execution plan](../80-lanes-abroad-full-stack/personal/reports/100-day-job-roadmap.md) as your timetable.
+Continue applying while studying. Essential is a learning queue, not a requirement to finish the entire corpus before submitting an application. Use your private execution plan (career workspace, kept outside this repository) as your timetable.
 
 ## HTML and CSS: a practical baseline
 

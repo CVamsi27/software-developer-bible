@@ -96,8 +96,6 @@ jobs:
       - name: Assert the lane trees are not in the built site
         run: |
           test -z "$(find _site -path '*personal*' -print -quit)"
-          test ! -e _site/80-lanes-abroad-full-stack/personal
-          test ! -e _site/81-lanes-indian-sde-faang/personal
           echo "lane exclusion verified in _site/"
 
       - name: Assert front page, search and the shared theme script rendered

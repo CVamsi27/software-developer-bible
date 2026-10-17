@@ -43,9 +43,8 @@ exclude:
   # checkout; Jekyll 3.9's default excludes don't cover it and it would crawl
   # the jekyll gem's own site_template/_posts and die on its ERB date.
   - vendor
-  # Private career data — never publish (docs/deployment.md). The CI gate
-  # in site-build.yml asserts these never appear in _site/.
-  - 80-lanes-abroad-full-stack/personal
+  # Never publish (docs/deployment.md) — the CI gate in site-build.yml
+  # asserts nothing personal ever appears in _site/.
   - 81-lanes-indian-sde-faang
   # Internal audit evidence includes private source-path inventories.
   - docs/2026-10-10-senior-precision-audit.json

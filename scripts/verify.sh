@@ -111,18 +111,18 @@ else
 fi
 
 echo ""
-echo "7/30  check_claims.py — campaign-material claims integrity (purged phrases must not regress)"
-echo "     python3 scripts/check_claims.py"
+echo "7/30  check_private_refs.py — no references back into the private workspace"
+echo "     python3 scripts/check_private_refs.py"
 echo "------------------------------------------------------------"
-# Born from the Sept 2026 cross-repo audits: claim phrases that were
-# purged as unverifiable (Next.js-at-Docita, invented founder bios,
-# unsourceable AI specifics) must never re-enter ACTIVE campaign files.
-# Historical sent-application reports are allowlisted — they record what
-# was actually sent and must stay frozen.
-if python3 scripts/check_claims.py; then
+# Born from the 2026-10-17 migration: campaign material (CV, tracker,
+# applications, reports, resume sources) left this repo for a separate
+# private repository when the repo went public. Any path or link back into
+# that subtree is a defect in a public artifact. Dated records are exempt —
+# changelogs and specs keep quoting the paths of their time.
+if python3 scripts/check_private_refs.py; then
     echo "  PASS"
 else
-    echo "  FAIL — reword with a source-verified claim, or extend CLAIM_ALLOWLIST if the file is historical"
+    echo "  FAIL — remove the reference; private material belongs in the private workspace repository"
     FAIL=1
 fi
 

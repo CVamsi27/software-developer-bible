@@ -4,21 +4,21 @@
 
 ## Hard rules
 
-1. **NEVER commit or push in `~/repos/career-ops`.** It is an external fork (`santifer/career-ops`) used purely as a *tool*. All personal data there is gitignored and now **symlinked into this bible** — committing there is both wrong and unnecessary. If changes seem needed in career-ops:
-   - data/content changes → they already land in `80-lanes-abroad-full-stack/personal/` (symlinks). Commit them HERE.
+1. **NEVER commit or push in `~/repos/career-ops`.** It is an external fork (`santifer/career-ops`) used purely as a *tool*. All personal data there is gitignored and **symlinked to `~/repos/personal`** (the private repo `CVamsi27/personal`) — committing there is both wrong and unnecessary. If changes seem needed in career-ops:
+   - data/content changes → they already land in `~/repos/personal/` (symlinks). Commit them THERE (private repo), never here.
    - tool/code changes → leave uncommitted; surface to the user instead.
 
-2. **Personal data is canonical in `80-lanes-abroad-full-stack/personal/`** (CV, profile.yml, portals.yml, application tracker, outreach playbook, targets, relocation plan, reports, generated outputs). Never duplicate it elsewhere; never copy it back into career-ops as real files.
+2. **Personal data is canonical in `~/repos/personal`** — the private repo `CVamsi27/personal` (CV, profile.yml, portals.yml, application tracker, outreach playbook, targets, relocation plan, reports, resume generator, generated outputs). **This bible repo is public**: the personal subtree was moved out on 2026-10-17, so never add personal data here and never point back into the private workspace — gate 7 (`check_private_refs.py`) enforces the reference half.
 
-3. **Never commit secrets or PII outside this private repo** (phone numbers, family details live only under `personal/`).
+3. **Never commit secrets or PII to this repo or any other public place** (phone numbers, family details and application material live only in `~/repos/personal/`).
 
 ## Expected workflow
 
 ```bash
 # after running career-ops tools (scan / contacto / tracker / pdf):
-bash 80-lanes-abroad-full-stack/personal/doctor.sh # verify symlinks + flag new dated artifacts
-bash scripts/verify.sh                            # count + alignment + structure + link gates (see contributing.md)
-git add -A && git commit -m "…" # in THIS repo only
+bash ~/repos/personal/doctor.sh # verify symlinks + flag new dated artifacts (private workspace)
+bash scripts/verify.sh          # count + alignment + structure + link gates (see contributing.md)
+git add -A && git commit -m "…" # in THIS repo only — personal-data changes commit in ~/repos/personal
 ```
 
 ## Repo conventions

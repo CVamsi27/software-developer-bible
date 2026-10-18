@@ -22,25 +22,91 @@ type PagesContext = {
 // reintroduce one. It is served here, not as an asset, because Pages
 // canonicalizes a `.html` request with a 308 (`/auth/login.html` ->
 // `/auth/login`), and that redirect is where the #access_token=... fragment
-// was lost.
+// was lost. It is styled with the same slate tokens as `auth/login.html` —
+// this page is shown mid-sign-in, directly after that one — and loads the same
+// pre-paint theme script and Inter face (both listed as public in
+// `_lib/study-access.mjs`, because a signed-out visitor reads this page).
 const CALLBACK_HTML = `<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#f8fafc">
     <title>Signing in // Buildora Study</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="/assets/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+    <script src="/assets/theme.js"></script>
     <style>
-      :root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, sans-serif; background: #0b1114; color: #f1f7f4; }
-      body { min-height: 100svh; margin: 0; display: grid; place-items: center; padding: 24px; background: radial-gradient(circle at 90% 0%, #16383a, transparent 42%), #0b1114; }
-      main { width: min(100%, 480px); border: 1px solid #2f5154; padding: 32px; background: #111b1e; }
-      h1 { margin: 0 0 12px; font-size: 32px; letter-spacing: -.04em; }
-      p { color: #a7b9b5; line-height: 1.6; }
-      .error { color: #ffb98a; }
-      .actions { margin-top: 24px; display: flex; gap: 12px; }
-      a.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 18px; background: #c8ff3d; color: #081014; font-weight: 700; text-decoration: none; border-radius: 4px; font-size: 13px; }
-      a.btn-secondary { background: transparent; color: #a7b9b5; border: 1px solid #2f5154; }
+      @font-face {
+        font-family: "Inter";
+        src: url("/assets/fonts/InterVariable.woff2") format("woff2");
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: swap;
+      }
+      :root {
+        color-scheme: light;
+        --bg: #f8fafc;
+        --text: #253242;
+        --muted: #5b6b7f;
+        --heading: #0e1626;
+        --border: #dfe6ee;
+        --card: #ffffff;
+        --link: #2563eb;
+        --action: #2563eb;
+        --action-text: #ffffff;
+        --error: #dc2626;
+        --shadow: 0 24px 80px rgba(15, 23, 32, 0.08);
+        font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          color-scheme: dark;
+          --bg: #0d1720;
+          --text: #dbe5ee;
+          --muted: #9fb2c5;
+          --heading: #f5f8fb;
+          --border: #2a3a4a;
+          --card: #172530;
+          --link: #4ab0ff;
+          --error: #f87171;
+          --shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+        }
+      }
+      html[data-theme="dark"] {
+        color-scheme: dark;
+        --bg: #0d1720;
+        --text: #dbe5ee;
+        --muted: #9fb2c5;
+        --heading: #f5f8fb;
+        --border: #2a3a4a;
+        --card: #172530;
+        --link: #4ab0ff;
+        --error: #f87171;
+        --shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+      }
+      html[data-theme="light"] { color-scheme: light; }
+      * { box-sizing: border-box; }
+      body { min-height: 100svh; margin: 0; display: grid; place-items: center; padding: 24px; background: var(--bg); }
+      main {
+        width: min(100%, 480px);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: clamp(24px, 7vw, 48px);
+        background: var(--card);
+        box-shadow: var(--shadow);
+      }
+      h1 { margin: 0 0 12px; font-size: clamp(28px, 7vw, 38px); letter-spacing: -.02em; line-height: 1.1; color: var(--heading); }
+      p { color: var(--muted); line-height: 1.6; }
+      .error { color: var(--error); }
+      .actions { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px; }
+      a.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 18px; border: 1px solid var(--action); border-radius: 7px; background: var(--action); color: var(--action-text); font-weight: 600; font-size: 13px; text-decoration: none; }
+      a.btn:hover { filter: brightness(0.94); }
+      a.btn:focus-visible { outline: 3px solid var(--link); outline-offset: 3px; }
+      a.btn-secondary { background: transparent; color: var(--muted); border: 1px solid var(--border); }
     </style>
   </head>
   <body>

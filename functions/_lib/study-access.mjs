@@ -17,6 +17,12 @@ const PUBLIC_AUTH_PATHS = new Set([
   "/auth/session",
   "/auth/logout",
   "/favicon.svg",
+  // The login and callback pages are served signed-out, so the chrome they
+  // reference must be reachable without a session: the theme script that
+  // applies a stored preference before first paint, and the Inter face both
+  // pages declare. Neither carries content.
+  "/assets/theme.js",
+  "/assets/fonts/InterVariable.woff2",
   // The deployment's commit, for the live probe — the one public fact a
   // deployment publishes, so "is production this commit?" needs no credential.
   "/api/version",

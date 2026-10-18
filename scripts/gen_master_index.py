@@ -64,12 +64,12 @@ PAGE = """<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Search the library — {TITLE}</title>
 <script src="{THEME_SRC}"></script>
-<link rel="stylesheet" href="assets/search-ui.css?v=study-flow-13">
-<link rel="stylesheet" href="assets/reading-ui.css?v=study-flow-13">
+<link rel="stylesheet" href="assets/search-ui.css?v=study-flow-14">
+<link rel="stylesheet" href="assets/reading-ui.css?v=study-flow-14">
 <link rel="stylesheet" href="assets/reference-reader.css?v=reference-12">
 <script src="assets/study-state.js" defer></script>
-<script src="assets/roadmap-return.js?v=study-flow-13" defer></script>
-<script src="assets/reading-ui.js?v=study-flow-13" defer></script>
+<script src="assets/roadmap-return.js?v=study-flow-14" defer></script>
+<script src="assets/reading-ui.js?v=study-flow-14" defer></script>
 <script src="assets/search-ui.js" defer></script>
 </head>
 <body>

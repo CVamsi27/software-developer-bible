@@ -23,4 +23,10 @@ export type StudyEnv = {
   STUDY_ALLOWED_EMAIL?: string;
   /** Optional credential that lets the live probe verify the success path. */
   STUDY_PROBE_TOKEN?: string;
+  /**
+   * Platform-injected by Cloudflare Pages: the commit this deployment built
+   * from. Read by the `/api/version` route, which the live probe's freshness
+   * check compares with the checkout — no credential involved.
+   */
+  CF_PAGES_COMMIT_SHA?: string;
 };

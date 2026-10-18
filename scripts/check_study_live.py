@@ -30,6 +30,7 @@ import argparse
 import json
 import os
 import re
+import subprocess
 import sys
 import time
 import urllib.error
@@ -222,9 +223,7 @@ def verdict(label, name, matched, response, expected, kind=FAIL):
 def read_prefix(response, limit):
     """The start of a response body, decoded, for content assertions.
 
-    Bounded on purpose: every marker asserted on sits well inside a page, and
-    the one body that must be read whole (the corpus dump, ~126 KB) asks for
-    the room explicitly.
+    Bounded on purpose: every marker asserted on sits well inside a page.
     """
     try:
         return response.read(limit).decode("utf-8", "replace")
@@ -509,82 +508,94 @@ def signed_in_render(probe):
     return out
 
 
-def local_corpus_digest():
-    """The digest this checkout's dump carries — what a current deploy must serve."""
+def local_build_commit():
+    """The commit this checkout is — what a current deployment must serve.
+
+    Resolved by asking git, not by reading an environment variable: CI checks
+    out the pushed commit, so `HEAD` is the fact in both CI and a manual run,
+    and there is no second source to disagree with it. Empty when it cannot be
+    resolved, which the probe reports as unjudgeable rather than guessing.
+    """
     try:
-        with open(os.path.join(REPO_ROOT, "api", "index.json"), encoding="utf-8") as handle:
-            return json.load(handle).get("corpus_digest") or ""
+        done = subprocess.run(["git", "-C", REPO_ROOT, "rev-parse", "HEAD"],
+                              capture_output=True, text=True, timeout=15)
     except Exception:
         return ""
+    return done.stdout.strip() if done.returncode == 0 else ""
 
 
-def read_served_digest(response):
-    """`(digest, why_unreadable)` from a served `/api/index.json`.
+def read_served_commit(response):
+    """`(commit, why_unreadable, waitable)` from a served `/api/version`.
 
-    Only one state is a deployment in flight: a valid digest from an older
-    build. A response that carries no digest — any status, a body that is not
-    JSON, or JSON without the field — is not this dump at this path, and no
-    amount of waiting turns it into one. Reporting that as "the edge is older
-    than HEAD" would send the operator to re-run a build that was never the
-    problem, so it is named as what it is.
+    Three states, and the last two must not be conflated: a non-200 is a
+    deployment that predates the endpoint — the path is still gated there — so
+    it is exactly what a build in flight serves, and it is waited for; a 200
+    whose body is not this endpoint's payload is misconfiguration, and no
+    amount of waiting turns it into a payload, so it is named on the first
+    read. Reporting either as "the edge is older than HEAD" would send the
+    operator to re-run a build that was never the problem.
     """
+    if response.status != 200:
+        return "", (f"the edge served {response.describe} for /api/version — a "
+                    f"deployment older than this endpoint still gates that path"), True
     try:
         payload = json.loads(response.body)
     except Exception:
         payload = None
-    digest = payload.get("corpus_digest") if isinstance(payload, dict) else None
-    if not digest:
-        return "", (f"the edge served {response.describe} with no corpus_digest "
-                    f"({response.body[:60]!r}…) — that is not this dump at this "
-                    f"path, so waiting for a build cannot fix it; check that "
-                    f"/api/index.json is deployed and gated rather than shadowed")
-    return digest, ""
+    commit = payload.get("commit") if isinstance(payload, dict) else None
+    if not isinstance(commit, str) or not commit:
+        return "", (f"the edge served 200 at /api/version with no commit identity "
+                    f"({response.body[:60]!r}…) — that is not this endpoint, so "
+                    f"waiting for a build cannot fix it; check the version route "
+                    f"is deployed rather than shadowed"), False
+    return commit, "", False
 
 
 @check("Freshness",
-       "the deployment serves this checkout's corpus — `/api/index.json` carries the "
-       "same digest, so an edge left behind HEAD cannot pass as current. With "
+       "the deployment serves this checkout's build — its `/api/version` carries "
+       "HEAD's commit, so an edge left behind HEAD cannot pass as current. With "
        "`--await-fresh` it waits for a deploy still in flight instead of failing on it")
-def deployed_corpus_is_current(probe):
-    if not probe.probe_token:
-        return [Result(WARN, "Freshness", "deployed corpus",
-                       f"{PROBE_TOKEN_ENV} is not set, so the digest cannot be read "
-                       f"(/api/index.json is gated). Until it is, a deployment behind "
-                       f"HEAD is indistinguishable from a current one — the exact state "
-                       f"production sat in for fifteen hours on 2026-09-22")]
-    expected = local_corpus_digest()
+def deployed_build_is_current(probe):
+    expected = local_build_commit()
     if not expected:
-        return [Result(WARN, "Freshness", "deployed corpus",
-                       "api/index.json carries no corpus_digest — regenerate it with "
-                       "python3 scripts/gen_master_index.py")]
-    url = probe.study("/api/index.json")
-    cookie = f"{PROBE_COOKIE}={probe.probe_token}"
+        return [Result(WARN, "Freshness", "deployed build",
+                       "`git rev-parse HEAD` did not resolve, so the deployment's "
+                       "commit cannot be compared — run this from the repository "
+                       "checkout")]
+    url = probe.study("/api/version")
     waited, deadline = 0, time.monotonic() + probe.await_fresh
     while True:
-        response = probe.get(url, cookie=cookie, limit=1 << 21)
-        served, unreadable = read_served_digest(response)
-        caught_up = served == expected
-        # Wait only on a valid digest from another build — the one state a
-        # deploy in flight produces. An unreadable body is not that state, and
-        # polling it for the full budget would stall the run before reporting
-        # the misconfiguration it could have named on the first read.
-        if caught_up or unreadable or time.monotonic() >= deadline:
+        response = probe.get(url)
+        served, unreadable, waitable = read_served_commit(response)
+        caught_up = bool(served) and served == expected
+        # Wait on the two states a deploy in flight produces: another build's
+        # commit, and a deployment that predates the endpoint (non-200 — the
+        # path is still gated there). A 200 that is not the payload is not one
+        # of them, and polling it for the full budget would stall the run
+        # before reporting a state the first read already settled.
+        if caught_up or (unreadable and not waitable) or time.monotonic() >= deadline:
             break
         waited += 1
-        print(f"  … waiting for the deployment to reach this corpus "
-              f"(served {served[:12]}, want {expected[:12]})", flush=True)
+        print(f"  … waiting for the deployment to reach this commit "
+              f"(served {served[:12] or response.describe}, want {expected[:12]})",
+              flush=True)
         time.sleep(min(probe.await_interval, max(0.0, deadline - time.monotonic())))
+    waited_note = (f" (waited {waited} time(s) for the deploy to land)" if waited else "")
     if caught_up:
         why = ""
-    elif unreadable:
+    elif unreadable and not waitable:
         why = f" — {unreadable}"
-    else:
+    elif served:
         why = (f" carrying {served[:12]}… — the edge is older than HEAD"
-               + (f" (waited {waited} time(s) for the deploy to land)" if waited else "")
-               + ", so re-run the Pages build before trusting anything else here")
-    return [verdict("Freshness", "deployed corpus",
+               f"{waited_note}, so re-run the Pages build before trusting "
+               f"anything else here")
+    else:
+        why = (f" — the deployment never served /api/version{waited_note} — it "
+               f"predates this endpoint, so re-run the Pages build before "
+               f"trusting anything else here")
+    return [verdict("Freshness", "deployed build",
                     response.status == 200 and caught_up, response,
-                    f"expected 200 carrying corpus_digest {expected[:12]}… (this "
+                    f"expected 200 carrying commit {expected[:12]}… (this "
                     f"checkout); got {response.describe}" + why)]
 
 
@@ -741,8 +752,8 @@ def run_checks(argv=None):
                         help=f"session credential for the success path (default: "
                              f"${PROBE_TOKEN_ENV})")
     parser.add_argument("--await-fresh", type=float, default=0,
-                        help="seconds to wait for the deployment to reach this "
-                             "checkout's corpus digest before judging it (0 = judge "
+                        help="seconds to wait for the deployment to serve this "
+                             "checkout's commit before judging it (0 = judge "
                              "immediately)")
     parser.add_argument("--await-interval", type=float, default=20,
                         help="seconds between polls while waiting")

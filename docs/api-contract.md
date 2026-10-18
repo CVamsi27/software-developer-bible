@@ -28,14 +28,14 @@
 ```
 
 | Field | Meaning |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `p` | Site path (`…​.html`) — equals the repo path with the extension swapped. For repo-relative links, replace the trailing `.html` with `.md`. |
 | `t` | Chapter H1 title (the same string gate 6b sees). |
 | `s` / `c` | Section (from the metadata comment) and Category (one of contributing.md's canonical 14 — gate 6b enforces both). |
 | `g` | Tags trimmed, deduplicated and sorted; the generator preserves their spelling and case. |
 | `m` | Computed read minutes (gate 13's model; reference genres already halved). |
 | `totals.read_minutes` | Sum over all chapters (divide by 60 for hours). |
-| `corpus_digest` | sha256 over each content file's sha256, keyed by repo path, in sorted order. It changes when any chapter's bytes change and carries no timestamp, so it is the freshness anchor: `scripts/check_study_live.py` fetches the *deployed* copy of this file and fails when its digest differs from the checkout's — that is how a deployment left behind HEAD is caught. Deliberately a placeholder in the example above: a literal value in this document would be stale after the next chapter edit, and nothing restamps it. |
+| `corpus_digest` | sha256 over each content file's sha256, keyed by repo path, in sorted order. It changes when any chapter's bytes change and carries no timestamp, so equal digests mean equal corpus content. It is *not* the deployment-freshness anchor — a digest over content files cannot see a push that changed only `scripts/` or `functions/` — so `scripts/check_study_live.py` compares the deployed commit (`/api/version` on the study host, no session required) with the checkout's `HEAD`. Deliberately a placeholder in the example above: a literal value in this document would be stale after the next chapter edit, and nothing restamps it. |
 
 **Generated contract** (when the relevant gates pass): generated from the same
 metadata gate 6b validates, so a record cannot exist for a file that fails

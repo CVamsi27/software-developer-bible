@@ -38,6 +38,10 @@ jobs:
       # exercised only by a real Google sign-in, which CI cannot drive.
       - name: Auth route tests
         run: node --experimental-strip-types --test functions/auth/routes.test.mjs
+      # The freshness marker the live probe reads without a session: if its
+      # shape drifts, every "is production this commit?" verdict drifts with it.
+      - name: Version route tests
+        run: node --experimental-strip-types --test functions/api/version.test.mjs
       - name: Reject client-side token persistence
         run: |
           if grep -RInE 'localStorage.*(access_token|study_access_token)|(access_token|study_access_token).*localStorage' auth functions; then

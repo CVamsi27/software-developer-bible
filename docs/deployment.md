@@ -199,19 +199,28 @@ on manual *Run workflow*.
 The probe used to be scheduled-only, because Pages builds from git in parallel
 with this repo's CI and a push-time probe would measure the *previous* build.
 That safety cost a week of detection latency, so the probe waits instead: with
-`--await-fresh` it polls the deployed corpus digest until the deploy lands
-(bounded, then it judges). Waiting is what makes the push trigger safe — without
-it the probe would fail on a deployment that is merely in flight. Only one state
-is waited for, because only one is a build in flight: a **valid digest from an
-older build**. A body that is not the dump at all (`/api/index.json` answering
-an HTML page, or JSON with no `corpus_digest` field) is misconfiguration, cannot
-be waited out, and fails on the first read naming that cause instead of blaming
-an old commit — so the run cannot stall for its whole budget before reporting a
-state the first read already settled. The wait is also cheap when nothing has
-changed: the digest covers content files, so a push touching only `scripts/` or
-`docs/` matches immediately and does not poll. Scheduled runs can start hours
-late (GitHub queues them; this repo's `job-board-watch` has fired as late as
-11:19 for an 06:00 cron), so the push trigger is the fast path and Monday is the
+`--await-fresh` it polls the deployment's own commit — published at
+`/api/version`, no session required — until the deploy lands (bounded, then it
+judges). The commit is the one fact a deployment can publish without leaking
+content, and comparing it with the checkout's `HEAD` is what separates "the
+site is up" from "the site is this commit" — a distinction that is not
+academic: on 2026-09-22 production served a bundle a commit behind HEAD for
+fifteen hours while every gate was green, because a stale deployment is still a
+*working* site. It also distinguishes any two consecutive builds, including a
+push that touched only `scripts/` or `functions/` — something the corpus digest
+this replaced could not see, so those pushes wait (and fail) instead of
+matching a digest that never moved.
+
+Waiting is what makes the push trigger safe — without it the probe would fail
+on a deployment that is merely in flight. The two states it waits for are both
+a build in flight: a readable commit from an older build, and a deployment that
+predates the endpoint itself (any non-200 — the path is still gated there). A
+200 whose body is not the endpoint's payload is misconfiguration, cannot be
+waited out, and fails on the first read naming that cause instead of blaming an
+old commit — so the run cannot stall for its whole budget before reporting a
+state the first read already settled. Scheduled runs can start hours late
+(GitHub queues them; this repo's `job-board-watch` has fired as late as 11:19
+for an 06:00 cron), so the push trigger is the fast path and Monday is the
 backstop.
 
 
@@ -235,17 +244,12 @@ own render class; a marker is a full plain-prose run from the chapter's title,
 never a single word, because "Testing" or "WebSockets" appears in the
 navigation of every page in its section and would make the assertion vacuous.
 It also checks that no two chapters return identical bodies, which catches an
-edge serving one cached response for every path, and that the deployed
-`api/index.json` carries the same `corpus_digest` as this checkout — the one
-check that separates "the site is up" from "the site is this commit". That
-distinction is not academic: on 2026-09-22 production served a bundle a commit
-behind HEAD for fifteen hours while every gate was green, because a stale
-deployment is still a *working* site. It needs the credential, since
-`/api/index.json` sits behind the gate.
+edge serving one cached response for every path. The freshness check above is
+not part of this branch: the commit needs no credential.
 
-Without the credential the probe says so in a warning, and only the policy
-suite (`node --test`, 27 cases) plus the artifact assertions in
-`site-build.yml` stand behind that path.
+Without the credential the probe says so in a warning, and only the offline
+suites (`node --test` over the policy, the adapter, the routes and the version
+route) plus the artifact assertions in `site-build.yml` stand behind that path.
 
 Either way, verify by hand in a private window after any auth change — it is
 the only check that also exercises Google's consent screen and the callback:

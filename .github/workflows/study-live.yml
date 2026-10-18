@@ -22,7 +22,8 @@
 #     with CI, so a push-time probe would measure the previous build. It used to
 #     be scheduled-only for that reason, which left a stale or broken deployment
 #     undetected for up to a week. Now it runs on push too, and waits: the
-#     freshness check polls the deployed corpus digest until the deploy lands
+#     freshness check polls the deployment's own commit (published at
+#     `/api/version`, no session needed) until the deploy lands
 #     (`--await-fresh`), then judges it. Waiting is what makes the push trigger
 #     safe; without it the probe would fail on a deploy that is merely in flight.
 name: study-live

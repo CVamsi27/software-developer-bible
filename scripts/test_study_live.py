@@ -21,17 +21,20 @@ real HTTP in a subprocess, and asserts the exit code:
   - a denial page that does not answer     -> exit 0 with a warning
   - a deployment older than HEAD           -> exit 1
   - a deployment that never catches up     -> exit 1, after the wait expires
-  - a response carrying no digest at all   -> exit 1, on the first read
+  - a deployment that predates the endpoint-> exit 1, after the wait expires
+  - a version body that is not the payload -> exit 1, on the first read
 
-The last three are the freshness class. Only "an older build is live" is a
-state a deploy in flight can fix, so only that one is waited for: a response
-with no digest is misconfiguration, and the case pins both that it is reported
-as such and that the wait budget is not spent on it.
+The last four are the freshness class. The two "before the deploy lands"
+states — a readable commit from an older build, and a deployment that predates
+the endpoint (any non-200; the path is still gated there) — are waited for,
+because a build in flight fixes both. A 200 whose body is not the endpoint's
+payload is misconfiguration: the case pins both that it is reported as such
+and that the wait budget is not spent on it.
 
-The last case exists because the contract classifies a dead denial host as
-environment state. The probe once hard-coded FAIL for an unreachable host, which
-silently broke that promise; the stub only ever modelled "answers 404", so the
-broken branch was untested. Both halves of that are now covered.
+The denial-offline case exists because the contract classifies a dead denial
+host as environment state. The probe once hard-coded FAIL for an unreachable
+host, which silently broke that promise; the stub only ever modelled "answers
+404", so the broken branch was untested. Both halves of that are now covered.
 
 Exits 0 when all cases pass; prints the failing case and exits 1 otherwise.
 
@@ -40,6 +43,7 @@ Run directly: python3 scripts/test_study_live.py
 
 import functools
 import http.server
+import json
 import os
 import socket
 import subprocess
@@ -71,8 +75,8 @@ class Stub(http.server.BaseHTTPRequestHandler):
 
     role, violations, study_origin, denial_origin = "study", frozenset(), "", ""
     probe_token, probe_markers, all_markers_body = "", {}, ""
-    live_dump, stale_dump = "", ""
-    fresh_after, dump_reads = 0, 0
+    live_version, stale_version = "", ""
+    fresh_after, version_reads = 0, 0
 
     def log_message(self, *args):  # keep the suite's output readable
         pass
@@ -95,17 +99,24 @@ class Stub(http.server.BaseHTTPRequestHandler):
             return (self.reply(302, f"{live.LOGIN_PATH}?next={quote(path)}")
                     if "no_canonical" in self.violations
                     else self.reply(308, f"{self.study_origin}{path}"))
-        if path == "/api/index.json":
-            # The corpus dump, gated like everything else: what the probe reads to
-            # prove the deployment is this checkout rather than an older one.
-            # `fresh_after` models a deployment still building: the first N reads
-            # answer with the previous commit's digest, then it catches up.
-            if "dump_not_json" in self.violations:
-                # A 200 that is not the dump at all — misconfiguration, not a
+        if path == "/api/version":
+            # The deployment's commit, published without a session: what the
+            # probe reads to prove the edge is this checkout rather than an
+            # older one. `fresh_after` models a deployment still building: the
+            # first N reads answer with the previous commit, then it catches up.
+            if "version_gated" in self.violations:
+                # A deployment older than the endpoint itself: the path is
+                # still gated there, so it answers the login redirect until the
+                # build in flight lands. The state this endpoint's first
+                # deployment lives through.
+                return self.reply(302, f"{live.LOGIN_PATH}?next={quote(path)}")
+            if "version_not_json" in self.violations:
+                # A 200 that is not the payload at all — misconfiguration, not a
                 # build in flight, and the state a probe must not wait on.
-                return self.reply(200, body="<!DOCTYPE html><html><body>Not the dump</body></html>")
-            type(self).dump_reads += 1
-            body = self.live_dump if type(self).dump_reads > self.fresh_after else self.stale_dump
+                return self.reply(200, body="<!DOCTYPE html><html><body>Not the version</body></html>")
+            type(self).version_reads += 1
+            body = (self.live_version if type(self).version_reads > self.fresh_after
+                    else self.stale_version)
             return self.reply(200, body=body)
         if path == DENIAL_PATH:  # the access-denied landing page
             return self.reply(404 if "denial_dead" in self.violations else 200, body="personal")
@@ -146,13 +157,16 @@ class Stub(http.server.BaseHTTPRequestHandler):
         return self.reply(302, f"{live.LOGIN_PATH}?next={quote(landed)}")
 
 
-def stub_dump(violations):
-    """The local dump's bytes, or a stale-looking copy for the freshness case."""
-    with open(os.path.join(live.REPO_ROOT, "api", "index.json"), encoding="utf-8") as handle:
-        body = handle.read()
+def stub_version(violations):
+    """This checkout's commit in the endpoint's shape, or an older build's."""
+    expected = live.local_build_commit()
+    if not expected:
+        raise RuntimeError(
+            "this checkout's commit cannot be resolved, so the stub cannot "
+            "model a current deployment — run the suite inside the git checkout")
     if "stale_deploy" in violations or "catching_up" in violations:
-        return body.replace(live.local_corpus_digest(), "0" * 64)
-    return body
+        return json.dumps({"commit": "0" * 40})
+    return json.dumps({"commit": expected})
 
 
 def start(role, violations, study_origin="", probe_token="", probe_markers=None):
@@ -163,11 +177,11 @@ def start(role, violations, study_origin="", probe_token="", probe_markers=None)
         "all_markers_body": "".join(f"<h1>{marker}</h1>" for marker in markers.values()),
         # `fresh_after` is how many reads answer with the previous commit before
         # the deployment catches up; infinite means it never does.
-        "live_dump": stub_dump([]),
-        "stale_dump": stub_dump(["stale_deploy"]),
+        "live_version": stub_version([]),
+        "stale_version": stub_version(["stale_deploy"]),
         "fresh_after": (float("inf") if "stale_deploy" in violations
                         else 1 if "catching_up" in violations else 0),
-        "dump_reads": 0,
+        "version_reads": 0,
     })
     server = http.server.ThreadingHTTPServer(("127.0.0.1", 0), handler)
     threading.Thread(target=server.serve_forever, daemon=True).start()
@@ -253,15 +267,21 @@ BEHAVIOURS = [
     # failure the wait exists for, so a regression cannot turn the budget
     # expiring into a pass. Its budget comes from AWAIT_ARGS below.
     ("a deployment that never lands exits 1", ("stale_deploy",), 1,
-     ("deployed corpus", "older than HEAD", "waited"), True),
-    # The stale-deploy class: a site whose whole contract holds but whose corpus
+     ("deployed build", "older than HEAD", "waited"), True),
+    # The stale-deploy class: a site whose whole contract holds but whose build
     # is an older commit. Nothing else here can see it.
     ("a deployment older than HEAD exits 1", ("stale_deploy",), 1,
-     ("deployed corpus", "older than HEAD"), True),
+     ("deployed build", "older than HEAD"), True),
+    # This endpoint's own first deployment: until it lands, the path is still
+    # gated on the running edge (non-200), which the freshness check must wait
+    # on — judging it as misconfiguration would fail the very push that ships
+    # the endpoint.
+    ("a deployment that predates the endpoint exits 1", ("version_gated",), 1,
+     ("deployed build", "never served", "waited"), True),
 
-    # Both credential-dependent checks warn; neither may become a failure.
+    # The one credential-dependent check warns; it may never become a failure.
     ("an unconfigured probe credential warns only", (), 0,
-     ("signed-in render", "STUDY_PROBE_TOKEN", "2 warning", "0 failed"), False),
+     ("signed-in render", "STUDY_PROBE_TOKEN", "1 warning", "0 failed"), False),
 ]
 
 # Cases that must exercise `--await-fresh` need a budget short enough to keep the
@@ -269,6 +289,7 @@ BEHAVIOURS = [
 # means, so the table above stays uniform and the exception lives in one place.
 AWAIT_ARGS = {
     "a deployment that never lands exits 1": {"await_fresh": 2, "await_interval": 0.2},
+    "a deployment that predates the endpoint exits 1": {"await_fresh": 2, "await_interval": 0.2},
 }
 
 
@@ -300,31 +321,32 @@ CASES = [(name, functools.partial(case_behaviour, name, violations, code, needle
          for name, violations, code, needles, signed_in in BEHAVIOURS]
 # The reason a push-triggered probe is safe: while a deploy is still building,
 # the check waits for it rather than failing on the previous commit — or worse,
-# passing on it. The stub answers the first read with the old digest and the
+# passing on it. The stub answers the first read with the old commit and the
 # second with this checkout's, which is exactly a deploy landing mid-run.
 CASES.append((
     "a deployment still catching up is waited for",
     functools.partial(case_behaviour, "a deployment still catching up is waited for",
                       ("catching_up",), 0,
-                      ("deployed corpus", "waiting for the deployment", "0 failed"), True,
+                      ("deployed build", "waiting for the deployment", "0 failed"), True,
                       await_fresh=2, await_interval=0.2),
 ))
 
 
-def case_misconfigured_dump_fails_fast():
-    """A body that is not the dump is misconfiguration, not a build in flight.
+def case_misconfigured_version_fails_fast():
+    """A 200 that is not the endpoint's payload is misconfiguration, not a build in flight.
 
     Pins both halves so neither can regress alone: the verdict names the cause
     instead of blaming an old commit, and the probe does not spend its whole
-    `--await-fresh` budget on a state that waiting cannot change.
+    `--await-fresh` budget on a state that waiting cannot change. No credential
+    is supplied, because judging freshness without one is the point of the
+    endpoint.
     """
     started = time.monotonic()
-    code, output = run_cli("dump_not_json", signed_in=True,
-                           await_fresh=30, await_interval=5)
+    code, output = run_cli("version_not_json", await_fresh=30, await_interval=5)
     elapsed = time.monotonic() - started
     if code != 1:
         return f"expected exit 1, got {code}:\n{output}"
-    gaps = [n for n in ("deployed corpus", "no corpus_digest") if n not in output]
+    gaps = [n for n in ("deployed build", "no commit identity") if n not in output]
     if gaps:
         return f"output is missing {gaps}:\n{output}"
     if "waiting for the deployment" in output:
@@ -335,7 +357,8 @@ def case_misconfigured_dump_fails_fast():
     return None
 
 
-CASES.append(("a dump that is not JSON fails fast", case_misconfigured_dump_fails_fast))
+CASES.append(("a version body that is not the payload fails fast",
+              case_misconfigured_version_fails_fast))
 CASES.append(("probes declare their contract", case_probes_declare_their_contract))
 
 

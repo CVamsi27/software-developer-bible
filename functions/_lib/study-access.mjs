@@ -17,6 +17,9 @@ const PUBLIC_AUTH_PATHS = new Set([
   "/auth/session",
   "/auth/logout",
   "/favicon.svg",
+  // The deployment's commit, for the live probe — the one public fact a
+  // deployment publishes, so "is production this commit?" needs no credential.
+  "/api/version",
 ]);
 
 export function normalizeEmail(value) {

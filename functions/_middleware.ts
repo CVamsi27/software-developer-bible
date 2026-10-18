@@ -22,9 +22,9 @@ type PagesContext = {
 // reintroduce one. It is served here, not as an asset, because Pages
 // canonicalizes a `.html` request with a 308 (`/auth/login.html` ->
 // `/auth/login`), and that redirect is where the #access_token=... fragment
-// was lost. It is styled with the same slate tokens as `auth/login.html` —
+// was lost. It is styled with the same neutral tokens as `auth/login.html` —
 // this page is shown mid-sign-in, directly after that one — and loads the same
-// pre-paint theme script and Inter face (both listed as public in
+// pre-paint theme script and Roboto face (both listed as public in
 // `_lib/study-access.mjs`, because a signed-out visitor reads this page).
 const CALLBACK_HTML = `<!doctype html>
 <html lang="en">
@@ -32,60 +32,60 @@ const CALLBACK_HTML = `<!doctype html>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex, nofollow">
-    <meta name="theme-color" content="#f8fafc">
+    <meta name="theme-color" content="#ffffff">
     <title>Signing in // Buildora Study</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-    <link rel="preload" href="/assets/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/Roboto-Variable.woff2" as="font" type="font/woff2" crossorigin>
     <script src="/assets/theme.js"></script>
     <style>
       @font-face {
-        font-family: "Inter";
-        src: url("/assets/fonts/InterVariable.woff2") format("woff2");
+        font-family: "Roboto";
+        src: url("/assets/fonts/Roboto-Variable.woff2") format("woff2");
         font-style: normal;
         font-weight: 100 900;
         font-display: swap;
       }
       :root {
         color-scheme: light;
-        --bg: #f8fafc;
-        --text: #253242;
-        --muted: #5b6b7f;
-        --heading: #0e1626;
-        --border: #dfe6ee;
+        --bg: #ffffff;
+        --text: #1f1f1f;
+        --muted: #5f6368;
+        --heading: #1f1f1f;
+        --border: #dadce0;
         --card: #ffffff;
-        --link: #2563eb;
-        --action: #2563eb;
+        --link: #1a73e8;
+        --action: #1a73e8;
         --action-text: #ffffff;
-        --error: #dc2626;
+        --error: #d93025;
         --shadow: 0 24px 80px rgba(15, 23, 32, 0.08);
-        font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+        font-family: "Roboto", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
         background: var(--bg);
         color: var(--text);
       }
       @media (prefers-color-scheme: dark) {
         :root:not([data-theme="light"]) {
           color-scheme: dark;
-          --bg: #0d1720;
-          --text: #dbe5ee;
-          --muted: #9fb2c5;
-          --heading: #f5f8fb;
-          --border: #2a3a4a;
-          --card: #172530;
-          --link: #4ab0ff;
-          --error: #f87171;
+          --bg: #131314;
+          --text: #e3e3e3;
+          --muted: #9aa0a6;
+          --heading: #f8f9fa;
+          --border: #2b2c2e;
+          --card: #1b1c1d;
+          --link: #8ab4f8;
+          --error: #f28b82;
           --shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
         }
       }
       html[data-theme="dark"] {
         color-scheme: dark;
-        --bg: #0d1720;
-        --text: #dbe5ee;
-        --muted: #9fb2c5;
-        --heading: #f5f8fb;
-        --border: #2a3a4a;
-        --card: #172530;
-        --link: #4ab0ff;
-        --error: #f87171;
+        --bg: #131314;
+        --text: #e3e3e3;
+        --muted: #9aa0a6;
+        --heading: #f8f9fa;
+        --border: #2b2c2e;
+        --card: #1b1c1d;
+        --link: #8ab4f8;
+        --error: #f28b82;
         --shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
       }
       html[data-theme="light"] { color-scheme: light; }
@@ -94,7 +94,7 @@ const CALLBACK_HTML = `<!doctype html>
       main {
         width: min(100%, 480px);
         border: 1px solid var(--border);
-        border-radius: 12px;
+        border-radius: 16px;
         padding: clamp(24px, 7vw, 48px);
         background: var(--card);
         box-shadow: var(--shadow);
@@ -103,7 +103,7 @@ const CALLBACK_HTML = `<!doctype html>
       p { color: var(--muted); line-height: 1.6; }
       .error { color: var(--error); }
       .actions { margin-top: 24px; display: flex; flex-wrap: wrap; gap: 12px; }
-      a.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 18px; border: 1px solid var(--action); border-radius: 7px; background: var(--action); color: var(--action-text); font-weight: 600; font-size: 13px; text-decoration: none; }
+      a.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 18px; border: 1px solid var(--action); border-radius: 999px; background: var(--action); color: var(--action-text); font-weight: 600; font-size: 13px; text-decoration: none; }
       a.btn:hover { filter: brightness(0.94); }
       a.btn:focus-visible { outline: 3px solid var(--link); outline-offset: 3px; }
       a.btn-secondary { background: transparent; color: var(--muted); border: 1px solid var(--border); }

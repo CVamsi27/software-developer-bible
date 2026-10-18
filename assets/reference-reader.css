@@ -289,3 +289,20 @@ html[data-theme="dark"] body { background:var(--theme-bg); }
   .reader-layout .chapter-title-row > h1 { font-size:32px; letter-spacing:-.02em; }
   .reader-layout .read-aloud :is(button,select) { height:44px; min-height:44px; font-size:14px; }
 }
+/* Reading pass: line rhythm, heading hierarchy and list indentation. */
+.reader-layout .post-content { line-height:1.7; }
+.reader-layout .post-content p { margin:0 0 1em; }
+.reader-layout .post-content h2 { margin:44px 0 16px; }
+.reader-layout .post-content h2:first-of-type { margin-top:20px; }
+.reader-layout .post-content h3 { font-size:24px; line-height:1.35; font-weight:600; letter-spacing:-.01em; color:var(--theme-heading); margin:36px 0 12px; }
+.reader-layout .post-content h4 { font-size:20px; line-height:1.4; font-weight:650; color:var(--theme-heading); margin:28px 0 10px; }
+.reader-layout .post-content :is(ul,ol) { margin:0 0 1em; padding-left:1.45em; }
+.reader-layout .post-content li { margin:.3em 0; padding-left:.25em; }
+.reader-layout .post-content li > :is(ul,ol) { margin:.16em 0 .04em; }
+.reader-layout .post-content blockquote { margin:1.5em 0; padding:14px 20px; }
+.reader-layout .post-content :is(blockquote,.markdown-alert) > :last-child { margin-bottom:0; }
+@media(max-width:700px) {
+  .reader-layout .post-content h2 { margin-top:34px; }
+  .reader-layout .post-content h3 { font-size:22px; margin-top:30px; }
+  .reader-layout .post-content li { margin:.26em 0; }
+}

@@ -105,8 +105,9 @@ document.addEventListener('DOMContentLoaded', function () {
   if (learning) {
     var widthLabel = document.createElement('label'); widthLabel.className = 'reading-width'; widthLabel.append(document.createTextNode('Width '));
     var width = document.createElement('select'); width.setAttribute('aria-label', 'Reading width');
-    ['Wide', 'Comfortable'].forEach(function (label) { var option = document.createElement('option'); option.value = label.toLowerCase(); option.textContent = label; width.append(option); });
-    try { if (localStorage.getItem('sdb-reading-width') === 'comfortable') width.value = 'comfortable'; } catch (_) {}
+    ['Comfortable', 'Wide'].forEach(function (label) { var option = document.createElement('option'); option.value = label.toLowerCase(); option.textContent = label; width.append(option); });
+    // Comfortable measure is the default; an explicit Wide choice sticks.
+    try { if (localStorage.getItem('sdb-reading-width') === 'wide') width.value = 'wide'; } catch (_) {}
     content.dataset.width = width.value;
     width.addEventListener('change', function () { content.dataset.width = width.value; try { localStorage.setItem('sdb-reading-width', width.value); } catch (_) {} });
     widthLabel.append(width);

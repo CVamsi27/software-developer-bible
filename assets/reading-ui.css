@@ -56,7 +56,9 @@ a:visited:hover { color: var(--theme-link-hover); }
 .site-footer :is(.footer-heading, .footer-col-wrapper) { color: var(--theme-text-muted); }
 /* Minima's table th and striped-row selectors otherwise retain light fills. */
 .page-content table th { background: var(--table-header-bg); color: var(--theme-heading); }
-.page-content table :is(th, td) { border-color: var(--table-border); }
+/* Minima's `table th, table td { padding: 10px 15px }` outranks bare `th`/`td`,
+   so the roomier cell padding has to arrive on this selector instead. */
+.page-content table :is(th, td) { border-color: var(--table-border); padding: 12px 16px; }
 .page-content table tbody tr { background: transparent; }
 .theme-toggle-btn { width: 44px; height: 44px; }
 a:focus-visible, button:focus-visible, summary:focus-visible {
@@ -186,7 +188,9 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .reader-layout .post-content > p { max-width: 62ch; }
 .reader-layout .post-content > :is(ul, ol) { max-width: calc(62ch - 1.45em); }
 .reader-layout .post-content > :is(blockquote, .markdown-alert) { max-width: calc(62ch - 24px); }
-.reader-layout .post-content[data-width="wide"] > :is(p, ul, ol, blockquote, .markdown-alert) { max-width: none; }
+/* An answer is indented by a 2px border and 16px of padding, so it subtracts 18px. */
+.reader-layout .post-content > .revision-answer { max-width: calc(62ch - 18px); }
+.reader-layout .post-content[data-width="wide"] > :is(p, ul, ol, blockquote, .markdown-alert, .revision-answer) { max-width: none; }
 .study-continuation { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; padding: 20px 0; margin-top: 28px; border-top: 1px solid var(--theme-border); border-bottom: 1px solid var(--theme-border); font-size: 15px; }
 .study-continuation a { min-height: 44px; display: inline-flex; align-items: center; }
 .chapter-outline a[aria-current="location"] { border-left: 3px solid var(--theme-link); padding-left: 10px; font-weight: 650; color: var(--theme-link); }

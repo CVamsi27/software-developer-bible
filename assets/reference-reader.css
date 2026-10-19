@@ -299,6 +299,9 @@ html[data-theme="dark"] body { background:var(--theme-bg); }
 .reader-layout .post-content :is(ul,ol) { margin:0 0 1em; padding-left:1.45em; }
 .reader-layout .post-content li { margin:.3em 0; padding-left:.25em; }
 .reader-layout .post-content li > :is(ul,ol) { margin:.16em 0 .04em; }
+/* Balance headings; keep a paragraph from stranding one word on its last line. */
+.reader-layout .post-content :is(h1, h2, h3, h4) { text-wrap:balance; }
+.reader-layout .post-content :is(p, li) { text-wrap:pretty; }
 .reader-layout .post-content blockquote { margin:1.5em 0; padding:14px 20px; }
 .reader-layout .post-content :is(blockquote,.markdown-alert) > :last-child { margin-bottom:0; }
 @media(max-width:700px) {

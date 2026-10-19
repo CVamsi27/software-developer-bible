@@ -181,7 +181,12 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .reading-width { display: inline-flex; align-items: center; gap: 8px; margin-left: 12px; font-size: 13px; color: var(--theme-text-muted); }
 .reading-width select { min-height: 44px; padding: 6px; border-radius: 7px; border: 1px solid var(--theme-border); background: var(--card-bg); color: var(--theme-text); font: inherit; max-width: 130px; }
 .reading-width select:focus-visible { outline: 2px solid var(--theme-link); outline-offset: 3px; }
-.post-content[data-width="comfortable"] > :is(p, ul, ol, blockquote, .markdown-alert) { max-width: 62ch; }
+/* The comfortable measure is the default across reader pages; the width control can widen it.
+   List and quote blocks subtract their own left inset so every text column ends on the same edge. */
+.reader-layout .post-content > p { max-width: 62ch; }
+.reader-layout .post-content > :is(ul, ol) { max-width: calc(62ch - 1.45em); }
+.reader-layout .post-content > :is(blockquote, .markdown-alert) { max-width: calc(62ch - 24px); }
+.reader-layout .post-content[data-width="wide"] > :is(p, ul, ol, blockquote, .markdown-alert) { max-width: none; }
 .study-continuation { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; padding: 20px 0; margin-top: 28px; border-top: 1px solid var(--theme-border); border-bottom: 1px solid var(--theme-border); font-size: 15px; }
 .study-continuation a { min-height: 44px; display: inline-flex; align-items: center; }
 .chapter-outline a[aria-current="location"] { border-left: 3px solid var(--theme-link); padding-left: 10px; font-weight: 650; color: var(--theme-link); }

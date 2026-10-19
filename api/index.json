@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "2430b93ea65ca7cf046c6ca5420073cda068d5cba2d70aeefedb2e4d84a8ad87",
+ "corpus_digest": "f7319268d2402ddc2f6141506398b5d5effbc4d869a54aa014d89b968744eaba",
  "totals": {
   "chapters": 678,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5277
+  "read_minutes": 5276
  },
  "chapters": [
   {
@@ -591,7 +591,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 5
+   "m": 4
   },
   {
    "p": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.01-utility-types.html",

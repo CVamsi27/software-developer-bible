@@ -221,7 +221,8 @@ def write_indexes(dry_run=False):
                         destination.write(new)
             continue
         with open(idx, encoding='utf-8') as source:
-            text = refresh_columns(source.read(), os.path.dirname(idx))
+            original = source.read()
+        text = refresh_columns(original, os.path.dirname(idx))
         file_label = 'file' if n == 1 else 'files'
         line = f"> **Study time:** ≈ {human(total)} of reading ({n} {file_label}, ~{round(total / n)} min average)."
         lines = text.split('\n')
@@ -240,7 +241,9 @@ def write_indexes(dry_run=False):
                 del lines[hi + 1]
             lines[hi + 1:hi + 1] = ['', line]
         new = re.sub(r'\n{3,}', '\n\n', '\n'.join(lines))
-        if new == text:
+        # Compare against the pre-refresh bytes: a table row the writer fixed
+        # is a real change even when the study-time line already matched.
+        if new == original:
             continue
         changed += 1
         if not dry_run:

@@ -1,6 +1,6 @@
 # TypeScript — Index
 
-> **Study time:** ≈ 3 h 7 m of reading (23 files, ~8 min average).
+> **Study time:** ≈ 3 h 6 m of reading (23 files, ~8 min average).
 > **23 files** — TypeScript type system mastery from basic types to branded types, template literals, declaration files, advanced generics, variance, decorators, the `satisfies` operator, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-23-blue)](../../INDEX.md)

@@ -76,6 +76,37 @@ class StudyTimeGrammarTests(unittest.TestCase):
         generated = self.render_index(2)
         self.assertIn("(2 files, ~2 min average)", generated)
 
+    def test_stale_read_time_row_refreshes_even_when_study_line_matches(self):
+        """A row-only drift is still a change the writer must write.
+
+        History: comparing the rewrite against the already-refreshed text hid
+        row fixes from --write and from the fixed-point gate, so an INDEX could
+        ship an 8 min row next to a 9 min badge and nothing flagged it.
+        """
+        with tempfile.TemporaryDirectory() as root:
+            stack = os.path.join(root, "stack")
+            os.makedirs(stack)
+            index_path = os.path.join(stack, "INDEX.md")
+            with open(index_path, "w", encoding="utf-8") as index:
+                index.write(
+                    "# Study Stack\n\n"
+                    "> **Study time:** ≈ 3 min of reading (1 file, ~3 min average).\n\n"
+                    "| Order | File | Topics | Read time |\n"
+                    "| --- | --- | --- | ---: |\n"
+                    "| 01 | [Chapter](chapter.md) | Words | 99 min |\n"
+                )
+            with open(os.path.join(stack, "chapter.md"), "w", encoding="utf-8") as chapter:
+                chapter.write("# Chapter\n\n" + "word " * 600 + "\n")
+
+            original_root = read_time.ROOT
+            try:
+                read_time.ROOT = root
+                read_time.write_indexes()
+            finally:
+                read_time.ROOT = original_root
+            with open(index_path, encoding="utf-8") as index:
+                self.assertIn("| 3 min |", index.read())
+
 
 if __name__ == "__main__":
     unittest.main()

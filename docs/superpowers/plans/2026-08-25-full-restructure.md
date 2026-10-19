@@ -132,7 +132,6 @@ print(f"rewrote links in {changed} files")
 **Interfaces:**
 - Consumes: spec section 3 (exact old->new map per stack), Task 1 relink.py
 - Produces: final FE paths like `10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.01-execution-context.md`
-
 - [ ] **Step 1: Per stack, git mv every file into its new category folder with new name** (use `git mv` so history follows). Process stacks in order 10.1, 10.2, 10.3, 10.4, then flat compactions 10.5-10.8.
 - [ ] **Step 2: After EACH stack's moves**, run relink.py for every moved basename: `python3 scripts/relink.py <old-basename-with-ext> <new/path/file.md>`
 - [ ] **Step 3: Rewrite internal headers/badges** in moved files where they self-reference old IDs (grep each new folder for old basenames).

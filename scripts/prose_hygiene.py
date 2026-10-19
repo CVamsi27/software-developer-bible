@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Prose hygiene — reader-visible defects no other gate owns.
 
-Four classes, all measured before the first line of this tool was written
-(2026-09-22 audit over 867 markdown files):
+Six classes. Rules 1–4 were measured before this tool's first line was written
+(2026-09-22 audit over 867 markdown files); rules 5–6 record two construction
+defects a 2026-10-19 spacing pass found across the same corpus and repaired.
 
   Rule 1 — spelling consistency. The corpus is American-English by an
 overwhelming margin: `behavior` 845 occurrences against `behaviour` 26,
@@ -47,15 +48,32 @@ Rule 4 is the one finding `--write` cannot repair: deleting a phrase from a
 sentence produces worse prose than the phrase did, so the run reports it and
 exits non-zero for the author to rewrite.
 
+  Rule 5 — a heading or `---` thematic break with no blank line above it,
+directly under list content. Kramdown reads the line as part of the list item:
+`---` becomes a setext underline, so the reference above it turns into an `<h2>`
+inside the `<li>` and the separator disappears (286 files, every references
+footer built this way), and `## References & Learn More` is absorbed into the
+last See Also item together with the entire references list (66 files).
+Measured 2026-10-19 as 352 instances in 304 files.
+
+  Rule 6 — an otherwise-tight list whose item boundaries are blank-separated in
+isolated places. Kramdown wraps exactly the items above those blanks in `<p>`,
+so their gap is 18px against 5.4px neighbours: one list, two rhythms. All 104
+separators in 96 files (measured 2026-10-19) were artifacts of the kind of edit
+that adds an item and a trailing blank.
+
 Every rule is prose-only: fenced code, inline code spans, link targets, bare
 URLs, HTML tags and the file-metadata comment are masked before matching, so a
 CSS `color:` or a `colour` inside a URL is never touched. Masking preserves
-character offsets, so a match can be repaired in place.
+character offsets, so a match can be repaired in place. Rules 5–6 are
+structural instead: they read fence-aware raw lines and repair by inserting or
+deleting a whole blank line, which is idempotent because a repaired file no
+longer matches.
 
 This tool is both the fixer and the gate, matching fix_nav_labels.py:
 
 --check  exit 1 listing every finding (the gate; a clean corpus prints one OK)
---write  repair in place (idempotent; prose words only)
+--write  repair in place (idempotent; prose spans + blank-line structure)
 
 Scope excludes `personal/` at any depth by recorded decision: that tree is
 canonical personal data and campaign copy, not a chapter a reader studies.
@@ -116,6 +134,11 @@ BARE_URL = re.compile(r'<?https?://[^\s)>]+')
 HTML_TAG = re.compile(r'</?[A-Za-z][A-Za-z0-9-]*(?:\s[^>]*)?/?>')
 
 HEADING_NO_SPACE = re.compile(r'^(#{1,6})([^#\s])')
+
+# Rules 5–6 read list and block structure instead of prose spans.
+LIST_ITEM = re.compile(r'^(?:[-*+] |\d+\. )')
+STARTER_UNDER_LIST = re.compile(r'^(?:#{1,6} |---\s*$)')
+BLOCK_BOUNDARY = re.compile(r'^(?:#{1,6} |```|> |\||<[A-Za-z/!])')
 
 # Empty register: phrases that assert nothing and carry no technical claim,
 # none of which the corpus uses today (measured 2026-09-22). Cheaper to keep
@@ -225,6 +248,71 @@ def cells(line):
     return len(pipes) - 1, pipes
 
 
+def after_list_content(lines, i, in_fence_state):
+    """True when line i sits directly under list content (no blank line).
+
+    The walk back over a paragraph's continuation lines stops at any block
+    starter, so a heading that merely follows a paragraph is not mistaken for
+    content hanging off a list.
+    """
+    j = i - 1
+    if j < 0 or not lines[j].strip() or in_fence_state[j]:
+        return False
+    if LIST_ITEM.match(lines[j]):
+        return True
+    while j >= 0 and lines[j].strip() and not in_fence_state[j] \
+            and not LIST_ITEM.match(lines[j]) and not BLOCK_BOUNDARY.match(lines[j]):
+        j -= 1
+    return j >= 0 and bool(LIST_ITEM.match(lines[j]))
+
+
+def mixed_list_separators(lines, in_fence_state):
+    """Indices of stray blank separators inside an otherwise-tight list.
+
+    Only a boundary made entirely of blank lines is a "blank separator"; a
+    blank followed by an indented continuation paragraph is item content and
+    is ignored. A fully blank-separated list is a deliberate style and is left
+    alone — the defect is the mixed list, where kramdown renders only some
+    items loose and the reader sees one gap at three times the rhythm.
+    """
+    found = []
+    i, n = 0, len(lines)
+    while i < n:
+        if in_fence_state[i] or not LIST_ITEM.match(lines[i]):
+            i += 1
+            continue
+        items = [i]
+        j = i + 1
+        while j < n:
+            if in_fence_state[j]:
+                break
+            if LIST_ITEM.match(lines[j]):
+                items.append(j)
+                j += 1
+            elif not lines[j].strip():
+                k = j
+                while k < n and not in_fence_state[k] and not lines[k].strip():
+                    k += 1
+                if k < n and not in_fence_state[k] and LIST_ITEM.match(lines[k]):
+                    items.append(k)
+                    j = k + 1
+                else:
+                    break
+            elif BLOCK_BOUNDARY.match(lines[j]):
+                break
+            else:
+                j += 1        # continuation line of the current item
+        if len(items) >= 3:
+            boundaries = list(zip(items, items[1:]))
+            blank = [(a, b) for a, b in boundaries
+                     if lines[a + 1:b] and all(not l.strip() for l in lines[a + 1:b])]
+            if blank and len(blank) < len(boundaries):
+                for a, b in blank:
+                    found.extend(range(a + 1, b))
+        i = items[-1] + 1
+    return found
+
+
 def main():
     write = '--write' in sys.argv
     files = []
@@ -244,6 +332,8 @@ def main():
         with open(path, encoding='utf-8') as handle:
             lines = handle.read().split('\n')
         edits = {}          # line index -> list of (start, end, replacement)
+        inserts = {}        # line index -> note (a blank line goes above it)
+        deletes = {}        # line index -> note (a stray blank separator)
         notes = {}          # line index -> list of notes
         in_fence_state = [False] * len(lines)
         for i, line, in_fence, is_fence in md_fences.walk(lines):
@@ -289,18 +379,46 @@ def main():
                             index = m.start(2) + pipe.start()
                             edits.setdefault(i, []).append((index, index, '\\'))
 
+        # Rule 5 — a heading or thematic break directly under list content.
+        for i, line in enumerate(lines):
+            if in_fence_state[i] or not STARTER_UNDER_LIST.match(line):
+                continue
+            if after_list_content(lines, i, in_fence_state):
+                note = ('block: this heading/thematic break sits directly under list '
+                        'content — kramdown reads it as part of the item (a `---` '
+                        'becomes a setext heading over the item); a blank line '
+                        'restores the block')
+                inserts[i] = note
+                notes.setdefault(i, []).append(note)
+
+        # Rule 6 — isolated blank separators inside an otherwise-tight list.
+        for i in mixed_list_separators(lines, in_fence_state):
+            note = ('list: a blank line separates items here while the rest of the '
+                    'list is tight — kramdown renders exactly these items loose, so '
+                    'one gap is 3x its neighbours')
+            deletes[i] = note
+            notes.setdefault(i, []).append(note)
+
         if notes:
             for i in sorted(notes):
                 for note in notes[i]:
                     findings.append(f'{rel}:{i + 1}: {note}')
-        if write and edits:
+        if write and (edits or inserts or deletes):
             for i, spans in edits.items():
                 line = lines[i]
                 for start, end, replacement in sorted(spans, reverse=True):
                     line = line[:start] + replacement + line[end:]
                 lines[i] = line
+            # Rebuild once on the original line indices, so an insert and a
+            # delete never have to account for each other's index shifts.
+            rebuilt = []
+            for idx, line in enumerate(lines):
+                if idx in inserts:
+                    rebuilt.append('')
+                if idx not in deletes:
+                    rebuilt.append(line)
             with open(path, 'w', encoding='utf-8') as handle:
-                handle.write('\n'.join(lines))
+                handle.write('\n'.join(rebuilt))
             repaired += 1
 
     if findings:

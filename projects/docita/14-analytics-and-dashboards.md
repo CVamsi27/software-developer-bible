@@ -189,7 +189,6 @@ Docita source inspected on 2 October 2026:
 - `apps/api/src/domains/analytics/core/factories/snapshot-analytics.factory.ts` and `period-bucket.util.ts`
 - `apps/api/src/domains/analytics/infrastructure/repositories/analytics-groupby.helpers.ts` and `analytics-groupby-count.ts`
 - `apps/api/src/domains/dashboards/dashboard/application/services/dashboard.service.ts`
-
 - `apps/api/src/shared/modules/internal/internal-operational-metrics.controller.ts`, `.service.ts`, and `infrastructure/prisma-internal-operational-metrics.repository.ts`
 - `packages/types/src/admin/operational-metrics.ts` and `apps/internal/src/features/performance/pages/performance-page.tsx`
 - `apps/api/src/shared/modules/monitoring/monitoring/services/request-log.service.ts` and `metrics.scheduler.ts`

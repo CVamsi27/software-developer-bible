@@ -38,7 +38,6 @@
 **Files:**
 - Create: `20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.04-pm2-process-supervision.md`
 - Modify: `20-backend/20.1-node.js/03-processes-and-concurrency/INDEX.md`
-
 - [x] **Step 1: Open with a concrete failure and define supervision.** Explain the incident where a Node server crashes after accepting a request: PM2 can restart capacity, but cannot restore the lost response or prove a side effect did not happen. Add a practical definition and a textbook definition of process supervision.
 - [x] **Step 2: Derive the process topology.** Add a small diagram showing the `pm2` CLI, the background PM2 daemon and its process list, the managed Node process or cluster workers, and the operating-system/container boundary. Explain which component starts, monitors, replaces and persists which state.
 - [x] **Step 3: Explain the execution and lifecycle decisions.** Compare PM2 fork mode with cluster mode and link the latter to the existing clustering chapter. Trace start → readiness → request admission → crash/restart → shutdown. Explain that readiness, graceful draining, restart budgets and startup persistence are separate behaviors; do not promise that `reload` alone guarantees zero downtime.
@@ -50,7 +49,6 @@
 **Files:**
 - Create: `20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.05-watt-runtime-architecture.md`
 - Modify: `20-backend/20.1-node.js/03-processes-and-concurrency/INDEX.md`
-
 - [x] **Step 1: Open with the deployment-boundary problem.** Contrast a single Node process whose modules share one event loop with separately deployed microservices that add process, network and operational overhead. Define `wattpm` as the CLI and Watt as the runtime; add practical and textbook definitions.
 - [x] **Step 2: Trace the thread-per-application topology.** Diagram the runtime main thread and application worker threads. Explain each worker's V8 isolate, heap, module registry, globals and event loop, and distinguish this isolation from a separate process or container.
 - [x] **Step 3: Follow an internal request and worker lifecycle.** Trace a `.plt.local` call through Watt's documented dispatcher/`MessagePort` path, making clear that the call does not open a TCP connection but the request/response data still crosses a thread boundary. Explain dependency-aware startup, health checks, replacement, shutdown and shared telemetry without repeating worker-thread API details.
@@ -63,7 +61,6 @@
 - Modify: `20-backend/20.1-node.js/03-processes-and-concurrency/INDEX.md`
 - Modify: `20-backend/20.1-node.js/INDEX.md`
 - Modify: `20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.01-clustering.md`
-
 - [x] **Step 1: Make the category flow explicit.** Start from process configuration and shutdown, revisit worker/process boundaries and clustering, then compare PM2's external process supervision with Watt's in-process application supervision. Preserve the existing child-process and cluster chapters as the canonical API explanations.
 - [x] **Step 2: Update the Node.js stack introduction.** Add process supervision and application-runtime architecture to the category description and the appropriate reading pass. Keep the root index concise and point readers to the category INDEX for its full sequence.
 - [x] **Step 3: Add a discoverable PM2 link from clustering.** Change the brief PM2 mention to a human-title link to the new PM2 chapter and add one See Also pointer. Do not copy PM2 configuration or lifecycle explanations into the cluster chapter.
@@ -74,7 +71,6 @@
 **Files:**
 - Modify: `20-backend/20.1-node.js/03-processes-and-concurrency/REVISION.md`
 - Modify: `20-backend/20.1-node.js/04-security-and-operations/20.1.4.04-interview-questions.md`
-
 - [x] **Step 1: Add a source-linked PM2 revision group.** Add three fresh `**Q:**`/`**A:**` pairs testing daemon/process-list ownership, readiness versus listening, and why restart/reload does not recover an uncertain in-flight side effect.
 - [x] **Step 2: Add a source-linked Watt revision group.** Add three fresh pairs testing `.plt.local` routing and its non-network cost boundary, thread versus process failure, and the deployment-independence trade-off. Link the question group to the Watt chapter and relevant official references.
 - [x] **Step 3: Add four senior interview prompts.** Add Q41–Q44 covering: (41) readiness and PM2 registration, (42) reload versus request-level availability guarantees, (43) PM2 cluster processes versus Watt threads and their failure domains, and (44) extracting a Watt mesh application to a network service. Give each answer a concrete lifecycle or request trace and a canonical chapter link; do not copy the revision answers.
@@ -84,7 +80,6 @@
 
 **Files:**
 - Modify through generators: `20-backend/20.1-node.js/**` read-time metadata, `search.html`, `api/index.json`, count-bearing summary files, `scripts/external-links-baseline.json` when new live citations are introduced.
-
 - [x] **Step 1: Refresh read times.** Run `python3 scripts/read_time.py --write`, then `python3 scripts/read_time.py --check`.
 - [x] **Step 2: Regenerate search and API output.** Run `python3 scripts/gen_master_index.py` after the read-time refresh, then `python3 scripts/gen_master_index.py --check`.
 - [x] **Step 3: Review and probe the citation delta.** Run `python3 scripts/link_baseline.py`, then probe the chapter sources with the repository's checker:
@@ -119,7 +114,6 @@ Replace any dead citation with an official live source. Once every newly cited U
 
 **Files:**
 - Verify: all files modified in Tasks 1–5, plus generated `search.html` and `api/index.json`.
-
 - [x] **Step 1: Run the full repository gates.** Run `bash scripts/verify.sh` and resolve every reported issue. The run must include count, alignment, structure, links, freshness, metadata, duplication, revision-depth, generated-catalog and fixed-point checks.
 - [x] **Step 2: Run the required standalone link gate.** Run `python3 scripts/check_links.py`; require zero broken relative links and stale labels.
 - [x] **Step 3: Build the production-equivalent site with the pinned Ruby.** Run `PATH=/opt/homebrew/opt/ruby@3.4/bin:$PATH BUNDLE_PATH=vendor/bundle JEKYLL_ENV=production bundle exec jekyll build --destination /tmp/bible-node-runtime-2026-10-14`.

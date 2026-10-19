@@ -34,7 +34,6 @@
 **Interfaces:**
 - Consumes: `scripts/check_freshness.py --check-urls N` (exit 0 = all probed links alive or warn; exit 1 = dead links or malformed links found; output lines match `  DEAD  HTTP 404  <url>` or `  MALFORMED  <url>`).
 - Produces: `/tmp/dead_final.txt` — one URL per line, sorted, deduped (the authoritative work list every later task consumes). Also `/tmp/malformed.txt` for the Task 10 artifact.
-
 - [ ] **Step 1: Run the full liveness sweep with the hardened checker**
 
 ```bash
@@ -195,7 +194,6 @@ git commit -m "docs: replace dead freecodecamp citations with verified live URLs
 **Interfaces:**
 - Consumes: `/tmp/dead_final.txt` from Task 1.
 - Produces: verified replacements for all blog-cluster URLs; commit `docs: replace dead dev-blog citations with verified live URLs`.
-
 - [ ] **Step 1: Enumerate citing files for every cluster URL**
 
 ```bash
@@ -309,7 +307,6 @@ Vendor-doc replacements should go to the vendor's current canonical page for the
 - Stripe's `api/idempotency_keys` → `docs.stripe.com/api/idempotent_requests` (verified live earlier).
 - Node webstreams → `nodejs.org/api/webstreams.html` (verified live earlier).
 - Next.js on-demand fetching → `nextjs.org/docs/app/guides/data-caching` (verify).
-
 - [ ] **Step 4: Run gates and commit**
 
 ```bash
@@ -356,12 +353,10 @@ done
 Expected: OWASP cheat-sheet series 404s (filenames changed); the four `owasp.org/www-community/attacks/...` may 404 or 200 (they moved into the new OWASP site structure); NIST PDFs need the new `csrc.nist.gov/pubs/ir/YYYY/NN-...` path scheme. PortSwigger was transient-404 once before — trust the fresh probe.
 
 - [ ] **Step 2: Search and verify replacements**
-
 - OWASP sheets: `web_search` `OWASP cheat sheet <subject>` — cite the current `cheatsheetseries.owasp.org/cheatsheets/<Real_Name>.html` (e.g. the JWT sheet's current name, the real de-identification sheet name). Verify each with curl.
 - `owasp.org/www-community/attacks/...` → the same attacks now live under `owasp.org/www-community/attacks/` reorganized paths or the cheat sheets; verify whatever the search returns.
 - NIST RBAC paper (Sandhu–Ferraiolo–Kuhn): search `NIST IR 1992 Sandhu Ferraiolo Kuhn RBAC` → current `csrc.nist.gov` pubs path; NIST IR 8053 likewise.
 - Auth0 blog posts → auth0's current blog/docs equivalents (auth0 reorganized docs into `auth0.com/docs` new IA); if the exact post is gone, cite auth0's current JWT article.
-
 - [ ] **Step 3: Apply, gate, commit**
 
 ```bash
@@ -449,7 +444,6 @@ For each of the five, `str_replace` in the citing file (grep the URL first). For
 
 - oldString: `- [Dropbox Architecture](http://highscalability.com/blog/2011/3/14/tech-talk-dropbox-architecture.html)`
 - newString: `- [Dropbox Architecture (archived)](https://web.archive.org/web/<TS>/http://highscalability.com/blog/2011/3/14/tech-talk-dropbox-architecture.html)`
-
 - [ ] **Step 4: Replace the remaining live-replaceable URLs**
 
 Same search→verify→str_replace loop as Tasks 2–5 for the remaining inventory. Martin Fowler specifics (verify first — his site shuffles article paths): the transactional-outbox 2023 article was already retired once; if dead again, cite `martinfowler.com/articles/transactional-outbox.html` or the AWS cloud-design-patterns page already used in Task 4. `eaaCatalog` entries: if the catalog root (verified live earlier: `martinfowler.com/eaaCatalog/index.html`) still 200s but per-pattern pages 404, cite the catalog root.
@@ -496,11 +490,9 @@ done
 Note: `probablydance.com` was fixed to a verified-live URL earlier this session — if it appears here, the sweep3 entry is stale; drop it.
 
 - [ ] **Step 2: Search and verify replacements**
-
 - University course PDFs: search the paper title (`web_search` `Brewer PODC keynote PDF`, `Princeton cos226 bloom filter lecture PDF`) → verify the new host serves 200. If a professor moved slides, their faculty page or a stable mirror (e.g. `www.cs.cornell.edu`, course-archive sites) is acceptable.
 - `cp-algorithms.com` restructured its data-structure paths — search `cp-algorithms stack queue` and verify the new slugs.
 - `vigna.di.unimi.it` BroadKernel paper: search `Vigna Broad Kernel paper PDF`; if gone, cite his publications index.
-
 - [ ] **Step 3: Apply, gate, commit**
 
 ```bash
@@ -646,7 +638,6 @@ git add -A && git commit -m "docs: replace dead long-tail citations with verifie
 **Interfaces:**
 - Consumes: `/tmp/malformed.txt` (Task 1), `/tmp/dead_final.txt` (must be empty of actionable items after Tasks 2–9), `bash scripts/verify.sh`.
 - Produces: the close-out commit; changelog §5 marked resolved; final sweep green.
-
 - [ ] **Step 1: Locate and fix the malformed link**
 
 ```bash

@@ -885,6 +885,7 @@ After making changes, verify the following:
 - [ ] No broken internal links
 - [ ] INDEX.md has `## Navigation` with correct previous/next links
 - [ ] INDEX.md has `**Cross-references:**` with related sections
+
 ### Running Verification
 
 Run the one-command gate from the repo root before pushing:

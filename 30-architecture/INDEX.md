@@ -46,9 +46,7 @@ The Design Patterns section groups patterns using the **Gang of Four classificat
    - [Interview Questions](30.1-design-patterns/06-interview-prep/30.1.6.01-interview-questions.md) for 50+ Qs (2-3 hrs)
 
 2. **System Design theory** (CAP, consistency, sharding, caching, queues) — concepts.
-
 3. **System Design case studies** (URL shortener, Uber, Netflix) — applied examples.
-
 4. **Infrastructure patterns** — operational contracts for scaling, resilience, release and recovery.
 
 Use the category REVISION companions after their learning chapters, then the separate interview drills. For case studies, state assumptions, trace one request/change through its authorities and test a failure condition; remembering a diagram alone is insufficient.

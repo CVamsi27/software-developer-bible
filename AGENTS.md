@@ -9,7 +9,6 @@
    - tool/code changes → leave uncommitted; surface to the user instead.
 
 2. **Personal data is canonical in `~/repos/personal`** — the private repo `CVamsi27/personal` (CV, profile.yml, portals.yml, application tracker, outreach playbook, targets, relocation plan, reports, resume generator, generated outputs). **This bible repo is public**: the personal subtree was moved out on 2026-10-17, so never add personal data here and never point back into the private workspace — gate 7 (`check_private_refs.py`) enforces the reference half.
-
 3. **Never commit secrets or PII to this repo or any other public place** (phone numbers, family details and application material live only in `~/repos/personal/`).
 
 ## Expected workflow

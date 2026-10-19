@@ -219,7 +219,10 @@ def is_reference_file(path: str) -> bool:
 
 
 def check_revision_companion(path: str, text: str):
-    """Practice must cover the actual learning chapters, not just exist."""
+    """Practice must cover the actual learning chapters, not just exist, and
+    each pair must be a top-level `**Q:**` paragraph: the reveal UI
+    (assets/revision-ui.js) scans direct children of the article, so a
+    numbered, indented or quoted pair silently loses the drill on that page."""
     problems = []
     rows = [line for _, line, fenced, delimiter in md_fences.walk(text.splitlines())
             if not fenced and not delimiter]
@@ -228,6 +231,13 @@ def check_revision_companion(path: str, text: str):
     answers = len(re.findall(r'\*\*A:\*\*', prose))
     if questions < 5 or answers != questions:
         problems.append('revision companion needs at least five matched **Q:**/**A:** pairs')
+    for line in rows:
+        if line.startswith('**Q:**') or '**Q:**' not in line:
+            continue
+        if re.match(r'^\s*(?:[-*+] |\d+\. |> )?\s*\*\*Q:\*\*', line):
+            problems.append('a revision question must be a top-level `**Q:**` paragraph — '
+                            'a list marker or indent hides it from the reveal UI (assets/revision-ui.js)')
+            break
     parent = os.path.dirname(path)
     for name in os.listdir(parent):
         sibling = os.path.join(parent, name)

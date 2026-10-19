@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-TypeScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-5_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -14,165 +14,158 @@ Complete the learning chapters first, then answer these questions without reopen
 
 Source: [Generics](10.2.2.01-generics.md)
 
-**Definition**
+**Q:** What does a type parameter actually represent, and when is it bound?
 
-1. **Q:** What does a type parameter actually represent, and when is it bound?
-   **A:** A named unknown the *caller* decides — `<T>(x: T): T` is a contract that works for any type, and each call site resolves `T` at compile time; nothing about it exists at runtime.
+**A:** A named unknown the *caller* decides — `<T>(x: T): T` is a contract that works for any type, and each call site resolves `T` at compile time; nothing about it exists at runtime.
 
-2. **Q:** What do `T extends X` and `T = X` each do?
-   **A:** `extends` *constrains* the parameter to types assignable to `X`, which is what lets the body use `X`'s members; `=` supplies a default when no explicit or inferred type argument is selected.
+**Q:** What do `T extends X` and `T = X` each do?
 
-**How It Works**
+**A:** `extends` *constrains* the parameter to types assignable to `X`, which is what lets the body use `X`'s members; `=` supplies a default when no explicit or inferred type argument is selected.
 
-3. **Q:** What type does the basic `identity('hello')` call infer, and how can an API preserve the literal without an explicit type argument?
-   **A:** The ordinary signature infers `string`. A TypeScript 5.0 `const` type parameter requests const-like inference for inline literal arguments, so an exact API can infer `'hello'`; this does not narrow a mutable variable that was created earlier.
+**Q:** What type does the basic `identity('hello')` call infer, and how can an API preserve the literal without an explicit type argument?
 
-**Code Examples**
+**A:** The ordinary signature infers `string`. A TypeScript 5.0 `const` type parameter requests const-like inference for inline literal arguments, so an exact API can infer `'hello'`; this does not narrow a mutable variable that was created earlier.
 
-4. **Q:** What is the result type of a merge({name:"Alice"},{age:30}) contract returning T & U, and when is that contract misleading?
-   **A:** The disjoint plain-property case fits both member sets. If inputs share an incompatible key, spread overwrites it rather than satisfying both types; inherited/nonenumerable members are not all copied either. The chapter instead uses pair<A,B> to preserve two input types without inventing an intersection guarantee.
+**Q:** What is the result type of a merge({name:"Alice"},{age:30}) contract returning T & U, and when is that contract misleading?
 
-**Common Mistakes**
+**A:** The disjoint plain-property case fits both member sets. If inputs share an incompatible key, spread overwrites it rather than satisfying both types; inherited/nonenumerable members are not all copied either. The chapter instead uses pair<A,B> to preserve two input types without inventing an intersection guarantee.
 
-5. **Q:** Why does `function add<T>(a: T, b: T): T { return a + b; }` fail, and does `T extends number | string` fix it?
-   **A:** The operator is checked against the unresolved `T`, so it errors (TS2365) — and no, the constraint doesn't help: `a + b` still errors (TS2365). If the body needs one specific type, the function isn't generic.
+**Q:** Why does `function add<T>(a: T, b: T): T { return a + b; }` fail, and does `T extends number | string` fix it?
 
-6. **Q:** What goes wrong with `function first<T>(arr: T[]): any`?
-   **A:** The call site gets `any`, so every downstream use is unchecked — the parameter bought nothing. Return `T | undefined` and the type flows through.
+**A:** The operator is checked against the unresolved `T`, so it errors (TS2365) — and no, the constraint doesn't help: `a + b` still errors (TS2365). If the body needs one specific type, the function isn't generic.
 
-**Best Practices**
+**Q:** What goes wrong with `function first<T>(arr: T[]): any`?
 
-7. **Q:** Your team writes `map<string, number>(arr, fn)` at most call sites. What does that signal?
-   **A:** Either the signature is fighting inference (fix the signature or the callback's annotation) or it's cargo-cult verbosity — inference should resolve both parameters from the arguments, and explicit type arguments are the fallback, not the default.
+**A:** The call site gets `any`, so every downstream use is unchecked — the parameter bought nothing. Return `T | undefined` and the type flows through.
+
+**Q:** Your team writes `map<string, number>(arr, fn)` at most call sites. What does that signal?
+
+**A:** Either the signature is fighting inference (fix the signature or the callback's annotation) or it's cargo-cult verbosity — inference should resolve both parameters from the arguments, and explicit type arguments are the fallback, not the default.
 
 ## Infer
 
 Source: [Infer](10.2.2.02-infer.md)
 
-**Definition**
+**Q:** Where is `infer` legal, and where does it become a compile error?
 
-1. **Q:** Where is `infer` legal, and where does it become a compile error?
-   **A:** Only inside the `extends` (pattern) clause of a conditional type — `T extends Promise<infer U> ? U : never` is fine, while `T extends string ? infer S : unknown` fails with TS1338.
+**A:** Only inside the `extends` (pattern) clause of a conditional type — `T extends Promise<infer U> ? U : never` is fine, while `T extends string ? infer S : unknown` fails with TS1338.
 
-2. **Q:** What does `type Id<T> = T extends infer U ? U : never` actually extract?
-   **A:** It captures the whole matched type rather than a smaller component. That is a legal identity-style pattern; structured extraction uses a more specific position such as Promise<infer U>.
+**Q:** What does `type Id<T> = T extends infer U ? U : never` actually extract?
 
-**How It Works**
+**A:** It captures the whole matched type rather than a smaller component. That is a legal identity-style pattern; structured extraction uses a more specific position such as Promise<infer U>.
 
-3. **Q:** Given `type Unwrap<T> = T extends Promise<infer U> ? Unwrap<U> : T`, what is `Unwrap<Promise<Promise<string>>>`?
-   **A:** `string` — each pass captures the inner `Promise` and recurses until the base case hits a non-promise.
+**Q:** Given `type Unwrap<T> = T extends Promise<infer U> ? Unwrap<U> : T`, what is `Unwrap<Promise<Promise<string>>>`?
 
-4. **Q:** Which captures produce parameter lists, and which produce instances? What does the required-head helper do for an optional first parameter?
-   **A:** `(...args: infer P) => any` captures the parameter tuple (`P = [string, number]`), `new (...args: any[]) => infer I` captures the constructed instance type, and `(event: infer E) => void` captures a single parameter. The shown `FirstParam` pattern requires a statically present first argument; an optional first tuple member does not match its required-head pattern.
+**A:** `string` — each pass captures the inner `Promise` and recurses until the base case hits a non-promise.
 
-**Code Examples**
+**Q:** Which captures produce parameter lists, and which produce instances? What does the required-head helper do for an optional first parameter?
 
-5. **Q:** What does the canonical RouteParams<"users/:id/posts/:postId"> helper extract, and where is its full grammar taught?
-   **A:** It derives id and postId string fields by capturing path segments. The [Template Literal Types chapter](../03-type-transformations/10.2.3.04-template-literal-types.md) owns its implementation and supported path grammar; infer supplies capture, not runtime route parsing.
+**A:** `(...args: infer P) => any` captures the parameter tuple (`P = [string, number]`), `new (...args: any[]) => infer I` captures the constructed instance type, and `(event: infer E) => void` captures a single parameter. The shown `FirstParam` pattern requires a statically present first argument; an optional first tuple member does not match its required-head pattern.
 
-**Common Mistakes**
+**Q:** What does the canonical RouteParams<"users/:id/posts/:postId"> helper extract, and where is its full grammar taught?
 
-6. **Q:** Why is `T extends string ? T : unknown` a worse false branch than `never`?
-   **A:** For a filtering extractor, a non-match contributing unknown can absorb the useful union; never discards it. A pass-through false branch may instead intentionally retain T. The chosen contract matters.
+**A:** It derives id and postId string fields by capturing path segments. The [Template Literal Types chapter](../03-type-transformations/10.2.3.04-template-literal-types.md) owns its implementation and supported path grammar; infer supplies capture, not runtime route parsing.
 
-**Best Practices**
+**Q:** Why is `T extends string ? T : unknown` a worse false branch than `never`?
 
-7. **Q:** What are the three parts of a healthy recursive `infer` type?
-   **A:** The capture in the `extends` pattern, a transformation of what was captured, and a base case (`never` or the pass-through type) so recursion terminates instead of hitting TS2589.
+**A:** For a filtering extractor, a non-match contributing unknown can absorb the useful union; never discards it. A pass-through false branch may instead intentionally retain T. The chosen contract matters.
+
+**Q:** What are the three parts of a healthy recursive `infer` type?
+
+**A:** The capture in the `extends` pattern, a transformation of what was captured, and a base case (`never` or the pass-through type) so recursion terminates instead of hitting TS2589.
 
 ## Advanced Generics
 
 Source: [Advanced Generics](10.2.2.03-advanced-generics.md)
 
-**Definition**
+**Q:** What makes a generic "advanced" beyond ordinary type parameters?
 
-1. **Q:** What makes a generic "advanced" beyond ordinary type parameters?
-   **A:** Multi-step type-level programs — HKT encodings, variadic tuple manipulation, recursive conditional/mapped types, and deep path-based constraints — where types are computed from other types rather than merely parameterized.
+**A:** Multi-step type-level programs — HKT encodings, variadic tuple manipulation, recursive conditional/mapped types, and deep path-based constraints — where types are computed from other types rather than merely parameterized.
 
-**How It Works**
+**Q:** Why can't you write `interface Functor<F> { map: <A, B>(fa: F<A>, …): F<B> }`, and what is the workaround?
 
-2. **Q:** Why can't you write `interface Functor<F> { map: <A, B>(fa: F<A>, …): F<B> }`, and what is the workaround?
-   **A:** `F` is not a type constructor, so `F<A>` fails with TS2315 ("Type 'F' is not generic"). The workaround is a keyed table (`URItoKind<A>`) plus `Kind<URI, A>` so container-ness lives in a lookup, not in a generic parameter.
+**A:** `F` is not a type constructor, so `F<A>` fails with TS2315 ("Type 'F' is not generic"). The workaround is a keyed table (`URItoKind<A>`) plus `Kind<URI, A>` so container-ness lives in a lookup, not in a generic parameter.
 
-3. **Q:** Why does `type Bad<T> = Bad<T> | T` fail while `type List<T> = { value: T; next: List<T> } | null` compiles?
-   **A:** A bare alias cycle has no position for the checker to resolve lazily (TS2456 circular reference); recursion through an object member is resolved member-by-member on demand, so it's legal.
+**Q:** Why does `type Bad<T> = Bad<T> | T` fail while `type List<T> = { value: T; next: List<T> } | null` compiles?
 
-**Code Examples**
+**A:** A bare alias cycle has no position for the checker to resolve lazily (TS2456 circular reference); recursion through an object member is resolved member-by-member on demand, so it's legal.
 
-4. **Q:** What does a fixed-tuple curry type guarantee, and why does it not settle runtime arity?
-   **A:** It describes nested unary call signatures for the tuple's required positions; it does not implement the calls. Runtime currying needs its own application contract because defaults and rest parameters make `function.length` incomplete. See the [canonical runtime curry](../../10.1-javascript/05-functional-patterns/10.1.5.04-currying-composition.md).
+**Q:** What does a fixed-tuple curry type guarantee, and why does it not settle runtime arity?
 
-5. **Q:** What goes wrong if a pipeline lacks a terminal case or checks every later input against its first output?
-   **A:** A recursive calculation needs a defined final result. Compatibility also concerns adjacent stages: number→string→number is valid even though the last stage cannot accept the first output. Compatible walks each pair and LastResult captures the final return type.
+**A:** It describes nested unary call signatures for the tuple's required positions; it does not implement the calls. Runtime currying needs its own application contract because defaults and rest parameters make `function.length` incomplete. See the [canonical runtime curry](../../10.1-javascript/05-functional-patterns/10.1.5.04-currying-composition.md).
 
-**Common Mistakes**
+**Q:** What goes wrong if a pipeline lacks a terminal case or checks every later input against its first output?
 
-6. **Q:** Why does `DeepReadonly<Date>` still allow `setTime`, while a `ReadonlyMap` view has no `set` method?
-   **A:** The example treats `Date` as a leaf to preserve its method surface, but those methods can mutate the date. It converts maps to a `ReadonlyMap` interface, which removes writes through that view; another mutable alias can still change the same map.
+**A:** A recursive calculation needs a defined final result. Compatibility also concerns adjacent stages: number→string→number is valid even though the last stage cannot accept the first output. Compatible walks each pair and LastResult captures the final return type.
 
-**Best Practices**
+**Q:** Why does `DeepReadonly<Date>` still allow `setTime`, while a `ReadonlyMap` view has no `set` method?
 
-7. **Q:** What should you do when a recursive generic or a large union slows type checking?
-   **A:** Measure the consuming project with `tsc --extendedDiagnostics`, then bound recursion or remove branches the data model does not need. Keep a complicated helper only when its safety benefit justifies the checker and editor cost.
+**A:** The example treats `Date` as a leaf to preserve its method surface, but those methods can mutate the date. It converts maps to a `ReadonlyMap` interface, which removes writes through that view; another mutable alias can still change the same map.
+
+**Q:** What should you do when a recursive generic or a large union slows type checking?
+
+**A:** Measure the consuming project with `tsc --extendedDiagnostics`, then bound recursion or remove branches the data model does not need. Keep a complicated helper only when its safety benefit justifies the checker and editor cost.
 
 ## Type Variance
 
 Source: [Type Variance](10.2.2.04-type-variance.md)
 
-**Definition**
+**Q:** Why may a function accepting any Animal replace a Dog callback?
 
-1. **Q:** Why may a function accepting any Animal replace a Dog callback?
-   **A:** Every Dog that the caller can supply is also an Animal. The broader input promise therefore covers the narrower callback slot.
+**A:** Every Dog that the caller can supply is also an Animal. The broader input promise therefore covers the narrower callback slot.
 
-**How It Works**
+**Q:** Which syntax keeps callback parameters bivariant even with strict function checking, and which direction can it admit unsafely?
 
-2. **Q:** Which syntax keeps callback parameters bivariant even with strict function checking, and which direction can it admit unsafely?
-   **A:** A method declaration keeps the compatibility exception, so both parameter substitutions may be accepted. A function-valued property is checked contravariantly: an Animal handler can stand in for a Dog handler, but a Dog-only handler cannot accept every Animal.
+**A:** A method declaration keeps the compatibility exception, so both parameter substitutions may be accepted. A function-valued property is checked contravariantly: an Animal handler can stand in for a Dog handler, but a Dog-only handler cannot accept every Animal.
 
-3. **Q:** Why does the pushed object appear at index one in the array example?
-   **A:** The original Rex object occupies index zero and retains its breed. The write through the Animal alias appends a different object lacking that field.
+**Q:** Why does the pushed object appear at index one in the array example?
 
-4. **Q:** Does a plain `{ value: T }` field make a TypeScript container invariant?
-   **A:** No. The checker still permits covariant assignment of that mutable property, which is unsound for writes. Model reads and writes with function-property signatures when invariance is required; variance annotations must match the type's structural behavior and do not change unrelated structural comparisons.
+**A:** The original Rex object occupies index zero and retains its breed. The write through the Animal alias appends a different object lacking that field.
 
-**Code Examples**
+**Q:** Does a plain `{ value: T }` field make a TypeScript container invariant?
 
-5. **Q:** Which event type is more specific: PointerEvent or MouseEvent?
-   **A:** PointerEvent extends MouseEvent with extra information. A general MouseEvent handler can replace a PointerEvent handler, while the opposite substitution may receive missing fields.
+**A:** No. The checker still permits covariant assignment of that mutable property, which is unsound for writes. Model reads and writes with function-property signatures when invariance is required; variance annotations must match the type's structural behavior and do not change unrelated structural comparisons.
 
-6. **Q:** Why must an emitter's callback constraint avoid requiring unknown input for every handler?
-   **A:** A specialized handler cannot process arbitrary unknown values. The constraint should recognize a callback shape while preserving each event's actual parameter type for registration.
+**Q:** Which event type is more specific: PointerEvent or MouseEvent?
 
-**Common Mistakes**
+**A:** PointerEvent extends MouseEvent with extra information. A general MouseEvent handler can replace a PointerEvent handler, while the opposite substitution may receive missing fields.
 
-7. **Q:** What protection does a readonly array view leave unprovided?
-   **A:** It blocks array writes through that view, but other aliases can still mutate the original. Its elements are not automatically frozen either.
+**Q:** Why must an emitter's callback constraint avoid requiring unknown input for every handler?
 
-**Performance Considerations**
+**A:** A specialized handler cannot process arbitrary unknown values. The constraint should recognize a callback shape while preserving each event's actual parameter type for registration.
 
-8. **Q:** When can explicit variance annotations improve compilation work, and what must they agree with?
-   **A:** They can help comparisons of the same generic type when recursive variance inference is expensive or ambiguous. They must match the type's structural input/output use; they do not force unrelated structural types to become invariant. Profile before attributing a speedup to them.
+**Q:** What protection does a readonly array view leave unprovided?
+
+**A:** It blocks array writes through that view, but other aliases can still mutate the original. Its elements are not automatically frozen either.
+
+**Q:** When can explicit variance annotations improve compilation work, and what must they agree with?
+
+**A:** They can help comparisons of the same generic type when recursive variance inference is expensive or ambiguous. They must match the type's structural input/output use; they do not force unrelated structural types to become invariant. Profile before attributing a speedup to them.
 
 ## Changed-condition checks
 
 Source: [Generics](10.2.2.01-generics.md)
 
 **Q:** How does decodeName earn fetchData's string result, and what changes if the endpoint sends name:42?
+
 **A:** Its runtime check verifies a string field and returns that string, letting T infer as string. A numeric field throws and rejects the request; writing a type argument would not validate it.
 
 Source: [Infer](10.2.2.02-infer.md)
 
 **Q:** Trace DeepUnwrap<Promise<Promise<string>>>. What does a required-head extractor do on an empty tuple?
+
 **A:** Each matched promise captures its inner type until string reaches the pass-through base case. An empty tuple supplies no guaranteed head, so that extractor returns never.
 
 Source: [Advanced Generics](10.2.2.03-advanced-generics.md)
 
 **Q:** Trace formatLength(9), then change the second function to a string-only input. What changes?
+
 **A:** Values flow9→10→"10"→2. A string-only second input cannot accept the preceding number output, so the adjacent-stage constraint rejects the pipeline. any would bypass that proof.
 
 Source: [Type Variance](10.2.2.04-type-variance.md)
 
 **Q:** A wider Animal[] alias appends an object without breed to Dog[]. Why does readonly help only part of this problem?
+
 **A:** The accepted mutable covariance lets that wider write corrupt the narrower view. A readonly consumer cannot append through its view, but other mutable aliases and nested objects remain writable.
 
 ## Summary

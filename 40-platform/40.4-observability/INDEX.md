@@ -1,6 +1,6 @@
 # Observability — Index
 
-> **Study time:** ≈ 1 h 31 m of reading (15 files, ~6 min average).
+> **Study time:** ≈ 1 h 30 m of reading (15 files, ~6 min average).
 > **15 files** — Observability fundamentals from logging and monitoring to distributed tracing, OpenTelemetry, continuous profiling, eBPF, error tracking, health checks, SLI/SLO/SLA, alerting, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-15-blue)](../../INDEX.md)
@@ -33,7 +33,7 @@ These three signals answer different investigation questions. Profiles add sampl
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
 | 01 | [Logging](01-pillars/40.4.1.01-logging.md) | Structured logging, log levels, centralized logging, ELK stack, log retention | "What happened at time T?" | Important | Important | 6 min |
 | 02 | [Monitoring](01-pillars/40.4.1.02-monitoring.md) | Metrics, dashboards, Prometheus, Grafana, SLIs | "How is the system performing?" | Important | Important | 7 min |
-| 03 | [Tracing](01-pillars/40.4.1.03-tracing.md) | Distributed tracing, spans, OpenTelemetry, Jaeger | "Where did the request spend time?" | Important | Important | 7 min |
+| 03 | [Tracing](01-pillars/40.4.1.03-tracing.md) | Distributed tracing, spans, OpenTelemetry, Jaeger | "Where did the request spend time?" | Important | Important | 6 min |
 
 ---
 

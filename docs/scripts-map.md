@@ -8,7 +8,7 @@
 
 `roadmap-return.test.cjs` exercises safe dated return links and chapter/revision context; it runs with the JavaScript checks in `verify.sh`.
 
-> The main verification and maintenance scripts, arranged by the job they do inside the 30-gate
+> The main verification and maintenance scripts, arranged by the job they do inside the 31-gate
 > verification suite: the gate that runs it, what it owns exclusively, the
 > fixer or restamper to reach for when it fails, and the doctrine that keeps
 > one concern from growing a second implementation. Gate numbers refer to
@@ -45,10 +45,10 @@
 
 ## How It Works
 
-### The 30 gates, in verify.sh order
+### The 31 gates, in verify.sh order
 
 | # | Script | What it owns | Fails when |
-| --- | ------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| --- | ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
 | 1 | `check_counts.py` | Every count claim on the nav surface (badges, blurb counts, table Files columns, repo-scale totals, [api-contract](api-contract.md)) | a claim disagrees with live disk |
 | 2 | `check_alignment.py` | Table pipe alignment, surrounding blank lines + ASCII box walls | rows/pipes misaligned or a table boundary fails to render |
 | 3 | `check_structure.py` | IDs unique, sequences contiguous, banks last, one H1, unique H2 slugs, **INDEX completeness** (every numbered subdir with an INDEX is linked) | structure or navigation has a gap |
@@ -79,6 +79,7 @@
 | 25 | `check_dilution.py` | A chapter must not restate itself — ceiling baseline over the measured 0/0 state (within-chapter, sentence granularity; gate 11 owns cross-chapter) | a paragraph restated 20+ lines apart exceeds the baseline |
 | 26 | `check_code_dup.py` | A chapter must not re-teach another chapter's code — cross-file fenced-block pairs (identical token streams ≥ 10 lines; near ≥ 0.85) against a ceiling baseline of classified keeps | an example duplicated from a sibling chapter exceeds the baseline |
 | 27 | `check_see_also.py` | See Also hygiene — per-stack bare ceilings, label echoes, clipped endings and copied heading/table fragments; uses the shared fence reader | a new bare entry, label echo or unfinished description |
+| 28 | `check_readability.py` | The outline names the mechanism: no retired generic heading (`How It Works`, `Explanation`, `Overview`, …) and no numbered mechanism step left under one, in learning chapters (`--write` removes the label and promotes its `### N.` children to `##`, preserving every heading text so anchors survive) | a chapter files its argument under a generic label |
 | — | `scan_scope.py` | The scope floor itself: one owner for "a checker that finds nothing must not pass" (imported by every corpus gate) | — |
 
 ### The checker → fixer → restamper recipes
@@ -91,6 +92,7 @@ When a gate fails, identify the reported defect and use its matching repair. Met
 | Gate 2 misaligned tables/boxes | `python3 scripts/check_alignment.py --fix` |
 | Gate 6b metadata drift | `python3 scripts/read_time.py --write` after fixing placement |
 | Gate 13/14 study-time / search drift | `python3 scripts/read_time.py --write` → `python3 scripts/gen_master_index.py` → `python3 scripts/check_counts.py --write` (this order; earlier steps change what later steps read) |
+| Gate 28 generic section label | `python3 scripts/check_readability.py --write` (mechanical: promotes the umbrella's own children, touches no prose) |
 | Gate 8/8b/8c hygiene | `python3 scripts/fix_code_whitespace.py --trailing-ws --paste-shift` / `fix_box_code_indent.py --fix` / `fix_box_width.py --fix` then `check_alignment.py --fix` |
 | Gate 6 new external URL | probe-verify in a browser, then `python3 scripts/link_baseline.py --update`, commit the JSON with the doc |
 | Gate 12 missing twin links | `python3 scripts/link_topic_twins.py` (dry-run first) |

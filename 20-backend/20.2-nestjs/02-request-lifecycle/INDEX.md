@@ -1,6 +1,6 @@
 # Request Lifecycle - NestJS
 
-> **Study time:** ≈ 51 min of reading (7 files, ~7 min average).
+> **Study time:** ≈ 50 min of reading (7 files, ~7 min average).
 > **7 files.** Follow an HTTP operation through middleware, guards, interceptor before-work, argument pipes, the handler and reverse result mapping; uncaught failures choose an applicable filter. AsyncLocalStorage associates context with the supported continuation, subject to identity and resource lifetime.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../INDEX.md)
@@ -27,7 +27,7 @@
 | 03 | [Pipes](20.2.2.03-pipes.md) | Validation pipes, transformation pipes, built-in pipes, custom pipes | Essential | Important | 7 min |
 | 04 | [Interceptors](20.2.2.04-interceptors.md) | Request/response transformation, logging, caching, mapping, async interceptors (rxjs pipeline) | Essential | Important | 7 min |
 | 05 | [Exception Filters](20.2.2.05-exception-filters.md) | Built-in exceptions, custom exception filters, catch-all filters, `@Catch()` | Essential | Important | 8 min |
-| 06 | [Request Context & AsyncLocalStorage](20.2.2.06-request-context-and-async-local-storage.md) | ALS mechanics, trace/tenant/user ids, ALS vs request-scoped DI, transaction propagation, re-entering context in workers, isolation tests | Essential | Important | 9 min |
+| 06 | [Request Context & AsyncLocalStorage](20.2.2.06-request-context-and-async-local-storage.md) | ALS mechanics, trace/tenant/user ids, ALS vs request-scoped DI, transaction propagation, re-entering context in workers, isolation tests | Essential | Important | 8 min |
 
 Lifecycle order: Middleware → Guards → Interceptors (before) → Pipes → Controller → Interceptors (after). Exception filters handle exceptions that escape these stages.
 

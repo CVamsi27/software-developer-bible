@@ -37,10 +37,11 @@ exists in study chapters — a `## Definition` that is a bare comparison
 table (four found: hash-tables, auth-fundamentals, and two 20.9 chapters
 written the same week) or a diagram with no definitional prose. Chapters
 (non-bank, non-INDEX files) must carry at least CHAPTER_DEFINITION_FLOOR
-prose words in their Definition section. The H3-title-plus-code genres
-(Best Practices, How It Works internals) are deliberately NOT gated: their
-explanations live in the headings and annotated code — measured and decided
-at rule birth, not silently skipped.
+prose words in their Definition section. The title-plus-code genres
+(Best Practices; the numbered mechanism sections that before 2026-10-21 sat
+under `## How It Works`) are deliberately NOT gated: their explanations live
+in the headings and annotated code — measured and decided at rule birth, not
+silently skipped.
 """
 import os
 import re

@@ -284,7 +284,14 @@ def _unwired_suite_sandbox():
 # said 21/20, and the theme key had a second implementation.
 _REAL_MAP = open(os.path.join(ROOT, "docs", "scripts-map.md"), encoding="utf-8").read()
 _MAP_DROPS_SCRIPT = _REAL_MAP.replace("check_study_live.py", "check_live_probe.py")
-_MAP_STALE_COUNT = _REAL_MAP.replace("30-gate", "21-gate")
+# The map's gate count is restamped by `check_verify_wiring.py --write`
+# whenever a gate joins the suite, so this plant derives today's number
+# instead of hardcoding one. A literal "30-gate" stopped matching when the
+# 2026-10-21 readability gate raised the suite to 31: the plant became a
+# byte-identical copy of clean and the case failed on its clean side while
+# detection was intact — a stale fixture reporting a broken gate.
+_GATE_COUNT_IN_MAP = re.search(r"(\d+)-gate", _REAL_MAP).group(1)
+_MAP_STALE_COUNT = _REAL_MAP.replace(f"{_GATE_COUNT_IN_MAP}-gate", "21-gate")
 _MAP_STALE_ROW = _REAL_MAP + (
     "\n- `check_ghosts.py` — a stale row planted by the sandbox: it names a "
     "script that does not exist.\n")

@@ -72,11 +72,16 @@ def parse_meta(text):
 # 2026-10-01 reading-flow revision: define the concept before deriving it,
 # teach each mechanism once, and keep retrieval practice in a companion file.
 # Noncanonical domain headings may intervene without flattening their outline.
+#
+# 2026-10-21: `How It Works` is retired from the canon by gate 28
+# (check_readability.py). It was optional here, so nothing in this list needs
+# a replacement — the mechanism sections it used to umbrella are the chapter's
+# own topic-specific headings, which this order check deliberately ignores
+# (only the canonical names above are order-ranked).
 CANON_A = [
     'Definition',
     'First Principles',
     'Why It Matters',
-    'How It Works',
     'Code Examples',
     'Real-World Use Cases',
     'Common Mistakes',
@@ -91,7 +96,6 @@ CANON_B = [
     'Definition',
     'First Principles',
     'Why It Matters',
-    'How It Works',
     'Code Examples',
     'Real-World Use Cases',
     'Common Mistakes',
@@ -121,7 +125,6 @@ VARIANTS = {
     'tl;dr': 'TL;DR',
     'first principles': 'First Principles',
     'definition': 'Definition',
-    'how it works': 'How It Works',
     'code examples': 'Code Examples',
     'code examples (javascript)': 'Code Examples',
     'revision questions': 'Revision Questions',
@@ -336,8 +339,9 @@ def check_metadata(text: str):
 # SAME or shallower level: nothing belongs to it, so it renders as a dead entry
 # in the document outline and its apparent children sit beside it instead of
 # under it. The subtlety that made this worth gating carefully: a heading
-# followed by a DEEPER heading is completely normal — it is how every
-# `## How It Works` opens its subsections — so a naive "heading followed by a
+# followed by a DEEPER heading is completely normal — it is how a chapter
+# opens its numbered sub-parts (`## Template` with `### Skeleton`) and how an
+# interview bank groups its questions — so a naive "heading followed by a
 # heading" test fires on 1765 legitimate places. Only same-or-shallower counts.
 HEAD_ANY = re.compile(r'^(#{2,6}) (.+?)\s*$')
 

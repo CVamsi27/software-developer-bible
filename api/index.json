@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "f7319268d2402ddc2f6141506398b5d5effbc4d869a54aa014d89b968744eaba",
+ "corpus_digest": "16c4d45c62122fab4986dc91cca5cb1c35925b45935d492343281125e8c4e00a",
  "totals": {
   "chapters": 678,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5276
+  "read_minutes": 5271
  },
  "chapters": [
   {
@@ -54,7 +54,7 @@
     "concept",
     "guide"
    ],
-   "m": 5
+   "m": 4
   },
   {
    "p": "00-strategy/REVISION.html",
@@ -85,7 +85,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.03-call-stack.html",
@@ -177,7 +177,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "10-frontend/10.1-javascript/02-objects-prototypes-this/REVISION.html",
@@ -2070,7 +2070,7 @@
     "cross-cutting",
     "request-context"
    ],
-   "m": 9
+   "m": 8
   },
   {
    "p": "20-backend/20.2-nestjs/02-request-lifecycle/REVISION.html",
@@ -3179,7 +3179,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.06-transactional-outbox.html",
@@ -5050,7 +5050,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.04-jobs-cronjobs.html",
@@ -5431,7 +5431,7 @@
     "concept",
     "reference"
    ],
-   "m": 7
+   "m": 6
   },
   {
    "p": "40-platform/40.4-observability/01-pillars/REVISION.html",
@@ -5620,7 +5620,7 @@
     "reference",
     "tool"
    ],
-   "m": 6
+   "m": 5
   },
   {
    "p": "40-platform/40.5-build-tools/01-bundlers/REVISION.html",
@@ -6590,7 +6590,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 7
   },
   {
    "p": "50-quality/50.4-production-engineering/50.4.03-chaos-engineering.html",

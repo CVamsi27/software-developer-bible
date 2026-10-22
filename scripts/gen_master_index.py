@@ -63,16 +63,18 @@ PAGE = """<!DOCTYPE html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Search the library — {TITLE}</title>
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <script src="{THEME_SRC}"></script>
-<link rel="stylesheet" href="assets/search-ui.css?v=study-flow-17">
-<link rel="stylesheet" href="assets/reading-ui.css?v=study-flow-17">
-<link rel="stylesheet" href="assets/reference-reader.css?v=reference-14">
+<link rel="stylesheet" href="assets/search-ui.css?v=study-flow-19">
+<link rel="stylesheet" href="assets/reading-ui.css?v=study-flow-19">
+<link rel="stylesheet" href="assets/reference-reader.css?v=reference-16">
 <script src="assets/study-state.js" defer></script>
-<script src="assets/roadmap-return.js?v=study-flow-17" defer></script>
-<script src="assets/reading-ui.js?v=study-flow-17" defer></script>
+<script src="assets/roadmap-return.js?v=study-flow-19" defer></script>
+<script src="assets/reading-ui.js?v=study-flow-19" defer></script>
 <script src="assets/search-ui.js" defer></script>
 </head>
-<body>
+<body class="search-page">
 <header class="site-header" role="banner">
   <div class="wrapper">
     <a class="site-title" rel="author" href="index.html">Developer Bible</a>
@@ -90,11 +92,8 @@ PAGE = """<!DOCTYPE html>
         <a class="page-link" href="ROADMAP.html">Roadmap</a>
       </div>
     </nav>
-    <form class="header-search" action="search.html" role="search">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="7"/><path d="m15 15 6 6"/></svg>
-      <label class="read-aloud-status" for="header-topic">Search topics</label>
-      <input id="header-topic" type="search" name="q" placeholder="Search topics, e.g. closures, APIs, system design…">
-    </form>
+    <!-- This page owns the search field (#q). A second header field would
+         duplicate the same action, so it is intentionally absent here. -->
   </div>
 </header>
 

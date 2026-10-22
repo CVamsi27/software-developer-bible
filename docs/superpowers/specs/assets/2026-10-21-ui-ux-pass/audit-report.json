@@ -1,0 +1,2016 @@
+{
+  "search-390-dark": {
+    "vw": 390,
+    "scrollW": 390,
+    "overflow": 0,
+    "overflows": [],
+    "searchInputs": [
+      {
+        "id": "q",
+        "visible": true,
+        "rect": {
+          "x": 18,
+          "y": 279,
+          "w": 354,
+          "h": 57,
+          "right": 372
+        },
+        "placeholder": "Try closures, APIs, or system design"
+      }
+    ],
+    "dupes": [],
+    "smallTargets": [
+      {
+        "sel": "a",
+        "w": 103,
+        "h": 15
+      }
+    ],
+    "colors": {
+      "bodyBg": "rgb(19, 19, 20)",
+      "bodyColor": "rgb(227, 227, 227)",
+      "headerBg": "rgba(19, 19, 20, 0.94)",
+      "searchInputBg": null,
+      "observation": "n/a"
+    },
+    "lightLeaks": [],
+    "headerKids": [
+      {
+        "cls": "site-title",
+        "x": 18,
+        "y": 10,
+        "w": 234,
+        "h": 44,
+        "right": 252
+      },
+      {
+        "cls": "theme-toggle-btn",
+        "x": 268,
+        "y": 10,
+        "w": 44,
+        "h": 44,
+        "right": 312
+      },
+      {
+        "cls": "site-nav",
+        "x": 328,
+        "y": 10,
+        "w": 44,
+        "h": 44,
+        "right": 372
+      }
+    ],
+    "hasThemeToggle": true,
+    "themeAttr": null,
+    "h1s": [
+      {
+        "text": "Search the library",
+        "visible": true,
+        "rect": {
+          "x": 18,
+          "y": 124,
+          "w": 354,
+          "h": 34,
+          "right": 372
+        }
+      }
+    ],
+    "postTitle": null,
+    "chapterTitle": null,
+    "outlineCount": 0,
+    "consoleErrors": []
+  },
+  "search-390-light": {
+    "vw": 390,
+    "scrollW": 390,
+    "overflow": 0,
+    "overflows": [],
+    "searchInputs": [
+      {
+        "id": "q",
+        "visible": true,
+        "rect": {
+          "x": 18,
+          "y": 279,
+          "w": 354,
+          "h": 57,
+          "right": 372
+        },
+        "placeholder": "Try closures, APIs, or system design"
+      }
+    ],
+    "dupes": [],
+    "smallTargets": [
+      {
+        "sel": "a",
+        "w": 103,
+        "h": 15
+      }
+    ],
+    "colors": {
+      "bodyBg": "rgb(255, 255, 255)",
+      "bodyColor": "rgb(31, 31, 31)",
+      "headerBg": "rgba(255, 255, 255, 0.92)",
+      "searchInputBg": null,
+      "observation": "n/a"
+    },
+    "lightLeaks": [
+      {
+        "sel": "header.site-header",
+        "bg": "rgba(255, 255, 255, 0.92)"
+      },
+      {
+        "sel": "label",
+        "bg": "rgb(241, 243, 244)"
+      },
+      {
+        "sel": "input#q",
+        "bg": "rgb(255, 255, 255)"
+      },
+      {
+        "sel": "button#clear-query",
+        "bg": "rgb(255, 255, 255)"
+      },
+      {
+        "sel": "select#sec",
+        "bg": "rgb(255, 255, 255)"
+      },
+      {
+        "sel": "select#material",
+        "bg": "rgb(255, 255, 255)"
+      },
+      {
+        "sel": "select#cat",
+        "bg": "rgb(255, 255, 255)"
+      },
+      {
+        "sel": "select#tag",
+        "bg": "rgb(255, 255, 255)"
+      }
+    ],
+    "headerKids": [
+      {
+        "cls": "site-title",
+        "x": 18,
+        "y": 10,
+        "w": 234,
+        "h": 44,
+        "right": 252
+      },
+      {
+        "cls": "theme-toggle-btn",
+        "x": 268,
+        "y": 10,
+        "w": 44,
+        "h": 44,
+        "right": 312
+      },
+      {
+        "cls": "site-nav",
+        "x": 328,
+        "y": 10,
+        "w": 44,
+        "h": 44,
+        "right": 372
+      }
+    ],
+    "hasThemeToggle": true,
+    "themeAttr": null,
+    "h1s": [
+      {
+        "text": "Search the library",
+        "visible": true,
+        "rect": {
+          "x": 18,
+          "y": 124,
+          "w": 354,
+          "h": 34,
+          "right": 372
+        }
+      }
+    ],
+    "postTitle": null,
+    "chapterTitle": null,
+    "outlineCount": 0,
+    "consoleErrors": []
+  },
+  "home-390-dark": {
+    "vw": 390,
+    "scrollW": 390,
+    "overflow": 0,
+    "overflows": [
+      {
+        "sel": "table",
+        "w": 403,
+        "left": 19,
+        "right": 422
+      },
+      {
+        "sel": "thead",
+        "w": 402,
+        "left": 20,
+        "right": 422
+      },
+      {
+        "sel": "tr",
+        "w": 402,
+        "left": 20,
+        "right": 422
+      },
+      {
+        "sel": "th",
+        "w": 95,
+        "left": 327,
+        "right": 422
+      },
+      {
+        "sel": "tbody",
+        "w": 402,
+        "left": 20,
+        "right": 422
+      },
+      {
+        "sel": "tr",
+        "w": 402,
+        "left": 20,
+        "right": 422
+      },
+      {
+        "sel": "td",
+        "w": 95,
+        "left": 327,
+        "right": 422
+      },
+      {
+        "sel": "tr",
+        "w": 402,
+        "left": 20,
+        "right": 422
+      },
+      {
+        "sel": "td",
+        "w": 95,
+        "left": 327,
+        "right": 422
+      },
+      {
+        "sel": "table",
+        "w": 490,
+        "left": 19,
+        "right": 509
+      },
+      {
+        "sel": "thead",
+        "w": 489,
+        "left": 20,
+        "right": 509
+      },
+      {
+        "sel": "tr",
+        "w": 489,
+        "left": 20,
+        "right": 509
+      }
+    ],
+    "searchInputs": [
+      {
+        "id": "header-topic",
+        "visible": true,
+        "rect": {
+          "x": 18,
+          "y": 62,
+          "w": 354,
+          "h": 44,
+          "right": 372
+        },
+        "placeholder": "Search topics or keywords"
+      }
+    ],
+    "dupes": [],
+    "smallTargets": [
+      {
+        "sel": "a",
+        "w": 105,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 79,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 56,
+        "h": 20
+      },
+      {
+        "sel": "a",
+        "w": 62,
+        "h": 20
+      },
+      {
+        "sel": "a",
+        "w": 64,
+        "h": 20
+      },
+      {
+        "sel": "a",
+        "w": 130,
+        "h": 20
+      },
+      {
+        "sel": "a",
+        "w": 164,
+        "h": 20
+      },
+      {
+        "sel": "a",
+        "w": 89,
+        "h": 20
+      },
+      {
+        "sel": "a",
+        "w": 100,
+        "h": 20
+      },
+      {
+        "sel": "a",
+        "w": 73,
+        "h": 18
+      },
+      {
+        "sel": "a",
+        "w": 75,
+        "h": 18
+      },
+      {
+        "sel": "a",
+        "w": 75,
+        "h": 18
+      },
+      {
+        "sel": "a",
+        "w": 76,
+        "h": 18
+      },
+      {
+        "sel": "a",
+        "w": 63,
+        "h": 18
+      },
+      {
+        "sel": "a",
+        "w": 73,
+        "h": 18
+      }
+    ],
+    "colors": {
+      "bodyBg": "rgb(19, 19, 20)",
+      "bodyColor": "rgb(227, 227, 227)",
+      "headerBg": "rgba(19, 19, 20, 0.94)",
+      "searchInputBg": "rgb(27, 28, 29)",
+      "observation": "n/a"
+    },
+    "lightLeaks": [],
+    "headerKids": [
+      {
+        "cls": "site-title",
+        "x": 18,
+        "y": 10,
+        "w": 234,
+        "h": 44,
+        "right": 252
+      },
+      {
+        "cls": "theme-toggle-btn",
+        "x": 268,
+        "y": 10,
+        "w": 44,
+        "h": 44,
+        "right": 312
+      },
+      {
+        "cls": "site-nav",
+        "x": 328,
+        "y": 10,
+        "w": 44,
+        "h": 44,
+        "right": 372
+      },
+      {
+        "cls": "header-search",
+        "x": 18,
+        "y": 62,
+        "w": 354,
+        "h": 44,
+        "right": 372
+      }
+    ],
+    "hasThemeToggle": true,
+    "themeAttr": null,
+    "h1s": [
+      {
+        "text": "Senior Full Stack Interview Bible — Index",
+        "visible": true,
+        "rect": {
+          "x": 18,
+          "y": 179,
+          "w": 354,
+          "h": 75,
+          "right": 372
+        }
+      }
+    ],
+    "postTitle": null,
+    "chapterTitle": {
+      "text": "Senior Full Stack Interview Bible — Index",
+      "rect": {
+        "x": 18,
+        "y": 179,
+        "w": 354,
+        "h": 75,
+        "right": 372
+      }
+    },
+    "outlineCount": 0,
+    "consoleErrors": []
+  },
+  "home-390-light": {
+    "vw": 390,
+    "scrollW": 390,
+    "overflow": 0,
+    "overflows": [
+      {
+        "sel": "table",
+        "w": 403,
+        "left": 19,
+        "right": 422
+      },
+      {
+        "sel": "thead",
+        "w": 402,
+        "left": 20,
+        "right": 422
+      },
+      {
+        "sel": "tr",
+        "w": 402,
+        "left": 20,
+        "right": 422
+      },
+      {
+        "sel": "th",
+        "w": 95,
+        "left": 327,
+        "right": 422
+      },
+      {
+        "sel": "tbody",
+        "w": 402,
+        "left": 20,
+        "right": 422
+      },
+      {
+        "sel": "tr",
+        "w": 402,
+        "left": 20,
+        "right": 422
+      },
+      {
+        "sel": "td",
+        "w": 95,
+        "left": 327,
+        "right": 422
+      },
+      {
+        "sel": "tr",
+        "w": 402,
+        "left": 20,
+        "right": 422
+      },
+      {
+        "sel": "td",
+        "w": 95,
+        "left": 327,
+        "right": 422
+      },
+      {
+        "sel": "table",
+        "w": 490,
+        "left": 19,
+        "right": 509
+      },
+      {
+        "sel": "thead",
+        "w": 489,
+        "left": 20,
+        "right": 509
+      },
+      {
+        "sel": "tr",
+        "w": 489,
+        "left": 20,
+        "right": 509
+      }
+    ],
+    "searchInputs": [
+      {
+        "id": "header-topic",
+        "visible": true,
+        "rect": {
+          "x": 18,
+          "y": 62,
+          "w": 354,
+          "h": 44,
+          "right": 372
+        },
+        "placeholder": "Search topics or keywords"
+      }
+    ],
+    "dupes": [],
+    "smallTargets": [
+      {
+        "sel": "a",
+        "w": 105,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 79,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 56,
+        "h": 20
+      },
+      {
+        "sel": "a",
+        "w": 62,
+        "h": 20
+      },
+      {
+        "sel": "a",
+        "w": 64,
+        "h": 20
+      },
+      {
+        "sel": "a",
+        "w": 130,
+        "h": 20
+      },
+      {
+        "sel": "a",
+        "w": 164,
+        "h": 20
+      },
+      {
+        "sel": "a",
+        "w": 89,
+        "h": 20
+      },
+      {
+        "sel": "a",
+        "w": 100,
+        "h": 20
+      },
+      {
+        "sel": "a",
+        "w": 73,
+        "h": 18
+      },
+      {
+        "sel": "a",
+        "w": 75,
+        "h": 18
+      },
+      {
+        "sel": "a",
+        "w": 75,
+        "h": 18
+      },
+      {
+        "sel": "a",
+        "w": 76,
+        "h": 18
+      },
+      {
+        "sel": "a",
+        "w": 63,
+        "h": 18
+      },
+      {
+        "sel": "a",
+        "w": 73,
+        "h": 18
+      }
+    ],
+    "colors": {
+      "bodyBg": "rgb(255, 255, 255)",
+      "bodyColor": "rgb(31, 31, 31)",
+      "headerBg": "rgba(255, 255, 255, 0.92)",
+      "searchInputBg": "rgb(255, 255, 255)",
+      "observation": "n/a"
+    },
+    "lightLeaks": [
+      {
+        "sel": "header.site-header",
+        "bg": "rgba(255, 255, 255, 0.92)"
+      },
+      {
+        "sel": "label",
+        "bg": "rgb(241, 243, 244)"
+      },
+      {
+        "sel": "input#header-topic",
+        "bg": "rgb(255, 255, 255)"
+      },
+      {
+        "sel": "blockquote",
+        "bg": "rgb(250, 251, 252)"
+      },
+      {
+        "sel": "code.language-plaintext",
+        "bg": "rgb(240, 244, 249)"
+      },
+      {
+        "sel": "code.language-plaintext",
+        "bg": "rgb(240, 244, 249)"
+      },
+      {
+        "sel": "code.language-plaintext",
+        "bg": "rgb(240, 244, 249)"
+      },
+      {
+        "sel": "code.language-plaintext",
+        "bg": "rgb(240, 244, 249)"
+      },
+      {
+        "sel": "code.language-plaintext",
+        "bg": "rgb(240, 244, 249)"
+      },
+      {
+        "sel": "code.language-plaintext",
+        "bg": "rgb(240, 244, 249)"
+      },
+      {
+        "sel": "code.language-plaintext",
+        "bg": "rgb(240, 244, 249)"
+      },
+      {
+        "sel": "div.table-scroll-wrapper",
+        "bg": "rgb(255, 255, 255)"
+      }
+    ],
+    "headerKids": [
+      {
+        "cls": "site-title",
+        "x": 18,
+        "y": 10,
+        "w": 234,
+        "h": 44,
+        "right": 252
+      },
+      {
+        "cls": "theme-toggle-btn",
+        "x": 268,
+        "y": 10,
+        "w": 44,
+        "h": 44,
+        "right": 312
+      },
+      {
+        "cls": "site-nav",
+        "x": 328,
+        "y": 10,
+        "w": 44,
+        "h": 44,
+        "right": 372
+      },
+      {
+        "cls": "header-search",
+        "x": 18,
+        "y": 62,
+        "w": 354,
+        "h": 44,
+        "right": 372
+      }
+    ],
+    "hasThemeToggle": true,
+    "themeAttr": null,
+    "h1s": [
+      {
+        "text": "Senior Full Stack Interview Bible — Index",
+        "visible": true,
+        "rect": {
+          "x": 18,
+          "y": 179,
+          "w": 354,
+          "h": 75,
+          "right": 372
+        }
+      }
+    ],
+    "postTitle": null,
+    "chapterTitle": {
+      "text": "Senior Full Stack Interview Bible — Index",
+      "rect": {
+        "x": 18,
+        "y": 179,
+        "w": 354,
+        "h": 75,
+        "right": 372
+      }
+    },
+    "outlineCount": 0,
+    "consoleErrors": []
+  },
+  "chapter-390-dark": {
+    "vw": 390,
+    "scrollW": 390,
+    "overflow": 0,
+    "overflows": [
+      {
+        "sel": "code",
+        "w": 351,
+        "left": 75,
+        "right": 426
+      },
+      {
+        "sel": "span.nx",
+        "w": 45,
+        "left": 354,
+        "right": 399
+      },
+      {
+        "sel": "span.p",
+        "w": 9,
+        "left": 399,
+        "right": 408
+      },
+      {
+        "sel": "span.s2",
+        "w": 9,
+        "left": 408,
+        "right": 417
+      },
+      {
+        "sel": "span.p",
+        "w": 9,
+        "left": 417,
+        "right": 426
+      },
+      {
+        "sel": "span.c1",
+        "w": 117,
+        "left": 309,
+        "right": 426
+      },
+      {
+        "sel": "code",
+        "w": 531,
+        "left": 75,
+        "right": 606
+      },
+      {
+        "sel": "code",
+        "w": 594,
+        "left": 75,
+        "right": 669
+      },
+      {
+        "sel": "span.c1",
+        "w": 504,
+        "left": 111,
+        "right": 615
+      },
+      {
+        "sel": "span.c1",
+        "w": 558,
+        "left": 111,
+        "right": 669
+      },
+      {
+        "sel": "span.c1",
+        "w": 486,
+        "left": 111,
+        "right": 597
+      },
+      {
+        "sel": "span.c1",
+        "w": 342,
+        "left": 264,
+        "right": 606
+      }
+    ],
+    "searchInputs": [
+      {
+        "id": "header-topic",
+        "visible": true,
+        "rect": {
+          "x": 18,
+          "y": 62,
+          "w": 354,
+          "h": 44,
+          "right": 372
+        },
+        "placeholder": "Search topics or keywords"
+      }
+    ],
+    "dupes": [],
+    "smallTargets": [
+      {
+        "sel": "a",
+        "w": 116,
+        "h": 16
+      },
+      {
+        "sel": "a",
+        "w": 92,
+        "h": 16
+      },
+      {
+        "sel": "a",
+        "w": 86,
+        "h": 16
+      },
+      {
+        "sel": "a",
+        "w": 106,
+        "h": 16
+      },
+      {
+        "sel": "a",
+        "w": 134,
+        "h": 16
+      },
+      {
+        "sel": "a",
+        "w": 200,
+        "h": 16
+      },
+      {
+        "sel": "a",
+        "w": 127,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 50,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 80,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 67,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 161,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 70,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 34,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 245,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 252,
+        "h": 21
+      }
+    ],
+    "colors": {
+      "bodyBg": "rgb(19, 19, 20)",
+      "bodyColor": "rgb(227, 227, 227)",
+      "headerBg": "rgba(19, 19, 20, 0.94)",
+      "searchInputBg": "rgb(27, 28, 29)",
+      "observation": "n/a"
+    },
+    "lightLeaks": [],
+    "headerKids": [
+      {
+        "cls": "site-title",
+        "x": 18,
+        "y": 10,
+        "w": 234,
+        "h": 44,
+        "right": 252
+      },
+      {
+        "cls": "theme-toggle-btn",
+        "x": 268,
+        "y": 10,
+        "w": 44,
+        "h": 44,
+        "right": 312
+      },
+      {
+        "cls": "site-nav",
+        "x": 328,
+        "y": 10,
+        "w": 44,
+        "h": 44,
+        "right": 372
+      },
+      {
+        "cls": "header-search",
+        "x": 18,
+        "y": 62,
+        "w": 354,
+        "h": 44,
+        "right": 372
+      }
+    ],
+    "hasThemeToggle": true,
+    "themeAttr": null,
+    "h1s": [
+      {
+        "text": "Execution Context",
+        "visible": true,
+        "rect": {
+          "x": 20,
+          "y": 202,
+          "w": 350,
+          "h": 37,
+          "right": 370
+        }
+      }
+    ],
+    "postTitle": null,
+    "chapterTitle": {
+      "text": "Execution Context",
+      "rect": {
+        "x": 20,
+        "y": 202,
+        "w": 350,
+        "h": 37,
+        "right": 370
+      }
+    },
+    "outlineCount": 1,
+    "consoleErrors": []
+  },
+  "chapter-390-light": {
+    "vw": 390,
+    "scrollW": 390,
+    "overflow": 0,
+    "overflows": [
+      {
+        "sel": "code",
+        "w": 351,
+        "left": 75,
+        "right": 426
+      },
+      {
+        "sel": "span.nx",
+        "w": 45,
+        "left": 354,
+        "right": 399
+      },
+      {
+        "sel": "span.p",
+        "w": 9,
+        "left": 399,
+        "right": 408
+      },
+      {
+        "sel": "span.s2",
+        "w": 9,
+        "left": 408,
+        "right": 417
+      },
+      {
+        "sel": "span.p",
+        "w": 9,
+        "left": 417,
+        "right": 426
+      },
+      {
+        "sel": "span.c1",
+        "w": 117,
+        "left": 309,
+        "right": 426
+      },
+      {
+        "sel": "code",
+        "w": 531,
+        "left": 75,
+        "right": 606
+      },
+      {
+        "sel": "code",
+        "w": 594,
+        "left": 75,
+        "right": 669
+      },
+      {
+        "sel": "span.c1",
+        "w": 504,
+        "left": 111,
+        "right": 615
+      },
+      {
+        "sel": "span.c1",
+        "w": 558,
+        "left": 111,
+        "right": 669
+      },
+      {
+        "sel": "span.c1",
+        "w": 486,
+        "left": 111,
+        "right": 597
+      },
+      {
+        "sel": "span.c1",
+        "w": 342,
+        "left": 264,
+        "right": 606
+      }
+    ],
+    "searchInputs": [
+      {
+        "id": "header-topic",
+        "visible": true,
+        "rect": {
+          "x": 18,
+          "y": 62,
+          "w": 354,
+          "h": 44,
+          "right": 372
+        },
+        "placeholder": "Search topics or keywords"
+      }
+    ],
+    "dupes": [],
+    "smallTargets": [
+      {
+        "sel": "a",
+        "w": 116,
+        "h": 16
+      },
+      {
+        "sel": "a",
+        "w": 92,
+        "h": 16
+      },
+      {
+        "sel": "a",
+        "w": 86,
+        "h": 16
+      },
+      {
+        "sel": "a",
+        "w": 106,
+        "h": 16
+      },
+      {
+        "sel": "a",
+        "w": 134,
+        "h": 16
+      },
+      {
+        "sel": "a",
+        "w": 200,
+        "h": 16
+      },
+      {
+        "sel": "a",
+        "w": 127,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 50,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 80,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 67,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 161,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 70,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 34,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 245,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 252,
+        "h": 21
+      }
+    ],
+    "colors": {
+      "bodyBg": "rgb(255, 255, 255)",
+      "bodyColor": "rgb(31, 31, 31)",
+      "headerBg": "rgba(255, 255, 255, 0.92)",
+      "searchInputBg": "rgb(255, 255, 255)",
+      "observation": "n/a"
+    },
+    "lightLeaks": [
+      {
+        "sel": "header.site-header",
+        "bg": "rgba(255, 255, 255, 0.92)"
+      },
+      {
+        "sel": "label",
+        "bg": "rgb(241, 243, 244)"
+      },
+      {
+        "sel": "input#header-topic",
+        "bg": "rgb(255, 255, 255)"
+      },
+      {
+        "sel": "button",
+        "bg": "rgb(255, 255, 255)"
+      },
+      {
+        "sel": "select",
+        "bg": "rgb(255, 255, 255)"
+      },
+      {
+        "sel": "select",
+        "bg": "rgb(255, 255, 255)"
+      },
+      {
+        "sel": "p",
+        "bg": "rgb(255, 255, 255)"
+      },
+      {
+        "sel": "details.chapter-outline",
+        "bg": "rgb(255, 255, 255)"
+      },
+      {
+        "sel": "a",
+        "bg": "rgb(238, 240, 242)"
+      },
+      {
+        "sel": "div.language-javascript",
+        "bg": "rgb(240, 244, 249)"
+      },
+      {
+        "sel": "div.highlight",
+        "bg": "rgb(240, 244, 249)"
+      },
+      {
+        "sel": "blockquote",
+        "bg": "rgb(250, 251, 252)"
+      }
+    ],
+    "headerKids": [
+      {
+        "cls": "site-title",
+        "x": 18,
+        "y": 10,
+        "w": 234,
+        "h": 44,
+        "right": 252
+      },
+      {
+        "cls": "theme-toggle-btn",
+        "x": 268,
+        "y": 10,
+        "w": 44,
+        "h": 44,
+        "right": 312
+      },
+      {
+        "cls": "site-nav",
+        "x": 328,
+        "y": 10,
+        "w": 44,
+        "h": 44,
+        "right": 372
+      },
+      {
+        "cls": "header-search",
+        "x": 18,
+        "y": 62,
+        "w": 354,
+        "h": 44,
+        "right": 372
+      }
+    ],
+    "hasThemeToggle": true,
+    "themeAttr": null,
+    "h1s": [
+      {
+        "text": "Execution Context",
+        "visible": true,
+        "rect": {
+          "x": 20,
+          "y": 202,
+          "w": 350,
+          "h": 37,
+          "right": 370
+        }
+      }
+    ],
+    "postTitle": null,
+    "chapterTitle": {
+      "text": "Execution Context",
+      "rect": {
+        "x": 20,
+        "y": 202,
+        "w": 350,
+        "h": 37,
+        "right": 370
+      }
+    },
+    "outlineCount": 1,
+    "consoleErrors": []
+  },
+  "search-320-dark": {
+    "vw": 320,
+    "scrollW": 320,
+    "overflow": 0,
+    "overflows": [],
+    "searchInputs": [
+      {
+        "id": "q",
+        "visible": true,
+        "rect": {
+          "x": 18,
+          "y": 279,
+          "w": 284,
+          "h": 57,
+          "right": 302
+        },
+        "placeholder": "Try closures, APIs, or system design"
+      }
+    ],
+    "dupes": [],
+    "smallTargets": [
+      {
+        "sel": "a",
+        "w": 103,
+        "h": 15
+      }
+    ],
+    "colors": {
+      "bodyBg": "rgb(19, 19, 20)",
+      "bodyColor": "rgb(227, 227, 227)",
+      "headerBg": "rgba(19, 19, 20, 0.94)",
+      "searchInputBg": null,
+      "observation": "n/a"
+    },
+    "lightLeaks": [],
+    "headerKids": [
+      {
+        "cls": "site-title",
+        "x": 16,
+        "y": 10,
+        "w": 168,
+        "h": 44,
+        "right": 184
+      },
+      {
+        "cls": "theme-toggle-btn",
+        "x": 200,
+        "y": 10,
+        "w": 44,
+        "h": 44,
+        "right": 244
+      },
+      {
+        "cls": "site-nav",
+        "x": 260,
+        "y": 10,
+        "w": 44,
+        "h": 44,
+        "right": 304
+      }
+    ],
+    "hasThemeToggle": true,
+    "themeAttr": null,
+    "h1s": [
+      {
+        "text": "Search the library",
+        "visible": true,
+        "rect": {
+          "x": 18,
+          "y": 124,
+          "w": 284,
+          "h": 34,
+          "right": 302
+        }
+      }
+    ],
+    "postTitle": null,
+    "chapterTitle": null,
+    "outlineCount": 0,
+    "consoleErrors": []
+  },
+  "chapter-320-light": {
+    "vw": 320,
+    "scrollW": 320,
+    "overflow": 0,
+    "overflows": [
+      {
+        "sel": "code",
+        "w": 351,
+        "left": 71,
+        "right": 422
+      },
+      {
+        "sel": "span.s2",
+        "w": 18,
+        "left": 314,
+        "right": 332
+      },
+      {
+        "sel": "span.p",
+        "w": 18,
+        "left": 332,
+        "right": 350
+      },
+      {
+        "sel": "span.nx",
+        "w": 45,
+        "left": 350,
+        "right": 395
+      },
+      {
+        "sel": "span.p",
+        "w": 9,
+        "left": 395,
+        "right": 404
+      },
+      {
+        "sel": "span.s2",
+        "w": 9,
+        "left": 404,
+        "right": 413
+      },
+      {
+        "sel": "span.p",
+        "w": 9,
+        "left": 413,
+        "right": 422
+      },
+      {
+        "sel": "span.c1",
+        "w": 117,
+        "left": 305,
+        "right": 422
+      },
+      {
+        "sel": "code",
+        "w": 531,
+        "left": 71,
+        "right": 602
+      },
+      {
+        "sel": "code",
+        "w": 594,
+        "left": 71,
+        "right": 665
+      },
+      {
+        "sel": "span.c1",
+        "w": 504,
+        "left": 107,
+        "right": 611
+      },
+      {
+        "sel": "span.c1",
+        "w": 558,
+        "left": 107,
+        "right": 665
+      }
+    ],
+    "searchInputs": [
+      {
+        "id": "header-topic",
+        "visible": true,
+        "rect": {
+          "x": 16,
+          "y": 62,
+          "w": 288,
+          "h": 44,
+          "right": 304
+        },
+        "placeholder": "Search topics or keywords"
+      }
+    ],
+    "dupes": [],
+    "smallTargets": [
+      {
+        "sel": "a",
+        "w": 116,
+        "h": 16
+      },
+      {
+        "sel": "a",
+        "w": 92,
+        "h": 16
+      },
+      {
+        "sel": "a",
+        "w": 86,
+        "h": 16
+      },
+      {
+        "sel": "a",
+        "w": 106,
+        "h": 16
+      },
+      {
+        "sel": "a",
+        "w": 134,
+        "h": 16
+      },
+      {
+        "sel": "a",
+        "w": 200,
+        "h": 16
+      },
+      {
+        "sel": "a",
+        "w": 127,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 50,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 80,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 67,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 161,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 70,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 34,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 245,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 252,
+        "h": 21
+      }
+    ],
+    "colors": {
+      "bodyBg": "rgb(255, 255, 255)",
+      "bodyColor": "rgb(31, 31, 31)",
+      "headerBg": "rgba(255, 255, 255, 0.92)",
+      "searchInputBg": "rgb(255, 255, 255)",
+      "observation": "n/a"
+    },
+    "lightLeaks": [
+      {
+        "sel": "header.site-header",
+        "bg": "rgba(255, 255, 255, 0.92)"
+      },
+      {
+        "sel": "label",
+        "bg": "rgb(241, 243, 244)"
+      },
+      {
+        "sel": "input#header-topic",
+        "bg": "rgb(255, 255, 255)"
+      },
+      {
+        "sel": "button",
+        "bg": "rgb(255, 255, 255)"
+      },
+      {
+        "sel": "select",
+        "bg": "rgb(255, 255, 255)"
+      },
+      {
+        "sel": "select",
+        "bg": "rgb(255, 255, 255)"
+      },
+      {
+        "sel": "p",
+        "bg": "rgb(255, 255, 255)"
+      },
+      {
+        "sel": "details.chapter-outline",
+        "bg": "rgb(255, 255, 255)"
+      },
+      {
+        "sel": "a",
+        "bg": "rgb(238, 240, 242)"
+      },
+      {
+        "sel": "div.language-javascript",
+        "bg": "rgb(240, 244, 249)"
+      },
+      {
+        "sel": "div.highlight",
+        "bg": "rgb(240, 244, 249)"
+      },
+      {
+        "sel": "blockquote",
+        "bg": "rgb(250, 251, 252)"
+      }
+    ],
+    "headerKids": [
+      {
+        "cls": "site-title",
+        "x": 16,
+        "y": 10,
+        "w": 168,
+        "h": 44,
+        "right": 184
+      },
+      {
+        "cls": "theme-toggle-btn",
+        "x": 200,
+        "y": 10,
+        "w": 44,
+        "h": 44,
+        "right": 244
+      },
+      {
+        "cls": "site-nav",
+        "x": 260,
+        "y": 10,
+        "w": 44,
+        "h": 44,
+        "right": 304
+      },
+      {
+        "cls": "header-search",
+        "x": 16,
+        "y": 62,
+        "w": 288,
+        "h": 44,
+        "right": 304
+      }
+    ],
+    "hasThemeToggle": true,
+    "themeAttr": null,
+    "h1s": [
+      {
+        "text": "Execution Context",
+        "visible": true,
+        "rect": {
+          "x": 16,
+          "y": 202,
+          "w": 288,
+          "h": 37,
+          "right": 304
+        }
+      }
+    ],
+    "postTitle": null,
+    "chapterTitle": {
+      "text": "Execution Context",
+      "rect": {
+        "x": 16,
+        "y": 202,
+        "w": 288,
+        "h": 37,
+        "right": 304
+      }
+    },
+    "outlineCount": 1,
+    "consoleErrors": []
+  },
+  "search-1440-dark": {
+    "vw": 1440,
+    "scrollW": 1440,
+    "overflow": 0,
+    "overflows": [],
+    "searchInputs": [
+      {
+        "id": "q",
+        "visible": true,
+        "rect": {
+          "x": 135,
+          "y": 283,
+          "w": 1059,
+          "h": 57,
+          "right": 1194
+        },
+        "placeholder": "Try closures, APIs, or system design"
+      }
+    ],
+    "dupes": [],
+    "smallTargets": [
+      {
+        "sel": "a.page-link",
+        "w": 48,
+        "h": 16
+      },
+      {
+        "sel": "a.page-link",
+        "w": 68,
+        "h": 16
+      },
+      {
+        "sel": "a",
+        "w": 103,
+        "h": 15
+      }
+    ],
+    "colors": {
+      "bodyBg": "rgb(19, 19, 20)",
+      "bodyColor": "rgb(227, 227, 227)",
+      "headerBg": "rgba(19, 19, 20, 0.94)",
+      "searchInputBg": null,
+      "observation": "n/a"
+    },
+    "lightLeaks": [],
+    "headerKids": [
+      {
+        "cls": "site-title",
+        "x": 135,
+        "y": 8,
+        "w": 150,
+        "h": 44,
+        "right": 284
+      },
+      {
+        "cls": "theme-toggle-btn",
+        "x": 1272,
+        "y": 8,
+        "w": 38,
+        "h": 44,
+        "right": 1310
+      },
+      {
+        "cls": "site-nav",
+        "x": 332,
+        "y": 22,
+        "w": 161,
+        "h": 16,
+        "right": 493
+      }
+    ],
+    "hasThemeToggle": true,
+    "themeAttr": null,
+    "h1s": [
+      {
+        "text": "Search the library",
+        "visible": true,
+        "rect": {
+          "x": 135,
+          "y": 136,
+          "w": 1171,
+          "h": 48,
+          "right": 1306
+        }
+      }
+    ],
+    "postTitle": null,
+    "chapterTitle": null,
+    "outlineCount": 0,
+    "consoleErrors": []
+  },
+  "search-1440-light": {
+    "vw": 1440,
+    "scrollW": 1440,
+    "overflow": 0,
+    "overflows": [],
+    "searchInputs": [
+      {
+        "id": "q",
+        "visible": true,
+        "rect": {
+          "x": 135,
+          "y": 283,
+          "w": 1059,
+          "h": 57,
+          "right": 1194
+        },
+        "placeholder": "Try closures, APIs, or system design"
+      }
+    ],
+    "dupes": [],
+    "smallTargets": [
+      {
+        "sel": "a.page-link",
+        "w": 48,
+        "h": 16
+      },
+      {
+        "sel": "a.page-link",
+        "w": 68,
+        "h": 16
+      },
+      {
+        "sel": "a",
+        "w": 103,
+        "h": 15
+      }
+    ],
+    "colors": {
+      "bodyBg": "rgb(255, 255, 255)",
+      "bodyColor": "rgb(31, 31, 31)",
+      "headerBg": "rgba(255, 255, 255, 0.92)",
+      "searchInputBg": null,
+      "observation": "n/a"
+    },
+    "lightLeaks": [
+      {
+        "sel": "header.site-header",
+        "bg": "rgba(255, 255, 255, 0.92)"
+      },
+      {
+        "sel": "input#q",
+        "bg": "rgb(255, 255, 255)"
+      },
+      {
+        "sel": "button#clear-query",
+        "bg": "rgb(255, 255, 255)"
+      },
+      {
+        "sel": "select#sec",
+        "bg": "rgb(255, 255, 255)"
+      },
+      {
+        "sel": "select#material",
+        "bg": "rgb(255, 255, 255)"
+      },
+      {
+        "sel": "select#cat",
+        "bg": "rgb(255, 255, 255)"
+      },
+      {
+        "sel": "select#tag",
+        "bg": "rgb(255, 255, 255)"
+      }
+    ],
+    "headerKids": [
+      {
+        "cls": "site-title",
+        "x": 135,
+        "y": 8,
+        "w": 150,
+        "h": 44,
+        "right": 284
+      },
+      {
+        "cls": "theme-toggle-btn",
+        "x": 1272,
+        "y": 8,
+        "w": 38,
+        "h": 44,
+        "right": 1310
+      },
+      {
+        "cls": "site-nav",
+        "x": 332,
+        "y": 22,
+        "w": 161,
+        "h": 16,
+        "right": 493
+      }
+    ],
+    "hasThemeToggle": true,
+    "themeAttr": null,
+    "h1s": [
+      {
+        "text": "Search the library",
+        "visible": true,
+        "rect": {
+          "x": 135,
+          "y": 136,
+          "w": 1171,
+          "h": 48,
+          "right": 1306
+        }
+      }
+    ],
+    "postTitle": null,
+    "chapterTitle": null,
+    "outlineCount": 0,
+    "consoleErrors": []
+  },
+  "index-1440-dark": {
+    "vw": 1440,
+    "scrollW": 1440,
+    "overflow": 0,
+    "overflows": [
+      {
+        "sel": "code",
+        "w": 2133,
+        "left": 172,
+        "right": 2305
+      }
+    ],
+    "searchInputs": [
+      {
+        "id": "header-topic",
+        "visible": true,
+        "rect": {
+          "x": 575,
+          "y": 10,
+          "w": 648,
+          "h": 40,
+          "right": 1224
+        },
+        "placeholder": "Search topics or keywords"
+      }
+    ],
+    "dupes": [],
+    "smallTargets": [
+      {
+        "sel": "a.page-link",
+        "w": 48,
+        "h": 24
+      },
+      {
+        "sel": "a.page-link",
+        "w": 68,
+        "h": 24
+      },
+      {
+        "sel": "button.theme-toggle-btn",
+        "w": 38,
+        "h": 38
+      },
+      {
+        "sel": "a",
+        "w": 105,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 79,
+        "h": 21
+      },
+      {
+        "sel": "a",
+        "w": 56,
+        "h": 20
+      },
+      {
+        "sel": "a",
+        "w": 62,
+        "h": 20
+      },
+      {
+        "sel": "a",
+        "w": 64,
+        "h": 20
+      },
+      {
+        "sel": "a",
+        "w": 130,
+        "h": 20
+      },
+      {
+        "sel": "a",
+        "w": 164,
+        "h": 20
+      },
+      {
+        "sel": "a.heading-anchor",
+        "w": 18,
+        "h": 27
+      },
+      {
+        "sel": "a",
+        "w": 89,
+        "h": 20
+      },
+      {
+        "sel": "a",
+        "w": 168,
+        "h": 18
+      },
+      {
+        "sel": "a",
+        "w": 167,
+        "h": 18
+      },
+      {
+        "sel": "a",
+        "w": 100,
+        "h": 20
+      }
+    ],
+    "colors": {
+      "bodyBg": "rgb(19, 19, 20)",
+      "bodyColor": "rgb(227, 227, 227)",
+      "headerBg": "rgba(19, 19, 20, 0.94)",
+      "searchInputBg": "rgb(27, 28, 29)",
+      "observation": "n/a"
+    },
+    "lightLeaks": [],
+    "headerKids": [
+      {
+        "cls": "site-title",
+        "x": 135,
+        "y": 8,
+        "w": 150,
+        "h": 44,
+        "right": 284
+      },
+      {
+        "cls": "site-nav",
+        "x": 332,
+        "y": 18,
+        "w": 161,
+        "h": 24,
+        "right": 493
+      },
+      {
+        "cls": "header-search",
+        "x": 575,
+        "y": 10,
+        "w": 648,
+        "h": 40,
+        "right": 1224
+      },
+      {
+        "cls": "theme-toggle-btn",
+        "x": 1272,
+        "y": 11,
+        "w": 38,
+        "h": 38,
+        "right": 1310
+      }
+    ],
+    "hasThemeToggle": true,
+    "themeAttr": null,
+    "h1s": [
+      {
+        "text": "Senior Full Stack Interview Bible — Index",
+        "visible": true,
+        "rect": {
+          "x": 150,
+          "y": 119,
+          "w": 1140,
+          "h": 47,
+          "right": 1290
+        }
+      }
+    ],
+    "postTitle": null,
+    "chapterTitle": {
+      "text": "Senior Full Stack Interview Bible — Index",
+      "rect": {
+        "x": 150,
+        "y": 119,
+        "w": 1140,
+        "h": 47,
+        "right": 1290
+      }
+    },
+    "outlineCount": 0,
+    "consoleErrors": []
+  }
+}

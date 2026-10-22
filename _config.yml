@@ -17,7 +17,7 @@ baseurl: ""
 # Do not restate the path in either consumer.
 theme_asset: /assets/theme.js
 # Bump when theme behavior changes so cached clients receive the same header.
-theme_version: reader-final-3
+theme_version: reader-final-4
 theme: minima
 header_pages:
   - INDEX.md

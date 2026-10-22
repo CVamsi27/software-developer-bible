@@ -72,6 +72,8 @@ const CALLBACK_HTML = `<!doctype html>
           --border: #2b2c2e;
           --card: #1b1c1d;
           --link: #8ab4f8;
+          --action: #8ab4f8;
+          --action-text: #202124;
           --error: #f28b82;
           --shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
         }
@@ -85,6 +87,8 @@ const CALLBACK_HTML = `<!doctype html>
         --border: #2b2c2e;
         --card: #1b1c1d;
         --link: #8ab4f8;
+        --action: #8ab4f8;
+        --action-text: #202124;
         --error: #f28b82;
         --shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
       }
@@ -92,6 +96,7 @@ const CALLBACK_HTML = `<!doctype html>
       * { box-sizing: border-box; }
       body { min-height: 100svh; margin: 0; display: grid; place-items: center; padding: 24px; background: var(--bg); }
       main {
+        position: relative;
         width: min(100%, 480px);
         border: 1px solid var(--border);
         border-radius: 16px;
@@ -99,6 +104,15 @@ const CALLBACK_HTML = `<!doctype html>
         background: var(--card);
         box-shadow: var(--shadow);
       }
+      .theme-slot { position: absolute; top: 10px; right: 10px; }
+      .theme-toggle-btn {
+        display: inline-flex; align-items: center; justify-content: center;
+        width: 44px; height: 44px; padding: 0; border: 0; border-radius: 999px;
+        background: transparent; color: var(--muted); cursor: pointer;
+      }
+      .theme-toggle-btn:hover { background: var(--border); color: var(--heading); }
+      .theme-toggle-btn:focus-visible { outline: 3px solid var(--link); outline-offset: 3px; }
+      .theme-toggle-btn svg { display: block; width: 18px; height: 18px; }
       h1 { margin: 0 0 12px; font-size: clamp(28px, 7vw, 38px); letter-spacing: -.02em; line-height: 1.1; color: var(--heading); }
       p { color: var(--muted); line-height: 1.6; }
       .error { color: var(--error); }
@@ -111,6 +125,7 @@ const CALLBACK_HTML = `<!doctype html>
   </head>
   <body>
     <main>
+      <div class="theme-slot" data-theme-toggle-slot></div>
       <h1>Checking access…</h1>
       <p id="status">Securing your private study session.</p>
       <div id="actions" class="actions" style="display:none;">

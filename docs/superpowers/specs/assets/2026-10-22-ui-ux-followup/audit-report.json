@@ -1,0 +1,78 @@
+{
+  "date": "2026-10-22",
+  "build": "Jekyll production build, 949 HTML routes",
+  "scope": [
+    "one search entry",
+    "dark surfaces and interaction states",
+    "phone and tablet layout, overflow and 44 px targets"
+  ],
+  "full_dark_scan": {
+    "routes": 949,
+    "viewports": [320, 390, 1440],
+    "checks": [
+      "document scrollWidth does not exceed clientWidth",
+      "at most one visible search input",
+      "at most one visible role=search form",
+      "no duplicate element ids",
+      "no visible light background surface at least 700 square pixels",
+      "html data-theme is dark",
+      "HTTP 200",
+      "no console or page errors"
+    ],
+    "findings": [
+      {
+        "route": "auth/callback-preview.html",
+        "visual_failure": false,
+        "reason": "expected console error when the static preview has no access token or auth code"
+      }
+    ],
+    "result": "clean"
+  },
+  "state_checks": {
+    "themes": ["dark", "light"],
+    "routes": [
+      "home preview",
+      "index",
+      "roadmap",
+      "chapter",
+      "revision with answers open",
+      "search results",
+      "search filters open",
+      "phone menu open",
+      "sign-in",
+      "callback preview"
+    ],
+    "viewports": [320, 390, 600, 701, 768, 1440],
+    "result": "one visible search field, no horizontal overflow, one h1, dark canvas"
+  },
+  "tap_target_scan_390": {
+    "fixed": [
+      {"selector": ".copy-code-btn", "before": "34 x 34", "after": "44 x 44 at 768 px and below"},
+      {"selector": ".chapter-nav-footer a", "before": "40 px tall", "after": "44 px"},
+      {"selector": ".back-to-top", "before": "42 x 42", "after": "44 x 44"},
+      {"selector": ".site-header .site-nav .page-link", "before": "16-24 px tall at 701-768 px", "after": "44 px at every width"},
+      {"selector": ".theme-toggle-btn", "before": "38-40 px at tablet and desktop widths", "after": "44 x 44 at every width"},
+      {"selector": "#header-topic", "before": "40 px tall at 701 px and above", "after": "44 px"},
+      {"selector": "short breadcrumb link (IaC)", "before": "21 x 44", "after": "44 x 44 at 700 px and below"}
+    ],
+    "remaining_non_controls": [
+      {"selector": "label[for=header-topic]", "reason": "visually hidden screen-reader label, not a visible control"},
+      {"selector": "input.task-list-item-checkbox", "reason": "static task-list markers in archived plan documents, not enabled controls"},
+      {"selector": "search page Topic or keyword label", "reason": "text label above the input, not a button or link"}
+    ]
+  },
+  "navigation": {
+    "duplicate_continuation_removed": true,
+    "next_links_per_chapter": 1,
+    "generated_review_link": "removed; the authored See Also revision link and chapter footer remain",
+    "copy_hover_and_copied_states": "restored on reader pages"
+  },
+  "tablet_header": {
+    "701-768 px nav container": "transparent; the boxed treatment is limited to the collapsed phone menu"
+  },
+  "tests": {
+    "unit": "22/22 pass",
+    "browser": "PASS: navigation titles, responsive layout, separate mobile header targets, opened menus, table/hover and homepage contrast, and copied text",
+    "contrast_sample": "no text or border failures on chapter, revision, index, roadmap, search, home preview, sign-in or callback"
+  }
+}

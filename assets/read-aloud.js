@@ -64,7 +64,7 @@
     return reader;
   }
   function extractChapter(content) {
-    var excluded = 'pre, script, style, nav, button, img, svg, [hidden], [aria-hidden="true"], .read-aloud, .chapter-outline, .heading-anchor, .chapter-nav-footer,.roadmap-return,.reader-breadcrumb,.reader-meta,.reading-width,.study-continuation,.revision-controls,.code-line-numbers,.copy-feedback,details:not([open])';
+    var excluded = 'pre, script, style, nav, button, img, svg, [hidden], [aria-hidden="true"], .read-aloud, .chapter-outline, .heading-anchor, .chapter-nav-footer,.roadmap-return,.reader-breadcrumb,.reader-meta,.reading-width,.revision-controls,.code-line-numbers,.copy-feedback,details:not([open])';
     var NodeFilter = content.ownerDocument.defaultView.NodeFilter;
     var walker = content.ownerDocument.createTreeWalker(content, NodeFilter.SHOW_TEXT, {
       acceptNode: function (node) {

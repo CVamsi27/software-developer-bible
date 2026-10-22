@@ -7,7 +7,7 @@
 </script>
 <script src="{{ site.theme_asset | relative_url }}?v={{ site.theme_version }}"></script>
 
-<link rel="stylesheet" href="{{ '/assets/read-aloud.css' | relative_url }}?v=study-flow-17">
+<link rel="stylesheet" href="{{ '/assets/read-aloud.css' | relative_url }}?v=study-flow-19">
 
 {% raw %}
 <style>
@@ -30,9 +30,11 @@
     --theme-heading: #1f1f1f;
     --theme-border: #dadce0;
     --theme-border-subtle: #eef0f2;
-    --theme-link: #1a73e8;
+    /* Blue 700 rather than Blue 600: table stripes and hover tint reduce the
+       surface brightness, so the lighter blue fell to 4.4:1 on them. */
+    --theme-link: #1967d2;
     --theme-link-hover: #174ea6;
-    --theme-accent: #1a73e8;
+    --theme-accent: #1967d2;
     --theme-success: #188038;
     
     --header-bg: rgba(255, 255, 255, 0.92);
@@ -181,6 +183,11 @@
   /* --------------------------------------------------------------------------
      Layout & Container Width
      -------------------------------------------------------------------------- */
+  /* The canvas owns the overscroll gutter as well as the document surface. */
+  html {
+    background-color: var(--theme-bg);
+  }
+
   body {
     font-family: var(--font-sans);
     color: var(--theme-text);
@@ -201,6 +208,14 @@
     .wrapper {
       padding-right: 18px;
       padding-left: 18px;
+    }
+    /* The copy action sits over scrolling code on touch screens, so keep its
+       hit area at the same 44 px minimum as the header controls. */
+    .copy-code-btn {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      min-height: 44px;
     }
   }
 
@@ -590,6 +605,8 @@
   .chapter-nav-footer a {
     display: inline-flex;
     align-items: center;
+    min-height: 44px;
+    box-sizing: border-box;
     gap: 6px;
     padding: 8px 14px;
     border-radius: 6px;
@@ -613,8 +630,8 @@
     position: fixed;
     bottom: 24px;
     right: 24px;
-    width: 42px;
-    height: 42px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     background: var(--nav-pill-bg);
     color: var(--theme-text);
@@ -1043,13 +1060,13 @@
 </script>
 {% endraw %}
 
-<link rel="stylesheet" href="{{ '/assets/reading-ui.css' | relative_url }}?v=study-flow-17">
-<script src="{{ '/assets/roadmap-return.js' | relative_url }}?v=study-flow-17" defer></script>
+<link rel="stylesheet" href="{{ '/assets/reading-ui.css' | relative_url }}?v=study-flow-19">
+<script src="{{ '/assets/roadmap-return.js' | relative_url }}?v=study-flow-19" defer></script>
 <script src="{{ '/assets/study-catalog.js' | relative_url }}" defer></script>
-<script src="{{ '/assets/study-state.js' | relative_url }}?v=study-flow-17" defer></script>
-<script src="{{ '/assets/read-aloud.js' | relative_url }}?v=study-flow-17" defer></script>
-<script src="{{ '/assets/reading-ui.js' | relative_url }}?v=study-flow-17" defer></script>
-<script src="{{ '/assets/revision-ui.js' | relative_url }}?v=study-flow-17" defer></script>
-<script src="{{ '/assets/study-resume.js' | relative_url }}?v=study-flow-17" defer></script>
+<script src="{{ '/assets/study-state.js' | relative_url }}?v=study-flow-19" defer></script>
+<script src="{{ '/assets/read-aloud.js' | relative_url }}?v=study-flow-19" defer></script>
+<script src="{{ '/assets/reading-ui.js' | relative_url }}?v=study-flow-19" defer></script>
+<script src="{{ '/assets/revision-ui.js' | relative_url }}?v=study-flow-19" defer></script>
+<script src="{{ '/assets/study-resume.js' | relative_url }}?v=study-flow-19" defer></script>
 
-<link rel="stylesheet" href="{{ '/assets/reference-reader.css' | relative_url }}?v=reference-14">
+<link rel="stylesheet" href="{{ '/assets/reference-reader.css' | relative_url }}?v=reference-16">

@@ -21,8 +21,9 @@
 })();
 
 document.addEventListener("DOMContentLoaded", function () {
-  // The search page ships a #theme-btn in its markup; Jekyll pages have no
-  // button, so one is created and placed beside the site navigation.
+  // Pages have no theme button in their markup, so one is created. Standalone
+  // surfaces (the sign-in gate) expose a [data-theme-toggle-slot]; site pages
+  // place the control beside the brand or the header search.
   var themeBtn = document.getElementById("theme-btn");
   var created = false;
   if (!themeBtn) {
@@ -81,15 +82,23 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   if (!created) return;
+  var slot = document.querySelector("[data-theme-toggle-slot]");
+  if (slot) {
+    slot.appendChild(themeBtn);
+    return;
+  }
   var siteNav = document.querySelector(".site-nav");
   var headerWrapper = document.querySelector(".site-header .wrapper");
+  var brand = headerWrapper && headerWrapper.querySelector(".site-title");
   var headerSearch = headerWrapper && headerWrapper.querySelector(".header-search");
   var phoneHeader = window.matchMedia && window.matchMedia("(max-width: 700px)");
   var placeThemeButton = function () {
     var hadFocus = document.activeElement === themeBtn;
-    var brand = headerWrapper && headerWrapper.querySelector(".site-title");
-    if (headerSearch) {
-      var sibling = phoneHeader && phoneHeader.matches && brand ? brand : headerSearch;
+    // Phones keep brand + theme + menu; wider pages keep the field then theme.
+    // The search page has no header field, so the brand owns its DOM position
+    // and CSS order puts the control at the row's end.
+    var sibling = headerSearch && !(phoneHeader && phoneHeader.matches) ? headerSearch : brand;
+    if (sibling && sibling.parentNode) {
       sibling.insertAdjacentElement("afterend", themeBtn);
     } else if (siteNav && siteNav.parentNode) {
       siteNav.insertAdjacentElement("afterend", themeBtn);

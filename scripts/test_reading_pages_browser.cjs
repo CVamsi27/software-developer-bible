@@ -47,6 +47,12 @@ async function textSurfaces(locator) {
       if (route !== 'search.html') await page.locator('.back-to-top').waitFor({state: 'attached'});
       const titles = await page.locator('h1:visible').allTextContents();
       check(route + ' title', () => assert.equal(titles.length, 1, 'one visible page title'));
+      if (route === 'search.html') {
+        // The page form is the only search entry; a header copy was the
+        // duplicate this route used to expose.
+        assert.equal(await page.locator('input[type="search"]:visible').count(), 1, 'one visible search field');
+        assert.equal(await page.locator('.header-search').count(), 0, 'no duplicate header search');
+      }
       if (route === scopeIndex) {
         check(route + ' authored title', () => assert.equal(titles[0].trim(), 'Execution & Scope — JavaScript'));
       }
@@ -56,10 +62,26 @@ async function textSurfaces(locator) {
       for (const theme of ['light', 'dark']) {
         await page.evaluate(theme => document.documentElement.setAttribute('data-theme', theme), theme);
         await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
-        for (const width of [320, 375, 600, 1280]) {
+        for (const width of [320, 375, 600, 768, 1280]) {
           await page.setViewportSize({width, height: 850});
+          // A table hover in the previous width scrolls its row into view; the
+          // header controls are only in the viewport from the top.
+          await page.evaluate(() => window.scrollTo(0, 0));
           const scroll = await page.evaluate(() => document.documentElement.scrollWidth);
           check(route + ' ' + theme + ' width', () => assert(scroll <= width, `page width ${scroll} exceeds viewport ${width}`));
+          if (width <= 768) {
+            const undersized = await page.evaluate(() => {
+              const selectors = ['.site-title', '.site-nav .page-link', 'label[for="nav-trigger"]', '.theme-toggle-btn', '#header-topic', '.copy-code-btn', '.chapter-nav-footer a'];
+              return selectors.flatMap(selector => [...document.querySelectorAll(selector)])
+                .filter(node => node.offsetParent !== null)
+                .map(node => {
+                  const r = node.getBoundingClientRect();
+                  return {selector: node.className || node.id || node.tagName, width: r.width, height: r.height};
+                })
+                .filter(r => r.width < 44 || r.height < 44);
+            });
+            check(route + ' ' + width + ' touch targets', () => assert.deepEqual(undersized, [], 'touch targets need 44 pixels'));
+          }
           if (width <= 600 && await page.locator('#nav-trigger').count()) {
             const controls = await page.evaluate(() => {
               const theme = document.querySelector('.theme-toggle-btn');

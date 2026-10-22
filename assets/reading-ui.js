@@ -26,6 +26,13 @@ document.addEventListener('DOMContentLoaded', function () {
         menuToggle.focus();
       }
     });
+    // A disclosure that stays open after a pointer moves elsewhere reads as
+    // stuck; close it from anywhere outside the navigation.
+    document.addEventListener('click', function (event) {
+      if (!menuInput.checked || event.target.closest('.site-nav')) return;
+      menuInput.checked = false;
+      updateMenuState();
+    });
     updateMenuState();
   }
   var sharedRoadmap = window.GermanyRoadmapReturn;
@@ -113,19 +120,9 @@ document.addEventListener('DOMContentLoaded', function () {
     widthLabel.append(width);
     var toolbar = content.querySelector('.read-aloud');
     if (toolbar) toolbar.append(widthLabel); else if (titleRow) titleRow.append(widthLabel);
-    var sourceLinks = Array.from(content.querySelectorAll('a[href]'));
-    function available(link) { try { var url = new URL(link.href); return url.origin === location.origin && paths.includes(url.pathname); } catch (_) { return false; } }
-    var next = sourceLinks.find(function (link) { return /^Next:/i.test(link.textContent.trim()) && available(link); });
-    var review = sourceLinks.find(function (link) { return /\/REVISION\.html$/i.test(new URL(link.href).pathname) && available(link); });
-    var summaryHeading = Array.from(content.querySelectorAll('h2')).find(function (h) { return headingText(h) === 'Summary'; });
-    if (summaryHeading && (next || review)) {
-      var continuation = document.createElement('nav'); continuation.className = 'study-continuation'; continuation.setAttribute('aria-label', 'Continue studying');
-      if (review) { var revisionLink = document.createElement('a'); revisionLink.href = review.href; revisionLink.textContent = 'Review this category'; continuation.append(revisionLink); }
-      if (next) { var nextLink = document.createElement('a'); nextLink.href = next.href; nextLink.textContent = next.textContent.trim(); continuation.append(nextLink); }
-      var following = summaryHeading.nextElementSibling;
-      while (following && !/^H[12]$/.test(following.tagName)) following = following.nextElementSibling;
-      if (following) following.before(continuation); else content.append(continuation);
-    }
+    // Chapter navigation stays in its single authored home at the end of the
+    // chapter. Mirroring the same Next/revision links after Summary duplicated
+    // both controls and split one onward choice across two surfaces.
   }
   content.querySelectorAll('div.highlighter-rouge').forEach(function (block) {
     if (block.querySelector('.code-caption')) return;

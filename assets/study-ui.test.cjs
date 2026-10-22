@@ -20,13 +20,13 @@ function boot(html, route, scripts, setup){
  return dom;
 }
 const article='<main><div class="post-content"><p><a href="#"><img alt="Section" src="https://img.shields.io/badge/section-JavaScript-blue"></a></p><h1>Lexical Environment</h1><h2 id="definition">Definition</h2><p>Original prose.</p><h2 id="first-principles">First Principles</h2><p>Reasoning.</p><h2 id="summary">Summary</h2><p>Authored summary.</p><h2 id="see-also">See Also</h2><a href="REVISION.html">Category revision</a><p><a href="'+next+'">Next: Closures →</a></p></div></main>';
-test('reader keeps metadata and offers published next and revision after Summary',()=>{
+test('reader keeps metadata and leaves authored next and revision navigation in one place',()=>{
  const dom=boot(article,chapter,['reading-ui.js']); const d=dom.window.document;
  assert.ok(d.querySelector('select[aria-label="Reading width"]'),'Reading width control is available');
  assert.equal(d.querySelector('.chapter-details img').alt,'Section');
- assert.equal(d.querySelector('.study-continuation a[href*="REVISION"]').pathname,revision);
- assert.equal(d.querySelector('.study-continuation a[href*="closures"]').pathname,next);
- assert.ok(d.querySelector('.study-continuation').compareDocumentPosition(d.getElementById('see-also'))&4);
+ assert.equal(d.querySelector('.study-continuation'),null,'No mirrored chapter navigation is generated');
+ assert.equal([...d.querySelectorAll('a[href*="closures"]')].length,1,'The authored Next link appears once');
+ assert.equal([...d.querySelectorAll('a[href*="REVISION"]')].length,1,'The authored revision link appears once');
  dom.window.close();
 });
 test('reader shows the roadmap return link only with valid roadmap context',()=>{

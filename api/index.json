@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "16c4d45c62122fab4986dc91cca5cb1c35925b45935d492343281125e8c4e00a",
+ "corpus_digest": "8fff5085825e75b2c7d3712a5e65082815224bfbf99ade6198934bfde2f54c41",
  "totals": {
   "chapters": 678,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5271
+  "read_minutes": 5274
  },
  "chapters": [
   {
@@ -4044,7 +4044,7 @@
     "distributed-systems",
     "theory"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.html",
@@ -4057,7 +4057,7 @@
     "reliability",
     "theory"
    ],
-   "m": 12
+   "m": 13
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.11-architecture-patterns.html",
@@ -4070,7 +4070,7 @@
     "patterns",
     "theory"
    ],
-   "m": 14
+   "m": 15
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.html",
@@ -4219,7 +4219,7 @@
     "theory",
     "tls"
    ],
-   "m": 17
+   "m": 18
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/REVISION.html",
@@ -4394,7 +4394,7 @@
    "g": [
     "concept"
    ],
-   "m": 19
+   "m": 18
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.17-youtube.html",

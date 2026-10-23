@@ -1,4 +1,4 @@
-# Readability Rewrite Standard (corpus-wide, 2026-10-16; outline revision 2026-10-21)
+# Readability Rewrite Standard (corpus-wide, 2026-10-16; density revision 2026-10-22; editorial revision 2026-10-23)
 
 Gold reference: `10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.02-scope.md`.
 Every teaching chapter must read like it: scannable, concrete, senior-deep.
@@ -89,9 +89,76 @@ than guessing at it:
 - Verify technical claims against the file's existing References before writing;
   never invent API names, flags, version behavior, or performance numbers.
 
-## 4. Per-batch verification (mandatory before reporting done)
+## 4. Density rules (added 2026-10-22)
+
+The heading pass fixed navigation, but measurement found a second, paragraph-level
+gap: 323 paragraphs ran past 90 words, 117 carried three or more semicolons, and
+55 fused several bold-labeled blocks into one block of text. Sentences were
+tight; the paragraph was the wall.
+
+- **One labeled block per paragraph.** A bold label such as `**Pros:**`,
+  `**Use when:**`, `**Cost:**`, or `**Implement with:**` starts its own
+  paragraph. Its content follows as prose or, when parallel, as bullets.
+- **Split at the topic seam.** A paragraph over roughly 120 words usually
+  carries two or three moves (definition → consequence, mechanism → example,
+  claim → boundary). Put each move in its own 1–3 sentence paragraph rather
+  than cutting at an arbitrary sentence count.
+- **Bullet a parallel list of three or more.** Items separated by semicolons
+  become one bullet each, starting with a capital and ending with a period.
+  Two-item lists and comparisons that read as one flowing argument stay in
+  prose. Never bullet text inside a quote.
+- **Preserve content, change structure.** Every content word, number, claim,
+  link, and heading stays. Punctuation, sentence-start case, and list markers
+  may change; a label may be promoted to its own line when it already exists
+  inline. Do not add a heading to justify a list.
+- **Skipping is valid.** A listed paragraph that already reads as one coherent
+  argument stays as written. Density work never becomes a quota of bullets.
+
+Normalized word sequences should match the previous revision after the edit;
+where they do not, the difference must be an intentional label promotion or an
+updated anchor, not a reworded claim.
+
+## 5. Editorial rules (added 2026-10-23)
+
+Density and editorial quality are separate passes. The density pass moves existing
+content into readable paragraphs; this pass improves how that content explains
+itself without turning it into a different argument.
+
+- **Open with the concrete problem.** Lead with the failure, decision or
+  surprising result that gives the reader a reason to continue. Define a term
+  before relying on it, then trace cause to mechanism to observable result.
+- **Write full sentences and split long ones.** Turn fragments into complete
+  claims, resolve ambiguous pronouns, and split sentences that carry two
+  independent decisions. Prefer short direct sentences over chains of clauses.
+- **Expand an acronym on first use.** Keep the acronym afterward when the reader
+  has seen the expansion. Do not expand a product name or a term the chapter
+  already defines in the same sentence.
+- **Remove true redundancy, not depth.** Delete a sentence only when another
+  sentence already makes the same point with the same concrete detail. Keep
+  caveats, failure boundaries, security warnings, version constraints and
+  counterexamples even when they make the prose longer.
+- **Make cross-references earn their place.** A See Also description states what
+  the linked chapter contributes to this argument. Replace vague labels such as
+  "related theory" or a bare parenthetical with a concrete connection.
+- **Add at most one decision sentence from existing facts.** A boundary or
+  trade-off sentence is allowed when the chapter's own mechanism, table or
+  example already supports it. Never invent a version, date, number, URL,
+  benchmark, product behavior or quotation.
+- **Keep the structure stable.** Headings, anchors, code blocks, tables and link
+  targets stay unchanged unless a verified inconsistency requires a fix. Repair
+  a dangling cross-reference, a code/prose contradiction, a malformed diagram or
+  a vague See Also description only after checking the existing content.
+- **Do not force a generic sequence.** Definition, First Principles, mechanism,
+  examples and boundary sections appear when they advance the explanation, not
+  as a template applied uniformly to every chapter.
+
+## 6. Per-batch verification (mandatory before reporting done)
 
 - `python3 scripts/check_template.py` — zero violations in your files.
 - `python3 scripts/check_readability.py` — no retired generic heading in your files.
+- `python3 scripts/check_alignment.py` — aligned tables and diagrams.
+- `python3 scripts/prose_hygiene.py` — no spelling or empty-opener findings.
 - `python3 scripts/check_links.py` — zero broken links.
-- Report: files rewritten, reference URLs kept vs dead-found, incoming anchors preserved.
+- `python3 scripts/check_freshness.py` — no known stale API or citation pattern.
+- Report: files rewritten, reference URLs kept vs dead-found, incoming anchors preserved,
+  and any verified code/prose or diagram repair.

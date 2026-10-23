@@ -136,7 +136,7 @@ Source: [Decorators](10.2.4.03-decorators.md)
 
 **Q:** Why does a trimmed field later accept an untrimmed assignment?
 
-**A:** The field decorator replaces only its initial value. A decorated accessor setter can intercept later writes. [Field and accessor boundary](10.2.4.03-decorators.md#fields-and-accessors-have-different-write-behavior).
+**A:** The field decorator replaces only its initial value. A decorated accessor setter can intercept later writes. [Field and accessor boundary](10.2.4.03-decorators.md#3-fields-and-accessors-have-different-write-behavior).
 
 ## Declaration Files (.d.ts)
 
@@ -262,7 +262,7 @@ Revisit the linked chapter when an answer misses the mechanism, a boundary or a 
 
 ## See Also
 
-- [Section reading order](INDEX.md)
+- [Section reading order](INDEX.md) — where this revision companion sits in the advanced-patterns path
 
 ## References & Learn More
 

@@ -39,8 +39,10 @@ async function textSurfaces(locator) {
     page.setDefaultTimeout(5000);
     const homeRoute = process.env.STUDY_HOME_ROUTE || 'index.html';
     const scopeIndex = '10-frontend/10.1-javascript/01-execution-and-scope/INDEX.html';
+    const readerChapter = '10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.01-execution-context.html';
+    const revisionRoute = '10-frontend/10.1-javascript/01-execution-and-scope/REVISION.html';
     const motionChapter = '10-frontend/10.6-animation/10.6.02-framer-motion.html';
-    for (const route of ['ROADMAP.html', 'README.html', 'INDEX.html', homeRoute, 'search.html', scopeIndex, motionChapter]) {
+    for (const route of ['ROADMAP.html', 'README.html', 'INDEX.html', homeRoute, 'search.html', scopeIndex, readerChapter, revisionRoute, motionChapter]) {
       const response = await page.goto('http://127.0.0.1:4337/' + route, {waitUntil: 'domcontentloaded'});
       check(route + ' response', () => assert.equal(response.status(), 200));
       if (response.status() !== 200) continue;
@@ -62,13 +64,108 @@ async function textSurfaces(locator) {
       for (const theme of ['light', 'dark']) {
         await page.evaluate(theme => document.documentElement.setAttribute('data-theme', theme), theme);
         await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
-        for (const width of [320, 375, 600, 768, 1280]) {
+        for (const width of [320, 375, 390, 600, 667, 701, 768, 1024, 1200, 1440]) {
           await page.setViewportSize({width, height: 850});
           // A table hover in the previous width scrolls its row into view; the
-          // header controls are only in the viewport from the top.
+          // header controls are only in the viewport from the top. Moving the
+          // pointer away also clears hover from the menu label.
           await page.evaluate(() => window.scrollTo(0, 0));
+          await page.mouse.move(0, 0);
           const scroll = await page.evaluate(() => document.documentElement.scrollWidth);
           check(route + ' ' + theme + ' width', () => assert(scroll <= width, `page width ${scroll} exceeds viewport ${width}`));
+
+          const layout = await page.evaluate(() => {
+            const title = document.querySelector('.site-title');
+            const h1 = [...document.querySelectorAll('h1')].find(node => node.offsetParent !== null);
+            if (!title || !h1) return null;
+            const h1Style = getComputedStyle(h1);
+            const reader = document.querySelector('.reader-layout');
+            const summaries = [...document.querySelectorAll('.chapter-details > summary, .chapter-outline > summary, .advanced-filters > summary, .revision-answer > summary')]
+              .filter(node => node.offsetParent !== null)
+              .map(node => {
+                const summaryStyle = getComputedStyle(node);
+                const after = getComputedStyle(node, '::after');
+                return {
+                  text: node.textContent.trim().replace(/\s+/g, ' ').slice(0, 40),
+                  outline: node.matches('.chapter-outline > summary'),
+                  listStyleType: summaryStyle.listStyleType,
+                  afterContent: after.content,
+                  afterBorderRight: after.borderRightWidth,
+                  afterBorderBottom: after.borderBottomWidth
+                };
+              });
+            return {
+              titleLeft: title.getBoundingClientRect().left,
+              contentLeft: h1.getBoundingClientRect().left,
+              readerRight: reader ? reader.getBoundingClientRect().right : null,
+              titleFont: h1Style.fontSize,
+              titleWeight: h1Style.fontWeight,
+              summaries
+            };
+          });
+          if (!layout) {
+            failures.push(route + ' ' + width + ' layout: no visible page title');
+          } else {
+            check(route + ' ' + width + ' gutter alignment', () => assert(
+              Math.abs(layout.titleLeft - layout.contentLeft) <= 0.6,
+              `header starts at ${layout.titleLeft.toFixed(1)}px, page title at ${layout.contentLeft.toFixed(1)}px`
+            ));
+            if (layout.readerRight !== null) {
+              const minimumRightGutter = width <= 359 ? 16 : width <= 700 ? 18 : 24;
+              check(route + ' ' + width + ' reader right gutter', () => assert(
+                width - layout.readerRight >= minimumRightGutter - 0.6,
+                `reader ends ${(width - layout.readerRight).toFixed(1)}px from the viewport edge`
+              ));
+            }
+            const expectedTitle = route === homeRoute
+              ? (width >= 1024 ? '44px' : width >= 701 ? '40px' : '32px')
+              : (width >= 701 ? '40px' : '32px');
+            check(route + ' ' + width + ' title scale', () => assert.equal(layout.titleFont, expectedTitle));
+            check(route + ' ' + width + ' title weight', () => assert.equal(layout.titleWeight, '650'));
+            const summaries = layout.summaries.filter(summary => !(summary.outline && width >= 1200));
+            for (const summary of summaries) {
+              check(route + ' ' + width + ' disclosure ' + summary.text, () => {
+                assert.equal(summary.listStyleType, 'none', 'native disclosure marker is suppressed');
+                assert.equal(summary.afterContent, '""', 'custom chevron is present');
+                assert.equal(summary.afterBorderRight, '2px', 'chevron stroke is consistent');
+                assert.equal(summary.afterBorderBottom, '2px', 'chevron stroke is consistent');
+              });
+            }
+          }
+
+          if (route === readerChapter && (width === 320 || width === 390)) {
+            const footer = await page.evaluate(() => {
+              const nav = document.querySelector('.chapter-nav-footer');
+              if (!nav) return null;
+              const separator = nav.querySelector('.chapter-nav-separator');
+              return {
+                separatorCount: nav.querySelectorAll('.chapter-nav-separator').length,
+                separatorVisible: !!separator && separator.getClientRects().length > 0 && getComputedStyle(separator).display !== 'none',
+                links: [...nav.querySelectorAll('a')].map(link => {
+                  const rect = link.getBoundingClientRect();
+                  return {left: rect.left, top: rect.top, width: rect.width, height: rect.height};
+                })
+              };
+            });
+            if (width === 320) {
+              check(route + ' ' + width + ' footer separator', () => {
+                assert(footer, 'chapter footer exists');
+                assert.equal(footer.separatorCount, 1, 'one separator element');
+                assert.equal(footer.separatorVisible, false, 'separator hidden when links stack');
+                assert.equal(footer.links.length, 2, 'two onward links');
+                assert(footer.links[0].top + 10 < footer.links[1].top, 'links stack at the narrowest width');
+                assert(Math.abs(footer.links[0].width - footer.links[1].width) <= 0.6, 'stacked links share one width');
+              });
+            } else {
+              check(route + ' ' + width + ' footer separator', () => {
+                assert(footer, 'chapter footer exists');
+                assert.equal(footer.separatorCount, 1, 'one separator element');
+                assert.equal(footer.separatorVisible, true, 'separator visible when links share a row');
+                assert.equal(footer.links.length, 2, 'two onward links');
+                assert(Math.abs(footer.links[0].top - footer.links[1].top) <= 0.6, 'links share one row');
+              });
+            }
+          }
           if (width <= 768) {
             const undersized = await page.evaluate(() => {
               const selectors = ['.site-title', '.site-nav .page-link', 'label[for="nav-trigger"]', '.theme-toggle-btn', '#header-topic', '.copy-code-btn', '.chapter-nav-footer a'];
@@ -92,7 +189,11 @@ async function textSurfaces(locator) {
                 const hit = document.elementFromPoint(r.x + r.width / 2, r.y + r.height / 2);
                 return {left: r.left, right: r.right, width: r.width, height: r.height, hit: node === hit || node.contains(hit)};
               };
-              return {theme: rect(theme), menu: rect(menu), title: rect(title)};
+              const surface = node => {
+                const style = getComputedStyle(node);
+                return {background: style.backgroundColor, borderColor: style.borderColor, borderWidth: style.borderTopWidth, radius: style.borderRadius};
+              };
+              return {theme: rect(theme), menu: rect(menu), title: rect(title), themeSurface: surface(theme), menuSurface: surface(menu)};
             });
             check(route + ' ' + width + ' header controls', () => {
               assert(controls.theme.right + 4 <= controls.menu.left, 'theme and menu need separate hit areas');
@@ -101,6 +202,7 @@ async function textSurfaces(locator) {
                 assert(control.width >= 44 && control.height >= 44, 'touch targets need 44 pixels');
                 assert(control.left >= 0 && control.right <= width && control.hit, 'control is inside viewport and clickable');
               }
+              assert.deepEqual(controls.themeSurface, controls.menuSurface, 'theme and menu share one control surface');
             });
             await page.locator('label[for="nav-trigger"]').click();
             const menuWidth = await page.evaluate(() => document.documentElement.scrollWidth);

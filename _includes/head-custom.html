@@ -623,6 +623,22 @@
     color: var(--theme-action-text) !important;
   }
 
+  .chapter-nav-separator {
+    color: var(--theme-text-muted);
+    line-height: 1;
+  }
+
+  @media (max-width: 359px) {
+    .chapter-nav-footer {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      justify-content: flex-start !important;
+      gap: 8px !important;
+    }
+    .chapter-nav-separator { display: none; }
+    .chapter-nav-footer a { justify-content: center; }
+  }
+
   /* --------------------------------------------------------------------------
      Floating Back-to-Top Button
      -------------------------------------------------------------------------- */
@@ -969,6 +985,24 @@
       if ((text.indexOf("Previous:") !== -1 || text.indexOf("Next:") !== -1) && 
           (text.indexOf("Index") !== -1 || text.indexOf("Back to Index") !== -1)) {
         p.classList.add("chapter-nav-footer");
+        // The inline dot is a text node; in a wrapping flex row it becomes an
+        // orphaned flex item. Make it one element the narrow layout can hide.
+        Array.prototype.slice.call(p.childNodes).forEach(function(node) {
+          if (node.nodeType !== 3 || node.textContent.indexOf("·") === -1) return;
+          var parts = node.textContent.split("·");
+          var fragment = document.createDocumentFragment();
+          parts.forEach(function(part, index) {
+            if (index) {
+              var separator = document.createElement("span");
+              separator.className = "chapter-nav-separator";
+              separator.setAttribute("aria-hidden", "true");
+              separator.textContent = "·";
+              fragment.appendChild(separator);
+            }
+            fragment.appendChild(document.createTextNode(part));
+          });
+          p.replaceChild(fragment, node);
+        });
       }
     });
 
@@ -1060,7 +1094,7 @@
 </script>
 {% endraw %}
 
-<link rel="stylesheet" href="{{ '/assets/reading-ui.css' | relative_url }}?v=study-flow-19">
+<link rel="stylesheet" href="{{ '/assets/reading-ui.css' | relative_url }}?v=study-flow-20">
 <script src="{{ '/assets/roadmap-return.js' | relative_url }}?v=study-flow-19" defer></script>
 <script src="{{ '/assets/study-catalog.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/study-state.js' | relative_url }}?v=study-flow-19" defer></script>
@@ -1069,4 +1103,4 @@
 <script src="{{ '/assets/revision-ui.js' | relative_url }}?v=study-flow-19" defer></script>
 <script src="{{ '/assets/study-resume.js' | relative_url }}?v=study-flow-19" defer></script>
 
-<link rel="stylesheet" href="{{ '/assets/reference-reader.css' | relative_url }}?v=reference-16">
+<link rel="stylesheet" href="{{ '/assets/reference-reader.css' | relative_url }}?v=reference-17">

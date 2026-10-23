@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-23",
+  "build": "local production Jekyll build; home preview rendered separately",
+  "viewports": [320, 375, 390, 600, 667, 701, 768, 1024, 1200, 1440],
+  "themes": ["light", "dark"],
+  "routes": [
+    "ROADMAP.html",
+    "README.html",
+    "INDEX.html",
+    "home-preview.html",
+    "search.html",
+    "10-frontend/10.1-javascript/01-execution-and-scope/INDEX.html",
+    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.01-execution-context.html",
+    "10-frontend/10.1-javascript/01-execution-and-scope/REVISION.html",
+    "10-frontend/10.6-animation/10.6.02-framer-motion.html"
+  ],
+  "before": {
+    "left_edge_examples_px": {
+      "320": {"header": 16, "library_title": 18},
+      "390": {"header": 18, "library_title": 20},
+      "701": {"header": 24, "search_title": 18},
+      "768": {"header": 24, "library_title": 32},
+      "1200": {"header": 14.5, "library_title": 32},
+      "1440": {"header": 134.5, "library_title": 150}
+    },
+    "library_title_px": {"390": 28.8, "768": 30.72, "1024": 36},
+    "search_title_px": {"390": 28, "701": 28.04, "1024": 40},
+    "disclosures": "native browser triangles plus the reader's caret glyph",
+    "phone_theme_button": "transparent surface against a bordered menu control",
+    "footer_320": "the separator was a text node and orphaned on its own line",
+    "reader_right_gutter_1200_px": 0
+  },
+  "after": {
+    "left_edge_px": {
+      "320": 16,
+      "360_to_700": 18,
+      "701_to_1199": 24,
+      "1200": 14.5,
+      "1440": 134.5
+    },
+    "header_and_title_alignment_tolerance_px": 0.6,
+    "standard_title_px": {"phone": 32, "tablet_and_desktop": 40},
+    "home_title_px": {"phone": 32, "tablet": 40, "desktop": 44},
+    "title_weight": 650,
+    "reader_right_edge_px": {
+      "320": 304,
+      "390": 372,
+      "701": 677,
+      "768": 744,
+      "1024": 1000,
+      "1200": 1176,
+      "1440": 1338.5
+    },
+    "reader_right_gutter_1200_px": 24,
+    "footer_320": {"links": "stacked full width", "separator": "hidden"},
+    "footer_390": {"links": "single row", "separator": "visible"},
+    "disclosures": "one trailing CSS chevron; native markers suppressed; the desktop outline stays static",
+    "phone_theme_and_menu": {"radius_px": 8, "border_px": 1, "shared_surface": true}
+  },
+  "checks": {
+    "browser_suite": "pass",
+    "node_suites": {"pass": 36, "fail": 0, "study_ui": "22/22", "study_state": "4/4", "read_aloud": "8/8", "roadmap_return": "2/2"},
+    "repository_gates": "pass",
+    "whole_page_horizontal_overflow": "none at any checked route, width or theme"
+  },
+  "cache_parameters": {"reading_ui": "study-flow-20", "reference_reader": "reference-17"},
+  "generated_corpus": {"chapters": 678, "api_index_changed": false}
+}

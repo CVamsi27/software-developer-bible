@@ -67,8 +67,8 @@ PAGE = """<!DOCTYPE html>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <script src="{THEME_SRC}"></script>
 <link rel="stylesheet" href="assets/search-ui.css?v=study-flow-19">
-<link rel="stylesheet" href="assets/reading-ui.css?v=study-flow-19">
-<link rel="stylesheet" href="assets/reference-reader.css?v=reference-16">
+<link rel="stylesheet" href="assets/reading-ui.css?v=study-flow-20">
+<link rel="stylesheet" href="assets/reference-reader.css?v=reference-17">
 <script src="assets/study-state.js" defer></script>
 <script src="assets/roadmap-return.js?v=study-flow-19" defer></script>
 <script src="assets/reading-ui.js?v=study-flow-19" defer></script>

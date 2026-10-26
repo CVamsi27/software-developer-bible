@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "id": "nested-microtask-order",
+      "path": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.01-event-loop.md",
+      "language": "javascript",
+      "fences": [
+        {
+          "startsWith": "console.log('1: Synchronous script start');",
+          "sha256": "a9fae2becfe8107d1bb8941f4a84f8716335785f30b1816c6e49bac576febfda"
+        }
+      ],
+      "runtime": {
+        "node": "24.22.1"
+      },
+      "arguments": [],
+      "wrapper": {
+        "boundary": "No browser/rendering claim: execute this pure scheduling trace as CommonJS.",
+        "suffix": ""
+      },
+      "expected": {
+        "exit": 0,
+        "stdout": "1: Synchronous script start\nSynchronous script end\n3: Microtask 1 executed\n2: Microtask 3 executed\n5: Nested microtask executed\n4: Microtask 2 executed\n6: Timer macrotask executed\n",
+        "stderr": ""
+      },
+      "mutation": {
+        "name": "nested-microtask-replaced-by-task",
+        "before": "  queueMicrotask(() => {",
+        "after": "  setTimeout(() => {"
+      }
+    },
+    {
+      "id": "primitive-versus-nested-inference",
+      "path": "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.01-generics.md",
+      "language": "typescript",
+      "fences": [
+        {
+          "startsWith": "function identity<T>",
+          "sha256": "b2ae4aeb0f4e7f15b685fbd559c27531c572222d21c0c9fd963b3c535be40cf4"
+        },
+        {
+          "startsWith": "function exactIdentity<const T>",
+          "sha256": "db2aed08919f9fb7cd6af70c6ed58cc385bc8864f5a172c1c3e1c0380ee1239c"
+        }
+      ],
+      "runtime": {
+        "node": "24.22.1",
+        "typescript": "5.9.3"
+      },
+      "arguments": [
+        "--noEmit",
+        "--strict",
+        "--target",
+        "es2022",
+        "--module",
+        "esnext",
+        "--skipLibCheck"
+      ],
+      "wrapper": {
+        "boundary": "Compile-only assertions connect both adjacent canonical generic examples; export makes this an isolated module.",
+        "accepted": "export {};\nconst primitive: 'hello' = word;\nconst nested: 'left' = exactObject.direction;\nconst tuple: readonly ['left', 'right'] = exactPair;\n",
+        "rejected": "const widenedMustFail: 'left' = ordinaryObject.direction;\n"
+      },
+      "expected": {
+        "negativeExit": 2,
+        "negativeCodes": [
+          "TS2322"
+        ]
+      },
+      "mutation": {
+        "name": "remove-const-inference-boundary",
+        "before": "function exactIdentity<const T>",
+        "after": "function exactIdentity<T>"
+      }
+    },
+    {
+      "id": "operation-owned-bulkhead-permit",
+      "path": "20-backend/20.6-microservices/04-resilience/20.6.4.02-bulkhead-pattern.md",
+      "language": "javascript",
+      "fences": [
+        {
+          "startsWith": "class Bulkhead {",
+          "sha256": "8cd1415735a0462ff85c9cd5aed0cc1bb0e2f227ec81a4018e3a848ca4a44a8d"
+        }
+      ],
+      "runtime": {
+        "node": "24.22.1"
+      },
+      "arguments": [],
+      "wrapper": {
+        "boundary": "Deterministic unresolved/rejected task fixtures supply the operation, caller abort and retry; no HTTP or provider behavior is simulated as real.",
+        "suffix": "(async () => {\n  let finish;\n  const limiter = new Bulkhead(1);\n  const controller = new AbortController();\n  const pending = limiter.execute(() => new Promise(resolve => { finish = resolve; }), controller.signal);\n  console.log('pending:' + limiter.active);\n  controller.abort(new Error('caller left'));\n  console.log('abort-ignored:' + limiter.active);\n  try { await limiter.execute(async () => 'unexpected'); }\n  catch (error) { console.log('saturated:' + error.message); }\n  finish('done');\n  console.log((await pending) + ':' + limiter.active);\n  try { await limiter.execute(async () => { throw new Error('operation failed'); }); }\n  catch (error) { console.log('rejected:' + error.message); }\n  console.log('released:' + limiter.active);\n  console.log('retry:' + await limiter.execute(async () => 'ok'));\n})().catch(error => { console.error(error); process.exitCode = 1; });\n"
+      },
+      "expected": {
+        "exit": 0,
+        "stdout": "pending:1\nabort-ignored:1\nsaturated:bulkhead full\ndone:0\nrejected:operation failed\nreleased:0\nretry:ok\n",
+        "stderr": ""
+      },
+      "mutation": {
+        "name": "release-on-promise-return-instead-of-settlement",
+        "before": "return await task(signal);",
+        "after": "return task(signal);"
+      }
+    }
+  ]
+}

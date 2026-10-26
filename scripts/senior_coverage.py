@@ -100,8 +100,19 @@ def main():
     parser.add_argument('--require-complete', action='store_true')
     args = parser.parse_args()
     root = Path(__file__).resolve().parent.parent
-    records = json.loads(args.reviews.read_text()).get('reviews', []) if args.reviews else []
-    result = inventory(root, records)
+    # An empty checkout must fail honestly before reading a missing ledger.
+    if args.require_complete and not paths_for(root):
+        print('SCOPE ERROR — no current Markdown files to review')
+        return 1
+    try:
+        payload = json.loads(args.reviews.read_text()) if args.reviews else {'reviews': []}
+        if not isinstance(payload, dict) or not isinstance(payload.get('reviews'), list):
+            raise ValueError('Review ledger must contain a reviews array')
+        records = payload['reviews']
+        result = inventory(root, records)
+    except (OSError, ValueError, KeyError, TypeError) as error:
+        print(f'REVIEW CONFIGURATION ERROR — {error}')
+        return 2
     if args.output:
         args.output.write_text(json.dumps(result, indent=2, ensure_ascii=False) + '\n')
     print(json.dumps({'files': result['files'], 'statuses': result['totals'],

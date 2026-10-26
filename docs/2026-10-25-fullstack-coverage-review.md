@@ -51,7 +51,7 @@ Additional checks execute extracted JavaScript examples, strict TypeScript infer
 
 The review read learning chapters with their INDEX, REVISION and interview companions. It checked the concrete problem, definitions, first-principles argument, state transition, authority, failure/recovery boundary, changed constraint and example limitations. Canonical mechanisms remain in one home. Changing claims were checked against primary documentation; the per-file notes identify executed fixtures separately from source inspection.
 
-The normal repository verification suite remains mandatory for release. It checks structure, links, citations, freshness, examples' formatting and generated navigation. It complements the content review rather than certifying that every example ran or every possible error was found. The exact-hash completeness check must pass on the final tree, including any metadata changes; its output and the normal release checks establish different things.
+The normal repository verification suite remains mandatory for release. It checks structure, links, citations, freshness, examples' formatting and generated navigation. Gate 29 now requires exact-hash completeness on the final tree, including metadata changes. Gate 18 proves stale reviews fail through the harness and replays three [canonical examples](scripts-map.md#canonical-example-replay) with named mutations: nested microtask order, generic literal inference and operation-owned bulkhead permits. Those fixtures add reproducible local evidence without rerunning every historical check. Source inspection and executable behavior remain distinct; passing the suite does not certify that every possible error was found.
 
 ## Summary
 

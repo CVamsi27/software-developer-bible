@@ -212,9 +212,10 @@
       "sha256": "d5ca368f3b813a3fa52adf83205f94dab9e7b49921b26ce8e5bb7833b413b664",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review, followed by complete changed-content reread. Corrected actual nested-before-chain trace (RED output assertion before fix, GREEN after), host checkpoints/task-source queue semantics, no automatic paint/rAF layout safety guarantee, timer nesting, Node20/libuv1.45 boundary and CJS/ESM nextTick conditions. Primary HTML/Node/web.dev source reviewed. Checks: node /tmp/check-js-async-examples.cjs PASS (actual fenced-code extraction; microtask/self/CJS-ESM/read/schema/abort/pool/local-catch/search/listener cases). tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types node /tmp/js-async-examples-fixture.ts PASS (declared external paymentGateway dependency). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Final source reread after generated table/read-time formatting; current full content matches reviewed mechanisms and fixtures. Prior reviewed hash retained in metadata-attestation record.",
+      "notes": "Full-content review, followed by complete changed-content reread. Corrected actual nested-before-chain trace (RED output assertion before fix, GREEN after), host checkpoints/task-source queue semantics, no automatic paint/rAF layout safety guarantee, timer nesting, Node20/libuv1.45 boundary and CJS/ESM nextTick conditions. Primary HTML/Node/web.dev source reviewed. Checks: node /tmp/check-js-async-examples.cjs PASS (actual fenced-code extraction; microtask/self/CJS-ESM/read/schema/abort/pool/local-catch/search/listener cases). tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types node /tmp/js-async-examples-fixture.ts PASS (declared external paymentGateway dependency). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Final source reread after generated table/read-time formatting; current full content matches reviewed mechanisms and fixtures. Prior reviewed hash retained in metadata-attestation record. 2026-10-27 durable replay: scripts/test_curriculum_examples.py extracts the canonical nested-microtask trace under Node 24.22.1; literal output passes and replacing nested microtask scheduling with a task fails in a disposable copy. Browser paint and host dispatch remain outside this replay.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-10-27"
     },
     {
       "path": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.02-promises.md",
@@ -632,9 +633,10 @@
       "sha256": "8154a1ac4602bf6867a6e4c5f2d7a1fd71c7ef2a1add3c23936ab26d58ca8923",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full content: input/outputrelationship, constraints/defaultunknown, readonlystackemptycase, runtimevalidateddecoder andemittercost. P2 primitiveidentity inference claimcounterexample: strictcompiler `/tmp/ts-generic-literal-fixture.ts` exacthello/42 assignments accepted; nestedmutablefield expectednegative while constgenericfield preserved. Parent notifiedandfixing. Fully re-read corrected chapter and companion: primitive literals preserved by ordinary identity; inline object/tuple inference motivates const parameters. Prior P2 resolved. Strict fixture /tmp/ts-generic-literal-fixture.ts passes exact primitive assignments, const nested fields and expected ordinary mutable-field rejection.",
+      "notes": "Full content: input/outputrelationship, constraints/defaultunknown, readonlystackemptycase, runtimevalidateddecoder andemittercost. P2 primitiveidentity inference claimcounterexample: strictcompiler `/tmp/ts-generic-literal-fixture.ts` exacthello/42 assignments accepted; nestedmutablefield expectednegative while constgenericfield preserved. Parent notifiedandfixing. Fully re-read corrected chapter and companion: primitive literals preserved by ordinary identity; inline object/tuple inference motivates const parameters. Prior P2 resolved. Strict fixture /tmp/ts-generic-literal-fixture.ts passes exact primitive assignments, const nested fields and expected ordinary mutable-field rejection. 2026-10-27 durable replay: canonical identity and exactIdentity fences compile with TypeScript 5.9.3 strict mode, accepted primitive/nested/tuple assertions pass and widened nested property is rejected with TS2322; removing const inference fails the accepted assertions in a disposable copy.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-10-27"
     },
     {
       "path": "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.02-infer.md",
@@ -4168,8 +4170,8 @@
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full content read: reservedreport/login slots versus sharedDB/hostlocks, actual taskpromise lifetime, failfast noqueue model and cooperative abort, boundedwaiting cancellation/shutdown/fairness, Littleslaw stability, fleet/tenant cardinality/globalbudget and recoverycapacity. Extracted Node model tested ignoredabort retains permit until underlyingpromise settles and excesswork rejects; no CPUthread/isolation deployment proof.",
+      "reviewDate": "2026-10-27",
+      "notes": "Full content read: reservedreport/login slots versus sharedDB/hostlocks, actual taskpromise lifetime, failfast noqueue model and cooperative abort, boundedwaiting cancellation/shutdown/fairness, Littleslaw stability, fleet/tenant cardinality/globalbudget and recoverycapacity. Extracted Node model tested ignoredabort retains permit until underlyingpromise settles and excesswork rejects; no CPUthread/isolation deployment proof. 2026-10-27 durable replay: canonical Bulkhead under Node 24.22.1 retains the permit through ignored caller abort, rejects saturation, releases on settlement/rejection and admits retry; returning the task promise without await is detected in a disposable copy. No HTTP/provider integration is implied.",
       "fullContentRead": true,
       "findings": []
     },
@@ -9957,12 +9959,12 @@
     },
     {
       "path": "contributing.md",
-      "sha256": "7aa4fd4c4ffbce41e04082b9913a7e2d75ce1b01d30928d431f2173b98627121",
+      "sha256": "aa6f511229372d78a28433b0b9ebca1e70b8e5097c7830d6732081c4473ed697",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-26",
+      "reviewDate": "2026-10-27",
       "fullContentRead": true,
-      "notes": "Full guide/examples reviewed. Reconciled mandatory generic section/checklist, duplicate H2 allowance and naive fence counting with AGENTS/parser; project tree includes MAQ.",
+      "notes": "Full guide/examples reviewed. Reconciled mandatory generic section/checklist, duplicate H2 allowance and naive fence counting with AGENTS/parser; project tree includes MAQ. 2026-10-27 maintenance delta inspected after metadata restamping: gate-count ownership, pinned example setup, final-source review order and inventory/completeness commands agree with the actual harness; prior teaching conventions retained.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "8485e2232ea7f728920a296a5c47a6f7e1fc3fc4945b1353c96f0d61d5e9b357",
@@ -10099,12 +10101,12 @@
     },
     {
       "path": "docs/2026-10-25-fullstack-coverage-review.md",
-      "sha256": "bcd0e013381c2ace9f2fb25bc7c34ea2ab8b47cb63ae98e5be21e289687024c8",
+      "sha256": "e54ebfa82a9eced3f5ce57d63547b2670014c4e3a677fa24e599568338523fc6",
       "status": "reviewed",
       "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
+      "reviewDate": "2026-10-27",
       "fullContentRead": true,
-      "notes": "Authored and reread final 25–26 October report. Current inventory and review records are exact-byte evidence; scoped runtime checks and source inspection remain distinct. Content review coverage does not imply every snippet execution, candidate mastery, adoption or absolute absence of errors. Release gates and generated metadata must be checked separately."
+      "notes": "Authored and reread final 25–26 October report. Current inventory and review records are exact-byte evidence; scoped runtime checks and source inspection remain distinct. Content review coverage does not imply every snippet execution, candidate mastery, adoption or absolute absence of errors. Release gates and generated metadata must be checked separately. 2026-10-27 maintenance delta inspected: standing exact-byte enforcement and bounded durable replays extend historical evidence without claiming every example executed or learner mastery."
     },
     {
       "path": "docs/api-contract.md",
@@ -10184,12 +10186,12 @@
     },
     {
       "path": "docs/scripts-map.md",
-      "sha256": "c7f53c53946233d55611ffd848d53db7ad5a3437b45864e4e3d3f40473f2b6fa",
+      "sha256": "b5efcfc5b7b226081ee75d96bded74c6b57b5d72c8a76d744680f8e34156b24a",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-26",
+      "reviewDate": "2026-10-27",
       "fullContentRead": true,
-      "notes": "Complete operational map checked including exact-hash senior inventory, required gate routing, fence/prose parser ownership, empty-scope and generation sequence.",
+      "notes": "Complete operational map checked including exact-hash senior inventory, required gate routing, fence/prose parser ownership, empty-scope and generation sequence. 2026-10-27 maintenance delta inspected: 32-gate table includes review completeness, both new suites have owners, three extracted canonical cases/pins/wrappers/mutations and local setup are documented with no duplicated teaching examples.",
       "findings": []
     },
     {
@@ -10384,12 +10386,12 @@
     },
     {
       "path": "docs/verification-gates.md",
-      "sha256": "0cfc520ac964322aacc0d5bc678740ee18e7592f89c70450fb03e5be492e2b6c",
+      "sha256": "b9c8b73a121baa5f01afcf5bcbb05411afc1417954990f81fdb8b19e0ef3fd01",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-26",
+      "reviewDate": "2026-10-27",
       "fullContentRead": true,
-      "notes": "Every gate row/scope and adding-gate contract read. Current review pointer and private local-path scope updated; generated counts remain writer-owned.",
+      "notes": "Every gate row/scope and adding-gate contract read. Current review pointer and private local-path scope updated; generated counts remain writer-owned. 2026-10-27 maintenance delta inspected: gate 29 exact-byte evidence, gate 18 process/mutation fixtures, explicit push/PR JSON triggers and runtime prerequisites match implemented checks; no claim that structural gates prove technical accuracy or mastery.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "d09b11f32070e9d926d6a87672236dd3e79d0cdab809b5709e9e2744b7ae74ac",

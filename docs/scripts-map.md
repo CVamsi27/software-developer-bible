@@ -8,7 +8,7 @@
 
 `roadmap-return.test.cjs` exercises safe dated return links and chapter/revision context; it runs with the JavaScript checks in `verify.sh`.
 
-> The main verification and maintenance scripts, arranged by the job they do inside the 31-gate
+> The main verification and maintenance scripts, arranged by the job they do inside the 32-gate
 > verification suite: the gate that runs it, what it owns exclusively, the
 > fixer or restamper to reach for when it fails, and the doctrine that keeps
 > one concern from growing a second implementation. Gate numbers refer to
@@ -45,10 +45,10 @@
 
 ## How It Works
 
-### The 31 gates, in verify.sh order
+### The 32 gates, in verify.sh order
 
 | # | Script | What it owns | Fails when |
-| --- | ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| --- | ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
 | 1 | `check_counts.py` | Every count claim on the nav surface (badges, blurb counts, table Files columns, repo-scale totals, [api-contract](api-contract.md)) | a claim disagrees with live disk |
 | 2 | `check_alignment.py` | Table pipe alignment, surrounding blank lines + ASCII box walls | rows/pipes misaligned or a table boundary fails to render |
 | 3 | `check_structure.py` | IDs unique, sequences contiguous, banks last, one H1, unique H2 slugs, **INDEX completeness** (every numbered subdir with an INDEX is linked) | structure or navigation has a gap |
@@ -69,7 +69,7 @@
 | 15 | `check_verify_wiring.py` | The harness itself: failure branches, gate count in 3 files, CI enforcement, trigger paths | the harness stops listening |
 | 16 | `test_md_fences.py` | The fence owner's semantics (16 characterization cases) | `md_fences.walk` drifts |
 | 17 | `test_fixers.py` | The fixers' repair output (7 planted-defect round trips, byte-exact) | a fixer repairs wrongly |
-| 18 | `test_gates.py`, `test_read_time.py` | **The suite self-test** — each sandboxable gate's canonical defect must fire, clean content must pass, and generated study-time text must use correct singular/plural grammar | gate detection drifts or an index says `1 files` |
+| 18 | `test_gates.py`, `test_read_time.py`, `test_senior_coverage.py`, `test_curriculum_examples.py` | **The suite self-test** — planted gate defects, study-time grammar, exact-byte release enforcement and three extracted canonical mechanisms | gate detection, source identity or an executable contract regresses |
 | 19 | `check_answer_depth.py` | Interview answers AND chapter Definitions carry ≥25 prose words (fence- and table-aware); H3-title-plus-code genres deliberately exempt | an answer is table-only or one-line prose; a Definition is a bare table |
 | 20 | `test_prose_scan.py` | The prose scanner's classification contract (11 characterization cases) | `prose_scan` starts counting tables/fences or drops exclusions |
 | 21 | `fix_nav_labels.py --check` | Previous/Next nav labels are canonically-cased human titles, not paths | a label is a raw path or a slug-humanized acronym (`Mvcc`, `Cicd`) |
@@ -80,6 +80,7 @@
 | 26 | `check_code_dup.py` | A chapter must not re-teach another chapter's code — cross-file fenced-block pairs (identical token streams ≥ 10 lines; near ≥ 0.85) against a ceiling baseline of classified keeps | an example duplicated from a sibling chapter exceeds the baseline |
 | 27 | `check_see_also.py` | See Also hygiene — per-stack bare ceilings, label echoes, clipped endings and copied heading/table fragments; uses the shared fence reader | a new bare entry, label echo or unfinished description |
 | 28 | `check_readability.py` | The outline names the mechanism: no retired generic heading (`How It Works`, `Explanation`, `Overview`, …) and no numbered mechanism step left under one, in learning chapters (`--write` removes the label and promotes its `### N.` children to `##`, preserving every heading text so anchors survive) | a chapter files its argument under a generic label |
+| 29 | `senior_coverage.py --require-complete` | Every current Markdown file has a scoped review bound to its final bytes | a review is stale, missing, orphaned or invalid, or the scope is empty |
 | — | `scan_scope.py` | The scope floor itself: one owner for "a checker that finds nothing must not pass" (imported by every corpus gate) | — |
 
 ### The checker → fixer → restamper recipes
@@ -114,13 +115,27 @@ When a gate fails, identify the reported defect and use its matching repair. Met
 | `relink.py` | Bulk-rewrites links whose target basename changed (rename companion) |
 | `tldr_digest.py` | Prints an authoring digest for chapters the template gate flags |
 | `gen_master_index.py` | Generates search.html + api/index.json (`--check` = gate 14) |
-| `senior_coverage.py` | Inventories current Markdown by genre and binds semantic review records to exact source hashes; `--require-complete` fails on pending/stale records instead of treating structural checks as an accuracy review |
+| `senior_coverage.py` | Gate 29 owns exact-byte review completeness. Inventory-only mode writes the current genre/status report; it never grants a review. |
 | `drift_drill.py` | Quarterly re-probe of the 31 known staleness classes (advisory, opens tracking issues) |
 | `job_board_watch.py` | Weekly JD watch (advisory workflow) |
 | `md_fences.py` | The single fence parser — imported by ten scripts; pinned by gate 16 |
 | `prose_scan.py` | The single reasoning-prose classifier (fence/table/heading/quote/badge exclusions) — imported by gate 19; pinned by gate 20. `read_time.py` deliberately keeps its own reading-weight model; the two classifiers answer different questions |
 | `test_md_fences.py` / `test_fixers.py` / `test_gates.py` / `test_read_time.py` | The tooling's own test suites (gates 16/17/18) |
 | `external-links-baseline.json` / `first-principles-baseline.json` | Owned data tables: probe-verified URLs; coverage floor |
+
+### Canonical example replay
+
+`test_curriculum_examples.py` extracts three selected mechanisms from their canonical Markdown fences: nested microtask order, primitive versus nested `const` inference, and operation-owned bulkhead permits. The [case manifest](../scripts/fixtures/curriculum-cases.json) binds each fence's identity and SHA-256, names the supplied wrapper boundary, pins Node 24.22.1 and TypeScript 5.9.3, and records literal outcomes. A changed or moved fence fails before execution. Accepted and rejected TypeScript programs are both checked. Each named mutation must change the expected result in a disposable copy. No chapter example is copied into a second teaching home.
+
+Select Node 24.22.1 through your runtime manager, then install the compiler once in the ignored dependency directory:
+
+```bash
+npm install --no-save --package-lock=false --ignore-scripts typescript@5.9.3
+export CURRICULUM_TSC="$PWD/node_modules/typescript/bin/tsc"
+python3 scripts/test_curriculum_examples.py
+```
+
+`CURRICULUM_NODE` can name an already installed Node executable; otherwise the runner uses `node` on `PATH`. The test checks exact tool versions, runs only these local allowlisted commands with a ten-second timeout, and does not inherit credentials or fetch packages. CI installs the pins before the full suite. `test_senior_coverage.py` separately checks current/stale/pending/orphan and invalid records, per-event review triggers, and the real harness's final failing exit using synthetic files. Historical temporary-fixture notes remain dated evidence; this pack adds durable replay for these three boundaries only.
 
 ### Rendered-page checks
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # One-command verification gate for the software-developer-bible repo.
-# Runs all 31 checks in order; exits non-zero if any real failure is
+# Runs all 32 checks in order; exits non-zero if any real failure is
 # found. Known lane-80.x numbering GAPS are intentional (numbers owned by
 # projects/docita prep docs) and reported as baseline noise, not failures.
 # Gate labels are append-only (8b/8c arrived after 8), so the label order in
@@ -13,7 +13,7 @@ cd "$(dirname "$0")/.." || exit 1
 FAIL=0
 
 echo ""
-echo "1/31  check_counts.py — every count claim vs live disk"
+echo "1/32  check_counts.py — every count claim vs live disk"
 echo "     python3 scripts/check_counts.py   (--write restamps them)"
 echo "------------------------------------------------------------"
 # Owns every count in the navigation surface, not just the two repo-scale
@@ -27,7 +27,7 @@ else
 fi
 
 echo ""
-echo "2/31  check_alignment.py — table pipes + ASCII box walls"
+echo "2/32  check_alignment.py — table pipes + ASCII box walls"
 echo "     python3 scripts/check_alignment.py   (--fix repairs in place)"
 echo "------------------------------------------------------------"
 if python3 scripts/check_alignment.py; then
@@ -38,7 +38,7 @@ else
 fi
 
 echo ""
-echo "3/31  check_structure.py — IDs, sequences, interview-last"
+echo "3/32  check_structure.py — IDs, sequences, interview-last"
 echo "     python3 scripts/check_structure.py"
 echo "------------------------------------------------------------"
 OUT=$(python3 scripts/check_structure.py 2>&1)
@@ -58,7 +58,7 @@ else
 fi
 
 echo ""
-echo "4/31  check_links.py — fence-aware broken-link scan"
+echo "4/32  check_links.py — fence-aware broken-link scan"
 echo "     python3 scripts/check_links.py"
 echo "------------------------------------------------------------"
 if python3 scripts/check_links.py; then
@@ -69,7 +69,7 @@ else
 fi
 
 echo ""
-echo "5/31  check_freshness.py — stale-API signature scan"
+echo "5/32  check_freshness.py — stale-API signature scan"
 echo "     python3 scripts/check_freshness.py"
 echo "------------------------------------------------------------"
 if python3 scripts/check_freshness.py; then
@@ -80,7 +80,7 @@ else
 fi
 
 echo ""
-echo "6/31  link_baseline.py diff — live docs vs committed citation baseline"
+echo "6/32  link_baseline.py diff — live docs vs committed citation baseline"
 echo "     python3 scripts/link_baseline.py"
 echo "------------------------------------------------------------"
 # Fails when a doc cites an external URL that is not in the committed
@@ -95,7 +95,7 @@ else
 fi
 
 echo ""
-echo "6b/31 check_template.py — template compliance (sections, order, genres)"
+echo "6b/32 check_template.py — template compliance (sections, order, genres)"
 echo "     python3 scripts/check_template.py"
 echo "------------------------------------------------------------"
 # Supersedes check_required_sections.py (its Summary/See Also/References and
@@ -111,7 +111,7 @@ else
 fi
 
 echo ""
-echo "7/31  check_private_refs.py — no references back into the private workspace"
+echo "7/32  check_private_refs.py — no references back into the private workspace"
 echo "     python3 scripts/check_private_refs.py"
 echo "------------------------------------------------------------"
 # Born from the 2026-10-17 migration: campaign material (CV, tracker,
@@ -127,7 +127,7 @@ else
 fi
 
 echo ""
-echo "8/31  check_code_whitespace.py — code-block indentation hygiene"
+echo "8/32  check_code_whitespace.py — code-block indentation hygiene"
 echo "     python3 scripts/check_code_whitespace.py"
 echo "------------------------------------------------------------"
 # Trailing whitespace inside fences and whole-block paste-shift base
@@ -142,7 +142,7 @@ else
 fi
 
 echo ""
-echo "8b/31 fix_box_code_indent.py --check — de-indented code inside box diagrams"
+echo "8b/32 fix_box_code_indent.py --check — de-indented code inside box diagrams"
 echo "     python3 scripts/fix_box_code_indent.py --check --json --css"
 echo "------------------------------------------------------------"
 # Code embedded between ASCII box walls that lost its indentation (every
@@ -159,7 +159,7 @@ else
 fi
 
 echo ""
-echo "8c/31 fix_box_width.py --check — over-padded ASCII boxes (screen wrap)"
+echo "8c/32 fix_box_width.py --check — over-padded ASCII boxes (screen wrap)"
 echo "     python3 scripts/fix_box_width.py --check"
 echo "------------------------------------------------------------"
 # Boxes whose right wall is pushed far past their content wrap on
@@ -175,7 +175,7 @@ else
     FAIL=1
 fi
 
-echo "9/31 check_first_principles.py --diff — First Principles coverage must not regress"
+echo "9/32 check_first_principles.py --diff — First Principles coverage must not regress"
 echo "     python3 scripts/check_first_principles.py --diff"
 echo "------------------------------------------------------------"
 # Concept chapters carry a hand-authored ## First Principles section
@@ -192,7 +192,7 @@ else
 fi
 
 echo "------------------------------------------------------------"
-echo "10/31 check_cross_refs.py — inline → N.N.N refs resolve to real files"
+echo "10/32 check_cross_refs.py — inline → N.N.N refs resolve to real files"
 echo "     python3 scripts/check_cross_refs.py"
 echo "------------------------------------------------------------"
 # Cross-references name sibling chapters by file ID (→ 10.1.1.03). Renames
@@ -206,7 +206,7 @@ else
 fi
 
 echo ""
-echo "11/31 check_duplication.py --strict — no chapter teaches another chapter's prose"
+echo "11/32 check_duplication.py --strict — no chapter teaches another chapter's prose"
 echo "     python3 scripts/check_duplication.py --strict"
 echo "------------------------------------------------------------"
 # The \"every topic lives in exactly ONE place\" rule is only as good as the
@@ -223,7 +223,7 @@ else
 fi
 
 echo ""
-echo "12/31 check_topic_twins.py — twin chapters must cross-link"
+echo "12/32 check_topic_twins.py — twin chapters must cross-link"
 echo "     python3 scripts/check_topic_twins.py"
 echo "------------------------------------------------------------"
 # A pattern chapter, its framework implementation and its case study are a
@@ -240,7 +240,7 @@ else
 fi
 
 echo ""
-echo "13/31 read_time.py --check — declared study times vs computed estimates"
+echo "13/32 read_time.py --check — declared study times vs computed estimates"
 echo "     python3 scripts/read_time.py --check"
 echo "------------------------------------------------------------"
 # Read times were hand-guessed and contradicted each other (2,912 words
@@ -255,7 +255,7 @@ else
 fi
 
 echo ""
-echo "14/31 gen_master_index.py --check — generated search page in sync with the corpus"
+echo "14/32 gen_master_index.py --check — generated search page in sync with the corpus"
 echo "     python3 scripts/gen_master_index.py --check"
 echo "------------------------------------------------------------"
 # search.html is generated from the same enforced metadata (gate 6b) and
@@ -270,7 +270,7 @@ else
 fi
 
 echo ""
-echo "15/31 check_verify_wiring.py — verify.sh's own wiring + gate-count self-consistency"
+echo "15/32 check_verify_wiring.py — verify.sh's own wiring + gate-count self-consistency"
 echo "     python3 scripts/check_verify_wiring.py"
 echo "------------------------------------------------------------"
 # The one gate that watches the harness instead of the corpus. Gate 10's
@@ -288,7 +288,7 @@ else
 fi
 
 echo ""
-echo "16/31 test_md_fences.py — the fence owner's semantics are pinned"
+echo "16/32 test_md_fences.py — the fence owner's semantics are pinned"
 echo "     python3 scripts/test_md_fences.py"
 echo "------------------------------------------------------------"
 # md_fences.walk() is the single fence parser behind ten gates and fixers. A
@@ -306,7 +306,7 @@ else
 fi
 
 echo ""
-echo "17/31 test_fixers.py — the fixers' repair output is pinned"
+echo "17/32 test_fixers.py — the fixers' repair output is pinned"
 echo "     python3 scripts/test_fixers.py"
 echo "------------------------------------------------------------"
 # Gates catch defects; these round-trip tests catch FIXERS THAT REPAIR
@@ -331,25 +331,27 @@ echo ""
 # broken to fire on everything cannot pass either). Closes the gap gates
 # 15-17 leave: they watch wiring, the fence reader, and the fixers — not
 # whether detection itself still works.
-echo "18/31 test_gates.py + test_read_time.py — gates and generated study-time text"
+echo "18/32 test_gates.py + test_read_time.py — gates and generated study-time text"
 echo "     python3 scripts/test_gates.py && python3 scripts/test_read_time.py"
 echo "------------------------------------------------------------"
 # The meta-gate plants each sandboxable gate's canonical defect in a temp
 # tree and asserts both the fire and clean sides. Reading-time tests pin the
 # generated singular/plural grammar; the site tests keep the main reading UI
 # and roadmap return links covered alongside the corpus gates.
-if python3 scripts/test_gates.py > /dev/null 2>&1 && python3 scripts/test_read_time.py > /dev/null 2>&1 && node --test assets/read-aloud.test.cjs assets/study-state.test.cjs scripts/roadmap-return.test.cjs > /dev/null 2>&1; then
+if python3 scripts/test_gates.py > /dev/null 2>&1 && python3 scripts/test_read_time.py > /dev/null 2>&1 && python3 scripts/test_senior_coverage.py > /dev/null 2>&1 && python3 scripts/test_curriculum_examples.py > /dev/null 2>&1 && node --test assets/read-aloud.test.cjs assets/study-state.test.cjs scripts/roadmap-return.test.cjs > /dev/null 2>&1; then
     echo "  PASS"
 else
     python3 scripts/test_gates.py | tail -10
     python3 scripts/test_read_time.py | tail -10
+    python3 scripts/test_senior_coverage.py | tail -10
+    python3 scripts/test_curriculum_examples.py | tail -10
     node --test assets/read-aloud.test.cjs assets/study-state.test.cjs scripts/roadmap-return.test.cjs | tail -10
     echo "  FAIL — a gate no longer detects its canonical defect"
     FAIL=1
 fi
 
 
-echo "19/31 check_answer_depth.py — every interview answer carries real prose"
+echo "19/32 check_answer_depth.py — every interview answer carries real prose"
 echo "     python3 scripts/check_answer_depth.py"
 echo "------------------------------------------------------------"
 # The 2026-09-21 arc deepened 247 answers; the follow-up probe found 27
@@ -364,7 +366,7 @@ else
 fi
 
 
-echo "20/31 test_prose_scan.py — the prose scanner's classification contract"
+echo "20/32 test_prose_scan.py — the prose scanner's classification contract"
 echo "     python3 scripts/test_prose_scan.py"
 echo "------------------------------------------------------------"
 # prose_scan.py is the one owner of "what counts as reasoning prose"
@@ -380,7 +382,7 @@ else
 fi
 
 
-echo "21/31 fix_nav_labels.py --check — nav labels are human titles, not paths"
+echo "21/32 fix_nav_labels.py --check — nav labels are human titles, not paths"
 echo "     python3 scripts/fix_nav_labels.py   (--fix repairs them)"
 echo "------------------------------------------------------------"
 # The navigation surface's Previous/Next labels were generated by a pass
@@ -398,7 +400,7 @@ else
 fi
 
 
-echo "22/31 check_fixpoint.py — a clean corpus is a no-op for every writer"
+echo "22/32 check_fixpoint.py — a clean corpus is a no-op for every writer"
 echo "     python3 scripts/check_fixpoint.py"
 echo "------------------------------------------------------------"
 # The strongest guarantee the harness can make about its own writers: run all
@@ -418,7 +420,7 @@ else
 fi
 
 
-echo "23/31 check_scope_floor.py — every corpus gate fails honestly on an empty tree"
+echo "23/32 check_scope_floor.py — every corpus gate fails honestly on an empty tree"
 echo "     python3 scripts/check_scope_floor.py"
 echo "------------------------------------------------------------"
 # The false-green family, checker side: a gate whose walk finds nothing prints
@@ -437,7 +439,7 @@ else
 fi
 
 echo ""
-echo "24/31  prose_hygiene.py — spelling convention + rendering breaks + empty-filler register"
+echo "24/32  prose_hygiene.py — spelling convention + rendering breaks + empty-filler register"
 echo "     python3 scripts/prose_hygiene.py   (--write repairs them)"
 echo "------------------------------------------------------------"
 # Four reader-visible classes no other gate owned (measured 2026-09-22):
@@ -464,7 +466,7 @@ else
 fi
 
 echo ""
-echo "25/31  check_dilution.py — a chapter must not restate itself"
+echo "25/32  check_dilution.py — a chapter must not restate itself"
 echo "     python3 scripts/check_dilution.py   (--baseline re-baselines deliberately)"
 echo "------------------------------------------------------------"
 # The 2026-09-22 audit measured the recurring reader complaint ("the corpus
@@ -486,7 +488,7 @@ else
 fi
 
 echo ""
-echo "26/31  check_code_dup.py — a chapter must not re-teach another chapter's code"
+echo "26/32  check_code_dup.py — a chapter must not re-teach another chapter's code"
 echo "     python3 scripts/check_code_dup.py   (--baseline re-baselines deliberately)"
 echo "------------------------------------------------------------"
 # The 2026-09-23 audit closed the last unmeasured dilution class: chapters
@@ -511,7 +513,7 @@ else
 fi
 
 echo ""
-echo "27/31  check_see_also.py — See Also hygiene: bare ceilings, label echoes, complete descriptions"
+echo "27/32  check_see_also.py — See Also hygiene: bare ceilings, label echoes, complete descriptions"
 echo "     python3 scripts/check_see_also.py   (--baseline re-baselines deliberately)"
 echo "------------------------------------------------------------"
 # The 2026-09-22 measurement found 72% of See Also entries bare and declined
@@ -533,7 +535,7 @@ else
 fi
 
 echo ""
-echo "28/31  check_readability.py — the outline names the mechanism, not a label"
+echo "28/32  check_readability.py — the outline names the mechanism, not a label"
 echo "     python3 scripts/check_readability.py   (--write repairs in place)"
 echo "------------------------------------------------------------"
 # 2026-10-21: a generated answer about `let` versus `var` read better than this
@@ -550,6 +552,18 @@ if python3 scripts/check_readability.py > /dev/null 2>&1; then
 else
     python3 scripts/check_readability.py | tail -20
     echo "  FAIL — repair with: python3 scripts/check_readability.py --write"
+    FAIL=1
+fi
+
+echo ""
+echo "29/32 senior_coverage.py — scoped review evidence matches the final source bytes"
+echo "     python3 scripts/senior_coverage.py --reviews=docs/2026-10-25-fullstack-review-records.json --require-complete"
+echo "------------------------------------------------------------"
+if python3 scripts/senior_coverage.py --reviews=docs/2026-10-25-fullstack-review-records.json --require-complete > /dev/null 2>&1; then
+    echo "  PASS"
+else
+    python3 scripts/senior_coverage.py --reviews=docs/2026-10-25-fullstack-review-records.json --require-complete
+    echo "  FAIL — inspect changed sources and record scoped exact-byte reviews before release"
     FAIL=1
 fi
 

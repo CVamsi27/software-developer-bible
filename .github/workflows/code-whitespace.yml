@@ -1,5 +1,5 @@
-# Verification gates: the fast, stdlib-only text scans that need no network
-# and no services, so they can run on every push/PR touching markdown.
+# Verification gates: text scans plus three canonical examples using pinned
+# local runtimes. Only dependency setup needs network; checks need no services.
 #
 # The steps below run the content gates (whitespace, box geometry, template
 # compliance, cross-references, duplication, topic twins, read time,
@@ -48,12 +48,16 @@ on:
       - 'scripts/**'
       - '.github/workflows/**'
       - 'search.html'
+      - 'docs/2026-10-25-fullstack-review-records.json'
+      - 'docs/2026-10-25-fullstack-coverage.json'
   pull_request:
     paths:
       - '**/*.md'
       - 'scripts/**'
       - '.github/workflows/**'
       - 'search.html'
+      - 'docs/2026-10-25-fullstack-review-records.json'
+      - 'docs/2026-10-25-fullstack-coverage.json'
   schedule:
     - cron: '0 7 4 * *' # 07:00 UTC on the 4th
   workflow_dispatch: {}
@@ -72,6 +76,15 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '24.22.1'
+
+      - name: Install pinned curriculum compiler
+        run: |
+          npm install --prefix "$RUNNER_TEMP/curriculum-tools" --no-package-lock --ignore-scripts typescript@5.9.3
+          echo "CURRICULUM_TSC=$RUNNER_TEMP/curriculum-tools/node_modules/typescript/bin/tsc" >> "$GITHUB_ENV"
 
       - name: Code-whitespace gate
         run: |

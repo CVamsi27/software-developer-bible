@@ -136,6 +136,10 @@ PATHS_ENTRY_RE = re.compile(r"^\s+- '([^']+)'", re.M)
 SUITE_RE = re.compile(r'bash\s+scripts/verify\.sh')
 PROPAGATE_RE = re.compile(r'^\s+exit\s+"?(?:\$code|\$\{PIPESTATUS\[0\]\})', re.M)
 SET_PLUS_E_RE = re.compile(r'^\s+set \+e\s*$', re.M)
+REVIEW_INPUTS = ('docs/2026-10-25-fullstack-review-records.json',
+                 'docs/2026-10-25-fullstack-coverage.json')
+REVIEW_COMMAND = ('python3 scripts/senior_coverage.py '
+                  '--reviews=docs/2026-10-25-fullstack-review-records.json --require-complete')
 
 # Workflows that are *audits*, not gates: their scripts exit non-zero as a
 # signal (actionable job-board findings, dead external links) and the
@@ -384,6 +388,33 @@ def covered(entry, target):
     if entry.endswith('/**') and target.startswith(entry[:-2]):
         return True
     return fnmatch.fnmatch(target, entry)
+
+
+def check_review_release(problems, text):
+    """Exact-byte completeness is required even though its owner is not check_*.
+
+    A printed reminder or optional inventory command is not an enforcing gate.
+    The ordinary failure-region audit checks this gate's FAIL assignment too.
+    """
+    matches = [g for g in parse_gates(text, summary_start(text))
+               if g['script'] == 'senior_coverage.py']
+    if not any(re.search(r'^if ' + re.escape(REVIEW_COMMAND) + r'(?:\s*>[^;]+)?; then$',
+                         '\n'.join(g['body']), re.M) for g in matches):
+        problems.append('verify.sh must enforce senior_coverage.py with the exact reviews path '
+                        'and --require-complete; a manual inventory is not a release gate')
+
+
+def check_review_triggers(problems, text):
+    """Both push and PR filters must include each review input independently."""
+    for event in ('push', 'pull_request'):
+        match = re.search(r'^  ' + event + r':\s*\n(.*?)(?=^  \S|\Z)', text, re.M | re.S)
+        block = match.group(1) if match else ''
+        paths = PATHS_ENTRY_RE.findall(block)
+        if match and not re.search(r'^    paths:', block, re.M):
+            continue  # An unfiltered event already includes every file.
+        for target in REVIEW_INPUTS:
+            if not any(covered(entry, target) for entry in paths):
+                problems.append(f'code-whitespace.yml: {event} must trigger on {target}')
 
 
 def check_edge_triggers(problems):
@@ -689,6 +720,9 @@ def main() -> int:
 
     problems = []
     check(problems, text, lines, gates, stop)
+    check_review_release(problems, text)
+    review_workflow = os.path.join(WORKFLOW_DIR, 'code-whitespace.yml')
+    check_review_triggers(problems, read(review_workflow) if os.path.exists(review_workflow) else '')
     check_ci(problems, sorted({g['script'] for g in gates}))
     check_unwired(problems)
     check_edge_triggers(problems)

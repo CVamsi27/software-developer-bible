@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Testing-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -83,17 +83,33 @@ Source: [Testing Frameworks Comparison](50.1.2.04-testing-frameworks-comparison.
 
 Source: [Playwright: End-to-End Browser Journeys](50.1.2.05-playwright.md)
 
-**Q:** Why does a Playwright locator action rarely need an explicit wait?
+**Q:** Which timing problem do locator checks solve, and which completion still needs an assertion?
 
-**A:** Locators auto-wait until the element is visible, stable and enabled before acting, and assertions retry until they pass or time out.
+**A:** Each action checks its own requirements, such as a click's visibility, stability, event reception and enabled state. Those checks do not establish that a save committed. Await the relevant business result; retrying assertions observe that result within a timeout.
 
 **Q:** Why does `storageState` save a login for later tests?
 
-**A:** It persists cookies and localStorage after one authenticated session so later tests skip the login flow and keep each test's browser context isolated.
+**A:** It saves cookies and localStorage and can include IndexedDB when requested. It does not automatically save sessionStorage. Each test can load that state into its own context, but reused credentials still refer to the same server account. Treat the file as a secret and isolate backend records separately.
 
-**Q:** Why reserve pixel-perfect visual regression for stable design-token surfaces?
+**Q:** A route-mocked profile test submits JSON and sees the new value after reload. What has it established?
 
-**A:** Anti-aliasing, fonts and dynamic content break visual diffs; use tracing, video and screenshots on failure instead for journey evidence.
+**A:** The browser constructed the expected request and rendered the mock's later response. It has not established a database commit, server authorization or concurrency safety. A separate integration journey must use the real isolated backend to verify those boundaries.
+
+**Q:** Why can a click finish before the save has committed?
+
+**A:** Actionability checks establish that the browser can perform that click. They do not know the application's business completion condition. Await the saved-state assertion, or register the relevant response/event wait before the click.
+
+**Q:** Why can a request miss a page.route handler even when its URL pattern is correct?
+
+**A:** A service worker may handle the request before ordinary network routing. Block workers for the mocked test when appropriate, or test the worker's behavior as its own boundary.
+
+**Q:** Is a test that fails once and passes on retry a reliable first-pass success?
+
+**A:** No. Record it as flaky and inspect the trace, timing and shared state. Bounded retries help collect evidence and recover a run; they do not remove the defect. Restrict access and retention for artifacts that can contain credentials or user data.
+
+**Q:** What makes a screenshot comparison useful for a critical page layout?
+
+**A:** A stable visual contract and controlled browser, operating system, fonts, viewport and data. Mask or disable intentional variation without hiding the behavior being checked, inspect changed baselines and keep behavioral assertions too. Visual comparisons are not limited to design tokens, and a trace does not replace an expected-layout comparison.
 
 ## Summary
 

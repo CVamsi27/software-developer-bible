@@ -3,6 +3,8 @@
 Gold reference: `10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.02-scope.md`.
 Every teaching chapter must read like it: scannable, concrete, senior-deep.
 
+The replacement-only, no-new-URL and leave-uncommitted restrictions below describe the dated readability batch. They do not prohibit separately authorized technical corrections, companion updates or releases. For current work, follow AGENTS.md, verify new citations and run the complete release gates.
+
 ## 0. Why the outline rule changed on 2026-10-21
 
 A generated answer about `let` versus `var` was put beside this corpus's own

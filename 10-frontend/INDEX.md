@@ -1,6 +1,6 @@
 # Frontend Stack
 
-> **Study time:** ≈ 18 h 25 m of reading (149 files, ~7 min average).
+> **Study time:** ≈ 18 h 48 m of reading (149 files, ~8 min average).
 > **JavaScript, TypeScript, React, Next.js, Form Handling, Animation, HTML/CSS/PWA, Mobile** — the frontend foundation for the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
 > 149 files across 8 sub-stacks, organized by what you need to know in what order.

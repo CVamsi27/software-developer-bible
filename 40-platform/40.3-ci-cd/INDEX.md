@@ -1,7 +1,7 @@
 {% raw %}
 # CI/CD — Index
 
-> **Study time:** ≈ 1 h 45 m of reading (14 files, ~8 min average).
+> **Study time:** ≈ 1 h 46 m of reading (14 files, ~8 min average).
 > **14 files** — a release path from GitHub Actions, GitLab CI/CD, Jenkins or Argo CD through build, artifact verification, production exposure and delivery measurement, followed by interview practice.
 
 [![Files](https://img.shields.io/badge/files-14-blue)](../../INDEX.md)
@@ -42,7 +42,7 @@ Start with the event, job graph and credential model of one platform. Compare th
 | --: | ------ | -------- | --- | --- | ----------: |
 | 05 | [Docker Build & Deploy](02-build-and-deploy/40.3.2.01-docker-build-deploy.md) | Docker build pipelines, registry (ECR/GCR/DockerHub), deployment strategies | Important | Important | 7 min |
 | 06 | [Pipeline Patterns](02-build-and-deploy/40.3.2.02-pipeline-patterns.md) | GitHub Actions CI/CD, GitLab CI, deployment pipelines, deployment strategies (rolling, blue-green, canary, feature flags) | Important | Important | 5 min |
-| 07 | [Artifact Registries & Release Promotion](02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md) | GHCR/ECR/Artifactory/NPM, immutable digests, build-once promotion dev->staging->prod, changelog automation, retention, pull-through caches | Important | Important | 8 min |
+| 07 | [Artifact Registries & Release Promotion](02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md) | GHCR/ECR/Artifactory/NPM, immutable digests, build-once promotion dev->staging->prod, changelog automation, retention, pull-through caches | Important | Important | 9 min |
 | 08 | [Pipeline Supply-Chain Security & SLSA](02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.md) | Pipeline trust boundaries, SLSA Build and Source tracks, immutable action pins, OIDC federation, provenance verification | Important | Important | 14 min |
 
 ---

@@ -37,7 +37,7 @@ An authored question bank with answers. Do them after reading the content catego
 
 Current source inspection on 2026-10-10 found deploy triggers commented out. Use historical measured release evidence with its date; configuration files do not establish current production health or successful delivery.
 
-Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — gives me true stories for these answers.
+Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
 
 | Topic | Docita evidence |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------- |

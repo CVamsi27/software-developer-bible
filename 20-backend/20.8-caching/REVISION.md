@@ -32,7 +32,7 @@ Source: [Caching Deep-Dive](20.8.01-caching-deep-dive.md).
 
 **Q:** Does `SCAN COUNT 100` cap a reply at 100 keys or give a snapshot for tenant invalidation?
 
-**A:** Neither. `COUNT` is a work hint, and iteration can return duplicates while the keyspace changes. Split `UNLINK` into its own bounded batches; scan every primary in a cluster, or use a source-coordinated version when the old namespace must become unreachable atomically.
+**A:** Neither. `COUNT` is a work hint, and iteration can return duplicates while the keyspace changes. Split `UNLINK` into bounded batches for a standalone server. In a cluster, scan every primary and route single-key deletions or group each server command by hash slot; one primary can own many slots. Use a source-coordinated version when the old namespace must become unreachable atomically.
 
 **Q:** What must the service survive when an entire hot cache is empty?
 
@@ -97,6 +97,10 @@ Source: [Advanced Redis Patterns](20.8.03-advanced-redis-patterns.md).
 **Q:** Does XACK delete the event, and does a successful XADD prove it survives failover?
 
 **A:** XACK clears pending-delivery bookkeeping; retention controls stored entries. Persistence, asynchronous replication, eviction, and recovery settings decide whether an appended event survives a failure.
+
+**Q:** Which API receives pattern publications in the pinned node-redis client?
+
+**A:** `pSubscribe(pattern, listener)` supplies a `(message, channel)` callback. Listening for an older client's `pmessage` event does not provide that callback contract; distinguish protocol message names from the client API.
 
 ## Trace and Change One Condition
 

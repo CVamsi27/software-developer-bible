@@ -1,7 +1,7 @@
 # React — Index
 
-> **Study time:** ≈ 2 h 57 m of reading (28 files, ~6 min average).
-> **28 files** — React internals from Virtual DOM to Fiber, hooks, patterns, custom hooks, portals, compound components, external stores, React Router data routers, React 18/19 concurrent APIs, performance, state management, and interview questions.
+> **Study time:** ≈ 3 h of reading (28 files, ~6 min average).
+> **28 files** — React internals from Virtual DOM to Fiber, hooks, patterns, custom hooks, portals, compound components, external stores, server-state ownership with TanStack Query, React Router data routers, React 18/19 concurrent APIs, performance, state management, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-28-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](#)
@@ -13,13 +13,13 @@ Senior React roles test the runtime model and the choices built on it: render an
 
 ## Topic Categories
 
-The 22 files are organized into 5 category folders — read in order within a category.
+The categories follow prerequisite order; read each learning flow before its revision drill.
 
 | Category | Files | Why it matters |
 | -------------------------------------------------------------------- | ----: | ---------------------------------------------------------------------------------------------------------------------- |
 | [React Internals](01-react-internals/INDEX.md) | 5 | How React turns updates into committed UI, and how identity, scheduling and state ownership change observable behavior |
 | [Core Hooks](02-core-hooks/INDEX.md) | 5 | The 5 essential hooks (state, effect, memo, ref, context) — used daily |
-| [Advanced Hooks & Patterns](03-advanced-hooks-and-patterns/INDEX.md) | 7 | Suspense, Error Boundary, Custom Hooks, useSyncExternalStore, Performance, State Management |
+| [Advanced Hooks & Patterns](03-advanced-hooks-and-patterns/INDEX.md) | 7 | Suspense, Error Boundary, Custom Hooks, useSyncExternalStore, Performance, State Management, TanStack Query |
 | [Modern React](04-modern-react/INDEX.md) | 3 | Concurrent rendering, transitions, server components, `use(promise)`, React Router data routers |
 | [Patterns & Interview Prep](05-patterns-and-interview/INDEX.md) | 3 | Portals, compound components, Interview drills |
 
@@ -78,6 +78,7 @@ The patterns that solve real problems in production code.
 | 14 | [useSyncExternalStore](03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.md) | Tearing in concurrent rendering, subscribe/getSnapshot contract, snapshot caching, Zustand/Redux integration, infinite-loop mistakes | Important | Specialized | 6 min |
 | 15 | [Performance](03-advanced-hooks-and-patterns/10.3.3.05-performance.md) | Profiler, React.memo, virtualization, windowing, debouncing, Web Workers | Essential | Foundational | 5 min |
 | 16 | [State Management](03-advanced-hooks-and-patterns/10.3.3.06-state-management.md) | Redux Toolkit, Zustand, Jotai, Context vs external state, when to use which | Essential | Important | 6 min |
+| 17 | [TanStack Query](03-advanced-hooks-and-patterns/10.3.3.07-tanstack-query.md) | Query identity, staleness/refetch, cancellation, mutations, concurrent writes and SSR hydration | Essential | Important | 8 min |
 
 ---
 
@@ -87,9 +88,9 @@ The newest features — what changed in concurrent React and what you need to kn
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 17 | [Modern Hooks (React 18/19)](04-modern-react/10.3.4.01-modern-hooks-react18-19.md) | useTransition, useDeferredValue, useOptimistic, use(promise), ref-as-prop, Form actions | Important | Specialized | 13 min |
-| 18 | [Web Components](04-modern-react/10.3.4.02-web-components.md) | Custom Elements, Shadow DOM, HTML Templates, Web Components vs React | Important | Specialized | 7 min |
-| 19 | [React Router](04-modern-react/10.3.4.03-react-router.md) | createBrowserRouter data routers, nested routes + Outlet, loaders/actions, v7 promise fields + Await, protected routes, relative routing, RR vs Next.js | Essential | Foundational | 12 min |
+| 18 | [Modern Hooks (React 18/19)](04-modern-react/10.3.4.01-modern-hooks-react18-19.md) | useTransition, useDeferredValue, useOptimistic, use(promise), ref-as-prop, Form actions | Important | Specialized | 13 min |
+| 19 | [Web Components](04-modern-react/10.3.4.02-web-components.md) | Custom Elements, Shadow DOM, HTML Templates, Web Components vs React | Important | Specialized | 7 min |
+| 20 | [React Router](04-modern-react/10.3.4.03-react-router.md) | createBrowserRouter data routers, nested routes + Outlet, loaders/actions, v7 promise fields + Await, protected routes, relative routing, RR vs Next.js | Essential | Foundational | 12 min |
 
 ---
 
@@ -99,9 +100,9 @@ Reusable component patterns + interview drills.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 20 | [Portals](05-patterns-and-interview/10.3.5.01-portals.md) | createPortal, event bubbling, modals, tooltips, overflow escape, SSR safety | Important | Specialized | 6 min |
-| 21 | [Compound Components](05-patterns-and-interview/10.3.5.02-compound-components.md) | Context-based composition, tabs, accordion, choice popover, form fields, generics | Important | Specialized | 9 min |
-| 22 | [Interview Questions](05-patterns-and-interview/10.3.5.03-interview-questions.md) | Curated mechanism and design questions | Important | Specialized | 12 min |
+| 21 | [Portals](05-patterns-and-interview/10.3.5.01-portals.md) | createPortal, event bubbling, modals, tooltips, overflow escape, SSR safety | Important | Specialized | 6 min |
+| 22 | [Compound Components](05-patterns-and-interview/10.3.5.02-compound-components.md) | Context-based composition, tabs, accordion, choice popover, form fields, generics | Important | Specialized | 9 min |
+| 23 | [Interview Questions](05-patterns-and-interview/10.3.5.03-interview-questions.md) | Curated mechanism and design questions | Important | Specialized | 12 min |
 
 ---
 
@@ -110,7 +111,7 @@ Reusable component patterns + interview drills.
 ### Path A — Coming from another framework (1 week)
 1. React Internals (5 files, ~2 hrs)
 2. Core Hooks (5 files, ~2 hrs)
-3. Custom Hooks + State Management (1.5 hrs)
+3. Custom Hooks → State Management → TanStack Query; trace a cancelled read and an uncertain write
 4. Modern React (1 hr)
 5. Performance + Suspense + Error Boundary (1.5 hrs)
 6. Interview Questions (3 hrs)
@@ -118,12 +119,12 @@ Reusable component patterns + interview drills.
 ### Path B — React experienced, prepping for senior (1-2 days)
 1. Fiber + Reconciliation (skim, 1 hr)
 2. Modern Hooks (React 18/19) (1 hr)
-3. Performance deep-dive (1 hr)
+3. Performance and TanStack Query; distinguish render cost from server-state freshness
 4. Interview Questions (focus on the 20 harder Qs)
 
 ### Path C — Interview tomorrow
 - Review each chapter’s definition, example and summary; focus on the topics listed above
-- Re-read Custom Hooks + State Management
+- Re-read Custom Hooks → State Management → TanStack Query, then the category revision
 - Run through the interview questions
 
 ---

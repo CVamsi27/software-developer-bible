@@ -93,7 +93,7 @@ Show one case where applying a principle reduces change cost and one where it ad
 
 ## Docita Anchor
 
-Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS (NestJS monorepo) — exercises these foundations in real code.
+Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
 
 | Topic | Docita evidence |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

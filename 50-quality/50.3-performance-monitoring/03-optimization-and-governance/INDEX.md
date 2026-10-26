@@ -59,7 +59,7 @@ Choose independent boundaries: initial JavaScript, route-loaded chunks, CSS, thi
 
 ## Docita Anchor
 
-[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to. The paths below are inspection pointers; verify their current code and results before claiming tested behavior.
+[Docita](https://github.com/CVamsi27/docita) is a companion source repository for this Bible. The paths below are inspection pointers; verify their current code and results before claiming tested behavior.
 
 | Topic | Docita evidence |
 | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |

@@ -8,7 +8,8 @@ public, that subtree moved to a separate private repository, and two
 reference shapes became defects in a public artifact:
 
   1. the retired in-repo path (the lane-80 folder plus `/personal`), and
-  2. a github.com URL to the private workspace repository.
+  2. a github.com URL to the private workspace repository, and
+  3. a local home-directory path into the private workspace.
 
 Both are tight signatures of the moved subtree: a reader following either
 gets a 404, and the reference itself keeps a public doc pointing at private
@@ -21,7 +22,9 @@ pattern: changelogs and reports (`docs/20XX-XX-XX-*`) and plans/specs
 (`docs/superpowers/**`) legitimately quote the paths of their time — the
 same tolerance `check_links.py` documents for reconstructed history.
 Anything else — chapters, lane guides, INDEXes, READMEs, workflows,
-configuration — must stay free of private-workspace references.
+configuration — must stay free of private-workspace references. AGENTS.md is
+operator guidance, not a published reading page; it names canonical locations
+so assistants can obey the repository boundary.
 """
 import re
 import sys
@@ -40,6 +43,10 @@ PATTERNS = [
     (
         "link to the private workspace repository",
         re.compile(r"github\.com/CVamsi27/personal(?![\w-])"),
+    ),
+    (
+        "local private-workspace path",
+        re.compile(r"(?:~|\$\{?HOME\}?|/(?:Users|home)/[^\s/`]+)[/\\]repos[/\\]personal(?![\w-])"),
     ),
 ]
 
@@ -63,6 +70,8 @@ def discovered_files():
         if not path.is_file() or path.suffix.lower() not in EXTS:
             continue
         rel = path.relative_to(REPO)
+        if path.name == "AGENTS.md":
+            continue
         if any(part in SKIP_DIRS for part in rel.parts):
             continue
         if is_dated(rel):

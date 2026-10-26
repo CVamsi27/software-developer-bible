@@ -1,6 +1,6 @@
 # Interview Prep — Kubernetes
 
-> **Study time:** ≈ 20 min of reading (1 file, ~20 min average).
+> **Study time:** ≈ 21 min of reading (1 file, ~21 min average).
 > **1 file, A curated question bank with answers.** The drill that converts K8s knowledge into interview performance.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](#file-index)
@@ -33,4 +33,4 @@ Thirty questions with explanations and source links. Attempt them after the five
 
 Where [docita](https://github.com/CVamsi27/docita) meets this topic.
 
-_No direct docita implementation yet._ Docita runs on Fly.io, so K8s answers here can't cite production war stories from it. The honest interview move: use docita's Fly.io mechanics as working analogs — health-gated deploys ≈ readiness gating, suspend-to-zero + scheduled scaling ≈ HPA outcomes, RLS + ABAC as application data/access controls, separate from cluster admission and network policy — and say plainly that the cluster experience is theoretical.
+_No direct docita implementation yet._ Docita's candidate Fly.io configuration provides comparisons to study: health checks and scaling settings can be compared with readiness and HPA ownership, while RLS and ABAC address application data/access controls. Configuration alone does not establish deployed behavior or production experience. Keep these application/platform analogies separate from Kubernetes admission and network policy, and state the cluster evidence actually available.

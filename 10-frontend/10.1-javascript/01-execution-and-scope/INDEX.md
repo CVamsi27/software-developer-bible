@@ -1,6 +1,6 @@
 # Execution & Scope — JavaScript
 
-> **Study time:** ≈ 56 min of reading (8 files, ~7 min average).
+> **Study time:** ≈ 58 min of reading (8 files, ~7 min average).
 > Follow a JavaScript evaluation from its active call to the names it can read, then see how declaration timing and closures change what remains accessible.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](#files)
@@ -13,12 +13,12 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Execution Context](10.1.1.01-execution-context.md) | Evaluation state, LE/VE roles, block transitions, parameter environments | Essential | Foundational | 7 min |
-| 02 | [Scope](10.1.1.02-scope.md) | Global, function, block and module boundaries, binding lookup, lifetime | Essential | Foundational | 8 min |
-| 03 | [Call Stack](10.1.1.03-call-stack.md) | LIFO, stack frames, stack overflow, max call stack size, debugging | Essential | Foundational | 7 min |
+| 01 | [Execution Context](10.1.1.01-execution-context.md) | Evaluation and realm lifetime, LE/VE roles, block transitions, parameter-expression boundaries | Essential | Foundational | 7 min |
+| 02 | [Scope](10.1.1.02-scope.md) | Global, function, block and module boundaries, binding lookup, lifetime | Essential | Foundational | 9 min |
+| 03 | [Call Stack](10.1.1.03-call-stack.md) | Logical call nesting, physical-frame limits, recursion, exceptions and async suspension | Essential | Foundational | 7 min |
 | 04 | [Hoisting](10.1.1.04-hoisting.md) | Declaration setup, temporal dead zone, function and resource declarations | Essential | Foundational | 6 min |
 | 05 | [Lexical Environment](10.1.1.05-lexical-environment.md) | One lookup trace, the record roles behind names, global and module boundaries | Essential | Foundational | 9 min |
-| 06 | [Closures](10.1.1.06-closures.md) | Lexical scoping, closure lifecycle, module pattern, memory implications | Essential | Foundational | 7 min |
+| 06 | [Closures](10.1.1.06-closures.md) | Lexical scoping, closure lifecycle, module pattern, memory implications | Essential | Foundational | 8 min |
 | 07 | [V8 Execution and Optimization](10.1.1.07-v8-execution-and-optimization.md) | Interpreter and compiler tiers, feedback, inline caches, object shapes, and deoptimization | Important | Specialized | 7 min |
 
 ---
@@ -33,7 +33,7 @@ Why this order: **Execution Context** introduces the state of one evaluation. **
 
 ## Docita Anchor
 
-Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
+Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
 
 | Topic in this category | Docita evidence |
 | ------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |

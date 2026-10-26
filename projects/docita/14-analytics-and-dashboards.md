@@ -5,13 +5,13 @@
 
 
 
+“Revenue this month” is incomplete until you define clinic identity, paid versus invoiced value, currency, timezone, corrections and the reporting cutoff. A fast query can consistently return the wrong metric if those definitions are missing.
+
 ## Definition
 
 Analytics turns business records into metrics for a specified scope and period. A dashboard is a frequently read presentation of selected metrics; a persisted snapshot stores a computed result for later comparison.
 
 > **Textbook Definition:** A metric is a defined aggregation over a population, time window and measurement rule; a dashboard presents selected metrics, while a snapshot persists results for a particular cutoff.
-
-“Revenue this month” is incomplete until you define clinic identity, paid versus invoiced value, currency, timezone, corrections and the reporting cutoff. A fast query can consistently return the wrong metric if those definitions are missing.
 
 This case describes source inspected on **2 October 2026**. Controlled source probes establish specific calculation behavior, not the accuracy of production reports.
 

@@ -33,16 +33,16 @@
 
 ## Docita Anchor
 
-Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS + Prisma + Postgres). Study the chapters, then see it shipped:
+Use these [Docita](https://github.com/CVamsi27/docita) source paths to investigate the NestJS, Prisma and PostgreSQL mechanisms. Their presence does not establish deployed behavior; check the current implementation, configuration and tests before relying on a guarantee:
 
 | Topic | Docita evidence |
-| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Transactions | `apps/api/src/prisma/transaction-runner.ts` - ITransactionRunner wraps `$transaction` for use cases |
-| Advisory locks | `apps/api/src/shared/common/utils/postgres-advisory-lock.ts` - `pg_try_advisory_xact_lock` gives scheduled jobs single-flight |
+| Advisory locks | `apps/api/src/shared/common/utils/postgres-advisory-lock.ts` - inspect the `pg_try_advisory_xact_lock` transaction boundary, lock identity and every participating job path |
 | Transient-failure retries | `apps/api/src/shared/common/interceptors/prisma-retry.interceptor.ts` - P-coded transient errors retried with backoff |
 | RLS-aware tx propagation | `apps/api/src/shared/modules/rls/active-tx.storage.ts` - AsyncLocalStorage hands the open tx to RLS session setters |
 
-Replication/failover not used — a single managed Postgres instance; read replicas would arrive with reporting load.
+These source references do not establish the current database topology or failover contract. Inspect the actual deployment and workload before proposing replicas; then verify acknowledgment, replay freshness and promotion authority separately.
 ---
 
 [← Previous: Querying & Optimization](../02-querying-and-optimization/INDEX.md) · [Next: ORM & Access →](../04-orm-and-access/INDEX.md)

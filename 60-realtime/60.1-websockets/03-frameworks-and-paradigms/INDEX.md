@@ -24,7 +24,7 @@
 
 The gateway pattern applies beyond NestJS. Frameworks provide different ways to respond when connections open or close, authenticate connections at acceptance and authorize individual actions through message guards, and validate message payloads through pipes. Learn those responsibilities here, then map them to the corresponding tools in another framework.
 
-Continue with GraphQL subscription execution and its permissions, then WebRTC negotiation and direct/relay/conferencing paths. Finish with protocol testing and state recovery. NestJS is one implementation, not a prerequisite for GraphQL or WebRTC.
+Continue with GraphQL subscription execution and its permissions, then WebRTC negotiation and direct/relay/conferencing paths. Finish with protocol testing and state recovery, then complete [section revision](REVISION.md) before the interview bank. NestJS is one implementation, not a prerequisite for GraphQL or WebRTC.
 
 ---
 

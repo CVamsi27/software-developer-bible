@@ -88,11 +88,11 @@ Source: [Tailwind CSS — Utility-First Styling with Design Tokens](10.7.09-tail
 
 **Q:** Why does changing one brand color require only the config file, not every component?
 
-**A:** Components reference semantic roles (`bg-surface`, `text-error`) defined in `tailwind.config.ts`; updating a token rebuilds every element that uses it.
+**A:** Components reference named roles such as bg-surface and text-error. Tailwind 4 commonly defines them through CSS theme variables; version 3 commonly uses theme.extend in configuration. The generated class references the token, while the browser resolves the effective CSS value.
 
 **Q:** Why can a class written at runtime (`bg-${color}-500`) produce missing styles?
 
-**A:** The JIT compiler scans static class strings in the configured `content` paths; concatenated classes are invisible unless safelisted.
+**A:** The scanner recognizes complete class candidates, not JavaScript interpolation. Version 4 automatically detects normal sources and can add external paths or inline candidates with @source; version 3 uses configured content/safelist settings.
 
 **Q:** Why prefer extracting repeated utility lists into components instead of `@apply`?
 

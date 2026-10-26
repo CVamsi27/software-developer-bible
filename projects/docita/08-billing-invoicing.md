@@ -5,13 +5,13 @@
 
 
 
+If a clinic changes its registration or a catalog price after an invoice was created, a historical document should not silently substitute today's facts. If a payment arrives late, a collection report must also say which date determines its period.
+
 ## Definition
 
 An invoice records a charge and the facts used to calculate it. A payment records collected money. Tax snapshots retain the inputs used for tax calculations; a daybook groups collection records so staff can compare them with counted cash or provider statements. These records are connected, but their states can change at different times.
 
 > **Textbook Definition:** An invoice records a charge and its calculation basis; a payment records collection. Financial reconciliation compares these records with authoritative external or cash observations to identify missing, duplicate or inconsistent entries.
-
-If a clinic changes its registration or a catalog price after an invoice was created, a historical document should not silently substitute today's facts. If a payment arrives late, a collection report must also say which date determines its period.
 
 This case describes source inspected on **2 October 2026**. Tax component names below explain the implementation; they do not establish the legally applicable treatment of a particular healthcare service. The old universal 12%/18% assertions and unverified tax-accuracy outcomes have been removed.
 

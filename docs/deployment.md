@@ -280,9 +280,10 @@ delivery, refresh-token store, or binary upload in this site.
 
 **`Missing entry-point to Worker script` after `npx wrangler deploy`, or
 a *Deploy command* field in the project settings.** The repo was connected
-as a *Worker* (Workers Builds) instead of a *Pages* project, and Workers
-have no `_site` to serve. Fix: delete the Worker project and redo §2 with
-*Pages* → *Connect to Git* — never set a deploy command to
+as a *Worker* (Workers Builds) instead of a *Pages* project, which does not
+match this repository's deployment contract. Confirm the project identity and
+create the intended *Pages* → *Connect to Git* project from §2. Remove a
+mistaken Worker only after confirming it serves no needed traffic. Do not set a deploy command to
 `npx wrangler deploy` on this repo.
 
 **`No repo name found` from GitHub Metadata during the Pages build.**

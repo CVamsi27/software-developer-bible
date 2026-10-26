@@ -114,6 +114,7 @@ When a gate fails, identify the reported defect and use its matching repair. Met
 | `relink.py` | Bulk-rewrites links whose target basename changed (rename companion) |
 | `tldr_digest.py` | Prints an authoring digest for chapters the template gate flags |
 | `gen_master_index.py` | Generates search.html + api/index.json (`--check` = gate 14) |
+| `senior_coverage.py` | Inventories current Markdown by genre and binds semantic review records to exact source hashes; `--require-complete` fails on pending/stale records instead of treating structural checks as an accuracy review |
 | `drift_drill.py` | Quarterly re-probe of the 31 known staleness classes (advisory, opens tracking issues) |
 | `job_board_watch.py` | Weekly JD watch (advisory workflow) |
 | `md_fences.py` | The single fence parser — imported by ten scripts; pinned by gate 16 |

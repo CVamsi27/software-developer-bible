@@ -44,7 +44,7 @@ Distinguish a dependency outage from a stuck process and show why the two produc
 
 ## Docita Anchor
 
-Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — provides related lifecycle configuration (Fly.io rather than Kubernetes). The paths are source pointers; verify runtime actions and accepted-work outcomes separately.
+Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
 
 | Topic | Docita evidence |
 | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

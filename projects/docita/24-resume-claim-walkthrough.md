@@ -5,13 +5,13 @@
 
 
 
+Start with one clinic visit: a receptionist books an appointment, a clinician opens the record and writes a prescription, billing records the charge, and background work creates or delivers documents. Explain the user-visible behavior before naming infrastructure.
+
 ## Definition
 
 A resume walkthrough connects a concise application claim to a product problem, implementation path, personal contribution and observed boundary. It is preparation for a technical discussion, not a script that supplies missing experience.
 
 > **Textbook Definition:** A claim-evidence crosswalk maps each professional claim to its implementation, personal contribution, verification artifacts and scope limitations, making the wording independently assessable.
-
-Start with one clinic visit: a receptionist books an appointment, a clinician opens the record and writes a prescription, billing records the charge, and background work creates or delivers documents. Explain the user-visible behavior before naming infrastructure.
 
 The cases below cover the Docita resume's product, frontend, persistence, reliability and delivery themes. Source inspection establishes that code exists; the candidate must identify which changes they personally designed, implemented, reviewed or operated. Deployment, adoption and business outcomes require separate evidence.
 
@@ -137,8 +137,6 @@ Explain Docita as a product operation crossing real boundaries. Each resume bull
 - [Category revision](REVISION.md) — resume-bullet follow-ups kept outside this walkthrough.
 - [Case-study index](INDEX.md) — all implementation assessments.
 - [Hypothetical workload model](23-hypothetical-clinic-metrics.md) — changed-load exercises, not adoption evidence.
-- Private resume source — current wording.
-- Private hiring-evidence report — exact source pointers, focused test commands and a bounded proof sprint.
 
 ## References
 

@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "8fff5085825e75b2c7d3712a5e65082815224bfbf99ade6198934bfde2f54c41",
+ "corpus_digest": "ab730aa3dabeb2a4ed78ab02ca75a5de9ead3d866d35efadd6a96f05235d33fd",
  "totals": {
   "chapters": 678,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5274
+  "read_minutes": 5314
  },
  "chapters": [
   {
@@ -85,7 +85,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.03-call-stack.html",
@@ -125,7 +125,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.html",
@@ -157,7 +157,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.02-prototypes.html",
@@ -167,7 +167,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.03-proxy-reflect.html",
@@ -228,7 +228,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.05-abort-and-cancellation.html",
@@ -251,7 +251,7 @@
     "concurrency",
     "interview"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "10-frontend/10.1-javascript/03-async-concurrency/REVISION.html",
@@ -262,7 +262,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.01-pass-by-value.html",
@@ -272,7 +272,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 5
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.html",
@@ -292,7 +292,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.04-debounce.html",
@@ -302,7 +302,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.05-throttle.html",
@@ -312,7 +312,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.06-memory-leaks.html",
@@ -332,7 +332,7 @@
    "g": [
     "concept"
    ],
-   "m": 5
+   "m": 6
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.html",
@@ -344,7 +344,7 @@
     "data-structures",
     "interview"
    ],
-   "m": 5
+   "m": 6
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.09-equality-and-coercion.html",
@@ -354,7 +354,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "10-frontend/10.1-javascript/04-memory-and-data/REVISION.html",
@@ -916,7 +916,7 @@
    "g": [
     "concept"
    ],
-   "m": 5
+   "m": 8
   },
   {
    "p": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/REVISION.html",
@@ -1060,7 +1060,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 3
+   "m": 4
   },
   {
    "p": "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.01-middleware.html",
@@ -1090,7 +1090,7 @@
    "g": [
     "concept"
    ],
-   "m": 13
+   "m": 14
   },
   {
    "p": "10-frontend/10.4-next.js/02-routing-and-middleware/REVISION.html",
@@ -1202,7 +1202,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "10-frontend/10.4-next.js/04-production/REVISION.html",
@@ -1334,7 +1334,7 @@
     "concept",
     "reference"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "10-frontend/10.6-animation/10.6.03-gsap.html",
@@ -1367,7 +1367,7 @@
     "concept",
     "reference"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "10-frontend/10.6-animation/10.6.06-view-transitions-and-scroll-driven-animations.html",
@@ -1389,7 +1389,7 @@
     "concept",
     "reference"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "10-frontend/10.6-animation/10.6.08-interview-questions.html",
@@ -1411,7 +1411,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 2
+   "m": 3
   },
   {
    "p": "10-frontend/10.7-html-css/10.7.01-html-fundamentals.html",
@@ -1507,7 +1507,7 @@
     "concept",
     "styling"
    ],
-   "m": 4
+   "m": 5
   },
   {
    "p": "10-frontend/10.7-html-css/10.7.10-interview-questions.html",
@@ -1896,7 +1896,7 @@
    "g": [
     "concept"
    ],
-   "m": 25
+   "m": 27
   },
   {
    "p": "20-backend/20.13-java/20.13.02-java-oop-solid.html",
@@ -1947,7 +1947,7 @@
     "interview-questions",
     "reference"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "20-backend/20.13-java/REVISION.html",
@@ -2070,7 +2070,7 @@
     "cross-cutting",
     "request-context"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "20-backend/20.2-nestjs/02-request-lifecycle/REVISION.html",
@@ -2160,7 +2160,7 @@
    "g": [
     "concept"
    ],
-   "m": 14
+   "m": 15
   },
   {
    "p": "20-backend/20.2-nestjs/04-quality-and-operations/REVISION.html",
@@ -2568,7 +2568,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "20-backend/20.4-database/02-querying-and-optimization/20.4.2.04-window-functions.html",
@@ -4167,7 +4167,7 @@
     "resilience",
     "theory"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.20-multi-region-deployment.html",
@@ -4876,7 +4876,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "40-platform/40.1-docker/40.1.10-interview-questions.html",
@@ -5071,7 +5071,7 @@
     "practice",
     "revision"
    ],
-   "m": 2
+   "m": 3
   },
   {
    "p": "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.01-services-ingress.html",
@@ -5122,7 +5122,7 @@
    "g": [
     "concept"
    ],
-   "m": 15
+   "m": 16
   },
   {
    "p": "40-platform/40.2-kubernetes/03-scaling/40.2.3.02-node-autoscaling-cluster-capacity.html",
@@ -5194,7 +5194,7 @@
     "practice",
     "revision"
    ],
-   "m": 2
+   "m": 3
   },
   {
    "p": "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.01-helm.html",
@@ -5245,7 +5245,7 @@
    "g": [
     "interview-questions"
    ],
-   "m": 20
+   "m": 21
   },
   {
    "p": "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.01-github-actions.html",
@@ -5330,7 +5330,7 @@
     "promotion",
     "registries"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.04-pipeline-supply-chain-security-slsa.html",
@@ -6186,7 +6186,7 @@
    "g": [
     "concept"
    ],
-   "m": 4
+   "m": 6
   },
   {
    "p": "50-quality/50.1-testing/02-frameworks/REVISION.html",
@@ -6197,7 +6197,7 @@
     "practice",
     "revision"
    ],
-   "m": 2
+   "m": 3
   },
   {
    "p": "50-quality/50.1-testing/03-test-levels/50.1.3.01-unit-testing.html",
@@ -6590,7 +6590,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "50-quality/50.4-production-engineering/50.4.03-chaos-engineering.html",

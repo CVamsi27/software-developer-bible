@@ -38,6 +38,10 @@ Source: [AWS Lambda](40.7.02-aws-lambda.md)
 
 **A:** No. It is a checkpointed workflow model with a separate total execution timeout: completed steps can resume from saved results and waits can release compute. Each invocation still has its own limit, and an event-source mapping can impose a shorter overall ceiling. External side effects still need stable idempotency because a checkpoint cannot atomically commit a remote provider's effect.
 
+**Q:** Is fifteen minutes the maximum for every Lambda invocation?
+
+**A:** No. Default-capacity functions have that ceiling, while Managed Instances support up to ninety minutes for asynchronous invocations and supported mappings. Synchronous calls and Amazon MQ/DocumentDB mappings retain fifteen minutes. A durable workflow also has a separate total execution timeout; mappings constrain the whole execution, not only each handler attempt. Check the actual trigger and capacity mode.
+
 **Q:** Why can retrying immediately after a Managed Instances timeout duplicate an effect?
 
 **A:** Lambda reports the invocation failure without forcibly stopping the handler. The original code can continue to commit an effect while the caller retries. Check remaining time, stop at a safe boundary, and use a stable idempotency key or reconcile the authoritative result before retrying.
@@ -63,6 +67,10 @@ Source: [Vercel Deployments](40.7.03-vercel-deployments.md)
 **A:** It restores an earlier application deployment by changing the production routing target; it does not reverse database migrations, external effects, or current environment-variable changes. Verify schema compatibility and compensate irreversible effects separately. See [Vercel's promotion and rollback behavior](https://vercel.com/docs/deployments/promoting-a-deployment).
 
 ## Edge Functions
+
+**Q:** Does Vercel documenting an Edge runtime mean a Next.js 16.3 route can select it?
+
+**A:** No. The platform runtime and framework support are different contracts. Vercel documents that Next.js 16.3 routes/pages no longer support `runtime = 'edge'`; Proxy already uses Node.js in Next.js 16. Check the deployed minor version. See [the runtime contract](https://vercel.com/docs/functions/runtimes/edge).
 
 Source: [Edge Functions](40.7.04-edge-functions.md)
 

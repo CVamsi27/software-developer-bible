@@ -55,7 +55,7 @@ When a lab score looks good but users report delays, verify the affected journey
 
 ## Docita Anchor
 
-[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — inspect these reading pointers in the current checkout before claiming verified production behavior.
+[Docita](https://github.com/CVamsi27/docita) is a companion source repository for this Bible — inspect these reading pointers in the current checkout before claiming verified production behavior.
 
 | Topic | Docita evidence |
 | ------------------------------------- | -------------------------------------------------------------------- |

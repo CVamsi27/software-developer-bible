@@ -10,7 +10,7 @@ permalink: /README.html
 
 [![Lanes](https://img.shields.io/badge/lanes-2-blue)](lanes/INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](INDEX.md)
-[![Files](https://img.shields.io/badge/files-973-orange)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-974-orange)](INDEX.md)
 [![Search](https://img.shields.io/badge/search-try%20it-blueviolet)](search.html)
 [![API](https://img.shields.io/badge/corpus%20API-json-informational)](api/index.json)
 [![GoF Coverage](https://img.shields.io/badge/design%20patterns-23%2F23-success)](30-architecture/30.1-design-patterns/INDEX.md)
@@ -68,7 +68,7 @@ Both lanes use the same technical chapters. Follow a stack’s reading stages to
 
 A chapter introduces the concept once, explains the constraint behind it, then traces a focused example before comparing decisions and failure boundaries. Headings state the relationship or problem being explained. A new component is connected to the whole before its variants are listed.
 
-Concept chapters start with Definition and First Principles, then use the sections that advance understanding. They end with one Summary, See Also and References. TL;DR and duplicated in-chapter cheat sheets are retired.
+Concept chapters open with a concrete problem, then give Definition and First Principles before the sections that advance understanding. They end with one Summary, See Also and References. TL;DR and duplicated in-chapter cheat sheets are retired.
 
 Questions and answers live in one separate `REVISION.md` per category, linked as the final learning stage in its index. Dedicated interview banks provide longer drills. The [contribution guide](contributing.md) defines the full contract.
 
@@ -92,7 +92,7 @@ Automated gates check defined structural, link, metadata and regression rules. P
 
 The [reading and senior interview quality review](docs/2026-10-07-reading-quality-report.md) records formal definition coverage, reader fixes, resume validation and the limits of the technical review.
 
-The ongoing [explanation-depth review](docs/2026-10-08-explanation-depth-progress.md) records which documents have completed semantic review, which remain pending and what the executed examples establish. Use that coverage when assessing readiness; repository checks alone do not establish that every explanation has been reviewed.
+The [current full-stack review](docs/2026-10-25-fullstack-coverage-review.md) records exact-hash document coverage and what the executed examples establish. The [explanation-depth review](docs/2026-10-08-explanation-depth-progress.md) preserves its earlier checkpoint. Content review does not demonstrate a learner's readiness; use the practice evidence and rubric separately.
 
 The earlier [October 1 chapter-review continuation](docs/2026-10-01-chapter-review-continuation.md) is a historical snapshot; use the current review reports above for present coverage.
 

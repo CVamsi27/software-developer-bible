@@ -1,6 +1,6 @@
 # Java — Index
 
-> **Study time:** ≈ 1 h 29 m of reading (7 files, ~13 min average).
+> **Study time:** ≈ 1 h 32 m of reading (7 files, ~13 min average).
 > **7 files** — language, object design, concurrency, testing, Spring Boot, and interview practice form the shared Java backend path for Java-heavy roles.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../INDEX.md)

@@ -5,6 +5,8 @@
 
 
 
+An interviewer asks how an API became faster. A remembered percentage cannot explain the request, query pattern or personal contribution. Begin with one actual workflow and identify which details can be supported.
+
 ## Definition
 
 An experience reconstruction connects a recorded responsibility to a real project, personal actions, technical decisions and available outcomes. This chapter prepares the four MAQ bullets in the current resume without inventing a project, incident, measurement or client.
@@ -118,7 +120,6 @@ The MAQ preparation path builds technical depth around recorded work while requi
 - [Category revision](REVISION.md) — follow-ups and answer boundaries.
 - [MAQ learning index](INDEX.md) — reconstruction before practice.
 - [Docita claim walkthrough](../docita/24-resume-claim-walkthrough.md) — source-backed implementation study kept distinct from MAQ.
-- Private resume source — exact application wording.
 
 ## References
 

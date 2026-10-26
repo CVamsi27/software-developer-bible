@@ -51,10 +51,10 @@ Where [docita](https://github.com/CVamsi27/docita) meets this topic.
 _No direct docita implementation yet_ — no Services/Ingress/ConfigMaps; a Fly router + Cloudflare play those roles:
 
 | Topic | Docita evidence |
-| -------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Ingress & TLS termination | Cloudflare edge (origin protection, ADR 0014) → Fly `http_service` with `force_https = true` |
 | ConfigMap-like env config | `fly.toml [env]` block + turbo `globalEnv` allowlist, validated by `shared/modules/config/env-schema.ts` |
-| Secrets handling | Never in-repo; runtime env only (`RAZORPAY_KEY_SECRET`, DB URLs appear solely as env references) |
+| Secrets handling | Runtime environment references such as `RAZORPAY_KEY_SECRET` and database URLs in the inspected configuration; verify provisioning and repository secret controls separately. |
 | PodPresets / admission injection | _No direct docita implementation yet._ |
 
 ## Finish This Section

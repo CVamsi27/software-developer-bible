@@ -1,6 +1,6 @@
 # Scaling
 
-> **Study time:** ≈ 26 min of reading (3 files, ~9 min average).
+> **Study time:** ≈ 27 min of reading (3 files, ~9 min average).
 > **3 files.** Matching capacity to load: HorizontalPodAutoscaling driven by metrics, plus node-level autoscaling (Cluster Autoscaler vs Karpenter) that gives pods somewhere to schedule.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](#file-index)
@@ -19,7 +19,7 @@ Workload autoscaling needs a reliable metric and honest resource requests; node 
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [HPA & Scaling](40.2.3.01-hpa-scaling.md) | Horizontal Pod Autoscaling, resource and external metrics, scale-to-zero, scaling policies, VPA comparison | Optional | Specialized | 15 min |
+| 01 | [HPA & Scaling](40.2.3.01-hpa-scaling.md) | Horizontal Pod Autoscaling, resource and external metrics, scale-to-zero, scaling policies, VPA comparison | Optional | Specialized | 16 min |
 | 02 | [Node Autoscaling & Cluster Capacity](40.2.3.02-node-autoscaling-cluster-capacity.md) | Cluster Autoscaler and Karpenter, placement and provisioning, node pools, disruption, overprovisioning, GPU and stateful workloads | Optional | Specialized | 9 min |
 
 ---

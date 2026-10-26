@@ -1,6 +1,6 @@
 # Reading and senior interview quality review — 2026-10-07
 
-> **Dated review record:** counts, test results and remaining-work statements below describe the recorded pass. Use the [current review progress](2026-10-10-senior-precision-progress.md) and [verification runbook](verification-gates.md) for present scope; chapter existence and passing scans do not establish complete reader review.
+> **Dated review record:** counts, test results and remaining-work statements below describe the recorded pass. Use the [current review progress](2026-10-25-fullstack-coverage-review.md) and [verification runbook](verification-gates.md) for present scope; chapter existence and passing scans do not establish complete reader review.
 
 This pass preserves the practical introductions, adds original formal definitions, corrects misleading teaching claims, and repairs the shared reader. Paragraphs now fill the article width on desktop; mobile gutters and local code/table scrolling remain responsive.
 

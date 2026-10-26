@@ -5,13 +5,13 @@
 
 
 
+For Docita, the useful question is which boundary could permit an incorrect tenant operation, money movement, state transition or repeated side effect. Start there before pursuing another architectural layer or developer convenience feature.
+
 ## Definition
 
 A technical retrospective compares intended guarantees with current evidence, then selects improvements that close the most consequential gaps. It should explain the problem, proposed change, cost and verification—not invent a failure story or promise that a tool solves it automatically.
 
 > **Textbook Definition:** A technical retrospective evaluates differences between intended behavior and observed evidence, then proposes prioritized corrective actions with explicit cost, ownership and acceptance criteria.
-
-For Docita, the useful question is which boundary could permit an incorrect tenant operation, money movement, state transition or repeated side effect. Start there before pursuing another architectural layer or developer convenience feature.
 
 This is an improvement framework informed by case-source review on **2 October 2026**, not a claim that the proposed changes have been implemented or that all project tests and production outcomes have been reverified.
 

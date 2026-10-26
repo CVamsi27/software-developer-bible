@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Next.js-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-4_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
 
@@ -137,6 +137,18 @@ Source: [Rendering comparison](10.4.1.01-ssr-csr-ssg-isr.md), [App Router](10.4.
 **Q:** Does a middleware header naming ISR prove regeneration happened?
 
 **A:** No. It labels a request match. Verify production output and cache/timestamp behavior with controlled requests.
+
+**Q:** Which interception marker reaches /photos from feed/@modal, and why?
+
+**A:** `(..)photos` moves one route segment above feed. The @modal slot does not count as a URL segment; `(.)photos` would target a photo segment at the feed level instead.
+
+**Q:** What does retry add beyond resetting a failed boundary in current Next.js?
+
+**A:** Stable `retry` in 16.3+ re-fetches and re-renders the failed region. `reset` clears the boundary state without re-fetching server content; 16.2 names the newer API `unstable_retry`. Match the installed version and resource owner.
+
+**Q:** Why attach the product ID to the stock result instead of only aborting on cleanup?
+
+**A:** A render with a new product ID happens before the old Effect cleanup. Comparing the result identity during render prevents the previous product's stock from appearing in that gap; cleanup separately invalidates obsolete completions.
 
 **Q:** What changes on reload after a photo was opened in an intercepted slot?
 

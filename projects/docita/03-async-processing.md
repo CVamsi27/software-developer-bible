@@ -5,13 +5,13 @@
 
 
 
+Suppose a prescription must produce a PDF. Saving the prescription and then scheduling its PDF in a separate operation creates a gap: the first write can commit and the second can fail. Writing durable intent in the same database transaction closes that particular gap. It does not make the PDF generation or notification occur exactly once.
+
 ## Definition
 
 A **job queue** stores work for a worker to execute. A **transactional outbox** stores an event alongside the business change that caused it, so a crash between database commit and notification does not erase the intent.
 
 > **Textbook Definition:** A durable job queue persists work for later execution; a transactional outbox atomically persists publication intent with a local business change. Both require explicit claim, retry and effect-recovery protocols.
-
-Suppose a prescription must produce a PDF. Saving the prescription and then scheduling its PDF in a separate operation creates a gap: the first write can commit and the second can fail. Writing durable intent in the same database transaction closes that particular gap. It does not make the PDF generation or notification occur exactly once.
 
 This case starts from source inspected on **2 October 2026**. A targeted **9 October 2026** recheck at local HEAD `dc5a97dc3` updated the relay acknowledgment; unrelated working-tree changes were present. A **15 October 2026** refresh inspected clean local HEAD `4e3032c2d0fd9d2ee74e7c74536fefef454d5a65` for queue claim fencing, outbox append and relay behavior, and ran the focused queue/outbox unit tests. The earlier dates remain historical inspections; this scoped refresh is not a production audit. Throughput, latency, cost and delivery outcomes were not measured.
 

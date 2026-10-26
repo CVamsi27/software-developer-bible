@@ -380,7 +380,7 @@ Source: [Web Crawler System Design](30.2.2.14-web-crawler.md)
 
 **Q:** Why normalize host spellings while preserving path and query distinctions?
 
-**A:** DNS case, a trailing root dot, default ports and equivalent IPv6 spellings can share one host identity. Paths and query components can identify different resources, so removing their meaningful differences can collapse distinct crawl targets. Reject malformed percent escapes before another parser changes their meaning; URL identity still does not establish that the resolved destination is safe.
+**A:** DNS case, a trailing root dot, default ports and equivalent IPv6 spellings can share one host identity. Paths and query components can identify different resources, so removing their meaningful differences can collapse distinct crawl targets. Preserve an explicitly empty query: `/?` cannot be assumed equivalent to `/`, even though `urlunsplit` drops the empty delimiter unless the helper restores it. Reject malformed percent escapes before another parser changes their meaning; URL identity still does not establish that the resolved destination is safe.
 
 **Q:** What should a crawler do when `robots.txt` is unavailable or unreachable?
 
@@ -544,7 +544,7 @@ Source: [Distributed Counter / Metrics Aggregation System Design](30.2.2.20-dist
 
 **Q:** Why must each G-Counter writer keep its identity unique across concurrent writers and restarts?
 
-**A:** Merge compares values within the same writer slot. Two concurrent writers sharing a slot can overwrite one another, while resetting a slot can make the merged state forget prior increments. Use durable identity or a new epoch and a safe protocol before compacting old slots. See the [CRDT counter model](https://dsf.berkeley.edu/cs286/papers/crdt-tr2011.pdf).
+**A:** Merge compares values within the same writer slot. Two concurrent writers sharing a slot can lose increments. Resetting a slot to zero does not erase a larger value already held by another replica: maximum merge restores that old value and can hide new increments until the restarted writer exceeds it. Use durable identity or a new epoch and a safe protocol before compacting old slots. See the [CRDT counter model](https://dsf.berkeley.edu/cs286/papers/crdt-tr2011.pdf).
 
 **Q:** Why is `ON CONFLICT DO NOTHING` not a complete idempotency policy for a counter event?
 
@@ -650,9 +650,9 @@ Source: [Distributed Job Scheduler System Design](30.2.2.25-distributed-job-sche
 
 **A:** A delayed scanner or replay can revisit its scheduled timestamp. A live-only unique key disappears after success and would allow the same occurrence to be created again.
 
-**Q:** What does the unique live-run index protect, and what does it leave to the scheduler transaction?
+**Q:** What does the durable occurrence key protect, and what does it leave to the scheduler transaction?
 
-**A:** It prevents two current runs from owning the same job occurrence. The transaction must still verify the schedule version, insert the run, advance the next-fire cursor, and write publication intent together. See [PostgreSQL partial indexes](https://www.postgresql.org/docs/current/indexes-partial.html).
+**A:** `UNIQUE(job_id, schedule_version, scheduled_at)` prevents duplicate occurrence rows across pending and terminal states; a live-only partial index would permit a completed occurrence to be inserted again. The transaction must still verify the schedule version, insert the run, advance the next-fire cursor, and write publication intent together. This key does not prevent overlapping attempts or duplicate external effects. See [PostgreSQL partial indexes](https://www.postgresql.org/docs/current/indexes-partial.html).
 
 **Q:** When is a per-run fencing token insufficient for an external effect?
 

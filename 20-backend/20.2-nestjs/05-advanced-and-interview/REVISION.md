@@ -66,6 +66,10 @@ Source: [Custom decorators](20.2.5.01-custom-decorators.md)
 
 **A:** A registered interceptor reads it and maps the downstream response. Metadata alone leaves execution unchanged.
 
+**Q:** Why can a role decorator and a registered guard still disagree about an authenticated clinician?
+
+**A:** They must share the exact metadata key and verified-principal location. Writing a string key while the guard reads a Symbol, or attaching `req.user` while it reads `req.principal`, leaves the consumer without its required policy or identity. Adapt both sides together and test the admitted and denied routes.
+
 ## Summary
 
 Use these prompts after the reading pass to recall the advanced mechanisms and their boundary constraints.

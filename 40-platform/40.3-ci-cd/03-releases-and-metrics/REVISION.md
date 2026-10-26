@@ -50,6 +50,10 @@ Source: [DORA Metrics & Delivery Performance](40.3.3.02-dora-metrics-delivery-pe
 
 **A:** Failure rate attributes remediation to the originating failed change; rework rate identifies unplanned incident-response deployments. The repair only adds a new failure if it independently requires remediation.
 
+**Q:** One deployment has two linked recovery records: one restored and one still open. Why must a recovery query group before excluding incomplete recoveries?
+
+**A:** Dropping the null row first hides the open incident, allowing the completed row to produce a falsely finished recovery. Keep all linked rows and admit the deployment only when none remains unresolved; then use its latest restoration and report pending recoveries separately.
+
 ## Summary
 
 Use the answers to check your reasoning, then revisit the source mechanism and reproduce any relevant example without copying it. A remembered label is useful only when you can explain its limits.

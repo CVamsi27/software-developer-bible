@@ -56,7 +56,7 @@ Source: [Idempotency Keys](30.3.2.03-idempotency-keys.md)
 
 **Q:** Is the `Idempotency-Key` header governed by a current IETF standard with one universal syntax?
 
-**A:** No. The cited HTTPAPI Internet-Draft expired; APIs define their own syntax and retention behavior. Follow the receiving API's contract rather than assuming vendor compatibility. [Source and status](https://datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header/)
+**A:** No. The HTTPAPI work is an active Internet-Draft as checked on 25 October 2026, rather than a published RFC. Its proposed syntax does not establish vendor compatibility. APIs still define their own accepted format, scope and retention behavior; follow the receiving API's contract. [Source and status](https://datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header/)
 
 **Q:** Can deleting an idempotency record re-enable a previously completed effect?
 

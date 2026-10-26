@@ -82,6 +82,10 @@ Source: [Prototypes](10.1.2.02-prototypes.md)
 
 **A:** Object.getPrototypeOf reports the immediate link. Default instanceof checks for the constructor's prototype in the chain, but custom Symbol.hasInstance, altered chains and cross-realm values can change the interpretation.
 
+**Q:** Does every write to an inherited primitive value create an own property?
+
+**A:** No. An inherited writable data descriptor can allow an own receiver property, while an inherited setter receives the receiver and a non-writable data descriptor blocks assignment. Primitive versus object value is not the deciding condition.
+
 ## Proxy & Reflect
 
 Source: [Proxy & Reflect](10.1.2.03-proxy-reflect.md)
@@ -121,6 +125,10 @@ Source: [Proxy & Reflect](10.1.2.03-proxy-reflect.md)
 **Q:** Why is tracking a synchronous property read not enough to define a production reactive effect's lifecycle?
 
 **A:** The runtime also needs rules for reads after `await`, stale dependency cleanup, errors, re-entry and scheduling. A Proxy `get`/`set` sketch explains dependency capture and notification, but it does not decide those lifecycle contracts.
+
+**Q:** In the fullName getter example, does target[prop] bind this to the parent prototype?
+
+**A:** No; the target is child, so both approaches produce Alice Smith. Reflect.get preserves the proxy receiver and therefore traps the nested firstName and lastName reads too; direct target access skips those nested traps.
 
 ## Summary
 

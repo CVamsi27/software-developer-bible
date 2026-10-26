@@ -118,6 +118,10 @@ Source: [Testing](20.13.04-java-testing-junit-mockito.md)
 
 **A:** Boot 4 split web testing into a focused module; use the `spring-boot-webmvc-test` dependency and `org.springframework.boot.webmvc.test.autoconfigure.WebMvcTest` package.
 
+**Q:** Why does `PostgreSQLContainer<?>` fail after importing the Testcontainers 2 PostgreSQL module class?
+
+**A:** The new `org.testcontainers.postgresql.PostgreSQLContainer` is not generic. Declare `PostgreSQLContainer` and construct it without diamond syntax. The old `org.testcontainers.containers` package used the generic type; changing only the import leaves a compile error.
+
 ## Spring Boot
 
 Source: [Spring Boot](20.13.05-spring-boot.md)

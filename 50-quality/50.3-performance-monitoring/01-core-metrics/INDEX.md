@@ -54,7 +54,7 @@ The later chapters explain how browser timing APIs, profiling tools, real-user m
 
 ## Docita Anchor
 
-[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — these paths are reading pointers; inspect the current code and measurement contract before claiming verified production behavior.
+[Docita](https://github.com/CVamsi27/docita) is a companion source repository for this Bible — these paths are reading pointers; inspect the current code and measurement contract before claiming verified production behavior.
 
 | Topic | Docita evidence |
 | ----------------------------- | ------------------------------------------------------------------------------------------- |

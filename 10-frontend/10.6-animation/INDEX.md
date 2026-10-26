@@ -1,6 +1,6 @@
 # Animation — Index
 
-> **Study time:** ≈ 1 h 1 m of reading (9 files, ~7 min average).
+> **Study time:** ≈ 1 h 5 m of reading (9 files, ~7 min average).
 > **9 files** — CSS and browser animation APIs, Motion for React (formerly Framer Motion), GSAP, React Spring, Canvas/SVG rendering, and interview practice.
 
 [![Files](https://img.shields.io/badge/files-9-blue)](../../INDEX.md)
@@ -48,7 +48,7 @@ Choose one effect and trace its input, state change, DOM/drawing updates, cancel
 
 ## Docita Anchor
 
-Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
+Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
 
 | Topic in this category | Docita evidence |
 | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------- |

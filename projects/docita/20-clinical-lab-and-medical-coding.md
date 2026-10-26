@@ -5,13 +5,13 @@
 
 
 
+A lab result can be ready before its payment flag is recorded, while a catalog search can fail because an external service is unavailable. Neither case should be hidden behind a generic successful status.
+
 ## Definition
 
 The clinical domain combines two distinct capabilities: lab-order workflow and medical-code lookup/synchronization. Lab workflow connects results to a local release policy. Coding supplies identifiers used in clinical records and claim-readiness checks.
 
 > **Textbook Definition:** A lab-release workflow governs when recorded results become available; a medical-code catalog supplies controlled identifiers and descriptions. Release eligibility and catalog availability require separate correctness and failure contracts.
-
-A lab result can be ready before its payment flag is recorded, while a catalog search can fail because an external service is unavailable. Neither case should be hidden behind a generic successful status.
 
 ## First Principles
 

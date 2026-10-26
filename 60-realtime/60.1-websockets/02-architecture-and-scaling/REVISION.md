@@ -78,6 +78,10 @@ Source: [Scaling WebSockets](60.1.2.02-scaling-patterns.md)
 
 **A:** One authoritative ordering/price invariant may remain serialized even with more connection gateways. Partitioning must preserve the invariant and define safe ownership transfer.
 
+**Q:** Does an authorized Socket.IO room make a shared Redis adapter channel safe for untrusted publishers?
+
+**A:** No. The adapter trusts its internal Pub/Sub messages. Protect Redis access and command/channel permissions; a publisher to adapter channels can inject traffic outside the client handler's room checks.
+
 ## Summary
 
 Use the answers to check your reasoning, then revisit the source mechanism and reproduce any relevant example without copying it. A remembered label is useful only when you can explain its limits.

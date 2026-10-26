@@ -5,13 +5,13 @@
 
 
 
+The engineering problem is to reject known invalid input without presenting a limited rule set as a complete clinical safety system.
+
 ## Definition
 
 Prescription validation applies application rules before saving a medication order. PDF generation then presents a persisted prescription as a document. These are separate responsibilities: a readable PDF does not establish that the clinical decision was correct.
 
 > **Textbook Definition:** Prescription validation checks a medication order against explicitly implemented rules, while document generation renders its persisted state. Software validation cannot establish clinical appropriateness beyond the evaluated rules and professional review.
-
-The engineering problem is to reject known invalid input without presenting a limited rule set as a complete clinical safety system.
 
 ## First Principles
 

@@ -36,11 +36,11 @@ The executable Prisma examples pin Prisma CLI and Client 7.10.0 with PostgreSQL.
 Real code from [docita](https://github.com/CVamsi27/docita) - healthcare platform (NestJS + Prisma + Postgres). These paths are inspection pointers; verify the current client versions, extensions and deployment before treating them as behavior evidence:
 
 | Topic | Docita evidence |
-| ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Client composition | `apps/api/src/prisma/prisma.service.ts` - `$extends` stack: tenant, encryption, audit-immutability, rls-routing, slow-query, query-budget |
-| Multi-tenancy scoping | `apps/api/src/shared/common/extensions/tenant-scope-policy.ts` - per-model rules force clinicId filters |
-| Transparent field encryption | `apps/api/src/shared/common/extensions/encryption.extension.ts` - encrypt/decrypt on patient fields inside the query pipeline |
-| Repository pattern | `apps/api/src/shared/common/repositories/base.repository.ts` - abstract BaseRepository (pagination + where builders) under every repo |
+| Multi-tenancy scoping | `apps/api/src/shared/common/extensions/tenant-scope-policy.ts` - inspect model-level tenant-filter rules and which nested, raw and unscoped operations they cover |
+| Patient-field encryption | `apps/api/src/shared/common/extensions/encryption.extension.ts` - inspect encryption/decryption hooks and the operations that participate in them |
+| Repository pattern | `apps/api/src/shared/common/repositories/base.repository.ts` - shared pagination and query-building abstraction; inspect actual repository call sites and transaction ownership |
 
 The ORM landscape decision is made: inspect the current dependencies and repository seams rather than assuming another ORM is absent from every module.
 ---

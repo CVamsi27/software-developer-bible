@@ -1,6 +1,6 @@
 # Production Hardening
 
-> **Study time:** ≈ 33 min of reading (5 files, ~7 min average).
+> **Study time:** ≈ 34 min of reading (5 files, ~7 min average).
 > **Four learning chapters and one revision companion.** Connect runtime health, voluntary eviction, API authorization, Pod network reachability, and namespace resource limits.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#file-index)

@@ -1,6 +1,6 @@
 # Production — Next.js
 
-> **Study time:** ≈ 26 min of reading (4 files, ~6 min average).
+> **Study time:** ≈ 27 min of reading (4 files, ~7 min average).
 > **4 files.** Follow a protected request from session to resource permission, an image from its CSS slot to cached bytes, then one build through its runtime, shared cache, rollout and shutdown checks.
 
 [![Files](https://img.shields.io/badge/files-4-blue)](#files)
@@ -15,7 +15,7 @@
 | --   : | ------ | -------- | --- | --- | ----------: |
 | 01 | [Authentication](10.4.4.01-authentication.md) | session verification, resource authorization, cookie and CSRF boundaries, version-pinned Auth.js | Important | Important | 9 min |
 | 02 | [Image Optimization](10.4.4.02-image-optimization.md) | `next/image`, lazy loading, responsive images, AVIF/WebP | Important | Specialized | 7 min |
-| 03 | [Deploying Next.js](10.4.4.03-deploying-nextjs.md) | static vs server runtime, standalone container output, runtime configuration, cacheHandler vs cacheHandlers, replica coordination, version skew, streaming and graceful shutdown | Important | Specialized | 7 min |
+| 03 | [Deploying Next.js](10.4.4.03-deploying-nextjs.md) | static vs server runtime, standalone container output, runtime configuration, cacheHandler vs cacheHandlers, replica coordination, version skew, streaming and graceful shutdown | Important | Specialized | 8 min |
 
 ---
 
@@ -30,7 +30,7 @@
 
 ## Docita Anchor
 
-Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
+Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
 
 | Topic in this category | Docita evidence |
 | ------------------------- | ----------------------------------------------------------------------------------------------------------- |

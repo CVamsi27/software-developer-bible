@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Kubernetes-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Optional-lightgrey)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../../docs/topic-importance.md)
 
@@ -53,6 +53,10 @@ Source: [Kubernetes Deployments](40.2.1.02-deployments.md)
 **Q:** Why can a zero-unavailability rollout stall when the old version is healthy?
 
 **A:** The next surge Pod needs quota admission, schedulable capacity, startup, and availability. If any step fails, keeping old capacity is consistent with the policy but prevents progress. Inspect each state rather than treating desired replicas as ready capacity.
+
+**Q:** Why can a quota-blocked rollout have no new Pending Pod?
+
+**A:** ResourceQuota admission can reject Pod creation before any Pod object is stored, while the Deployment and ReplicaSet already exist. Inspect the owning controller's creation events; scheduler Pending diagnostics apply after a Pod exists.
 
 **Q:** Nine stable Pods and one canary Pod share a Service. Is exactly 10% of requests guaranteed to hit canary?
 

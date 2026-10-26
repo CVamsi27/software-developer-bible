@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Kubernetes-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Optional-lightgrey)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../../docs/topic-importance.md)
 
@@ -70,6 +70,10 @@ Source: [RBAC & Network Policies](40.2.4.03-rbac-network-policies.md)
 
 **A:** The database connection first needs name resolution. The API's isolated egress also needs the actual DNS path on UDP/TCP 53, and the destination's ingress must permit the database connection. A rule for database traffic does not imply DNS access.
 
+**Q:** Does a default-deny Pod NetworkPolicy quarantine the Pod from its own node?
+
+**A:** No. Standard NetworkPolicy permits traffic to/from the Pod's node and cannot deny self-access; hostNetwork handling is also implementation dependent. A host boundary needs separate controls.
+
 ## Resource Quotas
 
 Source: [Resource Quotas](40.2.4.04-resource-quotas.md)
@@ -82,9 +86,13 @@ Source: [Resource Quotas](40.2.4.04-resource-quotas.md)
 
 **A:** LimitRange supplies defaults, then quota checks the resulting request and limit totals. If admitted, the scheduler still needs a feasible node for the request. Admission does not reserve node capacity or prove readiness.
 
-**Q:** What happens if a CPU-request quota exists but the Pod omits required requests and no compatible defaults supply them?
+**Q:** In the per-container resource model, what happens if a CPU-request quota exists but required requests and compatible defaults are absent?
 
 **A:** Admission can reject Pod creation. The workload controller may exist with fewer Pods than desired; inspect its events. This differs from an existing Pending Pod that the scheduler cannot place.
+
+**Q:** Does CPU/memory quota always require explicit fields on every container?
+
+**A:** No. The older per-container check applies to that model, but Kubernetes 1.37 skips it when PodLevelResources is enabled and Pod-level resources are set. Account from the effective Pod declarations and verify the feature support.
 
 **Q:** Why can the node autoscaler do nothing when a quota rejects the fourth requested replica?
 

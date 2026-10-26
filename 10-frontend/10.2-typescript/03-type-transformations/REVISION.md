@@ -128,7 +128,7 @@ Source: [Template Literal Types](10.2.3.04-template-literal-types.md)
 
 **Q:** Why does `on${Capitalize<string>}` still fail to whitelist known events?
 
-**A:** `Capitalize<string>` widens to `string`, so this pattern accepts any string with the `on` prefix. A finite event-name union enumerates supported names and rejects other keys.
+**A:** The pattern still permits arbitrary capitalized names beyond the supported events; its capitalization constraint remains. For example, `onAnything` fits while `onanything` does not. A finite event-name union enumerates the actual supported names and rejects other keys.
 
 **Q:** Why must route definitions retain `:id` rather than widen that segment to `${string}`?
 

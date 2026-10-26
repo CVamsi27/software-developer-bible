@@ -13,7 +13,7 @@
 
 ## Topic Categories
 
-The 18 files are organized into 5 category folders — read in order.
+The categories follow prerequisite order; complete each learning flow before its revision drill.
 
 | Category | Files | Why it matters |
 | ---------------------------------------------------------- | ----: | ------------------------------------------------------------------------------------------------- |
@@ -88,6 +88,7 @@ Senior-level TS — types as a design tool.
 | 15 | [Decorators](04-advanced-patterns/10.2.4.03-decorators.md) | Newer and legacy conventions, wrappers, accessors and metadata consumers | Important | Specialized | 7 min |
 | 16 | [Declaration Files](04-advanced-patterns/10.2.4.04-declaration-files.md) | .d.ts syntax, module augmentation, global types, asset declarations, triple-slash directives | Important | Specialized | 6 min |
 | 17 | [Advanced Patterns](04-advanced-patterns/10.2.4.05-advanced-patterns.md) | Class/parameter decorators, typed event emitter, advanced utility combinations | Important | Specialized | 6 min |
+| 18 | [TypeScript Compiler Pipeline](04-advanced-patterns/10.2.4.06-typescript-compiler-pipeline.md) | Program graph, resolution, parse/bind/check/emit, build and editor boundaries | Important | Specialized | 6 min |
 
 ---
 
@@ -95,7 +96,7 @@ Senior-level TS — types as a design tool.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 18 | [Interview Questions](05-interview-prep/10.2.5.01-interview-questions.md) | 50 curated questions with answers | Essential | Foundational | 39 min |
+| 19 | [Interview Questions](05-interview-prep/10.2.5.01-interview-questions.md) | 50 curated questions with answers | Essential | Foundational | 39 min |
 
 ---
 
@@ -104,7 +105,7 @@ Senior-level TS — types as a design tool.
 1. **Foundations** (4 files, ~1.5 hrs) — must know
 2. **Generics & Inference** (4 files, ~2 hrs) — must know
 3. **Type Transformations** (4 files, ~1.5 hrs) — must know
-4. **Advanced Patterns** (5 files, ~2.5 hrs) — senior level
+4. **Advanced Patterns** — follow validated brands, decorator and declaration contracts, typed dispatch, then the compiler pipeline
 5. **Interview Questions** (39 min to read; reserve 3 hours for timed practice and review)
 
 ---

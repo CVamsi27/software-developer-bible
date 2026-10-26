@@ -48,7 +48,7 @@ Packaging composes the objects to submit; controllers reconcile those objects in
 
 Where [docita](https://github.com/CVamsi27/docita) meets this topic.
 
-_No direct docita implementation yet._ No Helm charts, Kustomize overlays, CRDs, or operators exist in the repo — the only packaging artifact is `apps/api/Dockerfile`, deployed by plain CI. [future]: if docita ever outgrows a single Fly app, I'd start with Kustomize-style env overlays before reaching for Helm.
+_No direct Docita Kubernetes packaging implementation is established by these candidate sources._ `apps/api/Dockerfile` describes image packaging; inspect active workflow triggers and deployed-release history before treating it as CI execution evidence. A future Helm or Kustomize adoption would need its own release-ownership and operational design.
 
 ## Finish This Section
 

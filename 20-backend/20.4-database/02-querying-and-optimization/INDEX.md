@@ -1,6 +1,6 @@
 # Querying & Optimization - Database
 
-> **Study time:** ≈ 51 min of reading (6 files, ~8 min average).
+> **Study time:** ≈ 52 min of reading (6 files, ~9 min average).
 > **6 files.** Making queries fast: index types (B-tree to BRIN), join algorithms, execution plans with `EXPLAIN ANALYZE`, window functions, and JSONB.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](../INDEX.md)
@@ -22,10 +22,10 @@ Start with relational keys, MVCC visibility and an explicit result requirement. 
 ## Files
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| :---: | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------- | ------------------ | --------: |
+| :---: | ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ------------- | ------------------ | --------: |
 | 01 | [Indexes](20.4.2.01-indexes.md) | B-tree, hash, GiST, GIN, BRIN, composite indexes, index-only scans, partial indexes | Essential | Foundational | 9 min |
 | 02 | [Joins](20.4.2.02-joins.md) | INNER, LEFT, RIGHT, FULL, CROSS, LATERAL, hash/merge/nested loop joins, join order | Essential | Foundational | 10 min |
-| 03 | [Execution Plans](20.4.2.03-execution-plans.md) | EXPLAIN ANALYZE, row estimates and loops, buffers, PostgreSQL 18 generic plans/serialization | Essential | Foundational | 8 min |
+| 03 | [Execution Plans](20.4.2.03-execution-plans.md) | EXPLAIN ANALYZE, row estimates and loops, buffers, generic plans (16+), serialization (17+), index searches (18+) | Essential | Foundational | 9 min |
 | 04 | [Window Functions](20.4.2.04-window-functions.md) | ROW_NUMBER, RANK, DENSE_RANK, LAG, LEAD, aggregate OVER, running totals, moving averages | Essential | Foundational | 10 min |
 | 05 | [JSONB](20.4.2.05-jsonb.md) | Extraction, missing vs null, operator-compatible GIN, SQL/JSON `JSON_TABLE` (PostgreSQL 17+) | Essential | Foundational | 10 min |
 

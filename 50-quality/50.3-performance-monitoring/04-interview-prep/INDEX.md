@@ -53,7 +53,7 @@ Answer out loud before reading the model answer; the debugging walkthroughs ("LC
 
 ## Docita Anchor
 
-[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — inspect the paths below before using them as evidence; describe only work you actually performed.
+[Docita](https://github.com/CVamsi27/docita) is a companion source repository for this Bible — inspect the paths below before using them as evidence; describe only work you actually performed.
 
 | Topic | Docita evidence |
 | ------------------------ | ---------------------------------------------------------------------------------------- |

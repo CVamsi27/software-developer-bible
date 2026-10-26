@@ -1,6 +1,6 @@
 # Fresh-reader review — 5 October 2026
 
-> **Dated review record:** counts, test results and remaining-work statements below describe the recorded pass. Use the [current review progress](2026-10-10-senior-precision-progress.md) and [verification runbook](verification-gates.md) for present scope; chapter existence and passing scans do not establish complete reader review.
+> **Dated review record:** counts, test results and remaining-work statements below describe the recorded pass. Use the [current review progress](2026-10-25-fullstack-coverage-review.md) and [verification runbook](verification-gates.md) for present scope; chapter existence and passing scans do not establish complete reader review.
 
 This records full-prose reading performed by the independent reader passes in this continuation. “Fully read” means prose outside fenced code was read from start to end; it does not imply every claim was independently source-checked. Automated gates are not a substitute for this review.
 

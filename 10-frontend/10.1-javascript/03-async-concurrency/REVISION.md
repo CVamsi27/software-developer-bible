@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-JavaScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-6_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-7_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -46,6 +46,10 @@ Source: [Event Loop](10.1.3.01-event-loop.md)
 
 **A:** No. Microtasks run before an eligible rendering update, but a rendering opportunity is not guaranteed after every task. Use `requestAnimationFrame` to coordinate visual changes with rendering; its callback still cannot force a paint or guarantee a deadline.
 
+**Q:** A promise reaction queues a microtask and then returns, allowing a chained reaction to become ready. Which of those two runs first?
+
+**A:** The nested microtask was enqueued first, so it precedes the chained reaction in this checkpoint. Trace when a reaction becomes ready rather than reading chain indentation as scheduling order.
+
 ## Promises
 
 Source: [Promises](10.1.3.02-promises.md)
@@ -68,7 +72,7 @@ Source: [Promises](10.1.3.02-promises.md)
 
 **Q:** How do `Promise.all` and `Promise.allSettled` differ in their reaction to one failure?
 
-**A:** `all` rejects when an input rejection is observed; other operations continue unless separately cancelled. `allSettled` waits for every input and returns one outcome record per input, in input order.
+**A:** `all` rejects when an input rejection is observed; other operations continue unless separately cancelled. For a valid iterable, `allSettled` waits for the inputs and returns one outcome record per input, in input order; broken iteration can reject the aggregate.
 
 **Q:** Why does `new Promise(resolve => fetch(url).then(resolve))` usually make things worse?
 
@@ -81,6 +85,10 @@ Source: [Promises](10.1.3.02-promises.md)
 **Q:** Three independent requests are awaited in sequence; what does that cost you, and what replaces it?
 
 **A:** If each request is called only after the previous await, their waits accumulate. Call independent operations first, then combine their promises with `Promise.all`; the calls start work, while the combinator observes outcomes. Already-started promises can overlap even when awaited in sequence.
+
+**Q:** Does passing a promise to its own resolve function throw directly into the caller's catch?
+
+**A:** No. The resolve call returns normally, while the promise is rejected with a TypeError. Observe that rejection through await or a rejection handler.
 
 ## Async/Await
 
@@ -118,6 +126,10 @@ Source: [Async/Await](10.1.3.03-async-await.md)
 
 **A:** It checks the eventual fulfilled value against `T`. Returning another `Promise<T>` is valid because async return adopts it, so this signature does not detect every missing await. Await inside a local try/catch when that catch must handle the eventual rejection.
 
+**Q:** Does the conceptual generator runner describe V8's exact native async implementation?
+
+**A:** No. It exposes suspension and error propagation for learning. Native await uses specification promise operations, and engines choose their own optimized representation; it need not call a user-overridden then on a native promise.
+
 ## Error Handling
 
 Source: [Error Handling](10.1.3.04-error-handling.md)
@@ -154,6 +166,14 @@ Source: [Error Handling](10.1.3.04-error-handling.md)
 
 **A:** Place it where code can recover, clean up, translate or choose a Result. A local handler can be appropriate when it owns such a decision; redundant catches that only relog or suppress should let the owning boundary handle it.
 
+**Q:** A payload parses as JSON but contains a numeric theme. Has parseJsonSafe established ThemeConfig?
+
+**A:** No. Parsing returns unknown on the success branch. The separate decoder validates the domain shape and rejects the numeric theme. A generic cast alone would supply no runtime check.
+
+**Q:** What does the single-read helper do after cancellation or a malformed payload?
+
+**A:** It propagates the cancellation, parsing or decoder failure and makes no repeated attempt. Retry ownership belongs to the canonical bounded read policy; writes need an additional operation identity and uncertain-outcome policy.
+
 ## Aborting & Cancellation
 
 Source: [Aborting & Cancellation](10.1.3.05-abort-and-cancellation.md)
@@ -189,6 +209,10 @@ Source: [Aborting & Cancellation](10.1.3.05-abort-and-cancellation.md)
 **Q:** Does calling `controller.abort()` actually stop the server from finishing the request?
 
 **A:** No. An abort-aware client operation stops its own work according to its API, without guaranteeing a dedicated socket closes or a remote write rolls back. The server may commit; use idempotency, operation status and reconciliation for uncertain outcomes.
+
+**Q:** What is synchronous when controller.abort is called, and what can remain unfinished?
+
+**A:** Signal state changes and abort-event dispatch happen during that call. Promise observers run later; non-cooperating work and remote effects may still finish. A busy same-agent loop can delay the other task that would call abort, rather than making abort itself asynchronous.
 
 ## Bounded Concurrency & Promise Pools
 

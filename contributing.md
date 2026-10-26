@@ -104,14 +104,15 @@ Chapter rewrites follow the [readability standard](docs/readability-standard.md)
 │ └── 70.3-cheatsheets/
 │
 ├── projects/ # Project deep-dives
-│ └── docita/ # 22 numbered deep-dives (01-10 foundations, 11-21 domains, 22 retrospective) + 80.x prep docs
+│ ├── docita/ # implementation cases, retrospective and claim walkthrough
+│ └── maq/ # experience boundaries and reconstruction exercises
 │
 ├── 80-lanes-abroad-full-stack/ # Abroad Full-Stack lane (EU/remote) — INDEX.md + numbered 80.x files
 │
 └── 81-lanes-indian-sde-faang/ # Indian SDE / FAANG lane (DSA-heavy) — INDEX.md + numbered 81.x files
 ```
 
-> Repo scale (tool-maintained): **973 `.md` files / 153K lines** across the stacks, lanes, and projects above — run `python3 scripts/check_counts.py` to verify the claim stays true.
+> Repo scale (tool-maintained): **974 `.md` files / 154K lines** across the stacks, lanes, and projects above — run `python3 scripts/check_counts.py` to verify the claim stays true.
 
 - **The 7 study stacks** (`10-`, `20-`, `30-`, `40-`, `50-`, `60-`, `70-`) hold the technical material both interview lanes pull from.
 - **00-strategy** is cross-lane (everyone starts here); **80-** and **81-lanes** are terminal interview plans that reference into the stacks, never the other way around; **projects/** holds the Docita deep-dive corpus.
@@ -796,15 +797,15 @@ A concise recap of the invariant and decision.
 
 These files (in `81-lanes-indian-sde-faang/`, e.g., `81-lanes-indian-sde-faang/81.01-complete-guide.md`) are comprehensive study guides covering multiple topics per file:
 
-- Use repeated sub-heading patterns (e.g., multiple `## Concept`, `## Implementation` sections)
-- This is intentional — each topic within a file has its own flow
+- Give each topic a distinct heading; nest recurring labels such as Implementation under that topic rather than repeating sibling H2 slugs.
+- Each topic within a file has its own flow.
 - Code blocks use `text` tag for conceptual explanations, code patterns, and ASCII diagrams
 - Code blocks use `java`, `typescript`, `sql`, etc. for actual code examples
 - Has `## See Also` and `## References & Learn More` at the end
 
 ---
 
-The [explanation-depth review progress](docs/2026-10-08-explanation-depth-progress.md) records per-document semantic coverage and outstanding work separately from the automated gates.
+The [current full-stack review](docs/2026-10-25-fullstack-coverage-review.md) records exact-hash document coverage separately from automated gates. The [explanation-depth review progress](docs/2026-10-08-explanation-depth-progress.md) retains its dated checkpoint.
 
 ## Verification Checklist
 
@@ -824,7 +825,7 @@ After making changes, verify the following:
 ### File-Type-Specific Structure
 
 **Standard concept files** (most sections):
-- [ ] Section order: Definition → First Principles → Why → How → Code Examples → Real-World → Mistakes → Best Practices → Performance → Summary
+- [ ] Concrete opening → practical/textbook Definition → First Principles → topic-specific mechanism and decision sections → one final Summary. Generic middle sections are optional and must add distinct reasoning.
 - [ ] `## Definition` is the first concept section after metadata/badges; no TL;DR
 - [ ] Preserve the practical explanation and add one concise original `> **Textbook Definition:**` within that section. Do not invent quotations or textbook attributions; cite a primary source when an attributed definition is necessary.
 - [ ] Code examples use the appropriate language tag and state inputs, expected behavior and limitations
@@ -839,12 +840,12 @@ After making changes, verify the following:
 
 **Interview Questions files** (last file in each stack/category, `<stack>.<cat>.<seq>-interview-questions.md`):
 - [ ] No Cheat Sheet and no Revision Questions — `## Summary` is the bottom content section
-- [ ] Questions grouped by difficulty with H3 headings (Beginner / Intermediate / Senior / FAANG-style)
-- [ ] Has `## N Most Asked [Section] Interview Questions` as first section
+- [ ] Questions follow coherent topic or practice groups; difficulty claims need a stated basis.
+- [ ] The introduction states the practice scope without unsupported popularity claims.
 
 **System Design case studies** (`30-architecture/30.2-system-design/02-case-studies/`):
-- [ ] Starts with `## Requirements` (Functional + Non-Functional) instead of `## Definition`
-- [ ] Has `## Capacity Estimation`, `## API Design`, `## Database Design` sections
+- [ ] Defines the modeled requirements and assumptions before choosing components.
+- [ ] Explains capacity, API and data boundaries where they change the design; avoids empty template sections.
 - [ ] Architecture diagrams in `text` code blocks
 - [ ] Has `## Trade-offs` section before `## Summary`
 
@@ -853,7 +854,7 @@ After making changes, verify the following:
 - [ ] Does not mechanically repeat the full concept template
 
 **Behavioral guides** (`70-interview-toolkit/70.1-behavioral/`):
-- [ ] Starts with `## Table of Contents` instead of `## Definition`
+- [ ] Uses a clear scenario and navigation suited to its length; does not require the concept template.
 - [ ] Uses narrative/storytelling style
 
 **Lane guides** (`81-lanes-indian-sde-faang/` and `80-lanes-abroad-full-stack/` numbered `NN.x` files):
@@ -871,7 +872,7 @@ After making changes, verify the following:
 - [ ] All opening code blocks have a language tag
 - [ ] No `ts`, `js`, `shell`, `sh`, `py`, `yml`, `gql` — use full tag names (`typescript`, `javascript`, `bash`, `python`, `yaml`, `graphql`)
 - [ ] ASCII diagrams use `text` tag
-- [ ] Opening and closing ` ``` ` are balanced (same count)
+- [ ] Every opener has a matching same-character closing fence at least as long; nested literal fences require a longer outer fence. Use the shared fence parser rather than counting markers.
 
 ### See Also
 
@@ -902,13 +903,13 @@ It runs, in order, with clear pass/fail output:
 
 | Check | Command | What it verifies |
 | --------------------------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Count guard | `python3 scripts/check_counts.py` | Gate 1/31: every count claim in the navigation surface matches live disk — repo-scale strings ("973 files, 153K lines"), each INDEX's `Files` badge and `> **N files**` blurb, the `N files in M sub-stacks` stack headers, and the `Files` column of every navigation table. Table counts include learning and interview chapters, but exclude INDEX and REVISION companions; badges and blurbs retain their wider scope. `--write` restamps them all from disk (idempotent) |
+| Count guard | `python3 scripts/check_counts.py` | Gate 1/31: every count claim in the navigation surface matches live disk — repo-scale strings ("974 files, 154K lines"), each INDEX's `Files` badge and `> **N files**` blurb, the `N files in M sub-stacks` stack headers, and the `Files` column of every navigation table. Table counts include learning and interview chapters, but exclude INDEX and REVISION companions; badges and blurbs retain their wider scope. `--write` restamps them all from disk (idempotent) |
 | Alignment | `python3 scripts/check_alignment.py` | Markdown table pipes and ASCII box walls align; `--fix` repairs in place |
 | Structure | `python3 scripts/check_structure.py` | IDs unique, sequences contiguous, interview files last — every flat stack must carry at least one `*-interview-questions.md` (category stacks hold the bank in a dedicated final interview category; 70.1/70.3 exempt as interview material themselves) (the historical lane-80.x GAPS were fixed 2026-09-13 — sequence now contiguous 1..36), and **no duplicate H2 section slug within a file** — two identically-named outline entries mean an ambiguous anchor and repeated sub-structures written as siblings instead of nested (80.12 had 13 stories as 65 sibling H2s; 81.05 declared "Segment Tree" twice). Nest repeats as `###` |
 | Link check | `python3 scripts/check_links.py` | Fence-aware broken-link scan — every relative prose link resolves to a real file (external URLs and anchor-only links are skipped). Also rejects **stale link labels**: a visible label that is a relative path must point at a path that exists, since pre-renumbering relics leave the target correct while the reader sees a folder layout that no longer exists (a target-only check cannot see these — the Sept 2026 audit fixed 10 such lines and ~18 more survived undetected). Spaced labels are humanized titles, not paths; `personal/` reports are exempt because they quote dead paths as documentation |
 | Freshness gate | `python3 scripts/check_freshness.py` | Stale-API signature scan — flags deprecated APIs, dead/dated reference URLs and moving GitHub Action branch refs in YAML code fences (fake archive timestamps, retired OWASP cheat-sheet URL forms, shuttered domains confirmed dead in the 2026-09 remediation, `url.parse`, sync Next.js `params`, Pages Router exports outside the Next.js stack, `new Buffer()`, setTimeout chunking) |
 | Link baseline | `python3 scripts/link_baseline.py` | Gate 6/31 (diff mode): every cited external URL must be in `scripts/external-links-baseline.json` — exit 1 on unverified ADDED urls; probe-verify each, then `--update` and commit the JSON with the doc change. `--probe` GET-probes all baseline URLs (audit mode, runs in the monthly CI workflow) |
-| Private-workspace refs | `python3 scripts/check_private_refs.py` | Gate 7/31 (since 2026-10-17): the public repo must not reference the private campaign workspace — flags the retired in-repo folder path and links to the private repository across Markdown, YAML and HTML. Scope is the public reading surface; dated records (changelogs, plans, specs) are exempt. The campaign-claims gate this row used to describe moved with the campaign files into the private workspace repository |
+| Private-workspace refs | `python3 scripts/check_private_refs.py` | Gate 7/31 (since 2026-10-17): the public repo must not reference the private campaign workspace — flags the retired in-repo folder, private repository links and local home-directory paths across Markdown, YAML and HTML. Scope is the public reading surface; dated records (changelogs, plans, specs) and operator guidance in `AGENTS.md` are exempt. The campaign-claims gate this row used to describe moved with the campaign files into the private workspace repository |
 | Template compliance | `python3 scripts/check_template.py` | Enforces the reader-hook → practical/textbook definition → First Principles order, required sections by genre, metadata, fence/raw-wrapper integrity and interview counts. Topic-specific headings may organize the remaining explanation; generic middle sections are optional. Rejects retired TL;DR openings and inline revision drills; separate `REVISION.md` companions hold the practice. |
 | Code whitespace | `python3 scripts/check_code_whitespace.py` | Gate 8/31 (since 2026-09-15): code-block indentation hygiene — no trailing whitespace and no whole-block paste-shift base indents (≥4 spaces on every line of a lang-tagged block) inside fenced code. Pass by design: gofmt-style go tabs, Anki TSV data fences, ASCII-diagram alignment in text fences, list-nested fence bases. Bulk-fix with `python3 scripts/fix_code_whitespace.py --trailing-ws --paste-shift` |
 | Box-code indentation | `python3 scripts/fix_box_code_indent.py --check --json --css` | Gate 8b/31: code embedded between ASCII box walls that lost its indentation (every row flat at the box column) renders as visibly broken code. Keyword-anchored JS, JSON and CSS stretches; each mode is strict and a whole-stretch veto protects hand-aligned blocks. Fix with `--fix` |

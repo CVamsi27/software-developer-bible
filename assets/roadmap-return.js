@@ -3,7 +3,8 @@
  var base='https://personal.buildora.work/roadmap';
  function context(search){
   var q=new URLSearchParams(search),date=q.get('roadmapDate'),task=q.get('roadmapTask');
-  if(!date||!/^\d{4}-\d{2}-\d{2}$/.test(date)||task!=='germany:2026:day:'+date)return null;
+  if(!date||!/^\d{4}-\d{2}-\d{2}$/.test(date))return null;
+  if(task!=='germany:2026:day:'+date&&task!=='fullstack:2026-10-26:day:'+date)return null;
   var parsed=new Date(date+'T12:00:00Z');
   if(!Number.isFinite(parsed.getTime())||parsed.toISOString().slice(0,10)!==date)return null;
   return {date:date,task:task};

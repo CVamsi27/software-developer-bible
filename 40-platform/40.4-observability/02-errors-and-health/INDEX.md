@@ -44,7 +44,7 @@ Read error capture/grouping/privacy before health-control semantics and bounded 
 
 These are implementation anchors. Current `instrument.ts` was inspected on 2026-10-10; source configuration does not prove live ingestion, universal redaction or current production health.
 
-Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — tracks errors and health for real.
+Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
 
 | Topic | Docita evidence |
 | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |

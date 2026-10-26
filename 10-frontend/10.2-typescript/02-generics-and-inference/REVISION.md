@@ -22,9 +22,9 @@ Source: [Generics](10.2.2.01-generics.md)
 
 **A:** `extends` *constrains* the parameter to types assignable to `X`, which is what lets the body use `X`'s members; `=` supplies a default when no explicit or inferred type argument is selected.
 
-**Q:** What type does the basic `identity('hello')` call infer, and how can an API preserve the literal without an explicit type argument?
+**Q:** Does `const word = identity('hello')` need a const type parameter to retain the primitive literal? Where does const-like inference make a difference?
 
-**A:** The ordinary signature infers `string`. A TypeScript 5.0 `const` type parameter requests const-like inference for inline literal arguments, so an exact API can infer `'hello'`; this does not narrow a mutable variable that was created earlier.
+**A:** No. The ordinary `identity<T>(value: T): T` call already retains `'hello'` here. An inline object's mutable properties or array elements may widen; a const type parameter can retain readonly literal-like inference for those structures. It does not narrow a previously widened variable or freeze an object at runtime.
 
 **Q:** What is the result type of a merge({name:"Alice"},{age:30}) contract returning T & U, and when is that contract misleading?
 

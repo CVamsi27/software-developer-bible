@@ -1,6 +1,6 @@
 # Kubernetes — Index
 
-> **Study time:** ≈ 2 h 55 m of reading (22 files, ~8 min average).
+> **Study time:** ≈ 2 h 59 m of reading (22 files, ~8 min average).
 > **22 files** — Kubernetes orchestration from pods and replica sets to deployments, services, ingress, ConfigMaps, HPA, node autoscaling (Karpenter/Cluster Autoscaler), health checks, Helm, Kustomize, CRDs/operators, security, batch workloads, PDBs, resource quotas, admission injection, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-22-blue)](../../INDEX.md)
@@ -53,7 +53,7 @@ How traffic and configuration get in.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 08 | [HPA & Scaling](03-scaling/40.2.3.01-hpa-scaling.md) | Horizontal pod autoscaling, metrics server, custom metrics, VPA | Optional | Specialized | 15 min |
+| 08 | [HPA & Scaling](03-scaling/40.2.3.01-hpa-scaling.md) | Horizontal pod autoscaling, metrics server, custom metrics, VPA | Optional | Specialized | 16 min |
 | 09 | [Node Autoscaling & Cluster Capacity](03-scaling/40.2.3.02-node-autoscaling-cluster-capacity.md) | Cluster Autoscaler rules, Karpenter consolidation, node pools/taints, overprovisioning buffers, GPU/stateful caveats | Optional | Specialized | 9 min |
 
 ---
@@ -85,7 +85,7 @@ The senior-level reliability and security layer.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 17 | [Interview Questions](06-interview-prep/40.2.6.01-interview-questions.md) | Curated questions with answers | Optional | Specialized | 20 min |
+| 17 | [Interview Questions](06-interview-prep/40.2.6.01-interview-questions.md) | Curated questions with answers | Optional | Specialized | 21 min |
 
 ---
 

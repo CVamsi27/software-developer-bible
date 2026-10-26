@@ -11,7 +11,7 @@
 
 ## Why this sub-stack exists
 
-Every other sub-stack in Platform assumes infrastructure *exists*. This one answers: **how does that infrastructure get created, versioned, and changed safely?** Even full-stack roles now expect you to read and reason about a `terraform plan` diff — IaC is how modern teams deploy everything from this bible's own CI patterns to the [Docita](../40.7-serverless-edge/40.7.05-serverless-patterns.md) Fly.io + Cloudflare setup.
+This section asks **how infrastructure gets created, versioned, and changed safely**. Learn to reason about a `terraform plan` when the role or system uses Terraform. IaC is a broader practice; Fly.io, Cloudflare and GitHub Actions configuration does not establish that a project uses Terraform.
 
 ## Learning flow (passes)
 
@@ -59,7 +59,7 @@ Every other sub-stack in Platform assumes infrastructure *exists*. This one answ
 
 ## Docita Anchor
 
-Docita runs on Fly.io + Cloudflare with GitHub Actions deploys — no Terraform in production today (see the [Docita Anchor note](../INDEX.md#docita-anchor) in the Platform INDEX). Interview framing: *\"the infra is small enough that Fly CLI + Cloudflare dashboard + Actions is honest; the IaC pattern (state, plan/apply, drift) is exactly what I'd adopt the day the environment count or team size grows — the knowledge is in this sub-stack, the discipline is documented in 40.3.\"* Marked `_No direct docita implementation yet._` rather than faked.
+The [Docita Anchor note](../INDEX.md#docita-anchor) in the Platform INDEX points to Fly.io, Cloudflare and GitHub Actions configuration. Inspect those source contracts separately from the deployed state. Treat this category's Terraform and infrastructure-as-code examples as study material unless an actual implementation and its validation accompany the claim. Explain how state, plan/apply and drift would change the operating model before proposing an adoption threshold.
 ---
 
 [← Previous: Reverse Proxy](../40.11-reverse-proxy/INDEX.md) · [Next: Kubernetes →](../40.2-kubernetes/INDEX.md)

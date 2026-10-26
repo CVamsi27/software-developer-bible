@@ -234,7 +234,33 @@ BOOLEAN_DEPRECATION_HEADER = re.compile(r'^\s*Deprecation\s*:\s*true\s*$', re.I)
 WITHDRAWN_NIST_SANITIZATION = re.compile(
     r'\]\(https?://csrc\.nist\.gov/pubs/sp/800/88/r1/final(?:#[^)]*)?\)', re.I)
 
+# Minimum versions checked against the versioned PostgreSQL manuals on
+# 2026-10-25. Availability on 18 is valid; claiming introduction there is not.
+WRONG_PG_EXPLAIN_INTRODUCTION = re.compile(
+    r'(?:PostgreSQL\s+18\s+(?:introduced|introduces|adds|added)\s+'
+    r'(?:support\s+for\s+)?`?(?:GENERIC_PLAN|SERIALIZE)\b|'
+    r'`?(?:GENERIC_PLAN|SERIALIZE)`?\s+(?:was\s+)?(?:introduced|added|new)\s+'
+    r'(?:in|with)\s+PostgreSQL\s+18\b)', re.I)
+
 RULES = [
+    ('UNQUALIFIED-LAMBDA-TIMEOUT',
+     'Default-capacity Lambda has a fifteen-minute ceiling; supported Managed '
+     'Instances triggers allow up to ninety minutes'),
+    ('GENERIC-TESTCONTAINERS2-POSTGRES',
+     'The Testcontainers 2 org.testcontainers.postgresql.PostgreSQLContainer '
+     'class is non-generic; old-package generic examples remain valid'),
+    ('FALSE-K6-CHECKS-LIMITATION',
+     'The k6 checks metric supports thresholds; bare failed checks alone '
+     'do not change the process exit status'),
+    ('WRONG-PG-EXPLAIN-INTRODUCTION',
+     'GENERIC_PLAN starts in PostgreSQL16 and SERIALIZE in17; '
+     'neither was introduced in18'),
+    ('UNSAFE-JSONLD-UNICODE-ESCAPE',
+     'A JavaScript Unicode escape evaluates back to <; JSON-LD serialization '
+     'needs a literal backslash-u sequence to protect the script boundary'),
+    ('FABRICATED-TANSTACK-QUERY-API',
+     'TanStack Query uses onSettled and hydrate/HydrationBoundary; '
+     'onSettle and rehydrate are not its mutation/hydration APIs'),
     ('BOOLEAN-DEPRECATION-HEADER',
      'RFC9745 Deprecation uses a Structured Field Date such as @1790812800, not true'),
     ('WITHDRAWN-NIST-SANITIZATION-CITATION',
@@ -484,6 +510,12 @@ def check(p: Path, rel: str):
         if isf:
             if not inf and code_rows:
                 source = '\n'.join(row for _, row in code_rows)
+                if lang == 'java' and re.search(
+                        r'\bimport\s+org\.testcontainers\.postgresql\.PostgreSQLContainer\s*;', source):
+                    for match in re.finditer(r'\bPostgreSQLContainer\s*<', source):
+                        offset = source.count('\n', 0, match.start())
+                        hits.append((code_rows[offset][0], 'GENERIC-TESTCONTAINERS2-POSTGRES',
+                                     code_rows[offset][1].strip()[:100]))
                 for match in re.finditer(
                         r"\bchrome\s*(?:\?\.)?\s*\.?\s*sendCommand\s*(?:\?\.)?\s*\(\s*['\"]HeapProfiler\.takeHeapSnapshot['\"]", source):
                     offset = source.count('\n', 0, match.start())
@@ -559,6 +591,19 @@ def check(p: Path, rel: str):
         if (not in_code and rel.startswith(('20-backend/', '30-architecture/', '40-platform/'))
                 and WITHDRAWN_NIST_SANITIZATION.search(line)):
             hits.append((lineno, 'WITHDRAWN-NIST-SANITIZATION-CITATION', line.strip()[:100]))
+        if (not in_code and rel.startswith(('20-backend/', '30-architecture/'))
+                and WRONG_PG_EXPLAIN_INTRODUCTION.search(line)):
+            hits.append((lineno, 'WRONG-PG-EXPLAIN-INTRODUCTION', line.strip()[:100]))
+        if (not in_code and rel.startswith('50-quality/50.1-testing/') and re.search(
+                r'\bbuilt-in\s+`?checks`?\s+metric\s+cannot\s+(?:itself\s+)?be\s+'
+                r'(?:used\s+in\s+a\s+threshold|thresholded)', line, re.I)):
+            hits.append((lineno, 'FALSE-K6-CHECKS-LIMITATION', line.strip()[:100]))
+
+        if (not in_code and rel.startswith('40-platform/40.7-serverless-edge/')
+                and re.search(r'^(?:\*\*(?:A|Answer):\*\*\s*)?Lambda\s+'
+                              r'(?:has|always has)\s+a\s+15-minute\s+invocation\s+maximum',
+                              line, re.I)):
+            hits.append((lineno, 'UNQUALIFIED-LAMBDA-TIMEOUT', line.strip()[:100]))
 
         if not in_code and WRONG_WEBTRANSPORT_RFC.search(line):
             hits.append((lineno, 'WRONG-WEBTRANSPORT-RFC', line.strip()[:100]))
@@ -615,8 +660,8 @@ def check(p: Path, rel: str):
             hits.append((lineno, 'OBSOLETE-COMPOSE-VERSION',
                          f'obsolete top-level version key — {line.strip()[:70]}'))
 
-        if in_code and lang == 'json':
-            code_rows.append((lineno, line))
+        if in_code and lang in ('json', 'java'):
+            code_rows.append((lineno, re.sub(r'//.*$', '', line) if lang == 'java' else line))
 
         if in_code and lang in ('typescript', 'tsx', 'javascript', 'js'):
             # Strip line comments so explanatory notes like
@@ -624,6 +669,12 @@ def check(p: Path, rel: str):
             # (?<!:) avoids https://, (?!/) avoids protocol-relative //.
             code_line = re.sub(r'(?<!:)//(?!/).*$', '', line)
             code_rows.append((lineno, code_line))
+            if 'application/ld+json' in text and re.search(
+                    r"\.replace\(\s*/</g,\s*(['\"])\\u003[cC]\1", code_line):
+                hits.append((lineno, 'UNSAFE-JSONLD-UNICODE-ESCAPE', line.strip()[:100]))
+            if ('TanStack Query' in text or '@tanstack/react-query' in text) and re.search(
+                    r'\bonSettle\s*:|\brehydrate\s*\(', code_line):
+                hits.append((lineno, 'FABRICATED-TANSTACK-QUERY-API', line.strip()[:100]))
             if ZOD4_DEPRECATED_STRING_FORMAT.search(code_line):
                 hits.append((lineno, 'DEPRECATED-ZOD4-STRING-FORMAT', line.strip()[:100]))
             if re.search(r'\bScrollTrigger\.kill\s*\(', code_line):

@@ -1,6 +1,6 @@
 # Async & Concurrency — JavaScript
 
-> **Study time:** ≈ 59 min of reading (7 files, ~8 min average).
+> **Study time:** ≈ 1 h 2 m of reading (7 files, ~9 min average).
 > **7 files.** Trace how host scheduling runs promise work, how failures travel, when cancellation stops supported work, and how a pool limits task starts and buffered results.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](#files)
@@ -15,10 +15,10 @@
 | --   : | ------ | -------- | --- | --- | ----------: |
 | 01 | [Event Loop](10.1.3.01-event-loop.md) | Synchronous tasks, microtask checkpoints, browser rendering, Node host loop | Essential | Foundational | 9 min |
 | 02 | [Promises](10.1.3.02-promises.md) | Promise states, chaining, error handling, `Promise.all`/`race`/`allSettled`/`any` | Essential | Foundational | 9 min |
-| 03 | [Async/Await](10.1.3.03-async-await.md) | Async functions, error handling, concurrency, sequential vs parallel, top-level await | Essential | Foundational | 11 min |
-| 04 | [Error Handling](10.1.3.04-error-handling.md) | try/catch/finally, custom errors, error propagation, async error handling, unhandled rejections | Essential | Foundational | 9 min |
+| 03 | [Async/Await](10.1.3.03-async-await.md) | Async function suspension, local error boundaries, independent vs dependent work, runtime payload validation | Essential | Foundational | 11 min |
+| 04 | [Error Handling](10.1.3.04-error-handling.md) | try/catch/finally, error causes, unknown JSON plus decoder, single-read HTTP validation, host crash policy | Essential | Foundational | 10 min |
 | 05 | [Aborting & Cancellation](10.1.3.05-abort-and-cancellation.md) | AbortController/AbortSignal, stale-request races, `AbortSignal.timeout`/`any`, listener cleanup, cooperative cancellation | Essential | Foundational | 8 min |
-| 06 | [Bounded Concurrency & Promise Pools](10.1.3.06-bounded-concurrency.md) | Start limits, fail-fast or collect-all outcomes, cancellation, ordered results and backpressure | Essential | Foundational | 7 min |
+| 06 | [Bounded Concurrency & Promise Pools](10.1.3.06-bounded-concurrency.md) | Start limits, fail-fast or collect-all outcomes, cancellation, ordered results and backpressure | Essential | Foundational | 8 min |
 
 ---
 
@@ -30,7 +30,7 @@ Read Event Loop → Promises → Async/Await to separate scheduling, outcomes an
 
 ## Docita Anchor
 
-Real code from [docita](https://github.com/CVamsi27/docita) - production healthcare platform (NestJS API + React/Astro apps, TypeScript monorepo). Study the chapter, then find it in the repo:
+Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
 
 | Topic in this category | Docita evidence |
 | --------------------------------- | --------------------------------------------------------------------------------------------------------------- |

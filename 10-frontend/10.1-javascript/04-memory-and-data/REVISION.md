@@ -198,9 +198,9 @@ Source: [Memory Leaks](10.1.4.06-memory-leaks.md)
 
 **A:** Repeat a controlled lifecycle and compare snapshots/retaining paths after equivalent collection opportunities. Growth can also be wanted cache warm-up or delayed collection; distinguish retained obsolete objects from expected live state before calling it a leak.
 
-**Q:** Why doesn't the detached-node example leak once its function returns?
+**Q:** Why can an isolated detached node be collected while the chapter's retained-cell example keeps a tree alive?
 
-**A:** A node with only its own listener can become unreachable after its creating scope finishes. The revised window-listener example has a longer-lived path through window → callback → button; returning from the mounting function does not break it. Call and retire the disposer.
+**A:** An isolated node/listener cycle can become unreachable. The retained-cell example stores a leaf in a longer-lived binding, keeping its still-linked detached tree reachable. Clear that owner when finished; the separate window-listener example also requires removing its registration and retiring the disposer.
 
 **Q:** Why does capturing `hugeData.length` instead of reading `hugeData` inside the closure change anything?
 
@@ -242,9 +242,9 @@ Source: [Garbage Collection](10.1.4.07-garbage-collection.md)
 
 **A:** Incremental marking interleaves portions of collection with application work; concurrent marking performs supported work alongside the application. Remaining pauses and synchronization depend on the collector/workload, so neither guarantees only short begin/end pauses.
 
-**Q:** Why is `data = null` inside a short function pointless, and when does that same line matter?
+**Q:** When can assigning null release retained state, and why is it not a collection command?
 
-**A:** The local binding dies with the scope either way, so there is no pin to release. It only does something for a binding that outlives its usefulness — module scope, a cache closure, a long-lived object property.
+**A:** It can remove an unwanted strong path from a long-lived binding or property. Other paths may still retain the value, and an optimized short-lived local may already need no storage. Dropping a reference makes collection possible; it does not request a particular collection or prove reclamation.
 
 **Q:** When do you reach for `WeakRef` instead of `WeakMap`?
 
@@ -345,6 +345,26 @@ Sources: [Copying](10.1.4.03-shallow-vs-deep-copy.md), [Throttle](10.1.4.05-thro
 **Q:** Why must inserting into a deleted probe slot first check farther slots for the key?
 
 **A:** The key may already exist later in the same probe path. Remember the tombstone, scan for an update, then reuse it only when the key is absent; otherwise insertion creates a duplicate.
+
+## Timer and collection boundaries
+
+Sources: [Collections](10.1.4.02-map-set-weakmap-weakset.md), [Debounce](10.1.4.04-debounce.md), [Throttle](10.1.4.05-throttle.md), [GC](10.1.4.07-garbage-collection.md).
+
+**Q:** Can a symbol be a weak collection key, and can a WeakMap be iterated in insertion order?
+
+**A:** Objects and non-registered symbols are eligible keys in supporting runtimes; Symbol.for keys are not. Weak collections expose no iteration order or enumerable contents.
+
+**Q:** Does leading plus trailing debounce invoke twice for one isolated call?
+
+**A:** No. The leading call consumes its arguments; a trailing invocation needs another buffered call during the window. Both edges false disables work, while maxWait is a separate sustained-input policy.
+
+**Q:** A callback is rendered with new props, but that render is abandoned. When should the timer hook publish its callback ref?
+
+**A:** After a committed render. Mutating a shared callback ref during render can expose uncommitted values to an existing timer; cleanup separately owns pending work.
+
+**Q:** Does the next major GC guarantee a FinalizationRegistry callback?
+
+**A:** No. Timing and delivery are unspecified and the process may exit first. Keep essential resource cleanup explicit, and ensure a held value does not itself retain the target.
 
 ## Ownership and conversion boundaries
 

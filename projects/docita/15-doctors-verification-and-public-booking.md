@@ -5,13 +5,13 @@
 
 
 
+A patient may see a candidate time while verification is pending or while another request is being confirmed. The product must state what is actually promised.
+
 ## Definition
 
 Doctor verification records the outcome of a credential check. Availability generation turns weekly schedules into candidate slots. Public booking accepts a patient request in a clinic context. These capabilities cooperate, but none proves the others are complete.
 
 > **Textbook Definition:** Credential verification, availability calculation and reservation processing establish different facts: qualification evidence, candidate capacity and accepted allocation. A candidate slot is not a committed reservation.
-
-A patient may see a candidate time while verification is pending or while another request is being confirmed. The product must state what is actually promised.
 
 ## First Principles
 

@@ -48,7 +48,7 @@ Source: [Performance & Load Testing](50.1.5.01-performance-load-testing.md)
 
 **Q:** Can HTTP 200 still fail the example's process-level gate?
 
-**A:** Yes. The semantic check verifies the expected item and price; its result feeds a custom `semantic_failures` Rate with a zero-failure threshold. The built-in `checks` metric records outcomes but cannot itself be thresholded. A wrong price can fail the process gate while `http_req_failed` remains zero.
+**A:** Yes. The expected item and price feed a custom `semantic_failures` Rate with one combined result per request and a zero-failure threshold. The built-in `checks` metric can also have a threshold, but counts each named predicate separately. A wrong price can fail the process gate while `http_req_failed` remains zero; bare checks without a threshold do not set a failing exit status.
 
 **Q:** What boundary does Little's Law require?
 

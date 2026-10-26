@@ -78,6 +78,10 @@ Source: [Argo CD (GitOps)](40.3.1.04-argocd.md)
 
 **A:** Hooks do not run during selective sync. A normal ordered synchronization can execute the migration; it still needs compatible, safely repeatable database behavior.
 
+**Q:** An ApplicationSet object is accepted in `default`, but no Applications are generated. What controller boundary should you inspect?
+
+**A:** ApplicationSets normally belong in the Argo CD control-plane namespace. Watching other namespaces requires explicit ApplicationSet controller configuration and matching allowed Application namespaces; API acceptance alone does not establish reconciliation.
+
 **Q:** Does a SyncFail hook automatically reverse a database migration?
 
 **A:** No. It can run configured remediation, but database/external effects are not a transaction with manifest synchronization. Establish a compatible repair procedure.

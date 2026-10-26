@@ -70,6 +70,10 @@ Source: [Container Runtime Internals — Namespaces, cgroups, OverlayFS](40.1.07
 
 **A:** A VM gives a workload a guest kernel behind a hypervisor; a standard Linux container shares the host kernel. The remaining risks depend on configuration: container privileges, mounts and kernel exposure matter, while VMs still depend on the hypervisor, host and management plane. Choose and harden the boundary against the threat model.
 
+**Q:** Why can a correct `docker exec ... memory.events` command fail during an OOM investigation?
+
+**A:** Exec requires the original container to be running, and its cgroup may disappear during cleanup. Export counters while alive, then combine retained inspect state with runtime/node events; reading a replacement container does not recover the old counters.
+
 ## Image Signing, SBOM & Supply Chain Security
 
 Source: [Image Signing, SBOM & Supply Chain Security](40.1.08-image-signing-sbom-supply-chain.md)
@@ -93,6 +97,14 @@ Source: [Rootless Mode & Sandboxed Runtimes (gVisor, Kata)](40.1.09-rootless-san
 **Q:** Why does rootless mode not eliminate container-escape risk?
 
 **A:** It reduces host privileges but still shares a host kernel. Runtime vulnerabilities, allowed host interfaces, mounts, and application credentials remain relevant. A userspace kernel or VM boundary adds a different isolation layer; choose and test it against the workload's threat model.
+
+**Q:** Why might rootless `--cpus` fail to enforce the requested budget even on a cgroup-v2 host?
+
+**A:** Docker also needs systemd and delegation of the CPU controller. Many hosts delegate only memory and PID controllers by default. Inspect the actual driver/controllers instead of inferring enforcement from the command.
+
+**Q:** Does enabling `podman.socket` create a supervised container user service?
+
+**A:** No. That socket activates the Podman REST API. A Quadlet user unit supplies container startup and supervision; lingering only extends the user manager's lifetime.
 
 ## Trace Changed Conditions
 

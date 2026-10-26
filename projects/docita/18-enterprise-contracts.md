@@ -5,13 +5,13 @@
 
 
 
+The difficult operation is changing membership without leaving a clinic on the wrong plan or billing the same agreement twice.
+
 ## Definition
 
 An enterprise contract records commercial terms for a group of member clinics. It sits above clinic subscriptions: the contract owns group terms, while each clinic still records which features it may access and how much it has used.
 
 > **Textbook Definition:** An enterprise contract models commercial terms across a group of accounts; account membership, billing responsibility and individual entitlements must remain consistent during changes to that group.
-
-The difficult operation is changing membership without leaving a clinic on the wrong plan or billing the same agreement twice.
 
 ## First Principles
 

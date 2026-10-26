@@ -34,13 +34,13 @@ Start with visible saga progress and compare it with atomic commit. Then follow 
 These [Docita](https://github.com/CVamsi27/docita) source paths illustrate implementation choices; inspect actual transaction, completion and duplicate-handling boundaries:
 
 | Topic | Docita evidence |
-| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Transactional outbox | `apps/api/src/shared/modules/outbox/outbox.service.ts` - append() inside the same business transaction (ADR-0010) |
 | Outbox relay | `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.ts` - cron drain, attempt escalation, processedAt marking |
 | Idempotent consumers | `apps/api/src/shared/modules/idempotency/idempotency.service.ts` - stored key lifecycle requires a checked mutation/result boundary |
-| DLQ discipline | `apps/api/src/shared/modules/queue/dlq-replay.scheduler.ts` - transient-error classification gates auto-replay |
+| DLQ discipline | `apps/api/src/shared/modules/queue/dlq-replay.scheduler.ts` - transient-error classification helper; `tick()` is inert while automatic wiring is pending. Inspect `dlq.controller.ts` for the manual replay path |
 
-Saga orchestration and event sourcing not used — the listed mechanisms do not alone prove atomic cross-module effects or completed asynchronous handlers.
+The listed mechanisms do not alone prove atomic cross-module effects, automatic replay or completed asynchronous handlers. Trace the current use case and worker wiring before describing an effective recovery guarantee or choosing saga/event-sourcing behavior.
 ---
 
 [← Previous: Communication & Messaging](../02-communication-and-messaging/INDEX.md) · [Next: Resilience →](../04-resilience/INDEX.md)

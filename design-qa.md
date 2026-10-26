@@ -1,5 +1,7 @@
 # Study Flow Design QA
 
+> **Dated local verification log:** the sections below retain their respective implementation checkpoints. Their gate counts, measurements, branches and deployment statements describe those checks, rather than current release status. Use the [current full-stack review](docs/2026-10-25-fullstack-coverage-review.md) for the active verification record.
+
 **Final result:** passed for the approved local study-flow design.
 
 **Repository verification:** all 30 verification gates pass, including the refreshed citation baseline.

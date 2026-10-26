@@ -383,6 +383,10 @@ Source: [Resilience Patterns Deep-Dive: Hedging, Load Shedding, Request Coalesci
 
 **A:** No. A local timeout can stop the caller from waiting while remote work continues. Propagate cancellation through the actual client and dependency, then verify that the operation responds to it.
 
+**Q:** A client disconnects while its database operation is still running. When may an active-work admission permit be released?
+
+**A:** After the protected operation settles and releases its resources, including cancellation cleanup. A response `close` event may request cooperative abort but cannot prove the work stopped; releasing then lets repeated disconnects bypass the work limit. Keep the permit in the operation's `finally` path and bound transport buffers separately. See the [load-shedding example](30.2.1.19-resilience-patterns-deep-dive.md#2-refuse-work-the-system-cannot-serve).
+
 
 **Q:** Why install a singleflight promise before invoking the loader?
 

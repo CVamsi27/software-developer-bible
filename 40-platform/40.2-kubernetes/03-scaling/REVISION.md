@@ -42,6 +42,14 @@ Source: [Kubernetes HPA & Scaling](40.2.3.01-hpa-scaling.md)
 
 **A:** At least one object or external metric is required; CPU and memory resource metrics cannot wake a workload without Pods. The HPA marks its own scale-to-zero state with `ScaledToZero=True`. A durable queue can retain work while workers start, but a Service does not buffer HTTP requests for a zero-replica target.
 
+**Q:** Does a 10% HPA downscale policy remove no Pods when only three replicas remain?
+
+**A:** No. The removal allowance rounds up to a whole Pod, so one can be removed if the recommendation, minimum count and other rules allow it. A percentage policy is not fractional-Pod precision.
+
+**Q:** Will an HPA with minReplicas zero wake a Deployment that was initialized with zero replicas?
+
+**A:** Not without its HPA-owned `ScaledToZero=True` state. Start with at least one replica so the controller can own a later transition to zero; manual zero remains a pause.
+
 ## Node Autoscaling & Cluster Capacity (Cluster Autoscaler, Karpenter)
 
 Source: [Node Autoscaling & Cluster Capacity (Cluster Autoscaler, Karpenter)](40.2.3.02-node-autoscaling-cluster-capacity.md)
@@ -65,6 +73,14 @@ Source: [Node Autoscaling & Cluster Capacity (Cluster Autoscaler, Karpenter)](40
 **Q:** Does tolerating the GPU pool's taint allocate a GPU or guarantee placement in that pool?
 
 **A:** It only permits the taint. A selector or affinity chooses the pool, and a device resource request allocates an exposed GPU. The provider's device plugin must first make that resource available.
+
+**Q:** Why does a device-plugin GPU request need a matching limit?
+
+**A:** Kubernetes does not allow a GPU request without its limit. Limits alone default the request; when both are written they must be equal. Pool tolerations and labels do not satisfy that resource contract.
+
+**Q:** Does an expiration event guarantee Karpenter immediately finishes deleting a node with protected Pods?
+
+**A:** No. Selection for disruption and completing drain are separate. A do-not-disrupt Pod can block expiration/manual termination without a NodeClaim grace deadline; when a configured deadline expires, forced deletion can interrupt the application.
 
 **Q:** Why might a low-priority headroom buffer fail to refill after application Pods preempt it?
 

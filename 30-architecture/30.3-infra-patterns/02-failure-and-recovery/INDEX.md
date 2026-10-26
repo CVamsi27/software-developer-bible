@@ -11,7 +11,7 @@
 
 ## Why this category exists
 
-Networks partition, dependencies time out, deploys hiccup. Naive code turns each blip into user-facing errors or duplicate side effects (double charges, double emails). The fix is layered: circuit breakers to stop cascading failure, retries with backoff and jitter to ride out transients, and idempotency keys so a retried operation is safe to repeat. When a bad release or dependency is already burning, feature flags and kill switches turn it off faster than any rollback; and when state itself is lost, verified backups plus rehearsed restore drills are the difference between an RTO met and a company that isn't.
+Networks partition, dependencies time out, deploys hiccup. Naive code turns each blip into user-facing errors or duplicate side effects (double charges, double emails). The fix is layered: circuit breakers to stop cascading failure, retries with backoff and jitter to ride out transients, and idempotency keys so a retried operation is safe to repeat. A working feature flag or kill switch can disable an affected path before a rollback finishes, provided its control and propagation still work. When state itself is lost, verified backups and rehearsed restore drills establish whether recovery can meet the chosen recovery-time objective (RTO).
 
 ---
 

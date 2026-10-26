@@ -18,9 +18,9 @@ Source: [Recent ECMAScript Features](10.1.6.01-es2024-features.md)
 
 **A:** Optional chaining short-circuits a continuous optional chain when its guarded base is nullish; add it at each link that may be absent. Nullish coalescing falls back only on null or undefined, so values such as zero, an empty string, and false survive it but not logical OR.
 
-**Q:** Why must a `Promise.withResolvers` owner retain the `promise` and both settlement functions?
+**Q:** Which completion paths must a `Promise.withResolvers` owner preserve?
 
-**A:** The owner returns the promise to its caller and uses resolve or reject when the owned operation finishes. Dropping either settlement function makes one completion path impossible; the API does not start or cancel that operation.
+**A:** Return the promise and retain the functions needed to report the owned operation's outcomes. Resolve can fulfill with a value or adopt another promise's result, while reject reports a rejection reason. The owner must ensure completion/error paths settle appropriately; the API neither starts nor cancels work.
 
 **Q:** What does `/^[\w--\d]+$/v` reject that the same pattern without `v` accepts, and what does that tell you about `v`?
 

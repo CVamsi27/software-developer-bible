@@ -42,7 +42,7 @@ Start with moving a window or two pointers through a sequence. Then study which 
 
 ## Docita Anchor
 
-[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to.
+[Docita](https://github.com/CVamsi27/docita) is a companion source repository for this Bible.
 
 | Topic | Docita evidence |
 | ------------------------------------ | --------------------------------------------------------------------------------- |

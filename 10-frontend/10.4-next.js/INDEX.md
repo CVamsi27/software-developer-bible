@@ -1,6 +1,6 @@
 # Next.js — Index
 
-> **Study time:** ≈ 3 h 21 m of reading (21 files, ~10 min average).
+> **Study time:** ≈ 3 h 24 m of reading (21 files, ~10 min average).
 > **21 files** — App Router, rendering strategies, server components, data fetching patterns, caching, streaming, ISR, authentication, static exports, deployment (Docker/Vercel/self-hosted), and interview questions.
 
 [![Files](https://img.shields.io/badge/files-21-blue)](../../INDEX.md)
@@ -57,7 +57,7 @@ Trace how a URL reaches a page or handler, then place request-specific policy at
 | --: | ------ | -------- | --- | --- | ----------: |
 | 05 | [Proxy and Middleware](02-routing-and-middleware/10.4.2.01-middleware.md) | Next.js 16 Proxy, earlier Middleware, matchers, redirects, rewrites, early routing versus authorization | Important | Specialized | 9 min |
 | 06 | [Route Handlers](02-routing-and-middleware/10.4.2.02-route-handlers.md) | API routes, request/response, caching, dynamic vs static | Important | Important | 15 min |
-| 07 | [Metadata](02-routing-and-middleware/10.4.2.03-metadata.md) | Static/dynamic metadata, SEO, Open Graph, robots, sitemaps | Important | Specialized | 13 min |
+| 07 | [Metadata](02-routing-and-middleware/10.4.2.03-metadata.md) | Static/dynamic metadata, SEO, Open Graph, robots, sitemaps | Important | Specialized | 14 min |
 
 ---
 
@@ -84,7 +84,7 @@ Protect current identity/resource boundaries, deliver appropriate image variants
 | --: | ------ | -------- | --- | --- | ----------: |
 | 14 | [Authentication](04-production/10.4.4.01-authentication.md) | Session verification, resource authorization, cookie and CSRF boundaries, version-pinned Auth.js | Important | Important | 9 min |
 | 15 | [Image Optimization](04-production/10.4.4.02-image-optimization.md) | `next/image`, lazy loading, responsive images, AVIF/WebP | Important | Specialized | 7 min |
-| 16 | [Deploying Next.js](04-production/10.4.4.03-deploying-nextjs.md) | Static vs server runtime, standalone artifact, cacheHandler vs cacheHandlers, replica coordination, version skew, runtime configuration, streaming and shutdown | Important | Specialized | 7 min |
+| 16 | [Deploying Next.js](04-production/10.4.4.03-deploying-nextjs.md) | Static vs server runtime, standalone artifact, cacheHandler vs cacheHandlers, replica coordination, version skew, runtime configuration, streaming and shutdown | Important | Specialized | 8 min |
 
 ---
 

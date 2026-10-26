@@ -1,6 +1,6 @@
 # Explanation-depth review — progress
 
-> **Historical checkpoint:** this report describes the 1,017-document inventory and validation recorded on 8 October 2026. For current corpus coverage and verification, use the [12 October precision review](2026-10-10-senior-precision-progress.md) and its [per-file ledger](2026-10-10-senior-precision-audit.json).
+> **Historical checkpoint:** this report describes the 1,017-document inventory and validation recorded on 8 October 2026. For current corpus coverage and verification, use the [25 October review](2026-10-25-fullstack-coverage-review.md) and its exact-hash records. The [12 October precision review](2026-10-10-senior-precision-progress.md) and its [per-file ledger](2026-10-10-senior-precision-audit.json) remain historical checkpoints.
 
 Semantic review is complete for the 1,017-document inventory: 898 revised and 119 reviewed dispositions, with no pending entries. The [per-document ledger](2026-10-08-explanation-depth-review.json) records specific findings, reader questions and evidence boundaries. Automated gates and examples supplement full reads; no interview outcome or untested production behavior is guaranteed.
 
@@ -62,7 +62,7 @@ The [validation record](2026-10-08-explanation-depth-validation.json) retains 11
 
 ## Publication
 
-The user authorized commit and push after completion. This report describes the verified changes prepared for publication; the resulting commit is reported in the chat after remote verification. Personal data remains canonical in this private repository; the external career-ops tool repository is not being committed or pushed.
+The user authorized commit and push after completion. This report describes the verified changes prepared for publication; the resulting commit is reported in the chat after remote verification. Personal data remains canonical in a separate private workspace; the external career-ops tool repository is not being committed or pushed.
 
 ## Follow-up final pass — 10 October 2026
 

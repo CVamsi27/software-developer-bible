@@ -5,13 +5,13 @@
 
 
 
+The concrete question is whether a received callback is authorized to change consent state or trigger an external push—not merely whether it names an existing care context.
+
 ## Definition
 
 The Ayushman Bharat Digital Mission (ABDM) integration connects local patient identity and care contexts—references to records from a care episode—to external health-information workflows. Its current source includes local care contexts, consent requests, callback recording, a gateway client and an operational inbox. These parts do not prove a complete certified exchange of health information.
 
 > **Textbook Definition:** A health-information exchange integration coordinates identities, consent state and care-record references across independently governed systems. Recorded callbacks require a separate trust and authorization decision before affecting local state.
-
-The concrete question is whether a received callback is authorized to change consent state or trigger an external push—not merely whether it names an existing care context.
 
 ## First Principles
 

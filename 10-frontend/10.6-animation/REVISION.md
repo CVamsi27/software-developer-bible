@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Animation-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Optional-lightgrey)](../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../docs/topic-importance.md)
 
@@ -22,6 +22,14 @@ Source: [CSS Animations](10.6.01-css-animations.md)
 
 **A:** Width changes layout geometry and can move neighboring content. Scale changes the visual result without changing normal-flow sizing. Choose the required behavior before optimizing its rendering work.
 
+**Q:** Does forwards fill always retain the `to` keyframe?
+
+**A:** No. Direction and iteration count determine the final sampled state: a reverse animation ends at `from`, while a fractional iteration can stop between keyframes. Fill retains the effect; it does not change the underlying CSS.
+
+**Q:** Does a reduced-motion media query replace a stop control for an endless automatic effect?
+
+**A:** No. The preference and pause/stop/hide conditions are separate. When automatic movement continues beyond five seconds beside other content, provide a user control unless that movement is essential.
+
 ## Motion for React
 
 Source: [Motion for React](10.6.02-framer-motion.md)
@@ -32,7 +40,7 @@ Source: [Motion for React](10.6.02-framer-motion.md)
 
 **Q:** What does Motion for React’s reduced-motion hook report, and which effects does MotionConfig change?
 
-**A:** The hook reports and tracks the device preference. MotionConfig can disable transform and layout animation while leaving effects such as opacity in place; CSS, video, and Canvas motion need their own policy.
+**A:** MotionConfig can disable transform and layout animation while leaving opacity in place; CSS, video and Canvas motion need their own policy. Verify live updates against the installed package: in Motion 14.6.0 the hook snapshots its initial preference and does not rerender for a media-query change. The chapter uses an owned subscription when changes must apply without remounting.
 
 ## GSAP (GreenSock Animation Platform)
 
@@ -45,6 +53,10 @@ Source: [GSAP (GreenSock Animation Platform)](10.6.03-gsap.md)
 **Q:** Does `lazy: true` defer a ScrollTrigger animation until it enters the viewport?
 
 **A:** No. Tween lazy rendering batches initial writes within a ticker update. ScrollTrigger controls playback through its trigger/start configuration; it has no equivalent `lazy` offscreen-loading setting.
+
+**Q:** Why can `immediateRender: false` make a delayed entrance flash?
+
+**A:** Initially visible content stays visible until the tween starts, then receives its hidden starting values. The entrance example keeps the default immediate starting-value application; disabling it suits a target whose earlier state another tween already controls.
 
 **Q:** Why does an animation started by a later click need `contextSafe`?
 
@@ -78,13 +90,17 @@ Source: [View Transitions API & CSS Scroll-Driven Animations](10.6.06-view-trans
 
 **A:** Captured visible elements need unique names. Assign a shared transition identity only to the selected old/new pair and preserve a visible fallback when unsupported.
 
+**Q:** Why disable old/new snapshot animations as well as the view-transition group?
+
+**A:** A custom duration on an old/new pseudo-element can keep its fade active even when the group has no animation. Apply the reduced-motion override to all three kinds of pseudo-element.
+
 ## Canvas & SVG Animation
 
 Source: [Canvas & SVG Animation](10.6.07-canvas-svg-animation.md)
 
 **Q:** Why should canvas resolution differ from CSS size on a high-DPI display?
 
-**A:** The backing buffer needs enough device pixels for sharp output. Scale/reset the drawing transform deliberately and account for the memory and fill-rate cost.
+**A:** The backing buffer needs enough device pixels for sharp output. Scale/reset the drawing transform deliberately and account for the memory and fill-rate cost. A DPR cap does not bound a huge CSS box; limit backing dimensions and total pixels as well.
 
 ## Trace changed timing and cancellation
 

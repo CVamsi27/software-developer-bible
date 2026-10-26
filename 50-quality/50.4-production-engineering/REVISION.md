@@ -62,6 +62,10 @@ Source: [Learning chapter](50.4.02-sli-slo-error-budgets.md)
 
 **A:** 100 bad requests. It cannot be converted into downtime without a separate elapsed-time measurement contract.
 
+**Q:** When does 14.4× burn for one hour correspond to about 2% of a 30-day request budget?
+
+**A:** When eligible-request volume is constant and comparable across the alert and SLO windows: `14.4 × 1/720 = 2%`. Actual event-accounted contribution is bad events in the alert window divided by `(1 − SLO) × eligible events in the SLO evaluation window`; a busy hour can spend much more. The [worked example](50.4.02-sli-slo-error-budgets.md#3-alert-on-the-pace-of-consumption) distinguishes this count from the traffic-based forecast.
+
 **Q:** Does exhausting a budget mathematically mandate every deployment be blocked?
 
 **A:** No. The budget is a measurement; a pre-agreed policy defines release restrictions, remediation/security exceptions and recovery criteria.

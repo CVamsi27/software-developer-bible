@@ -41,7 +41,7 @@ A strong result can be qualitative. If a metric is available, include its denomi
 
 ## Docita Anchor
 
-[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — its artifacts are raw material for your behavioral stories.
+[Docita](https://github.com/CVamsi27/docita) is a companion source repository for this Bible — its artifacts are raw material for your behavioral stories.
 
 | Topic | Docita evidence |
 | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |

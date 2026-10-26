@@ -33,12 +33,16 @@ test('reader shows the roadmap return link only with valid roadmap context',()=>
  const plain=boot(article,chapter,['reading-ui.js']),plainDoc=plain.window.document;
  assert.equal(plainDoc.querySelector('.roadmap-return'),null,'No personal roadmap link without context');
  plain.window.close();
- const dom=boot(article,chapter+'?roadmapDate=2026-10-12&roadmapTask=germany%3A2026%3Aday%3A2026-10-12',['reading-ui.js']),d=dom.window.document;
- const back=d.querySelector('.reader-breadcrumb .roadmap-return');
- assert.ok(back,'Breadcrumb return link appears with roadmap context');
- assert.equal(back.textContent,'Return to personal roadmap');
- assert.ok(back.href.startsWith('https://personal.buildora.work/roadmap?'));
- dom.window.close();
+ for(const [date,task] of [['2026-10-12','germany:2026:day:2026-10-12'],['2026-10-26','fullstack:2026-10-26:day:2026-10-26']]){
+  const dom=boot(article,chapter+'?roadmapDate='+date+'&roadmapTask='+encodeURIComponent(task),['reading-ui.js']),d=dom.window.document;
+  const back=d.querySelector('.reader-breadcrumb .roadmap-return');
+  assert.ok(back,'Breadcrumb return link appears with roadmap context');
+  assert.equal(back.textContent,'Return to personal roadmap');
+  assert.equal(new URL(back.href).origin,'https://personal.buildora.work');
+  assert.equal(new URL(back.href).searchParams.get('date'),date);
+  assert.equal(new URL(back.href).searchParams.get('task'),task);
+  dom.window.close();
+ }
 });
 test('indexes get no chapter width or narration controls',()=>{
  const dom=boot(article,'/INDEX.html',['reading-ui.js','read-aloud.js']);

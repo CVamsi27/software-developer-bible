@@ -1,6 +1,6 @@
 # Testing — Index
 
-> **Study time:** ≈ 2 h 12 m of reading (20 files, ~7 min average).
+> **Study time:** ≈ 2 h 15 m of reading (20 files, ~7 min average).
 > **20 files across six categories.** Learn testing fundamentals, framework behavior, unit/integration/E2E boundaries, test data, mocking, reusable patterns, load and fault experiments, then practice the interview bank.
 
 [![Files](https://img.shields.io/badge/files-20-blue)](../../INDEX.md)
@@ -41,6 +41,7 @@ A test observes selected behavior under a controlled arrangement. Start with the
 | 02 | [Vitest](02-frameworks/50.1.2.02-vitest.md) | Runtime/configuration, transforms, mocking and migration boundaries | Choose from compatibility and measured suite behavior | Essential | Foundational | 8 min |
 | 03 | [React Testing Library](02-frameworks/50.1.2.03-react-testing-library.md) | Render, queries, events, async testing, accessibility (testing-library/jest-dom) | React component tests | Essential | Foundational | 10 min |
 | 04 | [Testing Frameworks Comparison](02-frameworks/50.1.2.04-testing-frameworks-comparison.md) | Jest vs Vitest, Playwright E2E, Supertest API testing, choosing the right framework | Stack decisions | Essential | Foundational | 4 min |
+| 05 | [Playwright](02-frameworks/50.1.2.05-playwright.md) | Action-specific waits, browser fixtures, controlled APIs, visual contracts and diagnostics | Real-browser journeys | Essential | Foundational | 6 min |
 
 ---
 
@@ -85,7 +86,7 @@ Choose the smallest boundary that observes the relevant failure. Broader scope a
 ## Learning passes and revision
 
 1. **State the contract:** foundations and data management explain outcomes, assertions, observed code and resource ownership. Finish the [foundations revision](01-foundations/REVISION.md).
-2. **Run and observe:** choose the compatible runner, then learn awaited component observations and its evidence boundary. Finish the [framework revision](02-frameworks/REVISION.md).
+2. **Run and observe:** choose the compatible runner, learn awaited component observations, then use [Playwright](02-frameworks/50.1.2.05-playwright.md) for behavior that needs a real browser. State each test's dependency boundary. Finish the [framework revision](02-frameworks/REVISION.md).
 3. **Choose scope:** unit, integration and complete journeys establish different claims. Finish the [test-level revision](03-test-levels/REVISION.md).
 4. **Control and reuse deliberately:** mocking and patterns preserve consumer behavior, scenario visibility and cleanup. Finish the [mocking/pattern revision](04-mocking-and-patterns/REVISION.md).
 5. **Vary operating conditions:** workload and fault experiments separate the offered input, observed response and recovery. Finish the [advanced revision](05-advanced/REVISION.md).

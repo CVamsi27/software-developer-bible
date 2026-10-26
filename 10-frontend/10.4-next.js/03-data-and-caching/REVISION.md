@@ -94,9 +94,9 @@ Source: [Caching in Next.js](10.4.3.03-caching.md)
 
 **A:** A tag groups entries for refresh, rather than assigning a distinct user key or granting access. Identity-aware keys and authorization are separate requirements.
 
-**Q:** What must an existing Next.js 16 app configure to use the current Cache Components and Partial Prefetching model?
+**Q:** Can every Next.js 16 minor version enable both Cache Components and Partial Prefetching?
 
-**A:** Set both `cacheComponents: true` and `partialPrefetching: true`. Cache reusable functions or components explicitly and place uncached request-time work under Suspense; traditional dynamic/revalidate/fetchCache segment settings are not equivalent controls.
+**A:** No. Cache Components is available from 16.0, while the separate `partialPrefetching` flag starts at 16.3 and requires Cache Components. Enable the supported configuration for the installed minor version. Cache reusable functions or components explicitly and place uncached request-time work under Suspense; traditional dynamic/revalidate/fetchCache segment settings are not equivalent controls.
 
 **Q:** Which Next.js 16 invalidation choice gives a Server Action read-your-writes behavior?
 

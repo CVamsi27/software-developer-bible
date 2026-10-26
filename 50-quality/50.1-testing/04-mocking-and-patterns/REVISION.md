@@ -26,6 +26,10 @@ Source: [Mocking](50.1.4.01-mocking.md)
 
 **A:** It preserves configured behavior. A previous return/rejection or mutable fake state can still affect the next test; reset the intended behavior or construct a fresh double and reset separate data.
 
+**Q:** In current Vitest, does restoring all spied methods also erase the calls retained on a spy variable?
+
+**A:** No. `vi.restoreAllMocks()` restores the original methods but retains that spy's history and mock implementation. Individual `mockRestore()` has a different contract. Choose explicit clearing or fresh doubles when history isolation is required.
+
 **Q:** How do an HTTP 500 and HttpResponse.error exercise different client paths?
 
 **A:** A 500 is a received response whose status the client must inspect; HttpResponse.error causes a transport rejection handled through the promise error path. One cannot stand in for both.

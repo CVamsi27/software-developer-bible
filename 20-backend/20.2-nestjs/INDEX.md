@@ -1,6 +1,6 @@
 # NestJS — Index
 
-> **Study time:** ≈ 3 h 3 m of reading (24 files, ~8 min average).
+> **Study time:** ≈ 3 h 5 m of reading (24 files, ~8 min average).
 > **24 files** — NestJS framework from modules and controllers to guards, pipes, interceptors, CQRS, microservices, testing, configuration, lifecycle/shutdown, scheduling, OpenAPI docs, custom decorators, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-24-blue)](../../INDEX.md)
@@ -64,7 +64,7 @@ The order of execution and each stage's responsibilities. Read in order. Categor
 | 03 | [Pipes](02-request-lifecycle/20.2.2.03-pipes.md) | Validation pipes, transformation pipes, built-in pipes, custom pipes | Essential | Important | 7 min |
 | 04 | [Interceptors](02-request-lifecycle/20.2.2.04-interceptors.md) | Request/response transformation, logging, caching, mapping, async interceptors | Essential | Important | 7 min |
 | 05 | [Exception Filters](02-request-lifecycle/20.2.2.05-exception-filters.md) | Built-in exceptions, custom exception filters, catch-all filters, `@Catch()` | Essential | Important | 8 min |
-| 06 | [Request Context](02-request-lifecycle/20.2.2.06-request-context-and-async-local-storage.md) | AsyncLocalStorage lifetime, trusted identity and Observable subscription | Essential | Important | 8 min |
+| 06 | [Request Context](02-request-lifecycle/20.2.2.06-request-context-and-async-local-storage.md) | AsyncLocalStorage lifetime, trusted identity and Observable subscription | Essential | Important | 9 min |
 
 ---
 
@@ -89,7 +89,7 @@ Production hygiene. Category INDEX: [Quality & Operations](04-quality-and-operat
 | 02 | [Testing](04-quality-and-operations/20.2.4.02-testing.md) | Jest, TestingModule, supertest, Testcontainers, e2e/integration/unit | Essential | Important | 12 min |
 | 03 | [Lifecycle Hooks & Graceful Shutdown](04-quality-and-operations/20.2.4.03-lifecycle-hooks-graceful-shutdown.md) | Lifecycle hook map + ordering, `enableShutdownHooks()`, SIGTERM, Kubernetes terminationGracePeriod, draining connections, closing pools in order | Essential | Important | 13 min |
 | 04 | [Scheduling & Background Jobs](04-quality-and-operations/20.2.4.04-scheduling-background-jobs.md) | @nestjs/schedule + dynamic API, distributed cron locks (Redis NX), BullMQ queues, retries/backoff/rate limits, idempotent handlers, job observability | Essential | Important | 19 min |
-| 05 | [Swagger & OpenAPI](04-quality-and-operations/20.2.4.05-swagger-openapi-nestjs.md) | @nestjs/swagger setup, DocumentBuilder, @ApiProperty DTOs, generics + @ApiExtraModels, security schemes, spec JSON codegen, CI contract checks | Essential | Important | 14 min |
+| 05 | [Swagger & OpenAPI](04-quality-and-operations/20.2.4.05-swagger-openapi-nestjs.md) | @nestjs/swagger setup, DocumentBuilder, @ApiProperty DTOs, generics + @ApiExtraModels, security schemes, spec JSON codegen, CI contract checks | Essential | Important | 15 min |
 
 ---
 

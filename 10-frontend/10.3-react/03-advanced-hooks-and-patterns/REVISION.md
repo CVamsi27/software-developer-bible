@@ -178,9 +178,9 @@ Source: [React Performance Optimization](10.3.3.05-performance.md)
 
 **A:** `memo` compares each prop with `Object.is` by default. A new array reference counts as changed even if its entries look the same; state or Context consumed by the child can also render it.
 
-**Q:** What is the dimmed list in ProductSearch communicating to the user?
+**Q:** What does the Updating results status in ProductSearch communicate?
 
-**A:** `useDeferredValue(query)` lags behind the input while the heavy filter re-renders, so `query !== deferredQuery` means the visible list still matches an older query. Dropping its opacity tells the user "these results are behind your typing" instead of letting stale results look final or the UI look frozen.
+**A:** `useDeferredValue(query)` can lag behind the input while the result subtree renders, so `query !== deferredQuery` means the visible list still matches an older query. The status paragraph makes that delay explicit instead of presenting retained results as the final response to the newest input.
 
 **Q:** What do stable keys preserve in a virtualized list, and what problem remains?
 
@@ -238,17 +238,33 @@ Source: [State Management](10.3.3.06-state-management.md)
 
 Source: [TanStack Query: Server State Ownership](10.3.3.07-tanstack-query.md)
 
-**Q:** Why do two components reading the same query key trigger one network call, not two?
+**Q:** Why can concurrent observers of the same key share a request, while a list and detail disagree?
 
-**A:** Identical keys share one cached record and one in-flight fetch; concurrent requests for the same key dedupe into a single network call.
+**A:** The same QueryClient coordinates an in-flight fetch for that key. List and detail keys own independent result objects; TanStack Query does not automatically normalize their shared entities. Update or invalidate every affected result explicitly.
 
 **Q:** What happens if an optimistic update succeeds in the UI but the server rejects the mutation?
 
-**A:** `onError` restores the snapshot captured in `onMutate`, rolling the UI back to the last confirmed server record.
+**A:** The application must implement its `onError` reconciliation. A saved snapshot can restore an isolated edit, but blindly restoring it can erase a later concurrent optimistic edit. Keep one write owner or use pending variables/version-aware patches.
 
-**Q:** Why must `staleTime` agree between server (`dehydrate`) and client (`rehydrate`)?
+**Q:** Does passing a stale-time deadline start a background request?
 
-**A:** A mismatch causes hydration warnings or duplicate fetches: the first render must match the server output without a waterfall.
+**A:** It changes freshness. Mount, focus, reconnect, explicit invalidation/refetch or a separately configured polling interval supplies the trigger. Test an idle query to avoid confusing staleness with polling.
+
+**Q:** Why must `staleTime` agree between server (`dehydrate`) and client hydration?
+
+**A:** Exact agreement is not required. Choose freshness to avoid an unwanted immediate refetch, and use matching query keys and request-scoped clients. A stale-time difference alone does not prove a React markup mismatch; the rendered content must be checked separately.
+
+**Q:** Which API restores dehydrated state, and what protects an HTML script boundary?
+
+**A:** React uses HydrationBoundary; core clients can use hydrate. Dehydration returns state, not an automatic HTML-safe serialization. Use the framework's safe transport and do not interpolate untrusted raw JSON into a script.
+
+**Q:** Why can invalidating a query leave the network idle?
+
+**A:** Invalidation marks matching results stale. By default it refetches active queries; inactive results can wait for a later observer. Disabled queries and stricter policies also require their documented handling.
+
+**Q:** A clinician switches clinics while a detail request is pending. What does a tenant key solve?
+
+**A:** Including tenant identity separates cached results and query work. It does not authorize access: the API must verify the caller's tenant/resource rights, and sign-out/account changes need an explicit cache-clearing policy.
 
 ## Ownership under changed conditions
 
@@ -266,9 +282,9 @@ Source: [Custom Hooks](10.3.3.03-custom-hooks.md), [Suspense](10.3.3.01-suspense
 
 **A:** Each caller owns distinct Hook records and counts. Reusing the implementation shares logic, not storage.
 
-**Q:** Why must a counter's public setter use the same bounds as increment and reset?
+**Q:** Why must every debounced-value call own and clear its own timer?
 
-**A:** Otherwise another entry point bypasses the invariant. Every exposed transition must clamp or reject according to the declared policy.
+**A:** Each caller has a separate value and lifecycle. A shared timer could cancel another caller's work, while missing cleanup lets an obsolete value publish after the input changes or the caller unmounts. Every entry point must preserve that ownership contract.
 
 **Q:** Does navigator.onLine establish that an authenticated API request will succeed?
 

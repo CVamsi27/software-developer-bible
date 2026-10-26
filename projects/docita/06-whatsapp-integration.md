@@ -5,13 +5,13 @@
 
 
 
+Consider a reminder that the provider accepts but the patient never receives. The application needs to retain the provider message ID, process later status events, and show unresolved delivery honestly.
+
 ## Definition
 
 WhatsApp integration connects clinic actions to outbound messages and connects incoming provider events to local delivery records or patient responses. A send request and a delivery receipt are separate events.
 
 > **Textbook Definition:** A messaging integration links application events to provider requests and correlates subsequent delivery or inbound events with local records. Acceptance of a request does not establish receipt by the intended recipient.
-
-Consider a reminder that the provider accepts but the patient never receives. The application needs to retain the provider message ID, process later status events, and show unresolved delivery honestly.
 
 ## First Principles
 

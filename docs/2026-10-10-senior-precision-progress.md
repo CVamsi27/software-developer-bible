@@ -1,5 +1,7 @@
 # Senior technical precision pass — progress as of 12 October 2026
 
+> **Historical checkpoint:** this report retains the dated scope and results below. Use the [25 October review](2026-10-25-fullstack-coverage-review.md) for current exact-hash review coverage and release evidence.
+
 This pass corrects concepts that could lead to the wrong engineering decision: consistency and commit boundaries, behavioral substitution, domain ownership, security credentials, cache freshness and platform resource guarantees. It uses original explanations informed by the supplied books, with current specifications and official documentation for runtime behavior.
 
 ## Fresh review coverage

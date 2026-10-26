@@ -5,13 +5,13 @@
 
 
 
+A failed renewal makes the distinction concrete: should staff lose access immediately, can an administrator still resolve billing, and what happens to work already accepted?
+
 ## Definition
 
 A subscription connects a clinic's paid plan and billing period to the features and usage allowances it can access. Payment state, feature entitlement and recorded consumption are related, but each answers a different question.
 
 > **Textbook Definition:** Subscription management associates an account with time-bounded commercial terms, entitlements and consumption limits, coordinating billing transitions with access policy.
-
-A failed renewal makes the distinction concrete: should staff lose access immediately, can an administrator still resolve billing, and what happens to work already accepted?
 
 ## First Principles
 

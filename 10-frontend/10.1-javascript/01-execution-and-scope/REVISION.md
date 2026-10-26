@@ -50,9 +50,9 @@ Source: [Scope](10.1.1.02-scope.md)
 
 **A:** A strict-mode assignment raises ReferenceError. In ordinary sloppy code it can create a global-object property. Declare the intended binding rather than relying on that behavior.
 
-**Q:** Does const prevent changes to an object’s properties?
+**Q:** Does const prevent changes to an object’s properties, and does Object.freeze make every nested object immutable?
 
-**A:** No. It prevents reassignment of that binding. Choose let when the binding itself must change; object mutation is a separate decision.
+**A:** Const prevents reassignment of that binding. Object.freeze is shallow: the frozen object's own properties cannot be replaced, but a referenced nested object can still change. Deep immutability needs a deliberate policy for the whole relevant graph.
 
 ## Call Stack
 
@@ -90,9 +90,9 @@ Source: [Hoisting](10.1.1.04-hoisting.md)
 
 **A:** It returns the string undefined for an unresolved name, but reading an existing uninitialized lexical binding still raises ReferenceError.
 
-**Q:** Can a function declared inside an if block safely be treated as a function-scoped declaration?
+**Q:** Can a function declared inside an if block safely be treated as a function-scoped declaration, or as having let-like initialization timing?
 
-**A:** In strict code and modules it is block-scoped. Sloppy scripts have legacy Annex B rules with eligibility conditions. Avoid depending on those differences; declare the intended outer binding explicitly.
+**A:** In strict code and modules it is block-scoped but initialized at block entry, so a call before its declaration line inside that block can work. Sloppy scripts have legacy Annex B rules with eligibility conditions. Avoid depending on those differences; declare the intended outer binding explicitly.
 
 **Q:** What do `using` and `await using` add to declaration timing and resource lifetime?
 
@@ -185,6 +185,34 @@ Source: [V8 Execution and Optimization](10.1.1.07-v8-execution-and-optimization.
 **Q:** What should a senior engineer measure before attempting a V8-specific optimization?
 
 **A:** Profile representative startup and steady-state workloads, identify whether JavaScript CPU is material, and compare end-to-end latency and memory after the change. Source-level intuition or a narrow microbenchmark is insufficient evidence.
+
+## Evaluation and Representation Boundaries
+
+Source: [Execution Context](10.1.1.01-execution-context.md), [Call Stack](10.1.1.03-call-stack.md), [Hoisting](10.1.1.04-hoisting.md), [Lexical Environment](10.1.1.05-lexical-environment.md), [Closures](10.1.1.06-closures.md)
+
+**Q:** What can remain after a classic script evaluation finishes without its context occupying the stack forever?
+
+**A:** The realm's global environment and reachable values can remain available to later evaluations. The lifetime of a realm or binding is distinct from the active evaluation that used it.
+
+**Q:** Can an ES module read an outer global lexical binding while keeping its own var off globalThis?
+
+**A:** Yes. Its declarations live in the module environment, whose outer chain still resolves global names. Module-local declarations do not imply isolation from every global binding.
+
+**Q:** Does function inlining break the language's nested-call behavior?
+
+**A:** No. An engine may use fewer physical frames while preserving return values, observable effects and exception behavior. Context diagrams specify semantics, not one frame per source call.
+
+**Q:** Is declaration instantiation the engine's mandatory parse/bytecode pass?
+
+**A:** No. It establishes bindings under the applicable language algorithms before statement evaluation. Parsing, lazy compilation and JIT tiering are separate implementation choices.
+
+**Q:** Does await turn earlier synchronous computation into background work?
+
+**A:** No. An async function runs synchronously until suspension, and synchronous work after resumption still occupies its thread. Promise jobs resume the suspended evaluation after the awaited value settles.
+
+**Q:** Why does listener cleanup need the same callback identity?
+
+**A:** That registration is a retaining path to the callback and its captured data. Removing a different function leaves it registered; other references can still retain data even after the intended registration is removed.
 
 ## Summary
 

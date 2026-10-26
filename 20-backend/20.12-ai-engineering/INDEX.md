@@ -21,6 +21,7 @@ Start by framing the model as a dependency inside an application. Then follow th
 | 4 | [Agent Orchestration Patterns](20.12.04-agent-orchestration-patterns.md) | How application code bounds tool use, state, side effects, and recovery |
 | 5 | [Serving Models: Hosted vs Self-Hosted](20.12.05-serving-models-hosted-vs-self-hosted.md) | How quality, full cost, latency, data handling, and operations determine the serving path |
 | 6 | [Safety, Cost & Governance](20.12.06-safety-cost-governance.md) | How to enforce egress, authorization, budget, review, and audit controls |
+| — | [Revision](REVISION.md) | Recall the mechanism and failure boundary for each chapter before timed practice |
 | 7 | [Interview Questions](20.12.07-interview-questions.md) | How to state a design decision, the failure boundary, and the evidence that would change it |
 
 ## Choose Your First Pass

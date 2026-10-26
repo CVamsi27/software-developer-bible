@@ -100,7 +100,7 @@ Source: [Metadata API in Next.js](10.4.2.03-metadata.md)
 
 **Q:** Why is JSON.stringify alone insufficient for untrusted JSON-LD inserted into a script?
 
-**A:** A literal less-than character can begin markup that terminates the script. Escape it before injection so CMS/user text remains script content.
+**A:** A literal less-than character can begin markup that terminates the script. Replace it with the literal backslash-u sequence `\u003c` in the output, using two backslashes in the JavaScript string literal. A single Unicode escape evaluates back to `<`. Verify a `</script>` payload contains no literal `<` after serialization and still round-trips as JSON.
 
 **Q:** Do two Open Graph image sizes provide responsive on-page images?
 

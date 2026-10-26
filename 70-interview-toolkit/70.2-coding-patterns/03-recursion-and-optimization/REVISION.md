@@ -50,7 +50,7 @@ Source: [Backtracking](70.2.3.01-backtracking.md)
 
 **Q:** Why does Combination Sum recurse at i instead of i+1?
 
-**A:** A candidate may be reused, so keeping i permits choosing it again. Positive values decrease the remaining target and ensure termination. Advancing to i+1 changes the problem to one use per candidate.
+**A:** A candidate may be reused, so keeping i permits choosing it again. Under the helper's safe-integer contract, positive candidates decrease the remaining target exactly. Rounded Number arithmetic outside that range can leave a subtraction unchanged; even exact progress still needs a practical recursion and output budget. Advancing to i+1 changes the problem to one use per candidate.
 
 ### Dynamic Programming
 

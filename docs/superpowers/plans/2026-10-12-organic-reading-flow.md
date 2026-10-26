@@ -1,5 +1,7 @@
 # Organic Reading Flow Implementation Plan
 
+> **Historical plan and execution log:** the checkpoints below retain their original scope and results. Use the [current full-stack review](../../2026-10-25-fullstack-coverage-review.md) for current content and verification evidence. A later review found the recorded k6 claim that built-in checks cannot be thresholded was incorrect; the canonical load-testing chapter and revision now explain both valid threshold choices. Earlier runtime/version claims here describe their dated checks rather than current compatibility.
+
 > **For agentic workers:** Continue inline from the existing approved explanation-depth design; keep progress and review evidence by document genre.
 
 **Goal:** Make every learning page read as one clear explanation that pulls the reader from a concrete problem through its mechanism to a useful engineering decision, while preserving senior-level accuracy and coverage.

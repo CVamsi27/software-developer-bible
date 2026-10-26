@@ -10,6 +10,7 @@ path,role_priority,general_importance,rationale
 10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.04-hoisting.md,Essential,Foundational,"Core JavaScript behavior underpins React, Node.js, debugging and coding interviews."
 10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.05-lexical-environment.md,Essential,Foundational,"Core JavaScript behavior underpins React, Node.js, debugging and coding interviews."
 10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.06-closures.md,Essential,Foundational,"Core JavaScript behavior underpins React, Node.js, debugging and coding interviews."
+10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md,Important,Specialized,Current full-stack learning metadata; deepen this concept when an end-to-end feature or role requires it.
 10-frontend/10.1-javascript/01-execution-and-scope/REVISION.md,Essential,Foundational,"Category companion inherits the highest priority of its learning chapters on each axis; begin with those concepts, not every specialist question."
 10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.01-this.md,Essential,Foundational,"Core JavaScript behavior underpins React, Node.js, debugging and coding interviews."
 10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.02-prototypes.md,Essential,Foundational,"Core JavaScript behavior underpins React, Node.js, debugging and coding interviews."
@@ -64,6 +65,7 @@ path,role_priority,general_importance,rationale
 10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.03-decorators.md,Important,Specialized,Relevant to NestJS usage; detailed decorator internals are a later specialization.
 10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.04-declaration-files.md,Important,Specialized,Type-system depth supports library and API decisions; prioritize practical narrowing and contracts before advanced type puzzles.
 10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.05-advanced-patterns.md,Important,Specialized,Type-system depth supports library and API decisions; prioritize practical narrowing and contracts before advanced type puzzles.
+10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.06-typescript-compiler-pipeline.md,Important,Specialized,Current full-stack learning metadata; deepen this concept when an end-to-end feature or role requires it.
 10-frontend/10.2-typescript/04-advanced-patterns/REVISION.md,Essential,Foundational,"Category companion inherits the highest priority of its learning chapters on each axis; begin with those concepts, not every specialist question."
 10-frontend/10.2-typescript/05-interview-prep/10.2.5.01-interview-questions.md,Essential,Foundational,"Practical TypeScript contracts, narrowing, generics and compiler boundaries are central to the target stack."
 10-frontend/10.3-react/01-react-internals/10.3.1.01-virtual-dom.md,Essential,Foundational,"React state, identity, effects, refs and rendering are required for explaining and building the target frontend."
@@ -76,7 +78,7 @@ path,role_priority,general_importance,rationale
 10-frontend/10.3-react/02-core-hooks/10.3.2.02-useeffect.md,Essential,Foundational,"React state, identity, effects, refs and rendering are required for explaining and building the target frontend."
 10-frontend/10.3-react/02-core-hooks/10.3.2.03-usememo-usecallback.md,Important,Important,Understand component behavior and tradeoffs; internal implementation or advanced patterns follow working core hooks.
 10-frontend/10.3-react/02-core-hooks/10.3.2.04-useref.md,Essential,Foundational,"React state, identity, effects, refs and rendering are required for explaining and building the target frontend."
-10-frontend/10.3-react/02-core-hooks/10.3.2.05-context-api.md,Important,Important,Understand component behavior and tradeoffs; internal implementation or advanced patterns follow working core hooks.
+10-frontend/10.3-react/02-core-hooks/10.3.2.05-context-api.md,Important,Foundational,Understand component behavior and tradeoffs; internal implementation or advanced patterns follow working core hooks.
 10-frontend/10.3-react/02-core-hooks/REVISION.md,Essential,Foundational,"Category companion inherits the highest priority of its learning chapters on each axis; begin with those concepts, not every specialist question."
 10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.01-suspense.md,Important,Specialized,"Useful modern UI mechanisms, with depth selected by the vacancy and product."
 10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.md,Important,Important,Understand component behavior and tradeoffs; internal implementation or advanced patterns follow working core hooks.
@@ -84,6 +86,7 @@ path,role_priority,general_importance,rationale
 10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.md,Important,Specialized,Learn the integration or composition problem after core state and effects; detailed implementation follows a library or product need.
 10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.05-performance.md,Essential,Foundational,"React state, identity, effects, refs and rendering are required for explaining and building the target frontend."
 10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.06-state-management.md,Essential,Important,"Own reusable state logic and state boundaries; explain local, shared and server state through a practical product example."
+10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.07-tanstack-query.md,Essential,Important,Current full-stack learning metadata; deepen this concept when an end-to-end feature or role requires it.
 10-frontend/10.3-react/03-advanced-hooks-and-patterns/REVISION.md,Essential,Foundational,"Category companion inherits the highest priority of its learning chapters on each axis; begin with those concepts, not every specialist question."
 10-frontend/10.3-react/04-modern-react/10.3.4.01-modern-hooks-react18-19.md,Important,Specialized,"Useful modern UI mechanisms, with depth selected by the vacancy and product."
 10-frontend/10.3-react/04-modern-react/10.3.4.02-web-components.md,Important,Specialized,"Useful modern UI mechanisms, with depth selected by the vacancy and product."
@@ -139,7 +142,8 @@ path,role_priority,general_importance,rationale
 10-frontend/10.7-html-css/10.7.06-css-architecture-styling-approaches.md,Important,Important,Understand style ownership and maintainability; choose one practical approach rather than mastering every styling library.
 10-frontend/10.7-html-css/10.7.07-theming-design-tokens.md,Optional,Specialized,"SEO, offline/PWA and deep theming are conditional on the product; defer detailed study during core interview preparation."
 10-frontend/10.7-html-css/10.7.08-browser-storage.md,Important,Foundational,Browser mechanisms support performance and safe client/session behavior; learn the mechanism before deep implementation details.
-10-frontend/10.7-html-css/10.7.09-interview-questions.md,Essential,Foundational,"Category companion inherits the highest priority of its learning chapters on each axis; begin with those concepts, not every specialist question."
+10-frontend/10.7-html-css/10.7.09-tailwind-css.md,Important,Foundational,Current full-stack learning metadata; deepen this concept when an end-to-end feature or role requires it.
+10-frontend/10.7-html-css/10.7.10-interview-questions.md,Essential,Foundational,Current full-stack learning metadata; deepen this concept when an end-to-end feature or role requires it.
 10-frontend/10.7-html-css/REVISION.md,Essential,Foundational,"Category companion inherits the highest priority of its learning chapters on each axis; begin with those concepts, not every specialist question."
 10-frontend/10.8-mobile/10.8.01-react-native-cross-platform.md,Optional,Specialized,Mobile-specific frameworks are outside the current web full-stack target.
 10-frontend/10.8-mobile/10.8.02-deep-linking-universal-links.md,Optional,Specialized,Mobile-specific frameworks are outside the current web full-stack target.
@@ -160,6 +164,8 @@ path,role_priority,general_importance,rationale
 20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.01-clustering.md,Important,Important,Understand runtime/resource boundaries after core request handling; specialize when the workload needs it.
 20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.02-child-processes-workers.md,Important,Important,Understand runtime/resource boundaries after core request handling; specialize when the workload needs it.
 20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.03-process-environment.md,Important,Important,Understand runtime/resource boundaries after core request handling; specialize when the workload needs it.
+20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.04-pm2-process-supervision.md,Important,Important,Current full-stack learning metadata; deepen this concept when an end-to-end feature or role requires it.
+20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.05-watt-runtime-architecture.md,Important,Important,Current full-stack learning metadata; deepen this concept when an end-to-end feature or role requires it.
 20-backend/20.1-node.js/03-processes-and-concurrency/REVISION.md,Important,Important,"Category companion inherits the highest priority of its learning chapters on each axis; begin with those concepts, not every specialist question."
 20-backend/20.1-node.js/04-security-and-operations/20.1.4.01-node-security.md,Essential,Foundational,Node request/runtime behavior and NestJS application boundaries are central to the résumé and target backend.
 20-backend/20.1-node.js/04-security-and-operations/20.1.4.02-debugging-profiling-nodejs.md,Essential,Foundational,Node request/runtime behavior and NestJS application boundaries are central to the résumé and target backend.
@@ -574,6 +580,7 @@ path,role_priority,general_importance,rationale
 50-quality/50.1-testing/02-frameworks/50.1.2.02-vitest.md,Essential,Foundational,Verification of meaningful behavior and failure boundaries is part of core engineering ownership.
 50-quality/50.1-testing/02-frameworks/50.1.2.03-react-testing-library.md,Essential,Foundational,Verification of meaningful behavior and failure boundaries is part of core engineering ownership.
 50-quality/50.1-testing/02-frameworks/50.1.2.04-testing-frameworks-comparison.md,Essential,Foundational,Verification of meaningful behavior and failure boundaries is part of core engineering ownership.
+50-quality/50.1-testing/02-frameworks/50.1.2.05-playwright.md,Essential,Foundational,Current full-stack learning metadata; deepen this concept when an end-to-end feature or role requires it.
 50-quality/50.1-testing/02-frameworks/REVISION.md,Essential,Foundational,"Category companion inherits the highest priority of its learning chapters on each axis; begin with those concepts, not every specialist question."
 50-quality/50.1-testing/03-test-levels/50.1.3.01-unit-testing.md,Essential,Foundational,Verification of meaningful behavior and failure boundaries is part of core engineering ownership.
 50-quality/50.1-testing/03-test-levels/50.1.3.02-integration-testing.md,Essential,Foundational,Verification of meaningful behavior and failure boundaries is part of core engineering ownership.

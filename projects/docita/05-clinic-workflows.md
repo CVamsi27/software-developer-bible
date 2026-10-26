@@ -5,13 +5,13 @@
 
 
 
+A typical operation is arrival → queue → consultation → prescription → payment. The difficult cases are competing check-ins, cancellation while consultation starts, concurrent bookings and local-calendar boundaries. This case follows those mechanisms rather than assuming every patient takes one uninterrupted path.
+
 ## Definition
 
 A clinic workflow coordinates a booked time, a patient's arrival, a consultation and any follow-up or payment work. These are related records with different lifecycles; one status field cannot represent all of them.
 
 > **Textbook Definition:** A domain workflow coordinates related state machines and their invariants across an operation. Scheduling, arrival, consultation and follow-up retain distinct lifecycles even when one user journey connects them.
-
-A typical operation is arrival → queue → consultation → prescription → payment. The difficult cases are competing check-ins, cancellation while consultation starts, concurrent bookings and local-calendar boundaries. This case follows those mechanisms rather than assuming every patient takes one uninterrupted path.
 
 Source was inspected on **2 October 2026**. Earlier wait-time and attendance improvements and incident stories were not verified in this review.
 

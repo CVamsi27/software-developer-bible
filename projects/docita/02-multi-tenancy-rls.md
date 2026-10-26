@@ -74,19 +74,22 @@ This is a staged-enforcement switch. When the enable setting is absent or not `o
 
 Consequently, the guarantee depends on more than the existence of a policy. Confirm the database role, table coverage, scope settings, query route, and intended privileged paths. Table owners and roles with bypass privileges have different behavior; the rollout document requires a non-owner application role and does not enable `FORCE ROW LEVEL SECURITY`.
 
-## A routing limitation found during this review
+## The current router isolates recursion prevention from siblings
 
-The current routing core temporarily sets a shared async-store entry’s `tx` to null while awaiting a forwarded operation. An overlapping sibling operation can observe that null and take the base-client fallback:
+The 2 October source-extracted probe found a race: one forwarded operation cleared a shared async-store transaction reference across an await, allowing a sibling query to take the base-client fallback. That describes the earlier implementation, not the current source.
+
+A 26 October recheck at clean Docita revision `4e3032c2d0fd9d2ee74e7c74536fefef454d5a65` found `activeTxStorage.run({ tx: null }, callback)` around the forwarded delegate. It creates a child async scope for recursion prevention while the request's parent scope retains its transaction:
 
 ```text
-first query clears shared tx → first query waits
-→ second query sees no active tx → second uses base client
-→ first query finishes and restores tx
+request scope holds tx
+  → first query calls tx delegate inside child scope with tx:null
+  → concurrent sibling still reads parent tx and routes through its delegate
+  → nested delegate calls avoid recursive routing in their own child scope
 ```
 
-A source-extracted probe with controlled delegates reproduced this branch on 2 October 2026. It did not connect to a database or establish a production exposure. Given the policy’s enable switch, the fallback needs a database-level isolation test before claiming every concurrent query is routed and protected.
+The actual source-extracted routing helper passed a controlled overlap check: a blocked first delegate did not clear the sibling's transaction; both calls routed to the transaction delegate and neither used the base-client fallback. This is a local async-context check, not a PostgreSQL policy or production isolation test.
 
-A safer routing design should keep recursion prevention local to the nested async scope, rather than mutate the sibling-visible store across an await. This is a proposed implementation correction, not a claim that the source repository was changed in this documentation pass.
+The router still falls back when no active transaction or matching model delegate exists. Verify actual model operations, raw queries, roles, policy settings and privileged paths with database integration tests before making a universal isolation claim.
 
 ## Explain ABAC using the current policy conditions
 
@@ -121,7 +124,7 @@ The recommended design is a proposal, not an implemented or production-verified 
 
 ## Summary
 
-Tenant isolation depends on trusted identity, resource authorization, transaction routing and database-role behavior working together. The source implements these mechanisms, but its enable switch and overlapping-query routing limitation prevent an unconditional guarantee without further verification.
+Tenant isolation depends on trusted identity, resource authorization, transaction routing and database-role behavior working together. The source implements these mechanisms, but its staged enable switch, role requirements and fallback paths prevent an unconditional guarantee without further verification.
 
 ## See Also
 
@@ -131,7 +134,7 @@ Tenant isolation depends on trusted identity, resource authorization, transactio
 
 ## Source Evidence
 
-Paths below are relative to the Docita source repository inspected on 2 October 2026:
+Paths below are relative to the Docita source repository inspected on 2 October 2026; the routing helper was rechecked at the clean revision named above on 26 October:
 
 | Evidence | Source path |
 | ----------------------------- | ----------------------------------------------------------------------------- |

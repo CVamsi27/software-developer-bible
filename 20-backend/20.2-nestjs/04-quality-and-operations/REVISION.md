@@ -150,6 +150,10 @@ Sources: [Configuration](20.2.4.01-configuration-validation.md), [Testing](20.2.
 
 **A:** The named file receives the JSON; stdout may be empty. Generate to an explicit separate file before comparison.
 
+**Q:** Why must a spec export reuse the application's named security-scheme configuration?
+
+**A:** Route security metadata refers to schemes by name. If the exporter rebuilds a smaller configuration, an operation can refer to `jwt` while `components.securitySchemes.jwt` is absent. Share the builder and any prefix/versioning setup so the exported contract matches the served one.
+
 **Q:** Why can a forced HTTP socket close leave work that still needs the database?
 
 **A:** Transport closure does not cancel an arbitrary handler promise. Track accepted work, await settlement or apply cooperative cancellation, then release its dependencies; abrupt termination still requires recovery-safe effects.
@@ -160,7 +164,7 @@ Sources: [Configuration](20.2.4.01-configuration-validation.md), [Testing](20.2.
 
 **Q:** Does a password containing an uppercase letter and digit necessarily resist guessing?
 
-**A:** No. The custom length example checks only its stated length bounds. A real password policy also screens common/compromised values and controls verification cost; the configuration chapter links current guidance.
+**A:** No. Length or composition alone does not establish unpredictability or reject common and compromised choices. A real policy also screens those values, controls authentication attempts and bounds verification cost; deployment-secret length validation is a separate contract.
 
 **Q:** Why is the retained failed-job count different from a recent failure rate?
 

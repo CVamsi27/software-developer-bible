@@ -1,6 +1,6 @@
 # Rendering Fundamentals — Next.js
 
-> **Study time:** ≈ 46 min of reading (5 files, ~9 min average).
+> **Study time:** ≈ 47 min of reading (5 files, ~9 min average).
 > **5 files.** Decide when output is produced and reused, then follow one route from its URL and server data to the small client controls that need hydration.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#files)

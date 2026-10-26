@@ -1,6 +1,6 @@
 # System Design — Foundational Theory
 
-> **Study time:** ≈ 4 h 32 m of reading (24 files, ~11 min average).
+> **Study time:** ≈ 4 h 33 m of reading (24 files, ~11 min average).
 > **Study time and file counts are generated from the current chapter set.**
 
 [![Files](https://img.shields.io/badge/files-24-blue)](../../../INDEX.md)
@@ -84,12 +84,12 @@ Trace a partition, timeout and retry through a chosen design; state the exact in
 
 ## Docita Anchor
 
-Where [docita](https://github.com/CVamsi27/docita) — my production hospital-management SaaS — actually implements this theory.
+Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
 
 | Topic | Docita evidence |
-| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Rate limiting | `shared/modules/tenant-rate-limit/*` (guard + service + repository), plus `ip-rate-limit.service.ts`, `user-rate-limit.service.ts`, `rate-limit.interceptor.ts` |
-| Queues & DLQ | `apps/api/src/shared/modules/queue/postgres-queue.service.ts` + `dlq-replay.scheduler.ts`/`dlq.controller.ts`; ADR 0001 "Postgres as queue"; dedicated `apps/worker` process |
+| Queues & DLQ | `apps/api/src/shared/modules/queue/postgres-queue.service.ts` + `dlq.controller.ts` (manual replay; automatic scheduler is not wired); ADR 0001 "Postgres as queue"; dedicated `apps/worker` process |
 | Distributed locks | `shared/common/utils/postgres-advisory-lock.ts` |
 | Consensus / leader election | `apps/api/src/shared/modules/schedule/cron-heartbeat.ts` records runs, not ownership; selective advisory-lock callers and API scheduler disablement are separate controls |
 | Backpressure | `apps/api/src/shared/common/extensions/query-budget.extension.ts`; Fly-level concurrency caps (`soft_limit 60 / hard_limit 100`) in `fly.toml` |

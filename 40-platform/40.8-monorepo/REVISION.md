@@ -38,6 +38,10 @@ Source: [Nx](40.8.03-nx.md)
 
 **A:** A graph describes coupling; it does not prevent unwanted coupling. Tags and rules establish which dependencies are allowed, and lint or conformance must run as a required check. See Nx’s [module-boundary enforcement](https://nx.dev/docs/features/enforce-module-boundaries).
 
+**Q:** Why can two Nx 24 workspaces select different tasks for the same change?
+
+**A:** New workspaces default to task-based affected selection, while a migration preserves project-based selection with `affected.legacy: true`. `NX_LEGACY_AFFECTED` can override the mode. In task mode, inputs and consumed outputs propagate changes; a `dependsOn` edge alone only orders work. Check the [affected contract](https://nx.dev/docs/features/ci-features/affected) and the resolved CI mode.
+
 ## Monorepo Tools Deep-Dive (Lerna, pnpm, Yarn, Rush, Bazel)
 
 Source: [Monorepo Tools Deep-Dive (Lerna, pnpm, Yarn, Rush, Bazel)](40.8.04-monorepo-tools.md)

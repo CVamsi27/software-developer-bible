@@ -21,9 +21,9 @@ Read the relevant case study first. Distinguish inspected source, executable che
 
 **A:** No. Work started inside an existing request can inherit its context, while delayed work can retain a reference to a transaction that has already ended. Independently scheduled work needs its own explicitly supplied and validated clinic or user scope.
 
-**Q:** What did the overlapping-query routing probe establish?
+**Q:** What changed between the historical overlapping-query failure and the current routing probe?
 
-**A:** The source-extracted routing core permits a second operation to take the base-client fallback while a first operation clears the shared tx. It did not establish live database behavior or a production leak.
+**A:** The earlier router cleared a sibling-visible transaction reference. The current router creates a child async scope with tx:null for the delegate, leaving the parent transaction visible to siblings. The 26 October extracted-helper check routed both overlapping calls through their transaction delegates; it did not establish database policy enforcement or production isolation.
 
 **Q:** Does a worker necessarily need unrestricted access because it lacks HTTP context?
 
@@ -87,7 +87,7 @@ Source: [Async processing](03-async-processing.md).
 
 **Q:** What happens if the required event listener was never registered?
 
-**A:** `emitAsync` can fulfill with no listener results, so this relay marks the row processed. Required-handler registration needs a separate readiness or contract check.
+**A:** An unguarded `emitAsync` can fulfill with no listener results. The 15 October source has a `hasListeners` guard that throws instead, leaving retryable intent. One registered listener still does not prove that every required handler exists or propagates failure; verify registration and the actual Nest wiring.
 
 **Q:** Does a dispatch timeout stop the listener's side effect?
 

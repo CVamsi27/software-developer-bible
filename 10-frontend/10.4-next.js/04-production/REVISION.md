@@ -84,7 +84,11 @@ Source: [Deploying Next.js](10.4.4.03-deploying-nextjs.md)
 
 **Q:** Which tag data and coordination must a previous-model cache handler preserve across replicas?
 
-**A:** Preserve the full cache value and timestamp. Page and route tags are in the data headers under x-next-cache-tags; cached fetch tags come from ctx.tags. Preserve types such as Buffer and Map, and implement the documented refreshTags() synchronization so invalidations on one replica reach the others.
+**A:** Preserve the full cache value and timestamp. Page and route tags are in the data headers under x-next-cache-tags; cached fetch tags come from ctx.tags. Preserve types such as Buffer and Map, keep the tag index shared, and make reads honor remote invalidations. `refreshTags()` belongs to the separate plural `cacheHandlers` contract for Cache Components.
+
+**Q:** Does configuring cacheHandler automatically move every optimized image into that store?
+
+**A:** No. Image support starts at Next.js 16.2 and requires `images.customCacheHandler: true`; without it, the optimizer uses its separate disk cache. The custom handler must support IMAGE entries before opting in.
 
 **Q:** What must match across replicas that serve one build, and what does deploymentId do during a rollout?
 

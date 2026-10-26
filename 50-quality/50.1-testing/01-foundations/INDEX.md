@@ -39,7 +39,7 @@ Start by deciding what behavior a test can claim and which boundary can expose i
 
 ## Docita Anchor
 
-[Docita](https://github.com/CVamsi27/docita) is the companion production repo this bible anchors to — each topic below points at where it actually runs in that codebase.
+[Docita](https://github.com/CVamsi27/docita) is a companion source repository for this Bible — the paths below are inspection leads; check the current implementation, executed tests and deployment evidence before claiming behavior.
 
 | Topic | Docita evidence |
 | ---------------------------------------- | ------------------------------------------------------------------------------------------------------------- |

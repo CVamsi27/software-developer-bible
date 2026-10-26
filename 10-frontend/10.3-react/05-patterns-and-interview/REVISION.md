@@ -54,11 +54,11 @@ Source: [Compound Components](10.3.5.02-compound-components.md)
 
 **A:** It owns shared state and actions; child components consume that contract through context. Namespacing children is a public API convention, not the state-sharing mechanism.
 
-**Q:** Can a consumer insert an extra wrapper between `<Tabs>` and `<Tabs.Tab>`?
+**Q:** Can a consumer insert an extra wrapper between `<Tabs>` and `<Tabs.Trigger>`?
 
 **A:** Yes, context follows the React ancestry through ordinary wrappers. Direct-child cloning instead only inspects the elements supplied at that particular children boundary.
 
-**Q:** Why does the select example register and unregister each option through immutable state updates?
+**Q:** Why should a dynamic selectable list register and unregister each option through immutable state updates?
 
 **A:** Registration makes the selected label available to the trigger; cleanup removes a label when an option unmounts. A mutated Map keeps the same identity and schedules no render, so added or removed choices can leave the displayed label stale.
 
@@ -84,7 +84,7 @@ Source: [Compound Components](10.3.5.02-compound-components.md)
 
 **Q:** Why does the example require a controlled `value` prop instead of implying an uncontrolled mode?
 
-**A:** The root owns only open/closed state; the caller owns the selected value. Making `value` required keeps that data contract explicit instead of suggesting a mode the implementation does not support.
+**A:** The caller owns the selected value and supplies the change callback; TabsRoot distributes that contract through context without storing a second selection. Requiring both props keeps ownership explicit instead of implying an internal default-value mode the example does not implement.
 
 ## Changed identity and display contracts
 
@@ -92,7 +92,7 @@ Source: [Portals](10.3.5.01-portals.md), [Compound Components](10.3.5.02-compoun
 
 **Q:** What log sequence does one portaled button click request in the bubbling example?
 
-**A:** Its own handler queues the portal entry, then the logical React ancestor queues the outer entry. Native propagation follows the actual DOM path separately.
+**A:** Its own handler logs the menu entry, then the logical React ancestor logs the card entry. Native propagation follows the actual DOM path separately.
 
 **Q:** Does setting z-index without checking the destination guarantee an overlay stays above the page?
 

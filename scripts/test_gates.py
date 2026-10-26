@@ -431,6 +431,81 @@ def _dup_pair_sandbox(pairs, reword=True):
 
 CASES = [
     {
+        'name': 'gate 5 rejects an unqualified Lambda invocation timeout ceiling',
+        'gate': 'check_freshness.py', 'args': [],
+        'plant': {'40-platform/40.7-serverless-edge/timeouts.md':
+                  '# Invocation limits\n\nLambda has a 15-minute invocation maximum under the current contract.\n'},
+        'clean': {'40-platform/40.7-serverless-edge/timeouts.md':
+                  '# Invocation limits\n\nDefault-capacity Lambda has a 15-minute invocation maximum; supported Managed Instances triggers allow ninety minutes.\n\n```text\nLambda has a 15-minute invocation maximum. This is the old claim to correct.\n```\n'},
+        'fire_names': ['UNQUALIFIED-LAMBDA-TIMEOUT'],
+    },
+    {
+        'name': 'gate 5 rejects generic syntax on the Testcontainers 2 PostgreSQL module class',
+        'gate': 'check_freshness.py', 'args': [],
+        'plant': {'20-backend/20.13-java/testing.md':
+                  '# Database test\n\n```java\nimport org.testcontainers.postgresql.PostgreSQLContainer;\nclass Check { PostgreSQLContainer<?> db = new PostgreSQLContainer<>("postgres:16-alpine"); }\n```\n'},
+        'clean': {'20-backend/20.13-java/testing.md':
+                  '# Database test\n\n```java\nimport org.testcontainers.postgresql.PostgreSQLContainer;\nclass Check { PostgreSQLContainer db = new PostgreSQLContainer("postgres:16-alpine"); }\n```\n\n```java\nimport org.testcontainers.containers.PostgreSQLContainer;\nclass Legacy { PostgreSQLContainer<?> db = new PostgreSQLContainer<>("postgres:16-alpine"); }\n```\n'},
+        'fire_names': ['GENERIC-TESTCONTAINERS2-POSTGRES'],
+    },
+    {
+        'name': 'gate 5 rejects the false k6 checks-threshold limitation',
+        'gate': 'check_freshness.py', 'args': [],
+        'plant': {'50-quality/50.1-testing/load.md':
+                  '# k6 load testing\n\nThe built-in `checks` metric cannot itself be thresholded.\n'},
+        'clean': {'50-quality/50.1-testing/load.md':
+                  '# k6 load testing\n\nThe built-in `checks` metric can have a threshold; check results alone do not fail the process.\n\n```text\nIncorrect old claim: built-in checks cannot be thresholded.\n```\n'},
+        'fire_names': ['FALSE-K6-CHECKS-LIMITATION'],
+    },
+    {
+        'name': 'gate 7 rejects local private-workspace paths on the public reading surface',
+        'gate': 'check_private_refs.py', 'args': [],
+        'plant': {'80-lanes-abroad-full-stack/example.md':
+                  '# Tool use\n\nbash ~/repos/personal/doctor.sh\n/Users/example/repos/personal/reports/plan.md\n'},
+        'clean': {'80-lanes-abroad-full-stack/example.md':
+                  '# Tool use\n\nRun the private workspace health check from its own documentation.\n',
+                  'AGENTS.md': '# Operator rules\n\nCanonical private data lives in ~/repos/personal.\n'},
+        'fire_names': ['local private-workspace path', 'example.md:3', 'example.md:4'],
+    },
+    {
+        'name': 'gate 5 distinguishes PostgreSQL EXPLAIN minimum versions from availability on 18',
+        'gate': 'check_freshness.py', 'args': [],
+        'dirs': ['20-backend/20.4-database'],
+        'plant': {'20-backend/20.4-database/explain.md':
+                  '# EXPLAIN\n\nPostgreSQL 18 introduced `GENERIC_PLAN`.\n`SERIALIZE` was added in PostgreSQL 18.\n'},
+        'clean': {'20-backend/20.4-database/explain.md':
+                  '# EXPLAIN\n\nGENERIC_PLAN arrived in PostgreSQL 16; SERIALIZE arrived in 17.\nPostgreSQL 18 supports GENERIC_PLAN and SERIALIZE.\n'},
+        'fire_names': ['WRONG-PG-EXPLAIN-INTRODUCTION'],
+    },
+    {
+        'name': 'gate 5 rejects a JavaScript Unicode escape that leaves JSON-LD script boundaries open',
+        'gate': 'check_freshness.py', 'args': [],
+        'dirs': ['10-frontend/10.4-next.js'],
+        'plant': {'10-frontend/10.4-next.js/example.md':
+                  "# JSON-LD\n\napplication/ld+json\n\n```tsx\nconst safe = JSON.stringify(data).replace(/</g, '\\u003c');\n```\n"},
+        'clean': {'10-frontend/10.4-next.js/example.md':
+                  "# JSON-LD\n\napplication/ld+json\n\n```tsx\nconst safe = JSON.stringify(data).replace(/</g, '\\\\u003c');\n```\n"},
+        'fire_names': ['UNSAFE-JSONLD-UNICODE-ESCAPE'],
+    },
+    {'name': 'coverage review cannot survive changed source bytes', 'gate': 'senior_coverage.py', 'args': ['--require-complete', '--reviews=docs/reviews.json'], 'dirs': ['10-frontend', 'docs'], 'plant': {'10-frontend/scope.md': '# Scope\n\nA binding identifies a named value.\n\nChanged mechanism.\n', 'docs/reviews.json': '{"reviews": [{"path": "10-frontend/scope.md", "sha256": "d969e948a3a42982372223655352720f85aea4da2a05d07d9f50eaea2071aa6a", "status": "reviewed", "reviewer": "fixture", "notes": "Read the binding trace and failure boundary."}]}'}, 'clean': {'10-frontend/scope.md': '# Scope\n\nA binding identifies a named value.\n', 'docs/reviews.json': '{"reviews": [{"path": "10-frontend/scope.md", "sha256": "d969e948a3a42982372223655352720f85aea4da2a05d07d9f50eaea2071aa6a", "status": "reviewed", "reviewer": "fixture", "notes": "Read the binding trace and failure boundary."}]}'}},
+    {
+        "name": "gate 5 rejects nonexistent TanStack Query mutation and hydration APIs",
+        "gate": "check_freshness.py", "args": [],
+        "dirs": ["10-frontend/10.3-react/03-advanced-hooks-and-patterns"],
+        "plant": {
+            "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.07-tanstack-query.md": (
+                "# TanStack Query\n\n```tsx\nuseMutation({ onSettle: () => {} });\nrehydrate(queryClient, state);\n```\n"
+            ),
+        },
+        "clean": {
+            "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.07-tanstack-query.md": (
+                "# TanStack Query\n\n```tsx\nuseMutation({ onSettled: () => {} });\n"
+                "hydrate(queryClient, state);\n<HydrationBoundary state={state} />;\n```\n"
+            ),
+        },
+    },
+
+    {
         "name": "gate 5 rejects obsolete boolean Deprecation HTTP headers",
         "gate": "check_freshness.py", "args": [],
         "plant": {

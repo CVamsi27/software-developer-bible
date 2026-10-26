@@ -76,7 +76,7 @@ Source: [Execution Plans & Query Optimization](20.4.2.03-execution-plans.md)
 
 **Q:** What does the execution plan add beyond the SQL query text?
 
-**A:** It shows scans/operators, row-flow structure and estimates; instrumented execution adds observations. Pool wait, network transfer and client decoding remain outside executor time. Lock and I/O waits during execution count toward it; PostgreSQL 18 can separately measure server-side result serialization.
+**A:** It shows scans/operators, row-flow structure and estimates; instrumented execution adds observations. Pool wait, network transfer and client decoding remain outside executor time. Lock and I/O waits during execution count toward it; PostgreSQL 17+ can separately measure server-side result serialization.
 
 **Q:** What does `Index Searches` add to `loops` in a PostgreSQL 18 plan?
 
@@ -84,7 +84,7 @@ Source: [Execution Plans & Query Optimization](20.4.2.03-execution-plans.md)
 
 **Q:** How can a generic plan help diagnose parameter-sensitive behavior, and what does it leave out?
 
-**A:** PostgreSQL 18's `EXPLAIN (GENERIC_PLAN)` shows a parameterized plan without concrete values and cannot be combined with `ANALYZE`. Compare it with a safe executed plan using representative values; the generic plan does not show observed runtime work.
+**A:** PostgreSQL 16+ supports `EXPLAIN (GENERIC_PLAN)`, which shows a parameterized plan without concrete values and cannot be combined with `ANALYZE`. Compare it with a safe executed plan using representative values; the generic plan does not show observed runtime work. `SERIALIZE` separately requires 17+, and `Index Searches` output requires 18+.
 
 **Q:** How can incorrect row-count estimates lead to a poor execution plan?
 

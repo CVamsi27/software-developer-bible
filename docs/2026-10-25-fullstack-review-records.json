@@ -10619,12 +10619,13 @@
     },
     {
       "path": "projects/docita/23-hypothetical-clinic-metrics.md",
-      "sha256": "1f98ae07b50c47dbde64f74fc6a93ba35714809404e9579cb702c4f17ec5f953",
+      "sha256": "dfc1511de8c96c7a5456a784d1a741d39f9887e661b3aac838edba7d78741d89",
       "status": "reviewed",
-      "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
+      "reviewer": "bible_final_verification",
+      "reviewDate": "2026-10-27",
       "fullContentRead": true,
-      "notes": "Full read: Fully hypothetical workload and before/after examples, recomputed 26000 visits and 520000 requests, ordinary versus burst rates, polling selection versus completion, means versus medians, p95 population, captured versus attempted payment denominator, all 22 case measurement boundaries. Moved the existing concrete problem before the definitions to establish the reading trace; no mechanism removed."
+      "notes": "Full-content review: recomputed workload, storage, labor, percentile-change, delivery, reconciliation and availability-budget arithmetic. Hypothetical inputs, invented observations and proposed targets remain distinct. Added isolated benchmark artifacts, offered-load/correctness boundaries and a separate operational adoption-query method. October 2/9 queue/relay observations remain dated theoretical rates rather than fresh measured throughput. No actual adoption, executed benchmark, private reference or new citation asserted. Final full-content reread after table delimiter alignment; formatting only, with the hypothetical and historical-evidence boundaries preserved.",
+      "findings": []
     },
     {
       "path": "projects/docita/24-resume-claim-walkthrough.md",
@@ -10646,21 +10647,23 @@
     },
     {
       "path": "projects/docita/REVISION.md",
-      "sha256": "06890b506095dea3a3361949f6cae3e3a815a309ea2552d0376be340b95ae576",
+      "sha256": "19a8e28282e65cdeb0156eb22467a7cc7119ffc7c5f5f7347128d8c7cf571629",
       "status": "reviewed",
-      "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
+      "reviewer": "bible_metrics_evidence",
+      "reviewDate": "2026-10-27",
       "fullContentRead": true,
-      "notes": "Full read of all case-linked question groups and historical measurements. Repaired stale no-listener answer to current hasListeners guard while preserving required-consumer and Nest error-propagation limits. Current ALS child-scope answer and all metric assumptions remain explicitly bounded; 104 historic tests/158 historic samples are not fresh production evidence."
+      "notes": "Full-content review: source-linked architecture, tenancy, delivery, payments, clinical and recovery retrieval preserved. New benchmark/adoption questions distinguish assumptions, offered load, raw outcomes and operational aggregates. Numeric examples checked against chapter 23. Existing 158-request/2ms observations remain dated and qualified; no new audit or candidate mastery inferred. Links and privacy checks pass.",
+      "findings": []
     },
     {
       "path": "projects/maq/01-product-engineering.md",
-      "sha256": "7626c0e92e67333efaa0353414ded407dde51070fcf6e2d7b14fbbdbe289feb3",
+      "sha256": "dfb97b343a0e8ee5a3f90e51db1f6a3259b9ff9fa034d0b41fc76de26f2f71d9",
       "status": "reviewed",
-      "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
+      "reviewer": "bible_final_verification",
+      "reviewDate": "2026-10-27",
       "fullContentRead": true,
-      "notes": "Full read: four experience themes reconstruct real personal contribution from authored claims without substituting Docita source. Synthetic 51-to-2 query scenario, React state/accessibility and pipeline exercises are distinguished from unverified employer metrics; revision covers every theme. Removed unavailable private pointer; no employer verification or new historical outcome claimed."
+      "notes": "Full-content review: workflow ownership, request tracing, authorized batching, pagination/cache trade-offs, interaction boundaries and delivery/mentoring reconstruction. The 50-row/51-to-two-query example remains synthetic, without a latency claim. New evidence-to-wording progression distinguishes recalled contribution, authorized source, original measurements and new benchmarks; accomplishment wording remains conditional on substantiation. No invented employer metric, client or private path. Final full-content reread after table delimiter alignment; formatting only, with the hypothetical and historical-evidence boundaries preserved.",
+      "findings": []
     },
     {
       "path": "projects/maq/INDEX.md",
@@ -10673,12 +10676,13 @@
     },
     {
       "path": "projects/maq/REVISION.md",
-      "sha256": "46437d022f2d22c196581845a71d5e00910bfd41e3caaa79b1bedf3fcb584e29",
+      "sha256": "7bdfe45636a979db61a26c10b2007f4f63c90287e9224015647ef4af6b27a1d9",
       "status": "reviewed",
-      "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
+      "reviewer": "bible_metrics_evidence",
+      "reviewDate": "2026-10-27",
       "fullContentRead": true,
-      "notes": "Full read: four experience themes reconstruct real personal contribution from authored claims without substituting Docita source. Synthetic 51-to-2 query scenario, React state/accessibility and pipeline exercises are distinguished from unverified employer metrics; revision covers every theme. Removed unavailable private pointer; no employer verification or new historical outcome claimed."
+      "notes": "Full-content review: workflow, performance, React and delivery questions preserve historical-evidence limits. Added source-linked qualitative accomplishment, provenance, failed-request inclusion and recreation-boundary questions; aligned to the canonical chapter and preserved authored drills. No fabricated measurement or private reference.",
+      "findings": []
     },
     {
       "path": "search.md",

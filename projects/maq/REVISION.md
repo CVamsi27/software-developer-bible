@@ -107,6 +107,26 @@ Source: [Release checks and mentoring](01-product-engineering.md#bullet-4-descri
 
 **A:** Explain it as technical knowledge or a practice exercise. Narrow the resume wording if it implies personal implementation you cannot substantiate.
 
+## Accomplishment Evidence
+
+Source: [Choose wording from available evidence](01-product-engineering.md#choose-strong-wording-from-the-evidence-you-have).
+
+**Q:** Can a strong engineering bullet work without a performance percentage?
+
+**A:** Yes. Identify the personal action, concrete workflow and supported result. A substantiated change to an authorized list endpoint's access pattern is specific even when original timing records are unavailable.
+
+**Q:** What does a source diff establish that a benchmark does not?
+
+**A:** An authorized diff or review record can connect a person and revision to a mechanism. A benchmark observes behavior under its fixture and environment. Neither alone establishes historical business impact; combine evidence only where its scope and provenance agree.
+
+**Q:** Why retain failures in a before/after performance comparison?
+
+**A:** Reporting only fast successful responses can hide requests that timed out or failed after the change. Compare equivalent outputs and workload, then report latency and outcome counts together.
+
+**Q:** Can today's recreation recover the missing MAQ improvement number?
+
+**A:** No. It creates a new synthetic result with a new environment and date. It can demonstrate current understanding, but the historical claim still needs its original measurement or a clearly documented estimate from actual records.
+
 ## Summary
 
 Answer the mechanism clearly, then support personal experience with a real example. Do not fill gaps with invented measurements or incidents.

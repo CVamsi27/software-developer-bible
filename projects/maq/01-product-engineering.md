@@ -98,6 +98,21 @@ Prepare four story cards corresponding to the bullets. Each card needs a real pr
 
 Label each detail as recalled experience, available artifact, reconstructed estimate or practice exercise. Separate “I implemented” from “the team delivered” and “I would propose.” If you cannot recall a technique attributed to you in the current resume, narrow or remove that phrase rather than learning a fictional ownership story.
 
+### Choose Strong Wording From the Evidence You Have
+
+For the list-request example above, the claim changes as evidence becomes available. A synthetic result never becomes an employer result by copying its number into a story.
+
+| Available evidence | Supported statement and next check |
+| ---------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Recalled personal investigation, without original timing records | Describe the actual request, bottleneck investigation and change you remember. Use a qualitative outcome; do not infer a percentage or percentile. |
+| An authorized source diff or review record | Identify the access pattern changed, the relevant scope and your contribution. A diff can support a mechanism or ownership statement, but cannot alone prove runtime speed. |
+| Original before/after observations | State endpoint, statistic, population, periods, sample counts and exclusions. Compare equivalent permissions, fields, workload and deployment conditions before calculating a change. |
+| A newly executed synthetic recreation | Name it as a current benchmark, retain its fixtures and raw output, and explain the observed result. Keep it separate from the date and outcome of the historical work. |
+
+A useful accomplishment sentence contains the action, concrete scope and supported result. For example, if personally substantiated: “Reworked the authorized list endpoint's data access to remove per-row status lookups while preserving pagination and returned fields.” This gives a reviewer a mechanism to examine without inventing a latency improvement. The 51-to-two query calculation remains the practice example above until a real trace records those counts for a named environment.
+
+When original timing records exist, retain the baseline and changed observations together with the calculation. Check failure rate and returned data as well as speed; excluding failed requests or changing the response can create a misleading improvement. Record other simultaneous changes that prevent attributing the entire difference to one engineer or index. Private employer evidence stays private; use approved sanitized descriptions in interviews.
+
 Add behavioral examples only from real experience: ambiguous requirements, disagreement, a failed approach, deadline trade-offs and helping a teammate. The factual story should stay stable under follow-up questions even as your technical explanation becomes deeper.
 
 ## Prepare in an Observable Order

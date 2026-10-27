@@ -709,6 +709,18 @@ Source: [Workload model and outcome definitions](23-hypothetical-clinic-metrics.
 
 **A:** It cannot be moved as an achievement. Replace it with an actual measurement or documented reasonable estimate, record personal contribution, and preserve whether the result came from production, a pilot or a controlled benchmark.
 
+**Q:** What turns the 25-clinic model into benchmark evidence?
+
+**A:** Execute a versioned synthetic fixture under a stated arrival schedule, retain correctness checks and raw outcomes, and reproduce the comparison. The resulting claim describes that benchmark's actual observations; the assumed clinic count still does not describe customers.
+
+**Q:** Why report offered load as well as achieved throughput?
+
+**A:** A generator that waits for responses may slow down as the server slows down. A low error rate at that reduced rate can hide overload. State the arrival model, actual request count, failures, timeouts and unfinished work before interpreting latency.
+
+**Q:** Which evidence would establish a real active-clinic count instead?
+
+**A:** A dated, privacy-safe aggregate from operational records using an explicit completed-appointment definition, distinct clinic identities, reporting cutoff and synthetic/demo exclusions. A seeded fixture, a public case study or a metric row entered to match the desired number cannot establish adoption.
+
 ## Current Resume Bullet Walkthrough
 
 Source: [Five-bullet walkthrough](24-resume-claim-walkthrough.md).

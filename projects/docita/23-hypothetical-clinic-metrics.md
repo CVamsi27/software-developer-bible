@@ -135,6 +135,29 @@ A booking-time study needs observed task timings, not just API logs. A backend b
 | Confounders to control | Dataset, concurrent work, cache state, database settings, connection pools and network location |
 | Required conclusion | Report the observed result and variation; do not force the invented values onto the experiment |
 
+### Turn the Model Into a Reproducible Benchmark
+
+Start with synthetic tenant aliases and a fixed seed: 25 clinics, 200 staff accounts and 26,000 completed appointments distributed across the stated 26-day month. Record the distribution of appointment times, statuses and record sizes; identical row counts can produce different query plans. Keep this fixture in an isolated environment, with simulated messages and payments. It must not enter operational adoption totals.
+
+Run the normal busy window separately from the headroom experiment. The modeled busy window contains 6,000 interactive requests over 30 minutes; spread the other 14,000 across the remaining working hours if replaying a whole day. A brief 33.3-request/second stress run adds artificial demand and must not be counted as the same normal day. State whether the generator maintains an arrival rate or waits for each response before starting more work: a slow closed-loop client can reduce offered load and hide overload.
+
+Retain a small evidence bundle rather than one screenshot:
+
+| Artifact | What another engineer must be able to check |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Scenario manifest | Seed, fixture counts/distribution, request mix, offered-load schedule, duration, resource limits, cache protocol and exact application/database versions |
+| Correctness checks | Tenant/role matrix, expected rows and totals, conflicting-booking result, duplicate logical effects and outstanding work; successful HTTP responses alone are insufficient |
+| Request and job observations | Scenario/run ID, sanitized operation identity, start/end timestamps and final outcome; retain failures, timeouts and unfinished work alongside successful latency samples |
+| Comparison report | Same measurement boundaries for both revisions, warm-up policy, repeated runs, sample counts, raw-result checksums, observed variation and the actual calculation |
+
+Give each run a fresh output directory and retain the command, tested revision and tool assistance. An assistant's reference run proves only what that run exercised; independent explanation and a changed-case rerun establish the learner's own performance. The benchmark may show a slower result, an unmet target or an invariant failure. Those are results to explain, not values to replace with the illustration above.
+
+### Establish Real Adoption Through a Different Query
+
+To investigate an actual active-clinic count, use a defined half-open reporting month, count distinct authorized clinic identities with at least one eligible completed appointment, and exclude synthetic/demo clinics and any records excluded by that definition. Retain the query/version, cutoff, exclusion rules, source environment and a privacy-safe aggregate. Reconcile a sample against the underlying operational records; a row created solely to reach a target count is not evidence of an operating clinic.
+
+The same count cannot establish saved staff-hours or faster bookings. Those claims require their own task observations and comparable baseline. Keep detailed production extracts private; the public evidence can explain the method, scope and a permitted aggregate without exposing clinic or patient identities. Publishing this chapter is an explanation of the method, not independent confirmation of adoption or historical impact.
+
 ## Choose the Next Experiment From the Risk
 
 1. Seed two synthetic clinics and verify authorization with actual database roles before using the model as a scale demonstration.

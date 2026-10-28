@@ -2,7 +2,7 @@
 
 > **Project-specific deep-dives and interview preparation.** Each subfolder covers one real project with architecture decisions, code evidence, failure modes, and interview scripts.
 
-[![Files](https://img.shields.io/badge/files-29-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-30-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Projects-purple)](#)
 
 ---

@@ -111,6 +111,8 @@ The row models one **public endpoint protected by strict source allowlisting and
 
 This row is **not high availability**. Price Multi-AZ, any read replica, extra storage/IOPS, surplus burst CPU credits (currently $0.075/vCPU-hour for PostgreSQL T4g/T3), backup storage beyond the included allowance, snapshots retained after deletion, AWS outbound transfer, monitoring/log retention, support and migration overlap separately. A Single-AZ instance does not become resilient because two API machines exist. Use region-specific service pricing and account-wide transfer allowances before assigning an AWS network total. No AWS outbound amount is assumed in the subtotal.
 
+The comparison places Fly and RDS in Singapore. A move to another AWS region needs a new regional instance/storage quote, network path and data-locality review; the Singapore total cannot price Mumbai. If API and database regions differ, measure round trips per operation and their latency as well as billed transfer in both directions. Compare placements using the same workload, recovery promise and operating hours before calling one cheaper.
+
 ## Retained Data Grows Even When Clinic Count Does Not
 
 The chapter23 example generates 20,800 prescription PDFs and 26,000 invoice PDFs monthly. At **150 KiB each**, 46,800 objects add **7.18848 decimal GB**, or **6.6948 GiB**. R2 bills decimal GB; mixing those units understates the input.
@@ -120,6 +122,25 @@ Twelve retained monthly cohorts contain **86.26176 GB** before versions, images,
 One write and three reads per PDF would be 46,800 writes and 140,400 reads/month, within the stated free operation allowances **if no other account usage consumes them**. Count HEAD/list requests, retries, multipart operations, other products and backups as applicable. Document-generation CPU is paid on Fly and is not included by R2 storage pricing.
 
 Database disk is a different estimate. Twenty thousand clinic-patient pairs seen in a month does not mean twenty thousand new patients every month. Measure table/index sizes, new/updated rows, audit and telemetry retention, queue cleanup, WAL, temporary space and maintenance headroom. A 20 GB Neon data assumption and a 50 GiB RDS allocation are scenario inputs, not inferred row-size proofs.
+
+### Carry the history through a growth ramp
+
+Keep one row per actual billing month, rather than assigning the mature 25-clinic workload to every early period. Record opening active clinics, activations/reactivations, exits and closing active clinics. Separately count billable clinic-days and service-active clinic-days: a free pilot consumes resources, and a clinic activated late in a month does not contribute a full month of either usage or revenue.
+
+| Monthly ledger input | Calculation or retained evidence |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Effective service volume | Sum each clinic's observed visits and provider work; for an initial homogeneous forecast only, service-active clinic-days divided by days in the period gives equivalent full clinic-months |
+| Retained cohorts | Opening objects/bytes + new objects/bytes − authorized deletions; compute the provider's daily storage meter rather than charging only the closing inventory |
+| Revenue and collection | Record invoice date, net revenue period, trial/discount, renewal, due date, refund and actual settlement; annual cash collection is not twelve new monthly collections |
+| Prepaid provider balance | Opening usable emails + purchased capacity − recipient emails consumed − capacity expired; retain purchase batches and expiry dates |
+| Cash and funding | Opening bank cash + net settlements/other funding − cash payments, refunds and taxes not already netted; reconcile gateway deductions once |
+| Forecast versus actual | Retain forecast quantity/rate, observed quantity, invoiced charge and variance reason for each environment/payer; a modeled request count is not observed billable usage |
+
+For a bounded arithmetic exercise, suppose three consecutive, undated practice periods have **1, 5 and 25 equivalent full clinic-months** at the chapter23 per-clinic workload. This is an input sequence, not a customer forecast or growth deadline. It totals **31 clinic-months**, 32,240 completed visits and 58,032 new PDFs. At 150 KiB each and with no deletions or other files, closing inventory is **8.9137152 GB**; it is not the twelve-cohort 86.26176 GB comparison above. Storage during each period still depends on daily accumulation and other account use.
+
+If, independently, each practice clinic-month consumes 2,080 recipient emails, the three periods consume 2,080, 10,400 and 52,000. Starting with no credits, buying only enough and assuming no intervening expiry requires **1, 1 and 5 credits**: **$2.50, $2.50 and $12.50 cash**. The final 5,520-email balance makes total purchases $17.50 versus $16.12 of consumption. Carry that balance forward instead of buying six credits again in every month. Actual cash may also include annual renewals, one-time onboarding, overdue collections and migration overlap.
+
+The largest cumulative forecast cash deficit, plus a deliberately chosen reserve, determines starting funding need. A month with positive modeled contribution does not remove an earlier cash deficit or prove that receivables will settle on time.
 
 ## Budget Messages, Email and Payments Against Their Actual Units
 
@@ -162,7 +183,7 @@ The workload's 5,200 payment attempts cannot determine charges without successfu
 ## Complete the Budget Beyond the Infrastructure Table
 
 | Cost line | Input and calculation | What must be checked |
-| ----------------------------- | -------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | Independent encrypted backups | Retained compressed GB ×chosen store rate +operations/transfer +restore compute | Provider history is not the independent copy; include keys, integrity readback and complete restore drills |
 | Staging and previews | Runtime +database branches/storage +objects +edge usage | Isolation, expiry/cleanup and whether production allowances are shared |
 | Error/log/trace monitoring | Plan minimum +retained/ingested units above quotas | Scrubbing, sample rate, retention and alert delivery; one request is not one error |
@@ -171,13 +192,15 @@ The workload's 5,200 payment attempts cannot determine charges without successfu
 | Security and connectivity | Extra IPs, private connection, secrets/KMS, scanning and audit storage | Necessary control, payer, region and retention; a free certificate does not operate the service |
 | AI/OCR/transcription | Actual input/output tokens, pages, images or seconds ×selected model rate | No AI usage price assumed here; check provider, clinical scope, consent, quota and human review |
 | Support and operations | Onboarding +training +support +on-call/incident +maintenance hours ×loaded hourly cost | Include unpaid operator time in economics, owner coverage and clinic opening hours |
-| Customer acquisition | Actual campaigns/referrals/travel/sales effort ÷new paying clinics | Count paying conversion, refunds and time lag; do not invent acquisition results |
+| Customer acquisition | Monthly campaign/referral/travel spend +attributed sales labor; calculate acquisition cost per new paying clinic separately | A per-clinic acquisition metric is not a monthly expense; count paying conversion, refunds and time lag without duplicating sales hours |
 | Taxes and currency | Invoice-specific tax, settled FX and card/bank fees | USD and INR totals stay separate until a dated rate is selected; no fixed exchange-rate claim |
 | Contingency | Explicitly chosen percentage or cash reserve | A planning allowance is not a provider quote or proof that unknown costs are covered |
 
-For a concrete monitoring option, [Sentry](https://sentry.io/pricing/) currently lists Developer at $0 and Team at $29/month, or $26/month billed annually. Team's base includes 50,000 errors; [logs](https://sentry.io/changelog/logs-are-generally-available/) include 5 GB then $0.50/GB. Other product quotas/overages remain separate. These are alternatives to price, not evidence Docita currently has an active paid plan. A $0 account must still fit its user, event and monitoring limits.
+For a concrete monitoring option, [Sentry](https://sentry.io/pricing/) currently lists Developer at $0 and Team at $29/month, or $26/month billed annually. The latter implies $312 annual base cash before tax/extras, not a $26 monthly cash payment. Team's base includes 50,000 errors; [logs](https://sentry.io/changelog/logs-are-generally-available/) include 5 GB then $0.50/GB. Other product quotas/overages remain separate. These are alternatives to price, not evidence Docita currently has an active paid plan. A $0 account must still fit its user, event and monitoring limits.
 
 The dated repository recovery record reports production backups disabled and only bounded synthetic Neon recovery evidence. A backup cost of zero in the comparison is an **unfunded readiness item**, not a recommended production policy. Give independent backup, complete restoration and delivered missed-run alert evidence a funded line before onboarding real clinical use. [Launch gates](25-launch-to-growth.md) explain the stop conditions.
+
+Backup frequency can dominate its storage line. As a hypothetical sensitivity, hourly **full** archives retained for 31 days create 744 copies in steady inventory. If each encrypted compressed archive is 1 decimal GB, that is 744 GB; once other account usage has consumed R2's free storage, the incremental storage is **$11.16/month** at $0.015/GB-month. At 20 GB per archive it is **$223.20** before operations, readback/restore compute, transfer and labor. Neither archive size is inferred from the database's used bytes. First-month accumulation differs from steady inventory; retention locks, failed attempts and cleanup can also retain additional bytes. The recovery owner must fund measured archive size × frequency × retention and its verification work explicitly; the $20 allocation below is not a backup quote.
 
 ### A funding example with every assumed addition visible
 
@@ -195,6 +218,32 @@ Monthly funding need (sum of distinct ledger lines, no duplicated allocations) =
   + applicable taxes/fees + explicitly chosen reserve
 ```
 
+### Find the price and payer boundary before calculating break-even
+
+Use one invoice currency and period. Let `F` be funded fixed operating cost, `R` net subscription revenue per paying clinic after discounts/refunds and excluding taxes owed, `B` the eligible subscription amount processed per paying clinic, `g` the applicable gateway-fee fraction, `V` variable service/support cost per paying clinic, and `U` additional cost of nonpaying pilots or other nonpaying use not already in `F`. Convert foreign-currency inputs at a selected dated rate. Under a homogeneous workload and stable cost profile:
+
+```text
+contribution per paying clinic = R − g × B − V
+paying clinics needed = ceil((F + U) / contribution per paying clinic)
+```
+
+If contribution is zero or negative, adding the same kind of paying clinic cannot cover fixed cost. Recompute after a capacity step, workload mix or staffing change. With the illustrated 2% fee plus 18% GST on that fee, `g = 0.0236` for the cash-fee calculation; use the actual tax/contract treatment and processed base. `B` need not equal revenue `R`, particularly with invoice taxes, annual collections and refunds. The formula does not assume an actual SaaS price or promise an achieved margin.
+
+For scale, the 25-clinic scenario allocates 2,080 billable utility deliveries to each full clinic-month: **₹239.20** before tax/BSP if Docita pays. The separate email exercise consumes **$0.52/clinic-month**. These are variable inputs only under their stated workload, not total cost per clinic. Clinic-paid messaging moves the payer boundary; it does not remove the clinic's cost. If 25 clinics consume service but only five pay, use five revenue contributors and include all 25 clinics' costs. Do not use $139 as `F` without removing its variable/prepaid lines and replacing the unverified allocation with a funded ledger.
+
+### Test the assumption that changes the decision
+
+The following increments use only the dated rates above. They are separate sensitivities, not a prediction that all will occur together.
+
+| Changed input, holding other inputs fixed | Increment and decision |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Neon runs at 1 CU instead of 0.5 CU for 10% of a 720h month | Extra `0.5 × 72 × $0.106 = $3.816`, or **$3.82**; the $75.00 comparison becomes **$78.82** before excluded costs. Measure time at each compute size rather than billing every hour at the maximum or minimum |
+| Another 100 GB traverses the billable Singapore Fly internet-egress meter | **+$4.00** at $0.04/GB. A direct R2 download and an API-proxied download can have different Fly costs |
+| 10% of 52,000 previously utility deliveries are classified as marketing | **+₹3,890.12**, using `5,200 × (₹0.8631 − ₹0.115)` before tax/BSP. Verify category and intended purpose rather than selecting the cheaper label |
+| Utility traffic has 5,200 additional billable duplicate deliveries | **+₹598** before tax/BSP; reconcile delivery identities and idempotency rather than treating logical intents as the invoice count |
+
+A database/provider change needs both a normal forecast and a downside case. Use the same payer, service hours, recovery scope and volume in each; include migration overlap, failed-payment cash timing and support load. A reserve is a funding choice applied after identifying those costs, not a substitute for them.
+
 ## Reproduce the Infrastructure Arithmetic
 
 This standalone Python example has no network access and changes no infrastructure. Inputs are the dated quotes above. The repeated workload is a model; it is not a measurement generator or actual billing importer.
@@ -202,9 +251,7 @@ This standalone Python example has no network access and changes no infrastructu
 ```python
 from decimal import Decimal as D, ROUND_CEILING, ROUND_HALF_UP
 
-HOURS = D(720)
-
-def fly(mib, hours=HOURS):
+def fly(mib, hours):
     seconds = D(hours) * 3600
     base = D("0.0000008465")
     extra_ram = D("0.000002316") * (D(mib) / 1024 - D("0.25"))
@@ -213,30 +260,51 @@ def fly(mib, hours=HOURS):
 def usd(value):
     return value.quantize(D("0.01"), rounding=ROUND_HALF_UP)
 
-pdf_gb = D(46800) * 150 * 1024 / D(10**9)
-held_gb_month = pdf_gb * 12  # comparison holds this inventory all month
-r2 = max(D(0), held_gb_month.to_integral_value(rounding=ROUND_CEILING) - 10)
-r2 *= D("0.015")  # no operation overage assumed
-stopped_rootfs = D(2) * D("0.15") * (HOURS - 260) / HOURS
-pilot = fly(512, 260) + fly(256, 260) + stopped_rootfs + D("0.04")
-warm_small = fly(512) + fly(256)
-warm_medium = fly(1024) + fly(512)
-warm_two = fly(1024) * 2 + fly(512)
-scenarios = {
-    "parked_example": D("0.30"),
-    "pilot_free": pilot,
-    "pilot_launch": pilot + D("0.25") * 260 * D("0.106") + D("0.35"),
-    "2_to_5": warm_small + D("19.08") + D("1.75") + 5 + D("0.20"),
-    "6_to_10": warm_medium + D("38.16") + D("3.50") + 1 + 5 + D("0.40"),
-    "11_to_25_neon": warm_two + D("38.16") + 7 + 1 + 5 + r2 + 1,
-    "11_to_25_aws": warm_two + D("0.102") * HOURS + 50 * D("0.138")
-                     + 5 + r2 + 1 + D("7.20") + D("3.60"),
+def neon_compute(cu, hours):
+    return D(cu) * D(hours) * D("0.106")
+
+def scenarios(month_hours):
+    hours = D(month_hours)
+    pilot_hours = D(260)  # held fixed, not scaled with calendar length
+    assert hours >= pilot_hours
+    pdf_gb = D(46800) * 150 * 1024 / D(10**9)
+    held_gb_month = pdf_gb * 12  # held inventory, not growing-month storage
+    r2_units = held_gb_month.to_integral_value(rounding=ROUND_CEILING)
+    r2 = max(D(0), r2_units - 10) * D("0.015")
+    stopped_rootfs = D(2) * D("0.15") * (hours - pilot_hours) / hours
+    pilot = (fly(512, pilot_hours) + fly(256, pilot_hours)
+             + stopped_rootfs + D("0.04"))
+    warm_small = fly(512, hours) + fly(256, hours)
+    warm_medium = fly(1024, hours) + fly(512, hours)
+    warm_two = fly(1024, hours) * 2 + fly(512, hours)
+    rds_compute = D("0.102") * hours
+    fly_static_egress = D(2) * D("0.005") * hours
+    rds_public_ipv4 = D("0.005") * hours
+    return {
+        "parked_example": D("0.30"),
+        "pilot_free": pilot,
+        "pilot_launch": pilot + neon_compute("0.25", pilot_hours) + D("0.35"),
+        "2_to_5": warm_small + neon_compute("0.25", hours)
+                  + D("1.75") + 5 + D("0.20"),
+        "6_to_10": warm_medium + neon_compute("0.5", hours)
+                   + D("3.50") + 1 + 5 + D("0.40"),
+        "11_to_25_neon": warm_two + neon_compute("0.5", hours)
+                         + 7 + 1 + 5 + r2 + 1,
+        "11_to_25_aws": warm_two + rds_compute + 50 * D("0.138")
+                        + 5 + r2 + 1 + fly_static_egress + rds_public_ipv4,
+    }
+
+expected = {
+    720: ["0.30", "2.93", "10.17", "33.50", "61.25", "75.00", "119.98"],
+    744: ["0.30", "2.93", "10.17", "34.39", "62.96", "77.00", "123.51"],
 }
-for name, total in scenarios.items():
-    print(name, usd(total))
+for hours, amounts in expected.items():
+    totals = scenarios(hours)
+    assert [usd(value) for value in totals.values()] == [D(x) for x in amounts]
+    print(hours, {name: str(usd(value)) for name, value in totals.items()})
 ```
 
-Expected rounded totals are `$0.30`, `$2.93`, `$10.17`, `$33.50`, `$61.25`, `$75.00` and `$119.98`. Updating a price, region, service schedule or retention input requires updating the scenario table and its evidence date together.
+The assertions preserve all seven **720h** totals: `$0.30`, `$2.93`, `$10.17`, `$33.50`, `$61.25`, `$75.00` and `$119.98`. At **744h**, they are `$0.30`, `$2.93`, `$10.17`, `$34.39`, `$62.96`, `$77.00` and `$123.51`, in the same order. Every hourly charge scales: Fly runtime, Neon compute, RDS compute and the three modeled hourly IP allocations. This comparison holds monthly storage inventory, the quoted monthly storage/rootfs charge basis, traffic and account minimums fixed. The pilot stays at 260 active hours and normalizes its stopped fraction by the selected month length. It is a calendar sensitivity exercise, not verified 31-day invoice arithmetic: actual GB-month normalization and per-second billing must follow each provider's usage statement. An extra day can also create additional real usage. Updating a price, region, schedule or retention input requires updating the comparison and its evidence date together.
 
 ## Let Usage and Service Risk Trigger the Next Change
 
@@ -244,7 +312,7 @@ At zero clinics, instrument the meters and set account budgets before a pilot. A
 
 Use a monthly worksheet: opening balances; usage by meter/environment/payer; included allowance consumed across the account; calculated charge; actual invoice; variance explanation; closing prepaid balance; forecast; owner/action. Alert on both rate of spend and service risk, for example a chosen 80% budget warning and a forecast above the approved cap. These are proposed thresholds. Verify that alerts reach the operator; do not stop a live database automatically to save money without a clinical continuity plan.
 
-Before a Neon-to-AWS move, price the overlap month: both databases, migration transfer/compute, test environment, backup verification, operator time and retained snapshots. Move for measured capacity, recovery/control, locality or economics requirements. Clinic count alone does not justify the migration, Redis, replicas or microservices. Cut over only with the compatible migration and rollback process in [deployment](10-deployment-infrastructure.md).
+Before a Neon-to-AWS move, price the overlap month: both databases, migration transfer/compute, test environment, backup verification, operator time and retained snapshots. Move for measured capacity, recovery/control, locality or economics requirements. Clinic count alone does not justify the migration, Redis, replicas or microservices. Use the [Neon-to-AWS cutover sequence](25-launch-to-growth.md#move-from-neon-to-aws-with-a-cutover-decision) with the schema/release compatibility process in [deployment](10-deployment-infrastructure.md).
 
 ## Summary
 
@@ -252,6 +320,7 @@ The smallest machine price is only one part of a service budget. These scenarios
 
 ## See Also
 
+- [Operating-evidence workbook](27-operating-evidence-workbook.md) — turn resource/cost assumptions into bounded checks and a promotion record.
 - [Launch through growth](25-launch-to-growth.md) — sequence, ownership, readiness and growth decisions.
 - [Deployment and infrastructure](10-deployment-infrastructure.md) — actual configuration and future topology.
 - [Workload and evidence model](23-hypothetical-clinic-metrics.md) — monthly counts, bursts and experiment scope.

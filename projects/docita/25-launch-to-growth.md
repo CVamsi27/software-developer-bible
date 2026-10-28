@@ -400,6 +400,7 @@ Grow a clinic service by proving complete workflows and assigning ownership for 
 
 ## See Also
 
+- [Operating-evidence workbook](27-operating-evidence-workbook.md) — executable availability checks, a clinic-day acceptance sheet, diagnosis and promotion records.
 - [Category revision](REVISION.md) — lifecycle and growth recall after the learning cases.
 - [Deployment and infrastructure](10-deployment-infrastructure.md) — hardware, setup, process lifecycle, releases and recovery topology.
 - [Monthly operating costs](26-monthly-operating-costs.md) — provider estimates, fixed/variable cost, usage forecasts and budget boundaries.

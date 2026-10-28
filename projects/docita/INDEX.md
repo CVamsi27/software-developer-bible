@@ -2,7 +2,7 @@
 
 > Source-backed implementation assessments: what works, where the boundaries fail, and the recommended design with evidence needed to accept it.
 
-[![Files](https://img.shields.io/badge/files-27-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-28-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Projects-purple)](#)
 
 ---
@@ -56,6 +56,10 @@ Use [the five-bullet resume walkthrough](24-resume-claim-walkthrough.md) to expl
 ### Stage 7 — Launch, Grow and Fund the Service
 
 Follow [launch through growth](25-launch-to-growth.md) from local setup to a supervised pilot, repeatable onboarding, daily operations, incidents, customer exit and measured growth beyond 25 clinics. Use [monthly operating costs](26-monthly-operating-costs.md) alongside each promotion decision: price the service hours, database use, retained files, provider deliveries and recovery/support obligations. Its dated scenarios compare low-cost Neon operation with a future AWS reference; they are proposals rather than the live bill or capacity proof.
+
+### Stage 8 — Produce Operating Evidence
+
+Work through [the operating-evidence workbook](27-operating-evidence-workbook.md) one boundary at a time. Establish command availability and isolated configuration first, then accept a clinic day, investigate a failure, define an alert and assemble a promotion record. Its exercises distinguish existing base scripts, unpublished capacity additions and missing full-application fixtures. Use existing practice time; the workbook does not create a second calendar or predeclare successful results.
 
 ### Revision, Then Interview Practice
 

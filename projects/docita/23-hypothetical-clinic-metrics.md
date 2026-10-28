@@ -229,6 +229,8 @@ A booking-time study needs observed task timings, not just API logs. A backend b
 
 Start with synthetic tenant aliases and a fixed seed: 25 clinics, 200 staff accounts and 26,000 completed appointments distributed across the stated 26-day month. Record the distribution of appointment times, statuses and record sizes; identical row counts can produce different query plans. Keep this fixture in an isolated environment, with simulated messages and payments. It must not enter operational adoption totals.
 
+This is a **fixture specification**, not an existing full-application seed command. The inspected local developer seed creates a default clinic and its sample records; it does not produce the specified 25-clinic dataset or mint 25 authenticated tenant credentials. The separate operational SQL fixture creates projected aggregate tables rather than those application entities. Prepare and verify the full fixture through supported application flows or a separately reviewed fixture implementation before running the real API experiment. Until then, only the model, harness and aggregate checks have a reproducible command path here.
+
 Run the normal busy window separately from the headroom experiment. The modeled busy window contains 6,000 interactive requests over 30 minutes; spread the other 14,000 across the remaining working hours if replaying a whole day. A brief 33.3-request/second stress run adds artificial demand and must not be counted as the same normal day. State whether the generator maintains an arrival rate or waits for each response before starting more work: a slow closed-loop client can reduce offered load and hide overload.
 
 Retain a small evidence bundle rather than one screenshot:
@@ -250,7 +252,7 @@ The same count cannot establish saved staff-hours or faster bookings. Those clai
 
 ## Run a Capacity Experiment With a Declared Boundary
 
-The reproducible runner is `loadtest/capacity.mjs` in the Docita repository. Its model and dry-run prepare an experiment; only observations from the selected real isolated API can measure that API. A local stub verifies the runner and must never be relabeled as Docita throughput.
+The reproducible runner is `loadtest/capacity.mjs` in the **reviewed, unpublished capacity patch**. That file and its harness tests are absent from canonical Docita base `f3fddffc0`. First follow [the source-availability preflight](10-deployment-infrastructure.md#reproduce-the-local-checks-before-a-release) on the approved source handoff; a fresh checkout of the base cannot run the following commands. Its model and dry-run prepare an experiment; only observations from the selected real isolated API can measure that API. A local stub verifies the runner and must never be relabeled as Docita throughput.
 
 ```bash
 # Inside the Docita repository; no request is issued by this command.
@@ -330,6 +332,7 @@ The 25-clinic assumption yields a coherent workload model, not measured business
 
 ## See Also
 
+- [Operating evidence workbook](27-operating-evidence-workbook.md) — select the available check, isolate its target and retain a bounded evidence bundle.
 - [Launch through growth](25-launch-to-growth.md) — clinic onboarding, operations and evidence gates from zero through 25+.
 - [Monthly operating costs](26-monthly-operating-costs.md) — regional rates, resource hours, retention, provider fees and a complete budget worksheet.
 - [Category revision](REVISION.md) — scenario calculations and measurement follow-ups.

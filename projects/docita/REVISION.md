@@ -1253,6 +1253,66 @@ Source: [Monthly operating costs](26-monthly-operating-costs.md).
 
 **A:** Compare actual units and prices by environment and payer, account-wide allowances, prepaid balances, tax/currency and invoice charges against the forecast. Explain the difference and assign a next action. Check the service outcomes too, so cost savings do not hide missing reminders, retention or recovery work.
 
+## Produce Operating Evidence, Not Just More Output
+
+Sources: [Operating workbook](27-operating-evidence-workbook.md), [availability preflight](10-deployment-infrastructure.md#reproduce-the-local-checks-before-a-release), [calendar/cost arithmetic](26-monthly-operating-costs.md#reproduce-the-infrastructure-arithmetic).
+
+**Q:** What does a passing command-availability preflight establish?
+
+**A:** Required files and script entries exist in that checkout. It does not verify their revision, dependencies, target isolation or behavior. The clean base lacks capacity additions, so identify the reviewed unpublished patch before offering its commands as a fresh-clone recipe.
+
+**Q:** Why can migrations, seed and the running API target different databases despite one copied example file?
+
+**A:** Their loaders and working directories differ, and exported variables or higher-priority files can override the intended target. Inspect root and process-specific configuration and explicitly verify the same owned target before any write. A loopback HTTP address alone says nothing about the backend's database/provider destinations.
+
+**Q:** Why do PostgreSQL queues not solve every separate-worker setup issue?
+
+**A:** They share queued work, while process environment, scheduler ownership, decryption keys and object paths remain separate. Local storage defaults to each process's working directory. Prove that the API can retrieve the intended worker artifact rather than equating a completed job with accessible output.
+
+**Q:** What can the ordinary critical-flow E2E leave unverified?
+
+**A:** Creation of patient/appointment/prescription/invoice records does not establish document retrieval, standalone-worker completion, cross-clinic denial, provider settlement/delivery or full restoration. Its general setup can reset/truncate a database, so use only a positively identified owned target and retain the exact assertion scope.
+
+**Q:** How can a tenant integration suite appear harmless while affecting another local project?
+
+**A:** Its fixture role can be cluster-wide even if tables are confined to a test database. Use a separately owned cluster, inspect cleanup and verify a non-skipped execution. A missing environment prerequisite that skips the suite supplies no tenant-isolation evidence.
+
+**Q:** Why is an old QueueJob row not automatically a long queue-wait measurement?
+
+**A:** It may be delayed until a future retry, currently active or terminally dead-lettered. Age since initial enqueue is a different observation from ready-to-start wait or handler duration. Reconcile generic queue state with the intended PdfJob/document/object result.
+
+**Q:** How should a diagnosis begin when latency rises while CPU looks quiet?
+
+**A:** Select an observation that separates pool wait, locks, long transactions, query execution and external dependency time. Retain the predicted and actual result. Adding API replicas before identifying connection pressure can make the same constraint worse.
+
+**Q:** What is the 30-day time budget for a 99.9% objective?
+
+**A:** Exactly 43 minutes 12 seconds over a 30-day window. A request-based objective instead counts eligible good/bad events. Do not turn percentile headroom in milliseconds or a fixed charge per incident into an error budget.
+
+**Q:** How does a 1% observed bad fraction relate to a 99.9% good-event objective?
+
+**A:** Its burn rate is 10 times the allowed 0.1% bad fraction. Consumption of the complete period's budget also needs that period's eligible population and capture coverage; a burn rate alone does not supply those counts. Define windows, minimum evidence and zero-traffic/unknown handling before alerting.
+
+**Q:** What should change when the calculator moves from 720 to 744 hours?
+
+**A:** Every modeled hourly meter: Fly runtime, Neon CU-hours, RDS instance-hours and allocated hourly IPs. The current comparison intentionally holds monthly storage/traffic/minimums fixed. It is a sensitivity comparison rather than a statement that another day creates no additional real usage.
+
+**Q:** Why can an hourly full-backup policy overwhelm a small tooling allowance?
+
+**A:** Retention multiplies archive size by copies kept. One GB per hourly full archive retained 31 days holds 744 GB in steady inventory, before other data and verification work. Measure compressed size and cleanup/lock behavior, fund the line explicitly and keep database-used bytes separate from archive size.
+
+**Q:** Why is acquisition cost per clinic not the month's acquisition expense?
+
+**A:** Monthly spend and attributed labor are expenses; dividing by newly acquired paying clinics produces a unit metric. Keep the units and period separate and do not add the same sales labor twice. A zero-conversion month still has cash costs even when a per-acquired-clinic ratio is undefined.
+
+**Q:** When does the break-even formula stop supporting a growth decision?
+
+**A:** If contribution is nonpositive, or if the workload, payer, paid fraction, fixed capacity or staffing assumptions change. Include the cost of nonpaying pilots and distinguish revenue from successfully processed amounts. A modeled positive month does not remove an earlier cash deficit or establish actual collections.
+
+**Q:** What is required before a promotion record can say pass?
+
+**A:** Actual scoped evidence for correctness, operations/load, recovery, funding and owner coverage. A template, source path or missing prerequisite is not a successful experiment. Record fail/blocked outcomes and the next owned action rather than filling every field with assumed success.
+
 ## Summary
 
 Reconstruct the operation and its boundaries. Qualify every outcome according to the evidence actually obtained.

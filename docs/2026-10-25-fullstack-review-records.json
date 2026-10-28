@@ -9923,12 +9923,12 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "81685edf34bc7f6824c148611e057002cf32c690ca98cd38e45e1b6e0b44af6a",
+      "sha256": "a2145011b1a441c073eff74607b1b3a0da31277e3a0046b17e18c8292442bdac",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Generated count-only update reviewed against exact previously reviewed HEAD bytes; full authored content unchanged. Count tool owns this metadata.",
+      "notes": "Reviewed generated count-only change against exact previously full-reviewed HEAD bytes; authored content remains unchanged.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "20ce31e5d1db5857fea7fe16dc74f7968574dd351ebeee38698879826b4b0327",
@@ -9939,12 +9939,12 @@
     },
     {
       "path": "README.md",
-      "sha256": "4d6f3363ca24dab339ed08792a716450bbba755397770b0d4843752e15dc7192",
+      "sha256": "82b60b7828628e7624b64dff411a15587175f7f42dc69de9e17b8bf75aa765ee",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Generated count-only update reviewed against exact previously reviewed HEAD bytes; full authored content unchanged. Count tool owns this metadata.",
+      "notes": "Reviewed generated count-only change against exact previously full-reviewed HEAD bytes; authored content remains unchanged.",
       "findings": []
     },
     {
@@ -9959,12 +9959,12 @@
     },
     {
       "path": "contributing.md",
-      "sha256": "17f0f4680ea75c94967c8d6eedcae6a1964c4ef27301f7648e94d1d5d7d26a71",
+      "sha256": "55ea2966a6edf33af799f830edf0b9b2c6bc3acfe6449fcea7e3027c5c3d0743",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Generated count-only update reviewed against exact previously reviewed HEAD bytes; full authored content unchanged. Count tool owns this metadata.",
+      "notes": "Reviewed generated count-only change against exact previously full-reviewed HEAD bytes; authored content remains unchanged.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "8485e2232ea7f728920a296a5c47a6f7e1fc3fc4945b1353c96f0d61d5e9b357",
@@ -10386,12 +10386,12 @@
     },
     {
       "path": "docs/verification-gates.md",
-      "sha256": "b3c303e3d3a85a60fb9171a0dd3553189c045c08325e07cc1784ebd5f93f82a2",
+      "sha256": "68089f6365291c37c938e9c13ce01b2d214c76bf01b14e54cfc1dae08a3fbf1a",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Generated count-only update reviewed against exact previously reviewed HEAD bytes; full authored content unchanged. Count tool owns this metadata.",
+      "notes": "Reviewed generated count-only change against exact previously full-reviewed HEAD bytes; authored content remains unchanged.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "d09b11f32070e9d926d6a87672236dd3e79d0cdab809b5709e9e2744b7ae74ac",
@@ -10402,22 +10402,22 @@
     },
     {
       "path": "lanes/INDEX.md",
-      "sha256": "31c4f282c463e87059ba20ffa3c92cfe24ca9195073dfd5f0aad97d4c452346a",
+      "sha256": "019547bb0ce5a84f635ef8fcb5f8200f377e0445c1ab612ce760c024b352957a",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Generated count-only update reviewed against exact previously reviewed HEAD bytes; full authored content unchanged. Count tool owns this metadata.",
+      "notes": "Reviewed generated count-only change against exact previously full-reviewed HEAD bytes; authored content remains unchanged.",
       "findings": []
     },
     {
       "path": "projects/INDEX.md",
-      "sha256": "3f403f23426d5c4fdbaf89b5b9243a6850bb16bc196eb42cfbf0bc76bef726e2",
+      "sha256": "7deb16032f444bbdf1e64ec63c6a41b04b0d877e2fb8352a9c1a29282fec0061",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Generated count-only update reviewed against exact previously reviewed HEAD bytes; full authored content unchanged. Count tool owns this metadata.",
+      "notes": "Reviewed generated count-only change against exact previously full-reviewed HEAD bytes; authored content remains unchanged.",
       "findings": []
     },
     {
@@ -10504,12 +10504,12 @@
     },
     {
       "path": "projects/docita/10-deployment-infrastructure.md",
-      "sha256": "57afb6cfebf2536838422f881e45dfcd81413e0eb3ff303b7799f665b0146969",
+      "sha256": "9b2cb235851ca2692513edfad1473d9051ef5e52b3f7dc7185641f90b54bc558",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Reviewed launch and cost cross-references; underlying full-content review preserved and prior exact reviewed bytes verified against HEAD.",
+      "notes": "Full-content read by evidence reviewer. Exact availability preflight exercised read-only on patch(success) and unpatched source(reject). Base/unpublished differences and env/queue/target restrictions source-checked; workbook link verified.",
       "findings": []
     },
     {
@@ -10623,12 +10623,12 @@
     },
     {
       "path": "projects/docita/23-hypothetical-clinic-metrics.md",
-      "sha256": "c8034129cec5cbead39940120d3bc540b39c1aca86e099e6ebea69a5dddb6d2e",
+      "sha256": "a5949f8ae39e527773df9f807cc8f42000e54187560e4090e15e304f71b2838e",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Reviewed launch/cost companion references, scenario-versus-observation boundaries and exact prior full-content reviewed bytes against HEAD.",
+      "notes": "Full-content read by evidence reviewer. Full application25clinic fixture and25authenticatedidentities remain specifications, not ordinary seed or projected SQL. Harness command provenance and workbook references verified.",
       "findings": []
     },
     {
@@ -10643,22 +10643,22 @@
     },
     {
       "path": "projects/docita/INDEX.md",
-      "sha256": "87be8b74085c537bf8c3f6f89e3da00368af550b52b73a461577e7a09be0bea9",
+      "sha256": "386b523927f4de5281c2e1d6b90666594ecc2d41b6b621dca75dae7ce08a8750",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Reviewed complete learning flow and new stage7: lifecycle through25+, provider cost worksheet and revision placement; no actual-cost or capacity claim.",
+      "notes": "Full-content reading-flow review; stage8workbook follows lifecycle/cost and precedes revision, distinguishes source availability and unexecuted full-app fixtures.",
       "findings": []
     },
     {
       "path": "projects/docita/REVISION.md",
-      "sha256": "573742b40e0342893e1fba9da9f524628375263daacc01a92d403247fd037f8e",
+      "sha256": "965dc858f1b985f466d62145a7a5602fa6ccef116968cf06a8fa1d9518990070",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Reviewed all added source-linked lifecycle, growth, feature and cost retrieval pairs against chapters25/26; existing questions preserved byte-for-byte outside inserted groups.",
+      "notes": "Read all14new source-linked workbook/cost retrievalpairs; historical274questions preserved outside insertedgroup. Verified errorbudget math, config/storage/process boundaries and non-skipped evidence; no invented completedexperiment.",
       "findings": []
     },
     {
@@ -10702,22 +10702,32 @@
     },
     {
       "path": "projects/docita/25-launch-to-growth.md",
-      "sha256": "220662fa06f880f84d7a6b9298a02418c46992fa5fc7089d20de7bd940188aee",
+      "sha256": "93b1901c0b7bb74696388dd72f51fd5b4dc7ea3da6501d791350b6dac963de25",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Complete content read by growth_lifecycle_audit and root, fresh-reader questions passed. Source-backed onboarding/import/provider boundaries, feature sequence, permitted growth funnel, clinic-day diagram, stage exit criteria, daily/monthly operations, recovery/cutover/exit and unchanged lowest-cost deployment verified.",
+      "notes": "Reviewed workbook navigation addition against exact previously reviewed full content at HEAD; no mechanism or operating-state change.",
       "findings": []
     },
     {
       "path": "projects/docita/26-monthly-operating-costs.md",
-      "sha256": "20ff8d8b0a6e8a085278a217d12a1ed8eb9ea1af101cebd596bfc9aca4f7453c",
+      "sha256": "18b5546fbaf125df178e39c35b35802ca32a5855a73f7e3ebbe26405c49eaaf6",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Complete content read by root and independent pricing/variable-provider reviewers. Executed exact PythonDecimal example; all7totals match.22new official URLs probed HTTP200. Verified billing units,2Fly app egress allocations, RDS50GiB allocation, source conflicts, payer allocation, exclusions and distinct ledger lines. No invoice or achievedcapacity claim.",
+      "notes": "Full-content read by cost reviewer and root; exact example720/744assertions executed, narrative cashflow/retention/sensitivity calculations checked. All7old720totals preserved; allhourlymeters scale, monthlymeterbasis explicitly heldconstant. Payer/revenue/processedvalue, backupcostfanout, accountallowance, cohorts and liquidity boundaries reviewed. Existing officialrates rechecked28October.",
+      "findings": []
+    },
+    {
+      "path": "projects/docita/27-operating-evidence-workbook.md",
+      "sha256": "1a8953deff1e14d436830aaa7881a50f78e423b539f7f4f404f850d199e71ecb",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-10-28",
+      "fullContentRead": true,
+      "notes": "Complete content authored/read by root and independently read by cost reviewer. Checked baseversuspatchscripts, loader/queue/storage/role boundaries, destructive/conditional tests, clinicdayacceptance and diagnosticmatrix. QueueSQL sourceverifiednotexecuted; event/time/burn arithmetic checked. Exercises and promotiontemplates are not completedruntimeevidence.",
       "findings": []
     }
   ]

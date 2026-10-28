@@ -214,7 +214,36 @@ Separate data recovery:
 
 ### Reproduce the Local Checks Before a Release
 
-Run these commands in an isolated Docita checkout with Node 24 and the repository's pinned pnpm. The database URL must identify a disposable loopback `docita_capacity_*` database. Generate/apply a full application fixture separately when testing the API; the SQL suite creates only its own projected tables and does not reset the database.
+The capacity runner, its package scripts and the dedicated SQL fixtures belong to the **reviewed, unpublished working-tree patch** inspected on 28 October. They are absent from the canonical Docita base `f3fddffc0`; checking out that revision alone does not provide them. Obtain the reviewed source through the maintainer's approved handoff, record its revision and patch/source hashes, and stop if the files are unavailable. A file-presence check establishes availability, not that a patch was reviewed or deployed.
+
+Run this read-only preflight from the selected Docita checkout before following the capacity commands. It reads local files only and neither loads environment files nor contacts a database or API:
+
+```bash
+node --input-type=module - <<'JS'
+import { existsSync, readFileSync } from 'node:fs';
+
+const requiredFiles = [
+  'loadtest/capacity.mjs',
+  'apps/api/test/metrics/jest.config.mjs',
+  'apps/api/test/metrics/test-database-target.ts',
+];
+const pkg = JSON.parse(readFileSync('package.json', 'utf8'));
+const missing = requiredFiles.filter((file) => !existsSync(file));
+for (const name of ['capacity:plan', 'test:capacity']) {
+  if (typeof pkg.scripts?.[name] !== 'string') missing.push(`script:${name}`);
+}
+if (missing.length) {
+  console.error(`Capacity patch unavailable: ${missing.join(', ')}`);
+  process.exitCode = 1;
+} else {
+  console.log('Required files/scripts present; verify source provenance separately.');
+}
+JS
+```
+
+After that preflight succeeds, use Node 24 and the repository's pinned pnpm in an isolated checkout. The metrics-test database URL must identify a disposable loopback `docita_capacity_*` database with no URL options; the copied API example URL includes options and is not this test target. Generate/apply a full application fixture separately when testing the API; the SQL suite creates only its own projected tables and does not reset the database.
+
+At the inspected canonical base `f3fddffc0`, the setup guides conflicted: the short `docs/ONBOARDING.md` listed Redis as a prerequisite, while `docs/product/ONBOARDING.md` and configuration supported local memory queues without Redis. Check the reviewed handoff for its documentation correction before following either guide. Memory queues remain inside one process. Testing separate API and worker processes requires the shared PostgreSQL queue on both, API schedulers disabled and worker schedulers enabled; a successful memory-queue demo cannot verify that deployment. Prisma's configuration reads the root environment file, while the API has its own environment file. Explicitly verify the target supplied to each process and migration command rather than assuming an app-specific copy configures every CLI. Use the [operating workbook](27-operating-evidence-workbook.md) for the process/configuration matrix and experiment handoffs.
 
 ```bash
 pnpm install --frozen-lockfile
@@ -346,6 +375,7 @@ Docita's source separates API, worker and SPA lifecycles and defines migration c
 
 ## See Also
 
+- [Operating evidence workbook](27-operating-evidence-workbook.md) — source availability, isolated setup and bounded drills with explicit completion evidence.
 - [Launch through growth](25-launch-to-growth.md) — clinic onboarding, operations and evidence gates from zero through 25+.
 - [Monthly operating costs](26-monthly-operating-costs.md) — regional rates, resource hours, retention, provider fees and a complete budget worksheet.
 - [Category revision](REVISION.md) — release and recovery questions after the cases.

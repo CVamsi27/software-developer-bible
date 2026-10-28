@@ -47,7 +47,7 @@ Start with one operation and trace identity, state and failure boundaries. These
 
 ### Stage 5 — Model Workload and Define Outcome Evidence
 
-Read [the hypothetical 25-clinic metrics scenario](23-hypothetical-clinic-metrics.md). It calculates workload, illustrates business and operational metrics, and maps measurement plans to all 22 implementation cases. Its invented figures are study assumptions, not customer adoption or achieved resume results.
+First read the refreshed [deployment/resource profile](10-deployment-infrastructure.md#trace-the-deployment-before-choosing-a-machine) and [measurement lineage](14-analytics-and-dashboards.md#a-dashboard-built-from-actual-records-and-retained-telemetry). Then derive the [25-clinic workload](23-hypothetical-clinic-metrics.md): monthly counts, busy arrivals, connection budgets, storage and local experiment acceptance. The diagrams separate current low-cost operation, a future balanced AWS reference and actual tests. Modeled volume and published latency targets remain separate from customer adoption or achieved production outcomes.
 
 ### Stage 6 — Connect the Current Resume to Actual Work
 

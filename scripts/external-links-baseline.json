@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-26",
- "url_count": 2716,
+ "generated": "2026-10-28",
+ "url_count": 2720,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -188,6 +188,9 @@
   ],
   "https://aws.amazon.com/elasticache/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.05-caching-patterns.md"
+  ],
+  "https://aws.amazon.com/rds/instance-types/": [
+   "projects/docita/10-deployment-infrastructure.md"
   ],
   "https://aws.amazon.com/secrets-manager/": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.04-secrets-management.md"
@@ -1586,6 +1589,9 @@
   "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html": [
    "80-lanes-abroad-full-stack/80.08-system-design-case-bank.md"
   ],
+  "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-metrics.html": [
+   "projects/docita/10-deployment-infrastructure.md"
+  ],
   "https://docs.aws.amazon.com/AmazonS3/latest/userguide/lifecycle-expire-general-considerations.html": [
    "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.04-data-retention-archival.md"
   ],
@@ -2887,8 +2893,12 @@
   "https://fidoalliance.org/fido2/": [
    "20-backend/20.5-security/01-auth/20.5.1.08-mfa-passkeys-webauthn.md"
   ],
+  "https://fly.io/docs/machines/cpu-performance/": [
+   "projects/docita/10-deployment-infrastructure.md"
+  ],
   "https://fly.io/docs/reference/fly-proxy-autostop-autostart/": [
-   "40-platform/40.2-kubernetes/03-scaling/INDEX.md"
+   "40-platform/40.2-kubernetes/03-scaling/INDEX.md",
+   "projects/docita/10-deployment-infrastructure.md"
   ],
   "https://formik.org/": [
    "10-frontend/10.5-form-handling/10.5.03-formik.md",
@@ -5027,6 +5037,9 @@
    "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.04-linked-list-manipulation-patterns.md",
    "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids/70.2.2.06-matrix-traversal-simulation.md",
    "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.02-monotonic-stack.md"
+  ],
+  "https://neon.com/docs/connect/connection-pooling": [
+   "projects/docita/10-deployment-infrastructure.md"
   ],
   "https://next-auth.js.org/": [
    "10-frontend/10.4-next.js/04-production/10.4.4.01-authentication.md"

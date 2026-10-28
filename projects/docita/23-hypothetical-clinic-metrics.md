@@ -33,7 +33,7 @@ Use four labels throughout this chapter:
 Assume 26 operating days per month, an eight-hour working day and an equal clinic mix. Real clinics may differ substantially; this simplification must be replaced by a distribution when measured data exists.
 
 | Quantity | Scenario input or formula | Hypothetical result | Meaning and boundary |
-| ----------------------------------- | ------------------------------------- | -------------------: | ------------------------------------------------------------------------------------ |
+| ----------------------------------- | --------------------------------------------- | -------------------: | ------------------------------------------------------------------------------------------------------------------------ |
 | Active clinics | Assumption | 25 | Active means at least one completed appointment in the reporting month |
 | Staff accounts | 8 per clinic | 200 | Accounts, not concurrent users or daily active users |
 | Completed appointments | 40 per clinic-day | 26,000/month | 25 × 40 × 26; cancellations are excluded from this denominator |
@@ -42,7 +42,10 @@ Assume 26 operating days per month, an eight-hour working day and an equal clini
 | Interactive average | 20,000 requests/day ÷ 28,800 seconds | 0.69 requests/second | Average across working hours; not peak load or benchmark throughput |
 | Busy-window request rate | 30% of daily requests in 30 minutes | 3.33 requests/second | 6,000 ÷ 1,800; the remaining 70% occur outside this window |
 | Brief stress-test burst | Proposed test at 10× busy-window rate | 33.3 requests/second | Artificial headroom exercise, not an observed peak |
-| Prescription PDFs | 80% of completed appointments | 20,800/month | Assumes one PDF per qualifying visit; revisions and retries excluded |
+| Prescription records | 80% of completed appointments | 20,800/month | Additional assumption: one prescription record per qualifying visit; separate from successful PDF output |
+| Prescription PDFs | One PDF per modeled prescription | 20,800/month | Additional artifact assumption; revisions, retries and failed generation excluded |
+| Invoices created | One invoice per completed appointment | 26,000/month | Additional billing assumption; this does not count paid invoices or collected revenue |
+| Distinct clinic-patients seen | 26,000 visits ÷ 1.3 visits per clinic-patient | 20,000/month | Additional repeat-visit assumption; distinct clinic/patient pairs, not new registrations or globally deduplicated people |
 | PDF arrivals in a synchronized hour | 80% of daily PDF work in one hour | 640/hour | 800 daily PDFs × 80%; independent stress assumption |
 | Messages | 2 per completed appointment | 52,000/month | Attempts intended by the product; delivery and consent need separate accounting |
 | Online payment attempts | 20% of appointments, one attempt each | 5,200/month | Attempts are not captured or settled payments |
@@ -53,13 +56,100 @@ Trace one visit through booking, record updates, prescription, invoice and optio
 
 ### Check the Queue Before Claiming Headroom
 
-The current queue has a two-second polling interval, claims one job per poll per registered name, and prevents overlapping polls for that name inside one instance. The outbox relay has a five-second schedule and a batch limit of 200. These are **current-code settings**, rechecked on 2 October 2026, not performance measurements.
+The queue has a two-second polling interval, claims one job per poll per registered name, and prevents overlapping polls for that name inside one instance. The outbox relay has a five-second schedule and a nominal batch cap of 200. A 28 October source refresh at `f3fddffc0` confirms that RLS limits its effective batch to the configured pool size minus two: a 15-connection pool produces a cap of **13**. These are code/configuration facts, not performance measurements.
 
 For an idle, immediately completing single job-name lane, the poll setting gives an idealized upper bound of 1,800 starts/hour. Actual throughput is lower when handler duration, scheduling, database work or contention delays the next claim. Separate names and worker instances change the model; they do not automatically fix idempotency or recovery.
 
 The invented 640 PDFs/hour average in the busy hour is about 0.178 arrivals/second. A 1,000-job burst would need at least about 33 minutes to start its last job in the idealized single-lane model, before accounting for execution time. Therefore the normal-hour average cannot justify a short burst completion SLA.
 
-Likewise, 200 rows every five seconds is an idealized relay selection rate of 40 rows/second, not downstream delivery throughput. The 9 October source recheck shows the relay now awaits promises returned by process-local listeners under a 30-second timeout. Missing listeners, suppressed errors, detached work and uncancelled timeouts still limit what that acknowledgment proves. Read [async processing](03-async-processing.md) before attaching a completion target to either mechanism.
+Without the RLS pool cap, 200 rows every five seconds is an idealized relay selection rate of 40 rows/second. With the checked-in RLS configuration and a 15-connection pool, 13 rows per five-second tick would instead be 2.6 selections/second before handler time, scheduling and contention. Neither value is downstream delivery throughput. The 9 October source recheck shows the relay now awaits promises returned by process-local listeners under a 30-second timeout. Missing listeners, suppressed errors, detached work and uncancelled timeouts still limit what that acknowledgment proves. Read [async processing](03-async-processing.md) before attaching a completion target to either mechanism.
+
+## Translate Monthly Totals Into an Arrival Pattern
+
+The month establishes business volume. It does not select CPU or prove that a short synchronized burst will complete on time.
+
+```text
+25 clinics x 40 completed visits/day x 26 operating days
+                         |
+                         v
+              26,000 completed visits/month
+                         |
+             assumed 20 API requests/visit
+                         v
+                 520,000 requests/month
+                         |
+       +-----------------+--------------------------+
+       |                 |                          |
+       v                 v                          v
+24-hour month       8-hour working day         30-minute busy window
+~0.20 req/s         ~0.69 req/s                ~3.33 req/s
+                                               |
+                                      artificial 10x headroom
+                                               v
+                                           ~33.3 req/s
+```
+
+The 0.20 rate divides by all seconds in an illustrative 30-day month; the working-hour rate divides daily activity by eight hours. These answer different questions and must not be interchanged. The busy window contains 30% of the 20,000 daily requests. The headroom phase adds demand; it does not belong in the ordinary day's activity total.
+
+Two hundred staff accounts do not establish 200 simultaneous users. Record login sessions, active interactions and in-flight requests separately. For a stable system, a useful first estimate is Little's Law: mean in-flight requests approximately equals admitted requests/second multiplied by **mean** time in the system. With an invented 80 ms mean, 3.33 requests/second implies about 0.27 requests in flight on average. Do not substitute P95 into that mean relationship or use it to dismiss bursts, waiting queues or timeouts.
+
+Use distributions rather than one identical clinic: several quiet clinics, a few busy clinics, a disproportionately active tenant and a synchronized opening hour. A noisy tenant can monopolize database connections even when the global average looks small. Observe per-tenant wait, denials and completion, while keeping patient identity out of artifacts.
+
+## Put a Connection Budget Around Autoscaling
+
+The source production Prisma pool permits 15 connections per process. `getReadClient()` currently returns the same client; its name does not establish a separate read replica. RLS can retain a transaction/connection for the whole request, including time spent waiting on work outside a SQL query.
+
+```text
+API replicas x 15  ----+
+                      |
+Worker processes x 15 +--> application connection envelope
+                      |
+Old/new deploy overlap+
+                      |
+Migrations/admin/reserve-------------------------------+
+                                                      v
+                         <= effective database/session budget
+```
+
+One API plus one worker starts with a nominal 30-connection envelope. A blue-green overlap of two API processes and one worker makes it 45 before operational reserve. The future balanced example of two APIs plus one worker also makes it 45; overlapping a third API raises it to 60. These are upper-bound pool budgets, not observed simultaneous SQL work. Count any additional instantiated client separately, and inspect provider-reserved connections and the actual pooler mapping.
+
+The API proxy's soft/hard request thresholds of 60/100 per machine are not database connection limits. Some requests use no database session; others wait for one or hold it through an RLS transaction. Measure acquisition wait, active/idle sessions, transaction age and rejected work. Raising `max_connections` consumes database resources and cannot create CPU or I/O capacity.
+
+A future shared cache, shared rate limiter or socket adapter needs its own correctness tests. Replica-local state does not become shared when the machine count increases. Start with the [deployment profile](10-deployment-infrastructure.md#keep-the-cheap-deployment-and-future-balanced-reference-distinct) and change one capacity dimension at a time.
+
+## Separate Data Growth From File and Telemetry Growth
+
+Twenty thousand clinic-patients seen in a month are not necessarily 20,000 new patient rows. A returning patient reuses stored identity. Appointment, prescription, medication-item, invoice-item, audit and job rows have different growth and retention rules.
+
+```text
+Completed visit
+  +--> PostgreSQL rows: appointment / prescription / invoice / child items
+  |          +--> indexes and TOAST within relation storage
+  |          +--> WAL, temporary work and maintenance headroom
+  |          +--> backup/replica copies under their own retention policy
+  |
+  +--> R2 objects: prescription PDF / optional invoice PDF / uploads
+  |
+  +--> Request/audit/job observations under separate retention and privacy rules
+```
+
+Measure average row and index cost on a representative populated fixture, including skew and history. `pg_total_relation_size` includes indexes and TOAST; measure its components without double-counting them. Row count multiplied by a guessed JSON size is insufficient for allocated disk.
+
+Here are **illustrative calculations**, not Docita storage measurements:
+
+| Item | Additional assumption | Calculation |
+| ----------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------- |
+| Appointment relation growth | Measured fixture would show 3 KiB/appointment including its index share | 26,000 × 3 KiB ≈ 76.2 MiB per modeled month |
+| Request observations | 1 KiB per retained request before index overhead | 520,000 × 1 KiB ≈ 0.496 GiB for the modeled customer month |
+| Prescription PDF payloads | One 150 KiB PDF per prescription | 20,800 × 150 KiB ≈ 2.98 GiB/month |
+| Optional invoice PDF payloads | Every modeled invoice also creates a 150 KiB PDF | 26,000 × 150 KiB ≈ 3.72 GiB/month |
+| Both PDF families | Both artifact assumptions above hold | About 6.69 GiB/month, before revisions, backups and other uploads |
+
+Replace the assumed per-record sizes with measured fixture values before sizing infrastructure. The 3 KiB row/index figure is a hypothetical input even though the calculation describes what a measured value would enable. Existing 30-day telemetry cleanup means live retained volume is not an unlimited monthly accumulation, but deletes and vacuum do not necessarily shrink the filesystem immediately. Audit and clinical retention must follow their own rules.
+
+At a configured 15-second interval, one continuously checked machine could receive about 172,800 health-check requests in 30 days. That is a scheduling calculation, not observed traffic; the machine may be stopped, and checks can fail or be absent. Separating probes from customer observations is therefore essential to both volume and latency interpretation.
+
+Before adopting the future 50 GiB database allocation, measure the starting history, data/index growth, vacuum/bloat, WAL and temporary peaks, free-space trend and restore workspace. Keep provider-allocated storage, database-used bytes, object-store bytes and backup bytes in different columns.
 
 ## Use Outcome Metrics With Explicit Denominators
 
@@ -158,6 +248,62 @@ To investigate an actual active-clinic count, use a defined half-open reporting 
 
 The same count cannot establish saved staff-hours or faster bookings. Those claims require their own task observations and comparable baseline. Keep detailed production extracts private; the public evidence can explain the method, scope and a permitted aggregate without exposing clinic or patient identities. Publishing this chapter is an explanation of the method, not independent confirmation of adoption or historical impact.
 
+## Run a Capacity Experiment With a Declared Boundary
+
+The reproducible runner is `loadtest/capacity.mjs` in the Docita repository. Its model and dry-run prepare an experiment; only observations from the selected real isolated API can measure that API. A local stub verifies the runner and must never be relabeled as Docita throughput.
+
+```bash
+# Inside the Docita repository; no request is issued by this command.
+node loadtest/capacity.mjs --dry-run
+
+# Validate the runner itself against local fixtures.
+node --test loadtest/*.test.mjs
+```
+
+Use its README for the exact credential-file and phase options. Keep tokens in a private external file and use synthetic tenant aliases. The runner is intended for an explicitly isolated loopback API. It must reject remote production targets, unexpected redirects and unsafe credential/route input. A prepared target needs its own disposable database, correct application schema, synthetic tenant identities, real runtime RLS role and provider mocks. A token labeled `clinic-7` is not proof that its server-side identity belongs to that clinic; verify the association before load.
+
+Use a small correctness experiment before load: one authorized read for each tenant, cross-tenant denials through the actual API, repeated patient visits, a conflicting booking and a duplicate logical payment. After load, inspect final business state and outstanding jobs rather than treating HTTP 200 as success for every asynchronous effect.
+
+| Phase | Workload | Evidence to retain |
+| ------------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| Fixture inventory | 25 synthetic clinics and an explicit historical dataset | Entity counts, tenant distribution, dates/statuses, seed/version and exclusion labels |
+| Ordinary activity | Stated mixed routes at the modeled working-hour rate | Offered/started/completed requests, route/tenant counts, errors and resource trends |
+| Busy window | Approximately 3.33 requests/second under the chosen mix | Endpoint-level latency, pool waits, lock/I/O pressure, fairness and unfinished work |
+| Artificial headroom | Approximately 33.3 requests/second in a separate phase | Saturation onset, throttles, queue growth and recovery after arrivals stop |
+| Cold versus warm | Separate resumed/cold and already-active processes/caches | First-request delay, cache state, CPU quota balance and resource limits |
+| Recovery | Controlled worker interruption and replay on synthetic work | Claim ownership, eventual effects, duplicate/missing effects and backlog age |
+
+For an initial tail-latency analysis, predeclare at least 1,000 eligible observations per reported route; ten thousand gives more observations in the last percentile. This is a sampling plan, not a confidence guarantee. Report the actual sample size and variability across repeated runs. A route with 20 samples has approximately one observation defining its P95 and cannot provide a stable characterization of a rare P99 tail. Never average P95 values from separate replicas; merge compatible raw observations or aggregatable distributions first.
+
+Keep server-side customer observations and client timings separate. The current SQL reporting uses continuous interpolation; the soak/runner uses nearest rank. For three durations 100, 200 and 500 ms, the interpolated P95 is 470 ms while nearest rank returns 500 ms. Neither comparison proves a performance improvement unless the same boundary, workload, result definition and method are used on both revisions.
+
+```text
+Load plan -> scheduled arrivals -> started requests -> terminal outcomes
+                   |                    |                   |
+                   | generator lag      | in-flight         +--> latency samples
+                   |                    |                   +--> failures/throttles
+                   +--------------------+-------------------+--> unfinished work
+
+Parallel observation:
+  API RSS/heap/event-loop/CPU quota + DB pool/locks/I/O + queue age/completion
+```
+
+A closed-loop client that waits for a slow response before making another request can hide overload. An open-arrival generator must expose lag, scheduled-but-unstarted arrivals and in-flight limits. If the generator becomes the bottleneck, the run measures the generator as well as the application. Wait for or explicitly classify in-flight work when a phase ends.
+
+Every result needs revision, command, environment, machine limits, database configuration, fixture, routes, offered/achieved rates, sample method/count, failures/timeouts, capture coverage and raw-artifact hashes. Record whether application memory/CPU limits matched Fly. A native developer-machine test cannot establish performance on a 512 MiB shared-CPU VM. Publish only a sanitized result and keep credential/patient material out of artifacts.
+
+## Decide What the Repository Supports Today
+
+| Question | Current support and remaining acceptance work |
+| ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Can the schema represent these workflows and volumes? | The clinic/patient/appointment/prescription/invoice relationships support the model. Confirm constraints and populated plans with representative data. |
+| Are 25 clinics currently observed as customers? | This chapter uses an assumption; live adoption records were not collected. Demo/test exclusion requires an explicit rule. |
+| Has this full workload met the published API targets? | No complete retained 25-tenant API capacity result is established here; target values must not fill the absent measurement baseline. |
+| Are current VM sizes sufficient? | Their budgets are known; sustained CPU/RSS, burst, database and mixed-job experiments still decide sufficiency. |
+| Do stopped resources perform current background work? | A stopped worker does not process jobs. Its lifecycle must match the product's promised schedule before active adoption. |
+| Does adding replicas solve every bottleneck? | It multiplies connection demand and exposes local cache/rate/socket boundaries; test those before relying on horizontal growth. |
+| What is an implemented improvement versus a measurement gap? | Correcting customer-sample SQL is an application repair. Missing real performance results remain missing until the experiment runs. |
+
 ## Choose the Next Experiment From the Risk
 
 1. Seed two synthetic clinics and verify authorization with actual database roles before using the model as a scale demonstration.
@@ -168,7 +314,7 @@ The same count cannot establish saved staff-hours or faster bookings. Those clai
 6. Perform a compatible rollout and backup restoration drill, then report actual results against the proposed targets.
 7. Observe product tasks and real adoption separately. Synthetic load cannot establish customer adoption or saved staff time.
 
-This chapter specifies experiments; it does not report that they have been run. Existing focused unit tests remain regression evidence for their assertions, outside the outcome metric table.
+This chapter specifies full application capacity and recovery experiments that have not been established here. The separate [known-volume SQL fixture](14-analytics-and-dashboards.md#verify-the-sql-at-a-known-monthly-row-volume) executes the aggregate on synthetic projected rows; it does not run that end-to-end workload. Existing unit, component and SQL checks remain evidence for their own assertions, outside the outcome metric table.
 
 ## When a Number Can Move Into a Resume
 
@@ -190,7 +336,7 @@ The 25-clinic assumption yields a coherent workload model, not measured business
 
 ## References
 
-The queue settings were rechecked in the local Docita working tree on 2 October 2026; the relay acknowledgment was rechecked on 9 October at local HEAD `dc5a97dc3`. This is not a production audit. The linked case studies retain the wider implementation assessments and their source paths.
+The original queue settings were checked on 2 October; relay acknowledgment was refreshed on 9 October at `dc5a97dc3`. A scoped 28 October refresh at canonical source `f3fddffc0` adds effective RLS batch/pool budgets, retry distinctions, workload/storage assumptions and the experiment protocol. Actual application improvements and executed checks are identified in their canonical chapters. This remains a workload model, not an adoption or full production-capacity audit.
 
 - `apps/api/src/shared/modules/queue/postgres-queue.service.ts` — polling interval and default attempt budget.
 - `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.ts` — batch size and acknowledgment path.

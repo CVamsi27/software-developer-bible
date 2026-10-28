@@ -771,7 +771,7 @@ Source: [Five-bullet walkthrough](24-resume-claim-walkthrough.md).
 
 ## Actual Production Metrics and Their Limits
 
-Source: [Actual-record dashboard](14-analytics-and-dashboards.md#a-dashboard-built-from-actual-records-and-retained-telemetry).
+Source: [Actual-record dashboard](14-analytics-and-dashboards.md#a-dashboard-built-from-actual-records-and-retained-telemetry). This group preserves the scoped 2 October legacy-query observation; it is not a new version-2 customer-traffic result.
 
 **Q:** Can 158 retained requests with zero recorded server errors establish 100% availability?
 
@@ -792,6 +792,346 @@ Source: [Actual-record dashboard](14-analytics-and-dashboards.md#a-dashboard-bui
 **Q:** What production result can I currently explain without inventing adoption?
 
 **A:** The dated read-only aggregate returned 158 retained request samples and no appointment, invoice or retained job activity in its selected window. I can explain the query and its limits; it does not substantiate a 25-clinic customer claim.
+
+## Read a Fly Machine Before Describing Its Capacity
+
+Sources: [Deployment and infrastructure](10-deployment-infrastructure.md), [capacity model](23-hypothetical-clinic-metrics.md).
+
+**Q:** What can the 28 October machine inventory tell me about the current deployment?
+
+**A:** It identifies one configured API Machine and one worker Machine in Singapore, with one shared CPU each and 512 MiB/256 MiB RAM respectively. Both were stopped at the observation time. That snapshot describes provisioned shape and state; resource utilization and active-service latency require observations while the processes actually run.
+
+**Q:** Why does one virtual CPU (vCPU) not make every Node.js request run in parallel?
+
+**A:** Asynchronous I/O can overlap while the JavaScript event loop schedules callbacks, but CPU-heavy work can delay those callbacks. Inspect event-loop delay and profiles under representative requests; a configured core count does not reveal the work each request performs or establish its achievable throughput.
+
+**Q:** How should shared CPU capacity affect an explanation of a benchmark?
+
+**A:** State the CPU kind as well as its count. A shared CPU allocation does not imply the same sustained compute as a dedicated core. Keep resource contention and repeated-run variation in the report before attributing a changed tail latency entirely to application code.
+
+**Q:** Is a 384 MiB V8 heap ceiling a safe total-memory budget inside a 512 MiB API Machine?
+
+**A:** The heap is only one part of resident memory. Buffers, native allocations, stacks, the database driver and runtime overhead consume additional space. Measure peak resident set size (RSS), heap and garbage-collection behavior together; setting the heap below the VM limit alone does not establish enough headroom.
+
+**Q:** What makes the worker's 192 MiB heap setting worth testing inside its 256 MiB Machine?
+
+**A:** PDFKit generation, fonts, image buffers, concurrent jobs and database work share the worker process and its memory envelope. The current PDF path does not launch a browser subprocess. Measure representative documents and peak RSS; an idle worker's small heap use cannot predict a burst of complex files.
+
+**Q:** Do Fly's request soft limit of 60 and hard limit of 100 describe requests per second?
+
+**A:** They describe concurrent in-flight requests for the configured service. A long request occupies that allowance longer than a short request. Measure arrival rate, response duration and accepted/rejected work together, rather than treating a concurrency setting as a throughput benchmark.
+
+**Q:** What must be reviewed before adding another API Machine behind a scaling controller?
+
+**A:** Identify state that currently lives inside one process: caches, rate-limit counters, socket rooms, in-flight work and scheduled ownership. A second Machine may create inconsistent views or separate limits. Verify cross-instance behavior and the database connection envelope before interpreting more Machines as safe capacity.
+
+**Q:** Why will an API request not necessarily wake a stopped worker?
+
+**A:** Fly Proxy routes the API's HTTP service, while the separately deployed worker has no equivalent HTTP wake path in its checked-in configuration. A newly queued database job is not itself a proxy request. Define and test how the worker remains available or is explicitly started.
+
+## Choose a Database Profile Without Inventing Its Hardware
+
+Sources: [Deployment and infrastructure](10-deployment-infrastructure.md), [capacity model](23-hypothetical-clinic-metrics.md).
+
+**Q:** Which database facts can I state about the temporary deployment without guessing a Neon tier?
+
+**A:** The owner-confirmed current provider is Neon, used as the temporary cost-conscious database. Its exact project limits, compute allocation, region, storage and recovery settings need separate inventory. A PostgreSQL connection string or repository pool setting cannot supply those provider-side hardware facts.
+
+**Q:** Why distinguish Neon compute allocation from stored data size?
+
+**A:** Compute executes queries and holds active memory, while stored relations and indexes occupy persistent storage. Their scaling and billing controls are different. Record provider compute limits and database-size observations separately; a small stored dataset can still create expensive joins, sorts or connection pressure.
+
+**Q:** How can an inexpensive suspended setup produce a slow first request even with fast warm queries?
+
+**A:** The API may need to resume and the database compute may need to become available before the request's normal work begins. Measure the whole cold path and the warm path separately. Tuning a warm SQL query cannot remove every delay introduced before it is executed.
+
+**Q:** Why does the database region matter when the Fly API is in Singapore?
+
+**A:** Each sequential database exchange adds network latency to the critical path. Several individually cheap statements can therefore produce a slow response when the database is distant. Record actual region placement and round trips, then compare query batching and placement using the same workflow.
+
+**Q:** How should a future AWS database profile appear in an interview answer?
+
+**A:** Identify it as a proposed reference profile, with the workload, availability objective and observations that would justify it. Describe its CPU, memory, storage and recovery decisions together. Do not describe the proposal as the current database or imply that its capacity has already been measured.
+
+**Q:** Why might a pooled endpoint suit application traffic while a migration uses a direct endpoint?
+
+**A:** Application traffic benefits from bounded connection reuse, while migration and administrative operations may need session behavior or locks that a transaction pooler changes. Verify the provider's mode, driver compatibility and transaction-local RLS behavior. Keep endpoint selection explicit rather than swapping URLs without a compatibility check.
+
+**Q:** What evidence would justify moving from the temporary database profile to the balanced reference profile?
+
+**A:** Compare measured query time, pool wait, input/output (I/O) pressure, cold-start behavior, recovery needs and cost over a representative workload. Identify the binding constraint and the expected benefit. A clinic-count milestone alone cannot establish that a different provider or larger instance solves the observed problem.
+
+## Budget Connections, Memory and Storage Together
+
+Sources: [Capacity model](23-hypothetical-clinic-metrics.md), [tenant isolation](02-multi-tenancy-rls.md), [deployment](10-deployment-infrastructure.md).
+
+**Q:** What does a production Prisma pool maximum of 15 mean when both API and worker run?
+
+**A:** It is a per-process limit. One API and one worker can allocate up to 30 connections through those pools, before other clients and administrative reserves. During an old/new API overlap that envelope can reach 45. Inventory every actual pool and compare the total with the provider's effective budget.
+
+**Q:** Why is the RLS-enabled outbox batch normally capped at 13 rather than 200 in the production source profile?
+
+**A:** Each tenant-scoped dispatch holds a connection. The relay takes the smaller of 200 and the configured 15-connection pool minus two reserved connections for coordination and acknowledgment. Thirteen is an admission bound under that configuration, not a measured delivery rate or a universal worker setting.
+
+**Q:** Can SHOW shared_buffers reveal the database instance's physical RAM?
+
+**A:** It reveals one PostgreSQL memory setting. The provider also needs memory for processes, working operations, caches and other services, and serverless allocation can have its own controls. Obtain the effective compute profile from the provider and correlate it with database observations rather than treating one setting as total RAM.
+
+**Q:** Why is pg_database_size different from provisioned disk capacity?
+
+**A:** It reports database storage usage within its defined scope, while provider capacity and free-space metrics describe a different resource envelope. Record relation/index sizes and provider storage together. Do not infer spare capacity, WAL retention or recovery storage solely from the size of one database.
+
+**Q:** What storage headroom can a row-count estimate miss?
+
+**A:** Indexes, large-value storage, row versions awaiting cleanup, write-ahead logs, temporary spills and maintenance operations can add space beyond live row payloads. Measure a representative fixture and observe growth during writes and maintenance. A payload-only estimate cannot serve as a disk-exhaustion threshold.
+
+**Q:** Why can an index improve a list endpoint while increasing the system's cost?
+
+**A:** The index can reduce reads for a selected predicate and ordering, but consumes storage and must be maintained on writes. Inspect actual plans, selectivity, write latency and index size together. Retain the benefit for the important workload rather than adding every plausible index without measurement.
+
+**Q:** When would partitioning be a useful next experiment instead of a clinic-count rule?
+
+**A:** Start from a measured large-table problem such as retention deletion, expensive pruning or maintenance pressure. Check whether the query predicates match a useful partition key and how uniqueness and migrations change. Partitioning adds operational work and does not automatically isolate tenants or accelerate every query.
+
+**Q:** Does the modeled 2.98 GiB of prescription PDFs per month describe PostgreSQL growth?
+
+**A:** That calculation assumes 20,800 documents at 150 KiB each and describes object payloads. PostgreSQL stores separate clinical data and document metadata, while indexes and operational records add their own growth. Estimate those stores independently and include retention, revisions and backups in the intended capacity boundary.
+
+## Derive Traffic Before Selecting a Machine Count
+
+Sources: [25-clinic workload](23-hypothetical-clinic-metrics.md), [deployment](10-deployment-infrastructure.md).
+
+**Q:** How can 520,000 monthly requests produce both a 0.2 and a 0.69 requests-per-second average?
+
+**A:** The first spreads traffic over all seconds of a 30-day month; the second spreads it across 26 eight-hour operating days. State which clock matches the workload. Neither average describes a synchronized clinic burst, offered stress load or the maximum sustainable capacity of the deployment.
+
+**Q:** What additional assumption produces 20,000 distinct clinic-patients from 26,000 visits?
+
+**A:** The model assumes 1.3 visits per distinct clinic-patient during the period and divides 26,000 by that value. It must be checked against a distinct-patient query for actual reporting. The appointment count alone cannot determine how many visits were repeat visits or new registrations.
+
+**Q:** Why should a capacity model test sensitivity to its assumed 20 API requests per visit?
+
+**A:** Autosave, pagination, polling, retries, invalidation and user navigation can change the number and cost of requests. Trace representative visits and vary the mix. Doubling cheap cached reads and doubling expensive report requests create different pressure even when the total request count changes by the same factor.
+
+**Q:** Which response-time statistic belongs in a Little's Law concurrency calculation?
+
+**A:** Use compatible long-run means for arrival rate and time in a stable, defined system. A P95 is not the mean. Align the system boundary, include waiting where appropriate and verify stability; substituting a tail percentile can produce a plausible-looking concurrency value without the law's conditions.
+
+**Q:** How does the modeled busy window change the workload without changing its daily total?
+
+**A:** Moving 30 percent of 20,000 daily requests into 30 minutes creates 6,000 arrivals, about 3.33 per second, and leaves 14,000 elsewhere. A separate 33.3-request-per-second stress exercise adds artificial demand. Keep those schedules distinct so the same daily population is not counted twice.
+
+**Q:** What does a high 429 rate during a capacity experiment require me to distinguish?
+
+**A:** Check intended rate-limit rejection, the identity/IP distribution of the generator and backend saturation separately. Report offered, accepted and rejected work. Bypassing production throttles to obtain a larger throughput number changes the contract and can conceal the resource protections the test should evaluate.
+
+**Q:** Why can 200 staff accounts not determine a concurrent-user test?
+
+**A:** Accounts describe provisioned identities. Simultaneous sessions depend on shifts, clinic behavior, think time and actions per session. Model those choices explicitly, including overlapping active work and long requests. A count of database user rows cannot supply the actual arrival schedule or in-flight concurrency.
+
+## Interpret P95 and P99 With Their Population
+
+Sources: [Percentile methods](14-analytics-and-dashboards.md#match-the-percentile-method-before-comparing-two-runs), [request observations](14-analytics-and-dashboards.md#preserve-the-observation-time-through-a-delayed-flush).
+
+**Q:** Why can continuous and nearest-rank P95 disagree on identical observations?
+
+**A:** Continuous percentiles interpolate between sorted values, while nearest rank selects an observed value. For the synthetic set 10, 20, 30, 40 and 50 ms, their P95 values are 48 and 50 ms respectively. Preserve the algorithm when comparing results so a method change is not mistaken for a performance change.
+
+**Q:** What happens to a monthly traffic report if a delayed flush uses ingestion time instead of observation time?
+
+**A:** Requests that happened earlier can appear in the later persistence window, changing both traffic and latency distributions. Select the original observation timestamp and retain ingestion time for capture diagnostics. Test an observation outside the range that is flushed inside it to expose this mistake.
+
+**Q:** Why can a fast health probe make the customer-facing percentile look misleadingly good?
+
+**A:** Frequent, short probes add many small samples to a pooled distribution. Classify the request population before aggregation and report customer traffic separately. A customer-only result can still need route-level breakdowns; removing probes does not make every remaining endpoint equally represented or equally costly.
+
+**Q:** Why does an invalid duration not remove the request from the server-error denominator?
+
+**A:** Duration validity and HTTP outcome are different properties. Keep the customer's observed response outcome while excluding its unusable timing from the latency distribution. Report both valid and invalid sample counts; otherwise a timing-instrumentation failure could make actual failed requests disappear from the error fraction.
+
+**Q:** What makes a P99 based on a small sample unstable?
+
+**A:** Very few observations determine the upper tail, so one slow or missing request can move the result sharply. Retain sample counts, repeated representative runs and timeouts. A producer's minimum-sample check guards basic completeness; it does not guarantee that the sample is large or independent enough for a precise tail estimate.
+
+**Q:** Why report a cold-start distribution separately from warm steady-state latency?
+
+**A:** Resuming the API, waking database compute and building caches can add work absent from warm requests. Their relative frequency can also change between runs. Report both experiences and their workload proportions so a faster warm path does not hide an unacceptable first request after idle time.
+
+**Q:** Can a pooled customer P95 hide a problem after health checks have been excluded?
+
+**A:** Yes. A high-volume cheap route can dominate lower-volume expensive operations, and one busy clinic can dominate others. Break down endpoint class and relevant workload dimensions, retain sample sizes and control label cardinality. Use the breakdown to investigate rather than average the resulting percentiles together.
+
+**Q:** Which checks protect a before/after latency comparison from a cheaper but incorrect response?
+
+**A:** Confirm the same authorization, fields, ordering, pagination and business result under the same dataset and request mix. Include failures and unfinished work alongside valid durations. A change that skips required work or rejects expensive requests cannot be interpreted solely as a faster implementation of the previous operation.
+
+## Count the Workflow Rather Than Borrowing a Dashboard Label
+
+Sources: [Business counter lineage](14-analytics-and-dashboards.md#follow-the-business-record-to-its-counter), [retained-data limits](14-analytics-and-dashboards.md#retained-samples-do-not-form-an-availability-monitor).
+
+**Q:** Why can a completed-appointment total change when the same old reporting window is queried again?
+
+**A:** The query selects appointments by scheduled start and their current COMPLETED status. Later corrections can change that status even though the selected dates stay fixed. A historical completion-event metric needs an authoritative event timestamp and correction policy rather than assuming a current-row query freezes history.
+
+**Q:** How would I verify unique patients treated without reusing the new-registration counter?
+
+**A:** Select the eligible completed visits and count distinct clinic/patient pairs in the same window. Repeat visits inside one clinic contribute once, while separate clinic identities remain distinct. Test those cases explicitly and state whether the product requires a separate global-person identity for another question.
+
+**Q:** Which extra evidence is needed after counting 20,800 prescription records?
+
+**A:** Identify whether the intended outcome is authoring, clinician review, document generation or authorized delivery. Each has a separate state and timestamp. A prescription row may have no generated PDF, and its existence cannot establish clinical correctness or that a patient received the document.
+
+**Q:** Why must an invoice-created count stay separate from a collected-money metric?
+
+**A:** An invoice can remain unpaid, be cancelled or be corrected, while provider capture, refunds and settlement follow their own lifecycle. Select the authoritative money events and currency rules for financial reporting. Multiplying an invoice count by a catalog price does not reconcile cash received.
+
+**Q:** How should an empty request window appear on the dashboard?
+
+**A:** Show zero retained request samples and unavailable percentiles/error percentage. There is no observed timing distribution or nonzero denominator to calculate those rates. Preserve a capture failure as an error or explicit coverage gap rather than displaying an empty result as measured healthy traffic.
+
+**Q:** Why are new metric fields optional during the response-contract transition?
+
+**A:** Old and new API/frontend versions can overlap. Version 2 emits explicit customer scope, P99 and new activity fields, while an older response lacks that evidence. The client must display unknown or unavailable rather than infer those fields, preserving compatibility without silently strengthening the older result's meaning.
+
+**Q:** What does one SQL statement solve, and what does it leave unresolved for a dashboard snapshot?
+
+**A:** Its subqueries share one statement snapshot, reducing inconsistencies from separate reads during concurrent changes. It does not make mutable source rows historical events, repair missing observations or choose correct business definitions. Record the cutoff and metric version, and test those semantic questions separately.
+
+## Explain the Worker at the Effect Boundary
+
+Sources: [Async processing](03-async-processing.md), [prescription documents](07-prescription-safety.md), [capacity model](23-hypothetical-clinic-metrics.md).
+
+**Q:** Why does the default five-attempt queue setting not describe every PDF and outbox operation?
+
+**A:** Producers can supply their own budgets: the PDF path requests three attempts, while the outbox has an eight-attempt policy. Trace the actual producer and relay before describing recovery. Also inspect which backoff options the selected queue backend honors; an option object alone does not establish the execution schedule.
+
+**Q:** Why cannot a report-ingress P95 establish the time until a prescription PDF is ready?
+
+**A:** The request can return after durable enqueue while the job still waits, renders and uploads its artifact. Measure from accepted durable intent to authorized artifact availability, and include failed or outstanding jobs. A quick HTTP acknowledgment can coexist with a long document backlog.
+
+**Q:** Would doubling worker CPU necessarily double starts in a two-second polling lane?
+
+**A:** A scheduler that claims one job per name per poll still has that admission pattern, even if execution becomes faster. Measure handler time, overlap rules and backlog age before choosing a remedy. More compute may help expensive rendering but cannot by itself remove a polling or coordination limit.
+
+**Q:** How do claim tokens protect a job after its old worker becomes slow rather than dead?
+
+**A:** A newly claimed attempt receives a new token, and acknowledgment must match the current owner. The previous worker cannot then mark the newer claim complete through a stale token. Effect-level idempotency remains necessary because fencing a database acknowledgment does not cancel already-started remote work.
+
+**Q:** What should a retry do after a provider accepted work but the worker lost the response?
+
+**A:** Preserve the uncertain outcome and use a stable provider-supported idempotency key or a reconciliation lookup when available. A new attempt without those semantics can repeat the external effect. A locally unique job record cannot prove what the remote provider already performed.
+
+**Q:** Why must shutdown drain active work before disconnecting Prisma?
+
+**A:** An in-flight handler can still need its scoped transaction, acknowledgment and outcome writes. Stop new claims, wait within a bounded grace period and close database resources in the intended order. Test shutdown during real work; a process that exits cleanly while idle does not exercise this boundary.
+
+**Q:** How should a persistent provider outage influence the retry design and its dashboard?
+
+**A:** Bound retries and backoff, preserve terminal or uncertain outcomes and expose queue age and remaining work. Repeated attempts consume shared database and worker capacity without guaranteeing delivery. Recovery should identify which operations are safe to replay and which require reconciliation or operator action.
+
+## Diagnose the Resource That Actually Delays the Operation
+
+Sources: [Observation lineage](14-analytics-and-dashboards.md), [production setup](10-deployment-infrastructure.md), [capacity experiments](23-hypothetical-clinic-metrics.md).
+
+**Q:** Which observations help separate a CPU bottleneck from garbage-collection pressure?
+
+**A:** Correlate request latency with CPU use, event-loop delay, heap growth, collection pauses and RSS over the same interval. Capture a profile for the expensive path. High CPU and a large heap are symptoms with several causes; increasing memory without locating retained objects can merely postpone a leak.
+
+**Q:** Why can server-side duration look good while the user's action remains slow?
+
+**A:** Browser work, network exchanges, proxy waits, retries and time before the server's timer begins can sit outside the measured duration. Compare client and server boundaries using safe correlation identifiers. Instrument the missing segment rather than assuming one fast server percentile represents the complete interaction.
+
+**Q:** How can API latency satisfy its budget while the clinic still waits too long for a document?
+
+**A:** Interactive requests and background completion have separate queues and deadlines. Enqueue can remain fast as the worker backlog grows. Inspect oldest-job age, enqueue-to-artifact delay, failures and worker activity together; increasing API instances would not address a worker or provider bottleneck identified by those observations.
+
+**Q:** What should I investigate when recorded 5xx responses fall to zero during a database incident?
+
+**A:** Verify that request observations continued to persist and that capture-gap events are visible. A logger that cannot write can leave an apparently clean retained set. Compare independent probes and application outcomes, and preserve the missing interval instead of interpreting the absence of recorded failures as recovery.
+
+**Q:** How can a request be correlated with its later job without copying clinical payloads into logs?
+
+**A:** Carry a bounded, authorized operation identifier through the request, durable intent and outcome records. Log state transitions and timing rather than patient content or provider secrets. Review identifier sensitivity and access controls; a correlation key remains capable of revealing relationships even when names are omitted.
+
+**Q:** Why can pool wait rise even when database CPU is low?
+
+**A:** Connections may be held by long transactions, idle scopes or blocked work, leaving new callers waiting before their statements reach execution. Compare pool acquisition time, transaction duration and database activity/locks. A bigger database CPU allocation cannot directly repair an application that holds scarce connections unnecessarily.
+
+**Q:** How would I test whether one large clinic harms the others without weakening tenant checks?
+
+**A:** Run a controlled mixed-tenant workload and compare per-tenant latency, accepted work, pool use and queue age under the same authorization rules. Add suitable admission or resource bounds for the demonstrated shared bottleneck. An isolated cross-tenant denial test establishes a different property from noisy-neighbor fairness.
+
+## Release, Restore and Cost Need Separate Acceptance Checks
+
+Sources: [Deployment and recovery](10-deployment-infrastructure.md), [capacity model](23-hypothetical-clinic-metrics.md).
+
+**Q:** Why must a blue-green release appear in the database-capacity calculation?
+
+**A:** Old and new application versions can hold separate pools while both remain alive, and migration/admin work may overlap. Budget that temporary maximum before rollout. Verify schema and job-payload compatibility as well as connection availability; a green process starting does not establish either property.
+
+**Q:** Which three health questions should a production setup answer independently?
+
+**A:** Ask whether the process is alive, whether it is ready for its defined traffic and whether an important business operation succeeds. Keep dependency-heavy checks from destroying liveness semantics. A database outage, an unavailable provider and a stuck worker can require different routing and operator responses.
+
+**Q:** What makes a backup-restoration drill support an RTO claim?
+
+**A:** Time the complete recovery to verified service, including database restoration, secrets/configuration, compatible application startup and integrity/business checks. Record the recovered cutoff for RPO separately. The presence of scheduled backups or a successful download does not establish the time or correctness of restoration.
+
+**Q:** What should happen when the required latency-baseline gate has no artifact?
+
+**A:** Keep the performance acceptance result blocked and run a complete controlled capture before declaring the budget met. Do not replace the artifact with the SLO numbers themselves. The gate's ability to reject absent evidence is useful behavior, but it supplies no achieved latency measurement.
+
+**Q:** How should the low-cost and balanced resource profiles be compared?
+
+**A:** Keep the application revision, data distribution, request mix and correctness checks equivalent, then record cost and resource pressure alongside outcomes. Test cold behavior and failure recovery as separate cases. A cheaper idle configuration and a stronger proposed profile cannot be compared using assumed throughput alone.
+
+**Q:** Why are a Multi-AZ standby and a read replica different design choices in a future AWS setup?
+
+**A:** Their intended availability, read-routing, replication and failover roles differ, and neither removes consistency or recovery decisions from the application. Verify the chosen service's behavior and costs. Do not count a standby as extra read capacity without confirming that the selected topology actually serves those reads.
+
+## Reproduce the Capacity Claim Safely
+
+Sources: [Benchmark procedure](23-hypothetical-clinic-metrics.md#turn-the-model-into-a-reproducible-benchmark), [known-fixture reconciliation](14-analytics-and-dashboards.md#reconcile-a-small-fixture-before-generating-a-large-one).
+
+**Q:** What must a 25-tenant fixture contain beyond 25 clinic rows?
+
+**A:** Include realistic patient/visit distributions, prescription and invoice relationships, permissions, historical rows, document shapes and a reproducible seed. Record which counts are inputs and which are generated outcomes. Empty tenant rows cannot exercise the data access, contention or background work implied by the workload model.
+
+**Q:** Which protections should isolate a destructive capacity fixture from real clinical data?
+
+**A:** Use an explicitly designated test database, verified connection identity, synthetic records and guarded cleanup. Disable real provider sends and payment effects. Fail closed when the environment is ambiguous, and record the tested revision and reset procedure so another engineer can repeat the experiment without touching production.
+
+**Q:** What should a PDF capacity check assert besides a completion status?
+
+**A:** Verify a readable generated artifact, its expected document association, storage availability and authorized access. Exercise representative content sizes and missing assets. Keep synthetic clinical content and simulated delivery; a success flag alone can hide an empty file, the wrong document or a broken access path.
+
+**Q:** Why do passing mocked unit tests not replace the isolated database experiment?
+
+**A:** Mocks can pin branching, contracts and error handling while bypassing real locks, indexes, roles, network exchanges and transaction behavior. Retain those useful tests, then exercise the relevant invariant against the actual database engine and resource profile. State the scope of each result rather than promoting one into another.
+
+**Q:** Why should a growth experiment retain old data while testing a recent-month report?
+
+**A:** Historical rows and indexes can affect plan choice, cache fit and maintenance even when the response selects a recent window. Seed a stated history and compare plans/resource use as it grows. Recreating only one clean month can hide the conditions that change the production bottleneck.
+
+**Q:** How should a failed rollout experiment be checked after returning to the previous application version?
+
+**A:** Reconcile existing records, queued payloads and external outcomes under the resulting schema, then run the representative business probes. An old image can be incompatible with new writes or migrations. Record what was restored and what still requires a forward repair rather than stopping at the process version.
+
+**Q:** What should stop a capacity run before it produces a misleading headline throughput?
+
+**A:** Define limits for correctness failures, unacceptable latency/error rates, growing backlog, resource exhaustion and generator overload before starting. Retain the offered and rejected work when a limit is reached. A high count of fast successful responses cannot compensate for dropped operations or an unbounded recovery debt.
+
+## Explain the Executed Monthly Aggregate Fixture
+
+Source: [Known-volume SQL verification](14-analytics-and-dashboards.md#verify-the-sql-at-a-known-monthly-row-volume).
+
+**Q:** Which part of the 25-clinic model was actually checked at its stated row volume?
+
+**A:** The real operational aggregate ran on projected PostgreSQL fixture tables with 26,000 appointments, 20,800 prescriptions, 26,000 invoices, 20,000 distinct clinic-patient pairs and 520,000 customer observation rows. Exact counts were asserted. This does not replay clinical operations or establish how the full schema, RLS role, API and worker behave together.
+
+**Q:** Why are P95 470 ms and P99 494 ms from the regression not API performance achievements?
+
+**A:** They are continuous percentile calculations over supplied values 100, 200 and 500 ms. The test proves eligible-row selection and arithmetic, including delayed persistence and invalid samples. No HTTP operation took those measured times. A real performance claim needs actual operation timings, load, resources, errors and capture coverage.
 
 ## Summary
 

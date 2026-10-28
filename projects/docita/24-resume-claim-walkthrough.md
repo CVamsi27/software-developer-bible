@@ -106,6 +106,22 @@ Read [prescription safety](07-prescription-safety.md) and [clinical integrations
 Schema validation constrains shape, not clinical truth. Show how the interface keeps a person responsible for the clinical decision. Discuss prompt injection, sensitive data disclosure, hallucinations, quota enforcement, ambiguous timeouts and degraded behavior. Describe proposed evaluation and missing evidence as future work, not a completed safety certification.
 
 
+## Associate a Modeled Scale Claim With Its Evidence
+
+The current five-bullet application resume and a modeled-scale interview exercise are different artifacts. The hypothetical exercise assumes 25 clinics, 26,000 completed visits, 20,800 prescription records, 26,000 invoices and 20,000 distinct clinic-patients per month. It derives 520,000 appointment-linked requests. Read the [input assumptions](23-hypothetical-clinic-metrics.md#start-with-one-consistent-clinic-month) before using any of those numbers.
+
+| Statement to explain | Source or experiment to open | Follow-up that changes the answer |
+| ----------------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| Monthly clinical volume | Versioned metric definitions and a known-volume SQL fixture | Is it a visit, new registration, distinct clinic-patient, prescription record, completed PDF or collected payment? |
+| Tail latency | Customer scope, observed-time window, validity rules, sample size and actual raw timings | Was it server time or full client response, warm or cold, continuous or nearest-rank percentile? |
+| Production capacity | Actual guest inventory, DB tier/used bytes and a resource-bounded API experiment | Does adding a replica exceed the DB pool budget or split process-local cache/socket state? |
+| Reliable processing | Selected job's attempt policy, durable transition, owner token and replay evidence | What if the provider succeeds before the process dies without acknowledgment? |
+| Operational ownership | One real investigation or controlled reproduced defect with before/after results | Which part did you implement, which observation was synthetic, and what remains unmeasured? |
+
+A synthetic row-volume test can verify the aggregate at those fixture counts. It does not establish clinic adoption, complete clinical workflow behavior, authorization or a production SLO. The local read runner can sample the actual API when configured correctly, but cannot by itself verify booking contention, financial effects or PDF completion. The [evidence pack](../../80-lanes-abroad-full-stack/80.17-docita-interview-evidence-pack.md) keeps these boundaries attached to each claim.
+
+Explain the current deployment accurately: API and worker configurations are inexpensive shared-CPU guests; the temporary database provider is Neon. AWS RDS and the larger balanced profile are future reference choices pending a resource/cost experiment. Do not present proposed hardware as a past production decision.
+
 ## Rehearse One Complete Explanation
 
 Prepare a 90-second product overview, a five-minute operation walkthrough and a deeper discussion of one failure. Use this order: user problem → your responsibility → actual implementation → trade-off → verification → current limitation → next improvement.

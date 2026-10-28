@@ -9443,12 +9443,12 @@
     },
     {
       "path": "80-lanes-abroad-full-stack/80.17-docita-interview-evidence-pack.md",
-      "sha256": "5ce9ca6134a97bdf897dfac6620be0c82588d9a5907001a8ee37e1adaaaa86c3",
+      "sha256": "ca142786c35fd9fc78eeb8494f35a1535b2a4e2e21fb79fc889e684382b71aed",
       "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewer": "root-capacity-proof",
+      "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Full-content review: Evidence cards: scope/revision/check/environment/result/disclosure, same-start versus intervaloverlap, controlledDBinterleavings andserializableretry, bound transactionlocalcontext, roommembershipversuspayload permission, no fakeCIincident.",
+      "notes": "Reviewed evidence-card flow and added exact topology/resource/load/outcome/provenance fields. Canonical links own mechanisms, observations and proposals remain distinct, sensitive inputs stay private.",
       "findings": []
     },
     {
@@ -9633,12 +9633,12 @@
     },
     {
       "path": "80-lanes-abroad-full-stack/80.36-docita-complete-interview-defense.md",
-      "sha256": "b6064530ccca65e5354899d44a8ee1ce7f593f9a947e0737c47199b459ac37a9",
+      "sha256": "73064d5b8a8ffbf3ce2c8f168fb2c29a683d74adae2a7b94b0866689641ffe39",
       "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewer": "root-capacity-proof",
+      "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Full-content review: Decisiondefense fivepieces, callbackatomictransaction/uniqueidentity/outbox withcrashboundaries, ALSnotauthorization, RLSruntimeboundaries, claimnotSKIPLOCKEDalone, source/test/productionevidence distinct andactualtradeoffsnotuniversalqueueceiling.",
+      "notes": "Reviewed complete mechanism/constraint/evidence answer flow and added capacity rehearsal route. Question bank stays in companion revision; no duplicated drill or unverified incident narrative.",
       "findings": []
     },
     {
@@ -9923,12 +9923,12 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "bc103a7cc16e2fdbe3a0e606aaf1d3ce9a1c95d9dd1e70cd48095b3a8e810d20",
+      "sha256": "b0cea109da84a14a23734a520eb686afc93994c91215d2a1345f50265a608f74",
       "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-10-26",
+      "reviewer": "root-capacity-proof",
+      "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Full stack/lane navigation and canonical learning paths checked. Numeric metadata remains script-owned; no mastery inference.",
+      "notes": "Reviewed navigation and tool-maintained155Kline aggregate after expansion; file count974 and source order unchanged.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "20ce31e5d1db5857fea7fe16dc74f7968574dd351ebeee38698879826b4b0327",
@@ -9959,12 +9959,12 @@
     },
     {
       "path": "contributing.md",
-      "sha256": "aa6f511229372d78a28433b0b9ebca1e70b8e5097c7830d6732081c4473ed697",
+      "sha256": "3f6cfe1e167fc0c8ac6d38eb675cf38538bde325ad4c5bcf1b5f52c9fa7c9842",
       "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-10-27",
+      "reviewer": "root-capacity-proof",
+      "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Full guide/examples reviewed. Reconciled mandatory generic section/checklist, duplicate H2 allowance and naive fence counting with AGENTS/parser; project tree includes MAQ. 2026-10-27 maintenance delta inspected after metadata restamping: gate-count ownership, pinned example setup, final-source review order and inventory/completeness commands agree with the actual harness; prior teaching conventions retained.",
+      "notes": "Reviewed contributor workflow and tool-maintained scale/check-count restamps. Verification workflow/instructions unchanged; no manual numerical baseline.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "8485e2232ea7f728920a296a5c47a6f7e1fc3fc4945b1353c96f0d61d5e9b357",
@@ -10386,12 +10386,12 @@
     },
     {
       "path": "docs/verification-gates.md",
-      "sha256": "b9c8b73a121baa5f01afcf5bcbb05411afc1417954990f81fdb8b19e0ef3fd01",
+      "sha256": "2c5a96265f14ba01283bcf54534fe7e62acc90cc0ac73755eb8f740f88474cae",
       "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-10-27",
+      "reviewer": "root-capacity-proof",
+      "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Every gate row/scope and adding-gate contract read. Current review pointer and private local-path scope updated; generated counts remain writer-owned. 2026-10-27 maintenance delta inspected: gate 29 exact-byte evidence, gate 18 process/mutation fixtures, explicit push/PR JSON triggers and runtime prerequisites match implemented checks; no claim that structural gates prove technical accuracy or mastery.",
+      "notes": "Reviewed gate reference and generated scale restamp. All32checks retained; no skipped gate relabelled as executed.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "d09b11f32070e9d926d6a87672236dd3e79d0cdab809b5709e9e2744b7ae74ac",
@@ -10439,12 +10439,13 @@
     },
     {
       "path": "projects/docita/03-async-processing.md",
-      "sha256": "323be480af7eed8dcd68d218f33cdee18eb12a1fbc3de0715fa547be2bf213e7",
+      "sha256": "c92d7d6fafd2294de344ae8dcb8eb5ff83352938ced72ee941c01fd3a42e9454",
       "status": "reviewed",
-      "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
+      "reviewer": "root-capacity-proof",
+      "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Full read: Queue atomic claim/token fencing and stale lease versus external effects; keyed outbox skipDuplicates, emitAsync acknowledgment and suppressErrors/timeout limitations; manual DLQ versus inert automatic replay. Historical tests explicitly scoped; no new database concurrency result. Moved the existing concrete problem before the definitions to establish the reading trace; no mechanism removed."
+      "notes": "Reviewed queue/outbox flow and preserved historical source boundaries. Refreshed f3fddffc0 active-poll shutdown drain, forced-exit uncertainty, five generic versus three PDF attempts, eight outbox attempts and RLS pool-minus-two admission. Diagram separates external effect from fenced acknowledgment; no throughput or universal exactly-once claim.",
+      "findings": []
     },
     {
       "path": "projects/docita/04-payment-flows.md",
@@ -10502,12 +10503,13 @@
     },
     {
       "path": "projects/docita/10-deployment-infrastructure.md",
-      "sha256": "0faabd24a85dd57f196e16d56ac49ace6f4afb90d4efdb56bb80509e3bb88080",
+      "sha256": "4c6fe2ce06814de9d867664b8677fb8cc09a2ae2be5fff4f825cb99663931a4e",
       "status": "reviewed",
-      "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
+      "reviewer": "root-capacity-proof",
+      "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Full read: Separate API/worker/browser contracts, existing-machine lifecycle, buffering versus streamed response, bundle artifact limits, paused deploy triggers, schema drift versus old-version compatibility, canary liveness versus business success. No live deployment certified. Moved the existing concrete problem before the definitions to establish the reading trace; no mechanism removed."
+      "notes": "Reviewed deployment topology, machine lifecycle, CPU/RSS/heap/swap, source and dated live inventory, temporary Neon and future balanced AWS profiles. Provider hardware/storage unknowns remain explicit. Setup, network/secret/migration/cutover/restore steps and diagrams preserve authority boundaries. Official new citations probe HTTP200. Current stopped machines and disabled schedules were observed read-only; no paid change or performance success implied. Final reread after local setup commands and spelling/alignment writers; no new achieved metric or infrastructure action asserted.",
+      "findings": []
     },
     {
       "path": "projects/docita/11-insurance-claims.md",
@@ -10538,12 +10540,13 @@
     },
     {
       "path": "projects/docita/14-analytics-and-dashboards.md",
-      "sha256": "13785381f04cc8555ae7bfdbde460c0b0f67bdd82c69e57a8b4991544ab498a8",
+      "sha256": "f41ad76f1650aa0691a35842211982cb49e90aa0d49c18908b4d4b832337b46e",
       "status": "reviewed",
-      "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
+      "reviewer": "root-capacity-proof",
+      "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Full read: Metric population/calendar/buckets, weekly collision and weighted denominator example, catalog versus historical revenue, cache/replica/snapshot boundaries, retained 158-request historical sample versus adoption/availability. Historical production query not rerun. Moved the existing concrete problem before the definitions to establish the reading trace; no mechanism removed."
+      "notes": "Reviewed preserved analytics-factory findings and working-tree version2 operational SQL/UI semantics. Customer observedAt half-open window, invalid timing exclusions, continuous P99, distinct clinic-patient pairs and prescription/invoice meanings match code and actual PostgreSQL fixtures. Mixed-row regression and 25-clinic modeled-volume outputs are test-only; historical158/P95 2ms remains dated. No capacity/adoption relabeling; no duplicated query mechanism.",
+      "findings": []
     },
     {
       "path": "projects/docita/15-doctors-verification-and-public-booking.md",
@@ -10619,40 +10622,42 @@
     },
     {
       "path": "projects/docita/23-hypothetical-clinic-metrics.md",
-      "sha256": "dfc1511de8c96c7a5456a784d1a741d39f9887e661b3aac838edba7d78741d89",
+      "sha256": "e064cab17e3c0e9e5463b46ac6d46655ff049c764a4104c795d9b7ab4c764f14",
       "status": "reviewed",
-      "reviewer": "bible_final_verification",
-      "reviewDate": "2026-10-27",
+      "reviewer": "root-capacity-proof",
+      "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Full-content review: recomputed workload, storage, labor, percentile-change, delivery, reconciliation and availability-budget arithmetic. Hypothetical inputs, invented observations and proposed targets remain distinct. Added isolated benchmark artifacts, offered-load/correctness boundaries and a separate operational adoption-query method. October 2/9 queue/relay observations remain dated theoretical rates rather than fresh measured throughput. No actual adoption, executed benchmark, private reference or new citation asserted. Final full-content reread after table delimiter alignment; formatting only, with the hypothetical and historical-evidence boundaries preserved.",
+      "notes": "Reviewed model formulas, repeat-visit/invoice assumptions, rates, CPU/pool/queue/storage envelopes and experiment acceptance. Recomputed26000/20800/26000/20000/520000,0.20/0.69/3.33/33.3rates,15-perprocess pool/13outbox bound, PDFstorage and health-probe scheduling. Figures stay assumptions/calculations, known-volume SQL is distinct from API capacity, local runner limitations and real-workload prerequisites remain explicit. Final reread after local setup commands and spelling/alignment writers; no new achieved metric or infrastructure action asserted.",
       "findings": []
     },
     {
       "path": "projects/docita/24-resume-claim-walkthrough.md",
-      "sha256": "52b72e27cf0abcbad0e0826366d28b41df6e97ac65243b590c2805b154732c0a",
+      "sha256": "1917e6f785e2498f05ae47c14432b953b2ae4aff4d64393be8b9f7f8a36b6d02",
       "status": "reviewed",
-      "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
+      "reviewer": "root-capacity-proof",
+      "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Full read: Claim-to-contribution crosswalk, five product workflows versus adoption, UI/server cache and RLS/role scope, source-fenced queue versus external duplication, manual DLQ, actual-retained sample limitations, optional AI and release evidence, sanitized story cards. Removed unavailable private workspace pointers. Moved the existing concrete problem before the definitions to establish the reading trace; no mechanism removed."
+      "notes": "Reviewed existing five-bullet walkthrough and separate modeled-scale evidence mapping. Links route mechanisms to canonical deployment/metric/workload homes. No resume artifact changed, no first-person fabricated adoption/latency/history introduced.",
+      "findings": []
     },
     {
       "path": "projects/docita/INDEX.md",
-      "sha256": "8daf468554f0b9df79e6fbb50e76c2a99da7399dee21c25db88d618478123404",
+      "sha256": "a132541ff4d799a34d9fe6ebffae6ab8a654296f48659718dfc21478968c6686",
       "status": "reviewed",
-      "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
+      "reviewer": "root-capacity-proof",
+      "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Full read: historical whole-corpus source dates and scoped later refreshes, six learning stages, all stable cases, workload assumptions, resume evidence, revision then interview. Source snapshot is not a production audit."
+      "notes": "Reviewed learning order and crosslinks: deployment and metric definitions precede workload experiments, revision then independent interview practice. Existing chapter IDs/counts preserved; no duplicate new chapter.",
+      "findings": []
     },
     {
       "path": "projects/docita/REVISION.md",
-      "sha256": "19a8e28282e65cdeb0156eb22467a7cc7119ffc7c5f5f7347128d8c7cf571629",
+      "sha256": "dd80ba12d7ad9488e9302c08d8520f33730009e2d70db22f511aec4ce9718f97",
       "status": "reviewed",
-      "reviewer": "bible_metrics_evidence",
-      "reviewDate": "2026-10-27",
+      "reviewer": "root-capacity-proof",
+      "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Full-content review: source-linked architecture, tenancy, delivery, payments, clinical and recovery retrieval preserved. New benchmark/adoption questions distinguish assumptions, offered load, raw outcomes and operational aggregates. Numeric examples checked against chapter 23. Existing 158-request/2ms observations remain dated and qualified; no new audit or candidate mastery inferred. Links and privacy checks pass.",
+      "notes": "Reviewed preserved authored question groups and74new source-linked QAs (246total). Covers actual hardware snapshot, temporary provider/future AWS, pool/RLS/storage/traffic/tails, effects/shutdown/debugging/cost/recovery, local harness and executed SQL fixture. Mechanism, changed constraint and observation boundaries preserved; PDFKit buffers are not a browser subprocess; no fabricated measured performance or user mastery.",
       "findings": []
     },
     {

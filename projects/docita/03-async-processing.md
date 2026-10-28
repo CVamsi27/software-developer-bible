@@ -87,7 +87,33 @@ A long-running worker may still be alive when a timeout expires. Requeuing its j
 
 The focused queue unit tests passed for lost completion/retry acknowledgments, a missing token and the duplicate-skip path. These use repository mocks; they do not exercise competing PostgreSQL connections. Fencing a local acknowledgment also does not cancel the old handler or prevent it from repeating a provider effect. The inspected recovery protocol has a fixed stale threshold, not a renewable per-job lease.
 
-`interval.unref()` lets a timer stop keeping the Node process alive. It does not cancel running handlers or drain them. The queue's destruction hook clears pollers; safe shutdown additionally needs to stop new claims and decide how to finish or recover in-flight work.
+`interval.unref()` lets a timer stop keeping the Node process alive. It does not cancel running handlers or drain them. A **28 October refresh at canonical source `f3fddffc0`** found a newer shutdown implementation: it marks the service as shutting down, clears polling timers and awaits the active poll promises before persistence closes. The focused `postgres-queue-shutdown.spec.ts` exercises those ownership/drain paths. The worker still applies an outer 15-second exit bound, so a long external effect can outlive that grace period; retain stale-claim recovery and effect idempotency rather than promising every shutdown completes every job.
+
+## Separate a Default Retry Budget From the Caller’s Policy
+
+The generic PostgreSQL queue defaults to five attempts. PDF enqueue explicitly requests three; a five-attempt headline would therefore misdescribe the PDF path. The generic retry loop derives delay from its own one-second exponential base and caps it at 60 seconds. A caller's requested backoff option is not evidence that this backend honors that option. Record the actual persisted attempt limit and observed retry timestamps for the selected job type.
+
+The outbox has its own eight-attempt policy and five-second schedule. Its nominal batch cap is 200, but the enabled RLS path limits the batch to the production pool size minus two: 15 minus two gives 13. That reserves database slots; it does not guarantee that 13 slow subscribers finish within the dispatch timeout. See [connection and arrival budgets](23-hypothetical-clinic-metrics.md#put-a-connection-budget-around-autoscaling).
+
+```text
+business transaction -> durable outbox/queue row -> claimed by current owner
+                                                     |
+                                                external effect
+                                                     |
+                                      +--------------+---------------+
+                                      |                              |
+                                      v                              v
+                                  acknowledge                 process dies first
+                                      |                              |
+                                  completed              stale recovery / new claim
+                                                                     |
+                                                  reconcile or repeat safely by key
+
+Graceful stop: stop new claims -> await active polls -> close persistence
+Forced exit: bounded grace ends -> later recovery; remote effect may be uncertain
+```
+
+A claim token fences a stale worker's local acknowledgment. It cannot retract an email, payment-provider action or uploaded object that already happened. Define a stable logical-effect key and reconciliation behavior at that external boundary.
 
 ## How the Outbox Couples an Event to a Business Write
 

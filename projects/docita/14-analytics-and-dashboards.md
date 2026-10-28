@@ -13,7 +13,7 @@ Analytics turns business records into metrics for a specified scope and period. 
 
 > **Textbook Definition:** A metric is a defined aggregation over a population, time window and measurement rule; a dashboard presents selected metrics, while a snapshot persists results for a particular cutoff.
 
-This case describes source inspected on **2 October 2026**. Controlled source probes establish specific calculation behavior, not the accuracy of production reports.
+The analytics-factory assessment below retains its **2 October 2026** source inspection and controlled probes. The operational-dashboard section has a scoped **28 October 2026** implementation and definition update in a tested working tree based on canonical revision `f3fddffc0`. It has not been deployed by this work. That update does not refresh the other factory findings into a new audit or establish production activity.
 
 ## First Principles
 
@@ -113,25 +113,163 @@ Choose whether corrections produce replacement snapshots, append a revised versi
 
 ## A Dashboard Built From Actual Records and Retained Telemetry
 
-The new internal operational dashboard reads the existing `Appointment`, `Invoice`, `QueueJob` and `ApiRequest` tables through one aggregate query. It adds no metric seed rows and requires no schema migration. The route is restricted to INTERNAL operators; the frontend validates the shared Zod response contract.
+A receptionist can book one visit, a clinician can revise its prescription, and a payment callback can arrive twice. Counting every row or request as another patient would inflate the result. The internal operational dashboard therefore needs a definition for each displayed quantity before a capacity claim can use it.
 
-Every read uses a rolling **30 × 24-hour UTC window**, including the start and excluding the end. A single PostgreSQL statement gives its aggregates one statement snapshot. This differs from a clinic-local calendar month.
+The dashboard reads existing appointment, prescription, invoice, queue and request records through one aggregate statement. It adds no invented metric rows. The route is restricted to INTERNAL operators and the frontend parses a shared Zod contract. Contract version 2 identifies customer-request scope and adds prescription creation, distinct clinic-patients seen, P99 and valid/invalid latency sample counts. Those fields are optional for compatibility with an older API; a missing field means unknown or unavailable, rather than a silently assumed version-2 value.
 
-| Card | Exact meaning | Boundary |
+### Follow the Business Record to Its Counter
+
+Every read uses a rolling **30 × 24-hour UTC window**, including the start and excluding the end. The same instant at the right edge belongs to the following window. A single PostgreSQL statement gives these aggregates one statement snapshot. This differs from the separate analytics facade's clinic-local calendar-month counters.
+
+```text
+Reporting cutoff from injected clock
+             |
+             +--> start = cutoff - 30 days; end = cutoff
+             |
+             +--> Appointment.startTime in [start, end)
+             |      +--> all statuses --> appointments scheduled
+             |      +--> current COMPLETED --> completed appointments
+             |      +--> completed + distinct clinic/patient pairs --> patients seen
+             |
+             +--> Prescription.createdAt in [start, end) --> prescriptions created
+             +--> Invoice.createdAt in [start, end) --> invoices created
+             +--> QueueJob.createdAt in [start, end) --> retained job cohorts
+             |
+             +--> one SQL statement --> one response with exact window bounds
+```
+
+| Quantity | Version-2 definition | What would change its interpretation |
 | -------------------------------- | -------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| Clinics with appointments | Distinct clinic IDs with appointment start times in the window | Includes cancelled appointments and any demo/test clinic records; not paying customers |
-| Appointments scheduled | Appointment start time in the window | Current records, not appointments created in the window |
-| Completed appointments | Scheduled in the window and currently COMPLETED | Does not establish when completion occurred |
-| Invoices created | Invoice creation time in the window | Not revenue or cash received |
-| Retained jobs / currently failed | Jobs created in the window, with their current status | Cleanup removes history; recovered failures are not counted as currently failed |
-| p50 / p95 latency | Percentiles of nonnegative persisted API request durations in milliseconds | Includes observed routes, potentially health checks; not browser latency or independent availability monitoring |
-| Server error rate | Retained HTTP 5xx samples divided by all retained request samples | Missing persistence is not successful traffic; no samples produces unavailable, not 0% |
+| Clinics with appointments | Distinct clinic IDs with appointment start times in the window | Includes cancelled appointments and demo/test clinic records; not active paying customers |
+| Appointments scheduled | Appointment start time in the window, all current statuses | Not appointment creation time or only completed visits |
+| Completed appointments | Scheduled in the window and currently COMPLETED | Does not establish when completion occurred; a later status correction can change a rerun |
+| Clinic-patients seen | Distinct `(clinicId, patientId)` pairs among those completed appointments | Not new registrations or globally deduplicated people; one person at two clinics can contribute twice |
+| Prescriptions created | Prescription record creation time in the window | Not medication-item count, subsequent edits, reviewed clinical correctness or generated PDF count |
+| Invoices created | Invoice creation time in the window, without a paid-only filter | Not collected revenue, captured payments or settlement; corrections and states require separate analysis |
+| Retained jobs / currently failed | Jobs created in the window, with their current status | Cleanup removes history; a failure followed by recovery is no longer currently failed |
 
-The UI displays the exact reporting bounds, sample count and first/last observation timestamps. The request logger buffers observations before persistence and can disable persistence after database authentication or missing-table errors. Monitoring cleanup uses a 30-day retention window. These mechanisms mean the retained sample set can contain gaps. Millisecond-resolution measurements can legitimately report zero; they do not mean requests take no time.
+The general analytics facade's `patientsThisMonth` counts new patient records from its month start. Its usage endpoint groups doctor IDs on recently created appointments for an activity measure. Neither can replace distinct patients treated or all staff logins. Staff accounts, daily activity, concurrent sessions and in-flight requests need their own definitions.
 
-A read-only production check on **2 October 2026**, with a ten-second SQL timeout, returned **158 retained requests, zero recorded 5xx responses, median 0 ms and p95 2 ms**. The samples covered **29 September 18:04:37 UTC through 30 September 04:29:51 UTC**. The same aggregate returned **zero appointments, invoices and retained jobs** in its rolling window. No patient records or credentials were exposed and no production rows were inserted.
+The schema allows one prescription record per appointment, while PDF metadata is nullable and PDF work has a separate lifecycle. One invoice per completed visit and one PDF per prescription remain assumptions in the [25-clinic model](23-hypothetical-clinic-metrics.md). Counting unique prescription rows cannot verify successful document delivery.
 
-That observation establishes a limited sample result. It does not establish 25 active clinics, a 30-day traffic total, production improvement against a baseline, or a useful customer-facing latency distribution. The implementation is locally validated; this observation alone does not establish that the new dashboard has been deployed. Before using it as a résumé outcome, verify deployment and identify real customer activity separately from test/demo data and health-check traffic.
+### Preserve the Observation Time Through a Delayed Flush
+
+A request observation has two relevant clocks. `observedAt` records when the instrumented request was observed; `createdAt` records when its row reached persistence. A delayed buffer flush must not move old traffic into the current hour or month. The version-2 operational query selects `observedAt` in the same half-open reporting window and selects `routeCategory = CUSTOMER` before calculating request counts and latency.
+
+```text
+Customer request --> timed observation --> buffered request record --> database flush
+                           |                         |                       |
+                      observedAt                may be delayed           createdAt
+                           |                                                 |
+                           +--> chooses the reporting window                 +--> ingest time
+                           |
+                           +--> CUSTOMER population
+                                  +--> all retained outcomes --> request/error counts
+                                  +--> valid durations --> P50 / P95 / P99
+                                  +--> invalid durations --> excluded-latency count
+
+Missing observations or failed flushes --> separate coverage evidence
+```
+
+Health probes and internal operator routes have separate categories. Their small or frequent responses must not dominate the customer distribution. A mixed legacy query and a customer-only query cannot be compared as though they measured the same population.
+
+Within the customer-request population, valid durations must have `latencyValid = true` and lie between zero and the canonical **120,000 ms** validity ceiling. Zero can be a valid millisecond-resolution observation. Rows outside the latency rule remain visible through the invalid count; their HTTP outcomes remain in the request/error denominator. Filtering out an invalid duration must not erase a failed request from the outcome rate.
+
+| Request metric | Definition | Required reading condition |
+| -------------------------------- | ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| Request samples | Retained CUSTOMER observations whose `observedAt` falls in the window | This is observed traffic, not traffic reconstructed during a capture outage |
+| Server errors | HTTP 5xx observations in that same customer population | Intentional 4xx responses and business-level failures need separate classifications |
+| Server-error percentage | Server errors divided by request samples, multiplied by 100 | No samples produces unavailable, not a measured zero-percent error rate |
+| Valid latency samples | Customer observations satisfying the flag and duration bounds | Keep their count alongside the total request count |
+| Invalid latency samples | Customer observations excluded by that latency rule | Investigate instrumentation and preserve the missing distribution's uncertainty |
+| P50 / P95 / P99 | PostgreSQL continuous percentiles of valid customer durations, in milliseconds | State the population, sample count, algorithm, window and capture coverage |
+| First / last sample | Earliest/latest eligible `observedAt` retained for the window | Bounds of observed data, not proof of continuous capture or service availability |
+
+An HTTP 200 can still contain the wrong business result, and a completed database transaction can leave an external effect pending. Add domain correctness checks and job/provider outcomes to the request-level measurements. The [async case](03-async-processing.md) explains those distinct acknowledgment boundaries.
+
+### Match the Percentile Method Before Comparing Two Runs
+
+The operational SQL uses `percentile_cont`, which interpolates between sorted observations. The reproducible API-soak producer uses the nearest-rank method, which selects an observed value. Both need an explicit definition; their values can differ on the same small sample.
+
+For synthetic durations of **10, 20, 30, 40 and 50 ms**, continuous P95 is **48 ms**, while nearest-rank P95 is **50 ms**. These are arithmetic examples, not Docita latency results. A change from one algorithm to the other can create an apparent change without any request becoming faster.
+
+```text
+Retained CUSTOMER observations                 Controlled API-soak requests
+          |                                              |
+valid flag + duration bounds                    expected-status and run checks
+          |                                              |
+PostgreSQL percentile_cont                     nearest-rank summarizer
+          |                                              |
+production-observation card                    controlled-run evidence card
+          +----------------------+-----------------------+
+                                 |
+                compare only equivalent measurement boundaries
+```
+
+P99 describes the upper tail of the selected population; it does not identify its cause. With 100 samples the highest few observations control the result. Even 1,000 observations give only about ten observations in the upper one percent, before considering correlated requests or route imbalance. Retain raw observations or a compatible mergeable distribution and repeat representative windows. Do not average per-route, per-machine or per-clinic percentile values into a platform percentile.
+
+A pooled customer percentile can still hide an expensive route or a noisy clinic. Break the measurement down by endpoint class, payload size and relevant workload, while avoiding patient identifiers and uncontrolled high-cardinality labels. Keep cold-start and warm steady-state results separately when their user experience differs.
+
+### Distinguish a Latency Budget From an Executed Result
+
+The source defines CRUD targets of P95 at most **200 ms** and P99 at most **500 ms**, alongside separate authentication, search, report and webhook-ingress budgets. A target states the objective; it does not populate a measurement. The API-soak capture records route class, offered rate, outcome counts, cache headers and source provenance. Its required-baseline gate rejects absent or incomplete evidence.
+
+The bounded-rate soak is a latency experiment rather than a maximum-capacity test. Its current webhook probe exercises invalid-signature rejection, so that probe's response time does not measure successful payment processing or settlement. Long document completion has its own enqueue-to-artifact timestamps rather than borrowing the report-ingress budget.
+
+Before claiming a comparison, keep the same route, dataset, authorization, request mix, resource profile, cache protocol and measurement method. Retain timeouts, rejected work and incomplete jobs alongside completed latency samples. An improvement made by returning fewer authorized fields or silently dropping expensive requests changes the experiment.
+
+### Reconcile a Small Fixture Before Generating a Large One
+
+Use known small records to establish the query's meaning before running a workload benchmark. Put one appointment exactly at each time boundary; vary cancelled and completed statuses; repeat a patient within one clinic and across two clinics; create a prescription without a PDF; and create an unpaid invoice. Compare the expected counts with the aggregate output.
+
+For telemetry, include an observation made before the window but flushed inside it, a health probe, a customer 5xx with an invalid duration, a zero-duration valid sample and an entirely empty window. These cases test the clock, population and denominator independently. Reconcile the response with an independently computed result on an isolated PostgreSQL fixture, rather than relying only on mocked repository values.
+
+After correctness, test the modeled daily mix, busy window and stress case. Record database plans and resource pressure at the same times as route latency; a percentile alone cannot distinguish pool wait, lock wait, input/output (I/O), garbage collection, a provider timeout or a cold start. Infrastructure measurement and resource budgeting are developed in [deployment](10-deployment-infrastructure.md) and the [capacity model](23-hypothetical-clinic-metrics.md).
+
+### A Controlled Query Result Establishes the Definition
+
+On **28 October 2026**, the isolated PostgreSQL 16.15 fixture exercised the repository's actual parameterized SQL against synthetic tables. The initial four query tests and nine database-target guard tests passed; the added modeled-volume case brings the suite to 14. The fixture creates a uniquely named schema on a designated loopback test database and removes that schema afterward; it does not start the API or contact a clinical production database.
+
+| Fixture input | Expected version-2 result |
+| --------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| Six eligible customer observations, including three invalid timings | Six requests, two server errors, three valid timings and three invalid timings |
+| Manually seeded valid durations of 100, 200 and 500 ms | Continuous P50 200 ms, P95 470 ms and P99 494 ms |
+| Health/internal observations, an older-observed late flush and an exact-end observation | Excluded from the customer observation window |
+| Six in-window appointments, including cancelled/demo records | Three clinic IDs, six scheduled appointments and four currently completed appointments |
+| Repeated completed patient in one clinic and another clinic/patient pairing | Three distinct clinic-patient pairs |
+| Two prescription records, one without a PDF | Two prescriptions created; no inference that two PDFs exist |
+| Three invoices including unpaid/cancelled and four retained jobs | Three invoices, four jobs and one job currently FAILED |
+
+Before the repair, four query assertions failed for the expected scope/count defects: the old query mixed observation populations and yielded P50 250 ms and P95 92,250.75 ms on these supplied rows. The corrected duration values were deliberately inserted inputs. The test proves that the SQL selects and aggregates them correctly; **470 ms and 494 ms are not measured API response times**. It does not exercise the application's runtime database role, end-to-end tenant enforcement, deployment memory limits or a 25-clinic workload. Those experiments remain separate evidence cards.
+
+### Verify the SQL at a Known Monthly Row Volume
+
+A second fixture inserted the modeled month's projected records and checked the aggregate:
+
+| Synthetic input and expected output | Verified count |
+| --------------------------------------- | -------------- |
+| Clinics represented by appointment keys | 25 |
+| Completed appointments | 26,000 |
+| Distinct clinic-patient pairs seen | 20,000 |
+| Prescription records created | 20,800 |
+| Invoice records created | 26,000 |
+| Valid customer observation rows | 520,000 |
+
+The dedicated SQL/target-guard suite passed 14 tests. The volume fixture uses 800 distinct patient aliases and 1,040 visits per clinic, with returning patients contributing the remaining visits. Prescription PDF fields are left empty and invoices are pending, preserving the distinction between record creation and completed external effects.
+
+This verifies aggregate definitions on that row volume. The projected tables do not include the full application's indexes, constraints, RLS roles or patient workflows, and the tests do not run the API or worker. Therefore they do not establish tenant authorization, end-to-end latency, concurrent capacity, customer adoption or Fly resource sufficiency. The real application capacity experiment remains a separate boundary.
+
+### Retained Samples Do Not Form an Availability Monitor
+
+The request logger buffers observations before persistence and can disable persistence after database authentication or missing-table errors. Monitoring cleanup removes old observations. The UI's first and last sample timestamps therefore cannot establish what happened between them, and a version-2 response does not guarantee a complete reporting window.
+
+Consult telemetry-coverage events and missing-observation indicators before interpreting request totals and percentiles. Record separately whether the observation set is complete enough for the stated claim. A time-based availability objective needs an independent observation contract, outage classification and reporting window. A 5xx fraction computed from retained application rows has a different denominator.
+
+### Preserve the Historical Result With Its Original Population
+
+A read-only production check on **2 October 2026**, with a ten-second SQL timeout, returned **158 retained requests, zero recorded 5xx responses, median 0 ms and P95 2 ms**. The samples covered **29 September 18:04:37 UTC through 30 September 04:29:51 UTC**. The same aggregate returned **zero appointments, invoices and retained jobs** in its rolling window. No patient records or credentials were exposed and no production rows were inserted.
+
+That historical query used the earlier retained-request population; it is not a version-2 customer-only measurement. The 28 October contract change must not relabel those observations or extrapolate them into a 30-day traffic total, an achieved CRUD target or a 25-clinic adoption result. Recheck deployment and obtain a representative observation set before producing a new operational evidence card.
 
 ## Real-World Decisions
 
@@ -161,8 +299,8 @@ Write metric definitions before query code. Use explicit clinic-local bounds and
 
 | Assessment | What it means here |
 | ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Current strengths | Read repositories, caches and snapshots separate operational views from some expensive queries. |
-| Current limitations | Period boundaries, bucket counts, current catalog prices and missing historical windows can produce misleading metrics. |
+| Current strengths | Read repositories, caches and snapshots separate operational views; versioned customer telemetry makes time, population and invalid samples explicit. |
+| Current limitations | Historical factory findings remain scoped and dated; retained observations can have gaps, and no capacity or customer-adoption result follows from the operational query. |
 | Recommended design | Define each metric with authoritative facts, currency, timezone and window; use stable period keys and idempotent versioned snapshots; publish freshness and correction semantics. |
 | Evidence needed | Known fixtures reproduce correct totals and weighted averages; cross-month weeks remain distinct; historical reruns use the intended date and do not duplicate contributions. |
 
@@ -170,7 +308,7 @@ The recommended design is a proposal, not an implemented or production-verified 
 
 ## Summary
 
-Analytics requires explicit business, calendar and numerical definitions. Current source has useful family separation and caching, alongside bucket, snapshot and financial-meaning limitations. Accurate reporting depends on correcting and verifying those semantics rather than merely persisting or caching results.
+Analytics requires explicit business, calendar and numerical definitions. Versioned operational metrics connect records and customer observations to defined counts and percentiles, while older factory findings retain their own scope. Validate the query with known fixtures, preserve capture gaps and distinguish a workload model, a configured objective and an executed result.
 
 ## See Also
 
@@ -178,6 +316,8 @@ Analytics requires explicit business, calendar and numerical definitions. Curren
 - [Inventory](13-inventory.md) — mixed units and parallel reads.
 - [Billing](08-billing-invoicing.md) — historical financial records.
 - [Async processing](03-async-processing.md) — scheduler failures and recovery.
+- [Capacity model](23-hypothetical-clinic-metrics.md) — workload, resource budgets and acceptance experiments.
+- [Deployment](10-deployment-infrastructure.md) — measure compute, database and recovery boundaries.
 - [Case-study index](INDEX.md) — reading stages.
 
 ## References
@@ -192,3 +332,11 @@ Docita source inspected on 2 October 2026:
 - `apps/api/src/shared/modules/internal/internal-operational-metrics.controller.ts`, `.service.ts`, and `infrastructure/prisma-internal-operational-metrics.repository.ts`
 - `packages/types/src/admin/operational-metrics.ts` and `apps/internal/src/features/performance/pages/performance-page.tsx`
 - `apps/api/src/shared/modules/monitoring/monitoring/services/request-log.service.ts` and `metrics.scheduler.ts`
+
+Scoped operational-metric revision, 28 October 2026:
+
+- `apps/api/src/shared/modules/internal/internal-operational-metrics.service.ts` and `infrastructure/prisma-internal-operational-metrics.repository.ts`
+- `packages/types/src/admin/operational-metrics.ts` and `apps/internal/src/features/performance/pages/performance-page.tsx`
+- `apps/api/src/shared/modules/monitoring/monitoring/rules/telemetry-observation.rules.ts` and `services/request-log.service.ts`
+- `scripts/perf/capture-api-latency-soak.mjs`, `scripts/checks/check-api-latency-budget.mjs` and `scripts/checks/api-latency-slos.mjs`
+- `apps/api/test/metrics/operational-metrics.integration-spec.ts` and `test-database-target.integration-spec.ts` — isolated SQL and target-guard regression evidence

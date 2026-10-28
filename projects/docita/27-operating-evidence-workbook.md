@@ -139,7 +139,41 @@ On that new fixture, a fresh four-POST sequence, four GET readbacks and both doc
 
 The corrected seeded invoice and prescription also passed protected staff download checks: anonymous **401**, authorized **200** PDF and missing record **404**. For a distinct stored-object check, only the two synthetic seed files were copied into the fresh API working directory's existing upload tree. Capability-authorized requests then returned **200** with bytes exactly equal to those files, `application/pdf` and `private, no-store`. Malformed/tampered capabilities returned **400**; wrong document type and a correctly signed nonexistent document returned **404**. These application capabilities use HMAC, with no expiry field/check in the inspected source; they are not the expiring R2 presigned URLs. This test does not establish expiry behavior or a new revocation policy.
 
-Both databases' temporary fixture settings were restored. All five API runs exited zero after SIGTERM, the restarted owned PostgreSQL cluster stopped and the declared experiment ports were closed. The second earlier tenant-test cluster remained stopped. Database dumps were retained, but no restore was tested. These results establish local linked creation, rendering and controlled stored retrieval, with owner/RLS-disabled access and explicit file placement; standalone workers, cross-clinic HTTP enforcement, a full clinic day, 25-tenant load, provider delivery, production memory/SLOs and recovery remain separate work.
+Both databases' temporary fixture settings were restored. All five API runs exited zero after SIGTERM, the restarted owned PostgreSQL cluster stopped and the declared experiment ports were closed. The second earlier tenant-test cluster remained stopped. Database dumps were retained, but no restore was tested. That phase established local linked creation, rendering and controlled stored retrieval, with owner/RLS-disabled access and explicit file placement. Standalone-worker execution had not yet been tested; the continuation below advances that boundary. Cross-clinic HTTP enforcement, a full clinic day, 25-tenant load, provider delivery, production memory/SLOs and recovery remain separate work.
+
+## Make the Separate Worker Own the Effect
+
+Two protected asynchronous PDF requests returned **202** while the standalone worker was stopped. An owner-role observer found two `PdfJob` rows **PENDING**, two `QueueJob` rows **WAITING**, a three-attempt limit and no intended output files. That establishes durable queued intent, not document completion.
+
+Starting the built worker exposed the next boundary. Each document exhausted **three attempts** because the application tenant guard rejected an Invoice or Prescription read without clinic context. Both queue rows became **DEAD_LETTERED**, both PDF rows became **FAILED**, and six execution records preserved the retries and terminal failures. The worker had started and consumed work; its failure was not an absent process or broken queue connection.
+
+```text
+API with schedulers off -> 202 -> WAITING queue / PENDING PDF
+                                      |
+separate worker starts                +-> missing clinic context -> retries -> FAILED
+                                      |
+per-job context correction            +-> scoped read/render/store -> both COMPLETED
+                                                                            |
+                                                         compare stored bytes with download
+```
+
+The [shared processor correction](03-async-processing.md#a-separate-worker-must-enter-the-jobs-clinic) encloses document read, rendering and storage in a fresh job-clinic context across awaits. It does not grant unrestricted domain access. Three new assertions failed before the change; all **19 processor tests** then passed, including absent caller context, replacement of inherited bypass/foreign-clinic context, and restoration after success or error. API/worker typechecks, focused lint and Prisma boundary passed. Both applications rebuilt; the compiled worker module-resolution check passed, as did four worker configuration/scheduler tests. Import resolution alone would not have caught this runtime failure.
+
+### Join the Job, Object and Download Evidence
+
+A second owned database cloned the same synthetic baseline, with new empty work tables and a separate shared working directory. Again the API returned two **202s** and the rows remained WAITING/PENDING before the worker started. After the corrected separate worker ran, both queue and PDF rows were **COMPLETED**. Execution history recorded attempt **1** for each, document records held canonical object keys and generated timestamps, and both intended files existed beneath the shared upload root.
+
+The queue rows still had `attemptsMade = 0`: this implementation increments that counter on failed attempts. The successful execution rows distinguish a first-attempt completion from work that never ran. A field name alone is not its measurement definition.
+
+Protected status polls returned **200 / COMPLETED**. Each returned local development URL served bytes equal to its generated file. Those static local URLs are not expiring signed URLs. Separately, valid application capabilities returned the same bytes as parseable one-page PDFs with `private, no-store`. No preexisting output files were copied into this worker run; the separate worker generated the verified objects. Neither successful path is the staff endpoint's synchronous regeneration shortcut.
+
+### Keep the Broader Worker Profile Visible
+
+Both processes used PostgreSQL queues, compatible local keys and exactly the same owned current working directory (CWD), so local writes and API serving resolved one upload tree. This does not make local disks shared across separate Fly machines. Production R2 remains a different storage and authority boundary.
+
+The API's schedulers were disabled; the worker's were enabled because that flag also controls PDF handler registration. Enabling it loads the broader cron graph, not a PDF-only mode. The dedicated synthetic clones disabled clinic messaging and removed remote image/email fixture references, under the earlier provider-free environment and network controls. A row-count census observed a cron heartbeat during the failed run. During the successful observation window, payment-session, WhatsApp-log/message and outbox row counts did not increase. A count census does not detect every field update or prove all scheduler paths safe; request telemetry can also flush after a snapshot.
+
+Both phases' API and worker processes exited zero after SIGTERM, no worker HTTP listener was present, temporary fixture settings were restored in both clones and the owned PostgreSQL cluster was stopped. Two database dumps were retained; no restore was tested. This establishes bounded local separate-worker execution and retrieval under an owner/RLS-disabled profile. The correction adds application tenant context, not a SQL RLS transaction or `SET LOCAL`, and does not establish non-owner cross-clinic enforcement, restart recovery, concurrent duplicate effects, 25-tenant capacity, provider delivery or production resource sufficiency.
 
 ## Work Through the Boundary, Then Change One Constraint
 

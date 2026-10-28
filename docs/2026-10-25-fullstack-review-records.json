@@ -10440,12 +10440,12 @@
     },
     {
       "path": "projects/docita/03-async-processing.md",
-      "sha256": "3206d48a907535d15b1b4789fca195093d9799751fddf3797513d9e1f68720ac",
+      "sha256": "01d5133d43a593f9dd6c3e05fcbcf7b1c3d6dd96269cab617b54dc790020b02a",
       "status": "reviewed",
       "reviewer": "root + independent evidence reviewer",
       "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Full-content root/independent review of three PDF boundaries: local staff regeneration, existing-key capability proxy read and async enqueue/completion. Verified actual local false-signed-URL branch, absent reference fallback versus missing physical file error, key/browser-prefix/CWD distinction and dated unpublished seed corrections. Existing queue/outbox/fencing scope retained; no worker/provider/expiry claim inferred.",
+      "notes": "Full-content root and independent review. Preserved prior queue/outbox and PDF boundaries; traced missing process-local tenant context into scoped, awaited worker read/render/upload and restoration under absent or inherited foreign/bypassed scope. Shared processor source and regression cases reviewed. App ALS is explicitly separate from transaction-local SQL RLS; concrete runtime evidence remains canonical in chapter 27.",
       "findings": []
     },
     {
@@ -10653,12 +10653,12 @@
     },
     {
       "path": "projects/docita/REVISION.md",
-      "sha256": "25222d619a6c7ee2b3b529da04cd1e929f17c780cc0d0ce21a0298a51d6e4957",
+      "sha256": "c96093dadc96390d05dc70e0bcc072827150209ccc425f384f6927056710fb31",
       "status": "reviewed",
       "reviewer": "root + independent evidence reviewer",
       "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Full-content independent review and exact preservation check: all 294 existing questions/answers preserved; six new source-linked pairs retrieve HTTP-versus-authoritative clinic associations, synthetic verification/event controls, invoice-versus-settlement invariants, stored-byte versus regeneration evidence, application HMAC versus R2 expiry and non-idempotent seed/untested restore boundaries. Total 300 Q/A; no candidate mastery inferred.",
+      "notes": "Read all 305 authored Q/A pairs. Independent reviewer proved original 300 preserved byte-for-byte and in order. Five new source-linked questions distinguish worker ALS from request context and SQL RLS, scope restoration, successful history versus failed-attempt counter, effect proof, shared files and scheduler limits. Reviewed against actual processor and sanitized runtime receipts; no candidate mastery inferred.",
       "findings": []
     },
     {
@@ -10722,12 +10722,12 @@
     },
     {
       "path": "projects/docita/27-operating-evidence-workbook.md",
-      "sha256": "77a53c0a4f05c99e0ce07f966ab9d5b9aa65c5604c6c9735802d9ba9cdba9809",
+      "sha256": "a983d8a6c3f4162372ee3947d37a00ef08ca741cb00d9611ec71c656b411320f",
       "status": "reviewed",
       "reviewer": "root + independent evidence reviewer",
       "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Full-content review with actual local receipts: first HTTP success versus null direct prescription clinic stamp; 4-red to 9-green service/repository regressions; 44 seed tests; corrected fresh 175-migration seed and four linked HTTP writes/readbacks with PostgreSQL associations/consent/50000-paise invoice invariants. Preserved seed rerun FK failure and snapshots, first harness parser prerequisite, Rx400 and real key-prefix ENOENT; corrected staff PDFs and byte-equal capability reads after explicit file placement; source HMAC no expiry, fixture-control restoration and five clean API exits/owned PG stop. Owner/RLS-off, no worker/provider/recovery/load proof and historical-stage limits remain explicit.",
+      "notes": "Full-content root and independent review against sanitized standalone worker red/green/cleanup receipts. Preserved historical phase limits; red jobs exhausted three retries with missing tenant context, green jobs completed on execution attempt one and produced byte-matching stored/downloaded PDFs. Reviewed attemptsMade semantics, shared CWD, wider scheduler graph, fixture restoration, clean shutdown and bounded census. No SQL RLS, provider, capacity or restore conclusion inferred.",
       "findings": []
     }
   ]

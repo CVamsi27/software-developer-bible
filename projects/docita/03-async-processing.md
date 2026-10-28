@@ -71,6 +71,23 @@ The lock protects the claim while the database transaction holds it. It does not
 
 The source polls every **2 seconds**, prevents overlapping polls for the same job name within one service instance and claims one job per poll. A slow handler stretches effective processing capacity; a two-second interval is not a guaranteed two-second completion latency.
 
+### A Separate Worker Must Enter the Job's Clinic
+
+The API can enqueue the correct `clinicId`, yet a separate worker can fail with “No tenant context available.” The request's `AsyncLocalStorage` store lives in the API process; serializing a job does not carry that store into another process. Passing `clinicId` as a service argument also does not populate the context read by the application’s tenant-aware database extension.
+
+The reviewed, unpublished `BasePdfProcessor` correction enters `runWithTenant({ clinicId }, async () => …)` around the awaited document read, PDF rendering and upload/persist operation. Both invoice and prescription processors inherit that path:
+
+```text
+durable job carries clinicId + documentId
+  → worker enters a fresh tenant context containing only the job's clinicId
+  → await document read → render → upload and persist the stored key
+  → leave that scope; restore the preceding context on success or failure
+```
+
+Creating a fresh scope replaces any inherited caller clinic or bypass flag for that operation; it does not merge those privileges into the job context. The existing `runUnrestricted` calls remain narrowly around `PdfJob` status writes before or after domain work. They do not authorize a bypass around the document read, render or persistence. Focused processor tests inspect the context across awaited operations and verify restoration when work succeeds or throws.
+
+This is **application tenant context**, not a new PostgreSQL row-level-security transaction. The correction does not execute `SET LOCAL`, change the database role or establish enforcement under a non-owner role. Those connection/transaction and policy boundaries remain separate checks in [tenant isolation](02-multi-tenancy-rls.md). For the reproduced missing-context failure and corrected separate-worker artifact results, see the [operating-evidence workbook](27-operating-evidence-workbook.md).
+
 ### A Downloaded PDF Does Not Prove Worker Completion
 
 A **28 October 2026 source check** distinguishes three PDF paths. With the local provider's `supportsSignedUrls = false`, the protected staff invoice and prescription `getPdf` methods regenerate the document and return bytes, without using the record's stored `pdfUrl`. A `200` PDF response can therefore coexist with a broken stored reference or upload-directory mapping. It exercises the selected authorization/read/render path, not stored-object retrieval or a completed background job.
@@ -79,7 +96,7 @@ A capability-authorized patient proxy verifies the signed document type/id, reso
 
 An **object key** such as `seed/invoices/<synthetic-id>.pdf` identifies a file within the provider's storage namespace. The browser-facing `/uploads/seed/invoices/<synthetic-id>.pdf` adds a serving prefix; it is not the same input to `getObject`. Local storage resolves keys under its upload root, so correct keys still need a coherent API/worker/seed directory mapping. See [document storage and authority](19-documents-and-uploads.md) for that mechanism.
 
-The reviewed, unpublished seed-only corrections persist bare seed keys and supply the required `doctorName`. They repair fixture inputs; they do not change these production download branches or establish worker completion. Retain executed outcomes and their limits in the [operating-evidence workbook](27-operating-evidence-workbook.md).
+The reviewed, unpublished seed-only corrections persist bare seed keys and supply the required `doctorName`. They repair fixture inputs; they do not change these production download branches or establish worker completion.
 
 ### The Queue's Duplicate Check Has Limits
 
@@ -220,7 +237,7 @@ PostgreSQL can atomically retain work intent and coordinate claims. Reliable exe
 
 ## References
 
-Source paths refer to the 2 October inspection, the 9 October relay recheck, the scoped 15 October refresh and the 28 October PDF-path/seed check described above:
+Source paths refer to the 2 October inspection, the 9 October relay recheck, the scoped 15 October refresh and the 28 October PDF-path, seed and worker-context checks described above:
 
 - `apps/api/src/shared/modules/queue/postgres-queue.service.ts`
 - `apps/api/src/shared/modules/queue/infrastructure/prisma-queue-job.repository.ts`
@@ -228,6 +245,9 @@ Source paths refer to the 2 October inspection, the 9 October relay recheck, the
 - `apps/api/src/shared/modules/queue/postgres-queue.service.spec.ts` — focused local regression tests, including lost claims.
 - `apps/api/src/shared/modules/queue/dlq-replay.scheduler.ts` — inert automatic replay policy.
 - `apps/api/src/shared/modules/queue/pdf-job.service.ts`
+- `apps/api/src/shared/modules/queue/base-pdf.processor.ts` — fresh job-clinic scope around awaited domain work; narrow PDF-status bypasses.
+- `apps/api/src/domains/billing/application/services/invoice-pdf.processor.spec.ts` — scope across awaits, inherited-bypass replacement and success/failure restoration in the shared processor path.
+- `apps/api/src/shared/common/middleware/tenant.middleware.ts` — `AsyncLocalStorage` and `runWithTenant` scope behavior.
 - `apps/api/src/domains/billing/application/services/invoices-query.service.ts` and `apps/api/src/domains/billing/presentation/controllers/invoices.controller.ts` — staff PDF generation versus asynchronous enqueue.
 - `apps/api/src/domains/prescriptions/application/services/prescription-pdf-orchestrator.service.ts` and `apps/api/src/domains/prescriptions/presentation/controllers/prescription.controller.ts` — local byte-return branch and required doctor context.
 - `apps/api/src/shared/modules/public/public-patient-documents.service.ts` and `apps/api/src/shared/modules/public/public-document-token.service.ts` — verified-capability proxy and stored-object read versus fallback.

@@ -1369,6 +1369,30 @@ Sources: [Created-record evidence](27-operating-evidence-workbook.md#follow-a-cr
 
 **A:** Existing lab orders blocked deletion of their referenced tests. The run did not establish an idempotent refresh, even though bootstrap had worked on a fresh database. Retain the failed state and its snapshot, then distinguish a successful new-database seed from a repaired rerun. A stored dump also is not a tested restore.
 
+## Explain the Separate Worker Boundary
+
+Sources: [Worker clinic context](03-async-processing.md#a-separate-worker-must-enter-the-jobs-clinic), [separate-worker evidence](27-operating-evidence-workbook.md#make-the-separate-worker-own-the-effect).
+
+**Q:** Why did a worker consume valid queued jobs yet fail both PDFs?
+
+**A:** HTTP request context does not travel into another process. The worker's domain reads lacked an AsyncLocalStorage clinic scope, so the tenant guard rejected them. After three attempts each, the queue rows were dead-lettered and PDF rows failed. The correction scopes awaited read/render/store work to the queued clinic without a broad domain bypass.
+
+**Q:** Why must a worker replace an inherited caller's context and restore it afterward?
+
+**A:** A caller may carry another clinic or an unrestricted marker. Reusing it would apply the wrong authority to the job. A fresh job scope spans each awaited operation, then restores its caller after completion or error. Narrow status-update bypasses remain separate from ordinary document queries. Application context still does not prove SQL RLS setup or non-owner enforcement.
+
+**Q:** How can a completed queue row show zero `attemptsMade`?
+
+**A:** This implementation increments that field on failures. A successful first execution leaves it zero, while the execution-history row records COMPLETED at attempt 1. Reconcile status, history, document metadata and actual bytes; do not interpret one counter as evidence that the handler never ran.
+
+**Q:** What closes the separate-process PDF proof beyond a 202 response?
+
+**A:** Pending rows with the worker stopped, then successful worker execution, completed queue/PDF rows, canonical document references, newly generated files and byte-equal downloads. Protected status and capability reads exercise different boundaries. A synchronous staff PDF response can regenerate bytes and cannot substitute for this chain.
+
+**Q:** What did the shared-directory profile and scheduler census leave unproved?
+
+**A:** One filesystem and CWD aligned local API/worker files; it did not share disks across Fly machines or validate R2. Enabling worker PDF handlers also enabled the wider cron graph. Controlled fixture settings and observed row counts bounded that experiment; they did not prove every scheduler path, restart recovery, provider effect, production memory limit or 25-tenant workload.
+
 ## Summary
 
 Reconstruct the operation and its boundaries. Qualify every outcome according to the evidence actually obtained.

@@ -10541,12 +10541,12 @@
     },
     {
       "path": "projects/docita/14-analytics-and-dashboards.md",
-      "sha256": "f41ad76f1650aa0691a35842211982cb49e90aa0d49c18908b4d4b832337b46e",
+      "sha256": "dd523b70273a71892b35b8ff269597da64e3e096746b23b7e431ce5b827b71c9",
       "status": "reviewed",
-      "reviewer": "root-capacity-proof",
+      "reviewer": "root + independent evidence reviewer",
       "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Reviewed preserved analytics-factory findings and working-tree version2 operational SQL/UI semantics. Customer observedAt half-open window, invalid timing exclusions, continuous P99, distinct clinic-patient pairs and prescription/invoice meanings match code and actual PostgreSQL fixtures. Mixed-row regression and 25-clinic modeled-volume outputs are test-only; historical158/P95 2ms remains dated. No capacity/adoption relabeling; no duplicated query mechanism.",
+      "notes": "Full-content continuation review: actual SQL all-invalid nonempty regression preserves 3 outcomes/2 errors and null percentiles; exact 6 aggregate plus 9 target-guard cases and separate 4 service passes. Historical 14 replaced by 15, synthetic inputs distinct from production performance; existing financial/calendar findings retain dated scope.",
       "findings": []
     },
     {
@@ -10653,12 +10653,12 @@
     },
     {
       "path": "projects/docita/REVISION.md",
-      "sha256": "965dc858f1b985f466d62145a7a5602fa6ccef116968cf06a8fa1d9518990070",
+      "sha256": "cc1803476694c71b3912658d10dba78e1363e1c55b4a0af05aa8704980a6ddda",
       "status": "reviewed",
-      "reviewer": "root",
+      "reviewer": "root + independent evidence reviewer",
       "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Read all14new source-linked workbook/cost retrievalpairs; historical274questions preserved outside insertedgroup. Verified errorbudget math, config/storage/process boundaries and non-skipped evidence; no invented completedexperiment.",
+      "notes": "Full-content reviewer continuation and byte-preservation check: all 288 existing source-linked questions retained; six new questions retrieve all-invalid outcome/latency distinctions, failed setup versus assertions, migration limits, actual API role versus tenant fixture, private bind shim, seed artifact/storage and adoption boundaries. No candidate mastery inferred.",
       "findings": []
     },
     {
@@ -10722,12 +10722,12 @@
     },
     {
       "path": "projects/docita/27-operating-evidence-workbook.md",
-      "sha256": "1a8953deff1e14d436830aaa7881a50f78e423b539f7f4f404f850d199e71ecb",
+      "sha256": "cb2c63c934ccc4f71795e3a59cdfde19b3edd41f09e3f606f3271e5efd407fc4",
       "status": "reviewed",
-      "reviewer": "root",
+      "reviewer": "root + independent evidence reviewer",
       "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Complete content authored/read by root and independently read by cost reviewer. Checked baseversuspatchscripts, loader/queue/storage/role boundaries, destructive/conditional tests, clinicdayacceptance and diagnosticmatrix. QueueSQL sourceverifiednotexecuted; event/time/burn arithmetic checked. Exercises and promotiontemplates are not completedruntimeevidence.",
+      "notes": "Full-content continuation review: reconciled private execution receipts for 175 migrations/no schema drift, 34 passing focused checks, preserved prerequisite cancellation plus independent rerun, four exact diagnostic SQL queries, developer seed and bounded HTTP read. Declared owner/RLS/queue/network/bind and installed-dependency deviations, 664 MiB local startup versus provisional guest sizing, PDF storage gap and stopped owned processes; broader production promises remain unverified.",
       "findings": []
     }
   ]

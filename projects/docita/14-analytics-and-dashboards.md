@@ -228,7 +228,7 @@ After correctness, test the modeled daily mix, busy window and stress case. Reco
 
 ### A Controlled Query Result Establishes the Definition
 
-On **28 October 2026**, the isolated PostgreSQL 16.15 fixture exercised the repository's actual parameterized SQL against synthetic tables. The initial four query tests and nine database-target guard tests passed; the added modeled-volume case brings the suite to 14. The fixture creates a uniquely named schema on a designated loopback test database and removes that schema afterward; it does not start the API or contact a clinical production database.
+On **28 October 2026**, the isolated PostgreSQL 16.15 fixture exercised the repository's actual parameterized SQL against synthetic tables. The initial four query tests and nine database-target guard tests passed; the modeled-volume case brought that initial suite to 14. A later same-day continuation adds the nonempty all-invalid case below, bringing the current suite to 15. The fixture creates a uniquely named schema on a designated loopback test database and removes that schema afterward; it does not start the API or contact a clinical production database.
 
 | Fixture input | Expected version-2 result |
 | --------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
@@ -241,6 +241,14 @@ On **28 October 2026**, the isolated PostgreSQL 16.15 fixture exercised the repo
 | Three invoices including unpaid/cancelled and four retained jobs | Three invoices, four jobs and one job currently FAILED |
 
 Before the repair, four query assertions failed for the expected scope/count defects: the old query mixed observation populations and yielded P50 250 ms and P95 92,250.75 ms on these supplied rows. The corrected duration values were deliberately inserted inputs. The test proves that the SQL selects and aggregates them correctly; **470 ms and 494 ms are not measured API response times**. It does not exercise the application's runtime database role, end-to-end tenant enforcement, deployment memory limits or a 25-clinic workload. Those experiments remain separate evidence cards.
+
+### Keep the Error Rate When Every Timing Is Invalid
+
+A later real-PostgreSQL regression inserts three customer observations inside the window: one explicitly invalid timing, one negative duration and one duration above the accepted bound. Two observations have server-error statuses. The aggregate must retain **three requests, two errors, zero valid timings and three invalid timings**, with known first/last observation timestamps and `null` P50/P95/P99.
+
+The same result passes through the actual operational service under a fixed clock. It reports a **66.67% retained-request error rate** while every latency percentile remains unavailable. This closes a distinct boundary from an empty window: outcomes can be known even when timings are unusable. Returning a zero percentile would invent fast service; discarding the requests would hide failures. The fixture does not establish that production telemetry captured every request.
+
+The dedicated suites pass **15 tests: six PostgreSQL aggregate cases and nine database-target guards**. The existing focused service suite passes **four**. Their owned fixture schemas are removed afterward. These are executed regression checks, not a customer error-rate or API latency result.
 
 ### Verify the SQL at a Known Monthly Row Volume
 
@@ -255,7 +263,7 @@ A second fixture inserted the modeled month's projected records and checked the 
 | Invoice records created | 26,000 |
 | Valid customer observation rows | 520,000 |
 
-The dedicated SQL/target-guard suite passed 14 tests. The volume fixture uses 800 distinct patient aliases and 1,040 visits per clinic, with returning patients contributing the remaining visits. Prescription PDF fields are left empty and invoices are pending, preserving the distinction between record creation and completed external effects.
+The modeled-volume fixture remains part of the dedicated SQL/target-guard suite, now at 15 passing tests. The volume fixture uses 800 distinct patient aliases and 1,040 visits per clinic, with returning patients contributing the remaining visits. Prescription PDF fields are left empty and invoices are pending, preserving the distinction between record creation and completed external effects.
 
 This verifies aggregate definitions on that row volume. The projected tables do not include the full application's indexes, constraints, RLS roles or patient workflows, and the tests do not run the API or worker. Therefore they do not establish tenant authorization, end-to-end latency, concurrent capacity, customer adoption or Fly resource sufficiency. The real application capacity experiment remains a separate boundary.
 

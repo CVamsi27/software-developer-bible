@@ -73,6 +73,32 @@ For document practice, inspect storage as well as the queue. The local storage p
 
 Prisma and seed/preflight tooling read the root environment; API and worker have their own ordered environment-file resolution. Copying only an API example is insufficient. Higher-priority production files or exported shell variables can change the target. Local Compose `db` and `db_test` both declare host port 5434: they cannot be assumed to coexist on that port. A database name alone does not isolate cluster-wide roles.
 
+## What the Local Continuation Actually Executed
+
+A later **28 October 2026** run moved several prerequisites from source inspection to executed local evidence. It reused installed dependencies in the reviewed working tree, Node 24.22.1 and newly initialized PostgreSQL 16.15 clusters. It did not use a clean dependency install, hosted database, real customer records or provider credentials.
+
+| Executed check | Observed result | Limit of the conclusion |
+| ------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Existing migration chain on a fresh owned database | All **175 migrations** applied; the canonical schema diff reported **no difference** | Schema installation/alignment, not application behavior on every historical upgrade |
+| Metrics SQL and service | **Six PostgreSQL aggregate cases, nine target guards and four service tests** pass, including the [nonempty all-invalid timing case](14-analytics-and-dashboards.md#keep-the-error-rate-when-every-timing-is-invalid) | Projected aggregate correctness; no API performance or capture-completeness claim |
+| Tenant-probe contract on its own cluster | **15 passed**, with zero failures, cancellations or skips; fixture roles/tables/schemas/connections cleaned up | Non-owner fixture/probe behavior, not full-schema production policy coverage or two-clinic HTTP enforcement |
+| Four PDF-playbook SELECTs on the fully migrated schema | Synthetic state produced **5, 3, 3 and 5 grouped rows**; the recent-failure group retained two rows/one reason, and one completed invoice record lacked an object reference; fixture cleanup returned zero rows | Real enum/column/foreign-key and diagnostic-state checks, not rendering, upload or worker completion |
+| API build and existing developer seed | Build/seed exit zero; the synthetic seed contains **one clinic, 25 patients, 90 appointments, 10 prescriptions and 15 invoices** | A developer fixture, not 25 clinics, actual customers, generated business activity or the modeled month |
+| Bounded real HTTP checks | Liveness/readiness **200**; anonymous patient list **401**; synthetic staff login **201**; session and authenticated bounded patient list **200**, returning five rows | One local authenticated read path; no browser, clinical writes, cross-tenant API test, provider effect or load verdict |
+| Process cleanup | Both API runs exit zero after SIGTERM; both owned PostgreSQL clusters and the experiment API listener are stopped afterward | Local graceful cleanup, not crash recovery, a restore result or production availability |
+
+The API profile deliberately used development configuration, an owner database role with RLS disabled, a memory queue, schedulers off, local storage and fresh local keys. A private OS network policy constrained connections to the tested local boundary. The source API still requests a wildcard bind, so an experiment-only preload forced the listener to loopback and the actual bound address was independently checked. This was a controlled test deviation, not an application bind fix or a deployed control. The local policy's wildcard-bind limitation and untested IPv6/general sandbox behavior remain explicit; no internet-address probe was needed or performed.
+
+At readiness, this macOS development process reported **696,352,768 bytes of resident memory, approximately 664 MiB**. Resident set size (RSS) includes memory beyond the JavaScript heap. This single startup observation does not validate the cost model's proposed 512 MiB API or 256 MiB worker envelopes, establish steady-state consumption or justify changing production resources. Keep those cost inputs provisional until the intended deployment profile has measured memory and soak evidence; no standalone worker ran here.
+
+### Preserve the Failed Prerequisite as Well as the Passing Run
+
+The first tenant-suite attempt shared a cluster with the migration experiment. The migrations created the cluster-wide `docita_app` role, so the suite's before-hook encountered an existing role. Its **15 cases were cancelled before their assertions ran**. That was a fixture-isolation failure, not 15 demonstrated tenant-policy failures. Cleanup could not safely drop a role with privileges in another database; those dependencies were preserved.
+
+The corrected run used a separate new PostgreSQL cluster, not just another database name. All 15 cases then passed and its roles and scratch objects were removed. Retaining both attempts explains the failure mechanism and the correction. Erasing the failed log or forcing the migrated role to disappear would weaken the evidence and could damage unrelated work in the shared cluster.
+
+The compiled seed also writes its sample PDFs beneath `apps/api/uploads`, while the controlled API run used a fresh working directory. Successful seeding therefore does not prove those files are served from that experiment's local-storage root. No PDF retrieval or standalone worker completion is claimed. The full clinic-day worksheet and 25-tenant workload below remain separate acceptance work.
+
 ## Work Through the Boundary, Then Change One Constraint
 
 These are an exercise sequence, not another daily calendar. Use an existing project, debugging, system-design or interview block; finish one bounded case before widening it. A future implementation task stays planned until its code and result exist.
@@ -128,7 +154,7 @@ In the inspected onboarding path, proof-PDF upload can hold a database transacti
 
 ### Read Queue State Without Exposing Payloads
 
-The schema uses `QueueJob`, not `Job`; PDF handler names are `generate-invoice-pdf` and `generate-prescription-pdf`. The following aggregate is for an **authorized owned local fixture**. The timeout bounds query effort; it does not make an arbitrary production query harmless. Verify the actual schema first.
+The schema uses `QueueJob`, not `Job`; PDF handler names are `generate-invoice-pdf` and `generate-prescription-pdf`. The following aggregate is for an **authorized owned local fixture**. The timeout bounds query effort; it does not make an arbitrary production query harmless. Verify the actual schema first. The local continuation executed the four canonical playbook queries against synthetic records in the migrated schema; this shorter teaching aggregate remains a separate diagnostic example.
 
 ```sql
 BEGIN READ ONLY;

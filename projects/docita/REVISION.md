@@ -1313,6 +1313,34 @@ Sources: [Operating workbook](27-operating-evidence-workbook.md), [availability 
 
 **A:** Actual scoped evidence for correctness, operations/load, recovery, funding and owner coverage. A template, source path or missing prerequisite is not a successful experiment. Record fail/blocked outcomes and the next owned action rather than filling every field with assumed success.
 
+## Explain the Executed Local Boundary
+
+Sources: [Executed local checks](27-operating-evidence-workbook.md#what-the-local-continuation-actually-executed), [all-invalid metrics](14-analytics-and-dashboards.md#keep-the-error-rate-when-every-timing-is-invalid).
+
+**Q:** Why can an error rate remain known when every percentile is unavailable?
+
+**A:** Request outcomes and timing validity are different properties. In the synthetic three-request case, two server errors give a 66.67% retained-request error rate, while zero valid durations leave P50/P95/P99 null. That still does not prove the retained rows cover every real request.
+
+**Q:** What did the cancelled tenant-suite attempt establish?
+
+**A:** Its setup collided with a cluster-wide role before any of its 15 test cases ran. It established an isolation prerequisite failure, not failed tenant guarantees. The corrected separate-cluster run passed all 15 cases; keep both attempts and preserve the other database's role dependencies.
+
+**Q:** What do successful migrations and a zero schema diff leave untested?
+
+**A:** They establish that the current chain installs and matches its declared schema on that local database. They do not establish safe upgrades from every old state, complete API authorization, clinical transitions, provider effects, performance or recovery. Those need their own runtime evidence.
+
+**Q:** Why is the successful local API read not a production tenant-isolation verdict?
+
+**A:** That profile used a development owner role with RLS disabled and exercised one synthetic staff identity. Its anonymous denial, login/session and list results are useful HTTP evidence, while the non-owner tenant suite is a different fixture boundary. Neither becomes complete cross-clinic API coverage by combining their pass counts.
+
+**Q:** What must remain visible about the experiment-only listener shim?
+
+**A:** It forced the built API's wildcard bind to loopback for this controlled run, whose actual listener was checked. The production source was not changed by it. Report that deviation and the tested network-policy limits rather than claiming a deployed fix or universal sandbox isolation.
+
+**Q:** Why can the developer seed pass while PDF retrieval remains unverified?
+
+**A:** It can create metadata and write sample files in its own known directory while a separately launched API serves another working directory. Reconcile the actual storage root, intended artifact and authorized retrieval. The seed's one synthetic clinic and sample counts also do not become a 25-clinic workload or adoption result.
+
 ## Summary
 
 Reconstruct the operation and its boundaries. Qualify every outcome according to the evidence actually obtained.

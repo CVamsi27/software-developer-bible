@@ -1,6 +1,6 @@
 {
  "generated": "2026-10-28",
- "url_count": 2720,
+ "url_count": 2742,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -192,8 +192,14 @@
   "https://aws.amazon.com/rds/instance-types/": [
    "projects/docita/10-deployment-infrastructure.md"
   ],
+  "https://aws.amazon.com/rds/postgresql/pricing/": [
+   "projects/docita/26-monthly-operating-costs.md"
+  ],
   "https://aws.amazon.com/secrets-manager/": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.04-secrets-management.md"
+  ],
+  "https://aws.amazon.com/vpc/pricing/": [
+   "projects/docita/26-monthly-operating-costs.md"
   ],
   "https://babeljs.io/blog/2026/06/16/8.0.0/": [
    "40-platform/40.5-build-tools/02-compilers/40.5.2.01-babel.md"
@@ -1394,6 +1400,9 @@
   "https://developers.cloudflare.com/r2/api/s3/presigned-urls/": [
    "projects/docita/19-documents-and-uploads.md"
   ],
+  "https://developers.cloudflare.com/r2/pricing/": [
+   "projects/docita/26-monthly-operating-costs.md"
+  ],
   "https://developers.cloudflare.com/workers/": [
    "40-platform/40.7-serverless-edge/40.7.08-interview-questions.md"
   ],
@@ -1413,6 +1422,9 @@
    "40-platform/40.7-serverless-edge/40.7.10-vite-spa-cloudflare-workers.md",
    "40-platform/40.7-serverless-edge/REVISION.md",
    "projects/docita/10-deployment-infrastructure.md"
+  ],
+  "https://developers.cloudflare.com/workers/platform/pricing/": [
+   "projects/docita/26-monthly-operating-costs.md"
   ],
   "https://developers.cloudflare.com/workers/reference/how-the-cache-works/": [
    "40-platform/40.7-serverless-edge/40.7.04-edge-functions.md"
@@ -1582,6 +1594,9 @@
   ],
   "https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/WhatIs.html": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.29-distributed-cache.md"
+  ],
+  "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html": [
+   "projects/docita/26-monthly-operating-costs.md"
   ],
   "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html": [
    "80-lanes-abroad-full-stack/80.08-system-design-case-bank.md"
@@ -2044,12 +2059,21 @@
   "https://docs.fastlane.tools/": [
    "10-frontend/10.8-mobile/10.8.07-interview-questions.md"
   ],
+  "https://docs.fly.io/about/billing": [
+   "projects/docita/26-monthly-operating-costs.md"
+  ],
+  "https://docs.fly.io/about/pricing": [
+   "projects/docita/26-monthly-operating-costs.md"
+  ],
   "https://docs.fly.io/launch/autostop-autostart": [
    "projects/docita/10-deployment-infrastructure.md"
   ],
   "https://docs.fly.io/launch/volume-storage/": [
    "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.md",
    "40-platform/40.7-serverless-edge/REVISION.md"
+  ],
+  "https://docs.fly.io/networking/egress-ips": [
+   "projects/docita/26-monthly-operating-costs.md"
   ],
   "https://docs.fly.io/postgres/": [
    "40-platform/40.7-serverless-edge/40.7.09-flyio-deployment.md"
@@ -5041,6 +5065,9 @@
   "https://neon.com/docs/connect/connection-pooling": [
    "projects/docita/10-deployment-infrastructure.md"
   ],
+  "https://neon.com/docs/introduction/plans": [
+   "projects/docita/26-monthly-operating-costs.md"
+  ],
   "https://next-auth.js.org/": [
    "10-frontend/10.4-next.js/04-production/10.4.4.01-authentication.md"
   ],
@@ -5855,6 +5882,9 @@
   "https://pragprog.com/titles/mnee2/release-it-second-edition/": [
    "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.01-resilience-patterns.md"
   ],
+  "https://pricing.us-east-1.amazonaws.com/offers/v1.0/aws/AmazonRDS/current/ap-southeast-1/index.json": [
+   "projects/docita/26-monthly-operating-costs.md"
+  ],
   "https://principlesofchaos.org/": [
    "50-quality/50.1-testing/05-advanced/50.1.5.02-chaos-engineering.md",
    "50-quality/50.4-production-engineering/50.4.03-chaos-engineering.md",
@@ -5930,6 +5960,9 @@
   ],
   "https://razorpay.com/docs/webhooks/validate-test/": [
    "projects/docita/04-payment-flows.md"
+  ],
+  "https://razorpay.com/pricing/": [
+   "projects/docita/26-monthly-operating-costs.md"
   ],
   "https://react-hook-form.com/": [
    "10-frontend/10.5-form-handling/10.5.01-react-hook-form.md",
@@ -6575,6 +6608,12 @@
   "https://semver.org/": [
    "40-platform/40.8-monorepo/40.8.05-versioning-publishing-strategies.md",
    "40-platform/40.8-monorepo/REVISION.md"
+  ],
+  "https://sentry.io/changelog/logs-are-generally-available/": [
+   "projects/docita/26-monthly-operating-costs.md"
+  ],
+  "https://sentry.io/pricing/": [
+   "projects/docita/26-monthly-operating-costs.md"
   ],
   "https://serverlessland.com/patterns": [
    "40-platform/40.7-serverless-edge/40.7.05-serverless-patterns.md"
@@ -7449,6 +7488,27 @@
   ],
   "https://whatsappbusiness.com/policy/": [
    "projects/docita/06-whatsapp-integration.md"
+  ],
+  "https://whatsappbusiness.com/products/platform-pricing/": [
+   "projects/docita/26-monthly-operating-costs.md"
+  ],
+  "https://whatsappbusiness.com/resources/faq/": [
+   "projects/docita/26-monthly-operating-costs.md"
+  ],
+  "https://whatsappbusiness.com/wp-json/wab/v1/pricing?market=IN&currency=INR&category=Authentication": [
+   "projects/docita/26-monthly-operating-costs.md"
+  ],
+  "https://whatsappbusiness.com/wp-json/wab/v1/pricing?market=IN&currency=INR&category=Authentication+International": [
+   "projects/docita/26-monthly-operating-costs.md"
+  ],
+  "https://whatsappbusiness.com/wp-json/wab/v1/pricing?market=IN&currency=INR&category=Marketing": [
+   "projects/docita/26-monthly-operating-costs.md"
+  ],
+  "https://whatsappbusiness.com/wp-json/wab/v1/pricing?market=IN&currency=INR&category=Service": [
+   "projects/docita/26-monthly-operating-costs.md"
+  ],
+  "https://whatsappbusiness.com/wp-json/wab/v1/pricing?market=IN&currency=INR&category=Utility": [
+   "projects/docita/26-monthly-operating-costs.md"
   ],
   "https://wix.github.io/Detox/": [
    "10-frontend/10.8-mobile/10.8.03-testing-react-native-apps.md"
@@ -9289,6 +9349,12 @@
   ],
   "https://www.youtube.com/watch?v=rtM7oN6wCLQ": [
    "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md"
+  ],
+  "https://www.zoho.com/cpaas/transition-guides/mailchannels.html": [
+   "projects/docita/26-monthly-operating-costs.md"
+  ],
+  "https://www.zoho.com/zeptomail/subscription.html": [
+   "projects/docita/26-monthly-operating-costs.md"
   ],
   "https://yarnpkg.com/": [
    "40-platform/40.8-monorepo/40.8.04-monorepo-tools.md"

@@ -9923,12 +9923,12 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "b0cea109da84a14a23734a520eb686afc93994c91215d2a1345f50265a608f74",
+      "sha256": "81685edf34bc7f6824c148611e057002cf32c690ca98cd38e45e1b6e0b44af6a",
       "status": "reviewed",
-      "reviewer": "root-capacity-proof",
+      "reviewer": "root",
       "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Reviewed navigation and tool-maintained155Kline aggregate after expansion; file count974 and source order unchanged.",
+      "notes": "Generated count-only update reviewed against exact previously reviewed HEAD bytes; full authored content unchanged. Count tool owns this metadata.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "20ce31e5d1db5857fea7fe16dc74f7968574dd351ebeee38698879826b4b0327",
@@ -9939,12 +9939,12 @@
     },
     {
       "path": "README.md",
-      "sha256": "f64aa01f47c3a93ae435919d950c48a07c57096539b4a6968b961d41511909ac",
+      "sha256": "4d6f3363ca24dab339ed08792a716450bbba755397770b0d4843752e15dc7192",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-26",
+      "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Full navigation and targeting reviewed. Repaired hook-before-definition guidance and current review versus historical checkpoint/readiness distinction.",
+      "notes": "Generated count-only update reviewed against exact previously reviewed HEAD bytes; full authored content unchanged. Count tool owns this metadata.",
       "findings": []
     },
     {
@@ -9959,12 +9959,12 @@
     },
     {
       "path": "contributing.md",
-      "sha256": "3f6cfe1e167fc0c8ac6d38eb675cf38538bde325ad4c5bcf1b5f52c9fa7c9842",
+      "sha256": "17f0f4680ea75c94967c8d6eedcae6a1964c4ef27301f7648e94d1d5d7d26a71",
       "status": "reviewed",
-      "reviewer": "root-capacity-proof",
+      "reviewer": "root",
       "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Reviewed contributor workflow and tool-maintained scale/check-count restamps. Verification workflow/instructions unchanged; no manual numerical baseline.",
+      "notes": "Generated count-only update reviewed against exact previously reviewed HEAD bytes; full authored content unchanged. Count tool owns this metadata.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "8485e2232ea7f728920a296a5c47a6f7e1fc3fc4945b1353c96f0d61d5e9b357",
@@ -10386,12 +10386,12 @@
     },
     {
       "path": "docs/verification-gates.md",
-      "sha256": "2c5a96265f14ba01283bcf54534fe7e62acc90cc0ac73755eb8f740f88474cae",
+      "sha256": "b3c303e3d3a85a60fb9171a0dd3553189c045c08325e07cc1784ebd5f93f82a2",
       "status": "reviewed",
-      "reviewer": "root-capacity-proof",
+      "reviewer": "root",
       "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Reviewed gate reference and generated scale restamp. All32checks retained; no skipped gate relabelled as executed.",
+      "notes": "Generated count-only update reviewed against exact previously reviewed HEAD bytes; full authored content unchanged. Count tool owns this metadata.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "d09b11f32070e9d926d6a87672236dd3e79d0cdab809b5709e9e2744b7ae74ac",
@@ -10402,22 +10402,23 @@
     },
     {
       "path": "lanes/INDEX.md",
-      "sha256": "8a47602c257632184d69526c9e94bfb4b5684df7aa916cabaf4bbe7d109ab820",
+      "sha256": "31c4f282c463e87059ba20ffa3c92cfe24ca9195073dfd5f0aad97d4c452346a",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-26",
+      "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Both assessed-format routes and learning/revision/fresh-practice sequence checked; canonical/private boundary retained.",
+      "notes": "Generated count-only update reviewed against exact previously reviewed HEAD bytes; full authored content unchanged. Count tool owns this metadata.",
       "findings": []
     },
     {
       "path": "projects/INDEX.md",
-      "sha256": "00bfd6a8668aaa5a746c0ef3a0131e006ae346f9d6f82e903dace16566433c6f",
+      "sha256": "3f403f23426d5c4fdbaf89b5b9243a6850bb16bc196eb42cfbf0bc76bef726e2",
       "status": "reviewed",
-      "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
+      "reviewer": "root",
+      "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Full read: staged operation/decision learning, Docita versus MAQ source ownership, metrics as hypothetical, source versus operational evidence and separate revision/interview references."
+      "notes": "Generated count-only update reviewed against exact previously reviewed HEAD bytes; full authored content unchanged. Count tool owns this metadata.",
+      "findings": []
     },
     {
       "path": "projects/docita/01-architecture-decisions.md",
@@ -10503,12 +10504,12 @@
     },
     {
       "path": "projects/docita/10-deployment-infrastructure.md",
-      "sha256": "4c6fe2ce06814de9d867664b8677fb8cc09a2ae2be5fff4f825cb99663931a4e",
+      "sha256": "57afb6cfebf2536838422f881e45dfcd81413e0eb3ff303b7799f665b0146969",
       "status": "reviewed",
-      "reviewer": "root-capacity-proof",
+      "reviewer": "root",
       "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Reviewed deployment topology, machine lifecycle, CPU/RSS/heap/swap, source and dated live inventory, temporary Neon and future balanced AWS profiles. Provider hardware/storage unknowns remain explicit. Setup, network/secret/migration/cutover/restore steps and diagrams preserve authority boundaries. Official new citations probe HTTP200. Current stopped machines and disabled schedules were observed read-only; no paid change or performance success implied. Final reread after local setup commands and spelling/alignment writers; no new achieved metric or infrastructure action asserted.",
+      "notes": "Reviewed launch and cost cross-references; underlying full-content review preserved and prior exact reviewed bytes verified against HEAD.",
       "findings": []
     },
     {
@@ -10622,12 +10623,12 @@
     },
     {
       "path": "projects/docita/23-hypothetical-clinic-metrics.md",
-      "sha256": "e064cab17e3c0e9e5463b46ac6d46655ff049c764a4104c795d9b7ab4c764f14",
+      "sha256": "c8034129cec5cbead39940120d3bc540b39c1aca86e099e6ebea69a5dddb6d2e",
       "status": "reviewed",
-      "reviewer": "root-capacity-proof",
+      "reviewer": "root",
       "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Reviewed model formulas, repeat-visit/invoice assumptions, rates, CPU/pool/queue/storage envelopes and experiment acceptance. Recomputed26000/20800/26000/20000/520000,0.20/0.69/3.33/33.3rates,15-perprocess pool/13outbox bound, PDFstorage and health-probe scheduling. Figures stay assumptions/calculations, known-volume SQL is distinct from API capacity, local runner limitations and real-workload prerequisites remain explicit. Final reread after local setup commands and spelling/alignment writers; no new achieved metric or infrastructure action asserted.",
+      "notes": "Reviewed launch/cost companion references, scenario-versus-observation boundaries and exact prior full-content reviewed bytes against HEAD.",
       "findings": []
     },
     {
@@ -10642,22 +10643,22 @@
     },
     {
       "path": "projects/docita/INDEX.md",
-      "sha256": "a132541ff4d799a34d9fe6ebffae6ab8a654296f48659718dfc21478968c6686",
+      "sha256": "87be8b74085c537bf8c3f6f89e3da00368af550b52b73a461577e7a09be0bea9",
       "status": "reviewed",
-      "reviewer": "root-capacity-proof",
+      "reviewer": "root",
       "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Reviewed learning order and crosslinks: deployment and metric definitions precede workload experiments, revision then independent interview practice. Existing chapter IDs/counts preserved; no duplicate new chapter.",
+      "notes": "Reviewed complete learning flow and new stage7: lifecycle through25+, provider cost worksheet and revision placement; no actual-cost or capacity claim.",
       "findings": []
     },
     {
       "path": "projects/docita/REVISION.md",
-      "sha256": "dd80ba12d7ad9488e9302c08d8520f33730009e2d70db22f511aec4ce9718f97",
+      "sha256": "573742b40e0342893e1fba9da9f524628375263daacc01a92d403247fd037f8e",
       "status": "reviewed",
-      "reviewer": "root-capacity-proof",
+      "reviewer": "root",
       "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Reviewed preserved authored question groups and74new source-linked QAs (246total). Covers actual hardware snapshot, temporary provider/future AWS, pool/RLS/storage/traffic/tails, effects/shutdown/debugging/cost/recovery, local harness and executed SQL fixture. Mechanism, changed constraint and observation boundaries preserved; PDFKit buffers are not a browser subprocess; no fabricated measured performance or user mastery.",
+      "notes": "Reviewed all added source-linked lifecycle, growth, feature and cost retrieval pairs against chapters25/26; existing questions preserved byte-for-byte outside inserted groups.",
       "findings": []
     },
     {
@@ -10697,6 +10698,26 @@
       "reviewDate": "2026-10-26",
       "fullContentRead": true,
       "notes": "Jekyll route/frontmatter includes the canonical generated search; no second implementation.",
+      "findings": []
+    },
+    {
+      "path": "projects/docita/25-launch-to-growth.md",
+      "sha256": "220662fa06f880f84d7a6b9298a02418c46992fa5fc7089d20de7bd940188aee",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-10-28",
+      "fullContentRead": true,
+      "notes": "Complete content read by growth_lifecycle_audit and root, fresh-reader questions passed. Source-backed onboarding/import/provider boundaries, feature sequence, permitted growth funnel, clinic-day diagram, stage exit criteria, daily/monthly operations, recovery/cutover/exit and unchanged lowest-cost deployment verified.",
+      "findings": []
+    },
+    {
+      "path": "projects/docita/26-monthly-operating-costs.md",
+      "sha256": "20ff8d8b0a6e8a085278a217d12a1ed8eb9ea1af101cebd596bfc9aca4f7453c",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-10-28",
+      "fullContentRead": true,
+      "notes": "Complete content read by root and independent pricing/variable-provider reviewers. Executed exact PythonDecimal example; all7totals match.22new official URLs probed HTTP200. Verified billing units,2Fly app egress allocations, RDS50GiB allocation, source conflicts, payer allocation, exclusions and distinct ledger lines. No invoice or achievedcapacity claim.",
       "findings": []
     }
   ]

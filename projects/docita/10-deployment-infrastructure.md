@@ -346,6 +346,8 @@ Docita's source separates API, worker and SPA lifecycles and defines migration c
 
 ## See Also
 
+- [Launch through growth](25-launch-to-growth.md) — clinic onboarding, operations and evidence gates from zero through 25+.
+- [Monthly operating costs](26-monthly-operating-costs.md) — regional rates, resource hours, retention, provider fees and a complete budget worksheet.
 - [Category revision](REVISION.md) — release and recovery questions after the cases.
 - [Architecture decisions](01-architecture-decisions.md) — monorepo compatibility.
 - [Async processing](03-async-processing.md) — worker ownership and recovery.

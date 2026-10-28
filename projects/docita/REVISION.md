@@ -1133,6 +1133,126 @@ Source: [Known-volume SQL verification](14-analytics-and-dashboards.md#verify-th
 
 **A:** They are continuous percentile calculations over supplied values 100, 200 and 500 ms. The test proves eligible-row selection and arithmetic, including delayed persistence and invalid samples. No HTTP operation took those measured times. A real performance claim needs actual operation timings, load, resources, errors and capture coverage.
 
+## Operate From the First Clinic Through Growth
+
+Sources: [Launch and growth](25-launch-to-growth.md), [deployment profile](10-deployment-infrastructure.md).
+
+**Q:** What changes when the first clinic joins even if the machine is mostly idle?
+
+**A:** The service now needs defined opening hours, support, data responsibilities, complete workflows, recoverable records and a fallback. Resource pressure and customer obligations grow differently. A small CPU bill cannot establish that those obligations are met.
+
+**Q:** Why does a working appointment endpoint not establish a usable clinic day?
+
+**A:** The patient/tenant identity, booking state, clinical record, prescription or invoice artifact and relevant provider outcome must agree. Follow the whole operation and retain unresolved exceptions. A stopped document worker can leave an otherwise successful interactive action incomplete.
+
+**Q:** How can onboarding return an error after creating a clinic?
+
+**A:** Provisioning commits before some session cleanup, audit/event and authentication-response work. A later failure does not undo the database commit. Reconcile clinic, administrator, subscription and payment state before repeating completion.
+
+**Q:** Why is the SLA proof PDF outside the database's atomic guarantee?
+
+**A:** Its generation/upload occurs while the database transaction is open, but the object store does not join that transaction. A rollback can leave an uploaded orphan and an upload can lengthen connection hold time. Reconcile those effects rather than calling the entire procedure atomic.
+
+**Q:** What makes an accepted bulk import vulnerable to process restart?
+
+**A:** The inspected implementation persists job metadata but keeps parsed rows in memory and uses process-local execution. The inline marker is not a durable recoverable payload. Supervised bounded imports and row reconciliation contain the current boundary; durable payloads, checkpoints and restart tests are separate work.
+
+**Q:** What evidence moves onboarding from one pilot to repeatable operation?
+
+**A:** Another operator can follow the versioned checklist, reconcile imported rows, configure roles/providers and train the clinic without undocumented knowledge. Define activation as a completed useful workflow in an eligible cohort, then measure it. Sign-ups and demonstrations alone do not establish activation or paid retention.
+
+**Q:** Which checks should precede every clinic opening?
+
+**A:** Verify intended API/worker availability, readiness, oldest pending work, provider condition, backup freshness, open incidents and reachable escalation. Record failed checks and the clinic fallback. A successful health route does not establish background completion or usable restoration.
+
+**Q:** Why are feature flags not a guaranteed instant global stop?
+
+**A:** The inspected global cache and invalidation are process-local; a nominal expiry setting is not a tested replica-wide deadline. Verify enforcement at the actual operation and propagation behavior. Plan incident containment that remains effective when a process has a stale value.
+
+**Q:** What decides whether to add a machine at ten or twenty-five clinics?
+
+**A:** Retained measurements of request tails, memory, database waits, worker age, tenant skew and support coverage identify the limiting promise. Test the smallest relevant change with its connection/cost/rollback budget. Clinic count alone cannot identify the bottleneck or justify a shared cache or service split.
+
+**Q:** What makes a Neon-to-AWS rollback unsafe after cutover?
+
+**A:** New writes on the target can diverge from the old source. Returning to the source needs an explicit reconciliation or reverse-transfer plan and a bounded decision window. Changing the connection string alone can lose accepted work or replay provider effects.
+
+**Q:** Why does cancellation not mean every clinical record is immediately deleted?
+
+**A:** Financial close, access revocation, authorized export, retention/hold decisions, provider/object copies and restored-data reconciliation are separate actions. Record the completed scope and remaining exceptions. Do not claim physical erasure for actions that have not been executed and verified.
+
+**Q:** Why is a design partner not automatically a paid clinic or public reference?
+
+**A:** Agreement to test a bounded workflow does not establish successful paid conversion, continuing use or permission to publish the clinic's name. Record these separately and obtain the relevant authorization before using an endorsement. Advance the next cohort only when service and support evidence allow it.
+
+**Q:** How can a growth chart hide churn?
+
+**A:** New clinics can offset losses in an older cohort while total accounts rise. Measure active/paid retention against the matching starting cohort and report cancellation/nonrenewal reasons separately. Use the same maturity window when comparing paid conversion; unelapsed trials should not lower a mature-cohort conversion rate.
+
+**Q:** Why should optional inpatient, insurance or AI features wait during an outpatient pilot?
+
+**A:** They add domain transitions, training, data-flow and provider costs beyond the agreed core slice. Enable them for an identified need only after their own readiness checks pass. Repository presence does not establish operating readiness, and adding optional modules cannot repair a failed appointment-to-document workflow.
+
+## Explain Monthly Costs and Their Boundaries
+
+Source: [Monthly operating costs](26-monthly-operating-costs.md).
+
+**Q:** What is missing from a statement that a stopped application costs nothing?
+
+**A:** Stopped root filesystems, provisioned volumes, allocated IPs, database storage, plan minimums and retained objects can continue billing. Inventory actual resource states and billing units. A stopped API also cannot establish completion of promised scheduled work.
+
+**Q:** Why can a Singapore machine estimate differ from Fly's headline machine price?
+
+**A:** The headline can use the lowest-priced region. Use the intended region's multiplier/rate, runtime seconds and memory allocation, then add independent resources and transfer. A global list price is not necessarily the rate of the deployed resource.
+
+**Q:** Why does 0.25 CU not mean a database with 0.25 GB of storage?
+
+**A:** A compute unit describes compute/memory, while retained PostgreSQL storage has its own meter. Launch compute integrates actual CU size over active time. At the quoted rate, 0.25 CU for 720 hours costs $19.08 before storage and history.
+
+**Q:** Can Launch subtract the Free plan's first 100 CU-hours?
+
+**A:** No. Those are different plans. Price Launch at its quoted CU-hour rate and apply only the allowances belonging to that plan. Similarly, do not silently multiply account-wide object/edge allowances by clinic count.
+
+**Q:** Why can a paid edge plan be appropriate below ten million monthly requests?
+
+**A:** Free limits can apply per day or per invocation, and plan selection can depend on enabled features and operational needs. Check peak daily requests and CPU work as well as totals. A monthly average cannot prove the Free limits or the service promise fit.
+
+**Q:** How do 46,800 files at 150 KiB become different GB and GiB numbers?
+
+**A:** Divide their bytes by one billion for decimal GB or by 1,073,741,824 for GiB. The result is 7.18848 GB or about 6.6948 GiB. Use the provider's billing unit and actual time-weighted inventory, rather than treating those numbers as interchangeable.
+
+**Q:** Why is the twelve-cohort R2 example not the bill for every month of the first year?
+
+**A:** Earlier months contain fewer accumulated objects and R2 uses average daily peak inventory. The $1.155 storage comparison holds twelve cohorts constant for a whole month. Actual accumulation, versions, uploads, backup copies and account-wide allowance consumption change the charge.
+
+**Q:** Why does a public-RDS allowlist example need two Fly egress allocations?
+
+**A:** The API and worker are separate Fly applications. The proposed app-scoped static egress allocation is shared within an app/region, not automatically across both apps. Price both allocations and the chosen AWS public IP, enforce the actual addresses and TLS, and quote private connectivity separately if chosen.
+
+**Q:** What does the $80.34 RDS example include?
+
+**A:** It includes 720 hours of Singapore PostgreSQL Single-AZ db.t4g.medium at $0.102/hour and 50 GiB provisioned gp3, priced as 50 provider storage units at $0.138/GB-month. It excludes connectivity, surplus credits, extra backup/transfer, monitoring, support and tax. It does not buy Multi-AZ availability or prove workload capacity.
+
+**Q:** Can 52,000 WhatsApp intents be multiplied directly by a delivery price?
+
+**A:** Only as an explicitly conditional illustration that all become billable deliveries in the specified market/category. Actual charges depend on delivery, exemptions, rate tier, provider agreement and duplicate effects. Reconcile the current account rate card when official source narratives conflict.
+
+**Q:** Why do 52,000 recipient emails cost $15 cash but $13 of usage in the example?
+
+**A:** Six 10,000-email credits at $2.50 are needed from a zero balance, leaving 8,000 emails unused. Usage consumes 5.2 credits. Retain the opening/closing balance and expiry; expired unused credits still cost cash.
+
+**Q:** What extra information is needed to price 5,200 payment attempts?
+
+**A:** Successful eligible payment amounts, payment method and contracted rate, fee tax, refund/dispute/optional-service treatment and merchant ownership. Attempts alone lack both the successful-value denominator and payer. Clinic patient collections must not become Docita subscription revenue.
+
+**Q:** Why is the $75 Neon comparison not an all-inclusive monthly bill?
+
+**A:** It prices declared runtime/database/edge/object/transfer inputs only. Add actual recovery, staging, monitoring, email/messages, payment/AI, domain, tax and labor. Keep any planning allowance visibly separate from quoted provider rates and reconcile the complete result with invoices.
+
+**Q:** What belongs in a monthly budget variance review?
+
+**A:** Compare actual units and prices by environment and payer, account-wide allowances, prepaid balances, tax/currency and invoice charges against the forecast. Explain the difference and assign a next action. Check the service outcomes too, so cost savings do not hide missing reminders, retention or recovery work.
+
 ## Summary
 
 Reconstruct the operation and its boundaries. Qualify every outcome according to the evidence actually obtained.

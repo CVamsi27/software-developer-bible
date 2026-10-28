@@ -330,6 +330,8 @@ The 25-clinic assumption yields a coherent workload model, not measured business
 
 ## See Also
 
+- [Launch through growth](25-launch-to-growth.md) — clinic onboarding, operations and evidence gates from zero through 25+.
+- [Monthly operating costs](26-monthly-operating-costs.md) — regional rates, resource hours, retention, provider fees and a complete budget worksheet.
 - [Category revision](REVISION.md) — scenario calculations and measurement follow-ups.
 - [Case-study index](INDEX.md) — read implementation mechanisms before this model.
 - [Interview evidence pack](../../80-lanes-abroad-full-stack/80.17-docita-interview-evidence-pack.md) — assemble real source, check and outcome evidence.

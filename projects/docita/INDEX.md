@@ -2,7 +2,7 @@
 
 > Source-backed implementation assessments: what works, where the boundaries fail, and the recommended design with evidence needed to accept it.
 
-[![Files](https://img.shields.io/badge/files-25-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-27-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Projects-purple)](#)
 
 ---
@@ -52,6 +52,10 @@ First read the refreshed [deployment/resource profile](10-deployment-infrastruct
 ### Stage 6 — Connect the Current Resume to Actual Work
 
 Use [the five-bullet resume walkthrough](24-resume-claim-walkthrough.md) to explain the product, personal contribution, implementation and evidence behind each claim. Then rehearse one changed constraint.
+
+### Stage 7 — Launch, Grow and Fund the Service
+
+Follow [launch through growth](25-launch-to-growth.md) from local setup to a supervised pilot, repeatable onboarding, daily operations, incidents, customer exit and measured growth beyond 25 clinics. Use [monthly operating costs](26-monthly-operating-costs.md) alongside each promotion decision: price the service hours, database use, retained files, provider deliveries and recovery/support obligations. Its dated scenarios compare low-cost Neon operation with a future AWS reference; they are proposals rather than the live bill or capacity proof.
 
 ### Revision, Then Interview Practice
 

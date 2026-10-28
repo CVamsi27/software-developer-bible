@@ -71,6 +71,16 @@ The lock protects the claim while the database transaction holds it. It does not
 
 The source polls every **2 seconds**, prevents overlapping polls for the same job name within one service instance and claims one job per poll. A slow handler stretches effective processing capacity; a two-second interval is not a guaranteed two-second completion latency.
 
+### A Downloaded PDF Does Not Prove Worker Completion
+
+A **28 October 2026 source check** distinguishes three PDF paths. With the local provider's `supportsSignedUrls = false`, the protected staff invoice and prescription `getPdf` methods regenerate the document and return bytes, without using the record's stored `pdfUrl`. A `200` PDF response can therefore coexist with a broken stored reference or upload-directory mapping. It exercises the selected authorization/read/render path, not stored-object retrieval or a completed background job.
+
+A capability-authorized patient proxy verifies the signed document type/id, resolves the record's clinic and enters that tenant scope. When the record already has a stored key, this path calls `getObject(key)`. A record without a stored reference can select a generation fallback; a nonempty reference whose file is missing instead propagates an object-read error. Proving stored-artifact retrieval therefore requires an existing key and the actual object-read branch. By contrast, `async=true` enqueues a PDF job and returns `202 Accepted`: correlate job completion, the persisted reference and authorized access to its intended bytes before claiming the asynchronous effect completed.
+
+An **object key** such as `seed/invoices/<synthetic-id>.pdf` identifies a file within the provider's storage namespace. The browser-facing `/uploads/seed/invoices/<synthetic-id>.pdf` adds a serving prefix; it is not the same input to `getObject`. Local storage resolves keys under its upload root, so correct keys still need a coherent API/worker/seed directory mapping. See [document storage and authority](19-documents-and-uploads.md) for that mechanism.
+
+The reviewed, unpublished seed-only corrections persist bare seed keys and supply the required `doctorName`. They repair fixture inputs; they do not change these production download branches or establish worker completion. Retain executed outcomes and their limits in the [operating-evidence workbook](27-operating-evidence-workbook.md).
+
 ### The Queue's Duplicate Check Has Limits
 
 `enqueue` looks for a matching **completed** job from the preceding **24 hours**. A similar check runs after claim. The current `QueueJob` schema has an indexed, nullable idempotency key, without a unique constraint on that key.
@@ -210,7 +220,7 @@ PostgreSQL can atomically retain work intent and coordinate claims. Reliable exe
 
 ## References
 
-Source paths refer to the 2 October inspection, the 9 October relay recheck and the scoped 15 October refresh described above:
+Source paths refer to the 2 October inspection, the 9 October relay recheck, the scoped 15 October refresh and the 28 October PDF-path/seed check described above:
 
 - `apps/api/src/shared/modules/queue/postgres-queue.service.ts`
 - `apps/api/src/shared/modules/queue/infrastructure/prisma-queue-job.repository.ts`
@@ -218,6 +228,11 @@ Source paths refer to the 2 October inspection, the 9 October relay recheck and 
 - `apps/api/src/shared/modules/queue/postgres-queue.service.spec.ts` — focused local regression tests, including lost claims.
 - `apps/api/src/shared/modules/queue/dlq-replay.scheduler.ts` — inert automatic replay policy.
 - `apps/api/src/shared/modules/queue/pdf-job.service.ts`
+- `apps/api/src/domains/billing/application/services/invoices-query.service.ts` and `apps/api/src/domains/billing/presentation/controllers/invoices.controller.ts` — staff PDF generation versus asynchronous enqueue.
+- `apps/api/src/domains/prescriptions/application/services/prescription-pdf-orchestrator.service.ts` and `apps/api/src/domains/prescriptions/presentation/controllers/prescription.controller.ts` — local byte-return branch and required doctor context.
+- `apps/api/src/shared/modules/public/public-patient-documents.service.ts` and `apps/api/src/shared/modules/public/public-document-token.service.ts` — verified-capability proxy and stored-object read versus fallback.
+- `apps/api/src/domains/documents/infrastructure/local-storage.provider.ts` and `apps/api/src/domains/documents/infrastructure/local-storage-path.helpers.ts` — provider keys, upload roots and browser URLs.
+- `apps/api/src/seed/seed-pdfs.ts` and `apps/api/src/seed/seed-patients-encounters.ts` — unpublished fixture key/doctor-field corrections.
 - `apps/api/src/shared/modules/outbox/outbox.service.ts`
 - `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.ts`
 - `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.spec.ts` — asynchronous acknowledgment and retry tests.

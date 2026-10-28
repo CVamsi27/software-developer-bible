@@ -97,7 +97,49 @@ The first tenant-suite attempt shared a cluster with the migration experiment. T
 
 The corrected run used a separate new PostgreSQL cluster, not just another database name. All 15 cases then passed and its roles and scratch objects were removed. Retaining both attempts explains the failure mechanism and the correction. Erasing the failed log or forcing the migrated role to disappear would weaken the evidence and could damage unrelated work in the shared cluster.
 
-The compiled seed also writes its sample PDFs beneath `apps/api/uploads`, while the controlled API run used a fresh working directory. Successful seeding therefore does not prove those files are served from that experiment's local-storage root. No PDF retrieval or standalone worker completion is claimed. The full clinic-day worksheet and 25-tenant workload below remain separate acceptance work.
+The compiled seed also writes its sample PDFs beneath `apps/api/uploads`, while the controlled API run used a fresh working directory. Successful seeding therefore does not prove those files are served from that experiment's local-storage root. At that stage, PDF retrieval and standalone-worker completion had not been exercised. The full clinic-day worksheet and 25-tenant workload below remain separate acceptance work.
+
+## Follow a Created Record Beyond Its HTTP Status
+
+A further **28 October** experiment used one synthetic staff session to create a patient, appointment, prescription and pending invoice. Each POST returned **201**; all four authorized GET readbacks returned **200**, and the new invoice and prescription each downloaded as a parseable one-page PDF. The first relational check still failed: the prescription's direct `clinicId` was null, although its patient, appointment and doctor associations were correct.
+
+```text
+201 response -> read the returned ID -> inspect the authoritative row
+                                           |
+                      related patient/visit/doctor agree
+                                           |
+                         direct clinic stamp is null -> fail
+```
+
+The command service had validated its clinic context but omitted it when calling the repository. The repository also omitted the Prisma clinic connection. This is why an HTTP success counter and a plausible document are insufficient acceptance criteria. Correcting one layer alone would still lose the value at the other boundary. Historical nullable rows require a separately reviewed reconciliation/backfill; a new-create fix does not repair them automatically.
+
+### Make Fixture Controls Explicit
+
+This run used the earlier development owner-role/RLS-disabled profile and network boundary. The seeded doctor began unverified. The owned synthetic fixture explicitly enabled its verified status for the create exercise and disabled the fixture clinic's WhatsApp automation; original values were retained for restoration. This is test preparation, not a real clinician-verification result. Schedulers-off alone cannot suppress immediate appointment, prescription or invoice event listeners.
+
+The patient included the date of birth and phone required by persistence, even though the request contract marks those fields optional. Its phone was a synthetic fixture input under disabled outbound delivery; a numeric pattern does not prove that a number is unassigned. No patient contact value or authentication token belongs in the public evidence card.
+
+The initial readback confirmed one medication, one active notice consent and its successful audit, and one invoice line. The pending invoice and line each retained **50,000 paise**, with zero tax, discount and paid amounts under the declared exempt-healthcare calculation. The observer found zero related payment sessions, WhatsApp logs/messages, PDF jobs or outbox events. Invoice creation logged a failed payment-link setup attempt; that does not become successful settlement or a durable provider retry. Staff in-app notifications and usage writes are different effects.
+
+### Test the Document Boundary You Intend to Claim
+
+The initial seeded invoice generated and downloaded successfully, with anonymous access denied and missing-record access returning 404. The seeded prescription returned **400** because its required doctor-name snapshot was absent. A separate real-provider read found that the sample file existed and its canonical object key worked, while its persisted browser URL produced `ENOENT` even under a matching storage root.
+
+The seed correction therefore stores canonical object keys and snapshots the actual fixture doctor's name on create and update, failing when that doctor/name is absent. It does not change provider authorization or introduce a new storage-root setting. Keep the [synchronous download, stored-object and worker boundaries](03-async-processing.md) separate when evaluating the corrected result.
+
+The first private harness attempt had used the wrong login response field after a successful login. It stopped before PDF assertions; the corrected harness uses the documented `access_token` contract. Preserve that prerequisite failure alongside application failures and passing reruns, with credentials excluded.
+
+### Verify the Correction Against the Engine Again
+
+Focused prescription tests first reproduced four failing assertions at the service/repository boundaries, then passed **nine tests across two suites** after the clinic propagation correction. The existing eight seed suites passed **44 tests**; these are fixture/unit checks, separate from the HTTP and PostgreSQL observations. Focused lint, combined API typecheck, Prisma boundary and the corrected API build passed.
+
+Re-running the full developer seed on the used database failed at a lab-test deletion because seeded lab orders still referenced those rows. A before-correction database dump and the failure were retained. That seed is therefore not established as an idempotent refresh. A separate fresh owned database accepted the **175 migrations** and corrected seed; dependency installation was still reused.
+
+On that new fixture, a fresh four-POST sequence, four GET readbacks and both document downloads passed again. This time the authoritative row check confirmed **all direct clinic and patient/appointment/doctor associations**, alongside the same consent, medication and 50,000-paise invoice invariants. The failed first row remains historical evidence; no production or historical backfill ran.
+
+The corrected seeded invoice and prescription also passed protected staff download checks: anonymous **401**, authorized **200** PDF and missing record **404**. For a distinct stored-object check, only the two synthetic seed files were copied into the fresh API working directory's existing upload tree. Capability-authorized requests then returned **200** with bytes exactly equal to those files, `application/pdf` and `private, no-store`. Malformed/tampered capabilities returned **400**; wrong document type and a correctly signed nonexistent document returned **404**. These application capabilities use HMAC, with no expiry field/check in the inspected source; they are not the expiring R2 presigned URLs. This test does not establish expiry behavior or a new revocation policy.
+
+Both databases' temporary fixture settings were restored. All five API runs exited zero after SIGTERM, the restarted owned PostgreSQL cluster stopped and the declared experiment ports were closed. The second earlier tenant-test cluster remained stopped. Database dumps were retained, but no restore was tested. These results establish local linked creation, rendering and controlled stored retrieval, with owner/RLS-disabled access and explicit file placement; standalone workers, cross-clinic HTTP enforcement, a full clinic day, 25-tenant load, provider delivery, production memory/SLOs and recovery remain separate work.
 
 ## Work Through the Boundary, Then Change One Constraint
 

@@ -1341,6 +1341,34 @@ Sources: [Executed local checks](27-operating-evidence-workbook.md#what-the-loca
 
 **A:** It can create metadata and write sample files in its own known directory while a separately launched API serves another working directory. Reconcile the actual storage root, intended artifact and authorized retrieval. The seed's one synthetic clinic and sample counts also do not become a 25-clinic workload or adoption result.
 
+## Explain the Clinical and Document Readback
+
+Sources: [Created-record evidence](27-operating-evidence-workbook.md#follow-a-created-record-beyond-its-http-status), [corrected engine checks](27-operating-evidence-workbook.md#verify-the-correction-against-the-engine-again), [PDF paths](03-async-processing.md#a-downloaded-pdf-does-not-prove-worker-completion).
+
+**Q:** How could four successful creates still fail the clinic-association check?
+
+**A:** The prescription related to the intended patient, appointment and doctor, but its direct clinic field was null. The service dropped clinic context and the repository omitted the clinic connection. Both boundaries needed correction, followed by a new real API write and database readback. Existing historical null rows require separate reviewed reconciliation.
+
+**Q:** Why did the local write exercise change two fixture settings explicitly?
+
+**A:** Prescription creation requires a verified signed doctor, while the synthetic seed starts unverified. Immediate event handlers can also run with schedulers off. The owned fixture temporarily used VERIFIED status and disabled clinic WhatsApp automation; both original settings were restored. That does not establish real verification, production RLS or provider delivery.
+
+**Q:** What did an invoice total of 50,000 paise establish in this exercise?
+
+**A:** Its pending record and one line reconciled to the server's exempt-healthcare calculation, with zero tax, discount and paid amounts. Consent and its audit also existed. Zero payment sessions and the failed payment-link attempt did not establish settlement or a durable retry, even though invoice creation returned 201.
+
+**Q:** Why must a stored PDF check compare the returned bytes with an existing object?
+
+**A:** A protected local staff route can regenerate a PDF while ignoring the stored reference. The capability proxy's existing-key path reads the object instead. Matching the returned bytes to the deliberately placed synthetic file establishes that stored-read branch; it still says nothing about standalone-worker completion or a different storage-root mapping.
+
+**Q:** Does a valid document capability prove that its expiry was checked?
+
+**A:** No. The inspected application capability uses HMAC over document type and identity and has no expiry field or check. Its malformed/tampered and wrong-type denials establish those boundaries only. R2 presigned URLs have a different lifetime contract; do not transfer that expiry claim to every document link.
+
+**Q:** What did the failed full-seed rerun change about the setup conclusion?
+
+**A:** Existing lab orders blocked deletion of their referenced tests. The run did not establish an idempotent refresh, even though bootstrap had worked on a fresh database. Retain the failed state and its snapshot, then distinguish a successful new-database seed from a repaired rerun. A stored dump also is not a tested restore.
+
 ## Summary
 
 Reconstruct the operation and its boundaries. Qualify every outcome according to the evidence actually obtained.

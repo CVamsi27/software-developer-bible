@@ -10440,12 +10440,12 @@
     },
     {
       "path": "projects/docita/03-async-processing.md",
-      "sha256": "c92d7d6fafd2294de344ae8dcb8eb5ff83352938ced72ee941c01fd3a42e9454",
+      "sha256": "3206d48a907535d15b1b4789fca195093d9799751fddf3797513d9e1f68720ac",
       "status": "reviewed",
-      "reviewer": "root-capacity-proof",
+      "reviewer": "root + independent evidence reviewer",
       "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Reviewed queue/outbox flow and preserved historical source boundaries. Refreshed f3fddffc0 active-poll shutdown drain, forced-exit uncertainty, five generic versus three PDF attempts, eight outbox attempts and RLS pool-minus-two admission. Diagram separates external effect from fenced acknowledgment; no throughput or universal exactly-once claim.",
+      "notes": "Full-content root/independent review of three PDF boundaries: local staff regeneration, existing-key capability proxy read and async enqueue/completion. Verified actual local false-signed-URL branch, absent reference fallback versus missing physical file error, key/browser-prefix/CWD distinction and dated unpublished seed corrections. Existing queue/outbox/fencing scope retained; no worker/provider/expiry claim inferred.",
       "findings": []
     },
     {
@@ -10653,12 +10653,12 @@
     },
     {
       "path": "projects/docita/REVISION.md",
-      "sha256": "cc1803476694c71b3912658d10dba78e1363e1c55b4a0af05aa8704980a6ddda",
+      "sha256": "25222d619a6c7ee2b3b529da04cd1e929f17c780cc0d0ce21a0298a51d6e4957",
       "status": "reviewed",
       "reviewer": "root + independent evidence reviewer",
       "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Full-content reviewer continuation and byte-preservation check: all 288 existing source-linked questions retained; six new questions retrieve all-invalid outcome/latency distinctions, failed setup versus assertions, migration limits, actual API role versus tenant fixture, private bind shim, seed artifact/storage and adoption boundaries. No candidate mastery inferred.",
+      "notes": "Full-content independent review and exact preservation check: all 294 existing questions/answers preserved; six new source-linked pairs retrieve HTTP-versus-authoritative clinic associations, synthetic verification/event controls, invoice-versus-settlement invariants, stored-byte versus regeneration evidence, application HMAC versus R2 expiry and non-idempotent seed/untested restore boundaries. Total 300 Q/A; no candidate mastery inferred.",
       "findings": []
     },
     {
@@ -10722,12 +10722,12 @@
     },
     {
       "path": "projects/docita/27-operating-evidence-workbook.md",
-      "sha256": "cb2c63c934ccc4f71795e3a59cdfde19b3edd41f09e3f606f3271e5efd407fc4",
+      "sha256": "77a53c0a4f05c99e0ce07f966ab9d5b9aa65c5604c6c9735802d9ba9cdba9809",
       "status": "reviewed",
       "reviewer": "root + independent evidence reviewer",
       "reviewDate": "2026-10-28",
       "fullContentRead": true,
-      "notes": "Full-content continuation review: reconciled private execution receipts for 175 migrations/no schema drift, 34 passing focused checks, preserved prerequisite cancellation plus independent rerun, four exact diagnostic SQL queries, developer seed and bounded HTTP read. Declared owner/RLS/queue/network/bind and installed-dependency deviations, 664 MiB local startup versus provisional guest sizing, PDF storage gap and stopped owned processes; broader production promises remain unverified.",
+      "notes": "Full-content review with actual local receipts: first HTTP success versus null direct prescription clinic stamp; 4-red to 9-green service/repository regressions; 44 seed tests; corrected fresh 175-migration seed and four linked HTTP writes/readbacks with PostgreSQL associations/consent/50000-paise invoice invariants. Preserved seed rerun FK failure and snapshots, first harness parser prerequisite, Rx400 and real key-prefix ENOENT; corrected staff PDFs and byte-equal capability reads after explicit file placement; source HMAC no expiry, fixture-control restoration and five clean API exits/owned PG stop. Owner/RLS-off, no worker/provider/recovery/load proof and historical-stage limits remain explicit.",
       "findings": []
     }
   ]

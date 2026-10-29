@@ -13,7 +13,7 @@ Analytics turns business records into metrics for a specified scope and period. 
 
 > **Textbook Definition:** A metric is a defined aggregation over a population, time window and measurement rule; a dashboard presents selected metrics, while a snapshot persists results for a particular cutoff.
 
-The analytics-factory assessment below retains its **2 October 2026** source inspection and controlled probes. The operational-dashboard section has a scoped **28 October 2026** implementation and definition update in a tested working tree based on canonical revision `f3fddffc0`. It has not been deployed by this work. That update does not refresh the other factory findings into a new audit or establish production activity.
+The analytics-factory assessment below retains its **2 October 2026** source inspection and controlled probes. The operational-dashboard section has a scoped **28 October 2026** implementation and definition update, developed in a tested working tree based on canonical revision `f3fddffc0` and now included in published source continuation `6465632a7`. Source publication does not activate that dashboard in production; it has not been deployed by this work. That update does not refresh the other factory findings into a new audit or establish production activity.
 
 ## First Principles
 

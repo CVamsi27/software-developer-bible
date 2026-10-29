@@ -75,7 +75,7 @@ The source polls every **2 seconds**, prevents overlapping polls for the same jo
 
 The API can enqueue the correct `clinicId`, yet a separate worker can fail with “No tenant context available.” The request's `AsyncLocalStorage` store lives in the API process; serializing a job does not carry that store into another process. Passing `clinicId` as a service argument also does not populate the context read by the application’s tenant-aware database extension.
 
-The reviewed, unpublished `BasePdfProcessor` correction enters `runWithTenant({ clinicId }, async () => …)` around the awaited document read, PDF rendering and upload/persist operation. Both invoice and prescription processors inherit that path:
+The published source continuation at `6465632a7` includes the reviewed `BasePdfProcessor` correction. It enters `runWithTenant({ clinicId }, async () => …)` around the awaited document read, PDF rendering and upload/persist operation. Both invoice and prescription processors inherit that path:
 
 ```text
 durable job carries clinicId + documentId
@@ -96,7 +96,7 @@ A capability-authorized patient proxy verifies the signed document type/id, reso
 
 An **object key** such as `seed/invoices/<synthetic-id>.pdf` identifies a file within the provider's storage namespace. The browser-facing `/uploads/seed/invoices/<synthetic-id>.pdf` adds a serving prefix; it is not the same input to `getObject`. Local storage resolves keys under its upload root, so correct keys still need a coherent API/worker/seed directory mapping. See [document storage and authority](19-documents-and-uploads.md) for that mechanism.
 
-The reviewed, unpublished seed-only corrections persist bare seed keys and supply the required `doctorName`. They repair fixture inputs; they do not change these production download branches or establish worker completion.
+The seed-only corrections published in the same source continuation persist bare seed keys and supply the required `doctorName`. They repair fixture inputs; they do not change these production download branches or establish worker completion.
 
 ### The Queue's Duplicate Check Has Limits
 
@@ -252,7 +252,7 @@ Source paths refer to the 2 October inspection, the 9 October relay recheck, the
 - `apps/api/src/domains/prescriptions/application/services/prescription-pdf-orchestrator.service.ts` and `apps/api/src/domains/prescriptions/presentation/controllers/prescription.controller.ts` — local byte-return branch and required doctor context.
 - `apps/api/src/shared/modules/public/public-patient-documents.service.ts` and `apps/api/src/shared/modules/public/public-document-token.service.ts` — verified-capability proxy and stored-object read versus fallback.
 - `apps/api/src/domains/documents/infrastructure/local-storage.provider.ts` and `apps/api/src/domains/documents/infrastructure/local-storage-path.helpers.ts` — provider keys, upload roots and browser URLs.
-- `apps/api/src/seed/seed-pdfs.ts` and `apps/api/src/seed/seed-patients-encounters.ts` — unpublished fixture key/doctor-field corrections.
+- `apps/api/src/seed/seed-pdfs.ts` and `apps/api/src/seed/seed-patients-encounters.ts` — fixture key/doctor-field corrections published at `6465632a7`.
 - `apps/api/src/shared/modules/outbox/outbox.service.ts`
 - `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.ts`
 - `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.spec.ts` — asynchronous acknowledgment and retry tests.

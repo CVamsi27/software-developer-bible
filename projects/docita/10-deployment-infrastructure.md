@@ -214,7 +214,7 @@ Separate data recovery:
 
 ### Reproduce the Local Checks Before a Release
 
-The capacity runner, its package scripts and the dedicated SQL fixtures belong to the **reviewed, unpublished working-tree patch** inspected on 28 October. They are absent from the canonical Docita base `f3fddffc0`; checking out that revision alone does not provide them. Obtain the reviewed source through the maintainer's approved handoff, record its revision and patch/source hashes, and stop if the files are unavailable. A file-presence check establishes availability, not that a patch was reviewed or deployed.
+The published source continuation at `6465632a7` includes the capacity runner, its package scripts, dedicated SQL fixtures, clinic/seed corrections and worker tenant-context correction. Select that reviewed revision or a main revision containing the same reviewed changes; record the exact source identity before following these commands. The historical clean base `f3fddffc0` lacks these additions. A file-presence check establishes availability, not source identity, deployment or production readiness. The [operating workbook](27-operating-evidence-workbook.md#read-the-source-validation-without-promoting-production) records the current validation and its limits.
 
 Run this read-only preflight from the selected Docita checkout before following the capacity commands. It reads local files only and neither loads environment files nor contacts a database or API:
 
@@ -243,7 +243,7 @@ JS
 
 After that preflight succeeds, use Node 24 and the repository's pinned pnpm in an isolated checkout. The metrics-test database URL must identify a disposable loopback `docita_capacity_*` database with no URL options; the copied API example URL includes options and is not this test target. Generate/apply a full application fixture separately when testing the API; the SQL suite creates only its own projected tables and does not reset the database.
 
-At the inspected canonical base `f3fddffc0`, the setup guides conflicted: the short `docs/ONBOARDING.md` listed Redis as a prerequisite, while `docs/product/ONBOARDING.md` and configuration supported local memory queues without Redis. Check the reviewed handoff for its documentation correction before following either guide. Memory queues remain inside one process. Testing separate API and worker processes requires the shared PostgreSQL queue on both, API schedulers disabled and worker schedulers enabled; a successful memory-queue demo cannot verify that deployment. Prisma's configuration reads the root environment file, while the API has its own environment file. Explicitly verify the target supplied to each process and migration command rather than assuming an app-specific copy configures every CLI. Use the [operating workbook](27-operating-evidence-workbook.md) for the process/configuration matrix and experiment handoffs.
+At the inspected canonical base `f3fddffc0`, the setup guides conflicted: the short `docs/ONBOARDING.md` listed Redis as a prerequisite, while `docs/product/ONBOARDING.md` and configuration supported local memory queues without Redis. The published continuation corrects those setup guides; use their versions from the selected reviewed source. Memory queues remain inside one process. Testing separate API and worker processes requires the shared PostgreSQL queue on both, API schedulers disabled and worker schedulers enabled; a successful memory-queue demo cannot verify that deployment. Prisma's configuration reads the root environment file, while the API has its own environment file. Explicitly verify the target supplied to each process and migration command rather than assuming an app-specific copy configures every CLI. Use the [operating workbook](27-operating-evidence-workbook.md) for the process/configuration matrix and experiment handoffs.
 
 ```bash
 pnpm install --frozen-lockfile
@@ -269,9 +269,47 @@ pnpm lint
 pnpm verify:standard
 ```
 
-Do not replace a blocked gate with target values or silently skip it. On the 28 October implementation pass, lint/typechecks, focused tests and the internal frontend build passed; the full standards chain stopped at the stale disabled daily-worker workflow. Later standards commands were checked separately, while required API-baseline mode remained blocked by its absent measurement. A local code validation does not authorize or establish a production deployment.
+Do not replace a blocked gate with target values or silently skip it. The earlier 28 October implementation pass stopped at the stale disabled daily-worker workflow; later standards commands were checked separately. The final source pass now completes the full standards chain after documenting the intentional daily-worker maintenance hold. Its narrow guard exemption applies only to that named workflow while GitHub reports `disabled_manually`; it does not enable the workflow or exempt unrelated stale schedules. Required API-baseline mode remains blocked by its absent real measurement, even when the optional check skips it. A local source-validation pass does not establish a production deployment.
 
 The operational flow for a future approved release remains: reviewed infrastructure/network and secrets, compatible migrations, immutable artifacts, API and worker checks, actual workload measurements, traffic cutover and a tested recovery path. Use the repository's deploy workflow and runbooks for commands that can create cost or change production; a documentation example should not start stopped machines as a side effect of an audit.
+
+### Run Both Compiled Processes From One Upload Root
+
+A separate worker can complete a PDF while the API serves a different directory. Both local storage and API static serving resolve `process.cwd()/uploads`. Filtered development commands start in different package directories; choosing `local` in each process does not align those paths.
+
+For one disposable local exercise, run both built entrypoints from the same owned directory on one filesystem. First follow the availability preflight above and prepare a reviewed root `.env` with the same local database, encryption key and required URLs. Inspect exported variables and provider destinations as well: `--env-file` does not replace an existing shell variable. Use the reviewed worker tenant-context correction; the clean historical base does not supply it.
+
+| Process | `WORKER_ENTRYPOINT` | `ENABLE_SCHEDULERS` | Responsibility |
+| ------- | ------------------- | ------------------- | ------------------------------------------------ |
+| API | `main` | `false` | Accept requests and enqueue durable work |
+| Worker | `worker` | `true` | Register PDF handlers and the broader cron graph |
+
+Both processes use `QUEUE_BACKEND=postgres` and `STORAGE_PROVIDER=local` in this profile. The API's in-memory queue cannot hand its jobs to another process. Build from the reviewed Docita root with Node 24, then retain the three absolute path values for both terminals:
+
+```bash
+# In the reviewed repository root; retain these absolute values for both terminals.
+task_repo_root="$PWD"
+task_env_file="$task_repo_root/.env"
+task_shared_dir="$(mktemp -d "${TMPDIR:-/tmp}/docita-worker-shared.XXXXXX")"
+pnpm --filter @docita/api run build
+pnpm --filter @docita/worker run build
+
+# API terminal: cd to the shared directory, not apps/api.
+cd "$task_shared_dir"
+NODE_ENV=development WORKER_ENTRYPOINT=main QUEUE_BACKEND=postgres \
+  ENABLE_SCHEDULERS=false STORAGE_PROVIDER=local \
+  node --env-file="$task_env_file" "$task_repo_root/apps/api/dist/main.js"
+
+# Worker terminal: set the same three absolute values, then use the same CWD.
+cd "$task_shared_dir"
+NODE_ENV=development WORKER_ENTRYPOINT=worker QUEUE_BACKEND=postgres \
+  ENABLE_SCHEDULERS=true STORAGE_PROVIDER=local \
+  node --env-file="$task_env_file" "$task_repo_root/apps/worker/dist/worker/src/main.js"
+```
+
+These commands supply a shared file layout, not network isolation. The API retains its wildcard listen behavior. The controlled experiment additionally used an OS network policy, a private loopback preload and listener readback; those controls are not installed by this recipe. Enabling worker schedulers also enables its wider cron graph. Use only owned synthetic fixtures, explicitly disable fixture messaging and account for broader effects before starting the worker.
+
+The [separate-worker experiment](27-operating-evidence-workbook.md#make-the-separate-worker-own-the-effect) proves the bounded queue-to-file result under an owner-role, RLS-disabled development profile. Application clinic context does not establish SQL RLS or non-owner authorization. A local status URL is a development static URL, not an expiring private link. Separate Fly machines do not share this directory; production R2 access and recovery require their own checks.
 
 ## How the SPA and Proxy Form One Browser Origin
 

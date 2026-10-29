@@ -59,7 +59,7 @@ Follow [launch through growth](25-launch-to-growth.md) from local setup to a sup
 
 ### Stage 8 — Produce Operating Evidence
 
-Work through [the operating-evidence workbook](27-operating-evidence-workbook.md) one boundary at a time. Establish command availability and isolated configuration first, then accept a clinic day, investigate a failure, define an alert and assemble a promotion record. Its exercises distinguish existing base scripts, unpublished capacity additions and missing full-application fixtures. Use existing practice time; the workbook does not create a second calendar or predeclare successful results.
+Work through [the operating-evidence workbook](27-operating-evidence-workbook.md) one boundary at a time. Establish command availability and isolated configuration first, then accept a clinic day, investigate a failure, define an alert and assemble a promotion record. Its exercises distinguish historical base scripts, the published source continuation and missing full-application fixtures. Follow its source-validation record to separate passing local checks from the still-unverified production workload. Use existing practice time; the workbook does not create a second calendar or predeclare successful results.
 
 ### Revision, Then Interview Practice
 

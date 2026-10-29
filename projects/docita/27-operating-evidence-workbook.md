@@ -11,7 +11,7 @@ An operating-evidence workbook turns an architecture into bounded exercises. Eac
 
 > **Textbook Definition:** Operational verification evaluates observable system behavior against explicit correctness, service and recovery requirements under a declared environment and workload, retaining reproducible evidence and the limitations of each inference.
 
-This workbook continues the **28 October 2026** source review based on Docita `f3fddffc0` and the reviewed, unpublished capacity patch. Commands added by that patch are absent from the clean base revision. The workbook itself adds no application feature, seed generator, production activation, measured capacity or customer result. [Deployment](10-deployment-infrastructure.md) owns exact setup/preflight commands, [workload modeling](23-hypothetical-clinic-metrics.md) owns the load protocol and [costs](26-monthly-operating-costs.md) owns pricing arithmetic.
+This workbook continues the **28 October 2026** local source review based on Docita `f3fddffc0`. The reviewed additions are now available in published source continuation `6465632a7a52afaf5c5917d132985b026ff4ad2a`. Select that revision or a main revision containing the same reviewed changes; the historical clean base lacks the added commands and corrections. Source publication is distinct from production deployment. The workbook itself adds no application feature, seed generator, production activation, measured capacity or customer result. [Deployment](10-deployment-infrastructure.md) owns exact setup/preflight commands, [workload modeling](23-hypothetical-clinic-metrics.md) owns the load protocol and [costs](26-monthly-operating-costs.md) owns pricing arithmetic.
 
 ## First Principles
 
@@ -60,9 +60,9 @@ Run [the read-only availability preflight](10-deployment-infrastructure.md#repro
 | `pnpm --filter @workspace/db run db:migrate` | Existing base script invokes `prisma migrate dev`; mutates a database and may propose a reset | Only for an explicitly owned disposable development target, with migration prompts reviewed |
 | `pnpm db:seed:local` | Existing base script writes developer sample data; its environment loader matters | Not a 25-clinic full-application workload generator |
 | Filtered API/app/internal/worker `dev` scripts | Existing scripts; processes can connect to their configured destinations | Inspect every destination and scheduler owner before starting; worker is a separate profile |
-| `pnpm capacity:plan` | Requires unpublished capacity patch; dry-run reads no credentials and makes no HTTP requests | Workload/model and harness availability only |
-| `pnpm test:capacity` | Requires that patch; starts local test stubs and exercises the harness | Harness behavior, not clinical API capacity |
-| Dedicated operational-metrics Jest configuration | Requires that patch; creates/removes owned projected fixture schemas on a guarded local database | SQL aggregate selection/arithmetic at stated synthetic row counts |
+| `pnpm capacity:plan` | Included in the published source continuation; dry-run reads no credentials and makes no HTTP requests | Workload/model and harness availability only |
+| `pnpm test:capacity` | Included in that continuation; starts local test stubs and exercises the harness | Harness behavior, not clinical API capacity |
+| Dedicated operational-metrics Jest configuration | Included in that continuation; creates/removes owned projected fixture schemas on a guarded local database | SQL aggregate selection/arithmetic at stated synthetic row counts |
 | `pnpm check:api-latency-budget --require-baseline` | Existing base script; reads a baseline and fails on missing/invalid required evidence | Baseline acceptance, not a fresh live measurement or load test |
 | General API E2E setup | Existing setup performs force-reset/schema push and table truncation | Destructive; do not run against an arbitrary URL or a shared development database |
 | Tenant-isolation integration suite | Existing suite can skip when its explicit admin fixture URL is absent; creates a cluster-wide `docita_app` role | Requires a separately owned disposable PostgreSQL cluster and actual non-skipped results |
@@ -175,13 +175,34 @@ The API's schedulers were disabled; the worker's were enabled because that flag 
 
 Both phases' API and worker processes exited zero after SIGTERM, no worker HTTP listener was present, temporary fixture settings were restored in both clones and the owned PostgreSQL cluster was stopped. Two database dumps were retained; no restore was tested. This establishes bounded local separate-worker execution and retrieval under an owner/RLS-disabled profile. The correction adds application tenant context, not a SQL RLS transaction or `SET LOCAL`, and does not establish non-owner cross-clinic enforcement, restart recovery, concurrent duplicate effects, 25-tenant capacity, provider delivery or production resource sufficiency.
 
+## Read the Source Validation Without Promoting Production
+
+The final local source pass expanded validation beyond the earlier focused runs. Keep these results attached to the published continuation rather than treating them as a replay of every previous experiment or a production outcome:
+
+| Check | Current local result | What the result establishes |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| API unit checks | 4,394 tests across 526 suites passed | Assertions exercised by those unit suites; mocks and selected fixtures retain their own boundaries |
+| Other workspace unit checks | 2,015 tests passed across 44 Turbo tasks | Executed workspace checks; task count is not a test-suite or business-workflow count |
+| Capacity and standards checks | 21 capacity tests and 213 standards tests passed; the full standards chain completed | Harness and source-contract checks, including the deliberate workflow-hold boundary |
+| Operational SQL checks | 15 tests across two suites passed, including 520,000 modeled request-observation rows | Guarded PostgreSQL fixture selection and arithmetic; supplied synthetic durations are not API latency measurements |
+| API end-to-end checks | 508 tests across 63 suites passed in four local shards using the CI layout, with no skipped cases | Those executed application test assertions under the declared isolated fixture/provider profile |
+| Workspace artifacts | Lint passed across 11 tasks, typechecks across 29 and builds across 35; Knip, the compiled worker resolution check and internal Cloudflare production build passed | Source/tool/artifact validation; a build does not deploy the artifact or prove its service resource envelope |
+
+The first end-to-end attempt was incomplete: the target-ownership guard rejected its database name, and that single-process run later ran out of memory. Those failures remain retained. The passing rerun used the corrected owned target name, four shards and a reviewed 4 GiB heap limit. Do not erase a failed prerequisite or read this test-runner memory setting as evidence that a Fly API or worker guest is sufficiently sized. The owned PostgreSQL experiment was stopped afterward and its declared ports were closed.
+
+The earlier full standards chain had stopped on the old daily-worker run. The final pass reconciles that check with the already documented zero-spend maintenance decision: the guard now recognizes only the named intentional hold while GitHub reports exactly `disabled_manually`. Re-enabling that workflow restores normal staleness evaluation. Stale active/inactivity states, unrelated stale schedules and deletion of the mapped workflow remain failing regression cases. Passing this source check does not mean scheduled queue drains occur.
+
+The real API latency baseline is still absent. The optional budget check can report a skip; required-baseline mode remains blocked. Neither the end-to-end test timings nor the modeled SQL durations satisfy that performance-release requirement. Production deployment, migrations and daily-worker execution remain disabled; publishing the source does not activate them.
+
+These checks do not establish a complete clinic day, full-schema non-owner cross-clinic HTTP/SQL enforcement under the intended production role, representative 25-tenant load, production latency or memory, provider delivery/settlement, interruption/replay safety or a verified database/object/key restore. Continue to use the separate local worker result for its narrower generated-file proof and the drills below for the unresolved boundaries.
+
 ## Work Through the Boundary, Then Change One Constraint
 
 These are an exercise sequence, not another daily calendar. Use an existing project, debugging, system-design or interview block; finish one bounded case before widening it. A future implementation task stays planned until its code and result exist.
 
 | Exercise | Prerequisite and action | Retained result and stop condition |
 | ------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 0: establish the checkout | Inspect revision, dirty files and command availability; identify base versus unpublished additions | Explain exactly why a fresh base clone can or cannot reproduce the selected command; stop on missing source |
+| 0: establish the checkout | Inspect revision, dirty files and command availability; identify the historical base versus published additions | Explain exactly why a fresh base clone can or cannot reproduce the selected command; stop on missing source |
 | 1: make local configuration coherent | Inspect loaders, target database and ports; choose basic single-process or explicit API/worker profile; follow source setup in an owned local environment | One target/role map and process/scheduler map; stop on an unknown remote/provider destination or a destructive shared target |
 | 2: enforce two identities | Prepare two synthetic clinics and ordinary staff identities; prove one allowed operation and cross-clinic denial at the API and actual database role | Expected own-clinic records and rejected foreign access; owner-role bypass or a skipped fixture test cannot pass this case |
 | 3: complete a clinic day | Perform the acceptance worksheet below with the enabled feature scope | Correct records, document access, financial/provider exceptions and day-close reconciliation; stop on wrong patient/tenant association |
@@ -299,7 +320,7 @@ Practice one complete operation, change a failure condition and retain the evide
 
 ## References
 
-Scoped source review on 28 October used a Docita working tree based on `f3fddffc0`; capacity script/SQL additions require the reviewed unpublished patch.
+The 28 October experiments used a Docita working tree based on `f3fddffc0`; their reviewed additions are included in published source continuation `6465632a7`. The source-validation record above distinguishes that availability from production activation and unexecuted workload experiments.
 
 - `package.json`, `packages/db/package.json` and `apps/{api,worker}/package.json` — actual script behavior and process selection.
 - `packages/db/prisma.config.ts`, `apps/api/src/app.module.ts`, `apps/worker/src/main.ts`, `scripts/db/db-check.mjs` and `scripts/kill-ports.js` — environment loading, startup side effects and local target assumptions.
@@ -307,4 +328,4 @@ Scoped source review on 28 October used a Docita working tree based on `f3fddffc
 - `apps/api/test/setup.ts`, `apps/api/test/e2e/smoke/critical-user-flow.e2e-spec.ts` and `packages/db/scripts/check-tenant-isolation.integration.test.mjs` — destructive/fixture setup, partial flow assertions and conditional integration tests.
 - `packages/db/prisma/schema.prisma`, `apps/api/src/shared/modules/queue/queue.interface.ts` and `postgres-queue.service.ts` — queue/document state, handler names and retry/claim evidence.
 - `scripts/checks/check-api-latency-budget.mjs`, `docs/operations/STABILITY_RUNBOOK.md` and `docs/operations/playbooks/pdf-queue-backlog.md` — baseline behavior and operating diagnostics.
-- `loadtest/README.md` and `apps/api/test/metrics/README.md` — unpublished harness/SQL fixture scope and target restrictions.
+- `loadtest/README.md` and `apps/api/test/metrics/README.md` — published harness/SQL fixture scope and target restrictions.

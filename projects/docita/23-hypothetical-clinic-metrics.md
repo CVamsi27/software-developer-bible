@@ -252,7 +252,7 @@ The same count cannot establish saved staff-hours or faster bookings. Those clai
 
 ## Run a Capacity Experiment With a Declared Boundary
 
-The reproducible runner is `loadtest/capacity.mjs` in the **reviewed, unpublished capacity patch**. That file and its harness tests are absent from canonical Docita base `f3fddffc0`. First follow [the source-availability preflight](10-deployment-infrastructure.md#reproduce-the-local-checks-before-a-release) on the approved source handoff; a fresh checkout of the base cannot run the following commands. Its model and dry-run prepare an experiment; only observations from the selected real isolated API can measure that API. A local stub verifies the runner and must never be relabeled as Docita throughput.
+The reproducible runner is `loadtest/capacity.mjs`, included in the published source continuation at `6465632a7`. Select that reviewed revision or a main revision containing the same reviewed changes, then follow [the source-availability preflight](10-deployment-infrastructure.md#reproduce-the-local-checks-before-a-release). The historical base `f3fddffc0` lacks that runner and its harness tests. Its model and dry-run prepare an experiment; only observations from the selected real isolated API can measure that API. Publishing or testing the harness does not execute the 25-tenant experiment. A local stub verifies the runner and must never be relabeled as Docita throughput.
 
 ```bash
 # Inside the Docita repository; no request is issued by this command.

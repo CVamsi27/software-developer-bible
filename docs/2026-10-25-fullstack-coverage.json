@@ -29410,7 +29410,7 @@
     },
     {
       "path": "80-lanes-abroad-full-stack/80.22-docita-tech-topic-mapping.md",
-      "sha256": "c8c331a8b7496a53c94ee7637f147ecfcaca267bc1251e655acd3a6908092fbb",
+      "sha256": "316999f809ca15538f78f0e773049d3fb321cde420f7d0ba78f63c8d0d271bd9",
       "genre": "role-guide",
       "status": "reviewed",
       "structure": {
@@ -29430,12 +29430,12 @@
       },
       "review": {
         "path": "80-lanes-abroad-full-stack/80.22-docita-tech-topic-mapping.md",
-        "sha256": "c8c331a8b7496a53c94ee7637f147ecfcaca267bc1251e655acd3a6908092fbb",
+        "sha256": "316999f809ca15538f78f0e773049d3fb321cde420f7d0ba78f63c8d0d271bd9",
         "status": "reviewed",
-        "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewer": "root + full-content evidence reviewers",
+        "reviewDate": "2026-10-29",
         "fullContentRead": true,
-        "notes": "Full-content review: All15problem-mechanism-evidence mappings andanti-shortcuts checked: consistencytokenversus5secondwindow, indexmeasurement/nullsemantics, rowlocknotlease, retriescanexhaust, cachewrite-throughversusinvalidation, roompayloadaccess.",
+        "notes": "Full-content review: preserved topic mapping and added one canonical separate-worker clinic-context entry. No duplicate mechanism, private reference or unsupported performance/adoption claim. Existing revision path and study order preserved.",
         "findings": []
       }
     },
@@ -32461,7 +32461,7 @@
     },
     {
       "path": "projects/docita/03-async-processing.md",
-      "sha256": "01d5133d43a593f9dd6c3e05fcbcf7b1c3d6dd96269cab617b54dc790020b02a",
+      "sha256": "46d9bde9192c662937df7f057cf4b0a77484cc67a10d67631455b8f8e42b9ee0",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32489,12 +32489,12 @@
       },
       "review": {
         "path": "projects/docita/03-async-processing.md",
-        "sha256": "01d5133d43a593f9dd6c3e05fcbcf7b1c3d6dd96269cab617b54dc790020b02a",
+        "sha256": "46d9bde9192c662937df7f057cf4b0a77484cc67a10d67631455b8f8e42b9ee0",
         "status": "reviewed",
-        "reviewer": "root + independent evidence reviewer",
-        "reviewDate": "2026-10-28",
+        "reviewer": "root + full-content evidence reviewers",
+        "reviewDate": "2026-10-29",
         "fullContentRead": true,
-        "notes": "Full-content root and independent review. Preserved prior queue/outbox and PDF boundaries; traced missing process-local tenant context into scoped, awaited worker read/render/upload and restoration under absent or inherited foreign/bypassed scope. Shared processor source and regression cases reviewed. App ALS is explicitly separate from transaction-local SQL RLS; concrete runtime evidence remains canonical in chapter 27.",
+        "notes": "Full-content review: published source6465632a7 now includes scoped worker and seed corrections; historical queue/outbox inspections and their limits preserved. Application tenant context remains distinct from SQL RLS. Source availability does not establish runtime activation or production delivery.",
         "findings": []
       }
     },
@@ -32719,7 +32719,7 @@
     },
     {
       "path": "projects/docita/10-deployment-infrastructure.md",
-      "sha256": "9b2cb235851ca2692513edfad1473d9051ef5e52b3f7dc7185641f90b54bc558",
+      "sha256": "ba4ced5d32cae5785712332da9a6848437dcd393f633d5793aab92de2a073cb5",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32746,19 +32746,19 @@
           "See Also",
           "References"
         ],
-        "code_fences": 9,
+        "code_fences": 10,
         "revision_questions": 0,
         "has_summary": true,
         "has_first_principles": true
       },
       "review": {
         "path": "projects/docita/10-deployment-infrastructure.md",
-        "sha256": "9b2cb235851ca2692513edfad1473d9051ef5e52b3f7dc7185641f90b54bc558",
+        "sha256": "ba4ced5d32cae5785712332da9a6848437dcd393f633d5793aab92de2a073cb5",
         "status": "reviewed",
-        "reviewer": "root",
-        "reviewDate": "2026-10-28",
+        "reviewer": "root + full-content evidence reviewers",
+        "reviewDate": "2026-10-29",
         "fullContentRead": true,
-        "notes": "Full-content read by evidence reviewer. Exact availability preflight exercised read-only on patch(success) and unpatched source(reject). Base/unpublished differences and env/queue/target restrictions source-checked; workbook link verified.",
+        "notes": "Full-content review: added verified compiled API/worker same-CWD recipe and exact flags, environment precedence, broader scheduler graph, wildcard-bind/isolation and local-disk/R2 boundaries. Recipe matches source guide and bash syntax passed. Published source availability and intentional maintenance guard reconciliation are distinct from required performance baseline and production restart.",
         "findings": []
       }
     },
@@ -32871,7 +32871,7 @@
     },
     {
       "path": "projects/docita/14-analytics-and-dashboards.md",
-      "sha256": "dd523b70273a71892b35b8ff269597da64e3e096746b23b7e431ce5b827b71c9",
+      "sha256": "6ee316f78b75f67b1272f15d7e9882b01a633ae2b9e1c25976e1ac9bc89f4e9b",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32899,12 +32899,12 @@
       },
       "review": {
         "path": "projects/docita/14-analytics-and-dashboards.md",
-        "sha256": "dd523b70273a71892b35b8ff269597da64e3e096746b23b7e431ce5b827b71c9",
+        "sha256": "6ee316f78b75f67b1272f15d7e9882b01a633ae2b9e1c25976e1ac9bc89f4e9b",
         "status": "reviewed",
-        "reviewer": "root + independent evidence reviewer",
-        "reviewDate": "2026-10-28",
+        "reviewer": "root + full-content evidence reviewers",
+        "reviewDate": "2026-10-29",
         "fullContentRead": true,
-        "notes": "Full-content continuation review: actual SQL all-invalid nonempty regression preserves 3 outcomes/2 errors and null percentiles; exact 6 aggregate plus 9 target-guard cases and separate 4 service passes. Historical 14 replaced by 15, synthetic inputs distinct from production performance; existing financial/calendar findings retain dated scope.",
+        "notes": "Full-content review: preserved metric population, invalid durations, unknown values, clinic-level deduplication and timezone reasoning; refreshed only published source provenance for the reviewed operational dashboard continuation. No customer or production measurement inferred.",
         "findings": []
       }
     },
@@ -33196,7 +33196,7 @@
     },
     {
       "path": "projects/docita/23-hypothetical-clinic-metrics.md",
-      "sha256": "a5949f8ae39e527773df9f807cc8f42000e54187560e4090e15e304f71b2838e",
+      "sha256": "7fda013384c6ab6c91b8b01e9227e6c8a1e1215de47e1325d673647c87c04b7a",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -33225,12 +33225,12 @@
       },
       "review": {
         "path": "projects/docita/23-hypothetical-clinic-metrics.md",
-        "sha256": "a5949f8ae39e527773df9f807cc8f42000e54187560e4090e15e304f71b2838e",
+        "sha256": "7fda013384c6ab6c91b8b01e9227e6c8a1e1215de47e1325d673647c87c04b7a",
         "status": "reviewed",
-        "reviewer": "root",
-        "reviewDate": "2026-10-28",
+        "reviewer": "root + full-content evidence reviewers",
+        "reviewDate": "2026-10-29",
         "fullContentRead": true,
-        "notes": "Full-content read by evidence reviewer. Full application25clinic fixture and25authenticatedidentities remain specifications, not ordinary seed or projected SQL. Harness command provenance and workbook references verified.",
+        "notes": "Full-content independent review: published capacity reader availability replaces local-only handoff; historicalf3base and model/fixture/real-API distinctions retained. Workload and latency remain modeled/proposed unless separately measured; no adoption or25tenantcapacity claim.",
         "findings": []
       }
     },
@@ -33351,7 +33351,7 @@
     },
     {
       "path": "projects/docita/27-operating-evidence-workbook.md",
-      "sha256": "a983d8a6c3f4162372ee3947d37a00ef08ca741cb00d9611ec71c656b411320f",
+      "sha256": "44e4685970d22df5da4f431b7e64ce73871ed75d7b8fd7c355969830cbb347a0",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -33363,6 +33363,7 @@
           "What the Local Continuation Actually Executed",
           "Follow a Created Record Beyond Its HTTP Status",
           "Make the Separate Worker Own the Effect",
+          "Read the Source Validation Without Promoting Production",
           "Work Through the Boundary, Then Change One Constraint",
           "Accept One Complete Synthetic Clinic Day",
           "Diagnose the Layer That Can Explain the Symptom",
@@ -33379,18 +33380,18 @@
       },
       "review": {
         "path": "projects/docita/27-operating-evidence-workbook.md",
-        "sha256": "a983d8a6c3f4162372ee3947d37a00ef08ca741cb00d9611ec71c656b411320f",
+        "sha256": "44e4685970d22df5da4f431b7e64ce73871ed75d7b8fd7c355969830cbb347a0",
         "status": "reviewed",
-        "reviewer": "root + independent evidence reviewer",
-        "reviewDate": "2026-10-28",
+        "reviewer": "root + full-content evidence reviewers",
+        "reviewDate": "2026-10-29",
         "fullContentRead": true,
-        "notes": "Full-content root and independent review against sanitized standalone worker red/green/cleanup receipts. Preserved historical phase limits; red jobs exhausted three retries with missing tenant context, green jobs completed on execution attempt one and produced byte-matching stored/downloaded PDFs. Reviewed attemptsMade semantics, shared CWD, wider scheduler graph, fixture restoration, clean shutdown and bounded census. No SQL RLS, provider, capacity or restore conclusion inferred.",
+        "notes": "Full-content review against current source and sanitized final checks: published646source and49file implementation;4394API/2015other units,21capacity/213standards,15SQLfixture,508E2E/63suites in four local CI-layout shards; lint/types/build/Knip/runtime/internalCF scope. Retained original DB-name guard failure and later OOM in same incomplete invocation, corrected target/4GiB/shards and stoppedownedPG. Intentional exact-state hold exemption is not active drain; optional absent baseline skip is not required performance-release evidence. No provider, production capacity/resource, full tenant-policy or restore conclusion inferred.",
         "findings": []
       }
     },
     {
       "path": "projects/docita/INDEX.md",
-      "sha256": "386b523927f4de5281c2e1d6b90666594ecc2d41b6b621dca75dae7ce08a8750",
+      "sha256": "453cd7e124f76fba675d64cd9660a37013799c6d1b1bc01be78f7e7704298343",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -33406,18 +33407,18 @@
       },
       "review": {
         "path": "projects/docita/INDEX.md",
-        "sha256": "386b523927f4de5281c2e1d6b90666594ecc2d41b6b621dca75dae7ce08a8750",
+        "sha256": "453cd7e124f76fba675d64cd9660a37013799c6d1b1bc01be78f7e7704298343",
         "status": "reviewed",
-        "reviewer": "root",
-        "reviewDate": "2026-10-28",
+        "reviewer": "root + full-content evidence reviewers",
+        "reviewDate": "2026-10-29",
         "fullContentRead": true,
-        "notes": "Full-content reading-flow review; stage8workbook follows lifecycle/cost and precedes revision, distinguishes source availability and unexecuted full-app fixtures.",
+        "notes": "Full-content review: stage8 now identifies published capacity additions and required full-application fixtures; canonical setup/evidence/growth/cost/revision flow preserved without extra schedule or duplicate chapters.",
         "findings": []
       }
     },
     {
       "path": "projects/docita/REVISION.md",
-      "sha256": "c96093dadc96390d05dc70e0bcc072827150209ccc425f384f6927056710fb31",
+      "sha256": "5a0c7544b106bb0d7c1fa5555ec3f8a4816890fefc6e25562094435e2e734478",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -33474,12 +33475,12 @@
       },
       "review": {
         "path": "projects/docita/REVISION.md",
-        "sha256": "c96093dadc96390d05dc70e0bcc072827150209ccc425f384f6927056710fb31",
+        "sha256": "5a0c7544b106bb0d7c1fa5555ec3f8a4816890fefc6e25562094435e2e734478",
         "status": "reviewed",
-        "reviewer": "root + independent evidence reviewer",
-        "reviewDate": "2026-10-28",
+        "reviewer": "root + full-content evidence reviewers",
+        "reviewDate": "2026-10-29",
         "fullContentRead": true,
-        "notes": "Read all 305 authored Q/A pairs. Independent reviewer proved original 300 preserved byte-for-byte and in order. Five new source-linked questions distinguish worker ALS from request context and SQL RLS, scope restoration, successful history versus failed-attempt counter, effect proof, shared files and scheduler limits. Reviewed against actual processor and sanitized runtime receipts; no candidate mastery inferred.",
+        "notes": "Full-content independent review: all305questiontexts preserved byte-for-byte,304answers unchanged; only source-availability answer275 updated for published646source or same reviewed changes on main. Root clarified squash-compatible wording. No new readiness or mastery assertion; historical Q/A evidence scope retained.",
         "findings": []
       }
     },

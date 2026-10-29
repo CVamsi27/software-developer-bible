@@ -1259,7 +1259,7 @@ Sources: [Operating workbook](27-operating-evidence-workbook.md), [availability 
 
 **Q:** What does a passing command-availability preflight establish?
 
-**A:** Required files and script entries exist in that checkout. It does not verify their revision, dependencies, target isolation or behavior. The clean base lacks capacity additions, so identify the reviewed unpublished patch before offering its commands as a fresh-clone recipe.
+**A:** Required files and script entries exist in that checkout. It does not verify their revision, dependencies, target isolation or behavior. The historical clean base lacks the capacity additions. Select the published source continuation at `6465632a7` or a main revision containing the same reviewed changes, then verify the exact revision, prerequisites and target before offering its commands as a reproducible recipe.
 
 **Q:** Why can migrations, seed and the running API target different databases despite one copied example file?
 

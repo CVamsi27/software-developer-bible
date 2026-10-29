@@ -19,11 +19,6 @@ That last one is not a nitpick: the repo's own restructure spec
 "badge counts == actual counts" as a completion criterion. It was never
 automated, so it was never true for long.
 
-The homepage hero button (`index.html`, "Search N Chapters") was one more
-surface of the same kind — hard-coded since it shipped, with no writer to
-restamp it when the corpus grew. It is owned here now (Sept 2026), on the
-same chapter count README's search link uses.
-
 Counting rule (one rule, applied per scope)
 -------------------------------------------
   * repo total   — every source `.md` in the tree, minus generated output and
@@ -283,9 +278,6 @@ def scale_edits(live):
         # Format section of contributing.md.
         # Bare repo-file claims that carry no line count.
         ('README.md', r'search all (\d+) chapters', [live['content']]),
-        # The homepage hero button advertises the same search index README's
-        # link does; both read the one chapter count, so they cannot disagree.
-        ('index.html', r'Search (\d+) Chapters', [live['content']]),
         ('contributing.md', r'\((\d+) files use this today\)',
          [live['raw_tag']]),
         # Doc self-description: the gates page states the walker scope size.
@@ -571,8 +563,7 @@ def main():
     ap.add_argument('--quiet', action='store_true')
     args = ap.parse_args()
 
-    # Every INDEX/README plus the navigation surface that quotes repo totals —
-    # the docs, and the homepage hero button's search-count claim.
+    # Every INDEX/README plus the documentation that quotes repo totals.
     nav = []
     for p in walk_md(ROOT, skip_personal=False):
         rel = os.path.relpath(p, ROOT).replace(os.sep, '/')
@@ -580,7 +571,7 @@ def main():
             continue  # historical design docs quote the numbers of their day
         if os.path.basename(rel) in ('INDEX.md', 'README.md'):
             nav.append(rel)
-    nav += ['index.html', 'contributing.md', 'docs/verification-gates.md',
+    nav += ['contributing.md', 'docs/verification-gates.md',
             'lanes/INDEX.md', 'ROADMAP.md', 'docs/api-contract.md',
             'docs/2026-09-19-corpus-health-report.md']
     texts = load(sorted(set(nav)))

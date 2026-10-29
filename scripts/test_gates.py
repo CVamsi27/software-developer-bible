@@ -895,23 +895,22 @@ CASES = [
         "clean_in_repo": True,
     },
     {
-        # The homepage hero button's "Search N Chapters" claim had no writer
-        # until the 2026-09-27 pass; this pins that check_counts owns it now:
+        # README's search-link count stays owned by check_counts:
         # a drifted number fires, the live number passes. The stack dir is the
         # scaffold compute_live reads (as in the Files-badge case above), and
         # the two root chapters make the live count 2 rather than 0 — the clean
         # side proves a *non-empty* claim passes.
-        "name": "gate 1 counts fires on a drifted homepage search claim",
+        "name": "gate 1 counts fires on a drifted README search claim",
         "gate": "check_counts.py",
         "args": [],
         "dirs": ["20-backend"],
         "plant": {
-            "index.html": "<span>Search 5 Chapters</span>\n",
+            "README.md": "[search all 5 chapters](search.html)\n",
             "p1.md": "# A\n",
             "p2.md": "# B\n",
         },
         "clean": {
-            "index.html": "<span>Search 2 Chapters</span>\n",
+            "README.md": "[search all 2 chapters](search.html)\n",
             "p1.md": "# A\n",
             "p2.md": "# B\n",
         },

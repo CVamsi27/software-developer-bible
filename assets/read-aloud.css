@@ -1,4 +1,4 @@
-/* A compact listening toolbar aligned with the chapter title. */
+/* A floating narration dock that stays reachable while the chapter scrolls. */
 .chapter-title-row {
   display: flex;
   align-items: flex-start;
@@ -13,47 +13,126 @@
   margin-block: 1rem 0;
 }
 .read-aloud {
+  position: fixed;
+  z-index: 9998;
+  left: 50%;
+  bottom: max(16px, env(safe-area-inset-bottom));
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
-  flex: 0 0 auto;
-  margin-block-start: 1rem;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  box-sizing: border-box;
+  width: max-content;
+  max-width: calc(100vw - 32px);
+  margin: 0;
+  padding: 8px 10px;
+  border: 1px solid var(--theme-border, #dadce0);
+  border-radius: 14px;
+  background: var(--card-bg, #ffffff);
+  background: color-mix(in srgb, var(--card-bg, #ffffff) 94%, transparent);
   color: var(--theme-text, #1f1f1f);
-  font: 14px/1.4 var(--font-sans, sans-serif);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font: 13px/1.35 var(--font-sans, sans-serif);
+}
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .read-aloud { background: var(--card-bg, #ffffff); }
 }
 .read-aloud-controls {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 6px;
+  min-width: 0;
 }
 .read-aloud button,
 .read-aloud select {
   box-sizing: border-box;
-  min-height: 36px;
+  min-height: 38px;
   border: 1px solid var(--theme-border, #dadce0);
-  border-radius: 7px;
+  border-radius: 8px;
   background: var(--card-bg, #ffffff);
   color: var(--theme-text, #1f1f1f);
   color-scheme: inherit;
   font: inherit;
 }
 .read-aloud button {
-  padding: 6px 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 12px;
   cursor: pointer;
   font-weight: 600;
+  white-space: nowrap;
 }
 .read-aloud [data-read],
-.read-aloud [data-pause] {
+.read-aloud [data-pause],
+.read-aloud [data-next] {
   border-color: var(--theme-link, #1a73e8);
-  background: var(--theme-action-bg, #1a73e8);
+  background: var(--theme-action-bg, var(--theme-link, #1a73e8));
   color: var(--theme-action-text, #ffffff) !important;
 }
-.read-aloud select {
-  max-width: 76px;
-  padding: 5px 6px;
+.read-aloud [data-read]::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-block: 6px solid transparent;
+  border-inline-start: 9px solid currentColor;
 }
-.read-aloud button:hover:not(:disabled) { filter: brightness(0.92); }
-.read-aloud button:disabled { opacity: 0.55; cursor: default; }
-.read-aloud [hidden] { display: none; }
+.read-aloud [data-pause]::before {
+  content: "";
+  width: 9px;
+  height: 12px;
+  border-inline: 3px solid currentColor;
+  box-sizing: border-box;
+}
+.read-aloud [data-next]::after {
+  content: "→";
+  font-weight: 700;
+}
+.read-aloud [data-stop]::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  background: currentColor;
+}
+.read-aloud select {
+  max-width: 190px;
+  padding: 5px 7px;
+  cursor: pointer;
+}
+.read-aloud [data-speed] { max-width: 82px; }
+.read-aloud-field {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  color: var(--theme-text-muted, #5f6368);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.read-aloud-field select { min-width: 0; }
+.read-aloud-progress {
+  flex: none;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--nav-pill-bg, #f1f3f4);
+  color: var(--theme-text-muted, #5f6368);
+  font-size: 12px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.read-aloud button:hover:not(:disabled),
+.read-aloud select:hover:not(:disabled) { filter: brightness(0.94); }
+.read-aloud button:disabled,
+.read-aloud select:disabled { opacity: 0.55; cursor: default; }
+.read-aloud [hidden] { display: none !important; }
 .read-aloud :is(button, select):focus-visible {
   outline: 3px solid var(--theme-link, #1a73e8);
   outline-offset: 3px;
@@ -69,23 +148,52 @@
   white-space: nowrap !important;
   border: 0 !important;
 }
+/* Keep the padding code shortcut away from the fixed dock and back-to-top. */
+body.has-read-aloud { padding-block-end: calc(var(--read-aloud-height, 72px) + 34px); }
+body.has-read-aloud .back-to-top {
+  bottom: calc(max(16px, env(safe-area-inset-bottom)) + var(--read-aloud-height, 72px) + 12px);
+}
+/* The active paragraph gets a gutter stripe behind the text, never over the
+   first glyph, plus inline breathing room that leaves the text column in place. */
 [data-read-aloud-active="true"] {
   border-radius: 4px;
-  background: var(--theme-border-subtle, #eef0f2);
-  background: color-mix(in srgb, var(--theme-link, #1a73e8) 10%, var(--theme-bg, #ffffff));
-  box-shadow: inset 3px 0 var(--theme-link, #1a73e8);
-  scroll-margin-block: 120px;
+  background-color: var(--theme-border-subtle, #eef0f2);
+  background-color: color-mix(in srgb, var(--theme-link, #1a73e8) 10%, var(--theme-bg, #ffffff));
+  background-image: linear-gradient(to right, var(--theme-link, #1a73e8) 0 3px, transparent 3px);
+  background-repeat: no-repeat;
+  background-size: 3px 100%;
+  background-position: left top;
+  box-shadow: none;
+  scroll-margin-block: 140px;
+}
+html body .post-content :is(p, h1, h2, h3, h4, h5, h6, blockquote)[data-read-aloud-active="true"] {
+  padding-inline-start: 14px;
+  margin-inline-start: -14px;
 }
 @media (max-width: 640px) {
   .chapter-title-row { gap: 8px 12px; }
   .post-content > .chapter-title-row > h1 { flex-basis: 100%; }
-  .read-aloud { margin-block-start: 0; }
+  .read-aloud {
+    left: 8px;
+    right: 8px;
+    bottom: max(8px, env(safe-area-inset-bottom));
+    transform: none;
+    width: auto;
+    max-width: none;
+    padding: 8px;
+  }
+  .read-aloud-controls { width: 100%; gap: 6px; }
+  .read-aloud button { flex: 0 0 auto; }
+  .read-aloud-field { flex: 1 1 132px; }
+  .read-aloud-field select { flex: 1 1 auto; max-width: none; width: 100%; }
+  .read-aloud [data-speed] { max-width: none; }
+  .read-aloud button,
+  .read-aloud select { min-height: 44px; }
 }
 @media (prefers-reduced-motion: reduce) {
   [data-read-aloud-active="true"] { scroll-behavior: auto; }
 }
-@media print { .read-aloud { display: none; } }
-/* Listening stays secondary to reading. */
-.read-aloud { margin-block-start: 0; }
-.read-aloud :is(button, select) { min-height: 44px; }
-.read-aloud [data-read], .read-aloud [data-pause] { background: var(--card-bg); border-color: var(--theme-border); color: var(--theme-text) !important; }
+@media print {
+  .read-aloud { display: none; }
+  body.has-read-aloud { padding-block-end: 0; }
+}

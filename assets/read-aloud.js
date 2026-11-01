@@ -1,6 +1,7 @@
 /* Chapter narration using the browser's speech service. */
 (function (root) {
   'use strict';
+  var VOICE_KEY = 'sdb-read-aloud-voice';
   function splitText(text) {
     var rest = text.replace(/\s+/g, ' ').trim();
     var parts = [];
@@ -14,22 +15,26 @@
     return parts;
   }
   function createReader(synth, Utterance, update, onChunkStart) {
-    var chunks = [], index = 0, generation = 0, state = 'idle', active = false, rate = 1;
+    var chunks = [], index = 0, generation = 0, state = 'idle', active = false, rate = 1, voice = null, doneState = 'idle';
     onChunkStart = onChunkStart || function () {};
     function emit(next) { state = next; update(next); }
-    function stop() {
+    function reset() {
       generation += 1; active = false; chunks = []; index = 0;
-      synth.cancel(); emit('idle');
+      synth.cancel();
     }
+    function stop() { reset(); emit('idle'); }
     function speakNext() {
       if (state === 'paused' || active) return;
-      if (index >= chunks.length) { emit('idle'); return; }
+      if (index >= chunks.length) { active = false; emit(doneState); return; }
       var token = generation;
       var chunk = chunks[index];
       var text = typeof chunk === 'string' ? chunk : chunk.text;
       var utterance = new Utterance(text);
       utterance.rate = rate;
-      utterance.lang = 'en-US';
+      // A selected voice carries its own language. Fall back to English for
+      // the default system voice so the pronunciation stays predictable.
+      utterance.lang = voice && voice.lang ? voice.lang : 'en-US';
+      if (voice) utterance.voice = voice;
       active = true;
       utterance.onstart = function () {
         if (token === generation) {
@@ -49,8 +54,10 @@
       try { synth.speak(utterance); } catch (_) { utterance.onerror(); }
     }
     var reader = {
-      start: function (parts) {
-        stop(); chunks = parts;
+      start: function (parts, options) {
+        reset();
+        chunks = parts || [];
+        doneState = options && options.doneState || 'idle';
         if (!chunks.length) { emit('empty'); return; }
         synth.resume(); emit('reading'); speakNext();
       },
@@ -59,9 +66,33 @@
         if (state === 'reading') { emit('paused'); synth.pause(); }
         else if (state === 'paused') { emit('reading'); synth.resume(); speakNext(); }
       },
-      setRate: function (value) { rate = Math.max(0.5, Math.min(2, Number(value) || 1)); }
+      setRate: function (value) { rate = Math.max(0.5, Math.min(2, Number(value) || 1)); },
+      setVoice: function (value) { voice = value || null; }
     };
     return reader;
+  }
+  // A chapter is read one source block at a time so the listener can pause
+  // between paragraphs instead of being carried through the whole page.
+  function groupChunks(chunks) {
+    var groups = [];
+    (chunks || []).forEach(function (chunk) {
+      var element = typeof chunk === 'string' ? null : chunk.element;
+      var last = groups[groups.length - 1];
+      if (!last || last.element !== element) groups.push({element: element, chunks: [chunk]});
+      else last.chunks.push(chunk);
+    });
+    return groups;
+  }
+  // Pick the first readable block at or below the reading line. That makes a
+  // scrolled chapter start where the reader is looking instead of at its title.
+  function pickStartGroup(groups, topLine) {
+    if (!groups || !groups.length) return -1;
+    for (var index = 0; index < groups.length; index += 1) {
+      var element = groups[index] && groups[index].element;
+      if (!element || typeof element.getBoundingClientRect !== 'function') continue;
+      if (element.getBoundingClientRect().bottom > topLine) return index;
+    }
+    return groups.length - 1;
   }
   function extractChapter(content) {
     var excluded = 'pre, script, style, nav, button, img, svg, [hidden], [aria-hidden="true"], .read-aloud, .chapter-outline, .heading-anchor, .chapter-nav-footer,.roadmap-return,.reader-breadcrumb,.reader-meta,.reading-width,.revision-controls,.code-line-numbers,.copy-feedback,details:not([open])';
@@ -142,39 +173,46 @@
   }
   function mount() {
     var content = document.querySelector('.post-content');
-    if (!content || content.querySelector('.read-aloud')) return;
+    if (!content || document.querySelector('.read-aloud')) return;
     var state = root.StudyState;
     var published = state && state.publishedPath(root.location.pathname, root.StudyPublishedPaths || []);
     if (!published || (!state.isLearningPath(published) && !/\/REVISION\.html$/i.test(published))) return;
     var bar = document.createElement('section');
     bar.className = 'read-aloud'; bar.setAttribute('aria-label', 'Chapter read aloud');
-    bar.innerHTML = '<span class="read-aloud-status" role="status" aria-live="polite">Read along at your own pace</span><div class="read-aloud-controls"><button type="button" data-read aria-label="Read aloud">Listen</button><button type="button" data-pause aria-label="Pause" hidden>Pause</button><button type="button" data-stop aria-label="Stop" hidden>Stop</button><select aria-label="Reading speed"><option value="0.5">0.5×</option><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></div>';
-    var title = content.querySelector('h1');
-    if (title && title.parentElement === content) {
-      var row = document.createElement('div');
-      row.className = 'chapter-title-row';
-      title.before(row);
-      row.append(title, bar);
-    } else if (title) title.after(bar);
-    else content.prepend(bar);
-    var play = bar.querySelector('[data-read]'), pause = bar.querySelector('[data-pause]'), stop = bar.querySelector('[data-stop]'), status = bar.querySelector('[role="status"]');
-    if (!root.speechSynthesis || !root.SpeechSynthesisUtterance) {
-      play.disabled = true; bar.querySelector('select').disabled = true;
-      status.textContent = 'Read aloud is unavailable in this browser.'; return;
+    bar.innerHTML = '<span class="read-aloud-progress" aria-hidden="true" hidden></span><span class="read-aloud-status" role="status" aria-live="polite">Read along at your own pace</span><div class="read-aloud-controls"><button type="button" data-read aria-label="Read aloud" title="Starts from the paragraph in view">Listen</button><button type="button" data-pause aria-label="Pause" hidden>Pause</button><button type="button" data-next aria-label="Read the next paragraph" hidden>Next</button><button type="button" data-stop aria-label="Stop" hidden>Stop</button><label class="read-aloud-field">Voice <select data-voice aria-label="Reading voice"><option value="">Default voice</option></select></label><label class="read-aloud-field">Speed <select data-speed aria-label="Reading speed"><option value="0.5">0.5×</option><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label></div>';
+    document.body.append(bar);
+    document.body.classList.add('has-read-aloud');
+    var play = bar.querySelector('[data-read]'), pause = bar.querySelector('[data-pause]'), nextButton = bar.querySelector('[data-next]'), stop = bar.querySelector('[data-stop]'), status = bar.querySelector('[role="status"]'), progress = bar.querySelector('.read-aloud-progress'), voiceSelect = bar.querySelector('[data-voice]'), speedSelect = bar.querySelector('[data-speed]');
+    function syncDock() {
+      if (!bar.offsetHeight) return;
+      document.documentElement.style.setProperty('--read-aloud-height', bar.offsetHeight + 'px');
     }
-    var activeElement = null;
+    if (!root.speechSynthesis || !root.SpeechSynthesisUtterance) {
+      play.disabled = true; voiceSelect.disabled = true; speedSelect.disabled = true;
+      bar.dataset.state = 'unsupported';
+      status.textContent = 'Read aloud is unavailable in this browser.';
+      syncDock(); return;
+    }
+    var groups = groupChunks(extractChapter(content));
+    var currentGroup = -1, activeBlock = null;
+    var savedVoice = '';
+    try { savedVoice = root.localStorage.getItem(VOICE_KEY) || ''; } catch (_) {}
     function clearActive() {
-      if (activeElement) activeElement.removeAttribute('data-read-aloud-active');
-      activeElement = null;
+      if (activeBlock) activeBlock.removeAttribute('data-read-aloud-active');
+      activeBlock = null;
+    }
+    function markActive(element) {
+      if (!element || !content.contains(element)) { clearActive(); return; }
+      if (activeBlock !== element) clearActive();
+      activeBlock = element;
+      element.setAttribute('data-read-aloud-active', 'true');
+      document.dispatchEvent(new root.CustomEvent('study:narration', {detail: {element: element}}));
     }
     function follow(element, _index, range) {
       if (!element || !content.contains(element)) { clearActive(); return; }
-      if (activeElement !== element) clearActive();
-      activeElement = element;
-      element.setAttribute('data-read-aloud-active', 'true');
-      document.dispatchEvent(new root.CustomEvent('study:narration', {detail: {element: element}}));
+      markActive(element);
       var topMargin = 120;
-      var bottomMargin = Math.min(120, root.innerHeight * 0.15);
+      var bottomMargin = Math.min(root.innerHeight * 0.28, Math.max(112, bar.offsetHeight + 28));
       var reduced = root.matchMedia && root.matchMedia('(prefers-reduced-motion: reduce)').matches;
       var behavior = reduced ? 'auto' : 'smooth';
       var rects = range && range.getClientRects ? Array.from(range.getClientRects()).filter(function (rect) { return rect.height > 0; }) : [];
@@ -195,28 +233,111 @@
         }
       }
     }
-    var reader = createReader(root.speechSynthesis, root.SpeechSynthesisUtterance, function (state) {
-      var busy = state === 'reading' || state === 'paused';
-      if (!busy) clearActive();
-      var moveFocus = busy ? document.activeElement === play : document.activeElement === pause || document.activeElement === stop;
-      bar.dataset.state = state;
-      play.hidden = busy; pause.hidden = !busy; stop.hidden = !busy;
-      pause.disabled = !busy; stop.disabled = !busy;
-      if (moveFocus) (busy ? pause : play).focus();
-      pause.textContent = state === 'paused' ? 'Resume' : 'Pause';
-      pause.setAttribute('aria-label', state === 'paused' ? 'Resume' : 'Pause');
-      status.textContent = ({idle: 'Read along at your own pace', reading: 'Reading chapter', paused: 'Paused', error: 'Speech could not play. Try again or choose another browser.', empty: 'No readable chapter text.'})[state];
+    function stateMessage(next) {
+      var place = currentGroup >= 0 ? 'paragraph ' + (currentGroup + 1) + ' of ' + groups.length : 'chapter';
+      if (next === 'reading') return 'Reading ' + place + '.';
+      if (next === 'paused') return 'Paused at ' + place + '.';
+      if (next === 'ready') return 'Finished ' + place + '. Choose Next to continue.';
+      if (next === 'complete') return 'Chapter complete. Choose Listen again to restart.';
+      if (next === 'error') return 'Speech could not play. Try again or choose another browser.';
+      if (next === 'empty') return 'No readable chapter text.';
+      return 'Read along at your own pace';
+    }
+    var lastState = 'idle';
+    function sync(nextState) {
+      lastState = nextState;
+      var busy = nextState === 'reading' || nextState === 'paused';
+      var ready = nextState === 'ready';
+      var finished = nextState === 'complete';
+      var active = busy || ready || finished;
+      var focusWasAction = [play, pause, nextButton, stop].indexOf(document.activeElement) !== -1;
+      if (!active) clearActive();
+      bar.dataset.state = nextState;
+      play.hidden = busy || ready;
+      pause.hidden = !busy;
+      nextButton.hidden = !ready;
+      stop.hidden = !(busy || ready || finished);
+      play.textContent = finished ? 'Listen again' : 'Listen';
+      play.setAttribute('aria-label', finished ? 'Listen again' : 'Read aloud');
+      pause.textContent = nextState === 'paused' ? 'Resume' : 'Pause';
+      pause.setAttribute('aria-label', nextState === 'paused' ? 'Resume' : 'Pause');
+      var hasPosition = active && currentGroup >= 0 && currentGroup < groups.length;
+      progress.hidden = !hasPosition;
+      if (hasPosition) progress.textContent = (currentGroup + 1) + ' / ' + groups.length;
+      status.textContent = stateMessage(nextState);
+      if (focusWasAction) (busy ? pause : ready ? nextButton : play).focus();
+      syncDock();
+    }
+    var reader = createReader(root.speechSynthesis, root.SpeechSynthesisUtterance, function (next) {
+      sync(next);
     }, follow);
-    play.addEventListener('click', function () { reader.start(extractChapter(content)); });
+    function voiceByURI(uri) {
+      for (var index = 0; index < availableVoices.length; index += 1) {
+        if (availableVoices[index].voiceURI === uri) return availableVoices[index];
+      }
+      return null;
+    }
+    var availableVoices = [];
+    function refreshVoices() {
+      var list = [];
+      try { list = root.speechSynthesis.getVoices ? Array.prototype.slice.call(root.speechSynthesis.getVoices()) : []; } catch (_) { list = []; }
+      availableVoices = list.filter(function (voice) { return voice && voice.voiceURI; }).sort(function (a, b) {
+        var aEnglish = /^en(?:-|_|$)/i.test(a.lang || ''), bEnglish = /^en(?:-|_|$)/i.test(b.lang || '');
+        if (aEnglish !== bEnglish) return aEnglish ? -1 : 1;
+        return (a.name || '').localeCompare(b.name || '');
+      });
+      var selected = voiceSelect.value || savedVoice;
+      voiceSelect.textContent = '';
+      var fallback = document.createElement('option');
+      fallback.value = ''; fallback.textContent = 'Default voice'; voiceSelect.append(fallback);
+      availableVoices.forEach(function (voice) {
+        var option = document.createElement('option');
+        option.value = voice.voiceURI;
+        option.textContent = voice.name + (voice.lang ? ' (' + voice.lang + ')' : '');
+        voiceSelect.append(option);
+      });
+      voiceSelect.value = selected && voiceByURI(selected) ? selected : '';
+      voiceSelect.disabled = !availableVoices.length;
+      reader.setVoice(voiceByURI(voiceSelect.value));
+    }
+    function startAt(index) {
+      if (index < 0 || index >= groups.length) return;
+      currentGroup = index;
+      markActive(groups[index].element);
+      reader.start(groups[index].chunks, {doneState: index === groups.length - 1 ? 'complete' : 'ready'});
+    }
+    play.addEventListener('click', function () {
+      refreshVoices();
+      // "Listen again" restarts at the chapter opening even when the last
+      // paragraph left the viewport at the bottom of the page.
+      if (lastState === 'complete') { startAt(0); return; }
+      var atTop = (root.scrollY || root.pageYOffset || 0) <= 1;
+      var readingLine = Math.max(96, Math.min(root.innerHeight * 0.28, 220));
+      startAt(pickStartGroup(groups, atTop ? -1 : readingLine));
+    });
     pause.addEventListener('click', reader.togglePause);
-    stop.addEventListener('click', reader.stop);
-    bar.querySelector('select').addEventListener('change', function (event) { reader.setRate(event.target.value); });
+    nextButton.addEventListener('click', function () { startAt(currentGroup + 1); });
+    stop.addEventListener('click', function () { currentGroup = -1; reader.stop(); });
+    speedSelect.addEventListener('change', function (event) { reader.setRate(event.target.value); });
+    voiceSelect.addEventListener('change', function () {
+      savedVoice = voiceSelect.value;
+      try { root.localStorage.setItem(VOICE_KEY, savedVoice); } catch (_) {}
+      reader.setVoice(voiceByURI(savedVoice));
+    });
+    if (root.speechSynthesis.addEventListener) root.speechSynthesis.addEventListener('voiceschanged', refreshVoices);
+    else root.speechSynthesis.onvoiceschanged = refreshVoices;
+    refreshVoices();
+    if (!groups.length) { play.disabled = true; sync('empty'); }
+    else sync('idle');
+    if (root.ResizeObserver) new root.ResizeObserver(syncDock).observe(bar);
+    root.addEventListener('resize', syncDock);
     root.addEventListener('pagehide', reader.stop);
     root.addEventListener('beforeunload', reader.stop);
+    syncDock();
   }
-  if (typeof module !== 'undefined' && module.exports) module.exports = {splitText: splitText, createReader: createReader};
+  if (typeof module !== 'undefined' && module.exports) module.exports = {splitText: splitText, createReader: createReader, groupChunks: groupChunks, pickStartGroup: pickStartGroup};
   else {
-    root.SDBReadAloud = {extractChapter: extractChapter};
+    root.SDBReadAloud = {extractChapter: extractChapter, groupChunks: groupChunks, pickStartGroup: pickStartGroup};
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mount);
     else mount();
   }

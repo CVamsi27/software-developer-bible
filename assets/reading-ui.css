@@ -307,13 +307,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 }
 .chapter-title-row { margin-bottom: 4px; }
 .post-content > .chapter-title-row > h1 { margin-top: 0; }
-/* Keep the chapter text at a comfortable measure. List and quote blocks
-   subtract their own left inset so every text column ends on the same edge. */
-.reader-layout .post-content > p { max-width: 62ch; }
-.reader-layout .post-content > :is(ul, ol) { max-width: calc(62ch - 1.45em); }
-.reader-layout .post-content > :is(blockquote, .markdown-alert) { max-width: calc(62ch - 24px); }
-/* An answer is indented by a 2px border and 16px of padding, so it subtracts 18px. */
-.reader-layout .post-content > .revision-answer { max-width: calc(62ch - 18px); }
+/* Reader text uses the full main article column; the page grid sets its limit. */
+.reader-layout .post-content > :is(p, ul, ol, blockquote, .markdown-alert, .revision-answer) { max-width: none; }
 .chapter-outline a[aria-current="location"] { border-left: 3px solid var(--theme-link); padding-left: 10px; font-weight: 650; color: var(--theme-link); }
 .chapter-outline a { min-height: 44px; padding: 8px 10px 8px 13px; }
 .chapter-outline summary { min-height: 44px; }

@@ -44,22 +44,31 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
   min-width: 0;
 }
-/* Idle is a small, discoverable pill. The voice and speed controls belong to
-   an active session, where the listener has already asked for them. */
+.read-aloud-primary,
+.read-aloud-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: none;
+}
+.read-aloud-primary { min-height: 44px; }
+/* Keep setup simple until the reader starts playback. */
 .read-aloud[data-state="idle"] {
-  padding: 6px;
-  border-radius: 999px;
+  gap: 8px 12px;
+  padding: 8px 12px;
+  border-radius: 14px;
 }
 .read-aloud[data-state="idle"] .read-aloud-field {
   display: none;
 }
-.read-aloud[data-state="idle"] .read-aloud-controls { gap: 6px; }
+.read-aloud[data-state="idle"] .read-aloud-controls { display: none; }
 .read-aloud[data-state="idle"] [data-read] {
+  min-height: 44px;
   padding: 8px 18px;
-  border-radius: 999px;
+  border-radius: 10px;
 }
 .read-aloud button,
 .read-aloud select {
@@ -88,6 +97,11 @@
   border-color: var(--theme-link, #1a73e8);
   background: var(--theme-action-bg, var(--theme-link, #1a73e8));
   color: var(--theme-action-text, #ffffff) !important;
+}
+.read-aloud [data-stop] {
+  border-color: var(--theme-border, #dadce0);
+  background: var(--card-bg, #ffffff);
+  color: var(--theme-text, #1f1f1f);
 }
 .read-aloud [data-read]::before {
   content: "";
@@ -120,6 +134,14 @@
   cursor: pointer;
 }
 .read-aloud [data-speed] { max-width: 82px; }
+.read-aloud-hint {
+  flex: 0 1 auto;
+  max-width: 18rem;
+  color: var(--theme-text-muted, #5f6368);
+  font-size: 12px;
+  line-height: 1.35;
+}
+.read-aloud-hint[hidden] { display: none; }
 .read-aloud-field {
   display: inline-flex;
   align-items: center;
@@ -236,6 +258,8 @@ html body .post-content :is(p, h1, h2, h3, h4, h5, h6, blockquote)[data-read-alo
     max-width: calc(100vw - 32px);
     transform: translateX(-50%);
   }
+  .read-aloud[data-state="idle"] .read-aloud-primary { flex: none; }
+  .read-aloud[data-state="idle"] .read-aloud-hint { flex: 1 1 10rem; }
   .read-aloud button { flex: 0 0 auto; }
   .read-aloud-field { flex: 1 1 132px; }
   .read-aloud-field select { flex: 1 1 auto; max-width: none; width: 100%; }

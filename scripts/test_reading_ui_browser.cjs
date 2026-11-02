@@ -20,10 +20,9 @@ function contrast(a, b) {
       const sizes = await page.evaluate(() => {
         const article = document.querySelector('.post-content');
         const paragraph = Array.from(article.children).find(n => n.tagName === 'P' && !n.querySelector('img'));
-        return {article: article.clientWidth, paragraph: paragraph.getBoundingClientRect().width, cap: parseFloat(getComputedStyle(paragraph).maxWidth)};
+        return {article: article.clientWidth, paragraph: paragraph.getBoundingClientRect().width};
       });
-      assert(sizes.paragraph < sizes.article - 100, `comfortable measure caps prose at ${width}px: ${JSON.stringify(sizes)}`);
-      assert(Math.abs(sizes.paragraph - sizes.cap) <= 1, `paragraph reaches its measure cap at ${width}px: ${JSON.stringify(sizes)}`);
+      assert(Math.abs(sizes.paragraph - sizes.article) <= 1, `paragraph fills the wide article column at ${width}px: ${JSON.stringify(sizes)}`);
     }
     // Long configuration names and unbroken prose must not widen a mobile document.
     await page.evaluate(() => {

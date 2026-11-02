@@ -1,77 +1,81 @@
-# Read-Aloud Controls Design
+# Read-Aloud Voice, Width, and Dock Design
 
 ## Goal
 
-Make it easy to choose what to hear, keep the voice choices English-only, and
-reduce controls around the chapter reader.
+Make the best available English voices easier to find, use the reader's full
+text column, and make the Listen dock clear and well-aligned at rest and during
+playback.
 
 ## Approved behavior
 
-- The voice menu contains at most five English voices. Keep the current
-  alphabetical voice-name order among English voices. Do not list voices for
-  other languages or a generic system-default choice. Preserve a saved voice
-  while it remains in the visible five; otherwise select the first available
-  English voice. If the browser exposes no English voices, disable the menu and
-  retain the reader's `en-US` language fallback.
-- Clicking or tapping a readable paragraph selects that paragraph as the next
-  narration start point and gives it a visible selected state. The **Listen**
-  button starts at that selection; **Next** continues with the next source
-  block. Without an explicit selection, **Listen** keeps its current behavior
-  of starting at the first readable block at or below the reading line. Clicks
-  on links or other interactive content inside a paragraph keep their normal
-  behavior. Selecting while narration is active leaves the current speech
-  running and reveals **Listen** to switch to the selected paragraph when
-  pressed.
-- Remove the Width dropdown, the persisted width preference, and the wide
-  layout override. Keep the existing comfortable reading measure as the only
-  reader width.
-- On reader pages, place the existing back-to-top arrow beside the audio dock
-  in the same horizontal row as **Listen**, with spacing that avoids overlap at
-  narrow widths. On pages without the audio dock, the arrow keeps its existing
-  floating position.
+- Keep only English voices in the menu, capped at five. Since the browser API
+  exposes no objective quality score, rank by available signals: explicit
+  quality terms such as Neural, Natural, Premium, Enhanced, Studio, Wavenet, or
+  HD first; remote/cloud service next; Google or Microsoft names as a secondary
+  signal; then the system default and voice name for stable ordering. Use +100
+  for a quality term, +50 for remote service, +20 for a Google/Microsoft name,
+  and +1 for the system default. Sort ties by name and then voice URI. Keep
+  a saved voice only while it remains in the visible five. If no English voice
+  is available, disable the menu and retain the `en-US` fallback.
+- Remove the Width dropdown and all stored width preference behavior. Set prose,
+  lists, quotes, alerts, and revision answers to use the full available article
+  column instead of the former 62ch comfortable measure.
+- Keep paragraph click selection as the narration start point. In the idle dock,
+  show a short visible cue explaining “Click a paragraph, then Listen”; update
+  the cue after selection. Preserve the separate screen-reader live status.
+- Keep Listen and the back-to-top arrow in the same aligned idle row. Correct
+  the old reader-title transform that overrides centering of the fixed dock at
+  desktop widths.
+- During playback, present Listen/Pause/Next/Stop as one compact action group,
+  with voice and speed as clearly separated settings. Preserve responsive wrap
+  behavior, visible keyboard focus, and the existing speech interactions.
 
 ## Design choices
 
-Paragraph selection uses the paragraph itself instead of adding a separate
-button to every paragraph. This keeps the floating dock compact and avoids
-repeating controls throughout long chapters. The selected paragraph must be
-visually distinct from the paragraph currently being spoken, and the status
-region must announce the selected paragraph so the choice is clear before
-playback.
+Voice labels are ranked with transparent local metadata, not an unsupported
+claim that the browser knows which voice sounds best. A quality term adds 100
+points, remote service adds 50, Google or Microsoft in the voice name adds 20,
+and the browser's default flag adds 1. The largest single class determines
+ordering, so a quality-labeled local voice outranks a generic cloud voice and
+a generic cloud voice outranks a generic local voice. Ties use case-insensitive
+name, then voice URI. Google and Microsoft labels remain secondary because
+vendor name alone does not prove quality. The user can still choose any of the
+five shown voices.
 
-The arrow joins the reader dock rather than receiving a second fixed position.
-That gives it a stable alignment with **Listen** and lets the dock's responsive
-layout manage spacing on small screens.
+“Wide” means the full existing article column (the reader's grid remains capped
+at its existing page width); it does not mean extending text across the sidebar
+or browser viewport. The fixed dock stays compact while idle, and makes the
+paragraph-selection instruction visible there instead of hiding the only cue
+inside a tooltip or live region.
 
 ## Boundaries
 
-Keep the browser SpeechSynthesis API, speed control, pause/resume, stop, current
-paragraph-follow behavior, and reduced-motion behavior. Do not add an external
-audio service or change chapter text extraction. Width remains the established
-comfortable measure; this change removes the choice, not the measure.
+Keep the browser SpeechSynthesis API, paragraph extraction and selection,
+pause/resume, stop, next-block behavior, reduced-motion behavior, and `en-US`
+fallback. Do not add an external TTS service or dependencies. Keep the existing
+five-voice maximum and do not restore a width selector.
 
 ## Acceptance criteria
 
-- The voice menu lists no more than five voices, all with an English locale,
-  and never lists a generic default or non-English voice.
-- Choosing a paragraph changes the pending start point; pressing **Listen**
-  begins at that paragraph, and **Next** advances from there.
-- Selecting while speech is active leaves current playback alone; the selected
-  outline is distinct from the active spoken-block treatment, and pressing
-  **Listen** switches to the selected paragraph.
-- Clicking a link inside a paragraph follows the link without selecting the
-  paragraph for narration.
-- No Reading width control or width preference remains in the reader UI; the
-  article uses the comfortable measure.
-- On reader pages, the back-to-top arrow aligns horizontally with **Listen**
-  without overlapping the dock on narrow screens. Other pages retain the
-  floating arrow.
-- Existing narration behavior remains intact when there is no paragraph
-  selection or no English voice is exposed by the browser.
+- The voice menu contains at most five English voices, with quality-labeled
+  voices ranked before generic cloud voices and generic local voices; ordering
+  is stable when scores tie.
+- A saved voice is retained only if it remains in the visible five; the first
+  ranked English voice is selected otherwise. No-English remains disabled with
+  the existing fallback.
+- No Width control, persisted width choice, or 62ch article-block cap remains;
+  text blocks fill the full reader column.
+- The idle dock visibly explains paragraph selection and Listen, shows the
+  selected paragraph state, and keeps the arrow vertically aligned beside
+  Listen.
+- The dock is horizontally centered on desktop. At narrow widths, controls wrap
+  without overlap or horizontal scrolling.
+- Playback actions and voice/speed settings remain keyboard accessible, with
+  visible focus and the existing speech state transitions.
 
 ## Verification scope
 
-Review the reader behavior and responsive layout in a rendered chapter. Check
-English voice filtering, paragraph selection and start position, the removed
-width control, and the arrow alignment. Record any browser limitation when the
-local environment does not expose SpeechSynthesis voices.
+Review the implementation diff and existing reader checks. When a browser test
+runtime is available, cover ranking with mixed quality labels, local/remote
+voices, and non-English entries; wide text measure; idle instruction; dock
+centering and arrow alignment; and active playback layout.

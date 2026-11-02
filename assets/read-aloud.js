@@ -179,13 +179,13 @@
     if (!published || (!state.isLearningPath(published) && !/\/REVISION\.html$/i.test(published))) return;
     var bar = document.createElement('section');
     bar.className = 'read-aloud'; bar.setAttribute('aria-label', 'Chapter read aloud');
-    bar.innerHTML = '<span class="read-aloud-progress" aria-hidden="true" hidden></span><span class="read-aloud-status" role="status" aria-live="polite">Read along at your own pace</span><div class="read-aloud-controls"><button type="button" data-read aria-label="Read aloud" title="Click or tap a paragraph to choose where Listen starts">Listen</button><button type="button" data-pause aria-label="Pause" hidden>Pause</button><button type="button" data-next aria-label="Read the next paragraph" hidden>Next</button><button type="button" data-stop aria-label="Stop" hidden>Stop</button><label class="read-aloud-field">Voice <select data-voice aria-label="Reading voice"></select></label><label class="read-aloud-field">Speed <select data-speed aria-label="Reading speed"><option value="0.5">0.5×</option><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label></div>';
+    bar.innerHTML = '<span class="read-aloud-progress" aria-hidden="true" hidden></span><span class="read-aloud-status" role="status" aria-live="polite">Read along at your own pace</span><div class="read-aloud-primary"><button type="button" data-read aria-label="Read aloud">Listen</button></div><span class="read-aloud-hint" data-hint>Click a paragraph, then Listen.</span><div class="read-aloud-controls"><div class="read-aloud-actions"><button type="button" data-pause aria-label="Pause" hidden>Pause</button><button type="button" data-next aria-label="Read the next paragraph" hidden>Next</button><button type="button" data-stop aria-label="Stop" hidden>Stop</button></div><label class="read-aloud-field">Voice <select data-voice aria-label="Reading voice"></select></label><label class="read-aloud-field">Speed <select data-speed aria-label="Reading speed"><option value="0.5">0.5×</option><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label></div>';
     document.body.append(bar);
     var topButton = document.querySelector('.back-to-top');
-    var controls = bar.querySelector('.read-aloud-controls');
-    if (topButton && controls) controls.append(topButton);
+    var primary = bar.querySelector('.read-aloud-primary');
+    if (topButton && primary) primary.append(topButton);
     document.body.classList.add('has-read-aloud');
-    var play = bar.querySelector('[data-read]'), pause = bar.querySelector('[data-pause]'), nextButton = bar.querySelector('[data-next]'), stop = bar.querySelector('[data-stop]'), status = bar.querySelector('[role="status"]'), progress = bar.querySelector('.read-aloud-progress'), voiceSelect = bar.querySelector('[data-voice]'), speedSelect = bar.querySelector('[data-speed]');
+    var play = bar.querySelector('[data-read]'), pause = bar.querySelector('[data-pause]'), nextButton = bar.querySelector('[data-next]'), stop = bar.querySelector('[data-stop]'), status = bar.querySelector('[role="status"]'), hint = bar.querySelector('[data-hint]'), progress = bar.querySelector('.read-aloud-progress'), voiceSelect = bar.querySelector('[data-voice]'), speedSelect = bar.querySelector('[data-speed]');
     function syncDock() {
       if (!bar.offsetHeight) return;
       document.documentElement.style.setProperty('--read-aloud-height', bar.offsetHeight + 'px');
@@ -194,6 +194,7 @@
       play.disabled = true; voiceSelect.disabled = true; speedSelect.disabled = true;
       bar.dataset.state = 'unsupported';
       status.textContent = 'Read aloud is unavailable in this browser.';
+      hint.textContent = 'Read aloud is unavailable in this browser.';
       syncDock(); return;
     }
     var groups = groupChunks(extractChapter(content));
@@ -227,7 +228,11 @@
       play.hidden = false;
       play.textContent = 'Listen';
       play.setAttribute('aria-label', 'Read selected paragraph');
-      status.textContent = 'Paragraph selected. Press Listen to start here.';
+      status.textContent = (lastState === 'reading' || lastState === 'paused')
+        ? 'Paragraph selected. Press Listen to switch to it.'
+        : 'Paragraph selected. Press Listen to start here.';
+      hint.textContent = 'Selected. Press Listen to switch here.';
+      hint.hidden = false;
       syncDock();
     }
     function follow(element, _index, range) {
@@ -275,6 +280,8 @@
       var focusWasAction = [play, pause, nextButton, stop].indexOf(document.activeElement) !== -1;
       if (!active) clearActive();
       bar.dataset.state = nextState;
+      hint.hidden = (busy || ready || finished) && selectedGroup < 0;
+      if (selectedGroup < 0) hint.textContent = 'Click a paragraph, then Listen.';
       play.hidden = (busy || ready) && selectedGroup < 0;
       pause.hidden = !busy;
       nextButton.hidden = !ready;
@@ -305,9 +312,24 @@
       try { list = root.speechSynthesis.getVoices ? Array.prototype.slice.call(root.speechSynthesis.getVoices()) : []; } catch (_) { list = []; }
       availableVoices = list.filter(function (voice) {
         return voice && voice.voiceURI && /^en(?:-|_|$)/i.test(voice.lang || '');
+      }).map(function (voice) {
+        var name = voice.name || '';
+        var quality = /(?:^|[^a-z])(?:neural|natural|premium|enhanced|studio|wavenet|hd)(?:$|[^a-z])/i.test(name) ? 100 : 0;
+        var cloud = voice.localService === false ? 50 : 0;
+        var vendor = /\b(?:google|microsoft)\b/i.test(name) ? 20 : 0;
+        var preferred = voice.default === true ? 1 : 0;
+        return {voice: voice, score: quality + cloud + vendor + preferred};
       }).sort(function (a, b) {
-        return (a.name || '').localeCompare(b.name || '');
-      }).slice(0, 5);
+        if (a.score !== b.score) return b.score - a.score;
+        var aName = (a.voice.name || '').toLowerCase(), bName = (b.voice.name || '').toLowerCase();
+        if (aName < bName) return -1;
+        if (aName > bName) return 1;
+        var aURI = (a.voice.voiceURI || '').toLowerCase(), bURI = (b.voice.voiceURI || '').toLowerCase();
+        if (aURI < bURI) return -1;
+        if (aURI > bURI) return 1;
+        var aExactURI = a.voice.voiceURI || '', bExactURI = b.voice.voiceURI || '';
+        return aExactURI < bExactURI ? -1 : aExactURI > bExactURI ? 1 : 0;
+      }).slice(0, 5).map(function (entry) { return entry.voice; });
       var selected = voiceSelect.value || savedVoice;
       voiceSelect.textContent = '';
       if (!availableVoices.length) {

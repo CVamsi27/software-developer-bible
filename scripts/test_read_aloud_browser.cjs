@@ -59,6 +59,10 @@ async function installReaderAssets(page) {
     assert.equal(await page.locator('.chapter-title-row > .read-aloud').count(), 0);
     assert.equal(await page.locator('body > .read-aloud').count(), 1);
     assert.equal(await page.locator('.read-aloud').evaluate(bar => getComputedStyle(bar).position), 'fixed');
+    assert.equal(await page.locator('.read-aloud').getAttribute('data-state'), 'idle');
+    assert.equal(await page.locator('[data-read]').isVisible(), true);
+    assert.equal(await page.locator('[data-voice]').isVisible(), false, 'voice stays out of the way until listening starts');
+    assert.equal(await page.locator('[data-speed]').isVisible(), false, 'speed stays out of the way until listening starts');
     assert.equal(await page.locator('.chapter-title-row > h1').count(), 1);
     assert.equal(await page.locator('.chapter-title-row .reading-width').count(), 1);
     assert.equal(await page.locator('[aria-label="Reading speed"] option[value="0.5"]').textContent(), '0.5×');
@@ -73,6 +77,8 @@ async function installReaderAssets(page) {
     await page.getByRole('button', {name: 'Read aloud', exact: true}).click();
     assert.equal(await page.evaluate(() => window.recordedSpeech.at(-1).text), 'Lexical Environment');
     assert.equal(await page.locator('[data-read]').isVisible(), false);
+    assert.equal(await page.locator('[data-voice]').isVisible(), true);
+    assert.equal(await page.locator('[data-speed]').isVisible(), true);
     assert.equal(await page.locator('[data-pause]').isVisible(), true);
     assert.equal(await page.locator('[data-pause]').evaluate(el => el === document.activeElement), true);
     await page.evaluate(() => window.recordedSpeech.at(-1).onstart());
@@ -94,14 +100,15 @@ async function installReaderAssets(page) {
     assert.equal(await page.locator('.read-aloud').getAttribute('data-state'), 'paused');
     await page.getByRole('button', {name: 'Resume', exact: true}).click();
     assert.equal(await page.locator('.read-aloud').getAttribute('data-state'), 'reading');
+    await page.selectOption('[data-voice]', 'voice-b');
+    assert.equal(await page.evaluate(() => localStorage.getItem('sdb-read-aloud-voice')), 'voice-b');
     await page.getByRole('button', {name: 'Stop', exact: true}).click();
     assert.equal(await page.locator('.read-aloud').getAttribute('data-state'), 'idle');
     assert.equal(await page.locator('[data-read]').isVisible(), true);
+    assert.equal(await page.locator('[data-voice]').isVisible(), false, 'stopping returns the player to its compact idle state');
     assert.equal(await page.locator('.post-content [data-read-aloud-active]').count(), 0);
 
     // Voice selection persists and is applied to the next paragraph.
-    await page.selectOption('[data-voice]', 'voice-b');
-    assert.equal(await page.evaluate(() => localStorage.getItem('sdb-read-aloud-voice')), 'voice-b');
     await page.getByRole('button', {name: 'Read aloud', exact: true}).click();
     assert.equal(await page.evaluate(() => window.recordedSpeech.at(-1).voice.voiceURI), 'voice-b');
     assert.equal(await page.evaluate(() => window.recordedSpeech.at(-1).lang), 'en-GB');

@@ -111,6 +111,7 @@ html[data-theme="dark"] .reader-meta .reader-meta-priority { color:#81c995; }
 @media print { .header-search,.code-line-numbers { display:none; } .reader-layout .has-line-numbers pre { padding-left:16px !important; } }
 
 .site-header .site-nav .page-link { display:inline-flex; align-items:center; min-height:44px; padding:0; font-weight:400; color:var(--theme-text) !important; }
+.site-header .site-nav .page-link[aria-current="page"] { color:var(--theme-link) !important; background:var(--nav-pill-bg); border-radius:6px; }
 .reader-layout .reading-width select { max-width:80px; }
 .reader-layout .highlight :is(.kd,.k,.kr,.nx,.nf) { font-weight:400; }
 .reader-layout .highlight :is(.nx,.nf) { color:var(--syntax-name); }
@@ -296,4 +297,66 @@ html[data-theme="dark"] body { background:var(--theme-bg); }
   .reader-layout .post-content h2 { margin-top:34px; }
   .reader-layout .post-content h3 { font-size:22px; margin-top:30px; }
   .reader-layout .post-content li { margin:.26em 0; }
+}
+
+/* --------------------------------------------------------------------------
+   Mobile reading polish
+   Metadata is text, not badge images; the controls collapse to one row; code
+   loses its number gutter; three-way chapter footers become two rows instead
+   of scattering a separator around a wrapped row.
+   -------------------------------------------------------------------------- */
+.reader-layout .reader-meta { gap:8px; align-items:center; }
+.reader-layout .reader-meta > span + span::before,
+.reader-layout .reader-meta .chapter-details::before { content:none; display:none; }
+.reader-layout .reader-meta .chapter-details { flex:0 1 auto; }
+.reader-layout .reader-meta .chapter-details summary {
+  display:inline-flex; align-items:center; min-height:44px; box-sizing:border-box;
+  margin:0; padding:8px 4px; color:var(--theme-text-muted); font-size:13px; font-weight:550;
+}
+.reader-layout .reader-meta .chapter-details[open] { flex-basis:100%; }
+.reader-layout .reader-meta .chapter-details[open] summary { color:var(--theme-heading); }
+.reader-details-list {
+  display:grid; gap:6px; margin:2px 0 6px; padding:12px 14px;
+  border:1px solid var(--theme-border); border-radius:8px; background:var(--card-bg);
+  font:13px/1.55 var(--font-sans);
+}
+.reader-details-list > div { display:flex; gap:12px; align-items:baseline; }
+.reader-details-list dt { flex:0 0 76px; color:var(--theme-text-muted); }
+.reader-details-list dd { margin:0; color:var(--theme-text); overflow-wrap:anywhere; }
+
+.chapter-outline-count {
+  display:inline-flex; align-items:center; justify-content:center;
+  min-width:22px; height:22px; margin-left:8px; padding:0 7px;
+  border-radius:999px; background:var(--nav-pill-bg); color:var(--theme-text-muted);
+  font:600 12px/1 var(--font-sans); vertical-align:middle;
+}
+
+@media(max-width:700px) {
+  .reader-layout .read-aloud { width:100%; justify-content:flex-start; gap:10px; }
+  .reader-layout .reading-width { display:none; }
+  .reader-layout .reader-meta { gap:8px; margin-bottom:16px; padding-bottom:12px; font-size:13px; }
+  .reader-layout .reader-meta .chapter-details { flex-basis:100%; margin-top:0; }
+  .reader-layout .reader-meta .chapter-details summary { padding-left:4px; }
+  .reader-layout .has-line-numbers pre { padding-left:16px !important; }
+  .reader-layout .code-line-numbers { display:none; }
+  .reader-layout div.highlighter-rouge pre { font-size:13.5px; line-height:1.6; }
+  .post-content .table-scroll-wrapper table { font-size:13px; }
+  .post-content .table-scroll-wrapper :is(th, td) { padding:9px 12px; }
+  .site-footer { padding:24px 0 32px; }
+  .footer-heading { margin-bottom:10px; font-size:1.15rem; }
+  .footer-col-wrapper { margin-left:0; }
+  .footer-col { float:none; width:100%; margin-bottom:12px; padding-left:0; }
+  .footer-col:last-child { margin-bottom:0; }
+}
+
+/* A three-way footer needs two rows on a phone: Previous | Next, then Index. */
+@media(min-width:360px) and (max-width:700px) {
+  .post-content .chapter-nav-footer:has(a:nth-of-type(3)) {
+    display:grid !important; grid-template-columns:1fr 1fr; gap:8px !important;
+  }
+  .chapter-nav-footer:has(a:nth-of-type(3)) a { padding:8px 10px; font-size:.84rem; }
+  .chapter-nav-footer:has(a:nth-of-type(3)) a:nth-of-type(1) { grid-column:1; grid-row:1; justify-content:flex-start; }
+  .chapter-nav-footer:has(a:nth-of-type(3)) a:nth-of-type(2) { grid-column:1 / -1; grid-row:2; justify-content:center; }
+  .chapter-nav-footer:has(a:nth-of-type(3)) a:nth-of-type(3) { grid-column:2; grid-row:1; justify-content:flex-end; text-align:right; }
+  .chapter-nav-footer:has(a:nth-of-type(3)) .chapter-nav-separator { display:none; }
 }

@@ -23,7 +23,8 @@ const article='<main><div class="post-content"><p><a href="#"><img alt="Section"
 test('reader keeps metadata and leaves authored next and revision navigation in one place',()=>{
  const dom=boot(article,chapter,['reading-ui.js']); const d=dom.window.document;
  assert.ok(d.querySelector('select[aria-label="Reading width"]'),'Reading width control is available');
- assert.equal(d.querySelector('.chapter-details img').alt,'Section');
+ assert.equal(d.querySelector('.reader-meta-section').textContent,'JavaScript');
+ assert.equal(d.querySelector('.chapter-details img'),null,'metadata does not depend on third-party badge images');
  assert.equal(d.querySelector('.study-continuation'),null,'No mirrored chapter navigation is generated');
  assert.equal([...d.querySelectorAll('a[href*="closures"]')].length,1,'The authored Next link appears once');
  assert.equal([...d.querySelectorAll('a[href*="REVISION"]')].length,1,'The authored revision link appears once');
@@ -48,6 +49,17 @@ test('indexes get no chapter width or narration controls',()=>{
  const dom=boot(article,'/INDEX.html',['reading-ui.js','read-aloud.js']);
  assert.equal(dom.window.document.querySelector('.read-aloud'),null);
  assert.equal(dom.window.document.querySelector('[aria-label="Reading width"]'),null); dom.window.close();
+});
+test('index badges become readable text chips without third-party images',()=>{
+ const html='<main><div class="post-content"><h1>Index</h1><p><a href="lanes/INDEX.html"><img src="https://img.shields.io/badge/lanes-2-blue" alt="Lanes"></a><a href="#stacks"><img src="https://img.shields.io/badge/stacks-7-green" alt="Stacks"></a><a href="#"><img src="https://img.shields.io/badge/GoF%20Coverage-23%2F23-success" alt="GoF Coverage"></a></p><p>Authored prose.</p></div></main>';
+ const dom=boot(html,'/INDEX.html',['reading-ui.js']),d=dom.window.document;
+ const chips=[...d.querySelectorAll('.index-chip')];
+ assert.deepEqual(chips.map(chip=>chip.textContent),['Lanes 2','Stacks 7','GoF Coverage 23/23']);
+ assert.equal(new URL(chips[0].getAttribute('href'),dom.window.location.href).pathname,'/lanes/INDEX.html');
+ assert.equal(chips[2].tagName,'SPAN');
+ assert.equal(d.querySelector('.post-content img'),null);
+ assert.equal(d.querySelector('.post-content p').textContent,'Authored prose.');
+ dom.window.close();
 });
 test('revision reveal preserves complete answers and uncertain authored blocks',()=>{
  const html='<div class="post-content"><h1>Revision</h1><h2>Topic</h2><p>Source: chapter</p><p><strong>Q:</strong> Explain?</p><p><strong>A:</strong> First paragraph.</p><p>Second paragraph.</p><pre><code>answer()</code></pre><ul><li>Boundary.</li></ul><p><strong>Q:</strong> Unanswered?</p><p>Keep this visible.</p><h2>Another topic</h2></div>';
@@ -129,6 +141,8 @@ test('returning home prioritizes the saved chapter and clearing is reversible',(
  const html=fs.readFileSync(path.join(root,'index.html'),'utf8').replace(/^---[\s\S]*?---/, '');
  const record={version:1,path:chapter,anchor:'summary',title:'Lexical Environment',section:'Summary',savedAt:Date.now()};
  const dom=boot(html,'/',['study-resume.js'],w=>w.localStorage.setItem('sdb-study-resume-v1',JSON.stringify(record))),d=dom.window.document;
+ assert.equal(d.querySelectorAll('.study-loop li').length,4);
+ assert.ok(d.querySelector('.home-intro .hero-actions'));
  assert.equal(d.querySelector('.home-intro h1').textContent,'Continue your study.');
  assert.equal(d.querySelector('.resume-card').hidden,false);
  d.querySelector('[data-clear-resume]').click();assert.equal(d.querySelector('.resume-card').hidden,true);

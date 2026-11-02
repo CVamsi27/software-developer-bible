@@ -63,7 +63,45 @@ document.addEventListener('DOMContentLoaded', function () {
   var published = state && state.publishedPath(location.pathname, paths);
   var learning = published && state.isLearningPath(published);
   var revision = published && /\/REVISION\.html$/i.test(published);
-  if (!learning && !revision) return;
+  // Index pages still carry shields.io images as metadata transport. Render
+  // the same values as text chips so the page does not depend on a third-party
+  // image request and the row stays readable at phone widths.
+  function renderIndexChips(container) {
+    container.querySelectorAll('p').forEach(function (paragraph) {
+      var images = Array.from(paragraph.querySelectorAll('img[src*="img.shields.io/badge/"]'));
+      if (!images.length || paragraph.textContent.trim()) return;
+      var chips = images.map(function (img) {
+        var raw = decodeURIComponent((img.getAttribute('src') || '').split('/badge/')[1] || '').split('?')[0];
+        var parts = raw.split('-');
+        if (parts.length < 3) return null;
+        parts.pop();
+        var value = parts.pop().replace(/_/g, ' ');
+        var label = parts.join('-').replace(/--/g, '-').replace(/_/g, ' ');
+        if (!label || !value) return null;
+        var link = img.closest('a');
+        var href = link && link.getAttribute('href');
+        // "#" was only a transport placeholder around a status image.
+        if (!href || href.charAt(href.length - 1) === '#') href = null;
+        var chip = document.createElement(href ? 'a' : 'span');
+        chip.className = 'index-chip';
+        if (href) chip.setAttribute('href', href);
+        var labelNode = document.createElement('span');
+        labelNode.className = 'index-chip-label';
+        labelNode.textContent = label.charAt(0).toUpperCase() + label.slice(1);
+        var valueNode = document.createElement('span');
+        valueNode.className = 'index-chip-value';
+        valueNode.textContent = value;
+        chip.append(labelNode, document.createTextNode(' '), valueNode);
+        return chip;
+      }).filter(Boolean);
+      if (!chips.length) return;
+      var row = document.createElement('div');
+      row.className = 'index-chips';
+      chips.forEach(function (chip) { row.append(chip); });
+      paragraph.replaceWith(row);
+    });
+  }
+  if (!learning && !revision) { renderIndexChips(content); return; }
   if (content.dataset.studyReader) return;
   content.dataset.studyReader = 'true';
   function headingText(element) {
@@ -77,19 +115,34 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   var badges = Array.from(content.children).filter(function (p) { return p.tagName === 'P' && (titleRow || authoredTitle) && (p.compareDocumentPosition(titleRow || authoredTitle) & Node.DOCUMENT_POSITION_FOLLOWING) && p.querySelector('img[src*="img.shields.io/badge/"]'); });
   var values = {};
-  badges.forEach(function (p) { p.querySelectorAll('img').forEach(function (img) {
-    var match = decodeURIComponent(img.src).match(/\/badge\/(section|category|read--time|role--priority)-(.+)-[^-]+$/);
-    if (match) values[match[1]] = match[2].replace(/--/g, '-').replace(/_/g, ' ');
-  }); });
+  // The shields.io badges were only a transport for authored metadata. Render
+  // the values as text chips instead: same information, no third-party image
+  // requests, readable at phone widths, and no broken-image rows.
+  badges.forEach(function (p) {
+    p.querySelectorAll('img').forEach(function (img) {
+      var match = decodeURIComponent(img.getAttribute('src') || '').match(/\/badge\/(section|category|tags|read--time|role--priority|general--importance)-(.+)-[^-]+$/);
+      if (!match) return;
+      values[match[1]] = match[2].replace(/--/g, '-').replace(/_/g, ' ');
+    });
+    p.remove();
+  });
   var meta = document.createElement('div'); meta.className = 'reader-meta';
   [['section', values.section], ['priority', values['role--priority']], ['time', values['read--time'] && values['read--time'] + ' read']].forEach(function (entry) {
     if (!entry[1]) return;
-    var token = document.createElement('span'); token.className = 'reader-meta-' + entry[0]; token.textContent = entry[1]; meta.append(token);
+    var token = document.createElement('span'); token.className = 'reader-meta-chip reader-meta-' + entry[0]; token.textContent = entry[1]; meta.append(token);
   });
-  if (badges.length) {
+  var detailRows = [['Category', values.category], ['Tags', values.tags], ['Importance', values['general--importance']]].filter(function (entry) { return entry[1]; });
+  if (detailRows.length) {
     var details = document.createElement('details'); details.className = 'chapter-details';
-    var summary = document.createElement('summary'); summary.textContent = 'Chapter details'; details.append(summary);
-    badges.forEach(function (p) { details.append(p); }); meta.append(details);
+    var summary = document.createElement('summary'); summary.textContent = 'Details'; details.append(summary);
+    var list = document.createElement('dl'); list.className = 'reader-details-list';
+    detailRows.forEach(function (entry) {
+      var row = document.createElement('div');
+      var term = document.createElement('dt'); term.textContent = entry[0];
+      var description = document.createElement('dd'); description.textContent = entry[1];
+      row.append(term, description); list.append(row);
+    });
+    details.append(list); meta.append(details);
   }
   if (titleRow) titleRow.after(meta); else content.prepend(meta);
   var breadcrumb = document.createElement('nav'); breadcrumb.className = 'reader-breadcrumb'; breadcrumb.setAttribute('aria-label', 'Breadcrumb');
@@ -144,7 +197,11 @@ document.addEventListener('DOMContentLoaded', function () {
   var headings = Array.from(content.querySelectorAll('h2[id]'));
   if (!headings.length) return;
   var outline = document.createElement('details'); outline.className = 'chapter-outline';
-  var outlineSummary = document.createElement('summary'); outlineSummary.textContent = 'On this page';
+  var outlineSummary = document.createElement('summary'); outlineSummary.append(document.createTextNode('On this page'));
+  var outlineCount = document.createElement('span'); outlineCount.className = 'chapter-outline-count';
+  outlineCount.setAttribute('aria-label', headings.length + ' sections');
+  outlineCount.textContent = headings.length;
+  outlineSummary.append(outlineCount);
   var nav = document.createElement('nav'); nav.setAttribute('aria-label', 'Chapter sections');
   var list = document.createElement('ul');
   var links = headings.map(function (heading) {

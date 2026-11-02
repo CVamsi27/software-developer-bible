@@ -66,13 +66,13 @@ PAGE = """<!DOCTYPE html>
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <script src="{THEME_SRC}"></script>
-<link rel="stylesheet" href="assets/search-ui.css?v=study-flow-19">
-<link rel="stylesheet" href="assets/reading-ui.css?v=study-flow-21">
-<link rel="stylesheet" href="assets/reference-reader.css?v=reference-18">
+<link rel="stylesheet" href="assets/search-ui.css?v=study-flow-21">
+<link rel="stylesheet" href="assets/reading-ui.css?v=study-flow-23">
+<link rel="stylesheet" href="assets/reference-reader.css?v=reference-20">
 <script src="assets/study-state.js" defer></script>
 <script src="assets/roadmap-return.js?v=study-flow-19" defer></script>
-<script src="assets/reading-ui.js?v=study-flow-19" defer></script>
-<script src="assets/search-ui.js" defer></script>
+<script src="assets/reading-ui.js?v=study-flow-21" defer></script>
+<script src="assets/search-ui.js?v=study-flow-21" defer></script>
 </head>
 <body class="search-page">
 <header class="site-header" role="banner">
@@ -97,13 +97,17 @@ PAGE = """<!DOCTYPE html>
   </div>
 </header>
 
-<main class="search-main wrapper">
+<main class="search-main wrapper" id="main-content">
   <p class="eyebrow">THE STUDY LIBRARY</p>
   <h1>Search the library</h1>
   <p class="search-intro">Find explanations, revision questions, and interview practice.</p>
   <form id="search-form" role="search">
     <label for="q">Topic or keyword</label>
-    <div class="query-row"><input type="search" id="q" placeholder="Try closures, APIs, or system design" autocomplete="off"><button type="button" id="clear-query">Clear search</button></div>
+    <div class="query-field">
+      <span class="query-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10" cy="10" r="7"></circle><path d="m15 15 6 6"></path></svg></span>
+      <input type="search" id="q" placeholder="Search topics or keywords" autocomplete="off">
+      <button type="button" id="clear-query" aria-label="Clear search" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"></path></svg></button>
+    </div>
     <div class="search-filters">
       <label for="sec">Stack<select id="sec" aria-label="Stack"><option value="">All stacks</option></select></label>
       <label for="material">Material<select id="material" aria-label="Material"><option value="">All material</option><option value="learn">Learn</option><option value="revision">Revision</option><option value="interview">Interview practice</option><option value="reference">Reference</option></select></label>

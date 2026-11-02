@@ -47,6 +47,21 @@
   gap: 6px;
   min-width: 0;
 }
+/* Idle is a small, discoverable pill. The voice and speed controls belong to
+   an active session, where the listener has already asked for them. */
+.read-aloud[data-state="idle"] {
+  padding: 6px;
+  border-radius: 999px;
+}
+.read-aloud[data-state="idle"] .read-aloud-status,
+.read-aloud[data-state="idle"] .read-aloud-field {
+  display: none;
+}
+.read-aloud[data-state="idle"] .read-aloud-controls { gap: 0; }
+.read-aloud[data-state="idle"] [data-read] {
+  padding: 8px 18px;
+  border-radius: 999px;
+}
 .read-aloud button,
 .read-aloud select {
   box-sizing: border-box;
@@ -183,6 +198,13 @@ html body .post-content :is(p, h1, h2, h3, h4, h5, h6, blockquote)[data-read-alo
     padding: 8px;
   }
   .read-aloud-controls { width: 100%; gap: 6px; }
+  .read-aloud[data-state="idle"] {
+    left: 50%;
+    right: auto;
+    width: max-content;
+    max-width: calc(100vw - 32px);
+    transform: translateX(-50%);
+  }
   .read-aloud button { flex: 0 0 auto; }
   .read-aloud-field { flex: 1 1 132px; }
   .read-aloud-field select { flex: 1 1 auto; max-width: none; width: 100%; }

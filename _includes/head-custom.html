@@ -7,7 +7,7 @@
 </script>
 <script src="{{ site.theme_asset | relative_url }}?v={{ site.theme_version }}"></script>
 
-<link rel="stylesheet" href="{{ '/assets/read-aloud.css' | relative_url }}?v=study-flow-24">
+<link rel="stylesheet" href="{{ '/assets/read-aloud.css' | relative_url }}?v=study-flow-25">
 
 {% raw %}
 <style>
@@ -340,18 +340,63 @@
     color: var(--theme-link-hover);
   }
 
+  /* In prose, colour is not the only signal that text is a link. The quiet
+     underline gets stronger on hover without adding visual noise to chrome. */
+  .post-content :is(p, li, td, dd) a:not(.heading-anchor) {
+    text-decoration: underline;
+    text-decoration-color: color-mix(in srgb, currentColor 38%, transparent);
+  }
+
+  .post-content :is(p, li, td, dd) a:not(.heading-anchor):hover {
+    text-decoration-color: currentColor;
+  }
+
+  .post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
   /* --------------------------------------------------------------------------
      Tables (Crisp, Striped, Sticky Headers, Responsive Scroll Container)
      -------------------------------------------------------------------------- */
+  .table-scroll-shell {
+    position: relative;
+    margin: 1.75rem 0;
+  }
+
   .table-scroll-wrapper {
     width: 100%;
     overflow-x: auto;
+    overscroll-behavior-x: contain;
     -webkit-overflow-scrolling: touch;
-    margin: 1.75rem 0;
+    margin: 0;
     border-radius: 8px;
     border: 1px solid var(--table-border);
     background-color: var(--card-bg);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  }
+
+  .table-scroll-wrapper:focus-visible {
+    outline: 2px solid var(--theme-link);
+    outline-offset: 2px;
+  }
+
+  .table-scroll-fade {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    width: 36px;
+    border-radius: 0 8px 8px 0;
+    background: linear-gradient(to right, transparent, var(--card-bg));
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+
+  .table-scroll-shell.is-scrollable:not(.at-end) .table-scroll-fade {
+    opacity: 1;
   }
 
   .table-scroll-wrapper table {
@@ -461,6 +506,25 @@
     border: 1px solid var(--code-border);
     background-color: var(--code-bg);
     overflow: hidden;
+  }
+
+  /* A right-edge fade marks horizontal overflow without covering the code. */
+  div.highlighter-rouge.is-scrollable::after {
+    content: "";
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    width: 32px;
+    border-radius: 0 13px 13px 0;
+    background: linear-gradient(to right, transparent, var(--code-bg));
+    pointer-events: none;
+    z-index: 4;
+    transition: opacity 0.15s ease;
+  }
+
+  div.highlighter-rouge.is-scrollable.is-at-end::after {
+    opacity: 0;
   }
 
   pre.highlight {
@@ -644,35 +708,46 @@
      -------------------------------------------------------------------------- */
   .back-to-top {
     position: fixed;
-    bottom: 24px;
-    right: 24px;
+    bottom: max(16px, env(safe-area-inset-bottom));
+    right: 16px;
     width: 44px;
     height: 44px;
+    padding: 0;
     border-radius: 50%;
-    background: var(--nav-pill-bg);
+    background: var(--card-bg);
     color: var(--theme-text);
-    border: 0;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+    border: 1px solid var(--theme-border);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.16);
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.25rem;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+    transform: translateY(6px);
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease, background-color 0.15s ease;
     z-index: 9999;
   }
 
+  .back-to-top svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
+
   .back-to-top.visible {
-    opacity: 0.95;
+    opacity: 1;
     visibility: visible;
+    transform: translateY(0);
   }
 
   .back-to-top:hover {
-    opacity: 1;
     transform: translateY(-2px);
     background-color: var(--nav-pill-hover);
+  }
+
+  @media (min-width: 701px) {
+    .back-to-top { right: 24px; bottom: max(24px, env(safe-area-inset-bottom)); }
   }
 
   /* --------------------------------------------------------------------------
@@ -791,7 +866,7 @@
      -------------------------------------------------------------------------- */
   .sdb-toast {
     position: fixed;
-    bottom: 28px;
+    bottom: max(24px, env(safe-area-inset-bottom));
     left: 50%;
     transform: translateX(-50%) translateY(20px);
     background: var(--card-bg);
@@ -874,7 +949,7 @@
     btt.className = "back-to-top";
     btt.setAttribute("aria-label", "Back to top");
     btt.setAttribute("title", "Back to top");
-    btt.innerHTML = "&#8593;";
+    btt.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"></path><path d="m5 12 7-7 7 7"></path></svg>';
     document.body.appendChild(btt);
 
     window.addEventListener("scroll", function() {
@@ -890,15 +965,43 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    // 3. Responsive table container wrapper
+    // 3. Responsive table container wrapper. A shell keeps the edge fade
+    // outside the scrolling surface; the wrapper itself is the keyboard-
+    // focusable scroll region only while the table actually overflows.
     var tables = document.querySelectorAll(".post-content table, .page-content table");
-    tables.forEach(function(table) {
-      if (!table.parentElement.classList.contains("table-scroll-wrapper")) {
-        var wrapper = document.createElement("div");
-        wrapper.className = "table-scroll-wrapper";
-        table.parentNode.insertBefore(wrapper, table);
-        wrapper.appendChild(table);
+    var markTableOverflow = function(shell, wrapper) {
+      var max = wrapper.scrollWidth - wrapper.clientWidth;
+      var scrollable = max > 4;
+      shell.classList.toggle("is-scrollable", scrollable);
+      shell.classList.toggle("at-start", wrapper.scrollLeft <= 2);
+      shell.classList.toggle("at-end", !scrollable || wrapper.scrollLeft >= max - 2);
+      if (scrollable) {
+        wrapper.setAttribute("tabindex", "0");
+        wrapper.setAttribute("role", "region");
+        wrapper.setAttribute("aria-label", "Table, scroll horizontally for more columns");
+      } else {
+        wrapper.removeAttribute("tabindex");
+        wrapper.removeAttribute("role");
+        wrapper.removeAttribute("aria-label");
       }
+    };
+    tables.forEach(function(table) {
+      if (table.parentElement.classList.contains("table-scroll-wrapper")) return;
+      var wrapper = document.createElement("div");
+      wrapper.className = "table-scroll-wrapper";
+      var shell = document.createElement("div");
+      shell.className = "table-scroll-shell";
+      table.parentNode.insertBefore(shell, table);
+      shell.appendChild(wrapper);
+      wrapper.appendChild(table);
+      var fade = document.createElement("span");
+      fade.className = "table-scroll-fade";
+      fade.setAttribute("aria-hidden", "true");
+      shell.appendChild(fade);
+      var update = function() { markTableOverflow(shell, wrapper); };
+      wrapper.addEventListener("scroll", update, { passive: true });
+      window.addEventListener("resize", update, { passive: true });
+      requestAnimationFrame(update);
     });
 
     // 4. Code block copy buttons — quiet circular icon actions (copy → check);
@@ -947,6 +1050,20 @@
 
       container.appendChild(btn);
       container.appendChild(feedback);
+
+      // Show a quiet right-edge fade only while the code is wider than the
+      // reading column. It disappears at the end so the cue never lies.
+      if (container.tagName !== "PRE") {
+        var syncCodeOverflow = function() {
+          var max = pre.scrollWidth - pre.clientWidth;
+          var scrollable = max > 4;
+          container.classList.toggle("is-scrollable", scrollable);
+          container.classList.toggle("is-at-end", !scrollable || pre.scrollLeft >= max - 2);
+        };
+        pre.addEventListener("scroll", syncCodeOverflow, { passive: true });
+        window.addEventListener("resize", syncCodeOverflow, { passive: true });
+        requestAnimationFrame(syncCodeOverflow);
+      }
     });
 
     // 5. GitHub Alert / Callout transform (> [!NOTE], > [!TIP], etc.)
@@ -1094,13 +1211,13 @@
 </script>
 {% endraw %}
 
-<link rel="stylesheet" href="{{ '/assets/reading-ui.css' | relative_url }}?v=study-flow-21">
+<link rel="stylesheet" href="{{ '/assets/reading-ui.css' | relative_url }}?v=study-flow-23">
 <script src="{{ '/assets/roadmap-return.js' | relative_url }}?v=study-flow-19" defer></script>
 <script src="{{ '/assets/study-catalog.js' | relative_url }}" defer></script>
 <script src="{{ '/assets/study-state.js' | relative_url }}?v=study-flow-19" defer></script>
 <script src="{{ '/assets/read-aloud.js' | relative_url }}?v=study-flow-24" defer></script>
-<script src="{{ '/assets/reading-ui.js' | relative_url }}?v=study-flow-19" defer></script>
+<script src="{{ '/assets/reading-ui.js' | relative_url }}?v=study-flow-21" defer></script>
 <script src="{{ '/assets/revision-ui.js' | relative_url }}?v=study-flow-19" defer></script>
 <script src="{{ '/assets/study-resume.js' | relative_url }}?v=study-flow-19" defer></script>
 
-<link rel="stylesheet" href="{{ '/assets/reference-reader.css' | relative_url }}?v=reference-18">
+<link rel="stylesheet" href="{{ '/assets/reference-reader.css' | relative_url }}?v=reference-20">

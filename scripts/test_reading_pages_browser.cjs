@@ -30,7 +30,8 @@ async function textSurfaces(locator) {
   });
 }
 (async () => {
-  const browser = await chromium.launch({headless: true});
+  const executablePath = process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH || undefined;
+  const browser = await chromium.launch({headless: true, executablePath});
   const failures = [];
   const check = (name, action) => { try { action(); } catch (error) { failures.push(name + ': ' + error.message); } };
   try {

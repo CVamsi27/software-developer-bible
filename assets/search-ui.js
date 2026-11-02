@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function () {
   var rows = JSON.parse(data.textContent), state = {q: '', sec: [], cat: [], tag: [], material: ''};
   var q = document.getElementById('q'), resultList = document.getElementById('results');
   var count = document.getElementById('result-count'), chips = document.getElementById('selected-filters');
+  var clearQuery = document.getElementById('clear-query');
+  var syncClearButton = function () { clearQuery.hidden = q.value.length === 0; };
   var labels = {learn: 'Learn', revision: 'Revision', interview: 'Interview practice', reference: 'Reference'};
   ['sec', 'cat', 'tag'].forEach(function (key) {
     var values = new Set();
@@ -74,9 +76,12 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('[data-clear-filters]').hidden = active.length === 0;
   }
   var timer;
-  q.addEventListener('input', function () { clearTimeout(timer); state.q = q.value; render(); timer = setTimeout(sync, 180); });
+  q.addEventListener('input', function () { clearTimeout(timer); state.q = q.value; syncClearButton(); render(); timer = setTimeout(sync, 180); });
   q.addEventListener('keydown', function (event) {
     if (event.key === 'ArrowDown') { var first = resultList.querySelector('a'); if (first) { event.preventDefault(); first.focus(); } }
+    if (event.key === 'Escape' && q.value) {
+      event.preventDefault(); clearTimeout(timer); state.q = ''; q.value = ''; syncClearButton(); sync(); render(); q.focus();
+    }
   });
   document.getElementById('search-form').addEventListener('submit', function (event) { event.preventDefault(); clearTimeout(timer); sync(); render(); });
   ['sec', 'cat', 'tag', 'material'].forEach(function (key) {
@@ -85,16 +90,17 @@ document.addEventListener('DOMContentLoaded', function () {
       sync(); render();
     });
   });
-  document.getElementById('clear-query').addEventListener('click', function () { clearTimeout(timer); state.q = ''; q.value = ''; sync(); render(); q.focus(); });
+  clearQuery.addEventListener('click', function () { clearTimeout(timer); state.q = ''; q.value = ''; syncClearButton(); sync(); render(); q.focus(); });
   document.querySelector('[data-clear-filters]').addEventListener('click', function () {
     ['sec', 'cat', 'tag'].forEach(function (key) { state[key] = []; document.getElementById(key).value = ''; });
     state.material = ''; document.getElementById('material').value = ''; sync(); render(); document.getElementById('material').focus();
   });
-  window.addEventListener('popstate', function () { clearTimeout(timer); restore(); render(); });
+  window.addEventListener('popstate', function () { clearTimeout(timer); restore(); syncClearButton(); render(); });
   document.addEventListener('keydown', function (event) {
     if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') { event.preventDefault(); q.focus(); q.select(); }
   });
   restore();
+  syncClearButton();
   if (Array.isArray(window.StudyPublishedPaths) || location.protocol === 'file:') render();
   else {
     count.textContent = 'Loading the library…';

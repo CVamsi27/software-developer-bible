@@ -11,8 +11,8 @@
           </span>
         </label>
       <div class="trigger">
-        <a class="page-link" href="{{ '/INDEX.html' | relative_url }}">Library</a>
-        <a class="page-link" href="{{ '/ROADMAP.html' | relative_url }}">Roadmap</a>
+        <a class="page-link" href="{{ '/INDEX.html' | relative_url }}"{% if page.url == '/INDEX.html' %} aria-current="page"{% endif %}>Library</a>
+        <a class="page-link" href="{{ '/ROADMAP.html' | relative_url }}"{% if page.url == '/ROADMAP.html' %} aria-current="page"{% endif %}>Roadmap</a>
 
       </div>
     </nav>

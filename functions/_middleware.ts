@@ -3,9 +3,13 @@ import {
   decideAccess,
   fetchSupabaseUser,
   probeTokenSession,
+  readStudyRefreshToken,
   readStudyToken,
+  refreshStudySession,
   resolveSessionFromToken,
   respondTo,
+  studyAccessCookie,
+  studyRefreshCookie,
 } from "./_lib/study-access.mjs";
 import type { StudyEnv } from "./_lib/env.ts";
 
@@ -138,6 +142,7 @@ const CALLBACK_HTML = `<!doctype html>
       const rawHash = window.location.hash.startsWith("#") ? window.location.hash.slice(1) : window.location.hash;
       const fragment = new URLSearchParams(rawHash);
       const accessToken = fragment.get("access_token") || query.get("access_token");
+      const refreshToken = fragment.get("refresh_token") || query.get("refresh_token");
       const code = query.get("code") || fragment.get("code");
 
       const getCookie = (name) => {
@@ -189,7 +194,7 @@ const CALLBACK_HTML = `<!doctype html>
         fetch("/auth/session?next=" + encodeURIComponent(resolvedNext), {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ access_token: accessToken, code: code, next: resolvedNext })
+          body: JSON.stringify({ access_token: accessToken, refresh_token: refreshToken, code: code, next: resolvedNext })
         }).then(async (response) => {
           const result = await response.json().catch(() => ({}));
           if (!response.ok || !result.ok) {
@@ -231,20 +236,46 @@ export const onRequest = async ({ request, env, next }: PagesContext) => {
     });
   }
 
+  let renewedCookies: string[] = [];
+  let clearStaleSession = false;
+
   const decision = await decideAccess({
     hostname: url.hostname,
     pathname: url.pathname,
     search: url.search,
     allowedEmail: env.STUDY_ALLOWED_EMAIL,
-    resolveSession: () =>
-      resolveSessionFromToken({
-        token: readStudyToken(request.headers.get("Cookie")),
-        // The probe credential is checked first and only exists when the
-        // operator sets it; otherwise this is the ordinary Supabase path.
-        verifyToken: (token) =>
-          probeTokenSession(token, env) ?? fetchSupabaseUser(token, env),
-      }),
+    resolveSession: async () => {
+      const cookieHeader = request.headers.get("Cookie");
+      // The probe credential is checked first and only exists when the
+      // operator sets it; otherwise this is the ordinary Supabase path.
+      const verifyToken = (token: string) =>
+        probeTokenSession(token, env) ?? fetchSupabaseUser(token, env);
+
+      const session = await resolveSessionFromToken({
+        token: readStudyToken(cookieHeader),
+        verifyToken,
+      });
+      if (session.email) return session;
+
+      const refreshToken = readStudyRefreshToken(cookieHeader);
+      if (!refreshToken) return session;
+
+      const refreshed = await refreshStudySession(refreshToken, env);
+      if (!refreshed) {
+        // Nothing left to present: drop the unusable cookie pair so the next
+        // click starts at login instead of looping through denial.
+        clearStaleSession = true;
+        return session;
+      }
+
+      const email = refreshed.email || (await fetchSupabaseUser(refreshed.accessToken, env))?.email || "";
+      renewedCookies = [
+        studyAccessCookie(refreshed.accessToken),
+        studyRefreshCookie(refreshed.refreshToken),
+      ];
+      return { email, hasToken: true };
+    },
   });
 
-  return respondTo(decision, next);
+  return respondTo(decision, next, { setCookies: renewedCookies, clearSession: clearStaleSession });
 };

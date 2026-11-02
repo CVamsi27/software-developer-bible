@@ -8,8 +8,11 @@
 
 The production host is private by design. Cloudflare Pages Functions run the
 access gate before a static file can be served: Google OAuth is brokered by
-Supabase Auth, and only the allowlisted account receives a
-short-lived `HttpOnly` session cookie. Matching is case-insensitive and the
+Supabase Auth, and only the allowlisted account receives a short-lived
+`HttpOnly` access cookie plus a 30-day `HttpOnly` refresh cookie. When the
+access cookie expires, the gate exchanges the refresh cookie with Supabase and
+renews both cookies server-side, so a normal refresh or a return visit does not
+ask for Google again. Matching is case-insensitive and the
 gate treats supported `@gmail.com` and `@googlemail.com` aliases as equivalent.
 An unauthenticated visitor sees `/auth/login.html`;
 a signed-in visitor with a different address is sent to
@@ -102,6 +105,11 @@ links keep that context so **Return to roadmap** reopens the same assignment.
    The implementation also accepts the personal app's public aliases
    (`NEXT_PUBLIC_SUPABASE_URL` and `SUPABASE_PUBLISHABLE_KEY`). If the project
    uses symmetric signing, provide the publishable/anon key instead of JWKS.
+   Silent renewal exchanges the refresh cookie at
+   `${SUPABASE_URL}/auth/v1/token?grant_type=refresh_token`, and that endpoint
+   requires the publishable/anon key. A JWKS-only configuration still verifies
+   access tokens, but after the access cookie expires it falls back to an
+   interactive Google login because it cannot perform the exchange.
    In Supabase Auth → URL Configuration, allow the exact
    redirect URL `https://study.buildora.work/auth/callback.html` (and the
    Pages preview callback URL when testing a preview deployment). The page
@@ -260,9 +268,15 @@ the only check that also exercises Google's consent screen and the callback:
 3. A different Google account is redirected to Personal Buildora.
 4. Opening a deep link while signed out still lands on login and returns to
    that deep link after a successful session.
+5. After signing in once, refreshing the page and reopening the site in the
+   same browser serve content without another Google screen — the access cookie
+   has either survived or been renewed from the refresh cookie.
+6. `/auth/logout` returns to login, and reloading the site after it asks for
+   Google again: both the access and refresh cookies must be gone.
 
 The current scope is an open-app/browser session. There is no background push
-delivery, refresh-token store, or binary upload in this site.
+delivery, server-side refresh-token store beyond Supabase's own rotation, or
+binary upload in this site.
 
 ## 4. Conventions
 

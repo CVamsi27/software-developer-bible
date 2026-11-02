@@ -1,6 +1,13 @@
 const PERSONAL_ACCESS_DENIED_URL = "https://personal.buildora.work/?study=access-denied";
 const PRODUCTION_PAGES_HOST = "software-developer-bible.pages.dev";
 export const STUDY_CANONICAL_ORIGIN = "https://study.buildora.work";
+// The access cookie is only a fast path. When it expires, the refresh cookie
+// lets the edge renew it without another Google consent screen. Both stay
+// HttpOnly: no browser script ever reads a bearer credential.
+const ACCESS_COOKIE_MAX_AGE = 3600;
+const REFRESH_COOKIE_MAX_AGE = 60 * 60 * 24 * 30;
+const SESSION_COOKIE_ATTRIBUTES = "Path=/; HttpOnly; Secure; SameSite=Lax";
+
 // The paths the middleware answers itself, before the asset layer runs: the
 // OAuth callback has no file behind it, and Pages canonicalizes a `.html`
 // request with a 308 that would drop the #access_token fragment. One
@@ -164,13 +171,40 @@ export function accessDeniedRedirect() {
 
 /** The session cookie's value, or "" when absent or not decodable. */
 export function readStudyToken(cookieHeader) {
-  const match = (cookieHeader ?? "").match(/(?:^|;\s*)study_access_token=([^;]+)/);
+  return readCookie(cookieHeader, "study_access_token");
+}
+
+/** The durable refresh cookie's value, or "" when absent or not decodable. */
+export function readStudyRefreshToken(cookieHeader) {
+  return readCookie(cookieHeader, "study_refresh_token");
+}
+
+function readCookie(cookieHeader, name) {
+  const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const match = (cookieHeader ?? "").match(new RegExp(`(?:^|;\\s*)${escaped}=([^;]+)`));
   if (!match) return "";
   try {
     return decodeURIComponent(match[1]);
   } catch {
     return "";
   }
+}
+
+export function studyAccessCookie(token) {
+  return `study_access_token=${encodeURIComponent(token)}; ${SESSION_COOKIE_ATTRIBUTES}; Max-Age=${ACCESS_COOKIE_MAX_AGE}`;
+}
+
+export function studyRefreshCookie(token) {
+  return `study_refresh_token=${encodeURIComponent(token)}; ${SESSION_COOKIE_ATTRIBUTES}; Max-Age=${REFRESH_COOKIE_MAX_AGE}`;
+}
+
+/** Both cookies must disappear together; a left-over refresh token would
+ * silently sign the visitor back in after they asked to leave. */
+export function clearStudySessionCookies() {
+  return [
+    `study_access_token=; ${SESSION_COOKIE_ATTRIBUTES}; Max-Age=0`,
+    `study_refresh_token=; ${SESSION_COOKIE_ATTRIBUTES}; Max-Age=0`,
+  ];
 }
 
 /** The preserved deep link cookie's value, or "" when absent. */
@@ -281,16 +315,71 @@ export async function decideAccess({
 }
 
 /**
+ * Exchange a refresh token for a fresh access token.
+ *
+ * Called by the gate when the access cookie is missing or expired. Supabase
+ * rotates the refresh token on most grants, so the caller must persist
+ * whatever is returned here — reusing the old one would work exactly once.
+ * A refused exchange returns `null`: an invalid refresh credential is an
+ * anonymous visitor, never a session to guess at.
+ */
+export async function refreshStudySession(refreshToken, env) {
+  const config = resolveSupabaseConfig(env);
+  if (!refreshToken || !config.url) return null;
+  try {
+    const response = await fetch(`${config.url}/auth/v1/token?grant_type=refresh_token`, {
+      method: "POST",
+      headers: {
+        ...(config.anonKey ? { apikey: config.anonKey } : {}),
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ refresh_token: refreshToken }),
+    });
+    if (!response.ok) return null;
+    const data = await response.json();
+    if (typeof data?.access_token !== "string" || !data.access_token) return null;
+    return {
+      accessToken: data.access_token,
+      refreshToken:
+        typeof data.refresh_token === "string" && data.refresh_token
+          ? data.refresh_token
+          : refreshToken,
+      email: normalizeEmail(
+        data.user?.email || data.user?.user_metadata?.email || data.email || "",
+      ),
+      expiresIn: typeof data.expires_in === "number" ? data.expires_in : ACCESS_COOKIE_MAX_AGE,
+    };
+  } catch {
+    return null;
+  }
+}
+
+/**
  * Turn a decision into the Response the edge sends.
  *
  * Kept here rather than in the middleware so the mapping is pinned by tests
- * too — the adapter should be glue, not policy.
+ * too — the adapter should be glue, not policy. `setCookies` carries the
+ * rotated session cookies a refresh produced; without appending them the
+ * browser would keep presenting the expired access token on every request.
  */
-export function respondTo(decision, next) {
-  if (decision.action === "public" || decision.action === "allow") return next();
-  const headers = { Location: decision.location, "Cache-Control": "no-store" };
-  if (decision.action === "denied") {
-    headers["Set-Cookie"] = "study_access_token=; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=0";
+export async function respondTo(decision, next, { setCookies = [], clearSession = false } = {}) {
+  if (decision.action === "public" || decision.action === "allow") {
+    const response = await next();
+    if (setCookies.length === 0) return response;
+    const headers = new Headers(response.headers);
+    // A response carrying fresh credentials must never be stored by a shared
+    // cache or replayed to another visitor.
+    headers.set("Cache-Control", "private, no-store");
+    for (const cookie of setCookies) headers.append("Set-Cookie", cookie);
+    return new Response(response.body, {
+      status: response.status,
+      statusText: response.statusText,
+      headers,
+    });
+  }
+  const headers = new Headers({ Location: decision.location, "Cache-Control": "no-store" });
+  if (decision.action === "denied" || clearSession) {
+    for (const cookie of clearStudySessionCookies()) headers.append("Set-Cookie", cookie);
   }
   return new Response(null, {
     status: decision.status,

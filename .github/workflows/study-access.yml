@@ -44,7 +44,7 @@ jobs:
         run: node --experimental-strip-types --test functions/api/version.test.mjs
       - name: Reject client-side token persistence
         run: |
-          if grep -RInE 'localStorage.*(access_token|study_access_token)|(access_token|study_access_token).*localStorage' auth functions; then
-            echo 'Study access tokens must stay in the HttpOnly cookie flow.'
+          if grep -RInE 'localStorage.*(access_token|refresh_token)|(access_token|refresh_token).*localStorage' auth functions; then
+            echo 'Study bearer tokens must stay in the HttpOnly cookie flow.'
             exit 1
           fi

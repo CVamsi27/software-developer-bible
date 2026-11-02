@@ -1,4 +1,13 @@
-import { accessDeniedRedirect, fetchSupabaseUser, isAllowedStudyEmail, readStudyNextCookie, resolveSupabaseConfig, safeNextPath } from "../_lib/study-access.mjs";
+import {
+  accessDeniedRedirect,
+  fetchSupabaseUser,
+  isAllowedStudyEmail,
+  readStudyNextCookie,
+  resolveSupabaseConfig,
+  safeNextPath,
+  studyAccessCookie,
+  studyRefreshCookie,
+} from "../_lib/study-access.mjs";
 import type { StudyEnv } from "../_lib/env.ts";
 
 function json(body: unknown, init?: ResponseInit) {
@@ -9,14 +18,15 @@ function json(body: unknown, init?: ResponseInit) {
 }
 
 export const onRequestPost = async ({ request, env }: { request: Request; env: StudyEnv }) => {
-  let payload: { access_token?: unknown; code?: unknown; next?: unknown };
+  let payload: { access_token?: unknown; refresh_token?: unknown; code?: unknown; next?: unknown };
   try {
-    payload = await request.json() as { access_token?: unknown; code?: unknown; next?: unknown };
+    payload = await request.json() as { access_token?: unknown; refresh_token?: unknown; code?: unknown; next?: unknown };
   } catch {
     return json({ ok: false, reason: "invalid-request" }, { status: 400 });
   }
 
   let token = typeof payload.access_token === "string" ? payload.access_token : "";
+  let refreshToken = typeof payload.refresh_token === "string" ? payload.refresh_token : "";
   const code = typeof payload.code === "string" ? payload.code : "";
 
   if (!token && code) {
@@ -32,6 +42,9 @@ export const onRequestPost = async ({ request, env }: { request: Request; env: S
           const tokenData = await tokenRes.json() as any;
           if (typeof tokenData?.access_token === "string") {
             token = tokenData.access_token;
+          }
+          if (typeof tokenData?.refresh_token === "string") {
+            refreshToken = tokenData.refresh_token;
           }
         }
       } catch {
@@ -56,12 +69,15 @@ export const onRequestPost = async ({ request, env }: { request: Request; env: S
   const rawTarget = (queryNext && queryNext !== "/") ? queryNext : (payloadNext || cookieNext || queryNext || "/");
   const next = safeNextPath(rawTarget);
 
-  return json(
-    { ok: true, email: user.email, next },
-    {
-      headers: {
-        "Set-Cookie": `study_access_token=${encodeURIComponent(token)}; Path=/; HttpOnly; Secure; SameSite=Lax; Max-Age=3600`,
-      },
-    },
-  );
+  const headers = new Headers({
+    "Content-Type": "application/json; charset=utf-8",
+    "Cache-Control": "no-store",
+  });
+  headers.append("Set-Cookie", studyAccessCookie(token));
+  if (refreshToken) headers.append("Set-Cookie", studyRefreshCookie(refreshToken));
+
+  return new Response(JSON.stringify({ ok: true, email: user.email, next }), {
+    status: 200,
+    headers,
+  });
 };

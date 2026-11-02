@@ -63,6 +63,8 @@ test("the OAuth callback is answered directly, fragment intact", async () => {
     // The page's contract with `/auth/session`: read the fragment, post it,
     // then follow the sanitized `next` the route answers with.
     assert.match(body, /window\.location\.hash/, path);
+    assert.match(body, /fragment\.get\("refresh_token"\)/, path);
+    assert.match(body, /refresh_token: refreshToken/, path);
     assert.match(body, /fetch\("\/auth\/session\?next="/, path);
   }
 });
@@ -134,6 +136,113 @@ test("a presented session that cannot be verified reaches the denial page", asyn
     assert.equal(response.status, 302);
     assert.equal(response.headers.get("Location"),
                  "https://personal.buildora.work/?study=access-denied");
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("a stale refresh cookie is cleared and the visitor starts at login", async () => {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async (url) => {
+    const target = String(url);
+    if (target.includes("/auth/v1/token?grant_type=refresh_token")) {
+      return new Response(JSON.stringify({ error: "invalid_grant" }), { status: 400 });
+    }
+    throw new Error("unexpected Supabase request: " + target);
+  };
+  try {
+    const response = await call(CHAPTER, {
+      cookie: "study_refresh_token=stale",
+      env: { SUPABASE_URL: "https://example.supabase.co", SUPABASE_ANON_KEY: "key" },
+    });
+    assert.equal(response.status, 302);
+    assert.equal(response.headers.get("Location"),
+                 "/auth/login.html?next=%2F10-frontend%2F10.1-javascript%2FINDEX.html");
+    const cookies = response.headers.getSetCookie();
+    assert.equal(cookies.length, 2, "the unusable pair is dropped together");
+    for (const cookie of cookies) assert.match(cookie, /Max-Age=0/);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("a refreshed account outside the allowlist is denied without storing the renewal", async () => {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async (url) => {
+    const target = String(url);
+    if (target.includes("/auth/v1/token?grant_type=refresh_token")) {
+      return new Response(JSON.stringify({
+        access_token: "other-access",
+        refresh_token: "other-refresh",
+        expires_in: 3600,
+        user: { email: "someone.else@example.com" },
+      }), { status: 200 });
+    }
+    throw new Error("unexpected Supabase request: " + target);
+  };
+  try {
+    const response = await call(CHAPTER, {
+      cookie: "study_refresh_token=refresh-token",
+      env: {
+        SUPABASE_URL: "https://example.supabase.co",
+        SUPABASE_ANON_KEY: "key",
+        STUDY_ALLOWED_EMAIL: ALLOWED_EMAIL,
+      },
+    });
+    assert.equal(response.status, 302);
+    assert.equal(response.headers.get("Location"),
+                 "https://personal.buildora.work/?study=access-denied");
+    const cookies = response.headers.getSetCookie();
+    for (const cookie of cookies) {
+      assert.match(cookie, /Max-Age=0/);
+      assert.doesNotMatch(cookie, /other-access|other-refresh/);
+    }
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("an expired access cookie refreshes from the refresh cookie instead of asking for Google again", async () => {
+  const originalFetch = globalThis.fetch;
+  const calls = [];
+  globalThis.fetch = async (url, init = {}) => {
+    const target = String(url);
+    calls.push({ target, method: init.method ?? "GET", body: init.body });
+    if (target.endsWith("/auth/v1/user")) return new Response("{}", { status: 401 });
+    if (target.endsWith("/auth/v1/.well-known/jwks.json")) {
+      return new Response(JSON.stringify({ keys: [] }), { status: 200 });
+    }
+    if (target.includes("/auth/v1/token?grant_type=refresh_token")) {
+      return new Response(JSON.stringify({
+        access_token: "new-access-token",
+        refresh_token: "rotated-refresh-token",
+        expires_in: 3600,
+        user: { email: ALLOWED_EMAIL },
+      }), { status: 200 });
+    }
+    throw new Error("unexpected Supabase request: " + target);
+  };
+  try {
+    const response = await call(CHAPTER, {
+      cookie: "study_access_token=expired-token; study_refresh_token=refresh-token",
+      env: {
+        SUPABASE_URL: "https://example.supabase.co",
+        SUPABASE_ANON_KEY: "key",
+        STUDY_ALLOWED_EMAIL: ALLOWED_EMAIL,
+      },
+    });
+    assert.equal(response.status, 200, "the refreshed session serves the chapter");
+    assert.equal(await response.text(), "CHAPTER");
+    assert.equal(
+      JSON.parse(calls.find((entry) => entry.target.includes("grant_type=refresh_token")).body).refresh_token,
+      "refresh-token",
+      "the refresh cookie is exchanged, not the access cookie",
+    );
+    const cookies = response.headers.getSetCookie();
+    assert.match(cookies[0], /^study_access_token=new-access-token;/);
+    assert.match(cookies[0], /Max-Age=3600/);
+    assert.match(cookies[1], /^study_refresh_token=rotated-refresh-token;/);
+    assert.match(cookies[1], /Max-Age=2592000/);
   } finally {
     globalThis.fetch = originalFetch;
   }

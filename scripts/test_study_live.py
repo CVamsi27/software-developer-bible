@@ -63,7 +63,10 @@ AUTHORIZE = "https://proj.supabase.co/auth/v1/authorize?provider=google"
 PUBLIC_DIRECT = live.direct_public_pages(live.public_paths())
 SESSION_PATH = "/auth/session"
 DENIAL_PATH = "/personal"
-CLEARED_COOKIE = "study_access_token=; Max-Age=0; HttpOnly; Secure; SameSite=Lax"
+CLEARED_COOKIE = (
+    "study_access_token=; Max-Age=0; HttpOnly; Secure; SameSite=Lax",
+    "study_refresh_token=; Max-Age=0; HttpOnly; Secure; SameSite=Lax",
+)
 
 
 def quote(value):
@@ -85,8 +88,9 @@ class Stub(http.server.BaseHTTPRequestHandler):
         self.send_response(status)
         if location:
             self.send_header("Location", location)
-        if cookie:
-            self.send_header("Set-Cookie", cookie)
+        for value in ([cookie] if isinstance(cookie, str) else cookie):
+            if value:
+                self.send_header("Set-Cookie", value)
         payload = body.encode()
         self.send_header("Content-Length", str(len(payload)))
         self.end_headers()
@@ -133,8 +137,11 @@ class Stub(http.server.BaseHTTPRequestHandler):
                     if "signin_unconfigured" in self.violations
                     else self.reply(302, AUTHORIZE))
         if path == "/auth/logout":
-            return self.reply(302, live.LOGIN_PATH,
-                              "" if "logout_no_cookie" in self.violations else CLEARED_COOKIE)
+            if "logout_no_cookie" in self.violations:
+                return self.reply(302, live.LOGIN_PATH, "")
+            if "logout_keeps_refresh" in self.violations:
+                return self.reply(302, live.LOGIN_PATH, CLEARED_COOKIE[:1])
+            return self.reply(302, live.LOGIN_PATH, CLEARED_COOKIE)
         if "serve_content" in self.violations:
             return self.reply(200, body="CHAPTER")
         cookie = self.headers.get("Cookie") or ""
@@ -243,7 +250,9 @@ BEHAVIOURS = [
     ("a dropped deep-link `next` exits 1", ("drop_next",), 1,
      ("gate /INDEX.html", "next=/INDEX.html"), True),
     ("an uncleared logout exits 1", ("logout_no_cookie",), 1,
-     ("logout /auth/logout", "session cookie"), True),
+     ("logout /auth/logout", "session cookies"), True),
+    ("a logout that keeps the refresh cookie exits 1", ("logout_keeps_refresh",), 1,
+     ("logout /auth/logout", "study_refresh_token"), True),
     ("an unconfigured sign-in warns only", ("signin_unconfigured",), 0,
      ("sign-in /auth/start", "NOT configured", "1 warning"), True),
     ("a denial page answering 404 warns only", ("denial_dead",), 0,

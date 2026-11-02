@@ -2,6 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import {
   accessDeniedRedirect,
+  clearStudySessionCookies,
   decideAccess,
   fetchSupabaseUser,
   isAllowedStudyEmail,
@@ -9,11 +10,15 @@ import {
   isPublicAuthPath,
   normalizeEmail,
   probeTokenSession,
+  readStudyRefreshToken,
   readStudyToken,
+  refreshStudySession,
   resolveSessionFromToken,
   resolveSupabaseConfig,
   respondTo,
   safeNextPath,
+  studyAccessCookie,
+  studyRefreshCookie,
 } from "./study-access.mjs";
 
 const JWKS_URL = "https://example.supabase.co/auth/v1/.well-known/jwks.json";
@@ -143,6 +148,75 @@ test("reads the session cookie out of a cookie header", () => {
   assert.equal(readStudyToken("study_access_token=%E0%A4%A"), "");
   assert.equal(readStudyToken("other=1"), "");
   assert.equal(readStudyToken(undefined), "");
+});
+
+test("reads the refresh cookie without confusing it for the access cookie", () => {
+  assert.equal(readStudyRefreshToken("study_refresh_token=refresh-one"), "refresh-one");
+  assert.equal(readStudyRefreshToken("study_access_token=access; study_refresh_token=refresh; more=2"), "refresh");
+  assert.equal(readStudyRefreshToken("study_access_token=access"), "");
+  assert.equal(readStudyRefreshToken("study_refresh_token=%E0%A4%A"), "");
+});
+
+test("session cookies separate the short-lived access token from the durable refresh token", () => {
+  assert.match(studyAccessCookie("a.b.c"), /^study_access_token=a\.b\.c;/);
+  assert.match(studyAccessCookie("a.b.c"), /Max-Age=3600/);
+  assert.match(studyRefreshCookie("refresh+one"), /^study_refresh_token=refresh%2Bone;/);
+  assert.match(studyRefreshCookie("refresh+one"), /Max-Age=2592000/);
+  for (const cookie of [studyAccessCookie("a"), studyRefreshCookie("b")]) {
+    for (const attribute of ["Path=/", "HttpOnly", "Secure", "SameSite=Lax"]) {
+      assert.ok(cookie.includes(attribute), `${attribute} missing from ${cookie}`);
+    }
+  }
+  assert.deepEqual(clearStudySessionCookies().map((cookie) => cookie.split("=")[0]), [
+    "study_access_token",
+    "study_refresh_token",
+  ]);
+  for (const cookie of clearStudySessionCookies()) assert.match(cookie, /Max-Age=0/);
+});
+
+test("a refresh exchange returns the rotated access and refresh tokens", async () => {
+  const originalFetch = globalThis.fetch;
+  const calls = [];
+  globalThis.fetch = async (url, init = {}) => {
+    calls.push({ url: String(url), body: init.body, apiKey: init.headers.apikey });
+    return new Response(JSON.stringify({
+      access_token: "new-access",
+      refresh_token: "new-refresh",
+      expires_in: 1800,
+      user: { email: " Owner@Example.test " },
+    }), { status: 200 });
+  };
+  try {
+    assert.deepEqual(
+      await refreshStudySession("old-refresh", {
+        SUPABASE_URL: "https://example.supabase.co",
+        SUPABASE_ANON_KEY: "public-key",
+      }),
+      { accessToken: "new-access", refreshToken: "new-refresh", email: ALLOWED_EMAIL, expiresIn: 1800 },
+    );
+    assert.equal(calls[0].url, "https://example.supabase.co/auth/v1/token?grant_type=refresh_token");
+    assert.equal(JSON.parse(calls[0].body).refresh_token, "old-refresh");
+    assert.equal(calls[0].apiKey, "public-key");
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("a refused refresh returns null instead of inventing a session", async () => {
+  const originalFetch = globalThis.fetch;
+  globalThis.fetch = async () => new Response(JSON.stringify({ error: "invalid_grant" }), { status: 400 });
+  try {
+    assert.equal(
+      await refreshStudySession("stale", {
+        SUPABASE_URL: "https://example.supabase.co",
+        SUPABASE_ANON_KEY: "public-key",
+      }),
+      null,
+    );
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+  assert.equal(await refreshStudySession("", { SUPABASE_URL: "https://example.supabase.co", SUPABASE_ANON_KEY: "key" }), null);
 });
 
 test("an absent cookie is anonymous and never calls the verifier", async () => {
@@ -342,6 +416,31 @@ test("serves the asset for allow and public, and redirects otherwise", async () 
     assert.equal(response.headers.get("Cache-Control"), "no-store", action);
     assert.equal(await response.text(), "", action);
   }
+});
+
+test("a renewed session carries its cookies, and a denial clears the pair", async () => {
+  const next = async () => new Response("CONTENT", { status: 200 });
+
+  const allowed = await respondTo({ action: "allow", status: 200, location: "" }, next, {
+    setCookies: [studyAccessCookie("new-access"), studyRefreshCookie("rotated")],
+  });
+  const renewed = allowed.headers.getSetCookie();
+  assert.equal(renewed.length, 2);
+  assert.match(renewed[0], /^study_access_token=new-access;/);
+  assert.match(renewed[1], /^study_refresh_token=rotated;/);
+  assert.equal(allowed.headers.get("Cache-Control"), "private, no-store",
+               "a response carrying credentials must not be cached");
+
+  const denied = await respondTo({ action: "denied", status: 302, location: accessDeniedRedirect() }, next);
+  assert.deepEqual(
+    denied.headers.getSetCookie().map((cookie) => cookie.split("=")[0]),
+    ["study_access_token", "study_refresh_token"],
+  );
+
+  const login = await respondTo({ action: "login", status: 302, location: "/auth/login.html" }, next, {
+    clearSession: true,
+  });
+  assert.equal(login.headers.getSetCookie().length, 2, "a stale refresh cookie is dropped at login");
 });
 
 test("the probe credential serves content to the live probe's session", async () => {

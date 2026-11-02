@@ -10126,12 +10126,12 @@
     },
     {
       "path": "docs/deployment.md",
-      "sha256": "085562b45e6410343b45742edabe89399f0aa95cb67da959999dfa922ed25e0e",
+      "sha256": "ea99a37f317c2a867f6f19756e78b15e15853b729507e8f02c3d9e64d00d59bb",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-26",
+      "reviewDate": "2026-11-02",
       "fullContentRead": true,
-      "notes": "Full Pages/git/auth/probe runbook read against source. Removed unconditional Worker deletion advice; check project identity and needed traffic first. Build/source/deployed and authenticated proof remain distinct.",
+      "notes": "Full Pages/git/auth/probe runbook re-read against the refresh-cookie flow. Verified the access/refresh lifetimes, publishable-key requirement for the refresh exchange, manual persistence/logout checks, and session-scope statement against functions/_middleware.ts, functions/auth/session.ts and functions/auth/logout.ts; build, deployed and authenticated proof remain distinct.",
       "findings": []
     },
     {

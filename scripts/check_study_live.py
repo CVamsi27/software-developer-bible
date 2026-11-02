@@ -199,12 +199,12 @@ class Probe:
         try:
             with self.opener.open(request, timeout=self.timeout) as response:
                 return Response(response.status, response.headers.get("Location") or "",
-                                response.headers.get("Set-Cookie") or "",
+                                _set_cookies(response.headers),
                                 body=read_prefix(response, limit))
         except urllib.error.HTTPError as error:
             head = error.headers or {}
             return Response(error.code, head.get("Location") or "",
-                            head.get("Set-Cookie") or "", body=read_prefix(error, limit))
+                            _set_cookies(head), body=read_prefix(error, limit))
         except Exception as error:  # DNS, TLS, timeout, refused
             return Response(error=f"unreachable: {error.__class__.__name__}: {error}")
 
@@ -229,6 +229,17 @@ def read_prefix(response, limit):
         return response.read(limit).decode("utf-8", "replace")
     except Exception:
         return ""
+
+
+def _set_cookies(headers):
+    """Every `Set-Cookie` line, joined for the logout contract.
+
+    `HTTPMessage.get` returns only the first one, so a logout that cleared the
+    access cookie but left the durable refresh cookie behind would look correct.
+    The values this contract emits carry no `Expires` comma, so joining keeps
+    both visible.
+    """
+    return ", ".join(headers.get_all("Set-Cookie") or [])
 
 
 def dense_records():
@@ -726,15 +737,28 @@ def signin_readiness(probe):
 
 
 @check("Logout",
-       "`/auth/logout` 302s and clears the session cookie (`Max-Age=0`)")
+       "`/auth/logout` 302s and clears both session cookies (`Max-Age=0`), so a "
+       "refresh cookie cannot sign the visitor back in")
 def logout_clears_session(probe):
     response = probe.get(probe.study("/auth/logout"))
-    cleared = ("study_access_token=" in response.set_cookie
-               and "Max-Age=0" in response.set_cookie)
+    names = ("study_access_token", "study_refresh_token")
+    missing = [name for name in names
+               if "Max-Age=0" not in _set_cookie_after(response.set_cookie, name)]
+    expected = ("expected 302 with both the access and refresh session cookies "
+                "cleared")
+    if missing:
+        expected += "; still set or missing: " + ", ".join(missing)
     return [verdict("Logout", "logout /auth/logout",
-                    response.status == 302 and cleared, response,
-                    "expected 302 with the session cookie cleared "
-                    f"(Set-Cookie: {response.set_cookie or 'none'})")]
+                    response.status == 302 and not missing, response,
+                    f"{expected} (Set-Cookie: {response.set_cookie or 'none'})")]
+
+
+def _set_cookie_after(set_cookie, name):
+    """The part of the joined header that belongs to one cookie."""
+    for part in set_cookie.split(", "):
+        if part.startswith(f"{name}="):
+            return part
+    return ""
 
 
 def run_checks(argv=None):

@@ -111,6 +111,54 @@ test("a token that needs encoding is stored encoded", async () => {
   }
 });
 
+test("a refresh token survives in its own long-lived HttpOnly cookie", async () => {
+  const stub = stubUser({ email: ALLOWED });
+  try {
+    const response = await post({ body: { access_token: "a.b.c", refresh_token: "refresh+one" } });
+    assert.equal(response.status, 200);
+    const cookies = response.headers.getSetCookie();
+    assert.equal(cookies.length, 2, "the access and refresh cookies have separate lifetimes");
+    assert.match(cookies[0], /^study_access_token=a\.b\.c;/);
+    assert.match(cookies[0], /Max-Age=3600/);
+    assert.match(cookies[1], /^study_refresh_token=refresh%2Bone;/);
+    for (const attribute of ["Path=/", "HttpOnly", "Secure", "SameSite=Lax", "Max-Age=2592000"]) {
+      assert.ok(cookies[1].includes(attribute), `${attribute} missing from ${cookies[1]}`);
+    }
+  } finally {
+    stub.restore();
+  }
+});
+
+test("a refresh token returned by the code exchange is persisted", async () => {
+  const originalFetch = globalThis.fetch;
+  const calls = [];
+  globalThis.fetch = async (url, init = {}) => {
+    const target = String(url);
+    calls.push({ target, body: init.body });
+    if (target.includes("/auth/v1/token?grant_type=pkce")) {
+      return new Response(JSON.stringify({
+        access_token: "code-access-token",
+        refresh_token: "code-refresh-token",
+        expires_in: 3600,
+      }), { status: 200 });
+    }
+    if (target.endsWith("/auth/v1/user")) {
+      return new Response(JSON.stringify({ email: ALLOWED }), { status: 200 });
+    }
+    throw new Error("unexpected Supabase request: " + target);
+  };
+  try {
+    const response = await post({ body: { code: "auth-code" } });
+    assert.equal(response.status, 200);
+    assert.equal(JSON.parse(calls[0].body).auth_code, "auth-code");
+    const cookies = response.headers.getSetCookie();
+    assert.match(cookies[0], /^study_access_token=code-access-token;/);
+    assert.match(cookies[1], /^study_refresh_token=code-refresh-token;/);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
 test("an account outside the allowlist is refused with the denial target", async () => {
   const stub = stubUser({ email: "someone.else@example.com" });
   try {
@@ -232,17 +280,21 @@ test("a trailing slash in the project URL does not double up", async () => {
   assert.equal(new URL(response.headers.get("Location")).pathname, "/auth/v1/authorize");
 });
 
-test("logout clears the session cookie and returns to the login page", async () => {
+test("logout clears the access and refresh cookies and returns to the login page", async () => {
   const response = await logout({
     request: new Request("https://study.buildora.work/auth/logout"),
   });
   assert.equal(response.status, 302);
   assert.equal(response.headers.get("Location"), "https://study.buildora.work/auth/login.html");
-  const cookie = response.headers.get("Set-Cookie") ?? "";
-  assert.match(cookie, /^study_access_token=;/);
-  assert.ok(cookie.includes("Max-Age=0"), cookie);
-  for (const attribute of ["Path=/", "HttpOnly", "Secure"]) {
-    assert.ok(cookie.includes(attribute), `${attribute} missing from ${cookie}`);
+  const cookies = response.headers.getSetCookie();
+  assert.equal(cookies.length, 2);
+  assert.match(cookies[0], /^study_access_token=;/);
+  assert.match(cookies[1], /^study_refresh_token=;/);
+  for (const cookie of cookies) {
+    assert.ok(cookie.includes("Max-Age=0"), cookie);
+    for (const attribute of ["Path=/", "HttpOnly", "Secure"]) {
+      assert.ok(cookie.includes(attribute), `${attribute} missing from ${cookie}`);
+    }
   }
   assert.equal(response.headers.get("Cache-Control"), "no-store");
 });

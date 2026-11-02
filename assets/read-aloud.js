@@ -95,7 +95,7 @@
     return groups.length - 1;
   }
   function extractChapter(content) {
-    var excluded = 'pre, script, style, nav, button, img, svg, [hidden], [aria-hidden="true"], .read-aloud, .chapter-outline, .heading-anchor, .chapter-nav-footer,.roadmap-return,.reader-breadcrumb,.reader-meta,.reading-width,.revision-controls,.code-line-numbers,.copy-feedback,details:not([open])';
+    var excluded = 'pre, script, style, nav, button, img, svg, [hidden], [aria-hidden="true"], .read-aloud, .chapter-outline, .heading-anchor, .chapter-nav-footer,.roadmap-return,.reader-breadcrumb,.reader-meta,.revision-controls,.code-line-numbers,.copy-feedback,details:not([open])';
     var NodeFilter = content.ownerDocument.defaultView.NodeFilter;
     var walker = content.ownerDocument.createTreeWalker(content, NodeFilter.SHOW_TEXT, {
       acceptNode: function (node) {
@@ -179,8 +179,11 @@
     if (!published || (!state.isLearningPath(published) && !/\/REVISION\.html$/i.test(published))) return;
     var bar = document.createElement('section');
     bar.className = 'read-aloud'; bar.setAttribute('aria-label', 'Chapter read aloud');
-    bar.innerHTML = '<span class="read-aloud-progress" aria-hidden="true" hidden></span><span class="read-aloud-status" role="status" aria-live="polite">Read along at your own pace</span><div class="read-aloud-controls"><button type="button" data-read aria-label="Read aloud" title="Starts from the paragraph in view">Listen</button><button type="button" data-pause aria-label="Pause" hidden>Pause</button><button type="button" data-next aria-label="Read the next paragraph" hidden>Next</button><button type="button" data-stop aria-label="Stop" hidden>Stop</button><label class="read-aloud-field">Voice <select data-voice aria-label="Reading voice"><option value="">Default voice</option></select></label><label class="read-aloud-field">Speed <select data-speed aria-label="Reading speed"><option value="0.5">0.5×</option><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label></div>';
+    bar.innerHTML = '<span class="read-aloud-progress" aria-hidden="true" hidden></span><span class="read-aloud-status" role="status" aria-live="polite">Read along at your own pace</span><div class="read-aloud-controls"><button type="button" data-read aria-label="Read aloud" title="Click or tap a paragraph to choose where Listen starts">Listen</button><button type="button" data-pause aria-label="Pause" hidden>Pause</button><button type="button" data-next aria-label="Read the next paragraph" hidden>Next</button><button type="button" data-stop aria-label="Stop" hidden>Stop</button><label class="read-aloud-field">Voice <select data-voice aria-label="Reading voice"></select></label><label class="read-aloud-field">Speed <select data-speed aria-label="Reading speed"><option value="0.5">0.5×</option><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></label></div>';
     document.body.append(bar);
+    var topButton = document.querySelector('.back-to-top');
+    var controls = bar.querySelector('.read-aloud-controls');
+    if (topButton && controls) controls.append(topButton);
     document.body.classList.add('has-read-aloud');
     var play = bar.querySelector('[data-read]'), pause = bar.querySelector('[data-pause]'), nextButton = bar.querySelector('[data-next]'), stop = bar.querySelector('[data-stop]'), status = bar.querySelector('[role="status"]'), progress = bar.querySelector('.read-aloud-progress'), voiceSelect = bar.querySelector('[data-voice]'), speedSelect = bar.querySelector('[data-speed]');
     function syncDock() {
@@ -194,7 +197,7 @@
       syncDock(); return;
     }
     var groups = groupChunks(extractChapter(content));
-    var currentGroup = -1, activeBlock = null;
+    var currentGroup = -1, selectedGroup = -1, activeBlock = null, selectedBlock = null;
     var savedVoice = '';
     try { savedVoice = root.localStorage.getItem(VOICE_KEY) || ''; } catch (_) {}
     function clearActive() {
@@ -207,6 +210,25 @@
       activeBlock = element;
       element.setAttribute('data-read-aloud-active', 'true');
       document.dispatchEvent(new root.CustomEvent('study:narration', {detail: {element: element}}));
+    }
+    function clearSelected() {
+      if (selectedBlock) selectedBlock.removeAttribute('data-read-aloud-selected');
+      selectedBlock = null;
+      selectedGroup = -1;
+    }
+    function selectParagraph(index) {
+      if (index < 0 || index >= groups.length) return;
+      var element = groups[index].element;
+      if (!element || element.tagName !== 'P') return;
+      if (selectedBlock && selectedBlock !== element) selectedBlock.removeAttribute('data-read-aloud-selected');
+      selectedGroup = index;
+      selectedBlock = element;
+      element.setAttribute('data-read-aloud-selected', 'true');
+      play.hidden = false;
+      play.textContent = 'Listen';
+      play.setAttribute('aria-label', 'Read selected paragraph');
+      status.textContent = 'Paragraph selected. Press Listen to start here.';
+      syncDock();
     }
     function follow(element, _index, range) {
       if (!element || !content.contains(element)) { clearActive(); return; }
@@ -253,12 +275,12 @@
       var focusWasAction = [play, pause, nextButton, stop].indexOf(document.activeElement) !== -1;
       if (!active) clearActive();
       bar.dataset.state = nextState;
-      play.hidden = busy || ready;
+      play.hidden = (busy || ready) && selectedGroup < 0;
       pause.hidden = !busy;
       nextButton.hidden = !ready;
       stop.hidden = !(busy || ready || finished);
-      play.textContent = finished ? 'Listen again' : 'Listen';
-      play.setAttribute('aria-label', finished ? 'Listen again' : 'Read aloud');
+      play.textContent = finished && selectedGroup < 0 ? 'Listen again' : 'Listen';
+      play.setAttribute('aria-label', selectedGroup >= 0 ? 'Read selected paragraph' : finished ? 'Listen again' : 'Read aloud');
       pause.textContent = nextState === 'paused' ? 'Resume' : 'Pause';
       pause.setAttribute('aria-label', nextState === 'paused' ? 'Resume' : 'Pause');
       var hasPosition = active && currentGroup >= 0 && currentGroup < groups.length;
@@ -281,33 +303,44 @@
     function refreshVoices() {
       var list = [];
       try { list = root.speechSynthesis.getVoices ? Array.prototype.slice.call(root.speechSynthesis.getVoices()) : []; } catch (_) { list = []; }
-      availableVoices = list.filter(function (voice) { return voice && voice.voiceURI; }).sort(function (a, b) {
-        var aEnglish = /^en(?:-|_|$)/i.test(a.lang || ''), bEnglish = /^en(?:-|_|$)/i.test(b.lang || '');
-        if (aEnglish !== bEnglish) return aEnglish ? -1 : 1;
+      availableVoices = list.filter(function (voice) {
+        return voice && voice.voiceURI && /^en(?:-|_|$)/i.test(voice.lang || '');
+      }).sort(function (a, b) {
         return (a.name || '').localeCompare(b.name || '');
-      });
+      }).slice(0, 5);
       var selected = voiceSelect.value || savedVoice;
       voiceSelect.textContent = '';
-      var fallback = document.createElement('option');
-      fallback.value = ''; fallback.textContent = 'Default voice'; voiceSelect.append(fallback);
+      if (!availableVoices.length) {
+        var unavailable = document.createElement('option');
+        unavailable.value = '';
+        unavailable.textContent = 'No English voices available';
+        unavailable.disabled = true;
+        voiceSelect.append(unavailable);
+        voiceSelect.value = '';
+        voiceSelect.disabled = true;
+        reader.setVoice(null);
+        return;
+      }
       availableVoices.forEach(function (voice) {
         var option = document.createElement('option');
         option.value = voice.voiceURI;
         option.textContent = voice.name + (voice.lang ? ' (' + voice.lang + ')' : '');
         voiceSelect.append(option);
       });
-      voiceSelect.value = selected && voiceByURI(selected) ? selected : '';
-      voiceSelect.disabled = !availableVoices.length;
+      voiceSelect.value = selected && voiceByURI(selected) ? selected : availableVoices[0].voiceURI;
+      voiceSelect.disabled = false;
       reader.setVoice(voiceByURI(voiceSelect.value));
     }
     function startAt(index) {
       if (index < 0 || index >= groups.length) return;
+      clearSelected();
       currentGroup = index;
       markActive(groups[index].element);
       reader.start(groups[index].chunks, {doneState: index === groups.length - 1 ? 'complete' : 'ready'});
     }
     play.addEventListener('click', function () {
       refreshVoices();
+      if (selectedGroup >= 0) { startAt(selectedGroup); return; }
       // "Listen again" restarts at the chapter opening even when the last
       // paragraph left the viewport at the bottom of the page.
       if (lastState === 'complete') { startAt(0); return; }
@@ -315,9 +348,22 @@
       var readingLine = Math.max(96, Math.min(root.innerHeight * 0.28, 220));
       startAt(pickStartGroup(groups, atTop ? -1 : readingLine));
     });
+    content.addEventListener('click', function (event) {
+      var target = event.target;
+      if (!target || !target.closest) return;
+      if (target.closest('a, button, input, select, textarea, summary, [role="button"], [contenteditable="true"]')) return;
+      var paragraph = target.closest('p');
+      if (!paragraph || !content.contains(paragraph)) return;
+      for (var index = 0; index < groups.length; index += 1) {
+        if (groups[index].element === paragraph) {
+          selectParagraph(index);
+          return;
+        }
+      }
+    });
     pause.addEventListener('click', reader.togglePause);
     nextButton.addEventListener('click', function () { startAt(currentGroup + 1); });
-    stop.addEventListener('click', function () { currentGroup = -1; reader.stop(); });
+    stop.addEventListener('click', function () { currentGroup = -1; clearSelected(); reader.stop(); });
     speedSelect.addEventListener('change', function (event) { reader.setRate(event.target.value); });
     voiceSelect.addEventListener('change', function () {
       savedVoice = voiceSelect.value;

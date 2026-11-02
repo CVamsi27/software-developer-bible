@@ -53,11 +53,10 @@
   padding: 6px;
   border-radius: 999px;
 }
-.read-aloud[data-state="idle"] .read-aloud-status,
 .read-aloud[data-state="idle"] .read-aloud-field {
   display: none;
 }
-.read-aloud[data-state="idle"] .read-aloud-controls { gap: 0; }
+.read-aloud[data-state="idle"] .read-aloud-controls { gap: 6px; }
 .read-aloud[data-state="idle"] [data-read] {
   padding: 8px 18px;
   border-radius: 999px;
@@ -148,6 +147,34 @@
 .read-aloud button:disabled,
 .read-aloud select:disabled { opacity: 0.55; cursor: default; }
 .read-aloud [hidden] { display: none !important; }
+.read-aloud .back-to-top {
+  position: static;
+  inset: auto;
+  display: none;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--theme-border, #dadce0);
+  border-radius: 50%;
+  background: var(--card-bg, #ffffff);
+  color: var(--theme-text, #1f1f1f);
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: none;
+  z-index: auto;
+  box-shadow: none;
+  transition: background-color 0.15s ease;
+}
+.read-aloud .back-to-top.visible {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.read-aloud .back-to-top:hover { transform: none; }
 .read-aloud :is(button, select):focus-visible {
   outline: 3px solid var(--theme-link, #1a73e8);
   outline-offset: 3px;
@@ -163,11 +190,8 @@
   white-space: nowrap !important;
   border: 0 !important;
 }
-/* Keep the padding code shortcut away from the fixed dock and back-to-top. */
+/* Keep chapter content clear of the fixed dock. */
 body.has-read-aloud { padding-block-end: calc(var(--read-aloud-height, 72px) + 34px); }
-body.has-read-aloud .back-to-top {
-  bottom: calc(max(16px, env(safe-area-inset-bottom)) + var(--read-aloud-height, 72px) + 12px);
-}
 /* The active paragraph gets a gutter stripe behind the text, never over the
    first glyph, plus inline breathing room that leaves the text column in place. */
 [data-read-aloud-active="true"] {
@@ -180,6 +204,12 @@ body.has-read-aloud .back-to-top {
   background-position: left top;
   box-shadow: none;
   scroll-margin-block: 140px;
+}
+[data-read-aloud-selected="true"] {
+  position: relative;
+  border-radius: 4px;
+  outline: 2px solid var(--theme-link, #1a73e8);
+  outline-offset: 4px;
 }
 html body .post-content :is(p, h1, h2, h3, h4, h5, h6, blockquote)[data-read-aloud-active="true"] {
   padding-inline-start: 14px;
@@ -198,6 +228,7 @@ html body .post-content :is(p, h1, h2, h3, h4, h5, h6, blockquote)[data-read-alo
     padding: 8px;
   }
   .read-aloud-controls { width: 100%; gap: 6px; }
+  .read-aloud[data-state="idle"] .read-aloud-controls { width: auto; }
   .read-aloud[data-state="idle"] {
     left: 50%;
     right: auto;

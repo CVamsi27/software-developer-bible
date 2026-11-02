@@ -22,7 +22,7 @@ function boot(html, route, scripts, setup){
 const article='<main><div class="post-content"><p><a href="#"><img alt="Section" src="https://img.shields.io/badge/section-JavaScript-blue"></a></p><h1>Lexical Environment</h1><h2 id="definition">Definition</h2><p>Original prose.</p><h2 id="first-principles">First Principles</h2><p>Reasoning.</p><h2 id="summary">Summary</h2><p>Authored summary.</p><h2 id="see-also">See Also</h2><a href="REVISION.html">Category revision</a><p><a href="'+next+'">Next: Closures →</a></p></div></main>';
 test('reader keeps metadata and leaves authored next and revision navigation in one place',()=>{
  const dom=boot(article,chapter,['reading-ui.js']); const d=dom.window.document;
- assert.ok(d.querySelector('select[aria-label="Reading width"]'),'Reading width control is available');
+ assert.equal(d.querySelector('select[aria-label="Reading width"]'),null,'reader width stays at the comfortable measure');
  assert.equal(d.querySelector('.reader-meta-section').textContent,'JavaScript');
  assert.equal(d.querySelector('.chapter-details img'),null,'metadata does not depend on third-party badge images');
  assert.equal(d.querySelector('.study-continuation'),null,'No mirrored chapter navigation is generated');
@@ -162,7 +162,7 @@ test('Cloudflare clean chapter routes mount reader and save a canonical resume p
  const clean=chapter.replace(/\.html$/, '');
  const dom=boot(article,clean,['reading-ui.js','read-aloud.js','study-resume.js']);
  const w=dom.window,d=w.document;
- assert.ok(d.querySelector('[aria-label="Reading width"]'));
+ assert.equal(d.querySelector('[aria-label="Reading width"]'),null);
  assert.ok(d.querySelector('.read-aloud'));
  d.dispatchEvent(new w.CustomEvent('study:section',{detail:{heading:d.getElementById('summary'),deliberate:true}}));
  w.dispatchEvent(new w.Event('pagehide'));

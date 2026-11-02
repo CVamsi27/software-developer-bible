@@ -43,7 +43,12 @@ async function installReaderAssets(page) {
         speak(utterance) { window.recordedSpeech.push(utterance); },
         getVoices() { return [
           {name: 'Voice A', voiceURI: 'voice-a', lang: 'en-US'},
-          {name: 'Voice B', voiceURI: 'voice-b', lang: 'en-GB'}
+          {name: 'Voice B', voiceURI: 'voice-b', lang: 'en-GB'},
+          {name: 'Voice C', voiceURI: 'voice-c', lang: 'en-AU'},
+          {name: 'Voice D', voiceURI: 'voice-d', lang: 'en-CA'},
+          {name: 'Voice E', voiceURI: 'voice-e', lang: 'en-IN'},
+          {name: 'Voice F', voiceURI: 'voice-f', lang: 'en-NZ'},
+          {name: 'Voix française', voiceURI: 'voice-fr', lang: 'fr-FR'}
         ]; },
         addEventListener() {}
       }});
@@ -53,6 +58,12 @@ async function installReaderAssets(page) {
     const page = await context.newPage();
     await page.goto(CHAPTER_URL);
     await page.setContent(READER_FIXTURE);
+    await page.evaluate(() => {
+      const arrow = document.createElement('button');
+      arrow.className = 'back-to-top visible';
+      arrow.setAttribute('aria-label', 'Back to top');
+      document.body.append(arrow);
+    });
     await installReaderAssets(page);
 
     // The player is a fixed dock owned by the page, not a title-row control.
@@ -64,9 +75,21 @@ async function installReaderAssets(page) {
     assert.equal(await page.locator('[data-voice]').isVisible(), false, 'voice stays out of the way until listening starts');
     assert.equal(await page.locator('[data-speed]').isVisible(), false, 'speed stays out of the way until listening starts');
     assert.equal(await page.locator('.chapter-title-row > h1').count(), 1);
-    assert.equal(await page.locator('.chapter-title-row .reading-width').count(), 1);
+    assert.equal(await page.locator('.chapter-title-row .reading-width').count(), 0);
     assert.equal(await page.locator('[aria-label="Reading speed"] option[value="0.5"]').textContent(), '0.5×');
-    assert.deepEqual(await page.locator('[data-voice] option').allTextContents(), ['Default voice', 'Voice A (en-US)', 'Voice B (en-GB)']);
+    assert.deepEqual(await page.locator('[data-voice] option').allTextContents(), [
+      'Voice A (en-US)', 'Voice B (en-GB)', 'Voice C (en-AU)', 'Voice D (en-CA)', 'Voice E (en-IN)'
+    ]);
+    const alignedActions = await page.evaluate(() => {
+      const listen = document.querySelector('[data-read]').getBoundingClientRect();
+      const arrow = document.querySelector('.back-to-top');
+      const top = arrow.getBoundingClientRect();
+      return {parent: arrow.parentElement.className, display: getComputedStyle(arrow).display,
+        centerDifference: Math.abs((listen.top + listen.bottom) / 2 - (top.top + top.bottom) / 2)};
+    });
+    assert.equal(alignedActions.parent, 'read-aloud-controls');
+    assert.equal(alignedActions.display, 'flex');
+    assert.ok(alignedActions.centerDifference <= 1, 'back-to-top aligns with Listen in the idle row');
     assert.equal(await page.locator('[data-pause]').isVisible(), false);
     assert.equal(await page.locator('[data-next]').isVisible(), false);
     assert.equal(await page.locator('[data-stop]').isVisible(), false);
@@ -195,6 +218,25 @@ async function installReaderAssets(page) {
     const before = await page.evaluate(() => window.speechCancels || 0);
     await page.evaluate(() => window.dispatchEvent(new Event('pagehide')));
     assert.equal(await page.evaluate(() => window.speechCancels || 0), before + 1);
+
+    // A paragraph can be selected explicitly, and a later selection can
+    // replace the current target without interrupting speech until Listen.
+    await page.setContent(READER_FIXTURE);
+    await installReaderAssets(page);
+    const selectedParagraph = page.locator('.post-content p').nth(1);
+    await selectedParagraph.click();
+    assert.equal(await selectedParagraph.getAttribute('data-read-aloud-selected'), 'true');
+    assert.match(await page.getByRole('status').textContent(), /Paragraph selected/);
+    await page.getByRole('button', {name: 'Read selected paragraph'}).click();
+    assert.equal(await page.evaluate(() => window.recordedSpeech.at(-1).text), 'Bindings connect a name to a value.');
+    assert.equal(await selectedParagraph.getAttribute('data-read-aloud-selected'), null, 'the selected outline gives way to the active spoken block');
+    const currentCount = await page.evaluate(() => window.recordedSpeech.length);
+    const nextSelection = page.locator('.post-content p').nth(2);
+    await nextSelection.click();
+    assert.equal(await nextSelection.getAttribute('data-read-aloud-selected'), 'true');
+    assert.equal(await page.evaluate(() => window.recordedSpeech.length), currentCount, 'selecting another paragraph does not stop current speech');
+    await page.getByRole('button', {name: 'Read selected paragraph'}).click();
+    assert.equal(await page.evaluate(() => window.recordedSpeech.at(-1).text), 'Lookup walks outward until it finds a match.');
 
     const unsupported = await browser.newPage();
     await unsupported.addInitScript(() => { Object.defineProperty(window, 'speechSynthesis', {value: undefined}); });

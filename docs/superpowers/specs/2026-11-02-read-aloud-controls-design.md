@@ -19,7 +19,9 @@ reduce controls around the chapter reader.
   block. Without an explicit selection, **Listen** keeps its current behavior
   of starting at the first readable block at or below the reading line. Clicks
   on links or other interactive content inside a paragraph keep their normal
-  behavior.
+  behavior. Selecting while narration is active leaves the current speech
+  running and reveals **Listen** to switch to the selected paragraph when
+  pressed.
 - Remove the Width dropdown, the persisted width preference, and the wide
   layout override. Keep the existing comfortable reading measure as the only
   reader width.
@@ -54,6 +56,9 @@ comfortable measure; this change removes the choice, not the measure.
   and never lists a generic default or non-English voice.
 - Choosing a paragraph changes the pending start point; pressing **Listen**
   begins at that paragraph, and **Next** advances from there.
+- Selecting while speech is active leaves current playback alone; the selected
+  outline is distinct from the active spoken-block treatment, and pressing
+  **Listen** switches to the selected paragraph.
 - Clicking a link inside a paragraph follows the link without selecting the
   paragraph for narration.
 - No Reading width control or width preference remains in the reader UI; the

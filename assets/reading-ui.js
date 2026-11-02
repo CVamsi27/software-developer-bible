@@ -162,21 +162,9 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   if (roadmap) breadcrumb.querySelectorAll('a[href]').forEach(function (link) { link.href = roadmap.chapterWithContext(link.href, location.search); });
   content.prepend(breadcrumb);
-  if (learning) {
-    var widthLabel = document.createElement('label'); widthLabel.className = 'reading-width'; widthLabel.append(document.createTextNode('Width '));
-    var width = document.createElement('select'); width.setAttribute('aria-label', 'Reading width');
-    ['Comfortable', 'Wide'].forEach(function (label) { var option = document.createElement('option'); option.value = label.toLowerCase(); option.textContent = label; width.append(option); });
-    // Comfortable measure is the default; an explicit Wide choice sticks.
-    try { if (localStorage.getItem('sdb-reading-width') === 'wide') width.value = 'wide'; } catch (_) {}
-    content.dataset.width = width.value;
-    width.addEventListener('change', function () { content.dataset.width = width.value; try { localStorage.setItem('sdb-reading-width', width.value); } catch (_) {} });
-    widthLabel.append(width);
-    var toolbar = content.querySelector('.read-aloud');
-    if (toolbar) toolbar.append(widthLabel); else if (titleRow) titleRow.append(widthLabel);
-    // Chapter navigation stays in its single authored home at the end of the
-    // chapter. Mirroring the same Next/revision links after Summary duplicated
-    // both controls and split one onward choice across two surfaces.
-  }
+  // Chapter navigation stays in its single authored home at the end of the
+  // chapter. Mirroring the same Next/revision links after Summary duplicated
+  // both controls and split one onward choice across two surfaces.
   content.querySelectorAll('div.highlighter-rouge').forEach(function (block) {
     if (block.querySelector('.code-caption')) return;
     var language = Array.from(block.classList).find(function (name) { return name.indexOf('language-') === 0; });

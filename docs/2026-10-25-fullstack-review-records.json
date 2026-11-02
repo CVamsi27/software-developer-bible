@@ -9923,28 +9923,22 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "a2145011b1a441c073eff74607b1b3a0da31277e3a0046b17e18c8292442bdac",
+      "sha256": "6fbe2130915d3afc8601a6126afaa7b078b573bea98483fa29ffd3f5d9bc7beb",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-28",
+      "reviewDate": "2026-11-02",
       "fullContentRead": true,
-      "notes": "Reviewed generated count-only change against exact previously full-reviewed HEAD bytes; authored content remains unchanged.",
-      "findings": [],
-      "metadataReview": {
-        "previousReviewedSha256": "20ce31e5d1db5857fea7fe16dc74f7968574dd351ebeee38698879826b4b0327",
-        "reviewDate": "2026-10-26",
-        "reviewer": "root",
-        "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
-      }
+      "notes": "Full-content review of the count-guard restamp: only the generated repository total changed from 977 to 979 files; surrounding navigation, gate instructions, and links remain coherent. Counts were produced by check_counts.py --write and verified by the full gate run.",
+      "findings": []
     },
     {
       "path": "README.md",
-      "sha256": "82b60b7828628e7624b64dff411a15587175f7f42dc69de9e17b8bf75aa765ee",
+      "sha256": "954b1ddab56159d01760a96e262ffcd7eb4620e61b34349e06dcd7c4dcb6f1b6",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-28",
+      "reviewDate": "2026-11-02",
       "fullContentRead": true,
-      "notes": "Reviewed generated count-only change against exact previously full-reviewed HEAD bytes; authored content remains unchanged.",
+      "notes": "Full-content review of the count-guard restamp: only the generated repository total changed from 977 to 979 files; surrounding navigation, gate instructions, and links remain coherent. Counts were produced by check_counts.py --write and verified by the full gate run.",
       "findings": []
     },
     {
@@ -9959,19 +9953,13 @@
     },
     {
       "path": "contributing.md",
-      "sha256": "55ea2966a6edf33af799f830edf0b9b2c6bc3acfe6449fcea7e3027c5c3d0743",
+      "sha256": "5c9df980b78123e2c33ecf6aff57d8488ab370792af13d4ea563e49d61afb8a8",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-28",
+      "reviewDate": "2026-11-02",
       "fullContentRead": true,
-      "notes": "Reviewed generated count-only change against exact previously full-reviewed HEAD bytes; authored content remains unchanged.",
-      "findings": [],
-      "metadataReview": {
-        "previousReviewedSha256": "8485e2232ea7f728920a296a5c47a6f7e1fc3fc4945b1353c96f0d61d5e9b357",
-        "reviewDate": "2026-10-26",
-        "reviewer": "root",
-        "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
-      }
+      "notes": "Full-content review of the count-guard restamp: only the generated repository total changed from 977 to 979 files; surrounding navigation, gate instructions, and links remain coherent. Counts were produced by check_counts.py --write and verified by the full gate run.",
+      "findings": []
     },
     {
       "path": "design-qa.md",
@@ -10386,28 +10374,22 @@
     },
     {
       "path": "docs/verification-gates.md",
-      "sha256": "68089f6365291c37c938e9c13ce01b2d214c76bf01b14e54cfc1dae08a3fbf1a",
+      "sha256": "24bd1987ba2799dc794e3ab1fa1014e7398f9b1629d03f1158f59264253e6bdc",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-28",
+      "reviewDate": "2026-11-02",
       "fullContentRead": true,
-      "notes": "Reviewed generated count-only change against exact previously full-reviewed HEAD bytes; authored content remains unchanged.",
-      "findings": [],
-      "metadataReview": {
-        "previousReviewedSha256": "d09b11f32070e9d926d6a87672236dd3e79d0cdab809b5709e9e2744b7ae74ac",
-        "reviewDate": "2026-10-26",
-        "reviewer": "root",
-        "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
-      }
+      "notes": "Full-content review of the count-guard restamp: only the generated repository total changed from 977 to 979 files; surrounding navigation, gate instructions, and links remain coherent. Counts were produced by check_counts.py --write and verified by the full gate run.",
+      "findings": []
     },
     {
       "path": "lanes/INDEX.md",
-      "sha256": "019547bb0ce5a84f635ef8fcb5f8200f377e0445c1ab612ce760c024b352957a",
+      "sha256": "de04a2f79eca35621d589f9181da48a6c16d0e7463ae39fa92ac7cadc062167f",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-28",
+      "reviewDate": "2026-11-02",
       "fullContentRead": true,
-      "notes": "Reviewed generated count-only change against exact previously full-reviewed HEAD bytes; authored content remains unchanged.",
+      "notes": "Full-content review of the count-guard restamp: only the generated repository total changed from 977 to 979 files; surrounding navigation, gate instructions, and links remain coherent. Counts were produced by check_counts.py --write and verified by the full gate run.",
       "findings": []
     },
     {
@@ -10728,6 +10710,26 @@
       "reviewDate": "2026-10-29",
       "fullContentRead": true,
       "notes": "Full-content review against current source and sanitized final checks: published646source and49file implementation;4394API/2015other units,21capacity/213standards,15SQLfixture,508E2E/63suites in four local CI-layout shards; lint/types/build/Knip/runtime/internalCF scope. Retained original DB-name guard failure and later OOM in same incomplete invocation, corrected target/4GiB/shards and stoppedownedPG. Intentional exact-state hold exemption is not active drain; optional absent baseline skip is not required performance-release evidence. No provider, production capacity/resource, full tenant-policy or restore conclusion inferred.",
+      "findings": []
+    },
+    {
+      "path": "docs/superpowers/specs/2026-11-02-read-aloud-controls-design.md",
+      "sha256": "499a784a7cc29d05fdf316b5c72e7c9a246c2e73c1289e5fbf98d17d1ed4dae5",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-11-02",
+      "fullContentRead": true,
+      "notes": "Full-content review against the approved reader behavior: English-only five-voice cap and fallback, paragraph selection without interrupting active speech, link interaction boundary, width removal, responsive arrow docking, and preserved narration behaviors. Requirements are testable and scoped to the existing browser API.",
+      "findings": []
+    },
+    {
+      "path": "docs/superpowers/plans/2026-11-02-read-aloud-controls.md",
+      "sha256": "6b404d8d993ae6dc7e6e1518c0e0c69975f15ef6aa81f5481c225ac6f751634a",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-11-02",
+      "fullContentRead": true,
+      "notes": "Full-content implementation review against the approved design and changed files: tasks cover voice filtering, selection state, width removal, and dock alignment; browser assertions now cover those behaviors. Required repository verification is identified before release; no out-of-scope service or dependency added.",
       "findings": []
     }
   ]

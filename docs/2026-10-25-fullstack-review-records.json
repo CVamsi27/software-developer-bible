@@ -10714,12 +10714,12 @@
     },
     {
       "path": "docs/superpowers/specs/2026-11-02-read-aloud-controls-design.md",
-      "sha256": "452f42c3f46ac5d0196769f5f91b3bded32b641766f61d05a4750aa4fd004ea4",
+      "sha256": "7f25aa1eebfb4d24cd2d76cecaa81d72bef003162595c0ce64ec33e6893c964d",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-02",
       "fullContentRead": true,
-      "notes": "Full-content review of the approved revision: explicit voice-ranking signals, English-only cap, full article-column width, visible selection cue, primary/action grouping, responsive dock alignment, and preserved speech behavior. Wording conforms to the repository spelling gate; no objective voice-quality promise.",
+      "notes": "Reviewed the revised voice shortlist and retained reader behavior: Samantha, Ava, Allison, Alex, and Victoria are preferred when browser-provided; missing names are skipped and English voices fill remaining slots in stable order. Confirmed the voice key version reset, English-only cap, wide article measure, visible paragraph cue, dock alignment, and speech-state boundaries.",
       "findings": []
     },
     {

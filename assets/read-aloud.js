@@ -1,7 +1,8 @@
 /* Chapter narration using the browser's speech service. */
 (function (root) {
   'use strict';
-  var VOICE_KEY = 'sdb-read-aloud-voice';
+  var VOICE_KEY = 'sdb-read-aloud-voice-v2';
+  var PREFERRED_ENGLISH_VOICES = ['samantha', 'ava', 'allison', 'alex', 'victoria'];
   function splitText(text) {
     var rest = text.replace(/\s+/g, ' ').trim();
     var parts = [];
@@ -310,26 +311,31 @@
     function refreshVoices() {
       var list = [];
       try { list = root.speechSynthesis.getVoices ? Array.prototype.slice.call(root.speechSynthesis.getVoices()) : []; } catch (_) { list = []; }
-      availableVoices = list.filter(function (voice) {
+      var englishVoices = list.filter(function (voice) {
         return voice && voice.voiceURI && /^en(?:-|_|$)/i.test(voice.lang || '');
-      }).map(function (voice) {
-        var name = voice.name || '';
-        var quality = /(?:^|[^a-z])(?:neural|natural|premium|enhanced|studio|wavenet|hd)(?:$|[^a-z])/i.test(name) ? 100 : 0;
-        var cloud = voice.localService === false ? 50 : 0;
-        var vendor = /\b(?:google|microsoft)\b/i.test(name) ? 20 : 0;
-        var preferred = voice.default === true ? 1 : 0;
-        return {voice: voice, score: quality + cloud + vendor + preferred};
-      }).sort(function (a, b) {
-        if (a.score !== b.score) return b.score - a.score;
-        var aName = (a.voice.name || '').toLowerCase(), bName = (b.voice.name || '').toLowerCase();
+      });
+      function compareVoiceNames(a, b) {
+        var aName = (a.name || '').toLowerCase(), bName = (b.name || '').toLowerCase();
         if (aName < bName) return -1;
         if (aName > bName) return 1;
-        var aURI = (a.voice.voiceURI || '').toLowerCase(), bURI = (b.voice.voiceURI || '').toLowerCase();
-        if (aURI < bURI) return -1;
-        if (aURI > bURI) return 1;
-        var aExactURI = a.voice.voiceURI || '', bExactURI = b.voice.voiceURI || '';
-        return aExactURI < bExactURI ? -1 : aExactURI > bExactURI ? 1 : 0;
-      }).slice(0, 5).map(function (entry) { return entry.voice; });
+        var aLang = (a.lang || '').toLowerCase(), bLang = (b.lang || '').toLowerCase();
+        if (aLang < bLang) return -1;
+        if (aLang > bLang) return 1;
+        var aURI = (a.voiceURI || '').toLowerCase(), bURI = (b.voiceURI || '').toLowerCase();
+        return aURI < bURI ? -1 : aURI > bURI ? 1 : 0;
+      }
+      var preferredVoices = [];
+      PREFERRED_ENGLISH_VOICES.forEach(function (preferredName) {
+        var matches = englishVoices.filter(function (voice) {
+          return (voice.name || '').trim().toLowerCase() === preferredName;
+        }).sort(compareVoiceNames);
+        if (matches.length) preferredVoices.push(matches[0]);
+      });
+      var preferredURIs = preferredVoices.map(function (voice) { return voice.voiceURI; });
+      var remainingVoices = englishVoices.filter(function (voice) {
+        return preferredURIs.indexOf(voice.voiceURI) === -1;
+      }).sort(compareVoiceNames);
+      availableVoices = preferredVoices.concat(remainingVoices).slice(0, 5);
       var selected = voiceSelect.value || savedVoice;
       voiceSelect.textContent = '';
       if (!availableVoices.length) {

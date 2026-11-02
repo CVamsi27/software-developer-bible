@@ -8,14 +8,12 @@ playback.
 
 ## Approved behavior
 
-- Keep only English voices in the menu, capped at five. Since the browser API
-  exposes no objective quality score, rank by available signals: explicit
-  quality terms such as Neural, Natural, Premium, Enhanced, Studio, Wavenet, or
-  HD first; remote/cloud service next; Google or Microsoft names as a secondary
-  signal; then the system default and voice name for stable ordering. Use +100
-  for a quality term, +50 for remote service, +20 for a Google/Microsoft name,
-  and +1 for the system default. Sort ties by name and then voice URI. Keep
-  a saved voice only while it remains in the visible five. If no English voice
+- Keep only English voices in the menu, capped at five. Prefer available
+  browser voices by this fixed name order: Samantha, Ava, Allison, Alex, and
+  Victoria. If one is unavailable, fill the remaining slots with other English
+  browser voices in stable name, language, and URI order. Version the saved
+  voice key so a prior selection does not override the new shortlist. Keep a
+  saved voice only while it remains in the visible five. If no English voice
   is available, disable the menu and retain the `en-US` fallback.
 - Remove the Width dropdown and all stored width preference behavior. Set prose,
   lists, quotes, alerts, and revision answers to use the full available article
@@ -32,15 +30,11 @@ playback.
 
 ## Design choices
 
-Voice labels are ranked with transparent local metadata, not an unsupported
-claim that the browser knows which voice sounds best. A quality term adds 100
-points, remote service adds 50, Google or Microsoft in the voice name adds 20,
-and the browser's default flag adds 1. The largest single class determines
-ordering, so a quality-labeled local voice outranks a generic cloud voice and
-a generic cloud voice outranks a generic local voice. Ties use case-insensitive
-name, then voice URI. Google and Microsoft labels remain secondary because
-vendor name alone does not prove quality. The user can still choose any of the
-five shown voices.
+Voice labels are ranked with a fixed shortlist based on the names the user
+identified as preferred. The browser only supplies voices that are installed
+and available in that session; missing names are skipped. Remaining slots use
+stable name, language, and voice URI ordering. The user can still choose any of
+the five shown voices.
 
 “Wide” means the full existing article column (the reader's grid remains capped
 at its existing page width); it does not mean extending text across the sidebar
@@ -57,9 +51,9 @@ five-voice maximum and do not restore a width selector.
 
 ## Acceptance criteria
 
-- The voice menu contains at most five English voices, with quality-labeled
-  voices ranked before generic cloud voices and generic local voices; ordering
-  is stable when scores tie.
+- The voice menu contains at most five English voices, with available
+  Samantha, Ava, Allison, Alex, and Victoria voices first in that order;
+  remaining voices fill missing slots in stable name, language, and URI order.
 - A saved voice is retained only if it remains in the visible five; the first
   ranked English voice is selected otherwise. No-English remains disabled with
   the existing fallback.

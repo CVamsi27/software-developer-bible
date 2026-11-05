@@ -51,16 +51,16 @@ Coverage is judged at **chapter** level, not mention level: a topic "covered" on
 | Config management | [20.2.4.01 Configuration & Validation](../20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.01-configuration-validation.md), [20.1.3.03 Process Environment](../20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.03-process-environment.md) |
 | Logging, monitoring, observability | [40.4.1.01 Logging](../40-platform/40.4-observability/01-pillars/40.4.1.01-logging.md), [40.4.1.02 Monitoring](../40-platform/40.4-observability/01-pillars/40.4.1.02-monitoring.md), [40.4.1.03 Tracing](../40-platform/40.4-observability/01-pillars/40.4.1.03-tracing.md) |
 | Graceful shutdown | [20.2.4.03 Lifecycle Hooks & Graceful Shutdown](../20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.03-lifecycle-hooks-graceful-shutdown.md), [30.3.1.01 Health Checks & Graceful Shutdown](../30-architecture/30.3-infra-patterns/01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.md) |
-| Security | [20.5 Security stack](../20-backend/20.5-security/) (auth, attacks & defence, API security) |
+| Security | [20.5 Security stack](../20-backend/20.5-security/INDEX.md) (auth, attacks & defence, API security) |
 | Scaling & performance | [30.2.1.04 Load Balancing](../30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.md), [30.2.1.12 Capacity Planning](../30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md), [40.2.3.01 HPA Scaling](../40-platform/40.2-kubernetes/03-scaling/40.2.3.01-hpa-scaling.md) |
 | Concurrency & parallelism | [20.1.3.01 Clustering](../20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.01-clustering.md), [20.1.3.02 Child Processes & Workers](../20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.02-child-processes-workers.md), [20.13.03 Java Concurrency](../20-backend/20.13-java/20.13.03-java-concurrency-multithreading.md) |
 | Object storage & large files | [20.3.3.04 File Upload APIs](../20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.04-file-upload-apis.md) (multipart, presigned direct-to-S3, resumable) |
-| Real-time backend systems | [60 Realtime stack](../60-realtime/) (WebSockets, SSE, WebTransport, scaling, NestJS gateways) |
-| Testing & code quality | [50 Quality stack](../50-quality/) (test pyramid, frameworks, performance budgets, a11y) |
-| 12-factor app | [40.9 Twelve-Factor](../40-platform/40.9-twelve-factor/) |
+| Real-time backend systems | [60 Realtime stack](../60-realtime/INDEX.md) (WebSockets, SSE, WebTransport, scaling, NestJS gateways) |
+| Testing & code quality | [50 Quality stack](../50-quality/INDEX.md) (test pyramid, frameworks, performance budgets, a11y) |
+| 12-factor app | [40.9 Twelve-Factor](../40-platform/40.9-twelve-factor/INDEX.md) |
 | OpenAPI standards | [20.3.1.05 OpenAPI & Swagger](../20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.05-openapi-swagger.md) |
 | Webhooks | [20.3.3.05 Webhooks](../20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.05-webhooks.md) |
-| DevOps for backend engineers | [40.3 CI/CD](../40-platform/40.3-ci-cd/), [40.1 Docker](../40-platform/40.1-docker/), [40.2 Kubernetes](../40-platform/40.2-kubernetes/) |
+| DevOps for backend engineers | [40.3 CI/CD](../40-platform/40.3-ci-cd/INDEX.md), [40.1 Docker](../40-platform/40.1-docker/INDEX.md), [40.2 Kubernetes](../40-platform/40.2-kubernetes/INDEX.md) |
 
 ## "1 Million Requests per Second" → chapters
 
@@ -75,7 +75,7 @@ Coverage is judged at **chapter** level, not mention level: a topic "covered" on
 | Asynchronous offload | [30.2.1.06 Queues & Async](../30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md), [20.6.2.05 Message Brokers](../20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md) |
 | Rate limiting / shedding abusive traffic | [30.2.1.08 Rate Limiting](../30-architecture/30.2-system-design/01-theory/30.2.1.08-rate-limiting.md), [20.3.4.01 Rate Limiting](../20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.01-rate-limiting.md) |
 | Backpressure when consumers lag | [30.2.1.13 Backpressure](../30-architecture/30.2-system-design/01-theory/30.2.1.13-backpressure-and-flow-control.md) |
-| Capacity planning (back-of-envelope) | [30.2.1.12](../30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md) + case studies in [30.2.2](../30-architecture/30.2-system-design/02-case-studies/) |
+| Capacity planning (back-of-envelope) | [30.2.1.12](../30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md) + case studies in [30.2.2](../30-architecture/30.2-system-design/02-case-studies/INDEX.md) |
 | Failure behaviour at scale | [30.2.1.10 Failure Modes](../30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.md), [30.3.2.01 Resilience Patterns](../30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.01-resilience-patterns.md) |
 
 ## Database laws → chapters

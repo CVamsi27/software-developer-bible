@@ -83,6 +83,13 @@ class RenderedLinks(unittest.TestCase):
         self.write('contributing.md', '# Contribution conventions')
         self.assertEqual(audit_site(self.site)['errors'], [])
 
+    def test_directory_routes_cannot_depend_on_case_insensitive_index_lookup(self):
+        self.write('index.html', '<a href="topics/">Topics</a>')
+        self.write('topics/INDEX.html', '<h1>Topics</h1>')
+        self.assertTrue(audit_site(self.site)['errors'])
+        self.write('index.html', '<a href="topics/INDEX.html">Topics</a>')
+        self.assertEqual(audit_site(self.site)['errors'], [])
+
 
 if __name__ == '__main__':
     unittest.main()

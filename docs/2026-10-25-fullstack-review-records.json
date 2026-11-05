@@ -10045,12 +10045,12 @@
     },
     {
       "path": "docs/reference-coverage-audit.md",
-      "sha256": "1e1b8ef4f502038865bf87663514a662fe394b234a4ef1dbf43600cb92b9d86e",
+      "sha256": "3689d7276801e93d486718c90b2098ae14a3573aadf82bf122e96c5b690c9da0",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Historical video-topic/canonical-chapter mapping read with stated non-goals; chapter existence does not establish semantic depth or measured product behavior.",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped navigation review after the Linux publication check: eight directory links now name the real INDEX.md landing page. Topic descriptions, source coverage and all historical audit claims are unchanged. This is not a fresh semantic review of the audit body.",
       "findings": []
     },
     {

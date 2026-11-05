@@ -179,6 +179,11 @@
       "priority": "P2",
       "status": "fixed",
       "issue": "Device menu still exposed observed older and character voices despite Samantha being the default."
+    },
+    {
+      "priority": "P2",
+      "status": "fixed",
+      "issue": "Linux found eight audit-page directory links that relied on case-insensitive INDEX lookup. Links now name their landing page and the publication checker uses exact emitted filenames on every OS."
     }
   ],
   "verification": {
@@ -188,7 +193,7 @@
       "failed": 0
     },
     "renderedLinkFixtureTests": {
-      "passed": 11,
+      "passed": 12,
       "failed": 0
     },
     "gateSelfTests": {
@@ -239,7 +244,8 @@
     },
     "fixpoint": "All 10 documented writers leave the final corpus byte-identical.",
     "separatorRepair": "31 separators in 23 files plus the Coding Patterns landing-page separator corrected; original prose and code preserved.",
-    "release": "Commit, push and merge authorized by the user; deployment outcome is verified separately after shipping."
+    "release": "Commit, push and merge authorized by the user; deployment outcome is verified separately after shipping.",
+    "caseSensitivity": "The new case fixture failed on macOS before the exact-file inventory change, then passed. The checker reproduced all eight Linux findings locally before their source links were repaired."
   },
   "limits": [
     "No new paragraph-by-paragraph semantic review of all 678 catalog topics.",

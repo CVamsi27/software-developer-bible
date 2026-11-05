@@ -30,6 +30,9 @@ def audit_site(site_root, functions_root=None, aliases=None):
     root = Path(site_root).resolve()
     functions = Path(functions_root).resolve() if functions_root else None
     aliases = aliases or {}
+    # Path.is_file() accepts INDEX.html as index.html on macOS. Route checks
+    # must use the exact emitted spelling, as Cloudflare and Linux do.
+    files = {p.resolve() for p in root.rglob('*') if p.is_file()}
     pages = {}
     for path in sorted(root.rglob('*.html')):
         parser = PageLinks()
@@ -67,11 +70,11 @@ def audit_site(site_root, functions_root=None, aliases=None):
                 preview = aliases.get(html.relative_to(root).as_posix())
                 if preview:
                     html = root / preview
-                if has_reader and html.is_file():
+                if has_reader and html in files:
                     candidates = [html]
                     report['readerMarkdownLinks'] += 1
             candidates = [root / aliases.get(p.relative_to(root).as_posix(), p.relative_to(root).as_posix()) for p in candidates]
-            resolved = next((p for p in candidates if p.is_file()), None)
+            resolved = next((p for p in candidates if p in files), None)
             if resolved is None:
                 route = functions / name if functions else None
                 if route and not route.name.startswith('_') and any(Path(str(route) + ext).is_file() for ext in ('.ts', '.js')):

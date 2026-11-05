@@ -23,6 +23,8 @@ on:
       - "_layouts/**"
       - "assets/**"
       - "scripts/test_rendered_headings.py"
+      - "scripts/check_rendered_links.py"
+      - "scripts/test_rendered_links.py"
       - "search.html"
       - "api/**"
       - "Gemfile"
@@ -92,6 +94,11 @@ jobs:
         run: |
           python3 scripts/test_rendered_headings.py
           python3 scripts/test_rendered_headings.py _site
+
+      - name: Check published links and assets
+        run: |
+          python3 scripts/test_rendered_links.py
+          python3 scripts/check_rendered_links.py _site
 
       - name: Assert the lane trees are not in the built site
         run: |

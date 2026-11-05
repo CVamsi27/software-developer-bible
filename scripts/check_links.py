@@ -48,7 +48,7 @@ EXTERNAL_PREFIXES = (
 # so their visible text is deliberately unresolvable. Nothing else is exempt.
 STALE_TEXT_EXEMPT = ('80-lanes-abroad-full-stack/personal/',)
 
-LINK_RE = re.compile(r'\[([^\]\n]*)\]\(([^)\n]+)\)')
+LINK_RE = re.compile(r'\[((?:!\[[^\]\n]*\]\([^)\n]*\)|[^\]\n])*)\]\(([^)\n]+)\)')
 # A fence opener may carry an info string (```js); a closer must be an
 # otherwise-empty line of at least as many of the same marker chars.
 FENCE_OPEN_RE = re.compile(r'^( {0,3})(`{3,}|~{3,})')

@@ -47,6 +47,7 @@ The [Docita case study](../../../projects/docita/INDEX.md) provides code pointer
 | JSONB boundaries | `apps/api/src/shared/common/json/to-prisma-input-json-value.ts` - typed writer for JSONB columns |
 
 Inspect the actual case-study schema/query/runtime before claiming an access path or optimization. The chapter fixtures establish their own stated examples, independently of that application.
+
 ---
 
 [← Previous: PostgreSQL Foundations](../01-postgresql-foundations/INDEX.md) · [Next: Transactions & Replication →](../03-transactions-and-replication/INDEX.md)

@@ -808,6 +808,18 @@ CASES = [
         "clean": {"a.md": "[ok](b.md)\n", "b.md": "target\n"},
     },
     {
+        "name": "gate 4 checks the destination wrapped around a badge image",
+        "gate": "check_links.py", "args": [],
+        "plant": {"p.md": "# Topic\n\n[![Priority](https://img.shields.io/badge/priority-core-blue)](missing.md)\n"},
+        "clean": {"p.md": "# Topic\n\n[![Priority](https://img.shields.io/badge/priority-core-blue)](guide.md#meaning)\n", "guide.md": "# Guide\n\n## Meaning\nUseful explanation.\n"},
+    },
+    {
+        "name": "gate 3 accepts this repository's source-only index and rejects another repository",
+        "gate": "check_structure.py", "args": [],
+        "plant": {"INDEX.md": "# Library\n\n[Lane](https://github.com/other/project/blob/main/81-lane/INDEX.md)\n", "81-lane/INDEX.md": "# Lane\n"},
+        "clean": {"INDEX.md": "# Library\n\n[Lane, repository](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lane/INDEX.md)\n", "81-lane/INDEX.md": "# Lane\n"},
+    },
+    {
         # The 2026-09-21 sweep: 53 prose code spans named files from three
         # earlier numbering generations. The clean side proves the rule's scope
         # — an illustrative path inside the reader's *own* project is not a
@@ -914,6 +926,18 @@ CASES = [
             "README.md": "[search all 2 chapters](search.html)\n",
             "p1.md": "# A\n",
             "p2.md": "# B\n",
+        },
+    },
+    {
+        "name": "gate 1 counts catches a stale Sub-stacks badge",
+        "gate": "check_counts.py", "args": [],
+        "plant": {
+            "20-backend/INDEX.md": "# Backend\n[![Files](https://img.shields.io/badge/files-0-blue)](#)\n[![Sub-stacks](https://img.shields.io/badge/sub--stacks-9-orange)](#)\n",
+            "20-backend/20.1-node/INDEX.md": "# Node\n[![Files](https://img.shields.io/badge/files-0-blue)](#)\n",
+        },
+        "clean": {
+            "20-backend/INDEX.md": "# Backend\n[![Files](https://img.shields.io/badge/files-0-blue)](#)\n[![Sub-stacks](https://img.shields.io/badge/sub--stacks-1-orange)](#)\n",
+            "20-backend/20.1-node/INDEX.md": "# Node\n[![Files](https://img.shields.io/badge/files-0-blue)](#)\n",
         },
     },
     {

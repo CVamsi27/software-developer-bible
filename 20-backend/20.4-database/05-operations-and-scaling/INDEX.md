@@ -51,6 +51,7 @@ The [Docita case study](../../../projects/docita/INDEX.md) provides implementati
 | Search infrastructure | `apps/api/src/shared/modules/search/strategies/search-strategy.base.ts` - strategy-per-entity search on Postgres full-text |
 
 Use the learning chapters for the interview explanations. Case-study code still needs current runtime and operational evidence for any claimed production guarantee.
+
 ---
 
 [← Previous: ORM & Access](../04-orm-and-access/INDEX.md)

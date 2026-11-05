@@ -42,6 +42,7 @@ These [Docita](https://github.com/CVamsi27/docita) source paths are inspection s
 | Threat modeling | `docs/operations/SECURITY_HARDENING_CHECKLIST.md` §3 (2026-08-05 point-in-time threat table), `docs/compliance/ACCESS_AUDIT.md` and `docs/compliance/RLS_ROLLOUT.md` (authorization and tenant boundaries) |
 
 The checklist is a point-in-time threat table, not a dedicated STRIDE or data-flow diagram (DFD) model; no dedicated STRIDE/DFD artifact was found in the reviewed Docita checkout. Its access and row-level security (RLS) documents describe tenant enforcement across role-based access control (RBAC), tier and tenant guards, context-aware attribute-based access control (ABAC), a Prisma tenant extension and PostgreSQL RLS. Use those documents to inspect control order and limits. Source paths and documents are inspection leads; they do not prove that a control is deployed or operating effectively.
+
 ---
 
 [← Previous: Attacks & Defense](../02-attacks-and-defense/INDEX.md) · [Next: Interview Drills →](../04-interview-drills/INDEX.md)

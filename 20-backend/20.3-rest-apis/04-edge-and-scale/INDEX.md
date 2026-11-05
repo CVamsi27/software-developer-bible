@@ -40,6 +40,7 @@ Inspect these [Docita](https://github.com/CVamsi27/docita) healthcare-applicatio
 | Authentication schemes | `apps/api/src/shared/modules/auth/auth/api-key.service.ts` - hashed API keys for machines alongside JWT for users |
 
 Verify its current deployment and client composition boundaries before inferring whether a gateway or BFF is present or needed. Dedicated route mappings can be one possible starting point when client needs justify them.
+
 ---
 
 [← Previous: Payloads, Errors & Integration](../03-payloads-errors-integration/INDEX.md) · [Next: Interview Drills →](../05-interview-drills/INDEX.md)

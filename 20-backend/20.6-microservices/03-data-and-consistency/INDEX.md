@@ -41,6 +41,7 @@ These [Docita](https://github.com/CVamsi27/docita) source paths illustrate imple
 | DLQ discipline | `apps/api/src/shared/modules/queue/dlq-replay.scheduler.ts` - transient-error classification helper; `tick()` is inert while automatic wiring is pending. Inspect `dlq.controller.ts` for the manual replay path |
 
 The listed mechanisms do not alone prove atomic cross-module effects, automatic replay or completed asynchronous handlers. Trace the current use case and worker wiring before describing an effective recovery guarantee or choosing saga/event-sourcing behavior.
+
 ---
 
 [← Previous: Communication & Messaging](../02-communication-and-messaging/INDEX.md) · [Next: Resilience →](../04-resilience/INDEX.md)

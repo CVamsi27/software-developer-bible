@@ -29,7 +29,7 @@ For compensation, distinguish recurring components from one-time payments and un
 
 ## Continue into the relevant lane
 
-- [Indian SDE / FAANG lane](../81-lanes-indian-sde-faang/INDEX.md) organizes that role-preparation track.
+- [Indian SDE / FAANG lane (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md) organizes that role-preparation track.
 - [Abroad Full-Stack lane](../80-lanes-abroad-full-stack/INDEX.md) organizes relocation and full-stack preparation.
 - The [lane comparison](../lanes/INDEX.md) helps choose where to continue; verify the specific employer's requirements.
 
@@ -38,7 +38,7 @@ For compensation, distinguish recurring components from one-time payments and un
 ## Cross-References
 
 - [Behavioral](../70-interview-toolkit/70.1-behavioral/INDEX.md) — deeper behavioral questions
-- [SDE Role — Indian / FAANG Lane](../81-lanes-indian-sde-faang/INDEX.md)
+- [SDE Role — Indian / FAANG Lane (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md)
 - [Abroad Full-Stack Lane](../80-lanes-abroad-full-stack/INDEX.md)
 
 ---

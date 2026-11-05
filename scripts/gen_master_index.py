@@ -66,13 +66,13 @@ PAGE = """<!DOCTYPE html>
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <script src="{THEME_SRC}"></script>
-<link rel="stylesheet" href="assets/search-ui.css?v=study-flow-21">
+<link rel="stylesheet" href="assets/search-ui.css?v=study-flow-22">
 <link rel="stylesheet" href="assets/reading-ui.css?v=study-flow-23">
 <link rel="stylesheet" href="assets/reference-reader.css?v=reference-20">
 <script src="assets/study-state.js" defer></script>
 <script src="assets/roadmap-return.js?v=study-flow-19" defer></script>
-<script src="assets/reading-ui.js?v=study-flow-21" defer></script>
-<script src="assets/search-ui.js?v=study-flow-21" defer></script>
+<script src="assets/reading-ui.js?v=study-flow-23" defer></script>
+<script src="assets/search-ui.js?v=study-flow-22" defer></script>
 </head>
 <body class="search-page">
 <header class="site-header" role="banner">
@@ -119,7 +119,7 @@ PAGE = """<!DOCTYPE html>
   <ol id="results" class="search-results"></ol>
   <section id="empty-state" hidden><h2>No topics match your search</h2><p>Try a shorter topic name or clear the selected filters.</p><a href="INDEX.html">Browse the library</a></section>
   <noscript><p>Search needs JavaScript. <a href="INDEX.html">Browse the full learning index</a>.</p></noscript>
-  <p class="search-note">Searches titles, stack, category and tags · {N} chapters · <a href="INDEX.html">Browse the library</a></p>
+  <p class="search-note">Searches titles, stack, category and tags · {N} topics · <a href="INDEX.html">Browse the library</a></p>
 </main>
 <script id="study-search-data" type="application/json">{DATA}</script>
 </body>

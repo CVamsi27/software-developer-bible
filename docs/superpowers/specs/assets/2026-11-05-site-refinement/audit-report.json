@@ -1,0 +1,251 @@
+{
+  "date": "2026-11-05",
+  "scope": "Product-flow audit of the existing study site; rendered-link coverage across the entire build. This is not a fresh semantic review of every teaching paragraph.",
+  "environment": {
+    "browser": "Codex in-app browser, actual device speech voices",
+    "desktop": [
+      1280,
+      900
+    ],
+    "mobile": [
+      [
+        320,
+        740
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "preview": "Home and Library are separately rendered and explicitly aliased on the case-insensitive local filesystem. Linux CI checks the native artifact.",
+    "landscape": [
+      768,
+      390
+    ]
+  },
+  "steps": [
+    {
+      "step": 1,
+      "surface": "Home",
+      "health": "repaired",
+      "notes": "Start/search/lane entry points inspected. Excluded SDE guides now link to their public repository source with an explicit label.",
+      "evidence": [
+        "02-home-before.png",
+        "03-lane-unavailable-before.png",
+        "24-home-after.png"
+      ]
+    },
+    {
+      "step": 2,
+      "surface": "Library and Roadmap",
+      "health": "repaired",
+      "notes": "Lane destinations explicit, learning paths retained, counts restamped by their owner.",
+      "evidence": [
+        "04-library-overview.png",
+        "05-roadmap.png",
+        "23-library-badge-route.png"
+      ]
+    },
+    {
+      "step": 3,
+      "surface": "Seven shared stack indexes",
+      "health": "repaired",
+      "notes": "All seven rendered entry pages inspected for orientation, study passes, onward links and overflow. Corrected backend Sub-stacks badge through check_counts.",
+      "evidence": [
+        "stack-checks.json",
+        "stack-10-frontend.png",
+        "stack-20-backend.png",
+        "stack-30-architecture.png",
+        "stack-40-platform.png",
+        "stack-50-quality.png",
+        "stack-60-realtime.png",
+        "stack-70-interview-toolkit.png"
+      ]
+    },
+    {
+      "step": 4,
+      "surface": "Search and recovery",
+      "health": "repaired",
+      "notes": "Query, material and stack filters, revision discovery, empty results and recovery inspected. Revision context distinguishes repeated titles; one clear-search icon.",
+      "evidence": [
+        "06-search.png",
+        "07-search-revision.png",
+        "08-search-empty.png",
+        "16-interview-discovery.png",
+        "20-revision-search-context.png"
+      ]
+    },
+    {
+      "step": 5,
+      "surface": "Category learning flow",
+      "health": "passed",
+      "notes": "Coding-pattern passes and Linear Structures chapter table inspected; revision remains a separate companion.",
+      "evidence": [
+        "15-category-learning-flow.png"
+      ]
+    },
+    {
+      "step": 6,
+      "surface": "Chapter reader and listening",
+      "health": "repaired",
+      "notes": "Word and paragraph emphasis inspected with native Samantha speech in both themes. Desktop arrow aligned with dock; mobile arrow in context row; Back to top returned to scrollY=0. Wide remains fixed.",
+      "evidence": [
+        "01-reader-before.png",
+        "10-reader-desktop-dark.png",
+        "11-reader-mobile-dark.png",
+        "12-reader-mobile-light.png"
+      ]
+    },
+    {
+      "step": 7,
+      "surface": "Revision practice",
+      "health": "passed",
+      "notes": "All 43 answers in the Execution & Scope companion opened through Show all answers. No overflow observed.",
+      "evidence": [
+        "09-revision-answers.png"
+      ]
+    },
+    {
+      "step": 8,
+      "surface": "Interview practice",
+      "health": "repaired",
+      "notes": "Interview filter reaches the real bank. Reader, outline, breadcrumb and listening now also mount on banks; no revision wrapping or learning-resume claim.",
+      "evidence": [
+        "16-interview-discovery.png",
+        "17-interview-bank.png",
+        "19-interview-reader.png"
+      ]
+    },
+    {
+      "step": 9,
+      "surface": "Responsive navigation and audio settings",
+      "health": "repaired",
+      "notes": "320-pixel settings, mobile navigation, 44-pixel transport targets and responsive arrow ownership inspected. Removed observed legacy and character voices.",
+      "evidence": [
+        "13-settings-320.png",
+        "14-mobile-navigation.png",
+        "21-final-audio-settings.png",
+        "22-settings-landscape.png",
+        "25-preview-final.png"
+      ]
+    },
+    {
+      "step": 10,
+      "surface": "Sign-in recovery",
+      "health": "limited",
+      "notes": "Inspected mobile cancelled-sign-in state and the retained chapter return destination. OAuth was not submitted; signed-in production rendering requires a probe credential.",
+      "evidence": [
+        "18-sign-in-recovery.png"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "priority": "P2",
+      "status": "fixed",
+      "issue": "Arrow floated above the audio dock; current word competed with paragraph and callout stripes."
+    },
+    {
+      "priority": "P1",
+      "status": "fixed",
+      "issue": "Source-existing but excluded SDE lane destinations were exposed as site links."
+    },
+    {
+      "priority": "P2",
+      "status": "fixed",
+      "issue": "Six priority badges had incorrect parent depth, one category badge used a removed fragment, and CI/CD references omitted INDEX."
+    },
+    {
+      "priority": "P2",
+      "status": "fixed",
+      "issue": "Image-wrapped badge destinations could open raw Markdown; the reader now resolves only catalog-listed HTML counterparts."
+    },
+    {
+      "priority": "P2",
+      "status": "fixed",
+      "issue": "Repeated revision titles lacked category context, and a mixed-vendor selector caused duplicate clear icons."
+    },
+    {
+      "priority": "P2",
+      "status": "fixed",
+      "issue": "Heading names duplicated permalink labels in accessibility navigation; interview banks lacked reader tools."
+    },
+    {
+      "priority": "P2",
+      "status": "fixed",
+      "issue": "Backend sub-stack count drifted and adjacent Markdown separators promoted explanatory prose to large headings."
+    },
+    {
+      "priority": "P2",
+      "status": "fixed",
+      "issue": "Device menu still exposed observed older and character voices despite Samantha being the default."
+    }
+  ],
+  "verification": {
+    "status": "passed local verification",
+    "nodeTests": {
+      "passed": 61,
+      "failed": 0
+    },
+    "renderedLinkFixtureTests": {
+      "passed": 11,
+      "failed": 0
+    },
+    "gateSelfTests": {
+      "passed": 106,
+      "failed": 0
+    },
+    "repositorySourceLinksVerified": 12,
+    "browserObservations": {
+      "filteredDeviceVoices": [
+        "Samantha",
+        "Daniel",
+        "Karen",
+        "Moira",
+        "Rishi",
+        "Tessa"
+      ],
+      "nativeSpeech": "Samantha word boundary events observed in light and dark",
+      "desktopArrowCenter": 833,
+      "mobileArrowTarget": [
+        44,
+        44
+      ],
+      "landscapeControlsReachable": true,
+      "wholePageHorizontalOverflowObserved": false,
+      "viewportOverrideReset": true,
+      "previewPaused": true
+    },
+    "repositoryGates": {
+      "passed": 32,
+      "failed": 0
+    },
+    "build": "Pinned Ruby 3.4.11 production Jekyll build succeeded; no Liquid warnings or exceptions",
+    "renderedLinks": {
+      "htmlFiles": 960,
+      "checkedLinks": 33179,
+      "readerMarkdownLinks": 1697,
+      "errors": [],
+      "previewAliases": {
+        "INDEX.html": "library-preview.html",
+        "index.html": "home-preview.html"
+      }
+    },
+    "headingCheck": "passed",
+    "sourceLinks": {
+      "checked": 12418,
+      "anchors": 279,
+      "broken": 0
+    },
+    "fixpoint": "All 10 documented writers leave the final corpus byte-identical.",
+    "separatorRepair": "31 separators in 23 files plus the Coding Patterns landing-page separator corrected; original prose and code preserved.",
+    "release": "Commit, push and merge authorized by the user; deployment outcome is verified separately after shipping."
+  },
+  "limits": [
+    "No new paragraph-by-paragraph semantic review of all 678 catalog topics.",
+    "Native word events were observed for Samantha; voices that do not provide boundary events retain paragraph emphasis.",
+    "No external voice service is used. Device availability and acoustic quality vary.",
+    "Local sign-in recovery was inspected without submitting OAuth. Signed-in production body rendering is not established without STUDY_PROBE_TOKEN.",
+    "No manual screen-reader session was performed; accessible names and keyboard controls were inspected through DOM behavior and browser state."
+  ]
+}

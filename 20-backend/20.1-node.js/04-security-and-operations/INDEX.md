@@ -43,6 +43,7 @@ Real code from [docita](https://github.com/CVamsi27/docita) - healthcare platfor
 | Rate limiting | `apps/api/src/shared/common/interceptors/rate-limit.interceptor.ts` - cache-backed per-route limits next to IP/user guards |
 
 _Compare the current checkout for diagnostics tooling: these pointers do not establish inspector/snapshot deployment policy or the current observability providers._
+
 ---
 
 [← Previous: Processes & Concurrency](../03-processes-and-concurrency/INDEX.md)

@@ -41,6 +41,7 @@ These [Docita](https://github.com/CVamsi27/docita) source paths illustrate curre
 | Provider adapter isolation | `apps/api/src/shared/modules/messaging/email/providers/zeptomail-email.provider.ts` - circuit-broken ZeptoMail behind IEmailProvider |
 
 Kafka, RabbitMQ, and gRPC not used — justified while events stay inside one deployable; a cross-deployable requirement would need an explicit transport and acknowledgment contract. It does not automatically require a particular broker.
+
 ---
 
 [← Previous: Service Topology](../01-service-topology/INDEX.md) · [Next: Data & Consistency →](../03-data-and-consistency/INDEX.md)

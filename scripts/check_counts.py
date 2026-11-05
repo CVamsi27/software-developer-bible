@@ -376,6 +376,8 @@ def fix_blurbs(rel, text):
             out += f' across {nsub} {word}'
         return out
 
+    text = re.sub(r'(badge/sub--stacks-)\d+(-)',
+                  lambda m: f'{m.group(1)}{nsub}{m.group(2)}', text)
     return BLURB.sub(rep, text)
 
 

@@ -103,11 +103,13 @@ When a gate fails, identify the reported defect and use its matching repair. Met
 ### Scripts that serve specific workflows (not gates)
 
 | Script | Job |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `backfill_metadata.py` | Backfills the metadata block the template gate requires (historical import) |
 | `check_study_live.py` | Post-deploy contract probe of the private study host — gating, canonicalization, the public surface, sign-in, denial, freshness; run by `study-live.yml`, pinned offline by `test_study_live.py` |
 | `test_study_live.py` | Characterization tests for the live probe against stub hosts (19 cases) — the hermetic job that must pass before the live probe judges a deployment |
 | `test_rendered_headings.py` | Checks the Minima page and post layouts keep one article H1; runs unit fixtures and scans the built site in `site-build.yml` |
+| `check_rendered_links.py` | Scans the built HTML for missing local pages, assets and fragments, including source files excluded from publication; checks legacy badge destinations handled by the reader, recognizes real Pages Function routes and rejects an empty build |
+| `test_rendered_links.py` | Offline fixtures for the published-link checker: excluded source, legacy Markdown URLs, fragments, assets, function endpoints, same-host URLs and empty builds |
 | `fix_depth.py` | Rewrites relative md links after files move deeper/shallower |
 | `fix_fence_labels.py` | Relabels fences mislabeled as `text`/`plain`/`output`/`console` |
 | `fix_section_order.py` | One-off canonical section reorder (normalizer) |

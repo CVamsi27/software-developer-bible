@@ -112,7 +112,7 @@ Chapter rewrites follow the [readability standard](docs/readability-standard.md)
 └── 81-lanes-indian-sde-faang/ # Indian SDE / FAANG lane (DSA-heavy) — INDEX.md + numbered 81.x files
 ```
 
-> Repo scale (tool-maintained): **981 `.md` files / 156K lines** across the stacks, lanes, and projects above — run `python3 scripts/check_counts.py` to verify the claim stays true.
+> Repo scale (tool-maintained): **983 `.md` files / 157K lines** across the stacks, lanes, and projects above — run `python3 scripts/check_counts.py` to verify the claim stays true.
 
 - **The 7 study stacks** (`10-`, `20-`, `30-`, `40-`, `50-`, `60-`, `70-`) hold the technical material both interview lanes pull from.
 - **00-strategy** is cross-lane (everyone starts here); **80-** and **81-lanes** are terminal interview plans that reference into the stacks, never the other way around; **projects/** holds the Docita deep-dive corpus.
@@ -395,7 +395,7 @@ Every section has an `INDEX.md` file. Format:
 
 ---
 
-**Cross-references:** [CI/CD](../40.3-ci-cd) | [Microservices](../../20-backend/20.6-microservices/INDEX.md)
+**Cross-references:** [CI/CD](../40.3-ci-cd/INDEX.md) | [Microservices](../../20-backend/20.6-microservices/INDEX.md)
 
 ---
 
@@ -540,7 +540,7 @@ EOF
 | ----------------- | ------------------------------------------------------------------- | -------------------------------------- |
 | Section INDEX | `- [Microservices](../../20-backend/20.6-microservices/INDEX.md)` | Cross-section links (64% of links) |
 | Specific file | `- [HPA Scaling](../03-scaling/40.2.3.01-hpa-scaling.md)` | Intra-section links (32% of links) |
-| Section directory | `- [CI/CD](../40.3-ci-cd)` | Same-section sibling dir (4% of links) |
+| Section directory | `- [CI/CD](../40.3-ci-cd/INDEX.md)` | Same-section sibling dir (4% of links) |
 
 ### In Content Files (`## References & Learn More`)
 
@@ -905,7 +905,7 @@ It runs, in order, with clear pass/fail output:
 
 | Check | Command | What it verifies |
 | --------------------------------- | --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Count guard | `python3 scripts/check_counts.py` | Gate 1/32: every count claim in the navigation surface matches live disk — repo-scale strings ("981 files, 156K lines"), each INDEX's `Files` badge and `> **N files**` blurb, the `N files in M sub-stacks` stack headers, and the `Files` column of every navigation table. Table counts include learning and interview chapters, but exclude INDEX and REVISION companions; badges and blurbs retain their wider scope. `--write` restamps them all from disk (idempotent) |
+| Count guard | `python3 scripts/check_counts.py` | Gate 1/32: every count claim in the navigation surface matches live disk — repo-scale strings ("983 files, 157K lines"), each INDEX's `Files` badge and `> **N files**` blurb, the `N files in M sub-stacks` stack headers, and the `Files` column of every navigation table. Table counts include learning and interview chapters, but exclude INDEX and REVISION companions; badges and blurbs retain their wider scope. `--write` restamps them all from disk (idempotent) |
 | Alignment | `python3 scripts/check_alignment.py` | Markdown table pipes and ASCII box walls align; `--fix` repairs in place |
 | Structure | `python3 scripts/check_structure.py` | IDs unique, sequences contiguous, interview files last — every flat stack must carry at least one `*-interview-questions.md` (category stacks hold the bank in a dedicated final interview category; 70.1/70.3 exempt as interview material themselves) (the historical lane-80.x GAPS were fixed 2026-09-13 — sequence now contiguous 1..36), and **no duplicate H2 section slug within a file** — two identically-named outline entries mean an ambiguous anchor and repeated sub-structures written as siblings instead of nested (80.12 had 13 stories as 65 sibling H2s; 81.05 declared "Segment Tree" twice). Nest repeats as `###` |
 | Link check | `python3 scripts/check_links.py` | Fence-aware broken-link scan — every relative prose link resolves to a real file (external URLs and anchor-only links are skipped). Also rejects **stale link labels**: a visible label that is a relative path must point at a path that exists, since pre-renumbering relics leave the target correct while the reader sees a folder layout that no longer exists (a target-only check cannot see these — the Sept 2026 audit fixed 10 such lines and ~18 more survived undetected). Spaced labels are humanized titles, not paths; `personal/` reports are exempt because they quote dead paths as documentation |

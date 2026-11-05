@@ -47,6 +47,7 @@ Use these [Docita](https://github.com/CVamsi27/docita) source paths as investiga
 | Row-Level Security | `apps/api/src/shared/common/interceptors/tenant-context.interceptor.ts` — request tenant context; verify the actual transaction-local database setting and scoped client path in the [tenant case](../../../projects/docita/02-multi-tenancy-rls.md) | Essential | Important |
 
 Managed PostgreSQL still requires workload-aware maintenance and operational ownership. Its presence does not establish effective vacuum settings or justify every possible data-model choice.
+
 ---
 
 [Next: Querying & Optimization →](../02-querying-and-optimization/INDEX.md)

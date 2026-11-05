@@ -38,6 +38,7 @@ The [Docita case study](../../../projects/docita/INDEX.md) provides code pointer
 | Event-loop pressure guards | `apps/api/src/shared/common/extensions/query-budget.extension.ts` - per-request Prisma query budget surfaces N+1 storms early |
 
 Inspect the actual project runtime and runner configuration when using its examples. The chapter's Web Stream and node:test fixtures establish their own versioned contracts independently of a case-study implementation.
+
 ---
 
 [Next: I/O & Data →](../02-io-and-data/INDEX.md)

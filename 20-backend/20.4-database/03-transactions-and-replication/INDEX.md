@@ -43,6 +43,7 @@ Use these [Docita](https://github.com/CVamsi27/docita) source paths to investiga
 | RLS-aware tx propagation | `apps/api/src/shared/modules/rls/active-tx.storage.ts` - AsyncLocalStorage hands the open tx to RLS session setters |
 
 These source references do not establish the current database topology or failover contract. Inspect the actual deployment and workload before proposing replicas; then verify acknowledgment, replay freshness and promotion authority separately.
+
 ---
 
 [← Previous: Querying & Optimization](../02-querying-and-optimization/INDEX.md) · [Next: ORM & Access →](../04-orm-and-access/INDEX.md)

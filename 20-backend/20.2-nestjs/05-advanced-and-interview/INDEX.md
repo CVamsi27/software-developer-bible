@@ -37,6 +37,7 @@ Real code from [docita](https://github.com/CVamsi27/docita) - healthcare applica
 | Role markers | `apps/api/src/shared/modules/auth/auth/roles.decorator.ts` - @Roles read back via Reflector in RolesGuard |
 
 Use these evidence paths to investigate decorator registration and consumption in the project. The reference examples still require checking the current checkout; they do not prove every lifecycle or transport feature ships there.
+
 ---
 
 [← Previous: Quality & Operations](../04-quality-and-operations/INDEX.md)

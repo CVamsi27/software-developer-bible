@@ -48,6 +48,7 @@ Real code from [docita](https://github.com/CVamsi27/docita) - healthcare platfor
 ---
 
 [← Back to NestJS](../INDEX.md)
+
 ---
 
 [← Previous: Core Architecture](../01-core-architecture/INDEX.md) · [Next: Patterns →](../03-patterns/INDEX.md)

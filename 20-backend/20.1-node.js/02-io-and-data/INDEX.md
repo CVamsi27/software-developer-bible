@@ -43,6 +43,7 @@ The [Docita case study](../../../projects/docita/INDEX.md) supplies code pointer
 | HTTP module / server | `apps/api/src/main.ts` - Express bootstrap: CORS allow-list, helmet, URI versioning, Sentry instrumentation |
 
 Inspect current pipeline/library staging and error ownership before attributing bounded streaming or cleanup guarantees to the case study. The chapter fixtures state and test their own I/O contracts.
+
 ---
 
 [← Previous: Runtime & Async](../01-runtime-and-async/INDEX.md) · [Next: Processes & Concurrency →](../03-processes-and-concurrency/INDEX.md)

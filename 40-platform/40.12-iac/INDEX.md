@@ -60,6 +60,7 @@ This section asks **how infrastructure gets created, versioned, and changed safe
 ## Docita Anchor
 
 The [Docita Anchor note](../INDEX.md#docita-anchor) in the Platform INDEX points to Fly.io, Cloudflare and GitHub Actions configuration. Inspect those source contracts separately from the deployed state. Treat this category's Terraform and infrastructure-as-code examples as study material unless an actual implementation and its validation accompany the claim. Explain how state, plan/apply and drift would change the operating model before proposing an adoption threshold.
+
 ---
 
 [← Previous: Reverse Proxy](../40.11-reverse-proxy/INDEX.md) · [Next: Kubernetes →](../40.2-kubernetes/INDEX.md)

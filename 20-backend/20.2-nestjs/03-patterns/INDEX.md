@@ -47,6 +47,7 @@ TCP/Redis/Kafka/gRPC transports are not used here. They could be introduced when
 ---
 
 [← Back to NestJS](../INDEX.md)
+
 ---
 
 [← Previous: Request Lifecycle](../02-request-lifecycle/INDEX.md) · [Next: Quality & Operations →](../04-quality-and-operations/INDEX.md)

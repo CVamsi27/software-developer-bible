@@ -31,6 +31,7 @@ After the chapters, use [revision](REVISION.md), then continue to [execution](..
 ## Docita Anchor
 
 _No direct Docita GraphQL implementation is cited here._ Docita is deliberately REST-first — URI-versioned REST documented via OpenAPI (`apps/api/src/main.ts`); `apps/api/package.json` carries no `@nestjs/graphql` or Apollo dependency. If GraphQL ever lands, schemas would start from these same domain modules and repository ports.
+
 ---
 
 [Next: Execution →](../02-execution/INDEX.md)

@@ -42,6 +42,17 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   var content = document.querySelector('.post-content');
   if (!content) return;
+  // Jekyll leaves some image-wrapped links as source Markdown. Open the
+  // published reader only when its exact HTML path is in the site catalog.
+  content.querySelectorAll('a[href]').forEach(function (link) {
+    var url;
+    try { url = new URL(link.getAttribute('href'), location.href); } catch (_) { return; }
+    if (url.origin !== location.origin || !/\.md$/.test(url.pathname)) return;
+    var target = url.pathname.replace(/\.md$/, '.html');
+    if (!(window.StudyPublishedPaths || []).includes(target)) return;
+    url.pathname = target;
+    link.href = url.href;
+  });
   var authoredTitle = content.querySelector('h1');
   var header = document.querySelector('.post-header');
   var inferredTitle = header && header.querySelector('.post-title');
@@ -63,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var published = state && state.publishedPath(location.pathname, paths);
   var learning = published && state.isLearningPath(published);
   var revision = published && /\/REVISION\.html$/i.test(published);
+  var interview = published && /-interview-questions\.html$/i.test(published);
   // Index pages still carry shields.io images as metadata transport. Render
   // the same values as text chips so the page does not depend on a third-party
   // image request and the row stays readable at phone widths.
@@ -101,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
       paragraph.replaceWith(row);
     });
   }
-  if (!learning && !revision) { renderIndexChips(content); return; }
+  if (!learning && !revision && !interview) { renderIndexChips(content); return; }
   if (content.dataset.studyReader) return;
   content.dataset.studyReader = 'true';
   function headingText(element) {

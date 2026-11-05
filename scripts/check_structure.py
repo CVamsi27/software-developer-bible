@@ -204,6 +204,10 @@ for p in MD:
     linked = set()
     for m in LINK.finditer(strip_code(p.read_text(encoding="utf-8", errors="replace"))):
         t = m.group(1)
+        source = re.match(r'^https://github\.com/CVamsi27/software-developer-bible/(?:blob|tree)/main/([^?#]+)', t)
+        if source:
+            linked.add((ROOT / source.group(1)).resolve())
+            continue
         if t.startswith(("http", "mailto:", "#")):
             continue
         linked.add((p.parent / t.split("#")[0]).resolve())

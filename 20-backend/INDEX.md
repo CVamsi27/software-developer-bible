@@ -1,12 +1,12 @@
 # Backend Stack
 
 > **Study time:** ≈ 24 h 5 m of reading (181 files, ~8 min average).
-> **Node.js, NestJS, REST, GraphQL, Database, Auth & Security, Microservices, AI Engineering, Java** — shared by both the [indian-sde-faang lane](../81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
+> **Node.js, NestJS, REST, GraphQL, Database, Auth & Security, Microservices, AI Engineering, Java** — shared by both the [indian-sde-faang lane (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
 > 181 files across 11 sub-stacks, organized by what you need to know in what order.
 
 [![Files](https://img.shields.io/badge/files-181-blue)](../INDEX.md)
-[![Sub-stacks](https://img.shields.io/badge/sub--stacks-10-green)](#the-11-sub-stacks-in-study-order)
+[![Sub-stacks](https://img.shields.io/badge/sub--stacks-11-green)](#the-11-sub-stacks-in-study-order)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 > **Case-study anchor:** category indexes include Docita inspection pointers where applicable. Learn the chapter mechanism, then inspect the linked implementation and its tests in the [Docita case studies](../projects/docita/INDEX.md). A path identifies code to inspect; current deployment, coverage and production behavior require separate evidence.

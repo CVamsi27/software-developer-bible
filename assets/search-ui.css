@@ -103,7 +103,9 @@ input:focus-visible, select:focus-visible, button:focus-visible, summary:focus-v
 }
 #q::placeholder { color: var(--theme-text-muted); opacity: 1; }
 /* One labelled clear action: suppress the browser's second, unlabelled one. */
-#q::-webkit-search-cancel-button, #q::-webkit-search-decoration, #q::-ms-clear { display: none; }
+#q::-webkit-search-cancel-button { -webkit-appearance: none; display: none; }
+#q::-webkit-search-decoration { -webkit-appearance: none; }
+#q::-ms-clear { display: none; }
 .query-field { position: relative; margin-top: 8px; }
 .query-icon {
   position: absolute; left: 16px; top: 50%; transform: translateY(-50%);

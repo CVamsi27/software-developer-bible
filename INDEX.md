@@ -9,7 +9,7 @@
 
 [![Lanes](https://img.shields.io/badge/lanes-2-blue)](lanes/INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](#the-7-study-stacks-numbered-for-study-order)
-[![Files](https://img.shields.io/badge/files-981-orange)](#the-7-study-stacks-numbered-for-study-order)
+[![Files](https://img.shields.io/badge/files-983-orange)](#the-7-study-stacks-numbered-for-study-order)
 [![Design Patterns](https://img.shields.io/badge/GoF%20Coverage-23%2F23-success)](30-architecture/30.1-design-patterns/INDEX.md)
 [![Last Updated](https://img.shields.io/badge/last%20updated-October%202026-purple)](#)
 
@@ -20,9 +20,9 @@
 **Everyone starts with the [00-strategy](00-strategy/INDEX.md) strategy folder** — communication, resume, STAR, HR questions — it is shared by both lanes, not a lane itself. Then pick one of the two lanes:
 
 | Lane | Folder | Preparation need | Practice |
-| ---------------------- | ----------------------------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------- |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------- |
 | **Abroad Full-Stack** | [80-lanes-abroad-full-stack](80-lanes-abroad-full-stack/INDEX.md) | Practical implementation, take-homes and role research | Working features, tests and design defense |
-| **Indian SDE / FAANG** | [81-lanes-indian-sde-faang](81-lanes-indian-sde-faang/INDEX.md) | Algorithms, complexity and broader SDE systems work | Fresh coding problems and system-design decisions |
+| **Indian SDE / FAANG** | [81-lanes-indian-sde-faang (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md) | Algorithms, complexity and broader SDE systems work | Fresh coding problems and system-design decisions |
 
 Use the [lane decision](80-lanes-abroad-full-stack/INDEX.md#lane-decision--is-this-the-right-lane-for-you) to connect the paths. A role may need both; confirm its assessment instead of inferring rounds, preparation periods or compensation from a country or employer name.
 
@@ -35,7 +35,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 ### Study order cheat sheet
 
 | Order | Folder | Topic | Time | When |
-| ----- | ------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------- | --------- | ------------------------------------ |
+| ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- | --------- | ------------------------------------ |
 | 1 | [00-strategy](00-strategy/INDEX.md) | Interview strategy (resume, STAR, comm) | 1-2 days | **Always** |
 | 2 | [10-frontend](10-frontend/INDEX.md) | Frontend (JS → TS → React → Next.js) | 2-3 weeks | Prioritize when the role assesses it |
 | 3 | [20-backend](20-backend/INDEX.md) | Backend (Node → NestJS → REST → DB → Security) | 2-3 weeks | Prioritize when the role assesses it |
@@ -44,7 +44,7 @@ The technical material is grouped by **what you're studying**, not by which inte
 | 6 | [50-quality](50-quality/INDEX.md) | Quality (testing, a11y, performance) | 1 week | Prioritize when the role assesses it |
 | 7 | [60-realtime](60-realtime/INDEX.md) | Real-time (WebSockets) | Optional | Only if JD requires |
 | 8 | [70-interview-toolkit](70-interview-toolkit/INDEX.md) | Behavioral + coding patterns + cheatsheets | 1 week | Practise the confirmed format |
-| 9 | [80-lanes-abroad-full-stack](80-lanes-abroad-full-stack/INDEX.md) or [81-lanes-indian-sde-faang](81-lanes-indian-sde-faang/INDEX.md) | Lane-specific prep | 1-2 weeks | Alongside learning |
+| 9 | [80-lanes-abroad-full-stack](80-lanes-abroad-full-stack/INDEX.md) or [81-lanes-indian-sde-faang (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md) | Lane-specific prep | 1-2 weeks | Alongside learning |
 | 10 | [projects](projects/INDEX.md) | Project deep-dives (Docita interview defense) | As needed | Before project interviews |
 
 These are sample scheduling blocks, not readiness estimates. Use [ROADMAP checkpoints](ROADMAP.md#checkpoints--do-not-skip) to choose depth and adjust time after a fresh exercise.
@@ -166,7 +166,7 @@ projects → Docita architecture deep-dives, interview defense
 ## Cross-Reference Map
 
 | Stack | Depends on | Used by |
-| ------------------------------------------------------------------------------------------------------------------------------------ | ---------- | -------------------------------------------------------------- |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | -------------------------------------------------------------- |
 | [00-strategy](00-strategy/INDEX.md) | — | Both lanes (everyone starts here) |
 | [10-frontend](10-frontend/INDEX.md) | — | Both lanes |
 | [20-backend](20-backend/INDEX.md) | — | Both lanes |
@@ -175,7 +175,7 @@ projects → Docita architecture deep-dives, interview defense
 | [50-quality](50-quality/INDEX.md) | — | Both lanes |
 | [60-realtime](60-realtime/INDEX.md) | — | Abroad Full-Stack (occasionally) |
 | [70-interview-toolkit](70-interview-toolkit/INDEX.md) | All stacks | Both lanes (Indian SDE / FAANG heavy, Abroad Full-Stack light) |
-| [80-lanes-abroad-full-stack](80-lanes-abroad-full-stack/INDEX.md) or [81-lanes-indian-sde-faang](81-lanes-indian-sde-faang/INDEX.md) | All stacks | Role-specific execution |
+| [80-lanes-abroad-full-stack](80-lanes-abroad-full-stack/INDEX.md) or [81-lanes-indian-sde-faang (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md) | All stacks | Role-specific execution |
 | [projects](projects/INDEX.md) | — | Project-specific (Docita interview prep) |
 
 ---
@@ -186,7 +186,7 @@ projects → Docita architecture deep-dives, interview defense
 
 - [00-strategy/index](00-strategy/INDEX.md) — Cross-lane strategy
 - [80-lanes-abroad-full-stack/index](80-lanes-abroad-full-stack/INDEX.md) — Abroad Full-Stack lane (recommended for EU)
-- [81-lanes-indian-sde-faang/index](81-lanes-indian-sde-faang/INDEX.md) — Indian SDE / FAANG lane
+- [81-lanes-indian-sde-faang/index (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md) — Indian SDE / FAANG lane
 - [projects/index](projects/INDEX.md) — Project deep-dives (Docita)
 
 **Stacks (in study order):**
@@ -202,4 +202,4 @@ projects → Docita architecture deep-dives, interview defense
 
 ---
 
-*Last updated: October 2026 — 981 files, 156K lines, 0 broken links — folders numbered for study order. Every large stack is organized into numbered category subfolders; the auth track covers passkeys/SAML; sequences are contiguous inside each stack folder. The 80.x lane numbering intentionally leaves room for project-preparation chapters.
+*Last updated: October 2026 — 983 files, 157K lines, 0 broken links — folders numbered for study order. Every large stack is organized into numbered category subfolders; the auth track covers passkeys/SAML; sequences are contiguous inside each stack folder. The 80.x lane numbering intentionally leaves room for project-preparation chapters.

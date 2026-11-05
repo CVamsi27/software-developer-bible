@@ -44,12 +44,12 @@
     },
     {
       "path": "00-strategy/INDEX.md",
-      "sha256": "7d37a2a260b410b6b0949e17f501a5ce9fe128ffe86e82ad89f56a598efe0d2b",
+      "sha256": "5eb3398e85587563c91bfee792d5e098a69a634ee830edf1ecb326560c9ccf5f",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true,
-      "notes": "Full-content review: resume-to-story prerequisite flow, concrete outcomes, revision before role lanes and no guarantee about employer evaluation; cross-reference targets retained.",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
       "findings": []
     },
     {
@@ -1363,12 +1363,14 @@
     },
     {
       "path": "10-frontend/10.4-next.js/05-interview-prep/10.4.5.01-interview-questions.md",
-      "sha256": "131d3a2b1a02eb0508b0c0f209e120e742424f25be54711586178def235db995",
+      "sha256": "b77a41d99c563b871d08c1c26830f603397e6c54060f684ff134df72e307c046",
       "genre": "interview",
       "status": "reviewed",
-      "notes": "Full forty-question bank review including code, trust/caching/deployment cases. Corrected 16.0 Cache Components versus separate16.3 partialPrefetching in three answers, common versus route-group root layouts and static route useSearchParams Suspense. Primary Next API/version history checked.  Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS.",
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false
     },
     {
       "path": "10-frontend/10.4-next.js/05-interview-prep/INDEX.md",
@@ -1925,14 +1927,14 @@
     },
     {
       "path": "20-backend/20.1-node.js/01-runtime-and-async/INDEX.md",
-      "sha256": "9ea96aa4307cf1ca79a69b7de80a362e4b917897738ea6df5a8191f228f61a53",
+      "sha256": "82b455decfb9f847e80b349a163a3eba290f4eb7c79c2f94eeb8d7c3a5dd3116",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full content reviewed as INDEX: request scheduling then stream pressure/cancellation and runner completion, revision after learning. Timeout and case-study caveats distinguish observable waiting from preemption/cancellation. Linked Web Streams chapter remains pending independently.",
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
       "findings": [],
-      "reviewer": "career_planning",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false
     },
     {
       "path": "20-backend/20.1-node.js/01-runtime-and-async/REVISION.md",
@@ -1991,13 +1993,13 @@
     },
     {
       "path": "20-backend/20.1-node.js/02-io-and-data/INDEX.md",
-      "sha256": "7faedfc420b85ac4b63e9e22c67e616dd5e8e533fed12a5403a559f0d310fe10",
+      "sha256": "9ca62bdcef15ae1f4f9797e1d7647eb2ff8ddfd8a4188ca265a99707cc9308b6",
       "genre": "index",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read full reading-flow/index, chapter metadata/navigation and case-study evidence qualifiers; sequencing agrees with streams/buffers/fs/HTTP ownership mechanisms and puts revision after learning. No blocking finding.",
-      "fullContentRead": true,
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
+      "fullContentRead": false,
       "findings": []
     },
     {
@@ -2088,14 +2090,14 @@
     },
     {
       "path": "20-backend/20.1-node.js/03-processes-and-concurrency/INDEX.md",
-      "sha256": "fa70762de9a1f399733198e1abaeb2d99fea8ad6ead899f3ab9dcb020222a30b",
+      "sha256": "14ff8865e4870e62ff3b485b044ad2b810e77b2ca2a94afb18d431a2f4755cdb",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full content reviewed as INDEX: process-versus-thread and admission/ownership flow through clustering, workers, environment, PM2 and Watt; revision before later interview practice. All five linked learning chapters individually reviewed in this pass. Source pointers remain inspection references rather than deployment evidence.",
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
       "findings": [],
-      "reviewer": "career_planning",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false
     },
     {
       "path": "20-backend/20.1-node.js/03-processes-and-concurrency/REVISION.md",
@@ -2154,20 +2156,14 @@
     },
     {
       "path": "20-backend/20.1-node.js/04-security-and-operations/INDEX.md",
-      "sha256": "595f12faabd3673935949e41c36fc10a11cd7eb718e6acfbee8bcf43d858771d",
+      "sha256": "05661606d4a68b0b4e1419cba6c1df412a9fdaa4128f706991e8bf7f5e3ccc95",
       "genre": "index",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read full content after repair. Compared linked bank Q1-Q44 headings with stack index; corrected stale 40-question description to 44. Reading flow, revision-before-bank order, framework/lifecycle topic ownership and evidence-qualified Docita pointers checked.",
-      "fullContentRead": true,
-      "findings": [
-        {
-          "description": "Category index described 40 interview questions while current bank and stack index contain 44; corrected to 44 and reread final file.",
-          "severity": "P3",
-          "status": "repaired"
-        }
-      ]
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
+      "fullContentRead": false,
+      "findings": []
     },
     {
       "path": "20-backend/20.1-node.js/04-security-and-operations/REVISION.md",
@@ -2378,12 +2374,12 @@
     },
     {
       "path": "20-backend/20.13-java/20.13.06-interview-questions.md",
-      "sha256": "eb116b951d99aea050b83cbe22874b4c901555c338d07c07d86673b2004ef010",
+      "sha256": "cea55cc1e2e1c1825468df970e17696de40d8f767190cbdbf8ba094646994c92",
       "status": "reviewed",
-      "reviewer": "backend_realtime_projects_finish",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Full read of all30 questions/answers. Aligned test-pyramid heuristic with risk-based real-boundary checks; made Eureka/Zuul resume premise conditional rather than asserting candidate history. Checked compile-time dispatch, JMM, cancellation, proxy, rollback and credential-transport qualifications.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "db47275804e76a3767e79bd461b94b34f590f1c6f4968d1994473e56a2b1fb5d",
@@ -2557,14 +2553,14 @@
     },
     {
       "path": "20-backend/20.2-nestjs/02-request-lifecycle/INDEX.md",
-      "sha256": "071aca27ef1a994822cec335c59d17970b154d4641065448c447cd70a0c2f9a1",
+      "sha256": "2f5e64f0ae63c300bf31e02c73a2b8946b94845322e13fe0cfc4b89c0720252e",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full content reviewed as INDEX: stages order, verified identity before pipes, reverse interceptor mapping, uncaught filter selection and ALS resource/trust limits. All six chapter pointers and revision position coherent; five linked middleware/guard/pipe/interceptor/filter chapter current bytes remain pending independently.",
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
       "findings": [],
-      "reviewer": "career_planning",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false
     },
     {
       "path": "20-backend/20.2-nestjs/02-request-lifecycle/REVISION.md",
@@ -2601,13 +2597,13 @@
     },
     {
       "path": "20-backend/20.2-nestjs/03-patterns/INDEX.md",
-      "sha256": "bb3e04d77ab8bd5e267b32998940e0c0d272c85e95a71f598ca57b738ed0622c",
+      "sha256": "280c615a9fd021206b1855e0ec02da9632bdf30c25a6283c007cb50f7869021b",
       "genre": "index",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read full content: shared-state CQRS to lagged projection and subscribed remote delivery flow; revision placement and evidence-qualified local-bus versus broker use agree with canonical mechanisms. No blocking finding.",
-      "fullContentRead": true,
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
+      "fullContentRead": false,
       "findings": []
     },
     {
@@ -2736,13 +2732,13 @@
     },
     {
       "path": "20-backend/20.2-nestjs/05-advanced-and-interview/INDEX.md",
-      "sha256": "35f36d04e0521f284eaea5ab278a29c656507ce0e8b0bcd20e532f54cea334cd",
+      "sha256": "55e03793e0fab7128b0424e4e6f199b6e8d75d5c23d6444b47865909e3f16353",
       "genre": "index",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read full content: extraction/consumer learning sequence, separate revision before bank, question count40 and case-study registration caveats. No blocking finding.",
-      "fullContentRead": true,
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
+      "fullContentRead": false,
       "findings": []
     },
     {
@@ -2822,13 +2818,13 @@
     },
     {
       "path": "20-backend/20.3-rest-apis/01-design-and-contract/INDEX.md",
-      "sha256": "1ef84baa85da28816fa31a231182974038a4af7922f057cb569ef9edfa6cb312",
+      "sha256": "5ff046ed92e9420f7a060eba50f359049c5e3b9cbfe71af757d379cdd50aa4f6",
       "genre": "navigation-index",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full content read: learning order introduces styles before REST, evolution/maturity before OpenAPI, revision follows chapters; all five topic entries and links align with chapters. Docita pointers are explicitly investigation starting points and no deployment evidence asserted. Counts are root-managed; no metadata writer run.",
-      "fullContentRead": true,
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
+      "fullContentRead": false,
       "findings": []
     },
     {
@@ -3053,13 +3049,13 @@
     },
     {
       "path": "20-backend/20.3-rest-apis/04-edge-and-scale/INDEX.md",
-      "sha256": "feb24234735bbd54fee07abdab22ef16011031fa1f8f5def44f9be2ae74b6374",
+      "sha256": "8ea2ec19e0784167786bcd0f2d21173390578ffb1dc9d087ffbe7729a1fd1d89",
       "genre": "navigation-index",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full content read: four chapter order connects admission, trusted gateway forwarding, client composition and resource authorization; revision follows learning; Docita current-checkout pointers avoid enforcement/deployment claims. Counts root-managed.",
-      "fullContentRead": true,
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
+      "fullContentRead": false,
       "findings": []
     },
     {
@@ -3181,14 +3177,14 @@
     },
     {
       "path": "20-backend/20.4-database/01-postgresql-foundations/INDEX.md",
-      "sha256": "3482d3645c56d3301fd3d5067489130918382bf9c16d0b33bf716f6351e386b6",
+      "sha256": "f91c0a6b000223edd4b589f549b450419f0221e34be6def991f524825869d7d9",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full content reviewed as INDEX: staged request-path/model/MVCC/performance/RLS flow, revision before interview and source-investigation caveat. Chapter byte coverage is tracked separately; this INDEX review does not certify every linked chapter.",
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
       "findings": [],
-      "reviewer": "career_planning",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false
     },
     {
       "path": "20-backend/20.4-database/01-postgresql-foundations/REVISION.md",
@@ -3270,20 +3266,14 @@
     },
     {
       "path": "20-backend/20.4-database/02-querying-and-optimization/INDEX.md",
-      "sha256": "07a075cb334c026fdf67214f871dbea4918a6ecca22c99cc385d5014786143b1",
+      "sha256": "a6c9a34f0d525eecedcdb25fbfbe98388e4090ffb73c5d9012beb7c79484109c",
       "genre": "navigation-index",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full final content reread: five chapter sequence links logical grain before physical plan, analytical frame and typed document contract; revision follows examples. Corrected execution topics to generic16+,serialize17+,searches18+. Docita schema/runtime pointers investigation-only; counts root-managed.",
-      "fullContentRead": true,
-      "findings": [
-        {
-          "description": "Incorrectly grouped GENERIC_PLAN and SERIALIZE as PostgreSQL18-only features; corrected minimum versions to16 and17 respectively, retaining Index Searches at18.",
-          "severity": "P2",
-          "status": "repaired"
-        }
-      ],
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
+      "fullContentRead": false,
+      "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "85893f5852c4b2f3824d1203a7c692fc0b62907c7332d9c2500250798488eef1",
         "reviewDate": "2026-10-26",
@@ -3354,21 +3344,14 @@
     },
     {
       "path": "20-backend/20.4-database/03-transactions-and-replication/INDEX.md",
-      "sha256": "6475629b0cebb0394fe69b8c9e16f3442357a37a827a60086edc1271ff836a91",
+      "sha256": "70d89850fb5c12a4b07d9c3d81767a238875881311814b7449ade5e0e6645994",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full original and revised content reviewed as INDEX: ordered transaction/deadlock/locking/replication flow and revision-before-interview placement. Removed unsupported deployed/shipped and topology statements; changed advisory-lock guarantee into transaction/key/path inspection. Four referenced source paths exist; runtime behavior not asserted.",
-      "findings": [
-        {
-          "severity": "P2",
-          "kind": "evidence-accuracy",
-          "status": "repaired",
-          "description": "Source-path existence was presented as shipped production and current topology evidence; rewritten as inspection pointers and contract verification."
-        }
-      ],
-      "reviewer": "career_planning",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
+      "findings": [],
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false
     },
     {
       "path": "20-backend/20.4-database/03-transactions-and-replication/REVISION.md",
@@ -3416,21 +3399,14 @@
     },
     {
       "path": "20-backend/20.4-database/04-orm-and-access/INDEX.md",
-      "sha256": "e3858528b5f4d6adddd27ec538de2a08bcd6a7b538a5bde83db0112893443898",
+      "sha256": "8cb6d562d066363d154d19602099238cd0f17919c247d7d7647b1eba3793f5bd",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full original and revised content reviewed as INDEX: version/schema/query followed by concurrent operation and access-layer decision flow, then revision. Narrowed universal tenant-filter, encryption and every-repository claims to inspection coverage/call sites. No deployed behavior inferred.",
-      "findings": [
-        {
-          "severity": "P2",
-          "kind": "unsupported-universal-claim",
-          "status": "repaired",
-          "description": "Every-repository and blanket filtering/encryption wording exceeded inspected access-path coverage; narrowed to actual inspection responsibilities."
-        }
-      ],
-      "reviewer": "career_planning",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
+      "findings": [],
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false
     },
     {
       "path": "20-backend/20.4-database/04-orm-and-access/REVISION.md",
@@ -3517,13 +3493,13 @@
     },
     {
       "path": "20-backend/20.4-database/05-operations-and-scaling/INDEX.md",
-      "sha256": "68704fa7dd57daf524771f16b7dc79472a334b0cbcd8eb7b872dfab76f9cbc40",
+      "sha256": "58778c86678e166331b20acd55dcc15246eaed137f137f343ef6b66193e985ec",
       "genre": "navigation-index",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full content read: pool→compatible representation→deletion→recovery→projection sequence, revision before sixth interviewbank entry, five concept descriptions agree with sources. Docita pointers explicitly investigation-only without restore/freshness guarantees; counts root-managed.",
-      "fullContentRead": true,
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
+      "fullContentRead": false,
       "findings": []
     },
     {
@@ -3839,13 +3815,13 @@
     },
     {
       "path": "20-backend/20.5-security/03-hardening-and-operations/INDEX.md",
-      "sha256": "e1cf63bfcb4c6460e8a397db8b866719eb1a561954b931b92a9a5a6133fc9635",
+      "sha256": "19a66143e6fc14f621f9fcd6b348746ef3452dee3e087668a5c726fc3a7bcefe",
       "genre": "navigation-index",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full read stagedcrypto→browserpolicy→threatflows→credentialrotation→triage/verifiedremediation→revision→bank. Sourceanchor explicitpointintime threattable/no dedicatedSTRIDEartifact claim applies to earlierreviewedcheckout only; currentproductioncoverage notinferred. Sources checked: https://helmet.js.org/faq/csp-nonce-example/ ; https://external-secrets.io/v1.0.0/api/spec/ ; https://docs.aws.amazon.com/kms/latest/APIReference/API_Sign.html ; https://kubernetes.io/docs/concepts/configuration/secret/ ; https://www.first.org/cvss/v4.0/ ; https://www.first.org/epss/ .",
-      "fullContentRead": true,
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
+      "fullContentRead": false,
       "findings": []
     },
     {
@@ -3878,13 +3854,13 @@
     },
     {
       "path": "20-backend/20.5-security/04-interview-drills/INDEX.md",
-      "sha256": "5b826090abf025b7d1394d551d1d3e2602fd464cf7bda5c2121c5dc611262194",
+      "sha256": "93e3b325a56acd6d5e6195cc3f6b27ff071b5e68e556ff22d786f1ba04874216",
       "genre": "navigation-index",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full read: auth, attacks and hardening learning chapters then respective revision companions before authored scenario bank; source return and changed-condition explanation. Navigation and chapter ownership consistent.",
-      "fullContentRead": true,
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
+      "fullContentRead": false,
       "findings": []
     },
     {
@@ -3950,13 +3926,13 @@
     },
     {
       "path": "20-backend/20.6-microservices/01-service-topology/INDEX.md",
-      "sha256": "a1984352eed1bb2536586af9aef6edfd5666e1c20b45fc1766fe920313461388",
+      "sha256": "09e907de53f55529854c33e3c23f6f3d525617d635ba09ececb10c9dc745dc3b",
       "genre": "navigation-index",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full content read: discovery→edgeauthority→meshpolicy→migration sequence, fourchapters and revisionbeforeinterview links align. Docita pointers described as sourceinvestigation modularmonolith rather than pattern deploymentproof. Counts rootmanaged.",
-      "fullContentRead": true,
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
+      "fullContentRead": false,
       "findings": []
     },
     {
@@ -4038,13 +4014,13 @@
     },
     {
       "path": "20-backend/20.6-microservices/02-communication-and-messaging/INDEX.md",
-      "sha256": "7ef4d48f45ce8aa4c355b68292b6632df328c4da43d0f3e3a5d8dc04eec92523",
+      "sha256": "8fba9694fbbeefca413d135512b5e7ce07bdd2278f685058ee9c0fcceef3c58a",
       "genre": "navigation-index",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full content read: unary then stream lifetime, log versus routed delivery, actual broker model then durable event consumer sequence; revision precedes bank. Sixchapter links align; Docita inprocess/provider paths explicitly do not establish brokerdeployment. Counts rootmanaged.",
-      "fullContentRead": true,
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
+      "fullContentRead": false,
       "findings": []
     },
     {
@@ -4126,21 +4102,14 @@
     },
     {
       "path": "20-backend/20.6-microservices/03-data-and-consistency/INDEX.md",
-      "sha256": "abf6b8e70e13a10a37236d025ff986ba5e550eae1b9b44aadc1c6e1130f0d330",
+      "sha256": "fd80c2f0769149f9d9892dd9b1bc70e5143adab7de59801f71ad3525f7003c29",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full original and revised content reviewed as INDEX: saga/atomic commit/history/read-model/decomposition/outbox order and revision-before-interview. Corrected false automatic-DLQ-replay implication after inspecting current scheduler tick and queue module; manual replay remains distinct. Removed unverified global absence claims.",
-      "findings": [
-        {
-          "severity": "P2",
-          "kind": "incorrect-runtime-implication",
-          "status": "repaired",
-          "description": "DLQ helper was described as gating automatic replay although tick only warns and automatic wiring is pending; manual replay now explicit."
-        }
-      ],
-      "reviewer": "career_planning",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
+      "findings": [],
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false
     },
     {
       "path": "20-backend/20.6-microservices/03-data-and-consistency/REVISION.md",
@@ -4265,13 +4234,13 @@
     },
     {
       "path": "20-backend/20.7-graphql/01-fundamentals/INDEX.md",
-      "sha256": "e6fc77021c284a3ad076a019c435b547c44ccb9cbfc89e343b7cf160fec10dee",
+      "sha256": "34ed746a3ab92c380dbd7f5c92881eb1906c9d8f2578236e4874ed6b71db9912",
       "genre": "navigation-index",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full read learning flow selection trace→schema failure boundary→partially failing mutations→revision/execution→later bank. Topics and references align with actual chapters; REST-only project anchor explicitly distinct from GraphQL implementation. No source-code/deployed Docita proof claimed. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
-      "fullContentRead": true,
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
+      "fullContentRead": false,
       "findings": []
     },
     {
@@ -4575,19 +4544,13 @@
     },
     {
       "path": "20-backend/INDEX.md",
-      "sha256": "620af94d24e126bdac9b99c9f2d9a7ee403e1a2c75bbda3cb9153975602f10f8",
+      "sha256": "4fe4b67daee15aaa0e312b4095efa480d80740a7a67cb548cf47433a5944dfa4",
       "status": "reviewed",
-      "reviewer": "backend_realtime_projects_finish",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Full stack INDEX read: runtime/API/data/auth/distributed dependencies, preparation paths and scoped optional Java/AI. Updated superseded RFC7807 label to RFC9457 and removed universal interview guarantee. Generated counts/badges remain writer-owned.",
-      "findings": [
-        {
-          "severity": "P2",
-          "status": "repaired",
-          "description": "Current error-contract label still cited supersededRFC7807; updatedRFC9457."
-        }
-      ],
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged. Backend Sub-stacks badge restamped by the count owner; paired defect/clean regression verifies drift detection.",
+      "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "ab7ced08ffe012474a86db7f5ff38398ca691458b124ed67f5bf5a2780894865",
         "reviewDate": "2026-10-26",
@@ -6044,14 +6007,14 @@
     },
     {
       "path": "30-architecture/INDEX.md",
-      "sha256": "22912bed6366d3322d259e10b3a1bb8459a995f460c8c84f1c03f09b3c17ff14",
+      "sha256": "7322898f801409d8964e21b22b91b98417040449ed65e7fc94f362b055db9827",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full read: stack prerequisites/study flow, source anchors bounded. Category/navigation hand counts reported to root for canonical count-writer coverage; metadata not manually certified.",
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
       "findings": [],
-      "fullContentRead": true,
-      "reviewer": "resume_portfolio",
-      "reviewDate": "2026-10-25"
+      "fullContentRead": false,
+      "reviewer": "root",
+      "reviewDate": "2026-11-05"
     },
     {
       "path": "40-platform/40.1-docker/40.1.01-images-containers.md",
@@ -6077,41 +6040,35 @@
     },
     {
       "path": "40-platform/40.1-docker/40.1.03-compose.md",
-      "sha256": "214ef96dabbd78850c6192205fba4f3c1b8ade26dbd6fb144f9cde1cab054ee2",
+      "sha256": "9af2c888c78994e9b72b2f2934779930e6b164e9ddde18e16cbd6006eaaf45f3",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "animation_coverage",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true,
-      "notes": "Full content read: complete API/migration/Postgres18 YAML and all assumptions; health and successful migration gate initial startup only; depends_on restart differs from engine process-exit policy; loopback publishing, internal-network outbound behavior, env interpolation versus env_file, local file secrets, profiles/Watch minimum version, test exit ownership, single-host limit and volume removal. Official startup-order/PG image docs verified. No invented ongoing supervision or exactly-once migration guarantee. CLI model/runtime check unavailable because daemon absent; no production fixture asserted.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
       "findings": []
     },
     {
       "path": "40-platform/40.1-docker/40.1.04-multi-stage-builds.md",
-      "sha256": "bc05a2404f95b7d1498f3646cf4415866a2794f372cb9d5fc6a6178a63e18c6d",
+      "sha256": "90425e5c52f4f03173a181271ace8c614c2513f1aa19cf558120db9ef4a36e68",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "animation_coverage",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true,
-      "notes": "Full original/final content read: TypeScript build dependencies and independent production install, package manifest/ESM and selected assets, BuildKit graph/target tests, disposable caches/secret mounts, native CPU/libc/ABI boundary, Go1.27 cross compile and supported distroless Debian13 variants. Official Docker multi-stage/Dockerfile, Go1.27 and distroless primary sources checked. Repaired broad stage-boundary no-inheritance claim: COPY transfers files only, whereas FROM previous-stage inherits that base files/configuration. No image build result claimed because daemon unavailable.",
-      "findings": [
-        {
-          "description": "Generalized COPY-only metadata separation to every stage boundary, omitting FROM previous-stage inheritance; narrowed the guarantee to the actual instruction.",
-          "severity": "P2",
-          "status": "repaired"
-        }
-      ]
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
+      "findings": []
     },
     {
       "path": "40-platform/40.1-docker/40.1.05-dockerfile-best-practices.md",
-      "sha256": "5afdba0aa2b1f09a8da8316c3ffc00aa36832f099c2e78947cdc363e06359618",
+      "sha256": "31d6ab26d3e4d3344e8b87e1b9ff166e5838e29ec56d912e28251a6bd776d7a3",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "animation_coverage",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true,
-      "notes": "Full content read: context/ignore files and required build inputs, lockfile-before-source cache boundary, download cache eviction correctness, layer secret retention, BuildKit temporary secret consumption with command leak caveat, compatible base/digest updates, nonroot/read-only writable mounts, direct signal versus app drain, Docker health versus Kubernetes probes, artifact labels versus verified provenance. Official Dockerfile/secrets/security sources checked. Concrete examples remain scoped assumptions; no clean-scan/reproducibility/escape-prevention guarantee or runtime build result asserted.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
       "findings": []
     },
     {
@@ -6144,41 +6101,25 @@
     },
     {
       "path": "40-platform/40.1-docker/40.1.08-image-signing-sbom-supply-chain.md",
-      "sha256": "e990d2af2ffdfaddbd1eb04eda4c7e783e08c959a0c1fa32da14ddd67662fbb4",
+      "sha256": "76d82c91c0a6756c82ed16717319b1ad865db19a167ef0d3d5811f4eca3700bf",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "animation_coverage",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true,
-      "notes": "Full content read: immutable digest identity, exact expected Cosign OIDC signer/issuer policy, SBOM inventory versus known-vulnerability database, BuildKit provenance/attestation image-index storage, mode=max argument leak boundary, current SLSA1.2 separate Build/Source tracks L0-L3, final admission identity/provenance checks and outage fail-open/closed ownership. Sigstore verify, SLSA1.2 and Docker build metadata semantics verified from primary sources. Commands contain clearly marked example registry/digest identities; no signing, push, account/API mutation or scanner runtime result performed.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
       "findings": []
     },
     {
       "path": "40-platform/40.1-docker/40.1.09-rootless-sandboxed-runtimes.md",
-      "sha256": "1cb688dcbfdb0b22b86d2bc4b3db7650426b639cd79ab243c0276721924851d3",
+      "sha256": "46b0e7363e080b2e68d1decb953faf7ead525a8360ce70e27536ff51ecf303e8",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "animation_coverage",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true,
-      "notes": "Full original/final content read: UID/subuid mapping, versioned rootless network backends and Engine29.5 host-network boundary, cgroup controller delegation, gVisor systrap/KVM/Sentry/gofer, Kata guest-kernel/hypervisor overhead, RuntimeClass/handler registration/scheduling, least-privilege CI pod and benchmark/recovery limits. Docker29 notes/rootless tips, Podman top/API/Quadlet manuals and gVisor/RuntimeClass primary docs checked. Repaired CPU delegation prerequisite, container-specific host UID inspection with subordinate workers, and REST socket versus container-unit supervision. Docker daemon unavailable and Podman absent, so no runtime sandbox benchmark or Linux service test claimed.",
-      "findings": [
-        {
-          "description": "Rootless CPU limit explanation omitted CPU-controller delegation, which is commonly absent from default user delegation.",
-          "severity": "P2",
-          "status": "repaired"
-        },
-        {
-          "description": "Host-wide Nginx process inspection implied every rootless process maps to the invoking host user; switched to container-specific inside/host descriptors and explained subordinate worker identities.",
-          "severity": "P2",
-          "status": "repaired"
-        },
-        {
-          "description": "podman.socket was labeled container systemd integration, though it activates the REST API and does not supervise the container; separated Quadlet and lingering lifecycles.",
-          "severity": "P2",
-          "status": "repaired"
-        }
-      ],
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
+      "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "31cfd27043346840442eb860d3eb915117f8a95d04a597fea983c2ce550bd5e4",
         "reviewDate": "2026-10-26",
@@ -6188,13 +6129,13 @@
     },
     {
       "path": "40-platform/40.1-docker/40.1.10-interview-questions.md",
-      "sha256": "a83e1ac97e7448521828b2328c1d2a5e486ed140cd4ade32f512886f75fcbb62",
+      "sha256": "a91d06602acd7b8fd0276e21853569b458ff78a17651bf210903b22ac844ea7c",
       "genre": "interview-bank",
       "status": "reviewed",
-      "reviewer": "animation_coverage",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true,
-      "notes": "Full content read: all30 authored answers, concrete CMD/ENTRYPOINT invocation, copy/add/cache and graph dependency boundaries, Compose startup/restart/CI exit semantics, storage persistence/backup, probes versus process restart, OOM ambiguity, logs/backpressure, remote daemon trust, cgroup budgets, signature policy and shared-kernel limits. Crosschecked against final canonical Docker chapters and official Dockerfile/startup/security/exec references. No answer reintroduces removed fixed-size or universal safety claims; no new blocking finding.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
       "findings": []
     },
     {
@@ -6347,12 +6288,12 @@
     },
     {
       "path": "40-platform/40.12-iac/INDEX.md",
-      "sha256": "65e8554d5add3c90fd13181e214bae3cd50aa221111b15fd6b3331e58b117e2e",
+      "sha256": "7fb216a74002b405e0ac4f8d9443e5541007b86e914c69d14bad58fd43920406",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Full configuration/state/provider graph, complete local terraform_data exercise, saved plans, partial apply, locking, modules/secrets and all25bank/revision answers read. Reverified primary S3opt-in locking/CDKTFdeprecation/resource contracts. Removed universal role expectation and implied DocitaTerraform adoption. CLI absent, no Terraform or cloud execution claimed.",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
       "findings": []
     },
     {
@@ -6367,13 +6308,13 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.01-pods-replicasets.md",
-      "sha256": "52b3e4955fb28eb658bb519bdc80763c21438d69eebd6df084bbd87cb0b658e7",
+      "sha256": "1f6f8a6544a01d8a9ea55a27d192a1a75e280355928b63b19ebdd7c093726316",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "animation_coverage",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true,
-      "notes": "Full content read: shared Pod placement/network but separate rootfs/process namespace; kubelet container restart versus ReplicaSet replacement and Deployment update; selector adoption/ownership, API storage/scheduler binding/CRI/EndpointSlice readiness sequence; effective complete-Pod requests versus runtime limits and namespace rejection. Verified primary sidecars stable1.33, resource-management and PodLevelResourceManagers1.37 beta disabled-by-default docs, and controller semantics. Manifest assumptions/name placeholders are explicit. No cluster API/creation/runtime test performed; no availability or memory-restoration guarantee claimed.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
       "findings": []
     },
     {
@@ -6400,13 +6341,13 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/01-core-workloads/40.2.1.03-statefulsets-daemonsets.md",
-      "sha256": "351e40da6faf27f608745d3fe3f0b23b616a996ad2daa6d26f7b98a5266b84fe",
+      "sha256": "7dd616ef90b510d06a128184c5d0af684a7585f8effc26ff8935267745572b8c",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "animation_coverage",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true,
-      "notes": "Full content read: stable ordinal/claim association versus new Pod identity/IP, governing headless DNS versus actual database membership, explicitly independent PostgreSQL18 directories/required storage prerequisites, OrderedReady/Parallel scaling versus update strategy and partitions, PVC retention/reclaim/cost, per-eligible-node DaemonSet desired/readiness/surge boundaries. Checked official StatefulSet and DaemonSet contracts, including supported changing update features, without inferring replication or fencing from controller identity. No database cluster or Kubernetes API runtime test claimed.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
       "findings": []
     },
     {
@@ -6474,24 +6415,24 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.01-services-ingress.md",
-      "sha256": "1634f15999669f155d118f863fa50ce5228b646a7173135f0d999b342becd581",
+      "sha256": "d1b834d7bd84de66f9cb5152ef0daed6f4a179601eb5c97f376cada44af763e2",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "animation_coverage",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true,
-      "notes": "Full content read: request across DNS/edgecontroller/TLS/route/Serviceport/endpoints/targetPort, virtual-IP versus controller-direct endpoints, per-implementation kubeproxy/CNI, all Service exposure types including ExternalName HTTP/TLS and headless client behavior, ingress-nginx retirement versus stable frozen Ingress, GatewayClass/Gateway/HTTPRoute ownership, accurate Service80-to8080 and Ingress prefix/YAML/TLS prerequisites, source IP/Local endpoint policy and migration annotation limits. Verified official Services/Ingress and retirement announcement: March2026 no continued maintenance. No controller installed/routing or benchmark tested; API declaration is explicitly not a data plane.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
       "findings": []
     },
     {
       "path": "40-platform/40.2-kubernetes/02-networking-and-config/40.2.2.02-configmaps-secrets.md",
-      "sha256": "e526d53075db6b3694548522e320c20407ab681ec823bb77049ddfbb81f2e4a6",
+      "sha256": "c5401995b7ca790dd4df72fe701d39878399cd0e18d5b7674fe2ffda448c4512",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "animation_coverage",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true,
-      "notes": "Full content read: API/kubelet/application delivery owners and lifetimes, default unencrypted etcd/base64 versus authorized reads/Pod-creation exposure, env/envFrom precedence, eventual volume reload/open-descriptor/subPath boundaries, versioned immutable rollout refs and rollback retention, protected source-file provisioning without argv secrets, actual mode/fsGroup/nonroot access, TLS and imagePullSecret consumer identity, external-store propagation and1MiB/resource costs. Official ConfigMap and Secret docs confirm mounted eventual refresh, no env/subPath refresh and default storage/access caveats. No credential values read, manifests applied, live namespace queried or successful rotation/renewal claimed.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
       "findings": []
     },
     {
@@ -6569,30 +6510,14 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/03-scaling/40.2.3.02-node-autoscaling-cluster-capacity.md",
-      "sha256": "e0a0f9df5105e89a2fbd5a9d1120f54c05ae1e1da2d2f5d7e3f651af4611d0fc",
+      "sha256": "85b8a54f7028956dcde956cdac03b96d0514ad4ff1216b168e1eab0faba2e615",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "animation_coverage",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true,
-      "notes": "Full original/final content read: admitted unschedulable Pod versus pre-admission quota and image/storage constraints, CA node-group shape versus Karpenter NodePool/NodeClass/NodeClaim, labels/taints/toleration/device allocation, warm low-priority placeholders and CA expendable cutoff, provider/zone/local-PV/spot limits, feasible scale-in/PDB/checkpoint recovery, resource eventual consistency and cloud permissions. Official GPU docs prove requests-only device-plugin GPU is invalid; added equal limit and repaired contradictory prose. Karpenter1.15 disruption docs distinguish node selection from protected-Pod drain and indefinite expiration/manual wait without grace. Kubectl1.36.1 client available; no Go/Podman/runtime or cluster validation performed, so semantic correction is primary-source grounded rather than a claimed admission test.",
-      "findings": [
-        {
-          "description": "GPU snippet specified nvidia.com/gpu only as a request, which Kubernetes disallows, and prose denied requesting a GPU despite that field; supplied an equal limit and accurate allocation explanation.",
-          "severity": "P2",
-          "status": "repaired"
-        },
-        {
-          "description": "do-not-disrupt explanation implied expiration/manual deletion bypasses protected-Pod drain; documented selection versus potentially indefinite drain without a NodeClaim grace deadline.",
-          "severity": "P2",
-          "status": "repaired"
-        },
-        {
-          "description": "Pending/quota wording and crossreference blurred rejected creation with node capacity; aligned admission-versus-placement boundary.",
-          "severity": "P2",
-          "status": "repaired"
-        }
-      ]
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
+      "findings": []
     },
     {
       "path": "40-platform/40.2-kubernetes/03-scaling/INDEX.md",
@@ -6630,13 +6555,13 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/04-production-hardening/40.2.4.01-health-checks.md",
-      "sha256": "01f2d5d59f74fd4d4592df839992f2fa7fc7b72ea1f140ecafa251996dde2109",
+      "sha256": "b957846e1de68f4b38375ed16d5a0f7803edb5aedb9bae934089d31d8d262ac0",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "animation_coverage",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true,
-      "notes": "Full content read: kubelet-observed startup/liveness/readiness actions and thresholds, independence after startup, endpoint propagation/existing traffic, no-probe defaults, HTTP200-399/shallow check versus TCP/exec/native gRPC health, HTTPS certificate nonverification and1.37 disabled alpha gRPC TLS/H2C exact mode/protocol gates, nominal timing versus precise outage SLA, worker intake and dependency restart-storm boundary, bounded monitoring overhead. Official probes docs verified. /tmp/bible-platform-checks/probe-demo-check.cjs executes the actual Node example handler in an injected clock/http harness: initial503/200/503, initialized200/200/200, dependency outage200/200/503 and unknown404 allPASS. This is handler logic validation, not a live Kubernetes probe/HTTP/TLS test.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
       "findings": []
     },
     {
@@ -6726,54 +6651,36 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.01-helm.md",
-      "sha256": "7bd74a23f53fcaf23af7d648e3cb51782e657e8f2e9d066d268bafe6a1417ba5",
+      "sha256": "f5f674cc84533af5a3b8543f6e18526a2b71f8a6e5f69b6015fd04b39b63f51c",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "animation_coverage",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true,
-      "notes": "Full original/final content read: chart inputs to rendered resources to stored release, dependency lock/provenance/template scope/conditional generation, Helm4 SSA new-release versus existing apply-method latch, rollback-on-failure deprecated atomic alias and wait behavior, migration/CRD/external side-effect boundaries, HPA replica field ownership and image/secret resources. Verified current official Helm4 docs; checksum-verified Helm4.3.1 downloaded into /tmp only. Extracted all9 authored chart files: helm lint PASS1chart0failed; dev/prod helm template outputs verified stable selectors, Service80 to8080, nested Ingress root context, prod HPA3..10 with omitted Deploymentreplicas and devreplicas1 without HPA. Stubbed actual command before fix failed127 at --namespace due doubled backslashes; fixed command preserves all argv as one invocation. No install/upgrade/rollback/cluster calls executed.",
-      "findings": [
-        {
-          "description": "Copyable upgrade command contained literal double-backslash continuations, splitting it into invalid commands; reproduced127 and corrected continuations.",
-          "severity": "P2",
-          "status": "repaired"
-        }
-      ]
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
+      "findings": []
     },
     {
       "path": "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.02-kustomize-overlays-packaging-tradeoffs.md",
-      "sha256": "7da6cddfdaf5eea58aa3c58f64be3bd7c8a1bfe21e0f8fb2f6ffd440b6de4935",
+      "sha256": "a620bdc5aa29f4496c1c47250b92054335c6fb36d144c1579940ab19dea2619b",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "animation_coverage",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true,
-      "notes": "Full original/final content read: schema-aware strategicmerge versus precise JSON6902 paths, labels/immutable selector propagation, configMapGenerator content-name/reference/Pod-template trace, field-rewrite boundaries and remote input pinning, Helm file-input versus pipe, secret encoding/storage controls, diff exit1 versus error and exact artifact application/admission/runtime limits. Corrected 80hex SHA256 placeholder to64hex and explicit substitute-published-digest comment. Offline kubectl1.36.1 bundled Kustomize5.8.1 fixture uses actual generator/overlay/patch snippets plus supplied base objects: replicas5, namespace, stable selectors, changed config/hash/reference allPASS. Renderer also accepted old80hex digest, demonstrating render-success limitation. No registry pull, apply or admission test.",
-      "findings": [
-        {
-          "description": "Image transform example used an80hex SHA256 digest; renderer preserved it despite invalid digest length, corrected to illustrative64hex.",
-          "severity": "P2",
-          "status": "repaired"
-        }
-      ]
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
+      "findings": []
     },
     {
       "path": "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.03-crds-operators-controller-patterns.md",
-      "sha256": "46ab554e207b1580ccd921488aeb0349cb8fd3a28f9abc4164de93d1ffcc4aa2",
+      "sha256": "07fedd5684b05f7fd9e4f6b04eaf49c0b5028a42430805c9d289a1ac2bea50a5",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "animation_coverage",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true,
-      "notes": "Full original/final content read: schema contract versus operational controller, spec/status and generation, HPA scale paths, served/storage/conversion and stored-data migration, level-triggered cached reconciliation/conflicts/idempotent external operation identity, UID ownership/adoption and GC retention versus finalizer retries/recovery, bounded provider calls/workqueues. controller-runtime CreateOrUpdate/SetControllerReference and official current CRD version docs/source verified; helper excerpt explicitly incomplete, mergeOwnedFields must recreate desired owned state after GET overwrites object. Clarified one storage:true version and independent served flag. No Go compiler or cluster available; no complete operator/runtime test claimed.",
-      "findings": [
-        {
-          "description": "Storage version wording unnecessarily required it to be served; clarified independent storage and served controls against current validation source.",
-          "severity": "P2",
-          "status": "repaired"
-        }
-      ]
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
+      "findings": []
     },
     {
       "path": "40-platform/40.2-kubernetes/05-packaging-and-extensibility/INDEX.md",
@@ -6805,30 +6712,14 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/06-interview-prep/40.2.6.01-interview-questions.md",
-      "sha256": "94865aeaa407bb2bad78574ac67b825e5780cf726c9452093eb756a695b15de3",
+      "sha256": "7f5780a7af2ecc28ec6a529a853871cb6d7b90c39dcda35a4fb78ddccd3654ed",
       "genre": "interview-bank",
       "status": "reviewed",
-      "reviewer": "animation_coverage",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true,
-      "notes": "Full original/final thirty questions read: workloads/sidecars1.33/stateful identity/PVC retention and storage semantics, HPA metrics1.37scalezero and ownership, probes/readiness/inflight boundaries, secrets and encryption, removed ingress-nginx, apply field ownership, rollout failure versus rollback, retry-safe jobs, networking/security/admission, Helm4release boundaries, GitOps/selfheal, PDB eviction scope and AlwaysAllow1.31. Current official networking/authentication/Argo automation docs verified. Corrected network model own-node versus all-cluster agent reachability and hostNetwork/policy caveats, companion own-node/self policy exception, explicit RoleBinding/ClusterRoleBinding grant scopes and OIDC identity not necessarily ServiceAccount, automatic sync requiring enablement; scoped Compose fit beyond development. Examples reviewed, no live cluster/CI identity/traffic/rollout test performed.",
-      "findings": [
-        {
-          "description": "Network model claimed all-node agents could reach every Pod and omitted ordinary-Pod/hostNetwork and policy boundaries; corrected and aligned default-deny answer.",
-          "severity": "P2",
-          "status": "repaired"
-        },
-        {
-          "description": "RBAC answer conflated ClusterRole definition with grant scope and assumed OIDC CI always authenticates as ServiceAccount; stated binding/subject ownership.",
-          "severity": "P2",
-          "status": "repaired"
-        },
-        {
-          "description": "GitOps workflow promised automatic sync without enabling it; made automation policy explicit.",
-          "severity": "P2",
-          "status": "repaired"
-        }
-      ],
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
+      "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "09051dc8d4ee1a4167b6b04622892cff7cde94831a35c0ed99aa8657998a05a0",
         "reviewDate": "2026-10-26",
@@ -6928,13 +6819,13 @@
     },
     {
       "path": "40-platform/40.3-ci-cd/01-ci-platforms/INDEX.md",
-      "sha256": "b9dfcebaac62f47a0a1fe32dcd5b1424c683b5fa5e6ea52103bd853763f5523a",
+      "sha256": "7f751a73e8bf0468c1f308b81bc6261acc8223e55a094e3de6d1de2e88d0699b",
       "genre": "index",
       "status": "reviewed",
-      "reviewer": "animation_coverage",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true,
-      "notes": "Full content read: PR verification versus protected release, GitLab dependency/artifact translation, Jenkins operated agents, then Argo continuous reconciliation. Source/configuration is separated from actual run evidence and historical file counts. Revision follows four chapters; no blocking finding.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. The Files badge targets an existing learning-pass heading.",
       "findings": []
     },
     {
@@ -7615,12 +7506,12 @@
     },
     {
       "path": "40-platform/40.6-git-advanced/40.6.10-interview-questions.md",
-      "sha256": "931a5a3ab76790491a10a7516ad551f642be4a2a5693b547a46380720f20af2e",
+      "sha256": "ea5e6dcce70c715598058358aa6b659666754de94810aa7dc82ff9289f711eb3",
       "status": "reviewed",
-      "reviewer": "platform_finish",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Full content read: All40 authored answers read; state/authority and destination checks align with source mechanisms, including bundle backup gaps, stash transfer, shallow bases and untrusted signatures. Source-only review, no remote operations.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
       "findings": []
     },
     {
@@ -7789,12 +7680,12 @@
     },
     {
       "path": "40-platform/40.8-monorepo/40.8.04-monorepo-tools.md",
-      "sha256": "2c3a2876d8279959cc87cd5b072fdb7814b8d95c0d819dda43c9df83d4b0dec6",
+      "sha256": "a2944047c3c9775f0391993d6155a0f0321281349e8b0051b93a58a70b9627b3",
       "status": "reviewed",
-      "reviewer": "platform_finish",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Full content read: Reviewed pnpm and Yarn workspace resolution, PnP install boundaries, Lerna and Nx responsibilities, Rush ownership, Bazel declared action/toolchain tradeoffs and measured pilot criteria; no unsupported headcount thresholds or hermeticity guarantees remain.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
       "findings": []
     },
     {
@@ -7879,13 +7770,13 @@
     },
     {
       "path": "40-platform/INDEX.md",
-      "sha256": "9ee2aa75b60a10db0f7229c77eee1a96453eccb01299df34bcd92fee47e7e057",
+      "sha256": "2b5d69aeb933db65a357a73b836926a6d11bd806a39e2729fe6af3e30dfab268",
       "genre": "index",
       "status": "reviewed",
-      "reviewer": "animation_coverage",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true,
-      "notes": "Full content read: connects artifact/runtime/resources, orchestration, delivery and observability; role-based passes cover the12 sub-stacks and route through revision before drill. Crosslinks and Docita dated-evidence warning preserve source-versus-deployed boundary. Counts/read estimates left for root metadata generator, not hand edited. No blocking content finding; leaf correctness reviewed independently rather than inferred from this index.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "006f685350cac4d3b8150851e252af5b62f433ddc0b206379ba665966a8dda57",
@@ -7896,12 +7787,12 @@
     },
     {
       "path": "50-quality/50.1-testing/01-foundations/50.1.1.01-testing-overview.md",
-      "sha256": "154f735bcf489cbb9e21e28a6191f8c8f7d8942bedfdc8dbca296a9feb525fed",
+      "sha256": "1798cc8d3a61d77811ec83a8a34670a900b2c8f2f51be703767585c8ad333748",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true,
-      "notes": "Full-content review: Boundary/oracle/pyramid/TDD/BDD/coverage and mutation claims checked. Corrected fixture-pattern navigation to the actual test-pattern chapter. Exact price contract executed successfully.",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
       "findings": []
     },
     {
@@ -7936,22 +7827,22 @@
     },
     {
       "path": "50-quality/50.1-testing/02-frameworks/50.1.2.01-jest.md",
-      "sha256": "f228722632d8d77bcce4432b2a204460f043ad7a8b4af3d50d73922d8498a217",
+      "sha256": "57b24d3f3ce97e5eaaa584644322afabac0ef8bb7c59992ea6c77db9a3b05062",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true,
-      "notes": "Full-content review: Runtime/transform/type-check separation, ESM24.9 boundary, mock lifecycle and async timers checked against current Jest docs. Exact notification and clock examples pass4tests with Jest30.5.2 on Node24.22.1.",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
       "findings": []
     },
     {
       "path": "50-quality/50.1-testing/02-frameworks/50.1.2.02-vitest.md",
-      "sha256": "ca091990f40e85e92d19070d866d5d6ca3912c159ec36f0d9b31eeac404c60ba",
+      "sha256": "01917d8f04d0e6c873931b4ba81e16f5e346268ec22385d4ea6bfe7bc4bcee92",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true,
-      "notes": "Full-content review: Repaired overly broad minimum-runtime wording with versioned5.0.5 engine/peer ranges; Node23/25 unsupported. Exact retry examples pass2tests and strict TS on supported Node24.22.1; current Browser Mode and clear/reset boundaries checked.",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
       "findings": []
     },
     {
@@ -8108,12 +7999,12 @@
     },
     {
       "path": "50-quality/50.1-testing/05-advanced/50.1.5.01-performance-load-testing.md",
-      "sha256": "a5e7dc4837902e6a106d613ca32e8d2249673077119162a228de911fb8f5af1d",
+      "sha256": "edea708f49c0a395ccff23052bfe2dc9364e9cc2071f65066c8e903f515ade0c",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true,
-      "notes": "Full-content review: Workload/open-versus-closed/Little-law arithmetic, actual generator limits and semantic population reviewed. Corrected false prohibition on built-in checks thresholds. Actual k6v1.6 canonical fixture passes; wrong-price custom and built-in threshold variants each exit99, showing0.5predicate pass rate versus1request failure rate; fixtures stopped.",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
       "findings": []
     },
     {
@@ -8793,12 +8684,12 @@
     },
     {
       "path": "70-interview-toolkit/70.1-behavioral/70.1.02-leadership-questions.md",
-      "sha256": "acf16cd1a92d353c2b5eaf673ebb0577be1ae04163f63f45224e13a50ad61a11",
+      "sha256": "a632074ac95b618d6beb1ac024e134aa7bd74637c555e8e3303f10f4fea4a774",
       "status": "reviewed",
-      "reviewer": "architecture_toolkit_finish",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Full read: All leadership cards read; actual authority, mentorship limits, release evidence, browser-engine and OIDC boundaries checked.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
       "findings": []
     },
     {
@@ -8853,32 +8744,32 @@
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.01-sliding-window.md",
-      "sha256": "490051ad2b6fc6c3776816a6d918f98932f21e570e7891b780eaeb08e118e325",
+      "sha256": "765c7a9cbef8373de9da5c80726ad2304cc217c34299cb010e897142b86ef230",
       "status": "reviewed",
-      "reviewer": "architecture_toolkit_finish",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Full read: Fixed/variable window invariants, historical frequency upper bound, ASCII scope and minimum-cover shrink checked.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
       "findings": []
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.02-two-pointers.md",
-      "sha256": "7fbbd6dbb591bb61ff821b250df1f72bf2aad7c9e7c7b3d16c9bbea29d8199ba",
+      "sha256": "80a00f401d9241637882d56ea1173cfc00630acd9cc003540fa371b7d0d4bd6e",
       "status": "reviewed",
-      "reviewer": "architecture_toolkit_finish",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Full read: Sorted endpoint elimination, water/area proofs, duplicates, mutation and exact-number contracts checked.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
       "findings": []
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.03-binary-search.md",
-      "sha256": "b1c27a43d91ea2d93e95cf267db77e52d5020df42e1a20a5a651125fd47f0783",
+      "sha256": "347294e3c777e908372e75c9b54f386d4cd10088ce3d6651fb4058dedc0d6d54",
       "status": "reviewed",
-      "reviewer": "architecture_toolkit_finish",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Full read: All target/bound/rotation/matrix helpers read; interval/predicate invariants and feasible/unfeasible/duplicate distinctions checked.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
       "findings": []
     },
     {
@@ -8893,32 +8784,32 @@
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.05-intervals.md",
-      "sha256": "0b0ca886118d8a4c8f555ac8d3e3d932030c55cde429c6c8c5909a6a939468ea",
+      "sha256": "03604291219fb4286088ac810a868714c521ae076bcbaf2e6bfa090608bec430",
       "status": "reviewed",
-      "reviewer": "architecture_toolkit_finish",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Full read: Closed versus half-open endpoints, merge/insert aliasing, event room count, exchange proof and finite free-time gaps checked.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
       "findings": []
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.06-greedy-prefix-sum.md",
-      "sha256": "00a7fcb3ee8fd7466611f5cd96e616c890bbc9acadb3f25b90b00f2df7785942",
+      "sha256": "bb39218ba38bbcc8121365cf4c7dc0685472d5e4019349f518bb7fcae390f3d8",
       "status": "reviewed",
-      "reviewer": "architecture_toolkit_finish",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Full read: All prefix/frequency/product/Kadane/reachability/gas examples checked; exact intermediate bounds and update/materialization costs retained.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
       "findings": []
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.07-string-search-kmp-rabin-karp.md",
-      "sha256": "bba063eb892852388edf4d07dd9abccb3d07fc3c5a74a3392a817c986b1fb1ef",
+      "sha256": "736ae5c40f210d9f00ab4570ccd3d43ed28a4e1b613debb4f7db97f54819648c",
       "status": "reviewed",
-      "reviewer": "architecture_toolkit_finish",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Full read: Full KMP/LPS/rolling-hash/multipattern code read; overlap, empty pattern, verification, exact modulo arithmetic and UTF16 offset contract checked.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Priority badge parent depth corrected to the canonical importance guide.",
       "findings": []
     },
     {
@@ -8943,12 +8834,12 @@
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids/70.2.2.01-dfs-bfs.md",
-      "sha256": "24fdfa86ab236d8e268ad660630f8d3f03ed7b5fc1c82f4c3eea508d378b2dc6",
+      "sha256": "05b1463348868cdfc126b2121f1da3bf872330ff8eb42b34e04b2d5c4563cfab",
       "status": "reviewed",
-      "reviewer": "architecture_toolkit_finish",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Full read: Every tree/grid/clone/word-ladder helper read; discovery identity, frozen queue layer, mutation, adjacency versus matrix complexity and recursive depth checked.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
       "findings": []
     },
     {
@@ -8963,32 +8854,32 @@
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids/70.2.2.03-union-find.md",
-      "sha256": "0c2659e7899997070120237b31a31ca8c40d3c6afd09370b94a0701a24e7817e",
+      "sha256": "37780206f9475d4087deeefc2338091cdd99dd4522e97f2ce5a4d3985024c72a",
       "status": "reviewed",
-      "reviewer": "architecture_toolkit_finish",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Full read: Full DSU, islands, accounts, redundant edge and board examples read; rank versus actual height, inactive counts, merge-only connectivity and consistent identity assumptions checked. Reviewed subsequent priority metadata alignment: advanced shortest-path/DSU/segment-tree topics are Optional/Specialized as in their category flow; monotonic-stack priority links use correct depth. Algorithm content unchanged.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
       "findings": []
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids/70.2.2.04-topological-sort.md",
-      "sha256": "9585594a57b66803b3ab3f04f2d91016e7dd3ae9f6184512cfa4b81f95324d4a",
+      "sha256": "ac22de07cbabc6863ec829044a79d3a9bf20c3020cea12fdf46c2d2c4f876370",
       "status": "reviewed",
-      "reviewer": "architecture_toolkit_finish",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Full read: Full Kahn/DFS/alien/semester/longest-DAG code read. Repaired first-principles DFS edge direction wording to match prerequisite→dependent graph and reverse finish order.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
       "findings": []
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids/70.2.2.05-trie.md",
-      "sha256": "b7fbccee5afab5e52a1acc3c44f78a938adc1517234fdb00b884d981cad9a458",
+      "sha256": "adbd94c9eb08db15d4aff1d5dc594f6a2adbd5999d14afbd2d8d92f26b9adacf",
       "status": "reviewed",
-      "reviewer": "architecture_toolkit_finish",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Full read: All code-point trie/wildcard/board/longestword/replacement/mapsum code read; empty root, terminal markers, copied paths, restoration and wildcard/output complexity checked.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
       "findings": []
     },
     {
@@ -9023,32 +8914,32 @@
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization/70.2.3.01-backtracking.md",
-      "sha256": "d013623baf07502e70a16db5c3a4821d4cd2cad6b73433b5ccadceab1fd68739",
+      "sha256": "58bcc3e699d536fcd168239e8d8461ad435f921682d3b8fde4ba6a21519d4fc7",
       "status": "reviewed",
-      "reviewer": "architecture_toolkit_finish",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Full read: Every subset/permutation/combination/queen/Sudoku/board-search implementation read; tightened Combination Sum to safe integers so Number rounding cannot invalidate the strict-progress proof, and matched revision.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
       "findings": []
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization/70.2.3.02-dynamic-programming.md",
-      "sha256": "0568185448056bb5cb3041ce78cc7ddc8e32393869ec3156bc6daaf56c3d9714",
+      "sha256": "4966afeda0827828bb8b5b7e913498c9150c3501aa62c4f03589dfd050fa6552",
       "status": "reviewed",
-      "reviewer": "architecture_toolkit_finish",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Full read: All recurrence, initialization, memoization, Fibonacci, coin, knapsack, LIS and string-distance examples read; zero-weight one-use items, pseudo-polynomial bounds, rolling state versus reconstruction and UTF-16 units checked.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
       "findings": []
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization/70.2.3.03-bit-manipulation.md",
-      "sha256": "6db620b24692384ee13c9a58df9c37ad15e3e5bbe9d9fe83f8c5cdf56c894f34",
+      "sha256": "9ab5bdad330afecd111e69ab7541cec79a16549c5093e07349276e8abba7c46b",
       "status": "reviewed",
-      "reviewer": "architecture_toolkit_finish",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Full read: Full signed/unsigned 32-bit operations and every mask/count/subset/permission example read; bit31, wider inputs, BigInt and explicit authorization-policy boundaries checked.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Priority badge parent depth corrected to the canonical importance guide.",
       "findings": []
     },
     {
@@ -9073,12 +8964,12 @@
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.01-heap.md",
-      "sha256": "0de45c261279e10854640c4945b21344c87e8b061dbffaba995837d9c49385f5",
+      "sha256": "2b84f3fe732003c832613b262eb327850a52b74113aeda3de538828a69613f7b",
       "status": "reviewed",
-      "reviewer": "architecture_toolkit_finish",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Full read: All generic heap, top-k, median, frequency, merge and cooldown code read; heapify bound, stream warm-up, tie instability, disjoint lists and finite comparator contracts checked.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
       "findings": []
     },
     {
@@ -9143,12 +9034,12 @@
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/05-math-and-number-theory/70.2.5.01-number-theory-combinatorics.md",
-      "sha256": "22d73a56214a8877d37cca0583cee4fbbe63bfefbba3eb66f84c1e72768c58e2",
+      "sha256": "1bf133e215121764c5533e46fc05c91c2ab849a01356662197f6d01fc56dea02",
       "status": "reviewed",
-      "reviewer": "architecture_toolkit_finish",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Full read: All Java sieve/factor/GCD/extended-GCD/modular-power/nCr helpers and counting/probability derivations read; MIN_VALUE, product width, prime/nonzero inverse and factorial n<prime conditions checked.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Priority badge parent depth corrected to the canonical importance guide.",
       "findings": []
     },
     {
@@ -9173,12 +9064,12 @@
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/INDEX.md",
-      "sha256": "c80448c8562d1ded65f5557ca45a39d91603841e1482550a87f02e2b74094e08",
+      "sha256": "66cc8f61c507dfb92c8878356d59d2f0eba7a9e69dac7ade8d5829b3b365acb1",
       "status": "reviewed",
-      "reviewer": "architecture_toolkit_finish",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Full read: All category flows, selected practice routes and invariant before pattern matching checked; metadata mismatches sent to coordinator.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
       "findings": []
     },
     {
@@ -9273,12 +9164,12 @@
     },
     {
       "path": "70-interview-toolkit/INDEX.md",
-      "sha256": "00a942c6d5653fdd3c691a44770a8a3fba302a93b250e7c2635228e676414aa1",
+      "sha256": "fc491b0e665115b4b27e1a2ece1ccb727c46aa0efcb72620821d3078e06ca408",
       "status": "reviewed",
-      "reviewer": "architecture_toolkit_finish",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Full read: Prerequisite/role-selected passes, input invariants, revision and truthful source-only story evidence checked.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
       "findings": []
     },
     {
@@ -9293,12 +9184,12 @@
     },
     {
       "path": "80-lanes-abroad-full-stack/80.02-tech-screen-patterns.md",
-      "sha256": "1a8c07290014d70d9546663a757853e25f0ff301dfb0569a6d3e2885407895d4",
+      "sha256": "dc0863295fecee966cf653597a58eb3a6232f18b8a1d0ecae63726d428fb9191",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true,
-      "notes": "Full-content review: Coding families/invariants and nonnegative-window precondition, actual-loop selection, Unicode boundary linked to source and delayed reattempt evidence, no geographic algorithm guarantees.",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
       "findings": []
     },
     {
@@ -9323,12 +9214,12 @@
     },
     {
       "path": "80-lanes-abroad-full-stack/80.05-comp-eu-benchmarking.md",
-      "sha256": "eb04b7a71edee5f5cad195de89c19cdd464a9a498bd181f26eebaa8e81931618",
+      "sha256": "0ffca6d1c6ee3cfbb5d7643e695a4dcb57607d4f599566740413b7005893a91c",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true,
-      "notes": "Full-content review: Compensation components and80000+8000+5000 firstyear arithmetic, equity/one-time/tax distinction. Official Dutch2026salary48013,cap262000,30%-2026/27%-2027transition rules reverified; household costs conditional.",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
       "findings": []
     },
     {
@@ -9643,12 +9534,12 @@
     },
     {
       "path": "80-lanes-abroad-full-stack/INDEX.md",
-      "sha256": "fcb5fe1796bf01396de54be70dfe020518a573e24c10a8884c0a8f6e8531963a",
+      "sha256": "83caec7bf104b671e235e5e67f8e4c5c4b3264e5b46baaa8503de08c2c233407",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true,
-      "notes": "Full-content review: Sevenstage learningflow fromroleconstraints through diagnosis/practice/evidence/product/offer, revisionbeforemock, sharedmechanismsnotduplicated andprivatecontentboundary.",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
       "findings": []
     },
     {
@@ -9923,52 +9814,52 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "59769c647d98c8c37ffb4fc5b79260b3e25fe4285308eaa59e412a3ca4f19ea0",
+      "sha256": "767a0e165eebd0dfcb0bbfa41ff6ccdd5d540bfe96668ae5eea9510c3bddb483",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-05",
       "fullContentRead": false,
-      "notes": "Scoped review of the check_counts.py --write restamp: verified by exact comparison against HEAD that only the generated repository total changed from 979 to 981 files. All surrounding content is byte-identical; the count guard confirms the live total.",
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged. Disk-derived file/line count and table formatting restamped by their owning tools.",
       "findings": []
     },
     {
       "path": "README.md",
-      "sha256": "7dab4c0bbe0807d9d575b9895da83e713d2d7a7a1cb77a186ecb3b0f507baa0d",
+      "sha256": "d856b8a8ccc682de2178b9532abbfc86eba36e5768ac546e01e92e7bf5599ce3",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-05",
       "fullContentRead": false,
-      "notes": "Scoped review of the check_counts.py --write restamp: verified by exact comparison against HEAD that only the generated repository total changed from 979 to 981 files. All surrounding content is byte-identical; the count guard confirms the live total.",
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged. Disk-derived file/line count and table formatting restamped by their owning tools.",
       "findings": []
     },
     {
       "path": "ROADMAP.md",
-      "sha256": "9b9d1996cdae2ede1256753e37ec396562ae7c594908da579a50e218be9a2c65",
+      "sha256": "cc5f7c38135696cbfc79bfdc87464d22ca8befb105d8a62a381801defdda820c",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Full phase/checkpoint/sample schedule checked; personal timetable overrides sample blocks, Sunday recovery protected, assessment determines depth.",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
       "findings": []
     },
     {
       "path": "contributing.md",
-      "sha256": "2d3ac95943f59a35cbc9d6731e8e0ac086186bd4fb74c26cc2975283f984d5bf",
+      "sha256": "eb6cf79fb1d280c6aa3430e247264927ffae6cdf7566f71c492e1ec8144e7ecf",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-05",
       "fullContentRead": false,
-      "notes": "Scoped review of the check_counts.py --write restamp: verified by exact comparison against HEAD that only the generated repository total changed from 979 to 981 files. All surrounding content is byte-identical; the count guard confirms the live total.",
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged. Disk-derived file/line count and table formatting restamped by their owning tools.",
       "findings": []
     },
     {
       "path": "design-qa.md",
-      "sha256": "0a495dfd966b5eee639382f0767b60ee3d78cee23ebab68039b059b695fe7575",
+      "sha256": "114761a667cae5dd0da9c6a91673b635c27fc2c7427fabd689b1641dedec83af",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-05",
       "fullContentRead": false,
-      "notes": "Scoped review of the November 5 listening QA and spoken-word follow-up against the final implementation. The follow-up accurately records the 55 passing related Node tests, controlled word/paragraph and fallback browser checks, actual muted Samantha word boundaries and pause/resume/stop smoke, screenshots, theme contrast, normalized whitespace and inline source mapping. Earlier historical checkpoints are unchanged.",
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Reviewed the added numbered-audit summary, current UI evidence and explicit corpus/authentication/browser limits; earlier dated logs are retained.",
       "findings": []
     },
     {
@@ -10059,22 +9950,22 @@
     },
     {
       "path": "docs/2026-10-08-explanation-depth-progress.md",
-      "sha256": "d2637c4a0f072f18245d60a0f6c921fd4635baae8b9169b6486466c93fb8e78c",
+      "sha256": "0d37cc3f0f65a85cb473473414ff2dd53e52ca4b9657d5660f605b4987a28511",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Historical 2026-10-08-explanation-depth-progress: full report read with its scoped findings and integration limits. Original results retained, current-review pointer added where needed. Old counts, hashes, pending states and environment checks remain dated evidence.",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded audit-JSON links are described as repository artifacts; historical checkpoint claims are preserved.",
       "findings": []
     },
     {
       "path": "docs/2026-10-10-senior-precision-progress.md",
-      "sha256": "ba3041c4edc663fe140dba316ddb4cf353572a196e7a6c8ea307b8b78a3e49ab",
+      "sha256": "0e19f3558066c06408dd9c2c90a1cc0e9476b145dea54c8c98626b3cd29e70c0",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Historical 2026-10-10-senior-precision-progress: full report read with its scoped findings and integration limits. Original results retained, current-review pointer added where needed. Old counts, hashes, pending states and environment checks remain dated evidence.",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded audit-JSON links are described as repository artifacts; historical checkpoint claims are preserved.",
       "findings": []
     },
     {
@@ -10174,12 +10065,12 @@
     },
     {
       "path": "docs/scripts-map.md",
-      "sha256": "b5efcfc5b7b226081ee75d96bded74c6b57b5d72c8a76d744680f8e34156b24a",
+      "sha256": "f9474145863b0bdeb7fa4956b748afb69f51da6c3548215a8e451cfea88aa669",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-27",
-      "fullContentRead": true,
-      "notes": "Complete operational map checked including exact-hash senior inventory, required gate routing, fence/prose parser ownership, empty-scope and generation sequence. 2026-10-27 maintenance delta inspected: 32-gate table includes review completeness, both new suites have owners, three extracted canonical cases/pins/wrappers/mutations and local setup are documented with no duplicated teaching examples.",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Added ownership and documented scope for the rendered-link checker and controlled fixtures; site-build runs both.",
       "findings": []
     },
     {
@@ -10264,12 +10155,12 @@
     },
     {
       "path": "docs/superpowers/plans/2026-10-08-explanation-depth.md",
-      "sha256": "cf6ae33c09c162c08ec2945aa4ce418f1ebceb6b26f56bb23b70c232d82e95c9",
+      "sha256": "65cebadb70fe78ebc4d7c0ff4500d2a6f2c43d6ebcfb0ea1f6ad2bae0b75e1fb",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Historical 2026-10-08-explanation-depth: full design/execution record read, including examples and all dated checkpoints. Preserve dates/paths/checkboxes as historical evidence, not current runtime behavior or authorization. Current AGENTS and exact-hash review supersede obsolete templates and private-location statements; no old test result promoted to current proof.",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded audit-JSON links are described as repository artifacts; historical checkpoint claims are preserved.",
       "findings": []
     },
     {
@@ -10374,32 +10265,32 @@
     },
     {
       "path": "docs/verification-gates.md",
-      "sha256": "d9a0aacdbe2bfe724793c794b66eb56370b097aba6b7c29c84485e1ccc95853c",
+      "sha256": "0e03d1577e2813f0076a0300a89487942af02b94a2109fada98d0acfb3d75812",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-05",
       "fullContentRead": false,
-      "notes": "Scoped review of the check_counts.py --write restamp: verified by exact comparison against HEAD that only the generated repository total changed from 979 to 981 files. All surrounding content is byte-identical; the count guard confirms the live total.",
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Disk-derived file/line count and table formatting restamped by their owning tools.",
       "findings": []
     },
     {
       "path": "lanes/INDEX.md",
-      "sha256": "d8f40490dc4d2ba088b0a29715b2fe0c050870e6978dc65bb9d9fe45ff552698",
+      "sha256": "f74a624929c373623c2fb6798c6cd063d863644266ba3d63ff66fb7ff3a865cf",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-05",
       "fullContentRead": false,
-      "notes": "Scoped review of the check_counts.py --write restamp: verified by exact comparison against HEAD that only the generated repository total changed from 979 to 981 files. All surrounding content is byte-identical; the count guard confirms the live total.",
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged. Disk-derived file/line count and table formatting restamped by their owning tools. Added a concise explanation of repository-only SDE guides and linked the shared on-site study paths.",
       "findings": []
     },
     {
       "path": "projects/INDEX.md",
-      "sha256": "7deb16032f444bbdf1e64ec63c6a41b04b0d877e2fb8352a9c1a29282fec0061",
+      "sha256": "6cf012cd00a68c50a719eedc7fa44a29e9b04472d592f3d6211f59663951f52e",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-28",
-      "fullContentRead": true,
-      "notes": "Reviewed generated count-only change against exact previously full-reviewed HEAD bytes; authored content remains unchanged.",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
       "findings": []
     },
     {
@@ -10750,6 +10641,26 @@
       "reviewDate": "2026-11-05",
       "fullContentRead": true,
       "notes": "Full-content review of the completed plan and word-tracking follow-up: engine tests and browser checks were observed failing before their relevant implementation and then passing. Task 4 covers source normalization, inline/later-chunk offsets, lifecycle cleanup, fallback reflow, native Samantha smoke, screenshots and final verification. Existing local speech, speed, Wide and no-deploy boundaries remain intact. Final-pass review updates the initial local-only boundary to reflect the explicit later request to commit, push, and merge after verification; the implementation and test scope are unchanged.",
+      "findings": []
+    },
+    {
+      "path": "docs/superpowers/plans/2026-11-05-site-refinement.md",
+      "sha256": "430a9664fcf75782cd61380ff9901a45f5d2fc2a084712fcca12ab8fbfd71cc3",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": true,
+      "notes": "Full-content review of the current reader and discovery specification/plan: responsive Back to top ownership, word and paragraph emphasis, local voice filtering, interview tools, search category context, catalog-backed badge routing, rendered publication checks, scoped information repairs and evidence limits. The later user authorization to commit, push and merge is retained.",
+      "findings": []
+    },
+    {
+      "path": "docs/superpowers/specs/2026-11-05-site-refinement-design.md",
+      "sha256": "1a59c3789f0e3d158e621fa806de55230caed3e98cd051d1da4769fa554265d0",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": true,
+      "notes": "Full-content review of the current reader and discovery specification/plan: responsive Back to top ownership, word and paragraph emphasis, local voice filtering, interview tools, search category context, catalog-backed badge routing, rendered publication checks, scoped information repairs and evidence limits. The later user authorization to commit, push and merge is retained.",
       "findings": []
     }
   ]

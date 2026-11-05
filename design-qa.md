@@ -1,5 +1,42 @@
 # Study Flow Design QA
 
+## Reader and discovery pass (5 Nov)
+
+The [numbered audit report](docs/superpowers/specs/assets/2026-11-05-site-refinement/audit-report.json)
+records Home, Library, Roadmap, all seven stack entry pages, search, category
+learning flow, chapter listening, revision, interview practice, mobile controls
+and sign-in recovery. Its verification section records the checks performed for
+this pass. This is product-flow and rendered-link coverage, rather than a fresh
+semantic review of every teaching paragraph.
+
+The up-arrow aligns with the compact audio controls on desktop and shares the
+context row on smaller screens. A warm word marker complements the softer
+paragraph tint; callouts keep one rail. The same reader tools now support
+interview banks without turning them into revision disclosures or learning
+resume records. Samantha stays first; observed legacy and character voices are
+removed from the local English list. The fixed Wide layout remains unchanged.
+
+Repaired unpublished lane destinations, priority badge links, an obsolete
+fragment, and CI/CD landing-page links. Repository-only guides say where they
+open, and their twelve source URLs were verified against the public repository.
+The reader resolves image-wrapped Markdown badge links only when their HTML
+counterparts exist in the publication catalog. Search distinguishes revision
+categories and renders one clear action. Heading names no longer repeat their
+permalink labels. The count owner now also maintains Sub-stacks badges, and
+blank lines restore explanatory paragraphs that separators had promoted to
+headings. Authored explanations, examples, revision answers and study order are
+preserved.
+
+Evidence: [desktop listening](docs/superpowers/specs/assets/2026-11-05-site-refinement/10-reader-desktop-dark.png),
+[mobile dark](docs/superpowers/specs/assets/2026-11-05-site-refinement/11-reader-mobile-dark.png),
+[mobile light](docs/superpowers/specs/assets/2026-11-05-site-refinement/12-reader-mobile-light.png),
+[revision answers](docs/superpowers/specs/assets/2026-11-05-site-refinement/09-revision-answers.png),
+and [sign-in recovery](docs/superpowers/specs/assets/2026-11-05-site-refinement/18-sign-in-recovery.png).
+The report links the remaining screenshots and records native-speech, browser,
+authentication and corpus-review limits. Local Home and Library use separately
+rendered aliases because the filesystem is case-insensitive; Linux CI checks
+the native build. OAuth was not submitted in this walkthrough.
+
 > **Dated local verification log:** the sections below retain their respective implementation checkpoints. Their gate counts, measurements, branches and deployment statements describe those checks, rather than current release status. Use the [current full-stack review](docs/2026-10-25-fullstack-coverage-review.md) for the active verification record.
 
 **Final result:** passed for the approved local study-flow design.

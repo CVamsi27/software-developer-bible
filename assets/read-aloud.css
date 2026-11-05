@@ -33,6 +33,7 @@
   font: 13px/1.4 var(--font-sans, sans-serif);
 }
 .read-aloud-summary { display: flex; align-items: center; gap: 20px; padding: 14px 16px 6px; }
+.read-aloud-context { display: flex; flex: 1; align-items: center; gap: 12px; min-width: 0; }
 .read-aloud-info { display: grid; flex: 1; gap: 2px; min-width: 0; }
 .read-aloud-eyebrow { color: var(--theme-text-muted, #5f6368); font-size: 9px; font-weight: 650; letter-spacing: .1em; }
 .read-aloud-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--theme-heading, #1f1f1f); font-size: 14px; font-weight: 650; }
@@ -116,28 +117,32 @@
 /* This class is shared by the copy feedback and header's accessible labels. */
 .read-aloud-status { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }
 body.has-read-aloud { padding-block-end: calc(var(--read-aloud-height, 114px) + 34px); }
-body.has-read-aloud > .back-to-top { bottom: calc(var(--read-aloud-height, 114px) + 32px); }
+body.has-read-aloud > .back-to-top { bottom: calc(max(16px, env(safe-area-inset-bottom)) + var(--read-aloud-compact-height, 114px) / 2 - 22px); }
+.read-aloud-context > .back-to-top { position: static; flex: 0 0 44px; display: none; margin: 0; padding: 0; border-radius: 10px; box-shadow: none; transform: none; }
+.read-aloud-context > .back-to-top.visible { display: flex; opacity: 1; visibility: visible; transform: none; }
+.read-aloud-context > .back-to-top:hover { transform: none; }
 ::highlight(sdb-spoken-word) {
-  background-color: var(--theme-action-bg, #1967d2);
-  color: var(--theme-action-text, #ffffff);
+  background-color: #f7d98a;
+  color: #352600;
+  text-decoration: underline solid #7b5700 2px;
 }
 /* Range rectangles preserve text selection and inline markup on older browsers. */
 .read-aloud-word-overlay { position: fixed; inset: 0; z-index: 9996; overflow: hidden; pointer-events: none; }
 .read-aloud-word-box {
   position: absolute;
   border-radius: 3px;
-  outline: 2px solid var(--theme-link, #1967d2);
-  background: color-mix(in srgb, var(--theme-link, #1967d2) 18%, transparent);
+  outline: 2px solid #9a6b00;
+  background: rgb(247 217 138 / 20%);
 }
 /* The active paragraph gets a gutter stripe behind the text, never over the
    first glyph, plus inline breathing room that leaves the text column in place. */
 [data-read-aloud-active="true"] {
-  border-radius: 4px;
+  border-radius: 8px;
   background-color: var(--theme-border-subtle, #eef0f2);
-  background-color: color-mix(in srgb, var(--theme-link, #1a73e8) 10%, var(--theme-bg, #ffffff));
-  background-image: linear-gradient(to right, var(--theme-link, #1a73e8) 0 3px, transparent 3px);
+  background-color: color-mix(in srgb, var(--theme-link, #1a73e8) 6%, var(--theme-bg, #ffffff));
+  background-image: linear-gradient(to right, var(--theme-link, #1a73e8) 0 2px, transparent 2px);
   background-repeat: no-repeat;
-  background-size: 3px 100%;
+  background-size: 2px 100%;
   background-position: left top;
   box-shadow: none;
   scroll-margin-block: 140px;
@@ -152,6 +157,8 @@ html body .post-content :is(p, h1, h2, h3, h4, h5, h6, blockquote)[data-read-alo
   padding-inline-start: 14px;
   margin-inline-start: -14px;
 }
+html body .post-content blockquote p[data-read-aloud-active="true"] { background-image: none; padding-inline-start: 0; margin-inline-start: 0; }
+@media (max-width: 959px) { .read-aloud-context { width: 100%; } }
 @media (max-width: 700px) {
   .read-aloud { left: 8px; right: 8px; bottom: max(8px, env(safe-area-inset-bottom)); width: auto; max-height: calc(100dvh - 16px); transform: none; border-radius: 14px; }
   .read-aloud-summary { flex-direction: column; align-items: stretch; gap: 10px; padding: 12px 12px 6px; }

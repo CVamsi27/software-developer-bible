@@ -1,0 +1,102 @@
+[
+  {
+    "headings": [
+      "Start with one product flow",
+      "The 8 Sub-Stacks (in study order)",
+      "Pass 1 — make execution and data boundaries explicit",
+      "Pass 2 — connect React rendering to user behavior",
+      "Pass 3 — follow requests through a full-stack framework",
+      "Pass 4 — add the capabilities the role requires",
+      "Before an interview",
+      "Cross-References",
+      "Navigation"
+    ],
+    "overflow": false,
+    "title": "Frontend Stack",
+    "url": "/10-frontend/INDEX.html"
+  },
+  {
+    "headings": [
+      "Why this stack matters",
+      "The 11 Sub-Stacks (in study order)",
+      "Category Map (high-level)",
+      "Suggested Study Order",
+      "Cross-References",
+      "Navigation"
+    ],
+    "overflow": false,
+    "title": "Backend Stack",
+    "url": "/20-backend/INDEX.html"
+  },
+  {
+    "headings": [
+      "Sections (in study order)",
+      "Design Patterns — Category Map",
+      "Study Order",
+      "Docita Anchor"
+    ],
+    "overflow": false,
+    "title": "Architecture Stack",
+    "url": "/30-architecture/INDEX.html"
+  },
+  {
+    "headings": [
+      "Why this stack matters",
+      "The 12 Sub-Stacks (in study order)",
+      "Category Map (high-level)",
+      "Suggested Study Order",
+      "Cross-References",
+      "Navigation",
+      "Docita Anchor"
+    ],
+    "overflow": false,
+    "title": "Platform Stack",
+    "url": "/40-platform/INDEX.html"
+  },
+  {
+    "headings": [
+      "Why these responsibilities belong together",
+      "Use companion evidence carefully",
+      "The 4 Sub-Stacks (in study order)",
+      "Learning passes",
+      "Interview questions to expect",
+      "Cross-References",
+      "Navigation"
+    ],
+    "overflow": false,
+    "title": "Quality Stack",
+    "url": "/50-quality/INDEX.html"
+  },
+  {
+    "headings": [
+      "Docita Anchor",
+      "Topic Categories",
+      "Learning Passes",
+      "Transport Protocols",
+      "Framework Implementation",
+      "Peer-to-Peer & Data Channels",
+      "Architecture & Scale",
+      "Testing & Drills",
+      "The 60-Second Orientation",
+      "Common interview topics",
+      "Navigation"
+    ],
+    "overflow": false,
+    "title": "Real-Time Stack",
+    "url": "/60-realtime/INDEX.html"
+  },
+  {
+    "headings": [
+      "Reading Passes",
+      "The 3 Sub-Stacks (in study order)",
+      "Category Map",
+      "Choose a Route for the Time Available",
+      "Cross-References",
+      "Docita Anchor",
+      "Navigation"
+    ],
+    "overflow": false,
+    "title": "Interview Toolkit",
+    "url": "/70-interview-toolkit/INDEX.html"
+  }
+]

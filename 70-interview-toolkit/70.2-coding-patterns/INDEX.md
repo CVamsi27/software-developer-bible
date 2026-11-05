@@ -16,6 +16,7 @@ A pattern is a candidate explanation, not a guarantee. “Contiguous subarray”
 3. **Handle changing priorities and arithmetic bounds:** read [heaps and selection](04-heaps-stacks-selection/INDEX.md), then [number theory](05-math-and-number-theory/INDEX.md). Identify the operation that dominates cost and the intermediate value that can overflow.
 
 Finish each category with its separate revision companion. On a return visit, open the category whose mechanism you could not explain; you do not need to reread every chapter.
+
 ---
 
 ## The 5 Categories
@@ -85,7 +86,7 @@ For an upcoming full-stack interview, prioritize the structures the employer act
 
 - [JavaScript](../../10-frontend/10.1-javascript/INDEX.md) — implement patterns in JS
 - [System Design](../../30-architecture/30.2-system-design/INDEX.md) — patterns at scale
-- [SDE Role](../../81-lanes-indian-sde-faang/INDEX.md) — the Indian SDE/FAANG lane (heavy on this)
+- [SDE Role (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md) — the Indian SDE/FAANG lane (heavy on this)
 - [Cheat Sheets](../70.3-cheatsheets/INDEX.md) — quick reference
 
 ---

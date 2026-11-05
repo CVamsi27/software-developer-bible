@@ -47,6 +47,7 @@ The [Docita case study](../../../projects/docita/INDEX.md) supplies code pointer
 | Environment & shutdown signals | `apps/api/src/shared/modules/config/env-schema.ts` - inspect validation at boot and verify the current signal handlers and deployment grace period |
 
 Inspect current deployables, process boundaries and lifecycle policies before attributing a scale model to the case study. Chapter fixtures establish their own isolated cluster/worker contracts.
+
 ---
 
 [← Previous: I/O & Data](../02-io-and-data/INDEX.md) · [Next: Security & Operations →](../04-security-and-operations/INDEX.md)

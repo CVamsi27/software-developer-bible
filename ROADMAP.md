@@ -29,9 +29,9 @@ The weeks below are sample scheduling blocks, not a predicted hiring outcome. Us
 ## Phase 0 — Pick Your Lane *(Day 1, 2 hours)*
 
 | Confirmed assessment need | Preparation lane | Practice emphasis |
-| ------------------------------------------------------ | -------------------------------------------------------- | ------------------------------------------------------------------- |
+| ------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
 | Full-stack implementation, take-home or product design | [Abroad full-stack](80-lanes-abroad-full-stack/INDEX.md) | Ship bounded work, test it and defend its trade-offs |
-| Algorithmic coding and broader SDE design | [SDE / FAANG](81-lanes-indian-sde-faang/INDEX.md) | Solve fresh problems, analyze complexity and explain design choices |
+| Algorithmic coding and broader SDE design | [SDE / FAANG (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md) | Solve fresh problems, analyze complexity and explain design choices |
 | A mix of both | Both lanes | Allocate time to the actual assessment stages |
 
 **Checkpoint 0:** State the target responsibilities, expected exercises, language, allowed tools, timing and logistical constraints. Confirm these with the recruiter or published role information; an employer or country label does not establish its hiring loop.
@@ -174,10 +174,10 @@ Start [00-strategy](00-strategy/INDEX.md) items here if not done in Phase 0: [re
 5. Project evidence: **Docita** → [resume defense](80-lanes-abroad-full-stack/80.16-docita-resume-defense.md) · [evidence pack](80-lanes-abroad-full-stack/80.17-docita-interview-evidence-pack.md) · [Google-level bank](80-lanes-abroad-full-stack/80.21-docita-google-level-prep.md) · [topic mapping](80-lanes-abroad-full-stack/80.22-docita-tech-topic-mapping.md)
 6. Logistics: [comp benchmarking](80-lanes-abroad-full-stack/80.05-comp-eu-benchmarking.md) · [visa playbook](80-lanes-abroad-full-stack/80.06-visa-relocation-playbook.md)
 
-### FAANG lane → [81-lanes-indian-sde-faang](81-lanes-indian-sde-faang/INDEX.md)
-1. [Complete guide](81-lanes-indian-sde-faang/81.01-complete-guide.md) → [LeetCode study plan](81-lanes-indian-sde-faang/81.06-leetcode-study-plan.md) (alongside the relevant study phases)
-2. [Core CS](81-lanes-indian-sde-faang/81.02-core-cs-fundamentals.md) → [advanced topics](81-lanes-indian-sde-faang/81.05-advanced-topics.md)
-3. Company guides: [Google](81-lanes-indian-sde-faang/81.17-google-interview-guide.md) · [Amazon](81-lanes-indian-sde-faang/81.18-amazon-interview-guide.md) · [Meta](81-lanes-indian-sde-faang/81.19-meta-interview-guide.md) · [Microsoft](81-lanes-indian-sde-faang/81.16-microsoft-azure-interview-guide.md)
+### FAANG lane → [81-lanes-indian-sde-faang (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md)
+1. [Complete guide (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/81.01-complete-guide.md) → [LeetCode study plan (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/81.06-leetcode-study-plan.md) (alongside the relevant study phases)
+2. [Core CS (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/81.02-core-cs-fundamentals.md) → [advanced topics (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/81.05-advanced-topics.md)
+3. Company guides: [Google (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/81.17-google-interview-guide.md) · [Amazon (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/81.18-amazon-interview-guide.md) · [Meta (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/81.19-meta-interview-guide.md) · [Microsoft (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/81.16-microsoft-azure-interview-guide.md)
 
 **Checkpoint 7:** Complete a representative mock, check that resume claims have supporting examples, and submit suitable applications when the role and logistics match. Track feedback and change the next practice block accordingly.
 
@@ -230,7 +230,7 @@ Use these as self-assessment checks. A weak result tells you where to practice n
 
 Use this sample only when you do not already have an active timetable. Do not add its blocks above a personal plan; move its brief weekly review to the scheduled planning block when Sunday is a recovery day.
 
-Trackers: [80.33-weekly-study-tracker](80-lanes-abroad-full-stack/80.33-weekly-study-tracker.md) · [81 daily timer](81-lanes-indian-sde-faang/81.11-daily-study-timer.md)
+Trackers: [80.33-weekly-study-tracker](80-lanes-abroad-full-stack/80.33-weekly-study-tracker.md) · [81 daily timer (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/81.11-daily-study-timer.md)
 
 ---
 
@@ -269,6 +269,6 @@ software-developer-bible/
 
 ## Navigation
 
-[ INDEX.md](INDEX.md) · [README](README.md) · Lane indexes: [Abroad/EU](80-lanes-abroad-full-stack/INDEX.md) · [Indian SDE/FAANG](81-lanes-indian-sde-faang/INDEX.md)
+[ INDEX.md](INDEX.md) · [README](README.md) · Lane indexes: [Abroad/EU](80-lanes-abroad-full-stack/INDEX.md) · [Indian SDE/FAANG (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md)
 
 *Last updated: October 2026. Use the linked stack indexes for the current learning flow.*

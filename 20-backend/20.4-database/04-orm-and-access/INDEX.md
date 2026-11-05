@@ -43,6 +43,7 @@ Real code from [docita](https://github.com/CVamsi27/docita) - healthcare platfor
 | Repository pattern | `apps/api/src/shared/common/repositories/base.repository.ts` - shared pagination and query-building abstraction; inspect actual repository call sites and transaction ownership |
 
 The ORM landscape decision is made: inspect the current dependencies and repository seams rather than assuming another ORM is absent from every module.
+
 ---
 
 [← Previous: Transactions & Replication](../03-transactions-and-replication/INDEX.md) · [Next: Operations & Scaling →](../05-operations-and-scaling/INDEX.md)

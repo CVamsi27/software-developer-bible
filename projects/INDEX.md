@@ -32,10 +32,10 @@ Follow [the MAQ learning stages](maq/INDEX.md) to reconstruct the recorded workf
 - [Microservices](../20-backend/20.6-microservices/INDEX.md) — patterns used in Docita
 - [Security](../20-backend/20.5-security/INDEX.md) — auth, RLS, ABAC used in Docita
 - [Abroad Full-Stack Lane](../80-lanes-abroad-full-stack/INDEX.md) — EU job prep that references Docita
-- [Indian SDE Lane](../81-lanes-indian-sde-faang/INDEX.md) — FAANG prep that references Docita
+- [Indian SDE Lane (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md) — FAANG prep that references Docita
 
 ---
 
 ## Navigation
 
-[← Previous: Indian SDE Lane](../81-lanes-indian-sde-faang/INDEX.md) · [Back to Index](../INDEX.md)
+[← Previous: Indian SDE Lane (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md) · [Back to Index](../INDEX.md)

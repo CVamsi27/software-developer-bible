@@ -10,7 +10,7 @@ permalink: /README.html
 
 [![Lanes](https://img.shields.io/badge/lanes-2-blue)](lanes/INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](INDEX.md)
-[![Files](https://img.shields.io/badge/files-981-orange)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-983-orange)](INDEX.md)
 [![Search](https://img.shields.io/badge/search-try%20it-blueviolet)](search.html)
 [![API](https://img.shields.io/badge/corpus%20API-json-informational)](api/index.json)
 [![GoF Coverage](https://img.shields.io/badge/design%20patterns-23%2F23-success)](30-architecture/30.1-design-patterns/INDEX.md)
@@ -23,8 +23,8 @@ permalink: /README.html
 Start with [interview strategy](00-strategy/INDEX.md) to prepare clear communication and supported experience claims. Then choose the lane matching the assessed work:
 
 | Preparation need | Start here |
-| ------------------------------------------------------------- | ------------------------------------------------------------- |
-| Algorithmic coding and broader SDE preparation | [SDE / FAANG lane](81-lanes-indian-sde-faang/INDEX.md) |
+| ------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Algorithmic coding and broader SDE preparation | [SDE / FAANG lane (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md) |
 | Practical full-stack work, take-homes and relocation research | [Abroad full-stack lane](80-lanes-abroad-full-stack/INDEX.md) |
 
 A vacancy may need both. Confirm its format, language, allowed tools and location requirements; a country or employer label does not establish a universal hiring loop, preparation period or compensation band.
@@ -54,11 +54,11 @@ Both lanes use the same technical chapters. Follow a stack’s reading stages to
 ## Navigation
 
 | If you want to… | Go to |
-| --------------------------------------- | ------------------------------------------------------------------ |
+| --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Follow the study path** | [ROADMAP.md](ROADMAP.md) — phases, checkpoints, weekly schedule |
 | See all files in one place | [INDEX.md](INDEX.md) |
 | Start with universal interview prep | [00-strategy/](00-strategy/INDEX.md) |
-| Prep for FAANG / Indian SDE roles | [81-lanes-indian-sde-faang/](81-lanes-indian-sde-faang/INDEX.md) |
+| Prep for FAANG / Indian SDE roles | [81-lanes-indian-sde-faang/ (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md) |
 | Prep for EU mid-stage / remote-first US | [80-lanes-abroad-full-stack/](80-lanes-abroad-full-stack/INDEX.md) |
 | Learn how to contribute | [contributing.md](contributing.md) |
 

@@ -20,6 +20,15 @@ function boot(html, route, scripts, setup){
  return dom;
 }
 const article='<main><div class="post-content"><p><a href="#"><img alt="Section" src="https://img.shields.io/badge/section-JavaScript-blue"></a></p><h1>Lexical Environment</h1><h2 id="definition">Definition</h2><p>Original prose.</p><h2 id="first-principles">First Principles</h2><p>Reasoning.</p><h2 id="summary">Summary</h2><p>Authored summary.</p><h2 id="see-also">See Also</h2><a href="REVISION.html">Category revision</a><p><a href="'+next+'">Next: Closures →</a></p></div></main>';
+test('the mobile up-arrow shares the audio context row and keeps its existing action',()=>{
+ const dom=boot(article+'<button class="back-to-top visible" aria-label="Back to top">Up</button>',chapter,['read-aloud.js'],w=>{
+  w.matchMedia=q=>({matches:q==='(max-width: 959px)',addEventListener(){}});
+  w.document.querySelector('.back-to-top').addEventListener('click',()=>{w.usedBackToTop=true;});
+ });
+ const w=dom.window,arrow=w.document.querySelector('.back-to-top');
+ assert.equal(arrow.parentElement.className,'read-aloud-context');
+ arrow.click();assert.equal(w.usedBackToTop,true);dom.window.close();
+});
 test('reader keeps metadata and leaves authored next and revision navigation in one place',()=>{
  const dom=boot(article,chapter,['reading-ui.js']); const d=dom.window.document;
  assert.equal(d.querySelector('select[aria-label="Reading width"]'),null,'reader width stays at the comfortable measure');
@@ -71,9 +80,29 @@ test('revision reveal preserves complete answers and uncertain authored blocks',
  d.querySelector('[data-reveal-all]').click(); assert.equal(d.querySelector('.revision-answer').open,true);
  assert.ok([...d.querySelectorAll('.post-content > p')].some(p=>p.textContent==='Keep this visible.'));dom.window.close();
 });
+test('published Markdown badge links open the reader and preserve queries and fragments',()=>{
+ const html='<div class="post-content"><h1>Index</h1><p><a href="../INDEX.md?from=badge#stacks">Library</a><a href="https://github.com/example/INDEX.md">Repository</a><a href="removed.md">Removed source</a></p></div>';
+ const dom=boot(html,'/topics/INDEX.html',['reading-ui.js']);
+ const links=dom.window.document.querySelectorAll('.post-content a');
+ assert.equal(links[0].href,'https://study.buildora.work/INDEX.html?from=badge#stacks');
+ assert.equal(links[1].href,'https://github.com/example/INDEX.md');
+ assert.equal(links[2].href,'https://study.buildora.work/topics/removed.md','Excluded files cannot become invented routes');
+ dom.window.close();
+});
 test('interview practice remains separate from revision reveal',()=>{
  const dom=boot('<div class="post-content"><p><strong>Q:</strong> Question?</p><p><strong>A:</strong> Answer.</p></div>',chapter.replace('05-lexical-environment','11-interview-questions'),['revision-ui.js']);
  assert.equal(dom.window.document.querySelector('details'),null);dom.window.close();
+});
+test('interview banks get the reader and listening tools without becoming learning resume records',()=>{
+ const route=chapter.replace('05-lexical-environment','11-interview-questions');
+ const dom=boot(article,route,['reading-ui.js','read-aloud.js','revision-ui.js'],w=>{w.StudyPublishedPaths=[...paths,route];});
+ const d=dom.window.document;
+ assert.ok(d.querySelector('.reader-breadcrumb'));
+ assert.ok(d.querySelector('.chapter-outline'));
+ assert.ok(d.querySelector('.read-aloud'));
+ assert.equal(d.querySelector('.revision-answer'),null);
+ assert.equal(dom.window.StudyState.isLearningPath(route),false);
+ dom.window.close();
 });
 test('resume validates catalog and strips unrelated fields; denied storage still works in memory',()=>{
  const dom=boot('',chapter,[]);const w=dom.window;
@@ -97,6 +126,17 @@ test('search filters material, clears filters without clearing query and restore
  d.querySelector('[data-clear-filters]').click();assert.equal(d.querySelector('#q').value,'scope');assert.equal(d.querySelectorAll('.search-result').length,2);
  w.history.replaceState(null,'','?q=scope&material=revision');w.dispatchEvent(new w.PopStateEvent('popstate'));
  assert.equal(material.value,'revision');assert.equal(d.querySelectorAll('.search-result').length,1);dom.window.close();
+});
+test('revision search distinguishes categories with the same authored title',()=>{
+ let html=fs.readFileSync(path.join(root,'search.html'),'utf8').replace(/<script\b[^>]*>[\s\S]*?<\/script>/g,'');
+ const rows=['01-foundations','02-frameworks'].map(group=>({p:'50-quality/50.1-testing/'+group+'/REVISION.html',t:'Testing — Section Revision',s:'Testing',c:'Reference',g:['revision'],m:2}));
+ html+='<script id="study-search-data" type="application/json">'+JSON.stringify(rows)+'</script>';
+ const dom=boot(html,'/search.html?material=revision',['search-ui.js'],w=>{w.StudyPublishedPaths=rows.map(r=>'/'+r.p);});
+ assert.deepEqual([...dom.window.document.querySelectorAll('.result-context')].map(p=>p.textContent),['Testing / Foundations','Testing / Frameworks']);
+ dom.window.document.querySelector('#q').value='foundations';
+ dom.window.document.querySelector('#q').dispatchEvent(new dom.window.Event('input'));
+ assert.equal(dom.window.document.querySelectorAll('.search-result').length,1,'The displayed category is searchable');
+ dom.window.close();
 });
 
 test('resume rejects corrupt, stale and queried records',()=>{
@@ -228,6 +268,16 @@ test('theme button DOM order follows the desktop and phone header layouts',()=>{
   assert.equal(wrapper.children[mobile?1:3].className,'theme-toggle-btn');
   dom.window.close();
  }
+});
+test('section headings keep their spoken name and a separately named permalink',()=>{
+ const dom=boot('<div class="post-content"><h2 id="foundations">Testing Foundations</h2></div>',chapter,[]);
+ const head=fs.readFileSync(path.join(root,'_includes/head-custom.html'),'utf8');
+ dom.window.eval(head.slice(head.indexOf('var headings = document.querySelectorAll'),head.indexOf('// 9. Search navigation')));
+ const h=dom.window.document.querySelector('h2');
+ assert.equal(h.getAttribute('aria-label'),'Testing Foundations');
+ assert.equal(h.querySelector('a').getAttribute('aria-label'),'Permalink to Testing Foundations');
+ assert.equal(h.querySelector('a').getAttribute('href'),'#foundations');
+ dom.window.close();
 });
 test('copy failures give recovery guidance and feedback is excluded from narration',async()=>{
  for(const unavailable of [false,true]){

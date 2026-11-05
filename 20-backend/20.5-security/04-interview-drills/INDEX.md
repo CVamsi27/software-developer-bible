@@ -19,6 +19,7 @@ Read the auth, attacks and hardening chapters, then their revision companions be
 ---
 
 [← Back to Security](../INDEX.md)
+
 ---
 
 [← Previous: Hardening & Operations](../03-hardening-and-operations/INDEX.md)

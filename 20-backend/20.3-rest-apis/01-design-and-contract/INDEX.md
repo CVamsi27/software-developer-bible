@@ -42,6 +42,7 @@ Investigate its URI-versioning configuration, resource-scoped controllers and ge
 | OpenAPI contract | `apps/api/src/main.ts` - SwaggerModule spec generated from Zod-typed DTOs |
 
 Classify an observed interface by its resource, method and control behavior; endpoint naming alone does not prove a maturity level or full REST constraints.
+
 ---
 
 [Next: HTTP Mechanics →](../02-http-mechanics/INDEX.md)

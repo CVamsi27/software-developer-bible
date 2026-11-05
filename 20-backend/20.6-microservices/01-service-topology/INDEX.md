@@ -40,6 +40,7 @@ Docita is a **modular monolith**: one API deployable plus one worker deployable 
 | Incremental cutover lever | `apps/api/src/shared/modules/feature-flags/feature-flags.service.ts` - per-clinic flags enable strangler-style rollout |
 
 Consul/Eureka, Istio/Linkerd, and API-gateway products not used; adding another deployable does not require those products. Choose discovery/routing and communication policy from actual requirements and operational capacity.
+
 ---
 
 [Next: Communication & Messaging →](../02-communication-and-messaging/INDEX.md)

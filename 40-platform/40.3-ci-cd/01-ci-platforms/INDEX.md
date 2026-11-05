@@ -3,7 +3,7 @@
 > **Study time:** ≈ 41 min of reading (5 files, ~8 min average).
 > **5 files.** The four platforms you are most likely to meet: GitHub Actions, GitLab CI/CD, Jenkins, and Argo CD. Learn one deeply, then map its event, execution, artifact and authority boundaries to the others.
 
-[![Files](https://img.shields.io/badge/files-5-blue)](#file-index)
+[![Files](https://img.shields.io/badge/files-5-blue)](#pass-1--separate-verification-from-promotion)
 [![Category](https://img.shields.io/badge/category-CI%20Platforms-green)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 

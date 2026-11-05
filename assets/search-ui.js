@@ -9,6 +9,12 @@ document.addEventListener('DOMContentLoaded', function () {
   var clearQuery = document.getElementById('clear-query');
   var syncClearButton = function () { clearQuery.hidden = q.value.length === 0; };
   var labels = {learn: 'Learn', revision: 'Revision', interview: 'Interview practice', reference: 'Reference'};
+  function topicGroup(row) {
+    var parts = row.p.split('/'), folder = parts[parts.length - 2] || '';
+    if (window.StudyState.material(row) !== 'revision' || !/^\d{2}-/.test(folder)) return row.c;
+    var name = folder.replace(/^\d{2}-/, '').replace(/-/g, ' ');
+    return name.charAt(0).toUpperCase() + name.slice(1);
+  }
   ['sec', 'cat', 'tag'].forEach(function (key) {
     var values = new Set();
     rows.forEach(function (r) { (key === 'tag' ? r.g : [r[key === 'sec' ? 's' : 'c']]).forEach(function (v) { if (v) values.add(v); }); });
@@ -41,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var paths = window.StudyPublishedPaths;
     var matches = rows.filter(function (r) {
       if (location.protocol !== 'file:' && Array.isArray(paths) && !paths.includes('/' + r.p)) return false;
-      return (!query || [r.t, r.s, r.c].concat(r.g).join(' ').toLocaleLowerCase().includes(query)) &&
+      return (!query || [r.t, r.s, r.c, topicGroup(r)].concat(r.g).join(' ').toLocaleLowerCase().includes(query)) &&
         (!state.sec.length || state.sec.includes(r.s)) && (!state.cat.length || state.cat.includes(r.c)) &&
         (!state.tag.length || state.tag.some(function (t) { return r.g.includes(t); })) &&
         (!state.material || window.StudyState.material(r) === state.material);
@@ -52,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var link = document.createElement('a'); link.className = 'result-title'; link.textContent = r.t;
       var href = new URL(r.p, location.href).href;
       link.href = window.GermanyRoadmapReturn ? window.GermanyRoadmapReturn.chapterWithContext(href, location.search) : href;
-      var context = document.createElement('p'); context.className = 'result-context'; context.textContent = [r.s, r.c].filter(Boolean).join(' / ');
+      var context = document.createElement('p'); context.className = 'result-context'; context.textContent = [r.s, topicGroup(r)].filter(Boolean).join(' / ');
       var meta = document.createElement('p'); meta.className = 'result-meta'; meta.textContent = labels[window.StudyState.material(r)] + ' · ' + r.m + ' min read';
       item.append(link, context, meta); resultList.append(item);
     });

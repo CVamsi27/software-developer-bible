@@ -25,7 +25,7 @@
   }
   function rankVoices(voices) {
     var seen = Object.create(null);
-    var novelty = /^(albert|bad news|bahh|bells|boing|bubbles|cellos|deranged|good news|hysterical|jester|junior|organ|pipe organ|ralph|trinoids|whisper|wobble|zarvox|superstar)(?:\b|$)/i;
+    var novelty = /^(albert|bad news|bahh|bells|boing|bubbles|cellos|deranged|eddy|flo|fred|good news|grandma|grandpa|hysterical|jester|junior|kathy|organ|pipe organ|ralph|reed|rocko|sandy|shelley|trinoids|whisper|wobble|zarvox|superstar)(?:\b|$)/i;
     function score(voice) {
       var name = voice.name || '';
       return (/\bsamantha\b/i.test(name) ? 1000 : 0)
@@ -289,7 +289,7 @@
     if (!content || document.querySelector('.read-aloud')) return;
     var studyState = root.StudyState;
     var published = studyState && studyState.publishedPath(root.location.pathname, root.StudyPublishedPaths || []);
-    if (!published || (!studyState.isLearningPath(published) && !/\/REVISION\.html$/i.test(published))) return;
+    if (!published || (!studyState.isLearningPath(published) && !/(?:\/REVISION|-interview-questions)\.html$/i.test(published))) return;
     function icon(paths) {
       return '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + paths + '</svg>';
     }
@@ -300,11 +300,11 @@
       + '<div class="read-aloud-settings-heading"><strong>Make it sound right</strong><button type="button" data-close-settings aria-label="Close audio settings">' + icon('<path d="m6 6 12 12M6 18 18 6"/>') + '</button></div>'
       + '<div class="read-aloud-voice-row"><label class="read-aloud-field">Voice<select data-voice aria-label="Reading voice"></select></label>'
       + '<button type="button" data-preview aria-label="Preview voice">' + icon('<path d="m11 5-6 4H2v6h3l6 4zM15 8a6 6 0 0 1 0 8M18 5a10 10 0 0 1 0 14"/>') + '<span data-preview-label>Preview</span></button></div>'
-      + '<p class="read-aloud-settings-note" data-voice-note>English voices installed on this device. Try a sample to choose.</p>'
+      + '<p class="read-aloud-settings-note" data-voice-note>English device voices, with character voices hidden. Try a sample to choose.</p>'
       + '<div class="read-aloud-preferences"><label class="read-aloud-field">Speed<select data-speed aria-label="Reading speed"></select></label>'
       + '<label class="read-aloud-field">Playback<select data-mode aria-label="Playback mode"><option value="continuous">Continue through chapter</option><option value="paragraph">One passage at a time</option></select></label></div>'
       + '<label class="read-aloud-follow"><input type="checkbox" data-follow checked> Keep the spoken text in view</label></div>'
-      + '<div class="read-aloud-summary"><div class="read-aloud-info"><span class="read-aloud-eyebrow">LISTEN TO THIS CHAPTER</span><strong class="read-aloud-title" data-title></strong><span class="read-aloud-status" role="status" aria-live="polite" aria-atomic="true">Ready when you are</span></div>'
+      + '<div class="read-aloud-summary"><div class="read-aloud-context"><div class="read-aloud-info"><span class="read-aloud-eyebrow">LISTEN TO THIS CHAPTER</span><strong class="read-aloud-title" data-title></strong><span class="read-aloud-status" role="status" aria-live="polite" aria-atomic="true">Ready when you are</span></div></div>'
       + '<div class="read-aloud-transport"><button type="button" class="read-aloud-icon" data-previous aria-label="Previous passage" title="Previous passage" disabled>' + icon('<path d="M5 5v14M19 5 8 12l11 7z"/>') + '</button>'
       + '<div class="read-aloud-primary"><button type="button" data-read aria-label="Read aloud">Listen</button><button type="button" data-pause aria-label="Pause" hidden>Pause</button></div>'
       + '<button type="button" class="read-aloud-icon" data-next aria-label="Next passage" title="Next passage" disabled>' + icon('<path d="M19 5v14M5 5l11 7-11 7z"/>') + '</button>'
@@ -321,9 +321,24 @@
     var settingsButton = bar.querySelector('[data-settings]'), settingsPanel = bar.querySelector('.read-aloud-settings'), previewButton = bar.querySelector('[data-preview]');
     var title = content.querySelector('h1');
     bar.querySelector('[data-title]').textContent = title ? title.textContent.trim() : 'Chapter audio';
-    function syncDock() {
-      if (bar.offsetHeight) document.documentElement.style.setProperty('--read-aloud-height', bar.offsetHeight + 'px');
+    var arrowMedia = root.matchMedia && root.matchMedia('(max-width: 959px)');
+    function placeArrow() {
+      var arrow = document.querySelector('.back-to-top');
+      if (!arrow) return;
+      var parent = arrowMedia && arrowMedia.matches ? bar.querySelector('.read-aloud-context') : document.body;
+      if (arrow.parentElement !== parent) parent.append(arrow);
+      syncDock();
     }
+    function syncDock() {
+      if (!bar.offsetHeight) return;
+      document.documentElement.style.setProperty('--read-aloud-height', bar.offsetHeight + 'px');
+      var compactHeight = bar.querySelector('.read-aloud-summary').offsetHeight + bar.querySelector('.read-aloud-footer').offsetHeight + progress.offsetHeight;
+      document.documentElement.style.setProperty('--read-aloud-compact-height', compactHeight + 'px');
+    }
+    placeArrow();
+    document.addEventListener('DOMContentLoaded', placeArrow, {once: true});
+    if (arrowMedia && arrowMedia.addEventListener) arrowMedia.addEventListener('change', placeArrow);
+    else if (arrowMedia && arrowMedia.addListener) arrowMedia.addListener(placeArrow);
     function toggleSettings(open) {
       settingsPanel.hidden = !open;
       settingsButton.setAttribute('aria-expanded', String(open));

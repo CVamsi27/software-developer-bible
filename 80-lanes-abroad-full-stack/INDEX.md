@@ -6,7 +6,7 @@
 
 ## Lane Decision — Is This the Right Lane for You?
 
-Choose by the assessed work, not a company’s country or funding stage. Use this lane for practical full-stack work and role research. Add the [coding patterns](../70-interview-toolkit/70.2-coding-patterns/INDEX.md) or [SDE preparation lane](../81-lanes-indian-sde-faang/INDEX.md) when the confirmed process includes algorithmic coding. Both can apply to the same vacancy.
+Choose by the assessed work, not a company’s country or funding stage. Use this lane for practical full-stack work and role research. Add the [coding patterns](../70-interview-toolkit/70.2-coding-patterns/INDEX.md) or [SDE preparation lane (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md) when the confirmed process includes algorithmic coding. Both can apply to the same vacancy.
 
 For an imminent interview, start with its brief and a gap diagnosis below. For a broader preparation period, follow the stages in order. Technical concepts live in the shared stack chapters; these guides help choose and practice them.
 
@@ -115,4 +115,4 @@ Keep personal CVs, application versions, contacts, relocation records and outcom
 
 ---
 
-[Back to the Bible](../INDEX.md) · [Sibling lane: SDE / FAANG](../81-lanes-indian-sde-faang/INDEX.md)
+[Back to the Bible](../INDEX.md) · [Sibling lane: SDE / FAANG (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md)

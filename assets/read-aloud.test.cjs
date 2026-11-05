@@ -163,6 +163,11 @@ test('Samantha and enhanced variants lead local English voices without novelty o
   assert.deepEqual(rankVoices(voices).map(v => v.voiceURI), ['samantha-premium', 'samantha', 'ava-enhanced', 'daniel', 'victoria']);
   assert.deepEqual(rankVoices(voices.slice().reverse()).map(v => v.voiceURI), ['samantha-premium', 'samantha', 'ava-enhanced', 'daniel', 'victoria']);
 });
+test('the listening menu excludes the legacy and character voices seen in the browser', () => {
+ const names=['Eddy (English (United States))','Flo (English (United Kingdom))','Fred','Grandma (English (United States))','Grandpa (English (United Kingdom))','Kathy','Reed (English (United States))','Rocko (English (United States))','Sandy (English (United Kingdom))','Shelley (English (United States))','Samantha','Daniel','Karen','Rishi'];
+ const voices=names.map(name=>({name,voiceURI:name,lang:'en-US',localService:true}));
+ assert.deepEqual(rankVoices(voices).map(v=>v.name),['Samantha','Daniel','Karen','Rishi']);
+});
 test('unmarked or unavailable local services cannot silently select a remote default', () => {
   assert.deepEqual(rankVoices([{name: 'Samantha', voiceURI: 'unknown', lang: 'en-US'}, null,
     {name: 'Google US English', voiceURI: 'network', lang: 'en-US', localService: false}]), []);

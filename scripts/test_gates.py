@@ -42,6 +42,7 @@ refused before any gate runs. A dropped assertion still prints "ok", which is
 the silent-pass class this suite exists to catch.
 """
 
+import json
 import os
 import re
 import shutil
@@ -1720,7 +1721,10 @@ CASES = [
             "_includes/theme-copy.html":
                 f'var savedTheme = localStorage.getItem("{_THEME_KEY}");\n',
         }),
-        "clean": _owners_sandbox(),
+        "clean": _owners_sandbox(extra={
+            ".cloud-attachments/imported-conversation.json":
+                json.dumps({"quotedCode": f'localStorage.getItem("{_THEME_KEY}")'}),
+        }),
     },
     {
         # Rule 13's load-path half: the path one consumer loads lives once, in

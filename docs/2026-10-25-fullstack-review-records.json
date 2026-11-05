@@ -9923,22 +9923,22 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "6fbe2130915d3afc8601a6126afaa7b078b573bea98483fa29ffd3f5d9bc7beb",
+      "sha256": "59769c647d98c8c37ffb4fc5b79260b3e25fe4285308eaa59e412a3ca4f19ea0",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-02",
-      "fullContentRead": true,
-      "notes": "Full-content review of the count-guard restamp: only the generated repository total changed from 977 to 979 files; surrounding navigation, gate instructions, and links remain coherent. Counts were produced by check_counts.py --write and verified by the full gate run.",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Scoped review of the check_counts.py --write restamp: verified by exact comparison against HEAD that only the generated repository total changed from 979 to 981 files. All surrounding content is byte-identical; the count guard confirms the live total.",
       "findings": []
     },
     {
       "path": "README.md",
-      "sha256": "954b1ddab56159d01760a96e262ffcd7eb4620e61b34349e06dcd7c4dcb6f1b6",
+      "sha256": "7dab4c0bbe0807d9d575b9895da83e713d2d7a7a1cb77a186ecb3b0f507baa0d",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-02",
-      "fullContentRead": true,
-      "notes": "Full-content review of the count-guard restamp: only the generated repository total changed from 977 to 979 files; surrounding navigation, gate instructions, and links remain coherent. Counts were produced by check_counts.py --write and verified by the full gate run.",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Scoped review of the check_counts.py --write restamp: verified by exact comparison against HEAD that only the generated repository total changed from 979 to 981 files. All surrounding content is byte-identical; the count guard confirms the live total.",
       "findings": []
     },
     {
@@ -9953,22 +9953,22 @@
     },
     {
       "path": "contributing.md",
-      "sha256": "5c9df980b78123e2c33ecf6aff57d8488ab370792af13d4ea563e49d61afb8a8",
+      "sha256": "2d3ac95943f59a35cbc9d6731e8e0ac086186bd4fb74c26cc2975283f984d5bf",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-02",
-      "fullContentRead": true,
-      "notes": "Full-content review of the count-guard restamp: only the generated repository total changed from 977 to 979 files; surrounding navigation, gate instructions, and links remain coherent. Counts were produced by check_counts.py --write and verified by the full gate run.",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Scoped review of the check_counts.py --write restamp: verified by exact comparison against HEAD that only the generated repository total changed from 979 to 981 files. All surrounding content is byte-identical; the count guard confirms the live total.",
       "findings": []
     },
     {
       "path": "design-qa.md",
-      "sha256": "b78a6661d98cd4a2fb5d77b7d49d931f40fedc90d116a1e1a741ca5d19a861a4",
+      "sha256": "0a495dfd966b5eee639382f0767b60ee3d78cee23ebab68039b059b695fe7575",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Complete local QA chronology read. Added dated-checkpoint scope; preserved measured screenshots and explicit deployment/accessibility limitations.",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Scoped review of the November 5 listening QA and spoken-word follow-up against the final implementation. The follow-up accurately records the 55 passing related Node tests, controlled word/paragraph and fallback browser checks, actual muted Samantha word boundaries and pause/resume/stop smoke, screenshots, theme contrast, normalized whitespace and inline source mapping. Earlier historical checkpoints are unchanged.",
       "findings": []
     },
     {
@@ -10374,22 +10374,22 @@
     },
     {
       "path": "docs/verification-gates.md",
-      "sha256": "24bd1987ba2799dc794e3ab1fa1014e7398f9b1629d03f1158f59264253e6bdc",
+      "sha256": "d9a0aacdbe2bfe724793c794b66eb56370b097aba6b7c29c84485e1ccc95853c",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-02",
-      "fullContentRead": true,
-      "notes": "Full-content review of the count-guard restamp: only the generated repository total changed from 977 to 979 files; surrounding navigation, gate instructions, and links remain coherent. Counts were produced by check_counts.py --write and verified by the full gate run.",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Scoped review of the check_counts.py --write restamp: verified by exact comparison against HEAD that only the generated repository total changed from 979 to 981 files. All surrounding content is byte-identical; the count guard confirms the live total.",
       "findings": []
     },
     {
       "path": "lanes/INDEX.md",
-      "sha256": "de04a2f79eca35621d589f9181da48a6c16d0e7463ae39fa92ac7cadc062167f",
+      "sha256": "d8f40490dc4d2ba088b0a29715b2fe0c050870e6978dc65bb9d9fe45ff552698",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-02",
-      "fullContentRead": true,
-      "notes": "Full-content review of the count-guard restamp: only the generated repository total changed from 977 to 979 files; surrounding navigation, gate instructions, and links remain coherent. Counts were produced by check_counts.py --write and verified by the full gate run.",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": false,
+      "notes": "Scoped review of the check_counts.py --write restamp: verified by exact comparison against HEAD that only the generated repository total changed from 979 to 981 files. All surrounding content is byte-identical; the count guard confirms the live total.",
       "findings": []
     },
     {
@@ -10730,6 +10730,26 @@
       "reviewDate": "2026-11-02",
       "fullContentRead": true,
       "notes": "Full-content review against the approved spec and current files: deterministic voice scoring, removal of the 62ch caps, action grouping, and stale dock override removal. Repo spelling conventions are followed; no new service or runtime dependency is planned.",
+      "findings": []
+    },
+    {
+      "path": "docs/superpowers/specs/2026-11-05-listening-experience-design.md",
+      "sha256": "8921f085bb814c8ebdc008ebd80b180a4303a6effcbcbe3357188e1cfc1be3fb",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": true,
+      "notes": "Full-content review including the spoken-word addition: the original local-voice and playback design remains coherent. Word callbacks use retained chunk offsets and exact source character ranges; current-word contrast complements the paragraph, pause freezes position, obsolete speech cannot move it, and CSS Highlight/fallback rectangles preserve authored markup. No-boundary voices retain paragraph emphasis.",
+      "findings": []
+    },
+    {
+      "path": "docs/superpowers/plans/2026-11-05-listening-experience.md",
+      "sha256": "4fc99ce9e8cac575a6ab5f22377dab277463a8cc7d5c3d55ad565c3efb2015f5",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": true,
+      "notes": "Full-content review of the completed plan and word-tracking follow-up: engine tests and browser checks were observed failing before their relevant implementation and then passing. Task 4 covers source normalization, inline/later-chunk offsets, lifecycle cleanup, fallback reflow, native Samantha smoke, screenshots and final verification. Existing local speech, speed, Wide and no-deploy boundaries remain intact. Final-pass review updates the initial local-only boundary to reflect the explicit later request to commit, push, and merge after verification; the implementation and test scope are unchanged.",
       "findings": []
     }
   ]

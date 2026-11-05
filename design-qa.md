@@ -210,3 +210,83 @@ A fresh production build across 320–1440 px in both themes showed that the rem
 Evidence: [before: chapter mobile dark](docs/superpowers/specs/assets/2026-10-23-ui-consistency/before-chapter-mobile-dark.png), [after: chapter mobile dark](docs/superpowers/specs/assets/2026-10-23-ui-consistency/chapter-mobile-dark.png), [after: chapter mobile light](docs/superpowers/specs/assets/2026-10-23-ui-consistency/chapter-mobile-light.png), [before: library mobile dark](docs/superpowers/specs/assets/2026-10-23-ui-consistency/before-library-mobile-dark.png), [after: library mobile dark](docs/superpowers/specs/assets/2026-10-23-ui-consistency/library-mobile-dark.png), [before: search mobile dark](docs/superpowers/specs/assets/2026-10-23-ui-consistency/before-search-mobile-dark.png), [after: search mobile dark](docs/superpowers/specs/assets/2026-10-23-ui-consistency/search-mobile-dark.png), [after: search mobile light](docs/superpowers/specs/assets/2026-10-23-ui-consistency/search-mobile-light.png), [home mobile light](docs/superpowers/specs/assets/2026-10-23-ui-consistency/home-mobile-light.png), [home tablet dark](docs/superpowers/specs/assets/2026-10-23-ui-consistency/home-tablet-dark.png), [before: orphaned footer dot](docs/superpowers/specs/assets/2026-10-23-ui-consistency/before-footer-320-dark.png), [after: stacked footer](docs/superpowers/specs/assets/2026-10-23-ui-consistency/footer-320-dark.png), [tablet library at 701](docs/superpowers/specs/assets/2026-10-23-ui-consistency/library-tablet-dark.png), [reader at 1200](docs/superpowers/specs/assets/2026-10-23-ui-consistency/chapter-1200-dark.png), [open chapter details](docs/superpowers/specs/assets/2026-10-23-ui-consistency/chapter-details-open-dark.png), [open revision answer](docs/superpowers/specs/assets/2026-10-23-ui-consistency/revision-answer-open-dark.png), and the [audit report](docs/superpowers/specs/assets/2026-10-23-ui-consistency/audit-report.json). The before captures are the 22 Oct follow-up state, so the comparison isolates this pass.
 
 Verification: the Chromium suite covers nine routes at 320, 375, 390, 600, 667, 701, 768, 1024, 1200 and 1440 px in light and dark. It asserts no whole-page horizontal overflow, one visible page title and one visible search field on search, header/title edges within 0.6 px, the 32/40/44 title sizes and 650 weight, no native disclosure marker with a visible trailing chevron, matching phone theme/menu surfaces, stacked footer links and a hidden separator at 320, and at least a 24 px reader right gutter from 701 px up. `STUDY_HOME_ROUTE=home-preview.html` is still required for the case-insensitive local filesystem. The four Node suites pass 36/36 (22 UI, 4 state, 8 read-aloud, 2 roadmap), and `bash scripts/verify.sh` passes every repository gate. Cache parameters are `study-flow-20` and `reference-17`; `search.html` was regenerated for 678 chapters and `api/index.json` stayed unchanged. No production deployment was performed.
+
+### Listening controls and device voices (5 Nov)
+
+The player now shows the chapter title, visible playback state, passage count,
+and a slim progress line. Previous/next passage, pause/resume, and stop stay
+available while listening. Audio settings open before playback and contain
+voice preview, speed, continuous or one-passage playback, and a follow-text
+checkbox. Preferences persist locally. Speeds include every tenth from 0.2×
+through 2.0×, plus the existing 0.75× and 1.25× choices. Speed and voice changes
+restart at the latest reported word boundary; when the engine supplies no word
+events, only the current short chunk repeats. Preview pauses chapter speech
+and leaves it paused until the listener resumes.
+
+Voice selection now uses local English voices exposed by the browser, with
+Samantha first and premium/enhanced/natural/neural variants preferred next.
+Known novelty voices and network voices are filtered. Suggestions no longer
+fill empty slots with arbitrary basic voices; other installed English voices
+remain in a separate group. A saved manual choice is retained, asynchronous
+voice updates preserve it, and missing device voices produce actionable guidance.
+No external speech service or runtime package was added. The current Wide
+reader and absence of a Width selector are preserved. The first preview in this
+session used stale generated files; the evidence below uses a fresh production
+build of the current source.
+
+Evidence: [desktop compact player](docs/superpowers/specs/assets/2026-11-05-listening-experience/desktop-dark-compact.png),
+[desktop audio settings](docs/superpowers/specs/assets/2026-11-05-listening-experience/desktop-dark-settings.png),
+[mobile compact player](docs/superpowers/specs/assets/2026-11-05-listening-experience/mobile-light-compact.png),
+and [mobile audio settings](docs/superpowers/specs/assets/2026-11-05-listening-experience/mobile-light-settings.png).
+These captures use the actual device voice list with Samantha selected and do
+not start speech. The [design](docs/superpowers/specs/2026-11-05-listening-experience-design.md)
+and [implementation plan](docs/superpowers/plans/2026-11-05-listening-experience.md)
+record the interaction and verification boundaries.
+
+Verification: 52 related Node tests pass. Chromium integration checks pass for
+all speeds, immediate changes, word bookmarks, cancellation and late callbacks,
+voice previews, persistence, delayed/absent voices, storage refusal, continuous
+and manual playback, paragraph selection, start from view, and source-range
+follow. The rendered chapter checks preserve Wide, confirm no Width selector,
+and verify 44-pixel transport targets and no horizontal overflow at 320, 375,
+667, and 1280 pixels in both themes, including a 320-pixel-high landscape
+viewport. Light/dark control text meets 4.5:1 contrast in the controlled player
+fixture; Escape closes settings and restores focus. The production Jekyll build
+succeeds with Ruby 3.4. Browser behavior tests substitute speech output; audible
+quality and device-specific engine behavior are left to the built-in Preview.
+
+The repository verification also uses its pinned Node 24.22.1 and TypeScript
+5.9.3 example runtimes. An imported chat attachment initially triggered the
+theme-source ownership gate. Cloud attachments are now gitignored and excluded
+from that source scan; a paired regression still rejects real duplicate theme
+code while accepting quoted code inside attachments. Repository totals were
+restamped with `check_counts.py --write`, and scoped Markdown review records
+were refreshed for the final bytes. No commit or production deployment was
+performed.
+
+### Spoken word within the active paragraph (5 Nov)
+
+The current word now has a stronger accent highlight while the entire source
+paragraph keeps its softer background and gutter stripe. Browser word-boundary
+events drive the marker. Original chunk offsets survive pause/resume and live
+speed or voice changes; unknown word lengths use word segmentation. Normalized
+characters map back to the authored text, including inline code, emphasized
+fragments, whitespace-only nodes between formatted words, and later chunks in
+long paragraphs. The chapter markup and text selection remain intact.
+
+Pause keeps the word visible as a bookmark. Navigation, new chunks, completion,
+stop, errors, and departure clear stale word markers. Follow-text tracks the
+word when enabled. CSS Custom Highlight paints the range in current browsers;
+a non-interactive rectangle fallback follows scroll and resize on older ones.
+Voices that omit word-boundary events retain paragraph highlighting.
+
+Verification: 55 related Node tests pass. Browser integration checks cover word
+and paragraph emphasis together, normalized/inline/later-chunk source ranges,
+pause and resumed offsets, completion/stop cleanup, both-theme word contrast,
+and fallback rendering after resize. A muted run with the actual local Samantha
+voice confirmed a real word boundary highlighting “When” in the chapter's first
+paragraph, preserving it on pause, resuming, and clearing on Stop. Evidence:
+[desktop word and paragraph](docs/superpowers/specs/assets/2026-11-05-listening-experience/spoken-word-desktop-dark.png)
+and [mobile word and paragraph](docs/superpowers/specs/assets/2026-11-05-listening-experience/spoken-word-mobile-light.png).
+The reader's Wide layout and saved listening choices are preserved. The shared
+read-aloud assets use cache version `listen-29`.

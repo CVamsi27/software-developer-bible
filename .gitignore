@@ -11,6 +11,7 @@ _site/
 vendor/
 .sass-cache/
 .freebuff/
+.cloud-attachments/
 __pycache__/
 
 # Local owner-data release backups remain private and are not active source data.

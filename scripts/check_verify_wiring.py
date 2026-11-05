@@ -110,7 +110,7 @@ THEME_SCAN_EXTS = {'.html', '.htm', '.js', '.mjs', '.cjs', '.ts', '.tsx',
                    '.py', '.yml', '.yaml', '.json', '.toml', '.sh', '.css',
                    '.scss', '.rb'}
 THEME_SCAN_SKIP = {'.git', 'node_modules', '_site', 'vendor', '.sass-cache',
-                   '__pycache__', '.archive', '.freebuff', 'api'}
+                   '.cloud-attachments', '__pycache__', '.archive', '.freebuff', 'api'}
 
 # `echo "6b/17 check_template.py — template compliance (…)"` — the space count
 # after the label varies (some labels are 2 chars, some 4), so allow any run.

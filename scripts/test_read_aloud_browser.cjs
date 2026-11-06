@@ -146,7 +146,7 @@ function contrast(a, b) { const x = luminance(a), y = luminance(b); return (Math
     const beforeWords = await words.locator('#word-tracking').innerHTML();
     await words.locator('#word-tracking').click();
     await words.getByRole('button', {name: 'Read selected paragraph', exact: true}).click();
-    await words.evaluate(() => { window.previousSpeech = window.recordedSpeech.at(-1); previousSpeech.onstart(); previousSpeech.onboundary({name: 'word', charIndex: 10, charLength: 0}); });
+    await words.evaluate(() => { window.previousSpeech = window.recordedSpeech.at(-1); previousSpeech.onstart(); previousSpeech.onboundary({name: 'word', charIndex: 10, charLength: 4}); });
     assert.equal(await highlightedWord(words), 'example', 'a word range crosses inline nodes and normalized whitespace exactly');
     assert.equal(await words.locator('#word-tracking').getAttribute('data-read-aloud-active'), 'true', 'the whole paragraph stays highlighted');
     assert.equal(await words.locator('#word-tracking').innerHTML(), beforeWords, 'word highlighting does not rewrite authored markup');
@@ -159,7 +159,19 @@ function contrast(a, b) { const x = luminance(a), y = luminance(b); return (Math
     assert.equal(await highlightedWord(words), 'word', 'resumed word offsets include the retained chunk position');
     for (const theme of ['light', 'dark']) {
       await words.evaluate(t => document.documentElement.setAttribute('data-theme', t), theme);
-      const colors = await words.locator('#word-tracking').evaluate(n => { const s = getComputedStyle(n, '::highlight(sdb-spoken-word)'); return [s.color, s.backgroundColor]; });
+      const colors = await words.locator('#word-tracking').evaluate(n => {
+        const code = n.querySelector('code');
+        const marker = getComputedStyle(code, '::highlight(sdb-spoken-word)');
+        const pixel = document.createElement('canvas').getContext('2d');
+        for (const element of [document.body, n, code]) {
+          pixel.fillStyle = getComputedStyle(element).backgroundColor;
+          pixel.fillRect(0, 0, 1, 1);
+        }
+        pixel.fillStyle = marker.backgroundColor;
+        pixel.fillRect(0, 0, 1, 1);
+        const rgb = Array.from(pixel.getImageData(0, 0, 1, 1).data).slice(0, 3);
+        return [marker.color, `rgb(${rgb.join(', ')})`];
+      });
       assert(contrast(...colors) >= 4.5, theme + ' spoken word contrast');
     }
     await words.getByRole('button', {name: 'Next passage', exact: true}).click();
@@ -217,8 +229,29 @@ function contrast(a, b) { const x = luminance(a), y = luminance(b); return (Math
     assert(ranges.length > 2 && ranges.every(([text, range]) => text === range), 'spoken chunks retain exact source ranges');
     await follow.evaluate(() => window.recordedSpeech.at(-1).onstart());
     const firstPosition = await follow.evaluate(() => scrollY);
+    assert.equal(firstPosition, await follow.evaluate(() => document.getElementById('target').offsetTop - 130),
+      'starting a chunk leaves its already visible first line in place');
+    await follow.evaluate(() => {
+      const speech = recordedSpeech.at(-1);
+      speech.onboundary({name: 'word', charIndex: speech.text.lastIndexOf('reading')});
+      const rect = Array.from(CSS.highlights.get('sdb-spoken-word'))[0].getBoundingClientRect();
+      scrollBy(0, rect.top - 130);
+    });
+    await follow.getByRole('button', {name: 'Pause', exact: true}).click();
+    const beforeResumePosition = await follow.evaluate(() => scrollY);
+    await follow.getByRole('button', {name: 'Resume', exact: true}).click();
+    await follow.evaluate(() => recordedSpeech.at(-1).onstart());
+    assert.equal(await follow.evaluate(() => scrollY), beforeResumePosition,
+      'resuming from a visible word does not jump back to the start of the chunk');
+    await follow.evaluate(() => {
+      const content = document.querySelector('.post-content');
+      const nextChunk = SDBReadAloud.extractChapter(content).filter(c => c.element.id === 'target')[1];
+      const firstLine = nextChunk.range.getClientRects()[0];
+      scrollBy(0, firstLine.top - innerHeight + 40);
+    });
+    const beforeNextChunk = await follow.evaluate(() => scrollY);
     await finish(follow); await follow.evaluate(() => window.recordedSpeech.at(-1).onstart());
-    assert(await follow.evaluate(() => scrollY) > firstPosition, 'successive chunks follow their own text ranges');
+    assert(await follow.evaluate(() => scrollY) > beforeNextChunk, 'successive chunks follow their own first lines');
     await settings(follow).click(); await follow.locator('[data-follow]').uncheck();
     await settings(follow).click(); await follow.evaluate(() => scrollTo(0, 0));
     await finish(follow); await follow.evaluate(() => window.recordedSpeech.at(-1).onstart());

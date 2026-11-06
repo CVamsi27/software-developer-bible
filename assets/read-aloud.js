@@ -44,9 +44,8 @@
     });
   }
   var wordSegmenter;
-  function wordAt(text, index, length) {
+  function wordAt(text, index) {
     if (!Number.isInteger(index) || index < 0 || index >= text.length || /\s/.test(text[index])) return null;
-    if (Number.isInteger(length) && length > 0 && index + length <= text.length && !/\s/.test(text.slice(index, index + length))) return {start: index, end: index + length};
     if (root.Intl && root.Intl.Segmenter) {
       if (!wordSegmenter) wordSegmenter = new root.Intl.Segmenter('en', {granularity: 'word'});
       var segments = wordSegmenter.segment(text);
@@ -79,6 +78,7 @@
       var chunk = chunks[index];
       var text = typeof chunk === 'string' ? chunk : chunk.text;
       var startOffset = offset;
+      var lastWordStart = -1;
       var utterance = new Utterance(text.slice(startOffset));
       utterance.rate = rate;
       // A selected voice carries its own language. Fall back to English for
@@ -89,14 +89,17 @@
       utterance.onboundary = function (event) {
         if (token !== generation || (event.name && event.name !== 'word')) return;
         if (!Number.isInteger(event.charIndex) || event.charIndex < 0 || event.charIndex >= text.length - startOffset) return;
-        offset = startOffset + event.charIndex;
-        var word = wordAt(text, offset, event.charLength);
-        if (word) onWord(chunk, word.start, word.end);
+        // Engines may report separate boundaries for pieces of one visible word.
+        var word = wordAt(text, startOffset + event.charIndex);
+        if (!word || word.start <= lastWordStart) return;
+        lastWordStart = offset = word.start;
+        onWord(chunk, word.start, word.end);
       };
       utterance.onstart = function () {
-        if (token === generation) {
-          onChunkStart(typeof chunk === 'string' ? null : chunk.element, index, typeof chunk === 'string' ? null : chunk.range);
-        }
+        if (token !== generation) return;
+        var range = typeof chunk === 'string' ? null : chunk.range;
+        if (startOffset && chunk.rangeForOffsets) range = chunk.rangeForOffsets(startOffset, text.length);
+        onChunkStart(typeof chunk === 'string' ? null : chunk.element, index, range);
       };
       utterance.onend = function () {
         if (token !== generation) return;
@@ -411,7 +414,7 @@
       clearSelected(); selectedGroup = index; selectedBlock = element;
       element.setAttribute('data-read-aloud-selected', 'true'); sync(lastState);
     }
-    function follow(element, _index, range) {
+    function follow(element, range, firstLineOnly) {
       if (!element || !content.contains(element)) { clearActive(); return; }
       markActive(element);
       if (!followInput.checked) return;
@@ -422,7 +425,7 @@
       var behavior = reduced ? 'auto' : 'smooth';
       var rects = range && range.getClientRects ? Array.from(range.getClientRects()).filter(function (rect) { return rect.height > 0; }) : [];
       if (rects.length) {
-        var first = rects[0], last = rects[rects.length - 1], delta = 0;
+        var first = rects[0], last = firstLineOnly ? first : rects[rects.length - 1], delta = 0;
         if (last.bottom - first.top > visibleBottom - topMargin) delta = first.top - topMargin;
         else if (first.top < topMargin) delta = first.top - topMargin;
         else if (last.bottom > visibleBottom) delta = last.bottom - visibleBottom;
@@ -480,13 +483,13 @@
     var reader = createReader(root.speechSynthesis, root.SpeechSynthesisUtterance, function (next) {
       if (next === 'ready' && modeSelect.value === 'continuous' && selectedGroup < 0) { startAt(currentGroup + 1); return; }
       sync(next);
-    }, function (element, index, range) {
-      wordHighlighter.clear(); follow(element, index, range);
+    }, function (element, _index, range) {
+      wordHighlighter.clear(); follow(element, range, true);
     }, function (chunk, start, end) {
       if (!chunk.rangeForOffsets || !content.contains(chunk.element)) return;
       var range = chunk.rangeForOffsets(start, end);
       if (!range) return;
-      follow(chunk.element, 0, range); wordHighlighter.show(range);
+      follow(chunk.element, range); wordHighlighter.show(range);
     });
     var previewReader = createReader(root.speechSynthesis, root.SpeechSynthesisUtterance, function (next) {
       if (next === 'reading') return;

@@ -184,18 +184,31 @@ test('events from a finished chunk cannot skip or move the next chunk', () => {
   assert.equal(spoken.length, 2); assert.equal(spoken[1].text, 'Second chunk.');
   spoken[1].onend(); assert.equal(spoken[2].text, 'Third chunk.');
 });
-test('a word boundary identifies one word when the engine omits its length', () => {
-  assert.deepEqual(wordAt('Read this example now.', 10, 0), {start: 10, end: 17});
-  assert.deepEqual(wordAt('Read this example now.', 18, undefined), {start: 18, end: 21});
-  assert.deepEqual(wordAt('“Don’t” stop.', 1, 0), {start: 1, end: 6});
-  assert.deepEqual(wordAt('A résumé example.', 2, 0), {start: 2, end: 8});
-  assert.equal(wordAt('Read this.', -1, 0), null);
-  assert.equal(wordAt('Read this.', 10, 0), null);
-  assert.equal(wordAt('Read this.', 4, 0), null);
+test('a character position identifies one displayed word', () => {
+  assert.deepEqual(wordAt('Read this example now.', 10), {start: 10, end: 17});
+  assert.deepEqual(wordAt('Read this example now.', 18), {start: 18, end: 21});
+  assert.deepEqual(wordAt('“Don’t” stop.', 1), {start: 1, end: 6});
+  assert.deepEqual(wordAt('A résumé example.', 2), {start: 2, end: 8});
+  assert.equal(wordAt('Read this.', -1), null);
+  assert.equal(wordAt('Read this.', 10), null);
+  assert.equal(wordAt('Read this.', 4), null);
 });
-test('a supplied word length can highlight a spoken part of an acronym', () => {
-  assert.deepEqual(wordAt('API calls.', 0, 1), {start: 0, end: 1});
-  assert.deepEqual(wordAt('API calls.', 4, 99), {start: 4, end: 9});
+test('word boundaries inside a displayed word resolve to the whole word', () => {
+  assert.deepEqual(wordAt('API calls.', 0), {start: 0, end: 3});
+  assert.deepEqual(wordAt('API calls.', 1), {start: 0, end: 3});
+  assert.deepEqual(wordAt('API calls.', 4), {start: 4, end: 9});
+});
+test('partial boundaries highlight a complete word and resume from its beginning', () => {
+  const spoken = [], words = [], text = 'Read the entire example.';
+  const synth = {speak(u) { spoken.push(u); }, resume() {}, cancel() {}};
+  const reader = createReader(synth, function (value) { this.text = value; }, () => {}, null,
+    (source, start, end) => words.push(source.slice(start, end)));
+  reader.start([text]);
+  spoken[0].onboundary({name: 'word', charIndex: 16, charLength: 4});
+  spoken[0].onboundary({name: 'word', charIndex: 19, charLength: 2});
+  assert.deepEqual(words, ['example']);
+  reader.togglePause(); reader.togglePause();
+  assert.equal(spoken[1].text, 'example.');
 });
 test('word callbacks retain original chunk offsets after speed changes and resume', () => {
   const spoken = [], words = [], chunk = {text: 'Read this example now.', element: {}};

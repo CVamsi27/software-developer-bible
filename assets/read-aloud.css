@@ -122,17 +122,17 @@ body.has-read-aloud > .back-to-top { bottom: calc(max(16px, env(safe-area-inset-
 .read-aloud-context > .back-to-top.visible { display: flex; opacity: 1; visibility: visible; transform: none; }
 .read-aloud-context > .back-to-top:hover { transform: none; }
 ::highlight(sdb-spoken-word) {
-  background-color: #f7d98a;
-  color: #352600;
-  text-decoration: underline solid #7b5700 2px;
+  background-color: rgb(214 158 39 / 34%);
+  text-decoration: underline solid #a97520 2px;
+  text-underline-offset: 0.15em;
 }
 /* Range rectangles preserve text selection and inline markup on older browsers. */
 .read-aloud-word-overlay { position: fixed; inset: 0; z-index: 9996; overflow: hidden; pointer-events: none; }
 .read-aloud-word-box {
   position: absolute;
   border-radius: 3px;
-  outline: 2px solid #9a6b00;
-  background: rgb(247 217 138 / 20%);
+  box-shadow: inset 0 -2px #a97520;
+  background: rgb(214 158 39 / 20%);
 }
 /* The active paragraph gets a gutter stripe behind the text, never over the
    first glyph, plus inline breathing room that leaves the text column in place. */
@@ -185,4 +185,4 @@ html body .post-content blockquote p[data-read-aloud-active="true"] { background
   .read-aloud [data-settings] svg { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { [data-read-aloud-active="true"] { scroll-behavior: auto; } }
-@media print { .read-aloud, .read-aloud-word-overlay { display: none; } ::highlight(sdb-spoken-word) { background: transparent; color: inherit; } body.has-read-aloud { padding-block-end: 0; } }
+@media print { .read-aloud, .read-aloud-word-overlay { display: none; } ::highlight(sdb-spoken-word) { background: transparent; text-decoration: none; } body.has-read-aloud { padding-block-end: 0; } }

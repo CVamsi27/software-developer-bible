@@ -1,5 +1,7 @@
 # Density pass — 22 October 2026
 
+> **Dated review record:** counts, test results and remaining-work statements below describe the recorded pass; the gate count it reports is the checkpoint's, not the current suite's. Use the [current review progress](2026-10-25-fullstack-coverage-review.md) and [verification runbook](verification-gates.md) for present scope.
+
 Companion record for the paragraph-level readability pass. The outline repair of
 21 October fixed navigation; this pass addressed the remaining wall paragraph.
 Rules are now part of the [readability standard](readability-standard.md#4-density-rules-added-2026-10-22).

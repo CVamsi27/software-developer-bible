@@ -9975,12 +9975,12 @@
     },
     {
       "path": "docs/2026-10-22-density-pass.md",
-      "sha256": "ae3861ecd5629bbe564da0c647b57e1baa26be3817b787fdc191abed67e2a9cc",
+      "sha256": "917326439ca3cecd973870b68b15dfb77fd1564a46a318a976c075f08b2f91f4",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-26",
+      "reviewDate": "2026-11-12",
       "fullContentRead": true,
-      "notes": "Historical 2026-10-22-density-pass: full report read with its scoped findings and integration limits. Original results retained, current-review pointer added where needed. Old counts, hashes, pending states and environment checks remain dated evidence.",
+      "notes": "density pass: added the dated-record banner its sibling records carry, so its 31-gate checkpoint no longer reads as the current suite",
       "findings": []
     },
     {

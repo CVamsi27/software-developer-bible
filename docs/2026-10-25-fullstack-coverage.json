@@ -1713,7 +1713,7 @@
     },
     {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.md",
-      "sha256": "3e1c1406c04ef45ef47bc54493c2b7b85f06a6ba595ec2a36c99efd47d17024a",
+      "sha256": "787dc7450e4bd42cf3e638e3ceec752e8f57a0cd20fb3a02f640886122360764",
       "genre": "interview-bank",
       "status": "reviewed",
       "structure": {
@@ -1732,17 +1732,18 @@
       },
       "review": {
         "path": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.md",
-        "sha256": "3e1c1406c04ef45ef47bc54493c2b7b85f06a6ba595ec2a36c99efd47d17024a",
+        "sha256": "787dc7450e4bd42cf3e638e3ceec752e8f57a0cd20fb3a02f640886122360764",
         "genre": "interview",
         "status": "reviewed",
-        "notes": "Full62-question bank/code/changed-condition review. Corrected module/script var, dependent versus independent await and timer edge/cancellation summaries. EventEmitter snapshot/error ownership and pedagogical scheduler unbounded queue limits are explicit. Modern API edition/runtime caveats checked against sources. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS.",
+        "notes": "JavaScript bank: Q29 and Q34 now trace the mechanism (lexical resolution versus call-time binding; nested unary steps producing a reusable partial) instead of naming the rule",
         "findings": [],
-        "reviewer": "frontend"
+        "reviewer": "frontend",
+        "reviewDate": "2026-11-12"
       }
     },
     {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/INDEX.md",
-      "sha256": "cbb5296c84d302e8e365bebe1195d169a7fd350e74ee36a7e27d1b3ada15d81d",
+      "sha256": "e4851317a43154eec098516407f92a0111d697d6c5959f5f97b2b41f8b37d6ca",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -1760,12 +1761,13 @@
       },
       "review": {
         "path": "10-frontend/10.1-javascript/06-modern-and-interview/INDEX.md",
-        "sha256": "cbb5296c84d302e8e365bebe1195d169a7fd350e74ee36a7e27d1b3ada15d81d",
+        "sha256": "e4851317a43154eec098516407f92a0111d697d6c5959f5f97b2b41f8b37d6ca",
         "genre": "index",
         "status": "reviewed",
-        "notes": "Full category topic mapping, learning then revision then interview flow and source pointers reviewed; host/language/runtime boundaries explicit. No blocking finding. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS.",
+        "notes": "JavaScript bank: Q29 and Q34 now trace the mechanism (lexical resolution versus call-time binding; nested unary steps producing a reusable partial) instead of naming the rule",
         "findings": [],
-        "reviewer": "frontend"
+        "reviewer": "frontend",
+        "reviewDate": "2026-11-12"
       }
     },
     {
@@ -1801,7 +1803,7 @@
     },
     {
       "path": "10-frontend/10.1-javascript/INDEX.md",
-      "sha256": "2de835df579d850a3764c143ac2d216e75f50850eeb62c24516b3ea1604f5e6e",
+      "sha256": "7cb44e8ea065df772d964030429e94f8eca3f93adb2575bc86f9fe5e8750e7af",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -1825,10 +1827,10 @@
       },
       "review": {
         "path": "10-frontend/10.1-javascript/INDEX.md",
-        "sha256": "2de835df579d850a3764c143ac2d216e75f50850eeb62c24516b3ea1604f5e6e",
+        "sha256": "7cb44e8ea065df772d964030429e94f8eca3f93adb2575bc86f9fe5e8750e7af",
         "genre": "index",
         "status": "reviewed",
-        "notes": "V8: section 3 now shows the inline cache transitioning from one shape to two, so the polymorphic cost it names is visible instead of asserted",
+        "notes": "JavaScript bank: Q29 and Q34 now trace the mechanism (lexical resolution versus call-time binding; nested unary steps producing a reusable partial) instead of naming the rule",
         "findings": [],
         "reviewer": "buffy",
         "metadataReview": {
@@ -6140,7 +6142,7 @@
     },
     {
       "path": "10-frontend/INDEX.md",
-      "sha256": "055dd8bf0c948c45d1e49a841cdf380989cae164752d2dbd10264ce8ec186871",
+      "sha256": "057aa92507e08bcebb1e769a847947dc0630462d0b61b13bdeddc7e2c063c9c4",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -6162,10 +6164,10 @@
       },
       "review": {
         "path": "10-frontend/INDEX.md",
-        "sha256": "055dd8bf0c948c45d1e49a841cdf380989cae164752d2dbd10264ce8ec186871",
+        "sha256": "057aa92507e08bcebb1e769a847947dc0630462d0b61b13bdeddc7e2c063c9c4",
         "genre": "index",
         "status": "reviewed",
-        "notes": "V8: section 3 now shows the inline cache transitioning from one shape to two, so the polymorphic cost it names is visible instead of asserted",
+        "notes": "JavaScript bank: Q29 and Q34 now trace the mechanism (lexical resolution versus call-time binding; nested unary steps producing a reusable partial) instead of naming the rule",
         "findings": [],
         "reviewer": "buffy",
         "metadataReview": {
@@ -30747,7 +30749,7 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "4fc093c15066a2964420df26e3112c87513d215735367d00f6f8ef28cb838c0b",
+      "sha256": "ed08cc698a9ee4d48cbf95ed1bac8a0f6d0cf35c405433f6193bc31210a54270",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -30765,12 +30767,12 @@
       },
       "review": {
         "path": "INDEX.md",
-        "sha256": "4fc093c15066a2964420df26e3112c87513d215735367d00f6f8ef28cb838c0b",
+        "sha256": "ed08cc698a9ee4d48cbf95ed1bac8a0f6d0cf35c405433f6193bc31210a54270",
         "status": "reviewed",
         "reviewer": "buffy",
         "reviewDate": "2026-11-12",
         "fullContentRead": false,
-        "notes": "V8: section 3 now shows the inline cache transitioning from one shape to two, so the polymorphic cost it names is visible instead of asserted",
+        "notes": "JavaScript bank: Q29 and Q34 now trace the mechanism (lexical resolution versus call-time binding; nested unary steps producing a reusable partial) instead of naming the rule",
         "findings": []
       }
     },
@@ -31296,7 +31298,7 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "a5d731c5cb07180f80aabf8565e8645178bad27188e0773c86fdeae66fa00880",
+      "sha256": "79c5b0aef964d63965ad103a78caef98378e36e2c920682e02da3075e82d1b94",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31314,12 +31316,12 @@
       },
       "review": {
         "path": "docs/api-contract.md",
-        "sha256": "a5d731c5cb07180f80aabf8565e8645178bad27188e0773c86fdeae66fa00880",
+        "sha256": "79c5b0aef964d63965ad103a78caef98378e36e2c920682e02da3075e82d1b94",
         "status": "reviewed",
         "reviewer": "buffy",
         "reviewDate": "2026-11-12",
         "fullContentRead": false,
-        "notes": "V8: section 3 now shows the inline cache transitioning from one shape to two, so the polymorphic cost it names is visible instead of asserted",
+        "notes": "JavaScript bank: Q29 and Q34 now trace the mechanism (lexical resolution versus call-time binding; nested unary steps producing a reusable partial) instead of naming the rule",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",

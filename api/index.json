@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "030420204ab36fcdff3ce7607248092cfffdee81249abaeb1ae7a8f61e88d426",
+ "corpus_digest": "612a20cf22d0b4a37b849e68cf2879ccda948ae08bf90a59bd56eea1fa37ef3d",
  "totals": {
   "chapters": 678,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5320
+  "read_minutes": 5321
  },
  "chapters": [
   {
@@ -478,7 +478,7 @@
     "interview-questions",
     "reference"
    ],
-   "m": 12
+   "m": 13
   },
   {
    "p": "10-frontend/10.1-javascript/06-modern-and-interview/REVISION.html",

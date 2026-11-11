@@ -95,12 +95,15 @@ Source: [Learning chapter](10.5.02-zod.md)
 Source: [Formik](10.5.03-formik.md), [TanStack Form](10.5.04-tanstack-form.md)
 
 **Q:** Why can a synchronous wizard Next handler leave Formik pending?
+
 **A:** A non-promise submit handler must explicitly settle isSubmitting. Changing the step alone does not finish the submission cycle.
 
 **Q:** Why does a stable row ID coexist with an indexed form path?
+
 **A:** React identity should follow the row after removal/reordering, while its field path describes the current position in the model.
 
 **Q:** A schema transform validates successfully. Does TanStack automatically submit that transformed value?
+
 **A:** No. Parse deliberately at the submit boundary when normalized output is needed; validation and model replacement are different jobs.
 
 ## Summary

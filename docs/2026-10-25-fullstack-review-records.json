@@ -1474,12 +1474,13 @@
     },
     {
       "path": "10-frontend/10.5-form-handling/REVISION.md",
-      "sha256": "9bf545924b551a49f2ce49cdb5a7a4a64ec098252177a92f2fce93b0a8116494",
+      "sha256": "2eeafe3c4bdcb057cc32c43d4c5c996d58f2b9521e30c151e7dcc1726bc69210",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Full revision reviewed: all six canonical learning concepts source-linked, sufficient matchedQ/A, unique changed-case failure questions aroundwizard/coercion/retry/arrays/submission ordering.",
+      "notes": "Revision companions: separate each answer from its question line",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-12"
     },
     {
       "path": "10-frontend/10.6-animation/10.6.01-css-animations.md",
@@ -1679,13 +1680,13 @@
     },
     {
       "path": "10-frontend/10.6-animation/REVISION.md",
-      "sha256": "3e5ff9e018197afe05be70f493893a39d80b26e0c3bb3d171d18088814720486",
+      "sha256": "f169229ea883d436d3f519ef677833e81accd0a35e540cb500f0c06ef9caddcc",
       "genre": "revision-companion",
       "status": "reviewed",
       "reviewer": "animation_coverage",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-12",
       "fullContentRead": true,
-      "notes": "Full original and final content read: all authored questions preserved and all7 concepts retain source-linked retrieval groups. Updated Motion hook answer to actual versioned mounted behavior; added source-backed fill endpoint, independent pause/stop/hide, delayed GSAP starting-state and snapshot reduced-motion questions; expanded Canvas resource answer. Answers remain compact retrieval rather than duplicate full implementations. Checked consistency with final canonical chapters and focused native/mounted tests; no unresolved blocking finding.",
+      "notes": "Revision companions: separate each answer from its question line",
       "findings": [
         {
           "description": "Revision asserted live Motion hook tracking and omitted newly repaired lifecycle/accessibility boundaries; synchronized answers and added focused retrieval questions.",
@@ -1802,12 +1803,12 @@
     },
     {
       "path": "10-frontend/10.7-html-css/REVISION.md",
-      "sha256": "3c11d5a6ac732bdaae83674fca8b33ebf76cfa160b60211cdd873019072981c4",
+      "sha256": "321fdc808b6fbff451a2076a151e142d52c6eb599475e8397f1ab7993a7b4b3c",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-12",
       "fullContentRead": true,
-      "notes": "Full companion read with Tailwind chapter. Questions now distinguish v4 CSS-first source candidates from v3 configuration and safe finite class maps from unchecked dynamic inputs. Existing source-linked HTML/CSS questions preserved.",
+      "notes": "Revision companions: separate each answer from its question line",
       "findings": []
     },
     {
@@ -9552,12 +9553,12 @@
     },
     {
       "path": "80-lanes-abroad-full-stack/REVISION.md",
-      "sha256": "337df2cdc7d73c784dd41d07e2ec8bd8dfb26e4c089a75ba099c63e617973d65",
+      "sha256": "a5b69fb227fc4fb1b7edbf783de9e26225a077cbf61871cd33d60a7e77bb8f1f",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-12",
       "fullContentRead": true,
-      "notes": "Full-content review: Allsource-linked retrievalgroups checked against36guides including20promptfollowups; numerical/immigration/evidence/contracts aligned; transfer, iteration andreadiness distinctions maintained.",
+      "notes": "Revision companions: separate each answer from its question line",
       "findings": []
     },
     {

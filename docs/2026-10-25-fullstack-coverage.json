@@ -8471,7 +8471,7 @@
     },
     {
       "path": "20-backend/20.2-nestjs/04-quality-and-operations/REVISION.md",
-      "sha256": "a6399eda6de7231e8728b1408da2049d8ec1b75b0105fef8a83cb73db1d1cf6e",
+      "sha256": "5626535a1bf067ae399b5b60d30e623cd9331cc516e4608c23ecd042a9dc8065",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -8493,12 +8493,12 @@
       },
       "review": {
         "path": "20-backend/20.2-nestjs/04-quality-and-operations/REVISION.md",
-        "sha256": "a6399eda6de7231e8728b1408da2049d8ec1b75b0105fef8a83cb73db1d1cf6e",
+        "sha256": "5626535a1bf067ae399b5b60d30e623cd9331cc516e4608c23ecd042a9dc8065",
         "genre": "revision",
         "status": "reviewed",
         "reviewer": "backend_coverage_wave2",
-        "reviewDate": "2026-10-25",
-        "notes": "Read complete final revision after edits: all five concepts have linked Q/A; added named security-scheme export drift prompt matching repaired Swagger example and removed stale answer references to a deleted password example/current guidance. Other shutdown, queue lease/provider ambiguity, config coercion and mock-vs-runtime answers agree with chapters.",
+        "reviewDate": "2026-11-12",
+        "notes": "NestJS revision: E2E bootstrap answer explains what the test omits",
         "fullContentRead": true,
         "findings": [
           {

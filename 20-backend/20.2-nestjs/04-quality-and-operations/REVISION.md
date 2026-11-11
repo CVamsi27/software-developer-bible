@@ -128,7 +128,7 @@ Sources: [Configuration](20.2.4.01-configuration-validation.md), [Testing](20.2.
 
 **Q:** Why share bootstrap configuration with an E2E application's setup?
 
-**A:** Importing the root module does not run `main.ts`; otherwise the test can omit production pipes, filters or prefixes.
+**A:** Importing the root module does not run `main.ts`, so a test that builds only the module graph omits the global pipes, filters and route prefix that `main.ts` installs. Share the bootstrap setup so the test exercises the pipeline production actually serves.
 
 **Q:** What happens if a preStop hook uses 10 seconds of a 30-second termination period?
 

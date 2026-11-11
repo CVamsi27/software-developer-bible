@@ -119,7 +119,7 @@ When a gate fails, identify the reported defect and use its matching repair. Met
 | `gen_master_index.py` | Generates search.html + api/index.json (`--check` = gate 14) |
 | `senior_coverage.py` | Gate 29 owns exact-byte review completeness. Inventory-only mode writes the current genre/status report; it never grants a review. |
 | `drift_drill.py` | Quarterly re-probe of the 31 known staleness classes (advisory, opens tracking issues) |
-| `job_board_watch.py` | Weekly JD watch (advisory workflow) |
+| `job_board_watch.py` | Weekly JD watch (advisory workflow). Targets come from `--config`/`JOB_WATCH_CONFIG` because applied-to postings are personal data kept in the private workspace, not this public repo |
 | `md_fences.py` | The single fence parser — imported by ten scripts; pinned by gate 16 |
 | `prose_scan.py` | The single reasoning-prose classifier (fence/table/heading/quote/badge exclusions) — imported by gate 19; pinned by gate 20. `read_time.py` deliberately keeps its own reading-weight model; the two classifiers answer different questions |
 | `test_md_fences.py` / `test_fixers.py` / `test_gates.py` / `test_read_time.py` | The tooling's own test suites (gates 16/17/18) |

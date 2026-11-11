@@ -1,6 +1,6 @@
 # JavaScript — Index
 
-> **Study time:** ≈ 4 h 58 m of reading (41 files, ~7 min average).
+> **Study time:** ≈ 5 h of reading (41 files, ~7 min average).
 > Core JavaScript concepts from execution context through async patterns, memory management, functional techniques, modern language APIs, cancellation, browser events, cross-tab coordination, and interview practice.
 
 [![Files](https://img.shields.io/badge/files-41-blue)](../../INDEX.md)
@@ -49,7 +49,7 @@ Start with the language's evaluation and binding model, then distinguish it from
 | 04 | [Hoisting](01-execution-and-scope/10.1.1.04-hoisting.md) | `var`/`let`/`const` hoisting, temporal dead zone, function hoisting | Essential | Foundational | 6 min |
 | 05 | [Lexical Environment](01-execution-and-scope/10.1.1.05-lexical-environment.md) | Record hierarchy, outer lookup, global object versus module bindings | Essential | Foundational | 9 min |
 | 06 | [Closures](01-execution-and-scope/10.1.1.06-closures.md) | Lexical scoping, closure lifecycle, module pattern, memory implications | Essential | Foundational | 8 min |
-| 07 | [V8 Execution and Optimization](01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md) | Parsing, interpreter/compiler tiers, conditional optimization, deoptimization and measurement | Important | Specialized | 7 min |
+| 07 | [V8 Execution and Optimization](01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md) | Parsing, interpreter/compiler tiers, conditional optimization, deoptimization and measurement | Important | Specialized | 9 min |
 
 **Read order:** Execution Context → Scope → Call Stack → Hoisting → Lexical Environment → Closures → V8 execution and optimization (matches the category's numbering and its read-order rationale — see [01-execution-and-scope/INDEX.md](01-execution-and-scope/INDEX.md)).
 

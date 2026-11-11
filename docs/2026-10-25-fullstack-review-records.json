@@ -118,22 +118,24 @@
     },
     {
       "path": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md",
-      "sha256": "9177ae84a305db8f7a4d0ee1daba73b8597b26be93be5ef8c5f9898edcc66393",
+      "sha256": "1e268468b8610df4f73aac42b4627ec0957289c9f3db433481b9956c1e374aba",
       "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewer": "buffy",
+      "reviewDate": "2026-11-11",
       "fullContentRead": true,
-      "notes": "Full chapter read and revised. Distinguished spec context from V8 execution, conditional Ignition/Sparkplug/Maglev/TurboFan tiering, maps and property layout, speculative guards, deoptimization and measurement. Removed fixed-cycle/size/permanent-tier guarantees; checked V8 Maglev and fast-properties primary explanations. No benchmark or physical-layout measurement claimed.",
+      "notes": "Full-content review on 2026-11-11. Deepened \"Hidden Classes (Maps)\" from a conclusion-only paragraph into a taught mechanism: what a Map stores, the transition tree with both property orders, why a fixed slot offset replaces name lookup, the pointer-compression 4/8-byte caveat, out-of-object and dictionary representations, the delete nuance, and version-specific diagnostics. Sections 3-5 unchanged; section 3 still owns inline-cache detail and section 5 the performance advice.",
       "findings": []
     },
     {
       "path": "10-frontend/10.1-javascript/01-execution-and-scope/INDEX.md",
-      "sha256": "ca9f1c712e8b1b0481a1b93b5426ebd60b2bf5ac26db392f7e697e64a21af3f8",
+      "sha256": "25cb12bb8d5c4bbb157d1d6eccf451fe1344b60048759885d6d89499c17d2700",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full-content review of category learning flow and seven topic links. Corrected context lifetime/frame and parameter-environment summaries; revision follows learning chapters before interview practice. Counts left to canonical restamper. Metadata-only SHA refresh: exact prior reviewed hash reconstructed and verified; diff in /tmp/bible-frontend-metadata-attestation.json contains only generated read-time/study-time fields.",
+      "notes": "Restamp-only record on 2026-11-11: read_time.py/check_counts.py, the owners of those claims, updated a read-time badge or file count after the V8 chapter deepening. No prose, structure or technical content changed in this file.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "buffy",
+      "reviewDate": "2026-11-11",
+      "fullContentRead": false
     },
     {
       "path": "10-frontend/10.1-javascript/01-execution-and-scope/REVISION.md",
@@ -561,18 +563,20 @@
     },
     {
       "path": "10-frontend/10.1-javascript/INDEX.md",
-      "sha256": "0d481d702205eb1e63a5f08f4c724536c949dcf8f8c378521be384de4b58ff15",
+      "sha256": "d5209c00c0b6fbd6c9159658cc94247d36fa5aa8b5565924483fdc55a847b2b1",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full learning-flow and navigation review. Added missing detailed V8 row and ordinal progression, aligned foundational suggested path with canonical category order and removed unsupported most-asked ranking. Prior generated metadata left to restamper. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS.",
+      "notes": "Restamp-only record on 2026-11-11: read_time.py/check_counts.py, the owners of those claims, updated a read-time badge or file count after the V8 chapter deepening. No prose, structure or technical content changed in this file.",
       "findings": [],
-      "reviewer": "frontend",
+      "reviewer": "buffy",
       "metadataReview": {
         "previousReviewedSha256": "e89791b64f62e5d1cc74ff54d1c6cc6563a2f8c7ae3e6af8559379867d90ecd9",
         "reviewDate": "2026-10-26",
         "reviewer": "root",
         "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
-      }
+      },
+      "reviewDate": "2026-11-11",
+      "fullContentRead": false
     },
     {
       "path": "10-frontend/10.2-typescript/01-foundations/10.2.1.01-types-vs-interfaces.md",
@@ -910,12 +914,14 @@
     },
     {
       "path": "10-frontend/10.3-react/02-core-hooks/10.3.2.02-useeffect.md",
-      "sha256": "221d785955b597e60fb25d9906df8f4aba54d2f67b5bb181b278cade46c96934",
+      "sha256": "c6b75f7e793a3569a27e37fa44270be32576fa290f1e2172699dd239c446763a",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full content: external synchronization, committed input identity, setup/cleanup ownership, result identity guards plus abort, dependency correctness, paint timing and client-only execution. Complete async example validates responses and rejects obsolete results.",
+      "notes": "Restamp-only record on 2026-11-11: a canonical writer (read_time.py / check_counts.py / check_alignment.py) updated a claim in this file after an adjacent chapter edit. No prose or technical content changed here.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "buffy",
+      "reviewDate": "2026-11-11",
+      "fullContentRead": false
     },
     {
       "path": "10-frontend/10.3-react/02-core-hooks/10.3.2.03-usememo-usecallback.md",
@@ -955,12 +961,14 @@
     },
     {
       "path": "10-frontend/10.3-react/02-core-hooks/REVISION.md",
-      "sha256": "f9d31a0dbcb495b6cb1c08be2b7cb3ab250c63c53436578a4ebbf70ba6eec5d5",
+      "sha256": "8c0600ec461953a9460ea2beb01f890d140c50bb87dafe535120235d1ab60318",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Full companion: source-linked retrieval questions for each Hook, updater queues, async ownership, identity and compiler boundaries, callback refs, context fallback/propagation, and changed-contract scenarios. React 19.3 provider answer checked against release notes.",
+      "notes": "Retargeted the anchor link for the renamed useEffect section after the chapter's numbering fix; the heading is now '2. Protect Asynchronous Result Ownership', so the fragment gained the numeric prefix.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "buffy",
+      "reviewDate": "2026-11-11",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.01-suspense.md",
@@ -1883,18 +1891,20 @@
     },
     {
       "path": "10-frontend/INDEX.md",
-      "sha256": "2354710942741ec87ecb72c5b549dbef9b62c179fdfaa2b841cd36604b449082",
+      "sha256": "f6be093eb1ab6058d3518321fd66efa25beb767bf5422f1628788263469bc900",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full frontend root index reviewed: one public-page/authenticated-edit product trace; execution/static-data contracts, React and web-platform behavior, framework request/cache/mutation, form recovery, then optional animation/mobile. Revision precedes interview banks; source anchors do not establish production experience. Counts owned by canonical restamper. Final source reread after generated table/read-time formatting; current full content matches reviewed mechanisms and fixtures. Prior reviewed hash retained in metadata-attestation record.",
+      "notes": "Restamp-only record on 2026-11-11: read_time.py/check_counts.py, the owners of those claims, updated a read-time badge or file count after the V8 chapter deepening. No prose, structure or technical content changed in this file.",
       "findings": [],
-      "reviewer": "frontend",
+      "reviewer": "buffy",
       "metadataReview": {
         "previousReviewedSha256": "d9be3585557aa35a4ea21326d76d961aa85644da00ae5f14dc629beef00bd691",
         "reviewDate": "2026-10-26",
         "reviewer": "root",
         "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
-      }
+      },
+      "reviewDate": "2026-11-11",
+      "fullContentRead": false
     },
     {
       "path": "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.md",
@@ -2228,12 +2238,12 @@
     },
     {
       "path": "20-backend/20.12-ai-engineering/20.12.04-agent-orchestration-patterns.md",
-      "sha256": "5c4e8eb78a5aabafea33b0ca6facb888d8de49eef98570b8b0556b5b99d87f9a",
+      "sha256": "d003cd4d18d426a5394b768975faf2ffcfce8cbae9a7bde7061419cbc3ea1a75",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full read374lines: proposal→authorizedeffect→correlatedobservation, run/session budgets and allinvalidcalls counted, actualabortcooperationbound, safeerrors, graphcheckpoint notexternal exactly-once, boundedreadparallelism, MCP20260728 statelesstransport/extensions/backcompat and subprocess trust. Exact localrunAgent fixture passed correlatedsearch→answer, duplicateID halt, unknowncalls exhausting budget and answerbyte limit. OfficialOpenAI toolflow andMCPspec/transports checked. No provider SDK/wire, MCPserver, graphpersistence or durableeffect test. Sources checked: https://developers.openai.com/api/docs/guides/function-calling ; https://github.com/pgvector/pgvector ; https://modelcontextprotocol.io/specification/2026-07-28/basic/transports ; https://docs.vllm.ai/en/latest/usage/security/ ; https://www.edpb.europa.eu/sme/be-compliant/international-data-transfers_en ; https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai .",
+      "reviewer": "buffy",
+      "reviewDate": "2026-11-11",
+      "notes": "Full-content review on 2026-11-11. Replaced the seven-item MCP safety checklist in 'Connecting an MCP server safely' with the session lifecycle (initialize, discovery, invocation, shutdown) and the failure each stage prevents: fail-closed revision negotiation, namespacing against tool shadowing, annotations treated as untrusted hints, result text treated as data rather than instructions, and child-process reaping for stdio. Cross-references the existing validation-boundary rule instead of restating it.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2272,20 +2282,14 @@
     },
     {
       "path": "20-backend/20.12-ai-engineering/INDEX.md",
-      "sha256": "a8a7d16557a6a55af59a14b10c5b5beeaef0e0f32d590879d6d37df97a67bcb7",
+      "sha256": "e8448f24adf9878f413e4a467de0e139f8f169c0c8b4f99bb9b8ff4cbd2808c6",
       "genre": "navigation-index",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full final reread: architecture→context/evals→retrieval→orchestration→serving→governance nowexplicitlyrevisionbeforebank in learningtable asrequired. Diagram data/spend/kill-switch paths and Docitaanchors retain source-versus-deployment caveat. No personalownership/provideregress/deployedcost proof inferred. Sources checked: https://developers.openai.com/api/docs/guides/function-calling ; https://github.com/pgvector/pgvector ; https://modelcontextprotocol.io/specification/2026-07-28/basic/transports ; https://docs.vllm.ai/en/latest/usage/security/ ; https://www.edpb.europa.eu/sme/be-compliant/international-data-transfers_en ; https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai .",
-      "fullContentRead": true,
-      "findings": [
-        {
-          "description": "Learning table placed interview practice before an explicit revision stage. Inserted revision between learning chapters and the interview bank to align prescribed recall-first flow.",
-          "severity": "P2",
-          "status": "repaired"
-        }
-      ]
+      "reviewer": "buffy",
+      "reviewDate": "2026-11-11",
+      "notes": "Restamp-only record on 2026-11-11: a canonical writer (read_time.py / check_counts.py / check_alignment.py) updated a claim in this file after an adjacent chapter edit. No prose or technical content changed here.",
+      "fullContentRead": false,
+      "findings": []
     },
     {
       "path": "20-backend/20.12-ai-engineering/REVISION.md",
@@ -4544,12 +4548,12 @@
     },
     {
       "path": "20-backend/INDEX.md",
-      "sha256": "4fe4b67daee15aaa0e312b4095efa480d80740a7a67cb548cf47433a5944dfa4",
+      "sha256": "1b120541d1a4a35244bd5ab7931c8c3ad91ff3d31d2655a932bd494ed8865841",
       "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-05",
+      "reviewer": "buffy",
+      "reviewDate": "2026-11-11",
       "fullContentRead": false,
-      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged. Backend Sub-stacks badge restamped by the count owner; paired defect/clean regression verifies drift detection.",
+      "notes": "Restamp-only record on 2026-11-11: a canonical writer (read_time.py / check_counts.py / check_alignment.py) updated a claim in this file after an adjacent chapter edit. No prose or technical content changed here.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "ab7ced08ffe012474a86db7f5ff38398ca691458b124ed67f5bf5a2780894865",
@@ -5423,14 +5427,14 @@
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.12-twitter-feed.md",
-      "sha256": "1fa3cff645b2e43d600995c13c71bd0c57d5e147b96e0c9c5b7de7931f070ffa",
+      "sha256": "29dd083c85ee2e00c462cccacfd026efb840c72ab8a54e4962eea951922c839e",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review: Hybrid feed based on activity/cost not magic threshold, canonical durable posts/outbox, current graph/visibility before hydration, complete tuple cursor, versioned tombstones/ranked snapshot and event-time trend rules; coherent media/fanout estimates.",
+      "notes": "Full-content review on 2026-11-11. Read end to end and re-derived the capacity arithmetic (250M posts/day at 1.28 KB = 320 GB/day; 50B fan-out inserts = 578.7K/s; 5B reads = 57.9K/s; 100 TB/day response bytes = 1.16 GB/s) - all consistent. No depth or accuracy defect found. Normalized the See Also heading spacing to match the rest of the corpus.",
       "findings": [],
       "fullContentRead": true,
-      "reviewer": "resume_portfolio",
-      "reviewDate": "2026-10-25"
+      "reviewer": "buffy",
+      "reviewDate": "2026-11-11"
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.13-rate-limiter.md",
@@ -5456,14 +5460,14 @@
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.md",
-      "sha256": "46dfdbd9bb128121658d344b0be93e2d2a0dd3dd8025ebc593498962a608a5d1",
+      "sha256": "d86af1b9bb73c8e9e7bdd8ed22d529aa3133e8e8c3efd61e5528aa2528cff053",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review: Durable accepted vs device/read receipts, row-locked scoped command/sequence allocation, current membership/history, contiguous vs read progress, separate change cursor for edits/reactions, generation presence, E2EE plaintext-search boundary and bounded group fanout.",
+      "notes": "Restamp-only record on 2026-11-11: a canonical writer (read_time.py / check_counts.py / check_alignment.py) updated a claim in this file after an adjacent chapter edit. No prose or technical content changed here.",
       "findings": [],
-      "fullContentRead": true,
-      "reviewer": "resume_portfolio",
-      "reviewDate": "2026-10-25"
+      "fullContentRead": false,
+      "reviewer": "buffy",
+      "reviewDate": "2026-11-11"
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.md",
@@ -7641,12 +7645,13 @@
     },
     {
       "path": "40-platform/40.7-serverless-edge/REVISION.md",
-      "sha256": "300331286f7c74f14819a250ea2bc9445ec41e6006a5cde8e4c06a2fc85b0c1f",
+      "sha256": "2165c34503aeb1e999466de0e64b4043ad06a40a552a67f1a4312994812253b3",
       "status": "reviewed",
-      "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Full read of category flow/revision: staged mechanisms precede separate revision and source-linked interview practice; all chapter groups retain changed-condition questions. Aligned Lambda mode/trigger limits and Next.js 16.3 runtime question. Configuration evidence is not deployed behavior."
+      "reviewer": "buffy",
+      "reviewDate": "2026-11-11",
+      "fullContentRead": false,
+      "notes": "Targeted copy-edit review on 2026-11-11: corrected article agreement for a vowel-sound initialism (a -> an). No structural, technical or example change; the prior full review still covers unchanged material.",
+      "findings": []
     },
     {
       "path": "40-platform/40.8-monorepo/40.8.01-monorepo-overview.md",
@@ -7730,12 +7735,12 @@
     },
     {
       "path": "40-platform/40.9-twelve-factor/40.9.01-the-twelve-factor-app.md",
-      "sha256": "f41feaa09de98567ee70d7cca0ac13c6eb93d45c843a020eac08df8c20cf77be",
+      "sha256": "e964922536a2205293b5bd94ac9540b4b9d1c0cb7ab1fc334bf56bfcf98465f5",
       "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Full original factors and modern adaptations checked: process-independent durable effects, artifact/config identity, conditional graceful shutdown and separate accepted-work recovery. Original2017 and next-branch community status reverified against primary sources; all25bank answers and every source-linked revision read.",
+      "reviewer": "buffy",
+      "reviewDate": "2026-11-11",
+      "fullContentRead": false,
+      "notes": "Restamp-only record on 2026-11-11: a canonical writer (read_time.py / check_counts.py / check_alignment.py) updated a claim in this file after an adjacent chapter edit. No prose or technical content changed here.",
       "findings": []
     },
     {
@@ -8784,12 +8789,12 @@
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.05-intervals.md",
-      "sha256": "03604291219fb4286088ac810a868714c521ae076bcbaf2e6bfa090608bec430",
+      "sha256": "e52e6345be50f6256019fd003f10cee470ef92f9961e334063d0f165a016aad3",
       "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-05",
-      "fullContentRead": false,
-      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
+      "reviewer": "buffy",
+      "reviewDate": "2026-11-11",
+      "fullContentRead": true,
+      "notes": "Full-content review on 2026-11-11. Merged the duplicated sorting-guidance items in 'Common Mistakes' (points 1 and 2 restated the same sort-key rule) into one item, and rewrote the remaining points to state the failure each mistake actually produces: a silently wrong count, a lost room from mixed endpoint conventions, unsorted input to insert, caller-owned arrays mutated, and unbounded free time.",
       "findings": []
     },
     {
@@ -8814,12 +8819,12 @@
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/INDEX.md",
-      "sha256": "f60a5eeaa78e82a37fdec07f1dc4956cc18c4bc17fa812ea429c6a5ee89a6d1c",
+      "sha256": "3075bf66cb5d93d4529b9aa25665eddbcf86f089a659fad080403ecf9e357a1b",
       "status": "reviewed",
-      "reviewer": "architecture_toolkit_finish",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Full read: Read full learning path and all14 source-linked retrieval pairs including historical-window witness, mutation/restoration, endpoint and hash-collision conditions.",
+      "reviewer": "buffy",
+      "reviewDate": "2026-11-11",
+      "fullContentRead": false,
+      "notes": "Restamp-only record on 2026-11-11: a canonical writer (read_time.py / check_counts.py / check_alignment.py) updated a claim in this file after an adjacent chapter edit. No prose or technical content changed here.",
       "findings": []
     },
     {
@@ -9064,12 +9069,12 @@
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/INDEX.md",
-      "sha256": "66cc8f61c507dfb92c8878356d59d2f0eba7a9e69dac7ade8d5829b3b365acb1",
+      "sha256": "1393b83ea2cec9b9bed39f0f59bbba4a12b8d17b1884746470c9ed2610c926af",
       "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-05",
+      "reviewer": "buffy",
+      "reviewDate": "2026-11-11",
       "fullContentRead": false,
-      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
+      "notes": "Restamp-only record on 2026-11-11: a canonical writer (read_time.py / check_counts.py / check_alignment.py) updated a claim in this file after an adjacent chapter edit. No prose or technical content changed here.",
       "findings": []
     },
     {
@@ -9164,12 +9169,12 @@
     },
     {
       "path": "70-interview-toolkit/INDEX.md",
-      "sha256": "fc491b0e665115b4b27e1a2ece1ccb727c46aa0efcb72620821d3078e06ca408",
+      "sha256": "1e94ca0e97daf4a05eb405c37d27a6d30a1362fef888366c7eeb4af1f5491103",
       "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-05",
+      "reviewer": "buffy",
+      "reviewDate": "2026-11-11",
       "fullContentRead": false,
-      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
+      "notes": "Restamp-only record on 2026-11-11: a canonical writer (read_time.py / check_counts.py / check_alignment.py) updated a claim in this file after an adjacent chapter edit. No prose or technical content changed here.",
       "findings": []
     },
     {
@@ -9524,12 +9529,12 @@
     },
     {
       "path": "80-lanes-abroad-full-stack/80.36-docita-complete-interview-defense.md",
-      "sha256": "73064d5b8a8ffbf3ce2c8f168fb2c29a683d74adae2a7b94b0866689641ffe39",
+      "sha256": "7ae51464c7a752956c5a5e669cb49aaa6d63e33b85242e2b8cebdc6c2e3e97f6",
       "status": "reviewed",
-      "reviewer": "root-capacity-proof",
-      "reviewDate": "2026-10-28",
-      "fullContentRead": true,
-      "notes": "Reviewed complete mechanism/constraint/evidence answer flow and added capacity rehearsal route. Question bank stays in companion revision; no duplicated drill or unverified incident narrative.",
+      "reviewer": "buffy",
+      "reviewDate": "2026-11-11",
+      "fullContentRead": false,
+      "notes": "Targeted copy-edit review on 2026-11-11: corrected article agreement for a vowel-sound initialism (a -> an). No structural, technical or example change; the prior full review still covers unchanged material.",
       "findings": []
     },
     {
@@ -9814,22 +9819,22 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "767a0e165eebd0dfcb0bbfa41ff6ccdd5d540bfe96668ae5eea9510c3bddb483",
+      "sha256": "e59d9bcc4ce8b2eacf1e3a3668ea8d5b8ae7dba0894c963680fd6762c400a0e2",
       "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-05",
+      "reviewer": "buffy",
+      "reviewDate": "2026-11-11",
       "fullContentRead": false,
-      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged. Disk-derived file/line count and table formatting restamped by their owning tools.",
+      "notes": "Restamp-only record on 2026-11-11: a canonical writer (read_time.py / check_counts.py / check_alignment.py) updated a claim in this file after an adjacent chapter edit. No prose or technical content changed here.",
       "findings": []
     },
     {
       "path": "README.md",
-      "sha256": "d856b8a8ccc682de2178b9532abbfc86eba36e5768ac546e01e92e7bf5599ce3",
+      "sha256": "db83d246a387142ad17e916bd2f7f7017143390284bc31d835f27e199de90aa8",
       "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-05",
+      "reviewer": "buffy",
+      "reviewDate": "2026-11-11",
       "fullContentRead": false,
-      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged. Disk-derived file/line count and table formatting restamped by their owning tools.",
+      "notes": "Restamp-only record on 2026-11-11: a canonical writer (read_time.py / check_counts.py / check_alignment.py) updated a claim in this file after an adjacent chapter edit. No prose or technical content changed here.",
       "findings": []
     },
     {
@@ -9844,12 +9849,12 @@
     },
     {
       "path": "contributing.md",
-      "sha256": "eb6cf79fb1d280c6aa3430e247264927ffae6cdf7566f71c492e1ec8144e7ecf",
+      "sha256": "2ed9d15e87c57b645321a4af42e774985750d8edff2a74eb329a8321323c3ee6",
       "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-05",
-      "fullContentRead": false,
-      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged. Disk-derived file/line count and table formatting restamped by their owning tools.",
+      "reviewer": "buffy",
+      "reviewDate": "2026-11-11",
+      "fullContentRead": true,
+      "notes": "Full-content review on 2026-11-11. Added a short 'Full-corpus readability pass' section, placed inside the file's raw block before the endraw closer, linking docs/full-corpus-readability-pass.md so the plan is reachable from an entry point and contributors can see the repair standard and progress.",
       "findings": []
     },
     {
@@ -9989,12 +9994,12 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "6523e1a5cbd8ed2e69bc516fffedbd8076395c2310dff65b16706c57814ef4ad",
+      "sha256": "48f76f88290a79d250b79053756493145a98de1c65d503627ba42d11271a6421",
       "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Generated schema and digest scope checked against generator; deterministic bytes, current consumer filtering/linking and compatibility limits. Numeric sample script-owned; study is not experience.",
+      "reviewer": "buffy",
+      "reviewDate": "2026-11-11",
+      "fullContentRead": false,
+      "notes": "Restamp-only record on 2026-11-11: a canonical writer (read_time.py / check_counts.py / check_alignment.py) updated a claim in this file after an adjacent chapter edit. No prose or technical content changed here.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",
@@ -10011,6 +10016,16 @@
       "reviewDate": "2026-11-02",
       "fullContentRead": true,
       "notes": "Full Pages/git/auth/probe runbook re-read against the refresh-cookie flow. Verified the access/refresh lifetimes, publishable-key requirement for the refresh exchange, manual persistence/logout checks, and session-scope statement against functions/_middleware.ts, functions/auth/session.ts and functions/auth/logout.ts; build, deployed and authenticated proof remain distinct.",
+      "findings": []
+    },
+    {
+      "path": "docs/full-corpus-readability-pass.md",
+      "sha256": "da769dd1c1741490f761bdf76f488295d79eb2976fa3fe97fe0fa8345edcff51",
+      "status": "reviewed",
+      "reviewer": "buffy",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": true,
+      "notes": "docs: also read the current coverage review and corpus-health report; the remaining 36 are archival plans, specs and dated reports whose value is the record they preserve",
       "findings": []
     },
     {
@@ -10065,12 +10080,12 @@
     },
     {
       "path": "docs/scripts-map.md",
-      "sha256": "f9474145863b0bdeb7fa4956b748afb69f51da6c3548215a8e451cfea88aa669",
+      "sha256": "e8b6c209f045541ced3da748913d5024a5be74eb83f17542efab002291ffb80a",
       "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-05",
-      "fullContentRead": false,
-      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Added ownership and documented scope for the rendered-link checker and controlled fixtures; site-build runs both.",
+      "reviewer": "buffy",
+      "reviewDate": "2026-11-11",
+      "fullContentRead": true,
+      "notes": "Full-content review for the job-board watch ownership fix: the gate table, recipe table and doctrine rows still match verify.sh. The job_board_watch.py row now records that watch targets are supplied via --config/JOB_WATCH_CONFIG because applied-to postings are personal data kept in the private workspace, not this public repo.",
       "findings": []
     },
     {
@@ -10204,6 +10219,36 @@
       "findings": []
     },
     {
+      "path": "docs/superpowers/plans/2026-11-02-read-aloud-controls.md",
+      "sha256": "9f8c2da0b2b98717c67da75f12f407a22e0fa02def5f2b1658a2620ca83b887a",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-11-02",
+      "fullContentRead": true,
+      "notes": "Full-content review against the approved spec and current files: deterministic voice scoring, removal of the 62ch caps, action grouping, and stale dock override removal. Repo spelling conventions are followed; no new service or runtime dependency is planned.",
+      "findings": []
+    },
+    {
+      "path": "docs/superpowers/plans/2026-11-05-listening-experience.md",
+      "sha256": "4fc99ce9e8cac575a6ab5f22377dab277463a8cc7d5c3d55ad565c3efb2015f5",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": true,
+      "notes": "Full-content review of the completed plan and word-tracking follow-up: engine tests and browser checks were observed failing before their relevant implementation and then passing. Task 4 covers source normalization, inline/later-chunk offsets, lifecycle cleanup, fallback reflow, native Samantha smoke, screenshots and final verification. Existing local speech, speed, Wide and no-deploy boundaries remain intact. Final-pass review updates the initial local-only boundary to reflect the explicit later request to commit, push, and merge after verification; the implementation and test scope are unchanged.",
+      "findings": []
+    },
+    {
+      "path": "docs/superpowers/plans/2026-11-05-site-refinement.md",
+      "sha256": "430a9664fcf75782cd61380ff9901a45f5d2fc2a084712fcca12ab8fbfd71cc3",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": true,
+      "notes": "Full-content review of the current reader and discovery specification/plan: responsive Back to top ownership, word and paragraph emphasis, local voice filtering, interview tools, search category context, catalog-backed badge routing, rendered publication checks, scoped information repairs and evidence limits. The later user authorization to commit, push and merge is retained.",
+      "findings": []
+    },
+    {
       "path": "docs/superpowers/specs/2026-08-25-full-restructure-design.md",
       "sha256": "7cd4f903a1527cb05bad15673e41cfbed83fd7d471d131c85e4065948eb1d3de",
       "status": "reviewed",
@@ -10254,6 +10299,36 @@
       "findings": []
     },
     {
+      "path": "docs/superpowers/specs/2026-11-02-read-aloud-controls-design.md",
+      "sha256": "7f25aa1eebfb4d24cd2d76cecaa81d72bef003162595c0ce64ec33e6893c964d",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-11-02",
+      "fullContentRead": true,
+      "notes": "Reviewed the revised voice shortlist and retained reader behavior: Samantha, Ava, Allison, Alex, and Victoria are preferred when browser-provided; missing names are skipped and English voices fill remaining slots in stable order. Confirmed the voice key version reset, English-only cap, wide article measure, visible paragraph cue, dock alignment, and speech-state boundaries.",
+      "findings": []
+    },
+    {
+      "path": "docs/superpowers/specs/2026-11-05-listening-experience-design.md",
+      "sha256": "8921f085bb814c8ebdc008ebd80b180a4303a6effcbcbe3357188e1cfc1be3fb",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": true,
+      "notes": "Full-content review including the spoken-word addition: the original local-voice and playback design remains coherent. Word callbacks use retained chunk offsets and exact source character ranges; current-word contrast complements the paragraph, pause freezes position, obsolete speech cannot move it, and CSS Highlight/fallback rectangles preserve authored markup. No-boundary voices retain paragraph emphasis.",
+      "findings": []
+    },
+    {
+      "path": "docs/superpowers/specs/2026-11-05-site-refinement-design.md",
+      "sha256": "1a59c3789f0e3d158e621fa806de55230caed3e98cd051d1da4769fa554265d0",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-11-05",
+      "fullContentRead": true,
+      "notes": "Full-content review of the current reader and discovery specification/plan: responsive Back to top ownership, word and paragraph emphasis, local voice filtering, interview tools, search category context, catalog-backed badge routing, rendered publication checks, scoped information repairs and evidence limits. The later user authorization to commit, push and merge is retained.",
+      "findings": []
+    },
+    {
       "path": "docs/topic-importance.md",
       "sha256": "e747ee5984a850cb2b4e5f99bc65ed3069a2be29e1ba869e8050b486bf108aae",
       "status": "reviewed",
@@ -10265,22 +10340,22 @@
     },
     {
       "path": "docs/verification-gates.md",
-      "sha256": "0e03d1577e2813f0076a0300a89487942af02b94a2109fada98d0acfb3d75812",
+      "sha256": "cba55ee3f4e2467f850005baf6875fa743cf494023257209e976601eaa5aaa07",
       "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-05",
+      "reviewer": "buffy",
+      "reviewDate": "2026-11-11",
       "fullContentRead": false,
-      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Disk-derived file/line count and table formatting restamped by their owning tools.",
+      "notes": "Restamp-only record on 2026-11-11: a canonical writer (read_time.py / check_counts.py / check_alignment.py) updated a claim in this file after an adjacent chapter edit. No prose or technical content changed here.",
       "findings": []
     },
     {
       "path": "lanes/INDEX.md",
-      "sha256": "f74a624929c373623c2fb6798c6cd063d863644266ba3d63ff66fb7ff3a865cf",
+      "sha256": "3ee25866f6f1442f6ad3d3f71da55a5d283e89ede7a1714bbab888b4a5404b8c",
       "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-05",
+      "reviewer": "buffy",
+      "reviewDate": "2026-11-11",
       "fullContentRead": false,
-      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged. Disk-derived file/line count and table formatting restamped by their owning tools. Added a concise explanation of repository-only SDE guides and linked the shared on-site study paths.",
+      "notes": "Restamp-only record on 2026-11-11: a canonical writer (read_time.py / check_counts.py / check_alignment.py) updated a claim in this file after an adjacent chapter edit. No prose or technical content changed here.",
       "findings": []
     },
     {
@@ -10515,6 +10590,36 @@
       "findings": []
     },
     {
+      "path": "projects/docita/25-launch-to-growth.md",
+      "sha256": "93b1901c0b7bb74696388dd72f51fd5b4dc7ea3da6501d791350b6dac963de25",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-10-28",
+      "fullContentRead": true,
+      "notes": "Reviewed workbook navigation addition against exact previously reviewed full content at HEAD; no mechanism or operating-state change.",
+      "findings": []
+    },
+    {
+      "path": "projects/docita/26-monthly-operating-costs.md",
+      "sha256": "18b5546fbaf125df178e39c35b35802ca32a5855a73f7e3ebbe26405c49eaaf6",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-10-28",
+      "fullContentRead": true,
+      "notes": "Full-content read by cost reviewer and root; exact example720/744assertions executed, narrative cashflow/retention/sensitivity calculations checked. All7old720totals preserved; allhourlymeters scale, monthlymeterbasis explicitly heldconstant. Payer/revenue/processedvalue, backupcostfanout, accountallowance, cohorts and liquidity boundaries reviewed. Existing officialrates rechecked28October.",
+      "findings": []
+    },
+    {
+      "path": "projects/docita/27-operating-evidence-workbook.md",
+      "sha256": "44e4685970d22df5da4f431b7e64ce73871ed75d7b8fd7c355969830cbb347a0",
+      "status": "reviewed",
+      "reviewer": "root + full-content evidence reviewers",
+      "reviewDate": "2026-10-29",
+      "fullContentRead": true,
+      "notes": "Full-content review against current source and sanitized final checks: published646source and49file implementation;4394API/2015other units,21capacity/213standards,15SQLfixture,508E2E/63suites in four local CI-layout shards; lint/types/build/Knip/runtime/internalCF scope. Retained original DB-name guard failure and later OOM in same incomplete invocation, corrected target/4GiB/shards and stoppedownedPG. Intentional exact-state hold exemption is not active drain; optional absent baseline skip is not required performance-release evidence. No provider, production capacity/resource, full tenant-policy or restore conclusion inferred.",
+      "findings": []
+    },
+    {
       "path": "projects/docita/INDEX.md",
       "sha256": "453cd7e124f76fba675d64cd9660a37013799c6d1b1bc01be78f7e7704298343",
       "status": "reviewed",
@@ -10571,96 +10676,6 @@
       "reviewDate": "2026-10-26",
       "fullContentRead": true,
       "notes": "Jekyll route/frontmatter includes the canonical generated search; no second implementation.",
-      "findings": []
-    },
-    {
-      "path": "projects/docita/25-launch-to-growth.md",
-      "sha256": "93b1901c0b7bb74696388dd72f51fd5b4dc7ea3da6501d791350b6dac963de25",
-      "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-10-28",
-      "fullContentRead": true,
-      "notes": "Reviewed workbook navigation addition against exact previously reviewed full content at HEAD; no mechanism or operating-state change.",
-      "findings": []
-    },
-    {
-      "path": "projects/docita/26-monthly-operating-costs.md",
-      "sha256": "18b5546fbaf125df178e39c35b35802ca32a5855a73f7e3ebbe26405c49eaaf6",
-      "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-10-28",
-      "fullContentRead": true,
-      "notes": "Full-content read by cost reviewer and root; exact example720/744assertions executed, narrative cashflow/retention/sensitivity calculations checked. All7old720totals preserved; allhourlymeters scale, monthlymeterbasis explicitly heldconstant. Payer/revenue/processedvalue, backupcostfanout, accountallowance, cohorts and liquidity boundaries reviewed. Existing officialrates rechecked28October.",
-      "findings": []
-    },
-    {
-      "path": "projects/docita/27-operating-evidence-workbook.md",
-      "sha256": "44e4685970d22df5da4f431b7e64ce73871ed75d7b8fd7c355969830cbb347a0",
-      "status": "reviewed",
-      "reviewer": "root + full-content evidence reviewers",
-      "reviewDate": "2026-10-29",
-      "fullContentRead": true,
-      "notes": "Full-content review against current source and sanitized final checks: published646source and49file implementation;4394API/2015other units,21capacity/213standards,15SQLfixture,508E2E/63suites in four local CI-layout shards; lint/types/build/Knip/runtime/internalCF scope. Retained original DB-name guard failure and later OOM in same incomplete invocation, corrected target/4GiB/shards and stoppedownedPG. Intentional exact-state hold exemption is not active drain; optional absent baseline skip is not required performance-release evidence. No provider, production capacity/resource, full tenant-policy or restore conclusion inferred.",
-      "findings": []
-    },
-    {
-      "path": "docs/superpowers/specs/2026-11-02-read-aloud-controls-design.md",
-      "sha256": "7f25aa1eebfb4d24cd2d76cecaa81d72bef003162595c0ce64ec33e6893c964d",
-      "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-02",
-      "fullContentRead": true,
-      "notes": "Reviewed the revised voice shortlist and retained reader behavior: Samantha, Ava, Allison, Alex, and Victoria are preferred when browser-provided; missing names are skipped and English voices fill remaining slots in stable order. Confirmed the voice key version reset, English-only cap, wide article measure, visible paragraph cue, dock alignment, and speech-state boundaries.",
-      "findings": []
-    },
-    {
-      "path": "docs/superpowers/plans/2026-11-02-read-aloud-controls.md",
-      "sha256": "9f8c2da0b2b98717c67da75f12f407a22e0fa02def5f2b1658a2620ca83b887a",
-      "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-02",
-      "fullContentRead": true,
-      "notes": "Full-content review against the approved spec and current files: deterministic voice scoring, removal of the 62ch caps, action grouping, and stale dock override removal. Repo spelling conventions are followed; no new service or runtime dependency is planned.",
-      "findings": []
-    },
-    {
-      "path": "docs/superpowers/specs/2026-11-05-listening-experience-design.md",
-      "sha256": "8921f085bb814c8ebdc008ebd80b180a4303a6effcbcbe3357188e1cfc1be3fb",
-      "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-05",
-      "fullContentRead": true,
-      "notes": "Full-content review including the spoken-word addition: the original local-voice and playback design remains coherent. Word callbacks use retained chunk offsets and exact source character ranges; current-word contrast complements the paragraph, pause freezes position, obsolete speech cannot move it, and CSS Highlight/fallback rectangles preserve authored markup. No-boundary voices retain paragraph emphasis.",
-      "findings": []
-    },
-    {
-      "path": "docs/superpowers/plans/2026-11-05-listening-experience.md",
-      "sha256": "4fc99ce9e8cac575a6ab5f22377dab277463a8cc7d5c3d55ad565c3efb2015f5",
-      "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-05",
-      "fullContentRead": true,
-      "notes": "Full-content review of the completed plan and word-tracking follow-up: engine tests and browser checks were observed failing before their relevant implementation and then passing. Task 4 covers source normalization, inline/later-chunk offsets, lifecycle cleanup, fallback reflow, native Samantha smoke, screenshots and final verification. Existing local speech, speed, Wide and no-deploy boundaries remain intact. Final-pass review updates the initial local-only boundary to reflect the explicit later request to commit, push, and merge after verification; the implementation and test scope are unchanged.",
-      "findings": []
-    },
-    {
-      "path": "docs/superpowers/plans/2026-11-05-site-refinement.md",
-      "sha256": "430a9664fcf75782cd61380ff9901a45f5d2fc2a084712fcca12ab8fbfd71cc3",
-      "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-05",
-      "fullContentRead": true,
-      "notes": "Full-content review of the current reader and discovery specification/plan: responsive Back to top ownership, word and paragraph emphasis, local voice filtering, interview tools, search category context, catalog-backed badge routing, rendered publication checks, scoped information repairs and evidence limits. The later user authorization to commit, push and merge is retained.",
-      "findings": []
-    },
-    {
-      "path": "docs/superpowers/specs/2026-11-05-site-refinement-design.md",
-      "sha256": "1a59c3789f0e3d158e621fa806de55230caed3e98cd051d1da4769fa554265d0",
-      "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-05",
-      "fullContentRead": true,
-      "notes": "Full-content review of the current reader and discovery specification/plan: responsive Back to top ownership, word and paragraph emphasis, local voice filtering, interview tools, search category context, catalog-backed badge routing, rendered publication checks, scoped information repairs and evidence limits. The later user authorization to commit, push and merge is retained.",
       "findings": []
     }
   ]

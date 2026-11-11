@@ -166,7 +166,7 @@ Source: [Context API](10.3.2.05-context-api.md)
 
 **Q:** Why should locale-loading effects ignore obsolete imports?
 
-**A:** When the selected locale changes, an earlier dynamic import can resolve later and overwrite the newest translations. Track the requested locale or ignore completion from a superseded request; dynamic import itself is not aborted by effect cleanup. See [useEffect async result ownership](10.3.2.02-useeffect.md#protect-asynchronous-result-ownership).
+**A:** When the selected locale changes, an earlier dynamic import can resolve later and overwrite the newest translations. Track the requested locale or ignore completion from a superseded request; dynamic import itself is not aborted by effect cleanup. See [useEffect async result ownership](10.3.2.02-useeffect.md#2-protect-asynchronous-result-ownership).
 
 **Q:** What can memoizing a provider object actually prevent?
 

@@ -1,6 +1,6 @@
 # Coding Patterns — Index
 
-> **Study time:** ≈ 5 h 8 m of reading (27 files, ~11 min average).
+> **Study time:** ≈ 5 h 9 m of reading (27 files, ~11 min average).
 > **27 files across 5 categories.** Essential coding patterns for technical interviews from sliding window and two pointers to dynamic programming, advanced data structures (monotonic stack, segment tree, bit manipulation), number theory & combinatorics, and streaming algorithms (reservoir sampling).
 
 [![Files](https://img.shields.io/badge/files-27-blue)](../../INDEX.md)
@@ -47,7 +47,7 @@ Use these links after choosing a category pass above. The signals narrow the can
 | 08 | [Trie](02-graphs-trees-grids/70.2.2.05-trie.md) | Graphs | "Prefix search, autocomplete, word dictionary" | Essential | Important | 17 min |
 | 09 | [Union Find](02-graphs-trees-grids/70.2.2.03-union-find.md) | Graphs | "Connected components, redundant connections" | Optional | Specialized | 14 min |
 | 10 | [Topological Sort](02-graphs-trees-grids/70.2.2.04-topological-sort.md) | Graphs | "Dependency resolution, course schedule" | Essential | Important | 14 min |
-| 11 | [Intervals](01-linear-structures/70.2.1.05-intervals.md) | Linear | "Merge intervals, meeting rooms, overlapping" | Essential | Important | 11 min |
+| 11 | [Intervals](01-linear-structures/70.2.1.05-intervals.md) | Linear | "Merge intervals, meeting rooms, overlapping" | Essential | Important | 12 min |
 | 12 | [Greedy & Prefix Sum](01-linear-structures/70.2.1.06-greedy-prefix-sum.md) | Linear | "Jump game, partition, range sum queries" | Essential | Important | 12 min |
 
 ---

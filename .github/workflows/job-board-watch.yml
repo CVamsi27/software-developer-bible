@@ -1,8 +1,11 @@
 # Weekly job-board watch.
 #
 # Runs scripts/job_board_watch.py against the public Greenhouse / Ashby /
-# Personio job-board APIs configured in its WATCHES list (or a --config
-# JSON). Two signal classes:
+# Personio job-board APIs. Watch targets are personal application data, so
+# they are read from the JOB_WATCH_CONFIG repository secret (a JSON list in
+# the private workspace's shape) instead of being committed to this repo.
+# With no secret the run reports that nothing is watched and exits 0.
+# Two signal classes:
 #   REOPEN - a watched dead posting title is listed again (apply fast)
 #   GONE   - an applied-to posting vanished while the tracker still says
 #            Applied/Evaluated (ghosting signal: bump the named contact)
@@ -33,9 +36,16 @@ jobs:
 
       - name: Probe watched job boards
         id: watch
+        env:
+          JOB_WATCH_CONFIG: ${{ secrets.JOB_WATCH_CONFIG }}
         run: |
           set +e
-          python3 scripts/job_board_watch.py | tee watch-output.txt
+          if [ -n "$JOB_WATCH_CONFIG" ]; then
+            printf '%s' "$JOB_WATCH_CONFIG" > job-watch-config.json
+            python3 scripts/job_board_watch.py --config job-watch-config.json | tee watch-output.txt
+          else
+            python3 scripts/job_board_watch.py | tee watch-output.txt
+          fi
           echo "exitcode=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
           signals=$(grep -cE '^  (REOPEN|GONE)' watch-output.txt || true)
           echo "signals=$signals" >> "$GITHUB_OUTPUT"

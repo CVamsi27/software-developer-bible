@@ -3,21 +3,27 @@
 
 Watches public job-board APIs for two signal classes:
 
-1. REOPEN  - a previously-dead posting title reappears (e.g. SumUp SuperApp
-   FS, which 410'd on 2026-09-13 while the program stayed alive).
+1. REOPEN  - a previously-dead posting title reappears (the role or team came
+   back after the posting itself disappeared while the program stayed alive).
 2. GONE    - a posting the candidate APPLIED to has disappeared from the
    board while the tracker still says Applied/Evaluated (ghosting signal:
    bump the named contact per the playbook day-7 rule, or mark Dead).
 
+Targets are personal application data, so they never live in this public
+repository. Supply them with --config (or JOB_WATCH_CONFIG): a JSON list of
+{"board": "greenhouse:acme", "reopen": ["Exact Posting Title"], "gone": []}
+entries kept in the private canonical workspace. With no config the script
+reports that it has nothing to watch and exits 0.
+
 Exit codes: 0 = nothing actionable, 1 = at least one REOPEN/GONE signal
-(CI treats 1 as "open/update the watch issue"). Adding a target costs one
-entry in WATCHES (or a --config JSON file with the same shape); no script
-edits needed. Boards used are public JSON/XML endpoints probed with a
-browser fingerprint - the same access a browser has.
+(CI treats 1 as "open/update the watch issue"). Boards used are public
+JSON/XML endpoints probed with a browser fingerprint - the same access a
+browser has.
 """
 
 import argparse
 import json
+import os
 import sys
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -32,21 +38,10 @@ UA = {
     "Accept": "*/*",
 }
 
-WATCHES = [
-    {"board": "greenhouse:sumup", "reopen": ["Full-Stack Engineer, SuperApp"], "gone": []},
-    {"board": "ashby:n8n", "reopen": [], "gone": ["Senior Product Engineer (TS/NodeJS/Vue)"]},
-    {"board": "ashby:cosuno", "reopen": [], "gone": ["Senior Full Stack Developer (TypeScript)"]},
-    {
-        "board": "personio:leaseteq-ag",
-        "reopen": [],
-        "gone": ["Senior Full Stack Engineer - TypeScript / Next.js"],
-    },
-    {
-        "board": "personio:snke",
-        "reopen": [],
-        "gone": ["Senior Software Engineer (Full-Stack) - Healthcare Applications"],
-    },
-]
+# Deliberately empty: watch targets name the postings the candidate applied to,
+# which is personal data kept in the private canonical workspace. Load them
+# through --config (or JOB_WATCH_CONFIG) rather than committing them here.
+WATCHES = []
 
 
 class BoardFetchError(Exception):
@@ -125,10 +120,19 @@ def main() -> int:
     parser.add_argument("--config", help="JSON file with a WATCHES-shaped list; overrides the built-ins")
     args = parser.parse_args()
 
-    watches = WATCHES
-    if args.config:
-        with open(args.config, encoding="utf-8") as fh:
+    watches = []
+    config_path = args.config or os.environ.get("JOB_WATCH_CONFIG")
+    if config_path:
+        with open(config_path, encoding="utf-8") as fh:
             watches = json.load(fh)
+
+    if not watches:
+        print(
+            "No watch targets configured. Pass --config <json> or set "
+            "JOB_WATCH_CONFIG; targets are personal data kept in the private "
+            "workspace, never this repository."
+        )
+        return 0
 
     signals, oks = evaluate(watches)
     stamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")

@@ -1,6 +1,6 @@
 # Backend Stack
 
-> **Study time:** ≈ 24 h 5 m of reading (181 files, ~8 min average).
+> **Study time:** ≈ 24 h 6 m of reading (181 files, ~8 min average).
 > **Node.js, NestJS, REST, GraphQL, Database, Auth & Security, Microservices, AI Engineering, Java** — shared by both the [indian-sde-faang lane (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
 > 181 files across 11 sub-stacks, organized by what you need to know in what order.

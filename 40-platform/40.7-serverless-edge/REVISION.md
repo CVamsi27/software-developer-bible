@@ -198,7 +198,7 @@ Source: [Fly.io Deployment Patterns](40.7.09-flyio-deployment.md)
 
 Source: [Vite SPA on Cloudflare Workers](40.7.10-vite-spa-cloudflare-workers.md)
 
-**Q:** Why must an API proxy request run before a SPA fallback?
+**Q:** Why must an API proxy request run before an SPA fallback?
 
 **A:** Otherwise an unmatched API request can receive index.html and appear to succeed with the wrong content. Route API paths explicitly and reserve HTML fallback for navigation.
 

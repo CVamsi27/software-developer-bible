@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "b8f7178589c05ed1ff29712d9b86943ef47f605bbe9ec994fc179a6c5b54f9ed",
+ "corpus_digest": "fdae9ce3cceca8d2f254f525390b0a8969c8a77057c6f1225f5782e12d1b78cb",
  "totals": {
   "chapters": 678,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5314
+  "read_minutes": 5318
  },
  "chapters": [
   {
@@ -136,7 +136,7 @@
     "concept",
     "runtime"
    ],
-   "m": 7
+   "m": 9
   },
   {
    "p": "10-frontend/10.1-javascript/01-execution-and-scope/REVISION.html",
@@ -1846,7 +1846,7 @@
    "g": [
     "concept"
    ],
-   "m": 18
+   "m": 19
   },
   {
    "p": "20-backend/20.12-ai-engineering/20.12.05-serving-models-hosted-vs-self-hosted.html",
@@ -6929,7 +6929,7 @@
     "concept",
     "practice"
    ],
-   "m": 11
+   "m": 12
   },
   {
    "p": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.06-greedy-prefix-sum.html",

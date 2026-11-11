@@ -6047,7 +6047,7 @@
     },
     {
       "path": "10-frontend/10.8-mobile/10.8.07-interview-questions.md",
-      "sha256": "80758c88a942379c23829ec8fc62b1bdca07ef94e80ea384e0ad95544fe10e50",
+      "sha256": "0c0f16f4246301521665e686cb2127a544e96c47e9739ddf11772ece460a87b9",
       "genre": "interview-bank",
       "status": "reviewed",
       "structure": {
@@ -6071,12 +6071,13 @@
       },
       "review": {
         "path": "10-frontend/10.8-mobile/10.8.07-interview-questions.md",
-        "sha256": "80758c88a942379c23829ec8fc62b1bdca07ef94e80ea384e0ad95544fe10e50",
+        "sha256": "0c0f16f4246301521665e686cb2127a544e96c47e9739ddf11772ece460a87b9",
         "genre": "interview",
         "status": "reviewed",
-        "notes": "Full interview bank reviewed across split output: changed constraints around platform selection, JS/native architecture, storage, push, release/OTA and multi-OS deep links. Source expectations distinguish demonstrated mobile experience from adjacent web knowledge.",
+        "notes": "Mobile bank: renumbered the 31 questions continuously (1-31) instead of restarting at Q1 in each difficulty section, so a citation names one question",
         "findings": [],
-        "reviewer": "frontend"
+        "reviewer": "frontend",
+        "reviewDate": "2026-11-12"
       }
     },
     {

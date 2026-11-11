@@ -414,7 +414,7 @@
     },
     {
       "path": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md",
-      "sha256": "1e268468b8610df4f73aac42b4627ec0957289c9f3db433481b9956c1e374aba",
+      "sha256": "758f21feaabead860fb4b0f82798d5967d49c027f047ed72983512595fa5a80d",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -430,25 +430,25 @@
           "See Also",
           "References & Learn More"
         ],
-        "code_fences": 7,
+        "code_fences": 8,
         "revision_questions": 0,
         "has_summary": true,
         "has_first_principles": true
       },
       "review": {
         "path": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md",
-        "sha256": "1e268468b8610df4f73aac42b4627ec0957289c9f3db433481b9956c1e374aba",
+        "sha256": "758f21feaabead860fb4b0f82798d5967d49c027f047ed72983512595fa5a80d",
         "status": "reviewed",
         "reviewer": "buffy",
-        "reviewDate": "2026-11-11",
+        "reviewDate": "2026-11-12",
         "fullContentRead": true,
-        "notes": "Full-content review on 2026-11-11. Deepened \"Hidden Classes (Maps)\" from a conclusion-only paragraph into a taught mechanism: what a Map stores, the transition tree with both property orders, why a fixed slot offset replaces name lookup, the pointer-compression 4/8-byte caveat, out-of-object and dictionary representations, the delete nuance, and version-specific diagnostics. Sections 3-5 unchanged; section 3 still owns inline-cache detail and section 5 the performance advice.",
+        "notes": "V8: section 3 now shows the inline cache transitioning from one shape to two, so the polymorphic cost it names is visible instead of asserted",
         "findings": []
       }
     },
     {
       "path": "10-frontend/10.1-javascript/01-execution-and-scope/INDEX.md",
-      "sha256": "25cb12bb8d5c4bbb157d1d6eccf451fe1344b60048759885d6d89499c17d2700",
+      "sha256": "18acefc60fbbdf38fc86d0575190eb6a46e2f87d4f4345bee0783c7fd1051805",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -466,13 +466,13 @@
       },
       "review": {
         "path": "10-frontend/10.1-javascript/01-execution-and-scope/INDEX.md",
-        "sha256": "25cb12bb8d5c4bbb157d1d6eccf451fe1344b60048759885d6d89499c17d2700",
+        "sha256": "18acefc60fbbdf38fc86d0575190eb6a46e2f87d4f4345bee0783c7fd1051805",
         "genre": "index",
         "status": "reviewed",
-        "notes": "Restamp-only record on 2026-11-11: read_time.py/check_counts.py, the owners of those claims, updated a read-time badge or file count after the V8 chapter deepening. No prose, structure or technical content changed in this file.",
+        "notes": "V8: section 3 now shows the inline cache transitioning from one shape to two, so the polymorphic cost it names is visible instead of asserted",
         "findings": [],
         "reviewer": "buffy",
-        "reviewDate": "2026-11-11",
+        "reviewDate": "2026-11-12",
         "fullContentRead": false
       }
     },
@@ -1801,7 +1801,7 @@
     },
     {
       "path": "10-frontend/10.1-javascript/INDEX.md",
-      "sha256": "d5209c00c0b6fbd6c9159658cc94247d36fa5aa8b5565924483fdc55a847b2b1",
+      "sha256": "2de835df579d850a3764c143ac2d216e75f50850eeb62c24516b3ea1604f5e6e",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -1825,10 +1825,10 @@
       },
       "review": {
         "path": "10-frontend/10.1-javascript/INDEX.md",
-        "sha256": "d5209c00c0b6fbd6c9159658cc94247d36fa5aa8b5565924483fdc55a847b2b1",
+        "sha256": "2de835df579d850a3764c143ac2d216e75f50850eeb62c24516b3ea1604f5e6e",
         "genre": "index",
         "status": "reviewed",
-        "notes": "Restamp-only record on 2026-11-11: read_time.py/check_counts.py, the owners of those claims, updated a read-time badge or file count after the V8 chapter deepening. No prose, structure or technical content changed in this file.",
+        "notes": "V8: section 3 now shows the inline cache transitioning from one shape to two, so the polymorphic cost it names is visible instead of asserted",
         "findings": [],
         "reviewer": "buffy",
         "metadataReview": {
@@ -1837,7 +1837,7 @@
           "reviewer": "root",
           "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
         },
-        "reviewDate": "2026-11-11",
+        "reviewDate": "2026-11-12",
         "fullContentRead": false
       }
     },
@@ -6140,7 +6140,7 @@
     },
     {
       "path": "10-frontend/INDEX.md",
-      "sha256": "f6be093eb1ab6058d3518321fd66efa25beb767bf5422f1628788263469bc900",
+      "sha256": "055dd8bf0c948c45d1e49a841cdf380989cae164752d2dbd10264ce8ec186871",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -6162,10 +6162,10 @@
       },
       "review": {
         "path": "10-frontend/INDEX.md",
-        "sha256": "f6be093eb1ab6058d3518321fd66efa25beb767bf5422f1628788263469bc900",
+        "sha256": "055dd8bf0c948c45d1e49a841cdf380989cae164752d2dbd10264ce8ec186871",
         "genre": "index",
         "status": "reviewed",
-        "notes": "Restamp-only record on 2026-11-11: read_time.py/check_counts.py, the owners of those claims, updated a read-time badge or file count after the V8 chapter deepening. No prose, structure or technical content changed in this file.",
+        "notes": "V8: section 3 now shows the inline cache transitioning from one shape to two, so the polymorphic cost it names is visible instead of asserted",
         "findings": [],
         "reviewer": "buffy",
         "metadataReview": {
@@ -6174,7 +6174,7 @@
           "reviewer": "root",
           "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
         },
-        "reviewDate": "2026-11-11",
+        "reviewDate": "2026-11-12",
         "fullContentRead": false
       }
     },
@@ -30747,7 +30747,7 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "e59d9bcc4ce8b2eacf1e3a3668ea8d5b8ae7dba0894c963680fd6762c400a0e2",
+      "sha256": "4fc093c15066a2964420df26e3112c87513d215735367d00f6f8ef28cb838c0b",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -30765,12 +30765,12 @@
       },
       "review": {
         "path": "INDEX.md",
-        "sha256": "e59d9bcc4ce8b2eacf1e3a3668ea8d5b8ae7dba0894c963680fd6762c400a0e2",
+        "sha256": "4fc093c15066a2964420df26e3112c87513d215735367d00f6f8ef28cb838c0b",
         "status": "reviewed",
         "reviewer": "buffy",
-        "reviewDate": "2026-11-11",
+        "reviewDate": "2026-11-12",
         "fullContentRead": false,
-        "notes": "Restamp-only record on 2026-11-11: a canonical writer (read_time.py / check_counts.py / check_alignment.py) updated a claim in this file after an adjacent chapter edit. No prose or technical content changed here.",
+        "notes": "V8: section 3 now shows the inline cache transitioning from one shape to two, so the polymorphic cost it names is visible instead of asserted",
         "findings": []
       }
     },
@@ -31296,7 +31296,7 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "48f76f88290a79d250b79053756493145a98de1c65d503627ba42d11271a6421",
+      "sha256": "a5d731c5cb07180f80aabf8565e8645178bad27188e0773c86fdeae66fa00880",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31314,12 +31314,12 @@
       },
       "review": {
         "path": "docs/api-contract.md",
-        "sha256": "48f76f88290a79d250b79053756493145a98de1c65d503627ba42d11271a6421",
+        "sha256": "a5d731c5cb07180f80aabf8565e8645178bad27188e0773c86fdeae66fa00880",
         "status": "reviewed",
         "reviewer": "buffy",
-        "reviewDate": "2026-11-11",
+        "reviewDate": "2026-11-12",
         "fullContentRead": false,
-        "notes": "Restamp-only record on 2026-11-11: a canonical writer (read_time.py / check_counts.py / check_alignment.py) updated a claim in this file after an adjacent chapter edit. No prose or technical content changed here.",
+        "notes": "V8: section 3 now shows the inline cache transitioning from one shape to two, so the polymorphic cost it names is visible instead of asserted",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",

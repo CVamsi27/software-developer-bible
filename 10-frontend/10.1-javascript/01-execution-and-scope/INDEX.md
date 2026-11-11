@@ -1,6 +1,6 @@
 # Execution & Scope — JavaScript
 
-> **Study time:** ≈ 1 h of reading (8 files, ~8 min average).
+> **Study time:** ≈ 1 h 2 m of reading (8 files, ~8 min average).
 > Follow a JavaScript evaluation from its active call to the names it can read, then see how declaration timing and closures change what remains accessible.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](#files)
@@ -19,7 +19,7 @@
 | 04 | [Hoisting](10.1.1.04-hoisting.md) | Declaration setup, temporal dead zone, function and resource declarations | Essential | Foundational | 6 min |
 | 05 | [Lexical Environment](10.1.1.05-lexical-environment.md) | One lookup trace, the record roles behind names, global and module boundaries | Essential | Foundational | 9 min |
 | 06 | [Closures](10.1.1.06-closures.md) | Lexical scoping, closure lifecycle, module pattern, memory implications | Essential | Foundational | 8 min |
-| 07 | [V8 Execution and Optimization](10.1.1.07-v8-execution-and-optimization.md) | Interpreter and compiler tiers, feedback, inline caches, object shapes, and deoptimization | Important | Specialized | 9 min |
+| 07 | [V8 Execution and Optimization](10.1.1.07-v8-execution-and-optimization.md) | Interpreter and compiler tiers, feedback, inline caches, object shapes, and deoptimization | Important | Specialized | 11 min |
 
 ---
 

@@ -4990,36 +4990,36 @@
     },
     {
       "path": "30-architecture/30.1-design-patterns/06-interview-prep/30.1.6.01-interview-questions.md",
-      "sha256": "d0e3125e3ba4992092e73b22206dfe7e9eca5436d7d5f7cfc29d0f398a738349",
+      "sha256": "06670889e9f45db1ad1dcce26c73d6ac84a222b66fe0e6f1a7cdfb52dc46b55d",
       "genre": "interview",
       "status": "reviewed",
-      "notes": "All50 authored questions/answers fully read: labels plus contracts, runtime/distributed boundaries, patterns not automatic SOLID/performance, examples require durable uniqueness/delivery/authorization/recovery.",
+      "notes": "Design-patterns bank: mechanism and failure boundary for eleven answers",
       "findings": [],
       "fullContentRead": true,
       "reviewer": "resume_portfolio",
-      "reviewDate": "2026-10-25"
+      "reviewDate": "2026-11-12"
     },
     {
       "path": "30-architecture/30.1-design-patterns/06-interview-prep/INDEX.md",
-      "sha256": "127d2b3f786a4fd7b574558e1acc0a3fbe059ebe54acf289ec8b47177d0edf16",
+      "sha256": "fa37d9540f11ed71a672a9caa70959ffd8f368c29daf2e441befba892e5cf8b6",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full read: four practice passes, mechanism-based answers, separate category revision, qualified candidate source pointers and no readiness guarantee.",
+      "notes": "Design-patterns bank: eleven one-line definitions now name the mechanism and the failure boundary (adapter translation cost, builder invariant, facade ordering, proxy obligations, strategy substitution, chain path failures, template ordering, command contracts, composite totality, iterator mutation)",
       "findings": [],
       "fullContentRead": true,
       "reviewer": "resume_portfolio",
-      "reviewDate": "2026-10-25"
+      "reviewDate": "2026-11-12"
     },
     {
       "path": "30-architecture/30.1-design-patterns/INDEX.md",
-      "sha256": "7772e679b710e6a80edcf6e176f955a22f3d435c579480f16b13449d2f224c49",
+      "sha256": "3ff9e8b7760a6a661f1b2fefcbcf0427fec8dc11cc44b9b067b784ade6fb27f1",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full read: GoF23 versus additional Module/NullObject explicit, creation/structure/behavior plus domain/UI coverage, single-home learning and separate revision/interview order; disk counts root-owned.",
+      "notes": "Design-patterns bank: eleven one-line definitions now name the mechanism and the failure boundary (adapter translation cost, builder invariant, facade ordering, proxy obligations, strategy substitution, chain path failures, template ordering, command contracts, composite totality, iterator mutation)",
       "findings": [],
       "fullContentRead": true,
       "reviewer": "resume_portfolio",
-      "reviewDate": "2026-10-25"
+      "reviewDate": "2026-11-12"
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.md",
@@ -6014,14 +6014,14 @@
     },
     {
       "path": "30-architecture/INDEX.md",
-      "sha256": "7322898f801409d8964e21b22b91b98417040449ed65e7fc94f362b055db9827",
+      "sha256": "334741ac154ec12b3137df1f5437ea366e790bff6906b177e8c95a99126043ae",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
+      "notes": "Design-patterns bank: eleven one-line definitions now name the mechanism and the failure boundary (adapter translation cost, builder invariant, facade ordering, proxy obligations, strategy substitution, chain path failures, template ordering, command contracts, composite totality, iterator mutation)",
       "findings": [],
       "fullContentRead": false,
       "reviewer": "root",
-      "reviewDate": "2026-11-05"
+      "reviewDate": "2026-11-12"
     },
     {
       "path": "40-platform/40.1-docker/40.1.01-images-containers.md",
@@ -9822,12 +9822,12 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "ed08cc698a9ee4d48cbf95ed1bac8a0f6d0cf35c405433f6193bc31210a54270",
+      "sha256": "d3b20f2720f4190eaf3360ec5f05eaf4945c9f6d0e7536f13c4fbd97d234dc49",
       "status": "reviewed",
       "reviewer": "buffy",
       "reviewDate": "2026-11-12",
       "fullContentRead": false,
-      "notes": "JavaScript bank: Q29 and Q34 now trace the mechanism (lexical resolution versus call-time binding; nested unary steps producing a reusable partial) instead of naming the rule",
+      "notes": "Design-patterns bank: eleven one-line definitions now name the mechanism and the failure boundary (adapter translation cost, builder invariant, facade ordering, proxy obligations, strategy substitution, chain path failures, template ordering, command contracts, composite totality, iterator mutation)",
       "findings": []
     },
     {
@@ -9997,12 +9997,12 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "79c5b0aef964d63965ad103a78caef98378e36e2c920682e02da3075e82d1b94",
+      "sha256": "91d074d6d4c394751a83673b9aa9dec193287fbbaf9f69ce04a2745b0c15a5a3",
       "status": "reviewed",
       "reviewer": "buffy",
       "reviewDate": "2026-11-12",
       "fullContentRead": false,
-      "notes": "JavaScript bank: Q29 and Q34 now trace the mechanism (lexical resolution versus call-time binding; nested unary steps producing a reusable partial) instead of naming the rule",
+      "notes": "Design-patterns bank: eleven one-line definitions now name the mechanism and the failure boundary (adapter translation cost, builder invariant, facade ordering, proxy obligations, strategy substitution, chain path failures, template ordering, command contracts, composite totality, iterator mutation)",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",

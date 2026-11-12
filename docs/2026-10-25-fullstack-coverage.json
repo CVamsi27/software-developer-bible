@@ -794,7 +794,7 @@
     },
     {
       "path": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.04-error-handling.md",
-      "sha256": "0145f493d916e1803714e1ab42db68eaa61125080ca1a5662b095567348a0657",
+      "sha256": "3af8661ab50a1549e43f3963ded93cd337f6bbb5da78765e8063089ecef6ab94",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -818,12 +818,14 @@
       },
       "review": {
         "path": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.04-error-handling.md",
-        "sha256": "0145f493d916e1803714e1ab42db68eaa61125080ca1a5662b095567348a0657",
+        "sha256": "3af8661ab50a1549e43f3963ded93cd337f6bbb5da78765e8063089ecef6ab94",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review, followed by complete changed-content reread. Removed unsafe duplicate generic retry (RED pre-fix cancellation reproduction made four attempts). New one-read GET propagates abort, JSON/schema/HTTP failures and delegates retry policy to canonical architecture chapter. Syntax Result returns unknown; explicit decoder validates shape. Clarified finally/process termination and monitored default crash policy. Actual parse/decoder/read scenarios and strict TypeScript extracted blocks pass. Checks: node /tmp/check-js-async-examples.cjs PASS (actual fenced-code extraction; microtask/self/CJS-ESM/read/schema/abort/pool/local-catch/search/listener cases). tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types node /tmp/js-async-examples-fixture.ts PASS (declared external paymentGateway dependency). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Metadata-only SHA refresh: exact prior reviewed hash reconstructed and verified; diff in /tmp/bible-frontend-metadata-attestation.json contains only generated read-time/study-time fields.",
+        "notes": "Frontend pass: the opening example was a bare try/catch using top-level await and return, which is neither valid nor runnable as printed and was not labeled a fragment. Wrapped it in async function loadOrders(), which node --check now accepts, and said where the two error classes are defined.",
         "findings": [],
-        "reviewer": "frontend"
+        "reviewer": "root",
+        "reviewDate": "2026-11-12",
+        "fullContentRead": true
       }
     },
     {
@@ -3043,7 +3045,7 @@
     },
     {
       "path": "10-frontend/10.3-react/02-core-hooks/10.3.2.03-usememo-usecallback.md",
-      "sha256": "0e1a0f6309b02066506b5236f674835f6a1ebf8859034c25ca6354a9d4e8d8ba",
+      "sha256": "d6b8e9c979620b70b09320505a5b7ea7421487ec6a1adba2580f844f7ff09ea8",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -3065,12 +3067,14 @@
       },
       "review": {
         "path": "10-frontend/10.3-react/02-core-hooks/10.3.2.03-usememo-usecallback.md",
-        "sha256": "0e1a0f6309b02066506b5236f674835f6a1ebf8859034c25ca6354a9d4e8d8ba",
+        "sha256": "d6b8e9c979620b70b09320505a5b7ea7421487ec6a1adba2580f844f7ff09ea8",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full content: cache versus correctness, dependency identity, immutable sorting, memoized consumer boundaries, measured tradeoffs, React Compiler and retained-memory costs.",
+        "notes": "Frontend pass: the chapter ended at References with no navigation footer at all, so a reader had no Previous/Back/Next path. Added the standard footer (useEffect back, useRef forward). Gate 21 could not catch this because it only validates labels that exist.",
         "findings": [],
-        "reviewer": "frontend"
+        "reviewer": "root",
+        "reviewDate": "2026-11-12",
+        "fullContentRead": true
       }
     },
     {
@@ -6146,7 +6150,7 @@
     },
     {
       "path": "10-frontend/INDEX.md",
-      "sha256": "75d67d150dfd1c7eb6c342f0d3347d5d4ff0304269c74de6c022443f72179ddd",
+      "sha256": "1f82805f8e60090823f53fdabb877bbdc1f68c8c0b6deb7124c5707e53fd801d",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -6168,12 +6172,12 @@
       },
       "review": {
         "path": "10-frontend/INDEX.md",
-        "sha256": "75d67d150dfd1c7eb6c342f0d3347d5d4ff0304269c74de6c022443f72179ddd",
+        "sha256": "1f82805f8e60090823f53fdabb877bbdc1f68c8c0b6deb7124c5707e53fd801d",
         "genre": "index",
         "status": "reviewed",
-        "notes": "wrap the field example's sibling JSX in one returned fragment so it compiles",
+        "notes": "Frontend pass: the sub-stack table column \"Files\" summed to 126 (learning chapters) while the badge and blurb said 149 (chapters plus revision companions) under the same word. Renamed the column to \"Chapters\" so both counts name their scope; the rest of the section map, pass structure and cross-references re-read and consistent.",
         "findings": [],
-        "reviewer": "buffy",
+        "reviewer": "root",
         "metadataReview": {
           "previousReviewedSha256": "d9be3585557aa35a4ea21326d76d961aa85644da00ae5f14dc629beef00bd691",
           "reviewDate": "2026-10-26",
@@ -6181,7 +6185,7 @@
           "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
         },
         "reviewDate": "2026-11-12",
-        "fullContentRead": false
+        "fullContentRead": true
       }
     },
     {

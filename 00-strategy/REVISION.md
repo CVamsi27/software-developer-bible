@@ -42,6 +42,22 @@ Source: [STAR Method: Complete Guide for Senior Engineers](00.03-star-method.md)
 
 **A:** The action should show your own decisions and contributions while crediting collaborators. The result should connect those actions to an outcome and include what you learned.
 
+## Find Startup and Product Roles Without a Stale Job List
+
+Source: [Find Startup and Product Roles Without a Stale Job List](00.05-find-startup-roles.md)
+
+**Q:** A role appears on an aggregator but not on the employer's careers page. What does that establish?
+
+**A:** It establishes that an intermediary published a listing, not that the employer still owns an open vacancy. Treat the employer's ATS as the authority for existence and state, and use the aggregator only as discovery. Ask the recruiter when the mismatch matters, and record the check date.
+
+**Q:** Why is a funding announcement insufficient evidence that a startup can fund a role through its expected hiring cycle?
+
+**A:** A funding announcement describes a transaction at one date, not current cash, obligations, runway or this team's budget. Ask about the role's funding source and expected duration, and separate the company-wide total from the conditions of the actual opening.
+
+**Q:** What makes an equity grant comparable across two startup offers?
+
+**A:** The grant needs a valuation, strike price, vesting schedule, cliff, preferred-share stack and liquidity assumptions before it can be compared. A percentage alone is not cash. Model the downside and the likely exit range, then compare the result with recurring salary and bonus.
+
 ## HR Round Strategy for Senior Full Stack Engineers
 
 Source: [HR Round Strategy for Senior Full Stack Engineers](00.04-hr-questions.md)
@@ -52,7 +68,7 @@ Source: [HR Round Strategy for Senior Full Stack Engineers](00.04-hr-questions.m
 
 ## Summary
 
-Prepare evidence of your contribution, explain the decision clearly, and compare employment terms using their actual conditions. Revisit the source when a claim, story or offer assumption cannot survive a follow-up.
+Prepare evidence of your contribution, explain the decision clearly, and compare employment terms using their actual conditions. Verify that an opening is current at its owner before investing in it. Revisit the source when a claim, story or offer assumption cannot survive a follow-up.
 
 ## See Also
 

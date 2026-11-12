@@ -212,7 +212,7 @@ Source: [Regular Expressions and Text Matching](10.1.6.06-regexp-and-text.md)
 
 **Q:** How does a backtracking matcher handle nested quantifiers such as `/(a+)+$/`, and what runtime consequence does it have?
 
-**A:** The engine tries every partition of the `a` run; on a non-matching input it explores all partitions, which takes time exponential in the input length. Measured on Node 24.22.1 with inputs of 16 / 20 / 22 / 24 characters the elapsed time grows from 0.6 ms to 215 ms before giving up. The defense is to avoid nested quantifiers over overlapping alternatives, bound the input length, and prefer a character class to an alternation of prefixes.
+**A:** The engine tries every partition of the `a` run; on a non-matching input it explores all partitions, which takes time exponential in the input length. Median of five runs on Node 24.22.2 with inputs of 16 / 20 / 22 / 24 characters, the elapsed time grows from 0.6 ms to 137.2 ms before giving up. The defense is to avoid nested quantifiers over overlapping alternatives, bound the input length, and prefer a character class to an alternation of prefixes.
 
 **Q:** Why does `'👍'.match(/./g)` return two matches while `'👍'.match(/./gu)` returns one?
 

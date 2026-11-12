@@ -12,7 +12,7 @@
         }
       ],
       "runtime": {
-        "node": "24.22.1"
+        "node": "24.22.2"
       },
       "arguments": [],
       "wrapper": {
@@ -45,7 +45,7 @@
         }
       ],
       "runtime": {
-        "node": "24.22.1",
+        "node": "24.22.2",
         "typescript": "5.9.3"
       },
       "arguments": [
@@ -85,7 +85,7 @@
         }
       ],
       "runtime": {
-        "node": "24.22.1"
+        "node": "24.22.2"
       },
       "arguments": [],
       "wrapper": {

@@ -79,7 +79,7 @@ jobs:
 
       - uses: actions/setup-node@v5
         with:
-          node-version: '24.22.1'
+          node-version: '24.22.2'
 
       - name: Install pinned curriculum compiler
         run: |

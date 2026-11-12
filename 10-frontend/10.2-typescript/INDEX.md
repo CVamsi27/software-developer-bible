@@ -47,7 +47,7 @@ How TypeScript represents types.
 | 01 | [Types vs Interfaces](01-foundations/10.2.1.01-types-vs-interfaces.md) | Type aliases, interfaces, declaration merging, when to use each, performance | Essential | Foundational | 6 min |
 | 02 | [keyof / typeof](01-foundations/10.2.1.02-keyof-typeof.md) | Key unions, value-derived types, indexed access, safe dynamic lookup, mapped-type filtering | Essential | Foundational | 6 min |
 | 03 | [Type Narrowing](01-foundations/10.2.1.03-type-narrowing.md) | typeof guards, instanceof, discriminated unions, type predicates, control flow analysis | Essential | Foundational | 6 min |
-| 04 | [tsconfig & Compiler Options](01-foundations/10.2.1.04-tsconfig-compiler-options.md) | strict flag family, moduleResolution bundler/node16/nodenext, isolatedModules, incremental/composite, skipLibCheck, annotated senior tsconfig | Essential | Foundational | 6 min |
+| 04 | [tsconfig & Compiler Options](01-foundations/10.2.1.04-tsconfig-compiler-options.md) | strict flag family, bundler and Node module modes, isolatedModules, incremental/composite, skipLibCheck, TypeScript 6/7 migration | Essential | Foundational | 6 min |
 
 ---
 
@@ -87,7 +87,7 @@ Senior-level TS — types as a design tool.
 | 14 | [Branded Types](04-advanced-patterns/10.2.4.02-branded-types.md) | Nominal-like branding, units, boundary validation, flavoring, discriminated unions | Important | Specialized | 7 min |
 | 15 | [Decorators](04-advanced-patterns/10.2.4.03-decorators.md) | Newer and legacy conventions, wrappers, accessors and metadata consumers | Important | Specialized | 7 min |
 | 16 | [Declaration Files](04-advanced-patterns/10.2.4.04-declaration-files.md) | .d.ts syntax, module augmentation, global types, asset declarations, triple-slash directives | Important | Specialized | 6 min |
-| 17 | [Advanced Patterns](04-advanced-patterns/10.2.4.05-advanced-patterns.md) | Class/parameter decorators, typed event emitter, advanced utility combinations | Important | Specialized | 6 min |
+| 17 | [Advanced Patterns](04-advanced-patterns/10.2.4.05-advanced-patterns.md) | Composed event/payload contracts, dispatch, cleanup and failure policy | Important | Specialized | 6 min |
 | 18 | [TypeScript Compiler Pipeline](04-advanced-patterns/10.2.4.06-typescript-compiler-pipeline.md) | Program graph, resolution, parse/bind/check/emit, build and editor boundaries | Important | Specialized | 6 min |
 
 ---

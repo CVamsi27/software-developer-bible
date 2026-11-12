@@ -34,32 +34,42 @@
     },
     {
       "path": "00-strategy/00.04-hr-questions.md",
-      "sha256": "58bb94d2b97cf728b3717609c0401a20d9c61b5444e15ee9f96c151af94a47a6",
+      "sha256": "1cd0c5b9254d438b5f980c1c8f0388f0c5ba3e1ed86b9728da487b0468a439ae",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": false,
+      "notes": "Link and read-time pass: the badge moved from 4 to 5 minutes after the new sibling chapter changed the section total, and the footer now links to 00.05. HR-question guidance and the offer-comparison boundary were re-read; no unsupported personal claim.",
+      "findings": []
+    },
+    {
+      "path": "00-strategy/00.05-find-startup-roles.md",
+      "sha256": "77b921681b57b9ad7c621e6f7551b471daca5c023e26ef3f0c45792a087e2900",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-12",
       "fullContentRead": true,
-      "notes": "Strategy pass: nav label \"Star Method\" corrected to \"STAR Method\". Compensation arithmetic re-checked (115k recurring, 135k modeled, 145k year one, 140k annual value with benefits, 150k year one) and every total matches its stated components; the illustrative amounts are labelled as not a market range. Levels.fyi and Tech Interview Handbook answered HTTP 200.",
+      "notes": "New chapter, full-content review: separates discovery channels from the employer ATS as the authority for vacancy state, then covers startup sourcing, ATS resolution, ownership/runway/equity questions, scam checks, a dated pipeline and channel limits. Fifteen external citations were probe-verified live on 2026-11-12. Deliberately no static company or opening list: postings go stale and personal targets live in the private workspace.",
       "findings": []
     },
     {
       "path": "00-strategy/INDEX.md",
-      "sha256": "5eb3398e85587563c91bfee792d5e098a69a634ee830edf1ecb326560c9ccf5f",
+      "sha256": "9c65fa4dcb100dd37e2d7046635f920ade8ae2a5f7ab18657ff1ef5deab82d4b",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-05",
-      "fullContentRead": false,
-      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": true,
+      "notes": "Added the role-discovery pass as row 0, updated the section blurb and badges to 6 files / 26 minutes, and stated that file numbers keep existing links stable while the Pass column is the reading order. File-level and category links checked.",
       "findings": []
     },
     {
       "path": "00-strategy/REVISION.md",
-      "sha256": "1fbfcf4b5309a699c864e58d75c81d3d54e3f11231624a217d28cc6a607088f1",
+      "sha256": "3b5cb2d0ddb1724078d4793572b864e8ca5d1524cdbef6d21b9648094983a2c8",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-12",
       "fullContentRead": true,
-      "notes": "Full-content review: all six retrieval pairs checked against four source chapters, supported senior scope/ownership, truthful impact, STAR contribution and one-time compensation boundary.",
+      "notes": "Added three source-linked pairs for role discovery, funding evidence and equity comparability; the Summary now says to verify an opening at its owner. Existing authored questions preserved.",
       "findings": []
     },
     {
@@ -418,7 +428,7 @@
       "sha256": "240e9b1d55c6207bdcc4edc21209be8d8019a9179b67a244043c3b8a7fcb1532",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full category learning flow/topic mapping and source pointers reviewed; values\u2192collections\u2192copy\u2192timers\u2192retainers\u2192GC\u2192lookup/equality progression coherent. Counts delegated to final restamper. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS.",
+      "notes": "Full category learning flow/topic mapping and source pointers reviewed; values→collections→copy→timers→retainers→GC→lookup/equality progression coherent. Counts delegated to final restamper. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS.",
       "findings": [],
       "reviewer": "frontend",
       "metadataReview": {
@@ -457,14 +467,14 @@
     },
     {
       "path": "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.03-generators.md",
-      "sha256": "e9f21d4ee273777bfe54138d084e6e3a51eb1b110b6eea8009112a451e382f8e",
+      "sha256": "d44b9f9eef3022ee03b26bc971e8e9ace353568b070e5363dc9fc69947334bd8",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read. Added a section on Symbol.iterator/Symbol.asyncIterator, re-iterability and the sync iterator helpers, because the chapter never named the protocol key its for...of examples depend on while the interview bank teaches the helpers. New example executed on Node 24.22.1 (spread [1,2,3], destructuring 1/[2,3], Iterator.from(...).map().take().toArray() -> [2,4]); Iterator.concat and AsyncIterator confirmed absent there and labelled as such. Removed a dangling \"(as the hook example shows)\" reference to an example the chapter does not contain.",
+      "notes": "Version pin only: Node 24.22.2 replaces 24.22.1 in the iterator-helper availability note. The reviewed generator, spread and one-shot-iterator explanations are unchanged.",
       "findings": [],
       "reviewer": "root",
       "reviewDate": "2026-11-12",
-      "fullContentRead": true
+      "fullContentRead": false
     },
     {
       "path": "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.04-currying-composition.md",
@@ -497,21 +507,21 @@
     },
     {
       "path": "10-frontend/10.1-javascript/05-functional-patterns/REVISION.md",
-      "sha256": "4c2cbe6384f235b17d8c2c3a6c2d8a8b1a7d547662b2c0490ba335552473ee09",
+      "sha256": "e91cf4af57b17e82b72886b943f35263d129e1fba74c1ab729c70548eebdc566",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Added three pairs matching the new section: iterable vs iterator identity, one-shot generator objects, and which iterator helpers Node 24.22.1 actually ships.",
+      "notes": "Version pin only: the iterator-helper availability question now cites Node 24.22.2; the answer content is otherwise unchanged.",
       "findings": [],
       "reviewer": "root",
       "reviewDate": "2026-11-12",
-      "fullContentRead": true
+      "fullContentRead": false
     },
     {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md",
       "sha256": "cc6122e76afb57cca9bd29b129d803aac70845c7ce7931df54b5b0443f4f5dab",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review. Edition2022\u201326 lists cross-checked TC39 finished proposals; ownership/grouping/lazy iterator versus async collection/precision/host API distinctions retained. Actual JSON source integer/rawJSON and regex cases executed. Node23 lacks Iterator.concat/Error.isError; those APIs not executed, runtime support distinction explicitly preserved. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS.",
+      "notes": "Full-content review. Edition2022–26 lists cross-checked TC39 finished proposals; ownership/grouping/lazy iterator versus async collection/precision/host API distinctions retained. Actual JSON source integer/rawJSON and regex cases executed. Node23 lacks Iterator.concat/Error.isError; those APIs not executed, runtime support distinction explicitly preserved. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS.",
       "findings": [],
       "reviewer": "frontend"
     },
@@ -544,14 +554,24 @@
     },
     {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.md",
-      "sha256": "d59f910d97988ec06c15efa943ccfd955d9d8b140930216f7481843731bad425",
+      "sha256": "23e6b461a80a13944713ea534a1a415ceda0b7722a11fe9956dd490d17687239",
       "genre": "interview",
       "status": "reviewed",
-      "notes": "Q57 now states the runtime boundary: Node 24.22.1 ships the other iterator helpers but not Iterator.concat and has no AsyncIterator global. Only this answer was edited; the bank has not been re-read in full this campaign.",
+      "notes": "Version pin only: Q57 now cites Node 24.22.2 for Iterator.concat and AsyncIterator availability. No other answer changed; this bank was not re-read in full during this pass.",
       "findings": [],
       "reviewer": "root",
       "reviewDate": "2026-11-12",
-      "fullContentRead": true
+      "fullContentRead": false
+    },
+    {
+      "path": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.06-regexp-and-text.md",
+      "sha256": "992030772a4b3671f9d7c6867309258450c98fc3d9d65507de3435355175d55c",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": false,
+      "notes": "Re-measured the catastrophic-backtracking case on Node 24.22.2 as a median of five runs and replaced the single-run timings (137.2 ms at 24 characters); relabelled the table column and updated the runtime feature note. The structural defense guidance is unchanged.",
+      "findings": []
     },
     {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/INDEX.md",
@@ -566,14 +586,14 @@
     },
     {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/REVISION.md",
-      "sha256": "199cf2032ddd9ecc5c06838cd47341ff37831659b9fb59480c0bd24058a7e8db",
+      "sha256": "9edb9b351f99bddc4d4af404e10ab154972ea2ed6181ea0e4eca1dc80c633219",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "New regex chapter added: Regular Expressions and Text Matching; runtime verified on Node 24.22.1",
+      "notes": "Updated the backtracking answer to the re-measured Node 24.22.2 median (137.2 ms at 24 characters) so it agrees with the chapter table; other answers untouched.",
       "findings": [],
       "reviewer": "root",
       "reviewDate": "2026-11-12",
-      "fullContentRead": true
+      "fullContentRead": false
     },
     {
       "path": "10-frontend/10.1-javascript/INDEX.md",
@@ -621,21 +641,25 @@
     },
     {
       "path": "10-frontend/10.2-typescript/01-foundations/10.2.1.04-tsconfig-compiler-options.md",
-      "sha256": "84821f900b723145535be9505c61a70526f62aac870f029538313eb41e38cdde",
+      "sha256": "a6ffbe92017e5da047770b3c50820165de9cba10c3c9e232b15f139427d65980",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full content: graphrootselectionversusexclude, bundlercheckingversusoutput/target/lib, strictadditionalchecks, module/resolution/runtime/exports aliases, isolatedsinglefile versuswholeprogram, references/declaration caches andskipLibCheck boundary. TS6defaults/7native/compilercompat migrations scoped toofficialrelease notes.",
+      "notes": "Dated release boundary moved to November 2026; TypeScript 7.0 remains current and 6.0 the transition release. Node module modes and the 6/7 migration claims were checked against local TypeScript 5.9.3 help and the official release notes.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "root",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.2-typescript/01-foundations/INDEX.md",
-      "sha256": "e1ab91d3d13bb7d26d66c589f3d6f04d9150cb94effb2a69e3ef3a30d995bb3b",
+      "sha256": "e7d358c4cf85f6e73adde9bf1b85ec8d71ee9266f4b0b04e18a09e4ae5863550",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full learningflow: shapes/alternatives thenkey/value relation thenruntime narrowing thencompiler/loadercontract; revisionbeforeinterview with sourcecandidatepaths explicitlynotdeploymentproof.",
+      "notes": "Status badge corrected from malformed wip/yellow to complete/brightgreen after the full category pass. Badge 5 still equals four chapters plus the revision companion, and the table lists four.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "root",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.2-typescript/01-foundations/REVISION.md",
@@ -648,13 +672,14 @@
     },
     {
       "path": "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.01-generics.md",
-      "sha256": "8154a1ac4602bf6867a6e4c5f2d7a1fd71c7ef2a1add3c23936ab26d58ca8923",
+      "sha256": "277888f21303b5cdeaa704274740b2601caa33712eadfb11b4d68c72a425bb0b",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full content: input/outputrelationship, constraints/defaultunknown, readonlystackemptycase, runtimevalidateddecoder andemittercost. P2 primitiveidentity inference claimcounterexample: strictcompiler `/tmp/ts-generic-literal-fixture.ts` exacthello/42 assignments accepted; nestedmutablefield expectednegative while constgenericfield preserved. Parent notifiedandfixing. Fully re-read corrected chapter and companion: primitive literals preserved by ordinary identity; inline object/tuple inference motivates const parameters. Prior P2 resolved. Strict fixture /tmp/ts-generic-literal-fixture.ts passes exact primitive assignments, const nested fields and expected ordinary mutable-field rejection. 2026-10-27 durable replay: canonical identity and exactIdentity fences compile with TypeScript 5.9.3 strict mode, accepted primitive/nested/tuple assertions pass and widened nested property is rejected with TS2322; removing const inference fails the accepted assertions in a disposable copy.",
+      "notes": "Added the module-context boundary for the top-level await example: an ES module project with es2022/nodenext or a matching bundler, or an async function under CommonJS. Const inference and decoder claims unchanged.",
       "findings": [],
-      "reviewer": "frontend",
-      "reviewDate": "2026-10-27"
+      "reviewer": "root",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.02-infer.md",
@@ -685,12 +710,14 @@
     },
     {
       "path": "10-frontend/10.2-typescript/02-generics-and-inference/INDEX.md",
-      "sha256": "1f53958401ce4ad6400be14a1d38c19f537c16ac9d64fe5b129bfde8acc72a50",
+      "sha256": "a11cc589cad5da1d3b4fdc936a6e92de053f7fcb7230e3798e293e1f6e6c34f8",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full learningflow: oneinput/outputrelation thenpatterncapture thenmultistepcomposition thenassignability; revisionbeforeinterview; sourceanchors explicitlyconditionalcandidateevidence.",
+      "notes": "Status badge corrected from malformed wip/yellow to complete/brightgreen after the full category pass. Badge 5 equals four chapters plus the companion; read order unchanged.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "root",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.2-typescript/02-generics-and-inference/REVISION.md",
@@ -703,21 +730,25 @@
     },
     {
       "path": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.01-utility-types.md",
-      "sha256": "27c7016af942434f391d14a7eb4fd3a56e4f24d05d1514eae8dc20718383d24f",
+      "sha256": "3d39537389b321c6183de41cee2589e0edd775dd685fe8043f0746ceb975e799",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full content reviewed: allowlisted public projection and PATCH semantics; shallow readonly/required/record contracts; union filtering; function and Awaited extraction; runtime validation and redaction boundaries. Minor example comments name User instead of LoadedUserRecord, without changing the code contract.",
+      "notes": "Corrected the LoadUserPromise and LoadedUser comments to name LoadedUserRecord, so the Awaited example describes the declared loadUser signature. Utility-type definitions and boundaries unchanged.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "root",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.02-conditional-types.md",
-      "sha256": "9723a69d744f8d6de66df70cbaea0fe82c67d0422afdce1254ecfb1dfa34a9e8",
+      "sha256": "1640ef03d77721152a4e86f97265f45686957079595df58faeddb24a8e6c8c23",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full content reviewed: assignability branches; naked-parameter distribution versus whole-union tuple checks; never/any/unknown boundaries; infer capture; decoder-backed API relations; discriminant filtering; nullable-key optionality and checker cost.",
+      "notes": "Removed the dangling \"(as the hook example shows)\" reference; the assignability explanation now stands on its own. Distribution, tuple opt-out and infer sections unchanged.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "root",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.03-mapped-types.md",
@@ -730,12 +761,14 @@
     },
     {
       "path": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.04-template-literal-types.md",
-      "sha256": "8393cea74aa409e96d797e794c24d3f62e6094583feedea0402dd7dfee0a54ec",
+      "sha256": "fbc3bb576face969985db0ae54da22d39efd8b044618cdb1ea2c5792c12dfc51",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full content reviewed: finite name expansion versus broad patterns; required colon-segment URL grammar and encoded runtime builder; handler and key collisions; finite required-record deep paths; join/split/replace terminal cases and checked-input scope; checker expansion cost.",
+      "notes": "Added section 7 on TypeScript 7.0 Unicode code-point inference with HeadTail<\"😀abc\">; executed under TypeScript 5.9.3 (UTF-16 surrogate split) and 7.0.2 (code-point split), and stated the runtime UTF-16 disagreement. Existing route/key/join material unchanged.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "root",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.2-typescript/03-type-transformations/INDEX.md",
@@ -748,12 +781,14 @@
     },
     {
       "path": "10-frontend/10.2-typescript/03-type-transformations/REVISION.md",
-      "sha256": "7e7d1d5eba95581f7ad74f874746ae2c16134fce1adacec06a73d0517d6b2d94",
+      "sha256": "b51e4ce086824aa7741f71b9539a2c88fa1e6aac0d66aca82b0c56ee2d0d7439",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Full companion reviewed: source-linked groups cover utilities, conditional distribution, mapped transformations and string grammars, plus changed-condition cases. One answer overstates Capitalize<string> widening; strict fixture preserves capitalization while permitting unknown capitalized names. Parent notified. Corrected answer inspected after full companion read: onAnything accepted while onanything rejected; finite supported names remain separate. Prior P2 resolved. Strict fixture /tmp/ts-capitalize-fixture.ts passes expected negative cases.",
+      "notes": "Added a source-linked Unicode inference pair matching the new chapter section; existing authored questions preserved. The template group now has nine pairs.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "root",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.01-satisfies-operator.md",
@@ -802,12 +837,14 @@
     },
     {
       "path": "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.06-typescript-compiler-pipeline.md",
-      "sha256": "0a758213f135946dd7cca748957f118d2dbe67befb3088a6dde049bd65bf71c0",
+      "sha256": "ac11a77193455f7705eb932ca59e6909b3abf85a59b9b4323eaa85091fbd0f31",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full content reviewed: program roots/resolution/binding/check/emit and editor/runtime boundaries; TS7 Go release and absent classic JS API verified against official TS7 announcement and TS7.1 plan. No code executed.",
+      "notes": "Release boundary refreshed to 12 November 2026: 7.0 stable native compiler, 7.1 beta with a published 24 November stable target, checked against the iteration plan and npm beta dist-tag. The Compiler API boundary is unchanged.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "root",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.2-typescript/04-advanced-patterns/INDEX.md",
@@ -829,12 +866,14 @@
     },
     {
       "path": "10-frontend/10.2-typescript/05-interview-prep/10.2.5.01-interview-questions.md",
-      "sha256": "5803fab924c68a7883bb802ec9181370b400afbcea0bc643a6e8aea9ac3bcd70",
+      "sha256": "39b0694a88dd7406901d722bacbd5d218250b4b792cd39f81446e0d4172128f2",
       "genre": "interview",
       "status": "reviewed",
-      "notes": "All 50 questions and full examples reviewed, filling truncated middle via separate reads. Contracts distinguish untrusted JSON, correlated unions, readonly aliases, typed results versus SQL, DI token identity, state-machine new instances, middleware next ordering, validators, plugins and package runtime/declarations. One obsolete canonical curry link identified. Parent authorized mapping fix applied: canonical runtime curry link and compiler pipeline table row now present; stale manually maintained file prose removed in favor of flow wording. Prior navigation finding resolved; git diff --check passed.",
+      "notes": "Fixed the Question38 spacing error. Six senior design sketches (Q22, Q31, Q32, Q37, Q39, Q40) compiled under TypeScript 5.9.3 and 7.0.2 with --strict, and the canonical emitter was executed. The fifty-question progression is unchanged.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "root",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.2-typescript/05-interview-prep/INDEX.md",
@@ -847,10 +886,10 @@
     },
     {
       "path": "10-frontend/10.2-typescript/INDEX.md",
-      "sha256": "ea57280040c976d1ce275049b9765cbe447f3ba1003b95881845d791f6b96612",
+      "sha256": "0a53c1692368c7b3ddaf134b9b758c765eeedee702fe385afecb5744bb8b8bf7",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Frontend pass: the category table column counted learning chapters (35) while the badge counted chapters plus revision companions (41) under the word Files. Renamed the column to Chapters so both scopes are named; no count changed.",
+      "notes": "Corrected the stale tsconfig row (bundler/Node modes and 6/7 migration) and advanced-patterns row (composed event contracts rather than decorators); read time restamped after the new template section. Category counts still sum to 19 chapters plus four companions.",
       "findings": [],
       "reviewer": "root",
       "reviewDate": "2026-11-12",
@@ -1331,7 +1370,7 @@
       "sha256": "0c72d0bfb224eee1311a6c554e6d2a4018d2bd139a80221b16fa791b860303d4",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full index reviewed: read dependency\u2192authoritative write\u2192installed cache model\u2192stream/ISR/export delivery\u2192revision\u2192separate interview bank. No duplicate deep mechanism.",
+      "notes": "Full index reviewed: read dependency→authoritative write→installed cache model→stream/ISR/export delivery→revision→separate interview bank. No duplicate deep mechanism.",
       "findings": [],
       "reviewer": "frontend"
     },
@@ -3690,7 +3729,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read all40 authoredquestions/followups including complete22\u201340 and references. Checked credentialpurpose/session/tokenlifetime and revocation, delegatedgrantselection, BFF/CSRF, currentrole/objectpolicy, workloadcost and recovery, statuschallenge semantics, fabricatedexperience avoidance. Sound concise mechanisms with failurebounds; no observedproduction results invented. Official sources checked for this cohort: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html ; https://www.rfc-editor.org/rfc/rfc9700 ; https://www.rfc-editor.org/rfc/rfc10017.html ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/types.ts ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/saml.ts ; https://pages.nist.gov/800-63-4/sp800-63b.html ; https://simplewebauthn.dev/docs/packages/server .",
+      "notes": "Full read all40 authoredquestions/followups including complete22–40 and references. Checked credentialpurpose/session/tokenlifetime and revocation, delegatedgrantselection, BFF/CSRF, currentrole/objectpolicy, workloadcost and recovery, statuschallenge semantics, fabricatedexperience avoidance. Sound concise mechanisms with failurebounds; no observedproduction results invented. Official sources checked for this cohort: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html ; https://www.rfc-editor.org/rfc/rfc9700 ; https://www.rfc-editor.org/rfc/rfc10017.html ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/types.ts ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/saml.ts ; https://pages.nist.gov/800-63-4/sp800-63b.html ; https://simplewebauthn.dev/docs/packages/server .",
       "fullContentRead": true,
       "findings": []
     },
@@ -3756,7 +3795,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read currentOWASP2023 API1\u201310 mapping, owner/tenant predicate plusoutputprojection/writeallowlist, multidimensional budgets versusbusinessflowabuse, fixedpartnerorigin versus generalSSRF DNSconnector/redirect/egress control, dependencyresponse validation and safeproblemresponses. Exact URLhelper passes validID and rejects traversal/alternateorigin/query/scheme input. OfficialOWASP2023 catalog checked; no routepolicy, outboundrequest, load or deployment test. Sources checked: https://api-security.owasp.org/editions/2023/en/0x11-t10/ ; https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html .",
+      "notes": "Full read currentOWASP2023 API1–10 mapping, owner/tenant predicate plusoutputprojection/writeallowlist, multidimensional budgets versusbusinessflowabuse, fixedpartnerorigin versus generalSSRF DNSconnector/redirect/egress control, dependencyresponse validation and safeproblemresponses. Exact URLhelper passes validID and rejects traversal/alternateorigin/query/scheme input. OfficialOWASP2023 catalog checked; no routepolicy, outboundrequest, load or deployment test. Sources checked: https://api-security.owasp.org/editions/2023/en/0x11-t10/ ; https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html .",
       "fullContentRead": true,
       "findings": []
     },
@@ -3767,7 +3806,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read stagedXSS\u2192ambientcredentialCSRF\u2192SQLbinding\u2192composedAPIpolicy, revisionbeforebank. Docita paths explicitlyreviewstartingpoints withconfiguration/routecoverage caveat; codepresence notdeployedsecurityevidence. No liveDocita inspection claimed. Sources checked: https://api-security.owasp.org/editions/2023/en/0x11-t10/ ; https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html .",
+      "notes": "Full read stagedXSS→ambientcredentialCSRF→SQLbinding→composedAPIpolicy, revisionbeforebank. Docita paths explicitlyreviewstartingpoints withconfiguration/routecoverage caveat; codepresence notdeployedsecurityevidence. No liveDocita inspection claimed. Sources checked: https://api-security.owasp.org/editions/2023/en/0x11-t10/ ; https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4225,7 +4264,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full content read: topology/RPC\u2192ownership/consistency\u2192resilience\u2192durablecommunication/migration\u2192streaming/revision/drills stages; alltopiclinks reviewed or previouslycoveredoutbox. Categoryrevision links precede drill; currentDocita pointers datedsourceonly with listenercancel/idempotency limitations. Rootmanaged numericclaims not edited.",
+      "notes": "Full content read: topology/RPC→ownership/consistency→resilience→durablecommunication/migration→streaming/revision/drills stages; alltopiclinks reviewed or previouslycoveredoutbox. Categoryrevision links precede drill; currentDocita pointers datedsourceonly with listenercancel/idempotency limitations. Rootmanaged numericclaims not edited.",
       "fullContentRead": true,
       "findings": []
     },
@@ -4313,7 +4352,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read resolver trace\u2192Server5/Express5 boundary\u2192separate revision\u2192clients\u2192bank; project comparison explicitly study fixture versus deployed claim. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read resolver trace→Server5/Express5 boundary→separate revision→clients→bank; project comparison explicitly study fixture versus deployed claim. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4368,7 +4407,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read entity/optimistic/list transition\u2192variable-aware admission\u2192actual generated consumer\u2192revision\u2192bank. Distinguishes REST source evidence from proposed GraphQL design and role-specific learning goals. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read entity/optimistic/list transition→variable-aware admission→actual generated consumer→revision→bank. Distinguishes REST source evidence from proposed GraphQL design and role-specific learning goals. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4390,7 +4429,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read all50 authored questions and answers including domain exercises31\u201340, failure41\u201350. Checked operation/nullability, ordered scoped batching, schema/permission/cache/federation/cost ownership, atomicity and unknown effects, oldclient compatibility and domain-specific invariants. Proposed designs do not fabricate past evaluation or deployed experience; no blocking correctness/depth finding. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read all50 authored questions and answers including domain exercises31–40, failure41–50. Checked operation/nullability, ordered scoped batching, schema/permission/cache/federation/cost ownership, atomicity and unknown effects, oldclient compatibility and domain-specific invariants. Proposed designs do not fabricate past evaluation or deployed experience; no blocking correctness/depth finding. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4401,7 +4440,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read prerequisite revision groups\u2192all50 authored prompts\u2192role-specific followups\u2192source return when unsupported. Explicit experience boundary prevents proposed design from becoming fabricated implementation/deployment evidence. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read prerequisite revision groups→all50 authored prompts→role-specific followups→source return when unsupported. Explicit experience boundary prevents proposed design from becoming fabricated implementation/deployment evidence. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4412,7 +4451,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read: staged contract\u2192execution\u2192consumers/operations\u2192source-linked revision\u2192all50 authored drills. Role-specific authority/cache/governance emphasis and REST project comparison avoid unverified GraphQL deployment claims. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read: staged contract→execution→consumers/operations→source-linked revision→all50 authored drills. Role-specific authority/cache/governance emphasis and REST project comparison avoid unverified GraphQL deployment claims. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4485,7 +4524,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full content read: strategy/data/primitives\u2192advancedpatterns\u2192revision\u2192interview flow, choosingauthority for immediatewrites and leasefallback not magicmutex; links/description mirror sources, Docita pointers disclaim currentRedis/TTL/deploymentproof. Numericclaims rootmanaged.",
+      "notes": "Full content read: strategy/data/primitives→advancedpatterns→revision→interview flow, choosingauthority for immediatewrites and leasefallback not magicmutex; links/description mirror sources, Docita pointers disclaim currentRedis/TTL/deploymentproof. Numericclaims rootmanaged.",
       "fullContentRead": true,
       "findings": []
     },
@@ -4557,7 +4596,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read learning sequence model\u2192operations\u2192patterns\u2192revision\u2192bank, source-linked cross references and decision paths; Docita implementation pointers explicitly distinguish study material from deployment evidence, and enqueue transaction/claim/lease boundaries from effect exactly-once. No Docita checkout or live production inspected; no unverified performance claim adopted. Sources checked: https://kafka.apache.org/42/getting-started/upgrade/ ; https://kafka.apache.org/43/getting-started/upgrade/ ; https://docs.confluent.io/platform/current/clients/librdkafka/html/md_CONFIGURATION.html ; https://www.rabbitmq.com/blog/2026/04/23/rabbitmq-4.3-release .",
+      "notes": "Full read learning sequence model→operations→patterns→revision→bank, source-linked cross references and decision paths; Docita implementation pointers explicitly distinguish study material from deployment evidence, and enqueue transaction/claim/lease boundaries from effect exactly-once. No Docita checkout or live production inspected; no unverified performance claim adopted. Sources checked: https://kafka.apache.org/42/getting-started/upgrade/ ; https://kafka.apache.org/43/getting-started/upgrade/ ; https://docs.confluent.io/platform/current/clients/librdkafka/html/md_CONFIGURATION.html ; https://www.rabbitmq.com/blog/2026/04/23/rabbitmq-4.3-release .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4629,7 +4668,7 @@
       "sha256": "ab78382b78b459d498a454b829a03f4a8883ef9fdc983ced7611228f2fe5a344",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full read foundational prerequisite flow OOP\u2192principles\u2192UML, tradeoff completion drill before revision, qualified Docita locations; study estimates illustrative, disk totals writer owned. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
+      "notes": "Full read foundational prerequisite flow OOP→principles→UML, tradeoff completion drill before revision, qualified Docita locations; study estimates illustrative, disk totals writer owned. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
       "findings": [],
       "reviewer": "architecture-final"
     },
@@ -5478,7 +5517,7 @@
       "sha256": "d5fc9f000f6da2b906bdd789269e74cd5f5710320eb358661ed5f141bcf0c8ed",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review: Full read: origin-coordinated demand and current claim, RFCrobots vs SSRF/actualsocket validation, narrow ASCII URL decoder, content vs URL/revisit separation and bounded stream/parser. FIXED empty query delimiter /? lost by urlunsplit, aligned companion; RFC3986\u00a76.2.3 primary verified. /tmp/check-crawler-query-identity.py RED\u2192GREEN preserving absent/empty/fragment query, params/ports/IPv6/rejections.",
+      "notes": "Full-content review: Full read: origin-coordinated demand and current claim, RFCrobots vs SSRF/actualsocket validation, narrow ASCII URL decoder, content vs URL/revisit separation and bounded stream/parser. FIXED empty query delimiter /? lost by urlunsplit, aligned companion; RFC3986§6.2.3 primary verified. /tmp/check-crawler-query-identity.py RED→GREEN preserving absent/empty/fragment query, params/ports/IPv6/rejections.",
       "findings": [],
       "fullContentRead": true,
       "reviewer": "resume_portfolio",
@@ -9265,12 +9304,12 @@
     },
     {
       "path": "80-lanes-abroad-full-stack/80.07-company-profiles.md",
-      "sha256": "d5b28c416a73c371a39ddc0a0bccfb67d8cd08a710cf60da3d7ba97325631c6f",
+      "sha256": "83f2b0a74fb5291e73d14ac2c547cd90ea3b63a67148f33930268a5881c79687",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true,
-      "notes": "Full-content review: Employer identity/role/scope/source/date method. Official Langfuse acquisition announcement reverified; Thryve wearable integration indexed official documentation checked. No current vacancy or sponsorship inferred from companywide facts.",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": false,
+      "notes": "Added one link to the role-discovery guide where employer research begins. The dated-evidence method and private-target boundary are unchanged.",
       "findings": []
     },
     {
@@ -9325,12 +9364,12 @@
     },
     {
       "path": "80-lanes-abroad-full-stack/80.13-study-plan.md",
-      "sha256": "1c01aab3b648b68fcdc7f6baf20621d77636b9ddcd16c2e3457440a3ef69407a",
+      "sha256": "fc17a91ec4d494e43bb255e00c355f5fb0d3e652f7236cde29a8a3b281a3978e",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true,
-      "notes": "Full-content review: Fourweek budget checked eachweek10h/40htotal, activepersonalcalendar takesprecedence, actualinterviewsreplace practice rather than add hours, unsupported readiness/hiringpromises excluded.",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": false,
+      "notes": "Added one link to the job-channel guide where the plan says to apply from week one; the preparation-versus-search sequencing is unchanged.",
       "findings": []
     },
     {
@@ -9425,12 +9464,12 @@
     },
     {
       "path": "80-lanes-abroad-full-stack/80.23-german-companies-database.md",
-      "sha256": "f942ba424b883a085bc4883be44f92fa502ab5f4ecb6d1277f4f9de7e10112b4",
+      "sha256": "ba75f96cbe8e265704fad666b3d31710c829cc9cb63a9992bdb7820180281678",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
-      "fullContentRead": true,
-      "notes": "Full-content review: Roleresearchdatabase: entity/role/currentstate/date/source anduncertainty, companyversusopeningversusapplication preserved, roleIDdeduplication andclosedpostingstop, no inventedfit/visa/salary fields.",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": false,
+      "notes": "Added one link to the discovery guide before a role enters the research database; dated-evidence guidance unchanged.",
       "findings": []
     },
     {
@@ -9565,12 +9604,12 @@
     },
     {
       "path": "80-lanes-abroad-full-stack/INDEX.md",
-      "sha256": "83caec7bf104b671e235e5e67f8e4c5c4b3264e5b46baaa8503de08c2c233407",
+      "sha256": "c110969ecd52947ced8d160259e94d9cc40c28b485db1cafd0a492916e7b4780",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-05",
+      "reviewDate": "2026-11-12",
       "fullContentRead": false,
-      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
+      "notes": "Added the role-discovery guide as the first row, ahead of company profiles and the research database. Existing lane rows unchanged.",
       "findings": []
     },
     {
@@ -9740,7 +9779,7 @@
       "reviewer": "root",
       "reviewDate": "2026-10-25",
       "fullContentRead": true,
-      "notes": "Full-content review: Azure guide full read: settlement versus local effect, Cosmos consistency/session and multi-write restriction, blob lease 15\u201360 seconds versus external fencing. Current Microsoft primary contracts reverified.",
+      "notes": "Full-content review: Azure guide full read: settlement versus local effect, Cosmos consistency/session and multi-write restriction, blob lease 15–60 seconds versus external fencing. Current Microsoft primary contracts reverified.",
       "findings": []
     },
     {
@@ -9845,22 +9884,22 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "9cc8719b72f171a55c538be4e311b9c1351f24a3ad05e19c85944922b7478ec7",
+      "sha256": "d8c2a1dc346b7e556143f38126584f3992b0aff268783bda3e3fd804b663bbd5",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-12",
-      "fullContentRead": true,
-      "notes": "Updated after regex chapter addition",
+      "fullContentRead": false,
+      "notes": "Count restamp only: 680 files, 158K lines and the 988 Files badge now match live disk after the new strategy chapter. Navigation text unchanged.",
       "findings": []
     },
     {
       "path": "README.md",
-      "sha256": "4b518071432e7f93e5e3a750c9d27dc5d67cab7ac02294a543dce5812b158274",
+      "sha256": "f133e7b353c8f5a2ec03b1ca7ba329a933d96e7bd38008240eb17acd86e0d6f5",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-12",
-      "fullContentRead": true,
-      "notes": "Added the frontend review ledger to the docs table so the new document has an entry point (the structure gate rejects orphan docs).",
+      "fullContentRead": false,
+      "notes": "Count restamp only: \"search all 680 chapters\" and the 988 Files badge now match live disk after the new strategy chapter. Lane-first framing unchanged.",
       "findings": []
     },
     {
@@ -9875,22 +9914,22 @@
     },
     {
       "path": "contributing.md",
-      "sha256": "62fe915fcb646d96f2badb40e064ecc1e6cc57719d5d8d516a03bee07151dbfd",
+      "sha256": "b945b93359b292001026b5cd203e96ceba3fca965ac421413209d203a758e395",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-12",
-      "fullContentRead": true,
-      "notes": "Count restamp only: the corpus now holds 986 markdown files after the new frontend review ledger was added; the file/line counts this document quotes were regenerated by check_counts.py.",
+      "fullContentRead": false,
+      "notes": "Count and pin restamp: repo scale now 988 files / 158K lines, and the canonical-example setup note now requires Node 24.22.2. Verification instructions unchanged.",
       "findings": []
     },
     {
       "path": "design-qa.md",
-      "sha256": "6a2e174b5df2a90664c3bca68c0571b6967e55163c3118fcdcafaa89926fb1cd",
+      "sha256": "39fe65717a0e66b2c7f23ae23f834b5fe7de91b7dbdfbb991731342199065bb6",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-12",
-      "fullContentRead": true,
-      "notes": "Root pass: the dated QA entries quote the gate count of their own day (30, 31, 32). Added a header note that these are historical and point at verify.sh for the current list, so a reader does not mistake an old count for today's.",
+      "fullContentRead": false,
+      "notes": "Pin restamp only: the verification-runtime note now names Node 24.22.2. Design-QA conclusions unchanged.",
       "findings": []
     },
     {
@@ -10016,16 +10055,36 @@
       "reviewer": "root-continuation",
       "reviewDate": "2026-10-27",
       "fullContentRead": true,
-      "notes": "Authored and reread final 25\u201326 October report. Current inventory and review records are exact-byte evidence; scoped runtime checks and source inspection remain distinct. Content review coverage does not imply every snippet execution, candidate mastery, adoption or absolute absence of errors. Release gates and generated metadata must be checked separately. 2026-10-27 maintenance delta inspected: standing exact-byte enforcement and bounded durable replays extend historical evidence without claiming every example executed or learner mastery."
+      "notes": "Authored and reread final 25–26 October report. Current inventory and review records are exact-byte evidence; scoped runtime checks and source inspection remain distinct. Content review coverage does not imply every snippet execution, candidate mastery, adoption or absolute absence of errors. Release gates and generated metadata must be checked separately. 2026-10-27 maintenance delta inspected: standing exact-byte enforcement and bounded durable replays extend historical evidence without claiming every example executed or learner mastery."
     },
     {
-      "path": "docs/api-contract.md",
-      "sha256": "568641cd5853a0a9e199f3f00d73b991e1218888c8cf774eb4295f8059e6cf28",
+      "path": "docs/2026-11-frontend-review.md",
+      "sha256": "0c8ad01ae063b46e1dfe0c4366e2829b1b9810c3af459d2d4134c5868c7e8300",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-12",
       "fullContentRead": true,
-      "notes": "wrap the field example's sibling JSX in one returned fragment so it compiles",
+      "notes": "Ledger pass: all 29 TypeScript rows now read with R1-R6 evidence, the roll-up moved to 43 of 179, the TypeScript gaps/debts are recorded, and the JavaScript section count is described as chapters plus companions. Alignment regenerated.",
+      "findings": []
+    },
+    {
+      "path": "docs/2026-11-quality-rubric.md",
+      "sha256": "4c4be0e91dd6791208129f0d5163bd5c765ed5996248785798056583cac2fe11",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": true,
+      "notes": "Authored document: R1-R7 rubric, measured Phase 0 inventory from scripts/depth_report.py, gate-30 calibration record (10,154 reported findings to 1 real defect) and the stated execution limits. No external claim is asserted without a command or a labelled source.",
+      "findings": []
+    },
+    {
+      "path": "docs/api-contract.md",
+      "sha256": "ebecd8c235ca7c4313eb0d2287b17634e5047593ee5184e846a0537a42b9ea9b",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": false,
+      "notes": "Generated totals refreshed from api/index.json: 680 chapters and 5345 read minutes. Schema example and contract text unchanged.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",
@@ -10106,12 +10165,12 @@
     },
     {
       "path": "docs/scripts-map.md",
-      "sha256": "7726300d7471e24bc9682ecda56cb7405d83ea9dbb6e3132ded40d585b680cd8",
+      "sha256": "acd648722e9def348da6a7ae2238d98b6d65f13ea2ba056e4f0dee5c2ec0dcb1",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-12",
-      "fullContentRead": true,
-      "notes": "Added gate 30, check_prose.py, test_check_prose.py and depth_report.py rows; existing rows re-read, counts restamped by check_verify_wiring.py.",
+      "fullContentRead": false,
+      "notes": "Node pin updated to 24.22.2 in the canonical replay section. Case-manifest identity, TypeScript 5.9.3 pin and mutation rule unchanged.",
       "findings": []
     },
     {
@@ -10366,22 +10425,22 @@
     },
     {
       "path": "docs/verification-gates.md",
-      "sha256": "ea6eea910ea65c49f37d51ffc301858cf21953a9cf05428c3ad0979be7f8bac1",
+      "sha256": "d2157de8a4d31f742978d0d8eafb67835a3423792ec27e0dd4163d86fa89edde",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-12",
-      "fullContentRead": true,
-      "notes": "Count restamp only: the corpus now holds 986 markdown files after the new frontend review ledger was added; the file/line counts this document quotes were regenerated by check_counts.py.",
+      "fullContentRead": false,
+      "notes": "Repo-scale examples restamped to 988 files / 158K lines and the teaching-template scope to 680 content files. Gate descriptions unchanged.",
       "findings": []
     },
     {
       "path": "lanes/INDEX.md",
-      "sha256": "949f66fbe423348b8b9eae21592e7b06c44152cf699a8841f9b93b1b2ad3065a",
+      "sha256": "e835b9d4f33ca0fed04467c163614301a5532eeff1f873fb64ddf7f06408d738",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-12",
-      "fullContentRead": true,
-      "notes": "Count restamp only: the corpus now holds 986 markdown files after the new frontend review ledger was added; the file/line counts this document quotes were regenerated by check_counts.py.",
+      "fullContentRead": false,
+      "notes": "Files badge restamped to 988 after the new strategy chapter; lane-choice text unchanged.",
       "findings": []
     },
     {
@@ -10702,36 +10761,6 @@
       "reviewDate": "2026-10-26",
       "fullContentRead": true,
       "notes": "Jekyll route/frontmatter includes the canonical generated search; no second implementation.",
-      "findings": []
-    },
-    {
-      "path": "docs/2026-11-quality-rubric.md",
-      "sha256": "4c4be0e91dd6791208129f0d5163bd5c765ed5996248785798056583cac2fe11",
-      "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-12",
-      "fullContentRead": true,
-      "notes": "Authored document: R1-R7 rubric, measured Phase 0 inventory from scripts/depth_report.py, gate-30 calibration record (10,154 reported findings to 1 real defect) and the stated execution limits. No external claim is asserted without a command or a labelled source.",
-      "findings": []
-    },
-    {
-      "path": "docs/2026-11-frontend-review.md",
-      "sha256": "8d26b9e43fb31def0a4c75320fb2f3b2c8f9a37a6ac11e4b9961cb4af5d69e32",
-      "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-12",
-      "fullContentRead": true,
-      "notes": "Updated after regex chapter addition",
-      "findings": []
-    },
-    {
-      "path": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.06-regexp-and-text.md",
-      "sha256": "2f8453e431b3391803c17778c8bc1119318a835a5e73fc504bc3b7ae2e3f2ce5",
-      "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-12",
-      "fullContentRead": true,
-      "notes": "New regex chapter added: Regular Expressions and Text Matching; runtime verified on Node 24.22.1",
       "findings": []
     }
   ]

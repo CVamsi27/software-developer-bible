@@ -296,7 +296,7 @@ fixture; Escape closes settings and restores focus. The production Jekyll build
 succeeds with Ruby 3.4. Browser behavior tests substitute speech output; audible
 quality and device-specific engine behavior are left to the built-in Preview.
 
-The repository verification also uses its pinned Node 24.22.1 and TypeScript
+The repository verification also uses its pinned Node 24.22.2 and TypeScript
 5.9.3 example runtimes. An imported chat attachment initially triggered the
 theme-source ownership gate. Cloud attachments are now gitignored and excluded
 from that source scan; a paired regression still rejects real duplicate theme

@@ -122,7 +122,7 @@ Source: [Generators](10.1.5.03-generators.md)
 
 **A:** A generator object is its own iterator, so `gen[Symbol.iterator]()` returns the same, already-finished object. A container that returns a fresh generator from `Symbol.iterator` can be traversed repeatedly. Check which of the two you are holding before debugging an empty result.
 
-**Q:** Which iterator helpers exist in Node 24.22.1, and what is missing?
+**Q:** Which iterator helpers exist in Node 24.22.2, and what is missing?
 
 **A:** `Iterator.from`, `map`, `filter`, `take`, `drop`, `toArray` and their siblings work. `Iterator.concat` and the `AsyncIterator` global are absent, so lazy concatenation and async helper pipelines must be checked against the target runtime rather than assumed.
 

@@ -16,6 +16,7 @@ For an imminent interview, start with its brief and a gap diagnosis below. For a
 
 | Read | Purpose | Role priority | General importance |
 | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------- | ------------- | ------------------ |
+| [Find Startup and Product Roles Without a Stale Job List](../00-strategy/00.05-find-startup-roles.md) | Discover companies and verify a current opening | Essential | Important |
 | [Company Profiles — Research the Employer and the Role](80.07-company-profiles.md) | Research the exact company and vacancy | Important | Specialized |
 | [Maintain a German Role Research Database](80.23-german-companies-database.md) | Keep dated company research | Important | Specialized |
 | [Germany Target Engine — Choose a Role and Keep Its Status Current](80.35-germany-target-engine.md) | Evaluate the role and maintain application status | Important | Specialized |

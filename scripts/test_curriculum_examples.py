@@ -61,6 +61,12 @@ def tools(case):
         return node, None
     compiler = os.environ.get('CURRICULUM_TSC') or shutil.which('tsc')
     if not compiler:
+        # The scripts map installs the pinned compiler into the ignored
+        # dependency directory; use it when the user has not exported a path.
+        local = ROOT / 'node_modules/typescript/bin/tsc'
+        if local.exists():
+            compiler = str(local)
+    if not compiler:
         raise AssertionError('Install TypeScript 5.9.3 and set CURRICULUM_TSC to its bin/tsc')
     compiler = str(Path(compiler).resolve())
     version = command([node, compiler, '--version'], ROOT).stdout.strip()

@@ -1,9 +1,9 @@
 # Interview Strategy — Index
 
-> **Study time:** ≈ 18 min of reading (5 files, ~4 min average).
-> **5 files** — Essential interview strategy covering resume tips, communication, STAR method, and HR questions. **Cross-lane**: applies to both the Indian SDE / FAANG lane and the Abroad Full-Stack lane. **Read this BEFORE any interview.**
+> **Study time:** ≈ 26 min of reading (6 files, ~4 min average).
+> **6 files** — Essential interview strategy covering role discovery, resume tips, communication, STAR method, and HR questions. **Cross-lane**: applies to both the Indian SDE / FAANG lane and the Abroad Full-Stack lane. **Read this BEFORE any interview.**
 
-[![Files](https://img.shields.io/badge/files-5-blue)](../INDEX.md)
+[![Files](https://img.shields.io/badge/files-6-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Interview-red)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 [![Read time](https://img.shields.io/badge/read--time-18_min-blueviolet)](#)
@@ -13,13 +13,14 @@ This section turns work evidence into clear interview explanations. Start here w
 ## Build an evidence chain
 
 | Pass | Chapter | Concrete outcome | Role priority | General importance |
-| ---- | --------------------------------------- | ---------------------------------------------------------------- | ------------- | ------------------ |
+| ---- | ------------------------------------------------- | ---------------------------------------------------------------- | ------------- | ------------------ |
+| 0 | [Find startup roles](00.05-find-startup-roles.md) | A current opening verified at the employer's ATS | Essential | Important |
 | 1 | [Resume](00.02-resume-tips.md) | A role-relevant claim you can substantiate and explain | Essential | Important |
 | 2 | [Communication](00.01-communication.md) | A technical decision with a visible problem, tradeoff and result | Essential | Important |
 | 3 | [STAR stories](00.03-star-method.md) | One incident with your own actions and credible evidence | Essential | Important |
 | 4 | [HR preparation](00.04-hr-questions.md) | Clear motivations, constraints and offer-comparison questions | Essential | Important |
 
-A resume opens an evidence trail; an interview tests that trail through questions. Practice explaining one claim before adding more material. STAR is one useful structure rather than a required format for every behavioral answer.
+A resume opens an evidence trail; an interview tests that trail through questions. Find a real opening before tailoring the trail to it, and practice explaining one claim before adding more material. STAR is one useful structure rather than a required format for every behavioral answer. The file numbers keep existing links stable; the pass order above is the reading order.
 
 ## Check the explanation before adding another story
 

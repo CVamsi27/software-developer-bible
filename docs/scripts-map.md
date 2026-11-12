@@ -131,9 +131,9 @@ When a gate fails, identify the reported defect and use its matching repair. Met
 
 ### Canonical example replay
 
-`test_curriculum_examples.py` extracts three selected mechanisms from their canonical Markdown fences: nested microtask order, primitive versus nested `const` inference, and operation-owned bulkhead permits. The [case manifest](../scripts/fixtures/curriculum-cases.json) binds each fence's identity and SHA-256, names the supplied wrapper boundary, pins Node 24.22.1 and TypeScript 5.9.3, and records literal outcomes. A changed or moved fence fails before execution. Accepted and rejected TypeScript programs are both checked. Each named mutation must change the expected result in a disposable copy. No chapter example is copied into a second teaching home.
+`test_curriculum_examples.py` extracts three selected mechanisms from their canonical Markdown fences: nested microtask order, primitive versus nested `const` inference, and operation-owned bulkhead permits. The [case manifest](../scripts/fixtures/curriculum-cases.json) binds each fence's identity and SHA-256, names the supplied wrapper boundary, pins Node 24.22.2 and TypeScript 5.9.3, and records literal outcomes. A changed or moved fence fails before execution. Accepted and rejected TypeScript programs are both checked. Each named mutation must change the expected result in a disposable copy. No chapter example is copied into a second teaching home.
 
-Select Node 24.22.1 through your runtime manager, then install the compiler once in the ignored dependency directory:
+Select Node 24.22.2 through your runtime manager, then install the compiler once in the ignored dependency directory:
 
 ```bash
 npm install --no-save --package-lock=false --ignore-scripts typescript@5.9.3

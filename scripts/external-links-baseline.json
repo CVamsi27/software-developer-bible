@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-12",
- "url_count": 2758,
+ "url_count": 2773,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -233,6 +233,9 @@
   "https://beam.apache.org/documentation/programming-guide/#watermarks-and-late-data": [
    "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.02-data-pipelines.md"
   ],
+  "https://berlinstartupjobs.com/": [
+   "00-strategy/00.05-find-startup-roles.md"
+  ],
   "https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html": [
    "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md"
   ],
@@ -261,6 +264,9 @@
   ],
   "https://blog.x.com/engineering/en_us/topics/insights/2017/using-deep-learning-at-scale-in-twitters-timelines": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.12-twitter-feed.md"
+  ],
+  "https://boards.greenhouse.io/": [
+   "00-strategy/00.05-find-startup-roles.md"
   ],
   "https://book.kubebuilder.io/": [
    "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.03-crds-operators-controller-patterns.md"
@@ -582,6 +588,9 @@
   ],
   "https://cucumber.io/docs/bdd/": [
    "50-quality/50.1-testing/01-foundations/50.1.1.01-testing-overview.md"
+  ],
+  "https://cutshort.io/": [
+   "00-strategy/00.05-find-startup-roles.md"
   ],
   "https://cyclonedx.org/specification/overview/": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.05-vulnerability-management-patch-governance.md"
@@ -3945,6 +3954,9 @@
    "20-backend/20.12-ai-engineering/20.12.02-prompts-context-evals.md",
    "20-backend/20.12-ai-engineering/20.12.07-interview-questions.md"
   ],
+  "https://hasjob.co/": [
+   "00-strategy/00.05-find-startup-roles.md"
+  ],
   "https://helm.sh/docs/": [
    "40-platform/40.2-kubernetes/05-packaging-and-extensibility/40.2.5.02-kustomize-overlays-packaging-tradeoffs.md",
    "40-platform/40.2-kubernetes/06-interview-prep/40.2.6.01-interview-questions.md",
@@ -3993,6 +4005,9 @@
   ],
   "https://hl7.org/fhir/directory.html": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.10-hospital-management.md"
+  ],
+  "https://hnhiring.com/": [
+   "00-strategy/00.05-find-startup-roles.md"
   ],
   "https://hpbn.co/building-blocks-of-tcp/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.md"
@@ -4054,6 +4069,9 @@
   ],
   "https://ind.nl/en/required-amounts-income-requirements": [
    "80-lanes-abroad-full-stack/80.06-visa-relocation-playbook.md"
+  ],
+  "https://instahyre.com/": [
+   "00-strategy/00.05-find-startup-roles.md"
   ],
   "https://int.bahn.de/en/offers/regional/deutschland-ticket/": [
    "80-lanes-abroad-full-stack/80.14-berlin-dual-career-plan.md"
@@ -6887,6 +6905,9 @@
   "https://standardschema.dev/": [
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.01-configuration-validation.md"
   ],
+  "https://startup.jobs/": [
+   "00-strategy/00.05-find-startup-roles.md"
+  ],
   "https://stately.ai/docs/invoke": [
    "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.04-state.md"
   ],
@@ -7560,6 +7581,9 @@
   "https://webrtc.org/getting-started/overview": [
    "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.03-webrtc-peer-to-peer.md"
   ],
+  "https://wellfound.com/jobs": [
+   "00-strategy/00.05-find-startup-roles.md"
+  ],
   "https://whatsappbusiness.com/policy/": [
    "projects/docita/06-whatsapp-integration.md"
   ],
@@ -7777,6 +7801,9 @@
   "https://www.artofmonitoring.com/": [
    "40-platform/40.4-observability/05-interview-prep/40.4.5.01-interview-questions.md"
   ],
+  "https://www.ashbyhq.com/": [
+   "00-strategy/00.05-find-startup-roles.md"
+  ],
   "https://www.atlassian.com/git/tutorials": [
    "40-platform/40.6-git-advanced/40.6.10-interview-questions.md"
   ],
@@ -7974,6 +8001,9 @@
   "https://www.geeksforgeeks.org/window-sliding-technique/": [
    "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.01-sliding-window.md"
   ],
+  "https://www.germantechjobs.de/": [
+   "00-strategy/00.05-find-startup-roles.md"
+  ],
   "https://www.gesetze-im-internet.de/bgb/__622.html": [
    "80-lanes-abroad-full-stack/80.25-german-workplace-culture.md"
   ],
@@ -8023,6 +8053,9 @@
   ],
   "https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm": [
    "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.02-rest-principles.md"
+  ],
+  "https://www.indeed.com/": [
+   "00-strategy/00.05-find-startup-roles.md"
   ],
   "https://www.informit.com/articles/article.aspx?p=1398600": [
    "30-architecture/30.1-design-patterns/03-structural/30.1.3.01-adapter.md"
@@ -8098,6 +8131,9 @@
   ],
   "https://www.lfst.bayern.de/steuerinfos/haeufig-gestellte-fragen/lohnsteuerabzug-und-lohnsteuerermaessigung": [
    "80-lanes-abroad-full-stack/80.14-berlin-dual-career-plan.md"
+  ],
+  "https://www.linkedin.com/jobs/": [
+   "00-strategy/00.05-find-startup-roles.md"
   ],
   "https://www.live-eo.com/": [
    "80-lanes-abroad-full-stack/80.32-company-prep-sheets.md"
@@ -9405,6 +9441,15 @@
   "https://www.webpagetest.org/": [
    "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.04-http-caching.md",
    "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.md"
+  ],
+  "https://www.welcometothejungle.com/en": [
+   "00-strategy/00.05-find-startup-roles.md"
+  ],
+  "https://www.workatastartup.com/": [
+   "00-strategy/00.05-find-startup-roles.md"
+  ],
+  "https://www.ycombinator.com/companies": [
+   "00-strategy/00.05-find-startup-roles.md"
   ],
   "https://www.youtube.com/playlist?list=PLui3EUkuMTPgZcV0QhQrOcwMPcBCcd_Q1": [
    "docs/reference-coverage-audit.md"

@@ -154,6 +154,10 @@ Source: [Template Literal Types](10.2.3.04-template-literal-types.md)
 
 **A:** Measure the consuming compilation and editor behavior with realistic inputs. Fixed millisecond estimates and a supposed configurable universal depth do not describe the checker's actual work.
 
+**Q:** What changed in TypeScript 7.0 when a template literal pattern splits a non-BMP character?
+
+**A:** Inference now consumes Unicode code points, so `HeadTail<'😀abc'>` yields `['😀', 'abc']`. TypeScript 6 and earlier captured UTF-16 halves (`'\ud83d'` and `'\ude00abc'`). Runtime indexing still uses UTF-16 code units, so type-level and runtime splits can disagree. [Unicode inference](10.2.3.04-template-literal-types.md#7-account-for-unicode-code-point-inference).
+
 ## Changed-condition checks
 
 Source: [Utility Types](10.2.3.01-utility-types.md)

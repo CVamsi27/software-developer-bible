@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "ea1b47a6a126ab2a1ba3bc1bfd726f9f34a9279dc4a0a12fa42c370fd6f158c8",
+ "corpus_digest": "cc84c03fa07d860fa102d1202480fcb73e6d2f9a300d1c2d8866286e74b83ea9",
  "totals": {
-  "chapters": 679,
+  "chapters": 680,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5337
+  "read_minutes": 5345
  },
  "chapters": [
   {
@@ -54,7 +54,20 @@
     "concept",
     "guide"
    ],
-   "m": 4
+   "m": 5
+  },
+  {
+   "p": "00-strategy/00.05-find-startup-roles.html",
+   "t": "Find Startup and Product Roles Without a Stale Job List",
+   "s": "Interview Strategy",
+   "c": "Interview",
+   "g": [
+    "channels",
+    "guide",
+    "job-search",
+    "startups"
+   ],
+   "m": 7
   },
   {
    "p": "00-strategy/REVISION.html",

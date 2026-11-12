@@ -10,6 +10,21 @@
 set -u
 cd "$(dirname "$0")/.." || exit 1
 
+# The canonical replay pins the Node 24 LTS line. A developer whose PATH
+# points at a newer Current release should not lose the whole suite to that
+# mismatch: prefer an installed 24.x when one is discoverable.
+if ! node --version 2>/dev/null | grep -q '^v24\.'; then
+    for candidate in \
+        /opt/homebrew/opt/node@24/bin/node \
+        /usr/local/opt/node@24/bin/node \
+        "$HOME"/.nvm/versions/node/v24*/bin/node; do
+        if [ -x "$candidate" ]; then
+            export CURRICULUM_NODE="$candidate"
+            break
+        fi
+    done
+fi
+
 FAIL=0
 
 echo ""

@@ -68,11 +68,11 @@ Source: [Vercel Deployments](40.7.03-vercel-deployments.md)
 
 ## Edge Functions
 
+Source: [Edge Functions](40.7.04-edge-functions.md)
+
 **Q:** Does Vercel documenting an Edge runtime mean a Next.js 16.3 route can select it?
 
 **A:** No. The platform runtime and framework support are different contracts. Vercel documents that Next.js 16.3 routes/pages no longer support `runtime = 'edge'`; Proxy already uses Node.js in Next.js 16. Check the deployed minor version. See [the runtime contract](https://vercel.com/docs/functions/runtimes/edge).
-
-Source: [Edge Functions](40.7.04-edge-functions.md)
 
 **Q:** Why does running at the edge not guarantee a fixed latency?
 

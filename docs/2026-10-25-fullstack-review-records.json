@@ -7649,12 +7649,12 @@
     },
     {
       "path": "40-platform/40.7-serverless-edge/REVISION.md",
-      "sha256": "2165c34503aeb1e999466de0e64b4043ad06a40a552a67f1a4312994812253b3",
+      "sha256": "ac8b91b560f10e2fa09459a40c998db0d8439bfa53b178d0b04eb73452e1a277",
       "status": "reviewed",
       "reviewer": "buffy",
-      "reviewDate": "2026-11-11",
+      "reviewDate": "2026-11-12",
       "fullContentRead": false,
-      "notes": "Targeted copy-edit review on 2026-11-11: corrected article agreement for a vowel-sound initialism (a -> an). No structural, technical or example change; the prior full review still covers unchanged material.",
+      "notes": "move the Edge Functions source link above its first prompt",
       "findings": []
     },
     {

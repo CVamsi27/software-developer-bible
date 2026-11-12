@@ -117,13 +117,19 @@ def sub_stack_count(subdir):
 
 
 def case_study_count():
-    """Files in the system-design case-study folder (INDEX excluded)."""
+    """Case-study chapters in the system-design folder.
+
+    INDEX and REVISION are excluded for the same reason navigation tables
+    exclude them: they organize and drill the case studies, they are not case
+    studies. Counting REVISION.md made ROADMAP say "Case studies ×32" while
+    INDEX.md said 31, and the folder holds 31 chapters.
+    """
     base = os.path.join(ROOT, '30-architecture', '30.2-system-design',
                         '02-case-studies')
     if not os.path.isdir(base):
         return 0
     return sum(1 for f in os.listdir(base)
-               if f.endswith('.md') and f not in SKIP_NAMES)
+               if f.endswith('.md') and f not in SKIP_NAMES | {'REVISION.md'})
 
 
 def sd_subfolder_label():

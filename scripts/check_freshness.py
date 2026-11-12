@@ -40,6 +40,39 @@ SKIP_SUBSTRINGS = ('/docs/superpowers/',)
 
 FAKE_ARCHIVE_TS = 'web.archive.org/web/20240701000000'
 
+# The repo-level "last updated" claim (README and INDEX badges plus INDEX's
+# footer) is a statement about the corpus, and nothing restamped it: both still
+# said October 2026 while the 2026-11 pass was editing them. Any month older
+# than the newest dated document under docs/ is a stale claim, which makes the
+# rule determinable instead of a guess about today's date.
+LAST_UPDATED = re.compile(
+    r'last(?:%20|[\s-])?updated[:\s\u2014-]*'
+    r'(January|February|March|April|May|June|July|August|September|October|'
+    r'November|December)(?:%20|\s)+(\d{4})',
+    re.I,
+)
+MONTHS = ('january', 'february', 'march', 'april', 'may', 'june', 'july',
+          'august', 'september', 'october', 'november', 'december')
+REPO_LEVEL_FILES = ('README.md', 'INDEX.md', 'ROADMAP.md')
+
+
+def newest_dated_doc():
+    """(year, month) of the newest `docs/YYYY-MM-DD-*.md` review document."""
+    docs = Path(__file__).resolve().parent.parent / 'docs'
+    newest = None
+    for p in docs.glob('*.md'):
+        # Both review shapes count: `2026-11-12-report.md` and `2026-11-slug.md`.
+        m = re.match(r'(\d{4})-(\d{2})-(?:\d{2}-)?', p.name)
+        if not m:
+            continue
+        key = (int(m.group(1)), int(m.group(2)))
+        if newest is None or key > newest:
+            newest = key
+    return newest
+
+
+NEWEST_DOC = newest_dated_doc()
+
 # RFC 9298 specifies HTTP UDP proxying, not WebTransport. Match an active
 # citation whose label makes the wrong attribution; legitimate UDP references
 # and fenced demonstrations of the bad link must remain valid.
@@ -281,6 +314,9 @@ WRONG_PG_EXPLAIN_INTRODUCTION = re.compile(
     r'(?:in|with)\s+PostgreSQL\s+18\b)', re.I)
 
 RULES = [
+    ('STALE-LAST-UPDATED-MONTH',
+     'The repo-level last-updated claim must not predate the newest dated '
+     'document under docs/'),
     ('UNQUALIFIED-LAMBDA-TIMEOUT',
      'Default-capacity Lambda has a fifteen-minute ceiling; supported Managed '
      'Instances triggers allow up to ninety minutes'),
@@ -552,6 +588,14 @@ def iter_md_files(root: Path):
 def check(p: Path, rel: str):
     hits = []
     text = p.read_text(encoding='utf-8', errors='replace')
+    if rel in REPO_LEVEL_FILES and NEWEST_DOC:
+        for m in LAST_UPDATED.finditer(text):
+            claimed = (int(m.group(2)), MONTHS.index(m.group(1).lower()) + 1)
+            if claimed < NEWEST_DOC:
+                lineno = text.count('\n', 0, m.start()) + 1
+                hits.append((lineno, 'STALE-LAST-UPDATED-MONTH',
+                             f'{m.group(1)} {m.group(2)} predates the newest '
+                             f'review doc ({NEWEST_DOC[0]}-{NEWEST_DOC[1]:02d})'))
     in_code = False
     lang = ''
     code_rows = []

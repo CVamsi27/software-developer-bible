@@ -1,5 +1,9 @@
 # Study Flow Design QA
 
+> Each section below is a dated record of one pass, including the gate count that
+> suite had on that day (30, 31, 32, now 33). Read the numbers as history; the
+> current gate list is `scripts/verify.sh` and [the gate reference](docs/verification-gates.md).
+
 ## Reader and discovery pass (5 Nov)
 
 The [numbered audit report](docs/superpowers/specs/assets/2026-11-05-site-refinement/audit-report.json)

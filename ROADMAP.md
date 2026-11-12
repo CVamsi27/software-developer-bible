@@ -5,7 +5,7 @@
 > Start with [lane selection](#phase-0--pick-your-lane-day-1-2-hours). Use the [full index](INDEX.md) for individual chapters and the [senior readiness rubric](80-lanes-abroad-full-stack/80.29-topic-brushup-roadmap.md) to assess explanations, implementation, failure analysis and ownership.
 
 [![Checkpoints](https://img.shields.io/badge/checkpoints-8-green)](#checkpoints--do-not-skip)
-[![Last Updated](https://img.shields.io/badge/last%20updated-October%202026-purple)](#)
+[![Last Updated](https://img.shields.io/badge/last%20updated-November%202026-purple)](#)
 
 ---
 
@@ -116,7 +116,7 @@ Study as one connected story, not isolated files → **[20-backend/20.5-security
 | 3.1 | [Design patterns](30-architecture/30.1-design-patterns/INDEX.md) | SOLID → GoF patterns (Strategy, Observer…) → modern architectural patterns (Repository, DI, CQRS) |
 | 3.2 | [SD method](30-architecture/30.2-system-design/01-theory/30.2.1.15-how-to-approach.md) | clarify requirements → estimate workload → propose boundaries → trace a critical path and its failures |
 | 3.3 | [SD theory](30-architecture/30.2-system-design/01-theory/INDEX.md) | CAP → consistency models → sharding → caching → queues → rate limiting → consensus → failure modes → backpressure → multi-region |
-| 3.4 | [Case studies ×32](30-architecture/30.2-system-design/02-case-studies/INDEX.md) | URL shortener → WhatsApp → Uber → Netflix → payment gateway → ticket booking → notification service → hospital mgmt… practice 5 aloud with a timer |
+| 3.4 | [Case studies ×31](30-architecture/30.2-system-design/02-case-studies/INDEX.md) | URL shortener → WhatsApp → Uber → Netflix → payment gateway → ticket booking → notification service → hospital mgmt… practice 5 aloud with a timer |
 
 **Checkpoint 3:** Record two timed designs, then review their assumptions, capacity estimates, consistency boundaries and failure recovery. Use a URL shortener and a ticket-booking system to expose different constraints; explain your reasoning clearly without narrating every keystroke.
 
@@ -271,4 +271,4 @@ software-developer-bible/
 
 [ INDEX.md](INDEX.md) · [README](README.md) · Lane indexes: [Abroad/EU](80-lanes-abroad-full-stack/INDEX.md) · [Indian SDE/FAANG (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md)
 
-*Last updated: October 2026. Use the linked stack indexes for the current learning flow.*
+*Last updated: November 2026. Use the linked stack indexes for the current learning flow.*

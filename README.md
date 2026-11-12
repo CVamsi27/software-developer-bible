@@ -14,7 +14,7 @@ permalink: /README.html
 [![Search](https://img.shields.io/badge/search-try%20it-blueviolet)](search.html)
 [![API](https://img.shields.io/badge/corpus%20API-json-informational)](api/index.json)
 [![GoF Coverage](https://img.shields.io/badge/design%20patterns-23%2F23-success)](30-architecture/30.1-design-patterns/INDEX.md)
-[![Last Updated](https://img.shields.io/badge/last%20updated-October%202026-purple)](#)
+[![Last Updated](https://img.shields.io/badge/last%20updated-November%202026-purple)](#)
 
 ---
 
@@ -47,7 +47,7 @@ Both lanes use the same technical chapters. Follow a stack’s reading stages to
 | **Real-Time** | [60-realtime/](60-realtime/INDEX.md) | WebSockets, SSE, Socket.IO, scaling patterns | 11 |
 | **Interview Toolkit** | [70-interview-toolkit/](70-interview-toolkit/INDEX.md) | Behavioral, Coding Patterns (18 patterns), Cheat Sheets | 34 |
 
- Full breakdown with file counts per topic: [INDEX.md → The 7 Study Stacks](INDEX.md#the-7-study-stacks-numbered-for-study-order)
+Full breakdown with file counts per topic: [INDEX.md → The 7 Study Stacks](INDEX.md#the-7-study-stacks-numbered-for-study-order)
 
 ---
 

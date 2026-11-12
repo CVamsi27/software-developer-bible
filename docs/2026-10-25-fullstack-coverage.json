@@ -30753,7 +30753,7 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "5d0113f11aac52fb935d41af44f0f72d673e95e654141bf476f497997f81497f",
+      "sha256": "1a7d5940d6c5c279f38ccc660c8829fdb92db41c62aa201e691fcaf7af378b01",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -30771,18 +30771,18 @@
       },
       "review": {
         "path": "INDEX.md",
-        "sha256": "5d0113f11aac52fb935d41af44f0f72d673e95e654141bf476f497997f81497f",
+        "sha256": "1a7d5940d6c5c279f38ccc660c8829fdb92db41c62aa201e691fcaf7af378b01",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-12",
         "fullContentRead": true,
-        "notes": "Root index count line restamped by scripts/check_counts.py after adding the 2026-11 rubric document; navigation targets and ordering read, no prose change.",
+        "notes": "Root pass: badge and footer both claimed October 2026; corrected to November 2026. Stack tables, sub-stack file counts, case-study total (31), study path and cross-reference map re-read against disk; counts restamped by check_counts.py.",
         "findings": []
       }
     },
     {
       "path": "README.md",
-      "sha256": "b1dbc2c5652149c8fa46d5c5613e583473bb27ab28a05b72793e6626902a7a9e",
+      "sha256": "56800360bbe7ac1c29602346ce9aef02e8f3b19fab0506a4bf210cd4da402204",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -30801,18 +30801,18 @@
       },
       "review": {
         "path": "README.md",
-        "sha256": "b1dbc2c5652149c8fa46d5c5613e583473bb27ab28a05b72793e6626902a7a9e",
+        "sha256": "56800360bbe7ac1c29602346ce9aef02e8f3b19fab0506a4bf210cd4da402204",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-12",
         "fullContentRead": true,
-        "notes": "Added one navigation row pointing at the quality rubric; surrounding table, claims and study-order instructions re-read and left unchanged.",
+        "notes": "Root pass: the Last Updated badge claimed October 2026 while the corpus was being edited in November; corrected to November and now enforced by the new STALE-LAST-UPDATED-MONTH freshness rule. Also removed a stray leading space before the stack-breakdown line. Navigation, lane table and study-order claims re-read; counts unchanged.",
         "findings": []
       }
     },
     {
       "path": "ROADMAP.md",
-      "sha256": "cc5f7c38135696cbfc79bfdc87464d22ca8befb105d8a62a381801defdda820c",
+      "sha256": "a09d15b318fe9ac744f6e03af90082d2964400c6cf125e3e83da385c5fc06a07",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -30839,12 +30839,12 @@
       },
       "review": {
         "path": "ROADMAP.md",
-        "sha256": "cc5f7c38135696cbfc79bfdc87464d22ca8befb105d8a62a381801defdda820c",
+        "sha256": "a09d15b318fe9ac744f6e03af90082d2964400c6cf125e3e83da385c5fc06a07",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
-        "fullContentRead": false,
-        "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
+        "reviewDate": "2026-11-12",
+        "fullContentRead": true,
+        "notes": "Root pass: badge and footer dated October 2026 corrected to November 2026. The case-study claim read 32 because check_counts counted the REVISION companion as a case study; the counter now excludes companions, so the roadmap and INDEX agree on 31.",
         "findings": []
       }
     },
@@ -30889,7 +30889,7 @@
     },
     {
       "path": "design-qa.md",
-      "sha256": "114761a667cae5dd0da9c6a91673b635c27fc2c7427fabd689b1641dedec83af",
+      "sha256": "6a2e174b5df2a90664c3bca68c0571b6967e55163c3118fcdcafaa89926fb1cd",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -30909,12 +30909,12 @@
       },
       "review": {
         "path": "design-qa.md",
-        "sha256": "114761a667cae5dd0da9c6a91673b635c27fc2c7427fabd689b1641dedec83af",
+        "sha256": "6a2e174b5df2a90664c3bca68c0571b6967e55163c3118fcdcafaa89926fb1cd",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
-        "fullContentRead": false,
-        "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Reviewed the added numbered-audit summary, current UI evidence and explicit corpus/authentication/browser limits; earlier dated logs are retained.",
+        "reviewDate": "2026-11-12",
+        "fullContentRead": true,
+        "notes": "Root pass: the dated QA entries quote the gate count of their own day (30, 31, 32). Added a header note that these are historical and point at verify.sh for the current list, so a reader does not mistake an old count for today's.",
         "findings": []
       }
     },
@@ -31014,7 +31014,7 @@
     },
     {
       "path": "docs/2026-09-19-corpus-health-report.md",
-      "sha256": "dea0ca1a3d8b61acc60b9e8339e0ae146f94ea0f01e9f957136f61a777d98f60",
+      "sha256": "d1af213ac0e3d3ae42cf81353022716de531fa61fdc82a7814aade50c95c5860",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31037,12 +31037,12 @@
       },
       "review": {
         "path": "docs/2026-09-19-corpus-health-report.md",
-        "sha256": "dea0ca1a3d8b61acc60b9e8339e0ae146f94ea0f01e9f957136f61a777d98f60",
+        "sha256": "d1af213ac0e3d3ae42cf81353022716de531fa61fdc82a7814aade50c95c5860",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-12",
         "fullContentRead": true,
-        "notes": "restamp the freshness rule count after adding four rules",
+        "notes": "Count restamp only: the report quotes the live freshness-rule total, which the new STALE-LAST-UPDATED-MONTH rule moved from 45 to 46. Measured claims and dated findings unchanged.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "1137da2030c2e0a930a4110f49ca5663581130bb487d998312196208d2191b0d",

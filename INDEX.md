@@ -1,6 +1,6 @@
 # Senior Full Stack Interview Bible — Index
 
-> **Study time:** ≈ 88 h 47 m of reading (678 files, ~8 min average).
+> **Study time:** ≈ 88 h 57 m of reading (679 files, ~8 min average).
 > **Start here: [ROADMAP.md](ROADMAP.md) — the canonical study path with phases, checkpoints, and weekly schedule.**
 >
 > **Pick your lane first.** The bible is organized into **2 interview lanes** (`80-lanes-abroad-full-stack`, `81-lanes-indian-sde-faang`) that draw from **7 shared study stacks** — plus the [00-strategy](00-strategy/INDEX.md) **strategy folder** everyone starts with. Each lane has its own preparation strategy; the stacks are the technical material both lanes share.
@@ -9,7 +9,7 @@
 
 [![Lanes](https://img.shields.io/badge/lanes-2-blue)](lanes/INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](#the-7-study-stacks-numbered-for-study-order)
-[![Files](https://img.shields.io/badge/files-986-orange)](#the-7-study-stacks-numbered-for-study-order)
+[![Files](https://img.shields.io/badge/files-987-orange)](#the-7-study-stacks-numbered-for-study-order)
 [![Design Patterns](https://img.shields.io/badge/GoF%20Coverage-23%2F23-success)](30-architecture/30.1-design-patterns/INDEX.md)
 [![Last Updated](https://img.shields.io/badge/last%20updated-November%202026-purple)](#)
 
@@ -62,11 +62,11 @@ These are sample scheduling blocks, not readiness estimates. Use [ROADMAP checkp
 
 ---
 
-### 10-frontend — Frontend (149 files in 8 sub-stacks)
+### 10-frontend — Frontend (150 files in 8 sub-stacks)
 
 | Order | Sub-stack | Files | Topics |
 | ----- | ----------------------------------------------------------- | ----: | --------------------------------------------------------------------------------------------------------------------------------- |
-| 10.1 | [JavaScript](10-frontend/10.1-javascript/INDEX.md) | 35 | Execution context, closures, prototypes, event loop, promises, async/await, cancellation, ES2024, hash tables |
+| 10.1 | [JavaScript](10-frontend/10.1-javascript/INDEX.md) | 36 | Execution context, closures, prototypes, event loop, promises, async/await, cancellation, ES2024, hash tables |
 | 10.2 | [TypeScript](10-frontend/10.2-typescript/INDEX.md) | 19 | Generics, utility types, conditional types, narrowing, `satisfies` operator |
 | 10.3 | [React](10-frontend/10.3-react/INDEX.md) | 23 | Virtual DOM, Fiber, hooks (18-19), Suspense, performance, state management |
 | 10.4 | [Next.js](10-frontend/10.4-next.js/INDEX.md) | 17 | App Router, Server Components, Server Actions, Middleware, caching, streaming |
@@ -202,4 +202,4 @@ projects → Docita architecture deep-dives, interview defense
 
 ---
 
-*Last updated: November 2026 — 986 files, 157K lines, 0 broken links — folders numbered for study order. Every large stack is organized into numbered category subfolders; the auth track covers passkeys/SAML; sequences are contiguous inside each stack folder. The 80.x lane numbering intentionally leaves room for project-preparation chapters.
+*Last updated: November 2026 — 987 files, 157K lines, 0 broken links — folders numbered for study order. Every large stack is organized into numbered category subfolders; the auth track covers passkeys/SAML; sequences are contiguous inside each stack folder. The 80.x lane numbering intentionally leaves room for project-preparation chapters.

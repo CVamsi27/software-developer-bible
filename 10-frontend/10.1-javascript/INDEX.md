@@ -1,9 +1,9 @@
 # JavaScript — Index
 
-> **Study time:** ≈ 5 h 6 m of reading (41 files, ~7 min average).
+> **Study time:** ≈ 5 h 16 m of reading (42 files, ~8 min average).
 > Core JavaScript concepts from execution context through async patterns, memory management, functional techniques, modern language APIs, cancellation, browser events, cross-tab coordination, and interview practice.
 
-[![Files](https://img.shields.io/badge/files-41-blue)](../../INDEX.md)
+[![Files](https://img.shields.io/badge/files-42-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Core-blueviolet)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 

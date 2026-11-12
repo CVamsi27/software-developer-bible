@@ -70,6 +70,7 @@ Reading order is study order, so the ledger fills from the top of
 | [10.1.6.02-web-workers.md](../10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.02-web-workers.md) | unread | — | — | — | — | — |
 | [10.1.6.03-dom-events-delegation.md](../10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.03-dom-events-delegation.md) | unread | — | — | — | — | — |
 | [10.1.6.04-cross-tab-communication.md](../10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.04-cross-tab-communication.md) | unread | — | — | — | — | — |
+| [10.1.6.06-regexp-and-text.md](../10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.06-regexp-and-text.md) | unread | — | — | — | — | — |
 | [10.1.6.05-interview-questions.md](../10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.md) | unread | — | — | — | — | — |
 | [INDEX.md](../10-frontend/10.1-javascript/06-modern-and-interview/INDEX.md) | unread | — | — | — | — | — |
 | [REVISION.md](../10-frontend/10.1-javascript/06-modern-and-interview/REVISION.md) | unread | — | — | — | — | — |
@@ -208,7 +209,7 @@ Reading order is study order, so the ledger fills from the top of
 
 ## Section roll-up
 
-- Files with a read-backed row: **13 of 179**.
+- Files with a read-backed row: **14 of 179**.
 - Range covered so far: `10.1-javascript/INDEX.md`, all of `10.1-javascript/01-execution-and-scope/`, and `10.1-javascript/05-functional-patterns/` (index, Generators chapter, revision).
 - Topic gap closed: the Generators chapter never named `Symbol.iterator`/`Symbol.asyncIterator` or the iterator helpers, although the interview bank teaches both; a new section, three revision pairs and a runtime caveat in the bank now cover them. `Iterator.concat` and `AsyncIterator` were confirmed absent on Node 24.22.1 and are labeled accordingly.
 - Edited but not yet fully read: `10.1.6.05-interview-questions.md` (one answer corrected), so its row stays `unread` and no full-read claim is made for it.

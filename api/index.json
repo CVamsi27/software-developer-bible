@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "236c6cad9df6ae05248b53c5c2b59f654ea4ab6ae0e9f931d9e3de1f453310c0",
+ "corpus_digest": "ea1b47a6a126ab2a1ba3bc1bfd726f9f34a9279dc4a0a12fa42c370fd6f158c8",
  "totals": {
-  "chapters": 678,
+  "chapters": 679,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5327
+  "read_minutes": 5337
  },
  "chapters": [
   {
@@ -481,6 +481,16 @@
    "m": 13
   },
   {
+   "p": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.06-regexp-and-text.html",
+   "t": "Regular Expressions and Text Matching",
+   "s": "JavaScript",
+   "c": "Core",
+   "g": [
+    "concept"
+   ],
+   "m": 9
+  },
+  {
    "p": "10-frontend/10.1-javascript/06-modern-and-interview/REVISION.html",
    "t": "Modern JS & Interview Prep — JavaScript — Revision",
    "s": "JavaScript",
@@ -489,7 +499,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "10-frontend/10.2-typescript/01-foundations/10.2.1.01-types-vs-interfaces.html",

@@ -3,9 +3,10 @@
   "scope": "Current non-ignored Markdown, excluding generated/vendor trees",
   "method": "Structure is machine-inspected; semantic review requires explicit exact-hash evidence.",
   "totals": {
-    "reviewed": 986
+    "reviewed": 986,
+    "stale-review": 1
   },
-  "files": 986,
+  "files": 987,
   "orphanedReviewPaths": [],
   "entries": [
     {
@@ -1752,8 +1753,42 @@
       }
     },
     {
+      "path": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.06-regexp-and-text.md",
+      "sha256": "2f8453e431b3391803c17778c8bc1119318a835a5e73fc504bc3b7ae2e3f2ce5",
+      "genre": "learning-or-reference",
+      "status": "reviewed",
+      "structure": {
+        "headings": [
+          "Definition",
+          "First Principles",
+          "1. Read a Pattern as Parts, Not as a Blob",
+          "2. Flags Change Where a Match Starts and What a Character Is",
+          "3. The Complete Worked Example: Redact a Log Line",
+          "4. Where Patterns Break",
+          "5. Building a Pattern From Input",
+          "Summary",
+          "See Also",
+          "References & Learn More"
+        ],
+        "code_fences": 6,
+        "revision_questions": 0,
+        "has_summary": true,
+        "has_first_principles": true
+      },
+      "review": {
+        "path": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.06-regexp-and-text.md",
+        "sha256": "2f8453e431b3391803c17778c8bc1119318a835a5e73fc504bc3b7ae2e3f2ce5",
+        "status": "reviewed",
+        "reviewer": "root",
+        "reviewDate": "2026-11-12",
+        "fullContentRead": true,
+        "notes": "New regex chapter added: Regular Expressions and Text Matching; runtime verified on Node 24.22.1",
+        "findings": []
+      }
+    },
+    {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/INDEX.md",
-      "sha256": "e4851317a43154eec098516407f92a0111d697d6c5959f5f97b2b41f8b37d6ca",
+      "sha256": "297cd017fdffd73ea723cbc7f9d3196a1ee4cfc2a0fe6e2afbe315865a2b6485",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -1771,18 +1806,19 @@
       },
       "review": {
         "path": "10-frontend/10.1-javascript/06-modern-and-interview/INDEX.md",
-        "sha256": "e4851317a43154eec098516407f92a0111d697d6c5959f5f97b2b41f8b37d6ca",
+        "sha256": "297cd017fdffd73ea723cbc7f9d3196a1ee4cfc2a0fe6e2afbe315865a2b6485",
         "genre": "index",
         "status": "reviewed",
-        "notes": "JavaScript bank: Q29 and Q34 now trace the mechanism (lexical resolution versus call-time binding; nested unary steps producing a reusable partial) instead of naming the rule",
+        "notes": "New regex chapter added: Regular Expressions and Text Matching; runtime verified on Node 24.22.1",
         "findings": [],
-        "reviewer": "frontend",
-        "reviewDate": "2026-11-12"
+        "reviewer": "root",
+        "reviewDate": "2026-11-12",
+        "fullContentRead": true
       }
     },
     {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/REVISION.md",
-      "sha256": "e59241b53d71f73b9a3f2ded05f52094c615f47397db1a0832d07558074a157f",
+      "sha256": "dbf4c265624aae60e2a491103377e010df2b6c953c148d985b95bbb0ad1cfa02",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -1792,28 +1828,31 @@
           "DOM Events & Delegation",
           "Cross-Tab Communication",
           "Changed-condition checks",
+          "Regular Expressions and Text Matching",
           "Summary",
           "See Also",
           "References & Learn More"
         ],
         "code_fences": 0,
-        "revision_questions": 42,
+        "revision_questions": 48,
         "has_summary": true,
         "has_first_principles": false
       },
       "review": {
         "path": "10-frontend/10.1-javascript/06-modern-and-interview/REVISION.md",
-        "sha256": "e59241b53d71f73b9a3f2ded05f52094c615f47397db1a0832d07558074a157f",
+        "sha256": "dbf4c265624aae60e2a491103377e010df2b6c953c148d985b95bbb0ad1cfa02",
         "genre": "revision",
         "status": "reviewed",
-        "notes": "Full source-linked question review across modern APIs/workers/DOM/cross-tab. Corrected withResolvers completion-path ownership so resolve adoption is not confused with mandatory separate reject handle. Actual v-regex/async iterator retention cases agree; no blocking finding. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS.",
+        "notes": "New regex chapter added: Regular Expressions and Text Matching; runtime verified on Node 24.22.1",
         "findings": [],
-        "reviewer": "frontend"
+        "reviewer": "root",
+        "reviewDate": "2026-11-12",
+        "fullContentRead": true
       }
     },
     {
       "path": "10-frontend/10.1-javascript/INDEX.md",
-      "sha256": "7ca144f157e4135e5fa1713c727f25a35936312c72633f68784b06fa1d138b16",
+      "sha256": "909198a5b6d562eb74a4a0db97ce3ef0531b1d443fa7eb9cab4f4946fae0bd5b",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -1837,10 +1876,10 @@
       },
       "review": {
         "path": "10-frontend/10.1-javascript/INDEX.md",
-        "sha256": "7ca144f157e4135e5fa1713c727f25a35936312c72633f68784b06fa1d138b16",
+        "sha256": "909198a5b6d562eb74a4a0db97ce3ef0531b1d443fa7eb9cab4f4946fae0bd5b",
         "genre": "index",
         "status": "reviewed",
-        "notes": "Frontend pass: the category table column counted learning chapters (35) while the badge counted chapters plus revision companions (41) under the word Files. Renamed the column to Chapters so both scopes are named; no count changed.",
+        "notes": "Updated after regex chapter addition",
         "findings": [],
         "reviewer": "root",
         "metadataReview": {
@@ -6164,9 +6203,9 @@
     },
     {
       "path": "10-frontend/INDEX.md",
-      "sha256": "4217b812f5c78d147fa411231adcf76b2bce0ff5ebed110806456ed5553d1b2f",
+      "sha256": "98713441438eba300ae4eac746483be5988f2a56f67b030f89b59f445ab17fb6",
       "genre": "learning-index",
-      "status": "reviewed",
+      "status": "stale-review",
       "structure": {
         "headings": [
           "Start with one product flow",
@@ -30771,7 +30810,7 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "740d698c7aed2b1d6f14fdbef0d9f3780b324c6709406c2bb71a2b85ed68867a",
+      "sha256": "97caf490371b17c4b6a03d4de7138b876598e07c3f5d6614bf5d0b02db8e85c8",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -30789,12 +30828,12 @@
       },
       "review": {
         "path": "INDEX.md",
-        "sha256": "740d698c7aed2b1d6f14fdbef0d9f3780b324c6709406c2bb71a2b85ed68867a",
+        "sha256": "97caf490371b17c4b6a03d4de7138b876598e07c3f5d6614bf5d0b02db8e85c8",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-12",
         "fullContentRead": true,
-        "notes": "Count restamp only: the corpus now holds 986 markdown files after the new frontend review ledger was added; the file/line counts this document quotes were regenerated by check_counts.py.",
+        "notes": "Updated after regex chapter addition",
         "findings": []
       }
     },
@@ -31320,7 +31359,7 @@
     },
     {
       "path": "docs/2026-11-frontend-review.md",
-      "sha256": "6b349bf44c6fca601fd7416f45d561e4f30df85078be6e226b8574f15190e777",
+      "sha256": "a72f6b8bff412c31f7233180aa5038d5ea1e1b8a5122a523783c9c245c3327b1",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31334,12 +31373,12 @@
       },
       "review": {
         "path": "docs/2026-11-frontend-review.md",
-        "sha256": "6b349bf44c6fca601fd7416f45d561e4f30df85078be6e226b8574f15190e777",
+        "sha256": "a72f6b8bff412c31f7233180aa5038d5ea1e1b8a5122a523783c9c245c3327b1",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-12",
         "fullContentRead": true,
-        "notes": "Ledger update: 13 read-backed rows of 179 after the execution-and-scope category and the functional-patterns generator chapter/revision were read in full; the interview bank is recorded as edited-but-unread.",
+        "notes": "Updated after regex chapter addition",
         "findings": []
       }
     },

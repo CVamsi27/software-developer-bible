@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-05",
- "url_count": 2754,
+ "generated": "2026-11-12",
+ "url_count": 2758,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -1211,6 +1211,9 @@
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules": [
    "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.01-modules.md"
   ],
+  "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions": [
+   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.06-regexp-and-text.md"
+  ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain": [
    "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.02-prototypes.md"
   ],
@@ -1234,6 +1237,7 @@
    "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.03-generators.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Iterator": [
+   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.03-generators.md",
    "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.06-iterator.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON": [
@@ -1279,6 +1283,9 @@
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect/set": [
    "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.02-prototypes.md"
   ],
+  "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/escape": [
+   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.06-regexp-and-text.md"
+  ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md"
   ],
@@ -1291,6 +1298,7 @@
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols": [
+   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.03-generators.md",
    "30-architecture/30.1-design-patterns/04-behavioral/30.1.4.06-iterator.md"
   ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await": [
@@ -5798,6 +5806,9 @@
   "https://owasp.org/API-Security/editions/2023/en/0x11-t10/": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.03-threat-modeling-stride.md"
   ],
+  "https://owasp.org/www-community/attacks/Regular_expression_Denial_of_Service_-_ReDoS": [
+   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.06-regexp-and-text.md"
+  ],
   "https://owasp.org/www-project-vulnerability-management-guide/": [
    "20-backend/20.5-security/03-hardening-and-operations/20.5.3.05-vulnerability-management-patch-governance.md"
   ],
@@ -7020,6 +7031,9 @@
   "https://tc39.es/ecma262/#sec-map-objects": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md",
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md"
+  ],
+  "https://tc39.es/ecma262/#sec-regexp-regular-expression-objects": [
+   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.06-regexp-and-text.md"
   ],
   "https://tc39.es/ecma262/#sec-set-objects": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md"

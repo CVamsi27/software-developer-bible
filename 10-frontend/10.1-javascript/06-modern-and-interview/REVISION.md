@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-JavaScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-6_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-7_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -201,6 +201,34 @@ Source: [Modern Features](10.1.6.01-es2024-features.md)
 **Q:** A consumer needs only the first ten values from a sequence. How do `Iterator.concat()` and `Array.fromAsync()` differ?
 
 **A:** `Iterator.concat()` composes synchronous iterables lazily, so stopping after ten values leaves later values and sources unconsumed. `Array.fromAsync()` consumes its source and stores the complete result before the array is available.
+
+## Regular Expressions and Text Matching
+
+Source: [Regular Expressions and Text Matching](10.1.6.06-regexp-and-text.md)
+
+**Q:** What does the `g` flag on a regex do, and what state does it preserve between calls?
+
+**A:** The `g` flag makes the regex persist its `lastIndex` position across `test` and `exec` calls so subsequent calls resume after the previous match. On a fresh regex `lastIndex` starts at 0; on a reused regex it remembers the last match end and may skip earlier material in later strings, which is the shared-`test` statefulness bug demonstrated in the chapter's runtime example.
+
+**Q:** How does a backtracking matcher handle nested quantifiers such as `/(a+)+$/`, and what runtime consequence does it have?
+
+**A:** The engine tries every partition of the `a` run; on a non-matching input it explores all partitions, which takes time exponential in the input length. Measured on Node 24.22.1 with inputs of 16 / 20 / 22 / 24 characters the elapsed time grows from 0.6 ms to 215 ms before giving up. The defense is to avoid nested quantifiers over overlapping alternatives, bound the input length, and prefer a character class to an alternation of prefixes.
+
+**Q:** Why does `'👍'.match(/./g)` return two matches while `'👍'.match(/./gu)` returns one?
+
+**A:** The default JavaScript matching model counts UTF-16 code units, so a plane-2 emoji occupies two units; with the `u` flag the engine interprets the pattern in Unicode code-point mode and reports a single match. Omitting `u` around astral or supplementary-plane characters is a correctness bug before it is a performance one.
+
+**Q:** What is the difference between the `i`, `m` and `s` flags in terms of what they change about matching?
+
+**A:** `i` makes the match case-insensitive, so `A` and `a` are equivalent; `m` changes `^` and `$` to match at line boundaries instead of only at the start and end of the entire string; `s` makes `.` also match a newline character, so multi-line input no longer stops the dot at the line break.
+
+**Q:** Why does `RegExp.escape('a.b*c')` output `\x61\.b\*c` and what does it prevent?
+
+**A:** Without escaping, `new RegExp('a.b*c')` interprets `.` as "any character" and `*` as "zero or more of the preceding", so a literal `a.b*c` string would not be matched. `RegExp.escape` renders each character literally, so the resulting regex matches the exact literal string `a.b*c`. It fixes the metacharacter problem but does not reduce the backtracking cost of a still-longer pattern with nested quantifiers.
+
+**Q:** What does `String.prototype.matchAll` require, and how does it differ from `regex.test` with a shared `/g` object?
+
+**A:** `String.prototype.matchAll` throws `TypeError: String.prototype.matchAll called with a non-global RegExp argument` if the regex is not global (`g`). The shared `/g` `test` statefulness bug — `lastIndex` not being reset — causes a second string's first match to be skipped even though `test` succeeds on the second message, because the regex is still parked past the first match's end. Resetting `re.lastIndex = 0` or creating a fresh regex fixes both.
 
 ## Summary
 

@@ -1,6 +1,6 @@
 # JavaScript — Index
 
-> **Study time:** ≈ 5 h 3 m of reading (41 files, ~7 min average).
+> **Study time:** ≈ 5 h 6 m of reading (41 files, ~7 min average).
 > Core JavaScript concepts from execution context through async patterns, memory management, functional techniques, modern language APIs, cancellation, browser events, cross-tab coordination, and interview practice.
 
 [![Files](https://img.shields.io/badge/files-41-blue)](../../INDEX.md)
@@ -15,8 +15,8 @@ JavaScript fundamentals commonly appear in frontend, Node.js, and full-stack int
 
 The numbered chapters are organized into six category folders. Files in the same category build on each other; follow each category's reading order, then use its revision companion before interview practice.
 
-| Category | Files | Why it matters |
-| ------------------------------------------------------------------------ | ----: | ----------------------------------------------------------------------------------------------- |
+| Category | Chapters | Why it matters |
+| ------------------------------------------------------------------------ | -------: | ----------------------------------------------------------------------------------------------- |
 | [Execution & Scope](01-execution-and-scope/INDEX.md) | 7 | The language's binding, lookup, execution and lifetime model |
 | [Objects, Prototypes & `this`](02-objects-prototypes-this/INDEX.md) | 3 | Property lookup, prototype links, method calls and `this` |
 | [Async & Concurrency](03-async-concurrency/INDEX.md) | 6 | Event-loop scheduling, promises, async/await, cancellation and bounded work |
@@ -110,7 +110,7 @@ Patterns for explicit data flow, reusable computations, lazy iteration and funct
 | --: | ------ | -------- | --- | --- | ----------: |
 | 26 | [Modules](05-functional-patterns/10.1.5.01-modules.md) | ESM/CommonJS, module identity, resolution, dynamic import and tree shaking | Essential | Foundational | 6 min |
 | 27 | [Memoization](05-functional-patterns/10.1.5.02-memoization.md) | Key equivalence, cache lifetime, bounded retention, promises and React memoization | Essential | Foundational | 6 min |
-| 28 | [Generators](05-functional-patterns/10.1.5.03-generators.md) | Pull iteration, async pages, sent values and iterator cleanup | Important | Specialized | 6 min |
+| 28 | [Generators](05-functional-patterns/10.1.5.03-generators.md) | Pull iteration, async pages, sent values and iterator cleanup | Important | Specialized | 8 min |
 | 29 | [Currying & Composition](05-functional-patterns/10.1.5.04-currying-composition.md) | Currying vs partial application, composition order and framework handlers | Important | Specialized | 4 min |
 | 30 | [Recursion & Tail Calls](05-functional-patterns/10.1.5.05-recursion-tail-call.md) | Base cases, proper tail calls, explicit stacks and depth limits | Important | Specialized | 5 min |
 

@@ -15,8 +15,8 @@
 
 The 17 files are organized into 5 category folders — read in order.
 
-| Category | Files | Why it matters |
-| -------------------------------------------------------------- | ----: | ----------------------------------------------------------------------------------------------------- |
+| Category | Chapters | Why it matters |
+| -------------------------------------------------------------- | -------: | ----------------------------------------------------------------------------------------------------- |
 | [Rendering Fundamentals](01-rendering-fundamentals/INDEX.md) | 4 | Request rendering, reusable output, streaming, and server/client boundaries |
 | [Routing, HTTP & Metadata](02-routing-and-middleware/INDEX.md) | 3 | Next.js 16 Proxy, Route Handlers, and page metadata |
 | [Data & Caching](03-data-and-caching/INDEX.md) | 6 | Data access, mutations, two cache models, streaming, regeneration, and static export |

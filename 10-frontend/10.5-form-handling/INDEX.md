@@ -13,8 +13,8 @@ Forms coordinate editable values, feedback, submission and recovery. Senior inte
 
 ## Topic Categories
 
-| Category | Files | Why it matters |
-| --------------------------------------------- | ----: | --------------------------------------------------------------------- |
+| Category | Chapters | Why it matters |
+| --------------------------------------------- | -------: | --------------------------------------------------------------------- |
 | [Validation](#validation) | 1 | Zod 4 runtime parsing and TypeScript input/output types |
 | [Form Libraries](#form-libraries) | 3 | Compare field ownership, subscriptions and existing integrations |
 | [Server-Side Patterns](#server-side-patterns) | 1 | Server Functions, Server Actions, progressive enhancement |

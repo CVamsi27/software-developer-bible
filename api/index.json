@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "976bbb65220a4a8547030382fe378b8b2e1d169c4966daefcbe6da92bccead11",
+ "corpus_digest": "236c6cad9df6ae05248b53c5c2b59f654ea4ab6ae0e9f931d9e3de1f453310c0",
  "totals": {
   "chapters": 678,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5324
+  "read_minutes": 5327
  },
  "chapters": [
   {
@@ -395,7 +395,7 @@
    "g": [
     "concept"
    ],
-   "m": 6
+   "m": 8
   },
   {
    "p": "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.04-currying-composition.html",
@@ -426,7 +426,7 @@
     "retrieval-practice",
     "revision"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.html",

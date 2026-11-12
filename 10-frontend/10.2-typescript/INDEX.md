@@ -15,8 +15,8 @@
 
 The categories follow prerequisite order; complete each learning flow before its revision drill.
 
-| Category | Files | Why it matters |
-| ---------------------------------------------------------- | ----: | ------------------------------------------------------------------------------------------------- |
+| Category | Chapters | Why it matters |
+| ---------------------------------------------------------- | -------: | ------------------------------------------------------------------------------------------------- |
 | [Foundations](01-foundations/INDEX.md) | 4 | Types vs interfaces, keyof/typeof, type narrowing, tsconfig options — every interview starts here |
 | [Generics & Inference](02-generics-and-inference/INDEX.md) | 4 | Generics, infer, advanced generics, variance — the heart of reusable TS code |
 | [Type Transformations](03-type-transformations/INDEX.md) | 4 | Utility types, conditional types, mapped types, template literals — composable type operations |

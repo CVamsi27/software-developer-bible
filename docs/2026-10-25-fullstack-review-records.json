@@ -457,12 +457,14 @@
     },
     {
       "path": "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.03-generators.md",
-      "sha256": "8368ade1b24f690383c634b2e91966ec594ac5d6e9e456068c46cb7b7e0fda9e",
+      "sha256": "e9f21d4ee273777bfe54138d084e6e3a51eb1b110b6eea8009112a451e382f8e",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review of yield/next/return/throw directions, bounded pages, async pending cancellation, generator finally/early closure and producer/consumer storage bounds. No blocking finding. Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS.",
+      "notes": "Full read. Added a section on Symbol.iterator/Symbol.asyncIterator, re-iterability and the sync iterator helpers, because the chapter never named the protocol key its for...of examples depend on while the interview bank teaches the helpers. New example executed on Node 24.22.1 (spread [1,2,3], destructuring 1/[2,3], Iterator.from(...).map().take().toArray() -> [2,4]); Iterator.concat and AsyncIterator confirmed absent there and labelled as such. Removed a dangling \"(as the hook example shows)\" reference to an example the chapter does not contain.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "root",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.04-currying-composition.md",
@@ -484,21 +486,25 @@
     },
     {
       "path": "10-frontend/10.1-javascript/05-functional-patterns/INDEX.md",
-      "sha256": "fc66231480a74584a505410961d891bb7e7eb748b3bf4f542808364e78d78139",
+      "sha256": "74d3393adb685442f6e8a729ab49f446acd133033d68507e9b83fd442e571fa7",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full learning flow, topic/priority table and source-pointer evidence reviewed. Scope/identity to result retention to pull iteration to argument staging to depth proof is coherent. No blocking finding. Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS.",
+      "notes": "Generator row now names the protocol/helper topics and an 8-minute read time; read-order sentence mentions the Symbol.iterator contract.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "root",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.1-javascript/05-functional-patterns/REVISION.md",
-      "sha256": "8fa173a43e2efaffa86f82a892144fc8cd5a508f0924222f4aaa3c05fb093fcf",
+      "sha256": "4c2cbe6384f235b17d8c2c3a6c2d8a8b1a7d547662b2c0490ba335552473ee09",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Full source-linked authored-question review across all five concepts plus changed-condition group. Answers distinguish identity, TTL/capacity, iteration cleanup, curry arity and portable depth. No blocking finding. Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS.",
+      "notes": "Added three pairs matching the new section: iterable vs iterator identity, one-shot generator objects, and which iterator helpers Node 24.22.1 actually ships.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "root",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md",
@@ -538,13 +544,14 @@
     },
     {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.md",
-      "sha256": "787dc7450e4bd42cf3e638e3ceec752e8f57a0cd20fb3a02f640886122360764",
+      "sha256": "d59f910d97988ec06c15efa943ccfd955d9d8b140930216f7481843731bad425",
       "genre": "interview",
       "status": "reviewed",
-      "notes": "JavaScript bank: Q29 and Q34 now trace the mechanism (lexical resolution versus call-time binding; nested unary steps producing a reusable partial) instead of naming the rule",
+      "notes": "Q57 now states the runtime boundary: Node 24.22.1 ships the other iterator helpers but not Iterator.concat and has no AsyncIterator global. Only this answer was edited; the bank has not been re-read in full this campaign.",
       "findings": [],
-      "reviewer": "frontend",
-      "reviewDate": "2026-11-12"
+      "reviewer": "root",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/INDEX.md",
@@ -567,12 +574,12 @@
     },
     {
       "path": "10-frontend/10.1-javascript/INDEX.md",
-      "sha256": "7cb44e8ea065df772d964030429e94f8eca3f93adb2575bc86f9fe5e8750e7af",
+      "sha256": "7ca144f157e4135e5fa1713c727f25a35936312c72633f68784b06fa1d138b16",
       "genre": "index",
       "status": "reviewed",
-      "notes": "JavaScript bank: Q29 and Q34 now trace the mechanism (lexical resolution versus call-time binding; nested unary steps producing a reusable partial) instead of naming the rule",
+      "notes": "Frontend pass: the category table column counted learning chapters (35) while the badge counted chapters plus revision companions (41) under the word Files. Renamed the column to Chapters so both scopes are named; no count changed.",
       "findings": [],
-      "reviewer": "buffy",
+      "reviewer": "root",
       "metadataReview": {
         "previousReviewedSha256": "e89791b64f62e5d1cc74ff54d1c6cc6563a2f8c7ae3e6af8559379867d90ecd9",
         "reviewDate": "2026-10-26",
@@ -580,7 +587,7 @@
         "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
       },
       "reviewDate": "2026-11-12",
-      "fullContentRead": false
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.2-typescript/01-foundations/10.2.1.01-types-vs-interfaces.md",
@@ -837,12 +844,14 @@
     },
     {
       "path": "10-frontend/10.2-typescript/INDEX.md",
-      "sha256": "d20fe754f4bfd723bc1d8ff0d769c7e846aadf28cfccf42d2aa654ecf1ca7ebc",
+      "sha256": "ea57280040c976d1ce275049b9765cbe447f3ba1003b95881845d791f6b96612",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full stack index reviewed: causal type-system progression and runtime-promise checks. Detailed Advanced Patterns table omits compiler pipeline, despite its canonical category entry; old18-file prose remains stale. Parent notified; do not hand-restamp counts. Parent authorized mapping fix applied: canonical runtime curry link and compiler pipeline table row now present; stale manually maintained file prose removed in favor of flow wording. Prior navigation finding resolved; git diff --check passed.",
+      "notes": "Frontend pass: the category table column counted learning chapters (35) while the badge counted chapters plus revision companions (41) under the word Files. Renamed the column to Chapters so both scopes are named; no count changed.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "root",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.3-react/01-react-internals/10.3.1.01-virtual-dom.md",
@@ -1153,12 +1162,12 @@
     },
     {
       "path": "10-frontend/10.3-react/INDEX.md",
-      "sha256": "83d26659cae3cad34d8f47825365073023acadccbd98045f40495539b6420917",
+      "sha256": "a4454f6924d6035188714aeda4b4fb13a9ca3de275045754e06d034cb1ad0f7c",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-12",
       "fullContentRead": true,
-      "notes": "wrap the field example's sibling JSX in one returned fragment so it compiles",
+      "notes": "Frontend pass: the category table column counted learning chapters (35) while the badge counted chapters plus revision companions (41) under the word Files. Renamed the column to Chapters so both scopes are named; no count changed.",
       "findings": []
     },
     {
@@ -1399,12 +1408,14 @@
     },
     {
       "path": "10-frontend/10.4-next.js/INDEX.md",
-      "sha256": "db83008693e7d4dc123fb0f2574e93ebcc361caaff34a475b2c21e91d6e07719",
+      "sha256": "237bd42ca559ebd47a7b126a3d6e7f370623031a77ba07515e2f2d2031c11534",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full index learning flow/category/revision-before-interview links and canonical topic rows reviewed; counts delegated to restamper.  Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS.",
+      "notes": "Frontend pass: the category table column counted learning chapters (35) while the badge counted chapters plus revision companions (41) under the word Files. Renamed the column to Chapters so both scopes are named; no count changed.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "root",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.5-form-handling/10.5.01-react-hook-form.md",
@@ -1471,12 +1482,14 @@
     },
     {
       "path": "10-frontend/10.5-form-handling/INDEX.md",
-      "sha256": "e4d2aa9f7a958494994bc08c2ea43f0b38448d1b7c6ff2d64cb4085b01e5743c",
+      "sha256": "058cfa8d2dbbafc3f4c4e49c658941c2147ee991390881717c47841ad459ec0a",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full index reviewed: parse before field library, edit/submit/rejection and recovery checkpoint, alternate library comparison by ownership, revision before interview. Docita implementations distinguished from missing framework integrations. Final metadata/source-anchor refresh after parent restamper: inspected current header and any Docita introduction; earlier full semantic review SHA256 e60b80dfb30ee1f143ff34f30183c21d1cb66569e0d5289252c345aab6bb01af. Parent confirms changes here limited to metadata and source-anchor qualification.",
+      "notes": "Frontend pass: the category table column counted learning chapters (35) while the badge counted chapters plus revision companions (41) under the word Files. Renamed the column to Chapters so both scopes are named; no count changed.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "root",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.5-form-handling/REVISION.md",
@@ -1901,7 +1914,7 @@
     },
     {
       "path": "10-frontend/INDEX.md",
-      "sha256": "1f82805f8e60090823f53fdabb877bbdc1f68c8c0b6deb7124c5707e53fd801d",
+      "sha256": "4217b812f5c78d147fa411231adcf76b2bce0ff5ebed110806456ed5553d1b2f",
       "genre": "index",
       "status": "reviewed",
       "notes": "Frontend pass: the sub-stack table column \"Files\" summed to 126 (learning chapters) while the badge and blurb said 149 (chapters plus revision companions) under the same word. Renamed the column to \"Chapters\" so both counts name their scope; the rest of the section map, pass structure and cross-references re-read and consistent.",
@@ -9829,22 +9842,22 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "1a7d5940d6c5c279f38ccc660c8829fdb92db41c62aa201e691fcaf7af378b01",
+      "sha256": "740d698c7aed2b1d6f14fdbef0d9f3780b324c6709406c2bb71a2b85ed68867a",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-12",
       "fullContentRead": true,
-      "notes": "Root pass: badge and footer both claimed October 2026; corrected to November 2026. Stack tables, sub-stack file counts, case-study total (31), study path and cross-reference map re-read against disk; counts restamped by check_counts.py.",
+      "notes": "Count restamp only: the corpus now holds 986 markdown files after the new frontend review ledger was added; the file/line counts this document quotes were regenerated by check_counts.py.",
       "findings": []
     },
     {
       "path": "README.md",
-      "sha256": "56800360bbe7ac1c29602346ce9aef02e8f3b19fab0506a4bf210cd4da402204",
+      "sha256": "c51ace2c32287edf1a5aa470ac4df04d048c7984c6a90e25ff9f22333a9b1959",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-12",
       "fullContentRead": true,
-      "notes": "Root pass: the Last Updated badge claimed October 2026 while the corpus was being edited in November; corrected to November and now enforced by the new STALE-LAST-UPDATED-MONTH freshness rule. Also removed a stray leading space before the stack-breakdown line. Navigation, lane table and study-order claims re-read; counts unchanged.",
+      "notes": "Added the frontend review ledger to the docs table so the new document has an entry point (the structure gate rejects orphan docs).",
       "findings": []
     },
     {
@@ -9859,12 +9872,12 @@
     },
     {
       "path": "contributing.md",
-      "sha256": "481183b6471a4eca378554a8922471657cb62cf872183c05b3f2429013b80134",
+      "sha256": "85b9ab99292ffc26955a7d6c319697284f1974bb266cdfa63cce23013a393fcd",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-12",
       "fullContentRead": true,
-      "notes": "Added gate 30 (mechanical prose) to the gate table and its repair command; gate-count denominators restamped by check_verify_wiring.py; verification and review instructions re-read for accuracy against scripts/verify.sh.",
+      "notes": "Count restamp only: the corpus now holds 986 markdown files after the new frontend review ledger was added; the file/line counts this document quotes were regenerated by check_counts.py.",
       "findings": []
     },
     {
@@ -10004,11 +10017,11 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "d3ad391b695e6e80576c9dcb6b407c071c2536be3d8dab499857216f5459919b",
+      "sha256": "38696a402b01081a21ef3e213aa9a9c8aab334ff089f766a91cdcac625b2646d",
       "status": "reviewed",
-      "reviewer": "buffy",
+      "reviewer": "root",
       "reviewDate": "2026-11-12",
-      "fullContentRead": false,
+      "fullContentRead": true,
       "notes": "wrap the field example's sibling JSX in one returned fragment so it compiles",
       "findings": [],
       "metadataReview": {
@@ -10350,22 +10363,22 @@
     },
     {
       "path": "docs/verification-gates.md",
-      "sha256": "0403ed9d682eb3c0ffc4f42dc7314412d20164bd0c8edd5902dffe5644f6bd39",
+      "sha256": "4d7ed25d92e75e4f815de3e4e2987a92053d1e54e2e4339a41d03ffeafc1e44b",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-12",
       "fullContentRead": true,
-      "notes": "Added the gate 30 entry with its calibration evidence and repair command; denominators restamped by check_verify_wiring.py.",
+      "notes": "Count restamp only: the corpus now holds 986 markdown files after the new frontend review ledger was added; the file/line counts this document quotes were regenerated by check_counts.py.",
       "findings": []
     },
     {
       "path": "lanes/INDEX.md",
-      "sha256": "8af03a6e87fce29ec5b191d49f81b5d11bde03982c2a29e96a6f322e19d5e4db",
+      "sha256": "bb15ac6990ed4fca72e706855d683defea49dbc6d62ca5339149425c992d7534",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-12",
       "fullContentRead": true,
-      "notes": "Lane index count restamped by scripts/check_counts.py; content and links unchanged.",
+      "notes": "Count restamp only: the corpus now holds 986 markdown files after the new frontend review ledger was added; the file/line counts this document quotes were regenerated by check_counts.py.",
       "findings": []
     },
     {
@@ -10696,6 +10709,16 @@
       "reviewDate": "2026-11-12",
       "fullContentRead": true,
       "notes": "Authored document: R1-R7 rubric, measured Phase 0 inventory from scripts/depth_report.py, gate-30 calibration record (10,154 reported findings to 1 real defect) and the stated execution limits. No external claim is asserted without a command or a labelled source.",
+      "findings": []
+    },
+    {
+      "path": "docs/2026-11-frontend-review.md",
+      "sha256": "6b349bf44c6fca601fd7416f45d561e4f30df85078be6e226b8574f15190e777",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": true,
+      "notes": "Ledger update: 13 read-backed rows of 179 after the execution-and-scope category and the functional-patterns generator chapter/revision were read in full; the interview bank is recorded as edited-but-unread.",
       "findings": []
     }
   ]

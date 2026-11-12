@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-JavaScript-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-6_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-7_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
@@ -113,6 +113,18 @@ Source: [Generators](10.1.5.03-generators.md)
 **Q:** Why prefer `for...of` over a manual `while (!done)` loop when both can print the same values?
 
 **A:** A body break/return/throw invokes an available iterator return. Producer next failures differ, and a yielding finally may require more pulls, so mandatory cleanup must not depend on that pattern. A manual loop needs its own owned close on early exit.
+
+**Q:** An object has a `next()` method but no `Symbol.iterator`. Does `for...of` accept it?
+
+**A:** No. The loop reads `Symbol.iterator` and calls it; a bare `next()` method is an iterator, not an iterable, so the object is rejected. `Iterator.from` is the bridge: it wraps an iterator-like object so the helper pipeline can consume it.
+
+**Q:** Why does a second `for...of` over the same generator object produce nothing, while a second loop over an iterable container works?
+
+**A:** A generator object is its own iterator, so `gen[Symbol.iterator]()` returns the same, already-finished object. A container that returns a fresh generator from `Symbol.iterator` can be traversed repeatedly. Check which of the two you are holding before debugging an empty result.
+
+**Q:** Which iterator helpers exist in Node 24.22.1, and what is missing?
+
+**A:** `Iterator.from`, `map`, `filter`, `take`, `drop`, `toArray` and their siblings work. `Iterator.concat` and the `AsyncIterator` global are absent, so lazy concatenation and async helper pipelines must be checked against the target runtime rather than assumed.
 
 **Q:** What does lazy evaluation change about space, and what does it leave alone?
 

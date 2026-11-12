@@ -15,8 +15,8 @@ Senior React roles test the runtime model and the choices built on it: render an
 
 The categories follow prerequisite order; read each learning flow before its revision drill.
 
-| Category | Files | Why it matters |
-| -------------------------------------------------------------------- | ----: | ---------------------------------------------------------------------------------------------------------------------- |
+| Category | Chapters | Why it matters |
+| -------------------------------------------------------------------- | -------: | ---------------------------------------------------------------------------------------------------------------------- |
 | [React Internals](01-react-internals/INDEX.md) | 5 | How React turns updates into committed UI, and how identity, scheduling and state ownership change observable behavior |
 | [Core Hooks](02-core-hooks/INDEX.md) | 5 | The 5 essential hooks (state, effect, memo, ref, context) — used daily |
 | [Advanced Hooks & Patterns](03-advanced-hooks-and-patterns/INDEX.md) | 7 | Suspense, Error Boundary, Custom Hooks, useSyncExternalStore, Performance, State Management, TanStack Query |

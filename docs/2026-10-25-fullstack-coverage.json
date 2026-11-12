@@ -45,7 +45,7 @@
     },
     {
       "path": "00-strategy/00.02-resume-tips.md",
-      "sha256": "3a36b4e803d63ad506dd0d628d8a4875047600fee474c55a840a0b9df57e1bfe",
+      "sha256": "4877b4977e035f1110431ab98c7e2fadec3410b9eaf4fc84bc2a6cac027ef2b3",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -69,18 +69,18 @@
       },
       "review": {
         "path": "00-strategy/00.02-resume-tips.md",
-        "sha256": "3a36b4e803d63ad506dd0d628d8a4875047600fee474c55a840a0b9df57e1bfe",
+        "sha256": "4877b4977e035f1110431ab98c7e2fadec3410b9eaf4fc84bc2a6cac027ef2b3",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-12",
         "fullContentRead": true,
-        "notes": "Full-content review: supported resume evidence and scope, explicit hypothetical metrics, truthful tailoring, ATS uncertainty, export text/render verification and responsibility-versus-impact distinctions.",
+        "notes": "Strategy pass: nav label \"Star Method\" corrected to \"STAR Method\" and one sentence with an agreement slip reworded. Every claim re-read: no invented metric is asserted (the 800ms to 120ms pair is labelled illustrative), ATS behavior is stated as varied rather than a fixed scan time, and both MIT Career Advising links answered HTTP 200 on 2026-11-12.",
         "findings": []
       }
     },
     {
       "path": "00-strategy/00.03-star-method.md",
-      "sha256": "574c6fdb3a9eba5f8b97e4b0c161a8c7f139a2d567c59cbe2f2337005b8d184a",
+      "sha256": "2113b404129964eb25cdd9df115dc2ad4b2cd5ea8d26066c29f511f3a62e2c57",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -103,18 +103,18 @@
       },
       "review": {
         "path": "00-strategy/00.03-star-method.md",
-        "sha256": "574c6fdb3a9eba5f8b97e4b0c161a8c7f139a2d567c59cbe2f2337005b8d184a",
+        "sha256": "2113b404129964eb25cdd9df115dc2ad4b2cd5ea8d26066c29f511f3a62e2c57",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-12",
         "fullContentRead": true,
-        "notes": "Full-content review: STAR concrete incident, own contribution versus team work, evidence and causal limits, alternatives and learning, reusable story bank without fabricated outcomes.",
+        "notes": "Strategy pass: nav label \"Hr Questions\" corrected to \"HR Questions\" (the chapter target is the HR round). STAR/PAR/CAR structures, the worked mistake example and the no-fabricated-metrics boundary re-read; MIT STAR source answered HTTP 200 on 2026-11-12.",
         "findings": []
       }
     },
     {
       "path": "00-strategy/00.04-hr-questions.md",
-      "sha256": "75d04a25eb95900f1e8d44751a11660d38aae327489ec4bb311c16d9fe374a20",
+      "sha256": "58bb94d2b97cf728b3717609c0401a20d9c61b5444e15ee9f96c151af94a47a6",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -138,12 +138,12 @@
       },
       "review": {
         "path": "00-strategy/00.04-hr-questions.md",
-        "sha256": "75d04a25eb95900f1e8d44751a11660d38aae327489ec4bb311c16d9fe374a20",
+        "sha256": "58bb94d2b97cf728b3717609c0401a20d9c61b5444e15ee9f96c151af94a47a6",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-12",
         "fullContentRead": true,
-        "notes": "Full-content review: role thesis, truthful motivations, compensation component arithmetic including recurring versus one-time and liquidity, practical eligibility questions and current-source boundary; all illustrative totals recomputed.",
+        "notes": "Strategy pass: nav label \"Star Method\" corrected to \"STAR Method\". Compensation arithmetic re-checked (115k recurring, 135k modeled, 145k year one, 140k annual value with benefits, 150k year one) and every total matches its stated components; the illustrative amounts are labelled as not a market range. Levels.fyi and Tech Interview Handbook answered HTTP 200.",
         "findings": []
       }
     },

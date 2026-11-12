@@ -4308,12 +4308,12 @@
     },
     {
       "path": "20-backend/20.7-graphql/03-clients-and-production/20.7.3.01-apollo-client.md",
-      "sha256": "ee923b9df52382ee17165ff1fb4ad533d7f28b12ceea123fa0ba19d1540df8b3",
+      "sha256": "c45ebe3dd5e9d59c020e6f8eefd6759ac512116580c10f3517edfdd1708ffcb8",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full read normalized identity versus list membership, exactClient4 imports/link/typed selections, skipToken retained-data hiding, optimistic rollback, network-only versus no-cache, pagination/racing results and identity/cache lifetime. Client4.3.3 official npm manifest peerDependencies/exports inspected plus official get-started/cache docs (the migration page fetch failed); React subpath and graphql16/17 peers verified; no browser render, optimistic integration, TypeScript compilation or deployed server test performed in this cohort. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests . Sources: https://www.apollographql.com/docs/react/get-started ; https://www.apollographql.com/docs/react/caching/cache-configuration .",
+      "reviewDate": "2026-11-12",
+      "notes": "record the GraphQL.js 17 Node runtime floor at the version-choice point",
       "fullContentRead": true,
       "findings": []
     },

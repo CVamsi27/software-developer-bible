@@ -44,32 +44,32 @@
     },
     {
       "path": "00-strategy/00.05-find-startup-roles.md",
-      "sha256": "77b921681b57b9ad7c621e6f7551b471daca5c023e26ef3f0c45792a087e2900",
+      "sha256": "a1125231f3ad2e04b69a65fac1aeea74c2e88c675c85e30491d194dedb1631f2",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-12",
       "fullContentRead": true,
-      "notes": "New chapter, full-content review: separates discovery channels from the employer ATS as the authority for vacancy state, then covers startup sourcing, ATS resolution, ownership/runway/equity questions, scam checks, a dated pipeline and channel limits. Fifteen external citations were probe-verified live on 2026-11-12. Deliberately no static company or opening list: postings go stale and personal targets live in the private workspace.",
+      "notes": "Full-content review after the tooling addition: section 6 now covers local job-search workspaces using career-ops as a public MIT-licensed example, separating automation (discovery, liveness, consistent scoring, tracking) from candidate-owned decisions (ATS verification, fit, fact-checking, submission). States the local-first/privacy boundary, exportability test and npx supply-chain caution, then the old channel-limit section becomes 7. The career-ops URL answered HTTP 200 on 2026-11-12; no local or personal workspace path is cited.",
       "findings": []
     },
     {
       "path": "00-strategy/INDEX.md",
-      "sha256": "9c65fa4dcb100dd37e2d7046635f920ade8ae2a5f7ab18657ff1ef5deab82d4b",
+      "sha256": "810897c63729f7b6f3218785dd7c0c3d6eacfb15d5db85be6fe63b7ecb335c72",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-12",
       "fullContentRead": true,
-      "notes": "Added the role-discovery pass as row 0, updated the section blurb and badges to 6 files / 26 minutes, and stated that file numbers keep existing links stable while the Pass column is the reading order. File-level and category links checked.",
+      "notes": "Section blurb now names local job-search tooling; read-time writer restamped the section to 6 files / 28 minutes and the category badge to 18 minutes after the chapter grew to 9 minutes. Pass table and links unchanged.",
       "findings": []
     },
     {
       "path": "00-strategy/REVISION.md",
-      "sha256": "3b5cb2d0ddb1724078d4793572b864e8ca5d1524cdbef6d21b9648094983a2c8",
+      "sha256": "672963ace404484b246ab611218655bb4e79a3bdb562e438f98dd1ce71e1b3b5",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-12",
       "fullContentRead": true,
-      "notes": "Added three source-linked pairs for role discovery, funding evidence and equity comparability; the Summary now says to verify an opening at its owner. Existing authored questions preserved.",
+      "notes": "Added two source-linked pairs on what a local job-search tool may automate and what \"local-first\" leaves open about the model provider and on-disk personal data; Summary now says to keep verification, fit judgment and submission with the candidate. Existing authored questions preserved.",
       "findings": []
     },
     {
@@ -9884,12 +9884,12 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "d8c2a1dc346b7e556143f38126584f3992b0aff268783bda3e3fd804b663bbd5",
+      "sha256": "c002eadeadd3a34688a558ddf7c713d2a2e28ecb4aa793104bb04eab729e0b58",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-12",
       "fullContentRead": false,
-      "notes": "Count restamp only: 680 files, 158K lines and the 988 Files badge now match live disk after the new strategy chapter. Navigation text unchanged.",
+      "notes": "Study-time restamp only: 89 h 7 m after the role-discovery chapter grew from 7 to 9 minutes. File and line counts unchanged.",
       "findings": []
     },
     {
@@ -10079,12 +10079,12 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "ebecd8c235ca7c4313eb0d2287b17634e5047593ee5184e846a0537a42b9ea9b",
+      "sha256": "b02e94a50fd28aea0af89c8bd8354d028b89c48485aa014eff39e69fa7c3b3c0",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-12",
       "fullContentRead": false,
-      "notes": "Generated totals refreshed from api/index.json: 680 chapters and 5345 read minutes. Schema example and contract text unchanged.",
+      "notes": "Generated totals restamped from api/index.json: 680 chapters and 5347 read minutes after the job-search chapter revision. Schema example unchanged.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",

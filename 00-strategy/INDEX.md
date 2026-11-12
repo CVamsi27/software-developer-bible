@@ -1,7 +1,7 @@
 # Interview Strategy — Index
 
-> **Study time:** ≈ 26 min of reading (6 files, ~4 min average).
-> **6 files** — Essential interview strategy covering role discovery, resume tips, communication, STAR method, and HR questions. **Cross-lane**: applies to both the Indian SDE / FAANG lane and the Abroad Full-Stack lane. **Read this BEFORE any interview.**
+> **Study time:** ≈ 28 min of reading (6 files, ~5 min average).
+> **6 files** — Essential interview strategy covering role discovery, local job-search tooling, resume tips, communication, STAR method, and HR questions. **Cross-lane**: applies to both the Indian SDE / FAANG lane and the Abroad Full-Stack lane. **Read this BEFORE any interview.**
 
 [![Files](https://img.shields.io/badge/files-6-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Interview-red)](#)

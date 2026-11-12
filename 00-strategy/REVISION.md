@@ -58,6 +58,14 @@ Source: [Find Startup and Product Roles Without a Stale Job List](00.05-find-sta
 
 **A:** The grant needs a valuation, strike price, vesting schedule, cliff, preferred-share stack and liquidity assumptions before it can be compared. A percentage alone is not cash. Model the downside and the likely exit range, then compare the result with recurring salary and bonus.
 
+**Q:** A local job-search tool offers to scan boards, score roles and submit applications. Which parts should you keep?
+
+**A:** Automate discovery, liveness checks, consistent scoring and tracker maintenance. Keep verification at the employer's ATS, the fit decision, fact-checking of every generated claim and the final submission. Auto-submit removes the review step that catches a fabricated metric or an ignored requirement.
+
+**Q:** The tool says "local-first." What privacy question does that leave open?
+
+**A:** Local-first says where the files live, not who receives them. The CV, reports and recruiter names remain personal data on disk, and the configured model provider may receive the content. Keep the workspace in a private repository or ignored directory, read the provider boundary, and pin the version before running third-party code.
+
 ## HR Round Strategy for Senior Full Stack Engineers
 
 Source: [HR Round Strategy for Senior Full Stack Engineers](00.04-hr-questions.md)
@@ -68,7 +76,7 @@ Source: [HR Round Strategy for Senior Full Stack Engineers](00.04-hr-questions.m
 
 ## Summary
 
-Prepare evidence of your contribution, explain the decision clearly, and compare employment terms using their actual conditions. Verify that an opening is current at its owner before investing in it. Revisit the source when a claim, story or offer assumption cannot survive a follow-up.
+Prepare evidence of your contribution, explain the decision clearly, and compare employment terms using their actual conditions. Verify that an opening is current at its owner before investing in it. Use tooling for repeatable discovery and tracking, but keep verification, fit judgment and submission with you. Revisit the source when a claim, story or offer assumption cannot survive a follow-up.
 
 ## See Also
 

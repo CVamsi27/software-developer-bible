@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "cc84c03fa07d860fa102d1202480fcb73e6d2f9a300d1c2d8866286e74b83ea9",
+ "corpus_digest": "871eea3a280e6d615509bb0a5c80b468e32c35bf87c9c06b62e8c41ed34d3d53",
  "totals": {
   "chapters": 680,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5345
+  "read_minutes": 5347
  },
  "chapters": [
   {
@@ -67,7 +67,7 @@
     "job-search",
     "startups"
    ],
-   "m": 7
+   "m": 9
   },
   {
    "p": "00-strategy/REVISION.html",

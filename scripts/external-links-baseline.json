@@ -1,6 +1,6 @@
 {
  "generated": "2026-11-12",
- "url_count": 2773,
+ "url_count": 2774,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -3405,6 +3405,9 @@
   ],
   "https://github.com/bpftrace/bpftrace/blob/master/docs/reference_guide.md": [
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.03-ebpf-observability.md"
+  ],
+  "https://github.com/career-ops-hq/career-ops": [
+   "00-strategy/00.05-find-startup-roles.md"
   ],
   "https://github.com/changesets/changesets": [
    "40-platform/40.3-ci-cd/02-build-and-deploy/40.3.2.03-artifact-registries-release-promotion.md"

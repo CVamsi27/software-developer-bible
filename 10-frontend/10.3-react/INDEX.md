@@ -1,6 +1,6 @@
 # React — Index
 
-> **Study time:** ≈ 3 h of reading (28 files, ~6 min average).
+> **Study time:** ≈ 3 h 1 m of reading (28 files, ~6 min average).
 > **28 files** — React internals from Virtual DOM to Fiber, hooks, patterns, custom hooks, portals, compound components, external stores, server-state ownership with TanStack Query, React Router data routers, React 18/19 concurrent APIs, performance, state management, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-28-blue)](../../INDEX.md)
@@ -101,7 +101,7 @@ Reusable component patterns + interview drills.
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 21 | [Portals](05-patterns-and-interview/10.3.5.01-portals.md) | createPortal, event bubbling, modals, tooltips, overflow escape, SSR safety | Important | Specialized | 6 min |
-| 22 | [Compound Components](05-patterns-and-interview/10.3.5.02-compound-components.md) | Context-based composition, tabs, accordion, choice popover, form fields, generics | Important | Specialized | 9 min |
+| 22 | [Compound Components](05-patterns-and-interview/10.3.5.02-compound-components.md) | Context-based composition, tabs, accordion, choice popover, form fields, generics | Important | Specialized | 10 min |
 | 23 | [Interview Questions](05-patterns-and-interview/10.3.5.03-interview-questions.md) | Curated mechanism and design questions | Important | Specialized | 12 min |
 
 ---

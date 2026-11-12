@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "392a149f14913eecf4571e2b1c90606365e23c445591715a12ec196f2941ef23",
+ "corpus_digest": "881781a4035f955b29d5252611030bfd9f99f55add3701fac8220d9b67a662ac",
  "totals": {
   "chapters": 678,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5323
+  "read_minutes": 5324
  },
  "chapters": [
   {
@@ -988,7 +988,7 @@
    "g": [
     "concept"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.03-interview-questions.html",

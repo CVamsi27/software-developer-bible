@@ -3670,7 +3670,7 @@
     },
     {
       "path": "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.02-compound-components.md",
-      "sha256": "d9119311eecbcac0a0918cc25ff7180423855ee328eb805a152b75b962beaa9b",
+      "sha256": "9efe975c49a2a409ecd723bbb7e3288bab9a569b1137a85748cd193e4b9da0ea",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -3692,12 +3692,13 @@
       },
       "review": {
         "path": "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.02-compound-components.md",
-        "sha256": "d9119311eecbcac0a0918cc25ff7180423855ee328eb805a152b75b962beaa9b",
+        "sha256": "9efe975c49a2a409ecd723bbb7e3288bab9a569b1137a85748cd193e4b9da0ea",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full content: single controlled selection owner/context, ID relationships and stable values, explicit omission of roving keyboard implementation, mount/draft effects, clone/Children limitations, immutable registration, generic factory typing and context update costs.",
+        "notes": "wrap the field example's sibling JSX in one returned fragment so it compiles",
         "findings": [],
-        "reviewer": "frontend"
+        "reviewer": "frontend",
+        "reviewDate": "2026-11-12"
       }
     },
     {
@@ -3732,7 +3733,7 @@
     },
     {
       "path": "10-frontend/10.3-react/05-patterns-and-interview/INDEX.md",
-      "sha256": "0327efca713ef6b063a002db266fb5d6734c27db6e6aa4d2afb69aa89ca5020a",
+      "sha256": "8fd63822bde44683c162f4558b83832a988700946b45715a96e8038971915876",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -3749,12 +3750,13 @@
       },
       "review": {
         "path": "10-frontend/10.3-react/05-patterns-and-interview/INDEX.md",
-        "sha256": "0327efca713ef6b063a002db266fb5d6734c27db6e6aa4d2afb69aa89ca5020a",
+        "sha256": "8fd63822bde44683c162f4558b83832a988700946b45715a96e8038971915876",
         "genre": "index",
         "status": "reviewed",
-        "notes": "Full category index: placement then composition then revision before interview flow; linked rows match canonical concepts.",
+        "notes": "wrap the field example's sibling JSX in one returned fragment so it compiles",
         "findings": [],
-        "reviewer": "frontend"
+        "reviewer": "frontend",
+        "reviewDate": "2026-11-12"
       }
     },
     {
@@ -3788,7 +3790,7 @@
     },
     {
       "path": "10-frontend/10.3-react/INDEX.md",
-      "sha256": "1420ed62539a7ae5ceb628bccbe176c240049341bf1868d366c2707b0f236001",
+      "sha256": "83d26659cae3cad34d8f47825365073023acadccbd98045f40495539b6420917",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -3811,12 +3813,12 @@
       },
       "review": {
         "path": "10-frontend/10.3-react/INDEX.md",
-        "sha256": "1420ed62539a7ae5ceb628bccbe176c240049341bf1868d366c2707b0f236001",
+        "sha256": "83d26659cae3cad34d8f47825365073023acadccbd98045f40495539b6420917",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-12",
         "fullContentRead": true,
-        "notes": "Full index read. Added missing TanStack Query detailed row and study-path step; display sequence remains separate from stable chapter IDs. Removed stale prose total and let count/read-time writers own generated claims. Concrete learning passes precede revision/interview practice.",
+        "notes": "wrap the field example's sibling JSX in one returned fragment so it compiles",
         "findings": []
       }
     },
@@ -6144,7 +6146,7 @@
     },
     {
       "path": "10-frontend/INDEX.md",
-      "sha256": "057aa92507e08bcebb1e769a847947dc0630462d0b61b13bdeddc7e2c063c9c4",
+      "sha256": "75d67d150dfd1c7eb6c342f0d3347d5d4ff0304269c74de6c022443f72179ddd",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -6166,10 +6168,10 @@
       },
       "review": {
         "path": "10-frontend/INDEX.md",
-        "sha256": "057aa92507e08bcebb1e769a847947dc0630462d0b61b13bdeddc7e2c063c9c4",
+        "sha256": "75d67d150dfd1c7eb6c342f0d3347d5d4ff0304269c74de6c022443f72179ddd",
         "genre": "index",
         "status": "reviewed",
-        "notes": "JavaScript bank: Q29 and Q34 now trace the mechanism (lexical resolution versus call-time binding; nested unary steps producing a reusable partial) instead of naming the rule",
+        "notes": "wrap the field example's sibling JSX in one returned fragment so it compiles",
         "findings": [],
         "reviewer": "buffy",
         "metadataReview": {
@@ -30751,7 +30753,7 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "d3b20f2720f4190eaf3360ec5f05eaf4945c9f6d0e7536f13c4fbd97d234dc49",
+      "sha256": "33b5d6bc5740ba2a62734779489badacc310e522102c6aa29e2e3c8ea3ce5e3f",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -30769,12 +30771,12 @@
       },
       "review": {
         "path": "INDEX.md",
-        "sha256": "d3b20f2720f4190eaf3360ec5f05eaf4945c9f6d0e7536f13c4fbd97d234dc49",
+        "sha256": "33b5d6bc5740ba2a62734779489badacc310e522102c6aa29e2e3c8ea3ce5e3f",
         "status": "reviewed",
         "reviewer": "buffy",
         "reviewDate": "2026-11-12",
         "fullContentRead": false,
-        "notes": "Design-patterns bank: eleven one-line definitions now name the mechanism and the failure boundary (adapter translation cost, builder invariant, facade ordering, proxy obligations, strategy substitution, chain path failures, template ordering, command contracts, composite totality, iterator mutation)",
+        "notes": "wrap the field example's sibling JSX in one returned fragment so it compiles",
         "findings": []
       }
     },
@@ -31300,7 +31302,7 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "91d074d6d4c394751a83673b9aa9dec193287fbbaf9f69ce04a2745b0c15a5a3",
+      "sha256": "d3ad391b695e6e80576c9dcb6b407c071c2536be3d8dab499857216f5459919b",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31318,12 +31320,12 @@
       },
       "review": {
         "path": "docs/api-contract.md",
-        "sha256": "91d074d6d4c394751a83673b9aa9dec193287fbbaf9f69ce04a2745b0c15a5a3",
+        "sha256": "d3ad391b695e6e80576c9dcb6b407c071c2536be3d8dab499857216f5459919b",
         "status": "reviewed",
         "reviewer": "buffy",
         "reviewDate": "2026-11-12",
         "fullContentRead": false,
-        "notes": "Design-patterns bank: eleven one-line definitions now name the mechanism and the failure boundary (adapter translation cost, builder invariant, facade ordering, proxy obligations, strategy substitution, chain path failures, template ordering, command contracts, composite totality, iterator mutation)",
+        "notes": "wrap the field example's sibling JSX in one returned fragment so it compiles",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",

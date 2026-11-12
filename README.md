@@ -10,7 +10,7 @@ permalink: /README.html
 
 [![Lanes](https://img.shields.io/badge/lanes-2-blue)](lanes/INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](INDEX.md)
-[![Files](https://img.shields.io/badge/files-984-orange)](INDEX.md)
+[![Files](https://img.shields.io/badge/files-985-orange)](INDEX.md)
 [![Search](https://img.shields.io/badge/search-try%20it-blueviolet)](search.html)
 [![API](https://img.shields.io/badge/corpus%20API-json-informational)](api/index.json)
 [![GoF Coverage](https://img.shields.io/badge/design%20patterns-23%2F23-success)](30-architecture/30.1-design-patterns/INDEX.md)
@@ -75,13 +75,14 @@ Questions and answers live in one separate `REVISION.md` per category, linked as
 ## Use the resource for the task at hand
 
 | Task | Path |
-| -------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| -------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | Learn a new mechanism | Follow the category’s staged `INDEX.md`, then trace its chapter examples |
 | Check recall after a category | Use its separate `REVISION.md` before reopening the sources |
 | Repair an interview gap | Choose the relevant canonical chapter, then test a changed case |
 | Find a topic quickly | [Search](search.html), [master index](INDEX.md) or [reference guides](70-interview-toolkit/70.3-cheatsheets/INDEX.md) |
 | Plan preparation | [Roadmap](ROADMAP.md) and the lane matching your confirmed format |
 | Check repository validation | [Verification gates](docs/verification-gates.md) and [scripts map](docs/scripts-map.md) |
+| Judge whether a chapter is good enough | [Quality rubric](docs/2026-11-quality-rubric.md) |
 | Understand publishing and access | [Deployment](docs/deployment.md) |
 
 Use the [two-axis topic importance guide](docs/topic-importance.md) to choose what to study: prioritize core full-stack engineering and system design, keep HTML/CSS basics, and defer animation specialization.

@@ -416,7 +416,7 @@
       "sha256": "240e9b1d55c6207bdcc4edc21209be8d8019a9179b67a244043c3b8a7fcb1532",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full category learning flow/topic mapping and source pointers reviewed; values→collections→copy→timers→retainers→GC→lookup/equality progression coherent. Counts delegated to final restamper. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS.",
+      "notes": "Full category learning flow/topic mapping and source pointers reviewed; values\u2192collections\u2192copy\u2192timers\u2192retainers\u2192GC\u2192lookup/equality progression coherent. Counts delegated to final restamper. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS.",
       "findings": [],
       "reviewer": "frontend",
       "metadataReview": {
@@ -503,7 +503,7 @@
       "sha256": "cc6122e76afb57cca9bd29b129d803aac70845c7ce7931df54b5b0443f4f5dab",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review. Edition2022–26 lists cross-checked TC39 finished proposals; ownership/grouping/lazy iterator versus async collection/precision/host API distinctions retained. Actual JSON source integer/rawJSON and regex cases executed. Node23 lacks Iterator.concat/Error.isError; those APIs not executed, runtime support distinction explicitly preserved. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS.",
+      "notes": "Full-content review. Edition2022\u201326 lists cross-checked TC39 finished proposals; ownership/grouping/lazy iterator versus async collection/precision/host API distinctions retained. Actual JSON source integer/rawJSON and regex cases executed. Node23 lacks Iterator.concat/Error.isError; those APIs not executed, runtime support distinction explicitly preserved. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS.",
       "findings": [],
       "reviewer": "frontend"
     },
@@ -1315,7 +1315,7 @@
       "sha256": "0c72d0bfb224eee1311a6c554e6d2a4018d2bd139a80221b16fa791b860303d4",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full index reviewed: read dependency→authoritative write→installed cache model→stream/ISR/export delivery→revision→separate interview bank. No duplicate deep mechanism.",
+      "notes": "Full index reviewed: read dependency\u2192authoritative write\u2192installed cache model\u2192stream/ISR/export delivery\u2192revision\u2192separate interview bank. No duplicate deep mechanism.",
       "findings": [],
       "reviewer": "frontend"
     },
@@ -2949,12 +2949,12 @@
     },
     {
       "path": "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.04-file-upload-apis.md",
-      "sha256": "de02c33406f049f85f589404888a87e439a30c33d86574bc0f270da2d84dc211",
+      "sha256": "6d7bed391981ee4f25c441161c1c41b87afca1a8e5d5edaa7e03532657178e08",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full content read: proxy/direct form/storage multipart separation, bearer-grant overwrite race and immutable approved version, actual size/checksum authorization, SHA256 byte conversion, authoritative tus offset409, multipart CRLF, resource/scan and cookie-origin boundaries. Checked AWS presign, tus and Sharp primary docs. Extracted checksum demo executed true; no object-storage or scanner integration claimed. Primary URLs checked: https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html, https://tus.io/protocols/resumable-upload, https://sharp.pixelplumbing.com/api-output/.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-12",
+      "notes": "Full-content review during the 2026-11 prose pass: gate 30 found the opening routing line with a doubled space and a lowercase sentence start (\"proxy:  client\"); repaired to one sentence. Definition, byte-path reasoning and completion-versus-publication boundary read against the REST upload contract; no version claim in the file.",
       "fullContentRead": true,
       "findings": []
     },
@@ -3670,7 +3670,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read all40 authoredquestions/followups including complete22–40 and references. Checked credentialpurpose/session/tokenlifetime and revocation, delegatedgrantselection, BFF/CSRF, currentrole/objectpolicy, workloadcost and recovery, statuschallenge semantics, fabricatedexperience avoidance. Sound concise mechanisms with failurebounds; no observedproduction results invented. Official sources checked for this cohort: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html ; https://www.rfc-editor.org/rfc/rfc9700 ; https://www.rfc-editor.org/rfc/rfc10017.html ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/types.ts ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/saml.ts ; https://pages.nist.gov/800-63-4/sp800-63b.html ; https://simplewebauthn.dev/docs/packages/server .",
+      "notes": "Full read all40 authoredquestions/followups including complete22\u201340 and references. Checked credentialpurpose/session/tokenlifetime and revocation, delegatedgrantselection, BFF/CSRF, currentrole/objectpolicy, workloadcost and recovery, statuschallenge semantics, fabricatedexperience avoidance. Sound concise mechanisms with failurebounds; no observedproduction results invented. Official sources checked for this cohort: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html ; https://www.rfc-editor.org/rfc/rfc9700 ; https://www.rfc-editor.org/rfc/rfc10017.html ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/types.ts ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/saml.ts ; https://pages.nist.gov/800-63-4/sp800-63b.html ; https://simplewebauthn.dev/docs/packages/server .",
       "fullContentRead": true,
       "findings": []
     },
@@ -3736,7 +3736,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read currentOWASP2023 API1–10 mapping, owner/tenant predicate plusoutputprojection/writeallowlist, multidimensional budgets versusbusinessflowabuse, fixedpartnerorigin versus generalSSRF DNSconnector/redirect/egress control, dependencyresponse validation and safeproblemresponses. Exact URLhelper passes validID and rejects traversal/alternateorigin/query/scheme input. OfficialOWASP2023 catalog checked; no routepolicy, outboundrequest, load or deployment test. Sources checked: https://api-security.owasp.org/editions/2023/en/0x11-t10/ ; https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html .",
+      "notes": "Full read currentOWASP2023 API1\u201310 mapping, owner/tenant predicate plusoutputprojection/writeallowlist, multidimensional budgets versusbusinessflowabuse, fixedpartnerorigin versus generalSSRF DNSconnector/redirect/egress control, dependencyresponse validation and safeproblemresponses. Exact URLhelper passes validID and rejects traversal/alternateorigin/query/scheme input. OfficialOWASP2023 catalog checked; no routepolicy, outboundrequest, load or deployment test. Sources checked: https://api-security.owasp.org/editions/2023/en/0x11-t10/ ; https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html .",
       "fullContentRead": true,
       "findings": []
     },
@@ -3747,7 +3747,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read stagedXSS→ambientcredentialCSRF→SQLbinding→composedAPIpolicy, revisionbeforebank. Docita paths explicitlyreviewstartingpoints withconfiguration/routecoverage caveat; codepresence notdeployedsecurityevidence. No liveDocita inspection claimed. Sources checked: https://api-security.owasp.org/editions/2023/en/0x11-t10/ ; https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html .",
+      "notes": "Full read stagedXSS\u2192ambientcredentialCSRF\u2192SQLbinding\u2192composedAPIpolicy, revisionbeforebank. Docita paths explicitlyreviewstartingpoints withconfiguration/routecoverage caveat; codepresence notdeployedsecurityevidence. No liveDocita inspection claimed. Sources checked: https://api-security.owasp.org/editions/2023/en/0x11-t10/ ; https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4205,7 +4205,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full content read: topology/RPC→ownership/consistency→resilience→durablecommunication/migration→streaming/revision/drills stages; alltopiclinks reviewed or previouslycoveredoutbox. Categoryrevision links precede drill; currentDocita pointers datedsourceonly with listenercancel/idempotency limitations. Rootmanaged numericclaims not edited.",
+      "notes": "Full content read: topology/RPC\u2192ownership/consistency\u2192resilience\u2192durablecommunication/migration\u2192streaming/revision/drills stages; alltopiclinks reviewed or previouslycoveredoutbox. Categoryrevision links precede drill; currentDocita pointers datedsourceonly with listenercancel/idempotency limitations. Rootmanaged numericclaims not edited.",
       "fullContentRead": true,
       "findings": []
     },
@@ -4293,7 +4293,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read resolver trace→Server5/Express5 boundary→separate revision→clients→bank; project comparison explicitly study fixture versus deployed claim. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read resolver trace\u2192Server5/Express5 boundary\u2192separate revision\u2192clients\u2192bank; project comparison explicitly study fixture versus deployed claim. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4348,7 +4348,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read entity/optimistic/list transition→variable-aware admission→actual generated consumer→revision→bank. Distinguishes REST source evidence from proposed GraphQL design and role-specific learning goals. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read entity/optimistic/list transition\u2192variable-aware admission\u2192actual generated consumer\u2192revision\u2192bank. Distinguishes REST source evidence from proposed GraphQL design and role-specific learning goals. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4370,7 +4370,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read all50 authored questions and answers including domain exercises31–40, failure41–50. Checked operation/nullability, ordered scoped batching, schema/permission/cache/federation/cost ownership, atomicity and unknown effects, oldclient compatibility and domain-specific invariants. Proposed designs do not fabricate past evaluation or deployed experience; no blocking correctness/depth finding. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read all50 authored questions and answers including domain exercises31\u201340, failure41\u201350. Checked operation/nullability, ordered scoped batching, schema/permission/cache/federation/cost ownership, atomicity and unknown effects, oldclient compatibility and domain-specific invariants. Proposed designs do not fabricate past evaluation or deployed experience; no blocking correctness/depth finding. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4381,7 +4381,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read prerequisite revision groups→all50 authored prompts→role-specific followups→source return when unsupported. Explicit experience boundary prevents proposed design from becoming fabricated implementation/deployment evidence. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read prerequisite revision groups\u2192all50 authored prompts\u2192role-specific followups\u2192source return when unsupported. Explicit experience boundary prevents proposed design from becoming fabricated implementation/deployment evidence. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4392,7 +4392,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read: staged contract→execution→consumers/operations→source-linked revision→all50 authored drills. Role-specific authority/cache/governance emphasis and REST project comparison avoid unverified GraphQL deployment claims. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read: staged contract\u2192execution\u2192consumers/operations\u2192source-linked revision\u2192all50 authored drills. Role-specific authority/cache/governance emphasis and REST project comparison avoid unverified GraphQL deployment claims. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4465,7 +4465,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full content read: strategy/data/primitives→advancedpatterns→revision→interview flow, choosingauthority for immediatewrites and leasefallback not magicmutex; links/description mirror sources, Docita pointers disclaim currentRedis/TTL/deploymentproof. Numericclaims rootmanaged.",
+      "notes": "Full content read: strategy/data/primitives\u2192advancedpatterns\u2192revision\u2192interview flow, choosingauthority for immediatewrites and leasefallback not magicmutex; links/description mirror sources, Docita pointers disclaim currentRedis/TTL/deploymentproof. Numericclaims rootmanaged.",
       "fullContentRead": true,
       "findings": []
     },
@@ -4537,7 +4537,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read learning sequence model→operations→patterns→revision→bank, source-linked cross references and decision paths; Docita implementation pointers explicitly distinguish study material from deployment evidence, and enqueue transaction/claim/lease boundaries from effect exactly-once. No Docita checkout or live production inspected; no unverified performance claim adopted. Sources checked: https://kafka.apache.org/42/getting-started/upgrade/ ; https://kafka.apache.org/43/getting-started/upgrade/ ; https://docs.confluent.io/platform/current/clients/librdkafka/html/md_CONFIGURATION.html ; https://www.rabbitmq.com/blog/2026/04/23/rabbitmq-4.3-release .",
+      "notes": "Full read learning sequence model\u2192operations\u2192patterns\u2192revision\u2192bank, source-linked cross references and decision paths; Docita implementation pointers explicitly distinguish study material from deployment evidence, and enqueue transaction/claim/lease boundaries from effect exactly-once. No Docita checkout or live production inspected; no unverified performance claim adopted. Sources checked: https://kafka.apache.org/42/getting-started/upgrade/ ; https://kafka.apache.org/43/getting-started/upgrade/ ; https://docs.confluent.io/platform/current/clients/librdkafka/html/md_CONFIGURATION.html ; https://www.rabbitmq.com/blog/2026/04/23/rabbitmq-4.3-release .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4609,7 +4609,7 @@
       "sha256": "ab78382b78b459d498a454b829a03f4a8883ef9fdc983ced7611228f2fe5a344",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full read foundational prerequisite flow OOP→principles→UML, tradeoff completion drill before revision, qualified Docita locations; study estimates illustrative, disk totals writer owned. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
+      "notes": "Full read foundational prerequisite flow OOP\u2192principles\u2192UML, tradeoff completion drill before revision, qualified Docita locations; study estimates illustrative, disk totals writer owned. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
       "findings": [],
       "reviewer": "architecture-final"
     },
@@ -5458,7 +5458,7 @@
       "sha256": "d5fc9f000f6da2b906bdd789269e74cd5f5710320eb358661ed5f141bcf0c8ed",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review: Full read: origin-coordinated demand and current claim, RFCrobots vs SSRF/actualsocket validation, narrow ASCII URL decoder, content vs URL/revisit separation and bounded stream/parser. FIXED empty query delimiter /? lost by urlunsplit, aligned companion; RFC3986§6.2.3 primary verified. /tmp/check-crawler-query-identity.py RED→GREEN preserving absent/empty/fragment query, params/ports/IPv6/rejections.",
+      "notes": "Full-content review: Full read: origin-coordinated demand and current claim, RFCrobots vs SSRF/actualsocket validation, narrow ASCII URL decoder, content vs URL/revisit separation and bounded stream/parser. FIXED empty query delimiter /? lost by urlunsplit, aligned companion; RFC3986\u00a76.2.3 primary verified. /tmp/check-crawler-query-identity.py RED\u2192GREEN preserving absent/empty/fragment query, params/ports/IPv6/rejections.",
       "findings": [],
       "fullContentRead": true,
       "reviewer": "resume_portfolio",
@@ -9720,7 +9720,7 @@
       "reviewer": "root",
       "reviewDate": "2026-10-25",
       "fullContentRead": true,
-      "notes": "Full-content review: Azure guide full read: settlement versus local effect, Cosmos consistency/session and multi-write restriction, blob lease 15–60 seconds versus external fencing. Current Microsoft primary contracts reverified.",
+      "notes": "Full-content review: Azure guide full read: settlement versus local effect, Cosmos consistency/session and multi-write restriction, blob lease 15\u201360 seconds versus external fencing. Current Microsoft primary contracts reverified.",
       "findings": []
     },
     {
@@ -9825,22 +9825,22 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "33b5d6bc5740ba2a62734779489badacc310e522102c6aa29e2e3c8ea3ce5e3f",
+      "sha256": "5d0113f11aac52fb935d41af44f0f72d673e95e654141bf476f497997f81497f",
       "status": "reviewed",
-      "reviewer": "buffy",
+      "reviewer": "root",
       "reviewDate": "2026-11-12",
-      "fullContentRead": false,
-      "notes": "wrap the field example's sibling JSX in one returned fragment so it compiles",
+      "fullContentRead": true,
+      "notes": "Root index count line restamped by scripts/check_counts.py after adding the 2026-11 rubric document; navigation targets and ordering read, no prose change.",
       "findings": []
     },
     {
       "path": "README.md",
-      "sha256": "db83d246a387142ad17e916bd2f7f7017143390284bc31d835f27e199de90aa8",
+      "sha256": "b1dbc2c5652149c8fa46d5c5613e583473bb27ab28a05b72793e6626902a7a9e",
       "status": "reviewed",
-      "reviewer": "buffy",
-      "reviewDate": "2026-11-11",
-      "fullContentRead": false,
-      "notes": "Restamp-only record on 2026-11-11: a canonical writer (read_time.py / check_counts.py / check_alignment.py) updated a claim in this file after an adjacent chapter edit. No prose or technical content changed here.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": true,
+      "notes": "Added one navigation row pointing at the quality rubric; surrounding table, claims and study-order instructions re-read and left unchanged.",
       "findings": []
     },
     {
@@ -9855,12 +9855,12 @@
     },
     {
       "path": "contributing.md",
-      "sha256": "2ed9d15e87c57b645321a4af42e774985750d8edff2a74eb329a8321323c3ee6",
+      "sha256": "481183b6471a4eca378554a8922471657cb62cf872183c05b3f2429013b80134",
       "status": "reviewed",
-      "reviewer": "buffy",
-      "reviewDate": "2026-11-11",
+      "reviewer": "root",
+      "reviewDate": "2026-11-12",
       "fullContentRead": true,
-      "notes": "Full-content review on 2026-11-11. Added a short 'Full-corpus readability pass' section, placed inside the file's raw block before the endraw closer, linking docs/full-corpus-readability-pass.md so the plan is reachable from an entry point and contributors can see the repair standard and progress.",
+      "notes": "Added gate 30 (mechanical prose) to the gate table and its repair command; gate-count denominators restamped by check_verify_wiring.py; verification and review instructions re-read for accuracy against scripts/verify.sh.",
       "findings": []
     },
     {
@@ -9996,7 +9996,7 @@
       "reviewer": "root-continuation",
       "reviewDate": "2026-10-27",
       "fullContentRead": true,
-      "notes": "Authored and reread final 25–26 October report. Current inventory and review records are exact-byte evidence; scoped runtime checks and source inspection remain distinct. Content review coverage does not imply every snippet execution, candidate mastery, adoption or absolute absence of errors. Release gates and generated metadata must be checked separately. 2026-10-27 maintenance delta inspected: standing exact-byte enforcement and bounded durable replays extend historical evidence without claiming every example executed or learner mastery."
+      "notes": "Authored and reread final 25\u201326 October report. Current inventory and review records are exact-byte evidence; scoped runtime checks and source inspection remain distinct. Content review coverage does not imply every snippet execution, candidate mastery, adoption or absolute absence of errors. Release gates and generated metadata must be checked separately. 2026-10-27 maintenance delta inspected: standing exact-byte enforcement and bounded durable replays extend historical evidence without claiming every example executed or learner mastery."
     },
     {
       "path": "docs/api-contract.md",
@@ -10086,12 +10086,12 @@
     },
     {
       "path": "docs/scripts-map.md",
-      "sha256": "e8b6c209f045541ced3da748913d5024a5be74eb83f17542efab002291ffb80a",
+      "sha256": "7726300d7471e24bc9682ecda56cb7405d83ea9dbb6e3132ded40d585b680cd8",
       "status": "reviewed",
-      "reviewer": "buffy",
-      "reviewDate": "2026-11-11",
+      "reviewer": "root",
+      "reviewDate": "2026-11-12",
       "fullContentRead": true,
-      "notes": "Full-content review for the job-board watch ownership fix: the gate table, recipe table and doctrine rows still match verify.sh. The job_board_watch.py row now records that watch targets are supplied via --config/JOB_WATCH_CONFIG because applied-to postings are personal data kept in the private workspace, not this public repo.",
+      "notes": "Added gate 30, check_prose.py, test_check_prose.py and depth_report.py rows; existing rows re-read, counts restamped by check_verify_wiring.py.",
       "findings": []
     },
     {
@@ -10346,22 +10346,22 @@
     },
     {
       "path": "docs/verification-gates.md",
-      "sha256": "cba55ee3f4e2467f850005baf6875fa743cf494023257209e976601eaa5aaa07",
+      "sha256": "0403ed9d682eb3c0ffc4f42dc7314412d20164bd0c8edd5902dffe5644f6bd39",
       "status": "reviewed",
-      "reviewer": "buffy",
-      "reviewDate": "2026-11-11",
-      "fullContentRead": false,
-      "notes": "Restamp-only record on 2026-11-11: a canonical writer (read_time.py / check_counts.py / check_alignment.py) updated a claim in this file after an adjacent chapter edit. No prose or technical content changed here.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": true,
+      "notes": "Added the gate 30 entry with its calibration evidence and repair command; denominators restamped by check_verify_wiring.py.",
       "findings": []
     },
     {
       "path": "lanes/INDEX.md",
-      "sha256": "3ee25866f6f1442f6ad3d3f71da55a5d283e89ede7a1714bbab888b4a5404b8c",
+      "sha256": "8af03a6e87fce29ec5b191d49f81b5d11bde03982c2a29e96a6f322e19d5e4db",
       "status": "reviewed",
-      "reviewer": "buffy",
-      "reviewDate": "2026-11-11",
-      "fullContentRead": false,
-      "notes": "Restamp-only record on 2026-11-11: a canonical writer (read_time.py / check_counts.py / check_alignment.py) updated a claim in this file after an adjacent chapter edit. No prose or technical content changed here.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": true,
+      "notes": "Lane index count restamped by scripts/check_counts.py; content and links unchanged.",
       "findings": []
     },
     {
@@ -10682,6 +10682,16 @@
       "reviewDate": "2026-10-26",
       "fullContentRead": true,
       "notes": "Jekyll route/frontmatter includes the canonical generated search; no second implementation.",
+      "findings": []
+    },
+    {
+      "path": "docs/2026-11-quality-rubric.md",
+      "sha256": "4c4be0e91dd6791208129f0d5163bd5c765ed5996248785798056583cac2fe11",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-11-12",
+      "fullContentRead": true,
+      "notes": "Authored document: R1-R7 rubric, measured Phase 0 inventory from scripts/depth_report.py, gate-30 calibration record (10,154 reported findings to 1 real defect) and the stated execution limits. No external claim is asserted without a command or a labelled source.",
       "findings": []
     }
   ]

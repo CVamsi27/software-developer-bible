@@ -3,9 +3,9 @@
   "scope": "Current non-ignored Markdown, excluding generated/vendor trees",
   "method": "Structure is machine-inspected; semantic review requires explicit exact-hash evidence.",
   "totals": {
-    "reviewed": 984
+    "reviewed": 985
   },
-  "files": 984,
+  "files": 985,
   "orphanedReviewPaths": [],
   "entries": [
     {
@@ -9231,7 +9231,7 @@
     },
     {
       "path": "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.04-file-upload-apis.md",
-      "sha256": "de02c33406f049f85f589404888a87e439a30c33d86574bc0f270da2d84dc211",
+      "sha256": "6d7bed391981ee4f25c441161c1c41b87afca1a8e5d5edaa7e03532657178e08",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -9255,12 +9255,12 @@
       },
       "review": {
         "path": "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.04-file-upload-apis.md",
-        "sha256": "de02c33406f049f85f589404888a87e439a30c33d86574bc0f270da2d84dc211",
+        "sha256": "6d7bed391981ee4f25c441161c1c41b87afca1a8e5d5edaa7e03532657178e08",
         "genre": "learning-chapter",
         "status": "reviewed",
-        "reviewer": "backend_api_data",
-        "reviewDate": "2026-10-25",
-        "notes": "Full content read: proxy/direct form/storage multipart separation, bearer-grant overwrite race and immutable approved version, actual size/checksum authorization, SHA256 byte conversion, authoritative tus offset409, multipart CRLF, resource/scan and cookie-origin boundaries. Checked AWS presign, tus and Sharp primary docs. Extracted checksum demo executed true; no object-storage or scanner integration claimed. Primary URLs checked: https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-presigned-url.html, https://tus.io/protocols/resumable-upload, https://sharp.pixelplumbing.com/api-output/.",
+        "reviewer": "root",
+        "reviewDate": "2026-11-12",
+        "notes": "Full-content review during the 2026-11 prose pass: gate 30 found the opening routing line with a doubled space and a lowercase sentence start (\"proxy:  client\"); repaired to one sentence. Definition, byte-path reasoning and completion-versus-publication boundary read against the REST upload contract; no version claim in the file.",
         "fullContentRead": true,
         "findings": []
       }
@@ -30753,7 +30753,7 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "33b5d6bc5740ba2a62734779489badacc310e522102c6aa29e2e3c8ea3ce5e3f",
+      "sha256": "5d0113f11aac52fb935d41af44f0f72d673e95e654141bf476f497997f81497f",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -30771,18 +30771,18 @@
       },
       "review": {
         "path": "INDEX.md",
-        "sha256": "33b5d6bc5740ba2a62734779489badacc310e522102c6aa29e2e3c8ea3ce5e3f",
+        "sha256": "5d0113f11aac52fb935d41af44f0f72d673e95e654141bf476f497997f81497f",
         "status": "reviewed",
-        "reviewer": "buffy",
+        "reviewer": "root",
         "reviewDate": "2026-11-12",
-        "fullContentRead": false,
-        "notes": "wrap the field example's sibling JSX in one returned fragment so it compiles",
+        "fullContentRead": true,
+        "notes": "Root index count line restamped by scripts/check_counts.py after adding the 2026-11 rubric document; navigation targets and ordering read, no prose change.",
         "findings": []
       }
     },
     {
       "path": "README.md",
-      "sha256": "db83d246a387142ad17e916bd2f7f7017143390284bc31d835f27e199de90aa8",
+      "sha256": "b1dbc2c5652149c8fa46d5c5613e583473bb27ab28a05b72793e6626902a7a9e",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -30801,12 +30801,12 @@
       },
       "review": {
         "path": "README.md",
-        "sha256": "db83d246a387142ad17e916bd2f7f7017143390284bc31d835f27e199de90aa8",
+        "sha256": "b1dbc2c5652149c8fa46d5c5613e583473bb27ab28a05b72793e6626902a7a9e",
         "status": "reviewed",
-        "reviewer": "buffy",
-        "reviewDate": "2026-11-11",
-        "fullContentRead": false,
-        "notes": "Restamp-only record on 2026-11-11: a canonical writer (read_time.py / check_counts.py / check_alignment.py) updated a claim in this file after an adjacent chapter edit. No prose or technical content changed here.",
+        "reviewer": "root",
+        "reviewDate": "2026-11-12",
+        "fullContentRead": true,
+        "notes": "Added one navigation row pointing at the quality rubric; surrounding table, claims and study-order instructions re-read and left unchanged.",
         "findings": []
       }
     },
@@ -30850,7 +30850,7 @@
     },
     {
       "path": "contributing.md",
-      "sha256": "2ed9d15e87c57b645321a4af42e774985750d8edff2a74eb329a8321323c3ee6",
+      "sha256": "481183b6471a4eca378554a8922471657cb62cf872183c05b3f2429013b80134",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -30878,12 +30878,12 @@
       },
       "review": {
         "path": "contributing.md",
-        "sha256": "2ed9d15e87c57b645321a4af42e774985750d8edff2a74eb329a8321323c3ee6",
+        "sha256": "481183b6471a4eca378554a8922471657cb62cf872183c05b3f2429013b80134",
         "status": "reviewed",
-        "reviewer": "buffy",
-        "reviewDate": "2026-11-11",
+        "reviewer": "root",
+        "reviewDate": "2026-11-12",
         "fullContentRead": true,
-        "notes": "Full-content review on 2026-11-11. Added a short 'Full-corpus readability pass' section, placed inside the file's raw block before the endraw closer, linking docs/full-corpus-readability-pass.md so the plan is reachable from an entry point and contributors can see the repair standard and progress.",
+        "notes": "Added gate 30 (mechanical prose) to the gate table and its repair command; gate-count denominators restamped by check_verify_wiring.py; verification and review instructions re-read for accuracy against scripts/verify.sh.",
         "findings": []
       }
     },
@@ -31301,6 +31301,35 @@
       }
     },
     {
+      "path": "docs/2026-11-quality-rubric.md",
+      "sha256": "4c4be0e91dd6791208129f0d5163bd5c765ed5996248785798056583cac2fe11",
+      "genre": "operational-or-project",
+      "status": "reviewed",
+      "structure": {
+        "headings": [
+          "The seven checks",
+          "Phase 0 baseline — measured, not asserted",
+          "Gate 30 — what the prose gate is allowed to claim",
+          "How a section pass is performed",
+          "Limits this rubric cannot remove"
+        ],
+        "code_fences": 0,
+        "revision_questions": 0,
+        "has_summary": false,
+        "has_first_principles": false
+      },
+      "review": {
+        "path": "docs/2026-11-quality-rubric.md",
+        "sha256": "4c4be0e91dd6791208129f0d5163bd5c765ed5996248785798056583cac2fe11",
+        "status": "reviewed",
+        "reviewer": "root",
+        "reviewDate": "2026-11-12",
+        "fullContentRead": true,
+        "notes": "Authored document: R1-R7 rubric, measured Phase 0 inventory from scripts/depth_report.py, gate-30 calibration record (10,154 reported findings to 1 real defect) and the stated execution limits. No external claim is asserted without a command or a labelled source.",
+        "findings": []
+      }
+    },
+    {
       "path": "docs/api-contract.md",
       "sha256": "d3ad391b695e6e80576c9dcb6b407c071c2536be3d8dab499857216f5459919b",
       "genre": "operational-or-project",
@@ -31549,7 +31578,7 @@
     },
     {
       "path": "docs/scripts-map.md",
-      "sha256": "e8b6c209f045541ced3da748913d5024a5be74eb83f17542efab002291ffb80a",
+      "sha256": "7726300d7471e24bc9682ecda56cb7405d83ea9dbb6e3132ded40d585b680cd8",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31571,12 +31600,12 @@
       },
       "review": {
         "path": "docs/scripts-map.md",
-        "sha256": "e8b6c209f045541ced3da748913d5024a5be74eb83f17542efab002291ffb80a",
+        "sha256": "7726300d7471e24bc9682ecda56cb7405d83ea9dbb6e3132ded40d585b680cd8",
         "status": "reviewed",
-        "reviewer": "buffy",
-        "reviewDate": "2026-11-11",
+        "reviewer": "root",
+        "reviewDate": "2026-11-12",
         "fullContentRead": true,
-        "notes": "Full-content review for the job-board watch ownership fix: the gate table, recipe table and doctrine rows still match verify.sh. The job_board_watch.py row now records that watch targets are supplied via --config/JOB_WATCH_CONFIG because applied-to postings are personal data kept in the private workspace, not this public repo.",
+        "notes": "Added gate 30, check_prose.py, test_check_prose.py and depth_report.py rows; existing rows re-read, counts restamped by check_verify_wiring.py.",
         "findings": []
       }
     },
@@ -32390,7 +32419,7 @@
     },
     {
       "path": "docs/verification-gates.md",
-      "sha256": "cba55ee3f4e2467f850005baf6875fa743cf494023257209e976601eaa5aaa07",
+      "sha256": "0403ed9d682eb3c0ffc4f42dc7314412d20164bd0c8edd5902dffe5644f6bd39",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32405,18 +32434,18 @@
       },
       "review": {
         "path": "docs/verification-gates.md",
-        "sha256": "cba55ee3f4e2467f850005baf6875fa743cf494023257209e976601eaa5aaa07",
+        "sha256": "0403ed9d682eb3c0ffc4f42dc7314412d20164bd0c8edd5902dffe5644f6bd39",
         "status": "reviewed",
-        "reviewer": "buffy",
-        "reviewDate": "2026-11-11",
-        "fullContentRead": false,
-        "notes": "Restamp-only record on 2026-11-11: a canonical writer (read_time.py / check_counts.py / check_alignment.py) updated a claim in this file after an adjacent chapter edit. No prose or technical content changed here.",
+        "reviewer": "root",
+        "reviewDate": "2026-11-12",
+        "fullContentRead": true,
+        "notes": "Added the gate 30 entry with its calibration evidence and repair command; denominators restamped by check_verify_wiring.py.",
         "findings": []
       }
     },
     {
       "path": "lanes/INDEX.md",
-      "sha256": "3ee25866f6f1442f6ad3d3f71da55a5d283e89ede7a1714bbab888b4a5404b8c",
+      "sha256": "8af03a6e87fce29ec5b191d49f81b5d11bde03982c2a29e96a6f322e19d5e4db",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -32433,12 +32462,12 @@
       },
       "review": {
         "path": "lanes/INDEX.md",
-        "sha256": "3ee25866f6f1442f6ad3d3f71da55a5d283e89ede7a1714bbab888b4a5404b8c",
+        "sha256": "8af03a6e87fce29ec5b191d49f81b5d11bde03982c2a29e96a6f322e19d5e4db",
         "status": "reviewed",
-        "reviewer": "buffy",
-        "reviewDate": "2026-11-11",
-        "fullContentRead": false,
-        "notes": "Restamp-only record on 2026-11-11: a canonical writer (read_time.py / check_counts.py / check_alignment.py) updated a claim in this file after an adjacent chapter edit. No prose or technical content changed here.",
+        "reviewer": "root",
+        "reviewDate": "2026-11-12",
+        "fullContentRead": true,
+        "notes": "Lane index count restamped by scripts/check_counts.py; content and links unchanged.",
         "findings": []
       }
     },

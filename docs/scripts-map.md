@@ -8,7 +8,7 @@
 
 `roadmap-return.test.cjs` exercises safe dated return links and chapter/revision context; it runs with the JavaScript checks in `verify.sh`.
 
-> The main verification and maintenance scripts, arranged by the job they do inside the 32-gate
+> The main verification and maintenance scripts, arranged by the job they do inside the 33-gate
 > verification suite: the gate that runs it, what it owns exclusively, the
 > fixer or restamper to reach for when it fails, and the doctrine that keeps
 > one concern from growing a second implementation. Gate numbers refer to
@@ -45,10 +45,10 @@
 
 ## How It Works
 
-### The 32 gates, in verify.sh order
+### The 33 gates, in verify.sh order
 
 | # | Script | What it owns | Fails when |
-| --- | ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| --- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
 | 1 | `check_counts.py` | Every count claim on the nav surface (badges, blurb counts, table Files columns, repo-scale totals, [api-contract](api-contract.md)) | a claim disagrees with live disk |
 | 2 | `check_alignment.py` | Table pipe alignment, surrounding blank lines + ASCII box walls | rows/pipes misaligned or a table boundary fails to render |
 | 3 | `check_structure.py` | IDs unique, sequences contiguous, banks last, one H1, unique H2 slugs, **INDEX completeness** (every numbered subdir with an INDEX is linked) | structure or navigation has a gap |
@@ -81,6 +81,7 @@
 | 27 | `check_see_also.py` | See Also hygiene — per-stack bare ceilings, label echoes, clipped endings and copied heading/table fragments; uses the shared fence reader | a new bare entry, label echo or unfinished description |
 | 28 | `check_readability.py` | The outline names the mechanism: no retired generic heading (`How It Works`, `Explanation`, `Overview`, …) and no numbered mechanism step left under one, in learning chapters (`--write` removes the label and promotes its `### N.` children to `##`, preserving every heading text so anchors survive) | a chapter files its argument under a generic label |
 | 29 | `senior_coverage.py --require-complete` | Every current Markdown file has a scoped review bound to its final bytes | a review is stale, missing, orphaned or invalid, or the scope is empty |
+| 30 | `check_prose.py` | Seven mechanical prose classes an editor fixes without thinking: a stutter, a doubled space, a run-together sentence, a space before punctuation, a doubled comma/semicolon, a wrong indefinite article, an unclosed bold run. Code spans, fences, tables, headings and the metadata comment are masked; `--write` repairs the first five, the last two report only | prose carries a defect no reader should have to parse |
 | — | `scan_scope.py` | The scope floor itself: one owner for "a checker that finds nothing must not pass" (imported by every corpus gate) | — |
 
 ### The checker → fixer → restamper recipes
@@ -103,7 +104,7 @@ When a gate fails, identify the reported defect and use its matching repair. Met
 ### Scripts that serve specific workflows (not gates)
 
 | Script | Job |
-| ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `backfill_metadata.py` | Backfills the metadata block the template gate requires (historical import) |
 | `check_study_live.py` | Post-deploy contract probe of the private study host — gating, canonicalization, the public surface, sign-in, denial, freshness; run by `study-live.yml`, pinned offline by `test_study_live.py` |
 | `test_study_live.py` | Characterization tests for the live probe against stub hosts (19 cases) — the hermetic job that must pass before the live probe judges a deployment |
@@ -118,6 +119,9 @@ When a gate fails, identify the reported defect and use its matching repair. Met
 | `tldr_digest.py` | Prints an authoring digest for chapters the template gate flags |
 | `gen_master_index.py` | Generates search.html + api/index.json (`--check` = gate 14) |
 | `senior_coverage.py` | Gate 29 owns exact-byte review completeness. Inventory-only mode writes the current genre/status report; it never grants a review. |
+| `depth_report.py` | Reports where the corpus is thin — prose words, code fences, `##` sections, Definition length, per section and per chapter. Inventory only, deliberately not a gate: a word floor would reward padding. The rubric in `docs/2026-11-quality-rubric.md` is what turns its numbers into a reading order. |
+| `check_prose.py` | Gate 30. Mechanical grammar only — the classes a rewrite cannot disagree with. Every pattern is calibrated against the corpus it judges: the first run reported 10,154 findings and 10,152 were the detector's own artifacts, so each rule now carries a pinned near-miss test in `test_check_prose.py` (a hyphenated compound is not a stutter, a glob is not bold, `1..n` is not a doubled period). |
+| `test_check_prose.py` | Gate 30's detection contract: every rule fires on a canonical defect, stays silent on the shape that produced its calibration false positive, and `--write` is idempotent and leaves code spans byte-identical. |
 | `drift_drill.py` | Quarterly re-probe of the 31 known staleness classes (advisory, opens tracking issues) |
 | `job_board_watch.py` | Weekly JD watch (advisory workflow). Targets come from `--config`/`JOB_WATCH_CONFIG` because applied-to postings are personal data kept in the private workspace, not this public repo |
 | `md_fences.py` | The single fence parser — imported by ten scripts; pinned by gate 16 |

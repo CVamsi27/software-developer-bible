@@ -234,6 +234,44 @@ BOOLEAN_DEPRECATION_HEADER = re.compile(r'^\s*Deprecation\s*:\s*true\s*$', re.I)
 WITHDRAWN_NIST_SANITIZATION = re.compile(
     r'\]\(https?://csrc\.nist\.gov/pubs/sp/800/88/r1/final(?:#[^)]*)?\)', re.I)
 
+# --- Retired platforms and version boundaries (2026-11-12) ------------------
+# Verified against upstream documentation during a claim-verification pass
+# over the platform chapters. Each rule targets an ACTIVE recommendation, not
+# prose that explains the retirement: the corpus legitimately teaches why
+# these changed, and that teaching must keep working.
+#
+# Community ingress-nginx stopped receiving fixes with its final release in
+# March 2026 (Kubernetes blog, 2025-11-11). Installing it for new work is now
+# stale guidance. The Ingress API itself is unchanged, and other controllers
+# have separate lifecycles, so only install-style commands are matched.
+RETIRED_INGRESS_NGINX_INSTALL = re.compile(
+    r'helm\s+(?:repo\s+(?:add|update)|install|upgrade|pull)\b[^\n]*'
+    r'ingress-nginx'
+    r'|kubectl\s+(?:apply|create)\b[^\n]*'
+    r'(?:kubernetes|k8s)\.github\.io/ingress-nginx', re.I)
+
+# CDKTF was deprecated on 2025-12-10 and is no longer maintained by HashiCorp.
+# Bootstrapping or importing it in new infrastructure code is obsolete; HCL,
+# AWS CDK and Pulumi are different tools with their own contracts.
+RETIRED_CDKTF_USAGE = re.compile(
+    r"\bcdktf\s+(?:init|deploy|synth|get)\b"
+    r"|\bfrom\s*['\"](?:@cdktf/[\w-]+|cdktf)['\"]")
+
+# Next.js 16.3 no longer supports runtime='edge' on routes and pages (Vercel
+# runtime docs), and Proxy never accepted the segment config. An executable
+# segment-config export inside a Next.js example is stale guidance; prose that
+# explains the change stays valid because it is not a fenced export.
+NEXT_EDGE_RUNTIME_EXPORT = re.compile(
+    r"\bexport\s+const\s+runtime\s*=\s*['\"]edge['\"]")
+
+# Kubernetes v1.37 HPA scale-to-zero (KEP-2021, beta and on by default) admits
+# minReplicas: 0 only alongside an object or external metric; admission
+# rejects an HPA whose only metrics are Resource because no Pods remain to
+# produce CPU or memory samples.
+HPA_ZERO_REPLICAS = re.compile(r'^\s*minReplicas:\s*0\s*$', re.M)
+HPA_OBJECT_OR_EXTERNAL = re.compile(
+    r'^\s*(?:-\s*)?type:\s*["\']?(?:Object|External)["\']?\s*$', re.M)
+
 # Minimum versions checked against the versioned PostgreSQL manuals on
 # 2026-10-25. Availability on 18 is valid; claiming introduction there is not.
 WRONG_PG_EXPLAIN_INTRODUCTION = re.compile(
@@ -255,6 +293,19 @@ RULES = [
     ('WRONG-PG-EXPLAIN-INTRODUCTION',
      'GENERIC_PLAN starts in PostgreSQL16 and SERIALIZE in17; '
      'neither was introduced in18'),
+    ('RETIRED-INGRESS-NGINX-INSTALL',
+     'community ingress-nginx stopped receiving fixes in March 2026; '
+     'recommend a maintained Ingress controller or the Gateway API'),
+    ('RETIRED-CDKTF-USAGE',
+     'CDKTF was deprecated on 2025-12-10 and is unmaintained; use HCL, '
+     'AWS CDK or Pulumi and label any historical CDKTF material as such'),
+    ('RETIRED-NEXT-EDGE-RUNTIME',
+     'Next.js 16.3 routes and pages no longer support runtime = edge '
+     '(Proxy never did); remove the segment config or version-qualify it as '
+     'pre-16.3 behavior'),
+    ('HPA-ZERO-WITH-RESOURCE-METRICS',
+     'Kubernetes v1.37 admits minReplicas: 0 only with an object or external '
+     'metric; an HPA with only Resource metrics is rejected at admission'),
     ('UNSAFE-JSONLD-UNICODE-ESCAPE',
      'A JavaScript Unicode escape evaluates back to <; JSON-LD serialization '
      'needs a literal backslash-u sequence to protect the script boundary'),
@@ -504,6 +555,7 @@ def check(p: Path, rel: str):
     in_code = False
     lang = ''
     code_rows = []
+    yaml_rows = []
     for lineno, line, inf, isf in md_fences.walk(text.splitlines()):
         lineno += 1  # md_fences.walk emits zero-based offsets; diagnostics use source lines.
         stripped = line.lstrip()
@@ -580,6 +632,16 @@ def check(p: Path, rel: str):
                     offset = source.count('\n', 0, match.end())
                     hits.append((code_rows[offset][0], 'UNSUPPORTED-HYDRATION-CALLBACK',
                                  code_rows[offset][1].strip()[:100]))
+            if not inf and yaml_rows:
+                yaml_source = '\n'.join(row for _, row in yaml_rows)
+                if (HPA_ZERO_REPLICAS.search(yaml_source)
+                        and not HPA_OBJECT_OR_EXTERNAL.search(yaml_source)):
+                    first = next(
+                        ln for ln, row in yaml_rows
+                        if re.match(r'\s*minReplicas:\s*0\s*$', row))
+                    hits.append((first, 'HPA-ZERO-WITH-RESOURCE-METRICS',
+                                 'minReplicas: 0 needs an Object or External metric'))
+            yaml_rows = []
             code_rows = []
             # inf is the state after this fence line: True means it opened.
             in_code = inf
@@ -610,6 +672,16 @@ def check(p: Path, rel: str):
 
         if FAKE_ARCHIVE_TS in line:
             hits.append((lineno, 'FAKE-ARCHIVE-TS', line.strip()[:100]))
+        if RETIRED_INGRESS_NGINX_INSTALL.search(line):
+            hits.append((lineno, 'RETIRED-INGRESS-NGINX-INSTALL', line.strip()[:100]))
+        if RETIRED_CDKTF_USAGE.search(line):
+            hits.append((lineno, 'RETIRED-CDKTF-USAGE', line.strip()[:100]))
+        # Fence-only: prose that tells a reader to delete this export is
+        # correct guidance, so the rule must not match inline examples.
+        if (in_code and NEXT_EDGE_RUNTIME_EXPORT.search(line)
+                and (rel.startswith('10-frontend/10.4-next.js/')
+                     or NEXT_MARKERS.search(text))):
+            hits.append((lineno, 'RETIRED-NEXT-EDGE-RUNTIME', line.strip()[:100]))
         m_owasp = RETIRED_OWASP.search(line)
         if m_owasp:
             hits.append((lineno, 'RETIRED-OWASP-CHEATSHEET', line.strip()[:100]))
@@ -662,6 +734,8 @@ def check(p: Path, rel: str):
 
         if in_code and lang in ('json', 'java'):
             code_rows.append((lineno, re.sub(r'//.*$', '', line) if lang == 'java' else line))
+        if in_code and lang in ('yaml', 'yml'):
+            yaml_rows.append((lineno, line))
 
         if in_code and lang in ('typescript', 'tsx', 'javascript', 'js'):
             # Strip line comments so explanatory notes like

@@ -31012,7 +31012,7 @@
     },
     {
       "path": "docs/2026-09-19-corpus-health-report.md",
-      "sha256": "a4ab4561de76e0e8b9cebc6b46b60ccb9d8b6e5e7c4f9692353e801cb6cc3d28",
+      "sha256": "dea0ca1a3d8b61acc60b9e8339e0ae146f94ea0f01e9f957136f61a777d98f60",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31035,12 +31035,12 @@
       },
       "review": {
         "path": "docs/2026-09-19-corpus-health-report.md",
-        "sha256": "a4ab4561de76e0e8b9cebc6b46b60ccb9d8b6e5e7c4f9692353e801cb6cc3d28",
+        "sha256": "dea0ca1a3d8b61acc60b9e8339e0ae146f94ea0f01e9f957136f61a777d98f60",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-12",
         "fullContentRead": true,
-        "notes": "Historical 2026-09-19-corpus-health-report: full report read with its scoped findings and integration limits. Original results retained, current-review pointer added where needed. Old counts, hashes, pending states and environment checks remain dated evidence. Current count-tool restamps are now explicitly identified separately from historical test/citation evidence; inspected that qualifier and checkpoint wording.",
+        "notes": "restamp the freshness rule count after adding four rules",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "1137da2030c2e0a930a4110f49ca5663581130bb487d998312196208d2191b0d",

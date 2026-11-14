@@ -160,7 +160,7 @@ Source: [Advanced Generics](10.2.2.03-advanced-generics.md)
 
 **Q:** Trace formatLength(9), then change the second function to a string-only input. What changes?
 
-**A:** Values flow9→10→"10"→2. A string-only second input cannot accept the preceding number output, so the adjacent-stage constraint rejects the pipeline. any would bypass that proof.
+**A:** Values flow 9→10→"10"→2. A string-only second input cannot accept the preceding number output, so the adjacent-stage constraint rejects the pipeline. any would bypass that proof.
 
 Source: [Type Variance](10.2.2.04-type-variance.md)
 

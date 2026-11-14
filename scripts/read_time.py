@@ -241,6 +241,10 @@ def write_indexes(dry_run=False):
                 del lines[hi + 1]
             lines[hi + 1:hi + 1] = ['', line]
         new = re.sub(r'\n{3,}', '\n\n', '\n'.join(lines))
+        # An INDEX read-time badge, when present, states the same total as the
+        # study-time line. 00-strategy carried 18 min beside "≈ 28 min" for
+        # months because only chapter badges were checked.
+        new = re.sub(r'(badge/read--time-)\d+(_min)', rf'\g<1>{total}\g<2>', new)
         # Compare against the pre-refresh bytes: a table row the writer fixed
         # is a real change even when the study-time line already matched.
         if new == original:
@@ -324,6 +328,10 @@ def check():
             bad.append((rel, 'missing study-time line', expect))
         elif expect not in m.group(0):
             bad.append((rel, m.group(0), expect))
+        else:
+            badge = re.search(r'badge/read--time-(\d+)_min', text)
+            if badge and int(badge.group(1)) != total:
+                bad.append((rel, f'read-time badge says {badge.group(1)} min', expect))
     if bad:
         print(f"READ-TIME DRIFT: {len(bad)} INDEX file(s) disagree with the computed estimate")
         for rel, got, expect in bad:

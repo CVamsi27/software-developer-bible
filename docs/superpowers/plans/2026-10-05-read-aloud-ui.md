@@ -38,7 +38,7 @@
 
 In `assets/read-aloud.test.cjs`, assert that a long paragraph produces multiple chunks all carrying the same source-element reference, that distinct paragraphs carry distinct references, and that `onChunkStart` receives the current element when the utterance starts.
 
-```js
+```javascript
 test('chunk start reports its source element', () => {
   const spoken = [];
   const source = {};
@@ -75,7 +75,7 @@ Expected: all existing playback tests and new source-mapping tests pass. Update 
 
 In `scripts/test_read_aloud_browser.cjs`, assert that the player is a sibling of the `h1` inside `.chapter-title-row`, that the `0.5×` option exists, and that clicking Play exposes a visible Pause and Stop control while retaining the accessible status.
 
-```js
+```javascript
 assert.equal(await page.locator('.chapter-title-row > h1').count(), 1);
 assert.equal(await page.locator('.chapter-title-row > .read-aloud').count(), 1);
 assert.equal(await page.locator('[aria-label="Reading speed"] option[value="0.5"]').textContent(), '0.5×');

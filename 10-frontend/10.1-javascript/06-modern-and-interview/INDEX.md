@@ -1,11 +1,11 @@
 # Modern JS & Interview Prep — JavaScript
 
 > **Study time:** ≈ 56 min of reading (7 files, ~8 min average).
-> **7 files.** Selected ECMAScript 2022–2026 features and separate host APIs, Web Workers, DOM events, cross-tab coordination, and a 62-question interview bank.
+> **7 files.** Selected ECMAScript 2022–2026 features and separate host APIs, Web Workers, DOM events, cross-tab coordination, regular expressions, and a 62-question interview bank.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](#files)
 [![Category](https://img.shields.io/badge/category-Modern_JS_Interview-orange)](../INDEX.md)
-[![Status](https://img.shields.io/badge/status-wip-yellow)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 ---
 
@@ -16,15 +16,15 @@
 | 01 | [Recent ECMAScript Features](10.1.6.01-es2024-features.md) | Selected ES2022–2026 built-ins, ownership and evaluation contracts, plus host/runtime boundaries | Important | Specialized | 7 min |
 | 02 | [Web Workers](10.1.6.02-web-workers.md) | Dedicated, shared, and service workers; request ownership, transfer, and cancellation limits | Important | Important | 7 min |
 | 03 | [DOM Events & Delegation](10.1.6.03-dom-events-delegation.md) | Event path, target and listener ownership, delegated actions, propagation, defaults, and cleanup | Essential | Foundational | 6 min |
-| 04 | [Regular Expressions and Text Matching](10.1.6.06-regexp-and-text.md) | Character classes, flags, capture groups, backtracking risk, `lastIndex` state, Unicode and `u` flag, and a redactor example with real stdout | Essential | Important | 9 min |
 | 04 | [Cross-Tab Communication](10.1.6.04-cross-tab-communication.md) | Transient messages, stored recovery, shared owners, locks, and safe cross-tab session updates | Important | Specialized | 7 min |
-| 05 | [Interview Questions](10.1.6.05-interview-questions.md) | 62 curated questions with answers and changed-condition checks | Essential | Foundational | 13 min |
+| 05 | [Regular Expressions and Text Matching](10.1.6.06-regexp-and-text.md) | Character classes, flags, capture groups, backtracking risk, `lastIndex` state, Unicode and `u` flag, and a redactor example with real stdout | Essential | Important | 9 min |
+| 06 | [Interview Questions](10.1.6.05-interview-questions.md) | 62 curated questions with answers and changed-condition checks | Essential | Foundational | 13 min |
 
 ---
 
 ## Read order
 
-First compare syntax/host API availability and value-copy behavior. Then study who owns worker state and how replies return, followed by the event path that lets a parent route child actions. Cross-tab communication builds on these message/owner concepts to compare notifications, stored recovery and locks. Complete [revision](REVISION.md) after the five learning chapters, then use the interview bank to explain one trace and one changed condition per answer.
+First compare syntax/host API availability and value-copy behavior. Then study who owns worker state and how replies return, followed by the event path that lets a parent route child actions. Cross-tab communication builds on these message/owner concepts to compare notifications, stored recovery and locks. Regular expressions close the learning sequence with pattern structure, stateful matching and backtracking risk. Complete [revision](REVISION.md) after the five learning chapters, then use the interview bank to explain one trace and one changed condition per answer.
 
 ---
 

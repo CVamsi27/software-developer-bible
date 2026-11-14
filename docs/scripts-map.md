@@ -8,7 +8,7 @@
 
 `roadmap-return.test.cjs` exercises safe dated return links and chapter/revision context; it runs with the JavaScript checks in `verify.sh`.
 
-> The main verification and maintenance scripts, arranged by the job they do inside the 33-gate
+> The main verification and maintenance scripts, arranged by the job they do inside the 34-gate
 > verification suite: the gate that runs it, what it owns exclusively, the
 > fixer or restamper to reach for when it fails, and the doctrine that keeps
 > one concern from growing a second implementation. Gate numbers refer to
@@ -45,7 +45,7 @@
 
 ## How It Works
 
-### The 33 gates, in verify.sh order
+### The 34 gates, in verify.sh order
 
 | # | Script | What it owns | Fails when |
 | --- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
@@ -82,6 +82,7 @@
 | 28 | `check_readability.py` | The outline names the mechanism: no retired generic heading (`How It Works`, `Explanation`, `Overview`, …) and no numbered mechanism step left under one, in learning chapters (`--write` removes the label and promotes its `### N.` children to `##`, preserving every heading text so anchors survive) | a chapter files its argument under a generic label |
 | 29 | `senior_coverage.py --require-complete` | Every current Markdown file has a scoped review bound to its final bytes | a review is stale, missing, orphaned or invalid, or the scope is empty |
 | 30 | `check_prose.py` | Seven mechanical prose classes an editor fixes without thinking: a stutter, a doubled space, a run-together sentence, a space before punctuation, a doubled comma/semicolon, a wrong indefinite article, an unclosed bold run. Code spans, fences, tables, headings and the metadata comment are masked; `--write` repairs the first five, the last two report only | prose carries a defect no reader should have to parse |
+| 31 | `review_ledger.py check` | Per-file review evidence: one hash-pinned row per tracked Markdown file, six reader axes, explicit pending ratchet | a reviewed byte changes, a row loses evidence, or a new file appears unreviewed |
 | — | `scan_scope.py` | The scope floor itself: one owner for "a checker that finds nothing must not pass" (imported by every corpus gate) | — |
 
 ### The checker → fixer → restamper recipes
@@ -99,6 +100,7 @@ When a gate fails, identify the reported defect and use its matching repair. Met
 | Gate 6 new external URL | probe-verify in a browser, then `python3 scripts/link_baseline.py --update`, commit the JSON with the doc |
 | Gate 12 missing twin links | `python3 scripts/link_topic_twins.py` (dry-run first) |
 | Gate 15 wiring broken | fix by hand — that is the point; `--write` only restamps counts |
+| Gate 31 unreviewed or stale file | read it end to end, then `python3 scripts/review_ledger.py apply <batch.json>`; `status` shows the remaining queue |
 | Gate 16/17 test failure | fix the module under test (or deliberately re-pin with a probe run + commit note) |
 
 ### Scripts that serve specific workflows (not gates)

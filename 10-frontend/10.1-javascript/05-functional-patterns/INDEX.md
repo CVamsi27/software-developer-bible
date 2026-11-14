@@ -1,7 +1,7 @@
 # Functional Patterns — JavaScript
 
 > **Study time:** ≈ 36 min of reading (6 files, ~6 min average).
-> **6 files.** Patterns to choose by workload and code structure: modules, memoization, generators, currying/composition, and recursion with tail-call optimization.
+> **6 files.** Patterns to choose by workload and code structure: modules, memoization, generators, currying/composition, and recursion with tail-call behavior.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](#files)
 [![Category](https://img.shields.io/badge/category-Functional_Patterns-orange)](../INDEX.md)

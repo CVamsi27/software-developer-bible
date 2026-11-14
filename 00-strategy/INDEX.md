@@ -6,7 +6,7 @@
 [![Files](https://img.shields.io/badge/files-6-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Interview-red)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
-[![Read time](https://img.shields.io/badge/read--time-18_min-blueviolet)](#)
+[![Read time](https://img.shields.io/badge/read--time-28_min-blueviolet)](#)
 
 This section turns work evidence into clear interview explanations. Start here when your resume, project explanation, behavioral story or practical constraints need preparation. Use the lane guides afterward for the role-specific process.
 

@@ -319,10 +319,10 @@ def header_edits(live):
         ('INDEX.md', r'^### 10-frontend — Frontend \((\d+) files in (\d+) sub-stacks\)$', '10-frontend'),
         ('INDEX.md', r'^### 20-backend — Backend \((\d+) files in (\d+) sub-stacks\)$', '20-backend'),
         ('INDEX.md', r'^### 30-architecture — Architecture \((\d+) files in (\d+) sub-stacks\)$', '30-architecture'),
-        ('INDEX.md', r'^### Platform \((\d+) files in (\d+) sub-stacks\)$', '40-platform'),
-        ('INDEX.md', r'^### Quality \((\d+) files in (\d+) sub-stacks\)$', '50-quality'),
-        ('INDEX.md', r'^### Interview Toolkit \((\d+) files in (\d+) sub-stacks\)$', '70-interview-toolkit'),
-        ('INDEX.md', r'^### Real-Time \((\d+) files\)$', '60-realtime'),
+        ('INDEX.md', r'^### 40-platform — Platform \((\d+) files in (\d+) sub-stacks\)$', '40-platform'),
+        ('INDEX.md', r'^### 50-quality — Quality \((\d+) files in (\d+) sub-stacks\)$', '50-quality'),
+        ('INDEX.md', r'^### 70-interview-toolkit — Interview Toolkit \((\d+) files in (\d+) sub-stacks\)$', '70-interview-toolkit'),
+        ('INDEX.md', r'^### 60-realtime — Real-Time \((\d+) files\)$', '60-realtime'),
     ]
 
 

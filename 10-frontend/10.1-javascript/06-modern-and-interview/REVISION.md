@@ -228,7 +228,7 @@ Source: [Regular Expressions and Text Matching](10.1.6.06-regexp-and-text.md)
 
 **Q:** What does `String.prototype.matchAll` require, and how does it differ from `regex.test` with a shared `/g` object?
 
-**A:** `String.prototype.matchAll` throws `TypeError: String.prototype.matchAll called with a non-global RegExp argument` if the regex is not global (`g`). The shared `/g` `test` statefulness bug — `lastIndex` not being reset — causes a second string's first match to be skipped even though `test` succeeds on the second message, because the regex is still parked past the first match's end. Resetting `re.lastIndex = 0` or creating a fresh regex fixes both.
+**A:** `String.prototype.matchAll` throws `TypeError: String.prototype.matchAll called with a non-global RegExp argument` if the regex is not global (`g`). The shared `/g` `test` statefulness bug — `lastIndex` not being reset — causes a second string's first match to be skipped even though `test` succeeds on the second message, because the regex is still parked past the first match's end. Use a fresh global regex for `matchAll`; reset `lastIndex` or create a fresh regex for the shared-`test` bug.
 
 ## Summary
 

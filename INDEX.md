@@ -53,8 +53,9 @@ These are sample scheduling blocks, not readiness estimates. Use [ROADMAP checkp
 
 ### 00-strategy — Interview strategy (everyone starts here)
 
-> Shared across both lanes. Start with these four strategy chapters.
+> Shared across both lanes. Start with these five strategy chapters.
 
+- [Find Startup Roles](00-strategy/00.05-find-startup-roles.md)
 - [Communication](00-strategy/00.01-communication.md)
 - [Resume Tips](00-strategy/00.02-resume-tips.md)
 - [STAR Method](00-strategy/00.03-star-method.md)
@@ -99,7 +100,7 @@ These are sample scheduling blocks, not readiness estimates. Use [ROADMAP checkp
 | 30.2 | [System Design](30-architecture/30.2-system-design/INDEX.md) | 54 | 21 theory files (CAP, consistency, sharding, caching, queues, rate limiting, consensus, failure modes, architecture patterns, capacity planning, backpressure, distributed locks, probabilistic data structures, outbox & CDC, resilience patterns, multi-region) + how-to-approach + interview questions + 31 case studies (URL shortener, WhatsApp, Uber, Netflix, payment gateway, ticket booking, ...) |
 | 30.3 | [Infrastructure Patterns](30-architecture/30.3-infra-patterns/INDEX.md) | 17 | Database scaling, resilience patterns (circuit breaker, bulkhead, retry), idempotency-retry deep dive, leader election & consensus, zero-downtime deployments, data pipelines, multi-tenant SaaS |
 
-### Platform (118 files in 12 sub-stacks)
+### 40-platform — Platform (118 files in 12 sub-stacks)
 
 | Sub-stack | Files | Topics |
 | -------------------------------------------------------------- | ----: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -116,7 +117,7 @@ These are sample scheduling blocks, not readiness estimates. Use [ROADMAP checkp
 | [Reverse Proxy](40-platform/40.11-reverse-proxy/INDEX.md) | 2 | Nginx internals: C10K, master–worker + epoll event loop, config contexts, upstream LB, TLS termination, buffering, rate limiting, proxy_cache, nginx vs HAProxy vs Envoy |
 | [IaC & Terraform](40-platform/40.12-iac/INDEX.md) | 2 | Infrastructure as Code, HCL, state & drift, plan/apply, backends & locking, modules, workspaces, import, OpenTofu/Pulumi/CDKTF, IaC in CI/CD |
 
-### Quality (49 files in 4 sub-stacks)
+### 50-quality — Quality (49 files in 4 sub-stacks)
 
 | Sub-stack | Files | Topics |
 | ------------------------------------------------------------------------- | ----: | ----------------------------------------------------------------------------------- |
@@ -125,13 +126,13 @@ These are sample scheduling blocks, not readiness estimates. Use [ROADMAP checkp
 | [Performance Monitoring](50-quality/50.3-performance-monitoring/INDEX.md) | 9 | Core Web Vitals, profiling, Lighthouse CI, bundle analysis, RUM |
 | [Production Engineering](50-quality/50.4-production-engineering/INDEX.md) | 6 | Incident response, SLI/SLO/error budgets, chaos engineering |
 
-### Real-Time (14 files)
+### 60-realtime — Real-Time (14 files)
 
 | Sub-stack | Files | Topics |
 | -------------------------------------------------- | ----: | ----------------------------------------------------------------------- |
 | [WebSockets](60-realtime/60.1-websockets/INDEX.md) | 11 | Socket.IO, SSE, real-time architecture, NestJS WebSockets, WebTransport |
 
-### Interview Toolkit (41 files in 3 sub-stacks)
+### 70-interview-toolkit — Interview Toolkit (41 files in 3 sub-stacks)
 
 | Sub-stack | Files | Topics |
 | --------------------------------------------------------------------- | ----: | ------------------------------------------------------------------------------------------------------------- |
@@ -191,7 +192,7 @@ projects → Docita architecture deep-dives, interview defense
 
 **Stacks (in study order):**
 
-- **00-strategy** — [Communication](00-strategy/00.01-communication.md) · [Resume Tips](00-strategy/00.02-resume-tips.md) · [STAR Method](00-strategy/00.03-star-method.md) · [HR Questions](00-strategy/00.04-hr-questions.md)
+- **00-strategy** — [Find Startup Roles](00-strategy/00.05-find-startup-roles.md) · [Communication](00-strategy/00.01-communication.md) · [Resume Tips](00-strategy/00.02-resume-tips.md) · [STAR Method](00-strategy/00.03-star-method.md) · [HR Questions](00-strategy/00.04-hr-questions.md)
 - **10-frontend** — [JavaScript](10-frontend/10.1-javascript/INDEX.md) · [TypeScript](10-frontend/10.2-typescript/INDEX.md) · [React](10-frontend/10.3-react/INDEX.md) · [Next.js](10-frontend/10.4-next.js/INDEX.md) · [Form Handling](10-frontend/10.5-form-handling/INDEX.md) · [Animation](10-frontend/10.6-animation/INDEX.md) · [HTML/CSS & PWA](10-frontend/10.7-html-css/INDEX.md) · [Mobile & Cross-Platform](10-frontend/10.8-mobile/INDEX.md)
 - **20-backend** — [Node.js](20-backend/20.1-node.js/INDEX.md) · [NestJS](20-backend/20.2-nestjs/INDEX.md) · [REST APIs](20-backend/20.3-rest-apis/INDEX.md) · [Database](20-backend/20.4-database/INDEX.md) · [Auth & Security](20-backend/20.5-security/INDEX.md) · [Microservices & Distributed Patterns](20-backend/20.6-microservices/INDEX.md) · [GraphQL](20-backend/20.7-graphql/INDEX.md) · [Caching](20-backend/20.8-caching/INDEX.md) · [AI Engineering](20-backend/20.12-ai-engineering/INDEX.md) · [Java](20-backend/20.13-java/INDEX.md)
 - **30-architecture** — [Design Patterns](30-architecture/30.1-design-patterns/INDEX.md) (categorized: [Foundations](30-architecture/30.1-design-patterns/01-foundations/INDEX.md) · [Creational](30-architecture/30.1-design-patterns/02-creational/INDEX.md) · [Structural](30-architecture/30.1-design-patterns/03-structural/INDEX.md) · [Behavioral](30-architecture/30.1-design-patterns/04-behavioral/INDEX.md) · [Architectural](30-architecture/30.1-design-patterns/05-architectural/INDEX.md) · [Interview Prep](30-architecture/30.1-design-patterns/06-interview-prep/INDEX.md)) · [System Design](30-architecture/30.2-system-design/INDEX.md) · [Infrastructure Patterns](30-architecture/30.3-infra-patterns/INDEX.md)

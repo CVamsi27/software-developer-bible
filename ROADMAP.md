@@ -251,13 +251,14 @@ software-developer-bible/
 │ ├── 20.6-microservices single home for distributed patterns (+ event-driven, gRPC streaming)
 │ ├── 20.7-graphql
 │ ├── 20.8-caching cache patterns + Redis fundamentals + advanced Redis
+│ ├── 20.9-message-brokers Kafka vs RabbitMQ models, delivery semantics, DLQs
 │ ├── 20.12-ai-engineering LLM architecture · evals · governance
 │ └── 20.13-java Java + Spring Boot
 ├── 30-architecture/
 │ ├── 30.1-design-patterns
 │ ├── 30.2-system-design/ 01-theory + 02-case-studies
 │ └── 30.3-infra-patterns/ ops-only: retries, idempotency, health checks…
-├── 40-platform/ ← docker → k8s → CI/CD → observability → git → serverless → monorepo → 12-factor → CDN
+├── 40-platform/ ← docker → k8s → CI/CD → observability → build tools → git → serverless → monorepo → 12-factor → CDN → reverse proxy → IaC
 ├── 50-quality/ ← testing · a11y · performance · production engineering
 ├── 60-realtime/ ← WebSockets/SSE (the only realtime home)
 ├── 70-interview-toolkit/ ← coding patterns · behavioral depth · cheat sheets

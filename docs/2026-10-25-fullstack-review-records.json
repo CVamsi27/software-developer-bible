@@ -54,13 +54,15 @@
     },
     {
       "path": "00-strategy/INDEX.md",
-      "sha256": "810897c63729f7b6f3218785dd7c0c3d6eacfb15d5db85be6fe63b7ecb335c72",
+      "sha256": "a02ecbf4c8dcdcf717f0b55bdc186b543941fbbb563f969adc76144b392a387e",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-12",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true,
-      "notes": "Section blurb now names local job-search tooling; read-time writer restamped the section to 6 files / 28 minutes and the category badge to 18 minutes after the chapter grew to 9 minutes. Pass table and links unchanged.",
-      "findings": []
+      "notes": "2026-11-14 pass: read in full. Corrected the read-time badge from 18 to 28 minutes; the 2026-11-12 note had recorded the mismatch as intentional, but the badge stated a section total that disagreed with the computed 28-minute study-time line. Strategy pass table, lane links and cross-references checked.",
+      "findings": [
+        "Read-time badge claimed 18 minutes while the section total was 28; badge corrected to 28."
+      ]
     },
     {
       "path": "00-strategy/REVISION.md",
@@ -128,12 +130,12 @@
     },
     {
       "path": "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md",
-      "sha256": "758f21feaabead860fb4b0f82798d5967d49c027f047ed72983512595fa5a80d",
+      "sha256": "9d1643030aae68e302db4cd1a67e22bb5656bdb53eb5f23d897cfd4580b6dff9",
       "status": "reviewed",
       "reviewer": "buffy",
-      "reviewDate": "2026-11-12",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true,
-      "notes": "V8: section 3 now shows the inline cache transitioning from one shape to two, so the polymorphic cost it names is visible instead of asserted",
+      "notes": "V8: section 3 now shows the inline cache transitioning from one shape to two, so the polymorphic cost it names is visible instead of asserted Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": []
     },
     {
@@ -149,19 +151,20 @@
     },
     {
       "path": "10-frontend/10.1-javascript/01-execution-and-scope/REVISION.md",
-      "sha256": "9e8d0513798075206411e3be34b6a945194ca0b95a16997fb9d969334afc56b7",
+      "sha256": "4091e5734b034769f9b99f91767f3f1b9c3c69562702ff2e57a2ae13c999b356",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Full-content review of authored questions and source-linked groups for all seven concepts. Corrected shallow freeze and strict block function answer; added six source-linked boundary questions matching corrected teaching. Both JS fixtures PASS (8 runtime behavior groups plus 7 extracted chapter examples).",
+      "notes": "Full-content review of authored questions and source-linked groups for all seven concepts. Corrected shallow freeze and strict block function answer; added six source-linked boundary questions matching corrected teaching. Both JS fixtures PASS (8 runtime behavior groups plus 7 extracted chapter examples). Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.01-this.md",
-      "sha256": "56419a713f7e928bd047bf47b7cf8edeb6ec94b24da99e8e63583598d5b4a60d",
+      "sha256": "1f343d446bef8eb2ae0d7353f6f378385395945f73d01bb2e811406d0bed2e90",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review; corrected host timer receiver versus strict plain call, bound-function/rebinding/construction conditions, portable lexical-arrow example and module/CommonJS outer-this boundary. Exact detached/arrow/timer/bind behaviors executed. Primary MDN this/bind/Window timers checked. Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS.",
+      "notes": "Full-content review; corrected host timer receiver versus strict plain call, bound-function/rebinding/construction conditions, portable lexical-arrow example and module/CommonJS outer-this boundary. Exact detached/arrow/timer/bind behaviors executed. Primary MDN this/bind/Window timers checked. Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
       "reviewer": "frontend",
       "metadataReview": {
@@ -169,14 +172,15 @@
         "reviewDate": "2026-10-26",
         "reviewer": "root",
         "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
-      }
+      },
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.02-prototypes.md",
-      "sha256": "fef6798671eaa8bad53458142b86c0d6cbf2841d72dae15dcb27ca1454efe81a",
+      "sha256": "c80473aec2f707342c6c1578f099c72e1b75be2b22b57d91feabdeb49b7dfabe",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review; corrected class-sharing comparison, inherited setter/nonwritable write descriptors, constructible prototype conditions, prototype-pollution defense limits and engine optimization guarantees. Added actual setter/read-only example and executed. Preserved chains/classes/pollution depth. Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS.",
+      "notes": "Full-content review; corrected class-sharing comparison, inherited setter/nonwritable write descriptors, constructible prototype conditions, prototype-pollution defense limits and engine optimization guarantees. Added actual setter/read-only example and executed. Preserved chains/classes/pollution depth. Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
       "reviewer": "frontend",
       "metadataReview": {
@@ -184,23 +188,25 @@
         "reviewDate": "2026-10-26",
         "reviewer": "root",
         "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
-      }
+      },
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.03-proxy-reflect.md",
-      "sha256": "c9f2514ddc5e958955919f0fc52fdc9ee1666546e6401dc634a34c39831573e1",
+      "sha256": "e4d2f84d870fbda42ac41641ae57853024343416634c223951e14ac5071c98af",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review; corrected target child versus parent getter receiver, demonstrated nested trap traces with actual code, wrapper allocation and invariant qualifiers, and revocation versus sandbox boundary. Primary MDN Proxy/Reflect/revocable reviewed. Actual getter trace, retained raw/copied value and revocation checked. Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS.",
+      "notes": "Full-content review; corrected target child versus parent getter receiver, demonstrated nested trap traces with actual code, wrapper allocation and invariant qualifiers, and revocation versus sandbox boundary. Primary MDN Proxy/Reflect/revocable reviewed. Actual getter trace, retained raw/copied value and revocation checked. Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "10-frontend/10.1-javascript/02-objects-prototypes-this/INDEX.md",
-      "sha256": "6b26f7e624e28ba5e2949eb618256e66534f67f52c522b2e02880271f29e3ecd",
+      "sha256": "543b99ddcffad2e272305cf02090fcd1e136ea95de497f40c598c24096aea9ed",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full category reading flow and topic mapping reviewed. Receiver then delegation then interception progression coherent; source-pointer evidence remains conditional. Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS.",
+      "notes": "Full category reading flow and topic mapping reviewed. Receiver then delegation then interception progression coherent; source-pointer evidence remains conditional. Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
       "reviewer": "frontend",
       "metadataReview": {
@@ -208,7 +214,8 @@
         "reviewDate": "2026-10-26",
         "reviewer": "root",
         "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
-      }
+      },
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "10-frontend/10.1-javascript/02-objects-prototypes-this/REVISION.md",
@@ -221,13 +228,13 @@
     },
     {
       "path": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.01-event-loop.md",
-      "sha256": "d5ca368f3b813a3fa52adf83205f94dab9e7b49921b26ce8e5bb7833b413b664",
+      "sha256": "05de0616f1161480078b59471c6d47964aca8627983fd4db254010e62bf9c2ec",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review, followed by complete changed-content reread. Corrected actual nested-before-chain trace (RED output assertion before fix, GREEN after), host checkpoints/task-source queue semantics, no automatic paint/rAF layout safety guarantee, timer nesting, Node20/libuv1.45 boundary and CJS/ESM nextTick conditions. Primary HTML/Node/web.dev source reviewed. Checks: node /tmp/check-js-async-examples.cjs PASS (actual fenced-code extraction; microtask/self/CJS-ESM/read/schema/abort/pool/local-catch/search/listener cases). tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types node /tmp/js-async-examples-fixture.ts PASS (declared external paymentGateway dependency). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Final source reread after generated table/read-time formatting; current full content matches reviewed mechanisms and fixtures. Prior reviewed hash retained in metadata-attestation record. 2026-10-27 durable replay: scripts/test_curriculum_examples.py extracts the canonical nested-microtask trace under Node 24.22.1; literal output passes and replacing nested microtask scheduling with a task fails in a disposable copy. Browser paint and host dispatch remain outside this replay.",
+      "notes": "Full-content review, followed by complete changed-content reread. Corrected actual nested-before-chain trace (RED output assertion before fix, GREEN after), host checkpoints/task-source queue semantics, no automatic paint/rAF layout safety guarantee, timer nesting, Node20/libuv1.45 boundary and CJS/ESM nextTick conditions. Primary HTML/Node/web.dev source reviewed. Checks: node /tmp/check-js-async-examples.cjs PASS (actual fenced-code extraction; microtask/self/CJS-ESM/read/schema/abort/pool/local-catch/search/listener cases). tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types node /tmp/js-async-examples-fixture.ts PASS (declared external paymentGateway dependency). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Final source reread after generated table/read-time formatting; current full content matches reviewed mechanisms and fixtures. Prior reviewed hash retained in metadata-attestation record. 2026-10-27 durable replay: scripts/test_curriculum_examples.py extracts the canonical nested-microtask trace under Node 24.22.1; literal output passes and replacing nested microtask scheduling with a task fails in a disposable copy. Browser paint and host dispatch remain outside this replay. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
       "reviewer": "frontend",
-      "reviewDate": "2026-10-27"
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.02-promises.md",
@@ -240,12 +247,13 @@
     },
     {
       "path": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.03-async-await.md",
-      "sha256": "63299e6824c83c589e1f3345b0ee9b91ed41f345fda52fbe62101c28fd0cfbb3",
+      "sha256": "274f22a77db7b29c77f9f3f7e440cc8b3819df12d3a2df826f6f74cc7d5f40ee",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review, followed by complete changed-content reread. Corrected independent versus dependent opening example, conceptual generator runner versus engine implementation, suspended state versus physical frame, local return-await error boundary and no universal performance guarantee. Preserved runtime validation/iteration/distributed failure breadth; links canonical transaction/retry owners. Exact local catch versus adopted rejection examples executed. Checks: node /tmp/check-js-async-examples.cjs PASS (actual fenced-code extraction; microtask/self/CJS-ESM/read/schema/abort/pool/local-catch/search/listener cases). tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types node /tmp/js-async-examples-fixture.ts PASS (declared external paymentGateway dependency). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Final source reread after generated table/read-time formatting; current full content matches reviewed mechanisms and fixtures. Prior reviewed hash retained in metadata-attestation record.",
+      "notes": "Full-content review, followed by complete changed-content reread. Corrected independent versus dependent opening example, conceptual generator runner versus engine implementation, suspended state versus physical frame, local return-await error boundary and no universal performance guarantee. Preserved runtime validation/iteration/distributed failure breadth; links canonical transaction/retry owners. Exact local catch versus adopted rejection examples executed. Checks: node /tmp/check-js-async-examples.cjs PASS (actual fenced-code extraction; microtask/self/CJS-ESM/read/schema/abort/pool/local-catch/search/listener cases). tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types node /tmp/js-async-examples-fixture.ts PASS (declared external paymentGateway dependency). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Final source reread after generated table/read-time formatting; current full content matches reviewed mechanisms and fixtures. Prior reviewed hash retained in metadata-attestation record. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.04-error-handling.md",
@@ -269,12 +277,13 @@
     },
     {
       "path": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.06-bounded-concurrency.md",
-      "sha256": "af98ef301e548d75b790832b474a578b8c698cdecd2197c9a624b2369800fd1c",
+      "sha256": "d863430a77d377873b7fe2da12af37d274644871c1e55cca508c67d7e45151e7",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review, followed by complete changed-content reread. Aligned fail-fast table with unchanged canonical code: failed worker exits, aggregate rejects, others continue dequeuing; no atomicity/rollback. Narrowed request/socket claims and cursor scope. Explained producer/ordered-completion/body backpressure budgets and pMapIterable boundary. Actual continuation after failure, input order, pre-abort skipped outcomes and invalid limit verified. Checks: node /tmp/check-js-async-examples.cjs PASS (actual fenced-code extraction; microtask/self/CJS-ESM/read/schema/abort/pool/local-catch/search/listener cases). tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types node /tmp/js-async-examples-fixture.ts PASS (declared external paymentGateway dependency). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Final source reread after generated table/read-time formatting; current full content matches reviewed mechanisms and fixtures. Prior reviewed hash retained in metadata-attestation record.",
+      "notes": "Full-content review, followed by complete changed-content reread. Aligned fail-fast table with unchanged canonical code: failed worker exits, aggregate rejects, others continue dequeuing; no atomicity/rollback. Narrowed request/socket claims and cursor scope. Explained producer/ordered-completion/body backpressure budgets and pMapIterable boundary. Actual continuation after failure, input order, pre-abort skipped outcomes and invalid limit verified. Checks: node /tmp/check-js-async-examples.cjs PASS (actual fenced-code extraction; microtask/self/CJS-ESM/read/schema/abort/pool/local-catch/search/listener cases). tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types node /tmp/js-async-examples-fixture.ts PASS (declared external paymentGateway dependency). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Final source reread after generated table/read-time formatting; current full content matches reviewed mechanisms and fixtures. Prior reviewed hash retained in metadata-attestation record. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "10-frontend/10.1-javascript/03-async-concurrency/INDEX.md",
@@ -311,10 +320,10 @@
     },
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md",
-      "sha256": "6778be7a59c216ac716cf38e826f795c2a3f3526823b3cb8607a7d202a20dbff",
+      "sha256": "6905c828927dcece8157151e87d02835ddd9f8079d5f1ffd15c501559ca846db",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review; corrected Set size/output, non-registered symbol eligibility, no weak iteration/order or GC deadline, ephemeron/external ownership, conversion and canonical bounded-cache link. Replaced invalid animation placeholder. Primary MDN and specification source checked; Set/symbol cases executed. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS.",
+      "notes": "Full-content review; corrected Set size/output, non-registered symbol eligibility, no weak iteration/order or GC deadline, ephemeron/external ownership, conversion and canonical bounded-cache link. Replaced invalid animation placeholder. Primary MDN and specification source checked; Set/symbol cases executed. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
       "reviewer": "frontend",
       "metadataReview": {
@@ -322,7 +331,8 @@
         "reviewDate": "2026-10-26",
         "reviewer": "root",
         "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
-      }
+      },
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.md",
@@ -356,10 +366,10 @@
     },
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.05-throttle.md",
-      "sha256": "d29a0c7d396d43eae8360c4b61a92d3a6c0b52fdb7836767fe94fc99fc0a40e7",
+      "sha256": "f35931e5c0c1f7965ddfbc7d49a9e3142381d35a49d97d61ab003f3881250cf7",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review; corrected disabled edges and trailing-only new burst/zero-delay behavior, released suppressed receiver/args, bounded ordinary start spacing versus exact deadline/flush, promise overlap and rAF presentation limits. Added cancellable receiver-preserving rAF gate. Fake-clock and actual rAF extraction verifies timing/coalescing/cancel/receiver; strict core+React hook compile passes. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS.",
+      "notes": "Full-content review; corrected disabled edges and trailing-only new burst/zero-delay behavior, released suppressed receiver/args, bounded ordinary start spacing versus exact deadline/flush, promise overlap and rAF presentation limits. Added cancellable receiver-preserving rAF gate. Fake-clock and actual rAF extraction verifies timing/coalescing/cancel/receiver; strict core+React hook compile passes. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
       "reviewer": "frontend",
       "metadataReview": {
@@ -367,7 +377,8 @@
         "reviewDate": "2026-10-26",
         "reviewer": "root",
         "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
-      }
+      },
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.06-memory-leaks.md",
@@ -380,10 +391,10 @@
     },
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.07-garbage-collection.md",
-      "sha256": "5f1b86cbf4e9b32de017ff14c3991046d709ed36803c22e528dce3622d0ea124",
+      "sha256": "185e224241c5c3ef2557e496634d784ab62dd0c49b20175aba0790d9aa63e4c7",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review; removed stale fixed space names/sizes/promote-age/pause guarantees, described version-specific regions, Scavenger versus MinorMS, relevant barriers, optional compaction and remaining pauses. Finalizers optional/no-major-GC guarantee; held-value retention and explicit cleanup support boundary. Primary V8 current collector source and Node heap-space contract checked; no GC timing measurement claimed. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS.",
+      "notes": "Full-content review; removed stale fixed space names/sizes/promote-age/pause guarantees, described version-specific regions, Scavenger versus MinorMS, relevant barriers, optional compaction and remaining pauses. Finalizers optional/no-major-GC guarantee; held-value retention and explicit cleanup support boundary. Primary V8 current collector source and Node heap-space contract checked; no GC timing measurement claimed. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
       "reviewer": "frontend",
       "metadataReview": {
@@ -391,14 +402,15 @@
         "reviewDate": "2026-10-26",
         "reviewer": "root",
         "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
-      }
+      },
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md",
-      "sha256": "cd34e3daecde90af061125575f3810a64047495a37f331f21b28da9067a9411c",
+      "sha256": "1eda833b1e0e80f4b9e1a5158e6e3fea4681be4be80ab9ee779643e1d949f2cc",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review; separated expected hashing complexity from JS average-sublinear guarantee, corrected hex bucket arithmetic, no universal 0.75 threshold, V8 source kLoadFactor2 capacity relation, tombstone duplicate-key search and no portable Map reserve API. Current primary V8 ordered-hash-table source inspected; retained collision/growth mechanisms without measured latency claims. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS.",
+      "notes": "Full-content review; separated expected hashing complexity from JS average-sublinear guarantee, corrected hex bucket arithmetic, no universal 0.75 threshold, V8 source kLoadFactor2 capacity relation, tombstone duplicate-key search and no portable Map reserve API. Current primary V8 ordered-hash-table source inspected; retained collision/growth mechanisms without measured latency claims. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
       "reviewer": "frontend",
       "metadataReview": {
@@ -406,14 +418,15 @@
         "reviewDate": "2026-10-26",
         "reviewer": "root",
         "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
-      }
+      },
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.09-equality-and-coercion.md",
-      "sha256": "b50f2a66b7dfc96c900c3772d554c4ef2504fff902b6e6a7bea04f6a9b742db1",
+      "sha256": "6dec0714f6b4041f596adc86f5b68a128c7daae1acfcec4bb96920ff7b981da2",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review; corrected plus/numeric primitive and BigInt comparison boundaries, legacy document.all exception, and strict signed decimal integer grammar versus broad Number coercion. Actual parser invalid hex/exponent/unsafe/empty/decimal cases and valid signed values executed; strict compile passes. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS.",
+      "notes": "Full-content review; corrected plus/numeric primitive and BigInt comparison boundaries, legacy document.all exception, and strict signed decimal integer grammar versus broad Number coercion. Actual parser invalid hex/exponent/unsafe/empty/decimal cases and valid signed values executed; strict compile passes. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
       "reviewer": "frontend",
       "metadataReview": {
@@ -421,7 +434,8 @@
         "reviewDate": "2026-10-26",
         "reviewer": "root",
         "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
-      }
+      },
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/INDEX.md",
@@ -440,69 +454,74 @@
     },
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/REVISION.md",
-      "sha256": "f545e647591b37cc423b65e0207567c447d0913e9920a6e98839a0ffa829b634",
+      "sha256": "5973658df4a22d5710c95e4f39cfc16476111ce5f9a5d012e7d6199b17ea9498",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Full authored source-linked questions reviewed; corrected detached-cell retaining owner and null assignment/lifetime answer. Added weak-symbol, leading+trailing, commit callback-ref and optional-finalizer questions; retained transfer/alias/backpressure/coercion changed conditions aligned with teaching. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS.",
+      "notes": "Full authored source-linked questions reviewed; corrected detached-cell retaining owner and null assignment/lifetime answer. Added weak-symbol, leading+trailing, commit callback-ref and optional-finalizer questions; retained transfer/alias/backpressure/coercion changed conditions aligned with teaching. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.01-modules.md",
-      "sha256": "a96df18b055168e80c6fb4b019ee0826e2959294b6b468866403b351663e4fd7",
+      "sha256": "e694490ab739b056c89e138d96ba2b71f7c8d3ddccf3af580f0147b8e4559c4e",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review of ESM/CJS live imports, partial cycles, resolved identity, node version/graph and emitted-path contracts, conditional imports and bundler side effects. Narrowed Lexical Environment link to actual module/global lookup coverage. No further blocking finding. Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS.",
+      "notes": "Full-content review of ESM/CJS live imports, partial cycles, resolved identity, node version/graph and emitted-path contracts, conditional imports and bundler side effects. Narrowed Lexical Environment link to actual module/global lookup coverage. No further blocking finding. Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.02-memoization.md",
-      "sha256": "db1fb9236a2132006536c458fe909997ca206265f98eb970d231fb2617044886",
+      "sha256": "6e2de3db99fad9557075cb22d956df2228f4e438e25e64fc94badf5777236af1",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review of equivalence, hidden dependencies, numeric/stack bounds, explicit domain key, LRU count versus byte budget, async rejection/TTL retention and React memo contract. Corrected missing closure memoizer ownership references: wrapper canonical here; closures supplies binding lifetime. No further blocking finding. Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS.",
+      "notes": "Full-content review of equivalence, hidden dependencies, numeric/stack bounds, explicit domain key, LRU count versus byte budget, async rejection/TTL retention and React memo contract. Corrected missing closure memoizer ownership references: wrapper canonical here; closures supplies binding lifetime. No further blocking finding. Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.03-generators.md",
-      "sha256": "d44b9f9eef3022ee03b26bc971e8e9ace353568b070e5363dc9fc69947334bd8",
+      "sha256": "1c70708b6a3a35dc8a2a5ad2a653447ea692eb17e1b7d8798e4b29cdeab26bb0",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Version pin only: Node 24.22.2 replaces 24.22.1 in the iterator-helper availability note. The reviewed generator, spread and one-shot-iterator explanations are unchanged.",
+      "notes": "Version pin only: Node 24.22.2 replaces 24.22.1 in the iterator-helper availability note. The reviewed generator, spread and one-shot-iterator explanations are unchanged. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
       "reviewer": "root",
-      "reviewDate": "2026-11-12",
+      "reviewDate": "2026-11-14",
       "fullContentRead": false
     },
     {
       "path": "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.04-currying-composition.md",
-      "sha256": "c48aa1b304c5b24ac7834ad89c8ea7d2df43358cd1fe0899a4b8c0141f9ae3c9",
+      "sha256": "412b4fe60c2c8bca48e5c4373fe725546e43d37a0c3423308b50382d4eff77ff",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review of unary currying versus partial application, Function.length defaults/rest, sync pipe versus promise, Express multiargument protocol and authorization boundary. No blocking finding. Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS.",
+      "notes": "Full-content review of unary currying versus partial application, Function.length defaults/rest, sync pipe versus promise, Express multiargument protocol and authorization boundary. No blocking finding. Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.05-recursion-tail-call.md",
-      "sha256": "d06f09dbc23a482fa051cf101a9f8b6400a2618e9d1cfed58cf233715858402f",
+      "sha256": "092ba81d24cbd509a60389ff76ac5fcf5f69d435aea2753dbc5404dbfbf0ed3c",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review of pending factorial work, strict-mode PTC normative versus engine support, input/Number/depth bounds, cyclic graph explicit work stack and memoization depth distinction. No blocking finding. Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS.",
+      "notes": "Full-content review of pending factorial work, strict-mode PTC normative versus engine support, input/Number/depth bounds, cyclic graph explicit work stack and memoization depth distinction. No blocking finding. Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "10-frontend/10.1-javascript/05-functional-patterns/INDEX.md",
-      "sha256": "74d3393adb685442f6e8a729ab49f446acd133033d68507e9b83fd442e571fa7",
+      "sha256": "bb9f1328091f01c884e4c92d218843272f00a843463474ad0bc7ca385f2abea9",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Generator row now names the protocol/helper topics and an 8-minute read time; read-order sentence mentions the Symbol.iterator contract.",
+      "notes": "Generator row now names the protocol/helper topics and an 8-minute read time; read-order sentence mentions the Symbol.iterator contract. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
       "reviewer": "root",
-      "reviewDate": "2026-11-12",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true
     },
     {
@@ -518,89 +537,93 @@
     },
     {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md",
-      "sha256": "cc6122e76afb57cca9bd29b129d803aac70845c7ce7931df54b5b0443f4f5dab",
+      "sha256": "7e1ebd8b0c11c702bda4da49532ea1ae7aebfa6d58a74b2334be745d8e67d898",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review. Edition2022–26 lists cross-checked TC39 finished proposals; ownership/grouping/lazy iterator versus async collection/precision/host API distinctions retained. Actual JSON source integer/rawJSON and regex cases executed. Node23 lacks Iterator.concat/Error.isError; those APIs not executed, runtime support distinction explicitly preserved. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS.",
+      "notes": "Full-content review. Edition2022–26 lists cross-checked TC39 finished proposals; ownership/grouping/lazy iterator versus async collection/precision/host API distinctions retained. Actual JSON source integer/rawJSON and regex cases executed. Node23 lacks Iterator.concat/Error.isError; those APIs not executed, runtime support distinction explicitly preserved. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.02-web-workers.md",
-      "sha256": "fc96396a6a7e40cc1ed5399e6c01de42dcca37580f9f518bb06b18f8d6b6486e",
+      "sha256": "956f3f6c01caff73737d04701d1ad83f8d5a0ee85d0e9572339edbd944ef5298",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review; module-worker introductory option aligned and wrong Node worker link corrected. Dedicated/shared/service ownership, finite-number request/reply validation, stale IDs, cancellation, structured clone/transfer/shared bytes/OffscreenCanvas limits reviewed. Exact worker handler valid/invalid/overflow cases executed in VM; strict isolated webworker TS compile passes (not browser worker deployment proof). Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS.",
+      "notes": "Full-content review; module-worker introductory option aligned and wrong Node worker link corrected. Dedicated/shared/service ownership, finite-number request/reply validation, stale IDs, cancellation, structured clone/transfer/shared bytes/OffscreenCanvas limits reviewed. Exact worker handler valid/invalid/overflow cases executed in VM; strict isolated webworker TS compile passes (not browser worker deployment proof). Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.03-dom-events-delegation.md",
-      "sha256": "ab7cb6f2c1514a82f9742b1c03ab11baa0f51f9aeb1711a559142ab24407500e",
+      "sha256": "67cce4752a6ab70aaf6c6918ffc36fb92e7dccf3af13792d99d23068aaf3d602",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review; opening target guard aligned with canonical handler. Capture/target/bubble, shadow boundaries, propagation/default/passive and cleanup reviewed. Actual canonical handler in Chromium exercises nested icon, dynamically added row, non-Element synthetic target rejection and abort disposer. Strict DOM TS compile passes. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS.",
+      "notes": "Full-content review; opening target guard aligned with canonical handler. Capture/target/bubble, shadow boundaries, propagation/default/passive and cleanup reviewed. Actual canonical handler in Chromium exercises nested icon, dynamically added row, non-Element synthetic target rejection and abort disposer. Strict DOM TS compile passes. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.04-cross-tab-communication.md",
-      "sha256": "6c408d56d7977dffc0fbe995a39ea67ce9546e4818e6d8875c4749d25004d926",
+      "sha256": "bb40b5fb065b24c9473fe9211e88be2d336c929a37a98d4643ca8926b659dc90",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review. Notification/storage/ownership/locks/session-generation boundaries reviewed; clarified atomic read-modify-write versus individual set, and stated compact theme concurrent-write ordering limit/re-read-authoritative-storage policy. Preserved explicit transient fallback and server idempotency boundary. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS.",
+      "notes": "Full-content review. Notification/storage/ownership/locks/session-generation boundaries reviewed; clarified atomic read-modify-write versus individual set, and stated compact theme concurrent-write ordering limit/re-read-authoritative-storage policy. Preserved explicit transient fallback and server idempotency boundary. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.md",
-      "sha256": "23e6b461a80a13944713ea534a1a415ceda0b7722a11fe9956dd490d17687239",
+      "sha256": "3d78909856444c882f7e7e7a24b1417e48b1a5e8e5e4c4da961d4ce459d2857d",
       "genre": "interview",
       "status": "reviewed",
-      "notes": "Version pin only: Q57 now cites Node 24.22.2 for Iterator.concat and AsyncIterator availability. No other answer changed; this bank was not re-read in full during this pass.",
+      "notes": "Version pin only: Q57 now cites Node 24.22.2 for Iterator.concat and AsyncIterator availability. No other answer changed; this bank was not re-read in full during this pass. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
       "reviewer": "root",
-      "reviewDate": "2026-11-12",
+      "reviewDate": "2026-11-14",
       "fullContentRead": false
     },
     {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.06-regexp-and-text.md",
-      "sha256": "992030772a4b3671f9d7c6867309258450c98fc3d9d65507de3435355175d55c",
+      "sha256": "2f4824aaff9e1ffe335b04d694a338ac0416daf839d87ff8aad5c9fec831c135",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-12",
+      "reviewDate": "2026-11-14",
       "fullContentRead": false,
-      "notes": "Re-measured the catastrophic-backtracking case on Node 24.22.2 as a median of five runs and replaced the single-run timings (137.2 ms at 24 characters); relabelled the table column and updated the runtime feature note. The structural defense guidance is unchanged.",
+      "notes": "Re-measured the catastrophic-backtracking case on Node 24.22.2 as a median of five runs and replaced the single-run timings (137.2 ms at 24 characters); relabelled the table column and updated the runtime feature note. The structural defense guidance is unchanged. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": []
     },
     {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/INDEX.md",
-      "sha256": "5c11eb0e6ea9c16cd4a1d77c97af225ac0593f1c255317f5c87a0537117191a6",
+      "sha256": "5b62985c77133cad28373e156d9005aa1119419cb8964f385556cff445538c4a",
       "genre": "index",
       "status": "reviewed",
-      "notes": "New regex chapter added: Regular Expressions and Text Matching; runtime verified on Node 24.22.1",
+      "notes": "New regex chapter added: Regular Expressions and Text Matching; runtime verified on Node 24.22.1 Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
       "reviewer": "root",
-      "reviewDate": "2026-11-12",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true
     },
     {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/REVISION.md",
-      "sha256": "9edb9b351f99bddc4d4af404e10ab154972ea2ed6181ea0e4eca1dc80c633219",
+      "sha256": "207276ba580945e18988bac7300273a8db681a04ab4ab189d46d04ed49a40fb2",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Updated the backtracking answer to the re-measured Node 24.22.2 median (137.2 ms at 24 characters) so it agrees with the chapter table; other answers untouched.",
+      "notes": "Updated the backtracking answer to the re-measured Node 24.22.2 median (137.2 ms at 24 characters) so it agrees with the chapter table; other answers untouched. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
       "reviewer": "root",
-      "reviewDate": "2026-11-12",
+      "reviewDate": "2026-11-14",
       "fullContentRead": false
     },
     {
       "path": "10-frontend/10.1-javascript/INDEX.md",
-      "sha256": "b9e4abdb0d6f1428d11d2cfa6c1af63a460b070652b5b121bf5b13900e0556d7",
+      "sha256": "c5002d228a50d86bc7c762830cd2f234a3d303837d23d4860d4ee16955fb2338",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Updated after regex chapter addition",
+      "notes": "Updated after regex chapter addition Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
       "reviewer": "root",
       "metadataReview": {
@@ -609,7 +632,7 @@
         "reviewer": "root",
         "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
       },
-      "reviewDate": "2026-11-12",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true
     },
     {
@@ -721,12 +744,13 @@
     },
     {
       "path": "10-frontend/10.2-typescript/02-generics-and-inference/REVISION.md",
-      "sha256": "fdcaa097cfe6d297b5f3ec27ce1d3206cf49fe65ead6c88c777cb91a452440f1",
+      "sha256": "d89df7918881c5e32819ca0bfbb0fb484e52b8569a42fbe193c7da146b419c86",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Full companion: four source-linkedconceptgroups andchangedconditioncases forruntimevalidation, extractormatching/basecases, pipelines, leafpolicy andunsoundaliasvariance. P2 matching primitiveidentityliteralinferenceanswer needs correction; parentnotified. Fully re-read corrected chapter and companion: primitive literals preserved by ordinary identity; inline object/tuple inference motivates const parameters. Prior P2 resolved. Strict fixture /tmp/ts-generic-literal-fixture.ts passes exact primitive assignments, const nested fields and expected ordinary mutable-field rejection.",
+      "notes": "Full companion: four source-linkedconceptgroups andchangedconditioncases forruntimevalidation, extractormatching/basecases, pipelines, leafpolicy andunsoundaliasvariance. P2 matching primitiveidentityliteralinferenceanswer needs correction; parentnotified. Fully re-read corrected chapter and companion: primitive literals preserved by ordinary identity; inline object/tuple inference motivates const parameters. Prior P2 resolved. Strict fixture /tmp/ts-generic-literal-fixture.ts passes exact primitive assignments, const nested fields and expected ordinary mutable-field rejection. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.01-utility-types.md",
@@ -1121,21 +1145,23 @@
     },
     {
       "path": "10-frontend/10.3-react/04-modern-react/10.3.4.02-web-components.md",
-      "sha256": "2fba33024766ef4c8fccdc21f0a5b6be1ae4c0d566650e4f8bf99581f2cee5f1",
+      "sha256": "3c7088c633436693d2047235d9b67e2195fe4b3a68e83cc2385318b0952166b5",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full content: Custom Element lifecycle, static template safety, shadow selector versus security boundary, event bubbles/composed host distinction, React19 property/event serialization and React18 adapter, rerender setter and JSX typings caveats.",
+      "notes": "Full content: Custom Element lifecycle, static template safety, shadow selector versus security boundary, event bubbles/composed host distinction, React19 property/event serialization and React18 adapter, rerender setter and JSX typings caveats. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "10-frontend/10.3-react/04-modern-react/10.3.4.03-react-router.md",
-      "sha256": "f6dcee9916f4da8e814ce4c1236b50071b1056de244f4f3d35656eedbd20c47e",
+      "sha256": "d497bbda0ee2ba12fab6faf071db4588875c2c7560a84dc4c04f6c757f1e0876",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full content: Data/Declarative/Framework trust and runtime modes, matched parallel loaders versus ordered middleware, validated aborted reads, action status/revalidation, fetcher pending and independent deferred regions, link resolution. Official v8 minimums/release8.4 date verified.",
+      "notes": "Full content: Data/Declarative/Framework trust and runtime modes, matched parallel loaders versus ordered middleware, validated aborted reads, action status/revalidation, fetcher pending and independent deferred regions, link resolution. Official v8 minimums/release8.4 date verified. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "10-frontend/10.3-react/04-modern-react/INDEX.md",
@@ -1956,10 +1982,10 @@
     },
     {
       "path": "10-frontend/INDEX.md",
-      "sha256": "3e641a4d02188850d28f7a332c0bed13ad269c24e0707d3e6571733ea0e2c679",
+      "sha256": "ee03e1f7ebd4ad31557348fe9173ab69925a9aad5c1cce5ca81a39de8d8f842e",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Frontend pass: the sub-stack table column \"Files\" summed to 126 (learning chapters) while the badge and blurb said 149 (chapters plus revision companions) under the same word. Renamed the column to \"Chapters\" so both counts name their scope; the rest of the section map, pass structure and cross-references re-read and consistent.",
+      "notes": "Frontend pass: the sub-stack table column \"Files\" summed to 126 (learning chapters) while the badge and blurb said 149 (chapters plus revision companions) under the same word. Renamed the column to \"Chapters\" so both counts name their scope; the rest of the section map, pass structure and cross-references re-read and consistent. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
       "reviewer": "root",
       "metadataReview": {
@@ -1968,7 +1994,7 @@
         "reviewer": "root",
         "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
       },
-      "reviewDate": "2026-11-12",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true
     },
     {
@@ -3640,21 +3666,21 @@
     },
     {
       "path": "20-backend/20.5-security/01-auth/20.5.1.04-sessions-cookies.md",
-      "sha256": "797f18a76e4bfcf00a76e379f6b89245afb54996da230446b4609b97bd37d3b3",
+      "sha256": "4de7b807a433652c66a758e077a3fff12e8c5307bf1a9c47bea7379a89f13e8e",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full read: cookie ambientauthority/same-site versus origin, fixation regeneration, saved session before response, constanttime CSRF token, knownOrigin on unsafe browser flow, idle/absolute limits, secureproxy policy, store failclosed and concurrentlogout bounds. Exact extracted Express5/express-session1.18.2 fixture passed origin403, profile200, missingCSRF403, logout204/oldcookie401 and exactidle100ms rejection using localMemoryStore/fakeclock/securefalse. No realTLS/browser cookie or sharedstore race proof. Official sources checked for this cohort: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html ; https://www.rfc-editor.org/rfc/rfc9700 ; https://www.rfc-editor.org/rfc/rfc10017.html ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/types.ts ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/saml.ts ; https://pages.nist.gov/800-63-4/sp800-63b.html ; https://simplewebauthn.dev/docs/packages/server .",
+      "reviewDate": "2026-11-14",
+      "notes": "Full read: cookie ambientauthority/same-site versus origin, fixation regeneration, saved session before response, constanttime CSRF token, knownOrigin on unsafe browser flow, idle/absolute limits, secureproxy policy, store failclosed and concurrentlogout bounds. Exact extracted Express5/express-session1.18.2 fixture passed origin403, profile200, missingCSRF403, logout204/oldcookie401 and exactidle100ms rejection using localMemoryStore/fakeclock/securefalse. No realTLS/browser cookie or sharedstore race proof. Official sources checked for this cohort: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html ; https://www.rfc-editor.org/rfc/rfc9700 ; https://www.rfc-editor.org/rfc/rfc10017.html ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/types.ts ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/saml.ts ; https://pages.nist.gov/800-63-4/sp800-63b.html ; https://simplewebauthn.dev/docs/packages/server . Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "fullContentRead": true,
       "findings": []
     },
     {
       "path": "20-backend/20.5-security/01-auth/20.5.1.05-jwt.md",
-      "sha256": "990eec999560819b1bc3b1c7b9810c20be0bd34b9b51faeb753a82da3b7a9c6f",
+      "sha256": "d33279f9fbfc0ad0a5c8a4d7a97e0dd88d674651fc9b5c5eaccc8b12e9a7b29c",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "notes": "Full content reviewed: pinned algorithm/key authority, issuer/audience/profile validation, access-versus-refresh purpose, atomic rotation/replay policy, revocation, storage/CSRF/XSS and bounded public-key lookup. Added concrete wrong-audience opening before definitions. jsonwebtoken primary reference checked; library example not executed.",
+      "notes": "Full content reviewed: pinned algorithm/key authority, issuer/audience/profile validation, access-versus-refresh purpose, atomic rotation/replay policy, revocation, storage/CSRF/XSS and bounded public-key lookup. Added concrete wrong-audience opening before definitions. jsonwebtoken primary reference checked; library example not executed. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [
         {
           "severity": "P3",
@@ -3664,17 +3690,17 @@
         }
       ],
       "reviewer": "career_planning",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true
     },
     {
       "path": "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.md",
-      "sha256": "5091ce8495ca8856fc46ed081b7b662eb554a02b5458245dff4574ecf700e68d",
+      "sha256": "1a94bfc6e33bc663b6977e3b14a851089d51e3e59db3b26e77f41ab8c06f1b4d",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full read including complete callback code: role/tokenpurpose split, state/browserPKCE/nonce/issuer bindings, atomicconsume adapter limit, exactredirect and confidentialmethod, device interval/slowdown/timeouterrors, ID-tokenvalidation and issuer-sub mapping, grantserialization, RFC10017 BFF/tokenmediator/browser distinctions. Exact extracted fixture passed PKCEhash/nonce, wrongissuer, replay, missingtransaction and exactexpiry. Official RFC9700/10017 checked; no providerexchange/IDtoken/network/livegrant test. Official sources checked for this cohort: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html ; https://www.rfc-editor.org/rfc/rfc9700 ; https://www.rfc-editor.org/rfc/rfc10017.html ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/types.ts ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/saml.ts ; https://pages.nist.gov/800-63-4/sp800-63b.html ; https://simplewebauthn.dev/docs/packages/server .",
+      "reviewDate": "2026-11-14",
+      "notes": "Full read including complete callback code: role/tokenpurpose split, state/browserPKCE/nonce/issuer bindings, atomicconsume adapter limit, exactredirect and confidentialmethod, device interval/slowdown/timeouterrors, ID-tokenvalidation and issuer-sub mapping, grantserialization, RFC10017 BFF/tokenmediator/browser distinctions. Exact extracted fixture passed PKCEhash/nonce, wrongissuer, replay, missingtransaction and exactexpiry. Official RFC9700/10017 checked; no providerexchange/IDtoken/network/livegrant test. Official sources checked for this cohort: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html ; https://www.rfc-editor.org/rfc/rfc9700 ; https://www.rfc-editor.org/rfc/rfc10017.html ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/types.ts ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/saml.ts ; https://pages.nist.gov/800-63-4/sp800-63b.html ; https://simplewebauthn.dev/docs/packages/server . Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "fullContentRead": true,
       "findings": []
     },
@@ -3691,12 +3717,12 @@
     },
     {
       "path": "20-backend/20.5-security/01-auth/20.5.1.08-mfa-passkeys-webauthn.md",
-      "sha256": "545ff97c870556dc9b78a1f7c82a6ca1e4c99b42e61968af4d9a5161c816982f",
+      "sha256": "834562a69692ad27631d3b381c2067870489a3be41addb8e9e899dece57759bd",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full read: distinctfactors, OTPphishing and counterreplay, RP-ID/origin binding, userverification versuspasskeylabel, syncablekey nonexportability/AAL3, pending registration attempt ownership, credentialuniqueness and counterrisk, recovery assurance/session limits. Exact extracted TOTP helper passed all6 RFC6238 SHA1 8digitvectors. OfficialNIST63B4 verifies64bit savedcodes, AAL2recovery combinations and24h/1h limits; SimpleWebAuthn14 docs reviewed. No authenticator/browser ceremony, persistence replayrace or assurance certification claimed. Official sources checked for this cohort: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html ; https://www.rfc-editor.org/rfc/rfc9700 ; https://www.rfc-editor.org/rfc/rfc10017.html ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/types.ts ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/saml.ts ; https://pages.nist.gov/800-63-4/sp800-63b.html ; https://simplewebauthn.dev/docs/packages/server .",
+      "reviewDate": "2026-11-14",
+      "notes": "Full read: distinctfactors, OTPphishing and counterreplay, RP-ID/origin binding, userverification versuspasskeylabel, syncablekey nonexportability/AAL3, pending registration attempt ownership, credentialuniqueness and counterrisk, recovery assurance/session limits. Exact extracted TOTP helper passed all6 RFC6238 SHA1 8digitvectors. OfficialNIST63B4 verifies64bit savedcodes, AAL2recovery combinations and24h/1h limits; SimpleWebAuthn14 docs reviewed. No authenticator/browser ceremony, persistence replayrace or assurance certification claimed. Official sources checked for this cohort: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html ; https://www.rfc-editor.org/rfc/rfc9700 ; https://www.rfc-editor.org/rfc/rfc10017.html ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/types.ts ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/saml.ts ; https://pages.nist.gov/800-63-4/sp800-63b.html ; https://simplewebauthn.dev/docs/packages/server . Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "fullContentRead": true,
       "findings": []
     },
@@ -3768,12 +3794,12 @@
     },
     {
       "path": "20-backend/20.5-security/02-attacks-and-defense/20.5.2.02-csrf.md",
-      "sha256": "b2fef955738470cf772e575b6412df481f9b85ca7f2c0faca312375b08b2529e",
+      "sha256": "2d7a0ff7cd8d5085c9b8f9bb361e0aa63a4f687c70a6a9002570a32bf9efd86d",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full read: automaticcredentials withoutcookietheft/responseread, SOP/site/origin distinction, singlecanonicalsessionflow versus signedHMACdouble-submit. Exact extracted helper passed rightfulsession, othersessionrejection, malformed/unequal token false. OfficialOWASP signedsessionbinding source checked. Browsercookie/FetchMetadata/Originmissing policy and activeXSS limits explicit; no actualbrowsercrosssiterequest test. Sources checked: https://api-security.owasp.org/editions/2023/en/0x11-t10/ ; https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html .",
+      "reviewDate": "2026-11-14",
+      "notes": "Full read: automaticcredentials withoutcookietheft/responseread, SOP/site/origin distinction, singlecanonicalsessionflow versus signedHMACdouble-submit. Exact extracted helper passed rightfulsession, othersessionrejection, malformed/unequal token false. OfficialOWASP signedsessionbinding source checked. Browsercookie/FetchMetadata/Originmissing policy and activeXSS limits explicit; no actualbrowsercrosssiterequest test. Sources checked: https://api-security.owasp.org/editions/2023/en/0x11-t10/ ; https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html . Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "fullContentRead": true,
       "findings": []
     },
@@ -4547,34 +4573,34 @@
     },
     {
       "path": "20-backend/20.9-message-brokers/20.9.01-message-brokers.md",
-      "sha256": "43f975a342e34465581ee18c103a4da27ccb96cfc2125f86952ff1d64f66fb52",
+      "sha256": "b74c9983f1a86f3bc72abb72713590f67ef2efdc77f0c8e9783b02fad10d14a3",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full read: distinguished broker acceptance, classic offsets, Share Group per-record acknowledgments and external effect completion; checked native Confluent configuration, serial effect-before-commit progression, per-purpose fanout, ordering/retention/compaction limits. Kafka 4.2 official upgrade confirms Share Groups production-ready per-record processing; 4.3 official upgrade confirms supported snapshot. No actual broker/provider/deployment test. Sources checked: https://kafka.apache.org/42/getting-started/upgrade/ ; https://kafka.apache.org/43/getting-started/upgrade/ ; https://docs.confluent.io/platform/current/clients/librdkafka/html/md_CONFIGURATION.html ; https://www.rabbitmq.com/blog/2026/04/23/rabbitmq-4.3-release .",
+      "reviewDate": "2026-11-14",
+      "notes": "Full read: distinguished broker acceptance, classic offsets, Share Group per-record acknowledgments and external effect completion; checked native Confluent configuration, serial effect-before-commit progression, per-purpose fanout, ordering/retention/compaction limits. Kafka 4.2 official upgrade confirms Share Groups production-ready per-record processing; 4.3 official upgrade confirms supported snapshot. No actual broker/provider/deployment test. Sources checked: https://kafka.apache.org/42/getting-started/upgrade/ ; https://kafka.apache.org/43/getting-started/upgrade/ ; https://docs.confluent.io/platform/current/clients/librdkafka/html/md_CONFIGURATION.html ; https://www.rabbitmq.com/blog/2026/04/23/rabbitmq-4.3-release . Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "fullContentRead": true,
       "findings": []
     },
     {
       "path": "20-backend/20.9-message-brokers/20.9.02-kafka-internals-and-operations.md",
-      "sha256": "5302075f425dec64a68f53095420e2bc53b4dffe05d193e4d645eb9b603df5cb",
+      "sha256": "d994ca55a1b895509e7373aa80856c3d64298b7d1948af5c5eb712898af318b3",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full read: ISR versus ELR and acks/all acceptance floor, BigInt lag with unknown/reset states, read_committed last stable offset, rebalance and lingering effect ownership, KRaft/KIP-848 and explicit group protocol, rebuild/tombstone/partition migration conditions. Extracted offsetLag fixture passed >safe-integer precision, reset, unknown and invalid-offset cases. Official Kafka 4.2/4.3 upgrades and librdkafka configuration verified protocol heartbeat/session and max.poll progress. No live Kafka, ISR failover or deployment validation. Sources checked: https://kafka.apache.org/42/getting-started/upgrade/ ; https://kafka.apache.org/43/getting-started/upgrade/ ; https://docs.confluent.io/platform/current/clients/librdkafka/html/md_CONFIGURATION.html ; https://www.rabbitmq.com/blog/2026/04/23/rabbitmq-4.3-release .",
+      "reviewDate": "2026-11-14",
+      "notes": "Full read: ISR versus ELR and acks/all acceptance floor, BigInt lag with unknown/reset states, read_committed last stable offset, rebalance and lingering effect ownership, KRaft/KIP-848 and explicit group protocol, rebuild/tombstone/partition migration conditions. Extracted offsetLag fixture passed >safe-integer precision, reset, unknown and invalid-offset cases. Official Kafka 4.2/4.3 upgrades and librdkafka configuration verified protocol heartbeat/session and max.poll progress. No live Kafka, ISR failover or deployment validation. Sources checked: https://kafka.apache.org/42/getting-started/upgrade/ ; https://kafka.apache.org/43/getting-started/upgrade/ ; https://docs.confluent.io/platform/current/clients/librdkafka/html/md_CONFIGURATION.html ; https://www.rabbitmq.com/blog/2026/04/23/rabbitmq-4.3-release . Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "fullContentRead": true,
       "findings": []
     },
     {
       "path": "20-backend/20.9-message-brokers/20.9.03-event-driven-patterns.md",
-      "sha256": "4c0c287f887ff7366c7fabd6d182bcd09ec363748cfbc4ff4ac1fe3ad9f8f19f",
+      "sha256": "9690d1fa0a0a96832db64302078a74e62ae670507a4689360cfe485f8bd74201",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full read: event envelope versus authorization, bounded consumer retries and durable quarantine before source progress, poison-event ordering gap, schema skew, immutable protected claim check retention, RabbitMQ routing and delayed-retry delivery-count, local outbox intent versus relay delivery. Extracted policy fixture passed 3-attempt retry, malformed permanent quarantine, failed-quarantine rejection and maxAttempts bound. RabbitMQ 4.3 official release verified native quorum delayed retry. No live RabbitMQ/Kafka/blob integration. Sources checked: https://kafka.apache.org/42/getting-started/upgrade/ ; https://kafka.apache.org/43/getting-started/upgrade/ ; https://docs.confluent.io/platform/current/clients/librdkafka/html/md_CONFIGURATION.html ; https://www.rabbitmq.com/blog/2026/04/23/rabbitmq-4.3-release .",
+      "reviewDate": "2026-11-14",
+      "notes": "Full read: event envelope versus authorization, bounded consumer retries and durable quarantine before source progress, poison-event ordering gap, schema skew, immutable protected claim check retention, RabbitMQ routing and delayed-retry delivery-count, local outbox intent versus relay delivery. Extracted policy fixture passed 3-attempt retry, malformed permanent quarantine, failed-quarantine rejection and maxAttempts bound. RabbitMQ 4.3 official release verified native quorum delayed retry. No live RabbitMQ/Kafka/blob integration. Sources checked: https://kafka.apache.org/42/getting-started/upgrade/ ; https://kafka.apache.org/43/getting-started/upgrade/ ; https://docs.confluent.io/platform/current/clients/librdkafka/html/md_CONFIGURATION.html ; https://www.rabbitmq.com/blog/2026/04/23/rabbitmq-4.3-release . Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "fullContentRead": true,
       "findings": []
     },
@@ -9884,12 +9910,12 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "c002eadeadd3a34688a558ddf7c713d2a2e28ecb4aa793104bb04eab729e0b58",
+      "sha256": "de1656153ab3f977f8f5b7f6c5e5c6b07f8c0a6786ac5723cfacbe3f72814386",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-12",
-      "fullContentRead": false,
-      "notes": "Study-time restamp only: 89 h 7 m after the role-discovery chapter grew from 7 to 9 minutes. File and line counts unchanged.",
+      "reviewDate": "2026-11-14",
+      "fullContentRead": true,
+      "notes": "2026-11-14 pass: read in full. Added the fifth strategy chapter (00.05 Find Startup Roles) to the 00-strategy block and the direct index, and normalized the 40/50/60/70 stack headings to their folder prefixes. Counts and lane table unchanged.",
       "findings": []
     },
     {
@@ -9904,32 +9930,32 @@
     },
     {
       "path": "ROADMAP.md",
-      "sha256": "a09d15b318fe9ac744f6e03af90082d2964400c6cf125e3e83da385c5fc06a07",
+      "sha256": "80c70773cb363b9264b3a7256aaa2aadf2e68c126e11bb98090a613042953cbb",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-12",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true,
-      "notes": "Root pass: badge and footer dated October 2026 corrected to November 2026. The case-study claim read 32 because check_counts counted the REVISION companion as a case study; the counter now excludes companions, so the roadmap and INDEX agree on 31.",
+      "notes": "2026-11-14 pass: read in full. The structure tree now includes 20.9-message-brokers, 40.10-cdn, 40.11-reverse-proxy and 40.12-iac, which the \"11 sub-stacks\" claim and the platform stack already contained. Phase, checkpoint and sample-rhythm guidance unchanged.",
       "findings": []
     },
     {
       "path": "contributing.md",
-      "sha256": "b945b93359b292001026b5cd203e96ceba3fca965ac421413209d203a758e395",
+      "sha256": "63ae171392a9d6e6fac7aa8302f79937cc29e632190db0015c7fc994d9ad9829",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-12",
-      "fullContentRead": false,
-      "notes": "Count and pin restamp: repo scale now 988 files / 158K lines, and the canonical-example setup note now requires Node 24.22.2. Verification instructions unchanged.",
+      "reviewDate": "2026-11-14",
+      "fullContentRead": true,
+      "notes": "2026-11-14 pass: read in full. Directory tree now includes 00-strategy/00.05-find-startup-roles.md and projects/maq; the file map had gone stale after the role-discovery chapter landed. Gate table, metadata rules and the 66 raw-wrapper count checked against disk.",
       "findings": []
     },
     {
       "path": "design-qa.md",
-      "sha256": "39fe65717a0e66b2c7f23ae23f834b5fe7de91b7dbdfbb991731342199065bb6",
+      "sha256": "e8da15c567bc813b3b61a4d54a8570220db77ad84aa5cb2300e19ed1356ba5ee",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-12",
-      "fullContentRead": false,
-      "notes": "Pin restamp only: the verification-runtime note now names Node 24.22.2. Design-QA conclusions unchanged.",
+      "reviewDate": "2026-11-14",
+      "fullContentRead": true,
+      "notes": "2026-11-14 pass: read in full as the dated design record it is. Only the current gate count changed (33 to 34); the per-pass measurements, screenshots and historical counts retain their dates.",
       "findings": []
     },
     {
@@ -10165,12 +10191,12 @@
     },
     {
       "path": "docs/scripts-map.md",
-      "sha256": "acd648722e9def348da6a7ae2238d98b6d65f13ea2ba056e4f0dee5c2ec0dcb1",
+      "sha256": "abf96d04bb6a4f488d48e65f1c773fb1655b7cf5675e7fe5ad84675ca35fe663",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-12",
+      "reviewDate": "2026-11-14",
       "fullContentRead": false,
-      "notes": "Node pin updated to 24.22.2 in the canonical replay section. Case-manifest identity, TypeScript 5.9.3 pin and mutation rule unchanged.",
+      "notes": "2026-11-14 mechanical update: added the gate 31 row for review_ledger.py and let the wiring writer restamp the 34-gate count. Semantic review remains the 2026-11-12 row; this pass did not re-read the whole inventory.",
       "findings": []
     },
     {
@@ -10235,12 +10261,12 @@
     },
     {
       "path": "docs/superpowers/plans/2026-10-05-read-aloud-ui.md",
-      "sha256": "8e791776e7d1dcd226514425c806a120b228852f62d6e170f157510419115125",
+      "sha256": "107ce0e7272e67e8853a282c00f7f80281d49c868237b6355ae26355d4b57968",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-26",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true,
-      "notes": "Historical 2026-10-05-read-aloud-ui: full design/execution record read, including examples and all dated checkpoints. Preserve dates/paths/checkboxes as historical evidence, not current runtime behavior or authorization. Current AGENTS and exact-hash review supersede obsolete templates and private-location statements; no old test result promoted to current proof.",
+      "notes": "Historical 2026-10-05-read-aloud-ui: full design/execution record read, including examples and all dated checkpoints. Preserve dates/paths/checkboxes as historical evidence, not current runtime behavior or authorization. Current AGENTS and exact-hash review supersede obsolete templates and private-location statements; no old test result promoted to current proof. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": []
     },
     {
@@ -10425,12 +10451,12 @@
     },
     {
       "path": "docs/verification-gates.md",
-      "sha256": "d2157de8a4d31f742978d0d8eafb67835a3423792ec27e0dd4163d86fa89edde",
+      "sha256": "46d12db8c8385b2b0eea2f0dd87723aed7328b2e22084fe3720ccc563ad91f03",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-12",
+      "reviewDate": "2026-11-14",
       "fullContentRead": false,
-      "notes": "Repo-scale examples restamped to 988 files / 158K lines and the teaching-template scope to 680 content files. Gate descriptions unchanged.",
+      "notes": "2026-11-14 mechanical update: added the gate 31 row for the per-file review ledger and let the wiring writer restamp the 34-gate count. Semantic review remains the 2026-11-12 row; this pass did not re-read the whole gate reference.",
       "findings": []
     },
     {

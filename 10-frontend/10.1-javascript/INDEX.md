@@ -16,13 +16,13 @@ JavaScript fundamentals commonly appear in frontend, Node.js, and full-stack int
 The numbered chapters are organized into six category folders. Files in the same category build on each other; follow each category's reading order, then use its revision companion before interview practice.
 
 | Category | Chapters | Why it matters |
-| ------------------------------------------------------------------------ | -------: | ----------------------------------------------------------------------------------------------- |
+| ------------------------------------------------------------------------ | -------: | -------------------------------------------------------------------------------------------------------------------- |
 | [Execution & Scope](01-execution-and-scope/INDEX.md) | 7 | The language's binding, lookup, execution and lifetime model |
 | [Objects, Prototypes & `this`](02-objects-prototypes-this/INDEX.md) | 3 | Property lookup, prototype links, method calls and `this` |
 | [Async & Concurrency](03-async-concurrency/INDEX.md) | 6 | Event-loop scheduling, promises, async/await, cancellation and bounded work |
 | [Memory & Data](04-memory-and-data/INDEX.md) | 9 | Choosing the right collection, hash table internals, avoiding memory leaks, understanding GC |
 | [Functional Patterns](05-functional-patterns/INDEX.md) | 5 | The patterns you'll use daily: currying, composition, memoization, generators |
-| [Modern JS & Interview Prep](06-modern-and-interview/INDEX.md) | 5 | Selected ES2022–2026 APIs, workers, DOM events, cross-tab coordination, and interview questions |
+| [Modern JS & Interview Prep](06-modern-and-interview/INDEX.md) | 6 | Selected ES2022–2026 APIs, workers, DOM events, cross-tab coordination, regular expressions, and interview questions |
 
 ---
 
@@ -126,7 +126,8 @@ Selected recent APIs, browser execution/event models and interview practice.
 | 32 | [Web Workers](06-modern-and-interview/10.1.6.02-web-workers.md) | Dedicated, shared, and service workers; message ownership and cancellation limits | Important | Important | 7 min |
 | 33 | [DOM Events & Delegation](06-modern-and-interview/10.1.6.03-dom-events-delegation.md) | Event path, target and listener ownership, delegation, propagation, default actions, and cleanup | Essential | Foundational | 6 min |
 | 34 | [Cross-Tab Communication](06-modern-and-interview/10.1.6.04-cross-tab-communication.md) | Transient messages, persistent recovery, shared owners, locks, and safe cross-tab session updates | Important | Specialized | 7 min |
-| 35 | [Interview Questions](06-modern-and-interview/10.1.6.05-interview-questions.md) | 62 questions with model answers, implementation prompts and changed-condition checks | Essential | Foundational | 13 min |
+| 35 | [Regular Expressions and Text Matching](06-modern-and-interview/10.1.6.06-regexp-and-text.md) | Character classes, flags, `lastIndex` state, backtracking risk, Unicode and a redaction trace | Essential | Important | 9 min |
+| 36 | [Interview Questions](06-modern-and-interview/10.1.6.05-interview-questions.md) | 62 questions with model answers, implementation prompts and changed-condition checks | Essential | Foundational | 13 min |
 
 ---
 

@@ -14,7 +14,7 @@
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
 | 01 | [`this` Keyword](10.1.2.01-this.md) | Invocation receiver, lexical arrows, `call`/`apply`/`bind`, callbacks and construction | Essential | Foundational | 9 min |
-| 02 | [Prototypes](10.1.2.02-prototypes.md) | Prototype chain, `__proto__`, `Object.create`, classical inheritance, `class` keyword | Essential | Foundational | 8 min |
+| 02 | [Prototypes](10.1.2.02-prototypes.md) | Prototype chain, `__proto__`, `Object.create`, class-based inheritance, `class` keyword | Essential | Foundational | 8 min |
 | 03 | [Proxy & Reflect](10.1.2.03-proxy-reflect.md) | Metaprogramming, traps, validation, reactive patterns (Vue 3 uses these) | Important | Specialized | 8 min |
 
 ---

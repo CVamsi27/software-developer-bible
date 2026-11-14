@@ -96,7 +96,7 @@ Source: [Hoisting](10.1.1.04-hoisting.md)
 
 **Q:** What do `using` and `await using` add to declaration timing and resource lifetime?
 
-**A:** They create lexical resource bindings, so the name follows lexical initialization rules. On scope exit, `using` disposes synchronously and `await using` disposes asynchronously. Check the current specification draft and the runtime or transpiler support you deploy.
+**A:** They create lexical resource bindings, so the name follows lexical initialization rules. On scope exit, `using` disposes synchronously and `await using` disposes asynchronously. Check the specification and the runtime or transpiler support you deploy.
 
 ## Lexical Environment
 

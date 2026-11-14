@@ -98,10 +98,13 @@ def invocations():
             # labels must not be mistaken for the gate's flags.
             m = re.match(r'\s*(?:if\s+)?python3\s+scripts/' + re.escape(script) + r'(.*)$', line)
             if m:
-                tail = shlex.split(m.group(1))
-                cut = next((i for i, t in enumerate(tail)
-                            if t.startswith(('>', ';', '&&', '||', '|'))), len(tail))
-                args = tail[:cut]
+                # Stop at the first shell control operator. `shlex.split` keeps
+                # `check;` as one token, so split the operator out before
+                # tokenizing; otherwise a positional argument like `check`
+                # reaches argparse as `check;` and the empty-tree run exits 2
+                # instead of printing its SCOPE ERROR.
+                command = re.split(r'\s*(?:;|&&|\|\||\||>)\s*', m.group(1), maxsplit=1)[0]
+                args = shlex.split(command)
                 break
         out.append((script, args))
     return out

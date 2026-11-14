@@ -126,9 +126,9 @@ Source: [Debounce](10.1.4.04-debounce.md)
 
 **A:** It drops the pending invocation, including timer and saved arguments. It does not stop a callback/request that already started; in-flight cancellation and obsolete-result checks are separate policies.
 
-**Q:** Why does the resize example pair `removeEventListener` with `handleResize.cancel()`?
+**Q:** Why does the chapter's React hook call `debounced.cancel()` in an effect cleanup?
 
-**A:** Removing the listener stops future events, but a timer already scheduled would still fire — calling `setState` after the component unmounted — unless `cancel()` clears it too.
+**A:** Removing the event source stops future calls, but a timer already scheduled can still fire after unmount or wrapper replacement. `cancel()` clears that pending invocation; an in-flight request needs separate abort ownership.
 
 **Q:** What's wrong with `debounce(fetchResults, 50)` and with `debounce(fetchResults, 2000)`?
 
@@ -192,7 +192,7 @@ Source: [Memory Leaks](10.1.4.06-memory-leaks.md)
 
 **Q:** What are the chapter's five causes, and what is the single move that repairs each?
 
-**A:** Long-lived listener paths, closures retaining obsolete data, timers, globals and unbounded caches can keep data reachable. A detached node/listener cycle alone is collectible. Find the root path, then remove the unwanted owner or apply an explicit retention bound.
+**A:** Forgotten intervals and timers, unremoved global listeners, a detached DOM tree retained through one node, closures held by a longer-lived owner, and unbounded caches. The repair is the same in each case: remove the unwanted strong path — clear the timer, remove the listener, drop the node reference, dispose the owner, or bound and evict the cache.
 
 **Q:** How do you tell a growing heap apart from a leak while the app is running?
 
@@ -202,9 +202,9 @@ Source: [Memory Leaks](10.1.4.06-memory-leaks.md)
 
 **A:** An isolated node/listener cycle can become unreachable. The retained-cell example stores a leaf in a longer-lived binding, keeping its still-linked detached tree reachable. Clear that owner when finished; the separate window-listener example also requires removing its registration and retiring the disposer.
 
-**Q:** Why does capturing `hugeData.length` instead of reading `hugeData` inside the closure change anything?
+**Q:** Why does the chapter's snapshot disposer clear `snapshots.length = 0` as well as removing the listener?
 
-**A:** Calculate the length first and let the callback use only that number. The callback then has no need to access the original array. The engine may reclaim the array once it is unreachable, but exact storage and collection timing remain implementation details.
+**A:** Removing the listener stops future pushes, but the closure still owns the events already captured while the owner is reachable. Clearing the array drops that retained history; another reference to an event can still keep that event alive.
 
 **Q:** What does `AbortController` give a fetch effect that a boolean flag does not?
 
@@ -378,9 +378,9 @@ Sources: [Copying](10.1.4.03-shallow-vs-deep-copy.md), [Debounce](10.1.4.04-debo
 
 **A:** Immediately on the input change. Cancel/invalidate the old generation then, rather than waiting for the next request to start; otherwise an old response can publish during the quiet-time gap.
 
-**Q:** Why must an undo history clone the new snapshot before removing redo entries?
+**Q:** Why should a structured clone be attempted before replacing current state?
 
-**A:** Cloning can throw for unsupported data. Preparing the snapshot first preserves the existing history on failure instead of partly applying the update.
+**A:** `structuredClone` can throw `DataCloneError` for unsupported values. Building the replacement first means a failed clone leaves the current state intact instead of discarding it for a snapshot that never materializes.
 
 **Q:** What does Boolean('false') mean for a URL feature flag?
 

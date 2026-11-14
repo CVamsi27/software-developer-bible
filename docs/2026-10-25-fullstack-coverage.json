@@ -185,7 +185,7 @@
     },
     {
       "path": "00-strategy/INDEX.md",
-      "sha256": "810897c63729f7b6f3218785dd7c0c3d6eacfb15d5db85be6fe63b7ecb335c72",
+      "sha256": "a02ecbf4c8dcdcf717f0b55bdc186b543941fbbb563f969adc76144b392a387e",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -204,13 +204,15 @@
       },
       "review": {
         "path": "00-strategy/INDEX.md",
-        "sha256": "810897c63729f7b6f3218785dd7c0c3d6eacfb15d5db85be6fe63b7ecb335c72",
+        "sha256": "a02ecbf4c8dcdcf717f0b55bdc186b543941fbbb563f969adc76144b392a387e",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-12",
+        "reviewDate": "2026-11-14",
         "fullContentRead": true,
-        "notes": "Section blurb now names local job-search tooling; read-time writer restamped the section to 6 files / 28 minutes and the category badge to 18 minutes after the chapter grew to 9 minutes. Pass table and links unchanged.",
-        "findings": []
+        "notes": "2026-11-14 pass: read in full. Corrected the read-time badge from 18 to 28 minutes; the 2026-11-12 note had recorded the mismatch as intentional, but the badge stated a section total that disagreed with the computed 28-minute study-time line. Strategy pass table, lane links and cross-references checked.",
+        "findings": [
+          "Read-time badge claimed 18 minutes while the section total was 28; badge corrected to 28."
+        ]
       }
     },
     {
@@ -30866,7 +30868,7 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "c002eadeadd3a34688a558ddf7c713d2a2e28ecb4aa793104bb04eab729e0b58",
+      "sha256": "de1656153ab3f977f8f5b7f6c5e5c6b07f8c0a6786ac5723cfacbe3f72814386",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -30884,12 +30886,12 @@
       },
       "review": {
         "path": "INDEX.md",
-        "sha256": "c002eadeadd3a34688a558ddf7c713d2a2e28ecb4aa793104bb04eab729e0b58",
+        "sha256": "de1656153ab3f977f8f5b7f6c5e5c6b07f8c0a6786ac5723cfacbe3f72814386",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-12",
-        "fullContentRead": false,
-        "notes": "Study-time restamp only: 89 h 7 m after the role-discovery chapter grew from 7 to 9 minutes. File and line counts unchanged.",
+        "reviewDate": "2026-11-14",
+        "fullContentRead": true,
+        "notes": "2026-11-14 pass: read in full. Added the fifth strategy chapter (00.05 Find Startup Roles) to the 00-strategy block and the direct index, and normalized the 40/50/60/70 stack headings to their folder prefixes. Counts and lane table unchanged.",
         "findings": []
       }
     },
@@ -30925,7 +30927,7 @@
     },
     {
       "path": "ROADMAP.md",
-      "sha256": "a09d15b318fe9ac744f6e03af90082d2964400c6cf125e3e83da385c5fc06a07",
+      "sha256": "80c70773cb363b9264b3a7256aaa2aadf2e68c126e11bb98090a613042953cbb",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -30952,18 +30954,18 @@
       },
       "review": {
         "path": "ROADMAP.md",
-        "sha256": "a09d15b318fe9ac744f6e03af90082d2964400c6cf125e3e83da385c5fc06a07",
+        "sha256": "80c70773cb363b9264b3a7256aaa2aadf2e68c126e11bb98090a613042953cbb",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-12",
+        "reviewDate": "2026-11-14",
         "fullContentRead": true,
-        "notes": "Root pass: badge and footer dated October 2026 corrected to November 2026. The case-study claim read 32 because check_counts counted the REVISION companion as a case study; the counter now excludes companions, so the roadmap and INDEX agree on 31.",
+        "notes": "2026-11-14 pass: read in full. The structure tree now includes 20.9-message-brokers, 40.10-cdn, 40.11-reverse-proxy and 40.12-iac, which the \"11 sub-stacks\" claim and the platform stack already contained. Phase, checkpoint and sample-rhythm guidance unchanged.",
         "findings": []
       }
     },
     {
       "path": "contributing.md",
-      "sha256": "b945b93359b292001026b5cd203e96ceba3fca965ac421413209d203a758e395",
+      "sha256": "63ae171392a9d6e6fac7aa8302f79937cc29e632190db0015c7fc994d9ad9829",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -30991,18 +30993,18 @@
       },
       "review": {
         "path": "contributing.md",
-        "sha256": "b945b93359b292001026b5cd203e96ceba3fca965ac421413209d203a758e395",
+        "sha256": "63ae171392a9d6e6fac7aa8302f79937cc29e632190db0015c7fc994d9ad9829",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-12",
-        "fullContentRead": false,
-        "notes": "Count and pin restamp: repo scale now 988 files / 158K lines, and the canonical-example setup note now requires Node 24.22.2. Verification instructions unchanged.",
+        "reviewDate": "2026-11-14",
+        "fullContentRead": true,
+        "notes": "2026-11-14 pass: read in full. Directory tree now includes 00-strategy/00.05-find-startup-roles.md and projects/maq; the file map had gone stale after the role-discovery chapter landed. Gate table, metadata rules and the 66 raw-wrapper count checked against disk.",
         "findings": []
       }
     },
     {
       "path": "design-qa.md",
-      "sha256": "39fe65717a0e66b2c7f23ae23f834b5fe7de91b7dbdfbb991731342199065bb6",
+      "sha256": "e8da15c567bc813b3b61a4d54a8570220db77ad84aa5cb2300e19ed1356ba5ee",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31022,12 +31024,12 @@
       },
       "review": {
         "path": "design-qa.md",
-        "sha256": "39fe65717a0e66b2c7f23ae23f834b5fe7de91b7dbdfbb991731342199065bb6",
+        "sha256": "e8da15c567bc813b3b61a4d54a8570220db77ad84aa5cb2300e19ed1356ba5ee",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-12",
-        "fullContentRead": false,
-        "notes": "Pin restamp only: the verification-runtime note now names Node 24.22.2. Design-QA conclusions unchanged.",
+        "reviewDate": "2026-11-14",
+        "fullContentRead": true,
+        "notes": "2026-11-14 pass: read in full as the dated design record it is. Only the current gate count changed (33 to 34); the per-pass measurements, screenshots and historical counts retain their dates.",
         "findings": []
       }
     },
@@ -31716,7 +31718,7 @@
     },
     {
       "path": "docs/scripts-map.md",
-      "sha256": "acd648722e9def348da6a7ae2238d98b6d65f13ea2ba056e4f0dee5c2ec0dcb1",
+      "sha256": "abf96d04bb6a4f488d48e65f1c773fb1655b7cf5675e7fe5ad84675ca35fe663",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31738,12 +31740,12 @@
       },
       "review": {
         "path": "docs/scripts-map.md",
-        "sha256": "acd648722e9def348da6a7ae2238d98b6d65f13ea2ba056e4f0dee5c2ec0dcb1",
+        "sha256": "abf96d04bb6a4f488d48e65f1c773fb1655b7cf5675e7fe5ad84675ca35fe663",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-12",
+        "reviewDate": "2026-11-14",
         "fullContentRead": false,
-        "notes": "Node pin updated to 24.22.2 in the canonical replay section. Case-manifest identity, TypeScript 5.9.3 pin and mutation rule unchanged.",
+        "notes": "2026-11-14 mechanical update: added the gate 31 row for review_ledger.py and let the wiring writer restamp the 34-gate count. Semantic review remains the 2026-11-12 row; this pass did not re-read the whole inventory.",
         "findings": []
       }
     },
@@ -32557,7 +32559,7 @@
     },
     {
       "path": "docs/verification-gates.md",
-      "sha256": "d2157de8a4d31f742978d0d8eafb67835a3423792ec27e0dd4163d86fa89edde",
+      "sha256": "46d12db8c8385b2b0eea2f0dd87723aed7328b2e22084fe3720ccc563ad91f03",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32572,12 +32574,12 @@
       },
       "review": {
         "path": "docs/verification-gates.md",
-        "sha256": "d2157de8a4d31f742978d0d8eafb67835a3423792ec27e0dd4163d86fa89edde",
+        "sha256": "46d12db8c8385b2b0eea2f0dd87723aed7328b2e22084fe3720ccc563ad91f03",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-12",
+        "reviewDate": "2026-11-14",
         "fullContentRead": false,
-        "notes": "Repo-scale examples restamped to 988 files / 158K lines and the teaching-template scope to 680 content files. Gate descriptions unchanged.",
+        "notes": "2026-11-14 mechanical update: added the gate 31 row for the per-file review ledger and let the wiring writer restamp the 34-gate count. Semantic review remains the 2026-11-12 row; this pass did not re-read the whole gate reference.",
         "findings": []
       }
     },

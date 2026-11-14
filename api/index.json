@@ -4,7 +4,7 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "78eff293054a595ffb54bd6bf64261cb0fd4cc35d3e16e07e12c4a2bb90e168b",
+ "corpus_digest": "1eafb989489c9ab05b63efa27ef6dbf2c71bc9dfd23ba367f229d0b355d38ebe",
  "totals": {
   "chapters": 680,
   "sections": 47,
@@ -2187,7 +2187,7 @@
   },
   {
    "p": "20-backend/20.2-nestjs/04-quality-and-operations/REVISION.html",
-   "t": "NestJS — Quality And Operations Revision",
+   "t": "NestJS — Quality & Operations Revision",
    "s": "NestJS",
    "c": "Reference",
    "g": [
@@ -2217,7 +2217,7 @@
   },
   {
    "p": "20-backend/20.2-nestjs/05-advanced-and-interview/REVISION.html",
-   "t": "NestJS — Advanced And Interview Revision",
+   "t": "NestJS — Advanced & Interview Revision",
    "s": "NestJS",
    "c": "Reference",
    "g": [
@@ -2279,7 +2279,7 @@
   },
   {
    "p": "20-backend/20.3-rest-apis/01-design-and-contract/REVISION.html",
-   "t": "REST APIs — Design And Contract Revision",
+   "t": "REST APIs — Design & Contract Revision",
    "s": "REST APIs",
    "c": "Reference",
    "g": [
@@ -2473,7 +2473,7 @@
   },
   {
    "p": "20-backend/20.3-rest-apis/04-edge-and-scale/REVISION.html",
-   "t": "REST APIs — Edge And Scale Revision",
+   "t": "REST APIs — Edge & Scale Revision",
    "s": "REST APIs",
    "c": "Reference",
    "g": [
@@ -2618,7 +2618,7 @@
   },
   {
    "p": "20-backend/20.4-database/02-querying-and-optimization/REVISION.html",
-   "t": "Database — Querying And Optimization Revision",
+   "t": "Database — Querying & Optimization Revision",
    "s": "Database",
    "c": "Reference",
    "g": [
@@ -2782,7 +2782,7 @@
   },
   {
    "p": "20-backend/20.4-database/05-operations-and-scaling/REVISION.html",
-   "t": "Database — Operations And Scaling Revision",
+   "t": "Database — Operations & Scaling Revision",
    "s": "Database",
    "c": "Reference",
    "g": [
@@ -2955,7 +2955,7 @@
   },
   {
    "p": "20-backend/20.5-security/02-attacks-and-defense/REVISION.html",
-   "t": "Security — Attacks And Defense Revision",
+   "t": "Security — Attacks & Defense Revision",
    "s": "Security",
    "c": "Reference",
    "g": [
@@ -3015,7 +3015,7 @@
   },
   {
    "p": "20-backend/20.5-security/03-hardening-and-operations/REVISION.html",
-   "t": "Security — Hardening And Operations Revision",
+   "t": "Security — Hardening & Operations Revision",
    "s": "Security",
    "c": "Reference",
    "g": [
@@ -3146,7 +3146,7 @@
   },
   {
    "p": "20-backend/20.6-microservices/02-communication-and-messaging/REVISION.html",
-   "t": "Microservices — Communication And Messaging Revision",
+   "t": "Microservices — Communication & Messaging Revision",
    "s": "Microservices",
    "c": "Reference",
    "g": [
@@ -3219,7 +3219,7 @@
   },
   {
    "p": "20-backend/20.6-microservices/03-data-and-consistency/REVISION.html",
-   "t": "Microservices — Data And Consistency Revision",
+   "t": "Microservices — Data & Consistency Revision",
    "s": "Microservices",
    "c": "Reference",
    "g": [
@@ -4592,7 +4592,7 @@
   },
   {
    "p": "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/REVISION.html",
-   "t": "Liveness Lifecycle — Revision",
+   "t": "Liveness & Lifecycle — Revision",
    "s": "Infra Patterns",
    "c": "Reference",
    "g": [
@@ -4666,7 +4666,7 @@
   },
   {
    "p": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/REVISION.html",
-   "t": "Failure And Recovery — Revision",
+   "t": "Failure & Recovery — Revision",
    "s": "Architecture",
    "c": "Reference",
    "g": [
@@ -4740,7 +4740,7 @@
   },
   {
    "p": "30-architecture/30.3-infra-patterns/04-data-at-scale/REVISION.html",
-   "t": "Data At Scale — Revision",
+   "t": "Data at Scale — Revision",
    "s": "Architecture",
    "c": "Reference",
    "g": [
@@ -4791,7 +4791,7 @@
   },
   {
    "p": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/REVISION.html",
-   "t": "Shipping And Evolution — Revision",
+   "t": "Shipping & Evolution — Revision",
    "s": "Infra Patterns",
    "c": "Reference",
    "g": [
@@ -4802,7 +4802,7 @@
   },
   {
    "p": "30-architecture/30.3-infra-patterns/06-interview-prep/30.3.6.01-interview-questions.html",
-   "t": "30.3.6.01 — Infra & Ops Patterns Interview Questions",
+   "t": "Infra & Ops Patterns Interview Questions",
    "s": "Infra Patterns",
    "c": "Architecture",
    "g": [
@@ -6104,7 +6104,7 @@
   },
   {
    "p": "40-platform/40.9-twelve-factor/40.9.02-interview-questions.html",
-   "t": "40.9.02 — Twelve-Factor App Interview Questions",
+   "t": "Twelve-Factor App Interview Questions",
    "s": "Platform",
    "c": "Architecture",
    "g": [

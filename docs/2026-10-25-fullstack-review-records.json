@@ -2782,12 +2782,12 @@
     },
     {
       "path": "20-backend/20.2-nestjs/04-quality-and-operations/REVISION.md",
-      "sha256": "5626535a1bf067ae399b5b60d30e623cd9331cc516e4608c23ecd042a9dc8065",
+      "sha256": "436e5045223d50848dfd573e3690e8ce4748dff1ff02f843f72e89d014496d1b",
       "genre": "revision",
       "status": "reviewed",
       "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-11-12",
-      "notes": "NestJS revision: E2E bootstrap answer explains what the test omits",
+      "reviewDate": "2026-11-14",
+      "notes": "NestJS revision: E2E bootstrap answer explains what the test omits Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
       "fullContentRead": true,
       "findings": [
         {
@@ -2838,12 +2838,12 @@
     },
     {
       "path": "20-backend/20.2-nestjs/05-advanced-and-interview/REVISION.md",
-      "sha256": "fe254491de0fd70349ef71b3cedea02f1ae35ff88288215afba9d6da0cd0934d",
+      "sha256": "1613e043dd3f22dafb5745d72c9fb03a18ec6867647a656cbddeccb2c38c1b72",
       "genre": "revision",
       "status": "reviewed",
       "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read complete final Q/A after adding source-linked writer/reader agreement coverage for the companion clarification. Extraction versus verification, metadata enforcement, custom validation default, controller registration, emitted design metadata and tenant/pagination failure boundaries agree with source chapter; all original questions preserved. No independent blocking finding.",
+      "reviewDate": "2026-11-14",
+      "notes": "Read complete final Q/A after adding source-linked writer/reader agreement coverage for the companion clarification. Extraction versus verification, metadata enforcement, custom validation default, controller registration, emitted design metadata and tenant/pagination failure boundaries agree with source chapter; all original questions preserved. No independent blocking finding. Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2924,12 +2924,12 @@
     },
     {
       "path": "20-backend/20.3-rest-apis/01-design-and-contract/REVISION.md",
-      "sha256": "03b170f02b5ebca750f08694ae3cba4b2a049cbe19cc38d97b8513af75065a91",
+      "sha256": "4d4ea4a98b81a796a798dabbb7e6c4c53c9856699d60ae32fa4f37248dd34ad2",
       "genre": "revision-companion",
       "status": "reviewed",
       "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full content read: source-linked recall groups for all five concepts, preserved authored questions plus concrete trace/boundary prompts; answers align on uncertain remote calls, conversational state, deprecation structured dates, level1 versus level2 and security AND/OR/3.2 tool support. No duplicate full mechanism or blocking finding.",
+      "reviewDate": "2026-11-14",
+      "notes": "Full content read: source-linked recall groups for all five concepts, preserved authored questions plus concrete trace/boundary prompts; answers align on uncertain remote calls, conversational state, deprecation structured dates, level1 versus level2 and security AND/OR/3.2 tool support. No duplicate full mechanism or blocking finding. Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
       "fullContentRead": true,
       "findings": []
     },
@@ -3155,12 +3155,12 @@
     },
     {
       "path": "20-backend/20.3-rest-apis/04-edge-and-scale/REVISION.md",
-      "sha256": "8048065f121d9492c3561edadb4281f1d8405cc844db984a1e1baf8be64293b8",
+      "sha256": "dc20aad24f50a7ede85ff1c9ddd0845d9db8c8796955e8c482cb28f284aefa3b",
       "genre": "revision-companion",
       "status": "reviewed",
       "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full content read: source-linked Q/A for all four chapters plus fractional refill, atomic Redis, identity stripping, partial proxy failure, optional-data outage semantics, cross-tenant authorization and refresh atomicity. At least five preserved authored pairs; answers align with canonical chapters.",
+      "reviewDate": "2026-11-14",
+      "notes": "Full content read: source-linked Q/A for all four chapters plus fractional refill, atomic Redis, identity stripping, partial proxy failure, optional-data outage semantics, cross-tenant authorization and refresh atomicity. At least five preserved authored pairs; answers align with canonical chapters. Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
       "fullContentRead": true,
       "findings": []
     },
@@ -3378,12 +3378,12 @@
     },
     {
       "path": "20-backend/20.4-database/02-querying-and-optimization/REVISION.md",
-      "sha256": "c51d40291d964f122fb953963ff955498f032a4334260ddfdba6aa136946da3c",
+      "sha256": "a037dbc3fbd8ec8c27ee4a65ce205cab23add0bee156b65c7cb2559af2c0b7ed",
       "genre": "revision-companion",
       "status": "reviewed",
       "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full final content reread of source-linked groups for all five concepts plus plan safety/tie/null/query changes. Corrected generic-plan availability16+,serialization17+,retained search output18+; answers align with current chapter and official versioned manuals. Authored pairs preserved.",
+      "reviewDate": "2026-11-14",
+      "notes": "Full final content reread of source-linked groups for all five concepts plus plan safety/tie/null/query changes. Corrected generic-plan availability16+,serialization17+,retained search output18+; answers align with current chapter and official versioned manuals. Authored pairs preserved. Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
       "fullContentRead": true,
       "findings": [
         {
@@ -3599,12 +3599,12 @@
     },
     {
       "path": "20-backend/20.4-database/05-operations-and-scaling/REVISION.md",
-      "sha256": "89e7b9430e9ddfbd2752411b88d32751e78a553c48e4b45ca0440b2d3a16dbce",
+      "sha256": "34efda00cb2654901f44b318cc2f34ff0884209be1ce9322df286e6af14587cf",
       "genre": "revision-companion",
       "status": "reviewed",
       "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full content read: source-linked groups for all five concepts and preserved authored pairs with queue budget, same-client rollback, legacy-writer/locked batch, oldNOTNULL, deletiongeneration/active-email, target-marker/WALchain/RPO and searchitem/order changes. Incremental dependency answer distinguishes combination/integrity/restore evidence. No answer contradicts canonical source chapter.",
+      "reviewDate": "2026-11-14",
+      "notes": "Full content read: source-linked groups for all five concepts and preserved authored pairs with queue budget, same-client rollback, legacy-writer/locked batch, oldNOTNULL, deletiongeneration/active-email, target-marker/WALchain/RPO and searchitem/order changes. Incremental dependency answer distinguishes combination/integrity/restore evidence. No answer contradicts canonical source chapter. Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
       "fullContentRead": true,
       "findings": []
     },
@@ -3838,12 +3838,12 @@
     },
     {
       "path": "20-backend/20.5-security/02-attacks-and-defense/REVISION.md",
-      "sha256": "0d05d12dc2926b314338e33e258e5c83a4f9819e5999e5bc1ac77f0f543f0fb7",
+      "sha256": "7ed607fd6f2c63987150457d62d26217592d499771d48833d12f81f4ae5c0f4b",
       "genre": "revision-companion",
       "status": "reviewed",
       "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full read179lines withsource-linkedgroups/all4concepts andfailurevariants. Contextencoding/noncehash/TrustedTypes, SameSite/signedsessionbinding, SQLgrammar/value/LIKE, APIobjectproperty/budget/businessflow/SSRFdependency controls agree withchapters. Authoredquestions preserved; no newblockingfinding. Sources checked: https://api-security.owasp.org/editions/2023/en/0x11-t10/ ; https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html .",
+      "reviewDate": "2026-11-14",
+      "notes": "Full read179lines withsource-linkedgroups/all4concepts andfailurevariants. Contextencoding/noncehash/TrustedTypes, SameSite/signedsessionbinding, SQLgrammar/value/LIKE, APIobjectproperty/budget/businessflow/SSRFdependency controls agree withchapters. Authoredquestions preserved; no newblockingfinding. Sources checked: https://api-security.owasp.org/editions/2023/en/0x11-t10/ ; https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html . Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
       "fullContentRead": true,
       "findings": []
     },
@@ -3921,12 +3921,12 @@
     },
     {
       "path": "20-backend/20.5-security/03-hardening-and-operations/REVISION.md",
-      "sha256": "cf3753df4b7077e962155a633ac9efbb1d3d40a78ab2829fea1292d7d22462c0",
+      "sha256": "4de3bcf09adefd4284aebef082efc6182c766312e5e706aaa0adc413b8db5dfb",
       "genre": "revision-companion",
       "status": "reviewed",
       "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full read193lines source-linkedgroups forall5concepts pluschangedconditionquestions. CorrectAEADAAD/context/final, freshnonce/cachepair, CORSversusCSRF/simpledelivery, HSTSfirstcontact/proxy, exactKMSsignatureinput/encoding, secretconsumerreload and artifact/deployedremediation evidence. ExistingCORSquestion already matchesrepairedopening; authoredpairs preserved. Sources checked: https://helmet.js.org/faq/csp-nonce-example/ ; https://external-secrets.io/v1.0.0/api/spec/ ; https://docs.aws.amazon.com/kms/latest/APIReference/API_Sign.html ; https://kubernetes.io/docs/concepts/configuration/secret/ ; https://www.first.org/cvss/v4.0/ ; https://www.first.org/epss/ .",
+      "reviewDate": "2026-11-14",
+      "notes": "Full read193lines source-linkedgroups forall5concepts pluschangedconditionquestions. CorrectAEADAAD/context/final, freshnonce/cachepair, CORSversusCSRF/simpledelivery, HSTSfirstcontact/proxy, exactKMSsignatureinput/encoding, secretconsumerreload and artifact/deployedremediation evidence. ExistingCORSquestion already matchesrepairedopening; authoredpairs preserved. Sources checked: https://helmet.js.org/faq/csp-nonce-example/ ; https://external-secrets.io/v1.0.0/api/spec/ ; https://docs.aws.amazon.com/kms/latest/APIReference/API_Sign.html ; https://kubernetes.io/docs/concepts/configuration/secret/ ; https://www.first.org/cvss/v4.0/ ; https://www.first.org/epss/ . Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
       "fullContentRead": true,
       "findings": []
     },
@@ -4120,12 +4120,12 @@
     },
     {
       "path": "20-backend/20.6-microservices/02-communication-and-messaging/REVISION.md",
-      "sha256": "5d82208b3faa7079596353ef9fa6c65ffd0b888c22ee7fa845b4810c1c0c63c8",
+      "sha256": "5f41f40507e456b3d884249bb93c64f7847ea73c15443c1ac7de2404b7bd0802",
       "genre": "revision-companion",
       "status": "reviewed",
       "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full content read: source-linked preserved questions cover sixconcepts plus finalgrpcstatus/drain, ShareConsumer semantics, confirm-versus-return, outboxintent, atomic consumer marker, nextoffset43 and externaleffect, delayedretry state. Answers agree with canonical chapters and current primary docs; no duplicate full implementation.",
+      "reviewDate": "2026-11-14",
+      "notes": "Full content read: source-linked preserved questions cover sixconcepts plus finalgrpcstatus/drain, ShareConsumer semantics, confirm-versus-return, outboxintent, atomic consumer marker, nextoffset43 and externaleffect, delayedretry state. Answers agree with canonical chapters and current primary docs; no duplicate full implementation. Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
       "fullContentRead": true,
       "findings": []
     },
@@ -4208,13 +4208,13 @@
     },
     {
       "path": "20-backend/20.6-microservices/03-data-and-consistency/REVISION.md",
-      "sha256": "5d6c5a0afc4d19f19486ecb60a25fb49695e62b4ccf53a2932a6dbeec59a0ed3",
+      "sha256": "69798a5f34a06bf5778fefea288bd40d3b67234447e4cdf5e810071640aa9a3a",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Full content reviewed as revision companion: all six linked concepts plus changed replay/projection/migration cases; distinguishes CAP/atomicity, unknown payment, local compensation, versioned append, immutable state, tombstones and outbox external-effect limits. Linked unreveiwed chapters remain pending independently.",
+      "notes": "Full content reviewed as revision companion: all six linked concepts plus changed replay/projection/migration cases; distinguishes CAP/atomicity, unknown payment, local compensation, versioned append, immutable state, tombstones and outbox external-effect limits. Linked unreveiwed chapters remain pending independently. Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
       "findings": [],
       "reviewer": "career_planning",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true
     },
     {
@@ -5791,12 +5791,12 @@
     },
     {
       "path": "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/REVISION.md",
-      "sha256": "9646a39eae4217b6adbd29319d4801b425716e335d14b766f07e373b6ec28d55",
+      "sha256": "1f601106aaa4972dd314bf964a7fbef109c10e5802fb86e6538521446b015b6c",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true,
-      "notes": "Full revision read. Verified restart/readiness separation, deadline budget, actual HTTP drain ordering, abrupt-death recovery and preStop consuming grace. Preserved existing prompts including intentionally similar recall questions.",
+      "notes": "Full revision read. Verified restart/readiness separation, deadline budget, actual HTTP drain ordering, abrupt-death recovery and preStop consuming grace. Preserved existing prompts including intentionally similar recall questions. Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
       "findings": []
     },
     {
@@ -5875,12 +5875,12 @@
     },
     {
       "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/REVISION.md",
-      "sha256": "51acf52d85d1169e17e130aa53540aae088ba8cd56e27ae41439056ec9275f10",
+      "sha256": "e9708f28bc3091a6cd33e03cdb05c5718ac927295687d44da3cf64f1b902e61e",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true,
-      "notes": "Full revision read. Updated current IETF work-in-progress status and checked source-linked questions on retry deadline/body consumption, effect identity, retention, flag defaults and restore evidence. No legal retention period or provider guarantee inferred.",
+      "notes": "Full revision read. Updated current IETF work-in-progress status and checked source-linked questions on retry deadline/body consumption, effect identity, retention, flag defaults and restore evidence. No legal retention period or provider guarantee inferred. Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
       "findings": []
     },
     {
@@ -5973,14 +5973,14 @@
     },
     {
       "path": "30-architecture/30.3-infra-patterns/04-data-at-scale/REVISION.md",
-      "sha256": "dede4d798d5b510b17925361d89e0944860591542f48ebf26280aa72a15444e0",
+      "sha256": "30b064abad5acb8b91342ef92d60954df0b2b590f907210b62f9c342e45d400b",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Checked every source-linked retrieval group: local partitioning and uniqueness, pool budget/protocol state, pipeline after-images/tombstone/transaction scope, CDN hit authorization and revocation, transaction-local tenant context, Prisma v7/v8 version distinction and per-resource isolation. Official PgBouncer, Prisma release status and Kafka 4.3 docs support version-sensitive answers.",
+      "notes": "Checked every source-linked retrieval group: local partitioning and uniqueness, pool budget/protocol state, pipeline after-images/tombstone/transaction scope, CDN hit authorization and revocation, transaction-local tenant context, Prisma v7/v8 version distinction and per-resource isolation. Official PgBouncer, Prisma release status and Kafka 4.3 docs support version-sensitive answers. Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
       "findings": [],
       "fullContentRead": true,
       "reviewer": "architecture_coverage",
-      "reviewDate": "2026-10-25"
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.md",
@@ -6039,21 +6039,21 @@
     },
     {
       "path": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/REVISION.md",
-      "sha256": "bb88276ef60bf63bc753c1832f00670d5780b4f688858195569e764e175c0486",
+      "sha256": "74b39b017e7f6aa4d23b10aafc24a495ed45f100dd1f85ae95993a244364b059",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Checked all source-linked groups and answers for rollout/canary, concurrent backfill, debt-rule ownership, economic denominator, interruption recovery, estimate scope, holds/version expiry, response versus physical-erasure deadline and key-copy limitations.",
+      "notes": "Checked all source-linked groups and answers for rollout/canary, concurrent backfill, debt-rule ownership, economic denominator, interruption recovery, estimate scope, holds/version expiry, response versus physical-erasure deadline and key-copy limitations. Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
       "findings": [],
       "fullContentRead": true,
       "reviewer": "architecture_coverage",
-      "reviewDate": "2026-10-25"
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "30-architecture/30.3-infra-patterns/06-interview-prep/30.3.6.01-interview-questions.md",
-      "sha256": "51a1dc7e08b2f5cb9701e6ce951580677dfb08dd259b5ac13bdcc13d782c4bf9",
+      "sha256": "0940ae0acb8c6614549ec1dac4cb78ada1288f88719d860ca0745a072a880a6e",
       "genre": "interview-bank",
       "status": "reviewed",
-      "notes": "Fully reread after root repair. Every question, scenario, summary and reference inspected. Q12 now traces compatibility through supported client, persisted-format and replay windows after rollout; Summary item 2 now distinguishes naturally repeatable operations and stable effect identity. Checked probe/admission, retry, recovery-objective, fencing, pool-budget, tenant/erasure and degradation boundaries.",
+      "notes": "Fully reread after root repair. Every question, scenario, summary and reference inspected. Q12 now traces compatibility through supported client, persisted-format and replay windows after rollout; Summary item 2 now distinguishes naturally repeatable operations and stable effect identity. Checked probe/admission, retry, recovery-objective, fencing, pool-budget, tenant/erasure and degradation boundaries. Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
       "findings": [
         {
           "id": "architecture-001",
@@ -6076,7 +6076,7 @@
       ],
       "fullContentRead": true,
       "reviewer": "architecture_coverage",
-      "reviewDate": "2026-10-25"
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "30-architecture/30.3-infra-patterns/06-interview-prep/INDEX.md",
@@ -7836,12 +7836,12 @@
     },
     {
       "path": "40-platform/40.9-twelve-factor/40.9.02-interview-questions.md",
-      "sha256": "0c35e5dddba049ee147f9f390baed697bd42656840e65035090760ebf6d5166b",
+      "sha256": "7346b421660e74ae003b6095d13c1c3328141c82ed78075df9a1cf379e839d95",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-26",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true,
-      "notes": "Full original factors and modern adaptations checked: process-independent durable effects, artifact/config identity, conditional graceful shutdown and separate accepted-work recovery. Original2017 and next-branch community status reverified against primary sources; all25bank answers and every source-linked revision read.",
+      "notes": "Full original factors and modern adaptations checked: process-independent durable effects, artifact/config identity, conditional graceful shutdown and separate accepted-work recovery. Original2017 and next-branch community status reverified against primary sources; all25bank answers and every source-linked revision read. Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
       "findings": []
     },
     {
@@ -9990,12 +9990,12 @@
     },
     {
       "path": "docs/2026-09-19-corpus-health-report.md",
-      "sha256": "d1af213ac0e3d3ae42cf81353022716de531fa61fdc82a7814aade50c95c5860",
+      "sha256": "f2885164a34ba432a4ebb1f1b47cc9e037f86f2ba4b394c7b18a3d29ce4098ae",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-12",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true,
-      "notes": "Count restamp only: the report quotes the live freshness-rule total, which the new STALE-LAST-UPDATED-MONTH rule moved from 45 to 46. Measured claims and dated findings unchanged.",
+      "notes": "Count restamp only: the report quotes the live freshness-rule total, which the new STALE-LAST-UPDATED-MONTH rule moved from 45 to 46. Measured claims and dated findings unchanged. Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "1137da2030c2e0a930a4110f49ca5663581130bb487d998312196208d2191b0d",
@@ -10421,22 +10421,22 @@
     },
     {
       "path": "docs/superpowers/specs/2026-11-05-listening-experience-design.md",
-      "sha256": "8921f085bb814c8ebdc008ebd80b180a4303a6effcbcbe3357188e1cfc1be3fb",
+      "sha256": "ab77b6f8d34dded27f8a82a72072c14d9fe01a02eda7cde7e76f676bf4a28898",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-05",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true,
-      "notes": "Full-content review including the spoken-word addition: the original local-voice and playback design remains coherent. Word callbacks use retained chunk offsets and exact source character ranges; current-word contrast complements the paragraph, pause freezes position, obsolete speech cannot move it, and CSS Highlight/fallback rectangles preserve authored markup. No-boundary voices retain paragraph emphasis.",
+      "notes": "Full-content review including the spoken-word addition: the original local-voice and playback design remains coherent. Word callbacks use retained chunk offsets and exact source character ranges; current-word contrast complements the paragraph, pause freezes position, obsolete speech cannot move it, and CSS Highlight/fallback rectangles preserve authored markup. No-boundary voices retain paragraph emphasis. Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
       "findings": []
     },
     {
       "path": "docs/superpowers/specs/2026-11-05-site-refinement-design.md",
-      "sha256": "1a59c3789f0e3d158e621fa806de55230caed3e98cd051d1da4769fa554265d0",
+      "sha256": "6b5c51deb43f74782f9416548b14e8e1ff1d43fe0732b5fdd92798eec835fe99",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-05",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true,
-      "notes": "Full-content review of the current reader and discovery specification/plan: responsive Back to top ownership, word and paragraph emphasis, local voice filtering, interview tools, search category context, catalog-backed badge routing, rendered publication checks, scoped information repairs and evidence limits. The later user authorization to commit, push and merge is retained.",
+      "notes": "Full-content review of the current reader and discovery specification/plan: responsive Back to top ownership, word and paragraph emphasis, local voice filtering, interview tools, search category context, catalog-backed badge routing, rendered publication checks, scoped information repairs and evidence limits. The later user authorization to commit, push and merge is retained. Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
       "findings": []
     },
     {

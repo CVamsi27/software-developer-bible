@@ -238,11 +238,12 @@ where a gate can be built from the wreckage. Skip gate rules for singletons
 
 ## Summary
 
-The corpus is now 560 study chapters and 40 interview banks, every one at or
-above the 25-question floor the gate enforces. After the answer-quality arc and
-the table-only probe that falsified its scanner, no answer and no chapter
-Definition falls under the 25-prose-word floor gate 19 enforces — its rule 2
-having measured and deliberately exempted the H3-plus-code genres.
+At the close of this pass the corpus held 560 study chapters and 40 interview
+banks, every one at or above the 25-question floor the gate enforced. After the
+answer-quality arc and the table-only probe that falsified its scanner, no
+answer and no chapter Definition fell under the 25-prose-word floor gate 19
+enforced — its rule 2 having measured and deliberately exempted the
+H3-plus-code genres.
 
 The sweeps below are the session's ledger, each one a fix-then-gate pair:
 

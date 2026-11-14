@@ -6,7 +6,7 @@
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../../docs/topic-importance.md)
 
-# Microservices — Communication And Messaging Revision
+# Microservices — Communication & Messaging Revision
 
 Explain each mechanism before checking the answer. Revisit its source for the example and boundary conditions.
 

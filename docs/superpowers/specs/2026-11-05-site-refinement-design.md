@@ -1,4 +1,4 @@
-# Reader and discovery refinement
+# Reader and Discovery Refinement
 
 ## Goal
 

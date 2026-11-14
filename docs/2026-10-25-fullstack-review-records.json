@@ -10131,12 +10131,12 @@
     },
     {
       "path": "docs/full-corpus-readability-pass.md",
-      "sha256": "da769dd1c1741490f761bdf76f488295d79eb2976fa3fe97fe0fa8345edcff51",
+      "sha256": "e2374e9fb84becc8322751ed2a3c167620a85840c32fc0ccd26ab9689cd802b9",
       "status": "reviewed",
       "reviewer": "buffy",
-      "reviewDate": "2026-11-12",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true,
-      "notes": "docs: also read the current coverage review and corpus-health report; the remaining 36 are archival plans, specs and dated reports whose value is the record they preserve",
+      "notes": "Re-read after correcting the stale 2026-11-11 progress header: clarified that the per-stack table is a dated snapshot, replaced the stale 32/32 gate claim with the current suite, and fixed the duplicated 'is'. Live corpus total checked with scripts/check_counts.py.",
       "findings": []
     },
     {

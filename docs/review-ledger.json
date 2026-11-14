@@ -13823,17 +13823,17 @@
       }
     },
     "docs/full-corpus-readability-pass.md": {
-      "sha256": "da769dd1c1741490f761bdf76f488295d79eb2976fa3fe97fe0fa8345edcff51",
-      "lines": 114,
+      "sha256": "e2374e9fb84becc8322751ed2a3c167620a85840c32fc0ccd26ab9689cd802b9",
+      "lines": 115,
       "genre": "doc",
       "status": "read",
       "reviewed": "2026-11-14",
       "evidence": {
-        "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Full-Corpus Readability Pass.",
+        "current": "Manual document scan on 2026-11-14 re-read the title, complete H2 outline and Summary; corrected the stale 2026-11-11 progress scope, its 32/32 gate claim, and a duplicated 'is'. The live corpus total is 988 files per scripts/check_counts.py.",
         "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-        "concise": "1011 words over 115 lines; the outline and Summary contained no repeated section or restated point.",
+        "concise": "1077 words over 115 lines; the outline and Summary contained no repeated section or restated point.",
         "focused": "The title, headings and Summary kept one subject: Full-Corpus Readability Pass. No second competing treatment was visible.",
-        "fast": "Source 6.9 KB over 115 lines with 0 Markdown links; the scan found no unrelated preamble in the title or Summary.",
+        "fast": "Source 7.3 KB over 115 lines with 0 Markdown links; the scan found no unrelated preamble in the title or Summary.",
         "best": "Reference document; the manual scan found a dated scope, a coherent section sequence and a Summary that states its limits."
       }
     },

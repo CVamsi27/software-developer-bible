@@ -442,7 +442,7 @@
       "sha256": "240e9b1d55c6207bdcc4edc21209be8d8019a9179b67a244043c3b8a7fcb1532",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full category learning flow/topic mapping and source pointers reviewed; values→collections→copy→timers→retainers→GC→lookup/equality progression coherent. Counts delegated to final restamper. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS.",
+      "notes": "Full category learning flow/topic mapping and source pointers reviewed; values\u2192collections\u2192copy\u2192timers\u2192retainers\u2192GC\u2192lookup/equality progression coherent. Counts delegated to final restamper. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS.",
       "findings": [],
       "reviewer": "frontend",
       "metadataReview": {
@@ -540,7 +540,7 @@
       "sha256": "7e1ebd8b0c11c702bda4da49532ea1ae7aebfa6d58a74b2334be745d8e67d898",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review. Edition2022–26 lists cross-checked TC39 finished proposals; ownership/grouping/lazy iterator versus async collection/precision/host API distinctions retained. Actual JSON source integer/rawJSON and regex cases executed. Node23 lacks Iterator.concat/Error.isError; those APIs not executed, runtime support distinction explicitly preserved. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
+      "notes": "Full-content review. Edition2022\u201326 lists cross-checked TC39 finished proposals; ownership/grouping/lazy iterator versus async collection/precision/host API distinctions retained. Actual JSON source integer/rawJSON and regex cases executed. Node23 lacks Iterator.concat/Error.isError; those APIs not executed, runtime support distinction explicitly preserved. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
       "reviewer": "frontend",
       "reviewDate": "2026-11-14"
@@ -788,7 +788,7 @@
       "sha256": "fbc3bb576face969985db0ae54da22d39efd8b044618cdb1ea2c5792c12dfc51",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Added section 7 on TypeScript 7.0 Unicode code-point inference with HeadTail<\"😀abc\">; executed under TypeScript 5.9.3 (UTF-16 surrogate split) and 7.0.2 (code-point split), and stated the runtime UTF-16 disagreement. Existing route/key/join material unchanged.",
+      "notes": "Added section 7 on TypeScript 7.0 Unicode code-point inference with HeadTail<\"\ud83d\ude00abc\">; executed under TypeScript 5.9.3 (UTF-16 surrogate split) and 7.0.2 (code-point split), and stated the runtime UTF-16 disagreement. Existing route/key/join material unchanged.",
       "findings": [],
       "reviewer": "root",
       "reviewDate": "2026-11-12",
@@ -1396,7 +1396,7 @@
       "sha256": "0c72d0bfb224eee1311a6c554e6d2a4018d2bd139a80221b16fa791b860303d4",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full index reviewed: read dependency→authoritative write→installed cache model→stream/ISR/export delivery→revision→separate interview bank. No duplicate deep mechanism.",
+      "notes": "Full index reviewed: read dependency\u2192authoritative write\u2192installed cache model\u2192stream/ISR/export delivery\u2192revision\u2192separate interview bank. No duplicate deep mechanism.",
       "findings": [],
       "reviewer": "frontend"
     },
@@ -3755,7 +3755,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read all40 authoredquestions/followups including complete22–40 and references. Checked credentialpurpose/session/tokenlifetime and revocation, delegatedgrantselection, BFF/CSRF, currentrole/objectpolicy, workloadcost and recovery, statuschallenge semantics, fabricatedexperience avoidance. Sound concise mechanisms with failurebounds; no observedproduction results invented. Official sources checked for this cohort: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html ; https://www.rfc-editor.org/rfc/rfc9700 ; https://www.rfc-editor.org/rfc/rfc10017.html ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/types.ts ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/saml.ts ; https://pages.nist.gov/800-63-4/sp800-63b.html ; https://simplewebauthn.dev/docs/packages/server .",
+      "notes": "Full read all40 authoredquestions/followups including complete22\u201340 and references. Checked credentialpurpose/session/tokenlifetime and revocation, delegatedgrantselection, BFF/CSRF, currentrole/objectpolicy, workloadcost and recovery, statuschallenge semantics, fabricatedexperience avoidance. Sound concise mechanisms with failurebounds; no observedproduction results invented. Official sources checked for this cohort: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html ; https://www.rfc-editor.org/rfc/rfc9700 ; https://www.rfc-editor.org/rfc/rfc10017.html ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/types.ts ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/saml.ts ; https://pages.nist.gov/800-63-4/sp800-63b.html ; https://simplewebauthn.dev/docs/packages/server .",
       "fullContentRead": true,
       "findings": []
     },
@@ -3821,7 +3821,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read currentOWASP2023 API1–10 mapping, owner/tenant predicate plusoutputprojection/writeallowlist, multidimensional budgets versusbusinessflowabuse, fixedpartnerorigin versus generalSSRF DNSconnector/redirect/egress control, dependencyresponse validation and safeproblemresponses. Exact URLhelper passes validID and rejects traversal/alternateorigin/query/scheme input. OfficialOWASP2023 catalog checked; no routepolicy, outboundrequest, load or deployment test. Sources checked: https://api-security.owasp.org/editions/2023/en/0x11-t10/ ; https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html .",
+      "notes": "Full read currentOWASP2023 API1\u201310 mapping, owner/tenant predicate plusoutputprojection/writeallowlist, multidimensional budgets versusbusinessflowabuse, fixedpartnerorigin versus generalSSRF DNSconnector/redirect/egress control, dependencyresponse validation and safeproblemresponses. Exact URLhelper passes validID and rejects traversal/alternateorigin/query/scheme input. OfficialOWASP2023 catalog checked; no routepolicy, outboundrequest, load or deployment test. Sources checked: https://api-security.owasp.org/editions/2023/en/0x11-t10/ ; https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html .",
       "fullContentRead": true,
       "findings": []
     },
@@ -3832,7 +3832,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read stagedXSS→ambientcredentialCSRF→SQLbinding→composedAPIpolicy, revisionbeforebank. Docita paths explicitlyreviewstartingpoints withconfiguration/routecoverage caveat; codepresence notdeployedsecurityevidence. No liveDocita inspection claimed. Sources checked: https://api-security.owasp.org/editions/2023/en/0x11-t10/ ; https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html .",
+      "notes": "Full read stagedXSS\u2192ambientcredentialCSRF\u2192SQLbinding\u2192composedAPIpolicy, revisionbeforebank. Docita paths explicitlyreviewstartingpoints withconfiguration/routecoverage caveat; codepresence notdeployedsecurityevidence. No liveDocita inspection claimed. Sources checked: https://api-security.owasp.org/editions/2023/en/0x11-t10/ ; https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4290,7 +4290,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full content read: topology/RPC→ownership/consistency→resilience→durablecommunication/migration→streaming/revision/drills stages; alltopiclinks reviewed or previouslycoveredoutbox. Categoryrevision links precede drill; currentDocita pointers datedsourceonly with listenercancel/idempotency limitations. Rootmanaged numericclaims not edited.",
+      "notes": "Full content read: topology/RPC\u2192ownership/consistency\u2192resilience\u2192durablecommunication/migration\u2192streaming/revision/drills stages; alltopiclinks reviewed or previouslycoveredoutbox. Categoryrevision links precede drill; currentDocita pointers datedsourceonly with listenercancel/idempotency limitations. Rootmanaged numericclaims not edited.",
       "fullContentRead": true,
       "findings": []
     },
@@ -4378,7 +4378,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read resolver trace→Server5/Express5 boundary→separate revision→clients→bank; project comparison explicitly study fixture versus deployed claim. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read resolver trace\u2192Server5/Express5 boundary\u2192separate revision\u2192clients\u2192bank; project comparison explicitly study fixture versus deployed claim. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4433,17 +4433,17 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read entity/optimistic/list transition→variable-aware admission→actual generated consumer→revision→bank. Distinguishes REST source evidence from proposed GraphQL design and role-specific learning goals. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read entity/optimistic/list transition\u2192variable-aware admission\u2192actual generated consumer\u2192revision\u2192bank. Distinguishes REST source evidence from proposed GraphQL design and role-specific learning goals. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
     {
       "path": "20-backend/20.7-graphql/03-clients-and-production/REVISION.md",
-      "sha256": "80adbd7b6c9c30ce810b7ba3366c726d0c4ff5dd969b0f59558e24860d04a421",
+      "sha256": "3d14976a9c1249f8f8d1660d5a91b66790ce77172b6da0d9e785a8d509a9aa68",
       "genre": "revision-companion",
       "status": "reviewed",
       "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-14",
       "notes": "Full read all source-linked pairs for cache, performance/security and codegen; normalized entity/list distinction, fetch policy writes, APQregistration, dynamiccost, scalar runtime gap, exactApollo peer ranges and untracked generation gap agree with source chapters. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
@@ -4455,7 +4455,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read all50 authored questions and answers including domain exercises31–40, failure41–50. Checked operation/nullability, ordered scoped batching, schema/permission/cache/federation/cost ownership, atomicity and unknown effects, oldclient compatibility and domain-specific invariants. Proposed designs do not fabricate past evaluation or deployed experience; no blocking correctness/depth finding. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read all50 authored questions and answers including domain exercises31\u201340, failure41\u201350. Checked operation/nullability, ordered scoped batching, schema/permission/cache/federation/cost ownership, atomicity and unknown effects, oldclient compatibility and domain-specific invariants. Proposed designs do not fabricate past evaluation or deployed experience; no blocking correctness/depth finding. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4466,7 +4466,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read prerequisite revision groups→all50 authored prompts→role-specific followups→source return when unsupported. Explicit experience boundary prevents proposed design from becoming fabricated implementation/deployment evidence. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read prerequisite revision groups\u2192all50 authored prompts\u2192role-specific followups\u2192source return when unsupported. Explicit experience boundary prevents proposed design from becoming fabricated implementation/deployment evidence. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4477,7 +4477,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read: staged contract→execution→consumers/operations→source-linked revision→all50 authored drills. Role-specific authority/cache/governance emphasis and REST project comparison avoid unverified GraphQL deployment claims. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read: staged contract\u2192execution\u2192consumers/operations\u2192source-linked revision\u2192all50 authored drills. Role-specific authority/cache/governance emphasis and REST project comparison avoid unverified GraphQL deployment claims. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4550,7 +4550,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full content read: strategy/data/primitives→advancedpatterns→revision→interview flow, choosingauthority for immediatewrites and leasefallback not magicmutex; links/description mirror sources, Docita pointers disclaim currentRedis/TTL/deploymentproof. Numericclaims rootmanaged.",
+      "notes": "Full content read: strategy/data/primitives\u2192advancedpatterns\u2192revision\u2192interview flow, choosingauthority for immediatewrites and leasefallback not magicmutex; links/description mirror sources, Docita pointers disclaim currentRedis/TTL/deploymentproof. Numericclaims rootmanaged.",
       "fullContentRead": true,
       "findings": []
     },
@@ -4622,7 +4622,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read learning sequence model→operations→patterns→revision→bank, source-linked cross references and decision paths; Docita implementation pointers explicitly distinguish study material from deployment evidence, and enqueue transaction/claim/lease boundaries from effect exactly-once. No Docita checkout or live production inspected; no unverified performance claim adopted. Sources checked: https://kafka.apache.org/42/getting-started/upgrade/ ; https://kafka.apache.org/43/getting-started/upgrade/ ; https://docs.confluent.io/platform/current/clients/librdkafka/html/md_CONFIGURATION.html ; https://www.rabbitmq.com/blog/2026/04/23/rabbitmq-4.3-release .",
+      "notes": "Full read learning sequence model\u2192operations\u2192patterns\u2192revision\u2192bank, source-linked cross references and decision paths; Docita implementation pointers explicitly distinguish study material from deployment evidence, and enqueue transaction/claim/lease boundaries from effect exactly-once. No Docita checkout or live production inspected; no unverified performance claim adopted. Sources checked: https://kafka.apache.org/42/getting-started/upgrade/ ; https://kafka.apache.org/43/getting-started/upgrade/ ; https://docs.confluent.io/platform/current/clients/librdkafka/html/md_CONFIGURATION.html ; https://www.rabbitmq.com/blog/2026/04/23/rabbitmq-4.3-release .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4694,7 +4694,7 @@
       "sha256": "ab78382b78b459d498a454b829a03f4a8883ef9fdc983ced7611228f2fe5a344",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full read foundational prerequisite flow OOP→principles→UML, tradeoff completion drill before revision, qualified Docita locations; study estimates illustrative, disk totals writer owned. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
+      "notes": "Full read foundational prerequisite flow OOP\u2192principles\u2192UML, tradeoff completion drill before revision, qualified Docita locations; study estimates illustrative, disk totals writer owned. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
       "findings": [],
       "reviewer": "architecture-final"
     },
@@ -5543,7 +5543,7 @@
       "sha256": "d5fc9f000f6da2b906bdd789269e74cd5f5710320eb358661ed5f141bcf0c8ed",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review: Full read: origin-coordinated demand and current claim, RFCrobots vs SSRF/actualsocket validation, narrow ASCII URL decoder, content vs URL/revisit separation and bounded stream/parser. FIXED empty query delimiter /? lost by urlunsplit, aligned companion; RFC3986§6.2.3 primary verified. /tmp/check-crawler-query-identity.py RED→GREEN preserving absent/empty/fragment query, params/ports/IPv6/rejections.",
+      "notes": "Full-content review: Full read: origin-coordinated demand and current claim, RFCrobots vs SSRF/actualsocket validation, narrow ASCII URL decoder, content vs URL/revisit separation and bounded stream/parser. FIXED empty query delimiter /? lost by urlunsplit, aligned companion; RFC3986\u00a76.2.3 primary verified. /tmp/check-crawler-query-identity.py RED\u2192GREEN preserving absent/empty/fragment query, params/ports/IPv6/rejections.",
       "findings": [],
       "fullContentRead": true,
       "reviewer": "resume_portfolio",
@@ -5973,7 +5973,7 @@
     },
     {
       "path": "30-architecture/30.3-infra-patterns/04-data-at-scale/REVISION.md",
-      "sha256": "30b064abad5acb8b91342ef92d60954df0b2b590f907210b62f9c342e45d400b",
+      "sha256": "9e0069fdb3f526ed91713e1f416bd3d3b7837c6cfb684412aafe7f67071e71aa",
       "genre": "revision",
       "status": "reviewed",
       "notes": "Checked every source-linked retrieval group: local partitioning and uniqueness, pool budget/protocol state, pipeline after-images/tombstone/transaction scope, CDN hit authorization and revocation, transaction-local tenant context, Prisma v7/v8 version distinction and per-resource isolation. Official PgBouncer, Prisma release status and Kafka 4.3 docs support version-sensitive answers. Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
@@ -9805,7 +9805,7 @@
       "reviewer": "root",
       "reviewDate": "2026-10-25",
       "fullContentRead": true,
-      "notes": "Full-content review: Azure guide full read: settlement versus local effect, Cosmos consistency/session and multi-write restriction, blob lease 15–60 seconds versus external fencing. Current Microsoft primary contracts reverified.",
+      "notes": "Full-content review: Azure guide full read: settlement versus local effect, Cosmos consistency/session and multi-write restriction, blob lease 15\u201360 seconds versus external fencing. Current Microsoft primary contracts reverified.",
       "findings": []
     },
     {
@@ -9990,7 +9990,7 @@
     },
     {
       "path": "docs/2026-09-19-corpus-health-report.md",
-      "sha256": "f2885164a34ba432a4ebb1f1b47cc9e037f86f2ba4b394c7b18a3d29ce4098ae",
+      "sha256": "bc68e2f1643536fa5070a56ab81b43628d496e49a7b36cd3931a4df87afb6ac4",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-14",
@@ -10081,7 +10081,7 @@
       "reviewer": "root-continuation",
       "reviewDate": "2026-10-27",
       "fullContentRead": true,
-      "notes": "Authored and reread final 25–26 October report. Current inventory and review records are exact-byte evidence; scoped runtime checks and source inspection remain distinct. Content review coverage does not imply every snippet execution, candidate mastery, adoption or absolute absence of errors. Release gates and generated metadata must be checked separately. 2026-10-27 maintenance delta inspected: standing exact-byte enforcement and bounded durable replays extend historical evidence without claiming every example executed or learner mastery."
+      "notes": "Authored and reread final 25\u201326 October report. Current inventory and review records are exact-byte evidence; scoped runtime checks and source inspection remain distinct. Content review coverage does not imply every snippet execution, candidate mastery, adoption or absolute absence of errors. Release gates and generated metadata must be checked separately. 2026-10-27 maintenance delta inspected: standing exact-byte enforcement and bounded durable replays extend historical evidence without claiming every example executed or learner mastery."
     },
     {
       "path": "docs/2026-11-frontend-review.md",

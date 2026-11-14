@@ -6,7 +6,7 @@
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../../docs/topic-importance.md)
 
-# Data at Scale — Revision
+# Data & Scale — Revision
 
 Read the section's learning chapters first. Close them, explain each answer with a concrete failure or tradeoff, then use the source link to check what you missed.
 
@@ -32,7 +32,7 @@ Source: [Database Scaling — Partitioning, Replication, Connection Pooling, Que
 
 **Q:** In PgBouncer transaction mode, which session assumptions must an application avoid, and when can it use named prepared statements?
 
-**A:** The server connection is released at transaction end, so session `SET` state and session-level advisory locks do not follow the client to its next transaction. PgBouncer supports protocol-level named prepared statements in this mode only when `max_prepared_statements` is nonzero; SQL `PREPARE`/`DEALLOCATE` remains incompatible. Verify the driver's protocol behavior against the [PgBouncer feature matrix](https://www.pgbouncer.org/features.html).
+**A:** The server connection is released& transaction end, so session `SET` state and session-level advisory locks do not follow the client to its next transaction. PgBouncer supports protocol-level named prepared statements in this mode only when `max_prepared_statements` is nonzero; SQL `PREPARE`/`DEALLOCATE` remains incompatible. Verify the driver's protocol behavior against the [PgBouncer feature matrix](https://www.pgbouncer.org/features.html).
 
 ## Data Pipelines — ETL, Stream Processing, Data Lake
 

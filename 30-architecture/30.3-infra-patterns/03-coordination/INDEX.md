@@ -1,7 +1,7 @@
 # Coordination
 
 > **Study time:** ≈ 12 min of reading (2 files, ~6 min average).
-> **1 file.** Who runs the cron? Who processes the queue? Multiple workers can share a queue through atomic claims; some tasks instead require a single owner. Learn which invariant needs coordination and how stale owners are rejected.
+> **1 learning chapter.** Who runs the cron? Who processes the queue? Multiple workers can share a queue through atomic claims; some tasks instead require a single owner. Learn which invariant needs coordination and how stale owners are rejected.
 
 [![Files](https://img.shields.io/badge/files-2-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Coordination-orange)](../INDEX.md)

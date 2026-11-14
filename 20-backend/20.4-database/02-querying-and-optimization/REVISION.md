@@ -124,7 +124,7 @@ Source: [PostgreSQL Window Functions](20.4.2.04-window-functions.md)
 
 **Q:** Why do the two salary-80 peers both show 260 with the default running-sum frame?
 
-**A:** The salary-only order makes them peers, and default RANGE extends through the current row's last peer. Explicit ROWS ordered by salary and ID yields 180 then260. last_value also sees its frame unless a full-partition frame is specified.
+**A:** The salary-only order makes them peers, and default RANGE extends through the current row's last peer. Explicit ROWS ordered by salary and ID yields 180 then 260. last_value also sees its frame unless a full-partition frame is specified.
 
 **Q:** What changes if “top two” means two distinct salary levels rather than two employees?
 
@@ -148,9 +148,9 @@ Source: [PostgreSQL JSONB](20.4.2.05-jsonb.md)
 
 **Q:** In the JSONB fixture, how can note exist while its text extraction is SQL NULL?
 
-**A:** note stores JSON null. Existence is true and jsonb_typeof yields the text null, while ->> yields SQLNULL. A missing key also extracts SQLNULL, so use existence/type to distinguish the states.
+**A:** note stores JSON null. Existence is true and jsonb_typeof yields the text null, while ->> yields SQL NULL. A missing key also extracts SQL NULL, so use existence/type to distinguish the states.
 
-**Q:** Why does a stale replacement affect no row, and may `jsonb_path_ops` support a key-existence query?
+**Q:** Why does a stale replacement affect no row, and does `jsonb_path_ops` support a key-existence query?
 
 **A:** The nested update advanced the version from 1 to 2, so a replacement expecting version 1 is rejected. Separately, `jsonb_path_ops` does not support `?`, `?|` or `?&`; use `jsonb_ops` or another compatible path. Whole-row concurrency and operator support are separate contracts.
 

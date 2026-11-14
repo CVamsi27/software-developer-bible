@@ -1,6 +1,6 @@
 # Architecture Stack
 
-> **Study time:** ≈ 18 h 2 m of reading (121 files, ~9 min average).
+> **Study time:** ≈ 18 h 4 m of reading (121 files, ~9 min average).
 > **System design + design patterns** — shared by both the [indian-sde-faang lane (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md) and the [abroad-full-stack lane](../80-lanes-abroad-full-stack/INDEX.md).
 >
 > The architecture stack is what you need for system design rounds. Do this after you've covered frontend and backend stacks (10-frontend, 20-backend).
@@ -13,8 +13,8 @@
 ## Sections (in study order)
 
 | Section | Files | Topics |
-| ------------------------------------------------------- | ----: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Design Patterns](30.1-design-patterns/INDEX.md) | 38 | **Foundations** (SOLID, OOP, UML) + **Creational** (Singleton, Factory, Builder, Abstract Factory, Prototype) + **Structural** (Adapter, Facade, Decorator, Proxy, Module, Composite, Bridge, Flyweight) + **Behavioral** (Strategy, Observer, Chain, State, Template Method, Iterator, Mediator, Memento, Command, Visitor, Interpreter) + **Architectural** (Repository, CQRS+DI, Event Sourcing, Saga) + 50+ interview questions. All 23 GoF patterns + modern patterns. |
+| ------------------------------------------------------- | ----: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Design Patterns](30.1-design-patterns/INDEX.md) | 38 | **Foundations** (SOLID, OOP, UML) + **Creational** (Singleton, Factory, Builder, Abstract Factory, Prototype) + **Structural** (Adapter, Facade, Decorator, Proxy, Module, Composite, Bridge, Flyweight) + **Behavioral** (Strategy, Observer, Chain, State, Template Method, Iterator, Mediator, Memento, Command, Visitor, Interpreter) + **Architectural** (Repository, CQRS+DI, Event Sourcing, Saga, DDD Aggregates, Anti-Corruption Layer, Service Locator vs DI, MVC/MVP/MVVM) + 50+ interview questions. All 23 GoF patterns + modern patterns. |
 | [System Design](30.2-system-design/INDEX.md) | 54 | Theory (CAP, consistency, sharding, caching, queues, transactions, rate limiting, consensus, failures, capacity, transport, DNS and TLS) + approach/interview practice and advanced mechanisms (probabilistic structures, outbox/CDC, resilience and multi-region) + case studies (URL shortener, WhatsApp, Uber, Netflix, payment gateway, ticket booking, etc.) |
 | [Infrastructure Patterns](30.3-infra-patterns/INDEX.md) | 17 | Health and lifecycle, resilience and recovery, coordination, scaling and multi-tenant systems, deployments, technical debt, FinOps, data retention, and interview practice |
 
@@ -25,12 +25,12 @@
 The Design Patterns section groups patterns using the **Gang of Four classification**: creating objects, combining objects, and coordinating their behavior. It also covers modern architectural patterns. Each category has its own INDEX with detailed descriptions, decision flowcharts, and comparisons.
 
 | Category | Subfolder | Count | Purpose |
-| -------------- | -------------------------------------------------------------------- | ----------: | ------------------------------------- |
+| -------------- | -------------------------------------------------------------------- | ----------: | --------------------------------------------------- |
 | Foundations | [01-foundations](30.1-design-patterns/01-foundations/INDEX.md) | 4 files | SOLID, OOP, UML — read these first |
 | Creational | [02-creational](30.1-design-patterns/02-creational/INDEX.md) | 5 patterns | Object creation mechanisms |
 | Structural | [03-structural](30.1-design-patterns/03-structural/INDEX.md) | 8 patterns | Class/object composition |
-| Behavioral | [04-behavioral](30.1-design-patterns/04-behavioral/INDEX.md) | 11 patterns | Object collaboration & responsibility |
-| Architectural | [05-architectural](30.1-design-patterns/05-architectural/INDEX.md) | 4 patterns | Modern distributed systems |
+| Behavioral | [04-behavioral](30.1-design-patterns/04-behavioral/INDEX.md) | 12 patterns | Object collaboration & responsibility |
+| Architectural | [05-architectural](30.1-design-patterns/05-architectural/INDEX.md) | 8 patterns | Persistence, domain, coordination and UI boundaries |
 | Interview Prep | [06-interview-prep](30.1-design-patterns/06-interview-prep/INDEX.md) | 1 file | 50+ curated Q&A |
 
  **Start here: [Design Patterns Index](30.1-design-patterns/INDEX.md)** — full pattern map and category learning paths.

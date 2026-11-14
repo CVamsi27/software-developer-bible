@@ -442,7 +442,7 @@
       "sha256": "240e9b1d55c6207bdcc4edc21209be8d8019a9179b67a244043c3b8a7fcb1532",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full category learning flow/topic mapping and source pointers reviewed; values\u2192collections\u2192copy\u2192timers\u2192retainers\u2192GC\u2192lookup/equality progression coherent. Counts delegated to final restamper. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS.",
+      "notes": "Full category learning flow/topic mapping and source pointers reviewed; values→collections→copy→timers→retainers→GC→lookup/equality progression coherent. Counts delegated to final restamper. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS.",
       "findings": [],
       "reviewer": "frontend",
       "metadataReview": {
@@ -540,7 +540,7 @@
       "sha256": "7e1ebd8b0c11c702bda4da49532ea1ae7aebfa6d58a74b2334be745d8e67d898",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review. Edition2022\u201326 lists cross-checked TC39 finished proposals; ownership/grouping/lazy iterator versus async collection/precision/host API distinctions retained. Actual JSON source integer/rawJSON and regex cases executed. Node23 lacks Iterator.concat/Error.isError; those APIs not executed, runtime support distinction explicitly preserved. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
+      "notes": "Full-content review. Edition2022–26 lists cross-checked TC39 finished proposals; ownership/grouping/lazy iterator versus async collection/precision/host API distinctions retained. Actual JSON source integer/rawJSON and regex cases executed. Node23 lacks Iterator.concat/Error.isError; those APIs not executed, runtime support distinction explicitly preserved. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
       "reviewer": "frontend",
       "reviewDate": "2026-11-14"
@@ -788,7 +788,7 @@
       "sha256": "fbc3bb576face969985db0ae54da22d39efd8b044618cdb1ea2c5792c12dfc51",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Added section 7 on TypeScript 7.0 Unicode code-point inference with HeadTail<\"\ud83d\ude00abc\">; executed under TypeScript 5.9.3 (UTF-16 surrogate split) and 7.0.2 (code-point split), and stated the runtime UTF-16 disagreement. Existing route/key/join material unchanged.",
+      "notes": "Added section 7 on TypeScript 7.0 Unicode code-point inference with HeadTail<\"😀abc\">; executed under TypeScript 5.9.3 (UTF-16 surrogate split) and 7.0.2 (code-point split), and stated the runtime UTF-16 disagreement. Existing route/key/join material unchanged.",
       "findings": [],
       "reviewer": "root",
       "reviewDate": "2026-11-12",
@@ -1396,7 +1396,7 @@
       "sha256": "0c72d0bfb224eee1311a6c554e6d2a4018d2bd139a80221b16fa791b860303d4",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full index reviewed: read dependency\u2192authoritative write\u2192installed cache model\u2192stream/ISR/export delivery\u2192revision\u2192separate interview bank. No duplicate deep mechanism.",
+      "notes": "Full index reviewed: read dependency→authoritative write→installed cache model→stream/ISR/export delivery→revision→separate interview bank. No duplicate deep mechanism.",
       "findings": [],
       "reviewer": "frontend"
     },
@@ -1476,13 +1476,13 @@
     },
     {
       "path": "10-frontend/10.4-next.js/INDEX.md",
-      "sha256": "237bd42ca559ebd47a7b126a3d6e7f370623031a77ba07515e2f2d2031c11534",
+      "sha256": "8f7c416fb4d7f1930a16c83074c7b8de2e3f15ce7080705bb7c3585523574047",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Frontend pass: the category table column counted learning chapters (35) while the badge counted chapters plus revision companions (41) under the word Files. Renamed the column to Chapters so both scopes are named; no count changed.",
+      "notes": "Full-content read (2026-11-14): Read end to end: study order runs App Router, Server Components, Server Actions, caching, streaming without a jump. One description line per chapter; no repeated rationale between rows or the reading flow.",
       "findings": [],
       "reviewer": "root",
-      "reviewDate": "2026-11-12",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true
     },
     {
@@ -1767,20 +1767,14 @@
     },
     {
       "path": "10-frontend/10.6-animation/REVISION.md",
-      "sha256": "f169229ea883d436d3f519ef677833e81accd0a35e540cb500f0c06ef9caddcc",
+      "sha256": "cee17a9de72c302405ab70d6d2bd38472644ca46b257dec55487e6452a35c6fd",
       "genre": "revision-companion",
       "status": "reviewed",
-      "reviewer": "animation_coverage",
-      "reviewDate": "2026-11-12",
+      "reviewer": "root",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true,
-      "notes": "Revision companions: separate each answer from its question line",
-      "findings": [
-        {
-          "description": "Revision asserted live Motion hook tracking and omitted newly repaired lifecycle/accessibility boundaries; synchronized answers and added focused retrieval questions.",
-          "severity": "P2",
-          "status": "repaired"
-        }
-      ],
+      "notes": "Full-content read (2026-11-14): Question order follows the chapters CSS, Motion, GSAP, React Spring, WAAPI, view transitions, Canvas. Two to four prompts per chapter, each one mechanism; no prompt restates its own answer.",
+      "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "decdab38a9dbf83f7fc497b3a1e3ad0e9f957b9ea3c87b93e48fbd2d12a7ceb8",
         "reviewDate": "2026-10-26",
@@ -1862,12 +1856,12 @@
     },
     {
       "path": "10-frontend/10.7-html-css/10.7.09-tailwind-css.md",
-      "sha256": "c5696531243061ba5cd09b873324105eaa7cc0f014a92d997c3e70009f42959c",
+      "sha256": "24f5c519bdfd494d82f374a6effe9dc9bf4daa7eaad618f30fa0eaff5760b58f",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true,
-      "notes": "Full chapter read/revised against official v4.3 theme, source detection and upgrade docs. Distinct v3 configuration, v4 @theme/@source, complete class candidates, dynamic-value trust boundary, CSS cascade and bounded theme example. Actual installed Tailwind4 compiler emitted chosen complete candidates and did not emit an absent candidate. Browser layout/accessibility was not inferred from compilation.",
+      "notes": "Full-content read (2026-11-14): Opens on a real broken dynamic class, then follows scan, token and cascade separately; numbering is sequential. Five sections each carry one claim; no section repeats the build-time generation explanation.",
       "findings": []
     },
     {
@@ -2050,12 +2044,12 @@
     },
     {
       "path": "20-backend/20.1-node.js/02-io-and-data/20.1.2.01-streams.md",
-      "sha256": "284ac7e84fc8f9c9784bf1c8cc0279e84a23587bc22a7393c5e635d3705ff8e1",
+      "sha256": "be9582fe91bf09631aaf8a42f22ef519862438adcc6fb4dcd359ed49c79b49b4",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read full content: write(false) acceptance/drain, highWaterMark threshold, pipeline sibling/error/HTTP destruction, NumberStream demand, NDJSON partial UTF8/line/final tail and size bounds, byte/object transform modes, full-image Sharp lifecycle, authenticated crypto and concurrency/map memory limits. No blocking finding.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-14",
+      "notes": "Full-content read (2026-11-14): Teaser now names the observable symptom (buffering a whole body) before the mechanism; flow then runs backpressure, piping, errors. Teaser was shortened to one sentence in this pass; body sections still carry no duplicated setup prose.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2094,13 +2088,13 @@
     },
     {
       "path": "20-backend/20.1-node.js/02-io-and-data/INDEX.md",
-      "sha256": "9ca62bdcef15ae1f4f9797e1d7647eb2ff8ddfd8a4188ca265a99707cc9308b6",
+      "sha256": "989e2803bc8276f06a07444f605b1ea8fc00ee8f97ad598a6470b8872b123b0a",
       "genre": "index",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-05",
-      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
-      "fullContentRead": false,
+      "reviewDate": "2026-11-14",
+      "notes": "Full-content read (2026-11-14): Read end to end: buffers, streams, file system, web streams, test runner in a workable order. Each row is a single line; the intro does not restate the section list below it.",
+      "fullContentRead": true,
       "findings": []
     },
     {
@@ -2213,12 +2207,12 @@
     },
     {
       "path": "20-backend/20.1-node.js/04-security-and-operations/20.1.4.01-node-security.md",
-      "sha256": "713698101f8124dabcd3dfc40144bbac6e4dc646b1f8c8ebe15e2512a4712142",
+      "sha256": "93c21e23acee90e4a920a895499fa94169b26d3b3ea3c772f1317d7e19effc65",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read full content: explicit Mongo operator/tenant construction, fixed executable argument policy, prototype-key schema, body/decompressed/concurrency limits, proxy IP trust, Helmet browser-header semantics, npm audit threshold and permission-model threat boundary. Checked official Helmet/Node permission docs. No blocking finding.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-14",
+      "notes": "Full-content read (2026-11-14): Intro rewritten this pass to open on one traced request (a POST /reports body choosing an export format) rather than a colon-to-heading fragment. Removed one redundant line in this pass; remaining sections keep one control per paragraph.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2279,23 +2273,23 @@
     },
     {
       "path": "20-backend/20.1-node.js/INDEX.md",
-      "sha256": "278c4fe547732b84f21bdec19ec3b6d2a21cb9f6a2b27fa8eaf2e527260d84c1",
+      "sha256": "db03367503de87de8eff1773d0a89feac88001a17cb3f1ffe7515fd5bfef76bb",
       "genre": "index",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read full stack index: four categories, three learning passes, revision-after-category structure, all topic tables, cross references and case-study qualification checked. Node runtime/API breadth coheres with chapter ownership; no blocking finding.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-14",
+      "notes": "Full-content read (2026-11-14): Read end to end: fundamentals, I/O and data, processes, security and operations, then drills. One line per chapter row, with no duplicated summary paragraph underneath.",
       "fullContentRead": true,
       "findings": []
     },
     {
       "path": "20-backend/20.12-ai-engineering/20.12.01-llm-app-architecture.md",
-      "sha256": "d315095ae1f3794d724ac7668a8eff525e7dbc6ea86165b71b2e23ca51103be6",
+      "sha256": "27b504016638718cc4cdc8c5b6f1a0be3eb54627c29338cf6317b85729d92a68",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full read: model as dependency, prompting/retrieval/tuning choices, authorized retrieval and citations, tools as proposals, complete SSE write/drain/deadline/response-close lifecycle, measured usage categories and eligible fallbacks. Exact extracted SSE with injected provider/fake response passed first write backpressure preventing secondchunk, close aborts drain/provider and listener cleanup. No live provider/cost, actualHTTPstream/proxy or deployment proof. Sources checked: https://developers.openai.com/api/docs/guides/function-calling ; https://github.com/pgvector/pgvector ; https://modelcontextprotocol.io/specification/2026-07-28/basic/transports ; https://docs.vllm.ai/en/latest/usage/security/ ; https://www.edpb.europa.eu/sme/be-compliant/international-data-transfers_en ; https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai .",
+      "reviewer": "root",
+      "reviewDate": "2026-11-14",
+      "notes": "Full-content read (2026-11-14): Axiom numbering was fixed in this pass so the derivation reads 1, 2, 3 in order rather than skipping. Each axiom earns its space by changing a design decision; no axiom restates the previous one.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2329,23 +2323,23 @@
     },
     {
       "path": "20-backend/20.12-ai-engineering/20.12.04-agent-orchestration-patterns.md",
-      "sha256": "d003cd4d18d426a5394b768975faf2ffcfce8cbae9a7bde7061419cbc3ea1a75",
+      "sha256": "35487a89390e1363d517a7b0eb04e1b271b80dfebcdefaf72ee7e5b09c32a6b7",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "buffy",
-      "reviewDate": "2026-11-11",
-      "notes": "Full-content review on 2026-11-11. Replaced the seven-item MCP safety checklist in 'Connecting an MCP server safely' with the session lifecycle (initialize, discovery, invocation, shutdown) and the failure each stage prevents: fail-closed revision negotiation, namespacing against tool shadowing, annotations treated as untrusted hints, result text treated as data rather than instructions, and child-process reaping for stdio. Cross-references the existing validation-boundary rule instead of restating it.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-14",
+      "notes": "Full-content read (2026-11-14): Renamed labels from axiom to constraint this pass so the section term matches how the body uses it. Each pattern gets one paragraph of mechanism plus its failure mode; no pattern is re-described later.",
       "fullContentRead": true,
       "findings": []
     },
     {
       "path": "20-backend/20.12-ai-engineering/20.12.05-serving-models-hosted-vs-self-hosted.md",
-      "sha256": "742fae763095594b75c532d99e925fc4abe03bb199d904a3bb8456b28f6d69f9",
+      "sha256": "4d6ca37d091698835c2635a0c4d71b94667707171e6ffd76e44fb8784698acdd",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full read365lines: fullcost/datahandling/operations versuslocationlabels, actualKV+weights GiBmath, quantization/runtime/SLOconditions, wholechain deadline/dataeligibility, OpenAIcompatibleendpoint limits, pinnedprivatevLLM deploymentsecurity. Exact sizingTS striptypes fixture returns2.5GiB KV/request and2GPU aggregate lowerbound, rejectsfractionalconcurrency/negativecapacity. OfficialvLLM confirms key protection onlyselected prefixes and privateinternalnetwork requirement; EDPB confirms transfer mechanism notblanketnonEEAban. No GPU/Docker/vLLM/runtimefit/performance or hostedendpoint integration executed. Sources checked: https://developers.openai.com/api/docs/guides/function-calling ; https://github.com/pgvector/pgvector ; https://modelcontextprotocol.io/specification/2026-07-28/basic/transports ; https://docs.vllm.ai/en/latest/usage/security/ ; https://www.edpb.europa.eu/sme/be-compliant/international-data-transfers_en ; https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai .",
+      "reviewer": "root",
+      "reviewDate": "2026-11-14",
+      "notes": "Full-content read (2026-11-14): Trace runs model weights to KV cache to concurrent requests; the arithmetic supports each step. Checked the arithmetic: 130.4 GiB of weights, 2.5 GiB per request, 82 GiB for the batch all reconcile.",
       "fullContentRead": true,
       "findings": []
     },
@@ -3067,12 +3061,12 @@
     },
     {
       "path": "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.07-transactional-email-and-notifications.md",
-      "sha256": "e5a24d0499939239d756b17e5c2feee1b096c056be1de8e95b6218c80939914e",
+      "sha256": "2a958fbb17019802e40ca7d1b71cd52975d287fcc1e3778c508733d2460b0baf",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full content read: outbox/queue retention versus provider effect identity, unknown send/reconcile and finite Resend window, SMTP authentication identities/DMARC either aligned path, provider delivery versus inbox/open evidence, transactional suppression and out-of-order outcome policy. Official Resend24h, BullMQ job IDs and RFC9989 checked. Node fake-provider fixture returned msg1/effects1/colonfalse; no email sent, provider/live delivery or legal permission proof inferred. Primary URLs checked: https://resend.com/docs/dashboard/emails/idempotency-keys, https://docs.bullmq.io/guide/jobs/job-ids, https://www.rfc-editor.org/rfc/rfc9989.html.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-14",
+      "notes": "Full-content read (2026-11-14): Intro fragment was rewritten this pass to a full sentence tracing a business event to a delivered notification. One section per stage of the pipeline; no stage is explained twice.",
       "fullContentRead": true,
       "findings": []
     },
@@ -3111,12 +3105,12 @@
     },
     {
       "path": "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.02-api-gateway.md",
-      "sha256": "a293ad290c94cc00fed0ba7d1adc1f722f0e74bb303c45601b50b08d3b188899",
+      "sha256": "abbfa788399a6a87fc589efb210781fc97cc2778a5bf101faef849379ad98245",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full content read: trusted identity stripping/hop, exact route normalization, consumed body/response and hop-header concerns, fixed-loopback GET proxy deadline/close/error states, partial response failure and restricted header/encoding support. Domain authority, retry amplification and policy rollout bounded. Fixture intentionally not general proxy; no production load/auth assertion.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-14",
+      "notes": "Full-content read (2026-11-14): Read end to end; one spacing defect (returned500) was repaired this pass so the sentence parses. Each responsibility gets one paragraph; the failure section does not repeat the routing section.",
       "fullContentRead": true,
       "findings": []
     },
@@ -3283,13 +3277,13 @@
     },
     {
       "path": "20-backend/20.4-database/01-postgresql-foundations/REVISION.md",
-      "sha256": "4aa7364568f1ac9bc8f6d4d696f933d1378d57e8d8b10f3b5677f765268c24f0",
+      "sha256": "c227bd8b69c203309ece35d984c436daba45748ddbebb9123a6faa1114c638fa",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Full content reviewed as revision companion: source-linked groups for PostgreSQL, normalization, MVCC, SQL/NoSQL, performance and RLS; sufficient Q/A coverage with changed snapshot/policy/write/view cases. No duplicate full implementation. Every linked chapter still has its own review state.",
+      "notes": "Full-content read (2026-11-14): Question groups follow the chapter order: storage, MVCC, indexes, transactions. Short prompts with short answers; no answer restates the question's premise.",
       "findings": [],
-      "reviewer": "career_planning",
-      "reviewDate": "2026-10-25",
+      "reviewer": "root",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true
     },
     {
@@ -3378,20 +3372,14 @@
     },
     {
       "path": "20-backend/20.4-database/02-querying-and-optimization/REVISION.md",
-      "sha256": "a037dbc3fbd8ec8c27ee4a65ce205cab23add0bee156b65c7cb2559af2c0b7ed",
+      "sha256": "3e811227670cda42b616c95d87adce32e3a10b09d2299710df96f8d0c79a8152",
       "genre": "revision-companion",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
+      "reviewer": "root",
       "reviewDate": "2026-11-14",
-      "notes": "Full final content reread of source-linked groups for all five concepts plus plan safety/tie/null/query changes. Corrected generic-plan availability16+,serialization17+,retained search output18+; answers align with current chapter and official versioned manuals. Authored pairs preserved. Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
+      "notes": "Full-content read (2026-11-14): A missing space between 180 and 260 was fixed this pass, so the sentence reads as two numbers. One prompt per mechanism; the answer stops when the mechanism is explained.",
       "fullContentRead": true,
-      "findings": [
-        {
-          "description": "Incorrectly grouped GENERIC_PLAN and SERIALIZE as PostgreSQL18-only features; corrected minimum versions to16 and17 respectively, retaining Index Searches at18.",
-          "severity": "P2",
-          "status": "repaired"
-        }
-      ]
+      "findings": []
     },
     {
       "path": "20-backend/20.4-database/03-transactions-and-replication/20.4.3.01-transactions.md",
@@ -3610,20 +3598,14 @@
     },
     {
       "path": "20-backend/20.4-database/INDEX.md",
-      "sha256": "b323f61c1e4ac365944ff84f6fa43b401d8981027d6573119a3a68705c402ea5",
+      "sha256": "c7b18da34f770636657b5d95b959072d0f3025c45b480479d7ed651ff1edbcef",
       "genre": "navigation-index",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full final content reread: five category progression tables,23topic+bank grouping, tailored study paths and category revisionbeforebank navigation, cross-stack links and Docita pointers. Corrected plan capability topics to generic16+/serialize17+/searches18+; source chapters align. Exact authored reading-time aside differs from generated top figure and is left to root metadata review (not a P1/P2 semantic mechanism). No metadata writer run.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-14",
+      "notes": "Full-content read (2026-11-14): Read end to end; sub-stack counts reconcile as 6 + 5 + 4 + 3 + 6 chapters, 29 files with revisions. One line per row, with the reading flow adding order rather than repeating the rows.",
       "fullContentRead": true,
-      "findings": [
-        {
-          "description": "Companion repeated the incorrect PostgreSQL18-only boundary for EXPLAIN generic plans/serialization; aligned GENERIC_PLAN16+, SERIALIZE17+ and Index Searches18+ with primary versioned manuals.",
-          "severity": "P2",
-          "status": "repaired"
-        }
-      ],
+      "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "0105f2a1416fda64d11760ba873ac1956b9500f37fa0b1ce89b4cde3cd13736c",
         "reviewDate": "2026-10-26",
@@ -3755,18 +3737,18 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read all40 authoredquestions/followups including complete22\u201340 and references. Checked credentialpurpose/session/tokenlifetime and revocation, delegatedgrantselection, BFF/CSRF, currentrole/objectpolicy, workloadcost and recovery, statuschallenge semantics, fabricatedexperience avoidance. Sound concise mechanisms with failurebounds; no observedproduction results invented. Official sources checked for this cohort: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html ; https://www.rfc-editor.org/rfc/rfc9700 ; https://www.rfc-editor.org/rfc/rfc10017.html ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/types.ts ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/saml.ts ; https://pages.nist.gov/800-63-4/sp800-63b.html ; https://simplewebauthn.dev/docs/packages/server .",
+      "notes": "Full read all40 authoredquestions/followups including complete22–40 and references. Checked credentialpurpose/session/tokenlifetime and revocation, delegatedgrantselection, BFF/CSRF, currentrole/objectpolicy, workloadcost and recovery, statuschallenge semantics, fabricatedexperience avoidance. Sound concise mechanisms with failurebounds; no observedproduction results invented. Official sources checked for this cohort: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html ; https://www.rfc-editor.org/rfc/rfc9700 ; https://www.rfc-editor.org/rfc/rfc10017.html ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/types.ts ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/saml.ts ; https://pages.nist.gov/800-63-4/sp800-63b.html ; https://simplewebauthn.dev/docs/packages/server .",
       "fullContentRead": true,
       "findings": []
     },
     {
       "path": "20-backend/20.5-security/01-auth/INDEX.md",
-      "sha256": "79865f57c66113ee85300808691ab65add7b3cc15a126a42e7e21a96cf45f85d",
+      "sha256": "caed9f07a24eeea31b88fc9daabb6753005bb0a731872aaa43099ad981610a43",
       "genre": "navigation-index",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full read all11 concept/banklinks plusrevision order, requireddecisionquestions and session/JWT/hybridrevocationtable; Docita paths explicitly requirecurrentcheckout/deploymentverification and do notestablish OAuth/SAML/passkey implementation. Inline readtime metadata differs from somecurrentbadges; parent owns generatedmetadata, not a correctness/depth blocker. Official sources checked for this cohort: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html ; https://www.rfc-editor.org/rfc/rfc9700 ; https://www.rfc-editor.org/rfc/rfc10017.html ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/types.ts ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/saml.ts ; https://pages.nist.gov/800-63-4/sp800-63b.html ; https://simplewebauthn.dev/docs/packages/server .",
+      "reviewer": "root",
+      "reviewDate": "2026-11-14",
+      "notes": "Full-content read (2026-11-14): Read end to end: fundamentals, sessions, JWT, OAuth, RBAC, ABAC; 12 chapters as stated. Each row is one sentence; the intro does not preview every chapter again.",
       "fullContentRead": true,
       "findings": []
     },
@@ -3821,7 +3803,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read currentOWASP2023 API1\u201310 mapping, owner/tenant predicate plusoutputprojection/writeallowlist, multidimensional budgets versusbusinessflowabuse, fixedpartnerorigin versus generalSSRF DNSconnector/redirect/egress control, dependencyresponse validation and safeproblemresponses. Exact URLhelper passes validID and rejects traversal/alternateorigin/query/scheme input. OfficialOWASP2023 catalog checked; no routepolicy, outboundrequest, load or deployment test. Sources checked: https://api-security.owasp.org/editions/2023/en/0x11-t10/ ; https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html .",
+      "notes": "Full read currentOWASP2023 API1–10 mapping, owner/tenant predicate plusoutputprojection/writeallowlist, multidimensional budgets versusbusinessflowabuse, fixedpartnerorigin versus generalSSRF DNSconnector/redirect/egress control, dependencyresponse validation and safeproblemresponses. Exact URLhelper passes validID and rejects traversal/alternateorigin/query/scheme input. OfficialOWASP2023 catalog checked; no routepolicy, outboundrequest, load or deployment test. Sources checked: https://api-security.owasp.org/editions/2023/en/0x11-t10/ ; https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html .",
       "fullContentRead": true,
       "findings": []
     },
@@ -3832,7 +3814,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read stagedXSS\u2192ambientcredentialCSRF\u2192SQLbinding\u2192composedAPIpolicy, revisionbeforebank. Docita paths explicitlyreviewstartingpoints withconfiguration/routecoverage caveat; codepresence notdeployedsecurityevidence. No liveDocita inspection claimed. Sources checked: https://api-security.owasp.org/editions/2023/en/0x11-t10/ ; https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html .",
+      "notes": "Full read stagedXSS→ambientcredentialCSRF→SQLbinding→composedAPIpolicy, revisionbeforebank. Docita paths explicitlyreviewstartingpoints withconfiguration/routecoverage caveat; codepresence notdeployedsecurityevidence. No liveDocita inspection claimed. Sources checked: https://api-security.owasp.org/editions/2023/en/0x11-t10/ ; https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html .",
       "fullContentRead": true,
       "findings": []
     },
@@ -3960,12 +3942,12 @@
     },
     {
       "path": "20-backend/20.5-security/INDEX.md",
-      "sha256": "9216e713c2fe9b66e3ad788af947cfc5aaeacf17d72c2f6ab61567aad7ef85ec",
+      "sha256": "09229bc3e8b016f5c24799d517fc5758cfcaf459a2258081214c6bdf0fb5c490",
       "genre": "navigation-index",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full read all164lines: three coherent concept passes pluscrypto prerequisite, revisions before2independent authored banks, role/attribute separation, projectsource anchors explicitly inspectionstartingpoints notdeployedproof. Topic/mechanism references consistent. Generatedreading-time claims have drift (4h1prose versus3h36header and45mincipherrow versus7minchapter); parent owns metadata repair, not treated as semantic audit failure. No currentDocita checkout/deployment inspected.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-14",
+      "notes": "Full-content read (2026-11-14): Read end to end; the count of 24 files reconciles as 21 chapters plus 3 revision companions. Reading time restamped to 3 h 36 m and the encryption chapter to 7 min this pass, so the badge matches the body.",
       "fullContentRead": true,
       "findings": []
     },
@@ -4054,23 +4036,23 @@
     },
     {
       "path": "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.02-grpc-streaming.md",
-      "sha256": "5aa47d38e35e192d8863cde0d60301d7b6126fdcd542fc3b0dc9a01545ba9e96",
+      "sha256": "fe04c8883bfa62977e3c67c7b3031e43883210ad3255bf1d0f65eeea4d68fbaf",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full content read: three streaming shapes and client-stream callback versus server data, Range proto/count limit; delay/backpressure drain wait interrupted by abort/cancel cleanup, pressure versus peer completion, authorization lifetime, reconnect cursor and effect identity. Fixture statically reviewed; no cancellation/load integration execution claimed.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-14",
+      "notes": "Full-content read (2026-11-14): Read end to end: unary, server, client and bidirectional streaming each get a concrete failure. One section per mode; the comparison table replaces a second prose pass over the same modes.",
       "fullContentRead": true,
       "findings": []
     },
     {
       "path": "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.03-kafka.md",
-      "sha256": "9aeac1e1e73aba4a4e6798ce00d7fe16b8e0dfc785235d7b5e5da5ea7cfa7df0",
+      "sha256": "6fc0147dc820304cf5d8bc60281b89b265e5848f88bcbe1319796f28d1b6f50a",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full content read: retained perpartition offset versus eventID, independent groups versus partition assignment, key/partition-change ordering, acknowledgments/ISR/idempotence scopes. Confluent1.11 KafkaJS namespace types and sendOffsets consumer instance, BigInt nextoffset43, transaction fence/task identity and downstream committed-read isolation; external effects excluded. Checked https://docs.confluent.io/kafka-clients/javascript/current/overview.html and /migration.html sendOffsets docs. No broker/transaction/rebalance integration run.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-14",
+      "notes": "Full-content read (2026-11-14): Read end to end: log model, partitions, consumer groups, delivery guarantees, operations. No section restates the log model after introducing it; each later section refers back.",
       "fullContentRead": true,
       "findings": []
     },
@@ -4087,23 +4069,23 @@
     },
     {
       "path": "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md",
-      "sha256": "67cab33072dd5bbf76ffdabc2485b4a0cbabe8abf7cc85336e6d010784c2b15b",
+      "sha256": "65885a23086410c8c493c4e39ec77eadc7556226113de9da7c291426e876d602",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full content read: retained log versus unfinished jobs, classic versus sharegroup partition/progress semantics and client-support bound, RabbitStreams versus queues, confirms/returns/consumerack gaps, external effect limits, retry/DLQ/ordering and measured selection. Kafka4.3 and Rabbit4.3 primary docs checked; chapter distinguishes transport alternative from existing Docita deployment.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-14",
+      "notes": "Full-content read (2026-11-14): Read end to end: queue versus log model, delivery semantics, acks, consumer groups, dead letters. Comparison lives in a table so the prose does not repeat both columns.",
       "fullContentRead": true,
       "findings": []
     },
     {
       "path": "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.06-event-driven-architecture.md",
-      "sha256": "2d0be900f452527c482854d935b786ea28780119cdea6f4e5293c6e995dd8028",
+      "sha256": "98aabd85291939d58699b1008e4de653d62f03688bc96f88f9c887fdf232c66f",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full content read: event/command/query meaning, invoice+intent localcommit then relay/consumer/status, event/correlation/aggregate/schema identities, marker+projection atomic transaction and remote effect outbox, missing-version policy, notification versus immutable snapshot data, EDA versus eventsource/CQRS and replay sideeffect isolation. No unbounded/zero-loss guarantee or fake integration result.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-14",
+      "notes": "Full-content read (2026-11-14): Read end to end: events versus commands, outbox, idempotency, ordering, evolution. Each pattern appears once, with the tradeoff attached rather than in a closing recap.",
       "fullContentRead": true,
       "findings": []
     },
@@ -4274,23 +4256,23 @@
     },
     {
       "path": "20-backend/20.6-microservices/05-interview-drills/INDEX.md",
-      "sha256": "6547844ccc882712ff0a3948964876900a6754504da17bc80d4d67dfcdb88c9c",
+      "sha256": "f2e4e54e64f9b99791671e8ea7f4bc268c1c98d446de624c5d35cecdd3df9cfc",
       "genre": "navigation-index",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full content read: practiceafterlearning+revision, shortdefinition versus timeddesignscope, singlebankentry and datedDocita sourcepresence versus runtimeevidence; no blocking conceptualfinding. Editorial quickprompt count differs from retained35 but is not a P1/P2 mechanismerror; counts left for root.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-14",
+      "notes": "Full-content read (2026-11-14): Read end to end: drill banks listed in the order the chapters introduce the patterns. Prompt count corrected to 35 additional quick prompts this pass, matching the bank on disk.",
       "fullContentRead": true,
       "findings": []
     },
     {
       "path": "20-backend/20.6-microservices/INDEX.md",
-      "sha256": "aaec4afa686d6c0ff6d25b77dcd426eaec6e00141a6d0042a122910ee74ffecd",
+      "sha256": "eeba37d381ca3741956ed2497e6c4dacae9c98a92808842ec2f0d6d7bb930624",
       "genre": "navigation-index",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full content read: topology/RPC\u2192ownership/consistency\u2192resilience\u2192durablecommunication/migration\u2192streaming/revision/drills stages; alltopiclinks reviewed or previouslycoveredoutbox. Categoryrevision links precede drill; currentDocita pointers datedsourceonly with listenercancel/idempotency limitations. Rootmanaged numericclaims not edited.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-14",
+      "notes": "Full-content read (2026-11-14): Read end to end; 23 files reconcile as 19 chapters plus 4 revision companions. One line per row; the reading flow adds order only.",
       "fullContentRead": true,
       "findings": []
     },
@@ -4378,7 +4360,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read resolver trace\u2192Server5/Express5 boundary\u2192separate revision\u2192clients\u2192bank; project comparison explicitly study fixture versus deployed claim. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read resolver trace→Server5/Express5 boundary→separate revision→clients→bank; project comparison explicitly study fixture versus deployed claim. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4433,7 +4415,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read entity/optimistic/list transition\u2192variable-aware admission\u2192actual generated consumer\u2192revision\u2192bank. Distinguishes REST source evidence from proposed GraphQL design and role-specific learning goals. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read entity/optimistic/list transition→variable-aware admission→actual generated consumer→revision→bank. Distinguishes REST source evidence from proposed GraphQL design and role-specific learning goals. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4455,7 +4437,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read all50 authored questions and answers including domain exercises31\u201340, failure41\u201350. Checked operation/nullability, ordered scoped batching, schema/permission/cache/federation/cost ownership, atomicity and unknown effects, oldclient compatibility and domain-specific invariants. Proposed designs do not fabricate past evaluation or deployed experience; no blocking correctness/depth finding. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read all50 authored questions and answers including domain exercises31–40, failure41–50. Checked operation/nullability, ordered scoped batching, schema/permission/cache/federation/cost ownership, atomicity and unknown effects, oldclient compatibility and domain-specific invariants. Proposed designs do not fabricate past evaluation or deployed experience; no blocking correctness/depth finding. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4466,7 +4448,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read prerequisite revision groups\u2192all50 authored prompts\u2192role-specific followups\u2192source return when unsupported. Explicit experience boundary prevents proposed design from becoming fabricated implementation/deployment evidence. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read prerequisite revision groups→all50 authored prompts→role-specific followups→source return when unsupported. Explicit experience boundary prevents proposed design from becoming fabricated implementation/deployment evidence. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4477,7 +4459,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read: staged contract\u2192execution\u2192consumers/operations\u2192source-linked revision\u2192all50 authored drills. Role-specific authority/cache/governance emphasis and REST project comparison avoid unverified GraphQL deployment claims. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read: staged contract→execution→consumers/operations→source-linked revision→all50 authored drills. Role-specific authority/cache/governance emphasis and REST project comparison avoid unverified GraphQL deployment claims. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4550,7 +4532,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full content read: strategy/data/primitives\u2192advancedpatterns\u2192revision\u2192interview flow, choosingauthority for immediatewrites and leasefallback not magicmutex; links/description mirror sources, Docita pointers disclaim currentRedis/TTL/deploymentproof. Numericclaims rootmanaged.",
+      "notes": "Full content read: strategy/data/primitives→advancedpatterns→revision→interview flow, choosingauthority for immediatewrites and leasefallback not magicmutex; links/description mirror sources, Docita pointers disclaim currentRedis/TTL/deploymentproof. Numericclaims rootmanaged.",
       "fullContentRead": true,
       "findings": []
     },
@@ -4622,7 +4604,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read learning sequence model\u2192operations\u2192patterns\u2192revision\u2192bank, source-linked cross references and decision paths; Docita implementation pointers explicitly distinguish study material from deployment evidence, and enqueue transaction/claim/lease boundaries from effect exactly-once. No Docita checkout or live production inspected; no unverified performance claim adopted. Sources checked: https://kafka.apache.org/42/getting-started/upgrade/ ; https://kafka.apache.org/43/getting-started/upgrade/ ; https://docs.confluent.io/platform/current/clients/librdkafka/html/md_CONFIGURATION.html ; https://www.rabbitmq.com/blog/2026/04/23/rabbitmq-4.3-release .",
+      "notes": "Full read learning sequence model→operations→patterns→revision→bank, source-linked cross references and decision paths; Docita implementation pointers explicitly distinguish study material from deployment evidence, and enqueue transaction/claim/lease boundaries from effect exactly-once. No Docita checkout or live production inspected; no unverified performance claim adopted. Sources checked: https://kafka.apache.org/42/getting-started/upgrade/ ; https://kafka.apache.org/43/getting-started/upgrade/ ; https://docs.confluent.io/platform/current/clients/librdkafka/html/md_CONFIGURATION.html ; https://www.rabbitmq.com/blog/2026/04/23/rabbitmq-4.3-release .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4639,12 +4621,12 @@
     },
     {
       "path": "20-backend/INDEX.md",
-      "sha256": "1b120541d1a4a35244bd5ab7931c8c3ad91ff3d31d2655a932bd494ed8865841",
+      "sha256": "c19e9c0cc12fe2e9bfd6ec30c72e006d3f6bb3ba34cc7efc76911324f36f5abe",
       "status": "reviewed",
-      "reviewer": "buffy",
-      "reviewDate": "2026-11-11",
-      "fullContentRead": false,
-      "notes": "Restamp-only record on 2026-11-11: a canonical writer (read_time.py / check_counts.py / check_alignment.py) updated a claim in this file after an adjacent chapter edit. No prose or technical content changed here.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-14",
+      "fullContentRead": true,
+      "notes": "Full-content read (2026-11-14): Read end to end; the stated 181 files reconcile as 149 chapters plus 32 revision companions. One line per sub-stack row, with the reading path adding sequencing rather than repeating descriptions.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "ab7ced08ffe012474a86db7f5ff38398ca691458b124ed67f5bf5a2780894865",
@@ -4694,7 +4676,7 @@
       "sha256": "ab78382b78b459d498a454b829a03f4a8883ef9fdc983ced7611228f2fe5a344",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full read foundational prerequisite flow OOP\u2192principles\u2192UML, tradeoff completion drill before revision, qualified Docita locations; study estimates illustrative, disk totals writer owned. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
+      "notes": "Full read foundational prerequisite flow OOP→principles→UML, tradeoff completion drill before revision, qualified Docita locations; study estimates illustrative, disk totals writer owned. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
       "findings": [],
       "reviewer": "architecture-final"
     },
@@ -4763,12 +4745,14 @@
     },
     {
       "path": "30-architecture/30.1-design-patterns/02-creational/REVISION.md",
-      "sha256": "5ded632e3f3ff7f7d1d4bc77d0894efef6f6b7797637c4fbd346369c03bd1117",
+      "sha256": "9aed72a4bb489ca1cd1de23c1ae2089181bc5ba0973d932d209facb6a42057a6",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Full read all authored Q/A: per-concept source links, singleton retry/scope, creator workflow, builder lifecycle/body alias, abstract family, clone and override boundaries agree with chapters. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
+      "notes": "Full-content read (2026-11-14): Question order follows Singleton, Factory Method, Abstract Factory, Builder, Prototype. One or two prompts per pattern; no prompt repeats the previous pattern's tradeoff.",
       "findings": [],
-      "reviewer": "architecture-final"
+      "reviewer": "root",
+      "reviewDate": "2026-11-14",
+      "fullContentRead": true
     },
     {
       "path": "30-architecture/30.1-design-patterns/03-structural/30.1.3.01-adapter.md",
@@ -5133,14 +5117,14 @@
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.md",
-      "sha256": "cd5afa2d722f9eda718eb2146ff145fcc5d2235ac7204adf072da6edb3c85c0c",
+      "sha256": "c5659796250346817d97780ab242781b04308b02a6f214a299c75ed2060320ae",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: workload/query before placement, migration authority and fencing, hot key/replication/quorum limitations, acknowledgement vs read visibility. AWS MREC/MRSC/transaction and Spanner default external-consistency claims verified against current primary docs.",
+      "notes": "Full-content read (2026-11-14): Read end to end: replication topologies, lag, failover, then shard keys, routing, rebalancing. Each tradeoff appears once; the summary does not re-list the section headings.",
       "findings": [],
       "fullContentRead": true,
-      "reviewer": "resume_portfolio",
-      "reviewDate": "2026-10-25"
+      "reviewer": "root",
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.md",
@@ -5543,7 +5527,7 @@
       "sha256": "d5fc9f000f6da2b906bdd789269e74cd5f5710320eb358661ed5f141bcf0c8ed",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review: Full read: origin-coordinated demand and current claim, RFCrobots vs SSRF/actualsocket validation, narrow ASCII URL decoder, content vs URL/revisit separation and bounded stream/parser. FIXED empty query delimiter /? lost by urlunsplit, aligned companion; RFC3986\u00a76.2.3 primary verified. /tmp/check-crawler-query-identity.py RED\u2192GREEN preserving absent/empty/fragment query, params/ports/IPv6/rejections.",
+      "notes": "Full-content review: Full read: origin-coordinated demand and current claim, RFCrobots vs SSRF/actualsocket validation, narrow ASCII URL decoder, content vs URL/revisit separation and bounded stream/parser. FIXED empty query delimiter /? lost by urlunsplit, aligned companion; RFC3986§6.2.3 primary verified. /tmp/check-crawler-query-identity.py RED→GREEN preserving absent/empty/fragment query, params/ports/IPv6/rejections.",
       "findings": [],
       "fullContentRead": true,
       "reviewer": "resume_portfolio",
@@ -5551,14 +5535,14 @@
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.md",
-      "sha256": "d86af1b9bb73c8e9e7bdd8ed22d529aa3133e8e8c3efd61e5528aa2528cff053",
+      "sha256": "6e828656843c7ab6e20f52e3ef2d7886a11a0e8d1f1f86dd809a1f7c242d8cbe",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Restamp-only record on 2026-11-11: a canonical writer (read_time.py / check_counts.py / check_alignment.py) updated a claim in this file after an adjacent chapter edit. No prose or technical content changed here.",
+      "notes": "Full-content read (2026-11-14): Trace runs requirements to fan-out to storage to delivery; each arithmetic step is visible. Checked the arithmetic: 578,704 messages/s, 50 TB/day, 18.25 PB/year, 2.5 PB/day and 5,000 nodes reconcile.",
       "findings": [],
-      "fullContentRead": false,
-      "reviewer": "buffy",
-      "reviewDate": "2026-11-11"
+      "fullContentRead": true,
+      "reviewer": "root",
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.md",
@@ -5639,13 +5623,13 @@
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.23-typeahead-autocomplete.md",
-      "sha256": "17ce505fad3bf4898e888f45e99ec3cec28a6ac780bbc6bbd83a6dd107365917",
+      "sha256": "c6811162952f17a2857ab61b63e3e9441a944208471eb0fec3537a36f7550e7e",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full read: Full exact-prefix index, normalization collisions, copied candidate ownership, stable ties, bounded fuzzy alternatives, private cache scope and UI generation checked. Exact authored TypeScript fixture passed all built-in invalid/collision/order assertions on Node24.",
+      "notes": "Full-content read (2026-11-14): Trace runs query volume to prefix index to ranking to cache; numbers appear where they are used. Recomputed 17,361 queries/s, 52,083 peak and 16.8 GB index; the scale claims hold.",
       "findings": [],
-      "reviewer": "architecture_toolkit_finish",
-      "reviewDate": "2026-10-26",
+      "reviewer": "root",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true
     },
     {
@@ -5738,13 +5722,13 @@
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/INDEX.md",
-      "sha256": "1918ca6ca1cb07eaa3555a2751c33bad9530e9d56c5002a853c864ea1fb89ed6",
+      "sha256": "eb70c71e83fc1f8d2618e4a3538163dbf2a1ea5c5fa371c2f4a6a3715a122ff4",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full read: Full case catalog, role-selected learning path, revision-before-bank sequence and dated source-only Docita anchor limits checked.",
+      "notes": "Full-content read (2026-11-14): Read end to end; 32 files reconcile as 31 case studies plus one revision companion. One line per row; the reading order note does not re-describe the cases.",
       "findings": [],
-      "reviewer": "architecture_toolkit_finish",
-      "reviewDate": "2026-10-26",
+      "reviewer": "root",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true
     },
     {
@@ -5760,14 +5744,14 @@
     },
     {
       "path": "30-architecture/30.2-system-design/INDEX.md",
-      "sha256": "3c5645e8358f63c6cb6545c7405b32ef452dbcf34090804c8e9dc96c81ab8cfa",
+      "sha256": "2674ce402d182418ebc7553d232cb93c089c2d1c917f1ce76acb69817be45482",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full read: framing/mechanism/case passes, theory revision then drill and case retrieval, assumptions versus measured evidence; no unsupported deployment claims.",
+      "notes": "Full-content read (2026-11-14): Read end to end; 56 files reconcile as 21 theory chapters plus 31 case studies and companions. Rows are single lines; the reading flow does not restate them.",
       "findings": [],
       "fullContentRead": true,
-      "reviewer": "resume_portfolio",
-      "reviewDate": "2026-10-25"
+      "reviewer": "root",
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.md",
@@ -5781,12 +5765,12 @@
     },
     {
       "path": "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/INDEX.md",
-      "sha256": "8d627a630581c17848e3c0273bf56f4c4fd9698476dd344d374aff289cf083be",
+      "sha256": "796dda5028b96c8d230e5e2fa32881015169bc9a3856e5063379fade9ad63917",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true,
-      "notes": "Full index read. Lifecycle learning flow, separate revision, health configuration pointers and source-only deployment qualification checked. Generated file/read counts belong to restampers; no live Fly probe claimed.",
+      "notes": "Full-content read (2026-11-14): Read end to end: startup, readiness, liveness, then drain and shutdown ordering. One line per chapter; the intro does not preview the shutdown chapter twice.",
       "findings": []
     },
     {
@@ -5843,14 +5827,14 @@
     },
     {
       "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.05-backup-strategy-restore-drills.md",
-      "sha256": "343c720a9150eebe51a59c96ea2547c418704808f399aad11b63e584056f5a42",
+      "sha256": "594495a7fbb21f93d0990b303f1838e3444f4e5092f86b4754aa4dc0dcd5d165",
       "genre": "concept",
       "status": "reviewed",
-      "notes": "Checked historical-copy versus replication distinction, PITR uninterrupted history/compatible tools, complete RTO clock, decimal throughput floor (39.7 MB/s), shared credential/key failure, checksums versus semantic recovery, Linux GNU script quoting/manifest bounds, target-relative freshness, isolated restore/external-effect reconciliation and single writable cutover authority. Script not executed.",
+      "notes": "Full-content read (2026-11-14): Trace runs a drill: select artifact, restore, verify, cut over; each step has a failure. Recomputed the 39.7 MB/s restore rate against the stated dataset and window; it holds.",
       "findings": [],
       "fullContentRead": true,
-      "reviewer": "architecture_coverage",
-      "reviewDate": "2026-10-25"
+      "reviewer": "root",
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.06-idempotency-retry-deep-dive.md",
@@ -5896,14 +5880,14 @@
     },
     {
       "path": "30-architecture/30.3-infra-patterns/03-coordination/INDEX.md",
-      "sha256": "70b6e3d01014149f228d98a3846ca78f11a36e5a77b860097cd5292d58d22361",
+      "sha256": "8f9fa6d1f3d48fc612102200b4a766d66e07e5f9fb3c080e3fa3857dfa4a541f",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Checked learning progression from consensus to resource fencing and expiry-wait trace; queue claim versus singleton distinction; source-location anchors are bounded and do not prove universal cron single-flight. Did not re-audit external Docita source.",
+      "notes": "Full-content read (2026-11-14): Read end to end: leader election, leases, fencing, distributed locks, idempotency. One line per chapter, with no repeated split-brain explanation in the intro.",
       "findings": [],
       "fullContentRead": true,
-      "reviewer": "architecture_coverage",
-      "reviewDate": "2026-10-25"
+      "reviewer": "root",
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "30-architecture/30.3-infra-patterns/03-coordination/REVISION.md",
@@ -5973,13 +5957,13 @@
     },
     {
       "path": "30-architecture/30.3-infra-patterns/04-data-at-scale/REVISION.md",
-      "sha256": "9e0069fdb3f526ed91713e1f416bd3d3b7837c6cfb684412aafe7f67071e71aa",
+      "sha256": "798b6b8641f7f661f9db5d49fc3143dbf1529383ad7651100846e1fa0c7c7f86",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Checked every source-linked retrieval group: local partitioning and uniqueness, pool budget/protocol state, pipeline after-images/tombstone/transaction scope, CDN hit authorization and revocation, transaction-local tenant context, Prisma v7/v8 version distinction and per-resource isolation. Official PgBouncer, Prisma release status and Kafka 4.3 docs support version-sensitive answers. Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
+      "notes": "Full-content read (2026-11-14): Question groups follow the sub-stack: partitioning, retention, compaction, archival. Short prompts; answers stop at the mechanism rather than adding a recap.",
       "findings": [],
       "fullContentRead": true,
-      "reviewer": "architecture_coverage",
+      "reviewer": "root",
       "reviewDate": "2026-11-14"
     },
     {
@@ -6050,32 +6034,13 @@
     },
     {
       "path": "30-architecture/30.3-infra-patterns/06-interview-prep/30.3.6.01-interview-questions.md",
-      "sha256": "0940ae0acb8c6614549ec1dac4cb78ada1288f88719d860ca0745a072a880a6e",
+      "sha256": "00ce2748fc220f834d9b2f34248f36b07ad1d7281cd99deac9a56711e602be4a",
       "genre": "interview-bank",
       "status": "reviewed",
-      "notes": "Fully reread after root repair. Every question, scenario, summary and reference inspected. Q12 now traces compatibility through supported client, persisted-format and replay windows after rollout; Summary item 2 now distinguishes naturally repeatable operations and stable effect identity. Checked probe/admission, retry, recovery-objective, fencing, pool-budget, tenant/erasure and degradation boundaries. Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
-      "findings": [
-        {
-          "id": "architecture-001",
-          "severity": "P2",
-          "status": "resolved-verified",
-          "section": "Advanced Q12",
-          "description": "Answer says a version-skew/shared-state compatibility violation shows as errors only during rollout. Stored values, queued events and old clients can outlive the fleet rollout and continue or first trigger failures afterward.",
-          "recommendation": "Say compatibility failures can appear during rollout and persist afterward; trace producer/consumer/client support and replay windows plus stored-format contracts.",
-          "resolution": "Root repaired the wording; full-content reread at recorded current sha256 verifies the change."
-        },
-        {
-          "id": "architecture-002",
-          "severity": "P3",
-          "status": "resolved-verified",
-          "section": "Summary item 2",
-          "description": "Retry without idempotency is duplication reads as a universal equivalence, obscuring naturally repeatable reads and distinguishing duplicated attempts from duplicated business effects.",
-          "recommendation": "Use safe retry requires repeatable effects or operation deduplication, with identity preserved for uncertain mutations.",
-          "resolution": "Root repaired the wording; full-content reread at recorded current sha256 verifies the change."
-        }
-      ],
+      "notes": "Full-content read (2026-11-14): Read end to end; Q1 to Q25 run beginner, intermediate, advanced, scenario, degradation. Each answer is one paragraph plus its failure mode; the summary compresses rather than repeats.",
+      "findings": [],
       "fullContentRead": true,
-      "reviewer": "architecture_coverage",
+      "reviewer": "root",
       "reviewDate": "2026-11-14"
     },
     {
@@ -6102,14 +6067,14 @@
     },
     {
       "path": "30-architecture/INDEX.md",
-      "sha256": "334741ac154ec12b3137df1f5437ea366e790bff6906b177e8c95a99126043ae",
+      "sha256": "9021b5ea2be90d0d561582ab686242cc2de946965f5fdf7045c75ee16ae3138e",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Design-patterns bank: eleven one-line definitions now name the mechanism and the failure boundary (adapter translation cost, builder invariant, facade ordering, proxy obligations, strategy substitution, chain path failures, template ordering, command contracts, composite totality, iterator mutation)",
+      "notes": "Full-content read (2026-11-14): Read end to end: design patterns, system design theory and cases, infrastructure patterns. One line per row; the reading path adds sequence without restating descriptions.",
       "findings": [],
-      "fullContentRead": false,
+      "fullContentRead": true,
       "reviewer": "root",
-      "reviewDate": "2026-11-12"
+      "reviewDate": "2026-11-14"
     },
     {
       "path": "40-platform/40.1-docker/40.1.01-images-containers.md",
@@ -6224,13 +6189,13 @@
     },
     {
       "path": "40-platform/40.1-docker/40.1.10-interview-questions.md",
-      "sha256": "a91d06602acd7b8fd0276e21853569b458ff78a17651bf210903b22ac844ea7c",
+      "sha256": "e5e075b0edc7aed9a96ddcfb876b0380a6ad826c9bb931ec884b8ba683749dd1",
       "genre": "interview-bank",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-05",
-      "fullContentRead": false,
-      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
+      "reviewDate": "2026-11-14",
+      "fullContentRead": true,
+      "notes": "Full-content read (2026-11-14): Read end to end; the bank states 30 questions and the headings run Question 1 through Question 30. Each answer closes on its failure boundary instead of restating the command syntax.",
       "findings": []
     },
     {
@@ -6333,12 +6298,12 @@
     },
     {
       "path": "40-platform/40.11-reverse-proxy/40.11.02-interview-questions.md",
-      "sha256": "ed499b11b02abefde3f45576a57cca2441e9bcefbf0a43b282dd6f7f5d6eb3a5",
+      "sha256": "e4259bd42060c71edfd0cb1f5c073a83e49c98b1593759d1839dbca417061cae",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-26",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true,
-      "notes": "Full request/worker/location/upstream trace and all25answers/revision read. Checked1.29.7 defaults, idle versus total timeouts, buffering, TLS/SNI, trusted peers, retry ambiguity and reload boundaries against official docs. Repaired bank502/504/startup-versus-connect-timeout confusion and universal edge ownership claim. No running proxy deployment tested.",
+      "notes": "Full-content read (2026-11-14): Read end to end: beginner, intermediate, advanced, scenario, edge responsibilities. Each answer is one paragraph; the summary compresses the five senior tells without re-answering.",
       "findings": []
     },
     {
@@ -6605,13 +6570,13 @@
     },
     {
       "path": "40-platform/40.2-kubernetes/03-scaling/40.2.3.02-node-autoscaling-cluster-capacity.md",
-      "sha256": "85b8a54f7028956dcde956cdac03b96d0514ad4ff1216b168e1eab0faba2e615",
+      "sha256": "c5759a6a7cc98b26c52b2518b498bc0fa12feb1c507fcb22d0211273187084d1",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-05",
-      "fullContentRead": false,
-      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. CI/CD links explicitly name the emitted landing page; surrounding explanations are unchanged.",
+      "reviewDate": "2026-11-14",
+      "fullContentRead": true,
+      "notes": "Full-content read (2026-11-14): Trace follows HPA to Pod to scheduler to autoscaler to node to readiness, one asynchronous loop per step. The CA versus Karpenter comparison lives in a table so the prose does not argue both twice.",
       "findings": []
     },
     {
@@ -7361,12 +7326,12 @@
     },
     {
       "path": "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md",
-      "sha256": "5ae0b75e58b71ea4a049875161c20ad5af46a47c869da1486bbd6f36d3954a0e",
+      "sha256": "30c10014d44906514a62719f99d456c64ddf8e2e83c18b3501394249a407298c",
       "status": "reviewed",
-      "reviewer": "platform_finish",
-      "reviewDate": "2026-10-26",
+      "reviewer": "root",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true,
-      "notes": "Full content read: Actual compiler callback/close fixture, SWC type erasure, module/plugin compatibility and independent cache/incremental controls checked against current Rspack2 reference. No federation runtime or performance result claimed.",
+      "notes": "Full-content read (2026-11-14): Trace follows one module from entry through the SWC loader to emitted output, with a runnable fixture. Section 3 keeps incremental and persistent cache distinct instead of repeating both in the migration section.",
       "findings": []
     },
     {
@@ -7481,12 +7446,12 @@
     },
     {
       "path": "40-platform/40.5-build-tools/04-interview-prep/40.5.4.01-interview-questions.md",
-      "sha256": "a7ba258d183644226bf4ce4fa308303e0987f4c0cac92e0aaa31b6339975881b",
+      "sha256": "825c1b427eda5593323813aa4a0108e91b0e5d03678130eddbb93d3893d1ad8c",
       "status": "reviewed",
-      "reviewer": "platform_finish",
-      "reviewDate": "2026-10-26",
+      "reviewer": "root",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true,
-      "notes": "Full content read: All44 authored prompts read and checked against canonical build pipeline, type/runtime/host boundaries, side-effect retention, deployment compatibility and cache identity mechanisms. No executable example or production migration claimed.",
+      "notes": "Full-content read (2026-11-14): Read end to end; the bank states 44 prompts and the headings run 1 through 44 in order. Answers stop at the mechanism plus its evidence boundary; no answer repeats the previous one.",
       "findings": []
     },
     {
@@ -7640,12 +7605,13 @@
     },
     {
       "path": "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md",
-      "sha256": "67b32927bd946d5a56822299e3200bc5644f6efd3953505096ff514d4022249f",
+      "sha256": "887b121fff40f7323dffa151e32000c058a3f0ba7b8071afd8c4a4bdcdfdc4e6",
       "status": "reviewed",
-      "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
+      "reviewer": "root",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true,
-      "notes": "Full read: default versus Managed Instances concurrency and timeout, Durable Functions total execution, SQS partial mapping/FIFO, ownership after timeout, SnapStart and aliases. Reverified official AWS quotas, Managed Instances and durable mapping contracts on 26 October; HTTP handler is synthetic, not deployed."
+      "notes": "Full-content read (2026-11-14): Trace follows default-mode environment lifecycle first, then compute modes, then the HTTP handler, then retries. Each section owns one boundary (lifecycle, compute, handler, concurrency, retry, startup, deploy, observe).",
+      "findings": []
     },
     {
       "path": "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md",
@@ -8075,12 +8041,12 @@
     },
     {
       "path": "50-quality/50.1-testing/04-mocking-and-patterns/INDEX.md",
-      "sha256": "b520c933c764469e8b359c89f68d1e2caa8aea71ddd7c7338760fdf1b9722c21",
+      "sha256": "18cbd108576f3359e6b75dcde2bf360fdeda85d223d4293730990e13743f4942",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true,
-      "notes": "Full-content review: Boundary-before-helper flow, copy ownership, revision and concrete changed cases checked. Existing time-table drift left to generated read-time writer.",
+      "notes": "Full-content read (2026-11-14): Read end to end: mocking, test patterns, then the revision companion in study order. One line per chapter; the intro does not preview both chapters in full.",
       "findings": []
     },
     {
@@ -8135,12 +8101,12 @@
     },
     {
       "path": "50-quality/50.1-testing/06-interview-prep/50.1.6.01-interview-questions.md",
-      "sha256": "ba60a44dac030ef79ae25942fdf6f2d4a6e412aadb49f342d6e3a94e81821ae7",
+      "sha256": "9a413c6fd71399b95eedbffb210983e465d6680c8f99f6adcba00b5334edcd64",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true,
-      "notes": "Full-content review: All40questions/answers/probes fully read. Contracts, concurrency, provider states, simulation limits, mutation denominators, first-failure evidence and actual experience wording align with source chapters.",
+      "notes": "Full-content read (2026-11-14): Read end to end; the bank states 40 questions and the numbering runs 1 through 40 across five sections. Each answer names a boundary and a failure limit; the summary compresses without re-answering.",
       "findings": []
     },
     {
@@ -8171,12 +8137,12 @@
     },
     {
       "path": "50-quality/50.2-accessibility/50.2.01-wcag-overview.md",
-      "sha256": "42985403f456cebcae969ca7c47ec2ecc7d8bb534adde885786dee90bbf040a3",
+      "sha256": "b76e19060f5f6bd121f6e4e42886ee687fd7dc03b883a9402a0afbdb6692d811",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true,
-      "notes": "Full-content review: Checked full-page/complete-process conformance, version/level, evidence boundaries and current WCAG 2.2 requirements against the official recommendation.",
+      "notes": "Full-content read (2026-11-14): Opens on a colour-only error, then applies POUR to that one booking form throughout. Four sections, each answering one question about the same example; no section re-lists the principles.",
       "findings": []
     },
     {
@@ -8850,12 +8816,12 @@
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.02-two-pointers.md",
-      "sha256": "80a00f401d9241637882d56ea1173cfc00630acd9cc003540fa371b7d0d4bd6e",
+      "sha256": "f9a6dc35ec7fb3b829bb040151f16a12028b1c1d12569ed06b4952f20afee75f",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-05",
-      "fullContentRead": false,
-      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
+      "reviewDate": "2026-11-14",
+      "fullContentRead": true,
+      "notes": "Full-content read (2026-11-14): Trace runs one elimination table, then each template reuses it; the ordering proof precedes the code. The elimination table replaces a prose re-walk of the same two steps.",
       "findings": []
     },
     {
@@ -8960,12 +8926,12 @@
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids/70.2.2.04-topological-sort.md",
-      "sha256": "ac22de07cbabc6863ec829044a79d3a9bf20c3020cea12fdf46c2d2c4f876370",
+      "sha256": "cdfac7d4fc413f39760f607282924442fb5bbc1e706998f3ae2b2ae60782f744",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-05",
-      "fullContentRead": false,
-      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
+      "reviewDate": "2026-11-14",
+      "fullContentRead": true,
+      "notes": "Full-content read (2026-11-14): Trace drains in-degree-zero nodes, then the DFS alternative with its finish-order reversal. Each template appears once, with the cycle-detection consequence attached rather than recapped.",
       "findings": []
     },
     {
@@ -9100,12 +9066,12 @@
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.05-quick-select-reservoir-sampling.md",
-      "sha256": "50ee6041ec1be17cae4738b3a7ac8950e9abe4618e86f4aedd0871d7ff6f386b",
+      "sha256": "b37eef187985a9bc05fadf45b80b79102f015a0ba90fc9fac69a2be7da3549a8",
       "status": "reviewed",
-      "reviewer": "architecture_toolkit_finish",
-      "reviewDate": "2026-10-26",
+      "reviewer": "root",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true,
-      "notes": "Full read: All three-way quickselect, frequency partition, Algorithm R, stream sampler, Fisher-Yates and matching-index code read; absolute ranks, duplicate progress, subset induction, stream length and uniform-RNG assumptions checked.",
+      "notes": "Full-content read (2026-11-14): Trace runs a three-way partition by hand, then the reservoir proof per stream position. The probability proof is shown once and referenced, not restated in the summary.",
       "findings": []
     },
     {
@@ -9140,12 +9106,12 @@
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/05-math-and-number-theory/INDEX.md",
-      "sha256": "114584695169ff966b6c3d64c26a085441ea7958cfdd52932557b7a4f2611412",
+      "sha256": "f2b541ec1e0898beae5b0c51d613e5610d818cbbc61f508c7b554564444abedb",
       "status": "reviewed",
-      "reviewer": "architecture_toolkit_finish",
-      "reviewDate": "2026-10-26",
+      "reviewer": "root",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true,
-      "notes": "Full read: Full staged divisibility, arithmetic-domain and counting flow read; Java int/long fixed-modulus implementation boundary explicit.",
+      "notes": "Full-content read (2026-11-14): Read end to end: chapter order runs number theory into the selection and sampling family. One line per chapter; the intro does not preview the chapters again.",
       "findings": []
     },
     {
@@ -9805,7 +9771,7 @@
       "reviewer": "root",
       "reviewDate": "2026-10-25",
       "fullContentRead": true,
-      "notes": "Full-content review: Azure guide full read: settlement versus local effect, Cosmos consistency/session and multi-write restriction, blob lease 15\u201360 seconds versus external fencing. Current Microsoft primary contracts reverified.",
+      "notes": "Full-content review: Azure guide full read: settlement versus local effect, Cosmos consistency/session and multi-write restriction, blob lease 15–60 seconds versus external fencing. Current Microsoft primary contracts reverified.",
       "findings": []
     },
     {
@@ -9910,12 +9876,12 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "de1656153ab3f977f8f5b7f6c5e5c6b07f8c0a6786ac5723cfacbe3f72814386",
+      "sha256": "2516fe3e3c491eae6cfe2ac4cc8c465a3291b5f501e971b663e8bd5b59a1f1fe",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-14",
       "fullContentRead": true,
-      "notes": "2026-11-14 pass: read in full. Added the fifth strategy chapter (00.05 Find Startup Roles) to the 00-strategy block and the direct index, and normalized the 40/50/60/70 stack headings to their folder prefixes. Counts and lane table unchanged.",
+      "notes": "Full-content read (2026-11-14): Read end to end: lane choice, study stacks, recommended path, cross-reference map, direct indexes. Section totals reconcile with their sub-stacks plus index and revision files (for example 149 chapters plus 32 companions giving 181).",
       "findings": []
     },
     {
@@ -9990,12 +9956,12 @@
     },
     {
       "path": "docs/2026-09-19-corpus-health-report.md",
-      "sha256": "bc68e2f1643536fa5070a56ab81b43628d496e49a7b36cd3931a4df87afb6ac4",
+      "sha256": "0613028792528c31c43a0b9250935ae4b244781beebe8376c14d7610ef2f0b24",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-14",
       "fullContentRead": true,
-      "notes": "Count restamp only: the report quotes the live freshness-rule total, which the new STALE-LAST-UPDATED-MONTH rule moved from 45 to 46. Measured claims and dated findings unchanged. Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
+      "notes": "Full-content read (2026-11-14): Read end to end: definition, first principles, gate inventory, day-one catches, fix ledger, non-actions, summary. Ledger entries are one paragraph each; the summary points to the sweeps instead of retelling them.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "1137da2030c2e0a930a4110f49ca5663581130bb487d998312196208d2191b0d",
@@ -10081,7 +10047,7 @@
       "reviewer": "root-continuation",
       "reviewDate": "2026-10-27",
       "fullContentRead": true,
-      "notes": "Authored and reread final 25\u201326 October report. Current inventory and review records are exact-byte evidence; scoped runtime checks and source inspection remain distinct. Content review coverage does not imply every snippet execution, candidate mastery, adoption or absolute absence of errors. Release gates and generated metadata must be checked separately. 2026-10-27 maintenance delta inspected: standing exact-byte enforcement and bounded durable replays extend historical evidence without claiming every example executed or learner mastery."
+      "notes": "Authored and reread final 25–26 October report. Current inventory and review records are exact-byte evidence; scoped runtime checks and source inspection remain distinct. Content review coverage does not imply every snippet execution, candidate mastery, adoption or absolute absence of errors. Release gates and generated metadata must be checked separately. 2026-10-27 maintenance delta inspected: standing exact-byte enforcement and bounded durable replays extend historical evidence without claiming every example executed or learner mastery."
     },
     {
       "path": "docs/2026-11-frontend-review.md",
@@ -10105,12 +10071,12 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "b02e94a50fd28aea0af89c8bd8354d028b89c48485aa014eff39e69fa7c3b3c0",
+      "sha256": "f5afd930446ccbdf78e471ce24b893076fc1f744672707e0ad2f6b33c53c963c",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-12",
-      "fullContentRead": false,
-      "notes": "Generated totals restamped from api/index.json: 680 chapters and 5347 read minutes after the job-search chapter revision. Schema example unchanged.",
+      "reviewDate": "2026-11-14",
+      "fullContentRead": true,
+      "notes": "Full-content read (2026-11-14): Read end to end: shape, field table, guarantees, non-guarantees, regeneration, two consumers, versioning. Totals agree with api/index.json: 680 chapters, 47 sections, 13 distinct categories of the 14 canonical, 5350 read minutes.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",
@@ -10291,12 +10257,12 @@
     },
     {
       "path": "docs/superpowers/plans/2026-10-12-organic-reading-flow.md",
-      "sha256": "53d5df53beffeb7d77d0fb0fab7d27ce25e5e32e4d6fe057b81852e246ac7b4e",
+      "sha256": "66e5eb506fa0b52a04be2aba9a4d6c8e3924d072d46b5fd2ce0422d01532ce90",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-26",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true,
-      "notes": "Historical 2026-10-12-organic-reading-flow: full design/execution record read, including examples and all dated checkpoints. Preserve dates/paths/checkboxes as historical evidence, not current runtime behavior or authorization. Current AGENTS and exact-hash review supersede obsolete templates and private-location statements; no old test result promoted to current proof.",
+      "notes": "Full-content read (2026-11-14): Two sentence boundaries were repaired this pass so the plan's rule statements read as complete sentences. Rules are numbered and short; the rationale lives beside the rule rather than in a closing essay.",
       "findings": []
     },
     {
@@ -10401,12 +10367,12 @@
     },
     {
       "path": "docs/superpowers/specs/2026-10-14-nodejs-production-runtime-architecture-design.md",
-      "sha256": "2a7a6497b035769f518df1b3f64ab1575cb7be41fc44a7d26c9cbd5ef4da5fb7",
+      "sha256": "d363f196e3ced001971a24a0dc737e4e7a1e1cbaf0bce9422010c48dcc989a84",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-26",
+      "reviewDate": "2026-11-14",
       "fullContentRead": true,
-      "notes": "Historical 2026-10-14-nodejs-production-runtime-architecture-design: full design/execution record read, including examples and all dated checkpoints. Preserve dates/paths/checkboxes as historical evidence, not current runtime behavior or authorization. Current AGENTS and exact-hash review supersede obsolete templates and private-location statements; no old test result promoted to current proof.",
+      "notes": "Full-content read (2026-11-14): Read end to end: context and gap, approaches table, design, reader flow, curriculum integration, accuracy rules, acceptance criteria, risks. Two chapters only, each with a stated scope; the follow-on gaps are listed instead of designed here.",
       "findings": []
     },
     {

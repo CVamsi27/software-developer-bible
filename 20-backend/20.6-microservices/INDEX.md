@@ -21,7 +21,7 @@ The categories group responsibilities in a distributed system. Each learning cat
 | [Communication & Messaging](02-communication-and-messaging/INDEX.md) | 6 | gRPC (+ streaming), Kafka, RabbitMQ, message brokers, event-driven architecture — how services talk |
 | [Data & Consistency](03-data-and-consistency/INDEX.md) | 6 | Saga, distributed transactions, event sourcing, CQRS, database decomposition — atomicity and truth across service boundaries |
 | [Resilience](04-resilience/INDEX.md) | 2 | Circuit breaker, bulkhead — surviving partial failure |
-| [Interview Drills](05-interview-drills/INDEX.md) | 1 | 30 deep answers and quick follow-up prompts |
+| [Interview Drills](05-interview-drills/INDEX.md) | 1 | 30 deep answers and 35 additional quick prompts |
 
 ---
 
@@ -59,7 +59,7 @@ After each learning pass, use its source-linked companion: [Topology](01-service
 | IV | 15 | [Event-Driven Architecture](02-communication-and-messaging/20.6.2.06-event-driven-architecture.md) | Asynchronous facts, producer/consumer contracts, outbox and reprocessing | Essential | Important |
 | IV | 16 | [Strangler Fig](01-service-topology/20.6.1.04-strangler-fig.md) | Legacy migration, parallel run, dual-write | Important | Important |
 | V | 17 | [gRPC Streaming](02-communication-and-messaging/20.6.2.02-grpc-streaming.md) | Streaming modes, flow control, cancellation and gRPC-Web trade-offs | Important | Important |
-| Practice | 18 | [Interview Questions](05-interview-drills/20.6.5.01-interview-questions.md) | 30 deep answers and 29 additional quick prompts | Important | Important |
+| Practice | 18 | [Interview Questions](05-interview-drills/20.6.5.01-interview-questions.md) | 30 deep answers and 35 additional quick prompts | Important | Important |
 
 ---
 

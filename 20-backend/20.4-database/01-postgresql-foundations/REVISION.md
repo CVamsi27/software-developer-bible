@@ -44,7 +44,7 @@ Source: [Database Normalization](20.4.1.02-normalization.md)
 
 **Q:** What consistency risk does denormalization introduce, and how can the update path control it?
 
-**A:** Denormalization re-imports duplication deliberately — buying read speed with write-consistency risk — and is only safe when the update path is controlled (materialized views, event-fed caches). The discipline is knowing you're re-introducing axiom 1 and managing it.
+**A:** Denormalization re-imports duplication deliberately — buying read speed with write-consistency risk — and is only safe when the update path is controlled (materialized views, event-fed caches). The discipline is knowing that you are re-introducing a repeated fact and managing it.
 
 **Q:** A current catalog price changes from 3.00 to 4.00. Why should an existing order's purchased total remain unchanged?
 

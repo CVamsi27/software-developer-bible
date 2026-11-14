@@ -23,8 +23,8 @@ Read [Test Patterns](50.1.4.02-test-patterns.md). Run the cart cases, then mutat
 
 | Chapter | Main question | Read time |
 | ------------------------------------------- | --------------------------------------------------------- | --------: |
-| [Mocking](50.1.4.01-mocking.md) | What behavior does this replacement let the test observe? | 10 min |
-| [Test Patterns](50.1.4.02-test-patterns.md) | Does reuse keep the contract and state ownership visible? | 48 min |
+| [Mocking](50.1.4.01-mocking.md) | What behavior does this replacement let the test observe? | 9 min |
+| [Test Patterns](50.1.4.02-test-patterns.md) | Does reuse keep the contract and state ownership visible? | 9 min |
 
 ## Revision before interview practice
 

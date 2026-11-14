@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "1eafb989489c9ab05b63efa27ef6dbf2c71bc9dfd23ba367f229d0b355d38ebe",
+ "corpus_digest": "ad619e2a726c0734a013ccc8b643158abab68bf9878a5775a50965297b0ddd85",
  "totals": {
   "chapters": 680,
   "sections": 47,
   "categories": 13,
-  "read_minutes": 5347
+  "read_minutes": 5350
  },
  "chapters": [
   {
@@ -1679,7 +1679,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "20-backend/20.1-node.js/02-io-and-data/20.1.2.02-buffers.html",
@@ -3372,7 +3372,7 @@
   },
   {
    "p": "20-backend/20.7-graphql/03-clients-and-production/REVISION.html",
-   "t": "GraphQL — Clients and Production Revision",
+   "t": "GraphQL — Clients & Production Revision",
    "s": "GraphQL",
    "c": "Reference",
    "g": [
@@ -4407,7 +4407,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 13
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.html",
@@ -4487,7 +4487,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 13
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.html",
@@ -4740,7 +4740,7 @@
   },
   {
    "p": "30-architecture/30.3-infra-patterns/04-data-at-scale/REVISION.html",
-   "t": "Data at Scale — Revision",
+   "t": "Data & Scale — Revision",
    "s": "Architecture",
    "c": "Reference",
    "g": [

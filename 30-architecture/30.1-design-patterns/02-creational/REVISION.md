@@ -110,9 +110,9 @@ Source: [Prototype Pattern](30.1.2.05-prototype.md)
 
 **A:** It depends on the operation. A new entity needs a new identity; a snapshot intended to restore the same entity may preserve its identity and version. Make that distinction explicit instead of copying every field by default.
 
-**Q:** What if a staging override supplies only `{features: {newDashboard: true}}`?
+**Q:** Suppose `RequestConfig` also held a mutable array of rules and `clone()` used only `{ ...this }`. What would break, and what does the chapter require instead?
 
-**A:** `withOverrides` replaces the entire top-level feature section; it does not preserve `darkMode` through a nested merge. Its copies prevent cross-config mutation. A deep-merge contract would require explicit rules for arrays, removals, and conflicts.
+**A:** A shallow spread shares that array, so one worker's edit would change the template and every other clone. The chapter requires a per-field decision: copy per-instance mutable data, share documented immutable values, and handle resource handles and identity separately.
 
 ## Summary
 

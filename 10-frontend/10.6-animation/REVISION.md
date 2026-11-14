@@ -106,7 +106,7 @@ Source: [Canvas & SVG Animation](10.6.07-canvas-svg-animation.md)
 
 Source: [CSS animation](10.6.01-css-animations.md), [GSAP](10.6.03-gsap.md), [WAAPI](10.6.05-web-animations-api.md), [View/scroll transitions](10.6.06-view-transitions-and-scroll-driven-animations.md), [Canvas](10.6.07-canvas-svg-animation.md)
 
-**Q:** At half the duration, why need a transition not be halfway in distance?
+**Q:** At half the duration, why is a transition not necessarily halfway in distance?
 
 **A:** A timing function maps elapsed progress into effect progress. A nonlinear ease changes that mapping.
 

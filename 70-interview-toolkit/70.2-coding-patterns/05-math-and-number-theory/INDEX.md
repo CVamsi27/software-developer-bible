@@ -1,7 +1,7 @@
 # Math & Number Theory
 
 > **Study time:** ≈ 15 min of reading (2 files, ~8 min average).
-> **1 file.** Number theory and combinatorics for interviews: primes, GCD/LCM, modular arithmetic, combinatorics and probability — the math that turns up in medium/hard problems once the data-structure patterns are mastered.
+> **1 chapter.** Number theory and combinatorics for interviews: primes, GCD/LCM, modular arithmetic, combinatorics and probability — the math that turns up in medium/hard problems once the data-structure patterns are mastered.
 
 [![Files](https://img.shields.io/badge/files-2-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Coding%20Patterns-orange)](../INDEX.md)

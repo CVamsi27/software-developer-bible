@@ -13,7 +13,7 @@
 
 ## Topic Categories
 
-The 17 files are organized into 5 category folders — read in order.
+The 21 files are organized into 5 category folders — read in order.
 
 | Category | Chapters | Why it matters |
 | -------------------------------------------------------------- | -------: | ----------------------------------------------------------------------------------------------------- |

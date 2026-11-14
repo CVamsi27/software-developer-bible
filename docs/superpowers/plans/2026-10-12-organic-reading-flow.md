@@ -284,14 +284,14 @@ Call Stack, Hoisting and Closures were read in sequence and retained: each follo
 
 Re-read the `this`, Prototypes and Proxy & Reflect chapters with the category index and revision questions. Added concrete openings to `this` and Prototypes and derived the prototype chain from one shared-method problem. Reworked Proxy & Reflect around a validated property assignment, preserving receiver forwarding, trap coverage, target invariants, reactivity's dependency model, revocation and non-transparent built-in receivers. Removed the standalone miniature reactive runtime and its unrelated wrapper catalog, then rewrote the matching revision prompt to test the lifecycle responsibilities without depending on removed code. Updated the JavaScript index description and linked the current ECMAScript 2027 proxy-internal-method section.
 
-The Proxy assignment/rejection and revocation examples pass in Node. This group is recorded as three revised chapters; The 30 verification gates pass with no citation-baseline drift; the Ruby 3.4.11 Jekyll build and site-wide rendered-heading sweep pass.
+The Proxy assignment/rejection and revocation examples pass in Node. This group is recorded as three revised chapters. All 30 verification gates pass with no citation-baseline drift; the Ruby 3.4.11 Jekyll build and site-wide rendered-heading sweep pass.
 
 
 ## Editorial checkpoint — 13 October 2026 (JavaScript async ownership)
 
 Re-read all six Async & Concurrency chapters with their section index and revision drill. Added a rendering-starvation problem to Event Loop and removed its repeated Promise executor explanation; opened Promises with value-and-failure ownership, removed repeated state definitions, and shortened host reporting advice. Opened Async/Await with the serial-versus-independent operation decision, and removed an unrelated middleware/authentication aside while retaining rejection, validation, iterator and transaction boundaries. Added the replaced-search problem to cancellation. The pool chapter now distinguishes `pMap` and `pMapIterable` from a nonexistent `pMapSettled`, and explains how to construct per-item outcomes; this was verified against the upstream p-map documentation. Corrected the revision answer that incorrectly described `await Promise.resolve()` as awaiting a pending promise, and refreshed both JavaScript async indexes. Error Handling was read in sequence and retained because its request-to-owner path is compact and does not duplicate the neighboring mechanics.
 
-Node 23.7.0 traces pass for the event-loop order, promise chain and await continuation. This group has five revised and one retained topic; All 30 verification gates pass, including the source baseline, writer fixed point and standalone link check; the Ruby 3.4.11 Jekyll build and site-wide rendered-heading sweep pass.
+Node 23.7.0 traces pass for the event-loop order, promise chain and await continuation. This group has five revised and one retained topic. All 30 verification gates pass, including the source baseline, writer fixed point and standalone link check; the Ruby 3.4.11 Jekyll build and site-wide rendered-heading sweep pass.
 
 ## Editorial checkpoint — 13 October 2026 (JavaScript Memory & Data flow pass)
 

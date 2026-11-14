@@ -53,7 +53,7 @@ Initial references:
 - [Watt architecture](https://docs.platformatic.dev/docs/concepts/watt-architecture)
 - [Platformatic runtime multithread architecture](https://docs.platformatic.dev/docs/reference/runtime/multithread-architecture)
 
-The PM2 documentation describes a background daemon and registered process list, and documents cluster reload and readiness/shutdown behavior. Platformatic's architecture guide describes one worker thread per application, a supervising runtime, an internal mesh and the process-level limits of that boundary. These are product descriptions, not guarantees that a reader's workload will meet a particular throughput or availability target. [PM2 process management](https://pm2.io/docs/runtime/guide/process-management/), [PM2 graceful startup and shutdown](https://pm2.io/docs/runtime/best-practices/graceful-shutdown/), [Watt architecture](https://docs.platformatic.dev/docs/concepts/watt-architecture)
+The PM2 documentation describes a background daemon and registered process list, and documents cluster reload and readiness/shutdown behavior. Platformatic's architecture guide describes one worker thread per application, a supervising runtime, an internal mesh and the process-level limits of that boundary. These are product descriptions, not guarantees that a reader's workload will meet a particular throughput or availability target. Those three claims were checked against [PM2 process management](https://pm2.io/docs/runtime/guide/process-management/), [PM2 graceful startup and shutdown](https://pm2.io/docs/runtime/best-practices/graceful-shutdown/) and [Watt architecture](https://docs.platformatic.dev/docs/concepts/watt-architecture).
 
 ## Acceptance criteria
 

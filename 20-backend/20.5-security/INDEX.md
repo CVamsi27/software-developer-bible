@@ -36,7 +36,7 @@ Pass III — Operations: browser policy → threat model → secrets → vulnera
 Finish — Auth interview bank + full security scenario bank
 ```
 
-The files take about 4 h 1 m to read. Reserve roughly 12 hours for a complete pass with revision and practice. The encryption chapter is a reference primer; skim it if TLS and cryptographic primitives are already familiar.
+The files take about 3 h 36 m to read. Reserve roughly 12 hours for a complete pass with revision and practice. The encryption chapter is a reference primer; skim it if TLS and cryptographic primitives are already familiar.
 
 ---
 
@@ -76,7 +76,7 @@ Stage 10 is the auth question bank ([drills](01-auth/20.5.1.11-interview-questio
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | ----: | --------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ | ------------- | ------------------ | --------: |
-| — | [Encryption, Hashing & TLS](03-hardening-and-operations/20.5.3.01-encryption.md) | Symmetric/asymmetric, salting, AES/RSA, TLS handshake *(prerequisite for Pass I)* | Essential | Foundational | 45 min |
+| — | [Encryption, Hashing & TLS](03-hardening-and-operations/20.5.3.01-encryption.md) | Symmetric/asymmetric, salting, AES/RSA, TLS handshake *(prerequisite for Pass I)* | Essential | Foundational | 7 min |
 | 15 | [Web Security](03-hardening-and-operations/20.5.3.02-web-security.md) | HTTPS, HSTS, CORS, CSP, security headers, OWASP Top 10 | Essential | Foundational | 8 min |
 | 16 | [Threat Modeling — STRIDE](03-hardening-and-operations/20.5.3.03-threat-modeling-stride.md) | STRIDE, data-flow diagrams, trust boundaries, attack trees | Important | Specialized | 7 min |
 | 17 | [Secrets Management](03-hardening-and-operations/20.5.3.04-secrets-management.md) | Vault, AWS/GCP secret managers, rotation, KMS, dynamic credentials | Essential | Foundational | 8 min |

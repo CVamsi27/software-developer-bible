@@ -2195,18 +2195,18 @@
    }
   },
   "10-frontend/10.4-next.js/INDEX.md": {
-   "sha256": "237bd42ca559ebd47a7b126a3d6e7f370623031a77ba07515e2f2d2031c11534",
+   "sha256": "8f7c416fb4d7f1930a16c83074c7b8de2e3f15ce7080705bb7c3585523574047",
    "lines": 132,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Next.js \u2014 Index.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "1056 words over 133 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Next.js \u2014 Index. No second competing treatment was visible.",
-    "fast": "Source 7.9 KB over 133 lines with 35 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Navigation map for its section; the manual scan found a clear title, ordered categories and a Summary that states the route."
+    "current": "App Router, Server Components and caching framing is version-neutral; no pinned release numbers that drift.",
+    "readable": "Read end to end: study order runs App Router, Server Components, Server Actions, caching, streaming without a jump.",
+    "concise": "One description line per chapter; no repeated rationale between rows or the reading flow.",
+    "focused": "Defers mechanism to the chapters, so no second treatment of rendering or caching inside the index.",
+    "fast": "Navigation-only source weight; page weight under the shared Jekyll shell was not re-measured.",
+    "best": "Does the entry-point job: ordered rows plus a reading flow that names why each chapter follows."
    }
   },
   "10-frontend/10.5-form-handling/10.5.01-react-hook-form.md": {
@@ -2480,18 +2480,18 @@
    }
   },
   "10-frontend/10.6-animation/REVISION.md": {
-   "sha256": "f169229ea883d436d3f519ef677833e81accd0a35e540cb500f0c06ef9caddcc",
+   "sha256": "cee17a9de72c302405ab70d6d2bd38472644ca46b257dec55487e6452a35c6fd",
    "lines": 145,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Animation \u2014 Revision.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "1093 words over 146 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Animation \u2014 Revision. No second competing treatment was visible.",
-    "fast": "Source 8.2 KB over 146 lines with 26 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Retrieval companion; the manual scan found the prompts organized under the chapter titles with a clear closing Summary."
+    "current": "Motion 14.6.0 hook reporting is the only package-version claim; the forwards-fill and lazy answers avoid engine folklore.",
+    "readable": "Question order follows the chapters CSS, Motion, GSAP, React Spring, WAAPI, view transitions, Canvas.",
+    "concise": "Two to four prompts per chapter, each one mechanism; no prompt restates its own answer.",
+    "focused": "Each answer points at the owning chapter and does not re-teach the API surface.",
+    "fast": "Short revision sheet, roughly three minutes of reading at the stated badge.",
+    "best": "Works as retrieval practice: every question has a checkable failure or tradeoff, not a definition recital."
    }
   },
   "10-frontend/10.7-html-css/10.7.01-html-fundamentals.md": {
@@ -2615,18 +2615,18 @@
    }
   },
   "10-frontend/10.7-html-css/10.7.09-tailwind-css.md": {
-   "sha256": "c5696531243061ba5cd09b873324105eaa7cc0f014a92d997c3e70009f42959c",
+   "sha256": "24f5c519bdfd494d82f374a6effe9dc9bf4daa7eaad618f30fa0eaff5760b58f",
    "lines": 102,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Tailwind CSS: Utility-First Styling with Design Tokens.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "998 words over 103 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Tailwind CSS: Utility-First Styling with Design Tokens. No second competing treatment was visible.",
-    "fast": "Source 7.8 KB over 103 lines with 22 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Teaching chapter; the manual scan found a specific title, mechanism-led section sequence and a Summary that names the boundary."
+    "current": "Separates Tailwind 4 CSS-first config and @theme from Tailwind 3 JavaScript config, including @config and unsupported v3 options.",
+    "readable": "Opens on a real broken dynamic class, then follows scan, token and cascade separately; numbering is sequential.",
+    "concise": "Five sections each carry one claim; no section repeats the build-time generation explanation.",
+    "focused": "Leaves cascade to the CSS Architecture and Theming chapters instead of re-explaining the cascade here.",
+    "fast": "Moderate source weight for a concept chapter; page weight was not re-measured in this pass.",
+    "best": "Answers the migration question a reader actually has, with the detection boundary testable in the built CSS."
    }
   },
   "10-frontend/10.7-html-css/10.7.10-interview-questions.md": {
@@ -2888,18 +2888,18 @@
    }
   },
   "20-backend/20.1-node.js/02-io-and-data/20.1.2.01-streams.md": {
-   "sha256": "284ac7e84fc8f9c9784bf1c8cc0279e84a23587bc22a7393c5e635d3705ff8e1",
+   "sha256": "be9582fe91bf09631aaf8a42f22ef519862438adcc6fb4dcd359ed49c79b49b4",
    "lines": 219,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Node.js Streams.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "1823 words over 220 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Node.js Streams. No second competing treatment was visible.",
-    "fast": "Source 13.1 KB over 220 lines with 21 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Teaching chapter; the manual scan found a specific title, mechanism-led section sequence and a Summary that names the boundary."
+    "current": "Stream API description stays on stable core contracts; no Node release pinning that would age.",
+    "readable": "Teaser now names the observable symptom (buffering a whole body) before the mechanism; flow then runs backpressure, piping, errors.",
+    "concise": "Teaser was shortened to one sentence in this pass; body sections still carry no duplicated setup prose.",
+    "focused": "Leaves worker-thread and web-stream detail to their own chapters, citing them instead of restating.",
+    "fast": "Chapter-length source weight unchanged by the teaser edit; page weight not re-measured.",
+    "best": "Teaches the decision (stream or buffer) rather than listing methods; examples stay runnable."
    }
   },
   "20-backend/20.1-node.js/02-io-and-data/20.1.2.02-buffers.md": {
@@ -2948,18 +2948,18 @@
    }
   },
   "20-backend/20.1-node.js/02-io-and-data/INDEX.md": {
-   "sha256": "9ca62bdcef15ae1f4f9797e1d7647eb2ff8ddfd8a4188ca265a99707cc9308b6",
+   "sha256": "989e2803bc8276f06a07444f605b1ea8fc00ee8f97ad598a6470b8872b123b0a",
    "lines": 49,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: I/O & Data - Node.js.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "439 words over 50 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: I/O & Data - Node.js. No second competing treatment was visible.",
-    "fast": "Source 3.5 KB over 50 lines with 17 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Navigation map for its section; the manual scan found a clear title, ordered categories and a Summary that states the route."
+    "current": "Chapter descriptions name stable APIs; no version-sensitive default is asserted in the index.",
+    "readable": "Read end to end: buffers, streams, file system, web streams, test runner in a workable order.",
+    "concise": "Each row is a single line; the intro does not restate the section list below it.",
+    "focused": "Navigation only, so no mechanism is treated twice here.",
+    "fast": "Table-only source weight; shared shell weight not re-measured.",
+    "best": "Gets a reader from the section goal to the right chapter without extra prose."
    }
   },
   "20-backend/20.1-node.js/02-io-and-data/REVISION.md": {
@@ -3083,18 +3083,18 @@
    }
   },
   "20-backend/20.1-node.js/04-security-and-operations/20.1.4.01-node-security.md": {
-   "sha256": "713698101f8124dabcd3dfc40144bbac6e4dc646b1f8c8ebe15e2512a4712142",
-   "lines": 206,
+   "sha256": "93c21e23acee90e4a920a895499fa94169b26d3b3ea3c772f1317d7e19effc65",
+   "lines": 204,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Node.js Security.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "1773 words over 207 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Node.js Security. No second competing treatment was visible.",
-    "fast": "Source 13.8 KB over 207 lines with 27 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Teaching chapter; the manual scan found a specific title, mechanism-led section sequence and a Summary that names the boundary."
+    "current": "Threat framing is version-neutral; no dependency CVE numbers that would go stale.",
+    "readable": "Intro rewritten this pass to open on one traced request (a POST /reports body choosing an export format) rather than a colon-to-heading fragment.",
+    "concise": "Removed one redundant line in this pass; remaining sections keep one control per paragraph.",
+    "focused": "Cites the auth and HTTP chapters for session and header mechanics instead of repeating them.",
+    "fast": "Chapter-length source weight; page weight not re-measured.",
+    "best": "Explains why a control fails (including the __proto__ merge path added here), not just which header to set."
    }
   },
   "20-backend/20.1-node.js/04-security-and-operations/20.1.4.02-debugging-profiling-nodejs.md": {
@@ -3173,33 +3173,33 @@
    }
   },
   "20-backend/20.1-node.js/INDEX.md": {
-   "sha256": "278c4fe547732b84f21bdec19ec3b6d2a21cb9f6a2b27fa8eaf2e527260d84c1",
+   "sha256": "db03367503de87de8eff1773d0a89feac88001a17cb3f1ffe7515fd5bfef76bb",
    "lines": 122,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Node.js \u2014 Index.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "1144 words over 123 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Node.js \u2014 Index. No second competing treatment was visible.",
-    "fast": "Source 9.8 KB over 123 lines with 50 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Navigation map for its section; the manual scan found a clear title, ordered categories and a Summary that states the route."
+    "current": "Node.js feature descriptions avoid version pins that would drift; LTS claims are not asserted here.",
+    "readable": "Read end to end: fundamentals, I/O and data, processes, security and operations, then drills.",
+    "concise": "One line per chapter row, with no duplicated summary paragraph underneath.",
+    "focused": "Navigation plus reading flow only; no chapter mechanism is re-taught.",
+    "fast": "Index-sized source weight; shared shell weight not re-measured.",
+    "best": "Study order matches the dependency between chapters, so a reader can follow it linearly."
    }
   },
   "20-backend/20.12-ai-engineering/20.12.01-llm-app-architecture.md": {
-   "sha256": "d315095ae1f3794d724ac7668a8eff525e7dbc6ea86165b71b2e23ca51103be6",
+   "sha256": "27b504016638718cc4cdc8c5b6f1a0be3eb54627c29338cf6317b85729d92a68",
    "lines": 213,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: LLM App Architecture.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "1753 words over 214 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: LLM App Architecture. No second competing treatment was visible.",
-    "fast": "Source 13.9 KB over 214 lines with 25 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Teaching chapter; the manual scan found a specific title, mechanism-led section sequence and a Summary that names the boundary."
+    "current": "Model and API naming stays capability-based; no pinned model release or price table.",
+    "readable": "Axiom numbering was fixed in this pass so the derivation reads 1, 2, 3 in order rather than skipping.",
+    "concise": "Each axiom earns its space by changing a design decision; no axiom restates the previous one.",
+    "focused": "Defers prompt and eval detail to the later chapters, citing them instead of duplicating.",
+    "fast": "Chapter-length source weight; page weight not re-measured in this pass.",
+    "best": "Gives an architecture a reader can defend in review: retrieval, streaming and structured output boundaries named separately."
    }
   },
   "20-backend/20.12-ai-engineering/20.12.02-prompts-context-evals.md": {
@@ -3233,33 +3233,33 @@
    }
   },
   "20-backend/20.12-ai-engineering/20.12.04-agent-orchestration-patterns.md": {
-   "sha256": "d003cd4d18d426a5394b768975faf2ffcfce8cbae9a7bde7061419cbc3ea1a75",
+   "sha256": "35487a89390e1363d517a7b0eb04e1b271b80dfebcdefaf72ee7e5b09c32a6b7",
    "lines": 388,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Agent Orchestration Patterns.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "3791 words over 389 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Agent Orchestration Patterns. No second competing treatment was visible.",
-    "fast": "Source 30.2 KB over 389 lines with 29 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Teaching chapter; the manual scan found a specific title, mechanism-led section sequence and a Summary that names the boundary."
+    "current": "Orchestration description is framework-neutral; no pinned agent SDK version is claimed.",
+    "readable": "Renamed labels from axiom to constraint this pass so the section term matches how the body uses it.",
+    "concise": "Each pattern gets one paragraph of mechanism plus its failure mode; no pattern is re-described later.",
+    "focused": "Points to the LLM architecture chapter for the serving boundary instead of restating it.",
+    "fast": "Chapter-length source weight; page weight not re-measured.",
+    "best": "Separates orchestration from model behaviour, which is the distinction a reviewer will probe."
    }
   },
   "20-backend/20.12-ai-engineering/20.12.05-serving-models-hosted-vs-self-hosted.md": {
-   "sha256": "742fae763095594b75c532d99e925fc4abe03bb199d904a3bb8456b28f6d69f9",
+   "sha256": "4d6ca37d091698835c2635a0c4d71b94667707171e6ffd76e44fb8784698acdd",
    "lines": 365,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Serving Models \u2014 Hosted APIs vs Self-Hosted.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "3330 words over 366 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Serving Models \u2014 Hosted APIs vs Self-Hosted. No second competing treatment was visible.",
-    "fast": "Source 25.8 KB over 366 lines with 34 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Teaching chapter; the manual scan found a specific title, mechanism-led section sequence and a Summary that names the boundary."
+    "current": "Sizing math is stated per-request and per-model rather than as a vendor claim, so it survives price changes.",
+    "readable": "Trace runs model weights to KV cache to concurrent requests; the arithmetic supports each step.",
+    "concise": "Checked the arithmetic: 130.4 GiB of weights, 2.5 GiB per request, 82 GiB for the batch all reconcile.",
+    "focused": "Keeps hosting economics here and leaves prompt design to the sibling chapters.",
+    "fast": "Chapter-length source weight; page weight not re-measured in this pass.",
+    "best": "Gives the reader a calculation to run on their own hardware instead of a hosted-versus-local verdict."
    }
   },
   "20-backend/20.12-ai-engineering/20.12.06-safety-cost-governance.md": {
@@ -4178,18 +4178,18 @@
    }
   },
   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.07-transactional-email-and-notifications.md": {
-   "sha256": "e5a24d0499939239d756b17e5c2feee1b096c056be1de8e95b6218c80939914e",
+   "sha256": "2a958fbb17019802e40ca7d1b71cd52975d287fcc1e3778c508733d2460b0baf",
    "lines": 141,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Transactional Email & Notification Delivery.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "1514 words over 142 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Transactional Email & Notification Delivery. No second competing treatment was visible.",
-    "fast": "Source 12.4 KB over 142 lines with 33 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Teaching chapter; the manual scan found a specific title, mechanism-led section sequence and a Summary that names the boundary."
+    "current": "Provider naming stays capability-based; no pinned SDK or template API that would age.",
+    "readable": "Intro fragment was rewritten this pass to a full sentence tracing a business event to a delivered notification.",
+    "concise": "One section per stage of the pipeline; no stage is explained twice.",
+    "focused": "Leaves queue delivery guarantees to the brokers chapters, citing them for retry semantics.",
+    "fast": "Chapter-length source weight; page weight not re-measured.",
+    "best": "Keeps the honest boundary: sending is not delivery, and the chapter shows where each guarantee stops."
    }
   },
   "20-backend/20.3-rest-apis/03-payloads-errors-integration/INDEX.md": {
@@ -4238,18 +4238,18 @@
    }
   },
   "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.02-api-gateway.md": {
-   "sha256": "a293ad290c94cc00fed0ba7d1adc1f722f0e74bb303c45601b50b08d3b188899",
+   "sha256": "abbfa788399a6a87fc589efb210781fc97cc2778a5bf101faef849379ad98245",
    "lines": 156,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: API Gateway Pattern.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "1334 words over 157 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: API Gateway Pattern. No second competing treatment was visible.",
-    "fast": "Source 11.4 KB over 157 lines with 30 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Teaching chapter; the manual scan found a specific title, mechanism-led section sequence and a Summary that names the boundary."
+    "current": "Gateway responsibilities described without pinning a product version.",
+    "readable": "Read end to end; one spacing defect (returned500) was repaired this pass so the sentence parses.",
+    "concise": "Each responsibility gets one paragraph; the failure section does not repeat the routing section.",
+    "focused": "Cites the auth and rate-limiting chapters rather than re-deriving their mechanics.",
+    "fast": "Chapter-length source weight; page weight not re-measured.",
+    "best": "Frames the gateway as a trust and aggregation boundary, which is what an interview answer needs."
    }
   },
   "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.03-bff.md": {
@@ -4463,18 +4463,18 @@
    }
   },
   "20-backend/20.4-database/01-postgresql-foundations/REVISION.md": {
-   "sha256": "4aa7364568f1ac9bc8f6d4d696f933d1378d57e8d8b10f3b5677f765268c24f0",
+   "sha256": "c227bd8b69c203309ece35d984c436daba45748ddbebb9123a6faa1114c638fa",
    "lines": 195,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Database \u2014 Postgresql Foundations Revision.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "1971 words over 196 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Database \u2014 Postgresql Foundations Revision. No second competing treatment was visible.",
-    "fast": "Source 13.8 KB over 196 lines with 19 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Retrieval companion; the manual scan found the prompts organized under the chapter titles with a clear closing Summary."
+    "current": "PostgreSQL behaviour is described by mechanism; no version-gated feature is asserted without naming it.",
+    "readable": "Question groups follow the chapter order: storage, MVCC, indexes, transactions.",
+    "concise": "Short prompts with short answers; no answer restates the question's premise.",
+    "focused": "Points at the canonical chapters for query plans and locking rather than re-teaching them.",
+    "fast": "Revision-sized source weight; page weight not re-measured.",
+    "best": "Works as retrieval practice because each answer names the failure the mechanism prevents."
    }
   },
   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md": {
@@ -4568,18 +4568,18 @@
    }
   },
   "20-backend/20.4-database/02-querying-and-optimization/REVISION.md": {
-   "sha256": "a037dbc3fbd8ec8c27ee4a65ce205cab23add0bee156b65c7cb2559af2c0b7ed",
+   "sha256": "3e811227670cda42b616c95d87adce32e3a10b09d2299710df96f8d0c79a8152",
    "lines": 171,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Normalized the revision title from \u201cAnd\u201d to the repository\u2019s \u201c&\u201d section style. Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Database \u2014 Querying & Optimization Revision.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "1678 words over 172 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Database \u2014 Querying & Optimization Revision. No second competing treatment was visible.",
-    "fast": "Source 11.7 KB over 172 lines with 19 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Manual scan identified a concrete title/claim defect and corrected it; the current title, outline and Summary are coherent."
+    "current": "Planner and index claims stay mechanism-based; no cost constants quoted as fact.",
+    "readable": "A missing space between 180 and 260 was fixed this pass, so the sentence reads as two numbers.",
+    "concise": "One prompt per mechanism; the answer stops when the mechanism is explained.",
+    "focused": "Defers schema and transaction detail to the foundations revision companion.",
+    "fast": "Revision-sized source weight; page weight not re-measured.",
+    "best": "Trains the reader to read a plan rather than memorize an index rule."
    }
   },
   "20-backend/20.4-database/03-transactions-and-replication/20.4.3.01-transactions.md": {
@@ -4868,18 +4868,18 @@
    }
   },
   "20-backend/20.4-database/INDEX.md": {
-   "sha256": "b323f61c1e4ac365944ff84f6fa43b401d8981027d6573119a3a68705c402ea5",
+   "sha256": "c7b18da34f770636657b5d95b959072d0f3025c45b480479d7ed651ff1edbcef",
    "lines": 171,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Database \u2014 Index.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "1595 words over 172 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Database \u2014 Index. No second competing treatment was visible.",
-    "fast": "Source 13.3 KB over 172 lines with 53 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Navigation map for its section; the manual scan found a clear title, ordered categories and a Summary that states the route."
+    "current": "Engine and ORM descriptions avoid pinned versions; nothing here asserts a release-specific default.",
+    "readable": "Read end to end; sub-stack counts reconcile as 6 + 5 + 4 + 3 + 6 chapters, 29 files with revisions.",
+    "concise": "One line per row, with the reading flow adding order rather than repeating the rows.",
+    "focused": "Navigation only; pooling and replication detail stays in the chapters.",
+    "fast": "Index-sized source weight; shared shell weight not re-measured.",
+    "best": "Makes the database path legible: foundations, querying, modeling, operations, interview prep."
    }
   },
   "20-backend/20.5-security/01-auth/20.5.1.01-auth-fundamentals.md": {
@@ -5048,18 +5048,18 @@
    }
   },
   "20-backend/20.5-security/01-auth/INDEX.md": {
-   "sha256": "79865f57c66113ee85300808691ab65add7b3cc15a126a42e7e21a96cf45f85d",
+   "sha256": "caed9f07a24eeea31b88fc9daabb6753005bb0a731872aaa43099ad981610a43",
    "lines": 67,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Auth - Security.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "867 words over 68 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Auth - Security. No second competing treatment was visible.",
-    "fast": "Source 6.7 KB over 68 lines with 21 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Navigation map for its section; the manual scan found a clear title, ordered categories and a Summary that states the route."
+    "current": "Auth mechanisms are described by contract; passkeys and SAML are named without pinning a spec revision.",
+    "readable": "Read end to end: fundamentals, sessions, JWT, OAuth, RBAC, ABAC; 12 chapters as stated.",
+    "concise": "Each row is one sentence; the intro does not preview every chapter again.",
+    "focused": "Leaves token storage to the attacks chapters and cites them instead of repeating.",
+    "fast": "Index-sized source weight; shared shell weight not re-measured.",
+    "best": "Order builds from credential handling to authorization models, which is the sequence an interviewer probes."
    }
   },
   "20-backend/20.5-security/01-auth/REVISION.md": {
@@ -5303,18 +5303,18 @@
    }
   },
   "20-backend/20.5-security/INDEX.md": {
-   "sha256": "9216e713c2fe9b66e3ad788af947cfc5aaeacf17d72c2f6ab61567aad7ef85ec",
+   "sha256": "09229bc3e8b016f5c24799d517fc5758cfcaf459a2258081214c6bdf0fb5c490",
    "lines": 164,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Security \u2014 Index.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "1539 words over 165 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Security \u2014 Index. No second competing treatment was visible.",
-    "fast": "Source 13.1 KB over 165 lines with 47 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Navigation map for its section; the manual scan found a clear title, ordered categories and a Summary that states the route."
+    "current": "Security chapter descriptions name stable standards; no pinned library version is claimed.",
+    "readable": "Read end to end; the count of 24 files reconciles as 21 chapters plus 3 revision companions.",
+    "concise": "Reading time restamped to 3 h 36 m and the encryption chapter to 7 min this pass, so the badge matches the body.",
+    "focused": "Delegates auth depth to the auth sub-stack instead of duplicating its chapters.",
+    "fast": "Index-sized source weight; page weight under the shared shell not re-measured.",
+    "best": "Separates attacks from hardening, so a reader can pick the half their role needs."
    }
   },
   "20-backend/20.6-microservices/01-service-topology/20.6.1.01-service-discovery.md": {
@@ -5423,33 +5423,33 @@
    }
   },
   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.02-grpc-streaming.md": {
-   "sha256": "5aa47d38e35e192d8863cde0d60301d7b6126fdcd542fc3b0dc9a01545ba9e96",
+   "sha256": "fe04c8883bfa62977e3c67c7b3031e43883210ad3255bf1d0f65eeea4d68fbaf",
    "lines": 128,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: gRPC Streaming.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "990 words over 129 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: gRPC Streaming. No second competing treatment was visible.",
-    "fast": "Source 8.0 KB over 129 lines with 22 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Teaching chapter; the manual scan found a specific title, mechanism-led section sequence and a Summary that names the boundary."
+    "current": "gRPC streaming modes are described by semantics; no protobuf release is pinned.",
+    "readable": "Read end to end: unary, server, client and bidirectional streaming each get a concrete failure.",
+    "concise": "One section per mode; the comparison table replaces a second prose pass over the same modes.",
+    "focused": "Cites the API gateway chapter for edge translation rather than re-teaching it.",
+    "fast": "Chapter-length source weight; page weight not re-measured.",
+    "best": "Explains when streaming buys nothing, which is the part a senior answer needs."
    }
   },
   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.03-kafka.md": {
-   "sha256": "9aeac1e1e73aba4a4e6798ce00d7fe16b8e0dfc785235d7b5e5da5ea7cfa7df0",
+   "sha256": "6fc0147dc820304cf5d8bc60281b89b265e5848f88bcbe1319796f28d1b6f50a",
    "lines": 130,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Apache Kafka.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "1252 words over 131 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Apache Kafka. No second competing treatment was visible.",
-    "fast": "Source 10.6 KB over 131 lines with 25 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Teaching chapter; the manual scan found a specific title, mechanism-led section sequence and a Summary that names the boundary."
+    "current": "Partition, offset and ISR behaviour is described by mechanism rather than a pinned broker release.",
+    "readable": "Read end to end: log model, partitions, consumer groups, delivery guarantees, operations.",
+    "concise": "No section restates the log model after introducing it; each later section refers back.",
+    "focused": "Hands broker comparison to the message-brokers chapter and links projects/docita for the worked case.",
+    "fast": "Chapter-length source weight; page weight not re-measured.",
+    "best": "Keeps ordering and exactly-once claims honest by naming the boundary each one holds at."
    }
   },
   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.04-rabbitmq.md": {
@@ -5468,33 +5468,33 @@
    }
   },
   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md": {
-   "sha256": "67cab33072dd5bbf76ffdabc2485b4a0cbabe8abf7cc85336e6d010784c2b15b",
+   "sha256": "65885a23086410c8c493c4e39ec77eadc7556226113de9da7c291426e876d602",
    "lines": 147,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Message Brokers \u2014 Kafka vs RabbitMQ.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "1589 words over 148 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Message Brokers \u2014 Kafka vs RabbitMQ. No second competing treatment was visible.",
-    "fast": "Source 12.8 KB over 148 lines with 32 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Teaching chapter; the manual scan found a specific title, mechanism-led section sequence and a Summary that names the boundary."
+    "current": "Broker comparison avoids version-specific feature claims; naming stays capability-based.",
+    "readable": "Read end to end: queue versus log model, delivery semantics, acks, consumer groups, dead letters.",
+    "concise": "Comparison lives in a table so the prose does not repeat both columns.",
+    "focused": "The Docita project link was corrected in this pass (../../../projects/docita/INDEX.md) so it resolves.",
+    "fast": "Chapter-length source weight; page weight not re-measured.",
+    "best": "Teaches choosing a model, not a brand; the failure modes decide the choice."
    }
   },
   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.06-event-driven-architecture.md": {
-   "sha256": "2d0be900f452527c482854d935b786ea28780119cdea6f4e5293c6e995dd8028",
+   "sha256": "98aabd85291939d58699b1008e4de653d62f03688bc96f88f9c887fdf232c66f",
    "lines": 148,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Event-Driven Architecture.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "1382 words over 149 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Event-Driven Architecture. No second competing treatment was visible.",
-    "fast": "Source 10.8 KB over 149 lines with 23 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Teaching chapter; the manual scan found a specific title, mechanism-led section sequence and a Summary that names the boundary."
+    "current": "Eventing patterns described by contract; no pinned schema-registry or broker version.",
+    "readable": "Read end to end: events versus commands, outbox, idempotency, ordering, evolution.",
+    "concise": "Each pattern appears once, with the tradeoff attached rather than in a closing recap.",
+    "focused": "Same corrected Docita link as the brokers chapter; no duplicated outbox walkthrough.",
+    "fast": "Chapter-length source weight; page weight not re-measured.",
+    "best": "Frames eventing as a coupling decision, which is the tradeoff an interviewer tests."
    }
   },
   "20-backend/20.6-microservices/02-communication-and-messaging/INDEX.md": {
@@ -5723,33 +5723,33 @@
    }
   },
   "20-backend/20.6-microservices/05-interview-drills/INDEX.md": {
-   "sha256": "6547844ccc882712ff0a3948964876900a6754504da17bc80d4d67dfcdb88c9c",
+   "sha256": "f2e4e54e64f9b99791671e8ea7f4bc268c1c98d446de624c5d35cecdd3df9cfc",
    "lines": 39,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Interview Drills - Microservices.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "263 words over 40 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Interview Drills - Microservices. No second competing treatment was visible.",
-    "fast": "Source 2.1 KB over 40 lines with 8 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Navigation map for its section; the manual scan found a clear title, ordered categories and a Summary that states the route."
+    "current": "Drill descriptions name stable patterns; nothing pins a framework version.",
+    "readable": "Read end to end: drill banks listed in the order the chapters introduce the patterns.",
+    "concise": "Prompt count corrected to 35 additional quick prompts this pass, matching the bank on disk.",
+    "focused": "Index only, so mechanisms stay in the banks it links.",
+    "fast": "Index-sized source weight; shared shell weight not re-measured.",
+    "best": "Tells a reader which bank to open for which round, rather than listing files."
    }
   },
   "20-backend/20.6-microservices/INDEX.md": {
-   "sha256": "aaec4afa686d6c0ff6d25b77dcd426eaec6e00141a6d0042a122910ee74ffecd",
+   "sha256": "eeba37d381ca3741956ed2497e6c4dacae9c98a92808842ec2f0d6d7bb930624",
    "lines": 90,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Microservices & Distributed Patterns \u2014 Index.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "921 words over 91 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Microservices & Distributed Patterns \u2014 Index. No second competing treatment was visible.",
-    "fast": "Source 8.3 KB over 91 lines with 41 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Navigation map for its section; the manual scan found a clear title, ordered categories and a Summary that states the route."
+    "current": "Microservice pattern descriptions avoid product pinning; Kafka and RabbitMQ are named as models.",
+    "readable": "Read end to end; 23 files reconcile as 19 chapters plus 4 revision companions.",
+    "concise": "One line per row; the reading flow adds order only.",
+    "focused": "Delegates protocol depth to the communication sub-stack instead of summarizing it twice.",
+    "fast": "Index-sized source weight; page weight under the shared shell not re-measured.",
+    "best": "Study order moves from decomposition to communication to consistency, which matches how the failures compound."
    }
   },
   "20-backend/20.7-graphql/01-fundamentals/20.7.1.01-graphql-overview.md": {
@@ -6188,18 +6188,18 @@
    }
   },
   "20-backend/INDEX.md": {
-   "sha256": "1b120541d1a4a35244bd5ab7931c8c3ad91ff3d31d2655a932bd494ed8865841",
+   "sha256": "c19e9c0cc12fe2e9bfd6ec30c72e006d3f6bb3ba34cc7efc76911324f36f5abe",
    "lines": 122,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Backend Stack.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "931 words over 123 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Backend Stack. No second competing treatment was visible.",
-    "fast": "Source 7.0 KB over 123 lines with 29 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Navigation map for its section; the manual scan found a clear title, ordered categories and a Summary that states the route."
+    "current": "Stack descriptions name stable ecosystems; no pinned framework release is claimed.",
+    "readable": "Read end to end; the stated 181 files reconcile as 149 chapters plus 32 revision companions.",
+    "concise": "One line per sub-stack row, with the reading path adding sequencing rather than repeating descriptions.",
+    "focused": "Navigation only; every mechanism stays in the chapter that owns it.",
+    "fast": "Index-sized source weight; shared shell weight not re-measured.",
+    "best": "Makes the backend half of the bible navigable in study order, including the deferred Java stack."
    }
   },
   "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md": {
@@ -6383,18 +6383,18 @@
    }
   },
   "30-architecture/30.1-design-patterns/02-creational/REVISION.md": {
-   "sha256": "5ded632e3f3ff7f7d1d4bc77d0894efef6f6b7797637c4fbd346369c03bd1117",
+   "sha256": "9aed72a4bb489ca1cd1de23c1ae2089181bc5ba0973d932d209facb6a42057a6",
    "lines": 129,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Creational \u2014 Revision.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "1118 words over 130 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Creational \u2014 Revision. No second competing treatment was visible.",
-    "fast": "Source 8.2 KB over 130 lines with 19 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Retrieval companion; the manual scan found the prompts organized under the chapter titles with a clear closing Summary."
+    "current": "Pattern descriptions are language-neutral; no framework version is asserted.",
+    "readable": "Question order follows Singleton, Factory Method, Abstract Factory, Builder, Prototype.",
+    "concise": "One or two prompts per pattern; no prompt repeats the previous pattern's tradeoff.",
+    "focused": "Cites the canonical chapters for code instead of re-pasting implementations.",
+    "fast": "Revision-sized source weight; page weight not re-measured.",
+    "best": "Tests when each pattern is the wrong tool, which is the senior distinction."
    }
   },
   "30-architecture/30.1-design-patterns/03-structural/30.1.3.01-adapter.md": {
@@ -6983,18 +6983,18 @@
    }
   },
   "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.md": {
-   "sha256": "cd5afa2d722f9eda718eb2146ff145fcc5d2235ac7204adf072da6edb3c85c0c",
+   "sha256": "c5659796250346817d97780ab242781b04308b02a6f214a299c75ed2060320ae",
    "lines": 319,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Sharding & Replication.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "3282 words over 320 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Sharding & Replication. No second competing treatment was visible.",
-    "fast": "Source 23.3 KB over 320 lines with 31 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Teaching chapter; the manual scan found a specific title, mechanism-led section sequence and a Summary that names the boundary."
+    "current": "Replication and sharding behaviour is described by mechanism; no managed-service feature is pinned.",
+    "readable": "Read end to end: replication topologies, lag, failover, then shard keys, routing, rebalancing.",
+    "concise": "Each tradeoff appears once; the summary does not re-list the section headings.",
+    "focused": "Cites the consistency and consensus chapters rather than re-deriving quorum math.",
+    "fast": "Chapter-length source weight; page weight not re-measured.",
+    "best": "Keeps the two axes separate, which is the mistake most answers make."
    }
   },
   "30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.md": {
@@ -7538,18 +7538,18 @@
    }
   },
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.md": {
-   "sha256": "d86af1b9bb73c8e9e7bdd8ed22d529aa3133e8e8c3efd61e5528aa2528cff053",
+   "sha256": "6e828656843c7ab6e20f52e3ef2d7886a11a0e8d1f1f86dd809a1f7c242d8cbe",
    "lines": 185,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Chat System Design.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "2616 words over 186 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Chat System Design. No second competing treatment was visible.",
-    "fast": "Source 19.7 KB over 186 lines with 30 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Teaching chapter; the manual scan found a specific title, mechanism-led section sequence and a Summary that names the boundary."
+    "current": "Capacity numbers are derived per assumption (fans, sessions, storage) rather than quoted as vendor limits.",
+    "readable": "Trace runs requirements to fan-out to storage to delivery; each arithmetic step is visible.",
+    "concise": "Checked the arithmetic: 578,704 messages/s, 50 TB/day, 18.25 PB/year, 2.5 PB/day and 5,000 nodes reconcile.",
+    "focused": "Sends presence and fan-out detail to the realtime chapters instead of duplicating them.",
+    "fast": "Long case-study source weight justified by the worked capacity model; page weight not re-measured.",
+    "best": "Shows the arithmetic so a reader can defend a different answer with different assumptions."
    }
   },
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.md": {
@@ -7658,18 +7658,18 @@
    }
   },
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.23-typeahead-autocomplete.md": {
-   "sha256": "17ce505fad3bf4898e888f45e99ec3cec28a6ac780bbc6bbd83a6dd107365917",
+   "sha256": "c6811162952f17a2857ab61b63e3e9441a944208471eb0fec3537a36f7550e7e",
    "lines": 240,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Typeahead / Autocomplete System Design.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "2256 words over 241 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Typeahead / Autocomplete System Design. No second competing treatment was visible.",
-    "fast": "Source 17.6 KB over 241 lines with 22 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Teaching chapter; the manual scan found a specific title, mechanism-led section sequence and a Summary that names the boundary."
+    "current": "Index and trie descriptions stay mechanism-based; no search-engine release is pinned.",
+    "readable": "Trace runs query volume to prefix index to ranking to cache; numbers appear where they are used.",
+    "concise": "Recomputed 17,361 queries/s, 52,083 peak and 16.8 GB index; the scale claims hold.",
+    "focused": "Defers cache invalidation to the caching chapters, citing them once.",
+    "fast": "Case-study source weight; page weight not re-measured this pass.",
+    "best": "Ties each design choice to a latency or storage budget, which is what the interview rewards."
    }
   },
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.md": {
@@ -7793,18 +7793,18 @@
    }
   },
   "30-architecture/30.2-system-design/02-case-studies/INDEX.md": {
-   "sha256": "1918ca6ca1cb07eaa3555a2751c33bad9530e9d56c5002a853c864ea1fb89ed6",
+   "sha256": "eb70c71e83fc1f8d2618e4a3538163dbf2a1ea5c5fa371c2f4a6a3715a122ff4",
    "lines": 112,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: System Design \u2014 Case Studies.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "1654 words over 113 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: System Design \u2014 Case Studies. No second competing treatment was visible.",
-    "fast": "Source 13.4 KB over 113 lines with 49 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Navigation map for its section; the manual scan found a clear title, ordered categories and a Summary that states the route."
+    "current": "Case descriptions name the design problem; no product version is claimed.",
+    "readable": "Read end to end; 32 files reconcile as 31 case studies plus one revision companion.",
+    "concise": "One line per row; the reading order note does not re-describe the cases.",
+    "focused": "Index only; each mechanism stays in its case study.",
+    "fast": "Index-sized source weight; shared shell weight not re-measured.",
+    "best": "Groups cases so a reader can pick by the constraint they want to practise."
    }
   },
   "30-architecture/30.2-system-design/02-case-studies/REVISION.md": {
@@ -7823,18 +7823,18 @@
    }
   },
   "30-architecture/30.2-system-design/INDEX.md": {
-   "sha256": "3c5645e8358f63c6cb6545c7405b32ef452dbcf34090804c8e9dc96c81ab8cfa",
+   "sha256": "2674ce402d182418ebc7553d232cb93c089c2d1c917f1ce76acb69817be45482",
    "lines": 52,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: System Design \u2014 Index.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "434 words over 53 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: System Design \u2014 Index. No second competing treatment was visible.",
-    "fast": "Source 4.0 KB over 53 lines with 26 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Navigation map for its section; the manual scan found a clear title, ordered categories and a Summary that states the route."
+    "current": "Theory descriptions are standard-based; no managed-service feature is pinned.",
+    "readable": "Read end to end; 56 files reconcile as 21 theory chapters plus 31 case studies and companions.",
+    "concise": "Rows are single lines; the reading flow does not restate them.",
+    "focused": "Navigation only, so no theory mechanism is treated twice.",
+    "fast": "Index-sized source weight; shared shell weight not re-measured.",
+    "best": "Separates theory from cases so a reader can study one and test it on the other."
    }
   },
   "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.md": {
@@ -7853,18 +7853,18 @@
    }
   },
   "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/INDEX.md": {
-   "sha256": "8d627a630581c17848e3c0273bf56f4c4fd9698476dd344d374aff289cf083be",
+   "sha256": "796dda5028b96c8d230e5e2fa32881015169bc9a3856e5063379fade9ad63917",
    "lines": 55,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Liveness & Lifecycle.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "458 words over 56 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Liveness & Lifecycle. No second competing treatment was visible.",
-    "fast": "Source 3.6 KB over 56 lines with 13 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Navigation map for its section; the manual scan found a clear title, ordered categories and a Summary that states the route."
+    "current": "Probe semantics are described per controller; no Kubernetes minor version is asserted.",
+    "readable": "Read end to end: startup, readiness, liveness, then drain and shutdown ordering.",
+    "concise": "One line per chapter; the intro does not preview the shutdown chapter twice.",
+    "focused": "Defers orchestrator configuration to the Kubernetes stack, citing it once.",
+    "fast": "Index-sized source weight; shared shell weight not re-measured.",
+    "best": "Keeps the three probes distinct, which is the failure most production incidents trace to."
    }
   },
   "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/REVISION.md": {
@@ -7943,18 +7943,18 @@
    }
   },
   "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.05-backup-strategy-restore-drills.md": {
-   "sha256": "343c720a9150eebe51a59c96ea2547c418704808f399aad11b63e584056f5a42",
+   "sha256": "594495a7fbb21f93d0990b303f1838e3444f4e5092f86b4754aa4dc0dcd5d165",
    "lines": 154,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Backup Strategy & Restore Drills.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "1680 words over 155 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Backup Strategy & Restore Drills. No second competing treatment was visible.",
-    "fast": "Source 13.1 KB over 155 lines with 25 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Teaching chapter; the manual scan found a specific title, mechanism-led section sequence and a Summary that names the boundary."
+    "current": "Restore tooling is described by contract; no vendor backup feature is pinned.",
+    "readable": "Trace runs a drill: select artifact, restore, verify, cut over; each step has a failure.",
+    "concise": "Recomputed the 39.7 MB/s restore rate against the stated dataset and window; it holds.",
+    "focused": "Cites idempotency and deployment chapters for cutover safety rather than repeating them.",
+    "fast": "Chapter-length source weight; page weight not re-measured.",
+    "best": "Distinguishes a backup existing from a restore being proven, which is the point of the chapter."
    }
   },
   "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.06-idempotency-retry-deep-dive.md": {
@@ -8018,18 +8018,18 @@
    }
   },
   "30-architecture/30.3-infra-patterns/03-coordination/INDEX.md": {
-   "sha256": "70b6e3d01014149f228d98a3846ca78f11a36e5a77b860097cd5292d58d22361",
+   "sha256": "8f9fa6d1f3d48fc612102200b4a766d66e07e5f9fb3c080e3fa3857dfa4a541f",
    "lines": 56,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Coordination.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "467 words over 57 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Coordination. No second competing treatment was visible.",
-    "fast": "Source 3.9 KB over 57 lines with 15 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Navigation map for its section; the manual scan found a clear title, ordered categories and a Summary that states the route."
+    "current": "Consensus descriptions name mechanisms; no etcd or Raft implementation version is pinned.",
+    "readable": "Read end to end: leader election, leases, fencing, distributed locks, idempotency.",
+    "concise": "One line per chapter, with no repeated split-brain explanation in the intro.",
+    "focused": "Leaves retry semantics to the failure-and-recovery sub-stack, linking instead.",
+    "fast": "Index-sized source weight; shared shell weight not re-measured.",
+    "best": "Orders the chapters from election to fencing, which is the order the guarantees compose in."
    }
   },
   "30-architecture/30.3-infra-patterns/03-coordination/REVISION.md": {
@@ -8123,18 +8123,18 @@
    }
   },
   "30-architecture/30.3-infra-patterns/04-data-at-scale/REVISION.md": {
-   "sha256": "9e0069fdb3f526ed91713e1f416bd3d3b7837c6cfb684412aafe7f67071e71aa",
+   "sha256": "798b6b8641f7f661f9db5d49fc3143dbf1529383ad7651100846e1fa0c7c7f86",
    "lines": 113,
    "genre": "revision",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "No version-sensitive claims; H1 title normalization validated",
-    "readable": "Read end-to-end: H1 title 'Data at Scale' revised from 'at' to '&' pattern",
-    "concise": "H1 title revised to replace 'at' with '&'; within revision genre budget",
-    "focused": "Single H1 title revision; no second treatment of same mechanism",
-    "fast": "Light touch: only H1 title changed, no structural modifications",
-    "best": "Revision H1 title follows corpus convention: 'at' replaced with ampersand"
+    "current": "Partitioning and compaction claims are mechanism-based; no storage engine version asserted.",
+    "readable": "Question groups follow the sub-stack: partitioning, retention, compaction, archival.",
+    "concise": "Short prompts; answers stop at the mechanism rather than adding a recap.",
+    "focused": "Points at the case studies for worked numbers instead of re-deriving them.",
+    "fast": "Revision-sized source weight; page weight not re-measured.",
+    "best": "Trains the tradeoff between retention cost and query reach, which the chapters argue for."
    }
   },
   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.md": {
@@ -8228,18 +8228,18 @@
    }
   },
   "30-architecture/30.3-infra-patterns/06-interview-prep/30.3.6.01-interview-questions.md": {
-   "sha256": "0940ae0acb8c6614549ec1dac4cb78ada1288f88719d860ca0745a072a880a6e",
+   "sha256": "00ce2748fc220f834d9b2f34248f36b07ad1d7281cd99deac9a56711e602be4a",
    "lines": 166,
    "genre": "interview",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Removed the file ID from the H1; the human title is now the sole page title. Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Infra & Ops Patterns Interview Questions.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "2403 words over 167 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Infra & Ops Patterns Interview Questions. No second competing treatment was visible.",
-    "fast": "Source 18.1 KB over 167 lines with 24 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Manual scan identified a concrete title/claim defect and corrected it; the current title, outline and Summary are coherent."
+    "current": "Answers stay on stable platform contracts; no product release is pinned as a requirement.",
+    "readable": "Read end to end; Q1 to Q25 run beginner, intermediate, advanced, scenario, degradation.",
+    "concise": "Each answer is one paragraph plus its failure mode; the summary compresses rather than repeats.",
+    "focused": "Every prompt has a home chapter, and the See Also block says why each is relevant.",
+    "fast": "Bank-sized source weight; page weight not re-measured.",
+    "best": "Arithmetic holds (50 pods x 20 connections = 1000 against a tuned database), so the pool answer teaches fleet sizing."
    }
   },
   "30-architecture/30.3-infra-patterns/06-interview-prep/INDEX.md": {
@@ -8273,18 +8273,18 @@
    }
   },
   "30-architecture/INDEX.md": {
-   "sha256": "334741ac154ec12b3137df1f5437ea366e790bff6906b177e8c95a99126043ae",
+   "sha256": "9021b5ea2be90d0d561582ab686242cc2de946965f5fdf7045c75ee16ae3138e",
    "lines": 66,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Architecture Stack.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "580 words over 67 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Architecture Stack. No second competing treatment was visible.",
-    "fast": "Source 5.4 KB over 67 lines with 22 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Navigation map for its section; the manual scan found a clear title, ordered categories and a Summary that states the route."
+    "current": "Sub-stack descriptions name stable concepts; no library version is claimed.",
+    "readable": "Read end to end: design patterns, system design theory and cases, infrastructure patterns.",
+    "concise": "One line per row; the reading path adds sequence without restating descriptions.",
+    "focused": "Navigation only; each pattern keeps its canonical chapter.",
+    "fast": "Index-sized source weight; shared shell weight not re-measured.",
+    "best": "Shows the progression from pattern vocabulary to system design, which is how the stacks depend on each other."
    }
   },
   "40-platform/40.1-docker/40.1.01-images-containers.md": {
@@ -8423,18 +8423,18 @@
    }
   },
   "40-platform/40.1-docker/40.1.10-interview-questions.md": {
-   "sha256": "a91d06602acd7b8fd0276e21853569b458ff78a17651bf210903b22ac844ea7c",
+   "sha256": "e5e075b0edc7aed9a96ddcfb876b0380a6ad826c9bb931ec884b8ba683749dd1",
    "lines": 233,
    "genre": "interview",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Docker Interview Questions.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "2564 words over 234 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Docker Interview Questions. No second competing treatment was visible.",
-    "fast": "Source 18.6 KB over 234 lines with 25 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Interview bank; the manual scan found a human title, ordered practice sections and a Summary that states the answer standard."
+    "current": "Docker behaviour is described per engine contract; no daemon version is pinned as a requirement.",
+    "readable": "Read end to end; the bank states 30 questions and the headings run Question 1 through Question 30.",
+    "concise": "Each answer closes on its failure boundary instead of restating the command syntax.",
+    "focused": "Points to the multi-stage and production chapters for recipes rather than pasting a second Dockerfile.",
+    "fast": "Bank-sized source weight; page weight not re-measured.",
+    "best": "Answers name the mechanism (cgroups, namespaces, BuildKit cache mounts) rather than a memorized directive list."
    }
   },
   "40-platform/40.1-docker/INDEX.md": {
@@ -8573,18 +8573,18 @@
    }
   },
   "40-platform/40.11-reverse-proxy/40.11.02-interview-questions.md": {
-   "sha256": "ed499b11b02abefde3f45576a57cca2441e9bcefbf0a43b282dd6f7f5d6eb3a5",
+   "sha256": "e4259bd42060c71edfd0cb1f5c073a83e49c98b1593759d1839dbca417061cae",
    "lines": 165,
    "genre": "interview",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: 40.11.02 \u2014 Nginx Reverse Proxy Interview Questions.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "2191 words over 166 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: 40.11.02 \u2014 Nginx Reverse Proxy Interview Questions. No second competing treatment was visible.",
-    "fast": "Source 15.9 KB over 166 lines with 25 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Interview bank; the manual scan found a human title, ordered practice sections and a Summary that states the answer standard."
+    "current": "NGINX behaviour is version-scoped where it changed: proxy_http_version default and upstream keepalive from 1.29.7 are named with the version.",
+    "readable": "Read end to end: beginner, intermediate, advanced, scenario, edge responsibilities.",
+    "concise": "Each answer is one paragraph; the summary compresses the five senior tells without re-answering.",
+    "focused": "Cites the internals chapter for the event loop instead of re-deriving it.",
+    "fast": "Bank-sized source weight; page weight not re-measured.",
+    "best": "Reload semantics answer is correct (SIGHUP, drain, shared sockets) and -t is scoped to syntax, not semantics."
    }
   },
   "40-platform/40.11-reverse-proxy/INDEX.md": {
@@ -8858,18 +8858,18 @@
    }
   },
   "40-platform/40.2-kubernetes/03-scaling/40.2.3.02-node-autoscaling-cluster-capacity.md": {
-   "sha256": "85b8a54f7028956dcde956cdac03b96d0514ad4ff1216b168e1eab0faba2e615",
+   "sha256": "c5759a6a7cc98b26c52b2518b498bc0fa12feb1c507fcb22d0211273187084d1",
    "lines": 172,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Node Autoscaling & Cluster Capacity (Cluster Autoscaler, Karpenter).",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "1646 words over 173 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Node Autoscaling & Cluster Capacity (Cluster Autoscaler, Karpenter). No second competing treatment was visible.",
-    "fast": "Source 13.0 KB over 173 lines with 29 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Teaching chapter; the manual scan found a specific title, mechanism-led section sequence and a Summary that names the boundary."
+    "current": "Karpenter v1 API shape and the v1.15 NodePool contract are named; provider behaviour is scoped to the AWS provider.",
+    "readable": "Trace follows HPA to Pod to scheduler to autoscaler to node to readiness, one asynchronous loop per step.",
+    "concise": "The CA versus Karpenter comparison lives in a table so the prose does not argue both twice.",
+    "focused": "Cites the HPA and PDB chapters rather than re-teaching pod scaling or disruption budgets.",
+    "fast": "Chapter-length source weight; page weight not re-measured.",
+    "best": "Diagnoses the scheduler's actual constraint first, which is the step most autoscaling answers skip."
    }
   },
   "40-platform/40.2-kubernetes/03-scaling/INDEX.md": {
@@ -9758,18 +9758,18 @@
    }
   },
   "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md": {
-   "sha256": "5ae0b75e58b71ea4a049875161c20ad5af46a47c869da1486bbd6f36d3954a0e",
+   "sha256": "30c10014d44906514a62719f99d456c64ddf8e2e83c18b3501394249a407298c",
    "lines": 113,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Rspack.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "936 words over 114 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Rspack. No second competing treatment was visible.",
-    "fast": "Source 7.4 KB over 114 lines with 27 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Teaching chapter; the manual scan found a specific title, mechanism-led section sequence and a Summary that names the boundary."
+    "current": "Targets Rspack 2.2 checked 14 October 2026 and states the Node range ^20.19.0 or >=22.12.0 for @rspack/core@2.",
+    "readable": "Trace follows one module from entry through the SWC loader to emitted output, with a runnable fixture.",
+    "concise": "Section 3 keeps incremental and persistent cache distinct instead of repeating both in the migration section.",
+    "focused": "Cites the Webpack and Turbopack chapters for comparison rather than re-describing their models.",
+    "fast": "Chapter-length source weight; page weight not re-measured in this pass.",
+    "best": "Treats compatibility as something to prove against the real plugin inventory, which is the migration risk."
    }
   },
   "40-platform/40.5-build-tools/01-bundlers/INDEX.md": {
@@ -9938,18 +9938,18 @@
    }
   },
   "40-platform/40.5-build-tools/04-interview-prep/40.5.4.01-interview-questions.md": {
-   "sha256": "a7ba258d183644226bf4ce4fa308303e0987f4c0cac92e0aaa31b6339975881b",
+   "sha256": "825c1b427eda5593323813aa4a0108e91b0e5d03678130eddbb93d3893d1ad8c",
    "lines": 302,
    "genre": "interview",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Build Tools Interview Questions.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "3338 words over 303 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Build Tools Interview Questions. No second competing treatment was visible.",
-    "fast": "Source 26.7 KB over 303 lines with 65 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Interview bank; the manual scan found a human title, ordered practice sections and a Summary that states the answer standard."
+    "current": "Vite 8 Rolldown and Oxc defaults are scoped to the major, and experimental status is named rather than assumed.",
+    "readable": "Read end to end; the bank states 44 prompts and the headings run 1 through 44 in order.",
+    "concise": "Answers stop at the mechanism plus its evidence boundary; no answer repeats the previous one.",
+    "focused": "Each prompt links to the chapter that owns the example, including anchor-level links for newer prompts.",
+    "fast": "Bank-sized source weight; page weight not re-measured.",
+    "best": "Asks for measured equivalence before a tool change, which is the senior framing these questions test."
    }
   },
   "40-platform/40.5-build-tools/04-interview-prep/INDEX.md": {
@@ -10178,18 +10178,18 @@
    }
   },
   "40-platform/40.7-serverless-edge/40.7.02-aws-lambda.md": {
-   "sha256": "67b32927bd946d5a56822299e3200bc5644f6efd3953505096ff514d4022249f",
+   "sha256": "887b121fff40f7323dffa151e32000c058a3f0ba7b8071afd8c4a4bdcdfdc4e6",
    "lines": 147,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: AWS Lambda.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "1943 words over 148 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: AWS Lambda. No second competing treatment was visible.",
-    "fast": "Source 15.6 KB over 148 lines with 37 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Teaching chapter; the manual scan found a specific title, mechanism-led section sequence and a Summary that names the boundary."
+    "current": "Durable Functions and Managed Instances limits are dated and scoped (15-minute standard, 90-minute on Managed Instances), with SnapStart runtime support as verified 2026-10-14.",
+    "readable": "Trace follows default-mode environment lifecycle first, then compute modes, then the HTTP handler, then retries.",
+    "concise": "Each section owns one boundary (lifecycle, compute, handler, concurrency, retry, startup, deploy, observe).",
+    "focused": "Cites the durable-execution and serverless-patterns chapters instead of re-teaching workflows.",
+    "fast": "Chapter-length source weight; page weight not re-measured.",
+    "best": "Corrects the shared-pool misconception with the per-environment client answer, which is the claim most Lambda chapters get wrong."
    }
   },
   "40-platform/40.7-serverless-edge/40.7.03-vercel-deployments.md": {
@@ -10808,18 +10808,18 @@
    }
   },
   "50-quality/50.1-testing/04-mocking-and-patterns/INDEX.md": {
-   "sha256": "b520c933c764469e8b359c89f68d1e2caa8aea71ddd7c7338760fdf1b9722c21",
+   "sha256": "18cbd108576f3359e6b75dcde2bf360fdeda85d223d4293730990e13743f4942",
    "lines": 59,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Mocking & Test Patterns.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "473 words over 60 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Mocking & Test Patterns. No second competing treatment was visible.",
-    "fast": "Source 3.8 KB over 60 lines with 19 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Navigation map for its section; the manual scan found a clear title, ordered categories and a Summary that states the route."
+    "current": "Tool descriptions name current APIs (Testing Library, MSW) without pinning a minor version.",
+    "readable": "Read end to end: mocking, test patterns, then the revision companion in study order.",
+    "concise": "One line per chapter; the intro does not preview both chapters in full.",
+    "focused": "Navigation only, so no mocking mechanism is re-explained here.",
+    "fast": "Index-sized source weight; shared shell weight not re-measured.",
+    "best": "Points to the chapter that owns each boundary question, which is what a reader needs at this depth."
    }
   },
   "50-quality/50.1-testing/04-mocking-and-patterns/REVISION.md": {
@@ -10898,18 +10898,18 @@
    }
   },
   "50-quality/50.1-testing/06-interview-prep/50.1.6.01-interview-questions.md": {
-   "sha256": "ba60a44dac030ef79ae25942fdf6f2d4a6e412aadb49f342d6e3a94e81821ae7",
+   "sha256": "9a413c6fd71399b95eedbffb210983e465d6680c8f99f6adcba00b5334edcd64",
    "lines": 295,
    "genre": "interview",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Testing Interview Questions.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "4279 words over 296 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Testing Interview Questions. No second competing treatment was visible.",
-    "fast": "Source 30.7 KB over 296 lines with 28 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Interview bank; the manual scan found a human title, ordered practice sections and a Summary that states the answer standard."
+    "current": "Tool comparisons (Jest versus Vitest, Playwright retries, Stryker states) are linked to primary docs rather than asserted as versions.",
+    "readable": "Read end to end; the bank states 40 questions and the numbering runs 1 through 40 across five sections.",
+    "concise": "Each answer names a boundary and a failure limit; the summary compresses without re-answering.",
+    "focused": "Every prompt links its owning chapter, so mechanisms are not re-taught by the bank.",
+    "fast": "Bank-sized source weight; page weight not re-measured.",
+    "best": "Answers state what a passing check cannot establish, which is the distinction senior interviewers probe."
    }
   },
   "50-quality/50.1-testing/06-interview-prep/INDEX.md": {
@@ -10943,18 +10943,18 @@
    }
   },
   "50-quality/50.2-accessibility/50.2.01-wcag-overview.md": {
-   "sha256": "42985403f456cebcae969ca7c47ec2ecc7d8bb534adde885786dee90bbf040a3",
+   "sha256": "b76e19060f5f6bd121f6e4e42886ee687fd7dc03b883a9402a0afbdb6692d811",
    "lines": 81,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: WCAG Overview.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "868 words over 82 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: WCAG Overview. No second competing treatment was visible.",
-    "fast": "Source 6.8 KB over 82 lines with 26 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Teaching chapter; the manual scan found a specific title, mechanism-led section sequence and a Summary that names the boundary."
+    "current": "Pins WCAG 2.2 as the current recommendation and names the removed Parsing criterion 4.1.1 instead of treating it as live.",
+    "readable": "Opens on a colour-only error, then applies POUR to that one booking form throughout.",
+    "concise": "Four sections, each answering one question about the same example; no section re-lists the principles.",
+    "focused": "Hands the working implementation to the forms chapter and cites it rather than duplicating markup.",
+    "fast": "Short concept chapter; page weight not re-measured in this pass.",
+    "best": "Explains conformance as cumulative levels over full processes, which is the claim most audits get wrong."
    }
   },
   "50-quality/50.2-accessibility/50.2.02-aria.md": {
@@ -11918,18 +11918,18 @@
    }
   },
   "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.02-two-pointers.md": {
-   "sha256": "80a00f401d9241637882d56ea1173cfc00630acd9cc003540fa371b7d0d4bd6e",
-   "lines": 251,
+   "sha256": "f9a6dc35ec7fb3b829bb040151f16a12028b1c1d12569ed06b4952f20afee75f",
+   "lines": 253,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Two Pointers.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "1449 words over 252 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Two Pointers. No second competing treatment was visible.",
-    "fast": "Source 10.3 KB over 252 lines with 25 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Teaching chapter; the manual scan found a specific title, mechanism-led section sequence and a Summary that names the boundary."
+    "current": "LeetCode numbering and the ASCII-alphanumeric palindrome contract are stated explicitly, so the examples are reproducible.",
+    "readable": "Trace runs one elimination table, then each template reuses it; the ordering proof precedes the code.",
+    "concise": "The elimination table replaces a prose re-walk of the same two steps.",
+    "focused": "Sends the Floyd implementation and its cycle-entry derivation to the linked-list chapter instead of repeating them.",
+    "fast": "Toolkit chapter weight; page weight not re-measured.",
+    "best": "States the invariant each pointer move preserves, which is the part that makes the O(n) claim defensible."
    }
   },
   "70-interview-toolkit/70.2-coding-patterns/01-linear-structures/70.2.1.03-binary-search.md": {
@@ -12083,18 +12083,18 @@
    }
   },
   "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids/70.2.2.04-topological-sort.md": {
-   "sha256": "ac22de07cbabc6863ec829044a79d3a9bf20c3020cea12fdf46c2d2c4f876370",
+   "sha256": "cdfac7d4fc413f39760f607282924442fb5bbc1e706998f3ae2b2ae60782f744",
    "lines": 359,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Topological Sort.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "1787 words over 360 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Topological Sort. No second competing treatment was visible.",
-    "fast": "Source 13.5 KB over 360 lines with 24 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Teaching chapter; the manual scan found a specific title, mechanism-led section sequence and a Summary that names the boundary."
+    "current": "Depends only on stable algorithm contracts; no library API is claimed.",
+    "readable": "Trace drains in-degree-zero nodes, then the DFS alternative with its finish-order reversal.",
+    "concise": "Each template appears once, with the cycle-detection consequence attached rather than recapped.",
+    "focused": "Points to the union-find and trie siblings; no second BFS tutorial here.",
+    "fast": "Longest of the coding-pattern chapters; page weight not re-measured.",
+    "best": "Checked the longestPath example: edges 0-1 (3), 0-2 (2), 1-3 (1), 2-3 (4), 1-4 (2) yield [0, 3, 2, 6, 5] as printed."
    }
   },
   "70-interview-toolkit/70.2-coding-patterns/02-graphs-trees-grids/70.2.2.05-trie.md": {
@@ -12293,18 +12293,18 @@
    }
   },
   "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.05-quick-select-reservoir-sampling.md": {
-   "sha256": "50ee6041ec1be17cae4738b3a7ac8950e9abe4618e86f4aedd0871d7ff6f386b",
+   "sha256": "b37eef187985a9bc05fadf45b80b79102f015a0ba90fc9fac69a2be7da3549a8",
    "lines": 312,
    "genre": "chapter",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Quick Select & Reservoir Sampling.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "2111 words over 313 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Quick Select & Reservoir Sampling. No second competing treatment was visible.",
-    "fast": "Source 15.0 KB over 313 lines with 27 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Teaching chapter; the manual scan found a specific title, mechanism-led section sequence and a Summary that names the boundary."
+    "current": "Randomness caveats are scoped to ECMAScript Math.random rather than claimed as an exact generator.",
+    "readable": "Trace runs a three-way partition by hand, then the reservoir proof per stream position.",
+    "concise": "The probability proof is shown once and referenced, not restated in the summary.",
+    "focused": "Distinguishes Fisher-Yates and heap-based top-k as separate operations instead of merging them.",
+    "fast": "Toolkit chapter weight; page weight not re-measured.",
+    "best": "Separates expected-linear from worst-case quadratic and uniform marginals from uniform subsets, which are the two claims candidates overstate."
    }
   },
   "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/INDEX.md": {
@@ -12353,18 +12353,18 @@
    }
   },
   "70-interview-toolkit/70.2-coding-patterns/05-math-and-number-theory/INDEX.md": {
-   "sha256": "114584695169ff966b6c3d64c26a085441ea7958cfdd52932557b7a4f2611412",
+   "sha256": "f2b541ec1e0898beae5b0c51d613e5610d818cbbc61f508c7b554564444abedb",
    "lines": 30,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Math & Number Theory.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "216 words over 31 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Math & Number Theory. No second competing treatment was visible.",
-    "fast": "Source 1.6 KB over 31 lines with 9 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Navigation map for its section; the manual scan found a clear title, ordered categories and a Summary that states the route."
+    "current": "Problem references are numbered by their own source (LeetCode) rather than by a versioned API.",
+    "readable": "Read end to end: chapter order runs number theory into the selection and sampling family.",
+    "concise": "One line per chapter; the intro does not preview the chapters again.",
+    "focused": "Navigation only; each pattern keeps its canonical chapter.",
+    "fast": "Index-sized source weight; shared shell weight not re-measured.",
+    "best": "Gives a reader the prerequisite order rather than an alphabetical list."
    }
   },
   "70-interview-toolkit/70.2-coding-patterns/05-math-and-number-theory/REVISION.md": {
@@ -13508,18 +13508,18 @@
    }
   },
   "INDEX.md": {
-   "sha256": "de1656153ab3f977f8f5b7f6c5e5c6b07f8c0a6786ac5723cfacbe3f72814386",
+   "sha256": "2516fe3e3c491eae6cfe2ac4cc8c465a3291b5f501e971b663e8bd5b59a1f1fe",
    "lines": 206,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Counts and stack claims re-checked with gate 1: 988 files, 158K lines, 680 study chapters, 40 interview banks. No versioned API claim.",
-    "readable": "Full read of 206 lines. Lane choice precedes stack tables, numbering explains study order, and the strategy block now lists all five learning chapters.",
-    "concise": "2,249 words across ten navigation tables. Each table answers one question: which lane, what order, which sub-stack, what depends on what.",
-    "focused": "Navigation only. Mechanism detail is delegated to stack indexes and the roadmap instead of being restated here.",
-    "fast": "Source 22.7 KB; rebuilt page 74.5 KB raw / 18.1 KB gzip on the shared shell, with no page-specific images.",
-    "best": "Genre: master index. A reader can choose a lane, see study order and reach any stack in one hop; folder browsing would lose the order and the lane split."
+    "current": "Last-updated stamp says November 2026; folder numbering and lane counts match the tree rather than a planned layout.",
+    "readable": "Read end to end: lane choice, study stacks, recommended path, cross-reference map, direct indexes.",
+    "concise": "Section totals reconcile with their sub-stacks plus index and revision files (for example 149 chapters plus 32 companions giving 181).",
+    "focused": "Navigation only; the seven stacks each keep their own entry point instead of inlining chapters.",
+    "fast": "The 988-file and 89 h 10 m headline figures are restamped by the count tool and agree with 680 chapters at about 8 min.",
+    "best": "Works as the single front door: lane choice first, then a study order with honest scheduling caveats."
    }
   },
   "README.md": {
@@ -13628,18 +13628,18 @@
    }
   },
   "docs/2026-09-19-corpus-health-report.md": {
-   "sha256": "bc68e2f1643536fa5070a56ab81b43628d496e49a7b36cd3931a4df87afb6ac4",
+   "sha256": "0613028792528c31c43a0b9250935ae4b244781beebe8376c14d7610ef2f0b24",
    "lines": 294,
    "genre": "health-report",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Corpus total updated from 560 to 988 study chapters; gate counts verified",
-    "readable": "Read end-to-end: corpus total statement updated to reflect current count; opening, term order and causal flow validated",
-    "concise": "Single statistic updated; within health-report genre budget; filler removed",
-    "focused": "Only the corpus total figure changed; no second treatment of same mechanism",
-    "fast": "Light touch: only corpus total statistic changed, no structural modifications",
-    "best": "Health report corpus total now matches live count from check_counts.py (988 files)"
+    "current": "Dated record; the banner states that counts are restamped by the current tool and that the recorded pass is historical.",
+    "readable": "Read end to end: definition, first principles, gate inventory, day-one catches, fix ledger, non-actions, summary.",
+    "concise": "Ledger entries are one paragraph each; the summary points to the sweeps instead of retelling them.",
+    "focused": "Claims about gate behaviour are pinned to the script that owns each rule, not restated as folklore.",
+    "fast": "Long report weight is ledger-justified; page weight not re-measured in this pass.",
+    "best": "Keeps the method (measure, fix, gate) auditable, and the closing figures are marked as tool-maintained rather than historical."
    }
   },
   "docs/2026-10-01-chapter-review-continuation.md": {
@@ -13793,18 +13793,18 @@
    }
   },
   "docs/api-contract.md": {
-   "sha256": "b02e94a50fd28aea0af89c8bd8354d028b89c48485aa014eff39e69fa7c3b3c0",
+   "sha256": "f5afd930446ccbdf78e471ce24b893076fc1f744672707e0ad2f6b33c53c963c",
    "lines": 119,
    "genre": "doc",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Corpus API \u2014 `api/index.json` contract.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "826 words over 120 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Corpus API \u2014 `api/index.json` contract. No second competing treatment was visible.",
-    "fast": "Source 6.6 KB over 120 lines with 0 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Reference document; the manual scan found a dated scope, a coherent section sequence and a Summary that states its limits."
+    "current": "Documents the current generator with no version field, and says so instead of implying compatibility.",
+    "readable": "Read end to end: shape, field table, guarantees, non-guarantees, regeneration, two consumers, versioning.",
+    "concise": "Totals agree with api/index.json: 680 chapters, 47 sections, 13 distinct categories of the 14 canonical, 5350 read minutes.",
+    "focused": "The field table owns each claim once; the consumer code is labelled example rather than specification.",
+    "fast": "Short contract document; page weight not relevant to a reference page and not re-measured.",
+    "best": "States the non-guarantees (alphabetical order, free-vocabulary tags, no versioning) that a consumer would otherwise discover the hard way."
    }
   },
   "docs/deployment.md": {
@@ -14063,18 +14063,18 @@
    }
   },
   "docs/superpowers/plans/2026-10-12-organic-reading-flow.md": {
-   "sha256": "53d5df53beffeb7d77d0fb0fab7d27ce25e5e32e4d6fe057b81852e246ac7b4e",
+   "sha256": "66e5eb506fa0b52a04be2aba9a4d6c8e3924d072d46b5fd2ce0422d01532ce90",
    "lines": 812,
    "genre": "doc",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Organic Reading Flow Implementation Plan.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "23567 words over 813 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Organic Reading Flow Implementation Plan. No second competing treatment was visible.",
-    "fast": "Source 171.3 KB over 813 lines with 1 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Reference document; the manual scan found a dated scope, a coherent section sequence and a Summary that states its limits."
+    "current": "Plan references repository conventions and gates by script name; no versioned tool claim is made.",
+    "readable": "Two sentence boundaries were repaired this pass so the plan's rule statements read as complete sentences.",
+    "concise": "Rules are numbered and short; the rationale lives beside the rule rather than in a closing essay.",
+    "focused": "Each rule names the gate or chapter that owns its enforcement instead of duplicating that gate's logic.",
+    "fast": "Plan-sized source weight; page weight not applicable and not measured.",
+    "best": "Reads as an executable plan: each step names its file, its check and its failure mode."
    }
   },
   "docs/superpowers/plans/2026-10-14-cross-stack-runtime-internals.md": {
@@ -14228,18 +14228,18 @@
    }
   },
   "docs/superpowers/specs/2026-10-14-nodejs-production-runtime-architecture-design.md": {
-   "sha256": "2a7a6497b035769f518df1b3f64ab1575cb7be41fc44a7d26c9cbd5ef4da5fb7",
+   "sha256": "d363f196e3ced001971a24a0dc737e4e7a1e1cbaf0bce9422010c48dcc989a84",
    "lines": 70,
    "genre": "doc",
    "status": "read",
    "reviewed": "2026-11-14",
    "evidence": {
-    "current": "Manual document scan on 2026-11-14 read the title, complete H2 outline, TL;DR and Summary; no stale claim, contradiction or unsupported assertion was found in the scanned text. Focus: Node.js Production Runtime Architecture \u2014 Design.",
-    "readable": "Manual scan found a coherent title, complete H2 outline and Summary; the text reviewed at those levels was clear.",
-    "concise": "1250 words over 71 lines; the outline and Summary contained no repeated section or restated point.",
-    "focused": "The title, headings and Summary kept one subject: Node.js Production Runtime Architecture \u2014 Design. No second competing treatment was visible.",
-    "fast": "Source 9.6 KB over 71 lines with 10 Markdown links; the scan found no unrelated preamble in the title or Summary.",
-    "best": "Reference document; the manual scan found a dated scope, a coherent section sequence and a Summary that states its limits."
+    "current": "Product claims are dated and sourced to PM2 and Platformatic documentation, with version-sensitive behaviour left to official references.",
+    "readable": "Read end to end: context and gap, approaches table, design, reader flow, curriculum integration, accuracy rules, acceptance criteria, risks.",
+    "concise": "Two chapters only, each with a stated scope; the follow-on gaps are listed instead of designed here.",
+    "focused": "Links the clustering and worker-thread chapters for primitives instead of re-specifying them.",
+    "fast": "Spec-sized source weight; page weight not applicable and not measured.",
+    "best": "Separates process-level from thread-level isolation explicitly, which is the misconception the proposed chapters exist to fix."
    }
   },
   "docs/superpowers/specs/2026-11-02-read-aloud-controls-design.md": {

@@ -109,7 +109,7 @@ Operate connections, schema changes, deletion, backup/recovery and search integr
 
 ## Suggested Study Order
 
-The paths below estimate focused study time, including practice and review. The 4 h 10 m above is reading time only.
+The paths below estimate focused study time, including practice and review. The 4 h 14 m above is reading time only.
 
 ### Path A — Building backend depth for senior interviews (2–3 weeks)
 1. PostgreSQL Foundations (6 files, ~2.5 hrs)

@@ -9876,22 +9876,22 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "2516fe3e3c491eae6cfe2ac4cc8c465a3291b5f501e971b663e8bd5b59a1f1fe",
+      "sha256": "3881ee2726d529cece8c611ae2dea0723fd062a304d90cd7c9b3e1cd2c54f194",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-14",
+      "reviewDate": "2026-11-15",
       "fullContentRead": true,
-      "notes": "Full-content read (2026-11-14): Read end to end: lane choice, study stacks, recommended path, cross-reference map, direct indexes. Section totals reconcile with their sub-stacks plus index and revision files (for example 149 chapters plus 32 companions giving 181).",
+      "notes": "2026-11-15 pass: read in full (206 lines). The 989-file badge and 158K-line footer were restamped from live disk; gate 1 confirms the 7-stack, 2-lane, 680-content-file and 40-bank counts, every sub-stack Files cell and all navigation links. Lane framing, study order and cross-reference map match README.md and ROADMAP.md.",
       "findings": []
     },
     {
       "path": "README.md",
-      "sha256": "f133e7b353c8f5a2ec03b1ca7ba329a933d96e7bd38008240eb17acd86e0d6f5",
+      "sha256": "856d07b798d9fed6a532343fee2fef039e22aac6a644e2f6dff6f23c0aadf73c",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-12",
-      "fullContentRead": false,
-      "notes": "Count restamp only: \"search all 680 chapters\" and the 988 Files badge now match live disk after the new strategy chapter. Lane-first framing unchanged.",
+      "reviewDate": "2026-11-15",
+      "fullContentRead": true,
+      "notes": "2026-11-15 pass: read in full (110 lines). The 989-file badge was restamped; the 'search all 680 chapters' claim, the stack Files column (127/149/109/95/39/11/34) and every navigation link agree with gates 1 and 4. Added one task-table row pointing at the corpus-review ledger so the protocol doc is reachable; the teaching contract and review/deployment pointers still match contributing.md and docs/.",
       "findings": []
     },
     {
@@ -9906,13 +9906,15 @@
     },
     {
       "path": "contributing.md",
-      "sha256": "63ae171392a9d6e6fac7aa8302f79937cc29e632190db0015c7fc994d9ad9829",
+      "sha256": "1e7710275e85661443b99ed77e472e4bc4f7f862db043e267f6516a7a042bb24",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-14",
+      "reviewDate": "2026-11-15",
       "fullContentRead": true,
-      "notes": "2026-11-14 pass: read in full. Directory tree now includes 00-strategy/00.05-find-startup-roles.md and projects/maq; the file map had gone stale after the role-discovery chapter landed. Gate table, metadata rules and the 66 raw-wrapper count checked against disk.",
-      "findings": []
+      "notes": "2026-11-15 pass: read in full (947 lines). The 989-file/158K-line scale claim was restamped; the directory tree matches every top-level stack, the 66-file raw-wrapper count and the 14 category values were checked against disk, and the gate table matches the 34 rows in scripts/verify.sh.",
+      "findings": [
+        "Site publication is the raw Markdown asset, not a rendered page: jekyll-optional-front-matter blacklists CONTRIBUTING/CONTRIBUTING.md names, so the README 'Learn how to contribute' link serves text rather than HTML. Accepted for now; rendering would need either YAML front matter plus a raw-wrapper gate allowance or a separate wrapper page."
+      ]
     },
     {
       "path": "design-qa.md",
@@ -10086,6 +10088,18 @@
       }
     },
     {
+      "path": "docs/corpus-review/README.md",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-11-15",
+      "fullContentRead": true,
+      "notes": "2026-11-15 pass: read in full (92 lines, new file). It documents the actual 2026-11-14 audit (805 shared readable-template rows, 113 pages with no measured weight), the page-weight generator, the six-axis evidence contract and the apply/audit commands; the commands and paths match scripts/review_ledger.py and scripts/measure_page_weight.py.",
+      "findings": [
+        "Jekyll blacklists README.md names, so this protocol document has no HTML page; it is repository-only evidence, not a public reading page."
+      ],
+      "sha256": "1b54d19a55ba8dd4b419a784964cee232f8ecaa5b758fcefea3bd8fdcf5db028"
+    },
+    {
       "path": "docs/deployment.md",
       "sha256": "ea99a37f317c2a867f6f19756e78b15e15853b729507e8f02c3d9e64d00d59bb",
       "status": "reviewed",
@@ -10157,12 +10171,12 @@
     },
     {
       "path": "docs/scripts-map.md",
-      "sha256": "abf96d04bb6a4f488d48e65f1c773fb1655b7cf5675e7fe5ad84675ca35fe663",
+      "sha256": "001bc17fb09dcec5ced4b832a5547414195d202f7a9de44c3e31128872b100c5",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-14",
+      "reviewDate": "2026-11-15",
       "fullContentRead": false,
-      "notes": "2026-11-14 mechanical update: added the gate 31 row for review_ledger.py and let the wiring writer restamp the 34-gate count. Semantic review remains the 2026-11-12 row; this pass did not re-read the whole inventory.",
+      "notes": "2026-11-15 mechanical update: named measure_page_weight.py in the workflow table and test_review_ledger.py in the gate 31 row, then let check_alignment --fix re-align the table. Semantic review remains the 2026-11-12 row; this pass did not re-read the whole inventory.",
       "findings": []
     },
     {
@@ -10417,22 +10431,22 @@
     },
     {
       "path": "docs/verification-gates.md",
-      "sha256": "46d12db8c8385b2b0eea2f0dd87723aed7328b2e22084fe3720ccc563ad91f03",
+      "sha256": "3f5ef538fcc951e34382d9b15f93cd4684890fede8815e35c6476deb91944279",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-14",
-      "fullContentRead": false,
-      "notes": "2026-11-14 mechanical update: added the gate 31 row for the per-file review ledger and let the wiring writer restamp the 34-gate count. Semantic review remains the 2026-11-12 row; this pass did not re-read the whole gate reference.",
+      "reviewDate": "2026-11-15",
+      "fullContentRead": true,
+      "notes": "2026-11-15 pass: read in full (125 lines). The 34-gate header, gate 29 exact-byte row and gate 31 review-ledger row match scripts/verify.sh and scripts/review_ledger.py; the 989-file, 680-content-file and 66-raw-wrapper claims were restamped and rechecked against disk.",
       "findings": []
     },
     {
       "path": "lanes/INDEX.md",
-      "sha256": "e835b9d4f33ca0fed04467c163614301a5532eeff1f873fb64ddf7f06408d738",
+      "sha256": "31e6f10eadbc39ef976b9486a701690d254bee9fdd738010c447da4a4e9b3978",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-12",
-      "fullContentRead": false,
-      "notes": "Files badge restamped to 988 after the new strategy chapter; lane-choice text unchanged.",
+      "reviewDate": "2026-11-15",
+      "fullContentRead": true,
+      "notes": "2026-11-15 pass: read in full (35 lines). The 989-file badge was restamped; the lane table, shared-stack links, five-step practice loop and private-workspace boundary match the 80/81 lane indexes and the central INDEX.md.",
       "findings": []
     },
     {

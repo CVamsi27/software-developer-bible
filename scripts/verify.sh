@@ -605,7 +605,7 @@ fi
 
 echo ""
 echo "31/34 review_ledger.py — every file has hash-pinned review evidence"
-echo "     python3 scripts/review_ledger.py check"
+echo "     python3 scripts/test_review_ledger.py && python3 scripts/review_ledger.py check"
 echo "------------------------------------------------------------"
 # The older exact-byte ledger records that a file was inspected, not the
 # standard it was held to. This gate owns the 2026-11 per-file pass: one row
@@ -613,7 +613,10 @@ echo "------------------------------------------------------------"
 # all six reader axes. Unread files sit in an explicit pending queue, so the
 # suite stays green section by section while a new file cannot arrive
 # unreviewed and a reviewed file cannot change without invalidating its row.
-if python3 scripts/review_ledger.py check; then
+# The pin suite runs first: it proves the evidence checker still rejects the
+# 2026-11-14 structural-scan template, a wrong line/word count and a source
+# size masquerading as page weight before the gate judges the live ledger.
+if python3 scripts/review_ledger.py check && python3 scripts/test_review_ledger.py; then
     echo "  PASS"
 else
     echo "  FAIL — read the listed file, then record it: python3 scripts/review_ledger.py apply <batch.json>"

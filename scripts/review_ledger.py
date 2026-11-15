@@ -48,14 +48,72 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import subprocess
 import sys
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+import prose_scan
+
+ROOT = os.path.dirname(HERE)
 LEDGER = os.path.join(ROOT, 'docs', 'review-ledger.json')
+PAGE_WEIGHT = os.path.join(ROOT, 'docs', 'corpus-review', 'page-weight.json')
 AXES = ('current', 'readable', 'concise', 'focused', 'fast', 'best')
 MIN_EVIDENCE = 24
 PLACEHOLDERS = ('todo', 'tbd', 'unread', 'not reviewed', 'placeholder', 'n/a')
+
+# The 2026-11-14 ledger passed a non-empty check while 805 rows shared one
+# "manual scan" paragraph. These are the shapes that made a structural scan
+# look like a six-axis read. A new row must not reuse them.
+TEMPLATE_MARKERS = (
+    'manual scan found',
+    'manual document scan',
+    'tl;dr',
+    'the scan found no unrelated preamble',
+    'outline and summary contained no repeated section',
+    'kept one subject',
+    'no built-page weight was measured',
+    'page weight not re-measured',
+    'no repeated section or filler found in this pass',
+)
+
+CURRENT_MARKERS = (
+    'checked against',
+    'executed',
+    'verified against',
+    'verified with',
+    'official',
+    'release notes',
+    'no version-sensitive claim',
+    'no version-specific claim',
+    'no versioned api',
+    'http://',
+    'https://',
+)
+
+FOCUS_MARKERS = (
+    'canonical',
+    'owned',
+    'links out',
+    'not retold',
+    'not duplicated',
+    'points at',
+    'separate',
+    'one treatment',
+)
+
+BEST_MARKERS = (
+    'limit',
+    'boundary',
+    'failure',
+    'remaining',
+    'trade-off',
+    'tradeoff',
+    'exception',
+    'does not',
+    'cannot',
+)
 
 
 def read_text(path):
@@ -82,6 +140,99 @@ def sha256(rel):
 def line_count(rel):
     with open(os.path.join(ROOT, rel), 'rb') as fh:
         return sum(1 for _ in fh)
+
+
+def prose_word_count(rel):
+    with open(os.path.join(ROOT, rel), encoding='utf-8') as fh:
+        return prose_scan.prose_words(fh.readlines())
+
+
+_PAGE_CACHE = None
+
+
+def page_weights():
+    global _PAGE_CACHE
+    if _PAGE_CACHE is not None:
+        return _PAGE_CACHE
+    if not os.path.exists(PAGE_WEIGHT):
+        return {}
+    with open(PAGE_WEIGHT, encoding='utf-8') as fh:
+        data = json.load(fh)
+    _PAGE_CACHE = {row['path']: row for row in data.get('rows', [])}
+    return _PAGE_CACHE
+
+
+def page_string(rel):
+    row = page_weights().get(rel)
+    if not row:
+        return 'no page-weight measurement'
+    if row.get('status') == 'excluded':
+        return 'excluded by _config.yml; no public page is built'
+    if row.get('status') != 'built':
+        size = row.get('sourceBytes')
+        if size is None:
+            return 'not built as HTML'
+        return f"not built as HTML; {size / 1024:.1f} KB Markdown source served raw"
+    return f"{row['rawBytes'] / 1024:.1f} KB raw / {row['gzipBytes'] / 1024:.1f} KB gzip"
+
+
+def _contains(text, markers):
+    low = text.lower()
+    return any(marker in low for marker in markers)
+
+
+def evidence_problems(rel, evidence):
+    """Return the reasons this row cannot be called a six-axis read."""
+    problems = []
+    for axis in AXES:
+        text = str(evidence.get(axis, '')).strip()
+        if len(text) < MIN_EVIDENCE:
+            problems.append(f'{axis} evidence missing or under {MIN_EVIDENCE} characters')
+            continue
+        if any(token in text.lower() for token in PLACEHOLDERS):
+            problems.append(f'{axis} evidence contains a placeholder token')
+        if any(marker in text.lower() for marker in TEMPLATE_MARKERS):
+            problems.append(f'{axis} evidence reuses the 2026-11-14 structural-scan template')
+
+    readable = str(evidence.get('readable', ''))
+    match = re.search(r'full read of ([\d,]+) lines', readable, re.I)
+    if not match:
+        problems.append('readable evidence does not say "Full read of N lines"')
+    elif int(match.group(1).replace(',', '')) != line_count(rel):
+        problems.append(
+            f'readable line count says {match.group(1)}, file has {line_count(rel)} lines'
+        )
+
+    concise = str(evidence.get('concise', ''))
+    match = re.search(r'([\d,]+) words', concise)
+    if not match:
+        problems.append('concise evidence does not carry a prose word count')
+    else:
+        claimed = int(match.group(1).replace(',', ''))
+        actual = prose_word_count(rel)
+        tolerance = max(5, round(actual * 0.02))
+        if abs(claimed - actual) > tolerance:
+            problems.append(
+                f'concise word count says {claimed}, prose scan finds {actual}'
+            )
+
+    fast = str(evidence.get('fast', '')).strip()
+    expected = page_string(rel)
+    if expected not in fast:
+        problems.append(f'fast evidence must contain the measured value: {expected}')
+
+    current = str(evidence.get('current', ''))
+    if not _contains(current, CURRENT_MARKERS):
+        problems.append('current evidence names no check, execution, source or no-claim boundary')
+
+    focused = str(evidence.get('focused', ''))
+    if not _contains(focused, FOCUS_MARKERS):
+        problems.append('focused evidence names no canonical-home or duplication check')
+
+    best = str(evidence.get('best', ''))
+    if not _contains(best, BEST_MARKERS):
+        problems.append('best evidence names no boundary, limit or failure')
+    return problems
 
 
 def genre_of(rel):
@@ -173,15 +324,11 @@ def cmd_apply(args):
         if rel not in data['files']:
             errors.append(f'{rel or "(missing path)"}: not a tracked Markdown file')
             continue
-        missing = [axis for axis in AXES if not str(entry.get(axis, '')).strip()]
-        if missing:
-            errors.append(f'{rel}: missing evidence for {", ".join(missing)}')
-            continue
-        short = [axis for axis in AXES
-                 if len(str(entry[axis]).strip()) < MIN_EVIDENCE]
-        if short:
-            errors.append(f'{rel}: evidence under {MIN_EVIDENCE} chars for '
-                          f'{", ".join(short)}')
+        problems = evidence_problems(
+            rel, {axis: entry.get(axis, '') for axis in AXES}
+        )
+        if problems:
+            errors.append(f'{rel}: ' + '; '.join(problems))
             continue
         row = data['files'][rel]
         row.update({
@@ -210,6 +357,95 @@ def cmd_apply(args):
     read = sum(1 for row in data['files'].values() if row['status'] == 'read')
     print(f'applied {accepted} row(s); read-backed {read}/{len(data["files"])}, '
           f'{len(data["pending"])} pending')
+    return 0
+
+
+def cmd_audit(args):
+    data = load()
+    read = sorted(
+        (rel, row) for rel, row in data['files'].items() if row['status'] == 'read'
+    )
+    if not read:
+        print('audit: no read rows')
+        return 0
+    axis_failures = {axis: 0 for axis in AXES}
+    failures = []
+    for rel, row in read:
+        problems = evidence_problems(rel, row.get('evidence') or {})
+        if problems:
+            failures.append((rel, problems))
+            for axis in AXES:
+                if any(problem.startswith(axis) for problem in problems):
+                    axis_failures[axis] += 1
+    print(f'audited {len(read)} read row(s); {len(failures)} fail at least one axis')
+    for axis in AXES:
+        print(f'  {axis:8} {axis_failures[axis]:4} failing row(s)')
+    if args.verbose:
+        for rel, problems in failures[:args.limit]:
+            print(f'\n{rel}')
+            for problem in problems:
+                print(f'  - {problem}')
+    return 0
+
+
+def cmd_reset(args):
+    data = load()
+    read = sorted(
+        rel for rel, row in data['files'].items() if row['status'] == 'read'
+    )
+    if not read:
+        print('reset: no read rows')
+        return 0
+    if args.dry_run:
+        print(f'reset would move {len(read)} read row(s) to unread: {args.reason}')
+        return 0
+    for rel in read:
+        row = data['files'][rel]
+        row['status'] = 'unread'
+        for key in ('evidence', 'reviewed', 'defects', 'notes'):
+            row.pop(key, None)
+    save(data)
+    print(f'reset {len(read)} read row(s) to unread; reason: {args.reason}')
+    return 0
+
+
+def cmd_hash(args):
+    print(sha256(args.path))
+    return 0
+
+
+def cmd_page(args):
+    print(page_string(args.path))
+    return 0
+
+
+def cmd_words(args):
+    print(prose_word_count(args.path))
+    return 0
+
+
+def cmd_template(args):
+    rel = args.path
+    if rel not in load()['files']:
+        print(f'template: not a tracked Markdown file: {rel}')
+        return 1
+    payload = {
+        'path': rel,
+        'genre': genre_of(rel),
+        'sha256': sha256(rel),
+        'lines': line_count(rel),
+        'words': prose_word_count(rel),
+        'page': page_string(rel),
+        'current': '',
+        'readable': '',
+        'concise': '',
+        'focused': '',
+        'fast': '',
+        'best': '',
+        'defects': [],
+        'notes': '',
+    }
+    print(json.dumps(payload, indent=2))
     return 0
 
 
@@ -276,15 +512,8 @@ def cmd_check(_args):
             if row.get('sha256') != sha256(rel):
                 problems.append(f'{rel}: reviewed bytes changed since the review '
                                 f'(re-read and re-apply)')
-            evidence = row.get('evidence') or {}
-            for axis in AXES:
-                text = str(evidence.get(axis, '')).strip()
-                if len(text) < MIN_EVIDENCE:
-                    problems.append(f'{rel}: {axis} evidence missing or under '
-                                    f'{MIN_EVIDENCE} characters')
-                elif any(token in text.lower() for token in PLACEHOLDERS):
-                    problems.append(f'{rel}: {axis} evidence contains a '
-                                    f'placeholder token')
+            for problem in evidence_problems(rel, row.get('evidence') or {}):
+                problems.append(f'{rel}: {problem}')
             if not row.get('reviewed'):
                 problems.append(f'{rel}: read row has no review date')
         elif row['status'] != 'unread':
@@ -306,7 +535,7 @@ def cmd_check(_args):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    ap.add_argument('--date', default='2026-11-14',
+    ap.add_argument('--date', default='2026-11-15',
                     help='review date recorded on applied rows')
     sub = ap.add_subparsers(dest='command', required=True)
     p_init = sub.add_parser('init', help='add rows for new files, prune deleted')
@@ -319,6 +548,26 @@ def main():
     p_status.set_defaults(func=cmd_status)
     p_check = sub.add_parser('check', help='gate: rows, hashes, evidence, queue')
     p_check.set_defaults(func=cmd_check)
+    p_audit = sub.add_parser('audit', help='report read rows that fail the evidence bar')
+    p_audit.add_argument('--verbose', action='store_true')
+    p_audit.add_argument('--limit', type=int, default=40)
+    p_audit.set_defaults(func=cmd_audit)
+    p_reset = sub.add_parser('reset', help='move read rows back to unread')
+    p_reset.add_argument('--reason', required=True)
+    p_reset.add_argument('--dry-run', action='store_true')
+    p_reset.set_defaults(func=cmd_reset)
+    p_hash = sub.add_parser('hash', help='print a file SHA-256')
+    p_hash.add_argument('path')
+    p_hash.set_defaults(func=cmd_hash)
+    p_page = sub.add_parser('page', help='print the measured page weight')
+    p_page.add_argument('path')
+    p_page.set_defaults(func=cmd_page)
+    p_words = sub.add_parser('words', help='print the prose word count')
+    p_words.add_argument('path')
+    p_words.set_defaults(func=cmd_words)
+    p_template = sub.add_parser('template', help='print a batch-row skeleton')
+    p_template.add_argument('path')
+    p_template.set_defaults(func=cmd_template)
     args = ap.parse_args()
     return args.func(args)
 

@@ -14,43 +14,106 @@
    "sha256": "8e000ad74a8a15a102428913223f54d38bb176fefccd26e00cbb32456b4f0284",
    "lines": 87,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "No version-sensitive claim; the Tech Interview Handbook citation is in the external baseline and the feedback loop is conceptual.",
+    "readable": "Full read of 87 lines; one decision-first answer opens the chapter, then listener types and pushback are handled in order.",
+    "concise": "644 words; each section adds one communication move rather than repeating the decision-first thesis.",
+    "focused": "Owns engineering communication; behavioral practice and lane preparation are linked, not retold.",
+    "fast": "50.4 KB raw / 13.7 KB gzip built page.",
+    "best": "A framework cannot guarantee a hiring outcome; the chapter says pace and posture must adapt to comfort and accessibility."
+   }
   },
   "00-strategy/00.02-resume-tips.md": {
    "sha256": "4877b4977e035f1110431ab98c7e2fadec3410b9eaf4fc84bc2a6cac027ef2b3",
    "lines": 88,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "No versioned API; the MIT resume resource is in the baseline and the sample metrics are explicitly illustrative.",
+    "readable": "Full read of 88 lines; a weak/strong bullet contrast opens, then evidence, layout, senior scope and export checks follow.",
+    "concise": "609 words; the mistake table replaces repeated warnings.",
+    "focused": "Resume evidence is owned here; STAR stories are linked as the next artifact, not retold.",
+    "fast": "50.7 KB raw / 13.8 KB gzip built page.",
+    "best": "Parsing and screening differ by employer, so the chapter rejects a universal rejection rate and one resume cannot guarantee an interview."
+   }
   },
   "00-strategy/00.03-star-method.md": {
    "sha256": "2113b404129964eb25cdd9df115dc2ad4b2cd5ea8d26066c29f511f3a62e2c57",
    "lines": 86,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "No versioned API; the MIT STAR resource is in the baseline and the PAR/CAR variants are conceptual.",
+    "readable": "Full read of 86 lines; one mistake question is traced end to end before the reusable story bank is introduced.",
+    "concise": "623 words; the example table carries the incident and the prose explains only where judgment shows.",
+    "focused": "The STAR structure is owned here; resume and HR chapters are linked, not retold.",
+    "fast": "50.2 KB raw / 13.6 KB gzip built page.",
+    "best": "STAR is a scaffold, not a script; the text says a format alone cannot guarantee an offer and a failed attempt can still supply a lesson."
+   }
   },
   "00-strategy/00.04-hr-questions.md": {
    "sha256": "1cd0c5b9254d438b5f980c1c8f0388f0c5ba3e1ed86b9728da487b0468a439ae",
    "lines": 99,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Offer component math was checked against the stated amounts: 100k+15k=115k, +20k=135k, +10k=145k, +5k benefits=140k annual or 150k in year one.",
+    "readable": "Full read of 99 lines; the HR screen is framed as mutual fit, then role thesis, prompts, offer comparison and negotiation follow.",
+    "concise": "676 words; the component table carries the arithmetic and the prose explains only the comparison rule.",
+    "focused": "HR and offer preparation is owned here; resume evidence and STAR stories are linked, not duplicated.",
+    "fast": "52.2 KB raw / 14.2 KB gzip built page.",
+    "best": "Public compensation reports may be self-selected, outdated or defined differently, and the illustrative totals cannot be read as guaranteed cash; equity may be illiquid."
+   }
   },
   "00-strategy/00.05-find-startup-roles.md": {
    "sha256": "a1125231f3ad2e04b69a65fac1aeea74c2e88c675c85e30491d194dedb1631f2",
    "lines": 164,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "career-ops was checked against its GitHub redirect to career-ops-hq/career-ops under MIT; job_board_watch.py reads Greenhouse, Ashby and Personio; channel URLs are in the baseline.",
+    "readable": "Full read of 164 lines; an authority-first diagram opens, then channel choice, ATS resolution, startup reading, verification and pipeline follow.",
+    "concise": "1,631 words; the seven sections each answer one search decision and the tables carry field lists.",
+    "focused": "The job-channel authority model is owned here and links out to the watch script rather than reimplementing it.",
+    "fast": "59.8 KB raw / 16.6 KB gzip built page.",
+    "best": "No board covers the whole market, a liveness check is point-in-time, and a board scan cannot prove a role is still open; the employer's ATS remains the authority."
+   }
   },
   "00-strategy/INDEX.md": {
    "sha256": "a02ecbf4c8dcdcf717f0b55bdc186b543941fbbb563f969adc76144b392a387e",
    "lines": 57,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Study time 28 min was checked against the badge values: 4+4+4+5+9 chapter minutes plus the 2-minute revision companion; the table matches the five learning chapters.",
+    "readable": "Full read of 57 lines; the evidence chain is presented as five passes with a concrete outcome per pass.",
+    "concise": "256 words; the table carries the sequence and the prose explains only why the order differs from file numbers.",
+    "focused": "Section flow only; each chapter mechanism stays in its own file and revision is linked separately.",
+    "fast": "47.8 KB raw / 12.4 KB gzip built page.",
+    "best": "The pass order is a reading order, not a guarantee; a study lane cannot promise an interview or offer, and verification stays with the employer."
+   }
   },
   "00-strategy/REVISION.md": {
    "sha256": "672963ace404484b246ab611218655bb4e79a3bdb562e438f98dd1ce71e1b3b5",
    "lines": 89,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Every prompt was checked against its source-chapter link; the prompts cover the authority, funding, equity and tooling sections.",
+    "readable": "Full read of 89 lines; prompts are grouped by source chapter and each answer states a mechanism before a boundary.",
+    "concise": "727 words; questions are fresh-worded and answers avoid restating the chapter examples.",
+    "focused": "Revision companion; it points at source chapters and adds no new teaching.",
+    "fast": "49.7 KB raw / 13.2 KB gzip built page.",
+    "best": "Retrieval practice cannot replace source reading; the opening says to close the chapters first and return when reasoning is incomplete."
+   }
   },
   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.01-execution-context.md": {
    "sha256": "0011cfd53cf88af17d4d311398ffa8807ff0c9be5a1a940db298eb6f19f7d874",
@@ -4604,121 +4667,301 @@
    "sha256": "f6f3fab1cf6010fdb837ec3bbd7e13588374967d0864d7b305580d61aea83539",
    "lines": 240,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "RFC 6455 handshake and close-code claims were checked against the RFC; Node ws protocol selection was verified against current ws Set-based behavior.",
+    "readable": "Full read of 240 lines; a chat scenario opens, then six numbered sections move from framing to auth and buffering.",
+    "concise": "1,057 words; the bounded echo server carries the mechanism and prose explains only the contract around it.",
+    "focused": "WebSocket framing, handshake, browser API and close handling are owned here; SSE and Socket.IO are linked, not retold.",
+    "fast": "90.3 KB raw / 18.3 KB gzip built page.",
+    "best": "The browser API cannot set arbitrary handshake headers, and a ping is not application liveness; the chapter states both limits and keeps recovery in the application."
+   }
   },
   "60-realtime/60.1-websockets/01-transports/60.1.1.02-server-sent-events.md": {
    "sha256": "873d41d315ad06a99f2fc6d0ba6dafbd9a574a9c052a96dd145891981107faa4",
    "lines": 226,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The event-stream format and EventSource reconnection were checked against the WHATWG HTML specification; Docita's AI controller was verified to emit delta/done/error events.",
+    "readable": "Full read of 226 lines; one progress scenario opens, then wire format, replay server, reconnection and production limits.",
+    "concise": "896 words; the replay server example carries the mechanism and the prose stays on stream semantics.",
+    "focused": "SSE framing and reconnection are owned here; WebSocket comparison points at the overview instead of repeating framing.",
+    "fast": "83.5 KB raw / 17.5 KB gzip built page.",
+    "best": "EventSource cannot send custom authorization headers, and Last-Event-ID replay is server-owned; the chapter states both limits."
+   }
   },
   "60-realtime/60.1-websockets/01-transports/60.1.1.03-socket-io.md": {
    "sha256": "39320d406a8f4213cf404af352857f026075b76b23f552c7696d519ce23a7d12",
    "lines": 267,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Socket.IO 4.8.4 was checked on npm; emitWithAck's 4.6 introduction and the Redis adapter's multi-node requirement were verified against official docs.",
+    "readable": "Full read of 267 lines; a chat scenario opens, then event API, rooms, validated handler, uncertain ack, lost-ack trace and limits.",
+    "concise": "1,006 words; one handler and one trace carry the delivery contract instead of repeating event syntax.",
+    "focused": "Socket.IO events, rooms, acknowledgments and adapter behavior are owned here; raw framing stays with the WebSocket chapter.",
+    "fast": "89.6 KB raw / 18.3 KB gzip built page.",
+    "best": "An acknowledgment timeout is an uncertain result, not proof of failure; the chapter requires idempotency or a status read before retrying."
+   }
   },
   "60-realtime/60.1-websockets/01-transports/60.1.1.04-webtransport.md": {
    "sha256": "5fb3a0543d40ec69bd635baeb8e5e050786338f76085044da48feccc8985d070",
    "lines": 141,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "WebTransport's status was verified against the W3C editor's draft of 4 November 2026 and IETF draft-ietf-webtrans-http3 revision 17, expiring 2027-05-06.",
+    "readable": "Full read of 141 lines; a game scenario separates reliable chat from stale position, then streams, datagrams, closure and selection.",
+    "concise": "1,288 words; the two delivery examples carry the mechanism and prose explains when each applies.",
+    "focused": "WebTransport stream and datagram semantics are owned here; QUIC background is bounded to what the choice needs.",
+    "fast": "66.1 KB raw / 16.8 KB gzip built page.",
+    "best": "You cannot assume browser or HTTP/3 server support, datagrams are unreliable and unordered, and the chapter says to verify both ends."
+   }
   },
   "60-realtime/60.1-websockets/01-transports/INDEX.md": {
    "sha256": "7d09398a685283f22605b45ec0098cdb11f0c0eb1c42bea97cc93c1179a898b8",
    "lines": 62,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "No versioned API in the overview; WebTransport's status was checked against the W3C editor's draft dated 4 November 2026.",
+    "readable": "Full read of 62 lines; two passes separate direction choice from added application features.",
+    "concise": "268 words; each chapter gets one sentence about the decision it supports.",
+    "focused": "Transport decisions are owned by the four chapters; this page orders them and does not repeat their mechanics.",
+    "fast": "49.2 KB raw / 12.8 KB gzip built page.",
+    "best": "The page keeps retained events and authorized replay a server responsibility, so native EventSource reconnection does not establish full recovery."
+   }
   },
   "60-realtime/60.1-websockets/01-transports/REVISION.md": {
    "sha256": "38a6a4ff20dab61315d8b6ca03aff29d090381c9cc271e5b4c5651916a2f4b47",
    "lines": 139,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "No version-sensitive API; the acknowledgment prompts were checked against the chapter's local-progress versus durable-business distinction.",
+    "readable": "Full read of 139 lines; prompts follow chapter order and each answer names a mechanism before a failure case.",
+    "concise": "1,090 words; the five groups reuse chapter scenarios without copying their code.",
+    "focused": "Revision companion only; every group points at its source chapter and adds no new teaching.",
+    "fast": "53.0 KB raw / 14.1 KB gzip built page.",
+    "best": "Retrieval practice cannot replace the chapter read; the opening says to close the chapters first and return when reasoning is incomplete."
+   }
   },
   "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.01-real-time-architecture.md": {
    "sha256": "67cde24b3e2eed060ab8f744c95b7bf01283ec6d6a42edb98120b6c296fec4b6",
    "lines": 115,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "No version-sensitive API; commit-before-notify and at-least-once delivery were checked against the chapter's own ordering and the broker references.",
+    "readable": "Full read of 115 lines; a booking-screen scenario opens, then event path, topology, commit order, semantics, patterns and load testing.",
+    "concise": "1,335 words; the booking trace carries the failure case and the patterns are compared in one table.",
+    "focused": "Commit and publication ordering are owned here; sticky sessions and adapters stay in the scaling chapter.",
+    "fast": "58.6 KB raw / 16.4 KB gzip built page.",
+    "best": "A notification sent after commit can still be lost or duplicated, so a push cannot guarantee the client's state; the chapter requires a read path or replay."
+   }
   },
   "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.02-scaling-patterns.md": {
    "sha256": "79e936a0de505a6ef0cc5cb39dff699a16aff8d8c2048165242e7822de4b5780",
    "lines": 134,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Sticky sessions, the Redis adapter and sharding were checked against Socket.IO 4.8.4 documentation and the architecture chapter's boundary.",
+    "readable": "Full read of 134 lines; one cross-gateway room trace opens, then routing, bridging, strategy, capacity and failure.",
+    "concise": "1,293 words; the two-gateway trace carries the fan-out problem and the strategy table carries the trade-offs.",
+    "focused": "Connection routing and fan-out are owned here; commit ordering stays with the architecture chapter.",
+    "fast": "62.2 KB raw / 16.5 KB gzip built page.",
+    "best": "Sticky sessions and a Redis adapter raise capacity but do not remove the publish bottleneck; the chapter says to measure and plan failure."
+   }
   },
   "60-realtime/60.1-websockets/02-architecture-and-scaling/INDEX.md": {
    "sha256": "2a4c81dab900f090e2d707112eb86f43db693c75ba924f2da0a1987ecaa097c1",
    "lines": 63,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "No versioned claim; the Redis-adapter and sticky-session statements were checked against the Socket.IO 4.8.4 adapter documentation.",
+    "readable": "Full read of 63 lines; the hard-part framing precedes the two-chapter table.",
+    "concise": "223 words; one scenario paragraph and a two-row table carry the section.",
+    "focused": "Scaling mechanics are owned by the two chapters; this index only explains why commit-to-recovery is the hard path.",
+    "fast": "48.3 KB raw / 12.5 KB gzip built page.",
+    "best": "A single-node demonstration does not establish a universal capacity limit; the page says to measure the real workload."
+   }
   },
   "60-realtime/60.1-websockets/02-architecture-and-scaling/REVISION.md": {
    "sha256": "23d9ccd40ed462f40d067bac6789e2fc2c814c3d704366d0743db0980d0d4397",
    "lines": 95,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "No versioned claim; the commit/publish/recover prompts were checked against the ordering in the architecture chapter.",
+    "readable": "Full read of 95 lines; three source groups then two cross-cutting groups on commit order and fleet boundaries.",
+    "concise": "615 words; questions are fresh-worded and answers avoid repeating the chapter examples.",
+    "focused": "Revision companion; it points at the two learning chapters and keeps the capacity boundary in one place.",
+    "fast": "49.5 KB raw / 13.0 KB gzip built page.",
+    "best": "Prompts cannot prove production capacity; the fleet group asks for a measured workload and names the single-replica limit."
+   }
   },
   "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.01-nestjs-websockets.md": {
    "sha256": "2c275dc85d85f293e30c393c952efc5c7ca61d88437ac64fad6648d89e2e017e",
    "lines": 208,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "NestJS 12.5.0 and its ESM package type were checked on npm; the gateway/guard/pipe pipeline was verified against the NestJS WebSockets documentation.",
+    "readable": "Full read of 208 lines; a clinic booking scenario opens, then pipeline, authorized room snapshot, client exceptions, boundaries and mistakes.",
+    "concise": "1,110 words; one gateway fixture carries the pipeline instead of listing decorators without context.",
+    "focused": "The NestJS gateway pipeline is owned here; raw WebSocket framing and Socket.IO acks stay in their own chapters.",
+    "fast": "79.1 KB raw / 17.3 KB gzip built page.",
+    "best": "A gateway guard does not protect later async work; the chapter says durable jobs and outgoing permission checks belong in the service."
+   }
   },
   "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.02-graphql-subscriptions-live-queries.md": {
-   "sha256": "b8604264ff90e0a27b6b886efa56aff8d75b1af6edc5e427ea896e5830a3dc59",
+   "sha256": "9c342f9b653d420c4cbae5724b10bf0c995454425d9cf98aae7004aa49d47deb",
    "lines": 203,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "GraphQL.js 17.1.0, graphql-ws 6.4.2 and @graphql-tools/schema 11.0.9 peer support for graphql 17 were checked against npm metadata; the 4403 close code was verified against PROTOCOL.md.",
+    "readable": "Full read of 203 lines; an order dashboard opens, then schema ownership, event-to-result, authorized stream, live-query contrast and workload.",
+    "concise": "1,178 words; the order subscription fixture carries the mechanism and the live-query contrast is one table.",
+    "focused": "GraphQL subscription protocol and live-query contrast are owned here; Socket.IO transport details are linked, not retold.",
+    "fast": "73.6 KB raw / 17.3 KB gzip built page.",
+    "best": "withFilter reduces emissions but does not replace per-event authorization, and live queries need dependency tracking; the chapter states both costs."
+   }
   },
   "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.03-webrtc-peer-to-peer.md": {
    "sha256": "ca51e9e74b89070bebdda34152d7d3f352acc50d895e8e2c431f0f0494f22123",
    "lines": 192,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "No version-sensitive API; ICE, signaling and TURN statements were checked against the WebRTC specification and MDN's current peer-connection guidance.",
+    "readable": "Full read of 192 lines; a video-call scenario opens, then signaling, ICE, a two-peer position exchange, media and stats.",
+    "concise": "1,301 words; the two-peer exchange carries negotiation and the topology table carries the scale trade-off.",
+    "focused": "Signaling, ICE and peer-connection lifecycle are owned here; media-server and SFU choices are bounded to the decision.",
+    "fast": "73.1 KB raw / 17.6 KB gzip built page.",
+    "best": "Peer-to-peer still needs signaling, STUN and often TURN; a mesh cannot scale a group call, and the chapter says to measure and release resources."
+   }
   },
   "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.04-testing-realtime-systems.md": {
    "sha256": "3f9508df3c2d254dfc9095bb6a240847c8329a39550d1187147e781060cbaada",
    "lines": 175,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "No versioned claim; the GraphQL smoke test was checked against graphql-ws 6.4.2 client behavior and the chapter's executed fixture.",
+    "readable": "Full read of 175 lines; an HTTP-health-check failure opens, then protocol checks, evidence layers, smoke test, load design and recovery.",
+    "concise": "1,320 words; the layered evidence table and one drill carry the method without repeating tool syntax.",
+    "focused": "Realtime test evidence is owned here; protocol mechanics stay in the chapters under test.",
+    "fast": "68.1 KB raw / 17.2 KB gzip built page.",
+    "best": "An HTTP 200 does not prove an event arrived, and a load number from one workload does not transfer; the chapter requires a stated workload and a recovery drill."
+   }
   },
   "60-realtime/60.1-websockets/03-frameworks-and-paradigms/INDEX.md": {
    "sha256": "36b185c710e993fb42261dd8141baf0cbaf097754a240784f6dbe19fc641d1c7",
    "lines": 59,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Framework claims were checked against NestJS 12.5.0, graphql-ws 6.4.2 and GraphQL.js 17.1.0 on npm.",
+    "readable": "Full read of 59 lines; the file table names the pipeline each chapter covers before the practice questions.",
+    "concise": "184 words; the table and one framing sentence are the whole page.",
+    "focused": "Each framework's mechanism is owned by its chapter; this page only orders gateway, subscription, media and testing work.",
+    "fast": "48.8 KB raw / 12.6 KB gzip built page.",
+    "best": "A framework does not remove the application contract; auth, durable work and load evidence stay in the chapters."
+   }
   },
   "60-realtime/60.1-websockets/03-frameworks-and-paradigms/REVISION.md": {
    "sha256": "1348d02464f19cb4d63ef69ee6b5761b2466bebc527f3bfc8459511ca4d1d35b",
    "lines": 123,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "No version-sensitive claim; the four chapter groups and four cross-cutting groups were checked against their source headings.",
+    "readable": "Full read of 123 lines; four chapter groups precede four groups on pipeline, lifecycle, peers and test evidence.",
+    "concise": "742 words; each answer adds one boundary rather than restating the chapter.",
+    "focused": "Revision companion; each group points at its source chapter and the extra groups stay on their own mechanism.",
+    "fast": "51.3 KB raw / 13.4 KB gzip built page.",
+    "best": "The companion cannot substitute for executing the fixture; it asks what evidence would distinguish a passing check from a working system."
+   }
   },
   "60-realtime/60.1-websockets/04-interview-prep/60.1.4.01-interview-questions.md": {
-   "sha256": "d7d69fd0801d60902190bb82e3a525a213fe19ce0b40b3744be7403e24e34202",
+   "sha256": "75daff490aff44c87d0d245486f7fd8460ed6e36e48a1c0d3240c13405d0acd8",
    "lines": 235,
    "genre": "interview",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The 4403 close code, ws Set-based protocol selection and Socket.IO 4.8.4 naming were checked against their official sources.",
+    "readable": "Full read of 235 lines; 30 numbered prompts are grouped into fundamentals, implementation and system design, each with a follow-up.",
+    "concise": "3,174 words; answers are compressed to the mechanism and one boundary per prompt.",
+    "focused": "The bank is the canonical drill; linked chapters own the full mechanisms and are not retold.",
+    "fast": "70.4 KB raw / 20.0 KB gzip built page.",
+    "best": "The bank is practice material, not a measured frequency list; it cannot guarantee interview success and says so in the definition."
+   }
   },
   "60-realtime/60.1-websockets/04-interview-prep/INDEX.md": {
    "sha256": "4a93ee53bcb2d7547e22a2066e67260e6becfbd8ccd3b4d36818b0bbb4238d98",
    "lines": 45,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "No versioned claim; the 30-question count was checked against the bank's numbered Q headings.",
+    "readable": "Full read of 45 lines; the file row precedes six representative practice questions.",
+    "concise": "117 words; one table row and six prompts are enough for a single-file category.",
+    "focused": "The bank is the canonical drill; this index links it and does not restate answers.",
+    "fast": "45.6 KB raw / 11.7 KB gzip built page.",
+    "best": "Practice material only; the bank cannot be read as a measured frequency list or a guarantee of interview success."
+   }
   },
   "60-realtime/60.1-websockets/INDEX.md": {
-   "sha256": "9fe8a64bb2da3ec6ade06f1662144e4136be9e53c1ac6390af1c7f530e7741c8",
-   "lines": 116,
+   "sha256": "e915e98b6ecafe1b98531568d933b2ba32043fc38479fa064d2585b8499b5206",
+   "lines": 118,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Socket.IO 4.8.4 and RFC 6455 were checked against the official package and RFC; no stale version claim remains in the chapter list.",
+    "readable": "Full read of 118 lines; four categories appear in study order, each with a purpose, priority and time.",
+    "concise": "244 words; the category table plus one short why-real-time paragraph replace per-chapter summaries.",
+    "focused": "Canonical section flow; chapters are linked and the 11+3 count note prevents double-counting revision companions.",
+    "fast": "53.7 KB raw / 13.3 KB gzip",
+    "best": "The table counts learning chapters only; the note states the three REVISION files bring the total to 14, and a navigation index does not count toward it."
+   }
   },
   "60-realtime/INDEX.md": {
-   "sha256": "b5af725997c82e3205bd0910f1df44f73a30d30867dfef56128eb486fba05bf8",
-   "lines": 117,
+   "sha256": "e82eaebc2a4189f16b67c69f1b7e5872ea5d08757f2a2e1b8660a151623f4915",
+   "lines": 119,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "No version-sensitive claim beyond the stack map; the 11-chapter plus 3-companion reconciliation was checked against the badge count and the category table.",
+    "readable": "Full read of 119 lines; the three passes (protocols, implementation, architecture) precede the category table and study notes.",
+    "concise": "312 words; the three-pass overview and one table carry the whole section map.",
+    "focused": "Section navigation only; each protocol and scaling mechanism is owned by its chapter and not retold.",
+    "fast": "54.6 KB raw / 13.7 KB gzip",
+    "best": "The stack is optional and the page does not claim it is required for every role; the note separates 11 chapters from 3 revision companions, and a category index is not counted."
+   }
   },
   "70-interview-toolkit/70.1-behavioral/70.1.01-stakeholder-management-stories.md": {
    "sha256": "9005d8ea441cfbaebe082cb7a3ae306f4b0419dd8b9fc22727002d7f1ee3ea03",
@@ -5399,40 +5642,94 @@
    "status": "unread"
   },
   "AGENTS.md": {
-   "sha256": "79c881c35048e5f7a34dc5242af1c3c93eb4e4b4f8d9cc563329ee76e0fcd2b6",
+   "sha256": "d15f1a41eecdb5f517cee7c52e7b5b26e6526394e9a7b4bf641907848cda1649",
    "lines": 33,
    "genre": "meta",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "No version-sensitive claim; the 34-gate command was checked against scripts/verify.sh and both named scripts resolve.",
+    "readable": "Full read of 33 lines; hard rules, workflow and conventions are ordered, and each term is defined before use.",
+    "concise": "826 words; the gate list is compressed to one workflow line and one conventions bullet rather than repeated.",
+    "focused": "Owns AI operating rules; gate mechanics are delegated to contributing.md and docs/verification-gates.md, not retold.",
+    "fast": "51.7 KB raw / 13.8 KB gzip built page.",
+    "best": "The file governs assistants, not humans; it cannot enforce behavior and relies on the gate suite for verification."
+   }
   },
   "INDEX.md": {
-   "sha256": "2516fe3e3c491eae6cfe2ac4cc8c465a3291b5f501e971b663e8bd5b59a1f1fe",
+   "sha256": "42a4547dabf5e037eead99cd3a1601fad32100a2dd278bafb136e047f2a28f97",
    "lines": 206,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The 989-file badge, 680-chapter count and 158K lines were checked against scripts/check_counts.py output; the 680/989 split is now stated on the page.",
+    "readable": "Full read of 206 lines; lane choice follows the shared strategy, and each section total reconciles with its sub-stacks.",
+    "concise": "450 words; navigation tables carry the file lists and the prose explains only how to choose.",
+    "focused": "Canonical navigation; it points at each stack index and does not retell teaching content.",
+    "fast": "72.8 KB raw / 17.7 KB gzip",
+    "best": "Counts describe the repository, not one reader's pace; the approximate 89-hour total cannot hold for everyone, as the ~ marker says."
+   }
   },
   "README.md": {
-   "sha256": "f133e7b353c8f5a2ec03b1ca7ba329a933d96e7bd38008240eb17acd86e0d6f5",
-   "lines": 109,
+   "sha256": "856d07b798d9fed6a532343fee2fef039e22aac6a644e2f6dff6f23c0aadf73c",
+   "lines": 110,
    "genre": "meta",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The 989-file badge and '680 chapters' claim were checked against gate 1 output; all stack links resolve.",
+    "readable": "Full read of 110 lines; the opening states audience and lane model, then the task table points to the next action.",
+    "concise": "477 words; the task table replaces long onboarding prose.",
+    "focused": "Entry-point positioning; stack facts are not duplicated, and the page points at INDEX, ROADMAP and docs.",
+    "fast": "54.2 KB raw / 14.3 KB gzip built page.",
+    "best": "The repository records content review but does not demonstrate a learner's readiness; employer requirements still decide."
+   }
   },
   "ROADMAP.md": {
-   "sha256": "80c70773cb363b9264b3a7256aaa2aadf2e68c126e11bb98090a613042953cbb",
+   "sha256": "b3f3afa90a62b386ffa6aa720cfe75d94397bb7d3e5c02beacfed63103eae75c",
    "lines": 275,
    "genre": "meta",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "No version-specific claim; Phase 1 stack links resolve to existing indexes and the 8 checkpoints match the phase sections.",
+    "readable": "Full read of 275 lines; the path is ordered by phase, each phase has a concrete checkpoint, and the weekly plan follows.",
+    "concise": "635 words; tables carry the study order and the prose explains only scheduling choices.",
+    "focused": "Canonical study path; it points at the stack indexes and readiness rubric instead of restating chapter content.",
+    "fast": "72.9 KB raw / 19.2 KB gzip",
+    "best": "A plan cannot guarantee an offer; the text says depth must follow the confirmed format and a weak checkpoint needs revisiting."
+   }
   },
   "contributing.md": {
-   "sha256": "63ae171392a9d6e6fac7aa8302f79937cc29e632190db0015c7fc994d9ad9829",
+   "sha256": "cfa9a13e1b97ee35c9014729c3972df9ef3ea6a980b4b4f15233d5829bedf65a",
    "lines": 947,
    "genre": "meta",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The 34-gate table was checked against scripts/verify.sh; the raw-Markdown serving boundary was verified in _site/contributing.md.",
+    "readable": "Full read of 947 lines; format rules are grouped by artifact (file, INDEX, code, links) with examples before edge cases.",
+    "concise": "3,280 words; long because it is the canonical formatting contract, but rules are one line each and scripts carry the detail.",
+    "focused": "Canonical contribution contract; gate rationale is delegated to docs/verification-gates.md and docs/scripts-map.md.",
+    "fast": "not built as HTML; 53.1 KB Markdown source served raw",
+    "best": "Jekyll's optional-front-matter blacklist serves this as raw Markdown, so the published copy does not render with site navigation; accepted for now."
+   }
   },
   "design-qa.md": {
    "sha256": "e8da15c567bc813b3b61a4d54a8570220db77ad84aa5cb2300e19ed1356ba5ee",
    "lines": 333,
    "genre": "meta",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Historical pass dates are explicit; the opening 'now 34' was checked against scripts/verify.sh, which runs 34 gates.",
+    "readable": "Full read of 333 lines; each dated pass states the reader flow it changed and the evidence it used.",
+    "concise": "6,807 words; long because it is an append-only QA log, with each pass kept separate by date.",
+    "focused": "Owns the design-QA history; current gate ownership points at docs/verification-gates.md rather than duplicating the list.",
+    "fast": "110.7 KB raw / 30.2 KB gzip built page.",
+    "best": "Records product-flow checks, not a fresh semantic review of every paragraph; the opening says so and the limit still holds."
+   }
   },
   "docs/2026-09-10-modernization-changelog.md": {
    "sha256": "bd628d3933df151e32faa14faaeb804ad1390bfde12d41a71687cb201553bab7",
@@ -5936,7 +6233,16 @@
    "sha256": "856da3faa35f15fcabb2720da7a75c107b811f32916406d4e2eb6afe0cf0ae83",
    "lines": 7,
    "genre": "meta",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "No versioned API; the permalink and include_relative target resolve in the built site's search.html.",
+    "readable": "Full read of 7 lines; the page is a title, permalink and one include, with no preamble.",
+    "concise": "10 words; every line is required front matter or the include.",
+    "focused": "Thin wrapper; search behavior stays in search.html and is not duplicated here.",
+    "fast": "124.9 KB raw / 20.1 KB gzip built page; the weight is the shared shell plus the included search app.",
+    "best": "The wrapper cannot work from a raw checkout; it depends on Jekyll's include_relative at build time."
+   }
   },
   "docs/corpus-review/README.md": {
    "sha256": "1b54d19a55ba8dd4b419a784964cee232f8ecaa5b758fcefea3bd8fdcf5db028",
@@ -5946,13 +6252,6 @@
   }
  },
  "pending": [
-  "00-strategy/00.01-communication.md",
-  "00-strategy/00.02-resume-tips.md",
-  "00-strategy/00.03-star-method.md",
-  "00-strategy/00.04-hr-questions.md",
-  "00-strategy/00.05-find-startup-roles.md",
-  "00-strategy/INDEX.md",
-  "00-strategy/REVISION.md",
   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.01-execution-context.md",
   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.02-scope.md",
   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.03-call-stack.md",
@@ -6711,26 +7010,6 @@
   "50-quality/50.4-production-engineering/INDEX.md",
   "50-quality/50.4-production-engineering/REVISION.md",
   "50-quality/INDEX.md",
-  "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.md",
-  "60-realtime/60.1-websockets/01-transports/60.1.1.02-server-sent-events.md",
-  "60-realtime/60.1-websockets/01-transports/60.1.1.03-socket-io.md",
-  "60-realtime/60.1-websockets/01-transports/60.1.1.04-webtransport.md",
-  "60-realtime/60.1-websockets/01-transports/INDEX.md",
-  "60-realtime/60.1-websockets/01-transports/REVISION.md",
-  "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.01-real-time-architecture.md",
-  "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.02-scaling-patterns.md",
-  "60-realtime/60.1-websockets/02-architecture-and-scaling/INDEX.md",
-  "60-realtime/60.1-websockets/02-architecture-and-scaling/REVISION.md",
-  "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.01-nestjs-websockets.md",
-  "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.02-graphql-subscriptions-live-queries.md",
-  "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.03-webrtc-peer-to-peer.md",
-  "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.04-testing-realtime-systems.md",
-  "60-realtime/60.1-websockets/03-frameworks-and-paradigms/INDEX.md",
-  "60-realtime/60.1-websockets/03-frameworks-and-paradigms/REVISION.md",
-  "60-realtime/60.1-websockets/04-interview-prep/60.1.4.01-interview-questions.md",
-  "60-realtime/60.1-websockets/04-interview-prep/INDEX.md",
-  "60-realtime/60.1-websockets/INDEX.md",
-  "60-realtime/INDEX.md",
   "70-interview-toolkit/70.1-behavioral/70.1.01-stakeholder-management-stories.md",
   "70-interview-toolkit/70.1-behavioral/70.1.02-leadership-questions.md",
   "70-interview-toolkit/70.1-behavioral/70.1.03-judgment-calls-ambiguity.md",
@@ -6844,12 +7123,6 @@
   "81-lanes-indian-sde-faang/INDEX.md",
   "81-lanes-indian-sde-faang/README.md",
   "81-lanes-indian-sde-faang/REVISION.md",
-  "AGENTS.md",
-  "INDEX.md",
-  "README.md",
-  "ROADMAP.md",
-  "contributing.md",
-  "design-qa.md",
   "docs/2026-09-10-modernization-changelog.md",
   "docs/2026-09-11-dead-link-remediation-report.md",
   "docs/2026-09-14-modernization-changelog-2.md",
@@ -6933,7 +7206,6 @@
   "projects/docita/REVISION.md",
   "projects/maq/01-product-engineering.md",
   "projects/maq/INDEX.md",
-  "projects/maq/REVISION.md",
-  "search.md"
+  "projects/maq/REVISION.md"
  ]
 }

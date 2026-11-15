@@ -529,7 +529,7 @@ EOF
 #### Rules
 
 - **Heading level**: Use `## See Also` (level-2). Some new files use `### See Also` (level-3) — convert to `##` when encountered.
-- **Alphabetization**: Links must be **alphabetized** by link text (case-insensitive). This is enforced project-wide.
+- **Alphabetization**: Keep links **alphabetized** by link text (case-insensitive) where practical. No gate enforces this; reviewers fix order when they touch the list.
 - **Placement**: `## See Also` must come **before** `## References` / `## References & Learn More`.
 - **Path style**: Always use repo-relative paths from the file's own directory, pointing at the target section's `INDEX.md` (e.g., `../../20-backend/20.6-microservices/INDEX.md`).
 - **Cross-section links**: Point at the target section's `INDEX.md` (e.g., `[Microservices](../../20-backend/20.6-microservices/INDEX.md)`), not a bare directory.
@@ -878,7 +878,7 @@ After making changes, verify the following:
 ### See Also
 
 - [ ] `## See Also` uses level-2 heading (`##`), not level-3 (`###`)
-- [ ] Links are alphabetized by display text (case-insensitive)
+- [ ] Links are alphabetized by display text (case-insensitive) where practical
 - [ ] `## See Also` comes before `## References` / `## References & Learn More`
 - [ ] Cross-section links point at the target section's `INDEX.md` via a repo-relative path (e.g., `../../20-backend/20.6-microservices/INDEX.md`)
 - [ ] Intra-section links may use specific file references (e.g., `../03-scaling/40.2.3.01-hpa-scaling.md`)

@@ -42,8 +42,8 @@ The weeks below are sample scheduling blocks, not a predicted hiring outcome. Us
 
 Main topic flow — each sub-stack builds on the previous:
 
-| Order | Sub-topic | Study | Files |
-| ----- | --------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------: |
+| Order | Sub-topic | Study | Stack index |
+| ----- | --------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------- |
 | 1.1 | **JavaScript engine** | Execution context → call stack → hoisting → closures → scope → `this` → prototypes → event loop | [10.1-javascript](10-frontend/10.1-javascript/INDEX.md) |
 | 1.2 | **JS async** | Promises → async/await → error handling → web workers | [10.1-javascript](10-frontend/10.1-javascript/INDEX.md) |
 | 1.3 | **TypeScript** | Generics → utility types → conditional/mapped types → narrowing → `satisfies` | [10.2-typescript](10-frontend/10.2-typescript/INDEX.md) |

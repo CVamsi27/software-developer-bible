@@ -3,7 +3,7 @@
 > **Study time:** ≈ 89 h 10 m of reading (680 files, ~8 min average).
 > **Start here: [ROADMAP.md](ROADMAP.md) — the canonical study path with phases, checkpoints, and weekly schedule.**
 >
-> **Pick your lane first.** The bible is organized into **2 interview lanes** (`80-lanes-abroad-full-stack`, `81-lanes-indian-sde-faang`) that draw from **7 shared study stacks** — plus the [00-strategy](00-strategy/INDEX.md) **strategy folder** everyone starts with. Each lane has its own preparation strategy; the stacks are the technical material both lanes share.
+> **Pick your lane after the shared strategy.** The bible is organized into **2 interview lanes** (`80-lanes-abroad-full-stack`, `81-lanes-indian-sde-faang`) that draw from **7 shared study stacks** — plus the [00-strategy](00-strategy/INDEX.md) **strategy folder** everyone starts with. Each lane has its own preparation strategy; the stacks are the technical material both lanes share.
 >
 > **Folders are numbered for the recommended study order.** `00-` contains shared interview strategy. The shared stacks run from `10-` frontend through `70-` interview toolkit in study order. `80-` and `81-` are the two lanes.
 
@@ -203,4 +203,4 @@ projects → Docita architecture deep-dives, interview defense
 
 ---
 
-*Last updated: November 2026 — 989 files, 158K lines, 0 broken links — folders numbered for study order. Every large stack is organized into numbered category subfolders; the auth track covers passkeys/SAML; sequences are contiguous inside each stack folder. The 80.x lane numbering intentionally leaves room for project-preparation chapters.
+*Last updated: November 2026 — 989 files, 158K lines, 0 broken links — folders numbered for study order. 680 of the 989 files are learning chapters; the rest are indexes, revision companions, interview banks and review records. Every large stack is organized into numbered category subfolders; the auth track covers passkeys/SAML; sequences are contiguous inside each stack folder. The 80.x lane numbering intentionally leaves room for project-preparation chapters.

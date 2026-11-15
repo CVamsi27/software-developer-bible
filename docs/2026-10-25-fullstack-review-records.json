@@ -8640,12 +8640,12 @@
     },
     {
       "path": "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.02-graphql-subscriptions-live-queries.md",
-      "sha256": "b8604264ff90e0a27b6b886efa56aff8d75b1af6edc5e427ea896e5830a3dc59",
+      "sha256": "9c342f9b653d420c4cbae5724b10bf0c995454425d9cf98aae7004aa49d47deb",
       "status": "reviewed",
-      "reviewer": "backend_realtime_projects_finish",
-      "reviewDate": "2026-10-26",
+      "reviewer": "root",
+      "reviewDate": "2026-11-15",
       "fullContentRead": true,
-      "notes": "Full GraphQL17/graphql-ws6 schema/server/client read. Checked operationcontext, finite source/error versus result errors, current permissions, asynciterator cancellation, incompatible wireprotocols, customlivequery semantics and fanout/replay. No provider/broker integration or local GraphQL rerun claimed.",
+      "notes": "2026-11-15 pass: read in full (203 lines). Corrected Node 20 end-of-life to April 2026; verified GraphQL.js 17.1.0, graphql-ws 6.4.2, @graphql-tools/schema 11.0.9 graphql-17 peer support, the 4403 close code and the subscription/live-query boundary. Six-axis evidence is in docs/review-ledger.json.",
       "findings": []
     },
     {
@@ -8696,12 +8696,12 @@
     },
     {
       "path": "60-realtime/60.1-websockets/04-interview-prep/60.1.4.01-interview-questions.md",
-      "sha256": "d7d69fd0801d60902190bb82e3a525a213fe19ce0b40b3744be7403e24e34202",
+      "sha256": "75daff490aff44c87d0d245486f7fd8460ed6e36e48a1c0d3240c13405d0acd8",
       "status": "reviewed",
-      "reviewer": "backend_realtime_projects_finish",
-      "reviewDate": "2026-10-26",
+      "reviewer": "root",
+      "reviewDate": "2026-11-15",
       "fullContentRead": true,
-      "notes": "Full read of all30answers and followups. Checked handshake, protocol compatibility, permissions, scalar versus orderingdomain, slowconsumers, operation identities, uncertain outcomes, replay, statelessfunction versus persistentconnection ownership and regionalfailure tradeoffs.",
+      "notes": "2026-11-15 pass: read in full (235 lines). Normalized Socket.IO casing in Q3, its follow-up and the reference; verified the 4403 close code, ws Set-based protocol selection, the 30-question count and the bank's practice-only boundary. Six-axis evidence is in docs/review-ledger.json.",
       "findings": []
     },
     {
@@ -8716,22 +8716,22 @@
     },
     {
       "path": "60-realtime/60.1-websockets/INDEX.md",
-      "sha256": "9fe8a64bb2da3ec6ade06f1662144e4136be9e53c1ac6390af1c7f530e7741c8",
+      "sha256": "e915e98b6ecafe1b98531568d933b2ba32043fc38479fa064d2585b8499b5206",
       "status": "reviewed",
-      "reviewer": "backend_realtime_projects_finish",
-      "reviewDate": "2026-10-26",
+      "reviewer": "root",
+      "reviewDate": "2026-11-15",
       "fullContentRead": true,
-      "notes": "Full learning-index read; transport, state/recovery, implementation and evidence prerequisites lead to separate revision and interview practice. Source-only Docita pointers and writer-owned numeric metadata retained.",
+      "notes": "2026-11-15 pass: read in full (118 lines). Renamed the category table column from Files to Chapters and added the 11-chapter plus 3-revision-companion reconciliation. Badge, study time and category order were checked against disk. Six-axis evidence is in docs/review-ledger.json.",
       "findings": []
     },
     {
       "path": "60-realtime/INDEX.md",
-      "sha256": "b5af725997c82e3205bd0910f1df44f73a30d30867dfef56128eb486fba05bf8",
+      "sha256": "e82eaebc2a4189f16b67c69f1b7e5872ea5d08757f2a2e1b8660a151623f4915",
       "status": "reviewed",
-      "reviewer": "backend_realtime_projects_finish",
-      "reviewDate": "2026-10-26",
+      "reviewer": "root",
+      "reviewDate": "2026-11-15",
       "fullContentRead": true,
-      "notes": "Full learning-index read; transport, state/recovery, implementation and evidence prerequisites lead to separate revision and interview practice. Source-only Docita pointers and writer-owned numeric metadata retained.",
+      "notes": "2026-11-15 pass: read in full (119 lines). Renamed the column to Chapters and added the 11+3 reconciliation note so the 14-file badge cannot be confused with 14 chapters. Three-pass order and category links were checked. Six-axis evidence is in docs/review-ledger.json.",
       "findings": []
     },
     {
@@ -9866,22 +9866,22 @@
     },
     {
       "path": "AGENTS.md",
-      "sha256": "79c881c35048e5f7a34dc5242af1c3c93eb4e4b4f8d9cc563329ee76e0fcd2b6",
-      "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-10-26",
-      "fullContentRead": true,
-      "notes": "Operating rules checked: privacy, canonical topic homes, numbering, separate revision and precommit gates match user instructions.",
-      "findings": []
-    },
-    {
-      "path": "INDEX.md",
-      "sha256": "3881ee2726d529cece8c611ae2dea0723fd062a304d90cd7c9b3e1cd2c54f194",
+      "sha256": "d15f1a41eecdb5f517cee7c52e7b5b26e6526394e9a7b4bf641907848cda1649",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-15",
       "fullContentRead": true,
-      "notes": "2026-11-15 pass: read in full (206 lines). The 989-file badge and 158K-line footer were restamped from live disk; gate 1 confirms the 7-stack, 2-lane, 680-content-file and 40-bank counts, every sub-stack Files cell and all navigation links. Lane framing, study order and cross-reference map match README.md and ROADMAP.md.",
+      "notes": "2026-11-15 pass: read in full (33 lines). Updated the two verification lines to name the 34-gate suite, including counts, structure, links, freshness and review ledger; career-ops and personal-data rules unchanged. Six-axis evidence is in docs/review-ledger.json.",
+      "findings": []
+    },
+    {
+      "path": "INDEX.md",
+      "sha256": "42a4547dabf5e037eead99cd3a1601fad32100a2dd278bafb136e047f2a28f97",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-11-15",
+      "fullContentRead": true,
+      "notes": "2026-11-15 pass: read in full (206 lines). Fixed the lane-first contradiction, labeled the study-time count as learning chapters, and added the 680/989 split; counts and links were checked against scripts/check_counts.py. Six-axis evidence is in docs/review-ledger.json.",
       "findings": []
     },
     {
@@ -9896,22 +9896,22 @@
     },
     {
       "path": "ROADMAP.md",
-      "sha256": "80c70773cb363b9264b3a7256aaa2aadf2e68c126e11bb98090a613042953cbb",
-      "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-14",
-      "fullContentRead": true,
-      "notes": "2026-11-14 pass: read in full. The structure tree now includes 20.9-message-brokers, 40.10-cdn, 40.11-reverse-proxy and 40.12-iac, which the \"11 sub-stacks\" claim and the platform stack already contained. Phase, checkpoint and sample-rhythm guidance unchanged.",
-      "findings": []
-    },
-    {
-      "path": "contributing.md",
-      "sha256": "1e7710275e85661443b99ed77e472e4bc4f7f862db043e267f6516a7a042bb24",
+      "sha256": "b3f3afa90a62b386ffa6aa720cfe75d94397bb7d3e5c02beacfed63103eae75c",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-15",
       "fullContentRead": true,
-      "notes": "2026-11-15 pass: read in full (947 lines). The 989-file/158K-line scale claim was restamped; the directory tree matches every top-level stack, the 66-file raw-wrapper count and the 14 category values were checked against disk, and the gate table matches the 34 rows in scripts/verify.sh.",
+      "notes": "2026-11-15 pass: read in full (275 lines). Renamed the Phase 1 Files column to Stack index and verified the phase links and checkpoints. Six-axis evidence is in docs/review-ledger.json.",
+      "findings": []
+    },
+    {
+      "path": "contributing.md",
+      "sha256": "cfa9a13e1b97ee35c9014729c3972df9ef3ea6a980b4b4f15233d5829bedf65a",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-11-15",
+      "fullContentRead": true,
+      "notes": "2026-11-15 pass: read in full (947 lines). Softened the unenforced alphabetization claim in the link rules and checklist; the 34-gate table and raw-wrapper boundary remain as recorded. Six-axis evidence is in docs/review-ledger.json.",
       "findings": [
         "Site publication is the raw Markdown asset, not a rendered page: jekyll-optional-front-matter blacklists CONTRIBUTING/CONTRIBUTING.md names, so the README 'Learn how to contribute' link serves text rather than HTML. Accepted for now; rendering would need either YAML front matter plus a raw-wrapper gate allowance or a separate wrapper page."
       ]

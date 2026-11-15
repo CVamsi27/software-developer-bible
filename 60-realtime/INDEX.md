@@ -21,13 +21,15 @@ The [Docita companion](https://github.com/CVamsi27/docita) has notification/paym
 
 The topics below group transport choices, application integration, peer connectivity, architecture and practice. Use the learning passes to connect their mechanisms.
 
-| Category | Files | Why it matters |
-| ------------------------------------------------------------ | ----: | ---------------------------------------------------------------------------------------------- |
+| Category | Chapters | Why it matters |
+| ------------------------------------------------------------ | -------: | ---------------------------------------------------------------------------------------------- |
 | [Transport Protocols](#transport-protocols) | 3 | WebSockets vs SSE vs WebTransport — pick the right pipe before writing code |
 | [Framework Implementation](#framework-implementation) | 3 | Socket.IO semantics, NestJS gateways, GraphQL subscriptions — where code actually gets written |
 | [Peer-to-Peer & Data Channels](#peer-to-peer--data-channels) | 1 | WebRTC — direct routes, relay fallback and conferencing |
 | [Architecture & Scale](#architecture--scale) | 2 | Fan-out, presence, sticky sessions, Redis adapter — surviving >1 node |
 | [Testing & Drills](#testing--drills) | 2 | Load/chaos/soak testing realtime systems + curated Q&A |
+
+The 11 chapters above plus the 3 revision companions make the 14 content files in the badge; category `INDEX.md` files are navigation, not counted.
 
 ---
 

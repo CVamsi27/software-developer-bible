@@ -13,12 +13,14 @@
 
 ## The 4 Categories (in study order)
 
-| Category | Files | Purpose |
-| ------------------------------------------------------------------- | ----: | -------------------------------------------------------------------- |
+| Category | Chapters | Purpose |
+| ------------------------------------------------------------------- | -------: | -------------------------------------------------------------------- |
 | [01 — Transports](01-transports/INDEX.md) | 4 | WebSocket, SSE, Socket.IO, WebTransport — the options |
 | [02 — Architecture & Scaling](02-architecture-and-scaling/INDEX.md) | 2 | Real-time architecture, scaling patterns |
 | [03 — Frameworks & Paradigms](03-frameworks-and-paradigms/INDEX.md) | 4 | NestJS gateways, GraphQL subscriptions, WebRTC P2P, realtime testing |
 | [04 — Interview Prep](04-interview-prep/INDEX.md) | 1 | 30 prompts + follow-ups |
+
+The table counts learning chapters; the three category `REVISION.md` companions bring the section total to 14 files.
 
 ---
 

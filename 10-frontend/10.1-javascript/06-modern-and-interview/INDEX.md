@@ -3,13 +3,15 @@
 > **Study time:** ≈ 56 min of reading (7 files, ~8 min average).
 > **7 files.** Selected ECMAScript 2022–2026 features and separate host APIs, Web Workers, DOM events, cross-tab coordination, regular expressions, and a 62-question interview bank.
 
-[![Files](https://img.shields.io/badge/files-7-blue)](#files)
+[![Files](https://img.shields.io/badge/files-7-blue)](#chapters)
 [![Category](https://img.shields.io/badge/category-Modern_JS_Interview-orange)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 ---
 
-## Files
+## Chapters
+
+The Files badge counts these 6 chapters plus the revision companion.
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |

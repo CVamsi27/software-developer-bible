@@ -3,13 +3,15 @@
 > **Study time:** ≈ 1 h 2 m of reading (8 files, ~8 min average).
 > Follow a JavaScript evaluation from its active call to the names it can read, then see how declaration timing and closures change what remains accessible.
 
-[![Files](https://img.shields.io/badge/files-8-blue)](#files)
+[![Files](https://img.shields.io/badge/files-8-blue)](#chapters)
 [![Category](https://img.shields.io/badge/category-Execution_and_Scope-orange)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 ---
 
-## Files
+## Chapters
+
+The Files badge counts these 7 chapters plus the revision companion.
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |

@@ -3,13 +3,15 @@
 > **Study time:** ≈ 36 min of reading (6 files, ~6 min average).
 > **6 files.** Patterns to choose by workload and code structure: modules, memoization, generators, currying/composition, and recursion with tail-call behavior.
 
-[![Files](https://img.shields.io/badge/files-6-blue)](#files)
+[![Files](https://img.shields.io/badge/files-6-blue)](#chapters)
 [![Category](https://img.shields.io/badge/category-Functional_Patterns-orange)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 ---
 
-## Files
+## Chapters
+
+The Files badge counts these 5 chapters plus the revision companion.
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |

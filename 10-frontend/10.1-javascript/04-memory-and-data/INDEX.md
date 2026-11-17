@@ -3,13 +3,15 @@
 > **Study time:** ≈ 1 h 12 m of reading (10 files, ~7 min average).
 > **10 files.** Follow values and object identity into collection choice and copying, then learn how timers, retaining paths, hash tables, equality rules, and garbage collection shape real JavaScript systems.
 
-[![Files](https://img.shields.io/badge/files-10-blue)](#files)
+[![Files](https://img.shields.io/badge/files-10-blue)](#chapters)
 [![Category](https://img.shields.io/badge/category-Memory_and_Data-orange)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 ---
 
-## Files
+## Chapters
+
+The Files badge counts these 9 chapters plus the revision companion.
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |

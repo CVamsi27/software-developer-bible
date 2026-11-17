@@ -3,13 +3,15 @@
 > **Study time:** ≈ 28 min of reading (4 files, ~7 min average).
 > **4 files.** JavaScript's object model: how `this` binding really works, the prototype chain behind every property lookup, and metaprogramming with Proxy and Reflect.
 
-[![Files](https://img.shields.io/badge/files-4-blue)](#files)
+[![Files](https://img.shields.io/badge/files-4-blue)](#chapters)
 [![Category](https://img.shields.io/badge/category-Objects_Prototypes_this-orange)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 ---
 
-## Files
+## Chapters
+
+The Files badge counts these 3 chapters plus the revision companion.
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |

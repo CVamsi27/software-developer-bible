@@ -140,14 +140,20 @@
     },
     {
       "path": "10-frontend/10.1-javascript/01-execution-and-scope/INDEX.md",
-      "sha256": "18acefc60fbbdf38fc86d0575190eb6a46e2f87d4f4345bee0783c7fd1051805",
+      "sha256": "88f47dd7cfe942ef9acec1844f6dffc463d5b468d9a57d6f395cea63bf6a6e78",
       "genre": "index",
       "status": "reviewed",
-      "notes": "V8: section 3 now shows the inline cache transitioning from one shape to two, so the polymorphic cost it names is visible instead of asserted",
+      "notes": "Full read of 53 lines; 8-file badge reconciled as 7 chapters plus revision, and in-page anchors retargeted from #files to #chapters. Prior exact-byte review retained in metadataReview.",
       "findings": [],
-      "reviewer": "buffy",
-      "reviewDate": "2026-11-12",
-      "fullContentRead": false
+      "reviewer": "deepseek-v4.1-flash-free",
+      "reviewDate": "2026-11-17",
+      "fullContentRead": true,
+      "metadataReview": {
+        "previousReviewedSha256": "18acefc60fbbdf38fc86d0575190eb6a46e2f87d4f4345bee0783c7fd1051805",
+        "previousReviewDate": "2026-11-12",
+        "previousReviewer": "buffy",
+        "previousNotes": "V8: section 3 now shows the inline cache transitioning from one shape to two, so the polymorphic cost it names is visible instead of asserted"
+      }
     },
     {
       "path": "10-frontend/10.1-javascript/01-execution-and-scope/REVISION.md",
@@ -161,19 +167,23 @@
     },
     {
       "path": "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.01-this.md",
-      "sha256": "1f343d446bef8eb2ae0d7353f6f378385395945f73d01bb2e811406d0bed2e90",
+      "sha256": "f89ddec523771650edd7dd6d8817a036b87c0c526881d57d4fbc90489a080512",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review; corrected host timer receiver versus strict plain call, bound-function/rebinding/construction conditions, portable lexical-arrow example and module/CommonJS outer-this boundary. Exact detached/arrow/timer/bind behaviors executed. Primary MDN this/bind/Window timers checked. Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
+      "notes": "Full read of 222 lines; title set to The `this` Keyword, and invocation, arrow, construction and host-receiver claims checked against ECMA-262 and MDN. Prior exact-byte review retained in metadataReview.",
       "findings": [],
-      "reviewer": "frontend",
+      "reviewer": "deepseek-v4.1-flash-free",
       "metadataReview": {
-        "previousReviewedSha256": "7bfedf878bf80b0a5e397e99ab1b50bdbebfe8300b9c2544506e423c4b70baee",
+        "previousReviewedSha256": "1f343d446bef8eb2ae0d7353f6f378385395945f73d01bb2e811406d0bed2e90",
         "reviewDate": "2026-10-26",
         "reviewer": "root",
-        "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
+        "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged.",
+        "previousReviewDate": "2026-11-14",
+        "previousReviewer": "frontend",
+        "previousNotes": "Full-content review; corrected host timer receiver versus strict plain call, bound-function/rebinding/construction conditions, portable lexical-arrow example and module/CommonJS outer-this boundary. Exact detached/arrow/timer/bind behaviors executed. Primary MDN this/bind/Window timers checked. Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained."
       },
-      "reviewDate": "2026-11-14"
+      "reviewDate": "2026-11-17",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.02-prototypes.md",
@@ -193,29 +203,40 @@
     },
     {
       "path": "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.03-proxy-reflect.md",
-      "sha256": "e4d2f84d870fbda42ac41641ae57853024343416634c223951e14ac5071c98af",
+      "sha256": "5f116ed44855688b1657cd6c57e3c7941b77b8f8c1370cd56d0e1f5c4b88cb1b",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review; corrected target child versus parent getter receiver, demonstrated nested trap traces with actual code, wrapper allocation and invariant qualifiers, and revocation versus sandbox boundary. Primary MDN Proxy/Reflect/revocable reviewed. Actual getter trace, retained raw/copied value and revocation checked. Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
+      "notes": "Full read of 204 lines; trap wording changed from '13 internal methods' to handler traps, and private-field brand checks separated from internal-slot failures. Prior exact-byte review retained in metadataReview.",
       "findings": [],
-      "reviewer": "frontend",
-      "reviewDate": "2026-11-14"
+      "reviewer": "deepseek-v4.1-flash-free",
+      "reviewDate": "2026-11-17",
+      "metadataReview": {
+        "previousReviewedSha256": "e4d2f84d870fbda42ac41641ae57853024343416634c223951e14ac5071c98af",
+        "previousReviewDate": "2026-11-14",
+        "previousReviewer": "frontend",
+        "previousNotes": "Full-content review; corrected target child versus parent getter receiver, demonstrated nested trap traces with actual code, wrapper allocation and invariant qualifiers, and revocation versus sandbox boundary. Primary MDN Proxy/Reflect/revocable reviewed. Actual getter trace, retained raw/copied value and revocation checked. Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained."
+      },
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.1-javascript/02-objects-prototypes-this/INDEX.md",
-      "sha256": "543b99ddcffad2e272305cf02090fcd1e136ea95de497f40c598c24096aea9ed",
+      "sha256": "043eee88e7d1d1eb324d72c3dcb3697f2acc38a2370709a2a017c8f17a788f48",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full category reading flow and topic mapping reviewed. Receiver then delegation then interception progression coherent; source-pointer evidence remains conditional. Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
+      "notes": "Full read of 51 lines; 4-file badge reconciled as 3 chapters plus revision, and the Files badge retargeted to #chapters. Prior exact-byte review retained in metadataReview.",
       "findings": [],
-      "reviewer": "frontend",
+      "reviewer": "deepseek-v4.1-flash-free",
       "metadataReview": {
-        "previousReviewedSha256": "3da548a20d5c6e90d5d865243eceabf88686e6a58484b0e95a0aef8cad159a09",
+        "previousReviewedSha256": "543b99ddcffad2e272305cf02090fcd1e136ea95de497f40c598c24096aea9ed",
         "reviewDate": "2026-10-26",
         "reviewer": "root",
-        "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
+        "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged.",
+        "previousReviewDate": "2026-11-14",
+        "previousReviewer": "frontend",
+        "previousNotes": "Full category reading flow and topic mapping reviewed. Receiver then delegation then interception progression coherent; source-pointer evidence remains conditional. Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained."
       },
-      "reviewDate": "2026-11-14"
+      "reviewDate": "2026-11-17",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.1-javascript/02-objects-prototypes-this/REVISION.md",
@@ -277,22 +298,37 @@
     },
     {
       "path": "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.06-bounded-concurrency.md",
-      "sha256": "d863430a77d377873b7fe2da12af37d274644871c1e55cca508c67d7e45151e7",
+      "sha256": "d4a9989ae10d3b3ba3042c10cced2c749944f5d8bb2409929f774039ca3353ec",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review, followed by complete changed-content reread. Aligned fail-fast table with unchanged canonical code: failed worker exits, aggregate rejects, others continue dequeuing; no atomicity/rollback. Narrowed request/socket claims and cursor scope. Explained producer/ordered-completion/body backpressure budgets and pMapIterable boundary. Actual continuation after failure, input order, pre-abort skipped outcomes and invalid limit verified. Checks: node /tmp/check-js-async-examples.cjs PASS (actual fenced-code extraction; microtask/self/CJS-ESM/read/schema/abort/pool/local-catch/search/listener cases). tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types node /tmp/js-async-examples-fixture.ts PASS (declared external paymentGateway dependency). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Final source reread after generated table/read-time formatting; current full content matches reviewed mechanisms and fixtures. Prior reviewed hash retained in metadata-attestation record. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
+      "notes": "Full read of 192 lines; p-map API corrected for v7.1.1, naming pMapSettled for per-item status records and pMapIterable's backpressure budget. Prior exact-byte review retained in metadataReview.",
       "findings": [],
-      "reviewer": "frontend",
-      "reviewDate": "2026-11-14"
+      "reviewer": "deepseek-v4.1-flash-free",
+      "reviewDate": "2026-11-17",
+      "metadataReview": {
+        "previousReviewedSha256": "d863430a77d377873b7fe2da12af37d274644871c1e55cca508c67d7e45151e7",
+        "previousReviewDate": "2026-11-14",
+        "previousReviewer": "frontend",
+        "previousNotes": "Full-content review, followed by complete changed-content reread. Aligned fail-fast table with unchanged canonical code: failed worker exits, aggregate rejects, others continue dequeuing; no atomicity/rollback. Narrowed request/socket claims and cursor scope. Explained producer/ordered-completion/body backpressure budgets and pMapIterable boundary. Actual continuation after failure, input order, pre-abort skipped outcomes and invalid limit verified. Checks: node /tmp/check-js-async-examples.cjs PASS (actual fenced-code extraction; microtask/self/CJS-ESM/read/schema/abort/pool/local-catch/search/listener cases). tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types node /tmp/js-async-examples-fixture.ts PASS (declared external paymentGateway dependency). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Final source reread after generated table/read-time formatting; current full content matches reviewed mechanisms and fixtures. Prior reviewed hash retained in metadata-attestation record. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained."
+      },
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.1-javascript/03-async-concurrency/INDEX.md",
-      "sha256": "22be304c0fb2bab01a4c3b475b4975b7f8e82d1f3108c863abfa16b2c29677a4",
+      "sha256": "09c5afe189a203dcedf227539c03953490cd8185750c798ed00c852d5a2d0ff6",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full-content review, followed by complete changed-content reread. Full learning-flow review. Corrected async topic summaries to actual chapter coverage and unknown+decoder/single-read boundary; chapter order retained and counts delegated to restamper. Canonical architecture links and first-memory chapter navigation verified. Checks: node /tmp/check-js-async-examples.cjs PASS (actual fenced-code extraction; microtask/self/CJS-ESM/read/schema/abort/pool/local-catch/search/listener cases). tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types node /tmp/js-async-examples-fixture.ts PASS (declared external paymentGateway dependency). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Metadata-only SHA refresh: exact prior reviewed hash reconstructed and verified; diff in /tmp/bible-frontend-metadata-attestation.json contains only generated read-time/study-time fields.",
+      "notes": "Full read of 51 lines; 7-file badge reconciled as 6 chapters plus revision, and the Files badge retargeted to #chapters. Prior exact-byte review retained in metadataReview.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "deepseek-v4.1-flash-free",
+      "metadataReview": {
+        "previousReviewedSha256": "22be304c0fb2bab01a4c3b475b4975b7f8e82d1f3108c863abfa16b2c29677a4",
+        "previousReviewDate": null,
+        "previousReviewer": "frontend",
+        "previousNotes": "Full-content review, followed by complete changed-content reread. Full learning-flow review. Corrected async topic summaries to actual chapter coverage and unknown+decoder/single-read boundary; chapter order retained and counts delegated to restamper. Canonical architecture links and first-memory chapter navigation verified. Checks: node /tmp/check-js-async-examples.cjs PASS (actual fenced-code extraction; microtask/self/CJS-ESM/read/schema/abort/pool/local-catch/search/listener cases). tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types node /tmp/js-async-examples-fixture.ts PASS (declared external paymentGateway dependency). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Metadata-only SHA refresh: exact prior reviewed hash reconstructed and verified; diff in /tmp/bible-frontend-metadata-attestation.json contains only generated read-time/study-time fields."
+      },
+      "reviewDate": "2026-11-17",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.1-javascript/03-async-concurrency/REVISION.md",
@@ -439,18 +475,23 @@
     },
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/INDEX.md",
-      "sha256": "240e9b1d55c6207bdcc4edc21209be8d8019a9179b67a244043c3b8a7fcb1532",
+      "sha256": "efd08238ebf6f1527b087d7b05948b587da440d29e5f013c5b913f4c0bb56803",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full category learning flow/topic mapping and source pointers reviewed; values→collections→copy→timers→retainers→GC→lookup/equality progression coherent. Counts delegated to final restamper. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS.",
+      "notes": "Full read of 56 lines; 10-file badge reconciled as 9 chapters plus revision, and the Files badge retargeted to #chapters. Prior exact-byte review retained in metadataReview.",
       "findings": [],
-      "reviewer": "frontend",
+      "reviewer": "deepseek-v4.1-flash-free",
       "metadataReview": {
-        "previousReviewedSha256": "bcfa5dcdf48ffff5995b8e00c7ea58fa0e7b8101c5e972f1bd44f65a5051aafe",
+        "previousReviewedSha256": "240e9b1d55c6207bdcc4edc21209be8d8019a9179b67a244043c3b8a7fcb1532",
         "reviewDate": "2026-10-26",
         "reviewer": "root",
-        "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
-      }
+        "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged.",
+        "previousReviewDate": null,
+        "previousReviewer": "frontend",
+        "previousNotes": "Full category learning flow/topic mapping and source pointers reviewed; values→collections→copy→timers→retainers→GC→lookup/equality progression coherent. Counts delegated to final restamper. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS."
+      },
+      "reviewDate": "2026-11-17",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/REVISION.md",
@@ -515,14 +556,20 @@
     },
     {
       "path": "10-frontend/10.1-javascript/05-functional-patterns/INDEX.md",
-      "sha256": "bb9f1328091f01c884e4c92d218843272f00a843463474ad0bc7ca385f2abea9",
+      "sha256": "043522c72cf9c3a5b580b61dda542cd72622615a378a0fb9d21a3a08e372fac0",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Generator row now names the protocol/helper topics and an 8-minute read time; read-order sentence mentions the Symbol.iterator contract. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
+      "notes": "Full read of 49 lines; 6-file badge reconciled as 5 chapters plus revision, and the Files badge retargeted to #chapters. Prior exact-byte review retained in metadataReview.",
       "findings": [],
-      "reviewer": "root",
-      "reviewDate": "2026-11-14",
-      "fullContentRead": true
+      "reviewer": "deepseek-v4.1-flash-free",
+      "reviewDate": "2026-11-17",
+      "fullContentRead": true,
+      "metadataReview": {
+        "previousReviewedSha256": "bb9f1328091f01c884e4c92d218843272f00a843463474ad0bc7ca385f2abea9",
+        "previousReviewDate": "2026-11-14",
+        "previousReviewer": "root",
+        "previousNotes": "Generator row now names the protocol/helper topics and an 8-minute read time; read-order sentence mentions the Symbol.iterator contract. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained."
+      }
     },
     {
       "path": "10-frontend/10.1-javascript/05-functional-patterns/REVISION.md",
@@ -598,14 +645,20 @@
     },
     {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/INDEX.md",
-      "sha256": "5b62985c77133cad28373e156d9005aa1119419cb8964f385556cff445538c4a",
+      "sha256": "79eac571ed71c2f07f4f229e9236cd5fa9fdba0195be3ac97daaf08c4ce4a691",
       "genre": "index",
       "status": "reviewed",
-      "notes": "New regex chapter added: Regular Expressions and Text Matching; runtime verified on Node 24.22.1 Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
+      "notes": "Full read of 50 lines; 7-file badge reconciled as 6 chapter rows plus revision, and the Files badge retargeted to #chapters. Prior exact-byte review retained in metadataReview.",
       "findings": [],
-      "reviewer": "root",
-      "reviewDate": "2026-11-14",
-      "fullContentRead": true
+      "reviewer": "deepseek-v4.1-flash-free",
+      "reviewDate": "2026-11-17",
+      "fullContentRead": true,
+      "metadataReview": {
+        "previousReviewedSha256": "5b62985c77133cad28373e156d9005aa1119419cb8964f385556cff445538c4a",
+        "previousReviewDate": "2026-11-14",
+        "previousReviewer": "root",
+        "previousNotes": "New regex chapter added: Regular Expressions and Text Matching; runtime verified on Node 24.22.1 Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained."
+      }
     },
     {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/REVISION.md",
@@ -620,19 +673,22 @@
     },
     {
       "path": "10-frontend/10.1-javascript/INDEX.md",
-      "sha256": "c5002d228a50d86bc7c762830cd2f234a3d303837d23d4860d4ee16955fb2338",
+      "sha256": "67146918e65972ccc7e7419e828e7d64e9d5cf0598322b12cc84c3e38a503432",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Updated after regex chapter addition Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
+      "notes": "Full read of 170 lines; 42-file badge reconciled as 36 chapters plus 6 revision companions, with section and category indexes excluded from the count. Prior exact-byte review retained in metadataReview.",
       "findings": [],
-      "reviewer": "root",
+      "reviewer": "deepseek-v4.1-flash-free",
       "metadataReview": {
-        "previousReviewedSha256": "e89791b64f62e5d1cc74ff54d1c6cc6563a2f8c7ae3e6af8559379867d90ecd9",
+        "previousReviewedSha256": "c5002d228a50d86bc7c762830cd2f234a3d303837d23d4860d4ee16955fb2338",
         "reviewDate": "2026-10-26",
         "reviewer": "root",
-        "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
+        "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged.",
+        "previousReviewDate": "2026-11-14",
+        "previousReviewer": "root",
+        "previousNotes": "Updated after regex chapter addition Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained."
       },
-      "reviewDate": "2026-11-14",
+      "reviewDate": "2026-11-17",
       "fullContentRead": true
     },
     {

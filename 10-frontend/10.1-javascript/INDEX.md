@@ -24,6 +24,8 @@ The numbered chapters are organized into six category folders. Files in the same
 | [Functional Patterns](05-functional-patterns/INDEX.md) | 5 | The patterns you'll use daily: currying, composition, memoization, generators |
 | [Modern JS & Interview Prep](06-modern-and-interview/INDEX.md) | 6 | Selected ES2022–2026 APIs, workers, DOM events, cross-tab coordination, regular expressions, and interview questions |
 
+The 36 chapters above plus the 6 revision companions make the 42 content files in the badge; section and category `INDEX.md` files are navigation, not counted.
+
 ---
 
 ## Study Flow

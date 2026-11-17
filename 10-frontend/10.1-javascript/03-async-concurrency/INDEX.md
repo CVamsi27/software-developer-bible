@@ -3,13 +3,15 @@
 > **Study time:** ≈ 1 h 2 m of reading (7 files, ~9 min average).
 > **7 files.** Trace how host scheduling runs promise work, how failures travel, when cancellation stops supported work, and how a pool limits task starts and buffered results.
 
-[![Files](https://img.shields.io/badge/files-7-blue)](#files)
+[![Files](https://img.shields.io/badge/files-7-blue)](#chapters)
 [![Category](https://img.shields.io/badge/category-Async_and_Concurrency-orange)](../INDEX.md)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 ---
 
-## Files
+## Chapters
+
+The Files badge counts these 6 chapters plus the revision companion.
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |

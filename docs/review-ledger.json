@@ -119,133 +119,331 @@
    "sha256": "0011cfd53cf88af17d4d311398ffa8807ff0c9be5a1a940db298eb6f19f7d874",
    "lines": 150,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The execution-context components and block LE/VE behavior were checked against ECMA-262's execution-context section and MDN's execution model.",
+    "readable": "Full read of 150 lines; a paused-call question opens, then definition, first principles, six numbered mechanisms and a summary.",
+    "concise": "929 words; the parameter/default example carries the hardest boundary and the table carries the component list.",
+    "focused": "Execution-context state is owned here; scope, hoisting and closures are linked rather than re-taught.",
+    "fast": "61.1 KB raw / 15.3 KB gzip built page.",
+    "best": "Contexts and environment records are specification structures; the chapter does not prescribe a memory layout and says engines may use registers, heap contexts or inlining."
+   }
   },
   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.02-scope.md": {
    "sha256": "d4155d0691ff46c4aa5100fc3ae57e0cdb67805da2b532d31f2ba54842882a39",
    "lines": 186,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The var/let boundary, per-iteration binding and switch/catch rules were checked against ECMA-262 and MDN's block-scoping reference.",
+    "readable": "Full read of 186 lines; one block-versus-function contrast opens, then four scope tiers, lookup, the keyword table, loops and special boundaries.",
+    "concise": "961 words; the keyword table and two loop traces carry the rules, and the prose explains only the consequences.",
+    "focused": "Scope boundaries are owned here; declaration timing points at Hoisting and closure lifetime points at Closures.",
+    "fast": "68.9 KB raw / 16.1 KB gzip built page.",
+    "best": "Scope is not lifetime: a returned closure keeps a binding alive after the block exits, so visibility does not predict retention."
+   }
   },
   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.03-call-stack.md": {
    "sha256": "f28606f373abafefe8545b5d740d344dcf2d19c27d652e5d1f1b2c6502431346",
    "lines": 171,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The LIFO model, TCO support and async suspension were checked against ECMA-262 and current engine behavior; no portable depth limit is claimed.",
+    "readable": "Full read of 171 lines; a stack-overflow question opens, then frame lifecycle, physical anatomy, overflow, unwinding, await and TCO.",
+    "concise": "846 words; the six-state trace and factorial contrast carry the mechanism without repeating stack terminology.",
+    "focused": "Call, return and suspension state are owned here; event-loop scheduling and lexical lookup point at their own chapters.",
+    "fast": "60.6 KB raw / 15.0 KB gzip built page.",
+    "best": "There is no portable recursion limit and no guaranteed one-native-frame-per-call; the chapter cannot give a fixed depth and says to use iteration for unbounded nesting."
+   }
   },
   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.04-hoisting.md": {
    "sha256": "449356939864f817c0a47c6e94cc039e0bc194c0249f0a5c5495777b671f2d14",
    "lines": 166,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The declaration matrix and Annex B behavior were checked against ECMA-262's declaration-instantiation algorithms and MDN's hoisting reference.",
+    "readable": "Full read of 166 lines; a three-way var/function/let contrast opens, then instantiation, the matrix, TDZ, function forms, strict blocks and imports.",
+    "concise": "648 words; the matrix carries the declaration kinds and three short examples carry the traps.",
+    "focused": "Declaration setup and TDZ are owned here; scope boundaries and module linking point at their own chapters.",
+    "fast": "63.6 KB raw / 14.7 KB gzip built page.",
+    "best": "Hoisting does not move source; it is an observable setup effect, not a rewrite or a mandatory two-pass compiler behavior."
+   }
   },
   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.05-lexical-environment.md": {
    "sha256": "05be9d04cf5f88291e9c0749af7b1df615555576e91453d1b83adcd85d484239",
    "lines": 170,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The record family and global/module boundaries were checked against ECMA-262's Environment Record section and MDN's let/TDZ reference.",
+    "readable": "Full read of 170 lines; one reader-function trace opens, then definition, first principles, record types, the module/global split, property access, TDZ and LE/VE.",
+    "concise": "1,203 words; the lookup diagram and two code traces carry the model, while each record type gets one line.",
+    "focused": "Environment records and identifier resolution are owned here; engine representation points at the V8 chapter.",
+    "fast": "65.2 KB raw / 15.8 KB gzip built page.",
+    "best": "The lookup diagram does not show memory layout; an engine can use slots, registers or heap storage while preserving the same resolution."
+   }
   },
   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.06-closures.md": {
    "sha256": "8fc60eb5c7c1cef12b571997fa7cd3f87078a626133b7505f8f2179e78a59e9e",
    "lines": 198,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "No version-sensitive claim; the [[Environment]] model was checked against ECMA-262 and the React stale-closure example against current functional-update behavior.",
+    "readable": "Full read of 198 lines; a counter question opens, then retained bindings, live references, sibling sharing, patterns, retention and React.",
+    "concise": "704 words; the counter and store examples carry sharing, and the listener example carries cleanup ownership.",
+    "focused": "Closure lifetime is owned here; scope, lexical environment and garbage collection are linked, not retold.",
+    "fast": "64.9 KB raw / 15.2 KB gzip built page.",
+    "best": "A closure does not prove every nearby local is retained; the chapter says to inspect a heap snapshot's retaining path before calling it a leak."
+   }
   },
   "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md": {
    "sha256": "9d1643030aae68e302db4cd1a67e22bb5656bdb53eb5f23d897cfd4580b6dff9",
    "lines": 205,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The Ignition/Sparkplug/Maglev/Turboshaft tiers and pointer-compression slot size were checked against V8's published compiler posts and current Node diagnostics.",
+    "readable": "Full read of 205 lines; a slow-then-fast function opens, then the tier map, Maps, inline caches, deoptimization and measurement.",
+    "concise": "1,485 words; the Map transition tree and two access-site examples carry the mechanism, and thresholds are deliberately left qualitative.",
+    "focused": "V8's implementation is owned here; language semantics and GC reachability point at their own chapters.",
+    "fast": "66.1 KB raw / 17.2 KB gzip built page.",
+    "best": "Thresholds, tiers and deopt destinations cannot transfer between engine versions; the chapter says to measure the end-to-end path before reshaping data."
+   }
   },
   "10-frontend/10.1-javascript/01-execution-and-scope/INDEX.md": {
-   "sha256": "18acefc60fbbdf38fc86d0575190eb6a46e2f87d4f4345bee0783c7fd1051805",
-   "lines": 51,
+   "sha256": "88f47dd7cfe942ef9acec1844f6dffc463d5b468d9a57d6f395cea63bf6a6e78",
+   "lines": 53,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The 8-file badge was checked against 7 chapter rows plus the revision companion; anchors were updated from #files to #chapters.",
+    "readable": "Full read of 53 lines; the badge note, seven-row table, read-order rationale and Docita anchors follow in that order.",
+    "concise": "147 words; the table carries topics and times and one paragraph explains why the order is not alphabetical.",
+    "focused": "Category flow only; mechanisms are owned by separate chapters and the revision drill is linked separately.",
+    "fast": "48.3 KB raw / 12.2 KB gzip built page.",
+    "best": "The Docita table cites candidate source paths that cannot establish deployed behavior; the page says to inspect the revision and tests first."
+   }
   },
   "10-frontend/10.1-javascript/01-execution-and-scope/REVISION.md": {
    "sha256": "4091e5734b034769f9b99f91767f3f1b9c3c69562702ff2e57a2ae13c999b356",
    "lines": 227,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Every prompt was checked against its source chapter; the V8, TDZ, Annex B and using/await using answers were verified against the linked specification sections.",
+    "readable": "Full read of 227 lines; prompts follow the seven chapter groups, then a cross-cutting evaluation and representation group.",
+    "concise": "2,077 words; questions are fresh-worded and answers add a boundary rather than copying chapter prose.",
+    "focused": "Revision companion; it points at source chapters and keeps each mechanism in one group.",
+    "fast": "63.0 KB raw / 16.4 KB gzip built page.",
+    "best": "Retrieval practice cannot replace the chapters; the opening says to answer without reopening them and return when the mechanism is missing."
+   }
   },
   "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.01-this.md": {
-   "sha256": "1f343d446bef8eb2ae0d7353f6f378385395945f73d01bb2e811406d0bed2e90",
+   "sha256": "f89ddec523771650edd7dd6d8817a036b87c0c526881d57d4fbc90489a080512",
    "lines": 222,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The invocation rules, arrow [[ThisBindingStatus]], host timer receivers and TypeScript this-parameter behavior were checked against ECMA-262 and MDN; the title now reads The `this` Keyword.",
+    "readable": "Full read of 222 lines; a detached-method failure opens, then the precedence table, detached callbacks, arrows, classes, hosts and TypeScript.",
+    "concise": "709 words; the precedence table and one detached-callback trace carry the rules, with host variations kept to four bullets.",
+    "focused": "Receiver selection is owned here; prototype method sharing and closure capture point at their own chapters.",
+    "fast": "69.6 KB raw / 15.6 KB gzip built page.",
+    "best": "The precedence table cannot be reduced to one universal order: bound functions, arrows, construction and host callbacks add rules, and the chapter says so before the table."
+   }
   },
   "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.02-prototypes.md": {
    "sha256": "c80473aec2f707342c6c1578f099c72e1b75be2b22b57d91feabdeb49b7dfabe",
    "lines": 209,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The [[Prototype]] chain, class dual chains, descriptor write rules and prototype-pollution payload were checked against ECMA-262 and MDN.",
+    "readable": "Full read of 209 lines; a shared-method example opens, then delegation, the three prototype terms, shadowing, classes, pollution and engine cost.",
+    "concise": "598 words; the delegation diagram and two write examples carry the model, and classes get one comparison.",
+    "focused": "Prototype delegation and pollution are owned here; this-binding and Proxy traps point at their own chapters.",
+    "fast": "74.3 KB raw / 15.7 KB gzip built page.",
+    "best": "A write to an inherited value does not always create an own property; inherited setters and non-writable descriptors can change the result."
+   }
   },
   "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.03-proxy-reflect.md": {
-   "sha256": "e4d2f84d870fbda42ac41641ae57853024343416634c223951e14ac5071c98af",
+   "sha256": "5f116ed44855688b1657cd6c57e3c7941b77b8f8c1370cd56d0e1f5c4b88cb1b",
    "lines": 204,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The 13 traps, Reflect receiver forwarding and invariant checks were checked against ECMA-262's Proxy section and MDN; private-field brand checks were corrected.",
+    "readable": "Full read of 204 lines; an age-validation proxy opens, then assignment flow, receiver forwarding, the trap table, invariants, use cases and gotchas.",
+    "concise": "672 words; the forwarding contrast and revocable example carry the mechanism, and the trap table carries the surface.",
+    "focused": "Proxy and Reflect semantics are owned here; the architectural Proxy pattern is linked as a separate pattern.",
+    "fast": "70.5 KB raw / 15.7 KB gzip built page.",
+    "best": "A proxy does not preserve identity and cannot act as a sandbox: raw-target references bypass traps, revoked proxies throw, and proxy !== target."
+   }
   },
   "10-frontend/10.1-javascript/02-objects-prototypes-this/INDEX.md": {
-   "sha256": "543b99ddcffad2e272305cf02090fcd1e136ea95de497f40c598c24096aea9ed",
-   "lines": 49,
+   "sha256": "043eee88e7d1d1eb324d72c3dcb3697f2acc38a2370709a2a017c8f17a788f48",
+   "lines": 51,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The 4-file badge was checked against 3 chapter rows plus the revision companion; the anchor now targets #chapters.",
+    "readable": "Full read of 51 lines; badge note, three-row chapter table, read order and Docita anchors follow.",
+    "concise": "124 words; the table and one read-order paragraph carry the category.",
+    "focused": "Category flow only; chapters own the receiver, prototype and trap mechanics, and revision is linked separately.",
+    "fast": "47.9 KB raw / 12.0 KB gzip built page.",
+    "best": "The Docita table lists candidate source paths that cannot prove deployed behavior; the page says to inspect the revision and tests."
+   }
   },
   "10-frontend/10.1-javascript/02-objects-prototypes-this/REVISION.md": {
    "sha256": "56761a6334859b63ca307656ba7c263977829b09caf55295f994bb33e7933d02",
    "lines": 145,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Every prompt was checked against its source chapter; the receiver, prototype-write and proxy-revocation answers were verified against the linked specification sections.",
+    "readable": "Full read of 145 lines; three source groups follow the chapter order, and each answer states the mechanism before a boundary.",
+    "concise": "1,300 words; questions are fresh-worded and avoid copying the chapter examples.",
+    "focused": "Revision companion; it points at source chapters and keeps each mechanism in one group.",
+    "fast": "57.1 KB raw / 14.7 KB gzip built page.",
+    "best": "Retrieval practice cannot replace the chapters; the opening says to answer without reopening them and return when a mechanism or boundary is missing."
+   }
   },
   "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.01-event-loop.md": {
    "sha256": "05de0616f1161480078b59471c6d47964aca8627983fd4db254010e62bf9c2ec",
    "lines": 217,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Microtask checkpoints, rendering opportunities, timer clamping and Node's nextTick/libuv phases were checked against the HTML event-loop specification and current Node documentation.",
+    "readable": "Full read of 217 lines; a false-yield freeze opens, then one turn, queue layers, ordering, starvation, yielding, the frame pipeline and host differences.",
+    "concise": "874 words; the ordering trace, starvation loop and frame timeline carry the sequencing rules, leaving promise state to its own chapter.",
+    "focused": "Task and microtask scheduling is owned here; promise settlement and await suspension point at their own chapters.",
+    "fast": "67.7 KB raw / 16.1 KB gzip built page.",
+    "best": "A tick count cannot guarantee a paint or a timer order; the chapter says rendering does not follow every task and Node phases differ from browser turns."
+   }
   },
   "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.02-promises.md": {
    "sha256": "b3a8ec13dd9a82923871968ee8d02b9b2e5e3da0bbd244eceef4282dc3299eea",
    "lines": 266,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Promise states, the resolution procedure, combinator failure semantics and finally behavior were checked against ECMA-262's Promise section and MDN.",
+    "readable": "Full read of 266 lines; a fetch pipeline opens, then internal slots, resolution versus fulfillment, a propagation matrix, finally, four combinators and memoization.",
+    "concise": "520 words; the return-propagation matrix and two traces carry the rules, and prose is reserved for adoption and executor timing.",
+    "focused": "Promise state, chaining and combinators are owned here; await suspension and cancellation point at their chapters.",
+    "fast": "79.1 KB raw / 16.4 KB gzip built page.",
+    "best": "A promise does not start, parallelize or cancel work by itself; the chapter separates initiation from observation and says all short-circuiting leaves other I/O running."
+   }
   },
   "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.03-async-await.md": {
    "sha256": "274f22a77db7b29c77f9f3f7e440cc8b3819df12d3a2df826f6f74cc7d5f40ee",
    "lines": 296,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Async return adoption, the return await boundary, for await cleanup and the generator-runner caveat were checked against ECMA-262 and MDN.",
+    "readable": "Full read of 296 lines; a dashboard waterfall opens, then the runner analogy, sync entry, concurrency patterns, error boundaries, runtime validation, async iteration and the distributed caveat.",
+    "concise": "644 words; the runner sketch and two concurrency traces carry suspension and dependency order, with validation kept to one boundary.",
+    "focused": "Await suspension and async iteration are owned here; promise internals, abort and bounded pools point at their chapters.",
+    "fast": "80.3 KB raw / 17.0 KB gzip built page.",
+    "best": "await does not yield the thread and an async function does not run atomically; the chapter says only event-loop work can interleave, while remote effects can still commit."
+   }
   },
   "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.04-error-handling.md": {
    "sha256": "3af8661ab50a1549e43f3963ded93cd337f6bbb5da78765e8063089ecef6ab94",
    "lines": 261,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "fetch fulfillment on 4xx/5xx, Error.cause, finally overrides and Node unhandled-rejection modes were checked against MDN, ECMA-262 and current Node docs; all three linked pattern chapters exist.",
+    "readable": "Full read of 261 lines; an HTTP-500 response opens, then hierarchy and custom errors, Result unions, finally traps, cause chains, read-versus-retry, global handlers and a summary.",
+    "concise": "703 words; the hierarchy table, Result example and single-read helper carry the taxonomy and the boundary.",
+    "focused": "Failure classification and recovery boundaries are owned here; retry policy and idempotency are linked as the canonical implementations.",
+    "fast": "78.1 KB raw / 17.3 KB gzip built page.",
+    "best": "A catch cannot observe a killed process, certain OOM conditions or a committed remote write; the chapter separates one read from write reconciliation."
+   }
   },
   "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.05-abort-and-cancellation.md": {
    "sha256": "8692573f532cd594bd72cf63302390074e55f897391883d47063b7370c6aac46",
    "lines": 223,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "AbortSignal.timeout, AbortSignal.any, reason propagation and listener cleanup were checked against MDN and Node's AbortController documentation.",
+    "readable": "Full read of 223 lines; an autocomplete race opens, then the API anatomy, static factories, the listener leak and fix, the dual-defense manager and three hard limits.",
+    "concise": "533 words; the leak/fix pair and the search manager carry the mechanism, and the limits stay three numbered cases.",
+    "focused": "Cooperative cancellation is owned here; promise short-circuiting and pool aborts are linked rather than retold.",
+    "fast": "71.1 KB raw / 15.4 KB gzip built page.",
+    "best": "A signal cannot preempt a blocked loop, close a remote commit or roll back effects; the chapter says cancellation requests cooperation."
+   }
   },
   "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.06-bounded-concurrency.md": {
-   "sha256": "d863430a77d377873b7fe2da12af37d274644871c1e55cca508c67d7e45151e7",
+   "sha256": "d4a9989ae10d3b3ba3042c10cced2c749944f5d8bb2409929f774039ca3353ec",
    "lines": 192,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The pool helpers and p-map 7.1.1 API (pMapSettled, pMapIterable backpressure, stopOnError) were checked against the official README; the note was corrected to name pMapSettled.",
+    "readable": "Full read of 192 lines; a 10,000-URL burst opens, then the unbounded trap, the lockless worker pool, failure strategies, streaming memory and p-map.",
+    "concise": "518 words; the worker timeline, outcome type and two pool helpers carry start control and settlement.",
+    "focused": "Start-time budgeting and pool outcomes are owned here; promise aggregation and abort signaling point at their chapters.",
+    "fast": "70.2 KB raw / 15.6 KB gzip built page.",
+    "best": "A concurrency limit does not rate-limit starts, cancel claimed work or bound response bodies; the chapter names each as a separate policy."
+   }
   },
   "10-frontend/10.1-javascript/03-async-concurrency/INDEX.md": {
-   "sha256": "22be304c0fb2bab01a4c3b475b4975b7f8e82d1f3108c863abfa16b2c29677a4",
-   "lines": 49,
+   "sha256": "09c5afe189a203dcedf227539c03953490cd8185750c798ed00c852d5a2d0ff6",
+   "lines": 51,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The 7-file badge was checked against 6 chapter rows plus the revision companion; the Files badge now targets #chapters.",
+    "readable": "Full read of 51 lines; badge note, six-row chapter table, read-order rationale and Docita anchors follow in that order.",
+    "concise": "118 words; the table carries topics and times and one short paragraph explains why the order starts with the event loop.",
+    "focused": "Category flow only; each scheduling and failure mechanism is owned by its chapter, and revision is linked separately.",
+    "fast": "48.4 KB raw / 12.3 KB gzip built page.",
+    "best": "The Docita table cites candidate source paths that cannot prove deployed behavior; the page says to inspect the revision and tests first."
+   }
   },
   "10-frontend/10.1-javascript/03-async-concurrency/REVISION.md": {
    "sha256": "b463b4e5c0d24b22e58c1fad77995de37efd9f1c5fefdc27f84003f13a69c3b3",
    "lines": 269,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Every prompt was checked against its source chapter; the p-map, AbortSignal.any and unhandled-rejection answers were verified against the linked official documentation.",
+    "readable": "Full read of 269 lines; six source groups follow chapter order, and each answer states the mechanism before a boundary.",
+    "concise": "2,590 words; questions are fresh-worded and answers add a boundary rather than copying chapter prose.",
+    "focused": "Revision companion; each mechanism stays in one group and points at its source chapter.",
+    "fast": "67.3 KB raw / 17.7 KB gzip built page.",
+    "best": "Retrieval practice cannot replace the chapters; the opening says to answer without reopening them and revisit when an answer misses a mechanism or boundary."
+   }
   },
   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.01-pass-by-value.md": {
    "sha256": "1c16f781aabfa8683a83fe1eaf008e548c2032d26808e1a0fc974c41f5bc218d",
@@ -302,10 +500,19 @@
    "status": "unread"
   },
   "10-frontend/10.1-javascript/04-memory-and-data/INDEX.md": {
-   "sha256": "240e9b1d55c6207bdcc4edc21209be8d8019a9179b67a244043c3b8a7fcb1532",
-   "lines": 54,
+   "sha256": "efd08238ebf6f1527b087d7b05948b587da440d29e5f013c5b913f4c0bb56803",
+   "lines": 56,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The 10-file badge was checked against 9 chapter rows plus the revision companion; the Files badge now targets #chapters.",
+    "readable": "Full read of 56 lines; badge note, nine-row chapter table, read order, five Docita anchors, navigation and revision link follow.",
+    "concise": "153 words; the table carries topics and times, and one paragraph explains the identity-to-lookup progression.",
+    "focused": "Category flow only; copying, timers, retention, GC and equality are owned by their chapters and linked rather than retold.",
+    "fast": "49.7 KB raw / 12.6 KB gzip built page.",
+    "best": "The Docita anchor lists source paths that cannot establish deployment status; the page says so and points to the revision and tests."
+   }
   },
   "10-frontend/10.1-javascript/04-memory-and-data/REVISION.md": {
    "sha256": "5973658df4a22d5710c95e4f39cfc16476111ce5f9a5d012e7d6199b17ea9498",
@@ -344,10 +551,19 @@
    "status": "unread"
   },
   "10-frontend/10.1-javascript/05-functional-patterns/INDEX.md": {
-   "sha256": "bb9f1328091f01c884e4c92d218843272f00a843463474ad0bc7ca385f2abea9",
-   "lines": 47,
+   "sha256": "043522c72cf9c3a5b580b61dda542cd72622615a378a0fb9d21a3a08e372fac0",
+   "lines": 49,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The 6-file badge was checked against 5 chapter rows plus the revision companion; the Files badge now targets #chapters.",
+    "readable": "Full read of 49 lines; badge note, five-row chapter table, read order, two Docita anchors, navigation and revision link follow.",
+    "concise": "146 words; the table carries topics and times, and one paragraph explains why modules come before caching and recursion.",
+    "focused": "Category flow only; module wiring, cache keys, iterator protocol and tail calls are owned by their chapters.",
+    "fast": "47.7 KB raw / 12.2 KB gzip built page.",
+    "best": "The Docita anchor lists source paths that cannot prove deployed behavior; the page says to study the chapter before locating the implementation."
+   }
   },
   "10-frontend/10.1-javascript/05-functional-patterns/REVISION.md": {
    "sha256": "e91cf4af57b17e82b72886b943f35263d129e1fba74c1ab729c70548eebdc566",
@@ -392,10 +608,19 @@
    "status": "unread"
   },
   "10-frontend/10.1-javascript/06-modern-and-interview/INDEX.md": {
-   "sha256": "5b62985c77133cad28373e156d9005aa1119419cb8964f385556cff445538c4a",
-   "lines": 48,
+   "sha256": "79eac571ed71c2f07f4f229e9236cd5fa9fdba0195be3ac97daaf08c4ce4a691",
+   "lines": 50,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The 7-file badge was checked against 6 chapter rows plus the revision companion; the ES2022\u20132026 scope is described as selected features rather than a complete standard.",
+    "readable": "Full read of 50 lines; badge note, six-row chapter table in study order, read order, two Docita anchors, navigation and revision link follow.",
+    "concise": "134 words; the table carries topics and times, and one paragraph sequences host APIs, messaging, events, tabs and regex.",
+    "focused": "Category flow only; each API family and the 62-question bank are owned by their own files and linked once.",
+    "fast": "48.5 KB raw / 12.3 KB gzip built page.",
+    "best": "The table's Order column does not match the file prefixes; readers cannot infer sequence from numbers and must follow the links."
+   }
   },
   "10-frontend/10.1-javascript/06-modern-and-interview/REVISION.md": {
    "sha256": "207276ba580945e18988bac7300273a8db681a04ab4ab189d46d04ed49a40fb2",
@@ -404,10 +629,19 @@
    "status": "unread"
   },
   "10-frontend/10.1-javascript/INDEX.md": {
-   "sha256": "c5002d228a50d86bc7c762830cd2f234a3d303837d23d4860d4ee16955fb2338",
-   "lines": 168,
+   "sha256": "67146918e65972ccc7e7419e828e7d64e9d5cf0598322b12cc84c3e38a503432",
+   "lines": 170,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The 42-file badge and 36-chapter table were checked against scripts/check_counts.py; the new note reconciles 36 chapters plus 6 revision companions.",
+    "readable": "Full read of 170 lines; the six-category table precedes the study flow, per-category chapter tables and three study paths.",
+    "concise": "445 words; tables carry chapter names, priorities and times, and the prose explains only sequence and lane choice.",
+    "focused": "Section navigation; each mechanism is owned by its chapter and category index, not retold here.",
+    "fast": "66.3 KB raw / 15.4 KB gzip built page.",
+    "best": "The path cannot guarantee interview coverage; the opening says it is a study order, not a coverage guarantee, and reading time is approximate."
+   }
   },
   "10-frontend/10.2-typescript/01-foundations/10.2.1.01-types-vs-interfaces.md": {
    "sha256": "4233ced19e1b8532cd21769a6a491e52064d03fd11888b1284fe74378c428b8e",
@@ -6252,28 +6486,6 @@
   }
  },
  "pending": [
-  "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.01-execution-context.md",
-  "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.02-scope.md",
-  "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.03-call-stack.md",
-  "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.04-hoisting.md",
-  "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.05-lexical-environment.md",
-  "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.06-closures.md",
-  "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md",
-  "10-frontend/10.1-javascript/01-execution-and-scope/INDEX.md",
-  "10-frontend/10.1-javascript/01-execution-and-scope/REVISION.md",
-  "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.01-this.md",
-  "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.02-prototypes.md",
-  "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.03-proxy-reflect.md",
-  "10-frontend/10.1-javascript/02-objects-prototypes-this/INDEX.md",
-  "10-frontend/10.1-javascript/02-objects-prototypes-this/REVISION.md",
-  "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.01-event-loop.md",
-  "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.02-promises.md",
-  "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.03-async-await.md",
-  "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.04-error-handling.md",
-  "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.05-abort-and-cancellation.md",
-  "10-frontend/10.1-javascript/03-async-concurrency/10.1.3.06-bounded-concurrency.md",
-  "10-frontend/10.1-javascript/03-async-concurrency/INDEX.md",
-  "10-frontend/10.1-javascript/03-async-concurrency/REVISION.md",
   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.01-pass-by-value.md",
   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md",
   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.md",
@@ -6283,14 +6495,12 @@
   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.07-garbage-collection.md",
   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md",
   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.09-equality-and-coercion.md",
-  "10-frontend/10.1-javascript/04-memory-and-data/INDEX.md",
   "10-frontend/10.1-javascript/04-memory-and-data/REVISION.md",
   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.01-modules.md",
   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.02-memoization.md",
   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.03-generators.md",
   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.04-currying-composition.md",
   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.05-recursion-tail-call.md",
-  "10-frontend/10.1-javascript/05-functional-patterns/INDEX.md",
   "10-frontend/10.1-javascript/05-functional-patterns/REVISION.md",
   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md",
   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.02-web-workers.md",
@@ -6298,9 +6508,7 @@
   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.04-cross-tab-communication.md",
   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.md",
   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.06-regexp-and-text.md",
-  "10-frontend/10.1-javascript/06-modern-and-interview/INDEX.md",
   "10-frontend/10.1-javascript/06-modern-and-interview/REVISION.md",
-  "10-frontend/10.1-javascript/INDEX.md",
   "10-frontend/10.2-typescript/01-foundations/10.2.1.01-types-vs-interfaces.md",
   "10-frontend/10.2-typescript/01-foundations/10.2.1.02-keyof-typeof.md",
   "10-frontend/10.2-typescript/01-foundations/10.2.1.03-type-narrowing.md",

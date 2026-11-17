@@ -4,7 +4,7 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "07480cccf855063055d1782473323f3901cc0480768750653d02f9ba8da4929f",
+ "corpus_digest": "a935f9c6381567926137f3a61a1b193fc7913c3f46eda3d3007a933a2bab6a9f",
  "totals": {
   "chapters": 680,
   "sections": 47,
@@ -164,7 +164,7 @@
   },
   {
    "p": "10-frontend/10.1-javascript/02-objects-prototypes-this/10.1.2.01-this.html",
-   "t": "This",
+   "t": "The `this` Keyword",
    "s": "JavaScript",
    "c": "Core",
    "g": [

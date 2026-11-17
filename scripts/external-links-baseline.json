@@ -1214,9 +1214,6 @@
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Closures": [
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.05-lexical-environment.md"
   ],
-  "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#function_composition": [
-   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.04-currying-composition.md"
-  ],
   "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#passing_arguments": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.01-pass-by-value.md"
   ],
@@ -2762,6 +2759,9 @@
   ],
   "https://en.wikipedia.org/wiki/Closure_(computer_programming)": [
    "10-frontend/10.1-javascript/01-execution-and-scope/10.1.1.06-closures.md"
+  ],
+  "https://en.wikipedia.org/wiki/Function_composition_(computer_science)": [
+   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.04-currying-composition.md"
   ],
   "https://en.wikipedia.org/wiki/Goodhart%27s_law": [
    "40-platform/40.3-ci-cd/03-releases-and-metrics/40.3.3.02-dora-metrics-delivery-performance.md"
@@ -4895,14 +4895,14 @@
   "https://linkerd.io/docs/": [
    "20-backend/20.6-microservices/01-service-topology/20.6.1.03-service-mesh.md"
   ],
-  "https://lodash.com/docs/4.17.15#curry": [
+  "https://lodash.com/docs/4.17.21#curry": [
    "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.04-currying-composition.md"
-  ],
-  "https://lodash.com/docs/4.17.15#memoize": [
-   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.02-memoization.md"
   ],
   "https://lodash.com/docs/4.17.21#debounce": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.04-debounce.md"
+  ],
+  "https://lodash.com/docs/4.17.21#memoize": [
+   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.02-memoization.md"
   ],
   "https://lodash.com/docs/4.17.21#throttle": [
    "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.05-throttle.md"

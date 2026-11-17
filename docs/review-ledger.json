@@ -614,31 +614,76 @@
    "sha256": "e694490ab739b056c89e138d96ba2b71f7c8d3ddccf3af580f0147b8e4559c4e",
    "lines": 114,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "ESM linking and evaluation, CommonJS wrapper behavior, Node syntax detection and TypeScript nodenext resolution were checked against ECMA-262, current Node docs and the TypeScript handbook.",
+    "readable": "Full read of 114 lines; a failed shared-client import opens, then scope/dependency/identity, resolve-link-evaluate, the ESM/CommonJS table, surface design, dynamic import and tree shaking.",
+    "concise": "875 words; the comparison table and cycle traces carry the format differences, with bundler behavior kept to its boundary.",
+    "focused": "Module identity and format contracts are owned here; lexical resolution and Node hosting point at their chapters.",
+    "fast": "57.4 KB raw / 14.8 KB gzip built page.",
+    "best": "A module boundary does not hide source or protect embedded secrets; module-level state is shared per resolved identity and can leak request-specific data."
+   }
   },
   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.02-memoization.md": {
-   "sha256": "6e2de3db99fad9557075cb22d956df2228f4e438e25e64fc94badf5777236af1",
+   "sha256": "b60406990d9704c3ddbae7a631256b35780b6936a7a877fc0a2620553233564a",
    "lines": 124,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Key equivalence, LRU capacity, promise rejection and React render caching were checked against MDN and React docs; the Lodash citation now targets 4.17.21.",
+    "readable": "Full read of 124 lines; a repeated search opens, then the hit/miss model, Fibonacci, key and retention policy, the LRU wrapper, async failure, TTL, React and measurement.",
+    "concise": "833 words; the LRU wrapper and the key counterexample carry the contract, with React kept to one table.",
+    "focused": "Result reuse and key correctness are owned here; single-flight and Map key semantics point at their chapters.",
+    "fast": "61.6 KB raw / 15.0 KB gzip built page.",
+    "best": "A cache hit cannot be more correct than its key and freshness: JSON keys lose values, object keys compare by identity, and a TTL checked only on reads can retain expired entries."
+   }
   },
   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.03-generators.md": {
-   "sha256": "1c70708b6a3a35dc8a2a5ad2a653447ea692eb17e1b7d8798e4b29cdeab26bb0",
+   "sha256": "745b7e53b16693c608f12e743cb73384a53cc305faee46b1eb9c1b69ef90ec76",
    "lines": 143,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Iterator protocols and helper availability were re-executed on Node 26.13.0: spread, destructuring, Iterator.from/map/take/toArray and Iterator.concat work, while AsyncIterator is still absent.",
+    "readable": "Full read of 143 lines; a paged exporter opens, then the protocol and sent values, iterable identity, async pages, cleanup and the space boundary.",
+    "concise": "1,098 words; the iterator traces and cleanup rules carry the mechanism, with runtime limits kept to one paragraph.",
+    "focused": "Generator protocol and lifecycle are owned here; abort and call-stack behavior point at their chapters.",
+    "fast": "67.9 KB raw / 16.0 KB gzip built page.",
+    "best": "A generator is not backpressure and does not cancel I/O: it can buffer internally, a yielded value can be large, and an in-flight fetch needs the owner's abort signal."
+   }
   },
   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.04-currying-composition.md": {
-   "sha256": "412b4fe60c2c8bca48e5c4373fe725546e43d37a0c3423308b50382d4eff77ff",
+   "sha256": "45d5c9e70942449127c75aff3e98724e1bbecf38ebee73d51a08ddacc3541313",
    "lines": 100,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Currying, bind, Function.length and Express middleware staging were checked against MDN and Express docs; the broken function-composition citation now points at Wikipedia, and Lodash targets 4.17.21.",
+    "readable": "Full read of 100 lines; a tenant pipeline opens, then currying versus partial application, bind, compose/pipe, framework factories and call-shape guidance.",
+    "concise": "551 words; the greet and pipe examples carry the distinction, and the middleware example carries the framework boundary.",
+    "focused": "Argument staging and composition order are owned here; the full Express security boundary points at the backend chapters.",
+    "fast": "56.6 KB raw / 14.0 KB gzip built page.",
+    "best": "A pipe passes one return value, so it cannot supply Express's (req, res, next) protocol; composition also does not handle async steps, errors or side-effect ordering."
+   }
   },
   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.05-recursion-tail-call.md": {
    "sha256": "092ba81d24cbd509a60389ff76ac5fcf5f69d435aea2753dbc5404dbfbf0ed3c",
    "lines": 98,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "PTC's strict-mode spec behavior, implementation portability and work-stack costs were checked against ECMA-262, WebKit's implementation note and MDN.",
+    "readable": "Full read of 98 lines; a tree-depth warning opens, then pending work, tail position, PTC guarantees, the work-stack walker and depth trade-offs.",
+    "concise": "629 words; the factorial contrast and walkTree example carry stack growth and explicit storage.",
+    "focused": "Recursion depth and tail-call semantics are owned here; stack frames and memoization point at their chapters.",
+    "fast": "55.0 KB raw / 13.9 KB gzip built page.",
+    "best": "Tail position does not guarantee constant stack across engines: only implementations with PTC can reuse frames, and Number precision or graph cycles still limit the computation."
+   }
   },
   "10-frontend/10.1-javascript/05-functional-patterns/INDEX.md": {
    "sha256": "043522c72cf9c3a5b580b61dda542cd72622615a378a0fb9d21a3a08e372fac0",
@@ -656,10 +701,19 @@
    }
   },
   "10-frontend/10.1-javascript/05-functional-patterns/REVISION.md": {
-   "sha256": "e91cf4af57b17e82b72886b943f35263d129e1fba74c1ab729c70548eebdc566",
+   "sha256": "cc3533fedc292c63a2d54a2e0dd10afa7d7433c643f19ea24fef7f0c79f74d7c",
    "lines": 241,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Every prompt was checked against its source chapter; iterator-helper availability was re-executed on Node 26.13.0, and the module, memoization and PTC answers were checked against the linked specs.",
+    "readable": "Full read of 241 lines; five source groups follow chapter order, then a changed-conditions group and a summary.",
+    "concise": "2,568 words; questions are fresh-worded and answers add a boundary instead of copying chapter prose.",
+    "focused": "Revision companion; each mechanism stays in one group and points at its source chapter.",
+    "fast": "67.7 KB raw / 17.9 KB gzip built page.",
+    "best": "Retrieval practice cannot replace the chapters; the opening says to answer without reopening them and revisit when an answer misses a mechanism or boundary."
+   }
   },
   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md": {
    "sha256": "7e1ebd8b0c11c702bda4da49532ea1ae7aebfa6d58a74b2334be745d8e67d898",
@@ -6576,12 +6630,6 @@
   }
  },
  "pending": [
-  "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.01-modules.md",
-  "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.02-memoization.md",
-  "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.03-generators.md",
-  "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.04-currying-composition.md",
-  "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.05-recursion-tail-call.md",
-  "10-frontend/10.1-javascript/05-functional-patterns/REVISION.md",
   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md",
   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.02-web-workers.md",
   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.03-dom-events-delegation.md",

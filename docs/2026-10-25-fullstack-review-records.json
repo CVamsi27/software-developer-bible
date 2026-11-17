@@ -533,34 +533,54 @@
     },
     {
       "path": "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.02-memoization.md",
-      "sha256": "6e2de3db99fad9557075cb22d956df2228f4e438e25e64fc94badf5777236af1",
+      "sha256": "b60406990d9704c3ddbae7a631256b35780b6936a7a877fc0a2620553233564a",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review of equivalence, hidden dependencies, numeric/stack bounds, explicit domain key, LRU count versus byte budget, async rejection/TTL retention and React memo contract. Corrected missing closure memoizer ownership references: wrapper canonical here; closures supplies binding lifetime. No further blocking finding. Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
+      "notes": "Full read of 124 lines; key equivalence, LRU capacity, promise rejection, TTL retention and React caching checked against MDN and React docs. Lodash reference refreshed to 4.17.21. Prior exact-byte review retained in metadataReview.",
       "findings": [],
-      "reviewer": "frontend",
-      "reviewDate": "2026-11-14"
+      "reviewer": "deepseek-v4.1-flash-free",
+      "reviewDate": "2026-11-17",
+      "metadataReview": {
+        "previousReviewedSha256": "6e2de3db99fad9557075cb22d956df2228f4e438e25e64fc94badf5777236af1",
+        "previousReviewDate": "2026-11-14",
+        "previousReviewer": "frontend",
+        "previousNotes": "Full-content review of equivalence, hidden dependencies, numeric/stack bounds, explicit domain key, LRU count versus byte budget, async rejection/TTL retention and React memo contract. Corrected missing closure memoizer ownership references: wrapper canonical here; closures supplies binding lifetime. No further blocking finding. Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained."
+      },
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.03-generators.md",
-      "sha256": "1c70708b6a3a35dc8a2a5ad2a653447ea692eb17e1b7d8798e4b29cdeab26bb0",
+      "sha256": "745b7e53b16693c608f12e743cb73384a53cc305faee46b1eb9c1b69ef90ec76",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Version pin only: Node 24.22.2 replaces 24.22.1 in the iterator-helper availability note. The reviewed generator, spread and one-shot-iterator explanations are unchanged. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
+      "notes": "Full read of 143 lines; iterator protocol, sent values, cleanup and async pages checked. Re-executed spread/destructuring, Iterator.from/map/take/toArray and Iterator.concat on Node 26.13.0; AsyncIterator remains absent. Prior exact-byte review retained in metadataReview.",
       "findings": [],
-      "reviewer": "root",
-      "reviewDate": "2026-11-14",
-      "fullContentRead": false
+      "reviewer": "deepseek-v4.1-flash-free",
+      "reviewDate": "2026-11-17",
+      "fullContentRead": true,
+      "metadataReview": {
+        "previousReviewedSha256": "1c70708b6a3a35dc8a2a5ad2a653447ea692eb17e1b7d8798e4b29cdeab26bb0",
+        "previousReviewDate": "2026-11-14",
+        "previousReviewer": "root",
+        "previousNotes": "Version pin only: Node 24.22.2 replaces 24.22.1 in the iterator-helper availability note. The reviewed generator, spread and one-shot-iterator explanations are unchanged. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained."
+      }
     },
     {
       "path": "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.04-currying-composition.md",
-      "sha256": "412b4fe60c2c8bca48e5c4373fe725546e43d37a0c3423308b50382d4eff77ff",
+      "sha256": "45d5c9e70942449127c75aff3e98724e1bbecf38ebee73d51a08ddacc3541313",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review of unary currying versus partial application, Function.length defaults/rest, sync pipe versus promise, Express multiargument protocol and authorization boundary. No blocking finding. Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
+      "notes": "Full read of 100 lines; currying versus partial application, bind, Function.length and Express middleware staging checked. Replaced the missing MDN composition anchor with the Wikipedia article and refreshed Lodash to 4.17.21. Prior exact-byte review retained in metadataReview.",
       "findings": [],
-      "reviewer": "frontend",
-      "reviewDate": "2026-11-14"
+      "reviewer": "deepseek-v4.1-flash-free",
+      "reviewDate": "2026-11-17",
+      "metadataReview": {
+        "previousReviewedSha256": "412b4fe60c2c8bca48e5c4373fe725546e43d37a0c3423308b50382d4eff77ff",
+        "previousReviewDate": "2026-11-14",
+        "previousReviewer": "frontend",
+        "previousNotes": "Full-content review of unary currying versus partial application, Function.length defaults/rest, sync pipe versus promise, Express multiargument protocol and authorization boundary. No blocking finding. Checks: node /tmp/check-js-object-examples.cjs PASS (actual receiver/descriptor/proxy examples, revocation/bound construction and React Suspense fallback; explicitly not Next production-build evidence). python3 scripts/check_links.py PASS 10463 links/181 anchors/0 broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained."
+      },
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.05-recursion-tail-call.md",
@@ -591,14 +611,20 @@
     },
     {
       "path": "10-frontend/10.1-javascript/05-functional-patterns/REVISION.md",
-      "sha256": "e91cf4af57b17e82b72886b943f35263d129e1fba74c1ab729c70548eebdc566",
+      "sha256": "cc3533fedc292c63a2d54a2e0dd10afa7d7433c643f19ea24fef7f0c79f74d7c",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Version pin only: the iterator-helper availability question now cites Node 24.22.2; the answer content is otherwise unchanged.",
+      "notes": "Full read of 241 lines; all prompts checked against source chapters. Iterator-helper answer re-executed on Node 26.13.0 (Iterator.concat present, AsyncIterator absent). Prior exact-byte review retained in metadataReview.",
       "findings": [],
-      "reviewer": "root",
-      "reviewDate": "2026-11-12",
-      "fullContentRead": false
+      "reviewer": "deepseek-v4.1-flash-free",
+      "reviewDate": "2026-11-17",
+      "fullContentRead": true,
+      "metadataReview": {
+        "previousReviewedSha256": "e91cf4af57b17e82b72886b943f35263d129e1fba74c1ab729c70548eebdc566",
+        "previousReviewDate": "2026-11-12",
+        "previousReviewer": "root",
+        "previousNotes": "Version pin only: the iterator-helper availability question now cites Node 24.22.2; the answer content is otherwise unchanged."
+      }
     },
     {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md",

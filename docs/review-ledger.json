@@ -719,37 +719,91 @@
    "sha256": "7e1ebd8b0c11c702bda4da49532ea1ae7aebfa6d58a74b2334be745d8e67d898",
    "lines": 130,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Every edition assignment and the ES2026 membership of Array.fromAsync, Iterator.concat, Map upsert, JSON source access, Math.sumPrecise, Error.isError and Uint8Array base64/hex were checked against the official TC39 finished-proposals table and the ECMAScript 2026 draft; JSON.parse context.source and JSON.rawJSON were executed on Node 26.13.0.",
+    "readable": "Full read of 130 lines; a sorted-and-grouped report opens, then edition-by-edition behavior, one report trace, lazy versus collected iteration, JSON precision and host/runtime boundaries.",
+    "concise": "1,090 words; one paragraph per edition plus three short traces carry the ownership, evaluation and precision rules, with no repeated API catalogue.",
+    "focused": "Edition membership and the ownership/precision contracts are owned here; copying, generators and promises point at their chapters rather than being retold.",
+    "fast": "64.8 KB raw / 16.0 KB gzip built page.",
+    "best": "A release year does not prove deployment support: Math.sumPrecise is absent on Node 26.13.0 and type declarations never install a runtime method, so the chapter says to check each target."
+   }
   },
   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.02-web-workers.md": {
    "sha256": "956f3f6c01caff73737d04701d1ad83f8d5a0ee85d0e9572339edbd944ef5298",
    "lines": 145,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Dedicated, shared and service-worker lifetimes, MessagePort.start behavior, structured-clone failures, ArrayBuffer transfer detachment and OffscreenCanvas ownership were checked against the HTML Standard and MDN.",
+    "readable": "Full read of 145 lines; a frozen page opens, then the three worker kinds, a request/reply trace, clone versus transfer versus shared memory, and the payoff test.",
+    "concise": "802 words; the worker table and the validated request/reply example carry ownership, with service-worker lifecycle deferred rather than duplicated.",
+    "focused": "Worker ownership, message validation and transfer are owned here; the event loop, cross-tab transports and PWA lifecycle point at their chapters.",
+    "fast": "67.4 KB raw / 15.5 KB gzip built page.",
+    "best": "A worker does not share the page's objects or DOM, cannot be interrupted by a cancel message, and adds startup and transfer cost; the chapter says to measure before moving asynchronous network waits."
+   }
   },
   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.03-dom-events-delegation.md": {
    "sha256": "67cce4752a6ab70aaf6c6918ffc36fb92e7dccf3af13792d99d23068aaf3d602",
    "lines": 115,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Capture/target/bubble order, target versus currentTarget, closest containment, passive listeners, React's onFocus behavior and CustomEvent detail semantics were checked against the DOM Standard, MDN and React documentation.",
+    "readable": "Full read of 115 lines; a growing table opens, then dispatch phases, one delegated click trace, listener ownership, propagation/default/passivity, and framework boundaries.",
+    "concise": "772 words; the delegated handler and the three-operation table carry routing and cancellation, with React kept to one boundary section.",
+    "focused": "Event dispatch and delegated ownership are owned here; cross-tab transports and high-frequency scheduling point at their chapters.",
+    "fast": "58.9 KB raw / 14.5 KB gzip built page.",
+    "best": "Delegation cannot make an invalid action safe: closest can match outside the root, dataset values are untrusted input, non-bubbling events need capture, and the owner must remove the listener."
+   }
   },
   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.04-cross-tab-communication.md": {
    "sha256": "bb40b5fb065b24c9473fe9211e88be2d336c929a37a98d4643ca8926b659dc90",
    "lines": 142,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "BroadcastChannel delivery and self-post behavior, storage-event exclusions, sessionStorage scope, structured clone, Web Locks ifAvailable semantics and postMessage origin checks were checked against the HTML Standard, W3C Web Locks and MDN.",
+    "readable": "Full read of 142 lines; a theme change opens, then the guarantee table, a stored-fallback trace, lock coordination, and owner selection for workers and windows.",
+    "concise": "846 words; the guarantee table and theme example carry transport choice and recovery, with each remaining mechanism kept to one section.",
+    "focused": "Cross-context transport and coordination guarantees are owned here; browser storage and PWA lifecycle point at their chapters.",
+    "fast": "63.1 KB raw / 15.4 KB gzip built page.",
+    "best": "No browser transport supplies durable ordering or a transaction: channel messages can be missed, localStorage read-then-write is not atomic, and a lock cannot prevent duplicate server effects."
+   }
   },
   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.md": {
-   "sha256": "3d78909856444c882f7e7e7a24b1417e48b1a5e8e5e4c4da961d4ce459d2857d",
+   "sha256": "bb71fb433ff160a0e5489aaf2ddd06111696226b6847e53e532af40567f8e507",
    "lines": 416,
    "genre": "interview",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The 62 questions were checked against their source chapters; iterator-helper availability was re-executed on Node 26.13.0 (Iterator.concat present, AsyncIterator absent), JSON reviver source access was executed, and the edition claims were checked against the TC39 finished-proposals table.",
+    "readable": "Full read of 416 lines; six level groups hold 62 numbered questions, each with an answer, then a summary, See Also and references.",
+    "concise": "4,137 words across 62 answers, averaging about 67 words each; answers state a rule, a trace or a boundary rather than repeating chapter prose.",
+    "focused": "Interview bank with grouped sources; implementations and mechanisms point at their canonical chapters, which own the full explanations.",
+    "fast": "94.7 KB raw / 24.3 KB gzip built page.",
+    "best": "The bank cannot substitute for the chapters: several answers are deliberately short, and the opening says to use the source links when an answer misses a mechanism or boundary."
+   }
   },
   "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.06-regexp-and-text.md": {
-   "sha256": "2f4824aaff9e1ffe335b04d694a338ac0416daf839d87ff8aad5c9fec831c135",
+   "sha256": "98c527982b5418de63c43ad4c538ee5e4793285b69af9c8b2c98030cfb020813",
    "lines": 169,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Flags, lastIndex behavior, matchAll's global requirement, greedy and lazy quantifiers, RegExp.escape output and catastrophic backtracking were executed on Node 26.13.0; the benchmark table and runtime labels were refreshed from 0.6/9.8/33.9/137.2 ms to 0.3/5.2/21.0/83.9 ms.",
+    "readable": "Full read of 169 lines; a token-bearing log line opens, then pattern anatomy, flag table, a stateful-test bug, the redaction trace, four failure classes and input-built patterns.",
+    "concise": "1,226 words; the flag table, the lastIndex counterexample and the redaction example carry the rules, while backtracking stays one measured table and one defense paragraph.",
+    "focused": "Pattern structure, flags and backtracking risk are owned here; code-point and string APIs point at their chapters rather than being retold.",
+    "fast": "73.5 KB raw / 17.2 KB gzip built page.",
+    "best": "A regex cannot parse nested HTML/JSON/CSV, cannot time out on Node, and cannot make an escaped but ambiguous pattern cheap; the chapter hands those cases to a parser and bounded input."
+   }
   },
   "10-frontend/10.1-javascript/06-modern-and-interview/INDEX.md": {
    "sha256": "79eac571ed71c2f07f4f229e9236cd5fa9fdba0195be3ac97daaf08c4ce4a691",
@@ -758,19 +812,28 @@
    "status": "read",
    "reviewed": "2026-11-15",
    "evidence": {
-    "current": "The 7-file badge was checked against 6 chapter rows plus the revision companion; the ES2022\u20132026 scope is described as selected features rather than a complete standard.",
-    "readable": "Full read of 50 lines; badge note, six-row chapter table in study order, read order, two Docita anchors, navigation and revision link follow.",
-    "concise": "134 words; the table carries topics and times, and one paragraph sequences host APIs, messaging, events, tabs and regex.",
-    "focused": "Category flow only; each API family and the 62-question bank are owned by their own files and linked once.",
+    "current": "The 7-file badge was checked against 6 chapter rows plus the revision companion, and the quoted 62-question bank was checked against the question file's 62 Q/A pairs.",
+    "readable": "Full read of 50 lines; badge note, six-row study-order table, read order, two Docita anchors, navigation and revision link follow.",
+    "concise": "134 words; the table carries topics and times, and one paragraph explains why host APIs come before messaging, events, tabs and regex.",
+    "focused": "Category flow only; each API family and the interview bank are owned by their own files and linked once.",
     "fast": "48.5 KB raw / 12.3 KB gzip built page.",
-    "best": "The table's Order column does not match the file prefixes; readers cannot infer sequence from numbers and must follow the links."
+    "best": "The Order column follows study order while the file prefixes put the interview bank first; readers cannot infer sequence from numbers and must follow the links."
    }
   },
   "10-frontend/10.1-javascript/06-modern-and-interview/REVISION.md": {
-   "sha256": "207276ba580945e18988bac7300273a8db681a04ab4ab189d46d04ed49a40fb2",
+   "sha256": "4ef77222180569035812dc8563c9968d82642e191ea3e9bc8c18ddf6881d9b8e",
    "lines": 245,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Every prompt was checked against its source chapter; the iterator and regex runtime answers were re-executed on Node 26.13.0, and the edition and JSON claims were checked against the TC39 table and the ECMAScript 2026 draft.",
+    "readable": "Full read of 245 lines; five source groups follow chapter order, then changed-condition checks and a short summary.",
+    "concise": "2,918 words; questions are fresh-worded and answers add a boundary instead of copying chapter prose.",
+    "focused": "Revision companion; each mechanism stays in one group and points at its source chapter.",
+    "fast": "72.9 KB raw / 19.1 KB gzip built page.",
+    "best": "Retrieval practice cannot replace the chapters; the opening says to answer without reopening them and revisit when an answer misses a mechanism, boundary or failure case."
+   }
   },
   "10-frontend/10.1-javascript/INDEX.md": {
    "sha256": "67146918e65972ccc7e7419e828e7d64e9d5cf0598322b12cc84c3e38a503432",
@@ -6630,13 +6693,6 @@
   }
  },
  "pending": [
-  "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.01-es2024-features.md",
-  "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.02-web-workers.md",
-  "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.03-dom-events-delegation.md",
-  "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.04-cross-tab-communication.md",
-  "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.md",
-  "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.06-regexp-and-text.md",
-  "10-frontend/10.1-javascript/06-modern-and-interview/REVISION.md",
   "10-frontend/10.2-typescript/01-foundations/10.2.1.01-types-vs-interfaces.md",
   "10-frontend/10.2-typescript/01-foundations/10.2.1.02-keyof-typeof.md",
   "10-frontend/10.2-typescript/01-foundations/10.2.1.03-type-narrowing.md",

@@ -668,24 +668,36 @@
     },
     {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.md",
-      "sha256": "3d78909856444c882f7e7e7a24b1417e48b1a5e8e5e4c4da961d4ce459d2857d",
+      "sha256": "bb71fb433ff160a0e5489aaf2ddd06111696226b6847e53e532af40567f8e507",
       "genre": "interview",
       "status": "reviewed",
-      "notes": "Version pin only: Q57 now cites Node 24.22.2 for Iterator.concat and AsyncIterator availability. No other answer changed; this bank was not re-read in full during this pass. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
+      "notes": "Full read of 416 lines; 62 Q/A pairs checked against source chapters. Iterator-helper availability re-executed on Node 26.13.0 (Iterator.concat present, AsyncIterator absent); JSON reviver source access executed; edition assignments checked against the TC39 finished-proposals table. Prior exact-byte review retained in metadataReview.",
       "findings": [],
-      "reviewer": "root",
-      "reviewDate": "2026-11-14",
-      "fullContentRead": false
+      "reviewer": "deepseek-v4.1-flash-free",
+      "reviewDate": "2026-11-17",
+      "fullContentRead": true,
+      "metadataReview": {
+        "previousReviewedSha256": "3d78909856444c882f7e7e7a24b1417e48b1a5e8e5e4c4da961d4ce459d2857d",
+        "previousReviewDate": "2026-11-14",
+        "previousReviewer": "root",
+        "previousNotes": "Version pin only: Q57 now cites Node 24.22.2 for Iterator.concat and AsyncIterator availability. No other answer changed; this bank was not re-read in full during this pass. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained."
+      }
     },
     {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.06-regexp-and-text.md",
-      "sha256": "2f4824aaff9e1ffe335b04d694a338ac0416daf839d87ff8aad5c9fec831c135",
+      "sha256": "98c527982b5418de63c43ad4c538ee5e4793285b69af9c8b2c98030cfb020813",
       "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-14",
-      "fullContentRead": false,
-      "notes": "Re-measured the catastrophic-backtracking case on Node 24.22.2 as a median of five runs and replaced the single-run timings (137.2 ms at 24 characters); relabelled the table column and updated the runtime feature note. The structural defense guidance is unchanged. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
-      "findings": []
+      "reviewer": "deepseek-v4.1-flash-free",
+      "reviewDate": "2026-11-17",
+      "fullContentRead": true,
+      "notes": "Full read of 169 lines; flags, lastIndex behavior, matchAll's global requirement, RegExp.escape output and catastrophic backtracking executed on Node 26.13.0. Benchmark table refreshed to 0.3/5.2/21.0/83.9 ms. Prior exact-byte review retained in metadataReview.",
+      "findings": [],
+      "metadataReview": {
+        "previousReviewedSha256": "2f4824aaff9e1ffe335b04d694a338ac0416daf839d87ff8aad5c9fec831c135",
+        "previousReviewDate": "2026-11-14",
+        "previousReviewer": "root",
+        "previousNotes": "Re-measured the catastrophic-backtracking case on Node 24.22.2 as a median of five runs and replaced the single-run timings (137.2 ms at 24 characters); relabelled the table column and updated the runtime feature note. The structural defense guidance is unchanged. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained."
+      }
     },
     {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/INDEX.md",
@@ -706,14 +718,20 @@
     },
     {
       "path": "10-frontend/10.1-javascript/06-modern-and-interview/REVISION.md",
-      "sha256": "207276ba580945e18988bac7300273a8db681a04ab4ab189d46d04ed49a40fb2",
+      "sha256": "4ef77222180569035812dc8563c9968d82642e191ea3e9bc8c18ddf6881d9b8e",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Updated the backtracking answer to the re-measured Node 24.22.2 median (137.2 ms at 24 characters) so it agrees with the chapter table; other answers untouched. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
+      "notes": "Full read of 245 lines; every prompt checked against its source chapter. Iterator and regex runtime answers re-executed on Node 26.13.0; edition and JSON claims checked against the TC39 table and the ECMAScript 2026 draft. Prior exact-byte review retained in metadataReview.",
       "findings": [],
-      "reviewer": "root",
-      "reviewDate": "2026-11-14",
-      "fullContentRead": false
+      "reviewer": "deepseek-v4.1-flash-free",
+      "reviewDate": "2026-11-17",
+      "fullContentRead": true,
+      "metadataReview": {
+        "previousReviewedSha256": "207276ba580945e18988bac7300273a8db681a04ab4ab189d46d04ed49a40fb2",
+        "previousReviewDate": "2026-11-14",
+        "previousReviewer": "root",
+        "previousNotes": "Updated the backtracking answer to the re-measured Node 24.22.2 median (137.2 ms at 24 characters) so it agrees with the chapter table; other answers untouched. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained."
+      }
     },
     {
       "path": "10-frontend/10.1-javascript/INDEX.md",

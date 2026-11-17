@@ -773,12 +773,14 @@
     },
     {
       "path": "10-frontend/10.2-typescript/01-foundations/10.2.1.03-type-narrowing.md",
-      "sha256": "39bea82b35d3392c8e257f6a0d4273dcc887a5ccddf2963292e764244f2269c3",
+      "sha256": "767d4e16376919ac226b6188f1a7d9927ae905b124eef819e17e565e44b2b192",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full content: unknownatJSONboundary, ownfieldpredicatevalidation andexplicitlimits, discriminatedresult/exhaustive never, typeofnull/NaN/prototypecrossrealm, truthinesszerocase, assignmentflow/mutablealiases andinferredpredicates5.5.",
+      "notes": "Full content: unknown-at-boundary validation, predicate checks and explicit limits, discriminated result/never switch, typeof null and cross-realm boundaries, assignment flow, and TypeScript 5.5 predicate-inference conditions checked against the official release notes.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-17",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.2-typescript/01-foundations/10.2.1.04-tsconfig-compiler-options.md",
@@ -833,12 +835,14 @@
     },
     {
       "path": "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.03-advanced-generics.md",
-      "sha256": "9330d05b1f2a18b755f86b828d6f9531aaddf1612d5f52148dca1c424f3cd8bd",
+      "sha256": "5b40cbb26aa0a49822108a0e781b7bf94590c2c070fbd3cc2b9155ede8e61708",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full content: keyedcontainerfamilyruntimeversustype encoding, requiredobjectliteralpathscope, adjacentunarypipelinerecursion/result andassertionboundary, structuralrecursivebase, DeepReadonly/Partial tuple/array/Map/Date leafpolicy andaliasmutability; checkerdiagnostics measurement.",
+      "notes": "Full content: generic container table, nested paths, variadic stage tuple proof and runtime reduce, recursive data/cycle policy, and deep-transform limits; examples compiled with TypeScript 5.9.3 and 7.0.2.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-17",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.04-type-variance.md",
@@ -903,13 +907,13 @@
     },
     {
       "path": "10-frontend/10.2-typescript/03-type-transformations/10.2.3.04-template-literal-types.md",
-      "sha256": "fbc3bb576face969985db0ae54da22d39efd8b044618cdb1ea2c5792c12dfc51",
+      "sha256": "075821b2715766ce640c9476961a1ad678b227cdbe29d23096dd0f1c1e6aa8bb",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Added section 7 on TypeScript 7.0 Unicode code-point inference with HeadTail<\"😀abc\">; executed under TypeScript 5.9.3 (UTF-16 surrogate split) and 7.0.2 (code-point split), and stated the runtime UTF-16 disagreement. Existing route/key/join material unchanged.",
+      "notes": "Full content: route parameter extraction and encoding, event/key remapping, snake-to-camel keys, deep paths, Join/Split/ReplaceAll, and the TypeScript 7 code-point change; examples compiled with 5.9.3 and 7.0.2.",
       "findings": [],
-      "reviewer": "root",
-      "reviewDate": "2026-11-12",
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-17",
       "fullContentRead": true
     },
     {
@@ -934,21 +938,25 @@
     },
     {
       "path": "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.01-satisfies-operator.md",
-      "sha256": "b0bcafeef63d93b0b357dbe6327cf954fb729af77c4b9691cc49df40202c60c7",
+      "sha256": "eecd1d51cf25efe75df6a9ce1f76922f6a172f89de1d927726ebf9e8c9288f79",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full content reviewed: assignability without adopting the entire target type; contextual literal/callback inference; finite versus open keys; annotations versus inferred exported values; as-const static view and erased runtime validation boundary.",
+      "notes": "Full content: satisfies contract check without widening, finite/open keys, contextual typing and as-const, and runtime erasure; probes compiled with TypeScript 5.9.3 and 7.0.2 and checked against the 4.9 release notes.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-17",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.02-branded-types.md",
-      "sha256": "4e484ec1f599b27f7358569b6155775082eb9b28b33b920faa64ebb90ba74c56",
+      "sha256": "eabdb71238844ec13f48f90b0a686414a641a52a2333449789a343b1dde409dc",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full content reviewed: private unique-symbol phantom markers, validated constructors and assertion/serialization bypasses; unit arithmetic; NoInfer currency anchoring plus runtime currency/overflow checks; calendar/instant and JWT verification boundaries; optional flavors.",
+      "notes": "Full content: validated ID brands, serialization, unit/currency operations, NoInfer, date and JWT boundaries, and optional flavors; examples compiled with TypeScript 5.9.3 and 7.0.2.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-17",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.03-decorators.md",
@@ -1008,13 +1016,13 @@
     },
     {
       "path": "10-frontend/10.2-typescript/05-interview-prep/10.2.5.01-interview-questions.md",
-      "sha256": "39b0694a88dd7406901d722bacbd5d218250b4b792cd39f81446e0d4172128f2",
+      "sha256": "0034438651fdb27b1323fe5c10295839b13b4d6326f65ccfa74cabd112eca7da",
       "genre": "interview",
       "status": "reviewed",
-      "notes": "Fixed the Question38 spacing error. Six senior design sketches (Q22, Q31, Q32, Q37, Q39, Q40) compiled under TypeScript 5.9.3 and 7.0.2 with --strict, and the canonical emitter was executed. The fifty-question progression is unchanged.",
+      "notes": "Full content: all 50 Q/A pairs; self-contained examples compiled with TypeScript 5.9.3 and selected ones with 7.0.2; module-mode pairing checked against compiler acceptance; React snippets reviewed but not compiled without React types.",
       "findings": [],
-      "reviewer": "root",
-      "reviewDate": "2026-11-12",
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-17",
       "fullContentRead": true
     },
     {

@@ -854,175 +854,436 @@
    "sha256": "4233ced19e1b8532cd21769a6a491e52064d03fd11888b1284fe74378c428b8e",
    "lines": 146,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Every example and expected error was executed with TypeScript 5.9.3 under --strict, and the excess-property, extension-conflict, impossible-intersection and duplicate-alias diagnostics were checked against the compiler output.",
+    "readable": "Full read of 146 lines; a request/result contract opens, then definition, first principles, five numbered decisions and a summary keep one line from syntax choice to runtime boundary.",
+    "concise": "561 words; each of the five sections carries one decision with a short example, and the runtime/DI boundary appears once at the end.",
+    "focused": "Alias/interface choice and merging are owned here; unions, mapped types and declaration files point at their advanced chapters.",
+    "fast": "63.9 KB raw / 14.5 KB gzip built page.",
+    "best": "Neither syntax validates runtime data: excess-property checks catch fresh-literal typos but cannot make the object an exact schema, and an interface is erased before NestJS resolves a provider token."
+   }
   },
   "10-frontend/10.2-typescript/01-foundations/10.2.1.02-keyof-typeof.md": {
    "sha256": "a098499cf2023a817409f6d67067f11487e67b42b640f519d47621590b1305ad",
    "lines": 145,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The index-signature, Record, optional-property and as-const widening claims were compiled with TypeScript 5.9.3 under --strict; the Object.hasOwn and noUncheckedIndexedAccess boundaries were checked against the official TSConfig reference.",
+    "readable": "Full read of 145 lines; a settings lookup opens, then definition, first principles, three uses (keys and values, value-derived unions, key-driven transforms) and a summary.",
+    "concise": "635 words; one generic accessor, one route map and one mapped-type filter carry the key/value relationship without repeating the keyof rules.",
+    "focused": "Key and value-type derivation are owned here; mapped-type transformation and narrowing point at their chapters.",
+    "fast": "62.4 KB raw / 14.4 KB gzip built page.",
+    "best": "A derived key union proves only the static contract: Record<string, V> admits absent keys, Object.keys() omits symbols and inherited properties, and as const does not freeze the runtime object."
+   }
   },
   "10-frontend/10.2-typescript/01-foundations/10.2.1.03-type-narrowing.md": {
-   "sha256": "39bea82b35d3392c8e257f6a0d4273dcc887a5ccddf2963292e764244f2269c3",
+   "sha256": "767d4e16376919ac226b6188f1a7d9927ae905b124eef819e17e565e44b2b192",
    "lines": 142,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The parseUser/assertNever switch and the inferred-predicate filters were executed with TypeScript 5.9.3 under --strict; predicate-inference conditions were checked against the official TypeScript 5.5 release notes.",
+    "readable": "Full read of 142 lines; an unvalidated response opens, then definition, first principles, validated-result handling, a guard table, assignment flow and predicate inference.",
+    "concise": "654 words; the parse/validate/route example carries the mechanism, the guard table compares evidence, and the predicate section adds the changed condition.",
+    "focused": "Narrowing and guard selection are owned here; unions, branded types and runtime schema validation point at their chapters.",
+    "fast": "66.5 KB raw / 15.2 KB gzip built page.",
+    "best": "Narrowing cannot convert a value or validate it: typeof null passes an object check, instanceof can fail across realms, and an authored predicate is trusted even when its runtime check is wrong."
+   }
   },
   "10-frontend/10.2-typescript/01-foundations/10.2.1.04-tsconfig-compiler-options.md": {
    "sha256": "a6ffbe92017e5da047770b3c50820165de9cba10c3c9e232b15f139427d65980",
    "lines": 126,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The six module/moduleResolution pairs (node16, node18, node20, preserve with bundler, esnext with bundler, nodenext) compiled with TypeScript 5.9.3; the TypeScript 6 defaults, TypeScript 7 removals and the @typescript/typescript6 package were checked against the official 6.0 release notes, 7.0 announcement and npm.",
+    "readable": "Full read of 126 lines; a bundler/runtime mismatch opens, then definition, first principles, file traversal, loader pairing, single-file transforms, project builds and the 6/7 upgrade path.",
+    "concise": "909 words; one browser config, one module table and one upgrade section carry the checker-versus-loader contract, with project references kept to one paragraph.",
+    "focused": "Project configuration and checker/loader agreement are owned here; module resolution details point at the Node and monorepo chapters.",
+    "fast": "61.7 KB raw / 15.1 KB gzip built page.",
+    "best": "A green tsc run describes only the files and options it saw: lib and types declare APIs without installing them, paths does not rewrite imports, and the deployed loader can still reject the emitted graph."
+   }
   },
   "10-frontend/10.2-typescript/01-foundations/INDEX.md": {
    "sha256": "e7d358c4cf85f6e73adde9bf1b85ec8d71ee9266f4b0b04e18a09e4ae5863550",
    "lines": 47,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The 5-file badge was checked against four chapter rows plus the revision companion; the Docita rows are labelled as candidate evidence that needs a checkout and tests before use.",
+    "readable": "Full read of 47 lines; badge, file table, a read-order paragraph, a three-row Docita anchor table and revision navigation follow.",
+    "concise": "114 words; the table carries topic and time data, and one paragraph explains the prerequisite order.",
+    "focused": "Category flow only; each chapter's mechanism is owned by its file and linked once, while Docita evidence is kept to three candidate rows.",
+    "fast": "47.7 KB raw / 12.1 KB gzip built page.",
+    "best": "The Docita rows name candidate source locations, and the page says a path does not establish deployed behavior; inspect the checked-out revision and tests before citing it as implementation evidence."
+   }
   },
   "10-frontend/10.2-typescript/01-foundations/REVISION.md": {
    "sha256": "8c63606192f3ad109bb4d07e87c7eb892b3dd580e2acdf5a6b59a3f3fe0a284c",
    "lines": 185,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Every prompt was checked against its source chapter; the predicate-inference conditions, TS6304 composite conflict, TypeScript 6 defaults and TypeScript 7 removals were checked against the official release notes, and the inference and switch examples were compiled with TypeScript 5.9.3.",
+    "readable": "Full read of 185 lines; four source groups follow chapter order, then six changed-condition checks, a summary and references.",
+    "concise": "1,758 words; questions are fresh-worded and answers add a boundary or contrast instead of repeating chapter prose.",
+    "focused": "Revision companion; each mechanism stays in one source group and points at its chapter rather than retelling it.",
+    "fast": "63.7 KB raw / 16.0 KB gzip built page.",
+    "best": "Retrieval practice cannot replace the chapters: the opening says to answer without reopening them and revisit the linked source when an answer misses a mechanism, boundary or failure case."
+   }
   },
   "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.01-generics.md": {
    "sha256": "277888f21303b5cdeaa704274740b2601caa33712eadfb11b4d68c72a425bb0b",
    "lines": 214,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The generic, constraint, const-type-parameter, stack and decoder examples were executed with TypeScript 5.9.3 and 7.0.2 under --strict; the const type parameter claim was checked against the official TypeScript 5.0 release notes.",
+    "readable": "Full read of 214 lines; an unknown JSON payload opens, then definition, first principles, six numbered rules and a summary move from inference to constraints, defaults and runtime decoding.",
+    "concise": "882 words; one API-client trace, one identity/const pair and one stack carry inference, constraints and defaults, with the runtime boundary stated once.",
+    "focused": "Generic parameter relationships are owned here; infer, advanced composition, variance and utility types point at their chapters.",
+    "fast": "74.3 KB raw / 16.0 KB gzip built page.",
+    "best": "A generic cannot validate a payload or make + work for every type: the decoder must earn its result at runtime, and a type parameter used only in an output needs a factory or decoder."
+   }
   },
   "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.02-infer.md": {
    "sha256": "e86422b38b156b1684de980edf11c2c158802d5b984a7198ade33c2c591d4b9c",
    "lines": 146,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Every extractor (UnwrapPromise, ReturnValue, ParametersOf, FirstParameter, InstanceOf, Head/Tail/Last, DeepUnwrap) was executed with TypeScript 5.9.3 and 7.0.2 under --strict; the overload and built-in behavior was checked against the official TypeScript handbook.",
+    "readable": "Full read of 146 lines; a Promise-wrapped result opens, then definition, first principles, capture from promises, functions, tuples, wrappers and recursion, followed by a summary.",
+    "concise": "650 words; one capture pattern is shown per structure, and the false-branch and distribution rules are stated once rather than repeated in each example.",
+    "focused": "Conditional infer capture is owned here; conditional branch mechanics, template-literal captures and path composition point at their chapters.",
+    "fast": "68.5 KB raw / 14.5 KB gzip built page.",
+    "best": "An inferred type describes structure and cannot validate runtime data: DeepUnwrap handles Promise but not every thenable, and deep recursion can reach instantiation limits."
+   }
   },
   "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.03-advanced-generics.md": {
-   "sha256": "9330d05b1f2a18b755f86b828d6f9531aaddf1612d5f52148dca1c424f3cd8bd",
+   "sha256": "5b40cbb26aa0a49822108a0e781b7bf94590c2c070fbd3cc2b9155ede8e61708",
    "lines": 198,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The HKT table, nested path, variadic pipeline, bare-alias and DeepReadonly examples were executed with TypeScript 5.9.3 and 7.0.2 under --strict, including the expected failures; variadic tuple support was checked against the official TypeScript 4.0 release notes.",
+    "readable": "Full read of 198 lines; a typed pipeline opens, then definition, first principles, four composition patterns (containers, paths, stage tuples, recursive data) and a summary.",
+    "concise": "848 words; each pattern gets one example and one boundary paragraph, and the duplicated currying pointer was merged into a single link after review.",
+    "focused": "Composed generic relationships are owned here; plain generics, infer, conditional/mapped transforms and runtime currying point at their chapters.",
+    "fast": "81.4 KB raw / 16.2 KB gzip built page.",
+    "best": "These encodings cannot execute anything: the container table needs an implementation per key, DeepReadonly keeps Date mutable at the leaf, and DeepPartial intentionally turns tuples into arrays."
+   }
   },
   "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.04-type-variance.md": {
    "sha256": "8919ce864f50ef690f458d9be407e769287bf00c308f8b1179e30210bf3bf80d",
    "lines": 164,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The covariance, contravariance, method-bivariance, mutable-array and variance-annotation examples were executed with TypeScript 5.9.3 and 7.0.2 under --strict, including every expected error; method bivariance was checked against the official strictFunctionTypes release notes.",
+    "readable": "Full read of 164 lines; an unsafe array substitution opens, then definition, first principles, four rules (positions, compatibility exceptions, mutable covariance, annotations) and a summary.",
+    "concise": "666 words; one producer/consumer pair, one method/property pair and one array corruption trace carry the directions, with the annotation section kept to one example.",
+    "focused": "Variance direction and TypeScript's compatibility exceptions are owned here; generic relationships and branded types point at their chapters.",
+    "fast": "68.2 KB raw / 14.6 KB gzip built page.",
+    "best": "TypeScript accepts some unsound assignments for compatibility: method bivariance and mutable covariance cannot be repaired at runtime, and a readonly view blocks writes only through that view."
+   }
   },
   "10-frontend/10.2-typescript/02-generics-and-inference/INDEX.md": {
    "sha256": "a11cc589cad5da1d3b4fdc936a6e92de053f7fcb7230e3798e293e1f6e6c34f8",
    "lines": 47,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The 5-file badge was checked against four chapter rows plus the revision companion, and the 35-minute study time was checked against the chapter badges (9 + 6 + 9 + 7) plus the 4-minute revision.",
+    "readable": "Full read of 47 lines; badge, file table, a read-order paragraph, a three-row Docita anchor table and revision navigation follow.",
+    "concise": "112 words; the table carries topic and time data, and one paragraph explains the prerequisite order.",
+    "focused": "Category flow only; each chapter's relationship is owned by its file and linked once, while Docita evidence is kept to three candidate rows.",
+    "fast": "48.0 KB raw / 12.1 KB gzip built page.",
+    "best": "The Docita rows name candidate source locations, and the page says a path does not establish deployed behavior; inspect the checked-out revision and tests before citing it as implementation evidence."
+   }
   },
   "10-frontend/10.2-typescript/02-generics-and-inference/REVISION.md": {
    "sha256": "d89df7918881c5e32819ca0bfbb0fb484e52b8569a42fbe193c7da146b419c86",
    "lines": 183,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Every prompt was checked against its source chapter; the TS2365, TS1338, TS2315 and TS2456 answers and the variance assignments were executed with TypeScript 5.9.3 and 7.0.2, and the const type parameter claim was checked against the official 5.0 release notes.",
+    "readable": "Full read of 183 lines; four source groups follow chapter order, then four changed-condition checks, a summary and references.",
+    "concise": "1,686 words; questions are fresh-worded and answers add a boundary, error code or contrast instead of repeating chapter prose.",
+    "focused": "Revision companion; each mechanism stays in one source group and points at its chapter rather than retelling it.",
+    "fast": "60.5 KB raw / 15.9 KB gzip built page.",
+    "best": "Retrieval practice cannot replace the chapters: the opening says to answer without reopening them and revisit the linked source when an answer misses a mechanism, boundary or failure case."
+   }
   },
   "10-frontend/10.2-typescript/03-type-transformations/10.2.3.01-utility-types.md": {
    "sha256": "3d39537389b321c6183de41cee2589e0edd775dd685fe8043f0746ceb975e799",
    "lines": 182,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The Pick, Omit, Partial, Required, Readonly, Record, Exclude, Extract, NonNullable, Parameters, ReturnType, Awaited and InstanceType examples were executed with TypeScript 5.9.3 and 7.0.2 under --strict, including every expected error; overload behavior was checked against the official TypeScript utility-types documentation.",
+    "readable": "Full read of 182 lines; a profile API opens, then definition, first principles, five derivation groups (object views, required/readonly/key maps, unions, function contracts, runtime alignment) and a summary.",
+    "concise": "715 words; one model yields public, patch, config, union and function views, with each runtime boundary attached to its example.",
+    "focused": "Standard utility derivations are owned here; mapped mechanics, conditional filtering and recursive transforms point at their chapters.",
+    "fast": "74.5 KB raw / 15.7 KB gzip built page.",
+    "best": "Utility types are shallow and erased: Readonly does not freeze nested objects, Required supplies no defaults, and Omit removes no field from a runtime object."
+   }
   },
   "10-frontend/10.2-typescript/03-type-transformations/10.2.3.02-conditional-types.md": {
    "sha256": "1640ef03d77721152a4e86f97265f45686957079595df58faeddb24a8e6c8c23",
    "lines": 185,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The ToArray distribution, never and any edge cases, OfKind filter and NullableKeys map were executed with TypeScript 5.9.3 and 7.0.2 under --strict; conditional type introduction was checked against the official TypeScript 2.8 release notes.",
+    "readable": "Full read of 185 lines; a resource-to-response contract opens, then definition, first principles, seven sections from branch selection through distribution, infer, filtering and nullable keys to bounded computation.",
+    "concise": "816 words; one route map and one union filter carry branch selection, distribution and infer, with a separate section for the nullable-key map.",
+    "focused": "Branch selection and union distribution are owned here; infer capture and mapped-type mechanics point at their chapters.",
+    "fast": "70.7 KB raw / 15.5 KB gzip built page.",
+    "best": "Conditional types cannot test runtime values: never distributes to never, any can take both branches, and a decoder still has to validate the response."
+   }
   },
   "10-frontend/10.2-typescript/03-type-transformations/10.2.3.03-mapped-types.md": {
    "sha256": "02ae070d36d4c6579d5a7cfc9066054e857b1310f5178d495bbf55e6e476d98e",
    "lines": 190,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The FormFieldState, MutableRequired, Getters, NonCallableProperties, mapValues and NullableStrings examples were executed with TypeScript 5.9.3 and 7.0.2 under --strict; key remapping was checked against the official TypeScript 4.1 release notes.",
+    "readable": "Full read of 190 lines; a form-state shape opens, then definition, first principles, five sections from field carry-through and modifiers to key remapping, runtime construction and conditional bodies.",
+    "concise": "752 words; form state, getter remapping and mapValues each appear once, with modifier and descriptor boundaries attached to their example.",
+    "focused": "Key iteration and remapping are owned here; recursive deep transforms and the standard utility forms point at their chapters.",
+    "fast": "67.9 KB raw / 15.1 KB gzip built page.",
+    "best": "A mapped type cannot build a runtime object: remapping to never only omits a property from the type, and mapValues assumes a closed plain record without preserving descriptors."
+   }
   },
   "10-frontend/10.2-typescript/03-type-transformations/10.2.3.04-template-literal-types.md": {
-   "sha256": "fbc3bb576face969985db0ae54da22d39efd8b044618cdb1ea2c5792c12dfc51",
+   "sha256": "075821b2715766ce640c9476961a1ad678b227cdbe29d23096dd0f1c1e6aa8bb",
    "lines": 298,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Route extraction and building, handler remapping, SnakeToCamel, Path, Join/Split/ReplaceAll and the TypeScript 7 Unicode split were executed with TypeScript 5.9.3 and 7.0.2; the code-point change was verified by compiling HeadTail<'\ud83d\ude00abc'> on both versions.",
+    "readable": "Full read of 298 lines; a route builder opens, then construction, route params, event and key remaps, deep paths, tuple joining and splitting, union bounds and the TypeScript 7 Unicode change.",
+    "concise": "1,185 words; each grammar gets one worked example and one limit paragraph, and the duplicated array/cycle caveat was merged into a single inherited-limits sentence.",
+    "focused": "Template-literal construction and parsing are owned here; mapped key remapping, infer capture and nested path lookup point at their chapters.",
+    "fast": "90.1 KB raw / 18.0 KB gzip built page.",
+    "best": "A template literal type cannot build a URL or split a runtime string; the TypeScript 7 code-point split can also disagree with runtime UTF-16 indexing on non-BMP input."
+   }
   },
   "10-frontend/10.2-typescript/03-type-transformations/INDEX.md": {
    "sha256": "66fdb910b96063cf661f1d64b1c48f0e310e02f9e0bb82748e7811f734eb04d9",
    "lines": 47,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The 5-file badge was checked against four chapter rows plus the revision companion, and the 41-minute study time was checked against the chapter badges (8 + 8 + 8 + 13) plus the 4-minute revision.",
+    "readable": "Full read of 47 lines; badge, file table, a read-order paragraph, a three-row Docita anchor table and revision navigation follow.",
+    "concise": "110 words; the table carries topic and time data, and one paragraph explains the derivation order.",
+    "focused": "Category flow only; each transformation is owned by its file and linked once, while Docita evidence is kept to three candidate rows.",
+    "fast": "48.0 KB raw / 12.0 KB gzip built page.",
+    "best": "The Docita rows name candidate source locations, and the page says a path does not establish deployed behavior; inspect the checked-out revision and tests before citing it as implementation evidence."
+   }
   },
   "10-frontend/10.2-typescript/03-type-transformations/REVISION.md": {
    "sha256": "b51e4ce086824aa7741f71b9539a2c88fa1e6aac0d66aca82b0c56ee2d0d7439",
    "lines": 207,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Every prompt was checked against its source chapter; the TS1338, never, any and Unicode-split answers and the Join/Split/ReplaceAll behaviours were executed with TypeScript 5.9.3 and 7.0.2.",
+    "readable": "Full read of 207 lines; four source groups follow chapter order, then six changed-condition checks, a summary and references.",
+    "concise": "1,592 words; questions are fresh-worded and answers add a boundary, error case or version contrast instead of repeating chapter prose.",
+    "focused": "Revision companion; each mechanism stays in one source group and points at its chapter rather than retelling it.",
+    "fast": "60.5 KB raw / 15.6 KB gzip built page.",
+    "best": "Retrieval practice cannot replace the chapters: the opening says to answer without reopening them and revisit the linked source when an answer misses a mechanism, boundary or failure case."
+   }
   },
   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.01-satisfies-operator.md": {
-   "sha256": "b0bcafeef63d93b0b357dbe6327cf954fb729af77c4b9691cc49df40202c60c7",
+   "sha256": "eecd1d51cf25efe75df6a9ce1f76922f6a172f89de1d927726ebf9e8c9288f79",
    "lines": 105,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The finite/open key, excess/missing key, literal-widening and as-const probes were executed with TypeScript 5.9.3 and 7.0.2 under --strict; the operator's introduction was checked against the official TypeScript 4.9 release notes.",
+    "readable": "Full read of 105 lines; a route table opens, then definition, first principles, contract checks without widening, contextual typing and the runtime boundary.",
+    "concise": "472 words; one route table, one handler map and a short runtime section carry the check-versus-widening distinction.",
+    "focused": "The satisfies choice is owned here; mapped and utility contracts, generic constraints and narrowing point at their chapters.",
+    "fast": "57.4 KB raw / 13.4 KB gzip built page.",
+    "best": "satisfies is erased and cannot validate runtime data; an open record accepts any key and an annotation still widens the variable to the declared contract."
+   }
   },
   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.02-branded-types.md": {
-   "sha256": "4e484ec1f599b27f7358569b6155775082eb9b28b33b920faa64ebb90ba74c56",
+   "sha256": "eabdb71238844ec13f48f90b0a686414a641a52a2333449789a343b1dde409dc",
    "lines": 162,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The ID, unit, currency and flavor examples were executed with TypeScript 5.9.3 and 7.0.2 under --strict, including every expected error; NoInfer was checked against the official 5.4 release notes and the date round trip was run under Node 26.13.0.",
+    "readable": "Full read of 162 lines; a mismatched ID opens, then definition, first principles, five sections from construction and serialization through units, currency, dates and flavors.",
+    "concise": "595 words; one ID parser, one unit pair, one currency pair and one flavor contrast each carry a distinct boundary.",
+    "focused": "Brand construction and domain invariants are owned here; narrowing, generics, NoInfer and type transformations point at their chapters.",
+    "fast": "66.0 KB raw / 14.6 KB gzip built page.",
+    "best": "A brand cannot validate or authenticate anything by itself: assertions and serialization bypass it, units need explicit operations, and an optional flavor still admits raw values."
+   }
   },
   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.03-decorators.md": {
    "sha256": "301adee6c18c019a538e6f092432ea9ed836544afeb7ba3d9e15b480d2cc3341",
    "lines": 160,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The newer-convention method wrapper and accessor validator were compiled and executed with TypeScript 5.9.3 and compiled with 7.0.2 under --strict; the convention split and metadata limits were checked against the official TypeScript 5.0 and 5.2 release notes.",
+    "readable": "Full read of 160 lines; a controller annotation opens, then definition, the three-phase table, convention choice, wrappers, accessors, metadata consumers and engineering decisions.",
+    "concise": "783 words; one method wrapper, one accessor validator and one metadata-consumer list carry the phase distinction without repeating the convention table.",
+    "focused": "Decorator phases and conventions are owned here; class behavior points at JavaScript and NestJS metadata handling points at its backend chapter.",
+    "fast": "62.8 KB raw / 14.9 KB gzip built page.",
+    "best": "A decorator cannot execute a framework request or validate later writes by itself: metadata needs a consumer, a field decorator cannot intercept every assignment, and a synchronous wrapper does not await a promise."
+   }
   },
   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.04-declaration-files.md": {
    "sha256": "33184b23d95cf55eee41d8542f9943d803b193288caedd999792684b1751e3a4",
    "lines": 157,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Ambient-module, module-augmentation, global-scope and triple-slash-position fixtures were compiled with TypeScript 5.9.3; the scope rules were checked against the compiler output and the official declaration-file handbook.",
+    "readable": "Full read of 157 lines; a false declaration opens, then definition, first principles, scope/format, augmentation and assets, packaging and directive precision.",
+    "concise": "721 words; one greet fixture, one Express augmentation and one export map carry the static-contract versus runtime-implementation distinction.",
+    "focused": "Declaration scope, augmentation and packaging are owned here; narrowing, generics and module basics point at their chapters.",
+    "fast": "58.8 KB raw / 14.3 KB gzip built page.",
+    "best": "A declaration cannot supply an implementation or prove runtime behavior: manual .d.ts inputs are not copied into dist, and a packed consumer must still execute the JavaScript."
+   }
   },
   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.05-advanced-patterns.md": {
    "sha256": "0fb3bb052acb782459454f1baac5d649b59576b2906dac039dcb7e073b4f7758",
    "lines": 140,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The typed event bus was compiled with TypeScript 5.9.3 and 7.0.2 under --strict and executed under Node 26.13.0; the unsubscribe, thrown-listener and promise-return traces were checked at runtime.",
+    "readable": "Full read of 140 lines; an event/payload mismatch opens, then definition, first principles, the correlated tuple construction, dispatch policy and canonical-topic links.",
+    "concise": "558 words; one event map, one emitter and one dispatch-policy section carry the static correlation and runtime contract.",
+    "focused": "Correlated event typing and dispatch policy are owned here; conditional, mapped, template and compiler pages are linked as separate mechanisms, not retold.",
+    "fast": "62.7 KB raw / 14.2 KB gzip built page.",
+    "best": "The type cannot validate an emitted message or control delivery: any bypasses the tuple union, a thrown listener stops later calls, and promises are not awaited."
+   }
   },
   "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.06-typescript-compiler-pipeline.md": {
    "sha256": "ac11a77193455f7705eb932ca59e6909b3abf85a59b9b4323eaa85091fbd0f31",
    "lines": 101,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The noEmitOnError and emit-with-errors behavior was executed with TypeScript 5.9.3; the TypeScript 7 package layout was inspected from npm typescript@7.0.2, and the no-API claim was checked against the official 7.0 announcement.",
+    "readable": "Full read of 101 lines; a missing editor underline opens, then definition, first principles, one import trace, three production consequences, project/editor workflows and API boundaries.",
+    "concise": "980 words; one import trace, one project-reference paragraph and one API-compatibility section carry the pipeline without repeating the option reference.",
+    "focused": "Program construction, checking/emit boundaries and API generations are owned here; tsconfig options, declaration packaging and module resolution point at their chapters.",
+    "fast": "54.9 KB raw / 14.5 KB gzip built page.",
+    "best": "A green check cannot prove runtime loading: diagnostics and output have separate controls, editor state is not a clean build, and TypeScript 7 does not ship the classic JavaScript Compiler API."
+   }
   },
   "10-frontend/10.2-typescript/04-advanced-patterns/INDEX.md": {
    "sha256": "9c894fefb511da8c1ef08c47e6277fc768aa8277f37c3f8562f9dad928f5536b",
    "lines": 54,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The 7-file badge was checked against six chapter rows plus the revision companion; the 42-minute study time was checked against chapter badges (4 + 7 + 7 + 6 + 6 + 6) plus the 6-minute revision.",
+    "readable": "Full read of 54 lines; badge, file table, a two-paragraph read order, Docita anchor table and revision navigation follow.",
+    "concise": "160 words; the table carries topic, priority and time data, and two short paragraphs explain the pass order.",
+    "focused": "Category flow only; each chapter's mechanism is owned by its file and linked once, while revision is pointed at rather than summarized.",
+    "fast": "49.2 KB raw / 12.4 KB gzip built page.",
+    "best": "The Docita rows name candidate source locations, and the page says a path does not establish deployed behavior; inspect the checked-out revision and tests before citing it as implementation evidence."
+   }
   },
   "10-frontend/10.2-typescript/04-advanced-patterns/REVISION.md": {
    "sha256": "e914065b053f8e5c3aa79d7aaa22e5071f0933b1c4ebea2ffd631f1a0e42a763",
    "lines": 269,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Every prompt was checked against its source chapter; the satisfies, brand, decorator, event-bus and compiler-API claims were re-executed or re-inspected with TypeScript 5.9.3 and 7.0.2, and the 7.0 package layout was checked from npm.",
+    "readable": "Full read of 269 lines; six source groups follow chapter order with 55 questions, then a summary, See Also and references.",
+    "concise": "2,225 words; questions are fresh-worded and answers add a boundary, error case or version contrast rather than repeating chapter prose.",
+    "focused": "Revision companion; each mechanism stays in one source group and points at its chapter rather than retelling it.",
+    "fast": "63.6 KB raw / 16.9 KB gzip built page.",
+    "best": "Retrieval practice cannot replace the chapters: the opening says to answer without reopening them and revisit the linked source when an answer misses a mechanism, boundary or failure case."
+   }
   },
   "10-frontend/10.2-typescript/05-interview-prep/10.2.5.01-interview-questions.md": {
-   "sha256": "39b0694a88dd7406901d722bacbd5d218250b4b792cd39f81446e0d4172128f2",
+   "sha256": "0034438651fdb27b1323fe5c10295839b13b4d6326f65ccfa74cabd112eca7da",
    "lines": 1207,
    "genre": "interview",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "All 50 Q/A pairs were read; the self-contained generics, reducer, path, validation, middleware, API-client, state-machine, DI, config, query-builder, WebSocket and async examples were compiled with TypeScript 5.9.3 under --strict, several also with 7.0.2; the module-mode pairing was checked against compiler acceptance, and React snippets were reviewed but not compiled because React types are not installed here.",
+    "readable": "Full read of 1,207 lines; five difficulty groups of ten questions each follow definition, principles and practice flow, then a summary and source links.",
+    "concise": "3,573 words across 50 answers; basic questions keep one-line definitions, while design drills add code or a boundary only where the answer needs one.",
+    "focused": "Each drill stays in one place; repeated topics (events, middleware, validation, plugins, config, query building) are variants with explicit cross-references, and Q28/Q36/Q38 point at their canonical implementations rather than retelling them.",
+    "fast": "216.1 KB raw / 33.8 KB gzip built page; it is the largest page in the TypeScript section because it carries all 50 code samples.",
+    "best": "The bank is practice, not a substitute for the chapters: it cannot validate that a reader explanation is correct, and the opening says to revisit the linked source when an answer misses a mechanism, boundary or failure case."
+   }
   },
   "10-frontend/10.2-typescript/05-interview-prep/INDEX.md": {
    "sha256": "6a7ab57a1a0b2c535aedbfbfe0dcfa4039e2052b4fa8ca06f2d30de9c5146717",
    "lines": 42,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The 1-file badge and 39-minute study time were checked against the single bank row and its 39-minute badge; the 50-question count was checked against the bank's 50 numbered questions.",
+    "readable": "Full read of 42 lines; badge, a one-row file table, the practice order, three Docita anchor rows and navigation follow.",
+    "concise": "129 words; one table row and two short practice paragraphs carry the drill order and evidence boundary.",
+    "focused": "Category flow only; the bank owns each drill and its canonical chapter links, and this index points at revision companions rather than retelling them.",
+    "fast": "46.4 KB raw / 11.9 KB gzip built page.",
+    "best": "The bank is practice, not a replacement for the chapters: the index says to answer without the explanation and revisit the linked canonical chapter when a boundary is unclear."
+   }
   },
   "10-frontend/10.2-typescript/INDEX.md": {
    "sha256": "0a53c1692368c7b3ddaf134b9b758c765eeedee702fe385afecb5744bb8b8bf7",
    "lines": 129,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The 23-file badge was checked against 19 chapter rows plus four revision companions, and the quoted 50-question bank was checked against the interview file's 50 numbered questions.",
+    "readable": "Full read of 129 lines; the section badge and category table lead into study flow, five chapter tables, study order, a runtime-promise check and navigation.",
+    "concise": "353 words; five compact tables carry file, topic and priority data, with one paragraph per category explaining why it belongs in that position.",
+    "focused": "Section flow only; each chapter's mechanism is owned by its file and linked once, and revision companions are pointed at rather than summarized.",
+    "fast": "58.1 KB raw / 13.9 KB gzip built page.",
+    "best": "The Chapters column counts 19 learning chapters while the badge counts 23 content files, a limit of the table: the four revision companions must be found in each category index."
+   }
   },
   "10-frontend/10.3-react/01-react-internals/10.3.1.01-virtual-dom.md": {
    "sha256": "1511de41d4d49cf728b626f04459e9e9da140d53971f379358c1649d9418aba7",
@@ -6693,35 +6954,6 @@
   }
  },
  "pending": [
-  "10-frontend/10.2-typescript/01-foundations/10.2.1.01-types-vs-interfaces.md",
-  "10-frontend/10.2-typescript/01-foundations/10.2.1.02-keyof-typeof.md",
-  "10-frontend/10.2-typescript/01-foundations/10.2.1.03-type-narrowing.md",
-  "10-frontend/10.2-typescript/01-foundations/10.2.1.04-tsconfig-compiler-options.md",
-  "10-frontend/10.2-typescript/01-foundations/INDEX.md",
-  "10-frontend/10.2-typescript/01-foundations/REVISION.md",
-  "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.01-generics.md",
-  "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.02-infer.md",
-  "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.03-advanced-generics.md",
-  "10-frontend/10.2-typescript/02-generics-and-inference/10.2.2.04-type-variance.md",
-  "10-frontend/10.2-typescript/02-generics-and-inference/INDEX.md",
-  "10-frontend/10.2-typescript/02-generics-and-inference/REVISION.md",
-  "10-frontend/10.2-typescript/03-type-transformations/10.2.3.01-utility-types.md",
-  "10-frontend/10.2-typescript/03-type-transformations/10.2.3.02-conditional-types.md",
-  "10-frontend/10.2-typescript/03-type-transformations/10.2.3.03-mapped-types.md",
-  "10-frontend/10.2-typescript/03-type-transformations/10.2.3.04-template-literal-types.md",
-  "10-frontend/10.2-typescript/03-type-transformations/INDEX.md",
-  "10-frontend/10.2-typescript/03-type-transformations/REVISION.md",
-  "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.01-satisfies-operator.md",
-  "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.02-branded-types.md",
-  "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.03-decorators.md",
-  "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.04-declaration-files.md",
-  "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.05-advanced-patterns.md",
-  "10-frontend/10.2-typescript/04-advanced-patterns/10.2.4.06-typescript-compiler-pipeline.md",
-  "10-frontend/10.2-typescript/04-advanced-patterns/INDEX.md",
-  "10-frontend/10.2-typescript/04-advanced-patterns/REVISION.md",
-  "10-frontend/10.2-typescript/05-interview-prep/10.2.5.01-interview-questions.md",
-  "10-frontend/10.2-typescript/05-interview-prep/INDEX.md",
-  "10-frontend/10.2-typescript/INDEX.md",
   "10-frontend/10.3-react/01-react-internals/10.3.1.01-virtual-dom.md",
   "10-frontend/10.3-react/01-react-internals/10.3.1.02-fiber.md",
   "10-frontend/10.3-react/01-react-internals/10.3.1.03-reconciliation.md",

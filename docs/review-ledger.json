@@ -446,58 +446,139 @@
    }
   },
   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.01-pass-by-value.md": {
-   "sha256": "1c16f781aabfa8683a83fe1eaf008e548c2032d26808e1a0fc974c41f5bc218d",
+   "sha256": "96d66bd8c977cae49b616a5824972d58726a59a6f210a777058afc67245caf5f",
    "lines": 146,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The pass-by-value and call-by-sharing contract and the ES2023 copy methods were checked against ECMA-262 and MDN; the mislabeled passing-arguments citation now targets the Functions guide.",
+    "readable": "Full read of 146 lines; a mutation-versus-reassignment example opens, then the definition, binding/object principles, representation, spread and pure contracts.",
+    "concise": "426 words; the opening trace and spread example carry aliasing, and the ES2023 table carries the copy methods.",
+    "focused": "Binding versus object identity is owned here; copying APIs and GC reachability point at their chapters.",
+    "fast": "60.0 KB raw / 14.4 KB gzip built page.",
+    "best": "An object parameter cannot replace the caller's variable; reassignment changes only the local binding, and a frozen property still rejects mutation."
+   }
   },
   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md": {
-   "sha256": "6905c828927dcece8157151e87d02835ddd9f8079d5f1ffd15c501559ca846db",
+   "sha256": "7f546a6966fe6ecfb53db9e3da84cd615f2636dfca52992e4fcbbc8b22418673",
    "lines": 139,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "SameValueZero keys, weak-key eligibility (objects and non-registered symbols) and iteration guarantees were checked against ECMA-262 and MDN; the opening axes now say key type rather than key equality.",
+    "readable": "Full read of 139 lines; a reference-key example opens, then the four-collection table, SameValueZero, per-collection sections, the selection table and the retention boundary.",
+    "concise": "593 words; the comparison table and two short traces carry the four APIs, leaving ephemeron detail to one paragraph.",
+    "focused": "Collection choice and key lifetime are owned here; hashing internals and retention diagnosis point at their chapters.",
+    "fast": "62.6 KB raw / 14.6 KB gzip built page.",
+    "best": "A WeakMap does not promise deletion timing or make an application leak-proof; an externally reachable value can still retain a weak key."
+   }
   },
   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.md": {
    "sha256": "c8adfa1a0630e28d38d081b87377727ef9b4ce18a6d7920642a24a4e4f32efe5",
    "lines": 152,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Structured-clone support, transfer semantics, JSON losses and the ES2023 copy boundary were checked against MDN and the HTML structured-data specification.",
+    "readable": "Full read of 152 lines; a nested-settings edit opens, then container copies, structured clone and transfer, JSON limits, a restricted copier and the decision table.",
+    "concise": "693 words; the clone trace, transfer example and decision table carry the policy, with the custom copier kept as one explicit teaching contract.",
+    "focused": "Copy depth and clone contracts are owned here; pass-by-value identity and GC retention point at their chapters.",
+    "fast": "68.8 KB raw / 15.5 KB gzip built page.",
+    "best": "structuredClone cannot copy functions, symbols or DOM nodes; JSON rewrites types, and cloning shared bytes does not isolate them."
+   }
   },
   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.04-debounce.md": {
-   "sha256": "178fac41f66e3e0aa3657bddf42123e9d8733d7f054f87f0dc31cdaebabd5989",
+   "sha256": "7ddcf50c5e87f0da31732d0ee291ab5e3d8e609b27496fa0f8670120afb3650b",
    "lines": 268,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Leading, trailing and maxWait behavior, React ref timing and the Lodash reference were checked against the 4.17.21 docs; the citation was updated from 4.17.15.",
+    "readable": "Full read of 268 lines; a keystroke burst opens, then the timer-reset model, the full implementation, edge table, comparison, React leak and ownership limits.",
+    "concise": "496 words; two traces and the edge table carry the policy, with the implementation supplying the mechanics.",
+    "focused": "Quiet-time coalescing is owned here; abort and generation ownership point at the search manager chapter.",
+    "fast": "79.0 KB raw / 16.1 KB gzip built page.",
+    "best": "Debounce cannot cancel started I/O or serialize writes; maxWait prevents indefinite postponement, and cancel leaves an in-flight callback running."
+   }
   },
   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.05-throttle.md": {
-   "sha256": "f35931e5c0c1f7965ddfbc7d49a9e3142381d35a49d97d61ab003f3881250cf7",
+   "sha256": "0cf627a8da1885377ea2f7a1f287f26b2e8659547eba0ff2b9773499a1249a07",
    "lines": 243,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Timestamp and trailing-timer behavior, rAF gating and the Lodash reference were checked against the 4.17.21 docs; the citation was updated from 4.17.15.",
+    "readable": "Full read of 243 lines; a scroll burst opens, then the interval model, the full implementation, edge table, rAF comparison, React hook and overlap limits.",
+    "concise": "472 words; the implementation and two tables carry spacing and edge policy, with rAF shown as a separate gate.",
+    "focused": "Interval-spaced starts are owned here; debounce, memory cleanup and event-loop scheduling point at their chapters.",
+    "fast": "73.8 KB raw / 15.5 KB gzip built page.",
+    "best": "Throttle does not bound completion, guarantee exact cadence or prevent overlapping async work; timers can be delayed and flush overrides ordinary spacing."
+   }
   },
   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.06-memory-leaks.md": {
    "sha256": "f1e0a55a455fc3eaf4fffe10936d0291a44d81aafa6111b24da67d13722b499c",
    "lines": 173,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Reachability, DevTools comparison snapshots and Node heap metrics were checked against MDN, Chrome DevTools and current Node documentation.",
+    "readable": "Full read of 173 lines; a growing SPA opens, then reachability and retained size, five classical leaks, DevTools steps, Node metrics and a summary.",
+    "concise": "701 words; each leak gets one mechanism and one remedy, with the retaining-path diagram carrying the shared cause.",
+    "focused": "Retention diagnosis is owned here; GC strategy, weak collections and timer cleanup point at their chapters.",
+    "fast": "63.7 KB raw / 15.4 KB gzip built page.",
+    "best": "A rising heap does not prove a leak: caches, workload growth and delayed collection can raise it, and RSS can grow outside the V8 heap."
+   }
   },
   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.07-garbage-collection.md": {
    "sha256": "185e224241c5c3ef2557e496634d784ab62dd0c49b20175aba0790d9aa63e4c7",
    "lines": 143,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "V8 space names, scavenger and remembered-set behavior, mark-sweep-compact, Orinoco phases and WeakRef/FinalizationRegistry semantics were checked against current V8 and MDN documentation.",
+    "readable": "Full read of 143 lines; a cycle example opens, then reachability and generations, V8 regions, minor and major collection, Orinoco, weak hooks and a caution.",
+    "concise": "654 words; the two diagrams carry the heap and collector pipeline, while each space and phase gets one row or bullet.",
+    "focused": "V8 collection strategy is owned here; leak diagnosis and weak-collection semantics point at their chapters.",
+    "fast": "57.5 KB raw / 15.2 KB gzip built page.",
+    "best": "The language cannot guarantee a collection schedule, space layout or pause duration; FinalizationRegistry callbacks may never run, so they cannot own critical cleanup."
+   }
   },
   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md": {
    "sha256": "1eda833b1e0e80f4b9e1a5158e6e3fea4681be4be80ab9ee779643e1d949f2cc",
    "lines": 133,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The V8 OrderedHashTable layout and kLoadFactor=2 claim were checked against the cited main-branch source; Map's sublinear contract was checked against ECMA-262.",
+    "readable": "Full read of 133 lines; an expected-O(1) claim opens, then collision inevitability, address computation, three collision strategies, V8 internals and resize latency.",
+    "concise": "713 words; the pipeline diagram and collision table carry the mechanism, with tombstones and resize cost kept to one trace each.",
+    "focused": "Hash mechanics and V8's table implementation are owned here; equality rules and Map behavior point at their chapters.",
+    "fast": "58.9 KB raw / 15.2 KB gzip built page.",
+    "best": "Expected O(1) does not guarantee per-operation latency: collisions, long keys, tombstones and rehashing can each add work, and Map exposes no reserve API."
+   }
   },
   "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.09-equality-and-coercion.md": {
    "sha256": "6dec0714f6b4041f596adc86f5b68a128c7daae1acfcec4bb96920ff7b981da2",
    "lines": 175,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "The four equality algorithms, ToPrimitive order, null relational behavior and numeric boundaries were checked against ECMA-262 and MDN.",
+    "readable": "Full read of 175 lines; a truthy-array paradox opens, then the four algorithms, loose-equality pipeline, ToPrimitive hook, operator differences and boundary parsing.",
+    "concise": "602 words; the equality table and the [] == false trace carry the rules, with production parsing kept to one helper.",
+    "focused": "Equality algorithms and coercion order are owned here; Map key equality and hash lookup point at their chapters.",
+    "fast": "70.7 KB raw / 15.6 KB gzip built page.",
+    "best": "Coercion rules do not validate input: Number('') and Number(' ') both yield 0, and document.all remains a legacy exception that cannot model ordinary objects."
+   }
   },
   "10-frontend/10.1-javascript/04-memory-and-data/INDEX.md": {
    "sha256": "efd08238ebf6f1527b087d7b05948b587da440d29e5f013c5b913f4c0bb56803",
@@ -518,7 +599,16 @@
    "sha256": "5973658df4a22d5710c95e4f39cfc16476111ce5f9a5d012e7d6199b17ea9498",
    "lines": 401,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-15",
+   "evidence": {
+    "current": "Every prompt was checked against its source chapter; weak-key eligibility, structured-clone failures, throttle spacing and GC timing were verified against the linked specification and MDN pages.",
+    "readable": "Full read of 401 lines; nine source groups follow chapter order, then three cross-cutting groups cover changed conditions, timer/collection boundaries and ownership/conversion.",
+    "concise": "4,074 words; questions are fresh-worded and answers add a boundary instead of copying chapter prose.",
+    "focused": "Revision companion; each mechanism stays in one group and points at its source chapter.",
+    "fast": "81.7 KB raw / 21.7 KB gzip built page.",
+    "best": "Retrieval practice cannot replace the chapters; the opening says to answer without reopening them and revisit when an answer misses a mechanism, boundary or failure case."
+   }
   },
   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.01-modules.md": {
    "sha256": "e694490ab739b056c89e138d96ba2b71f7c8d3ddccf3af580f0147b8e4559c4e",
@@ -6486,16 +6576,6 @@
   }
  },
  "pending": [
-  "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.01-pass-by-value.md",
-  "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md",
-  "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.md",
-  "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.04-debounce.md",
-  "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.05-throttle.md",
-  "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.06-memory-leaks.md",
-  "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.07-garbage-collection.md",
-  "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.08-hash-tables-internals.md",
-  "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.09-equality-and-coercion.md",
-  "10-frontend/10.1-javascript/04-memory-and-data/REVISION.md",
   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.01-modules.md",
   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.02-memoization.md",
   "10-frontend/10.1-javascript/05-functional-patterns/10.1.5.03-generators.md",

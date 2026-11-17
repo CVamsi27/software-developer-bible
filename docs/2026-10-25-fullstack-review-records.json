@@ -341,34 +341,43 @@
     },
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.01-pass-by-value.md",
-      "sha256": "1c16f781aabfa8683a83fe1eaf008e548c2032d26808e1a0fc974c41f5bc218d",
+      "sha256": "96d66bd8c977cae49b616a5824972d58726a59a6f210a777058afc67245caf5f",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review; corrected pointer/heap/bit-width universals to binding/object-identity contract and implementation-dependent representation. Distinguished destructuring from container copying and corrected source link. Mutation/rebinding trace preserved. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS.",
+      "notes": "Full read of 146 lines; binding-versus-object identity, spread/destructuring and ES2023 copy methods checked against ECMA-262 and MDN. Replaced the mislabeled passing-arguments citation with the Functions guide anchor. Prior exact-byte review retained in metadataReview.",
       "findings": [],
-      "reviewer": "frontend",
+      "reviewer": "deepseek-v4.1-flash-free",
       "metadataReview": {
-        "previousReviewedSha256": "8b8dbabd790f1f4961b3cf7c60df0c92f7f28a4ed5d8b73efd0bdb1d159fb94a",
+        "previousReviewedSha256": "1c16f781aabfa8683a83fe1eaf008e548c2032d26808e1a0fc974c41f5bc218d",
         "reviewDate": "2026-10-26",
         "reviewer": "root",
-        "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
-      }
+        "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged.",
+        "previousReviewDate": null,
+        "previousReviewer": "frontend",
+        "previousNotes": "Full-content review; corrected pointer/heap/bit-width universals to binding/object-identity contract and implementation-dependent representation. Distinguished destructuring from container copying and corrected source link. Mutation/rebinding trace preserved. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS."
+      },
+      "reviewDate": "2026-11-17",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md",
-      "sha256": "6905c828927dcece8157151e87d02835ddd9f8079d5f1ffd15c501559ca846db",
+      "sha256": "7f546a6966fe6ecfb53db9e3da84cd615f2636dfca52992e4fcbbc8b22418673",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review; corrected Set size/output, non-registered symbol eligibility, no weak iteration/order or GC deadline, ephemeron/external ownership, conversion and canonical bounded-cache link. Replaced invalid animation placeholder. Primary MDN and specification source checked; Set/symbol cases executed. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
+      "notes": "Full read of 139 lines; same-value-zero keys, weak-key eligibility and iteration guarantees checked against ECMA-262 and MDN. Corrected the opening axes from key equality to key type. Prior exact-byte review retained in metadataReview.",
       "findings": [],
-      "reviewer": "frontend",
+      "reviewer": "deepseek-v4.1-flash-free",
       "metadataReview": {
-        "previousReviewedSha256": "4eec9375f30f58b8a14abfd4a2952d01acdb1062da38708650f1f5b1f6ece207",
+        "previousReviewedSha256": "6905c828927dcece8157151e87d02835ddd9f8079d5f1ffd15c501559ca846db",
         "reviewDate": "2026-10-26",
         "reviewer": "root",
-        "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
+        "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged.",
+        "previousReviewDate": "2026-11-14",
+        "previousReviewer": "frontend",
+        "previousNotes": "Full-content review; corrected Set size/output, non-registered symbol eligibility, no weak iteration/order or GC deadline, ephemeron/external ownership, conversion and canonical bounded-cache link. Replaced invalid animation placeholder. Primary MDN and specification source checked; Set/symbol cases executed. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained."
       },
-      "reviewDate": "2026-11-14"
+      "reviewDate": "2026-11-17",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.md",
@@ -387,34 +396,43 @@
     },
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.04-debounce.md",
-      "sha256": "178fac41f66e3e0aa3657bddf42123e9d8733d7f054f87f0dc31cdaebabd5989",
+      "sha256": "7ddcf50c5e87f0da31732d0ee291ab5e3d8e609b27496fa0f8670120afb3650b",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review; first leading call was RED before fix. Corrected first-entry predicate, normalized/validated maxWait, cleared prior timer on force path, disabled-edge retention, single-call both-edge behavior, actual rerender antipattern, after-commit callback refs and immediate stale-publication invalidation. Fake-clock exact extracted implementation verifies leading/trailing/maxWait including delayed timer force path/cancel/flush/receiver/disabled. Strict actual core+React hook compile passes. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS.",
+      "notes": "Full read of 268 lines; timer reset, leading/trailing/maxWait, React ref timing and cleanup checked; Lodash reference refreshed to 4.17.21. Prior exact-byte review retained in metadataReview.",
       "findings": [],
-      "reviewer": "frontend",
+      "reviewer": "deepseek-v4.1-flash-free",
       "metadataReview": {
-        "previousReviewedSha256": "73dd922cc497dd890d0d48082a0b04c505dd02995ecb2b4c5048483c43307b43",
+        "previousReviewedSha256": "178fac41f66e3e0aa3657bddf42123e9d8733d7f054f87f0dc31cdaebabd5989",
         "reviewDate": "2026-10-26",
         "reviewer": "root",
-        "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
-      }
+        "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged.",
+        "previousReviewDate": null,
+        "previousReviewer": "frontend",
+        "previousNotes": "Full-content review; first leading call was RED before fix. Corrected first-entry predicate, normalized/validated maxWait, cleared prior timer on force path, disabled-edge retention, single-call both-edge behavior, actual rerender antipattern, after-commit callback refs and immediate stale-publication invalidation. Fake-clock exact extracted implementation verifies leading/trailing/maxWait including delayed timer force path/cancel/flush/receiver/disabled. Strict actual core+React hook compile passes. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS."
+      },
+      "reviewDate": "2026-11-17",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.05-throttle.md",
-      "sha256": "f35931e5c0c1f7965ddfbc7d49a9e3142381d35a49d97d61ab003f3881250cf7",
+      "sha256": "0cf627a8da1885377ea2f7a1f287f26b2e8659547eba0ff2b9773499a1249a07",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review; corrected disabled edges and trailing-only new burst/zero-delay behavior, released suppressed receiver/args, bounded ordinary start spacing versus exact deadline/flush, promise overlap and rAF presentation limits. Added cancellable receiver-preserving rAF gate. Fake-clock and actual rAF extraction verifies timing/coalescing/cancel/receiver; strict core+React hook compile passes. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
+      "notes": "Full read of 243 lines; timestamp/trailing timer, rAF gate and React cleanup checked; Lodash reference refreshed to 4.17.21. Prior exact-byte review retained in metadataReview.",
       "findings": [],
-      "reviewer": "frontend",
+      "reviewer": "deepseek-v4.1-flash-free",
       "metadataReview": {
-        "previousReviewedSha256": "19accfbfd31d6fa9ba2abf7c0d18774d6f8bec1a9f15c9d85f4a7b4569917e12",
+        "previousReviewedSha256": "f35931e5c0c1f7965ddfbc7d49a9e3142381d35a49d97d61ab003f3881250cf7",
         "reviewDate": "2026-10-26",
         "reviewer": "root",
-        "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
+        "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged.",
+        "previousReviewDate": "2026-11-14",
+        "previousReviewer": "frontend",
+        "previousNotes": "Full-content review; corrected disabled edges and trailing-only new burst/zero-delay behavior, released suppressed receiver/args, bounded ordinary start spacing versus exact deadline/flush, promise overlap and rAF presentation limits. Added cancellable receiver-preserving rAF gate. Fake-clock and actual rAF extraction verifies timing/coalescing/cancel/receiver; strict core+React hook compile passes. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained."
       },
-      "reviewDate": "2026-11-14"
+      "reviewDate": "2026-11-17",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.1-javascript/04-memory-and-data/10.1.4.06-memory-leaks.md",

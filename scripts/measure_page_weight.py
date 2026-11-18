@@ -13,8 +13,8 @@ Usage:
   python3 scripts/measure_page_weight.py --check         # fail above the budget
 
 The JSON is review input, not a quality gate by itself. A page can be small
-and still be bad, and a large interview bank can be legitimately large. The
-budget is a reading-order signal: the reviewer must explain every exception.
+and still be bad, and a large interview bank can be legitimately large. Gzip
+is the portable transport budget; raw HTML remains a DOM-size diagnostic.
 """
 from __future__ import annotations
 
@@ -35,7 +35,8 @@ except ImportError:  # brotli is optional; gzip is the portable floor.
 ROOT = Path(__file__).resolve().parent.parent
 SITE = ROOT / "_site"
 OUT = ROOT / "docs" / "corpus-review" / "page-weight.json"
-BUDGET_BYTES = 120_000
+RAW_DIAGNOSTIC_BUDGET_BYTES = 120_000
+BUDGET_GZIP_BYTES = 64 * 1024
 # _config.yml deliberately excludes this section from the published site:
 # it contains personal lane material, and site-build.yml asserts that nothing
 # personal reaches _site/. The files are still reviewed; they simply have no
@@ -150,8 +151,13 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--write", action="store_true", help="write docs/corpus-review/page-weight.json")
     parser.add_argument("--json", action="store_true", help="print the full JSON")
-    parser.add_argument("--check", action="store_true", help="exit 1 when a page exceeds the budget")
-    parser.add_argument("--budget", type=int, default=BUDGET_BYTES)
+    parser.add_argument("--check", action="store_true",
+                        help="exit 1 when a page exceeds the gzip transport budget")
+    parser.add_argument(
+        "--budget-gzip", "--budget", dest="budget_gzip", type=int,
+        default=BUDGET_GZIP_BYTES,
+        help="gzip transport budget in bytes (default: %(default)s)",
+    )
     args = parser.parse_args()
 
     if not SITE.is_dir():
@@ -162,7 +168,9 @@ def main() -> int:
     built = [r for r in rows if r["status"] == "built"]
     excluded = [r for r in rows if r["status"] == "excluded"]
     raw = [r["rawBytes"] for r in built]
-    over = [r for r in built if r["rawBytes"] > args.budget]
+    raw_over = [r for r in built if r["rawBytes"] > RAW_DIAGNOSTIC_BUDGET_BYTES]
+    over = [r for r in built if r["gzipBytes"] > args.budget_gzip]
+    gzip = [r["gzipBytes"] for r in built]
 
     print(f"tracked Markdown: {len(rows)}")
     print(f"built pages:      {len(built)}")
@@ -172,9 +180,18 @@ def main() -> int:
         print(f"median raw:       {statistics.median(raw) / 1024:.1f} KB")
         print(f"p90 raw:          {percentile(raw, 0.90) / 1024:.1f} KB")
         print(f"max raw:          {max(raw) / 1024:.1f} KB")
-        print(f"over {args.budget // 1024} KB:      {len(over)}")
-        for row in sorted(over, key=lambda r: r["rawBytes"], reverse=True)[:15]:
+        print(f"raw diagnostic over {RAW_DIAGNOSTIC_BUDGET_BYTES // 1024} KB: "
+              f"{len(raw_over)}")
+        for row in sorted(raw_over, key=lambda r: r["rawBytes"], reverse=True)[:15]:
             print(f"  {row['rawBytes'] / 1024:7.1f} KB  {row['path']}")
+    if gzip:
+        print(f"median gzip:      {statistics.median(gzip) / 1024:.1f} KB")
+        print(f"p90 gzip:         {percentile(gzip, 0.90) / 1024:.1f} KB")
+        print(f"max gzip:         {max(gzip) / 1024:.1f} KB")
+        print(f"gzip budget {args.budget_gzip / 1024:.1f} KB: "
+              f"{len(over)}")
+        for row in sorted(over, key=lambda r: r["gzipBytes"], reverse=True)[:15]:
+            print(f"  {row['gzipBytes'] / 1024:7.1f} KB  {row['path']}")
     if brotli is None:
         print("brotli:           unavailable (gzip only)")
 
@@ -183,8 +200,9 @@ def main() -> int:
     if args.write:
         OUT.parent.mkdir(parents=True, exist_ok=True)
         payload = {
-            "generated": "2026-11-15",
-            "budgetBytes": args.budget,
+            "generated": "2026-11-18",
+            "rawDiagnosticBudgetBytes": RAW_DIAGNOSTIC_BUDGET_BYTES,
+            "budgetGzipBytes": args.budget_gzip,
             "trackedMarkdown": len(rows),
             "builtPages": len(built),
             "rows": rows,
@@ -192,7 +210,8 @@ def main() -> int:
         OUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n")
         print(f"wrote {OUT.relative_to(ROOT)}")
     if args.check and over:
-        print(f"FAIL {len(over)} page(s) exceed {args.budget} bytes", file=sys.stderr)
+        print(f"FAIL {len(over)} page(s) exceed {args.budget_gzip} gzip bytes",
+              file=sys.stderr)
         return 1
     return 0
 

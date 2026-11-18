@@ -116,11 +116,11 @@ test('resume validates catalog and strips unrelated fields; denied storage still
  assert.equal(store.write({...old,version:2}),false);dom.window.close();
 });
 test('search filters material, clears filters without clearing query and restores Back state',()=>{
- let html=fs.readFileSync(path.join(root,'search.html'),'utf8').replace(/<script\b[^>]*>[\s\S]*?<\/script>/g,'');
- const rows=[{p:chapter.slice(1),t:'Scope lesson',s:'JavaScript',c:'Core',g:['concept'],m:15},{p:revision.slice(1),t:'Scope revision',s:'JavaScript',c:'Reference',g:['revision'],m:4},{p:'other.html',t:'Other topic',s:'Node.js',c:'Core',g:[],m:5}];
- html+='<script id="study-search-data" type="application/json">'+JSON.stringify(rows)+'</script>';
- const dom=boot(html,'/search.html?q=scope',['search-ui.js']);const w=dom.window,d=w.document;
- const material=d.querySelector('#material');assert.ok(material,'Material filter is available');
+  let html=fs.readFileSync(path.join(root,'search.html'),'utf8').replace(/<script\b[^>]*>[\s\S]*?<\/script>/g,'');
+  const rows=[{p:chapter.slice(1),t:'Scope lesson',s:'JavaScript',c:'Core',g:['concept'],m:15},{p:revision.slice(1),t:'Scope revision',s:'JavaScript',c:'Reference',g:['revision'],m:4},{p:'other.html',t:'Other topic',s:'Node.js',c:'Core',g:[],m:5}];
+  const dom=boot(html,'/search.html?q=scope',['search-ui.js'],w=>{w.__SDB_SEARCH_DATA__=rows;w.StudyPublishedPaths=rows.map(r=>'/'+r.p);});const w=dom.window,d=w.document;
+  assert.equal(d.querySelector('#search-status').hidden,true,'Loading status is cleared after catalog readiness');
+  const material=d.querySelector('#material');assert.ok(material,'Material filter is available');
  material.value='revision';material.dispatchEvent(new w.Event('change'));
  assert.equal(d.querySelectorAll('.search-result').length,1);assert.ok(d.querySelector('.search-result').textContent.includes('Scope revision'));
  d.querySelector('[data-clear-filters]').click();assert.equal(d.querySelector('#q').value,'scope');assert.equal(d.querySelectorAll('.search-result').length,2);
@@ -128,15 +128,23 @@ test('search filters material, clears filters without clearing query and restore
  assert.equal(material.value,'revision');assert.equal(d.querySelectorAll('.search-result').length,1);dom.window.close();
 });
 test('revision search distinguishes categories with the same authored title',()=>{
- let html=fs.readFileSync(path.join(root,'search.html'),'utf8').replace(/<script\b[^>]*>[\s\S]*?<\/script>/g,'');
- const rows=['01-foundations','02-frameworks'].map(group=>({p:'50-quality/50.1-testing/'+group+'/REVISION.html',t:'Testing — Section Revision',s:'Testing',c:'Reference',g:['revision'],m:2}));
- html+='<script id="study-search-data" type="application/json">'+JSON.stringify(rows)+'</script>';
- const dom=boot(html,'/search.html?material=revision',['search-ui.js'],w=>{w.StudyPublishedPaths=rows.map(r=>'/'+r.p);});
+  let html=fs.readFileSync(path.join(root,'search.html'),'utf8').replace(/<script\b[^>]*>[\s\S]*?<\/script>/g,'');
+  const rows=['01-foundations','02-frameworks'].map(group=>({p:'50-quality/50.1-testing/'+group+'/REVISION.html',t:'Testing — Section Revision',s:'Testing',c:'Reference',g:['revision'],m:2}));
+  const dom=boot(html,'/search.html?material=revision',['search-ui.js'],w=>{w.__SDB_SEARCH_DATA__=rows;w.StudyPublishedPaths=rows.map(r=>'/'+r.p);});
  assert.deepEqual([...dom.window.document.querySelectorAll('.result-context')].map(p=>p.textContent),['Testing / Foundations','Testing / Frameworks']);
  dom.window.document.querySelector('#q').value='foundations';
  dom.window.document.querySelector('#q').dispatchEvent(new dom.window.Event('input'));
  assert.equal(dom.window.document.querySelectorAll('.search-result').length,1,'The displayed category is searchable');
- dom.window.close();
+  dom.window.close();
+});
+test('search exposes an actionable failure when the generated catalog is unavailable',()=>{
+  const html=fs.readFileSync(path.join(root,'search.html'),'utf8').replace(/<script\b[^>]*>[\s\S]*?<\/script>/g,'');
+  const dom=boot(html,'/search.html', ['search-ui.js'], w=>{w.__SDB_SEARCH_DATA__=null;});
+  const d=dom.window.document;
+  assert.match(d.querySelector('#result-count').textContent,/could not load/i);
+  assert.equal(d.querySelector('#search-error').hidden,false);
+  assert.equal(d.querySelector('#search-error a').getAttribute('href'),'INDEX.html');
+  dom.window.close();
 });
 
 test('resume rejects corrupt, stale and queried records',()=>{
@@ -246,13 +254,10 @@ test('desktop outline stays open when its heading is clicked',()=>{
  dom.window.close();
 });
 test('copy reports a live confirmation while preserving code text and focus',async()=>{
- const dom=boot('<div class="language-javascript highlighter-rouge"><pre><code>const count = 1;\n</code></pre></div>',chapter,[]);
- const w=dom.window,d=w.document;let copied;
- w.navigator.clipboard={writeText:async text=>{copied=text;}};
- const head=fs.readFileSync(path.join(root,'_includes/head-custom.html'),'utf8');
- const start=head.indexOf('var codeContainers ='),end=head.indexOf('// 5. GitHub Alert',start);
- assert.ok(start>=0 && end>start);w.eval(head.slice(start,end));
- const button=d.querySelector('.copy-code-btn');button.focus();button.click();
+  const dom=boot('<div class="language-javascript highlighter-rouge"><pre><code>const count = 1;\n</code></pre></div>',chapter,['reader-shell.js']);
+  const w=dom.window,d=w.document;let copied;
+  w.navigator.clipboard={writeText:async text=>{copied=text;}};
+  const button=d.querySelector('.copy-code-btn');button.focus();button.click();
  await Promise.resolve();
  assert.equal(copied,'const count = 1;\n');
  assert.equal(d.activeElement,button);
@@ -270,23 +275,19 @@ test('theme button DOM order follows the desktop and phone header layouts',()=>{
  }
 });
 test('section headings keep their spoken name and a separately named permalink',()=>{
- const dom=boot('<div class="post-content"><h2 id="foundations">Testing Foundations</h2></div>',chapter,[]);
- const head=fs.readFileSync(path.join(root,'_includes/head-custom.html'),'utf8');
- dom.window.eval(head.slice(head.indexOf('var headings = document.querySelectorAll'),head.indexOf('// 9. Search navigation')));
- const h=dom.window.document.querySelector('h2');
+  const dom=boot('<div class="post-content"><h2 id="foundations">Testing Foundations</h2></div>',chapter,['reader-shell.js']);
+  const h=dom.window.document.querySelector('h2');
  assert.equal(h.getAttribute('aria-label'),'Testing Foundations');
  assert.equal(h.querySelector('a').getAttribute('aria-label'),'Permalink to Testing Foundations');
  assert.equal(h.querySelector('a').getAttribute('href'),'#foundations');
  dom.window.close();
 });
 test('copy failures give recovery guidance and feedback is excluded from narration',async()=>{
- for(const unavailable of [false,true]){
-  const dom=boot('<div class="post-content"><h1>Lesson</h1><p>Authored explanation.</p><div class="highlighter-rouge"><pre><code>const value = 1;</code></pre></div></div>',chapter,['read-aloud.js']);
-  const w=dom.window,d=w.document;
-  if(!unavailable)w.navigator.clipboard={writeText:async()=>{throw Error('denied');}};
-  const head=fs.readFileSync(path.join(root,'_includes/head-custom.html'),'utf8');
-  const start=head.indexOf('var codeContainers ='),end=head.indexOf('// 5. GitHub Alert',start);w.eval(head.slice(start,end));
-  d.querySelector('.copy-code-btn').click();await new Promise(resolve=>setImmediate(resolve));
+  for(const unavailable of [false,true]){
+   const dom=boot('<div class="post-content"><h1>Lesson</h1><p>Authored explanation.</p><div class="highlighter-rouge"><pre><code>const value = 1;</code></pre></div></div>',chapter,['reader-shell.js','read-aloud.js']);
+   const w=dom.window,d=w.document;
+   if(!unavailable)w.navigator.clipboard={writeText:async()=>{throw Error('denied');}};
+   d.querySelector('.copy-code-btn').click();await new Promise(resolve=>setImmediate(resolve));
   assert.match(d.querySelector('.copy-feedback').textContent,/Select the code and copy it manually/);
   const spoken=w.SDBReadAloud.extractChapter(d.querySelector('.post-content')).map(group=>group.text).join(' ');
   assert.ok(spoken.includes('Authored explanation.'));

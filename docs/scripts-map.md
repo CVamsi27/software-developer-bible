@@ -65,7 +65,7 @@
 | 11 | `check_duplication.py --strict` | No chapter teaches another chapter's prose | near-duplicate sections appear |
 | 12 | `check_topic_twins.py` | Twin chapters cross-link both ways | twins stop linking |
 | 13 | `read_time.py --check` | Declared study/read times equal computed estimates | times drift from word counts |
-| 14 | `gen_master_index.py --check` | search.html + api/index.json byte-identical to corpus | generated files stale |
+| 14 | `gen_master_index.py --check` | search.html + api/index.json + api/search-index.js byte-identical to corpus | generated files stale |
 | 15 | `check_verify_wiring.py` | The harness itself: failure branches, gate count in 3 files, CI enforcement, trigger paths | the harness stops listening |
 | 16 | `test_md_fences.py` | The fence owner's semantics (16 characterization cases) | `md_fences.walk` drifts |
 | 17 | `test_fixers.py` | The fixers' repair output (7 planted-defect round trips, byte-exact) | a fixer repairs wrongly |
@@ -108,7 +108,7 @@ When a gate fails, identify the reported defect and use its matching repair. Met
 | Script | Job |
 | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `backfill_metadata.py` | Backfills the metadata block the template gate requires (historical import) |
-| `measure_page_weight.py` | Maps every tracked Markdown file to its built page and records raw bytes, gzip bytes and asset counts in `docs/corpus-review/page-weight.json`; the review ledger's "fast" axis reads that measurement instead of guessing from source size (`--write`, `--check`) |
+| `measure_page_weight.py` | Maps every tracked Markdown file to its built page and records raw bytes, gzip bytes and asset counts in `docs/corpus-review/page-weight.json`; `--check` enforces the 64 KiB gzip transport budget while the review ledger's "fast" axis reads both measurements instead of guessing from source size (`--write`, `--check`) |
 | `check_study_live.py` | Post-deploy contract probe of the private study host — gating, canonicalization, the public surface, sign-in, denial, freshness; run by `study-live.yml`, pinned offline by `test_study_live.py` |
 | `test_study_live.py` | Characterization tests for the live probe against stub hosts (19 cases) — the hermetic job that must pass before the live probe judges a deployment |
 | `test_rendered_headings.py` | Checks the Minima page and post layouts keep one article H1; runs unit fixtures and scans the built site in `site-build.yml` |
@@ -120,7 +120,7 @@ When a gate fails, identify the reported defect and use its matching repair. Met
 | `insert_section.py` | Inserts a `## Definition`-style section at its canonical slot |
 | `relink.py` | Bulk-rewrites links whose target basename changed (rename companion) |
 | `tldr_digest.py` | Prints an authoring digest for chapters the template gate flags |
-| `gen_master_index.py` | Generates search.html + api/index.json (`--check` = gate 14) |
+| `gen_master_index.py` | Generates search.html + api/index.json + api/search-index.js (`--check` = gate 14) |
 | `senior_coverage.py` | Gate 29 owns exact-byte review completeness. Inventory-only mode writes the current genre/status report; it never grants a review. |
 | `depth_report.py` | Reports where the corpus is thin — prose words, code fences, `##` sections, Definition length, per section and per chapter. Inventory only, deliberately not a gate: a word floor would reward padding. The rubric in `docs/2026-11-quality-rubric.md` is what turns its numbers into a reading order. |
 | `check_prose.py` | Gate 30. Mechanical grammar only — the classes a rewrite cannot disagree with. Every pattern is calibrated against the corpus it judges: the first run reported 10,154 findings and 10,152 were the detector's own artifacts, so each rule now carries a pinned near-miss test in `test_check_prose.py` (a hyphenated compound is not a stutter, a glob is not bold, `1..n` is not a doubled period). |

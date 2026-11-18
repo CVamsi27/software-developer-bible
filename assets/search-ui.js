@@ -1,11 +1,21 @@
 /* Metadata search. URL state is restored on Back; roadmap context stays validated. */
 document.addEventListener('DOMContentLoaded', function () {
   'use strict';
-  var data = document.getElementById('study-search-data');
-  if (!data || document.querySelector('#results .search-result')) return;
-  var rows = JSON.parse(data.textContent), state = {q: '', sec: [], cat: [], tag: [], material: ''};
-  var q = document.getElementById('q'), resultList = document.getElementById('results');
-  var count = document.getElementById('result-count'), chips = document.getElementById('selected-filters');
+  var resultList = document.getElementById('results');
+  if (!resultList || resultList.querySelector('.search-result')) return;
+  var rows = Array.isArray(window.__SDB_SEARCH_DATA__) ? window.__SDB_SEARCH_DATA__ : null;
+  var q = document.getElementById('q'), count = document.getElementById('result-count');
+  var status = document.getElementById('search-status');
+  var error = document.getElementById('search-error');
+  if (!rows) {
+    count.textContent = 'Search could not load. Browse the library or reload to try again.';
+    if (status) status.textContent = 'Search catalog unavailable.';
+    if (error) error.hidden = false;
+    return;
+  }
+  if (status) status.hidden = true;
+  var state = {q: '', sec: [], cat: [], tag: [], material: ''};
+  var chips = document.getElementById('selected-filters');
   var clearQuery = document.getElementById('clear-query');
   var syncClearButton = function () { clearQuery.hidden = q.value.length === 0; };
   var labels = {learn: 'Learn', revision: 'Revision', interview: 'Interview practice', reference: 'Reference'};

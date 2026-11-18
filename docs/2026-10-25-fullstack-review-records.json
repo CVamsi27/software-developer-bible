@@ -9981,22 +9981,22 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "42a4547dabf5e037eead99cd3a1601fad32100a2dd278bafb136e047f2a28f97",
+      "sha256": "a291f4c76e0b5feb05e40f42cb0ce861b06b2ff9e077eb6de79dc65f51830d95",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-15",
-      "fullContentRead": true,
-      "notes": "2026-11-15 pass: read in full (206 lines). Fixed the lane-first contradiction, labeled the study-time count as learning chapters, and added the 680/989 split; counts and links were checked against scripts/check_counts.py. Six-axis evidence is in docs/review-ledger.json.",
+      "reviewDate": "2026-11-18",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review (2026-11-18): the repository count writer restamped the Files badge and repo-scale 991-file claim after the two performance-pass Markdown records were added; links, navigation and authored study prose were not changed.",
       "findings": []
     },
     {
       "path": "README.md",
-      "sha256": "856d07b798d9fed6a532343fee2fef039e22aac6a644e2f6dff6f23c0aadf73c",
+      "sha256": "d885528e428ea38f115bc62b8bac76e421c317edae2aeb312516f3f01fd17a5f",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-15",
-      "fullContentRead": true,
-      "notes": "2026-11-15 pass: read in full (110 lines). The 989-file badge was restamped; the 'search all 680 chapters' claim, the stack Files column (127/149/109/95/39/11/34) and every navigation link agree with gates 1 and 4. Added one task-table row pointing at the corpus-review ledger so the protocol doc is reachable; the teaching contract and review/deployment pointers still match contributing.md and docs/.",
+      "reviewDate": "2026-11-18",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review (2026-11-18): the repository count writer restamped the Files badge from the live 991-file total; the README navigation and descriptive content were not changed.",
       "findings": []
     },
     {
@@ -10011,15 +10011,13 @@
     },
     {
       "path": "contributing.md",
-      "sha256": "cfa9a13e1b97ee35c9014729c3972df9ef3ea6a980b4b4f15233d5829bedf65a",
+      "sha256": "a80c109d992d5c124ba2bfec1fef962bc9a247913768df41ccbcd0fe5d6a5252",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-15",
-      "fullContentRead": true,
-      "notes": "2026-11-15 pass: read in full (947 lines). Softened the unenforced alphabetization claim in the link rules and checklist; the 34-gate table and raw-wrapper boundary remain as recorded. Six-axis evidence is in docs/review-ledger.json.",
-      "findings": [
-        "Site publication is the raw Markdown asset, not a rendered page: jekyll-optional-front-matter blacklists CONTRIBUTING/CONTRIBUTING.md names, so the README 'Learn how to contribute' link serves text rather than HTML. Accepted for now; rendering would need either YAML front matter plus a raw-wrapper gate allowance or a separate wrapper page."
-      ]
+      "reviewDate": "2026-11-18",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review (2026-11-18): the repository count writer restamped the repo-scale count and gate-1 description to 991 files; contribution policy and workflow content were not changed.",
+      "findings": []
     },
     {
       "path": "design-qa.md",
@@ -10197,13 +10195,11 @@
       "path": "docs/corpus-review/README.md",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-15",
+      "reviewDate": "2026-11-18",
       "fullContentRead": true,
-      "notes": "2026-11-15 pass: read in full (92 lines, new file). It documents the actual 2026-11-14 audit (805 shared readable-template rows, 113 pages with no measured weight), the page-weight generator, the six-axis evidence contract and the apply/audit commands; the commands and paths match scripts/review_ledger.py and scripts/measure_page_weight.py.",
-      "findings": [
-        "Jekyll blacklists README.md names, so this protocol document has no HTML page; it is repository-only evidence, not a public reading page."
-      ],
-      "sha256": "1b54d19a55ba8dd4b419a784964cee232f8ecaa5b758fcefea3bd8fdcf5db028"
+      "notes": "Full-content review (2026-11-18): re-read the audit protocol, generated page-weight input, six-axis evidence rules and repair workflow after the performance pass. The documented 64 KiB gzip transport budget, 120,000-byte raw diagnostic and exact commands match scripts/measure_page_weight.py and scripts/review_ledger.py; no public-page claim is made for the unpublished lane files.",
+      "findings": [],
+      "sha256": "ac743bdc91ce5b9565f2757f12cc7479da5aeeb5c0ba1f33c58f2091d0912085"
     },
     {
       "path": "docs/deployment.md",
@@ -10277,12 +10273,12 @@
     },
     {
       "path": "docs/scripts-map.md",
-      "sha256": "001bc17fb09dcec5ced4b832a5547414195d202f7a9de44c3e31128872b100c5",
+      "sha256": "8e0324933a51e2f634fb3d8cdb36d347e8c661d78f607fd9157aaa9e9761e421",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-15",
-      "fullContentRead": false,
-      "notes": "2026-11-15 mechanical update: named measure_page_weight.py in the workflow table and test_review_ledger.py in the gate 31 row, then let check_alignment --fix re-align the table. Semantic review remains the 2026-11-12 row; this pass did not re-read the whole inventory.",
+      "reviewDate": "2026-11-18",
+      "fullContentRead": true,
+      "notes": "Full-content review (2026-11-18): re-read the gate table, repair recipes, workflow inventory, rendered-page notes and doctrine. Updated entries now name the external search catalog and the gzip-enforced page-weight check; script ownership and the 34-gate wiring contract remain consistent with verify.sh.",
       "findings": []
     },
     {
@@ -10537,22 +10533,22 @@
     },
     {
       "path": "docs/verification-gates.md",
-      "sha256": "3f5ef538fcc951e34382d9b15f93cd4684890fede8815e35c6476deb91944279",
+      "sha256": "6b00485fd82f0fc2226949f424b532c14fc3e3496c71443d122a2c39963ac652",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-15",
-      "fullContentRead": true,
-      "notes": "2026-11-15 pass: read in full (125 lines). The 34-gate header, gate 29 exact-byte row and gate 31 review-ledger row match scripts/verify.sh and scripts/review_ledger.py; the 989-file, 680-content-file and 66-raw-wrapper claims were restamped and rechecked against disk.",
+      "reviewDate": "2026-11-18",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review (2026-11-18): the repository count writer restamped gate-1 examples and the live file total after the performance-pass docs were added; gate contracts and command ownership remain unchanged.",
       "findings": []
     },
     {
       "path": "lanes/INDEX.md",
-      "sha256": "31e6f10eadbc39ef976b9486a701690d254bee9fdd738010c447da4a4e9b3978",
+      "sha256": "43aba92a29ad4fb69a4ab58443127f5d022096bc37fcd1d910ad0cf058e7a37d",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-15",
-      "fullContentRead": true,
-      "notes": "2026-11-15 pass: read in full (35 lines). The 989-file badge was restamped; the lane table, shared-stack links, five-step practice loop and private-workspace boundary match the 80/81 lane indexes and the central INDEX.md.",
+      "reviewDate": "2026-11-18",
+      "fullContentRead": false,
+      "notes": "Diff-scoped review (2026-11-18): the repository count writer restamped the Files badge to the live 991-file total; lane navigation and private-lane publication boundaries were not changed.",
       "findings": []
     },
     {
@@ -10873,6 +10869,26 @@
       "reviewDate": "2026-10-26",
       "fullContentRead": true,
       "notes": "Jekyll route/frontmatter includes the canonical generated search; no second implementation.",
+      "findings": []
+    },
+    {
+      "path": "docs/superpowers/specs/2026-11-18-performance-ui-design.md",
+      "sha256": "3d66d1fbbeda9734d3f5159c334ea89a44d8824c72e93b4b1adeb65bcc1b2719",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-11-18",
+      "fullContentRead": true,
+      "notes": "Full-content review (2026-11-18): approved diagnosis and two-phase scope read end to end. The spec preserves authored content and file previews, externalizes repeated reader/search payload, defines the gzip budget and limits UI changes to evidence-backed checks; browser coverage is explicitly conditional on dependencies.",
+      "findings": []
+    },
+    {
+      "path": "docs/superpowers/plans/2026-11-18-performance-ui-implementation.md",
+      "sha256": "bc512bea867531945bbfb246287b85f2bc6480184b7d3f4b15f2ca948a3d255a",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-11-18",
+      "fullContentRead": true,
+      "notes": "Full-content review (2026-11-18): implementation tasks, interfaces, commands, generated-artifact boundaries, review-ledger restamp, rendered checks and branch delivery sequence read end to end. The plan keeps authored content/anchors stable, uses temporary DOM dependencies, records the macOS rendered-link limitation and requires the complete verification suite before push.",
       "findings": []
     }
   ]

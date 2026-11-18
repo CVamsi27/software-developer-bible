@@ -7,14 +7,15 @@ cannot drift from the corpus: gate 14 regenerates it in memory and fails
 if the committed file differs.
 
 Output is a static HTML file (no Jekyll front matter -> copied verbatim,
-no Liquid escaping needed) with the corpus embedded as JSON and vanilla JS
-filtering — no dependencies. The shared theme script is loaded through the
-same `_config.yml` owner (`theme_asset`) the Jekyll include reads, emitted
-document-relative so the committed page also works offline and from file://
-(rule 13 in scripts/check_verify_wiring.py enforces the single owner).
+no Liquid escaping needed) with vanilla JS filtering — no dependencies. The
+corpus metadata is emitted as a separate JavaScript catalog so it can be
+cached independently of the page. The shared theme script is loaded through
+the same `_config.yml` owner (`theme_asset`) the Jekyll include reads, emitted
+document-relative so the committed page and catalog work offline and from
+file:// (rule 13 in scripts/check_verify_wiring.py enforces the single owner).
 
 Usage:
-  python3 scripts/gen_master_index.py            # write search.html + api/index.json
+  python3 scripts/gen_master_index.py            # write search.html + api files
   python3 scripts/gen_master_index.py --check    # gate: exit 1 on drift
 """
 import hashlib
@@ -31,6 +32,7 @@ from check_template import parse_meta  # noqa: E402
 
 OUT = os.path.join(ROOT, 'search.html')
 API_OUT = os.path.join(ROOT, 'api', 'index.json')
+SEARCH_DATA_OUT = os.path.join(ROOT, 'api', 'search-index.js')
 CONFIG = os.path.join(ROOT, '_config.yml')
 THEME_ASSET_RE = re.compile(r'^theme_asset:\s*(\S+)\s*$', re.M)
 H1 = re.compile(r'^# (?!#)\s*(.+?)\s*$', re.M)
@@ -66,13 +68,14 @@ PAGE = """<!DOCTYPE html>
 <meta name="theme-color" content="#ffffff">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <script src="{THEME_SRC}"></script>
-<link rel="stylesheet" href="assets/search-ui.css?v=study-flow-22">
+<link rel="stylesheet" href="assets/search-ui.css?v=study-flow-23">
 <link rel="stylesheet" href="assets/reading-ui.css?v=study-flow-23">
 <link rel="stylesheet" href="assets/reference-reader.css?v=reference-20">
 <script src="assets/study-state.js" defer></script>
 <script src="assets/roadmap-return.js?v=study-flow-19" defer></script>
 <script src="assets/reading-ui.js?v=study-flow-23" defer></script>
-<script src="assets/search-ui.js?v=study-flow-22" defer></script>
+<script src="api/search-index.js" defer></script>
+<script src="assets/search-ui.js?v=study-flow-23" defer></script>
 </head>
 <body class="search-page">
 <header class="site-header" role="banner">
@@ -114,14 +117,19 @@ PAGE = """<!DOCTYPE html>
       <details class="advanced-filters"><summary>More filters</summary><div><label for="cat">Category<select id="cat" aria-label="Category"><option value="">All categories</option></select></label><label for="tag">Tag<select id="tag" aria-label="Tag"><option value="">All tags</option></select></label></div></details>
     </div>
   </form>
+  <p id="search-status" role="status" aria-live="polite">Loading the library…</p>
   <div id="selected-filters" class="selected-filters" aria-label="Selected filters"></div>
   <div class="result-heading"><p id="result-count" role="status" aria-live="polite"></p><button type="button" data-clear-filters hidden>Clear filters</button></div>
+  <section id="search-error" class="search-error" hidden>
+    <h2>Search is temporarily unavailable</h2>
+    <p>Browse the library directly while the search catalog reloads.</p>
+    <a href="INDEX.html">Browse the library</a>
+  </section>
   <ol id="results" class="search-results"></ol>
   <section id="empty-state" hidden><h2>No topics match your search</h2><p>Try a shorter topic name or clear the selected filters.</p><a href="INDEX.html">Browse the library</a></section>
   <noscript><p>Search needs JavaScript. <a href="INDEX.html">Browse the full learning index</a>.</p></noscript>
   <p class="search-note">Searches titles, stack, category and tags · {N} topics · <a href="INDEX.html">Browse the library</a></p>
 </main>
-<script id="study-search-data" type="application/json">{DATA}</script>
 </body>
 </html>
 """
@@ -150,14 +158,19 @@ def theme_src():
 
 
 def render(rows):
-    # Substitute only the owned placeholders; script data is escaped separately.
+    # Substitute only the owned placeholders.
     page = PAGE.replace('{{', '{').replace('}}', '}')
     return (page
             .replace('{TITLE}', 'Software Developer Bible')
             .replace('{THEME_SRC}', theme_src())
-            .replace('{N}', str(len(rows)))
-            .replace('{DATA}', json.dumps(rows, ensure_ascii=False,
-                                          separators=(',', ':')).replace('<', '\\u003c')))
+            .replace('{N}', str(len(rows))))
+
+
+def search_data_js(rows):
+    """Serialize search rows as a cacheable browser catalog."""
+    data = json.dumps(rows, ensure_ascii=False, separators=(',', ':')).replace(
+        '<', '\\u003c')
+    return f'window.__SDB_SEARCH_DATA__ = {data};\n'
 
 
 def corpus_digest():
@@ -206,6 +219,7 @@ def api_json(rows):
 def main():
     rows = collect()
     html = render(rows)
+    search_data = search_data_js(rows)
     api = api_json(rows)
     if '--check' in sys.argv:
         problems = []
@@ -217,16 +231,23 @@ def main():
             problems.append('api/index.json missing')
         elif open(API_OUT, encoding='utf-8').read() != api:
             problems.append('api/index.json drifted from the corpus')
+        if not os.path.exists(SEARCH_DATA_OUT):
+            problems.append('api/search-index.js missing')
+        elif open(SEARCH_DATA_OUT, encoding='utf-8').read() != search_data:
+            problems.append('api/search-index.js drifted from the corpus')
         if problems:
             print('; '.join(problems) + ' — run: python3 scripts/gen_master_index.py')
             return 1
-        print(f'search.html + api/index.json in sync ({len(rows)} chapters)')
+        print(f'search.html + api/index.json + api/search-index.js in sync '
+              f'({len(rows)} chapters)')
         return 0
     os.makedirs(os.path.dirname(API_OUT), exist_ok=True)
     open(OUT, 'w', encoding='utf-8').write(html)
     open(API_OUT, 'w', encoding='utf-8').write(api)
+    open(SEARCH_DATA_OUT, 'w', encoding='utf-8').write(search_data)
     print(f'search.html ({len(html) // 1024} KB) + api/index.json '
-          f'({len(api) // 1024} KB) written ({len(rows)} chapters)')
+          f'({len(api) // 1024} KB) + api/search-index.js '
+          f'({len(search_data) // 1024} KB) written ({len(rows)} chapters)')
     return 0
 
 

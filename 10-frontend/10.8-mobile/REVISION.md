@@ -1,5 +1,5 @@
-<!-- section: Frontend | category: Reference | tags: revision, retrieval-practice | role-priority: optional | general-importance: specialized -->
-[![Section](https://img.shields.io/badge/section-Frontend-blue)](#)
+<!-- section: Mobile | category: Reference | tags: revision, retrieval-practice | role-priority: optional | general-importance: specialized -->
+[![Section](https://img.shields.io/badge/section-Mobile-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20retrieval--practice-lightgrey)](#)
 [![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
@@ -50,9 +50,9 @@ Source: [Testing React Native Apps](10.8.03-testing-react-native-apps.md)
 
 **A:** The component test only exercised JavaScript-rendered host components. Add an installed-app test for the OS link handoff, app bootstrap and navigation readiness, then verify the HTTPS association on the target platform.
 
-## Expo EAS Build — Cloud Builds, Profiles & Submitting
+## Expo EAS Build — Cloud Builds, Profiles & Submission
 
-Source: [Expo EAS Build — Cloud Builds, Profiles & Submitting](10.8.04-expo-eas-builds.md)
+Source: [Expo EAS Build — Cloud Builds, Profiles & Submission](10.8.04-expo-eas-builds.md)
 
 **Q:** What distinguishes an EAS build from a submission or release?
 

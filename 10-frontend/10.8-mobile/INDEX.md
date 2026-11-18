@@ -4,7 +4,7 @@
 > **8 files** — React Native fluency for studio/agency loops (MVST-class): the architecture and platform-choice primer, plus deep linking, testing, release operations (EAS builds, OTA updates, store automation), and interview-question chapters covering what production mobile work actually adds.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](../../INDEX.md)
-[![Category](https://img.shields.io/badge/category-Frontend-blue)](../../INDEX.md)
+[![Category](https://img.shields.io/badge/category-Frontend-00b4d8)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 ---

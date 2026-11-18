@@ -2031,12 +2031,14 @@
     },
     {
       "path": "10-frontend/10.8-mobile/10.8.01-react-native-cross-platform.md",
-      "sha256": "9830f0c6f8d3042a39249f693d9595c61bef270bc0d7a9ba3a0a88df4bee0461",
+      "sha256": "c0f11e25aee4bb9579191af58faf422a7415aee8ee89e745b9814129b89dc8d1",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full content reviewed: Fabric/JSI/TurboModules responsibilities, thread/worklet budget, logical animation intent, awaited SQLite lifecycle and platform decision tradeoffs. Optional mobile scope is explicit; no native runtime executed.",
+      "notes": "Full content: React Native architecture, threading, native ownership, Reanimated and Expo SQLite claims re-checked against official React Native, Expo and Reanimated sources. Corrected the React Native 0.82 wording to describe the first New Architecture-only release while retaining legacy API interop layers.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-18",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.8-mobile/10.8.02-deep-linking-universal-links.md",
@@ -2067,12 +2069,14 @@
     },
     {
       "path": "10-frontend/10.8-mobile/10.8.05-codepush-ota-updates.md",
-      "sha256": "42bca640e18ef5d0cf857bb05a5eabf8ef2c8e737fda5e25f7db52eb9acf246d",
+      "sha256": "5a3d422172988ec270d328a553673ad6ed51ff446e5a414e247ac1b0312f797d",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full content reviewed: native compatibility/runtimeVersion, retired CodePush migration needing binary, channel/branch rollout and delayed/offline adoption; signing and policy gates explicit. Current Expo rollout API checked; no publication executed.",
+      "notes": "Full content: EAS Update, runtime compatibility, CodePush retirement, rollout, signing and store-policy claims re-checked against official Expo, Microsoft, Apple and Google sources. Repaired the EAS Build cross-reference sentence.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-18",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.8-mobile/10.8.06-app-store-release-automation.md",
@@ -2095,21 +2099,25 @@
     },
     {
       "path": "10-frontend/10.8-mobile/INDEX.md",
-      "sha256": "7e80690f349c95546a19c59609bec6af4178d75f1a8bb271a41ff346905468c1",
+      "sha256": "6a06fb7c82961bd61ec7997538bce07467a3b9f582c57fe84030d082dd53e094",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full navigation content reviewed: optional mobile specialization, three prerequisite passes, runtime/device/release checkpoints, revision before interview; RN implementation absence in Docita explicit. Final metadata/source-anchor refresh after parent restamper: inspected current header and any Docita introduction; earlier full semantic review SHA256 d45a3a8d949b9b8a868c073dd8dbb472bc50c78d80121ac26081cc3aefd3f0b5. Parent confirms changes here limited to metadata and source-anchor qualification.",
+      "notes": "Full content: mobile study flow, counts and pass times re-derived; aligned the frontend category badge with the other frontend sub-stack indexes.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-18",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.8-mobile/REVISION.md",
-      "sha256": "21d3eeb94c4c6e55915079c4bc931d7fe6e19a2d973a93759acc92e8aaab5393",
+      "sha256": "bfef366aae379f67534f240e32dc14f745ed494f5bc4b5ff8ece8d2b57d1f85b",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Full revision content reviewed: source-linked groups for all six learning chapters and changed-case questions on animation intent, cold-link races, mock limits, artifact identity, OTA compatibility and rollout adoption. Authored questions preserved.",
+      "notes": "Full content: all six source-linked retrieval groups re-checked; aligned the EAS group title with the chapter and changed section metadata from Frontend to Mobile.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-18",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/INDEX.md",
@@ -10210,19 +10218,20 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "f5afd930446ccbdf78e471ce24b893076fc1f744672707e0ad2f6b33c53c963c",
+      "sha256": "3ad7daf76be94c6ccc1a95a6527070898d0647c76956f0f44584dcf9fb71cfd6",
       "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-14",
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-18",
       "fullContentRead": true,
-      "notes": "Full-content read (2026-11-14): Read end to end: shape, field table, guarantees, non-guarantees, regeneration, two consumers, versioning. Totals agree with api/index.json: 680 chapters, 47 sections, 13 distinct categories of the 14 canonical, 5350 read minutes.",
+      "notes": "Full-content read (2026-11-18): regenerated totals re-checked end to end: 680 chapters, 46 sections, 13 distinct categories of the 14 canonical, and 5350 read minutes; the example matches api/index.json after the Mobile metadata update.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",
         "reviewDate": "2026-10-26",
         "reviewer": "root",
         "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
-      }
+      },
+      "genre": "doc"
     },
     {
       "path": "docs/corpus-review/README.md",

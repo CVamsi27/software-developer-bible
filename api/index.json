@@ -4,10 +4,10 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "d2de73b720bc8f317e07ad8e523d82ae794f2e8e53b5ca420806fcef7c35446d",
+ "corpus_digest": "faa8fa3b24cc4241cc6ef7979f087adbc9d0f6ea53591d46ce44bf90016bcea3",
  "totals": {
   "chapters": 680,
-  "sections": 47,
+  "sections": 46,
   "categories": 13,
   "read_minutes": 5350
  },
@@ -1557,7 +1557,7 @@
   {
    "p": "10-frontend/10.8-mobile/10.8.01-react-native-cross-platform.html",
    "t": "React Native & Cross-Platform",
-   "s": "Frontend",
+   "s": "Mobile",
    "c": "Frontend",
    "g": [
     "concept"
@@ -1633,7 +1633,7 @@
   {
    "p": "10-frontend/10.8-mobile/REVISION.html",
    "t": "Mobile — Revision",
-   "s": "Frontend",
+   "s": "Mobile",
    "c": "Reference",
    "g": [
     "retrieval-practice",

@@ -2681,58 +2681,143 @@
    }
   },
   "10-frontend/10.8-mobile/10.8.01-react-native-cross-platform.md": {
-   "sha256": "9830f0c6f8d3042a39249f693d9595c61bef270bc0d7a9ba3a0a88df4bee0461",
+   "sha256": "c0f11e25aee4bb9579191af58faf422a7415aee8ee89e745b9814129b89dc8d1",
    "lines": 212,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the React Native architecture overview and threading model, the React Native 0.82 release post, Expo SQLite and Reanimated withSpring references; npm reports react-native 0.88.1 and react-native-reanimated 4.7.2 current, and the 0.82 New Architecture boundary was verified on 2026-11-18 (URLs 200).",
+    "readable": "Full read of 212 lines; a shared animated card opens; definition and first principles, the Fabric/JSI/TurboModule/Codegen trace, native-project ownership, UI-thread animation, asynchronous SQLite, platform choice and shared-code boundaries are ordered.",
+    "concise": "910 words; one card, one public catalog and one platform-choice table carry renderer, animation, persistence and ownership decisions without repeating the trace.",
+    "focused": "Native rendering and platform ownership are owned here; the React chapter owns web reconciliation, mobile testing owns evidence, and the PWA chapter owns browser persistence.",
+    "fast": "Built page measured at 68.0 KB raw / 16.9 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Separates shared logic from native capabilities and local persistence from synchronization; a UI-thread worklet cannot guarantee a frame budget, and React Native does not remove native release constraints."
+   },
+   "notes": "Corrected the React Native 0.82 wording: it was the first release running entirely on the New Architecture, while legacy API interop layers remained."
   },
   "10-frontend/10.8-mobile/10.8.02-deep-linking-universal-links.md": {
    "sha256": "ee425b6825273c276ced829e973291cccc511a1d514dbc9fccbf88ec3cbecde4",
    "lines": 281,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against Apple's TN3155 and associated-domains docs, Android Dynamic App Links docs, React Navigation linking docs and the current Next.js async-params contract; Apple weekly AASA checks and Android 15's seven-day propagation boundary were verified on 2026-11-18 (URLs 200).",
+    "readable": "Full read of 281 lines; an appointment link opens; definition and first principles, mechanism comparison, iOS and Android association, cold/warm delivery, installation context, parsing, readiness, web fallback and device tests are ordered.",
+    "concise": "976 words; one product link carries OS selection, route validation, session readiness and web fallback, while the race hook adds one ownership rule.",
+    "focused": "Association verification, URL parsing and bootstrap ownership are owned here; authentication owns access decisions, and the testing chapter owns device evidence.",
+    "fast": "Built page measured at 77.2 KB raw / 17.6 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Separates association from authentication and routing; domain verification cannot authorize resource access, and store installation does not preserve an arbitrary pending URL."
+   }
   },
   "10-frontend/10.8-mobile/10.8.03-testing-react-native-apps.md": {
    "sha256": "2526c558edf8d792c618c73a1ba92de4d002b835223a6e8357dc183d978af290",
    "lines": 196,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the React Native Testing Library v14 release notes and testing-environment docs, the React Native 0.85 release post and React Native testing overview; npm reports @testing-library/react-native 14.1.0 and @react-native/jest-preset 0.88.1 current on 2026-11-18 (URLs 200).",
+    "readable": "Full read of 196 lines; a pricing rule and email form open; definition and first principles, Jest boundaries, RNTL interaction, native-edge mocks, installed-app journeys, CI evidence and failure diagnosis are ordered.",
+    "concise": "948 words; one calculation, one form and one permission mock carry the test-boundary decisions, and the device table adds tool tradeoffs rather than repeating the examples.",
+    "focused": "Test-boundary selection and native-edge evidence are owned here; the deep-linking chapter owns link behavior, and the platform chapters own release mechanics.",
+    "fast": "Built page measured at 68.9 KB raw / 16.3 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Uses the cheapest observable boundary without overclaiming it; a JavaScript mock does not prove OS behavior, and an E2E pass cannot establish every device condition."
+   }
   },
   "10-frontend/10.8-mobile/10.8.04-expo-eas-builds.md": {
    "sha256": "b2d286c8267bc1b6486184e9d8da5e12afbac11e1a19aa05093ca07badf5d2ab",
    "lines": 137,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the Expo EAS Build, eas.json, app-version, signing, submit and environment documentation; build/submit/update separation, remote app-version behavior and the SDK 55 environment requirement match the current documentation on 2026-11-18 (URLs 200).",
+    "readable": "Full read of 137 lines; a production artifact opens; definition and first principles, native-project ownership, profile targets, credentials, exact artifact submission, environment/version identity and CI approval are ordered.",
+    "concise": "846 words; one release artifact carries profile, signing, version and submission identity, and the tables add changed conditions rather than repeating the build commands.",
+    "focused": "Native artifact production and submission identity are owned here; OTA compatibility is owned by the update chapter, and device behavior is owned by testing.",
+    "fast": "Built page measured at 58.5 KB raw / 14.7 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "A cloud build cannot prove store approval, byte-for-byte reproducibility or device behavior; an internal preview cannot become store-compatible by renaming its profile."
+   }
   },
   "10-frontend/10.8-mobile/10.8.05-codepush-ota-updates.md": {
-   "sha256": "42bca640e18ef5d0cf857bb05a5eabf8ef2c8e737fda5e25f7db52eb9acf246d",
+   "sha256": "5a3d422172988ec270d328a553673ad6ed51ff446e5a414e247ac1b0312f797d",
    "lines": 114,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against EAS Update introduction, runtime-version, rollout and code-signing docs, Microsoft App Center retirement, the archived CodePush repositories and current Apple/Google store policies; the CodePush dates and runtime/rollout boundaries were verified on 2026-11-18 (URLs 200).",
+    "readable": "Full read of 114 lines; a JavaScript hotfix moving through a runtime opens; definition and first principles, update eligibility, runtime policy, controlled rollout, provider migration, signing and recovery tests are ordered.",
+    "concise": "1025 words; one update carries runtime compatibility, channel selection, rollout, recovery and policy checks, and the decision table separates OTA from native builds.",
+    "focused": "OTA eligibility and JS/native compatibility are owned here; EAS Build owns artifact creation, store automation owns rollout, and the testing chapter owns release evidence.",
+    "fast": "Built page measured at 56.5 KB raw / 15.0 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Runtime matching does not prove policy compliance or device adoption; an OTA cannot add a native module, and publication cannot repair an offline client immediately."
+   },
+   "notes": "Aligned the revision heading with the chapter title and repaired the EAS Build cross-reference sentence."
   },
   "10-frontend/10.8-mobile/10.8.06-app-store-release-automation.md": {
    "sha256": "6abeb8652f1f2e73184e2bd1435cfca419c6cd84d7f811dff8b5ae344cda4226",
    "lines": 92,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against Apple's phased-release schedule, App Store Connect API, Google Play staged-rollout and halted-release docs and EAS Submit docs; Apple's seven-day percentages, 30-day pause, manual-download exception and Play halt semantics match the official sources on 2026-11-18 (URLs 200).",
+    "readable": "Full read of 92 lines; a submitted artifact moving through review and rollout opens; definition and first principles, Apple and Google distribution semantics, artifact identity, approval and repair are ordered.",
+    "concise": "734 words; one signed artifact carries review, staged availability, adoption and repair, and the platform paragraphs add store-specific boundaries rather than repeating the pipeline.",
+    "focused": "Store rollout and installed-client recovery are owned here; EAS Build owns artifact production, OTA owns compatible repairs, and feature flags own containment.",
+    "fast": "Built page measured at 52.8 KB raw / 14.0 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "A halted rollout does not recall installed binaries; a store percentage cannot measure installed adoption, and stopping exposure cannot repair every client."
+   }
   },
   "10-frontend/10.8-mobile/10.8.07-interview-questions.md": {
    "sha256": "0c0f16f4246301521665e686cb2127a544e96c47e9739ddf11772ece460a87b9",
    "lines": 212,
    "genre": "interview",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "All 31 answer pairs were checked against the six mobile chapters and the official React Native, Android, Expo and store-policy references; the React Native 0.85.1 animation boundary and Android 15 Dynamic App Links behavior were verified on 2026-11-18 (URLs 200).",
+    "readable": "Full read of 212 lines; a boundary-first answer framework opens, then 31 prompts span platform choice, architecture, linking, testing, storage, realtime, performance, OTA, store rollout and crash operations.",
+    "concise": "2880 words; answers stay retrieval-sized across 31 prompts, while the anti-patterns and summary add challenge signals rather than reprinting chapter code.",
+    "focused": "Drill bank: each answer points at a canonical chapter treatment rather than re-teaching the mechanism.",
+    "fast": "Built page measured at 67.8 KB raw / 19.8 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Provides 31 scenario answers with failure boundaries; it cannot replace the chapters or production evidence."
+   }
   },
   "10-frontend/10.8-mobile/INDEX.md": {
-   "sha256": "7e80690f349c95546a19c59609bec6af4178d75f1a8bb271a41ff346905468c1",
+   "sha256": "6a06fb7c82961bd61ec7997538bce07467a3b9f582c57fe84030d082dd53e094",
    "lines": 53,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "No version-sensitive claim; the 8-file count (seven chapters plus one revision companion), 59-minute total and status badge were re-derived from disk, and the pass times sum to 59 on 2026-11-18.",
+    "readable": "Full read of 53 lines; three passes from runtime ownership through installed-device release, then revision and interview guidance, a Docita anchor and navigation.",
+    "concise": "277 words; each pass states one mobile decision and each chapter is described once, so the map does not restate category content.",
+    "focused": "Navigation only: it points at seven chapters and their revision drill without retelling their mechanisms.",
+    "fast": "Built page measured at 47.7 KB raw / 12.5 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Orders the section from native ownership to link/test boundaries to installed-device release; it does not teach any chapter itself."
+   },
+   "notes": "Aligned the mobile index category badge with the other frontend sub-stack indexes."
   },
   "10-frontend/10.8-mobile/REVISION.md": {
-   "sha256": "21d3eeb94c4c6e55915079c4bc931d7fe6e19a2d973a93759acc92e8aaab5393",
+   "sha256": "bfef366aae379f67534f240e32dc14f745ed494f5bc4b5ff8ece8d2b57d1f85b",
    "lines": 125,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Every answer was checked against its source chapter and the official React Native, Expo, Apple, Android and React Native Testing Library references; the New Architecture, OTA, store-rollout and testing boundaries match the sources on 2026-11-18.",
+    "readable": "Full read of 125 lines; source-linked groups for all six learning chapters, then a summary, section link and references.",
+    "concise": "999 words; answers stay retrieval-sized across six groups and do not reprint chapter code.",
+    "focused": "Retrieval drill: each group points at its canonical source chapter for the full treatment.",
+    "fast": "Built page measured at 52.4 KB raw / 14.0 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Tests native ownership, linking, testing and release boundaries under changed conditions; it cannot replace the chapters."
+   },
+   "notes": "Aligned the EAS group title with the chapter title and changed the section badge metadata from Frontend to Mobile."
   },
   "10-frontend/INDEX.md": {
    "sha256": "00935914843524cf2522598223ba9e3cf375fd3b896a8dc5a5dd31e7ea6752a2",
@@ -7807,15 +7892,6 @@
   }
  },
  "pending": [
-  "10-frontend/10.8-mobile/10.8.01-react-native-cross-platform.md",
-  "10-frontend/10.8-mobile/10.8.02-deep-linking-universal-links.md",
-  "10-frontend/10.8-mobile/10.8.03-testing-react-native-apps.md",
-  "10-frontend/10.8-mobile/10.8.04-expo-eas-builds.md",
-  "10-frontend/10.8-mobile/10.8.05-codepush-ota-updates.md",
-  "10-frontend/10.8-mobile/10.8.06-app-store-release-automation.md",
-  "10-frontend/10.8-mobile/10.8.07-interview-questions.md",
-  "10-frontend/10.8-mobile/INDEX.md",
-  "10-frontend/10.8-mobile/REVISION.md",
   "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.md",
   "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.02-web-streams-and-test-runner.md",
   "20-backend/20.1-node.js/01-runtime-and-async/INDEX.md",

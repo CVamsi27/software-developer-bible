@@ -2626,9 +2626,9 @@
       "sha256": "019992558b8128c34d1c8e7794fb570565b6732de5884e7b50ac06215ac180be",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read full content: imports versus TS imports, provider ownership/export visibility, duplicate registration/lifetime, dynamic async-factory readiness, global/re-export boundaries, module/provider forwardRef distinction and lazy-loader route/lifecycle limitations. Official module/scope docs checked; no blocking finding.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-checked module ownership, export visibility, duplicate registration, dynamic async readiness, global/re-export boundaries, forwardRef distinction and lazy-loader limits against current Nest module/scope docs; no blocking finding.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2637,9 +2637,9 @@
       "sha256": "08518cf224fc67bc2f11041904ae3a649ebc41865ca3b00631ee5aa096ba990d",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read full content: routing before pipes, literal/parameter route precedence, DTO whitelist/rejection, explicit output projection/status, native response ownership, retry/durability, upload/parser/tenant/stream boundaries. Exact complete Nest11 fixture compiled strict TS5 and ran with asserted 201/200/400/404 outputs on Node23.7; no blocking finding.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-checked routing precedence, DTO projection/unknown-field policy, response ownership, status codes, delivery retries, uploads and tenant/parser boundaries; the complete Nest 11 fixture compiled and ran with the documented outputs.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2648,9 +2648,9 @@
       "sha256": "839aed4938cd6aa9b561429cda1651712729f90a025558983c0ad619169953ff",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read full content: runtime symbol tokens, useExisting identity versus useClass ownership, factory await/partial-failure cleanup, scope bubbling/transient semantics, tenant state races, queue contexts, pool shutdown and in-process event crash gap. Exact fixture compiled/runs true/Hello Ada/null; no blocking finding.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-checked runtime tokens, useExisting identity, factory cleanup, scope bubbling, tenant races, pool shutdown and in-process event limits against current Nest provider/scope docs; the exact fixture compiled and ran.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2659,10 +2659,10 @@
       "sha256": "52848abb85811feca0c2a6cc971f34f971cd076726d6df32e8ddd7c8164ac756",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "notes": "Full content reviewed read-only: canonical runtime tokens and module visibility, same/different request-context resolution, scope bubbling, explicit REQUEST registration, get versus resolve, isolated fakes versus real graphs, cycles, bounded factory readiness and lifecycle/resource ownership. Official Nest ModuleRef and scope docs checked. Fixture not executed; no new correctness defect found.",
+      "notes": "Full-content read (2026-11-18): re-checked runtime token visibility, ModuleRef get/resolve context behavior, scope bubbling, request registration, isolated fakes, cycles and bounded factory readiness against current Nest DI docs; no new defect found.",
       "findings": [],
-      "reviewer": "career_planning",
-      "reviewDate": "2026-10-25",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
       "fullContentRead": true
     },
     {
@@ -2670,9 +2670,9 @@
       "sha256": "1465d1233cb18ce36d3bec88de517ec22426d29ea5991c4c8cf0d7879bb2d1ff",
       "genre": "index",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read full content: ownership-first learning flow, per-chapter mechanisms, revision ordering and evidence-qualified project pointers. Agrees with canonical module/controller/provider/DI boundaries; no blocking finding.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-derived the core-architecture learning flow and checked category navigation, source anchors and revision placement; mechanism ownership remains distinct.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2681,9 +2681,9 @@
       "sha256": "679fdd0836da6a558f1d539bd98bd82f0e10699f0de904a2410f97cb3fbb21fa",
       "genre": "revision",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read all linked Q/A groups: provider visibility/identity, controller 201/400/404 trace, unknown body fields, scoped graph identity, absent REQUEST context and event-emission durability match chapter contracts. No blocking finding.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-checked every source-linked provider, controller, module and DI question against the current chapters and official Nest sources; no blocking finding.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2692,9 +2692,9 @@
       "sha256": "84f1a0b399598f4c8ec8f5fb9b5d0857bc1022edeba2534c9f1ead66c98bbc5c",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read full content: context before continuation, one terminal finish/close event, global/module matching/order, Nest11 wildcard forms, parser/raw-body/proxy trust, async errors and admission limits. Exact fixture compiled strict and ran 200 with identified/handler/finished; no blocking finding.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-checked middleware context-before-continuation, wildcard matching/order, one terminal event, parser/raw-body/proxy trust, async errors and admission limits; the Nest 11 fixture compiled and ran.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2703,9 +2703,9 @@
       "sha256": "9241b8b328751c9b969e7af010161c53b82ca34356dacc0a686af72d3ca130ce",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read full content: verified bearer identity before roles, metadata override/any-role policy, missing-policy fail-closed, APP_GUARD DI/scope, guard-before-pipe raw-input bound, tenant mutation races and verifier infrastructure failure. Exact fixture compiled and asserted 200/401/403/200/200; no blocking finding.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-checked bearer identity, role metadata/inheritance, APP_GUARD DI/scope, guard-before-pipe raw-input ordering and verifier-failure boundaries; the Nest 11 fixture compiled and ran.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2714,9 +2714,9 @@
       "sha256": "d5afd9a436b5b15558dab93b948373599e99408caeacf7eb5ed229d9ea0fc3a1",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read full content: absent versus malformed numeric input, bounds and repeated values, DTO nested/null/unknown policies, Zod4 issues/async parse, Joi converted result, uniqueness race and parser limits, reverse parameter ordering. Official lifecycle ordering checked. Exact fixture compiled and asserted two accepts/four 400 rejects; no blocking finding.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-checked absent/malformed/bounded values, DTO nested/null/unknown policies, Zod 4 async parsing, Joi conversion, uniqueness races and reverse parameter order; the exact fixture compiled and ran two accepts/four 400 rejects.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2724,19 +2724,20 @@
       "path": "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.04-interceptors.md",
       "sha256": "cd99f0e1e46ab0db5bb81cdd05b27151bf2c72390ffac09f5e771e2ac2191775",
       "status": "reviewed",
-      "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
       "fullContentRead": true,
-      "notes": "Full reread of nested RxJS result/finalization, async observer/operator, timeout versus effect, cache-hit authorization, metrics/serialization/registration boundaries. Closed the prior P3 follow-up: replaced duplicate fixture instructions with concrete nested result and timeout problem; canonical example retained once."
+      "notes": "Full-content read (2026-11-18): re-checked nested RxJS mapping/finalization, async observer behavior, timeout-versus-effect, cache authorization, metrics/serialization and registration boundaries; both exact Nest 11 fixtures compiled and ran.",
+      "findings": []
     },
     {
       "path": "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.05-exception-filters.md",
       "sha256": "3e73c0bda37f63fd378590eda09e37cf21855529004ced4c558f211bc170ef49",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read full content: fixed safe status mapping, headers-sent BaseExceptionFilter delegation, exception payload variants, route/controller/global precedence and middleware global-only scope, DI, transaction/uncertain effects and transport-specific detached failures. Exact fixture compiled and asserted 404/400/500 with no private text; no blocking finding.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-checked safe status mapping, headers-sent BaseExceptionFilter delegation, payload variants, filter precedence/scope, DI and uncertain transaction/transport effects; the Nest 11 fixture compiled and ran 404/400/500 cases.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2745,17 +2746,10 @@
       "sha256": "69c77ccba1940268fab2a6ecf8bc3dffbdd26a1e0a0f89f69a2314085fc89b40",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "notes": "Full content reviewed: interleaved store association versus trust, synchronous run return and retained descendants, lazy Observable subscription, middleware-before-guard identity, EventEmitter creation/emission context, worker roots, tenant query/RLS gaps, escaped root clients and closed transaction handles, retention/metric cardinality/idempotency. Added concrete cross-clinic global-variable opening. Official Node ALS/Nest lifecycle/ALS docs checked. Canonical fixture compiled strict and outputs verified on Node23.7.0; framework/DB isolation not executed.",
-      "findings": [
-        {
-          "description": "Fixture-save instruction opening replaced with two interleaved clinic requests and unsafe global state.",
-          "kind": "reading-flow",
-          "severity": "P3",
-          "status": "repaired"
-        }
-      ],
-      "reviewer": "career_planning",
-      "reviewDate": "2026-10-25",
+      "notes": "Full-content read (2026-11-18): re-checked interleaved ALS association versus trust, retained descendants, lazy Observable subscription, EventEmitter/worker roots, tenant/RLS gaps, escaped clients and retention/cardinality limits; the exact fixture compiled and ran on Node 26.13.0.",
+      "findings": [],
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
       "fullContentRead": true
     },
     {
@@ -2763,21 +2757,21 @@
       "sha256": "2f5e64f0ae63c300bf31e02c73a2b8946b94845322e13fe0cfc4b89c0720252e",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
+      "notes": "Full-content read (2026-11-18): re-derived the middleware/guard/pipe/interceptor/filter/context learning flow and checked navigation, source anchors and revision placement.",
       "findings": [],
-      "reviewer": "root",
-      "reviewDate": "2026-11-05",
-      "fullContentRead": false
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "fullContentRead": true
     },
     {
       "path": "20-backend/20.2-nestjs/02-request-lifecycle/REVISION.md",
       "sha256": "64d4fdcb269b664ea66f61b9f0f8faac88e6de345eae64fad3cc79da54d99e95",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Full content reviewed as revision: source-linked groups for six concepts plus changed-condition trace pairs, including guard-before-pipe/parameter reverse order, no automatic timeout cancellation, local filter selection and middleware global-only filters, retained ALS timer and expired transaction client. Official Nest lifecycle and Node ALS checked. Canonical ALS fixture verified; other linked fixtures not executed in this pass.",
+      "notes": "Full-content read (2026-11-18): re-checked all lifecycle Q/A against the six canonical chapters, official Nest lifecycle docs and Node ALS documentation; the linked ALS fixture was executed.",
       "findings": [],
-      "reviewer": "career_planning",
-      "reviewDate": "2026-10-25",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
       "fullContentRead": true
     },
     {
@@ -2785,9 +2779,9 @@
       "sha256": "e3a1f8a5a869d39872795bf2cde325e6031e8813dbdb393cdbf9d1e891d1b6b5",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read full content: separate interfaces on shared store, bus/handler ownership, synchronous seat reservation versus distributed conditional write, publish not awaiting projections, outbox crash gap, version barriers, saga completion ordering and durable workflow limits. Official CQRS docs checked. Exact fixture compiled and ran both queries/reserve/duplicate rejection; no blocking finding.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-checked read/write separation, bus/handler ownership, projection lag, conditional writes, publish/outbox gaps, version barriers and saga completion; the exact fixture compiled and ran the documented cases.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2796,9 +2790,9 @@
       "sha256": "437eec9a75a3c7300b71a403fb90740468ad1fa3079c2e7aa80c1abac1218994",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read full content: cold send/hot emit, correlated TCP reply versus uncertain commit, connection/socket cleanup, input/auth boundaries, transport persistence/ack differences, Kafka reply subscriptions, hybrid inheritance and RPC filter context. Exact loopback TCP fixture compiled/runs success and RPC-not-found; no blocking finding.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-checked cold send/hot emit, correlated TCP replies, uncertain commit, connection cleanup, input/auth boundaries, transport persistence and hybrid/filter context; the loopback TCP fixture compiled and ran.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2807,10 +2801,10 @@
       "sha256": "280c615a9fd021206b1855e0ec02da9632bdf30c25a6283c007cb50f7869021b",
       "genre": "index",
       "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-05",
-      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
-      "fullContentRead": false,
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-derived the CQRS-versus-microservices study flow and checked category navigation, canonical links and revision placement.",
+      "fullContentRead": true,
       "findings": []
     },
     {
@@ -2818,9 +2812,9 @@
       "sha256": "bbcbd956d6f29747984d396c11fff81fa1c262086993e4cc90eecbb5c1d3aff9",
       "genre": "revision",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read all linked Q/A: read/write separation optional separate store, effect-before-progress replay risk, connection/deadline ownership, outbox delivery gap, payment-before-email completion ordering, cold send and Redis pubsub offline loss. No blocking finding.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-checked both source-linked Q/A groups against the CQRS/microservices chapters, official Nest docs and executed fixtures; no blocking finding.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2829,9 +2823,9 @@
       "sha256": "bb59fcd7d82473abf88d7f0f0e9754f440158cbc336828e8ab3bdbe9fe50e5cf",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read full content: startup versus request lifecycle, Nest12 Standard Schema/Joi18 libraryOptions, env precedence/parsed config and custom-load validation, decorated-class versus schema route metadata, unknown/null/coercion and authorization/body size boundaries. Current official configuration/validation/migration docs verify APIs; Nest12 runtime fixture not run on local Node23.7. No blocking finding.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-checked startup/request lifecycle distinction, Nest 12 Standard Schema/Joi 18 options, env precedence, custom-load validation, decorated DTO versus schema metadata and authorization/body-size boundaries; the Nest 12 runtime fixture passed.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2840,9 +2834,9 @@
       "sha256": "f9e1e5b82507064447bc60ed9b6086ee5e59185af703b0f997325e1f2bdcdcca",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read full content: actual boundary versus mock evidence, scoped resolve, real migration DB integration/isolation, shared bootstrap versus importing AppModule, schema attached to route, denied-side-effect HTTP assertion and cleanup. Official migration confirms ESM Vitest/CommonJS Jest defaults and Jest Node24.9 requirement; abbreviated DB/Jest examples not executed. No blocking finding.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-checked dependency-graph unit tests, real HTTP bootstrap, scoped resolution, migration database isolation, shared application setup and denied-side-effect assertions against current Nest testing/migration docs; unexecuted integrations remain explicitly bounded.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2851,9 +2845,9 @@
       "sha256": "50b4209c793f3c31f9ff105441fbf1d49ec9fe158b8e48cace6a0ec7e1761aea",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read full content: startup hooks/app.init, Nest12 hierarchy migration, signal opt-in, shared Kubernetes preStop budget, single signal owner, server close/idle/force socket scopes, tracked handler settlement, late poll claim release and DB/Redis final-phase dependency constraints. Official migration confirms hierarchy change; fragment assumptions explicit, no production drain certification. No blocking finding.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-checked startup hooks, Nest 12 hierarchy migration, signal opt-in, Kubernetes preStop budget, server/socket closure, tracked-handler settlement and late dependency cleanup against current Nest lifecycle docs; no production drain certification is claimed.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2862,9 +2856,9 @@
       "sha256": "0db5ba6f60864350fa7b0f6b66b075fd8ccf19a92c45806e24c3487dd1ef9bfc",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read full content: timer versus durable queue, outbox enqueue gap, job scheduler cadence under busy workers, stable IDs/timezone, owner-checked lease/expiry/release duplicates, dynamic timer overlap/teardown, queue retries/global limiter, provider-idempotency/unknown payout reconciliation and backlog versus failure-rate metrics. Official BullMQ repeatable/scheduler/rate docs checked; Redis integration not run. No blocking finding.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-checked timer/queue/outbox cadence, stable IDs, timezone-aware scheduler patterns, leases, retries, limiters, idempotency and reconciliation against current Nest/BullMQ docs and package types; the Europe/Berlin tz example typechecked and no defect remains.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2872,68 +2866,58 @@
       "path": "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.05-swagger-openapi-nestjs.md",
       "sha256": "05ab369d3b7d4d518e29b9aac43488d60242d33f19a2b416b2eb5d0542c5412c",
       "status": "reviewed",
-      "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
       "fullContentRead": true,
-      "notes": "Reread complete final chapter: shared named security builder in interactive/export paths; runtime DTO/schema versus metadata, envelope/guard boundaries, OR/AND security and artifact-currentness versus compatibility. Prior executed Nest Swagger regression remains scoped to its recorded fixture; no new deployment inferred."
+      "notes": "Full-content read (2026-11-18): re-checked named security schemes, runtime DTO/schema versus metadata, envelope generics, guard boundaries and artifact drift against current Nest OpenAPI docs and @nestjs/swagger 12.1.2; the representative type fixture passed.",
+      "findings": []
     },
     {
       "path": "20-backend/20.2-nestjs/04-quality-and-operations/INDEX.md",
       "sha256": "23fef5bf399640bb544e3d26c5d3978e585808138cf9f995c79f80f1e0a2fab8",
       "status": "reviewed",
-      "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
       "fullContentRead": true,
-      "notes": "Reread complete final learning flow, topic table and source anchors. Corrected automatic DLQ implication to implemented manual replay and unwired automatic policy. Generated read/count values will be restamped centrally.",
+      "notes": "Full-content read (2026-11-18): re-derived the configuration/testing/lifecycle/jobs/OpenAPI study flow and checked navigation, source anchors and revision placement.",
       "metadataReview": {
         "previousReviewedSha256": "73766485e4e3a440cbb5fc4558343517b6717f40939c0447ad4486c9aeeeb685",
         "reviewDate": "2026-10-26",
         "reviewer": "root",
         "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
-      }
+      },
+      "findings": []
     },
     {
       "path": "20-backend/20.2-nestjs/04-quality-and-operations/REVISION.md",
       "sha256": "436e5045223d50848dfd573e3690e8ce4748dff1ff02f843f72e89d014496d1b",
       "genre": "revision",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-11-14",
-      "notes": "NestJS revision: E2E bootstrap answer explains what the test omits Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-checked all five source-linked operational Q/A groups against current chapters and official Nest sources; the representative Nest 12 configuration/OpenAPI checks passed.",
       "fullContentRead": true,
-      "findings": [
-        {
-          "description": "Existing password answer referred to a removed custom example and absent current-guidance link; removed those false source claims while preserving the authored question. Added source-linked export-scheme drift recall for the companion fix.",
-          "severity": "P3",
-          "status": "repaired"
-        }
-      ]
+      "findings": []
     },
     {
       "path": "20-backend/20.2-nestjs/05-advanced-and-interview/20.2.5.01-custom-decorators.md",
       "sha256": "1fac6d5cd1aaa7e346c42f9e4cc153b751d9152b5a3273c418c2b38f4873eaa6",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read complete final content after clarification: declaration versus extraction time, validation opt-in, metadata consumer, exact key identity, req.user versus req.principal adaptation, composed enforcement and legacy TS decorators. Removed incorrect implication that current guard fixture already reads this fragment string key/principal field. Canonical guard fixture stays unchanged.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-checked declaration versus extraction time, metadata consumers, exact key identity, req.user/principal adaptation, composed enforcement and legacy decorator boundaries against current Nest decorator docs; no new defect found.",
       "fullContentRead": true,
-      "findings": [
-        {
-          "description": "Claimed referenced RolesGuard already reads ROLES_KEY, although that fixture reads a shared Symbol and req.principal while decorators use a string and req.user. Clarified exact writer/reader adaptation contract instead of implying drop-in compatibility.",
-          "severity": "P3",
-          "status": "repaired"
-        }
-      ]
+      "findings": []
     },
     {
       "path": "20-backend/20.2-nestjs/05-advanced-and-interview/20.2.5.02-interview-questions.md",
       "sha256": "e40c3654e94e26a17b28d5e7903197bae22ee647763bdfc754f6f6e9536847c3",
       "genre": "interview-bank",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read all 40 prompts/answers: container/provider identity, pipe/guard/filter lifecycle, PUT/PATCH semantics, tenant ownership, remote timeout/delivery, transactions/outbox, scopes, Redis cache invalidation, breaker epochs, event replay, rollouts and tracing qualified accurately. Answers preserve failure/consistency/operational limits and defer full code to canonical chapters. No blocking finding.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-checked all 40 prompts/answers against the canonical DI, lifecycle, operations, CQRS and microservices chapters and representative fixtures; delivery, scope, transaction and rollout limits remain qualified.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2942,10 +2926,10 @@
       "sha256": "55e03793e0fab7128b0424e4e6f199b6e8d75d5c23d6444b47865909e3f16353",
       "genre": "index",
       "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-05",
-      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
-      "fullContentRead": false,
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-derived the custom-decorator, revision and interview order and checked the final-bank placement and category navigation.",
+      "fullContentRead": true,
       "findings": []
     },
     {
@@ -2953,9 +2937,9 @@
       "sha256": "1613e043dd3f22dafb5745d72c9fb03a18ec6867647a656cbddeccb2c38c1b72",
       "genre": "revision",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-11-14",
-      "notes": "Read complete final Q/A after adding source-linked writer/reader agreement coverage for the companion clarification. Extraction versus verification, metadata enforcement, custom validation default, controller registration, emitted design metadata and tenant/pagination failure boundaries agree with source chapter; all original questions preserved. No independent blocking finding. Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-checked all source-linked advanced Q/A against the custom-decorator chapter, guard contract and official Nest decorator docs; writer/reader metadata agreement remains explicit.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2963,10 +2947,11 @@
       "path": "20-backend/20.2-nestjs/INDEX.md",
       "sha256": "dd5dba01a24a646d13f83f6db0d3a6480f174c06c38a22c99c2d730f41a45edb",
       "status": "reviewed",
-      "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
       "fullContentRead": true,
-      "notes": "Reread complete stack learning flow and topic/source tables, request pipeline, stable IDs, revision-before-interview and metadata/enforcement distinction. Counts/read times are generator-owned, not independently authored totals."
+      "notes": "Full-content read (2026-11-18): re-derived the five-category NestJS learning flow, request-pipeline links, revision-before-interview order and canonical-home table; no duplicate mechanism ownership found.",
+      "findings": []
     },
     {
       "path": "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.01-api-design-patterns.md",

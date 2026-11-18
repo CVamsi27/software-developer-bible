@@ -3302,181 +3302,451 @@
    "sha256": "019992558b8128c34d1c8e7794fb570565b6732de5884e7b50ac06215ac180be",
    "lines": 166,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Nest module imports, exports, provider ownership, dynamic modules and scopes were checked against the official Modules, Custom providers, Dynamic modules and Injection scopes docs; the page makes no unbounded version promise.",
+    "readable": "Full read of 166 lines; An unexported provider failure opens the page; it then traces module ownership, visibility, dynamic readiness and scope boundaries before the summary.",
+    "concise": "812 words; the page uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "Module ownership is canonical here; controller behavior, provider implementation and DI resolution are linked as separate treatments rather than duplicated.",
+    "fast": "60.3 KB raw / 15.0 KB gzip built page.",
+    "best": "The module graph is useful only while ownership and readiness are explicit; duplicate registration, dynamic-factory failure and lazy-loading limits are the decision boundaries."
+   }
   },
   "20-backend/20.2-nestjs/01-core-architecture/20.2.1.02-controllers.md": {
    "sha256": "08518cf224fc67bc2f11041904ae3a649ebc41865ca3b00631ee5aa096ba990d",
    "lines": 180,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Routing, parameter extraction, status codes, DTO projection and native-response boundaries were checked against the official Controllers, Pipes and Request lifecycle docs; the complete Nest 11 fixture compiled and ran.",
+    "readable": "Full read of 180 lines; A route that returns the wrong status or leaks fields opens the page; routing, validation, projection, response ownership and delivery limits follow in causal order.",
+    "concise": "992 words; the page uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "HTTP route and response contracts are canonical here; module visibility, provider lifetimes and persistence durability are linked, not retold.",
+    "fast": "71.5 KB raw / 16.8 KB gzip built page.",
+    "best": "HTTP decorators cannot enforce durable business effects; the page names status, serialization, native-response, retry and delivery boundaries."
+   }
   },
   "20-backend/20.2-nestjs/01-core-architecture/20.2.1.03-providers.md": {
    "sha256": "839aed4938cd6aa9b561429cda1651712729f90a025558983c0ad619169953ff",
    "lines": 143,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Provider tokens, useExisting identity, factories, scopes and lifecycle ownership were checked against the official Providers, Custom providers and Injection scopes docs; the exact fixture compiled and ran.",
+    "readable": "Full read of 143 lines; A shared mutable provider surprises two requests; the page traces token resolution, identity, factories, scopes and resource ownership before trade-offs.",
+    "concise": "857 words; the page uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "Provider construction and lifetime are owned here; module topology, controller routing and request-pipeline ordering point to their canonical pages.",
+    "fast": "63.9 KB raw / 15.6 KB gzip built page.",
+    "best": "DI solves construction and sharing, not tenant isolation or event durability; scope races, partial factory failure and shutdown ownership are explicit limits."
+   }
   },
   "20-backend/20.2-nestjs/01-core-architecture/20.2.1.04-dependency-injection.md": {
    "sha256": "52848abb85811feca0c2a6cc971f34f971cd076726d6df32e8ddd7c8164ac756",
    "lines": 141,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "ModuleRef get/resolve behavior, context IDs, scopes and cycles were checked against the official Module reference, Injection scopes and Circular dependency docs; no unsupported version-specific claim is made.",
+    "readable": "Full read of 141 lines; A token can be registered yet unavailable in the resolving module; the page follows runtime identity, visibility, context resolution, scopes and cycles.",
+    "concise": "986 words; the page uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "Resolution context and token identity are canonical here; provider recipes and module visibility remain linked rather than receiving a second treatment.",
+    "fast": "63.6 KB raw / 15.9 KB gzip built page.",
+    "best": "A resolvable provider is not proof of correct lifetime or cleanup; the page calls out cycles, absent request context, scope bubbling and factory failure boundaries."
+   }
   },
   "20-backend/20.2-nestjs/01-core-architecture/INDEX.md": {
    "sha256": "1465d1233cb18ce36d3bec88de517ec22426d29ea5991c4c8cf0d7879bb2d1ff",
    "lines": 52,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "No version-sensitive claim; the learning sequence and source links were checked against the four current core-architecture pages and their revision companion.",
+    "readable": "Full read of 52 lines; The index is read as a learning map: module ownership leads to controllers, providers and DI, then the revision checkpoint and project boundary.",
+    "concise": "123 words; the document uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "This index owns study order and category boundaries; mechanism details remain in the four canonical chapters and revision stays a separate companion.",
+    "fast": "48.0 KB raw / 12.1 KB gzip built page.",
+    "best": "The learning path cannot replace application architecture; the index marks the boundary between framework mechanics and the later patterns/operations stacks."
+   }
   },
   "20-backend/20.2-nestjs/01-core-architecture/REVISION.md": {
    "sha256": "679fdd0836da6a558f1d539bd98bd82f0e10699f0de904a2410f97cb3fbb21fa",
    "lines": 132,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "The source-linked revision answers were checked against the current core-architecture pages and official Nest module, controller, provider and scope docs; no version-sensitive claim is introduced.",
+    "readable": "Full read of 132 lines; The revision is read as linked retrieval practice: each Q/A names the source mechanism, then tests visibility, status, context and durability boundaries.",
+    "concise": "1,025 words; the document uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "Retrieval practice is owned here; full module, controller, provider and DI explanations remain in their canonical chapters, not repeated in the answers.",
+    "fast": "53.0 KB raw / 14.0 KB gzip built page.",
+    "best": "The questions preserve the failure boundaries: visibility is not identity, a status code is not durability, and a scoped graph is not automatic tenant isolation."
+   }
   },
   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.01-middleware.md": {
    "sha256": "84f1a0b399598f4c8ec8f5fb9b5d0857bc1022edeba2534c9f1ead66c98bbc5c",
    "lines": 153,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Middleware matching, wildcard syntax, ordering and adapter boundaries were checked against the official Middleware and Request lifecycle docs; the Nest 11 fixture compiled and ran with one terminal event.",
+    "readable": "Full read of 153 lines; A request ID must survive to one response terminal event; the page traces middleware context, continuation, matching, errors and admission limits.",
+    "concise": "868 words; the page uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "Middleware admission and adapter context are canonical here; guards, pipes and filters are linked as later lifecycle stages, not duplicated.",
+    "fast": "67.3 KB raw / 15.6 KB gzip built page.",
+    "best": "Calling next is not completion and a middleware error is not automatically safe; async rejection, proxy trust, parser limits and one-terminal-event rules are the boundaries."
+   }
   },
   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.02-guards.md": {
    "sha256": "9241b8b328751c9b969e7af010161c53b82ca34356dacc0a686af72d3ca130ce",
    "lines": 168,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Guard metadata, APP_GUARD registration, transport context and guard-before-pipe ordering were checked against the official Guards, Execution context and Request lifecycle docs; the Nest 11 fixture compiled and ran.",
+    "readable": "Full read of 168 lines; Authentication must precede role policy; the page traces identity, metadata, inherited guards, raw-input ordering and failure behavior.",
+    "concise": "815 words; the page uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "Authorization admission is canonical here; authentication implementation, pipes and exception mapping are separate linked mechanisms.",
+    "fast": "73.4 KB raw / 16.3 KB gzip built page.",
+    "best": "A guard is admission control, not a transaction or tenant proof; missing policy, raw-input trust and verifier failure remain explicit limits."
+   }
   },
   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.03-pipes.md": {
    "sha256": "d5afd9a436b5b15558dab93b948373599e99408caeacf7eb5ed229d9ea0fc3a1",
    "lines": 132,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "ValidationPipe, Standard Schema/Zod behavior, Joi conversion and parameter ordering were checked against the official Pipes, Validation and Request lifecycle docs; the Nest 11 fixture compiled and produced two accepts and four 400 responses.",
+    "readable": "Full read of 132 lines; A query value can be absent, malformed or out of range; the page follows extraction, transformation, DTO/schema validation and ordering.",
+    "concise": "991 words; the page uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "Argument validation and transformation are owned here; guard authorization and filter formatting are linked, not retold.",
+    "fast": "61.3 KB raw / 15.8 KB gzip built page.",
+    "best": "Pipes validate one invocation argument, not uniqueness or authorization; coercion, unknown fields, async schemas and database races define the limits."
+   }
   },
   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.04-interceptors.md": {
    "sha256": "cd99f0e1e46ab0db5bb81cdd05b27151bf2c72390ffac09f5e771e2ac2191775",
    "lines": 152,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Nested interceptor order, RxJS mapping/finalization and timeout semantics were checked against the official Interceptors and Request lifecycle docs; both exact Nest 11 fixtures compiled and ran.",
+    "readable": "Full read of 152 lines; Nested wrappers turn one into three and a timeout may only stop waiting; the page traces before/after order, RxJS finalization and effect ownership.",
+    "concise": "922 words; the page uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "Wrapper composition and Observable ownership are canonical here; timeout cancellation and durable effects are treated as boundaries, not reimplemented elsewhere.",
+    "fast": "65.7 KB raw / 16.2 KB gzip built page.",
+    "best": "Timeout stops waiting, not necessarily the underlying effect; wrapper order, Observable cancellation and cache authorization are the important failure boundaries."
+   }
   },
   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.05-exception-filters.md": {
    "sha256": "3e73c0bda37f63fd378590eda09e37cf21855529004ced4c558f211bc170ef49",
    "lines": 146,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "HTTP filter selection, BaseExceptionFilter delegation and transport error boundaries were checked against the official Exception filters and Request lifecycle docs; the Nest 11 fixture compiled and ran with 404, 400 and 500 outputs.",
+    "readable": "Full read of 146 lines; A safe HTTP mapper must not expose private failure text; the page traces exception shape, filter scope, headers-sent delegation and uncertain effects.",
+    "concise": "1,016 words; the page uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "Exception-to-transport mapping is canonical here; validation, authorization and business transaction policy are linked to their owners.",
+    "fast": "67.0 KB raw / 16.2 KB gzip built page.",
+    "best": "A filter can shape a response but cannot undo a committed side effect; headers-sent, transaction, transport and detached-work failures remain visible limits."
+   }
   },
   "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.06-request-context-and-async-local-storage.md": {
    "sha256": "69c77ccba1940268fab2a6ecf8bc3dffbdd26a1e0a0f89f69a2314085fc89b40",
    "lines": 146,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "AsyncLocalStorage propagation and Nest request-context ordering were checked against the official Node AsyncLocalStorage and Nest lifecycle docs; the exact fixture compiled and ran on Node 26.13.0.",
+    "readable": "Full read of 146 lines; Two interleaved clinic requests expose the global-variable bug; the page then derives ALS propagation, boundaries, cleanup and tenant-safety limits.",
+    "concise": "1,319 words; the page uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "Request context propagation is owned here; authentication, transaction and database isolation are explicit adjacent boundaries, not claimed as ALS features.",
+    "fast": "64.8 KB raw / 16.9 KB gzip built page.",
+    "best": "ALS preserves association, not trust or database isolation; worker roots, escaped clients, retained stores, transaction expiry and metric cardinality are explicit limits."
+   }
   },
   "20-backend/20.2-nestjs/02-request-lifecycle/INDEX.md": {
    "sha256": "2f5e64f0ae63c300bf31e02c73a2b8946b94845322e13fe0cfc4b89c0720252e",
    "lines": 58,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "No version-sensitive claim; the lifecycle sequence, source anchors and revision placement were checked against the six request-lifecycle chapters.",
+    "readable": "Full read of 58 lines; The index follows the request path from middleware through guards, pipes, interceptors, filters and context, then sends the reader to revision practice.",
+    "concise": "173 words; the document uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "The index owns lifecycle navigation; each stage has one canonical chapter and the revision companion owns drills rather than another explanation.",
+    "fast": "49.6 KB raw / 12.5 KB gzip built page.",
+    "best": "The order is useful because each stage has a different failure boundary; no single global hook can replace validation, authorization, mapping or context discipline."
+   }
   },
   "20-backend/20.2-nestjs/02-request-lifecycle/REVISION.md": {
    "sha256": "64d4fdcb269b664ea66f61b9f0f8faac88e6de345eae64fad3cc79da54d99e95",
    "lines": 197,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "All source-linked lifecycle answers were checked against the current six chapters, official Nest request-lifecycle docs and Node AsyncLocalStorage documentation; the linked ALS fixture was executed.",
+    "readable": "Full read of 197 lines; The revision asks what changes when ordering, transport, headers or retained async work changes; answers point back to the exact lifecycle mechanism.",
+    "concise": "1,360 words; the document uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "The companion owns lifecycle retrieval; it links to canonical chapters and adds changed-condition questions instead of repeating their fixtures.",
+    "fast": "56.6 KB raw / 15.2 KB gzip built page.",
+    "best": "The drills keep the important limits: guard order, reverse parameter order, no automatic timeout cancellation and local filter selection."
+   }
   },
   "20-backend/20.2-nestjs/03-patterns/20.2.3.01-cqrs.md": {
    "sha256": "e3a1f8a5a869d39872795bf2cde325e6031e8813dbdb393cdbf9d1e891d1b6b5",
    "lines": 158,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Command/query buses, handler ownership, projection lag, outbox gaps and saga limits were checked against the official Nest CQRS recipe; the exact fixture compiled and ran through reads, reservation and duplicate rejection.",
+    "readable": "Full read of 158 lines; A seat reservation and a display query need different guarantees; the page follows buses, handlers, consistency, projections, outbox and saga completion.",
+    "concise": "813 words; the page uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "CQRS boundaries are canonical here; persistence transactions, messaging transports and workflow durability are linked as separate concerns.",
+    "fast": "64.6 KB raw / 15.5 KB gzip built page.",
+    "best": "CQRS separates responsibilities but cannot create consistency or delivery; projection lag, outbox gaps, duplicate effects and saga completion are the boundaries."
+   }
   },
   "20-backend/20.2-nestjs/03-patterns/20.2.3.02-microservices.md": {
    "sha256": "437eec9a75a3c7300b71a403fb90740468ad1fa3079c2e7aa80c1abac1218994",
    "lines": 163,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "ClientProxy send/emit behavior, TCP pattern lookup, reply uncertainty and transport boundaries were checked against the official Nest microservices basics docs; the loopback TCP fixture compiled and ran.",
+    "readable": "Full read of 163 lines; One message travels from ClientProxy to a TCP handler; the page traces reply/emit semantics, connection ownership, transport guarantees and hybrid boundaries.",
+    "concise": "770 words; the page uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "Nest transport behavior is canonical here; broker delivery semantics, domain idempotency and HTTP concerns remain separate linked boundaries.",
+    "fast": "65.0 KB raw / 15.5 KB gzip built page.",
+    "best": "A successful RPC reply does not prove remote commit and emit does not guarantee offline delivery; connection, retry, broker and filter context limits are explicit."
+   }
   },
   "20-backend/20.2-nestjs/03-patterns/INDEX.md": {
    "sha256": "280c615a9fd021206b1855e0ec02da9632bdf30c25a6283c007cb50f7869021b",
    "lines": 57,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "No version-sensitive claim; the patterns learning order and canonical CQRS/microservices links were checked against the two chapters and revision companion.",
+    "readable": "Full read of 57 lines; The index contrasts state-changing CQRS flow with networked message flow, then places revision practice after both mechanisms.",
+    "concise": "202 words; the document uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "This index owns the pattern contrast and study order; implementation details stay in the CQRS and microservices chapters with revision separate.",
+    "fast": "47.5 KB raw / 12.2 KB gzip built page.",
+    "best": "The contrast matters at the failure boundary: separating read/write models differs from moving a request across an uncertain network."
+   }
   },
   "20-backend/20.2-nestjs/03-patterns/REVISION.md": {
    "sha256": "bbcbd956d6f29747984d396c11fff81fa1c262086993e4cc90eecbb5c1d3aff9",
    "lines": 83,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "The CQRS and microservices question groups were checked against their source chapters, official Nest CQRS and microservices docs and the executed fixtures; no version-sensitive claim is added.",
+    "readable": "Full read of 83 lines; The revision turns both patterns into changed-condition questions: projection lag, duplicate effects, disconnected clients, retries and offline pub/sub.",
+    "concise": "532 words; the document uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "The companion owns pattern drills; it links to the canonical bus and transport chapters and adds failure-condition questions without duplicating their examples.",
+    "fast": "48.6 KB raw / 12.7 KB gzip built page.",
+    "best": "The questions reject pattern slogans: separate models do not remove replay risk, and a connected transport does not prove durable delivery."
+   }
   },
   "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.01-configuration-validation.md": {
    "sha256": "bb59fcd7d82473abf88d7f0f0e9754f440158cbc336828e8ab3bdbe9fe50e5cf",
    "lines": 187,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Nest 12 ConfigModule, Joi 18 libraryOptions, StandardSchemaValidationPipe, Zod 4 and startup validation were checked against the official configuration/validation/migration docs and package metadata; the Nest 12 runtime fixture passed.",
+    "readable": "Full read of 187 lines; Missing production configuration and an invalid email fail at different lifecycle boundaries; the page traces startup, request validation, coercion and authorization.",
+    "concise": "868 words; the page uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "Startup and request validation are canonical here; authentication, controller routing and database enforcement are linked canonical boundaries rather than repeated recipes.",
+    "fast": "66.9 KB raw / 15.5 KB gzip built page.",
+    "best": "Validation catches shape and configuration errors, not authorization or body-size abuse; env precedence, custom-load validation, coercion and the startup/request boundary are explicit."
+   }
   },
   "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.02-testing.md": {
    "sha256": "f9e1e5b82507064447bc60ed9b6086ee5e59185af703b0f997325e1f2bdcdcca",
    "lines": 267,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Testing-module, boundary-test and runner guidance was checked against the official Nest testing and migration docs; examples state which application wiring and external systems remain untested rather than implying a full integration run.",
+    "readable": "Full read of 267 lines; A passing service test can miss an invalid HTTP response; the page moves from dependency-graph unit tests to application-boundary, database and cleanup evidence.",
+    "concise": "922 words; the page uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "Test-evidence design is canonical here; lifecycle, validation and persistence mechanisms remain linked to their source chapters.",
+    "fast": "79.0 KB raw / 16.8 KB gzip built page.",
+    "best": "A unit test cannot prove the route bootstrap or real migration behavior; the page distinguishes mock, boundary, database, cleanup and runner limits."
+   }
   },
   "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.03-lifecycle-hooks-graceful-shutdown.md": {
    "sha256": "50b4209c793f3c31f9ff105441fbf1d49ec9fe158b8e48cace6a0ec7e1761aea",
    "lines": 306,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Nest lifecycle hook order, signal opt-in, server close and drain ownership were checked against the official lifecycle-events and migration docs; the page explicitly bounds the unexecuted production drain integration.",
+    "readable": "Full read of 306 lines; A rollout can close a dependency before accepted work finishes; the page traces startup/teardown hooks, signals, drain budgets, sockets and resource settlement.",
+    "concise": "948 words; the page uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "Shutdown ownership and drain sequencing are canonical here; queue retry and HTTP handler policy are linked operational concerns, not duplicated.",
+    "fast": "81.3 KB raw / 17.9 KB gzip built page.",
+    "best": "Hooks do not drain work automatically; signal ownership, preStop budgets, socket closure, forced deadlines and late dependency cleanup are the failure boundaries."
+   }
   },
   "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.04-scheduling-background-jobs.md": {
    "sha256": "0db5ba6f60864350fa7b0f6b66b075fd8ccf19a92c45806e24c3487dd1ef9bfc",
    "lines": 450,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Nest 12 scheduling types, BullMQ 6.7.7 scheduler/timezone declarations, cron 4.4.0 and official Nest queue/scheduling plus BullMQ Job Scheduler docs were checked; the Europe/Berlin `tz` example typechecked.",
+    "readable": "Full read of 450 lines; A nightly digest may duplicate across replicas or after an acknowledgment loss; the page separates eligibility, durable ownership, retries, idempotency and metrics.",
+    "concise": "1,285 words; the page uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "Scheduling and durable job ownership are owned here; lifecycle shutdown and domain idempotency are linked boundaries, while DST behavior stays local to the scheduler comparison.",
+    "fast": "105.8 KB raw / 21.6 KB gzip built page.",
+    "best": "A BullMQ scheduler is not a wall-clock guarantee even with a valid `tz` option; worker outage, duplicate execution, DST policy and payout reconciliation are explicit limits."
+   }
   },
   "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.05-swagger-openapi-nestjs.md": {
    "sha256": "05ab369d3b7d4d518e29b9aac43488d60242d33f19a2b416b2eb5d0542c5412c",
    "lines": 372,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "OpenAPI builder/security/schema behavior was checked against the official Nest OpenAPI introduction, operations, types and security docs and @nestjs/swagger 12.1.2; the representative Swagger/BullMQ TypeScript fixture typechecked.",
+    "readable": "Full read of 372 lines; A generated client can trust a schema the server never enforces; the page traces OpenAPI generation, runtime validation, security metadata, envelopes and drift.",
+    "concise": "872 words; the page uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "OpenAPI artifact generation and contract drift are canonical here; runtime validation, authorization and envelope implementation are linked rather than conflated.",
+    "fast": "93.8 KB raw / 18.7 KB gzip built page.",
+    "best": "OpenAPI metadata is not runtime enforcement and security requirements are not automatically ANDed; schema drift, envelope generics and artifact currentness are contract limits."
+   }
   },
   "20-backend/20.2-nestjs/04-quality-and-operations/INDEX.md": {
    "sha256": "23fef5bf399640bb544e3d26c5d3978e585808138cf9f995c79f80f1e0a2fab8",
    "lines": 53,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "No version-sensitive claim; the quality-and-operations sequence and links were checked against the five current chapters and revision companion.",
+    "readable": "Full read of 53 lines; The index moves from startup/request correctness to test evidence, shutdown, durable work and API contracts, then points to revision questions.",
+    "concise": "141 words; the document uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "The index owns the quality/operations progression; each mechanism has one chapter, and revision remains a separate companion before no interview bank exists here.",
+    "fast": "49.6 KB raw / 12.7 KB gzip built page.",
+    "best": "The operational path cannot guarantee production correctness by itself; each chapter names the missing integration, durability or contract boundary."
+   }
   },
   "20-backend/20.2-nestjs/04-quality-and-operations/REVISION.md": {
    "sha256": "436e5045223d50848dfd573e3690e8ce4748dff1ff02f843f72e89d014496d1b",
    "lines": 183,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "The configuration, testing, lifecycle, jobs and OpenAPI revision groups were checked against their current chapters and official Nest sources; the Nest 12 configuration/OpenAPI representative fixture passed.",
+    "readable": "Full read of 183 lines; The revision revisits each operational boundary through failure cases: missing env, omitted pipes, premature shutdown, duplicate jobs and stale schemas.",
+    "concise": "1,471 words; the document uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "The companion owns operational retrieval and links to five canonical chapters; it does not reproduce their code or collapse their boundaries.",
+    "fast": "58.5 KB raw / 15.5 KB gzip built page.",
+    "best": "The drills preserve the limits: startup validation differs from request validation, graceful shutdown needs an owner, and a generated schema can still drift."
+   }
   },
   "20-backend/20.2-nestjs/05-advanced-and-interview/20.2.5.01-custom-decorators.md": {
    "sha256": "1fac6d5cd1aaa7e346c42f9e4cc153b751d9152b5a3273c418c2b38f4873eaa6",
    "lines": 113,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Custom parameter decorators, metadata composition and legacy decorator boundaries were checked against the official Nest Custom decorators and Execution context docs; the page does not promise drop-in compatibility across unrelated guard tokens.",
+    "readable": "Full read of 113 lines; One decorator declaration has both definition-time and request-time consequences; the page follows metadata, extraction, composition and enforcement agreement.",
+    "concise": "682 words; the page uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "Decorator declaration and extraction are canonical here; guard policy and metadata contracts are linked as consumers rather than silently copied.",
+    "fast": "58.1 KB raw / 14.2 KB gzip built page.",
+    "best": "A decorator records intent but cannot enforce it without a consumer; metadata key identity, extraction validation, registration and legacy decorator support are limits."
+   }
   },
   "20-backend/20.2-nestjs/05-advanced-and-interview/20.2.5.02-interview-questions.md": {
    "sha256": "e40c3654e94e26a17b28d5e7903197bae22ee647763bdfc754f6f6e9536847c3",
    "lines": 208,
    "genre": "interview",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "The interview answers were checked against the current canonical Nest chapters, official lifecycle/CQRS/microservices/OpenAPI sources and the executed representative fixtures; deferred code is linked rather than invented.",
+    "readable": "Full read of 208 lines; The bank starts from process, container and delivery boundaries, then answers forty prompts without replacing the canonical mechanisms with disconnected snippets.",
+    "concise": "2,544 words; the page uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "The bank is a retrieval surface, not a second code home: answers point to canonical lifecycle, DI, operations and pattern chapters.",
+    "fast": "72.7 KB raw / 20.2 KB gzip built page.",
+    "best": "The bank tests decisions rather than memorized APIs: delivery, scope, transaction, replay, rollout and tracing failures remain in the answers."
+   }
   },
   "20-backend/20.2-nestjs/05-advanced-and-interview/INDEX.md": {
    "sha256": "55e03793e0fab7128b0424e4e6f199b6e8d75d5c23d6444b47865909e3f16353",
    "lines": 43,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "No version-sensitive claim; the advanced topic, revision and interview ordering was checked against the custom-decorator and interview pages.",
+    "readable": "Full read of 43 lines; The index places custom decorators before revision and interview retrieval, with the bank explicitly last in the category.",
+    "concise": "111 words; the document uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "This index owns the category order; custom decorators, revision and interview practice each retain one distinct canonical role.",
+    "fast": "46.5 KB raw / 11.8 KB gzip built page.",
+    "best": "The category is best as retrieval after mechanisms and revision; the index avoids turning interview prompts into a second canonical implementation home, with that separation as its boundary."
+   }
   },
   "20-backend/20.2-nestjs/05-advanced-and-interview/REVISION.md": {
    "sha256": "1613e043dd3f22dafb5745d72c9fb03a18ec6867647a656cbddeccb2c38c1b72",
    "lines": 83,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Each source-linked advanced/revision answer was checked against the custom-decorator chapter, guard contract and official Nest decorator documentation; the writer/reader metadata boundary remains explicit.",
+    "readable": "Full read of 83 lines; The revision questions test decorator extraction, metadata consumers, validation opt-in, registration and tenant/pagination boundaries in the same order as the source.",
+    "concise": "511 words; the document uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "The companion owns advanced retrieval; it points back to the canonical decorator chapter and guard contract rather than duplicating implementation.",
+    "fast": "49.0 KB raw / 12.6 KB gzip built page.",
+    "best": "The companion keeps the decision limits visible: custom metadata needs a matching reader, validation is opt-in, and tenant pagination can still fail."
+   }
   },
   "20-backend/20.2-nestjs/INDEX.md": {
    "sha256": "dd5dba01a24a646d13f83f6db0d3a6480f174c06c38a22c99c2d730f41a45edb",
    "lines": 149,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "No version-sensitive claim; the stack learning flow, category links, revision-before-interview ordering and canonical ownership table were checked against all five categories.",
+    "readable": "Full read of 149 lines; The stack index gives one progression from container and request mechanics through patterns, operations and advanced retrieval, with category revision checkpoints preserved.",
+    "concise": "308 words; the document uses its examples, table or links to carry the point without repeating the mechanism.",
+    "focused": "The stack index owns cross-category learning order and canonical-home links; it does not repeat lifecycle, operations or pattern explanations.",
+    "fast": "61.4 KB raw / 14.7 KB gzip built page.",
+    "best": "The stack is a framework study path, not a production checklist; its final boundary points to persistence, security and delivery decisions outside Nest decorators."
+   }
   },
   "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.01-api-design-patterns.md": {
    "sha256": "58b976bc64ece3c34c351c548e0e88be6f09c94c8b9026a82853afe8e793f94b",
@@ -8126,36 +8396,6 @@
   "20-backend/20.13-java/20.13.06-interview-questions.md",
   "20-backend/20.13-java/INDEX.md",
   "20-backend/20.13-java/REVISION.md",
-  "20-backend/20.2-nestjs/01-core-architecture/20.2.1.01-modules.md",
-  "20-backend/20.2-nestjs/01-core-architecture/20.2.1.02-controllers.md",
-  "20-backend/20.2-nestjs/01-core-architecture/20.2.1.03-providers.md",
-  "20-backend/20.2-nestjs/01-core-architecture/20.2.1.04-dependency-injection.md",
-  "20-backend/20.2-nestjs/01-core-architecture/INDEX.md",
-  "20-backend/20.2-nestjs/01-core-architecture/REVISION.md",
-  "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.01-middleware.md",
-  "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.02-guards.md",
-  "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.03-pipes.md",
-  "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.04-interceptors.md",
-  "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.05-exception-filters.md",
-  "20-backend/20.2-nestjs/02-request-lifecycle/20.2.2.06-request-context-and-async-local-storage.md",
-  "20-backend/20.2-nestjs/02-request-lifecycle/INDEX.md",
-  "20-backend/20.2-nestjs/02-request-lifecycle/REVISION.md",
-  "20-backend/20.2-nestjs/03-patterns/20.2.3.01-cqrs.md",
-  "20-backend/20.2-nestjs/03-patterns/20.2.3.02-microservices.md",
-  "20-backend/20.2-nestjs/03-patterns/INDEX.md",
-  "20-backend/20.2-nestjs/03-patterns/REVISION.md",
-  "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.01-configuration-validation.md",
-  "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.02-testing.md",
-  "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.03-lifecycle-hooks-graceful-shutdown.md",
-  "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.04-scheduling-background-jobs.md",
-  "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.05-swagger-openapi-nestjs.md",
-  "20-backend/20.2-nestjs/04-quality-and-operations/INDEX.md",
-  "20-backend/20.2-nestjs/04-quality-and-operations/REVISION.md",
-  "20-backend/20.2-nestjs/05-advanced-and-interview/20.2.5.01-custom-decorators.md",
-  "20-backend/20.2-nestjs/05-advanced-and-interview/20.2.5.02-interview-questions.md",
-  "20-backend/20.2-nestjs/05-advanced-and-interview/INDEX.md",
-  "20-backend/20.2-nestjs/05-advanced-and-interview/REVISION.md",
-  "20-backend/20.2-nestjs/INDEX.md",
   "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.01-api-design-patterns.md",
   "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.02-rest-principles.md",
   "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.03-versioning.md",

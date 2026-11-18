@@ -2839,145 +2839,362 @@
    "sha256": "cbb48962f1b1c976f33493d3398af0e10c4deb7f49db4537cb50b8af762ebfe1",
    "lines": 162,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the current Node.js event-loop/timers documentation and libuv design documentation: the libuv 1.45 / Node 20 timer-after-poll change, next-tick/microtask context, thread-pool boundary and event-loop-utilization API remain accurate on Node v26.13.0.",
+    "readable": "Full read of 162 lines; the database callback resumes into synchronous JSON work; definition and first principles, libuv phases, CommonJS/ESM scheduling, bounded CPU slices, measurement and remedy selection are ordered.",
+    "concise": "730 words; 730 words; one request trace and one phase table carry the scheduling model, while the measurement and remedy tables add decision boundaries instead of repeating the trace.",
+    "focused": "Event-loop scheduling and saturation are owned here; stream pressure, process shutdown and worker admission are linked to their canonical chapters rather than re-taught.",
+    "fast": "Built page measured at 62.9 KB raw / 15.6 KB gzip; the shared Jekyll shell sets a fixed floor, so compare the article delta with similarly sized pages.",
+    "best": "Separates callback eligibility from CPU work and external I/O; no timer, promise or async function is presented as a deadline or automatic CPU offload. The boundary is explicit."
+   }
   },
   "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.02-web-streams-and-test-runner.md": {
    "sha256": "8628f334e22865e02e3e857fab269af1addeb9098b974a0b21c41ed6c90e910d",
    "lines": 219,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against Node Web Streams, Streams, Test Runner and TypeScript documentation. Node v26.13.0 executed the two-chunk source/transform/sink fixture, split-byte decoder, and promise-based inspector fixture; current docs confirm Web Streams stable in v21, Node stream adapters stable in v22.17/v24, test runner stable in v20, `mock.module` flag requirements, and TypeScript milestones through v25.2/v24.12.",
+    "readable": "Full read of 219 lines; an export that buffers despite a lazy cursor opens; definition and first principles, Web Streams pressure/cancellation, split-byte decoding, Node adapters, compression, test completion/isolation and TypeScript stripping are ordered.",
+    "concise": "1056 words; 1056 words; the bounded export and test fixture carry the ownership rules, while the boundary table and examples add interface tradeoffs without duplicating the pipeline trace.",
+    "focused": "Web-stream and test-runner contracts are owned here; Node stream pressure, filesystem lifetime and HTTP response ownership remain in their canonical chapters.",
+    "fast": "Built page measured at 75.5 KB raw / 17.1 KB gzip; the shared Jekyll shell sets a fixed floor, so compare the article delta with similarly sized pages.",
+    "best": "Makes cancellation, completion and fixture cleanup explicit; a passed test is not allowed to imply durable storage, and a stream interface is not treated as a memory cap by itself. The boundary is explicit."
+   }
   },
   "20-backend/20.1-node.js/01-runtime-and-async/INDEX.md": {
    "sha256": "82b455decfb9f847e80b349a163a3eba290f4eb7c79c2f94eeb8d7c3a5dd3116",
    "lines": 44,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "No version-sensitive claim beyond its linked chapter descriptions; the 3-file count and 19-minute total were re-derived from disk and the category files on 2026-11-18.",
+    "readable": "Full read of 44 lines; the three-file pass from event-loop scheduling through Web Streams and the built-in test runner, followed by revision and navigation.",
+    "concise": "122 words; 122 words; each pass step names one runtime decision and each file appears once, so the map does not restate chapter content.",
+    "focused": "Navigation only: it points at two chapters, their revision companion and the case-study boundary without re-teaching mechanisms.",
+    "fast": "Built page measured at 46.8 KB raw / 12.1 KB gzip; the shared Jekyll shell sets a fixed floor, so compare the article delta with similarly sized pages.",
+    "best": "Orders scheduling, resource pressure and test completion as one coherent runtime pass and keeps deployment claims explicitly outside the case-study pointers. The boundary is explicit."
+   }
   },
   "20-backend/20.1-node.js/01-runtime-and-async/REVISION.md": {
    "sha256": "cac02a32d86e279cec3528b2734bb8de27330d21e65321ba3602d72ec6f7e205",
    "lines": 71,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Every answer was checked against the two runtime chapters and current Node event-loop, Web Streams, Test Runner and TypeScript documentation; the ESM/nextTick, cancellation and type-stripping boundaries match the sources on 2026-11-18.",
+    "readable": "Full read of 71 lines; source-linked prompts for event-loop ordering, resource ownership and TypeScript execution, then the summary, section link and references.",
+    "concise": "535 words; 535 words; answers remain retrieval-sized across the source groups and do not reprint the chapter fixtures.",
+    "focused": "Retrieval drill: each group points to its canonical chapter for the full mechanism and keeps changed conditions in the answer.",
+    "fast": "Built page measured at 48.4 KB raw / 12.8 KB gzip; the shared Jekyll shell sets a fixed floor, so compare the article delta with similarly sized pages.",
+    "best": "Tests context and ownership boundaries rather than memorized queue order; it explicitly refuses universal scheduling and durability claims. The boundary is explicit."
+   }
   },
   "20-backend/20.1-node.js/02-io-and-data/20.1.2.01-streams.md": {
    "sha256": "be9582fe91bf09631aaf8a42f22ef519862438adcc6fb4dcd359ed49c79b49b4",
    "lines": 219,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against current Node Streams documentation and the Sharp stream-input/constructor documentation; the `pipeline`, `highWaterMark`, async-iterator, decoder and stream-object-mode claims remain accurate on Node v26.13.0.",
+    "readable": "Full read of 219 lines; a multi-gigabyte upload fits a small-memory service only when every queue is bounded; definition and first principles, pressure, pipeline lifecycle, demand-driven production, NDJSON framing, byte serialization, image/crypto boundaries and load limits are ordered.",
+    "concise": "1271 words; 1271 words; one upload pipeline, one record parser and one encoder carry the core mechanism, while the image/crypto and load sections add distinct boundaries.",
+    "focused": "Stream pressure, record framing and pipeline ownership are canonical here; Web Streams adaptation and raw HTTP response ownership are linked rather than repeated.",
+    "fast": "Built page measured at 73.9 KB raw / 17.3 KB gzip; the shared Jekyll shell sets a fixed floor, so compare the article delta with similarly sized pages.",
+    "best": "Distinguishes queue thresholds from hard memory limits, chunks from records, and successful stream completion from durable or remote acknowledgment."
+   }
   },
   "20-backend/20.1-node.js/02-io-and-data/20.1.2.02-buffers.md": {
    "sha256": "f2c71ffdae91c2775732248027d324304341e290f2e395f198343d282f10df0c",
    "lines": 220,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the current Node Buffer documentation and the W3C PNG IHDR specification; Node v26.13.0 confirms the text byte counts and typed-array conversion behavior, and the PNG minimum-header arithmetic is consistent with the specification.",
+    "readable": "Full read of 220 lines; the same text has four UTF-16 code units and seven UTF-8 bytes; definition and first principles, encoding, ownership, endianness, PNG framing, binary records, upload assembly and crypto/image limits are ordered.",
+    "concise": "1070 words; 1070 words; the text example, header reader and bounded frame parser introduce the byte contracts once, while allocation and upload sections add ownership decisions.",
+    "focused": "Byte representation, ownership and binary framing are owned here; stream pressure and filesystem persistence are linked to their canonical chapters.",
+    "fast": "Built page measured at 80.3 KB raw / 17.6 KB gzip; the shared Jekyll shell sets a fixed floor, so compare the article delta with similarly sized pages.",
+    "best": "Makes encoding, byte order, length validation and copy/share ownership observable; it labels the PNG/header and upload helpers as incomplete validation or in-memory examples. The boundary is explicit."
+   }
   },
   "20-backend/20.1-node.js/02-io-and-data/20.1.2.03-file-system.md": {
-   "sha256": "1a9fe795e10a725cf022d14dd114bfc70dd36b2e313213c6b5ec12460174f810",
+   "sha256": "dd1a7b6c87e8febd179440c6443f2ec0f421a36f5cdf3d213497da7fe88fc517",
    "lines": 188,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against current Node fs, path, streams and file-system guidance; the temporary-file `wx`/`sync`/`rename` lifecycle and `fs.watch` limitations match the documented API. Executed the prefix fixture on Node v26.13.0 and corrected the prose typo to show the exact three-byte prefix `{\"r`.",
+    "readable": "Full read of 188 lines; a config overwrite can expose an empty or partial file; definition and first principles, handle closure, staged replacement, path containment, metadata, watches and contract selection are ordered.",
+    "concise": "960 words; 960 words; one handle helper and one replacement helper carry the filesystem contracts, while path, metadata and watch sections add distinct race boundaries.",
+    "focused": "Filesystem naming, handles, replacement and watch semantics are canonical here; stream byte handling and HTTP admission are linked without re-teaching their code.",
+    "fast": "Built page measured at 68.9 KB raw / 16.4 KB gzip; the shared Jekyll shell sets a fixed floor, so compare the article delta with similarly sized pages.",
+    "best": "Separates namespace replacement from transaction and power-loss durability, lexical containment from symlink safety, and watch notification from content validation. The boundary is explicit."
+   },
+   "notes": "Fixed the uncommitted wording defect on line 69: the literal JSON prefix is now rendered unambiguously as `{\"r`."
   },
   "20-backend/20.1-node.js/02-io-and-data/20.1.2.04-http-module.md": {
    "sha256": "a927fc758b009a47e946cfe5e465217bfcc82f431b11a8bf6153bb3f90db688e",
    "lines": 222,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against current Node HTTP, HTTPS, HTTP/2, Streams and URL behavior documentation; request/headers/keep-alive timeout distinctions, `req.iterator`, response ownership, `fetch` redirect policy and `http.Agent` versus Undici boundaries remain accurate on Node v26.13.0.",
+    "readable": "Full read of 222 lines; a raw async handler rejects after the request callback returns; definition and first principles, request-body ownership, bounded JSON, response streaming, upstream limits, client pools/timeouts, proxies and health checks are ordered.",
+    "concise": "863 words; 863 words; one raw server fixture carries parsing and error ownership, while streaming and upstream sections add separate transport boundaries instead of repeating it.",
+    "focused": "Raw HTTP message and response lifecycle are owned here; Express/Fastify dispatch, stream pressure and process draining are linked to their canonical chapters.",
+    "fast": "Built page measured at 78.7 KB raw / 17.0 KB gzip; the shared Jekyll shell sets a fixed floor, so compare the article delta with similarly sized pages.",
+    "best": "Enforces actual received-byte limits, avoids Host-derived authority, and distinguishes transport deadlines from application work and remote consumption."
+   }
   },
   "20-backend/20.1-node.js/02-io-and-data/INDEX.md": {
    "sha256": "989e2803bc8276f06a07444f605b1ea8fc00ee8f97ad598a6470b8872b123b0a",
    "lines": 49,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "No version-sensitive claim beyond linked chapter descriptions; the 5-file count and 41-minute total were re-derived from disk and the category files on 2026-11-18.",
+    "readable": "Full read of 49 lines; the five-file pass from stream pressure through buffers and filesystem ownership to raw HTTP response lifetimes, followed by revision and case-study boundaries.",
+    "concise": "158 words; 158 words; each step advances one ownership boundary and the case-study table is explicitly a pointer rather than a deployment claim.",
+    "focused": "Navigation only: it points at the canonical four I/O chapters and revision companion without restating their mechanisms.",
+    "fast": "Built page measured at 48.4 KB raw / 12.3 KB gzip; the shared Jekyll shell sets a fixed floor, so compare the article delta with similarly sized pages.",
+    "best": "Moves from bytes and pressure to persistence and HTTP admission, which gives readers one causal flow instead of a module list. The boundary is explicit."
+   }
   },
   "20-backend/20.1-node.js/02-io-and-data/REVISION.md": {
    "sha256": "b28cb752de555af6abf578236da1c11fd6dee67e1a2bd27218e6ba90538b0e27",
    "lines": 103,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Every answer was checked against the four I/O chapters and current Node stream, Buffer, fs, path and HTTP documentation; pressure, copy/share, same-filesystem rename and timeout boundaries remain current on 2026-11-18.",
+    "readable": "Full read of 103 lines; source-linked prompts for streams, buffers, filesystem replacement/path races and HTTP response ownership, then the summary, section link and references.",
+    "concise": "804 words; 804 words; answers remain retrieval-sized across four groups and avoid copying the chapter implementations.",
+    "focused": "Retrieval drill: the source chapters own the canonical full code and mechanism, while the answers test changed failure conditions.",
+    "fast": "Built page measured at 50.2 KB raw / 13.4 KB gzip; the shared Jekyll shell sets a fixed floor, so compare the article delta with similarly sized pages.",
+    "best": "Keeps backpressure, byte ownership, atomic namespace replacement and response completion as separate contracts rather than collapsing them into \u201casync I/O.\u201d The boundary is explicit."
+   }
   },
   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.01-clustering.md": {
    "sha256": "9f3b44422f18a0864105e5ebfa4da60f8ad5a57d5c368ea409e6f6269d5d21c8",
    "lines": 198,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against current Node Cluster and Worker Threads documentation; `SCHED_RR` default behavior, connection-level distribution, worker lifecycle events, `listen(0)` sharing and IPC serialization remain accurate on Node v26.13.0.",
+    "readable": "Full read of 198 lines; four workers multiply a ten-connection pool into forty connections; definition and first principles, shared-port scheduling, lifecycle replacement, state/IPC, affinity and deployment decisions are ordered.",
+    "concise": "970 words; 970 words; the pool arithmetic, lifecycle table and restart fixture each add a distinct operational view without repeating the cluster definition.",
+    "focused": "Cluster topology and process-local resource multiplication are owned here; worker pools, PM2 supervision and container recovery are linked to their canonical chapters.",
+    "fast": "Built page measured at 75.7 KB raw / 16.7 KB gzip; the shared Jekyll shell sets a fixed floor, so compare the article delta with similarly sized pages.",
+    "best": "Separates connection balancing from request fairness and capacity recovery from response/state recovery; the example bounds restart loops and shutdown. The boundary is explicit."
+   }
   },
   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.02-child-processes-workers.md": {
    "sha256": "41de514c0044d2715e0ae2f6b0b6f256d7da0ab622a4efc1d11b2887490f5576",
    "lines": 236,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against current Node child_process and worker_threads documentation, Piscina 5.3.2 registry metadata and release information; Node v26.13.0 executed the one-shot worker result path, and npm confirms Piscina 5.3.2 declares Node `>=20.x`.",
+    "readable": "Full read of 236 lines; a CPU task returns another request\u2019s result when ownership is implicit; definition and first principles, child-process choices, bounded executable output, one-shot worker settlement, Piscina admission, data transfer and offload decisions are ordered.",
+    "concise": "1093 words; 1093 words; one task-lifecycle helper and one bounded pool carry the admission/settlement model, while the data table and deployment section add ownership tradeoffs.",
+    "focused": "Worker/process selection, task correlation and queue admission are owned here; cluster scaling and diagnostics are linked rather than re-taught.",
+    "fast": "Built page measured at 78.1 KB raw / 17.4 KB gzip; the shared Jekyll shell sets a fixed floor, so compare the article delta with similarly sized pages.",
+    "best": "Settles result/error/exit/timeout exactly once, caps queued work, and distinguishes copy, transfer and shared memory from security isolation. The boundary is explicit."
+   }
   },
   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.03-process-environment.md": {
    "sha256": "18cbfa1fec0477de7caf319508ec23440b9909ab1358c0fe590acbbc9f59f833",
    "lines": 216,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against current Node Process, CLI, environment-variable, worker-thread and server lifecycle documentation; env-file precedence, `SHARE_ENV`, `server.close`, signal behavior, `resourceUsage` units and worker/RSS scope remain accurate on Node v26.13.0.",
+    "readable": "Full read of 216 lines; a shutdown timer starts at process startup instead of at signal time; definition and first principles, startup config parsing, env-file/CLI boundaries, drain/close deadlines, fatal failures and resource measurement are ordered.",
+    "concise": "973 words; 973 words; one startup schema and one idempotent shutdown helper carry the contracts, while the failure/resource tables add distinct decisions.",
+    "focused": "Process configuration and shutdown ownership are canonical here; PM2, cluster and HTTP message behavior are linked to their specialized chapters.",
+    "fast": "Built page measured at 76.2 KB raw / 17.3 KB gzip; the shared Jekyll shell sets a fixed floor, so compare the article delta with similarly sized pages.",
+    "best": "Treats environment input as untrusted, stops admission before resource closure, keeps the deadline idempotent, and refuses to equate exit code zero with completed cleanup. The boundary is explicit."
+   }
   },
   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.04-pm2-process-supervision.md": {
    "sha256": "f2e87897304ded746ef6dceea88de180a31e34b67fcb4b39566b07d7e631595d",
    "lines": 113,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against current PM2 process-management, ecosystem, load-balancing and graceful-shutdown documentation; `pm2 save`, `wait_ready`, `listen_timeout`, reload fallback, `kill_timeout` and external-supervisor boundaries match the live docs on 2026-11-18.",
+    "readable": "Full read of 113 lines; a payment commits before the process crashes; definition and first principles, PM2 daemon/process-list ownership, fork/cluster mode, readiness, reload fallback, restart limits and host/container boundaries are ordered.",
+    "concise": "759 words; 759 words; one daemon diagram, one readiness example and one failure table cover PM2 without repeating Node cluster or application drain code.",
+    "focused": "External process supervision is owned here; application readiness/draining and cluster port/state semantics remain linked to their canonical chapters.",
+    "fast": "Built page measured at 54.6 KB raw / 14.2 KB gzip; the shared Jekyll shell sets a fixed floor, so compare the article delta with similarly sized pages.",
+    "best": "Clearly limits PM2 to capacity/process state: it cannot restore memory, in-flight requests, side effects or a lost host, and timeout expiry is not health proof."
+   }
   },
   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.05-watt-runtime-architecture.md": {
    "sha256": "88bda5d73e26d01b65f4d8a18a3c2bf0b43ad7994f5c51d574f318f1069b8b25",
    "lines": 95,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the current Platformatic Watt architecture guide and Node Worker Threads documentation; the guide confirms one worker thread per application, `.plt.local` Undici interception, MessagePort routing, no TCP/DNS for internal calls and shared process/deployment failure boundaries.",
+    "readable": "Full read of 95 lines; separate services would add network and deployment costs; definition and first principles, worker/isolate boundaries, `.plt.local` internal routing, failure containment, topology comparison and an observation exercise are ordered.",
+    "concise": "799 words; 799 words; one process diagram and one internal-request trace carry the mechanism, while the comparison table and exercise add decision evidence without repeating the architecture.",
+    "focused": "Watt\u2019s application-worker boundary is owned here; PM2 process supervision, worker primitives and cluster port sharing are linked to their canonical chapters.",
+    "fast": "Built page measured at 53.6 KB raw / 14.1 KB gzip; the shared Jekyll shell sets a fixed floor, so compare the article delta with similarly sized pages.",
+    "best": "Distinguishes isolate/event-loop separation from process, container and release isolation; internal HTTP-shaped calls are not presented as free or network-equivalent. The boundary is explicit."
+   }
   },
   "20-backend/20.1-node.js/03-processes-and-concurrency/INDEX.md": {
    "sha256": "14ff8865e4870e62ff3b485b044ad2b810e77b2ca2a94afb18d431a2f4755cdb",
    "lines": 53,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "No version-sensitive claim beyond linked chapter descriptions; the 6-file count and 41-minute total were re-derived from disk and the category files on 2026-11-18.",
+    "readable": "Full read of 53 lines; the six-file pass from configuration/draining through worker choice, clustering, PM2 and Watt, followed by revision and case-study boundaries.",
+    "concise": "184 words; 184 words; the five reading steps each introduce a different execution/lifecycle boundary and the case-study pointers are explicitly non-verifying.",
+    "focused": "Navigation only: it points at the canonical five chapters and revision companion without re-teaching process mechanics.",
+    "fast": "Built page measured at 49.6 KB raw / 12.4 KB gzip; the shared Jekyll shell sets a fixed floor, so compare the article delta with similarly sized pages.",
+    "best": "Starts with admission and cleanup, then compares process, thread, supervisor and in-process application boundaries in an intentional decision order. The boundary is explicit."
+   }
   },
   "20-backend/20.1-node.js/03-processes-and-concurrency/REVISION.md": {
    "sha256": "aaf834b0d1a63bdb4a75c25b16c92539755c64d144e154fe901affb0884b45e2",
    "lines": 127,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Every answer was checked against the five concurrency chapters and current Node Cluster/Workers, PM2 and Watt documentation; connection-level scheduling, shared memory, readiness timeout and `.plt.local` boundaries match the sources on 2026-11-18.",
+    "readable": "Full read of 127 lines; source-linked prompts for clustering, worker/process data ownership, shutdown, PM2 readiness and Watt routing/failure domains, then the summary, section link and references.",
+    "concise": "1096 words; 1096 words; answers stay retrieval-sized across five groups and add changed conditions without copying the chapter code.",
+    "focused": "Retrieval drill: each group points to its canonical chapter and tests a lifecycle or failure boundary rather than repeating definitions.",
+    "fast": "Built page measured at 53.2 KB raw / 14.3 KB gzip; the shared Jekyll shell sets a fixed floor, so compare the article delta with similarly sized pages.",
+    "best": "Makes recovery, readiness, process/thread scope and internal routing explicit; it does not promise zero downtime or exactly-once work from supervision alone."
+   }
   },
   "20-backend/20.1-node.js/04-security-and-operations/20.1.4.01-node-security.md": {
    "sha256": "93c21e23acee90e4a920a895499fa94169b26d3b3ea3c772f1317d7e19effc65",
    "lines": 204,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the Node security guide and Permission Model threat model, OWASP Node.js guidance, npm audit documentation and Helmet 8.3.0 execution. Helmet output confirmed `X-XSS-Protection: 0`, no default COEP/Expect-CT, and the documented CSP/HSTS behavior on 2026-11-18.",
+    "readable": "Full read of 204 lines; a report-format field crosses trust boundaries; definition and first principles, query/value construction, subprocess arguments, prototype-pollution controls, bounded work, Helmet/browser policy, dependency authority and negative probes are ordered.",
+    "concise": "1248 words; 1248 words; one query constructor, one fixed subprocess operation and one Helmet setup carry the controls, while the boundary table adds negative tests rather than re-teaching them.",
+    "focused": "Node-specific trust boundaries and runtime authority are owned here; broader web security, filesystem containment and HTTP parser limits are linked to their canonical homes.",
+    "fast": "Built page measured at 71.6 KB raw / 17.4 KB gzip; the shared Jekyll shell sets a fixed floor, so compare the article delta with similarly sized pages.",
+    "best": "Separates validation from authorization, shell avoidance from sandboxing, CORS from authentication/CSRF, permission flags from malicious-code isolation, and advisory scans from supply-chain proof. The boundary is explicit."
+   }
   },
   "20-backend/20.1-node.js/04-security-and-operations/20.1.4.02-debugging-profiling-nodejs.md": {
    "sha256": "a430e946c7210b3b0e8552e3a92979e6a8794169350c1a0608dd1fd818e1d61e",
    "lines": 224,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against current Node Diagnostics, Inspector, CLI, perf_hooks, Report and heap-snapshot documentation plus the Clinic maintenance notice; Node v26.13.0 executed the promise-based CPU-profile helper and produced a profile with nodes/samples. Capture overhead, signal scope and sensitive-artifact boundaries remain explicit.",
+    "readable": "Full read of 224 lines; a request grows from 50 ms to 800 ms; definition and first principles, loop metrics, CPU profiles, inspector state, heap retention, diagnostic reports, active resources and tool-maintenance choices are ordered.",
+    "concise": "1298 words; 1298 words; one slow-request triage table and one bounded profile helper carry the workflow, while heap/report sections answer different evidence questions without duplicating it.",
+    "focused": "Diagnostics selection and evidence interpretation are owned here; security owns access control and worker/cluster chapters own the execution boundaries being measured.",
+    "fast": "Built page measured at 71.2 KB raw / 17.6 KB gzip; the shared Jekyll shell sets a fixed floor, so compare the article delta with similarly sized pages.",
+    "best": "Separates loop delay from CPU, heap from RSS, active resources from file-descriptor counts and diagnostic artifacts from historical latency proof. The boundary is explicit."
+   }
   },
   "20-backend/20.1-node.js/04-security-and-operations/20.1.4.03-express-fastify-internals.md": {
    "sha256": "f740fa5e3e3ceb1d1fcb2e82ff32f9f00e96506da73bc29e8d0c7ee92b8d4fd2",
    "lines": 288,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against current Express error-handling/middleware documentation and Fastify lifecycle, errors, validation/serialization and plugin documentation. Executed the pinned Express 5/Fastify 5/fastify-plugin 5 fixture on 2026-11-18: statuses were `200, 401, 200, 400, 404`, response schema projection removed `internalFraudScore`, and plugin scoping behaved as described. npm reports Express 5.3.0, Fastify 5.12.8 and fastify-plugin 6.0.1 current while the example intentionally pins the compatible v5 plugin line.",
+    "readable": "Full read of 288 lines; one mounted Express request moves through ordered layers; definition and first principles, Express routing/error ownership, Fastify lifecycle hooks, plugin encapsulation, executable Fastify schemas and migration/benchmark boundaries are ordered.",
+    "concise": "1256 words; 1256 words; one Express factory and one Fastify factory demonstrate the dispatch boundaries, while the comparison table and migration section add decisions rather than repeating code.",
+    "focused": "Framework dispatch, response/error ownership and plugin scope are owned here; raw HTTP, security policy and diagnostics are linked to their canonical chapters.",
+    "fast": "Built page measured at 90.2 KB raw / 18.7 KB gzip; the shared Jekyll shell sets a fixed floor, so compare the article delta with similarly sized pages.",
+    "best": "Preserves status/error boundaries, makes Fastify scope explicit, treats schemas as trusted application code and rejects fixed benchmark multipliers or automatic authorization claims. The boundary is explicit."
+   }
   },
   "20-backend/20.1-node.js/04-security-and-operations/20.1.4.04-interview-questions.md": {
    "sha256": "ae00be1b0957eac5239d230c56915ed629c71467e2050f6d49c66008922a6954",
    "lines": 320,
    "genre": "interview",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "All 44 answer pairs were checked against the 15 Node learning chapters and current Node, PM2, Fastify/Express, security, Redis/PgBouncer and Stripe references; current Node v26 behavior and the framework fixture were re-checked on 2026-11-18.",
+    "readable": "Full read of 320 lines; a boundary-first answer framework opens, then 44 prompts cover runtime scheduling, I/O, concurrency, security, observability, pools, idempotency, PM2 and Watt failure cases.",
+    "concise": "3879 words; 3879 words; answers remain scenario-sized across 44 prompts, and follow-ups add changed conditions instead of repeating chapter implementations.",
+    "focused": "Drill bank: each answer points to a canonical mechanism chapter and preserves its own retrieval purpose rather than becoming a second textbook.",
+    "fast": "Built page measured at 85.2 KB raw / 24.1 KB gzip; the shared Jekyll shell sets a fixed floor, so compare the article delta with similarly sized pages.",
+    "best": "Answers state assumptions, trace ownership and name failure evidence; they avoid universal ordering, exactly-once, zero-downtime and clean-audit guarantees."
+   }
   },
   "20-backend/20.1-node.js/04-security-and-operations/INDEX.md": {
    "sha256": "05661606d4a68b0b4e1419cba6c1df412a9fdaa4128f706991e8bf7f5e3ccc95",
    "lines": 49,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "No version-sensitive claim beyond linked chapter descriptions; the 5-file count and 47-minute total were re-derived from disk and the category files on 2026-11-18.",
+    "readable": "Full read of 49 lines; the five-file pass from trust-boundary security through diagnosis, framework lifecycle and the full interview drill, followed by case-study boundaries.",
+    "concise": "137 words; 137 words; each pass step names one operational decision and the case-study pointers explicitly avoid claiming deployment behavior.",
+    "focused": "Navigation only: it points at the canonical four learning files and revision companion without re-teaching security or diagnostics.",
+    "fast": "Built page measured at 48.8 KB raw / 12.4 KB gzip; the shared Jekyll shell sets a fixed floor, so compare the article delta with similarly sized pages.",
+    "best": "Moves from rejecting unsafe work to measuring it, then locating framework ownership and rehearsing the full runtime boundary."
+   }
   },
   "20-backend/20.1-node.js/04-security-and-operations/REVISION.md": {
    "sha256": "b3902f08cb4b73378e83d25c3bd6e97eb563ab4e903f8df23c16333c11380eff",
    "lines": 103,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Every answer was checked against the three security/operations chapters and their current Node, Express, Fastify and security references; authorization, diagnostic artifact and plugin-scope boundaries match the sources on 2026-11-18.",
+    "readable": "Full read of 103 lines; source-linked groups for security, diagnostics, Express/Fastify lifecycle and cross-chapter request/diagnostic traces, then the summary, section link and references.",
+    "concise": "738 words; 738 words; answers stay retrieval-sized across four groups and do not reprint the framework or diagnostic fixtures.",
+    "focused": "Retrieval drill: the source chapters own the canonical full treatment, while the cross-chapter group tests a complete request and evidence path.",
+    "fast": "Built page measured at 50.5 KB raw / 13.4 KB gzip; the shared Jekyll shell sets a fixed floor, so compare the article delta with similarly sized pages.",
+    "best": "Keeps validation, authorization, observation and response projection distinct, and makes failure ownership the retrieval target."
+   }
   },
   "20-backend/20.1-node.js/INDEX.md": {
    "sha256": "db03367503de87de8eff1773d0a89feac88001a17cb3f1ffe7515fd5bfef76bb",
    "lines": 122,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "No version-sensitive claim; the 19-file total, four category counts and 2 h 28 m estimate were re-derived from disk and the category indexes on 2026-11-18.",
+    "readable": "Full read of 122 lines; the 19-file Node path from one request\u2019s scheduling through bytes, process ownership, security/diagnostics and framework dispatch, followed by case-study pointers and navigation.",
+    "concise": "301 words; 301 words; three passes and one category table map every chapter once, with detailed mechanisms left to their canonical files.",
+    "focused": "Navigation only: it points at the canonical study files, marks the case-study links as inspection pointers and avoids duplicating the Node chapters.",
+    "fast": "Built page measured at 59.5 KB raw / 14.4 KB gzip; the shared Jekyll shell sets a fixed floor, so compare the article delta with similarly sized pages.",
+    "best": "Provides a causal route from scheduling to resource ownership to operational evidence instead of a flat module inventory. The boundary is explicit."
+   }
   },
   "20-backend/20.12-ai-engineering/20.12.01-llm-app-architecture.md": {
    "sha256": "27b504016638718cc4cdc8c5b6f1a0be3eb54627c29338cf6317b85729d92a68",
@@ -7892,30 +8109,6 @@
   }
  },
  "pending": [
-  "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.md",
-  "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.02-web-streams-and-test-runner.md",
-  "20-backend/20.1-node.js/01-runtime-and-async/INDEX.md",
-  "20-backend/20.1-node.js/01-runtime-and-async/REVISION.md",
-  "20-backend/20.1-node.js/02-io-and-data/20.1.2.01-streams.md",
-  "20-backend/20.1-node.js/02-io-and-data/20.1.2.02-buffers.md",
-  "20-backend/20.1-node.js/02-io-and-data/20.1.2.03-file-system.md",
-  "20-backend/20.1-node.js/02-io-and-data/20.1.2.04-http-module.md",
-  "20-backend/20.1-node.js/02-io-and-data/INDEX.md",
-  "20-backend/20.1-node.js/02-io-and-data/REVISION.md",
-  "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.01-clustering.md",
-  "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.02-child-processes-workers.md",
-  "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.03-process-environment.md",
-  "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.04-pm2-process-supervision.md",
-  "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.05-watt-runtime-architecture.md",
-  "20-backend/20.1-node.js/03-processes-and-concurrency/INDEX.md",
-  "20-backend/20.1-node.js/03-processes-and-concurrency/REVISION.md",
-  "20-backend/20.1-node.js/04-security-and-operations/20.1.4.01-node-security.md",
-  "20-backend/20.1-node.js/04-security-and-operations/20.1.4.02-debugging-profiling-nodejs.md",
-  "20-backend/20.1-node.js/04-security-and-operations/20.1.4.03-express-fastify-internals.md",
-  "20-backend/20.1-node.js/04-security-and-operations/20.1.4.04-interview-questions.md",
-  "20-backend/20.1-node.js/04-security-and-operations/INDEX.md",
-  "20-backend/20.1-node.js/04-security-and-operations/REVISION.md",
-  "20-backend/20.1-node.js/INDEX.md",
   "20-backend/20.12-ai-engineering/20.12.01-llm-app-architecture.md",
   "20-backend/20.12-ai-engineering/20.12.02-prompts-context-evals.md",
   "20-backend/20.12-ai-engineering/20.12.03-retrieval-quality-hybrid-search-reranking.md",

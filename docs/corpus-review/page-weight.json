@@ -3290,9 +3290,9 @@
       "genre": "chapter",
       "html": "_site/20-backend/20.1-node.js/02-io-and-data/20.1.2.03-file-system.html",
       "status": "built",
-      "sourceBytes": 11603,
-      "rawBytes": 70398,
-      "gzipBytes": 16761,
+      "sourceBytes": 11607,
+      "rawBytes": 70508,
+      "gzipBytes": 16760,
       "brotliBytes": null,
       "assets": {
         "scripts": 8,

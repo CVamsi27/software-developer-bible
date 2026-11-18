@@ -2141,17 +2141,10 @@
       "sha256": "cbb48962f1b1c976f33493d3398af0e10c4deb7f49db4537cb50b8af762ebfe1",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "notes": "Full content reviewed: kernel sockets versus libuv pool, Node20 timer change, CJS versus ESM microtask context, I/O immediate/timer guarantee, CPU slice/cancellation limits and delay/utilization observation. Removed duplicated opening heading. Node primary scheduling docs checked. Exact CJS ordering fixture executed; slice helper compiled strict and passed success/item-error/pre-abort/empty-input checks on Node23.7.0.",
-      "findings": [
-        {
-          "description": "Repeated opening question replaced with the next causal step after the database wait.",
-          "kind": "duplicate-opening",
-          "severity": "P3",
-          "status": "repaired"
-        }
-      ],
-      "reviewer": "career_planning",
-      "reviewDate": "2026-10-25",
+      "notes": "Full-content read (2026-11-18): re-checked the request trace, libuv 1.45/Node 20 timer change, CJS/ESM scheduling, bounded CPU slices and utilization measurements against current Node and libuv documentation.",
+      "findings": [],
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
       "fullContentRead": true
     },
     {
@@ -2159,9 +2152,9 @@
       "sha256": "8628f334e22865e02e3e857fab269af1addeb9098b974a0b21c41ed6c90e910d",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read full content including both example families: WHATWG pressure/cancel ownership, split-UTF8 decode, Node adapter location/stability, partial backup publication, awaited test/subtest completion, test-process isolation and TS stripping versus type-checking. Checked official Node webstreams/stream/test/typescript docs; no blocking finding.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-checked Web Streams, Node adapters, test isolation/mocking and TypeScript milestones against current Node docs; executed the stream, split-byte and promise-inspector fixtures on Node 26.13.0.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2170,21 +2163,21 @@
       "sha256": "82b455decfb9f847e80b349a163a3eba290f4eb7c79c2f94eeb8d7c3a5dd3116",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
+      "notes": "Full-content read (2026-11-18): re-derived the 3-file/19-minute runtime study flow and verified category navigation and case-study boundaries.",
       "findings": [],
-      "reviewer": "root",
-      "reviewDate": "2026-11-05",
-      "fullContentRead": false
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "fullContentRead": true
     },
     {
       "path": "20-backend/20.1-node.js/01-runtime-and-async/REVISION.md",
       "sha256": "cac02a32d86e279cec3528b2734bb8de27330d21e65321ba3602d72ec6f7e205",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Full content reviewed as revision: source-linked scheduling, single-item CPU limit, split-byte decoding, backpressure, cancellation and TS typechecking questions. Context-qualified CJS/I/O ordering agrees with chapter and executable check. Does not certify linked Web Streams chapter current bytes.",
+      "notes": "Full-content read (2026-11-18): re-checked all source-linked runtime retrieval answers against the event-loop, Web Streams, test-runner and TypeScript sources.",
       "findings": [],
-      "reviewer": "career_planning",
-      "reviewDate": "2026-10-25",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
       "fullContentRead": true
     },
     {
@@ -2192,9 +2185,9 @@
       "sha256": "be9582fe91bf09631aaf8a42f22ef519862438adcc6fb4dcd359ed49c79b49b4",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-14",
-      "notes": "Full-content read (2026-11-14): Teaser now names the observable symptom (buffering a whole body) before the mechanism; flow then runs backpressure, piping, errors. Teaser was shortened to one sentence in this pass; body sections still carry no duplicated setup prose.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-checked pressure, pipeline, framing, object-mode and Sharp-stream claims against current Node Streams and Sharp documentation.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2203,20 +2196,20 @@
       "sha256": "f2c71ffdae91c2775732248027d324304341e290f2e395f198343d282f10df0c",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read full content: UTF16 versus UTF8 byte counts, shared views and slab retention, endian-safe TypedArray conversion, PNG header versus validation, length-prefixed frame split/truncated/oversize contracts, int64/Float32 bounds, upload assembly admission and hash/authorization distinction. No blocking finding.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-checked encoding, ownership, typed-array, PNG framing and binary-length claims against current Node Buffer and W3C PNG sources; executed the byte-count behavior.",
       "fullContentRead": true,
       "findings": []
     },
     {
       "path": "20-backend/20.1-node.js/02-io-and-data/20.1.2.03-file-system.md",
-      "sha256": "1a9fe795e10a725cf022d14dd114bfc70dd36b2e313213c6b5ec12460174f810",
+      "sha256": "dd1a7b6c87e8febd179440c6443f2ec0f421a36f5cdf3d213497da7fe88fc517",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read full content: partial positioned reads, handle finally cleanup, exclusive temporary creation/sync/rename with cleanup, concurrent-writer and directory-fsync caveats, lexical versus symlink containment/TOCTOU, inode watchers, and rotation descriptor lifetime. No blocking finding.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-checked handle closure, staged replacement, path races, watches and fsync boundaries against current Node fs/path docs; corrected the exact three-byte prefix wording and executed the prefix fixture.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2225,9 +2218,9 @@
       "sha256": "a927fc758b009a47e946cfe5e465217bfcc82f431b11a8bf6153bb3f90db688e",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read full content: route promise rejection ownership, destroyOnReturn=false body-limit path and connection close, DTO projection/media/name validation, actual bytes versus Content-Length, streaming cancellation, outbound size/deadline/SSRF contract, HTTP versus fetch pooling, timeout scopes and proxy hop headers. No blocking finding.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-checked raw HTTP body/response ownership, timeout distinctions, fetch/Undici and stream-adapter claims against current Node HTTP, URL and Streams docs.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2236,9 +2229,9 @@
       "sha256": "989e2803bc8276f06a07444f605b1ea8fc00ee8f97ad598a6470b8872b123b0a",
       "genre": "index",
       "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-14",
-      "notes": "Full-content read (2026-11-14): Read end to end: buffers, streams, file system, web streams, test runner in a workable order. Each row is a single line; the intro does not restate the section list below it.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-derived the 5-file/41-minute I/O study flow and verified category navigation and explicit case-study limits.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2247,9 +2240,9 @@
       "sha256": "b28cb752de555af6abf578236da1c11fd6dee67e1a2bd27218e6ba90538b0e27",
       "genre": "revision",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read every Q/A: all four concepts have linked groups, demand and frame examples match chapters, write(false) does not duplicate chunks, atomic rename/durability and symlink bounds preserved, HTTP receive timeout distinct from work deadline. No blocking finding.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-checked all source-linked I/O retrieval answers against current Node stream, Buffer, fs/path and HTTP sources.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2258,17 +2251,10 @@
       "sha256": "9f3b44422f18a0864105e5ebfa4da60f8ad5a57d5c368ea409e6f6269d5d21c8",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "notes": "Full content reviewed: process/port ownership, scheduling, bounded supervision, restart backoff/crashloop, readiness, graceful draining, socket and session limits, multiplied pool budget. Replaced fragment opening with four workers times ten connection example. Node primary cluster documentation checked. Cluster network lifecycle fixture not executed.",
-      "findings": [
-        {
-          "description": "Fragment introduction replaced with a concrete multiplied connection-budget problem.",
-          "kind": "reading-flow",
-          "severity": "P3",
-          "status": "repaired"
-        }
-      ],
-      "reviewer": "career_planning",
-      "reviewDate": "2026-10-25",
+      "notes": "Full-content read (2026-11-18): re-checked cluster scheduling, connection-level distribution, lifecycle events, listen(0), IPC and restart boundaries against current Node Cluster docs.",
+      "findings": [],
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
       "fullContentRead": true
     },
     {
@@ -2276,23 +2262,10 @@
       "sha256": "41de514c0044d2715e0ae2f6b0b6f256d7da0ab622a4efc1d11b2887490f5576",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "notes": "Full content reviewed: spawn/exec/execFile/fork trust and output limits; worker CPU ownership, message/error/exit/timeout settlement; bounded admission/queueing, transfer/shared memory and shutdown. Corrected published Piscina 5.3.2 engine to >=20.x using exact npm metadata HTTP200; removed volatile stable/prerelease assertion. Added concrete mismatched-result opening. Worker/process fixtures not executed.",
-      "findings": [
-        {
-          "description": "Pinned Piscina 5.3.2 was incorrectly described as requiring Node24. Exact published npm metadata declares >=20.x; fixed and removed unbounded current prerelease assertion. New primary citation probe HTTP200.",
-          "kind": "runtime-version-correctness",
-          "severity": "P2",
-          "status": "repaired"
-        },
-        {
-          "description": "Fixture instruction opening replaced by a concrete wrong-request worker-result problem.",
-          "kind": "reading-flow",
-          "severity": "P3",
-          "status": "repaired"
-        }
-      ],
-      "reviewer": "career_planning",
-      "reviewDate": "2026-10-25",
+      "notes": "Full-content read (2026-11-18): re-checked child/worker boundaries, Piscina 5.3.2 support, transfer semantics and admission controls against current Node docs and npm registry; executed the one-shot worker fixture.",
+      "findings": [],
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
       "fullContentRead": true
     },
     {
@@ -2300,10 +2273,10 @@
       "sha256": "18cbfa1fec0477de7caf319508ec23440b9909ab1358c0fe590acbbc9f59f833",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "notes": "Full content reviewed: environment parse/startup validation, PID1/signal ownership, bounded shutdown admission/drain/resource closure, forced deadline, nonzero failure and fatal exception policy. Code distinguishes rejected work, listener semantics and restart supervision. Runtime fixture not executed.",
+      "notes": "Full-content read (2026-11-18): re-checked env-file precedence, SHARE_ENV, shutdown, signals, server.close and resource measurement claims against current Node Process/CLI docs.",
       "findings": [],
-      "reviewer": "career_planning",
-      "reviewDate": "2026-10-25",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
       "fullContentRead": true
     },
     {
@@ -2311,10 +2284,10 @@
       "sha256": "f2e87897304ded746ef6dceea88de180a31e34b67fcb4b39566b07d7e631595d",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "notes": "Full content reviewed: ecosystem config, fork versus cluster process ownership, per-worker memory/pools, readiness signal and listen_timeout fail-open limitation, SIGINT drain and kill deadline, rolling reload restart fallback, immutable environment/log/deploy evidence and orchestration boundaries. PM2 primary process/load-balancing/graceful-startup docs checked; no PM2 installation or live reload test.",
+      "notes": "Full-content read (2026-11-18): re-checked PM2 process-list, readiness, timeout, reload and graceful-shutdown claims against the live PM2 documentation.",
       "findings": [],
-      "reviewer": "career_planning",
-      "reviewDate": "2026-10-25",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
       "fullContentRead": true
     },
     {
@@ -2322,10 +2295,10 @@
       "sha256": "88bda5d73e26d01b65f4d8a18a3c2bf0b43ad7994f5c51d574f318f1069b8b25",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "notes": "Full content reviewed: application threads/isolates within shared process, dependency startup, .plt.local Undici/MessagePort dispatch rather than TCP/DNS, backoff/health, shared deployment/process crash limits and network extraction tradeoffs. Platformatic primary architecture docs checked; Watt service fixture not executed.",
+      "notes": "Full-content read (2026-11-18): re-checked Watt worker/isolate, .plt.local, Undici/MessagePort and shared-failure-boundary claims against the current Platformatic Watt guide and Node Worker docs.",
       "findings": [],
-      "reviewer": "career_planning",
-      "reviewDate": "2026-10-25",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
       "fullContentRead": true
     },
     {
@@ -2333,21 +2306,21 @@
       "sha256": "14ff8865e4870e62ff3b485b044ad2b810e77b2ca2a94afb18d431a2f4755cdb",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
+      "notes": "Full-content read (2026-11-18): re-derived the 6-file/41-minute concurrency study flow and verified the execution-boundary navigation.",
       "findings": [],
-      "reviewer": "root",
-      "reviewDate": "2026-11-05",
-      "fullContentRead": false
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "fullContentRead": true
     },
     {
       "path": "20-backend/20.1-node.js/03-processes-and-concurrency/REVISION.md",
       "sha256": "aaf834b0d1a63bdb4a75c25b16c92539755c64d144e154fe901affb0884b45e2",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Full content reviewed as revision: source-linked groups cover all five chapters, restart limits, worker settlement and transfer ownership, shutdown deadlines, PM2 readiness/reload failures and Watt shared-process/network boundary changes. Consistent with canonical chapters and Q41-Q44 interview additions; no duplicated full example.",
+      "notes": "Full-content read (2026-11-18): re-checked all source-linked concurrency retrieval answers against Node Cluster/Workers, PM2 and Watt sources.",
       "findings": [],
-      "reviewer": "career_planning",
-      "reviewDate": "2026-10-25",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
       "fullContentRead": true
     },
     {
@@ -2355,9 +2328,9 @@
       "sha256": "93c21e23acee90e4a920a895499fa94169b26d3b3ea3c772f1317d7e19effc65",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-14",
-      "notes": "Full-content read (2026-11-14): Intro rewritten this pass to open on one traced request (a POST /reports body choosing an export format) rather than a colon-to-heading fragment. Removed one redundant line in this pass; remaining sections keep one control per paragraph.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-checked query construction, subprocess, Permission Model, bounded work, Helmet and npm-audit claims against Node, OWASP, npm and Helmet 8.3.0; executed Helmet header output.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2366,9 +2339,9 @@
       "sha256": "a430e946c7210b3b0e8552e3a92979e6a8794169350c1a0608dd1fd818e1d61e",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read full content: workload correlation versus causality, interval ELU versus process CPU, loop-delay unit conversion, owned inspector session capture and exclusive profile output, loopback tunnel, snapshot pause/memory/privacy caveats, active resources versus FD count and Clinic maintenance qualifier. No blocking finding.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-checked inspector, CPU profile, heap snapshot, report and active-resource claims against current Node diagnostics docs and Clinic maintenance status; executed the promise-based profile helper.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2377,9 +2350,9 @@
       "sha256": "f740fa5e3e3ceb1d1fcb2e82ff32f9f00e96506da73bc29e8d0c7ee92b8d4fd2",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read full content including both factories/caller: Express5 returned-promise errors versus v4, stack/mount semantics and arity, Fastify hook order/async reply ownership, plugin inheritance, auth-before-lookup, schema projection/parser-safe status mapping and migration constraints. Checked official Express error/Fastify hook docs. No blocking finding.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-checked Express 5 and Fastify 5 lifecycle, errors, schemas and plugin scope against official docs; executed the pinned fixture with 200/401/200/400/404 results and response projection.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2388,10 +2361,10 @@
       "sha256": "ae00be1b0957eac5239d230c56915ed629c71467e2050f6d49c66008922a6954",
       "genre": "interview-bank",
       "status": "reviewed",
-      "notes": "Full content reviewed as interview bank: 44 bounded prompts across runtime, errors, buffers, process supervision, I/O, services, observability, delivery and system-design boundaries. PM2/Watt Q41-Q44 agree with chapters and primary docs. Runtime-scheduling, Node process/ALS primary references checked; no exhaustive separate primary verification of every broad system-design answer. Linked implementations retain independent review states.",
+      "notes": "Full-content read (2026-11-18): re-checked all 44 answer pairs against the Node chapters and current Node, framework, security, pool and provider references; refreshed runtime/framework boundaries.",
       "findings": [],
-      "reviewer": "career_planning",
-      "reviewDate": "2026-10-25",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
       "fullContentRead": true
     },
     {
@@ -2399,10 +2372,10 @@
       "sha256": "05661606d4a68b0b4e1419cba6c1df412a9fdaa4128f706991e8bf7f5e3ccc95",
       "genre": "index",
       "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-05",
-      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Blank lines separate existing prose from thematic rules so it is no longer rendered as a Setext heading; prose and code preserved.",
-      "fullContentRead": false,
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-derived the 5-file/47-minute security and operations flow and verified the case-study pointers do not claim deployment evidence.",
+      "fullContentRead": true,
       "findings": []
     },
     {
@@ -2410,9 +2383,9 @@
       "sha256": "b3902f08cb4b73378e83d25c3bd6e97eb563ab4e903f8df23c16333c11380eff",
       "genre": "revision",
       "status": "reviewed",
-      "reviewer": "backend_coverage_wave2",
-      "reviewDate": "2026-10-25",
-      "notes": "Read all linked Q/A groups and traces: authorization versus validation, command authority, trusted-code permission model, interval ELU/heap capture limits, Fastify hook/plugin scopes, parser status preservation and auth/schema lookup sequence agree with chapters. No blocking finding.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-checked all source-linked security, diagnostics and framework retrieval answers against current Node, Express, Fastify and security sources.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2421,9 +2394,9 @@
       "sha256": "db03367503de87de8eff1773d0a89feac88001a17cb3f1ffe7515fd5bfef76bb",
       "genre": "index",
       "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-14",
-      "notes": "Full-content read (2026-11-14): Read end to end: fundamentals, I/O and data, processes, security and operations, then drills. One line per chapter row, with no duplicated summary paragraph underneath.",
+      "reviewer": "backend",
+      "reviewDate": "2026-11-18",
+      "notes": "Full-content read (2026-11-18): re-derived the 19-file/2 h 28 m Node study map and verified all four category links, pass order and case-study boundaries.",
       "fullContentRead": true,
       "findings": []
     },

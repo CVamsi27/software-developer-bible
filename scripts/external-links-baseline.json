@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-17",
- "url_count": 2773,
+ "generated": "2026-11-18",
+ "url_count": 2774,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -235,6 +235,9 @@
   ],
   "https://berlinstartupjobs.com/": [
    "00-strategy/00.05-find-startup-roles.md"
+  ],
+  "https://better-auth.com/blog/authjs-joins-better-auth": [
+   "10-frontend/10.4-next.js/04-production/10.4.4.01-authentication.md"
   ],
   "https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html": [
    "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md"

@@ -13,7 +13,7 @@
 
 ## Topic Categories
 
-The 21 files are organized into 5 category folders — read in order.
+The 21 content files — 17 chapters and four revision companions — are organized into 5 category folders. Read them in order.
 
 | Category | Chapters | Why it matters |
 | -------------------------------------------------------------- | -------: | ----------------------------------------------------------------------------------------------------- |

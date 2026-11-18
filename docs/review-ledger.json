@@ -1802,163 +1802,409 @@
    "sha256": "710f222a5fbbe7ad53a6b3c2b728c9c38b660d989beb175b97ce2f92b7b3acf1",
    "lines": 228,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the official Next.js caching, Cache Components and partialPrefetching documentation; cacheComponents is stable from 16.0, partialPrefetching from 16.3, and npm reports next 16.4.6 as current on 2026-11-18.",
+    "readable": "Full read of 228 lines; a catalog mixing stable text, minute-level inventory and a cart control opens; definition and first principles separate execution location from output timing, the four strategies each get one trade-off, and hybrid pre-ship checks close the line.",
+    "concise": "948 words; one catalog example carries all four strategies, and the summary states the boundary between rendering time and reuse without repeating the examples.",
+    "focused": "The rendering-strategy taxonomy is owned here; the App Router chapter owns the route tree, and Caching owns reuse and invalidation policy.",
+    "fast": "Built page measured at 74.8 KB raw / 16.7 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Separates output timing from cache scope and client execution, and does not present ISR as a freshness guarantee because a request still triggers regeneration."
+   }
   },
   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md": {
    "sha256": "87ffdf133596f5d6616cd77053c5690794d1cbdf150056add9beae9603c8652e",
    "lines": 285,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the official App Router, route-segment-config and error.js documentation; the error page confirms retry became stable in 16.3.0 and unstable_retry appeared in 16.2.0, and the Cache Components removal set matches the route-segment version history.",
+    "readable": "Full read of 285 lines; a dashboard navigation that should keep its sidebar opens; nested layouts, templates, asynchronous params, route groups, loading and error scope, then parallel and intercepting routes are ordered before the decision checks.",
+    "concise": "1114 words; one dashboard route tree carries layout persistence, latency scope and failure scope, and the advanced-routing section adds composition rather than repeating the layout rules.",
+    "focused": "Route-tree ownership and segment boundaries are owned here; rendering timing stays in the previous chapter, and data fetching points at the data chapters.",
+    "fast": "Built page measured at 73.5 KB raw / 16.7 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Explains persistent layout identity and segment boundaries, including the direct-load versus client-navigation difference, and does not cover data caching."
+   }
   },
   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.03-server-components.md": {
    "sha256": "f3bbf8a72aea89083ceeb3106cb0d1cf3f264020d73ad0d61c9fd7cc878ff599",
    "lines": 218,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against react.dev server-components and use-client references plus the official Next.js server-and-client-components guide; the payload, serialization and environment-poisoning claims match those sources, and every cited URL returned HTTP 200 on 2026-11-18.",
+    "readable": "Full read of 218 lines; an account page that needs private database data opens; the RSC payload, authorized server reads, serialization limits, Suspense streaming and the work/security boundary are traced in order.",
+    "concise": "819 words; one account page carries the payload, authorization and serialization points, and the summary adds no second mechanism.",
+    "focused": "RSC execution and the server/client network boundary are owned here; Client Components own hydration and browser state, and data fetching owns read placement.",
+    "fast": "Built page measured at 71.2 KB raw / 16.1 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Shows what crosses the RSC network boundary and why authorization must precede the read; it cannot make a Client Component prop private."
+   }
   },
   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.04-client-components.md": {
    "sha256": "d9b2a133507d3c7b54b21d326c77abb7f1d3ba5302ae424c81e4d1570fbe25f2",
    "lines": 291,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against react.dev use-client and the official Next.js server-and-client-components guide; the module-graph propagation, prerender-then-hydrate behavior and dynamic-import claims match those sources (URLs 200 on 2026-11-18).",
+    "readable": "Full read of 291 lines; an add-to-cart control opens; the client module boundary, provider composition, hydration-consistent initial render, the next/dynamic opt-out and boundary checks follow in that order.",
+    "concise": "1000 words; the cart example carries boundary placement and hydration, and each of the five sections adds one decision rather than restating the directive.",
+    "focused": "The client module boundary and hydration contract are owned here; Server Component execution stays in the previous chapter and is linked rather than retold.",
+    "fast": "Built page measured at 79.7 KB raw / 17.1 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Shows how far use client propagates and why prerender plus hydration is not CSR; it does not let client state authorize a write."
+   }
   },
   "10-frontend/10.4-next.js/01-rendering-fundamentals/INDEX.md": {
    "sha256": "7643270efb39ceb5c437b06932db5eb03f68f91682f46bc8ff26b6749d89d4e2",
    "lines": 38,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "No version-sensitive claim; the 5-file count (four chapters plus one revision companion), 47-minute total and status badge were re-derived from disk and the table sums on 2026-11-18.",
+    "readable": "Full read of 38 lines; four chapter rows with topics, priority, importance and minutes, followed by a four-step read order, navigation and a separate revision link.",
+    "concise": "87 words; the study summary and four read-order steps are the only prose, and each chapter is described once.",
+    "focused": "Navigation only: it points at the four chapters and their revision drill without retelling their mechanisms.",
+    "fast": "Built page measured at 46.2 KB raw / 11.7 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Does its navigational job with a defensible order from rendering timing to client boundaries; it does not substitute for the chapters."
+   }
   },
   "10-frontend/10.4-next.js/01-rendering-fundamentals/REVISION.md": {
    "sha256": "8b1c9ac4db6f38cac17bf85c9c911b2cf2d42883b08b870ba07c5abe42e05307",
    "lines": 177,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Every answer was checked against its source chapter and the official Next.js and react.dev references; the retry version boundary (stable 16.3, unstable 16.2) matches the error.js version history on 2026-11-18.",
+    "readable": "Full read of 177 lines; source-linked groups for SSR/CSR/SSG/ISR, App Router, Server Components and Client Components, followed by trace-and-boundary checks and a summary.",
+    "concise": "1387 words; answers stay retrieval-sized across four groups and do not reprint the chapter examples.",
+    "focused": "Retrieval drill: each group names its source chapter and points at it for the full explanation instead of duplicating it.",
+    "fast": "Built page measured at 55.9 KB raw / 14.7 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Tests boundary recall with changed-condition traces; it does not replace the chapters."
+   }
   },
   "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.01-middleware.md": {
    "sha256": "abb97c29bada19c740405afe0dfd2bd2689d1f869d2bdc9321964a40a3ccfc9f",
    "lines": 207,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the official proxy file-convention documentation; middleware.ts is deprecated in favor of proxy.ts, Proxy defaults to the Node.js runtime, and setting a runtime export throws, as documented on 2026-11-18 (URL 200).",
+    "readable": "Full read of 207 lines; a request needing a redirect, tenant rewrite or experiment opens; matcher precision, transparent A/B rewrites, header injection, shared rate limiting and the security boundary are ordered.",
+    "concise": "829 words; one request path carries matcher cost, rewrite behavior and header policy, and the security boundary is stated once at the end.",
+    "focused": "The Proxy early-routing contract is owned here; Route Handlers own the HTTP contract, and Authentication owns resource authorization.",
+    "fast": "Built page measured at 68.7 KB raw / 15.7 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Keeps Proxy to early routing and states that a matcher is not an authorization boundary; it cannot protect requests the matcher excludes."
+   }
   },
   "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.02-route-handlers.md": {
-   "sha256": "9a29a4bad2a54eb2c6aea52f5ca2af7d9d9d6c6c665e0ff0b9f18a29c7e63082",
+   "sha256": "3cb58f3c162e8dbbc6c7da1f657c5245db6cc82f285587fd943dda28ce43c76e",
    "lines": 341,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the official Route Handler, serverActions and revalidateTag documentation; the 1 MiB default body limit, profile-based revalidation and deprecated one-argument form match those pages, and the first snippet now imports NextRequest before using it (2026-11-18).",
+    "readable": "Full read of 341 lines; a payment webhook opens; one request is followed through the method handler, dynamic params, streaming, webhook verification, uploads, cache policy and browser or method boundaries.",
+    "concise": "1209 words; one webhook request carries verification, status and streaming, and the upload and cache sections add limits rather than repeating the request trace.",
+    "focused": "The Route Handler HTTP contract is owned here; Server Actions own mutations, and Caching owns the revalidation and cache-model policy.",
+    "fast": "Built page measured at 91.1 KB raw / 18.2 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Owns the HTTP contract from verification to status; it does not make a webhook idempotent or a stream flush through every proxy."
+   },
+   "notes": "Added the missing NextRequest import to the first route-handler snippet so the example is self-contained."
   },
   "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.03-metadata.md": {
    "sha256": "53e485b1346e2fda0c2c9234c81b2cb0333e21b97e1fd510ef7c1645902e6208",
    "lines": 301,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the official generateMetadata, metadata file-convention, generateViewport and generateSitemaps references; metadataBase resolution, inheritance and streaming constraints match those pages (URLs 200 on 2026-11-18).",
+    "readable": "Full read of 301 lines; a shared product link that shows the site title opens; static versus generated metadata, inheritance, layout defaults, page-specific canonical and sharing output, crawler files and the emitted document are traced.",
+    "concise": "1255 words; one product page carries defaults, generated values and canonical output, and the crawler section adds file conventions rather than restating inheritance.",
+    "focused": "Metadata output and inheritance are owned here; rendering and caching own when the values are produced, and those chapters are linked.",
+    "fast": "Built page measured at 83.2 KB raw / 17.6 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Aligns canonical, sharing and crawler output with the rendered page; metadata cannot enforce access or fix content that is wrong."
+   }
   },
   "10-frontend/10.4-next.js/02-routing-and-middleware/INDEX.md": {
    "sha256": "d382ed70c01f6490e5c113c2646a7bcdecd9e0f6fa8ac1fd158495075f1e4f88",
    "lines": 37,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "No version-sensitive claim; the 4-file count (three chapters plus one revision companion), 41-minute total and status badge were re-derived from disk and the table sums on 2026-11-18.",
+    "readable": "Full read of 37 lines; three chapter rows with topics, priority, importance and minutes, followed by a four-step read order, navigation and a separate revision link.",
+    "concise": "91 words; the study summary and four read-order steps are the only prose, and each chapter is described once.",
+    "focused": "Navigation only: it points at the three chapters and their revision drill without retelling their mechanisms.",
+    "fast": "Built page measured at 45.9 KB raw / 11.7 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Orders the request from early Proxy routing to the HTTP handler to document metadata; it does not teach any of the three itself."
+   }
   },
   "10-frontend/10.4-next.js/02-routing-and-middleware/REVISION.md": {
    "sha256": "5c14b958e67a7540134241012e763eba56019ec459786ff5cfca5a3fe93d282e",
    "lines": 161,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Every answer was checked against its source chapter and the official Next.js proxy, route-handler and metadata references; the Node.js runtime and runtime-export rejection match the proxy page on 2026-11-18.",
+    "readable": "Full read of 161 lines; source-linked groups for Proxy, Route Handlers and Metadata, followed by a follow-the-failure-boundary drill and a summary.",
+    "concise": "1191 words; answers stay retrieval-sized across three groups and do not reprint the chapter code.",
+    "focused": "Retrieval drill: each group names its source chapter and points at it for the full treatment.",
+    "fast": "Built page measured at 54.4 KB raw / 14.5 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Tests where a request must be rejected or verified; it does not replace the chapters."
+   }
   },
   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.01-data-fetching-patterns.md": {
    "sha256": "3a41408f9609632d7afe072cd4020379393cc225d4c04579e9a91ec44c95c041",
    "lines": 199,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the official fetching-data and client-side-data-fetching guides plus react.dev use and cache references; request deduplication, parallel reads and the server/client ownership split match those sources (URLs 200 on 2026-11-18).",
+    "readable": "Full read of 199 lines; a product page mixing a stable description, visitor-specific saved state and slow reviews opens; independent versus dependent reads, reuse policy, server-to-client props, browser-owned queries and read/write paths are ordered.",
+    "concise": "1056 words; one product page carries parallel reads, streaming and client ownership, and the summary does not repeat the code paths.",
+    "focused": "Read placement and the dependency graph are owned here; Caching owns reuse and invalidation policy, and the cross-section TanStack Query chapter owns browser cache mechanics.",
+    "fast": "Built page measured at 69.2 KB raw / 16.0 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Separates read placement from cache policy and authorization; it does not turn a client query cache into shared server state."
+   }
   },
   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.02-server-actions.md": {
    "sha256": "d2997651b62e3a53bb66b7fa0ecb1d253d3849e666100ddcceab4eb66b3d0a40",
    "lines": 194,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the official mutating-data, serverActions and useActionState documentation; the 1 MiB default body limit, action POST boundary and revalidation ordering match those pages (URLs 200 on 2026-11-18).",
+    "readable": "Full read of 194 lines; a create-post form opens; action-boundary validation and authorization, useActionState validation and pending state, commit-then-refresh ordering, the search-versus-write choice and operational limits follow.",
+    "concise": "1039 words; one create-post action carries validation, pending state and revalidation, and the security section adds limits without repeating the trace.",
+    "focused": "The Server Action mutation contract is owned here; Route Handlers own the HTTP contract, and Caching owns the invalidation APIs.",
+    "fast": "Built page measured at 72.9 KB raw / 16.5 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Shows validation, authorization and commit ordering at the action boundary; it cannot make a retried write safe without idempotency."
+   }
   },
   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.03-caching.md": {
    "sha256": "e5542ecd83f072d01a7ee66c8937e060d8b43cd49821aa2d48f28e1bdcc81a07",
    "lines": 192,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the official cacheComponents (stable 16.0.0), partialPrefetching (16.3.0), revalidateTag and updateTag references; the profile argument, deprecated one-argument form and Server-Actions-only updateTag match those pages (2026-11-18).",
+    "readable": "Full read of 192 lines; a public catalog description versus a private account result opens; model selection, a request trace in the previous model, the same page under Cache Components, invalidation, HTTP caches and verification are ordered.",
+    "concise": "1156 words; one catalog page is traced in each cache model, and the invalidation table adds one API per freshness promise rather than repeating the traces.",
+    "focused": "Cache-model selection and invalidation are owned here; ISR owns regeneration policy, and data fetching owns read placement.",
+    "fast": "Built page measured at 70.0 KB raw / 17.0 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Makes the installed cache model the first decision; it does not claim invalidation eagerly rebuilds every route or updates open browsers."
+   }
   },
   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.04-streaming.md": {
    "sha256": "996a095a61656e98a3544d8aefa3a224f367870f30bf5836e056e26d218d70c5",
    "lines": 129,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the official streaming guide and react.dev Suspense reference; fallback scope, loading.tsx behavior and the pre-first-byte status constraint match those sources (URLs 200 on 2026-11-18).",
+    "readable": "Full read of 129 lines; a dashboard title that could arrive before a slow chart opens; boundary placement, route-wide versus local loading, pre-byte HTTP decisions, crawler and production behavior, and what should stream separately are ordered.",
+    "concise": "821 words; one dashboard carries boundary placement, loading scope and failure handling, and the crawler section adds a delivery constraint rather than repeating the mechanism.",
+    "focused": "Streaming and Suspense boundary placement are owned here; Server Components own the payload, and Caching owns reuse policy.",
+    "fast": "Built page measured at 59.0 KB raw / 14.4 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Places Suspense where waiting begins and separates pending from failed; streaming cannot change a status code after the first byte."
+   }
   },
   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.05-incremental-static-regeneration.md": {
    "sha256": "222c680188f802f752d0bacabb97bfdf23acbb04986d34a24a4c6fe629e9b477",
    "lines": 205,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the official ISR guides for both cache models plus the revalidateTag reference; the traditional model is scoped to Next.js 16.4 with cacheComponents disabled, revalidateTag(tag, max) means stale-while-revalidate, and npm reports 16.4.6 current on 2026-11-18.",
+    "readable": "Full read of 205 lines; a catalog larger than a build should prerender opens; the build-to-refresh trace, invalidation versus the writer freshness promise, route/data/CDN cache distinctions and production verification follow.",
+    "concise": "1139 words; one catalog page carries build-time generation, revalidation and failure behavior, and the cache distinction table adds boundaries rather than repeating the trace.",
+    "focused": "ISR regeneration is owned here; Caching owns model selection and tag semantics, and Deployment owns shared-cache topology.",
+    "fast": "Built page measured at 72.7 KB raw / 16.7 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Explains eligibility versus regeneration and the API-specific stale contract; it cannot guarantee refresh if no request arrives."
+   }
   },
   "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.06-static-exports.md": {
    "sha256": "11a46bb158615ff039348c1e06a39822e16537c4877132598085165684f6daf0",
    "lines": 188,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the official static-exports guide and Image component reference; the unsupported request-time features, generateStaticParams requirement, unoptimized or custom loader choice and preload-versus-priority change match those pages (2026-11-18).",
+    "readable": "Full read of 188 lines; a file-only host opens; build-time route generation, request-time work moved to an explicit service, unsupported capabilities and host routing or 404 behavior are checked in order.",
+    "concise": "869 words; one export build carries route generation, runtime removal and host behavior, and the host section adds deployment limits rather than repeating the build steps.",
+    "focused": "Static export constraints are owned here; Deployment owns the runtime artifact, and Image Optimization owns loader and cache policy.",
+    "fast": "Built page measured at 66.1 KB raw / 15.5 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "States what a file host cannot do and moves that work to an authorized service; export cannot run a request-time Next.js handler."
+   }
   },
   "10-frontend/10.4-next.js/03-data-and-caching/INDEX.md": {
    "sha256": "0c72d0bfb224eee1311a6c554e6d2a4018d2bd139a80221b16fa791b860303d4",
    "lines": 41,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "No version-sensitive claim; the 7-file count (six chapters plus one revision companion), 58-minute total and status badge were re-derived from disk and the table sums on 2026-11-18.",
+    "readable": "Full read of 41 lines; six chapter rows with topics, priority, importance and minutes, followed by a four-step read order, navigation and a separate revision link.",
+    "concise": "95 words; the study summary and four read-order steps are the only prose, and each chapter is described once.",
+    "focused": "Navigation only: it points at the six chapters and their revision drill without retelling their mechanisms.",
+    "fast": "Built page measured at 47.1 KB raw / 11.9 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Orders reads from placement through mutation, reuse, delivery and export; it does not teach any chapter itself."
+   }
   },
   "10-frontend/10.4-next.js/03-data-and-caching/REVISION.md": {
    "sha256": "d462a62cbcb74a015d6b706b2c692bdf4ffca3ad9f684c322367e02241b4aa36",
    "lines": 257,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Every answer was checked against its source chapter and the official Next.js caching, revalidateTag, updateTag and static-export references; the 16.0 and 16.3 version boundaries match those pages on 2026-11-18.",
+    "readable": "Full read of 257 lines; source-linked groups for all six data and caching chapters, followed by configured-cache-model and write/delivery traces and a summary.",
+    "concise": "1832 words; answers stay retrieval-sized across six groups and do not reprint the chapter code.",
+    "focused": "Retrieval drill: each group names its source chapter and points at it for the full treatment.",
+    "fast": "Built page measured at 60.5 KB raw / 16.1 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Tests cache-model and freshness decisions under changed conditions; it does not replace the chapters."
+   }
   },
   "10-frontend/10.4-next.js/04-production/10.4.4.01-authentication.md": {
-   "sha256": "fce2f5667d94d7e22cfdfe6f68513a7eac9179e431d4947998f00fbc983b72b0",
-   "lines": 193,
+   "sha256": "02ff0ac317c1dbb447068836d0ce341d4fc0ad75f6d1601442b99b2d593ac9f4",
+   "lines": 194,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the official Next.js authentication guide, the Auth.js migration guide and the Better Auth announcement; npm showed next-auth 4.24.15 on latest and 5.0.0-beta.32 on beta on 2026-11-18, and the paragraph now records the upstream Better Auth recommendation.",
+    "readable": "Full read of 194 lines; a report request whose cookie is not proof opens; Proxy feedback, data-layer authorization, session storage and revocation, credential issuance, CSRF, client session state and version pinning are ordered.",
+    "concise": "1179 words; one report request carries session verification and resource authorization, and the seven sections add one trust boundary each without repeating the opening trace.",
+    "focused": "The session-to-resource authorization chain is owned here; JWT and OAuth mechanics are linked, and the Proxy chapter owns early routing.",
+    "fast": "Built page measured at 65.4 KB raw / 16.4 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Traces session verification to resource permission and names revocation delay; a cookie or Proxy check cannot prove authorization."
+   },
+   "notes": "Updated the Auth.js status paragraph: v4 is the LTS latest line, v5 remains beta, and the Better Auth team now recommends Better Auth for new projects."
   },
   "10-frontend/10.4-next.js/04-production/10.4.4.02-image-optimization.md": {
    "sha256": "a1e7f54b29dc3f0293d58dc5175743c7410c56069169715cc7607bbe3980e7fe",
    "lines": 157,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the official Image component reference; v16.0.0 added preload and deprecated priority, v16.1.2 added maximumResponseBody, v16.2.0 added cacheHandler support for image optimization, and WebP remains the default format on 2026-11-18.",
+    "readable": "Full read of 157 lines; a 400-pixel card backed by a 4,000-pixel photo opens; source and cache limits, responsive sizes and geometry, format and quality policy, loading hints and runtime verification follow.",
+    "concise": "797 words; one product image carries sizing, format and cache behavior, and the loading section adds one measured hint rather than repeating the request trace.",
+    "focused": "Image delivery is owned here; Static Exports owns the loader constraint, and Deployment owns the shared cache handler.",
+    "fast": "Built page measured at 59.2 KB raw / 14.5 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Matches candidates to layout and measured LCP behavior; the optimizer cannot invent a source variant or purge a transformed image by tag."
+   }
   },
   "10-frontend/10.4-next.js/04-production/10.4.4.03-deploying-nextjs.md": {
    "sha256": "a776c58ad260d1906217ad8bd92d05a0d3ac49d5f259c176371fac5b0dbcc2d2",
    "lines": 148,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the official self-hosting, output, incrementalCacheHandlerPath and cacheHandlers references; standalone asset copying, cacheHandler image support from 16.2.0 and the plural Cache Components contract match those pages (2026-11-18).",
+    "readable": "Full read of 148 lines; a build that passes but fails after release opens; the execution contract, standalone packaging, cache agreement, overlapping releases, the operational boundary and deployed-artifact checks are ordered.",
+    "concise": "1129 words; one build artifact carries packaging, cache, rollout and shutdown decisions, and the verification checklist adds observations rather than repeating the architecture.",
+    "focused": "The deployment contract is owned here; Caching owns application cache semantics, and Authentication owns session behavior across replicas.",
+    "fast": "Built page measured at 58.6 KB raw / 15.6 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Treats cache agreement, version overlap and shutdown as deployment properties; a passing build does not prove replicas share invalidation."
+   }
   },
   "10-frontend/10.4-next.js/04-production/INDEX.md": {
-   "sha256": "1931bec37d8b6d28ab3b10135c9e4212f946b45e2f49b999bcd7cf8d02b7e73b",
+   "sha256": "9122e7a4ed3a3c806ce2153b0ac730222fd7818b020b2cc0490266913187bb67",
    "lines": 50,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "No version-sensitive claim; the 4-file count (three chapters plus one revision companion), 27-minute total and status badge were re-derived from disk, and the stale status-wip badge was corrected to status-complete on 2026-11-18.",
+    "readable": "Full read of 50 lines; three chapter rows with topics, priority, importance and minutes, a four-step read order, a short Docita anchor, navigation and a separate revision link.",
+    "concise": "150 words; the study summary, four read-order steps and two-line Docita note are the only prose.",
+    "focused": "Navigation only: it points at the three chapters and their revision drill without retelling their mechanisms.",
+    "fast": "Built page measured at 47.2 KB raw / 12.1 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Orders authorization, image delivery and deployment; it does not attempt to teach any chapter itself."
+   },
+   "notes": "Corrected the status badge from status-wip to status-complete to match the root Next.js index and the finished chapter set."
   },
   "10-frontend/10.4-next.js/04-production/REVISION.md": {
    "sha256": "33a6c2451171e4dcb003350c9ed1fa1afc0b664bc437946eb7d98f33b7d80c48",
    "lines": 149,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Every answer was checked against its source chapter and the official Next.js and Auth.js references; the priority-to-preload change and image cache handler boundary match those sources on 2026-11-18.",
+    "readable": "Full read of 149 lines; source-linked groups for Authentication, Image Optimization and Deploying Next.js, followed by a production-boundary trace and a summary.",
+    "concise": "1158 words; answers stay retrieval-sized across three groups and do not reprint the chapter code.",
+    "focused": "Retrieval drill: each group names its source chapter and points at it for the full treatment.",
+    "fast": "Built page measured at 54.0 KB raw / 14.4 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Tests trust, delivery and rollout boundaries under changed conditions; it does not replace the chapters."
+   }
   },
   "10-frontend/10.4-next.js/05-interview-prep/10.4.5.01-interview-questions.md": {
    "sha256": "b77a41d99c563b871d08c1c26830f603397e6c54060f684ff134df72e307c046",
    "lines": 989,
    "genre": "interview",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "All 40 answer pairs were checked against their chapters and the official Next.js 16.4.6 documentation; the 15-versus-16 cache scope, Cache Components from 16.0, partialPrefetching from 16.3, retry from 16.3, priority deprecation and image version boundaries were verified on 2026-11-18.",
+    "readable": "Full read of 989 lines; a first-principles framing and version scope open, then 40 numbered questions in beginner, intermediate, senior, system-design and follow-up bands, a trace-and-challenge checklist and a summary.",
+    "concise": "4233 words; answers stay bounded across 40 pairs, and the closing checklist adds challenge prompts rather than repeating the model answers.",
+    "focused": "Drill bank: each question points at a chapter canonical treatment rather than re-teaching the mechanism.",
+    "fast": "Built page measured at 162.6 KB raw / 32.5 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Provides 40 graded answers with follow-up boundaries; it is interview practice and does not replace the learning chapters."
+   }
   },
   "10-frontend/10.4-next.js/05-interview-prep/INDEX.md": {
    "sha256": "ed4f0de7ba9d7e65ea445a9ff8e73ad6404843a09ef7742e97d905eddbe2d0b6",
    "lines": 28,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "No version-sensitive claim; the 1-file count, 31-minute total and status badge were re-derived from disk on 2026-11-18.",
+    "readable": "Full read of 28 lines; one bank row with topics, priority, importance and minutes, followed by a three-step practice order and navigation.",
+    "concise": "56 words; the study summary and three practice steps are the only prose.",
+    "focused": "Navigation only: it points at the 40-question bank without retelling its answers.",
+    "fast": "Built page measured at 44.5 KB raw / 11.3 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Explains how to practise the bank in dependency order; it does not substitute for answering the questions."
+   }
   },
   "10-frontend/10.4-next.js/INDEX.md": {
-   "sha256": "8f7c416fb4d7f1930a16c83074c7b8de2e3f15ce7080705bb7c3585523574047",
+   "sha256": "d733add8c0e499c5d72ff8adf220809f50ba1ef07d2e9521a629c01994313549",
    "lines": 132,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Next.js 16.4.6 and the 204-minute total were checked against npm and the five category tables; 17 chapters plus four revision companions gives the stated 21 content files on 2026-11-18.",
+    "readable": "Full read of 132 lines; scope and the 21-file summary open, then five category blocks with chapter tables, three study paths, cross-references and navigation.",
+    "concise": "307 words; each category gets one purpose line and one chapter table, and the study paths reuse the same counts without repeating chapter detail.",
+    "focused": "Section map: it points at five category indexes and the cross-reference table without retelling their chapters.",
+    "fast": "Built page measured at 56.1 KB raw / 13.6 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Sets the senior-level scope and three study paths; it does not try to be a sixth tutorial."
+   }
   },
   "10-frontend/10.5-form-handling/10.5.01-react-hook-form.md": {
    "sha256": "d02502c322c84597db7f333a26776f9845dc741e7a20fb367be880d4a45679fd",
@@ -7263,33 +7509,6 @@
   }
  },
  "pending": [
-  "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md",
-  "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md",
-  "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.03-server-components.md",
-  "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.04-client-components.md",
-  "10-frontend/10.4-next.js/01-rendering-fundamentals/INDEX.md",
-  "10-frontend/10.4-next.js/01-rendering-fundamentals/REVISION.md",
-  "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.01-middleware.md",
-  "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.02-route-handlers.md",
-  "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.03-metadata.md",
-  "10-frontend/10.4-next.js/02-routing-and-middleware/INDEX.md",
-  "10-frontend/10.4-next.js/02-routing-and-middleware/REVISION.md",
-  "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.01-data-fetching-patterns.md",
-  "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.02-server-actions.md",
-  "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.03-caching.md",
-  "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.04-streaming.md",
-  "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.05-incremental-static-regeneration.md",
-  "10-frontend/10.4-next.js/03-data-and-caching/10.4.3.06-static-exports.md",
-  "10-frontend/10.4-next.js/03-data-and-caching/INDEX.md",
-  "10-frontend/10.4-next.js/03-data-and-caching/REVISION.md",
-  "10-frontend/10.4-next.js/04-production/10.4.4.01-authentication.md",
-  "10-frontend/10.4-next.js/04-production/10.4.4.02-image-optimization.md",
-  "10-frontend/10.4-next.js/04-production/10.4.4.03-deploying-nextjs.md",
-  "10-frontend/10.4-next.js/04-production/INDEX.md",
-  "10-frontend/10.4-next.js/04-production/REVISION.md",
-  "10-frontend/10.4-next.js/05-interview-prep/10.4.5.01-interview-questions.md",
-  "10-frontend/10.4-next.js/05-interview-prep/INDEX.md",
-  "10-frontend/10.4-next.js/INDEX.md",
   "10-frontend/10.5-form-handling/10.5.01-react-hook-form.md",
   "10-frontend/10.5-form-handling/10.5.02-zod.md",
   "10-frontend/10.5-form-handling/10.5.03-formik.md",

@@ -1435,12 +1435,14 @@
     },
     {
       "path": "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.02-route-handlers.md",
-      "sha256": "9a29a4bad2a54eb2c6aea52f5ca2af7d9d9d6c6c665e0ff0b9f18a29c7e63082",
+      "sha256": "3cb58f3c162e8dbbc6c7da1f657c5245db6cc82f285587fd943dda28ce43c76e",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full content: WebHTTPmethod/status/asyncparams/validation, scopedORMwrites, boundedpaginationcost, SSEcancellation, rawwebhook/durable dedupe, publicuploadlimits, model-specific cache and CORS. Corrected partialPrefetching16.3optionalboundary and sharedserver versusfunctionhosting phrasing.",
+      "notes": "Full content: route-handler request trace re-checked against Next.js 16.4.6 docs; added the missing NextRequest import so the first snippet is self-contained.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-18",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.4-next.js/02-routing-and-middleware/10.4.2.03-metadata.md",
@@ -1543,12 +1545,14 @@
     },
     {
       "path": "10-frontend/10.4-next.js/04-production/10.4.4.01-authentication.md",
-      "sha256": "fce2f5667d94d7e22cfdfe6f68513a7eac9179e431d4947998f00fbc983b72b0",
+      "sha256": "02ff0ac317c1dbb447068836d0ce341d4fc0ad75f6d1601442b99b2d593ac9f4",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full content: session verification/current account/resource policy, Proxy optimistic routing only, server-only DAL, revocation tradeoff, cookies/CSRF/origin/callback paths, identity cache resets and direct boundary tests. Auth.js v5 beta confirmed from official guide.",
+      "notes": "Full content: trust-boundary trace re-checked; Auth.js status updated to the November 2026 npm lines (4.24.15 latest, 5.0.0-beta.32 beta) and the upstream Better Auth recommendation.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-18",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.4-next.js/04-production/10.4.4.02-image-optimization.md",
@@ -1570,12 +1574,14 @@
     },
     {
       "path": "10-frontend/10.4-next.js/04-production/INDEX.md",
-      "sha256": "1931bec37d8b6d28ab3b10135c9e4212f946b45e2f49b999bcd7cf8d02b7e73b",
+      "sha256": "9122e7a4ed3a3c806ce2153b0ac730222fd7818b020b2cc0490266913187bb67",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full index: protected operation then bytes then artifact/operational boundaries, revision before interview practice. Docita anchors explicitly avoid claiming unsupported NextAuth/image integration. Final metadata/source-anchor refresh after parent restamper: inspected current header and any Docita introduction; earlier full semantic review SHA256 d6ad3f613b3523b89e60afa81a1da1f5f17d07285dab129764319baee02b57c6. Parent confirms changes here limited to metadata and source-anchor qualification.",
+      "notes": "Full content: category counts and minutes re-derived; status badge corrected from status-wip to status-complete to match the root Next.js index.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-18",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.4-next.js/04-production/REVISION.md",
@@ -1608,13 +1614,13 @@
     },
     {
       "path": "10-frontend/10.4-next.js/INDEX.md",
-      "sha256": "8f7c416fb4d7f1930a16c83074c7b8de2e3f15ce7080705bb7c3585523574047",
+      "sha256": "d733add8c0e499c5d72ff8adf220809f50ba1ef07d2e9521a629c01994313549",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full-content read (2026-11-14): Read end to end: study order runs App Router, Server Components, Server Actions, caching, streaming without a jump. One description line per chapter; no repeated rationale between rows or the reading flow.",
+      "notes": "Full content: section counts re-derived (17 chapters plus four revision companions); clarified that the 21 content files include the revision companions.",
       "findings": [],
-      "reviewer": "root",
-      "reviewDate": "2026-11-14",
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-18",
       "fullContentRead": true
     },
     {

@@ -1736,25 +1736,14 @@
     },
     {
       "path": "10-frontend/10.6-animation/10.6.02-framer-motion.md",
-      "sha256": "170c6a8bcfe00c2a1b4e8b1b115952f951222d66765d589a09a83bba01033e08",
-      "genre": "learning-chapter",
+      "sha256": "96c436771d25527698da1f0a3e328010d9689c1abe1a3d420dd51f81c1038d09",
+      "genre": "teaching",
       "status": "reviewed",
-      "reviewer": "animation_coverage",
-      "reviewDate": "2026-10-25",
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-18",
       "fullContentRead": true,
-      "notes": "Full original and final content read: React owns desired identity while AnimatePresence retains departing children; layout projection versus transforms, router survival, focus policy, motion values, compositor and hydration boundaries. Current motion@14.6.0 mounted-hook check proved library useReducedMotion stays false after matchMedia changes to true and after rerender, while remount sees true; verified versioned primary implementation despite contrary documentation. Replaced live-policy dependency with stable useSyncExternalStore matchMedia subscription plus matching server snapshot, linked the canonical external-store chapter, and documented active-playback/mounted-global-policy limits. Mounted replacement changed false to true and removed its only listener on unmount. Full HelpPanel and MotionConfig snippets compile under strict TypeScript5.9.3 with installed motion14.6.0/react types; no cross-browser/performance results claimed.",
-      "findings": [
-        {
-          "description": "Claimed useReducedMotion automatically rerenders on device-preference changes, but tested motion14.6.0 snapshots state once; added owned subscription and explicit version boundary.",
-          "severity": "P2",
-          "status": "repaired"
-        },
-        {
-          "description": "Standalone MotionConfig TSX snippet relied on ReactNode imported only in a previous block; supplied its own type import.",
-          "severity": "P2",
-          "status": "repaired"
-        }
-      ],
+      "notes": "Full content: Motion lifecycle re-checked against motion 14.14.0; the reduced-motion hook still snapshots its initial value, and the pinned implementation link now names 14.14.0.",
+      "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "bbf89160d7cedcd73bf72812dac6cb1938b89cb69f4cb756795df36b3c7d2c46",
         "reviewDate": "2026-10-26",
@@ -1764,20 +1753,14 @@
     },
     {
       "path": "10-frontend/10.6-animation/10.6.03-gsap.md",
-      "sha256": "45dc6834569284d19a886ebfea61524d9ed07942aa93138a13c45a057c4f8c6d",
-      "genre": "learning-chapter",
+      "sha256": "c56de5d55eb62467e8a139d59d4fe9413c1c6d06206bc8a1503b1baa4948a104",
+      "genre": "teaching",
       "status": "reviewed",
-      "reviewer": "animation_coverage",
-      "reviewDate": "2026-10-25",
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-18",
       "fullContentRead": true,
-      "notes": "Full original and final content read: tween/fromTo endpoints, timeline positions and easing, shared playhead control, scrub versus threshold, pinning/flow cost, useGSAP scoped ownership, contextSafe delayed work, matchMedia rollback, dependency cleanup and visible base state. GSAP3.15.0/Chrome154 reproduction from actual chapter sequence: immediateRender:false left CTA opacity1 before0.8s then dropped to0.01 at0.801s; repaired default initialization kept opacity0 until its step. Ticker flush accounted for lazy first writes. Checked official fromTo, React and matchMedia docs. Full React Story compiles with @gsap/react2.1.2; no scroll smoothness or frame-rate benchmark claimed.",
-      "findings": [
-        {
-          "description": "All delayed entrance tweens disabled immediate starting-value rendering, leaving content visible until it abruptly hid at its entrance time; restored fromTo defaults and explained when disabling them is valid.",
-          "severity": "P2",
-          "status": "repaired"
-        }
-      ]
+      "notes": "Full content: GSAP ownership example re-checked against the matchMedia and useGSAP guides; corrected the matchMedia call and moved scope to the third argument of media.add().",
+      "findings": []
     },
     {
       "path": "10-frontend/10.6-animation/10.6.04-react-spring.md",
@@ -1910,13 +1893,13 @@
     },
     {
       "path": "10-frontend/10.6-animation/REVISION.md",
-      "sha256": "cee17a9de72c302405ab70d6d2bd38472644ca46b257dec55487e6452a35c6fd",
-      "genre": "revision-companion",
+      "sha256": "e252f1726691cc9edf698fce427038810a80c934352dcf691bd653b7406ebad6",
+      "genre": "revision",
       "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-14",
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-18",
       "fullContentRead": true,
-      "notes": "Full-content read (2026-11-14): Question order follows the chapters CSS, Motion, GSAP, React Spring, WAAPI, view transitions, Canvas. Two to four prompts per chapter, each one mechanism; no prompt restates its own answer.",
+      "notes": "Full content: retrieval groups re-checked; the Motion version statement now reflects the 14.x line rather than one patch release.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "decdab38a9dbf83f7fc497b3a1e3ad0e9f957b9ea3c87b93e48fbd2d12a7ceb8",
@@ -2119,19 +2102,19 @@
     },
     {
       "path": "10-frontend/INDEX.md",
-      "sha256": "ee03e1f7ebd4ad31557348fe9173ab69925a9aad5c1cce5ca81a39de8d8f842e",
+      "sha256": "00935914843524cf2522598223ba9e3cf375fd3b896a8dc5a5dd31e7ea6752a2",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Frontend pass: the sub-stack table column \"Files\" summed to 126 (learning chapters) while the badge and blurb said 149 (chapters plus revision companions) under the same word. Renamed the column to \"Chapters\" so both counts name their scope; the rest of the section map, pass structure and cross-references re-read and consistent. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
+      "notes": "Full content: frontend map re-checked; 150 files, eight sub-stack rows, the 127-chapter split and the 19 h 7 m sum were re-derived. The Animation row now says Motion for React instead of the former Framer Motion name.",
       "findings": [],
-      "reviewer": "root",
+      "reviewer": "frontend",
       "metadataReview": {
         "previousReviewedSha256": "d9be3585557aa35a4ea21326d76d961aa85644da00ae5f14dc629beef00bd691",
         "reviewDate": "2026-10-26",
         "reviewer": "root",
         "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
       },
-      "reviewDate": "2026-11-14",
+      "reviewDate": "2026-11-18",
       "fullContentRead": true
     },
     {

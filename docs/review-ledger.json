@@ -2347,61 +2347,152 @@
    "sha256": "6b163d79dee7d50aba5ebe182c41cc992853835c9e5374e8bc49112224a53621",
    "lines": 228,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the MDN animation-fill-mode, will-change and prefers-reduced-motion references plus the W3C WCAG 2.2.2 pause/stop/hide guidance; the direction-dependent fill behavior, compositor eligibility and five-second control threshold match those sources on 2026-11-18 (URLs 200).",
+    "readable": "Full read of 228 lines; a hover button and loading skeleton open; definition and first principles separate transition interpolation from keyframe stages, five sections cover fill semantics, hint scope, reduced motion and property cost, then the summary.",
+    "concise": "831 words; one button and one skeleton carry timing, fill and reduced-motion decisions, and the property table adds rendering boundaries rather than repeating the examples.",
+    "focused": "CSS transition and keyframe mechanics are owned here; browser rendering owns the layout, paint and composite stages, and the reduced-motion policy points at accessibility.",
+    "fast": "Built page measured at 67.9 KB raw / 15.7 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Separates interpolation from rendering cost and does not promise a frame rate from transform alone; a fill mode cannot rewrite the underlying CSS state."
+   }
   },
   "10-frontend/10.6-animation/10.6.02-framer-motion.md": {
-   "sha256": "170c6a8bcfe00c2a1b4e8b1b115952f951222d66765d589a09a83bba01033e08",
+   "sha256": "96c436771d25527698da1f0a3e328010d9689c1abe1a3d420dd51f81c1038d09",
    "lines": 181,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the Motion for React presence, layout and accessibility documentation and the 14.x reduced-motion hook source; npm reports motion 14.14.0 as current, and the hook still snapshots its initial preference at 14.14.0 on 2026-11-18 (URLs 200).",
+    "readable": "Full read of 181 lines; an expanding help panel opens; definition and first principles, presence retention, layout versus transform, control selection, rendering cost and reduced-motion policy are ordered.",
+    "concise": "870 words; one help panel carries entry, exit, layout and reduced-motion behavior, and the control table adds one lifecycle need per row.",
+    "focused": "React presence, layout projection and reduced-motion policy are owned here; CSS owns property cost, and the view-transition chapter owns router integration.",
+    "fast": "Built page measured at 66.8 KB raw / 15.7 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Shows why an exiting node needs presence retention and why layout animation is not a transform; MotionConfig cannot disable CSS, video or Canvas motion."
+   }
   },
   "10-frontend/10.6-animation/10.6.03-gsap.md": {
-   "sha256": "45dc6834569284d19a886ebfea61524d9ed07942aa93138a13c45a057c4f8c6d",
+   "sha256": "c56de5d55eb62467e8a139d59d4fe9413c1c6d06206bc8a1503b1baa4948a104",
    "lines": 182,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the GSAP fromTo, matchMedia, ScrollTrigger and React guides; matchMedia takes no scope argument, the third argument to add() scopes selector text, and npm reports gsap 3.15.1 and @gsap/react 2.1.2 current on 2026-11-18 (URLs 200).",
+    "readable": "Full read of 182 lines; a hero sequence with overlapping entrances opens; definition and first principles, timeline positions, ScrollTrigger, React ownership, control selection and rendering cost are ordered.",
+    "concise": "783 words; one hero timeline carries positions, scroll linking and cleanup, and the control table adds selection criteria rather than repeating the example.",
+    "focused": "Imperative tween and timeline ownership is owned here; Motion for React owns declarative presence, and WAAPI owns browser playback objects.",
+    "fast": "Built page measured at 65.8 KB raw / 14.9 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Explains playhead position and scoped cleanup; a GSAP timeline cannot make layout or paint free, and immediateRender false is not a general optimization."
+   },
+   "notes": "Corrected the matchMedia call: gsap.matchMedia() takes no scope argument, so the scope moved to the third argument of media.add()."
   },
   "10-frontend/10.6-animation/10.6.04-react-spring.md": {
    "sha256": "57daebf501e6972558c1610c4076cebf5664882fca5483a908ad159800826f4f",
    "lines": 129,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the React Spring use-reduced-motion and config documentation; the hook sets the global skipAnimation flag so controllers jump to their targets, and npm reports @react-spring/web 10.1.2 current on 2026-11-18 (URLs 200).",
+    "readable": "Full read of 129 lines; a marker whose target changes mid-flight opens; definition and first principles, target following, hook ownership, configuration and control comparison follow.",
+    "concise": "676 words; one marker carries target changes and spring configuration, and the hook table adds ownership rather than repeating the trace.",
+    "focused": "Spring value and controller composition are owned here; Motion for React owns declarative presence and layout, and CSS owns keyframe timing.",
+    "fast": "Built page measured at 59.2 KB raw / 14.5 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Shows why a spring continues from value and velocity; a fixed tween cannot respond without a jump, and settling time is not a schedule guarantee."
+   }
   },
   "10-frontend/10.6-animation/10.6.05-web-animations-api.md": {
    "sha256": "76efb434b1ee9687a44405336dd252d8830d732b04c2fea5541d64029bf1078a",
    "lines": 219,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against MDN animation.finished, commitStyles and iterationComposite; finished rejects with AbortError on cancellation, and browser-compat data shows iterationComposite remains unimplemented in Chrome while Firefox and Safari support it on 2026-11-18 (URLs 200).",
+    "readable": "Full read of 219 lines; a menu re-entered before its entrance finishes opens; definition and first principles, effect creation, finite completion, timing options, React cleanup and a motion-independent reveal are traced.",
+    "concise": "725 words; one panel and one reveal carry playback, completion and cleanup, and the timing dictionary annotates options instead of repeating the trace.",
+    "focused": "Browser animation objects and playback control are owned here; GSAP owns timeline sequencing, and Canvas owns application-drawn frames.",
+    "fast": "Built page measured at 75.8 KB raw / 15.8 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Explains ownership and cancellation of animation objects; cancel cannot reverse application state, and an infinite animation has no completion to await."
+   }
   },
   "10-frontend/10.6-animation/10.6.06-view-transitions-and-scroll-driven-animations.md": {
    "sha256": "5e236749357e898908bbd3b3e15186a89c0a2f69f7ffd23be48a6dc09f353db5",
    "lines": 203,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the React Router v8 view-transition guide, MDN animation-timeline and the Chrome view-transition documentation; the v8 guide confirms viewTransition props are deprecated in favor of React's ViewTransition with React 19.3, and npm reports react-router 8.5.1 current on 2026-11-18 (URLs 200).",
+    "readable": "Full read of 203 lines; a theme toggle and reading-progress bar open; definition and first principles, same-document capture, cross-document opt-in, router integration, scroll timelines and capability checks are ordered.",
+    "concise": "841 words; one toggle and one progress bar carry capture timing and fallback, and the router section adds identity constraints rather than repeating the API.",
+    "focused": "Snapshot capture and scroll/view timelines are owned here; Motion for React owns component presence, and the router chapters own navigation.",
+    "fast": "Built page measured at 66.0 KB raw / 15.5 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "States the capture-before-update requirement and keeps content visible without support; a transition cannot recover a snapshot taken after the DOM changed."
+   }
   },
   "10-frontend/10.6-animation/10.6.07-canvas-svg-animation.md": {
    "sha256": "ca7d0728d4c6439067dc465d4309febe5c36bdaaf84dcb401e2e76e5280f89c0",
    "lines": 171,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against MDN Canvas, requestAnimationFrame, OffscreenCanvas and SVG animate references; the DPR memory arithmetic, backing-store reset behavior and SMIL support status match those sources on 2026-11-18 (URLs 200).",
+    "readable": "Full read of 171 lines; a moving ball opens; definition and first principles, one canvas frame, SVG stroke animation, native SMIL, worker transfer and an ownership table are traced.",
+    "concise": "880 words; one canvas frame and one SVG path carry timing, scaling and cleanup, and the selection table adds ownership criteria rather than repeating the code.",
+    "focused": "Canvas and SVG rendering ownership is owned here; CSS animations own declarative DOM effects, and browser rendering owns compositing.",
+    "fast": "Built page measured at 67.7 KB raw / 15.9 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Makes the rendering owner the first decision and names the accessibility cost of dropping DOM nodes; no fixed element count limits the choice between Canvas and SVG."
+   }
   },
   "10-frontend/10.6-animation/10.6.08-interview-questions.md": {
    "sha256": "d7d17c44df7fa3955d7d7a1b13ade4662b0514c01eddce1e55fe032fb5375f82",
    "lines": 232,
    "genre": "interview",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "All 32 answer pairs were checked against their chapters and the official Motion, GSAP, React Spring, WAAPI, React Router and MDN references; the React Router v8 deprecation and Motion 14.x hook behavior were verified on 2026-11-18.",
+    "readable": "Full read of 232 lines; an interviewer asking why a valid form lost work opens; a five-step answer framework precedes 32 questions across beginner, intermediate, senior, system-design and follow-up bands.",
+    "concise": "2096 words; answers stay retrieval-sized across 32 prompts, and the framework adds challenge structure rather than reprinting chapter examples.",
+    "focused": "Drill bank: each question points at a chapter canonical treatment rather than re-teaching the mechanism.",
+    "fast": "Built page measured at 66.4 KB raw / 17.6 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Provides 32 graded answers with failure boundaries; it is practice and cannot replace the chapters or prove an implementation."
+   }
   },
   "10-frontend/10.6-animation/INDEX.md": {
    "sha256": "c29317ae97158cae1a0c9ab66308723976396c34066366eca3b3321e3f711206",
    "lines": 64,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "No version-sensitive claim; the 9-file count (eight chapters plus one revision companion), 65-minute total and status badge were re-derived from disk, and the table times sum to 65 on 2026-11-18.",
+    "readable": "Full read of 64 lines; two study passes, a control-selection table, a lifecycle pass, revision and interview guidance, cross-references and a Docita anchor.",
+    "concise": "335 words; each pass states one decision and each chapter is described once, so the navigation does not restate chapter content.",
+    "focused": "Navigation only: it points at eight chapters and their revision drill without retelling their mechanisms.",
+    "fast": "Built page measured at 49.1 KB raw / 12.8 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Orders the section from browser cost to control choice to drawing lifecycles; it does not teach any chapter itself."
+   }
   },
   "10-frontend/10.6-animation/REVISION.md": {
-   "sha256": "cee17a9de72c302405ab70d6d2bd38472644ca46b257dec55487e6452a35c6fd",
+   "sha256": "e252f1726691cc9edf698fce427038810a80c934352dcf691bd653b7406ebad6",
    "lines": 145,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Every answer was checked against its source chapter and the official Motion, GSAP, React Spring, WAAPI and MDN references; the Motion 14.x hook snapshot and React Router v8 deprecation match the sources on 2026-11-18.",
+    "readable": "Full read of 145 lines; source-linked groups for all seven learning chapters plus a cross-cutting timing-and-cancellation drill, then a summary.",
+    "concise": "1019 words; answers stay retrieval-sized across eight groups and do not reprint chapter code.",
+    "focused": "Retrieval drill: each group names its source chapter and points at it for the full treatment.",
+    "fast": "Built page measured at 53.4 KB raw / 14.1 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Tests timing, cancellation and fallback boundaries under changed conditions; it cannot replace the chapters."
+   }
   },
   "10-frontend/10.7-html-css/10.7.01-html-fundamentals.md": {
    "sha256": "901c0251f30dbf01bcbe78efbe45d0d5ca750a4fcd5862667537abdaf656bf08",
@@ -2530,10 +2621,20 @@
    "status": "unread"
   },
   "10-frontend/INDEX.md": {
-   "sha256": "ee03e1f7ebd4ad31557348fe9173ab69925a9aad5c1cce5ca81a39de8d8f842e",
+   "sha256": "00935914843524cf2522598223ba9e3cf375fd3b896a8dc5a5dd31e7ea6752a2",
    "lines": 75,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "No version-sensitive claim; the 150-file total, 8 sub-stack rows, 127-chapter split and 19 h 7 m sum were re-derived from the eight category indexes on 2026-11-18, and the Motion for React label now matches the renamed section.",
+    "readable": "Full read of 75 lines; one product flow anchors the stack, then eight sub-stack rows, four passes, interview guidance and cross-references.",
+    "concise": "355 words; each sub-stack gets one row and one pass sentence, so the map does not restate category content.",
+    "focused": "Section map: it points at eight sub-stack indexes and their passes without retelling their chapters.",
+    "fast": "Built page measured at 51.9 KB raw / 13.4 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Sets the frontend study order from execution to optional capabilities; it limits itself to navigation and does not teach any mechanism."
+   },
+   "notes": "Updated the Animation row from the former Framer Motion name to Motion for React so the sub-stack table matches the section title."
   },
   "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.md": {
    "sha256": "cbb48962f1b1c976f33493d3398af0e10c4deb7f49db4537cb50b8af762ebfe1",
@@ -7592,16 +7693,6 @@
   }
  },
  "pending": [
-  "10-frontend/10.6-animation/10.6.01-css-animations.md",
-  "10-frontend/10.6-animation/10.6.02-framer-motion.md",
-  "10-frontend/10.6-animation/10.6.03-gsap.md",
-  "10-frontend/10.6-animation/10.6.04-react-spring.md",
-  "10-frontend/10.6-animation/10.6.05-web-animations-api.md",
-  "10-frontend/10.6-animation/10.6.06-view-transitions-and-scroll-driven-animations.md",
-  "10-frontend/10.6-animation/10.6.07-canvas-svg-animation.md",
-  "10-frontend/10.6-animation/10.6.08-interview-questions.md",
-  "10-frontend/10.6-animation/INDEX.md",
-  "10-frontend/10.6-animation/REVISION.md",
   "10-frontend/10.7-html-css/10.7.01-html-fundamentals.md",
   "10-frontend/10.7-html-css/10.7.02-css-fundamentals.md",
   "10-frontend/10.7-html-css/10.7.03-browser-rendering.md",
@@ -7623,7 +7714,6 @@
   "10-frontend/10.8-mobile/10.8.07-interview-questions.md",
   "10-frontend/10.8-mobile/INDEX.md",
   "10-frontend/10.8-mobile/REVISION.md",
-  "10-frontend/INDEX.md",
   "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.md",
   "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.02-web-streams-and-test-runner.md",
   "20-backend/20.1-node.js/01-runtime-and-async/INDEX.md",

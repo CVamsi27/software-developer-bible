@@ -40,7 +40,7 @@ Source: [Motion for React](10.6.02-framer-motion.md)
 
 **Q:** What does Motion for React’s reduced-motion hook report, and which effects does MotionConfig change?
 
-**A:** MotionConfig can disable transform and layout animation while leaving opacity in place; CSS, video and Canvas motion need their own policy. Verify live updates against the installed package: in Motion 14.6.0 the hook snapshots its initial preference and does not rerender for a media-query change. The chapter uses an owned subscription when changes must apply without remounting.
+**A:** MotionConfig can disable transform and layout animation while leaving opacity in place; CSS, video and Canvas motion need their own policy. Verify live updates against the installed package: in the Motion 14.x line the hook snapshots its initial preference and does not rerender for a media-query change. The chapter uses an owned subscription when changes must apply without remounting.
 
 ## GSAP (GreenSock Animation Platform)
 

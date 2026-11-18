@@ -3646,7 +3646,7 @@
   "https://github.com/microsoft/react-native-code-push": [
    "10-frontend/10.8-mobile/10.8.05-codepush-ota-updates.md"
   ],
-  "https://github.com/motiondivision/motion/blob/v14.6.0/packages/framer-motion/src/utils/reduced-motion/use-reduced-motion.ts": [
+  "https://github.com/motiondivision/motion/blob/v14.14.0/packages/framer-motion/src/utils/reduced-motion/use-reduced-motion.ts": [
    "10-frontend/10.6-animation/10.6.02-framer-motion.md"
   ],
   "https://github.com/nestjs/awesome-nestjs": [

@@ -5,7 +5,7 @@
 
 [![Files](https://img.shields.io/badge/files-8-blue)](#files)
 [![Category](https://img.shields.io/badge/category-Advanced_Hooks_and_Patterns-orange)](../INDEX.md)
-[![Status](https://img.shields.io/badge/status-wip-yellow)](#)
+[![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
 ---
 

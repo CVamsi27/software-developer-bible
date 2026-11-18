@@ -1243,12 +1243,14 @@
     },
     {
       "path": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/INDEX.md",
-      "sha256": "e0689dd7315c34ff75666b98364dfa19d98efefe0b274d3953ffa93d0b872920",
+      "sha256": "a6e077f010683ba40c0c4b9b05fb26516541082686d968cf9af4e615de475f3c",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full index: learning flow and topic table map pending/failure, reuse/subscription and measured state ownership. New TanStack chapter linked in table. Docita references are source-navigation anchors, not deployment proof. Final metadata/source-anchor refresh after parent restamper: inspected current header and any Docita introduction; earlier full semantic review SHA256 fccef71245f8a8dbddaeadd77dd93aeebf21d2c86589641ae3e6925821115974. Parent confirms changes here limited to metadata and source-anchor qualification.",
+      "notes": "Full content: category navigation counts and minutes re-derived; status badge corrected from status-wip to status-complete to match the root React index and finished chapters.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-18",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.3-react/03-advanced-hooks-and-patterns/REVISION.md",
@@ -1291,21 +1293,25 @@
     },
     {
       "path": "10-frontend/10.3-react/04-modern-react/INDEX.md",
-      "sha256": "f1b8dda4272553ea51bf4ca6446329ea192f143681e54f074a240c16470ab7c3",
+      "sha256": "4f593251d2d2dcb46b9bc7d26a08ecfc4a619e07d31ef82c788d6d07b6fa77a4",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full index: scheduling/action/resource ownership then host interoperability then route lifecycle. Current chapter version scopes and revision route are explicit; source paths only Docita navigation anchors.",
+      "notes": "Full content: category navigation counts and minutes re-derived; status badge corrected to status-complete; React Router v8.4 boundary re-checked against npm (latest 8.5.1, no API change).",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-18",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.3-react/04-modern-react/REVISION.md",
-      "sha256": "1a35feac9aa71f78fdc736394b7a51600e7369c9374da9d07203a158f3f0e1e8",
-      "genre": "revision",
+      "sha256": "03a4f31e5b2501d48e41b3c807549e122f139af9a13ee97b179f4fe47dad3429",
+      "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full companion: source-linked groups for all3chapters plus changed lifetime/API scenarios; questions distinguish scheduling versus response order, client versus API authorization, custom properties/events, deferred promises and status-based revalidation.",
+      "notes": "Full content: transition answer corrected against react.dev/reference/react/useTransition; updates after await are not Transitions unless wrapped in a second startTransition.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-18",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.01-portals.md",

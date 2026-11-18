@@ -24,7 +24,7 @@ Source: [Modern React: Scheduling, Actions, and DOM APIs](10.3.4.01-modern-hooks
 
 **Q:** What does `startTransition` actually mark as non-urgent, and what is the async caveat?
 
-**A:** Only updates scheduled *synchronously* inside the callback are marked as Transitions; work awaited inside is included, but a `set()` called after an `await` currently is not — React documents wrapping that call in a second `startTransition` as a known limitation. Interrupting typing restarts the transition rather than blocking input.
+**A:** Only updates scheduled *synchronously* inside the callback are marked as Transitions. After an `await`, React has lost the async scope, so a `set()` must be wrapped in a second `startTransition`; React documents this as a JavaScript limitation that AsyncContext may remove. Interrupting typing restarts the transition rather than blocking input.
 
 **Q:** How does `useOptimistic` decide what is displayed once the Action ends?
 

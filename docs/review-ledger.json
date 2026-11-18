@@ -1289,205 +1289,514 @@
    "sha256": "1511de41d4d49cf728b626f04459e9e9da140d53971f379358c1649d9418aba7",
    "lines": 71,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against react.dev/learn/render-and-commit and the linked acdlite Fiber architecture notes; the three-layer description matches the official render/commit model, and all cited URLs returned HTTP 200 on 2026-11-18.",
+    "readable": "Full read of 71 lines; a repeated card-rendering example opens; element descriptions, Fiber records and DOM nodes are separated, then the practical boundary is stated before the summary.",
+    "concise": "416 words; the three numbered sections each add one distinction, and the summary repeats no example.",
+    "focused": "The element/Fiber/DOM distinction is owned here; the Fiber chapter carries work-loop internals and this page points there instead of retelling them.",
+    "fast": "Built page measured at 49.2 KB raw / 12.8 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Gives the model needed to read React behavior and does not claim React diffs the DOM directly; scheduler internals are deliberately left to the Fiber chapter."
+   }
   },
   "10-frontend/10.3-react/01-react-internals/10.3.1.02-fiber.md": {
    "sha256": "51585c0a22c47b8dfbfeb5ff27bc49532424a1f12f4417d91c72240e72056577",
    "lines": 75,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the acdlite/react-fiber-architecture notes and react.dev render/commit documentation; double buffering and the render-versus-commit split match those sources (URLs 200 on 2026-11-18).",
+    "readable": "Full read of 75 lines; a dropped-frame scenario opens; current and work-in-progress trees, pausable render work and the synchronous commit boundary are traced before what application code can control.",
+    "concise": "554 words; two tree descriptions and three short sections carry the mechanism without repeating the virtual-DOM definition.",
+    "focused": "Fiber's work loop and double-buffered trees are owned here; the virtual DOM chapter keeps only the three-layer vocabulary.",
+    "fast": "Built page measured at 50.2 KB raw / 13.0 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Explains why render work can pause while commit cannot; it stops at the boundary application code controls rather than pretending to expose scheduler internals."
+   }
   },
   "10-frontend/10.3-react/01-react-internals/10.3.1.03-reconciliation.md": {
    "sha256": "e686024ab8b850eefe22a37b7c8ff8403e560275ddf4e1e13cb0611c038efc6a",
    "lines": 75,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against react.dev/learn/preserving-and-resetting-state; the key/identity rules and the array-index failure case match the official explanation (URL 200 on 2026-11-18).",
+    "readable": "Full read of 75 lines; an editable-row state bug opens; stable keys, identity changes and key scoping are traced through a list example before the summary.",
+    "concise": "469 words; one list example carries keys, identity and scope, and the summary introduces no new mechanism.",
+    "focused": "Key and identity rules are owned here; useState, lifecycle and performance pages link here rather than restating reconciliation.",
+    "fast": "Built page measured at 49.7 KB raw / 12.7 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Shows how a key choice changes state ownership, including the index-key failure; list-rendering performance is not treated here."
+   }
   },
   "10-frontend/10.3-react/01-react-internals/10.3.1.04-rendering.md": {
    "sha256": "dad7ecc08c68c185df72594a55e9fb4221646585d41203c39c4f38ba2a402712",
    "lines": 73,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against react.dev/learn/render-and-commit, react.dev/learn/keeping-components-pure and the flushSync reference; all three claims match the current docs (URLs 200 on 2026-11-18).",
+    "readable": "Full read of 73 lines; a lagging interaction opens; the three costs of an update, render purity and the narrow flushSync case are ordered before the summary.",
+    "concise": "540 words; each section answers one timing question, and the render/commit distinction appears once.",
+    "focused": "The render/commit and purity boundary is owned here; the performance chapter owns measurement and deferral, not this model.",
+    "fast": "Built page measured at 50.2 KB raw / 13.0 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Separates repeatable render work from commit side effects and limits flushSync to an immediate DOM dependency; it does not prescribe profiling."
+   }
   },
   "10-frontend/10.3-react/01-react-internals/10.3.1.05-lifecycle.md": {
    "sha256": "84c62701b7279b1569e1b7b00fe2285f390b37953cd5532abecf9b9babb73d71",
    "lines": 88,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against react.dev/learn/lifecycle-of-reactive-effects and the useEffect reference; the start/stop model and the class comparison match current React docs (URLs 200 on 2026-11-18).",
+    "readable": "Full read of 88 lines; a subscription that outlives its component opens; effect setup/cleanup cycles, class-method timing and non-synchronization logic are traced in order.",
+    "concise": "519 words; the effect cycle is shown once, and the class comparison keeps only the timing differences that change a decision.",
+    "focused": "The effect-as-synchronization model is owned here; dependency mechanics belong to the useEffect chapter and are not retold.",
+    "fast": "Built page measured at 51.8 KB raw / 13.1 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Explains effects as start/stop synchronization and names work that does not belong in an effect; class equivalence is a boundary note, not a migration guide."
+   }
   },
   "10-frontend/10.3-react/01-react-internals/INDEX.md": {
    "sha256": "09656c19500adc49d15d2b2ba34eda8c5a62cd659f7378d37fc286bec90edaf5",
    "lines": 49,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "No version-sensitive claim; the 6-file count, 20-minute total and status badge were re-derived from disk and the table sums on 2026-11-18.",
+    "readable": "Full read of 49 lines; five chapter rows with topics, priority, importance and minutes, followed by read order, Docita anchors and navigation; no prose section competes with the chapters.",
+    "concise": "138 words; the study summary and read-order notes are the only prose, and each chapter is described once.",
+    "focused": "Navigation only: it points at the five chapters and their revision drill and does not retell their mechanisms.",
+    "fast": "Built page measured at 47.1 KB raw / 12.0 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Does its navigational job with a defensible study order; it deliberately does not substitute for the chapters it lists."
+   }
   },
   "10-frontend/10.3-react/01-react-internals/REVISION.md": {
    "sha256": "12459d8f3f7b35bedb73b653efd7e88200f7f3e4530c22a347e319f9cee32d54",
    "lines": 225,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Every answer was checked against its source chapter and the official React docs on render/commit and preserving state; no version-sensitive claim was found beyond those docs (2026-11-18).",
+    "readable": "Full read of 225 lines; source-linked question groups for virtual DOM, Fiber, reconciliation, rendering and lifecycle, followed by changed-condition drills and a summary.",
+    "concise": "1640 words; answers stay retrieval-sized across five topic groups and do not reprint chapter examples.",
+    "focused": "Retrieval drill: each group names its source chapter and points at it for the full explanation instead of duplicating it.",
+    "fast": "Built page measured at 57.3 KB raw / 15.3 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Tests recall with changed-condition and ownership questions; it does not replace the chapters."
+   }
   },
   "10-frontend/10.3-react/02-core-hooks/10.3.2.01-usestate.md": {
    "sha256": "a04ee7097ddcfb952b1bd0e696ddd51eefec9c84b1485baaa4b8643f0d0f2adc",
    "lines": 110,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against react.dev/reference/react/useState; functional updates, batching and the render-snapshot model match the current React 19 docs (URL 200 on 2026-11-18).",
+    "readable": "Full read of 110 lines; one click is followed from handler through queued updates to the next render; immutable collection replacement and minimal state are then contrasted before the summary.",
+    "concise": "578 words; a single click trace carries the update model, and the collection and minimal-state rules each appear once.",
+    "focused": "State update semantics and immutable replacement are owned here; cross-source ownership belongs to the state-management chapter.",
+    "fast": "Built page measured at 53.6 KB raw / 13.4 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Traces why a state update appears on the next render and when a functional update is required; it does not attempt to cover shared or server state."
+   }
   },
   "10-frontend/10.3-react/02-core-hooks/10.3.2.02-useeffect.md": {
    "sha256": "c6b75f7e793a3569a27e37fa44270be32576fa290f1e2172699dd239c446763a",
    "lines": 148,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against react.dev/reference/react/useEffect and lifecycle-of-reactive-effects; the ignore-flag pattern and dependency rules match the official guidance (URLs 200 on 2026-11-18).",
+    "readable": "Full read of 148 lines; a fetch that can resolve after its inputs change opens; dependency-driven cleanup, async result ownership and effect-versus-event placement are traced in order.",
+    "concise": "672 words; the async race is shown once, and the placement rule is stated without repeating the lifecycle chapter.",
+    "focused": "Dependency and async-cleanup mechanics are owned here; the lifecycle chapter owns the conceptual start/stop model and is linked, not retold.",
+    "fast": "Built page measured at 62.8 KB raw / 14.7 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Teaches dependency-driven setup/cleanup and cancellation of stale async results; it does not present effects as a place for every side effect."
+   }
   },
   "10-frontend/10.3-react/02-core-hooks/10.3.2.03-usememo-usecallback.md": {
    "sha256": "d6b8e9c979620b70b09320505a5b7ea7421487ec6a1adba2580f844f7ff09ea8",
    "lines": 141,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against react.dev/reference/react/useMemo, useCallback and the React Compiler 1.0 release notes (2025-10-07); the identity and Compiler claims match those sources (URLs 200 on 2026-11-18).",
+    "readable": "Full read of 141 lines; a slow derived calculation opens; memo caching, callback identity, honest dependencies and the React Compiler trade-off are ordered before the summary.",
+    "concise": "798 words; memo and callback each get one mechanism, and the Compiler section changes the default choice rather than repeating both.",
+    "focused": "Memoization and callback-identity mechanics are owned here; the performance chapter owns profiling and deferral and links back.",
+    "fast": "Built page measured at 64.3 KB raw / 14.8 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Explains when identity changes matter and when the Compiler removes the manual choice; memoizing without measurement is the stated failure."
+   }
   },
   "10-frontend/10.3-react/02-core-hooks/10.3.2.04-useref.md": {
    "sha256": "1fd805b9c4286992a944d11e70b8be098c6ca454041e198c71441a647a8e26da",
    "lines": 166,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against react.dev/reference/react/useRef and the React 19 release notes on ref cleanup; the mutable-handle and cleanup claims match those sources (URLs 200 on 2026-11-18).",
+    "readable": "Full read of 166 lines; a focus-management example opens; DOM refs, retained nonvisual handles and ref-callback cleanup are traced through component boundaries before the summary.",
+    "concise": "611 words; three sections separate DOM access, retained values and callback lifetime without repeating state rules.",
+    "focused": "Ref lifetime and DOM identity are owned here; portals and custom hooks link here for handles instead of restating ref semantics.",
+    "fast": "Built page measured at 61.2 KB raw / 14.0 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Distinguishes retained values from rendered state and covers ref-callback cleanup; it explicitly does not treat refs as a state substitute."
+   }
   },
   "10-frontend/10.3-react/02-core-hooks/10.3.2.05-context-api.md": {
    "sha256": "a4021b1aa4ddd2c2523741f8ac813a396f3f3c140e68f9a2f1c2776593f181ce",
    "lines": 189,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against react.dev/learn/passing-data-deeply-with-context and the React 19 notes on rendering Context as a provider; the scope claims match the current docs (URLs 200 on 2026-11-18).",
+    "readable": "Full read of 189 lines; a prop-drilled theme and account reach a deep consumer; provider scope, update propagation, the children boundary and context-versus-props are traced before the summary.",
+    "concise": "869 words; the provider example carries the mechanism, and the children and update-scope notes each appear once.",
+    "focused": "Context value scope and update propagation are owned here; compound components use the contract but do not retell provider mechanics.",
+    "fast": "Built page measured at 68.7 KB raw / 15.2 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Shows how provider placement limits re-renders and when context is the wrong tool; server-state caches are explicitly out of scope."
+   }
   },
   "10-frontend/10.3-react/02-core-hooks/INDEX.md": {
    "sha256": "73366f94aff4b2bdc3f9391953cb01ddc01780ceacfb11fc3417f72e9b009b60",
    "lines": 51,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "No version-sensitive claim; the 6-file count, 40-minute total and status badge were re-derived from disk and the table sums on 2026-11-18.",
+    "readable": "Full read of 51 lines; five hook chapter rows with topics and minutes, then a read order, Docita anchors and navigation; the table is the page main content.",
+    "concise": "121 words; the study summary and three read-order steps are the only prose.",
+    "focused": "Navigation only: it points at the five hook chapters and their revision drill without duplicating their rules.",
+    "fast": "Built page measured at 47.5 KB raw / 12.1 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Orders hooks from state through effects, memoization, refs and context; it does not try to teach any hook itself."
+   }
   },
   "10-frontend/10.3-react/02-core-hooks/REVISION.md": {
    "sha256": "8c0600ec461953a9460ea2beb01f890d140c50bb87dafe535120235d1ab60318",
    "lines": 223,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Answers checked against the five source chapters and the official React hook references; the changed-contract questions match React 19 behavior (2026-11-18).",
+    "readable": "Full read of 223 lines; source-linked groups for useState, useEffect, useMemo/useCallback, useRef and Context, then changed-contract questions and a summary.",
+    "concise": "1741 words; each answer is retrieval-sized across five groups and does not reprint the chapter examples.",
+    "focused": "Retrieval drill: each group links its chapter as the canonical explanation and does not restate it.",
+    "fast": "Built page measured at 57.9 KB raw / 15.5 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Tests the hook rules under changed conditions; it does not replace the chapters."
+   }
   },
   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.01-suspense.md": {
    "sha256": "835ef667f471565bfef6dadce0934039356d481e52cbf7d08598655c222f1b65",
    "lines": 141,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against react.dev/reference/react/Suspense and useTransition; the supported-read rule, fallback behavior and transition interaction match the official docs (URLs 200 on 2026-11-18).",
+    "readable": "Full read of 141 lines; a dashboard with a slow chart opens; boundary granularity, supported reads and the separation of pending from failed states are traced before the summary.",
+    "concise": "768 words; one dashboard example carries boundary choice, data source and failure separation without repeated fallback advice.",
+    "focused": "Suspense boundary and pending semantics are owned here; the modern React chapter extends to Actions and resources without repeating boundary rules.",
+    "fast": "Built page measured at 62.5 KB raw / 14.5 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Teaches one boundary per loading decision and names the failure of arbitrary promises that do not suspend; error recovery is delegated to the error-boundary chapter."
+   }
   },
   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.md": {
    "sha256": "f37821ab6b611665058ca53cef51abc3345b647db2e4b11b4af004998722876a",
    "lines": 162,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against react.dev/reference/react/Component (componentDidCatch and getDerivedStateFromError) and the React 19 error-handling docs; the catch boundaries match the official behavior (URLs 200 on 2026-11-18).",
+    "readable": "Full read of 162 lines; a malformed chart response opens; failure propagation, class-boundary implementation, resource-dependent recovery and recovery scope are traced before the summary.",
+    "concise": "891 words; one boundary implementation is shown, and recovery scope is decided once rather than repeated per example.",
+    "focused": "Failure travel and recovery scope are owned here; Suspense links here for rejected reads instead of duplicating boundary code.",
+    "fast": "Built page measured at 63.9 KB raw / 15.1 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Covers failure travel and recovery scope while stating what boundaries cannot catch, including event-handler and async errors outside React's render path."
+   }
   },
   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.md": {
    "sha256": "cca8a998bd0f9b994de6d76bb524f6710bb545fb6afdc81d8a8cb791243d49e9",
    "lines": 157,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against react.dev/learn/reusing-logic-with-custom-hooks and the Rules of Hooks reference; the extraction and testing claims match the official guidance (URLs 200 on 2026-11-18).",
+    "readable": "Full read of 157 lines; a search box that fires on every keystroke opens; a debounce hook, Hook rules, per-caller state, effect ownership and lifecycle testing are traced before the summary.",
+    "concise": "679 words; the debounce contract is shown once, and extraction and testing each get one bounded section.",
+    "focused": "The custom-hook extraction contract is owned here; performance and state chapters use hooks without retelling the extraction rules.",
+    "fast": "Built page measured at 65.4 KB raw / 14.7 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Shows a small reusable contract and tests it at the hook boundary; it explicitly does not recommend extracting every effect into a hook."
+   }
   },
   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.md": {
    "sha256": "646ed49c0ba729f80590223c6072e59fc7f9f08859c93b201f03ba776004046a",
    "lines": 124,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against react.dev/reference/react/useSyncExternalStore; the subscribe/getSnapshot contract, snapshot caching and server-snapshot requirement match the official docs (URL 200 on 2026-11-18).",
+    "readable": "Full read of 124 lines; an account read from an external store opens; snapshot stability, selector scope, tearing and the useful boundary are traced before the summary.",
+    "concise": "765 words; the store example carries the contract, and selector scope and boundary advice each appear once.",
+    "focused": "The external-store snapshot contract is owned here; Zustand/Redux integration is an application of it, not a second contract.",
+    "fast": "Built page measured at 57.9 KB raw / 14.4 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Explains tearing and the stable-snapshot contract; it does not turn every shared value into an external store."
+   }
   },
   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.05-performance.md": {
    "sha256": "622d657fc0b9e662e69590fe606dbdaef99268d9d99f812d9eb7adf6f16385bf",
    "lines": 122,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against react.dev/reference/react/useDeferredValue, memo and Profiler; the deferral and measurement claims match the current React 19 docs (URLs 200 on 2026-11-18).",
+    "readable": "Full read of 122 lines; a slow product search opens; profiling, memo boundaries, urgent-versus-deferred input and work reduction are matched to distinct delays before the summary.",
+    "concise": "559 words; each fix is tied to one measured delay, and memoization is not restated from the useMemo chapter.",
+    "focused": "Measurement and deferral strategy are owned here; memo and callback API mechanics stay in their chapter and are linked.",
+    "fast": "Built page measured at 59.2 KB raw / 14.6 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Starts from a measured delay and matches the fix to the cause; memoizing everything without a profile is the named failure."
+   }
   },
   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.06-state-management.md": {
    "sha256": "50b866d116253d35b8ba527500645e1ac942ee326e30761630d6907c76352687",
    "lines": 115,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against react.dev/learn/managing-state and the TanStack Query v5 ownership docs; the draft/cache/server split matches those sources (URLs 200 on 2026-11-18).",
+    "readable": "Full read of 115 lines; a profile edit with a background refresh opens; local, shared and server ownership are separated, then one server-backed edit is traced through draft, cache and confirmation.",
+    "concise": "769 words; the ownership table and one edit trace carry the argument, and reducers and optimistic updates each appear once.",
+    "focused": "The state-ownership taxonomy is owned here; TanStack Query owns fetch/cache mechanics and is linked rather than retold.",
+    "fast": "Built page measured at 59.6 KB raw / 15.1 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Separates draft, cache and confirmed server truth; it deliberately does not pick a state library for the reader."
+   }
   },
   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.07-tanstack-query.md": {
    "sha256": "a1277f22354380cc6eb59aaac34a16f37928ba281312741f6c8ebef97fcbed26",
    "lines": 127,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the TanStack Query v5 docs and npm metadata for @tanstack/react-query 5.108.0; the API names and behavior match the current release (2026-11-18).",
+    "readable": "Full read of 127 lines; a profile editor receiving an older background response opens; query keys, freshness, draft reconciliation, optimistic rollback and SSR hydration are traced in order.",
+    "concise": "1103 words; six short sections each own one cache concern, and the profile example is not repeated per section.",
+    "focused": "Server-state cache mechanics are owned here; the state-management chapter keeps the ownership taxonomy and points here.",
+    "fast": "Built page measured at 62.3 KB raw / 15.7 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Covers keys, freshness, optimistic rollback and request-scoped SSR; it does not replace server authorization or validation."
+   }
   },
   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/INDEX.md": {
-   "sha256": "e0689dd7315c34ff75666b98364dfa19d98efefe0b274d3953ffa93d0b872920",
+   "sha256": "a6e077f010683ba40c0c4b9b05fb26516541082686d968cf9af4e615de475f3c",
    "lines": 53,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "No version-sensitive claim; the 8-file count, 55-minute total and status badge were re-derived from disk, and the stale status-wip badge was corrected to status-complete on 2026-11-18.",
+    "readable": "Full read of 53 lines; seven chapter rows with topics and minutes, then read order, Docita anchors and navigation; the status badge and 8-file count frame the table.",
+    "concise": "122 words; the study summary and three read-order steps are the only prose.",
+    "focused": "Navigation only: it points at seven chapters plus the revision drill and does not retell their mechanisms.",
+    "fast": "Built page measured at 48.8 KB raw / 12.4 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Groups the production patterns in a defensible order; it does not attempt to teach Suspense, stores or server state itself."
+   },
+   "notes": "Corrected the status badge from status-wip to status-complete to match the root React index and the finished chapter set."
   },
   "10-frontend/10.3-react/03-advanced-hooks-and-patterns/REVISION.md": {
    "sha256": "dcde8d603f1eb50b8d85d909b598a516963ce4342581afe35eec1a091b6c5b3a",
    "lines": 309,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Answers checked against the seven source chapters and official React docs for Suspense, useSyncExternalStore, useDeferredValue and TanStack Query v5; no stale API claim was found (2026-11-18).",
+    "readable": "Full read of 309 lines; source-linked question groups for all seven chapters, followed by changed-condition ownership drills and a summary.",
+    "concise": "3236 words; answers are retrieval-sized across seven groups and avoid reprinting chapter code.",
+    "focused": "Retrieval drill: each group names its source chapter and points at it for the full treatment.",
+    "fast": "Built page measured at 71.5 KB raw / 19.3 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Tests ownership and changed-condition cases across the pattern set; it does not replace the chapters."
+   }
   },
   "10-frontend/10.3-react/04-modern-react/10.3.4.01-modern-hooks-react18-19.md": {
    "sha256": "33f49f08de0c8d7ad39e30d3c9673ccfc644910e96592e79ba03fc1b58022c12",
    "lines": 295,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the React 19.3 release notes (2026-09-09) and react.dev references for useDeferredValue, useActionState, useOptimistic, use(), useEffectEvent, ref cleanup, Fragment refs and View Transitions; use(browser()) and Fragment refs are confirmed in the release notes (URLs 200 on 2026-11-18).",
+    "readable": "Full read of 295 lines; a search interaction that stalls and saves opens; urgent feedback, Actions and optimistic state, render-time resource reads, Effect Events and DOM identity are traced in order.",
+    "concise": "1274 words; four sections map APIs to distinct problems, and the summary does not repeat the examples.",
+    "focused": "React 18-19 scheduling, Actions, resources and DOM APIs are owned here; Suspense and transition chapters keep their narrower rules.",
+    "fast": "Built page measured at 81.4 KB raw / 17.4 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Maps each modern API to the problem it solves; it does not claim every application needs every API, and server/client boundaries stay explicit."
+   }
   },
   "10-frontend/10.3-react/04-modern-react/10.3.4.02-web-components.md": {
    "sha256": "3c7088c633436693d2047235d9b67e2195fe4b3a68e83cc2385318b0952166b5",
    "lines": 147,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against MDN Web Components pages (custom elements, shadow DOM, templates and slots) and the React 19 custom-element support notes; all cited URLs returned 200 on 2026-11-18.",
+    "readable": "Full read of 147 lines; a booking widget shared by React and a plain HTML portal opens; custom-element lifecycle, attribute/property/event contracts, slots, Shadow DOM and React interop are traced in order.",
+    "concise": "704 words; one booking element carries lifecycle, events and interop without repeating the definition.",
+    "focused": "The host-boundary contract is owned here; React interop examples do not retell the custom-element lifecycle.",
+    "fast": "Built page measured at 59.1 KB raw / 14.5 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Defines a public element contract and the React bridge; Shadow DOM is explicitly not presented as a security boundary."
+   }
   },
   "10-frontend/10.3-react/04-modern-react/10.3.4.03-react-router.md": {
    "sha256": "d497bbda0ee2ba12fab6faf071db4588875c2c7560a84dc4c04f6c757f1e0876",
    "lines": 261,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against npm metadata for react-router 8.4.0 (released 2026-09-15; current 8.5.1) and the reactrouter.com v8 API and changelog; Node 22.22+, React 19.2.7+ and the react-router/dom split are confirmed, and every cited URL returned 200 on 2026-11-18.",
+    "readable": "Full read of 261 lines; a project URL that must load data and survive Back opens; nested branches, middleware, loaders, actions, fetchers, progressive reveal and error links are traced in order.",
+    "concise": "1239 words; one route tree carries nesting, data loading, submission and progressive reveal, and the summary repeats no code.",
+    "focused": "Routing lifecycle is owned here; authorization is delegated to the server API and the v7-to-v8 migration is a link, not a second guide.",
+    "fast": "Built page measured at 77.3 KB raw / 17.0 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Traces URL to middleware to loader to action to revalidation; it keeps authorization on the server and does not treat a client loader as a security boundary."
+   }
   },
   "10-frontend/10.3-react/04-modern-react/INDEX.md": {
-   "sha256": "f1b8dda4272553ea51bf4ca6446329ea192f143681e54f074a240c16470ab7c3",
+   "sha256": "4f593251d2d2dcb46b9bc7d26a08ecfc4a619e07d31ef82c788d6d07b6fa77a4",
    "lines": 48,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "React Router v8.4 boundary checked against npm metadata (8.4.0 released 2026-09-15; latest 8.5.1); the 4-file count and 36-minute total were re-derived, and the stale status-wip badge was corrected to status-complete on 2026-11-18.",
+    "readable": "Full read of 48 lines; three chapter rows with topics and minutes, then read order, Docita anchors and navigation; the 4-file count frames the table.",
+    "concise": "136 words; the study summary and three read-order steps are the only prose.",
+    "focused": "Navigation only: it points at the three chapters plus revision and does not retell their mechanisms.",
+    "fast": "Built page measured at 46.9 KB raw / 12.0 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Orders modern scheduling, host boundaries and routing; it does not attempt to teach any of them itself."
+   },
+   "notes": "Corrected the status badge from status-wip to status-complete; kept the v8.4 version boundary because it is the release that introduced v8 and the APIs are unchanged in 8.5.1."
   },
   "10-frontend/10.3-react/04-modern-react/REVISION.md": {
-   "sha256": "1a35feac9aa71f78fdc736394b7a51600e7369c9374da9d07203a158f3f0e1e8",
+   "sha256": "03a4f31e5b2501d48e41b3c807549e122f139af9a13ee97b179f4fe47dad3429",
    "lines": 185,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Answers checked against the three source chapters and official React 19.3, MDN and React Router v8 docs; the post-await transition answer was corrected against react.dev/reference/react/useTransition on 2026-11-18.",
+    "readable": "Full read of 185 lines; source-linked groups for Modern React, Web Components and React Router, followed by API and lifetime boundary drills and a summary.",
+    "concise": "1659 words; answers stay retrieval-sized across three groups and do not reprint chapter examples.",
+    "focused": "Retrieval drill: each group links its source chapter as the canonical treatment.",
+    "fast": "Built page measured at 59.1 KB raw / 15.7 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Tests API and lifetime boundaries across the modern set; it does not replace the chapters."
+   },
+   "notes": "Fixed the transition answer: updates after await are not marked as Transitions, so the set() must be wrapped in a second startTransition."
   },
   "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.01-portals.md": {
    "sha256": "14624d88df222fbf778654b450aa369eb5c71039768b32f5de946ebca355b015",
    "lines": 114,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against react.dev/reference/react-dom/createPortal and the dialog element guidance on MDN; event bubbling through the React tree and the SSR guard match those sources (URLs 200 on 2026-11-18).",
+    "readable": "Full read of 114 lines; a card menu clipped by overflow opens; DOM placement versus React ownership, destination choice, event paths and the limits of placement are traced before the summary.",
+    "concise": "819 words; one menu example carries placement and event behavior, and the accessibility limit is stated once.",
+    "focused": "DOM placement versus React ownership is owned here; modal focus and dismissal behavior is delegated to the accessibility reference.",
+    "fast": "Built page measured at 55.0 KB raw / 14.1 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Separates DOM placement from React ownership and states that a portal does not supply focus trapping or dismissal; SSR safety is a bounded note."
+   }
   },
   "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.02-compound-components.md": {
    "sha256": "9efe975c49a2a409ecd723bbb7e3288bab9a569b1137a85748cd193e4b9da0ea",
    "lines": 203,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against react.dev context docs and the WAI-ARIA tabs pattern; the provider/consumer contract and keyboard expectations match those sources (URLs 200 on 2026-11-18).",
+    "readable": "Full read of 203 lines; a tab widget arranged by a product team opens; the shared context contract, typed composition, accessibility ownership and context update cost are traced before the summary.",
+    "concise": "934 words; one tabs example carries the contract, and accessibility and update cost each get one section.",
+    "focused": "The compound-component composition contract is owned here; context update mechanics point at the Context chapter instead of being retold.",
+    "fast": "Built page measured at 71.9 KB raw / 15.6 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Shows a typed composition contract with explicit accessibility ownership; context update cost is the stated limit, not a hidden caveat."
+   }
   },
   "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.03-interview-questions.md": {
    "sha256": "1c7afaadb8f09b3660de63cd3c9a1996dec93044745023ed489e872d146db77f",
    "lines": 456,
    "genre": "interview",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "All 43 answer pairs were checked against their chapters and the official React 19 docs; the bank assumes TypeScript 5.4+, strict mode, an ES2022 library and the DOM library, and no sample required compilation beyond those settled APIs (2026-11-18).",
+    "readable": "Full read of 456 lines; a definition and first-principles framing, then 43 numbered question-and-answer pairs across internals, hooks, patterns, routing and performance, an answer checklist and a summary.",
+    "concise": "4195 words; each answer stays bounded across 43 pairs, and the checklist does not repeat the chapters.",
+    "focused": "Drill bank: each question points at a chapter's canonical treatment rather than re-teaching the mechanism.",
+    "fast": "Built page measured at 86.2 KB raw / 23.9 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Provides 43 graded answers with follow-up boundaries; it is interview practice and does not replace the learning chapters."
+   }
   },
   "10-frontend/10.3-react/05-patterns-and-interview/INDEX.md": {
    "sha256": "8fd63822bde44683c162f4558b83832a988700946b45715a96e8038971915876",
    "lines": 36,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "No version-sensitive claim; the 4-file count, 30-minute total and status-complete badge were re-derived from disk and the table sums on 2026-11-18.",
+    "readable": "Full read of 36 lines; three chapter rows with topics and minutes, then read order, navigation and the revision link; the 4-file count frames the table.",
+    "concise": "79 words; the study summary and three read-order steps are the only prose.",
+    "focused": "Navigation only: it points at portals, compound components, the interview bank and revision without retelling them.",
+    "fast": "Built page measured at 45.7 KB raw / 11.6 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Orders placement patterns before composition and interview practice; it does not attempt to teach the patterns itself."
+   }
   },
   "10-frontend/10.3-react/05-patterns-and-interview/REVISION.md": {
    "sha256": "71147ccde5ce1fad769ef353c35eac66604b2e3b78ff016b7098c90da9c47110",
    "lines": 125,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Answers checked against the two source chapters and official React docs for createPortal and context; no stale API claim was found (2026-11-18).",
+    "readable": "Full read of 125 lines; source-linked groups for Portals and Compound Components, followed by changed identity and display-contract drills and a summary.",
+    "concise": "900 words; answers stay retrieval-sized across two groups and do not reprint chapter code.",
+    "focused": "Retrieval drill: each group links its source chapter as the canonical treatment.",
+    "fast": "Built page measured at 51.8 KB raw / 13.6 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Tests placement and composition contracts under changed conditions; it does not replace the chapters."
+   }
   },
   "10-frontend/10.3-react/INDEX.md": {
    "sha256": "a4454f6924d6035188714aeda4b4fb13a9ca3de275045754e06d034cb1ad0f7c",
    "lines": 145,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "React 19.3 and the 181-minute total were checked against react.dev/blog/2026/09/09/react-19-3 and the five category tables; 23 chapters plus 5 revision companions gives the stated 28 files (2026-11-18).",
+    "readable": "Full read of 145 lines; the React section opens with its senior-role purpose, then five category blocks, a suggested study order, cross-references and navigation.",
+    "concise": "309 words; each category gets one purpose paragraph and one file list, and the study order repeats no chapter detail.",
+    "focused": "Section map: it points at five category indexes and the cross-reference table without retelling their chapters.",
+    "fast": "Built page measured at 58.4 KB raw / 14.0 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Sets the senior-level scope and a study order; it does not try to be a sixth tutorial."
+   }
   },
   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md": {
    "sha256": "710f222a5fbbe7ad53a6b3c2b728c9c38b660d989beb175b97ce2f92b7b3acf1",
@@ -6954,40 +7263,6 @@
   }
  },
  "pending": [
-  "10-frontend/10.3-react/01-react-internals/10.3.1.01-virtual-dom.md",
-  "10-frontend/10.3-react/01-react-internals/10.3.1.02-fiber.md",
-  "10-frontend/10.3-react/01-react-internals/10.3.1.03-reconciliation.md",
-  "10-frontend/10.3-react/01-react-internals/10.3.1.04-rendering.md",
-  "10-frontend/10.3-react/01-react-internals/10.3.1.05-lifecycle.md",
-  "10-frontend/10.3-react/01-react-internals/INDEX.md",
-  "10-frontend/10.3-react/01-react-internals/REVISION.md",
-  "10-frontend/10.3-react/02-core-hooks/10.3.2.01-usestate.md",
-  "10-frontend/10.3-react/02-core-hooks/10.3.2.02-useeffect.md",
-  "10-frontend/10.3-react/02-core-hooks/10.3.2.03-usememo-usecallback.md",
-  "10-frontend/10.3-react/02-core-hooks/10.3.2.04-useref.md",
-  "10-frontend/10.3-react/02-core-hooks/10.3.2.05-context-api.md",
-  "10-frontend/10.3-react/02-core-hooks/INDEX.md",
-  "10-frontend/10.3-react/02-core-hooks/REVISION.md",
-  "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.01-suspense.md",
-  "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.02-error-boundary.md",
-  "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.03-custom-hooks.md",
-  "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.04-usesyncexternalstore.md",
-  "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.05-performance.md",
-  "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.06-state-management.md",
-  "10-frontend/10.3-react/03-advanced-hooks-and-patterns/10.3.3.07-tanstack-query.md",
-  "10-frontend/10.3-react/03-advanced-hooks-and-patterns/INDEX.md",
-  "10-frontend/10.3-react/03-advanced-hooks-and-patterns/REVISION.md",
-  "10-frontend/10.3-react/04-modern-react/10.3.4.01-modern-hooks-react18-19.md",
-  "10-frontend/10.3-react/04-modern-react/10.3.4.02-web-components.md",
-  "10-frontend/10.3-react/04-modern-react/10.3.4.03-react-router.md",
-  "10-frontend/10.3-react/04-modern-react/INDEX.md",
-  "10-frontend/10.3-react/04-modern-react/REVISION.md",
-  "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.01-portals.md",
-  "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.02-compound-components.md",
-  "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.03-interview-questions.md",
-  "10-frontend/10.3-react/05-patterns-and-interview/INDEX.md",
-  "10-frontend/10.3-react/05-patterns-and-interview/REVISION.md",
-  "10-frontend/10.3-react/INDEX.md",
   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md",
   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.02-app-router.md",
   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.03-server-components.md",

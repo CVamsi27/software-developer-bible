@@ -2495,76 +2495,190 @@
    }
   },
   "10-frontend/10.7-html-css/10.7.01-html-fundamentals.md": {
-   "sha256": "901c0251f30dbf01bcbe78efbe45d0d5ca750a4fcd5862667537abdaf656bf08",
+   "sha256": "0063b9d9f60ec5a866b2028a267c4470144bf9fd44b9945fbbc1e79cf8f46bb3",
    "lines": 188,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the WHATWG HTML standard and MDN form, label and accessibility references; button default type, successful-control submission, datalist suggestions and aria-describedby behavior match those sources on 2026-11-18 (URLs 200).",
+    "readable": "Full read of 188 lines; an appointment form opens; definition and first principles, the submit trace, structure and attribute tables, error/focus behavior and document metadata are ordered.",
+    "concise": "828 words; one appointment form carries submission, labels and errors, and the element and attribute tables add vocabulary only after the trace.",
+    "focused": "Semantic form contract and document metadata are owned here; CSS fundamentals own the styling layer, and SEO owns crawl and index consequences.",
+    "fast": "Built page measured at 67.6 KB raw / 15.7 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Separates native validation from server authorization and metadata from access control; a canonical link cannot enforce access or redirect a visitor."
+   },
+   "notes": "Changed the example og:image to an absolute URL, matching the Open Graph requirement; the relative path was not a valid share image reference."
   },
   "10-frontend/10.7-html-css/10.7.02-css-fundamentals.md": {
    "sha256": "ea82dc965e072a21e46771deb3b06907694143408ac73b0ca779d6fe9390718d",
    "lines": 231,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against MDN cascade, specificity, flexbox, grid and container-query references; layer ordering, important reversal, transition precedence and logical properties match those sources on 2026-11-18 (URLs 200).",
+    "readable": "Full read of 231 lines; a toolbar opens; definition and first principles, cascade resolution, flexbox, grid, responsive rules and custom properties are traced in order.",
+    "concise": "752 words; one toolbar and one dashboard carry cascade, flex and grid decisions, and the responsive section adds units and queries rather than repeating the layout trace.",
+    "focused": "Cascade and layout primitives are owned here; CSS architecture owns team-scale ownership, and theming owns token semantics.",
+    "fast": "Built page measured at 67.9 KB raw / 15.5 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Shows why a declaration lost before prescribing a fix; specificity arithmetic cannot explain layer or origin precedence, and no layout mode removes the need for content testing."
+   }
   },
   "10-frontend/10.7-html-css/10.7.03-browser-rendering.md": {
    "sha256": "bcef2637ca94aa69b407085c345d23ca2a8600f617200a238790189fd2b43f05",
    "lines": 104,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against web.dev rendering-performance, MDN Performance API and Chrome DevTools performance documentation; the parser, defer and async behavior and compositor qualifications match those sources on 2026-11-18 (URLs 200).",
+    "readable": "Full read of 104 lines; a read/write layout-thrashing example opens; definition and first principles, the render pipeline, forced layout reads, compositing conditions, loading controls and measurement are ordered.",
+    "concise": "793 words; one geometry read/write loop carries invalidation and forced layout, and the loading section adds scheduling boundaries rather than repeating the pipeline.",
+    "focused": "Render-stage invalidation is owned here; CSS fundamentals own the properties, and performance monitoring owns field measurement.",
+    "fast": "Built page measured at 55.4 KB raw / 14.4 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Traces which stage a change invalidates; a rAF callback does not erase read/write dependencies, and compositing cannot be guaranteed from a property list."
+   }
   },
   "10-frontend/10.7-html-css/10.7.04-seo.md": {
-   "sha256": "7272d95674a8b25a3fe4b7f81b4406cb9a2ec5aaf4ec8343cdbc39a9059cd4c9",
+   "sha256": "526a1ae20f10c3290c6a9686e18a460a1dc1de86f98dfb92c6bcee9549ec92ce",
    "lines": 111,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the Google Search Central changelog and JavaScript SEO guidance plus web.dev vitals; the FAQ rich-result deprecation on 7 May 2026, canonical-signal limits and the LCP/INP/CLS thresholds match those sources on 2026-11-18 (URLs 200).",
+    "readable": "Full read of 111 lines; a missing product versus a valid product opens; definition and first principles, one public-page trace, metadata, crawl controls, structured data and Web Vitals follow.",
+    "concise": "650 words; one product page carries discovery, metadata and indexing, and the controls table adds one limitation per mechanism.",
+    "focused": "Technical discovery and index eligibility are owned here; Next.js metadata owns framework output, and performance monitoring owns field evidence.",
+    "fast": "Built page measured at 54.4 KB raw / 14.3 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Separates crawling, indexing and ranking; noindex cannot protect private content, and valid structured data does not guarantee a rich result."
+   },
+   "notes": "Corrected the footer chain so SEO leads to interview practice; the previous next link pointed at Tailwind out of order."
   },
   "10-frontend/10.7-html-css/10.7.05-pwa.md": {
    "sha256": "a91af3248602397d85a75428d875f92b18b90c9a3e57ebd5ea154b5c4017dd97",
    "lines": 240,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against MDN service worker, Cache API, Background Sync and Push references plus web.dev PWA guidance; secure-context scope, waiting-worker activation, addAll failure and idempotency requirements match those sources on 2026-11-18 (URLs 200).",
+    "readable": "Full read of 240 lines; a clinic schedule that must open offline opens; definition and first principles, capability selection, manifest, worker lifecycle, cache rules, idempotent replay and install/notification enhancements are ordered.",
+    "concise": "1060 words; one clinic shell and one queued appointment carry cache and replay behavior, and the capability table adds ownership rather than repeating the code.",
+    "focused": "Service-worker lifecycle and offline write replay are owned here; browser storage owns the store comparison, and HTTP caching owns shared cache semantics.",
+    "fast": "Built page measured at 78.5 KB raw / 17.3 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Names the privacy boundary of cached authenticated responses; a service worker cannot make a queued write exactly-once without server-enforced idempotency."
+   }
   },
   "10-frontend/10.7-html-css/10.7.06-css-architecture-styling-approaches.md": {
    "sha256": "7a9d08cd35af8f662c0a8bcda8e82321622212cdfa08df7dec4889e8aa8d176c",
    "lines": 123,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against MDN cascade layers, the Tailwind v4 theme and upgrade guides, and the CSS Modules and Stylelint documentation; unlayered precedence and the v4 CSS-first configuration match those sources on 2026-11-18 (URLs 200).",
+    "readable": "Full read of 123 lines; two components overriding one another opens; definition and first principles, one layered override, selector ownership, rendering cost, Tailwind v4 and migration governance are ordered.",
+    "concise": "774 words; one button override carries layer precedence and tokens, and the approach table adds ownership and cost rather than repeating the cascade.",
+    "focused": "Selector ownership and layer governance are owned here; CSS fundamentals own specificity mechanics, and theming owns token values.",
+    "fast": "Built page measured at 56.3 KB raw / 14.7 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Separates ownership from precedence and value sharing; a hashed class cannot fix theme precedence, and cascade layers do not prevent broad selectors."
+   }
   },
   "10-frontend/10.7-html-css/10.7.07-theming-design-tokens.md": {
-   "sha256": "7814855be4e13100034513f53c0cfc8be484f64778456fc76cacff33bc1292a4",
+   "sha256": "6c275c5307f22c29923f1a745f903b1122a133d3ce8e191224e4c729b7e4546f",
    "lines": 149,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against MDN prefers-color-scheme, color-scheme and custom-property references plus the WCAG contrast guidance; the media-query fallback, storage-event behavior and 4.5:1/3:1 thresholds match those sources on 2026-11-18 (URLs 200).",
+    "readable": "Full read of 149 lines; a theme switch that must not flash opens; definition and first principles, one token trace, choice persistence, pre-paint delivery, token distribution and contrast verification are ordered.",
+    "concise": "806 words; one theme choice carries semantic values and first paint, and the persistence controller is shown once rather than repeated per section.",
+    "focused": "Theme choice, effective appearance and token tiers are owned here; CSS architecture owns ownership and layers, and accessibility owns conformance.",
+    "fast": "Built page measured at 62.7 KB raw / 14.9 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Keeps the stored choice separate from the effective theme; a token pair check cannot prove contrast under overlays, images or forced colors."
+   },
+   "notes": "Corrected the footer chain so theming leads to Tailwind, matching the INDEX pass order."
   },
   "10-frontend/10.7-html-css/10.7.08-browser-storage.md": {
-   "sha256": "ae360587ea9191abc4a78735ec2686103390b6319d46859c2e3cfa27cb22a99e",
+   "sha256": "cd33231ba7175a0ae9f6a09d9b3c4ea98f871ca6188f14cacb6c62f7be29597f",
    "lines": 142,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against MDN Web Storage, IndexedDB, storage quotas and cookie references plus RFC 6265; cookie prefixes, sessionStorage copying and transaction auto-commit behavior match those sources on 2026-11-18 (URLs 200).",
+    "readable": "Full read of 142 lines; three workloads open; definition and first principles, a preference write, store selection, IndexedDB transactions, credential trust, quota and cost are ordered.",
+    "concise": "1052 words; three workloads carry store choice, transaction and credential boundaries, and the table adds one lifetime limit per store.",
+    "focused": "Store selection and client-data trust are owned here; PWA owns the service-worker cache, and sessions and cookies owns server session design.",
+    "fast": "Built page measured at 60.9 KB raw / 15.9 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Shows why HttpOnly is not full session security; client storage cannot prove server authorization or durable persistence under eviction."
+   },
+   "notes": "Corrected the footer chain so browser storage follows Tailwind, matching the INDEX pass order."
   },
   "10-frontend/10.7-html-css/10.7.09-tailwind-css.md": {
-   "sha256": "24f5c519bdfd494d82f374a6effe9dc9bf4daa7eaad618f30fa0eaff5760b58f",
+   "sha256": "bd62263087f0d59808d457782aa1449a6f1536722528fe78f7a4ec0fd0a74103",
    "lines": 102,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the Tailwind v4 theme, source-detection and upgrade guides; npm reports tailwindcss 4.3.5 current, @theme and @source inline are current, and the v3 content/safelist path is version-scoped on 2026-11-18 (URLs 200).",
+    "readable": "Full read of 102 lines; a runtime-built class disappearing in production opens; definition and first principles, v4 configuration, candidate detection, variants, extraction and built-artifact verification are ordered.",
+    "concise": "822 words; one status button carries detection, tokens and variants, and the extraction section adds ownership rather than repeating the build trace.",
+    "focused": "Tailwind candidate generation and version boundaries are owned here; CSS architecture owns layer and selector governance, and theming owns token semantics.",
+    "fast": "Built page measured at 53.8 KB raw / 14.2 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Explains why a complete class string is required; source detection cannot evaluate runtime fragments, and generated CSS does not prove accessible contrast."
+   },
+   "notes": "Matched the section badge colour to the other HTML/CSS chapters and corrected the footer chain."
   },
   "10-frontend/10.7-html-css/10.7.10-interview-questions.md": {
-   "sha256": "e1d9dfeca7e933314e3e3d16f553e785e52005b4453e863f278c066707bc0a92",
+   "sha256": "d207c917cc9c7632d76c708063b29edc52ed74c5dcc3d1effd674d3962badf11",
    "lines": 187,
    "genre": "interview",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "All 28 answers were checked against the HTML/CSS chapters and the MDN cascade, stacking-context and layout references; the reading-flow status (Chrome 137 only) and current Google FAQ deprecation were verified on 2026-11-18.",
+    "readable": "Full read of 187 lines; a ten-rung question ladder opens, then 28 model answers cover box model, stacking, layout choice, rendering, accessibility, architecture, cascade, assets, state and method.",
+    "concise": "1878 words; each answer stays retrieval-sized across 28 prompts, and the closing mistakes and best-practice lists add challenge prompts rather than repeating the answers.",
+    "focused": "Drill bank: each answer points at a chapter canonical treatment rather than re-teaching the mechanism.",
+    "fast": "Built page measured at 66.3 KB raw / 19.1 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Provides 28 graded answers with failure boundaries; it cannot replace the chapters or prove a browser diagnosis."
+   },
+   "notes": "Corrected the footer chain so interview practice follows SEO."
   },
   "10-frontend/10.7-html-css/INDEX.md": {
    "sha256": "bb2e6dd412f4a7235a6e5b024a8cb433dbc1df98c3fc3dcaec4d122dcf7f4da4",
    "lines": 67,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "No version-sensitive claim; the 11-file count (ten chapters plus one revision companion), 69-minute total and status badge were re-derived from disk, and the table times sum to 69 on 2026-11-18.",
+    "readable": "Full read of 67 lines; four passes from meaning through rendering, storage and discoverability, plus cross-references and a Docita anchor.",
+    "concise": "393 words; each pass states one decision and each chapter is described once.",
+    "focused": "Navigation only: it points at ten chapters and their revision drill without retelling their mechanisms.",
+    "fast": "Built page measured at 49.5 KB raw / 13.1 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Orders the section from content meaning to pixels to persistence and discovery; it does not teach any chapter itself."
+   }
   },
   "10-frontend/10.7-html-css/REVISION.md": {
    "sha256": "321fdc808b6fbff451a2076a151e142d52c6eb599475e8397f1ab7993a7b4b3c",
    "lines": 149,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Every answer was checked against its source chapter and the MDN cascade, storage, cookie and accessibility references; the Tailwind v4 boundary and reading-flow availability match the sources on 2026-11-18.",
+    "readable": "Full read of 149 lines; source-linked groups for all nine learning chapters plus a cross-cutting reload, metadata and layout drill, then a summary.",
+    "concise": "947 words; answers stay retrieval-sized across the chapter and cross-cutting groups and do not reprint chapter code.",
+    "focused": "Retrieval drill: each group names its source chapter and points at it for the full treatment.",
+    "fast": "Built page measured at 53.4 KB raw / 14.2 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Tests reload, metadata and layout boundaries under changed conditions; it cannot replace the chapters."
+   }
   },
   "10-frontend/10.8-mobile/10.8.01-react-native-cross-platform.md": {
    "sha256": "9830f0c6f8d3042a39249f693d9595c61bef270bc0d7a9ba3a0a88df4bee0461",
@@ -7693,18 +7807,6 @@
   }
  },
  "pending": [
-  "10-frontend/10.7-html-css/10.7.01-html-fundamentals.md",
-  "10-frontend/10.7-html-css/10.7.02-css-fundamentals.md",
-  "10-frontend/10.7-html-css/10.7.03-browser-rendering.md",
-  "10-frontend/10.7-html-css/10.7.04-seo.md",
-  "10-frontend/10.7-html-css/10.7.05-pwa.md",
-  "10-frontend/10.7-html-css/10.7.06-css-architecture-styling-approaches.md",
-  "10-frontend/10.7-html-css/10.7.07-theming-design-tokens.md",
-  "10-frontend/10.7-html-css/10.7.08-browser-storage.md",
-  "10-frontend/10.7-html-css/10.7.09-tailwind-css.md",
-  "10-frontend/10.7-html-css/10.7.10-interview-questions.md",
-  "10-frontend/10.7-html-css/INDEX.md",
-  "10-frontend/10.7-html-css/REVISION.md",
   "10-frontend/10.8-mobile/10.8.01-react-native-cross-platform.md",
   "10-frontend/10.8-mobile/10.8.02-deep-linking-universal-links.md",
   "10-frontend/10.8-mobile/10.8.03-testing-react-native-apps.md",

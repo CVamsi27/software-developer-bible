@@ -1910,12 +1910,14 @@
     },
     {
       "path": "10-frontend/10.7-html-css/10.7.01-html-fundamentals.md",
-      "sha256": "901c0251f30dbf01bcbe78efbe45d0d5ca750a4fcd5862667537abdaf656bf08",
+      "sha256": "0063b9d9f60ec5a866b2028a267c4470144bf9fd44b9945fbbc1e79cf8f46bb3",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full content: native formactivation/constraints/successfulnamedcontrols/servervalidation, semanticlandmarks, datalistversusselect, inputtypes/autofill, names/descriptions/errors/focus, publicmetadata versusauthorization. Examples trace one form and accessibleerror state.",
+      "notes": "Full content: form, metadata and accessibility examples re-checked against the WHATWG HTML standard and MDN. The Open Graph example now uses an absolute og:image URL because relative paths are not valid share images.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-18",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.7-html-css/10.7.02-css-fundamentals.md",
@@ -1937,12 +1939,14 @@
     },
     {
       "path": "10-frontend/10.7-html-css/10.7.04-seo.md",
-      "sha256": "7272d95674a8b25a3fe4b7f81b4406cb9a2ec5aaf4ec8343cdbc39a9059cd4c9",
+      "sha256": "526a1ae20f10c3290c6a9686e18a460a1dc1de86f98dfb92c6bcee9549ec92ce",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full content: discovery/fetch/render/index/canonical path, status/SSR/CSR distinction, crawlhints versusnoindex/accesscontrol, structuredeligibility, fieldvitals versuslab. FAQrichresult May7removal verified from officialGoogle2026update log.",
+      "notes": "Full content: crawl, metadata and structured-data claims re-checked; the footer now follows the INDEX order and leads to interview practice instead of Tailwind.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-18",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.7-html-css/10.7.05-pwa.md",
@@ -1964,40 +1968,47 @@
     },
     {
       "path": "10-frontend/10.7-html-css/10.7.07-theming-design-tokens.md",
-      "sha256": "7814855be4e13100034513f53c0cfc8be484f64778456fc76cacff33bc1292a4",
+      "sha256": "6c275c5307f22c29923f1a745f903b1122a133d3ce8e191224e4c729b7e4546f",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full content: primitive/semantic/component purpose, effectiveversuschosen systempolicy, validatedfailingstorage/cross-tab/OS listenercleanup, prepaint/CSP/hydration alternatives, generatedcrossplatformsource andactualcontraststates. Controller explicitly does not supply selector subscription.",
+      "notes": "Full content: token, persistence and contrast sections re-checked; the footer now leads to Tailwind so the reading chain matches the INDEX pass order.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-18",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.7-html-css/10.7.08-browser-storage.md",
-      "sha256": "ae360587ea9191abc4a78735ec2686103390b6319d46859c2e3cfa27cb22a99e",
+      "sha256": "cd33231ba7175a0ae9f6a09d9b3c4ea98f871ca6188f14cacb6c62f7be29597f",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full content: originversuscookiescope/tab sessioncopy, serialization/quota failures andshapevalidation, IndexedDBrequestversustransactioncompletion/upgradeblocked lifecycle, cachefreshness/OPFS, credentialXSS/CSRF/accountscoping, eviction/recovery andmeasuredcost.",
+      "notes": "Full content: storage selection and credential boundaries re-checked; the footer now follows Tailwind and keeps the reciprocal previous link accurate.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-18",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.7-html-css/10.7.09-tailwind-css.md",
-      "sha256": "24f5c519bdfd494d82f374a6effe9dc9bf4daa7eaad618f30fa0eaff5760b58f",
+      "sha256": "bd62263087f0d59808d457782aa1449a6f1536722528fe78f7a4ec0fd0a74103",
       "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-14",
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-18",
       "fullContentRead": true,
-      "notes": "Full-content read (2026-11-14): Opens on a real broken dynamic class, then follows scan, token and cascade separately; numbering is sequential. Five sections each carry one claim; no section repeats the build-time generation explanation.",
-      "findings": []
+      "notes": "Full content: Tailwind v4 configuration and candidate detection re-checked against the current guides; the badge colour now matches the HTML/CSS section and the footer chain was repaired.",
+      "findings": [],
+      "genre": "teaching"
     },
     {
       "path": "10-frontend/10.7-html-css/10.7.10-interview-questions.md",
-      "sha256": "e1d9dfeca7e933314e3e3d16f553e785e52005b4453e863f278c066707bc0a92",
-      "genre": "interview",
+      "sha256": "d207c917cc9c7632d76c708063b29edc52ed74c5dcc3d1effd674d3962badf11",
+      "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full28-questionbank: cascade/layout/stacking/containment, measuredlayers/performance, accessibleform/states, styletoolownership, fonts/images/CLS, sticky/units/RTL/browsermatrix, offlineidempotency/privatecache andreadingflow support. Answers attach changedconditions and evidence insteadofuniversalrules.",
+      "notes": "Full content: all 28 answers re-checked against their chapters and MDN; the footer now points back to SEO so the interview bank closes the section.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-18",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.7-html-css/INDEX.md",

@@ -3752,187 +3752,500 @@
    "sha256": "58b976bc64ece3c34c351c548e0e88be6f09c94c8b9026a82853afe8e793f94b",
    "lines": 128,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Verified protocol-sensitive guidance against RFC 9110, GraphQL serving-over-HTTP, gRPC core concepts and the protobuf guide; provider retry/idempotency windows remain explicitly scoped. Official sources were checked.",
+    "readable": "Full read of 128 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "1155 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "56.9 KB raw / 15.7 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.02-rest-principles.md": {
    "sha256": "4cb9d75a264bac7be0c847fd3df97eab434b74e402e5d2540e5cef2d0008220d",
    "lines": 111,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked HTTP method, representation, cache and conditional-request claims against RFC 9110; the chapter keeps REST constraints distinct from implementation and deployment guarantees. Official sources were checked.",
+    "readable": "Full read of 111 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "893 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "55.8 KB raw / 14.9 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.03-versioning.md": {
    "sha256": "d4da8d03ae64e8034a1aeaef21d8cdbe4e1a9d26b62602d5e270f3738f8b43b5",
    "lines": 121,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked Deprecation and Sunset details against RFC 9745 and RFC 8594 plus current GitHub versioning guidance; the runnable adapter keeps old and new representations separate. Official sources were checked.",
+    "readable": "Full read of 121 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "847 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "60.9 KB raw / 15.3 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.04-rest-maturity-model.md": {
    "sha256": "347363c0804b2110655d37ea8aeea508db11f8df86ea8ee20c309261db258250",
    "lines": 84,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "No version-sensitive API claim; Richardson levels, cumulative boundaries and the distinction from complete REST quality were read against the chapter flow. Official sources were checked.",
+    "readable": "Full read of 84 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "537 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "52.0 KB raw / 13.5 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.05-openapi-swagger.md": {
    "sha256": "104a2bbf000c087d65d563bd7f1ad9fcc6c8eef2765837f3562e6853baac3152",
    "lines": 152,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Verified the specification and feature claims against the official OpenAPI 3.2.1 document; generated clients, mocks and declarations are bounded from runtime enforcement.",
+    "readable": "Full read of 152 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "824 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "61.9 KB raw / 14.9 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/01-design-and-contract/INDEX.md": {
    "sha256": "5ff046ed92e9420f7a060eba50f359049c5e3b9cbfe71af757d379cdd50aa4f6",
    "lines": 52,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked the three-pass learning flow, five category links, chapter table, revision-before-interview order and project pointers against all REST files; counts remain root-managed. Official sources were checked.",
+    "readable": "Full read of 52 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "125 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "47.7 KB raw / 12.1 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/01-design-and-contract/REVISION.md": {
    "sha256": "4d4ea4a98b81a796a798dabbb7e6c4c53c9856699d60ae32fa4f37248dd34ad2",
    "lines": 159,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Read every source-linked Q/A group and checked its RFC, OpenAPI, HTTP and protocol boundaries against the owning chapters; no full mechanism is retold here. Official sources were checked.",
+    "readable": "Full read of 159 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "1117 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "54.1 KB raw / 14.4 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.01-http-methods.md": {
    "sha256": "71b4e4b52f07838f14500de8e8db193b7c44e0ef76843f74bfa2a50227088ab2",
    "lines": 137,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Verified method safety, idempotence, conditional requests and response semantics against RFC 9110; retry advice remains effect-based rather than status-only. Official sources were checked.",
+    "readable": "Full read of 137 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "888 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "56.5 KB raw / 15.0 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.02-status-codes.md": {
-   "sha256": "1652cbba52d338fa327c3fa711dc509c0b1e075eee1fdbce325f8f7f3d7774c9",
+   "sha256": "c8642d3e29ba6f96dc42ffeae0432ee233928e6c06b8090561e57aac01efa4fe",
    "lines": 186,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Verified status meanings and required headers against RFC 9110, including the corrected 401 wording; the documented Node fixture executed with all status, header and empty-body assertions passing. Official sources were checked.",
+    "readable": "Full read of 186 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "811 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "75.3 KB raw / 17.0 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "defects": [
+    "Changed the 401 table meaning from credentials being absent to a request lacking valid authentication credentials for the target resource, matching RFC 9110."
+   ],
+   "notes": "One RFC 9110 wording correction retained; executable status fixture passed after the edit."
   },
   "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.03-cors.md": {
    "sha256": "280c92d83cffd88214c9350b568cc212927ef235c75d1f207dd182f714c536fe",
    "lines": 146,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked the browser request paths, safelisted rules, preflight and credential restrictions against the current Fetch standard; no browser-enforcement result is claimed for the Express sample. Official sources were checked.",
+    "readable": "Full read of 146 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "748 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "61.1 KB raw / 15.1 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.04-http-caching.md": {
    "sha256": "dc893131bfa7e32bf6f5e37c635fd90eeef99b52ce513fe026915063220beda0",
    "lines": 162,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Verified freshness, validators, Vary, authorization and transformed-representation guidance against RFC 9110 and RFC 9111; the Express example\u2019s narrow If-Match grammar remains explicit. Official sources were checked.",
+    "readable": "Full read of 162 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "1116 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "67.9 KB raw / 16.8 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/02-http-mechanics/INDEX.md": {
    "sha256": "e41d5ffb1bef0c6a796178dc980141c6a152f8ef6046e512f1f216b136392f8c",
    "lines": 48,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked the three-pass learning flow, five category links, chapter table, revision-before-interview order and project pointers against all REST files; counts remain root-managed. Official sources were checked.",
+    "readable": "Full read of 48 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "96 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "47.4 KB raw / 12.0 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/02-http-mechanics/REVISION.md": {
    "sha256": "25795e1deb15f38efd350a4d4f6eac6309e29293538a4d9d65c2b72d01d471e6",
    "lines": 135,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Read all source-linked HTTP method, status, CORS and cache questions; RFC 9110, RFC 9111 and Fetch boundaries are rehearsed without duplicating the chapters. Official sources were checked.",
+    "readable": "Full read of 135 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "874 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "51.7 KB raw / 13.6 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.01-pagination.md": {
    "sha256": "3c98f1369f52ea51665c98cd6c30525527e51e791b84bdd2a3dcb8d17b6b81f6",
    "lines": 165,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Verified row-seek semantics against PostgreSQL row-comparison documentation; the TypeScript limit and page-assembly fence type-checks, while query-plan performance remains an explicit boundary. Official sources were checked.",
+    "readable": "Full read of 165 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "1207 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "64.3 KB raw / 16.6 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.02-error-handling-design.md": {
    "sha256": "da1ef35de34e3dfa4ec0d28f72d4872f95f242fd0d187a5f9b09f9a8fec281c0",
    "lines": 156,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked Problem Details fields and response boundaries against RFC 9457; the TypeScript mapper type-checks with ambient Node declarations and does not claim framework integration. Official sources were checked.",
+    "readable": "Full read of 156 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "832 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "64.8 KB raw / 16.0 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.03-long-running-api-operations.md": {
    "sha256": "32126972fd1aa31eb04714d62d26be3b7ba736d87f508c282be681318c56d49a",
    "lines": 164,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked operation-resource guidance against Google AIP-151, Microsoft HTTP operations guidance and current Node AbortSignal/timer APIs; the polling helper is syntax-checked without claiming a live queue. Official sources were checked.",
+    "readable": "Full read of 164 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "969 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "66.5 KB raw / 16.0 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.04-file-upload-apis.md": {
    "sha256": "6d7bed391981ee4f25c441161c1c41b87afca1a8e5d5edaa7e03532657178e08",
    "lines": 142,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Verified presigned and multipart upload constraints against current AWS S3 documentation; checksum validation and publication-after-scan remain bounded example behavior, not storage integration. Official sources were checked.",
+    "readable": "Full read of 142 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "1134 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "58.6 KB raw / 15.8 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.05-webhooks.md": {
    "sha256": "2ac146ccd0380c7cb5a6a635b395a250a173bb8deb2fb14084c2662e013dfa35",
    "lines": 215,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked provider-specific delivery, verification and replay statements against current Stripe, GitHub, Shopify and Slack documentation; the HMAC fixture executes, while SQL remains a database-boundary example. Official sources were checked.",
+    "readable": "Full read of 215 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "1469 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "76.0 KB raw / 18.6 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.06-serialization-and-wire-formats.md": {
    "sha256": "b0ee6b72edfb3a78812b84538997515ed04d69fea85774d9e8b5ef21042d4988",
    "lines": 127,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Verified protobuf evolution and presence guidance against the protobuf guide; the Node precision/undefined fixture executes and demonstrates the stated JSON boundary. Official sources were checked.",
+    "readable": "Full read of 127 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "1052 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "58.1 KB raw / 15.7 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.07-transactional-email-and-notifications.md": {
    "sha256": "2a958fbb17019802e40ca7d1b71cd52975d287fcc1e3778c508733d2460b0baf",
    "lines": 141,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked Resend\u2019s documented 24-hour idempotency window and DMARC guidance against Resend and RFC 9989/RFC 9990; the local lost-response fixture executes and proves only effect identity. Official sources were checked.",
+    "readable": "Full read of 141 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "1162 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "61.4 KB raw / 16.3 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/03-payloads-errors-integration/INDEX.md": {
    "sha256": "068aaab5b417fd96d26feeec91e81628e67b33cf16465c7dd977edcfabf3efbe",
    "lines": 53,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked the three-pass learning flow, five category links, chapter table, revision-before-interview order and project pointers against all REST files; counts remain root-managed. Official sources were checked.",
+    "readable": "Full read of 53 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "93 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "49.9 KB raw / 12.7 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/03-payloads-errors-integration/REVISION.md": {
    "sha256": "12c3af5af750153abe87cb4cd58b393dd60cf1bec260fab01660c9e6f4583963",
    "lines": 215,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Read every source-linked Q/A group for pagination, errors, operations, uploads, webhooks, serialization and notifications; answers point back to canonical mechanisms and preserve provider limits. Official sources were checked.",
+    "readable": "Full read of 215 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "1683 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "59.0 KB raw / 15.9 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.01-rate-limiting.md": {
    "sha256": "a566fc83e25d1f5ea1f1911bfb24320f70c6000886b8ca8e9e836f6c28c020c3",
    "lines": 153,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Verified Redis atomicity and proxy-identity caveats against current Redis and Express guidance; the deterministic token-bucket fixture executes the documented true/false admission sequence. Official sources were checked.",
+    "readable": "Full read of 153 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "1102 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "66.7 KB raw / 16.5 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.02-api-gateway.md": {
    "sha256": "abbfa788399a6a87fc589efb210781fc97cc2778a5bf101faef849379ad98245",
    "lines": 156,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked Node HTTP and gateway boundary claims; the JavaScript fence parses, and its fixed-target read-only scope prevents the example from implying a production proxy or authorization system. Official sources were checked.",
+    "readable": "Full read of 156 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "986 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "67.1 KB raw / 16.0 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.03-bff.md": {
    "sha256": "a846bc1efbfe82a1bc8439633023efd6f938588ba67f1801fb0f1bf3473b29c2",
    "lines": 144,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked AbortSignal timeout/combination behavior against current Node documentation; the BFF helper executes with an unavailable optional dependency and preserves the required profile result. Official sources were checked.",
+    "readable": "Full read of 144 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "1112 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "62.9 KB raw / 16.3 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.04-authentication.md": {
    "sha256": "0a80b0c7df01c6c61c3438cd6ac72d20045b0d69d47a6257a3b177699d40e6cd",
    "lines": 141,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Verified OAuth and credential-lifecycle guidance against RFC 9700 and current Node AbortSignal behavior; the authorization TypeScript fence type-checks and keeps token verification outside its scope. Official sources were checked.",
+    "readable": "Full read of 141 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "1139 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "61.9 KB raw / 16.1 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/04-edge-and-scale/INDEX.md": {
    "sha256": "8ea2ec19e0784167786bcd0f2d21173390578ffb1dc9d087ffbe7729a1fd1d89",
    "lines": 50,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked the three-pass learning flow, five category links, chapter table, revision-before-interview order and project pointers against all REST files; counts remain root-managed. Official sources were checked.",
+    "readable": "Full read of 50 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "122 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "47.9 KB raw / 12.2 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/04-edge-and-scale/REVISION.md": {
    "sha256": "dc20aad24f50a7ede85ff1c9ddd0845d9db8c8796955e8c482cb28f284aefa3b",
    "lines": 129,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Read every source-linked Q/A for rate budgets, gateway authority, BFF failure shape and authorization; answers preserve each chapter\u2019s canonical boundary and failure trade-off. Official sources were checked.",
+    "readable": "Full read of 129 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "906 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "52.2 KB raw / 13.9 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/05-interview-drills/20.3.5.01-interview-questions.md": {
    "sha256": "fb9ffdaab5557c3d41ab35b0088313b20b2fad00726e92eb3cd1f813c71231e5",
    "lines": 290,
    "genre": "interview",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Read all ten deep dives and fifty follow-up prompts; linked HTTP, CORS, pagination, auth and versioning claims agree with their canonical chapters and make no company-frequency claim. Official sources were checked.",
+    "readable": "Full read of 290 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "3257 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "72.9 KB raw / 20.8 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/05-interview-drills/INDEX.md": {
    "sha256": "7746d8062ce59edfcea3b279f2ba020c260c12ad8b07e52c4240d89b9845d216",
    "lines": 39,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked the three-pass learning flow, five category links, chapter table, revision-before-interview order and project pointers against all REST files; counts remain root-managed. Official sources were checked.",
+    "readable": "Full read of 39 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "80 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "45.8 KB raw / 11.7 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.3-rest-apis/INDEX.md": {
    "sha256": "af5bafef69a901c26247ff5287791a176fdb38c8b979658b3b0d2795fbab496f",
    "lines": 97,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked the three-pass learning flow, five category links, chapter table, revision-before-interview order and project pointers against all REST files; counts remain root-managed. Official sources were checked.",
+    "readable": "Full read of 97 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
+    "concise": "76 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
+    "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
+    "fast": "56.8 KB raw / 13.8 KB gzip built page; the shared Jekyll shell is included.",
+    "best": "Its genre is clear and useful: it gives a concrete contract or practice, then names the relevant limit, failure mode or trade-off before the reader applies it."
+   },
+   "notes": "No blocking semantic defect retained after the full read and source/fixture checks."
   },
   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-postgresql.md": {
    "sha256": "47d7621ad2ca050eb2c5f61d8115c27d663b51e7ecfc8529d37bf14eb31ba0f9",
@@ -8396,37 +8709,6 @@
   "20-backend/20.13-java/20.13.06-interview-questions.md",
   "20-backend/20.13-java/INDEX.md",
   "20-backend/20.13-java/REVISION.md",
-  "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.01-api-design-patterns.md",
-  "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.02-rest-principles.md",
-  "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.03-versioning.md",
-  "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.04-rest-maturity-model.md",
-  "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.05-openapi-swagger.md",
-  "20-backend/20.3-rest-apis/01-design-and-contract/INDEX.md",
-  "20-backend/20.3-rest-apis/01-design-and-contract/REVISION.md",
-  "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.01-http-methods.md",
-  "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.02-status-codes.md",
-  "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.03-cors.md",
-  "20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.04-http-caching.md",
-  "20-backend/20.3-rest-apis/02-http-mechanics/INDEX.md",
-  "20-backend/20.3-rest-apis/02-http-mechanics/REVISION.md",
-  "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.01-pagination.md",
-  "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.02-error-handling-design.md",
-  "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.03-long-running-api-operations.md",
-  "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.04-file-upload-apis.md",
-  "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.05-webhooks.md",
-  "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.06-serialization-and-wire-formats.md",
-  "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.07-transactional-email-and-notifications.md",
-  "20-backend/20.3-rest-apis/03-payloads-errors-integration/INDEX.md",
-  "20-backend/20.3-rest-apis/03-payloads-errors-integration/REVISION.md",
-  "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.01-rate-limiting.md",
-  "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.02-api-gateway.md",
-  "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.03-bff.md",
-  "20-backend/20.3-rest-apis/04-edge-and-scale/20.3.4.04-authentication.md",
-  "20-backend/20.3-rest-apis/04-edge-and-scale/INDEX.md",
-  "20-backend/20.3-rest-apis/04-edge-and-scale/REVISION.md",
-  "20-backend/20.3-rest-apis/05-interview-drills/20.3.5.01-interview-questions.md",
-  "20-backend/20.3-rest-apis/05-interview-drills/INDEX.md",
-  "20-backend/20.3-rest-apis/INDEX.md",
   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-postgresql.md",
   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.02-normalization.md",
   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.md",

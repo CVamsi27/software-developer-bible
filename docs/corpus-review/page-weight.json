@@ -4531,9 +4531,9 @@
       "genre": "chapter",
       "html": "_site/20-backend/20.3-rest-apis/02-http-mechanics/20.3.2.02-status-codes.html",
       "status": "built",
-      "sourceBytes": 13384,
-      "rawBytes": 77118,
-      "gzipBytes": 17363,
+      "sourceBytes": 13425,
+      "rawBytes": 77145,
+      "gzipBytes": 17368,
       "brotliBytes": null,
       "assets": {
         "scripts": 8,

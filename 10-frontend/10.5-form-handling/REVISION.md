@@ -90,6 +90,7 @@ Source: [Learning chapter](10.5.02-zod.md)
 **Q:** Does a parsed invoice payload establish tenant permission?
 
 **A:** No. The schema establishes shape/constraints; authorization, ownership and transactional business invariants remain separate checks.
+
 ## Controlled submission and selected subscriptions
 
 Source: [Formik](10.5.03-formik.md), [TanStack Form](10.5.04-tanstack-form.md)

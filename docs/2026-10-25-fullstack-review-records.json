@@ -1661,12 +1661,14 @@
     },
     {
       "path": "10-frontend/10.5-form-handling/10.5.05-server-actions-and-form-patterns.md",
-      "sha256": "3fa0650952303761cab9785da9354ef30e97bdbc19cfe33a27063880b7093a70",
+      "sha256": "41016aa1a7f67fdb4b54bbbb0f7581cd8762aa08808e9e85da53e9154a95e6b8",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full content reviewed: React19/Next form transport, action/permalink and pre-hydration, runtime validation/abuse authority, unconditional uncontrolled reset caveat, file visibility/resource limits and mutation retry/cache boundaries.",
+      "notes": "Full content: server-action form path re-checked against React 19 and Next.js 16.4.6; corrected the body-size option path to experimental.serverActions.bodySizeLimit.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-18",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.5-form-handling/10.5.06-autosave-draft-recovery.md",
@@ -1679,12 +1681,14 @@
     },
     {
       "path": "10-frontend/10.5-form-handling/10.5.07-interview-questions.md",
-      "sha256": "568b24cd56da15b9fe8b9ddfd7b40ba9659d44af16f256422ae4336150db5d7c",
-      "genre": "interview",
+      "sha256": "81794a421af5cecbdf7066e1d37331bf34f36c5f7dcd73384e50c8a64386b1e6",
+      "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full interview bank reviewed: edited value/validation/commit separation, library measurement, final wizard validation, accessible error/focus behavior, upload/offline/draft recovery and changed collaborative/long-running contracts. No employment experience invented.",
+      "notes": "Full content: all 31 answers re-checked; replaced the legacy Next.js server-actions citation with the current mutating-data URL.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-18",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.5-form-handling/INDEX.md",
@@ -1699,13 +1703,14 @@
     },
     {
       "path": "10-frontend/10.5-form-handling/REVISION.md",
-      "sha256": "2eeafe3c4bdcb057cc32c43d4c5c996d58f2b9521e30c151e7dcc1726bc69210",
+      "sha256": "76392d7456e539ec122721dd91858c6bf29cc8588808bbded9c343e75a9d4d4b",
       "genre": "revision",
       "status": "reviewed",
-      "notes": "Revision companions: separate each answer from its question line",
+      "notes": "Full content: question groups re-checked against the six chapters; added the missing blank line before the controlled-submission heading.",
       "findings": [],
       "reviewer": "frontend",
-      "reviewDate": "2026-11-12"
+      "reviewDate": "2026-11-18",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.6-animation/10.6.01-css-animations.md",

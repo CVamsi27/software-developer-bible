@@ -2210,55 +2210,138 @@
    "sha256": "d02502c322c84597db7f333a26776f9845dc741e7a20fb367be880d4a45679fd",
    "lines": 279,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the React Hook Form 7.92.0 documentation and @hookform/resolvers 7.0.7; useFormState, subscribe, Controller, useFieldArray and Zod 4 resolver support are current on 2026-11-18 (URLs 200).",
+    "readable": "Full read of 279 lines; a disabled button that cannot prove a timed-out booking opens; definition and first principles lead into five sections on validation and server error, field integration, subscriptions, multi-step retention and advisory async checks.",
+    "concise": "823 words; one booking form carries validation, field integration and step retention, and the async section adds a boundary rather than repeating the opening example.",
+    "focused": "RHF registration, controller, field-array and subscription mechanics are owned here; Zod owns schemas, and Server Actions owns the server mutation path.",
+    "fast": "Built page measured at 96.3 KB raw / 17.6 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Field state and business correctness stay separate: a valid form can lose a race, and a disabled button cannot prove one booking."
+   }
   },
   "10-frontend/10.5-form-handling/10.5.02-zod.md": {
    "sha256": "865dabb0f3df2e8183a0b218d309994fd6fe1d756f5144468c2bb804c426251e",
    "lines": 254,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the Zod 4.6.7 documentation; safeExtend, default short-circuiting, z.iso names, top-level z.email/z.uuid, flattenError and z.record arity match the current API on 2026-11-18 (URLs 200).",
+    "readable": "Full read of 254 lines; an HTTP handler receiving \"42\" or null despite a number signature opens; definition and first principles lead through seven sections from string parsing to shapes, composition, transforms, cross-field issues, omitted values and error control flow.",
+    "concise": "744 words; seven sections each own one schema decision, and the environment and response examples add boundaries rather than repeating the age trace.",
+    "focused": "Runtime parsing and input/output typing are owned here; RHF owns resolver wiring, and the TypeScript chapter owns static annotations.",
+    "fast": "Built page measured at 80.4 KB raw / 16.7 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Parsing establishes shape and cannot authorize; passing parsed data to an ORM can still create a business-security bug."
+   }
   },
   "10-frontend/10.5-form-handling/10.5.03-formik.md": {
    "sha256": "fe29be6d947f105ad3cbe1ad8dec943c8e74e577c7814ee0fb6e64ed3ba76537",
    "lines": 187,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the Formik 2.4.9 documentation for submission phases, useField and FieldArray; the synchronous setSubmitting contract and resetForm baseline match those pages on 2026-11-18 (URLs 200).",
+    "readable": "Full read of 187 lines; a login form where typing, blur and submit mean different things opens; change/blur/submit tracing, failure retention, reusable fields, array identity, validation and defaults, wizard pending state and library ownership are ordered.",
+    "concise": "926 words; one login form carries controlled values, failure retention and field wrappers, while the array and wizard sections add identity and step limits.",
+    "focused": "Formik controlled-state mechanics and migration trade-off are owned here; RHF and TanStack comparisons are delegated, and the draft chapter owns persistence.",
+    "fast": "Built page measured at 74.6 KB raw / 16.3 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Controlled state keeps input after failure; the library cannot guarantee a single server write or preserve values across reload."
+   }
   },
   "10-frontend/10.5-form-handling/10.5.04-tanstack-form.md": {
    "sha256": "9c5ad895c300a5997a1e79f2b115d0048837d8aae7cee2e5020caf3e800d5b4d",
    "lines": 249,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the TanStack Form 1.33.5 React guides for reactivity, validation, arrays and submission; useSelector is current, useStore is documented as a deprecated alias, and Standard Schema does not replace submitted values on 2026-11-18.",
+    "readable": "Full read of 249 lines; a large editor where one field change should update only its dependants opens; change-through-submit, a derived invoice subtotal, asynchronous validation, array identity and a model comparison follow.",
+    "concise": "621 words; one invoice editor carries subscriptions, a derived value and submission, and the comparison table adds selection criteria rather than restating the code.",
+    "focused": "TanStack subscriptions and typed field model are owned here; RHF and Formik comparisons are delegated, and Zod owns schema parsing.",
+    "fast": "Built page measured at 92.0 KB raw / 16.8 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Narrow subscriptions limit form-driven renders; they cannot prevent parent renders, and validation does not replace submitted values with parsed output."
+   }
   },
   "10-frontend/10.5-form-handling/10.5.05-server-actions-and-form-patterns.md": {
-   "sha256": "3fa0650952303761cab9785da9354ef30e97bdbc19cfe33a27063880b7093a70",
+   "sha256": "41016aa1a7f67fdb4b54bbbb0f7581cd8762aa08808e9e85da53e9154a95e6b8",
    "lines": 197,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Checked against the React 19 useActionState and form references plus the official Next.js serverActions configuration; the 1 MB default, reset-on-success and direct-action progressive enhancement match those pages, and the config path now names experimental.serverActions on 2026-11-18.",
+    "readable": "Full read of 197 lines; a form that must reach an authorized server write opens; the submission path, received-field validation, explainable error state, file policy, post-write refresh and the form-boundary table are ordered.",
+    "concise": "933 words; one contact form carries action state, validation and pending feedback, and the file and write sections add policy rather than repeating the flow.",
+    "focused": "The framework-supported form path is owned here; Next.js Cache semantics are delegated to the Server Actions chapter, and Zod owns validation.",
+    "fast": "Built page measured at 73.1 KB raw / 16.3 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "The framework supplies transport and cannot supply trust; a bound ID, hidden field or disabled button is not authorization or idempotency."
+   },
+   "notes": "Corrected the configuration path to experimental.serverActions.bodySizeLimit so a copied setting lands where Next.js reads it."
   },
   "10-frontend/10.5-form-handling/10.5.06-autosave-draft-recovery.md": {
    "sha256": "3b926beef0250e9f61b9897641d16339de2492e1500c393a724c324b62e8aea5",
    "lines": 217,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "No version-sensitive claim; the storage and lifecycle behavior was checked against the official MDN Web Storage, IndexedDB, StorageManager and beforeunload references, and the RHF subscribe API against its current documentation on 2026-11-18.",
+    "readable": "Full read of 217 lines; a queued autosave finishing after a confirmed submit opens; the draft lifecycle, storage choice, identity envelope, serialized writer, versioned restore, form reconnection and server revision conflict are traced in order.",
+    "concise": "779 words; one draft lifecycle carries ordering, storage and recovery, and the writer implementation is shown once rather than repeated per section.",
+    "focused": "Draft ordering and recovery are owned here; the Browser Storage chapter owns IndexedDB connection helpers, and RHF owns form-state mechanics.",
+    "fast": "Built page measured at 72.6 KB raw / 16.4 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Debounce and lifecycle flushes reduce loss but cannot guarantee it; browser storage can fail, and a timestamp is not a conflict protocol."
+   }
   },
   "10-frontend/10.5-form-handling/10.5.07-interview-questions.md": {
-   "sha256": "568b24cd56da15b9fe8b9ddfd7b40ba9659d44af16f256422ae4336150db5d7c",
+   "sha256": "81794a421af5cecbdf7066e1d37331bf34f36c5f7dcd73384e50c8a64386b1e6",
    "lines": 232,
    "genre": "interview",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "All 31 answer pairs were checked against their chapters and the official React 19, Next.js 16.4.6, RHF, Zod, Formik and TanStack references; the stale Next.js server-actions URL was replaced with the current mutating-data guide on 2026-11-18.",
+    "readable": "Full read of 232 lines; an interviewer asking why a valid form lost work opens; a two-decision framing and answer framework precede 31 questions across beginner, intermediate, senior, system-design and follow-up bands, then a summary.",
+    "concise": "2476 words; 31 answers stay bounded, and the framework plus summary do not reprint chapter examples.",
+    "focused": "Drill bank: each question points at a chapter canonical treatment rather than re-teaching the mechanism.",
+    "fast": "Built page measured at 67.1 KB raw / 18.4 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Tests end-to-end form reasoning with 31 graded prompts; it does not replace the chapters or prove an implementation."
+   },
+   "notes": "Replaced the legacy Next.js server-actions citation with the current mutating-data URL that the old path redirects to."
   },
   "10-frontend/10.5-form-handling/INDEX.md": {
    "sha256": "058cfa8d2dbbafc3f4c4e49c658941c2147ee991390881717c47841ad459ec0a",
    "lines": 122,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "No version-sensitive claim; the 8-file count (seven chapters plus one revision companion), 67-minute total and status badge were re-derived from disk, and the time table sums on 2026-11-18.",
+    "readable": "Full read of 122 lines; an eight-file summary opens, then a category table, six-step study order, completion check, cross-references and a Docita anchor table.",
+    "concise": "330 words; the summary, category table, six study steps and Docita note are the only prose, and each chapter is described once.",
+    "focused": "Navigation only: it points at seven chapters and their revision drill without retelling their mechanisms.",
+    "fast": "Built page measured at 54.7 KB raw / 13.5 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Maps eight content files in a defensible order; it does not teach any library or pattern itself."
+   }
   },
   "10-frontend/10.5-form-handling/REVISION.md": {
-   "sha256": "2eeafe3c4bdcb057cc32c43d4c5c996d58f2b9521e30c151e7dcc1726bc69210",
-   "lines": 121,
+   "sha256": "76392d7456e539ec122721dd91858c6bf29cc8588808bbded9c343e75a9d4d4b",
+   "lines": 122,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-18",
+   "evidence": {
+    "current": "Every answer was checked against its source chapter and the official React 19, RHF, Zod, Formik and TanStack references; no stale API claim was found beyond the corrected source formatting on 2026-11-18.",
+    "readable": "Full read of 122 lines; source-linked question groups for all six learning chapters, followed by cross-cutting groups for form commitment, parsing boundaries and controlled submission, then a summary.",
+    "concise": "643 words; answers stay retrieval-sized across the chapter and cross-cutting groups and do not reprint chapter code.",
+    "focused": "Retrieval drill: each group names its source chapter and points at it for the full treatment.",
+    "fast": "Built page measured at 50.0 KB raw / 13.0 KB gzip; the shared shell sets a fixed floor, so compare the article delta against pages of similar length.",
+    "best": "Tests form commitment and parsing boundaries under changed conditions; it does not replace the chapters."
+   }
   },
   "10-frontend/10.6-animation/10.6.01-css-animations.md": {
    "sha256": "6b163d79dee7d50aba5ebe182c41cc992853835c9e5374e8bc49112224a53621",
@@ -7509,15 +7592,6 @@
   }
  },
  "pending": [
-  "10-frontend/10.5-form-handling/10.5.01-react-hook-form.md",
-  "10-frontend/10.5-form-handling/10.5.02-zod.md",
-  "10-frontend/10.5-form-handling/10.5.03-formik.md",
-  "10-frontend/10.5-form-handling/10.5.04-tanstack-form.md",
-  "10-frontend/10.5-form-handling/10.5.05-server-actions-and-form-patterns.md",
-  "10-frontend/10.5-form-handling/10.5.06-autosave-draft-recovery.md",
-  "10-frontend/10.5-form-handling/10.5.07-interview-questions.md",
-  "10-frontend/10.5-form-handling/INDEX.md",
-  "10-frontend/10.5-form-handling/REVISION.md",
   "10-frontend/10.6-animation/10.6.01-css-animations.md",
   "10-frontend/10.6-animation/10.6.02-framer-motion.md",
   "10-frontend/10.6-animation/10.6.03-gsap.md",

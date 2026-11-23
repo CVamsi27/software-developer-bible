@@ -15,17 +15,17 @@ For an imminent interview, start with its brief and a gap diagnosis below. For a
 **Result:** a live vacancy, known requirements and explicit uncertainties. Personal statuses stay in the canonical workspace.
 
 | Read | Purpose | Role priority | General importance |
-| ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------- | ------------- | ------------------ |
+| ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------- | ------------- | ------------------ |
 | [Find Startup and Product Roles Without a Stale Job List](../00-strategy/00.05-find-startup-roles.md) | Discover companies and verify a current opening | Essential | Important |
 | [Company Profiles — Research the Employer and the Role](80.07-company-profiles.md) | Research the exact company and vacancy | Important | Specialized |
-| [Maintain a German Role Research Database](80.23-german-companies-database.md) | Keep dated company research | Important | Specialized |
-| [Germany Target Engine — Choose a Role and Keep Its Status Current](80.35-germany-target-engine.md) | Evaluate the role and maintain application status | Important | Specialized |
-| [Visa & Relocation Playbook — Eight European Countries](80.06-visa-relocation-playbook.md) | Check the immigration route | Important | Specialized |
-| [Check German Employer Relocation Support](80.20-germany-visa-relocation-companies.md) | Clarify employer relocation support | Important | Specialized |
+| [Maintain a German & EU Startup Role Research Database](80.23-german-companies-database.md) | Verified public ATS hubs + dated role database | Important | Specialized |
+| [Germany Target Engine — Turn Live Vacancies Into High-Fit Applications](80.35-germany-target-engine.md) | Evaluate live roles and maintain application funnel | Important | Specialized |
+| [Visa & Relocation Playbook — Eight European Countries](80.06-visa-relocation-playbook.md) | Check 2026 immigration routes and thresholds | Important | Specialized |
+| [Check German Employer Relocation Support](80.20-germany-visa-relocation-companies.md) | Clarify employer relocation support and Anabin/ZAB | Important | Specialized |
 | [Compensation Benchmarking — Compare the Actual Offer](80.05-comp-eu-benchmarking.md) | Compare compensation on equivalent terms | Important | Specialized |
 | [Berlin Dual-Career Planning — Verify the Dependencies](80.14-berlin-dual-career-plan.md) | Plan household relocation dependencies | Important | Specialized |
 | [EU Regulatory Compliance — GDPR, BaFin, EU AI Act, Digital Services Act](80.24-eu-regulatory-compliance.md) | Identify applicable regulatory responsibilities | Important | Specialized |
-| [Learn a Team's Working Norms](80.25-german-workplace-culture.md) | Confirm team practices and contract terms | Important | Specialized |
+| [Learn a Team's Working Norms & German Employment Basics](80.25-german-workplace-culture.md) | Confirm team practices and statutory contract floors | Important | Specialized |
 
 ## 2. Diagnose gaps and choose a study plan
 

@@ -203,4 +203,4 @@ projects → Docita architecture deep-dives, interview defense
 
 ---
 
-*Last updated: November 2026 — 991 files, 159K lines, 0 broken links — folders numbered for study order. 680 of the 989 files are learning chapters; the rest are indexes, revision companions, interview banks and review records. Every large stack is organized into numbered category subfolders; the auth track covers passkeys/SAML; sequences are contiguous inside each stack folder. The 80.x lane numbering intentionally leaves room for project-preparation chapters.
+*Last updated: November 2026 — 991 files, 158K lines, 0 broken links — folders numbered for study order. 680 of the 989 files are learning chapters; the rest are indexes, revision companions, interview banks and review records. Every large stack is organized into numbered category subfolders; the auth track covers passkeys/SAML; sequences are contiguous inside each stack folder. The 80.x lane numbering intentionally leaves room for project-preparation chapters.

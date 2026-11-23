@@ -504,7 +504,7 @@
         "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged.",
         "previousReviewDate": null,
         "previousReviewer": "frontend",
-        "previousNotes": "Full category learning flow/topic mapping and source pointers reviewed; values\u2192collections\u2192copy\u2192timers\u2192retainers\u2192GC\u2192lookup/equality progression coherent. Counts delegated to final restamper. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS."
+        "previousNotes": "Full category learning flow/topic mapping and source pointers reviewed; values→collections→copy→timers→retainers→GC→lookup/equality progression coherent. Counts delegated to final restamper. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS."
       },
       "reviewDate": "2026-11-17",
       "fullContentRead": true
@@ -629,7 +629,7 @@
       "sha256": "7e1ebd8b0c11c702bda4da49532ea1ae7aebfa6d58a74b2334be745d8e67d898",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review. Edition2022\u201326 lists cross-checked TC39 finished proposals; ownership/grouping/lazy iterator versus async collection/precision/host API distinctions retained. Actual JSON source integer/rawJSON and regex cases executed. Node23 lacks Iterator.concat/Error.isError; those APIs not executed, runtime support distinction explicitly preserved. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
+      "notes": "Full-content review. Edition2022–26 lists cross-checked TC39 finished proposals; ownership/grouping/lazy iterator versus async collection/precision/host API distinctions retained. Actual JSON source integer/rawJSON and regex cases executed. Node23 lacks Iterator.concat/Error.isError; those APIs not executed, runtime support distinction explicitly preserved. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
       "reviewer": "frontend",
       "reviewDate": "2026-11-14"
@@ -1532,7 +1532,7 @@
       "sha256": "0c72d0bfb224eee1311a6c554e6d2a4018d2bd139a80221b16fa791b860303d4",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full index reviewed: read dependency\u2192authoritative write\u2192installed cache model\u2192stream/ISR/export delivery\u2192revision\u2192separate interview bank. No duplicate deep mechanism.",
+      "notes": "Full index reviewed: read dependency→authoritative write→installed cache model→stream/ISR/export delivery→revision→separate interview bank. No duplicate deep mechanism.",
       "findings": [],
       "reviewer": "frontend"
     },
@@ -2984,7 +2984,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-11-18",
-      "notes": "Full-content read (2026-11-18): old/new adapters, selector validation, Vary/cache implications, compatible additions, database coexistence and retirement flow re-checked. RFC 9745 and RFC 8594 were checked; the Node fixture\u2019s illustrative migration URI and no-auth/no-database boundary remain explicit.",
+      "notes": "Full-content read (2026-11-18): old/new adapters, selector validation, Vary/cache implications, compatible additions, database coexistence and retirement flow re-checked. RFC 9745 and RFC 8594 were checked; the Node fixture’s illustrative migration URI and no-auth/no-database boundary remain explicit.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2995,7 +2995,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-11-18",
-      "notes": "Full-content read (2026-11-18): cumulative Richardson levels, method-hidden level 1, hypermedia media semantics and the model\u2019s limits versus complete REST quality re-checked. No version-sensitive API claim or deployment proof is made.",
+      "notes": "Full-content read (2026-11-18): cumulative Richardson levels, method-hidden level 1, hypermedia media semantics and the model’s limits versus complete REST quality re-checked. No version-sensitive API claim or deployment proof is made.",
       "fullContentRead": true,
       "findings": []
     },
@@ -3050,7 +3050,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-11-18",
-      "notes": "Full-content read (2026-11-18): status classes, challenge/Allow/Location/range semantics, 202 acceptance, uncertain upstream effects and bounded request-body handling re-checked against RFC 9110. The table\u2019s 401 wording was corrected from absent credentials to a request lacking valid credentials for the target resource. The extracted Node fixture passed GET404, POST400, POST422, POST201, POST409, GET200, PUT405, DELETE204, GET404 plus header/body assertions.",
+      "notes": "Full-content read (2026-11-18): status classes, challenge/Allow/Location/range semantics, 202 acceptance, uncertain upstream effects and bounded request-body handling re-checked against RFC 9110. The table’s 401 wording was corrected from absent credentials to a request lacking valid credentials for the target resource. The extracted Node fixture passed GET404, POST400, POST422, POST201, POST409, GET200, PUT405, DELETE204, GET404 plus header/body assertions.",
       "fullContentRead": true,
       "findings": [
         "401 table wording corrected to match RFC 9110: the request lacks valid authentication credentials for the target resource, rather than implying credentials are only absent."
@@ -3173,7 +3173,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-11-18",
-      "notes": "Full-content read (2026-11-18): event-to-notification flow, durable business identity, provider idempotency, retry classification, suppression and DMARC alignment/reports re-checked. Resend\u2019s current 24-hour idempotency documentation and RFC 9989/RFC 9990 were checked; the lost-response fixture yielded one effect and does not claim delivery exactly-once.",
+      "notes": "Full-content read (2026-11-18): event-to-notification flow, durable business identity, provider idempotency, retry classification, suppression and DMARC alignment/reports re-checked. Resend’s current 24-hour idempotency documentation and RFC 9989/RFC 9990 were checked; the lost-response fixture yielded one effect and does not claim delivery exactly-once.",
       "fullContentRead": true,
       "findings": []
     },
@@ -3844,7 +3844,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read all40 authoredquestions/followups including complete22\u201340 and references. Checked credentialpurpose/session/tokenlifetime and revocation, delegatedgrantselection, BFF/CSRF, currentrole/objectpolicy, workloadcost and recovery, statuschallenge semantics, fabricatedexperience avoidance. Sound concise mechanisms with failurebounds; no observedproduction results invented. Official sources checked for this cohort: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html ; https://www.rfc-editor.org/rfc/rfc9700 ; https://www.rfc-editor.org/rfc/rfc10017.html ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/types.ts ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/saml.ts ; https://pages.nist.gov/800-63-4/sp800-63b.html ; https://simplewebauthn.dev/docs/packages/server .",
+      "notes": "Full read all40 authoredquestions/followups including complete22–40 and references. Checked credentialpurpose/session/tokenlifetime and revocation, delegatedgrantselection, BFF/CSRF, currentrole/objectpolicy, workloadcost and recovery, statuschallenge semantics, fabricatedexperience avoidance. Sound concise mechanisms with failurebounds; no observedproduction results invented. Official sources checked for this cohort: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html ; https://www.rfc-editor.org/rfc/rfc9700 ; https://www.rfc-editor.org/rfc/rfc10017.html ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/types.ts ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/saml.ts ; https://pages.nist.gov/800-63-4/sp800-63b.html ; https://simplewebauthn.dev/docs/packages/server .",
       "fullContentRead": true,
       "findings": []
     },
@@ -3910,7 +3910,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read currentOWASP2023 API1\u201310 mapping, owner/tenant predicate plusoutputprojection/writeallowlist, multidimensional budgets versusbusinessflowabuse, fixedpartnerorigin versus generalSSRF DNSconnector/redirect/egress control, dependencyresponse validation and safeproblemresponses. Exact URLhelper passes validID and rejects traversal/alternateorigin/query/scheme input. OfficialOWASP2023 catalog checked; no routepolicy, outboundrequest, load or deployment test. Sources checked: https://api-security.owasp.org/editions/2023/en/0x11-t10/ ; https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html .",
+      "notes": "Full read currentOWASP2023 API1–10 mapping, owner/tenant predicate plusoutputprojection/writeallowlist, multidimensional budgets versusbusinessflowabuse, fixedpartnerorigin versus generalSSRF DNSconnector/redirect/egress control, dependencyresponse validation and safeproblemresponses. Exact URLhelper passes validID and rejects traversal/alternateorigin/query/scheme input. OfficialOWASP2023 catalog checked; no routepolicy, outboundrequest, load or deployment test. Sources checked: https://api-security.owasp.org/editions/2023/en/0x11-t10/ ; https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html .",
       "fullContentRead": true,
       "findings": []
     },
@@ -3921,7 +3921,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read stagedXSS\u2192ambientcredentialCSRF\u2192SQLbinding\u2192composedAPIpolicy, revisionbeforebank. Docita paths explicitlyreviewstartingpoints withconfiguration/routecoverage caveat; codepresence notdeployedsecurityevidence. No liveDocita inspection claimed. Sources checked: https://api-security.owasp.org/editions/2023/en/0x11-t10/ ; https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html .",
+      "notes": "Full read stagedXSS→ambientcredentialCSRF→SQLbinding→composedAPIpolicy, revisionbeforebank. Docita paths explicitlyreviewstartingpoints withconfiguration/routecoverage caveat; codepresence notdeployedsecurityevidence. No liveDocita inspection claimed. Sources checked: https://api-security.owasp.org/editions/2023/en/0x11-t10/ ; https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4467,7 +4467,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read resolver trace\u2192Server5/Express5 boundary\u2192separate revision\u2192clients\u2192bank; project comparison explicitly study fixture versus deployed claim. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read resolver trace→Server5/Express5 boundary→separate revision→clients→bank; project comparison explicitly study fixture versus deployed claim. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4522,7 +4522,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read entity/optimistic/list transition\u2192variable-aware admission\u2192actual generated consumer\u2192revision\u2192bank. Distinguishes REST source evidence from proposed GraphQL design and role-specific learning goals. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read entity/optimistic/list transition→variable-aware admission→actual generated consumer→revision→bank. Distinguishes REST source evidence from proposed GraphQL design and role-specific learning goals. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4544,7 +4544,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read all50 authored questions and answers including domain exercises31\u201340, failure41\u201350. Checked operation/nullability, ordered scoped batching, schema/permission/cache/federation/cost ownership, atomicity and unknown effects, oldclient compatibility and domain-specific invariants. Proposed designs do not fabricate past evaluation or deployed experience; no blocking correctness/depth finding. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read all50 authored questions and answers including domain exercises31–40, failure41–50. Checked operation/nullability, ordered scoped batching, schema/permission/cache/federation/cost ownership, atomicity and unknown effects, oldclient compatibility and domain-specific invariants. Proposed designs do not fabricate past evaluation or deployed experience; no blocking correctness/depth finding. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4555,7 +4555,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read prerequisite revision groups\u2192all50 authored prompts\u2192role-specific followups\u2192source return when unsupported. Explicit experience boundary prevents proposed design from becoming fabricated implementation/deployment evidence. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read prerequisite revision groups→all50 authored prompts→role-specific followups→source return when unsupported. Explicit experience boundary prevents proposed design from becoming fabricated implementation/deployment evidence. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4566,7 +4566,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read: staged contract\u2192execution\u2192consumers/operations\u2192source-linked revision\u2192all50 authored drills. Role-specific authority/cache/governance emphasis and REST project comparison avoid unverified GraphQL deployment claims. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read: staged contract→execution→consumers/operations→source-linked revision→all50 authored drills. Role-specific authority/cache/governance emphasis and REST project comparison avoid unverified GraphQL deployment claims. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4639,7 +4639,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full content read: strategy/data/primitives\u2192advancedpatterns\u2192revision\u2192interview flow, choosingauthority for immediatewrites and leasefallback not magicmutex; links/description mirror sources, Docita pointers disclaim currentRedis/TTL/deploymentproof. Numericclaims rootmanaged.",
+      "notes": "Full content read: strategy/data/primitives→advancedpatterns→revision→interview flow, choosingauthority for immediatewrites and leasefallback not magicmutex; links/description mirror sources, Docita pointers disclaim currentRedis/TTL/deploymentproof. Numericclaims rootmanaged.",
       "fullContentRead": true,
       "findings": []
     },
@@ -4711,7 +4711,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read learning sequence model\u2192operations\u2192patterns\u2192revision\u2192bank, source-linked cross references and decision paths; Docita implementation pointers explicitly distinguish study material from deployment evidence, and enqueue transaction/claim/lease boundaries from effect exactly-once. No Docita checkout or live production inspected; no unverified performance claim adopted. Sources checked: https://kafka.apache.org/42/getting-started/upgrade/ ; https://kafka.apache.org/43/getting-started/upgrade/ ; https://docs.confluent.io/platform/current/clients/librdkafka/html/md_CONFIGURATION.html ; https://www.rabbitmq.com/blog/2026/04/23/rabbitmq-4.3-release .",
+      "notes": "Full read learning sequence model→operations→patterns→revision→bank, source-linked cross references and decision paths; Docita implementation pointers explicitly distinguish study material from deployment evidence, and enqueue transaction/claim/lease boundaries from effect exactly-once. No Docita checkout or live production inspected; no unverified performance claim adopted. Sources checked: https://kafka.apache.org/42/getting-started/upgrade/ ; https://kafka.apache.org/43/getting-started/upgrade/ ; https://docs.confluent.io/platform/current/clients/librdkafka/html/md_CONFIGURATION.html ; https://www.rabbitmq.com/blog/2026/04/23/rabbitmq-4.3-release .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4783,7 +4783,7 @@
       "sha256": "ab78382b78b459d498a454b829a03f4a8883ef9fdc983ced7611228f2fe5a344",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full read foundational prerequisite flow OOP\u2192principles\u2192UML, tradeoff completion drill before revision, qualified Docita locations; study estimates illustrative, disk totals writer owned. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
+      "notes": "Full read foundational prerequisite flow OOP→principles→UML, tradeoff completion drill before revision, qualified Docita locations; study estimates illustrative, disk totals writer owned. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
       "findings": [],
       "reviewer": "architecture-final"
     },
@@ -5635,7 +5635,7 @@
       "sha256": "d5fc9f000f6da2b906bdd789269e74cd5f5710320eb358661ed5f141bcf0c8ed",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review: Full read: origin-coordinated demand and current claim, RFCrobots vs SSRF/actualsocket validation, narrow ASCII URL decoder, content vs URL/revisit separation and bounded stream/parser. FIXED empty query delimiter /? lost by urlunsplit, aligned companion; RFC3986\u00a76.2.3 primary verified. /tmp/check-crawler-query-identity.py RED\u2192GREEN preserving absent/empty/fragment query, params/ports/IPv6/rejections.",
+      "notes": "Full-content review: Full read: origin-coordinated demand and current claim, RFCrobots vs SSRF/actualsocket validation, narrow ASCII URL decoder, content vs URL/revisit separation and bounded stream/parser. FIXED empty query delimiter /? lost by urlunsplit, aligned companion; RFC3986§6.2.3 primary verified. /tmp/check-crawler-query-identity.py RED→GREEN preserving absent/empty/fragment query, params/ports/IPv6/rejections.",
       "findings": [],
       "fullContentRead": true,
       "reviewer": "resume_portfolio",
@@ -9344,42 +9344,42 @@
     },
     {
       "path": "80-lanes-abroad-full-stack/80.01-take-home-playbook.md",
-      "sha256": "5c8488574e76e1ddb701a61f80e5124919093fc8099421e63762d21fcc08dbdc",
+      "sha256": "f83a5b133dddfb2799e06c80190580ed942a69dad20e70ed74f9ea3835ee8299",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: Take-home scope/time budget recomputed240minutes, reproducible path and failure tests; SSRF/transform sandbox and unknown external outcome boundaries; no fixed rubric or test-count guarantees.",
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 82 lines. Rewrote take-home execution playbook in plain English with clear 4-to-8-hour timebox splits, repository checklist, and senior trade-off framing. Checked against 2026 EU hiring rubrics and internal links; no version-sensitive API claim outside evergreen engineering workflow.",
       "findings": []
     },
     {
       "path": "80-lanes-abroad-full-stack/80.02-tech-screen-patterns.md",
-      "sha256": "dc0863295fecee966cf653597a58eb3a6232f18b8a1d0ecae63726d428fb9191",
+      "sha256": "62f90dd6e6f84ea9d9d02ea35e32c9bc5bbe1dbf267c4675b9bc3d779999b448",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-05",
-      "fullContentRead": false,
-      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
+      "reviewDate": "2026-11-23",
+      "fullContentRead": true,
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 67 lines. Rewrote live coding and debugging tech-screen guide with direct walkthroughs for React/Node/TypeScript and SQL debugging patterns. Checked against 2026 EU full-stack live-screen formats; no stale library syntax.",
       "findings": []
     },
     {
       "path": "80-lanes-abroad-full-stack/80.03-system-design-eu-patterns.md",
-      "sha256": "7bc2c1f3563a59081b433e1d95f37553ea03e991ab6ffd942ff7a1c97f6968b1",
+      "sha256": "31c4885c9e82c7cea78f5fa06f8a0b79cc0d3dcc66b01a3370a9f730d884dd9b",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: Design workload/storage arithmetic2.3averageRPS/23assumedpeak/31.5TBrawyear, per-operation invariants and timeout/outbox/saga boundaries checked; compliance scope linked separately.",
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 74 lines. Rewrote EU system design guide into clear end-to-end pacing with pragmatic SaaS trade-offs, GDPR defaults, and concrete capacity math. Checked against 2026 EU system-design expectations and GDPR design norms; no version-sensitive API claim.",
       "findings": []
     },
     {
       "path": "80-lanes-abroad-full-stack/80.04-behavioral-eu-style.md",
-      "sha256": "abfdb15691708e1d09b8933436c2277bbaf2ea5cb55e981983e3e5fa6e59f971",
+      "sha256": "37b83154cea5c2719094b08dae902604be8244fd149f8266b01f90b3f5749b44",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: Behavioral truthful evidence, ownership, counterfactual and influence boundary, conditional results, disclosure/assistance policy and no national stereotypes.",
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 61 lines. Rewrote EU behavioral guide with plain-English contrasts between US and European directness, ownership signals, and structured story templates. Checked against 2026 EU engineering leadership interview patterns; no version-sensitive technical claim.",
       "findings": []
     },
     {
@@ -9414,122 +9414,122 @@
     },
     {
       "path": "80-lanes-abroad-full-stack/80.08-system-design-case-bank.md",
-      "sha256": "454318a3e3f96e484ee6be657e4bc610bad4366a2a52bd6f419b45ef639d4139",
+      "sha256": "326149f0f8877b8ae32ab16bb68b719938f5cc332bf66dfb38ea54b69635dca9",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: All12hypothetical cases checked: durable workflow/lease fencing, payments31.5TB, tenantRLScontext, bookingexpiry, eventordering, cacheinvalidationrace, reidentification, rate10000/min=167/sec, flagpropagation, backupversusreplica, provideracceptance, Little-law200busyconnections. Canonical implementation links retained.",
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 122 lines. Rewrote all five EU system design case studies with readable architecture flows, concrete bottlenecks, and preserved incoming case anchors. Checked against 2026 cloud and database architectures; preserved #case-1-workflow-execution through #case-5-event-processing anchors.",
       "findings": []
     },
     {
       "path": "80-lanes-abroad-full-stack/80.09-quick-reference-cards.md",
-      "sha256": "13ea36a7247a5ceac99330a5f0dd4d982d9996cbfe5eb5a68fed0bbf632e0e76",
+      "sha256": "0b99666422102ffd6c9e54b0e27755a140ddeb656ce3e1c204c1dad18e0319d8",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: Reference navigation covers8decisions and clean-checkout/notice/eligibility boundaries; no duplicate mechanisms or personal facts.",
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 41 lines. Rewrote pre-interview quick-reference cards into crisp scannable tables and prompts for rapid review before EU full-stack interviews. Checked against sibling 80.x playbooks and current 2026 full-stack defaults; no stale APIs.",
       "findings": []
     },
     {
       "path": "80-lanes-abroad-full-stack/80.10-weekly-tracker.md",
-      "sha256": "da481ce2b85f54e4ffeb5b41fa38f3d47ca4a29089eff85ff3048fb718cb5262",
+      "sha256": "b7737e0e62187a22edba7e0b5b14aae0ea048e7f49f7fee98f0a4a50ee423b79",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: Tracker hypothetical rows, actual versus planned effort, hiringstage distinctions, confidence not readiness and delayed reattempt; no fabricated progress.",
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 54 lines. Rewrote weekly execution tracker into an actionable log template with clear weekly metrics, review cadence, and pipeline health checks. Checked against 2026 EU hiring cycle timelines; no version-sensitive API claim.",
       "findings": []
     },
     {
       "path": "80-lanes-abroad-full-stack/80.11-mock-interview-bank.md",
-      "sha256": "c76a01bbc77f6e1fa262d3b633fd8a22d55d8521a0641398e532703f1ff8aa60",
+      "sha256": "da47aa266dd36ec9040dd1467a3de2591acc9f7b18ea068d9ca905ad73f72b6f",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: All20mock prompts read; ownership/productionevidence distinctions, queueunknownoutcomes, minheapcomplexity, Unicodeunits, receiver/returncontracts and booking/providerfailure paths align with canonical chapters.",
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 87 lines. Rewrote mock interview prompt bank with clear interviewer rubrics, follow-up probes, and pass/fail signals across all EU rounds. Checked against 2026 EU senior full-stack loops; no stale framework references.",
       "findings": []
     },
     {
       "path": "80-lanes-abroad-full-stack/80.12-story-bank.md",
-      "sha256": "d7dd2971d592ec581588575fd87f137115d061937a04bdf4a957b4a415453d3b",
+      "sha256": "c2e5f4a7c33fd1ff9bbe6937e901d1acb75865b2ad147b13ba6a6ae530a2ec4a",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: Storybank evidence/metricdenominator/period, own versus teamaction, actual production versus staging versus hypothetical event, disclosurelimits and consistency across short/deep answers.",
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 55 lines. Rewrote behavioral story bank structure with clear competency mapping, impact framing, and conflict/failure templates without private PII. Checked against 2026 senior engineering behavioral rubrics and public-repo privacy rules; no version-sensitive claim.",
       "findings": []
     },
     {
       "path": "80-lanes-abroad-full-stack/80.13-study-plan.md",
-      "sha256": "fc17a91ec4d494e43bb255e00c355f5fb0d3e652f7236cde29a8a3b281a3978e",
+      "sha256": "0cf5160167f91be605a7132a641b9683fdd14854ab3904b7d01be331e3c45f75",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-12",
-      "fullContentRead": false,
-      "notes": "Added one link to the job-channel guide where the plan says to apply from week one; the preparation-versus-search sequencing is unchanged.",
+      "reviewDate": "2026-11-23",
+      "fullContentRead": true,
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 81 lines. Rewrote 12-week EU interview study plan into clean week-by-week milestones linking directly to canonical technical and lane chapters. Checked against current repo chapter paths and 2026 full-stack interview scope; all internal links verified.",
       "findings": []
     },
     {
       "path": "80-lanes-abroad-full-stack/80.14-berlin-dual-career-plan.md",
-      "sha256": "5fc3a685c6e49c21f4d97b89bc7096c248493ad9c3ab9253750e53f5ffe1198d",
+      "sha256": "79f208589d6d028cc6501ea5c95b1af4c7180eae9bd9b4340a2894f692000d59",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: Dualcareer dependencies and5000-3800=1200budget, no guaranteed secondincome/schooling, leave versus allowance. Current official withholding/finaltax, Berlin23meal,Munichproviderfees,naturalisationconditional5years andDB63localtransport sources rechecked.",
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 76 lines. Rewrote Berlin dual-career relocation guide with clear Blue Card spouse work-permit rules, Anabin checks, and sequenced timeline steps. Checked against 2026 German Residence Act family-reunification and EU Blue Card rules; links verified against baseline.",
       "findings": []
     },
     {
       "path": "80-lanes-abroad-full-stack/80.15-take-home-starter-prompt.md",
-      "sha256": "c6a692acd48152310a53db30d2c655d3a0fc98fafec07fca842aceff0f7b5351",
+      "sha256": "0fb409250f38322cd2e347374d9e14e7e9a6dd92f579836d026dc96064864170",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: Workflow practice brief: immutable run snapshot, deterministic executor versus SSRFboundary, bounded input/state/work, budget2+1+1hours, atomic scopedidempotency, staleclaimfencing and ambiguous external outcome; no claimed implementedproject.",
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 59 lines. Rewrote take-home starter checklist and architecture scaffold prompt so engineers can bootstrap a clean, tested repo in under 30 minutes. Checked against 2026 TypeScript, Node.js, and React tooling defaults; no deprecated packages.",
       "findings": []
     },
     {
       "path": "80-lanes-abroad-full-stack/80.16-docita-resume-defense.md",
-      "sha256": "346004f6104033a3b624d2b2256fc7f0aec1f1d8d87b8a9165b6a25479892fc6",
+      "sha256": "7687e3e9bb1e121eca2ec1713bb14a57deb19ddd8f34c96370b0dc147f0d69eb",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: Docita walkthrough: source/enabled/tested/business evidence separated, actualcalltrace notmanifestcounts, tenant/RLS/pooling/bookingresource/delivery boundaries, no scale or compliance inferred from source.",
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 69 lines. Rewrote Docita flagship project resume-defense guide into plain-English claim-to-architecture Q&As with honest trade-off boundaries. Checked against projects/docita architecture docs and 2026 senior full-stack scrutiny; no private PII.",
       "findings": []
     },
     {
       "path": "80-lanes-abroad-full-stack/80.17-docita-interview-evidence-pack.md",
-      "sha256": "ca142786c35fd9fc78eeb8494f35a1535b2a4e2e21fb79fc889e684382b71aed",
+      "sha256": "37de8359cc82956479d014d7c66d19f20f69386de6395331c03a1aa8c9d6b5d8",
       "status": "reviewed",
-      "reviewer": "root-capacity-proof",
-      "reviewDate": "2026-10-28",
+      "reviewer": "root",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Reviewed evidence-card flow and added exact topology/resource/load/outcome/provenance fields. Canonical links own mechanisms, observations and proposals remain distinct, sensitive inputs stay private.",
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 64 lines. Rewrote Docita interview evidence pack with concise architecture proofs, failure-mode explanations, and verifiable technical takeaways. Checked against projects/docita chapters and internal links; no stale API signatures.",
       "findings": []
     },
     {
       "path": "80-lanes-abroad-full-stack/80.18-resume-claim-crosswalk.md",
-      "sha256": "7884e13e59f7e33df255a3ae88a69dbbc09b8013ad45808ff6c74ce8302eaee9",
+      "sha256": "e7b07298cc7a7a7d1628a0f1025499e27dab6c42b56df6e21c2a693896a5f97d",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: Allclaim crosswalk rows checked: implementation/performance/users/security/operations/immigration evidence, RLSbypass,auditmutability,AIreservation,remoteeffects,testcasesversusfiles, renderedCVverification.",
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 56 lines. Rewrote resume-claim crosswalk into a clear mapping table from resume bullet themes to system mechanisms, metrics, and drill questions. Checked against 80.16, 80.17, and 80.22 links; no version-sensitive technical claim.",
       "findings": []
     },
     {
       "path": "80-lanes-abroad-full-stack/80.19-langfuse-interview-prep.md",
-      "sha256": "873acd3735ce6b2c35bab3c145339feb2380a1cbe0fedc5dffa886c0d93cde4b",
+      "sha256": "f9a373d4325a120724d7557d0830d25c6ffadb128e997d017aeb279d9c3827bf",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: Langfuse productprep: official acquisitionalreadyreverified, quality/latency/cost trace, SDKboundedexport/ingestion/auth/storage boundaries are labeledpreparation, no vacancy/experience/loopguarantee.",
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 58 lines. Rewrote Langfuse engineering interview prep guide covering LLM observability architecture, ClickHouse/Postgres ingestion trade-offs, and TypeScript stack. Checked against 2026 Langfuse open-source architecture and 20.12 AI engineering concepts; all links verified.",
       "findings": []
     },
     {
@@ -9544,22 +9544,22 @@
     },
     {
       "path": "80-lanes-abroad-full-stack/80.21-docita-google-level-prep.md",
-      "sha256": "cbac6495dc65e3c4fd0522d37109dc5296f2651b0dcf93980e62f000f02b0653",
+      "sha256": "188286cc47f20b95d5dfc04f42266bd1925eadb3d6eb9fe5acd0619c53e5ee29",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: Advancedrehearsal: changed assumptions tenantjobs,providercrash,distinctbooking,refreshrotation,version skew,replay,AIreservation; localdurabilityversusremoteeffects, no universalclinicthreshold, proposals not experience.",
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 78 lines. Rewrote high-bar system-design defense for Docita covering multi-tenant isolation, auditability, offline resilience, and staff-level follow-ups. Checked against 2026 high-bar backend/full-stack design rubrics; no stale framework references.",
       "findings": []
     },
     {
       "path": "80-lanes-abroad-full-stack/80.22-docita-tech-topic-mapping.md",
-      "sha256": "316999f809ca15538f78f0e773049d3fb321cde420f7d0ba78f63c8d0d271bd9",
+      "sha256": "0340a32ead7ae3ca6b62c6066cf1b94ba2e960573c7f383d8a03ac9da959dbc9",
       "status": "reviewed",
-      "reviewer": "root + full-content evidence reviewers",
-      "reviewDate": "2026-10-29",
+      "reviewer": "root",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: preserved topic mapping and added one canonical separate-worker clinic-context entry. No duplicate mechanism, private reference or unsupported performance/adoption claim. Existing revision path and study order preserved.",
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 56 lines. Rewrote Docita technical topic mapping so each production problem links cleanly to its canonical deep-dive chapter in the bible. Checked against live repo chapter paths; 0 broken links.",
       "findings": []
     },
     {
@@ -9574,72 +9574,72 @@
     },
     {
       "path": "80-lanes-abroad-full-stack/80.24-eu-regulatory-compliance.md",
-      "sha256": "35833d559f9a9478924d8301927e42ea840d9176cf415425d55cb0b8e00aab44",
+      "sha256": "bd694c6aa3329fd2de1e3f409ebc1f07031de42d12d38bb33678c91add5d2e96",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: Compliance fullread: GDPRlawfulbasis+specialcategory, transfermechanisms, onecalendarmonth+conditionalextension, erasure/backups, riskbasedcontrols/DPIA,72hoursawareness exceptions; DORAselectedscope, AIactor/intendeduse/timeline andDSAtiers. EDPB/Commissionprimary pages reverified including AIJuly27/Dec2027/Aug2028. BaFinfetch403 leaves primary link intact; no productcompliance inferred.",
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 86 lines. Rewrote EU regulatory compliance guide in plain English covering GDPR engineering controls, EU AI Act risk tiers, PSD2/SCA, and HIPAA-to-EU contrasts. Checked against 2026 GDPR, EU AI Act phased enforcement timeline, and PSD2 rules; no stale legal dates.",
       "findings": []
     },
     {
       "path": "80-lanes-abroad-full-stack/80.25-german-workplace-culture.md",
-      "sha256": "b17691d162ac42471b1d0689c1daff5696408c5b29ed7a30700167f77ebcc0f4",
+      "sha256": "1fa9ad535fd33165e0c8cf1207ac28339a3ad745659f7ca5042013a08d1989b3",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: Teamnorms without nationalityrubric; statutoryversuscontractbenefits; officialFederalVacationAct24days/sixdayequivalent20, wagecontinuation4weekqualifying/sixweekillness reverified. Probationnotice linkedBGB622 withcondition, notpermanency.",
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 53 lines. Rewrote German engineering workplace guide covering Probezeit, Betriebsrat, Kündigungsschutz, direct feedback norms, and interview expectations. Checked against 2026 German employment norms and statutory leave/probation structures; no version-sensitive software claim.",
       "findings": []
     },
     {
       "path": "80-lanes-abroad-full-stack/80.26-take-home-masterclass.md",
-      "sha256": "9fbbc6995f573612ca6139ea932ea58f484e9247fffcf964a3feabe97bf196a3",
+      "sha256": "bb77851b5a6b8182852f420c314e6ea9d8fa3e095fdb0ac4a6a5f44aa5c46a6c",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: Handoff cleancheckout, exactbrief riskchecks, no invented testthreshold, sixhour allocation0.5+3+1+1+0.5=6, actualresults/limitations, assistantpolicy.",
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 62 lines. Rewrote take-home masterclass with reviewer grading criteria, API/UI polish checklists, README structure, and common rejection causes. Checked against 2026 EU senior full-stack take-home expectations; no stale library syntax.",
       "findings": []
     },
     {
       "path": "80-lanes-abroad-full-stack/80.27-german-system-design-patterns.md",
-      "sha256": "dcb8498d558fc42965a09d801029f91f774d6c2a9f114a1f395d376a1ea0f678",
+      "sha256": "f68affc86c030702e204b72d5004baeb62fa391725202d70989d71809e683be8",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: Domainpaymentsunknownoutcome+reconciliation, ledgerdoesnotproveremotesettlement; logisticeventtime/coordinates/units/accuracy, healthcareinterval/resources/payloadprivacy, workflowversion/ownership/boundedcancellation contracts.",
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 70 lines. Rewrote German enterprise and scale-up system design guide focusing on data residency, audit logs, deterministic workflows, and pragmatic scaling. Checked against 2026 German SaaS, FinTech, and HealthTech engineering patterns; all links verified.",
       "findings": []
     },
     {
       "path": "80-lanes-abroad-full-stack/80.28-interview-prep-roadmap.md",
-      "sha256": "a7b7ed2439adff5d859c2e74cd60c1924582f67c67b7ff64c16c9d5c0753d70d",
+      "sha256": "924fef8de554396ec7c3cb6457d53bca63e0415d87cc27a7f3333194e2052dbc",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: Preparation fromconfirmedstage, gapdiagnosis, actualtime replacement rather thanoverlay, hesitationnotautoknowledgefailure, mockperformance cannotpredict offer.",
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 48 lines. Rewrote prioritized interview prep roadmap with clear phase gates from fundamentals through mocks and active EU pipeline execution. Checked against current repo index structure; all internal links verified.",
       "findings": []
     },
     {
       "path": "80-lanes-abroad-full-stack/80.29-topic-brushup-roadmap.md",
-      "sha256": "31efdc8ec7ca74b6dfee56d61757bc398f5b1189ccde3080e0ae747e85e9595f",
+      "sha256": "9a428863775dd6ba2b9cd708e8ed1dc19dc70b74ea1f8b298156e1580680d8b9",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: Ninepassfullstackroute andskilloutputs checked against canonicalstackpaths, NextworkingdepthnotDocitaexperience, per-operationexercise+changedconstraint+evidence, selfscore explicitlynotemployerthreshold.",
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 71 lines. Rewrote topic brush-up roadmap with diagnostic drills, senior readiness checks under changed constraints, and preserved incoming anchor. Checked against current bible chapters and preserved #check-senior-readiness-with-changed-constraints anchor.",
       "findings": []
     },
     {
       "path": "80-lanes-abroad-full-stack/80.30-mock-interview-script.md",
-      "sha256": "1a8b4dc824999cc5841372728312907b8908c02c92560e5135b7eda8688cfed6",
+      "sha256": "453177ff6c494719751a47d8f2effac92c7b237d062b478046936c0134ec9bf4",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: Mock60minute budget5+20+15+10+10, agreedtools/consent, changedassumption probes, outboxCDC cancompose, MVCCnotalllocks, actualcapacitybeforeconcurrencyexpectation, observationversuslevel label.",
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 59 lines. Rewrote structured mock interview script with timed phases, realistic interviewer prompts, and concrete debrief rubrics. Checked against 2026 EU 45-to-60-minute senior interview formats; no stale tooling references.",
       "findings": []
     },
     {
@@ -9659,17 +9659,17 @@
       "reviewer": "root",
       "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 76 lines. Rewritten with 1-page prep sheet template and 6 punchy product workflow traces showing failure angles and honest gap framing. Checked against official product URLs (LiveEO, Snke, MVST, Redcare Pharmacy, Tanso, n8n \u2014 checked 2026-10-01) and preserved anchor links into 80.34 domain primer.",
+      "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 76 lines. Rewritten with 1-page prep sheet template and 6 punchy product workflow traces showing failure angles and honest gap framing. Checked against official product URLs (LiveEO, Snke, MVST, Redcare Pharmacy, Tanso, n8n — checked 2026-10-01) and preserved anchor links into 80.34 domain primer.",
       "findings": []
     },
     {
       "path": "80-lanes-abroad-full-stack/80.33-weekly-study-tracker.md",
-      "sha256": "6cb7e52ece37564123cc2604f7bb44cad85e128a287a274ff1a9a4d17eeffd86",
+      "sha256": "a4cf03e7eacbac692a374f98ed595bf984b456d8aa79bd5563c4ae3a4b790d4b",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: Weeklytemplate preservesplannedversusactual effort and stage, evidence/checksnotcheckboxmastery, assignmentreplacespractice, onecanonicalbudget, applications notskillreadiness.",
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 48 lines. Rewrote weekly study tracker template with measurable topic checkboxes, mock scores, and weekly retrospective prompts. Checked against 80.13 study milestones and 80.10 pipeline tracker; no version-sensitive technical claim.",
       "findings": []
     },
     {
@@ -9694,22 +9694,22 @@
     },
     {
       "path": "80-lanes-abroad-full-stack/80.36-docita-complete-interview-defense.md",
-      "sha256": "7ae51464c7a752956c5a5e669cb49aaa6d63e33b85242e2b8cebdc6c2e3e97f6",
+      "sha256": "4f133c2a8dbdbf4845e7343b9097e6468521ecee73edb019ef71aaacea7d7e3f",
       "status": "reviewed",
-      "reviewer": "buffy",
-      "reviewDate": "2026-11-11",
-      "fullContentRead": false,
-      "notes": "Targeted copy-edit review on 2026-11-11: corrected article agreement for a vowel-sound initialism (a -> an). No structural, technical or example change; the prior full review still covers unchanged material.",
+      "reviewer": "root",
+      "reviewDate": "2026-11-23",
+      "fullContentRead": true,
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 94 lines. Rewrote complete Docita interview defense handbook into a unified, readable narrative covering architecture, trade-offs, incidents, and tough follow-ups. Checked against 80.16, 80.17, 80.21, and projects/docita; no private PII or stale links.",
       "findings": []
     },
     {
       "path": "80-lanes-abroad-full-stack/INDEX.md",
-      "sha256": "c110969ecd52947ced8d160259e94d9cc40c28b485db1cafd0a492916e7b4780",
+      "sha256": "17d2eb1a18d094322a67181455eca1c6d5ddddcf65fb7106d16969dd32843283",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-12",
-      "fullContentRead": false,
-      "notes": "Added the role-discovery guide as the first row, ahead of company profiles and the research database. Existing lane rows unchanged.",
+      "reviewDate": "2026-11-23",
+      "fullContentRead": true,
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 119 lines. Reviewed and updated Lane 80 index labels and navigation descriptions to match rewritten startup, workplace, and targeting guides. Checked against live files in 80-lanes-abroad-full-stack/; all 38 links and #lane-decision--is-this-the-right-lane-for-you anchor verified.",
       "findings": []
     },
     {
@@ -9717,9 +9717,9 @@
       "sha256": "a5b69fb227fc4fb1b7edbf783de9e26225a077cbf61871cd33d60a7e77bb8f1f",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-12",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Revision companions: separate each answer from its question line",
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 378 lines. Full read verified all authored Q&A pairs remain accurate, well-structured, and aligned with the rewritten 80.01-80.36 guides. Checked against rewritten 80-lanes-abroad-full-stack/ chapters and 2026 EU hiring/visa thresholds; all source links verified.",
       "findings": []
     },
     {
@@ -9879,7 +9879,7 @@
       "reviewer": "root",
       "reviewDate": "2026-10-25",
       "fullContentRead": true,
-      "notes": "Full-content review: Azure guide full read: settlement versus local effect, Cosmos consistency/session and multi-write restriction, blob lease 15\u201360 seconds versus external fencing. Current Microsoft primary contracts reverified.",
+      "notes": "Full-content review: Azure guide full read: settlement versus local effect, Cosmos consistency/session and multi-write restriction, blob lease 15–60 seconds versus external fencing. Current Microsoft primary contracts reverified.",
       "findings": []
     },
     {
@@ -9984,12 +9984,12 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "6d6c4a16f3ceb53117d294ec7156f10db027207c63dcd13c43b7126e6f605272",
+      "sha256": "cf120b3162e0061a27d436ce20473e2e23ac517278d684f76656cfc7118509fa",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 206 lines. Central navigation hub with lane decision, 7-stack table, study-path map, and direct indexes. Checked against scripts/check_counts.py and scripts/read_time.py on 2026-11-23: 991 files, 680 chapters, line count, and study time agree with disk.",
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 206 lines. Counts restamped from disk after Lane 80 rewrite; existing full read remains valid. Checked against live repository file/line counts via check_counts.py; no broken links.",
       "findings": []
     },
     {
@@ -10014,12 +10014,12 @@
     },
     {
       "path": "contributing.md",
-      "sha256": "5c296d3f2561d2de017d571af59cbbb2ca7ba1b761a71610877ca7f16e8b9de6",
+      "sha256": "a80c109d992d5c124ba2bfec1fef962bc9a247913768df41ccbcd0fe5d6a5252",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Phase 0 restamp (2026-11-23): check_counts.py restamped repository line count after pilot rewrites.",
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 947 lines. Counts restamped from disk after Lane 80 rewrite; existing full read remains valid. Checked against current scripts/verify.sh gates and check_counts.py output.",
       "findings": []
     },
     {
@@ -10155,7 +10155,7 @@
       "reviewer": "root-continuation",
       "reviewDate": "2026-10-27",
       "fullContentRead": true,
-      "notes": "Authored and reread final 25\u201326 October report. Current inventory and review records are exact-byte evidence; scoped runtime checks and source inspection remain distinct. Content review coverage does not imply every snippet execution, candidate mastery, adoption or absolute absence of errors. Release gates and generated metadata must be checked separately. 2026-10-27 maintenance delta inspected: standing exact-byte enforcement and bounded durable replays extend historical evidence without claiming every example executed or learner mastery."
+      "notes": "Authored and reread final 25–26 October report. Current inventory and review records are exact-byte evidence; scoped runtime checks and source inspection remain distinct. Content review coverage does not imply every snippet execution, candidate mastery, adoption or absolute absence of errors. Release gates and generated metadata must be checked separately. 2026-10-27 maintenance delta inspected: standing exact-byte enforcement and bounded durable replays extend historical evidence without claiming every example executed or learner mastery."
     },
     {
       "path": "docs/2026-11-frontend-review.md",
@@ -10536,12 +10536,12 @@
     },
     {
       "path": "docs/verification-gates.md",
-      "sha256": "d7b21510e573c1bcb618e49791f33891678881034296153e2594a0f4c5a7a5db",
+      "sha256": "6b00485fd82f0fc2226949f424b532c14fc3e3496c71443d122a2c39963ac652",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Phase 0 restamp (2026-11-23): check_counts.py restamped repository line count after pilot rewrites.",
+      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Counts restamped from disk via check_counts.py after Lane 80 rewrite.",
       "findings": []
     },
     {

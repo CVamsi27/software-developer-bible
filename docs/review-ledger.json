@@ -7733,28 +7733,64 @@
    "status": "unread"
   },
   "80-lanes-abroad-full-stack/80.01-take-home-playbook.md": {
-   "sha256": "5c8488574e76e1ddb701a61f80e5124919093fc8099421e63762d21fcc08dbdc",
-   "lines": 80,
+   "sha256": "f83a5b133dddfb2799e06c80190580ed942a69dad20e70ed74f9ea3835ee8299",
+   "lines": 82,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against 2026 EU hiring rubrics and internal links; no version-sensitive API claim outside evergreen engineering workflow.",
+    "readable": "Full read of 82 lines. Rewrote take-home execution playbook in plain English with clear 4-to-8-hour timebox splits, repository checklist, and senior trade-off framing.",
+    "concise": "717 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical take-home workflow; points at 80.15 for the starter prompt and 80.26 for the full rubric masterclass so rules are not duplicated.",
+    "fast": "14.3 KB raw / 5.4 KB gzip",
+    "best": "Remaining limit is that company-specific take-home prompts vary; readers must adapt timeboxes to each prompt's stated scope."
+   }
   },
   "80-lanes-abroad-full-stack/80.02-tech-screen-patterns.md": {
-   "sha256": "dc0863295fecee966cf653597a58eb3a6232f18b8a1d0ecae63726d428fb9191",
-   "lines": 65,
-   "genre": "lane",
-   "status": "unread"
-  },
-  "80-lanes-abroad-full-stack/80.03-system-design-eu-patterns.md": {
-   "sha256": "7bc2c1f3563a59081b433e1d95f37553ea03e991ab6ffd942ff7a1c97f6968b1",
+   "sha256": "62f90dd6e6f84ea9d9d02ea35e32c9bc5bbe1dbf267c4675b9bc3d779999b448",
    "lines": 67,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against 2026 EU full-stack live-screen formats; no stale library syntax.",
+    "readable": "Full read of 67 lines. Rewrote live coding and debugging tech-screen guide with direct walkthroughs for React/Node/TypeScript and SQL debugging patterns.",
+    "concise": "585 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical live tech-screen playbook; points at 10-frontend and 20-backend chapters for deep language internals rather than duplicating them.",
+    "fast": "14.0 KB raw / 5.3 KB gzip",
+    "best": "Remaining limit is that interview format varies between paired debugging and algorithmic screening; verify the recruiter's round brief."
+   }
+  },
+  "80-lanes-abroad-full-stack/80.03-system-design-eu-patterns.md": {
+   "sha256": "31c4885c9e82c7cea78f5fa06f8a0b79cc0d3dcc66b01a3370a9f730d884dd9b",
+   "lines": 74,
+   "genre": "lane",
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against 2026 EU system-design expectations and GDPR design norms; no version-sensitive API claim.",
+    "readable": "Full read of 74 lines. Rewrote EU system design guide into clear end-to-end pacing with pragmatic SaaS trade-offs, GDPR defaults, and concrete capacity math.",
+    "concise": "633 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical EU product-scale system design approach; points at 30.2-system-design for foundational theory and 80.08 for worked cases.",
+    "fast": "15.1 KB raw / 5.6 KB gzip",
+    "best": "Remaining limit is that hyper-scale platform teams still test deeper distributed storage internals beyond typical EU product SaaS rounds."
+   }
   },
   "80-lanes-abroad-full-stack/80.04-behavioral-eu-style.md": {
-   "sha256": "abfdb15691708e1d09b8933436c2277bbaf2ea5cb55e981983e3e5fa6e59f971",
-   "lines": 62,
+   "sha256": "37b83154cea5c2719094b08dae902604be8244fd149f8266b01f90b3f5749b44",
+   "lines": 61,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against 2026 EU engineering leadership interview patterns; no version-sensitive technical claim.",
+    "readable": "Full read of 61 lines. Rewrote EU behavioral guide with plain-English contrasts between US and European directness, ownership signals, and structured story templates.",
+    "concise": "423 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical EU behavioral framing; points at 00.03 for STAR mechanics and 80.12 for the story bank rather than duplicating stories.",
+    "fast": "12.8 KB raw / 4.8 KB gzip",
+    "best": "Remaining limit is cultural norms differ across Germany, Netherlands, UK, and Nordics; calibrate directness to the specific team."
+   }
   },
   "80-lanes-abroad-full-stack/80.05-comp-eu-benchmarking.md": {
    "sha256": "942cf8270ec6a983fdcd4568c41d8d0d066bc26a58f576a4db955ee8493895ed",
@@ -7805,76 +7841,184 @@
    "notes": "Phase 1 Batch 1a+1b comprehension rewrite and startup-discovery overhaul (2026-11-23)."
   },
   "80-lanes-abroad-full-stack/80.08-system-design-case-bank.md": {
-   "sha256": "454318a3e3f96e484ee6be657e4bc610bad4366a2a52bd6f419b45ef639d4139",
-   "lines": 102,
+   "sha256": "326149f0f8877b8ae32ab16bb68b719938f5cc332bf66dfb38ea54b69635dca9",
+   "lines": 122,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against 2026 cloud and database architectures; preserved #case-1-workflow-execution through #case-5-event-processing anchors.",
+    "readable": "Full read of 122 lines. Rewrote all five EU system design case studies with readable architecture flows, concrete bottlenecks, and preserved incoming case anchors.",
+    "concise": "1445 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical worked EU case bank; points at 30.2-system-design chapters for underlying theory instead of repeating textbook derivations.",
+    "fast": "20.9 KB raw / 7.5 KB gzip",
+    "best": "Remaining limit is that latency and cost budgets are illustrative baselines and must be recalculated from each interviewer's stated scale."
+   }
   },
   "80-lanes-abroad-full-stack/80.09-quick-reference-cards.md": {
-   "sha256": "13ea36a7247a5ceac99330a5f0dd4d982d9996cbfe5eb5a68fed0bbf632e0e76",
-   "lines": 42,
+   "sha256": "0b99666422102ffd6c9e54b0e27755a140ddeb656ce3e1c204c1dad18e0319d8",
+   "lines": 41,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against sibling 80.x playbooks and current 2026 full-stack defaults; no stale APIs.",
+    "readable": "Full read of 41 lines. Rewrote pre-interview quick-reference cards into crisp scannable tables and prompts for rapid review before EU full-stack interviews.",
+    "concise": "215 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical last-hour lookup sheet for Lane 80; points at 80.01-80.08 and core technical chapters for deep study rather than duplicating prose.",
+    "fast": "11.0 KB raw / 3.9 KB gzip",
+    "best": "Remaining limit is that lookup cards cannot replace hands-on coding or mock walkthrough practice."
+   }
   },
   "80-lanes-abroad-full-stack/80.10-weekly-tracker.md": {
-   "sha256": "da481ce2b85f54e4ffeb5b41fa38f3d47ca4a29089eff85ff3048fb718cb5262",
-   "lines": 51,
+   "sha256": "b7737e0e62187a22edba7e0b5b14aae0ea048e7f49f7fee98f0a4a50ee423b79",
+   "lines": 54,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against 2026 EU hiring cycle timelines; no version-sensitive API claim.",
+    "readable": "Full read of 54 lines. Rewrote weekly execution tracker into an actionable log template with clear weekly metrics, review cadence, and pipeline health checks.",
+    "concise": "402 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical weekly application and interview tracker template; points at 80.13 and 80.33 for study scheduling instead of duplicating curricula.",
+    "fast": "11.5 KB raw / 4.3 KB gzip",
+    "best": "Remaining limit is that a static markdown template does not automate CRM reminders; pair it with a local tracker outside this public repo."
+   }
   },
   "80-lanes-abroad-full-stack/80.11-mock-interview-bank.md": {
-   "sha256": "c76a01bbc77f6e1fa262d3b633fd8a22d55d8521a0641398e532703f1ff8aa60",
-   "lines": 111,
-   "genre": "lane",
-   "status": "unread"
-  },
-  "80-lanes-abroad-full-stack/80.12-story-bank.md": {
-   "sha256": "d7dd2971d592ec581588575fd87f137115d061937a04bdf4a957b4a415453d3b",
-   "lines": 48,
-   "genre": "lane",
-   "status": "unread"
-  },
-  "80-lanes-abroad-full-stack/80.13-study-plan.md": {
-   "sha256": "fc17a91ec4d494e43bb255e00c355f5fb0d3e652f7236cde29a8a3b281a3978e",
-   "lines": 95,
-   "genre": "lane",
-   "status": "unread"
-  },
-  "80-lanes-abroad-full-stack/80.14-berlin-dual-career-plan.md": {
-   "sha256": "5fc3a685c6e49c21f4d97b89bc7096c248493ad9c3ab9253750e53f5ffe1198d",
-   "lines": 88,
-   "genre": "lane",
-   "status": "unread"
-  },
-  "80-lanes-abroad-full-stack/80.15-take-home-starter-prompt.md": {
-   "sha256": "c6a692acd48152310a53db30d2c655d3a0fc98fafec07fca842aceff0f7b5351",
-   "lines": 72,
-   "genre": "lane",
-   "status": "unread"
-  },
-  "80-lanes-abroad-full-stack/80.16-docita-resume-defense.md": {
-   "sha256": "346004f6104033a3b624d2b2256fc7f0aec1f1d8d87b8a9165b6a25479892fc6",
+   "sha256": "da47aa266dd36ec9040dd1467a3de2591acc9f7b18ea068d9ca905ad73f72b6f",
    "lines": 87,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against 2026 EU senior full-stack loops; no stale framework references.",
+    "readable": "Full read of 87 lines. Rewrote mock interview prompt bank with clear interviewer rubrics, follow-up probes, and pass/fail signals across all EU rounds.",
+    "concise": "701 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical mock prompt bank; points at 80.30 for timed mock facilitation scripts rather than repeating session mechanics.",
+    "fast": "15.9 KB raw / 5.8 KB gzip",
+    "best": "Remaining limit is self-scoring introduces blind spots; timed practice with a peer interviewer catches pacing and communication gaps."
+   }
+  },
+  "80-lanes-abroad-full-stack/80.12-story-bank.md": {
+   "sha256": "c2e5f4a7c33fd1ff9bbe6937e901d1acb75865b2ad147b13ba6a6ae530a2ec4a",
+   "lines": 55,
+   "genre": "lane",
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against 2026 senior engineering behavioral rubrics and public-repo privacy rules; no version-sensitive claim.",
+    "readable": "Full read of 55 lines. Rewrote behavioral story bank structure with clear competency mapping, impact framing, and conflict/failure templates without private PII.",
+    "concise": "503 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical behavioral story structure for EU loops; points at 80.04 for EU cultural expectations and 80.16-80.18 for project evidence.",
+    "fast": "11.0 KB raw / 4.2 KB gzip",
+    "best": "Remaining limit is readers must populate the templates with their own verifiable project metrics kept in a private workspace."
+   }
+  },
+  "80-lanes-abroad-full-stack/80.13-study-plan.md": {
+   "sha256": "0cf5160167f91be605a7132a641b9683fdd14854ab3904b7d01be331e3c45f75",
+   "lines": 81,
+   "genre": "lane",
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current repo chapter paths and 2026 full-stack interview scope; all internal links verified.",
+    "readable": "Full read of 81 lines. Rewrote 12-week EU interview study plan into clean week-by-week milestones linking directly to canonical technical and lane chapters.",
+    "concise": "360 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical multi-week Lane 80 schedule; points at 80.28 and 80.29 for compressed roadmaps and topic brush-ups without duplicating lessons.",
+    "fast": "14.9 KB raw / 4.9 KB gzip",
+    "best": "Remaining limit is fixed weekly hours assume consistent availability; candidates working full-time must compress or extend timelines."
+   }
+  },
+  "80-lanes-abroad-full-stack/80.14-berlin-dual-career-plan.md": {
+   "sha256": "79f208589d6d028cc6501ea5c95b1af4c7180eae9bd9b4340a2894f692000d59",
+   "lines": 76,
+   "genre": "lane",
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against 2026 German Residence Act family-reunification and EU Blue Card rules; links verified against baseline.",
+    "readable": "Full read of 76 lines. Rewrote Berlin dual-career relocation guide with clear Blue Card spouse work-permit rules, Anabin checks, and sequenced timeline steps.",
+    "concise": "677 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical dual-career Berlin planning guide; points at 80.06 for general EU visa thresholds rather than repeating all eight countries.",
+    "fast": "14.3 KB raw / 5.5 KB gzip",
+    "best": "Remaining limit is German embassy appointment queues and municipal Anmeldung wait times shift regionally and require live verification."
+   }
+  },
+  "80-lanes-abroad-full-stack/80.15-take-home-starter-prompt.md": {
+   "sha256": "0fb409250f38322cd2e347374d9e14e7e9a6dd92f579836d026dc96064864170",
+   "lines": 59,
+   "genre": "lane",
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against 2026 TypeScript, Node.js, and React tooling defaults; no deprecated packages.",
+    "readable": "Full read of 59 lines. Rewrote take-home starter checklist and architecture scaffold prompt so engineers can bootstrap a clean, tested repo in under 30 minutes.",
+    "concise": "396 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical take-home bootstrap prompt; points at 80.01 and 80.26 for evaluation strategy and full grading rubrics.",
+    "fast": "12.0 KB raw / 4.4 KB gzip",
+    "best": "Remaining limit is starter scaffolds cannot substitute for reading the company's actual README requirements and edge cases."
+   }
+  },
+  "80-lanes-abroad-full-stack/80.16-docita-resume-defense.md": {
+   "sha256": "7687e3e9bb1e121eca2ec1713bb14a57deb19ddd8f34c96370b0dc147f0d69eb",
+   "lines": 69,
+   "genre": "lane",
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against projects/docita architecture docs and 2026 senior full-stack scrutiny; no private PII.",
+    "readable": "Full read of 69 lines. Rewrote Docita flagship project resume-defense guide into plain-English claim-to-architecture Q&As with honest trade-off boundaries.",
+    "concise": "482 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical high-level resume-claim defense; points at 80.17, 80.18, and 80.36 for deep evidence packs and crosswalks without duplicating code.",
+    "fast": "13.7 KB raw / 5.1 KB gzip",
+    "best": "Remaining limit is every spoken metric must match the candidate's own verified resume numbers and production experience."
+   }
   },
   "80-lanes-abroad-full-stack/80.17-docita-interview-evidence-pack.md": {
-   "sha256": "ca142786c35fd9fc78eeb8494f35a1535b2a4e2e21fb79fc889e684382b71aed",
-   "lines": 85,
+   "sha256": "37de8359cc82956479d014d7c66d19f20f69386de6395331c03a1aa8c9d6b5d8",
+   "lines": 64,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against projects/docita chapters and internal links; no stale API signatures.",
+    "readable": "Full read of 64 lines. Rewrote Docita interview evidence pack with concise architecture proofs, failure-mode explanations, and verifiable technical takeaways.",
+    "concise": "449 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical structured evidence sheet for Docita deep dives; points at 80.16 and 80.36 for conversational Q&A framing.",
+    "fast": "14.4 KB raw / 5.1 KB gzip",
+    "best": "Remaining limit is interviewers often pivot from planned architecture proofs into novel scaling constraints on the whiteboard."
+   }
   },
   "80-lanes-abroad-full-stack/80.18-resume-claim-crosswalk.md": {
-   "sha256": "7884e13e59f7e33df255a3ae88a69dbbc09b8013ad45808ff6c74ce8302eaee9",
-   "lines": 66,
+   "sha256": "e7b07298cc7a7a7d1628a0f1025499e27dab6c42b56df6e21c2a693896a5f97d",
+   "lines": 56,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against 80.16, 80.17, and 80.22 links; no version-sensitive technical claim.",
+    "readable": "Full read of 56 lines. Rewrote resume-claim crosswalk into a clear mapping table from resume bullet themes to system mechanisms, metrics, and drill questions.",
+    "concise": "288 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical claim-to-evidence index; points at individual technical chapters instead of duplicating explanations.",
+    "fast": "11.9 KB raw / 4.4 KB gzip",
+    "best": "Remaining limit is generic crosswalk rows must be tailored to the exact wording on the candidate's submitted CV."
+   }
   },
   "80-lanes-abroad-full-stack/80.19-langfuse-interview-prep.md": {
-   "sha256": "873acd3735ce6b2c35bab3c145339feb2380a1cbe0fedc5dffa886c0d93cde4b",
-   "lines": 66,
+   "sha256": "f9a373d4325a120724d7557d0830d25c6ffadb128e997d017aeb279d9c3827bf",
+   "lines": 58,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against 2026 Langfuse open-source architecture and 20.12 AI engineering concepts; all links verified.",
+    "readable": "Full read of 58 lines. Rewrote Langfuse engineering interview prep guide covering LLM observability architecture, ClickHouse/Postgres ingestion trade-offs, and TypeScript stack.",
+    "concise": "369 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical Langfuse-style AI-observability prep guide; points at 20.12-ai-engineering and 80.07 rather than duplicating LLM theory.",
+    "fast": "12.1 KB raw / 4.6 KB gzip",
+    "best": "Remaining limit is startup interview stages and open-source product internals evolve rapidly; verify current repo architecture before interviews."
+   }
   },
   "80-lanes-abroad-full-stack/80.20-germany-visa-relocation-companies.md": {
    "sha256": "c3c3d51c6f337ab3d4d9f0c1ccffb0bb1b8149de493bd2b910364d1ac13684a7",
@@ -7893,16 +8037,34 @@
    "notes": "Phase 1 Batch 1a+1b comprehension rewrite and startup-discovery overhaul (2026-11-23)."
   },
   "80-lanes-abroad-full-stack/80.21-docita-google-level-prep.md": {
-   "sha256": "cbac6495dc65e3c4fd0522d37109dc5296f2651b0dcf93980e62f000f02b0653",
-   "lines": 84,
+   "sha256": "188286cc47f20b95d5dfc04f42266bd1925eadb3d6eb9fe5acd0619c53e5ee29",
+   "lines": 78,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against 2026 high-bar backend/full-stack design rubrics; no stale framework references.",
+    "readable": "Full read of 78 lines. Rewrote high-bar system-design defense for Docita covering multi-tenant isolation, auditability, offline resilience, and staff-level follow-ups.",
+    "concise": "374 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical high-bar Docita architecture drill; points at 30.2-system-design and 80.36 rather than repeating base resume claims.",
+    "fast": "14.8 KB raw / 5.4 KB gzip",
+    "best": "Remaining limit is Google/L5+ rounds also evaluate novel greenfield designs outside the candidate's past projects."
+   }
   },
   "80-lanes-abroad-full-stack/80.22-docita-tech-topic-mapping.md": {
-   "sha256": "316999f809ca15538f78f0e773049d3fb321cde420f7d0ba78f63c8d0d271bd9",
-   "lines": 61,
+   "sha256": "0340a32ead7ae3ca6b62c6066cf1b94ba2e960573c7f383d8a03ac9da959dbc9",
+   "lines": 56,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against live repo chapter paths; 0 broken links.",
+    "readable": "Full read of 56 lines. Rewrote Docita technical topic mapping so each production problem links cleanly to its canonical deep-dive chapter in the bible.",
+    "concise": "364 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical cross-reference map from Docita subsystems to bible chapters; points at canonical chapters without duplicating explanations.",
+    "fast": "14.0 KB raw / 5.0 KB gzip",
+    "best": "Remaining limit is mapping a topic does not replace studying the linked chapter and practicing failure-mode derivations."
+   }
   },
   "80-lanes-abroad-full-stack/80.23-german-companies-database.md": {
    "sha256": "584fce33422b663079aab8cb6f326aa5c27f0d6ad09f06183642eccae4bffa50",
@@ -7921,46 +8083,109 @@
    "notes": "Phase 1 Batch 1a+1b comprehension rewrite and startup-discovery overhaul (2026-11-23)."
   },
   "80-lanes-abroad-full-stack/80.24-eu-regulatory-compliance.md": {
-   "sha256": "35833d559f9a9478924d8301927e42ea840d9176cf415425d55cb0b8e00aab44",
-   "lines": 155,
+   "sha256": "bd694c6aa3329fd2de1e3f409ebc1f07031de42d12d38bb33678c91add5d2e96",
+   "lines": 86,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against 2026 GDPR, EU AI Act phased enforcement timeline, and PSD2 rules; no stale legal dates.",
+    "readable": "Full read of 86 lines. Rewrote EU regulatory compliance guide in plain English covering GDPR engineering controls, EU AI Act risk tiers, PSD2/SCA, and HIPAA-to-EU contrasts.",
+    "concise": "955 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical EU compliance primer for senior engineers; points at 20.5-security for cryptographic and auth primitives.",
+    "fast": "17.6 KB raw / 6.5 KB gzip",
+    "best": "Remaining limit is this is engineering architecture guidance, not legal advice; production launches require DPO or counsel sign-off."
+   }
   },
   "80-lanes-abroad-full-stack/80.25-german-workplace-culture.md": {
-   "sha256": "b17691d162ac42471b1d0689c1daff5696408c5b29ed7a30700167f77ebcc0f4",
-   "lines": 61,
+   "sha256": "1fa9ad535fd33165e0c8cf1207ac28339a3ad745659f7ca5042013a08d1989b3",
+   "lines": 53,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against 2026 German employment norms and statutory leave/probation structures; no version-sensitive software claim.",
+    "readable": "Full read of 53 lines. Rewrote German engineering workplace guide covering Probezeit, Betriebsrat, K\u00fcndigungsschutz, direct feedback norms, and interview expectations.",
+    "concise": "359 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical German workplace culture guide; points at 80.04 for interview delivery and 80.06 for visas instead of repeating them.",
+    "fast": "12.3 KB raw / 4.6 KB gzip",
+    "best": "Remaining limit is international Berlin startups often operate differently from traditional Mittelstand or DAX engineering organizations."
+   }
   },
   "80-lanes-abroad-full-stack/80.26-take-home-masterclass.md": {
-   "sha256": "9fbbc6995f573612ca6139ea932ea58f484e9247fffcf964a3feabe97bf196a3",
-   "lines": 71,
+   "sha256": "bb77851b5a6b8182852f420c314e6ea9d8fa3e095fdb0ac4a6a5f44aa5c46a6c",
+   "lines": 62,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against 2026 EU senior full-stack take-home expectations; no stale library syntax.",
+    "readable": "Full read of 62 lines. Rewrote take-home masterclass with reviewer grading criteria, API/UI polish checklists, README structure, and common rejection causes.",
+    "concise": "485 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical deep take-home rubric guide; points at 80.01 for timeboxing and 80.15 for the starter scaffold without duplicating them.",
+    "fast": "12.0 KB raw / 4.5 KB gzip",
+    "best": "Remaining limit is over-engineering beyond the prompt's stated time budget can hurt signal just as much as skipping tests."
+   }
   },
   "80-lanes-abroad-full-stack/80.27-german-system-design-patterns.md": {
-   "sha256": "dcb8498d558fc42965a09d801029f91f774d6c2a9f114a1f395d376a1ea0f678",
-   "lines": 76,
+   "sha256": "f68affc86c030702e204b72d5004baeb62fa391725202d70989d71809e683be8",
+   "lines": 70,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against 2026 German SaaS, FinTech, and HealthTech engineering patterns; all links verified.",
+    "readable": "Full read of 70 lines. Rewrote German enterprise and scale-up system design guide focusing on data residency, audit logs, deterministic workflows, and pragmatic scaling.",
+    "concise": "567 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical Germany-specific design constraints guide; points at 80.03 and 80.24 for general EU design and compliance details.",
+    "fast": "14.6 KB raw / 5.4 KB gzip",
+    "best": "Remaining limit is design preferences vary widely between early-stage Berlin startups and regulated BaFin/BfArM companies."
+   }
   },
   "80-lanes-abroad-full-stack/80.28-interview-prep-roadmap.md": {
-   "sha256": "a7b7ed2439adff5d859c2e74cd60c1924582f67c67b7ff64c16c9d5c0753d70d",
-   "lines": 59,
+   "sha256": "924fef8de554396ec7c3cb6457d53bca63e0415d87cc27a7f3333194e2052dbc",
+   "lines": 48,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current repo index structure; all internal links verified.",
+    "readable": "Full read of 48 lines. Rewrote prioritized interview prep roadmap with clear phase gates from fundamentals through mocks and active EU pipeline execution.",
+    "concise": "273 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical high-level roadmap for Lane 80; points at 80.13 for weekly schedules and 80.29 for rapid topic brush-up.",
+    "fast": "11.0 KB raw / 3.9 KB gzip",
+    "best": "Remaining limit is candidates with active onsite deadlines must skip broad review phases and target company-specific weak spots."
+   }
   },
   "80-lanes-abroad-full-stack/80.29-topic-brushup-roadmap.md": {
-   "sha256": "31efdc8ec7ca74b6dfee56d61757bc398f5b1189ccde3080e0ae747e85e9595f",
-   "lines": 110,
+   "sha256": "9a428863775dd6ba2b9cd708e8ed1dc19dc70b74ea1f8b298156e1580680d8b9",
+   "lines": 71,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current bible chapters and preserved #check-senior-readiness-with-changed-constraints anchor.",
+    "readable": "Full read of 71 lines. Rewrote topic brush-up roadmap with diagnostic drills, senior readiness checks under changed constraints, and preserved incoming anchor.",
+    "concise": "446 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical rapid topic-triage guide; points at canonical stack chapters rather than duplicating technical summaries.",
+    "fast": "17.1 KB raw / 5.9 KB gzip",
+    "best": "Remaining limit is rapid brush-up refreshes familiar material but cannot substitute for first-principles study on unfamiliar domains."
+   }
   },
   "80-lanes-abroad-full-stack/80.30-mock-interview-script.md": {
-   "sha256": "1a8b4dc824999cc5841372728312907b8908c02c92560e5135b7eda8688cfed6",
-   "lines": 65,
+   "sha256": "453177ff6c494719751a47d8f2effac92c7b237d062b478046936c0134ec9bf4",
+   "lines": 59,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against 2026 EU 45-to-60-minute senior interview formats; no stale tooling references.",
+    "readable": "Full read of 59 lines. Rewrote structured mock interview script with timed phases, realistic interviewer prompts, and concrete debrief rubrics.",
+    "concise": "353 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical mock-session facilitation script; points at 80.11 for additional prompts instead of duplicating the prompt bank.",
+    "fast": "11.7 KB raw / 4.2 KB gzip",
+    "best": "Remaining limit is scripted mocks still require honest timekeeping and unbiased scoring to reflect real hiring-bar pressure."
+   }
   },
   "80-lanes-abroad-full-stack/80.31-salary-negotiation-guide.md": {
    "sha256": "75be9ad24ea5ae69aca4cb55eae8f4754b0bc9b482a1c04b7415fc8e3f0af531",
@@ -7995,10 +8220,19 @@
    "notes": "Phase 1 Batch 1a+1b comprehension rewrite and startup-discovery overhaul (2026-11-23)."
   },
   "80-lanes-abroad-full-stack/80.33-weekly-study-tracker.md": {
-   "sha256": "6cb7e52ece37564123cc2604f7bb44cad85e128a287a274ff1a9a4d17eeffd86",
-   "lines": 58,
+   "sha256": "a4cf03e7eacbac692a374f98ed595bf984b456d8aa79bd5563c4ae3a4b790d4b",
+   "lines": 48,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against 80.13 study milestones and 80.10 pipeline tracker; no version-sensitive technical claim.",
+    "readable": "Full read of 48 lines. Rewrote weekly study tracker template with measurable topic checkboxes, mock scores, and weekly retrospective prompts.",
+    "concise": "183 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical study-progress log; separate from 80.10 application tracking so study and outreach metrics are not duplicated.",
+    "fast": "10.4 KB raw / 3.6 KB gzip",
+    "best": "Remaining limit is logging study hours does not prove retention; verify progress with timed mocks and REVISION.md recall."
+   }
   },
   "80-lanes-abroad-full-stack/80.34-germany-target-domain-primer.md": {
    "sha256": "cdd087b2406cacce243618e45d883efe7195ebba199c36033270dc6fba6a2ad1",
@@ -8033,22 +8267,49 @@
    "notes": "Phase 1 Batch 1a+1b comprehension rewrite and startup-discovery overhaul (2026-11-23)."
   },
   "80-lanes-abroad-full-stack/80.36-docita-complete-interview-defense.md": {
-   "sha256": "7ae51464c7a752956c5a5e669cb49aaa6d63e33b85242e2b8cebdc6c2e3e97f6",
-   "lines": 121,
+   "sha256": "4f133c2a8dbdbf4845e7343b9097e6468521ecee73edb019ef71aaacea7d7e3f",
+   "lines": 94,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against 80.16, 80.17, 80.21, and projects/docita; no private PII or stale links.",
+    "readable": "Full read of 94 lines. Rewrote complete Docita interview defense handbook into a unified, readable narrative covering architecture, trade-offs, incidents, and tough follow-ups.",
+    "concise": "462 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical comprehensive Docita defense playbook; points at 80.18 and 80.22 for quick lookup tables rather than duplicating index maps.",
+    "fast": "17.3 KB raw / 5.9 KB gzip",
+    "best": "Remaining limit is memorizing scripted answers fails under adversarial follow-ups; explain every decision from first principles."
+   }
   },
   "80-lanes-abroad-full-stack/INDEX.md": {
-   "sha256": "c110969ecd52947ced8d160259e94d9cc40c28b485db1cafd0a492916e7b4780",
+   "sha256": "17d2eb1a18d094322a67181455eca1c6d5ddddcf65fb7106d16969dd32843283",
    "lines": 119,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against live files in 80-lanes-abroad-full-stack/; all 38 links and #lane-decision--is-this-the-right-lane-for-you anchor verified.",
+    "readable": "Full read of 119 lines. Reviewed and updated Lane 80 index labels and navigation descriptions to match rewritten startup, workplace, and targeting guides.",
+    "concise": "282 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical learning-flow index for Lane 80; points at numbered guides and REVISION.md without duplicating guide content.",
+    "fast": "21.7 KB raw / 6.0 KB gzip",
+    "best": "Remaining limit is index order reflects a default path; experienced EU candidates should jump straight to target-company and visa passes."
+   }
   },
   "80-lanes-abroad-full-stack/REVISION.md": {
    "sha256": "a5b69fb227fc4fb1b7edbf783de9e26225a077cbf61871cd33d60a7e77bb8f1f",
    "lines": 378,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against rewritten 80-lanes-abroad-full-stack/ chapters and 2026 EU hiring/visa thresholds; all source links verified.",
+    "readable": "Full read of 378 lines. Full read verified all authored Q&A pairs remain accurate, well-structured, and aligned with the rewritten 80.01-80.36 guides.",
+    "concise": "2894 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical active-recall companion for Lane 80; kept separate from learning guides per repo convention.",
+    "fast": "33.4 KB raw / 11.1 KB gzip",
+    "best": "Remaining limit is written recall questions test conceptual readiness and should be paired with live timed mock interviews."
+   }
   },
   "81-lanes-indian-sde-faang/81.01-complete-guide.md": {
    "sha256": "5b0a3ed9bcbc3eb5b156ce500fbd6f96ec5e654c119f86a0ddcbbbcfa0a69ca3",
@@ -8216,20 +8477,19 @@
    }
   },
   "INDEX.md": {
-   "sha256": "6d6c4a16f3ceb53117d294ec7156f10db027207c63dcd13c43b7126e6f605272",
+   "sha256": "cf120b3162e0061a27d436ce20473e2e23ac517278d684f76656cfc7118509fa",
    "lines": 206,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-23",
    "evidence": {
-    "current": "Checked against scripts/check_counts.py and scripts/read_time.py on 2026-11-23: 991 files, 680 chapters, line count, and study time agree with disk.",
-    "readable": "Full read of 206 lines. Central navigation hub with lane decision, 7-stack table, study-path map, and direct indexes.",
-    "concise": "450 words. Navigation tables carry the file lists while prose explains study order only.",
-    "focused": "Canonical master index; points at stack indexes without duplicating chapter content.",
-    "fast": "35.6 KB raw / 9.2 KB gzip built page on the shared Jekyll shell; well under the 64 KiB gzip budget.",
-    "best": "Counts reflect repository files rather than one learner pace; remaining limit is that study-time estimates cannot predict individual reading speed."
-   },
-   "notes": "Phase 1 Batch 1a+1b comprehension rewrite and startup-discovery overhaul (2026-11-23)."
+    "current": "Checked against live repository file/line counts via check_counts.py; no broken links.",
+    "readable": "Full read of 206 lines. Counts restamped from disk after Lane 80 rewrite; existing full read remains valid.",
+    "concise": "450 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical root navigation index; points at stack INDEX files rather than duplicating stack curricula.",
+    "fast": "35.6 KB raw / 9.2 KB gzip",
+    "best": "Remaining limit is root index line-count polish and Message Brokers link alignment are queued for Phase 6."
+   }
   },
   "README.md": {
    "sha256": "d885528e428ea38f115bc62b8bac76e421c317edae2aeb312516f3f01fd17a5f",
@@ -8262,20 +8522,19 @@
    }
   },
   "contributing.md": {
-   "sha256": "5c296d3f2561d2de017d571af59cbbb2ca7ba1b761a71610877ca7f16e8b9de6",
+   "sha256": "a80c109d992d5c124ba2bfec1fef962bc9a247913768df41ccbcd0fe5d6a5252",
    "lines": 947,
    "genre": "meta",
    "status": "read",
    "reviewed": "2026-11-23",
    "evidence": {
-    "current": "Checked against scripts/check_counts.py and scripts/verify.sh on 2026-11-23: repo line count and 34-gate contract match disk.",
-    "readable": "Full read of 947 lines; format rules are grouped by artifact (file, INDEX, code, links) with examples before edge cases.",
-    "concise": "3280 words; canonical formatting contract with one-line rules and script delegation.",
-    "focused": "Canonical contribution contract; gate rationale lives in docs/verification-gates.md and docs/scripts-map.md.",
-    "fast": "not built as HTML; 53.1 KB Markdown source served raw. The shared Jekyll shell is not included.",
-    "best": "Jekyll's optional-front-matter blacklist serves this as raw Markdown without site navigation; accepted boundary."
-   },
-   "notes": "Hash refreshed after check_counts.py restamped line count."
+    "current": "Checked against current scripts/verify.sh gates and check_counts.py output.",
+    "readable": "Full read of 947 lines. Counts restamped from disk after Lane 80 rewrite; existing full read remains valid.",
+    "concise": "3280 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "focused": "Canonical contributor workflow guide; points at docs/verification-gates.md for full gate definitions.",
+    "fast": "not built as HTML; 53.1 KB Markdown source served raw",
+    "best": "Remaining limit is contributor guidance must be re-checked whenever verification gates change."
+   }
   },
   "design-qa.md": {
    "sha256": "e8da15c567bc813b3b61a4d54a8570220db77ad84aa5cb2300e19ed1356ba5ee",
@@ -9396,35 +9655,6 @@
   "70-interview-toolkit/70.3-cheatsheets/INDEX.md",
   "70-interview-toolkit/70.3-cheatsheets/REVISION.md",
   "70-interview-toolkit/INDEX.md",
-  "80-lanes-abroad-full-stack/80.01-take-home-playbook.md",
-  "80-lanes-abroad-full-stack/80.02-tech-screen-patterns.md",
-  "80-lanes-abroad-full-stack/80.03-system-design-eu-patterns.md",
-  "80-lanes-abroad-full-stack/80.04-behavioral-eu-style.md",
-  "80-lanes-abroad-full-stack/80.08-system-design-case-bank.md",
-  "80-lanes-abroad-full-stack/80.09-quick-reference-cards.md",
-  "80-lanes-abroad-full-stack/80.10-weekly-tracker.md",
-  "80-lanes-abroad-full-stack/80.11-mock-interview-bank.md",
-  "80-lanes-abroad-full-stack/80.12-story-bank.md",
-  "80-lanes-abroad-full-stack/80.13-study-plan.md",
-  "80-lanes-abroad-full-stack/80.14-berlin-dual-career-plan.md",
-  "80-lanes-abroad-full-stack/80.15-take-home-starter-prompt.md",
-  "80-lanes-abroad-full-stack/80.16-docita-resume-defense.md",
-  "80-lanes-abroad-full-stack/80.17-docita-interview-evidence-pack.md",
-  "80-lanes-abroad-full-stack/80.18-resume-claim-crosswalk.md",
-  "80-lanes-abroad-full-stack/80.19-langfuse-interview-prep.md",
-  "80-lanes-abroad-full-stack/80.21-docita-google-level-prep.md",
-  "80-lanes-abroad-full-stack/80.22-docita-tech-topic-mapping.md",
-  "80-lanes-abroad-full-stack/80.24-eu-regulatory-compliance.md",
-  "80-lanes-abroad-full-stack/80.25-german-workplace-culture.md",
-  "80-lanes-abroad-full-stack/80.26-take-home-masterclass.md",
-  "80-lanes-abroad-full-stack/80.27-german-system-design-patterns.md",
-  "80-lanes-abroad-full-stack/80.28-interview-prep-roadmap.md",
-  "80-lanes-abroad-full-stack/80.29-topic-brushup-roadmap.md",
-  "80-lanes-abroad-full-stack/80.30-mock-interview-script.md",
-  "80-lanes-abroad-full-stack/80.33-weekly-study-tracker.md",
-  "80-lanes-abroad-full-stack/80.36-docita-complete-interview-defense.md",
-  "80-lanes-abroad-full-stack/INDEX.md",
-  "80-lanes-abroad-full-stack/REVISION.md",
   "81-lanes-indian-sde-faang/81.01-complete-guide.md",
   "81-lanes-indian-sde-faang/81.02-core-cs-fundamentals.md",
   "81-lanes-indian-sde-faang/81.03-system-design-apis-security.md",

@@ -1,8 +1,8 @@
-# Auth - Security
+# Auth — Security
 
 > **Study time:** ≈ 2 h 9 m of reading (12 files, ~11 min average).
 > The table gives the intended study order; revision and timed practice are separate activities.
-> **Prerequisite:** [Encryption & Hashing](../03-hardening-and-operations/20.5.3.01-encryption.md).
+> **Prerequisite:** [Encryption, Hashing & TLS](../03-hardening-and-operations/20.5.3.01-encryption.md).
 >
 > Authentication establishes who or what is calling. Authorization decides what that principal may do. Read the chapters in order, use the separate revision pass, then defend a design in the interview drill.
 

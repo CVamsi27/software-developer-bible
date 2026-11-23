@@ -1,6 +1,6 @@
-# Advanced & Interview - NestJS
+# Advanced & Interview — NestJS
 
-> **Study time:** ≈ 14 min of reading (3 files, ~5 min average).
+> **Study time:** ≈ 15 min of reading (3 files, ~5 min average).
 > **3 files.** Senior-level customization with parameter/method decorators and decorator composition, then the curated question bank for final review.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](../INDEX.md)
@@ -15,8 +15,8 @@ First trace a parameter extractor after authentication and distinguish extractio
 ## Files
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Custom Decorators](20.2.5.01-custom-decorators.md) | Request-value extraction, metadata consumers, validation boundaries and decorator composition | Essential | Important | 5 min |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 01 | [Custom Decorators](20.2.5.01-custom-decorators.md) | Request-value extraction, metadata consumers, validation boundaries and decorator composition | Essential | Important | 6 min |
 | Revision | [Category recall](REVISION.md) | Extraction, metadata and enforcement boundaries before the interview drill | Essential | Important | — |
 | 02 | [Interview Questions](20.2.5.02-interview-questions.md) | 40 practice questions with answers | Essential | Important | 7 min |
 
@@ -28,15 +28,15 @@ First trace a parameter extractor after authentication and distinguish extractio
 
 ## Docita Anchor
 
-Real code from [docita](https://github.com/CVamsi27/docita) - healthcare application (NestJS + Prisma + PostgreSQL). Use the following paths to investigate the current checkout; these references do not establish deployment readiness:
+Real-world pointers from [docita](https://github.com/CVamsi27/docita) — healthcare platform (NestJS + Prisma + PostgreSQL):
 
 | Topic | Docita evidence |
-| ------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| Custom method decorators | `apps/api/src/shared/modules/auth/decorators/require-policy.decorator.ts` - @RequirePolicy metadata consumed by PolicyGuard |
-| Route metadata decorators | `apps/api/src/shared/modules/idempotency/requires-idempotency.decorator.ts` - marker drives IdempotencyInterceptor |
-| Role markers | `apps/api/src/shared/modules/auth/auth/roles.decorator.ts` - @Roles read back via Reflector in RolesGuard |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| Custom method decorators | `apps/api/src/shared/modules/auth/decorators/require-policy.decorator.ts` — `@RequirePolicy` metadata consumed by `PolicyGuard` |
+| Route metadata decorators | `apps/api/src/shared/modules/idempotency/requires-idempotency.decorator.ts` — marker drives `IdempotencyInterceptor` |
+| Role markers | `apps/api/src/shared/modules/auth/auth/roles.decorator.ts` — `@Roles` read back via `Reflector` in `RolesGuard` |
 
-Use these evidence paths to investigate decorator registration and consumption in the project. The reference examples still require checking the current checkout; they do not prove every lifecycle or transport feature ships there.
+Trace each custom decorator back to its registered guard or interceptor consumer in the module wiring.
 
 ---
 

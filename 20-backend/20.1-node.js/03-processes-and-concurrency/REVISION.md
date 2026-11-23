@@ -40,21 +40,21 @@ Source: [Child Processes & Workers](20.1.3.02-child-processes-workers.md)
 
 **Q:** How does moving work to a worker differ from transferring its input buffer?
 
-**A:** A worker executes in another V8 isolate. Input is cloned by default; a transferred eligible ArrayBuffer changes ownership and detaches the sender view. SharedArrayBuffer instead exposes shared storage requiring synchronization.
+**A:** A worker executes in another V8 isolate. Input is cloned by default; a transferred eligible `ArrayBuffer` changes ownership and detaches the sender view. `SharedArrayBuffer` instead exposes shared storage requiring synchronization.
 
 **Q:** Why count outstanding work around a worker pool instead of relying only on queue settings?
 
 **A:** Pool cancellation and scheduling paths can maintain internal queues differently. An application counter bounds accepted active plus pending tasks until their promises settle and makes overload rejection explicit.
 
-**Q:** Can shell-free execFile make an arbitrary command safe?
+**Q:** Can shell-free `execFile` make an arbitrary command safe?
 
 **A:** It avoids shell interpretation, but the executable still interprets options and can read files or perform other privileged actions. Fix the command and validate allowed arguments, paths, output size and execution time.
 
-**Q:** Trace runOne with iterations 4, then with invalid input, no result and a hung worker.
+**Q:** Trace `runOne` with `iterations` `4`, then with invalid input, no result and a hung worker.
 
-**A:** The compute fixture resolves its sum 4.146264369941973 after owned termination. Invalid iterations reject through the worker error; clean exit without a message rejects; no completion reaches the timer and rejects. Each terminal path settles once rather than sharing an uncorrelated message across tasks.
+**A:** The compute fixture resolves its sum `4.146264369941973` after owned termination. Invalid `iterations` reject through the worker error; clean exit without a message rejects; no completion reaches the timer and rejects. Each terminal path settles once rather than sharing an uncorrelated message across tasks.
 
-**Q:** What changes when new work arrives after closePool begins?
+**Q:** What changes when new work arrives after `closePool` begins?
 
 **A:** The example stops application admission before awaiting Piscina close. Later calls reject as closing; accepted work still follows the release's graceful/forced shutdown contract. An abort cannot undo an already completed external effect, and shared bytes require their own synchronization protocol.
 
@@ -62,25 +62,25 @@ Source: [Child Processes & Workers](20.1.3.02-child-processes-workers.md)
 
 Source: [Process & Environment](20.1.3.03-process-environment.md)
 
-**Q:** Why is parseInt an unsafe validator for a port setting?
+**Q:** Why is `parseInt` an unsafe validator for a port setting?
 
-**A:** It accepts an integer prefix such as 10junk. Validate the entire string and the numeric range; distinguish an absent setting from the deliberately valid port zero.
+**A:** It accepts an integer prefix such as `10junk`. Validate the entire string and the numeric range; distinguish an absent setting from the deliberately valid port zero.
 
 **Q:** Why must cleanup share a deadline with draining requests?
 
-**A:** A resource close can hang after server.close finishes. The deadline covers both stages; repeated signals reuse the same shutdown operation rather than starting parallel cleanup.
+**A:** A resource close can hang after `server.close` finishes. The deadline covers both stages; repeated signals reuse the same shutdown operation rather than starting parallel cleanup.
 
-**Q:** What does process.exitCode provide that process.exit does not?
+**Q:** What does `process.exitCode` provide that `process.exit` does not?
 
-**A:** It sets the eventual status while allowing pending writes and owned cleanup to finish. process.exit terminates immediately and can truncate output; use it deliberately at the forced shutdown deadline.
+**A:** It sets the eventual status while allowing pending writes and owned cleanup to finish. `process.exit` terminates immediately and can truncate output; use it deliberately at the forced shutdown deadline.
 
-**Q:** Why does PORT="0" remain 0 and DEBUG="false" remain false in the config fixture?
+**Q:** Why does `PORT="0"` remain `0` and `DEBUG="false"` remain `false` in the config fixture?
 
-**A:** The parser distinguishes absent values, validates the entire string/range and compares an allowed boolean string. A truthiness fallback would replace zero or treat the string false as true. Empty or 10junk port values fail explicitly.
+**A:** The parser distinguishes absent values, validates the entire string/range and compares an allowed boolean string. A truthiness fallback would replace `0` or treat the string `"false"` as `true`. Empty or `10junk` port values fail explicitly.
 
 **Q:** What happens when shutdown is called twice while resource cleanup hangs?
 
-**A:** Both calls return the same operation, admission is draining, and the deadline covers server drain plus resource close. If cleanup cannot finish, the forced failure path owns termination; process exitCode alone cannot release a leaked handle.
+**A:** Both calls return the same operation, admission is draining, and the deadline covers server drain plus resource close. If cleanup cannot finish, the forced failure path owns termination; `process.exitCode` alone cannot release a leaked handle.
 
 ## PM2 Process Supervision
 

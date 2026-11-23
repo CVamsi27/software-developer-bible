@@ -44,7 +44,7 @@ Source: [Schema Design](20.7.1.02-schema-design.md)
 
 **Q:** What does a OneOf input object (`@oneOf`) guarantee for a lookup?
 
-**A:** Exactly one alternative must be supplied and non-null. Its SDL fields stay nullable and have no defaults so the selected alternative remains distinguishable. The directive validates input shape; the resolver still checks authorization and existence.
+**A:** Exactly one alternative must be supplied and non-null. Its Schema Definition Language (SDL) fields stay nullable and have no defaults so the selected alternative remains distinguishable. The directive validates input shape; the resolver still checks authorization and existence.
 
 ## Queries & Mutations
 
@@ -80,21 +80,21 @@ Source: [Schema design](20.7.1.02-schema-design.md)
 
 **A:** The nullable user becomes null, the unrelated post can remain, and the error path names the failing user/name field. Making the user root non-null can instead propagate the failure to all data.
 
-**Q:** Why cannot SearchResult expose id directly even though both union members have one?
+**Q:** Why cannot `SearchResult` expose `id` directly even though both union members have one?
 
-**A:** A union declares alternative object types without declaring shared fields. Select member fields through fragments; an interface can declare a common id contract.
+**A:** A union declares alternative object types without declaring shared fields. Select member fields through fragments; an interface can declare a common `id` contract.
 
-**Q:** Does declaring DateTime or @auth install date validation or a permission check?
+**Q:** Does declaring `DateTime` or `@auth` install date validation or a permission check?
 
 **A:** No. The scalar needs parsing/serialization behavior and the directive needs a corresponding implementation. Names and generated types alone do not enforce those contracts.
 
 Source: [Queries and mutations](20.7.1.03-queries-mutations.md)
 
-**Q:** Why does the counter end at five after add(2), rejected add(-1) and add(3)?
+**Q:** Why does the counter end at five after `add(2)`, rejected `add(-1)` and `add(3)`?
 
-**A:** The nullable failed root field permits execution to continue. Root fields complete serially, but GraphQL does not roll back the earlier addition. Making add non-null nulls the data and stops later completion without undoing the first effect.
+**A:** The nullable failed root field permits execution to continue. Root fields complete serially, but GraphQL does not roll back the earlier addition. Making `add` non-null nulls the data and stops later completion without undoing the first effect.
 
-**Q:** Are an omitted update title, null and an empty string interchangeable?
+**Q:** Are an omitted update title, `null` and an empty string interchangeable?
 
 **A:** No. They are distinct inputs. The service must define each meaning and inspect presence; a truthiness test silently conflates them.
 

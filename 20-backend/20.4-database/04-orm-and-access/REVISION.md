@@ -22,9 +22,9 @@ Source: [Prisma ORM](20.4.4.01-prisma.md)
 
 **A:** Prisma 7 is the current stable line and its client requires a driver adapter and generated output path. Prisma ORM 8 remains a release candidate with a different contract/runtime and query API. Check the [release-status page](https://www.prisma.io/docs/orm/release-status) before changing the pinned version.
 
-**Q:** What does a generic argument on $queryRaw establish?
+**Q:** What does a generic argument on `$queryRaw` establish?
 
-**A:** It tells TypeScript what shape the caller expects. It does not inspect the returned rows, convert PostgreSQL bigint to a JSON number or validate the SQL/interface contract.
+**A:** It tells TypeScript what shape the caller expects. It does not inspect the returned rows, convert PostgreSQL `bigint` to a JSON number or validate the SQL/interface contract.
 
 **Q:** Why include a second ordering key in a timestamp-based page?
 
@@ -52,11 +52,11 @@ Source: [Prisma Advanced](20.4.4.02-prisma-advanced.md)
 
 **Q:** How does transaction-local tenant context avoid contaminating the next request?
 
-**A:** set_config with the local flag `true` scopes the value to the transaction. Protected queries must use that same tx connection, with an enabled policy and a runtime role that does not bypass RLS.
+**A:** `set_config` with the local flag `true` scopes the value to the transaction. Protected queries must use that same `tx` connection, with an enabled policy and a runtime role that does not bypass RLS.
 
 **Q:** A helper uses the root Prisma client and commits before its caller throws. Does the caller's rollback undo that helper?
 
-**A:** No. The helper escaped the participating transaction client and owns another boundary. Pass tx through the helper when its effects must commit or roll back with the caller.
+**A:** No. The helper escaped the participating transaction client and owns another boundary. Pass `tx` through the helper when its effects must commit or roll back with the caller.
 
 ## ORM & Query Builder Landscape
 

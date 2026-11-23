@@ -1,6 +1,6 @@
 # NestJS — Index
 
-> **Study time:** ≈ 3 h 5 m of reading (24 files, ~8 min average).
+> **Study time:** ≈ 3 h 6 m of reading (24 files, ~8 min average).
 > **24 files** — NestJS framework from modules and controllers to guards, pipes, interceptors, CQRS, microservices, testing, configuration, lifecycle/shutdown, scheduling, OpenAPI docs, custom decorators, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-24-blue)](../../INDEX.md)
@@ -85,11 +85,11 @@ Production hygiene. Category INDEX: [Quality & Operations](04-quality-and-operat
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Configuration & Validation](04-quality-and-operations/20.2.4.01-configuration-validation.md) | ConfigModule, ValidationPipe, class-validator, Joi, DTOs, env validation | Essential | Important | 8 min |
-| 02 | [Testing](04-quality-and-operations/20.2.4.02-testing.md) | Jest, TestingModule, supertest, Testcontainers, e2e/integration/unit | Essential | Important | 12 min |
-| 03 | [Lifecycle Hooks & Graceful Shutdown](04-quality-and-operations/20.2.4.03-lifecycle-hooks-graceful-shutdown.md) | Lifecycle hook map + ordering, `enableShutdownHooks()`, SIGTERM, Kubernetes terminationGracePeriod, draining connections, closing pools in order | Essential | Important | 13 min |
-| 04 | [Scheduling & Background Jobs](04-quality-and-operations/20.2.4.04-scheduling-background-jobs.md) | @nestjs/schedule + dynamic API, distributed cron locks (Redis NX), BullMQ queues, retries/backoff/rate limits, idempotent handlers, job observability | Essential | Important | 19 min |
-| 05 | [Swagger & OpenAPI](04-quality-and-operations/20.2.4.05-swagger-openapi-nestjs.md) | @nestjs/swagger setup, DocumentBuilder, @ApiProperty DTOs, generics + @ApiExtraModels, security schemes, spec JSON codegen, CI contract checks | Essential | Important | 15 min |
+| 01 | [Configuration & Validation](04-quality-and-operations/20.2.4.01-configuration-validation.md) | `ConfigModule`, `ValidationPipe`, `StandardSchemaValidationPipe`, Zod, `class-validator`, Joi, DTOs, env validation | Essential | Important | 8 min |
+| 02 | [Testing](04-quality-and-operations/20.2.4.02-testing.md) | Jest, `TestingModule`, supertest, Testcontainers, e2e/integration/unit | Essential | Important | 12 min |
+| 03 | [Lifecycle Hooks & Graceful Shutdown](04-quality-and-operations/20.2.4.03-lifecycle-hooks-graceful-shutdown.md) | Lifecycle hook map + ordering, `enableShutdownHooks()`, `SIGTERM`, Kubernetes `terminationGracePeriodSeconds`, draining connections, closing pools in order | Essential | Important | 13 min |
+| 04 | [Scheduling & Background Jobs](04-quality-and-operations/20.2.4.04-scheduling-background-jobs.md) | `@nestjs/schedule` + dynamic API, distributed cron locks (Redis NX), BullMQ queues, retries/backoff/rate limits, idempotent handlers, job observability | Essential | Important | 19 min |
+| 05 | [Swagger & OpenAPI](04-quality-and-operations/20.2.4.05-swagger-openapi-nestjs.md) | `@nestjs/swagger` setup, `DocumentBuilder`, `@ApiProperty` DTOs, generics + `@ApiExtraModels`, security schemes, spec JSON codegen, CI contract checks | Essential | Important | 15 min |
 
 ---
 
@@ -99,7 +99,7 @@ Category INDEX: [Advanced & Interview](05-advanced-and-interview/INDEX.md).
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Custom Decorators](05-advanced-and-interview/20.2.5.01-custom-decorators.md) | Parameter decorators (@CurrentUser, @ClinicId, @Pagination), method decorators (@RateLimit, @Cache, @Audit), decorator composition | Essential | Important | 5 min |
+| 01 | [Custom Decorators](05-advanced-and-interview/20.2.5.01-custom-decorators.md) | Parameter decorators (`@CurrentUser`, `@ClinicId`, `@Pagination`), method decorators (`@RateLimit`, `@Cache`, `@Audit`), decorator composition | Essential | Important | 6 min |
 | 02 | [Interview Questions](05-advanced-and-interview/20.2.5.02-interview-questions.md) | 40 practice questions with answers | Essential | Important | 7 min |
 
 ---
@@ -127,23 +127,23 @@ Category INDEX: [Advanced & Interview](05-advanced-and-interview/INDEX.md).
 
 ## Navigation
 
-[← Previous: Node.js](../20.1-node.js/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: REST APIs →](../20.3-rest-apis/INDEX.md)
+[← Previous: Node.js](../20.1-node.js/INDEX.md) · [Back to Index](../../INDEX.md) · [Next: REST APIs →](../20.3-rest-apis/INDEX.md)
 
 ---
 
 ## Docita Anchor
 
-Real code from [docita](https://github.com/CVamsi27/docita) - healthcare application (NestJS + Prisma + PostgreSQL). Use the following paths to investigate the current checkout; these references do not establish deployment readiness:
+Real-world pointers from [docita](https://github.com/CVamsi27/docita) — healthcare platform (NestJS + Prisma + PostgreSQL):
 
 | Topic | Docita evidence |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Modules & DI | `apps/api/src/app.module.ts` composing per-domain feature modules, e.g. `apps/api/src/domains/clinical/clinical.module.ts` - providers wired through the Nest container |
-| Controllers | `apps/api/src/domains/clinical/presentation/controllers/{lab-tests,lab-workflow,medical-coding}.controller.ts` - thin route handlers delegating to services |
-| Middleware | `apps/api/src/shared/common/middleware/tenant.middleware.ts` - resolves the active clinic tenant before guards run |
-| Guards | `apps/api/src/shared/modules/auth/auth/jwt-auth.guard.ts`, `roles.guard.ts`, `tier.guard.ts` + `auth/guards/` (consent, tenant, policy, subscription-status, rate-limit) - authN/authZ gate the request lifecycle |
-| Pipes (validation) | `apps/api/src/shared/common/pipes/zod-validation.pipe.ts` - global `ZodValidationPipe` (nestjs-zod) wired in `apps/api/src/main.ts` |
-| Interceptors | `apps/api/src/shared/common/interceptors/` - request-id, request-logging, cache, timeout, tenant-context, csrf, rate-limit, idempotency cross-cutting behavior |
-| Exception filters | `apps/api/src/shared/modules/error-handling/filters/http-exception.filter.ts` + `prisma-error.registry.ts` - global filter mapping Prisma/domain errors to HTTP responses |
-| Scheduling | `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.ts`, `apps/api/src/domains/clinical/medical-code-sync.cron.ts`, `apps/api/src/domains/reminders/reminders.scheduler.module.ts` - @nestjs/schedule crons |
-| Swagger / OpenAPI | `apps/api/src/main.ts` - SwaggerModule setup + `cleanupOpenApiDoc`; DTOs annotated via nestjs-zod |
-| CQRS / Nest transports | No counterpart - domain flow uses services + outbox events (EventEmitter2), not `@nestjs/cqrs` or Nest microservice transports |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Modules & DI | `apps/api/src/app.module.ts` composing per-domain feature modules, e.g. `apps/api/src/domains/clinical/clinical.module.ts` — providers wired through the Nest container |
+| Controllers | `apps/api/src/domains/clinical/presentation/controllers/{lab-tests,lab-workflow,medical-coding}.controller.ts` — thin route handlers delegating to services |
+| Middleware | `apps/api/src/shared/common/middleware/tenant.middleware.ts` — resolves the active clinic tenant before guards run |
+| Guards | `apps/api/src/shared/modules/auth/auth/jwt-auth.guard.ts`, `roles.guard.ts`, `tier.guard.ts` + `auth/guards/` (consent, tenant, policy, subscription-status, rate-limit) — authN/authZ gate the request lifecycle |
+| Pipes (validation) | `apps/api/src/shared/common/pipes/zod-validation.pipe.ts` — global `ZodValidationPipe` (`nestjs-zod`) wired in `apps/api/src/main.ts` |
+| Interceptors | `apps/api/src/shared/common/interceptors/` — request-id, request-logging, cache, timeout, tenant-context, csrf, rate-limit, idempotency cross-cutting behavior |
+| Exception filters | `apps/api/src/shared/modules/error-handling/filters/http-exception.filter.ts` + `prisma-error.registry.ts` — global filter mapping Prisma/domain errors to HTTP responses |
+| Scheduling | `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.ts`, `apps/api/src/domains/clinical/medical-code-sync.cron.ts`, `apps/api/src/domains/reminders/reminders.scheduler.module.ts` — `@nestjs/schedule` crons |
+| Swagger / OpenAPI | `apps/api/src/main.ts` — `SwaggerModule` setup + `cleanupOpenApiDoc`; DTOs annotated via `nestjs-zod` |
+| CQRS / Nest transports | No counterpart — domain flow uses services + outbox events (`EventEmitter2`), not `@nestjs/cqrs` or Nest microservice transports |

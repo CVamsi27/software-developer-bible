@@ -50,25 +50,21 @@ Source: [SQL Joins](20.4.2.02-joins.md)
 
 **A:** It builds a key-organized candidate table for one input and probes from the other. Equality, skew, output multiplicity and memory/batches affect work. Spill can increase temporary I/O; this does not imply that an indexed nested loop is always better.
 
-## Join grain and unmatched rows
+**Q:** Why does `COUNT(*)` over a left join report one row for a patient with no appointment?
 
-Source: [Learning chapter](20.4.2.02-joins.md)
+**A:** The outer join supplies a `NULL`-extended placeholder row. `COUNT` of a non-null appointment identifier counts actual matches and gives zero.
 
-**Q:** Why does COUNT(*) over a left join report one row for a patient with no appointment?
+**Q:** When should `EXISTS` replace a join plus `DISTINCT`?
 
-**A:** The outer join supplies a NULL-extended placeholder row. COUNT of a non-null appointment identifier counts actual matches and gives zero.
+**A:** When the required result is each entity with at least one match rather than matching pairs. `EXISTS` states that presence contract without introducing pair fan-out.
 
-**Q:** When should EXISTS replace a join plus DISTINCT?
+**Q:** What does `LEFT LATERAL` add to a top-one-per-patient query?
 
-**A:** When the required result is each entity with at least one match rather than matching pairs. EXISTS states that presence contract without introducing pair fan-out.
+**A:** The subquery can reference each patient, and `LEFT` preserves patients whose subquery produces no rows. Add a deterministic tie-breaker to the chronological ordering.
 
-**Q:** What does LEFT LATERAL add to a top-one-per-patient query?
+**Q:** What changes when the booked predicate moves from `LEFT JOIN` `ON` to `WHERE`?
 
-**A:** The subquery can reference each patient, and LEFT preserves patients whose subquery produces no rows. Add a deterministic tie-breaker to the chronological ordering.
-
-**Q:** What changes when the booked predicate moves from LEFT JOIN ON to WHERE?
-
-**A:** ON chooses booked matches while preserving unmatched patients. WHERE then filters the joined result and rejects the NULL-extended status, so Cy disappears. Match counts must still count a non-null appointment identifier.
+**A:** `ON` chooses booked matches while preserving unmatched patients. `WHERE` then filters the joined result and rejects the `NULL`-extended status, so Cy disappears. Match counts must still count a non-null appointment identifier.
 
 ## Execution Plans & Query Optimization
 
@@ -92,13 +88,13 @@ Source: [Execution Plans & Query Optimization](20.4.2.03-execution-plans.md)
 
 **Q:** How should you trace a slow plan from its inputs to its result?
 
-**A:** Follow input rows through filtering, joins, sorting and output; inspect estimates against observed rows and repetition. Rows/time are generally per-loop averages and parent time/buffers include children. LIMIT may stop early, so avoid adding inclusive numbers or labeling the largest cost the measured bottleneck.
+**A:** Follow input rows through filtering, joins, sorting and output; inspect estimates against observed rows and repetition. Rows/time are generally per-loop averages and parent time/buffers include children. `LIMIT` may stop early, so avoid adding inclusive numbers or labeling the largest cost the measured bottleneck.
 
 **Q:** Does a lower estimated cost prove a lower observed runtime across two different queries?
 
 **A:** No. Cost is a planner estimate under its model, not milliseconds or an independent benchmark. Compare equivalent output, representative parameters and observed rows/loops/buffers; output shape and cache/environment can change work.
 
-**Q:** What happens when EXPLAIN ANALYZE instruments an UPDATE inside a transaction that later rolls back?
+**Q:** What happens when `EXPLAIN ANALYZE` instruments an `UPDATE` inside a transaction that later rolls back?
 
 **A:** The mutation runs and takes locks; its transactional fixture value changes before rollback. Rollback restores that value, but sequence increments or external effects are not universally undone. Use a safe environment.
 
@@ -106,17 +102,17 @@ Source: [Execution Plans & Query Optimization](20.4.2.03-execution-plans.md)
 
 Source: [PostgreSQL Window Functions](20.4.2.04-window-functions.md)
 
-**Q:** When does a window function solve a problem that GROUP BY cannot?
+**Q:** When does a window function solve a problem that `GROUP BY` cannot?
 
 **A:** `GROUP BY` reduces rows to one output row per group, but a per-row share needs each input row preserved alongside a partition-level total. A window function can calculate both in the same result.
 
-**Q:** What do PARTITION BY, ORDER BY, and the frame clause each control?
+**Q:** What do `PARTITION BY`, `ORDER BY`, and the frame clause each control?
 
-**A:** Partition divides the filtered input; window ORDER BY sequences rows and defines peers through equal ordering keys; a frame bounds contributing rows for frame-sensitive functions. Ranking and lag/lead have partition/order semantics rather than treating all functions as frame aggregates. Final output ordering is separate.
+**A:** Partition divides the filtered input; window `ORDER BY` sequences rows and defines peers through equal ordering keys; a frame bounds contributing rows for frame-sensitive functions. Ranking and lag/lead have partition/order semantics rather than treating all functions as frame aggregates. Final output ordering is separate.
 
 **Q:** Why must a query use an outer filter to select rows by a window-function result?
 
-**A:** WHERE decides the input before window calculations exist. Compute the value in a subquery/CTE, then filter outside. Moving a filter outside can deliberately change which rows contributed to ranking/totals; PostgreSQL 18 has no `QUALIFY` clause.
+**A:** `WHERE` decides the input before window calculations exist. Compute the value in a subquery/CTE, then filter outside. Moving a filter outside can deliberately change which rows contributed to ranking/totals; PostgreSQL 18 has no `QUALIFY` clause.
 
 **Q:** Can `lag` skip NULL values in PostgreSQL 18?
 
@@ -124,11 +120,11 @@ Source: [PostgreSQL Window Functions](20.4.2.04-window-functions.md)
 
 **Q:** Why do the two salary-80 peers both show 260 with the default running-sum frame?
 
-**A:** The salary-only order makes them peers, and default RANGE extends through the current row's last peer. Explicit ROWS ordered by salary and ID yields 180 then 260. last_value also sees its frame unless a full-partition frame is specified.
+**A:** The salary-only order makes them peers, and default `RANGE` extends through the current row's last peer. Explicit `ROWS` ordered by salary and ID yields 180 then 260. `last_value` also sees its frame unless a full-partition frame is specified.
 
 **Q:** What changes if “top two” means two distinct salary levels rather than two employees?
 
-**A:** Deterministic row_number selects two rows; salary-only dense_rank <=2 includes every peer in the top two salary groups. Adding an ID to rank ordering removes salary-only peers and changes that meaning.
+**A:** Deterministic `row_number` selects two rows; salary-only `dense_rank <= 2` includes every peer in the top two salary groups. Adding an ID to rank ordering removes salary-only peers and changes that meaning.
 
 ## PostgreSQL JSONB
 
@@ -146,9 +142,9 @@ Source: [PostgreSQL JSONB](20.4.2.05-jsonb.md)
 
 **A:** Validate at the application boundary and enforce required invariants in the database. Cover SQL `NULL`, missing keys, JSON `null`, wrong types, ranges and schema versions; `CHECK` expressions that evaluate to SQL `NULL` pass unless the contract prevents it.
 
-**Q:** In the JSONB fixture, how can note exist while its text extraction is SQL NULL?
+**Q:** In the JSONB fixture, how can `note` exist while its text extraction is SQL `NULL`?
 
-**A:** note stores JSON null. Existence is true and jsonb_typeof yields the text null, while ->> yields SQL NULL. A missing key also extracts SQL NULL, so use existence/type to distinguish the states.
+**A:** `note` stores JSON `null`. Existence is true and `jsonb_typeof` yields the text `null`, while `->>` yields SQL `NULL`. A missing key also extracts SQL `NULL`, so use existence/type to distinguish the states.
 
 **Q:** Why does a stale replacement affect no row, and does `jsonb_path_ops` support a key-existence query?
 

@@ -1,4 +1,4 @@
-# Service Topology - Microservices
+# Service Topology — Microservices
 
 > **Study time:** ≈ 21 min of reading (5 files, ~4 min average).
 > **5 files.** How services find each other and evolve safely: discovery registries, the edge gateway, managed service-hop policy, and the strangler-fig migration path off a monolith.
@@ -35,16 +35,16 @@ Docita is a **modular monolith**: one API deployable plus one worker deployable 
 
 | Topic | Docita evidence |
 | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| Modular monolith topology | `apps/api/src/app.module.ts` - ~20 bounded-context modules in a single deployable |
-| Worker as separate deployable | `apps/worker/src/main.ts` - own Fly.io process (`apps/worker/fly.toml`) for crons and jobs |
-| Incremental cutover lever | `apps/api/src/shared/modules/feature-flags/feature-flags.service.ts` - per-clinic flags enable strangler-style rollout |
+| Modular monolith topology | `apps/api/src/app.module.ts` — ~20 bounded-context modules in a single deployable |
+| Worker as separate deployable | `apps/worker/src/main.ts` — own Fly.io process (`apps/worker/fly.toml`) for crons and jobs |
+| Incremental cutover lever | `apps/api/src/shared/modules/feature-flags/feature-flags.service.ts` — per-clinic flags enable strangler-style rollout |
 
 Consul/Eureka, Istio/Linkerd, and API-gateway products not used; adding another deployable does not require those products. Choose discovery/routing and communication policy from actual requirements and operational capacity.
-
----
-
-[Next: Communication & Messaging →](../02-communication-and-messaging/INDEX.md)
 
 ## Section Revision
 
 After the learning chapters, use the [separate revision drill](REVISION.md) to check recall before interview practice.
+
+---
+
+[Next: Communication & Messaging →](../02-communication-and-messaging/INDEX.md)

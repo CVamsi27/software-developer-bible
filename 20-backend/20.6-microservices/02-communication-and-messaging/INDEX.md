@@ -1,4 +1,4 @@
-# Communication & Messaging - Microservices
+# Communication & Messaging — Microservices
 
 > **Study time:** ≈ 43 min of reading (7 files, ~6 min average).
 > **7 files.** How services talk: gRPC (+ streaming) for typed RPC over HTTP/2, Kafka and RabbitMQ for messaging, broker selection discipline, and event-driven architecture.
@@ -34,18 +34,18 @@ Trace a typed unary call before studying stream lifetime and cancellation. Then 
 These [Docita](https://github.com/CVamsi27/docita) source paths illustrate current in-process/provider boundaries; inspect their actual completion contract rather than treating them as broker deployments:
 
 | Topic | Docita evidence |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| In-process event bus | `apps/api/src/shared/common/events/event.service.ts` - typed publish over EventEmitter2 |
-| Event catalog | `apps/api/src/shared/common/events/domain-events.ts` - enum'd appointment/patient/billing/prescription events |
-| Channel abstraction | `apps/api/src/shared/modules/messaging/notification-orchestrator.service.ts` - channel-agnostic notification fan-out |
-| Provider adapter isolation | `apps/api/src/shared/modules/messaging/email/providers/zeptomail-email.provider.ts` - circuit-broken ZeptoMail behind IEmailProvider |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| In-process event bus | `apps/api/src/shared/common/events/event.service.ts` — typed publish over `EventEmitter2` |
+| Event catalog | `apps/api/src/shared/common/events/domain-events.ts` — enum'd appointment/patient/billing/prescription events |
+| Channel abstraction | `apps/api/src/shared/modules/messaging/notification-orchestrator.service.ts` — channel-agnostic notification fan-out |
+| Provider adapter isolation | `apps/api/src/shared/modules/messaging/email/providers/zeptomail-email.provider.ts` — circuit-broken ZeptoMail behind `IEmailProvider` |
 
 Kafka, RabbitMQ, and gRPC not used — justified while events stay inside one deployable; a cross-deployable requirement would need an explicit transport and acknowledgment contract. It does not automatically require a particular broker.
-
----
-
-[← Previous: Service Topology](../01-service-topology/INDEX.md) · [Next: Data & Consistency →](../03-data-and-consistency/INDEX.md)
 
 ## Section Revision
 
 After the learning chapters, use the [separate revision drill](REVISION.md) to check recall before interview practice.
+
+---
+
+[← Previous: Service Topology](../01-service-topology/INDEX.md) · [Next: Data & Consistency →](../03-data-and-consistency/INDEX.md)

@@ -76,7 +76,7 @@ Sources: [broker model](20.9.01-message-brokers.md), [Kafka operations](20.9.02-
 
 **Q:** Does upgrading the broker to Kafka 4.3 put every consumer on KIP-848?
 
-**A:** No. A compatible client explicitly selects the consumer protocol. Server heartbeat/session settings then apply, but Java poll-progress limits still matter; check each client's protocol support instead of assuming API compatibility implies KIP-848 support.
+**A:** No. A compatible client explicitly selects the consumer protocol. Server heartbeat/session settings then apply, but client poll-progress limits (`max.poll.interval.ms`) still matter; check each client's protocol support instead of assuming API compatibility implies KIP-848 support.
 
 **Q:** When should a Kafka Share Group replace a classic consumer group?
 

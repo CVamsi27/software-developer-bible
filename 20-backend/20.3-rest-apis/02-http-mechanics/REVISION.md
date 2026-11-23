@@ -18,13 +18,13 @@ Source: [HTTP Methods](20.3.2.01-http-methods.md)
 
 **A:** Safety means no intended state change; idempotence means repeating an identical request has the same intended effect. These properties inform retries, while cacheability additionally depends on response status and headers.
 
-**Q:** How can a POST operation support duplicate-safe retry?
+**Q:** How can a `POST` operation support duplicate-safe retry?
 
-**A:** Define an idempotency-key contract and atomically record the key with the protected outcome. Reject mismatched reuse and retain state for the permitted retry window; POST itself does not promise idempotence.
+**A:** Define an idempotency-key contract and atomically record the key with the protected outcome. Reject mismatched reuse and retain state for the permitted retry window; `POST` itself does not promise idempotence.
 
 **Q:** Why does choosing an HTTP method require more than mapping it to a CRUD label?
 
-**A:** The method describes interaction semantics, such as replacement versus partial modification. It does not dictate whether the server executes a SQL INSERT or UPDATE.
+**A:** The method describes interaction semantics, such as replacement versus partial modification. It does not dictate whether the server executes a SQL `INSERT` or `UPDATE`.
 
 ## HTTP Status Codes
 
@@ -36,11 +36,11 @@ Source: [HTTP Status Codes](20.3.2.02-status-codes.md)
 
 **Q:** Why is the 4xx or 5xx class insufficient by itself to decide whether to retry?
 
-**A:** Some 4xx responses are retryable after a condition changes, and some 5xx failures persist. Check operation idempotence, Retry-After, attempt limits and the documented failure meaning.
+**A:** Some 4xx responses are retryable after a condition changes, and some 5xx failures persist. Check operation idempotence, `Retry-After`, attempt limits and the documented failure meaning.
 
 **Q:** When should an API use a specific status code rather than a generic error?
 
-**A:** Use the code whose semantics match the outcome so clients can branch predictably. For example, 401 requires authentication handling, while 403 describes refusal; the response body supplies application detail.
+**A:** Use the code whose semantics match the outcome so clients can branch predictably. For example, `401` requires authentication handling, while `403` describes refusal; the response body supplies application detail.
 
 ## CORS (Cross-Origin Resource Sharing)
 
@@ -54,9 +54,9 @@ Source: [CORS (Cross-Origin Resource Sharing)](20.3.2.03-cors.md)
 
 **A:** Return the applicable CORS headers for allowed origins, methods and headers. Certain requests need preflight; authentication and authorization still apply to the actual request.
 
-**Q:** Why can a request succeed in curl but be unreadable to browser JavaScript?
+**Q:** Why can a request succeed in `curl` but be unreadable to browser JavaScript?
 
-**A:** curl does not enforce browser origin policy. A browser can send a request yet withhold its response from JavaScript; credentialed CORS also cannot use a wildcard allowed origin.
+**A:** `curl` does not enforce browser origin policy. A browser can send a request yet withhold its response from JavaScript; credentialed CORS also cannot use a wildcard allowed origin.
 
 ## HTTP Caching Strategies
 
@@ -68,7 +68,7 @@ Source: [HTTP Caching Strategies](20.3.2.04-http-caching.md)
 
 **Q:** How do validators reduce transfer when a cached response becomes stale?
 
-**A:** A conditional request can receive 304 when the stored representation remains valid, avoiding retransmission of its body. The response still carries headers, and validators are useful only when the response policy permits reuse.
+**A:** A conditional request can receive `304` when the stored representation remains valid, avoiding retransmission of its body. The response still carries headers, and validators are useful only when the response policy permits reuse.
 
 **Q:** Which invalidation paths must a caching design account for?
 
@@ -78,49 +78,49 @@ Source: [HTTP Caching Strategies](20.3.2.04-http-caching.md)
 
 Source: [Learning chapter](20.3.2.01-http-methods.md)
 
-**Q:** Can an idempotent DELETE return 204 and then 404?
+**Q:** Can an idempotent `DELETE` return `204` and then `404`?
 
 **A:** Yes. Its intended effect remains removal; response equality is not the idempotency contract.
 
-**Q:** Why does an idempotent PUT still need If-Match?
+**Q:** Why does an idempotent `PUT` still need `If-Match`?
 
-**A:** Repeating one replacement is safe under the method contract, but two clients can overwrite each other. An atomic version precondition rejects an outdated write with 412.
+**A:** Repeating one replacement is safe under the method contract, but two clients can overwrite each other. An atomic version precondition rejects an outdated write with `412`.
 
 ## Response access and cache boundaries
 
 Sources: [Status codes](20.3.2.02-status-codes.md), [CORS](20.3.2.03-cors.md), [HTTP caching](20.3.2.04-http-caching.md)
 
-**Q:** Why can a report accepted with 202 later fail?
+**Q:** Why can a report accepted with `202` later fail?
 
 **A:** Acceptance records work for later processing; it is not its final outcome. Inspect the authorized status resource.
 
-**Q:** What accompanies a 401 response for an authentication scheme?
+**Q:** What accompanies a `401` response for an authentication scheme?
 
-**A:** An applicable WWW-Authenticate challenge; safe detail can explain the application's credential requirement.
+**A:** An applicable `WWW-Authenticate` challenge; safe detail can explain the application's credential requirement.
 
-**Q:** Can a cookie-bearing safelisted POST execute before CORS blocks reading its response?
+**Q:** Can a cookie-bearing safelisted `POST` execute before CORS blocks reading its response?
 
 **A:** Yes. Cookies do not by themselves require preflight. CORS cannot undo the effect or replace CSRF protection.
 
-**Q:** Why does a JSON POST usually cause OPTIONS before the actual request?
+**Q:** Why does a JSON `POST` usually cause `OPTIONS` before the actual request?
 
-**A:** Its Content-Type is not CORS-safelisted. The browser checks permitted method/header names, then checks the actual response too.
+**A:** Its `Content-Type` is not CORS-safelisted. The browser checks permitted method/header names, then checks the actual response too.
 
-**Q:** Does no-cache prohibit storage?
+**Q:** Does `no-cache` prohibit storage?
 
-**A:** No. It requires validation before reuse. No-store directs caches not to store the response.
+**A:** No. It requires validation before reuse. `no-store` directs caches not to store the response.
 
-**Q:** Why can a weak ETag validate GET but fail an If-Match write condition?
+**Q:** Why can a weak `ETag` validate `GET` but fail an `If-Match` write condition?
 
-**A:** GET validation uses weak comparison; If-Match requires strong comparison.
+**A:** `GET` validation uses weak comparison; `If-Match` requires strong comparison.
 
-**Q:** Does checking a version then awaiting an unrelated UPDATE prevent lost writes?
+**Q:** Does reading a version, calling `await`, and then running an unrelated `UPDATE` prevent lost writes?
 
 **A:** No. Another writer can change it in the gap. Check the expected version atomically with the update.
 
-**Q:** Why does the cache example omit an ETag on successful PUT after rebuilding the JSON?
+**Q:** Why does the cache example omit an `ETag` on successful `PUT` after rebuilding the JSON?
 
-**A:** HTTP forbids a successful PUT validator unless the received representation was stored without transformation and the validator identifies it. This handler selects fields and serializes anew; GET returns the resulting representation validator.
+**A:** HTTP forbids a successful `PUT` validator unless the received representation was stored without transformation and the validator identifies it. This handler selects fields and serializes anew; `GET` returns the resulting representation validator.
 
 ## Summary
 

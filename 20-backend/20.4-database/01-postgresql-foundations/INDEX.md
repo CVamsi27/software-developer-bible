@@ -1,6 +1,6 @@
 # PostgreSQL Foundations - Database
 
-> **Study time:** ≈ 1 h 12 m of reading (7 files, ~10 min average).
+> **Study time:** ≈ 1 h 15 m of reading (7 files, ~11 min average).
 > **7 files.** How PostgreSQL works under the hood: architecture and WAL, normalization, MVCC, SQL vs NoSQL trade-offs, performance tuning, and row-level security. This foundation supports the later querying, transaction and operations chapters.
 
 [![Files](https://img.shields.io/badge/files-7-blue)](../INDEX.md)
@@ -22,11 +22,11 @@
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | :---: | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ------------- | ------------------ | --------: |
-| 01 | [PostgreSQL](20.4.1.01-postgresql.md) | Architecture, WAL, constraints, MVCC, vacuum, configuration | Essential | Foundational | 11 min |
+| 01 | [PostgreSQL](20.4.1.01-postgresql.md) | Architecture, WAL, constraints, MVCC, vacuum, configuration | Essential | Foundational | 12 min |
 | 02 | [Normalization](20.4.1.02-normalization.md) | 1NF, 2NF, 3NF, BCNF, denormalization trade-offs | Important | Important | 10 min |
 | 03 | [MVCC](20.4.1.03-mvcc.md) | Statement and transaction snapshots, own writes, conflicts, cleanup | Important | Important | 13 min |
-| 04 | [SQL vs NoSQL](20.4.1.04-nosql-vs-sql.md) | Workload fit, consistency, query shape, product guarantees | Essential | Foundational | 10 min |
-| 05 | [PostgreSQL Performance](20.4.1.05-postgresql-performance.md) | Workload diagnosis, plans, memory, vacuum, partitioning | Essential | Foundational | 11 min |
+| 04 | [SQL vs NoSQL](20.4.1.04-nosql-vs-sql.md) | Workload fit, consistency, query shape, product guarantees | Essential | Foundational | 11 min |
+| 05 | [PostgreSQL Performance](20.4.1.05-postgresql-performance.md) | Workload diagnosis, plans, memory, vacuum, partitioning | Essential | Foundational | 12 min |
 | 06 | [Row-Level Security](20.4.1.06-row-level-security.md) | Policy composition, tenant context, fail-open conditions, bypass roles, old/new row checks | Essential | Foundational | 12 min |
 
 ---
@@ -37,21 +37,21 @@
 
 ## Docita Anchor
 
-Use these [Docita](https://github.com/CVamsi27/docita) source paths as investigation leads. Verify each behavior in the current code and tests before describing it as deployed or effective:
+These [Docita](https://github.com/CVamsi27/docita) source paths illustrate schema, pool, slow-query logging, and tenant-context patterns to inspect in a current checkout:
 
 | Topic | Docita evidence | Role priority | General importance |
 | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------ |
-| Schema as source of truth | `packages/db/prisma/schema.prisma` - canonical relational schema, `pg_trgm` extension, clinicId tenancy columns | Varies | Varies |
-| Connections | `apps/api/src/prisma/prisma.service.ts` - Prisma over a `pg` Pool (@prisma/adapter-pg) with UTC session config | Varies | Varies |
-| Performance tooling | `apps/api/src/shared/modules/database/slow-query-logging.service.ts` - Prisma query-event listener logs slow statements | Varies | Varies |
+| Schema as source of truth | `packages/db/prisma/schema.prisma` — canonical relational schema, `pg_trgm` extension, `clinicId` tenancy columns | Varies | Varies |
+| Connections | `apps/api/src/prisma/prisma.service.ts` — Prisma over a `pg` Pool (`@prisma/adapter-pg`) with UTC session config | Varies | Varies |
+| Performance tooling | `apps/api/src/shared/modules/database/slow-query-logging.service.ts` — Prisma query-event listener logs slow statements | Varies | Varies |
 | Row-Level Security | `apps/api/src/shared/common/interceptors/tenant-context.interceptor.ts` — request tenant context; verify the actual transaction-local database setting and scoped client path in the [tenant case](../../../projects/docita/02-multi-tenancy-rls.md) | Essential | Important |
 
-Managed PostgreSQL still requires workload-aware maintenance and operational ownership. Its presence does not establish effective vacuum settings or justify every possible data-model choice.
-
----
-
-[Next: Querying & Optimization →](../02-querying-and-optimization/INDEX.md)
+Managed PostgreSQL still requires workload-aware vacuum tuning, pool sizing, and schema ownership.
 
 ## Section Revision
 
 After the learning chapters, use the [separate revision drill](REVISION.md) to check recall before interview practice.
+
+---
+
+[Next: Querying & Optimization →](../02-querying-and-optimization/INDEX.md)

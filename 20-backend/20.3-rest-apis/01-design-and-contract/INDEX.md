@@ -31,17 +31,15 @@ Choose the interaction and client constraints first. Derive resource/HTTP semant
 
 ## Docita Anchor
 
-These [Docita](https://github.com/CVamsi27/docita) healthcare-application pointers are investigation starting points. Inspect the current checkout and generated contract before treating them as current behavior or deployment evidence:
-
-Investigate its URI-versioning configuration, resource-scoped controllers and generated OpenAPI artifact together; dependency absence and supported contracts require current inspection.
+These [Docita](https://github.com/CVamsi27/docita) healthcare-application pointers are starting points for inspecting URI versioning, resource-scoped controllers, and the generated OpenAPI contract in a current checkout:
 
 | Topic | Docita evidence |
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
 | Versioning | `apps/api/src/main.ts` - `enableVersioning({ type: VersioningType.URI })` |
 | Resource-oriented controllers | `apps/api/src/domains/appointments/presentation/controllers/appointments-schedule.controller.ts` - noun-scoped routes split by concern |
-| OpenAPI contract | `apps/api/src/main.ts` - SwaggerModule spec generated from Zod-typed DTOs |
+| OpenAPI contract | `apps/api/src/main.ts` - `SwaggerModule` spec generated from Zod-typed DTOs |
 
-Classify an observed interface by its resource, method and control behavior; endpoint naming alone does not prove a maturity level or full REST constraints.
+Classify an observed interface by its resource, method, and control behavior; endpoint naming alone does not establish REST constraints or a maturity level.
 
 ---
 

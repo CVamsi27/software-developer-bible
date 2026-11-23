@@ -44,7 +44,7 @@ Source: [Redis Fundamentals](20.8.02-redis-fundamentals.md).
 
 **Q:** Why is `LPUSH tasks A B C` followed by `RPOP tasks` expected to return `A`?
 
-**A:** LPUSH inserts its arguments one at a time at the head, yielding C, B, A. Removing the tail returns the earliest inserted item A.
+**A:** `LPUSH` inserts its arguments one at a time at the head, yielding `C`, `B`, `A`. Removing the tail returns the earliest inserted item `A`.
 
 **Q:** A worker pauses beyond a lease's TTL, then resumes. What does compare-and-delete release protect, and what does it leave unresolved?
 
@@ -64,7 +64,7 @@ Source: [Redis Fundamentals](20.8.02-redis-fundamentals.md), [Redis data types](
 
 **Q:** Which Node.js client does Redis recommend for new applications, and why should you avoid mixing examples from different clients?
 
-**A:** Redis recommends node-redis for new projects and continues to maintain ioredis. Their command names, option objects and return types differ; pin the client version and test examples against its API.
+**A:** Redis recommends `node-redis` for new projects while `ioredis` remains in maintenance mode. Their command names, option objects and return types differ; pin the client version and test examples against its API.
 
 **Q:** Why can one slow command raise latency for unrelated clients on the same Redis node?
 
@@ -72,7 +72,7 @@ Source: [Redis Fundamentals](20.8.02-redis-fundamentals.md), [Redis data types](
 
 **Q:** Does a successful primary reply prove a write survives restart and failover?
 
-**A:** No. RDB snapshots, AOF fsync policy, asynchronous replica progress, and failover are separate durability boundaries. `WAIT` returns the actual acknowledgment count, which can fall below the requested count at timeout; even sufficient acknowledgments do not make Redis strongly consistent.
+**A:** No. RDB snapshots, AOF `fsync` policy, asynchronous replica progress, and failover are separate durability boundaries. `WAIT` returns the actual acknowledgment count, which can fall below the requested count at timeout; even sufficient acknowledgments do not make Redis strongly consistent.
 
 **Q:** What changes when two keys hash to different Redis Cluster slots?
 
@@ -94,11 +94,11 @@ Source: [Advanced Redis Patterns](20.8.03-advanced-redis-patterns.md).
 
 **A:** `>` retrieves never-delivered entries. Already-delivered entries remain in the pending-entry list and need explicit recovery/reclaim; processing must tolerate an old worker resuming.
 
-**Q:** Does XACK delete the event, and does a successful XADD prove it survives failover?
+**Q:** Does `XACK` delete the event, and does a successful `XADD` prove it survives failover?
 
-**A:** XACK clears pending-delivery bookkeeping; retention controls stored entries. Persistence, asynchronous replication, eviction, and recovery settings decide whether an appended event survives a failure.
+**A:** `XACK` clears pending-delivery bookkeeping; retention controls stored entries. Persistence, asynchronous replication, eviction, and recovery settings decide whether an appended event survives a failure.
 
-**Q:** Which API receives pattern publications in the pinned node-redis client?
+**Q:** Which API receives pattern publications in the pinned `node-redis` client?
 
 **A:** `pSubscribe(pattern, listener)` supplies a `(message, channel)` callback. Listening for an older client's `pmessage` event does not provide that callback contract; distinguish protocol message names from the client API.
 
@@ -112,7 +112,7 @@ Source: [Cache-aside model](20.8.01-caching-deep-dive.md#cache-aside-with-one-co
 
 **Q:** The source rejects. Should a subsequent caller reuse that rejected promise?
 
-**A:** No. The finally handler removes it, enabling recovery. A deadline and bounded retries still belong in the source adapter.
+**A:** No. The `finally` handler removes it, enabling recovery. A deadline and bounded retries still belong in the source adapter.
 
 **Q:** A caller mutates the returned object. What does the example cache subsequently return?
 
@@ -122,7 +122,7 @@ Source: [Cache-aside model](20.8.01-caching-deep-dive.md#cache-aside-with-one-co
 
 **A:** No. The stored lease may exist. Unique holder identity, bounded reconciliation and the protected resource's invariant handle the uncertainty.
 
-**Q:** A stream entry is reclaimed while the original worker resumes. Does XACK arbitrate the business effect?
+**Q:** A stream entry is reclaimed while the original worker resumes. Does `XACK` arbitrate the business effect?
 
 **A:** No. Both can perform work before acknowledgment; the authoritative effect needs an atomic deduplication or conflict guard.
 

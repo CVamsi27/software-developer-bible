@@ -1,4 +1,4 @@
-# Attacks & Defense - Security
+# Attacks & Defense — Security
 
 > **Study time:** ≈ 33 min of reading (5 files, ~7 min average).
 > **5 files.** Study browser injection, forged requests, SQL injection and API security, then recall their trust boundaries with the separate revision drill.
@@ -35,16 +35,16 @@ These [Docita](https://github.com/CVamsi27/docita) paths are review starting poi
 
 | Topic | Docita evidence |
 | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| CSRF | `apps/api/src/shared/common/interceptors/csrf.interceptor.ts` - double-submit cookie/header pair compared timing-safe |
-| XSS / security headers | `apps/api/src/main.ts` - `configureSecurityHeaders` applies Helmet/CSP to the HTTP API; `/docs` gets a development-specific policy override |
-| SQL injection | `apps/api/src/shared/common/utils/postgres-advisory-lock.ts` - even raw SQL goes through parameterized `$queryRaw` tagged templates |
-| BOLA / IDOR defense | `apps/api/src/shared/common/extensions/tenant.extension.ts` - tenant-scoping extension; inspect covered clients, models and raw-query bypasses |
-| Audit trail (API Top 10) | `apps/api/src/shared/common/interceptors/patient-audit.interceptor.ts` - PHI access auditing on patient reads |
-
----
-
-[← Previous: Auth](../01-auth/INDEX.md) · [Next: Hardening & Operations →](../03-hardening-and-operations/INDEX.md)
+| CSRF | `apps/api/src/shared/common/interceptors/csrf.interceptor.ts` — double-submit cookie/header pair compared timing-safe |
+| XSS / security headers | `apps/api/src/main.ts` — `configureSecurityHeaders` applies Helmet/CSP to the HTTP API; `/docs` gets a development-specific policy override |
+| SQL injection | `apps/api/src/shared/common/utils/postgres-advisory-lock.ts` — even raw SQL goes through parameterized `$queryRaw` tagged templates |
+| BOLA / IDOR defense | `apps/api/src/shared/common/extensions/tenant.extension.ts` — tenant-scoping extension; inspect covered clients, models and raw-query bypasses |
+| Audit trail (API Top 10) | `apps/api/src/shared/common/interceptors/patient-audit.interceptor.ts` — PHI access auditing on patient reads |
 
 ## Section Revision
 
 After the learning chapters, use the [separate revision drill](REVISION.md) to check recall before interview practice.
+
+---
+
+[← Previous: Auth](../01-auth/INDEX.md) · [Next: Hardening & Operations →](../03-hardening-and-operations/INDEX.md)

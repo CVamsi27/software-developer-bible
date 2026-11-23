@@ -58,7 +58,7 @@ Source: [HTTP Basic & Digest Authentication](20.5.1.02-http-basic-digest-auth.md
 
 **Q:** How does HTTP Basic carry credentials on a request?
 
-**A:** Basic sends a base64-encoded username and password in Authorization. Encoding is reversible; TLS and protection of every component that handles the header provide confidentiality.
+**A:** Basic sends a base64-encoded username and password in the `Authorization` header. Encoding is reversible; TLS and protection of every component that handles the header provide confidentiality.
 
 **Q:** What risks arise from repeatedly transmitting a reusable password?
 
@@ -94,7 +94,7 @@ Source: [Sessions & Cookies](20.5.1.04-sessions-cookies.md)
 
 **Q:** Why is automatic cookie delivery both useful and relevant to CSRF?
 
-**A:** The browser can attach a matching cookie without application JavaScript. HttpOnly prevents direct script reading, but XSS can still act as the user; automatic credential delivery also requires CSRF controls.
+**A:** The browser can attach a matching cookie without application JavaScript. `HttpOnly` prevents direct script reading, but XSS can still act as the user; automatic credential delivery also requires CSRF controls.
 
 **Q:** How do fixation and hijacking compromise a session identifier?
 
@@ -122,11 +122,11 @@ Source: [JWT (JSON Web Tokens)](20.5.1.05-jwt.md)
 
 **Q:** How do signed and encrypted JWTs differ in claim confidentiality?
 
-**A:** Signed JWS claims are readable and protected for integrity; JWE encrypts claims under a separate contract. Keep secrets out of signed payloads and validate algorithms and keys independently of untrusted headers.
+**A:** Signed JSON Web Signature (JWS) claims are readable and protected for integrity; JSON Web Encryption (JWE) encrypts claims under a separate contract. Keep secrets out of signed payloads and validate algorithms and keys independently of untrusted headers.
 
-**Q:** What does storing a JWT in an HttpOnly cookie protect, and which risk remains?
+**Q:** What does storing a JWT in an `HttpOnly` cookie protect, and which risk remains?
 
-**A:** HttpOnly prevents direct JavaScript reads, but the browser attaches the cookie automatically, so unsafe requests still need CSRF protection. Active XSS can also issue authenticated requests through the victim's browser.
+**A:** `HttpOnly` prevents direct JavaScript reads, but the browser attaches the cookie automatically, so unsafe requests still need CSRF protection. Active XSS can also issue authenticated requests through the victim's browser.
 
 Source: [JWT browser storage](20.5.1.05-jwt.md) · [CSRF](../02-attacks-and-defense/20.5.2.02-csrf.md)
 
@@ -144,7 +144,7 @@ Source: [OAuth 2.0 & OpenID Connect](20.5.1.06-oauth2-oidc.md)
 
 **Q:** How do browser OAuth architectures trade token exposure against backend work?
 
-**A:** A BFF holds access and refresh tokens and proxies every resource request; the browser gets a session cookie, so CSRF protection and proxy operations remain. A token-mediating backend keeps refresh credentials but returns access tokens to JavaScript, where active XSS can use or steal them. A browser-only client is public and handles the flow itself, so it cannot keep a secret and tokens remain exposed to browser code. RFC 10017 ranks these patterns by security and strongly recommends a BFF for business, sensitive and personal-data applications.
+**A:** A Backend-for-Frontend (BFF) holds access and refresh tokens and proxies every resource request; the browser gets a session cookie, so CSRF protection and proxy operations remain. A token-mediating backend keeps refresh credentials but returns access tokens to JavaScript, where active XSS can use or steal them. A browser-only client is public and handles the flow itself, so it cannot keep a secret and tokens remain exposed to browser code. RFC 10017 ranks these patterns by security and strongly recommends a BFF for business, sensitive and personal-data applications.
 
 Source: [OAuth 2.0 for Browser-Based Applications, RFC 10017](https://datatracker.ietf.org/doc/html/rfc10017)
 
@@ -154,15 +154,15 @@ Source: [OAuth 2.0 for Browser-Based Applications, RFC 10017](https://datatracke
 
 Source: [OAuth 2.0 Device Authorization Grant, RFC 8628](https://datatracker.ietf.org/doc/html/rfc8628)
 
-**Q:** What do OAuth `state`, PKCE and OIDC `nonce` bind?
+**Q:** What do OAuth `state`, Proof Key for Code Exchange (PKCE), and OpenID Connect (OIDC) `nonce` bind?
 
-**A:** State correlates a browser-bound authorization response and may carry application state; PKCE binds code redemption to the client transaction; OIDC nonce binds the ID token to the authentication request and helps detect replay. A conforming server-enforced PKCE flow can also provide CSRF protection, but these values are not interchangeable.
+**A:** `state` correlates a browser-bound authorization response and may carry application state; PKCE binds code redemption to the client transaction; OIDC `nonce` binds the ID token to the authentication request and helps detect replay. A conforming server-enforced PKCE flow can also provide CSRF protection, but these values are not interchangeable.
 
 Source: [OAuth 2.0 Security Best Current Practice, RFC 9700](https://datatracker.ietf.org/doc/html/rfc9700)
 
 **Q:** A client supports several authorization servers. Why bind the chosen issuer to the pending login and validate the callback issuer before redeeming its code?
 
-**A:** State binds the response to the browser transaction, but the client must also send the code only to the authorization server that issued it. Persist the trusted issuer and endpoint at login start, then validate the response `iss` parameter when supported or apply another documented mix-up defense.
+**A:** `state` binds the response to the browser transaction, but the client must also send the code only to the authorization server that issued it. Persist the trusted issuer and endpoint at login start, then validate the response `iss` parameter when supported or apply another documented mix-up defense.
 
 Source: [OAuth 2.0 Authorization Server Issuer Identification, RFC 9207](https://www.rfc-editor.org/rfc/rfc9207.html) · [OAuth 2.0 Security Best Current Practice, RFC 9700](https://datatracker.ietf.org/doc/html/rfc9700)
 
@@ -170,11 +170,11 @@ Source: [OAuth 2.0 Authorization Server Issuer Identification, RFC 9207](https:/
 
 **A:** OIDC adds authentication assertions, notably an ID token with recipient and issuer validation. An access token authorizes resource access; it should not be treated as an interchangeable identity token.
 
-**Q:** A callback has a matching state and returns a valid access token. Has the application established an OIDC login?
+**Q:** A callback has a matching `state` and returns a valid access token. Has the application established an OIDC login?
 
-**A:** No. It must validate the ID token under the trusted issuer/client/nonce contract, map the provider subject and then create the local session. The API independently validates the access token's intended recipient and permissions.
+**A:** No. It must validate the ID token under the trusted issuer, client, and `nonce` contract, map the provider subject, and then create the local session. The API independently validates the access token's intended recipient and permissions.
 
-**Q:** Does storing a credential in an HttpOnly cookie remove the need for CSRF protection?
+**Q:** Does storing a credential in an `HttpOnly` cookie remove the need for CSRF protection?
 
 **A:** No. JavaScript cannot read that cookie, but the browser can still attach it automatically. A backend using it must protect its state-changing requests; direct bearer-header usage has a different credential-attachment boundary.
 
@@ -200,7 +200,7 @@ Source: [SSO, SAML & Federation](20.5.1.07-sso-saml-federation.md)
 
 **Q:** Does a matching `InResponseTo` prove that the response returned to the browser that started the login?
 
-**A:** No. It proves that the response names an SP-generated request ID, but the application must separately bind the pending RelayState or transaction to the initiating browser and tenant before creating a local session.
+**A:** No. It proves that the response names a Service Provider (SP)-generated request ID, but the application must separately bind the pending `RelayState` or transaction to the initiating browser and tenant before creating a local session.
 
 **Q:** Which login and session failures remain when an identity provider is unavailable?
 
@@ -216,11 +216,11 @@ Source: [MFA, Passkeys & WebAuthn](20.5.1.08-mfa-passkeys-webauthn.md)
 
 **Q:** How does WebAuthn's origin and relying-party binding resist phishing?
 
-**A:** The RP ID scopes the credential, while the client origin identifies the calling website and includes its scheme, host and port. The server checks the fresh challenge, RP ID hash, client origin and signature; accepting an unexpected origin weakens the boundary.
+**A:** The relying party identifier (`RP ID`) scopes the credential, while the client origin identifies the calling website and includes its scheme, host and port. The server checks the fresh challenge, RP ID hash, client origin and signature; accepting an unexpected origin weakens the boundary.
 
 **Q:** When does a passkey ceremony count as multi-factor authentication or meet AAL3?
 
-**A:** The credential name alone does not establish either claim. Check whether user verification was performed and what factors the applicable policy requires. NIST AAL3 requires phishing-resistant public-key authentication with a non-exportable, hardware-protected key, so a syncable passkey cannot meet that level.
+**A:** The credential name alone does not establish either claim. Check whether user verification was performed and what factors the applicable policy requires. National Institute of Standards and Technology (NIST) Authentication Assurance Level 3 (AAL3) requires phishing-resistant public-key authentication with a non-exportable, hardware-protected key, so a syncable passkey cannot meet that level.
 
 **Q:** What changes when a passkey can sync across devices?
 
@@ -266,7 +266,7 @@ Source: [ABAC (Attribute-Based Access Control)](20.5.1.10-abac-access-control.md
 
 **Q:** Which attribute sets determine an ABAC access decision?
 
-**A:** NIST describes attributes of the subject, object, requested operation and, in some cases, the environment. A policy uses the categories it needs; it does not need all four for every decision. Resolve them from trusted sources, then have the PEP enforce the result on the same object and operation.
+**A:** NIST describes attributes of the subject, object, requested operation and, in some cases, the environment. A policy uses the categories it needs; it does not need all four for every decision. Resolve them from trusted sources, then have the Policy Enforcement Point (PEP) enforce the result on the same object and operation.
 
 **Q:** Why do expressive policies need tests, versioning and decision diagnostics?
 
@@ -284,9 +284,9 @@ Sources: [API keys](20.5.1.03-api-keys.md), [sessions](20.5.1.04-sessions-cookie
 
 **A:** A cached record may retain an earlier active state. Specify and enforce the rejection window; destructive operations may require a current check. Prefixes identify candidates and need uniqueness, while full verifiers and ownership still decide access.
 
-**Q:** What must a server include with an HTTP 401 response?
+**Q:** What must a server include with an HTTP `401` response?
 
-**A:** At least one applicable `WWW-Authenticate` challenge, as required by HTTP semantics. A 403 has different meaning: the server understood the request but refuses it.
+**A:** At least one applicable `WWW-Authenticate` challenge, as required by HTTP semantics. A `403` has different meaning: the server understood the request but refuses it.
 
 Source: [HTTP Semantics, RFC 9110](https://datatracker.ietf.org/doc/html/rfc9110)
 
@@ -298,13 +298,13 @@ Source: [HTTP Semantics, RFC 9110](https://datatracker.ietf.org/doc/html/rfc9110
 
 **A:** A library can validate an expiration only when it exists. The application must require expiry and other profile fields, alongside algorithm/issuer/audience/purpose/runtime shape; a type cast does not validate them.
 
-**Q:** An OAuth callback arrives twice with the same state. What blocks the second exchange?
+**Q:** An OAuth callback arrives twice with the same `state`. What blocks the second exchange?
 
-**A:** An atomic browser-bound transaction consume before asynchronous redemption. State, PKCE verifier and OIDC nonce have separate roles; a missing stored value must never match a missing callback value.
+**A:** An atomic browser-bound transaction consume before asynchronous redemption. `state`, PKCE verifier, and OIDC `nonce` have separate roles; a missing stored value must never match a missing callback value.
 
-**Q:** The directory disabled an employee, but an existing app cookie still works. Which boundary was missed?
+**Q:** The identity provider (IdP) disabled an employee, but an existing app cookie still works. Which boundary was missed?
 
-**A:** IdP login rejection does not destroy the SP's local session. SCIM/account changes, app session revocation or current-state checks must propagate disablement within the allowed window.
+**A:** IdP login rejection does not destroy the SP's local session. System for Cross-domain Identity Management (SCIM) or account changes, app session revocation, or current-state checks must propagate disablement within the allowed window.
 
 **Q:** Why should registration not look up its challenge using the new credential ID?
 

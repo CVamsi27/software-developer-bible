@@ -1,6 +1,6 @@
 # Node.js — Index
 
-> **Study time:** ≈ 2 h 28 m of reading (19 files, ~8 min average).
+> **Study time:** ≈ 2 h 29 m of reading (19 files, ~8 min average).
 > **19 files** — Event loop internals, streams (Node + Web), buffers, file system, HTTP servers, parallel processing, process management, security, debugging/profiling, Express/Fastify internals, the built-in test runner, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-19-blue)](../../INDEX.md)
@@ -66,7 +66,7 @@ Production concerns — making Node.js scale and stay healthy. Category INDEX: [
 | 02 | [Child Processes & Workers](03-processes-and-concurrency/20.1.3.02-child-processes-workers.md) | `spawn`/`fork`/`exec`, `worker_threads`, SharedArrayBuffer, thread pool, when to use what | Important | Important | 10 min |
 | 03 | [Process & Environment](03-processes-and-concurrency/20.1.3.03-process-environment.md) | `process.env`, `argv`, lifecycle, signals (SIGTERM/SIGINT), graceful shutdown, exit codes | Important | Important | 9 min |
 | 04 | [PM2 Process Supervision](03-processes-and-concurrency/20.1.3.04-pm2-process-supervision.md) | Daemon/process list, fork and cluster modes, readiness, reload limits, restart policy | Important | Important | 5 min |
-| 05 | [Watt Runtime Architecture](03-processes-and-concurrency/20.1.3.05-watt-runtime-architecture.md) | Worker-thread applications, V8 isolates, `.plt.local` routing, health supervision and process-wide failure boundaries | Important | Important | 5 min |
+| 05 | [Watt Runtime Architecture](03-processes-and-concurrency/20.1.3.05-watt-runtime-architecture.md) | Worker-thread applications, V8 isolates, `.plt.local` routing, health supervision and process-wide failure boundaries | Important | Important | 6 min |
 
 ---
 

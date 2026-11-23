@@ -1,4 +1,4 @@
-# Data & Consistency - Microservices
+# Data & Consistency — Microservices
 
 > **Study time:** ≈ 42 min of reading (7 files, ~6 min average).
 > **7 files.** Atomicity and truth across service boundaries: saga with compensating transactions, distributed transaction patterns (outbox vs 2PC), event sourcing, CQRS, decomposing the monolith database, and the transactional outbox deep dive.
@@ -35,17 +35,17 @@ These [Docita](https://github.com/CVamsi27/docita) source paths illustrate imple
 
 | Topic | Docita evidence |
 | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Transactional outbox | `apps/api/src/shared/modules/outbox/outbox.service.ts` - append() inside the same business transaction (ADR-0010) |
-| Outbox relay | `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.ts` - cron drain, attempt escalation, processedAt marking |
-| Idempotent consumers | `apps/api/src/shared/modules/idempotency/idempotency.service.ts` - stored key lifecycle requires a checked mutation/result boundary |
-| DLQ discipline | `apps/api/src/shared/modules/queue/dlq-replay.scheduler.ts` - transient-error classification helper; `tick()` is inert while automatic wiring is pending. Inspect `dlq.controller.ts` for the manual replay path |
+| Transactional outbox | `apps/api/src/shared/modules/outbox/outbox.service.ts` — `append()` inside the same business transaction (ADR-0010) |
+| Outbox relay | `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.ts` — cron drain, attempt escalation, `processedAt` marking |
+| Idempotent consumers | `apps/api/src/shared/modules/idempotency/idempotency.service.ts` — stored key lifecycle requires a checked mutation/result boundary |
+| DLQ discipline | `apps/api/src/shared/modules/queue/dlq-replay.scheduler.ts` — transient-error classification helper; `tick()` is inert while automatic wiring is pending. Inspect `dlq.controller.ts` for the manual replay path |
 
 The listed mechanisms do not alone prove atomic cross-module effects, automatic replay or completed asynchronous handlers. Trace the current use case and worker wiring before describing an effective recovery guarantee or choosing saga/event-sourcing behavior.
-
----
-
-[← Previous: Communication & Messaging](../02-communication-and-messaging/INDEX.md) · [Next: Resilience →](../04-resilience/INDEX.md)
 
 ## Section Revision
 
 After the learning chapters, use the [separate revision drill](REVISION.md) to check recall before interview practice.
+
+---
+
+[← Previous: Communication & Messaging](../02-communication-and-messaging/INDEX.md) · [Next: Resilience →](../04-resilience/INDEX.md)

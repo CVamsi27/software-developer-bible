@@ -88,7 +88,7 @@ Source: [Discovery](20.6.1.01-service-discovery.md), [Gateway](20.6.1.02-api-gat
 
 **Q:** Why does `/api/orders-archive` not select the `/api/orders` route?
 
-**A:** Prefix matching must respect a path-segment boundary; exact prefix or prefix plus slash does, raw startsWith does not.
+**A:** Prefix matching must respect a path-segment boundary; exact prefix or prefix plus slash does, raw `startsWith` does not.
 
 **Q:** Is a URL-only cache safe for a caller-authorized order read?
 

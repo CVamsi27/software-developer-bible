@@ -24,7 +24,7 @@ Source: [XSS (Cross-Site Scripting)](20.5.2.01-xss.md)
 
 **Q:** What protection can CSP add when an unsafe execution sink remains?
 
-**A:** A restrictive policy can block classes of script execution and resource loading, but cannot repair every unsafe sink. HttpOnly protects direct cookie reads; it does not stop injected code from issuing authenticated requests.
+**A:** A restrictive policy can block classes of script execution and resource loading, but cannot repair every unsafe sink. `HttpOnly` protects direct cookie reads; it does not stop injected code from issuing authenticated requests.
 
 **Q:** When should a strict CSP authorize scripts with a nonce versus a hash?
 
@@ -46,9 +46,9 @@ Source: [CSRF (Cross-Site Request Forgery)](20.5.2.02-csrf.md)
 
 **A:** A malicious page can trigger a request to a target site while the browser attaches eligible credentials. The target must verify more than the presence of a valid session.
 
-**Q:** What does SameSite restrict, and why is it not a complete CSRF policy?
+**Q:** What does `SameSite` restrict, and why is it not a complete CSRF policy?
 
-**A:** SameSite restricts cookies according to site relationships and request conditions, not exact origin equality. Top-level navigations, unsafe GET handlers and same-site sibling origins require separate consideration.
+**A:** `SameSite` restricts cookies according to site relationships and request conditions, not exact origin equality. Top-level navigations, unsafe `GET` handlers, and same-site sibling origins require separate consideration.
 
 **Q:** How does a validated anti-CSRF token help distinguish an authorized request?
 
@@ -84,7 +84,7 @@ Source: [Prisma ORM v7 raw queries](https://www.prisma.io/docs/orm/v7/prisma-cli
 
 **Q:** How does least privilege reduce the impact of a SQL injection flaw?
 
-**A:** An injected statement runs with the database role's authority. Restrict role permissions and data reach, but do not treat RLS or low privilege as a replacement for removing the injection flaw.
+**A:** An injected statement runs with the database role's authority. Restrict role permissions and data reach, but do not treat row-level security (RLS) or low privilege as a replacement for removing the injection flaw.
 
 ## API Security Best Practices & OWASP API Top 10
 

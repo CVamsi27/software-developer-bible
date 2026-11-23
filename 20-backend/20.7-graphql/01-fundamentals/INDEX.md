@@ -1,4 +1,4 @@
-# Fundamentals - GraphQL
+# Fundamentals — GraphQL
 
 > **Study time:** ≈ 32 min of reading (4 files, ~8 min average).
 > **4 files.** The mental model: GraphQL's typed operation contract, schema design, field selection and variables, mutation ordering, and subscription event boundaries.
@@ -32,10 +32,10 @@ After the chapters, use [revision](REVISION.md), then continue to [execution](..
 
 _No direct Docita GraphQL implementation is cited here._ Docita is deliberately REST-first — URI-versioned REST documented via OpenAPI (`apps/api/src/main.ts`); `apps/api/package.json` carries no `@nestjs/graphql` or Apollo dependency. If GraphQL ever lands, schemas would start from these same domain modules and repository ports.
 
----
-
-[Next: Execution →](../02-execution/INDEX.md)
-
 ## Section Revision
 
 After the learning chapters, use the [separate revision drill](REVISION.md) to check recall before interview practice.
+
+---
+
+[Next: Execution →](../02-execution/INDEX.md)

@@ -90,7 +90,7 @@ Source: [Gateway forwarding](20.3.4.02-api-gateway.md)
 
 **Q:** In the read-gateway fixture, what happens to `/api/products/42?view=compact` and a supplied `X-User-Id`?
 
-**A:** The fixed target receives /products/42?view=compact. The fixture does not forward the asserted identity, and it generates its own request ID. A real protected gateway needs authenticated context and downstream resource authorization.
+**A:** The fixed target receives `/products/42?view=compact`. The fixture does not forward the asserted identity, and it generates its own request ID. A real protected gateway needs authenticated context and downstream resource authorization.
 
 **Q:** An upstream starts a body and then fails. Can the gateway write a new JSON `502` response?
 
@@ -102,13 +102,13 @@ Source: [BFF composition](20.3.4.03-bff.md)
 
 **A:** Empty means no activity, while unavailable means the dependency failed. Return an explicit partial state when permitted; fail the operation when required data or the total deadline contract fails.
 
-**Q:** Does a partner requesting only displayName prove it may see that user?
+**Q:** Does a partner requesting only `displayName` prove it may see that user?
 
 **A:** No. Field selection shapes output; verified principal, tenant and resource policy authorize it. Enforce access at the data-owning boundary and scope private caches appropriately.
 
 Source: [API authentication](20.3.4.04-authentication.md)
 
-**Q:** A tenant-a principal has invoice:read:any. Can it read tenant-b's invoice in the example?
+**Q:** A `tenant-a` principal has `invoice:read:any`. Can it read `tenant-b`'s invoice in the example?
 
 **A:** No. That permission is tenant-scoped; the tenant condition still rejects it. A global administrator needs a separate explicit policy.
 

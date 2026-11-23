@@ -33,16 +33,16 @@ The executable Prisma examples pin Prisma CLI and Client 7.10.0 with PostgreSQL.
 
 ## Docita Anchor
 
-Real code from [docita](https://github.com/CVamsi27/docita) - healthcare platform (NestJS + Prisma + Postgres). These paths are inspection pointers; verify the current client versions, extensions and deployment before treating them as behavior evidence:
+These [Docita](https://github.com/CVamsi27/docita) healthcare-platform paths (NestJS + Prisma + Postgres) illustrate client extensions, tenant scoping, field encryption, and repository boundaries:
 
 | Topic | Docita evidence |
 | ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Client composition | `apps/api/src/prisma/prisma.service.ts` - `$extends` stack: tenant, encryption, audit-immutability, rls-routing, slow-query, query-budget |
-| Multi-tenancy scoping | `apps/api/src/shared/common/extensions/tenant-scope-policy.ts` - inspect model-level tenant-filter rules and which nested, raw and unscoped operations they cover |
-| Patient-field encryption | `apps/api/src/shared/common/extensions/encryption.extension.ts` - inspect encryption/decryption hooks and the operations that participate in them |
-| Repository pattern | `apps/api/src/shared/common/repositories/base.repository.ts` - shared pagination and query-building abstraction; inspect actual repository call sites and transaction ownership |
+| Client composition | `apps/api/src/prisma/prisma.service.ts` — `$extends` stack: tenant, encryption, audit-immutability, rls-routing, slow-query, query-budget |
+| Multi-tenancy scoping | `apps/api/src/shared/common/extensions/tenant-scope-policy.ts` — inspect model-level tenant-filter rules and which nested, raw and unscoped operations they cover |
+| Patient-field encryption | `apps/api/src/shared/common/extensions/encryption.extension.ts` — inspect encryption/decryption hooks and the operations that participate in them |
+| Repository pattern | `apps/api/src/shared/common/repositories/base.repository.ts` — shared pagination and query-building abstraction; inspect actual repository call sites and transaction ownership |
 
-The ORM landscape decision is made: inspect the current dependencies and repository seams rather than assuming another ORM is absent from every module.
+Inspect Docita's current package manifests and repository seams directly to see which modules share Prisma versus specialized access helpers.
 
 ---
 

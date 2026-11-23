@@ -1,7 +1,7 @@
 # Payloads, Errors & Integration - REST APIs
 
 > **Study time:** ≈ 1 h 1 m of reading (8 files, ~8 min average).
-> **8 files.** The contract details clients feel daily: pagination strategies (offset vs cursor vs keyset), RFC 9457 Problem Details, long-running operations (202 Accepted + operation resources), file upload architectures (proxy multipart vs presigned direct-to-S3), webhook retries and verification, **serialization & wire formats**, and **transactional email delivery**.
+> **8 files.** The contract details clients feel daily: pagination strategies (offset vs cursor vs keyset), RFC 9457 Problem Details, long-running operations (`202 Accepted` + operation resources), file upload architectures (proxy multipart vs presigned direct-to-S3), webhook retries and verification, **serialization & wire formats**, and **transactional email delivery**.
 
 [![Files](https://img.shields.io/badge/files-8-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Payloads%20%26%20Errors-blue)](../INDEX.md)
@@ -33,7 +33,7 @@ Bound collection reads first, then define failures and asynchronous outcomes. Up
 
 ## Docita Anchor
 
-Study the chapters, then inspect these [Docita](https://github.com/CVamsi27/docita) healthcare-application pointers in the current checkout. They are investigation starting points, not proof of deployment or of every guarantee described here:
+These [Docita](https://github.com/CVamsi27/docita) healthcare-application pointers are starting points for inspecting pagination, error mapping, queues, uploads, and webhooks in a current checkout:
 
 | Topic | Docita evidence |
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------- |

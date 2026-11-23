@@ -1,6 +1,6 @@
 # Edge & Scale - REST APIs
 
-> **Study time:** ≈ 33 min of reading (5 files, ~7 min average).
+> **Study time:** ≈ 34 min of reading (5 files, ~7 min average).
 > **5 files.** Surviving traffic and integrating systems: rate limiting algorithms, API gateways, backend-for-frontend, and authentication schemes in the API context.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../INDEX.md)
@@ -19,7 +19,7 @@ Start by bounding admission and choosing the budget scope. Place trusted HTTP fo
 | 01 | [Rate Limiting](20.3.4.01-rate-limiting.md) | Algorithms (token bucket, sliding window), distributed limits | Essential | Foundational | 8 min |
 | 02 | [API Gateway](20.3.4.02-api-gateway.md) | Routing, aggregation, auth, rate limiting at the edge; deep patterns in [microservices](../../20.6-microservices/INDEX.md) | Important | Important | 8 min |
 | 03 | [BFF](20.3.4.03-bff.md) | Backend-for-frontend pattern, per-client payload shaping, gateway-routes vs dedicated-BFF vs GraphQL-BFF variants | Essential | Foundational | 8 min |
-| 04 | [Authentication](20.3.4.04-authentication.md) | Auth schemes for APIs; pairs with the [auth track](../../20.5-security/01-auth/INDEX.md) | Essential | Foundational | 7 min |
+| 04 | [Authentication](20.3.4.04-authentication.md) | Auth schemes for APIs; pairs with the [auth track](../../20.5-security/01-auth/INDEX.md) | Essential | Foundational | 8 min |
 | Revision | [Category recall](REVISION.md) | Test quota scope, gateway authority, composition failures and refresh races | Essential | Foundational | — |
 
 ---
@@ -30,16 +30,16 @@ Start by bounding admission and choosing the budget scope. Place trusted HTTP fo
 
 ## Docita Anchor
 
-Inspect these [Docita](https://github.com/CVamsi27/docita) healthcare-application pointers in the current checkout. They identify places to investigate, not verified deployment or enforcement guarantees:
+These [Docita](https://github.com/CVamsi27/docita) healthcare-application pointers are starting points for inspecting rate limiting, edge gates, and API authentication in a current checkout:
 
 | Topic | Docita evidence |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| Rate limiting algorithms | `apps/api/src/shared/common/interceptors/rate-limit.interceptor.ts` - windowed counters stored in CACHE_MANAGER |
-| Distributed limits | `apps/api/src/shared/modules/auth/guards/ip-rate-limit.guard.ts` - IP buckets beside user-rate-limit.guard.ts and global ThrottlerModule |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Rate limiting algorithms | `apps/api/src/shared/common/interceptors/rate-limit.interceptor.ts` - windowed counters stored in `CACHE_MANAGER` |
+| Distributed limits | `apps/api/src/shared/modules/auth/guards/ip-rate-limit.guard.ts` - IP buckets beside `user-rate-limit.guard.ts` and global `ThrottlerModule` |
 | Bot protection at the edge | `apps/api/src/shared/modules/turnstile/turnstile-verify.service.ts` - Cloudflare Turnstile gate on public booking routes |
 | Authentication schemes | `apps/api/src/shared/modules/auth/auth/api-key.service.ts` - hashed API keys for machines alongside JWT for users |
 
-Verify its current deployment and client composition boundaries before inferring whether a gateway or BFF is present or needed. Dedicated route mappings can be one possible starting point when client needs justify them.
+Inspect current client composition and routing boundaries before assuming a separate gateway or BFF deployment is needed.
 
 ---
 

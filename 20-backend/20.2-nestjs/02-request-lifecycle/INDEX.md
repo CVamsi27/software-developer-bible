@@ -1,4 +1,4 @@
-# Request Lifecycle - NestJS
+# Request Lifecycle — NestJS
 
 > **Study time:** ≈ 51 min of reading (7 files, ~7 min average).
 > **7 files.** Follow an HTTP operation through middleware, guards, interceptor before-work, argument pipes, the handler and reverse result mapping; uncaught failures choose an applicable filter. AsyncLocalStorage associates context with the supported continuation, subject to identity and resource lifetime.
@@ -21,7 +21,7 @@
 ## Chapter map
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------: |
+| --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Middleware](20.2.2.01-middleware.md) | Functional middleware, class middleware, consumer configuration, `NestModule` | Essential | Important | 8 min |
 | 02 | [Guards](20.2.2.02-guards.md) | Auth guards, role-based access, custom guards, `CanActivate`, execution context | Essential | Important | 8 min |
 | 03 | [Pipes](20.2.2.03-pipes.md) | Validation pipes, transformation pipes, built-in pipes, custom pipes | Essential | Important | 7 min |
@@ -35,15 +35,15 @@ Lifecycle order: Middleware → Guards → Interceptors (before) → Pipes → C
 
 ## Docita Anchor
 
-Real code from [docita](https://github.com/CVamsi27/docita) - healthcare platform (NestJS + Prisma + Postgres). Inspect the current checkout and deployment before treating these reading pointers as verified behavior:
+Real-world pointers from [docita](https://github.com/CVamsi27/docita) — healthcare platform (NestJS + Prisma + PostgreSQL):
 
 | Topic | Docita evidence |
 | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Middleware | `apps/api/src/shared/common/middleware/tenant.middleware.ts` - AsyncLocalStorage carries clinicId/user for the whole request |
-| Guards | `apps/api/src/shared/modules/auth/auth/jwt-auth.guard.ts` - JWT gate ahead of roles/policy/tenant/rate-limit guards |
-| Pipes | `apps/api/src/shared/common/pipes/zod-validation.pipe.ts` - Zod transform+validate before handlers run |
-| Interceptors | `apps/api/src/shared/common/interceptors/` - inspect registration/order, response policy, timeout cancellation, cache eligibility and any retry boundaries |
-| Exception filters | `apps/api/src/shared/modules/error-handling/filters/http-exception.filter.ts` - catch-all mapping domain errors to status codes + Sentry |
+| Middleware | `apps/api/src/shared/common/middleware/tenant.middleware.ts` — `AsyncLocalStorage` carries `clinicId`/`user` for the whole request |
+| Guards | `apps/api/src/shared/modules/auth/auth/jwt-auth.guard.ts` — JWT gate ahead of roles/policy/tenant/rate-limit guards |
+| Pipes | `apps/api/src/shared/common/pipes/zod-validation.pipe.ts` — Zod transform+validate before handlers run |
+| Interceptors | `apps/api/src/shared/common/interceptors/` — registration/order, response policy, timeout cancellation, cache eligibility, and retry boundaries |
+| Exception filters | `apps/api/src/shared/modules/error-handling/filters/http-exception.filter.ts` — catch-all mapping domain errors to status codes + Sentry |
 
 ---
 

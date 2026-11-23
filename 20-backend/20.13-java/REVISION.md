@@ -26,7 +26,7 @@ Source: [Language Fundamentals](20.13.01-java-language-fundamentals.md)
 
 **A:** HotSpot can collect execution feedback and compile hot methods while the service runs. A cold measurement includes startup and interpreter work; a warmed measurement may include compiled code. Compare both against the actual workload and JDK.
 
-**Q:** Why is a request pause not automatically equal to the logged garbage-collection pause?
+**Q:** Why is a request pause not automatically equal to the logged garbage-collection (GC) pause?
 
 **A:** HotSpot may spend time bringing threads to a safepoint before coordinated work begins. Application latency can also include scheduling, compilation, and I/O delays. Compare GC and safepoint logs with Flight Recorder data rather than attributing the entire delay to collection.
 
@@ -36,7 +36,7 @@ Source: [Language Fundamentals](20.13.01-java-language-fundamentals.md)
 
 **Q:** Why can subtracting two integer sort keys reverse their intended ordering?
 
-**A:** The subtraction may overflow. Integer.compare expresses ordering without that arithmetic overflow.
+**A:** The subtraction may overflow. `Integer.compare` expresses ordering without that arithmetic overflow.
 
 **Q:** What must be true before calling `Arrays.binarySearch` with a comparator?
 
@@ -70,7 +70,7 @@ Source: [OOP and SOLID](20.13.02-java-oop-solid.md)
 
 **A:** No. Injection supplies an object. Inversion also requires that high-level policy own the abstraction and that lower-level details implement it; injecting a concrete infrastructure class leaves the dependency direction unchanged.
 
-**Q:** When does an OCP extension point help rather than add unnecessary indirection?
+**Q:** When does an Open/Closed Principle (OCP) extension point help rather than add unnecessary indirection?
 
 **A:** When a real, repeated variation is expected and the new behavior satisfies a stable contract. Keep a workflow unchanged only when new implementations fit that contract; otherwise revise the abstraction rather than stacking flags or conditionals around it.
 
@@ -86,17 +86,17 @@ Source: [Concurrency](20.13.03-java-concurrency-multithreading.md)
 
 **A:** Several readers hold the read lock concurrently. A shared increment still races; remove the counter or protect its mutation separately.
 
-**Q:** Does anyOf wait for the first successful future?
+**Q:** Does `anyOf` wait for the first successful future?
 
 **A:** It completes on the first completion, including failure. First-success semantics need their own policy for failures and cancellation.
 
-**Q:** Why can LongAdder statistics exceed what a capacity admission check can safely use?
+**Q:** Why can `LongAdder` statistics exceed what a capacity admission check can safely use?
 
 **A:** Its sum is not an atomic snapshot across concurrent updates. Use an atomic check/update, lock or semaphore when the decision must reserve bounded capacity.
 
-**Q:** If timed tryLock returns false, should finally unlock anyway?
+**Q:** If timed `tryLock` returns `false`, should `finally` unlock anyway?
 
-**A:** No. Unlock only after successful acquisition; unlocking an unowned ReentrantLock throws. Interrupted acquisition also leaves no ownership to release.
+**A:** No. Unlock only after successful acquisition; unlocking an unowned `ReentrantLock` throws. Interrupted acquisition also leaves no ownership to release.
 
 **Q:** Does a `synchronized` block pin a virtual thread to its carrier on every supported JDK?
 
@@ -128,7 +128,7 @@ Source: [Spring Boot](20.13.05-spring-boot.md)
 
 **Q:** Why does a self-invoked transactional method not create a transaction boundary?
 
-**A:** In proxy mode the call through this bypasses interception. Put the boundary on the externally called service method or call another bean; an existing caller transaction may still apply.
+**A:** In proxy mode the call through `this` bypasses interception. Put the boundary on the externally called service method or call another bean; an existing caller transaction may still apply.
 
 **Q:** When can a stateless HTTP API still need CSRF protection?
 
@@ -148,9 +148,9 @@ Source: [Language trace](20.13.01-java-language-fundamentals.md#trace-references
 
 **Q:** A method adds to a list then reassigns its parameter. Which change does the caller see?
 
-**A:** The add affects the shared object. Reassigning the copied reference only changes the local parameter; Java remains pass-by-value.
+**A:** The `add` affects the shared object. Reassigning the copied reference only changes the local parameter; Java remains pass-by-value.
 
-**Q:** Does a copied ArrayList protect against mutation of shared element objects?
+**Q:** Does a copied `ArrayList` protect against mutation of shared element objects?
 
 **A:** No. It copies the structure, not each element. Deep immutability or copying needs an explicit element contract.
 
@@ -158,11 +158,11 @@ Source: [Language trace](20.13.01-java-language-fundamentals.md#trace-references
 
 **A:** Seventy cents. The second call returns false without mutation; a negative amount throws instead of increasing the balance.
 
-**Q:** A producer receives not-full but another producer fills the slot first. Why is await inside while?
+**Q:** A producer receives not-full but another producer fills the slot first. Why is `await` inside `while`?
 
 **A:** The awakened producer must reacquire and recheck the condition. Signals do not reserve capacity, and spurious wakes are permitted.
 
-**Q:** A repository test flushes then reads the same id without clearing its entity manager. What could the assertion miss?
+**Q:** A repository test flushes then reads the same `id` without clearing its entity manager. What could the assertion miss?
 
 **A:** It can receive the same managed entity instead of reading the persisted row. Clear before the lookup and separately test transaction/concurrency behavior.
 

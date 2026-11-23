@@ -1,4 +1,4 @@
-# Hardening & Operations - Security
+# Hardening & Operations — Security
 
 > **Study time:** ≈ 46 min of reading (6 files, ~8 min average).
 > **6 files.** Production hygiene: the encryption/hashing/TLS primer (prerequisite for the auth track), security headers and CSP, STRIDE threat modeling, secrets management, and vulnerability management & patch governance.
@@ -34,19 +34,19 @@ These [Docita](https://github.com/CVamsi27/docita) source paths are inspection s
 
 | Topic | Docita evidence |
 | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Encryption at rest | `apps/api/src/shared/common/encryption.service.ts` - AES-256-GCM with versioned keys, fail-fast if ENCRYPTION_KEY missing |
-| Field-level boundaries | `apps/api/src/shared/common/encryption-patient-fields.boundary.ts` - explicit allow-list of encrypted patient fields |
-| Secrets validation | `apps/api/src/shared/modules/config/env-schema.ts` - Zod schema rejects boot without required secrets |
-| Log / telemetry scrubbing | `apps/api/src/shared/modules/observability/phi-redactor.ts` - PHI redaction for pino lines + Sentry beforeSend |
-| Vulnerability management tooling | `osv-scanner.toml` - dependency scanning config beside CI guardrail scripts (`scripts/checks/*.mjs`) |
+| Encryption at rest | `apps/api/src/shared/common/encryption.service.ts` — AES-256-GCM with versioned keys, fail-fast if `ENCRYPTION_KEY` missing |
+| Field-level boundaries | `apps/api/src/shared/common/encryption-patient-fields.boundary.ts` — explicit allow-list of encrypted patient fields |
+| Secrets validation | `apps/api/src/shared/modules/config/env-schema.ts` — Zod schema rejects boot without required secrets |
+| Log / telemetry scrubbing | `apps/api/src/shared/modules/observability/phi-redactor.ts` — PHI redaction for `pino` lines + Sentry `beforeSend` |
+| Vulnerability management tooling | `osv-scanner.toml` — dependency scanning config beside CI guardrail scripts (`scripts/checks/*.mjs`) |
 | Threat modeling | `docs/operations/SECURITY_HARDENING_CHECKLIST.md` §3 (2026-08-05 point-in-time threat table), `docs/compliance/ACCESS_AUDIT.md` and `docs/compliance/RLS_ROLLOUT.md` (authorization and tenant boundaries) |
 
 The checklist is a point-in-time threat table, not a dedicated STRIDE or data-flow diagram (DFD) model; no dedicated STRIDE/DFD artifact was found in the reviewed Docita checkout. Its access and row-level security (RLS) documents describe tenant enforcement across role-based access control (RBAC), tier and tenant guards, context-aware attribute-based access control (ABAC), a Prisma tenant extension and PostgreSQL RLS. Use those documents to inspect control order and limits. Source paths and documents are inspection leads; they do not prove that a control is deployed or operating effectively.
 
----
-
-[← Previous: Attacks & Defense](../02-attacks-and-defense/INDEX.md) · [Next: Interview Drills →](../04-interview-drills/INDEX.md)
-
 ## Section Revision
 
 After the learning chapters, use the [separate revision drill](REVISION.md) to check recall before interview practice.
+
+---
+
+[← Previous: Attacks & Defense](../02-attacks-and-defense/INDEX.md) · [Next: Interview Drills →](../04-interview-drills/INDEX.md)

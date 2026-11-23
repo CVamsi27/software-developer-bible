@@ -40,17 +40,17 @@ Start with transaction, locking and WAL basics from the foundations/transactions
 
 ## Docita Anchor
 
-The [Docita case study](../../../projects/docita/INDEX.md) provides implementation pointers to inspect against these contracts. Paths describe examples to examine; they do not establish current deployment or restore/freshness guarantees.
+The [Docita case study](../../../projects/docita/INDEX.md) provides implementation pointers aligned with these patterns:
 
 | Topic | Docita evidence |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| Connection pooling | `apps/api/src/shared/modules/database/database-pooling.service.ts` - min/max/idle/maxUses pool policy |
-| Migrations | `packages/db/prisma/migrations/` - inspect ordering and compatibility gates |
-| Backups | `apps/api/src/shared/modules/database/database-backup.service.ts` - spawned pg_dump, retention window, Prometheus metrics |
-| Soft delete | `apps/api/src/shared/common/prisma/active-user.filter.ts` - `deletedAt: null` filter keeps tombstoned users out of reads |
-| Search infrastructure | `apps/api/src/shared/modules/search/strategies/search-strategy.base.ts` - strategy-per-entity search on Postgres full-text |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Connection pooling | `apps/api/src/shared/modules/database/database-pooling.service.ts` — min/max/idle/maxUses pool policy |
+| Migrations | `packages/db/prisma/migrations/` — inspect ordering and compatibility gates |
+| Backups | `apps/api/src/shared/modules/database/database-backup.service.ts` — spawned `pg_dump`, retention window, Prometheus metrics |
+| Soft delete | `apps/api/src/shared/common/prisma/active-user.filter.ts` — `deletedAt: null` filter keeps tombstoned users out of reads |
+| Search infrastructure | `apps/api/src/shared/modules/search/strategies/search-strategy.base.ts` — strategy-per-entity search on Postgres full-text |
 
-Use the learning chapters for the interview explanations. Case-study code still needs current runtime and operational evidence for any claimed production guarantee.
+Use the learning chapters for the interview explanations and the Docita files to inspect how they apply in code.
 
 ---
 

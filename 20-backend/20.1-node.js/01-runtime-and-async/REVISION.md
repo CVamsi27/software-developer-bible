@@ -18,7 +18,7 @@ Source: [Event Loop](20.1.1.01-event-loop.md)
 
 **A:** Await suspends during the external wait. When the continuation resumes, JSON parsing executes synchronously on this JavaScript thread.
 
-**Q:** Which resource usually handles a database socket, and which handles fs operations?
+**Q:** Which resource usually handles a database socket, and which handles `fs` operations?
 
 **A:** Socket readiness generally comes from the kernel event mechanism. Many asynchronous file operations use the libuv worker pool; increasing that pool does not parallelize arbitrary JavaScript.
 
@@ -28,9 +28,9 @@ Source: [Event Loop](20.1.1.01-event-loop.md)
 
 **Q:** Trace the CommonJS example from start through its file callback. Which order is promised?
 
-**A:** Initial synchronous start/end precede nextTick then the promise continuation. Inside the successful file callback, its immediate precedes its newly scheduled zero-delay timer. Moving those two registrations to top level loses that portable relative-order guarantee; moving initial code to ES module evaluation also changes the microtask context.
+**A:** Initial synchronous start/end precede `nextTick` then the promise continuation. Inside the successful file callback, its immediate precedes its newly scheduled zero-delay timer. Moving those two registrations to top level loses that portable relative-order guarantee; moving initial code to ES module evaluation also changes the microtask context.
 
-**Q:** What changes if each slice's processItem performs one second of synchronous CPU work?
+**Q:** What changes if each slice's `processItem` performs one second of synchronous CPU work?
 
 **A:** The five-millisecond budget is checked between items and cannot preempt one item. That callback still blocks the loop for the item duration. Reduce individual work or use a bounded worker/process protocol; awaiting database I/O does not move that CPU work off-thread.
 
@@ -38,7 +38,7 @@ Source: [Event Loop](20.1.1.01-event-loop.md)
 
 Source: [Web Streams and Test Runner](20.1.1.02-web-streams-and-test-runner.md)
 
-**Q:** Why can per-chunk Buffer.toString corrupt a response while TextDecoderStream preserves it?
+**Q:** Why can per-chunk `Buffer.toString()` corrupt a response while `TextDecoderStream` preserves it?
 
 **A:** A multi-byte UTF-8 sequence can span chunks. The streaming decoder retains incomplete bytes until the next chunk instead of replacing them separately.
 
@@ -50,13 +50,13 @@ Source: [Web Streams and Test Runner](20.1.1.02-web-streams-and-test-runner.md)
 
 **A:** No. Current Node releases stably strip erasable syntax by default, but do not type-check or apply `tsconfig` transformations. Run `tsc --noEmit` separately and use a compiler or loader when the project needs generated syntax or configuration support. Source: [Node.js TypeScript support](https://nodejs.org/api/typescript.html).
 
-**Q:** In the two-chunk Web Stream fixture, what happens before the returned pipeTo promise completes?
+**Q:** In the two-chunk Web Stream fixture, what happens before the returned `pipeTo` promise completes?
 
-**A:** hello/world are transformed, sink writes are awaited in order, and the started generator reaches finally. The output is HELLO/WORLD with closed=true. A production sink still needs its own durable acknowledgment; an in-memory fixture is not a storage guarantee.
+**A:** `'hello'`/`'world'` are transformed, sink writes are awaited in order, and the started generator reaches `finally`. The output is `'HELLO'`/`'WORLD'` with `closed=true`. A production sink still needs its own durable acknowledgment; an in-memory fixture is not a storage guarantee.
 
 **Q:** What changes when the sink rejects or a UTF-8 euro character crosses chunks?
 
-**A:** Default piping rejects and propagates cancellation upstream so owned resources must clean up. A streaming decoder retains the incomplete multibyte sequence and emits the correct character; independent per-chunk decoding can introduce replacement characters. Custom prevent-cancel/abort options change responsibility and need explicit cleanup.
+**A:** Default piping rejects and propagates cancellation upstream so owned resources must clean up. A streaming decoder retains the incomplete multibyte sequence and emits the correct character; independent per-chunk decoding can introduce replacement characters. Custom `preventCancel`/`preventAbort` options change responsibility and need explicit cleanup.
 
 ## Summary
 

@@ -28,11 +28,11 @@ Source: [Connection Pooling](20.4.5.01-connection-pooling.md)
 
 **Q:** In the max-one-connection fixture, what does the queued borrower consume while waiting?
 
-**A:** It is a waiting request, not a second physical connection. waitingCount is 1 until the checked-out connection is released; with max 2, the second borrower can acquire another connection and need not queue. Across ten processes, each local maximum still contributes to the server/proxy budget.
+**A:** It is a waiting request, not a second physical connection. `waitingCount` is 1 until the checked-out connection is released; with `max: 2`, the second borrower can acquire another connection and need not queue. Across ten processes, each local maximum still contributes to the server/proxy budget.
 
-**Q:** What changes if a transaction helper runs its UPDATE through pool.query after acquiring a client?
+**Q:** What changes if a transaction helper runs its `UPDATE` through `pool.query` after acquiring a client?
 
-**A:** It can execute on another connection outside the original BEGIN. A later rollback cannot undo that write. Every statement belonging to the transaction must use the same checked-out client, with release/discard and uncertain-commit handling defined.
+**A:** It can execute on another connection outside the original `BEGIN`. A later rollback cannot undo that write. Every statement belonging to the transaction must use the same checked-out client, with release/discard and uncertain-commit handling defined.
 
 ## Database Migrations & Zero-Downtime Schema Changes
 
@@ -46,15 +46,15 @@ Source: [Database Migrations & Zero-Downtime Schema Changes](20.4.5.02-migration
 
 **A:** Expansion adds a compatible representation; migration establishes writer ownership, backfills current values, verifies invariants and switches readers; contraction retires old writers/readers and removes the obsolete representation after the rollback window. The phases can require several deployments and validation gates.
 
-**Q:** Why can a short ALTER TABLE statement still interrupt application traffic?
+**Q:** Why can a short `ALTER TABLE` statement still interrupt application traffic?
 
 **A:** Even a fast metadata change needs a table lock and may wait behind a long transaction; some defaults or clauses also rewrite the table. Check PostgreSQL version and exact DDL, then test lock acquisition and rewrite behavior on representative data.
 
-**Q:** What does an empty SKIP LOCKED backfill batch prove when an old-format writer remains active?
+**Q:** What does an empty `SKIP LOCKED` backfill batch prove when an old-format writer remains active?
 
 **A:** It proves neither completion nor continuing consistency. A locked mismatch may be skipped, and an old writer can later create another mismatch. Establish writer ownership, repeat bounded batches and verify the invariant separately before cutover.
 
-**Q:** Why must an old NOT NULL column be addressed before new-only inserts?
+**Q:** Why must an old `NOT NULL` column be addressed before new-only inserts?
 
 **A:** Once writers stop providing the old representation, its constraint can reject otherwise valid new-format inserts. Retire the old requirement only after compatibility gates permit it, and preserve the intended rollback contract.
 
@@ -80,13 +80,13 @@ Source: [Soft Delete & Tombstones](20.4.5.03-soft-delete-and-tombstones.md)
 
 **Q:** Why can restoring an inactive account fail after another account reuses its email?
 
-**A:** The active-only unique index permits reuse while the original is inactive, then rejects making both active. The fixture raises SQLSTATE 23505 and rolls back; resolve the product/authorization conflict without silently replacing another account.
+**A:** The active-only unique index permits reuse while the original is inactive, then rejects making both active. The fixture raises SQLSTATE `23505` and rolls back; resolve the product/authorization conflict without silently replacing another account.
 
 ## Backups, PITR & Recovery
 
 Source: [Backups, PITR & Recovery](20.4.5.04-backups-pitr-recovery.md)
 
-**Q:** Why is a replica insufficient protection against an incorrect UPDATE?
+**Q:** Why is a replica insufficient protection against an incorrect `UPDATE`?
 
 **A:** A standby can apply the same bad commit. Recovering an earlier state requires retained history: an older logical export can recover its snapshot; a compatible physical base plus the required uninterrupted WAL can reach a later historical target. Neither live replication nor artifact existence proves recovery.
 
@@ -98,13 +98,13 @@ Source: [Backups, PITR & Recovery](20.4.5.04-backups-pitr-recovery.md)
 
 **A:** RPO limits lost business work and drives independently durable history; segment switching alone does not guarantee upload. RTO includes detection, provisioning, retrieval, restore/replay, validation and cutover. Measure the deployed chain at representative volume and revisit its dependencies.
 
-**Q:** What if the before_bad restore marker is placed after the destructive commit?
+**Q:** What if the `before_bad` restore marker is placed after the destructive commit?
 
 **A:** The named target includes that committed bad state. Verify marker/commit order and the recovered values. An earlier target also omits legitimate later writes, so choose whole-service rollback or selective repair with reconciliation.
 
 **Q:** Why can a retained base backup become unusable despite every recent upload succeeding?
 
-**A:** It may require an older missing WAL segment or inaccessible key/extension. Recovery needs a continuous applicable chain and environment; recent success does not repair a historical gap. A sixty-second archive_timeout does not prove archive durability or RPO.
+**A:** It may require an older missing WAL segment or inaccessible key/extension. Recovery needs a continuous applicable chain and environment; recent success does not repair a historical gap. A sixty-second `archive_timeout` does not prove archive durability or RPO.
 
 **Q:** Why can PostgreSQL 18 not restore an incremental `pg_basebackup` by itself, and what must the drill validate?
 
@@ -126,13 +126,13 @@ Source: [Search Infrastructure at Scale](20.4.5.05-search-infrastructure-at-scal
 
 **A:** Compare search features, query latency, update rate, operational cost, and measured load. PostgreSQL text search or extensions may fit some workloads; a separate engine may help when requirements or workload justify it. Row count alone is not a reliable cutoff.
 
-**Q:** In the text-search fixture, why does wirel fail through websearch_to_tsquery while wirel:* succeeds through to_tsquery?
+**Q:** In the text-search fixture, why does `wirel` fail through `websearch_to_tsquery` while `wirel:*` succeeds through `to_tsquery`?
 
 **A:** The former parses an ordinary full term; the latter explicitly requests a prefix. Neither operation provides typo correction. The chapter's tenant filter also excludes another tenant before ordering matches.
 
 **Q:** A bulk request returns HTTP success, and an old upsert arrives after a deletion. Is the projection confirmed correct?
 
-**A:** No. Inspect per-item failures/task completion and the required visibility milestone. Enforce per-key/version/delete ordering so the old event cannot recreate the document; SKIP LOCKED claims and individually idempotent upserts alone do not provide that ordering.
+**A:** No. Inspect per-item failures/task completion and the required visibility milestone. Enforce per-key/version/delete ordering so the old event cannot recreate the document; `SKIP LOCKED` claims and individually idempotent upserts alone do not provide that ordering.
 
 ## Summary
 

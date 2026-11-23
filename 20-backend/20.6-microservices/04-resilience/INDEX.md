@@ -1,4 +1,4 @@
-# Resilience - Microservices
+# Resilience — Microservices
 
 > **Study time:** ≈ 15 min of reading (3 files, ~5 min average).
 > **3 files.** Surviving partial failure: use a circuit breaker to limit new calls to a failing dependency and partition resources to bound what one workload can consume.
@@ -30,16 +30,16 @@ First follow breaker admission through counted failures and a controlled recover
 These [Docita](https://github.com/CVamsi27/docita) source paths illustrate local controls; inspect their actual state, cancellation and resource boundaries:
 
 | Topic | Docita evidence |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| Circuit breaker | `apps/api/src/shared/common/utils/circuit-breaker.ts` - CLOSED/OPEN/HALF_OPEN state machine with Prometheus metrics, shared via a registry |
-| Request deadlines | `apps/api/src/shared/common/interceptors/timeout.interceptor.ts` - config-driven per-request timeout |
-| Outbound timeouts | `apps/api/src/shared/common/http/fetch-with-timeout.ts` - abortable fetch wrapper for provider calls |
-| Bulkhead by deployment | `apps/worker/src/main.ts` - separate worker process; shared host/database capacity still needs isolation evidence |
-
----
-
-[← Previous: Data & Consistency](../03-data-and-consistency/INDEX.md) · [Next: Interview Drills →](../05-interview-drills/INDEX.md)
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Circuit breaker | `apps/api/src/shared/common/utils/circuit-breaker.ts` — `CLOSED`/`OPEN`/`HALF_OPEN` state machine with Prometheus metrics, shared via a registry |
+| Request deadlines | `apps/api/src/shared/common/interceptors/timeout.interceptor.ts` — config-driven per-request timeout |
+| Outbound timeouts | `apps/api/src/shared/common/http/fetch-with-timeout.ts` — abortable fetch wrapper for provider calls |
+| Bulkhead by deployment | `apps/worker/src/main.ts` — separate worker process; shared host/database capacity still needs isolation evidence |
 
 ## Section Revision
 
 After the learning chapters, use the [separate revision drill](REVISION.md) to check recall before interview practice.
+
+---
+
+[← Previous: Data & Consistency](../03-data-and-consistency/INDEX.md) · [Next: Interview Drills →](../05-interview-drills/INDEX.md)

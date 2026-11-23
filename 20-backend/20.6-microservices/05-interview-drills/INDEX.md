@@ -1,4 +1,4 @@
-# Interview Drills - Microservices
+# Interview Drills — Microservices
 
 > **Study time:** ≈ 10 min of reading (1 file, ~10 min average).
 > **1 file.** 30 senior-level answers plus 35 additional quick prompts on decomposition, communication, data, transactions, observability and failure handling. Start with a short answer, then choose one scenario for a timed design discussion.
@@ -30,9 +30,9 @@ The local [Docita](https://github.com/CVamsi27/docita) source inspected on 10 Oc
 
 | Drill | Docita evidence |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| Saga / outbox drill | `apps/api/src/shared/modules/outbox/outbox.service.ts` - transaction-local event intent; explain relay retries and duplicate listener effects |
-| Circuit-breaker drill | `apps/api/src/shared/common/utils/circuit-breaker.ts` - thresholds and state transitions in one small class |
-| "Split the monolith" drill | `apps/api/src/app.module.ts` - candidate module seams; extraction also needs independent data ownership and release contracts |
+| Saga / outbox drill | `apps/api/src/shared/modules/outbox/outbox.service.ts` — transaction-local event intent; explain relay retries and duplicate listener effects |
+| Circuit-breaker drill | `apps/api/src/shared/common/utils/circuit-breaker.ts` — thresholds and state transitions in one small class |
+| "Split the monolith" drill | `apps/api/src/app.module.ts` — candidate module seams; extraction also needs independent data ownership and release contracts |
 
 ---
 

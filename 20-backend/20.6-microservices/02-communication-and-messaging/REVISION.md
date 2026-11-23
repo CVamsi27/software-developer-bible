@@ -118,7 +118,7 @@ Source: [gRPC](20.6.2.01-grpc.md), [Streaming](20.6.2.02-grpc-streaming.md).
 
 **A:** Compare the actual typed contract, native streaming needs, client/browser support, HTTP semantics, tooling and measured workload. There is no universal speed multiple. Docita's existing in-process/outbox communication should not be described as a deployed gRPC integration.
 
-**Q:** HTTP status is 200 but final gRPC status is INVALID_ARGUMENT. Did the RPC succeed?
+**Q:** HTTP status is `200` but final gRPC status is `INVALID_ARGUMENT`. Did the RPC succeed?
 
 **A:** No. The final RPC status governs the gRPC outcome; the HTTP response status alone is insufficient.
 
@@ -141,7 +141,6 @@ Source: [Learning chapter](20.6.2.05-message-brokers.md)
 **Q:** What does a publisher confirm fail to establish?
 
 **A:** It does not prove consumer business completion. Unroutable-message handling is also distinct from broker acceptance; uncertain acknowledgments can require duplicate-safe retry.
-
 
 ## Event publication and consumer crashes
 
@@ -171,11 +170,11 @@ Source: [Kafka](20.6.2.03-kafka.md), [RabbitMQ](20.6.2.04-rabbitmq.md).
 
 **A:** No. External effects need their own idempotency or local atomic job/deduplication boundary; Kafka output/offset coordination does not span arbitrary systems.
 
-**Q:** RabbitMQ publish returns false. Is the message rejected by the broker?
+**Q:** RabbitMQ publish returns `false`. Is the message rejected by the broker?
 
 **A:** That boolean reports local writable pressure. Publisher confirms report acceptance; mandatory returns report unroutable publications. They are separate signals.
 
-**Q:** Why does computing an incremented retry header before nack(false, false) not retry a message?
+**Q:** Why does computing an incremented retry header before `nack(false, false)` not retry a message?
 
 **A:** A local variable changes no broker state. Reject-without-requeue follows the configured dead-letter path or discards the delivery unless a supported broker-managed delay policy handles that return. Otherwise, a delayed retry needs a real route or republish under the chosen acknowledgment policy.
 

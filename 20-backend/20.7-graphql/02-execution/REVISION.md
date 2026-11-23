@@ -46,27 +46,27 @@ Source: [Apollo Server](20.7.2.02-apollo-server.md)
 
 Source: [Resolvers](20.7.2.01-resolvers.md)
 
-**Q:** A batch asks for u1, u2 and a missing key, but storage returns u2 first. What should its result contain?
+**Q:** A batch asks for `u1`, `u2` and a missing key, but storage returns `u2` first. What should its result contain?
 
-**A:** Return one result per requested key in input order: u1's row, u2's row and null or an intentional per-key error. Returning storage order silently attaches the wrong related records. Keep the batch scoped to the verified request identity.
+**A:** Return one result per requested key in input order: `u1`'s row, `u2`'s row and `null` or an intentional per-key error. Returning storage order silently attaches the wrong related records. Keep the batch scoped to the verified request identity.
 
 **Q:** Why is executing two mutation fields serially different from using a transaction?
 
 **A:** Serial execution orders top-level mutation fields but does not roll back the first field when the second fails. Put atomic business changes in an authoritative transaction and specify retry/idempotency behavior independently.
 
-**Q:** Why can a missing non-null author remove an entire posts response?
+**Q:** Why can a missing non-null author remove an entire `posts` response?
 
-**A:** Null propagates to the closest nullable boundary. With author: User!, posts: [Post!]!, the author failure nulls a non-null post, then a non-null list, reaching root data. Nullable author would preserve the post instead.
+**A:** Null propagates to the closest nullable boundary. With `author: User!`, `posts: [Post!]!`, the author failure nulls a non-null post, then a non-null list, reaching root data. Nullable `author` would preserve the post instead.
 
 Source: [Apollo Server](20.7.2.02-apollo-server.md)
 
-**Q:** Does executeOperation with a principal prove that Express authentication works?
+**Q:** Does `executeOperation` with a principal prove that Express authentication works?
 
 **A:** No. It exercises GraphQL processing with supplied context, bypassing HTTP middleware. Use HTTP integration tests for credentials, body limits and CORS/CSRF boundaries, plus schema-execution tests for resource policy and null behavior.
 
 **Q:** How should the HTTP boundary handle malformed or oversized JSON before Apollo sees a request?
 
-**A:** Return the appropriate client status, such as 400 for malformed JSON or 413 for a body-limit rejection, with a safe message and no development stack trace. Test the Express parser and error handler through HTTP; a GraphQL execution test cannot reach failures that occur before parsing.
+**A:** Return the appropriate client status, such as `400` for malformed JSON or `413` for a body-limit rejection, with a safe message and no development stack trace. Test the Express parser and error handler through HTTP; a GraphQL execution test cannot reach failures that occur before parsing.
 
 **Q:** Can Apollo Server 5.5.1 use GraphQL.js 17.0.2 as its normal peer dependency?
 

@@ -18,7 +18,7 @@
 ## Chapter map
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------: |
+| --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Node.js Security](20.1.4.01-node-security.md) | Explicit query/configuration shapes, subprocess arguments, SSRF/path boundaries, Helmet/browser policy, bounded work, dependency authority | Essential | Foundational | 10 min |
 | 02 | [Debugging & Profiling](20.1.4.02-debugging-profiling-nodejs.md) | `node --inspect` + Chrome DevTools, `--prof` tick logs, heap snapshots + comparison for leaks, built-in CPU capture, Clinic maintenance limits, event-loop lag monitoring, diagnostics reports without restarts | Essential | Foundational | 11 min |
 | 03 | [Express & Fastify Internals](20.1.4.03-express-fastify-internals.md) | Middleware chain model, arity-4 error handlers, mount paths, Fastify hook lifecycle, plugin encapsulation, schema-based serialization, benchmark caveats, migration notes | Essential | Foundational | 13 min |
@@ -37,7 +37,7 @@ Real code from [docita](https://github.com/CVamsi27/docita) - healthcare platfor
 | Topic | Docita evidence |
 | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | Input validation at the boundary | `apps/api/src/shared/common/pipes/zod-validation.pipe.ts` - inspect which controllers use these boundary schemas |
-| Security headers & edge hygiene | `apps/api/src/main.ts` - helmet() CSP headers, CORS allow-list, Sentry wired before first request |
+| Security headers & edge hygiene | `apps/api/src/main.ts` - `helmet()` CSP headers, CORS allow-list, Sentry wired before first request |
 | Express middleware chain | `apps/api/src/app.module.ts` - inspect guard/interceptor registration and Nest lifecycle; this differs from Express middleware dispatch |
 | Runtime observability | `apps/api/src/shared/common/interceptors/request-logging.interceptor.ts` - structured request logs beside slow-query logging |
 | Rate limiting | `apps/api/src/shared/common/interceptors/rate-limit.interceptor.ts` - cache-backed per-route limits next to IP/user guards |

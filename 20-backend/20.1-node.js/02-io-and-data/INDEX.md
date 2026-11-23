@@ -19,7 +19,7 @@
 ## Files
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------: |
+| --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Streams](20.1.2.01-streams.md) | Readable, Writable, Transform, Duplex, backpressure, `pipeline()`, error handling | Important | Important | 11 min |
 | 02 | [Buffers](20.1.2.02-buffers.md) | Buffer creation, encoding (utf8, base64, hex), allocation, `alloc` vs `allocUnsafe`, TypedArray interop, memory pooling | Important | Important | 10 min |
 | 03 | [File System](20.1.2.03-file-system.md) | `fs` module, read/write (sync vs async vs stream), file watching, permissions, atomic writes, always handle errors | Essential | Foundational | 8 min |

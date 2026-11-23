@@ -34,7 +34,7 @@ Source: [Prompts, Context and Evals](20.12.02-prompts-context-evals.md).
 
 **A:** Schema and field limits apply only after parsing. A byte limit prevents an oversized response from consuming unbounded parsing and validation work.
 
-**Q:** Why is the word “cannot” in an answer insufficient evidence of a safe refusal?
+**Q:** Why is the word "cannot" in an answer insufficient evidence of a safe refusal?
 
 **A:** The answer may still provide the prohibited assistance. Evaluate the whole output against the task-specific refusal/forbidden-content contract, with human-calibrated adversarial cases.
 
@@ -42,13 +42,13 @@ Source: [Prompts, Context and Evals](20.12.02-prompts-context-evals.md).
 
 Source: [Retrieval Quality](20.12.03-retrieval-quality-hybrid-search-reranking.md).
 
-**Q:** Why should a vector candidate query select its ordered LIMIT before assigning fusion ranks?
+**Q:** Why should a vector candidate query select its ordered `LIMIT` before assigning fusion ranks?
 
-**A:** The candidate set must be the nearest eligible results, not an arbitrary subset with window ranks attached. The direct distance ORDER BY/LIMIT also matters to the ANN index plan; inspect EXPLAIN and filtered recall.
+**A:** The candidate set must be the nearest eligible results, not an arbitrary subset with window ranks attached. The direct distance `ORDER BY` / `LIMIT` also matters to the approximate nearest neighbor (ANN) index plan; inspect `EXPLAIN` and filtered recall.
 
-**Q:** A harness reranks only six results but reports recall@10. What needs to change?
+**Q:** A harness reranks only six results but reports `recall@10`. What needs to change?
 
-**A:** Request at least ten final candidates for that metric or report recall@6. Label the stage being evaluated, deduplicate identities, and reject cases with no relevant labels rather than dividing by zero.
+**A:** Request at least ten final candidates for that metric or report `recall@6`. Label the stage being evaluated, deduplicate identities, and reject cases with no relevant labels rather than dividing by zero.
 
 ## Agent Orchestration
 
@@ -58,9 +58,9 @@ Source: [Agent Orchestration](20.12.04-agent-orchestration-patterns.md).
 
 **A:** Each proposal still requires an inference call. Counting only executed tools lets repeated/invalid turns bypass the intended loop bound and keep spending.
 
-**Q:** What should an engineer verify when upgrading an MCP integration to a newer protocol revision?
+**Q:** What should an engineer verify when upgrading a Model Context Protocol (MCP) integration to a newer protocol revision?
 
-**A:** Pin and inspect both specification and SDK, then test transport, state, discovery, cancellation, and backward compatibility. The `2026-07-28` revision uses stateless requests over standard `stdio`/Streamable HTTP; elicitation uses a multi-round-trip `input_required` result rather than server-initiated JSON-RPC. Older peers can follow different rules. The host must authorize operations and isolate subprocesses explicitly.
+**A:** Pin and inspect both specification and software development kit (SDK), then test transport, state, discovery, cancellation, and backward compatibility. The `2026-07-28` revision uses stateless requests over standard `stdio`/Streamable HTTP; elicitation uses a multi-round-trip `input_required` result rather than server-initiated JSON-RPC. Older peers can follow different rules. The host must authorize operations and isolate subprocesses explicitly.
 
 ## Serving Models
 
@@ -68,9 +68,9 @@ Source: [Serving Models](20.12.05-serving-models-hosted-vs-self-hosted.md).
 
 **Q:** Why does fitting a model's weights in GPU memory not prove the target concurrency fits?
 
-**A:** Concurrent sequences also need KV cache, activations, runtime buffers, and headroom. Calculate consistent GB/GiB units, account for sharding/quantization, and load-test realistic context/output lengths.
+**A:** Concurrent sequences also need key-value (KV) cache, activations, runtime buffers, and headroom. Calculate consistent GB/GiB units, account for sharding/quantization, and load-test realistic context/output lengths.
 
-**Q:** Is an endpoint called “EU” or “self-hosted” enough to authorize sensitive-data routing?
+**Q:** Is an endpoint called "EU" or "self-hosted" enough to authorize sensitive-data routing?
 
 **A:** No. Verify the actual approved data classes, processing/access regions, subprocessors, retention, transfer obligations, and deployment controls. Apply that policy before availability-based fallback.
 
@@ -94,7 +94,7 @@ Source: [Architecture](20.12.01-llm-app-architecture.md), [evaluation trace](20.
 
 **A:** Source-id membership passes. Claim-support grading must fail; a structural validator cannot establish factual grounding.
 
-**Q:** A relevant document is absent from both candidate lists. Can RRF or a reranker recover it?
+**Q:** A relevant document is absent from both candidate lists. Can reciprocal rank fusion (RRF) or a reranker recover it?
 
 **A:** No. Improve retrieval, eligibility or indexing; later stages only reorder the selected candidates.
 

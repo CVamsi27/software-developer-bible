@@ -1,6 +1,6 @@
 # Processes & Concurrency - Node.js
 
-> **Study time:** ≈ 41 min of reading (6 files, ~7 min average).
+> **Study time:** ≈ 42 min of reading (6 files, ~7 min average).
 > Production concurrency: choose an execution boundary, manage process lifecycle, supervise server processes, then compare that model with Watt's in-process application workers.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](../INDEX.md)
@@ -22,12 +22,12 @@ Start with the boundary you need to control:
 ## Chapter map
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------: |
+| --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Clustering](20.1.3.01-clustering.md) | Cluster module, worker processes sharing a server socket, IPC, load balancing, PM2/systemd, graceful restart, one process per container | Important | Important | 9 min |
 | 02 | [Child Processes & Workers](20.1.3.02-child-processes-workers.md) | `spawn`/`exec`/`fork`, `worker_threads`, SharedArrayBuffer + Atomics, thread pool, child process vs worker thread decision | Important | Important | 10 min |
 | 03 | [Process & Environment](20.1.3.03-process-environment.md) | `process.env`, `argv`, cwd, lifecycle, signals (SIGTERM/SIGINT), graceful shutdown, exit codes, 12-factor config | Important | Important | 9 min |
 | 04 | [PM2 Process Supervision](20.1.3.04-pm2-process-supervision.md) | PM2 daemon and process list, fork vs cluster mode, readiness, reload limits, restart policy, host/container boundary | Important | Important | 5 min |
-| 05 | [Watt Runtime Architecture](20.1.3.05-watt-runtime-architecture.md) | Application worker threads, V8 isolate boundaries, `.plt.local` routing, runtime health, shared process and deployment failure domains | Important | Important | 5 min |
+| 05 | [Watt Runtime Architecture](20.1.3.05-watt-runtime-architecture.md) | Application worker threads, V8 isolate boundaries, `.plt.local` routing, runtime health, shared process and deployment failure domains | Important | Important | 6 min |
 
 ---
 
@@ -42,7 +42,7 @@ The [Docita case study](../../../projects/docita/INDEX.md) supplies code pointer
 | Topic | Docita evidence |
 | ---------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Process separation over clustering | `apps/worker/src/main.ts` - crons/jobs run in a second deployable (`apps/worker/fly.toml`), not `cluster` workers |
-| Child processes | `apps/api/src/shared/modules/database/database-backup.service.ts` - `spawn()`s pg_dump/pg_restore as child processes |
+| Child processes | `apps/api/src/shared/modules/database/database-backup.service.ts` - `spawn()`s `pg_dump`/`pg_restore` as child processes |
 | Background offload | `apps/api/src/shared/modules/queue/queue.worker.module.ts` - job handlers execute in the worker app, off the API event loop |
 | Environment & shutdown signals | `apps/api/src/shared/modules/config/env-schema.ts` - inspect validation at boot and verify the current signal handlers and deployment grace period |
 

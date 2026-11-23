@@ -38,7 +38,7 @@ Source: [NestJS Microservices](20.2.3.02-microservices.md)
 
 **A:** Check reply loss for TCP/gRPC, offline loss for Redis pub/sub/Core NATS, and persistence, offsets or acknowledgments for Kafka/RabbitMQ. A consumer group alone does not guarantee at-least-once business processing: committing progress before an effect can lose that effect; committing afterward can repeat it. These transports need different recovery contracts.
 
-**Q:** What connection and failure responsibilities does ClientProxy introduce?
+**Q:** What connection and failure responsibilities does `ClientProxy` introduce?
 
 **A:** The client owns connection setup/cleanup, subscriptions, serialization and deadlines. HTTP clients also need failure and retry policies; neither protocol knows whether a timed-out write committed.
 

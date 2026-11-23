@@ -1,6 +1,6 @@
 # Database — Index
 
-> **Study time:** ≈ 4 h 14 m of reading (29 files, ~9 min average).
+> **Study time:** ≈ 4 h 17 m of reading (29 files, ~9 min average).
 > **29 files** — Database fundamentals from PostgreSQL internals to indexing, transactions, MVCC, joins, locking, connection pooling, Prisma (plus the ORM/query-builder landscape), execution plans, SQL vs NoSQL, zero-downtime migrations, soft delete & tombstones, backups/PITR recovery, search infrastructure at scale, window functions, JSONB, replication, row-level security, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-29-blue)](../../INDEX.md)
@@ -28,12 +28,13 @@ The 24 listed learning files are grouped into 5 categories: 23 topic chapters an
 ## The Flow
 
 ```text
-01 POSTGRES FOUNDATIONS ──→ 02 QUERYING & OPT ──→ 03 TRANSACTIONS ──→ 04 ORM ───────→ 05 OPERATIONS
-architecture/WAL/vacuum     indexes              invariant boundary                 prisma        connection pooling
-normalization               joins                transactions         prisma adv    migrations
-MVCC                        execution plans      deadlocks            landscape     soft delete
-SQL vs NoSQL                window functions     locking                            backups/PITR
-performance                 JSONB                replication                        search infra
+01 POSTGRES FOUNDATIONS   ──→ 02 QUERYING & OPT  ──→ 03 TRANSACTIONS      ──→ 04 ORM        ──→ 05 OPERATIONS
+architecture/WAL/vacuum       indexes                invariant boundary       prisma            connection pooling
+normalization                 joins                  transactions             prisma adv        migrations
+MVCC                          execution plans        deadlocks                landscape         soft delete
+SQL vs NoSQL                  window functions       locking                                    backups/PITR
+performance                   JSONB                  replication                                search infra
+row-level security                                                                              interview Qs
 ```
 
 ---
@@ -44,11 +45,11 @@ Trace how PostgreSQL stores changes, enforces constraints and exposes visible ro
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [PostgreSQL](01-postgresql-foundations/20.4.1.01-postgresql.md) | Architecture, WAL, vacuum, configuration, extensions, autovacuum | Essential | Foundational | 11 min |
+| 01 | [PostgreSQL](01-postgresql-foundations/20.4.1.01-postgresql.md) | Architecture, WAL, vacuum, configuration, extensions, autovacuum | Essential | Foundational | 12 min |
 | 02 | [Normalization](01-postgresql-foundations/20.4.1.02-normalization.md) | 1NF, 2NF, 3NF, BCNF, denormalization trade-offs, when to denormalize | Important | Important | 10 min |
 | 03 | [MVCC](01-postgresql-foundations/20.4.1.03-mvcc.md) | Multiversion concurrency control, visibility rules, tuple versions, vacuum | Important | Important | 13 min |
-| 04 | [SQL vs NoSQL](01-postgresql-foundations/20.4.1.04-nosql-vs-sql.md) | Workload fit, CAP, consistency models, polyglot persistence, when to use what | Essential | Foundational | 10 min |
-| 05 | [PostgreSQL Performance](01-postgresql-foundations/20.4.1.05-postgresql-performance.md) | Connection tuning, memory tuning, query optimization, VACUUM, partitioning, monitoring queries | Essential | Foundational | 11 min |
+| 04 | [SQL vs NoSQL](01-postgresql-foundations/20.4.1.04-nosql-vs-sql.md) | Workload fit, CAP, consistency models, polyglot persistence, when to use what | Essential | Foundational | 11 min |
+| 05 | [PostgreSQL Performance](01-postgresql-foundations/20.4.1.05-postgresql-performance.md) | Connection tuning, memory tuning, query optimization, VACUUM, partitioning, monitoring queries | Essential | Foundational | 12 min |
 | 06 | [Row-Level Security](01-postgresql-foundations/20.4.1.06-row-level-security.md) | Subject roles, transaction context, old-row visibility, new-row checks, policy composition | Essential | Foundational | 12 min |
 
 ---
@@ -149,23 +150,23 @@ Each category has a separate revision companion. Use [foundations revision](01-p
 
 ## Navigation
 
-[← Previous: REST APIs](../20.3-rest-apis/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Security →](../20.5-security/INDEX.md)
+[← Previous: REST APIs](../20.3-rest-apis/INDEX.md) · [Back to Index](../../INDEX.md) · [Next: Security →](../20.5-security/INDEX.md)
 
 ---
 
 ## Docita Anchor
 
-Real code from [docita](https://github.com/CVamsi27/docita) - healthcare platform (NestJS + Prisma + Postgres). These paths identify implementation code to inspect alongside the case studies; they do not establish current deployment or complete behavior:
+These [Docita](https://github.com/CVamsi27/docita) healthcare-platform paths (NestJS + Prisma + Postgres) are starting points for inspecting schema, pooling, RLS, and backup code alongside the case studies:
 
 | Topic | Docita evidence |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Schema & models | `packages/db/prisma/schema.prisma` (workspace package `@workspace/db`) - the full data model with `@@index` declarations |
-| Migrations | `packages/db/prisma/migrations/` - versioned schema migrations |
+| Schema & models | `packages/db/prisma/schema.prisma` (workspace package `@workspace/db`) — the full data model with `@@index` declarations |
+| Migrations | `packages/db/prisma/migrations/` — versioned schema migrations |
 | Transactions | `apps/api/src/prisma/transaction-runner.ts` + `shared/common/database-transaction-options.ts`; outbox rows append inside the same `prisma.$transaction` as the business write |
-| Index & query tuning | `apps/api/src/shared/modules/database/database-index-optimization.service.ts` - index suggestions against real query patterns |
-| Pooling | `apps/api/src/shared/modules/database/database-pooling.service.ts` - connection pool management for Prisma |
-| Slow queries | `apps/api/src/shared/modules/database/slow-query-logging.service.ts` - logs + surfaces slow statements |
-| Repository pattern | `apps/api/src/shared/common/repositories/` (base.repository.ts) + per-domain `infrastructure/repositories/prisma-*.ts` - DB access behind interfaces |
-| Multi-tenant RLS | `apps/api/src/shared/modules/rls/` - `rls.service.ts` + `apply-rls-scope.ts` scoping every query to the clinic tenant |
+| Index & query tuning | `apps/api/src/shared/modules/database/database-index-optimization.service.ts` — index suggestions against real query patterns |
+| Pooling | `apps/api/src/shared/modules/database/database-pooling.service.ts` — connection pool management for Prisma |
+| Slow queries | `apps/api/src/shared/modules/database/slow-query-logging.service.ts` — logs and surfaces slow statements |
+| Repository pattern | `apps/api/src/shared/common/repositories/` (`base.repository.ts`) + per-domain `infrastructure/repositories/prisma-*.ts` — DB access behind interfaces |
+| Multi-tenant RLS | `apps/api/src/shared/modules/rls/` — `rls.service.ts` + `apply-rls-scope.ts` scoping every query to the clinic tenant |
 | Backups | `apps/api/src/shared/modules/database/database-backup.service.ts` |
-| Replication / read replicas | No read-replica fan-out - single managed Postgres (see `shared/modules/database/database-rds.service.ts`) |
+| Replication / read replicas | No read-replica fan-out — single managed Postgres (see `shared/modules/database/database-rds.service.ts`) |

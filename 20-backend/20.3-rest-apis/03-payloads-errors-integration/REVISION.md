@@ -24,19 +24,19 @@ Source: [API Pagination](20.3.3.01-pagination.md)
 
 **Q:** How can a client discover that another page exists without an exact total?
 
-**A:** A next cursor or hasMore flag can indicate another page. Return an exact total only when its cost and consistency behavior serve a product requirement.
+**A:** A next cursor or `hasMore` flag can indicate another page. Return an exact total only when its cost and consistency behavior serve a product requirement.
 
 **Q:** Three rows share one timestamp and the first page contains only two. What must its continuation contain?
 
-**A:** The timestamp and a unique tie-breaker from the last returned row. Use the same pair in ORDER BY and the continuation predicate; a timestamp-only strict comparison would skip the third row. Preserve the database values without losing timestamp precision or large identifier digits.
+**A:** The timestamp and a unique tie-breaker from the last returned row. Use the same pair in `ORDER BY` and the continuation predicate; a timestamp-only strict comparison would skip the third row. Preserve the database values without losing timestamp precision or large identifier digits.
 
 **Q:** Does an opaque or signed cursor authorize the next page?
 
 **A:** No. Validate its size, fields, version and query binding, then enforce the caller's current authorization and tenant scope on every page. Encoding obscures data and signing detects tampering; neither grants access.
 
-**Q:** Why reject a limit such as `20junk` rather than passing it to parseInt?
+**Q:** Why reject a limit such as `20junk` rather than passing it to `parseInt`?
 
-**A:** parseInt accepts a numeric prefix, so malformed input can become a plausible page size. Validate the complete parameter and bound it before querying; distinguish an absent value from an invalid one.
+**A:** `parseInt` accepts a numeric prefix, so malformed input can become a plausible page size. Validate the complete parameter and bound it before querying; distinguish an absent value from an invalid one.
 
 ## API Error Handling & Response Design
 
@@ -142,7 +142,7 @@ Source: [Error contracts](20.3.3.02-error-handling-design.md)
 
 **A:** A safe generic problem with consistent HTTP status and an opaque occurrence URI. Retain redacted diagnostics in protected records; wrapping the exception's message as a public domain error would break that boundary.
 
-**Q:** A matching creation key is submitted twice after a lost response. Is a 409 always the correct second result?
+**Q:** A matching creation key is submitted twice after a lost response. Is a `409` always the correct second result?
 
 **A:** No. Recover the original response or operation for the same scoped key and fingerprint. A different request under that key is a conflict. Enforce the key atomically; a pre-insert lookup races.
 
@@ -162,9 +162,9 @@ Source: [Uploads](20.3.3.04-file-upload-apis.md)
 
 **A:** The old verdict applies only to the inspected bytes. Bind publication to an immutable version, enforced write-once identity or protected published copy so the served object cannot silently change.
 
-**Q:** Two resumable PATCH requests carry the same offset. Can both append independently?
+**Q:** Two resumable `PATCH` requests carry the same offset. Can both append independently?
 
-**A:** No. Compare and update the authoritative offset under serialized ownership or an atomic condition. A stale tus offset returns 409 without modifying the resource; a header alone does not implement recovery.
+**A:** No. Compare and update the authoritative offset under serialized ownership or an atomic condition. A stale tus offset returns `409` without modifying the resource; a header alone does not implement recovery.
 
 Source: [Webhooks](20.3.3.05-webhooks.md)
 
@@ -172,13 +172,13 @@ Source: [Webhooks](20.3.3.05-webhooks.md)
 
 **A:** Verify the delivery, compare its durable identity and payload, acknowledge the existing acceptance and avoid adding new work. The business worker still needs duplicate-safe transitions and separate handling of remote effects.
 
-**Q:** What is wrong with adding a “seen” record before a queue send and returning success immediately?
+**Q:** What is wrong with adding a "seen" record before a queue send and returning success immediately?
 
 **A:** A crash can lose the send while suppressing the recovery delivery. Commit inbox and processing intent together, then acknowledge after durable acceptance.
 
 Source: [Wire formats](20.3.3.06-serialization-and-wire-formats.md)
 
-**Q:** A JSON identifier has 9007199254740993 as an unquoted number. Why can a JavaScript consumer receive a different value?
+**Q:** A JSON identifier has `9007199254740993` as an unquoted number. Why can a JavaScript consumer receive a different value?
 
 **A:** Its ordinary decoder uses a number representation that rounds that integer. Publish and decode the identifier as a decimal string before precision is lost; JSON grammar itself does not require every language to round it.
 
@@ -188,17 +188,17 @@ Source: [Wire formats](20.3.3.06-serialization-and-wire-formats.md)
 
 Source: [Notifications](20.3.3.07-transactional-email-and-notifications.md)
 
-**Q:** The provider accepted a receipt, but the response timed out. Does a local sent-at guard prevent the next worker from duplicating it?
+**Q:** The provider accepted a receipt, but the response timed out. Does a local `sent_at` guard prevent the next worker from duplicating it?
 
 **A:** No. Persist ownership and reuse the provider's stable effect key within its documented window, or reconcile the unknown outcome. Local uniqueness cannot atomically include the external send.
 
-**Q:** SPF fails but a valid DKIM signature aligns with the visible From domain. Can DMARC pass?
+**Q:** SPF fails but a valid DKIM signature aligns with the visible `From` domain. Can DMARC pass?
 
 **A:** Yes. An aligned passing SPF or DKIM path can satisfy DMARC. Its requested policy does not guarantee inbox placement or override every receiver's local policy.
 
 Source: [Long-running polling](20.3.3.03-long-running-api-operations.md)
 
-**Q:** Retry-After requests 60 seconds but only 30 seconds remain in the client budget. Should polling clamp it to five seconds?
+**Q:** `Retry-After` requests 60 seconds but only 30 seconds remain in the client budget. Should polling clamp it to five seconds?
 
 **A:** No. Do not retry earlier than the requested wait. The overall deadline ends the attempt before the next poll; a future caller can resume under its own budget.
 

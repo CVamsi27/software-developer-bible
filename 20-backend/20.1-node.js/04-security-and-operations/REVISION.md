@@ -42,7 +42,7 @@ Source: [Debugging & Profiling Node.js](20.1.4.02-debugging-profiling-nodejs.md)
 
 **A:** Building the snapshot stops work in its thread and needs substantial additional memory, potentially doubling heap use and crashing the process. Capture on an instance whose interruption/loss is acceptable with private storage and spare capacity.
 
-**Q:** Why is counting TCPSocketWrap resources not an FD metric?
+**Q:** Why is counting `TCPSocketWrap` resources not an FD metric?
 
 **A:** Active resource types describe work keeping the loop alive. They are not an exhaustive count of OS descriptors; use platform metrics for open descriptors.
 
@@ -52,19 +52,19 @@ Source: [Express & Fastify Internals](20.1.4.03-express-fastify-internals.md)
 
 **Q:** What connects a mounted Express router to the outer application stack?
 
-**A:** The application dispatches into the router layer, strips the mount path from req.url for inner matching, sets req.baseUrl, and retains the original URL. next can continue within or back out of the nested dispatch.
+**A:** The application dispatches into the router layer, strips the mount path from `req.url` for inner matching, sets `req.baseUrl`, and retains the original URL. `next` can continue within or back out of the nested dispatch.
 
 **Q:** Which Fastify phase receives the object before it becomes the response payload?
 
-**A:** preSerialization can shape suitable object payloads before serialization; onSend sees the serialized payload and may also receive stream/buffer/string/null forms. Return that payload rather than encoding it again.
+**A:** `preSerialization` can shape suitable object payloads before serialization; `onSend` sees the serialized payload and may also receive stream/buffer/string/null forms. Return that payload rather than encoding it again.
 
-**Q:** Does fastify-plugin always make a decoration global?
+**Q:** Does `fastify-plugin` always make a decoration global?
 
 **A:** It normally skips encapsulation for that registration, so additions land in its parent scope. If the parent is an encapsulated feature, visibility remains within that subtree.
 
 **Q:** Why does a response schema not make every data leak impossible?
 
-**A:** It constrains the response path/status/schema where it is applied. Other schemas, additionalProperties, raw writes, streams and later hooks can emit different data; authorization and every response path still need review.
+**A:** It constrains the response path/status/schema where it is applied. Other schemas, `additionalProperties`, raw writes, streams and later hooks can emit different data; authorization and every response path still need review.
 
 ## Request and diagnostic traces
 
@@ -76,11 +76,11 @@ Sources: [query construction](20.1.4.01-node-security.md), [profile capture](20.
 
 **Q:** What changes when a diagnostic capture uses an existing filename?
 
-**A:** Exclusive writing rejects with EEXIST and preserves the old profile. Sampling and disconnect still have owned cleanup; a successful new file is stack evidence, not proof of a latency improvement.
+**A:** Exclusive writing rejects with `EEXIST` and preserves the old profile. Sampling and disconnect still have owned cleanup; a successful new file is stack evidence, not proof of a latency improvement.
 
 **Q:** Trace the Fastify fixture's health, unauthenticated order and authenticated order requests.
 
-**A:** Health returns 200 outside the admin hook. The unverified order request returns 401 before lookup. The verified admin request returns 200 after lookup and projects id/totalCents without the internal field.
+**A:** Health returns 200 outside the admin hook. The unverified order request returns 401 before lookup. The verified admin request returns 200 after lookup and projects `id`/`totalCents` without the internal field.
 
 **Q:** What changes if an authenticated order ID is malformed or well formed but absent?
 

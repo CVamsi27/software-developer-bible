@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "e733ac3b7c0c8bef8a972cf9ef76682598b36984fb0c3c4aed778a4cde972a26",
+ "corpus_digest": "4bbcf04f8d97099035e38f2889b44d455d1cbbd28210e2dfa72df50d3683af1b",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5373
+  "read_minutes": 5383
  },
  "chapters": [
   {
@@ -1769,7 +1769,7 @@
    "g": [
     "concept"
    ],
-   "m": 5
+   "m": 6
   },
   {
    "p": "20-backend/20.1-node.js/03-processes-and-concurrency/REVISION.html",
@@ -1939,7 +1939,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 13
   },
   {
    "p": "20-backend/20.13-java/20.13.04-java-testing-junit-mockito.html",
@@ -2203,7 +2203,7 @@
    "g": [
     "concept"
    ],
-   "m": 5
+   "m": 6
   },
   {
    "p": "20-backend/20.2-nestjs/05-advanced-and-interview/20.2.5.02-interview-questions.html",
@@ -2325,7 +2325,7 @@
    "g": [
     "concept"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "20-backend/20.3-rest-apis/02-http-mechanics/REVISION.html",
@@ -2469,7 +2469,7 @@
    "g": [
     "concept"
    ],
-   "m": 7
+   "m": 8
   },
   {
    "p": "20-backend/20.3-rest-apis/04-edge-and-scale/REVISION.html",
@@ -2499,7 +2499,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 12
   },
   {
    "p": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.02-normalization.html",
@@ -2529,7 +2529,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.05-postgresql-performance.html",
@@ -2539,7 +2539,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 12
   },
   {
    "p": "20-backend/20.4-database/01-postgresql-foundations/20.4.1.06-row-level-security.html",
@@ -2555,7 +2555,7 @@
   },
   {
    "p": "20-backend/20.4-database/01-postgresql-foundations/REVISION.html",
-   "t": "Database — Postgresql Foundations Revision",
+   "t": "Database — PostgreSQL Foundations Revision",
    "s": "Database",
    "c": "Reference",
    "g": [
@@ -3398,7 +3398,7 @@
    "g": [
     "concept"
    ],
-   "m": 11
+   "m": 12
   },
   {
    "p": "20-backend/20.8-caching/20.8.02-redis-fundamentals.html",
@@ -3409,7 +3409,7 @@
     "caching",
     "concept"
    ],
-   "m": 13
+   "m": 14
   },
   {
    "p": "20-backend/20.8-caching/20.8.03-advanced-redis-patterns.html",

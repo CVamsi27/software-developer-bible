@@ -64,7 +64,7 @@ Source: [REST Maturity Model](20.3.1.04-rest-maturity-model.md)
 
 **Q:** What distinguishes a level 0 HTTP API in the Richardson model?
 
-**A:** HTTP acts mainly as a transport for remote calls, commonly through one URI and POST. Generic HTTP infrastructure still operates, but it cannot infer application-operation semantics from the interface.
+**A:** HTTP acts mainly as a transport for remote calls, commonly through one URI and `POST`. Generic HTTP infrastructure still operates, but it cannot infer application-operation semantics from the interface.
 
 **Q:** What changes when an API introduces resource identifiers at level 1?
 
@@ -114,31 +114,31 @@ Source: [REST](20.3.1.02-rest-principles.md)
 
 Source: [Versioning](20.3.1.03-versioning.md)
 
-**Q:** Version 2 renames name to displayName. What should a supported version 1 reader still receive?
+**Q:** Version 2 renames `name` to `displayName`. What should a supported version 1 reader still receive?
 
-**A:** Its original documented name field from the version 1 adapter. A shared domain model can serve both, but a new shared serializer must not silently replace the old representation.
+**A:** Its original documented `name` field from the version 1 adapter. A shared domain model can serve both, but a new shared serializer must not silently replace the old representation.
 
-**Q:** Can Deprecation:true and Sunset:2027-04-01 serve as the standardized date syntax?
+**Q:** Can `Deprecation: true` and `Sunset: 2027-04-01` serve as the standardized date syntax?
 
-**A:** No. RFC 9745 uses a structured-field date such as @1790812800; Sunset uses an HTTP-date. These lifecycle hints do not themselves migrate clients or change the deprecated operation.
+**A:** No. RFC 9745 uses a structured-field date such as `@1790812800`; `Sunset` uses an HTTP-date. These lifecycle hints do not themselves migrate clients or change the deprecated operation.
 
 Source: [Maturity model](20.3.1.04-rest-maturity-model.md)
 
-**Q:** Why is POST /appointments/42 with an action field a useful level 1 example?
+**Q:** Why is `POST /appointments/42` with an `action` field a useful level 1 example?
 
-**A:** It introduces a resource target while the method still hides whether the operation reads or changes it. Using GET correctly would already demonstrate part of level 2.
+**A:** It introduces a resource target while the method still hides whether the operation reads or changes it. Using `GET` correctly would already demonstrate part of level 2.
 
-**Q:** Does adding an unexplained _links object prove level 3 or production readiness?
+**Q:** Does adding an unexplained `_links` object prove level 3 or production readiness?
 
 **A:** No. Clients need understood control/media semantics. The ladder also says nothing by itself about authorization, durability or the other REST constraints.
 
 Source: [OpenAPI](20.3.1.05-openapi-swagger.md)
 
-**Q:** A 200 Book response omits required title. Can generated docs prove that response valid?
+**Q:** A `200` `Book` response omits required `title`. Can generated docs prove that response valid?
 
 **A:** No. Validate the actual representation against the declared schema. Generated docs can accurately display a description that the implementation violates.
 
-**Q:** In OpenAPI, how does security:[{a:[],b:[]}] differ from security:[{a:[]},{b:[]}]?
+**Q:** In OpenAPI, how does `security: [{a: [], b: []}]` differ from `security: [{a: []}, {b: []}]`?
 
 **A:** The first requires both schemes; the second allows alternatives. The declaration still requires matching runtime verification and authorization.
 

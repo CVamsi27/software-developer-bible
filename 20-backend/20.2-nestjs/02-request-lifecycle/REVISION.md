@@ -20,7 +20,7 @@ Source: [NestJS Middleware](20.2.2.01-middleware.md)
 
 **Q:** How does the context available to middleware differ from handler-level components?
 
-**A:** Class middleware supports module DI and sees adapter request/response/next. A guard/interceptor ExecutionContext additionally identifies the selected controller and handler, enabling route-metadata policy.
+**A:** Class middleware supports module DI and sees adapter request/response/next. A guard/interceptor `ExecutionContext` additionally identifies the selected controller and handler, enabling route-metadata policy.
 
 **Q:** Why must middleware registration order follow dependencies between tasks?
 
@@ -36,7 +36,7 @@ Source: [NestJS Guards](20.2.2.02-guards.md)
 
 **Q:** How do a roles decorator and a guard divide policy declaration from enforcement?
 
-**A:** The decorator records metadata. A registered guard selects it, for example handler-first getAllAndOverride, and evaluates the verified principal. A decorator alone grants or denies nothing.
+**A:** The decorator records metadata. A registered guard selects it, for example handler-first `getAllAndOverride`, and evaluates the verified principal. A decorator alone grants or denies nothing.
 
 **Q:** Which responsibilities belong outside a guard's allow-or-deny decision?
 
@@ -52,11 +52,11 @@ Source: [NestJS Pipes](20.2.2.03-pipes.md)
 
 **Q:** What must be configured to validate a DTO at runtime?
 
-**A:** Register ValidationPipe, use runtime DTO classes with suitable decorators/nested metadata, and select transform/whitelist/null/coercion policies. TypeScript annotations alone perform no runtime validation or authorization.
+**A:** Register `ValidationPipe`, use runtime DTO classes with suitable decorators/nested metadata, and select `transform`/`whitelist`/null/coercion policies. TypeScript annotations alone perform no runtime validation or authorization.
 
 **Q:** Why does the order of guards and pipes matter, and which argument is piped first in `update(@Body() body, @Param('id', ParseUUIDPipe) id)`?
 
-**A:** Guards execute before argument pipes, so they cannot assume a later ParseUUIDPipe has already validated raw input. Parameter pipes resolve from the last handler parameter to the first, so the ID is piped before the body. Avoid cross-parameter side effects that depend on this ordering.
+**A:** Guards execute before argument pipes, so they cannot assume a later `ParseUUIDPipe` has already validated raw input. Parameter pipes resolve from the last handler parameter to the first, so the ID is piped before the body. Avoid cross-parameter side effects that depend on this ordering.
 
 ## NestJS Interceptors
 
@@ -66,13 +66,13 @@ Source: [NestJS Interceptors](20.2.2.04-interceptors.md)
 
 **A:** An interceptor wraps remaining execution and can observe/map/replace its emitted values/errors. A guard decides admission and an argument pipe validates input; none alone proves client delivery.
 
-**Q:** How do RxJS operators add behavior around next.handle()?
+**Q:** How do RxJS operators add behavior around `next.handle()`?
 
-**A:** map changes values, tap observes notifications, finalize handles subscription termination, and catchError replaces/rethrows errors. timeout stops waiting and retry resubscribes; neither implies cancellation, rollback or idempotency.
+**A:** `map` changes values, `tap` observes notifications, `finalize` handles subscription termination, and `catchError` replaces/rethrows errors. `timeout` stops waiting and `retry` resubscribes; neither implies cancellation, rollback or idempotency.
 
 **Q:** In what order do nested interceptors run before and after the handler?
 
-**A:** Before-work nests from global to controller to route; result transformations unwind in reverse. Short-circuiting next.handle can deliberately skip downstream pipes/handler, so cache eligibility and access policy must remain safe.
+**A:** Before-work nests from global to controller to route; result transformations unwind in reverse. Short-circuiting `next.handle` can deliberately skip downstream pipes/handler, so cache eligibility and access policy must remain safe.
 
 ## NestJS Exception Filters
 
@@ -118,11 +118,11 @@ Source: [Middleware fixture](20.2.2.01-middleware.md).
 
 **Q:** Trace the generated request ID through the middleware fixture and completion log.
 
-**A:** Correlation assigns a server UUID, the handler returns it and finish records the same ID. The client-supplied ID does not select it. Stages are identified, handler, finished.
+**A:** Correlation assigns a server UUID, the handler returns it and `finish` records the same ID. The client-supplied ID does not select it. Stages are `identified`, `handler`, `finished`.
 
-**Q:** What changes when the response closes before finish?
+**Q:** What changes when the response closes before `finish`?
 
-**A:** Record closed once and remove both terminal listeners. Finish means transport handoff, not client receipt; neither event makes request IDs appropriate metric labels.
+**A:** Record `closed` once and remove both terminal listeners. Finish means transport handoff, not client receipt; neither event makes request IDs appropriate metric labels.
 
 ### Guards
 
@@ -140,7 +140,7 @@ Source: [Guard fixture](20.2.2.02-guards.md).
 
 Source: [Bounded page-size pipe](20.2.2.03-pipes.md).
 
-**Q:** What do undefined, `'25'`, `'10junk'` and a repeated-value array produce?
+**Q:** What do `undefined`, `'25'`, `'10junk'` and a repeated-value array produce?
 
 **A:** Default 10, accepted 25, then two 400 rejections. Absence differs from malformed input; accepted values are safe positive integers at most 100.
 
@@ -176,9 +176,9 @@ Source: [Safe HTTP filter](20.2.2.05-exception-filters.md).
 
 Source: [ALS interleaving fixture](20.2.2.06-request-context-and-async-local-storage.md).
 
-**Q:** Why do overlapping operations return clinic-a/clinic-b and the later A timer still returns clinic-a?
+**Q:** Why do overlapping operations return `clinic-a`/`clinic-b` and the later A timer still returns `clinic-a`?
 
-**A:** Their supported descendant resources retain distinct stores. The timer was created inside A even though it outlives the main callback. Outside both roots getStore is undefined and required tenant access throws.
+**A:** Their supported descendant resources retain distinct stores. The timer was created inside A even though it outlives the main callback. Outside both roots `getStore()` is `undefined` and required tenant access throws.
 
 **Q:** What changes if a timer retains a transaction client after its callback committed?
 

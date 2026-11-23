@@ -6,7 +6,7 @@
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Foundational-blueviolet)](../../../docs/topic-importance.md)
 
-# Database — Postgresql Foundations Revision
+# Database — PostgreSQL Foundations Revision
 
 Explain each mechanism before checking the answer. Revisit its source for the example and boundary conditions.
 
@@ -26,7 +26,7 @@ Source: [PostgreSQL for Backend Engineers](20.4.1.01-postgresql.md)
 
 **A:** WAL records must be durable before corresponding data pages are written. With appropriate durable-commit settings, recovery can redo committed changes even if the table pages were not flushed before the crash. WAL on lost storage is not a substitute for backups.
 
-**Q:** Why must BEGIN, tenant context and protected statements use one checked-out connection?
+**Q:** Why must `BEGIN`, tenant context and protected statements use one checked-out connection?
 
 **A:** Transaction and local settings belong to a database session. A query sent through another pooled connection does not inherit them; ending the transaction before release prevents the next request from inheriting unfinished state.
 
@@ -64,21 +64,21 @@ Source: [MVCC (Multi-Version Concurrency Control)](20.4.1.03-mvcc.md)
 
 **Q:** Why must PostgreSQL delay reclaiming some deleted or updated row versions?
 
-**A:** No version can be removed while any snapshot might still need it — so "DELETE" marks a row dead and "UPDATE" inserts a new version. This is why VACUUM exists: reclaiming that space is a *necessarily deferred* cleanup, not optional housekeeping.
+**A:** No version can be removed while any snapshot might still need it — so `DELETE` marks a row dead and `UPDATE` inserts a new version. This is why `VACUUM` exists: reclaiming that space is a *necessarily deferred* cleanup, not optional housekeeping.
 
 **Q:** How can a long-running transaction cause table bloat?
 
 **A:** A long-lived snapshot can prevent vacuum from reclaiming row versions still needed by that transaction. Monitor transaction age, retained versions and vacuum progress; MVCC reduces ordinary read/write blocking but adds cleanup and storage costs.
 
-**Q:** A writer commits between two SELECTs in a transaction begun with plain BEGIN. Which balance does the second SELECT see?
+**Q:** A writer commits between two `SELECT`s in a transaction begun with plain `BEGIN`. Which balance does the second `SELECT` see?
 
-**A:** At default Read Committed, it takes a new statement snapshot and can see the new commit. An already established Repeatable Read snapshot excludes it; BEGIN alone does not establish that stable snapshot.
+**A:** At default Read Committed, it takes a new statement snapshot and can see the new commit. An already established Repeatable Read snapshot excludes it; `BEGIN` alone does not establish that stable snapshot.
 
 **Q:** What changes if the Repeatable Read reader updates the row after the other transaction commits?
 
-**A:** The row changed after its snapshot, so PostgreSQL can raise 40001. Roll back and retry the entire transaction with fresh reads and decisions. The earlier ordinary SELECT could proceed without waiting, but that does not make the write conflict-free.
+**A:** The row changed after its snapshot, so PostgreSQL can raise `40001`. Roll back and retry the entire transaction with fresh reads and decisions. The earlier ordinary `SELECT` could proceed without waiting, but that does not make the write conflict-free.
 
-**Q:** Does a nonzero xmax prove that the returned row has been deleted?
+**Q:** Does a nonzero `xmax` prove that the returned row has been deleted?
 
 **A:** No. It may encode row-lock information, and visibility also depends on transaction outcomes and the snapshot. The system-column query returns the currently visible version, not an audit history of all versions.
 
@@ -112,7 +112,7 @@ Source: [PostgreSQL Performance Tuning](20.4.1.05-postgresql-performance.md)
 
 **Q:** How do you distinguish CPU work, I/O waits, and lock waits when tuning PostgreSQL?
 
-**A:** Use execution plans and buffer instrumentation to inspect query work, and activity/wait-event views to identify blocking or I/O waits. EXPLAIN alone does not report every wait cause; correlate observations with workload and host metrics.
+**A:** Use execution plans and buffer instrumentation to inspect query work, and activity/wait-event views to identify blocking or I/O waits. `EXPLAIN` alone does not report every wait cause; correlate observations with workload and host metrics.
 
 **Q:** Why can the same SQL query run with different execution plans?
 
@@ -124,15 +124,15 @@ Source: [PostgreSQL Performance Tuning](20.4.1.05-postgresql-performance.md)
 
 **Q:** The partial index contains only booked visits. What changes when the query requests cancelled visits?
 
-**A:** That index cannot supply the requested rows. The planner needs another access path; retaining the same ORDER BY or clinic does not make the partial predicate apply.
+**A:** That index cannot supply the requested rows. The planner needs another access path; retaining the same `ORDER BY` or clinic does not make the partial predicate apply.
 
 **Q:** How do you identify a slow query?
 
 **A:** Correlate application latency, pool waiting and database activity. Use workload statistics to prioritize, then safely inspect execution plans or wait/blocker evidence. A sequential scan or high mean time alone does not establish the cause.
 
-**Q:** What's the difference between VACUUM and VACUUM FULL?
+**Q:** What's the difference between `VACUUM` and `VACUUM FULL`?
 
-**A:** Ordinary VACUUM makes eligible space reusable and normally permits ordinary reads/writes. VACUUM FULL rewrites with an exclusive lock and can return space to the operating system; plan capacity and availability before using it.
+**A:** Ordinary `VACUUM` makes eligible space reusable and normally permits ordinary reads/writes. `VACUUM FULL` rewrites with an exclusive lock and can return space to the operating system; plan capacity and availability before using it.
 
 **Q:** How do you prevent table bloat?
 
@@ -156,19 +156,19 @@ Source: [PostgreSQL Row-Level Security (RLS)](20.4.1.06-row-level-security.md)
 
 **Q:** Why can a test as the table owner pass while the API's query returns no rows?
 
-**A:** Owners normally bypass RLS. Test using the subject API role without bypass privileges and establish its context. FORCE can subject an owner to RLS, but does not constrain superusers or BYPASSRLS roles.
+**A:** Owners normally bypass RLS. Test using the subject API role without bypass privileges and establish its context. `FORCE` can subject an owner to RLS, but does not constrain superusers or `BYPASSRLS` roles.
 
-**Q:** What happens if enabled RLS has a SELECT policy but no policy permitting INSERT?
+**Q:** What happens if enabled RLS has a `SELECT` policy but no policy permitting `INSERT`?
 
-**A:** A subject role's proposed insert is denied, even if ordinary table privileges permit INSERT. Missing mutation policies do not create unrestricted writes.
+**A:** A subject role's proposed insert is denied, even if ordinary table privileges permit `INSERT`. Missing mutation policies do not create unrestricted writes.
 
-**Q:** An UPDATE can see its old row. Why can changing its tenant ID still fail?
+**Q:** An `UPDATE` can see its old row. Why can changing its tenant ID still fail?
 
-**A:** USING permits the old row as a target, while WITH CHECK independently validates the proposed row. The proposed other-tenant version fails the new-row boundary.
+**A:** `USING` permits the old row as a target, while `WITH CHECK` independently validates the proposed row. The proposed other-tenant version fails the new-row boundary.
 
 **Q:** Can a narrower doctor policy restrict a broader permissive tenant policy?
 
-**A:** Not by itself: applicable permissive policies combine with OR. Intersect grants with an appropriate restrictive boundary or design each grant to express the full intended condition, then verify inherited roles and every command.
+**A:** Not by itself: applicable permissive policies combine with `OR`. Intersect grants with an appropriate restrictive boundary or design each grant to express the full intended condition, then verify inherited roles and every command.
 
 **Q:** Does enabling RLS guarantee that a missing tenant setting denies every row?
 

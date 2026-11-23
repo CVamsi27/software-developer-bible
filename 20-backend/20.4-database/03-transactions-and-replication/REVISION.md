@@ -22,7 +22,7 @@ Source: [Database Transactions](20.4.3.01-transactions.md)
 
 **A:** Write skew occurs when two concurrent transactions read overlapping datasets, make disjoint updates based on shared premises, and commit without conflicting on the same physical rows, violating a cross-row constraint. Repeatable Read does not prevent it in standard snapshot isolation.
 
-**Q:** A network failure occurs during COMMIT. Why is it different from a confirmed 40001 rollback?
+**Q:** A network failure occurs during `COMMIT`. Why is it different from a confirmed `40001` rollback?
 
 **A:** The commit outcome may be unknown. Reconcile a durable operation key/result before repeating a transfer; a known serialization rollback instead permits bounded whole-transaction retry with fresh reads.
 
@@ -38,7 +38,7 @@ Source: [Deadlocks](20.4.3.02-deadlocks.md)
 
 **A:** Acquire all participating resources in a deterministic global order to remove circular wait. Ordering only the explicit rows is insufficient if triggers, foreign keys, lock upgrades or another writer acquire additional resources differently.
 
-**Q:** What changes when a worker uses SKIP LOCKED instead of waiting for the first queued row?
+**Q:** What changes when a worker uses `SKIP LOCKED` instead of waiting for the first queued row?
 
 **A:** It can claim another unlocked row, so the result is not strict FIFO or proof that an empty result means no pending work. The claim must atomically transition state; a crashed worker still needs lease recovery and idempotent effects.
 
@@ -48,7 +48,7 @@ Source: [Optimistic vs Pessimistic Locking](20.4.3.03-optimistic-pessimistic-loc
 
 **Q:** Under what workload characteristics does optimistic concurrency control outperform pessimistic locking?
 
-**A:** Expected-version writes can avoid holding protective locks throughout an earlier read or editing period when conflicts are rare. The UPDATE still takes write locks and validates its predicate when it executes, not automatically at commit. Measure conflict/recomputation cost; stale human intent needs reconciliation.
+**A:** Expected-version writes can avoid holding protective locks throughout an earlier read or editing period when conflicts are rare. The `UPDATE` still takes write locks and validates its predicate when it executes, not automatically at commit. Measure conflict/recomputation cost; stale human intent needs reconciliation.
 
 **Q:** Why must an optimistic concurrency update verify the version in the `WHERE` clause rather than purely in memory?
 
@@ -56,7 +56,7 @@ Source: [Optimistic vs Pessimistic Locking](20.4.3.03-optimistic-pessimistic-loc
 
 **Q:** Two editors both read version 1. What does the second write return after the first increments the version?
 
-**A:** Its expected-version UPDATE returns zero rows. Every writer must increment the token; refreshing the token and repeating the same stale replacement defeats the protection.
+**A:** Its expected-version `UPDATE` returns zero rows. Every writer must increment the token; refreshing the token and repeating the same stale replacement defeats the protection.
 
 ## Database Replication
 

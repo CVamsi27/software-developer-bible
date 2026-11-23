@@ -1,4 +1,4 @@
-# Interview Drills - Security
+# Interview Drills — Security
 
 > **Study time:** ≈ 8 min of reading (1 file, ~8 min average).
 > **1 file.** The full authored security question bank — pairs with the auth-track question set in [01-auth](../01-auth/INDEX.md).
@@ -18,8 +18,4 @@ Read the auth, attacks and hardening chapters, then their revision companions be
 
 ---
 
-[← Back to Security](../INDEX.md)
-
----
-
-[← Previous: Hardening & Operations](../03-hardening-and-operations/INDEX.md)
+[← Previous: Hardening & Operations](../03-hardening-and-operations/INDEX.md) · [Back to Security](../INDEX.md)

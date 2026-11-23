@@ -16,7 +16,7 @@ Source: [Configuration & Validation in NestJS](20.2.4.01-configuration-validatio
 
 **Q:** Why validate required environment variables during startup?
 
-**A:** Startup validation with class-validator, Joi, or zod stops an application with missing or invalid settings before requests depend on them. This makes a deployment failure visible instead of leaving a later request to discover it.
+**A:** Startup validation with `class-validator`, `Joi`, or `Zod` stops an application with missing or invalid settings before requests depend on them. This makes a deployment failure visible instead of leaving a later request to discover it.
 
 **Q:** How do parsed and typed configuration values help their consumers?
 
@@ -38,7 +38,7 @@ Source: [Configuration & Validation in NestJS](20.2.4.01-configuration-validatio
 
 Source: [Testing NestJS Applications](20.2.4.02-testing.md)
 
-**Q:** How does TestingModule let a test choose provider implementations?
+**Q:** How does `TestingModule` let a test choose provider implementations?
 
 **A:** `Test.createTestingModule` builds the dependency graph with real or substitute providers bound to tokens. A test can keep the real container while replacing selected external dependencies.
 
@@ -76,7 +76,7 @@ Source: [Lifecycle Hooks & Graceful Shutdown](20.2.4.03-lifecycle-hooks-graceful
 
 **Q:** Why must the application remain correct if graceful shutdown cannot run?
 
-**A:** SIGKILL, out-of-memory failures, or a node crash can prevent cleanup. Idempotent consumers tolerate repeated work, and the transactional outbox preserves pending events with database updates. Graceful shutdown reduces disruption but does not replace those guarantees.
+**A:** `SIGKILL`, out-of-memory failures, or a node crash can prevent cleanup. Idempotent consumers tolerate repeated work, and the transactional outbox preserves pending events with database updates. Graceful shutdown reduces disruption but does not replace those guarantees.
 
 ## Scheduling & Background Jobs
 
@@ -130,9 +130,9 @@ Sources: [Configuration](20.2.4.01-configuration-validation.md), [Testing](20.2.
 
 **A:** Importing the root module does not run `main.ts`, so a test that builds only the module graph omits the global pipes, filters and route prefix that `main.ts` installs. Share the bootstrap setup so the test exercises the pipeline production actually serves.
 
-**Q:** What happens if a preStop hook uses 10 seconds of a 30-second termination period?
+**Q:** What happens if a `preStop` hook uses 10 seconds of a 30-second termination period?
 
-**A:** Draining and cleanup share the remaining budget; the timer is not reset after preStop.
+**A:** Draining and cleanup share the remaining budget; the timer is not reset after `preStop`.
 
 **Q:** Why can releasing a daily cron lease still allow the same run twice?
 
@@ -158,7 +158,7 @@ Sources: [Configuration](20.2.4.01-configuration-validation.md), [Testing](20.2.
 
 **A:** Transport closure does not cancel an arbitrary handler promise. Track accepted work, await settlement or apply cooperative cancellation, then release its dependencies; abrupt termination still requires recovery-safe effects.
 
-**Q:** Does compiling a mocked TestingModule prove the production module exports are correct?
+**Q:** Does compiling a mocked `TestingModule` prove the production module exports are correct?
 
 **A:** It proves only that supplied graph resolves. Separately compile the actual owning modules and test the relevant runtime paths; an override can hide the missing production registration.
 

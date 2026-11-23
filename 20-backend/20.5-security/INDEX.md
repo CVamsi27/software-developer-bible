@@ -143,7 +143,7 @@ Before drills, revisit [auth revision](01-auth/REVISION.md), [attack revision](0
 
 ## Navigation
 
-[← Previous: Database](../20.4-database/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Microservices →](../20.6-microservices/INDEX.md)
+[← Previous: Database](../20.4-database/INDEX.md) · [Back to Index](../../INDEX.md) · [Next: Microservices →](../20.6-microservices/INDEX.md)
 
 ---
 
@@ -153,12 +153,12 @@ These [Docita](https://github.com/CVamsi27/docita) source paths are inspection s
 
 | Topic | Docita evidence |
 | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| JWT auth | `apps/api/src/shared/modules/auth/auth/jwt.strategy.ts` + `jwt-auth.guard.ts` + `staff-jwt-audience.guard.ts` - passport strategy with audience checks |
+| JWT auth | `apps/api/src/shared/modules/auth/auth/jwt.strategy.ts` + `jwt-auth.guard.ts` + `staff-jwt-audience.guard.ts` — passport strategy with audience checks |
 | Sessions, API keys & resets | `apps/api/src/shared/modules/auth/auth/auth-session.service.ts`, `api-key.service.ts`, `auth-password.controller.ts`, `auth-email-verification.service.ts`, `auth-mfa-orchestrator.service.ts` |
-| RBAC / ABAC | `apps/api/src/shared/modules/authorization/` - `authorization.service.ts` + `abac-policy.registry.ts` + `role-bridge.ts`; enforced via `roles.guard.ts` / `policy.guard.ts` / `require-policy.decorator.ts` |
+| RBAC / ABAC | `apps/api/src/shared/modules/authorization/` — `authorization.service.ts` + `abac-policy.registry.ts` + `role-bridge.ts`; enforced via `roles.guard.ts` / `policy.guard.ts` / `require-policy.decorator.ts` |
 | Tenant isolation | `apps/api/src/shared/common/middleware/tenant.middleware.ts` + `apps/api/src/shared/modules/auth/guards/tenant.guard.ts` + `shared/modules/rls/` — tenant mechanisms to trace; verify enabled RLS, scoped client usage and cross-tenant denial at each operation |
 | CSRF & security headers | `apps/api/src/shared/common/interceptors/csrf.interceptor.ts`; `helmet` configured in `apps/api/src/main.ts` |
-| Rate limiting | `apps/api/src/shared/modules/auth/guards/ip-rate-limit.guard.ts`, `user-rate-limit.guard.ts` + `shared/modules/tenant-rate-limit/` - per-IP/user/clinic quotas |
-| Audit logging | `apps/api/src/shared/modules/audit/audit-logger.service.ts` + `shared/common/interceptors/patient-audit.interceptor.ts` - access events for PHI surfaces |
-| Field-level encryption | `apps/api/src/shared/common/encryption.service.ts` + `encryption-patient-fields.boundary.ts` - sensitive patient fields encrypted before write |
-| Emergency access | `apps/api/src/shared/common/interceptors/emergency-access.interceptor.ts` + `apps/api/src/shared/modules/auth/decorators/emergency-access.decorator.ts` - break-glass with audit trail |
+| Rate limiting | `apps/api/src/shared/modules/auth/guards/ip-rate-limit.guard.ts`, `user-rate-limit.guard.ts` + `shared/modules/tenant-rate-limit/` — per-IP/user/clinic quotas |
+| Audit logging | `apps/api/src/shared/modules/audit/audit-logger.service.ts` + `shared/common/interceptors/patient-audit.interceptor.ts` — access events for PHI surfaces |
+| Field-level encryption | `apps/api/src/shared/common/encryption.service.ts` + `encryption-patient-fields.boundary.ts` — sensitive patient fields encrypted before write |
+| Emergency access | `apps/api/src/shared/common/interceptors/emergency-access.interceptor.ts` + `apps/api/src/shared/modules/auth/decorators/emergency-access.decorator.ts` — break-glass with audit trail |

@@ -3345,49 +3345,121 @@
    "sha256": "d7b16b8f446bd56c6077828aaea4450ba3d23d4afc1dea8a690d2101f5244eeb",
    "lines": 663,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against Java SE 27 and Java 21 LTS sources (JEPs 395, 409, 440, 441).",
+    "readable": "Full read of 663 lines. Java language fundamentals opening with the boxed Integer == reference-identity failure outside [-128, 127], tracing JVM stack vs heap, generics type erasure, records, sealed classes, pattern matching switch, and Stream collectors.",
+    "concise": "1883 words across 663 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for JVM memory layout, value vs identity types, immutable data modeling, and stream pipeline allocation without duplication.",
+    "fast": "Fast to scan: 93.5 KB raw / 16.5 KB gzip.",
+    "best": "Best-practice depth: Explains boxing, erasure, and mutability failure boundary conditions with a Java-vs-TypeScript trade-off table."
+   }
   },
   "20-backend/20.13-java/20.13.02-java-oop-solid.md": {
    "sha256": "823fe3cf581f1adf9e9fdebf1a8d86d3b008dc93e2f0602506bd1bd5d1cf709a",
    "lines": 435,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against Java 21-27 records, sealed interfaces, and constructor injection conventions.",
+    "readable": "Full read of 435 lines. Java OOP and SOLID chapter opening with an 800-line NotificationService God-class failure, tracing encapsulation, composition over inheritance, all five SOLID principles, and Strategy/Factory/Builder refactoring.",
+    "concise": "1402 words across 435 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for Java SOLID refactorings without duplicating GoF pattern chapters.",
+    "fast": "Fast to scan: 54.8 KB raw / 10.2 KB gzip.",
+    "best": "Best-practice depth: Shows failure boundary of inheritance hierarchies and trade-off limits of over-abstraction."
+   }
   },
   "20-backend/20.13-java/20.13.03-java-concurrency-multithreading.md": {
    "sha256": "afdedff15d4566a29299386256abb3984cc63249776065233c121920a18976d9",
    "lines": 312,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against Java 21 JEP 444, JDK 24 JEP 491 monitor unpinning, and JDK 25+ Structured Concurrency sources.",
+    "readable": "Full read of 312 lines. Java concurrency chapter opening with the 200-platform-thread Tomcat pool exhaustion failure at 250 RPS, tracing Java Memory Model happens-before edges, locks/atomics, thread pools, CompletableFuture, Virtual Threads (JEP 444 + JDK 24 JEP 491 synchronized unpinning), and StructuredTaskScope.",
+    "concise": "935 words across 312 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for JVM concurrency and Virtual Threads without duplicating Node.js event-loop chapters.",
+    "fast": "Fast to scan: 46.0 KB raw / 9.5 KB gzip.",
+    "best": "Best-practice depth: Traces carrier-thread pinning failure boundary, semaphore rate-limit vs thread-pool sizing trade-offs, and deadlock limits."
+   }
   },
   "20-backend/20.13-java/20.13.04-java-testing-junit-mockito.md": {
    "sha256": "c7fe007d545f8ac2e26940f21e612ec8cded37802a2a8b6aa63600aeb059d798",
    "lines": 315,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against JUnit 6.0.3, Mockito 5.23.0, AssertJ, and Testcontainers 2.0.5 release sources.",
+    "readable": "Full read of 315 lines. Java testing chapter opening with the H2-vs-PostgreSQL green-test outage, tracing the testing trophy, JUnit Jupiter 6.0.3 lifecycle and parameterized tests, Mockito 5.23.0 strict stubs, and Testcontainers 2.0.5 real-PostgreSQL integration tests with @ServiceConnection.",
+    "concise": "697 words across 315 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for JVM unit and container integration testing with no duplicate test theory.",
+    "fast": "Fast to scan: 44.2 KB raw / 8.7 KB gzip.",
+    "best": "Best-practice depth: Highlights mock-drift failure boundary and unit-vs-container speed trade-offs."
+   }
   },
   "20-backend/20.13-java/20.13.05-spring-boot.md": {
    "sha256": "3a4ae81a9650884f0655840548ac8cac5326eae9fe0adbcd0de8f5650dbc30e1",
    "lines": 221,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against Spring Boot 4.1.1 (Spring Framework 7.0, Jakarta EE 11, Hibernate 7) documentation.",
+    "readable": "Full read of 221 lines. Spring Boot chapter opening with the @Transactional self-invocation proxy bypass bug, tracing IoC/DI, proxy AOP, auto-configuration, Spring MVC request lifecycle, Bean Validation, ProblemDetail RFC 9457 error handling, Spring Data JPA N+1 fixes, and Virtual Threads enablement.",
+    "concise": "1555 words across 221 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for Spring Boot container lifecycle, proxy boundaries, and JPA transaction handling.",
+    "fast": "Fast to scan: 34.9 KB raw / 9.7 KB gzip.",
+    "best": "Best-practice depth: Traces proxy self-invocation failure boundary, lazy-loading limits, and connection pool exhaustion trade-offs."
+   }
   },
   "20-backend/20.13-java/20.13.06-interview-questions.md": {
    "sha256": "cea55cc1e2e1c1825468df970e17696de40d8f767190cbdbf8ba094646994c92",
    "lines": 149,
    "genre": "interview",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against Java 21-27 (JEP 444, JEP 491) and Spring Boot 4.1.1 specifications.",
+    "readable": "Full read of 149 lines. Java and Spring Boot interview bank covering 28 progressive questions across JVM internals, collections, generics, concurrency/Virtual Threads, garbage collection, and Spring Boot proxy/transaction semantics.",
+    "concise": "2530 words across 149 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical interview drill for 20.13-java distinct from REVISION.md recall prompts.",
+    "fast": "Fast to scan: 31.0 KB raw / 10.4 KB gzip.",
+    "best": "Best-practice depth: Every answer states the runtime mechanism, failure boundary, and production trade-off."
+   }
   },
   "20-backend/20.13-java/INDEX.md": {
    "sha256": "254e67bb0ccb07d70d491fdc6517eff683786a9c638542ef67fd6fed4f0fd115",
    "lines": 57,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23: pins Java SE 27 / Java 21 LTS, JUnit 6.0.3, Mockito 5.23.0, Testcontainers 2.0.5, and Spring Boot 4.1.1.",
+    "readable": "Full read of 57 lines. Java and Spring Boot stack index organizing 6 study chapters plus REVISION.md across core Java 21-27, OOP/SOLID, concurrency, JUnit 6/Mockito 5/Testcontainers 2, and Spring Boot 4.1.",
+    "concise": "242 words across 57 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical index flow sequences language fundamentals -> OOP/SOLID -> concurrency -> testing -> Spring Boot -> revision -> interviews with no duplicate content.",
+    "fast": "Fast to scan: 12.1 KB raw / 4.1 KB gzip.",
+    "best": "Best-practice depth: Clear trade-off and failure boundary links across Node.js and architecture stacks."
+   }
   },
   "20-backend/20.13-java/REVISION.md": {
    "sha256": "ff01da70b98155840a12d068b233dafd389b8212327875a79f86940442278afe",
    "lines": 190,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against Java 21-27, JUnit 6.0.3, and Spring Boot 4.1.1 chapters.",
+    "readable": "Full read of 190 lines. Java stack revision companion containing 21 fresh-worded Q&A pairs across JVM fundamentals, OOP/SOLID, concurrency, testing, and Spring Boot.",
+    "concise": "1440 words across 190 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical revision companion for 20.13-java separate from the 28-question interview bank.",
+    "fast": "Fast to scan: 20.3 KB raw / 6.8 KB gzip.",
+    "best": "Best-practice depth: Drills failure boundary conditions and design trade-offs across all 5 Java learning chapters."
+   }
   },
   "20-backend/20.2-nestjs/01-core-architecture/20.2.1.01-modules.md": {
    "sha256": "019992558b8128c34d1c8e7794fb570565b6732de5884e7b50ac06215ac180be",
@@ -4462,157 +4534,391 @@
    "sha256": "72f0b65473bf9ccca95130af62f095a83e2735b7038c5534dcfa3a27c8345dad",
    "lines": 177,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against PostgreSQL 16-18 docs for index types, partial indexes, index-only scans, skip scan, HOT updates, and CREATE INDEX CONCURRENTLY.",
+    "readable": "Full read of 177 lines. Clear database indexing chapter covering B-tree, Hash, GIN, GiST, SP-GiST, BRIN, composite key order, PostgreSQL 18 B-tree skip scan, covering INCLUDE + visibility-map heap fetches, and expression/partial indexes.",
+    "concise": "1285 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "focused": "Canonical database indexing chapter; points at 20.4.2.03 for plan analysis and 20.4.5.02 for concurrent migration protocol.",
+    "fast": "26.7 KB raw / 7.9 KB gzip",
+    "best": "Remaining limit is that SQL fixtures were verified against PostgreSQL 16-18 docs rather than executed on a live server, and index choice always depends on real workload distribution."
+   }
   },
   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.02-joins.md": {
    "sha256": "fc6c2ce54e4a927952c9f4ca0f023956233d0114fcda8b999b0bd744943ce44e",
    "lines": 232,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against PostgreSQL joins tutorial and table expressions/LATERAL docs.",
+    "readable": "Full read of 232 lines. Plain-English SQL joins guide with concrete patients/appointments fixture, ON vs WHERE outer-join difference, physical join algorithms, COUNT(a.id) vs COUNT(*), EXISTS, LEFT LATERAL, and grain-safe reporting.",
+    "concise": "1241 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "focused": "Canonical SQL joins chapter; points at 20.4.2.01 for index access paths and 20.4.2.03 for execution-plan inspection.",
+    "fast": "33.4 KB raw / 8.3 KB gzip",
+    "best": "Remaining limit is that planner join reordering and physical algorithm choice depend on table statistics and actual data skew."
+   }
   },
   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.03-execution-plans.md": {
    "sha256": "0ae2ab69884ec2ecaf6598688171339263a8f67ad64f6e99c56407d0a6e85de4",
    "lines": 172,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against PostgreSQL 16, 17, and 18 EXPLAIN documentation and planner statistics docs.",
+    "readable": "Full read of 172 lines. Clear EXPLAIN (ANALYZE, BUFFERS) guide explaining cost vs time, rows x loops, inclusive parent timing, safe transactional rollback of ANALYZE writes, PostgreSQL 16 GENERIC_PLAN, 17 SERIALIZE, and 18 Index Searches.",
+    "concise": "1268 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "focused": "Canonical execution-plan chapter; points at 20.4.1.05 for holistic tuning and 20.4.5.01 for connection-pool wait outside plans.",
+    "fast": "26.7 KB raw / 7.9 KB gzip",
+    "best": "Remaining limit is that EXPLAIN ANALYZE measures database execution only and excludes pool acquisition, network latency, and client decoding."
+   }
   },
   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.04-window-functions.md": {
    "sha256": "b8a6f75fff7003feaf0c64b408f021f5cf015f1379953d2c1c1d53512c9500de",
    "lines": 226,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against PostgreSQL 18 window-function syntax, frame defaults, and NULL-handling docs.",
+    "readable": "Full read of 226 lines. Clear PostgreSQL window-functions guide covering PARTITION BY, ORDER BY peers, ROWS vs RANGE vs GROUPS frames, row_number/rank/dense_rank ties, lag/lead NULL rules (no IGNORE NULLS/QUALIFY in PG 18), gaps-and-islands, and sessionization.",
+    "concise": "1088 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "focused": "Canonical window-functions chapter; points at 20.4.2.02 for input grain before windowing and 20.4.2.03 for sort-spill diagnosis.",
+    "fast": "33.8 KB raw / 8.1 KB gzip",
+    "best": "Remaining limit is that late-arriving events can change historical sessionization results unless persisted versions or correction rules are defined."
+   }
   },
   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.05-jsonb.md": {
    "sha256": "e22632cd6070c5ad746a6f1c4e08c35d9de1f6ba67e3f7c440df49afe9c81072",
    "lines": 214,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against PostgreSQL 17+ SQL/JSON release notes and current JSONB operator/GIN documentation.",
+    "readable": "Full read of 214 lines. Thorough PostgreSQL JSONB chapter separating -> vs ->>, missing keys vs JSON null, PostgreSQL 17+ JSON_TABLE, containment type rules, jsonb_set vs shallow || merge, optimistic version guards, and jsonb_ops vs jsonb_path_ops.",
+    "concise": "1249 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "focused": "Canonical PostgreSQL JSONB chapter; points at 20.4.1.04 for document-store comparisons and 20.4.3.03 for optimistic concurrency.",
+    "fast": "33.0 KB raw / 8.6 KB gzip",
+    "best": "Remaining limit is that JSONB updates still lock and rewrite the containing row, and CHECK expressions yielding SQL NULL pass unless explicitly guarded."
+   }
   },
   "20-backend/20.4-database/02-querying-and-optimization/INDEX.md": {
    "sha256": "a6c9a34f0d525eecedcdb25fbfbe98388e4090ffb73c5d9012beb7c79484109c",
    "lines": 53,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against all 6 files in 02-querying-and-optimization/ and PostgreSQL 16-18 plan/JSON features.",
+    "readable": "Full read of 53 lines. Clear 6-step Querying & Optimization reading flow covering indexes, joins, execution plans, window functions, JSONB, and Docita anchors.",
+    "concise": "151 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "focused": "Canonical Querying & Optimization category index; points at numbered chapters and REVISION.md.",
+    "fast": "11.1 KB raw / 3.7 KB gzip",
+    "best": "Remaining limit is Docita anchors name source files to inspect and do not establish current production query plans."
+   }
   },
   "20-backend/20.4-database/02-querying-and-optimization/REVISION.md": {
    "sha256": "3e811227670cda42b616c95d87adce32e3a10b09d2299710df96f8d0c79a8152",
    "lines": 171,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against all 5 chapters in 02-querying-and-optimization/; all links and version specifics verified.",
+    "readable": "Full read of 171 lines. Focused 171-line active-recall companion covering all five Querying & Optimization chapters including PG 18 skip scan and Index Searches, PG 17 JSON_TABLE, outer-join grain, and peer frames.",
+    "concise": "1614 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "focused": "Canonical Querying & Optimization revision companion; kept separate from concept chapters.",
+    "fast": "21.5 KB raw / 7.1 KB gzip",
+    "best": "Remaining limit is that conceptual recall does not replace reading live EXPLAIN (ANALYZE, BUFFERS) plans on production-shaped datasets."
+   }
   },
   "20-backend/20.4-database/03-transactions-and-replication/20.4.3.01-transactions.md": {
    "sha256": "994e4ab3ebc6fc6fe53b6c8fefe73a391a513247525ab26c8c135def892efebd",
    "lines": 184,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against PostgreSQL transaction, isolation, WAL synchronous_commit, and DDL transaction docs.",
+    "readable": "Full read of 184 lines. Clear transactions chapter tracing an ordered-lock account transfer, ACID boundaries, Read Committed vs Repeatable Read vs Serializable, write skew, savepoints, 40001/40P01 whole-transaction retries, and idle-in-transaction monitoring.",
+    "concise": "921 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "focused": "Canonical database transactions chapter; points at 20.4.4.02 for Prisma tx code and 20.6.3.02 for distributed transactions.",
+    "fast": "25.8 KB raw / 7.3 KB gzip",
+    "best": "Remaining limit is that a network failure during COMMIT leaves outcome uncertain and requires durable idempotency/reconciliation rather than blind retry."
+   }
   },
   "20-backend/20.4-database/03-transactions-and-replication/20.4.3.02-deadlocks.md": {
    "sha256": "e6bf0dd65563125072e849040f2a6f7ffb46f8a98eced95a7a114f014da0757d",
    "lines": 137,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against PostgreSQL explicit-locking, pg_blocking_pids, deadlock_timeout, and SQLSTATE 40P01/55P03 docs.",
+    "readable": "Full read of 137 lines. Crisp deadlocks chapter with two-session interleaving table, table vs row lock modes, consistent ID lock ordering, NOWAIT vs SKIP LOCKED, pg_blocking_pids blocker query, and transaction-scoped advisory locks.",
+    "concise": "729 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "focused": "Canonical database deadlocks chapter; points at 20.4.3.03 for lock strategies and 30.2.1.14 for cross-service distributed locks.",
+    "fast": "22.3 KB raw / 6.3 KB gzip",
+    "best": "Remaining limit is that ordering explicit SQL locks can still cycle if triggers, foreign keys, or another code path acquire hidden locks in reverse order."
+   }
   },
   "20-backend/20.4-database/03-transactions-and-replication/20.4.3.03-optimistic-pessimistic-locking.md": {
    "sha256": "60e6216ec353ef2505e075b1ccf3b1ac0b59467a9bf73504ccdaada5759a551c",
    "lines": 158,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against PostgreSQL row-locking, Read Committed predicate rechecks, and SELECT SKIP LOCKED docs.",
+    "readable": "Full read of 158 lines. Clear optimistic vs pessimistic locking guide with expected-version UPDATE fixture, ordered FOR UPDATE locks, single-statement conditional stock reservation, FOR UPDATE SKIP LOCKED job claims, and decision matrix.",
+    "concise": "822 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "focused": "Canonical locking chapter; points at 20.4.4.02 for ORM implementation and 20.4.3.02 for deadlock diagnosis.",
+    "fast": "23.5 KB raw / 6.4 KB gzip",
+    "best": "Remaining limit is that optimistic retries cannot safely auto-overwrite stale human form edits, and SKIP LOCKED worker claims still require crash-lease recovery and idempotency."
+   }
   },
   "20-backend/20.4-database/03-transactions-and-replication/20.4.3.04-database-replication.md": {
    "sha256": "7e56c6ad1e9d13fa956b8a140ed9e4a3cd977d40982dc44fc0498521aa7ba3d9",
    "lines": 165,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against PostgreSQL warm-standby, logical replication, pg_basebackup, pg_stat_replication, and Patroni docs.",
+    "readable": "Full read of 165 lines. Clear replication chapter tracing WAL write/flush/receive/replay milestones, physical vs logical replication limits (DDL/sequences/conflicts), synchronous_commit levels, WAL-LSN watermark routing, fenced failover, and pg_stat_replication monitoring.",
+    "concise": "1243 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "focused": "Canonical database replication chapter; points at 20.4.5.04 for backups/PITR and 30.2.1.03 for system-design sharding.",
+    "fast": "23.4 KB raw / 7.6 KB gzip",
+    "best": "Remaining limit is that replication propagates accidental deletes immediately and synchronous commit only survives primary loss when failover selects a copy holding that write."
+   }
   },
   "20-backend/20.4-database/03-transactions-and-replication/INDEX.md": {
    "sha256": "70d89850fb5c12a4b07d9c3d81767a238875881311814b7449ade5e0e6645994",
    "lines": 53,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against all 5 files in 03-transactions-and-replication/; all links verified.",
+    "readable": "Full read of 53 lines. Concise 5-step Transactions & Replication reading flow covering ACID/isolation, deadlocks, optimistic/pessimistic locking, replication lag, and Docita transaction and advisory-lock pointers.",
+    "concise": "178 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "focused": "Canonical Transactions & Replication category index; points at numbered chapters and REVISION.md.",
+    "fast": "11.1 KB raw / 3.7 KB gzip",
+    "best": "Remaining limit is Docita anchors identify code leads and do not assert live topology or failover guarantees."
+   }
   },
   "20-backend/20.4-database/03-transactions-and-replication/REVISION.md": {
    "sha256": "659778f8ecf5b5c9966fd61d89cb3f6c1f599e9d15b990a278b6883526f1681f",
    "lines": 87,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against all 4 chapters in 03-transactions-and-replication/; all source links verified.",
+    "readable": "Full read of 87 lines. Concise 87-line active-recall companion covering Read Committed snapshots, write skew, uncertain COMMIT outcomes, 40P01 deadlock ordering, optimistic predicates, and synchronous_commit/watermark replay boundaries.",
+    "concise": "701 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "focused": "Canonical Transactions & Replication revision companion; kept separate from learning chapters.",
+    "fast": "13.1 KB raw / 4.5 KB gzip",
+    "best": "Remaining limit is that conceptual recall does not replace running two-session concurrency and failover drills."
+   }
   },
   "20-backend/20.4-database/04-orm-and-access/20.4.4.01-prisma.md": {
    "sha256": "e6b42b6fd23e662c62f1e2286a0c4f605b5d1b0f227ea2fca05d25cfd93cfc38",
    "lines": 290,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against Prisma ORM 7 generators, transactions, PostgreSQL driver adapter, connection-pool, and release-status docs.",
+    "readable": "Full read of 290 lines. Up-to-date Prisma 7.10.0 guide covering prisma-client generator, prisma.config.ts, @prisma/adapter-pg pool configuration, nested writes, cursor pagination with deterministic tie-breakers, parameterized $queryRaw, and pool sizing.",
+    "concise": "1256 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "focused": "Canonical Prisma fundamentals chapter; points at 20.4.4.02 for concurrent transactions/RLS and 20.4.5.01 for pooling.",
+    "fast": "35.7 KB raw / 9.1 KB gzip",
+    "best": "Remaining limit is that TypeScript generics on $queryRaw do not validate runtime rows and Prisma ORM 8 RC uses a distinct contract."
+   }
   },
   "20-backend/20.4-database/04-orm-and-access/20.4.4.02-prisma-advanced.md": {
    "sha256": "cbf11ac2ca8fe6b59f64512ee9cabd96bf38cd7ff946bfb4488755d956f71a20",
    "lines": 232,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against Prisma ORM 7 client-extensions, Prisma 6.14 $use removal, Prisma 7 transactions, and PostgreSQL RLS/locking docs.",
+    "readable": "Full read of 232 lines. Clear advanced Prisma 7.10.0 guide showing ordered FOR UPDATE transfers, atomic stock reservation + outbox event, passing tx instead of fake nesting, narrow P2034 conflict retries, and transaction-local set_config RLS.",
+    "concise": "1248 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "focused": "Canonical Prisma advanced chapter; points at 20.4.1.06 for full RLS trust model and 20.4.5.03 for soft-delete lifecycles.",
+    "fast": "41.8 KB raw / 9.2 KB gzip",
+    "best": "Remaining limit is that query extensions do not intercept nested operations and P2034 retry codes are version-specific to Prisma 7."
+   }
   },
   "20-backend/20.4-database/04-orm-and-access/20.4.4.03-orm-query-builder-landscape.md": {
    "sha256": "1f19a5d556910755a557ce0967927bffc936de0f66f2dd315dc8a8d42f8aa5f5",
    "lines": 173,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against Prisma 7, Drizzle Kit, TypeORM, Knex, and node-postgres official documentation.",
+    "readable": "Full read of 173 lines. Balanced access-layer comparison (pg, Knex, TypeORM, Prisma 7, Drizzle) holding one relational report constant, comparing migration tooling honestly, and explaining how to mix raw SQL without breaking transaction/DTO seams.",
+    "concise": "1211 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "focused": "Canonical ORM/query-builder comparison chapter; points at 20.4.5.02 for online migration rollouts and 20.4.4.01-02 for Prisma depth.",
+    "fast": "26.8 KB raw / 8.2 KB gzip",
+    "best": "Remaining limit is that CLI flags and runtime/edge adapter support vary by major version and must be verified against pinned packages."
+   }
   },
   "20-backend/20.4-database/04-orm-and-access/INDEX.md": {
    "sha256": "8cb6d562d066363d154d19602099238cd0f17919c247d7d7647b1eba3793f5bd",
    "lines": 49,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against Prisma release-status reference and all 4 files in 04-orm-and-access/.",
+    "readable": "Full read of 49 lines. Clear 4-step ORM & Access reading flow pinning Prisma 7.10.0 stable vs Prisma 8 RC, with Docita client-extension inspection leads.",
+    "concise": "184 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "focused": "Canonical ORM & Access category index; points at numbered chapters and REVISION.md.",
+    "fast": "10.9 KB raw / 3.7 KB gzip",
+    "best": "Remaining limit is Prisma 8 RC status can advance over time; always verify current release status before upgrading."
+   }
   },
   "20-backend/20.4-database/04-orm-and-access/REVISION.md": {
    "sha256": "aab5fe31362c7cf0dc959f125261f2f1fff999e26161f47441e1acda2ee63721",
    "lines": 91,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against all 3 chapters in 04-orm-and-access/; all source links verified.",
+    "readable": "Full read of 91 lines. Sharp 91-line active-recall companion covering Prisma 7.10.0 vs 8 RC contracts, $queryRaw generics, tx propagation, set_config RLS scoping, and comparable ORM benchmarking.",
+    "concise": "722 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "focused": "Canonical ORM & Access revision companion; kept separate from learning chapters.",
+    "fast": "12.8 KB raw / 4.5 KB gzip",
+    "best": "Remaining limit is that conceptual recall does not replace inspecting emitted SQL and testing concurrent conflict paths against PostgreSQL."
+   }
   },
   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.01-connection-pooling.md": {
    "sha256": "77384b0f368af819ee4cc17e70f6217f10bae03d72fbc50ad88f23baf419518c",
    "lines": 211,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against node-postgres 8.x pool/transaction docs, PgBouncer config/feature docs, and Prisma 7 PrismaPg pool defaults.",
+    "readable": "Full read of 211 lines. Clear connection-pooling chapter distinguishing driver pools vs PgBouncer, session/transaction/statement modes, runnable node-postgres Pool checkout/withTransaction helpers, PrismaPg v7 defaults, and graceful drain.",
+    "concise": "1329 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "focused": "Canonical connection-pooling chapter; points at 20.4.3.01 for transaction boundaries and 20.4.1.05 for diagnosing pool wait vs SQL time.",
+    "fast": "30.4 KB raw / 8.2 KB gzip",
+    "best": "Remaining limit is that PgBouncer prepared-statement and session-feature support depends on exact version/config and pool sizing requires load testing."
+   }
   },
   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.02-migration-strategies.md": {
    "sha256": "ab4ab4177556e27ecf626dd6affe14a7dcf8b2806c26e0a2257f38c9a9f1c27a",
    "lines": 183,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against PostgreSQL ALTER TABLE, CREATE INDEX CONCURRENTLY, Martin Fowler parallel change, and Prisma 7 migrate dev vs deploy docs.",
+    "readable": "Full read of 183 lines. Concrete zero-downtime migration guide walking expand/dual-write/race-safe SKIP LOCKED backfill/NOT VALID constraint/contract on a decimal-to-cents fixture, plus concurrent index failure states and fast defaults.",
+    "concise": "1383 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "focused": "Canonical database migration chapter; points at 20.4.4.03 for ORM CLI tooling and 20.4.5.04 for recovery of dropped/transformed data.",
+    "fast": "26.6 KB raw / 8.1 KB gzip",
+    "best": "Remaining limit is that even metadata-only DDL acquires table locks that can queue traffic behind long transactions, so lock_timeout and real lock tests remain mandatory."
+   }
   },
   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.03-soft-delete-and-tombstones.md": {
    "sha256": "72a95e5356731fbf3a73ef0d8d069bca1b16d3beb75e3e2824620fa3f207d2aa",
    "lines": 223,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against PostgreSQL partial indexes, Debezium PostgreSQL connector, Kafka 4.3 compaction/retention docs, and EU data-protection guidance.",
+    "readable": "Full read of 223 lines. Thorough deletion-lifecycle chapter introducing generation counters to defeat restore-vs-purge races, active-only partial unique index conflicts, Debezium op:d vs Kafka null tombstones, delete.retention.ms, and GDPR erasure limits.",
+    "concise": "1393 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "focused": "Canonical soft-delete and tombstones chapter; points at 20.6.3.06 for outbox delivery and 20.4.5.04 for backup-restore deletion replay.",
+    "fast": "31.2 KB raw / 8.4 KB gzip",
+    "best": "Remaining limit is that a soft-delete flag is not GDPR erasure and downstream stores require per-destination completion evidence and versioned delete ordering."
+   }
   },
   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md": {
    "sha256": "83c0c7a21116f72ba4d5a5eb58559a6f5cd71dacc837a6fcb664e797ab3d382f",
    "lines": 180,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against PostgreSQL 18 continuous archiving, recovery targets, pg_basebackup/pg_combinebackup/pg_verifybackup, and pgBackRest docs.",
+    "readable": "Full read of 180 lines. Clear backups and PITR guide contrasting pg_dump vs physical base + WAL, PostgreSQL 18 incremental pg_basebackup/pg_combinebackup/pg_verifybackup, named restore-point pause drills, pgBackRest options, and isolated-domain RPO/RTO testing.",
+    "concise": "1603 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "focused": "Canonical database backup and PITR chapter; points at 30.3.2.05 for platform restore drills and 20.4.3.04 for live replication.",
+    "fast": "26.8 KB raw / 8.9 KB gzip",
+    "best": "Remaining limit is that PITR before a bad commit also excludes legitimate later transactions and backup integrity checks never replace full isolated restore drills."
+   }
   },
   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.05-search-infrastructure-at-scale.md": {
    "sha256": "38e4db571997cd801aabfb86704d332d885a3ebbc07c4566753083f9b5f7b835",
    "lines": 191,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against PostgreSQL 18 text-search docs, OpenSearch bulk/refresh docs, Meilisearch async task docs, and Debezium docs.",
+    "readable": "Full read of 191 lines. Grounded search-infrastructure chapter covering text analysis, complete PostgreSQL tsvector/GIN/websearch_to_tsquery fixture, prefix vs full-term parsing, OpenSearch/Meilisearch async visibility milestones, outbox/CDC ordering, and zero-downtime alias rebuilds.",
+    "concise": "1606 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "focused": "Canonical search-infrastructure chapter; points at 20.12.03 for hybrid lexical/vector reranking and 20.6.3.06 for outbox mechanics.",
+    "fast": "28.3 KB raw / 9.0 KB gzip",
+    "best": "Remaining limit is that an external search index is an asynchronously updated derived copy that cannot substitute for authoritative authorization checks."
+   }
   },
   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.06-interview-questions.md": {
    "sha256": "db74e6e8947425d68058dc03942a4259915d3ad12e79c94fe4f6261da736bd64",
    "lines": 269,
    "genre": "interview",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against all 20.4-database chapters and current PostgreSQL 17-18 / PgBouncer / MongoDB docs.",
+    "readable": "Full read of 269 lines. Complete 30-question senior Database interview bank spanning PostgreSQL architecture, joins, normalization, MVCC, WAL, GIN, replication, partitioning, N+1, migrations, pooling, multi-tenant RLS, sagas, and locking.",
+    "concise": "2908 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "focused": "Canonical Database interview drill; kept separate from the five category REVISION.md companions.",
+    "fast": "32.6 KB raw / 11.6 KB gzip",
+    "best": "Remaining limit is that short interview answers summarize mechanisms and must be practiced aloud with follow-up constraint changes."
+   }
   },
   "20-backend/20.4-database/05-operations-and-scaling/INDEX.md": {
    "sha256": "58778c86678e166331b20acd55dcc15246eaed137f137f343ef6b66193e985ec",
    "lines": 57,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against all 7 files in 05-operations-and-scaling/; all links verified.",
+    "readable": "Full read of 57 lines. Clear 7-step Operations & Scaling reading flow covering pooling, migrations, soft delete, PITR recovery, search infrastructure, REVISION.md, and the 30-question database interview bank.",
+    "concise": "166 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "focused": "Canonical Operations & Scaling category index; points at numbered chapters, REVISION.md, and Docita leads.",
+    "fast": "12.4 KB raw / 3.9 KB gzip",
+    "best": "Remaining limit is Docita anchors name files to inspect and do not establish current production restore or freshness metrics."
+   }
   },
   "20-backend/20.4-database/05-operations-and-scaling/REVISION.md": {
    "sha256": "34efda00cb2654901f44b318cc2f34ff0884209be1ce9322df286e6af14587cf",
    "lines": 147,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against all 5 concept chapters in 05-operations-and-scaling/; all source links verified.",
+    "readable": "Full read of 147 lines. Thorough 147-line active-recall companion covering pool queueing, expand/contract backfill races, deletion generation counters, PostgreSQL 18 incremental backup chains, and search visibility/delete ordering.",
+    "concise": "1425 words. Clear plain-English explanations, concrete fixtures, and explicit operational boundaries.",
+    "focused": "Canonical Operations & Scaling revision companion; kept separate from learning chapters and 20.4.5.06 interview bank.",
+    "fast": "18.5 KB raw / 6.5 KB gzip",
+    "best": "Remaining limit is that written recall checks conceptual boundaries and should be paired with live restore and migration drills."
+   }
   },
   "20-backend/20.4-database/INDEX.md": {
    "sha256": "c7b18da34f770636657b5d95b959072d0f3025c45b480479d7ed651ff1edbcef",
@@ -4633,451 +4939,1126 @@
    "sha256": "7b7664e9854b90aa238d5b16d7f18ac2be6a6bf631342db16df2e33158f34814",
    "lines": 148,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against OWASP Authentication and Password Storage Cheat Sheets and RFC 9106.",
+    "readable": "Full read of 148 lines. Auth fundamentals chapter covering identification vs authentication vs authorization, Argon2id salted password verifiers (RFC 9106), CSPRNG `randomBytes(32)` credential generation, HMAC vs asymmetric digital signatures, TLS 1.3 / mTLS transport, and bounded login concurrency.",
+    "concise": "933 words across 148 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for core credential and cryptographic auth primitives before sessions, JWTs, and OAuth.",
+    "fast": "Fast to scan: 21.7 KB raw / 7.3 KB gzip.",
+    "best": "Best-practice depth: Traces Argon2 memory exhaustion failure boundary, shared-secret HMAC forgery risks, and account lockout trade-offs."
+   }
   },
   "20-backend/20.5-security/01-auth/20.5.1.02-http-basic-digest-auth.md": {
    "sha256": "b219f0401cbe674f72bcbeaea745ae30f8fc07bf0d653159059602ecd8e93392",
    "lines": 287,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against RFC 7617, RFC 7616, RFC 9110, and NestJS 11 guard contracts.",
+    "readable": "Full read of 287 lines. HTTP Basic and Digest authentication chapter covering RFC 7617 Base64 `Authorization: Basic` header mechanics, 401 `WWW-Authenticate` challenges, RFC 7616 Digest `HA1`/`HA2` challenge-response verifier costs, NestJS `BasicAuthGuard` with Argon2id, and nginx `auth_basic`.",
+    "concise": "895 words across 287 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for Basic and Digest HTTP authentication schemes.",
+    "fast": "Fast to scan: 36.4 KB raw / 8.9 KB gzip.",
+    "best": "Best-practice depth: Explains why Digest requires password-equivalent HA1 storage, lacks transport confidentiality without TLS, and hits per-request password-hash CPU limits."
+   }
   },
   "20-backend/20.5-security/01-auth/20.5.1.03-api-keys.md": {
    "sha256": "ec5e6b7fe76d72e2938ae5cf9eb82e15f0c36c444188c11dfb89841cf9b173c9",
    "lines": 317,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against Node.js `node:crypto`, OWASP API Security Top 10, and RFC 9110.",
+    "readable": "Full read of 317 lines. API keys chapter covering 256-bit CSPRNG key generation (`sk_live_...`), fast SHA-256 verifier hashing for high-entropy secrets, lookup-by-prefix with `timingSafeEqual`, dual-key rotation windows vs hard revocation, per-key scopes/IP allowlists, and a complete NestJS `ApiKeyGuard`.",
+    "concise": "1084 words across 317 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for machine/partner API key lifecycle and verification.",
+    "fast": "Fast to scan: 43.3 KB raw / 9.8 KB gzip.",
+    "best": "Best-practice depth: Contrasts high-entropy SHA-256 hashing against low-entropy password hashing and defines the delegation failure boundary where OAuth is required."
+   }
   },
   "20-backend/20.5-security/01-auth/20.5.1.04-sessions-cookies.md": {
    "sha256": "4de7b807a433652c66a758e077a3fff12e8c5307bf1a9c47bea7379a89f13e8e",
    "lines": 176,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against Express 5, `express-session` 1.18, `connect-redis` (`RedisStore`), and RFC 6265.",
+    "readable": "Full read of 176 lines. Sessions and cookies chapter covering opaque session identifiers vs cookie attributes (`HttpOnly`, `Secure`, `SameSite`, host-only vs `Domain`, `Path`, `Max-Age`), session fixation rotation (`req.session.regenerate`), idle + absolute expiry enforcement, Origin + `timingSafeEqual` CSRF protection, and fail-closed shared session stores.",
+    "concise": "809 words across 176 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for stateful HTTP session management and browser cookie transport.",
+    "fast": "Fast to scan: 41.4 KB raw / 8.2 KB gzip.",
+    "best": "Best-practice depth: Traces session-store outage failure boundary (never fall back to per-process memory) and active-XSS vs `HttpOnly` limits."
+   }
   },
   "20-backend/20.5-security/01-auth/20.5.1.05-jwt.md": {
    "sha256": "d33279f9fbfc0ad0a5c8a4d7a97e0dd88d674651fc9b5c5eaccc8b12e9a7b29c",
    "lines": 178,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against RFC 7519, RFC 7517, RFC 8725 (JWT BCP), and `jsonwebtoken` 9.",
+    "readable": "Full read of 178 lines. JWT chapter opening with the cross-service audience-confusion invoice attack, tracing JWS 3-part compact structure vs JWE encryption, strict issuer/audience/algorithm/shape profile validation (`createAccessTokens`), atomic refresh-token rotation with replay family revocation, and RS256/ES256 JWKS key distribution.",
+    "concise": "1249 words across 178 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for self-contained token verification and refresh rotation state transitions.",
+    "fast": "Fast to scan: 33.0 KB raw / 8.5 KB gzip.",
+    "best": "Best-practice depth: Explains the revocation failure boundary of stateless tokens, HMAC shared-signer risk, and browser storage trade-offs."
+   }
   },
   "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.md": {
    "sha256": "1a94bfc6e33bc663b6977e3b14a851089d51e3e59db3b26e77f41ab8c06f1b4d",
    "lines": 229,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Freshness check 2026-11-23 against RFC 6749, RFC 8628, RFC 9207, RFC 9700 (OAuth Security BCP), and RFC 10017; executed `beginLogin` and `consumePending` in Node v26.13.0.",
+    "readable": "Full read of 229 lines. OAuth 2.0 and OpenID Connect chapter covering the 4 protocol roles, Authorization Code with PKCE (`S256`), `state` and OIDC `nonce` transaction binding (`beginLogin`/`consumePending`), RFC 9207 `iss` mix-up defense, RFC 8628 Device Authorization Grant polling rules, and RFC 10017 BFF vs token-mediating vs browser-only OAuth architectures.",
+    "concise": "1916 words across 229 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for delegated authorization and OIDC identity federation.",
+    "fast": "Fast to scan: 46.6 KB raw / 11.7 KB gzip.",
+    "best": "Best-practice depth: Traces callback replay, IdP mix-up, email-only account-linking failure boundary, and concurrent refresh-token race conditions."
+   }
   },
   "20-backend/20.5-security/01-auth/20.5.1.07-sso-saml-federation.md": {
    "sha256": "74609019fbeee5a19e3ab56f8ad172b476fcf06e841fb6b8053701873e303619",
    "lines": 213,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against OASIS SAML 2.0, RFC 7643/7644, and `@node-saml/node-saml` 5.1.0 (GHSA-4mxg-3p6v-xgq3).",
+    "readable": "Full read of 213 lines. SSO, SAML 2.0, and enterprise federation chapter tracing SP-initiated vs IdP-initiated Web Browser SSO flows, XML assertion validation (`NotBefore`, `NotOnOrAfter`, `AudienceRestriction`, `InResponseTo`, XML signature wrapping defense), `@node-saml/node-saml` 5.1.0 configuration, and SCIM (RFC 7643/7644) deprovisioning propagation.",
+    "concise": "1807 words across 213 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for enterprise workforce SAML federation and SCIM lifecycle synchronization.",
+    "fast": "Fast to scan: 33.2 KB raw / 9.9 KB gzip.",
+    "best": "Best-practice depth: Highlights the non-atomic `CacheProvider` `InResponseTo` race boundary in `node-saml` 5.1.0, IdP-initiated login CSRF risk, and local-session offboarding delay."
+   }
   },
   "20-backend/20.5-security/01-auth/20.5.1.08-mfa-passkeys-webauthn.md": {
    "sha256": "834562a69692ad27631d3b381c2067870489a3be41addb8e9e899dece57759bd",
    "lines": 242,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Freshness check 2026-11-23 against W3C WebAuthn Level 3, NIST SP 800-63B-4 (AAL & syncable authenticators), RFC 6238, and `@simplewebauthn/server` 14.0.3; executed `totpAt` RFC test vector (`94287082`) in Node v26.13.0.",
+    "readable": "Full read of 242 lines. MFA, Passkeys, and WebAuthn chapter covering factor categories, RFC 6238 TOTP (`totpAt`), why SMS/PSTN is a restricted authenticator under NIST SP 800-63B-4, WebAuthn registration and authentication ceremonies with `@simplewebauthn/server` 14.0.3, RP ID and origin phishing resistance, syncable vs hardware-bound passkeys across AAL1-AAL3, and atomic recovery codes.",
+    "concise": "1967 words across 242 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for multi-factor authentication, WebAuthn ceremonies, and NIST assurance levels.",
+    "fast": "Fast to scan: 41.3 KB raw / 11.3 KB gzip.",
+    "best": "Best-practice depth: Explains why syncable passkeys cannot meet NIST AAL3 non-exportability and why account recovery is an equivalent authentication failure boundary."
+   }
   },
   "20-backend/20.5-security/01-auth/20.5.1.09-rbac-abac.md": {
    "sha256": "2d1590fc5c2fc3d831033e970ecfc0780a91acfe3e025a6b37261c941ae8840c",
    "lines": 214,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against NIST RBAC / INCITS 359 and OWASP Authorization Cheat Sheet.",
+    "readable": "Full read of 214 lines. Role-Based Access Control (RBAC) chapter covering NIST Core RBAC (users, roles, permissions, sessions) vs optional role hierarchies and separation-of-duty constraints, iterative cycle-safe role hierarchy expansion (`createRbac`), and why capability checks (`invoice:approve`) must be paired with tenant-scoped object lookups.",
+    "concise": "810 words across 214 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for role-based capability modeling and cycle-safe hierarchy resolution.",
+    "fast": "Fast to scan: 46.8 KB raw / 8.6 KB gzip.",
+    "best": "Best-practice depth: Traces role-explosion failure boundary and cross-tenant object-lookup bypasses when guards only check route role metadata."
+   }
   },
   "20-backend/20.5-security/01-auth/20.5.1.10-abac-access-control.md": {
    "sha256": "849cbdb84f0ce91d65eab5d38512cd988671f6be16d642b806d0e6c57bc805d6",
    "lines": 231,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against NIST SP 800-162, OWASP Authorization Patterns, and Open Policy Agent deployment models.",
+    "readable": "Full read of 231 lines. Attribute-Based Access Control (ABAC) chapter covering NIST SP 800-162 subject/resource/action/environment attributes, PAP/PIP/PDP/PEP responsibilities, RBAC vs ABAC vs ReBAC selection, a pure TypeScript `evaluatePatientRead` PDP with NestJS `PatientReadGuard` PEP wiring, and a 6-row failure/version test matrix.",
+    "concise": "1385 words across 231 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for attribute-driven policy evaluation and PEP/PDP enforcement placement.",
+    "fast": "Fast to scan: 39.2 KB raw / 9.5 KB gzip.",
+    "best": "Best-practice depth: Traces check-to-use (TOCTOU) mutation race failure boundary between guard check and database transaction, plus fail-closed missing-attribute handling."
+   }
   },
   "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md": {
    "sha256": "448e962ffa5266c2765a9e09d86b899893799419977be48ce5514c1c53ad19ba",
    "lines": 325,
    "genre": "interview",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against RFC 9106, RFC 9110, RFC 9700, RFC 10017, W3C WebAuthn Level 3, and NIST SP 800-63B-4.",
+    "readable": "Full read of 325 lines. 40-question authentication and authorization interview drill with 30-second core answers and follow-up boundary traps across Argon2id, sessions/cookies, JWT, OAuth 2.0/OIDC (RFC 9700, RFC 10017, RFC 8628), SAML/Entra ID/SCIM, WebAuthn/passkeys, RBAC/ABAC/ReBAC, and multi-tenant SaaS system design.",
+    "concise": "4107 words across 325 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical interview bank for 20.5-security/01-auth paired with REVISION.md.",
+    "fast": "Fast to scan: 48.5 KB raw / 17.0 KB gzip.",
+    "best": "Best-practice depth: Every question tests both the primary mechanism and a production failure boundary or follow-up trap."
+   }
   },
   "20-backend/20.5-security/01-auth/INDEX.md": {
    "sha256": "caed9f07a24eeea31b88fc9daabb6753005bb0a731872aaa43099ad981610a43",
    "lines": 67,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against RFC 9106, RFC 9700, RFC 10017, WebAuthn Level 3, and NIST SP 800-63B-4.",
+    "readable": "Full read of 67 lines. Category index for 20.5-security/01-auth sequencing 10 authentication and authorization chapters (Stage 0 Auth fundamentals through Stage 9 ABAC), REVISION.md, and 40 interview questions.",
+    "concise": "245 words across 67 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical category index for authentication and authorization with a session-vs-JWT-vs-hybrid comparison table.",
+    "fast": "Fast to scan: 15.1 KB raw / 4.9 KB gzip.",
+    "best": "Best-practice depth: Highlights principal identity, current-state revocation boundary limits, and browser credential transport failure modes."
+   }
   },
   "20-backend/20.5-security/01-auth/REVISION.md": {
    "sha256": "920284dce7a33580b23bb0954595be53ce965382a117c03a1178918a40be69a6",
    "lines": 331,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against RFC 9106, RFC 9110, RFC 9700, RFC 10017, W3C WebAuthn Level 3, and NIST SP 800-63B-4.",
+    "readable": "Full read of 331 lines. Revision companion for 20.5-security/01-auth containing 45+ source-linked Q&A pairs across Argon2id, Basic/Digest, API keys, sessions/cookies, JWT, OAuth 2.0/OIDC (RFC 9700, RFC 10017, RFC 8628, RFC 9207), SAML federation, WebAuthn/NIST AAL3, RBAC, ABAC, and failure traces.",
+    "concise": "3143 words across 331 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical revision companion for 01-auth distinct from the 40-question interview drill.",
+    "fast": "Fast to scan: 34.8 KB raw / 11.0 KB gzip.",
+    "best": "Best-practice depth: Tests revocation windows, race conditions (`InResponseTo`, OAuth `state`), and stale attribute authorization failure boundary conditions."
+   }
   },
   "20-backend/20.5-security/02-attacks-and-defense/20.5.2.01-xss.md": {
    "sha256": "09107960dd4fb76910ed6e8544b4e32a2d919e5ac5e3ae228fcd15a70d5e5377",
    "lines": 122,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against OWASP XSS Prevention, DOM-based XSS, and CSP Cheat Sheets, React 19 DOM reference, and DOMPurify.",
+    "readable": "Full read of 122 lines. Cross-Site Scripting (XSS) chapter opening with stored comment execution in a moderator view, tracing stored/reflected/DOM flows to browser execution sinks, `textContent`/React child escaping vs `DOMPurify` + `JSDOM` HTML sanitization (`sanitizeComment`), strict nonce/hash CSP, and Trusted Types.",
+    "concise": "823 words across 122 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for browser script-injection prevention and context-aware output handling.",
+    "fast": "Fast to scan: 21.2 KB raw / 6.2 KB gzip.",
+    "best": "Best-practice depth: Explains why `HttpOnly` does not stop injected script from issuing authenticated requests and why `javascript:` URLs fail attribute escaping."
+   }
   },
   "20-backend/20.5-security/02-attacks-and-defense/20.5.2.02-csrf.md": {
    "sha256": "2d7a0ff7cd8d5085c9b8f9bb361e0aa63a4f687c70a6a9002570a32bf9efd86d",
    "lines": 126,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against OWASP CSRF Prevention Cheat Sheet and MDN `Set-Cookie` specification; executed `createSignedCsrf` in Node v26.13.0.",
+    "readable": "Full read of 126 lines. Cross-Site Request Forgery (CSRF) chapter tracing ambient cookie authority, `SameSite` (`Lax`, `Strict`, `None`) site-vs-origin limits, synchronizer tokens, and HMAC-signed session-bound double-submit tokens (`createSignedCsrf`) with `__Host-` cookie attributes.",
+    "concise": "939 words across 126 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for cross-site request-forgery mechanics and token/origin defenses.",
+    "fast": "Fast to scan: 26.2 KB raw / 6.7 KB gzip.",
+    "best": "Best-practice depth: Demonstrates why naive cookie-header equality fails under sibling-subdomain cookie injection and why session binding closes that failure boundary."
+   }
   },
   "20-backend/20.5-security/02-attacks-and-defense/20.5.2.03-sql-injection.md": {
    "sha256": "d0b0ad07a95467f722b681de9ecc89a6b9fa334f3e741bcff5f30b1c8f63cf5c",
    "lines": 116,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against OWASP SQL Injection Prevention Cheat Sheet, PostgreSQL 18 pattern matching docs, and Prisma ORM v7 raw-query docs; executed `buildProductSearch` in Node v26.13.0.",
+    "readable": "Full read of 116 lines. SQL Injection chapter contrasting string-concatenated predicates (`x' OR 1=1 --`) against driver parameter binding (`$1`, `$2`), allowlisted dynamic `ORDER BY` column/direction maps, `ILIKE ... ESCAPE '!'` literal wildcard escaping (`buildProductSearch`), and Prisma v7 TypedSQL vs `$queryRaw`.",
+    "concise": "927 words across 116 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for SQL code/data separation and dynamic identifier allowlisting.",
+    "fast": "Fast to scan: 23.5 KB raw / 6.6 KB gzip.",
+    "best": "Best-practice depth: Clarifies why bound parameter markers cannot substitute identifiers or disable `LIKE` wildcards, and why safe SQL syntax does not replace tenant authorization."
+   }
   },
   "20-backend/20.5-security/02-attacks-and-defense/20.5.2.04-api-security-best-practices.md": {
    "sha256": "6bac479aff2d04c6a4834b59c08cfd38029f52cc26c45cfe49f5e568637943e2",
    "lines": 178,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against OWASP API Security Top 10 (2023), OWASP SSRF and REST Security Cheat Sheets, and RFC 9457; executed `partnerProfileUrl` in Node v26.13.0.",
+    "readable": "Full read of 178 lines. API Security Best Practices & OWASP API Top 10 (2023) chapter covering API1-API10, object and property level authorization (`readOrder`), 6-layer cost and rate-limit budgets, fixed-origin outbound URL construction (`partnerProfileUrl`) and connection-time SSRF controls, RFC 9457 Problem Details, and a 6-row authorization test matrix.",
+    "concise": "1418 words across 178 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for API authorization boundaries, resource budgets, and SSRF prevention.",
+    "fast": "Fast to scan: 28.9 KB raw / 9.1 KB gzip.",
+    "best": "Best-practice depth: Traces DNS-rebinding/redirect SSRF failure boundary conditions and BOLA/BOPLA mass-assignment trade-offs."
+   }
   },
   "20-backend/20.5-security/02-attacks-and-defense/INDEX.md": {
    "sha256": "dc02edff905bbdb6f26339bfea62dc0ac1ba862bf1eed522a3d4e9dfb4318146",
    "lines": 50,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against OWASP Top 10, OWASP API Security Top 10 (2023), and Prisma ORM v7.",
+    "readable": "Full read of 50 lines. Category index for 20.5-security/02-attacks-and-defense sequencing XSS, CSRF, SQL Injection, API Security Best Practices (OWASP API Top 10), and REVISION.md with a Docita evidence table.",
+    "concise": "98 words across 50 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical category index for application exploit paths and defensive output/request/query boundaries.",
+    "fast": "Fast to scan: 10.7 KB raw / 3.5 KB gzip.",
+    "best": "Best-practice depth: Maps each attack class to its parser or ambient-credential failure boundary."
+   }
   },
   "20-backend/20.5-security/02-attacks-and-defense/REVISION.md": {
    "sha256": "7ed607fd6f2c63987150457d62d26217592d499771d48833d12f81f4ae5c0f4b",
    "lines": 179,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against OWASP Cheat Sheets, Prisma ORM v7, PostgreSQL 18, and RFC 9457.",
+    "readable": "Full read of 179 lines. Revision companion for 20.5-security/02-attacks-and-defense containing 21 source-linked Q&A pairs across XSS sinks/CSP/Trusted Types, CSRF ambient authority and session-bound HMAC double-submit, SQLi parameter binding and Prisma v7 TypedSQL, and OWASP API Top 10 BOLA/BOPLA/SSRF.",
+    "concise": "1474 words across 179 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical revision companion for 02-attacks-and-defense distinct from the stack interview bank.",
+    "fast": "Fast to scan: 20.4 KB raw / 6.7 KB gzip.",
+    "best": "Best-practice depth: Tests changed-boundary failure traces including `javascript:` URLs, sibling-subdomain cookie injection, `LIKE` wildcards, and DNS-rebinding SSRF."
+   }
   },
   "20-backend/20.5-security/03-hardening-and-operations/20.5.3.01-encryption.md": {
    "sha256": "555b4df46a9ef0e3927178b194d33da824ade6b992bb52762d6e5cb8622a977b",
    "lines": 133,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against RFC 8446 (TLS 1.3), OWASP Cryptographic Storage Cheat Sheet, and Node.js `node:crypto`; executed `fieldCipher` in Node v26.13.0.",
+    "readable": "Full read of 133 lines. Encryption, Hashing, and TLS chapter distinguishing symmetric authenticated encryption, public-key encryption, digital signatures, and key agreement, tracing the TLS 1.3 ephemeral handshake, implementing AES-256-GCM with 12-byte random IV and record-context AAD (`fieldCipher`), and explaining envelope encryption and database index trade-offs.",
+    "concise": "969 words across 133 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for application cryptography, AES-256-GCM AAD record binding, and TLS 1.3 handshake mechanics.",
+    "fast": "Fast to scan: 27.3 KB raw / 7.2 KB gzip.",
+    "best": "Best-practice depth: Demonstrates ciphertext record-swap failure boundary detection via AAD and explains why randomized encryption prevents standard equality indexing."
+   }
   },
   "20-backend/20.5-security/03-hardening-and-operations/20.5.3.02-web-security.md": {
    "sha256": "674582bba8e3a724db77576b8563c656888efde34f3fb55882107c7b4a0eb25e",
    "lines": 145,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against OWASP CSP, HSTS, REST, Redirect, and XXE Cheat Sheets, Express 5 migration guide, and Helmet docs; executed `redirectTarget` in Node v26.13.0.",
+    "readable": "Full read of 145 lines. Web Security Headers and HTTPS chapter covering CSP per-response nonce wiring with Express 5 and Helmet (`createBrowserApp`), HSTS rollout and `req.secure` proxy trust boundaries, CORS vs CSRF separation, `frame-ancestors` vs `frame-src`, map-based redirect target resolution (`redirectTarget`), and XXE parser hardening.",
+    "concise": "1183 words across 145 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for HTTP security headers, HSTS lifecycle, and safe redirect/XML parser policies.",
+    "fast": "Fast to scan: 31.7 KB raw / 8.1 KB gzip.",
+    "best": "Best-practice depth: Traces CDN cached-nonce mismatch failure boundary conditions and why `startsWith('/')` fails URL parser normalization."
+   }
   },
   "20-backend/20.5-security/03-hardening-and-operations/20.5.3.03-threat-modeling-stride.md": {
    "sha256": "b68dddca5cfa4dc6eb743534265fe07741d7353958002870c12dc3d0496d9b67",
    "lines": 124,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against OWASP Threat Modeling Cheat Sheet, Microsoft SDL, and OWASP API Security Top 10.",
+    "readable": "Full read of 124 lines. Threat Modeling with STRIDE and Attack Surfaces chapter tracing an order-read data flow across Browser, Gateway, Orders service, Orders DB, and Audit store trust boundaries, mapping all 6 STRIDE categories to concrete controls and tests, providing a structured YAML threat record (`THREAT-ORD-001`), and decomposing multi-path goals with attack trees.",
+    "concise": "1030 words across 124 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for architectural threat modeling, STRIDE classification, and attack-tree decomposition.",
+    "fast": "Fast to scan: 19.6 KB raw / 6.8 KB gzip.",
+    "best": "Best-practice depth: Distinguishes attack surface from trust boundary and explains why STRIDE classifies threat types rather than measuring risk likelihood."
+   }
   },
   "20-backend/20.5-security/03-hardening-and-operations/20.5.3.04-secrets-management.md": {
    "sha256": "e13248c38e83f1503e6d4fa6e99616622e00c1904cee11d56551f264ab8e74c6",
    "lines": 151,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against OWASP Secrets Management Cheat Sheet, Kubernetes Secret docs, External Secrets v1 spec, HashiCorp Vault dynamic leases, and AWS KMS `Sign` API; executed `cachedSecret` in Node v26.13.0.",
+    "readable": "Full read of 151 lines. Secrets Management chapter tracing credential flow from workload identity to bounded local cache (`cachedSecret`), database pool dual-credential rotation and Vault dynamic lease renewal, Kubernetes `external-secrets.io/v1` `ExternalSecret` synchronization (`subPath` and env-var reload limits), and AWS KMS `Sign` JWS `R || S` signature assembly.",
+    "concise": "1118 words across 151 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for secret lifecycle, rotation, Kubernetes synchronization, and remote KMS signing boundaries.",
+    "fast": "Fast to scan: 23.9 KB raw / 7.4 KB gzip.",
+    "best": "Best-practice depth: Explains why updating a secret store or K8s Secret does not drain active database connections or mutate running process env vars."
+   }
   },
   "20-backend/20.5-security/03-hardening-and-operations/20.5.3.05-vulnerability-management-patch-governance.md": {
    "sha256": "32f00d106d8c9c3b16b52d6761492fc4dafda7980aeae5ca5dd53ff90a1c9ba9",
    "lines": 254,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against FIRST CVSS v4.0, FIRST EPSS, CISA KEV, CycloneDX, Syft, Trivy, and Renovate documentation.",
+    "readable": "Full read of 254 lines. Vulnerability Management and Patch Governance chapter covering CVSS v4.0 (Base/Threat/Environmental), EPSS 30-day probability, CISA KEV catalog, Syft CycloneDX/SPDX SBOM generation by immutable image digest, Trivy/Grype/npm-audit/Renovate scanner roles, a 5-step emergency patch runbook, a TypeScript `triage` priority router, and a PostgreSQL `vuln_exceptions` risk-acceptance register with a 180-day hard CHECK constraint.",
+    "concise": "1523 words across 254 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for supply-chain vulnerability triage, SBOM provenance, and patch governance SLAs.",
+    "fast": "Fast to scan: 42.9 KB raw / 10.7 KB gzip.",
+    "best": "Best-practice depth: Highlights why source-branch scans miss deployed image OS packages and why `--ignore-unfixed` hides unresolved risk. Includes failure boundary analysis."
+   }
   },
   "20-backend/20.5-security/03-hardening-and-operations/INDEX.md": {
    "sha256": "19a66143e6fc14f621f9fcd6b348746ef3452dee3e087668a5c726fc3a7bcefe",
    "lines": 52,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against OWASP Top 10:2025, RFC 8446 (TLS 1.3), CVSS v4.0, and External Secrets v1.",
+    "readable": "Full read of 52 lines. Category index for 20.5-security/03-hardening-and-operations sequencing Encryption/Hashing/TLS, Web Security Headers, STRIDE Threat Modeling, Secrets Management, Vulnerability Management & Patch Governance, and REVISION.md with Docita source anchors.",
+    "concise": "173 words across 52 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical category index for cryptographic primitives, browser hardening, threat modeling, and security operations.",
+    "fast": "Fast to scan: 12.1 KB raw / 4.0 KB gzip.",
+    "best": "Best-practice depth: Frames operational verification and deployment boundary limits."
+   }
   },
   "20-backend/20.5-security/03-hardening-and-operations/REVISION.md": {
    "sha256": "4de3bcf09adefd4284aebef082efc6182c766312e5e706aaa0adc413b8db5dfb",
    "lines": 193,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against OWASP Cheat Sheets, FIRST CVSS v4.0/EPSS, CISA KEV, External Secrets v1, and AWS KMS.",
+    "readable": "Full read of 193 lines. Revision companion for 20.5-security/03-hardening-and-operations containing 24 source-linked Q&A pairs across AES-GCM AAD, CSP nonces, HSTS, `frame-ancestors`, open redirects, XXE, STRIDE vs attack surface, secret rotation, KMS `Sign`, CVSS v4.0/EPSS/KEV, and SBOM digest verification.",
+    "concise": "1673 words across 193 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical revision companion for 03-hardening-and-operations.",
+    "fast": "Fast to scan: 23.4 KB raw / 7.7 KB gzip.",
+    "best": "Best-practice depth: Drills AAD context tampering, CDN nonce caching, KMS ECDSA signature encoding, and K8s `subPath` secret reload failure boundary conditions."
+   }
   },
   "20-backend/20.5-security/04-interview-drills/20.5.4.01-interview-questions.md": {
    "sha256": "67d4711709cc7b6232f0c902535031435eba4867a8680f5b983d1796348b8766",
    "lines": 292,
    "genre": "interview",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against OWASP Top 10:2025, OWASP Cheat Sheet Series, and NIST CSF.",
+    "readable": "Full read of 292 lines. 40-question application and infrastructure security interview bank covering boundary fundamentals (XSS, CSRF, SQLi, AuthparamuthZ, TLS 1.3, AES-GCM, headers, least privilege, JWT), implementation decisions (SPA OAuth PKCE, microservice sessions, NestJS RBAC, open redirects, React CSP nonces, Argon2id, rate limiting, CORS, SSR), and senior/scale scenarios (financial auth, zero trust, envelope encryption, GDPR/HIPAA/PCI, 1B-user auth, trading, healthcare, payments).",
+    "concise": "2676 words across 292 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical stack-wide security interview bank linking back to canonical code implementations in 01-auth, 02-attacks-and-defense, and 03-hardening-and-operations.",
+    "fast": "Fast to scan: 37.0 KB raw / 11.9 KB gzip.",
+    "best": "Best-practice depth: Every answer pairs the concrete threat with its preventive mechanism, failure boundary, and verification test."
+   }
   },
   "20-backend/20.5-security/04-interview-drills/INDEX.md": {
    "sha256": "93e3b325a56acd6d5e6195cc3f6b27ff071b5e68e556ff22d786f1ba04874216",
    "lines": 25,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against the 20.5-security track structure.",
+    "readable": "Full read of 25 lines. Category index for 20.5-security/04-interview-drills linking the 40-question general security bank with the 40-question auth bank and category revision companions.",
+    "concise": "35 words across 25 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical entrypoint for end-of-stack security interview drills.",
+    "fast": "Fast to scan: 7.0 KB raw / 2.4 KB gzip.",
+    "best": "Best-practice depth: Prompts mechanism-plus-changed-condition answers across auth, exploit defense, and operational hardening. Includes failure boundary analysis."
+   }
   },
   "20-backend/20.5-security/INDEX.md": {
    "sha256": "09229bc3e8b016f5c24799d517fc5758cfcaf459a2258081214c6bdf0fb5c490",
    "lines": 164,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against OWASP Top 10, WebAuthn Level 3, OAuth 2.1 / RFC 9700, Argon2id RFC 9106, and Node.js 26 security primitives.",
+    "readable": "Full read of 164 lines. Application security stack index organizing 28 files across 01-auth, 02-attacks-and-defense, 03-hardening-and-operations, and 04-interview-drills.",
+    "concise": "443 words across 164 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical security stack entrypoint sequencing identity, exploit defense, operational hardening, and drills.",
+    "fast": "Fast to scan: 26.0 KB raw / 6.9 KB gzip.",
+    "best": "Best-practice depth: Frames trust boundary conditions, failure modes, and defense-in-depth trade-offs."
+   }
   },
   "20-backend/20.6-microservices/01-service-topology/20.6.1.01-service-discovery.md": {
    "sha256": "a670a5b4d718106b9fbe57a24f8f6472616d649c5928bec910bfa52dd303f56f",
    "lines": 120,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against Kubernetes Service DNS and EndpointSlice docs, HashiCorp Consul, and Spring Cloud Eureka; executed `selectEndpoint` in Node v26.13.0.",
+    "readable": "Full read of 120 lines. Service Discovery chapter opening with the 09:02 rescheduled order-worker stale-IP failure, contrasting client-side vs server-side discovery, Kubernetes ClusterIP/Headless Service EndpointSlices (`ready`/`serving`/`terminating`) vs Consul vs Spring Cloud Eureka, and a snapshot endpoint selector (`selectEndpoint`).",
+    "concise": "862 words across 120 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for dynamic endpoint resolution and readiness lease expiration.",
+    "fast": "Fast to scan: 21.9 KB raw / 6.6 KB gzip.",
+    "best": "Best-practice depth: Separates registry lookup age from live connection health and write-timeout retry failure boundaries."
+   }
   },
   "20-backend/20.6-microservices/01-service-topology/20.6.1.02-api-gateway.md": {
    "sha256": "21dde469b1ee933fc3b3cb725d80b309ff9f2cc5c3cd57e9173398b5e15f4fb1",
    "lines": 93,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against RFC 9110 HTTP Semantics; executed `routeService` in Node v26.13.0.",
+    "readable": "Full read of 93 lines. API Gateway chapter covering stable public routing (`/api/orders`), edge credential verification vs service object authorization, segment-safe path prefix matching (`routeService`), RFC 9110 HTTP forwarding semantics, BFF partial failure handling, and personalized cache-key isolation.",
+    "concise": "675 words across 93 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for microservice edge routing boundaries without duplicating the REST gateway chapter.",
+    "fast": "Fast to scan: 16.5 KB raw / 5.4 KB gzip.",
+    "best": "Best-practice depth: Traces `/api/orders-archive` prefix-collision failure boundary and cross-tenant URL-only cache poisoning."
+   }
   },
   "20-backend/20.6-microservices/01-service-topology/20.6.1.03-service-mesh.md": {
    "sha256": "de4dfba5217b7f67b559e7574d3004fda2ec3239f4c67552761b138a1c819206",
    "lines": 93,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against Istio ambient mode and architecture documentation and Linkerd docs.",
+    "readable": "Full read of 93 lines. Service Mesh chapter opening with the lost payment-commit response retry hazard, tracing `istiod` control plane vs data plane, sidecar proxies vs Istio ambient mode (`ztunnel` L4 + waypoint L7 proxies), mTLS workload identity vs domain authorization, and multi-layer retry budget multiplication.",
+    "concise": "659 words across 93 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for managed service-to-service data-plane policy and mTLS identity.",
+    "fast": "Fast to scan: 14.9 KB raw / 5.3 KB gzip.",
+    "best": "Best-practice depth: Explains why mTLS does not establish tenant permission or write idempotency and why removing a namespace label does not eject running sidecars."
+   }
   },
   "20-backend/20.6-microservices/01-service-topology/20.6.1.04-strangler-fig.md": {
    "sha256": "c9fe39006810dc4f36837a4b3b61eaa02c246dde4f1f930a86726b90750bd48b",
    "lines": 111,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against Martin Fowler, AWS, and Azure Strangler Fig architecture guides; executed `migrationTarget` in Node v26.13.0.",
+    "readable": "Full read of 111 lines. Strangler Fig Pattern chapter opening with the replacement checkout commit-timeout duplicate-order hazard, tracing 8 incremental migration stages, SHA-256 deterministic tenant cohort routing (`migrationTarget`), single-writer outbox/CDC data synchronization, safe read shadowing vs write side effects, and 5 cutover/retirement evidence gates.",
+    "concise": "779 words across 111 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for incremental legacy-to-replacement service and data migration.",
+    "fast": "Fast to scan: 18.5 KB raw / 6.1 KB gzip.",
+    "best": "Best-practice depth: Demonstrates why routing rollback cannot undo committed new-schema state and why `Promise.all` dual-writes fail atomicity."
+   }
   },
   "20-backend/20.6-microservices/01-service-topology/INDEX.md": {
    "sha256": "09e907de53f55529854c33e3c23f6f3d525617d635ba09ececb10c9dc745dc3b",
    "lines": 50,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against Kubernetes Service/EndpointSlice docs, Istio ambient mesh docs, and RFC 9110.",
+    "readable": "Full read of 50 lines. Category index for 20.6-microservices/01-service-topology sequencing Service Discovery, API Gateway, Service Mesh, Strangler Fig, and REVISION.md with Docita modular-monolith source anchors.",
+    "concise": "127 words across 50 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical category index for service endpoint resolution, edge routing, mesh communication, and incremental migration.",
+    "fast": "Fast to scan: 10.2 KB raw / 3.4 KB gzip.",
+    "best": "Best-practice depth: Frames why a modular monolith needs no external discovery or mesh until deployable boundaries justify them. Includes failure boundary analysis."
+   }
   },
   "20-backend/20.6-microservices/01-service-topology/REVISION.md": {
    "sha256": "0f9fee18cb3d4bb85b1cd866468e2f655e68940ad665de63c3bf6e45b3477ad0",
    "lines": 119,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against Kubernetes Service DNS, Consul, Eureka, Istio, and RFC 9110.",
+    "readable": "Full read of 119 lines. Revision companion for 20.6-microservices/01-service-topology containing 19 source-linked Q&A pairs across Kubernetes Service/Consul/Eureka discovery, segment-bounded gateway routing, sidecar vs ambient mesh retry limits, and strangler-fig write authority and backfill verification.",
+    "concise": "805 words across 119 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical revision companion for 01-service-topology.",
+    "fast": "Fast to scan: 14.4 KB raw / 4.9 KB gzip.",
+    "best": "Best-practice depth: Tests changed-condition failure boundaries including lease expiration at `now`, `/api/orders-archive` routing, mesh write retries, and row-count vs semantic backfill validation."
+   }
   },
   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.01-grpc.md": {
    "sha256": "58d5f716bb7eac763a5e6a6eabcf1139d3fe2ceca95c1d3a02e7316a3f8fe60d",
    "lines": 120,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against gRPC Core Concepts, gRPC Node (`@grpc/grpc-js`, `@grpc/proto-loader`), and Protobuf proto3 guide.",
+    "readable": "Full read of 120 lines. gRPC chapter tracing Node.js checkout to Java pricing typed RPC contracts, HTTP/2 stream multiplexing (and TCP head-of-line blocking), 5-byte length-prefixed framing, `grpc-status` trailers vs HTTP 200, a complete runnable `user.proto` + `@grpc/grpc-js` `localUserService` fixture, deadline propagation, and proto3 field-tag evolution rules.",
+    "concise": "697 words across 120 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for unary gRPC contracts, framing, and deadline semantics.",
+    "fast": "Fast to scan: 22.9 KB raw / 6.2 KB gzip.",
+    "best": "Best-practice depth: Explains why deadline cancellation does not roll back committed server writes and why L4 load balancers pin HTTP/2 connections."
+   }
   },
   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.02-grpc-streaming.md": {
    "sha256": "fe04c8883bfa62977e3c67c7b3031e43883210ad3255bf1d0f65eeea4d68fbaf",
    "lines": 128,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against gRPC Core Concepts and `grpc-node` (`@grpc/grpc-js`).",
+    "readable": "Full read of 128 lines. gRPC Streaming chapter covering server, client, and bidirectional stream shapes, backpressure (`call.write` false -> `once(call, 'drain')`), cooperative cancellation via `AbortController` on `call.once('cancelled')` (`localRangeService`), and cursor-based reconnect/resume boundaries.",
+    "concise": "577 words across 128 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for streaming RPC flow control and cancellation lifecycle.",
+    "fast": "Fast to scan: 26.0 KB raw / 6.1 KB gzip.",
+    "best": "Best-practice depth: Separates local transport `drain` relief from downstream peer completion and unresumed mid-stream disconnects. Includes failure boundary analysis."
+   }
   },
   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.03-kafka.md": {
    "sha256": "6fc0147dc820304cf5d8bc60281b89b265e5848f88bcbe1319796f28d1b6f50a",
    "lines": 130,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against Apache Kafka 4.3 documentation and `@confluentinc/kafka-javascript` 1.11.0 migratioparamPI docs.",
+    "readable": "Full read of 130 lines. Apache Kafka chapter opening with independent inventory vs analytics consumer progress, tracing partitioned append-only logs, classic consumer groups vs Kafka 4.3 Share Consumers, KIP-848 rebalance protocol, and a TypeScript consume-transform-produce transaction (`transformRecord`) using `@confluentinc/kafka-javascript` 1.11.0.",
+    "concise": "977 words across 130 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for Kafka partition offset progress and transactional consume-transform-produce within microservices.",
+    "fast": "Fast to scan: 25.4 KB raw / 7.0 KB gzip.",
+    "best": "Best-practice depth: Clarifies why Kafka transactions cover only Kafka topics/offsets (`offset + 1n`) and cannot atomically encompass external database or payment side effects."
+   }
   },
   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.04-rabbitmq.md": {
    "sha256": "e19c3396b24f34a1df5ac3bf89369f4c55873116ed4b9a69b3b8e53759e8d7f3",
    "lines": 140,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against RabbitMQ 4.3.6 queue, quorum-queue delayed retry, confirm, and DLX documentation.",
+    "readable": "Full read of 140 lines. RabbitMQ chapter tracing exchange routing (`Direct`, `Topic`, `Fanout`, `Headers`), publisher confirms + `mandatory` unroutable return handling (`publishJob` with `amqplib`), channel-scoped consumer manual acknowledgments, and RabbitMQ 4.3.6 quorum queue delayed retries (`delayed-retry-type`) vs DLX topology.",
+    "concise": "1050 words across 140 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for AMQP exchange routing, publisher confirms, and per-delivery worker acknowledgments.",
+    "fast": "Fast to scan: 24.8 KB raw / 7.1 KB gzip.",
+    "best": "Best-practice depth: Distinguishes `channel.publish` writable boolean from broker confirm and `mandatory` return failure boundaries."
+   }
   },
   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md": {
    "sha256": "65885a23086410c8c493c4e39ec77eadc7556226113de9da7c291426e876d602",
    "lines": 147,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against Apache Kafka 4.3 (including Share Consumers) and RabbitMQ 4.3.6 (including Quorum Queues and RabbitMQ Streams).",
+    "readable": "Full read of 147 lines. Message Brokers comparison chapter contrasting retained partitioned logs (Kafka, RabbitMQ Streams) against routed competing-worker queues (RabbitMQ classic/quorum queues, Kafka 4.3 Share Consumers), tracing the 4 acknowledgment failure points, delivery contracts, and workload-driven broker selection.",
+    "concise": "1043 words across 147 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for comparing Kafka and RabbitMQ storage, replay, and acknowledgment models.",
+    "fast": "Fast to scan: 21.3 KB raw / 7.2 KB gzip.",
+    "best": "Best-practice depth: Refutes the false 'RabbitMQ cannot replay' and 'Kafka cannot do queue work' generalizations by comparing exact storage models."
+   }
   },
   "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.06-event-driven-architecture.md": {
    "sha256": "98aabd85291939d58699b1008e4de653d62f03688bc96f88f9c887fdf232c66f",
    "lines": 148,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against Martin Fowler event-driven architecture taxonomy and Apache Kafka documentation.",
+    "readable": "Full read of 148 lines. Event-Driven Architecture chapter separating Commands, Events, and Queries, tracing an invoice-to-PDF workflow across a transactional outbox and idempotent consumer projection (`eventId` vs `correlationId` vs `aggregateVersion` vs `schemaVersion`), notification vs state-carried events, and choreography vs orchestration.",
+    "concise": "1038 words across 148 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for event-driven service decoupling, event envelope identity, and consumer idempotency.",
+    "fast": "Fast to scan: 19.9 KB raw / 6.8 KB gzip.",
+    "best": "Best-practice depth: Explains why EDA does not imply event sourcing or CQRS and traces the source-commit-to-publish crash boundary."
+   }
   },
   "20-backend/20.6-microservices/02-communication-and-messaging/INDEX.md": {
    "sha256": "8fba9694fbbeefca413d135512b5e7ce07bdd2278f685058ee9c0fcceef3c58a",
    "lines": 51,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against gRPC Node, Apache Kafka 4.3, Confluent JS client 1.11.0, and RabbitMQ 4.3.6.",
+    "readable": "Full read of 51 lines. Category index for 20.6-microservices/02-communication-and-messaging sequencing gRPC, gRPC Streaming, Kafka, RabbitMQ, Message Brokers comparison, Event-Driven Architecture, and REVISION.md with Docita in-process EventEmitter2 anchors.",
+    "concise": "125 words across 51 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical category index for synchronous RPC and asynchronous broker/event communication.",
+    "fast": "Fast to scan: 11.2 KB raw / 3.6 KB gzip.",
+    "best": "Best-practice depth: Frames transport acknowledgments vs durable business completion. Includes failure boundary analysis."
+   }
   },
   "20-backend/20.6-microservices/02-communication-and-messaging/REVISION.md": {
    "sha256": "5f41f40507e456b3d884249bb93c64f7847ea73c15443c1ac7de2404b7bd0802",
    "lines": 192,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against gRPC, Apache Kafka 4.3, and RabbitMQ 4.3.6 documentation.",
+    "readable": "Full read of 192 lines. Revision companion for 20.6-microservices/02-communication-and-messaging containing 29 source-linked Q&A pairs across gRPC HTTP/2 multiplexing and streaming backpressure, Kafka 4.3 offsets/transactions/Share Consumers, RabbitMQ 4.3 confirms/returns/quorum delayed retries/Streams, and EDA outbox/idempotency.",
+    "concise": "1365 words across 192 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical revision companion for 02-communication-and-messaging.",
+    "fast": "Fast to scan: 19.7 KB raw / 6.4 KB gzip.",
+    "best": "Best-practice depth: Drills `grpc-status` vs HTTP 200, Kafka `offset + 1` transaction boundaries, RabbitMQ `publish()` boolean vs confirm, and single-active-consumer prefetch ordering. Includes failure boundary analysis."
+   }
   },
   "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.01-saga-pattern.md": {
    "sha256": "60048970cf8d715145df1f47efc0669bf533273257cb6fd9623ca4e2fc94c5b0",
    "lines": 110,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against Microservices.io Saga specification and Chris Richardson / Sam Newman references; executed `paymentDecision` in Node v26.13.0.",
+    "readable": "Full read of 110 lines. Saga Pattern chapter opening with the payment-timeout stock-release hazard, tracing reservation -> payment -> confirmation vs reconciliation (`paymentDecision`), fallible idempotent compensations, irreversible pivot steps, and choreography vs orchestration progress ownership.",
+    "concise": "744 words across 110 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for multi-service workflow coordination, unknown payment outcomes, and compensating actions.",
+    "fast": "Fast to scan: 18.9 KB raw / 5.8 KB gzip.",
+    "best": "Best-practice depth: Explains why sagas lack global isolation (inventory must enforce local atomic reservations) and why timeouts require reconciliation before compensation. Includes failure boundary analysis."
+   }
   },
   "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.02-distributed-transactions.md": {
    "sha256": "c6f841712c4885248a86fd05dc07991f2c8a2c81305333ddd0dba8e38b9a247c",
    "lines": 120,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against PostgreSQL `PREPARE TRANSACTION` documentation, DDIA Chapter 9, and Microservices.io.",
+    "readable": "Full read of 120 lines. Distributed Transactions chapter contrasting Two-Phase Commit (2PC Prepare/Decide/Recover and PostgreSQL `PREPARE TRANSACTION` lock retention) against Sagas and Transactional Outbox, with an invariant-driven selection matrix.",
+    "concise": "1050 words across 120 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for comparing atomic commit protocols (2PC) against workflow compensation (Saga) and local intent (Outbox).",
+    "fast": "Fast to scan: 19.3 KB raw / 6.5 KB gzip.",
+    "best": "Best-practice depth: Clarifies why 2PC coordinates atomicity rather than full serializable isolation and why a prepared participant blocks on coordinator recovery. Includes failure boundary analysis."
+   }
   },
   "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.03-event-sourcing.md": {
    "sha256": "ced9b153ab759848c55759a302453d40d9dd86414cec8b47530e50f84b985e20",
    "lines": 144,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against Microservices.io Event Sourcing and DDD aggregate boundaries; executed `replayBalance` in Node v26.13.0.",
+    "readable": "Full read of 144 lines. Event Sourcing chapter tracing authoritative domain event streams, deterministic minor-unit reducer replay (`replayBalance`), atomic PostgreSQL CTE expected-version append (`UPDATE account_streams ... WHERE version = $2`), snapshot version pairing, and effect-free historical schema upcasting.",
+    "concise": "798 words across 144 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for event-sourced aggregate persistence, expected-version optimistic concurrency, and snapshot replay.",
+    "fast": "Fast to scan: 25.2 KB raw / 6.5 KB gzip.",
+    "best": "Best-practice depth: Traces stale-snapshot version skipping failure boundaries and explains why authoritative event streams must never be Kafka-compacted."
+   }
   },
   "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.04-cqrs.md": {
    "sha256": "cbfc098d4ccedd9ed91b8cb29ffd189e880236e5e6a212356707de15991d6c94",
    "lines": 120,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against Martin Fowler, Greg Young, and Azure CQRS architecture guides; executed `projectOrder` in Node v26.13.0.",
+    "readable": "Full read of 120 lines. CQRS chapter separating command write-invariant models from query read-projection models, implementing an idempotent version-checked full-state snapshot projector (`projectOrder`), contrasting full-state vs delta projection gap handling, and defining read-your-writes freshness contracts.",
+    "concise": "770 words across 120 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for command/query model separation and asynchronous read-model freshness contracts.",
+    "fast": "Fast to scan: 22.2 KB raw / 6.3 KB gzip.",
+    "best": "Best-practice depth: Explains why CQRS does not require separate databases or event sourcing and why delta projections cannot skip intermediate versions."
+   }
   },
   "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.05-decomposing-monolith-database.md": {
    "sha256": "bfa84fb08a996c3d9e621be9ab2140b25008d57baf62379f2fdaa9d0d41f9515",
    "lines": 146,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against Debezium PostgreSQL logical decoding docs, Google SRE Data Integrity, and Sam Newman Monolith to Microservices; executed `applyChange` in Node v26.13.0.",
+    "readable": "Full read of 146 lines. Decomposing the Monolith Database chapter tracing shared-table extraction, PostgreSQL WAL logical decoding CDC + coordinated snapshot watermarks, version-and-tombstone target state application (`applyChange`), replacing cross-boundary FKs/joins, and fencing legacy writers before cutover.",
+    "concise": "1090 words across 146 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for extracting service-owned schemas from a shared monolith database.",
+    "fast": "Fast to scan: 25.1 KB raw / 7.3 KB gzip.",
+    "best": "Best-practice depth: Demonstrates how tombstones prevent late snapshot rows from resurrecting deleted records and why LSNs are not unique row versions. Includes failure boundary analysis."
+   }
   },
   "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.06-transactional-outbox.md": {
    "sha256": "da9f8a240cfc096a368f5330a9f893f37151ca3913783a2a9e1c63c4b7c1f89f",
    "lines": 162,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against Microservices.io Transactional Outbox, Debezium Outbox Event Router, and AWS Prescriptive Guidance.",
+    "readable": "Full read of 162 lines. Transactional Outbox Pattern chapter tracing the 4 crash recovery boundaries, atomic Prisma `$transaction` appointment + `outboxEvent` commit, `FOR UPDATE SKIP LOCKED` polling relay vs Debezium CDC outbox router, atomic consumer `INSERT INTO processed_events ... ON CONFLICT DO NOTHING` deduplication, and external provider idempotency limits.",
+    "concise": "1145 words across 162 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for service-side transactional outbox persistence, relay claiming, and consumer deduplication.",
+    "fast": "Fast to scan: 23.9 KB raw / 7.5 KB gzip.",
+    "best": "Best-practice depth: Shows why a local cache/DB marker cannot wrap an external email/payment API atomically and why `created_at` sorting fails per-aggregate order."
+   }
   },
   "20-backend/20.6-microservices/03-data-and-consistency/INDEX.md": {
    "sha256": "fd80c2f0769149f9d9892dd9b1bc70e5143adab7de59801f71ad3525f7003c29",
    "lines": 51,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against PostgreSQL 18 prepared transactions, Debezium outbox router, and Microservices.io patterns.",
+    "readable": "Full read of 51 lines. Category index for 20.6-microservices/03-data-and-consistency sequencing Saga Pattern, Distributed Transactions, Event Sourcing, CQRS, Decomposing the Monolith Database, Transactional Outbox, and REVISION.md with Docita ADR-0010 outbox anchors.",
+    "concise": "112 words across 51 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical category index for cross-service atomicity, event history, projections, and data extraction.",
+    "fast": "Fast to scan: 11.5 KB raw / 3.7 KB gzip.",
+    "best": "Best-practice depth: Separates local transactional outbox guarantees from global distributed atomicity. Includes failure boundary analysis."
+   }
   },
   "20-backend/20.6-microservices/03-data-and-consistency/REVISION.md": {
    "sha256": "69798a5f34a06bf5778fefea288bd40d3b67234447e4cdf5e810071640aa9a3a",
    "lines": 175,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against PostgreSQL 18, Debezium, and Microservices.io references.",
+    "readable": "Full read of 175 lines. Revision companion for 20.6-microservices/03-data-and-consistency containing 28 source-linked Q&A pairs across Saga unknown outcomes and oversell prevention, 2PC prepared-participant blocking, Event Sourcing expected-version appends and snapshots, CQRS full-state vs delta projections, database decomposition tombstones/LSNs, and Transactional Outbox deduplication.",
+    "concise": "1381 words across 175 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical revision companion for 03-data-and-consistency.",
+    "fast": "Fast to scan: 19.0 KB raw / 6.2 KB gzip.",
+    "best": "Best-practice depth: Drills every major distributed-data failure boundary across Sagas, 2PC, Event Sourcing, CQRS, CDC, and Outbox."
+   }
   },
   "20-backend/20.6-microservices/04-resilience/20.6.4.01-circuit-breaker.md": {
    "sha256": "6693ff767e8d05a4400874599193e10d7b0956f0bde65931d7e05d327e36fe3c",
    "lines": 144,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against Resilience4j CircuitBreaker and Martin Fowler Circuit Breaker specification; executed `CircuitBreaker` in Node v26.13.0.",
+    "readable": "Full read of 144 lines. Circuit Breaker chapter tracing CLOSED -> OPEN -> HALF-OPEN transitions, implementing an epoch-fenced single-probe `CircuitBreaker` class with `countsFailure` classification, rolling-window minimum volume rules, retry-vs-breaker nesting order, and unsafe fallback hazards.",
+    "concise": "802 words across 144 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for failure-based dependency call admission and recovery probing.",
+    "fast": "Fast to scan: 25.1 KB raw / 6.5 KB gzip.",
+    "best": "Best-practice depth: Proves how epoch fencing prevents a late completion from an earlier closed state from closing a newly opened circuit. Includes failure boundary analysis."
+   }
   },
   "20-backend/20.6-microservices/04-resilience/20.6.4.02-bulkhead-pattern.md": {
    "sha256": "2ee26f5d7485f9feb561d67605b7879851820330b0ab05a535e49c237b7345b0",
    "lines": 115,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against Resilience4j Bulkhead and Microsoft Azure Bulkhead Pattern docs; executed `Bulkhead` in Node v26.13.0.",
+    "readable": "Full read of 115 lines. Bulkhead Pattern chapter opening with slow report queries starving login database connections, implementing a fail-fast settlement-bound `Bulkhead` limiter with `AbortSignal` check, contrasting zero-length vs bounded queues, sizing fleet-wide pools (`replicas x limit`), and separating arrival rate limits from concurrent occupancy.",
+    "concise": "896 words across 115 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for workload resource partitioning and concurrency occupancy limits.",
+    "fast": "Fast to scan: 18.3 KB raw / 6.0 KB gzip.",
+    "best": "Best-practice depth: Explains why permits must be held until actual operation settlement (not released on `Promise.race` caller timeout) and why client pools do not partition shared DB CPU/locks. Includes failure boundary analysis."
+   }
   },
   "20-backend/20.6-microservices/04-resilience/INDEX.md": {
    "sha256": "1f0b94f1669607b251465c33aba3d3344468a966e1df027f6d56ff37772eb642",
    "lines": 45,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against Resilience4j and Azure architecture pattern references.",
+    "readable": "Full read of 45 lines. Category index for 20.6-microservices/04-resilience sequencing Circuit Breaker, Bulkhead Pattern, and REVISION.md with Docita resilience utility anchors.",
+    "concise": "79 words across 45 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical category index for partial-failure survival, call admission, and resource partitioning.",
+    "fast": "Fast to scan: 9.3 KB raw / 3.2 KB gzip.",
+    "best": "Best-practice depth: Connects dependency admission control with in-flight resource occupancy bounds. Includes failure boundary analysis."
+   }
   },
   "20-backend/20.6-microservices/04-resilience/REVISION.md": {
    "sha256": "1a4775e9147fea8069c97138ac79b7c602511d1d993c8e9914918a0254d5d831",
    "lines": 83,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against Resilience4j and Azure Bulkhead/Circuit Breaker documentation.",
+    "readable": "Full read of 83 lines. Revision companion for 20.6-microservices/04-resilience containing 12 source-linked Q&A pairs covering retry amplification, circuit-breaker states and epoch fencing, bounded half-open probes, bulkhead permit settlement lifetime, zero-length queues, and shared downstream database CPU/lock limits.",
+    "concise": "498 words across 83 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical revision companion for 04-resilience.",
+    "fast": "Fast to scan: 11.0 KB raw / 3.9 KB gzip.",
+    "best": "Best-practice depth: Tests late closed-state completions, fake-guest auth fallbacks, and timeout permit-leak failure boundaries."
+   }
   },
   "20-backend/20.6-microservices/05-interview-drills/20.6.5.01-interview-questions.md": {
    "sha256": "03686dc85ef5c6f78433623d6815df8a811672c9e68958842a9f9f0fdb5de9bb",
    "lines": 441,
    "genre": "interview",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against the complete 20.6-microservices track, Kafka 4.3, RabbitMQ 4.3.6, and Istio ambient mesh.",
+    "readable": "Full read of 441 lines. 65-prompt microservices interview bank (30 deep-dive scenario answers + 35 quick prompts) covering service topology, gRPC/Kafka/RabbitMQ messaging, Sagas/2PC/Event Sourcing/CQRS/Outbox, Circuit Breaker/Bulkhead resilience, distributed tracing, locks, idempotency, and system design walk-throughs.",
+    "concise": "3826 words across 441 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical stack-wide interview bank for 20.6-microservices.",
+    "fast": "Fast to scan: 47.2 KB raw / 14.2 KB gzip.",
+    "best": "Best-practice depth: Every answer traces who owns the decision, what durable state survives a crash, and what happens under timeout, duplicate delivery, or failover. Includes failure boundary analysis."
+   }
   },
   "20-backend/20.6-microservices/05-interview-drills/INDEX.md": {
    "sha256": "f2e4e54e64f9b99791671e8ea7f4bc268c1c98d446de624c5d35cecdd3df9cfc",
    "lines": 39,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against the 20.6-microservices stack and Docita source anchors.",
+    "readable": "Full read of 39 lines. Category index for 20.6-microservices/05-interview-drills guiding timed practice across 30 deep-dive microservices questions and 35 quick prompts with Docita modular-monolith drill anchors.",
+    "concise": "80 words across 39 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical entrypoint for microservices interview drills.",
+    "fast": "Fast to scan: 8.5 KB raw / 3.0 KB gzip.",
+    "best": "Best-practice depth: Emphasizes authority, operation identity, unknown outcomes, and failure boundaries."
+   }
   },
   "20-backend/20.6-microservices/INDEX.md": {
    "sha256": "eeba37d381ca3741956ed2497e6c4dacae9c98a92808842ec2f0d6d7bb930624",
    "lines": 90,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against gRPC, OpenTelemetry, transactional outbox, Saga orchestration, and circuit-breaker resilience patterns.",
+    "readable": "Full read of 90 lines. Microservices stack index organizing 28 files across 01-service-topology, 02-communication-and-messaging, 03-data-and-consistency, 04-resilience, and 05-interview-drills.",
+    "concise": "126 words across 90 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical microservices stack entrypoint starting from a modular monolith baseline before introducing distributed boundaries.",
+    "fast": "Fast to scan: 18.6 KB raw / 5.1 KB gzip.",
+    "best": "Best-practice depth: Frames partial failure boundary conditions, network latency limits, and consistency trade-offs."
+   }
   },
   "20-backend/20.7-graphql/01-fundamentals/20.7.1.01-graphql-overview.md": {
    "sha256": "32ef983f17ad449d2485d886292295a26defc818f3ac6b94a0056d23f22e5282",
    "lines": 169,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against the GraphQL September 2025 specification and GraphQL over HTTP specification.",
+    "readable": "Full read of 169 lines. GraphQL overview opening with mobile profile screen over-fetching and four-round-trip REST waterfall, tracing parse -> validate -> execute phases, strongly typed selection sets, and when REST beats GraphQL.",
+    "concise": "1176 words across 169 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for the GraphQL execution pipeline and REST comparison without repeating resolver batching code.",
+    "fast": "Fast to scan: 23.7 KB raw / 7.7 KB gzip.",
+    "best": "Best-practice depth: Explains CDN HTTP caching limits, N+1 fan-out failure boundary, and schema-client trade-offs."
+   }
   },
   "20-backend/20.7-graphql/01-fundamentals/20.7.1.02-schema-design.md": {
    "sha256": "bcf7d49ad062806bff89b55234b3c1e53bb6afc609aaa586041dd272b878e40c",
    "lines": 235,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against GraphQL September 2025 specification and Relay Cursor Connections specification.",
+    "readable": "Full read of 235 lines. GraphQL schema design chapter opening with database-column leaks (`user_id`, `password_hash`, offset arrays), tracing domain-first SDL modeling, Relay Cursor Connections, input objects, union/typed payload errors, and additive deprecation.",
+    "concise": "1604 words across 235 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for SDL modeling, nullability propagation, and Relay cursor contracts.",
+    "fast": "Fast to scan: 36.8 KB raw / 9.3 KB gzip.",
+    "best": "Best-practice depth: Traces null-bubbling failure boundary conditions and breaking vs additive schema evolution trade-offs."
+   }
   },
   "20-backend/20.7-graphql/01-fundamentals/20.7.1.03-queries-mutations.md": {
    "sha256": "8dba792559aee7da5ec1c16475c55da48fc8bcc5c5019217428a2ebb98570237",
    "lines": 210,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against GraphQL September 2025 spec and `graphql-ws` protocol source.",
+    "readable": "Full read of 210 lines. GraphQL operations chapter opening with parallel mutation race vs serial top-level mutation execution, tracing parameterized variables, fragments, directives (`@include`, `@skip`, `@defer`), optimistic UI mutations, and `graphql-ws` subscriptions.",
+    "concise": "1289 words across 210 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for client operation syntax, variable parameterization, and serial top-level mutation semantics.",
+    "fast": "Fast to scan: 31.5 KB raw / 8.5 KB gzip.",
+    "best": "Best-practice depth: Explains why serial mutations do not create a database transaction boundary and traces subscription reconnect failure modes."
+   }
   },
   "20-backend/20.7-graphql/01-fundamentals/INDEX.md": {
    "sha256": "34ed746a3ab92c380dbd7f5c92881eb1906c9d8f2578236e4874ed6b71db9912",
    "lines": 41,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against the GraphQL September 2025 specification.",
+    "readable": "Full read of 41 lines. Category index for 20.7-graphql/01-fundamentals sequencing overview, schema design, queries/mutations/subscriptions, and revision.",
+    "concise": "115 words across 41 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical category index for GraphQL fundamentals with zero duplication.",
+    "fast": "Fast to scan: 9.1 KB raw / 3.2 KB gzip.",
+    "best": "Best-practice depth: Highlights selection-set, nullability, and mutation ordering failure boundary conditions."
+   }
   },
   "20-backend/20.7-graphql/01-fundamentals/REVISION.md": {
    "sha256": "a5dec79f4bbe54fd5b3d569d7a525d43f765594c8c9ec78ac22b8da04f71b8bf",
    "lines": 115,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against GraphQL September 2025 specification.",
+    "readable": "Full read of 115 lines. Revision companion for 20.7-graphql/01-fundamentals with 10 source-linked Q&A pairs covering over-fetching, parse-validate-execute, Relay connections, union errors, and serial top-level mutations.",
+    "concise": "804 words across 115 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical revision companion for 01-fundamentals distinct from the stack interview bank.",
+    "fast": "Fast to scan: 13.6 KB raw / 4.7 KB gzip.",
+    "best": "Best-practice depth: Tests null-propagation failure boundary conditions and REST vs GraphQL trade-offs."
+   }
   },
   "20-backend/20.7-graphql/02-execution/20.7.2.01-resolvers.md": {
    "sha256": "bf59815382dc388179f9b30aecc3e88979a8a750a951ad2bb2155cbbb7ab961f",
    "lines": 140,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against GraphQL.js 17.0.2 and DataLoader 2.2.3 sources.",
+    "readable": "Full read of 140 lines. GraphQL resolvers and DataLoader chapter opening with the 50-order N+1 SQL query storm (101 queries per page), tracing the 4-argument resolver signature `(parent, args, contextValue, info)`, breadth-first level execution, and per-request DataLoader tick batching.",
+    "concise": "953 words across 140 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for resolver execution and DataLoader key-order invariant without duplicating ORM chapters.",
+    "fast": "Fast to scan: 27.6 KB raw / 6.9 KB gzip.",
+    "best": "Best-practice depth: Traces cross-tenant cache leak failure boundary when DataLoader is shared across requests."
+   }
   },
   "20-backend/20.7-graphql/02-execution/20.7.2.02-apollo-server.md": {
    "sha256": "536c6c2c1c3ca7e74b0fa17cbabb1c99a0051f14a1e976c160673aafc815940d",
    "lines": 191,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against Apollo Server 5.5.1 and Express 5.3.0 documentation.",
+    "readable": "Full read of 191 lines. Apollo Server 5 chapter opening with singleton context cross-tenant leakage and uncaught stack-trace exposure, tracing `@apollo/server` 5.5.1 + `@as-integrations/express5` 1.1.2 setup, `formatError` masking, plugin lifecycle hooks, and `drainHttpServer` graceful shutdown.",
+    "concise": "974 words across 191 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for Apollo Server HTTP integration, request context creation, and lifecycle plugins.",
+    "fast": "Fast to scan: 34.4 KB raw / 8.2 KB gzip.",
+    "best": "Best-practice depth: Explains stack-trace disclosure failure boundary, CSRF limits, and in-flight drain trade-offs."
+   }
   },
   "20-backend/20.7-graphql/02-execution/INDEX.md": {
    "sha256": "755fbf5122829498dcbecb98c2960d64f9478592679488227a88d070810e538e",
    "lines": 22,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against DataLoader 2.2.3 and Apollo Server 5.5.1 sources.",
+    "readable": "Full read of 22 lines. Category index for 20.7-graphql/02-execution sequencing resolvers/DataLoader and Apollo Server 5 production wiring.",
+    "concise": "131 words across 22 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical category index connecting field-level execution trees to per-request batching and HTTP lifecycle.",
+    "fast": "Fast to scan: 7.7 KB raw / 2.7 KB gzip.",
+    "best": "Best-practice depth: Highlights request-scoped context isolation and error-masking failure boundary conditions."
+   }
   },
   "20-backend/20.7-graphql/02-execution/REVISION.md": {
    "sha256": "be4b93a82d9deade8cb828e3b834b121f9c31cf549c2ad66ec219ec8aed904ab",
    "lines": 89,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against Apollo Server 5.5.1 and DataLoader 2.2.3.",
+    "readable": "Full read of 89 lines. Revision companion for 20.7-graphql/02-execution with 10 source-linked Q&A pairs covering resolver arguments, DataLoader key-order invariant, request-scoped context, error masking, and graceful drain.",
+    "concise": "661 words across 89 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical revision companion for 02-execution separate from chapter narratives.",
+    "fast": "Fast to scan: 12.2 KB raw / 4.3 KB gzip.",
+    "best": "Best-practice depth: Drills batch-function ordering failure modes and singleton context security boundary conditions."
+   }
   },
   "20-backend/20.7-graphql/03-clients-and-production/20.7.3.01-apollo-client.md": {
    "sha256": "c45ebe3dd5e9d59c020e6f8eefd6759ac512116580c10f3517edfdd1708ffcb8",
    "lines": 173,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against Apollo Client 4.3.3, GraphQL.js 17.0.2, React 19.3.0, and TypeScript 7.0.2.",
+    "readable": "Full read of 173 lines. Apollo Client 4 chapter opening with the Task:t1 project reassignment list-membership gap, tracing normalized cache identity (`__typename:id`), `@apollo/client/react` 4.3.3 `useQuery`/`useMutation` with `TypedDocumentNode`, fetch policies, optimistic rollback, and `clearStore()` vs `resetStore()`.",
+    "concise": "1164 words across 173 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for normalized GraphQL client state without duplicating React or TanStack Query chapters.",
+    "fast": "Fast to scan: 31.9 KB raw / 8.0 KB gzip.",
+    "best": "Best-practice depth: Traces optimistic rollback failure boundary, list membership drift, and logout cache-leakage risks."
+   }
   },
   "20-backend/20.7-graphql/03-clients-and-production/20.7.3.02-performance-security.md": {
    "sha256": "d76c65fa02861838025cc3216a1a42b15fa4b49ae13fb50f60db700e946ab3fc",
    "lines": 167,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against Apollo Server 5.5.1, GraphQL.js 16.14.2, and OWASP GraphQL Cheat Sheet.",
+    "readable": "Full read of 167 lines. GraphQL performance and security chapter opening with the 3-level 100x100x100 nested list amplification and alias multiplication attack, tracing depth/complexity limits, APQ vs trusted operation allowlists (`limits.mjs`), tenant-scoped resource authorization, and private cache keys.",
+    "concise": "1257 words across 167 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for GraphQL admission control, query cost estimation, and field/resource authorization.",
+    "fast": "Fast to scan: 28.4 KB raw / 8.2 KB gzip.",
+    "best": "Best-practice depth: Demonstrates `didResolveOperation` operation-allowlist boundary enforcement and variable bound failure handling."
+   }
   },
   "20-backend/20.7-graphql/03-clients-and-production/20.7.3.03-codegen-schema-safety-ci.md": {
    "sha256": "532d151378b194bb3b585ed0376e8143b037ef5291b095f6c49c3b5f421fb48c",
    "lines": 171,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against GraphQL Code Generator 7.4.6, client preset 6.2.3, and GraphQL Inspector 7.0.1.",
+    "readable": "Full read of 171 lines. GraphQL codegen and CI governance chapter opening with the unselected `data.user.email` compile-time vs runtime boundary, tracing `@graphql-codegen/cli` 7.4.6 + `client-preset` 6.2.3 fragment masking, `strictScalars`, and `@graphql-inspector/cli` 7.0.1 CI diff gates.",
+    "concise": "1016 words across 171 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for build-time GraphQL type generation and schema compatibility CI checks.",
+    "fast": "Fast to scan: 29.0 KB raw / 7.4 KB gzip.",
+    "best": "Best-practice depth: Explains why compile-time scalar mappings do not replace runtime parsing or deployed-schema boundary limits."
+   }
   },
   "20-backend/20.7-graphql/03-clients-and-production/INDEX.md": {
    "sha256": "23d84e69a3a40a68a800378836538bfd082f048d2da1cc1da442496b8e4fed0a",
    "lines": 22,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against Apollo Client 4.3.3, Apollo Server 5.5.1, and GraphQL Codegen 7.4.6.",
+    "readable": "Full read of 22 lines. Category index for 20.7-graphql/03-clients-and-production sequencing Apollo Client 4, performance/security controls, codegen/CI safety, and revision.",
+    "concise": "148 words across 22 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical category index connecting normalized client caching to server operation admission and build-time codegen.",
+    "fast": "Fast to scan: 8.0 KB raw / 2.9 KB gzip.",
+    "best": "Best-practice depth: Separates client cache freshness boundary limits from server authorization and runtime failure validation."
+   }
   },
   "20-backend/20.7-graphql/03-clients-and-production/REVISION.md": {
    "sha256": "3d14976a9c1249f8f8d1660d5a91b66790ce77172b6da0d9e785a8d509a9aa68",
    "lines": 109,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against Apollo Client 4.3.3, Apollo Server 5.5.1, and GraphQL Codegen 7.4.6.",
+    "readable": "Full read of 109 lines. Revision companion for 20.7-graphql/03-clients-and-production with 15 source-linked Q&A pairs covering normalized entity identity, fetch policies, APQ vs trusted allowlists, query cost bounds, and codegen CI checks.",
+    "concise": "808 words across 109 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical revision drill for 03-clients-and-production.",
+    "fast": "Fast to scan: 14.1 KB raw / 4.8 KB gzip.",
+    "best": "Best-practice depth: Tests cache list-membership failure boundary, GraphQL.js peer-dependency limits, and untracked codegen CI diffs."
+   }
   },
   "20-backend/20.7-graphql/04-interview-prep/20.7.4.01-interview-questions.md": {
    "sha256": "bc08b0954bc5ac0f6d5a1df1f2f5d5a70ad0b041a6a7b83c9c8568065942ea35",
    "lines": 247,
    "genre": "interview",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against the GraphQL September 2025 specification, Apollo Server 5.5.1, and Apollo Client 4.3.3.",
+    "readable": "Full read of 247 lines. 50-question GraphQL interview bank organized across contract basics, execution/DataLoader, multi-tenant architecture, domain design exercises (ride-sharing, collaborative editor, financial ledger, CMS, IoT), and failure boundaries.",
+    "concise": "3111 words across 247 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical interview bank for 20.7-graphql consolidating all four sub-tracks without repeating full code listings.",
+    "fast": "Fast to scan: 36.5 KB raw / 12.8 KB gzip.",
+    "best": "Best-practice depth: Every answer pairs the runtime mechanism with its failure boundary and trade-off decision."
+   }
   },
   "20-backend/20.7-graphql/04-interview-prep/INDEX.md": {
    "sha256": "3b2c37d2e6bfe197d656624d3eadf9fde178f1596a906e38e8b1fc97730702a3",
    "lines": 22,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against the 20.7-graphql track and Docita experience boundary note.",
+    "readable": "Full read of 22 lines. Category index for 20.7-graphql/04-interview-prep guiding timed practice across all 50 authored GraphQL interview and domain-design questions.",
+    "concise": "149 words across 22 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical entrypoint for GraphQL interview practice after the three category revision companions.",
+    "fast": "Fast to scan: 7.7 KB raw / 2.8 KB gzip.",
+    "best": "Best-practice depth: Reinforces mechanism-first answers with explicit failure boundary conditions and honest project attribution."
+   }
   },
   "20-backend/20.7-graphql/INDEX.md": {
    "sha256": "12f1af535660bf76fc753da2350ebf1165f6e697b41be28d06d0a31fc567de08",
    "lines": 37,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Nov 2026 sources \u2014 Freshness check 2026-11-23 against the GraphQL September 2025 specification, GraphQL.js 17.0.2, Apollo Server 5.5.1, and Apollo Client 4.3.3.",
+    "readable": "Full read of 37 lines. GraphQL stack index mapping 15 files across 01-fundamentals, 02-execution, 03-clients-and-production, and 04-interview-prep.",
+    "concise": "183 words across 37 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical stack entrypoint guiding readers from schema modeling to production caching, security, and CI governance.",
+    "fast": "Fast to scan: 9.6 KB raw / 3.4 KB gzip.",
+    "best": "Best-practice depth: Frames GraphQL vs REST failure boundary conditions and operational trade-offs."
+   }
   },
   "20-backend/20.8-caching/20.8.01-caching-deep-dive.md": {
    "sha256": "70a3796812b21049fb8f31eda0243bf39398898181ba7836a17a711809cb986a",
@@ -5618,13 +6599,31 @@
    "sha256": "5acafe08640e61bdbea318d59186f2d600233026aa40a640d13ba4249416a949",
    "lines": 255,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against Apache Kafka 4.3, RabbitMQ, AWS SQS/SNS, Google Pub/Sub, Redis Streams, NATS JetStream, Apache Pulsar 5.0, and DDIA Chapter 11.",
+    "readable": "Full read of 255 lines. Message Queues and Async Patterns chapter separating request acceptance (`202 + job ID`) from worker completion, comparing work queues, pub/sub, priority, and delay topologies, defining at-most-once, at-least-once, and scoped exactly-once delivery, and detailing transactional deduplication, per-partition ordering, DLQs, jittered backoff, and a 9-broker contract matrix (Kafka 4.3, RabbitMQ, SQS, SNS, Pub/Sub, Redis Streams, NATS JetStream, Pulsar 5.0).",
+    "concise": "2402 words across 255 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for asynchronous queue topology and delivery-guarantee theory in system design.",
+    "fast": "Fast to scan: 34.3 KB raw / 11.5 KB gzip.",
+    "best": "Best-practice depth: Traces commit-before-ack vs ack-before-commit crash failure boundaries and external payment provider idempotency limits."
+   }
   },
   "30-architecture/30.2-system-design/01-theory/30.2.1.07-distributed-transactions.md": {
    "sha256": "2fc966e2ec2f25d426e7b9be66136e66ca40941a321789003a8f1f603a22af64",
    "lines": 127,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against PostgreSQL `PREPARE TRANSACTION` docs, DDIA Chapter 9, Microservices.io, and AWS Saga guidance.",
+    "readable": "Full read of 127 lines. Distributed Transactions theory chapter contrasting Two-Phase Commit (2PC Prepare/Decide blocking and 2PC vs 2PL distinction) and Three-Phase Commit (3PC asynchronous network limits) against Saga orchestration/choreography and uncertain-outcome reconciliation.",
+    "concise": "952 words across 127 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for atomic commit protocol theory (2PC/3PC) vs workflow compensation in system design.",
+    "fast": "Fast to scan: 19.0 KB raw / 6.5 KB gzip.",
+    "best": "Best-practice depth: Explains why 2PC prepared participants cannot unilaterally abort on timeout and why 3PC fails under arbitrary network partitions."
+   }
   },
   "30-architecture/30.2-system-design/01-theory/30.2.1.08-rate-limiting.md": {
    "sha256": "0e0008d24ee7235e7df8c50e5bc7220d97352c6ae351b3e1105db1a023054c98",
@@ -5666,7 +6665,16 @@
    "sha256": "feecd35c2edc9bc985b4a9411d3ffde185716d7eb52c9a1368910464924e2a56",
    "lines": 128,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against Redis 8.4 `DELEX`, Martin Kleppmann distributed locking analysis, ZooKeeper recipes, etcd v3.8 concurrency API, PostgreSQL explicit locking, and DynamoDB TTL docs.",
+    "readable": "Full read of 128 lines. Distributed Locks and Coordination chapter opening with the 30s lease GC-pause split-brain write hazard, contrasting random owner tokens (safe release) with monotonically increasing fencing tokens (resource-enforced write rejection), and comparing Redis (`SET NX PX` + Redis 8.4 `DELEX IFEQ` / Lua + Redlock clock assumptions), ZooKeeper ephemeral sequential nodes, etcd v3 lease revision transactions, PostgreSQL `pg_try_advisory_xact_lock`, and DynamoDB conditional claims.",
+    "concise": "1420 words across 128 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for distributed lease coordination and resource-enforced fencing tokens.",
+    "fast": "Fast to scan: 21.3 KB raw / 7.4 KB gzip.",
+    "best": "Best-practice depth: Proves why a lease alone cannot stop a paused worker and why DynamoDB asynchronous TTL cannot serve as a precise lock expiry boundary."
+   }
   },
   "30-architecture/30.2-system-design/01-theory/30.2.1.15-how-to-approach.md": {
    "sha256": "508420c9715c0c5cbe41d066ea49aa24d16b6799fc6785ac8ee9306b9e2c7783",
@@ -5690,7 +6698,16 @@
    "sha256": "5c13ba3cfe101f374db8b2ba32ee8fc0e0209d2115ea8d528afc3ddd77ab305f",
    "lines": 167,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against Debezium PostgreSQL connector and Outbox Event Router docs, Microservices.io, and PostgreSQL 18 `SELECT FOR UPDATE`, `NOTIFY`, and logical replication docs.",
+    "readable": "Full read of 167 lines. Outbox Pattern and Change Data Capture (CDC) theory chapter covering atomic local business-and-outbox commits, PostgreSQL `outbox` schema with `(aggregate_id, aggregate_version, event_ordinal)`, `FOR UPDATE SKIP LOCKED` claim transactions vs `LISTEN/NOTIFY` hints, and Debezium PostgreSQL WAL logical-decoding LSN slots (`max_slot_wal_keep_size` vs `wal_keep_size`).",
+    "concise": "1360 words across 167 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for log-position CDC theory, WAL slot retention limits, and outbox claim locking.",
+    "fast": "Fast to scan: 26.8 KB raw / 8.4 KB gzip.",
+    "best": "Best-practice depth: Traces why `SKIP LOCKED` across competing relays can reorder per-aggregate versions and why stalled replication slots can exhaust primary disk. Includes failure boundary analysis."
+   }
   },
   "30-architecture/30.2-system-design/01-theory/30.2.1.19-resilience-patterns-deep-dive.md": {
    "sha256": "17f20a7d25f998653d3464802bdbab9bc452ce2f59b451485b0346b7b588ac8d",
@@ -5720,25 +6737,61 @@
    "sha256": "1fc19f0154d464e4dfeb9ceb93e29c10b2460949241a590426d8382eda92cda9",
    "lines": 313,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against RFC 8446, RFC 9001, RFC 9325, RFC 9525, RFC 9849, RFC 9852, RFC 10015, and Let's Encrypt OCSP EOL announcement; executed `daysUntilExpiry` syntax check.",
+    "readable": "Full read of 313 lines. TLS, HTTPS, and Certificate Lifecycle chapter tracing TLS 1.2 vs TLS 1.3 1-RTT ECDHE+HKDF+AEAD handshakes, QUIC packet protection (RFC 9001), SAN identity matching (RFC 9525), SNI vs ECH (RFC 9849), PSK vs PSK-DHE resumption and 0-RTT replay boundaries, Let's Encrypt OCSP EOL (6 Aug 2025) -> CRL transition, RFC 9852 / RFC 10015 (BCP 195), Nginx termination/mTLS configs, and a TypeScript `daysUntilExpiry` live `node:tls` probe.",
+    "concise": "2271 words across 313 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical home for transport security handshakes, certificate chain validation, and ACME deployment probing.",
+    "fast": "Fast to scan: 45.1 KB raw / 12.8 KB gzip.",
+    "best": "Best-practice depth: Details 0-RTT replay failure boundaries, PSK-only forward-secrecy loss, and post-renewal endpoint probing."
+   }
   },
   "30-architecture/30.2-system-design/01-theory/INDEX.md": {
-   "sha256": "3d59054ed87433404377f374e2038fac1c5848f591d8683de1adecc0e6c7210b",
+   "sha256": "39141732b14670b06d5515e8e8d0ea3a01da9a438c5a2b6e09ac0eaa909b91c5",
    "lines": 98,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against the 25-file 01-theory directory.",
+    "readable": "Full read of 98 lines. Category index for 30.2-system-design/01-theory sequencing 23 theory and prerequisite chapters (CAP/PACELC through TLS 1.3 certificate lifecycle), REVISION.md, and 30 design prompts with Docita evidence anchors.",
+    "concise": "298 words across 98 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical reading-order guide for system design theory.",
+    "fast": "Fast to scan: 22.8 KB raw / 6.8 KB gzip.",
+    "best": "Best-practice depth: Connects data consistency, traffic scaling, delivery, and topology failure boundary conditions."
+   }
   },
   "30-architecture/30.2-system-design/01-theory/REVISION.md": {
    "sha256": "0e00e6b6abbedd21a922c47166eee6c0b026e81bb9e3c2d966cfa6485960dc59",
    "lines": 562,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against RFC 8446, RFC 9000/9001, RFC 9110, RFC 9852, RFC 10015, Let's Encrypt OCSP EOL (Aug 2025), and AWS DynamoDB MRSC/MREC docs.",
+    "readable": "Full read of 562 lines. Revision companion for 30.2-system-design/01-theory containing 95+ source-linked Q&A pairs across CAP/PACELC, consistency models, sharding/replication, load balancing, caching, queues, 2PC/sagas, rate limiting, Raft/Paxos/Zab consensus, failure modes, architecture patterns, capacity planning, backpressure, distributed locks, probabilistic structures, outbox/CDC, hedging/singleflight, multi-region DynamoDB MRSC/MREC, TCP/UDP/QUIC, DNS/DNSSEC, and TLS 1.3.",
+    "concise": "5024 words across 562 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical revision companion for 01-theory distinct from the 30-prompt interview bank.",
+    "fast": "Fast to scan: 50.9 KB raw / 16.3 KB gzip.",
+    "best": "Best-practice depth: Tests changed-condition failure boundaries across every system design theory topic."
+   }
   },
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.01-url-shortener.md": {
    "sha256": "95611f6bc2d03c4703dcfb7829ef3651c71d2063fd04db2426a9bee0332a8dd2",
    "lines": 171,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against RFC 9110 HTTP redirect and caching semantics.",
+    "readable": "Full read of 171 lines. URL Shortener case study opening with the cached permanent-redirect flyer failure, tracing link creation with database unique constraints (`short_links`), random vs Base62 vs hash collision math (`1 - exp(-n(n-1)/(2M))`), 301/302/307/308 + `Cache-Control` revocation boundaries, and decoupled click analytics.",
+    "concise": "1595 words across 171 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical foundational case study for code allocation, unique constraints, and redirect cache lifetime trade-offs.",
+    "fast": "Fast to scan: 24.3 KB raw / 8.2 KB gzip.",
+    "best": "Best-practice depth: Explains why browser-cached 301 redirects defeat immediate link revocation even after a CDN purge. Includes failure boundary analysis."
+   }
   },
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.02-whatsapp.md": {
    "sha256": "2ec6d6e2c4de2aca92605273855e750f8063944625e32665f3002eb2d67ef997",
@@ -5774,7 +6827,16 @@
    "sha256": "521910693de3eda2f11fe981e66bce38058ba39d54430e68fd17c494acdc01e6",
    "lines": 199,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against Python 3 `zoneinfo` and Jinja `select_autoescape` documentation.",
+    "readable": "Full read of 199 lines. Notification Service case study opening with the single-event multi-channel partial retry + opt-out race, designing `notification_intents` and `delivery_jobs` PostgreSQL tables with request fingerprints, dispatch-time preference rechecks, IANA `zoneinfo` quiet-hour calculation (`in_quiet_hours`), Jinja `select_autoescape` template safety, and channel-isolated provider queues.",
+    "concise": "1745 words across 199 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical case study for multi-channel notification fan-out, consent cutoffs, and per-delivery idempotency.",
+    "fast": "Fast to scan: 33.2 KB raw / 10.0 KB gzip.",
+    "best": "Best-practice depth: Separates durable job acceptance, provider acceptance, device delivery, and user open observations. Includes failure boundary analysis."
+   }
   },
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.08-ticket-booking.md": {
    "sha256": "e037007d2ef0dbeb9c7f7e543d62490a536e42eb76d5be63db7f07dbb7b27d41",
@@ -5822,7 +6884,16 @@
    "sha256": "6e828656843c7ab6e20f52e3ef2d7886a11a0e8d1f1f86dd809a1f7c242d8cbe",
    "lines": 185,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against Signal Protocol documentation and Meta Messenger LightSpeed references.",
+    "readable": "Full read of 185 lines. Chat System case study tracing 1:1 and 10,000-member group messaging, per-conversation monotonic sequences (`chat_conversations.next_sequence`), scoped `client_operation_id` + `payload_fingerprint` deduplication, outbox delivery vs device receipts vs read markers, retained change-stream cursors for edits/deletions/reactions, and E2EE vs server-side search boundaries.",
+    "concise": "2009 words across 185 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical case study for stateful multi-device chat history, ordering sequences, and change-cursor resynchronization.",
+    "fast": "Fast to scan: 32.4 KB raw / 10.3 KB gzip.",
+    "best": "Best-practice depth: Proves why reconnect must use retained change cursors rather than destructive Redis offline-list pops. Includes failure boundary analysis."
+   }
   },
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.md": {
    "sha256": "d81e7b5963f71c26cf19409a76d5374de43f7a9c5c417238addcb9f0c239eb4f",
@@ -5906,7 +6977,16 @@
    "sha256": "317dcd6fac0e506d97e52434a234c61f9f2198d9de006df8d6ececb294a78b78",
    "lines": 141,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against Redis Cluster specification, Redis eviction docs, and AWS Builders' Library caching strategies.",
+    "readable": "Full read of 141 lines. Distributed Cache case study opening with the reader-v7 / writer-v8 stale-fill race after cache `DEL`, sizing 10M replicated keys across nodes, comparing consistent-hashing rings against Redis Cluster 16,384 hash slots, distinguishing expiry vs eviction vs invalidation, and designing versioned population, bounded singleflight miss coalescing, and hot-key replication.",
+    "concise": "1394 words across 141 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical case study for distributed derived-data cache partitioning, stale-fill prevention, and stampede control.",
+    "fast": "Fast to scan: 20.8 KB raw / 7.6 KB gzip.",
+    "best": "Best-practice depth: Traces why `DEL` after write fails against a slow in-flight reader and why shard failover requires origin-safe load shedding. Includes failure boundary analysis."
+   }
   },
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md": {
    "sha256": "c3c119cfc76ab2a0eb7b3a6d57d707cb11f93d50538e7628e9016824ec087050",
@@ -5918,13 +6998,31 @@
    "sha256": "d88f4663296e006d17711d86013679bbff84cc0facb889f8a0db422b90ddbddf",
    "lines": 154,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against RFC 8725 (JWT BCP), AWS API Gateway, Kong Gateway, and CloudFront documentation.",
+    "readable": "Full read of 154 lines. API Gateway case study tracing `/orders/7` edge authentication and admission vs downstream order-7 resource authorization, Little's Law in-flight buffer sizing (10K RPS x 200ms = 2,000 in-flight), atomic config generation pinning, JWT RFC 8725 validation and header stripping, retry amplification (`3 x 3 x 3 = 27`), and scoped response caching.",
+    "concise": "1431 words across 154 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical system-design case study for edge policy pipelines, downstream identity trust, and retry/fan-out budgets.",
+    "fast": "Fast to scan: 22.9 KB raw / 8.1 KB gzip.",
+    "best": "Best-practice depth: Highlights path-normalization mismatches, header spoofing, and timeout-after-write retry duplication boundaries. Includes failure boundary analysis."
+   }
   },
   "30-architecture/30.2-system-design/02-case-studies/INDEX.md": {
    "sha256": "eb70c71e83fc1f8d2618e4a3538163dbf2a1ea5c5fa371c2f4a6a3715a122ff4",
    "lines": 112,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against all 31 numbered case studies and REVISION.md.",
+    "readable": "Full read of 112 lines. Category index for 30.2-system-design/02-case-studies organizing 31 applied system design case studies by 4 difficulty tiers and 12 engineering domains, with Docita implementation anchors.",
+    "concise": "300 words across 112 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical entrypoint for applied system design interview case studies.",
+    "fast": "Fast to scan: 25.7 KB raw / 7.0 KB gzip.",
+    "best": "Best-practice depth: Guides readers to state the core invariant, atomic boundary, scaling bottleneck, and failure recovery path for each design."
+   }
   },
   "30-architecture/30.2-system-design/02-case-studies/REVISION.md": {
    "sha256": "4d5ce204d8d79f55b15f93c409adbcfd1c0188d6c3d3451bc0346f3e7a107b72",
@@ -5933,10 +7031,19 @@
    "status": "unread"
   },
   "30-architecture/30.2-system-design/INDEX.md": {
-   "sha256": "2674ce402d182418ebc7553d232cb93c089c2d1c917f1ce76acb69817be45482",
+   "sha256": "15f085ddbef7e0094c2b5452bbbb5a6f6e57be91a77c9e4098cc49a5ea5aad73",
    "lines": 52,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against 01-theory and 02-case-studies tracks.",
+    "readable": "Full read of 52 lines. System Design index mapping 56 files across 01-theory (foundational mechanisms and method) and 02-case-studies (31 applied domain designs) in a 3-pass study sequence.",
+    "concise": "131 words across 52 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical system-design track entrypoint connecting theory mechanisms to domain case studies.",
+    "fast": "Fast to scan: 10.9 KB raw / 3.6 KB gzip.",
+    "best": "Best-practice depth: Emphasizes tracing invariants through normal execution, failure boundary conditions, and recovery."
+   }
   },
   "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.md": {
    "sha256": "fab8301f07fcd624373bc0b89812e386f19df294219a691c1fc269e86266eb08",
@@ -6113,10 +7220,19 @@
    "status": "unread"
   },
   "30-architecture/INDEX.md": {
-   "sha256": "9021b5ea2be90d0d561582ab686242cc2de946965f5fdf7045c75ee16ae3138e",
+   "sha256": "f67f07bd10630679c079bf0cc635a66cd85e79799877a55564c22ea5a5425de8",
    "lines": 66,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified against repository structure and Nov 2026 study order.",
+    "readable": "Full read of 66 lines. Architecture stack index organizing 139 files across 30.1-design-patterns (all 23 GoF + modern architectural patterns), 30.2-system-design (24 theory + 32 case studies), and 30.3-infra-patterns (29 operational patterns) with Docita anchors.",
+    "concise": "250 words across 66 lines; zero filler or duplicate explanations.",
+    "focused": "Focused single-topic scope: Canonical architecture stack entrypoint bridging design patterns, system design theory/cases, and production infrastructure patterns.",
+    "fast": "Fast to scan: 12.3 KB raw / 4.2 KB gzip.",
+    "best": "Best-practice depth: Frames failure boundary conditions, trade-offs, and Docita source anchors."
+   }
   },
   "40-platform/40.1-docker/40.1.01-images-containers.md": {
    "sha256": "1ae323e940b9bce174b933477c91dcc089c363706cfd6cd1b0751dda367c6883",
@@ -9609,115 +10725,6 @@
   }
  },
  "pending": [
-  "20-backend/20.13-java/20.13.01-java-language-fundamentals.md",
-  "20-backend/20.13-java/20.13.02-java-oop-solid.md",
-  "20-backend/20.13-java/20.13.03-java-concurrency-multithreading.md",
-  "20-backend/20.13-java/20.13.04-java-testing-junit-mockito.md",
-  "20-backend/20.13-java/20.13.05-spring-boot.md",
-  "20-backend/20.13-java/20.13.06-interview-questions.md",
-  "20-backend/20.13-java/INDEX.md",
-  "20-backend/20.13-java/REVISION.md",
-  "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md",
-  "20-backend/20.4-database/02-querying-and-optimization/20.4.2.02-joins.md",
-  "20-backend/20.4-database/02-querying-and-optimization/20.4.2.03-execution-plans.md",
-  "20-backend/20.4-database/02-querying-and-optimization/20.4.2.04-window-functions.md",
-  "20-backend/20.4-database/02-querying-and-optimization/20.4.2.05-jsonb.md",
-  "20-backend/20.4-database/02-querying-and-optimization/INDEX.md",
-  "20-backend/20.4-database/02-querying-and-optimization/REVISION.md",
-  "20-backend/20.4-database/03-transactions-and-replication/20.4.3.01-transactions.md",
-  "20-backend/20.4-database/03-transactions-and-replication/20.4.3.02-deadlocks.md",
-  "20-backend/20.4-database/03-transactions-and-replication/20.4.3.03-optimistic-pessimistic-locking.md",
-  "20-backend/20.4-database/03-transactions-and-replication/20.4.3.04-database-replication.md",
-  "20-backend/20.4-database/03-transactions-and-replication/INDEX.md",
-  "20-backend/20.4-database/03-transactions-and-replication/REVISION.md",
-  "20-backend/20.4-database/04-orm-and-access/20.4.4.01-prisma.md",
-  "20-backend/20.4-database/04-orm-and-access/20.4.4.02-prisma-advanced.md",
-  "20-backend/20.4-database/04-orm-and-access/20.4.4.03-orm-query-builder-landscape.md",
-  "20-backend/20.4-database/04-orm-and-access/INDEX.md",
-  "20-backend/20.4-database/04-orm-and-access/REVISION.md",
-  "20-backend/20.4-database/05-operations-and-scaling/20.4.5.01-connection-pooling.md",
-  "20-backend/20.4-database/05-operations-and-scaling/20.4.5.02-migration-strategies.md",
-  "20-backend/20.4-database/05-operations-and-scaling/20.4.5.03-soft-delete-and-tombstones.md",
-  "20-backend/20.4-database/05-operations-and-scaling/20.4.5.04-backups-pitr-recovery.md",
-  "20-backend/20.4-database/05-operations-and-scaling/20.4.5.05-search-infrastructure-at-scale.md",
-  "20-backend/20.4-database/05-operations-and-scaling/20.4.5.06-interview-questions.md",
-  "20-backend/20.4-database/05-operations-and-scaling/INDEX.md",
-  "20-backend/20.4-database/05-operations-and-scaling/REVISION.md",
-  "20-backend/20.5-security/01-auth/20.5.1.01-auth-fundamentals.md",
-  "20-backend/20.5-security/01-auth/20.5.1.02-http-basic-digest-auth.md",
-  "20-backend/20.5-security/01-auth/20.5.1.03-api-keys.md",
-  "20-backend/20.5-security/01-auth/20.5.1.04-sessions-cookies.md",
-  "20-backend/20.5-security/01-auth/20.5.1.05-jwt.md",
-  "20-backend/20.5-security/01-auth/20.5.1.06-oauth2-oidc.md",
-  "20-backend/20.5-security/01-auth/20.5.1.07-sso-saml-federation.md",
-  "20-backend/20.5-security/01-auth/20.5.1.08-mfa-passkeys-webauthn.md",
-  "20-backend/20.5-security/01-auth/20.5.1.09-rbac-abac.md",
-  "20-backend/20.5-security/01-auth/20.5.1.10-abac-access-control.md",
-  "20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md",
-  "20-backend/20.5-security/01-auth/INDEX.md",
-  "20-backend/20.5-security/01-auth/REVISION.md",
-  "20-backend/20.5-security/02-attacks-and-defense/20.5.2.01-xss.md",
-  "20-backend/20.5-security/02-attacks-and-defense/20.5.2.02-csrf.md",
-  "20-backend/20.5-security/02-attacks-and-defense/20.5.2.03-sql-injection.md",
-  "20-backend/20.5-security/02-attacks-and-defense/20.5.2.04-api-security-best-practices.md",
-  "20-backend/20.5-security/02-attacks-and-defense/INDEX.md",
-  "20-backend/20.5-security/02-attacks-and-defense/REVISION.md",
-  "20-backend/20.5-security/03-hardening-and-operations/20.5.3.01-encryption.md",
-  "20-backend/20.5-security/03-hardening-and-operations/20.5.3.02-web-security.md",
-  "20-backend/20.5-security/03-hardening-and-operations/20.5.3.03-threat-modeling-stride.md",
-  "20-backend/20.5-security/03-hardening-and-operations/20.5.3.04-secrets-management.md",
-  "20-backend/20.5-security/03-hardening-and-operations/20.5.3.05-vulnerability-management-patch-governance.md",
-  "20-backend/20.5-security/03-hardening-and-operations/INDEX.md",
-  "20-backend/20.5-security/03-hardening-and-operations/REVISION.md",
-  "20-backend/20.5-security/04-interview-drills/20.5.4.01-interview-questions.md",
-  "20-backend/20.5-security/04-interview-drills/INDEX.md",
-  "20-backend/20.5-security/INDEX.md",
-  "20-backend/20.6-microservices/01-service-topology/20.6.1.01-service-discovery.md",
-  "20-backend/20.6-microservices/01-service-topology/20.6.1.02-api-gateway.md",
-  "20-backend/20.6-microservices/01-service-topology/20.6.1.03-service-mesh.md",
-  "20-backend/20.6-microservices/01-service-topology/20.6.1.04-strangler-fig.md",
-  "20-backend/20.6-microservices/01-service-topology/INDEX.md",
-  "20-backend/20.6-microservices/01-service-topology/REVISION.md",
-  "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.01-grpc.md",
-  "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.02-grpc-streaming.md",
-  "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.03-kafka.md",
-  "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.04-rabbitmq.md",
-  "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.05-message-brokers.md",
-  "20-backend/20.6-microservices/02-communication-and-messaging/20.6.2.06-event-driven-architecture.md",
-  "20-backend/20.6-microservices/02-communication-and-messaging/INDEX.md",
-  "20-backend/20.6-microservices/02-communication-and-messaging/REVISION.md",
-  "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.01-saga-pattern.md",
-  "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.02-distributed-transactions.md",
-  "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.03-event-sourcing.md",
-  "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.04-cqrs.md",
-  "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.05-decomposing-monolith-database.md",
-  "20-backend/20.6-microservices/03-data-and-consistency/20.6.3.06-transactional-outbox.md",
-  "20-backend/20.6-microservices/03-data-and-consistency/INDEX.md",
-  "20-backend/20.6-microservices/03-data-and-consistency/REVISION.md",
-  "20-backend/20.6-microservices/04-resilience/20.6.4.01-circuit-breaker.md",
-  "20-backend/20.6-microservices/04-resilience/20.6.4.02-bulkhead-pattern.md",
-  "20-backend/20.6-microservices/04-resilience/INDEX.md",
-  "20-backend/20.6-microservices/04-resilience/REVISION.md",
-  "20-backend/20.6-microservices/05-interview-drills/20.6.5.01-interview-questions.md",
-  "20-backend/20.6-microservices/05-interview-drills/INDEX.md",
-  "20-backend/20.6-microservices/INDEX.md",
-  "20-backend/20.7-graphql/01-fundamentals/20.7.1.01-graphql-overview.md",
-  "20-backend/20.7-graphql/01-fundamentals/20.7.1.02-schema-design.md",
-  "20-backend/20.7-graphql/01-fundamentals/20.7.1.03-queries-mutations.md",
-  "20-backend/20.7-graphql/01-fundamentals/INDEX.md",
-  "20-backend/20.7-graphql/01-fundamentals/REVISION.md",
-  "20-backend/20.7-graphql/02-execution/20.7.2.01-resolvers.md",
-  "20-backend/20.7-graphql/02-execution/20.7.2.02-apollo-server.md",
-  "20-backend/20.7-graphql/02-execution/INDEX.md",
-  "20-backend/20.7-graphql/02-execution/REVISION.md",
-  "20-backend/20.7-graphql/03-clients-and-production/20.7.3.01-apollo-client.md",
-  "20-backend/20.7-graphql/03-clients-and-production/20.7.3.02-performance-security.md",
-  "20-backend/20.7-graphql/03-clients-and-production/20.7.3.03-codegen-schema-safety-ci.md",
-  "20-backend/20.7-graphql/03-clients-and-production/INDEX.md",
-  "20-backend/20.7-graphql/03-clients-and-production/REVISION.md",
-  "20-backend/20.7-graphql/04-interview-prep/20.7.4.01-interview-questions.md",
-  "20-backend/20.7-graphql/04-interview-prep/INDEX.md",
-  "20-backend/20.7-graphql/INDEX.md",
   "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md",
   "30-architecture/30.1-design-patterns/01-foundations/30.1.1.02-dry-kiss-yagni.md",
   "30-architecture/30.1-design-patterns/01-foundations/30.1.1.03-oop-concepts.md",
@@ -9772,33 +10779,24 @@
   "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.md",
   "30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.md",
   "30-architecture/30.2-system-design/01-theory/30.2.1.05-caching-patterns.md",
-  "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md",
-  "30-architecture/30.2-system-design/01-theory/30.2.1.07-distributed-transactions.md",
   "30-architecture/30.2-system-design/01-theory/30.2.1.08-rate-limiting.md",
   "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.md",
   "30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.md",
   "30-architecture/30.2-system-design/01-theory/30.2.1.11-architecture-patterns.md",
   "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md",
   "30-architecture/30.2-system-design/01-theory/30.2.1.13-backpressure-and-flow-control.md",
-  "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.md",
   "30-architecture/30.2-system-design/01-theory/30.2.1.15-how-to-approach.md",
   "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
   "30-architecture/30.2-system-design/01-theory/30.2.1.17-probabilistic-data-structures.md",
-  "30-architecture/30.2-system-design/01-theory/30.2.1.18-outbox-and-cdc.md",
   "30-architecture/30.2-system-design/01-theory/30.2.1.19-resilience-patterns-deep-dive.md",
   "30-architecture/30.2-system-design/01-theory/30.2.1.20-multi-region-deployment.md",
   "30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.md",
   "30-architecture/30.2-system-design/01-theory/30.2.1.22-dns-and-name-resolution.md",
-  "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.md",
-  "30-architecture/30.2-system-design/01-theory/INDEX.md",
-  "30-architecture/30.2-system-design/01-theory/REVISION.md",
-  "30-architecture/30.2-system-design/02-case-studies/30.2.2.01-url-shortener.md",
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.02-whatsapp.md",
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.03-uber.md",
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.04-netflix.md",
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.05-google-drive.md",
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.06-payment-gateway.md",
-  "30-architecture/30.2-system-design/02-case-studies/30.2.2.07-notification-service.md",
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.08-ticket-booking.md",
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.09-e-commerce.md",
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.10-hospital-management.md",
@@ -9806,7 +10804,6 @@
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.12-twitter-feed.md",
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.13-rate-limiter.md",
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.md",
-  "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.md",
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.md",
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.17-youtube.md",
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.18-dropbox.md",
@@ -9820,12 +10817,8 @@
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.26-distributed-id-generator.md",
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.27-ad-click-aggregator.md",
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.28-parking-lot.md",
-  "30-architecture/30.2-system-design/02-case-studies/30.2.2.29-distributed-cache.md",
   "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md",
-  "30-architecture/30.2-system-design/02-case-studies/30.2.2.31-api-gateway.md",
-  "30-architecture/30.2-system-design/02-case-studies/INDEX.md",
   "30-architecture/30.2-system-design/02-case-studies/REVISION.md",
-  "30-architecture/30.2-system-design/INDEX.md",
   "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.md",
   "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/INDEX.md",
   "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/REVISION.md",
@@ -9855,7 +10848,6 @@
   "30-architecture/30.3-infra-patterns/06-interview-prep/30.3.6.01-interview-questions.md",
   "30-architecture/30.3-infra-patterns/06-interview-prep/INDEX.md",
   "30-architecture/30.3-infra-patterns/INDEX.md",
-  "30-architecture/INDEX.md",
   "40-platform/40.1-docker/40.1.01-images-containers.md",
   "40-platform/40.1-docker/40.1.02-volumes-networks.md",
   "40-platform/40.1-docker/40.1.03-compose.md",

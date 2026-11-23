@@ -18,7 +18,7 @@ Source: [Authentication in Next.js](10.4.4.01-authentication.md)
 
 **A:** A verified, unexpired token or valid stored session plus current account checks. Protected resources also need authorization for that verified identity.
 
-**Q:** Why does httpOnly not make an application immune to XSS?
+**Q:** Why does `HttpOnly` not make an application immune to XSS?
 
 **A:** It prevents JavaScript from reading the token directly. Injected code may still issue authenticated requests or read exposed page data.
 
@@ -26,7 +26,7 @@ Source: [Authentication in Next.js](10.4.4.01-authentication.md)
 
 **A:** Proxy is an early routing hint and may not cover every Route Handler or Server Action. The data-access layer must resolve the current principal and enforce tenant/resource permissions where data is read or changed.
 
-**Q:** Why is a reusable JWT labeled csrf an inadequate CSRF protocol?
+**Q:** Why is a reusable JWT labeled `csrf` an inadequate CSRF protocol?
 
 **A:** It is not tied to the visitor's session and can be replayed. Use a trusted origin check or the library's session-bound token protocol.
 
@@ -46,15 +46,15 @@ Source: [Image Optimization in Next.js](10.4.4.02-image-optimization.md)
 
 **A:** No. Requested variants are transformed on demand and then cached. External custom loaders can use a different optimization service.
 
-**Q:** Why must sizes describe the image's real displayed width?
+**Q:** Why must `sizes` describe the image's real displayed width?
 
-**A:** The browser uses that hint to choose a srcset candidate. An inaccurate hint can download a much larger image than the layout needs.
+**A:** The browser uses that hint to choose a `srcset` candidate. An inaccurate hint can download a much larger image than the layout needs.
 
 **Q:** When can dimensions and blur data come from a static import?
 
 **A:** Supported static JPEG/PNG/WebP/AVIF imports can provide dimensions and blur metadata automatically; animated sources do not get that blur treatment.
 
-**Q:** Which parent requirements make fill mode reserve stable space?
+**Q:** Which parent requirements make `fill` mode reserve stable space?
 
 **A:** A positioned container needs a defined size or aspect ratio. The image can fill it without determining the container's height itself.
 
@@ -78,23 +78,23 @@ Source: [Deploying Next.js](10.4.4.03-deploying-nextjs.md)
 
 **A:** Own deployment, shared caching, runtime dependencies, network access, and observability. Standalone output reduces packaging work but does not provide those operations.
 
-**Q:** Why copy public and .next/static after copying standalone output?
+**Q:** Why copy `public` and `.next/static` after copying standalone output?
 
 **A:** Output tracing does not include those static asset directories by default. Missing them leaves HTML without its expected files.
 
 **Q:** Which tag data and coordination must a previous-model cache handler preserve across replicas?
 
-**A:** Preserve the full cache value and timestamp. Page and route tags are in the data headers under x-next-cache-tags; cached fetch tags come from ctx.tags. Preserve types such as Buffer and Map, keep the tag index shared, and make reads honor remote invalidations. `refreshTags()` belongs to the separate plural `cacheHandlers` contract for Cache Components.
+**A:** Preserve the full cache value and timestamp. Page and route tags are in the data headers under `x-next-cache-tags`; cached `fetch` tags come from `ctx.tags`. Preserve types such as `Buffer` and `Map`, keep the tag index shared, and make reads honor remote invalidations. `refreshTags()` belongs to the separate plural `cacheHandlers` contract for Cache Components.
 
-**Q:** Does configuring cacheHandler automatically move every optimized image into that store?
+**Q:** Does configuring `cacheHandler` automatically move every optimized image into that store?
 
-**A:** No. Image support starts at Next.js 16.2 and requires `images.customCacheHandler: true`; without it, the optimizer uses its separate disk cache. The custom handler must support IMAGE entries before opting in.
+**A:** No. Image support starts at Next.js 16.2 and requires `images.customCacheHandler: true`; without it, the optimizer uses its separate disk cache. The custom handler must support `IMAGE` entries before opting in.
 
-**Q:** What must match across replicas that serve one build, and what does deploymentId do during a rollout?
+**Q:** What must match across replicas that serve one build, and what does `deploymentId` do during a rollout?
 
-**A:** Replicas use the same artifact and embedded Server Action encryption key. A deploymentId helps detect version skew and trigger a hard navigation; it does not route an old client to an old server. Keep immutable assets available during overlap.
+**A:** Replicas use the same artifact and embedded Server Action encryption key. A `deploymentId` helps detect version skew and trigger a hard navigation; it does not route an old client to an old server. Keep immutable assets available during overlap.
 
-**Q:** Why can changing a container variable leave a NEXT_PUBLIC URL unchanged?
+**Q:** Why can changing a container variable leave a `NEXT_PUBLIC_*` URL unchanged?
 
 **A:** Its browser value was inlined during build. Rebuild the client bundle or read configurable values through request-time server code.
 
@@ -110,7 +110,7 @@ Source: [Deploying Next.js](10.4.4.03-deploying-nextjs.md)
 
 Source: [Authentication](10.4.4.01-authentication.md), [Image optimization](10.4.4.02-image-optimization.md), [Deployment](10.4.4.03-deploying-nextjs.md)
 
-**Q:** A signed session says admin but the account was demoted. What should authorize a protected write?
+**Q:** A signed session says `admin` but the account was demoted. What should authorize a protected write?
 
 **A:** A verified identity resolved against current account/permission policy. An early routing check based on token claims cannot establish current resource access by itself.
 
@@ -120,7 +120,7 @@ Source: [Authentication](10.4.4.01-authentication.md), [Image optimization](10.4
 
 **Q:** A 400-CSS-pixel card appears on a density-2 display. Why might the browser choose an approximately 800-pixel image?
 
-**A:** The display needs about two source pixels per CSS pixel. Accurate sizes and available srcset candidates let it choose suitable bytes; optimizer configuration and browser choice determine the actual candidate.
+**A:** The display needs about two source pixels per CSS pixel. Accurate `sizes` and available `srcset` candidates let it choose suitable bytes; optimizer configuration and browser choice determine the actual candidate.
 
 **Q:** Why should source replacement create a new loading-state owner?
 

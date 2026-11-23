@@ -22,17 +22,17 @@ Source: [React Hook Form](10.5.01-react-hook-form.md)
 
 Source: [Zod](10.5.02-zod.md)
 
-**Q:** Why can z.input and z.output differ for the same Zod schema?
+**Q:** Why can `z.input` and `z.output` differ for the same Zod schema?
 
-**A:** Transforms, preprocessing and coercion can accept one input type and return another. z.infer describes the output, so form defaults and parsed results may need different types.
+**A:** Transforms, preprocessing and coercion can accept one input type and return another. `z.infer` describes the output, so form defaults and parsed results may need different types.
 
 ## Formik
 
 Source: [Formik](10.5.03-formik.md)
 
-**Q:** Why should resetForm run after confirmed success rather than in finally?
+**Q:** Why should `resetForm` run after confirmed success rather than in `finally`?
 
-**A:** Finally also runs after failure. Resetting there can destroy the user's input before they can correct or retry it.
+**A:** `finally` also runs after failure. Resetting there can destroy the user's input before they can correct or retry it.
 
 ## TanStack Form
 
@@ -46,7 +46,7 @@ Source: [TanStack Form](10.5.04-tanstack-form.md)
 
 Source: [Server Actions & Modern Form Patterns](10.5.05-server-actions-and-form-patterns.md)
 
-**Q:** Why pass the server function directly to useActionState for progressive enhancement?
+**Q:** Why pass the server function directly to `useActionState` for progressive enhancement?
 
 **A:** The framework can preserve the server-function form path and return state before hydration. A client-only wrapper requires JavaScript and does not inherit that contract.
 
@@ -66,7 +66,7 @@ Source: [Autosave & Draft Recovery](10.5.06-autosave-draft-recovery.md)
 
 Source: [Learning chapter](10.5.01-react-hook-form.md)
 
-**Q:** Why does disabling submit while isSubmitting not guarantee one booking?
+**Q:** Why does disabling submit while `isSubmitting` not guarantee one booking?
 
 **A:** It controls this UI while the awaited callback runs. Network uncertainty, another client or direct API retry still needs a server-side idempotency/transaction contract.
 
@@ -74,18 +74,17 @@ Source: [Learning chapter](10.5.01-react-hook-form.md)
 
 **A:** Validate visible steps before advancing and validate the complete payload at final submit and on the server. Retained values alone do not rerun every unmounted built-in field rule.
 
-
 ## Parsing and conversion boundaries
 
 Source: [Learning chapter](10.5.02-zod.md)
 
-**Q:** Why is z.input different from z.output for a string-to-number schema?
+**Q:** Why is `z.input` different from `z.output` for a string-to-number schema?
 
-**A:** The raw accepted value is a string, while the successfully parsed value is a number. z.infer describes output, so form collection and submit types can differ.
+**A:** The raw accepted value is a string, while the successfully parsed value is a number. `z.infer` describes output, so form collection and submit types can differ.
 
-**Q:** Why should textual false not go through z.coerce.boolean blindly?
+**Q:** Why should textual `false` not go through `z.coerce.boolean` blindly?
 
-**A:** JavaScript Boolean of a nonempty string is true. Explicitly map the permitted textual values before treating them as booleans.
+**A:** JavaScript `Boolean` of a nonempty string is `true`. Explicitly map the permitted textual values before treating them as booleans.
 
 **Q:** Does a parsed invoice payload establish tenant permission?
 
@@ -97,7 +96,7 @@ Source: [Formik](10.5.03-formik.md), [TanStack Form](10.5.04-tanstack-form.md)
 
 **Q:** Why can a synchronous wizard Next handler leave Formik pending?
 
-**A:** A non-promise submit handler must explicitly settle isSubmitting. Changing the step alone does not finish the submission cycle.
+**A:** A non-promise submit handler must explicitly settle `isSubmitting`. Changing the step alone does not finish the submission cycle.
 
 **Q:** Why does a stable row ID coexist with an indexed form path?
 

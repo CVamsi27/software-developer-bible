@@ -70,7 +70,7 @@ Source: [Error Boundary](10.3.3.02-error-boundary.md)
 
 **A:** It retries rendering the region and remounts its children, losing their local state. It does not invalidate a rejected Promise held in an external cache; the resource owner must provide a fresh value before that retry can succeed.
 
-**Q:** Why does wrapping a throwing `onClick` handler in an ErrorBoundary do nothing?
+**Q:** Why does wrapping a throwing `onClick` handler in an `ErrorBoundary` do nothing?
 
 **A:** Event handlers run outside React's render pass, so the throw never travels up the fiber tree to the boundary — it must be caught with `try/catch` inside the handler.
 
@@ -178,7 +178,7 @@ Source: [React Performance Optimization](10.3.3.05-performance.md)
 
 **A:** `memo` compares each prop with `Object.is` by default. A new array reference counts as changed even if its entries look the same; state or Context consumed by the child can also render it.
 
-**Q:** What does the Updating results status in ProductSearch communicate?
+**Q:** What does the `Updating results` status in `ProductSearch` communicate?
 
 **A:** `useDeferredValue(query)` can lag behind the input while the result subtree renders, so `query !== deferredQuery` means the visible list still matches an older query. The status paragraph makes that delay explicit instead of presenting retained results as the final response to the newest input.
 
@@ -240,7 +240,7 @@ Source: [TanStack Query: Server State Ownership](10.3.3.07-tanstack-query.md)
 
 **Q:** Why can concurrent observers of the same key share a request, while a list and detail disagree?
 
-**A:** The same QueryClient coordinates an in-flight fetch for that key. List and detail keys own independent result objects; TanStack Query does not automatically normalize their shared entities. Update or invalidate every affected result explicitly.
+**A:** The same `QueryClient` coordinates an in-flight fetch for that key. List and detail keys own independent result objects; TanStack Query does not automatically normalize their shared entities. Update or invalidate every affected result explicitly.
 
 **Q:** What happens if an optimistic update succeeds in the UI but the server rejects the mutation?
 
@@ -256,7 +256,7 @@ Source: [TanStack Query: Server State Ownership](10.3.3.07-tanstack-query.md)
 
 **Q:** Which API restores dehydrated state, and what protects an HTML script boundary?
 
-**A:** React uses HydrationBoundary; core clients can use hydrate. Dehydration returns state, not an automatic HTML-safe serialization. Use the framework's safe transport and do not interpolate untrusted raw JSON into a script.
+**A:** React uses `HydrationBoundary`; core clients can use `hydrate`. Dehydration returns state, not an automatic HTML-safe serialization. Use the framework's safe transport and do not interpolate untrusted raw JSON into a script.
 
 **Q:** Why can invalidating a query leave the network idle?
 
@@ -278,7 +278,7 @@ Source: [Custom Hooks](10.3.3.03-custom-hooks.md), [Suspense](10.3.3.01-suspense
 
 **A:** React sees a different component identity, so retained local state can be lost and work restarted. Declare lazy types outside rendering.
 
-**Q:** What remains independent when two components call useCounter?
+**Q:** What remains independent when two components call `useCounter`?
 
 **A:** Each caller owns distinct Hook records and counts. Reusing the implementation shares logic, not storage.
 
@@ -286,7 +286,7 @@ Source: [Custom Hooks](10.3.3.03-custom-hooks.md), [Suspense](10.3.3.01-suspense
 
 **A:** Each caller has a separate value and lifecycle. A shared timer could cancel another caller's work, while missing cleanup lets an obsolete value publish after the input changes or the caller unmounts. Every entry point must preserve that ownership contract.
 
-**Q:** Does navigator.onLine establish that an authenticated API request will succeed?
+**Q:** Does `navigator.onLine` establish that an authenticated API request will succeed?
 
 **A:** No. It is a browser connectivity hint; DNS, service health, authorization or a particular route can still fail.
 

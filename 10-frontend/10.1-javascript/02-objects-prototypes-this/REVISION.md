@@ -40,7 +40,7 @@ Source: [This](10.1.2.01-this.md)
 
 **Q:** Inside `setInterval(function () { this.seconds++; })` on a `Timer`, which object does `this` refer to?
 
-**A:** The host supplies the receiver, not the owning Timer: browser timers supply the window/global receiver even for a strict callback, while Node has its own timer receiver behavior. A closure or bound callback can explicitly retain the Timer instance.
+**A:** The host supplies the receiver, not the owning `Timer`: browser timers supply the window/global receiver even for a strict callback, while Node has its own timer receiver behavior. A closure or bound callback can explicitly retain the `Timer` instance.
 
 **Q:** Why does a plain `function inner()` nested inside a method ignore that method's `this`, and what is the fix?
 
@@ -52,7 +52,7 @@ Source: [Prototypes](10.1.2.02-prototypes.md)
 
 **Q:** What is a prototype, in the terms the engine actually uses?
 
-**A:** For an ordinary object, its internal `[[Prototype]]` link is another object or null. Missing own properties can delegate along those links; Object.prototype and null-prototype dictionaries terminate at null.
+**A:** For an ordinary object, its internal `[[Prototype]]` link is another object or `null`. Missing own properties can delegate along those links; `Object.prototype` and null-prototype dictionaries terminate at `null`.
 
 **Q:** What happens when a key is missing everywhere along the chain?
 
@@ -60,11 +60,11 @@ Source: [Prototypes](10.1.2.02-prototypes.md)
 
 **Q:** What do `obj.__proto__` and `fn.prototype` each describe?
 
-**A:** `__proto__` is usually an inherited legacy accessor, which can be absent or shadowed. A constructible function's `.prototype` is an ordinary property used for default new instances; arrows are not constructors. Use Object.getPrototypeOf to inspect an object's actual link.
+**A:** `__proto__` is usually an inherited legacy accessor, which can be absent or shadowed. A constructible function's `.prototype` is an ordinary property used for default new instances; arrows are not constructors. Use `Object.getPrototypeOf` to inspect an object's actual link.
 
-**Q:** Why does `Person.prototype = { greet() {} }` lose the constructor even though `alice.greet()` still runs?
+**Q:** Why does `Person.prototype = { greet() {} }` lose the `constructor` even though `alice.greet()` still runs?
 
-**A:** The assignment changes the prototype used for future default instances and omits the old own constructor property. Existing instances keep their old links; they do not automatically re-point. The constructor property itself is ordinary data, not an object-creation authority.
+**A:** The assignment changes the prototype used for future default instances and omits the old own `constructor` property. Existing instances keep their old links; they do not automatically re-point. The `constructor` property itself is ordinary data, not an object-creation authority.
 
 **Q:** What does `Object.create(null)` buy you?
 
@@ -76,11 +76,11 @@ Source: [Prototypes](10.1.2.02-prototypes.md)
 
 **Q:** What breaks if a derived constructor writes to `this` before calling `super()`?
 
-**A:** The derived constructor's `this` binding is uninitialized before super() establishes it, so accessing it throws ReferenceError. Constructors that deliberately return an object have further rules; the ordinary field-initialization path must call super first.
+**A:** The derived constructor's `this` binding is uninitialized before `super()` establishes it, so accessing it throws `ReferenceError`. Constructors that deliberately return an object have further rules; the ordinary field-initialization path must call `super()` first.
 
 **Q:** Two quick checks settle most "which object is on the chain?" questions — what are they?
 
-**A:** Object.getPrototypeOf reports the immediate link. Default instanceof checks for the constructor's prototype in the chain, but custom Symbol.hasInstance, altered chains and cross-realm values can change the interpretation.
+**A:** `Object.getPrototypeOf` reports the immediate link. Default `instanceof` checks for the constructor's prototype in the chain, but custom `Symbol.hasInstance`, altered chains and cross-realm values can change the interpretation.
 
 **Q:** Does every write to an inherited primitive value create an own property?
 
@@ -100,15 +100,15 @@ Source: [Proxy & Reflect](10.1.2.03-proxy-reflect.md)
 
 **Q:** What stops a `set` trap from writing a value a frozen target forbids?
 
-**A:** Engine invariants: the operation is re-checked against the target's own property attributes, and a trap that claims a result the target cannot back throws a TypeError.
+**A:** Engine invariants: the operation is re-checked against the target's own property attributes, and a trap that claims a result the target cannot back throws a `TypeError`.
 
 **Q:** Why must a `set` trap end by returning something truthy?
 
-**A:** The result indicates whether the set operation succeeded. A falsy result makes strict assignment throw TypeError; a successful assignment expression still evaluates to its right-hand-side value, not the trap's boolean result.
+**A:** The result indicates whether the set operation succeeded. A falsy result makes strict assignment throw `TypeError`; a successful assignment expression still evaluates to its right-hand-side value, not the trap's boolean result.
 
 **Q:** What happens to a proxy after `revoke()` runs?
 
-**A:** Further trapped object operations such as get/has throw TypeError, while the raw target remains usable. Values previously returned from the proxy are not recursively revoked.
+**A:** Further trapped object operations such as `get`/`has` throw `TypeError`, while the raw target remains usable. Values previously returned from the proxy are not recursively revoked.
 
 **Q:** Why is `new Proxy(42, {})` rejected, and when is the `apply` trap consulted?
 
@@ -126,9 +126,9 @@ Source: [Proxy & Reflect](10.1.2.03-proxy-reflect.md)
 
 **A:** The runtime also needs rules for reads after `await`, stale dependency cleanup, errors, re-entry and scheduling. A Proxy `get`/`set` sketch explains dependency capture and notification, but it does not decide those lifecycle contracts.
 
-**Q:** In the fullName getter example, does target[prop] bind this to the parent prototype?
+**Q:** In the `fullName` getter example, does `target[prop]` bind `this` to the parent prototype?
 
-**A:** No; the target is child, so both approaches produce Alice Smith. Reflect.get preserves the proxy receiver and therefore traps the nested firstName and lastName reads too; direct target access skips those nested traps.
+**A:** No; the target is `child`, so both approaches produce `'Alice Smith'`. `Reflect.get` preserves the proxy receiver and therefore traps the nested `firstName` and `lastName` reads too; direct target access skips those nested traps.
 
 ## Summary
 

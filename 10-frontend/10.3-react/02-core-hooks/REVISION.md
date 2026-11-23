@@ -18,7 +18,7 @@ Source: [useState](10.3.2.01-usestate.md)
 
 **A:** The setter function keeps its identity while the component receives a new state snapshot. Calling that setter does not mutate variables captured by an existing handler.
 
-**Q:** How does React associate two useState calls with the correct stored values?
+**Q:** How does React associate two `useState` calls with the correct stored values?
 
 **A:** It follows the component Hook call order to select the corresponding records. Conditional calls can shift that order and associate later calls with the wrong records.
 
@@ -32,11 +32,11 @@ Source: [useState](10.3.2.01-usestate.md)
 
 **Q:** What must an update preserve when changing a nested form field?
 
-**A:** It must copy each changed level while retaining unaffected fields. A Hook setter replaces the supplied object instead of merging it like class setState.
+**A:** It must copy each changed level while retaining unaffected fields. A Hook setter replaces the supplied object instead of merging it like class `setState`.
 
-**Q:** Why is doubleCount better derived than synchronized through another setter?
+**Q:** Why is `doubleCount` better derived than synchronized through another setter?
 
-**A:** Its value is completely determined by count. Storing a second copy creates another update and permits the copies to disagree.
+**A:** Its value is completely determined by `count`. Storing a second copy creates another update and permits the copies to disagree.
 
 **Q:** What behavior can a lazy initializer save on later renders?
 
@@ -52,7 +52,7 @@ Source: [useEffect](10.3.2.02-useeffect.md)
 
 **Q:** How does React decide whether an effect dependency changed?
 
-**A:** It compares each listed value with its preceding committed value using Object.is. A newly allocated object or function usually differs even when its contents appear equivalent.
+**A:** It compares each listed value with its preceding committed value using `Object.is`. A newly allocated object or function usually differs even when its contents appear equivalent.
 
 **Q:** Which captured values does a cleanup function use?
 
@@ -70,7 +70,7 @@ Source: [useEffect](10.3.2.02-useeffect.md)
 
 **A:** An async function returns a Promise, whereas React expects no return or a teardown function. Invoke async work inside a synchronous setup and handle its result and cleanup separately.
 
-**Q:** Does useEffect guarantee that its code never delays paint?
+**Q:** Does `useEffect` guarantee that its code never delays paint?
 
 **A:** No; passive effects may flush before paint, and their callbacks execute synchronously when called. Keep them small and use layout effects only for work that must precede paint.
 
@@ -80,9 +80,9 @@ Source: [useMemo & useCallback](10.3.2.03-usememo-usecallback.md)
 
 **Q:** Which result does each memoization Hook preserve between ordinary updates?
 
-**A:** useMemo retains the result of a calculation, while useCallback retains a function reference. Neither should determine whether application logic remains correct.
+**A:** `useMemo` retains the result of a calculation, while `useCallback` retains a function reference. Neither should determine whether application logic remains correct.
 
-**Q:** Does useCallback avoid creating the arrow passed to it?
+**Q:** Does `useCallback` avoid creating the arrow passed to it?
 
 **A:** JavaScript still evaluates that argument. When dependencies match, React returns the previously stored function so the consumer observes a stable reference.
 
@@ -92,7 +92,7 @@ Source: [useMemo & useCallback](10.3.2.03-usememo-usecallback.md)
 
 **Q:** Why should a cached sorting operation copy its input array first?
 
-**A:** Array sort mutates the array it receives. Copying prevents a render-time calculation from altering props or shared data.
+**A:** `Array.prototype.sort` mutates the array it receives. Copying prevents a render-time calculation from altering props or shared data.
 
 **Q:** Can a stable callback alone stop a table row from rendering?
 
@@ -126,7 +126,7 @@ Source: [useRef](10.3.2.04-useref.md)
 
 **Q:** How does ref forwarding differ between React 18 and React 19?
 
-**A:** React 18 function components use forwardRef to receive the special ref. React 19 can receive it as a prop and explicitly pass it to a node or imperative handle.
+**A:** React 18 function components use `forwardRef` to receive the special `ref`. React 19 can receive it as a prop and explicitly pass it to a node or imperative handle.
 
 **Q:** Why must a timer Start handler check whether a timer is already running?
 
@@ -134,7 +134,7 @@ Source: [useRef](10.3.2.04-useref.md)
 
 **Q:** Why should a video control label follow media events?
 
-**A:** Playback can fail or change outside the button handler. Updating state from play, pause and ended events keeps the label aligned with the media element.
+**A:** Playback can fail or change outside the button handler. Updating state from `play`, `pause` and `ended` events keeps the label aligned with the media element.
 
 **Q:** Why can reading a previous-value ref during render violate purity?
 
@@ -152,9 +152,9 @@ Source: [Context API](10.3.2.05-context-api.md)
 
 **A:** It transports the owner’s value to distant descendants. Updates and state transitions still belong to the owner’s state Hook, reducer or external store.
 
-**Q:** When is the value passed to createContext used?
+**Q:** When is the value passed to `createContext` used?
 
-**A:** It is the static fallback when no matching provider exists above a reader. An explicit undefined provider value overrides it rather than restoring the fallback.
+**A:** It is the static fallback when no matching provider exists above a reader. An explicit `undefined` provider value overrides it rather than restoring the fallback.
 
 **Q:** Which provider wins when the same context is provided twice?
 
@@ -172,7 +172,7 @@ Source: [Context API](10.3.2.05-context-api.md)
 
 **A:** It avoids context propagation caused solely by allocating an equivalent new object. It does not stop parent-driven renders or updates from actual changes to the context fields.
 
-**Q:** Why cannot React.memo block an update to context a component reads?
+**Q:** Why cannot `React.memo` block an update to context a component reads?
 
 **A:** Consumed context is a direct dependency independent of the prop comparison. Splitting contexts can reduce which readers are notified when one value changes.
 
@@ -196,7 +196,7 @@ Source: [useMemo/useCallback](10.3.2.03-usememo-usecallback.md), [useRef](10.3.2
 
 **A:** The ref object remains stable; assigning `.current` does not schedule the effect. A callback ref can own the observer for each attached node.
 
-**Q:** How does a React 19 callback ref release a ResizeObserver?
+**Q:** How does a React 19 callback ref release a `ResizeObserver`?
 
 **A:** It returns cleanup from attachment. Detachment invokes that cleanup; stable callback identity avoids unnecessary detach/attach cycles.
 

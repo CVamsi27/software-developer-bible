@@ -20,25 +20,25 @@ Source: [The `satisfies` Operator](10.2.4.01-satisfies-operator.md)
 
 **Q:** How do finite and open route keys change the check?
 
-**A:** A finite key union checks required and excess literal keys. Record<string, Route> accepts any declared key, while the inferred object still exposes only the keys it contains.
+**A:** A finite key union checks required and excess literal keys. `Record<string, Route>` accepts any declared key, while the inferred object still exposes only the keys it contains.
 
-**Q:** When should a route table use an annotation instead of satisfies?
+**Q:** When should a route table use an annotation instead of `satisfies`?
 
-**A:** Use an annotation when later code needs the wider declared contract or must assign other values allowed by it. Use satisfies when callers should retain the entries and narrower values written in the object.
+**A:** Use an annotation when later code needs the wider declared contract or must assign other values allowed by it. Use `satisfies` when callers should retain the entries and narrower values written in the object.
 
-**Q:** When does as const add something to a satisfies check?
+**Q:** When does `as const` add something to a `satisfies` check?
 
-**A:** Use it when downstream code needs literal values or readonly properties. A target whose property is string or number can still widen a mutable property.
+**A:** Use it when downstream code needs literal values or `readonly` properties. A target whose property is `string` or `number` can still widen a mutable property.
 
 **Q:** What does `satisfies` prove about an untrusted JSON result at runtime?
 
-**A:** Nothing; the operator emits no validation code. Parse the result as unknown and run a validator before relying on a domain type.
+**A:** Nothing; the operator emits no validation code. Parse the result as `unknown` and run a validator before relying on a domain type.
 
-**Q:** Why can a property declared as string still widen after satisfies?
+**Q:** Why can a property declared as `string` still widen after `satisfies`?
 
-**A:** The target context gives that property the type string, so a mutable initializer such as one path literal widens to string. satisfies preserves the useful expression shape without forcing every member to stay literal.
+**A:** The target context gives that property the type `string`, so a mutable initializer such as one path literal widens to `string`. `satisfies` preserves the useful expression shape without forcing every member to stay literal.
 
-**Q:** Does an open Record<string, Route> catch a misspelled route name?
+**Q:** Does an open `Record<string, Route>` catch a misspelled route name?
 
 **A:** No; every string key is allowed. Use a finite key union when the route set is fixed.
 
@@ -46,7 +46,7 @@ Source: [The `satisfies` Operator](10.2.4.01-satisfies-operator.md)
 
 **A:** It supplies a stable public contract instead of exposing implementation-specific inference. That can allow an internal refactor without changing the types consumers compile against.
 
-**Q:** Does an open route record catch an admni key at declaration time?
+**Q:** Does an open route record catch an `admni` key at declaration time?
 
 **A:** No. Its string index signature accepts that entry if the value has the required shape. A finite key union catches a typo in the table; retained inferred keys catch a typo in later property access.
 
@@ -54,9 +54,9 @@ Source: [The `satisfies` Operator](10.2.4.01-satisfies-operator.md)
 
 Source: [Branded Types](10.2.4.02-branded-types.md)
 
-**Q:** Why can an ordinary string not satisfy a required brand field?
+**Q:** Why can an ordinary `string` not satisfy a required brand field?
 
-**A:** Structural compatibility checks the intersection as well as its base primitive. The extra required member makes the untagged string insufficient, even though the runtime representation stays a string.
+**A:** Structural compatibility checks the intersection as well as its base primitive. The extra required member makes the untagged `string` insufficient, even though the runtime representation stays a `string`.
 
 **Q:** What isolation does a module-private `unique symbol` add?
 
@@ -152,7 +152,7 @@ Source: [Declaration Files (.d.ts)](10.2.4.04-declaration-files.md)
 
 **Q:** Why does the Express example augment `express-serve-static-core`?
 
-**A:** That package declares the core Request and Response interfaces used by handler types. Extending those interfaces makes custom fields visible through those signatures.
+**A:** That package declares the core `Request` and `Response` interfaces used by handler types. Extending those interfaces makes custom fields visible through those signatures.
 
 **Q:** What decides whether an SVG import should be typed as a URL or a component?
 
@@ -176,7 +176,7 @@ Source: [Declaration Files (.d.ts)](10.2.4.04-declaration-files.md)
 
 **Q:** Why keep a new ambient package declaration separate from its consumer import?
 
-**A:** The top-level import turns the declaration file into a module. A declare module block then augments an existing resolved package instead of declaring a new ambient package.
+**A:** The top-level import turns the declaration file into a module. A `declare module` block then augments an existing resolved package instead of declaring a new ambient package.
 
 **Q:** Can a consumer type check establish that `greet` returns a string at runtime?
 
@@ -210,9 +210,9 @@ Source: [Composing Advanced TypeScript Patterns](10.2.4.05-advanced-patterns.md)
 
 **A:** Callers need a controlled way to turn external values into accepted IDs. A constructor keeps validation and the necessary assertion in one place.
 
-**Q:** Why constrain an event map with object instead of Record<string, unknown>?
+**Q:** Why constrain an event map with `object` instead of `Record<string, unknown>`?
 
-**A:** A named interface need not promise that every possible string key exists. The object constraint accepts its known event keys while the generic preserves their lookup types.
+**A:** A named interface need not promise that every possible string key exists. The `object` constraint accepts its known event keys while the generic preserves their lookup types.
 
 **Q:** Which evidence makes a complicated composed type worth keeping?
 

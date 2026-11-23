@@ -16,7 +16,7 @@
 | 01 | [The `satisfies` Operator](10.2.4.01-satisfies-operator.md) | Finite and open keys, contextual inference, route contracts | Essential | Foundational | 4 min |
 | 02 | [Branded Types](10.2.4.02-branded-types.md) | Opaque IDs, validated units and currency, runtime trust boundaries | Important | Specialized | 7 min |
 | 03 | [Decorators](10.2.4.03-decorators.md) | Newer and legacy modes, wrappers, accessors, metadata consumers | Important | Specialized | 7 min |
-| 04 | [Declaration Files](10.2.4.04-declaration-files.md) | .d.ts scope, module augmentation, bundler assets, package exports | Important | Specialized | 6 min |
+| 04 | [Declaration Files](10.2.4.04-declaration-files.md) | `.d.ts` scope, module augmentation, bundler assets, package exports | Important | Specialized | 6 min |
 | 05 | [Advanced Patterns](10.2.4.05-advanced-patterns.md) | Composed event/payload contracts, dispatch, cleanup and failure policy | Important | Specialized | 6 min |
 | 06 | [TypeScript Compiler Pipeline](10.2.4.06-typescript-compiler-pipeline.md) | Program construction, module resolution, parse/bind/check/emit, build and editor boundaries | Important | Specialized | 6 min |
 

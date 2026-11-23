@@ -1,7 +1,7 @@
 # Foundations — TypeScript
 
-> **Study time:** ≈ 29 min of reading (5 files, ~6 min average).
-> **5 files.** Type aliases vs interfaces, `keyof`/`typeof`, control-flow-based narrowing, and the tsconfig compiler options that decide what actually gets checked.
+> **Study time:** ≈ 30 min of reading (5 files, ~6 min average).
+> **5 files.** Type aliases vs interfaces, `keyof`/`typeof`, control-flow-based narrowing, and the `tsconfig.json` compiler options that decide what actually gets checked.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#files)
 [![Category](https://img.shields.io/badge/category-Foundations-orange)](../INDEX.md)
@@ -12,11 +12,11 @@
 ## Files
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| ------ | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ | ------------- | ------------------ | ----------: |
+| ------ | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------ | ----------: |
 | 01 | [Types vs Interfaces](10.2.1.01-types-vs-interfaces.md) | Type aliases, interfaces, declaration merging, when to use each, performance | Essential | Foundational | 6 min |
 | 02 | [keyof / typeof](10.2.1.02-keyof-typeof.md) | Key unions, value-derived types, indexed access, safe dynamic lookup, mapped-type filtering | Essential | Foundational | 6 min |
-| 03 | [Type Narrowing](10.2.1.03-type-narrowing.md) | typeof guards, instanceof, discriminated unions, type predicates, control flow analysis | Essential | Foundational | 6 min |
-| 04 | [tsconfig & Compiler Options](10.2.1.04-tsconfig-compiler-options.md) | strict checks, bundler and compatible Node module modes, TypeScript 6/7 migration, build options and project references | Essential | Foundational | 6 min |
+| 03 | [Type Narrowing](10.2.1.03-type-narrowing.md) | `typeof` guards, `instanceof`, discriminated unions, type predicates, control flow analysis | Essential | Foundational | 6 min |
+| 04 | [tsconfig & Compiler Options](10.2.1.04-tsconfig-compiler-options.md) | `strict` checks, bundler and compatible Node module modes, TypeScript 6/7 migration, build options and project references | Essential | Foundational | 7 min |
 
 ---
 

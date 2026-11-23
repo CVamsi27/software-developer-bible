@@ -1,6 +1,6 @@
 # Interview Prep — Next.js
 
-> **Study time:** ≈ 31 min of reading (1 file, ~31 min average).
+> **Study time:** ≈ 32 min of reading (1 file, ~32 min average).
 > **1 file.** The practice bank connects version-scoped App Router, rendering, data and cache policy, security, deployment, and system-design decisions. Answer each question before reading its model answer, then trace the failure condition.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](#files)
@@ -12,8 +12,8 @@
 ## Files
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Interview Questions](10.4.5.01-interview-questions.md) | 40 questions with answers | Important | Specialized | 31 min |
+| ----: | ------------------------------------------------------- | ------------------------- | ------------- | ------------------ | ----------: |
+| 01 | [Interview Questions](10.4.5.01-interview-questions.md) | 40 questions with answers | Important | Specialized | 32 min |
 
 ---
 

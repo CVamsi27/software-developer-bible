@@ -14,9 +14,9 @@ Read the section's learning chapters first. Close them, explain each answer with
 
 Source: [HTML Fundamentals — Semantic HTML, Forms, Accessibility](10.7.01-html-fundamentals.md)
 
-**Q:** Why is a clickable div not equivalent to a button?
+**Q:** Why is a clickable `<div>` not equivalent to a `<button>`?
 
-**A:** A button supplies semantics, keyboard behavior, focus and disabled/form behavior. Reimplementing those correctly is more work than using the appropriate native element.
+**A:** A `<button>` supplies semantics, keyboard behavior, focus and disabled/form behavior. Reimplementing those correctly is more work than using the appropriate native element.
 
 ## CSS Fundamentals — Grid, Flexbox, Responsive Design, Variables
 
@@ -50,7 +50,7 @@ Source: [SEO — Meta Tags, Structured Data, Core Web Vitals](10.7.04-seo.md)
 
 Source: [Progressive Web Apps (PWA) — Service Workers, Manifest, Offline](10.7.05-pwa.md)
 
-**Q:** Why may skipWaiting create a compatibility problem for open tabs?
+**Q:** Why may `skipWaiting` create a compatibility problem for open tabs?
 
 **A:** The new worker can control pages loaded with old assets or data assumptions. Design update activation and cache lifetime for mixed versions.
 
@@ -78,7 +78,7 @@ Source: [Theming & Design Tokens](10.7.07-theming-design-tokens.md)
 
 Source: [Browser Storage](10.7.08-browser-storage.md)
 
-**Q:** What protection does an HttpOnly cookie provide, and what remains?
+**Q:** What protection does an `HttpOnly` cookie provide, and what remains?
 
 **A:** JavaScript cannot directly read that cookie. XSS may still act as the user, and cookie-based requests still require an appropriate CSRF and authorization design.
 
@@ -88,11 +88,11 @@ Source: [Tailwind CSS — Utility-First Styling with Design Tokens](10.7.09-tail
 
 **Q:** Why does changing one brand color require only the config file, not every component?
 
-**A:** Components reference named roles such as bg-surface and text-error. Tailwind 4 commonly defines them through CSS theme variables; version 3 commonly uses theme.extend in configuration. The generated class references the token, while the browser resolves the effective CSS value.
+**A:** Components reference named roles such as `bg-surface` and `text-error`. Tailwind 4 commonly defines them through CSS theme variables; version 3 commonly uses `theme.extend` in configuration. The generated class references the token, while the browser resolves the effective CSS value.
 
 **Q:** Why can a class written at runtime (`bg-${color}-500`) produce missing styles?
 
-**A:** The scanner recognizes complete class candidates, not JavaScript interpolation. Version 4 automatically detects normal sources and can add external paths or inline candidates with @source; version 3 uses configured content/safelist settings.
+**A:** The scanner recognizes complete class candidates, not JavaScript interpolation. Version 4 automatically detects normal sources and can add external paths or inline candidates with `@source`; version 3 uses configured `content`/`safelist` settings.
 
 **Q:** Why prefer extracting repeated utility lists into components instead of `@apply`?
 
@@ -102,13 +102,13 @@ Source: [Tailwind CSS — Utility-First Styling with Design Tokens](10.7.09-tail
 
 Source: [HTML](10.7.01-html-fundamentals.md), [CSS](10.7.02-css-fundamentals.md), [SEO](10.7.04-seo.md), [PWA](10.7.05-pwa.md), [Themes](10.7.07-theming-design-tokens.md), [Storage](10.7.08-browser-storage.md)
 
-**Q:** A labeled input lacks name. What happens on ordinary form submission?
+**Q:** A labeled input lacks `name`. What happens on ordinary form submission?
 
-**A:** The label still names it for interaction/accessibility, but it supplies no named entry in FormData. Label association and submitted key have different jobs.
+**A:** The label still names it for interaction/accessibility, but it supplies no named entry in `FormData`. Label association and submitted key have different jobs.
 
-**Q:** Why can a flex child overflow despite flex:1?
+**Q:** Why can a flex child overflow despite `flex: 1`?
 
-**A:** Its automatic minimum can preserve a long content width. Inspect min-width and wrapping/overflow; min-width:0 permits shrinking but does not itself wrap content.
+**A:** Its automatic minimum can preserve a long content width. Inspect `min-width` and wrapping/overflow; `min-width: 0` permits shrinking but does not itself wrap content.
 
 **Q:** Does a canonical link redirect the visitor to the preferred URL?
 
@@ -116,7 +116,7 @@ Source: [HTML](10.7.01-html-fundamentals.md), [CSS](10.7.02-css-fundamentals.md)
 
 **Q:** How do you handle app updates in a PWA?
 
-**A:** Installation and activation are separate. An installed update may wait while old clients remain; default waiting or an explicit accepted activation protocol must preserve asset/data compatibility. skipWaiting does not itself reload pages or guarantee safety.
+**A:** Installation and activation are separate. An installed update may wait while old clients remain; default waiting or an explicit accepted activation protocol must preserve asset/data compatibility. `skipWaiting` does not itself reload pages or guarantee safety.
 
 **Q:** When would you use cache-first vs network-first?
 
@@ -126,9 +126,9 @@ Source: [HTML](10.7.01-html-fundamentals.md), [CSS](10.7.02-css-fundamentals.md)
 
 **A:** Its referenced scripts/styles must also be stored and served by matching fetch rules. A manifest or cached document alone does not provide the whole shell.
 
-**Q:** Why does choosing system differ from storing dark?
+**Q:** Why does choosing `system` differ from storing `dark`?
 
-**A:** System is a policy that follows later OS changes. Dark is an explicit choice; store the policy separately from the effective root appearance.
+**A:** `system` is a policy that follows later OS changes. `dark` is an explicit choice; store the policy separately from the effective root appearance.
 
 **Q:** A request write succeeded but its IndexedDB transaction aborted. Is the draft saved?
 

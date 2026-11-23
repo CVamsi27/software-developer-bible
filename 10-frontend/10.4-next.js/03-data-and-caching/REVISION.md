@@ -18,9 +18,9 @@ Source: [Data Fetching Patterns in Next.js (App Router)](10.4.3.01-data-fetching
 
 **A:** A server read can supply data before browser execution when its inputs are already known. Browser-driven search, polling, and optimistic interactions benefit from a client query cache.
 
-**Q:** Why does adding a fetch tag not necessarily persist its response?
+**Q:** Why does adding a `fetch` tag not necessarily persist its response?
 
-**A:** Tags label entries for invalidation. In the traditional cache model, choose `force-cache` or a positive `revalidate` to opt into persistent fetch reuse.
+**A:** Tags label entries for invalidation. In the traditional cache model, choose `force-cache` or a positive `revalidate` to opt into persistent `fetch` reuse.
 
 **Q:** In the traditional cache model, how do React `cache` and `unstable_cache` differ?
 
@@ -52,9 +52,9 @@ Source: [Server Actions in Next.js](10.4.3.02-server-actions.md)
 
 **Q:** Which hook now owns returned form state in the React 19 stack?
 
-**A:** useActionState from react pairs the previous state with the next submission. The older react-dom useFormState API is deprecated.
+**A:** `useActionState` from `react` pairs the previous state with the next submission. The older `react-dom` `useFormState` API is deprecated.
 
-**Q:** Why must a useFormStatus submit button be below the form it observes?
+**Q:** Why must a `useFormStatus` submit button be below the form it observes?
 
 **A:** The hook reads the nearest parent form context. Calling it in the component that creates the form cannot observe that future child form.
 
@@ -62,13 +62,13 @@ Source: [Server Actions in Next.js](10.4.3.02-server-actions.md)
 
 **A:** The Server Action request-body limit must be raised from its default one MiB to a bounded suitable value, or the file should upload directly to storage.
 
-**Q:** Why should redirect be outside a broad action catch block?
+**Q:** Why should `redirect` be outside a broad action `catch` block?
 
-**A:** Redirect throws a framework control-flow signal. A catch can intercept it and incorrectly report a successful redirect as a failed mutation.
+**A:** `redirect` throws a framework control-flow signal. A `catch` block can intercept it and incorrectly report a successful redirect as a failed mutation.
 
 **Q:** Which returned values prove that React serialization is broader than JSON?
 
-**A:** Native Date, Map, and Set can be supported values. Ordinary functions and arbitrary class instances still cannot be returned across the boundary.
+**A:** Native `Date`, `Map`, and `Set` can be supported values. Ordinary functions and arbitrary class instances still cannot be returned across the boundary.
 
 **Q:** Why should independent reads not be dispatched as separate client actions?
 
@@ -82,13 +82,13 @@ Source: [Caching in Next.js](10.4.3.03-caching.md)
 
 **A:** The Data Cache persists reusable reads across requests. Request memoization is shorter-lived, and the Full Route Cache holds rendered route output.
 
-**Q:** Why can router.refresh still display the same old server data?
+**Q:** Why can `router.refresh()` still display the same old server data?
 
 **A:** It refreshes the browser's route view without invalidating persistent server data. The new render may read the same cached entry.
 
 **Q:** Which requests does automatic request memoization combine?
 
-**A:** Identical GET URL/options calls within a React server render. Different endpoints and Route Handler execution are outside that deduplication rule.
+**A:** Identical `GET` URL/options calls within a React server render. Different endpoints and Route Handler execution are outside that deduplication rule.
 
 **Q:** Why does an invalidation tag not isolate two users' cached records?
 
@@ -96,11 +96,11 @@ Source: [Caching in Next.js](10.4.3.03-caching.md)
 
 **Q:** Can every Next.js 16 minor version enable both Cache Components and Partial Prefetching?
 
-**A:** No. Cache Components is available from 16.0, while the separate `partialPrefetching` flag starts at 16.3 and requires Cache Components. Enable the supported configuration for the installed minor version. Cache reusable functions or components explicitly and place uncached request-time work under Suspense; traditional dynamic/revalidate/fetchCache segment settings are not equivalent controls.
+**A:** No. Cache Components is available from 16.0, while the separate `partialPrefetching` flag starts at 16.3 and requires Cache Components. Enable the supported configuration for the installed minor version. Cache reusable functions or components explicitly and place uncached request-time work under Suspense; traditional `dynamic`/`revalidate`/`fetchCache` segment settings are not equivalent controls.
 
 **Q:** Which Next.js 16 invalidation choice gives a Server Action read-your-writes behavior?
 
-**A:** updateTag immediately expires tagged data for that action workflow. revalidateTag with max instead permits stale output while background refresh runs.
+**A:** `updateTag` immediately expires tagged data for that action workflow. `revalidateTag` with `'max'` instead permits stale output while background refresh runs.
 
 ## Streaming in Next.js
 
@@ -114,11 +114,11 @@ Source: [Streaming in Next.js](10.4.3.04-streaming.md)
 
 **A:** No. Boundaries control reveal timing; a later read that needs an earlier result still waits for that result.
 
-**Q:** What does loading.tsx wrap that an arbitrary local fallback may not?
+**Q:** What does `loading.tsx` wrap that an arbitrary local fallback may not?
 
 **A:** It supplies a segment-level Suspense boundary around the page and its descendants beneath the layout. Local boundaries provide more granular reveal inside that route.
 
-**Q:** Must every Suspense boundary have its own error.tsx?
+**Q:** Must every Suspense boundary have its own `error.tsx`?
 
 **A:** No. Suspense handles pending work, while route/custom error boundaries handle failures. A route boundary may cover several Suspense regions.
 
@@ -150,17 +150,17 @@ Source: [Incremental Static Regeneration (ISR)](10.4.3.05-incremental-static-reg
 
 **A:** When no page has been generated for it yet. Build-time generation of popular IDs avoids that first-visit cost.
 
-**Q:** Does a CMS webhook calling revalidatePath eagerly rebuild the route?
+**Q:** Does a CMS webhook calling `revalidatePath` eagerly rebuild the route?
 
 **A:** No. A Route Handler marks the path for regeneration on its next visit; completed regeneration produces the replacement cache entry.
 
-**Q:** How do multiple fetch intervals affect a statically cached route?
+**Q:** How do multiple `fetch` intervals affect a statically cached route?
 
 **A:** The smallest interval governs that route's regeneration. Each data entry can still keep its own cache policy.
 
 **Q:** Why is catching an upstream error and returning a placeholder risky during ISR?
 
-**A:** That placeholder may count as a successful regeneration and replace useful cached content. Let unexpected failures throw so Next retains the last successful page.
+**A:** That placeholder may count as a successful regeneration and replace useful cached content. Let unexpected failures throw so Next.js retains the last successful page.
 
 **Q:** Why can pure static hosting not support ISR?
 
@@ -176,21 +176,21 @@ Source: [Static Exports in Next.js](10.4.3.06-static-exports.md)
 
 **Q:** Which command produces the export folder on modern Next.js?
 
-**A:** next build with output set to export emits the static output. The old next export command was removed in version 14.
+**A:** `next build` with `output: 'export'` emits the static output. The old `next export` command was removed in version 14.
 
 **Q:** Do Server Components disappear from an exported app?
 
-**A:** Their runtime execution moves to build time. The browser receives generated HTML and static navigation payloads, without a request-time Next server.
+**A:** Their runtime execution moves to build time. The browser receives generated HTML and static navigation payloads, without a request-time Next.js server.
 
 **Q:** How do App and Pages routers prohibit unknown exported dynamic IDs?
 
-**A:** App Router enumerates generateStaticParams and disables dynamicParams. Pages Router uses getStaticPaths with fallback:false.
+**A:** App Router enumerates `generateStaticParams` and disables `dynamicParams`. Pages Router uses `getStaticPaths` with `fallback: false`.
 
-**Q:** Can a request-independent GET Route Handler be exported?
+**Q:** Can a request-independent `GET` Route Handler be exported?
 
 **A:** Yes, with appropriate static configuration it emits a build-time file. Request-dependent handlers and mutation methods still require a runtime.
 
-**Q:** How can next/image work when no optimizer server exists?
+**Q:** How can `next/image` work when no optimizer server exists?
 
 **A:** Serve the source unoptimized or use a custom loader pointing to an external optimizer/CDN. Preserve layout dimensions either way.
 
@@ -202,17 +202,17 @@ Source: [Static Exports in Next.js](10.4.3.06-static-exports.md)
 
 Source: [Learning chapter](10.4.3.03-caching.md)
 
-**Q:** Why must you inspect cacheComponents before copying a caching example?
+**Q:** Why must you inspect `cacheComponents` before copying a caching example?
 
-**A:** Next.js 16 Cache Components and the traditional model use different configuration controls. Segment dynamic/revalidate/fetchCache options are not interchangeable with use-cache boundaries.
+**A:** Next.js 16 Cache Components and the traditional model use different configuration controls. Segment `dynamic`/`revalidate`/`fetchCache` options are not interchangeable with `'use cache'` boundaries.
 
-**Q:** Why can router.refresh still show old server data?
+**Q:** Why can `router.refresh()` still show old server data?
 
 **A:** It requests fresh client route rendering without necessarily invalidating the persistent server Data Cache. Invalidate the relevant server entry/path according to the write contract.
 
-**Q:** How do updateTag and revalidateTag with max differ?
+**Q:** How do `updateTag` and `revalidateTag` with `'max'` differ?
 
-**A:** updateTag is Server Actions-only immediate expiry for read-your-writes. revalidateTag(tag, max) marks entries stale for stale-while-revalidate, so readers can briefly see prior data.
+**A:** `updateTag` is Server Actions-only immediate expiry for read-your-writes. `revalidateTag(tag, 'max')` marks entries stale for stale-while-revalidate, so readers can briefly see prior data.
 
 ## Write and Delivery Traces
 

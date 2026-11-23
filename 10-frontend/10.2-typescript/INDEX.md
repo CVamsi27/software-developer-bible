@@ -1,6 +1,6 @@
 # TypeScript — Index
 
-> **Study time:** ≈ 3 h 6 m of reading (23 files, ~8 min average).
+> **Study time:** ≈ 3 h 10 m of reading (23 files, ~8 min average).
 > **23 files** — TypeScript type system mastery from basic types to branded types, template literals, declaration files, advanced generics, variance, decorators, the `satisfies` operator, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-23-blue)](../../INDEX.md)
@@ -16,11 +16,11 @@
 The categories follow prerequisite order; complete each learning flow before its revision drill.
 
 | Category | Chapters | Why it matters |
-| ---------------------------------------------------------- | -------: | ------------------------------------------------------------------------------------------------- |
-| [Foundations](01-foundations/INDEX.md) | 4 | Types vs interfaces, keyof/typeof, type narrowing, tsconfig options — every interview starts here |
-| [Generics & Inference](02-generics-and-inference/INDEX.md) | 4 | Generics, infer, advanced generics, variance — the heart of reusable TS code |
+| ---------------------------------------------------------- | -------: | ------------------------------------------------------------------------------------------------------- |
+| [Foundations](01-foundations/INDEX.md) | 4 | Types vs interfaces, `keyof`/`typeof`, type narrowing, `tsconfig` options — every interview starts here |
+| [Generics & Inference](02-generics-and-inference/INDEX.md) | 4 | Generics, `infer`, advanced generics, variance — the heart of reusable TS code |
 | [Type Transformations](03-type-transformations/INDEX.md) | 4 | Utility types, conditional types, mapped types, template literals — composable type operations |
-| [Advanced Patterns](04-advanced-patterns/INDEX.md) | 6 | Satisfies, branded types, decorators, declaration files — the senior toolkit |
+| [Advanced Patterns](04-advanced-patterns/INDEX.md) | 6 | `satisfies`, branded types, decorators, declaration files — the senior toolkit |
 | [Interview Prep](05-interview-prep/INDEX.md) | 1 | 50 curated Q&A |
 
 ---
@@ -46,8 +46,8 @@ How TypeScript represents types.
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Types vs Interfaces](01-foundations/10.2.1.01-types-vs-interfaces.md) | Type aliases, interfaces, declaration merging, when to use each, performance | Essential | Foundational | 6 min |
 | 02 | [keyof / typeof](01-foundations/10.2.1.02-keyof-typeof.md) | Key unions, value-derived types, indexed access, safe dynamic lookup, mapped-type filtering | Essential | Foundational | 6 min |
-| 03 | [Type Narrowing](01-foundations/10.2.1.03-type-narrowing.md) | typeof guards, instanceof, discriminated unions, type predicates, control flow analysis | Essential | Foundational | 6 min |
-| 04 | [tsconfig & Compiler Options](01-foundations/10.2.1.04-tsconfig-compiler-options.md) | strict flag family, bundler and Node module modes, isolatedModules, incremental/composite, skipLibCheck, TypeScript 6/7 migration | Essential | Foundational | 6 min |
+| 03 | [Type Narrowing](01-foundations/10.2.1.03-type-narrowing.md) | `typeof` guards, `instanceof`, discriminated unions, type predicates, control flow analysis | Essential | Foundational | 6 min |
+| 04 | [tsconfig & Compiler Options](01-foundations/10.2.1.04-tsconfig-compiler-options.md) | `strict` flag family, bundler and Node module modes, `isolatedModules`, `incremental`/`composite`, `skipLibCheck`, TypeScript 6/7 migration | Essential | Foundational | 7 min |
 
 ---
 
@@ -57,10 +57,10 @@ Reusable type operations.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 05 | [Generics](02-generics-and-inference/10.2.2.01-generics.md) | Generic functions, constraints, default type parameters, conditional generics | Essential | Foundational | 9 min |
-| 06 | [Infer](02-generics-and-inference/10.2.2.02-infer.md) | Type inference in conditional types, `ReturnType`, `Parameters`, `Awaited`, custom utility types | Important | Specialized | 6 min |
+| 05 | [Generics](02-generics-and-inference/10.2.2.01-generics.md) | Generic functions, constraints, default type parameters, conditional generics | Essential | Foundational | 10 min |
+| 06 | [Infer](02-generics-and-inference/10.2.2.02-infer.md) | Type inference in conditional types, `ReturnType`, `Parameters`, `Awaited`, custom utility types | Important | Specialized | 7 min |
 | 07 | [Advanced Generics](02-generics-and-inference/10.2.2.03-advanced-generics.md) | Template literal types, variadic tuples, recursive types, builder patterns | Important | Specialized | 9 min |
-| 08 | [Type Variance](02-generics-and-inference/10.2.2.04-type-variance.md) | Covariance/contravariance/invariance, strictFunctionTypes bivariance, unsound covariant arrays, in/out annotations, assignability puzzles | Important | Specialized | 7 min |
+| 08 | [Type Variance](02-generics-and-inference/10.2.2.04-type-variance.md) | Covariance/contravariance/invariance, `strictFunctionTypes` bivariance, unsound covariant arrays, `in`/`out` annotations, assignability puzzles | Important | Specialized | 7 min |
 
 ---
 
@@ -86,7 +86,7 @@ Senior-level TS — types as a design tool.
 | 13 | [The `satisfies` Operator](04-advanced-patterns/10.2.4.01-satisfies-operator.md) | Type validation without widening, literal preservation, config objects, route tables | Essential | Foundational | 4 min |
 | 14 | [Branded Types](04-advanced-patterns/10.2.4.02-branded-types.md) | Nominal-like branding, units, boundary validation, flavoring, discriminated unions | Important | Specialized | 7 min |
 | 15 | [Decorators](04-advanced-patterns/10.2.4.03-decorators.md) | Newer and legacy conventions, wrappers, accessors and metadata consumers | Important | Specialized | 7 min |
-| 16 | [Declaration Files](04-advanced-patterns/10.2.4.04-declaration-files.md) | .d.ts syntax, module augmentation, global types, asset declarations, triple-slash directives | Important | Specialized | 6 min |
+| 16 | [Declaration Files](04-advanced-patterns/10.2.4.04-declaration-files.md) | `.d.ts` syntax, module augmentation, global types, asset declarations, triple-slash directives | Important | Specialized | 6 min |
 | 17 | [Advanced Patterns](04-advanced-patterns/10.2.4.05-advanced-patterns.md) | Composed event/payload contracts, dispatch, cleanup and failure policy | Important | Specialized | 6 min |
 | 18 | [TypeScript Compiler Pipeline](04-advanced-patterns/10.2.4.06-typescript-compiler-pipeline.md) | Program graph, resolution, parse/bind/check/emit, build and editor boundaries | Important | Specialized | 6 min |
 
@@ -96,7 +96,7 @@ Senior-level TS — types as a design tool.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 19 | [Interview Questions](05-interview-prep/10.2.5.01-interview-questions.md) | 50 curated questions with answers | Essential | Foundational | 39 min |
+| 19 | [Interview Questions](05-interview-prep/10.2.5.01-interview-questions.md) | 50 curated questions with answers | Essential | Foundational | 40 min |
 
 ---
 

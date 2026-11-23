@@ -22,15 +22,15 @@ Source: [SSR, CSR, SSG, and ISR in Next.js](10.4.1.01-ssr-csr-ssg-isr.md)
 
 **A:** Expiry only makes it eligible for refresh. A later visit triggers regeneration, and failed or unfinished regeneration leaves the previous successful output in place.
 
-**Q:** Does adding use client make the initial page purely browser-rendered?
+**Q:** Does adding `'use client'` make the initial page purely browser-rendered?
 
-**A:** No. Next normally prerenders the initial Client Component UI, then hydrates it; effect-based data loading occurs afterward.
+**A:** No. Next.js normally prerenders the initial Client Component UI, then hydrates it; effect-based data loading occurs afterward.
 
 **Q:** Which part of a static data function becomes public?
 
 **A:** Returned props become part of the generated page payload. A secret used only for server authentication can stay private, but returning it or putting it in a logged URL exposes it.
 
-**Q:** Why must a slow await sit below the intended Suspense boundary?
+**Q:** Why must a slow `await` sit below the intended Suspense boundary?
 
 **A:** A parent that waits before returning its JSX cannot render that boundary yet. Moving the read into the wrapped child lets the parent reveal its shell.
 
@@ -44,7 +44,7 @@ Source: [App Router in Next.js](10.4.1.02-app-router.md)
 
 **Q:** How does a folder become a publicly rendered URL?
 
-**A:** Folders describe segments, but page.tsx exposes the UI at that location. A route group organizes files without adding a URL segment.
+**A:** Folders describe segments, but `page.tsx` exposes the UI at that location. A route group organizes files without adding a URL segment.
 
 **Q:** Why does a shared layout preserve state while a template can reset it?
 
@@ -52,17 +52,17 @@ Source: [App Router in Next.js](10.4.1.02-app-router.md)
 
 **Q:** How should a server page read a dynamic segment in Next.js 15 and 16?
 
-**A:** Receive params as a Promise and await it before reading the field. The temporary synchronous compatibility in 15 does not extend to 16.
+**A:** Receive `params` as a `Promise` and `await` it before reading the field. The temporary synchronous compatibility in 15 does not extend to 16.
 
 **Q:** What does a parallel-route `default.tsx` do on a hard load, and what happens if an unmatched slot has none?
 
-**A:** It provides fallback UI when Next cannot recover the slot's previous active state. Without a default, an unmatched slot returns a 404; the implicit `children` slot may need a default too. Return `null` for an intentionally empty slot or call `notFound()` when the route should be absent.
+**A:** It provides fallback UI when Next.js cannot recover the slot's previous active state. Without a default, an unmatched slot returns a 404; the implicit `children` slot may need a default too. Return `null` for an intentionally empty slot or call `notFound()` when the route should be absent.
 
 **Q:** If a layout checks a role and returns only the `admin` or `user` slot, has it prevented the other slot's server work?
 
-**A:** No. Next renders every slot at that segment even when the layout does not return its output. Authorize inside each slot's data-access path, and do not mix prerendered and dynamically rendered slots at one segment.
+**A:** No. Next.js renders every slot at that segment even when the layout does not return its output. Authorize inside each slot's data-access path, and do not mix prerendered and dynamically rendered slots at one segment.
 
-**Q:** Why does the current segment's error.tsx fail to catch an error in its layout?
+**Q:** Why does the current segment's `error.tsx` fail to catch an error in its layout?
 
 **A:** The error boundary is nested beneath that layout and catches the page and descendants. Use an ancestor boundary for layout or template errors; `global-error.tsx` can cover root-layout failure and must define its own `<html>` and `<body>`.
 
@@ -104,23 +104,23 @@ Source: [Client Components in Next.js](10.4.1.04-client-components.md)
 
 **Q:** When does a Client Component execute before it becomes interactive?
 
-**A:** Next normally executes it during server prerendering and again during browser hydration. Its effects wait until the browser commit.
+**A:** Next.js normally executes it during server prerendering and again during browser hydration. Its effects wait until the browser commit.
 
-**Q:** What expands the client bundle after a use client boundary?
+**Q:** What expands the client bundle after a `'use client'` boundary?
 
 **A:** Modules imported below that boundary join the client graph. Keeping a boundary close to the interactive control avoids pulling unrelated dependencies into it.
 
-**Q:** Where must a dynamic import with ssr:false be declared?
+**Q:** Where must a dynamic import with `ssr: false` be declared?
 
 **A:** Inside a Client Component wrapper. A server page can import that wrapper, but cannot directly disable SSR through that option.
 
-**Q:** Why is a false mounted flag changed in an effect hydration-safe?
+**Q:** Why is a `false` mounted flag changed in an effect hydration-safe?
 
-**A:** Both initial renders use the same false value. The effect changes content only after hydration has reconciled the matching initial HTML.
+**A:** Both initial renders use the same `false` value. The effect changes content only after hydration has reconciled the matching initial HTML.
 
-**Q:** Can a native Date and a Moment instance cross the same RSC boundary?
+**Q:** Can a native `Date` and a Moment instance cross the same RSC boundary?
 
-**A:** React supports native Date serialization. A Moment instance is an arbitrary class object and needs conversion to supported values.
+**A:** React supports native `Date` serialization. A Moment instance is an arbitrary class object and needs conversion to supported values.
 
 **Q:** Why do local product-filter controls not change a server-rendered grid by themselves?
 
@@ -132,17 +132,17 @@ Source: [Rendering comparison](10.4.1.01-ssr-csr-ssg-isr.md), [App Router](10.4.
 
 **Q:** Why can a request-rendered account page still display old data?
 
-**A:** Request rendering and upstream caching are separate. An upstream data cache or lagging source can return an older value even when Next bypasses its own persistent fetch cache.
+**A:** Request rendering and upstream caching are separate. An upstream data cache or lagging source can return an older value even when Next.js bypasses its own persistent fetch cache.
 
 **Q:** Does a middleware header naming ISR prove regeneration happened?
 
 **A:** No. It labels a request match. Verify production output and cache/timestamp behavior with controlled requests.
 
-**Q:** Which interception marker reaches /photos from feed/@modal, and why?
+**Q:** Which interception marker reaches `/photos` from `feed/@modal`, and why?
 
-**A:** `(..)photos` moves one route segment above feed. The @modal slot does not count as a URL segment; `(.)photos` would target a photo segment at the feed level instead.
+**A:** `(..)photos` moves one route segment above `feed`. The `@modal` slot does not count as a URL segment; `(.)photos` would target a photo segment at the `feed` level instead.
 
-**Q:** What does retry add beyond resetting a failed boundary in current Next.js?
+**Q:** What does `retry` add beyond resetting a failed boundary in current Next.js?
 
 **A:** Stable `retry` in 16.3+ re-fetches and re-renders the failed region. `reset` clears the boundary state without re-fetching server content; 16.2 names the newer API `unstable_retry`. Match the installed version and resource owner.
 

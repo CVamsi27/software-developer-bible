@@ -18,21 +18,21 @@ Source: [Execution Context](10.1.1.01-execution-context.md)
 
 **A:** It tracks the current evaluation, including environment references and other execution state. An environment describes bindings and enclosing scope; a block can add an environment without making a new function call.
 
-**Q:** Why can a var binding be read as undefined before its assignment, while an inner let binding cannot?
+**Q:** Why can a `var` binding be read as `undefined` before its assignment, while an inner `let` binding cannot?
 
-**A:** Declaration instantiation initializes var to undefined. A lexical binding remains uninitialized until its declaration evaluates; reading it earlier raises ReferenceError.
+**A:** Declaration instantiation initializes `var` to `undefined`. A lexical binding remains uninitialized until its declaration evaluates; reading it earlier raises `ReferenceError`.
 
-**Q:** You copy obj.run into a variable and call that variable. Does it keep obj as its receiver?
+**Q:** You copy `obj.run` into a variable and call that variable. Does it keep `obj` as its receiver?
 
-**A:** An ordinary function gets this from its invocation, not from the object it was copied from. A plain strict-mode call has undefined as this. An arrow instead keeps the enclosing this; host callbacks have their own invocation rules.
+**A:** An ordinary function gets `this` from its invocation, not from the object it was copied from. A plain strict-mode call has `undefined` as `this`. An arrow instead keeps the enclosing `this`; host callbacks have their own invocation rules.
 
 **Q:** A block contains `var total` and `let local`. Why can the function use `total` after the block but not `local`?
 
-**A:** The function's VariableEnvironment owns the `var` declaration. Its LexicalEnvironment points to the block record while inside the block and returns to the previous record afterward. Both reads use ordinary identifier lookup; there is no second lookup chain reserved for `var`. The block's `local` is no longer in that path.
+**A:** The function's `VariableEnvironment` owns the `var` declaration. Its `LexicalEnvironment` points to the block record while inside the block and returns to the previous record afterward. Both reads use ordinary identifier lookup; there is no second lookup chain reserved for `var`. The block's `local` is no longer in that path.
 
 **Q:** A default parameter creates a reader for a parameter, and the body redeclares that name with `var`. Does the reader automatically switch to the body binding?
 
-**A:** No. The reader captures the parameter environment in which it was created. Parameter expressions can require a separate body variable environment. Trace those bindings rather than treating every function's LE and VE as one fixed store.
+**A:** No. The reader captures the parameter environment in which it was created. Parameter expressions can require a separate body variable environment. Trace those bindings rather than treating every function's `LE` and `VE` as one fixed store.
 
 ## Scope
 
@@ -40,19 +40,19 @@ Source: [Scope](10.1.1.02-scope.md)
 
 **Q:** Does calling a function from a different scope change which enclosing variable its body refers to?
 
-**A:** No. Ordinary lexical lookup follows the environment associated with the function’s definition, not the caller’s local declarations. Dynamic mechanisms such as eval have additional rules.
+**A:** No. Ordinary lexical lookup follows the environment associated with the function’s definition, not the caller’s local declarations. Dynamic mechanisms such as `eval` have additional rules.
 
-**Q:** Why does a block constrain let and const but not an ordinary var declaration?
+**Q:** Why does a block constrain `let` and `const` but not an ordinary `var` declaration?
 
-**A:** Lexical declarations create block bindings. Var belongs to its enclosing function or applicable script environment; top-level module declarations stay in the module.
+**A:** Lexical declarations create block bindings. `var` belongs to its enclosing function or applicable script environment; top-level module declarations stay in the module.
 
 **Q:** What happens if an assignment targets an unresolved name?
 
-**A:** A strict-mode assignment raises ReferenceError. In ordinary sloppy code it can create a global-object property. Declare the intended binding rather than relying on that behavior.
+**A:** A strict-mode assignment raises `ReferenceError`. In ordinary sloppy code it can create a global-object property. Declare the intended binding rather than relying on that behavior.
 
-**Q:** Does const prevent changes to an object’s properties, and does Object.freeze make every nested object immutable?
+**Q:** Does `const` prevent changes to an object’s properties, and does `Object.freeze` make every nested object immutable?
 
-**A:** Const prevents reassignment of that binding. Object.freeze is shallow: the frozen object's own properties cannot be replaced, but a referenced nested object can still change. Deep immutability needs a deliberate policy for the whole relevant graph.
+**A:** `const` prevents reassignment of that binding. `Object.freeze` is shallow: the frozen object's own properties cannot be replaced, but a referenced nested object can still change. Deep immutability needs a deliberate policy for the whole relevant graph.
 
 ## Call Stack
 
@@ -80,17 +80,17 @@ Source: [Hoisting](10.1.1.04-hoisting.md)
 
 **Q:** Does hoisting physically move source statements?
 
-**A:** No. It describes declaration setup before statement evaluation. Var starts initialized to undefined; lexical bindings start uninitialized; ordinary function declarations are initialized with a function object under their applicable rules.
+**A:** No. It describes declaration setup before statement evaluation. `var` starts initialized to `undefined`; lexical bindings start uninitialized; ordinary function declarations are initialized with a function object under their applicable rules.
 
-**Q:** How do calling an uninitialized const function binding and calling an unassigned var function binding differ?
+**Q:** How do calling an uninitialized `const` function binding and calling an unassigned `var` function binding differ?
 
-**A:** The first fails when reading the binding with ReferenceError. The second reads undefined, then fails when attempting to call it with TypeError.
+**A:** The first fails when reading the binding with `ReferenceError`. The second reads `undefined`, then fails when attempting to call it with `TypeError`.
 
-**Q:** Why does typeof sometimes throw instead of returning undefined?
+**Q:** Why does `typeof` sometimes throw instead of returning `"undefined"`?
 
-**A:** It returns the string undefined for an unresolved name, but reading an existing uninitialized lexical binding still raises ReferenceError.
+**A:** It returns the string `"undefined"` for an unresolved name, but reading an existing uninitialized lexical binding still raises `ReferenceError`.
 
-**Q:** Can a function declared inside an if block safely be treated as a function-scoped declaration, or as having let-like initialization timing?
+**Q:** Can a function declared inside an `if` block safely be treated as a function-scoped declaration, or as having `let`-like initialization timing?
 
 **A:** In strict code and modules it is block-scoped but initialized at block entry, so a call before its declaration line inside that block can work. Sloppy scripts have legacy Annex B rules with eligibility conditions. Avoid depending on those differences; declare the intended outer binding explicitly.
 
@@ -116,7 +116,7 @@ Source: [Lexical Environment](10.1.1.05-lexical-environment.md)
 
 **Q:** Where does the current specification put the outer link used for identifier lookup?
 
-**A:** In the Environment Record's `[[OuterEnv]]` field. The execution context's LexicalEnvironment identifies the current record; identifier resolution follows record-to-record links until it finds a binding or reaches null.
+**A:** In the Environment Record's `[[OuterEnv]]` field. The execution context's `LexicalEnvironment` identifies the current record; identifier resolution follows record-to-record links until it finds a binding or reaches `null`.
 
 **Q:** Does the scope-chain diagram show exactly how an engine stores variables or how fast lookup will be?
 
@@ -150,9 +150,9 @@ Source: [Closures](10.1.1.06-closures.md)
 
 **A:** One call supplies a shared set of enclosing bindings to the functions it creates. Separate calls create separate bindings.
 
-**Q:** Why do callbacks from a var loop commonly observe the same final index, while a let loop can preserve each iteration’s index?
+**Q:** Why do callbacks from a `var` loop commonly observe the same final index, while a `let` loop can preserve each iteration’s index?
 
-**A:** The var callbacks share one binding; the let loop supplies separate iteration bindings. The result also depends on when callbacks execute, so trace both binding identity and timing.
+**A:** The `var` callbacks share one binding; the `let` loop supplies separate iteration bindings. The result also depends on when callbacks execute, so trace both binding identity and timing.
 
 **Q:** What survives between calls to a debounced function?
 
@@ -194,7 +194,7 @@ Source: [Execution Context](10.1.1.01-execution-context.md), [Call Stack](10.1.1
 
 **A:** The realm's global environment and reachable values can remain available to later evaluations. The lifetime of a realm or binding is distinct from the active evaluation that used it.
 
-**Q:** Can an ES module read an outer global lexical binding while keeping its own var off globalThis?
+**Q:** Can an ES module read an outer global lexical binding while keeping its own `var` off `globalThis`?
 
 **A:** Yes. Its declarations live in the module environment, whose outer chain still resolves global names. Module-local declarations do not imply isolation from every global binding.
 
@@ -206,7 +206,7 @@ Source: [Execution Context](10.1.1.01-execution-context.md), [Call Stack](10.1.1
 
 **A:** No. It establishes bindings under the applicable language algorithms before statement evaluation. Parsing, lazy compilation and JIT tiering are separate implementation choices.
 
-**Q:** Does await turn earlier synchronous computation into background work?
+**Q:** Does `await` turn earlier synchronous computation into background work?
 
 **A:** No. An async function runs synchronously until suspension, and synchronous work after resumption still occupies its thread. Promise jobs resume the suspended evaluation after the awaited value settles.
 

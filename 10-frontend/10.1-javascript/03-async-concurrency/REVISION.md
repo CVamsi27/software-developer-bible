@@ -24,7 +24,7 @@ Source: [Event Loop](10.1.3.01-event-loop.md)
 
 **Q:** Where does Node's `process.nextTick` sit relative to those queues?
 
-**A:** At common CommonJS callback boundaries, Node drains next-tick work before promise microtasks. Module evaluation and already-running microtasks require their own ordering analysis; nextTick does not universally preempt them.
+**A:** At common CommonJS callback boundaries, Node drains next-tick work before promise microtasks. Module evaluation and already-running microtasks require their own ordering analysis; `process.nextTick` does not universally preempt them.
 
 **Q:** A snippet logs synchronously, then schedules `setTimeout(fn, 0)` and a `.then`; what order do the three print in?
 
@@ -66,13 +66,13 @@ Source: [Promises](10.1.3.02-promises.md)
 
 **A:** Settlement stores the outcome, and reactions attach to the stored result — late handlers take the same path as early ones, so "already done" needs no special case.
 
-**Q:** What does `Promise.any` return when its first input rejects but a later one fulfils?
+**Q:** What does `Promise.any` return when its first input rejects but a later one fulfills?
 
 **A:** It resolves with the first fulfillment, ignoring earlier rejections, and only rejects with an `AggregateError` once every input has rejected.
 
 **Q:** How do `Promise.all` and `Promise.allSettled` differ in their reaction to one failure?
 
-**A:** `all` rejects when an input rejection is observed; other operations continue unless separately cancelled. For a valid iterable, `allSettled` waits for the inputs and returns one outcome record per input, in input order; broken iteration can reject the aggregate.
+**A:** `all` rejects when an input rejection is observed; other operations continue unless separately canceled. For a valid iterable, `allSettled` waits for the inputs and returns one outcome record per input, in input order; broken iteration can reject the aggregate.
 
 **Q:** Why does `new Promise(resolve => fetch(url).then(resolve))` usually make things worse?
 
@@ -86,9 +86,9 @@ Source: [Promises](10.1.3.02-promises.md)
 
 **A:** If each request is called only after the previous await, their waits accumulate. Call independent operations first, then combine their promises with `Promise.all`; the calls start work, while the combinator observes outcomes. Already-started promises can overlap even when awaited in sequence.
 
-**Q:** Does passing a promise to its own resolve function throw directly into the caller's catch?
+**Q:** Does passing a promise to its own resolve function throw directly into the caller's `catch`?
 
-**A:** No. The resolve call returns normally, while the promise is rejected with a TypeError. Observe that rejection through await or a rejection handler.
+**A:** No. The resolve call returns normally, while the promise is rejected with a `TypeError`. Observe that rejection through `await` or a rejection handler.
 
 ## Async/Await
 
@@ -124,11 +124,11 @@ Source: [Async/Await](10.1.3.03-async-await.md)
 
 **Q:** What does an explicit `Promise<T>` return type check, and what does it fail to detect?
 
-**A:** It checks the eventual fulfilled value against `T`. Returning another `Promise<T>` is valid because async return adopts it, so this signature does not detect every missing await. Await inside a local try/catch when that catch must handle the eventual rejection.
+**A:** It checks the eventual fulfilled value against `T`. Returning another `Promise<T>` is valid because async return adopts it, so this signature does not detect every missing `await`. Await inside a local `try`/`catch` when that `catch` must handle the eventual rejection.
 
 **Q:** Does the conceptual generator runner describe V8's exact native async implementation?
 
-**A:** No. It exposes suspension and error propagation for learning. Native await uses specification promise operations, and engines choose their own optimized representation; it need not call a user-overridden then on a native promise.
+**A:** No. It exposes suspension and error propagation for learning. Native `await` uses specification promise operations, and engines choose their own optimized representation; it need not call a user-overridden `then` on a native promise.
 
 ## Error Handling
 
@@ -136,11 +136,11 @@ Source: [Error Handling](10.1.3.04-error-handling.md)
 
 **Q:** What does JavaScript guarantee when something throws?
 
-**A:** A synchronous throw propagates to the nearest applicable catch as evaluations exit; intervening finally blocks run on those control-flow exits. Finally can itself replace the outcome, and process termination is outside that cleanup guarantee.
+**A:** A synchronous throw propagates to the nearest applicable `catch` as evaluations exit; intervening `finally` blocks run on those control-flow exits. `finally` can itself replace the outcome, and process termination is outside that cleanup guarantee.
 
-**Q:** Why can't a `try` wrapped around `fetch(url)` catch the network failure that happens afterwards?
+**Q:** Why can't a `try` wrapped around `fetch(url)` catch the network failure that happens afterward?
 
-**A:** The request result is reported by a promise, rather than a synchronous throw from that call. Await it inside the try or attach a rejection handler; a synchronous request-setup exception is a separate case.
+**A:** The request result is reported by a promise, rather than a synchronous throw from that call. Await it inside the `try` or attach a rejection handler; a synchronous request-setup exception is a separate case.
 
 **Q:** What are `Promise.all` and `Promise.allSettled` each asserting about many results where some fail?
 
@@ -148,7 +148,7 @@ Source: [Error Handling](10.1.3.04-error-handling.md)
 
 **Q:** What type does `catch (error)` bind under strict TypeScript, and what follows from that?
 
-**A:** `unknown` when useUnknownInCatchVariables is enabled by strict or explicitly. Narrow the container before property access and check the property type before treating a message as a string; a type assertion alone supplies no runtime check.
+**A:** `unknown` when `useUnknownInCatchVariables` is enabled by `strict` or explicitly. Narrow the container before property access and check the property type before treating a message as a string; a type assertion alone supplies no runtime check.
 
 **Q:** Why does `Error` have a `cause` option instead of requiring you to splice the original message into the new one?
 
@@ -160,15 +160,15 @@ Source: [Error Handling](10.1.3.04-error-handling.md)
 
 **Q:** Why is `throw 'not found'` a review-blocking habit?
 
-**A:** JavaScript permits it, but a string has no standard error name, cause or stack fields. Prefer an Error with the diagnostic/category fields the owner needs; callers must still safely handle unknown thrown values.
+**A:** JavaScript permits it, but a string has no standard error name, cause or stack fields. Prefer an `Error` with the diagnostic/category fields the owner needs; callers must still safely handle unknown thrown values.
 
 **Q:** Where should a `try/catch` sit, and where is it just noise?
 
 **A:** Place it where code can recover, clean up, translate or choose a Result. A local handler can be appropriate when it owns such a decision; redundant catches that only relog or suppress should let the owning boundary handle it.
 
-**Q:** A payload parses as JSON but contains a numeric theme. Has parseJsonSafe established ThemeConfig?
+**Q:** A payload parses as JSON but contains a numeric theme. Has `parseJsonSafe` established `ThemeConfig`?
 
-**A:** No. Parsing returns unknown on the success branch. The separate decoder validates the domain shape and rejects the numeric theme. A generic cast alone would supply no runtime check.
+**A:** No. Parsing returns `unknown` on the success branch. The separate decoder validates the domain shape and rejects the numeric theme. A generic cast alone would supply no runtime check.
 
 **Q:** What does the single-read helper do after cancellation or a malformed payload?
 
@@ -200,19 +200,19 @@ Source: [Aborting & Cancellation](10.1.3.05-abort-and-cancellation.md)
 
 **Q:** What goes wrong with `catch (err) { showError(err.message); }` on a request that carries a signal?
 
-**A:** It treats every reason as an Error with a message and ignores intent. Suppress obsolete or intentional cancellation according to the owning signal; a timeout may need a visible retry action. Check unknown error values and retain the current-request guard.
+**A:** It treats every reason as an `Error` with a message and ignores intent. Suppress obsolete or intentional cancellation according to the owning signal; a timeout may need a visible retry action. Check unknown error values and retain the current-request guard.
 
 **Q:** Where should an `abort` listener be registered if the code registering it may itself be torn down?
 
-**A:** Register before starting work and handle an already-aborted signal. Use `{ once: true }` for the abort path, and explicitly remove the listener after normal completion or owner teardown; once does not clean up a listener when abort never happens.
+**A:** Register before starting work and handle an already-aborted signal. Use `{ once: true }` for the abort path, and explicitly remove the listener after normal completion or owner teardown; `once` does not clean up a listener when abort never happens.
 
 **Q:** Does calling `controller.abort()` actually stop the server from finishing the request?
 
 **A:** No. An abort-aware client operation stops its own work according to its API, without guaranteeing a dedicated socket closes or a remote write rolls back. The server may commit; use idempotency, operation status and reconciliation for uncertain outcomes.
 
-**Q:** What is synchronous when controller.abort is called, and what can remain unfinished?
+**Q:** What is synchronous when `controller.abort()` is called, and what can remain unfinished?
 
-**A:** Signal state changes and abort-event dispatch happen during that call. Promise observers run later; non-cooperating work and remote effects may still finish. A busy same-agent loop can delay the other task that would call abort, rather than making abort itself asynchronous.
+**A:** Signal state changes and `abort`-event dispatch happen during that call. Promise observers run later; non-cooperating work and remote effects may still finish. A busy same-agent loop can delay the other task that would call `abort()`, rather than making `abort()` itself asynchronous.
 
 ## Bounded Concurrency & Promise Pools
 
@@ -250,9 +250,9 @@ Source: [Bounded Concurrency & Promise Pools](10.1.3.06-bounded-concurrency.md)
 
 **A:** Results that finish ahead of a slow earlier item may accumulate before delivery. Bound that buffer as well as active tasks to provide consumer backpressure.
 
-**Q:** Does a pool whose mapper returns fetch responses bound complete response-body transfers?
+**Q:** Does a pool whose mapper returns `fetch` responses bound complete response-body transfers?
 
-**A:** No. Fetch resolves when headers arrive; unconsumed bodies can remain active after a slot is released. Consume or cancel each body before mapper completion when that is the bounded unit, and add size/buffer limits.
+**A:** No. `fetch` resolves when headers arrive; unconsumed bodies can remain active after a slot is released. Consume or cancel each body before mapper completion when that is the bounded unit, and add size/buffer limits.
 
 ## Summary
 

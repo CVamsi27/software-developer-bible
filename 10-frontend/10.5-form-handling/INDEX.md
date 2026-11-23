@@ -18,7 +18,7 @@ Forms coordinate editable values, feedback, submission and recovery. Senior inte
 | [Validation](#validation) | 1 | Zod 4 runtime parsing and TypeScript input/output types |
 | [Form Libraries](#form-libraries) | 3 | Compare field ownership, subscriptions and existing integrations |
 | [Server-Side Patterns](#server-side-patterns) | 1 | Server Functions, Server Actions, progressive enhancement |
-| [Draft Persistence](#draft-persistence) | 1 | Autosave, localStorage/IndexedDB, dirty guards, conflict resolution |
+| [Draft Persistence](#draft-persistence) | 1 | Autosave, `localStorage`/IndexedDB, dirty guards, conflict resolution |
 | [Interview Prep](#interview-prep) | 1 | 30+ form-specific questions |
 
 ---
@@ -65,7 +65,7 @@ Long-form resilience: recover persisted input and handle storage failures.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 06 | [Autosave & Draft Recovery](10.5.06-autosave-draft-recovery.md) | Debounced autosave, localStorage vs IndexedDB, multi-step resume, dirty-state guards (`beforeunload` + route blockers), versioned draft migrations, server-vs-local conflict resolution | Important | Important | 9 min |
+| 06 | [Autosave & Draft Recovery](10.5.06-autosave-draft-recovery.md) | Debounced autosave, `localStorage` vs IndexedDB, multi-step resume, dirty-state guards (`beforeunload` + route blockers), versioned draft migrations, server-vs-local conflict resolution | Important | Important | 9 min |
 
 ---
 
@@ -96,7 +96,7 @@ Build one form, submit invalid and valid values, simulate a server rejection, th
 
 - [Accessibility](../../50-quality/50.2-accessibility/INDEX.md) — accessible form patterns
 - [Next.js](../10.4-next.js/INDEX.md) — Server Actions, form components
-- [React](../10.3-react/INDEX.md) — useState/useReducer for form state
+- [React](../10.3-react/INDEX.md) — `useState`/`useReducer` for form state
 - [TypeScript](../10.2-typescript/INDEX.md) — `z.infer` for type-safe schemas
 
 ---
@@ -106,17 +106,17 @@ Build one form, submit invalid and valid values, simulate a server rejection, th
 Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
 
 | Topic in this category | Docita evidence |
-| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| React Hook Form primitives | `packages/ui/src/components/form/form-primitives.tsx` - FormField/FormLabel/FormControl/FormMessage kit over RHF context |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| React Hook Form primitives | `packages/ui/src/components/form/form-primitives.tsx` - `FormField`/`FormLabel`/`FormControl`/`FormMessage` kit over RHF context |
 | Zod resolver integration | `apps/app/src/features/patients/components/forms/dialogs/EditPatientDialog.tsx` - `resolver: zodResolver(updatePatientRequestSchema)` |
 | Typed field paths | `packages/ui/src/lib/rhf-path.ts` - guarded escape hatch for RHF's conditional `Path<T>` names |
 | Debounced form input | `packages/ui/src/components/form/debounced-search-input.tsx` - local state + debounced `onChange` for search fields |
-| Autosave & draft recovery | `apps/app/src/features/setup/components/onboarding/forms/use-onboarding-draft.ts` - localStorage draft persistence, resume-step resolution, multi-step restore |
+| Autosave & draft recovery | `apps/app/src/features/setup/components/onboarding/forms/use-onboarding-draft.ts` - `localStorage` draft persistence, resume-step resolution, multi-step restore |
 
-_No Server Actions / Formik / TanStack Form implementations in docita yet._
+_No Server Actions / Formik / TanStack Form implementations in Docita yet._
 
 ---
 
 ## Navigation
 
-[← Previous: Next.js](../10.4-next.js/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Animation →](../10.6-animation/INDEX.md)
+[← Previous: Next.js](../10.4-next.js/INDEX.md) · [Back to Index](../../INDEX.md) · [Next: Animation →](../10.6-animation/INDEX.md)

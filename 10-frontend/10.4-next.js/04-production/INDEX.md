@@ -12,10 +12,10 @@
 ## Files
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------: |
+| ----: | ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------- | ------------------ | ----------: |
 | 01 | [Authentication](10.4.4.01-authentication.md) | session verification, resource authorization, cookie and CSRF boundaries, version-pinned Auth.js | Important | Important | 9 min |
 | 02 | [Image Optimization](10.4.4.02-image-optimization.md) | `next/image`, lazy loading, responsive images, AVIF/WebP | Important | Specialized | 7 min |
-| 03 | [Deploying Next.js](10.4.4.03-deploying-nextjs.md) | static vs server runtime, standalone container output, runtime configuration, cacheHandler vs cacheHandlers, replica coordination, version skew, streaming and graceful shutdown | Important | Specialized | 8 min |
+| 03 | [Deploying Next.js](10.4.4.03-deploying-nextjs.md) | static vs server runtime, standalone container output, runtime configuration, `cacheHandler` vs `cacheHandlers`, replica coordination, version skew, streaming and graceful shutdown | Important | Specialized | 8 min |
 
 ---
 

@@ -52,13 +52,13 @@ Source: [Modern React: Scheduling, Actions, and DOM APIs](10.3.4.01-modern-hooks
 
 **Q:** What is the React 19.3 purpose of a Fragment ref?
 
-**A:** It exposes a limited FragmentInstance over a group of DOM children, allowing focus, observation or scrolling without inserting a wrapper that could alter layout or semantics.
+**A:** It exposes a limited `FragmentInstance` over a group of DOM children, allowing focus, observation, or scrolling without inserting a wrapper that could alter layout or semantics.
 
-**Q:** When should a component call use(browser())?
+**Q:** When should a component call `use(browser())`?
 
 **A:** Only when it cannot produce meaningful server output. It suspends that component during server rendering and continues in the browser; ordinary renderable data should still be loaded by the framework or server path.
 
-**Q:** What does Activity mode="hidden" preserve, and what happens to Effects?
+**Q:** What does `<Activity mode="hidden">` preserve, and what happens to Effects?
 
 **A:** It preserves the subtree’s component state while hiding it, disconnecting its Effects and deferring updates until it becomes visible again. Use it when that retention behavior is useful, not as a generic loading state.
 
@@ -86,9 +86,9 @@ Source: [Web Components](10.3.4.02-web-components.md)
 
 **A:** The property must already exist on the custom-element instance when React initializes it. Otherwise React generally uses an attribute, losing the object's structure through serialization.
 
-**Q:** How do you listen for the booking-confirmed custom event in React 19 JSX?
+**Q:** How do you listen for the `booking-confirmed` custom event in React 19 JSX?
 
-**A:** Use the on-prefixed prop with the event name’s exact case and dashes: onbooking-confirmed. Type the custom element’s intrinsic JSX props separately.
+**A:** Use the `on`-prefixed prop with the event name’s exact case and dashes: `onbooking-confirmed`. Type the custom element’s intrinsic JSX props separately.
 
 **Q:** Why does interpolating user text into shadow-root `innerHTML` remain unsafe?
 
@@ -114,9 +114,9 @@ Source: [React Router](10.3.4.03-react-router.md)
 
 **A:** V6 used `defer`; v7 and v8 return an object containing an unresolved promise. Await critical data explicitly, then render the slower value with `<Await>` beneath Suspense.
 
-**Q:** What can route.lazy supply, and which route fields must be known before matching?
+**Q:** What can `route.lazy` supply, and which route fields must be known before matching?
 
-**A:** A lazy module can supply implementation fields such as Component, loader, action or ErrorBoundary. The router needs matching fields such as path and index before navigation; a route without a loader does not need to export one.
+**A:** A lazy module can supply implementation fields such as `Component`, `loader`, `action`, or `ErrorBoundary`. The router needs matching fields such as `path` and `index` before navigation; a route without a `loader` does not need to export one.
 
 **Q:** What does `useFetcher` add when submitting an inline rename?
 
@@ -142,9 +142,9 @@ Source: [React Router](10.3.4.03-react-router.md)
 
 **A:** No. It runs in the browser and can coordinate navigation and avoid unnecessary client loaders, but users can call an API directly. The API must authenticate and authorize each read and write.
 
-**Q:** When should an inline rename use a fetcher instead of a navigation Form?
+**Q:** When should an inline rename use a fetcher instead of a navigation `<Form>`?
 
-**A:** Use a fetcher when the action should expose pending/result state without changing the current location. Use a navigation Form when the submission represents a route transition or should update browser history.
+**A:** Use a fetcher when the action should expose pending/result state without changing the current location. Use a navigation `<Form>` when the submission represents a route transition or should update browser history.
 
 ## API and lifetime boundaries
 
@@ -158,7 +158,7 @@ Source: [Modern Hooks](10.3.4.01-modern-hooks-react18-19.md), [Web Components](1
 
 **A:** No. Keep it inside its effect/subscription lifecycle; it is not a general replacement for event handlers or required dependencies.
 
-**Q:** Why is useId unsuitable for a database record's list key?
+**Q:** Why is `useId` unsuitable for a database record's list key?
 
 **A:** It identifies an accessibility relationship for a component instance. A list must use the stable domain identity of the record across reorder and mount changes.
 

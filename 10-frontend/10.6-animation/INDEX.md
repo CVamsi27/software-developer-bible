@@ -1,6 +1,6 @@
 # Animation — Index
 
-> **Study time:** ≈ 1 h 5 m of reading (9 files, ~7 min average).
+> **Study time:** ≈ 1 h 4 m of reading (9 files, ~7 min average).
 > **9 files** — CSS and browser animation APIs, Motion for React (formerly Framer Motion), GSAP, React Spring, Canvas/SVG rendering, and interview practice.
 
 [![Files](https://img.shields.io/badge/files-9-blue)](../../INDEX.md)
@@ -15,7 +15,7 @@ This stack is **Optional for the current full-stack preparation**. Skip library-
 
 Read [CSS Animations](10.6.01-css-animations.md) for transitions, keyframes and reduced-motion alternatives. Follow with [Web Animations API](10.6.05-web-animations-api.md) to control playback and cancellation from JavaScript. CSS effects need an explicit reduced-motion policy; the browser does not supply one automatically.
 
-Explain why an eligible transform animation can avoid repeated layout/paint, and why choosing transform still does not guarantee a frame rate.
+Explain why an eligible `transform` animation can avoid repeated layout/paint, and why choosing `transform` still does not guarantee a frame rate.
 
 ## Pass 2 — choose how the interaction is controlled
 
@@ -53,7 +53,7 @@ Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a he
 | Topic in this category | Docita evidence |
 | ------------------------------ | ----------------------------------------------------------------------------------------------------------------------- |
 | CSS animations (`@keyframes`) | `packages/ui/src/styles/globals.css` - pulse/shimmer/shake/fade-up keyframes with `prefers-reduced-motion` media blocks |
-| `prefers-reduced-motion` in JS | `packages/hooks/src/use-prefers-reduced-motion.ts` - matchMedia hook plus a reduced-motion scroll-behavior helper |
+| `prefers-reduced-motion` in JS | `packages/hooks/src/use-prefers-reduced-motion.ts` - `matchMedia` hook plus a reduced-motion `scroll-behavior` helper |
 
 _Motion for React, GSAP, React Spring, WAAPI, View Transitions, and Canvas/SVG animation: no direct Docita implementation yet._
 
@@ -61,4 +61,4 @@ _Motion for React, GSAP, React Spring, WAAPI, View Transitions, and Canvas/SVG a
 
 ## Navigation
 
-[← Previous: Form Handling](../10.5-form-handling/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: HTML/CSS & PWA →](../10.7-html-css/INDEX.md)
+[← Previous: Form Handling](../10.5-form-handling/INDEX.md) · [Back to Index](../../INDEX.md) · [Next: HTML/CSS & PWA →](../10.7-html-css/INDEX.md)

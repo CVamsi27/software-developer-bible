@@ -48,7 +48,7 @@ Source: [Map, Set, WeakMap, WeakSet](10.1.4.02-map-set-weakmap-weakset.md)
 
 **Q:** What do `Map`, `Set`, `WeakMap` and `WeakSet` share, and where do they split?
 
-**A:** They provide keyed entries or unique membership, with different ownership and observation rules. `Map`/`Set` retain entries and expose size and iteration; weak collections do not retain eligible keys/members by themselves and cannot be enumerated. ECMAScript requires average sublinear access for Map/Set, rather than mandating a hash table or worst-case O(1).
+**A:** They provide keyed entries or unique membership, with different ownership and observation rules. `Map`/`Set` retain entries and expose size and iteration; weak collections do not retain eligible keys/members by themselves and cannot be enumerated. ECMAScript requires average sublinear access for `Map`/`Set`, rather than mandating a hash table or worst-case `O(1)`.
 
 **Q:** Why does using an object as a plain object's key break identity?
 
@@ -64,7 +64,7 @@ Source: [Map, Set, WeakMap, WeakSet](10.1.4.02-map-set-weakmap-weakset.md)
 
 **Q:** What does `[...new Set(list)]` give you over a hand-written dedupe loop?
 
-**A:** Uniqueness is decided by SameValueZero and first-seen order is preserved in the resulting array. Engines commonly use hash-based membership, but ECMAScript requires average sublinear access rather than a universal constant-time operation.
+**A:** Uniqueness is decided by `SameValueZero` and first-seen order is preserved in the resulting array. Engines commonly use hash-based membership, but ECMAScript requires average sublinear access rather than a universal constant-time operation.
 
 **Q:** Why does `for (const x of someWeakMap)` throw a `TypeError`?
 
@@ -100,7 +100,7 @@ Source: [Shallow Copy vs Deep Copy](10.1.4.03-shallow-vs-deep-copy.md)
 
 **Q:** Which copy routine should you use when a value is about to cross a worker boundary?
 
-**A:** Worker messaging uses structured cloning, so design a cloneable payload and let postMessage clone it; pre-cloning is usually unnecessary. Transfer lists, ownership and context restrictions still matter: local cloning success alone is not a universal transport guarantee.
+**A:** Worker messaging uses structured cloning, so design a cloneable payload and let `postMessage` clone it; pre-cloning is usually unnecessary. Transfer lists, ownership and context restrictions still matter: local cloning success alone is not a universal transport guarantee.
 
 **Q:** What should decide between a shallow and a deep copy on a hot path?
 
@@ -242,7 +242,7 @@ Source: [Garbage Collection](10.1.4.07-garbage-collection.md)
 
 **A:** Incremental marking interleaves portions of collection with application work; concurrent marking performs supported work alongside the application. Remaining pauses and synchronization depend on the collector/workload, so neither guarantees only short begin/end pauses.
 
-**Q:** When can assigning null release retained state, and why is it not a collection command?
+**Q:** When can assigning `null` release retained state, and why is it not a collection command?
 
 **A:** It can remove an unwanted strong path from a long-lived binding or property. Other paths may still retain the value, and an optimized short-lived local may already need no storage. Dropping a reference makes collection possible; it does not request a particular collection or prove reclamation.
 
@@ -258,13 +258,13 @@ Source: [Garbage Collection](10.1.4.07-garbage-collection.md)
 
 Source: [Hash Tables and Hash Maps](10.1.4.08-hash-tables-internals.md)
 
-**Q:** Why can a hash table never promise worst-case O(1) the way an array does?
+**Q:** Why can a hash table never promise worst-case `O(1)` the way an array does?
 
 **A:** Direct indexing already has a bounded integer position. A hash table maps many possible keys to fewer candidate positions and must compare full keys to resolve collisions; growth can also move all entries. The examples provide expected/amortized, not per-operation worst-case constant bounds.
 
 **Q:** What does "amortized" buy you that a worst-case claim wouldn't?
 
-**A:** Over a sequence of n inserts the rehashes cost 1 + 2 + 4 + … + n ≤ 2n, so the rare O(n) spike averages to a constant per insert — O(1) per op even though one op can still hitch.
+**A:** Over a sequence of `n` inserts the rehashes cost `1 + 2 + 4 + … + n ≤ 2n`, so the rare `O(n)` spike averages to a constant per insert — `O(1)` per op even though one op can still hitch.
 
 **Q:** What is the load factor, and why do chaining and open addressing draw the line in different places?
 
@@ -284,7 +284,7 @@ Source: [Hash Tables and Hash Maps](10.1.4.08-hash-tables-internals.md)
 
 **Q:** Does ECMAScript specify the hash algorithm used by `Map`, and why does that matter?
 
-**A:** No. It specifies SameValueZero key equality and average sublinear access, not a hash algorithm. Runtime choices can change, so application code must not depend on an assumed algorithm or use it as a security boundary.
+**A:** No. It specifies `SameValueZero` key equality and average sublinear access, not a hash algorithm. Runtime choices can change, so application code must not depend on an assumed algorithm or use it as a security boundary.
 
 **Q:** Why is a plain object a poor stand-in for an insertion-ordered map?
 
@@ -350,19 +350,19 @@ Sources: [Copying](10.1.4.03-shallow-vs-deep-copy.md), [Throttle](10.1.4.05-thro
 
 Sources: [Collections](10.1.4.02-map-set-weakmap-weakset.md), [Debounce](10.1.4.04-debounce.md), [Throttle](10.1.4.05-throttle.md), [GC](10.1.4.07-garbage-collection.md).
 
-**Q:** Can a symbol be a weak collection key, and can a WeakMap be iterated in insertion order?
+**Q:** Can a symbol be a weak collection key, and can a `WeakMap` be iterated in insertion order?
 
-**A:** Objects and non-registered symbols are eligible keys in supporting runtimes; Symbol.for keys are not. Weak collections expose no iteration order or enumerable contents.
+**A:** Objects and non-registered symbols are eligible keys in supporting runtimes; `Symbol.for` keys are not. Weak collections expose no iteration order or enumerable contents.
 
 **Q:** Does leading plus trailing debounce invoke twice for one isolated call?
 
-**A:** No. The leading call consumes its arguments; a trailing invocation needs another buffered call during the window. Both edges false disables work, while maxWait is a separate sustained-input policy.
+**A:** No. The leading call consumes its arguments; a trailing invocation needs another buffered call during the window. Both edges `false` disables work, while `maxWait` is a separate sustained-input policy.
 
 **Q:** A callback is rendered with new props, but that render is abandoned. When should the timer hook publish its callback ref?
 
 **A:** After a committed render. Mutating a shared callback ref during render can expose uncommitted values to an existing timer; cleanup separately owns pending work.
 
-**Q:** Does the next major GC guarantee a FinalizationRegistry callback?
+**Q:** Does the next major GC guarantee a `FinalizationRegistry` callback?
 
 **A:** No. Timing and delivery are unspecified and the process may exit first. Keep essential resource cleanup explicit, and ensure a held value does not itself retain the target.
 
@@ -370,9 +370,9 @@ Sources: [Collections](10.1.4.02-map-set-weakmap-weakset.md), [Debounce](10.1.4.
 
 Sources: [Copying](10.1.4.03-shallow-vs-deep-copy.md), [Debounce](10.1.4.04-debounce.md), [Coercion](10.1.4.09-equality-and-coercion.md).
 
-**Q:** Does structured cloning a SharedArrayBuffer create isolated bytes?
+**Q:** Does structured cloning a `SharedArrayBuffer` create isolated bytes?
 
-**A:** No. The cloned wrapper accesses the same shared memory. Transfer of an ordinary ArrayBuffer is different: it moves ownership and detaches the original buffer.
+**A:** No. The cloned wrapper accesses the same shared memory. Transfer of an ordinary `ArrayBuffer` is different: it moves ownership and detaches the original buffer.
 
 **Q:** A search request is active when the input changes, but the replacement waits for debounce. When must the old result lose publication authority?
 
@@ -382,9 +382,9 @@ Sources: [Copying](10.1.4.03-shallow-vs-deep-copy.md), [Debounce](10.1.4.04-debo
 
 **A:** `structuredClone` can throw `DataCloneError` for unsupported values. Building the replacement first means a failed clone leaves the current state intact instead of discarding it for a snapshot that never materializes.
 
-**Q:** What does Boolean('false') mean for a URL feature flag?
+**Q:** What does `Boolean('false')` mean for a URL feature flag?
 
-**A:** It means true because the string is nonempty. A textual flag needs an explicit accepted-spelling policy, with invalid values handled deliberately.
+**A:** It means `true` because the string is nonempty. A textual flag needs an explicit accepted-spelling policy, with invalid values handled deliberately.
 
 ## Summary
 

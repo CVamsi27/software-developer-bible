@@ -14,7 +14,7 @@
 The Files badge counts these 5 chapters plus the revision companion.
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------: |
+| --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Modules](10.1.5.01-modules.md) | ESM/CommonJS, module identity, resolution, dynamic import and tree shaking | Essential | Foundational | 6 min |
 | 02 | [Memoization](10.1.5.02-memoization.md) | Key equivalence, cache lifetime, bounded retention, promises and React memoization | Essential | Foundational | 6 min |
 | 03 | [Generators](10.1.5.03-generators.md) | Protocol keys and re-iterability, iterator helpers, async pages, sent values, cleanup | Important | Specialized | 8 min |

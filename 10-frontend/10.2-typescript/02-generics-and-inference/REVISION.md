@@ -22,13 +22,13 @@ Source: [Generics](10.2.2.01-generics.md)
 
 **A:** `extends` *constrains* the parameter to types assignable to `X`, which is what lets the body use `X`'s members; `=` supplies a default when no explicit or inferred type argument is selected.
 
-**Q:** Does `const word = identity('hello')` need a const type parameter to retain the primitive literal? Where does const-like inference make a difference?
+**Q:** Does `const word = identity('hello')` need a `const` type parameter to retain the primitive literal? Where does `const`-like inference make a difference?
 
-**A:** No. The ordinary `identity<T>(value: T): T` call already retains `'hello'` here. An inline object's mutable properties or array elements may widen; a const type parameter can retain readonly literal-like inference for those structures. It does not narrow a previously widened variable or freeze an object at runtime.
+**A:** No. The ordinary `identity<T>(value: T): T` call already retains `'hello'` here. An inline object's mutable properties or array elements may widen; a `const` type parameter can retain `readonly` literal-like inference for those structures. It does not narrow a previously widened variable or freeze an object at runtime.
 
-**Q:** What is the result type of a merge({name:"Alice"},{age:30}) contract returning T & U, and when is that contract misleading?
+**Q:** What is the result type of a `merge({ name: "Alice" }, { age: 30 })` contract returning `T & U`, and when is that contract misleading?
 
-**A:** The disjoint plain-property case fits both member sets. If inputs share an incompatible key, spread overwrites it rather than satisfying both types; inherited/nonenumerable members are not all copied either. The chapter instead uses pair<A,B> to preserve two input types without inventing an intersection guarantee.
+**A:** The disjoint plain-property case fits both member sets. If inputs share an incompatible key, spread overwrites it rather than satisfying both types; inherited/nonenumerable members are not all copied either. The chapter instead uses `pair<A, B>` to preserve two input types without inventing an intersection guarantee.
 
 **Q:** Why does `function add<T>(a: T, b: T): T { return a + b; }` fail, and does `T extends number | string` fix it?
 
@@ -52,7 +52,7 @@ Source: [Infer](10.2.2.02-infer.md)
 
 **Q:** What does `type Id<T> = T extends infer U ? U : never` actually extract?
 
-**A:** It captures the whole matched type rather than a smaller component. That is a legal identity-style pattern; structured extraction uses a more specific position such as Promise<infer U>.
+**A:** It captures the whole matched type rather than a smaller component. That is a legal identity-style pattern; structured extraction uses a more specific position such as `Promise<infer U>`.
 
 **Q:** Given `type Unwrap<T> = T extends Promise<infer U> ? Unwrap<U> : T`, what is `Unwrap<Promise<Promise<string>>>`?
 
@@ -62,13 +62,13 @@ Source: [Infer](10.2.2.02-infer.md)
 
 **A:** `(...args: infer P) => any` captures the parameter tuple (`P = [string, number]`), `new (...args: any[]) => infer I` captures the constructed instance type, and `(event: infer E) => void` captures a single parameter. The shown `FirstParam` pattern requires a statically present first argument; an optional first tuple member does not match its required-head pattern.
 
-**Q:** What does the canonical RouteParams<"users/:id/posts/:postId"> helper extract, and where is its full grammar taught?
+**Q:** What does the canonical `RouteParams<"users/:id/posts/:postId">` helper extract, and where is its full grammar taught?
 
-**A:** It derives id and postId string fields by capturing path segments. The [Template Literal Types chapter](../03-type-transformations/10.2.3.04-template-literal-types.md) owns its implementation and supported path grammar; infer supplies capture, not runtime route parsing.
+**A:** It derives `id` and `postId` string fields by capturing path segments. The [Template Literal Types chapter](../03-type-transformations/10.2.3.04-template-literal-types.md) owns its implementation and supported path grammar; `infer` supplies capture, not runtime route parsing.
 
 **Q:** Why is `T extends string ? T : unknown` a worse false branch than `never`?
 
-**A:** For a filtering extractor, a non-match contributing unknown can absorb the useful union; never discards it. A pass-through false branch may instead intentionally retain T. The chosen contract matters.
+**A:** For a filtering extractor, a non-match contributing `unknown` can absorb the useful union; `never` discards it. A pass-through false branch may instead intentionally retain `T`. The chosen contract matters.
 
 **Q:** What are the three parts of a healthy recursive `infer` type?
 
@@ -96,7 +96,7 @@ Source: [Advanced Generics](10.2.2.03-advanced-generics.md)
 
 **Q:** What goes wrong if a pipeline lacks a terminal case or checks every later input against its first output?
 
-**A:** A recursive calculation needs a defined final result. Compatibility also concerns adjacent stages: number→string→number is valid even though the last stage cannot accept the first output. Compatible walks each pair and LastResult captures the final return type.
+**A:** A recursive calculation needs a defined final result. Compatibility also concerns adjacent stages: `number` → `string` → `number` is valid even though the last stage cannot accept the first output. `Compatible` walks each pair and `LastResult` captures the final return type.
 
 **Q:** Why does `DeepReadonly<Date>` still allow `setTime`, while a `ReadonlyMap` view has no `set` method?
 
@@ -110,31 +110,31 @@ Source: [Advanced Generics](10.2.2.03-advanced-generics.md)
 
 Source: [Type Variance](10.2.2.04-type-variance.md)
 
-**Q:** Why may a function accepting any Animal replace a Dog callback?
+**Q:** Why may a function accepting any `Animal` replace a `Dog` callback?
 
-**A:** Every Dog that the caller can supply is also an Animal. The broader input promise therefore covers the narrower callback slot.
+**A:** Every `Dog` that the caller can supply is also an `Animal`. The broader input promise therefore covers the narrower callback slot.
 
 **Q:** Which syntax keeps callback parameters bivariant even with strict function checking, and which direction can it admit unsafely?
 
-**A:** A method declaration keeps the compatibility exception, so both parameter substitutions may be accepted. A function-valued property is checked contravariantly: an Animal handler can stand in for a Dog handler, but a Dog-only handler cannot accept every Animal.
+**A:** A method declaration keeps the compatibility exception, so both parameter substitutions may be accepted. A function-valued property is checked contravariantly: an `Animal` handler can stand in for a `Dog` handler, but a `Dog`-only handler cannot accept every `Animal`.
 
 **Q:** Why does the pushed object appear at index one in the array example?
 
-**A:** The original Rex object occupies index zero and retains its breed. The write through the Animal alias appends a different object lacking that field.
+**A:** The original Rex object occupies index zero and retains its `breed`. The write through the `Animal` alias appends a different object lacking that field.
 
 **Q:** Does a plain `{ value: T }` field make a TypeScript container invariant?
 
 **A:** No. The checker still permits covariant assignment of that mutable property, which is unsound for writes. Model reads and writes with function-property signatures when invariance is required; variance annotations must match the type's structural behavior and do not change unrelated structural comparisons.
 
-**Q:** Which event type is more specific: PointerEvent or MouseEvent?
+**Q:** Which event type is more specific: `PointerEvent` or `MouseEvent`?
 
-**A:** PointerEvent extends MouseEvent with extra information. A general MouseEvent handler can replace a PointerEvent handler, while the opposite substitution may receive missing fields.
+**A:** `PointerEvent` extends `MouseEvent` with extra information. A general `MouseEvent` handler can replace a `PointerEvent` handler, while the opposite substitution may receive missing fields.
 
-**Q:** Why must an emitter's callback constraint avoid requiring unknown input for every handler?
+**Q:** Why must an emitter's callback constraint avoid requiring `unknown` input for every handler?
 
-**A:** A specialized handler cannot process arbitrary unknown values. The constraint should recognize a callback shape while preserving each event's actual parameter type for registration.
+**A:** A specialized handler cannot process arbitrary `unknown` values. The constraint should recognize a callback shape while preserving each event's actual parameter type for registration.
 
-**Q:** What protection does a readonly array view leave unprovided?
+**Q:** What protection does a `readonly` array view leave unprovided?
 
 **A:** It blocks array writes through that view, but other aliases can still mutate the original. Its elements are not automatically frozen either.
 
@@ -146,27 +146,27 @@ Source: [Type Variance](10.2.2.04-type-variance.md)
 
 Source: [Generics](10.2.2.01-generics.md)
 
-**Q:** How does decodeName earn fetchData's string result, and what changes if the endpoint sends name:42?
+**Q:** How does `decodeName` earn `fetchData`'s `string` result, and what changes if the endpoint sends `name: 42`?
 
-**A:** Its runtime check verifies a string field and returns that string, letting T infer as string. A numeric field throws and rejects the request; writing a type argument would not validate it.
+**A:** Its runtime check verifies a string field and returns that string, letting `T` infer as `string`. A numeric field throws and rejects the request; writing a type argument would not validate it.
 
 Source: [Infer](10.2.2.02-infer.md)
 
-**Q:** Trace DeepUnwrap<Promise<Promise<string>>>. What does a required-head extractor do on an empty tuple?
+**Q:** Trace `DeepUnwrap<Promise<Promise<string>>>`. What does a required-head extractor do on an empty tuple?
 
-**A:** Each matched promise captures its inner type until string reaches the pass-through base case. An empty tuple supplies no guaranteed head, so that extractor returns never.
+**A:** Each matched promise captures its inner type until `string` reaches the pass-through base case. An empty tuple supplies no guaranteed head, so that extractor returns `never`.
 
 Source: [Advanced Generics](10.2.2.03-advanced-generics.md)
 
-**Q:** Trace formatLength(9), then change the second function to a string-only input. What changes?
+**Q:** Trace `formatLength(9)`, then change the second function to a string-only input. What changes?
 
-**A:** Values flow 9→10→"10"→2. A string-only second input cannot accept the preceding number output, so the adjacent-stage constraint rejects the pipeline. any would bypass that proof.
+**A:** Values flow `9` → `10` → `"10"` → `2`. A string-only second input cannot accept the preceding `number` output, so the adjacent-stage constraint rejects the pipeline. `any` would bypass that proof.
 
 Source: [Type Variance](10.2.2.04-type-variance.md)
 
-**Q:** A wider Animal[] alias appends an object without breed to Dog[]. Why does readonly help only part of this problem?
+**Q:** A wider `Animal[]` alias appends an object without `breed` to `Dog[]`. Why does `readonly` help only part of this problem?
 
-**A:** The accepted mutable covariance lets that wider write corrupt the narrower view. A readonly consumer cannot append through its view, but other mutable aliases and nested objects remain writable.
+**A:** The accepted mutable covariance lets that wider write corrupt the narrower view. A `readonly` consumer cannot append through its view, but other mutable aliases and nested objects remain writable.
 
 ## Summary
 

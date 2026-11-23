@@ -14,15 +14,15 @@ Read the section's learning chapters first. Close them, explain each answer with
 
 Source: [CSS Animations](10.6.01-css-animations.md)
 
-**Q:** Why are transform and opacity preferred rather than guaranteed to be free?
+**Q:** Why are `transform` and `opacity` preferred rather than guaranteed to be free?
 
 **A:** They are often eligible for compositing without layout or paint, but layer size, rasterization and browser decisions still matter. Verify the actual animation.
 
-**Q:** Why is replacing an animated width with scale sometimes incorrect?
+**Q:** Why is replacing an animated `width` with `scale` sometimes incorrect?
 
 **A:** Width changes layout geometry and can move neighboring content. Scale changes the visual result without changing normal-flow sizing. Choose the required behavior before optimizing its rendering work.
 
-**Q:** Does forwards fill always retain the `to` keyframe?
+**Q:** Does `forwards` fill always retain the `to` keyframe?
 
 **A:** No. Direction and iteration count determine the final sampled state: a reverse animation ends at `from`, while a fractional iteration can stop between keyframes. Fill retains the effect; it does not change the underlying CSS.
 
@@ -34,13 +34,13 @@ Source: [CSS Animations](10.6.01-css-animations.md)
 
 Source: [Motion for React](10.6.02-framer-motion.md)
 
-**Q:** Why does an exit animation need AnimatePresence to retain a leaving element?
+**Q:** Why does an exit animation need `AnimatePresence` to retain a leaving element?
 
 **A:** React normally removes an unmounted element immediately. Presence management keeps it available for its exit phase before completing removal.
 
-**Q:** What does Motion for React’s reduced-motion hook report, and which effects does MotionConfig change?
+**Q:** What does Motion for React’s reduced-motion hook report, and which effects does `MotionConfig` change?
 
-**A:** MotionConfig can disable transform and layout animation while leaving opacity in place; CSS, video and Canvas motion need their own policy. Verify live updates against the installed package: in the Motion 14.x line the hook snapshots its initial preference and does not rerender for a media-query change. The chapter uses an owned subscription when changes must apply without remounting.
+**A:** `MotionConfig` can disable transform and layout animation while leaving opacity in place; CSS, video and Canvas motion need their own policy. Verify live updates against the installed package: in the Motion 14.x line the hook snapshots its initial preference and does not rerender for a media-query change. The chapter uses an owned subscription when changes must apply without remounting.
 
 ## GSAP (GreenSock Animation Platform)
 
@@ -78,15 +78,15 @@ Source: [React Spring](10.6.04-react-spring.md)
 
 Source: [Web Animations API (WAAPI)](10.6.05-web-animations-api.md)
 
-**Q:** Why should code awaiting animation.finished handle cancellation?
+**Q:** Why should code awaiting `animation.finished` handle cancellation?
 
-**A:** Canceling can reject the promise with AbortError. A finished animation's retained styles and its lifecycle also need an explicit cleanup decision.
+**A:** Canceling can reject the promise with `AbortError`. A finished animation's retained styles and its lifecycle also need an explicit cleanup decision.
 
 ## View Transitions API & CSS Scroll-Driven Animations
 
 Source: [View Transitions API & CSS Scroll-Driven Animations](10.6.06-view-transitions-and-scroll-driven-animations.md)
 
-**Q:** Why can reusing one view-transition-name on every card break a transition?
+**Q:** Why can reusing one `view-transition-name` on every card break a transition?
 
 **A:** Captured visible elements need unique names. Assign a shared transition identity only to the selected old/new pair and preserve a visible fallback when unsupported.
 
@@ -110,17 +110,17 @@ Source: [CSS animation](10.6.01-css-animations.md), [GSAP](10.6.03-gsap.md), [WA
 
 **A:** A timing function maps elapsed progress into effect progress. A nonlinear ease changes that mapping.
 
-**Q:** Why does GSAP subtitle start at 0.3 seconds after a 0.5-second title with position −=0.2?
+**Q:** Why does GSAP subtitle start at 0.3 seconds after a 0.5-second title with position `-=0.2`?
 
 **A:** The position subtracts 0.2 seconds from the timeline's current end. It overlaps the title's last 0.2 seconds rather than delaying it.
 
 **Q:** Why can canceling a fade prevent a reveal but still require promise handling?
 
-**A:** Cancellation rejects a pending finished promise. The owner must catch that outcome and stop obsolete callbacks from changing the current interface.
+**A:** Cancellation rejects a pending `finished` promise. The owner must catch that outcome and stop obsolete callbacks from changing the current interface.
 
-**Q:** Why keep forwards fill until committing a completed WAAPI effect?
+**Q:** Why keep `forwards` fill until committing a completed WAAPI effect?
 
-**A:** It retains the final effect for compatible browsers while commitStyles writes it to inline styles; cancel then releases the retained animation.
+**A:** It retains the final effect for compatible browsers while `commitStyles` writes it to inline styles; `cancel` then releases the retained animation.
 
 **Q:** Why does starting a view transition after a route effect lose the previous snapshot?
 

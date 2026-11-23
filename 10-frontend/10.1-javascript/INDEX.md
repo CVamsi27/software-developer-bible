@@ -1,6 +1,6 @@
 # JavaScript — Index
 
-> **Study time:** ≈ 5 h 16 m of reading (42 files, ~8 min average).
+> **Study time:** ≈ 5 h 20 m of reading (42 files, ~8 min average).
 > Core JavaScript concepts from execution context through async patterns, memory management, functional techniques, modern language APIs, cancellation, browser events, cross-tab coordination, and interview practice.
 
 [![Files](https://img.shields.io/badge/files-42-blue)](../../INDEX.md)
@@ -48,7 +48,7 @@ Start with the language's evaluation and binding model, then distinguish it from
 | 01 | [Execution Context](01-execution-and-scope/10.1.1.01-execution-context.md) | Evaluation state, environment references, declaration setup, parameter bindings | Essential | Foundational | 7 min |
 | 02 | [Scope](01-execution-and-scope/10.1.1.02-scope.md) | Binding lookup, block boundaries, global/module scopes | Essential | Foundational | 9 min |
 | 03 | [Call Stack](01-execution-and-scope/10.1.1.03-call-stack.md) | LIFO, stack frames, stack overflow, max call stack size, debugging | Essential | Foundational | 7 min |
-| 04 | [Hoisting](01-execution-and-scope/10.1.1.04-hoisting.md) | `var`/`let`/`const` hoisting, temporal dead zone, function hoisting | Essential | Foundational | 6 min |
+| 04 | [Hoisting](01-execution-and-scope/10.1.1.04-hoisting.md) | `var`/`let`/`const` hoisting, temporal dead zone, function hoisting | Essential | Foundational | 7 min |
 | 05 | [Lexical Environment](01-execution-and-scope/10.1.1.05-lexical-environment.md) | Record hierarchy, outer lookup, global object versus module bindings | Essential | Foundational | 9 min |
 | 06 | [Closures](01-execution-and-scope/10.1.1.06-closures.md) | Lexical scoping, closure lifecycle, module pattern, memory implications | Essential | Foundational | 8 min |
 | 07 | [V8 Execution and Optimization](01-execution-and-scope/10.1.1.07-v8-execution-and-optimization.md) | Parsing, interpreter/compiler tiers, conditional optimization, deoptimization and measurement | Important | Specialized | 11 min |
@@ -76,10 +76,10 @@ Async behavior is subtle and commonly tested. One agent runs one active synchron
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 11 | [Event Loop](03-async-concurrency/10.1.3.01-event-loop.md) | Synchronous tasks, microtask checkpoints, browser rendering, Node host loop | Essential | Foundational | 9 min |
-| 12 | [Promises](03-async-concurrency/10.1.3.02-promises.md) | Promise states, chaining, error handling, `Promise.all`/`race`/`allSettled`/`any` | Essential | Foundational | 9 min |
+| 12 | [Promises](03-async-concurrency/10.1.3.02-promises.md) | Promise states, chaining, error handling, `Promise.all`/`race`/`allSettled`/`any` | Essential | Foundational | 10 min |
 | 13 | [Async/Await](03-async-concurrency/10.1.3.03-async-await.md) | Suspension, serial dependencies vs overlapping I/O, rejection paths and iterator cleanup | Essential | Foundational | 11 min |
-| 14 | [Error Handling](03-async-concurrency/10.1.3.04-error-handling.md) | try/catch/finally, custom errors, error propagation, async error handling, unhandled rejections | Essential | Foundational | 10 min |
-| 15 | [Aborting & Cancellation](03-async-concurrency/10.1.3.05-abort-and-cancellation.md) | AbortController/AbortSignal, stale-request races, `AbortSignal.timeout`/`any`, listener cleanup, cooperative cancellation | Essential | Foundational | 8 min |
+| 14 | [Error Handling](03-async-concurrency/10.1.3.04-error-handling.md) | `try`/`catch`/`finally`, custom errors, error propagation, async error handling, unhandled rejections | Essential | Foundational | 10 min |
+| 15 | [Aborting & Cancellation](03-async-concurrency/10.1.3.05-abort-and-cancellation.md) | `AbortController`/`AbortSignal`, stale-request races, `AbortSignal.timeout`/`any`, listener cleanup, cooperative cancellation | Essential | Foundational | 8 min |
 | 16 | [Bounded Concurrency](03-async-concurrency/10.1.3.06-bounded-concurrency.md) | Task-start limit, failure policy, cancellation, result order and backpressure | Essential | Foundational | 8 min |
 
 **Read order:** Event Loop → Promises → Async/Await → Error Handling → Aborting & Cancellation → Bounded Concurrency. Together, these chapters explain scheduling, failure, cancellation and limits on parallel work.
@@ -93,7 +93,7 @@ Choosing the right collection and avoiding memory leaks.
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 17 | [Pass by Value](04-memory-and-data/10.1.4.01-pass-by-value.md) | Primitive vs reference, value/reference semantics, mutation gotchas | Essential | Foundational | 5 min |
-| 18 | [Map, Set, WeakMap, WeakSet](04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md) | Key identity and order, weak metadata, conversion, bounded eviction | Essential | Foundational | 5 min |
+| 18 | [Map, Set, WeakMap, WeakSet](04-memory-and-data/10.1.4.02-map-set-weakmap-weakset.md) | Key identity and order, weak metadata, conversion, bounded eviction | Essential | Foundational | 6 min |
 | 19 | [Shallow vs Deep Copy](04-memory-and-data/10.1.4.03-shallow-vs-deep-copy.md) | Reference graphs, structured cloning, transfer, JSON boundary, path copying | Essential | Foundational | 7 min |
 | 20 | [Debounce](04-memory-and-data/10.1.4.04-debounce.md) | Quiet-time scheduling, edge policies, cancellation, stale async results | Essential | Foundational | 10 min |
 | 21 | [Throttle](04-memory-and-data/10.1.4.05-throttle.md) | Periodic scheduling, edge policies, cancellation, concurrency boundaries | Essential | Foundational | 9 min |
@@ -123,8 +123,8 @@ Patterns for explicit data flow, reusable computations, lazy iteration and funct
 Selected recent APIs, browser execution/event models and interview practice.
 
 | # | File | Topics | Role priority | General importance | Read time |
-| --: | ------ | -------- | --- | --- | ----------    : |
-| 31 | [Recent ECMAScript Features](06-modern-and-interview/10.1.6.01-es2024-features.md) | Selected ES2022–2026 built-ins; compare ownership, evaluation, and runtime support | Important | Specialized | 7 min |
+| --: | ------ | -------- | --- | --- | ----------: |
+| 31 | [Recent ECMAScript Features](06-modern-and-interview/10.1.6.01-es2024-features.md) | Selected ES2022–2026 built-ins; compare ownership, evaluation, and runtime support | Important | Specialized | 8 min |
 | 32 | [Web Workers](06-modern-and-interview/10.1.6.02-web-workers.md) | Dedicated, shared, and service workers; message ownership and cancellation limits | Important | Important | 7 min |
 | 33 | [DOM Events & Delegation](06-modern-and-interview/10.1.6.03-dom-events-delegation.md) | Event path, target and listener ownership, delegation, propagation, default actions, and cleanup | Essential | Foundational | 6 min |
 | 34 | [Cross-Tab Communication](06-modern-and-interview/10.1.6.04-cross-tab-communication.md) | Transient messages, persistent recovery, shared owners, locks, and safe cross-tab session updates | Important | Specialized | 7 min |
@@ -151,7 +151,7 @@ Selected recent APIs, browser execution/event models and interview practice.
 
 ### Path C — Interview tomorrow
 - Read each chapter's definition and summary
-- Use each category REVISION, then the Interview Questions bank
+- Use each category `REVISION.md`, then the Interview Questions bank
 - Practice scope, receiver, async and object-identity traces out loud
 
 ---
@@ -167,4 +167,4 @@ Selected recent APIs, browser execution/event models and interview practice.
 
 ## Navigation
 
-[← Previous: Interview Strategy](../../00-strategy/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: TypeScript →](../10.2-typescript/INDEX.md)
+[← Previous: Interview Strategy](../../00-strategy/INDEX.md) · [Back to Index](../../INDEX.md) · [Next: TypeScript →](../10.2-typescript/INDEX.md)

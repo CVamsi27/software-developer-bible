@@ -60,7 +60,7 @@ Source: [Compound Components](10.3.5.02-compound-components.md)
 
 **Q:** Why should a dynamic selectable list register and unregister each option through immutable state updates?
 
-**A:** Registration makes the selected label available to the trigger; cleanup removes a label when an option unmounts. A mutated Map keeps the same identity and schedules no render, so added or removed choices can leave the displayed label stale.
+**A:** Registration makes the selected label available to the trigger; cleanup removes a label when an option unmounts. A mutated `Map` keeps the same identity and schedules no render, so added or removed choices can leave the displayed label stale.
 
 **Q:** Why can generic JSX on a parent fail to type its namespaced children?
 
@@ -84,7 +84,7 @@ Source: [Compound Components](10.3.5.02-compound-components.md)
 
 **Q:** Why does the example require a controlled `value` prop instead of implying an uncontrolled mode?
 
-**A:** The caller owns the selected value and supplies the change callback; TabsRoot distributes that contract through context without storing a second selection. Requiring both props keeps ownership explicit instead of implying an internal default-value mode the example does not implement.
+**A:** The caller owns the selected value and supplies the change callback; `TabsRoot` distributes that contract through context without storing a second selection. Requiring both props keeps ownership explicit instead of implying an internal default-value mode the example does not implement.
 
 ## Changed identity and display contracts
 
@@ -94,7 +94,7 @@ Source: [Portals](10.3.5.01-portals.md), [Compound Components](10.3.5.02-compoun
 
 **A:** Its own handler logs the menu entry, then the logical React ancestor logs the card entry. Native propagation follows the actual DOM path separately.
 
-**Q:** Does setting z-index without checking the destination guarantee an overlay stays above the page?
+**Q:** Does setting `z-index` without checking the destination guarantee an overlay stays above the page?
 
 **A:** No. Stacking contexts, positioning and the browser top layer still govern visibility. A portal changes ancestry rather than granting global priority.
 

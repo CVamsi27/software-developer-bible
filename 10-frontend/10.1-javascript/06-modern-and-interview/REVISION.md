@@ -16,7 +16,7 @@ Source: [Recent ECMAScript Features](10.1.6.01-es2024-features.md)
 
 **Q:** Where do `?.` and `??` draw their lines, and why does that split matter?
 
-**A:** Optional chaining short-circuits a continuous optional chain when its guarded base is nullish; add it at each link that may be absent. Nullish coalescing falls back only on null or undefined, so values such as zero, an empty string, and false survive it but not logical OR.
+**A:** Optional chaining short-circuits a continuous optional chain when its guarded base is nullish; add it at each link that may be absent. Nullish coalescing falls back only on `null` or `undefined`, so values such as zero, an empty string, and `false` survive it but not logical OR.
 
 **Q:** Which completion paths must a `Promise.withResolvers` owner preserve?
 
@@ -44,11 +44,11 @@ Source: [Recent ECMAScript Features](10.1.6.01-es2024-features.md)
 
 **Q:** Is `structuredClone` uniformly faster than the JSON round-trip, and if not why does it still win?
 
-**A:** No; measure the actual data and runtime. JSON serialization and structured cloning have different contracts. Structured cloning supports cycles and types such as Date, Map, Set and typed arrays that a JSON round-trip loses or changes. Choose the required behavior first, then compare timings for data supported by both.
+**A:** No; measure the actual data and runtime. JSON serialization and structured cloning have different contracts. Structured cloning supports cycles and types such as `Date`, `Map`, `Set` and typed arrays that a JSON round-trip loses or changes. Choose the required behavior first, then compare timings for data supported by both.
 
 **Q:** When does `Array.fromAsync` unwrap values from an async iterable, and what does a mapper change?
 
-**A:** Without a mapper, a custom async iterator's promise-valued result can remain an element; Array.fromAsync does not re-await async-iterator values. An async generator adopts a promise at its own yield boundary. Mapper results and sync-iterator values are awaited during collection. `Array.fromAsync` is asynchronous collection, not an async-stream pipeline.
+**A:** Without a mapper, a custom async iterator's promise-valued result can remain an element; `Array.fromAsync` does not re-await async-iterator values. An async generator adopts a promise at its own yield boundary. Mapper results and sync-iterator values are awaited during collection. `Array.fromAsync` is asynchronous collection, not an async-stream pipeline.
 
 **Q:** How does `Iterator.concat` avoid the eager work of array concatenation?
 
@@ -60,15 +60,15 @@ Source: [Recent ECMAScript Features](10.1.6.01-es2024-features.md)
 
 **Q:** What part of a JSON numeric token can an ES2026 reviver use to recover an exact integer?
 
-**A:** For primitive values the reviver's third argument provides `context.source`, the original JSON spelling. Check the field's accepted syntax, then convert the text to `BigInt` before relying on the rounded Number. This does not make JSON numbers generally arbitrary-precision.
+**A:** For primitive values the reviver's third argument provides `context.source`, the original JSON spelling. Check the field's accepted syntax, then convert the text to `BigInt` before relying on the rounded `Number`. This does not make JSON numbers generally arbitrary-precision.
 
 **Q:** Why is `Math.sumPrecise` still the wrong representation for an exact decimal currency total?
 
-**A:** Its improved summation reduces intermediate floating-point error but returns a Number. Use integer minor units or a decimal type when the domain requires exact decimal arithmetic.
+**A:** Its improved summation reduces intermediate floating-point error but returns a `Number`. Use integer minor units or a decimal type when the domain requires exact decimal arithmetic.
 
 **Q:** What boundary does `Error.isError` handle that `instanceof Error` may miss?
 
-**A:** It recognizes built-in Error objects across realms where the prototype chain differs. It does not prove an error is trusted or safe to render.
+**A:** It recognizes built-in `Error` objects across realms where the prototype chain differs. It does not prove an error is trusted or safe to render.
 
 **Q:** Why decode base64 directly to `Uint8Array` instead of treating it as text?
 
@@ -88,15 +88,15 @@ Source: [Web Workers](10.1.6.02-web-workers.md)
 
 **Q:** What does `worker.postMessage({ buffer }, [buffer])` do to the sender's copy of the buffer?
 
-**A:** It transfers ownership and detaches the sender's ArrayBuffer. Its `byteLength` becomes 0 and existing views can no longer use that backing data normally. The worker receives the transferred data. This does not guarantee that the engine physically moves bytes without copying.
+**A:** It transfers ownership and detaches the sender's `ArrayBuffer`. Its `byteLength` becomes 0 and existing views can no longer use that backing data normally. The worker receives the transferred data. This does not guarantee that the engine physically moves bytes without copying.
 
-**Q:** Why must a SharedWorker protocol choose between replying to the requesting tab and broadcasting to all tabs?
+**Q:** Why must a `SharedWorker` protocol choose between replying to the requesting tab and broadcasting to all tabs?
 
-**A:** Each client connects through its own MessagePort. The worker must retain eligible ports and post to each for fan-out, or reply only through the requesting port; `BroadcastChannel` is a separate option when messages should be delivered to peers. With `addEventListener`, call `port.start()`; assigning `onmessage` starts delivery implicitly. Closing one tab's port does not close another's.
+**A:** Each client connects through its own `MessagePort`. The worker must retain eligible ports and post to each for fan-out, or reply only through the requesting port; `BroadcastChannel` is a separate option when messages should be delivered to peers. With `addEventListener`, call `port.start()`; assigning `onmessage` starts delivery implicitly. Closing one tab's port does not close another's.
 
-**Q:** What are the two OffscreenCanvas ownership paths, and who presents the result?
+**Q:** What are the two `OffscreenCanvas` ownership paths, and who presents the result?
 
-**A:** A page can transfer control of its visible canvas so the worker draws into the canvas the browser presents. Or the worker can draw to an independent OffscreenCanvas and send ImageBitmap frames back for the page to present. Bound frames in flight and close each bitmap after use.
+**A:** A page can transfer control of its visible canvas so the worker draws into the canvas the browser presents. Or the worker can draw to an independent `OffscreenCanvas` and send `ImageBitmap` frames back for the page to present. Bound frames in flight and close each bitmap after use.
 
 **Q:** Why does moving an asynchronous network wait to a worker rarely improve page responsiveness?
 
@@ -144,7 +144,7 @@ Source: [DOM Events & Delegation](10.1.6.03-dom-events-delegation.md)
 
 **Q:** Why pair `closest(selector)` with `root.contains(...)` inside a delegated handler?
 
-**A:** `closest` walks up from whatever was actually hit, so a click on an icon inside a button still matches the button; `contains` rejects a `closest` match above/outside the delegated root. A neighbouring subtree does not normally bubble through this root; the guard limits the match search, rather than changing propagation.
+**A:** `closest` walks up from whatever was actually hit, so a click on an icon inside a button still matches the button; `contains` rejects a `closest` match above/outside the delegated root. A neighboring subtree does not normally bubble through this root; the guard limits the match search, rather than changing propagation.
 
 ## Cross-Tab Communication
 
@@ -164,7 +164,7 @@ Source: [Cross-Tab Communication](10.1.6.04-cross-tab-communication.md)
 
 **Q:** In the theme-sync example, why does the writer apply the theme after saving and posting a message?
 
-**A:** The writing tab receives no `storage` event of its own, so it applies the change locally. The other tabs may receive a storage event, a BroadcastChannel message, or both, so applying the same validated value must be harmless.
+**A:** The writing tab receives no `storage` event of its own, so it applies the change locally. The other tabs may receive a `storage` event, a `BroadcastChannel` message, or both, so applying the same validated value must be harmless.
 
 **Q:** What should an authentication-change message contain, and why must the server remain authoritative?
 
@@ -172,11 +172,11 @@ Source: [Cross-Tab Communication](10.1.6.04-cross-tab-communication.md)
 
 **Q:** Why is `if (acquireLock("checkout")) chargeCard()` a double-charge waiting to happen?
 
-**A:** A localStorage check followed by a write is not atomic: both tabs can read "free" before either writes. Web Locks can serialize cooperating local contexts, but cannot prove that a payment request reached the server only once. Use a server-side idempotency contract for the charge and local coordination for the UI.
+**A:** A `localStorage` check followed by a write is not atomic: both tabs can read "free" before either writes. Web Locks can serialize cooperating local contexts, but cannot prove that a payment request reached the server only once. Use a server-side idempotency contract for the charge and local coordination for the UI.
 
 **Q:** Why shouldn't the megabyte report itself travel over the channel?
 
-**A:** Large fan-out adds serialization/copy and repeated processing costs. Commit the report in IndexedDB, then signal its ID; receivers validate the notification and read the stored result. Storage still has read/clone costs and quota/eviction limits, and the signal is not durable.
+**A:** Large fan-out adds serialization/copy and repeated processing costs. Commit the report in `IndexedDB`, then signal its ID; receivers validate the notification and read the stored result. Storage still has read/clone costs and quota/eviction limits, and the signal is not durable.
 
 **Q:** Why version a changed message schema across deployments?
 
@@ -194,7 +194,7 @@ Source: [DOM Events](10.1.6.03-dom-events-delegation.md)
 
 **Q:** With outer/inner capture and non-capture click listeners, what runs first, and what changes when the inner listener cancels default?
 
-**A:** Outer capture, inner capture, inner non-capture, then outer bubble. Cancelling a cancelable non-passive click suppresses its default action without changing that propagation order. Stopping propagation is a separate operation.
+**A:** Outer capture, inner capture, inner non-capture, then outer bubble. Canceling a cancelable non-passive click suppresses its default action without changing that propagation order. Stopping propagation is a separate operation.
 
 Source: [Modern Features](10.1.6.01-es2024-features.md)
 

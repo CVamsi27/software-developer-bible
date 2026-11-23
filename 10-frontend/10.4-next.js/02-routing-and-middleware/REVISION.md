@@ -22,13 +22,13 @@ Source: [Proxy in Next.js](10.4.2.01-middleware.md)
 
 **A:** A redirect asks the browser to navigate to another URL. A rewrite selects another destination while keeping the visible requested URL.
 
-**Q:** Why can an experiment lose its sticky assignment even though cookies.set was called?
+**Q:** Why can an experiment lose its sticky assignment even though `cookies.set` was called?
 
 **A:** The cookie was attached to a response that was discarded. Set it on the same rewrite/continue response that the entry point actually returns.
 
 **Q:** How should verified identity reach a downstream server handler?
 
-**A:** Overwrite the cloned request headers and forward them through NextResponse.next's request option. Response headers instead expose values to the browser.
+**A:** Overwrite the cloned request headers and forward them through `NextResponse.next`'s `request` option. Response headers instead expose values to the browser.
 
 **Q:** Why must a distributed rate limiter make its check-and-increment atomic?
 
@@ -40,19 +40,19 @@ Source: [Proxy in Next.js](10.4.2.01-middleware.md)
 
 **Q:** Why can excluding a page path in `config.matcher` leave its Server Function outside Proxy checks too?
 
-**A:** Server Function calls are POST requests to the page route, not separate routes. Their own function must authenticate and authorize every call; a Proxy matcher is not their security boundary.
+**A:** Server Function calls are `POST` requests to the page route, not separate routes. Their own function must authenticate and authorize every call; a Proxy matcher is not their security boundary.
 
 ## Route Handlers in Next.js
 
 Source: [Route Handlers in Next.js](10.4.2.02-route-handlers.md)
 
-**Q:** Must a Route Handler live below an api folder?
+**Q:** Must a Route Handler live below an `api` folder?
 
-**A:** No. Any app segment can expose a route.ts handler, provided it does not also contain a page claiming that URL.
+**A:** No. Any `app` segment can expose a `route.ts` handler, provided it does not also contain a page claiming that URL.
 
-**Q:** How does GET caching differ with Cache Components off and on?
+**Q:** How does `GET` caching differ with Cache Components off and on?
 
-**A:** With Cache Components off, Route Handlers are uncached by default and a safe public GET can opt in through route configuration. With it on, deterministic work can be prerendered and reusable data can be cached in a helper; request-specific reads remain dynamic.
+**A:** With Cache Components off, Route Handlers are uncached by default and a safe public `GET` can opt in through route configuration. With it on, deterministic work can be prerendered and reusable data can be cached in a helper; request-specific reads remain dynamic.
 
 **Q:** Why must signature verification precede JSON parsing for a webhook?
 
@@ -64,11 +64,11 @@ Source: [Route Handlers in Next.js](10.4.2.02-route-handlers.md)
 
 **Q:** Should a read-only endpoint export every supported HTTP method?
 
-**A:** No. Only expose intended operations; the router supplies a method-not-allowed response for the rest and can generate OPTIONS.
+**A:** No. Only expose intended operations; the router supplies a method-not-allowed response for the rest and can generate `OPTIONS`.
 
 **Q:** Why are response CORS headers alone insufficient for a preflighted request?
 
-**A:** The browser first asks OPTIONS whether the method and headers are allowed. That preflight also needs the intended CORS policy, while authentication remains a separate check.
+**A:** The browser first asks `OPTIONS` whether the method and headers are allowed. That preflight also needs the intended CORS policy, while authentication remains a separate check.
 
 **Q:** Why should a Route Handler prefer the generated `RouteContext` helper for dynamic params?
 
@@ -82,33 +82,33 @@ Source: [Route Handlers in Next.js](10.4.2.02-route-handlers.md)
 
 Source: [Metadata API in Next.js](10.4.2.03-metadata.md)
 
-**Q:** Does generateMetadata imply work on every incoming request?
+**Q:** Does `generateMetadata` imply work on every incoming request?
 
 **A:** No. A prerenderable route can resolve generated metadata during build; request-dependent inputs may instead require runtime resolution or streaming.
 
-**Q:** What disappears when a page replaces its parent's openGraph object?
+**Q:** What disappears when a page replaces its parent's `openGraph` object?
 
 **A:** Unrepeated nested fields can disappear because merging is shallow. Explicitly carry forward images or other needed parent fields.
 
-**Q:** When should a page use title.absolute?
+**Q:** When should a page use `title.absolute`?
 
 **A:** Use it when that page must bypass an inherited title template. Ordinary page titles receive the ancestor's formatting.
 
-**Q:** Does metadataBase create a canonical link?
+**Q:** Does `metadataBase` create a canonical link?
 
-**A:** It provides a base for relative URL fields. Declare alternates.canonical to emit the canonical relationship.
+**A:** It provides a base for relative URL fields. Declare `alternates.canonical` to emit the canonical relationship.
 
-**Q:** Why is JSON.stringify alone insufficient for untrusted JSON-LD inserted into a script?
+**Q:** Why is `JSON.stringify` alone insufficient for untrusted JSON-LD inserted into a script?
 
 **A:** A literal less-than character can begin markup that terminates the script. Replace it with the literal backslash-u sequence `\u003c` in the output, using two backslashes in the JavaScript string literal. A single Unicode escape evaluates back to `<`. Verify a `</script>` payload contains no literal `<` after serialization and still round-trips as JSON.
 
 **Q:** Do two Open Graph image sizes provide responsive on-page images?
 
-**A:** No. Sharing platforms choose preview images; a browser's responsive page image uses srcset/sizes through next/image.
+**A:** No. Sharing platforms choose preview images; a browser's responsive page image uses `srcset`/`sizes` through `next/image`.
 
-**Q:** Where does JSON-LD belong if it is not a field in the Metadata object?
+**Q:** Where does JSON-LD belong if it is not a field in the `Metadata` object?
 
-**A:** Render structured data separately in a script element in the page or layout, with safe serialization. The Metadata API emits supported document metadata; it does not turn a custom JSON-LD field into structured data.
+**A:** Render structured data separately in a `<script>` element in the page or layout, with safe serialization. The Metadata API emits supported document metadata; it does not turn a custom JSON-LD field into structured data.
 
 **Q:** What takes precedence when a route defines both `opengraph-image.png` and an `openGraph.images` value?
 

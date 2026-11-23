@@ -24,7 +24,7 @@ Source: [Utility Types](10.2.3.01-utility-types.md)
 
 **Q:** Why must a `fetch` wrapper parse JSON before returning a DTO?
 
-**A:** `fetch` resolves to a Response object, not the payload. Reading JSON and validating the resulting unknown data are separate steps needed to earn the DTO type.
+**A:** `fetch` resolves to a `Response` object, not the payload. Reading JSON and validating the resulting `unknown` data are separate steps needed to earn the DTO type.
 
 **Q:** How do `ReturnType` and `Awaited` answer different questions about an async function?
 
@@ -36,7 +36,7 @@ Source: [Utility Types](10.2.3.01-utility-types.md)
 
 **Q:** Why separate an update ID from optional changes?
 
-**A:** A partial entity permits the identifier to be absent. A separate required ID identifies the target; an explicit Pick allowlist prevents optional changes from also granting writes to IDs, secrets or server-controlled fields.
+**A:** A partial entity permits the identifier to be absent. A separate required ID identifies the target; an explicit `Pick` allowlist prevents optional changes from also granting writes to IDs, secrets or server-controlled fields.
 
 **Q:** Does `Omit<User, 'password'>` remove a password from an actual object?
 
@@ -80,7 +80,7 @@ Source: [Conditional Types](10.2.3.02-conditional-types.md)
 
 **Q:** What contract does `OptionalExcept<T, K>` need to enforce?
 
-**A:** Keys in K remain required while other keys may be omitted. Making only K partial implements the opposite policy.
+**A:** Keys in `K` remain required while other keys may be omitted. Making only `K` partial implements the opposite policy.
 
 ## Mapped Types
 
@@ -108,15 +108,15 @@ Source: [Mapped Types](10.2.3.03-mapped-types.md)
 
 **Q:** Why can a direct `T[K] extends object` test miss an optional nested record?
 
-**A:** Reading an optional property gives a union with `undefined`, and that union does not wholly extend object. A helper conditional over its own naked parameter can recurse per member.
+**A:** Reading an optional property gives a union with `undefined`, and that union does not wholly extend `object`. A helper conditional over its own naked parameter can recurse per member.
 
 **Q:** Does `field: string | undefined` permit omitting a required field?
 
-**A:** The field must still be present unless it has the optional modifier. Its union only allows an explicit undefined value.
+**A:** The field must still be present unless it has the optional modifier. Its union only allows an explicit `undefined` value.
 
-**Q:** Why keep Date and functions as leaves in the deep transform example?
+**Q:** Why keep `Date` and functions as leaves in the deep transform example?
 
-**A:** Mapping their members as ordinary data can destroy their usable signatures. Keeping them as leaves preserves those APIs, while leaving runtime mutation behavior unchanged. Map/Set/host classes require additional domain-specific leaf or readonly-container rules.
+**A:** Mapping their members as ordinary data can destroy their usable signatures. Keeping them as leaves preserves those APIs, while leaving runtime mutation behavior unchanged. `Map`/`Set`/host classes require additional domain-specific leaf or readonly-container rules.
 
 ## Template Literal Types
 
@@ -168,21 +168,21 @@ Source: [Utility Types](10.2.3.01-utility-types.md)
 
 Source: [Conditional Types](10.2.3.02-conditional-types.md)
 
-**Q:** Is ["one",2] admitted by ToArray<string|number>, and what changes with tuple wrapping?
+**Q:** Is `["one", 2]` admitted by `ToArray<string | number>`, and what changes with tuple wrapping?
 
-**A:** The distributive result is string[]|number[], so a mixed array fits neither member. Whole-input wrapping produces (string|number)[], which permits that mixed array. never has no members to distribute.
+**A:** The distributive result is `string[] | number[]`, so a mixed array fits neither member. Whole-input wrapping produces `(string | number)[]`, which permits that mixed array. `never` has no members to distribute.
 
 Source: [Mapped Types](10.2.3.03-mapped-types.md)
 
-**Q:** What is created for name and age in Getters, and does that add functions to a real user?
+**Q:** What is created for `name` and `age` in `Getters`, and does that add functions to a real user?
 
-**A:** Static members getName:()=>string and getAge:()=>number are derived from their corresponding values. No runtime functions are installed. Numeric/symbol keys omitted by the string template stay omitted from the type only.
+**A:** Static members `getName: () => string` and `getAge: () => number` are derived from their corresponding values. No runtime functions are installed. Numeric/symbol keys omitted by the string template stay omitted from the type only.
 
 Source: [Template Literal Types](10.2.3.04-template-literal-types.md)
 
-**Q:** Build /users/:userId/posts/:postId with userId=a/b, then omit postId at runtime. What happens?
+**Q:** Build `/users/:userId/posts/:postId` with `userId=a/b`, then omit `postId` at runtime. What happens?
 
-**A:** The builder substitutes whole segments and encodes a/b as a%2Fb. Missing or nonstring postId throws even if an unchecked caller bypassed the static contract; it cannot leave a trusted unresolved placeholder.
+**A:** The builder substitutes whole segments and encodes `a/b` as `a%2Fb`. Missing or nonstring `postId` throws even if an unchecked caller bypassed the static contract; it cannot leave a trusted unresolved placeholder.
 
 **Q:** What does `Split<'a,', ','>` produce, and what does the helper return for an empty delimiter?
 

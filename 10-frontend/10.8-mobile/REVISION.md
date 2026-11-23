@@ -30,7 +30,7 @@ Source: [Deep Linking, Universal Links & App Links](10.8.02-deep-linking-univers
 
 **A:** Preserve and validate the intended destination, authenticate, then authorize and navigate. Never treat the link's object ID as proof of access.
 
-**Q:** A warm link arrives before getInitialURL resolves. How do you keep the late initial link from replacing it?
+**Q:** A warm link arrives before `getInitialURL` resolves. How do you keep the late initial link from replacing it?
 
 **A:** Subscribe during bootstrap, record that an event arrived and ignore the older initial completion. Cleanup must also disable pending completions. Validate the route and wait for session/navigation readiness before accessing data.
 

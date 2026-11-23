@@ -12,11 +12,11 @@
 ## Files
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| ------ | ------------------------------------------------------------- | -------------------------------------------------------------------------------------- | ------------- | ------------------ | ----------: |
+| ------ | ------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ------------- | ------------------ | ----------: |
 | 01 | [Utility Types](10.2.3.01-utility-types.md) | `Partial`, `Required`, `Pick`, `Omit`, `Record`, `Exclude`, `Extract`, `NonNullable` | Essential | Foundational | 8 min |
 | 02 | [Conditional Types](10.2.3.02-conditional-types.md) | Ternary types, distributive conditional types, `infer` keyword, `never` | Important | Specialized | 8 min |
 | 03 | [Mapped Types](10.2.3.03-mapped-types.md) | Index signatures, mapping modifiers, `as` clause, key remapping | Essential | Foundational | 8 min |
-| 04 | [Template Literal Types](10.2.3.04-template-literal-types.md) | String manipulation, infer patterns, CSS types, route builders, recursive string types | Important | Specialized | 13 min |
+| 04 | [Template Literal Types](10.2.3.04-template-literal-types.md) | String manipulation, `infer` patterns, CSS types, route builders, recursive string types | Important | Specialized | 13 min |
 
 ---
 

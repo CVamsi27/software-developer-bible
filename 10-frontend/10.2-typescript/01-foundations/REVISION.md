@@ -24,7 +24,7 @@ Source: [Types vs Interfaces](10.2.1.01-types-vs-interfaces.md)
 
 **Q:** Does `interface Dog extends Animal` do something `type Dog = Animal & { … }` cannot?
 
-**A:** Compatible members can describe the same shape, but conflicting extension members report an error at the interface; an intersection instead requires both and may produce an impossible never property. An interface also supports merging.
+**A:** Compatible members can describe the same shape, but conflicting extension members report an error at the interface; an intersection instead requires both and may produce an impossible `never` property. An interface also supports merging.
 
 **Q:** What does structural typing imply about a `type Point` and an identically-shaped `interface PointInterface`?
 
@@ -142,27 +142,27 @@ Source: [tsconfig & Compiler Options](10.2.1.04-tsconfig-compiler-options.md)
 
 Source: [Types vs Interfaces](10.2.1.01-types-vs-interfaces.md)
 
-**Q:** A contract requires value:string, then a second contract requires value:number. Does intersection choose the later member?
+**Q:** A contract requires `value: string`, then a second contract requires `value: number`. Does intersection choose the later member?
 
 **A:** No. It requires both, producing an impossible string-and-number property. An interface extension instead reports the incompatible member at its declaration.
 
 Source: [Keyof and Typeof](10.2.1.02-keyof-typeof.md)
 
-**Q:** Trace settings.port through typeof, keyof and indexed access. What changes when the property is optional?
+**Q:** Trace `settings.port` through `typeof`, `keyof` and indexed access. What changes when the property is optional?
 
-**A:** typeof settings gives the object type, keyof selects names, and indexed access selects port's value type. An optional port read also admits undefined; the key union does not prove the runtime value is present.
+**A:** `typeof settings` gives the object type, `keyof` selects names, and indexed access selects `port`'s value type. An optional `port` read also admits `undefined`; the key union does not prove the runtime value is present.
 
 Source: [Type Narrowing](10.2.1.03-type-narrowing.md)
 
-**Q:** JSON parsing returns {name:42,email:"a@example.com"}. Why does parseUser reject it despite valid JSON?
+**Q:** JSON parsing returns `{ name: 42, email: "a@example.com" }`. Why does `parseUser` reject it despite valid JSON?
 
-**A:** Syntax parsing yields unknown data. isUser checks the actual required string fields; an as User cast would falsely claim them without changing the value.
+**A:** Syntax parsing yields `unknown` data. `isUser` checks the actual required string fields; an `as User` cast would falsely claim them without changing the value.
 
 Source: [Compiler Options](10.2.1.04-tsconfig-compiler-options.md)
 
-**Q:** With noUncheckedIndexedAccess enabled, why must labels[0] be guarded, and what happens if paths is configured only in tsc?
+**Q:** With `noUncheckedIndexedAccess` enabled, why must `labels[0]` be guarded, and what happens if `paths` is configured only in `tsc`?
 
-**A:** The array type admits an empty array, so the index can be undefined. paths helps static resolution but does not rewrite emitted imports; the bundler/loader needs the matching alias contract.
+**A:** The array type admits an empty array, so the index can be `undefined`. `paths` helps static resolution but does not rewrite emitted imports; the bundler/loader needs the matching alias contract.
 
 Source: [tsconfig & Compiler Options](10.2.1.04-tsconfig-compiler-options.md)
 

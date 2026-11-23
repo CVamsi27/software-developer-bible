@@ -12,7 +12,7 @@
 ## Files
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------: |
+| ----: | ----------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ------------- | ------------------ | ----------: |
 | 01 | [SSR / CSR / SSG / ISR](10.4.1.01-ssr-csr-ssg-isr.md) | Separate execution location, output timing and cache policy; distinguish hydration from CSR | Important | Specialized | 10 min |
 | 02 | [App Router](10.4.1.02-app-router.md) | Map URL segments to pages, persistent layouts, and loading or failure boundaries | Important | Important | 12 min |
 | 03 | [Server Components](10.4.1.03-server-components.md) | Trace authorized server reads into the RSC payload and safe client props | Important | Important | 9 min |

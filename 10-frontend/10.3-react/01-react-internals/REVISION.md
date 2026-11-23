@@ -36,7 +36,7 @@ Source: [Virtual DOM](10.3.1.01-virtual-dom.md)
 
 **Q:** Why can stable callback props fail to eliminate child renders?
 
-**A:** An ordinary child renders with its parent; stable references matter when an identity-sensitive boundary such as memo checks them. They cannot substitute for that boundary.
+**A:** An ordinary child renders with its parent; stable references matter when an identity-sensitive boundary such as `React.memo` checks them. They cannot substitute for that boundary.
 
 **Q:** How should you compare direct DOM code with declarative rendering?
 
@@ -134,7 +134,7 @@ Source: [Rendering](10.3.1.04-rendering.md)
 
 **A:** Computing errors directly makes them available in the same render. A second stored copy requires synchronization and another render attempt.
 
-**Q:** When can flushSync help an external integration?
+**Q:** When can `flushSync` help an external integration?
 
 **A:** It can ensure requested DOM changes are available before the next line in a callback that requires synchronous access. Its broader flushing and performance costs make it an escape hatch.
 
@@ -150,11 +150,11 @@ Source: [Lifecycle](10.3.1.05-lifecycle.md)
 
 **A:** An instance mounts, may update repeatedly, and eventually unmounts. Side-effect resources should follow the relevant committed synchronization cycles within that lifetime.
 
-**Q:** Why is a dependency-based effect not identical to componentDidUpdate?
+**Q:** Why is a dependency-based effect not identical to `componentDidUpdate`?
 
 **A:** It is set up on initial mount as well as after dependency changes. The class update callback excludes the initial mount.
 
-**Q:** Why cannot useLayoutEffect directly replace getSnapshotBeforeUpdate?
+**Q:** Why cannot `useLayoutEffect` directly replace `getSnapshotBeforeUpdate`?
 
 **A:** The class snapshot method reads the old DOM before mutations. A layout effect sees the committed new DOM, so the observation point differs.
 
@@ -202,9 +202,9 @@ Source: [Virtual DOM](10.3.1.01-virtual-dom.md), [Fiber](10.3.1.02-fiber.md), [R
 
 **A:** It can skip the urgent parent render while its result-driving query prop remains unchanged. The transition schedules the changed query's render; one long filter still cannot be interrupted midway.
 
-**Q:** Does act() automatically finish a fetch controlled by an unresolved promise?
+**Q:** Does `act()` automatically finish a fetch controlled by an unresolved promise?
 
-**A:** No. The test must resolve or reject the promise and coordinate the resulting React work. act() is not a network, timer or elapsed-time guarantee.
+**A:** No. The test must resolve or reject the promise and coordinate the resulting React work. `act()` is not a network, timer or elapsed-time guarantee.
 
 **Q:** Why can cancellation alone fail to keep the right profile visible?
 

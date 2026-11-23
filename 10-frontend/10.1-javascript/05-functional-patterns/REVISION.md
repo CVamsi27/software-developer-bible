@@ -36,7 +36,7 @@ Source: [Modules](10.1.5.01-modules.md)
 
 **Q:** When a circular dependency bites, do you get `undefined` or an error?
 
-**A:** It depends on the system: CommonJS hands back a partially initialized exported value (some missing properties can produce undefined or a warning), while reading an uninitialized ESM live binding throws a ReferenceError (TDZ).
+**A:** It depends on the system: CommonJS hands back a partially initialized exported value (some missing properties can produce `undefined` or a warning), while reading an uninitialized ESM live binding throws a `ReferenceError` (TDZ).
 
 **Q:** Why can `import { foo } from './utils'` fail in Node ESM yet work in a bundler?
 
@@ -44,7 +44,7 @@ Source: [Modules](10.1.5.01-modules.md)
 
 **Q:** What must a module provide before a bundler can tree-shake its exports away?
 
-**A:** The build must prove removal preserves behavior. Static named usage often helps; a statically accessed namespace can also be analyzed, and default-object property elimination varies. Package sideEffects metadata controls module-level removal in tools such as webpack; incorrect metadata can delete required initialization.
+**A:** The build must prove removal preserves behavior. Static named usage often helps; a statically accessed namespace can also be analyzed, and default-object property elimination varies. Package `sideEffects` metadata controls module-level removal in tools such as webpack; incorrect metadata can delete required initialization.
 
 ## Memoization
 
@@ -64,7 +64,7 @@ Source: [Memoization](10.1.5.02-memoization.md)
 
 **Q:** What repeated work does the Fibonacci cache eliminate?
 
-**A:** It stores each computed input once, so later overlapping branches reuse that result instead of recursively recalculating it. For one input the example computes O(n) states and retains O(n) results; a larger result may still exceed Number precision or stack depth.
+**A:** It stores each computed input once, so later overlapping branches reuse that result instead of recursively recalculating it. For one input the example computes `O(n)` states and retains `O(n)` results; a larger result may still exceed `Number` precision or stack depth.
 
 **Q:** Object-identity keying vs structural keying — when is each the right choice?
 
@@ -96,7 +96,7 @@ Source: [Generators](10.1.5.03-generators.md)
 
 **Q:** How do `return(v)` and `throw(e)` differ in their effect on a suspended generator?
 
-**A:** return(v) injects completion through finally, which can itself yield before done becomes true. throw(e) raises e at the suspended yield, where catch can handle it and yield again. Calling return before the body starts does not execute its finally cleanup.
+**A:** `return(v)` injects completion through `finally`, which can itself `yield` before `done` becomes `true`. `throw(e)` raises `e` at the suspended `yield`, where `catch` can handle it and `yield` again. Calling `return` before the body starts does not execute its `finally` cleanup.
 
 **Q:** In `askName`, what does `iterator.next("Sam")` deliver, and where does the string end up?
 
@@ -112,7 +112,7 @@ Source: [Generators](10.1.5.03-generators.md)
 
 **Q:** Why prefer `for...of` over a manual `while (!done)` loop when both can print the same values?
 
-**A:** A body break/return/throw invokes an available iterator return. Producer next failures differ, and a yielding finally may require more pulls, so mandatory cleanup must not depend on that pattern. A manual loop needs its own owned close on early exit.
+**A:** A body `break`/`return`/`throw` invokes an available iterator `return()`. Producer `next()` failures differ, and a yielding `finally` may require more pulls, so mandatory cleanup must not depend on that pattern. A manual loop needs its own owned close on early exit.
 
 **Q:** An object has a `next()` method but no `Symbol.iterator`. Does `for...of` accept it?
 
@@ -128,7 +128,7 @@ Source: [Generators](10.1.5.03-generators.md)
 
 **Q:** What does lazy evaluation change about space, and what does it leave alone?
 
-**A:** Producing values on demand can avoid storing a whole output array. Space still depends on the generator's retained local state and the consumer's buffers, so not every generator uses O(1) memory. The work needed to calculate each requested value remains.
+**A:** Producing values on demand can avoid storing a whole output array. Space still depends on the generator's retained local state and the consumer's buffers, so not every generator uses `O(1)` memory. The work needed to calculate each requested value remains.
 
 ## Currying & Function Composition
 
@@ -184,7 +184,7 @@ Source: [Recursion and Tail Calls](10.1.5.05-recursion-tail-call.md)
 
 **Q:** What does memoization improve for recursive Fibonacci, and which limit remains?
 
-**A:** It reuses overlapping subproblems so one call computes each smaller state once instead of recomputing branches. It reduces repeated work, not recursion depth or Number precision limits; use iteration when depth is unbounded.
+**A:** It reuses overlapping subproblems so one call computes each smaller state once instead of recomputing branches. It reduces repeated work, not recursion depth or `Number` precision limits; use iteration when depth is unbounded.
 
 **Q:** Why does a graph traversal need more than the tree's recursive base case?
 
@@ -192,7 +192,7 @@ Source: [Recursion and Tail Calls](10.1.5.05-recursion-tail-call.md)
 
 **Q:** What breaks when you forget `return` in front of the recursive call?
 
-**A:** When a function should return the child’s result but simply calls it and falls through, the caller receives undefined. Side-effect-only traversals can correctly omit return; the intended result contract decides.
+**A:** When a function should return the child’s result but simply calls it and falls through, the caller receives `undefined`. Side-effect-only traversals can correctly omit `return`; the intended result contract decides.
 
 **Q:** At what point should you stop trusting recursion and convert to iteration?
 
@@ -206,11 +206,11 @@ Source: [Recursion and Tail Calls](10.1.5.05-recursion-tail-call.md)
 
 Sources: [Modules](10.1.5.01-modules.md), [Memoization](10.1.5.02-memoization.md), [Generators](10.1.5.03-generators.md), [Currying](10.1.5.04-currying-composition.md), [Recursion](10.1.5.05-recursion-tail-call.md).
 
-**Q:** Why can a two-module cycle work until one module reads an imported const during initialization?
+**Q:** Why can a two-module cycle work until one module reads an imported `const` during initialization?
 
-**A:** Linking connects the bindings before evaluation, but the exporting const still needs initialization. The early read can hit its uninitialized state; the cycle alone is not the failure.
+**A:** Linking connects the bindings before evaluation, but the exporting `const` still needs initialization. The early read can hit its uninitialized state; the cycle alone is not the failure.
 
-**Q:** What happens if undefined is a legitimate computed result and a memoizer treats undefined as a miss?
+**Q:** What happens if `undefined` is a legitimate computed result and a memoizer treats `undefined` as a miss?
 
 **A:** It recomputes on every call. Check key membership separately from the value, as in the bounded wrapper.
 
@@ -218,9 +218,9 @@ Sources: [Modules](10.1.5.01-modules.md), [Memoization](10.1.5.02-memoization.md
 
 **A:** Iterator closure prevents future page steps and awaits the generator's close path. It does not cancel an already pending fetch unless the owner also aborts the request through its signal.
 
-**Q:** How does adding a default parameter change a curry helper that relies on fn.length?
+**Q:** How does adding a default parameter change a curry helper that relies on `fn.length`?
 
-**A:** Function.length stops counting at the first default, so the helper may execute before all intended arguments arrive. An explicit completion arity states the intended grouping.
+**A:** `Function.length` stops counting at the first default, so the helper may execute before all intended arguments arrive. An explicit completion arity states the intended grouping.
 
 **Q:** Why can replacing recursion with a work stack avoid stack overflow without reducing total work?
 

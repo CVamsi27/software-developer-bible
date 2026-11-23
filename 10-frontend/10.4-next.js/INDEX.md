@@ -1,6 +1,6 @@
 # Next.js — Index
 
-> **Study time:** ≈ 3 h 24 m of reading (21 files, ~10 min average).
+> **Study time:** ≈ 3 h 22 m of reading (21 files, ~10 min average).
 > **21 files** — App Router, rendering strategies, server components, data fetching patterns, caching, streaming, ISR, authentication, static exports, deployment (Docker/Vercel/self-hosted), and interview questions.
 
 [![Files](https://img.shields.io/badge/files-21-blue)](../../INDEX.md)
@@ -57,7 +57,7 @@ Trace how a URL reaches a page or handler, then place request-specific policy at
 | --: | ------ | -------- | --- | --- | ----------: |
 | 05 | [Proxy and Middleware](02-routing-and-middleware/10.4.2.01-middleware.md) | Next.js 16 Proxy, earlier Middleware, matchers, redirects, rewrites, early routing versus authorization | Important | Specialized | 9 min |
 | 06 | [Route Handlers](02-routing-and-middleware/10.4.2.02-route-handlers.md) | API routes, request/response, caching, dynamic vs static | Important | Important | 15 min |
-| 07 | [Metadata](02-routing-and-middleware/10.4.2.03-metadata.md) | Static/dynamic metadata, SEO, Open Graph, robots, sitemaps | Important | Specialized | 14 min |
+| 07 | [Metadata](02-routing-and-middleware/10.4.2.03-metadata.md) | Static/dynamic metadata, SEO, Open Graph, robots, sitemaps | Important | Specialized | 13 min |
 
 ---
 
@@ -67,10 +67,10 @@ Six chapters explain data access, mutations, reuse, streaming, regeneration and 
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 08 | [Data Fetching Patterns](03-data-and-caching/10.4.3.01-data-fetching-patterns.md) | Server Component data, request deduplication, external query caches, Suspense, and parallel work | Important | Important | 10 min |
+| 08 | [Data Fetching Patterns](03-data-and-caching/10.4.3.01-data-fetching-patterns.md) | Server Component data, request deduplication, external query caches, Suspense, and parallel work | Important | Important | 9 min |
 | 09 | [Server Actions](03-data-and-caching/10.4.3.02-server-actions.md) | Mutations, revalidation, progressive enhancement, form actions | Important | Important | 9 min |
 | 10 | [Caching](03-data-and-caching/10.4.3.03-caching.md) | Previous App Router cache model, Next.js 16 Cache Components, freshness, tags, and invalidation | Important | Important | 9 min |
-| 11 | [Streaming](03-data-and-caching/10.4.3.04-streaming.md) | Streaming SSR, Suspense boundaries, loading UI, parallel routes | Important | Specialized | 7 min |
+| 11 | [Streaming](03-data-and-caching/10.4.3.04-streaming.md) | Streaming SSR, Suspense boundaries, loading UI, parallel routes | Important | Specialized | 6 min |
 | 12 | [Incremental Static Regeneration](03-data-and-caching/10.4.3.05-incremental-static-regeneration.md) | SWR, on-demand revalidation, cache tags, `generateStaticParams`, fallback | Important | Specialized | 10 min |
 | 13 | [Static Exports](03-data-and-caching/10.4.3.06-static-exports.md) | Static export config, `generateStaticParams`, client-side data, deployment | Important | Specialized | 8 min |
 
@@ -84,7 +84,7 @@ Protect current identity/resource boundaries, deliver appropriate image variants
 | --: | ------ | -------- | --- | --- | ----------: |
 | 14 | [Authentication](04-production/10.4.4.01-authentication.md) | Session verification, resource authorization, cookie and CSRF boundaries, version-pinned Auth.js | Important | Important | 9 min |
 | 15 | [Image Optimization](04-production/10.4.4.02-image-optimization.md) | `next/image`, lazy loading, responsive images, AVIF/WebP | Important | Specialized | 7 min |
-| 16 | [Deploying Next.js](04-production/10.4.4.03-deploying-nextjs.md) | Static vs server runtime, standalone artifact, cacheHandler vs cacheHandlers, replica coordination, version skew, runtime configuration, streaming and shutdown | Important | Specialized | 8 min |
+| 16 | [Deploying Next.js](04-production/10.4.4.03-deploying-nextjs.md) | Static vs server runtime, standalone artifact, `cacheHandler` vs `cacheHandlers`, replica coordination, version skew, runtime configuration, streaming and shutdown | Important | Specialized | 8 min |
 
 ---
 
@@ -92,7 +92,7 @@ Protect current identity/resource boundaries, deliver appropriate image variants
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 17 | [Interview Questions](05-interview-prep/10.4.5.01-interview-questions.md) | 40 questions with answers | Important | Specialized | 31 min |
+| 17 | [Interview Questions](05-interview-prep/10.4.5.01-interview-questions.md) | 40 questions with answers | Important | Specialized | 32 min |
 
 ---
 

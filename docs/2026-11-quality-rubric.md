@@ -84,18 +84,16 @@ would break it.
 
 ## How a section pass is performed
 
-In study order (root → `00-strategy` → `10-frontend` → `20-backend` → `30-architecture` →
+In study order (or prioritized wave order across root → `00-strategy` → `10-frontend` → `20-backend` → `30-architecture` →
 `40-platform` → `50-quality` → `60-realtime` → `70-interview-toolkit` → `80-lanes-abroad` →
-`81-lanes-indian-sde-faang` → `projects` → `lanes`), for every chapter, index, interview bank
+`81-lanes-indian-sde-faang` → `projects` → `lanes` → `docs`), for every chapter, index, interview bank
 and companion in that section:
 
-1. Read the file. R2 and R4 are decided here; no script answers them.
-2. Execute what runs. Record command and output; label what only a paid account could prove.
-3. Fix only defects against R1–R7. Sound prose is left alone — a pass is not a restyle.
-4. Re-verify any version claim; when a *class* of staleness is fixed, add the
-   `scripts/check_freshness.py` rule that stops it returning.
-5. Restamp counts, refresh the link baseline only after probing, run `bash scripts/verify.sh`,
-   commit that section alone.
+1. Read the file end to end. R2 (depth) and R4 (prose comprehension) are decided here; no script answers them.
+2. Execute what runs. Record command and output; label what only a paid account or unavailable runtime could prove.
+3. **Rewrite for clear first-pass understanding whenever needed (2026-11-23 update).** Earlier passes forbade restyling (*"sound prose is left alone"*), which left technically accurate but dense, disclaimer-heavy chapters hard to read. If a chapter cannot be followed cleanly on the first read, rewrite it in plain, direct senior-engineer prose: open with a concrete scenario, define terms before using them, trace input → mechanism → observable result with concrete examples, fix formatting/diagrams/backticks, and preserve metadata, required sections, incoming `#anchor` links, and authored `REVISION.md` questions.
+4. Re-verify any version claim against current official docs or local execution; when a *class* of staleness is fixed, add the `scripts/check_freshness.py` rule that stops it returning.
+5. Restamp counts (`check_counts.py --write`), read times (`read_time.py --write`), search index (`gen_master_index.py`), and page weight (`measure_page_weight.py --write`); refresh the link baseline only after live probing; update `docs/review-ledger.json` and `docs/2026-10-25-fullstack-review-records.json`; run `bash scripts/verify.sh`; commit that batch cleanly.
 
 ## Limits this rubric cannot remove
 

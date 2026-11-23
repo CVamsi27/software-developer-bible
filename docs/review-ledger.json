@@ -71,34 +71,36 @@
    }
   },
   "00-strategy/00.05-find-startup-roles.md": {
-   "sha256": "a1125231f3ad2e04b69a65fac1aeea74c2e88c675c85e30491d194dedb1631f2",
-   "lines": 164,
+   "sha256": "fa1c095e32e45389044fac1ef4b57e7b50c3c5612bc250cc980c61a6c82bcdf2",
+   "lines": 222,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-23",
    "evidence": {
-    "current": "career-ops was checked against its GitHub redirect to career-ops-hq/career-ops under MIT; job_board_watch.py reads Greenhouse, Ashby and Personio; channel URLs are in the baseline.",
-    "readable": "Full read of 164 lines; an authority-first diagram opens, then channel choice, ATS resolution, startup reading, verification and pipeline follow.",
-    "concise": "1,631 words; the seven sections each answer one search decision and the tables carry field lists.",
-    "focused": "The job-channel authority model is owned here and links out to the watch script rather than reimplementing it.",
-    "fast": "22.6 KB raw / 7.9 KB gzip built page; the shared Jekyll shell is included.",
-    "best": "No board covers the whole market, a liveness check is point-in-time, and a board scan cannot prove a role is still open; the employer's ATS remains the authority."
-   }
+    "current": "Checked against live HTTP 200 probes on 2026-11-23 for all new VC portfolio and startup hub URLs (Sequoia, Index Ventures, Point Nine, a16z, Accel, Arbeitnow, Remotive); scripts/job_board_watch.py --discover executed via offline unit test. Equity math is explicitly marked illustrative.",
+    "readable": "Full read of 222 lines. Rewritten in plain senior-engineer prose: authority-vs-cache hook, VC portfolio hubs by market, copy-paste ATS search queries, 7-fact tracker table, worked ESOP/VSOP equity math, live automation workflow, and pipeline rules.",
+    "concise": "1672 words. Each section adds a distinct workflow stage (discovery hubs, ATS search queries, fact verification, equity math, automation boundaries, referrals) with no restated tables.",
+    "focused": "Canonical home for startup job discovery and ATS verification. Company research templates stay in 80.07 and German database schema in 80.23; personal target data remains outside this public repo.",
+    "fast": "30.7 KB raw / 10.2 KB gzip built page on the shared Jekyll shell; text only, well under the 64 KiB gzip budget.",
+    "best": "Gives concrete ATS search templates, live script usage, and worked equity dilution math while explicitly bounding what public boards cannot see (stealth/network roles) and what tools must never auto-submit."
+   },
+   "notes": "Phase 0 calibration pilot rewrite: added VC portfolio boards, direct Ashby/Greenhouse/Lever/Personio search queries, worked ESOP/VSOP math, and job_board_watch.py --discover workflow."
   },
   "00-strategy/INDEX.md": {
-   "sha256": "a02ecbf4c8dcdcf717f0b55bdc186b543941fbbb563f969adc76144b392a387e",
+   "sha256": "eab7227251d205b2af05595c9cb12e8c73b9812eb4f497943bd01f3888718f16",
    "lines": 57,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-23",
    "evidence": {
-    "current": "Study time 28 min was checked against the badge values: 4+4+4+5+9 chapter minutes plus the 2-minute revision companion; the table matches the five learning chapters.",
+    "current": "No version-sensitive claim; study time 30 min was checked against scripts/read_time.py on 2026-11-23 (4+4+4+5+11 chapter minutes plus 2-minute revision companion).",
     "readable": "Full read of 57 lines; the evidence chain is presented as five passes with a concrete outcome per pass.",
     "concise": "256 words; the table carries the sequence and the prose explains only why the order differs from file numbers.",
     "focused": "Section flow only; each chapter mechanism stays in its own file and revision is linked separately.",
     "fast": "10.6 KB raw / 3.7 KB gzip built page; the shared Jekyll shell is included.",
     "best": "The pass order is a reading order, not a guarantee; a study lane cannot promise an interview or offer, and verification stays with the employer."
-   }
+   },
+   "notes": "Hash refreshed after read_time.py updated 00.05 study time from 9 to 11 min (total 30 min)."
   },
   "00-strategy/REVISION.md": {
    "sha256": "672963ace404484b246ab611218655bb4e79a3bdb562e438f98dd1ce71e1b3b5",
@@ -1082,7 +1084,7 @@
    "status": "read",
    "reviewed": "2026-11-15",
    "evidence": {
-    "current": "Route extraction and building, handler remapping, SnakeToCamel, Path, Join/Split/ReplaceAll and the TypeScript 7 Unicode split were executed with TypeScript 5.9.3 and 7.0.2; the code-point change was verified by compiling HeadTail<'😀abc'> on both versions.",
+    "current": "Route extraction and building, handler remapping, SnakeToCamel, Path, Join/Split/ReplaceAll and the TypeScript 7 Unicode split were executed with TypeScript 5.9.3 and 7.0.2; the code-point change was verified by compiling HeadTail<'\ud83d\ude00abc'> on both versions.",
     "readable": "Full read of 298 lines; a route builder opens, then construction, route params, event and key remaps, deep paths, tuple joining and splitting, union bounds and the TypeScript 7 Unicode change.",
     "concise": "1,185 words; each grammar gets one worked example and one limit paragraph, and the duplicated array/cycle caveat was merged into a single inherited-limits sentence.",
     "focused": "Template-literal construction and parsing are owned here; mapped key remapping, infer capture and nested path lookup point at their chapters.",
@@ -1286,19 +1288,20 @@
    }
   },
   "10-frontend/10.3-react/01-react-internals/10.3.1.01-virtual-dom.md": {
-   "sha256": "1511de41d4d49cf728b626f04459e9e9da140d53971f379358c1649d9418aba7",
-   "lines": 71,
+   "sha256": "01645452f07517a51b27f63934d8dbdce8041127b4c0be948f0ae1849297c870",
+   "lines": 165,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-18",
+   "reviewed": "2026-11-23",
    "evidence": {
-    "current": "Checked against react.dev/learn/render-and-commit and the linked acdlite Fiber architecture notes; the three-layer description matches the official render/commit model, and all cited URLs returned HTTP 200 on 2026-11-18.",
-    "readable": "Full read of 71 lines; a repeated card-rendering example opens; element descriptions, Fiber records and DOM nodes are separated, then the practical boundary is stated before the summary.",
-    "concise": "416 words; the three numbered sections each add one distinction, and the summary repeats no example.",
-    "focused": "The element/Fiber/DOM distinction is owned here; the Fiber chapter carries work-loop internals and this page points there instead of retelling them.",
-    "fast": "11.9 KB raw / 4.1 KB gzip built page; the shared Jekyll shell is included.",
-    "best": "Gives the model needed to read React behavior and does not claim React diffs the DOM directly; scheduler internals are deliberately left to the Fiber chapter."
-   }
+    "current": "Checked against React official docs (react.dev/learn/render-and-commit, preserving-and-resetting-state, createElement \u2014 live-probed HTTP 200 on 2026-11-23); element object shape, Fiber boundary, and React Compiler memoization context are accurate for React 19.",
+    "readable": "Full read of 165 lines. Rewritten from a 71-line abstract stub into a clear step-by-step mental model: controlled-input hook, JSX element object example, Element/Fiber/DOM diagram, 3 render-diff traces, O(n^3) vs O(n) heuristic, and the VDOM performance myth.",
+    "concise": "1226 words. Every section advances the explanation (JSX object -> 3 layers -> 3 diff cases -> heuristic complexity -> 3 performance cost buckets) with no repetition.",
+    "focused": "Canonical home for Virtual DOM mental model and description-vs-node boundary. Fiber scheduling stays in 10.3.1.02 and full reconciliation algorithm in 10.3.1.03.",
+    "fast": "25.5 KB raw / 7.6 KB gzip built page on the shared Jekyll shell; text only, well under budget.",
+    "best": "Directly debunks the VDOM-is-faster-than-DOM myth and separates JS render, commit, and browser layout/paint costs; remaining limit is that JSX snippets are illustrative excerpts rather than a mounted browser benchmark."
+   },
+   "notes": "Phase 0 calibration pilot rewrite for first-pass clarity and senior depth; aligns with all 7 Virtual DOM Q&As in REVISION.md."
   },
   "10-frontend/10.3-react/01-react-internals/10.3.1.02-fiber.md": {
    "sha256": "51585c0a22c47b8dfbfeb5ff27bc49532424a1f12f4417d91c72240e72056577",
@@ -1361,19 +1364,20 @@
    }
   },
   "10-frontend/10.3-react/01-react-internals/INDEX.md": {
-   "sha256": "09656c19500adc49d15d2b2ba34eda8c5a62cd659f7378d37fc286bec90edaf5",
+   "sha256": "ba9c7382bee57fd3a55c580e8d7e1ccd44ec8fe11b373ef259fc1ab027d2e41c",
    "lines": 49,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-18",
+   "reviewed": "2026-11-23",
    "evidence": {
-    "current": "No version-sensitive claim; the 6-file count, 20-minute total and status badge were re-derived from disk and the table sums on 2026-11-18.",
-    "readable": "Full read of 49 lines; five chapter rows with topics, priority, importance and minutes, followed by read order, Docita anchors and navigation; no prose section competes with the chapters.",
+    "current": "No version-sensitive claim; the 6-file count and updated 26-minute total (Virtual DOM updated from 3 to 9 min) were checked against disk and read_time.py on 2026-11-23.",
+    "readable": "Full read of 49 lines; five chapter rows with topics, priority, importance and minutes, followed by read order, Docita anchors and navigation.",
     "concise": "138 words; the study summary and read-order notes are the only prose, and each chapter is described once.",
     "focused": "Navigation only: it points at the five chapters and their revision drill and does not retell their mechanisms.",
     "fast": "9.9 KB raw / 3.3 KB gzip built page; the shared Jekyll shell is included.",
     "best": "Does its navigational job with a defensible study order; it deliberately does not substitute for the chapters it lists."
-   }
+   },
+   "notes": "Hash refreshed after read_time.py restamped Virtual DOM row to 9 min and section total to 26 min."
   },
   "10-frontend/10.3-react/01-react-internals/REVISION.md": {
    "sha256": "12459d8f3f7b35bedb73b653efd7e88200f7f3e4530c22a347e319f9cee32d54",
@@ -1784,19 +1788,20 @@
    }
   },
   "10-frontend/10.3-react/INDEX.md": {
-   "sha256": "a4454f6924d6035188714aeda4b4fb13a9ca3de275045754e06d034cb1ad0f7c",
+   "sha256": "c1b417d9a8a6531f4fe73eaec3074c07e299361b4e904d1921a24782b8342147",
    "lines": 145,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-18",
+   "reviewed": "2026-11-23",
    "evidence": {
-    "current": "React 19.3 and the 181-minute total were checked against react.dev/blog/2026/09/09/react-19-3 and the five category tables; 23 chapters plus 5 revision companions gives the stated 28 files (2026-11-18).",
-    "readable": "Full read of 145 lines; the React section opens with its senior-role purpose, then five category blocks, a suggested study order, cross-references and navigation.",
+    "current": "React 19.3 and the restamped 187-minute total were checked against the five category tables and read_time.py on 2026-11-23; 23 chapters plus 5 revision companions equals 28 files.",
+    "readable": "Full read of 145 lines; opens with senior-role purpose, then five category blocks, study order, cross-references and navigation.",
     "concise": "309 words; each category gets one purpose paragraph and one file list, and the study order repeats no chapter detail.",
-    "focused": "Section map: it points at five category indexes and the cross-reference table without retelling their chapters.",
+    "focused": "Section map: points at five category indexes and cross-references without retelling their chapters.",
     "fast": "21.2 KB raw / 5.4 KB gzip built page; the shared Jekyll shell is included.",
     "best": "Sets the senior-level scope and a study order; it does not try to be a sixth tutorial."
-   }
+   },
+   "notes": "Hash refreshed after read_time.py updated React section total to 187 min."
   },
   "10-frontend/10.4-next.js/01-rendering-fundamentals/10.4.1.01-ssr-csr-ssg-isr.md": {
    "sha256": "710f222a5fbbe7ad53a6b3c2b728c9c38b660d989beb175b97ce2f92b7b3acf1",
@@ -2820,20 +2825,20 @@
    "notes": "Aligned the EAS group title with the chapter title and changed the section badge metadata from Frontend to Mobile."
   },
   "10-frontend/INDEX.md": {
-   "sha256": "00935914843524cf2522598223ba9e3cf375fd3b896a8dc5a5dd31e7ea6752a2",
+   "sha256": "d3d16d6ba3a429f2d747d00c392aa12421dc038c3c3c4ca1d9709fc2571ecda1",
    "lines": 75,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-18",
+   "reviewed": "2026-11-23",
    "evidence": {
-    "current": "No version-sensitive claim; the 150-file total, 8 sub-stack rows, 127-chapter split and 19 h 7 m sum were re-derived from the eight category indexes on 2026-11-18, and the Motion for React label now matches the renamed section.",
+    "current": "No version-sensitive claim; the 150-file total, 8 sub-stack rows, 127-chapter split and restamped study-time sum were checked against read_time.py on 2026-11-23.",
     "readable": "Full read of 75 lines; one product flow anchors the stack, then eight sub-stack rows, four passes, interview guidance and cross-references.",
     "concise": "355 words; each sub-stack gets one row and one pass sentence, so the map does not restate category content.",
-    "focused": "Section map: it points at eight sub-stack indexes and their passes without retelling their chapters.",
+    "focused": "Section map: points at eight sub-stack indexes and their passes without retelling their chapters.",
     "fast": "14.7 KB raw / 4.8 KB gzip built page; the shared Jekyll shell is included.",
     "best": "Sets the frontend study order from execution to optional capabilities; it limits itself to navigation and does not teach any mechanism."
    },
-   "notes": "Updated the Animation row from the former Framer Motion name to Motion for React so the sub-stack table matches the section title."
+   "notes": "Hash refreshed after read_time.py updated Frontend stack study-time total."
   },
   "20-backend/20.1-node.js/01-runtime-and-async/20.1.1.01-event-loop.md": {
    "sha256": "cbb48962f1b1c976f33493d3398af0e10c4deb7f49db4537cb50b8af762ebfe1",
@@ -2983,7 +2988,7 @@
     "concise": "804 words; 804 words; answers remain retrieval-sized across four groups and avoid copying the chapter implementations.",
     "focused": "Retrieval drill: the source chapters own the canonical full code and mechanism, while the answers test changed failure conditions.",
     "fast": "13.0 KB raw / 4.7 KB gzip built page; the shared Jekyll shell is included.",
-    "best": "Keeps backpressure, byte ownership, atomic namespace replacement and response completion as separate contracts rather than collapsing them into “async I/O.” The boundary is explicit."
+    "best": "Keeps backpressure, byte ownership, atomic namespace replacement and response completion as separate contracts rather than collapsing them into \u201casync I/O.\u201d The boundary is explicit."
    }
   },
   "20-backend/20.1-node.js/03-processes-and-concurrency/20.1.3.01-clustering.md": {
@@ -3009,7 +3014,7 @@
    "reviewed": "2026-11-18",
    "evidence": {
     "current": "Checked against current Node child_process and worker_threads documentation, Piscina 5.3.2 registry metadata and release information; Node v26.13.0 executed the one-shot worker result path, and npm confirms Piscina 5.3.2 declares Node `>=20.x`.",
-    "readable": "Full read of 236 lines; a CPU task returns another request’s result when ownership is implicit; definition and first principles, child-process choices, bounded executable output, one-shot worker settlement, Piscina admission, data transfer and offload decisions are ordered.",
+    "readable": "Full read of 236 lines; a CPU task returns another request\u2019s result when ownership is implicit; definition and first principles, child-process choices, bounded executable output, one-shot worker settlement, Piscina admission, data transfer and offload decisions are ordered.",
     "concise": "1093 words; 1093 words; one task-lifecycle helper and one bounded pool carry the admission/settlement model, while the data table and deployment section add ownership tradeoffs.",
     "focused": "Worker/process selection, task correlation and queue admission are owned here; cluster scaling and diagnostics are linked rather than re-taught.",
     "fast": "40.9 KB raw / 8.9 KB gzip built page; the shared Jekyll shell is included.",
@@ -3056,7 +3061,7 @@
     "current": "Checked against the current Platformatic Watt architecture guide and Node Worker Threads documentation; the guide confirms one worker thread per application, `.plt.local` Undici interception, MessagePort routing, no TCP/DNS for internal calls and shared process/deployment failure boundaries.",
     "readable": "Full read of 95 lines; separate services would add network and deployment costs; definition and first principles, worker/isolate boundaries, `.plt.local` internal routing, failure containment, topology comparison and an observation exercise are ordered.",
     "concise": "799 words; 799 words; one process diagram and one internal-request trace carry the mechanism, while the comparison table and exercise add decision evidence without repeating the architecture.",
-    "focused": "Watt’s application-worker boundary is owned here; PM2 process supervision, worker primitives and cluster port sharing are linked to their canonical chapters.",
+    "focused": "Watt\u2019s application-worker boundary is owned here; PM2 process supervision, worker primitives and cluster port sharing are linked to their canonical chapters.",
     "fast": "16.4 KB raw / 5.4 KB gzip built page; the shared Jekyll shell is included.",
     "best": "Distinguishes isolate/event-loop separation from process, container and release isolation; internal HTTP-shaped calls are not presented as free or network-equivalent. The boundary is explicit."
    }
@@ -3189,7 +3194,7 @@
    "reviewed": "2026-11-18",
    "evidence": {
     "current": "No version-sensitive claim; the 19-file total, four category counts and 2 h 28 m estimate were re-derived from disk and the category indexes on 2026-11-18.",
-    "readable": "Full read of 122 lines; the 19-file Node path from one request’s scheduling through bytes, process ownership, security/diagnostics and framework dispatch, followed by case-study pointers and navigation.",
+    "readable": "Full read of 122 lines; the 19-file Node path from one request\u2019s scheduling through bytes, process ownership, security/diagnostics and framework dispatch, followed by case-study pointers and navigation.",
     "concise": "301 words; 301 words; three passes and one category table map every chapter once, with detailed mechanisms left to their canonical files.",
     "focused": "Navigation only: it points at the canonical study files, marks the case-study links as inspection pointers and avoids duplicating the Node chapters.",
     "fast": "22.3 KB raw / 5.7 KB gzip built page; the shared Jekyll shell is included.",
@@ -3197,10 +3202,20 @@
    }
   },
   "20-backend/20.12-ai-engineering/20.12.01-llm-app-architecture.md": {
-   "sha256": "27b504016638718cc4cdc8c5b6f1a0be3eb54627c29338cf6317b85729d92a68",
-   "lines": 213,
+   "sha256": "814ff36dfb3d4f94d830228d9d78af502199d0481848f027d13edc061c80b330",
+   "lines": 278,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against OpenAI Function Calling docs, Anthropic tool-use docs, pgvector, and Node.js stream backpressure/AbortController semantics (Node 24 LTS); excerpts explicitly marked as adapter sketches requiring vendor SDKs.",
+    "readable": "Full read of 278 lines. Rewritten for clarity: opens with 4 concrete week-1 production failures, traces one request end-to-end with a clean diagram, compares prompting/RAG/fine-tuning, explains chunking & post-filter recall traps, SSE backpressure/disconnects, tool-call ID correlation, and production release gates.",
+    "concise": "1432 words. Each section tackles one architectural boundary with concrete examples and zero legalistic padding.",
+    "focused": "Canonical home for end-to-end LLM application boundaries. Deep eval pipelines stay in 20.12.02, hybrid retrieval/RRF in 20.12.03, agent loops/MCP in 20.12.04, and cost/safety governance in 20.12.06.",
+    "fast": "43.1 KB raw / 11.4 KB gzip built page on the shared Jekyll shell; well under the 64 KiB gzip budget.",
+    "best": "Explicitly states the security, backpressure, post-filter recall, and tool-call correlation boundaries; remaining limit is that provider adapters are excerpts because live inference requires paid vendor keys."
+   },
+   "notes": "Phase 0 calibration pilot rewrite; satisfies both LLM App Architecture Q&As in 20.12 REVISION.md."
   },
   "20-backend/20.12-ai-engineering/20.12.02-prompts-context-evals.md": {
    "sha256": "651f9e6e2dec98b4dbe09e327e4b2bb256bc260129c102ec36dc26db9f02a1f0",
@@ -3918,7 +3933,7 @@
    "status": "read",
    "reviewed": "2026-11-18",
    "evidence": {
-    "current": "Verified freshness, validators, Vary, authorization and transformed-representation guidance against RFC 9110 and RFC 9111; the Express example’s narrow If-Match grammar remains explicit. Official sources were checked.",
+    "current": "Verified freshness, validators, Vary, authorization and transformed-representation guidance against RFC 9110 and RFC 9111; the Express example\u2019s narrow If-Match grammar remains explicit. Official sources were checked.",
     "readable": "Full read of 162 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
     "concise": "1116 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
     "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
@@ -4062,7 +4077,7 @@
    "status": "read",
    "reviewed": "2026-11-18",
    "evidence": {
-    "current": "Checked Resend’s documented 24-hour idempotency window and DMARC guidance against Resend and RFC 9989/RFC 9990; the local lost-response fixture executes and proves only effect identity. Official sources were checked.",
+    "current": "Checked Resend\u2019s documented 24-hour idempotency window and DMARC guidance against Resend and RFC 9989/RFC 9990; the local lost-response fixture executes and proves only effect identity. Official sources were checked.",
     "readable": "Full read of 141 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
     "concise": "1162 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
     "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
@@ -4190,7 +4205,7 @@
    "status": "read",
    "reviewed": "2026-11-18",
    "evidence": {
-    "current": "Read every source-linked Q/A for rate budgets, gateway authority, BFF failure shape and authorization; answers preserve each chapter’s canonical boundary and failure trade-off. Official sources were checked.",
+    "current": "Read every source-linked Q/A for rate budgets, gateway authority, BFF failure shape and authorization; answers preserve each chapter\u2019s canonical boundary and failure trade-off. Official sources were checked.",
     "readable": "Full read of 129 lines; the opening, term order, causal trace and closing Summary were followed end to end.",
     "concise": "906 words; the page spends its budget on the named mechanism, its example and the decision boundary rather than filler.",
     "focused": "The page keeps one canonical treatment of its mechanism, links out to adjacent topics and does not duplicate their full explanation.",
@@ -5286,10 +5301,20 @@
    "status": "unread"
   },
   "30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.md": {
-   "sha256": "8d12de66f715431bedfc2a524c4ef58f154606174d781efad14f36bc6920075f",
-   "lines": 113,
+   "sha256": "73259e5566bf845f513a3ba9c681e06b643f2410042b9290fc11dfd30c07dc0d",
+   "lines": 141,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against Gilbert & Lynch CAP proof, PostgreSQL synchronous_commit docs (on vs remote_apply WAL visibility), and Kleppmann DDIA; no stale version claim.",
+    "readable": "Full read of 141 lines. Rewritten for first-pass comprehension: Frankfurt/Berlin double-booking hook, plain-English C/A/P definitions, indistinguishable-realities proof, majority-quorum diagram, per-operation policy table, PACELC with PostgreSQL WAL flush vs remote_apply, and 5 common mistakes.",
+    "concise": "1319 words. Every section advances the mental model from partition physics to majority quorums to everyday PACELC latency trade-offs.",
+    "focused": "Canonical home for CAP & PACELC. Consistency model hierarchy stays in 30.2.1.02, sharding/replication in 30.2.1.03, and Raft/Paxos consensus in 30.2.1.09.",
+    "fast": "23.9 KB raw / 8.1 KB gzip built page on the shared Jekyll shell; text only, well under budget.",
+    "best": "Separates CAP C from ACID C, HTTP errors from CAP availability, and WAL flush durability from remote_apply read visibility; remaining limit is that partition testing is a conceptual recipe rather than a live Jepsen run."
+   },
+   "notes": "Phase 0 calibration pilot rewrite; matches all 3 CAP/PACELC Q&As in 30.2.1 REVISION.md."
   },
   "30-architecture/30.2-system-design/01-theory/30.2.1.02-consistency-models.md": {
    "sha256": "18dec3b4d613411a6e88e9ff1a2fb5e1c0eb1566437e4918cd2ecd9c5f24ae34",
@@ -8097,19 +8122,20 @@
    }
   },
   "INDEX.md": {
-   "sha256": "a291f4c76e0b5feb05e40f42cb0ce861b06b2ff9e077eb6de79dc65f51830d95",
+   "sha256": "81ce226c4a1833373f38f6bf282217b150cc63336aeb5c38cb262d5c87bd04d3",
    "lines": 206,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-23",
    "evidence": {
-    "current": "The 989-file badge, 680-chapter count and 158K lines were checked against scripts/check_counts.py output; the 680/989 split is now stated on the page.",
-    "readable": "Full read of 206 lines; lane choice follows the shared strategy, and each section total reconciles with its sub-stacks.",
+    "current": "Checked against scripts/check_counts.py and scripts/read_time.py on 2026-11-23: 991-file count, 680-chapter count, line count, and study time match live disk.",
+    "readable": "Full read of 206 lines; lane choice follows shared strategy, and section totals reconcile with their sub-stacks.",
     "concise": "450 words; navigation tables carry the file lists and the prose explains only how to choose.",
-    "focused": "Canonical navigation; it points at each stack index and does not retell teaching content.",
+    "focused": "Canonical navigation; points at each stack index and does not retell teaching content.",
     "fast": "35.6 KB raw / 9.2 KB gzip built page; the shared Jekyll shell is included.",
-    "best": "Counts describe the repository, not one reader's pace; the approximate 89-hour total cannot hold for everyone, as the ~ marker says."
-   }
+    "best": "Counts describe the repository, not one reader's pace; the approximate study-time total cannot hold for every learner, and minor footer/Message Brokers sync is queued for Phase 6."
+   },
+   "notes": "Hash refreshed after check_counts.py and read_time.py restamped totals following Phase 0 pilot."
   },
   "README.md": {
    "sha256": "d885528e428ea38f115bc62b8bac76e421c317edae2aeb312516f3f01fd17a5f",
@@ -8142,19 +8168,20 @@
    }
   },
   "contributing.md": {
-   "sha256": "a80c109d992d5c124ba2bfec1fef962bc9a247913768df41ccbcd0fe5d6a5252",
+   "sha256": "5c296d3f2561d2de017d571af59cbbb2ca7ba1b761a71610877ca7f16e8b9de6",
    "lines": 947,
    "genre": "meta",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-23",
    "evidence": {
-    "current": "The 34-gate table was checked against scripts/verify.sh; the raw-Markdown serving boundary was verified in _site/contributing.md.",
+    "current": "Checked against scripts/check_counts.py and scripts/verify.sh on 2026-11-23: repo line count and 34-gate contract match disk.",
     "readable": "Full read of 947 lines; format rules are grouped by artifact (file, INDEX, code, links) with examples before edge cases.",
-    "concise": "3,280 words; long because it is the canonical formatting contract, but rules are one line each and scripts carry the detail.",
-    "focused": "Canonical contribution contract; gate rationale is delegated to docs/verification-gates.md and docs/scripts-map.md.",
+    "concise": "3280 words; canonical formatting contract with one-line rules and script delegation.",
+    "focused": "Canonical contribution contract; gate rationale lives in docs/verification-gates.md and docs/scripts-map.md.",
     "fast": "not built as HTML; 53.1 KB Markdown source served raw. The shared Jekyll shell is not included.",
-    "best": "Jekyll's optional-front-matter blacklist serves this as raw Markdown, so the published copy does not render with site navigation; accepted for now."
-   }
+    "best": "Jekyll's optional-front-matter blacklist serves this as raw Markdown without site navigation; accepted boundary."
+   },
+   "notes": "Hash refreshed after check_counts.py restamped line count."
   },
   "design-qa.md": {
    "sha256": "e8da15c567bc813b3b61a4d54a8570220db77ad84aa5cb2300e19ed1356ba5ee",
@@ -8250,10 +8277,20 @@
    "status": "unread"
   },
   "docs/2026-11-quality-rubric.md": {
-   "sha256": "4c4be0e91dd6791208129f0d5163bd5c765ed5996248785798056583cac2fe11",
-   "lines": 110,
+   "sha256": "34032e27075292172e73563debf8ad18d9eab85ba32cc2f5632a7a1a2b602f47",
+   "lines": 108,
    "genre": "doc",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against scripts/verify.sh and scripts/review_ledger.py on 2026-11-23; updated section-pass step 3 to authorize full comprehension rewrites.",
+    "readable": "Full read of 108 lines; defines the 7 rubric checks (R1-R7), Phase 0 baseline table, Gate 30 calibration, updated rewrite workflow, and verification limits.",
+    "concise": "776 words; each section defines one piece of the review standard without duplication.",
+    "focused": "Canonical quality rubric for corpus review passes; per-file ledger format lives in docs/corpus-review/README.md.",
+    "fast": "19.4 KB raw / 6.3 KB gzip built page on the shared Jekyll shell.",
+    "best": "Explicitly documents limits the rubric cannot eliminate (mechanical checks vs human judgment, paid vendor accounts, missing local runtimes, and need for fresh-reader testing)."
+   },
+   "notes": "Updated section-pass rule 3 to permit full comprehension rewrites while preserving metadata, anchors, and authored REVISION.md pairs."
   },
   "docs/api-contract.md": {
    "sha256": "f5afd930446ccbdf78e471ce24b893076fc1f744672707e0ad2f6b33c53c963c",
@@ -8685,10 +8722,20 @@
    }
   },
   "docs/corpus-review/README.md": {
-   "sha256": "1b54d19a55ba8dd4b419a784964cee232f8ecaa5b758fcefea3bd8fdcf5db028",
-   "lines": 92,
+   "sha256": "4cc59846a1a03cbc92b3d1b893643e2a686d0e43e4684ca6cdc7b0dd0cd3e676",
+   "lines": 96,
    "genre": "doc",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against scripts/review_ledger.py and scripts/measure_page_weight.py on 2026-11-23; repair rules updated to permit comprehension rewrites.",
+    "readable": "Full read of 96 lines; explains the 2026-11-14 audit reset, page-weight budget, reviewer protocol, CLI commands, and updated repair rules.",
+    "concise": "517 words; concise operational specification with one concrete JSON example.",
+    "focused": "Canonical protocol for docs/review-ledger.json; chapter quality rubric stays in docs/2026-11-quality-rubric.md.",
+    "fast": "not built as HTML; 4.7 KB Markdown source served raw.",
+    "best": "Documents the explicit exception path for claims requiring paid accounts or missing runtimes, and notes that README.md itself is served raw rather than wrapped in Jekyll HTML."
+   },
+   "notes": "Updated repair rule 1 on 2026-11-23 to authorize full comprehension rewrites."
   },
   "docs/superpowers/plans/2026-11-18-performance-ui-implementation.md": {
    "sha256": "bc512bea867531945bbfb246287b85f2bc6480184b7d3f4b15f2ca948a3d255a",
@@ -8704,7 +8751,6 @@
   }
  },
  "pending": [
-  "20-backend/20.12-ai-engineering/20.12.01-llm-app-architecture.md",
   "20-backend/20.12-ai-engineering/20.12.02-prompts-context-evals.md",
   "20-backend/20.12-ai-engineering/20.12.03-retrieval-quality-hybrid-search-reranking.md",
   "20-backend/20.12-ai-engineering/20.12.04-agent-orchestration-patterns.md",
@@ -8894,7 +8940,6 @@
   "30-architecture/30.1-design-patterns/06-interview-prep/30.1.6.01-interview-questions.md",
   "30-architecture/30.1-design-patterns/06-interview-prep/INDEX.md",
   "30-architecture/30.1-design-patterns/INDEX.md",
-  "30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.md",
   "30-architecture/30.2-system-design/01-theory/30.2.1.02-consistency-models.md",
   "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.md",
   "30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.md",
@@ -9323,9 +9368,7 @@
   "docs/2026-10-22-density-pass.md",
   "docs/2026-10-25-fullstack-coverage-review.md",
   "docs/2026-11-frontend-review.md",
-  "docs/2026-11-quality-rubric.md",
   "docs/api-contract.md",
-  "docs/corpus-review/README.md",
   "docs/deployment.md",
   "docs/full-corpus-readability-pass.md",
   "docs/gate-design-principles.md",

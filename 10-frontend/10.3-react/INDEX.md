@@ -1,6 +1,6 @@
 # React — Index
 
-> **Study time:** ≈ 3 h 1 m of reading (28 files, ~6 min average).
+> **Study time:** ≈ 3 h 7 m of reading (28 files, ~7 min average).
 > **28 files** — React internals from Virtual DOM to Fiber, hooks, patterns, custom hooks, portals, compound components, external stores, server-state ownership with TanStack Query, React Router data routers, React 18/19 concurrent APIs, performance, state management, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-28-blue)](../../INDEX.md)
@@ -42,7 +42,7 @@ Understand how React turns updates into committed UI, and how identity, scheduli
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Virtual DOM](01-react-internals/10.3.1.01-virtual-dom.md) | VDOM concept, diffing, batching, React elements vs components | Essential | Foundational | 3 min |
+| 01 | [Virtual DOM](01-react-internals/10.3.1.01-virtual-dom.md) | VDOM concept, diffing, batching, React elements vs components | Essential | Foundational | 9 min |
 | 02 | [Fiber](01-react-internals/10.3.1.02-fiber.md) | Fiber architecture, work loop, priority lanes, time slicing | Important | Important | 3 min |
 | 03 | [Reconciliation](01-react-internals/10.3.1.03-reconciliation.md) | Diffing algorithm, keys, component types, bailout | Essential | Foundational | 3 min |
 | 04 | [Rendering](01-react-internals/10.3.1.04-rendering.md) | Render phases, commit phase, batching in React 18, automatic batching | Essential | Foundational | 3 min |

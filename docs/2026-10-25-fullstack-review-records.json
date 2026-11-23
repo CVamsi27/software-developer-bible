@@ -44,25 +44,23 @@
     },
     {
       "path": "00-strategy/00.05-find-startup-roles.md",
-      "sha256": "a1125231f3ad2e04b69a65fac1aeea74c2e88c675c85e30491d194dedb1631f2",
+      "sha256": "fa1c095e32e45389044fac1ef4b57e7b50c3c5612bc250cc980c61a6c82bcdf2",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-12",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review after the tooling addition: section 6 now covers local job-search workspaces using career-ops as a public MIT-licensed example, separating automation (discovery, liveness, consistent scoring, tracking) from candidate-owned decisions (ATS verification, fit, fact-checking, submission). States the local-first/privacy boundary, exportability test and npx supply-chain caution, then the old channel-limit section becomes 7. The career-ops URL answered HTTP 200 on 2026-11-12; no local or personal workspace path is cited.",
+      "notes": "Phase 0 pilot comprehension rewrite (2026-11-23): plain-English senior startup discovery playbook with live-probed VC portfolio hubs (Sequoia, Index, Point Nine, a16z, Accel, Arbeitnow, Remotive), direct Ashby/Greenhouse/Lever/Personio search queries, 7-fact ATS verification table, worked ESOP/VSOP equity math, and scripts/job_board_watch.py --discover workflow. All new external URLs live-probed HTTP 200; no personal data or private paths.",
       "findings": []
     },
     {
       "path": "00-strategy/INDEX.md",
-      "sha256": "a02ecbf4c8dcdcf717f0b55bdc186b543941fbbb563f969adc76144b392a387e",
+      "sha256": "eab7227251d205b2af05595c9cb12e8c73b9812eb4f497943bd01f3888718f16",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-14",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "2026-11-14 pass: read in full. Corrected the read-time badge from 18 to 28 minutes; the 2026-11-12 note had recorded the mismatch as intentional, but the badge stated a section total that disagreed with the computed 28-minute study-time line. Strategy pass table, lane links and cross-references checked.",
-      "findings": [
-        "Read-time badge claimed 18 minutes while the section total was 28; badge corrected to 28."
-      ]
+      "notes": "Phase 0 restamp (2026-11-23): study time updated by read_time.py from 28 to 30 min after 00.05 rewrite; section flow and links verified.",
+      "findings": []
     },
     {
       "path": "00-strategy/REVISION.md",
@@ -506,7 +504,7 @@
         "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged.",
         "previousReviewDate": null,
         "previousReviewer": "frontend",
-        "previousNotes": "Full category learning flow/topic mapping and source pointers reviewed; values→collections→copy→timers→retainers→GC→lookup/equality progression coherent. Counts delegated to final restamper. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS."
+        "previousNotes": "Full category learning flow/topic mapping and source pointers reviewed; values\u2192collections\u2192copy\u2192timers\u2192retainers\u2192GC\u2192lookup/equality progression coherent. Counts delegated to final restamper. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS."
       },
       "reviewDate": "2026-11-17",
       "fullContentRead": true
@@ -631,7 +629,7 @@
       "sha256": "7e1ebd8b0c11c702bda4da49532ea1ae7aebfa6d58a74b2334be745d8e67d898",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review. Edition2022–26 lists cross-checked TC39 finished proposals; ownership/grouping/lazy iterator versus async collection/precision/host API distinctions retained. Actual JSON source integer/rawJSON and regex cases executed. Node23 lacks Iterator.concat/Error.isError; those APIs not executed, runtime support distinction explicitly preserved. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
+      "notes": "Full-content review. Edition2022\u201326 lists cross-checked TC39 finished proposals; ownership/grouping/lazy iterator versus async collection/precision/host API distinctions retained. Actual JSON source integer/rawJSON and regex cases executed. Node23 lacks Iterator.concat/Error.isError; those APIs not executed, runtime support distinction explicitly preserved. Checks: node /tmp/check-js-memory-examples.cjs PASS; strict tsc --strict --noEmit --skipLibCheck --target es2022 --lib es2022,dom --typeRoots installed @types --types react,node /tmp/10.1.4.04-debounce.ts /tmp/10.1.4.05-throttle.ts /tmp/10.1.4.09-equality-and-coercion.ts PASS. node /tmp/check-js-modern-examples.cjs PASS with explicit unsupported-runtime limits; node /tmp/check-js-dom-delegation.cjs PASS Chromium. Worker and delegated handler isolated strict TS compile PASS. python3 scripts/check_links.py PASS10475links/182anchors/0broken; git diff --check PASS. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
       "findings": [],
       "reviewer": "frontend",
       "reviewDate": "2026-11-14"
@@ -1047,12 +1045,14 @@
     },
     {
       "path": "10-frontend/10.3-react/01-react-internals/10.3.1.01-virtual-dom.md",
-      "sha256": "1511de41d4d49cf728b626f04459e9e9da140d53971f379358c1649d9418aba7",
+      "sha256": "01645452f07517a51b27f63934d8dbdce8041127b4c0be948f0ae1849297c870",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full content reviewed: element versus fiber versus DOM identity, no universal performance claim, render/commit/browser costs and host renderer boundary. Source-linked related flow.",
+      "notes": "Phase 0 pilot comprehension rewrite (2026-11-23): expanded into step-by-step mental model with controlled-input hook, compiled JSX element object, Element/Fiber/DOM diagram, 3 render-diff traces (deduplicated wording), O(n^3) vs O(n) heuristic rationale, and 3-bucket performance myth breakdown. Verified against react.dev docs (HTTP 200) and aligned with all 7 Virtual DOM Q&As in REVISION.md.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-23",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.3-react/01-react-internals/10.3.1.02-fiber.md",
@@ -1092,12 +1092,14 @@
     },
     {
       "path": "10-frontend/10.3-react/01-react-internals/INDEX.md",
-      "sha256": "09656c19500adc49d15d2b2ba34eda8c5a62cd659f7378d37fc286bec90edaf5",
+      "sha256": "ba9c7382bee57fd3a55c580e8d7e1ccd44ec8fe11b373ef259fc1ab027d2e41c",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full index reviewed: element/work model precedes identity/render and resource lifecycle; concrete checkpoint before source-linked revision/interview. Count includes index per repo convention. Final metadata/source-anchor refresh after parent restamper: inspected current header and any Docita introduction; earlier full semantic review SHA256 3990d3dd25a5b087c00f8c47e41a3bc1a89a7630dc2f499671ba0465a9400c23. Parent confirms changes here limited to metadata and source-anchor qualification.",
+      "notes": "Phase 0 restamp (2026-11-23): read_time.py updated Virtual DOM row (3->9 min) and section total (20->26 min); table and navigation verified.",
       "findings": [],
-      "reviewer": "frontend"
+      "reviewer": "frontend",
+      "reviewDate": "2026-11-23",
+      "fullContentRead": true
     },
     {
       "path": "10-frontend/10.3-react/01-react-internals/REVISION.md",
@@ -1362,12 +1364,12 @@
     },
     {
       "path": "10-frontend/10.3-react/INDEX.md",
-      "sha256": "a4454f6924d6035188714aeda4b4fb13a9ca3de275045754e06d034cb1ad0f7c",
+      "sha256": "c1b417d9a8a6531f4fe73eaec3074c07e299361b4e904d1921a24782b8342147",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-12",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Frontend pass: the category table column counted learning chapters (35) while the badge counted chapters plus revision companions (41) under the word Files. Renamed the column to Chapters so both scopes are named; no count changed.",
+      "notes": "Phase 0 restamp (2026-11-23): read_time.py updated React section total to 187 min after Virtual DOM rewrite.",
       "findings": []
     },
     {
@@ -1530,7 +1532,7 @@
       "sha256": "0c72d0bfb224eee1311a6c554e6d2a4018d2bd139a80221b16fa791b860303d4",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full index reviewed: read dependency→authoritative write→installed cache model→stream/ISR/export delivery→revision→separate interview bank. No duplicate deep mechanism.",
+      "notes": "Full index reviewed: read dependency\u2192authoritative write\u2192installed cache model\u2192stream/ISR/export delivery\u2192revision\u2192separate interview bank. No duplicate deep mechanism.",
       "findings": [],
       "reviewer": "frontend"
     },
@@ -2121,10 +2123,10 @@
     },
     {
       "path": "10-frontend/INDEX.md",
-      "sha256": "00935914843524cf2522598223ba9e3cf375fd3b896a8dc5a5dd31e7ea6752a2",
+      "sha256": "d3d16d6ba3a429f2d747d00c392aa12421dc038c3c3c4ca1d9709fc2571ecda1",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full content: frontend map re-checked; 150 files, eight sub-stack rows, the 127-chapter split and the 19 h 7 m sum were re-derived. The Animation row now says Motion for React instead of the former Framer Motion name.",
+      "notes": "Phase 0 restamp (2026-11-23): read_time.py updated Frontend stack study-time total after Virtual DOM rewrite.",
       "findings": [],
       "reviewer": "frontend",
       "metadataReview": {
@@ -2133,7 +2135,7 @@
         "reviewer": "root",
         "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
       },
-      "reviewDate": "2026-11-18",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true
     },
     {
@@ -2402,12 +2404,12 @@
     },
     {
       "path": "20-backend/20.12-ai-engineering/20.12.01-llm-app-architecture.md",
-      "sha256": "27b504016638718cc4cdc8c5b6f1a0be3eb54627c29338cf6317b85729d92a68",
+      "sha256": "814ff36dfb3d4f94d830228d9d78af502199d0481848f027d13edc061c80b330",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-14",
-      "notes": "Full-content read (2026-11-14): Axiom numbering was fixed in this pass so the derivation reads 1, 2, 3 in order rather than skipping. Each axiom earns its space by changing a design decision; no axiom restates the previous one.",
+      "reviewDate": "2026-11-23",
+      "notes": "Phase 0 pilot comprehension rewrite (2026-11-23): plain-English end-to-end architecture walkthrough with 4 production failure hook, request pipeline diagram, prompting/RAG/fine-tuning decision table, chunking & post-filter recall traps, SSE drain backpressure & res.on(close) cancellation, tool-call ID correlation, and boundary metering excerpts. Satisfies 20.12 REVISION.md Q&As; provider calls explicitly framed as excerpts requiring vendor keys.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2485,13 +2487,13 @@
     },
     {
       "path": "20-backend/20.12-ai-engineering/INDEX.md",
-      "sha256": "e8448f24adf9878f413e4a467de0e139f8f169c0c8b4f99bb9b8ff4cbd2808c6",
+      "sha256": "ccfa3b8f39bd420556a184c2cfc884225069e45b45e446e2a768f8ffa7b58fdf",
       "genre": "navigation-index",
       "status": "reviewed",
       "reviewer": "buffy",
-      "reviewDate": "2026-11-11",
-      "notes": "Restamp-only record on 2026-11-11: a canonical writer (read_time.py / check_counts.py / check_alignment.py) updated a claim in this file after an adjacent chapter edit. No prose or technical content changed here.",
-      "fullContentRead": false,
+      "reviewDate": "2026-11-23",
+      "notes": "Phase 0 restamp (2026-11-23): read_time.py updated 20.12.01 row and section study-time total after LLM App Architecture rewrite.",
+      "fullContentRead": true,
       "findings": []
     },
     {
@@ -2982,7 +2984,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-11-18",
-      "notes": "Full-content read (2026-11-18): old/new adapters, selector validation, Vary/cache implications, compatible additions, database coexistence and retirement flow re-checked. RFC 9745 and RFC 8594 were checked; the Node fixture’s illustrative migration URI and no-auth/no-database boundary remain explicit.",
+      "notes": "Full-content read (2026-11-18): old/new adapters, selector validation, Vary/cache implications, compatible additions, database coexistence and retirement flow re-checked. RFC 9745 and RFC 8594 were checked; the Node fixture\u2019s illustrative migration URI and no-auth/no-database boundary remain explicit.",
       "fullContentRead": true,
       "findings": []
     },
@@ -2993,7 +2995,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-11-18",
-      "notes": "Full-content read (2026-11-18): cumulative Richardson levels, method-hidden level 1, hypermedia media semantics and the model’s limits versus complete REST quality re-checked. No version-sensitive API claim or deployment proof is made.",
+      "notes": "Full-content read (2026-11-18): cumulative Richardson levels, method-hidden level 1, hypermedia media semantics and the model\u2019s limits versus complete REST quality re-checked. No version-sensitive API claim or deployment proof is made.",
       "fullContentRead": true,
       "findings": []
     },
@@ -3048,7 +3050,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-11-18",
-      "notes": "Full-content read (2026-11-18): status classes, challenge/Allow/Location/range semantics, 202 acceptance, uncertain upstream effects and bounded request-body handling re-checked against RFC 9110. The table’s 401 wording was corrected from absent credentials to a request lacking valid credentials for the target resource. The extracted Node fixture passed GET404, POST400, POST422, POST201, POST409, GET200, PUT405, DELETE204, GET404 plus header/body assertions.",
+      "notes": "Full-content read (2026-11-18): status classes, challenge/Allow/Location/range semantics, 202 acceptance, uncertain upstream effects and bounded request-body handling re-checked against RFC 9110. The table\u2019s 401 wording was corrected from absent credentials to a request lacking valid credentials for the target resource. The extracted Node fixture passed GET404, POST400, POST422, POST201, POST409, GET200, PUT405, DELETE204, GET404 plus header/body assertions.",
       "fullContentRead": true,
       "findings": [
         "401 table wording corrected to match RFC 9110: the request lacks valid authentication credentials for the target resource, rather than implying credentials are only absent."
@@ -3171,7 +3173,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-11-18",
-      "notes": "Full-content read (2026-11-18): event-to-notification flow, durable business identity, provider idempotency, retry classification, suppression and DMARC alignment/reports re-checked. Resend’s current 24-hour idempotency documentation and RFC 9989/RFC 9990 were checked; the lost-response fixture yielded one effect and does not claim delivery exactly-once.",
+      "notes": "Full-content read (2026-11-18): event-to-notification flow, durable business identity, provider idempotency, retry classification, suppression and DMARC alignment/reports re-checked. Resend\u2019s current 24-hour idempotency documentation and RFC 9989/RFC 9990 were checked; the lost-response fixture yielded one effect and does not claim delivery exactly-once.",
       "fullContentRead": true,
       "findings": []
     },
@@ -3842,7 +3844,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read all40 authoredquestions/followups including complete22–40 and references. Checked credentialpurpose/session/tokenlifetime and revocation, delegatedgrantselection, BFF/CSRF, currentrole/objectpolicy, workloadcost and recovery, statuschallenge semantics, fabricatedexperience avoidance. Sound concise mechanisms with failurebounds; no observedproduction results invented. Official sources checked for this cohort: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html ; https://www.rfc-editor.org/rfc/rfc9700 ; https://www.rfc-editor.org/rfc/rfc10017.html ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/types.ts ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/saml.ts ; https://pages.nist.gov/800-63-4/sp800-63b.html ; https://simplewebauthn.dev/docs/packages/server .",
+      "notes": "Full read all40 authoredquestions/followups including complete22\u201340 and references. Checked credentialpurpose/session/tokenlifetime and revocation, delegatedgrantselection, BFF/CSRF, currentrole/objectpolicy, workloadcost and recovery, statuschallenge semantics, fabricatedexperience avoidance. Sound concise mechanisms with failurebounds; no observedproduction results invented. Official sources checked for this cohort: https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html ; https://www.rfc-editor.org/rfc/rfc9700 ; https://www.rfc-editor.org/rfc/rfc10017.html ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/types.ts ; https://raw.githubusercontent.com/node-saml/node-saml/v5.1.0/src/saml.ts ; https://pages.nist.gov/800-63-4/sp800-63b.html ; https://simplewebauthn.dev/docs/packages/server .",
       "fullContentRead": true,
       "findings": []
     },
@@ -3908,7 +3910,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read currentOWASP2023 API1–10 mapping, owner/tenant predicate plusoutputprojection/writeallowlist, multidimensional budgets versusbusinessflowabuse, fixedpartnerorigin versus generalSSRF DNSconnector/redirect/egress control, dependencyresponse validation and safeproblemresponses. Exact URLhelper passes validID and rejects traversal/alternateorigin/query/scheme input. OfficialOWASP2023 catalog checked; no routepolicy, outboundrequest, load or deployment test. Sources checked: https://api-security.owasp.org/editions/2023/en/0x11-t10/ ; https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html .",
+      "notes": "Full read currentOWASP2023 API1\u201310 mapping, owner/tenant predicate plusoutputprojection/writeallowlist, multidimensional budgets versusbusinessflowabuse, fixedpartnerorigin versus generalSSRF DNSconnector/redirect/egress control, dependencyresponse validation and safeproblemresponses. Exact URLhelper passes validID and rejects traversal/alternateorigin/query/scheme input. OfficialOWASP2023 catalog checked; no routepolicy, outboundrequest, load or deployment test. Sources checked: https://api-security.owasp.org/editions/2023/en/0x11-t10/ ; https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html .",
       "fullContentRead": true,
       "findings": []
     },
@@ -3919,7 +3921,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read stagedXSS→ambientcredentialCSRF→SQLbinding→composedAPIpolicy, revisionbeforebank. Docita paths explicitlyreviewstartingpoints withconfiguration/routecoverage caveat; codepresence notdeployedsecurityevidence. No liveDocita inspection claimed. Sources checked: https://api-security.owasp.org/editions/2023/en/0x11-t10/ ; https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html .",
+      "notes": "Full read stagedXSS\u2192ambientcredentialCSRF\u2192SQLbinding\u2192composedAPIpolicy, revisionbeforebank. Docita paths explicitlyreviewstartingpoints withconfiguration/routecoverage caveat; codepresence notdeployedsecurityevidence. No liveDocita inspection claimed. Sources checked: https://api-security.owasp.org/editions/2023/en/0x11-t10/ ; https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4465,7 +4467,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read resolver trace→Server5/Express5 boundary→separate revision→clients→bank; project comparison explicitly study fixture versus deployed claim. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read resolver trace\u2192Server5/Express5 boundary\u2192separate revision\u2192clients\u2192bank; project comparison explicitly study fixture versus deployed claim. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4520,7 +4522,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read entity/optimistic/list transition→variable-aware admission→actual generated consumer→revision→bank. Distinguishes REST source evidence from proposed GraphQL design and role-specific learning goals. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read entity/optimistic/list transition\u2192variable-aware admission\u2192actual generated consumer\u2192revision\u2192bank. Distinguishes REST source evidence from proposed GraphQL design and role-specific learning goals. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4542,7 +4544,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read all50 authored questions and answers including domain exercises31–40, failure41–50. Checked operation/nullability, ordered scoped batching, schema/permission/cache/federation/cost ownership, atomicity and unknown effects, oldclient compatibility and domain-specific invariants. Proposed designs do not fabricate past evaluation or deployed experience; no blocking correctness/depth finding. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read all50 authored questions and answers including domain exercises31\u201340, failure41\u201350. Checked operation/nullability, ordered scoped batching, schema/permission/cache/federation/cost ownership, atomicity and unknown effects, oldclient compatibility and domain-specific invariants. Proposed designs do not fabricate past evaluation or deployed experience; no blocking correctness/depth finding. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4553,7 +4555,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read prerequisite revision groups→all50 authored prompts→role-specific followups→source return when unsupported. Explicit experience boundary prevents proposed design from becoming fabricated implementation/deployment evidence. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read prerequisite revision groups\u2192all50 authored prompts\u2192role-specific followups\u2192source return when unsupported. Explicit experience boundary prevents proposed design from becoming fabricated implementation/deployment evidence. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4564,7 +4566,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read: staged contract→execution→consumers/operations→source-linked revision→all50 authored drills. Role-specific authority/cache/governance emphasis and REST project comparison avoid unverified GraphQL deployment claims. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
+      "notes": "Full read: staged contract\u2192execution\u2192consumers/operations\u2192source-linked revision\u2192all50 authored drills. Role-specific authority/cache/governance emphasis and REST project comparison avoid unverified GraphQL deployment claims. Official sources checked for current claims: https://github.com/graphql/graphql-js/releases ; https://raw.githubusercontent.com/apollographql/apollo-server/main/packages/server/package.json ; https://www.apollographql.com/docs/apollo-server/workflow/requests .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4637,7 +4639,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full content read: strategy/data/primitives→advancedpatterns→revision→interview flow, choosingauthority for immediatewrites and leasefallback not magicmutex; links/description mirror sources, Docita pointers disclaim currentRedis/TTL/deploymentproof. Numericclaims rootmanaged.",
+      "notes": "Full content read: strategy/data/primitives\u2192advancedpatterns\u2192revision\u2192interview flow, choosingauthority for immediatewrites and leasefallback not magicmutex; links/description mirror sources, Docita pointers disclaim currentRedis/TTL/deploymentproof. Numericclaims rootmanaged.",
       "fullContentRead": true,
       "findings": []
     },
@@ -4709,7 +4711,7 @@
       "status": "reviewed",
       "reviewer": "backend_api_data",
       "reviewDate": "2026-10-25",
-      "notes": "Full read learning sequence model→operations→patterns→revision→bank, source-linked cross references and decision paths; Docita implementation pointers explicitly distinguish study material from deployment evidence, and enqueue transaction/claim/lease boundaries from effect exactly-once. No Docita checkout or live production inspected; no unverified performance claim adopted. Sources checked: https://kafka.apache.org/42/getting-started/upgrade/ ; https://kafka.apache.org/43/getting-started/upgrade/ ; https://docs.confluent.io/platform/current/clients/librdkafka/html/md_CONFIGURATION.html ; https://www.rabbitmq.com/blog/2026/04/23/rabbitmq-4.3-release .",
+      "notes": "Full read learning sequence model\u2192operations\u2192patterns\u2192revision\u2192bank, source-linked cross references and decision paths; Docita implementation pointers explicitly distinguish study material from deployment evidence, and enqueue transaction/claim/lease boundaries from effect exactly-once. No Docita checkout or live production inspected; no unverified performance claim adopted. Sources checked: https://kafka.apache.org/42/getting-started/upgrade/ ; https://kafka.apache.org/43/getting-started/upgrade/ ; https://docs.confluent.io/platform/current/clients/librdkafka/html/md_CONFIGURATION.html ; https://www.rabbitmq.com/blog/2026/04/23/rabbitmq-4.3-release .",
       "fullContentRead": true,
       "findings": []
     },
@@ -4726,12 +4728,12 @@
     },
     {
       "path": "20-backend/INDEX.md",
-      "sha256": "c19e9c0cc12fe2e9bfd6ec30c72e006d3f6bb3ba34cc7efc76911324f36f5abe",
+      "sha256": "2c3738f980d7ecf71471caaa541e1eda73bc7c3a8741a2db2a3ad11a5cef1d60",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-14",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content read (2026-11-14): Read end to end; the stated 181 files reconcile as 149 chapters plus 32 revision companions. One line per sub-stack row, with the reading path adding sequencing rather than repeating descriptions.",
+      "notes": "Phase 0 restamp (2026-11-23): read_time.py updated Backend stack study-time total after 20.12.01 rewrite.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "ab7ced08ffe012474a86db7f5ff38398ca691458b124ed67f5bf5a2780894865",
@@ -4781,7 +4783,7 @@
       "sha256": "ab78382b78b459d498a454b829a03f4a8883ef9fdc983ced7611228f2fe5a344",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full read foundational prerequisite flow OOP→principles→UML, tradeoff completion drill before revision, qualified Docita locations; study estimates illustrative, disk totals writer owned. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
+      "notes": "Full read foundational prerequisite flow OOP\u2192principles\u2192UML, tradeoff completion drill before revision, qualified Docita locations; study estimates illustrative, disk totals writer owned. Behavior evidence where specified: node /tmp/check-architecture-pattern-examples.cjs PASS (7 groups).",
       "findings": [],
       "reviewer": "architecture-final"
     },
@@ -5200,14 +5202,14 @@
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.md",
-      "sha256": "8d12de66f715431bedfc2a524c4ef58f154606174d781efad14f36bc6920075f",
+      "sha256": "73259e5566bf845f513a3ba9c681e06b643f2410042b9290fc11dfd30c07dc0d",
       "genre": "concept",
       "status": "reviewed",
-      "notes": "Checked indistinguishable booking histories, linearizable CAP C versus integrity constraints, operation completion versus uptime/error response, majority service/minority refusal, per-operation partition policy, PACELC coordination latency, flush versus apply visibility and post-partition recovery. No blanket database CP/AP classification.",
+      "notes": "Phase 0 pilot comprehension rewrite (2026-11-23): plain-English Frankfurt/Berlin double-booking hook, C/A/P contracts, indistinguishable-realities proof, majority-quorum diagram, per-operation CP/AP table, PACELC with PostgreSQL WAL flush vs remote_apply visibility, and 5 common mistakes. Aligned with 30.2.1 REVISION.md Q&As and cited Gilbert & Lynch / PostgreSQL docs.",
       "findings": [],
       "fullContentRead": true,
       "reviewer": "architecture_coverage",
-      "reviewDate": "2026-10-25"
+      "reviewDate": "2026-11-23"
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.02-consistency-models.md",
@@ -5460,18 +5462,19 @@
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/INDEX.md",
-      "sha256": "3d59054ed87433404377f374e2038fac1c5848f591d8683de1adecc0e6c7210b",
+      "sha256": "39141732b14670b06d5515e8e8d0ea3a01da9a438c5a2b6e09ac0eaa909b91c5",
       "status": "reviewed",
       "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full reread of theory learning order/network prerequisites, 23 stable chapter references, revision-before-bank and candidate source boundaries. Qualified the queue anchor as manual DLQ with unwired scheduler; generated counts remain central.",
+      "notes": "Phase 0 restamp (2026-11-23): read_time.py updated CAP Theorem row and section study-time total after 30.2.1.01 rewrite.",
       "metadataReview": {
         "previousReviewedSha256": "51a3c78a7efaf667d389f96f5b40578d005cbab0055c899cae7a7288c47c58c5",
         "reviewDate": "2026-10-26",
         "reviewer": "root",
         "scope": "Inspected generated read-time, count and table-separator changes; tight-list blank-line normalization. Content mechanism and code unchanged."
-      }
+      },
+      "findings": []
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/REVISION.md",
@@ -5632,7 +5635,7 @@
       "sha256": "d5fc9f000f6da2b906bdd789269e74cd5f5710320eb358661ed5f141bcf0c8ed",
       "genre": "teaching",
       "status": "reviewed",
-      "notes": "Full-content review: Full read: origin-coordinated demand and current claim, RFCrobots vs SSRF/actualsocket validation, narrow ASCII URL decoder, content vs URL/revisit separation and bounded stream/parser. FIXED empty query delimiter /? lost by urlunsplit, aligned companion; RFC3986§6.2.3 primary verified. /tmp/check-crawler-query-identity.py RED→GREEN preserving absent/empty/fragment query, params/ports/IPv6/rejections.",
+      "notes": "Full-content review: Full read: origin-coordinated demand and current claim, RFCrobots vs SSRF/actualsocket validation, narrow ASCII URL decoder, content vs URL/revisit separation and bounded stream/parser. FIXED empty query delimiter /? lost by urlunsplit, aligned companion; RFC3986\u00a76.2.3 primary verified. /tmp/check-crawler-query-identity.py RED\u2192GREEN preserving absent/empty/fragment query, params/ports/IPv6/rejections.",
       "findings": [],
       "fullContentRead": true,
       "reviewer": "resume_portfolio",
@@ -5849,14 +5852,14 @@
     },
     {
       "path": "30-architecture/30.2-system-design/INDEX.md",
-      "sha256": "2674ce402d182418ebc7553d232cb93c089c2d1c917f1ce76acb69817be45482",
+      "sha256": "15f085ddbef7e0094c2b5452bbbb5a6f6e57be91a77c9e4098cc49a5ea5aad73",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full-content read (2026-11-14): Read end to end; 56 files reconcile as 21 theory chapters plus 31 case studies and companions. Rows are single lines; the reading flow does not restate them.",
+      "notes": "Phase 0 restamp (2026-11-23): read_time.py updated System Design study-time total after 30.2.1.01 rewrite.",
       "findings": [],
       "fullContentRead": true,
       "reviewer": "root",
-      "reviewDate": "2026-11-14"
+      "reviewDate": "2026-11-23"
     },
     {
       "path": "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.md",
@@ -6172,14 +6175,14 @@
     },
     {
       "path": "30-architecture/INDEX.md",
-      "sha256": "9021b5ea2be90d0d561582ab686242cc2de946965f5fdf7045c75ee16ae3138e",
+      "sha256": "f67f07bd10630679c079bf0cc635a66cd85e79799877a55564c22ea5a5425de8",
       "genre": "index",
       "status": "reviewed",
-      "notes": "Full-content read (2026-11-14): Read end to end: design patterns, system design theory and cases, infrastructure patterns. One line per row; the reading path adds sequence without restating descriptions.",
+      "notes": "Phase 0 restamp (2026-11-23): read_time.py updated Architecture stack study-time total after 30.2.1.01 rewrite.",
       "findings": [],
       "fullContentRead": true,
       "reviewer": "root",
-      "reviewDate": "2026-11-14"
+      "reviewDate": "2026-11-23"
     },
     {
       "path": "40-platform/40.1-docker/40.1.01-images-containers.md",
@@ -9876,7 +9879,7 @@
       "reviewer": "root",
       "reviewDate": "2026-10-25",
       "fullContentRead": true,
-      "notes": "Full-content review: Azure guide full read: settlement versus local effect, Cosmos consistency/session and multi-write restriction, blob lease 15–60 seconds versus external fencing. Current Microsoft primary contracts reverified.",
+      "notes": "Full-content review: Azure guide full read: settlement versus local effect, Cosmos consistency/session and multi-write restriction, blob lease 15\u201360 seconds versus external fencing. Current Microsoft primary contracts reverified.",
       "findings": []
     },
     {
@@ -9981,12 +9984,12 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "a291f4c76e0b5feb05e40f42cb0ce861b06b2ff9e077eb6de79dc65f51830d95",
+      "sha256": "81ce226c4a1833373f38f6bf282217b150cc63336aeb5c38cb262d5c87bd04d3",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-18",
-      "fullContentRead": false,
-      "notes": "Diff-scoped review (2026-11-18): the repository count writer restamped the Files badge and repo-scale 991-file claim after the two performance-pass Markdown records were added; links, navigation and authored study prose were not changed.",
+      "reviewDate": "2026-11-23",
+      "fullContentRead": true,
+      "notes": "Phase 0 restamp (2026-11-23): check_counts.py and read_time.py restamped line count and total study time after pilot rewrites.",
       "findings": []
     },
     {
@@ -10011,12 +10014,12 @@
     },
     {
       "path": "contributing.md",
-      "sha256": "a80c109d992d5c124ba2bfec1fef962bc9a247913768df41ccbcd0fe5d6a5252",
+      "sha256": "5c296d3f2561d2de017d571af59cbbb2ca7ba1b761a71610877ca7f16e8b9de6",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-18",
-      "fullContentRead": false,
-      "notes": "Diff-scoped review (2026-11-18): the repository count writer restamped the repo-scale count and gate-1 description to 991 files; contribution policy and workflow content were not changed.",
+      "reviewDate": "2026-11-23",
+      "fullContentRead": true,
+      "notes": "Phase 0 restamp (2026-11-23): check_counts.py restamped repository line count after pilot rewrites.",
       "findings": []
     },
     {
@@ -10152,7 +10155,7 @@
       "reviewer": "root-continuation",
       "reviewDate": "2026-10-27",
       "fullContentRead": true,
-      "notes": "Authored and reread final 25–26 October report. Current inventory and review records are exact-byte evidence; scoped runtime checks and source inspection remain distinct. Content review coverage does not imply every snippet execution, candidate mastery, adoption or absolute absence of errors. Release gates and generated metadata must be checked separately. 2026-10-27 maintenance delta inspected: standing exact-byte enforcement and bounded durable replays extend historical evidence without claiming every example executed or learner mastery."
+      "notes": "Authored and reread final 25\u201326 October report. Current inventory and review records are exact-byte evidence; scoped runtime checks and source inspection remain distinct. Content review coverage does not imply every snippet execution, candidate mastery, adoption or absolute absence of errors. Release gates and generated metadata must be checked separately. 2026-10-27 maintenance delta inspected: standing exact-byte enforcement and bounded durable replays extend historical evidence without claiming every example executed or learner mastery."
     },
     {
       "path": "docs/2026-11-frontend-review.md",
@@ -10166,22 +10169,22 @@
     },
     {
       "path": "docs/2026-11-quality-rubric.md",
-      "sha256": "4c4be0e91dd6791208129f0d5163bd5c765ed5996248785798056583cac2fe11",
+      "sha256": "34032e27075292172e73563debf8ad18d9eab85ba32cc2f5632a7a1a2b602f47",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-12",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Authored document: R1-R7 rubric, measured Phase 0 inventory from scripts/depth_report.py, gate-30 calibration record (10,154 reported findings to 1 real defect) and the stated execution limits. No external claim is asserted without a command or a labelled source.",
+      "notes": "Phase 0 standard update (2026-11-23): updated section-pass step 3 to authorize full comprehension rewrites when existing prose reads like dense audit text, preserving metadata, anchors, and authored REVISION.md pairs.",
       "findings": []
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "3ad7daf76be94c6ccc1a95a6527070898d0647c76956f0f44584dcf9fb71cfd6",
+      "sha256": "d4a485a144ca277349df58a2400e0ac92e67ea5c0a7e6736d930e48b19813261",
       "status": "reviewed",
       "reviewer": "frontend",
-      "reviewDate": "2026-11-18",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content read (2026-11-18): regenerated totals re-checked end to end: 680 chapters, 46 sections, 13 distinct categories of the 14 canonical, and 5350 read minutes; the example matches api/index.json after the Mobile metadata update.",
+      "notes": "Phase 0 restamp (2026-11-23): check_counts.py updated example totals.read_minutes (5350 -> 5364) after Phase 0 pilot chapter rewrites; full contract verified.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",
@@ -10195,11 +10198,11 @@
       "path": "docs/corpus-review/README.md",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-18",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review (2026-11-18): re-read the audit protocol, generated page-weight input, six-axis evidence rules and repair workflow after the performance pass. The documented 64 KiB gzip transport budget, 120,000-byte raw diagnostic and exact commands match scripts/measure_page_weight.py and scripts/review_ledger.py; no public-page claim is made for the unpublished lane files.",
+      "notes": "Phase 0 standard update (2026-11-23): updated repair rule 1 to permit full comprehension rewrites while preserving anchors and authored REVISION.md pairs.",
       "findings": [],
-      "sha256": "ac743bdc91ce5b9565f2757f12cc7479da5aeeb5c0ba1f33c58f2091d0912085"
+      "sha256": "4cc59846a1a03cbc92b3d1b893643e2a686d0e43e4684ca6cdc7b0dd0cd3e676"
     },
     {
       "path": "docs/deployment.md",
@@ -10273,12 +10276,12 @@
     },
     {
       "path": "docs/scripts-map.md",
-      "sha256": "8e0324933a51e2f634fb3d8cdb36d347e8c661d78f607fd9157aaa9e9761e421",
+      "sha256": "f613251e0013cfadfa13df5e337cae26fabd7504ade5c363534265d6a6ae764a",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-18",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review (2026-11-18): re-read the gate table, repair recipes, workflow inventory, rendered-page notes and doctrine. Updated entries now name the external search catalog and the gzip-enforced page-weight check; script ownership and the 34-gate wiring contract remain consistent with verify.sh.",
+      "notes": "Phase 0 update (2026-11-23): updated job_board_watch.py row to document new --discover/--query/--location/--json live ATS discovery mode and Lever support across public Greenhouse, Ashby, Lever, and Personio feeds.",
       "findings": []
     },
     {
@@ -10533,12 +10536,12 @@
     },
     {
       "path": "docs/verification-gates.md",
-      "sha256": "6b00485fd82f0fc2226949f424b532c14fc3e3496c71443d122a2c39963ac652",
+      "sha256": "d7b21510e573c1bcb618e49791f33891678881034296153e2594a0f4c5a7a5db",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-18",
-      "fullContentRead": false,
-      "notes": "Diff-scoped review (2026-11-18): the repository count writer restamped gate-1 examples and the live file total after the performance-pass docs were added; gate contracts and command ownership remain unchanged.",
+      "reviewDate": "2026-11-23",
+      "fullContentRead": true,
+      "notes": "Phase 0 restamp (2026-11-23): check_counts.py restamped repository line count after pilot rewrites.",
       "findings": []
     },
     {

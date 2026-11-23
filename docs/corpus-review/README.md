@@ -86,7 +86,7 @@ whole batch if any entry fails, so a bad row cannot half-land.
 
 ## Repair rules
 
-- Fix defects, not style. Preserve every heading anchor and authored Q/A pair.
+- Fix both factual/structural defects **and** comprehension barriers (2026-11-23 update). If a chapter reads like dense audit prose or skips concrete traces/examples, rewrite it for clear first-pass understanding while preserving every incoming heading anchor, required section, and authored `REVISION.md` Q/A pair.
 - Do not renumber files or change counts by hand. The section owner runs
   `python3 scripts/check_counts.py --write` after the batch is applied.
 - Do not run a repository-wide writer concurrently with another reviewer.

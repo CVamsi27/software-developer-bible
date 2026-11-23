@@ -1,6 +1,6 @@
 {
- "generated": "2026-11-18",
- "url_count": 2773,
+ "generated": "2026-11-23",
+ "url_count": 2781,
  "urls": {
   "http://highscalability.com/": [
    "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
@@ -4180,6 +4180,18 @@
   "https://jinja.palletsprojects.com/en/stable/api/#autoescaping": [
    "30-architecture/30.2-system-design/02-case-studies/30.2.2.07-notification-service.md"
   ],
+  "https://jobs.a16z.com/jobs": [
+   "00-strategy/00.05-find-startup-roles.md"
+  ],
+  "https://jobs.accel.com/jobs": [
+   "00-strategy/00.05-find-startup-roles.md"
+  ],
+  "https://jobs.pointnine.com/jobs": [
+   "00-strategy/00.05-find-startup-roles.md"
+  ],
+  "https://jobs.sequoiacap.com/jobs": [
+   "00-strategy/00.05-find-startup-roles.md"
+  ],
   "https://joi.dev/": [
    "20-backend/20.2-nestjs/04-quality-and-operations/20.2.4.01-configuration-validation.md"
   ],
@@ -6101,6 +6113,7 @@
    "10-frontend/10.3-react/02-core-hooks/10.3.2.05-context-api.md"
   ],
   "https://react.dev/learn/preserving-and-resetting-state": [
+   "10-frontend/10.3-react/01-react-internals/10.3.1.01-virtual-dom.md",
    "10-frontend/10.3-react/01-react-internals/10.3.1.03-reconciliation.md",
    "10-frontend/10.3-react/05-patterns-and-interview/10.3.5.03-interview-questions.md"
   ],
@@ -6218,6 +6231,9 @@
   ],
   "https://react.dev/reference/react/createContext": [
    "10-frontend/10.3-react/02-core-hooks/10.3.2.05-context-api.md"
+  ],
+  "https://react.dev/reference/react/createElement": [
+   "10-frontend/10.3-react/01-react-internals/10.3.1.01-virtual-dom.md"
   ],
   "https://react.dev/reference/react/forwardRef": [
    "10-frontend/10.1-javascript/06-modern-and-interview/10.1.6.05-interview-questions.md",
@@ -6596,6 +6612,9 @@
   "https://relay.dev/graphql/connections.htm": [
    "20-backend/20.3-rest-apis/03-payloads-errors-integration/20.3.3.01-pagination.md",
    "20-backend/20.7-graphql/01-fundamentals/20.7.1.02-schema-design.md"
+  ],
+  "https://remotive.com/": [
+   "00-strategy/00.05-find-startup-roles.md"
   ],
   "https://research.google/pubs/pub36575/": [
    "40-platform/40.4-observability/04-advanced-telemetry/40.4.4.02-continuous-profiling.md"
@@ -7794,6 +7813,9 @@
   "https://www.apollographql.com/docs/react/migrating/apollo-client-4-migration": [
    "20-backend/20.7-graphql/03-clients-and-production/20.7.3.01-apollo-client.md"
   ],
+  "https://www.arbeitnow.com/": [
+   "00-strategy/00.05-find-startup-roles.md"
+  ],
   "https://www.artillery.io/docs": [
    "50-quality/50.1-testing/05-advanced/50.1.5.01-performance-load-testing.md"
   ],
@@ -8057,6 +8079,9 @@
    "20-backend/20.3-rest-apis/01-design-and-contract/20.3.1.02-rest-principles.md"
   ],
   "https://www.indeed.com/": [
+   "00-strategy/00.05-find-startup-roles.md"
+  ],
+  "https://www.indexventures.com/startup-jobs/": [
    "00-strategy/00.05-find-startup-roles.md"
   ],
   "https://www.informit.com/articles/article.aspx?p=1398600": [

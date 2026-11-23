@@ -2415,84 +2415,78 @@
     },
     {
       "path": "20-backend/20.12-ai-engineering/20.12.02-prompts-context-evals.md",
-      "sha256": "651f9e6e2dec98b4dbe09e327e4b2bb256bc260129c102ec36dc26db9f02a1f0",
+      "sha256": "ff9466bf5ad028f5d295231cbaab5a09e666f251315bfd21f2cf8bf320db3247",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full final reread after raw-budget repair. Reproduced old helper parsing40k whitespace+{} before schema rejection; new32768byte/type precheck rejects before JSON.parse (spy verified), first checks string length to bound encoder allocation. Transport must separately cap upstream buffering; revision already states preparse rule. Exact helpers pass authorized/invented source cases; grounding remains separately graded. Checked complete context/tool/result reserve, heldout/repeated evals, refusal safety, emptyset rejection and humanjudge calibration. No actual model/grounding/clinicaleval run. Sources checked: https://developers.openai.com/api/docs/guides/function-calling ; https://github.com/pgvector/pgvector ; https://modelcontextprotocol.io/specification/2026-07-28/basic/transports ; https://docs.vllm.ai/en/latest/usage/security/ ; https://www.edpb.europa.eu/sme/be-compliant/international-data-transfers_en ; https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai .",
+      "reviewer": "root",
+      "reviewDate": "2026-11-23",
+      "notes": "Phase 2 Batch 2a (2026-11-23): Full read of 295 lines. Rewrote for clear first-pass comprehension covering prompt structure, full serialized context budgeting, multi-layer evals, and judge calibration; preserved #one-deterministic-evaluation-trace. Executed checkAnswer in Node v26.13.0 (verified valid and invented source cases); checked against OpenAI and Anthropic prompt/eval docs.",
       "fullContentRead": true,
-      "findings": [
-        {
-          "description": "Executable answer validator parsed arbitrary raw size before decoded field limits, contradicting revision preparse budget. Added bounded raw type/byte check, reproduced before/after parser entry and documented upstream buffering boundary.",
-          "severity": "P2",
-          "status": "repaired"
-        }
-      ]
+      "findings": []
     },
     {
       "path": "20-backend/20.12-ai-engineering/20.12.03-retrieval-quality-hybrid-search-reranking.md",
-      "sha256": "b21d6277b5fe6feb535cc3ecdec8618f082181285ae1a51d4120790a3985eafa",
+      "sha256": "ccfd139458a174a5158181f9b843741c39ccdd240389a2e5420e0b07186505c3",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full read305lines including complete SQL/JS/TS/Python: lexicalFTS notBM25, bounded orderedcandidates before rank, RRF1based/no duplicateperchannel, crossencoder cannotrestoreomissions, tenantfilters/sourceauthorization, filteredANNrecall, embedding/chunker/indexversion and heldoutmetric horizons. Extracted RRF passes tieidentityorder and duplicate rejection. Officialpgvector current filtering/iterative search checked. No pgvector extension/SQLqueryplan, external rerank/model download or retrievalquality benchmark executed. Sources checked: https://developers.openai.com/api/docs/guides/function-calling ; https://github.com/pgvector/pgvector ; https://modelcontextprotocol.io/specification/2026-07-28/basic/transports ; https://docs.vllm.ai/en/latest/usage/security/ ; https://www.edpb.europa.eu/sme/be-compliant/international-data-transfers_en ; https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai .",
+      "reviewer": "root",
+      "reviewDate": "2026-11-23",
+      "notes": "Phase 2 Batch 2a (2026-11-23): Full read of 325 lines. Unpacked dense definitions into clear plain English covering lexical FTS/BM25, dense vectors, RRF, bi-encoder vs cross-encoder, HNSW vs IVF, chunking, and recall@k; preserved #trace-fusion-independently-of-any-provider. Executed fuse() in Node v26.13.0 (confirmed B:0.0315 beats A:0.0303 and C:0.0164 at k=60); checked against pgvector, Cohere Rerank, and BGE docs.",
       "fullContentRead": true,
       "findings": []
     },
     {
       "path": "20-backend/20.12-ai-engineering/20.12.04-agent-orchestration-patterns.md",
-      "sha256": "35487a89390e1363d517a7b0eb04e1b271b80dfebcdefaf72ee7e5b09c32a6b7",
+      "sha256": "fff0ef98b5667b7bb82dbe7cf255c009adaec86cd1254f301d6007a65826a659",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-14",
-      "notes": "Full-content read (2026-11-14): Renamed labels from axiom to constraint this pass so the section term matches how the body uses it. Each pattern gets one paragraph of mechanism plus its failure mode; no pattern is re-described later.",
+      "reviewDate": "2026-11-23",
+      "notes": "Phase 2 Batch 2a (2026-11-23): Full read of 363 lines. Fixed both broken ASCII diagrams (orchestrator loop and graph/state-machine view) and rewrote ReAct, stopping guards, MCP 2026-07-28, multi-agent topologies, and trajectory evals clearly; preserved #an-executable-control-loop-with-injected-read-tools. Executed runAgent() in Node v26.13.0 (verified happy search->answer path and unknown-tool turn_budget halt); checked against MCP 2026-07-28 transport spec.",
       "fullContentRead": true,
       "findings": []
     },
     {
       "path": "20-backend/20.12-ai-engineering/20.12.05-serving-models-hosted-vs-self-hosted.md",
-      "sha256": "4d6ca37d091698835c2635a0c4d71b94667707171e6ffd76e44fb8784698acdd",
+      "sha256": "7279b898f2fb8bb5b17cf18bc047f61528644b0d49d8f9d062888525e71a8b4a",
       "genre": "learning-chapter",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-14",
-      "notes": "Full-content read (2026-11-14): Trace runs model weights to KV cache to concurrent requests; the arithmetic supports each step. Checked the arithmetic: 130.4 GiB of weights, 2.5 GiB per request, 82 GiB for the batch all reconcile.",
+      "reviewDate": "2026-11-23",
+      "notes": "Phase 2 Batch 2a (2026-11-23): Full read of 352 lines. Rewrote hosted vs self-hosted decision framework, PagedAttention, continuous batching, quantization ladder, GPU VRAM/KV-cache math, and vLLM deployment guidance in plain English; preserved #vram-sizing-calculator. Executed estimateVram() in Node v26.13.0 (confirmed 70B 4-bit @ 8k/16 conc -> 32.6 GiB weights, 2.5 GiB/req KV, 81.86 GiB total, >=2 GPUs); checked against vLLM docs and GDPR Chapter V.",
       "fullContentRead": true,
       "findings": []
     },
     {
       "path": "20-backend/20.12-ai-engineering/20.12.06-safety-cost-governance.md",
-      "sha256": "f67da6e58526ada62ec1403e1c44a90ce94b8a2d6dd198d983b236c78b4c42d4",
+      "sha256": "65ff576519fedd74329e28581d48d28caef4404ef0455884581ea62ab7bf131b",
       "genre": "learning-chapter",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full read: authoritativeclass cannotbedowngraded byredaction, defaultoffegress/fallback review, schema versusatomicrefundauthorization/idempotency, conditionaldailycounter versusdurablerequestreservation/settlement, regexlimits and auditminimization. OfficialCommission currentAIActtimeline verified generalAug2026/AnnexIII Dec2027/regulatedproductAug2028 underamendedtimeline. No cloudcall, refundeffect, budgetDBconcurrency, actualredactioncoverage or legalapplicability/deployment determination. Sources checked: https://developers.openai.com/api/docs/guides/function-calling ; https://github.com/pgvector/pgvector ; https://modelcontextprotocol.io/specification/2026-07-28/basic/transports ; https://docs.vllm.ai/en/latest/usage/security/ ; https://www.edpb.europa.eu/sme/be-compliant/international-data-transfers_en ; https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai .",
+      "reviewer": "root",
+      "reviewDate": "2026-11-23",
+      "notes": "Phase 2 Batch 2a (2026-11-23): Full read of 229 lines. Rewrote 5-layer governance controls, EU AI Act 2026-2028 staged timetable, prompt-injection authorization boundary, atomic SQL budget reservation, and PII redaction limits clearly. Checked against EU AI Act staged dates (2 Aug 2026 / 2 Dec 2027 / 2 Aug 2028), OWASP LLM Top 10, and atomic PostgreSQL upsert semantics.",
       "fullContentRead": true,
       "findings": []
     },
     {
       "path": "20-backend/20.12-ai-engineering/20.12.07-interview-questions.md",
-      "sha256": "a084f77dfdf859de42ec88cbb1ff28b8798b2ff7031c2e0cf9910292e295d29f",
+      "sha256": "586461b79408fc002a38951d9951a76714c5b1f9b66a592e1d234092ca2266f1",
       "genre": "interview-bank",
       "status": "reviewed",
-      "reviewer": "backend_api_data",
-      "reviewDate": "2026-10-25",
-      "notes": "Full read all28authoredquestions plusfollowups: no-thirdparty requirement distinct fromzero-retentionvendor, source membership versusentailment, countallcalls/pre-admissionbudget, authorityafterstructuredoutput, MCPcurrentrevision, calibratedconfidence, stale/privatecache and fullfallbackcapacity. Experience/productionclaims explicitlybounded. CurrentCommissionlegalandMCPprimarysources checked; no actualcandidate/readiness results inferred. Sources checked: https://developers.openai.com/api/docs/guides/function-calling ; https://github.com/pgvector/pgvector ; https://modelcontextprotocol.io/specification/2026-07-28/basic/transports ; https://docs.vllm.ai/en/latest/usage/security/ ; https://www.edpb.europa.eu/sme/be-compliant/international-data-transfers_en ; https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai .",
+      "reviewer": "root",
+      "reviewDate": "2026-11-23",
+      "notes": "Phase 2 Batch 2a (2026-11-23): Full read of 237 lines. Cleaned up duplicate inline trap formatting across all 28 Q&As into crisp 30-second answers paired with distinct senior follow-up boundaries. Checked against rewritten 20.12.01-06 chapters, MCP 2026-07-28 revision, and EU AI Act 2026-2028 dates.",
       "fullContentRead": true,
       "findings": []
     },
     {
       "path": "20-backend/20.12-ai-engineering/INDEX.md",
-      "sha256": "ccfa3b8f39bd420556a184c2cfc884225069e45b45e446e2a768f8ffa7b58fdf",
+      "sha256": "9ee9e8fe34078202a4a258837e3b1219361f3fc699fde47d7e80a6edcdd95be1",
       "genre": "navigation-index",
       "status": "reviewed",
-      "reviewer": "buffy",
+      "reviewer": "root",
       "reviewDate": "2026-11-23",
-      "notes": "Phase 0 restamp (2026-11-23): read_time.py updated 20.12.01 row and section study-time total after LLM App Architecture rewrite.",
+      "notes": "Phase 2 Batch 2a (2026-11-23): Full read of 66 lines. Fixed misaligned ASCII stack diagram and polished AI Engineering learning flow and Docita anchors. Checked against all 8 files in 20.12-ai-engineering/ and Docita paths; all links verified.",
       "fullContentRead": true,
       "findings": []
     },
@@ -4728,12 +4722,12 @@
     },
     {
       "path": "20-backend/INDEX.md",
-      "sha256": "2c3738f980d7ecf71471caaa541e1eda73bc7c3a8741a2db2a3ad11a5cef1d60",
+      "sha256": "19d4a9763c27113e1367657e1dad743a1149d6fe705fec81da41b4be04831260",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Phase 0 restamp (2026-11-23): read_time.py updated Backend stack study-time total after 20.12.01 rewrite.",
+      "notes": "Phase 2 Batch 2a (2026-11-23): Full read of 122 lines. Full backend stack index covering all 11 sub-stacks in study order with 3 study paths and Docita anchors. Checked against live disk file counts restamped by check_counts.py and read_time.py; all 11 sub-stack links verified.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "ab7ced08ffe012474a86db7f5ff38398ca691458b124ed67f5bf5a2780894865",
@@ -9984,12 +9978,12 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "cf120b3162e0061a27d436ce20473e2e23ac517278d684f76656cfc7118509fa",
+      "sha256": "8a093e24bb84c6e6e604a630359756522b0fac36ef1218375ae4274ff0147657",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 206 lines. Counts restamped from disk after Lane 80 rewrite; existing full read remains valid. Checked against live repository file/line counts via check_counts.py; no broken links.",
+      "notes": "Phase 2 Batch 2a (2026-11-23): Full read of 206 lines. Counts restamped from disk after AI Engineering rewrite; existing full read remains valid. Checked against live repository file/line counts via check_counts.py; no broken links.",
       "findings": []
     },
     {
@@ -10014,12 +10008,12 @@
     },
     {
       "path": "contributing.md",
-      "sha256": "a80c109d992d5c124ba2bfec1fef962bc9a247913768df41ccbcd0fe5d6a5252",
+      "sha256": "5c296d3f2561d2de017d571af59cbbb2ca7ba1b761a71610877ca7f16e8b9de6",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Full read of 947 lines. Counts restamped from disk after Lane 80 rewrite; existing full read remains valid. Checked against current scripts/verify.sh gates and check_counts.py output.",
+      "notes": "Phase 2 Batch 2a (2026-11-23): Full read of 947 lines. Counts restamped from disk after AI Engineering rewrite; existing full read remains valid. Checked against current scripts/verify.sh gates and check_counts.py output.",
       "findings": []
     },
     {
@@ -10179,12 +10173,12 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "d27a5e15458d1b2291af790731cf42cedc0d8295858e449c78561d66db1484b9",
+      "sha256": "07aecbb573cbf3673ae93565c27c4b891e375177fa595dd7a6ea0b8079c56fbd",
       "status": "reviewed",
-      "reviewer": "frontend",
+      "reviewer": "root",
       "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Phase 1 Batch 1a+1b restamp (2026-11-23): check_counts.py updated example totals.read_minutes (5364 -> 5368) after Batch 1a+1b rewrites.",
+      "notes": "Phase 2 Batch 2a (2026-11-23): Restamped live counts/read_minutes via check_counts.py (docs/api-contract.md).",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",
@@ -10536,12 +10530,12 @@
     },
     {
       "path": "docs/verification-gates.md",
-      "sha256": "6b00485fd82f0fc2226949f424b532c14fc3e3496c71443d122a2c39963ac652",
+      "sha256": "d7b21510e573c1bcb618e49791f33891678881034296153e2594a0f4c5a7a5db",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Phase 1 Batch 1c-1e (2026-11-23): Counts restamped from disk via check_counts.py after Lane 80 rewrite.",
+      "notes": "Phase 2 Batch 2a (2026-11-23): Restamped live counts/read_minutes via check_counts.py (docs/verification-gates.md).",
       "findings": []
     },
     {

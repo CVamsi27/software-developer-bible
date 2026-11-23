@@ -3222,52 +3222,124 @@
    "notes": "Phase 0 calibration pilot rewrite; satisfies both LLM App Architecture Q&As in 20.12 REVISION.md."
   },
   "20-backend/20.12-ai-engineering/20.12.02-prompts-context-evals.md": {
-   "sha256": "651f9e6e2dec98b4dbe09e327e4b2bb256bc260129c102ec36dc26db9f02a1f0",
-   "lines": 253,
+   "sha256": "ff9466bf5ad028f5d295231cbaab5a09e666f251315bfd21f2cf8bf320db3247",
+   "lines": 295,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Executed checkAnswer in Node v26.13.0 (verified valid and invented source cases); checked against OpenAI and Anthropic prompt/eval docs.",
+    "readable": "Full read of 295 lines. Rewrote for clear first-pass comprehension covering prompt structure, full serialized context budgeting, multi-layer evals, and judge calibration; preserved #one-deterministic-evaluation-trace.",
+    "concise": "1406 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical prompts, context budgeting, and eval chapter; points at 20.12.01 for architecture and 20.12.06 for governance.",
+    "fast": "48.6 KB raw / 11.1 KB gzip",
+    "best": "Remaining limit is that checkAnswer validates JSON shape and source membership only; factual claim entailment requires a separate calibrated grader."
+   }
   },
   "20-backend/20.12-ai-engineering/20.12.03-retrieval-quality-hybrid-search-reranking.md": {
-   "sha256": "b21d6277b5fe6feb535cc3ecdec8618f082181285ae1a51d4120790a3985eafa",
-   "lines": 305,
+   "sha256": "ccfd139458a174a5158181f9b843741c39ccdd240389a2e5420e0b07186505c3",
+   "lines": 325,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Executed fuse() in Node v26.13.0 (confirmed B:0.0315 beats A:0.0303 and C:0.0164 at k=60); checked against pgvector, Cohere Rerank, and BGE docs.",
+    "readable": "Full read of 325 lines. Unpacked dense definitions into clear plain English covering lexical FTS/BM25, dense vectors, RRF, bi-encoder vs cross-encoder, HNSW vs IVF, chunking, and recall@k; preserved #trace-fusion-independently-of-any-provider.",
+    "concise": "1575 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical hybrid retrieval and reranking chapter; points at 20.4.5.05 for search infrastructure operations and 20.12.02 for eval loops.",
+    "fast": "55.8 KB raw / 12.9 KB gzip",
+    "best": "Remaining limit is that reranking cannot recover a relevant passage excluded by first-stage retrieval or starved by selective ANN tenant filters."
+   }
   },
   "20-backend/20.12-ai-engineering/20.12.04-agent-orchestration-patterns.md": {
-   "sha256": "35487a89390e1363d517a7b0eb04e1b271b80dfebcdefaf72ee7e5b09c32a6b7",
-   "lines": 388,
+   "sha256": "fff0ef98b5667b7bb82dbe7cf255c009adaec86cd1254f301d6007a65826a659",
+   "lines": 363,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Executed runAgent() in Node v26.13.0 (verified happy search->answer path and unknown-tool turn_budget halt); checked against MCP 2026-07-28 transport spec.",
+    "readable": "Full read of 363 lines. Fixed both broken ASCII diagrams (orchestrator loop and graph/state-machine view) and rewrote ReAct, stopping guards, MCP 2026-07-28, multi-agent topologies, and trajectory evals clearly; preserved #an-executable-control-loop-with-injected-read-tools.",
+    "concise": "1799 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical agent orchestration chapter; points at 20.12.06 for spend reservations and authz boundaries.",
+    "fast": "61.8 KB raw / 13.7 KB gzip",
+    "best": "Remaining limit is that runAgent enforces local turn/call/byte/deadline bounds only; production spend caps and mutating tools still require pre-call billing reservations and idempotent server actions."
+   }
   },
   "20-backend/20.12-ai-engineering/20.12.05-serving-models-hosted-vs-self-hosted.md": {
-   "sha256": "4d6ca37d091698835c2635a0c4d71b94667707171e6ffd76e44fb8784698acdd",
-   "lines": 365,
+   "sha256": "7279b898f2fb8bb5b17cf18bc047f61528644b0d49d8f9d062888525e71a8b4a",
+   "lines": 352,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Executed estimateVram() in Node v26.13.0 (confirmed 70B 4-bit @ 8k/16 conc -> 32.6 GiB weights, 2.5 GiB/req KV, 81.86 GiB total, >=2 GPUs); checked against vLLM docs and GDPR Chapter V.",
+    "readable": "Full read of 352 lines. Rewrote hosted vs self-hosted decision framework, PagedAttention, continuous batching, quantization ladder, GPU VRAM/KV-cache math, and vLLM deployment guidance in plain English; preserved #vram-sizing-calculator.",
+    "concise": "1533 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical model-serving chapter; points at 20.12.06 for authoritative data-class derivation rather than duplicating governance rules.",
+    "fast": "54.5 KB raw / 13.4 KB gzip",
+    "best": "Remaining limit is that VRAM arithmetic is a lower-bound estimate and does not replace real GPU load testing for mixed prompt/output lengths and OOM margins."
+   }
   },
   "20-backend/20.12-ai-engineering/20.12.06-safety-cost-governance.md": {
-   "sha256": "f67da6e58526ada62ec1403e1c44a90ce94b8a2d6dd198d983b236c78b4c42d4",
-   "lines": 203,
+   "sha256": "65ff576519fedd74329e28581d48d28caef4404ef0455884581ea62ab7bf131b",
+   "lines": 229,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against EU AI Act staged dates (2 Aug 2026 / 2 Dec 2027 / 2 Aug 2028), OWASP LLM Top 10, and atomic PostgreSQL upsert semantics.",
+    "readable": "Full read of 229 lines. Rewrote 5-layer governance controls, EU AI Act 2026-2028 staged timetable, prompt-injection authorization boundary, atomic SQL budget reservation, and PII redaction limits clearly.",
+    "concise": "1022 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical AI safety, spend-governance, and audit chapter; points at 20.5.2.04 and 20.5.3.04 for base API security and secrets management.",
+    "fast": "36.4 KB raw / 9.5 KB gzip",
+    "best": "Remaining limit is that regex redaction misses free-text identifiers and cannot downgrade authoritative data classification; engineering controls do not substitute for legal review."
+   }
   },
   "20-backend/20.12-ai-engineering/20.12.07-interview-questions.md": {
-   "sha256": "a084f77dfdf859de42ec88cbb1ff28b8798b2ff7031c2e0cf9910292e295d29f",
-   "lines": 268,
+   "sha256": "586461b79408fc002a38951d9951a76714c5b1f9b66a592e1d234092ca2266f1",
+   "lines": 237,
    "genre": "interview",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against rewritten 20.12.01-06 chapters, MCP 2026-07-28 revision, and EU AI Act 2026-2028 dates.",
+    "readable": "Full read of 237 lines. Cleaned up duplicate inline trap formatting across all 28 Q&As into crisp 30-second answers paired with distinct senior follow-up boundaries.",
+    "concise": "2443 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical AI Engineering interview drill; kept separate from REVISION.md active-recall questions.",
+    "fast": "31.5 KB raw / 11.6 KB gzip",
+    "best": "Remaining limit is that reading concise model answers does not replace speaking trade-offs aloud under adversarial follow-up probes."
+   }
   },
   "20-backend/20.12-ai-engineering/INDEX.md": {
-   "sha256": "e8448f24adf9878f413e4a467de0e139f8f169c0c8b4f99bb9b8ff4cbd2808c6",
-   "lines": 68,
+   "sha256": "9ee9e8fe34078202a4a258837e3b1219361f3fc699fde47d7e80a6edcdd95be1",
+   "lines": 66,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against all 8 files in 20.12-ai-engineering/ and Docita paths; all links verified.",
+    "readable": "Full read of 66 lines. Fixed misaligned ASCII stack diagram and polished AI Engineering learning flow and Docita anchors.",
+    "concise": "174 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical AI Engineering reading flow; points at numbered chapters and REVISION.md without duplicating technical lessons.",
+    "fast": "12.5 KB raw / 4.3 KB gzip",
+    "best": "Remaining limit is Docita pointers are code leads and require checking live deployment configuration before making claims."
+   }
   },
   "20-backend/20.12-ai-engineering/REVISION.md": {
    "sha256": "93abe8b4fea302f50391c9e659646edadcf103500e288c07c6ed7c0539e8a8b3",
    "lines": 128,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against rewritten 20.12 chapters and MCP 2026-07-28 revision details; all anchors verified.",
+    "readable": "Full read of 128 lines. Verified all authored Q&A pairs and all 4 deep-linked source anchors match the rewritten 20.12.01-06 chapters cleanly.",
+    "concise": "899 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical active-recall companion for AI Engineering; separate from concept chapters and 20.12.07 interview bank.",
+    "fast": "15.6 KB raw / 5.5 KB gzip",
+    "best": "Remaining limit is that recall Q&As check conceptual boundaries and should be paired with hands-on eval and architecture drills."
+   }
   },
   "20-backend/20.13-java/20.13.01-java-language-fundamentals.md": {
    "sha256": "d7b16b8f446bd56c6077828aaea4450ba3d23d4afc1dea8a690d2101f5244eeb",
@@ -4270,49 +4342,121 @@
    "sha256": "47d7621ad2ca050eb2c5f61d8115c27d663b51e7ecfc8529d37bf14eb31ba0f9",
    "lines": 209,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current PostgreSQL documentation for WAL, resource settings, constraints, and materialized-view refresh.",
+    "readable": "Full read of 209 lines. Clear PostgreSQL fundamentals chapter tracing client-to-backend execution, shared_buffers vs work_mem, WAL crash recovery, constraints, rollback semantics, and operational boundaries.",
+    "concise": "1705 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical PostgreSQL overview; points at 20.4.1.03 for MVCC traces, 20.4.1.05 for tuning, and 20.4.5.04 for backups/PITR.",
+    "fast": "30.9 KB raw / 9.3 KB gzip",
+    "best": "Remaining limit is that SQL fixtures target PostgreSQL 16+ in a disposable database and were reviewed against docs rather than run on a live Postgres instance."
+   }
   },
   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.02-normalization.md": {
    "sha256": "0c20c4781dd1201cd5751ef879c29934551c9bfe4c2c1315a2903434a8fd5eb1",
    "lines": 209,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against relational normalization theory and PostgreSQL constraint/materialized-view docs.",
+    "readable": "Full read of 209 lines. Plain-English normalization guide walking 1NF, 2NF, 3NF, and BCNF with lossless-join vs dependency-preservation trade-offs, historical-price preservation, and denormalization failure modes.",
+    "concise": "1477 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical normalization chapter; points at 20.4.3.01 for cross-row transactions and 20.4.1.05 for read-cost measurement.",
+    "fast": "31.4 KB raw / 8.5 KB gzip",
+    "best": "Remaining limit is that SQL keys and foreign keys enforce local structural dependencies but cannot express every multi-row lifecycle invariant without transactions."
+   }
   },
   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.md": {
    "sha256": "ff50f08e686854294ae5fe52a608d0357236364f00515765b7e153ee9852a68e",
    "lines": 261,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current PostgreSQL MVCC, transaction-isolation, system-columns, and routine-vacuuming docs.",
+    "readable": "Full read of 261 lines. Clear MVCC chapter with two-session Read Committed vs Repeatable Read interleaving traces, 40001 conflict behavior, xmin/xmax diagnostics, atomic stock reservation SQL, and VACUUM/wraparound operations.",
+    "concise": "1694 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical MVCC visibility and cleanup chapter; points at 20.4.3.01 for isolation/retry design and 20.4.3.03 for locking.",
+    "fast": "34.2 KB raw / 9.2 KB gzip",
+    "best": "Remaining limit is that MVCC snapshots never protect read-then-write stock invariants alone and long-running snapshots delay tuple reclamation."
+   }
   },
   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.04-nosql-vs-sql.md": {
    "sha256": "c047965109ae563cba838f0705baeaa9ff79d816aefd99c89f1171ef91687e81",
    "lines": 195,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against MongoDB data-modeling/transactions docs, DynamoDB ConsistentRead/partition-key docs, Gilbert & Lynch CAP, and Elasticsearch NRT docs.",
+    "readable": "Full read of 195 lines. Grounded SQL vs NoSQL guide comparing relational, document, key-value, wide-column, graph, and search models, CAP under partitions, consistency guarantees, and worked Postgres/MongoDB/DynamoDB traces.",
+    "concise": "1518 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical database-model selection chapter; points at 20.8.01 for caching, 20.4.5.05 for search, and 20.6.3.06 for outbox sync.",
+    "fast": "31.3 KB raw / 9.3 KB gzip",
+    "best": "Remaining limit is that driver fragments are illustrative model traces and product guarantees always depend on exact deployment topology and configuration."
+   }
   },
   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.05-postgresql-performance.md": {
    "sha256": "6fd7c0e8775bdece01a9843a89b812e676ddaf2ac422d3dfedaafd936558c03d",
    "lines": 229,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current PostgreSQL EXPLAIN, pg_stat_statements, cumulative statistics, resource settings, and partitioning docs.",
+    "readable": "Full read of 229 lines. Evidence-first PostgreSQL tuning guide tracing request latency, pg_stat_activity/pg_stat_statements, EXPLAIN (ANALYZE, BUFFERS), before/after partial-index fixture, memory/pool budgeting, and partitioning.",
+    "concise": "1592 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical PostgreSQL tuning chapter; points at 20.4.2.01 for index types, 20.4.2.03 for plan nodes, and 20.4.5.01 for connection pooling.",
+    "fast": "32.0 KB raw / 9.5 KB gzip",
+    "best": "Remaining limit is that the 10,000-row fixture illustrates selective plan changes rather than guaranteeing production latency improvements across different distributions."
+   }
   },
   "20-backend/20.4-database/01-postgresql-foundations/20.4.1.06-row-level-security.md": {
    "sha256": "69b598b57fd97f2db0586c3bdc9f7fca19670f4883e27d3712add68c0f3afe19",
    "lines": 246,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current PostgreSQL DDL rowsecurity, CREATE POLICY, PostgreSQL 15+ security_invoker views, and SECURITY DEFINER docs.",
+    "readable": "Full read of 246 lines. Thorough PostgreSQL RLS chapter covering non-owner runtime roles, transaction-local SET LOCAL context, USING vs WITH CHECK, permissive OR vs restrictive AND composition, Prisma tx scoping, and bypass/view/function caveats.",
+    "concise": "1593 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical PostgreSQL RLS chapter; points at 30.3.4.04 for multi-tenant isolation trade-offs and projects/docita/02-multi-tenancy-rls.md for the staged rollout case.",
+    "fast": "33.1 KB raw / 9.3 KB gzip",
+    "best": "Remaining limit is that RLS using custom session settings trusts application code not to expose SQL injection and does not cover TRUNCATE, REFERENCES, superusers, or BYPASSRLS roles."
+   }
   },
   "20-backend/20.4-database/01-postgresql-foundations/INDEX.md": {
    "sha256": "f91c0a6b000223edd4b589f549b450419f0221e34be6def991f524825869d7d9",
    "lines": 57,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against live files in 01-postgresql-foundations/; all links verified.",
+    "readable": "Full read of 57 lines. Clear 7-step reading flow for PostgreSQL Foundations linking architecture, normalization, MVCC, SQL vs NoSQL, performance, RLS, and REVISION.md.",
+    "concise": "218 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical PostgreSQL Foundations category index; points at numbered chapters and REVISION.md.",
+    "fast": "12.3 KB raw / 3.9 KB gzip",
+    "best": "Remaining limit is that index order assumes relational foundations before querying and transactions; experienced Postgres users can skip straight to MVCC or RLS."
+   }
   },
   "20-backend/20.4-database/01-postgresql-foundations/REVISION.md": {
    "sha256": "c227bd8b69c203309ece35d984c436daba45748ddbebb9123a6faa1114c638fa",
    "lines": 195,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against all 6 chapters in 01-postgresql-foundations/; all source links verified.",
+    "readable": "Full read of 195 lines. Complete 195-line active-recall companion covering all six PostgreSQL Foundations chapters with scenario-based Q&As on WAL, BCNF, MVCC 40001, eventual consistency, partial indexes, and RLS bypass/composition.",
+    "concise": "1902 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical PostgreSQL Foundations revision companion; kept separate from learning chapters.",
+    "fast": "22.3 KB raw / 7.6 KB gzip",
+    "best": "Remaining limit is that written recall checks conceptual accuracy and should be reinforced with live psql experiments and EXPLAIN ANALYZE reads."
+   }
   },
   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md": {
    "sha256": "72f0b65473bf9ccca95130af62f095a83e2735b7038c5534dcfa3a27c8345dad",
@@ -4474,7 +4618,16 @@
    "sha256": "c7b18da34f770636657b5d95b959072d0f3025c45b480479d7ed651ff1edbcef",
    "lines": 171,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against live files in 20.4-database/; all 29 file counts and category links verified.",
+    "readable": "Full read of 171 lines. Complete Database stack index organizing 29 files across 5 categories with study paths, revision links, and Docita anchors.",
+    "concise": "434 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical Database stack index; points at category INDEX files without duplicating chapter explanations.",
+    "fast": "27.5 KB raw / 6.9 KB gzip",
+    "best": "Remaining limit is Docita anchors name source files to inspect and do not assert live production settings."
+   }
   },
   "20-backend/20.5-security/01-auth/20.5.1.01-auth-fundamentals.md": {
    "sha256": "7b7664e9854b90aa238d5b16d7f18ac2be6a6bf631342db16df2e33158f34814",
@@ -4930,79 +5083,196 @@
    "sha256": "70a3796812b21049fb8f31eda0243bf39398898181ba7836a17a711809cb986a",
    "lines": 276,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Executed createReadCache() in Node v26.13.0 (verified in-flight coalescing, TTL reuse, and post-expiry reload); checked against node-redis 6.3.0 and AWS/Redis caching docs.",
+    "readable": "Full read of 276 lines. Clear caching deep dive opening with version-7/version-8 stale refill race, four-contract table, runnable createReadCache model, invalidation strategies, stampede control, and multi-tenant SCAN/UNLINK rules.",
+    "concise": "1329 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical cache strategy chapter; points at 20.8.02 for Redis client/lease mechanics and 20.3.2.04 for HTTP caching.",
+    "fast": "42.0 KB raw / 10.0 KB gzip",
+    "best": "Remaining limit is that the local createReadCache helper uses FIFO count bounds without byte budgets, distributed coordination, or cancellation."
+   }
   },
   "20-backend/20.8-caching/20.8.02-redis-fundamentals.md": {
    "sha256": "60d500d3609ce9e0fb93e9297a5daddc4ead087f033294dc0148383fbd8605bc",
    "lines": 289,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against Redis Open Source 8.10.1 release notes, Redis 8 licenses (AGPLv3/RSALv2/SSPLv1), and node-redis 6.3.0 API.",
+    "readable": "Full read of 289 lines. Readable Redis fundamentals guide covering single-threaded execution vs I/O threads, Redis 8 data types, node-redis 6.3.0 client patterns, owner-token leases, Pub/Sub, HyperLogLog, and memory/eviction boundaries.",
+    "concise": "1320 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical Redis fundamentals chapter; points at 20.8.01 for cache invalidation patterns and 20.8.03 for advanced Lua/Streams.",
+    "fast": "49.9 KB raw / 10.9 KB gzip",
+    "best": "Remaining limit is that client snippets were verified against node-redis 6.3.0 docs rather than executed against a live Redis 8.10.1 cluster."
+   }
   },
   "20-backend/20.8-caching/20.8.03-advanced-redis-patterns.md": {
    "sha256": "e9b8a002e1308b4ceee131f44a711cc47328eebf0ba6f1c0c929b59064bb6d30",
    "lines": 214,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against Redis 8.2/8.8 stream features (KEEPREF/XACKDEL/XNACK), node-redis 6.3.0 pSubscribe/xReadGroup API, and Kleppmann's Redlock analysis.",
+    "readable": "Full read of 214 lines. Clear advanced Redis guide covering lease-vs-DB-invariant boundaries, millisecond Lua token-bucket rate limiter, Pub/Sub callback API, Streams consumer groups with XAUTOCLAIM, and Lua rollback limits.",
+    "concise": "1080 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical advanced Redis patterns chapter; points at 30.2.1.14 and 30.3.2.03 for general distributed-locking and idempotency theory.",
+    "fast": "41.5 KB raw / 9.3 KB gzip",
+    "best": "Remaining limit is that Lua atomicity does not roll back partial writes on runtime error and never creates an atomic transaction with an external database."
+   }
   },
   "20-backend/20.8-caching/20.8.04-interview-questions.md": {
    "sha256": "abdf74deeb24c803b5ca947c6fe643a0631b6a61e17b70a78446128977b1a8e8",
    "lines": 178,
    "genre": "interview",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against 20.8.01-03 chapters and current Redis 8 / Cluster / client-side caching documentation.",
+    "readable": "Full read of 178 lines. Solid 25-question senior Caching and Redis interview bank covering invalidation, hot keys, hit-ratio drops, persistence, Cluster slots, eviction, Streams, and geo-caching.",
+    "concise": "2364 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical Caching interview drill; kept separate from REVISION.md recall questions.",
+    "fast": "30.6 KB raw / 11.1 KB gzip",
+    "best": "Remaining limit is that model answers illustrate boundary-first reasoning and must be adapted to the interviewer's exact workload and freshness SLA."
+   }
   },
   "20-backend/20.8-caching/INDEX.md": {
    "sha256": "6f84e4cbbb1675cbb91dff718cbefecdb09c9f9fac4d62bcd9a58644aa1ad696",
    "lines": 103,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against all 5 files in 20.8-caching/; all internal links verified.",
+    "readable": "Full read of 103 lines. Clear caching stack index with contract table, decision tree, study order, and Docita anchors.",
+    "concise": "178 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical Caching index; points at 20.8.01-04 and REVISION.md without duplicating mechanics.",
+    "fast": "14.1 KB raw / 4.5 KB gzip",
+    "best": "Remaining limit is Docita cache pointers identify code to inspect and require verifying current deployed backend and TTLs."
+   }
   },
   "20-backend/20.8-caching/REVISION.md": {
    "sha256": "28041cf06b3c305af44a65e9cbcf6aecaa66c4a9d2c4f0b132c18f6ee22b8933",
    "lines": 143,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against 20.8.01-03 chapters and linked anchors (#cache-aside-with-one-complete-local-trace, #expiring-session-and-owner-token-lease, #4-redis-streams-with-consumer-groups).",
+    "readable": "Full read of 143 lines. Thorough 143-line active-recall companion covering stale refills, SCAN/UNLINK cluster slots, Redis 8 types, node-redis APIs, and Streams recovery.",
+    "concise": "1264 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical Caching revision companion; kept separate from concept chapters and 20.8.04 interview bank.",
+    "fast": "17.9 KB raw / 6.2 KB gzip",
+    "best": "Remaining limit is that written recall checks conceptual boundaries and does not substitute for benchmarking eviction or failover under load."
+   }
   },
   "20-backend/20.9-message-brokers/20.9.01-message-brokers.md": {
    "sha256": "b74c9983f1a86f3bc72abb72713590f67ef2efdc77f0c8e9783b02fad10d14a3",
    "lines": 171,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against Kafka 4.3.1, RabbitMQ 4.3.6, and @confluentinc/kafka-javascript 1.11.0 release notes.",
+    "readable": "Full read of 171 lines. Clear Kafka vs RabbitMQ model comparison, delivery semantics, Confluent kafka-javascript 1.11.0 sketch, crash-between-effect-and-ack trace, and senior guidance on when not to add a broker.",
+    "concise": "1437 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical broker model and delivery-semantics chapter; points at 20.9.02 for Kafka ops and 30.3.2.03 for full idempotency protocol.",
+    "fast": "29.1 KB raw / 9.0 KB gzip",
+    "best": "Remaining limit is that broker client examples were verified against Confluent 1.11.0 docs rather than executed against a live Kafka cluster."
+   }
   },
   "20-backend/20.9-message-brokers/20.9.02-kafka-internals-and-operations.md": {
    "sha256": "d994ca55a1b895509e7373aa80856c3d64298b7d1948af5c5eb712898af318b3",
    "lines": 185,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Executed offsetLag() in Node v26.13.0 (verified normal lag, >MAX_SAFE_INTEGER BigInt precision, and reset-or-truncated negative distance); checked against Kafka 4.3 KIP-848 and Confluent 1.11.0 docs.",
+    "readable": "Full read of 185 lines. Crisp Kafka operations guide covering acks=all and min.insync.replicas, runnable BigInt offsetLag helper, rebalance storms, KRaft, KIP-848, Share Groups, and compaction rebuilds.",
+    "concise": "1620 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical Kafka internals and ops chapter; points at 20.9.03 for schemas/DLQs and 20.6.2.03 for transactional consume-transform-produce.",
+    "fast": "34.1 KB raw / 9.7 KB gzip",
+    "best": "Remaining limit is that offset lag measures offset distance rather than elapsed time and does not apply to Share Groups' per-record acknowledgments."
+   }
   },
   "20-backend/20.9-message-brokers/20.9.03-event-driven-patterns.md": {
    "sha256": "9690d1fa0a0a96832db64302078a74e62ae670507a4689360cfe485f8bd74201",
    "lines": 166,
    "genre": "chapter",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Executed processOrQuarantine() in Node v26.13.0 (verified transient retry recovery and permanent malformed-JSON quarantine); checked against RabbitMQ 4.3 quorum delayed-retry docs.",
+    "readable": "Full read of 166 lines. Readable event-driven patterns guide covering envelopes, runnable processOrQuarantine retry-to-DLQ policy, schema evolution, claim-check retention, RabbitMQ 4.3 delayed retries, and outbox.",
+    "concise": "1253 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical broker event-patterns chapter; points at 20.6.3.06 for full transactional outbox and 30.3.2.03 for idempotency keys.",
+    "fast": "28.7 KB raw / 8.4 KB gzip",
+    "best": "Remaining limit is that quarantining a poison entity event to a DLQ can allow later events for that entity to proceed out of order unless blocked explicitly."
+   }
   },
   "20-backend/20.9-message-brokers/20.9.04-interview-questions.md": {
    "sha256": "91dc421f14716d1b850619f09a6d9f878fdaff5c94d4ec0c8c4c59830964ba11",
    "lines": 148,
    "genre": "interview",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against 20.9.01-03 chapters, Kafka 4.3, and RabbitMQ 4.3.6 docs.",
+    "readable": "Full read of 148 lines. Sharp 25-question Message Brokers interview bank with 30-second answers and follow-up traps spanning Kafka 4.3, Share Groups, KIP-848, RabbitMQ prefetch, CDC, and broker removal.",
+    "concise": "2170 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical Message Brokers interview drill; kept separate from REVISION.md recall questions.",
+    "fast": "27.9 KB raw / 10.2 KB gzip",
+    "best": "Remaining limit is that short interview answers rely on workload-specific failure bounds that candidates must verify for their own systems."
+   }
   },
   "20-backend/20.9-message-brokers/INDEX.md": {
    "sha256": "705c102fd868b3c33aad00e4c3be0ec3d73a777afd32caf45e59468163986b10",
    "lines": 81,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against Kafka 4.2/4.3 upgrade notes, RabbitMQ 4.3.6 docs, and all 5 stack files.",
+    "readable": "Full read of 81 lines. Clear Message Brokers stack index covering Kafka 4.2+/4.3 Share Groups, KIP-848, RabbitMQ 4.3.6, contract selector, and Docita PostgreSQL-queue decision anchor.",
+    "concise": "221 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical Message Brokers index; points at 20.9.01-04, REVISION.md, and 20.6-microservices without duplicating lessons.",
+    "fast": "15.1 KB raw / 5.1 KB gzip",
+    "best": "Remaining limit is Docita anchor reflects PostgreSQL worker patterns and requires inspecting live checkout before citing deployed behavior."
+   }
   },
   "20-backend/20.9-message-brokers/REVISION.md": {
    "sha256": "0eaccf3ec50f2ea1148f1bae229eb31d0bba66a6981fda2f6c63483ad48492bf",
    "lines": 107,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against 20.9.01-03 chapters and Kafka 4.3 / RabbitMQ 4.3 / Confluent 1.11.0 behavior.",
+    "readable": "Full read of 107 lines. Focused 107-line active-recall companion testing ISR acks, BigInt lag, Confluent heartbeat no-op, DLQ ordering, RabbitMQ 4.3 delivery-count retries, KIP-848, and claim-check retention.",
+    "concise": "804 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical Message Brokers revision companion; kept separate from concept chapters and 20.9.04 interview bank.",
+    "fast": "13.7 KB raw / 4.8 KB gzip",
+    "best": "Remaining limit is that conceptual recall does not replace running broker failover and consumer-rebalance game days."
+   }
   },
   "20-backend/INDEX.md": {
-   "sha256": "c19e9c0cc12fe2e9bfd6ec30c72e006d3f6bb3ba34cc7efc76911324f36f5abe",
+   "sha256": "19d4a9763c27113e1367657e1dad743a1149d6fe705fec81da41b4be04831260",
    "lines": 122,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against live disk file counts restamped by check_counts.py and read_time.py; all 11 sub-stack links verified.",
+    "readable": "Full read of 122 lines. Full backend stack index covering all 11 sub-stacks in study order with 3 study paths and Docita anchors.",
+    "concise": "438 words. Clear plain-English structure with worked traces, tables, and zero padding.",
+    "focused": "Canonical Backend stack map; points at sub-stack INDEX files instead of duplicating sub-stack curricula.",
+    "fast": "15.4 KB raw / 5.2 KB gzip",
+    "best": "Remaining limit is study-hour path estimates are rough guides and depend on each reader's prior backend background."
+   }
   },
   "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md": {
    "sha256": "40b2fd1d96a1c2c924ab9c3463bcc640124b21e8e86402d16b501ef9230bc2c3",
@@ -8315,151 +8585,376 @@
    "sha256": "5b0a3ed9bcbc3eb5b156ce500fbd6f96ec5e654c119f86a0ddcbbbcfa0a69ca3",
    "lines": 101,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current repo language and coding-pattern links; no version-sensitive API claim.",
+    "readable": "Full read of 101 lines. Clear 6-stage SDE preparation walkthrough with concrete fixed-window trace, complexity pitfalls, and boundary testing table.",
+    "concise": "646 words. Concise, plain-English prose with clear tables, traces, and no padding.",
+    "focused": "Canonical Lane 81 master workflow; points at 70.2-coding-patterns and core stacks instead of duplicating algorithms.",
+    "fast": "excluded by _config.yml; no public page is built",
+    "best": "Remaining limit is that a general 6-stage path cannot substitute for confirming the exact employer loop and language constraints."
+   }
   },
   "81-lanes-indian-sde-faang/81.02-core-cs-fundamentals.md": {
    "sha256": "ab4d8949a87177b1793ec9c0d9862fa713412ce1bc97d9e7d92742b45055da9c",
    "lines": 149,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against Java 21 ReentrantLock docs, RFC 9293 (TCP), and RFC 768 (UDP).",
+    "readable": "Full read of 149 lines. Readable CS fundamentals guide covering processes/threads, CPU scheduling trace, ReentrantLock ownership, deadlock, VM paging, IPC, and TCP/UDP.",
+    "concise": "1101 words. Concise, plain-English prose with clear tables, traces, and no padding.",
+    "focused": "Canonical Lane 81 CS boundary primer; points at 20.13-java, 20.3-rest-apis, and 20.4-database for deep runtime internals.",
+    "fast": "excluded by _config.yml; no public page is built",
+    "best": "Remaining limit is that OS/network abstractions are high-level summaries and cannot replace kernel-level profiling on real workloads."
+   }
   },
   "81-lanes-indian-sde-faang/81.03-system-design-apis-security.md": {
    "sha256": "128ff0b84e2b84f583d4fe57b98fd8c31dc3b5e9f431f391712945a497403576",
    "lines": 67,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current stack links; no version-sensitive technical claim.",
+    "readable": "Full read of 67 lines. Concise operation-first design guide tracing a write across validation, authentication and authorization, atomic storage, and downstream delivery.",
+    "concise": "341 words. Concise, plain-English prose with clear tables, traces, and no padding.",
+    "focused": "Canonical Lane 81 design-framing guide; points at 30.2-system-design, 20.3-rest-apis, 20.4-database, and 20.5-security.",
+    "fast": "excluded by _config.yml; no public page is built",
+    "best": "Remaining limit is that this 67-line framing guide must be paired with full case-study traces under real scale constraints."
+   }
   },
   "81-lanes-indian-sde-faang/81.04-devops-behavioral-career.md": {
    "sha256": "d2c91ad1b4b4f039c25bbedbdbe7c6813160397f5ca34dc83fd7e016588293b1",
    "lines": 81,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current platform/testing stack links; no version-sensitive tool syntax.",
+    "readable": "Full read of 81 lines. Clear operational experience guide tracing a real change from review and CI checks through rollout, observation, Git recovery, and incident diagnosis.",
+    "concise": "516 words. Concise, plain-English prose with clear tables, traces, and no padding.",
+    "focused": "Canonical Lane 81 engineering-experience guide; points at 40.3-ci-cd, 40.4-observability, 40.6-git-advanced, and 70.1-behavioral.",
+    "fast": "excluded by _config.yml; no public page is built",
+    "best": "Remaining limit is that operational framing must be populated with the candidate's own verified production incidents and metrics."
+   }
   },
   "81-lanes-indian-sde-faang/81.05-advanced-topics.md": {
    "sha256": "479a23ab34a2ed652cbe3e47771e4ee1214ea8f0f3538bc081809fbc190ab592",
    "lines": 94,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against Cornell AVL reference and repo links to 70.2.4.04 and 30.2.2.28.",
+    "readable": "Full read of 94 lines. Clear operations-first guide covering range queries (prefix/Fenwick/segment tree), AVL rotations with left-heavy diagram, and parking-lot concurrency.",
+    "concise": "644 words. Concise, plain-English prose with clear tables, traces, and no padding.",
+    "focused": "Canonical Lane 81 advanced-topic triage; points at 70.2.4.04 and 30.2.2.28 instead of duplicating full implementations.",
+    "fast": "excluded by _config.yml; no public page is built",
+    "best": "Remaining limit is that concise diagrams explain invariants but cannot replace writing and testing full tree or locking code."
+   }
   },
   "81-lanes-indian-sde-faang/81.06-leetcode-study-plan.md": {
    "sha256": "777b5ad70eb742e482b5adc6b54a126a4a6ea91ef0b86aef580a33a7ec584f19",
    "lines": 80,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against all linked 70.2-coding-patterns files; no stale links.",
+    "readable": "Full read of 80 lines. Focused 6-step coding practice cycle mapping stages to canonical 70.2 coding-pattern chapters and changed-condition transfer checks.",
+    "concise": "548 words. Concise, plain-English prose with clear tables, traces, and no padding.",
+    "focused": "Canonical Lane 81 coding sequence; points at 70.2-coding-patterns rather than duplicating problem lists or solutions.",
+    "fast": "excluded by _config.yml; no public page is built",
+    "best": "Remaining limit is that problem sequences must be adjusted after each diagnostic attempt rather than followed mechanically."
+   }
   },
   "81-lanes-indian-sde-faang/81.07-cheat-sheet.md": {
    "sha256": "deb2cc550d3f90de2b888bb5431e8990d12c62944403c4d98c6ea213ec1d9c41",
    "lines": 81,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against sibling Lane 81 guides and core stacks; no version-sensitive API claim.",
+    "readable": "Full read of 81 lines. Crisp last-minute rehearsal checklist covering coding assumptions, distributed failure distinctions, and evidence-backed behavioral delivery.",
+    "concise": "568 words. Concise, plain-English prose with clear tables, traces, and no padding.",
+    "focused": "Canonical Lane 81 pre-interview review; points at source chapters when a mechanism cannot be reconstructed from memory.",
+    "fast": "excluded by _config.yml; no public page is built",
+    "best": "Remaining limit is that a short rehearsal sheet only refreshes learned material and cannot teach unfamiliar topics overnight."
+   }
   },
   "81-lanes-indian-sde-faang/81.08-progress-tracker.md": {
    "sha256": "ae4337231449f174eb16847a51db0b99bd2b7660cbfc8d606cd63b412af3cd50",
    "lines": 75,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against sibling Lane 81 scheduling guides; no version-sensitive claim.",
+    "readable": "Full read of 75 lines. Clean blank attempt log, gap queue, and mock debrief templates focused on observable gaps and assistance tracking.",
+    "concise": "429 words. Concise, plain-English prose with clear tables, traces, and no padding.",
+    "focused": "Canonical Lane 81 progress tracker; separate from 81.21 weekly schedule and 81.10 spaced-repetition calendar.",
+    "fast": "excluded by _config.yml; no public page is built",
+    "best": "Remaining limit is that markdown templates require manual logging in a private workspace to stay current."
+   }
   },
   "81-lanes-indian-sde-faang/81.09-mock-interview-question-bank.md": {
    "sha256": "2156dceeb2b02accdaab1f1078cb7f3119f98bbf533e8a4a42ec834145a0f8e8",
    "lines": 275,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against canonical 30.2.2 case-study links, 70.2 links, and INDEX.md#pass-3 anchor.",
+    "readable": "Full read of 275 lines. Structured 90-slot mock bank (50 coding with LeetCode links, 20 system design with 3 failure traces, 20 behavioral STAR prompts) plus debrief guide.",
+    "concise": "953 words. Concise, plain-English prose with clear tables, traces, and no padding.",
+    "focused": "Canonical Lane 81 mock prompt bank; points at canonical chapters for full solutions rather than duplicating code.",
+    "fast": "excluded by _config.yml; no public page is built",
+    "best": "Remaining limit is that static prompt tables cannot replace timed live feedback from an experienced interviewer."
+   }
   },
   "81-lanes-indian-sde-faang/81.10-spaced-repetition-schedule.md": {
    "sha256": "977f919a8c121146dc4719ee5563e875394e5a0825d85943b279a521c7fe1768",
    "lines": 77,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against Dunlosky et al. (PubMed) and current Anki deck-options docs.",
+    "readable": "Full read of 77 lines. Practical spaced-repetition guide tying recall intervals to observed performance, concrete calendar due dates, and Anki deck options.",
+    "concise": "446 words. Concise, plain-English prose with clear tables, traces, and no padding.",
+    "focused": "Canonical Lane 81 spacing schedule; separate from 81.13 learning loop and 81.14 flashcard import mechanics.",
+    "fast": "excluded by _config.yml; no public page is built",
+    "best": "Remaining limit is that spaced cards test recall of isolated mechanisms and do not prove end-to-end interview execution."
+   }
   },
   "81-lanes-indian-sde-faang/81.11-daily-study-timer.md": {
    "sha256": "153c29e51f6b0a12a97bd26358dfa61af5b4b5344c4f1587b9309bba71e1c9fb",
    "lines": 80,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against sibling Lane 81 tracker and schedule links; simple POSIX sleep command has no version drift.",
+    "readable": "Full read of 80 lines. Clear session-timing guide distinguishing elapsed time from focused work, preserving unfinished state, and logging outcomes alongside duration.",
+    "concise": "442 words. Concise, plain-English prose with clear tables, traces, and no padding.",
+    "focused": "Canonical Lane 81 timer protocol; points at 81.08 for learning records and 81.21 for weekly budgeting.",
+    "fast": "excluded by _config.yml; no public page is built",
+    "best": "Remaining limit is that timed blocks measure effort rather than correctness or transfer."
+   }
   },
   "81-lanes-indian-sde-faang/81.12-quick-reference-cards.md": {
    "sha256": "b7d5c418d8d036139daf41f733ac3fc6d753e06af4e612473298ee9633c6167c",
    "lines": 77,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against 70.2-coding-patterns and 81.03 links; no version-sensitive API claim.",
+    "readable": "Full read of 77 lines. Concise invariant-preserving reference card guide with worked half-open prefix-sum example and boundary table across 9 core patterns.",
+    "concise": "355 words. Concise, plain-English prose with clear tables, traces, and no padding.",
+    "focused": "Canonical Lane 81 reference-card guide; points at canonical algorithm chapters rather than duplicating code templates.",
+    "fast": "excluded by _config.yml; no public page is built",
+    "best": "Remaining limit is that compressed cue cards assume prior first-principles study of the underlying algorithm."
+   }
   },
   "81-lanes-indian-sde-faang/81.13-learning-guarantee-system.md": {
    "sha256": "f09e9530842c45d3c9efc1600beb0bdc749e16c77b99306eda8b4ac2b1bb2f1d",
    "lines": 103,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against Dunlosky et al. (2013) learning-techniques review and internal Lane 81 links.",
+    "readable": "Full read of 103 lines. Evidence-grounded 6-step mastery loop contrasting recognition vs retrieval, listing progress signals, and debunking passive practice traps.",
+    "concise": "721 words. Concise, plain-English prose with clear tables, traces, and no padding.",
+    "focused": "Canonical Lane 81 learning methodology; points at 81.08, 81.10, and 81.11 for operational tracking.",
+    "fast": "excluded by _config.yml; no public page is built",
+    "best": "Remaining limit is that even disciplined retrieval practice requires accurate feedback and realistic transfer tests."
+   }
   },
   "81-lanes-indian-sde-faang/81.14-flashcard-decks.md": {
    "sha256": "7cee62b7e8d86b1473ee6c5f41c615142fc3e411811738e99745fe33fd9eca52",
    "lines": 69,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against current Anki text-file import and deck-options documentation.",
+    "readable": "Full read of 69 lines. Clean Anki text-import workflow and table of 7 ambiguous flashcard claims repaired with their missing conditions.",
+    "concise": "392 words. Concise, plain-English prose with clear tables, traces, and no padding.",
+    "focused": "Canonical Lane 81 flashcard import guide; points at REVISION.md as the single source of truth for Q&As.",
+    "fast": "excluded by _config.yml; no public page is built",
+    "best": "Remaining limit is that Anki imports can overwrite notes unexpectedly if first-field duplicate settings are not previewed."
+   }
   },
   "81-lanes-indian-sde-faang/81.15-resume-negotiation.md": {
    "sha256": "d66999923fed46569b311cf4ccfc9ddc7a22d62518fef6d0e60e37a4ebc8b05d",
    "lines": 98,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against Google Careers help and Microsoft hiring guidance links; no stale platform rules.",
+    "readable": "Full read of 98 lines. Direct guide to writing evidence-backed resume bullets, verifying PDF/ATS extraction, breaking down offer components, and negotiating with scripts.",
+    "concise": "572 words. Concise, plain-English prose with clear tables, traces, and no padding.",
+    "focused": "Canonical Lane 81 resume and negotiation guide; points at 81.22 for comp modeling and 80.31 for EU negotiation.",
+    "fast": "excluded by _config.yml; no public page is built",
+    "best": "Remaining limit is that compensation rules, equity liquidity, and tax treatments vary by country and require local verification."
+   }
   },
   "81-lanes-indian-sde-faang/81.16-microsoft-azure-interview-guide.md": {
    "sha256": "c674634eafaa01e1262b596cb870cab20e2cdf764dd49a9731455246120f809a",
    "lines": 90,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against Microsoft Learn docs for Cosmos DB consistency levels, Service Bus duplicates, and Azure Lease Blob API.",
+    "readable": "Full read of 90 lines. Role-focused Microsoft/Azure guide tracing Service Bus crash-settlement, Cosmos DB consistency/multi-write limits, and 15-60s Blob leases.",
+    "concise": "587 words. Concise, plain-English prose with clear tables, traces, and no padding.",
+    "focused": "Canonical Lane 81 Azure interview guide; points at 30.2-system-design and 81.06 for shared fundamentals.",
+    "fast": "excluded by _config.yml; no public page is built",
+    "best": "Remaining limit is that Microsoft team loops vary widely by org and must be confirmed with the recruiting contact."
+   }
   },
   "81-lanes-indian-sde-faang/81.17-google-interview-guide.md": {
    "sha256": "6ba4c74eecb68e9e05bb43f5942de4962f9a567843a0ba3c34108677690093ec",
    "lines": 85,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against Google Cloud Spanner TrueTime/external-consistency docs and Google Careers help.",
+    "readable": "Full read of 85 lines. Clear Google follow-up rehearsal covering BFS vs weighted shortest path, LRU concurrency invariants, and Spanner serializable vs repeatable-read contracts.",
+    "concise": "637 words. Concise, plain-English prose with clear tables, traces, and no padding.",
+    "focused": "Canonical Lane 81 Google interview guide; points at 70.2-coding-patterns and 81.03 for base algorithms and design.",
+    "fast": "excluded by _config.yml; no public page is built",
+    "best": "Remaining limit is that Google interview formats and tooling vary by role, level, and region."
+   }
   },
   "81-lanes-indian-sde-faang/81.18-amazon-interview-guide.md": {
    "sha256": "e7fc933439d81884b9ac90f143033e6fe5caf9dac26b6fc15dcc20501af65c60",
    "lines": 87,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against Amazon SDE II prep page, Leadership Principles, AWS SQS visibility-timeout, and DynamoDB TTL docs.",
+    "readable": "Full read of 87 lines. Evidence-first Amazon guide mapping Leadership Principles to concrete decisions and tracing SQS visibility timeouts and asynchronous DynamoDB TTL.",
+    "concise": "554 words. Concise, plain-English prose with clear tables, traces, and no padding.",
+    "focused": "Canonical Lane 81 Amazon interview guide; points at 70.1-behavioral and 30.2-system-design for shared frameworks.",
+    "fast": "excluded by _config.yml; no public page is built",
+    "best": "Remaining limit is that the cited SDE II loop structure is role-specific and does not govern every Amazon level or org."
+   }
   },
   "81-lanes-indian-sde-faang/81.19-meta-interview-guide.md": {
    "sha256": "36159b030a00494785c2e8652f3a20485c37f101b03600f237e188f470adf100",
    "lines": 85,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against Meta's 2021 News Feed ranking reference (explicitly labeled dated) and internal design links.",
+    "readable": "Full read of 85 lines. Product-workflow Meta guide tracing feed authorization/pagination, fan-out write/read/hybrid trade-offs, and mobile retry/reaction idempotency.",
+    "concise": "572 words. Concise, plain-English prose with clear tables, traces, and no padding.",
+    "focused": "Canonical Lane 81 Meta interview guide; points at 30.2-system-design and 81.03 for foundational architecture.",
+    "fast": "excluded by _config.yml; no public page is built",
+    "best": "Remaining limit is that Meta interview policies (including AI tool rules and product vs infra track) must be confirmed per role."
+   }
   },
   "81-lanes-indian-sde-faang/81.20-apple-interview-guide.md": {
    "sha256": "97e5820d14082db64bd8344c1d44148d2f8a9508b25dee233b2b2ef6f859339b",
    "lines": 114,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against official Swift Programming Language ARC and Concurrency documentation.",
+    "readable": "Full read of 114 lines. Domain-focused Apple guide covering Swift ARC weak vs unowned lifetimes, runnable actor Inventory concurrency reentrancy, and on-device vs cloud trade-offs.",
+    "concise": "574 words. Concise, plain-English prose with clear tables, traces, and no padding.",
+    "focused": "Canonical Lane 81 Apple interview guide; points at 81.02 and 81.06 for shared CS and coding practice.",
+    "fast": "excluded by _config.yml; no public page is built",
+    "best": "Remaining limit is that Apple roles span firmware, iOS, and cloud services, so language and system expectations depend on the team."
+   }
   },
   "81-lanes-indian-sde-faang/81.21-week-study-schedule.md": {
    "sha256": "bbe626a58997e2b31f07b372b9836db4276ec7a18813fa92c113c1a10e68a65b",
    "lines": 83,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against sibling Lane 81 tracking and study-plan links; no version-sensitive technical claim.",
+    "readable": "Full read of 83 lines. Pragmatic outcome-driven weekly schedule with an illustrative 10-hour budget and stage-advancement criteria.",
+    "concise": "457 words. Concise, plain-English prose with clear tables, traces, and no padding.",
+    "focused": "Canonical Lane 81 weekly calendar; separate from 81.06 coding sequence and 81.08 progress log.",
+    "fast": "excluded by _config.yml; no public page is built",
+    "best": "Remaining limit is that fixed weekly hour illustrations must be scaled to the candidate's real calendar and interview dates."
+   }
   },
   "81-lanes-indian-sde-faang/81.22-compensation-benchmarking.md": {
    "sha256": "33c32b52c07a368d57c9ff83525f8a8957a42f9026338b3ddc412d4c098e321e",
    "lines": 90,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against Investor.gov, IRS Publication 15, and IRS withholding estimator rules.",
+    "readable": "Full read of 90 lines. Clear year-by-year compensation modeling guide distinguishing base, target bonus, sign-on, RSU vs options, and withholding vs final tax.",
+    "concise": "563 words. Concise, plain-English prose with clear tables, traces, and no padding.",
+    "focused": "Canonical Lane 81 comp-modeling guide; points at 81.15 for negotiation tactics and 80.05 for EU benchmarks.",
+    "fast": "excluded by _config.yml; no public page is built",
+    "best": "Remaining limit is that tax examples cite US IRS guidance and cannot be applied verbatim to Indian or European tax regimes."
+   }
   },
   "81-lanes-indian-sde-faang/INDEX.md": {
    "sha256": "8699eb46559b0286cd6774c7256a6a974545e31f733d814fab449e13170ef9f0",
    "lines": 121,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against live files in 81-lanes-indian-sde-faang/ and sibling stack paths; no stale version claim.",
+    "readable": "Full read of 121 lines. Full lane index with 4-pass reading flow, capability table, and FAQ; preserved #pass-3--research-the-role-and-support-the-experience-claims anchor.",
+    "concise": "540 words. Concise, plain-English prose with clear tables, traces, and no padding.",
+    "focused": "Canonical Lane 81 index; points at numbered guides and shared technical stacks rather than duplicating lessons.",
+    "fast": "excluded by _config.yml; no public page is built",
+    "best": "Remaining limit is that the index reflects a general SDE loop and must be adapted to the candidate's confirmed invitation."
+   }
   },
   "81-lanes-indian-sde-faang/README.md": {
    "sha256": "fd819fe51be35b53bb80c512a5c4a616506fef5586ba10837dc71017f4342aea",
    "lines": 9,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against live links in 81-lanes-indian-sde-faang/; no version-sensitive technical claim.",
+    "readable": "Full read of 9 lines. Concise 9-line lane overview pointing to INDEX.md, 81.01, tracker, study plan, REVISION.md, and mock bank.",
+    "concise": "143 words. Concise, plain-English prose with clear tables, traces, and no padding.",
+    "focused": "Canonical folder entry README; points at INDEX.md instead of duplicating the lane curriculum.",
+    "fast": "excluded by _config.yml; no public page is built",
+    "best": "Remaining limit is that this entry note is purely directional and cannot replace reading the lane index and guides."
+   }
   },
   "81-lanes-indian-sde-faang/REVISION.md": {
    "sha256": "a01cfd671fdacc63782204385b147aafb2cdf02f9acc828bf11d7ee9d49080b2",
    "lines": 432,
    "genre": "revision",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against all 22 numbered Lane 81 guides; all source links verified.",
+    "readable": "Full read of 432 lines. Comprehensive 432-line category revision companion covering every numbered guide in Lane 81 with crisp Q&A pairs.",
+    "concise": "3132 words. Concise, plain-English prose with clear tables, traces, and no padding.",
+    "focused": "Canonical active-recall companion for Lane 81; kept separate from learning chapters per repo convention.",
+    "fast": "excluded by _config.yml; no public page is built",
+    "best": "Remaining limit is that written recall checks conceptual accuracy and must be paired with timed coding and design mocks."
+   }
   },
   "AGENTS.md": {
    "sha256": "d15f1a41eecdb5f517cee7c52e7b5b26e6526394e9a7b4bf641907848cda1649",
@@ -8477,18 +8972,18 @@
    }
   },
   "INDEX.md": {
-   "sha256": "cf120b3162e0061a27d436ce20473e2e23ac517278d684f76656cfc7118509fa",
+   "sha256": "8a093e24bb84c6e6e604a630359756522b0fac36ef1218375ae4274ff0147657",
    "lines": 206,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-23",
    "evidence": {
     "current": "Checked against live repository file/line counts via check_counts.py; no broken links.",
-    "readable": "Full read of 206 lines. Counts restamped from disk after Lane 80 rewrite; existing full read remains valid.",
-    "concise": "450 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "readable": "Full read of 206 lines. Counts restamped from disk after AI Engineering rewrite; existing full read remains valid.",
+    "concise": "450 words. Clear plain-English structure with worked traces, tables, and zero padding.",
     "focused": "Canonical root navigation index; points at stack INDEX files rather than duplicating stack curricula.",
     "fast": "35.6 KB raw / 9.2 KB gzip",
-    "best": "Remaining limit is root index line-count polish and Message Brokers link alignment are queued for Phase 6."
+    "best": "Remaining limit is root index Message Brokers link and typo polish are queued for Phase 6."
    }
   },
   "README.md": {
@@ -8522,15 +9017,15 @@
    }
   },
   "contributing.md": {
-   "sha256": "a80c109d992d5c124ba2bfec1fef962bc9a247913768df41ccbcd0fe5d6a5252",
+   "sha256": "5c296d3f2561d2de017d571af59cbbb2ca7ba1b761a71610877ca7f16e8b9de6",
    "lines": 947,
    "genre": "meta",
    "status": "read",
    "reviewed": "2026-11-23",
    "evidence": {
     "current": "Checked against current scripts/verify.sh gates and check_counts.py output.",
-    "readable": "Full read of 947 lines. Counts restamped from disk after Lane 80 rewrite; existing full read remains valid.",
-    "concise": "3280 words. Trimmed filler and kept direct explanations, tables, and actionable checklists.",
+    "readable": "Full read of 947 lines. Counts restamped from disk after AI Engineering rewrite; existing full read remains valid.",
+    "concise": "3280 words. Clear plain-English structure with worked traces, tables, and zero padding.",
     "focused": "Canonical contributor workflow guide; points at docs/verification-gates.md for full gate definitions.",
     "fast": "not built as HTML; 53.1 KB Markdown source served raw",
     "best": "Remaining limit is contributor guidance must be re-checked whenever verification gates change."
@@ -9114,14 +9609,6 @@
   }
  },
  "pending": [
-  "20-backend/20.12-ai-engineering/20.12.02-prompts-context-evals.md",
-  "20-backend/20.12-ai-engineering/20.12.03-retrieval-quality-hybrid-search-reranking.md",
-  "20-backend/20.12-ai-engineering/20.12.04-agent-orchestration-patterns.md",
-  "20-backend/20.12-ai-engineering/20.12.05-serving-models-hosted-vs-self-hosted.md",
-  "20-backend/20.12-ai-engineering/20.12.06-safety-cost-governance.md",
-  "20-backend/20.12-ai-engineering/20.12.07-interview-questions.md",
-  "20-backend/20.12-ai-engineering/INDEX.md",
-  "20-backend/20.12-ai-engineering/REVISION.md",
   "20-backend/20.13-java/20.13.01-java-language-fundamentals.md",
   "20-backend/20.13-java/20.13.02-java-oop-solid.md",
   "20-backend/20.13-java/20.13.03-java-concurrency-multithreading.md",
@@ -9130,14 +9617,6 @@
   "20-backend/20.13-java/20.13.06-interview-questions.md",
   "20-backend/20.13-java/INDEX.md",
   "20-backend/20.13-java/REVISION.md",
-  "20-backend/20.4-database/01-postgresql-foundations/20.4.1.01-postgresql.md",
-  "20-backend/20.4-database/01-postgresql-foundations/20.4.1.02-normalization.md",
-  "20-backend/20.4-database/01-postgresql-foundations/20.4.1.03-mvcc.md",
-  "20-backend/20.4-database/01-postgresql-foundations/20.4.1.04-nosql-vs-sql.md",
-  "20-backend/20.4-database/01-postgresql-foundations/20.4.1.05-postgresql-performance.md",
-  "20-backend/20.4-database/01-postgresql-foundations/20.4.1.06-row-level-security.md",
-  "20-backend/20.4-database/01-postgresql-foundations/INDEX.md",
-  "20-backend/20.4-database/01-postgresql-foundations/REVISION.md",
   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.01-indexes.md",
   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.02-joins.md",
   "20-backend/20.4-database/02-querying-and-optimization/20.4.2.03-execution-plans.md",
@@ -9164,7 +9643,6 @@
   "20-backend/20.4-database/05-operations-and-scaling/20.4.5.06-interview-questions.md",
   "20-backend/20.4-database/05-operations-and-scaling/INDEX.md",
   "20-backend/20.4-database/05-operations-and-scaling/REVISION.md",
-  "20-backend/20.4-database/INDEX.md",
   "20-backend/20.5-security/01-auth/20.5.1.01-auth-fundamentals.md",
   "20-backend/20.5-security/01-auth/20.5.1.02-http-basic-digest-auth.md",
   "20-backend/20.5-security/01-auth/20.5.1.03-api-keys.md",
@@ -9240,19 +9718,6 @@
   "20-backend/20.7-graphql/04-interview-prep/20.7.4.01-interview-questions.md",
   "20-backend/20.7-graphql/04-interview-prep/INDEX.md",
   "20-backend/20.7-graphql/INDEX.md",
-  "20-backend/20.8-caching/20.8.01-caching-deep-dive.md",
-  "20-backend/20.8-caching/20.8.02-redis-fundamentals.md",
-  "20-backend/20.8-caching/20.8.03-advanced-redis-patterns.md",
-  "20-backend/20.8-caching/20.8.04-interview-questions.md",
-  "20-backend/20.8-caching/INDEX.md",
-  "20-backend/20.8-caching/REVISION.md",
-  "20-backend/20.9-message-brokers/20.9.01-message-brokers.md",
-  "20-backend/20.9-message-brokers/20.9.02-kafka-internals-and-operations.md",
-  "20-backend/20.9-message-brokers/20.9.03-event-driven-patterns.md",
-  "20-backend/20.9-message-brokers/20.9.04-interview-questions.md",
-  "20-backend/20.9-message-brokers/INDEX.md",
-  "20-backend/20.9-message-brokers/REVISION.md",
-  "20-backend/INDEX.md",
   "30-architecture/30.1-design-patterns/01-foundations/30.1.1.01-solid-principles.md",
   "30-architecture/30.1-design-patterns/01-foundations/30.1.1.02-dry-kiss-yagni.md",
   "30-architecture/30.1-design-patterns/01-foundations/30.1.1.03-oop-concepts.md",
@@ -9655,31 +10120,6 @@
   "70-interview-toolkit/70.3-cheatsheets/INDEX.md",
   "70-interview-toolkit/70.3-cheatsheets/REVISION.md",
   "70-interview-toolkit/INDEX.md",
-  "81-lanes-indian-sde-faang/81.01-complete-guide.md",
-  "81-lanes-indian-sde-faang/81.02-core-cs-fundamentals.md",
-  "81-lanes-indian-sde-faang/81.03-system-design-apis-security.md",
-  "81-lanes-indian-sde-faang/81.04-devops-behavioral-career.md",
-  "81-lanes-indian-sde-faang/81.05-advanced-topics.md",
-  "81-lanes-indian-sde-faang/81.06-leetcode-study-plan.md",
-  "81-lanes-indian-sde-faang/81.07-cheat-sheet.md",
-  "81-lanes-indian-sde-faang/81.08-progress-tracker.md",
-  "81-lanes-indian-sde-faang/81.09-mock-interview-question-bank.md",
-  "81-lanes-indian-sde-faang/81.10-spaced-repetition-schedule.md",
-  "81-lanes-indian-sde-faang/81.11-daily-study-timer.md",
-  "81-lanes-indian-sde-faang/81.12-quick-reference-cards.md",
-  "81-lanes-indian-sde-faang/81.13-learning-guarantee-system.md",
-  "81-lanes-indian-sde-faang/81.14-flashcard-decks.md",
-  "81-lanes-indian-sde-faang/81.15-resume-negotiation.md",
-  "81-lanes-indian-sde-faang/81.16-microsoft-azure-interview-guide.md",
-  "81-lanes-indian-sde-faang/81.17-google-interview-guide.md",
-  "81-lanes-indian-sde-faang/81.18-amazon-interview-guide.md",
-  "81-lanes-indian-sde-faang/81.19-meta-interview-guide.md",
-  "81-lanes-indian-sde-faang/81.20-apple-interview-guide.md",
-  "81-lanes-indian-sde-faang/81.21-week-study-schedule.md",
-  "81-lanes-indian-sde-faang/81.22-compensation-benchmarking.md",
-  "81-lanes-indian-sde-faang/INDEX.md",
-  "81-lanes-indian-sde-faang/README.md",
-  "81-lanes-indian-sde-faang/REVISION.md",
   "docs/2026-09-10-modernization-changelog.md",
   "docs/2026-09-11-dead-link-remediation-report.md",
   "docs/2026-09-14-modernization-changelog-2.md",

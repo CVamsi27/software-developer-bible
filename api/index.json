@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "1c8e0a3a49437cf522fc1cce6eac754e7204496e6d07812842513042329b3e74",
+ "corpus_digest": "75ab1538fe97c6a978161bc9dfaff380ea75dbbda2102ea0e1e0ddc2e02b322a",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5368
+  "read_minutes": 5370
  },
  "chapters": [
   {
@@ -1849,7 +1849,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 13
   },
   {
    "p": "20-backend/20.12-ai-engineering/20.12.03-retrieval-quality-hybrid-search-reranking.html",
@@ -1859,7 +1859,7 @@
    "g": [
     "concept"
    ],
-   "m": 13
+   "m": 15
   },
   {
    "p": "20-backend/20.12-ai-engineering/20.12.04-agent-orchestration-patterns.html",
@@ -1869,7 +1869,7 @@
    "g": [
     "concept"
    ],
-   "m": 19
+   "m": 16
   },
   {
    "p": "20-backend/20.12-ai-engineering/20.12.05-serving-models-hosted-vs-self-hosted.html",
@@ -1879,7 +1879,7 @@
    "g": [
     "concept"
    ],
-   "m": 16
+   "m": 15
   },
   {
    "p": "20-backend/20.12-ai-engineering/20.12.06-safety-cost-governance.html",
@@ -1889,7 +1889,7 @@
    "g": [
     "production"
    ],
-   "m": 9
+   "m": 10
   },
   {
    "p": "20-backend/20.12-ai-engineering/20.12.07-interview-questions.html",

@@ -11,64 +11,68 @@
  ],
  "files": {
   "00-strategy/00.01-communication.md": {
-   "sha256": "8e000ad74a8a15a102428913223f54d38bb176fefccd26e00cbb32456b4f0284",
-   "lines": 87,
+   "sha256": "03cc9823260e402ec2f0af92792ecf8c2ad025710805424c2f1948754fe8f9aa",
+   "lines": 101,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-23",
    "evidence": {
-    "current": "No version-sensitive claim; the Tech Interview Handbook citation is in the external baseline and the feedback loop is conceptual.",
-    "readable": "Full read of 87 lines; one decision-first answer opens the chapter, then listener types and pushback are handled in order.",
-    "concise": "644 words; each section adds one communication move rather than repeating the decision-first thesis.",
-    "focused": "Owns engineering communication; behavioral practice and lane preparation are linked, not retold.",
-    "fast": "13.2 KB raw / 5.0 KB gzip built page; the shared Jekyll shell is included.",
-    "best": "A framework cannot guarantee a hiring outcome; the chapter says pace and posture must adapt to comfort and accessibility."
-   }
+    "current": "No version-sensitive claim; checked against Tech Interview Handbook behavioral reference and 00-strategy REVISION.md Q&A on pushback handling.",
+    "readable": "Full read of 101 lines. Rewritten for first-pass clarity: answer-first caching hook, weak-vs-strong comparison, listener decision table, invariant narration, 4-step pushback recovery script, and peer feedback loop.",
+    "concise": "899 words. Each section teaches one distinct interview move without repeating earlier rules.",
+    "focused": "Canonical home for senior technical communication; STAR structure stays in 00.03 and behavioral practice in 70.1.",
+    "fast": "15.8 KB raw / 6.1 KB gzip built page on the shared Jekyll shell; well under the 64 KiB gzip budget.",
+    "best": "Models concrete answer-first structure and pushback recovery; remaining limit is that spoken pacing still requires live peer practice."
+   },
+   "notes": "Phase 1 Batch 1a+1b comprehension rewrite and startup-discovery overhaul (2026-11-23)."
   },
   "00-strategy/00.02-resume-tips.md": {
-   "sha256": "4877b4977e035f1110431ab98c7e2fadec3410b9eaf4fc84bc2a6cac027ef2b3",
-   "lines": 88,
+   "sha256": "f9c363d3758643883ec56ba271af845a571ab8789fdce4e41b7861ff0b3668a3",
+   "lines": 105,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-23",
    "evidence": {
-    "current": "No versioned API; the MIT resume resource is in the baseline and the sample metrics are explicitly illustrative.",
-    "readable": "Full read of 88 lines; a weak/strong bullet contrast opens, then evidence, layout, senior scope and export checks follow.",
-    "concise": "609 words; the mistake table replaces repeated warnings.",
-    "focused": "Resume evidence is owned here; STAR stories are linked as the next artifact, not retold.",
-    "fast": "13.4 KB raw / 5.1 KB gzip built page; the shared Jekyll shell is included.",
-    "best": "Parsing and screening differ by employer, so the chapter rejects a universal rejection rate and one resume cannot guarantee an interview."
-   }
+    "current": "No version-sensitive claim; checked against MIT Career Advising resume guidance and 00-strategy REVISION.md resume-scope and non-percentage evidence pairs.",
+    "readable": "Full read of 105 lines. Rewritten with 3 concrete weak-vs-strong senior full-stack bullet rewrites, page-one hierarchy, senior scope proof, ATS parseability checklist, and common-mistakes repairs.",
+    "concise": "800 words. Every section adds a concrete resume construction or validation check without filler.",
+    "focused": "Canonical home for senior resume structure and tailoring; behavioral stories stay in 00.03 and personal CVs stay outside this public repo.",
+    "fast": "16.8 KB raw / 6.4 KB gzip built page on the shared Jekyll shell; well under the 64 KiB gzip budget.",
+    "best": "Gives concrete rewrite patterns and PDF copy-paste validation; remaining limit is that no resume template can replace real owned outcomes."
+   },
+   "notes": "Phase 1 Batch 1a+1b comprehension rewrite and startup-discovery overhaul (2026-11-23)."
   },
   "00-strategy/00.03-star-method.md": {
-   "sha256": "2113b404129964eb25cdd9df115dc2ad4b2cd5ea8d26066c29f511f3a62e2c57",
-   "lines": 86,
+   "sha256": "13dffd3cd3b235225e6d1c11360e96d26e2d2d2a1468082e140b9294ed78d370",
+   "lines": 101,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-23",
    "evidence": {
-    "current": "No versioned API; the MIT STAR resource is in the baseline and the PAR/CAR variants are conceptual.",
-    "readable": "Full read of 86 lines; one mistake question is traced end to end before the reusable story bank is introduced.",
-    "concise": "623 words; the example table carries the incident and the prose explains only where judgment shows.",
-    "focused": "The STAR structure is owned here; resume and HR chapters are linked, not retold.",
-    "fast": "13.0 KB raw / 4.9 KB gzip built page; the shared Jekyll shell is included.",
-    "best": "STAR is a scaffold, not a script; the text says a format alone cannot guarantee an offer and a failed attempt can still supply a lesson."
-   }
+    "current": "No version-sensitive claim; checked against MIT Career Advising STAR resource and 00-strategy REVISION.md ownership pair.",
+    "readable": "Full read of 101 lines. Rewritten with a concrete senior pricing-cache incident walkthrough, time-share guide, follow-up probes, vague-vs-inspectable judgment contrast, and 7-theme story bank.",
+    "concise": "854 words. Each section moves from anatomy to judgment contrast, story-bank themes, format adaptation, and spoken practice.",
+    "focused": "Canonical home for STAR/PAR/CAR behavioral structure; extended behavioral banks stay in 70.1 and personal stories in the private workspace.",
+    "fast": "15.7 KB raw / 6.0 KB gzip built page on the shared Jekyll shell; well under the 64 KiB gzip budget.",
+    "best": "Shows how to separate personal I-decisions from team we-work; remaining limit is that rehearsed delivery still needs live follow-up probing."
+   },
+   "notes": "Phase 1 Batch 1a+1b comprehension rewrite and startup-discovery overhaul (2026-11-23)."
   },
   "00-strategy/00.04-hr-questions.md": {
-   "sha256": "1cd0c5b9254d438b5f980c1c8f0388f0c5ba3e1ed86b9728da487b0468a439ae",
-   "lines": 99,
+   "sha256": "80ec9495cff12ec4ebaf6699ac1fab868f613b47b4ec1382d63ca33d002a82f3",
+   "lines": 107,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-23",
    "evidence": {
-    "current": "Offer component math was checked against the stated amounts: 100k+15k=115k, +20k=135k, +10k=145k, +5k benefits=140k annual or 150k in year one.",
-    "readable": "Full read of 99 lines; the HR screen is framed as mutual fit, then role thesis, prompts, offer comparison and negotiation follow.",
-    "concise": "676 words; the component table carries the arithmetic and the prose explains only the comparison rule.",
-    "focused": "HR and offer preparation is owned here; resume evidence and STAR stories are linked, not duplicated.",
-    "fast": "15.0 KB raw / 5.5 KB gzip built page; the shared Jekyll shell is included.",
-    "best": "Public compensation reports may be self-selected, outdated or defined differently, and the illustrative totals cannot be read as guaranteed cash; equity may be illiquid."
-   }
+    "current": "No version-sensitive claim; checked against Levels.fyi compensation comparison boundary and 00-strategy REVISION.md sign-on separation pair.",
+    "readable": "Full read of 107 lines. Rewritten with concrete role-thesis script, 6 prompt-response formulas, component-by-component EUR offer arithmetic, calm counter-offer script, and decision-shaping recruiter questions.",
+    "concise": "677 words. Every table and script addresses a distinct HR screen or offer-comparison decision.",
+    "focused": "Canonical home for cross-lane HR screen and offer breakdown; EU/German negotiation specifics live in 80.05 and 80.31.",
+    "fast": "16.7 KB raw / 6.2 KB gzip built page on the shared Jekyll shell; well under the 64 KiB gzip budget.",
+    "best": "Separates guaranteed base, conditional bonus, one-time sign-on, and risky equity; remaining limit is that offer figures are illustrative and legal/immigration specifics require official sources."
+   },
+   "notes": "Phase 1 Batch 1a+1b comprehension rewrite and startup-discovery overhaul (2026-11-23)."
   },
   "00-strategy/00.05-find-startup-roles.md": {
    "sha256": "fa1c095e32e45389044fac1ef4b57e7b50c3c5612bc250cc980c61a6c82bcdf2",
@@ -87,20 +91,20 @@
    "notes": "Phase 0 calibration pilot rewrite: added VC portfolio boards, direct Ashby/Greenhouse/Lever/Personio search queries, worked ESOP/VSOP math, and job_board_watch.py --discover workflow."
   },
   "00-strategy/INDEX.md": {
-   "sha256": "eab7227251d205b2af05595c9cb12e8c73b9812eb4f497943bd01f3888718f16",
+   "sha256": "13a49b98829f9f244c573070df8fa6cf34afcc0a7c9e522534e8803b618d9b9e",
    "lines": 57,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-23",
    "evidence": {
-    "current": "No version-sensitive claim; study time 30 min was checked against scripts/read_time.py on 2026-11-23 (4+4+4+5+11 chapter minutes plus 2-minute revision companion).",
-    "readable": "Full read of 57 lines; the evidence chain is presented as five passes with a concrete outcome per pass.",
-    "concise": "256 words; the table carries the sequence and the prose explains only why the order differs from file numbers.",
-    "focused": "Section flow only; each chapter mechanism stays in its own file and revision is linked separately.",
-    "fast": "10.6 KB raw / 3.7 KB gzip built page; the shared Jekyll shell is included.",
-    "best": "The pass order is a reading order, not a guarantee; a study lane cannot promise an interview or offer, and verification stays with the employer."
+    "current": "No version-sensitive claim; study-time badge and section total restamped from live disk by scripts/read_time.py on 2026-11-23.",
+    "readable": "Full read of 57 lines. Section flow matches all five updated strategy chapters and separate revision companion.",
+    "concise": "256 words. Compact navigation map with zero duplicated chapter explanations.",
+    "focused": "Canonical index for 00-strategy; chapter mechanisms remain in 00.01-00.05 and revision in REVISION.md.",
+    "fast": "10.6 KB raw / 3.7 KB gzip built page on the shared Jekyll shell; well under the 64 KiB gzip budget.",
+    "best": "Sets the strategy reading sequence; does not substitute for practicing the chapters or verifying employer terms."
    },
-   "notes": "Hash refreshed after read_time.py updated 00.05 study time from 9 to 11 min (total 30 min)."
+   "notes": "Phase 1 Batch 1a+1b comprehension rewrite and startup-discovery overhaul (2026-11-23)."
   },
   "00-strategy/REVISION.md": {
    "sha256": "672963ace404484b246ab611218655bb4e79a3bdb562e438f98dd1ce71e1b3b5",
@@ -7753,22 +7757,52 @@
    "status": "unread"
   },
   "80-lanes-abroad-full-stack/80.05-comp-eu-benchmarking.md": {
-   "sha256": "0ffca6d1c6ee3cfbb5d7643e695a4dcb57607d4f599566740413b7005893a91c",
-   "lines": 73,
+   "sha256": "942cf8270ec6a983fdcd4568c41d8d0d066bc26a58f576a4db955ee8493895ed",
+   "lines": 87,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against Dutch Tax Administration 2026 expat threshold (>EUR 48,013 excl. allowance, EUR 78,600 cap, 30% in 2026 -> 27% in 2027) and 80.x REVISION.md offer-comparison Q&A.",
+    "readable": "Full read of 87 lines. Rewritten for clarity: two-offer hook, 5 comparable-evidence qualifiers, 6-bucket offer table, worked EUR 80k/8k/5k breakdown, net budget stress-test, Dutch ruling boundary, and negotiation script.",
+    "concise": "815 words. Each section isolates one distinct compensation comparison risk with zero filler.",
+    "focused": "Canonical EU compensation benchmarking guide; negotiation scripts live in 80.31 and statutory visa thresholds in 80.06.",
+    "fast": "16.0 KB raw / 6.2 KB gzip built page on the shared Jekyll shell; well under the 64 KiB gzip budget.",
+    "best": "Separates recurring base, bonus, one-time sign-on, and private equity risk; remaining limit is that tax/net outcomes depend on individual household tax class and current year tables."
+   },
+   "notes": "Phase 1 Batch 1a+1b comprehension rewrite and startup-discovery overhaul (2026-11-23)."
   },
   "80-lanes-abroad-full-stack/80.06-visa-relocation-playbook.md": {
-   "sha256": "dbdb39b28e13c34dcf4aaf6435d2fbe9b130331e80947ae3953dc0309825be31",
-   "lines": 177,
+   "sha256": "2fd6dd398223b17ffb438f7a221eba7f8e201e825b4e2085da0512a8aca6dd92",
+   "lines": 126,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Verified 2026 statutory thresholds (checked 2026-10-09 against official portals for DE, NL, IE, SE, FI, UK, CH, AT: Blue Card EUR 50,700/45,934.20, Chancenkarte EUR 1,091/mo, NL HSM EUR 5,942/4,357, IE EUR 40,904/68,911, SE SEK 34,470, FI EUR 3,937, UK GBP 41,700, AT EUR 3,465).",
+    "readable": "Full read of 126 lines. Rewritten with a scannable 8-country comparison table up front, plain-English country breakdowns, 4-factor household framework, relocation negotiation checklist, and dependency chain.",
+    "concise": "1193 words. Comparison table summarizes all 8 routes cleanly before country-specific conditions and pitfalls.",
+    "focused": "Canonical EU/UK/CH immigration route comparison; household budgets stay in 80.05 and employer paperwork checks in 80.20.",
+    "fast": "22.2 KB raw / 8.0 KB gzip built page on the shared Jekyll shell; well under the 64 KiB gzip budget.",
+    "best": "Captures official 2026 thresholds with primary government links; remaining limit is that statutory figures and embassy wait times change by date and occupation so applicants must recheck live portals."
+   },
+   "notes": "Phase 1 Batch 1a+1b comprehension rewrite and startup-discovery overhaul (2026-11-23)."
   },
   "80-lanes-abroad-full-stack/80.07-company-profiles.md": {
-   "sha256": "83f2b0a74fb5291e73d14ac2c547cd90ea3b63a67148f33930268a5881c79687",
-   "lines": 64,
+   "sha256": "d64086b6dcaef37b6bd389cccb93d539a1e76e077e0b5cdc677947f457750e7d",
+   "lines": 70,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against live-probed n8n Ashby ATS URL (HTTP 200 on 2026-11-23), Thryve about page, and Langfuse ClickHouse acquisition announcement.",
+    "readable": "Full read of 70 lines. Rewritten with identity/acquisition traps, 30-minute research template, a complete worked public reference profile (n8n), and an honest motivation formula.",
+    "concise": "447 words. Replaces abstract methodology with a tight 30-minute workflow and one concrete worked profile.",
+    "focused": "Canonical employer research method; live ATS discovery lives in 00.05 and German ecosystem hubs in 80.23.",
+    "fast": "14.7 KB raw / 5.4 KB gzip built page on the shared Jekyll shell; well under the 64 KiB gzip budget.",
+    "best": "Shows how to separate dated evidence from open screen questions; remaining limit is that public product docs never prove a specific team stack or active sponsorship."
+   },
+   "notes": "Phase 1 Batch 1a+1b comprehension rewrite and startup-discovery overhaul (2026-11-23)."
   },
   "80-lanes-abroad-full-stack/80.08-system-design-case-bank.md": {
    "sha256": "454318a3e3f96e484ee6be657e4bc610bad4366a2a52bd6f419b45ef639d4139",
@@ -7843,10 +7877,20 @@
    "status": "unread"
   },
   "80-lanes-abroad-full-stack/80.20-germany-visa-relocation-companies.md": {
-   "sha256": "219e0b000f4796d057c55a90b311efdab386920dc3fc39f8e1b6b558683bd6e0",
-   "lines": 66,
+   "sha256": "c3c3d51c6f337ab3d4d9f0c1ccffb0bb1b8149de493bd2b910364d1ac13684a7",
+   "lines": 68,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against make-it-in-germany.com EU Blue Card and foreign academic qualification guidance plus 80.x REVISION.md Anabin H+ vs degree comparability pair.",
+    "readable": "Full read of 68 lines. Rewritten with clear legal-admission vs employer-support separation, 4 early confirmation questions, copy-paste recruiter script, Anabin/ZAB walkthrough, and dependency timeline.",
+    "concise": "488 words. Focused operational checklist with zero repeated visa-threshold tables.",
+    "focused": "Canonical German employer-support verification guide; legal thresholds stay in 80.06 and personal docs stay outside this repo.",
+    "fast": "13.4 KB raw / 5.0 KB gzip built page on the shared Jekyll shell; well under the 64 KiB gzip budget.",
+    "best": "Prevents the common Anabin H+ vs exact degree mistake and remote-before-visa trap; remaining limit is that consulate checklists and processing times vary by jurisdiction."
+   },
+   "notes": "Phase 1 Batch 1a+1b comprehension rewrite and startup-discovery overhaul (2026-11-23)."
   },
   "80-lanes-abroad-full-stack/80.21-docita-google-level-prep.md": {
    "sha256": "cbac6495dc65e3c4fd0522d37109dc5296f2651b0dcf93980e62f000f02b0653",
@@ -7861,10 +7905,20 @@
    "status": "unread"
   },
   "80-lanes-abroad-full-stack/80.23-german-companies-database.md": {
-   "sha256": "ba75f96cbe8e265704fad666b3d31710c829cc9cb63a9992bdb7820180281678",
-   "lines": 64,
+   "sha256": "584fce33422b663079aab8cb6f326aa5c27f0d6ad09f06183642eccae4bffa50",
+   "lines": 94,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against live HTTP 200 probes on 2026-11-23 for all 9 newly added German/EU startup and scale-up careers/ATS URLs (n8n, DeepL, Celonis, N26, GetYourGuide, Linear, Supabase, Adyen, Wise); scripts/job_board_watch.py --discover executed via unit tests.",
+    "readable": "Full read of 94 lines. Rewritten from an empty schema note into a reference directory of 13 verified German/EU tech ecosystems + live ATS discovery JSON/CLI workflow + 3-layer record model + 8-field tracker.",
+    "concise": "457 words. Combines a verified reference directory with a clean 3-layer schema and refresh rules without bloating into a stale vacancy list.",
+    "focused": "Canonical German/EU role-database guide; broad VC hubs and search dorks stay in 00.05 and private application logs stay outside this repo.",
+    "fast": "17.5 KB raw / 5.6 KB gzip built page on the shared Jekyll shell; well under the 64 KiB gzip budget.",
+    "best": "Provides live ATS hubs and automated discovery config; remaining limit is that company listings cannot guarantee active vacancies or visa sponsorship."
+   },
+   "notes": "Phase 1 Batch 1a+1b comprehension rewrite and startup-discovery overhaul (2026-11-23)."
   },
   "80-lanes-abroad-full-stack/80.24-eu-regulatory-compliance.md": {
    "sha256": "35833d559f9a9478924d8301927e42ea840d9176cf415425d55cb0b8e00aab44",
@@ -7909,16 +7963,36 @@
    "status": "unread"
   },
   "80-lanes-abroad-full-stack/80.31-salary-negotiation-guide.md": {
-   "sha256": "f3f4e65f1c36791799e64dab42d9022c41f16e5142772722fa1da6ff10554f7e",
-   "lines": 62,
+   "sha256": "75be9ad24ea5ae69aca4cb55eae8f4754b0bc9b482a1c04b7415fc8e3f0af531",
+   "lines": 77,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "No version-sensitive claim; checked against 80.05 compensation arithmetic, 80.25 statutory contract boundaries, and 80.x REVISION.md sign-on vs base Q&A.",
+    "readable": "Full read of 77 lines. Rewritten with 9-point pre-counter audit, lever priority table, 3 copy-paste negotiation scripts (base gap, sign-on/relocation bridge, ESOP/VSOP terms), and contract sign-off checklist.",
+    "concise": "552 words. Actionable scripts and decision tables with zero repeated benchmarking math.",
+    "focused": "Canonical EU offer-negotiation playbook; benchmarking math stays in 80.05 and legal visa thresholds in 80.06.",
+    "fast": "13.9 KB raw / 5.3 KB gzip built page on the shared Jekyll shell; well under the 64 KiB gzip budget.",
+    "best": "Gives concrete word-for-word scripts without claiming guaranteed counter-offer room; remaining limit is that local employment law clauses require reading the actual contract."
+   },
+   "notes": "Phase 1 Batch 1a+1b comprehension rewrite and startup-discovery overhaul (2026-11-23)."
   },
   "80-lanes-abroad-full-stack/80.32-company-prep-sheets.md": {
-   "sha256": "2c61fda8412e5fbed22a9da12238b08d371115c62916cbafe5e81cdc2bd2966b",
-   "lines": 70,
+   "sha256": "35d33dd52708e9663e55778695cd8114f3f56ce4dfa375cb59c7e6c19ab36918",
+   "lines": 76,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against official product URLs (LiveEO, Snke, MVST, Redcare Pharmacy, Tanso, n8n \u2014 checked 2026-10-01) and preserved anchor links into 80.34 domain primer.",
+    "readable": "Full read of 76 lines. Rewritten with 1-page prep sheet template and 6 punchy product workflow traces showing failure angles and honest gap framing.",
+    "concise": "639 words. Each of the 6 company archetypes gets one clear workflow chain, engineering angle, and companion link.",
+    "focused": "Canonical product-workflow prep guide; deep healthtech/geospatial primitives stay in 80.34 and company profiling in 80.07.",
+    "fast": "14.6 KB raw / 5.1 KB gzip built page on the shared Jekyll shell; well under the 64 KiB gzip budget.",
+    "best": "Teaches transferable workflow analysis; remaining limit is that public product pages cannot reveal private team stacks or interview scripts."
+   },
+   "notes": "Phase 1 Batch 1a+1b comprehension rewrite and startup-discovery overhaul (2026-11-23)."
   },
   "80-lanes-abroad-full-stack/80.33-weekly-study-tracker.md": {
    "sha256": "6cb7e52ece37564123cc2604f7bb44cad85e128a287a274ff1a9a4d17eeffd86",
@@ -7927,16 +8001,36 @@
    "status": "unread"
   },
   "80-lanes-abroad-full-stack/80.34-germany-target-domain-primer.md": {
-   "sha256": "4d904ad30fb8e16e38c96ae380db6d462ce63a56677c9607f21de870f92dd780",
-   "lines": 106,
+   "sha256": "cdd087b2406cacce243618e45d883efe7195ebba199c36033270dc6fba6a2ad1",
+   "lines": 126,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "Checked against HL7 FHIR R5 overview, PostGIS ST_DWithin/ST_Intersects/ST_AsMVT docs, STAC spec, and OGC COG standard; preserved both incoming anchors from 80.32.",
+    "readable": "Full read of 126 lines. Rewritten in plain English with clinical acronym table, simplified FHIR Observation JSON excerpt, PostGIS geometry-vs-geography SQL example, STAC/COG raster table, and detection-to-alert trace.",
+    "concise": "580 words. Covers both healthtech and geospatial primitives with concrete snippets and trap warnings without unnecessary prose.",
+    "focused": "Canonical domain primer for German healthtech and geospatial interviews; regulatory obligations stay in 80.24 and product sheets in 80.32.",
+    "fast": "23.7 KB raw / 7.1 KB gzip built page on the shared Jekyll shell; well under the 64 KiB gzip budget.",
+    "best": "Clarifies real clinical unit/identity and SRID/ST_DWithin traps; remaining limit is that FHIR and PostGIS snippets are illustrative excerpts rather than full country-profile or live PostGIS executions."
+   },
+   "notes": "Phase 1 Batch 1a+1b comprehension rewrite and startup-discovery overhaul (2026-11-23)."
   },
   "80-lanes-abroad-full-stack/80.35-germany-target-engine.md": {
-   "sha256": "ba80b6d182210f9a9a4398c4cf0cdc561404e2efe1aa4ea8e8c400dd596fc24d",
-   "lines": 85,
+   "sha256": "e804d4232dacae648dcb38ebd8ec8467feed7d3e6824b6aaefe07e08993029fd",
+   "lines": 77,
    "genre": "lane",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "No version-sensitive claim; checked against scripts/job_board_watch.py --discover workflow, AGENTS.md private-workspace rules, and 80.x REVISION.md rejection-diagnosis Q&A.",
+    "readable": "Full read of 77 lines. Rewritten into a practical 6-step weekly search operating loop: live req check, 5-minute constraint screen, 4-record private layout, automation review boundary, honest rejection diagnosis, and weekly funnel math.",
+    "concise": "593 words. Focused operational engine with clear boundaries and zero duplicated company lists.",
+    "focused": "Canonical weekly job-search operating loop for Germany/EU; discovery channels stay in 00.05 and database schema in 80.23.",
+    "fast": "14.0 KB raw / 5.1 KB gzip built page on the shared Jekyll shell; well under the 64 KiB gzip budget.",
+    "best": "Keeps outreach and applications evidence-driven; remaining limit is that fast rejections rarely expose their exact filter so funnel changes must be tracked over real sample sizes."
+   },
+   "notes": "Phase 1 Batch 1a+1b comprehension rewrite and startup-discovery overhaul (2026-11-23)."
   },
   "80-lanes-abroad-full-stack/80.36-docita-complete-interview-defense.md": {
    "sha256": "7ae51464c7a752956c5a5e669cb49aaa6d63e33b85242e2b8cebdc6c2e3e97f6",
@@ -8122,20 +8216,20 @@
    }
   },
   "INDEX.md": {
-   "sha256": "81ce226c4a1833373f38f6bf282217b150cc63336aeb5c38cb262d5c87bd04d3",
+   "sha256": "6d6c4a16f3ceb53117d294ec7156f10db027207c63dcd13c43b7126e6f605272",
    "lines": 206,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-23",
    "evidence": {
-    "current": "Checked against scripts/check_counts.py and scripts/read_time.py on 2026-11-23: 991-file count, 680-chapter count, line count, and study time match live disk.",
-    "readable": "Full read of 206 lines; lane choice follows shared strategy, and section totals reconcile with their sub-stacks.",
-    "concise": "450 words; navigation tables carry the file lists and the prose explains only how to choose.",
-    "focused": "Canonical navigation; points at each stack index and does not retell teaching content.",
-    "fast": "35.6 KB raw / 9.2 KB gzip built page; the shared Jekyll shell is included.",
-    "best": "Counts describe the repository, not one reader's pace; the approximate study-time total cannot hold for every learner, and minor footer/Message Brokers sync is queued for Phase 6."
+    "current": "Checked against scripts/check_counts.py and scripts/read_time.py on 2026-11-23: 991 files, 680 chapters, line count, and study time agree with disk.",
+    "readable": "Full read of 206 lines. Central navigation hub with lane decision, 7-stack table, study-path map, and direct indexes.",
+    "concise": "450 words. Navigation tables carry the file lists while prose explains study order only.",
+    "focused": "Canonical master index; points at stack indexes without duplicating chapter content.",
+    "fast": "35.6 KB raw / 9.2 KB gzip built page on the shared Jekyll shell; well under the 64 KiB gzip budget.",
+    "best": "Counts reflect repository files rather than one learner pace; remaining limit is that study-time estimates cannot predict individual reading speed."
    },
-   "notes": "Hash refreshed after check_counts.py and read_time.py restamped totals following Phase 0 pilot."
+   "notes": "Phase 1 Batch 1a+1b comprehension rewrite and startup-discovery overhaul (2026-11-23)."
   },
   "README.md": {
    "sha256": "d885528e428ea38f115bc62b8bac76e421c317edae2aeb312516f3f01fd17a5f",
@@ -8503,10 +8597,20 @@
    "status": "unread"
   },
   "lanes/INDEX.md": {
-   "sha256": "e835b9d4f33ca0fed04467c163614301a5532eeff1f873fb64ddf7f06408d738",
-   "lines": 35,
+   "sha256": "1a748a0a73fb6ef546154b16c2bad86f94c365b99a7715460c2eabe6ef3ee8d9",
+   "lines": 37,
    "genre": "index",
-   "status": "unread"
+   "status": "read",
+   "reviewed": "2026-11-23",
+   "evidence": {
+    "current": "No version-sensitive claim; verified 2-lane table, 991-file badge, and links to 00-strategy, 80-lanes-abroad-full-stack, and 81-lanes-indian-sde-faang.",
+    "readable": "Full read of 37 lines. Rewritten for plain-English clarity: explains lane selection by assessed format, 5-step study-to-readiness loop, and canonical stack-vs-lane separation.",
+    "concise": "287 words. Concise lane router with one decision table and a five-step practice loop.",
+    "focused": "Canonical entry point for interview lanes; all technical mechanisms stay in the seven study stacks and personal records stay outside this repo.",
+    "fast": "9.3 KB raw / 3.5 KB gzip built page on the shared Jekyll shell; well under the 64 KiB gzip budget.",
+    "best": "Routes candidates by confirmed assessment format; cannot predict a specific employer loop without checking the live requisition."
+   },
+   "notes": "Phase 1 Batch 1a+1b comprehension rewrite and startup-discovery overhaul (2026-11-23)."
   },
   "projects/INDEX.md": {
    "sha256": "6cf012cd00a68c50a719eedc7fa44a29e9b04472d592f3d6211f59663951f52e",
@@ -9296,9 +9400,6 @@
   "80-lanes-abroad-full-stack/80.02-tech-screen-patterns.md",
   "80-lanes-abroad-full-stack/80.03-system-design-eu-patterns.md",
   "80-lanes-abroad-full-stack/80.04-behavioral-eu-style.md",
-  "80-lanes-abroad-full-stack/80.05-comp-eu-benchmarking.md",
-  "80-lanes-abroad-full-stack/80.06-visa-relocation-playbook.md",
-  "80-lanes-abroad-full-stack/80.07-company-profiles.md",
   "80-lanes-abroad-full-stack/80.08-system-design-case-bank.md",
   "80-lanes-abroad-full-stack/80.09-quick-reference-cards.md",
   "80-lanes-abroad-full-stack/80.10-weekly-tracker.md",
@@ -9311,10 +9412,8 @@
   "80-lanes-abroad-full-stack/80.17-docita-interview-evidence-pack.md",
   "80-lanes-abroad-full-stack/80.18-resume-claim-crosswalk.md",
   "80-lanes-abroad-full-stack/80.19-langfuse-interview-prep.md",
-  "80-lanes-abroad-full-stack/80.20-germany-visa-relocation-companies.md",
   "80-lanes-abroad-full-stack/80.21-docita-google-level-prep.md",
   "80-lanes-abroad-full-stack/80.22-docita-tech-topic-mapping.md",
-  "80-lanes-abroad-full-stack/80.23-german-companies-database.md",
   "80-lanes-abroad-full-stack/80.24-eu-regulatory-compliance.md",
   "80-lanes-abroad-full-stack/80.25-german-workplace-culture.md",
   "80-lanes-abroad-full-stack/80.26-take-home-masterclass.md",
@@ -9322,11 +9421,7 @@
   "80-lanes-abroad-full-stack/80.28-interview-prep-roadmap.md",
   "80-lanes-abroad-full-stack/80.29-topic-brushup-roadmap.md",
   "80-lanes-abroad-full-stack/80.30-mock-interview-script.md",
-  "80-lanes-abroad-full-stack/80.31-salary-negotiation-guide.md",
-  "80-lanes-abroad-full-stack/80.32-company-prep-sheets.md",
   "80-lanes-abroad-full-stack/80.33-weekly-study-tracker.md",
-  "80-lanes-abroad-full-stack/80.34-germany-target-domain-primer.md",
-  "80-lanes-abroad-full-stack/80.35-germany-target-engine.md",
   "80-lanes-abroad-full-stack/80.36-docita-complete-interview-defense.md",
   "80-lanes-abroad-full-stack/INDEX.md",
   "80-lanes-abroad-full-stack/REVISION.md",
@@ -9405,7 +9500,6 @@
   "docs/superpowers/specs/2026-11-18-performance-ui-design.md",
   "docs/topic-importance.md",
   "docs/verification-gates.md",
-  "lanes/INDEX.md",
   "projects/INDEX.md",
   "projects/docita/01-architecture-decisions.md",
   "projects/docita/02-multi-tenancy-rls.md",

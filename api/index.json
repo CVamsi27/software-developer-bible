@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "b62fc48d228235bf7f8113a3914e868463a20be23e5219d144b1f71fc5129081",
+ "corpus_digest": "1c8e0a3a49437cf522fc1cce6eac754e7204496e6d07812842513042329b3e74",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5364
+  "read_minutes": 5368
  },
  "chapters": [
   {
@@ -21,7 +21,7 @@
     "concept",
     "guide"
    ],
-   "m": 4
+   "m": 6
   },
   {
    "p": "00-strategy/00.02-resume-tips.html",
@@ -32,7 +32,7 @@
     "concept",
     "guide"
    ],
-   "m": 4
+   "m": 5
   },
   {
    "p": "00-strategy/00.03-star-method.html",
@@ -43,7 +43,7 @@
     "concept",
     "guide"
    ],
-   "m": 4
+   "m": 5
   },
   {
    "p": "00-strategy/00.04-hr-questions.html",

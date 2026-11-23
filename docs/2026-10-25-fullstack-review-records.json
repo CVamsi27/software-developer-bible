@@ -4,42 +4,42 @@
   "reviews": [
     {
       "path": "00-strategy/00.01-communication.md",
-      "sha256": "8e000ad74a8a15a102428913223f54d38bb176fefccd26e00cbb32456b4f0284",
+      "sha256": "03cc9823260e402ec2f0af92792ecf8c2ad025710805424c2f1948754fe8f9aa",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: decision/evidence/tradeoff trace, audience context, invariant-first coding explanation, pushback and accessibility; no universal interview outcome or unsupported personal claim.",
+      "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 101 lines. Rewritten for first-pass clarity: answer-first caching hook, weak-vs-strong comparison, listener decision table, invariant narration, 4-step pushback recovery script, and peer feedback loop. No version-sensitive claim; checked against Tech Interview Handbook behavioral reference and 00-strategy REVISION.md Q&A on pushback handling.",
       "findings": []
     },
     {
       "path": "00-strategy/00.02-resume-tips.md",
-      "sha256": "4877b4977e035f1110431ab98c7e2fadec3410b9eaf4fc84bc2a6cac027ef2b3",
+      "sha256": "f9c363d3758643883ec56ba271af845a571ab8789fdce4e41b7861ff0b3668a3",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-12",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Strategy pass: nav label \"Star Method\" corrected to \"STAR Method\" and one sentence with an agreement slip reworded. Every claim re-read: no invented metric is asserted (the 800ms to 120ms pair is labelled illustrative), ATS behavior is stated as varied rather than a fixed scan time, and both MIT Career Advising links answered HTTP 200 on 2026-11-12.",
+      "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 105 lines. Rewritten with 3 concrete weak-vs-strong senior full-stack bullet rewrites, page-one hierarchy, senior scope proof, ATS parseability checklist, and common-mistakes repairs. No version-sensitive claim; checked against MIT Career Advising resume guidance and 00-strategy REVISION.md resume-scope and non-percentage evidence pairs.",
       "findings": []
     },
     {
       "path": "00-strategy/00.03-star-method.md",
-      "sha256": "2113b404129964eb25cdd9df115dc2ad4b2cd5ea8d26066c29f511f3a62e2c57",
+      "sha256": "13dffd3cd3b235225e6d1c11360e96d26e2d2d2a1468082e140b9294ed78d370",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-12",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Strategy pass: nav label \"Hr Questions\" corrected to \"HR Questions\" (the chapter target is the HR round). STAR/PAR/CAR structures, the worked mistake example and the no-fabricated-metrics boundary re-read; MIT STAR source answered HTTP 200 on 2026-11-12.",
+      "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 101 lines. Rewritten with a concrete senior pricing-cache incident walkthrough, time-share guide, follow-up probes, vague-vs-inspectable judgment contrast, and 7-theme story bank. No version-sensitive claim; checked against MIT Career Advising STAR resource and 00-strategy REVISION.md ownership pair.",
       "findings": []
     },
     {
       "path": "00-strategy/00.04-hr-questions.md",
-      "sha256": "1cd0c5b9254d438b5f980c1c8f0388f0c5ba3e1ed86b9728da487b0468a439ae",
+      "sha256": "80ec9495cff12ec4ebaf6699ac1fab868f613b47b4ec1382d63ca33d002a82f3",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-12",
-      "fullContentRead": false,
-      "notes": "Link and read-time pass: the badge moved from 4 to 5 minutes after the new sibling chapter changed the section total, and the footer now links to 00.05. HR-question guidance and the offer-comparison boundary were re-read; no unsupported personal claim.",
+      "reviewDate": "2026-11-23",
+      "fullContentRead": true,
+      "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 107 lines. Rewritten with concrete role-thesis script, 6 prompt-response formulas, component-by-component EUR offer arithmetic, calm counter-offer script, and decision-shaping recruiter questions. No version-sensitive claim; checked against Levels.fyi compensation comparison boundary and 00-strategy REVISION.md sign-on separation pair.",
       "findings": []
     },
     {
@@ -54,12 +54,12 @@
     },
     {
       "path": "00-strategy/INDEX.md",
-      "sha256": "eab7227251d205b2af05595c9cb12e8c73b9812eb4f497943bd01f3888718f16",
+      "sha256": "13a49b98829f9f244c573070df8fa6cf34afcc0a7c9e522534e8803b618d9b9e",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Phase 0 restamp (2026-11-23): study time updated by read_time.py from 28 to 30 min after 00.05 rewrite; section flow and links verified.",
+      "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 57 lines. Section flow matches all five updated strategy chapters and separate revision companion. No version-sensitive claim; study-time badge and section total restamped from live disk by scripts/read_time.py on 2026-11-23.",
       "findings": []
     },
     {
@@ -9384,32 +9384,32 @@
     },
     {
       "path": "80-lanes-abroad-full-stack/80.05-comp-eu-benchmarking.md",
-      "sha256": "0ffca6d1c6ee3cfbb5d7643e695a4dcb57607d4f599566740413b7005893a91c",
+      "sha256": "942cf8270ec6a983fdcd4568c41d8d0d066bc26a58f576a4db955ee8493895ed",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-05",
-      "fullContentRead": false,
-      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
+      "reviewDate": "2026-11-23",
+      "fullContentRead": true,
+      "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 87 lines. Rewritten for clarity: two-offer hook, 5 comparable-evidence qualifiers, 6-bucket offer table, worked EUR 80k/8k/5k breakdown, net budget stress-test, Dutch ruling boundary, and negotiation script. Checked against Dutch Tax Administration 2026 expat threshold (>EUR 48,013 excl. allowance, EUR 78,600 cap, 30% in 2026 -> 27% in 2027) and 80.x REVISION.md offer-comparison Q&A.",
       "findings": []
     },
     {
       "path": "80-lanes-abroad-full-stack/80.06-visa-relocation-playbook.md",
-      "sha256": "dbdb39b28e13c34dcf4aaf6435d2fbe9b130331e80947ae3953dc0309825be31",
+      "sha256": "2fd6dd398223b17ffb438f7a221eba7f8e201e825b4e2085da0512a8aca6dd92",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: Eight-country route/household guide full read. Official current NL,Germany,Ireland,Sweden,UK,Swiss,Austria rules and IrishspousalStamp1G reverified. Finland3937/2026 andJan8residence changes verified via indexed official Migri pages after403onfetch. No personal eligibility or timeline inferred.",
+      "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 126 lines. Rewritten with a scannable 8-country comparison table up front, plain-English country breakdowns, 4-factor household framework, relocation negotiation checklist, and dependency chain. Verified 2026 statutory thresholds (checked 2026-10-09 against official portals for DE, NL, IE, SE, FI, UK, CH, AT: Blue Card EUR 50,700/45,934.20, Chancenkarte EUR 1,091/mo, NL HSM EUR 5,942/4,357, IE EUR 40,904/68,911, SE SEK 34,470, FI EUR 3,937, UK GBP 41,700, AT EUR 3,465).",
       "findings": []
     },
     {
       "path": "80-lanes-abroad-full-stack/80.07-company-profiles.md",
-      "sha256": "83f2b0a74fb5291e73d14ac2c547cd90ea3b63a67148f33930268a5881c79687",
+      "sha256": "d64086b6dcaef37b6bd389cccb93d539a1e76e077e0b5cdc677947f457750e7d",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-12",
-      "fullContentRead": false,
-      "notes": "Added one link to the role-discovery guide where employer research begins. The dated-evidence method and private-target boundary are unchanged.",
+      "reviewDate": "2026-11-23",
+      "fullContentRead": true,
+      "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 70 lines. Rewritten with identity/acquisition traps, 30-minute research template, a complete worked public reference profile (n8n), and an honest motivation formula. Checked against live-probed n8n Ashby ATS URL (HTTP 200 on 2026-11-23), Thryve about page, and Langfuse ClickHouse acquisition announcement.",
       "findings": []
     },
     {
@@ -9534,12 +9534,12 @@
     },
     {
       "path": "80-lanes-abroad-full-stack/80.20-germany-visa-relocation-companies.md",
-      "sha256": "219e0b000f4796d057c55a90b311efdab386920dc3fc39f8e1b6b558683bd6e0",
+      "sha256": "c3c3d51c6f337ab3d4d9f0c1ccffb0bb1b8149de493bd2b910364d1ac13684a7",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: Germanrole employer support andadmissiondistinct, currentBlueCardguidealreadyreverified; language/H+institutionalone insufficient, exactdegree/route/entity/documents, startcontingency andactuallegalpayroll arrangement.",
+      "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 68 lines. Rewritten with clear legal-admission vs employer-support separation, 4 early confirmation questions, copy-paste recruiter script, Anabin/ZAB walkthrough, and dependency timeline. Checked against make-it-in-germany.com EU Blue Card and foreign academic qualification guidance plus 80.x REVISION.md Anabin H+ vs degree comparability pair.",
       "findings": []
     },
     {
@@ -9564,12 +9564,12 @@
     },
     {
       "path": "80-lanes-abroad-full-stack/80.23-german-companies-database.md",
-      "sha256": "ba75f96cbe8e265704fad666b3d31710c829cc9cb63a9992bdb7820180281678",
+      "sha256": "584fce33422b663079aab8cb6f326aa5c27f0d6ad09f06183642eccae4bffa50",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-12",
-      "fullContentRead": false,
-      "notes": "Added one link to the discovery guide before a role enters the research database; dated-evidence guidance unchanged.",
+      "reviewDate": "2026-11-23",
+      "fullContentRead": true,
+      "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 94 lines. Rewritten from an empty schema note into a reference directory of 13 verified German/EU tech ecosystems + live ATS discovery JSON/CLI workflow + 3-layer record model + 8-field tracker. Checked against live HTTP 200 probes on 2026-11-23 for all 9 newly added German/EU startup and scale-up careers/ATS URLs (n8n, DeepL, Celonis, N26, GetYourGuide, Linear, Supabase, Adyen, Wise); scripts/job_board_watch.py --discover executed via unit tests.",
       "findings": []
     },
     {
@@ -9644,22 +9644,22 @@
     },
     {
       "path": "80-lanes-abroad-full-stack/80.31-salary-negotiation-guide.md",
-      "sha256": "f3f4e65f1c36791799e64dab42d9022c41f16e5142772722fa1da6ff10554f7e",
+      "sha256": "75be9ad24ea5ae69aca4cb55eae8f4754b0bc9b482a1c04b7415fc8e3f0af531",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: Negotiation recurring/conditional/one-time/equity distinctions, exactrole terms, actualsupportedcounter notfixedpercentage, eligibilityversusmarketpay, finalwrittenagreement.",
+      "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 77 lines. Rewritten with 9-point pre-counter audit, lever priority table, 3 copy-paste negotiation scripts (base gap, sign-on/relocation bridge, ESOP/VSOP terms), and contract sign-off checklist. No version-sensitive claim; checked against 80.05 compensation arithmetic, 80.25 statutory contract boundaries, and 80.x REVISION.md sign-on vs base Q&A.",
       "findings": []
     },
     {
       "path": "80-lanes-abroad-full-stack/80.32-company-prep-sheets.md",
-      "sha256": "2c61fda8412e5fbed22a9da12238b08d371115c62916cbafe5e81cdc2bd2966b",
+      "sha256": "35d33dd52708e9663e55778695cd8114f3f56ce4dfa375cb59c7e6c19ab36918",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: Sixcompanyproductcontexts are datedhistoricalpreparation, no vacancy/stack/relocation claims; each workflow names transferablemechanism andactualexperiencegap, no first-person fictionalpitch.",
+      "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 76 lines. Rewritten with 1-page prep sheet template and 6 punchy product workflow traces showing failure angles and honest gap framing. Checked against official product URLs (LiveEO, Snke, MVST, Redcare Pharmacy, Tanso, n8n \u2014 checked 2026-10-01) and preserved anchor links into 80.34 domain primer.",
       "findings": []
     },
     {
@@ -9674,22 +9674,22 @@
     },
     {
       "path": "80-lanes-abroad-full-stack/80.34-germany-target-domain-primer.md",
-      "sha256": "4d904ad30fb8e16e38c96ae380db6d462ce63a56677c9607f21de870f92dd780",
+      "sha256": "cdd087b2406cacce243618e45d883efe7195ebba199c36033270dc6fba6a2ad1",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: Health/geospatialprimer: identity/units/time/provenance, FHIRprofiles/CapabilityStatement/version versusJSONconformance; geometryCRSunits versusgeographymeters, distanceversusintersection, SRIDlabelnottransform, STACcatalogversusCOGpartialpixels, no domainexperience inferred.",
+      "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 126 lines. Rewritten in plain English with clinical acronym table, simplified FHIR Observation JSON excerpt, PostGIS geometry-vs-geography SQL example, STAC/COG raster table, and detection-to-alert trace. Checked against HL7 FHIR R5 overview, PostGIS ST_DWithin/ST_Intersects/ST_AsMVT docs, STAC spec, and OGC COG standard; preserved both incoming anchors from 80.32.",
       "findings": []
     },
     {
       "path": "80-lanes-abroad-full-stack/80.35-germany-target-engine.md",
-      "sha256": "ba80b6d182210f9a9a4398c4cf0cdc561404e2efe1aa4ea8e8c400dd596fc24d",
+      "sha256": "e804d4232dacae648dcb38ebd8ec8467feed7d3e6824b6aaefe07e08993029fd",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-10-25",
+      "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Full-content review: Roleengine datedvacancy, uncertainrejectioncause, preservedsubmissionversion, externaltoolversusprivatecanonicaldata. Repaired public localprivatepath disclosure by replacing commandwith genericprivatehealthcheckinstruction; gate7 addedlocalpathregression RED-to-GREEN and passes959publicfiles.",
+      "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 77 lines. Rewritten into a practical 6-step weekly search operating loop: live req check, 5-minute constraint screen, 4-record private layout, automation review boundary, honest rejection diagnosis, and weekly funnel math. No version-sensitive claim; checked against scripts/job_board_watch.py --discover workflow, AGENTS.md private-workspace rules, and 80.x REVISION.md rejection-diagnosis Q&A.",
       "findings": []
     },
     {
@@ -9984,12 +9984,12 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "81ce226c4a1833373f38f6bf282217b150cc63336aeb5c38cb262d5c87bd04d3",
+      "sha256": "6d6c4a16f3ceb53117d294ec7156f10db027207c63dcd13c43b7126e6f605272",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Phase 0 restamp (2026-11-23): check_counts.py and read_time.py restamped line count and total study time after pilot rewrites.",
+      "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 206 lines. Central navigation hub with lane decision, 7-stack table, study-path map, and direct indexes. Checked against scripts/check_counts.py and scripts/read_time.py on 2026-11-23: 991 files, 680 chapters, line count, and study time agree with disk.",
       "findings": []
     },
     {
@@ -10179,12 +10179,12 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "d4a485a144ca277349df58a2400e0ac92e67ea5c0a7e6736d930e48b19813261",
+      "sha256": "d27a5e15458d1b2291af790731cf42cedc0d8295858e449c78561d66db1484b9",
       "status": "reviewed",
       "reviewer": "frontend",
       "reviewDate": "2026-11-23",
       "fullContentRead": true,
-      "notes": "Phase 0 restamp (2026-11-23): check_counts.py updated example totals.read_minutes (5350 -> 5364) after Phase 0 pilot chapter rewrites; full contract verified.",
+      "notes": "Phase 1 Batch 1a+1b restamp (2026-11-23): check_counts.py updated example totals.read_minutes (5364 -> 5368) after Batch 1a+1b rewrites.",
       "findings": [],
       "metadataReview": {
         "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",
@@ -10546,12 +10546,12 @@
     },
     {
       "path": "lanes/INDEX.md",
-      "sha256": "43aba92a29ad4fb69a4ab58443127f5d022096bc37fcd1d910ad0cf058e7a37d",
+      "sha256": "1a748a0a73fb6ef546154b16c2bad86f94c365b99a7715460c2eabe6ef3ee8d9",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-18",
-      "fullContentRead": false,
-      "notes": "Diff-scoped review (2026-11-18): the repository count writer restamped the Files badge to the live 991-file total; lane navigation and private-lane publication boundaries were not changed.",
+      "reviewDate": "2026-11-23",
+      "fullContentRead": true,
+      "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 37 lines. Rewritten for plain-English clarity: explains lane selection by assessed format, 5-step study-to-readiness loop, and canonical stack-vs-lane separation. No version-sensitive claim; verified 2-lane table, 991-file badge, and links to 00-strategy, 80-lanes-abroad-full-stack, and 81-lanes-indian-sde-faang.",
       "findings": []
     },
     {

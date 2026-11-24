@@ -12917,244 +12917,244 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 7A 70.1-behavioral and 70.2.1-2 coding patterns)."
   },
   "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization/70.2.3.01-backtracking.md": {
-   "sha256": "58bcc3e699d536fcd168239e8d8461ad435f921682d3b8fde4ba6a21519d4fc7",
-   "lines": 364,
+   "sha256": "cf5e704f1374040dffd943199993c4e2dd4ce770e1f10d71ee1d4490c686fa66",
+   "lines": 368,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: TypeScript backtracking templates with explicit pruning invariants and output-copy discipline.",
-    "readable": "Full read of 364 lines (986 prose words). Covers choose-explore-unchoose backtracking across subsets, distinct permutations, positive safe-integer combination sum, N-Queens column/diagonal checks, in-place 9x9 Sudoku solving, and grid word search.",
-    "concise": "986 words across 364 lines. Covers choose-explore-unchoose backtracking across subsets, distinct permutations, positive safe-integer combination sum, N-Queens column/diagonal checks, in-place 9x9 Sudoku solving, and grid word search.",
+    "readable": "Full read of 368 lines (996 prose words). Covers choose-explore-unchoose backtracking across subsets, distinct permutations, positive safe-integer combination sum, N-Queens column/diagonal checks, in-place 9x9 Sudoku solving, and grid word search.",
+    "concise": "996 words across 368 lines. Covers choose-explore-unchoose backtracking across subsets, distinct permutations, positive safe-integer combination sum, N-Queens column/diagonal checks, in-place 9x9 Sudoku solving, and grid word search.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers choose-explore-unchoose backtracking across subsets, distinct permutations, positive safe-integer combination sum, N-Queens column/diagonal checks, in-place 9x9 Sudoku solving, and grid word search.",
     "fast": "Measured 62.7 KB raw / 9.1 KB gzip. Covers choose-explore-unchoose backtracking across subsets, distinct permutations, positive safe-integer combination sum, N-Queens column/diagonal checks, in-place 9x9 Sudoku solving, and grid word search.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers choose-explore-unchoose backtracking across subsets, distinct permutations, positive safe-integer combination sum, N-Queens column/diagonal checks, in-place 9x9 Sudoku solving, and grid word search."
    },
-   "notes": "Covers choose-explore-unchoose backtracking across subsets, distinct permutations, positive safe-integer combination sum, N-Queens column/diagonal checks, in-place 9x9 Sudoku solving, and grid word search."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 7B 70.2.3-5 coding patterns and 70.3-cheatsheets)."
   },
   "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization/70.2.3.02-dynamic-programming.md": {
-   "sha256": "4966afeda0827828bb8b5b7e913498c9150c3501aa62c4f03589dfd050fa6552",
-   "lines": 304,
+   "sha256": "8f26e1756bf0ec2f99f9baf1e58353a8d70da7d3b7438f696218cc8f8c879b12",
+   "lines": 306,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: TypeScript top-down memoization and bottom-up tabulation dynamic programming patterns.",
-    "readable": "Full read of 304 lines (892 prose words). Covers memoized and rolling-pair Fibonacci (indices 0..78 within Number safe integers), 0/1 Knapsack, Longest Common Subsequence, O(n^2) Longest Increasing Subsequence, Coin Change, and Levenshtein Edit Distance.",
-    "concise": "892 words across 304 lines. Covers memoized and rolling-pair Fibonacci (indices 0..78 within Number safe integers), 0/1 Knapsack, Longest Common Subsequence, O(n^2) Longest Increasing Subsequence, Coin Change, and Levenshtein Edit Distance.",
+    "readable": "Full read of 306 lines (897 prose words). Covers memoized and rolling-pair Fibonacci (indices 0..78 within Number safe integers), 0/1 Knapsack, Longest Common Subsequence, O(n^2) Longest Increasing Subsequence, Coin Change, and Levenshtein Edit Distance.",
+    "concise": "897 words across 306 lines. Covers memoized and rolling-pair Fibonacci (indices 0..78 within Number safe integers), 0/1 Knapsack, Longest Common Subsequence, O(n^2) Longest Increasing Subsequence, Coin Change, and Levenshtein Edit Distance.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers memoized and rolling-pair Fibonacci (indices 0..78 within Number safe integers), 0/1 Knapsack, Longest Common Subsequence, O(n^2) Longest Increasing Subsequence, Coin Change, and Levenshtein Edit Distance.",
     "fast": "Measured 51.3 KB raw / 8.5 KB gzip. Covers memoized and rolling-pair Fibonacci (indices 0..78 within Number safe integers), 0/1 Knapsack, Longest Common Subsequence, O(n^2) Longest Increasing Subsequence, Coin Change, and Levenshtein Edit Distance.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers memoized and rolling-pair Fibonacci (indices 0..78 within Number safe integers), 0/1 Knapsack, Longest Common Subsequence, O(n^2) Longest Increasing Subsequence, Coin Change, and Levenshtein Edit Distance."
    },
-   "notes": "Covers memoized and rolling-pair Fibonacci (indices 0..78 within Number safe integers), 0/1 Knapsack, Longest Common Subsequence, O(n^2) Longest Increasing Subsequence, Coin Change, and Levenshtein Edit Distance."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 7B 70.2.3-5 coding patterns and 70.3-cheatsheets)."
   },
   "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization/70.2.3.03-bit-manipulation.md": {
-   "sha256": "9ab5bdad330afecd111e69ab7541cec79a16549c5093e07349276e8abba7c46b",
-   "lines": 304,
+   "sha256": "9530d4bc5ab512226d85abbaaa3aaf7bfbcd6199bd8df607b6160dab4d902703",
+   "lines": 310,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: TypeScript 32-bit bitwise operations (`>>> 0` unsigned coercion, `n & (n - 1)`, `xor & -xor`).",
-    "readable": "Full read of 304 lines (957 prose words). Covers XOR pair cancellation (`singleNumber`, `findTwoUniques`, `missingNumber`), Brian Kernighan `n & (n - 1)` popcount and power-of-two checks, bitmask subset enumeration, 32-bit unsigned reversal, and permission flags.",
-    "concise": "957 words across 304 lines. Covers XOR pair cancellation (`singleNumber`, `findTwoUniques`, `missingNumber`), Brian Kernighan `n & (n - 1)` popcount and power-of-two checks, bitmask subset enumeration, 32-bit unsigned reversal, and permission flags.",
+    "readable": "Full read of 310 lines (968 prose words). Covers XOR pair cancellation (`singleNumber`, `findTwoUniques`, `missingNumber`), Brian Kernighan `n & (n - 1)` popcount and power-of-two checks, bitmask subset enumeration, 32-bit unsigned reversal, and permission flags.",
+    "concise": "968 words across 310 lines. Covers XOR pair cancellation (`singleNumber`, `findTwoUniques`, `missingNumber`), Brian Kernighan `n & (n - 1)` popcount and power-of-two checks, bitmask subset enumeration, 32-bit unsigned reversal, and permission flags.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers XOR pair cancellation (`singleNumber`, `findTwoUniques`, `missingNumber`), Brian Kernighan `n & (n - 1)` popcount and power-of-two checks, bitmask subset enumeration, 32-bit unsigned reversal, and permission flags.",
     "fast": "Measured 45.1 KB raw / 8.8 KB gzip. Covers XOR pair cancellation (`singleNumber`, `findTwoUniques`, `missingNumber`), Brian Kernighan `n & (n - 1)` popcount and power-of-two checks, bitmask subset enumeration, 32-bit unsigned reversal, and permission flags.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers XOR pair cancellation (`singleNumber`, `findTwoUniques`, `missingNumber`), Brian Kernighan `n & (n - 1)` popcount and power-of-two checks, bitmask subset enumeration, 32-bit unsigned reversal, and permission flags."
    },
-   "notes": "Covers XOR pair cancellation (`singleNumber`, `findTwoUniques`, `missingNumber`), Brian Kernighan `n & (n - 1)` popcount and power-of-two checks, bitmask subset enumeration, 32-bit unsigned reversal, and permission flags."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 7B 70.2.3-5 coding patterns and 70.3-cheatsheets)."
   },
   "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization/INDEX.md": {
-   "sha256": "99e6168aa527a7e6967c107b94371a7545678cbfa2b479b9b89e8f1d6f27ba04",
-   "lines": 53,
+   "sha256": "8c7d4ed2d0fa28f4f89695f12f0b1e7f5af8c59935db3f7ab853cdddf88a28f5",
+   "lines": 55,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Backtracking pruning, top-down/bottom-up dynamic programming recurrences, and 32-bit/BigInt bitmask operations.",
-    "readable": "Full read of 53 lines (140 prose words). Learning-flow index for recursion and optimization patterns: backtracking, dynamic programming, and bit manipulation.",
-    "concise": "140 words across 53 lines. Learning-flow index for recursion and optimization patterns: backtracking, dynamic programming, and bit manipulation.",
+    "readable": "Full read of 55 lines (149 prose words). Learning-flow index for recursion and optimization patterns: backtracking, dynamic programming, and bit manipulation.",
+    "concise": "149 words across 55 lines. Learning-flow index for recursion and optimization patterns: backtracking, dynamic programming, and bit manipulation.",
     "focused": "Single canonical home with no duplicate code across chapters. Learning-flow index for recursion and optimization patterns: backtracking, dynamic programming, and bit manipulation.",
     "fast": "Measured 9.9 KB raw / 3.3 KB gzip. Learning-flow index for recursion and optimization patterns: backtracking, dynamic programming, and bit manipulation.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for recursion and optimization patterns: backtracking, dynamic programming, and bit manipulation."
    },
-   "notes": "Learning-flow index for recursion and optimization patterns: backtracking, dynamic programming, and bit manipulation."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 7B 70.2.3-5 coding patterns and 70.3-cheatsheets)."
   },
   "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization/REVISION.md": {
-   "sha256": "40f2d2f61b6a037b71f01e3e3b3d3695bc4a89eefd0637bac2f78de014be0a33",
+   "sha256": "2fba0fba36dfe2baf1b8ea2cef60dce7ccee598d9e030f5c870549ef1c09e6dd",
    "lines": 89,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Backtracking, dynamic programming, and JavaScript bitwise arithmetic boundaries.",
-    "readable": "Full read of 89 lines (559 prose words). Active-recall Q&A companion covering backtracking state restoration and pruning proofs, DP state sufficiency, 0/1 vs unbounded knapsack loop direction, JS 32-bit bitwise coercion, and rolling-row path reconstruction.",
-    "concise": "559 words across 89 lines. Active-recall Q&A companion covering backtracking state restoration and pruning proofs, DP state sufficiency, 0/1 vs unbounded knapsack loop direction, JS 32-bit bitwise coercion, and rolling-row path reconstruction.",
+    "readable": "Full read of 89 lines (565 prose words). Active-recall Q&A companion covering backtracking state restoration and pruning proofs, DP state sufficiency, 0/1 vs unbounded knapsack loop direction, JS 32-bit bitwise coercion, and rolling-row path reconstruction.",
+    "concise": "565 words across 89 lines. Active-recall Q&A companion covering backtracking state restoration and pruning proofs, DP state sufficiency, 0/1 vs unbounded knapsack loop direction, JS 32-bit bitwise coercion, and rolling-row path reconstruction.",
     "focused": "Single canonical home with no duplicate code across chapters. Active-recall Q&A companion covering backtracking state restoration and pruning proofs, DP state sufficiency, 0/1 vs unbounded knapsack loop direction, JS 32-bit bitwise coercion, and rolling-row path reconstruction.",
     "fast": "Measured 12.2 KB raw / 4.1 KB gzip. Active-recall Q&A companion covering backtracking state restoration and pruning proofs, DP state sufficiency, 0/1 vs unbounded knapsack loop direction, JS 32-bit bitwise coercion, and rolling-row path reconstruction.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering backtracking state restoration and pruning proofs, DP state sufficiency, 0/1 vs unbounded knapsack loop direction, JS 32-bit bitwise coercion, and rolling-row path reconstruction."
    },
-   "notes": "Active-recall Q&A companion covering backtracking state restoration and pruning proofs, DP state sufficiency, 0/1 vs unbounded knapsack loop direction, JS 32-bit bitwise coercion, and rolling-row path reconstruction."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 7B 70.2.3-5 coding patterns and 70.3-cheatsheets)."
   },
   "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.01-heap.md": {
-   "sha256": "2b84f3fe732003c832613b262eb327850a52b74113aeda3de538828a69613f7b",
-   "lines": 328,
+   "sha256": "9b5a3a406943ba5bf722859736f87a5770a841cd859ac7b01d649ba50781991e",
+   "lines": 330,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: TypeScript array-backed binary heap and streaming top-K / median / K-way merge algorithms.",
-    "readable": "Full read of 328 lines (885 prose words). Covers comparator-driven generic binary `Heap<T>` with O(n) bottom-up heapify, streaming `KthLargest` min-heap, two-heap `MedianFinder`, `topKFrequent`, `mergeKLists`, and cooldown-aware `leastInterval` task scheduling.",
-    "concise": "885 words across 328 lines. Covers comparator-driven generic binary `Heap<T>` with O(n) bottom-up heapify, streaming `KthLargest` min-heap, two-heap `MedianFinder`, `topKFrequent`, `mergeKLists`, and cooldown-aware `leastInterval` task scheduling.",
+    "readable": "Full read of 330 lines (909 prose words). Covers comparator-driven generic binary `Heap<T>` with O(n) bottom-up heapify, streaming `KthLargest` min-heap, two-heap `MedianFinder`, `topKFrequent`, `mergeKLists`, and cooldown-aware `leastInterval` task scheduling.",
+    "concise": "909 words across 330 lines. Covers comparator-driven generic binary `Heap<T>` with O(n) bottom-up heapify, streaming `KthLargest` min-heap, two-heap `MedianFinder`, `topKFrequent`, `mergeKLists`, and cooldown-aware `leastInterval` task scheduling.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers comparator-driven generic binary `Heap<T>` with O(n) bottom-up heapify, streaming `KthLargest` min-heap, two-heap `MedianFinder`, `topKFrequent`, `mergeKLists`, and cooldown-aware `leastInterval` task scheduling.",
     "fast": "Measured 56.9 KB raw / 9.0 KB gzip. Covers comparator-driven generic binary `Heap<T>` with O(n) bottom-up heapify, streaming `KthLargest` min-heap, two-heap `MedianFinder`, `topKFrequent`, `mergeKLists`, and cooldown-aware `leastInterval` task scheduling.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers comparator-driven generic binary `Heap<T>` with O(n) bottom-up heapify, streaming `KthLargest` min-heap, two-heap `MedianFinder`, `topKFrequent`, `mergeKLists`, and cooldown-aware `leastInterval` task scheduling."
    },
-   "notes": "Covers comparator-driven generic binary `Heap<T>` with O(n) bottom-up heapify, streaming `KthLargest` min-heap, two-heap `MedianFinder`, `topKFrequent`, `mergeKLists`, and cooldown-aware `leastInterval` task scheduling."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 7B 70.2.3-5 coding patterns and 70.3-cheatsheets)."
   },
   "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.02-monotonic-stack.md": {
-   "sha256": "0841dfa6a6b8250a31ca8befd1e2ab6a230bea23545f86448256d1e883070302",
-   "lines": 255,
+   "sha256": "8535cd9688c1a308f6fc7f425d47829531a6fe7864276ae46d841f4bf85504ef",
+   "lines": 259,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: TypeScript O(n) amortized monotonic stack templates and tie-handling contracts.",
-    "readable": "Full read of 255 lines (1,023 prose words). Covers monotonic increasing and decreasing index stacks, `nextGreaterElements`, `dailyTemperatures`, sentinel-flushed `largestRectangleArea` in a histogram, horizontal-layer `trap1D` rainwater, and 2n circular wrap-around.",
-    "concise": "1,023 words across 255 lines. Covers monotonic increasing and decreasing index stacks, `nextGreaterElements`, `dailyTemperatures`, sentinel-flushed `largestRectangleArea` in a histogram, horizontal-layer `trap1D` rainwater, and 2n circular wrap-around.",
+    "readable": "Full read of 259 lines (1044 prose words). (1,023 prose words). Covers monotonic increasing and decreasing index stacks, `nextGreaterElements`, `dailyTemperatures`, sentinel-flushed `largestRectangleArea` in a histogram, horizontal-layer `trap1D` rainwater, and 2n circular wrap-around.",
+    "concise": "1044 words across 259 lines. 1,023 words across 255 lines. Covers monotonic increasing and decreasing index stacks, `nextGreaterElements`, `dailyTemperatures`, sentinel-flushed `largestRectangleArea` in a histogram, horizontal-layer `trap1D` rainwater, and 2n circular wrap-around.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers monotonic increasing and decreasing index stacks, `nextGreaterElements`, `dailyTemperatures`, sentinel-flushed `largestRectangleArea` in a histogram, horizontal-layer `trap1D` rainwater, and 2n circular wrap-around.",
     "fast": "Measured 39.7 KB raw / 8.0 KB gzip. Covers monotonic increasing and decreasing index stacks, `nextGreaterElements`, `dailyTemperatures`, sentinel-flushed `largestRectangleArea` in a histogram, horizontal-layer `trap1D` rainwater, and 2n circular wrap-around.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers monotonic increasing and decreasing index stacks, `nextGreaterElements`, `dailyTemperatures`, sentinel-flushed `largestRectangleArea` in a histogram, horizontal-layer `trap1D` rainwater, and 2n circular wrap-around."
    },
-   "notes": "Covers monotonic increasing and decreasing index stacks, `nextGreaterElements`, `dailyTemperatures`, sentinel-flushed `largestRectangleArea` in a histogram, horizontal-layer `trap1D` rainwater, and 2n circular wrap-around."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 7B 70.2.3-5 coding patterns and 70.3-cheatsheets)."
   },
   "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.03-stack-queue-patterns.md": {
-   "sha256": "a838dbf3a85ae405d86e5c874b11d9c88cdceaaf58de1e1c38aa92b27e2ca962",
-   "lines": 350,
+   "sha256": "0d471b0e18fef0c3b7f8ad865482a3a512e1e9e2945b841f51c8378934c33f2e",
+   "lines": 356,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: TypeScript stack, ring buffer, monotonic deque, and ECMAScript Map-ordered LRU cache implementations.",
-    "readable": "Full read of 350 lines (1,148 prose words). Covers bracket validation, duplicate-aware `MinStack`, `evalRPN`, Map-backed O(n) monotonic-deque `maxSlidingWindow`, fixed-capacity `MyCircularQueue`, amortized O(1) two-stack `MyQueue`, and Map insertion-order `LRUCache`.",
-    "concise": "1,148 words across 350 lines. Covers bracket validation, duplicate-aware `MinStack`, `evalRPN`, Map-backed O(n) monotonic-deque `maxSlidingWindow`, fixed-capacity `MyCircularQueue`, amortized O(1) two-stack `MyQueue`, and Map insertion-order `LRUCache`.",
+    "readable": "Full read of 356 lines (1178 prose words). (1,148 prose words). Covers bracket validation, duplicate-aware `MinStack`, `evalRPN`, Map-backed O(n) monotonic-deque `maxSlidingWindow`, fixed-capacity `MyCircularQueue`, amortized O(1) two-stack `MyQueue`, and Map insertion-order `LRUCache`.",
+    "concise": "1178 words across 356 lines. 1,148 words across 350 lines. Covers bracket validation, duplicate-aware `MinStack`, `evalRPN`, Map-backed O(n) monotonic-deque `maxSlidingWindow`, fixed-capacity `MyCircularQueue`, amortized O(1) two-stack `MyQueue`, and Map insertion-order `LRUCache`.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers bracket validation, duplicate-aware `MinStack`, `evalRPN`, Map-backed O(n) monotonic-deque `maxSlidingWindow`, fixed-capacity `MyCircularQueue`, amortized O(1) two-stack `MyQueue`, and Map insertion-order `LRUCache`.",
     "fast": "Measured 56.5 KB raw / 10.0 KB gzip. Covers bracket validation, duplicate-aware `MinStack`, `evalRPN`, Map-backed O(n) monotonic-deque `maxSlidingWindow`, fixed-capacity `MyCircularQueue`, amortized O(1) two-stack `MyQueue`, and Map insertion-order `LRUCache`.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers bracket validation, duplicate-aware `MinStack`, `evalRPN`, Map-backed O(n) monotonic-deque `maxSlidingWindow`, fixed-capacity `MyCircularQueue`, amortized O(1) two-stack `MyQueue`, and Map insertion-order `LRUCache`."
    },
-   "notes": "Covers bracket validation, duplicate-aware `MinStack`, `evalRPN`, Map-backed O(n) monotonic-deque `maxSlidingWindow`, fixed-capacity `MyCircularQueue`, amortized O(1) two-stack `MyQueue`, and Map insertion-order `LRUCache`."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 7B 70.2.3-5 coding patterns and 70.3-cheatsheets)."
   },
   "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.04-segment-tree.md": {
-   "sha256": "f9e37bba27b0a5cde1412704fa6e12056a010d994f29775e95213736664298e2",
-   "lines": 357,
+   "sha256": "6084a7f85c08574f72daa0f62d9e04eb4976399763a2660846b0f0c1a900332b",
+   "lines": 363,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: TypeScript Segment Tree, Lazy Segment Tree, and Fenwick Tree (BIT) implementations.",
-    "readable": "Full read of 357 lines (1,088 prose words). Covers associative `SegmentTree` with neutral identity, 1-indexed `BIT` (Fenwick tree) with delta updates (`NumArray`), `LazySegmentTree` range-add/range-sum propagation, and coordinate-compressed `countSmaller`.",
-    "concise": "1,088 words across 357 lines. Covers associative `SegmentTree` with neutral identity, 1-indexed `BIT` (Fenwick tree) with delta updates (`NumArray`), `LazySegmentTree` range-add/range-sum propagation, and coordinate-compressed `countSmaller`.",
+    "readable": "Full read of 363 lines (1105 prose words). (1,088 prose words). Covers associative `SegmentTree` with neutral identity, 1-indexed `BIT` (Fenwick tree) with delta updates (`NumArray`), `LazySegmentTree` range-add/range-sum propagation, and coordinate-compressed `countSmaller`.",
+    "concise": "1105 words across 363 lines. 1,088 words across 357 lines. Covers associative `SegmentTree` with neutral identity, 1-indexed `BIT` (Fenwick tree) with delta updates (`NumArray`), `LazySegmentTree` range-add/range-sum propagation, and coordinate-compressed `countSmaller`.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers associative `SegmentTree` with neutral identity, 1-indexed `BIT` (Fenwick tree) with delta updates (`NumArray`), `LazySegmentTree` range-add/range-sum propagation, and coordinate-compressed `countSmaller`.",
     "fast": "Measured 77.6 KB raw / 10.0 KB gzip. Covers associative `SegmentTree` with neutral identity, 1-indexed `BIT` (Fenwick tree) with delta updates (`NumArray`), `LazySegmentTree` range-add/range-sum propagation, and coordinate-compressed `countSmaller`.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers associative `SegmentTree` with neutral identity, 1-indexed `BIT` (Fenwick tree) with delta updates (`NumArray`), `LazySegmentTree` range-add/range-sum propagation, and coordinate-compressed `countSmaller`."
    },
-   "notes": "Covers associative `SegmentTree` with neutral identity, 1-indexed `BIT` (Fenwick tree) with delta updates (`NumArray`), `LazySegmentTree` range-add/range-sum propagation, and coordinate-compressed `countSmaller`."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 7B 70.2.3-5 coding patterns and 70.3-cheatsheets)."
   },
   "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.05-quick-select-reservoir-sampling.md": {
-   "sha256": "b37eef187985a9bc05fadf45b80b79102f015a0ba90fc9fac69a2be7da3549a8",
-   "lines": 312,
+   "sha256": "7464334060fd3d0532e39edea28b6871d977f06e5714058c3bc892b1d5494fa9",
+   "lines": 318,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: TypeScript 3-way Quickselect, Algorithm R Reservoir Sampling, and Fisher-Yates shuffle.",
-    "readable": "Full read of 312 lines (944 prose words). Covers 3-way Dutch-flag randomized `quickSelect` for `findKthLargest` and `topKFrequent`, Vitter Algorithm R `reservoirSample` and `StreamSampler<T>` with uniform k-subset induction proof, and Fisher-Yates `shuffle`.",
-    "concise": "944 words across 312 lines. Covers 3-way Dutch-flag randomized `quickSelect` for `findKthLargest` and `topKFrequent`, Vitter Algorithm R `reservoirSample` and `StreamSampler<T>` with uniform k-subset induction proof, and Fisher-Yates `shuffle`.",
+    "readable": "Full read of 318 lines (979 prose words). Covers 3-way Dutch-flag randomized `quickSelect` for `findKthLargest` and `topKFrequent`, Vitter Algorithm R `reservoirSample` and `StreamSampler<T>` with uniform k-subset induction proof, and Fisher-Yates `shuffle`.",
+    "concise": "979 words across 318 lines. Covers 3-way Dutch-flag randomized `quickSelect` for `findKthLargest` and `topKFrequent`, Vitter Algorithm R `reservoirSample` and `StreamSampler<T>` with uniform k-subset induction proof, and Fisher-Yates `shuffle`.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers 3-way Dutch-flag randomized `quickSelect` for `findKthLargest` and `topKFrequent`, Vitter Algorithm R `reservoirSample` and `StreamSampler<T>` with uniform k-subset induction proof, and Fisher-Yates `shuffle`.",
     "fast": "Measured 50.9 KB raw / 9.0 KB gzip. Covers 3-way Dutch-flag randomized `quickSelect` for `findKthLargest` and `topKFrequent`, Vitter Algorithm R `reservoirSample` and `StreamSampler<T>` with uniform k-subset induction proof, and Fisher-Yates `shuffle`.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers 3-way Dutch-flag randomized `quickSelect` for `findKthLargest` and `topKFrequent`, Vitter Algorithm R `reservoirSample` and `StreamSampler<T>` with uniform k-subset induction proof, and Fisher-Yates `shuffle`."
    },
-   "notes": "Covers 3-way Dutch-flag randomized `quickSelect` for `findKthLargest` and `topKFrequent`, Vitter Algorithm R `reservoirSample` and `StreamSampler<T>` with uniform k-subset induction proof, and Fisher-Yates `shuffle`."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 7B 70.2.3-5 coding patterns and 70.3-cheatsheets)."
   },
   "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/INDEX.md": {
-   "sha256": "5029ba63af1911f23e0446a7ff2ca0296c9c7df7f7fcb2eefdde8a6b7c9b7763",
-   "lines": 55,
+   "sha256": "82c7fae2ac80d80ab72a90c24088bcf084d95f58e957a18171fc3d4a3c4957c5",
+   "lines": 57,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Priority queues, amortized O(n) monotonic stacks/deques, O(log n) range trees, and expected O(n) selection/sampling.",
-    "readable": "Full read of 55 lines (124 prose words). Learning-flow index for heaps, monotonic stacks, classic stack/queue designs, segment and Fenwick trees, and quickselect/reservoir sampling.",
-    "concise": "124 words across 55 lines. Learning-flow index for heaps, monotonic stacks, classic stack/queue designs, segment and Fenwick trees, and quickselect/reservoir sampling.",
+    "readable": "Full read of 57 lines (128 prose words). Learning-flow index for heaps, monotonic stacks, classic stack/queue designs, segment and Fenwick trees, and quickselect/reservoir sampling.",
+    "concise": "128 words across 57 lines. Learning-flow index for heaps, monotonic stacks, classic stack/queue designs, segment and Fenwick trees, and quickselect/reservoir sampling.",
     "focused": "Single canonical home with no duplicate code across chapters. Learning-flow index for heaps, monotonic stacks, classic stack/queue designs, segment and Fenwick trees, and quickselect/reservoir sampling.",
     "fast": "Measured 10.5 KB raw / 3.4 KB gzip. Learning-flow index for heaps, monotonic stacks, classic stack/queue designs, segment and Fenwick trees, and quickselect/reservoir sampling.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for heaps, monotonic stacks, classic stack/queue designs, segment and Fenwick trees, and quickselect/reservoir sampling."
    },
-   "notes": "Learning-flow index for heaps, monotonic stacks, classic stack/queue designs, segment and Fenwick trees, and quickselect/reservoir sampling."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 7B 70.2.3-5 coding patterns and 70.3-cheatsheets)."
   },
   "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/REVISION.md": {
-   "sha256": "2cd20d0d65c15cea6015b047dceaec318aaf7b4186df2d3507a2022d499c77f6",
+   "sha256": "5eca10a93978852934450464738a2c83beb147269e86f99ac5292c438ca2fd62",
    "lines": 109,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Heap, monotonic stack, queue, segment/Fenwick tree, quickselect, and Algorithm R invariants.",
-    "readable": "Full read of 109 lines (723 prose words). Active-recall Q&A companion covering partial heap order, monotonic stack amortized O(n) pop bounds, `Array.shift` costs, Fenwick delta updates, 3-way quickselect duplicate handling, and uniform k-subset reservoir sampling.",
-    "concise": "723 words across 109 lines. Active-recall Q&A companion covering partial heap order, monotonic stack amortized O(n) pop bounds, `Array.shift` costs, Fenwick delta updates, 3-way quickselect duplicate handling, and uniform k-subset reservoir sampling.",
+    "readable": "Full read of 109 lines (732 prose words). Active-recall Q&A companion covering partial heap order, monotonic stack amortized O(n) pop bounds, `Array.shift` costs, Fenwick delta updates, 3-way quickselect duplicate handling, and uniform k-subset reservoir sampling.",
+    "concise": "732 words across 109 lines. Active-recall Q&A companion covering partial heap order, monotonic stack amortized O(n) pop bounds, `Array.shift` costs, Fenwick delta updates, 3-way quickselect duplicate handling, and uniform k-subset reservoir sampling.",
     "focused": "Single canonical home with no duplicate code across chapters. Active-recall Q&A companion covering partial heap order, monotonic stack amortized O(n) pop bounds, `Array.shift` costs, Fenwick delta updates, 3-way quickselect duplicate handling, and uniform k-subset reservoir sampling.",
     "fast": "Measured 13.4 KB raw / 4.4 KB gzip. Active-recall Q&A companion covering partial heap order, monotonic stack amortized O(n) pop bounds, `Array.shift` costs, Fenwick delta updates, 3-way quickselect duplicate handling, and uniform k-subset reservoir sampling.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering partial heap order, monotonic stack amortized O(n) pop bounds, `Array.shift` costs, Fenwick delta updates, 3-way quickselect duplicate handling, and uniform k-subset reservoir sampling."
    },
-   "notes": "Active-recall Q&A companion covering partial heap order, monotonic stack amortized O(n) pop bounds, `Array.shift` costs, Fenwick delta updates, 3-way quickselect duplicate handling, and uniform k-subset reservoir sampling."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 7B 70.2.3-5 coding patterns and 70.3-cheatsheets)."
   },
   "70-interview-toolkit/70.2-coding-patterns/05-math-and-number-theory/70.2.5.01-number-theory-combinatorics.md": {
-   "sha256": "1bf133e215121764c5533e46fc05c91c2ab849a01356662197f6d01fc56dea02",
-   "lines": 247,
+   "sha256": "82555d96072f7986a28ad071a57d58b86b9ab8670209aacbd50f2c80f5b96f2e",
+   "lines": 257,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Java overflow-safe number theory and combinatorics templates (`Math.floorMod`, binary exponentiation, Fermat inverse).",
-    "readable": "Full read of 247 lines (1,341 prose words). Covers `i <= n / i` trial division, `O(n log log n)` Sieve of Eratosthenes, `Integer.MIN_VALUE`-safe Euclidean `gcd`/`lcm` and Extended GCD, `Math.floorMod` and binary exponentiation (`1_000_000_007L`), Fermat `nCr`, and stars-and-bars.",
-    "concise": "1,341 words across 247 lines. Covers `i <= n / i` trial division, `O(n log log n)` Sieve of Eratosthenes, `Integer.MIN_VALUE`-safe Euclidean `gcd`/`lcm` and Extended GCD, `Math.floorMod` and binary exponentiation (`1_000_000_007L`), Fermat `nCr`, and stars-and-bars.",
+    "readable": "Full read of 257 lines (1361 prose words). (1,341 prose words). Covers `i <= n / i` trial division, `O(n log log n)` Sieve of Eratosthenes, `Integer.MIN_VALUE`-safe Euclidean `gcd`/`lcm` and Extended GCD, `Math.floorMod` and binary exponentiation (`1_000_000_007L`), Fermat `nCr`, and stars-and-bars.",
+    "concise": "1361 words across 257 lines. 1,341 words across 247 lines. Covers `i <= n / i` trial division, `O(n log log n)` Sieve of Eratosthenes, `Integer.MIN_VALUE`-safe Euclidean `gcd`/`lcm` and Extended GCD, `Math.floorMod` and binary exponentiation (`1_000_000_007L`), Fermat `nCr`, and stars-and-bars.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers `i <= n / i` trial division, `O(n log log n)` Sieve of Eratosthenes, `Integer.MIN_VALUE`-safe Euclidean `gcd`/`lcm` and Extended GCD, `Math.floorMod` and binary exponentiation (`1_000_000_007L`), Fermat `nCr`, and stars-and-bars.",
     "fast": "Measured 44.2 KB raw / 9.1 KB gzip. Covers `i <= n / i` trial division, `O(n log log n)` Sieve of Eratosthenes, `Integer.MIN_VALUE`-safe Euclidean `gcd`/`lcm` and Extended GCD, `Math.floorMod` and binary exponentiation (`1_000_000_007L`), Fermat `nCr`, and stars-and-bars.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers `i <= n / i` trial division, `O(n log log n)` Sieve of Eratosthenes, `Integer.MIN_VALUE`-safe Euclidean `gcd`/`lcm` and Extended GCD, `Math.floorMod` and binary exponentiation (`1_000_000_007L`), Fermat `nCr`, and stars-and-bars."
    },
-   "notes": "Covers `i <= n / i` trial division, `O(n log log n)` Sieve of Eratosthenes, `Integer.MIN_VALUE`-safe Euclidean `gcd`/`lcm` and Extended GCD, `Math.floorMod` and binary exponentiation (`1_000_000_007L`), Fermat `nCr`, and stars-and-bars."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 7B 70.2.3-5 coding patterns and 70.3-cheatsheets)."
   },
   "70-interview-toolkit/70.2-coding-patterns/05-math-and-number-theory/INDEX.md": {
-   "sha256": "f2b541ec1e0898beae5b0c51d613e5610d818cbbc61f508c7b554564444abedb",
-   "lines": 30,
+   "sha256": "34711ae942183dc268c90c296b172f74ebef8ebfc438c810b3357fcd573fad0b",
+   "lines": 32,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Fixed-width overflow prevention, prime-modulus Fermat inversion, and stars-and-bars counting.",
-    "readable": "Full read of 30 lines (96 prose words). Learning-flow index for interview math and number theory: primality, sieve of Eratosthenes, Euclidean GCD/LCM, modular exponentiation/inversion, and combinatorics.",
-    "concise": "96 words across 30 lines. Learning-flow index for interview math and number theory: primality, sieve of Eratosthenes, Euclidean GCD/LCM, modular exponentiation/inversion, and combinatorics.",
+    "readable": "Full read of 32 lines (96 prose words). Learning-flow index for interview math and number theory: primality, sieve of Eratosthenes, Euclidean GCD/LCM, modular exponentiation/inversion, and combinatorics.",
+    "concise": "96 words across 32 lines. Learning-flow index for interview math and number theory: primality, sieve of Eratosthenes, Euclidean GCD/LCM, modular exponentiation/inversion, and combinatorics.",
     "focused": "Single canonical home with no duplicate code across chapters. Learning-flow index for interview math and number theory: primality, sieve of Eratosthenes, Euclidean GCD/LCM, modular exponentiation/inversion, and combinatorics.",
     "fast": "Measured 7.9 KB raw / 2.8 KB gzip. Learning-flow index for interview math and number theory: primality, sieve of Eratosthenes, Euclidean GCD/LCM, modular exponentiation/inversion, and combinatorics.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for interview math and number theory: primality, sieve of Eratosthenes, Euclidean GCD/LCM, modular exponentiation/inversion, and combinatorics."
    },
-   "notes": "Learning-flow index for interview math and number theory: primality, sieve of Eratosthenes, Euclidean GCD/LCM, modular exponentiation/inversion, and combinatorics."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 7B 70.2.3-5 coding patterns and 70.3-cheatsheets)."
   },
   "70-interview-toolkit/70.2-coding-patterns/05-math-and-number-theory/REVISION.md": {
-   "sha256": "c11ad8c61bdd19d67de3371dabba64d724fdefc5ae213ac8c9446206356ffc6a",
+   "sha256": "56849804c056ff45b8b63aefdce9f36930f3f724d417aaac56a65793ee533ccc",
    "lines": 59,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Modular arithmetic, Euclidean GCD/LCM, Sieve of Eratosthenes, and combinatorial probability.",
-    "readable": "Full read of 59 lines (511 prose words). Active-recall Q&A companion covering Fermat vs Extended Euclidean modular inverses, residue multiplication overflow, factorial `n < MOD` constraints, overflow-safe LCM, sieve `p^2` start, and conditional probability without replacement.",
-    "concise": "511 words across 59 lines. Active-recall Q&A companion covering Fermat vs Extended Euclidean modular inverses, residue multiplication overflow, factorial `n < MOD` constraints, overflow-safe LCM, sieve `p^2` start, and conditional probability without replacement.",
+    "readable": "Full read of 59 lines (521 prose words). Active-recall Q&A companion covering Fermat vs Extended Euclidean modular inverses, residue multiplication overflow, factorial `n < MOD` constraints, overflow-safe LCM, sieve `p^2` start, and conditional probability without replacement.",
+    "concise": "521 words across 59 lines. Active-recall Q&A companion covering Fermat vs Extended Euclidean modular inverses, residue multiplication overflow, factorial `n < MOD` constraints, overflow-safe LCM, sieve `p^2` start, and conditional probability without replacement.",
     "focused": "Single canonical home with no duplicate code across chapters. Active-recall Q&A companion covering Fermat vs Extended Euclidean modular inverses, residue multiplication overflow, factorial `n < MOD` constraints, overflow-safe LCM, sieve `p^2` start, and conditional probability without replacement.",
     "fast": "Measured 10.6 KB raw / 3.7 KB gzip. Active-recall Q&A companion covering Fermat vs Extended Euclidean modular inverses, residue multiplication overflow, factorial `n < MOD` constraints, overflow-safe LCM, sieve `p^2` start, and conditional probability without replacement.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering Fermat vs Extended Euclidean modular inverses, residue multiplication overflow, factorial `n < MOD` constraints, overflow-safe LCM, sieve `p^2` start, and conditional probability without replacement."
    },
-   "notes": "Active-recall Q&A companion covering Fermat vs Extended Euclidean modular inverses, residue multiplication overflow, factorial `n < MOD` constraints, overflow-safe LCM, sieve `p^2` start, and conditional probability without replacement."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 7B 70.2.3-5 coding patterns and 70.3-cheatsheets)."
   },
   "70-interview-toolkit/70.2-coding-patterns/INDEX.md": {
    "sha256": "749b5dcde8934a15472892992f2d4457af44705071f99ed05bea4047f91ded66",
@@ -13173,151 +13173,151 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 7A 70.1-behavioral and 70.2.1-2 coding patterns)."
   },
   "70-interview-toolkit/70.3-cheatsheets/70.3.01-javascript-cheat-sheet.md": {
-   "sha256": "95072b0987cdaa489c5204cbfc7b91963e70c01ef22bb87c347e80d112b94fe1",
+   "sha256": "1638e7c6e3f3553a89380eda53ce14c2af452d7a7aa082c106825bf2616e1489",
    "lines": 177,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 JS runtime reference verified against ES2025/ES2026 Iterator Helpers, Set methods, Promise.try, microtasks, and V8 internals.",
-    "readable": "Full read of 177 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "566 words. Dense syntax and runtime behavior tables for rapid pre-interview recall.",
+    "readable": "Full read of 177 lines (570 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "570 words across 177 lines. Dense syntax and runtime behavior tables for rapid pre-interview recall.",
     "focused": "Canonical JS rapid-recall sheet; links to 10.1 for deep derivations.",
-    "fast": "31.2 KB raw / 7.9 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 31.2 KB raw / 7.9 KB gzip (fast scan via headings and direct links.)",
     "best": "Highlights coercion traps, event-loop starvation risk, and weak-reference GC boundary."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 7B 70.2.3-5 coding patterns and 70.3-cheatsheets)."
   },
   "70-interview-toolkit/70.3-cheatsheets/70.3.02-typescript-cheat-sheet.md": {
-   "sha256": "7a6f70ee4fa751c8ac512ae7ece248713fd5e7449a3eb33f1591f733bc0449fa",
-   "lines": 197,
+   "sha256": "b843597abee3046fc5cceb83cb57a7107f0c65af96036ba9209acd93cd643248",
+   "lines": 199,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 TypeScript 5.x/6.x/7.0 reference verified against current compiler docs for narrowing, variance, conditional/mapped types, and strict tsconfig flags.",
-    "readable": "Full read of 197 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "696 words. Compact type-level patterns and compiler flag cheat tables.",
+    "readable": "Full read of 199 lines (708 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "708 words across 199 lines. Compact type-level patterns and compiler flag cheat tables.",
     "focused": "Canonical TS rapid-recall sheet; links to 10.2 without duplicating full derivations.",
-    "fast": "35.2 KB raw / 7.8 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 35.2 KB raw / 7.8 KB gzip (fast scan via headings and direct links.)",
     "best": "Calls out unsoundness boundary (bivariant methods, type assertions, excess property checks) and compilation limit."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 7B 70.2.3-5 coding patterns and 70.3-cheatsheets)."
   },
   "70-interview-toolkit/70.3-cheatsheets/70.3.03-react-nextjs-cheat-sheet.md": {
-   "sha256": "bfcbce91a90254703c08f26cc2e80391ec6556f47206931ed5a32005bbc7302d",
-   "lines": 393,
+   "sha256": "dd0eb48e7fef15747c4555b3cd20ce9b4806c5db734d787838a3f2b4cf16ce90",
+   "lines": 397,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 React 19.2/19.3 and Next.js 16.4 reference verified against current release docs for Actions, Activity, ViewTransition, async params, and Cache Components.",
-    "readable": "Full read of 393 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "818 words. High-signal hooks, rendering, and App Router caching decision matrices.",
+    "readable": "Full read of 397 lines (834 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "834 words across 397 lines. High-signal hooks, rendering, and App Router caching decision matrices.",
     "focused": "Canonical React/Next.js recall sheet; defers deep traces to 10.3 and 10.4.",
-    "fast": "65.8 KB raw / 12.0 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 65.8 KB raw / 12.0 KB gzip (fast scan via headings and direct links.)",
     "best": "Marks Server/Client serialization boundary, hydration mismatch failure, and stale-cache risk."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 7B 70.2.3-5 coding patterns and 70.3-cheatsheets)."
   },
   "70-interview-toolkit/70.3-cheatsheets/70.3.04-backend-cheat-sheet.md": {
-   "sha256": "eeaa7f0e45499c7b467b4cdbb4ddda6e3d63851869b17f0e4624b499cd9f4021",
+   "sha256": "c073b5f4a7f8725d1489d363d2f7e0311c80f3f9b4c0f3abfe031bec4c50d053",
+   "lines": 186,
+   "genre": "chapter",
+   "status": "read",
+   "reviewed": "2026-11-24",
+   "evidence": {
+    "current": "2026-11 repository governance/reference doc (70.3.04-backend-cheat-sheet) verified against current 34-gate tooling.",
+    "readable": "Full read of 186 lines (1108 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "1108 words across 186 lines. Clear operational documentation for 70.3.04-backend-cheat-sheet grounded in current scripts and contracts.",
+    "focused": "Canonical docs/ home for 70.3.04-backend-cheat-sheet; avoids duplicating AGENTS.md or script logic.",
+    "fast": "Measured 28.7 KB raw / 8.8 KB gzip (fast scan via headings and direct links.)",
+    "best": "States explicit gate boundary, failure condition, and verification limit for 70.3.04-backend-cheat-sheet."
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 7B 70.2.3-5 coding patterns and 70.3-cheatsheets)."
+  },
+  "70-interview-toolkit/70.3-cheatsheets/70.3.05-system-design-cheat-sheet.md": {
+   "sha256": "ef0b313fd4b7d7de133631d8db256c32eb07214afd6291feec1a623c99205754",
    "lines": 174,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-15",
-   "evidence": {
-    "current": "2026-11 repository governance/reference doc (70.3.04-backend-cheat-sheet) verified against current 34-gate tooling.",
-    "readable": "Full read of 174 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "1060 words. Clear operational documentation for 70.3.04-backend-cheat-sheet grounded in current scripts and contracts.",
-    "focused": "Canonical docs/ home for 70.3.04-backend-cheat-sheet; avoids duplicating AGENTS.md or script logic.",
-    "fast": "28.7 KB raw / 8.8 KB gzip; fast scan via headings and direct links.",
-    "best": "States explicit gate boundary, failure condition, and verification limit for 70.3.04-backend-cheat-sheet."
-   },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
-  },
-  "70-interview-toolkit/70.3-cheatsheets/70.3.05-system-design-cheat-sheet.md": {
-   "sha256": "5a5b4520cbc4b476954d0d97a65a488de5195c3f1369c99c6d5dddee3956f162",
-   "lines": 162,
-   "genre": "chapter",
-   "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 distributed systems numbers, back-of-the-envelope formulas, and architecture blocks verified against current hardware and cloud scale ranges.",
-    "readable": "Full read of 162 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "935 words. Latency numbers, capacity heuristics, and pattern comparison tables.",
+    "readable": "Full read of 174 lines (963 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "963 words across 174 lines. Latency numbers, capacity heuristics, and pattern comparison tables.",
     "focused": "Canonical system design recall sheet; defers full case studies to 30-architecture.",
-    "fast": "25.9 KB raw / 9.0 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 25.9 KB raw / 9.0 KB gzip (fast scan via headings and direct links.)",
     "best": "States CAP/PACELC trade-off, tail-latency amplification risk, and sharding limit."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 7B 70.2.3-5 coding patterns and 70.3-cheatsheets)."
   },
   "70-interview-toolkit/70.3-cheatsheets/70.3.06-docker-kubernetes-cicd-cheat-sheet.md": {
-   "sha256": "3ed1c78437511a954f83e526895d03885ea2c6e442d48cf225138a914c04d55d",
-   "lines": 244,
+   "sha256": "79f2953f465a52e340ff69c900f71bc585d368bcdc4babfd04265a2c22aa55d9",
+   "lines": 252,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 repository governance/reference doc (70.3.06-docker-kubernetes-cicd-cheat-sheet) verified against current 34-gate tooling.",
-    "readable": "Full read of 244 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "760 words. Clear operational documentation for 70.3.06-docker-kubernetes-cicd-cheat-sheet grounded in current scripts and contracts.",
+    "readable": "Full read of 252 lines (769 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "769 words across 252 lines. Clear operational documentation for 70.3.06-docker-kubernetes-cicd-cheat-sheet grounded in current scripts and contracts.",
     "focused": "Canonical docs/ home for 70.3.06-docker-kubernetes-cicd-cheat-sheet; avoids duplicating AGENTS.md or script logic.",
-    "fast": "36.3 KB raw / 9.2 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 36.3 KB raw / 9.2 KB gzip (fast scan via headings and direct links.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for 70.3.06-docker-kubernetes-cicd-cheat-sheet."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 7B 70.2.3-5 coding patterns and 70.3-cheatsheets)."
   },
   "70-interview-toolkit/70.3-cheatsheets/70.3.07-sql-data-modeling-cheat-sheet.md": {
-   "sha256": "4b6dd09ba0f685fbb7d27f19d642acc192b8b0c08b97cd5c41cc63d0e569ca84",
-   "lines": 225,
+   "sha256": "18a8954f04156a72c1996b062d0f9adf9adb591c23b943b8da786d54775a26cc",
+   "lines": 231,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 repository governance/reference doc (70.3.07-sql-data-modeling-cheat-sheet) verified against current 34-gate tooling.",
-    "readable": "Full read of 225 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "1074 words. Clear operational documentation for 70.3.07-sql-data-modeling-cheat-sheet grounded in current scripts and contracts.",
+    "readable": "Full read of 231 lines (1095 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "1095 words across 231 lines. Clear operational documentation for 70.3.07-sql-data-modeling-cheat-sheet grounded in current scripts and contracts.",
     "focused": "Canonical docs/ home for 70.3.07-sql-data-modeling-cheat-sheet; avoids duplicating AGENTS.md or script logic.",
-    "fast": "32.5 KB raw / 9.0 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 32.5 KB raw / 9.0 KB gzip (fast scan via headings and direct links.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for 70.3.07-sql-data-modeling-cheat-sheet."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 7B 70.2.3-5 coding patterns and 70.3-cheatsheets)."
   },
   "70-interview-toolkit/70.3-cheatsheets/INDEX.md": {
-   "sha256": "f1f0f0b3c6109e457997dcc038103db8812f26af2e811afab795e5b57d6f7b20",
+   "sha256": "5a0985d7410aa07274f9b00880c9a394d62763bb895cc3e9cd64ee3d795569f2",
    "lines": 78,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 stack-wide cheatsheet index verified against JS/TS, React/Next.js, Node/DB, System Design, DevOps, and AI/LLM chapters.",
-    "readable": "Full read of 78 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "286 words. Maps seven rapid-recall sheets in study order without duplicating chapter prose.",
+    "readable": "Full read of 78 lines (287 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "287 words across 78 lines. Maps seven rapid-recall sheets in study order without duplicating chapter prose.",
     "focused": "Canonical hub for 70.3 rapid recall; links to companion REVISION.md.",
-    "fast": "14.0 KB raw / 4.4 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 14.0 KB raw / 4.4 KB gzip (fast scan via headings and direct links.)",
     "best": "Flags the boundary between rapid recall and deep conceptual chapters."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 7B 70.2.3-5 coding patterns and 70.3-cheatsheets)."
   },
   "70-interview-toolkit/70.3-cheatsheets/REVISION.md": {
-   "sha256": "c6c14f41011b5078c41e5d085aca322732c196c5248150c3c5c9934a9c3610f8",
+   "sha256": "ee800ddce093afb7d3710c023d6a57a361f1cbbb573e954475140900e3bb3f25",
    "lines": 167,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 companion drill verified against all seven 70.3 cheatsheets.",
-    "readable": "Full read of 167 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "1018 words. Source-linked Q/A recall prompts across frontend, backend, system design, DevOps, and AI engineering.",
+    "readable": "Full read of 167 lines (1031 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "1031 words across 167 lines. Source-linked Q/A recall prompts across frontend, backend, system design, DevOps, and AI engineering.",
     "focused": "Canonical revision companion for 70.3 with no duplicate reference tables.",
-    "fast": "16.7 KB raw / 5.6 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 16.7 KB raw / 5.6 KB gzip (fast scan via headings and direct links.)",
     "best": "Tests failure-mode recall and decision boundary under interview time limits."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 7B 70.2.3-5 coding patterns and 70.3-cheatsheets)."
   },
   "70-interview-toolkit/INDEX.md": {
-   "sha256": "0372ababab5bea3c8698640ce45628c1f0685e014d92ccdbb5e94ea0d5eb69da",
+   "sha256": "1dd099b02d185a6015f3e8b781646e96654e9aa5b799ae151965991b7dd9ffd9",
    "lines": 66,
    "genre": "index",
    "status": "read",
@@ -13330,7 +13330,7 @@
     "fast": "Measured 11.4 KB raw / 4.1 KB gzip. Section-level learning-flow index for 70-interview-toolkit across behavioral stories (70.1), algorithmic coding patterns (70.2), and last-mile technical cheat sheets (70.3).",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Section-level learning-flow index for 70-interview-toolkit across behavioral stories (70.1), algorithmic coding patterns (70.2), and last-mile technical cheat sheets (70.3)."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 7A 70.1-behavioral and 70.2.1-2 coding patterns)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 7B 70.2.3-5 coding patterns and 70.3-cheatsheets)."
   },
   "80-lanes-abroad-full-stack/80.01-take-home-playbook.md": {
    "sha256": "f83a5b133dddfb2799e06c80190580ed942a69dad20e70ed74f9ea3835ee8299",
@@ -14302,7 +14302,7 @@
    }
   },
   "INDEX.md": {
-   "sha256": "a4ca1d00bdc6a2be68f634f0eb74fc5192233c897d7f80963e1caf54ab29eed1",
+   "sha256": "faef29212137c928c71e8b4fbb1a14e3e186ab9d6282a6163b39da9c34b9a06c",
    "lines": 206,
    "genre": "index",
    "status": "read",
@@ -14315,7 +14315,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Maintains strict zero-broken-link boundary across 991 tracked markdown files."
    },
-   "notes": "Synced live read-time and counts after Wave 6 (60-realtime and 00-strategy)."
+   "notes": "Synced live read-time and counts after Wave 7B (70.2.3-5 coding patterns and 70.3-cheatsheets)."
   },
   "README.md": {
    "sha256": "d885528e428ea38f115bc62b8bac76e421c317edae2aeb312516f3f01fd17a5f",
@@ -14603,7 +14603,7 @@
    "notes": "Updated section-pass rule 3 to permit full comprehension rewrites while preserving metadata, anchors, and authored REVISION.md pairs."
   },
   "docs/api-contract.md": {
-   "sha256": "adfa38cee721e83138752ecbb7e3049551f887319e5d8b8904d49abbbc42064e",
+   "sha256": "951f74fef0a14740e246cd170e1aff18498b91bfef8e2b9db8c4624cd8b657dd",
    "lines": 119,
    "genre": "doc",
    "status": "read",
@@ -14616,7 +14616,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Wave 6 (60-realtime and 00-strategy)."
+   "notes": "Synced live read-time and counts after Wave 7B (70.2.3-5 coding patterns and 70.3-cheatsheets)."
   },
   "docs/deployment.md": {
    "sha256": "ea99a37f317c2a867f6f19756e78b15e15853b729507e8f02c3d9e64d00d59bb",

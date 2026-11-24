@@ -11,15 +11,17 @@
 
 ## Reading Passes
 
-Enumerate choices with backtracking first, watching which state must be restored for a sibling branch. Then read DP and identify repeated states that can be reused. Finish with bit representation only after deciding what the state means; fitting it into a word does not make an exponential state space small.
+Enumerate choices with backtracking first, watching which state must be restored for a sibling branch. Then read dynamic programming (DP) and identify repeated states that can be reused.
+
+Finish with bit representation only after deciding what the state means. Fitting a state into a fixed-width word does not make an exponential state space small.
 
 ## The 3 patterns
 
 | # | File | When to recognize | Role priority | General importance | Read time |
 | --: | ------ | ------------------- | --- | --- | ----------: |
-| 01 | [Backtracking](70.2.3.01-backtracking.md) | "Generate all permutations/combinations/subsets", N-Queens, Sudoku | Essential | Important | 15 min |
-| 02 | [Dynamic Programming](70.2.3.02-dynamic-programming.md) | "Count ways, min/max cost, longest common subsequence, knapsack" | Essential | Important | 12 min |
-| 03 | [Bit Manipulation](70.2.3.03-bit-manipulation.md) | "XOR tricks, bitmask subset enumeration, popcount, single number" | Optional | Specialized | 13 min |
+| 01 | [Backtracking](70.2.3.01-backtracking.md) | "Generate all permutations, combinations, or subsets", N-Queens, Sudoku | Essential | Important | 15 min |
+| 02 | [Dynamic Programming](70.2.3.02-dynamic-programming.md) | "Count ways, minimum or maximum cost, longest common subsequence, or knapsack" | Essential | Important | 12 min |
+| 03 | [Bit Manipulation](70.2.3.03-bit-manipulation.md) | "Exclusive OR (XOR) tricks, bitmask subset enumeration, popcount, or single number" | Optional | Specialized | 13 min |
 
 ---
 
@@ -39,8 +41,8 @@ Memoization reuses repeated states; runtime still depends on the number of disti
 
 ## Cross-References
 
-- [Graphs, Trees & Grids](../02-graphs-trees-grids/INDEX.md) — backtracking = DFS over choice space with undo.
-- [Heaps, Stacks & Selection](../04-heaps-stacks-selection/INDEX.md) — greedy-with-structure alternatives to DP.
+- [Graphs, Trees & Grids](../02-graphs-trees-grids/INDEX.md) — backtracking is depth-first search (DFS) over a choice space with undo.
+- [Heaps, Stacks & Selection](../04-heaps-stacks-selection/INDEX.md) — greedy-with-structure alternatives to dynamic programming (DP).
 
 ---
 

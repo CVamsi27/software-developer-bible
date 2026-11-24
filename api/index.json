@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "9497d51eb52d93aa4f7fa5eb04dd7d33992153c3e5192af64a205041be83a4c9",
+ "corpus_digest": "55e92b2893f7c0dc747e3d08cf359fe9db397b31613af1536fa9b12533390e9c",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5404
+  "read_minutes": 5405
  },
  "chapters": [
   {
@@ -7237,7 +7237,7 @@
     "cheat-sheet",
     "reference"
    ],
-   "m": 5
+   "m": 6
   },
   {
    "p": "70-interview-toolkit/70.3-cheatsheets/70.3.05-system-design-cheat-sheet.html",

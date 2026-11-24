@@ -28082,7 +28082,7 @@
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization/70.2.3.01-backtracking.md",
-      "sha256": "58bcc3e699d536fcd168239e8d8461ad435f921682d3b8fde4ba6a21519d4fc7",
+      "sha256": "cf5e704f1374040dffd943199993c4e2dd4ce770e1f10d71ee1d4490c686fa66",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -28108,18 +28108,18 @@
       },
       "review": {
         "path": "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization/70.2.3.01-backtracking.md",
-        "sha256": "58bcc3e699d536fcd168239e8d8461ad435f921682d3b8fde4ba6a21519d4fc7",
+        "sha256": "cf5e704f1374040dffd943199993c4e2dd4ce770e1f10d71ee1d4490c686fa66",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
-        "fullContentRead": false,
-        "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true,
+        "notes": "Wave 7B C1-C8 refinement (2026-11-24): Full read of 368 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization/70.2.3.02-dynamic-programming.md",
-      "sha256": "4966afeda0827828bb8b5b7e913498c9150c3501aa62c4f03589dfd050fa6552",
+      "sha256": "8f26e1756bf0ec2f99f9baf1e58353a8d70da7d3b7438f696218cc8f8c879b12",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -28145,18 +28145,18 @@
       },
       "review": {
         "path": "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization/70.2.3.02-dynamic-programming.md",
-        "sha256": "4966afeda0827828bb8b5b7e913498c9150c3501aa62c4f03589dfd050fa6552",
+        "sha256": "8f26e1756bf0ec2f99f9baf1e58353a8d70da7d3b7438f696218cc8f8c879b12",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
-        "fullContentRead": false,
-        "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true,
+        "notes": "Wave 7B C1-C8 refinement (2026-11-24): Full read of 306 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization/70.2.3.03-bit-manipulation.md",
-      "sha256": "9ab5bdad330afecd111e69ab7541cec79a16549c5093e07349276e8abba7c46b",
+      "sha256": "9530d4bc5ab512226d85abbaaa3aaf7bfbcd6199bd8df607b6160dab4d902703",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -28182,18 +28182,18 @@
       },
       "review": {
         "path": "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization/70.2.3.03-bit-manipulation.md",
-        "sha256": "9ab5bdad330afecd111e69ab7541cec79a16549c5093e07349276e8abba7c46b",
+        "sha256": "9530d4bc5ab512226d85abbaaa3aaf7bfbcd6199bd8df607b6160dab4d902703",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
-        "fullContentRead": false,
-        "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Priority badge parent depth corrected to the canonical importance guide.",
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true,
+        "notes": "Wave 7B C1-C8 refinement (2026-11-24): Full read of 310 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization/INDEX.md",
-      "sha256": "99e6168aa527a7e6967c107b94371a7545678cbfa2b479b9b89e8f1d6f27ba04",
+      "sha256": "8c7d4ed2d0fa28f4f89695f12f0b1e7f5af8c59935db3f7ab853cdddf88a28f5",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -28212,18 +28212,18 @@
       },
       "review": {
         "path": "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization/INDEX.md",
-        "sha256": "99e6168aa527a7e6967c107b94371a7545678cbfa2b479b9b89e8f1d6f27ba04",
+        "sha256": "8c7d4ed2d0fa28f4f89695f12f0b1e7f5af8c59935db3f7ab853cdddf88a28f5",
         "status": "reviewed",
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: Entire staged learning flow and decision table read; branch state, memoized state and numeric-width boundaries aligned.",
+        "notes": "Wave 7B C1-C8 refinement (2026-11-24): Full read of 55 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization/REVISION.md",
-      "sha256": "40f2d2f61b6a037b71f01e3e3b3d3695bc4a89eefd0637bac2f78de014be0a33",
+      "sha256": "2fba0fba36dfe2baf1b8ea2cef60dce7ccee598d9e030f5c870549ef1c09e6dd",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -28243,18 +28243,18 @@
       },
       "review": {
         "path": "70-interview-toolkit/70.2-coding-patterns/03-recursion-and-optimization/REVISION.md",
-        "sha256": "40f2d2f61b6a037b71f01e3e3b3d3695bc4a89eefd0637bac2f78de014be0a33",
+        "sha256": "2fba0fba36dfe2baf1b8ea2cef60dce7ccee598d9e030f5c870549ef1c09e6dd",
         "status": "reviewed",
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: Every retrieval pair read; aligned Combination Sum strict progress to safe-integer arithmetic and retained execution-budget distinction.",
+        "notes": "Wave 7B C1-C8 refinement (2026-11-24): Full read of 89 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.01-heap.md",
-      "sha256": "2b84f3fe732003c832613b262eb327850a52b74113aeda3de538828a69613f7b",
+      "sha256": "9b5a3a406943ba5bf722859736f87a5770a841cd859ac7b01d649ba50781991e",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -28279,18 +28279,18 @@
       },
       "review": {
         "path": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.01-heap.md",
-        "sha256": "2b84f3fe732003c832613b262eb327850a52b74113aeda3de538828a69613f7b",
+        "sha256": "9b5a3a406943ba5bf722859736f87a5770a841cd859ac7b01d649ba50781991e",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
-        "fullContentRead": false,
-        "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true,
+        "notes": "Wave 7B C1-C8 refinement (2026-11-24): Full read of 330 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.02-monotonic-stack.md",
-      "sha256": "0841dfa6a6b8250a31ca8befd1e2ab6a230bea23545f86448256d1e883070302",
+      "sha256": "8535cd9688c1a308f6fc7f425d47829531a6fe7864276ae46d841f4bf85504ef",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -28316,18 +28316,18 @@
       },
       "review": {
         "path": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.02-monotonic-stack.md",
-        "sha256": "0841dfa6a6b8250a31ca8befd1e2ab6a230bea23545f86448256d1e883070302",
+        "sha256": "8535cd9688c1a308f6fc7f425d47829531a6fe7864276ae46d841f4bf85504ef",
         "status": "reviewed",
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: Every next-greater, temperature, histogram, water and circular variant read; strict ties, index identity, sentinels, nonnegative heights and total-push-pop proof checked. Badge path reported to integration. Reviewed subsequent priority metadata alignment: advanced shortest-path/DSU/segment-tree topics are Optional/Specialized as in their category flow; monotonic-stack priority links use correct depth. Algorithm content unchanged.",
+        "notes": "Wave 7B C1-C8 refinement (2026-11-24): Full read of 259 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.03-stack-queue-patterns.md",
-      "sha256": "a838dbf3a85ae405d86e5c874b11d9c88cdceaaf58de1e1c38aa92b27e2ca962",
+      "sha256": "0d471b0e18fef0c3b7f8ad865482a3a512e1e9e2945b841f51c8378934c33f2e",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -28353,18 +28353,18 @@
       },
       "review": {
         "path": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.03-stack-queue-patterns.md",
-        "sha256": "a838dbf3a85ae405d86e5c874b11d9c88cdceaaf58de1e1c38aa92b27e2ca962",
+        "sha256": "0d471b0e18fef0c3b7f8ad865482a3a512e1e9e2945b841f51c8378934c33f2e",
         "status": "reviewed",
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: All bracket, MinStack, RPN, window deque, ring, two-stack and LRU code read; duplicate minima, subtraction order, sentinel, FIFO transfer and Map insertion/complexity boundaries checked.",
+        "notes": "Wave 7B C1-C8 refinement (2026-11-24): Full read of 356 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.04-segment-tree.md",
-      "sha256": "f9e37bba27b0a5cde1412704fa6e12056a010d994f29775e95213736664298e2",
+      "sha256": "6084a7f85c08574f72daa0f62d9e04eb4976399763a2660846b0f0c1a900332b",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -28390,18 +28390,18 @@
       },
       "review": {
         "path": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.04-segment-tree.md",
-        "sha256": "f9e37bba27b0a5cde1412704fa6e12056a010d994f29775e95213736664298e2",
+        "sha256": "6084a7f85c08574f72daa0f62d9e04eb4976399763a2660846b0f0c1a900332b",
         "status": "reviewed",
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: Every segment/BIT/NumArray/lazy/compression implementation read; left-to-right associative merge, identities, add versus replacement, lowbit domain, pending-tag accounting and strict-smaller rank checked. Reviewed subsequent priority metadata alignment: advanced shortest-path/DSU/segment-tree topics are Optional/Specialized as in their category flow; monotonic-stack priority links use correct depth. Algorithm content unchanged.",
+        "notes": "Wave 7B C1-C8 refinement (2026-11-24): Full read of 363 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.05-quick-select-reservoir-sampling.md",
-      "sha256": "b37eef187985a9bc05fadf45b80b79102f015a0ba90fc9fac69a2be7da3549a8",
+      "sha256": "7464334060fd3d0532e39edea28b6871d977f06e5714058c3bc892b1d5494fa9",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -28427,18 +28427,18 @@
       },
       "review": {
         "path": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/70.2.4.05-quick-select-reservoir-sampling.md",
-        "sha256": "b37eef187985a9bc05fadf45b80b79102f015a0ba90fc9fac69a2be7da3549a8",
+        "sha256": "7464334060fd3d0532e39edea28b6871d977f06e5714058c3bc892b1d5494fa9",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-14",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content read (2026-11-14): Trace runs a three-way partition by hand, then the reservoir proof per stream position. The probability proof is shown once and referenced, not restated in the summary.",
+        "notes": "Wave 7B C1-C8 refinement (2026-11-24): Full read of 318 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/INDEX.md",
-      "sha256": "5029ba63af1911f23e0446a7ff2ca0296c9c7df7f7fcb2eefdde8a6b7c9b7763",
+      "sha256": "82c7fae2ac80d80ab72a90c24088bcf084d95f58e957a18171fc3d4a3c4957c5",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -28457,18 +28457,18 @@
       },
       "review": {
         "path": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/INDEX.md",
-        "sha256": "5029ba63af1911f23e0446a7ff2ca0296c9c7df7f7fcb2eefdde8a6b7c9b7763",
+        "sha256": "82c7fae2ac80d80ab72a90c24088bcf084d95f58e957a18171fc3d4a3c4957c5",
         "status": "reviewed",
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: Full access-order and mutable-range learning flow read; segment-tree optional classification mismatch sent to coordinator for canonical generated alignment.",
+        "notes": "Wave 7B C1-C8 refinement (2026-11-24): Full read of 57 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/REVISION.md",
-      "sha256": "2cd20d0d65c15cea6015b047dceaec318aaf7b4186df2d3507a2022d499c77f6",
+      "sha256": "5eca10a93978852934450464738a2c83beb147269e86f99ac5292c438ca2fd62",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -28490,18 +28490,18 @@
       },
       "review": {
         "path": "70-interview-toolkit/70.2-coding-patterns/04-heaps-stacks-selection/REVISION.md",
-        "sha256": "2cd20d0d65c15cea6015b047dceaec318aaf7b4186df2d3507a2022d499c77f6",
+        "sha256": "5eca10a93978852934450464738a2c83beb147269e86f99ac5292c438ca2fd62",
         "status": "reviewed",
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: Every source-linked prompt read; heap root, amortized removal, replacement delta, duplicate partitions and full-subset distribution checked.",
+        "notes": "Wave 7B C1-C8 refinement (2026-11-24): Full read of 109 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/05-math-and-number-theory/70.2.5.01-number-theory-combinatorics.md",
-      "sha256": "1bf133e215121764c5533e46fc05c91c2ab849a01356662197f6d01fc56dea02",
+      "sha256": "82555d96072f7986a28ad071a57d58b86b9ab8670209aacbd50f2c80f5b96f2e",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -28526,18 +28526,18 @@
       },
       "review": {
         "path": "70-interview-toolkit/70.2-coding-patterns/05-math-and-number-theory/70.2.5.01-number-theory-combinatorics.md",
-        "sha256": "1bf133e215121764c5533e46fc05c91c2ab849a01356662197f6d01fc56dea02",
+        "sha256": "82555d96072f7986a28ad071a57d58b86b9ab8670209aacbd50f2c80f5b96f2e",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
-        "fullContentRead": false,
-        "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Priority badge parent depth corrected to the canonical importance guide.",
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true,
+        "notes": "Wave 7B C1-C8 refinement (2026-11-24): Full read of 257 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/05-math-and-number-theory/INDEX.md",
-      "sha256": "f2b541ec1e0898beae5b0c51d613e5610d818cbbc61f508c7b554564444abedb",
+      "sha256": "34711ae942183dc268c90c296b172f74ebef8ebfc438c810b3357fcd573fad0b",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -28554,18 +28554,18 @@
       },
       "review": {
         "path": "70-interview-toolkit/70.2-coding-patterns/05-math-and-number-theory/INDEX.md",
-        "sha256": "f2b541ec1e0898beae5b0c51d613e5610d818cbbc61f508c7b554564444abedb",
+        "sha256": "34711ae942183dc268c90c296b172f74ebef8ebfc438c810b3357fcd573fad0b",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-14",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content read (2026-11-14): Read end to end: chapter order runs number theory into the selection and sampling family. One line per chapter; the intro does not preview the chapters again.",
+        "notes": "Wave 7B C1-C8 refinement (2026-11-24): Full read of 32 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "70-interview-toolkit/70.2-coding-patterns/05-math-and-number-theory/REVISION.md",
-      "sha256": "c11ad8c61bdd19d67de3371dabba64d724fdefc5ae213ac8c9446206356ffc6a",
+      "sha256": "56849804c056ff45b8b63aefdce9f36930f3f724d417aaac56a65793ee533ccc",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -28582,12 +28582,12 @@
       },
       "review": {
         "path": "70-interview-toolkit/70.2-coding-patterns/05-math-and-number-theory/REVISION.md",
-        "sha256": "c11ad8c61bdd19d67de3371dabba64d724fdefc5ae213ac8c9446206356ffc6a",
+        "sha256": "56849804c056ff45b8b63aefdce9f36930f3f724d417aaac56a65793ee533ccc",
         "status": "reviewed",
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: All eight source-linked retrieval pairs read, including inverse existence, product-before-modulo, factorial cutoff, conditional probability and sieve square boundary.",
+        "notes": "Wave 7B C1-C8 refinement (2026-11-24): Full read of 59 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -28625,7 +28625,7 @@
     },
     {
       "path": "70-interview-toolkit/70.3-cheatsheets/70.3.01-javascript-cheat-sheet.md",
-      "sha256": "95072b0987cdaa489c5204cbfc7b91963e70c01ef22bb87c347e80d112b94fe1",
+      "sha256": "1638e7c6e3f3553a89380eda53ce14c2af452d7a7aa082c106825bf2616e1489",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -28644,18 +28644,18 @@
       },
       "review": {
         "path": "70-interview-toolkit/70.3-cheatsheets/70.3.01-javascript-cheat-sheet.md",
-        "sha256": "95072b0987cdaa489c5204cbfc7b91963e70c01ef22bb87c347e80d112b94fe1",
+        "sha256": "1638e7c6e3f3553a89380eda53ce14c2af452d7a7aa082c106825bf2616e1489",
         "status": "reviewed",
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: Every binding/receiver/scheduling/value/module/lifetime table and exact emitter/generator implementation read; duplicate listeners, snapshot dispatch, async failure and growing BigInt costs explicit. Verified current WeakMap symbol-key reference.",
+        "notes": "Wave 7B C1-C8 refinement (2026-11-24): Full read of 177 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "70-interview-toolkit/70.3-cheatsheets/70.3.02-typescript-cheat-sheet.md",
-      "sha256": "7a6f70ee4fa751c8ac512ae7ece248713fd5e7449a3eb33f1591f733bc0449fa",
+      "sha256": "b843597abee3046fc5cceb83cb57a7107f0c65af96036ba9209acd93cd643248",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -28674,18 +28674,18 @@
       },
       "review": {
         "path": "70-interview-toolkit/70.3-cheatsheets/70.3.02-typescript-cheat-sheet.md",
-        "sha256": "7a6f70ee4fa751c8ac512ae7ece248713fd5e7449a3eb33f1591f733bc0449fa",
+        "sha256": "b843597abee3046fc5cceb83cb57a7107f0c65af96036ba9209acd93cd643248",
         "status": "reviewed",
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: Every static/runtime/generic/transform/brand/storage/decorator example read; truthful predicates, void callbacks, satisfies contextual inference and legacy versus newer decorator modes checked against TypeScript primary docs.",
+        "notes": "Wave 7B C1-C8 refinement (2026-11-24): Full read of 199 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "70-interview-toolkit/70.3-cheatsheets/70.3.03-react-nextjs-cheat-sheet.md",
-      "sha256": "bfcbce91a90254703c08f26cc2e80391ec6556f47206931ed5a32005bbc7302d",
+      "sha256": "dd0eb48e7fef15747c4555b3cd20ce9b4806c5db734d787838a3f2b4cf16ce90",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -28704,18 +28704,18 @@
       },
       "review": {
         "path": "70-interview-toolkit/70.3-cheatsheets/70.3.03-react-nextjs-cheat-sheet.md",
-        "sha256": "bfcbce91a90254703c08f26cc2e80391ec6556f47206931ed5a32005bbc7302d",
+        "sha256": "dd0eb48e7fef15747c4555b3cd20ce9b4806c5db734d787838a3f2b4cf16ce90",
         "status": "reviewed",
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: All hooks, routing/caching/navigation tables and streaming/action/proxy/parallel/modal/optimistic/catalog examples fully read; current primary docs verified Node Proxy and Cache Components removal. Read/mutation authorization and authoritative optimistic baseline explicit.",
+        "notes": "Wave 7B C1-C8 refinement (2026-11-24): Full read of 397 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "70-interview-toolkit/70.3-cheatsheets/70.3.04-backend-cheat-sheet.md",
-      "sha256": "eeaa7f0e45499c7b467b4cdbb4ddda6e3d63851869b17f0e4624b499cd9f4021",
+      "sha256": "c073b5f4a7f8725d1489d363d2f7e0311c80f3f9b4c0f3abfe031bec4c50d053",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -28734,18 +28734,18 @@
       },
       "review": {
         "path": "70-interview-toolkit/70.3-cheatsheets/70.3.04-backend-cheat-sheet.md",
-        "sha256": "eeaa7f0e45499c7b467b4cdbb4ddda6e3d63851869b17f0e4624b499cd9f4021",
+        "sha256": "c073b5f4a7f8725d1489d363d2f7e0311c80f3f9b4c0f3abfe031bec4c50d053",
         "status": "reviewed",
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: Every Nest request stage, HTTP/index/auth/security contract and complete PostgreSQL transfer read; locks, conditional debit, rollback, currency, missing accounts, provider uncertainty and required endpoint policies checked. Current MCP transport revision verified.",
+        "notes": "Wave 7B C1-C8 refinement (2026-11-24): Full read of 186 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "70-interview-toolkit/70.3-cheatsheets/70.3.05-system-design-cheat-sheet.md",
-      "sha256": "5a5b4520cbc4b476954d0d97a65a488de5195c3f1369c99c6d5dddee3956f162",
+      "sha256": "ef0b313fd4b7d7de133631d8db256c32eb07214afd6291feec1a623c99205754",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -28764,18 +28764,18 @@
       },
       "review": {
         "path": "70-interview-toolkit/70.3-cheatsheets/70.3.05-system-design-cheat-sheet.md",
-        "sha256": "5a5b4520cbc4b476954d0d97a65a488de5195c3f1369c99c6d5dddee3956f162",
+        "sha256": "ef0b313fd4b7d7de133631d8db256c32eb07214afd6291feec1a623c99205754",
         "status": "reviewed",
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: Every routing/state/cache/delivery/resilience/probabilistic structure table and all capacity/SLO arithmetic read; Kafka contiguous offsets, lease expiry/fencing, CAP model and exact decimal storage assumptions checked.",
+        "notes": "Wave 7B C1-C8 refinement (2026-11-24): Full read of 174 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "70-interview-toolkit/70.3-cheatsheets/70.3.06-docker-kubernetes-cicd-cheat-sheet.md",
-      "sha256": "3ed1c78437511a954f83e526895d03885ea2c6e442d48cf225138a914c04d55d",
+      "sha256": "79f2953f465a52e340ff69c900f71bc585d368bcdc4babfd04265a2c22aa55d9",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -28794,18 +28794,18 @@
       },
       "review": {
         "path": "70-interview-toolkit/70.3-cheatsheets/70.3.06-docker-kubernetes-cicd-cheat-sheet.md",
-        "sha256": "3ed1c78437511a954f83e526895d03885ea2c6e442d48cf225138a914c04d55d",
+        "sha256": "79f2953f465a52e340ff69c900f71bc585d368bcdc4babfd04265a2c22aa55d9",
         "status": "reviewed",
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: All commands, complete three-stage image, probe/resource/PDB/HPA fragments, Helm and Argo examples read; explicit build/runtime contracts, projected volume versus env updates, PDB rollout limits and rollback sync behavior checked with current primary docs; Node24 still LTS.",
+        "notes": "Wave 7B C1-C8 refinement (2026-11-24): Full read of 252 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "70-interview-toolkit/70.3-cheatsheets/70.3.07-sql-data-modeling-cheat-sheet.md",
-      "sha256": "4b6dd09ba0f685fbb7d27f19d642acc192b8b0c08b97cd5c41cc63d0e569ca84",
+      "sha256": "18a8954f04156a72c1996b062d0f9adf9adb591c23b943b8da786d54775a26cc",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -28824,18 +28824,18 @@
       },
       "review": {
         "path": "70-interview-toolkit/70.3-cheatsheets/70.3.07-sql-data-modeling-cheat-sheet.md",
-        "sha256": "4b6dd09ba0f685fbb7d27f19d642acc192b8b0c08b97cd5c41cc63d0e569ca84",
+        "sha256": "18a8954f04156a72c1996b062d0f9adf9adb591c23b943b8da786d54775a26cc",
         "status": "reviewed",
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: All joins/windows/index/plan/model/isolation text and audit/soft-delete/junction SQL read; join multiplicity, NULL/peer/tie rules, PG18 skip scan, index visibility, restored-key collision and write-skew conditions checked.",
+        "notes": "Wave 7B C1-C8 refinement (2026-11-24): Full read of 231 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "70-interview-toolkit/70.3-cheatsheets/INDEX.md",
-      "sha256": "f1f0f0b3c6109e457997dcc038103db8812f26af2e811afab795e5b57d6f7b20",
+      "sha256": "5a0985d7410aa07274f9b00880c9a394d62763bb895cc3e9cd64ee3d795569f2",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -28856,18 +28856,18 @@
       },
       "review": {
         "path": "70-interview-toolkit/70.3-cheatsheets/INDEX.md",
-        "sha256": "f1f0f0b3c6109e457997dcc038103db8812f26af2e811afab795e5b57d6f7b20",
+        "sha256": "5a0985d7410aa07274f9b00880c9a394d62763bb895cc3e9cd64ee3d795569f2",
         "status": "reviewed",
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: All three operation-based passes, seven reference mappings, owner chapter links and revision path fully read; examples are explanatory contracts rather than personal achievement claims.",
+        "notes": "Wave 7B C1-C8 refinement (2026-11-24): Full read of 78 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "70-interview-toolkit/70.3-cheatsheets/REVISION.md",
-      "sha256": "c6c14f41011b5078c41e5d085aca322732c196c5248150c3c5c9934a9c3610f8",
+      "sha256": "ee800ddce093afb7d3710c023d6a57a361f1cbbb573e954475140900e3bb3f25",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -28891,18 +28891,18 @@
       },
       "review": {
         "path": "70-interview-toolkit/70.3-cheatsheets/REVISION.md",
-        "sha256": "c6c14f41011b5078c41e5d085aca322732c196c5248150c3c5c9934a9c3610f8",
+        "sha256": "ee800ddce093afb7d3710c023d6a57a361f1cbbb573e954475140900e3bb3f25",
         "status": "reviewed",
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: Every source-linked question and answer fully read; runtime versions, opaque async errors, atomic writes, contiguous offsets, PDBs, SQL multiplicity and optimistic authoritative-state limits aligned.",
+        "notes": "Wave 7B C1-C8 refinement (2026-11-24): Full read of 167 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "70-interview-toolkit/INDEX.md",
-      "sha256": "0372ababab5bea3c8698640ce45628c1f0685e014d92ccdbb5e94ea0d5eb69da",
+      "sha256": "1dd099b02d185a6015f3e8b781646e96654e9aa5b799ae151965991b7dd9ffd9",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -28922,12 +28922,12 @@
       },
       "review": {
         "path": "70-interview-toolkit/INDEX.md",
-        "sha256": "0372ababab5bea3c8698640ce45628c1f0685e014d92ccdbb5e94ea0d5eb69da",
+        "sha256": "1dd099b02d185a6015f3e8b781646e96654e9aa5b799ae151965991b7dd9ffd9",
         "status": "reviewed",
         "reviewer": "buffy",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 7A C1-C8 refinement (2026-11-24): Full read of 66 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+        "notes": "Wave 7B C1-C8 refinement (2026-11-24): Full read of 66 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -31021,7 +31021,7 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "a4ca1d00bdc6a2be68f634f0eb74fc5192233c897d7f80963e1caf54ab29eed1",
+      "sha256": "faef29212137c928c71e8b4fbb1a14e3e186ab9d6282a6163b39da9c34b9a06c",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -31039,12 +31039,12 @@
       },
       "review": {
         "path": "INDEX.md",
-        "sha256": "a4ca1d00bdc6a2be68f634f0eb74fc5192233c897d7f80963e1caf54ab29eed1",
+        "sha256": "faef29212137c928c71e8b4fbb1a14e3e186ab9d6282a6163b39da9c34b9a06c",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 6 count/read-time sync (2026-11-24): Full read of 206 lines. Updated generated counts/read-time navigation after Wave 6.",
+        "notes": "Wave 7B count/read-time sync (2026-11-24): Full read of 206 lines. Updated generated counts/read-time navigation after Wave 7B.",
         "findings": []
       }
     },
@@ -31624,7 +31624,7 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "adfa38cee721e83138752ecbb7e3049551f887319e5d8b8904d49abbbc42064e",
+      "sha256": "951f74fef0a14740e246cd170e1aff18498b91bfef8e2b9db8c4624cd8b657dd",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31642,12 +31642,12 @@
       },
       "review": {
         "path": "docs/api-contract.md",
-        "sha256": "adfa38cee721e83138752ecbb7e3049551f887319e5d8b8904d49abbbc42064e",
+        "sha256": "951f74fef0a14740e246cd170e1aff18498b91bfef8e2b9db8c4624cd8b657dd",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 6 count/read-time sync (2026-11-24): Full read of 119 lines. Updated generated counts/read-time navigation after Wave 6.",
+        "notes": "Wave 7B count/read-time sync (2026-11-24): Full read of 119 lines. Updated generated counts/read-time navigation after Wave 7B.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",

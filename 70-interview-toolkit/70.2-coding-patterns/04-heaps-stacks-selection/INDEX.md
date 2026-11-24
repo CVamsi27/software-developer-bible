@@ -1,7 +1,7 @@
 # Heaps, Stacks & Selection
 
 > **Study time:** ≈ 1 h 10 m of reading (6 files, ~12 min average).
-> **6 files.** Order-of-access structures and their interview patterns: heaps for top-K and streams, monotonic stacks for next-greater-element, classic stack/queue designs, segment trees for range queries, and quickselect/reservoir sampling for selection under constraints.
+> **6 files.** Order-of-access structures and their interview patterns: heaps for top-K and streams, monotonic stacks for next-greater-element queries, classic stack and queue designs, segment trees for range queries, and quick select plus reservoir sampling for selection under constraints.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Interview-red)](#)
@@ -11,16 +11,18 @@
 
 ## Reading Passes
 
-Read the heap for changing priorities, then the monotonic stack for candidates whose answers become final during a scan. Use the stack/queue chapter for ordering and cache designs. Finish with values calculated over ranges that can change, such as range sums, then selection and sampling. At that point, ask which queries must be efficient or what makes a sample valid, rather than only which item arrives next.
+Read the heap for changing priorities, then the monotonic stack for candidates whose answers become final during a scan. Use the stack and queue chapter for ordering and cache designs.
+
+Finish with values calculated over ranges that can change, such as range sums, then selection and sampling. At that point, ask which queries must be efficient or what makes a sample valid, rather than only which item arrives next.
 
 ## The 5 patterns
 
 | # | File | When to recognize | Role priority | General importance | Read time |
 | --: | ------ | ------------------- | --- | --- | ----------: |
 | 01 | [Heap](70.2.4.01-heap.md) | "Top K, K-way merge, median of stream, scheduling" | Essential | Important | 13 min |
-| 02 | [Monotonic Stack](70.2.4.02-monotonic-stack.md) | "Next greater/smaller element, largest rectangle in histogram, daily temperatures" | Essential | Important | 11 min |
-| 03 | [Stack & Queue Patterns](70.2.4.03-stack-queue-patterns.md) | "LRU cache, sliding window max (deque), min stack, valid parentheses" | Essential | Important | 15 min |
-| 04 | [Segment Tree](70.2.4.04-segment-tree.md) | "Range sum/min/max query with point updates" | Optional | Specialized | 16 min |
+| 02 | [Monotonic Stack](70.2.4.02-monotonic-stack.md) | "Next greater or smaller element, largest rectangle in histogram, daily temperatures" | Essential | Important | 11 min |
+| 03 | [Stack & Queue Patterns](70.2.4.03-stack-queue-patterns.md) | "Least recently used (LRU) cache, sliding window maximum (deque), minimum stack, valid parentheses" | Essential | Important | 15 min |
+| 04 | [Segment Tree](70.2.4.04-segment-tree.md) | "Range sum, minimum, or maximum query with point updates" | Optional | Specialized | 16 min |
 | 05 | [Quick Select & Reservoir Sampling](70.2.4.05-quick-select-reservoir-sampling.md) | "K-th largest without sorting, random sample from a stream" | Essential | Important | 13 min |
 
 ---
@@ -41,8 +43,8 @@ Unknown length, uniform sample?   → Reservoir Sampling
 
 ## Cross-References
 
-- [Recursion & Optimization](../03-recursion-and-optimization/INDEX.md) — DP vs heap-greedy trade-offs.
-- [Linear Structures](../01-linear-structures/INDEX.md) — sliding window max pairs the deque with window logic.
+- [Recursion & Optimization](../03-recursion-and-optimization/INDEX.md) — dynamic programming (DP) versus heap-greedy trade-offs.
+- [Linear Structures](../01-linear-structures/INDEX.md) — sliding window maximum pairs the deque with window logic.
 
 ---
 

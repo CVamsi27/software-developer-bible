@@ -16,15 +16,15 @@ Source: [Blue-Green & Canary Deployments](40.3.3.01-blue-green-canary.md)
 
 **Q:** What decides whether a canary should receive more traffic?
 
-**A:** Measured user-facing success/latency and release-specific signals against a baseline, with an observation window and explicit abort policy; readiness alone is insufficient.
+**A:** Measured user-facing success rate, latency, and release-specific signals against a baseline, with an observation window and explicit abort policy; readiness alone is insufficient.
 
 **Q:** Why can a blue-green traffic switch require database compatibility?
 
-**A:** Both application versions may overlap and rollback may restore the old version. Schema/data changes must support that coexistence or use an explicit migration boundary.
+**A:** Both application versions may overlap and rollback may restore the old version. Schema and data changes must support that coexistence or use an explicit migration boundary.
 
 **Q:** What should rollback verification observe after a switch?
 
-**A:** The active artifact/configuration, successful requests, latency, error rates, and data compatibility. A completed deployment command does not establish user recovery.
+**A:** The active artifact and configuration, successful requests, latency, error rates, and data compatibility. A completed deployment command does not establish user recovery.
 
 ## DORA Metrics & Delivery Performance
 
@@ -48,11 +48,11 @@ Source: [DORA Metrics & Delivery Performance](40.3.3.02-dora-metrics-delivery-pe
 
 **Q:** Why is an incident-driven repair deployment not automatically a failed deployment?
 
-**A:** Failure rate attributes remediation to the originating failed change; rework rate identifies unplanned incident-response deployments. The repair only adds a new failure if it independently requires remediation.
+**A:** Change fail rate attributes remediation to the originating failed change; rework rate identifies unplanned incident-response deployments. The repair only adds a new failure if it independently requires remediation.
 
 **Q:** One deployment has two linked recovery records: one restored and one still open. Why must a recovery query group before excluding incomplete recoveries?
 
-**A:** Dropping the null row first hides the open incident, allowing the completed row to produce a falsely finished recovery. Keep all linked rows and admit the deployment only when none remains unresolved; then use its latest restoration and report pending recoveries separately.
+**A:** Dropping the `NULL` row first hides the open incident, allowing the completed row to produce a falsely finished recovery. Keep all linked rows and admit the deployment only when none remains unresolved; then use its latest restoration and report pending recoveries separately.
 
 ## Summary
 

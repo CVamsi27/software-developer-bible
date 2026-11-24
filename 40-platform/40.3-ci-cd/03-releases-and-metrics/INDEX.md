@@ -1,6 +1,6 @@
 # Releases & Metrics
 
-> **Study time:** ≈ 23 min of reading (3 files, ~8 min average).
+> **Study time:** ≈ 24 min of reading (3 files, ~8 min average).
 > **3 files.** Shipping safely and measuring delivery: blue-green and canary deployments for controlled traffic exposure and compatible recovery, plus five current DORA delivery measures that tell you whether shipping actually got faster AND safer.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](#file-index)
@@ -17,12 +17,12 @@ Rolling updates are the default but not always enough: big-bang rollouts carry a
 
 ## File Index
 
-Read exposure/recovery mechanisms first, then learn to measure delivery outcomes with consistent identities. Complete the revision companion before interview practice.
+Read exposure and recovery mechanisms first, then learn to measure delivery outcomes with consistent identities. Complete the revision companion before interview practice.
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------: |
+| ----: | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------ | ----------: |
 | 01 | [Blue-Green & Canary](40.3.3.01-blue-green-canary.md) | Blue-green traffic switches, canary analysis and stop criteria, feature flags, compatible recovery | Important | Important | 7 min |
-| 02 | [DORA Metrics & Delivery Performance](40.3.3.02-dora-metrics-delivery-performance.md) | Five current measures, production-event instrumentation, failure attribution, recovery data quality and service-level interpretation | Important | Important | 14 min |
+| 02 | [DORA Metrics & Delivery Performance](40.3.3.02-dora-metrics-delivery-performance.md) | Five current measures, production-event instrumentation, failure attribution, recovery data quality, and service-level interpretation | Important | Important | 15 min |
 
 ---
 
@@ -41,17 +41,17 @@ Read exposure/recovery mechanisms first, then learn to measure delivery outcomes
 
 ## Docita Anchor
 
-Source inspection on 2026-10-10 found deployment triggers paused. These are source-level implementation anchors; historical release notes and workflow comments do not prove current successful live runs.
+Source inspection on October 10, 2026 found deployment triggers paused. These are source-level implementation anchors; historical release notes and workflow comments do not prove current successful live runs.
 
-Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
+Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React, and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
 
 | Topic | Docita evidence |
-| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Canary | `scripts/deploy/worker-canary-deploy.sh` checks a canary machine stays started before a rolling call; it does not measure HTTP request cohorts and uses two remote deploy calls |
-| Health-gated rollouts | Fly checks gate deploys: `/api/health/live`, 240s `grace_period` |
-| Release evidence | `docs/operations/releases/2026-08-06-p5-closure.md` fills a release-evidence checklist with measured facts (test counts, SLO baselines) |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Canary | `scripts/deploy/worker-canary-deploy.sh` checks a canary machine stays started before a rolling call; it does not measure Hypertext Transfer Protocol (HTTP) request cohorts and uses two remote deploy calls |
+| Health-gated rollouts | Fly checks gate deploys: `/api/health/live`, `240s` `grace_period` |
+| Release evidence | `docs/operations/releases/2026-08-06-p5-closure.md` fills a release-evidence checklist with measured facts (test counts, Service Level Objective (SLO) baselines) |
 | Latency SLOs in CI | `scripts/checks/api-latency-slos.mjs` + `check-api-latency-budget.mjs` enforce budgets as gates |
-| Synthetic monitoring | `.github/workflows/synthetic-monitoring.yml` defines probes and records a historical manually-disabled note; current live scheduler state was not checked |
+| Synthetic monitoring | `.github/workflows/synthetic-monitoring.yml` defines probes and records a historical manually disabled note; current live scheduler state was not checked |
 | DORA dashboards | _No direct docita implementation yet._ |
 
 ## Finish This Section

@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "a2fce97d9e654b978fefd1202ce66d14ceba688ce29cdd978910f5ef3fabb0f4",
+ "corpus_digest": "3c1778d77dae9b63ea7c6cee319ecb486b8572f20b972b8a4f9800ae235fc0ae",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5390
+  "read_minutes": 5395
  },
  "chapters": [
   {
@@ -5278,7 +5278,7 @@
    "g": [
     "concept"
    ],
-   "m": 12
+   "m": 13
   },
   {
    "p": "40-platform/40.3-ci-cd/01-ci-platforms/40.3.1.02-gitlab-ci.html",
@@ -5400,7 +5400,7 @@
     "dora",
     "metrics"
    ],
-   "m": 14
+   "m": 15
   },
   {
    "p": "40-platform/40.3-ci-cd/03-releases-and-metrics/REVISION.html",
@@ -5454,7 +5454,7 @@
     "concept",
     "reference"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "40-platform/40.4-observability/01-pillars/REVISION.html",
@@ -5476,7 +5476,7 @@
     "concept",
     "reference"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "40-platform/40.4-observability/02-errors-and-health/40.4.2.02-health-checks.html",
@@ -5595,7 +5595,7 @@
     "interview-questions",
     "practice"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.html",

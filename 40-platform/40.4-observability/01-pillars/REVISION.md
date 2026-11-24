@@ -24,15 +24,15 @@ Source: [Monitoring](40.4.1.02-monitoring.md)
 
 **Q:** Why can averaging latency hide an incident?
 
-**A:** A small slow population may barely move the mean. Distributions and percentiles expose the tail; segment by relevant route/region without unbounded labels.
+**A:** A small slow population may barely move the mean. Distributions and percentiles expose the tail; segment by relevant route and region without unbounded labels.
 
 **Q:** How do classic and native Prometheus histograms change a fleet-wide percentile query?
 
-**A:** Classic histograms expose cumulative buckets labeled with `le`; sum matching bucket rates across instances while retaining `le`, then pass them to `histogram_quantile`. A native histogram carries bucket observations in a composite sample, so aggregate that sample without `le`. Check client, server and backend support, and query the form the instrument actually emits.
+**A:** Classic histograms expose cumulative buckets labeled with `le`; sum matching bucket rates across instances while retaining `le`, then pass them to `histogram_quantile`. A native histogram carries bucket observations in a composite sample, so aggregate that sample without `le`. Check client, server, and backend support, and query the form the instrument actually emits.
 
 **Q:** Why avoid customer IDs as metric labels?
 
-**A:** Each value can create another time series. Unbounded cardinality increases storage/query cost and may expose personal data; logs/traces are often better for individual correlation.
+**A:** Each value can create another time series. Unbounded cardinality increases storage and query cost and may expose personal data; logs and traces are often better for individual correlation.
 
 ## Distributed Tracing
 
@@ -40,7 +40,7 @@ Source: [Distributed Tracing](40.4.1.03-tracing.md)
 
 **Q:** How can one trace explain a slow distributed request?
 
-**A:** Parent/child spans and propagated context connect service work and timing. Missing propagation and sampling gaps limit what the trace can establish.
+**A:** Parent and child spans with propagated context connect service work and timing. Missing propagation and sampling gaps limit what the trace can establish.
 
 **Q:** Why does sampling make absence of a span inconclusive?
 
@@ -50,7 +50,7 @@ Source: [Distributed Tracing](40.4.1.03-tracing.md)
 
 Source: [Logging](40.4.1.01-logging.md)
 
-**Q:** Why can a logger redact credentials.token while leaking the same token in a message?
+**Q:** Why can a logger redact `credentials.token` while leaking the same token in a `message`?
 
 **A:** Path redaction covers the configured object structure. Safe event schemas must omit or sanitize the other locations; a few paths do not promise universal secret removal.
 
@@ -60,13 +60,13 @@ Source: [Monitoring](40.4.1.02-monitoring.md)
 
 **A:** Numerator and denominator need matching dimensions and eligible populations. Retaining status can mismatch vectors or calculate a per-status ratio instead of errors over all requests.
 
-**Q:** Why does the tiny server use unmatched rather than the raw URL for unknown requests?
+**Q:** Why does the tiny server use `unmatched` rather than the raw URL for unknown requests?
 
 **A:** Arbitrary paths would create unbounded label values. A bounded category preserves aggregate failure evidence without a new time series for each caller-supplied ID.
 
 Source: [Tracing](40.4.1.03-tracing.md)
 
-**Q:** Why can a ParentBased head sampler not promise to retain all eventual errors?
+**Q:** Why can a `ParentBased` head sampler not promise to retain all eventual errors?
 
 **A:** Its creation-time decision precedes the outcome. Tail sampling can evaluate received outcomes, but cannot recover spans already discarded upstream.
 

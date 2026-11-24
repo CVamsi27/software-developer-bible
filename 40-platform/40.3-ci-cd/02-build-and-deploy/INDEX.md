@@ -11,19 +11,19 @@
 
 ## Why this category exists
 
-CI platforms differ in syntax but not in substance: check out, build image, push to registry, deploy to target. This category teaches that substance once — registries, tags, deploy targets, and the pipeline patterns (trunk-based promotion, environment gates, rollback hooks) you will be asked to whiteboard.
+Continuous Integration (CI) platforms differ in syntax but not in substance: check out, build image, push to registry, deploy to target. This category teaches that substance once — registries, tags, deploy targets, and the pipeline patterns (trunk-based promotion, environment gates, rollback hooks) you will be asked to whiteboard.
 
 ---
 
 ## File Index
 
-Read image identity first, then dependency/gate design, registry promotion and finally supply-chain trust. Finish the revision companion before the separate CI/CD interview bank.
+Read image identity first, then dependency and gate design, registry promotion, and finally supply-chain trust. Finish the revision companion before the separate CI/CD interview bank.
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Docker Build & Deploy](40.3.2.01-docker-build-deploy.md) | Build pipelines, layer caching in CI, registries (ECR/GCR/DockerHub), tagging strategy, deployment targets | Important | Important | 7 min |
+| ----: | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------- | ------------------ | ----------: |
+| 01 | [Docker Build & Deploy](40.3.2.01-docker-build-deploy.md) | Build pipelines, layer caching in CI, registries (ECR, GCR, Docker Hub), tagging strategy, deployment targets | Important | Important | 7 min |
 | 02 | [Pipeline Patterns](40.3.2.02-pipeline-patterns.md) | End-to-end CI/CD pipelines, stage design, deployment strategies (rolling, blue-green, canary, feature flags) | Important | Important | 5 min |
-| 03 | [Artifact Registries & Release Promotion](40.3.2.03-artifact-registries-release-promotion.md) | GHCR/ECR/Artifactory/npm, configured tag immutability and digests, build-once promotion dev->staging->prod, changelog automation (release-please/Changesets), retention, pull-through caches | Important | Important | 9 min |
+| 03 | [Artifact Registries & Release Promotion](40.3.2.03-artifact-registries-release-promotion.md) | GHCR, ECR, Artifactory, npm, configured tag immutability and digests, build-once promotion (`dev → staging → prod`), changelog automation (release-please, Changesets), retention, pull-through caches | Important | Important | 9 min |
 | 04 | [Pipeline Supply-Chain Security & SLSA](40.3.2.04-pipeline-supply-chain-security-slsa.md) | Pipeline trust boundaries, separate SLSA Build and Source tracks, immutable action pins, OIDC federation, provenance generation and verification | Important | Important | 14 min |
 
 ---
@@ -44,13 +44,13 @@ Read image identity first, then dependency/gate design, registry promotion and f
 
 ## Docita Anchor
 
-Source inspection on 2026-10-10 found all triggers in `deploy.yml` commented out. The files below show configured implementation, not current deployment or successful production-run evidence.
+Source inspection on October 10, 2026 found all triggers in `deploy.yml` commented out. The files below show configured implementation, not current deployment or successful production-run evidence.
 
-Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
+Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React, and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
 
 | Topic | Docita evidence |
-| --------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Docker build in CI | API image built from `apps/api/Dockerfile`; Fly `[build]` consumes it; `container-scan.yml` performs scheduled Trivy filesystem scans of `apps/api`/`apps/worker`, not a built-image scan |
+| --------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Docker build in CI | API image built from `apps/api/Dockerfile`; Fly `[build]` consumes it; `container-scan.yml` performs scheduled Trivy filesystem scans of `apps/api` and `apps/worker`, not a built-image scan |
 | Deploy pipeline | `deploy.yml` + `scripts/deploy/fly-deploy-in-primary-region.sh` (pins deploys to primary region `sin`) |
 | DB migration gate | `db-migrations.yml` + `verify-db-schema-sync.sh` before rollout |
 | Canary deploy | `scripts/deploy/worker-canary-deploy.sh` for the worker app |

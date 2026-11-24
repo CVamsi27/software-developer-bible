@@ -16,23 +16,23 @@ Source: [GitHub Actions](40.3.1.01-github-actions.md)
 
 **Q:** Why should workflow token permissions be explicit?
 
-**A:** Jobs otherwise inherit broader defaults than they may need. Grant each job only the repository/cloud capabilities required and treat untrusted pull-request input as data.
+**A:** Jobs otherwise inherit broader defaults than they may need. Grant each job only the repository and cloud capabilities required and treat untrusted pull-request input as data.
 
-**Q:** Why does a successful PR build not automatically authorize production deployment?
+**Q:** Why does a successful Pull Request (PR) build not automatically authorize production deployment?
 
-**A:** PR code may be untrusted and the tested ref differs from the trusted main push. Verify without release authority, then promote the identified artifact from the intended trusted run through configured environment/cloud policy.
+**A:** PR code may be untrusted and the tested ref differs from the trusted `main` push. Verify without release authority, then promote the identified artifact from the intended trusted run through configured environment and cloud policy.
 
 **Q:** What distinguishes a dependency cache from the artifact you approve for release?
 
-**A:** A cache saves reconstructible work and can restore older/untrusted content. A release artifact needs an identified producer/run/commit and integrity verification; it must be the bytes the deployment consumes.
+**A:** A cache saves reconstructible work and can restore older or untrusted content. A release artifact needs an identified producer, run, and commit plus integrity verification; it must be the bytes the deployment consumes.
 
-**Q:** Why is id-token: write insufficient to deploy to AWS?
+**Q:** Why is `id-token: write` insufficient to deploy to Amazon Web Services (AWS)?
 
-**A:** It permits requesting an OIDC token. AWS still needs the provider, audience/subject trust conditions and a role policy granting only the intended deployment operations.
+**A:** It permits requesting an OpenID Connect (OIDC) token. AWS still needs the provider, audience and subject trust conditions, and a role policy granting only the intended deployment operations.
 
-**Q:** Why can filtering a monorepo workflow to apps/web/** miss necessary verification?
+**Q:** Why can filtering a monorepo workflow to `apps/web/**` miss necessary verification?
 
-**A:** Shared source, root lockfiles, build configuration or workflow changes can affect that app without matching the narrow path. Keep required checks available and select work from the full dependency graph, including merge-group runs where applicable.
+**A:** Shared source, root lockfiles, build configuration, or workflow changes can affect that application without matching the narrow path. Keep required checks available and select work from the full dependency graph, including `merge_group` runs where applicable.
 
 **Q:** Why do PR titles belong in environment variables rather than interpolated shell source?
 
@@ -42,11 +42,11 @@ Source: [GitHub Actions](40.3.1.01-github-actions.md)
 
 Source: [GitLab CI/CD](40.3.1.02-gitlab-ci.md)
 
-**Q:** When do needs and stages express different ordering?
+**Q:** When do `needs` and `stages` express different ordering?
 
-**A:** Stages provide broad ordering barriers; needs declares particular job dependencies so independent work can run sooner. Artifact dependencies must still match the producer/consumer contract.
+**A:** `stages` provide broad ordering barriers; `needs` declares particular job dependencies so independent work can run sooner. Artifact dependencies must still match the producer and consumer contract.
 
-**Q:** What must a cloud provider verify before trusting a GitLab job ID token?
+**Q:** What must a cloud provider verify before trusting a GitLab job identity (ID) token?
 
 **A:** Match the configured issuer and audience, then restrict trust to the intended project and protected ref or deployment environment. A valid token proves job identity; it does not make unreviewed pipeline code trustworthy or grant a role by itself.
 
@@ -54,7 +54,7 @@ Source: [GitLab CI/CD](40.3.1.02-gitlab-ci.md)
 
 Source: [Jenkins CI/CD](40.3.1.03-jenkins.md)
 
-**Q:** Why is a Jenkinsfile insufficient for a reproducible pipeline?
+**Q:** Why is a `Jenkinsfile` insufficient for a reproducible pipeline?
 
 **A:** Agent images, plugins, credentials, tool versions, and external dependencies also influence execution. Pin and operate those inputs as part of the pipeline system.
 
@@ -68,23 +68,23 @@ Source: [Argo CD (GitOps)](40.3.1.04-argocd.md)
 
 **Q:** Can reverting Git safely reverse every deployment effect?
 
-**A:** It can restore manifests/artifact references. Database migrations, writes, and external effects may require a separate forward repair or rollback procedure.
+**A:** It can restore manifests and artifact references. Database migrations, writes, and external effects may require a separate forward repair or rollback procedure.
 
-**Q:** If Argo CD reports Synced, what must you still check before calling the release successful?
+**Q:** If Argo CD reports `Synced`, what must you still check before calling the release successful?
 
-**A:** Desired configuration matches live configuration, but workload health and user-visible behavior can still fail. Inspect readiness, resource health and application checks separately.
+**A:** Desired configuration matches live configuration, but workload health and user-visible behavior can still fail. Inspect readiness, resource health, and application checks separately.
 
-**Q:** Why must a release that depends on a PreSync migration avoid selective sync?
+**Q:** Why must a release that depends on a `PreSync` migration avoid selective sync?
 
 **A:** Hooks do not run during selective sync. A normal ordered synchronization can execute the migration; it still needs compatible, safely repeatable database behavior.
 
 **Q:** An ApplicationSet object is accepted in `default`, but no Applications are generated. What controller boundary should you inspect?
 
-**A:** ApplicationSets normally belong in the Argo CD control-plane namespace. Watching other namespaces requires explicit ApplicationSet controller configuration and matching allowed Application namespaces; API acceptance alone does not establish reconciliation.
+**A:** ApplicationSets normally belong in the Argo CD control-plane namespace. Watching other namespaces requires explicit ApplicationSet controller configuration and matching allowed Application namespaces; Application Programming Interface (API) acceptance alone does not establish reconciliation.
 
-**Q:** Does a SyncFail hook automatically reverse a database migration?
+**Q:** Does a `SyncFail` hook automatically reverse a database migration?
 
-**A:** No. It can run configured remediation, but database/external effects are not a transaction with manifest synchronization. Establish a compatible repair procedure.
+**A:** No. It can run configured remediation, but database and external effects are not a transaction with manifest synchronization. Establish a compatible repair procedure.
 
 ## Summary
 

@@ -42,11 +42,11 @@ Source: [Health Checks](40.4.2.02-health-checks.md)
 
 Source: [Error tracking](40.4.2.01-error-tracking.md)
 
-**Q:** Why does sendDefaultPii false not protect a password explicitly added as extra context?
+**Q:** Why does `sendDefaultPii: false` not protect a password explicitly added as extra context?
 
 **A:** Default collection and manually supplied context differ. Define an allowlisted event schema and test explicit fields plus exception text and every enabled signal.
 
-**Q:** Why must source-map debug ID injection happen before final artifact hashes/publication?
+**Q:** Why must source-map debug ID injection happen before final artifact hashes and publication?
 
 **A:** Injection changes emitted artifacts. The uploaded maps and deployed bytes must share the matching identity; hashing earlier bytes certifies a different candidate.
 

@@ -1,6 +1,6 @@
 # CI Platforms
 
-> **Study time:** ≈ 41 min of reading (5 files, ~8 min average).
+> **Study time:** ≈ 42 min of reading (5 files, ~8 min average).
 > **5 files.** The four platforms you are most likely to meet: GitHub Actions, GitLab CI/CD, Jenkins, and Argo CD. Learn one deeply, then map its event, execution, artifact and authority boundaries to the others.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#pass-1--separate-verification-from-promotion)
@@ -11,23 +11,23 @@
 
 ## Follow One Commit Into Production
 
-Start with the platform your project uses, but keep the same questions throughout: what code executes, which checks observe it, which bytes are promoted, and where deployment authority becomes available? A pipeline definition schedules work; the application scripts and cloud/controller configuration supply the actual behavior.
+Start with the platform your project uses, but keep the same questions throughout: what code executes, which checks observe it, which bytes are promoted, and where deployment authority becomes available? A pipeline definition schedules work; the application scripts and cloud or controller configuration supply the actual behavior.
 
 ## Pass 1 — Separate Verification From Promotion
 
-[GitHub Actions](40.3.1.01-github-actions.md) traces a PR through verification and a trusted main build through identified-artifact promotion. Understand events, jobs/runners, artifacts and permissions before choosing reusable actions, matrices or caches.
+[GitHub Actions](40.3.1.01-github-actions.md) traces a Pull Request (PR) through verification and a trusted `main` build through identified-artifact promotion. Understand events, jobs and runners, artifacts, and permissions before choosing reusable actions, matrices, or caches.
 
 ## Pass 2 — Translate the Dependency and Credential Graph
 
-[GitLab CI/CD](40.3.1.02-gitlab-ci.md) expresses ordering through stages and needs. [Jenkins](40.3.1.03-jenkins.md) adds operated controllers, agents and plugins. Read both as translations of the same data/authority boundaries, then check their distinct syntax and lifecycle requirements.
+[GitLab CI/CD](40.3.1.02-gitlab-ci.md) expresses ordering through stages and `needs`. [Jenkins](40.3.1.03-jenkins.md) adds operated controllers, agents, and plugins. Read both as translations of the same data and authority boundaries, then check their distinct syntax and lifecycle requirements.
 
 ## Pass 3 — Let a Controller Reconcile the Declared State
 
-[Argo CD](40.3.1.04-argocd.md) continuously compares rendered desired state with tracked cluster resources. Trace drift and synchronization separately from the build that produced the image, and separate manifest rollback from irreversible database/external effects.
+[Argo CD](40.3.1.04-argocd.md) continuously compares rendered desired state with tracked cluster resources. Trace drift and synchronization separately from the build that produced the image, and separate manifest rollback from irreversible database or external effects.
 
 ## Finish With Revision, Then Practice
 
-Close the chapters and complete [section revision questions](REVISION.md). Then use the separate [CI/CD interview bank](../04-interview-prep/40.3.4.01-interview-questions.md) to explain a concrete release decision.
+Close the chapters and complete [section revision questions](REVISION.md). Then use the separate [Continuous Integration and Continuous Delivery (CI/CD) interview bank](../04-interview-prep/40.3.4.01-interview-questions.md) to explain a concrete release decision.
 
 ---
 
@@ -46,4 +46,4 @@ Close the chapters and complete [section revision questions](REVISION.md). Then 
 
 ## Apply the Flow to Your Repository
 
-Inspect current workflow files, build/deploy scripts and environment settings together. Trace a shared-package change and a failed deployment through their actual run evidence. A historical workflow count, file name or badge cannot establish required checks, cloud trust or readiness.
+Inspect current workflow files, build and deployment scripts, and environment settings together. Trace a shared-package change and a failed deployment through their actual run evidence. A historical workflow count, file name, or badge cannot establish required checks, cloud trust, or readiness.

@@ -44,9 +44,9 @@ Source: [Pipeline Supply-Chain Security & SLSA](40.3.2.04-pipeline-supply-chain-
 
 **Q:** Why must verification enforce an expected identity rather than any valid signature?
 
-**A:** An attacker can sign their own artifact. Policy must bind the signature/provenance to the approved repository, workflow, builder, and digest.
+**A:** An attacker can sign their own artifact. Policy must bind the signature and provenance to the approved repository, workflow, builder, and digest.
 
-**Q:** Why must a SLSA claim name its track as well as its level?
+**Q:** Why must a Supply-chain Levels for Software Artifacts (SLSA) claim name its track as well as its level?
 
 **A:** The Build and Source tracks describe different controls and have different levels. For example, Build L2 concerns authentic provenance from a hosted builder, while Source L2 concerns preserved change history and source provenance; one does not establish the other.
 
@@ -66,15 +66,15 @@ Source: [Docker build and deploy](40.3.2.01-docker-build-deploy.md)
 
 Source: [Artifact registries and promotion](40.3.2.03-artifact-registries-release-promotion.md)
 
-**Q:** Does an ECR lifecycle rule know which untagged digests workloads still use?
+**Q:** Does an Amazon Elastic Container Registry (ECR) lifecycle rule know which untagged digests workloads still use?
 
-**A:** No. Its selection uses registry metadata. Inventory deployed/recovery references and preview deletion policy before allowing collection.
+**A:** No. Its selection uses registry metadata. Inventory deployed and recovery references and preview deletion policy before allowing collection.
 
 Source: [Supply-chain security](40.3.2.04-pipeline-supply-chain-security-slsa.md)
 
-**Q:** What remains stealable after migrating CI cloud access to OIDC?
+**Q:** What remains stealable after migrating Continuous Integration (CI) cloud access to OpenID Connect (OIDC)?
 
-**A:** Identity tokens and temporary cloud credentials can leak and be abused until expiry within their scope. Narrow trust/permissions, safe logging and revocation remain necessary.
+**A:** Identity tokens and temporary cloud credentials can leak and be abused until expiry within their scope. Narrow trust and permissions, safe logging, and revocation remain necessary.
 
 Source: [Pipeline patterns](40.3.2.02-pipeline-patterns.md)
 

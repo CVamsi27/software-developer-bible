@@ -1,6 +1,6 @@
 # Errors & Health
 
-> **Study time:** ≈ 15 min of reading (3 files, ~5 min average).
+> **Study time:** ≈ 16 min of reading (3 files, ~5 min average).
 > **3 files.** Runtime quality signals: aggregated error tracking (Sentry-style) and health checks that let orchestrators and load balancers trust your process.
 
 [![Files](https://img.shields.io/badge/files-3-blue)](#file-index)
@@ -11,18 +11,18 @@
 
 ## Why this category exists
 
-Error reports identify selected failures; health signals support defined control/observation decisions. Neither proves that every user action was correct. Error tracking groups thousands of stack traces into actionable issues tied to releases; health endpoints turn internal state into machine-readable signals that Kubernetes probes and load balancers act on. Explain the report/triage flow first, then the action each health observation is allowed to control.
+Error reports identify selected failures; health signals support defined control and observation decisions. Neither proves that every user action was correct. Error tracking groups thousands of stack traces into actionable issues tied to releases; health endpoints turn internal state into machine-readable signals that Kubernetes probes and load balancers act on. Explain the report and triage flow first, then the action each health observation is allowed to control.
 
 ---
 
 ## File Index
 
-Read error capture/grouping/privacy before health-control semantics and bounded outside-in observations. Complete revision before the separate interview drill.
+Read error capture, grouping, and privacy before health-control semantics and bounded outside-in observations. Complete revision before the separate interview drill.
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Error Tracking](40.4.2.01-error-tracking.md) | Error aggregation (Sentry), source maps, grouping/dedup, release tracking, alerting on new issues | Important | Important | 6 min |
-| 02 | [Health Checks](40.4.2.02-health-checks.md) | Liveness/readiness semantics, health endpoint design, dependency checks, graceful degradation | Important | Important | 7 min |
+| ----: | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------- | ------------------ | ----------: |
+| 01 | [Error Tracking](40.4.2.01-error-tracking.md) | Error aggregation (Sentry), source maps, grouping and deduplication, release tracking, alerting on new issues | Important | Important | 7 min |
+| 02 | [Health Checks](40.4.2.02-health-checks.md) | Liveness and readiness semantics, health endpoint design, dependency checks, graceful degradation | Important | Important | 7 min |
 
 ---
 
@@ -42,15 +42,15 @@ Read error capture/grouping/privacy before health-control semantics and bounded 
 
 ## Docita Anchor
 
-These are implementation anchors. Current `instrument.ts` was inspected on 2026-10-10; source configuration does not prove live ingestion, universal redaction or current production health.
+These are implementation anchors. Current `instrument.ts` was inspected on October 10, 2026; source configuration does not prove live ingestion, universal redaction, or current production health.
 
-Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
+Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React, and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
 
 | Topic | Docita evidence |
 | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Error tracking (Sentry) | `instrument.ts` bootstrap with `createSentryBeforeSend` scrubbing (`error-handling/sentry.utils.ts`); optional profiling behind `SENTRY_PROFILING` |
 | Error service layer | `monitoring/services/error-tracking.service.ts` wraps reporting for the app |
-| Ops alerts | `ops-alert.service.ts` + `listeners/ops-alert.listener.ts` react to domain events |
+| Ops alerts | `ops-alert.service.ts` and `listeners/ops-alert.listener.ts` react to domain events |
 | Health checks | `health-check.controller.ts`, `monitoring/health/prisma.health.ts`, `health-check.service.ts`; Fly probes `/api/health/live` |
 
 ## Finish This Section

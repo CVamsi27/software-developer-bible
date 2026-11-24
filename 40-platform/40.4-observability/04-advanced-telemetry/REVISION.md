@@ -16,11 +16,11 @@ Source: [OpenTelemetry (OTel)](40.4.4.01-opentelemetry.md)
 
 **Q:** What is OpenTelemetry separate from?
 
-**A:** It standardizes instrumentation, context, and telemetry collection/export. It is not itself the storage/query backend that decides retention, dashboards, or alert policy.
+**A:** It standardizes instrumentation, context, and telemetry collection and export. It is not itself the storage and query backend that decides retention, dashboards, or alert policy.
 
 **Q:** What maturity boundary should you check before adopting OpenTelemetry Profiles?
 
-**A:** The Profiles specification is in public Alpha and its protocol remains in development; SDK, Collector and backend support varies. Verify the exact components you plan to deploy; do not infer production support from the general OpenTelemetry name. See the [component status](https://opentelemetry.io/docs/specs/status/) and [Profiles specification](https://opentelemetry.io/docs/specs/otel/profiles/).
+**A:** The Profiles specification is in public Alpha and its protocol remains in development; Software Development Kit (SDK), Collector, and backend support varies. Verify the exact components you plan to deploy; do not infer production support from the general OpenTelemetry name. See the [component status](https://opentelemetry.io/docs/specs/status/) and [Profiles specification](https://opentelemetry.io/docs/specs/otel/profiles/).
 
 **Q:** Why batch and bound telemetry queues?
 
@@ -32,7 +32,7 @@ Source: [Continuous Profiling](40.4.4.02-continuous-profiling.md)
 
 **Q:** How do continuous profiles complement traces?
 
-**A:** Profiles show sampled CPU/allocation/lock costs across time and workloads; traces show a selected request's path. Linking both to versions narrows a regression's cause.
+**A:** Profiles show sampled CPU, allocation, and lock costs across time and workloads; traces show a selected request's path. Linking both to versions narrows a regression's cause.
 
 **Q:** Why can a sample-heavy function still be the wrong first optimization?
 
@@ -62,7 +62,7 @@ Sources: [OpenTelemetry](40.4.4.01-opentelemetry.md), [Profiling](40.4.4.02-cont
 
 **A:** No. Allocation profiles show churn; live-heap evidence and retention paths are needed to investigate a leak. Compare equivalent workloads and runtime versions.
 
-**Q:** Why does an eBPF HTTP graph need more qualification than a connection graph?
+**Q:** Why does an eBPF Hypertext Transfer Protocol (HTTP) graph need more qualification than a connection graph?
 
 **A:** HTTP interpretation needs compatible parsing, configuration and access to readable protocol data. Encryption, unavailable hooks and lost events can limit coverage; selected flow records are not complete application traces.
 

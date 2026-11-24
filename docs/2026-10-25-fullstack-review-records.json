@@ -10056,12 +10056,12 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "c27a097ebb0f5d94084d2198f04b043983bd89116ffa4dc2be9fc05dee4b3a23",
+      "sha256": "4aeb736751cb506b8f4803b8e28676ee933a1e531e7a65ea80a462c9a1b97cd9",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 11A C1-C8 refinement (2026-11-24): Full read of 207 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+      "notes": "Wave 11D-3 organic reading flow plan count/read-time sync (2026-11-24): Full read of 207 lines. Updated generated counts/read-time navigation after Wave 11D-3 organic reading flow plan.",
       "findings": []
     },
     {
@@ -10086,12 +10086,12 @@
     },
     {
       "path": "contributing.md",
-      "sha256": "bf2d8d114717d0e2b617c163df784c197c27b25ca7b73927722e37c519a4991a",
+      "sha256": "b4314731214ec8fe97af3974a8cc1fbd877dad59e93e3e0abea6ce75fd4f4ce2",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 11A C1-C8 refinement (2026-11-24): Full read of 948 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+      "notes": "Wave 11D-3 organic reading flow plan count/read-time sync (2026-11-24): Full read of 948 lines. Updated generated counts/read-time navigation after Wave 11D-3 organic reading flow plan.",
       "findings": []
     },
     {
@@ -10448,12 +10448,12 @@
     },
     {
       "path": "docs/superpowers/plans/2026-10-12-organic-reading-flow.md",
-      "sha256": "66e5eb506fa0b52a04be2aba9a4d6c8e3924d072d46b5fd2ce0422d01532ce90",
+      "sha256": "3af8e92dfaa8ed404578162410d36c38732d592e2261ae09f5d539dd5980fddf",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-14",
+      "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Full-content read (2026-11-14): Two sentence boundaries were repaired this pass so the plan's rule statements read as complete sentences. Rules are numbered and short; the rationale lives beside the rule rather than in a closing essay.",
+      "notes": "Wave 11D-3 organic reading flow plan C1-C8 refinement (2026-11-24): Full read of 1353 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
@@ -10608,12 +10608,12 @@
     },
     {
       "path": "docs/verification-gates.md",
-      "sha256": "09a682c4413de913e59b22db9f7f93bbd91e528c7dd414a9e862666c6228f764",
+      "sha256": "63da7d8729fda4a393d723347e00ee3d59940561d008019d0928e6576ad7fa69",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 11B C1-C8 refinement (2026-11-24): Full read of 137 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+      "notes": "Wave 11D-3 organic reading flow plan count/read-time sync (2026-11-24): Full read of 137 lines. Updated generated counts/read-time navigation after Wave 11D-3 organic reading flow plan.",
       "findings": []
     },
     {

@@ -14357,7 +14357,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "c27a097ebb0f5d94084d2198f04b043983bd89116ffa4dc2be9fc05dee4b3a23",
+   "sha256": "4aeb736751cb506b8f4803b8e28676ee933a1e531e7a65ea80a462c9a1b97cd9",
    "lines": 207,
    "genre": "index",
    "status": "read",
@@ -14370,7 +14370,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Maintains strict zero-broken-link boundary across 991 tracked markdown files."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
+   "notes": "Synced live read-time and counts after Wave 11D-3 organic reading flow plan."
   },
   "README.md": {
    "sha256": "35fd7906c9f051882eea7b6d0c73a5d360e4bfe624f61d8c95990bf378102cb4",
@@ -14405,7 +14405,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "contributing.md": {
-   "sha256": "bf2d8d114717d0e2b617c163df784c197c27b25ca7b73927722e37c519a4991a",
+   "sha256": "b4314731214ec8fe97af3974a8cc1fbd877dad59e93e3e0abea6ce75fd4f4ce2",
    "lines": 948,
    "genre": "meta",
    "status": "read",
@@ -14415,10 +14415,10 @@
     "readable": "Full read of 948 lines (3308 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "3308 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical contributor workflow guide; points at docs/verification-gates.md for full gate definitions.",
-    "fast": "Measured not built as HTML; 53.1 KB Markdown source served raw. Measured not built as HTML; 53.1 KB Markdown source served raw (not built as HTML; 53.1 KB Markdown source served raw on disk with verified backlinks, uniform headings, and concise prose structure.)",
+    "fast": "Measured not built as HTML; 53.1 KB Markdown source served raw. 1 KB Markdown source served raw. Measured not built as HTML; 53.1 KB Markdown source served raw (not built as HTML; 53.1 KB Markdown source served raw on disk with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Remaining limit is contributor guidance must be re-checked whenever verification gates change."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
+   "notes": "Synced live read-time and counts after Wave 11D-3 organic reading flow plan."
   },
   "design-qa.md": {
    "sha256": "4c7ab6ba5a188dc76d474a829bc7e1c1808c7032d41f351806bb1d1cb815bd93",
@@ -14949,20 +14949,20 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11D-2 historical implementation plans)."
   },
   "docs/superpowers/plans/2026-10-12-organic-reading-flow.md": {
-   "sha256": "66e5eb506fa0b52a04be2aba9a4d6c8e3924d072d46b5fd2ce0422d01532ce90",
-   "lines": 812,
+   "sha256": "3af8e92dfaa8ed404578162410d36c38732d592e2261ae09f5d539dd5980fddf",
+   "lines": 1353,
    "genre": "doc",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 archived implementation plan (2026-10-12-organic-reading-flow) verified against repo history as a dated engineering record with no live API claims.",
-    "readable": "Full read of 812 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "22459 words. Step-by-step execution plan for 2026-10-12-organic-reading-flow with explicit verification gates.",
+    "readable": "Full read of 1353 lines (23145 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "23145 words across 1353 lines. Step-by-step execution plan for 2026-10-12-organic-reading-flow with explicit verification gates.",
     "focused": "Canonical historical plan document for 2026-10-12-organic-reading-flow; no duplicate active instructions.",
-    "fast": "199.3 KB raw / 54.1 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 199.3 KB raw / 54.1 KB gzip (fast scan via headings and direct links.)",
     "best": "Records explicit rollback/verification boundary and failure-handling checks."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 11D-3 organic reading flow plan)."
   },
   "docs/superpowers/plans/2026-10-14-cross-stack-runtime-internals.md": {
    "sha256": "8d9d9d72f427f30dfb930a56d05c5d65c6be22f09fbb15f9994c52471fbeb6d5",
@@ -15205,7 +15205,7 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11B live operational and governance docs)."
   },
   "docs/verification-gates.md": {
-   "sha256": "09a682c4413de913e59b22db9f7f93bbd91e528c7dd414a9e862666c6228f764",
+   "sha256": "63da7d8729fda4a393d723347e00ee3d59940561d008019d0928e6576ad7fa69",
    "lines": 137,
    "genre": "doc",
    "status": "read",
@@ -15218,7 +15218,7 @@
     "fast": "Measured 78.9 KB raw / 23.7 KB gzip. (fast scan via headings and direct links.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for verification-gates."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 11B live operational and governance docs)."
+   "notes": "Synced live read-time and counts after Wave 11D-3 organic reading flow plan."
   },
   "lanes/INDEX.md": {
    "sha256": "95b05d4ab69f6299bca2b97f98dd0344bddb443371380124ef88db81b136f9d5",

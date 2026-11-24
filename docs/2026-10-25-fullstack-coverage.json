@@ -33409,7 +33409,7 @@
     },
     {
       "path": "projects/docita/15-doctors-verification-and-public-booking.md",
-      "sha256": "cf1bffbfa42c613de37948748a02a8f6983312af5ddb3396824eb7407afbb9cb",
+      "sha256": "fcecbc45199e67e01e2b384419ebd2ad862c1332ec5dd988a13f3974daad4ee9",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -33434,17 +33434,17 @@
       },
       "review": {
         "path": "projects/docita/15-doctors-verification-and-public-booking.md",
-        "sha256": "cf1bffbfa42c613de37948748a02a8f6983312af5ddb3396824eb7407afbb9cb",
+        "sha256": "fcecbc45199e67e01e2b384419ebd2ad862c1332ec5dd988a13f3974daad4ee9",
         "status": "reviewed",
         "reviewer": "root-continuation",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: Credential source/version and stale result race, capped nonpaginated sweep, local slot generation and implicit hours, candidate versus reservation, existing-phone purpose token versus new-phone policy, separate intake writes and confirmation concurrency. Moved the existing concrete problem before the definitions to establish the reading trace; no mechanism removed."
+        "notes": "Wave 10B C1-C8 refinement (2026-11-24): Full read of 132 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness."
       }
     },
     {
       "path": "projects/docita/16-patient-portal.md",
-      "sha256": "185c6a99b2297c3a9313ee504fc8d7d366e54301a775eae723ccfbb91e117f40",
+      "sha256": "53ec9880f4e71e78368cbc66a3384382c4285518d199afcc560be1e702c5ae80",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -33468,17 +33468,17 @@
       },
       "review": {
         "path": "projects/docita/16-patient-portal.md",
-        "sha256": "185c6a99b2297c3a9313ee504fc8d7d366e54301a775eae723ccfbb91e117f40",
+        "sha256": "53ec9880f4e71e78368cbc66a3384382c4285518d199afcc560be1e702c5ae80",
         "status": "reviewed",
         "reviewer": "root-continuation",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: OTP entropy/exclusive upper bound, attempt cap versus atomic single use, issuance/throttle/storage distinction, session-derived patient ownership and guardian policy, cookie/session lifecycle, ignored reported-dose status and partial audit coverage. Moved the existing concrete problem before the definitions to establish the reading trace; no mechanism removed."
+        "notes": "Wave 10B C1-C8 refinement (2026-11-24): Full read of 125 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness."
       }
     },
     {
       "path": "projects/docita/17-abdm-integration.md",
-      "sha256": "975ba0b8c02323c7821ab60b72cc5cd8d8d95cfcef71a29680790f8f2e251b0e",
+      "sha256": "91a425663eede6837bf81d6554034c7d9f3b55aaeb6bffa3fc74f9ae56cdb9e6",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -33486,7 +33486,7 @@
           "Definition",
           "First Principles",
           "Why a Ledger Helps",
-          "How Link, Share and Consent Requests Differ",
+          "How Link, Share, and Consent Requests Differ",
           "Examples: Authenticated Callback Is Not Completed Consent Validation",
           "What the Current Push Path Actually Sends",
           "Current Assessment and Recommended Design",
@@ -33502,24 +33502,24 @@
       },
       "review": {
         "path": "projects/docita/17-abdm-integration.md",
-        "sha256": "975ba0b8c02323c7821ab60b72cc5cd8d8d95cfcef71a29680790f8f2e251b0e",
+        "sha256": "91a425663eede6837bf81d6554034c7d9f3b55aaeb6bffa3fc74f9ae56cdb9e6",
         "status": "reviewed",
         "reviewer": "root-continuation",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: Correlation/authentication/consent as separate boundaries, local intent versus actual dispatch, callback state normalization, supplied ciphertext versus proven encryption, callback-selected egress, transport versus semantic receipt. No sandbox exchange/certification inferred. Moved the existing concrete problem before the definitions to establish the reading trace; no mechanism removed."
+        "notes": "Wave 10B C1-C8 refinement (2026-11-24): Full read of 128 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness."
       }
     },
     {
       "path": "projects/docita/18-enterprise-contracts.md",
-      "sha256": "8dfb116e19346fe7bfcbccc4b6f3bd1f4382a98c4007e77814bd8f737af0a53a",
+      "sha256": "913a3e2df55c548e1ce9e6b923403789ced4933c80316653d9789f2d37d9b536",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
         "headings": [
           "Definition",
           "First Principles",
-          "Why Lifecycle, Invoices and Estimates Are Separate",
+          "Why Lifecycle, Invoices, and Estimates Are Separate",
           "How Cross-clinic Administration Works",
           "Membership and Revision Boundaries",
           "Examples: Three Invoice Operations, Different Retry Semantics",
@@ -33538,17 +33538,17 @@
       },
       "review": {
         "path": "projects/docita/18-enterprise-contracts.md",
-        "sha256": "8dfb116e19346fe7bfcbccc4b6f3bd1f4382a98c4007e77814bd8f737af0a53a",
+        "sha256": "913a3e2df55c548e1ce9e6b923403789ced4933c80316653d9789f2d37d9b536",
         "status": "reviewed",
         "reviewer": "root-continuation",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: Cross-clinic scope versus privilege, contract/member/subscription/revision writes, exit restoration gap, deterministic rows versus frozen issuance, currency/period identity, estimate versus true-up and durable alert versus email completion. Moved the existing concrete problem before the definitions to establish the reading trace; no mechanism removed."
+        "notes": "Wave 10B C1-C8 refinement (2026-11-24): Full read of 130 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness."
       }
     },
     {
       "path": "projects/docita/19-documents-and-uploads.md",
-      "sha256": "05fedac596d01e7b5702207f8a597d71336821a7294ab0bccc5cd161af6fc03d",
+      "sha256": "751b757b74dd9a6006c113b269a3a2d9fd267f583bebbf732d59fd5e20f2995c",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -33575,17 +33575,17 @@
       },
       "review": {
         "path": "projects/docita/19-documents-and-uploads.md",
-        "sha256": "05fedac596d01e7b5702207f8a597d71336821a7294ab0bccc5cd161af6fc03d",
+        "sha256": "751b757b74dd9a6006c113b269a3a2d9fd267f583bebbf732d59fd5e20f2995c",
         "status": "reviewed",
         "reviewer": "root-continuation",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: Capability hash and expiry versus concurrent claim, endpoint byte/signature limits and provider differences, stable object identity versus migration, signed bearer URL versus current permission, upload metadata gaps and owned orphan recovery. Moved the existing concrete problem before the definitions to establish the reading trace; no mechanism removed."
+        "notes": "Wave 10B C1-C8 refinement (2026-11-24): Full read of 166 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness."
       }
     },
     {
       "path": "projects/docita/20-clinical-lab-and-medical-coding.md",
-      "sha256": "1fabdac636c2554068032258b98c3fd7ff005b51bbb3eec21436fa27ab1d99e0",
+      "sha256": "81722c7c405c7c2b70057132acf3f48b79440ad5579a91bfabf539d1ca0b30c2",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -33597,7 +33597,7 @@
           "Examples: Result-first and Payment-first",
           "Coding Providers Must Preserve Code-system Identity",
           "How Search Cooldown and Sync Work",
-          "Settings, Favorites and Claim Readiness",
+          "Settings, Favorites, and Claim Readiness",
           "Current Assessment and Recommended Design",
           "Mistakes and Best Practices",
           "Code Evidence",
@@ -33612,17 +33612,17 @@
       },
       "review": {
         "path": "projects/docita/20-clinical-lab-and-medical-coding.md",
-        "sha256": "1fabdac636c2554068032258b98c3fd7ff005b51bbb3eec21436fa27ab1d99e0",
+        "sha256": "81722c7c405c7c2b70057132acf3f48b79440ad5579a91bfabf539d1ca0b30c2",
         "status": "reviewed",
         "reviewer": "root-continuation",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: Lab prerequisite predicate versus atomic release and separate notification, manually recorded payment versus reconciliation, catalog source/system/version and HCPCS II versus CPT, fallback mixing, cooldown and partial-stream completion. Moved the existing concrete problem before the definitions to establish the reading trace; no mechanism removed."
+        "notes": "Wave 10B C1-C8 refinement (2026-11-24): Full read of 141 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness."
       }
     },
     {
       "path": "projects/docita/21-long-tail-domains.md",
-      "sha256": "051c19d866bec4747e1dc7ce69354f587fe3c681ce3f225100c2802d41c2e150",
+      "sha256": "06150d05cf61562583d92b78d5799c2c034556661e5d4abc8735bca40b56c649",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -33631,7 +33631,7 @@
           "First Principles",
           "Reminders: A Scan Window Is Not a Durable Job",
           "Custom Fields: Definitions and Values Need a Shared Contract",
-          "Inbound Webhooks: Authentication, Freshness and Completion Differ",
+          "Inbound Webhooks: Authentication, Freshness, and Completion Differ",
           "Outbound Webhooks: The Current Retry Path Is Incomplete",
           "Lab Login: Role Checking Is the Entry Boundary",
           "Leave: Coupled Writes Still Need Conditional Transitions",
@@ -33649,17 +33649,17 @@
       },
       "review": {
         "path": "projects/docita/21-long-tail-domains.md",
-        "sha256": "051c19d866bec4747e1dc7ce69354f587fe3c681ce3f225100c2802d41c2e150",
+        "sha256": "06150d05cf61562583d92b78d5799c2c034556661e5d4abc8735bca40b56c649",
         "status": "reviewed",
         "reviewer": "root-continuation",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: Read-before-send reminder race, optional tenant arguments, transport replay claim versus business processing, outbound tenant filter/placeholder secret/stranded IN_FLIGHT, LAB login versus resource scope, leave reversal, feedback labels and deletion request atomicity. Moved the existing concrete problem before the definitions to establish the reading trace; no mechanism removed."
+        "notes": "Wave 10B C1-C8 refinement (2026-11-24): Full read of 163 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness."
       }
     },
     {
       "path": "projects/docita/22-what-id-do-differently.md",
-      "sha256": "d33414e4daff71dfe38f5f88b02d9d306c0ebc2d096ce0e741ad622caca78e70",
+      "sha256": "e008778d288999bf98f6b709c64c491dfcfe7e2b9a5f372c8d8078f0c592aff8",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -33685,17 +33685,17 @@
       },
       "review": {
         "path": "projects/docita/22-what-id-do-differently.md",
-        "sha256": "d33414e4daff71dfe38f5f88b02d9d306c0ebc2d096ce0e741ad622caca78e70",
+        "sha256": "e008778d288999bf98f6b709c64c491dfcfe7e2b9a5f372c8d8078f0c592aff8",
         "status": "reviewed",
         "reviewer": "root-continuation",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read: Invariant/counterexample/enforcement/evidence/rollout framework, identity/money first, current emitAsync and existing Turbo separated from proposals, event evolution, read model lag, privacy, pool/health and form-generation costs. Moved the existing concrete problem before the definitions to establish the reading trace; no mechanism removed."
+        "notes": "Wave 10B C1-C8 refinement (2026-11-24): Full read of 160 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness."
       }
     },
     {
       "path": "projects/docita/23-hypothetical-clinic-metrics.md",
-      "sha256": "7fda013384c6ab6c91b8b01e9227e6c8a1e1215de47e1325d673647c87c04b7a",
+      "sha256": "c9f35b4dc139d70228c0901eaa8769c6a67a15a8b2eb15e4b84f4d77c1490fe7",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -33724,18 +33724,18 @@
       },
       "review": {
         "path": "projects/docita/23-hypothetical-clinic-metrics.md",
-        "sha256": "7fda013384c6ab6c91b8b01e9227e6c8a1e1215de47e1325d673647c87c04b7a",
+        "sha256": "c9f35b4dc139d70228c0901eaa8769c6a67a15a8b2eb15e4b84f4d77c1490fe7",
         "status": "reviewed",
         "reviewer": "root + full-content evidence reviewers",
-        "reviewDate": "2026-10-29",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content independent review: published capacity reader availability replaces local-only handoff; historicalf3base and model/fixture/real-API distinctions retained. Workload and latency remain modeled/proposed unless separately measured; no adoption or25tenantcapacity claim.",
+        "notes": "Wave 10B C1-C8 refinement (2026-11-24): Full read of 374 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "projects/docita/24-resume-claim-walkthrough.md",
-      "sha256": "1917e6f785e2498f05ae47c14432b953b2ae4aff4d64393be8b9f7f8a36b6d02",
+      "sha256": "a77004e2703f3203bce4ddefe34419d1bfdbba8cfc277e30009f82b804168fe8",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -33762,12 +33762,12 @@
       },
       "review": {
         "path": "projects/docita/24-resume-claim-walkthrough.md",
-        "sha256": "1917e6f785e2498f05ae47c14432b953b2ae4aff4d64393be8b9f7f8a36b6d02",
+        "sha256": "a77004e2703f3203bce4ddefe34419d1bfdbba8cfc277e30009f82b804168fe8",
         "status": "reviewed",
         "reviewer": "root-capacity-proof",
-        "reviewDate": "2026-10-28",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Reviewed existing five-bullet walkthrough and separate modeled-scale evidence mapping. Links route mechanisms to canonical deployment/metric/workload homes. No resume artifact changed, no first-person fabricated adoption/latency/history introduced.",
+        "notes": "Wave 10B C1-C8 refinement (2026-11-24): Full read of 173 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },

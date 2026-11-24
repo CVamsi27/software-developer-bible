@@ -10,7 +10,7 @@
   "entries": [
     {
       "path": "00-strategy/00.01-communication.md",
-      "sha256": "03cc9823260e402ec2f0af92792ecf8c2ad025710805424c2f1948754fe8f9aa",
+      "sha256": "5713b2bb46eddea224f167d1119790c3d8c6cee66c4adc6f704f55087bee4c38",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -34,18 +34,18 @@
       },
       "review": {
         "path": "00-strategy/00.01-communication.md",
-        "sha256": "03cc9823260e402ec2f0af92792ecf8c2ad025710805424c2f1948754fe8f9aa",
+        "sha256": "5713b2bb46eddea224f167d1119790c3d8c6cee66c4adc6f704f55087bee4c38",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 101 lines. Rewritten for first-pass clarity: answer-first caching hook, weak-vs-strong comparison, listener decision table, invariant narration, 4-step pushback recovery script, and peer feedback loop. No version-sensitive claim; checked against Tech Interview Handbook behavioral reference and 00-strategy REVISION.md Q&A on pushback handling.",
+        "notes": "Wave 6 C1-C8 refinement (2026-11-24): Full read of 105 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "00-strategy/00.02-resume-tips.md",
-      "sha256": "f9c363d3758643883ec56ba271af845a571ab8789fdce4e41b7861ff0b3668a3",
+      "sha256": "d1bd8138f98f0d57a37912cea083ac4be52221ea88e9baae4026a632d486b852",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -69,18 +69,18 @@
       },
       "review": {
         "path": "00-strategy/00.02-resume-tips.md",
-        "sha256": "f9c363d3758643883ec56ba271af845a571ab8789fdce4e41b7861ff0b3668a3",
+        "sha256": "d1bd8138f98f0d57a37912cea083ac4be52221ea88e9baae4026a632d486b852",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 105 lines. Rewritten with 3 concrete weak-vs-strong senior full-stack bullet rewrites, page-one hierarchy, senior scope proof, ATS parseability checklist, and common-mistakes repairs. No version-sensitive claim; checked against MIT Career Advising resume guidance and 00-strategy REVISION.md resume-scope and non-percentage evidence pairs.",
+        "notes": "Wave 6 C1-C8 refinement (2026-11-24): Full read of 105 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "00-strategy/00.03-star-method.md",
-      "sha256": "13dffd3cd3b235225e6d1c11360e96d26e2d2d2a1468082e140b9294ed78d370",
+      "sha256": "f236c710e1160d5eb80d3313b0e93f4c8bf325c434bcd8287534e9cc902bfcaa",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -103,18 +103,18 @@
       },
       "review": {
         "path": "00-strategy/00.03-star-method.md",
-        "sha256": "13dffd3cd3b235225e6d1c11360e96d26e2d2d2a1468082e140b9294ed78d370",
+        "sha256": "f236c710e1160d5eb80d3313b0e93f4c8bf325c434bcd8287534e9cc902bfcaa",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 101 lines. Rewritten with a concrete senior pricing-cache incident walkthrough, time-share guide, follow-up probes, vague-vs-inspectable judgment contrast, and 7-theme story bank. No version-sensitive claim; checked against MIT Career Advising STAR resource and 00-strategy REVISION.md ownership pair.",
+        "notes": "Wave 6 C1-C8 refinement (2026-11-24): Full read of 105 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "00-strategy/00.04-hr-questions.md",
-      "sha256": "80ec9495cff12ec4ebaf6699ac1fab868f613b47b4ec1382d63ca33d002a82f3",
+      "sha256": "512caf354f5fa0d06610d419f7d459be8407b601290d608eceafa575dbef2dac",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -138,18 +138,18 @@
       },
       "review": {
         "path": "00-strategy/00.04-hr-questions.md",
-        "sha256": "80ec9495cff12ec4ebaf6699ac1fab868f613b47b4ec1382d63ca33d002a82f3",
+        "sha256": "512caf354f5fa0d06610d419f7d459be8407b601290d608eceafa575dbef2dac",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 107 lines. Rewritten with concrete role-thesis script, 6 prompt-response formulas, component-by-component EUR offer arithmetic, calm counter-offer script, and decision-shaping recruiter questions. No version-sensitive claim; checked against Levels.fyi compensation comparison boundary and 00-strategy REVISION.md sign-on separation pair.",
+        "notes": "Wave 6 C1-C8 refinement (2026-11-24): Full read of 109 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "00-strategy/00.05-find-startup-roles.md",
-      "sha256": "fa1c095e32e45389044fac1ef4b57e7b50c3c5612bc250cc980c61a6c82bcdf2",
+      "sha256": "d47120b25020886b492b90c88121c5f40e1f425b6f57fc3a34a21bb4e0713a22",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -174,18 +174,18 @@
       },
       "review": {
         "path": "00-strategy/00.05-find-startup-roles.md",
-        "sha256": "fa1c095e32e45389044fac1ef4b57e7b50c3c5612bc250cc980c61a6c82bcdf2",
+        "sha256": "d47120b25020886b492b90c88121c5f40e1f425b6f57fc3a34a21bb4e0713a22",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 0 pilot comprehension rewrite (2026-11-23): plain-English senior startup discovery playbook with live-probed VC portfolio hubs (Sequoia, Index, Point Nine, a16z, Accel, Arbeitnow, Remotive), direct Ashby/Greenhouse/Lever/Personio search queries, 7-fact ATS verification table, worked ESOP/VSOP equity math, and scripts/job_board_watch.py --discover workflow. All new external URLs live-probed HTTP 200; no personal data or private paths.",
+        "notes": "Wave 6 C1-C8 refinement (2026-11-24): Full read of 228 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "00-strategy/INDEX.md",
-      "sha256": "13a49b98829f9f244c573070df8fa6cf34afcc0a7c9e522534e8803b618d9b9e",
+      "sha256": "edc481f1662c62af26b813b89c6fac41ac17ed7b69e86450db182d553f0a4fc3",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -204,18 +204,18 @@
       },
       "review": {
         "path": "00-strategy/INDEX.md",
-        "sha256": "13a49b98829f9f244c573070df8fa6cf34afcc0a7c9e522534e8803b618d9b9e",
+        "sha256": "edc481f1662c62af26b813b89c6fac41ac17ed7b69e86450db182d553f0a4fc3",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 1 Batch 1a+1b (2026-11-23): Full read of 57 lines. Section flow matches all five updated strategy chapters and separate revision companion. No version-sensitive claim; study-time badge and section total restamped from live disk by scripts/read_time.py on 2026-11-23.",
+        "notes": "Wave 6 C1-C8 refinement (2026-11-24): Full read of 57 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "00-strategy/REVISION.md",
-      "sha256": "672963ace404484b246ab611218655bb4e79a3bdb562e438f98dd1ce71e1b3b5",
+      "sha256": "49d18db2a5c442a4ec051ee933ced66f2b5a9bf95881d91163e5e62429ea12a2",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -236,12 +236,12 @@
       },
       "review": {
         "path": "00-strategy/REVISION.md",
-        "sha256": "672963ace404484b246ab611218655bb4e79a3bdb562e438f98dd1ce71e1b3b5",
+        "sha256": "49d18db2a5c442a4ec051ee933ced66f2b5a9bf95881d91163e5e62429ea12a2",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-12",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Added two source-linked pairs on what a local job-search tool may automate and what \"local-first\" leaves open about the model provider and on-disk personal data; Summary now says to keep verification, fit judgment and submission with the candidate. Existing authored questions preserved.",
+        "notes": "Wave 6 C1-C8 refinement (2026-11-24): Full read of 89 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
@@ -26536,7 +26536,7 @@
     },
     {
       "path": "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.md",
-      "sha256": "f6f3fab1cf6010fdb837ec3bbd7e13588374967d0864d7b305580d61aea83539",
+      "sha256": "39180e6cbe98de7f9449d5c17fd2449d8e42caef44573bba54f72495aa1a9b3c",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -26560,18 +26560,18 @@
       },
       "review": {
         "path": "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.md",
-        "sha256": "f6f3fab1cf6010fdb837ec3bbd7e13588374967d0864d7b305580d61aea83539",
+        "sha256": "39180e6cbe98de7f9449d5c17fd2449d8e42caef44573bba54f72495aa1a9b3c",
         "status": "reviewed",
         "reviewer": "backend_realtime_projects_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Handshake/frame/message, masked versus encrypted, origin versus authentication, explicit browser connection owner, heartbeat and pending-byte limits read fully. Exact extracted ws8 server passed actual loopback echo, origin403, binary1003, malformed/oversized-policy1008 and message-rate1008; server cleanup observed under a bounded deadline. No durable delivery/capacity claim.",
+        "notes": "Wave 6 C1-C8 refinement (2026-11-24): Full read of 256 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "60-realtime/60.1-websockets/01-transports/60.1.1.02-server-sent-events.md",
-      "sha256": "873d41d315ad06a99f2fc6d0ba6dafbd9a574a9c052a96dd145891981107faa4",
+      "sha256": "f4ceb3c353e50bdbafa908a866763808772383effbabe36a7274932cf82d61bf",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -26594,18 +26594,18 @@
       },
       "review": {
         "path": "60-realtime/60.1-websockets/01-transports/60.1.1.02-server-sent-events.md",
-        "sha256": "873d41d315ad06a99f2fc6d0ba6dafbd9a574a9c052a96dd145891981107faa4",
+        "sha256": "f4ceb3c353e50bdbafa908a866763808772383effbabe36a7274932cf82d61bf",
         "status": "reviewed",
         "reviewer": "backend_realtime_projects_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full server/client and framing/reconnect/cursor/snapshot/cleanup reasoning read. Exact Node server passed retained ordered replay, expired/ahead reset, invalidcursor400 and nonfinite-publication rejection. Restart history, epoch and database effect boundaries remain explicit; no production proxy or network coverage claimed.",
+        "notes": "Wave 6 C1-C8 refinement (2026-11-24): Full read of 236 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "60-realtime/60.1-websockets/01-transports/60.1.1.03-socket-io.md",
-      "sha256": "39320d406a8f4213cf404af352857f026075b76b23f552c7696d519ce23a7d12",
+      "sha256": "df40e92faabc1972751cfb9a3fa28ec059627fa0373c6de89b2954cbf0debacb",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -26629,18 +26629,18 @@
       },
       "review": {
         "path": "60-realtime/60.1-websockets/01-transports/60.1.1.03-socket-io.md",
-        "sha256": "39320d406a8f4213cf404af352857f026075b76b23f552c7696d519ce23a7d12",
+        "sha256": "df40e92faabc1972751cfb9a3fa28ec059627fa0373c6de89b2954cbf0debacb",
         "status": "reviewed",
         "reviewer": "backend_realtime_projects_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full event/room/namespace/server/client examples read; checked command fingerprint, current membership, bounded in-memory storage, connection-generation join guard, acknowledgment uncertainty, reconnection, polling affinity and adapter limits. Current official Socket.IO delivery/adapter contracts checked; no new Socket.IO runtime or persistent integration executed.",
+        "notes": "Wave 6 C1-C8 refinement (2026-11-24): Full read of 277 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "60-realtime/60.1-websockets/01-transports/60.1.1.04-webtransport.md",
-      "sha256": "5fb3a0543d40ec69bd635baeb8e5e050786338f76085044da48feccc8985d070",
+      "sha256": "05c55b9057b6d444c8fc315fcf08bf67670f8d2f38dd7c8c215838726c0cb27d",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -26664,18 +26664,18 @@
       },
       "review": {
         "path": "60-realtime/60.1-websockets/01-transports/60.1.1.04-webtransport.md",
-        "sha256": "5fb3a0543d40ec69bd635baeb8e5e050786338f76085044da48feccc8985d070",
+        "sha256": "05c55b9057b6d444c8fc315fcf08bf67670f8d2f38dd7c8c215838726c0cb27d",
         "status": "reviewed",
         "reviewer": "backend_realtime_projects_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read of native versus capsule stream/datagram mapping, byte framing, writer lifetime, snapshot sequence/epoch, closure/migration, draft/status/support and deployment boundaries. Rechecked activeHTTP3draft16 and MDN Baseline2026; no live WebTransport endpoint exercised.",
+        "notes": "Wave 6 C1-C8 refinement (2026-11-24): Full read of 157 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "60-realtime/60.1-websockets/01-transports/INDEX.md",
-      "sha256": "7d09398a685283f22605b45ec0098cdb11f0c0eb1c42bea97cc93c1179a898b8",
+      "sha256": "2f49564c84734c8c15679151f570232104b55f58208bb565ad2b812a0cb3b8de",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -26695,18 +26695,18 @@
       },
       "review": {
         "path": "60-realtime/60.1-websockets/01-transports/INDEX.md",
-        "sha256": "7d09398a685283f22605b45ec0098cdb11f0c0eb1c42bea97cc93c1179a898b8",
+        "sha256": "2f49564c84734c8c15679151f570232104b55f58208bb565ad2b812a0cb3b8de",
         "status": "reviewed",
         "reviewer": "backend_realtime_projects_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full learning-index read; transport, state/recovery, implementation and evidence prerequisites lead to separate revision and interview practice. Source-only Docita pointers and writer-owned numeric metadata retained.",
+        "notes": "Wave 6 C1-C8 refinement (2026-11-24): Full read of 62 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "60-realtime/60.1-websockets/01-transports/REVISION.md",
-      "sha256": "38a6a4ff20dab61315d8b6ca03aff29d090381c9cc271e5b4c5651916a2f4b47",
+      "sha256": "05743f81abe197574d41d8207383d013a35687c2f2d3adccfcecaf743372010c",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -26727,18 +26727,18 @@
       },
       "review": {
         "path": "60-realtime/60.1-websockets/01-transports/REVISION.md",
-        "sha256": "38a6a4ff20dab61315d8b6ca03aff29d090381c9cc271e5b4c5651916a2f4b47",
+        "sha256": "05743f81abe197574d41d8207383d013a35687c2f2d3adccfcecaf743372010c",
         "status": "reviewed",
         "reviewer": "backend_realtime_projects_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full source-linked revision read; all authored questions and companion contracts checked, including new Redis adapter trust-boundary question.",
+        "notes": "Wave 6 C1-C8 refinement (2026-11-24): Full read of 139 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.01-real-time-architecture.md",
-      "sha256": "67cde24b3e2eed060ab8f744c95b7bf01283ec6d6a42edb98120b6c296fec4b6",
+      "sha256": "577c0d4c9c5c0a8daeed76521e3f225fe5f4cfb6ceae151387e8ce24d92219bd",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -26763,18 +26763,18 @@
       },
       "review": {
         "path": "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.01-real-time-architecture.md",
-        "sha256": "67cde24b3e2eed060ab8f744c95b7bf01283ec6d6a42edb98120b6c296fec4b6",
+        "sha256": "577c0d4c9c5c0a8daeed76521e3f225fe5f4cfb6ceae151387e8ce24d92219bd",
         "status": "reviewed",
         "reviewer": "backend_realtime_projects_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read of commit/outbox/publish/client trace, snapshot-subscribe gap, group work versus fanout, current-state versus event sourcing, authorization and recovery. Existing canonical mechanism homes preserved; no provider or broker execution claim.",
+        "notes": "Wave 6 C1-C8 refinement (2026-11-24): Full read of 133 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.02-scaling-patterns.md",
-      "sha256": "79e936a0de505a6ef0cc5cb39dff699a16aff8d8c2048165242e7822de4b5780",
+      "sha256": "96aa3db35115b63c5bb70fedaa8577334b341fe2b8b8e59de4a2bcd673adf6cf",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -26799,12 +26799,12 @@
       },
       "review": {
         "path": "60-realtime/60.1-websockets/02-architecture-and-scaling/60.1.2.02-scaling-patterns.md",
-        "sha256": "79e936a0de505a6ef0cc5cb39dff699a16aff8d8c2048165242e7822de4b5780",
+        "sha256": "96aa3db35115b63c5bb70fedaa8577334b341fe2b8b8e59de4a2bcd673adf6cf",
         "status": "reviewed",
         "reviewer": "backend_realtime_projects_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full read of gateway/event routing, affinity, actual adapter excerpt, DurableObject hibernation, workload arithmetic and finite drain/recovery. Added current official adapter trust boundary: Redis publishers can inject packets/control traffic, requiring trusted infrastructure and minimal channel/command ACLs. 500x20x2000 payload-only calculation recomputed.",
+        "notes": "Wave 6 C1-C8 refinement (2026-11-24): Full read of 152 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [
           {
             "severity": "P2",
@@ -26816,7 +26816,7 @@
     },
     {
       "path": "60-realtime/60.1-websockets/02-architecture-and-scaling/INDEX.md",
-      "sha256": "2a4c81dab900f090e2d707112eb86f43db693c75ba924f2da0a1987ecaa097c1",
+      "sha256": "682d74a4d490db90dba4bfcf0edc2d555073faa49056085d43d0e5190c529bf0",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -26836,18 +26836,18 @@
       },
       "review": {
         "path": "60-realtime/60.1-websockets/02-architecture-and-scaling/INDEX.md",
-        "sha256": "2a4c81dab900f090e2d707112eb86f43db693c75ba924f2da0a1987ecaa097c1",
+        "sha256": "682d74a4d490db90dba4bfcf0edc2d555073faa49056085d43d0e5190c529bf0",
         "status": "reviewed",
         "reviewer": "backend_realtime_projects_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full learning-index read; transport, state/recovery, implementation and evidence prerequisites lead to separate revision and interview practice. Source-only Docita pointers and writer-owned numeric metadata retained.",
+        "notes": "Wave 6 C1-C8 refinement (2026-11-24): Full read of 63 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "60-realtime/60.1-websockets/02-architecture-and-scaling/REVISION.md",
-      "sha256": "23d9ccd40ed462f40d067bac6789e2fc2c814c3d704366d0743db0980d0d4397",
+      "sha256": "d2e1e98b2f58be6ed76c792051e816a1c3adf16f2102dce9abaf12c52da2f8dd",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -26867,18 +26867,18 @@
       },
       "review": {
         "path": "60-realtime/60.1-websockets/02-architecture-and-scaling/REVISION.md",
-        "sha256": "23d9ccd40ed462f40d067bac6789e2fc2c814c3d704366d0743db0980d0d4397",
+        "sha256": "d2e1e98b2f58be6ed76c792051e816a1c3adf16f2102dce9abaf12c52da2f8dd",
         "status": "reviewed",
         "reviewer": "backend_realtime_projects_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full source-linked revision read; all authored questions and companion contracts checked, including new Redis adapter trust-boundary question.",
+        "notes": "Wave 6 C1-C8 refinement (2026-11-24): Full read of 95 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.01-nestjs-websockets.md",
-      "sha256": "2c275dc85d85f293e30c393c952efc5c7ca61d88437ac64fad6648d89e2e017e",
+      "sha256": "54f4609a348ead60c638593f3a3976b395bb0c99c45ca3139ef29b41136c36bd",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -26902,18 +26902,18 @@
       },
       "review": {
         "path": "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.01-nestjs-websockets.md",
-        "sha256": "2c275dc85d85f293e30c393c952efc5c7ca61d88437ac64fad6648d89e2e017e",
+        "sha256": "54f4609a348ead60c638593f3a3976b395bb0c99c45ca3139ef29b41136c36bd",
         "status": "reviewed",
         "reviewer": "backend_realtime_projects_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full Nest12 gateway/guard/DTO/namespace/pipe/client code and response paths read. Checked message versus handshake policy, acknowledgment versus exception event, current-session and outgoing revocation and finite shutdown responsibility. No complete Nest transport fixture executed.",
+        "notes": "Wave 6 C1-C8 refinement (2026-11-24): Full read of 224 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.02-graphql-subscriptions-live-queries.md",
-      "sha256": "9c342f9b653d420c4cbae5724b10bf0c995454425d9cf98aae7004aa49d47deb",
+      "sha256": "3cac82b933ff740834012824e9cb8aa068028d1a057018cc9e088045b54e31b9",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -26924,7 +26924,7 @@
           "2. Turn an Event Into a Result",
           "3. Stream an Authorized Order Status",
           "4. Contrast Subscriptions With Live Queries",
-          "5. Decide Workloads, Gateways and Recovery Honestly",
+          "5. Decide Workloads, Gateways, and Recovery Honestly",
           "Common Mistakes",
           "Summary",
           "See Also",
@@ -26937,18 +26937,18 @@
       },
       "review": {
         "path": "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.02-graphql-subscriptions-live-queries.md",
-        "sha256": "9c342f9b653d420c4cbae5724b10bf0c995454425d9cf98aae7004aa49d47deb",
+        "sha256": "3cac82b933ff740834012824e9cb8aa068028d1a057018cc9e088045b54e31b9",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-15",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "2026-11-15 pass: read in full (203 lines). Corrected Node 20 end-of-life to April 2026; verified GraphQL.js 17.1.0, graphql-ws 6.4.2, @graphql-tools/schema 11.0.9 graphql-17 peer support, the 4403 close code and the subscription/live-query boundary. Six-axis evidence is in docs/review-ledger.json.",
+        "notes": "Wave 6 C1-C8 refinement (2026-11-24): Full read of 219 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.03-webrtc-peer-to-peer.md",
-      "sha256": "ca51e9e74b89070bebdda34152d7d3f352acc50d895e8e2c431f0f0494f22123",
+      "sha256": "beff2d5971d7a1f42634d90bfaf445ce845734529fd475bebd30544e8bbd1ba8",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -26956,11 +26956,11 @@
           "Definition",
           "First Principles",
           "1. Match WebRTC to Interactive Media and Data",
-          "2. Fit Signaling, Negotiation and Transport Together",
+          "2. Fit Signaling, Negotiation, and Transport Together",
           "3. Discover a Route With ICE",
           "4. Exchange a Position Between Two Local Peers",
-          "5. Add Media, Real Signaling and a Conferencing Topology",
-          "6. Track Stats, Release Resources and Avoid the Classic Mistakes",
+          "5. Add Media, Real Signaling, and a Conferencing Topology",
+          "6. Track Stats, Release Resources, and Avoid the Classic Mistakes",
           "Common Mistakes",
           "Summary",
           "See Also",
@@ -26973,18 +26973,18 @@
       },
       "review": {
         "path": "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.03-webrtc-peer-to-peer.md",
-        "sha256": "ca51e9e74b89070bebdda34152d7d3f352acc50d895e8e2c431f0f0494f22123",
+        "sha256": "beff2d5971d7a1f42634d90bfaf445ce845734529fd475bebd30544e8bbd1ba8",
         "status": "reviewed",
         "reviewer": "backend_realtime_projects_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full local two-peer fixture and ICE/signaling/encryption/topology text read. Checked completecandidate gathering, both channel readiness, monotonic complete snapshots, finite waits and cleanup; media capture ownership/SFU/TURN boundaries and mesh arithmetic retained. No NAT traversal/media or browserRTC execution claimed.",
+        "notes": "Wave 6 C1-C8 refinement (2026-11-24): Full read of 208 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.04-testing-realtime-systems.md",
-      "sha256": "3f9508df3c2d254dfc9095bb6a240847c8329a39550d1187147e781060cbaada",
+      "sha256": "b090b5a2bb1f0f2b3425b6da1eb68b919790ba143f64b984ddd82364e6121dde",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -27009,18 +27009,18 @@
       },
       "review": {
         "path": "60-realtime/60.1-websockets/03-frameworks-and-paradigms/60.1.3.04-testing-realtime-systems.md",
-        "sha256": "3f9508df3c2d254dfc9095bb6a240847c8329a39550d1187147e781060cbaada",
+        "sha256": "b090b5a2bb1f0f2b3425b6da1eb68b919790ba143f64b984ddd82364e6121dde",
         "status": "reviewed",
         "reviewer": "backend_realtime_projects_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full actual protocol test and workload/recovery procedures read. Checked initial listener registration, finite deadlines, terminalerrors, real oracle, slow-network versus discarded callbacks, ownership/cleanup and no universal load claims. Loopback WS/SSE fixtures executed separately; GraphQL authored suite not rerun.",
+        "notes": "Wave 6 C1-C8 refinement (2026-11-24): Full read of 191 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "60-realtime/60.1-websockets/03-frameworks-and-paradigms/INDEX.md",
-      "sha256": "36b185c710e993fb42261dd8141baf0cbaf097754a240784f6dbe19fc641d1c7",
+      "sha256": "2fa83fb81a81ee784b4060301e9301525fd9791799bc555da59b15a81f5ed352",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -27039,12 +27039,12 @@
       },
       "review": {
         "path": "60-realtime/60.1-websockets/03-frameworks-and-paradigms/INDEX.md",
-        "sha256": "36b185c710e993fb42261dd8141baf0cbaf097754a240784f6dbe19fc641d1c7",
+        "sha256": "2fa83fb81a81ee784b4060301e9301525fd9791799bc555da59b15a81f5ed352",
         "status": "reviewed",
         "reviewer": "backend_realtime_projects_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full learning-index read; transport, state/recovery, implementation and evidence prerequisites lead to separate revision and interview practice. Source-only Docita pointers and writer-owned numeric metadata retained.",
+        "notes": "Wave 6 C1-C8 refinement (2026-11-24): Full read of 59 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [
           {
             "severity": "P2",
@@ -27056,7 +27056,7 @@
     },
     {
       "path": "60-realtime/60.1-websockets/03-frameworks-and-paradigms/REVISION.md",
-      "sha256": "1348d02464f19cb4d63ef69ee6b5761b2466bebc527f3bfc8459511ca4d1d35b",
+      "sha256": "0a6c411522cf0e7920d269136475440f271dbe60d0eaacbc6cc4c5c6e226c7f8",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -27080,18 +27080,18 @@
       },
       "review": {
         "path": "60-realtime/60.1-websockets/03-frameworks-and-paradigms/REVISION.md",
-        "sha256": "1348d02464f19cb4d63ef69ee6b5761b2466bebc527f3bfc8459511ca4d1d35b",
+        "sha256": "0a6c411522cf0e7920d269136475440f271dbe60d0eaacbc6cc4c5c6e226c7f8",
         "status": "reviewed",
         "reviewer": "backend_realtime_projects_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full source-linked revision read; all authored questions and companion contracts checked, including new Redis adapter trust-boundary question.",
+        "notes": "Wave 6 C1-C8 refinement (2026-11-24): Full read of 123 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "60-realtime/60.1-websockets/04-interview-prep/60.1.4.01-interview-questions.md",
-      "sha256": "75daff490aff44c87d0d245486f7fd8460ed6e36e48a1c0d3240c13405d0acd8",
+      "sha256": "9214167fce6b9132b2b0c51506598cb070436aa70426175f8b324ca5252b9edc",
       "genre": "interview-bank",
       "status": "reviewed",
       "structure": {
@@ -27112,18 +27112,18 @@
       },
       "review": {
         "path": "60-realtime/60.1-websockets/04-interview-prep/60.1.4.01-interview-questions.md",
-        "sha256": "75daff490aff44c87d0d245486f7fd8460ed6e36e48a1c0d3240c13405d0acd8",
+        "sha256": "9214167fce6b9132b2b0c51506598cb070436aa70426175f8b324ca5252b9edc",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-15",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "2026-11-15 pass: read in full (235 lines). Normalized Socket.IO casing in Q3, its follow-up and the reference; verified the 4403 close code, ws Set-based protocol selection, the 30-question count and the bank's practice-only boundary. Six-axis evidence is in docs/review-ledger.json.",
+        "notes": "Wave 6 C1-C8 refinement (2026-11-24): Full read of 235 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "60-realtime/60.1-websockets/04-interview-prep/INDEX.md",
-      "sha256": "4a93ee53bcb2d7547e22a2066e67260e6becfbd8ccd3b4d36818b0bbb4238d98",
+      "sha256": "3f0e8fc29f90b21340f4794f69aec734bc4e22cda8b7b5348f8538fed7fc6616",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -27141,18 +27141,18 @@
       },
       "review": {
         "path": "60-realtime/60.1-websockets/04-interview-prep/INDEX.md",
-        "sha256": "4a93ee53bcb2d7547e22a2066e67260e6becfbd8ccd3b4d36818b0bbb4238d98",
+        "sha256": "3f0e8fc29f90b21340f4794f69aec734bc4e22cda8b7b5348f8538fed7fc6616",
         "status": "reviewed",
         "reviewer": "backend_realtime_projects_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full learning-index read; transport, state/recovery, implementation and evidence prerequisites lead to separate revision and interview practice. Source-only Docita pointers and writer-owned numeric metadata retained.",
+        "notes": "Wave 6 C1-C8 refinement (2026-11-24): Full read of 47 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "60-realtime/60.1-websockets/INDEX.md",
-      "sha256": "e915e98b6ecafe1b98531568d933b2ba32043fc38479fa064d2585b8499b5206",
+      "sha256": "fadd11df435b4d339afca3a28cbe0aa03ec244f3d46fe164b8c5886c6302c4db",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -27174,18 +27174,18 @@
       },
       "review": {
         "path": "60-realtime/60.1-websockets/INDEX.md",
-        "sha256": "e915e98b6ecafe1b98531568d933b2ba32043fc38479fa064d2585b8499b5206",
+        "sha256": "fadd11df435b4d339afca3a28cbe0aa03ec244f3d46fe164b8c5886c6302c4db",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-15",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "2026-11-15 pass: read in full (118 lines). Renamed the category table column from Files to Chapters and added the 11-chapter plus 3-revision-companion reconciliation. Badge, study time and category order were checked against disk. Six-axis evidence is in docs/review-ledger.json.",
+        "notes": "Wave 6 C1-C8 refinement (2026-11-24): Full read of 118 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "60-realtime/INDEX.md",
-      "sha256": "e82eaebc2a4189f16b67c69f1b7e5872ea5d08757f2a2e1b8660a151623f4915",
+      "sha256": "91797b23bd0e53bfeea53ca0b5af7975f2766f39ce9d5d442a8a280c3796b6ce",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -27209,12 +27209,12 @@
       },
       "review": {
         "path": "60-realtime/INDEX.md",
-        "sha256": "e82eaebc2a4189f16b67c69f1b7e5872ea5d08757f2a2e1b8660a151623f4915",
+        "sha256": "91797b23bd0e53bfeea53ca0b5af7975f2766f39ce9d5d442a8a280c3796b6ce",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-15",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "2026-11-15 pass: read in full (119 lines). Renamed the column to Chapters and added the 11+3 reconciliation note so the 14-file badge cannot be confused with 14 chapters. Three-pass order and category links were checked. Six-axis evidence is in docs/review-ledger.json.",
+        "notes": "Wave 6 C1-C8 refinement (2026-11-24): Full read of 119 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
@@ -31021,7 +31021,7 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "eaaaaf10629dbd87c31bb10374b6e5ebc0d68be01fdb496e5773d48d1c6e6853",
+      "sha256": "a4ca1d00bdc6a2be68f634f0eb74fc5192233c897d7f80963e1caf54ab29eed1",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -31039,12 +31039,12 @@
       },
       "review": {
         "path": "INDEX.md",
-        "sha256": "eaaaaf10629dbd87c31bb10374b6e5ebc0d68be01fdb496e5773d48d1c6e6853",
+        "sha256": "a4ca1d00bdc6a2be68f634f0eb74fc5192233c897d7f80963e1caf54ab29eed1",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 5B count/read-time sync (2026-11-24): Full read of 206 lines. Updated generated counts/read-time navigation after Wave 5B.",
+        "notes": "Wave 6 count/read-time sync (2026-11-24): Full read of 206 lines. Updated generated counts/read-time navigation after Wave 6.",
         "findings": []
       }
     },
@@ -31624,7 +31624,7 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "49c6f59f9e096fdb3bf647ca8056f488c436aa54bcb943eab536de3a076ffd81",
+      "sha256": "adfa38cee721e83138752ecbb7e3049551f887319e5d8b8904d49abbbc42064e",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31642,12 +31642,12 @@
       },
       "review": {
         "path": "docs/api-contract.md",
-        "sha256": "49c6f59f9e096fdb3bf647ca8056f488c436aa54bcb943eab536de3a076ffd81",
+        "sha256": "adfa38cee721e83138752ecbb7e3049551f887319e5d8b8904d49abbbc42064e",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 5B count/read-time sync (2026-11-24): Full read of 119 lines. Updated generated counts/read-time navigation after Wave 5B.",
+        "notes": "Wave 6 count/read-time sync (2026-11-24): Full read of 119 lines. Updated generated counts/read-time navigation after Wave 6.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",

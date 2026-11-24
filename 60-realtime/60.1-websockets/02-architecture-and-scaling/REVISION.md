@@ -14,13 +14,13 @@ Read the chapters in the [section learning flow](INDEX.md), then close them and 
 
 Source: [Real-Time Architecture](60.1.2.01-real-time-architecture.md)
 
-**Q:** Why is Redis Pub/Sub not a durable message history?
+**Q:** Why is Redis publish-subscribe (Pub-Sub) not a durable message history?
 
-**A:** Disconnected subscribers miss publications. Persist replayable events in a suitable log/store and associate an authorized cursor with the client's recovery protocol.
+**A:** Disconnected subscribers miss publications. Persist replayable events in a suitable log or store and associate an authorized cursor with the client's recovery protocol.
 
 **Q:** How do a transport acknowledgment and a committed mutation differ?
 
-**A:** An acknowledgment can only prove the protocol's declared checkpoint. Tie business acceptance to durable commit/idempotency state if the client relies on that stronger guarantee.
+**A:** An acknowledgment can only prove the protocol's declared checkpoint. Tie business acceptance to durable commit and idempotency state if the client relies on that stronger guarantee.
 
 ## Scaling WebSockets
 
@@ -28,15 +28,15 @@ Source: [Scaling WebSockets](60.1.2.02-scaling-patterns.md)
 
 **Q:** Why measure capacity by message rate and buffer growth as well as sockets?
 
-**A:** Idle sockets, TLS work, fan-out, slow clients, and queued payloads use very different resources. One universal connections-per-node number hides overload modes.
+**A:** Idle sockets, Transport Layer Security (TLS) work, fan-out, slow clients, and queued payloads use very different resources. One universal connections-per-node number hides overload modes.
 
 **Q:** What must graceful drain tell a reconnecting client?
 
-**A:** Stop accepting new work, close/retry under policy, and provide a way to recover durable session/message state. Sticky routing cannot recover memory from a failed node.
+**A:** Stop accepting new work, close and trigger retry under policy, and provide a way to recover durable session and message state. Sticky routing cannot recover memory from a failed node.
 
 **Q:** Why can adding gateways worsen fan-out pressure?
 
-**A:** Each subscription/node can increase broker delivery and duplicate work. Partition channels and measure downstream throughput instead of assuming gateway count is the only bottleneck.
+**A:** Each subscription and node can increase broker delivery and duplicate work. Partition channels and measure downstream throughput instead of assuming gateway count is the only bottleneck.
 
 ## Commit, Publish and Recover
 
@@ -44,15 +44,15 @@ Source: [Real-Time Architecture](60.1.2.01-real-time-architecture.md)
 
 **Q:** A booking and outbox record commit, then the worker crashes after publishing. Which repetition is possible?
 
-**A:** The worker may publish the same stable event again because its publication checkpoint was not saved. Consumers deduplicate/reconcile under their effect contract; the outbox does not promise exactly-once network delivery.
+**A:** The worker may publish the same stable event again because its publication checkpoint was not saved. Consumers deduplicate or reconcile under their effect contract; the outbox does not promise exactly-once network delivery.
 
 **Q:** Why can a snapshot fetched before subscribing leave a screen permanently stale?
 
-**A:** A change can occur between the snapshot and active subscription. Coordinate a versioned snapshot/replay boundary or subscribe, buffer and reconcile under an explicit version domain.
+**A:** A change can occur between the snapshot and active subscription. Coordinate a versioned snapshot and replay boundary or subscribe, buffer, and reconcile under an explicit version domain.
 
 **Q:** What goes wrong when every gateway shares one work-consumer group?
 
-**A:** The group distributes an event to one member while interested clients may be on other members. Route onward, align ownership or use independent subscription/checkpoint domains for all interested gateways.
+**A:** The group distributes an event to one member while interested clients may be on other members. Route onward, align ownership, or use independent subscription and checkpoint domains for all interested gateways.
 
 **Q:** Does an audit outbox make current-state tables an event-sourced system?
 
@@ -68,19 +68,19 @@ Source: [Scaling WebSockets](60.1.2.02-scaling-patterns.md)
 
 **Q:** Estimate payload-only egress for 500-byte events at 20 per second to 2,000 clients.
 
-**A:** 500 × 20 × 2,000 is 20,000,000 bytes/second, about 20 decimal MB/second. Framing, TLS, broker traffic and other work add to that figure.
+**A:** `500 × 20 × 2,000` is `20,000,000` bytes per second, about 20 decimal megabytes (MB) per second. Framing, TLS, broker traffic, and other work add to that figure.
 
 **Q:** What must survive when reconnect reaches a different gateway?
 
-**A:** Verified identity/current permissions, durable business state and the history/snapshot needed by recovery. An old process’s live socket cannot be transferred by changing a registry entry.
+**A:** Verified identity and current permissions, durable business state, and the history or snapshot needed by recovery. An old process’s live socket cannot be transferred by changing a registry entry.
 
 **Q:** Why can scale-out fail to help a hot auction?
 
-**A:** One authoritative ordering/price invariant may remain serialized even with more connection gateways. Partitioning must preserve the invariant and define safe ownership transfer.
+**A:** One authoritative ordering and price invariant may remain serialized even with more connection gateways. Partitioning must preserve the invariant and define safe ownership transfer.
 
 **Q:** Does an authorized Socket.IO room make a shared Redis adapter channel safe for untrusted publishers?
 
-**A:** No. The adapter trusts its internal Pub/Sub messages. Protect Redis access and command/channel permissions; a publisher to adapter channels can inject traffic outside the client handler's room checks.
+**A:** No. The adapter trusts its internal Pub-Sub messages. Protect Redis access and command and channel permissions; a publisher to adapter channels can inject traffic outside the client handler's room checks.
 
 ## Summary
 

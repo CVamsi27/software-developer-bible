@@ -1,24 +1,24 @@
 # WebSockets — Index
 
-> **Study time:** ≈ 1 h 56 m of reading (14 files, ~8 min average).
-> **14 files across 4 categories.** Real-time communication from WebSocket fundamentals and Socket.IO to Server-Sent Events, real-time architecture, NestJS WebSockets, GraphQL subscriptions, WebRTC peer-to-peer, testing realtime systems, WebTransport, scaling patterns, and interview questions.
+> **Study time:** ≈ 1 h 58 m of reading (14 files, ~8 min average).
+> **14 files across 4 categories.** Real-time communication from WebSocket fundamentals and Socket.IO to Server-Sent Events (SSE), real-time architecture, NestJS WebSockets, GraphQL subscriptions, Web Real-Time Communication (WebRTC) peer-to-peer, testing real-time systems, WebTransport, scaling patterns, and interview questions.
 
 [![Files](https://img.shields.io/badge/files-14-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Real--Time-%2300b4d8)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Why real-time:** Chat, collaboration and live tracking require clear transport, delivery and recovery contracts. Prepare protocol choices and scaling decisions when those responsibilities appear in the role. Read this section when the JD requires it.
+**Why real-time:** Chat, collaboration, and live tracking require clear transport, delivery, and recovery contracts. Prepare protocol choices and scaling decisions when those responsibilities appear in the role. Read this section when the job description (JD) requires it.
 
 ---
 
 ## The 4 Categories (in study order)
 
 | Category | Chapters | Purpose |
-| ------------------------------------------------------------------- | -------: | -------------------------------------------------------------------- |
+| ------------------------------------------------------------------- | -------: | ------------------------------------------------------------------------------------ |
 | [01 — Transports](01-transports/INDEX.md) | 4 | WebSocket, SSE, Socket.IO, WebTransport — the options |
 | [02 — Architecture & Scaling](02-architecture-and-scaling/INDEX.md) | 2 | Real-time architecture, scaling patterns |
-| [03 — Frameworks & Paradigms](03-frameworks-and-paradigms/INDEX.md) | 4 | NestJS gateways, GraphQL subscriptions, WebRTC P2P, realtime testing |
-| [04 — Interview Prep](04-interview-prep/INDEX.md) | 1 | 30 prompts + follow-ups |
+| [03 — Frameworks & Paradigms](03-frameworks-and-paradigms/INDEX.md) | 4 | NestJS gateways, GraphQL subscriptions, WebRTC peer-to-peer (P2P), real-time testing |
+| [04 — Interview Prep](04-interview-prep/INDEX.md) | 1 | 30 prompts and follow-ups |
 
 The table counts learning chapters; the three category `REVISION.md` companions bring the section total to 14 files.
 
@@ -30,10 +30,10 @@ Transport options and the Socket.IO library built above them.
 
 | # | File | Topics | When to use | Role priority | General importance | Read time |
 | --: | ------ | -------- | ------------- | --- | --- | ----------: |
-| 01 | [WebSockets Overview](01-transports/60.1.1.01-websockets-overview.md) | Protocol, handshake (HTTP Upgrade), frames, vs HTTP, use cases | Bidirectional real-time | Important | Specialized | 12 min |
-| 02 | [Server-Sent Events](01-transports/60.1.1.02-server-sent-events.md) | EventSource API, auto-reconnect, vs WebSockets, use cases | Server→client only (notifications, live updates) | Important | Specialized | 10 min |
-| 03 | [Socket.IO](01-transports/60.1.1.03-socket-io.md) | Client/server setup, rooms, namespaces, events, fallback to polling | Quick bidirectional with rich features | Important | Specialized | 12 min |
-| 04 | [WebTransport](01-transports/60.1.1.04-webtransport.md) | QUIC-based transport, datagrams, streams, vs WebSocket | Independent reliable streams or replaceable datagrams | Optional | Specialized | 9 min |
+| 01 | [WebSockets Overview](01-transports/60.1.1.01-websockets-overview.md) | Protocol, handshake (HTTP Upgrade), frames, versus HTTP, use cases | Bidirectional real-time | Important | Specialized | 12 min |
+| 02 | [Server-Sent Events](01-transports/60.1.1.02-server-sent-events.md) | `EventSource` application programming interface (API), auto-reconnect, versus WebSockets, use cases | Server-to-client only (notifications, live updates) | Important | Specialized | 11 min |
+| 03 | [Socket.IO](01-transports/60.1.1.03-socket-io.md) | Client and server setup, rooms, namespaces, events, fallback to polling | Quick bidirectional with rich features | Important | Specialized | 12 min |
+| 04 | [WebTransport](01-transports/60.1.1.04-webtransport.md) | QUIC-based transport, datagrams, streams, versus WebSocket | Independent reliable streams or replaceable datagrams | Optional | Specialized | 9 min |
 
 **Decision tree:**
 
@@ -54,7 +54,7 @@ The hard part — making it work at scale.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Real-Time Architecture](02-architecture-and-scaling/60.1.2.01-real-time-architecture.md) | Pub/sub, message brokers, scaling WebSockets, state sync, presence | Important | Specialized | 8 min |
+| 01 | [Real-Time Architecture](02-architecture-and-scaling/60.1.2.01-real-time-architecture.md) | Publish-subscribe (pub-sub), message brokers, scaling WebSockets, state sync, presence | Important | Specialized | 8 min |
 | 02 | [Scaling Patterns](02-architecture-and-scaling/60.1.2.02-scaling-patterns.md) | Sticky sessions, Redis adapter, sharding, edge platforms (Cloudflare Durable Objects) | Important | Specialized | 8 min |
 
 ---
@@ -63,10 +63,10 @@ The hard part — making it work at scale.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [NestJS WebSockets](03-frameworks-and-paradigms/60.1.3.01-nestjs-websockets.md) | Gateways, adapters (Socket.IO / WS), guards, pipes, exception filters | Important | Specialized | 11 min |
-| 02 | [GraphQL Subscriptions & Live Queries](03-frameworks-and-paradigms/60.1.3.02-graphql-subscriptions-live-queries.md) | graphql-ws protocol, Redis pub-sub, withFilter, live queries, fan-out scaling | Optional | Specialized | 10 min |
-| 03 | [WebRTC Peer-to-Peer](03-frameworks-and-paradigms/60.1.3.03-webrtc-peer-to-peer.md) | getUserMedia, RTCPeerConnection, RTCDataChannel, ICE/STUN/TURN, mesh vs SFU vs MCU | Optional | Specialized | 11 min |
-| 04 | [Testing Real-Time Systems](03-frameworks-and-paradigms/60.1.3.04-testing-realtime-systems.md) | Protocol smoke checks, workload/churn design, recovery oracles and soak evidence | Important | Specialized | 10 min |
+| 01 | [NestJS WebSockets](03-frameworks-and-paradigms/60.1.3.01-nestjs-websockets.md) | Gateways, adapters (`Socket.IO` or `ws`), guards, pipes, exception filters | Important | Specialized | 11 min |
+| 02 | [GraphQL Subscriptions & Live Queries](03-frameworks-and-paradigms/60.1.3.02-graphql-subscriptions-live-queries.md) | `graphql-ws` protocol, Redis pub-sub, `withFilter`, live queries, fan-out scaling | Optional | Specialized | 11 min |
+| 03 | [WebRTC Peer-to-Peer](03-frameworks-and-paradigms/60.1.3.03-webrtc-peer-to-peer.md) | `getUserMedia`, `RTCPeerConnection`, `RTCDataChannel`, ICE, STUN, and TURN, mesh versus Selective Forwarding Unit (SFU) versus Multipoint Control Unit (MCU) | Optional | Specialized | 11 min |
+| 04 | [Testing Real-Time Systems](03-frameworks-and-paradigms/60.1.3.04-testing-realtime-systems.md) | Protocol smoke checks, workload and churn design, recovery oracles, and soak evidence | Important | Specialized | 10 min |
 
 ---
 
@@ -82,22 +82,22 @@ The hard part — making it work at scale.
 
 1. **WebSockets Overview** — the protocol
 2. **SSE** — the simpler alternative
-3. **Real-Time Architecture** — pub/sub, scaling
-4. **Socket.IO** — event protocol, rooms and acknowledgment boundaries
+3. **Real-Time Architecture** — publish-subscribe (pub-sub), scaling
+4. **Socket.IO** — event protocol, rooms, and acknowledgment boundaries
 5. **Scaling Patterns** — for senior roles
 6. **NestJS WebSockets** — if NestJS stack
-7. **GraphQL Subscriptions** — schema-first realtime
-8. **WebRTC Peer-to-Peer** — media/data negotiation, direct routes, relays and conferencing
+7. **GraphQL Subscriptions** — schema-first real-time
+8. **WebRTC Peer-to-Peer** — media and data negotiation, direct routes, relays, and conferencing
 9. **Testing Real-Time Systems** — separate protocol checks from recovery and capacity evidence
 10. **WebTransport** — modern, optional
-11. **Section revision companions** — [transports](01-transports/REVISION.md), [architecture](02-architecture-and-scaling/REVISION.md) and [frameworks](03-frameworks-and-paradigms/REVISION.md)
+11. **Section revision companions** — [transports](01-transports/REVISION.md), [architecture](02-architecture-and-scaling/REVISION.md), and [frameworks](03-frameworks-and-paradigms/REVISION.md)
 12. **Interview Questions** — practice all original prompts and follow-ups
 
 ---
 
 ## Common interview topics
 
-- "WebSocket vs SSE — when to use which?"
+- "WebSocket versus SSE — when to use which?"
 - "How do you scale WebSockets across multiple servers?"
 - "How do you authenticate WebSocket connections?"
 - "What's the difference between Socket.IO and raw WebSockets?"
@@ -115,4 +115,4 @@ The hard part — making it work at scale.
 
 ## Navigation
 
-[← Previous: Performance Monitoring](../../50-quality/50.3-performance-monitoring/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Behavioral →](../../70-interview-toolkit/70.1-behavioral/INDEX.md)
+[← Previous: Performance Monitoring](../../50-quality/50.3-performance-monitoring/INDEX.md) · [Back to Index](../../INDEX.md) · [Next: Behavioral →](../../70-interview-toolkit/70.1-behavioral/INDEX.md)

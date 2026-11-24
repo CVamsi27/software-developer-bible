@@ -19,23 +19,25 @@
 
 ## Questions to Practice
 
-- "WebSocket vs SSE — when to use which?"
+- "WebSocket versus Server-Sent Events (SSE) — when should you use which?"
 - "How do you scale WebSockets across multiple servers?"
 - "How do you authenticate WebSocket connections?"
-- "What's the difference between Socket.IO and raw WebSockets?"
+- "What is the difference between Socket.IO and raw WebSockets?"
 - "How do you handle reconnection and message ordering?"
 
 ---
 
 ## How to use it
 
-Real-time rounds reward the ability to explain a design as well as recall APIs. Before drilling, complete the [transport revision](../01-transports/REVISION.md), [architecture revision](../02-architecture-and-scaling/REVISION.md) and [framework revision](../03-frameworks-and-paradigms/REVISION.md). Then trace an authorized command → durable state/outbox → publication → interested gateways → clients. Explain recovery and uncertain acknowledgments before naming products.
+Real-time rounds reward the ability to explain a design as well as recall application programming interfaces (APIs). Before drilling, complete the [transport revision](../01-transports/REVISION.md), [architecture revision](../02-architecture-and-scaling/REVISION.md), and [framework revision](../03-frameworks-and-paradigms/REVISION.md).
+
+Then trace an authorized command through durable state or an outbox, publication, interested gateways, and clients. Explain recovery and uncertain acknowledgments before naming products.
 
 ---
 
 ## Cross-References
 
-- [System Design case studies](../../../30-architecture/30.2-system-design/02-case-studies/INDEX.md) — WhatsApp/chat system designs.
+- [System Design case studies](../../../30-architecture/30.2-system-design/02-case-studies/INDEX.md) — WhatsApp and chat system designs.
 - [Coding Patterns interview bank](../../../70-interview-toolkit/70.2-coding-patterns/INDEX.md) — the algorithmic counterpart.
 
 ---

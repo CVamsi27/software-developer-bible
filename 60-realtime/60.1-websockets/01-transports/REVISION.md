@@ -16,43 +16,43 @@ Source: [WebSockets Overview](60.1.1.01-websockets-overview.md)
 
 **Q:** What delivery does a live WebSocket provide, and what recovery is missing?
 
-**A:** Frames ride an ordered reliable live transport, but reconnects do not automatically replay missed application messages or deduplicate effects. Define IDs, acknowledgments, retention, and replay where needed.
+**A:** Frames ride an ordered reliable live transport, but reconnects do not automatically replay missed application messages or deduplicate effects. Define identifiers (IDs), acknowledgments, retention, and replay where needed.
 
-**Q:** Does the HTTP upgrade establish a TCP connection that did not previously exist?
+**Q:** Does the Hypertext Transfer Protocol (HTTP) upgrade establish a Transmission Control Protocol (TCP) connection that did not previously exist?
 
 **A:** No. The HTTP/1.1 upgrade happens on an existing connection. A successful protocol handshake is also not user authentication; authorization remains a separate application decision.
 
-**Q:** Why does the echo fixture check both readyState and pending bytes before replying?
+**Q:** Why does the echo fixture check both `readyState` and pending bytes before replying?
 
-**A:** Sending requires an open channel, and pending work must remain bounded. The send callback describes local progress/error, not a durable business acknowledgment. A slow peer triggers the fixture's termination policy.
+**A:** Sending requires an open channel, and pending work must remain bounded. The send callback describes local progress or error, not a durable business acknowledgment. A slow peer triggers the fixture's termination policy.
 
 **Q:** Why can an origin allowlist not identify a trusted user?
 
-**A:** Browsers supply an Origin header, but non-browser clients can supply their own. Validate the application session and authorize rooms/actions independently; do not equate origin acceptance with permission.
+**A:** Browsers supply an `Origin` header, but non-browser clients can supply their own. Validate the application session and authorize rooms or actions independently; do not equate origin acceptance with permission.
 
 ## Server-Sent Events (SSE)
 
 Source: [Server-Sent Events (SSE)](60.1.1.02-server-sent-events.md)
 
-**Q:** Why does Last-Event-ID not itself recover a missed SSE event?
+**Q:** Why does `Last-Event-ID` not itself recover a missed SSE event?
 
 **A:** It gives the server a cursor. The server must retain events, authorize replay, detect expired cursors, and send the right continuation or resynchronization response.
 
-**Q:** Trace the local SSE fixture after the browser applies ID 2, the connection closes and ID 3 is published before reconnection.
+**Q:** Trace the local SSE fixture after the browser applies ID `2`, the connection closes, and ID `3` is published before reconnection.
 
-**A:** The same EventSource reconnects with Last-Event-ID 2. The server validates that cursor and replays retained records greater than 2, then subscribes the response to live publications without an asynchronous gap in this single-process fixture.
+**A:** The same `EventSource` reconnects with `Last-Event-ID` `2`. The server validates that cursor and replays retained records greater than `2`, then subscribes the response to live publications without an asynchronous gap in this single-process fixture.
 
 **Q:** What changes when that cursor is older than retained history?
 
-**A:** The server emits reset instead of silently skipping updates. The client closes the source and requests a reload for current state. This temperature display can use a latest snapshot; an every-event consumer needs a durable recovery contract.
+**A:** The server emits `reset` instead of silently skipping updates. The client closes the source and requests a reload for current state. This temperature display can use a latest snapshot; an every-event consumer needs a durable recovery contract.
 
-**Q:** Why does a false Node response write not justify an unbounded pending queue?
+**Q:** Why does a `false` Node.js response write not justify an unbounded pending queue?
 
-**A:** It indicates local buffered pressure, not a client acknowledgment. The fixture disconnects the slow consumer; recovery remains limited to retained history. Waiting for drain, coalescing or durable replay require explicit bounded policies.
+**A:** It indicates local buffered pressure, not a client acknowledgment. The fixture disconnects the slow consumer; recovery remains limited to retained history. Waiting for drain, coalescing, or durable replay require explicit bounded policies.
 
 **Q:** Does the browser's remembered event ID prove the application applied a database effect?
 
-**A:** No. It is a transport replay cursor. Handler validation, application processing and durable acknowledgment are separate. The display validates and applies before updating its own deduplication cursor.
+**A:** No. It is a transport replay cursor. Handler validation, application processing, and durable acknowledgment are separate. The display validates and applies before updating its own deduplication cursor.
 
 ## Socket.IO
 
@@ -80,19 +80,19 @@ Source: [WebTransport](60.1.1.04-webtransport.md)
 
 **Q:** When do WebTransport datagrams solve a problem reliable streams cannot?
 
-**A:** When obsolete data should be discarded rather than retransmitted, such as fresh game positions. Reliable ordered streams remain useful for commands/state that must arrive intact.
+**A:** When obsolete data should be discarded rather than retransmitted, such as fresh game positions. Reliable ordered streams remain useful for commands or state that must arrive intact.
 
-**Q:** Why does receiving position 4 after losing position 3 work only for some protocols?
+**Q:** Why does receiving position `4` after losing position `3` work only for some protocols?
 
-**A:** A full snapshot replaces older state without needing position 3. A delta based on position 3 cannot reconstruct the same result; it needs recovery or reliable delivery.
+**A:** A full snapshot replaces older state without needing position `3`. A delta based on position `3` cannot reconstruct the same result; it needs recovery or reliable delivery.
 
-**Q:** Why can a reliable stream return half a JSON record in one read?
+**Q:** Why can a reliable stream return half a JavaScript Object Notation (JSON) record in one read?
 
 **A:** It preserves an ordered byte sequence, not the sender’s write boundaries. Buffer and decode incrementally until the application’s bounded framing rule identifies a complete record.
 
-**Q:** Does QUIC migration cause transport.ready to fire again?
+**Q:** Does QUIC migration cause `transport.ready` to fire again?
 
-**A:** No. ready is a promise for establishment, not a repeated event. If the session actually closes, create a new one and restore state within a new epoch or cursor domain.
+**A:** No. `ready` is a promise for establishment, not a repeated event. If the session actually closes, create a new one and restore state within a new epoch or cursor domain.
 
 **Q:** Does a successful stream write prove a chat message was stored?
 
@@ -100,15 +100,15 @@ Source: [WebTransport](60.1.1.04-webtransport.md)
 
 **Q:** Does a QUIC acknowledgment of a datagram prove the receiving application applied it?
 
-**A:** No. It confirms transport-layer handling, not application processing. If application behavior matters, send an application-level acknowledgment after the required processing step; see [RFC 9221, Section 5.2](https://www.rfc-editor.org/rfc/rfc9221.html#section-5.2).
+**A:** No. It confirms transport-layer handling, not application processing. If application behavior matters, send an application-level acknowledgment after the required processing step; see [Request for Comments (RFC) 9221, Section 5.2](https://www.rfc-editor.org/rfc/rfc9221.html#section-5.2).
 
 ## Socket.IO Event Boundaries
 
 Source: [Socket.IO](60.1.1.03-socket-io.md)
 
-**Q:** Which object receives reconnect_attempt, and why should ordinary event listeners be outside connect?
+**Q:** Which object receives `reconnect_attempt`, and why should ordinary event listeners be outside `connect`?
 
-**A:** The client Manager at socket.io receives reconnect_attempt. A Socket connect handler runs again after reconnect; registering message listeners inside it accumulates duplicate handlers.
+**A:** The client Manager at `socket.io` receives `reconnect_attempt`. A `Socket` `connect` handler runs again after reconnect; registering message listeners inside it accumulates duplicate handlers.
 
 **Q:** Why does Eve fail a room join even though her fixture token is valid?
 
@@ -120,11 +120,11 @@ Source: [Socket.IO](60.1.1.03-socket-io.md)
 
 **Q:** Does a rate check inside connection middleware limit chat events?
 
-**A:** No. It runs at connection acceptance. Apply an event budget to commands themselves and decide account scope, expiry, shared-node coordination and outage behavior.
+**A:** No. It runs at connection acceptance. Apply an event budget to commands themselves and decide account scope, expiry, shared-node coordination, and outage behavior.
 
 **Q:** Why is the retained demo snapshot insufficient after a process restart?
 
-**A:** Both history and operation records are in memory. Durable recovery needs an authoritative store, retention/version rules and permissions; transport reconnection supplies none of them.
+**A:** Both history and operation records are in memory. Durable recovery needs an authoritative store, retention and version rules, and permissions; transport reconnection supplies none of them.
 
 ## Summary
 

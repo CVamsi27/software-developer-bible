@@ -1,6 +1,6 @@
 # Transports
 
-> **Study time:** ≈ 46 min of reading (5 files, ~9 min average).
+> **Study time:** ≈ 47 min of reading (5 files, ~9 min average).
 > **5 files.** The four real-time transport options — raw WebSockets, Server-Sent Events, Socket.IO, and WebTransport — and the decision framework for picking between them.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](../INDEX.md)
@@ -11,29 +11,29 @@
 
 ## Pass 1 — Decide Which Direction Carries the Update
 
-Start with [WebSockets Overview](60.1.1.01-websockets-overview.md) to separate a long-lived bidirectional connection from ordinary request/response. Then read [Server-Sent Events](60.1.1.02-server-sent-events.md): the server sends a stream of events while the client can still issue ordinary HTTP requests. Native EventSource reconnects, but retained events and authorized replay remain server responsibilities.
+Start with [WebSockets Overview](60.1.1.01-websockets-overview.md) to separate a long-lived bidirectional connection from ordinary request and response exchanges. Then read [Server-Sent Events](60.1.1.02-server-sent-events.md): the server sends a stream of events while the client can still issue ordinary Hypertext Transfer Protocol (HTTP) requests. Native `EventSource` reconnects, but retained events and authorized replay remain server responsibilities.
 
 ## Pass 2 — Add Application Features Deliberately
 
-[Socket.IO](60.1.1.03-socket-io.md) adds an application protocol, named events, rooms, reconnection and transport choices. It is not interchangeable with a raw WebSocket client. If polling is enabled across several servers, requests for one Engine.IO session need the node that owns it; a shared adapter alone does not create that affinity.
+[Socket.IO](60.1.1.03-socket-io.md) adds an application protocol, named events, rooms, reconnection, and transport choices. It is not interchangeable with a raw WebSocket client. If polling is enabled across several servers, requests for one Engine.IO session need the node that owns it; a shared adapter alone does not create that affinity.
 
 ## Pass 3 — Separate Reliable Bytes From Replaceable State
 
-[WebTransport](60.1.1.04-webtransport.md) is useful when independent streams or unreliable datagrams solve a concrete problem. Trace an out-of-order position update, then explain why a full snapshot can tolerate loss while a dependent delta cannot. Verify browser, endpoint and network support before choosing it.
+[WebTransport](60.1.1.04-webtransport.md) is useful when independent streams or unreliable datagrams solve a concrete problem. Trace an out-of-order position update, then explain why a full snapshot can tolerate loss while a dependent delta cannot. Verify browser, endpoint, and network support before choosing it.
 
 | Need | Starting option | Condition to verify |
-| ----------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------ |
-| Initial document or occasional refresh | Ordinary HTTP; polling if repeated reads are acceptable | Poll frequency, freshness and server cost |
-| Server-to-browser updates | SSE | Proxy buffering, authorization and replay |
-| Bidirectional messages | WebSocket | Heartbeats, bounded queues and application recovery |
-| Named events, rooms and reconnection conveniences | Socket.IO | Protocol compatibility, affinity and adapter semantics |
+| ----------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
+| Initial document or occasional refresh | Ordinary HTTP; polling if repeated reads are acceptable | Poll frequency, freshness, and server cost |
+| Server-to-browser updates | Server-Sent Events (SSE) | Proxy buffering, authorization, and replay |
+| Bidirectional messages | WebSocket | Heartbeats, bounded queues, and application recovery |
+| Named events, rooms, and reconnection conveniences | Socket.IO | Protocol compatibility, affinity, and adapter semantics |
 | Independent streams or replaceable unreliable updates | WebTransport | Complete protocol path and application recovery |
 
-These are starting choices, not speed rankings. WebSocket after an HTTP/1.1 upgrade uses WebSocket frames rather than ordinary HTTP request/response messages. WebSocket over HTTP/2 or HTTP/3 uses extended CONNECT where the deployment supports it; do not assume every browser/proxy combination implements that path. See [RFC 8441](https://www.rfc-editor.org/rfc/rfc8441.html) and [RFC 9220](https://www.rfc-editor.org/rfc/rfc9220.html).
+These are starting choices, not speed rankings. WebSocket after an HTTP/1.1 upgrade uses WebSocket frames rather than ordinary HTTP request and response messages. WebSocket over HTTP/2 or HTTP/3 uses extended `CONNECT` where the deployment supports it; do not assume every browser and proxy combination implements that path. See [Request for Comments (RFC) 8441](https://www.rfc-editor.org/rfc/rfc8441.html) and [RFC 9220](https://www.rfc-editor.org/rfc/rfc9220.html).
 
 ## Finish With Revision, Then Architecture and Practice
 
-Close the chapters and work through [section revision questions](REVISION.md). Explain transport delivery separately from application acknowledgment, replay and durable effects. Continue to architecture/scaling before using the separate [interview bank](../04-interview-prep/60.1.4.01-interview-questions.md).
+Close the chapters and work through [section revision questions](REVISION.md). Explain transport delivery separately from application acknowledgment, replay, and durable effects. Continue to architecture and scaling before using the separate [interview bank](../04-interview-prep/60.1.4.01-interview-questions.md).
 
 ---
 
@@ -55,8 +55,8 @@ Close the chapters and work through [section revision questions](REVISION.md). E
 [Docita](https://github.com/CVamsi27/docita) is a companion project. These source paths identify implementation evidence; they do not establish a deployed topology or successful recovery drill.
 
 | Topic | Docita evidence |
-| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | Socket.IO as chosen transport | `socket.io` dependency in `apps/api/package.json`, wired in `apps/api/src/websockets/websockets.module.ts` |
-| SSE (AI response stream) | `@Post('ask')` in `apps/api/src/shared/modules/ai/ai.controller.ts` sets `text/event-stream` and emits `delta`, `done` and `error` events |
+| SSE (AI response stream) | `@Post('ask')` in `apps/api/src/shared/modules/ai/ai.controller.ts` sets `text/event-stream` and emits `delta`, `done`, and `error` events |
 | Transport-choice rationale | `docs/operations/WEBSOCKET_SCALING.md` — sockets trigger React Query invalidation only |
 | Handshake auth at transport level | `apps/api/src/websockets/base-websocket.gateway.ts` (bearer token from `handshake.auth.token`) |

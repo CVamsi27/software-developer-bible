@@ -1,36 +1,36 @@
 # Interview Strategy — Index
 
 > **Study time:** ≈ 34 min of reading (6 files, ~6 min average).
-> **6 files** — Essential interview strategy covering role discovery, local job-search tooling, resume tips, communication, STAR method, and HR questions. **Cross-lane**: applies to both the Indian SDE / FAANG lane and the Abroad Full-Stack lane. **Read this BEFORE any interview.**
+> **6 files** — Essential interview strategy covering role discovery, local job-search tooling, resume tips, communication, the Situation, Task, Action, and Result (STAR) method, and Human Resources (HR) questions. **Cross-lane**: applies to both the Indian Software Development Engineer (SDE) and FAANG lane and the Abroad Full-Stack lane. **Read this BEFORE any interview.**
 
 [![Files](https://img.shields.io/badge/files-6-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Interview-red)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 [![Read time](https://img.shields.io/badge/read--time-34_min-blueviolet)](#)
 
-This section turns work evidence into clear interview explanations. Start here when your resume, project explanation, behavioral story or practical constraints need preparation. Use the lane guides afterward for the role-specific process.
+This section turns work evidence into clear interview explanations. Start here when your resume, project explanation, behavioral story, or practical constraints need preparation. Use the lane guides afterward for the role-specific process.
 
 ## Build an evidence chain
 
 | Pass | Chapter | Concrete outcome | Role priority | General importance |
-| ---- | ------------------------------------------------- | ---------------------------------------------------------------- | ------------- | ------------------ |
-| 0 | [Find startup roles](00.05-find-startup-roles.md) | A current opening verified at the employer's ATS | Essential | Important |
+| ---- | ------------------------------------------------- | ---------------------------------------------------------------------------- | ------------- | ------------------ |
+| 0 | [Find startup roles](00.05-find-startup-roles.md) | A current opening verified at the employer's Applicant Tracking System (ATS) | Essential | Important |
 | 1 | [Resume](00.02-resume-tips.md) | A role-relevant claim you can substantiate and explain | Essential | Important |
-| 2 | [Communication](00.01-communication.md) | A technical decision with a visible problem, tradeoff and result | Essential | Important |
+| 2 | [Communication](00.01-communication.md) | A technical decision with a visible problem, trade-off, and result | Essential | Important |
 | 3 | [STAR stories](00.03-star-method.md) | One incident with your own actions and credible evidence | Essential | Important |
-| 4 | [HR preparation](00.04-hr-questions.md) | Clear motivations, constraints and offer-comparison questions | Essential | Important |
+| 4 | [HR preparation](00.04-hr-questions.md) | Clear motivations, constraints, and offer-comparison questions | Essential | Important |
 
 A resume opens an evidence trail; an interview tests that trail through questions. Find a real opening before tailoring the trail to it, and practice explaining one claim before adding more material. STAR is one useful structure rather than a required format for every behavioral answer. The file numbers keep existing links stable; the pass order above is the reading order.
 
 ## Check the explanation before adding another story
 
-Close the chapters and explain one technical decision and one behavioral incident aloud. Check whether the listener can identify the problem, your contribution, the chosen action and the outcome. Revise unclear evidence or ordering, then use [section revision](REVISION.md) to test recall.
+Close the chapters and explain one technical decision and one behavioral incident aloud. Check whether the listener can identify the problem, your contribution, the chosen action, and the outcome. Revise unclear evidence or ordering, then use [section revision](REVISION.md) to test recall.
 
-For compensation, distinguish recurring components from one-time payments and uncertain equity value. Confirm location, work authorization and the employer's process rather than treating a study lane as a guarantee about the interview or offer.
+For compensation, distinguish recurring components from one-time payments and uncertain equity value. Confirm location, work authorization, and the employer's process rather than treating a study lane as a guarantee about the interview or offer.
 
 ## Continue into the relevant lane
 
-- [Indian SDE / FAANG lane (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md) organizes that role-preparation track.
+- [Indian SDE and FAANG lane (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md) organizes that role-preparation track.
 - [Abroad Full-Stack lane](../80-lanes-abroad-full-stack/INDEX.md) organizes relocation and full-stack preparation.
 - The [lane comparison](../lanes/INDEX.md) helps choose where to continue; verify the specific employer's requirements.
 
@@ -39,14 +39,14 @@ For compensation, distinguish recurring components from one-time payments and un
 ## Cross-References
 
 - [Behavioral](../70-interview-toolkit/70.1-behavioral/INDEX.md) — deeper behavioral questions
-- [SDE Role — Indian / FAANG Lane (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md)
+- [SDE Role — Indian and FAANG Lane (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md)
 - [Abroad Full-Stack Lane](../80-lanes-abroad-full-stack/INDEX.md)
 
 ---
 
 ## Navigation
 
-← Previous: *(start of series)* · [ Back to Index](../INDEX.md) · [Next: JavaScript →](../10-frontend/10.1-javascript/INDEX.md)
+← Previous: *(start of series)* · [Back to Index](../INDEX.md) · [Next: JavaScript →](../10-frontend/10.1-javascript/INDEX.md)
 
 ---
 

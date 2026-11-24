@@ -16,7 +16,7 @@ Source: [NestJS WebSockets](60.1.3.01-nestjs-websockets.md)
 
 **Q:** Why apply message-level authorization after authenticating a Nest gateway connection?
 
-**A:** A user can request another room/resource or retain a stale session. Verify the operation's permissions and payload, and plan session expiry/revocation.
+**A:** A user can request another room or resource, or retain a stale session. Verify the operation's permissions and payload, and plan for session expiry and revocation.
 
 ## GraphQL Subscriptions & Live Queries
 
@@ -30,9 +30,9 @@ Source: [GraphQL Subscriptions & Live Queries](60.1.3.02-graphql-subscriptions-l
 
 Source: [WebRTC Peer-to-Peer](60.1.3.03-webrtc-peer-to-peer.md)
 
-**Q:** Why does WebRTC still need a signaling service and TURN?
+**Q:** Why does Web Real-Time Communication (WebRTC) still need a signaling service and Traversal Using Relays around NAT (TURN)?
 
-**A:** Peers need an authenticated path to exchange negotiation/candidate information. Direct connectivity can fail, so a reachable relay with controlled credentials is needed for the supported network population.
+**A:** Peers need an authenticated path to exchange negotiation and candidate information. Direct connectivity can fail, so a reachable relay with controlled credentials is needed for the supported network population.
 
 ## Testing Real-Time Systems
 
@@ -52,27 +52,27 @@ Source: [NestJS WebSockets](60.1.3.01-nestjs-websockets.md)
 
 **Q:** In the Nest fixture, which stages distinguish a bad token from an unauthorized room?
 
-**A:** Namespace middleware rejects the bad token. A message guard establishes current session state, the pipe validates payload and the snapshot service checks room access.
+**A:** Namespace middleware rejects the bad token. A message guard establishes current session state, the pipe validates the payload, and the snapshot service checks room access.
 
-**Q:** Why can a WsException be observed while emitWithAck still times out?
+**Q:** Why can a `WsException` be observed while `emitWithAck` still times out?
 
-**A:** The default filter emits an exception event rather than acknowledging the same command with an error. The application must implement a uniform acknowledgment contract if that is required.
+**A:** The default filter emits an `exception` event rather than acknowledging the same command with an error. The application must implement a uniform acknowledgment contract if that is required.
 
 **Q:** Does guarding incoming events stop every private room broadcast after permission is revoked?
 
-**A:** No. Outgoing subscriptions/room membership need a revocation policy too. A message guard only protects handlers that run through it.
+**A:** No. Outgoing subscriptions and room membership need a revocation policy too. A message guard only protects handlers that run through it.
 
 ## Subscription Execution and Lifecycle
 
 Source: [GraphQL Subscriptions](60.1.3.02-graphql-subscriptions-live-queries.md)
 
-**Q:** Does context run only once when a graphql-ws connection opens?
+**Q:** Does `context` run only once when a `graphql-ws` connection opens?
 
-**A:** No. Context construction is operation-related. Use the connection hook for acceptance and authorize the requested subscription plus continuing results.
+**A:** No. `context` construction runs per operation. Use the connection hook for acceptance and authorize the requested subscription plus continuing results.
 
-**Q:** Why can one next result contain errors without becoming a protocol error message?
+**Q:** Why can one `next` result contain `errors` without becoming a protocol `error` message?
 
-**A:** GraphQL execution results can contain their own errors array. Protocol operation errors and WebSocket close codes are separate paths that the client must handle.
+**A:** GraphQL execution results can contain their own `errors` array. Protocol operation errors and WebSocket close codes are separate paths that the client must handle.
 
 **Q:** What does the finite fixture prove about a broker replay path?
 
@@ -82,15 +82,15 @@ Source: [GraphQL Subscriptions](60.1.3.02-graphql-subscriptions-live-queries.md)
 
 Source: [WebRTC Peer-to-Peer](60.1.3.03-webrtc-peer-to-peer.md)
 
-**Q:** Why did waiting for the sender channel open not prove the receiver channel event had arrived?
+**Q:** Why did waiting for the sender channel `open` not prove the receiver channel event had arrived?
 
-**A:** They are separate asynchronous events. The fixture waits for the receiver’s datachannel event and open state as well before declaring the pair ready.
+**A:** They are separate asynchronous events. The fixture waits for the receiver's `datachannel` event and `open` state as well before declaring the pair ready.
 
 **Q:** A newer complete position is applied before an older position arrives. What prevents rollback?
 
-**A:** The receiver compares sequence values and discards older snapshots. Unordered/no-retransmit settings permit stale arrival; they do not perform application deduplication.
+**A:** The receiver compares sequence values and discards older snapshots. Unordered and no-retransmit settings permit stale arrival; they do not perform application deduplication.
 
-**Q:** Why is a TURN relay different from an ordinary SFU encryption endpoint?
+**Q:** Why is a TURN relay different from an ordinary selective forwarding unit (SFU) encryption endpoint?
 
 **A:** TURN forwards protected packets along a route. An ordinary SFU terminates peer transport sessions; additional end-to-end media protection must be designed if the SFU must not access media.
 
@@ -100,11 +100,11 @@ Source: [Testing Real-Time Systems](60.1.3.04-testing-realtime-systems.md)
 
 **Q:** What concurrency follows from ten arrivals per second with thirty-second sessions in a stable workload?
 
-**A:** About 300 active clients, ignoring startup/end transients. A maxVusers setting of 20,000 does not create that many active clients by itself.
+**A:** About 300 active clients, ignoring startup and end transients. A `maxVusers` setting of 20,000 does not create that many active clients by itself.
 
 **Q:** Why does a server timestamp not eliminate cross-host latency error?
 
-**A:** The client compares it using another clock. Skew remains unless synchronized/quantified or the measurement avoids unrelated clocks.
+**A:** The client compares it using another clock. Skew remains unless synchronized or quantified, or the measurement avoids unrelated clocks.
 
 **Q:** What should a recovery test compare when duplicate packets are expected?
 

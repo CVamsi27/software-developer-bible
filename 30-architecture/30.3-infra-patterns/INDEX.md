@@ -14,12 +14,12 @@
 ## Categories
 
 | Category | Folder | Files | Why it matters |
-| -------------------- | ---------------------------------------------------------------- | ----: | ------------------------------------------------------------------------------------------------------------------------ |
+| -------------------- | ---------------------------------------------------------------- | ----: | ---------------------------------------------------------------------------------------------------------------------------- |
 | Liveness & Lifecycle | [01-liveness-lifecycle/](01-liveness-lifecycle/INDEX.md) | 1 | Health checks + graceful shutdown — the contract with your orchestrator |
-| Failure & Recovery | [02-failure-and-recovery/](02-failure-and-recovery/INDEX.md) | 6 | Resilience overview, retry discipline, idempotency keys, feature flags & kill switches, backup strategy & restore drills |
-| Coordination | [03-coordination/](03-coordination/INDEX.md) | 1 | Leader election & consensus — who runs the cron |
+| Failure & Recovery | [02-failure-and-recovery/](02-failure-and-recovery/INDEX.md) | 6 | Resilience overview, retry discipline, idempotency keys, feature flags and kill switches, backup strategy and restore drills |
+| Coordination | [03-coordination/](03-coordination/INDEX.md) | 1 | Leader election and consensus — who runs the cron |
 | Data at Scale | [04-data-at-scale/](04-data-at-scale/INDEX.md) | 4 | Database scaling, data pipelines, CDN architecture, multi-tenant SaaS |
-| Shipping & Evolution | [05-shipping-and-evolution/](05-shipping-and-evolution/INDEX.md) | 4 | Zero-downtime deployments, technical debt strategy, cost engineering & FinOps, data retention & archival |
+| Shipping & Evolution | [05-shipping-and-evolution/](05-shipping-and-evolution/INDEX.md) | 4 | Zero-downtime deployments, technical debt strategy, cost engineering and FinOps, data retention and archival |
 | Interview Prep | [06-interview-prep/](06-interview-prep/INDEX.md) | 1 | Senior-depth Q&A over the whole stack — contracts, drills, scaling levers, deploy safety |
 
 ---
@@ -27,14 +27,14 @@
 ## The Flow
 
 ```text
-STAY ALIVE        SURVIVE FAILURE         SCALE DATA         SHIP SAFELY
-01 health checks → 02 resilience      → 04 database      → 05 zero-downtime
-   (graceful         02 retry patterns     scaling            deployments
-    shutdown)        02 idempotency     04 data pipelines  05 technical debt
-                      keys               04 CDN architecture 05 cost engineering
-COORDINATE         02 feature flags                        05 data retention
-03 leader election 02 backups & restore                    & archival
-   & consensus        drills
+STAY ALIVE           SURVIVE FAILURE          SCALE DATA             SHIP SAFELY
+01 health checks  →  02 resilience         →  04 database         →  05 zero-downtime
+   (graceful            patterns                 scaling                deployments
+    shutdown)       02 retry patterns        04 data pipelines      05 technical debt
+                     02 idempotency keys      04 CDN architecture    05 cost engineering
+COORDINATE           02 feature flags                                05 data retention
+03 leader election   02 backups and restore                             and archival
+   and consensus        drills
 
 RETRIEVE THEN DRILL
 Each category REVISION follows its learning chapters
@@ -46,7 +46,7 @@ Each category REVISION follows its learning chapters
 ## File Index (reading order)
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------: |
+| ----: | ------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------ | ----------: |
 | 01 | [Health Checks & Graceful Shutdown](01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.md) | Liveness/readiness probes, SIGTERM draining, shutdown hooks | Essential | Important | 9 min |
 | 02 | [Resilience Patterns — Overview](02-failure-and-recovery/30.3.2.01-resilience-patterns.md) | Timeout/bulkhead/circuit-breaker landscape; details in [20.6](../../20-backend/20.6-microservices/INDEX.md) | Important | Specialized | 6 min |
 | 03 | [Retry Patterns](02-failure-and-recovery/30.3.2.02-retry-patterns.md) | Exponential backoff, jitter, retry budgets, retry storms | Essential | Important | 8 min |
@@ -92,4 +92,4 @@ After each category, use its REVISION companion without reopening the chapters. 
 
 ## Navigation
 
-[← Previous: System Design](../30.2-system-design/INDEX.md) · [ Back to Architecture Index](../INDEX.md)
+[← Previous: System Design](../30.2-system-design/INDEX.md) · [Back to Architecture Index](../INDEX.md)

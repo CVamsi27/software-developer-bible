@@ -11,14 +11,14 @@
 
 ## Why this category exists
 
-For each pattern, state what it promises, which mechanism enforces that promise, and when it can fail. Practice readiness versus liveness, retry safety with idempotency keys, measured backup recovery, ownership checks using fencing tokens, database scaling choices, and blue-green versus canary deployments. Use the follow-up questions, such as “we do canary, do we still need blue-green?”, to explain operating decisions as well as syntax.
+For each pattern, state what it promises, which mechanism enforces that promise, and when it can fail. Practice readiness versus liveness, retry safety with idempotency keys, measured backup recovery, ownership checks using fencing tokens, database scaling choices, and blue-green versus canary deployments. Use the follow-up questions, such as "we do canary, do we still need blue-green?", to explain operating decisions as well as syntax.
 
 ---
 
 ## File Index
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------: |
+| ----: | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------ | ----------: |
 | 01 | [Infra & Ops Patterns Interview Questions](30.3.6.01-interview-questions.md) | Probe contracts, retry+idempotency, RPO/RTO & drills, fencing tokens, measured scaling levers, blue-green vs canary, flag debt, erasure pipeline design, on-call levers, scenario drills | Important | Specialized | 6 min |
 
 ---
@@ -30,7 +30,7 @@ Complete each learning category and its REVISION companion first. Then answer th
 ## Cross-References
 
 - [Microservices Interview Drills](../../../20-backend/20.6-microservices/05-interview-drills/INDEX.md) — the distributed-patterns half of the same topics
-- [Resilience & Recovery](../02-failure-and-recovery/INDEX.md) — the mechanisms behind the retry/idempotency answers
+- [Failure & Recovery](../02-failure-and-recovery/INDEX.md) — the mechanisms behind the retry/idempotency answers
 - [Shipping & Evolution](../05-shipping-and-evolution/INDEX.md) — deploy patterns and their interview questions in depth
 
 ---

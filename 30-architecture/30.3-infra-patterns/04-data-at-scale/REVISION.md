@@ -6,7 +6,7 @@
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Specialized-lightgrey)](../../../docs/topic-importance.md)
 
-# Data & Scale — Revision
+# Data at Scale — Revision
 
 Read the section's learning chapters first. Close them, explain each answer with a concrete failure or tradeoff, then use the source link to check what you missed.
 
@@ -24,9 +24,9 @@ Source: [Database Scaling — Partitioning, Replication, Connection Pooling, Que
 
 **Q:** Does a UUID default establish global uniqueness on a table partitioned by time?
 
-**A:** No. Generation and constraints are separate. A parent unique/primary key must include supported partition keys; uniqueness of `(id, scheduled_at)` does not guarantee id alone is globally unique.
+**A:** No. Generation and constraints are separate. A parent unique/primary key must include supported partition keys; uniqueness of `(id, scheduled_at)` does not guarantee `id` alone is globally unique.
 
-**Q:** Does PgBouncer default_pool_size = 20 limit the entire database to twenty connections?
+**Q:** Does PgBouncer `default_pool_size = 20` limit the entire database to twenty connections?
 
 **A:** No. The size is per user/database pool, with other pools/reserve configuration and direct clients adding demand. Budget fleet-wide useful execution and queueing, not just one setting.
 
@@ -76,7 +76,7 @@ Source: [CDN Architecture — Edge Caching, Geographic Distribution, Cache Inval
 
 **Q:** Does serving through a chosen region prove where sensitive data is retained?
 
-**A:** No. Origin, backups, logs, telemetry and provider processing have separate location/trust contracts. No-store controls relevant caching, not all processing or compliance.
+**A:** No. Origin, backups, logs, telemetry and provider processing have separate location/trust contracts. `Cache-Control: no-store` controls relevant caching, not all processing or compliance.
 
 ## Multi-Tenant SaaS Architecture
 

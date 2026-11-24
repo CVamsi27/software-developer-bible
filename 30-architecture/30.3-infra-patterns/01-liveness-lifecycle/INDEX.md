@@ -11,14 +11,14 @@
 
 ## Why this category exists
 
-An orchestrator such as Kubernetes, ECS or Nomad starts and manages application processes. It checks whether a process is alive and ready to serve, and asks it to shut down. Incorrect health responses or ignored termination requests such as SIGTERM can cause repeated restarts, dropped ongoing requests, and incomplete cleanup. This category explains how those checks and shutdown steps work.
+An orchestrator such as Kubernetes, Amazon Elastic Container Service (ECS) or Nomad starts and manages application processes. It checks whether a process is alive and ready to serve, and asks it to shut down. Incorrect health responses or ignored termination requests such as `SIGTERM` can cause repeated restarts, dropped ongoing requests, and incomplete cleanup. This category explains how those checks and shutdown steps work.
 
 ---
 
 ## File Index
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------: |
+| ----: | --------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------ | ----------: |
 | 01 | [Health Checks & Graceful Shutdown](30.3.1.01-health-checks-graceful-shutdown.md) | Liveness vs readiness vs startup probes, health endpoint design, SIGTERM handling, connection draining, shutdown hooks | Essential | Important | 9 min |
 
 ---
@@ -52,4 +52,4 @@ Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a he
 | Orchestrator probes | Fly `[[http_service.checks]]` requests `/api/health/live` every 15s, with a 5s timeout and 30s grace in the inspected `fly.toml` |
 | Liveness vs DB readiness | Live probe kept separate from the Prisma health indicator so a DB blip doesn't kill the machine |
 | Scheduler lifecycle | API scheduler disablement separates process roles; heartbeat records runs without preventing concurrent worker execution |
-| Suspend/resume lifecycle | `fly.toml` sets suspend, auto-start and min_machines_running=0; this permits cold/resume latency and does not guarantee a warm API |
+| Suspend/resume lifecycle | `fly.toml` sets suspend, auto-start and `min_machines_running = 0`; this permits cold/resume latency and does not guarantee a warm API |

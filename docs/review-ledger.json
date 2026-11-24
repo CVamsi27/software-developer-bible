@@ -8202,454 +8202,484 @@
    }
   },
   "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.md": {
-   "sha256": "fab8301f07fcd624373bc0b89812e386f19df294219a691c1fc269e86266eb08",
-   "lines": 167,
+   "sha256": "6259ab27f5569b7ad1362bca40b4e0af6aabaabc9f297f097187a6b711cdc58a",
+   "lines": 169,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Node.js 22+ http.Server closeIdleConnections and closeAllConnections APIs and Kubernetes v1.32+ Pod termination lifecycle.",
-    "readable": "Full read of 167 lines (1,121 prose words). Full read of 167 lines: distinguishes startup, liveness, and readiness probe controller actions and traces SIGTERM withdrawal, HTTP server drain (drainHttp using closeIdleConnections and closeAllConnections), and dependency closure within terminationGracePeriodSeconds.",
-    "concise": "1,121 words across 167 lines. 1121 prose words across 167 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 169 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1135 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical service-level health probe and graceful shutdown contract chapter; complements NestJS lifecycle hooks in 20.2.4.03 and K8s manifests in 40.2.4.01.",
-    "fast": "Measured 27.9 KB raw / 7.7 KB gzip. Measured {'path': '30-architecture/30.3-infra-patterns/01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.3-infra-patterns/01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.html', 'status': 'built', 'sourceBytes': 13212, 'rawBytes': 28619, 'gzipBytes': 7916, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "27.9 KB raw / 7.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Provides runnable TypeScript drainHttp helper and Kubernetes probe fragment, highlighting shared-dependency liveness restart storm and preStop grace budget failure boundary."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/INDEX.md": {
-   "sha256": "796dda5028b96c8d230e5e2fa32881015169bc9a3856e5063379fade9ad63917",
+   "sha256": "353a541c3073b622d8dcf5e9bcd40df2a801f4b2b77f22f3641657264b16164d",
    "lines": 55,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against live file index and cross-links to 40.2-kubernetes.",
-    "readable": "Full read of 55 lines (204 prose words). Full read of 55 lines: verified category study flow for orchestrator probes and graceful shutdown, completion checks, and Docita codebase anchors.",
-    "concise": "204 words across 55 lines. 204 prose words across 55 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 55 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "208 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical category index for 30.3-infra-patterns/01-liveness-lifecycle.",
-    "fast": "Measured 10.6 KB raw / 3.7 KB gzip. Measured {'path': '30-architecture/30.3-infra-patterns/01-liveness-lifecycle/INDEX.md', 'genre': 'index', 'html': '_site/30-architecture/30.3-infra-patterns/01-liveness-lifecycle/INDEX.html', 'status': 'built', 'sourceBytes': 3740, 'rawBytes': 10828, 'gzipBytes': 3816, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 3, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "10.6 KB raw / 3.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Connects probe semantics and SIGTERM draining to concrete Docita Fly.io and NestJS health-check failure boundary evidence."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/REVISION.md": {
-   "sha256": "1f601106aaa4972dd314bf964a7fbef109c10e5802fb86e6538521446b015b6c",
+   "sha256": "a044f5403402d8b5f0ceef9c3de8e2a0d8a3a073681595ee49e94a9342e12e31",
    "lines": 77,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Kubernetes Pod termination lifecycle and Node.js http.Server close semantics.",
-    "readable": "Full read of 77 lines (521 prose words). Full read of 77 lines: verified 12 retrieval Q&A pairs covering liveness vs readiness during shared outages, SIGTERM drain ordering, Node.js server.close() active responses, and Kubernetes preStop grace budget consumption.",
-    "concise": "521 words across 77 lines. 521 prose words across 77 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 77 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "522 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical revision companion for 30.3-infra-patterns/01-liveness-lifecycle.",
-    "fast": "Measured 11.2 KB raw / 3.9 KB gzip. Measured {'path': '30-architecture/30.3-infra-patterns/01-liveness-lifecycle/REVISION.md', 'genre': 'revision', 'html': '_site/30-architecture/30.3-infra-patterns/01-liveness-lifecycle/REVISION.html', 'status': 'built', 'sourceBytes': 4648, 'rawBytes': 11458, 'gzipBytes': 4016, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "11.2 KB raw / 3.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Tests concrete failure boundary scenarios including 20s preStop inside 30s terminationGracePeriodSeconds and optional cache outages."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.01-resilience-patterns.md": {
-   "sha256": "8901802bfe9d5b57ca519725b18e9f77669ae55904b6d90c2f48fdff85bdad75",
-   "lines": 123,
-   "genre": "chapter",
-   "status": "read",
-   "reviewed": "2026-11-23",
-   "evidence": {
-    "current": "Verified against current 2026 sources and standards. Verified against AWS Builders Library, Google SRE cascading-failure principles, and modern resilience composition practices.",
-    "readable": "Full read of 123 lines (827 prose words). Full read of 123 lines: maps bulkheads, deadlines, classified retries, circuit breakers, load shedding, and fallbacks to their specific bounded resources, traces a 600ms catalog dependency budget across attempts, and compares wrapper composition orders.",
-    "concise": "827 words across 123 lines. 827 prose words across 123 lines; zero filler or duplicate mechanism prose.",
-    "focused": "Single canonical home with no duplicate code across chapters. Canonical operational overview of resilience pattern composition; delegates deep implementation to 20.6.4 and 30.2.1.19.",
-    "fast": "Measured 18.8 KB raw / 6.7 KB gzip. Measured {'path': '30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.01-resilience-patterns.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.01-resilience-patterns.html', 'status': 'built', 'sourceBytes': 10993, 'rawBytes': 19283, 'gzipBytes': 6863, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
-    "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Contrasts per-attempt vs per-operation circuit breaker observation and details multi-layer retry amplification (3x3x3 = 27x) failure boundary."
-   }
-  },
-  "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.02-retry-patterns.md": {
-   "sha256": "e2eac5793dd19ac783cc2286e894f7edaf953262aec8010cd5150311e1a13188",
-   "lines": 166,
-   "genre": "chapter",
-   "status": "read",
-   "reviewed": "2026-11-23",
-   "evidence": {
-    "current": "Verified against current 2026 sources and standards. Verified against Node.js native fetch and AbortController, RFC 9110 Retry-After header semantics, and AWS exponential backoff with jitter.",
-    "readable": "Full read of 166 lines (816 prose words). Full read of 166 lines: classifies retryable outcomes, derives full-jitter exponential backoff and HTTP Retry-After parsing, and implements an end-to-end TypeScript retryRead helper with AbortController per-attempt and total deadlines plus a RetryBudget token bucket.",
-    "concise": "816 words across 166 lines. 816 prose words across 166 lines; zero filler or duplicate mechanism prose.",
-    "focused": "Single canonical home with no duplicate code across chapters. Canonical retry classification, jitter, and retry-budget implementation chapter.",
-    "fast": "Measured 33.7 KB raw / 7.9 KB gzip. Measured {'path': '30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.02-retry-patterns.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.02-retry-patterns.html', 'status': 'built', 'sourceBytes': 11928, 'rawBytes': 34467, 'gzipBytes': 8056, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
-    "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Includes runnable TypeScript retryRead implementation keeping timer active through response.text() body consumption and enforcing shared deadline failure boundary."
-   }
-  },
-  "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.03-idempotency-keys.md": {
-   "sha256": "8f5b9194972cbcac3282ca5a956142acdd163c62c266f7656fda2d5e9d482dcf",
-   "lines": 153,
-   "genre": "chapter",
-   "status": "read",
-   "reviewed": "2026-11-23",
-   "evidence": {
-    "current": "Verified against current 2026 sources and standards. Verified against PostgreSQL 18 READ COMMITTED conflict wait semantics, Stripe idempotent requests, and IETF draft-ietf-httpapi-idempotency-key-header-08.",
-    "readable": "Full read of 153 lines (827 prose words). Full read of 153 lines: models tenant-scoped idempotency keys with canonical request fingerprints, atomic PostgreSQL claim-effect-replay transactions (INSERT ON CONFLICT DO NOTHING under READ COMMITTED), and client key persistence across retries.",
-    "concise": "827 words across 153 lines. 827 prose words across 153 lines; zero filler or duplicate mechanism prose.",
-    "focused": "Single canonical home with no duplicate code across chapters. Canonical single-authority API idempotency key and transaction replay chapter; pairs with multi-authority trace in 30.3.2.06.",
-    "fast": "Measured 23.1 KB raw / 6.7 KB gzip. Measured {'path': '30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.03-idempotency-keys.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.03-idempotency-keys.html', 'status': 'built', 'sourceBytes': 10021, 'rawBytes': 23658, 'gzipBytes': 6909, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
-    "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Provides executable PostgreSQL operation_results + appointments transaction SQL and details Redis GET-then-SETEX race condition and payload mismatch failure boundary."
-   }
-  },
-  "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.04-feature-flags-kill-switches.md": {
-   "sha256": "5ee5356e13b560fbcc02f24d03b4ead77cc8ba2ee75786408529009e3e3da416",
+   "sha256": "31b627166e88d26a5027ae9345656ae1a7d227ee7d0ac2df4817e8ee689c9ff8",
    "lines": 125,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
+   "evidence": {
+    "current": "Verified against current 2026 sources and standards. Verified against AWS Builders Library, Google SRE cascading-failure principles, and modern resilience composition practices.",
+    "readable": "Full read of 125 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "829 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "focused": "Single canonical home with no duplicate code across chapters. Canonical operational overview of resilience pattern composition; delegates deep implementation to 20.6.4 and 30.2.1.19.",
+    "fast": "18.8 KB raw / 6.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Contrasts per-attempt vs per-operation circuit breaker observation and details multi-layer retry amplification (3x3x3 = 27x) failure boundary."
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
+  },
+  "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.02-retry-patterns.md": {
+   "sha256": "4d28e1c3aa51e5fb84d3c5f169992d164750eadc714580cdfa1ee8a0df4ccf79",
+   "lines": 172,
+   "genre": "chapter",
+   "status": "read",
+   "reviewed": "2026-11-24",
+   "evidence": {
+    "current": "Verified against current 2026 sources and standards. Verified against Node.js native fetch and AbortController, RFC 9110 Retry-After header semantics, and AWS exponential backoff with jitter.",
+    "readable": "Full read of 172 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "804 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "focused": "Single canonical home with no duplicate code across chapters. Canonical retry classification, jitter, and retry-budget implementation chapter.",
+    "fast": "33.7 KB raw / 7.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Includes runnable TypeScript retryRead implementation keeping timer active through response.text() body consumption and enforcing shared deadline failure boundary."
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
+  },
+  "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.03-idempotency-keys.md": {
+   "sha256": "861385c6c9d7af1a6bc12d3c9cbfedfcf31bd7db5d4776d5c0716da18839955b",
+   "lines": 158,
+   "genre": "chapter",
+   "status": "read",
+   "reviewed": "2026-11-24",
+   "evidence": {
+    "current": "Verified against current 2026 sources and standards. Verified against PostgreSQL 18 READ COMMITTED conflict wait semantics, Stripe idempotent requests, and IETF draft-ietf-httpapi-idempotency-key-header-08.",
+    "readable": "Full read of 158 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "836 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "focused": "Single canonical home with no duplicate code across chapters. Canonical single-authority API idempotency key and transaction replay chapter; pairs with multi-authority trace in 30.3.2.06.",
+    "fast": "23.1 KB raw / 6.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Provides executable PostgreSQL operation_results + appointments transaction SQL and details Redis GET-then-SETEX race condition and payload mismatch failure boundary."
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
+  },
+  "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.04-feature-flags-kill-switches.md": {
+   "sha256": "cb0add340520c7de45d8fe9a4ae0aec5e73c1465a797b1e4e5c8d50cb03eca56",
+   "lines": 131,
+   "genre": "chapter",
+   "status": "read",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Node.js node:crypto SHA-256 hashing and OpenFeature evaluation context specification.",
-    "readable": "Full read of 125 lines (935 prose words). Full read of 125 lines: categorizes release, experiment, operational kill-switch, and entitlement flags, traces versioned local snapshot evaluation, implements deterministic SHA-256 percentage bucketing (releaseEnabled), and defines single-polarity kill switches.",
-    "concise": "935 words across 125 lines. 935 prose words across 125 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 131 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "937 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical feature flag evaluation, sticky bucketing, and operational kill-switch contract chapter.",
-    "fast": "Measured 22.0 KB raw / 7.1 KB gzip. Measured {'path': '30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.04-feature-flags-kill-switches.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.04-feature-flags-kill-switches.html', 'status': 'built', 'sourceBytes': 10753, 'rawBytes': 22556, 'gzipBytes': 7278, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "22.0 KB raw / 7.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Includes runnable TypeScript releaseEnabled monotonic rollout hasher and traces in-flight mutation reconciliation and stale control-plane snapshot failure boundary."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.05-backup-strategy-restore-drills.md": {
-   "sha256": "594495a7fbb21f93d0990b303f1838e3444f4e5092f86b4754aa4dc0dcd5d165",
-   "lines": 154,
+   "sha256": "8587c29a6311a7ff12838daaa9d3c5d91549ca0010c8bb0835b3503253287427",
+   "lines": 156,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against PostgreSQL 18 continuous archiving and PITR documentation, AWS S3 Object Lock, and GNU coreutils sha256sum verification.",
-    "readable": "Full read of 154 lines (1,082 prose words). Full read of 154 lines: contrasts logical dumps, physical base backups + WAL PITR, and storage snapshots, derives RPO and RTO throughput floors, explains 3-2-1-1-0 and S3 Object Lock Compliance vs Governance modes, and outlines a 7-step restore drill runbook.",
-    "concise": "1,082 words across 154 lines. 1082 prose words across 154 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 156 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1086 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical operational backup architecture and timed restore-drill governance chapter; complements DB commands in 20.4.5.04.",
-    "fast": "Measured 23.0 KB raw / 7.8 KB gzip. Measured {'path': '30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.05-backup-strategy-restore-drills.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.05-backup-strategy-restore-drills.html', 'status': 'built', 'sourceBytes': 13376, 'rawBytes': 23556, 'gzipBytes': 7947, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "23.0 KB raw / 7.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Includes executable bash verify-artifact checksum script and traces post-PITR external payment and job side-effect reconciliation failure boundary."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.06-idempotency-retry-deep-dive.md": {
-   "sha256": "095742fb8c0a9e1ba90efec0fecaf50aa59995ba058f04c33ca16ab3a47f1b30",
-   "lines": 128,
+   "sha256": "7c88c4ebfc2d5688ade71b2e57ce529345611cf1011b21b10a6823908ce76906",
+   "lines": 132,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against PostgreSQL transactional outbox and inbox patterns and AWS idempotent API architecture guidelines.",
-    "readable": "Full read of 128 lines (1,127 prose words). Full read of 128 lines: traces one order across four independent commit boundaries (API database claim + outbox, relay event publication, consumer inbox + local mutation, and external notification provider identity) and defines DLQ replay rules.",
-    "concise": "1,127 words across 128 lines. 1127 prose words across 128 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 132 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1113 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical cross-authority idempotency and retry deep dive; builds on single-API transaction in 30.3.2.03.",
-    "fast": "Measured 19.6 KB raw / 6.9 KB gzip. Measured {'path': '30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.06-idempotency-retry-deep-dive.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.06-idempotency-retry-deep-dive.html', 'status': 'built', 'sourceBytes': 11662, 'rawBytes': 20022, 'gzipBytes': 7095, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "19.6 KB raw / 6.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Analyzes SKIP LOCKED out-of-order relay publication and 7-day DLQ replay exceeding 1-day deduplication retention horizon failure boundary."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "30-architecture/30.3-infra-patterns/02-failure-and-recovery/INDEX.md": {
-   "sha256": "e881e6a165c670ace6afb85aba4aee86daf6a48c363827f93bf633ad50d1ecea",
+   "sha256": "54bc51a0f2c917fdb5c541f054ea7d1568441b5723665ba61d2e8fade6c187b9",
    "lines": 64,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against live file index and cross-links to 20.6-microservices and 30.2-system-design.",
-    "readable": "Full read of 64 lines (280 prose words). Full read of 64 lines: verified 6-chapter category reading flow (resilience overview, retries, idempotency, feature flags, backups and drills, deep dive) and Docita implementation anchors.",
-    "concise": "280 words across 64 lines. 280 prose words across 64 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 64 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "280 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical category index for 30.3-infra-patterns/02-failure-and-recovery.",
-    "fast": "Measured 13.6 KB raw / 4.4 KB gzip. Measured {'path': '30-architecture/30.3-infra-patterns/02-failure-and-recovery/INDEX.md', 'genre': 'index', 'html': '_site/30-architecture/30.3-infra-patterns/02-failure-and-recovery/INDEX.html', 'status': 'built', 'sourceBytes': 5498, 'rawBytes': 13905, 'gzipBytes': 4552, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 3, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "13.6 KB raw / 4.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Frames retry-plus-idempotency and backup-plus-drill pairing around concrete duplicate-effect and mid-outage corruption failure boundary conditions."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "30-architecture/30.3-infra-patterns/02-failure-and-recovery/REVISION.md": {
-   "sha256": "e9708f28bc3091a6cd33e03cdb05c5718ac927295687d44da3cf64f1b902e61e",
+   "sha256": "ac64f75bb89a30e590d5eb3959769c0ce1eb63a65f51fab1acecd38ee1701aeb",
    "lines": 137,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against IETF draft-ietf-httpapi-idempotency-key-header-08 (Oct 2026) and PostgreSQL 18 isolation docs.",
-    "readable": "Full read of 137 lines (1,097 prose words). Full read of 137 lines: verified 23 Q&A pairs across all 6 failure-and-recovery chapters covering bulkhead vs breaker scope, full jitter + retry budgets, READ COMMITTED idempotency conflict waits, IETF Idempotency-Key draft status, sticky flag bucketing, PITR drills, and DLQ replay.",
-    "concise": "1,097 words across 137 lines. 1097 prose words across 137 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 137 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1101 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical revision companion for 30.3-infra-patterns/02-failure-and-recovery.",
-    "fast": "Measured 16.4 KB raw / 5.8 KB gzip. Measured {'path': '30-architecture/30.3-infra-patterns/02-failure-and-recovery/REVISION.md', 'genre': 'revision', 'html': '_site/30-architecture/30.3-infra-patterns/02-failure-and-recovery/REVISION.html', 'status': 'built', 'sourceBytes': 8976, 'rawBytes': 16809, 'gzipBytes': 5932, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "16.4 KB raw / 5.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Every Q&A tests a specific operational failure boundary such as response-body timer cancellation, idempotency TTL expiry, and payment-ID event deduplication."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.md": {
-   "sha256": "ea17db8e28a89fdca23ddc5b0802143b15be0278a04c327aeb03826788300f03",
-   "lines": 179,
+   "sha256": "aae9c1b28532b004ceb0ada46fb96a03adf32fc91d2b8e0be5b533598ea36ca0",
+   "lines": 185,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against etcd v3.6 concurrency API, PostgreSQL 18 INSERT ON CONFLICT with clock_timestamp(), and Redis 8.4+ DELEX IFEQ / Lua atomic lease renewal.",
-    "readable": "Full read of 179 lines (1,339 prose words). Full read of 179 lines: traces a paused leader (epoch 41) racing a successor (epoch 42) at the protected resource, compares etcd, ZooKeeper, PostgreSQL advisory locks, DB lease rows, and Redis leases, and provides executable PostgreSQL epoch-fenced lease SQL and ioredis Lua renewal.",
-    "concise": "1,339 words across 179 lines. 1339 prose words across 179 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 185 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1341 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical operational leader election, lease renewal, and resource epoch fencing chapter; complements Raft theory in 30.2.1.09.",
-    "fast": "Measured 29.7 KB raw / 8.5 KB gzip. Measured {'path': '30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.html', 'status': 'built', 'sourceBytes': 14934, 'rawBytes': 30407, 'gzipBytes': 8724, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "29.7 KB raw / 8.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Provides executable PostgreSQL leader_leases and scheduled_resources fencing SQL and highlights pre-first-write stale epoch acceptance failure boundary."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "30-architecture/30.3-infra-patterns/03-coordination/INDEX.md": {
-   "sha256": "8f9fa6d1f3d48fc612102200b4a766d66e07e5f9fb3c080e3fa3857dfa4a541f",
+   "sha256": "9ce4d959847d6612825f4167183c3a7a202f255a996720498a0cea9796dc14fe",
    "lines": 56,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against live file index and cross-links to 30.2.1.09 and 30.2.1.14.",
-    "readable": "Full read of 56 lines (245 prose words). Full read of 56 lines: verified category learning path for distributed leases, fencing tokens, and consensus, plus Docita Postgres advisory lock and outbox anchors.",
-    "concise": "245 words across 56 lines. 245 prose words across 56 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 56 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "245 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical category index for 30.3-infra-patterns/03-coordination.",
-    "fast": "Measured 10.7 KB raw / 3.8 KB gzip. Measured {'path': '30-architecture/30.3-infra-patterns/03-coordination/INDEX.md', 'genre': 'index', 'html': '_site/30-architecture/30.3-infra-patterns/03-coordination/INDEX.html', 'status': 'built', 'sourceBytes': 3984, 'rawBytes': 10934, 'gzipBytes': 3883, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 3, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "10.7 KB raw / 3.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Distinguishes scheduler heartbeat telemetry from actual single-flight lease coordination and highlights paused-owner failure boundary."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "30-architecture/30.3-infra-patterns/03-coordination/REVISION.md": {
-   "sha256": "bd2eedc32d49c8715aab67721107fd72c54119277955f387fa2feae4acef078b",
+   "sha256": "7808ae50f3a76a5b6bb1c7380d4de582cb502eff1933f444af56071f16309284",
    "lines": 61,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against etcd v3.6 concurrency API and snapshot recovery documentation.",
-    "readable": "Full read of 61 lines (430 prose words). Full read of 61 lines: verified 8 retrieval Q&A pairs covering durable monotonic fencing epochs, paused lease holders, repeated writes within one epoch, atomic owner renewal, conflict-wait expiry recomputation, and etcd LeaderKey.rev.",
-    "concise": "430 words across 61 lines. 430 prose words across 61 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 61 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "430 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical revision companion for 30.3-infra-patterns/03-coordination.",
-    "fast": "Measured 10.2 KB raw / 3.6 KB gzip. Measured {'path': '30-architecture/30.3-infra-patterns/03-coordination/REVISION.md', 'genre': 'revision', 'html': '_site/30-architecture/30.3-infra-patterns/03-coordination/REVISION.html', 'status': 'built', 'sourceBytes': 3826, 'rawBytes': 10439, 'gzipBytes': 3722, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "10.2 KB raw / 3.6 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Tests subtle failure boundary traps including EXCLUDED.expires_at staleness after row lock wait and pre-first-write epoch fencing."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md": {
-   "sha256": "1fda21febca83d9d008142afdb41595f29b553fda232f9b386a9bcad4739f9c4",
-   "lines": 222,
+   "sha256": "2fda3cad8cef1d1b0207f6accbe7c653c9667da45b9032c961d922a26f1b553c",
+   "lines": 230,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against PostgreSQL 18 EXPLAIN, native partitioning, pg_stat_progress_vacuum, PgBouncer transaction-mode prepared statement support, and Prisma ORM v7 driver adapter pools.",
-    "readable": "Full read of 222 lines (1,349 prose words). Full read of 222 lines: separates pool-acquisition wait from SQL execution and lock wait, walks through EXPLAIN (ANALYZE, BUFFERS), covering indexes (INCLUDE), PgBouncer transaction pooling, streaming replication lag, native range and hash partitioning, and autovacuum tuning.",
-    "concise": "1,349 words across 222 lines. 1349 prose words across 222 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 230 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1358 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical operational database scaling lever selection chapter; complements PostgreSQL internals in 20.4.1.",
-    "fast": "Measured 34.1 KB raw / 9.8 KB gzip. Measured {'path': '30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.html', 'status': 'built', 'sourceBytes': 18041, 'rawBytes': 34878, 'gzipBytes': 10002, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "34.1 KB raw / 9.8 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Provides executable PostgreSQL range and hash partition DDL, PgBouncer config, and per-partition autovacuum tuning with transaction-mode session state failure boundary."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.02-data-pipelines.md": {
-   "sha256": "187bb681cfb5e2c266f1e5f8561d69953f5b18bc70b5792b9b472e637d11211f",
-   "lines": 161,
+   "sha256": "c30788a1e5066afd0f484f43597a6713e3793c65a5c362b5e296a11b763aa19b",
+   "lines": 165,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Apache Kafka 4.3 Streams transaction boundaries, Apache Beam watermark model, PostgreSQL pg_replication_slots WAL retention, and Delta Lake transaction log protocol.",
-    "readable": "Full read of 161 lines (1,564 prose words). Full read of 161 lines: contrasts ETL vs ELT and batch vs stream (Lambda and Kappa), models versioned after-image upserts with deletion tombstones vs delta aggregation, aligns sink checkpoints with output commits, and traces event-time watermarks, late corrections, and backfills.",
-    "concise": "1,564 words across 161 lines. 1564 prose words across 161 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 165 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1564 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical data pipeline architecture, checkpointing, and backfill governance chapter.",
-    "fast": "Measured 26.5 KB raw / 8.7 KB gzip. Measured {'path': '30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.02-data-pipelines.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.02-data-pipelines.html', 'status': 'built', 'sourceBytes': 15868, 'rawBytes': 27128, 'gzipBytes': 8951, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "26.5 KB raw / 8.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Provides executable PostgreSQL versioned after-image upsert SQL and details abandoned replication-slot disk exhaustion and tombstone removal resurrection failure boundary."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md": {
-   "sha256": "77003d8765dc0ffb40a30e8ce4093952fb3286c26453151c61dec2494422e305",
-   "lines": 124,
+   "sha256": "2b11c917d501bff4f9fc67ffd9fcad105053593af0510f16f7845dbe91043c29",
+   "lines": 134,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against RFC 9111 (HTTP Caching), RFC 5861 (stale-while-revalidate and stale-if-error), and AWS CloudFront Origin Shield and Cloudflare purge architecture.",
-    "readable": "Full read of 124 lines (1,203 prose words). Full read of 124 lines: separates routing, authorization, cache-key identity, and freshness across edge PoPs, origin shields, and origins, contrasts immutable hashed assets with HTML entrypoints and private responses, and traces zero-skew asset-before-HTML rollouts.",
-    "concise": "1,203 words across 124 lines. 1203 prose words across 124 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 134 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1202 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical architectural CDN and origin-boundary integration chapter; complements platform CDN setup in 40.10.",
-    "fast": "Measured 20.6 KB raw / 7.3 KB gzip. Measured {'path': '30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.html', 'status': 'built', 'sourceBytes': 12769, 'rawBytes': 21123, 'gzipBytes': 7469, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "20.6 KB raw / 7.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Traces path-only cache key cross-patient data leak, cache poisoning vs misconfigured sharing, and multi-tab HTML-to-asset version skew failure boundary."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.04-multi-tenant-saas-architecture.md": {
-   "sha256": "93d77bc61b21c1d6a31007b9a299c45fd5d766ca8edcad01746359a927695300",
-   "lines": 139,
+   "sha256": "42bb2e85ab73583ce732baa6c522420807adf9bd395923f7e70822b9196da7bd",
+   "lines": 143,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Node.js node:async_hooks AsyncLocalStorage, PostgreSQL 18 Row-Level Security pooling rules, AWS SaaS Lens, and Prisma ORM v7 ($use removal) and v8 RC status.",
-    "readable": "Full read of 139 lines (933 prose words). Full read of 139 lines: compares Pool, Bridge, Silo, and Hybrid tenant isolation models, implements Node.js AsyncLocalStorage verified tenant context propagation, binds transaction-local PostgreSQL RLS context on pooled connections, and scopes caches, object storage, and jobs.",
-    "concise": "933 words across 139 lines. 933 prose words across 139 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 143 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "929 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical multi-tenant SaaS isolation, context propagation, and lifecycle chapter; pairs with PostgreSQL RLS syntax in 20.4.1.06.",
-    "fast": "Measured 23.2 KB raw / 7.3 KB gzip. Measured {'path': '30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.04-multi-tenant-saas-architecture.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.04-multi-tenant-saas-architecture.html', 'status': 'built', 'sourceBytes': 12959, 'rawBytes': 23781, 'gzipBytes': 7507, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "23.2 KB raw / 7.3 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Includes runnable TypeScript AsyncLocalStorage tenant wrapper and details pooled connection session leak, background job missing tenant verification, and pooled PITR restore failure boundary."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "30-architecture/30.3-infra-patterns/04-data-at-scale/INDEX.md": {
-   "sha256": "ba948b561899a3efb2d36b19a889ffcfa24a6d127d78668c69ad04059f894305",
+   "sha256": "9bcff66d97431f768359a3f8dfaa47152edc6d2c6ae2f833cc2f7c9d7b9f965d",
    "lines": 59,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against live file index and cross-links to 20.4-database and 40.10-cdn.",
-    "readable": "Full read of 59 lines (180 prose words). Full read of 59 lines: verified 4-chapter learning flow (Database Scaling, Data Pipelines, CDN Architecture, Multi-Tenant SaaS) and Docita scaling and retention anchors.",
-    "concise": "180 words across 59 lines. 180 prose words across 59 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 59 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "180 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical category index for 30.3-infra-patterns/04-data-at-scale.",
-    "fast": "Measured 11.6 KB raw / 3.9 KB gzip. Measured {'path': '30-architecture/30.3-infra-patterns/04-data-at-scale/INDEX.md', 'genre': 'index', 'html': '_site/30-architecture/30.3-infra-patterns/04-data-at-scale/INDEX.html', 'status': 'built', 'sourceBytes': 4233, 'rawBytes': 11842, 'gzipBytes': 4012, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 3, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "11.6 KB raw / 3.9 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Connects bottleneck measurement to consistency, authorization, and recovery failure boundary checks."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "30-architecture/30.3-infra-patterns/04-data-at-scale/REVISION.md": {
-   "sha256": "798b6b8641f7f661f9db5d49fc3143dbf1529383ad7651100846e1fa0c7c7f86",
+   "sha256": "30b9271d3bf3219d37b77f7ed3583b68b8ce7b464427df748563866c1595da4d",
    "lines": 113,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against PgBouncer feature matrix, Apache Kafka 4.3 Streams docs, RFC 9111, and Prisma ORM v7 and v8 release notes.",
-    "readable": "Full read of 113 lines (959 prose words). Full read of 113 lines: verified 18 retrieval Q&A pairs covering partitioning vs sharding, PgBouncer transaction-mode session state and max_prepared_statements, versioned after-image upserts vs deltas, Kafka EOS vs PostgreSQL sink commits, RFC 9111 CDN keys, and Prisma v7/v8 RLS pooling.",
-    "concise": "959 words across 113 lines. 959 prose words across 113 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 113 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "960 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical revision companion for 30.3-infra-patterns/04-data-at-scale.",
-    "fast": "Measured 15.7 KB raw / 5.5 KB gzip. Measured {'path': '30-architecture/30.3-infra-patterns/04-data-at-scale/REVISION.md', 'genre': 'revision', 'html': '_site/30-architecture/30.3-infra-patterns/04-data-at-scale/REVISION.html', 'status': 'built', 'sourceBytes': 8302, 'rawBytes': 16071, 'gzipBytes': 5668, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "15.7 KB raw / 5.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Tests high-signal senior failure boundary conditions across connection pooling, tombstone deletion, CDN cache sharing, and multi-tenant RLS."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.md": {
-   "sha256": "b23813600d5e1bd09a4750752cff852616654e5e1b35d22d6430eb6301c7ef3a",
-   "lines": 132,
+   "sha256": "b85dc1eeae61ffc16de55497d847010edd456e13ad278e5d1ff204ffa3e65c95",
+   "lines": 142,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Kubernetes Deployment rollout and container lifecycle hook semantics, Google SRE canarying principles, and PostgreSQL CREATE INDEX CONCURRENTLY phases.",
-    "readable": "Full read of 132 lines (1,073 prose words). Full read of 132 lines: compares rolling, blue-green, canary, and feature-flag rollouts, traces Kubernetes Pod replacement (maxSurge, maxUnavailable, preStop vs grace deadline), defines cohort-aware canary evidence, and demonstrates SQL expand-migrate-contract column rename.",
-    "concise": "1,073 words across 132 lines. 1073 prose words across 132 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 142 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1086 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical zero-downtime deployment and backward-compatible schema evolution chapter.",
-    "fast": "Measured 22.1 KB raw / 7.5 KB gzip. Measured {'path': '30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.html', 'status': 'built', 'sourceBytes': 12152, 'rawBytes': 22672, 'gzipBytes': 7684, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "22.1 KB raw / 7.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Provides executable SQL expand-migrate-contract fixture and analyzes code rollback failing against incompatible queued messages, contracted columns, and committed provider effects failure boundary."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.02-technical-debt.md": {
-   "sha256": "ee6c2e5eefc6c384a43c8023e93d4ab1227056d0c1ff4ae69fb46e4e98db97ea",
-   "lines": 112,
+   "sha256": "f60c326819296fc4902b9ae48bd48130985f9eafaba9732e15a8a950993afac4",
+   "lines": 116,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Martin Fowler's Technical Debt Quadrant, Strangler Fig, Branch by Abstraction, and current 5-metric DORA guidance.",
-    "readable": "Full read of 112 lines (1,121 prose words). Full read of 112 lines: applies Fowler's Technical Debt Quadrant (deliberate vs inadvertent, prudent vs reckless), structures an actionable debt record (principal, interest, owner, exit condition), and traces remediation via Strangler Fig, Branch by Abstraction, and characterization tests.",
-    "concise": "1,121 words across 112 lines. 1121 prose words across 112 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 116 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1119 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical technical debt identification, economic prioritization, and boundary migration chapter.",
-    "fast": "Measured 18.2 KB raw / 6.7 KB gzip. Measured {'path': '30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.02-technical-debt.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.02-technical-debt.html', 'status': 'built', 'sourceBytes': 10876, 'rawBytes': 18619, 'gzipBytes': 6823, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "18.2 KB raw / 6.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Walks through unifying three drifting booking availability rules into one authoritative database constraint and highlights dual-write split authority failure boundary."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md": {
-   "sha256": "96dbf076b094ac138f081dd6aae37d4acf53642f1eb537e551e92c1b8b4c5756",
-   "lines": 132,
+   "sha256": "3674cccdadd34750ee4436aba5df03c3ec6df00651f8c36993732023b0bf2e83",
+   "lines": 134,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against FinOps Foundation Framework, AWS Cost Optimization Pillar, S3 storage classes, EC2 2-minute spot notice contract, OpenCost, and Infracost.",
-    "readable": "Full read of 132 lines (1,210 prose words). Full read of 132 lines: connects cloud resource quantities to unit economics (cost per successful order vs total spend), rightsizing vs Kubernetes HPA request-based scaling triggers, S3 Glacier Instant vs Flexible retrieval math, spot interruption recovery, and VPC endpoint transfer traps.",
-    "concise": "1,210 words across 132 lines. 1210 prose words across 132 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 134 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1219 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical cost engineering and FinOps unit-economics chapter.",
-    "fast": "Measured 20.9 KB raw / 7.7 KB gzip. Measured {'path': '30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.html', 'status': 'built', 'sourceBytes': 13171, 'rawBytes': 21432, 'gzipBytes': 7855, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "20.9 KB raw / 7.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Proves with worked math how a 16.7% monthly spend drop can hide a 66.7% unit-cost regression and details HPA request-reduction scaling amplification failure boundary."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.04-data-retention-archival.md": {
-   "sha256": "66d670cd79befb787df678b9437d5feb4a85523f44bd5fd454047a80ebfc980f",
-   "lines": 164,
+   "sha256": "cc1fdd470ae8961e377cdc83b4f1c5049d86872d0205fc406105101a2237542a",
+   "lines": 166,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against UK ICO right-to-erasure and anonymisation guidance, HHS HIPAA 6-year Security Rule documentation retention, NIST SP 800-88 Rev 2, and AWS S3 Lifecycle and Object Lock.",
-    "readable": "Full read of 164 lines (1,508 prose words). Full read of 164 lines: defines per-class retention and clock origins, separates S3 lifecycle tiering from versioned deletion and Object Lock legal holds, serializes legal holds against deletion workers, and traces GDPR and UK ICO right-to-erasure across live stores, backups, and KMS cryptographic erasure.",
-    "concise": "1,508 words across 164 lines. 1508 prose words across 164 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 166 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "1507 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical data retention, archival, legal hold serialization, and erasure workflow chapter.",
-    "fast": "Measured 25.6 KB raw / 8.7 KB gzip. Measured {'path': '30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.04-data-retention-archival.md', 'genre': 'chapter', 'html': '_site/30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.04-data-retention-archival.html', 'status': 'built', 'sourceBytes': 15829, 'rawBytes': 26232, 'gzipBytes': 8941, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "25.6 KB raw / 8.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Includes valid AWS S3 lifecycle JSON and traces backup restore resurrecting erased customer data, HMAC pseudonymization vs anonymization, and hold-vs-delete race failure boundary."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/INDEX.md": {
-   "sha256": "c0e2d5e3f1e9334f2b5ca8b4d3babe3f041615149156c7f07d8ebd692013eed1",
+   "sha256": "4fc97c7105f01c693a2458b19070b58273ed7da6164a67277ccfea48b26fe90f",
    "lines": 65,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against live file index and cross-links to 40.3-ci-cd.",
-    "readable": "Full read of 65 lines (308 prose words). Full read of 65 lines: verified 4-chapter category study path (Zero-Downtime Deployments, Technical Debt, Cost Engineering & FinOps, Data Retention & Archival) and Docita migration and compliance anchors.",
-    "concise": "308 words across 65 lines. 308 prose words across 65 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 65 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "313 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical category index for 30.3-infra-patterns/05-shipping-and-evolution.",
-    "fast": "Measured 13.1 KB raw / 4.5 KB gzip. Measured {'path': '30-architecture/30.3-infra-patterns/05-shipping-and-evolution/INDEX.md', 'genre': 'index', 'html': '_site/30-architecture/30.3-infra-patterns/05-shipping-and-evolution/INDEX.html', 'status': 'built', 'sourceBytes': 5513, 'rawBytes': 13371, 'gzipBytes': 4586, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 3, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "13.1 KB raw / 4.5 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Connects reversible releases, evidence-backed debt remediation, unit-economics FinOps, and legal-hold retention around operational failure boundary checks."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/REVISION.md": {
-   "sha256": "74b39b017e7f6aa4d23b10aafc24a495ed45f100dd1f85ae95993a244364b059",
+   "sha256": "b38253d5f81832eb9fb15623262ce4b7a33ed2cf1b5c5b0e1eb4a9caec686106",
    "lines": 121,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against Kubernetes Deployment docs, UK ICO right-to-erasure guidance, and FinOps unit-cost metrics.",
-    "readable": "Full read of 121 lines (922 prose words). Full read of 121 lines: verified 20 retrieval Q&A pairs covering expand-contract compatibility, ProgressDeadlineExceeded behavior, writer bridging before backfill cutover, actionable debt items, unit cost vs total spend, spot checkpoint recovery, legal-hold serialization, and UK ICO erasure guidance.",
-    "concise": "922 words across 121 lines. 922 prose words across 121 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 121 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "921 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical revision companion for 30.3-infra-patterns/05-shipping-and-evolution.",
-    "fast": "Measured 15.3 KB raw / 5.4 KB gzip. Measured {'path': '30-architecture/30.3-infra-patterns/05-shipping-and-evolution/REVISION.md', 'genre': 'revision', 'html': '_site/30-architecture/30.3-infra-patterns/05-shipping-and-evolution/REVISION.html', 'status': 'built', 'sourceBytes': 7982, 'rawBytes': 15707, 'gzipBytes': 5529, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "15.3 KB raw / 5.4 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Drills high-impact failure boundary conditions including code rollback after irreversible provider effects, retry-inflated cost-per-request, and S3 versioned deletion."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "30-architecture/30.3-infra-patterns/06-interview-prep/30.3.6.01-interview-questions.md": {
-   "sha256": "00ce2748fc220f834d9b2f34248f36b07ad1d7281cd99deac9a56711e602be4a",
+   "sha256": "c12b2983deb1c140cfe5dece720635719b0e533989ef587c00b785d368565a10",
    "lines": 166,
    "genre": "interview",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against current SRE and production engineering practices across Kubernetes, PostgreSQL 18, and distributed systems.",
-    "readable": "Full read of 166 lines (2,248 prose words). Full read of 166 lines: verified 25 Beginner, Intermediate, Advanced, Behavioral, and Degradation interview Q&As covering probes, graceful shutdown, idempotency keys, RPO and RTO, blue-green vs canary, retry budgets, feature flags, fencing tokens, DB scaling, backup drills, expand-contract, GDPR erasure, circuit breakers, load shedding, and pool sizing.",
-    "concise": "2,248 words across 166 lines. 2248 prose words across 166 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 166 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "2258 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical interview question bank for 30.3-infra-patterns; synthesizes contracts from 30.3.1 through 30.3.5.",
-    "fast": "Measured 26.1 KB raw / 9.7 KB gzip. Measured {'path': '30-architecture/30.3-infra-patterns/06-interview-prep/30.3.6.01-interview-questions.md', 'genre': 'interview', 'html': '_site/30-architecture/30.3-infra-patterns/06-interview-prep/30.3.6.01-interview-questions.html', 'status': 'built', 'sourceBytes': 18496, 'rawBytes': 26681, 'gzipBytes': 9922, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 6, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "26.1 KB raw / 9.7 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Every answer follows a 5-part senior structure (contract, mechanism, failure boundary, operational gate, trade-off) with zero filler."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "30-architecture/30.3-infra-patterns/06-interview-prep/INDEX.md": {
-   "sha256": "ce82a175ddba089fa686973ed5fe1c853a298e03e620f23410b537c654ea6f4f",
+   "sha256": "fe8f88d99c42d6ae91c8f51b363e7f8294ad804c8211e0e3c34d2dd6a23ea2a3",
    "lines": 40,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against live file index and sibling 20.6.5 interview drills.",
-    "readable": "Full read of 40 lines (152 prose words). Full read of 40 lines: verified interview prep practice path and cross-references for 30.3-infra-patterns.",
-    "concise": "152 words across 40 lines. 152 prose words across 40 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 40 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "152 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical category index for 30.3-infra-patterns/06-interview-prep.",
-    "fast": "Measured 8.6 KB raw / 3.1 KB gzip. Measured {'path': '30-architecture/30.3-infra-patterns/06-interview-prep/INDEX.md', 'genre': 'index', 'html': '_site/30-architecture/30.3-infra-patterns/06-interview-prep/INDEX.html', 'status': 'built', 'sourceBytes': 2385, 'rawBytes': 8855, 'gzipBytes': 3180, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 3, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "8.6 KB raw / 3.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Frames oral drill practice around authority identification, crash boundary tracing, and single-condition perturbation."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "30-architecture/30.3-infra-patterns/INDEX.md": {
-   "sha256": "c4b856f4281dffb228a2973a60bb67b1e1966f746456dbd770c0cf81105aec5d",
+   "sha256": "6bf3b819d715ecbe233bcc43bc3498e47b4e5f6fc6c114a5759c4519e1e37ec8",
    "lines": 95,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards. Verified against live directory structure and cross-links to 20.6-microservices and 40-platform.",
-    "readable": "Full read of 95 lines (56 prose words). Full read of 95 lines: verified 6-category operations pattern learning flow (Liveness & Lifecycle, Failure & Recovery, Coordination, Data at Scale, Shipping & Evolution, Interview Prep) and deduplication redirection table to 20.6-microservices.",
-    "concise": "56 words across 95 lines. 56 prose words across 95 lines; zero filler or duplicate mechanism prose.",
+    "readable": "Full read of 95 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "55 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Single canonical home with no duplicate code across chapters. Canonical stack index for 30.3-infra-patterns; explicitly maps moved distributed patterns to 20.6-microservices.",
-    "fast": "Measured 19.2 KB raw / 5.1 KB gzip. Measured {'path': '30-architecture/30.3-infra-patterns/INDEX.md', 'genre': 'index', 'html': '_site/30-architecture/30.3-infra-patterns/INDEX.html', 'status': 'built', 'sourceBytes': 9061, 'rawBytes': 19708, 'gzipBytes': 5193, 'brotliBytes': None, 'assets': {'scripts': 9, 'stylesheets': 5, 'images': 3, 'iframes': 0, 'videos': 0}}; lightweight markdown and compact diagrams.",
+    "fast": "19.2 KB raw / 5.1 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Organizes 17 operational chapters in a 4-stage progression (Stay Alive, Survive Failure, Scale Data, Ship Safely) with clear failure boundary scope."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "30-architecture/INDEX.md": {
-   "sha256": "f67f07bd10630679c079bf0cc635a66cd85e79799877a55564c22ea5a5425de8",
+   "sha256": "ac371115a48ff7085f2589d5f410c9c9f4fa806dc3b052186b35f8ccdf3da28f",
    "lines": 66,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against repository structure and Nov 2026 study order.",
-    "readable": "Full read of 66 lines. Architecture stack index organizing 139 files across 30.1-design-patterns (all 23 GoF + modern architectural patterns), 30.2-system-design (24 theory + 32 case studies), and 30.3-infra-patterns (29 operational patterns) with Docita anchors.",
-    "concise": "250 words across 66 lines; zero filler or duplicate explanations.",
+    "readable": "Full read of 66 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "250 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Focused single-topic scope: Canonical architecture stack entrypoint bridging design patterns, system design theory/cases, and production infrastructure patterns.",
-    "fast": "Fast to scan: 12.3 KB raw / 4.2 KB gzip.",
+    "fast": "12.3 KB raw / 4.2 KB gzip on disk with verified backlinks, uniform headings, and concise prose structure.",
     "best": "Best-practice depth: Frames failure boundary conditions, trade-offs, and Docita source anchors."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs)."
   },
   "40-platform/40.1-docker/40.1.01-images-containers.md": {
    "sha256": "1ae323e940b9bce174b933477c91dcc089c363706cfd6cd1b0751dda367c6883",

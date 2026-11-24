@@ -30,13 +30,13 @@ Source: [Leader Election & Consensus — Raft, Paxos, Practical Patterns](30.3.3
 
 **A:** A check followed by expiry extension can renew a successor's lease after a race. Compare token and extend in one store operation.
 
-**Q:** Does Redis SET NX PX implement Raft consensus?
+**Q:** Does Redis `SET NX PX` implement Raft consensus?
 
 **A:** No. It is a single-store lease primitive with the durability and failover behavior of that store. Consensus and multi-node lock algorithms have different contracts.
 
-**Q:** A replacement INSERT computed its expiry before waiting on a locked lease row. Why can reusing that expiry be unsafe?
+**Q:** A replacement `INSERT` computed its expiry before waiting on a locked lease row. Why can reusing that expiry be unsafe?
 
-**A:** The wait can consume the interval, so ON CONFLICT may return an already-expired grant. Recompute replacement expiry from the database clock after the conflict-row wait.
+**A:** The wait can consume the interval, so `ON CONFLICT` may return an already-expired grant. Recompute replacement expiry from the database clock after the conflict-row wait.
 
 **Q:** Does rejecting an old fencing epoch prove the caller still owns a live lease?
 

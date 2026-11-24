@@ -18,7 +18,7 @@ Measure resource and consistency requirements before choosing a lever. Replicas 
 ## File Index
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------: |
+| ----: | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------- | ------------------ | ----------: |
 | 01 | [Database Scaling](30.3.4.01-database-scaling.md) | Read replicas, vertical vs horizontal scaling, partitioning, connection pooling, measured bottlenecks and independent levers | Important | Specialized | 11 min |
 | 02 | [Data Pipelines](30.3.4.02-data-pipelines.md) | ETL vs ELT vs streaming, Bronze/Silver/Gold framing, batch vs stream trade-offs, pipeline reliability | Important | Specialized | 10 min |
 | 03 | [CDN Architecture](30.3.4.03-cdn-architecture.md) | Edge reuse, cache identity, authorization, freshness, origin load and invalidation (provider examples: [40.10-cdn](../../../40-platform/40.10-cdn/INDEX.md)) | Important | Specialized | 7 min |
@@ -34,7 +34,7 @@ Explain which bottleneck each added component removes and how consistency, autho
 
 ## Cross-References
 
-- [System Design Theory](../../30.2-system-design/01-theory/INDEX.md) — sharding & replication, caching patterns in depth
+- [System Design Theory](../../30.2-system-design/01-theory/INDEX.md) — sharding and replication, caching patterns in depth
 - [Database Stack](../../../20-backend/20.4-database/INDEX.md) — PostgreSQL-level mechanics
 - [Coordination](../03-coordination/INDEX.md) — who runs the pipeline
 
@@ -53,7 +53,7 @@ Candidate implementation locations in [Docita](https://github.com/CVamsi27/docit
 | Topic | Docita evidence |
 | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Backups | `shared/modules/database/database-backup.service.ts` (+ spec) |
-| Retention & archival | `apps/api/src/shared/modules/compliance/data-retention.scheduler.ts` (+ spec); DPDP compliance docs in `docs/compliance/*` |
+| Retention and archival | `apps/api/src/shared/modules/compliance/data-retention.scheduler.ts` (+ spec); DPDP compliance docs in `docs/compliance/*` |
 | Query hygiene at scale | `slow-query-logging.service.ts`, `database-index-optimization.service.ts`, connection pooling service |
 | Scaling posture | Deliberate single-region Postgres (ADR 0006) + read-base repositories (`prisma-read-base.ts`) |
 | Sharding and replicas | No sharding implementation is established here. Read-routing abstractions are not proof of an enabled production replica; verify datasource configuration, lag and read-after-write behavior. |

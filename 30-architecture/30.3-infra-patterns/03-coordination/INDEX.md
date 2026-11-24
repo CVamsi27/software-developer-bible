@@ -18,7 +18,7 @@ Running five application instances can cause a scheduled job to run five times o
 ## File Index
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------: |
+| ----: | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ------------- | ------------------ | ----------: |
 | 01 | [Leader Election & Consensus](30.3.3.01-leader-election-consensus.md) | Leases, fencing tokens, Raft/Paxos at a distance, split brain, cron and queue coordination | Important | Specialized | 10 min |
 
 ---

@@ -38,7 +38,7 @@ Source: [Health Checks & Graceful Shutdown — Liveness, Readiness, SIGTERM](30.
 
 **A:** No. It stops new connections and allows ordinary active work to complete under its lifecycle contract. Await drain before closing required dependencies; upgraded sockets need separate handling.
 
-**Q:** A preStop hook sleeps twenty seconds inside a thirty-second termination grace. How much application drain time remains?
+**Q:** A `preStop` hook sleeps twenty seconds inside a thirty-second termination grace. How much application drain time remains?
 
 **A:** The hook uses the same grace countdown, leaving roughly ten seconds before scheduling/cleanup margins. The sleep does not prove routing propagation completed.
 
@@ -56,7 +56,7 @@ Source: [Health Checks & Graceful Shutdown — Liveness, Readiness, SIGTERM](30.
 
 **Q:** What happens if you don't have graceful shutdown?
 
-**A:** Accepted work may be interrupted and replies lost. Durable transactions can survive while callers remain uncertain; recovery/deduplication matters rather than assuming every interruption is a 500 or data corruption.
+**A:** Accepted work may be interrupted and replies lost. Durable transactions can survive while callers remain uncertain; recovery/deduplication matters rather than assuming every interruption is an HTTP `500` or data corruption.
 
 **Q:** Does a Kubernetes `preStop` hook add time before the termination grace period starts?
 

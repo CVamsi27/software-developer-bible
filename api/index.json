@@ -4,7 +4,7 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "4bbcf04f8d97099035e38f2889b44d455d1cbbd28210e2dfa72df50d3683af1b",
+ "corpus_digest": "2b82b7d525ebc7295d9cac2139bcd95c8f1c5b5ab2fc2614c8e5fa0279a0a5ae",
  "totals": {
   "chapters": 680,
   "sections": 46,
@@ -4740,7 +4740,7 @@
   },
   {
    "p": "30-architecture/30.3-infra-patterns/04-data-at-scale/REVISION.html",
-   "t": "Data & Scale — Revision",
+   "t": "Data at Scale — Revision",
    "s": "Architecture",
    "c": "Reference",
    "g": [

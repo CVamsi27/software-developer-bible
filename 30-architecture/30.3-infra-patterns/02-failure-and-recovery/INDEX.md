@@ -18,7 +18,7 @@ Networks partition, dependencies time out, deploys hiccup. Naive code turns each
 ## File Index
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------: |
+| ----: | ------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------ | ----------: |
 | 01 | [Resilience Patterns — Overview](30.3.2.01-resilience-patterns.md) | Timeout, bulkhead, circuit-breaker landscape; deep-dive implementations live in [20.6-microservices](../../../20-backend/20.6-microservices/INDEX.md) | Important | Specialized | 6 min |
 | 02 | [Retry Patterns](30.3.2.02-retry-patterns.md) | Exponential backoff, jitter, retry budgets, retry storms, when NOT to retry | Essential | Important | 8 min |
 | 03 | [Idempotency Keys](30.3.2.03-idempotency-keys.md) | Stable operation identity, atomic local effects, retry replay, remote deduplication limits | Essential | Important | 7 min |
@@ -56,9 +56,9 @@ Trace one uncertain mutation and one full restore; explain the retry identity, d
 Candidate implementation locations in [Docita](https://github.com/CVamsi27/docita), the hospital-management SaaS. Read the checked-out revision and its tests before presenting a path as evidence of concurrency, cancellation, recovery or provider guarantees.
 
 | Topic | Docita evidence |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Idempotency keys | Full module: `shared/modules/idempotency/*` (interceptor + service + repository + `@RequiresIdempotency` decorator); CI gate `check-job-idempotency.mjs` |
 | Retries | `shared/common/interceptors/prisma-retry.interceptor.ts` |
 | Circuit breaker | `shared/common/utils/circuit-breaker.registry.ts` + `circuit-breaker.ts` |
-| DLQ & recovery | `apps/api/src/shared/modules/queue/dlq-replay.scheduler.ts` + `dlq.controller.ts` behind the Postgres queue |
+| Dead-letter queue (DLQ) and recovery | `apps/api/src/shared/modules/queue/dlq-replay.scheduler.ts` + `dlq.controller.ts` behind the Postgres queue |
 | Incident playbooks | `docs/operations/playbooks/*`: razorpay-outage, db-connection-exhaustion, openai-rate-limit, pdf-queue-backlog, cloudflare-upstream-timeout |

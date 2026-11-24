@@ -22,7 +22,7 @@ Source: [Zero-Downtime Deployments — Blue-Green, Canary, Rolling, Feature Flag
 
 **A:** A defined observation window and checks for errors, latency, saturation and business correctness, with a tested stop/rollback path and compatible data changes.
 
-**Q:** Does maxUnavailable = 0 make every request succeed during a rollout?
+**Q:** Does `maxUnavailable: 0` make every request succeed during a rollout?
 
 **A:** No. It constrains available rollout capacity under readiness rules. Spare scheduling capacity, routing convergence, business correctness and bounded in-flight drain remain separate requirements.
 

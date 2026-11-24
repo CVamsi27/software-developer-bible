@@ -18115,7 +18115,7 @@
     },
     {
       "path": "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.md",
-      "sha256": "fab8301f07fcd624373bc0b89812e386f19df294219a691c1fc269e86266eb08",
+      "sha256": "6259ab27f5569b7ad1362bca40b4e0af6aabaabc9f297f097187a6b711cdc58a",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -18137,18 +18137,18 @@
       },
       "review": {
         "path": "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/30.3.1.01-health-checks-graceful-shutdown.md",
-        "sha256": "fab8301f07fcd624373bc0b89812e386f19df294219a691c1fc269e86266eb08",
+        "sha256": "6259ab27f5569b7ad1362bca40b4e0af6aabaabc9f297f097187a6b711cdc58a",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full chapter read. Probe controller semantics, optional dependency degradation, readiness versus admission, preStop/shared grace and recovery after abrupt death. Exact drain helper passed real local HTTP tests on Node23.7.0: dependency cleanup waited for active response completion and hung response rejected at deadline. WebSocket/worker/platform termination integration not exercised; primary Node close APIs checked.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": []
       }
     },
     {
       "path": "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/INDEX.md",
-      "sha256": "796dda5028b96c8d230e5e2fa32881015169bc9a3856e5063379fade9ad63917",
+      "sha256": "353a541c3073b622d8dcf5e9bcd40df2a801f4b2b77f22f3641657264b16164d",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -18167,18 +18167,18 @@
       },
       "review": {
         "path": "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/INDEX.md",
-        "sha256": "796dda5028b96c8d230e5e2fa32881015169bc9a3856e5063379fade9ad63917",
+        "sha256": "353a541c3073b622d8dcf5e9bcd40df2a801f4b2b77f22f3641657264b16164d",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-14",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content read (2026-11-14): Read end to end: startup, readiness, liveness, then drain and shutdown ordering. One line per chapter; the intro does not preview the shutdown chapter twice.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": []
       }
     },
     {
       "path": "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/REVISION.md",
-      "sha256": "1f601106aaa4972dd314bf964a7fbef109c10e5802fb86e6538521446b015b6c",
+      "sha256": "a044f5403402d8b5f0ceef9c3de8e2a0d8a3a073681595ee49e94a9342e12e31",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -18195,18 +18195,18 @@
       },
       "review": {
         "path": "30-architecture/30.3-infra-patterns/01-liveness-lifecycle/REVISION.md",
-        "sha256": "1f601106aaa4972dd314bf964a7fbef109c10e5802fb86e6538521446b015b6c",
+        "sha256": "a044f5403402d8b5f0ceef9c3de8e2a0d8a3a073681595ee49e94a9342e12e31",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-14",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full revision read. Verified restart/readiness separation, deadline budget, actual HTTP drain ordering, abrupt-death recovery and preStop consuming grace. Preserved existing prompts including intentionally similar recall questions. Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": []
       }
     },
     {
       "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.01-resilience-patterns.md",
-      "sha256": "8901802bfe9d5b57ca519725b18e9f77669ae55904b6d90c2f48fdff85bdad75",
+      "sha256": "31b627166e88d26a5027ae9345656ae1a7d227ee7d0ac2df4817e8ee689c9ff8",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -18230,19 +18230,19 @@
       },
       "review": {
         "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.01-resilience-patterns.md",
-        "sha256": "8901802bfe9d5b57ca519725b18e9f77669ae55904b6d90c2f48fdff85bdad75",
+        "sha256": "31b627166e88d26a5027ae9345656ae1a7d227ee7d0ac2df4817e8ee689c9ff8",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Checked active/queued admission bounds, body-consumption timeout scope, cooperative cleanup, breaker generation/half-open concurrency, attempt versus operation accounting, fallback authorization/freshness, retry amplification and distinct probe controllers. No runnable breaker implementation claims.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": [],
         "fullContentRead": true,
-        "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewer": "root",
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.02-retry-patterns.md",
-      "sha256": "e2eac5793dd19ac783cc2286e894f7edaf953262aec8010cd5150311e1a13188",
+      "sha256": "4d28e1c3aa51e5fb84d3c5f169992d164750eadc714580cdfa1ee8a0df4ccf79",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -18266,18 +18266,18 @@
       },
       "review": {
         "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.02-retry-patterns.md",
-        "sha256": "e2eac5793dd19ac783cc2286e894f7edaf953262aec8010cd5150311e1a13188",
+        "sha256": "4d28e1c3aa51e5fb84d3c5f169992d164750eadc714580cdfa1ee8a0df4ccf79",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full chapter read. Retry identity, classification, monotonic deadline, Retry-After, jitter versus budgets, body lifetime and amplification. Extracted exact helper ran on Node23.7.0 against a local HTTP server: transient503 recovery,400 no retry,429 wait beyond deadline declined, stalled body aborted, invalid policy rejected. Remote effect cancellation and fleet-wide capacity not established.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": []
       }
     },
     {
       "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.03-idempotency-keys.md",
-      "sha256": "8f5b9194972cbcac3282ca5a956142acdd163c62c266f7656fda2d5e9d482dcf",
+      "sha256": "861385c6c9d7af1a6bc12d3c9cbfedfcf31bd7db5d4776d5c0716da18839955b",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -18300,18 +18300,18 @@
       },
       "review": {
         "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.03-idempotency-keys.md",
-        "sha256": "8f5b9194972cbcac3282ca5a956142acdd163c62c266f7656fda2d5e9d482dcf",
+        "sha256": "861385c6c9d7af1a6bc12d3c9cbfedfcf31bd7db5d4776d5c0716da18839955b",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full chapter read; changed misleading GET opening into a POST retry trace and refreshed IETF status against active draft08 published22Oct2026. Reviewed claim/effect/response single transaction, READ COMMITTED loser snapshot, fingerprint/scope, cleanup retention and external effect ambiguity. SQL reasoning checked against primary PostgreSQL isolation docs; no database race executed here.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": []
       }
     },
     {
       "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.04-feature-flags-kill-switches.md",
-      "sha256": "5ee5356e13b560fbcc02f24d03b4ead77cc8ba2ee75786408529009e3e3da416",
+      "sha256": "cb0add340520c7de45d8fe9a4ae0aec5e73c1465a797b1e4e5c8d50cb03eca56",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -18335,19 +18335,19 @@
       },
       "review": {
         "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.04-feature-flags-kill-switches.md",
-        "sha256": "5ee5356e13b560fbcc02f24d03b4ead77cc8ba2ee75786408529009e3e3da416",
+        "sha256": "cb0add340520c7de45d8fe9a4ae0aec5e73c1465a797b1e4e5c8d50cb03eca56",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Checked versioned coherent snapshots and successful-contact freshness; deterministic SHA-256 tuple bucket monotonic percentage cohorts; anonymous assignment scope; trusted identities versus entitlements; kill-switch polarity and fleet propagation; in-flight provider effect recovery; release versus experiment evidence. Static Node primitive inspection.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": [],
         "fullContentRead": true,
-        "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewer": "root",
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.05-backup-strategy-restore-drills.md",
-      "sha256": "594495a7fbb21f93d0990b303f1838e3444f4e5092f86b4754aa4dc0dcd5d165",
+      "sha256": "8587c29a6311a7ff12838daaa9d3c5d91549ca0010c8bb0835b3503253287427",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -18372,19 +18372,19 @@
       },
       "review": {
         "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.05-backup-strategy-restore-drills.md",
-        "sha256": "594495a7fbb21f93d0990b303f1838e3444f4e5092f86b4754aa4dc0dcd5d165",
+        "sha256": "8587c29a6311a7ff12838daaa9d3c5d91549ca0010c8bb0835b3503253287427",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Full-content read (2026-11-14): Trace runs a drill: select artifact, restore, verify, cut over; each step has a failure. Recomputed the 39.7 MB/s restore rate against the stated dataset and window; it holds.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "root",
-        "reviewDate": "2026-11-14"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.06-idempotency-retry-deep-dive.md",
-      "sha256": "095742fb8c0a9e1ba90efec0fecaf50aa59995ba058f04c33ca16ab3a47f1b30",
+      "sha256": "7c88c4ebfc2d5688ade71b2e57ce529345611cf1011b21b10a6823908ce76906",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -18409,19 +18409,19 @@
       },
       "review": {
         "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/30.3.2.06-idempotency-retry-deep-dive.md",
-        "sha256": "095742fb8c0a9e1ba90efec0fecaf50aa59995ba058f04c33ca16ab3a47f1b30",
+        "sha256": "7c88c4ebfc2d5688ade71b2e57ce529345611cf1011b21b10a6823908ce76906",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Checked identity K/E/N at separate commit authorities, PostgreSQL READ COMMITTED next-statement replay, outbox ack-loss duplicate delivery, SKIP LOCKED ordering limit, inbox/effect atomicity, unknown provider effects, DLQ replay versus receiver-retention horizon, permanent business uniqueness and corrective transition versus uncertain-original identity.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": [],
         "fullContentRead": true,
-        "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewer": "root",
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/INDEX.md",
-      "sha256": "e881e6a165c670ace6afb85aba4aee86daf6a48c363827f93bf633ad50d1ecea",
+      "sha256": "54bc51a0f2c917fdb5c541f054ea7d1568441b5723665ba61d2e8fade6c187b9",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -18440,18 +18440,18 @@
       },
       "review": {
         "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/INDEX.md",
-        "sha256": "e881e6a165c670ace6afb85aba4aee86daf6a48c363827f93bf633ad50d1ecea",
+        "sha256": "54bc51a0f2c917fdb5c541f054ea7d1568441b5723665ba61d2e8fade6c187b9",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full index read. Corrected universal kill-switch-faster-than-rollback claim to working control/propagation condition. Checked learning sequence, canonical mechanism ownership, revision checkpoint and source-only Docita evidence boundary; source pointers do not establish deployed operations.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": []
       }
     },
     {
       "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/REVISION.md",
-      "sha256": "e9708f28bc3091a6cd33e03cdb05c5718ac927295687d44da3cf64f1b902e61e",
+      "sha256": "ac64f75bb89a30e590d5eb3959769c0ce1eb63a65f51fab1acecd38ee1701aeb",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -18473,18 +18473,18 @@
       },
       "review": {
         "path": "30-architecture/30.3-infra-patterns/02-failure-and-recovery/REVISION.md",
-        "sha256": "e9708f28bc3091a6cd33e03cdb05c5718ac927295687d44da3cf64f1b902e61e",
+        "sha256": "ac64f75bb89a30e590d5eb3959769c0ce1eb63a65f51fab1acecd38ee1701aeb",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-14",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full revision read. Updated current IETF work-in-progress status and checked source-linked questions on retry deadline/body consumption, effect identity, retention, flag defaults and restore evidence. No legal retention period or provider guarantee inferred. Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": []
       }
     },
     {
       "path": "30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.md",
-      "sha256": "ea17db8e28a89fdca23ddc5b0802143b15be0278a04c327aeb03826788300f03",
+      "sha256": "aae9c1b28532b004ceb0ada46fb96a03adf32fc91d2b8e0be5b533598ea36ca0",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -18507,19 +18507,19 @@
       },
       "review": {
         "path": "30-architecture/30.3-infra-patterns/03-coordination/30.3.3.01-leader-election-consensus.md",
-        "sha256": "ea17db8e28a89fdca23ddc5b0802143b15be0278a04c327aeb03826788300f03",
+        "sha256": "aae9c1b28532b004ceb0ada46fb96a03adf32fc91d2b8e0be5b533598ea36ca0",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Checked election/lease/idempotency boundaries; stale holder before and after successor writes; durable fencing sequence across restore; PostgreSQL conflict-row wait and database clock; Redis atomic token renewal and DELEX 8.4+; etcd LeaderKey.rev transactional scope. Primary Redis, etcd and PostgreSQL docs verified. No execution of SQL fixture.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": [],
         "fullContentRead": true,
-        "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewer": "root",
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.3-infra-patterns/03-coordination/INDEX.md",
-      "sha256": "8f9fa6d1f3d48fc612102200b4a766d66e07e5f9fb3c080e3fa3857dfa4a541f",
+      "sha256": "9ce4d959847d6612825f4167183c3a7a202f255a996720498a0cea9796dc14fe",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -18538,19 +18538,19 @@
       },
       "review": {
         "path": "30-architecture/30.3-infra-patterns/03-coordination/INDEX.md",
-        "sha256": "8f9fa6d1f3d48fc612102200b4a766d66e07e5f9fb3c080e3fa3857dfa4a541f",
+        "sha256": "9ce4d959847d6612825f4167183c3a7a202f255a996720498a0cea9796dc14fe",
         "genre": "index",
         "status": "reviewed",
-        "notes": "Full-content read (2026-11-14): Read end to end: leader election, leases, fencing, distributed locks, idempotency. One line per chapter, with no repeated split-brain explanation in the intro.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "root",
-        "reviewDate": "2026-11-14"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.3-infra-patterns/03-coordination/REVISION.md",
-      "sha256": "bd2eedc32d49c8715aab67721107fd72c54119277955f387fa2feae4acef078b",
+      "sha256": "7808ae50f3a76a5b6bb1c7380d4de582cb502eff1933f444af56071f16309284",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -18567,19 +18567,19 @@
       },
       "review": {
         "path": "30-architecture/30.3-infra-patterns/03-coordination/REVISION.md",
-        "sha256": "bd2eedc32d49c8715aab67721107fd72c54119277955f387fa2feae4acef078b",
+        "sha256": "7808ae50f3a76a5b6bb1c7380d4de582cb502eff1933f444af56071f16309284",
         "genre": "revision",
         "status": "reviewed",
-        "notes": "Checked all eight retrieval pairs against lease chapter: durable epochs, transient owners, repeated-epoch writes, atomic renewal, Redis limits, lock wait expiry, immediate ownership boundary and etcd restore revision bump.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": [],
         "fullContentRead": true,
-        "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewer": "root",
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md",
-      "sha256": "1fda21febca83d9d008142afdb41595f29b553fda232f9b386a9bcad4739f9c4",
+      "sha256": "2fda3cad8cef1d1b0207f6accbe7c653c9667da45b9032c961d922a26f1b553c",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -18604,19 +18604,19 @@
       },
       "review": {
         "path": "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.01-database-scaling.md",
-        "sha256": "1fda21febca83d9d008142afdb41595f29b553fda232f9b386a9bcad4739f9c4",
+        "sha256": "2fda3cad8cef1d1b0207f6accbe7c653c9667da45b9032c961d922a26f1b553c",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Checked measured pool/query/lock/I/O bottlenecks, EXPLAIN ANALYZE effects, statistics preload, index-only visibility and rewrite semantics, per-user/database PgBouncer fleet budget and protocol prepared-statement compatibility, Prisma v7 driver pool scope, async/sync replication acknowledgment, primary fencing, local partition versus sharding, partition-key uniqueness, future ranges, vacuum. Primary PgBouncer and Prisma docs verified. SQL fixtures inspected statically.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": [],
         "fullContentRead": true,
-        "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewer": "root",
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.02-data-pipelines.md",
-      "sha256": "187bb681cfb5e2c266f1e5f8561d69953f5b18bc70b5792b9b472e637d11211f",
+      "sha256": "c30788a1e5066afd0f484f43597a6713e3793c65a5c362b5e296a11b763aa19b",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -18640,19 +18640,19 @@
       },
       "review": {
         "path": "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.02-data-pipelines.md",
-        "sha256": "187bb681cfb5e2c266f1e5f8561d69953f5b18bc70b5792b9b472e637d11211f",
+        "sha256": "c30788a1e5066afd0f484f43597a6713e3793c65a5c362b5e296a11b763aa19b",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Checked after-image version upsert versus deltas, conflicting-version quarantine and tombstone replay horizon; output/checkpoint atomicity and generation fence; Kafka transaction excludes PostgreSQL; snapshot CDC boundary and WAL retention, timezone extraction, late-event corrections/watermarks, bounded state/backfill, transformation identity and quality denominator. Kafka 4.3 primary core-concepts page verified.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": [],
         "fullContentRead": true,
-        "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewer": "root",
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md",
-      "sha256": "77003d8765dc0ffb40a30e8ce4093952fb3286c26453151c61dec2494422e305",
+      "sha256": "2b11c917d501bff4f9fc67ffd9fcad105053593af0510f16f7845dbe91043c29",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -18675,19 +18675,19 @@
       },
       "review": {
         "path": "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.03-cdn-architecture.md",
-        "sha256": "77003d8765dc0ffb40a30e8ce4093952fb3286c26453151c61dec2494422e305",
+        "sha256": "2b11c917d501bff4f9fc67ffd9fcad105053593af0510f16f7845dbe91043c29",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Checked key identity versus authorization on hits, revocation/failure boundary, edge/shield origin load, no-cache/no-store and stale extensions, independent purge/browser copies, old asset retention and compatible rollback, trusted forwarded context/direct-origin bypass, residency versus routing, warm/cold load and hit-ratio evidence.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": [],
         "fullContentRead": true,
-        "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewer": "root",
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.04-multi-tenant-saas-architecture.md",
-      "sha256": "93d77bc61b21c1d6a31007b9a299c45fd5d766ca8edcad01746359a927695300",
+      "sha256": "42bb2e85ab73583ce732baa6c522420807adf9bd395923f7e70822b9196da7bd",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -18711,19 +18711,19 @@
       },
       "review": {
         "path": "30-architecture/30.3-infra-patterns/04-data-at-scale/30.3.4.04-multi-tenant-saas-architecture.md",
-        "sha256": "93d77bc61b21c1d6a31007b9a299c45fd5d766ca8edcad01746359a927695300",
+        "sha256": "42bb2e85ab73583ce732baa6c522420807adf9bd395923f7e70822b9196da7bd",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Checked resource-specific pool/bridge/silo limits, verified membership before AsyncLocalStorage context, callback wraps actual handler, transaction-local setting and queries on same connection, non-owner non-BYPASSRLS role and arbitrary-SQL limits, tenant-scoped relations, worker authority/revocation, noisy-neighbor pools and tenant restore/offboarding. Primary Prisma docs confirm v7 driver adapter model and v8 release-candidate middleware distinction on review date.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": [],
         "fullContentRead": true,
-        "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewer": "root",
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.3-infra-patterns/04-data-at-scale/INDEX.md",
-      "sha256": "ba948b561899a3efb2d36b19a889ffcfa24a6d127d78668c69ad04059f894305",
+      "sha256": "9bcff66d97431f768359a3f8dfaa47152edc6d2c6ae2f833cc2f7c9d7b9f965d",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -18742,19 +18742,19 @@
       },
       "review": {
         "path": "30-architecture/30.3-infra-patterns/04-data-at-scale/INDEX.md",
-        "sha256": "ba948b561899a3efb2d36b19a889ffcfa24a6d127d78668c69ad04059f894305",
+        "sha256": "9bcff66d97431f768359a3f8dfaa47152edc6d2c6ae2f833cc2f7c9d7b9f965d",
         "genre": "index",
         "status": "reviewed",
-        "notes": "Checked learning flow from measured data constraints through pipelines/CDN and tenant lifecycle, revision after chapters, cross-links to canonical mechanism homes; candidate Docita anchors expressly distinguish source names from enabled deployed replicas/capacity.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": [],
         "fullContentRead": true,
-        "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewer": "root",
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.3-infra-patterns/04-data-at-scale/REVISION.md",
-      "sha256": "798b6b8641f7f661f9db5d49fc3143dbf1529383ad7651100846e1fa0c7c7f86",
+      "sha256": "30b9271d3bf3219d37b77f7ed3583b68b8ce7b464427df748563866c1595da4d",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -18774,19 +18774,19 @@
       },
       "review": {
         "path": "30-architecture/30.3-infra-patterns/04-data-at-scale/REVISION.md",
-        "sha256": "798b6b8641f7f661f9db5d49fc3143dbf1529383ad7651100846e1fa0c7c7f86",
+        "sha256": "30b9271d3bf3219d37b77f7ed3583b68b8ce7b464427df748563866c1595da4d",
         "genre": "revision",
         "status": "reviewed",
-        "notes": "Full-content read (2026-11-14): Question groups follow the sub-stack: partitioning, retention, compaction, archival. Short prompts; answers stop at the mechanism rather than adding a recap.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "root",
-        "reviewDate": "2026-11-14"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.md",
-      "sha256": "b23813600d5e1bd09a4750752cff852616654e5e1b35d22d6430eb6301c7ef3a",
+      "sha256": "b85dc1eeae61ffc16de55497d847010edd456e13ad278e5d1ff204ffa3e65c95",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -18809,19 +18809,19 @@
       },
       "review": {
         "path": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.01-zero-downtime-deployments.md",
-        "sha256": "b23813600d5e1bd09a4750752cff852616654e5e1b35d22d6430eb6301c7ef3a",
+        "sha256": "b85dc1eeae61ffc16de55497d847010edd456e13ad278e5d1ff204ffa3e65c95",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Checked capacity versus success distinction, mixed-version clients/jobs, Kubernetes maxSurge/maxUnavailable and terminating Pods, progress deadline requires operator recovery, preStop shared deadline, canary cohort evidence, all-writer backfill compatibility, concurrent-index limitations and rollback after external effects. Kubernetes primary docs verified. Fixture inspected statically.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": [],
         "fullContentRead": true,
-        "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewer": "root",
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.02-technical-debt.md",
-      "sha256": "ee6c2e5eefc6c384a43c8023e93d4ab1227056d0c1ff4ae69fb46e4e98db97ea",
+      "sha256": "f60c326819296fc4902b9ae48bd48130985f9eafaba9732e15a8a950993afac4",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -18844,19 +18844,19 @@
       },
       "review": {
         "path": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.02-technical-debt.md",
-        "sha256": "ee6c2e5eefc6c384a43c8023e93d4ab1227056d0c1ff4ae69fb46e4e98db97ea",
+        "sha256": "f60c326819296fc4902b9ae48bd48130985f9eafaba9732e15a8a950993afac4",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Checked deliberate/inadvertent quadrant semantics, principal/interest estimates and uncertainty, authoritative booking constraint, DORA context versus causality, single write ownership during strangler migration, provider identity on retries, isolated shadowing and observable repayment conditions. DORA primary docs confirm five current metrics.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": [],
         "fullContentRead": true,
-        "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewer": "root",
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md",
-      "sha256": "96dbf076b094ac138f081dd6aae37d4acf53642f1eb537e551e92c1b8b4c5756",
+      "sha256": "3674cccdadd34750ee4436aba5df03c3ec6df00651f8c36993732023b0bf2e83",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -18880,19 +18880,19 @@
       },
       "review": {
         "path": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.03-cost-engineering-finops.md",
-        "sha256": "96dbf076b094ac138f081dd6aae37d4acf53642f1eb537e551e92c1b8b4c5756",
+        "sha256": "3674cccdadd34750ee4436aba5df03c3ec6df00651f8c36993732023b0bf2e83",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Checked unit-cost arithmetic (spend down 16.7 percent, cost/order up 66.7 percent), allocation/reporting boundary, HPA request denominator, recovery capacity, storage restore class distinctions, interruption warning limits, effect/checkpoint atomicity, pricing topology conditions, estimate versus invoice and policy enforcement. Primary EC2 and S3 docs verified.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": [],
         "fullContentRead": true,
-        "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewer": "root",
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.04-data-retention-archival.md",
-      "sha256": "66d670cd79befb787df678b9437d5feb4a85523f44bd5fd454047a80ebfc980f",
+      "sha256": "cc1fdd470ae8961e377cdc83b4f1c5049d86872d0205fc406105101a2237542a",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -18917,19 +18917,19 @@
       },
       "review": {
         "path": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/30.3.5.04-data-retention-archival.md",
-        "sha256": "66d670cd79befb787df678b9437d5feb4a85523f44bd5fd454047a80ebfc980f",
+        "sha256": "cc1fdd470ae8961e377cdc83b4f1c5049d86872d0205fc406105101a2237542a",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Checked per-class clocks, S3 current/noncurrent version expiration, native holds and deletion serialization, asynchronous cleanup versus request authorization, pseudonymization versus erasure, backup beyond-use/restore ledger and cryptographic-erasure key copies. Primary ICO right-to-erasure guidance (including review notice and response extension), HHS medical-record retention and S3 storage/version docs verified. Legal scope remains explicitly jurisdiction-dependent.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": [],
         "fullContentRead": true,
-        "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewer": "root",
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/INDEX.md",
-      "sha256": "c0e2d5e3f1e9334f2b5ca8b4d3babe3f041615149156c7f07d8ebd692013eed1",
+      "sha256": "4fc97c7105f01c693a2458b19070b58273ed7da6164a67277ccfea48b26fe90f",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -18948,19 +18948,19 @@
       },
       "review": {
         "path": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/INDEX.md",
-        "sha256": "c0e2d5e3f1e9334f2b5ca8b4d3babe3f041615149156c7f07d8ebd692013eed1",
+        "sha256": "4fc97c7105f01c693a2458b19070b58273ed7da6164a67277ccfea48b26fe90f",
         "genre": "index",
         "status": "reviewed",
-        "notes": "Checked four-chapter learning flow through release compatibility, evidence-based debt, useful-output cost and retention/restore boundaries; revision follows teaching chapters; Docita anchors are expressly candidate inspection locations rather than deployed guarantees.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": [],
         "fullContentRead": true,
-        "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewer": "root",
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/REVISION.md",
-      "sha256": "74b39b017e7f6aa4d23b10aafc24a495ed45f100dd1f85ae95993a244364b059",
+      "sha256": "b38253d5f81832eb9fb15623262ce4b7a33ed2cf1b5c5b0e1eb4a9caec686106",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -18980,19 +18980,19 @@
       },
       "review": {
         "path": "30-architecture/30.3-infra-patterns/05-shipping-and-evolution/REVISION.md",
-        "sha256": "74b39b017e7f6aa4d23b10aafc24a495ed45f100dd1f85ae95993a244364b059",
+        "sha256": "b38253d5f81832eb9fb15623262ce4b7a33ed2cf1b5c5b0e1eb4a9caec686106",
         "genre": "revision",
         "status": "reviewed",
-        "notes": "Checked all source-linked groups and answers for rollout/canary, concurrent backfill, debt-rule ownership, economic denominator, interruption recovery, estimate scope, holds/version expiry, response versus physical-erasure deadline and key-copy limitations. Exact bytes refreshed 2026-11-14 after the manual content scan and corrections.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": [],
         "fullContentRead": true,
-        "reviewer": "architecture_coverage",
-        "reviewDate": "2026-11-14"
+        "reviewer": "root",
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.3-infra-patterns/06-interview-prep/30.3.6.01-interview-questions.md",
-      "sha256": "00ce2748fc220f834d9b2f34248f36b07ad1d7281cd99deac9a56711e602be4a",
+      "sha256": "c12b2983deb1c140cfe5dece720635719b0e533989ef587c00b785d368565a10",
       "genre": "interview-bank",
       "status": "reviewed",
       "structure": {
@@ -19015,19 +19015,19 @@
       },
       "review": {
         "path": "30-architecture/30.3-infra-patterns/06-interview-prep/30.3.6.01-interview-questions.md",
-        "sha256": "00ce2748fc220f834d9b2f34248f36b07ad1d7281cd99deac9a56711e602be4a",
+        "sha256": "c12b2983deb1c140cfe5dece720635719b0e533989ef587c00b785d368565a10",
         "genre": "interview-bank",
         "status": "reviewed",
-        "notes": "Full-content read (2026-11-14): Read end to end; Q1 to Q25 run beginner, intermediate, advanced, scenario, degradation. Each answer is one paragraph plus its failure mode; the summary compresses rather than repeats.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "root",
-        "reviewDate": "2026-11-14"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.3-infra-patterns/06-interview-prep/INDEX.md",
-      "sha256": "ce82a175ddba089fa686973ed5fe1c853a298e03e620f23410b537c654ea6f4f",
+      "sha256": "fe8f88d99c42d6ae91c8f51b363e7f8294ad804c8211e0e3c34d2dd6a23ea2a3",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -19045,19 +19045,19 @@
       },
       "review": {
         "path": "30-architecture/30.3-infra-patterns/06-interview-prep/INDEX.md",
-        "sha256": "ce82a175ddba089fa686973ed5fe1c853a298e03e620f23410b537c654ea6f4f",
+        "sha256": "fe8f88d99c42d6ae91c8f51b363e7f8294ad804c8211e0e3c34d2dd6a23ea2a3",
         "genre": "index",
         "status": "reviewed",
-        "notes": "Checked source-linked interview flow after teaching/revision; asks contract, uncertain boundary and changed condition; practice scenarios explicitly avoid unsupported personal incident claims.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": [],
         "fullContentRead": true,
-        "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewer": "root",
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.3-infra-patterns/INDEX.md",
-      "sha256": "c4b856f4281dffb228a2973a60bb67b1e1966f746456dbd770c0cf81105aec5d",
+      "sha256": "6bf3b819d715ecbe233bcc43bc3498e47b4e5f6fc6c114a5759c4519e1e37ec8",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -19076,19 +19076,19 @@
       },
       "review": {
         "path": "30-architecture/30.3-infra-patterns/INDEX.md",
-        "sha256": "c4b856f4281dffb228a2973a60bb67b1e1966f746456dbd770c0cf81105aec5d",
+        "sha256": "6bf3b819d715ecbe233bcc43bc3498e47b4e5f6fc6c114a5759c4519e1e37ec8",
         "genre": "index",
         "status": "reviewed",
-        "notes": "Checked category progression and per-category retrieval before global interview drill; canonical references separate platform implementation, operations contract and system-design mechanisms. Content-reviewed navigation, not independent verification of generated corpus counts.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": [],
         "fullContentRead": true,
-        "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewer": "root",
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/INDEX.md",
-      "sha256": "f67f07bd10630679c079bf0cc635a66cd85e79799877a55564c22ea5a5425de8",
+      "sha256": "ac371115a48ff7085f2589d5f410c9c9f4fa806dc3b052186b35f8ccdf3da28f",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -19105,14 +19105,14 @@
       },
       "review": {
         "path": "30-architecture/INDEX.md",
-        "sha256": "f67f07bd10630679c079bf0cc635a66cd85e79799877a55564c22ea5a5425de8",
+        "sha256": "ac371115a48ff7085f2589d5f410c9c9f4fa806dc3b052186b35f8ccdf3da28f",
         "genre": "index",
         "status": "reviewed",
-        "notes": "Phase 0 restamp (2026-11-23): read_time.py updated Architecture stack study-time total after 30.2.1.01 rewrite.",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs).",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "root",
-        "reviewDate": "2026-11-23"
+        "reviewDate": "2026-11-24"
       }
     },
     {

@@ -36,7 +36,7 @@ Source: [Retry Patterns](30.3.2.02-retry-patterns.md)
 
 **Q:** How do you implement retry with exponential backoff?
 
-**A:** Classify safe transient outcomes, share an overall deadline, and bound attempts plus additional-attempt tokens. A full-jitter example chooses from zero to the capped exponentially growing interval. Honor Retry-After when it fits; stop rather than shortening a required server wait. Caps and numbers come from the actual endpoint/workload contract.
+**A:** Classify safe transient outcomes, share an overall deadline, and bound attempts plus additional-attempt tokens. A full-jitter example chooses from zero to the capped exponentially growing interval. Honor `Retry-After` when it fits; stop rather than shortening a required server wait. Caps and numbers come from the actual endpoint/workload contract.
 
 **Q:** When should you NOT retry?
 
@@ -44,7 +44,7 @@ Source: [Retry Patterns](30.3.2.02-retry-patterns.md)
 
 **Q:** Can a response-header timeout bound body consumption too?
 
-**A:** Only if the timer/signal remains active through consuming the body. Clearing it after fetch returns headers leaves a stalled body outside that bound.
+**A:** Only if the timer/signal remains active through consuming the body. Clearing it after `fetch` returns headers leaves a stalled body outside that bound.
 
 ## Idempotency Keys
 
@@ -62,9 +62,9 @@ Source: [Idempotency Keys](30.3.2.03-idempotency-keys.md)
 
 **A:** Yes, if the caller repeats the key after the service has forgotten it and the underlying operation lacks another uniqueness constraint. Define the supported retry horizon, retain records through it, and use durable business identifiers where duplicate effects must be prevented beyond that window.
 
-**Q:** Why can a loser read the committed replay result after a conflicting insert at READ COMMITTED?
+**Q:** Why can a loser read the committed replay result after a conflicting insert at `READ COMMITTED`?
 
-**A:** The conflict waits for the winner. Its subsequent SELECT is a new statement with a fresh snapshot; the committed effect/result are visible. Other isolation levels and serialization/deadlock failures need their own handling.
+**A:** The conflict waits for the winner. Its subsequent `SELECT` is a new statement with a fresh snapshot; the committed effect/result are visible. Other isolation levels and serialization/deadlock failures need their own handling.
 
 ## Feature Flags & Kill Switches
 
@@ -104,7 +104,7 @@ Source: [Backup Strategy & Restore Drills](30.3.2.05-backup-strategy-restore-dri
 
 **Q:** Why is a recent local file modification time not a recovery point?
 
-**A:** Copying old bytes changes local metadata without adding newer source data. Use cataloged snapshot/log positions and complete verified history; an intentionally old PITR target also needs checks relative to that target rather than today.
+**A:** Copying old bytes changes local metadata without adding newer source data. Use cataloged snapshot/log positions and complete verified history; an intentionally old point-in-time recovery (PITR) target also needs checks relative to that target rather than today.
 
 ## Idempotency & Retry Patterns — Deep Dive
 
@@ -118,7 +118,7 @@ Source: [Idempotency & Retry Patterns — Deep Dive](30.3.2.06-idempotency-retry
 
 **A:** Creation and refund are different logical events for the same payment. Deduplicate the intended event/operation identity and apply a separate ordering/version contract.
 
-**Q:** Does a DLQ entry prove the remote effect failed?
+**Q:** Does a dead-letter queue (DLQ) entry prove the remote effect failed?
 
 **A:** No. A provider may have accepted the effect before the consumer timed out. Replay must preserve/reconcile the identity and consider provider deduplication retention, not create a new effect blindly.
 

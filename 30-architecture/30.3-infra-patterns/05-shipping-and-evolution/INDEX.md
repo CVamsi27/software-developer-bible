@@ -18,7 +18,7 @@ Shipping is not `git push` to prod. Users are mid-request while you deploy; sche
 ## File Index
 
 | Order | File | Topics | Role priority | General importance | Read time |
-| --   : | ------ | -------- | --- | --- | ----------: |
+| ----: | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ------------------ | ----------: |
 | 01 | [Zero-Downtime Deployments](30.3.5.01-zero-downtime-deployments.md) | Deployment vs release; rolling, blue-green, canary and flags; expand/migrate/contract; drain and rollback boundaries | Important | Specialized | 7 min |
 | 02 | [Technical Debt](30.3.5.02-technical-debt.md) | Evidence-based debt items, cost and risk prioritization, strangler and abstraction migrations, tests and exit conditions | Important | Specialized | 6 min |
 | 03 | [Cost Engineering & FinOps](30.3.5.03-cost-engineering-finops.md) | Cost allocation, capacity and storage trade-offs, interruptible work, autoscaling signals, unit economics and estimate limits | Important | Specialized | 7 min |
@@ -48,7 +48,7 @@ Describe a reversible release, an evidence-backed debt decision and an expiry pa
 
 ## Navigation
 
-[← Data at Scale](../04-data-at-scale/INDEX.md) · [↑ Infra & Ops Patterns Home](../INDEX.md)
+[← Data at Scale](../04-data-at-scale/INDEX.md) · [↑ Infra & Ops Patterns Home](../INDEX.md) · [Next: Interview Prep →](../06-interview-prep/INDEX.md)
 
 ---
 

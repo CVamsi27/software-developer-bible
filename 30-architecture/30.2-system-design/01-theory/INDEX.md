@@ -1,6 +1,6 @@
 # System Design — Foundational Theory
 
-> **Study time:** ≈ 4 h 35 m of reading (24 files, ~11 min average).
+> **Study time:** ≈ 4 h 36 m of reading (24 files, ~12 min average).
 > **Study time and file counts are generated from the current chapter set.**
 
 [![Files](https://img.shields.io/badge/files-24-blue)](../../../INDEX.md)
@@ -52,12 +52,12 @@ These chapters supply the main building blocks. The sequence moves from data gua
 | # | File | What it covers | Role priority | General importance |
 | --- | --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------- | ------------------ |
 | 15 | [How to Approach](30.2.1.15-how-to-approach.md) | A practical interview flow: clarify → estimate → sketch → deep-dive. Adapt it to the prompt and time available. | Essential | Foundational |
-| 17 | [Probabilistic Data Structures](30.2.1.17-probabilistic-data-structures.md) | Bloom filter, HyperLogLog, Count-Min Sketch and Cuckoo filter for approximate membership, cardinality and frequency; Merkle trees as a deterministic integrity structure; t-digest quantiles and deterministic HDR histogram quantization. | Essential | Foundational |
-| 18 | [Outbox & CDC](30.2.1.18-outbox-and-cdc.md) | Transactional outbox + change data capture — solving the dual-write problem for reliable event publication | Essential | Foundational |
+| 17 | [Probabilistic Data Structures](30.2.1.17-probabilistic-data-structures.md) | Bloom filter, HyperLogLog, Count-Min Sketch and Cuckoo filter for approximate membership, cardinality and frequency; Merkle trees as a deterministic integrity structure; t-digest quantiles and deterministic high-dynamic-range (HDR) histogram quantization. | Essential | Foundational |
+| 18 | [Outbox & CDC](30.2.1.18-outbox-and-cdc.md) | Transactional outbox + change data capture (CDC) — solving the dual-write problem for reliable event publication | Essential | Foundational |
 | 19 | [Resilience Patterns Deep-Dive](30.2.1.19-resilience-patterns-deep-dive.md) | Tail latency and overload controls: hedging, bounded admission, coalescing, deadlines, adaptive concurrency | Essential | Foundational |
-| 20 | [Multi-Region Deployment](30.2.1.20-multi-region-deployment.md) | Active-passive vs active-active, geo-routing, cross-region replication, conflict resolution, explicit data-location requirements, RPO/RTO | Essential | Foundational |
+| 20 | [Multi-Region Deployment](30.2.1.20-multi-region-deployment.md) | Active-passive vs active-active, geo-routing, cross-region replication, conflict resolution, explicit data-location requirements, recovery point objective (RPO) and recovery time objective (RTO) | Essential | Foundational |
 | 21 | [TCP & UDP Transport Fundamentals](30.2.1.21-tcp-udp-transport-fundamentals.md) | TCP stream guarantees and handshake cost, flow vs congestion control, UDP trade-offs, QUIC stream isolation, connection pooling, TLS and routing boundaries | Essential | Foundational |
-| 22 | [DNS & Name Resolution](30.2.1.22-dns-and-name-resolution.md) | Follow a cache miss through delegation; choose records; reason about TTL, negative answers and serve-stale; plan measured DNS cutovers; distinguish DNSSEC from encrypted DNS; debug Kubernetes resolver paths | Essential | Foundational |
+| 22 | [DNS & Name Resolution](30.2.1.22-dns-and-name-resolution.md) | Follow a cache miss through delegation; choose records; reason about time to live (TTL), negative answers and serve-stale; plan measured DNS cutovers; distinguish DNS Security Extensions (DNSSEC) from encrypted DNS; debug Kubernetes resolver paths | Essential | Foundational |
 | 23 | [TLS, HTTPS & the Certificate Lifecycle](30.2.1.23-tls-https-and-certificates.md) | Trace a connection from certificate identity through key agreement and protected data, then choose the TLS boundary and operate renewal, resumption and replay controls | Essential | Foundational |
 
 ---
@@ -78,21 +78,21 @@ Trace a partition, timeout and retry through a chosen design; state the exact in
 
 ## Navigation
 
-[← Previous: System Design Index](../INDEX.md) · [ Back to System Design Index](../INDEX.md) · [Next: Case Studies →](../02-case-studies/INDEX.md)
+[← Previous: System Design Index](../INDEX.md) · [Back to System Design Index](../INDEX.md) · [Next: Case Studies →](../02-case-studies/INDEX.md)
 
 ---
 
 ## Docita Anchor
 
-Candidate source locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React and TypeScript. Inspect the checked-out revision and relevant tests before using a path as implementation evidence; source configuration alone does not establish deployed behavior.
+Reference locations in [Docita](https://github.com/CVamsi27/docita), a healthcare application built with NestJS, React, and TypeScript. Check the target revision and relevant tests when verifying how each control is wired.
 
 | Topic | Docita evidence |
-| --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ---------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Rate limiting | `shared/modules/tenant-rate-limit/*` (guard + service + repository), plus `ip-rate-limit.service.ts`, `user-rate-limit.service.ts`, `rate-limit.interceptor.ts` |
-| Queues & DLQ | `apps/api/src/shared/modules/queue/postgres-queue.service.ts` + `dlq.controller.ts` (manual replay; automatic scheduler is not wired); ADR 0001 "Postgres as queue"; dedicated `apps/worker` process |
+| Queues and dead-letter queue (DLQ) | `apps/api/src/shared/modules/queue/postgres-queue.service.ts` + `dlq.controller.ts` (manual replay; automatic scheduler is not wired); ADR 0001 "Postgres as queue"; dedicated `apps/worker` process |
 | Distributed locks | `shared/common/utils/postgres-advisory-lock.ts` |
 | Consensus / leader election | `apps/api/src/shared/modules/schedule/cron-heartbeat.ts` records runs, not ownership; selective advisory-lock callers and API scheduler disablement are separate controls |
 | Backpressure | `apps/api/src/shared/common/extensions/query-budget.extension.ts`; Fly-level concurrency caps (`soft_limit 60 / hard_limit 100`) in `fly.toml` |
-| Failure modes & resilience | `ops-alert.service.ts` + listener; runbooks in `docs/operations/playbooks/*` (razorpay outage, DB exhaustion, queue backlog) |
+| Failure modes and resilience | `ops-alert.service.ts` + listener; runbooks in `docs/operations/playbooks/*` (razorpay outage, DB exhaustion, queue backlog) |
 
-_Capacity planning and multi-region: no direct docita implementation yet._ The network-stack chapters (TCP/UDP, DNS, TLS) stay conceptual here — nearest real anchors are `fetch-with-timeout.ts` for calls using that helper and the configured Fly/Cloudflare hosting boundaries. Verify actual DNS, TLS and egress paths rather than inferring universal coverage.
+_Capacity planning and multi-region: no direct Docita implementation yet._ The network-stack chapters (TCP/UDP, DNS, TLS) stay conceptual here — nearest anchors are `fetch-with-timeout.ts` for calls using that helper and the configured Fly/Cloudflare hosting boundaries. Verify actual DNS, TLS, and egress paths directly when auditing production traffic.

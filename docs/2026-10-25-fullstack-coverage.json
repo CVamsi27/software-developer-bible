@@ -15921,7 +15921,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.md",
-      "sha256": "73259e5566bf845f513a3ba9c681e06b643f2410042b9290fc11dfd30c07dc0d",
+      "sha256": "dc5f3d1122c55acf0fdb50f83dbddc6d652209f522ae1d9c46562c9476f9e4ff",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -15944,19 +15944,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.01-cap-theorem.md",
-        "sha256": "73259e5566bf845f513a3ba9c681e06b643f2410042b9290fc11dfd30c07dc0d",
+        "sha256": "dc5f3d1122c55acf0fdb50f83dbddc6d652209f522ae1d9c46562c9476f9e4ff",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Phase 0 pilot comprehension rewrite (2026-11-23): plain-English Frankfurt/Berlin double-booking hook, C/A/P contracts, indistinguishable-realities proof, majority-quorum diagram, per-operation CP/AP table, PACELC with PostgreSQL WAL flush vs remote_apply visibility, and 5 common mistakes. Aligned with 30.2.1 REVISION.md Q&As and cited Gilbert & Lynch / PostgreSQL docs.",
+        "notes": "Phase 0 pilot comprehension rewrite (2026-11-23): plain-English Frankfurt/Berlin double-booking hook, C/A/P contracts, indistinguishable-realities proof, majority-quorum diagram, per-operation CP/AP table, PACELC with PostgreSQL WAL flush vs remote_apply visibility, and 5 common mistakes. Aligned with 30.2.1 REVISION.md Q&As and cited Gilbert & Lynch / PostgreSQL docs. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "architecture_coverage",
-        "reviewDate": "2026-11-23"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.02-consistency-models.md",
-      "sha256": "18dec3b4d613411a6e88e9ff1a2fb5e1c0eb1566437e4918cd2ecd9c5f24ae34",
+      "sha256": "88ed81b63ee34ba683947f71c0d86bdca0f14fea192eb6864d29651a58a3dc5e",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -15984,19 +15984,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.02-consistency-models.md",
-        "sha256": "18dec3b4d613411a6e88e9ff1a2fb5e1c0eb1566437e4918cd2ecd9c5f24ae34",
+        "sha256": "88ed81b63ee34ba683947f71c0d86bdca0f14fea192eb6864d29651a58a3dc5e",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Checked convergence/merge assumptions and no fixed eventual deadline, read-your-writes versus monotonic session barriers, causal dependent views without requiring intermediate values, sequential versus real-time orders, overlapping linearizable histories, unknown timeout effect, serializability versus strict serializability and atomic inventory claim. No product-name guarantee inference.",
+        "notes": "Checked convergence/merge assumptions and no fixed eventual deadline, read-your-writes versus monotonic session barriers, causal dependent views without requiring intermediate values, sequential versus real-time orders, overlapping linearizable histories, unknown timeout effect, serializability versus strict serializability and atomic inventory claim. No product-name guarantee inference. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.md",
-      "sha256": "c5659796250346817d97780ab242781b04308b02a6f214a299c75ed2060320ae",
+      "sha256": "cd2bc5a32f29e42fb309b42f212c3828d3f733e4462805e2294869960607ce98",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16020,19 +16020,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.03-sharding-and-replication.md",
-        "sha256": "c5659796250346817d97780ab242781b04308b02a6f214a299c75ed2060320ae",
+        "sha256": "cd2bc5a32f29e42fb309b42f212c3828d3f733e4462805e2294869960607ce98",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content read (2026-11-14): Read end to end: replication topologies, lag, failover, then shard keys, routing, rebalancing. Each tradeoff appears once; the summary does not re-list the section headings.",
+        "notes": "Full-content read (2026-11-14): Read end to end: replication topologies, lag, failover, then shard keys, routing, rebalancing. Each tradeoff appears once; the summary does not re-list the section headings. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "root",
-        "reviewDate": "2026-11-14"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.md",
-      "sha256": "b0545d20785d96269e619808960d4e454f2abbd70b4acc54cd99bca6a4ffb24c",
+      "sha256": "ad85e9ea143916edd32dff5a069e6020c1223b4031cf3aa94e69dae5f4262dfd",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16057,19 +16057,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.04-load-balancing.md",
-        "sha256": "b0545d20785d96269e619808960d4e454f2abbd70b4acc54cd99bca6a4ffb24c",
+        "sha256": "ad85e9ea143916edd32dff5a069e6020c1223b4031cf3aa94e69dae5f4262dfd",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: L4 connection vs L7 request trace, independent placement/algorithm axes, active/passive health, draining/unsafe retries, DNS/affinity/consistent-hash hot key constraints.",
+        "notes": "Full read: L4 connection vs L7 request trace, independent placement/algorithm axes, active/passive health, draining/unsafe retries, DNS/affinity/consistent-hash hot key constraints. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.05-caching-patterns.md",
-      "sha256": "b571ae4ab67a9a4d19e9f76f0b2cf170ff6a8fa35e8a8558cacf5c000d1ef2ba",
+      "sha256": "df4d3eed4711f32750947f1e5f5b9d4d44afdf72e42682db2b62cb6df131c0f5",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16093,19 +16093,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.05-caching-patterns.md",
-        "sha256": "b571ae4ab67a9a4d19e9f76f0b2cf170ff6a8fa35e8a8558cacf5c000d1ef2ba",
+        "sha256": "df4d3eed4711f32750947f1e5f5b9d4d44afdf72e42682db2b62cb6df131c0f5",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: source vs disposable state, fill/write six patterns, acknowledged-write durability, expiry/capacity separation, delayed refill/lost invalidation races, auth/poisoning and source overload.",
+        "notes": "Full read: source vs disposable state, fill/write six patterns, acknowledged-write durability, expiry/capacity separation, delayed refill/lost invalidation races, auth/poisoning and source overload. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md",
-      "sha256": "5acafe08640e61bdbea318d59186f2d600233026aa40a640d13ba4249416a949",
+      "sha256": "ed20ff3e0a8a9ad31d4828751ad11959a80b4af7be0cbdfe64eb959ed5e7f68c",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16116,7 +16116,7 @@
           "2. Choose a topology: work queue, pub/sub, priority, delay",
           "3. Name the delivery guarantee precisely",
           "4. Make effects safe under redelivery",
-          "5. Order per key; recover poison with DLQ, retries, and backpressure",
+          "5. Order per key; recover poison with dead-letter queues, retries, and backpressure",
           "6. Verify broker contracts before choosing one",
           "When to discuss in interviews",
           "Common Mistakes",
@@ -16131,19 +16131,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.06-queues-and-async.md",
-        "sha256": "5acafe08640e61bdbea318d59186f2d600233026aa40a640d13ba4249416a949",
+        "sha256": "ed20ff3e0a8a9ad31d4828751ad11959a80b4af7be0cbdfe64eb959ed5e7f68c",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read including every product table/failure section: durable acceptance vs completion, local commit-before-ack duplicate protection, external idempotency, ordered effects, DLQ/backpressure. Google current primary docs confirm pull-only exactly-once regional subscription scope.",
+        "notes": "Full read including every product table/failure section: durable acceptance vs completion, local commit-before-ack duplicate protection, external idempotency, ordered effects, DLQ/backpressure. Google current primary docs confirm pull-only exactly-once regional subscription scope. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.07-distributed-transactions.md",
-      "sha256": "2fc966e2ec2f25d426e7b9be66136e66ca40941a321789003a8f1f603a22af64",
+      "sha256": "a49ac5999b861b47366230f92e22810e90ebff8b67859fcf0fd48edf15dec346",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16152,7 +16152,7 @@
           "First Principles",
           "1. Select the required invariant first",
           "2. Commit atomically with 2PC — and pay the blocking cost",
-          "3. Understand why 3PC is no general cure",
+          "3. Understand why three-phase commit (3PC) is no general cure",
           "4. Recover with sagas and compensation",
           "5. Specify the recovery mechanisms up front",
           "Common Mistakes",
@@ -16167,19 +16167,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.07-distributed-transactions.md",
-        "sha256": "2fc966e2ec2f25d426e7b9be66136e66ca40941a321789003a8f1f603a22af64",
+        "sha256": "a49ac5999b861b47366230f92e22810e90ebff8b67859fcf0fd48edf15dec346",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Checked shared durable atomic-commit decision versus consensus replication, prepared participant recovery cannot independently abort after uncertainty, locks/conflict resources, 2PC versus 2PL, atomic outcome versus independent-reader visibility, 3PC timing assumptions, saga visible local commits/irreversible compensation, stable step identity and persisted recovery/manual terminal path.",
+        "notes": "Checked shared durable atomic-commit decision versus consensus replication, prepared participant recovery cannot independently abort after uncertainty, locks/conflict resources, 2PC versus 2PL, atomic outcome versus independent-reader visibility, 3PC timing assumptions, saga visible local commits/irreversible compensation, stable step identity and persisted recovery/manual terminal path. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.08-rate-limiting.md",
-      "sha256": "0e0008d24ee7235e7df8c50e5bc7220d97352c6ae351b3e1105db1a023054c98",
+      "sha256": "735ae219d542cf0ae369f240f754a34636d706c08f13705c7f3b7fc9687ea3f5",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16204,19 +16204,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.08-rate-limiting.md",
-        "sha256": "0e0008d24ee7235e7df8c50e5bc7220d97352c6ae351b3e1105db1a023054c98",
+        "sha256": "735ae219d542cf0ae369f240f754a34636d706c08f13705c7f3b7fc9687ea3f5",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Checked fleet/global authority versus local full quotas, weighted costs and trusted identities, exact sliding-log versus weighted estimate, token credit/refill expiry horizon, leaky queue deadline/capacity, HTTP 429 cache/retry rules, Lua validation/atomic first-arrival window versus sliding algorithm and failover/eviction boundaries. Primary Datatracker, NGINX, Envoy and API Gateway docs verify current draft and limiter guarantees; Lua inspected statically, not executed.",
+        "notes": "Checked fleet/global authority versus local full quotas, weighted costs and trusted identities, exact sliding-log versus weighted estimate, token credit/refill expiry horizon, leaky queue deadline/capacity, HTTP 429 cache/retry rules, Lua validation/atomic first-arrival window versus sliding algorithm and failover/eviction boundaries. Primary Datatracker, NGINX, Envoy and API Gateway docs verify current draft and limiter guarantees; Lua inspected statically, not executed. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.md",
-      "sha256": "747a66e7148dc3879e9ba7286010b3327fde9e7573ab8dde3d133aaa9e284daa",
+      "sha256": "db07bc813150591d33d63c0c515ec478c43b1003072f2e720bd6d22df4f24e18",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16241,19 +16241,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.09-consensus-and-leader-election.md",
-        "sha256": "747a66e7148dc3879e9ba7286010b3327fde9e7573ab8dde3d133aaa9e284daa",
+        "sha256": "db07bc813150591d33d63c0c515ec478c43b1003072f2e720bd6d22df4f24e18",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Checked consensus safety/termination assumptions, non-Byzantine majority scope, durable Paxos promises/accepted values, Raft up-to-date voting/current-term commit/old-entry indirect commit, reconfiguration/read authority barriers, Zab activation/read freshness, retry deduplication and separate external fencing. Official Kafka 4.3 upgrade source verifies ZooKeeper removal/KRaft boundary.",
+        "notes": "Checked consensus safety/termination assumptions, non-Byzantine majority scope, durable Paxos promises/accepted values, Raft up-to-date voting/current-term commit/old-entry indirect commit, reconfiguration/read authority barriers, Zab activation/read freshness, retry deduplication and separate external fencing. Official Kafka 4.3 upgrade source verifies ZooKeeper removal/KRaft boundary. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.md",
-      "sha256": "ea86d7f154415f842875f636d4dce44d20e8d8f3af8f2de8c48e932c13aee850",
+      "sha256": "63b2fa46143753add899c6cc65786481e4035890bb02f9c6345b89695ce1235c",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16276,19 +16276,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.10-failure-modes.md",
-        "sha256": "ea86d7f154415f842875f636d4dce44d20e8d8f3af8f2de8c48e932c13aee850",
+        "sha256": "63b2fa46143753add899c6cc65786481e4035890bb02f9c6345b89695ce1235c",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: fault/error/failure, partial/uncertain writes and crash assumptions, bounded propagated budgets and retry amplification, fencing/shared failure domains, realistic backups/data recovery and evidence.",
+        "notes": "Full read: fault/error/failure, partial/uncertain writes and crash assumptions, bounded propagated budgets and retry amplification, fencing/shared failure domains, realistic backups/data recovery and evidence. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.11-architecture-patterns.md",
-      "sha256": "9c905ba097d72cfa382fdb1eaf2868559884e53710955e9705bfbeec77636c88",
+      "sha256": "6794cae9638113ada83c9c63cbde1383e237107274709d56acd6d0d1c17b0547",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16311,19 +16311,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.11-architecture-patterns.md",
-        "sha256": "9c905ba097d72cfa382fdb1eaf2868559884e53710955e9705bfbeec77636c88",
+        "sha256": "6794cae9638113ada83c9c63cbde1383e237107274709d56acd6d0d1c17b0547",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: separate deployment/data/timing/dependency axes, logical ownership vs physical DB, runtime vs source dependency arrows, plain/clean/hex boundaries, plugin isolation and migration costs.",
+        "notes": "Full read: separate deployment/data/timing/dependency axes, logical ownership vs physical DB, runtime vs source dependency arrows, plain/clean/hex boundaries, plugin isolation and migration costs. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md",
-      "sha256": "05af1efca96ce8fcd3c569bd1cb71a9abf638fc9c9925e455b851bdc59a0a8b5",
+      "sha256": "026caa4cf0fe40100a00f0547021143cfe98f2e2e2020d828fe29a087d96d901",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16346,19 +16346,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.12-capacity-planning.md",
-        "sha256": "05af1efca96ce8fcd3c569bd1cb71a9abf638fc9c9925e455b851bdc59a0a8b5",
+        "sha256": "026caa4cf0fe40100a00f0547021143cfe98f2e2e2020d828fe29a087d96d901",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Checked all workload arithmetic and decimal units: ~11.6K average/35K peak, 36.5TB logical/109.5TB three copies, 385MB/s payload, 500GB cache values, 140 CPU cores/280 provisioned at 50 percent, 36 instances for one failure/54 equal-zone layout. Little Law uses stable averages and correct boundary, not p99 times peak. Covers retries/fanout, actual cache origin bytes, failure/recovery tests and cost scope.",
+        "notes": "Checked all workload arithmetic and decimal units: ~11.6K average/35K peak, 36.5TB logical/109.5TB three copies, 385MB/s payload, 500GB cache values, 140 CPU cores/280 provisioned at 50 percent, 36 instances for one failure/54 equal-zone layout. Little Law uses stable averages and correct boundary, not p99 times peak. Covers retries/fanout, actual cache origin bytes, failure/recovery tests and cost scope. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.13-backpressure-and-flow-control.md",
-      "sha256": "cd28aacca46fafce20aec47eabc24b03bfd493893685969a627a2e6f18b9184f",
+      "sha256": "78e242cb7fc6e55cc7402e560b21fa184b0d340d81ba181739028f086faa2b29",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16381,10 +16381,10 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.13-backpressure-and-flow-control.md",
-        "sha256": "cd28aacca46fafce20aec47eabc24b03bfd493893685969a627a2e6f18b9184f",
+        "sha256": "78e242cb7fc6e55cc7402e560b21fa184b0d340d81ba181739028f086faa2b29",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Checked queue fill arithmetic (10000/(10000-1000)=1.11s), bounded accepted-work durability, feedback versus mere rejection, every intermediate queue/waiter/payload bound, per-identity priority, TCP byte window versus parsed jobs, Reactive Streams item demand and rate/concurrency/deadline/breaker distinctions. Authored and inspected narrow jitter correction: random delays reduce synchronized bursts but cannot guarantee distinct retry times.",
+        "notes": "Checked queue fill arithmetic (10000/(10000-1000)=1.11s), bounded accepted-work durability, feedback versus mere rejection, every intermediate queue/waiter/payload bound, per-identity priority, TCP byte window versus parsed jobs, Reactive Streams item demand and rate/concurrency/deadline/breaker distinctions. Authored and inspected narrow jitter correction: random delays reduce synchronized bursts but cannot guarantee distinct retry times. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [
           {
             "id": "architecture-004",
@@ -16398,12 +16398,12 @@
         ],
         "fullContentRead": true,
         "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.md",
-      "sha256": "feecd35c2edc9bc985b4a9411d3ffde185716d7eb52c9a1368910464924e2a56",
+      "sha256": "7668347990e94956cd81c4fd20ed33da76deb67d4ff74c7f47f50a660437cf59",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16425,14 +16425,14 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.14-distributed-locks.md",
-        "sha256": "feecd35c2edc9bc985b4a9411d3ffde185716d7eb52c9a1368910464924e2a56",
+        "sha256": "7668347990e94956cd81c4fd20ed33da76deb67d4ff74c7f47f50a660437cf59",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Checked paused lease holder and generation-observation limit, random release token versus increasing fence, closest-to-data primitive, uncertain acquisition policy, Redis failover/Redlock timing assumptions and DELEX 8.4 boundary, ZooKeeper predecessor/session logic, etcd transaction scope, advisory convention and DynamoDB TTL lag/conditional takeover. Official etcd v3.8 concurrency reference exists as draft docs; Redis and DynamoDB primary docs verified.",
+        "notes": "Checked paused lease holder and generation-observation limit, random release token versus increasing fence, closest-to-data primitive, uncertain acquisition policy, Redis failover/Redlock timing assumptions and DELEX 8.4 boundary, ZooKeeper predecessor/session logic, etcd transaction scope, advisory convention and DynamoDB TTL lag/conditional takeover. Official etcd v3.8 concurrency reference exists as draft docs; Redis and DynamoDB primary docs verified. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
@@ -16473,7 +16473,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
-      "sha256": "6063a87f93b95d91bd8d14111f3220fa087379323badf65ec228e6903fc6b565",
+      "sha256": "5c14e53152be1f47ae54fa10f8fb56a33adda7d93b9c09009ed2262781f336f8",
       "genre": "interview-bank",
       "status": "reviewed",
       "structure": {
@@ -16494,19 +16494,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.16-interview-questions.md",
-        "sha256": "6063a87f93b95d91bd8d14111f3220fa087379323badf65ec228e6903fc6b565",
+        "sha256": "5c14e53152be1f47ae54fa10f8fb56a33adda7d93b9c09009ed2262781f336f8",
         "genre": "interview",
         "status": "reviewed",
-        "notes": "All30 authored design prompts/answers fully read (666lines): assumptions not benchmarks, authority/identity/durable outcomes, derived indexes/deletion, broker scope, SSRF, quotas, recurrence, streaming/settlement and regional safety. Canonical token-bucket source fixture checked separately.",
+        "notes": "All30 authored design prompts/answers fully read (666lines): assumptions not benchmarks, authority/identity/durable outcomes, derived indexes/deletion, broker scope, SSRF, quotas, recurrence, streaming/settlement and regional safety. Canonical token-bucket source fixture checked separately. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.17-probabilistic-data-structures.md",
-      "sha256": "f34b28af6c547f40f804e5e4ab1bdf2fbb51236c5791bcc01477106270dc9439",
+      "sha256": "b292ff98c75bd5cc2dbc2d3d51db8b57d60bd95f45564de59342c2574746040a",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16529,19 +16529,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.17-probabilistic-data-structures.md",
-        "sha256": "f34b28af6c547f40f804e5e4ab1bdf2fbb51236c5791bcc01477106270dc9439",
+        "sha256": "b292ff98c75bd5cc2dbc2d3d51db8b57d60bd95f45564de59342c2574746040a",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: exact query/error units and authority, complete filter rebuild, deletion fingerprint/insertion failures, HLL statistical not hard bound, nonnegative CMS/counter assumptions, KLL rank vs value, t-digest empirical, HDR deterministic and authenticated Merkle encoding.",
+        "notes": "Full read: exact query/error units and authority, complete filter rebuild, deletion fingerprint/insertion failures, HLL statistical not hard bound, nonnegative CMS/counter assumptions, KLL rank vs value, t-digest empirical, HDR deterministic and authenticated Merkle encoding. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.18-outbox-and-cdc.md",
-      "sha256": "5c13ba3cfe101f374db8b2ba32ee8fc0e0209d2115ea8d528afc3ddd77ab305f",
+      "sha256": "41a2129077f49b28459ec9b440aa1e293420a35feefccae0733354186bf109eb",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16565,18 +16565,18 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.18-outbox-and-cdc.md",
-        "sha256": "5c13ba3cfe101f374db8b2ba32ee8fc0e0209d2115ea8d528afc3ddd77ab305f",
+        "sha256": "41a2129077f49b28459ec9b440aa1e293420a35feefccae0733354186bf109eb",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full chapter read. Atomic local intent versus broker send, commit uncertainty, duplicate-safe effect, SKIP LOCKED transaction/ordering boundary, stable producer-scoped identity, snapshots/log positions and retention-loss recovery. Removed repeated version sentence and added producer scope for local sequence IDs. Checked current PostgreSQL/Debezium primary docs; SQL/connector/broker integration not run.",
+        "notes": "Full chapter read. Atomic local intent versus broker send, commit uncertainty, duplicate-safe effect, SKIP LOCKED transaction/ordering boundary, stable producer-scoped identity, snapshots/log positions and retention-loss recovery. Removed repeated version sentence and added producer scope for local sequence IDs. Checked current PostgreSQL/Debezium primary docs; SQL/connector/broker integration not run. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": []
       }
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.19-resilience-patterns-deep-dive.md",
-      "sha256": "17f20a7d25f998653d3464802bdbab9bc452ce2f59b451485b0346b7b588ac8d",
+      "sha256": "f5a5dd752bb95b31aa7cabad50525087eaf320f183faa28a86f76fa1a577fdd5",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16600,17 +16600,17 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.19-resilience-patterns-deep-dive.md",
-        "sha256": "17f20a7d25f998653d3464802bdbab9bc452ce2f59b451485b0346b7b588ac8d",
+        "sha256": "f5a5dd752bb95b31aa7cabad50525087eaf320f183faa28a86f76fa1a577fdd5",
         "status": "reviewed",
         "reviewer": "root-continuation",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full reread: work owns permit through settlement/cleanup; transport close requests cooperative abort only. Local resource bound, independent hedge budget, singleflight identity/reentrancy, monotonic deadlines and adaptive control bounded. Prior real Node HTTP RED-to-GREEN trace remains explicitly scoped; no fleet benchmark inferred."
+        "notes": "Full reread: work owns permit through settlement/cleanup; transport close requests cooperative abort only. Local resource bound, independent hedge budget, singleflight identity/reentrancy, monotonic deadlines and adaptive control bounded. Prior real Node HTTP RED-to-GREEN trace remains explicitly scoped; no fleet benchmark inferred. | Wave 3C C1-C8 genuine refinement (2026-11-24)"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.20-multi-region-deployment.md",
-      "sha256": "30cbb7057291ae639510b1d1b891f0ce67200e8855d3a0a990fc6a209833ece0",
+      "sha256": "a5912c7f627cccd2057394d7b9826e39d8a80d5ad337af3b62f79b66cbd07b00",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16634,19 +16634,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.20-multi-region-deployment.md",
-        "sha256": "30cbb7057291ae639510b1d1b891f0ce67200e8855d3a0a990fc6a209833ece0",
+        "sha256": "a5912c7f627cccd2057394d7b9826e39d8a80d5ad337af3b62f79b66cbd07b00",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: serving vs writer topology, routing not ownership, replication/quorum/CRDT boundaries, failover RPO/RTO/capacity and backups. FIXED stale MRSC same-region-set restriction: AWS now permits any three supported Regions across continents. Current primary AWS and EDPB transfer summaries verified; existing source-linked REVISION MRSC answer inspected and already accurate.",
+        "notes": "Full read: serving vs writer topology, routing not ownership, replication/quorum/CRDT boundaries, failover RPO/RTO/capacity and backups. FIXED stale MRSC same-region-set restriction: AWS now permits any three supported Regions across continents. Current primary AWS and EDPB transfer summaries verified; existing source-linked REVISION MRSC answer inspected and already accurate. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.md",
-      "sha256": "7b9f3c13395ba8ae113ef53f2f431e1bffa6a3cb769c86b2164dc5a02227ec32",
+      "sha256": "4b4dd85c314c7e74563f5a0d966b5539461f418748859392e9bb3e765b628a9c",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16669,19 +16669,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.21-tcp-udp-transport-fundamentals.md",
-        "sha256": "7b9f3c13395ba8ae113ef53f2f431e1bffa6a3cb769c86b2164dc5a02227ec32",
+        "sha256": "4b4dd85c314c7e74563f5a0d966b5539461f418748859392e9bb3e765b628a9c",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: byte framing/reliability not commit, handshake/0RTT, flow vs congestion, QUIC independent streams/shared limits and transport-vs-DNS timing. FIXED Agent capacity comments/prose: open sockets across origins includes idle sockets. Node primary docs verified; node /tmp/check-node-agent-cap.cjs PASS real loopback two-origin idle-budget/queue/unblock behavior.",
+        "notes": "Full read: byte framing/reliability not commit, handshake/0RTT, flow vs congestion, QUIC independent streams/shared limits and transport-vs-DNS timing. FIXED Agent capacity comments/prose: open sockets across origins includes idle sockets. Node primary docs verified; node /tmp/check-node-agent-cap.cjs PASS real loopback two-origin idle-budget/queue/unblock behavior. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.22-dns-and-name-resolution.md",
-      "sha256": "8191aa1846bbf14daf1f34eaba227d04318c71ea4097d1f1cc6be379aa51e0df",
+      "sha256": "377344b25d19ac5b0c79c0ac7f57eabfb1f4ce9dd7a2ae0ddd67742c42d36592",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16704,19 +16704,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.22-dns-and-name-resolution.md",
-        "sha256": "8191aa1846bbf14daf1f34eaba227d04318c71ea4097d1f1cc6be379aa51e0df",
+        "sha256": "377344b25d19ac5b0c79c0ac7f57eabfb1f4ce9dd7a2ae0ddd67742c42d36592",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: delegation/glue/source authority, typed records/SVCB/DNSSEC, positive/negative/SERVFAIL/stale caching, cutover/Anycast and resolver location, lookup/getaddrinfo vs resolve distinction; commands are observational examples.",
+        "notes": "Full read: delegation/glue/source authority, typed records/SVCB/DNSSEC, positive/negative/SERVFAIL/stale caching, cutover/Anycast and resolver location, lookup/getaddrinfo vs resolve distinction; commands are observational examples. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.md",
-      "sha256": "1fc19f0154d464e4dfeb9ceb93e29c10b2460949241a590426d8382eda92cda9",
+      "sha256": "89a95bc6c63a76b70e05d3ed7c40b5966ff4e0829e5cc2e5e9815d9033a8ebbb",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16740,19 +16740,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/30.2.1.23-tls-https-and-certificates.md",
-        "sha256": "1fc19f0154d464e4dfeb9ceb93e29c10b2460949241a590426d8382eda92cda9",
+        "sha256": "89a95bc6c63a76b70e05d3ed7c40b5966ff4e0829e5cc2e5e9815d9033a8ebbb",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read including both code examples/configs and lifecycle: QUIC packet protection vs TLSrecords, TLS1.3 flights and PSK-DHE/0RTT, SAN/wildcard, issuer revocation, proxy re-encryption vs E2E. Current RFC9852/RFC10015 primary texts and LetsEncrypt OCSP retirement verified; scope new protocols vs existing TLS1.2 compatibility accurate.",
+        "notes": "Full read including both code examples/configs and lifecycle: QUIC packet protection vs TLSrecords, TLS1.3 flights and PSK-DHE/0RTT, SAN/wildcard, issuer revocation, proxy re-encryption vs E2E. Current RFC9852/RFC10015 primary texts and LetsEncrypt OCSP retirement verified; scope new protocols vs existing TLS1.2 compatibility accurate. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/INDEX.md",
-      "sha256": "39141732b14670b06d5515e8e8d0ea3a01da9a438c5a2b6e09ac0eaa909b91c5",
+      "sha256": "f32375164d5827bccda428ac730842aac9039980e3f006a344799a0aaa90007f",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -16771,12 +16771,12 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/INDEX.md",
-        "sha256": "39141732b14670b06d5515e8e8d0ea3a01da9a438c5a2b6e09ac0eaa909b91c5",
+        "sha256": "f32375164d5827bccda428ac730842aac9039980e3f006a344799a0aaa90007f",
         "status": "reviewed",
         "reviewer": "root-continuation",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 0 restamp (2026-11-23): read_time.py updated CAP Theorem row and section study-time total after 30.2.1.01 rewrite.",
+        "notes": "Phase 0 restamp (2026-11-23): read_time.py updated CAP Theorem row and section study-time total after 30.2.1.01 rewrite. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "metadataReview": {
           "previousReviewedSha256": "51a3c78a7efaf667d389f96f5b40578d005cbab0055c899cae7a7288c47c58c5",
           "reviewDate": "2026-10-26",
@@ -16788,7 +16788,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/01-theory/REVISION.md",
-      "sha256": "0e00e6b6abbedd21a922c47166eee6c0b026e81bb9e3c2d966cfa6485960dc59",
+      "sha256": "684fccfc9e276c98fe98899e48802dab0f5759e4fd0de88f1ac68a2dd244c786",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -16803,8 +16803,8 @@
           "Rate Limiting",
           "Consensus & Leader Election",
           "Failure Modes",
-          "Architecture Patterns — Monolith, Microservices, Event-Driven, Hexagonal",
-          "Capacity Planning & Back-of-Envelope Estimation",
+          "Architecture Patterns and Boundaries",
+          "Capacity Planning and Back-of-the-Envelope Estimation",
           "Backpressure and Flow Control",
           "Distributed Locks and Coordination",
           "How to Approach Any System Design Problem",
@@ -16826,19 +16826,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/01-theory/REVISION.md",
-        "sha256": "0e00e6b6abbedd21a922c47166eee6c0b026e81bb9e3c2d966cfa6485960dc59",
+        "sha256": "684fccfc9e276c98fe98899e48802dab0f5759e4fd0de88f1ac68a2dd244c786",
         "genre": "revision",
         "status": "reviewed",
-        "notes": "Full 558-line original read across three bounded chunks, plus authored new operation-permit retrieval pair inspected. Checked all source-linked groups for contracts/changed failure conditions: consistency, quorum, cache races, local-commit ack ordering, transaction uncertainty, queue bounds, fencing, approximate structures, outbox, overload and shared flight, regional ownership, transport/DNS/TLS limits. New pair distinguishes request disconnect from completed resource cleanup. Primary Datatracker confirms active RateLimit draft metadata; AWS confirms current three-region MRSC and replica/witness model; RFC 9852 and RFC 10015 verified for current TLS guidance.",
+        "notes": "Full 558-line original read across three bounded chunks, plus authored new operation-permit retrieval pair inspected. Checked all source-linked groups for contracts/changed failure conditions: consistency, quorum, cache races, local-commit ack ordering, transaction uncertainty, queue bounds, fencing, approximate structures, outbox, overload and shared flight, regional ownership, transport/DNS/TLS limits. New pair distinguishes request disconnect from completed resource cleanup. Primary Datatracker confirms active RateLimit draft metadata; AWS confirms current three-region MRSC and replica/witness model; RFC 9852 and RFC 10015 verified for current TLS guidance. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.01-url-shortener.md",
-      "sha256": "95611f6bc2d03c4703dcfb7829ef3651c71d2063fd04db2426a9bee0332a8dd2",
+      "sha256": "ac0ddb70fe44c332653c9e47ffafecaf60611f6e3fdbb28de761beb5c7895d43",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16861,19 +16861,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.01-url-shortener.md",
-        "sha256": "95611f6bc2d03c4703dcfb7829ef3651c71d2063fd04db2426a9bee0332a8dd2",
+        "sha256": "ac0ddb70fe44c332653c9e47ffafecaf60611f6e3fdbb28de761beb5c7895d43",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review: Unique mapping vs allocator, explicit redirect/cache revocation and method semantics, analytics meaning/durability/privacy; PostgreSQL16.15 actual DDL duplicate-key fixture PASS.",
+        "notes": "Full-content review: Unique mapping vs allocator, explicit redirect/cache revocation and method semantics, analytics meaning/durability/privacy; PostgreSQL16.15 actual DDL duplicate-key fixture PASS. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.02-whatsapp.md",
-      "sha256": "2ec6d6e2c4de2aca92605273855e750f8063944625e32665f3002eb2d67ef997",
+      "sha256": "a2ab13a5f1b1a32e1886717b2a13fcb240ae0893a9bc1659a84e7839427724ba",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16899,19 +16899,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.02-whatsapp.md",
-        "sha256": "2ec6d6e2c4de2aca92605273855e750f8063944625e32665f3002eb2d67ef997",
+        "sha256": "a2ab13a5f1b1a32e1886717b2a13fcb240ae0893a9bc1659a84e7839427724ba",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review: Hypothetical encryption/multi-device scope, coherent capacity/fanout, durable scoped acceptance sequence and outbox, receipts/cursors/retention and current membership; PostgreSQL16.15 message-identity and member-FK fixture PASS.",
+        "notes": "Full-content review: Hypothetical encryption/multi-device scope, coherent capacity/fanout, durable scoped acceptance sequence and outbox, receipts/cursors/retention and current membership; PostgreSQL16.15 message-identity and member-FK fixture PASS. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.03-uber.md",
-      "sha256": "0d89e7b4bfe7ada67b096f952fe821a7d28187deebef431d69913acdfc5fd3be",
+      "sha256": "678a17eb38cdc57b6814b34f5297cd72665d4687c210275151920f2bb7dba1ba",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16938,19 +16938,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.03-uber.md",
-        "sha256": "0d89e7b4bfe7ada67b096f952fe821a7d28187deebef431d69913acdfc5fd3be",
+        "sha256": "678a17eb38cdc57b6814b34f5297cd72665d4687c210275151920f2bb7dba1ba",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review: Fresh generation/sequence locations as approximate discovery, Haversine vs road ETA, atomic driver/ride acceptance canonical Lyft, quote/trip/payment/privacy boundaries; coherent rates.",
+        "notes": "Full-content review: Fresh generation/sequence locations as approximate discovery, Haversine vs road ETA, atomic driver/ride acceptance canonical Lyft, quote/trip/payment/privacy boundaries; coherent rates. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.04-netflix.md",
-      "sha256": "1e20dfe06b242d1c4544ca8723363e06a469f027f4ba4d1c19f2044a70504665",
+      "sha256": "3c1099539410ec3eec0f7197cd38e3808da3760dfab4fdb0d6ef79e47781be20",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -16977,19 +16977,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.04-netflix.md",
-        "sha256": "1e20dfe06b242d1c4544ca8723363e06a469f027f4ba4d1c19f2044a70504665",
+        "sha256": "3c1099539410ec3eec0f7197cd38e3808da3760dfab4fdb0d6ef79e47781be20",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review: Hypothetical rights/DRM/lease authority, separate media/CDN path, coherent concurrency/bitrate/storage math, bounded quality shortlist not production ABR, publication/progress/cache-access constraints.",
+        "notes": "Full-content review: Hypothetical rights/DRM/lease authority, separate media/CDN path, coherent concurrency/bitrate/storage math, bounded quality shortlist not production ABR, publication/progress/cache-access constraints. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.05-google-drive.md",
-      "sha256": "ff570c1c6453805095569846c9ecad642900a3c3550793c66512835ea5dc7b3b",
+      "sha256": "1e09dd4d9465db557cfa11cfb26962e9efbe13e8cf062f92086261b0ab870896",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17016,19 +17016,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.05-google-drive.md",
-        "sha256": "ff570c1c6453805095569846c9ecad642900a3c3550793c66512835ea5dc7b3b",
+        "sha256": "1e09dd4d9465db557cfa11cfb26962e9efbe13e8cf062f92086261b0ab870896",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review: Immutable bytes vs publish/current metadata, deferred same-file version FK, root-name uniqueness/null semantics, current permissions/quota and concurrent folder moves, actual API token/revision limits; primary changes.list confirms non-expiring tokens. PostgreSQL16.15 cross-file pointer/root-duplicate fixture PASS.",
+        "notes": "Full-content review: Immutable bytes vs publish/current metadata, deferred same-file version FK, root-name uniqueness/null semantics, current permissions/quota and concurrent folder moves, actual API token/revision limits; primary changes.list confirms non-expiring tokens. PostgreSQL16.15 cross-file pointer/root-duplicate fixture PASS. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.06-payment-gateway.md",
-      "sha256": "85477923b331b03ccda1b473466c1a75a23d3b166abe3f8661ade5e86b61492d",
+      "sha256": "0b9c778019f6f2454626d04e58416663ccbe435c41cbf101806a0b37ffc712c0",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17056,19 +17056,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.06-payment-gateway.md",
-        "sha256": "85477923b331b03ccda1b473466c1a75a23d3b166abe3f8661ade5e86b61492d",
+        "sha256": "0b9c778019f6f2454626d04e58416663ccbe435c41cbf101806a0b37ffc712c0",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review: Scoped merchant and provider-account command identities/fingerprint, unknown outcomes/financial posting authority, partial refunds/webhook exact bytes/reconciliation and regional authority. Narrowed Stripe24h retention to APIv1 after current primary check. PostgreSQL16.15 same-key conflict/different-merchant fixture PASS.",
+        "notes": "Full-content review: Scoped merchant and provider-account command identities/fingerprint, unknown outcomes/financial posting authority, partial refunds/webhook exact bytes/reconciliation and regional authority. Narrowed Stripe24h retention to APIv1 after current primary check. PostgreSQL16.15 same-key conflict/different-merchant fixture PASS. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.07-notification-service.md",
-      "sha256": "521910693de3eda2f11fe981e66bce38058ba39d54430e68fd17c494acdc01e6",
+      "sha256": "619e731468c311a354d3824cb3fbc5c7df8284298d3fa9702a47a2e4cac730f3",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17096,19 +17096,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.07-notification-service.md",
-        "sha256": "521910693de3eda2f11fe981e66bce38058ba39d54430e68fd17c494acdc01e6",
+        "sha256": "619e731468c311a354d3824cb3fbc5c7df8284298d3fa9702a47a2e4cac730f3",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review: Intent vs per-recipient/channel delivery identity, dispatch cutoff/consent races, audience/template versions, IANA quiet-hours membership not scheduling, provider receipts/quota/retry/privacy. PostgreSQL16.15 independent channel/duplicate-delivery fixture PASS.",
+        "notes": "Full-content review: Intent vs per-recipient/channel delivery identity, dispatch cutoff/consent races, audience/template versions, IANA quiet-hours membership not scheduling, provider receipts/quota/retry/privacy. PostgreSQL16.15 independent channel/duplicate-delivery fixture PASS. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.08-ticket-booking.md",
-      "sha256": "e037007d2ef0dbeb9c7f7e543d62490a536e42eb76d5be63db7f07dbb7b27d41",
+      "sha256": "0c24bb6ddcb9d82ed521b81be6969c10f56805642afe715c6763451ab1c13baf",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17135,19 +17135,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.08-ticket-booking.md",
-        "sha256": "e037007d2ef0dbeb9c7f7e543d62490a536e42eb76d5be63db7f07dbb7b27d41",
+        "sha256": "0c24bb6ddcb9d82ed521b81be6969c10f56805642afe715c6763451ab1c13baf",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review: Whole group ownership, deterministic row lock order, exact expiry/generation and identity, statement error rolls back partial hold; payment late-success and admission single-use distinct. PostgreSQL16.15 extracted DDL/function PASS overlapping-group rollback and duplicate IDs. Server16.15, not production or all18 behavior.",
+        "notes": "Full-content review: Whole group ownership, deterministic row lock order, exact expiry/generation and identity, statement error rolls back partial hold; payment late-success and admission single-use distinct. PostgreSQL16.15 extracted DDL/function PASS overlapping-group rollback and duplicate IDs. Server16.15, not production or all18 behavior. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.09-e-commerce.md",
-      "sha256": "245b2f455a43578c588d3a5cca8e6076dfd5986ba0f44dbb5ce0b5c59554a2b1",
+      "sha256": "1397716626d91ef617b7484ca7147f8efc721689613d5bcd8745dc14ba04dd92",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17175,19 +17175,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.09-e-commerce.md",
-        "sha256": "245b2f455a43578c588d3a5cca8e6076dfd5986ba0f44dbb5ce0b5c59554a2b1",
+        "sha256": "1397716626d91ef617b7484ca7147f8efc721689613d5bcd8745dc14ba04dd92",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review: Browse/cart not stock authority, immutable priced/address snapshots, conditional SKU write under READCOMMITTED vs serialization errors, one-time release/consume, durable checkout/payment/shipment recovery and derived-index deletion.",
+        "notes": "Full-content review: Browse/cart not stock authority, immutable priced/address snapshots, conditional SKU write under READCOMMITTED vs serialization errors, one-time release/consume, durable checkout/payment/shipment recovery and derived-index deletion. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.10-hospital-management.md",
-      "sha256": "f28cabb1dd15b11d7f6b5b986b34d04a0f30c4416c20708b3c89619e363c436b",
+      "sha256": "dd8cadcc89f838a4d0d8e72aba601aa2ef9bd54ab78cf9d8338db321d2ddae5d",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17218,19 +17218,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.10-hospital-management.md",
-        "sha256": "f28cabb1dd15b11d7f6b5b986b34d04a0f30c4416c20708b3c89619e363c436b",
+        "sha256": "dd8cadcc89f838a4d0d8e72aba601aa2ef9bd54ab78cf9d8338db321d2ddae5d",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review: Full476line read: workload/capacity arithmetic, qualified HIPAA/GDPR scope, tenant compositeFK and doctor/patient range exclusion, actor-scoped request identity, explicit-offset IANA time validation, pseudocode adapters labelled, RLS role/owner/bypass limits and FHIR publication/partner version. HHS primary scope and FHIR current R5 root checked; EURlex blocked, no new legal claim added.",
+        "notes": "Full-content review: Full476line read: workload/capacity arithmetic, qualified HIPAA/GDPR scope, tenant compositeFK and doctor/patient range exclusion, actor-scoped request identity, explicit-offset IANA time validation, pseudocode adapters labelled, RLS role/owner/bypass limits and FHIR publication/partner version. HHS primary scope and FHIR current R5 root checked; EURlex blocked, no new legal claim added. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.11-live-betting.md",
-      "sha256": "fb92c906909052338b94e6bcfc7fdc73e4d56ac4634b9e2853bfdef2b832f743",
+      "sha256": "31ec8ac587e2c18dbcb3fd62cd3c3c800fa40283f3f823403f44b7cec7a24264",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17256,19 +17256,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.11-live-betting.md",
-        "sha256": "fb92c906909052338b94e6bcfc7fdc73e4d56ac4634b9e2853bfdef2b832f743",
+        "sha256": "31ec8ac587e2c18dbcb3fd62cd3c3c800fa40283f3f823403f44b7cec7a24264",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review: Display vs authoritative price/wallet accepted terms, coherent fanout/rates, exact decimal cashout inverse-odds calculation, shared terminal state for settlement/cashout, official correction and frozen journal; jurisdiction-specific role caveat.",
+        "notes": "Full-content review: Display vs authoritative price/wallet accepted terms, coherent fanout/rates, exact decimal cashout inverse-odds calculation, shared terminal state for settlement/cashout, official correction and frozen journal; jurisdiction-specific role caveat. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.12-twitter-feed.md",
-      "sha256": "29dd083c85ee2e00c462cccacfd026efb840c72ab8a54e4962eea951922c839e",
+      "sha256": "06c2978d90b7533e9c9e1c2b83bc3f67715ae9f3daa82dee577ee869ec1172ae",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17294,14 +17294,14 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.12-twitter-feed.md",
-        "sha256": "29dd083c85ee2e00c462cccacfd026efb840c72ab8a54e4962eea951922c839e",
+        "sha256": "06c2978d90b7533e9c9e1c2b83bc3f67715ae9f3daa82dee577ee869ec1172ae",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review on 2026-11-11. Read end to end and re-derived the capacity arithmetic (250M posts/day at 1.28 KB = 320 GB/day; 50B fan-out inserts = 578.7K/s; 5B reads = 57.9K/s; 100 TB/day response bytes = 1.16 GB/s) - all consistent. No depth or accuracy defect found. Normalized the See Also heading spacing to match the rest of the corpus.",
+        "notes": "Full-content review on 2026-11-11. Read end to end and re-derived the capacity arithmetic (250M posts/day at 1.28 KB = 320 GB/day; 50B fan-out inserts = 578.7K/s; 5B reads = 57.9K/s; 100 TB/day response bytes = 1.16 GB/s) - all consistent. No depth or accuracy defect found. Normalized the See Also heading spacing to match the rest of the corpus. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "buffy",
-        "reviewDate": "2026-11-11"
+        "reviewDate": "2026-11-24"
       }
     },
     {
@@ -17343,7 +17343,7 @@
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.md",
-      "sha256": "d5fc9f000f6da2b906bdd789269e74cd5f5710320eb358661ed5f141bcf0c8ed",
+      "sha256": "d21239d0d2862c36e223444ecb13d7b68bbd059c956b8d748283c859cce6e509",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17370,19 +17370,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.14-web-crawler.md",
-        "sha256": "d5fc9f000f6da2b906bdd789269e74cd5f5710320eb358661ed5f141bcf0c8ed",
+        "sha256": "d21239d0d2862c36e223444ecb13d7b68bbd059c956b8d748283c859cce6e509",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review: Full read: origin-coordinated demand and current claim, RFCrobots vs SSRF/actualsocket validation, narrow ASCII URL decoder, content vs URL/revisit separation and bounded stream/parser. FIXED empty query delimiter /? lost by urlunsplit, aligned companion; RFC3986§6.2.3 primary verified. /tmp/check-crawler-query-identity.py RED→GREEN preserving absent/empty/fragment query, params/ports/IPv6/rejections.",
+        "notes": "Full-content review: Full read: origin-coordinated demand and current claim, RFCrobots vs SSRF/actualsocket validation, narrow ASCII URL decoder, content vs URL/revisit separation and bounded stream/parser. FIXED empty query delimiter /? lost by urlunsplit, aligned companion; RFC3986§6.2.3 primary verified. /tmp/check-crawler-query-identity.py RED→GREEN preserving absent/empty/fragment query, params/ports/IPv6/rejections. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.md",
-      "sha256": "6e828656843c7ab6e20f52e3ef2d7886a11a0e8d1f1f86dd809a1f7c242d8cbe",
+      "sha256": "928a4124aa31918e5512975e48502a6c9ac7f98da079d0dff5c06c80a2e9c840",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17409,19 +17409,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.md",
-        "sha256": "6e828656843c7ab6e20f52e3ef2d7886a11a0e8d1f1f86dd809a1f7c242d8cbe",
+        "sha256": "928a4124aa31918e5512975e48502a6c9ac7f98da079d0dff5c06c80a2e9c840",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content read (2026-11-14): Trace runs requirements to fan-out to storage to delivery; each arithmetic step is visible. Checked the arithmetic: 578,704 messages/s, 50 TB/day, 18.25 PB/year, 2.5 PB/day and 5,000 nodes reconcile.",
+        "notes": "Full-content read (2026-11-14): Trace runs requirements to fan-out to storage to delivery; each arithmetic step is visible. Checked the arithmetic: 578,704 messages/s, 50 TB/day, 18.25 PB/year, 2.5 PB/day and 5,000 nodes reconcile. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "root",
-        "reviewDate": "2026-11-14"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.md",
-      "sha256": "d81e7b5963f71c26cf19409a76d5374de43f7a9c5c417238addcb9f0c239eb4f",
+      "sha256": "de6b35acf1c0ff93548f7ffd7451bef04510e9468840e4e3ee373ef8dbd39b17",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17448,19 +17448,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.16-instagram.md",
-        "sha256": "d81e7b5963f71c26cf19409a76d5374de43f7a9c5c417238addcb9f0c239eb4f",
+        "sha256": "de6b35acf1c0ff93548f7ffd7451bef04510e9468840e4e3ee373ef8dbd39b17",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content review: Full409line read: processing readiness/ownership separate publication/visibility, upload and post unique/fingerprint/FK checks, processing generation fencing, own-post overlay vs follower lag, story24h grants/access, counters/feeds/search outbox and bearer URL expiry. Hypothetical rates math coherent; no claimed current Instagram implementation.",
+        "notes": "Full-content review: Full409line read: processing readiness/ownership separate publication/visibility, upload and post unique/fingerprint/FK checks, processing generation fencing, own-post overlay vs follower lag, story24h grants/access, counters/feeds/search outbox and bearer URL expiry. Hypothetical rates math coherent; no claimed current Instagram implementation. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "resume_portfolio",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.17-youtube.md",
-      "sha256": "52a819f78116bb29312ca3b6ce7880b8a226eb0b16e2be2a26bb00124ed8cd88",
+      "sha256": "38af23b36b80a7da668e0de72d3e6014c4e2f81e3169dd3fb9eb1226200f2bfa",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17488,19 +17488,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.17-youtube.md",
-        "sha256": "52a819f78116bb29312ca3b6ce7880b8a226eb0b16e2be2a26bb00124ed8cd88",
+        "sha256": "38af23b36b80a7da668e0de72d3e6014c4e2f81e3169dd3fb9eb1226200f2bfa",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: Upload transfer versus playable publication, source-version fence, PostgreSQL null-check semantics, HLS/DASH, exact capacity units and authorized cache delivery checked. Official HLS draft22 still sent to RFC Editor and not yet a published RFC.",
+        "notes": "Full read: Upload transfer versus playable publication, source-version fence, PostgreSQL null-check semantics, HLS/DASH, exact capacity units and authorized cache delivery checked. Official HLS draft22 still sent to RFC Editor and not yet a published RFC. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.18-dropbox.md",
-      "sha256": "e7b876b5cb8aed02301468dab4335ec09dc9fa387fccdd07c0b4dca2887e82ba",
+      "sha256": "ebc14e856a9656cdb0486584c66ec4d0cd599725cad45a347c0b5e173025a7ca",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17528,19 +17528,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.18-dropbox.md",
-        "sha256": "e7b876b5cb8aed02301468dab4335ec09dc9fa387fccdd07c0b4dca2887e82ba",
+        "sha256": "ebc14e856a9656cdb0486584c66ec4d0cd599725cad45a347c0b5e173025a7ca",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: Immutable chunk publication, deferred version pointers, namespace cursor serialization, local apply/checkpoint, conflict copies, GC reachability and privacy checked against current Dropbox hash/change documentation.",
+        "notes": "Full read: Immutable chunk publication, deferred version pointers, namespace cursor serialization, local apply/checkpoint, conflict copies, GC reachability and privacy checked against current Dropbox hash/change documentation. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.19-lyft.md",
-      "sha256": "6d3edeeff53e8a799197ee4151c445af011140609354d0a1d5b7bb65c2a5ff80",
+      "sha256": "b023b16973e61a95f9b41cc57f6630eaf4de71c9eadad4198950d515475ae92b",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17565,19 +17565,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.19-lyft.md",
-        "sha256": "6d3edeeff53e8a799197ee4151c445af011140609354d0a1d5b7bb65c2a5ff80",
+        "sha256": "b023b16973e61a95f9b41cc57f6630eaf4de71c9eadad4198950d515475ae92b",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: Approximate geo freshness versus authoritative driver-and-ride assignment, common lock order, generation/sequence and terminal release boundaries checked. All capacity arithmetic recomputed.",
+        "notes": "Full read: Approximate geo freshness versus authoritative driver-and-ride assignment, common lock order, generation/sequence and terminal release boundaries checked. All capacity arithmetic recomputed. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.20-distributed-counter.md",
-      "sha256": "b0b5b89fef1eb9e6e709ac505b79328513ba51c0a3dab753dfe4aebf5ede26ad",
+      "sha256": "66f0f6b3096068d8e4f662b8508f75cda98db3ba286af7bacae53e4f16ef3b3f",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17604,19 +17604,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.20-distributed-counter.md",
-        "sha256": "b0b5b89fef1eb9e6e709ac505b79328513ba51c0a3dab753dfe4aebf5ede26ad",
+        "sha256": "66f0f6b3096068d8e4f662b8508f75cda98db3ba286af7bacae53e4f16ef3b3f",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: Atomic event claim and arithmetic, payload mismatch, replay retention, hot-shard read consistency and G/PN-Counter scope checked. Exact merge code passes idempotent/commutative/associative and reset-to-retained-maximum counterexample.",
+        "notes": "Full read: Atomic event claim and arithmetic, payload mismatch, replay retention, hot-shard read consistency and G/PN-Counter scope checked. Exact merge code passes idempotent/commutative/associative and reset-to-retained-maximum counterexample. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.21-workflow-engine.md",
-      "sha256": "6b9939322ae96a4972698fe6942139f6eb55fcfaabe2a385c7b3156629c8e182",
+      "sha256": "8e9d364b75901f4317d3f18641fdcd6ac3b3bc327baac1e411833d47da2ff59a",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17643,19 +17643,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.21-workflow-engine.md",
-        "sha256": "6b9939322ae96a4972698fe6942139f6eb55fcfaabe2a385c7b3156629c8e182",
+        "sha256": "8e9d364b75901f4317d3f18641fdcd6ac3b3bc327baac1e411833d47da2ff59a",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: Durable DAG eligibility and graph completion, stable effect identity versus lease tokens, cancellation, compensation and versioned replay boundary checked. Exact transition fixture passes expected fail/cancel outcomes.",
+        "notes": "Full read: Durable DAG eligibility and graph completion, stable effect identity versus lease tokens, cancellation, compensation and versioned replay boundary checked. Exact transition fixture passes expected fail/cancel outcomes. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.22-real-time-collaboration.md",
-      "sha256": "b24e83b63e45e45b19074e36f80158478830c7f87f0ea24457fdfeb46e937c03",
+      "sha256": "ac6a381f8f05c9ad98aa9dacec288f3f779273b87866bd9602f9b8c3d90e909d",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17681,19 +17681,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.22-real-time-collaboration.md",
-        "sha256": "b24e83b63e45e45b19074e36f80158478830c7f87f0ea24457fdfeb46e937c03",
+        "sha256": "ac6a381f8f05c9ad98aa9dacec288f3f779273b87866bd9602f9b8c3d90e909d",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: Read full Yjs concurrent update, reorder/replay, state-vector repair, storage identity and snapshots; durable save versus peer visibility and revoked offline author boundaries checked against current update API. No provider or speech integration claimed.",
+        "notes": "Full read: Read full Yjs concurrent update, reorder/replay, state-vector repair, storage identity and snapshots; durable save versus peer visibility and revoked offline author boundaries checked against current update API. No provider or speech integration claimed. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.23-typeahead-autocomplete.md",
-      "sha256": "c6811162952f17a2857ab61b63e3e9441a944208471eb0fec3537a36f7550e7e",
+      "sha256": "0a638cdfe7c865171e99a5d2cc5ad485dd4af93aeefb06ffb8b3d68fe77d9686",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17719,19 +17719,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.23-typeahead-autocomplete.md",
-        "sha256": "c6811162952f17a2857ab61b63e3e9441a944208471eb0fec3537a36f7550e7e",
+        "sha256": "0a638cdfe7c865171e99a5d2cc5ad485dd4af93aeefb06ffb8b3d68fe77d9686",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full-content read (2026-11-14): Trace runs query volume to prefix index to ranking to cache; numbers appear where they are used. Recomputed 17,361 queries/s, 52,083 peak and 16.8 GB index; the scale claims hold.",
+        "notes": "Full-content read (2026-11-14): Trace runs query volume to prefix index to ranking to cache; numbers appear where they are used. Recomputed 17,361 queries/s, 52,083 peak and 16.8 GB index; the scale claims hold. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "reviewer": "root",
-        "reviewDate": "2026-11-14",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.md",
-      "sha256": "9ff44f2476b7ee9c12e96d9b29df5de9d52346d6c4748fa5c696d81634a7a834",
+      "sha256": "91541c191601add1618acbe613b4f4434cbb913edacea306885b9c24a15d889d",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17758,19 +17758,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.24-metrics-monitoring-pipeline.md",
-        "sha256": "9ff44f2476b7ee9c12e96d9b29df5de9d52346d6c4748fa5c696d81634a7a834",
+        "sha256": "91541c191601add1618acbe613b4f4434cbb913edacea306885b9c24a15d889d",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: Series identity, cardinality admission, histogram temporality/reset/quantile semantics, durable replay, tenant cache/query budgets and alert lifecycle checked. Capacity/retention and weighted mean arithmetic recomputed; no running Prometheus deployment claimed.",
+        "notes": "Full read: Series identity, cardinality admission, histogram temporality/reset/quantile semantics, durable replay, tenant cache/query budgets and alert lifecycle checked. Capacity/retention and weighted mean arithmetic recomputed; no running Prometheus deployment claimed. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.25-distributed-job-scheduler.md",
-      "sha256": "c231566997870cd994d9a9ef4a8665d71910d77f467083bbab29eef296256564",
+      "sha256": "a4871673592f18ea5ef63c8c751f7689f1eb6fa2c4b5f054928140f9a99eb8f0",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17797,19 +17797,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.25-distributed-job-scheduler.md",
-        "sha256": "c231566997870cd994d9a9ef4a8665d71910d77f467083bbab29eef296256564",
+        "sha256": "a4871673592f18ea5ef63c8c751f7689f1eb6fa2c4b5f054928140f9a99eb8f0",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: Unique occurrence versus attempt, atomic due-claim and DB timestamp boundaries, stale worker fencing scope, DST/misfire and DRR fairness checked. Schema and claim SQL inspected; prior isolated PG fixture evidence remains separate.",
+        "notes": "Full read: Unique occurrence versus attempt, atomic due-claim and DB timestamp boundaries, stale worker fencing scope, DST/misfire and DRR fairness checked. Schema and claim SQL inspected; prior isolated PG fixture evidence remains separate. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.26-distributed-id-generator.md",
-      "sha256": "5d938d91bea95eb1372b6f6aa2dc9e583aba6b2679c2621c47c53ff5266c98c8",
+      "sha256": "6080315ae75b7e774645f4fd4db2d19a5337e6012e619fdb96f2544e570c384e",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17835,19 +17835,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.26-distributed-id-generator.md",
-        "sha256": "5d938d91bea95eb1372b6f6aa2dc9e583aba6b2679c2621c47c53ff5266c98c8",
+        "sha256": "6080315ae75b7e774645f4fd4db2d19a5337e6012e619fdb96f2544e570c384e",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: Packed field capacities, same-ms exhaustion, backward clock, horizon, durable range reservation and stale-owner reuse checked against RFC9562. Exact generator assertions pass Node24, including decoded bits, rollback and exhaustion; no distributed throughput benchmark.",
+        "notes": "Full read: Packed field capacities, same-ms exhaustion, backward clock, horizon, durable range reservation and stale-owner reuse checked against RFC9562. Exact generator assertions pass Node24, including decoded bits, rollback and exhaustion; no distributed throughput benchmark. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.27-ad-click-aggregator.md",
-      "sha256": "a03c9bc1502e33f646beb4c275157217d731f9cd0fb6e9e7fa382d0f722b1564",
+      "sha256": "d60bc280cd4345483f37f73d69fe0ab037a7967d4af3905a87eed535c19dbefc",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17873,19 +17873,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.27-ad-click-aggregator.md",
-        "sha256": "a03c9bc1502e33f646beb4c275157217d731f9cd0fb6e9e7fa382d0f722b1564",
+        "sha256": "d60bc280cd4345483f37f73d69fe0ab037a7967d4af3905a87eed535c19dbefc",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: Trusted producer identity versus lookalike events, exact dedup, watermark correction, versioned snapshot reads and accounting settlement checked. Exact Python model passes replay, changed-input rejection, currency/window and immutable-state cases.",
+        "notes": "Full read: Trusted producer identity versus lookalike events, exact dedup, watermark correction, versioned snapshot reads and accounting settlement checked. Exact Python model passes replay, changed-input rejection, currency/window and immutable-state cases. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.28-parking-lot.md",
-      "sha256": "04f776c512ef24583e6acf00ba0ff6f517f7b40c789e3350a7a74d408998af48",
+      "sha256": "8f74aa0780b39b3c7e6affbe8b30fb9aac1913aeeeb67112034d002cc35db8a3",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17911,19 +17911,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.28-parking-lot.md",
-        "sha256": "04f776c512ef24583e6acf00ba0ff6f517f7b40c789e3350a7a74d408998af48",
+        "sha256": "8f74aa0780b39b3c7e6affbe8b30fb9aac1913aeeeb67112034d002cc35db8a3",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: Live-session ownership versus physical passage, delayed release, tariff version and precise rolling-day arithmetic checked. Exact Python tariff assertions pass; physical hardware and payment providers not exercised.",
+        "notes": "Full read: Live-session ownership versus physical passage, delayed release, tariff version and precise rolling-day arithmetic checked. Exact Python tariff assertions pass; physical hardware and payment providers not exercised. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.29-distributed-cache.md",
-      "sha256": "317dcd6fac0e506d97e52434a234c61f9f2198d9de006df8d6ececb294a78b78",
+      "sha256": "10b33f56eed9846d35bed2c0dc24bbb433d2ddda55ac55ccdc606209346f8979",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17951,19 +17951,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.29-distributed-cache.md",
-        "sha256": "317dcd6fac0e506d97e52434a234c61f9f2198d9de006df8d6ececb294a78b78",
+        "sha256": "10b33f56eed9846d35bed2c0dc24bbb433d2ddda55ac55ccdc606209346f8979",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: Scoped derived-value authority, topology generations, Redis slots/replication, TTL versus source age, stale-fill fence, bounded singleflight and origin-safe outage behavior checked.",
+        "notes": "Full read: Scoped derived-value authority, topology generations, Redis slots/replication, TTL versus source age, stale-fill fence, bounded singleflight and origin-safe outage behavior checked. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md",
-      "sha256": "c3c119cfc76ab2a0eb7b3a6d57d707cb11f93d50538e7628e9016824ec087050",
+      "sha256": "c334cd3e34a7ad3d33ff4be8db066b781c3427eed118d7657f7532d9c9b7c7ab",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -17990,19 +17990,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.30-message-queue.md",
-        "sha256": "c3c119cfc76ab2a0eb7b3a6d57d707cb11f93d50538e7628e9016824ec087050",
+        "sha256": "c334cd3e34a7ad3d33ff4be8db066b781c3427eed118d7657f7532d9c9b7c7ab",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: Retained log partition order versus business effects, ISR/acknowledgment/durability settings, atomic Kafka transaction boundary, poison handling and SQS five-minute dedup scope checked; no actual broker integration.",
+        "notes": "Full read: Retained log partition order versus business effects, ISR/acknowledgment/durability settings, atomic Kafka transaction boundary, poison handling and SQS five-minute dedup scope checked; no actual broker integration. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.31-api-gateway.md",
-      "sha256": "d88f4663296e006d17711d86013679bbff84cc0facb889f8a0db422b90ddbddf",
+      "sha256": "a4f5cde5f6d48706a06cd022cce6101c42114740c57e9d24745db9d3d1f71105",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -18029,19 +18029,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/30.2.2.31-api-gateway.md",
-        "sha256": "d88f4663296e006d17711d86013679bbff84cc0facb889f8a0db422b90ddbddf",
+        "sha256": "a4f5cde5f6d48706a06cd022cce6101c42114740c57e9d24745db9d3d1f71105",
         "genre": "teaching",
         "status": "reviewed",
-        "notes": "Full read: Route normalization and pinning, protected identity propagation versus object authorization, key-refresh budget, timeout-after-write, cancellation, scoped cache and BFF ownership checked.",
+        "notes": "Full read: Route normalization and pinning, protected identity propagation versus object authorization, key-refresh budget, timeout-after-write, cancellation, scoped cache and BFF ownership checked. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/INDEX.md",
-      "sha256": "eb70c71e83fc1f8d2618e4a3538163dbf2a1ea5c5fa371c2f4a6a3715a122ff4",
+      "sha256": "5bd1173223976bb839d92bdf70fa1b28aaf4e30ace3cae078aa993fa0ab656e7",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -18060,19 +18060,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/INDEX.md",
-        "sha256": "eb70c71e83fc1f8d2618e4a3538163dbf2a1ea5c5fa371c2f4a6a3715a122ff4",
+        "sha256": "5bd1173223976bb839d92bdf70fa1b28aaf4e30ace3cae078aa993fa0ab656e7",
         "genre": "index",
         "status": "reviewed",
-        "notes": "Full-content read (2026-11-14): Read end to end; 32 files reconcile as 31 case studies plus one revision companion. One line per row; the reading order note does not re-describe the cases.",
+        "notes": "Full-content read (2026-11-14): Read end to end; 32 files reconcile as 31 case studies plus one revision companion. One line per row; the reading order note does not re-describe the cases. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "reviewer": "root",
-        "reviewDate": "2026-11-14",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.2-system-design/02-case-studies/REVISION.md",
-      "sha256": "4d5ce204d8d79f55b15f93c409adbcfd1c0188d6c3d3451bc0346f3e7a107b72",
+      "sha256": "dcb341b4ddb6a7cf8f795f6f38485d00426f6cff5afd045d2185a126136ac8cd",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -18120,19 +18120,19 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/02-case-studies/REVISION.md",
-        "sha256": "4d5ce204d8d79f55b15f93c409adbcfd1c0188d6c3d3451bc0346f3e7a107b72",
+        "sha256": "dcb341b4ddb6a7cf8f795f6f38485d00426f6cff5afd045d2185a126136ac8cd",
         "genre": "revision",
         "status": "reviewed",
-        "notes": "Full read: Every question and answer across all31cases plus additional traces read. Corrected G-Counter restart answer: max merge retains the larger old slot and masks new increments; it does not erase retained increments. All other retrieval boundaries align with canonical cases.",
+        "notes": "Full read: Every question and answer across all31cases plus additional traces read. Corrected G-Counter restart answer: max merge retains the larger old slot and masks new increments; it does not erase retained increments. All other retrieval boundaries align with canonical cases. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "reviewer": "architecture_toolkit_finish",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true
       }
     },
     {
       "path": "30-architecture/30.2-system-design/INDEX.md",
-      "sha256": "15f085ddbef7e0094c2b5452bbbb5a6f6e57be91a77c9e4098cc49a5ea5aad73",
+      "sha256": "afae2b3acc5500233afc10dfe362fdffcb8527d5c8ea1cd66dafcb98cd052b8a",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -18149,14 +18149,14 @@
       },
       "review": {
         "path": "30-architecture/30.2-system-design/INDEX.md",
-        "sha256": "15f085ddbef7e0094c2b5452bbbb5a6f6e57be91a77c9e4098cc49a5ea5aad73",
+        "sha256": "afae2b3acc5500233afc10dfe362fdffcb8527d5c8ea1cd66dafcb98cd052b8a",
         "genre": "index",
         "status": "reviewed",
-        "notes": "Phase 0 restamp (2026-11-23): read_time.py updated System Design study-time total after 30.2.1.01 rewrite.",
+        "notes": "Phase 0 restamp (2026-11-23): read_time.py updated System Design study-time total after 30.2.1.01 rewrite. | Wave 3C C1-C8 genuine refinement (2026-11-24)",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "root",
-        "reviewDate": "2026-11-23"
+        "reviewDate": "2026-11-24"
       }
     },
     {
@@ -19134,7 +19134,7 @@
     },
     {
       "path": "30-architecture/INDEX.md",
-      "sha256": "93e238d2752c94be72eb55c5490d773c3a38e1282c2323ad31e73129904df38c",
+      "sha256": "dd00b1e893fd530bd52ea2bc5d6f925036e5a63ef1afc485fb1c340ec6209047",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -19151,10 +19151,10 @@
       },
       "review": {
         "path": "30-architecture/INDEX.md",
-        "sha256": "93e238d2752c94be72eb55c5490d773c3a38e1282c2323ad31e73129904df38c",
+        "sha256": "dd00b1e893fd530bd52ea2bc5d6f925036e5a63ef1afc485fb1c340ec6209047",
         "genre": "index",
         "status": "reviewed",
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 3A 30.3-infra-patterns + synced index/docs). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design + synced index/docs, 2026-11-24).",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "root",
@@ -31021,7 +31021,7 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "3881f19b5cabaa5ce417cdd41cece1ed45e726f72124bc5e64839e9f72556754",
+      "sha256": "b065b99d5db0f39cc221e09a7bfe86dbe13b0921e55e7952f4fcab1d1b52ff06",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -31039,12 +31039,12 @@
       },
       "review": {
         "path": "INDEX.md",
-        "sha256": "3881f19b5cabaa5ce417cdd41cece1ed45e726f72124bc5e64839e9f72556754",
+        "sha256": "b065b99d5db0f39cc221e09a7bfe86dbe13b0921e55e7952f4fcab1d1b52ff06",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design + synced index/docs, 2026-11-24).",
         "findings": []
       }
     },
@@ -31118,7 +31118,7 @@
     },
     {
       "path": "contributing.md",
-      "sha256": "0862285820d0f2bd74959d836f7595e8770eb895d26055e45ac4d7b02aad8c58",
+      "sha256": "121dfed7c0d9fe0593835f6f26fde6782474005267194a0a47c5eedfd70b8e24",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31146,12 +31146,12 @@
       },
       "review": {
         "path": "contributing.md",
-        "sha256": "0862285820d0f2bd74959d836f7595e8770eb895d26055e45ac4d7b02aad8c58",
+        "sha256": "121dfed7c0d9fe0593835f6f26fde6782474005267194a0a47c5eedfd70b8e24",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs).",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design + synced index/docs, 2026-11-24).",
         "findings": []
       }
     },
@@ -31624,7 +31624,7 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "7ad5f7de5b31b8e1220a4be5d9e27d89c038231edb8514313b66b5097cd8caed",
+      "sha256": "bcac74d5bab5291f0fff585689ca371f19c30ef74db7f14769854a9517ec5995",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31642,12 +31642,12 @@
       },
       "review": {
         "path": "docs/api-contract.md",
-        "sha256": "7ad5f7de5b31b8e1220a4be5d9e27d89c038231edb8514313b66b5097cd8caed",
+        "sha256": "bcac74d5bab5291f0fff585689ca371f19c30ef74db7f14769854a9517ec5995",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 2 20-backend + synced index/docs). | Wave 3B C1-C8 genuine refinement (2026-11-24)",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design + synced index/docs, 2026-11-24).",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",
@@ -32804,7 +32804,7 @@
     },
     {
       "path": "docs/verification-gates.md",
-      "sha256": "d7b21510e573c1bcb618e49791f33891678881034296153e2594a0f4c5a7a5db",
+      "sha256": "9370c5da09bde3a2d4bc3507c6a9a404d899a0dc70cb22db0210eb7ef6da421b",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32819,12 +32819,12 @@
       },
       "review": {
         "path": "docs/verification-gates.md",
-        "sha256": "d7b21510e573c1bcb618e49791f33891678881034296153e2594a0f4c5a7a5db",
+        "sha256": "9370c5da09bde3a2d4bc3507c6a9a404d899a0dc70cb22db0210eb7ef6da421b",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 2 Batch 2a (2026-11-23): Restamped live counts/read_minutes via check_counts.py (docs/verification-gates.md).",
+        "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design + synced index/docs, 2026-11-24).",
         "findings": []
       }
     },

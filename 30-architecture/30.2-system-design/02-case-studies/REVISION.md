@@ -8,7 +8,7 @@
 
 # Case Studies — Revision
 
-Read the section's learning chapters first. Close them, explain each answer with a concrete failure or tradeoff, then use the source link to check what you missed.
+Read the section's learning chapters first. Close them, explain each answer with a concrete failure or trade-off, then use the source link to check what you missed.
 
 ## URL Shortener System Design
 
@@ -22,7 +22,7 @@ Source: [URL Shortener System Design](30.2.2.01-url-shortener.md)
 
 **A:** The authoritative unique insertion admits one. The other returns a conflict or retries under policy; a lost successful response needs stable request identity, not a new alias allocation.
 
-**Q:** Why can a CDN purge fail to enforce immediate link revocation?
+**Q:** Why can a content delivery network (CDN) purge fail to enforce immediate link revocation?
 
 **A:** A browser may already have cached the redirect and never contact the service or CDN again. The redirect's cache lifetime must fit the revocation promise, or the product must accept that a previously cached destination can remain reachable.
 
@@ -262,7 +262,7 @@ Source: [Hospital Management System Design](30.2.2.10-hospital-management.md)
 
 **A:** It can make the table owner subject to policies, but superusers and roles with `BYPASSRLS` always bypass them. Run application queries as a non-owner role without that attribute and test the tenant policy using the deployed role.
 
-**Q:** Why should an integration name its FHIR release and profile instead of saying only “FHIR”?
+**Q:** Why should an integration name its FHIR release and profile instead of saying only "FHIR"?
 
 **A:** Resource fields, terminology and workflow requirements vary by release and implementation guide. At this review R5 is the current published release while R6 is still in ballot; the partner contract determines the version and profile that the adapter must validate.
 
@@ -566,9 +566,9 @@ Source: [Workflow Engine — System Design Case Study](30.2.2.21-workflow-engine
 
 **A:** Temporal reconstructs workflow state by replaying its event history. Incompatible code can produce different commands for old history, so external I/O belongs in activities and in-flight workflow changes need a compatible versioning strategy. See [Temporal's workflow-definition guidance](https://docs.temporal.io/workflow-definition).
 
-**Q:** Why does a running workflow enter a cancellation-pending state instead of immediately becoming cancelled?
+**Q:** Why does a running workflow enter a cancellation-pending state instead of immediately becoming canceled?
 
-**A:** The workflow must stop scheduling new steps and settle or reconcile active effects first. A remote action may finish after the request or resist cancellation; only then can the engine decide whether to close as cancelled, compensate, or expose an unresolved outcome. See [Temporal's cancellation guidance](https://docs.temporal.io/encyclopedia/workflow/cancellation-and-termination).
+**A:** The workflow must stop scheduling new steps and settle or reconcile active effects first. A remote action may finish after the request or resist cancellation; only then can the engine decide whether to close as canceled, compensate, or expose an unresolved outcome. See [Temporal's cancellation guidance](https://docs.temporal.io/encyclopedia/workflow/cancellation-and-termination).
 
 ## Real-Time Collaboration — System Design Case Study
 
@@ -706,7 +706,7 @@ Source: [Ad Click Aggregator System Design](30.2.2.27-ad-click-aggregator.md)
 
 **A:** A watermark estimates event-time progress; a bounded-out-of-order strategy does not prove that no older event will arrive. Keep the window correctable for the allowed-lateness period and reconcile later arrivals afterward. See [Flink's watermark guidance](https://nightlies.apache.org/flink/flink-docs-stable/docs/dev/datastream/event-time/built_in/).
 
-**Q:** What does “exactly once” mean for a checkpointed stream processor, and what else is needed for the billing sink?
+**Q:** What does "exactly once" mean for a checkpointed stream processor, and what else is needed for the billing sink?
 
 **A:** Checkpoint recovery can make each replayed event affect managed state once. End-to-end effects also require a replayable source and a transactional or idempotent sink; otherwise a retried write can still duplicate an external effect. See [Flink fault tolerance](https://nightlies.apache.org/flink/flink-docs-stable/docs/learn-flink/fault_tolerance/).
 
@@ -776,7 +776,7 @@ Source: [Message Queue System Design](30.2.2.30-message-queue.md)
 
 **Q:** What do `acks=all` and `min.insync.replicas` each require in Kafka?
 
-**A:** `acks=all` waits for every current in-sync replica; `min.insync.replicas` sets the minimum ISR count for an all-acks write to succeed. Neither means every configured replica is available or that all brokers fsynced every record. See [Kafka 4.3 topic configuration](https://kafka.apache.org/43/generated/topic_config.html).
+**A:** `acks=all` waits for every current in-sync replica; `min.insync.replicas` sets the minimum in-sync replica (ISR) count for an all-acks write to succeed. Neither means every configured replica is available or that all brokers fsynced every record. See [Kafka 4.3 topic configuration](https://kafka.apache.org/43/generated/topic_config.html).
 
 **Q:** Is a RabbitMQ publisher confirm the same as a consumer acknowledgment?
 
@@ -828,7 +828,7 @@ Source: [30.2.2.04-netflix](30.2.2.04-netflix.md)
 
 Source: [30.2.2.05-google-drive](30.2.2.05-google-drive.md)
 
-**Q:** Why does parent_id referencing files fail to prevent a folder cycle?
+**Q:** Why does `parent_id` referencing files fail to prevent a folder cycle?
 
 **A:** A foreign key only proves existence. The move authority must check folder type, scope, ancestry and concurrent moves under suitable coordination; otherwise two individually checked moves can create a cycle.
 
@@ -850,12 +850,11 @@ Source: [30.2.2.16-instagram](30.2.2.16-instagram.md)
 
 **A:** It is derived shortlist data. Current visibility, blocking, expiry and deletion must still be checked during hydration and media access, including cache hits.
 
-
 Source: [Ticket booking](30.2.2.08-ticket-booking.md)
 
 **Q:** Why can a valid signed ticket still be rejected at the gate?
 
-**A:** The ticket may already be used, cancelled or outside its event policy. The gate checks current entitlement state and performs the single-use admission transition; signature validity alone does not establish that the ticket remains redeemable.
+**A:** The ticket may already be used, canceled or outside its event policy. The gate checks current entitlement state and performs the single-use admission transition; signature validity alone does not establish that the ticket remains redeemable.
 
 Source: [E-commerce](30.2.2.09-e-commerce.md)
 

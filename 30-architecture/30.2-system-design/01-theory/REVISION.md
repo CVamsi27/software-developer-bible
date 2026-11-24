@@ -8,7 +8,7 @@
 
 # Theory — Revision
 
-Read the section's learning chapters first. Close them, explain each answer with a concrete failure or tradeoff, then use the source link to check what you missed.
+Read the section's learning chapters first. Close them, explain each answer with a concrete failure or trade-off, then use the source link to check what you missed.
 
 ## CAP Theorem & PACELC
 
@@ -38,9 +38,9 @@ Source: [Data Consistency Models](30.2.1.02-consistency-models.md)
 
 **A:** Returning the old value violates read-your-writes if that session was promised its acknowledged change. Route to an authority containing it or wait for B to reach the carried version. Other clients may still observe older data under a weaker contract.
 
-**Q:** Does seeing x=5 and later x=3 always violate monotonic reads?
+**Q:** Does seeing `x = 5` and later `x = 3` always violate monotonic reads?
 
-**A:** No. It violates the guarantee if 3 comes from an older history/version. A newer accepted update can legitimately decrease the value. Compare observed versions, not arithmetic magnitude.
+**A:** No. It violates the guarantee if `3` comes from an older history/version. A newer accepted update can legitimately decrease the value. Compare observed versions, not arithmetic magnitude.
 
 **Q:** A's write finishes before B invokes a read, but B reads the previous value. Which ordering distinction matters?
 
@@ -70,7 +70,6 @@ Source: [Sharding & Replication](30.2.1.03-sharding-and-replication.md)
 
 **A:** It orders accepted writes, but two clients can still overwrite one another without the required transaction or version check. Replication topology does not replace the data invariant.
 
-
 ## Load Balancing
 
 Source: [Load Balancing](30.2.1.04-load-balancing.md)
@@ -91,7 +90,6 @@ Source: [Load Balancing](30.2.1.04-load-balancing.md)
 
 **A:** No. They smooth ownership across many keys; one key still selects one destination. Replicating, caching or splitting that key needs a separate design and consistency contract.
 
-
 ## Caching Patterns
 
 Source: [Caching Patterns](30.2.1.05-caching-patterns.md)
@@ -102,12 +100,11 @@ Source: [Caching Patterns](30.2.1.05-caching-patterns.md)
 
 **Q:** A reader loads v1, a writer commits v2 and deletes the key, then the reader fills v1. What did invalidation miss?
 
-**A:** The delayed fill occurs after deletion. Define an authoritative/versioned fill boundary or an acceptable stale window; successful DEL alone does not order source reads.
+**A:** The delayed fill occurs after deletion. Define an authoritative/versioned fill boundary or an acceptable stale window; successful `DEL` alone does not order source reads.
 
 **Q:** Does a fresh TTL prove that the source value is equally fresh?
 
 **A:** No. The loader may insert an already-old value, and stale-serving policies can extend reuse. TTL bounds an installed entry only under the actual expiry policy.
-
 
 ## Message Queues & Async Patterns
 
@@ -133,7 +130,6 @@ Source: [Message Queues & Async Patterns](30.2.1.06-queues-and-async.md)
 
 **A:** The consumer can start parallel tasks or retry earlier work while later work completes. Control in-flight work and define aggregate versions or a gap policy when effect order matters.
 
-
 ## Distributed Transactions
 
 Source: [Distributed Transactions](30.2.1.07-distributed-transactions.md)
@@ -154,7 +150,6 @@ Source: [Distributed Transactions](30.2.1.07-distributed-transactions.md)
 
 **A:** No. 2PC coordinates a shared commit/abort decision. 2PL constrains lock acquisition and release for concurrency control. A system can combine them, but atomic outcome and isolation are separate obligations.
 
-
 ## Rate Limiting
 
 Source: [Rate Limiting](30.2.1.08-rate-limiting.md)
@@ -165,7 +160,7 @@ Additional sources: [RFC 6585 §4 — 429](https://www.rfc-editor.org/rfc/rfc658
 
 **A:** Each grants capacity without knowing the other's grants. A global contract needs coordination or a documented allocation/approximation strategy.
 
-**Q:** The Redis script starts EXPIRE on the first INCR. Is that a sliding window?
+**Q:** The Redis script starts `EXPIRE` on the first `INCR`. Is that a sliding window?
 
 **A:** No. It is a first-arrival window with one counter until expiry. A true rolling-window log retains timestamps; a weighted two-window counter is approximate.
 
@@ -176,7 +171,6 @@ Additional sources: [RFC 6585 §4 — 429](https://www.rfc-editor.org/rfc/rfc658
 **Q:** Is the `RateLimit` header-field document already an HTTP standard?
 
 **A:** No. The IETF Datatracker currently lists it as an active Internet-Draft with no intended RFC status. Treat those fields as draft until the Datatracker shows publication, and follow each API's documented contract.
-
 
 ## Consensus & Leader Election
 
@@ -202,7 +196,6 @@ Source: [Consensus & Leader Election](30.2.1.09-consensus-and-leader-election.md
 
 **A:** No. It orders committed state changes; replicas can be at different applied positions. Read freshness follows the service's API contract, not merely its broadcast protocol.
 
-
 ## Failure Modes
 
 Source: [Failure Modes](30.2.1.10-failure-modes.md)
@@ -219,10 +212,9 @@ Source: [Failure Modes](30.2.1.10-failure-modes.md)
 
 **A:** Without a reliable failure detector or a bounded-delay assumption, it establishes suspicion. A paused or partitioned process may resume and act. A safe transfer of authority needs the protocol's quorum, epoch or resource-enforced fencing rules, not only a missed heartbeat.
 
+## Architecture Patterns and Boundaries
 
-## Architecture Patterns — Monolith, Microservices, Event-Driven, Hexagonal
-
-Source: [Architecture Patterns — Monolith, Microservices, Event-Driven, Hexagonal](30.2.1.11-architecture-patterns.md)
+Source: [Architecture Patterns and Boundaries](30.2.1.11-architecture-patterns.md)
 
 **Q:** What should justify a microservice boundary beyond a diagram box?
 
@@ -236,10 +228,9 @@ Source: [Architecture Patterns — Monolith, Microservices, Event-Driven, Hexago
 
 **A:** It can test use-case decisions but cannot establish real database locks, constraints, transactional isolation or provider integration.
 
+## Capacity Planning and Back-of-the-Envelope Estimation
 
-## Capacity Planning & Back-of-Envelope Estimation
-
-Source: [Capacity Planning & Back-of-Envelope Estimation](30.2.1.12-capacity-planning.md)
+Source: [Capacity Planning and Back-of-the-Envelope Estimation](30.2.1.12-capacity-planning.md)
 
 **Q:** Why should capacity calculations use peak load and headroom rather than average QPS alone?
 
@@ -247,7 +238,7 @@ Source: [Capacity Planning & Back-of-Envelope Estimation](30.2.1.12-capacity-pla
 
 **Q:** At 10K arrivals/s and 1K completions/s, how long to accumulate 1M messages?
 
-**A:** About 1,000,000÷9,000=111 seconds under constant rates and no shedding. Memory depends on payload and overhead; this is not a universal crash point.
+**A:** About `1,000,000 ÷ 9,000 ≈ 111` seconds under constant rates and no shedding. Memory depends on payload and overhead; this is not a universal crash point.
 
 **Q:** A tested instance serves 1K/s, demand is 35K/s, and one instance may fail. What is the minimum under those assumptions?
 
@@ -256,7 +247,6 @@ Source: [Capacity Planning & Back-of-Envelope Estimation](30.2.1.12-capacity-pla
 **Q:** In the same example, what capacity survives losing any one of three equal zones?
 
 **A:** Place 18 instances in each zone, 54 total. Losing one zone leaves 36 instances, enough for the 35K/s tested demand under the stated assumptions.
-
 
 ## Backpressure and Flow Control
 
@@ -277,7 +267,6 @@ Source: [Backpressure and Flow Control](30.2.1.13-backpressure-and-flow-control.
 **Q:** When does an HTTP overload response actually slow its caller?
 
 **A:** Only when the caller respects the rejection and retry delay. Bound attempts and deadlines, add jitter to spread retries, and make duplicate effects safe.
-
 
 ## Distributed Locks and Coordination
 
@@ -305,7 +294,7 @@ Source: [How to Approach Any System Design Problem](30.2.1.15-how-to-approach.md
 
 **Q:** Why should requirements precede choosing databases in a design interview?
 
-**A:** Required invariants, access patterns and failure behavior determine storage tradeoffs. Choosing products first can produce a design that solves the wrong problem.
+**A:** Required invariants, access patterns and failure behavior determine storage trade-offs. Choosing products first can produce a design that solves the wrong problem.
 
 **Q:** The interviewer adds globally unique custom aliases after you have sketched the redirect path. What should you do next?
 
@@ -350,7 +339,7 @@ Source: [Outbox Pattern & Change Data Capture (CDC)](30.2.1.18-outbox-and-cdc.md
 
 **A:** It commits business data and publication intent together. The relay can still publish and crash before marking sent, so consumers must tolerate duplicate delivery.
 
-**Q:** Why does an autocommit SKIP LOCKED select fail to claim through publication?
+**Q:** Why does an autocommit `SKIP LOCKED` select fail to claim through publication?
 
 **A:** Its transaction ends when the statement finishes, releasing row locks before the broker call. Use one explicit claim transaction or a recoverable owner/lease protocol.
 
@@ -361,7 +350,6 @@ Source: [Outbox Pattern & Change Data Capture (CDC)](30.2.1.18-outbox-and-cdc.md
 **Q:** The API times out while committing the order and outbox row. Is retrying with a new request ID safe?
 
 **A:** No. The commit may have succeeded even though its response was lost. Retry with the same persisted idempotency key and resolve the existing outcome before creating another order or event.
-
 
 ## Resilience Patterns Deep-Dive: Hedging, Load Shedding, Request Coalescing, Deadlines
 
@@ -386,7 +374,6 @@ Source: [Resilience Patterns Deep-Dive: Hedging, Load Shedding, Request Coalesci
 **Q:** A client disconnects while its database operation is still running. When may an active-work admission permit be released?
 
 **A:** After the protected operation settles and releases its resources, including cancellation cleanup. A response `close` event may request cooperative abort but cannot prove the work stopped; releasing then lets repeated disconnects bypass the work limit. Keep the permit in the operation's `finally` path and bound transport buffers separately. See the [load-shedding example](30.2.1.19-resilience-patterns-deep-dive.md#2-refuse-work-the-system-cannot-serve).
-
 
 **Q:** Why install a singleflight promise before invoking the loader?
 
@@ -422,12 +409,11 @@ Source: [Multi-Region Deployment](30.2.1.20-multi-region-deployment.md)
 
 **Q:** A has component 3 and B has 2; merge B twice. What is the count?
 
-**A:** The component-wise maximum remains {A:3,B:2}, total 5. Repeated state delivery does not add B twice.
+**A:** The component-wise maximum remains `{A:3, B:2}`, total 5. Repeated state delivery does not add B twice.
 
 **Q:** Two writers both increment actor A from 3 to 4. Does merge retain both increments?
 
 **A:** No. Maximum yields 4, losing one increment. Each actor component requires one durable monotonic owner; region labels alone do not supply that protocol.
-
 
 ## TCP & UDP Transport Fundamentals
 
@@ -451,7 +437,7 @@ Source: [TCP & UDP Transport Fundamentals](30.2.1.21-tcp-udp-transport-fundament
 
 **Q:** A TCP sender has outstanding data and wants to send more. How do the receive window and congestion window constrain it?
 
-**A:** The amount in flight is bounded by the smaller of rwnd and cwnd: rwnd reflects receiver capacity, while cwnd limits pressure on the network. Check both before diagnosing a stalled sender; see [RFC 9293](https://www.rfc-editor.org/rfc/rfc9293.html) and [RFC 5681](https://www.rfc-editor.org/rfc/rfc5681.html).
+**A:** The amount in flight is bounded by the smaller of `rwnd` and `cwnd`: `rwnd` reflects receiver capacity, while `cwnd` limits pressure on the network. Check both before diagnosing a stalled sender; see [RFC 9293](https://www.rfc-editor.org/rfc/rfc9293.html) and [RFC 5681](https://www.rfc-editor.org/rfc/rfc5681.html).
 
 **Q:** Does HTTP/3 make packet loss irrelevant because its streams are independent?
 
@@ -476,7 +462,6 @@ Source: [DNS & Name Resolution](30.2.1.22-dns-and-name-resolution.md)
 **Q:** A TTL expires. Has the authoritative DNS record disappeared?
 
 **A:** No. Only that cached answer expires. The resolver can refresh from the authoritative record; unavailable or incorrect authority then determines the result.
-
 
 **Q:** SOA TTL is 300 seconds and SOA.MINIMUM is 60. What bounds ordinary negative caching?
 
@@ -524,8 +509,7 @@ Source: [TLS, HTTPS & the Certificate Lifecycle](30.2.1.23-tls-https-and-certifi
 
 **Q:** Does enabling OCSP stapling work for a current Let's Encrypt certificate?
 
-**A:** No. Let's Encrypt ended its OCSP service on 6 August 2025 and supplies CRLs. Revocation configuration must match the issuer and client mechanism.
-
+**A:** No. Let's Encrypt ended its OCSP service on August 6, 2025, and supplies CRLs. Revocation configuration must match the issuer and client mechanism.
 
 **Q:** Does TLS 1.3 resumption always remove a handshake round trip?
 

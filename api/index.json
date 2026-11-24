@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "166bcb44e2ad992d54c88e571be506470e2d6024593572429200249810b118dc",
+ "corpus_digest": "59b83a7a7357e330f3f896e620e1ac121c0cfd4064ec26bc6a4e67e8957df92f",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5385
+  "read_minutes": 5389
  },
  "chapters": [
   {
@@ -4131,7 +4131,7 @@
     "distributed-systems",
     "theory"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "30-architecture/30.2-system-design/01-theory/30.2.1.15-how-to-approach.html",
@@ -4397,7 +4397,7 @@
    "g": [
     "concept"
    ],
-   "m": 14
+   "m": 15
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.15-chat-system.html",
@@ -4417,7 +4417,7 @@
    "g": [
     "concept"
    ],
-   "m": 18
+   "m": 19
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.17-youtube.html",
@@ -4477,7 +4477,7 @@
    "g": [
     "concept"
    ],
-   "m": 10
+   "m": 11
   },
   {
    "p": "30-architecture/30.2-system-design/02-case-studies/30.2.2.23-typeahead-autocomplete.html",

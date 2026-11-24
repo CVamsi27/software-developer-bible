@@ -1,9 +1,9 @@
 # System Design — Index
 
-> **Study time:** ≈ 11 h 1 m of reading (56 files, ~12 min average).
+> **Study time:** ≈ 11 h 5 m of reading (56 files, ~12 min average).
 > **56 files** — split into **theory** (foundational chapters in [01-theory/](01-theory/INDEX.md)) and **case studies** (31 applied examples in [02-case-studies/](02-case-studies/INDEX.md)).
 >
-> Study in three passes: **I. Interview method and workload assumptions** (How to Approach, capacity estimates, network prerequisites as needed) → **II. Theory mechanisms** (CAP → consistency → placement, traffic and recovery) → **III. Case studies** (pick by JD domain).
+> Study in three passes: **I. Interview method and workload assumptions** (How to Approach, capacity estimates, network prerequisites as needed) → **II. Theory mechanisms** (CAP → consistency → placement, traffic and recovery) → **III. Case studies** (pick by job description (JD) domain).
 
 [![Files](https://img.shields.io/badge/files-56-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Architecture-800080)](#)
@@ -16,12 +16,12 @@
 The two sub-folders group the material into six conceptual categories so you can find theory, design methods and applied examples.
 
 | Category | Where | Why it matters |
-| ----------------------------- | -------------------------------------------- | ----------------------------------------------------------------------------------- |
-| **Data & Consistency Theory** | [01-theory/](01-theory/INDEX.md) | CAP/PACELC, consistency, sharding, replication, shared commits, locks and consensus |
-| **Traffic, Scale & Capacity** | [01-theory/](01-theory/INDEX.md) | Load balancing, transport, DNS, TLS, admission, backpressure and capacity |
-| **Performance & Delivery** | [01-theory/](01-theory/INDEX.md) | Caching, queues, approximate data structures, outbox and CDC |
-| **Reliability & Topology** | [01-theory/](01-theory/INDEX.md) | Failure modes, resilience, regions and architecture boundaries |
-| **The Method & Practice** | [01-theory/](01-theory/INDEX.md) | Frame the problem, retrieve concepts, then attempt the separate interview bank |
+| ------------------------------- | -------------------------------------------- | ----------------------------------------------------------------------------------- |
+| **Data and Consistency Theory** | [01-theory/](01-theory/INDEX.md) | CAP/PACELC, consistency, sharding, replication, shared commits, locks and consensus |
+| **Traffic, Scale and Capacity** | [01-theory/](01-theory/INDEX.md) | Load balancing, transport, DNS, TLS, admission, backpressure and capacity |
+| **Performance and Delivery** | [01-theory/](01-theory/INDEX.md) | Caching, queues, approximate data structures, outbox and Change Data Capture (CDC) |
+| **Reliability and Topology** | [01-theory/](01-theory/INDEX.md) | Failure modes, resilience, regions and architecture boundaries |
+| **The Method and Practice** | [01-theory/](01-theory/INDEX.md) | Frame the problem, retrieve concepts, then attempt the separate interview bank |
 | **Applied Case Studies** | [02-case-studies/](02-case-studies/INDEX.md) | Follow an invariant through normal execution, failure and recovery |
 
 ---
@@ -30,7 +30,7 @@ The two sub-folders group the material into six conceptual categories so you can
 
 1. Read the theory's problem-framing and prerequisite flow, then work through mechanisms and focused traces.
 2. Close the learning chapters and use [theory revision](01-theory/REVISION.md), followed by its separate interview prompts.
-3. Choose case studies by the job description (JD): messaging, storage, payments, healthcare, geo/dispatch or media. Trace the stated invariant and recovery path, then use [case revision](02-case-studies/REVISION.md).
+3. Choose case studies by the JD: messaging, storage, payments, healthcare, geo/dispatch or media. Trace the stated invariant and recovery path, then use [case revision](02-case-studies/REVISION.md).
 
 Study-time badges above estimate reading time; solving prompts and implementing experiments take additional time. The diagrams and examples are teaching designs unless a chapter explicitly provides measured implementation evidence.
 
@@ -49,4 +49,4 @@ Study-time badges above estimate reading time; solving prompts and implementing 
 
 ## Navigation
 
-[← Previous: Design Patterns](../30.1-design-patterns/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Docker →](../../40-platform/40.1-docker/INDEX.md)
+[← Previous: Design Patterns](../30.1-design-patterns/INDEX.md) · [Back to Index](../../INDEX.md) · [Next: Docker →](../../40-platform/40.1-docker/INDEX.md)

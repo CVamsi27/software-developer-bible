@@ -1,7 +1,7 @@
 # Measurement
 
-> **Study time:** ≈ 43 min of reading (6 files, ~7 min average).
-> **6 files.** How performance is actually measured: browser Performance APIs, profiling tools, Lighthouse CI in the pipeline, real-user monitoring from production — and how the underlying protocol (HTTP/2 vs HTTP/3) changes what you should optimize.
+> **Study time:** ≈ 44 min of reading (6 files, ~7 min average).
+> **6 files.** How performance is actually measured: browser Performance application programming interfaces (APIs), profiling tools, Lighthouse Continuous Integration (CI) in the pipeline, real-user monitoring from production — and how the underlying protocol (HTTP/2 versus HTTP/3) changes what you should optimize.
 
 [![Files](https://img.shields.io/badge/files-6-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Quality-green)](#)
@@ -9,11 +9,11 @@
 
 ---
 
-## Lab vs field
+## Lab versus field
 
 Laboratory runs control a workload before release; field collection observes sampled real visits. Performance APIs work in both environments. Neither is automatically complete: a lab may omit a route state, while field collection may miss unsupported browsers or consent-restricted visits.
 
-When a lab score looks good but users report delays, verify the affected journey, collection coverage and comparable device/network populations. Trace a representative slow case and test the cause; do not treat a score or an unexamined field aggregate as unquestionable truth.
+When a lab score looks good but users report delays, verify the affected journey, collection coverage, and comparable device and network populations. Trace a representative slow case and test the cause; do not treat a score or an unexamined field aggregate as unquestionable truth.
 
 ---
 
@@ -21,18 +21,18 @@ When a lab score looks good but users report delays, verify the affected journey
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 01 | [Performance APIs](50.3.2.01-performance-apis.md) | `performance` API, Navigation Timing, Resource Timing, PerformanceObserver | Important | Important | 8 min |
-| 02 | [Profiling Tools](50.3.2.02-profiling-tools.md) | Chrome DevTools, Lighthouse, WebPageTest, React Profiler, flame charts | Important | Important | 8 min |
+| 01 | [Performance APIs](50.3.2.01-performance-apis.md) | `performance` API, Navigation Timing, Resource Timing, `PerformanceObserver` | Important | Important | 8 min |
+| 02 | [Profiling Tools](50.3.2.02-profiling-tools.md) | Chrome DevTools, Lighthouse, WebPageTest, React Profiler, flame charts | Important | Important | 9 min |
 | 03 | [Lighthouse CI](50.3.2.03-lighthouse-ci.md) | Automated audits, budgets, score tracking, CI/CD integration | Important | Important | 6 min |
-| 04 | [Real User Monitoring](50.3.2.04-real-user-monitoring.md) | RUM, `web-vitals` library, `sendBeacon`, CrUX, segmentation | Important | Important | 10 min |
-| 05 | [HTTP/2 & HTTP/3 Performance Effects](50.3.2.05-http2-http3-performance-effects.md) | Multiplexing, TCP head-of-line blocking, QUIC, 0-RTT, connection migration, sharding anti-patterns, CWV impact | Important | Important | 8 min |
+| 04 | [Real User Monitoring](50.3.2.04-real-user-monitoring.md) | Real User Monitoring (RUM), `web-vitals` library, `sendBeacon`, Chrome User Experience Report (CrUX), segmentation | Important | Important | 10 min |
+| 05 | [HTTP/2 & HTTP/3 Performance Effects](50.3.2.05-http2-http3-performance-effects.md) | Multiplexing, Transmission Control Protocol (TCP) head-of-line blocking, QUIC, 0-RTT, connection migration, sharding anti-patterns, Core Web Vitals (CWV) impact | Important | Important | 8 min |
 
 ---
 
 ## Suggested flow
 
 1. **Performance APIs** — match each question to browser-owned or application-owned timing
-2. **Profiling Tools** — connect one visible delay to CPU, rendering or network work
+2. **Profiling Tools** — connect one visible delay to central processing unit (CPU), rendering, or network work
 3. **Lighthouse CI** — make a repeatable laboratory regression fail before release
 4. **Real User Monitoring** — test whether the issue affects comparable production populations
 5. **HTTP/2 & HTTP/3 Effects** — interpret protocol observations without mistaking capability for a measured win

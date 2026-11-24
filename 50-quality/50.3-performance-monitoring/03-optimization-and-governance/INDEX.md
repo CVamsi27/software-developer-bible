@@ -20,7 +20,7 @@ A page can become slower as each sprint adds more code and assets. A performance
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
 | 01 | [Bundle Analysis](50.3.3.01-bundle-analysis.md) | Bundle size, tree shaking, code splitting, bundlephobia, source-map-explorer | Important | Important | 8 min |
-| 02 | [Performance Budgets](50.3.3.02-performance-budgets.md) | artifact and route budgets, CI enforcement, explicit units, valid inputs and exception ownership | Important | Important | 7 min |
+| 02 | [Performance Budgets](50.3.3.02-performance-budgets.md) | Artifact and route budgets, CI enforcement, explicit units, valid inputs, and exception ownership | Important | Important | 7 min |
 
 ---
 
@@ -34,14 +34,14 @@ Measure shipped assets and field outcomes
             → Recheck the affected journey in lab and field
 ```
 
-Choose independent boundaries: initial JavaScript, route-loaded chunks, CSS, third-party scripts and user metrics such as field LCP. Use an appropriate gate for each measurement.
+Choose independent boundaries: initial JavaScript, route-loaded chunks, Cascading Style Sheets (CSS), third-party scripts, and user metrics such as field Largest Contentful Paint (LCP). Use an appropriate gate for each measurement.
 
 ---
 
 ## Learning passes
 
-1. Read bundle analysis and run the eager/lazy fixture. Explain both requested assets and export retention.
-2. Read performance budgets and test a legitimate pass, an aggregate breach and missing inputs.
+1. Read bundle analysis and run the eager and lazy fixture. Explain both requested assets and export retention.
+2. Read performance budgets and test a legitimate pass, an aggregate breach, and missing inputs.
 3. Close the chapters and complete [revision](REVISION.md) before the [interview bank](../04-interview-prep/50.3.4.01-interview-questions.md). State the measured boundary and its limits in each answer.
 
 ## Cross-References
@@ -62,11 +62,11 @@ Choose independent boundaries: initial JavaScript, route-loaded chunks, CSS, thi
 [Docita](https://github.com/CVamsi27/docita) is a companion source repository for this Bible. The paths below are inspection pointers; verify their current code and results before claiming tested behavior.
 
 | Topic | Docita evidence |
-| ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------ |
 | Route budgets as config, not folklore | `scripts/perf/route-budgets.config.mjs` + `check-route-budgets.mjs` |
-| Budget enforcement scripts (perf / vitals / a11y) | `check-perf-budget.mjs`, `check-web-vitals-budget.mjs`, `check-a11y-budget.mjs` under `scripts/perf/` |
+| Budget enforcement scripts (performance, Core Web Vitals, accessibility) | `check-perf-budget.mjs`, `check-web-vitals-budget.mjs`, `check-a11y-budget.mjs` under `scripts/perf/` |
 | Breach alerting | `apps/api/src/shared/modules/monitoring/monitoring/listeners/ops-alert.listener.ts` + `ops-alert.service.ts` |
-| SLOs written down | `docs/operations/SLOS.md` |
+| Service Level Objectives (SLOs) written down | `docs/operations/SLOS.md` |
 
 ## Finish This Section
 

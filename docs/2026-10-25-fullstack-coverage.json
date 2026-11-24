@@ -25297,7 +25297,7 @@
     },
     {
       "path": "50-quality/50.2-accessibility/50.2.01-wcag-overview.md",
-      "sha256": "b76e19060f5f6bd121f6e4e42886ee687fd7dc03b883a9402a0afbdb6692d811",
+      "sha256": "80187f995f44f9e754449981df68c91fe3551de9a6d4ab4979abe3d3994b5172",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -25319,18 +25319,18 @@
       },
       "review": {
         "path": "50-quality/50.2-accessibility/50.2.01-wcag-overview.md",
-        "sha256": "b76e19060f5f6bd121f6e4e42886ee687fd7dc03b883a9402a0afbdb6692d811",
+        "sha256": "80187f995f44f9e754449981df68c91fe3551de9a6d4ab4979abe3d3994b5172",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-14",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content read (2026-11-14): Opens on a colour-only error, then applies POUR to that one booking form throughout. Four sections, each answering one question about the same example; no section re-lists the principles.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 85 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "50-quality/50.2-accessibility/50.2.02-aria.md",
-      "sha256": "40f809cc1603ef76b6e8dda5384a9c971d1e3ff03ed1bc080ceb9b29eeb0164e",
+      "sha256": "5f95764e08f93d34b23d8294d85d2513bb73371f6f8cdca07dcc8fb6e4a41a59",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -25352,18 +25352,18 @@
       },
       "review": {
         "path": "50-quality/50.2-accessibility/50.2.02-aria.md",
-        "sha256": "40f809cc1603ef76b6e8dda5384a9c971d1e3ff03ed1bc080ceb9b29eeb0164e",
+        "sha256": "5f95764e08f93d34b23d8294d85d2513bb73371f6f8cdca07dcc8fb6e4a41a59",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Checked native semantics, computed name, hidden/inert distinctions and informative APG boundaries. Exact disclosure fixture passed actual Tab, Enter, Space and hidden-panel checks in Chromium 153.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 115 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "50-quality/50.2-accessibility/50.2.03-keyboard-navigation.md",
-      "sha256": "00f5ee8ca9357e2f20f77433010082e32fce885a681977faf19aa48ccaabc3a2",
+      "sha256": "33c6f5eaddf818728193277bfc3a30d72da20ce66c780b7922ee9380aa859ef0",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -25386,18 +25386,18 @@
       },
       "review": {
         "path": "50-quality/50.2-accessibility/50.2.03-keyboard-navigation.md",
-        "sha256": "00f5ee8ca9357e2f20f77433010082e32fce885a681977faf19aa48ccaabc3a2",
+        "sha256": "33c6f5eaddf818728193277bfc3a30d72da20ce66c780b7922ee9380aa859ef0",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Checked manual activation, roving focus, selected state and removal/modal lifecycle. Exact tabs and native dialog passed real keyboard focus, selection, background blocking, Escape and trigger restoration checks.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 189 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "50-quality/50.2-accessibility/50.2.04-color-and-contrast.md",
-      "sha256": "afc16c7151f7ed17e5b0637b121c6d567a96ff8a38bf1abd68c2dc2f570c19a1",
+      "sha256": "b093109bc6ca977d4c1a64b15a1e61105d0169282680f06e5651148e2fa78491",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -25419,18 +25419,18 @@
       },
       "review": {
         "path": "50-quality/50.2-accessibility/50.2.04-color-and-contrast.md",
-        "sha256": "afc16c7151f7ed17e5b0637b121c6d567a96ff8a38bf1abd68c2dc2f570c19a1",
+        "sha256": "b093109bc6ca977d4c1a64b15a1e61105d0169282680f06e5651148e2fa78491",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Checked criterion scope, large/non-text boundaries, unrounded threshold, forced colors and themes. Exact contrast function passed symmetry, invalid formats and both theme foreground/focus pairs.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 144 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "50-quality/50.2-accessibility/50.2.05-forms-and-labels.md",
-      "sha256": "2a2861d6349e7ff083b3ed0e0caadc82f8c37b5e1febf840a775432a676e0457",
+      "sha256": "c4b665bac47da536d034328ade96ddcbdf6f539b5583ac3602a7a85dc4865565",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -25453,18 +25453,18 @@
       },
       "review": {
         "path": "50-quality/50.2-accessibility/50.2.05-forms-and-labels.md",
-        "sha256": "2a2861d6349e7ff083b3ed0e0caadc82f8c37b5e1febf840a775432a676e0457",
+        "sha256": "c4b665bac47da536d034328ade96ddcbdf6f539b5583ac3602a7a85dc4865565",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Repaired the opening error example to associate both hint and error IDs. Exact full fixture passed empty submission, summary focus, linked field recovery, corrected descriptions and explicit client-only success status.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 192 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.md",
-      "sha256": "a0d61fa59cb69dc88133043cb7d02d91e38a7d982b5f6867b140a3ac2949dc4e",
+      "sha256": "d67656e1287d57e604d3b5118c926695cbb9146d263ba9aaced42e8848f91d5c",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -25487,18 +25487,18 @@
       },
       "review": {
         "path": "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.md",
-        "sha256": "a0d61fa59cb69dc88133043cb7d02d91e38a7d982b5f6867b140a3ac2949dc4e",
+        "sha256": "d67656e1287d57e604d3b5118c926695cbb9146d263ba9aaced42e8848f91d5c",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Checked all positive-quarter SVG/table calculations, same-array summary, 58.3 percent growth, atomic image boundary and equivalent filtering/interaction requirements. Screen-reader speech was not exercised.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 160 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "50-quality/50.2-accessibility/50.2.07-accessibility-design-systems.md",
-      "sha256": "0af19981b45504b6db62a36a2fd8365ca1a6c0f092adc716eda377fed9bbbd76",
+      "sha256": "e7c16a84cf42361cba0e1db999b766eea047f05d792bd2b89036c7454770f767",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -25520,18 +25520,18 @@
       },
       "review": {
         "path": "50-quality/50.2-accessibility/50.2.07-accessibility-design-systems.md",
-        "sha256": "0af19981b45504b6db62a36a2fd8365ca1a6c0f092adc716eda377fed9bbbd76",
+        "sha256": "e7c16a84cf42361cba0e1db999b766eea047f05d792bd2b89036c7454770f767",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Checked primitive versus consumer responsibility, Radix local action boundary, paired theme tokens, lint limits, adoption/version contracts and journey acceptance evidence.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 120 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "50-quality/50.2-accessibility/50.2.08-testing-a11y.md",
-      "sha256": "3f6f9839f984df35c6672eab5c1b77a66ce932b0705a3283e80fdde631a1217a",
+      "sha256": "e7e5d7fc77942e885589c08e5563f47dfefc892727b89847263f4943af252891",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -25553,18 +25553,18 @@
       },
       "review": {
         "path": "50-quality/50.2-accessibility/50.2.08-testing-a11y.md",
-        "sha256": "3f6f9839f984df35c6672eab5c1b77a66ce932b0705a3283e80fdde631a1217a",
+        "sha256": "e7e5d7fc77942e885589c08e5563f47dfefc892727b89847263f4943af252891",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Checked the complete audit script, cleanup, nonzero errors/violations, incomplete-results review, real input versus programmatic focus and manual evaluation scope. Browser fixture interaction passed; assistive-technology speech and full conformance were not claimed.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 143 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "50-quality/50.2-accessibility/50.2.09-interview-questions.md",
-      "sha256": "d7a535ae9c00d71d0ebf3ab46ec5b22f7cca51aee11079ced97544b479dcf903",
+      "sha256": "6f399b2b65886c3520b7005d57947615b2ae2972bee1af2b5300409e91062167",
       "genre": "interview-bank",
       "status": "reviewed",
       "structure": {
@@ -25582,18 +25582,18 @@
       },
       "review": {
         "path": "50-quality/50.2-accessibility/50.2.09-interview-questions.md",
-        "sha256": "d7a535ae9c00d71d0ebf3ab46ec5b22f7cca51aee11079ced97544b479dcf903",
+        "sha256": "6f399b2b65886c3520b7005d57947615b2ae2972bee1af2b5300409e91062167",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Read all 25 answers and probes. Checked WCAG 2.2 target, authentication/error prevention, reflow, chart tasks, modal recovery, third-party process and evidence qualifications against source chapters.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 208 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "50-quality/50.2-accessibility/INDEX.md",
-      "sha256": "3bc29c68397ede934eba161867978e490aa8d63c7411f63fee70f35d596f6668",
+      "sha256": "323993a56688deb20dbd9c87bae1f7568748878d5b4b02abe9b33dd1833accc6",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -25610,18 +25610,18 @@
       },
       "review": {
         "path": "50-quality/50.2-accessibility/INDEX.md",
-        "sha256": "3bc29c68397ede934eba161867978e490aa8d63c7411f63fee70f35d596f6668",
+        "sha256": "323993a56688deb20dbd9c87bae1f7568748878d5b4b02abe9b33dd1833accc6",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Checked staged learning order, revision before interview, all chapter coverage and source-only Docita pointers. Counts and times remain writer-owned metadata.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 44 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "50-quality/50.2-accessibility/REVISION.md",
-      "sha256": "da32a57d0ae28879c2a842d10f454d53c5f4cbcc150a5954e74a56b63f410648",
+      "sha256": "b115df2fcbf4d479d29a9df97a1398d7142a76b986a2e3ce045f9601d18d2dd0",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -25645,18 +25645,18 @@
       },
       "review": {
         "path": "50-quality/50.2-accessibility/REVISION.md",
-        "sha256": "da32a57d0ae28879c2a842d10f454d53c5f4cbcc150a5954e74a56b63f410648",
+        "sha256": "b115df2fcbf4d479d29a9df97a1398d7142a76b986a2e3ce045f9601d18d2dd0",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Checked every source-linked question group against the actual chapter behavior, including corrected descriptions, chart values, focus/selection and conformance limits.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 155 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "50-quality/50.3-performance-monitoring/01-core-metrics/50.3.1.01-core-web-vitals.md",
-      "sha256": "5607de0a8707623e78c979e52940bd8141749900c440b49055c0d39d58ed96e9",
+      "sha256": "88aac7cd962b223b45b1d5fd81d45db54766eb9165ba89c6d1441b4ecc21aabd",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -25681,18 +25681,18 @@
       },
       "review": {
         "path": "50-quality/50.3-performance-monitoring/01-core-metrics/50.3.1.01-core-web-vitals.md",
-        "sha256": "5607de0a8707623e78c979e52940bd8141749900c440b49055c0d39d58ed96e9",
+        "sha256": "88aac7cd962b223b45b1d5fd81d45db54766eb9165ba89c6d1441b4ecc21aabd",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Checked LCP candidates, near-worst INP, CLS session windows, cutoff equality and missing data, fixed estimator/population and library lifecycle/value versus delta. Exact distribution fixture passed threshold, invalid input, p75 and nonmutation assertions; official INP/CLS definitions rechecked.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 153 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "50-quality/50.3-performance-monitoring/01-core-metrics/INDEX.md",
-      "sha256": "ddb79d79502a702ce16e16b66498dab3a9d38154c913d110acc551c4bcfc46f4",
+      "sha256": "4965cfb01883f1270e51b942e6d151fdba661eabcf658a5c4fe574405ab89eba",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -25713,18 +25713,18 @@
       },
       "review": {
         "path": "50-quality/50.3-performance-monitoring/01-core-metrics/INDEX.md",
-        "sha256": "ddb79d79502a702ce16e16b66498dab3a9d38154c913d110acc551c4bcfc46f4",
+        "sha256": "4965cfb01883f1270e51b942e6d151fdba661eabcf658a5c4fe574405ab89eba",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Checked learning flow, chapter links, separate revision before interview, unit/population distinctions and source-only Docita reading pointers. Count/time fields are generated metadata.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 68 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "50-quality/50.3-performance-monitoring/01-core-metrics/REVISION.md",
-      "sha256": "63723f3d3152a54c84127a7500f61a000f5ef888f9414b6ebb5d0f0d061186e4",
+      "sha256": "2aaad2220dfbce4246cc327618e53ce400821155915a65553375b1d16a3b9d52",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -25742,18 +25742,18 @@
       },
       "review": {
         "path": "50-quality/50.3-performance-monitoring/01-core-metrics/REVISION.md",
-        "sha256": "63723f3d3152a54c84127a7500f61a000f5ef888f9414b6ebb5d0f0d061186e4",
+        "sha256": "2aaad2220dfbce4246cc327618e53ce400821155915a65553375b1d16a3b9d52",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Checked every source-linked retrieval question against the chapter mechanism, runtime boundary and changed-condition reasoning.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 79 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.01-performance-apis.md",
-      "sha256": "6b3d0977aced675fb72eca1d8ac04ae3fc18a055001d99f1bbe50342ddb0f5fb",
+      "sha256": "aadffb10c4b0d70589cd51900bfdb7919d3d52996b50f35b503a6bdbf4a4477d",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -25776,18 +25776,18 @@
       },
       "review": {
         "path": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.01-performance-apis.md",
-        "sha256": "6b3d0977aced675fb72eca1d8ac04ae3fc18a055001d99f1bbe50342ddb0f5fb",
+        "sha256": "aadffb10c4b0d70589cd51900bfdb7919d3d52996b50f35b503a6bdbf4a4477d",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Checked modern navigation entries, reused/restricted phases, monotonic clock, concurrent marks, observer ownership and raw-entry versus complete metric limits. Exact timing helper passed concurrent labels, preserved operation rejection when reporting throws and owned-entry cleanup.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 179 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.md",
-      "sha256": "741fea62ec2ef1a8c2510d098e7e36954015540f2d5f6fb525f75469ab282754",
+      "sha256": "abeb054b9c76213efe56c0524e39d24c8dd274a4b4ee817250f19d7e71443b9a",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -25810,18 +25810,18 @@
       },
       "review": {
         "path": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.md",
-        "sha256": "741fea62ec2ef1a8c2510d098e7e36954015540f2d5f6fb525f75469ab282754",
+        "sha256": "abeb054b9c76213efe56c0524e39d24c8dd274a4b4ee817250f19d7e71443b9a",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Checked total versus self time, overlapping requests, layout write/read mechanism, exact React Profiler callback contract and profiling-build boundary, retaining paths and measurement overhead. The full layout fixture was inspected; no performance speedup or memory-leak measurement claimed.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 190 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.03-lighthouse-ci.md",
-      "sha256": "180e894e2536322bb5de6f58dbfc33067ba9373d33e64c4500f1ed6edcd994ae",
+      "sha256": "0a7378b76ac72c60da70350f36e2d8cb85901ccfa84883d9d924b28742cb55bd",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -25844,18 +25844,18 @@
       },
       "review": {
         "path": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.03-lighthouse-ci.md",
-        "sha256": "180e894e2536322bb5de6f58dbfc33067ba9373d33e64c4500f1ed6edcd994ae",
+        "sha256": "0a7378b76ac72c60da70350f36e2d8cb85901ccfa84883d9d924b28742cb55bd",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Checked full static fixture/configuration, collect/assert/upload responsibilities, median/error/warn behavior, required exit status and route/auth identity against current official LHCI configuration. Lighthouse was not run and no production timing pass is inferred.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 150 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.04-real-user-monitoring.md",
-      "sha256": "f1820d4449c8b0e51cb436c31e2a50604c369efa995583d879f7dbc1f9ad72b6",
+      "sha256": "f31284f2f24b9c093ed4663f0983091028a0c4f9eda8e81e7c8302b52eb7ce45",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -25879,18 +25879,18 @@
       },
       "review": {
         "path": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.04-real-user-monitoring.md",
-        "sha256": "f1820d4449c8b0e51cb436c31e2a50604c369efa995583d879f7dbc1f9ad72b6",
+        "sha256": "f31284f2f24b9c093ed4663f0983091028a0c4f9eda8e81e7c8302b52eb7ce45",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Checked uniform visit sampling, bounded reporter, metric identity and ordering, durable versus queued acceptance, CrUX population and missing coverage. Exact reporter and actual loopback HTTP ingest passed limits, update/replay ordering, invalid input, method/path and capacity admission checks; local storage remains ephemeral.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 205 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.md",
-      "sha256": "3b8d8a11ccd8e2e3fd7b35db3b1141e08176a067031ca69336d3689ad0ae160e",
+      "sha256": "d1e4eb6acd29a5bcec6a2d19b030ca4f3a5f527f78c626208da542125bf7372b",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -25913,23 +25913,23 @@
       },
       "review": {
         "path": "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.md",
-        "sha256": "3b8d8a11ccd8e2e3fd7b35db3b1141e08176a067031ca69336d3689ad0ae160e",
+        "sha256": "d1e4eb6acd29a5bcec6a2d19b030ca4f3a5f527f78c626208da542125bf7372b",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Checked TCP versus QUIC per-stream ordering, shared loss/congestion/compression dependencies, resumption/replay/migration, observed hop, conditional NGINX excerpt and rollout population. No network benchmark or edge deployment claimed.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 153 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "50-quality/50.3-performance-monitoring/02-measurement/INDEX.md",
-      "sha256": "436f5f6c505412a46cb3a2f792d88df4246b0a198578a3f09cf0c2350f2c6c53",
+      "sha256": "34f97031442863fef476a14054c6a200f83668c9f3246ec9c30dd8f682a52313",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
         "headings": [
-          "Lab vs field",
+          "Lab versus field",
           "The 5 files",
           "Suggested flow",
           "Cross-References",
@@ -25944,18 +25944,18 @@
       },
       "review": {
         "path": "50-quality/50.3-performance-monitoring/02-measurement/INDEX.md",
-        "sha256": "436f5f6c505412a46cb3a2f792d88df4246b0a198578a3f09cf0c2350f2c6c53",
+        "sha256": "34f97031442863fef476a14054c6a200f83668c9f3246ec9c30dd8f682a52313",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Checked learning flow, chapter links, separate revision before interview, unit/population distinctions and source-only Docita reading pointers. Count/time fields are generated metadata.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 69 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "50-quality/50.3-performance-monitoring/02-measurement/REVISION.md",
-      "sha256": "d2e172273d2b700cf327f06ce0e76ba742bfce8b92c0ad55fba5423df5e89f86",
+      "sha256": "a3b7107af0ca38b16f91fdd29d8325ff598409db6229db0c69bb91941d23ea8c",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -25976,18 +25976,18 @@
       },
       "review": {
         "path": "50-quality/50.3-performance-monitoring/02-measurement/REVISION.md",
-        "sha256": "d2e172273d2b700cf327f06ce0e76ba742bfce8b92c0ad55fba5423df5e89f86",
+        "sha256": "a3b7107af0ca38b16f91fdd29d8325ff598409db6229db0c69bb91941d23ea8c",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Checked every source-linked retrieval question against the chapter mechanism, runtime boundary and changed-condition reasoning.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 123 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.01-bundle-analysis.md",
-      "sha256": "e19fc9d55f42422cfcfdb4d46c923b441624c7c103c0867c8f2c37d8bdae0910",
+      "sha256": "b1f2f6cbe90974a70e7b7e99ab4e4989fcb900ec7271cf1e5e858dc1e6fe1032",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -26010,18 +26010,18 @@
       },
       "review": {
         "path": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.01-bundle-analysis.md",
-        "sha256": "e19fc9d55f42422cfcfdb4d46c923b441624c7c103c0867c8f2c37d8bdae0910",
+        "sha256": "b1f2f6cbe90974a70e7b7e99ab4e4989fcb900ec7271cf1e5e858dc1e6fe1032",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Checked complete esbuild eager/lazy source/build/HTML fixture, metadata persistence, runtime import retention and request boundary, tree-shaking side effects, analyzer integration and chunk failure recovery. No new bundler execution or universal byte saving inferred.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 185 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.02-performance-budgets.md",
-      "sha256": "f4cc8b50b359847647538da2936578af5ce8b6b11126a0d687b83a4f9b0252e7",
+      "sha256": "5593068e313438201ea49b7f2869843df090851233dc3ad85442b6a18fb437d9",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -26045,18 +26045,18 @@
       },
       "review": {
         "path": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.02-performance-budgets.md",
-        "sha256": "f4cc8b50b359847647538da2936578af5ce8b6b11126a0d687b83a4f9b0252e7",
+        "sha256": "5593068e313438201ea49b7f2869843df090851233dc3ad85442b6a18fb437d9",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Checked route/asset/field boundaries, explicit bytes/compression, input validation, inclusive bounds and enforced exit. Exact checker passed equality, aggregate and individual breach, missing/empty/duplicate assets and invalid limit cases using actual gzip output.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 158 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/INDEX.md",
-      "sha256": "3528a8269817c501d0c3ffb121bc75b699f36b9cc73fa461a7813c71ec7e61cb",
+      "sha256": "725b939e2538c18fd1d4fc8c4ce2dd7e7f80a894346bde042da4c27db04fec67",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -26077,18 +26077,18 @@
       },
       "review": {
         "path": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/INDEX.md",
-        "sha256": "3528a8269817c501d0c3ffb121bc75b699f36b9cc73fa461a7813c71ec7e61cb",
+        "sha256": "725b939e2538c18fd1d4fc8c4ce2dd7e7f80a894346bde042da4c27db04fec67",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Checked learning flow, chapter links, separate revision before interview, unit/population distinctions and source-only Docita reading pointers. Count/time fields are generated metadata.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 73 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/REVISION.md",
-      "sha256": "747eccc98b5603437b23bb6d944291c24b29e02663c269385cdc9e36739af548",
+      "sha256": "551131dcda67ab68890660945e986a178fa43db792bd25cb143d5b935c139651",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -26106,18 +26106,18 @@
       },
       "review": {
         "path": "50-quality/50.3-performance-monitoring/03-optimization-and-governance/REVISION.md",
-        "sha256": "747eccc98b5603437b23bb6d944291c24b29e02663c269385cdc9e36739af548",
+        "sha256": "551131dcda67ab68890660945e986a178fa43db792bd25cb143d5b935c139651",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Checked every source-linked retrieval question against the chapter mechanism, runtime boundary and changed-condition reasoning.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 71 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "50-quality/50.3-performance-monitoring/04-interview-prep/50.3.4.01-interview-questions.md",
-      "sha256": "5670da7ffbda0a5154652e0a2025222ff2c707d3f8c71786116b93b18e1fb40e",
+      "sha256": "9a9652bca9f104038e661bfb8e43a1b5a9becc6fd557aa8081ecded25412a6d3",
       "genre": "interview-bank",
       "status": "reviewed",
       "structure": {
@@ -26137,18 +26137,18 @@
       },
       "review": {
         "path": "50-quality/50.3-performance-monitoring/04-interview-prep/50.3.4.01-interview-questions.md",
-        "sha256": "5670da7ffbda0a5154652e0a2025222ff2c707d3f8c71786116b93b18e1fb40e",
+        "sha256": "9a9652bca9f104038e661bfb8e43a1b5a9becc6fd557aa8081ecded25412a6d3",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Read all 30 answers and changed-condition probes, checked against canonical metric/measurement/budget chapters. Recomputed billion events/day and fivefold burst arithmetic; preserved task, population, unknown data and causal-evidence boundaries.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 302 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "50-quality/50.3-performance-monitoring/04-interview-prep/INDEX.md",
-      "sha256": "fac4c5237e61bee79142cfa1c0a6a5adb0e6c7f15e661971a7c1f1016a857bbc",
+      "sha256": "3acf3d1d60b2cdd480e5ae675f80d756f36bacdff51dd0d0204888cbc4e1f512",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -26168,18 +26168,18 @@
       },
       "review": {
         "path": "50-quality/50.3-performance-monitoring/04-interview-prep/INDEX.md",
-        "sha256": "fac4c5237e61bee79142cfa1c0a6a5adb0e6c7f15e661971a7c1f1016a857bbc",
+        "sha256": "3acf3d1d60b2cdd480e5ae675f80d756f36bacdff51dd0d0204888cbc4e1f512",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Checked learning flow, chapter links, separate revision before interview, unit/population distinctions and source-only Docita reading pointers. Count/time fields are generated metadata.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 62 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "50-quality/50.3-performance-monitoring/INDEX.md",
-      "sha256": "0317a0f69400e141dd5e30576df788555ec2cff9570f4f2ff49c878ff36e3de8",
+      "sha256": "2bd5caac71160d932e1ba0e3f481e405bb5135cf88e36b5d991663b65ca728fd",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -26201,18 +26201,18 @@
       },
       "review": {
         "path": "50-quality/50.3-performance-monitoring/INDEX.md",
-        "sha256": "0317a0f69400e141dd5e30576df788555ec2cff9570f4f2ff49c878ff36e3de8",
+        "sha256": "2bd5caac71160d932e1ba0e3f481e405bb5135cf88e36b5d991663b65ca728fd",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-25",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review: Checked learning flow, chapter links, separate revision before interview, unit/population distinctions and source-only Docita reading pointers. Count/time fields are generated metadata.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 105 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
     {
       "path": "50-quality/50.4-production-engineering/50.4.01-incident-response.md",
-      "sha256": "9b253b0bbb0d5b13854759dd637b4c7fcc62d4ce5042439ca0766b8a9c6991f2",
+      "sha256": "85f93535751c0f469666a37f0e65835db904c5801c38b2deb67e757af30cc358",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -26237,19 +26237,19 @@
       },
       "review": {
         "path": "50-quality/50.4-production-engineering/50.4.01-incident-response.md",
-        "sha256": "9b253b0bbb0d5b13854759dd637b4c7fcc62d4ce5042439ca0766b8a9c6991f2",
+        "sha256": "85f93535751c0f469666a37f0e65835db904c5801c38b2deb67e757af30cc358",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Checked commander/operations/communication ownership, scope versus diagnosis, rollback compatibility and external-write uncertainty, read-only pg_stat_activity diagnostics/privilege limits, active versus idle/idle-in-transaction, fleet pool connection exposure, evidence-preserving security escalation, verified customer recovery and owned measurable postmortem actions.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 167 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "50-quality/50.4-production-engineering/50.4.02-sli-slo-error-budgets.md",
-      "sha256": "727bf70250e2d4a1fd6c4838d7cf34a1e4d5e24db30ce870f375397c0b816f8f",
+      "sha256": "86ff5fafe46d1cf4c0188480f4390803f2295eb79dd6725cf274a5d0a2db69b6",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -26271,17 +26271,17 @@
       },
       "review": {
         "path": "50-quality/50.4-production-engineering/50.4.02-sli-slo-error-budgets.md",
-        "sha256": "727bf70250e2d4a1fd6c4838d7cf34a1e4d5e24db30ce870f375397c0b816f8f",
+        "sha256": "86ff5fafe46d1cf4c0188480f4390803f2295eb79dd6725cf274a5d0a2db69b6",
         "status": "reviewed",
         "reviewer": "root-continuation",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full reread: exact integer exhaustion helper, population/window coverage, request versus elapsed budget, actual alert-window contribution versus comparable-traffic forecast, 720 failures of 1000 allowance equals72percent, PromQL population and policy authority. Previously executed arithmetic fixture is retained; no Prometheus integration or production SLO result inferred."
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 174 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment."
       }
     },
     {
       "path": "50-quality/50.4-production-engineering/50.4.03-chaos-engineering.md",
-      "sha256": "9c4704f003545ebadafa2887d0afcf82c746ce04d985c5e58af46f2af3484883",
+      "sha256": "c4052b475ff9023a0a3c96431f417aed32502f83320559be50bac1389aa6a075",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -26307,19 +26307,19 @@
       },
       "review": {
         "path": "50-quality/50.4-production-engineering/50.4.03-chaos-engineering.md",
-        "sha256": "9c4704f003545ebadafa2887d0afcf82c746ce04d985c5e58af46f2af3484883",
+        "sha256": "c4052b475ff9023a0a3c96431f417aed32502f83320559be50bac1389aa6a075",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Checked experiment versus game-day distinction, authorization/baseline/observation gates, actual shared-dependency blast radius beyond pod selection, independent fault expiry surviving killed runner, impact/telemetry/manual stop conditions, observations during active fault, state/queue recovery after cleanup and explicit inconclusive outcomes. No unverified executable fault-injection CLI claims.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 132 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "50-quality/50.4-production-engineering/50.4.04-production-readiness-reviews.md",
-      "sha256": "21744aca5ac540d2398f4c01124925ebea23157f5761e4e179a57aaa7d51f04b",
+      "sha256": "07acdbc1169d3a218921104e03e7db27d0de466e30e03a18d79310d4d427f440",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -26342,19 +26342,19 @@
       },
       "review": {
         "path": "50-quality/50.4-production-engineering/50.4.04-production-readiness-reviews.md",
-        "sha256": "21744aca5ac540d2398f4c01124925ebea23157f5761e4e179a57aaa7d51f04b",
+        "sha256": "07acdbc1169d3a218921104e03e7db27d0de466e30e03a18d79310d4d427f440",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Checked evidence versus artifact presence, ownership/user/capacity/security/recovery preconditions, fleet connection capacity, conditional approval cannot erase blocker, releaseGate reviewed-change identity/valid expiry/open ownership/deadline/blocking/decision checks, typed validated-input assumption and runtime schema validation boundary. Reviewed code statically, not executed.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 147 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "50-quality/50.4-production-engineering/50.4.05-on-call-without-burnout.md",
-      "sha256": "c9262604e4dd5519abc401534f9ad3249040983514af402b18e5c004342d4f8d",
+      "sha256": "8fd88440a8d6a9335ad190e5d0c092ab78f90d64080d3f9e699ae380a900c92e",
       "genre": "learning-or-reference",
       "status": "reviewed",
       "structure": {
@@ -26378,19 +26378,19 @@
       },
       "review": {
         "path": "50-quality/50.4-production-engineering/50.4.05-on-call-without-burnout.md",
-        "sha256": "c9262604e4dd5519abc401534f9ad3249040983514af402b18e5c004342d4f8d",
+        "sha256": "8fd88440a8d6a9335ad190e5d0c092ab78f90d64080d3f9e699ae380a900c92e",
         "genre": "concept",
         "status": "reviewed",
-        "notes": "Checked imminent actionable harm versus universal symptom-only rule, inhibition can hide independent faults, shift denominator includes quiet shifts, nearest-rank percentiles (0/2/6 => p90=6; example delays => p50=20), unacknowledged separately recorded, normalized-record validation, roster timezone/quiet hours, explicit handoff/rest/backup coverage and workload/staffing limits.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 157 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "50-quality/50.4-production-engineering/50.4.06-interview-questions.md",
-      "sha256": "227e2554f4d1fad928e25fbe10866dbbf563cbde947f0ee9c113b9b23382ab6d",
+      "sha256": "679f561dfceb016da3d59972f7183b03970b79f630605b2f834f6a0fd111ae01",
       "genre": "interview-bank",
       "status": "reviewed",
       "structure": {
@@ -26412,10 +26412,10 @@
       },
       "review": {
         "path": "50-quality/50.4-production-engineering/50.4.06-interview-questions.md",
-        "sha256": "227e2554f4d1fad928e25fbe10866dbbf563cbde947f0ee9c113b9b23382ab6d",
+        "sha256": "679f561dfceb016da3d59972f7183b03970b79f630605b2f834f6a0fd111ae01",
         "genre": "interview-bank",
         "status": "reviewed",
-        "notes": "Full original 25-answer bank read plus authored Q8 correction inspected. Burn-rate time conversion now explicitly requires comparable constant eligible-request volume; actual event-accounted contribution is separated from planning estimate. Checked truthful scenarios, ambiguous writes, SLO units/policy, bounded chaos/readiness, pool diagnostics, on-call load/rest, emergency access and data-corruption recovery.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 176 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [
           {
             "id": "architecture-005",
@@ -26432,12 +26432,12 @@
         ],
         "fullContentRead": true,
         "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "50-quality/50.4-production-engineering/INDEX.md",
-      "sha256": "4f05bf60b54186e6c4aa41f0e6949ca0ac6ce5046fbc2cb32edaecda7413635d",
+      "sha256": "1a51b3c8752275154b1fb77d2af12b217f18be662bc386b10471d1a91c322197",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -26457,17 +26457,17 @@
       },
       "review": {
         "path": "50-quality/50.4-production-engineering/INDEX.md",
-        "sha256": "4f05bf60b54186e6c4aa41f0e6949ca0ac6ce5046fbc2cb32edaecda7413635d",
+        "sha256": "1a51b3c8752275154b1fb77d2af12b217f18be662bc386b10471d1a91c322197",
         "status": "reviewed",
         "reviewer": "root-continuation",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full reread: outcome/incident pass, readiness then bounded chaos, sustainable response, revision then bank, source versus operational evidence and explicit hypothetical-versus-personal limits."
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 49 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment."
       }
     },
     {
       "path": "50-quality/50.4-production-engineering/REVISION.md",
-      "sha256": "d7678a433b1930569c829a355a5e0aa58141c91d45f4ca1c6b29b9f92488ba8e",
+      "sha256": "cebd876266654ca4c16ae054bea12b01d6d9fd4dfa8f9ddfd4185befff240d4e",
       "genre": "revision",
       "status": "reviewed",
       "structure": {
@@ -26493,19 +26493,19 @@
       },
       "review": {
         "path": "50-quality/50.4-production-engineering/REVISION.md",
-        "sha256": "d7678a433b1930569c829a355a5e0aa58141c91d45f4ca1c6b29b9f92488ba8e",
+        "sha256": "cebd876266654ca4c16ae054bea12b01d6d9fd4dfa8f9ddfd4185befff240d4e",
         "genre": "revision",
         "status": "reviewed",
-        "notes": "Checked all source-linked retrieval groups: incident command/evidence preservation, event versus time budget and separate release policy, authorized chaos/fault expiry/inconclusive result, blocking versus conditional launch, change identity, quiet shift percentile population and unacknowledged latency limits. Authored and inspected additional burn-rate pair requiring uniform traffic for elapsed-time estimate and distinguishing actual bad-event accounting.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 135 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": [],
         "fullContentRead": true,
         "reviewer": "architecture_coverage",
-        "reviewDate": "2026-10-25"
+        "reviewDate": "2026-11-24"
       }
     },
     {
       "path": "50-quality/INDEX.md",
-      "sha256": "694f9c1041de05b16df9f2368fe2f29e7595b90a65979e44267d474061a377e8",
+      "sha256": "c30d8650afdf9ba65e71685e05f43a092fce775e7bd19f1e14ef5b9d3bd1c4b3",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -26525,12 +26525,12 @@
       },
       "review": {
         "path": "50-quality/INDEX.md",
-        "sha256": "694f9c1041de05b16df9f2368fe2f29e7595b90a65979e44267d474061a377e8",
+        "sha256": "c30d8650afdf9ba65e71685e05f43a092fce775e7bd19f1e14ef5b9d3bd1c4b3",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 5A C1-C8 refinement (2026-11-24): Full read of 64 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
+        "notes": "Wave 5B C1-C8 refinement (2026-11-24): Full read of 64 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and version alignment.",
         "findings": []
       }
     },
@@ -31021,7 +31021,7 @@
     },
     {
       "path": "INDEX.md",
-      "sha256": "33c602c3d6a52244d43f3724d45c42598a9e7c248d982db12b97a82f8a28c022",
+      "sha256": "eaaaaf10629dbd87c31bb10374b6e5ebc0d68be01fdb496e5773d48d1c6e6853",
       "genre": "learning-index",
       "status": "reviewed",
       "structure": {
@@ -31039,12 +31039,12 @@
       },
       "review": {
         "path": "INDEX.md",
-        "sha256": "33c602c3d6a52244d43f3724d45c42598a9e7c248d982db12b97a82f8a28c022",
+        "sha256": "eaaaaf10629dbd87c31bb10374b6e5ebc0d68be01fdb496e5773d48d1c6e6853",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4D count/read-time sync (2026-11-24): Full read of 206 lines. Updated generated counts/read-time navigation after Wave 4D.",
+        "notes": "Wave 5B count/read-time sync (2026-11-24): Full read of 206 lines. Updated generated counts/read-time navigation after Wave 5B.",
         "findings": []
       }
     },
@@ -31118,7 +31118,7 @@
     },
     {
       "path": "contributing.md",
-      "sha256": "121dfed7c0d9fe0593835f6f26fde6782474005267194a0a47c5eedfd70b8e24",
+      "sha256": "eeeeab96ada169df6b7a0a98ffac633c6f7073546087beedc9f7f469c7c74d42",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31146,12 +31146,12 @@
       },
       "review": {
         "path": "contributing.md",
-        "sha256": "121dfed7c0d9fe0593835f6f26fde6782474005267194a0a47c5eedfd70b8e24",
+        "sha256": "eeeeab96ada169df6b7a0a98ffac633c6f7073546087beedc9f7f469c7c74d42",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design + synced index/docs, 2026-11-24).",
+        "notes": "Wave 5B count/read-time sync (2026-11-24): Full read of 947 lines. Updated generated counts/read-time navigation after Wave 5B.",
         "findings": []
       }
     },
@@ -31624,7 +31624,7 @@
     },
     {
       "path": "docs/api-contract.md",
-      "sha256": "071dda9fb3e5418f22f9418c1313e1ad73c6103e6c2311aa9b2dd566261b54f0",
+      "sha256": "49c6f59f9e096fdb3bf647ca8056f488c436aa54bcb943eab536de3a076ffd81",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31642,12 +31642,12 @@
       },
       "review": {
         "path": "docs/api-contract.md",
-        "sha256": "071dda9fb3e5418f22f9418c1313e1ad73c6103e6c2311aa9b2dd566261b54f0",
+        "sha256": "49c6f59f9e096fdb3bf647ca8056f488c436aa54bcb943eab536de3a076ffd81",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Wave 4D count/read-time sync (2026-11-24): Full read of 119 lines. Updated generated counts/read-time navigation after Wave 4D.",
+        "notes": "Wave 5B count/read-time sync (2026-11-24): Full read of 119 lines. Updated generated counts/read-time navigation after Wave 5B.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "48780da8ce4f3fd3468b51ff2f7e0654bc40de383d3d001428b95d4179abb985",
@@ -32804,7 +32804,7 @@
     },
     {
       "path": "docs/verification-gates.md",
-      "sha256": "9370c5da09bde3a2d4bc3507c6a9a404d899a0dc70cb22db0210eb7ef6da421b",
+      "sha256": "a36593fa4a6a225afc8a6afb3ce9f40f84b56b9468a49fdc42456fd2ce3482f8",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32819,12 +32819,12 @@
       },
       "review": {
         "path": "docs/verification-gates.md",
-        "sha256": "9370c5da09bde3a2d4bc3507c6a9a404d899a0dc70cb22db0210eb7ef6da421b",
+        "sha256": "a36593fa4a6a225afc8a6afb3ce9f40f84b56b9468a49fdc42456fd2ce3482f8",
         "status": "reviewed",
         "reviewer": "root",
         "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "C1-C8 genuine file-by-file refinement (Wave 3C 30.2-system-design + synced index/docs, 2026-11-24).",
+        "notes": "Wave 5B count/read-time sync (2026-11-24): Full read of 125 lines. Updated generated counts/read-time navigation after Wave 5B.",
         "findings": []
       }
     },

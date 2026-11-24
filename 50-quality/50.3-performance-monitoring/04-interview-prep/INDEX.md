@@ -1,7 +1,7 @@
 # Performance Interview Prep
 
 > **Study time:** ≈ 7 min of reading (1 file, ~7 min average).
-> **1 file.** The curated question bank for web performance rounds — Core Web Vitals mechanics, debugging walkthroughs, lab-vs-field judgment, and budget design.
+> **1 file.** The curated question bank for web performance rounds — Core Web Vitals mechanics, debugging walkthroughs, lab-versus-field judgment, and budget design.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Quality-green)](#)
@@ -20,17 +20,17 @@
 ## Questions you will be ready for
 
 - "What are Core Web Vitals? What are the thresholds?"
-- "How do you measure LCP? How do you improve it?"
+- "How do you measure Largest Contentful Paint (LCP)? How do you improve it?"
 - "Your LCP is 4 seconds. Walk me through how you'd debug it."
 - "How do you set performance budgets?"
 - "Difference between lab and field data?"
-- "INP vs FID — what changed?"
+- "Interaction to Next Paint (INP) versus First Input Delay (FID) — what changed?"
 
 ---
 
 ## Before the bank
 
-Finish the [metric revision](../01-core-metrics/REVISION.md), [measurement revision](../02-measurement/REVISION.md) and [optimization revision](../03-optimization-and-governance/REVISION.md). Then use the bank to connect their mechanisms under one interview constraint.
+Finish the [metric revision](../01-core-metrics/REVISION.md), [measurement revision](../02-measurement/REVISION.md), and [optimization revision](../03-optimization-and-governance/REVISION.md). Then use the bank to connect their mechanisms under one interview constraint.
 
 ## How to use it
 
@@ -56,7 +56,7 @@ Answer out loud before reading the model answer; the debugging walkthroughs ("LC
 [Docita](https://github.com/CVamsi27/docita) is a companion source repository for this Bible — inspect the paths below before using them as evidence; describe only work you actually performed.
 
 | Topic | Docita evidence |
-| ------------------------ | ---------------------------------------------------------------------------------------- |
-| "Design a budget" story | `scripts/perf/route-budgets.config.mjs` (per-route budgets, checked in CI) |
+| ------------------------ | --------------------------------------------------------------------------------------------------- |
+| "Design a budget" story | `scripts/perf/route-budgets.config.mjs` (per-route budgets, checked in Continuous Integration (CI)) |
 | Debugging-story material | `slow-query-logging.service.ts` + `query-budget.extension.ts` in `apps/api/src/shared/…` |
 | Ops follow-through story | `docs/operations/SLOS.md` + `ops-alert.listener.ts` |

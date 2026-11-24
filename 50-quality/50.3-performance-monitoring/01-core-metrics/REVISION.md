@@ -16,11 +16,11 @@ Source: [Core Web Vitals](50.3.1.01-core-web-vitals.md)
 
 **Q:** Why assess the 75th percentile separately for the relevant device population?
 
-**A:** It exposes the experience a substantial user segment receives rather than hiding it in a global mean. Good field thresholds are LCP at most 2.5s, INP at most 200ms, and CLS at most 0.1.
+**A:** It exposes the experience a substantial user segment receives rather than hiding it in a global mean. Good field thresholds are Largest Contentful Paint (LCP) at most 2.5 seconds (`2.5s`), Interaction to Next Paint (INP) at most 200 milliseconds (`200ms`), and Cumulative Layout Shift (CLS) at most `0.1`.
 
 **Q:** Why does a Lighthouse run not directly measure field INP?
 
-**A:** INP depends on real interactions across the page lifecycle. Lab diagnostics such as blocking time and scripted interactions help explain risk but are not the same population/metric.
+**A:** INP depends on real interactions across the page lifecycle. Lab diagnostics such as blocking time and scripted interactions help explain risk but are not the same population or metric.
 
 **Q:** Why is INP not simply the maximum event callback duration?
 
@@ -28,15 +28,15 @@ Source: [Core Web Vitals](50.3.1.01-core-web-vitals.md)
 
 **Q:** What can a fast HTML response leave slow about LCP?
 
-**A:** Discovery, download, priority, layout, and rendering of the largest eligible content can still be delayed. Trace the actual LCP resource path instead of optimizing TTFB alone.
+**A:** Discovery, download, priority, layout, and rendering of the largest eligible content can still be delayed. Trace the actual LCP resource path instead of optimizing Time to First Byte (TTFB) alone.
 
 **Q:** Why reserve image space before loading it?
 
 **A:** Known dimensions or an appropriate aspect ratio prevent later content movement. The rendered layout and responsive behavior must match the reservation.
 
-**Q:** Eligible shifts score 0.1 at 0ms, 0.2 at 500ms and 0.05 at 3000ms. Why is CLS 0.3 rather than 0.35?
+**Q:** Eligible shifts score `0.1` at 0 ms, `0.2` at 500 ms, and `0.05` at 3,000 ms. Why is CLS `0.3` rather than `0.35`?
 
-**A:** The first two shifts share a session window and sum to 0.3. The later shift follows a gap of more than one second and starts another window. CLS uses the largest window sum, rather than the lifetime total. A raw observer that adds every eligible entry reports a different measure.
+**A:** The first two shifts share a session window and sum to `0.3`. The later shift follows a gap of more than one second and starts another window. CLS uses the largest window sum, rather than the lifetime total. A raw observer that adds every eligible entry reports a different measure.
 
 **Q:** A layout shift occurs 300 ms after a qualifying click. Does it contribute to CLS, and does exclusion mean the movement is harmless?
 
@@ -46,25 +46,25 @@ Source: [Core Web Vitals](50.3.1.01-core-web-vitals.md)
 
 Source: [Core Web Vitals](50.3.1.01-core-web-vitals.md)
 
-**Q:** Eight sorted mobile LCP values end with 3,500, 3,900, 4,200 and 6,000 ms. Which value does nearest-rank p75 select?
+**Q:** Eight sorted mobile LCP values end with `3,500`, `3,900`, `4,200`, and `6,000` ms. Which value does nearest-rank 75th percentile (`p75`) select?
 
-**A:** The sixth observation, 3,900 ms. It needs improvement. The estimator and population must be explicit; averaging several subgroup p75 values does not reconstruct the combined distribution.
+**A:** The sixth observation, `3,900` ms. It needs improvement. The estimator and population must be explicit; averaging several subgroup `p75` values does not reconstruct the combined distribution.
 
 **Q:** Why is INP of 320 ms neither good nor poor?
 
-**A:** Good ends at 200 ms and poor starts above 500 ms. The middle interval needs improvement. A universal multiplier of 1.6 would misclassify this metric.
+**A:** Good ends at 200 ms and poor starts above 500 ms. The middle interval needs improvement. A universal multiplier of `1.6` would misclassify this metric.
 
 **Q:** What changes when a visit has no qualifying interaction?
 
 **A:** It may have no INP observation. Keep the missing value and collection coverage visible; substituting zero invents evidence of fast responsiveness.
 
-**Q:** Why can registering web-vitals callbacks in a repeated React effect distort reporting?
+**Q:** Why can registering `web-vitals` callbacks in a repeated React effect distort reporting?
 
-**A:** Repeated registration can add collectors/callbacks; the normal library functions do not return an effect cleanup handle. Register once at document bootstrap and aggregate updates under the metric ID.
+**A:** Repeated registration can add collectors or callbacks; the normal library functions do not return an effect cleanup handle. Register once at document bootstrap and aggregate updates under the metric identifier (ID).
 
-**Q:** Why must an ingestion service distinguish value from delta?
+**Q:** Why must an ingestion service distinguish `value` from `delta`?
 
-**A:** Value is the current metric; delta is the change since its previous report. Upsert values or accumulate deltas deliberately. Counting each callback as a new visit changes the sample distribution.
+**A:** `value` is the current metric; `delta` is the change since its previous report. Upsert values or accumulate deltas deliberately. Counting each callback as a new visit changes the sample distribution.
 
 ## Summary
 

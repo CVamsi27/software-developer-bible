@@ -11620,583 +11620,583 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
   },
   "50-quality/50.2-accessibility/50.2.01-wcag-overview.md": {
-   "sha256": "b76e19060f5f6bd121f6e4e42886ee687fd7dc03b883a9402a0afbdb6692d811",
-   "lines": 81,
+   "sha256": "80187f995f44f9e754449981df68c91fe3551de9a6d4ab4979abe3d3994b5172",
+   "lines": 85,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: W3C WCAG 2.2 Recommendation (including new focus-not-obscured, dragging, and accessible authentication criteria and removal of 4.1.1 Parsing).",
-    "readable": "Full read of 81 lines (683 prose words). Covers WCAG 2.2 POUR principles, guidelines vs testable success criteria vs techniques, cumulative A/AA/AAA conformance across complete processes, and WCAG 2.2 criteria.",
-    "concise": "683 words across 81 lines. Covers WCAG 2.2 POUR principles, guidelines vs testable success criteria vs techniques, cumulative A/AA/AAA conformance across complete processes, and WCAG 2.2 criteria.",
+    "readable": "Full read of 85 lines (687 prose words). Covers WCAG 2.2 POUR principles, guidelines vs testable success criteria vs techniques, cumulative A/AA/AAA conformance across complete processes, and WCAG 2.2 criteria.",
+    "concise": "687 words across 85 lines. Covers WCAG 2.2 POUR principles, guidelines vs testable success criteria vs techniques, cumulative A/AA/AAA conformance across complete processes, and WCAG 2.2 criteria.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers WCAG 2.2 POUR principles, guidelines vs testable success criteria vs techniques, cumulative A/AA/AAA conformance across complete processes, and WCAG 2.2 criteria.",
     "fast": "Measured 14.5 KB raw / 5.1 KB gzip. Covers WCAG 2.2 POUR principles, guidelines vs testable success criteria vs techniques, cumulative A/AA/AAA conformance across complete processes, and WCAG 2.2 criteria.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers WCAG 2.2 POUR principles, guidelines vs testable success criteria vs techniques, cumulative A/AA/AAA conformance across complete processes, and WCAG 2.2 criteria."
    },
-   "notes": "Covers WCAG 2.2 POUR principles, guidelines vs testable success criteria vs techniques, cumulative A/AA/AAA conformance across complete processes, and WCAG 2.2 criteria."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.2-accessibility/50.2.02-aria.md": {
-   "sha256": "40f809cc1603ef76b6e8dda5384a9c971d1e3ff03ed1bc080ceb9b29eeb0164e",
-   "lines": 107,
+   "sha256": "5f95764e08f93d34b23d8294d85d2513bb73371f6f8cdca07dcc8fb6e4a41a59",
+   "lines": 115,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: WAI-ARIA 1.2/1.3 specification and W3C ARIA Authoring Practices Guide (APG) disclosure pattern.",
-    "readable": "Full read of 107 lines (761 prose words). Covers WAI-ARIA roles, accessible names, states, and properties, native button vs ARIA disclosure synchronization, `hidden` vs `aria-hidden`, and polite/assertive live regions.",
-    "concise": "761 words across 107 lines. Covers WAI-ARIA roles, accessible names, states, and properties, native button vs ARIA disclosure synchronization, `hidden` vs `aria-hidden`, and polite/assertive live regions.",
+    "readable": "Full read of 115 lines (768 prose words). Covers WAI-ARIA roles, accessible names, states, and properties, native button vs ARIA disclosure synchronization, `hidden` vs `aria-hidden`, and polite/assertive live regions.",
+    "concise": "768 words across 115 lines. Covers WAI-ARIA roles, accessible names, states, and properties, native button vs ARIA disclosure synchronization, `hidden` vs `aria-hidden`, and polite/assertive live regions.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers WAI-ARIA roles, accessible names, states, and properties, native button vs ARIA disclosure synchronization, `hidden` vs `aria-hidden`, and polite/assertive live regions.",
     "fast": "Measured 19.4 KB raw / 5.9 KB gzip. Covers WAI-ARIA roles, accessible names, states, and properties, native button vs ARIA disclosure synchronization, `hidden` vs `aria-hidden`, and polite/assertive live regions.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers WAI-ARIA roles, accessible names, states, and properties, native button vs ARIA disclosure synchronization, `hidden` vs `aria-hidden`, and polite/assertive live regions."
    },
-   "notes": "Covers WAI-ARIA roles, accessible names, states, and properties, native button vs ARIA disclosure synchronization, `hidden` vs `aria-hidden`, and polite/assertive live regions."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.2-accessibility/50.2.03-keyboard-navigation.md": {
-   "sha256": "00f5ee8ca9357e2f20f77433010082e32fce885a681977faf19aa48ccaabc3a2",
-   "lines": 177,
+   "sha256": "33c6f5eaddf818728193277bfc3a30d72da20ce66c780b7922ee9380aa859ef0",
+   "lines": 189,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: W3C APG keyboard interface and roving-tabindex tabs pattern, native HTML `<dialog>` modal lifecycle, and `:focus-visible`.",
-    "readable": "Full read of 177 lines (932 prose words). Covers focus vs selection vs activation, roving tabindex manual-activation tabs, native `<dialog>.showModal()` focus containment and restoration, and WCAG 2.1.4 character key shortcuts.",
-    "concise": "932 words across 177 lines. Covers focus vs selection vs activation, roving tabindex manual-activation tabs, native `<dialog>.showModal()` focus containment and restoration, and WCAG 2.1.4 character key shortcuts.",
+    "readable": "Full read of 189 lines (947 prose words). Covers focus vs selection vs activation, roving tabindex manual-activation tabs, native `<dialog>.showModal()` focus containment and restoration, and WCAG 2.1.4 character key shortcuts.",
+    "concise": "947 words across 189 lines. Covers focus vs selection vs activation, roving tabindex manual-activation tabs, native `<dialog>.showModal()` focus containment and restoration, and WCAG 2.1.4 character key shortcuts.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers focus vs selection vs activation, roving tabindex manual-activation tabs, native `<dialog>.showModal()` focus containment and restoration, and WCAG 2.1.4 character key shortcuts.",
     "fast": "Measured 34.1 KB raw / 7.6 KB gzip. Covers focus vs selection vs activation, roving tabindex manual-activation tabs, native `<dialog>.showModal()` focus containment and restoration, and WCAG 2.1.4 character key shortcuts.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers focus vs selection vs activation, roving tabindex manual-activation tabs, native `<dialog>.showModal()` focus containment and restoration, and WCAG 2.1.4 character key shortcuts."
    },
-   "notes": "Covers focus vs selection vs activation, roving tabindex manual-activation tabs, native `<dialog>.showModal()` focus containment and restoration, and WCAG 2.1.4 character key shortcuts."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.2-accessibility/50.2.04-color-and-contrast.md": {
-   "sha256": "afc16c7151f7ed17e5b0637b121c6d567a96ff8a38bf1abd68c2dc2f570c19a1",
-   "lines": 136,
+   "sha256": "b093109bc6ca977d4c1a64b15a1e61105d0169282680f06e5651148e2fa78491",
+   "lines": 144,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: WCAG 2.2 Contrast (Minimum) 1.4.3, Non-text Contrast 1.4.11, Use of Color 1.4.1, and CSS `@media (forced-colors: active)`.",
-    "readable": "Full read of 136 lines (740 prose words). Covers WCAG relative luminance and unrounded contrast ratio calculations (4.5:1 normal text, 3:1 large text and non-text UI), light/dark/forced-colors theme pairs, and non-color cues.",
-    "concise": "740 words across 136 lines. Covers WCAG relative luminance and unrounded contrast ratio calculations (4.5:1 normal text, 3:1 large text and non-text UI), light/dark/forced-colors theme pairs, and non-color cues.",
+    "readable": "Full read of 144 lines (755 prose words). Covers WCAG relative luminance and unrounded contrast ratio calculations (4.5:1 normal text, 3:1 large text and non-text UI), light/dark/forced-colors theme pairs, and non-color cues.",
+    "concise": "755 words across 144 lines. Covers WCAG relative luminance and unrounded contrast ratio calculations (4.5:1 normal text, 3:1 large text and non-text UI), light/dark/forced-colors theme pairs, and non-color cues.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers WCAG relative luminance and unrounded contrast ratio calculations (4.5:1 normal text, 3:1 large text and non-text UI), light/dark/forced-colors theme pairs, and non-color cues.",
     "fast": "Measured 27.0 KB raw / 6.5 KB gzip. Covers WCAG relative luminance and unrounded contrast ratio calculations (4.5:1 normal text, 3:1 large text and non-text UI), light/dark/forced-colors theme pairs, and non-color cues.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers WCAG relative luminance and unrounded contrast ratio calculations (4.5:1 normal text, 3:1 large text and non-text UI), light/dark/forced-colors theme pairs, and non-color cues."
    },
-   "notes": "Covers WCAG relative luminance and unrounded contrast ratio calculations (4.5:1 normal text, 3:1 large text and non-text UI), light/dark/forced-colors theme pairs, and non-color cues."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.2-accessibility/50.2.05-forms-and-labels.md": {
-   "sha256": "2a2861d6349e7ff083b3ed0e0caadc82f8c37b5e1febf840a775432a676e0457",
-   "lines": 182,
+   "sha256": "c4b665bac47da536d034328ade96ddcbdf6f539b5583ac3602a7a85dc4865565",
+   "lines": 192,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: WCAG 2.2 Identify Input Purpose 1.3.5, Error Identification 3.3.1, and recoverable client/server form validation.",
-    "readable": "Full read of 182 lines (925 prose words). Covers persistent `<label>` associations, programmatic hints and error descriptions (`aria-describedby`, `aria-invalid`), focused error summaries, `fieldset`/`legend`, and `autocomplete` input purpose.",
-    "concise": "925 words across 182 lines. Covers persistent `<label>` associations, programmatic hints and error descriptions (`aria-describedby`, `aria-invalid`), focused error summaries, `fieldset`/`legend`, and `autocomplete` input purpose.",
+    "readable": "Full read of 192 lines (934 prose words). Covers persistent `<label>` associations, programmatic hints and error descriptions (`aria-describedby`, `aria-invalid`), focused error summaries, `fieldset`/`legend`, and `autocomplete` input purpose.",
+    "concise": "934 words across 192 lines. Covers persistent `<label>` associations, programmatic hints and error descriptions (`aria-describedby`, `aria-invalid`), focused error summaries, `fieldset`/`legend`, and `autocomplete` input purpose.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers persistent `<label>` associations, programmatic hints and error descriptions (`aria-describedby`, `aria-invalid`), focused error summaries, `fieldset`/`legend`, and `autocomplete` input purpose.",
     "fast": "Measured 34.6 KB raw / 7.7 KB gzip. Covers persistent `<label>` associations, programmatic hints and error descriptions (`aria-describedby`, `aria-invalid`), focused error summaries, `fieldset`/`legend`, and `autocomplete` input purpose.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers persistent `<label>` associations, programmatic hints and error descriptions (`aria-describedby`, `aria-invalid`), focused error summaries, `fieldset`/`legend`, and `autocomplete` input purpose."
    },
-   "notes": "Covers persistent `<label>` associations, programmatic hints and error descriptions (`aria-describedby`, `aria-invalid`), focused error summaries, `fieldset`/`legend`, and `autocomplete` input purpose."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.2-accessibility/50.2.06-accessible-charts-data-viz.md": {
-   "sha256": "a0d61fa59cb69dc88133043cb7d02d91e38a7d982b5f6867b140a3ac2949dc4e",
-   "lines": 150,
+   "sha256": "d67656e1287d57e604d3b5118c926695cbb9146d263ba9aaced42e8848f91d5c",
+   "lines": 160,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: W3C Complex Images guidance and Recharts 3 default `accessibilityLayer` keyboard navigation.",
-    "readable": "Full read of 150 lines (882 prose words). Covers single-dataset synchronization across trend summary, SVG graphic, and exact HTML table disclosure, multi-series non-color encodings, keyboard point navigation, and Recharts 3 `accessibilityLayer`.",
-    "concise": "882 words across 150 lines. Covers single-dataset synchronization across trend summary, SVG graphic, and exact HTML table disclosure, multi-series non-color encodings, keyboard point navigation, and Recharts 3 `accessibilityLayer`.",
+    "readable": "Full read of 160 lines (895 prose words). Covers single-dataset synchronization across trend summary, SVG graphic, and exact HTML table disclosure, multi-series non-color encodings, keyboard point navigation, and Recharts 3 `accessibilityLayer`.",
+    "concise": "895 words across 160 lines. Covers single-dataset synchronization across trend summary, SVG graphic, and exact HTML table disclosure, multi-series non-color encodings, keyboard point navigation, and Recharts 3 `accessibilityLayer`.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers single-dataset synchronization across trend summary, SVG graphic, and exact HTML table disclosure, multi-series non-color encodings, keyboard point navigation, and Recharts 3 `accessibilityLayer`.",
     "fast": "Measured 30.7 KB raw / 7.3 KB gzip. Covers single-dataset synchronization across trend summary, SVG graphic, and exact HTML table disclosure, multi-series non-color encodings, keyboard point navigation, and Recharts 3 `accessibilityLayer`.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers single-dataset synchronization across trend summary, SVG graphic, and exact HTML table disclosure, multi-series non-color encodings, keyboard point navigation, and Recharts 3 `accessibilityLayer`."
    },
-   "notes": "Covers single-dataset synchronization across trend summary, SVG graphic, and exact HTML table disclosure, multi-series non-color encodings, keyboard point navigation, and Recharts 3 `accessibilityLayer`."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.2-accessibility/50.2.07-accessibility-design-systems.md": {
-   "sha256": "0af19981b45504b6db62a36a2fd8365ca1a6c0f092adc716eda377fed9bbbd76",
-   "lines": 114,
+   "sha256": "e7c16a84cf42361cba0e1db999b766eea047f05d792bd2b89036c7454770f767",
+   "lines": 120,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Radix UI primitives (`@radix-ui/react-dialog`), React Aria, and `eslint-plugin-jsx-a11y` ESLint v9 flat config.",
-    "readable": "Full read of 114 lines (759 prose words). Covers shared primitive interaction contracts (Radix UI / React Aria), semantic theme token pairs, `eslint-plugin-jsx-a11y` flat config, and consumer journey verification after upgrades.",
-    "concise": "759 words across 114 lines. Covers shared primitive interaction contracts (Radix UI / React Aria), semantic theme token pairs, `eslint-plugin-jsx-a11y` flat config, and consumer journey verification after upgrades.",
+    "readable": "Full read of 120 lines (768 prose words). Covers shared primitive interaction contracts (Radix UI / React Aria), semantic theme token pairs, `eslint-plugin-jsx-a11y` flat config, and consumer journey verification after upgrades.",
+    "concise": "768 words across 120 lines. Covers shared primitive interaction contracts (Radix UI / React Aria), semantic theme token pairs, `eslint-plugin-jsx-a11y` flat config, and consumer journey verification after upgrades.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers shared primitive interaction contracts (Radix UI / React Aria), semantic theme token pairs, `eslint-plugin-jsx-a11y` flat config, and consumer journey verification after upgrades.",
     "fast": "Measured 19.2 KB raw / 5.9 KB gzip. Covers shared primitive interaction contracts (Radix UI / React Aria), semantic theme token pairs, `eslint-plugin-jsx-a11y` flat config, and consumer journey verification after upgrades.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers shared primitive interaction contracts (Radix UI / React Aria), semantic theme token pairs, `eslint-plugin-jsx-a11y` flat config, and consumer journey verification after upgrades."
    },
-   "notes": "Covers shared primitive interaction contracts (Radix UI / React Aria), semantic theme token pairs, `eslint-plugin-jsx-a11y` flat config, and consumer journey verification after upgrades."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.2-accessibility/50.2.08-testing-a11y.md": {
-   "sha256": "3f6f9839f984df35c6672eab5c1b77a66ce932b0705a3283e80fdde631a1217a",
-   "lines": 133,
+   "sha256": "e7e5d7fc77942e885589c08e5563f47dfefc892727b89847263f4943af252891",
+   "lines": 143,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Playwright + `@axe-core/playwright` WCAG 2.2 AA auditing and real browser keyboard input verification.",
-    "readable": "Full read of 133 lines (841 prose words). Covers multi-state browser accessibility testing with `@playwright/test` and `@axe-core/playwright` (`wcag22aa`), real keyboard navigation assertions, and manual screen-reader/reflow evaluation.",
-    "concise": "841 words across 133 lines. Covers multi-state browser accessibility testing with `@playwright/test` and `@axe-core/playwright` (`wcag22aa`), real keyboard navigation assertions, and manual screen-reader/reflow evaluation.",
+    "readable": "Full read of 143 lines (860 prose words). Covers multi-state browser accessibility testing with `@playwright/test` and `@axe-core/playwright` (`wcag22aa`), real keyboard navigation assertions, and manual screen-reader/reflow evaluation.",
+    "concise": "860 words across 143 lines. Covers multi-state browser accessibility testing with `@playwright/test` and `@axe-core/playwright` (`wcag22aa`), real keyboard navigation assertions, and manual screen-reader/reflow evaluation.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers multi-state browser accessibility testing with `@playwright/test` and `@axe-core/playwright` (`wcag22aa`), real keyboard navigation assertions, and manual screen-reader/reflow evaluation.",
     "fast": "Measured 29.2 KB raw / 6.9 KB gzip. Covers multi-state browser accessibility testing with `@playwright/test` and `@axe-core/playwright` (`wcag22aa`), real keyboard navigation assertions, and manual screen-reader/reflow evaluation.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers multi-state browser accessibility testing with `@playwright/test` and `@axe-core/playwright` (`wcag22aa`), real keyboard navigation assertions, and manual screen-reader/reflow evaluation."
    },
-   "notes": "Covers multi-state browser accessibility testing with `@playwright/test` and `@axe-core/playwright` (`wcag22aa`), real keyboard navigation assertions, and manual screen-reader/reflow evaluation."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.2-accessibility/50.2.09-interview-questions.md": {
-   "sha256": "d7a535ae9c00d71d0ebf3ab46ec5b22f7cca51aee11079ced97544b479dcf903",
+   "sha256": "6f399b2b65886c3520b7005d57947615b2ae2972bee1af2b5300409e91062167",
    "lines": 208,
    "genre": "interview",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: WCAG 2.2 (SC 2.1.4, 1.4.10 Reflow, 3.3.4 Error Prevention, 3.3.8 Accessible Authentication) and WAI-ARIA APG.",
-    "readable": "Full read of 208 lines (1,786 prose words). Covers 25 senior accessibility interview questions with changed-condition probes across WCAG 2.2 conformance, ARIA, roving tabindex, 400% reflow, accessible auth (3.3.8), and design systems.",
-    "concise": "1,786 words across 208 lines. Covers 25 senior accessibility interview questions with changed-condition probes across WCAG 2.2 conformance, ARIA, roving tabindex, 400% reflow, accessible auth (3.3.8), and design systems.",
+    "readable": "Full read of 208 lines (1818 prose words). (1,786 prose words). Covers 25 senior accessibility interview questions with changed-condition probes across WCAG 2.2 conformance, ARIA, roving tabindex, 400% reflow, accessible auth (3.3.8), and design systems.",
+    "concise": "1818 words across 208 lines. 1,786 words across 208 lines. Covers 25 senior accessibility interview questions with changed-condition probes across WCAG 2.2 conformance, ARIA, roving tabindex, 400% reflow, accessible auth (3.3.8), and design systems.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers 25 senior accessibility interview questions with changed-condition probes across WCAG 2.2 conformance, ARIA, roving tabindex, 400% reflow, accessible auth (3.3.8), and design systems.",
     "fast": "Measured 24.7 KB raw / 8.5 KB gzip. Covers 25 senior accessibility interview questions with changed-condition probes across WCAG 2.2 conformance, ARIA, roving tabindex, 400% reflow, accessible auth (3.3.8), and design systems.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers 25 senior accessibility interview questions with changed-condition probes across WCAG 2.2 conformance, ARIA, roving tabindex, 400% reflow, accessible auth (3.3.8), and design systems."
    },
-   "notes": "Covers 25 senior accessibility interview questions with changed-condition probes across WCAG 2.2 conformance, ARIA, roving tabindex, 400% reflow, accessible auth (3.3.8), and design systems."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.2-accessibility/INDEX.md": {
-   "sha256": "3bc29c68397ede934eba161867978e490aa8d63c7411f63fee70f35d596f6668",
+   "sha256": "323993a56688deb20dbd9c87bae1f7568748878d5b4b02abe9b33dd1833accc6",
    "lines": 44,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: WCAG 2.2 AA/AAA, WAI-ARIA 1.2/1.3, APG composite widget patterns, and axe-core/Playwright auditing.",
-    "readable": "Full read of 44 lines (225 prose words). Learning-flow index for 50.2-accessibility from WCAG 2.2 and WAI-ARIA to keyboard navigation, contrast, forms, accessible charts, design systems, and automated/manual a11y testing.",
-    "concise": "225 words across 44 lines. Learning-flow index for 50.2-accessibility from WCAG 2.2 and WAI-ARIA to keyboard navigation, contrast, forms, accessible charts, design systems, and automated/manual a11y testing.",
+    "readable": "Full read of 44 lines (235 prose words). Learning-flow index for 50.2-accessibility from WCAG 2.2 and WAI-ARIA to keyboard navigation, contrast, forms, accessible charts, design systems, and automated/manual a11y testing.",
+    "concise": "235 words across 44 lines. Learning-flow index for 50.2-accessibility from WCAG 2.2 and WAI-ARIA to keyboard navigation, contrast, forms, accessible charts, design systems, and automated/manual a11y testing.",
     "focused": "Single canonical home with no duplicate code across chapters. Learning-flow index for 50.2-accessibility from WCAG 2.2 and WAI-ARIA to keyboard navigation, contrast, forms, accessible charts, design systems, and automated/manual a11y testing.",
     "fast": "Measured 10.2 KB raw / 3.5 KB gzip. Learning-flow index for 50.2-accessibility from WCAG 2.2 and WAI-ARIA to keyboard navigation, contrast, forms, accessible charts, design systems, and automated/manual a11y testing.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for 50.2-accessibility from WCAG 2.2 and WAI-ARIA to keyboard navigation, contrast, forms, accessible charts, design systems, and automated/manual a11y testing."
    },
-   "notes": "Learning-flow index for 50.2-accessibility from WCAG 2.2 and WAI-ARIA to keyboard navigation, contrast, forms, accessible charts, design systems, and automated/manual a11y testing."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.2-accessibility/REVISION.md": {
-   "sha256": "da32a57d0ae28879c2a842d10f454d53c5f4cbcc150a5954e74a56b63f410648",
+   "sha256": "b115df2fcbf4d479d29a9df97a1398d7142a76b986a2e3ce045f9601d18d2dd0",
    "lines": 155,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: WCAG 2.2, WAI-ARIA, keyboard navigation patterns, and axe-core testing boundaries.",
-    "readable": "Full read of 155 lines (1,030 prose words). Active-recall Q&A companion covering WCAG conformance scope, native vs ARIA semantics, roving tabindex, contrast thresholds, programmatic form error cleanup, and accessible charts.",
-    "concise": "1,030 words across 155 lines. Active-recall Q&A companion covering WCAG conformance scope, native vs ARIA semantics, roving tabindex, contrast thresholds, programmatic form error cleanup, and accessible charts.",
+    "readable": "Full read of 155 lines (1069 prose words). (1,030 prose words). Active-recall Q&A companion covering WCAG conformance scope, native vs ARIA semantics, roving tabindex, contrast thresholds, programmatic form error cleanup, and accessible charts.",
+    "concise": "1069 words across 155 lines. 1,030 words across 155 lines. Active-recall Q&A companion covering WCAG conformance scope, native vs ARIA semantics, roving tabindex, contrast thresholds, programmatic form error cleanup, and accessible charts.",
     "focused": "Single canonical home with no duplicate code across chapters. Active-recall Q&A companion covering WCAG conformance scope, native vs ARIA semantics, roving tabindex, contrast thresholds, programmatic form error cleanup, and accessible charts.",
     "fast": "Measured 15.9 KB raw / 5.4 KB gzip. Active-recall Q&A companion covering WCAG conformance scope, native vs ARIA semantics, roving tabindex, contrast thresholds, programmatic form error cleanup, and accessible charts.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering WCAG conformance scope, native vs ARIA semantics, roving tabindex, contrast thresholds, programmatic form error cleanup, and accessible charts."
    },
-   "notes": "Active-recall Q&A companion covering WCAG conformance scope, native vs ARIA semantics, roving tabindex, contrast thresholds, programmatic form error cleanup, and accessible charts."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.3-performance-monitoring/01-core-metrics/50.3.1.01-core-web-vitals.md": {
-   "sha256": "5607de0a8707623e78c979e52940bd8141749900c440b49055c0d39d58ed96e9",
-   "lines": 137,
+   "sha256": "88aac7cd962b223b45b1d5fd81d45db54766eb9165ba89c6d1441b4ecc21aabd",
+   "lines": 153,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Core Web Vitals (INP replacing FID, LCP <= 2500ms, INP <= 200ms, CLS <= 0.1) and `web-vitals` (`onLCP`, `onINP`, `onCLS`).",
-    "readable": "Full read of 137 lines (1,111 prose words). Covers LCP, INP, and CLS measurement boundaries and fixed field cutoffs, 4-part LCP waterfall decomposition, 3-part INP latency, CLS session windows, nearest-rank p75, and `web-vitals` bootstrap collection.",
-    "concise": "1,111 words across 137 lines. Covers LCP, INP, and CLS measurement boundaries and fixed field cutoffs, 4-part LCP waterfall decomposition, 3-part INP latency, CLS session windows, nearest-rank p75, and `web-vitals` bootstrap collection.",
+    "readable": "Full read of 153 lines (1133 prose words). (1,111 prose words). Covers LCP, INP, and CLS measurement boundaries and fixed field cutoffs, 4-part LCP waterfall decomposition, 3-part INP latency, CLS session windows, nearest-rank p75, and `web-vitals` bootstrap collection.",
+    "concise": "1133 words across 153 lines. 1,111 words across 137 lines. Covers LCP, INP, and CLS measurement boundaries and fixed field cutoffs, 4-part LCP waterfall decomposition, 3-part INP latency, CLS session windows, nearest-rank p75, and `web-vitals` bootstrap collection.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers LCP, INP, and CLS measurement boundaries and fixed field cutoffs, 4-part LCP waterfall decomposition, 3-part INP latency, CLS session windows, nearest-rank p75, and `web-vitals` bootstrap collection.",
     "fast": "Measured 27.4 KB raw / 7.7 KB gzip. Covers LCP, INP, and CLS measurement boundaries and fixed field cutoffs, 4-part LCP waterfall decomposition, 3-part INP latency, CLS session windows, nearest-rank p75, and `web-vitals` bootstrap collection.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers LCP, INP, and CLS measurement boundaries and fixed field cutoffs, 4-part LCP waterfall decomposition, 3-part INP latency, CLS session windows, nearest-rank p75, and `web-vitals` bootstrap collection."
    },
-   "notes": "Covers LCP, INP, and CLS measurement boundaries and fixed field cutoffs, 4-part LCP waterfall decomposition, 3-part INP latency, CLS session windows, nearest-rank p75, and `web-vitals` bootstrap collection."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.3-performance-monitoring/01-core-metrics/INDEX.md": {
-   "sha256": "ddb79d79502a702ce16e16b66498dab3a9d38154c913d110acc551c4bcfc46f4",
+   "sha256": "4965cfb01883f1270e51b942e6d151fdba661eabcf658a5c4fe574405ab89eba",
    "lines": 68,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Google Core Web Vitals field p75 thresholds (LCP, INP, CLS).",
-    "readable": "Full read of 68 lines (171 prose words). Learning-flow index for Core Web Vitals (LCP <= 2.5s, INP <= 200ms, CLS <= 0.1 at field p75).",
-    "concise": "171 words across 68 lines. Learning-flow index for Core Web Vitals (LCP <= 2.5s, INP <= 200ms, CLS <= 0.1 at field p75).",
+    "readable": "Full read of 68 lines (177 prose words). Learning-flow index for Core Web Vitals (LCP <= 2.5s, INP <= 200ms, CLS <= 0.1 at field p75).",
+    "concise": "177 words across 68 lines. Learning-flow index for Core Web Vitals (LCP <= 2.5s, INP <= 200ms, CLS <= 0.1 at field p75).",
     "focused": "Single canonical home with no duplicate code across chapters. Learning-flow index for Core Web Vitals (LCP <= 2.5s, INP <= 200ms, CLS <= 0.1 at field p75).",
     "fast": "Measured 10.5 KB raw / 3.5 KB gzip. Learning-flow index for Core Web Vitals (LCP <= 2.5s, INP <= 200ms, CLS <= 0.1 at field p75).",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for Core Web Vitals (LCP <= 2.5s, INP <= 200ms, CLS <= 0.1 at field p75)."
    },
-   "notes": "Learning-flow index for Core Web Vitals (LCP <= 2.5s, INP <= 200ms, CLS <= 0.1 at field p75)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.3-performance-monitoring/01-core-metrics/REVISION.md": {
-   "sha256": "63723f3d3152a54c84127a7500f61a000f5ef888f9414b6ebb5d0f0d061186e4",
+   "sha256": "2aaad2220dfbce4246cc327618e53ce400821155915a65553375b1d16a3b9d52",
    "lines": 79,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Google Core Web Vitals specification and `web-vitals` library lifecycle semantics.",
-    "readable": "Full read of 79 lines (631 prose words). Active-recall Q&A companion covering field p75 evaluation, why Lighthouse cannot measure field INP, LCP 4-subpart decomposition, CLS 5-second session windows, and `web-vitals` `value` vs `delta`.",
-    "concise": "631 words across 79 lines. Active-recall Q&A companion covering field p75 evaluation, why Lighthouse cannot measure field INP, LCP 4-subpart decomposition, CLS 5-second session windows, and `web-vitals` `value` vs `delta`.",
+    "readable": "Full read of 79 lines (659 prose words). Active-recall Q&A companion covering field p75 evaluation, why Lighthouse cannot measure field INP, LCP 4-subpart decomposition, CLS 5-second session windows, and `web-vitals` `value` vs `delta`.",
+    "concise": "659 words across 79 lines. Active-recall Q&A companion covering field p75 evaluation, why Lighthouse cannot measure field INP, LCP 4-subpart decomposition, CLS 5-second session windows, and `web-vitals` `value` vs `delta`.",
     "focused": "Single canonical home with no duplicate code across chapters. Active-recall Q&A companion covering field p75 evaluation, why Lighthouse cannot measure field INP, LCP 4-subpart decomposition, CLS 5-second session windows, and `web-vitals` `value` vs `delta`.",
     "fast": "Measured 11.5 KB raw / 4.1 KB gzip. Active-recall Q&A companion covering field p75 evaluation, why Lighthouse cannot measure field INP, LCP 4-subpart decomposition, CLS 5-second session windows, and `web-vitals` `value` vs `delta`.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering field p75 evaluation, why Lighthouse cannot measure field INP, LCP 4-subpart decomposition, CLS 5-second session windows, and `web-vitals` `value` vs `delta`."
    },
-   "notes": "Active-recall Q&A companion covering field p75 evaluation, why Lighthouse cannot measure field INP, LCP 4-subpart decomposition, CLS 5-second session windows, and `web-vitals` `value` vs `delta`."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.01-performance-apis.md": {
-   "sha256": "6b3d0977aced675fb72eca1d8ac04ae3fc18a055001d99f1bbe50342ddb0f5fb",
-   "lines": 171,
+   "sha256": "aadffb10c4b0d70589cd51900bfdb7919d3d52996b50f35b503a6bdbf4a4477d",
+   "lines": 179,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: W3C Navigation Timing Level 2 (`PerformanceNavigationTiming`), Resource Timing (`Timing-Allow-Origin`), User Timing, and `PerformanceObserver`.",
-    "readable": "Full read of 171 lines (851 prose words). Covers `performance.now()` monotonic timing, `PerformanceNavigationTiming` phase extraction, sequence-safe `measureOperation` User Timing marks/measures, and `PerformanceObserver` resource cleanup.",
-    "concise": "851 words across 171 lines. Covers `performance.now()` monotonic timing, `PerformanceNavigationTiming` phase extraction, sequence-safe `measureOperation` User Timing marks/measures, and `PerformanceObserver` resource cleanup.",
+    "readable": "Full read of 179 lines (882 prose words). Covers `performance.now()` monotonic timing, `PerformanceNavigationTiming` phase extraction, sequence-safe `measureOperation` User Timing marks/measures, and `PerformanceObserver` resource cleanup.",
+    "concise": "882 words across 179 lines. Covers `performance.now()` monotonic timing, `PerformanceNavigationTiming` phase extraction, sequence-safe `measureOperation` User Timing marks/measures, and `PerformanceObserver` resource cleanup.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers `performance.now()` monotonic timing, `PerformanceNavigationTiming` phase extraction, sequence-safe `measureOperation` User Timing marks/measures, and `PerformanceObserver` resource cleanup.",
     "fast": "Measured 30.8 KB raw / 7.3 KB gzip. Covers `performance.now()` monotonic timing, `PerformanceNavigationTiming` phase extraction, sequence-safe `measureOperation` User Timing marks/measures, and `PerformanceObserver` resource cleanup.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers `performance.now()` monotonic timing, `PerformanceNavigationTiming` phase extraction, sequence-safe `measureOperation` User Timing marks/measures, and `PerformanceObserver` resource cleanup."
    },
-   "notes": "Covers `performance.now()` monotonic timing, `PerformanceNavigationTiming` phase extraction, sequence-safe `measureOperation` User Timing marks/measures, and `PerformanceObserver` resource cleanup."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.02-profiling-tools.md": {
-   "sha256": "741fea62ec2ef1a8c2510d098e7e36954015540f2d5f6fb525f75469ab282754",
-   "lines": 176,
+   "sha256": "abeb054b9c76213efe56c0524e39d24c8dd274a4b4ee817250f19d7e71443b9a",
+   "lines": 190,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Chrome DevTools Performance & Memory panels, React `<Profiler>` `onRender` callback, and WebPageTest.",
-    "readable": "Full read of 176 lines (952 prose words). Covers Chrome DevTools flame charts vs aggregated flame graphs, total vs self time attribution, a runnable forced-synchronous-layout experiment (`layout.html`), React `<Profiler>`, and heap retaining paths.",
-    "concise": "952 words across 176 lines. Covers Chrome DevTools flame charts vs aggregated flame graphs, total vs self time attribution, a runnable forced-synchronous-layout experiment (`layout.html`), React `<Profiler>`, and heap retaining paths.",
+    "readable": "Full read of 190 lines (961 prose words). Covers Chrome DevTools flame charts vs aggregated flame graphs, total vs self time attribution, a runnable forced-synchronous-layout experiment (`layout.html`), React `<Profiler>`, and heap retaining paths.",
+    "concise": "961 words across 190 lines. Covers Chrome DevTools flame charts vs aggregated flame graphs, total vs self time attribution, a runnable forced-synchronous-layout experiment (`layout.html`), React `<Profiler>`, and heap retaining paths.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers Chrome DevTools flame charts vs aggregated flame graphs, total vs self time attribution, a runnable forced-synchronous-layout experiment (`layout.html`), React `<Profiler>`, and heap retaining paths.",
     "fast": "Measured 30.1 KB raw / 7.7 KB gzip. Covers Chrome DevTools flame charts vs aggregated flame graphs, total vs self time attribution, a runnable forced-synchronous-layout experiment (`layout.html`), React `<Profiler>`, and heap retaining paths.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers Chrome DevTools flame charts vs aggregated flame graphs, total vs self time attribution, a runnable forced-synchronous-layout experiment (`layout.html`), React `<Profiler>`, and heap retaining paths."
    },
-   "notes": "Covers Chrome DevTools flame charts vs aggregated flame graphs, total vs self time attribution, a runnable forced-synchronous-layout experiment (`layout.html`), React `<Profiler>`, and heap retaining paths."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.03-lighthouse-ci.md": {
-   "sha256": "180e894e2536322bb5de6f58dbfc33067ba9373d33e64c4500f1ed6edcd994ae",
-   "lines": 136,
+   "sha256": "0a7378b76ac72c60da70350f36e2d8cb85901ccfa84883d9d924b28742cb55bd",
+   "lines": 150,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Google `@lhci/cli` (`lighthouserc.json` collect/assert/upload contract and Lighthouse 12+ category/audit assertions).",
-    "readable": "Full read of 136 lines (884 prose words). Covers `@lhci/cli` `autorun` pipeline architecture, a complete static `lighthouserc.json` fixture with median error/warn assertions (`categories:performance`, LCP, CLS, TBT), and CI exit enforcement.",
-    "concise": "884 words across 136 lines. Covers `@lhci/cli` `autorun` pipeline architecture, a complete static `lighthouserc.json` fixture with median error/warn assertions (`categories:performance`, LCP, CLS, TBT), and CI exit enforcement.",
+    "readable": "Full read of 150 lines (907 prose words). Covers `@lhci/cli` `autorun` pipeline architecture, a complete static `lighthouserc.json` fixture with median error/warn assertions (`categories:performance`, LCP, CLS, TBT), and CI exit enforcement.",
+    "concise": "907 words across 150 lines. Covers `@lhci/cli` `autorun` pipeline architecture, a complete static `lighthouserc.json` fixture with median error/warn assertions (`categories:performance`, LCP, CLS, TBT), and CI exit enforcement.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers `@lhci/cli` `autorun` pipeline architecture, a complete static `lighthouserc.json` fixture with median error/warn assertions (`categories:performance`, LCP, CLS, TBT), and CI exit enforcement.",
     "fast": "Measured 23.3 KB raw / 6.3 KB gzip. Covers `@lhci/cli` `autorun` pipeline architecture, a complete static `lighthouserc.json` fixture with median error/warn assertions (`categories:performance`, LCP, CLS, TBT), and CI exit enforcement.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers `@lhci/cli` `autorun` pipeline architecture, a complete static `lighthouserc.json` fixture with median error/warn assertions (`categories:performance`, LCP, CLS, TBT), and CI exit enforcement."
    },
-   "notes": "Covers `@lhci/cli` `autorun` pipeline architecture, a complete static `lighthouserc.json` fixture with median error/warn assertions (`categories:performance`, LCP, CLS, TBT), and CI exit enforcement."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.04-real-user-monitoring.md": {
-   "sha256": "f1820d4449c8b0e51cb436c31e2a50604c369efa995583d879f7dbc1f9ad72b6",
-   "lines": 179,
+   "sha256": "f31284f2f24b9c093ed4663f0983091028a0c4f9eda8e81e7c8302b52eb7ce45",
+   "lines": 205,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: `web-vitals` document-bootstrap reporting, `navigator.sendBeacon`, and Chrome User Experience Report (CrUX) methodology.",
-    "readable": "Full read of 179 lines (1,214 prose words). Covers visit-level uniform sampling vs biased slow-visit diagnostics, a bounded `sendBeacon`/`fetch(keepalive)` reporter, an idempotent Node RUM ingestion server with sequence ordering, and RUM vs CrUX differences.",
-    "concise": "1,214 words across 179 lines. Covers visit-level uniform sampling vs biased slow-visit diagnostics, a bounded `sendBeacon`/`fetch(keepalive)` reporter, an idempotent Node RUM ingestion server with sequence ordering, and RUM vs CrUX differences.",
+    "readable": "Full read of 205 lines (1242 prose words). (1,214 prose words). Covers visit-level uniform sampling vs biased slow-visit diagnostics, a bounded `sendBeacon`/`fetch(keepalive)` reporter, an idempotent Node RUM ingestion server with sequence ordering, and RUM vs CrUX differences.",
+    "concise": "1242 words across 205 lines. 1,214 words across 179 lines. Covers visit-level uniform sampling vs biased slow-visit diagnostics, a bounded `sendBeacon`/`fetch(keepalive)` reporter, an idempotent Node RUM ingestion server with sequence ordering, and RUM vs CrUX differences.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers visit-level uniform sampling vs biased slow-visit diagnostics, a bounded `sendBeacon`/`fetch(keepalive)` reporter, an idempotent Node RUM ingestion server with sequence ordering, and RUM vs CrUX differences.",
     "fast": "Measured 40.5 KB raw / 8.9 KB gzip. Covers visit-level uniform sampling vs biased slow-visit diagnostics, a bounded `sendBeacon`/`fetch(keepalive)` reporter, an idempotent Node RUM ingestion server with sequence ordering, and RUM vs CrUX differences.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers visit-level uniform sampling vs biased slow-visit diagnostics, a bounded `sendBeacon`/`fetch(keepalive)` reporter, an idempotent Node RUM ingestion server with sequence ordering, and RUM vs CrUX differences."
    },
-   "notes": "Covers visit-level uniform sampling vs biased slow-visit diagnostics, a bounded `sendBeacon`/`fetch(keepalive)` reporter, an idempotent Node RUM ingestion server with sequence ordering, and RUM vs CrUX differences."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.3-performance-monitoring/02-measurement/50.3.2.05-http2-http3-performance-effects.md": {
-   "sha256": "3b8d8a11ccd8e2e3fd7b35db3b1141e08176a067031ca69336d3689ad0ae160e",
-   "lines": 141,
+   "sha256": "d1e4eb6acd29a5bcec6a2d19b030ca4f3a5f527f78c626208da542125bf7372b",
+   "lines": 153,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: RFC 9113 (HTTP/2), RFC 9114 (HTTP/3), RFC 9000 (QUIC), RFC 9218 (`Priority: u=2, i`), Chrome HTTP/2 push removal, and NGINX `ngx_http_v3_module`.",
-    "readable": "Full read of 141 lines (1,106 prose words). Covers HTTP/2 TCP head-of-line blocking vs HTTP/3 QUIC per-stream ordering, QPACK vs HPACK, 1-RTT/0-RTT replay boundaries, connection ID migration, `nextHopProtocol` observation, NGINX `quic reuseport`, and RFC 9218 priorities.",
-    "concise": "1,106 words across 141 lines. Covers HTTP/2 TCP head-of-line blocking vs HTTP/3 QUIC per-stream ordering, QPACK vs HPACK, 1-RTT/0-RTT replay boundaries, connection ID migration, `nextHopProtocol` observation, NGINX `quic reuseport`, and RFC 9218 priorities.",
+    "readable": "Full read of 153 lines (1135 prose words). (1,106 prose words). Covers HTTP/2 TCP head-of-line blocking vs HTTP/3 QUIC per-stream ordering, QPACK vs HPACK, 1-RTT/0-RTT replay boundaries, connection ID migration, `nextHopProtocol` observation, NGINX `quic reuseport`, and RFC 9218 priorities.",
+    "concise": "1135 words across 153 lines. 1,106 words across 141 lines. Covers HTTP/2 TCP head-of-line blocking vs HTTP/3 QUIC per-stream ordering, QPACK vs HPACK, 1-RTT/0-RTT replay boundaries, connection ID migration, `nextHopProtocol` observation, NGINX `quic reuseport`, and RFC 9218 priorities.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers HTTP/2 TCP head-of-line blocking vs HTTP/3 QUIC per-stream ordering, QPACK vs HPACK, 1-RTT/0-RTT replay boundaries, connection ID migration, `nextHopProtocol` observation, NGINX `quic reuseport`, and RFC 9218 priorities.",
     "fast": "Measured 25.0 KB raw / 7.5 KB gzip. Covers HTTP/2 TCP head-of-line blocking vs HTTP/3 QUIC per-stream ordering, QPACK vs HPACK, 1-RTT/0-RTT replay boundaries, connection ID migration, `nextHopProtocol` observation, NGINX `quic reuseport`, and RFC 9218 priorities.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers HTTP/2 TCP head-of-line blocking vs HTTP/3 QUIC per-stream ordering, QPACK vs HPACK, 1-RTT/0-RTT replay boundaries, connection ID migration, `nextHopProtocol` observation, NGINX `quic reuseport`, and RFC 9218 priorities."
    },
-   "notes": "Covers HTTP/2 TCP head-of-line blocking vs HTTP/3 QUIC per-stream ordering, QPACK vs HPACK, 1-RTT/0-RTT replay boundaries, connection ID migration, `nextHopProtocol` observation, NGINX `quic reuseport`, and RFC 9218 priorities."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.3-performance-monitoring/02-measurement/INDEX.md": {
-   "sha256": "436f5f6c505412a46cb3a2f792d88df4246b0a198578a3f09cf0c2350f2c6c53",
+   "sha256": "34f97031442863fef476a14054c6a200f83668c9f3246ec9c30dd8f682a52313",
    "lines": 69,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: W3C Navigation/Resource/User Timing, Chrome DevTools, `@lhci/cli`, `web-vitals` RUM, and RFC 9113/9114/9000/9218.",
-    "readable": "Full read of 69 lines (238 prose words). Learning-flow index for web performance measurement across browser Performance APIs, profiling tools, Lighthouse CI, Real User Monitoring (RUM), and HTTP/2 vs HTTP/3 protocol effects.",
-    "concise": "238 words across 69 lines. Learning-flow index for web performance measurement across browser Performance APIs, profiling tools, Lighthouse CI, Real User Monitoring (RUM), and HTTP/2 vs HTTP/3 protocol effects.",
+    "readable": "Full read of 69 lines (243 prose words). Learning-flow index for web performance measurement across browser Performance APIs, profiling tools, Lighthouse CI, Real User Monitoring (RUM), and HTTP/2 vs HTTP/3 protocol effects.",
+    "concise": "243 words across 69 lines. Learning-flow index for web performance measurement across browser Performance APIs, profiling tools, Lighthouse CI, Real User Monitoring (RUM), and HTTP/2 vs HTTP/3 protocol effects.",
     "focused": "Single canonical home with no duplicate code across chapters. Learning-flow index for web performance measurement across browser Performance APIs, profiling tools, Lighthouse CI, Real User Monitoring (RUM), and HTTP/2 vs HTTP/3 protocol effects.",
     "fast": "Measured 12.1 KB raw / 3.9 KB gzip. Learning-flow index for web performance measurement across browser Performance APIs, profiling tools, Lighthouse CI, Real User Monitoring (RUM), and HTTP/2 vs HTTP/3 protocol effects.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for web performance measurement across browser Performance APIs, profiling tools, Lighthouse CI, Real User Monitoring (RUM), and HTTP/2 vs HTTP/3 protocol effects."
    },
-   "notes": "Learning-flow index for web performance measurement across browser Performance APIs, profiling tools, Lighthouse CI, Real User Monitoring (RUM), and HTTP/2 vs HTTP/3 protocol effects."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.3-performance-monitoring/02-measurement/REVISION.md": {
-   "sha256": "d2e172273d2b700cf327f06ce0e76ba742bfce8b92c0ad55fba5423df5e89f86",
+   "sha256": "a3b7107af0ca38b16f91fdd29d8325ff598409db6229db0c69bb91941d23ea8c",
    "lines": 123,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: PerformanceNavigationTiming, Chrome DevTools Profiler, Lighthouse CI, RUM snapshot ingestion, and HTTP/3 QUIC.",
-    "readable": "Full read of 123 lines (1,005 prose words). Active-recall Q&A companion covering concurrent User Timing marks, flame-tree total vs self time, forced synchronous layout, `@lhci/cli` error vs warn assertions, RUM sequence deduplication, and QUIC per-stream HOL blocking.",
-    "concise": "1,005 words across 123 lines. Active-recall Q&A companion covering concurrent User Timing marks, flame-tree total vs self time, forced synchronous layout, `@lhci/cli` error vs warn assertions, RUM sequence deduplication, and QUIC per-stream HOL blocking.",
+    "readable": "Full read of 123 lines (1035 prose words). (1,005 prose words). Active-recall Q&A companion covering concurrent User Timing marks, flame-tree total vs self time, forced synchronous layout, `@lhci/cli` error vs warn assertions, RUM sequence deduplication, and QUIC per-stream HOL blocking.",
+    "concise": "1035 words across 123 lines. 1,005 words across 123 lines. Active-recall Q&A companion covering concurrent User Timing marks, flame-tree total vs self time, forced synchronous layout, `@lhci/cli` error vs warn assertions, RUM sequence deduplication, and QUIC per-stream HOL blocking.",
     "focused": "Single canonical home with no duplicate code across chapters. Active-recall Q&A companion covering concurrent User Timing marks, flame-tree total vs self time, forced synchronous layout, `@lhci/cli` error vs warn assertions, RUM sequence deduplication, and QUIC per-stream HOL blocking.",
     "fast": "Measured 15.0 KB raw / 5.3 KB gzip. Active-recall Q&A companion covering concurrent User Timing marks, flame-tree total vs self time, forced synchronous layout, `@lhci/cli` error vs warn assertions, RUM sequence deduplication, and QUIC per-stream HOL blocking.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering concurrent User Timing marks, flame-tree total vs self time, forced synchronous layout, `@lhci/cli` error vs warn assertions, RUM sequence deduplication, and QUIC per-stream HOL blocking."
    },
-   "notes": "Active-recall Q&A companion covering concurrent User Timing marks, flame-tree total vs self time, forced synchronous layout, `@lhci/cli` error vs warn assertions, RUM sequence deduplication, and QUIC per-stream HOL blocking."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.01-bundle-analysis.md": {
-   "sha256": "e19fc9d55f42422cfcfdb4d46c923b441624c7c103c0867c8f2c37d8bdae0910",
-   "lines": 177,
+   "sha256": "b1f2f6cbe90974a70e7b7e99ab4e4989fcb900ec7271cf1e5e858dc1e6fe1032",
+   "lines": 185,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: esbuild `metafile` + `analyzeMetafile`, `webpack-bundle-analyzer`, `source-map-explorer`, and ESM tree shaking.",
-    "readable": "Full read of 177 lines (855 prose words). Covers emitted vs gzip/Brotli vs input-attributed bytes, a runnable esbuild eager vs lazy dynamic-import fixture (`build.mjs` + `analyzeMetafile`), `webpack-bundle-analyzer`, and `sideEffects` tree-shaking verification.",
-    "concise": "855 words across 177 lines. Covers emitted vs gzip/Brotli vs input-attributed bytes, a runnable esbuild eager vs lazy dynamic-import fixture (`build.mjs` + `analyzeMetafile`), `webpack-bundle-analyzer`, and `sideEffects` tree-shaking verification.",
+    "readable": "Full read of 185 lines (858 prose words). Covers emitted vs gzip/Brotli vs input-attributed bytes, a runnable esbuild eager vs lazy dynamic-import fixture (`build.mjs` + `analyzeMetafile`), `webpack-bundle-analyzer`, and `sideEffects` tree-shaking verification.",
+    "concise": "858 words across 185 lines. Covers emitted vs gzip/Brotli vs input-attributed bytes, a runnable esbuild eager vs lazy dynamic-import fixture (`build.mjs` + `analyzeMetafile`), `webpack-bundle-analyzer`, and `sideEffects` tree-shaking verification.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers emitted vs gzip/Brotli vs input-attributed bytes, a runnable esbuild eager vs lazy dynamic-import fixture (`build.mjs` + `analyzeMetafile`), `webpack-bundle-analyzer`, and `sideEffects` tree-shaking verification.",
     "fast": "Measured 27.6 KB raw / 7.1 KB gzip. Covers emitted vs gzip/Brotli vs input-attributed bytes, a runnable esbuild eager vs lazy dynamic-import fixture (`build.mjs` + `analyzeMetafile`), `webpack-bundle-analyzer`, and `sideEffects` tree-shaking verification.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers emitted vs gzip/Brotli vs input-attributed bytes, a runnable esbuild eager vs lazy dynamic-import fixture (`build.mjs` + `analyzeMetafile`), `webpack-bundle-analyzer`, and `sideEffects` tree-shaking verification."
    },
-   "notes": "Covers emitted vs gzip/Brotli vs input-attributed bytes, a runnable esbuild eager vs lazy dynamic-import fixture (`build.mjs` + `analyzeMetafile`), `webpack-bundle-analyzer`, and `sideEffects` tree-shaking verification."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.3-performance-monitoring/03-optimization-and-governance/50.3.3.02-performance-budgets.md": {
-   "sha256": "f4cc8b50b359847647538da2936578af5ce8b6b11126a0d687b83a4f9b0252e7",
-   "lines": 146,
+   "sha256": "5593068e313438201ea49b7f2869843df090851233dc3ad85442b6a18fb437d9",
+   "lines": 158,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Node.js `node:zlib` (`gzipSync`) manifest budget verification, `@lhci/cli`, and `size-limit`.",
-    "readable": "Full read of 146 lines (978 prose words). Covers journey, unit, individual, and aggregate budget contracts, a runnable manifest-based Node gzip budget verifier (`check-budget.mjs`) that rejects missing files or empty manifests, and exception governance.",
-    "concise": "978 words across 146 lines. Covers journey, unit, individual, and aggregate budget contracts, a runnable manifest-based Node gzip budget verifier (`check-budget.mjs`) that rejects missing files or empty manifests, and exception governance.",
+    "readable": "Full read of 158 lines (1001 prose words). Covers journey, unit, individual, and aggregate budget contracts, a runnable manifest-based Node gzip budget verifier (`check-budget.mjs`) that rejects missing files or empty manifests, and exception governance.",
+    "concise": "1001 words across 158 lines. Covers journey, unit, individual, and aggregate budget contracts, a runnable manifest-based Node gzip budget verifier (`check-budget.mjs`) that rejects missing files or empty manifests, and exception governance.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers journey, unit, individual, and aggregate budget contracts, a runnable manifest-based Node gzip budget verifier (`check-budget.mjs`) that rejects missing files or empty manifests, and exception governance.",
     "fast": "Measured 26.2 KB raw / 7.3 KB gzip. Covers journey, unit, individual, and aggregate budget contracts, a runnable manifest-based Node gzip budget verifier (`check-budget.mjs`) that rejects missing files or empty manifests, and exception governance.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers journey, unit, individual, and aggregate budget contracts, a runnable manifest-based Node gzip budget verifier (`check-budget.mjs`) that rejects missing files or empty manifests, and exception governance."
    },
-   "notes": "Covers journey, unit, individual, and aggregate budget contracts, a runnable manifest-based Node gzip budget verifier (`check-budget.mjs`) that rejects missing files or empty manifests, and exception governance."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.3-performance-monitoring/03-optimization-and-governance/INDEX.md": {
-   "sha256": "3528a8269817c501d0c3ffb121bc75b699f36b9cc73fa461a7813c71ec7e61cb",
+   "sha256": "725b939e2538c18fd1d4fc8c4ce2dd7e7f80a894346bde042da4c27db04fec67",
    "lines": 73,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: esbuild metafile analysis, webpack-bundle-analyzer, and manifest-based gzip byte budget gates.",
-    "readable": "Full read of 73 lines (198 prose words). Learning-flow index for web performance optimization and governance: bundle analysis and CI-enforced performance budgets.",
-    "concise": "198 words across 73 lines. Learning-flow index for web performance optimization and governance: bundle analysis and CI-enforced performance budgets.",
+    "readable": "Full read of 73 lines (206 prose words). Learning-flow index for web performance optimization and governance: bundle analysis and CI-enforced performance budgets.",
+    "concise": "206 words across 73 lines. Learning-flow index for web performance optimization and governance: bundle analysis and CI-enforced performance budgets.",
     "focused": "Single canonical home with no duplicate code across chapters. Learning-flow index for web performance optimization and governance: bundle analysis and CI-enforced performance budgets.",
     "fast": "Measured 11.4 KB raw / 3.8 KB gzip. Learning-flow index for web performance optimization and governance: bundle analysis and CI-enforced performance budgets.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for web performance optimization and governance: bundle analysis and CI-enforced performance budgets."
    },
-   "notes": "Learning-flow index for web performance optimization and governance: bundle analysis and CI-enforced performance budgets."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.3-performance-monitoring/03-optimization-and-governance/REVISION.md": {
-   "sha256": "747eccc98b5603437b23bb6d944291c24b29e02663c269385cdc9e36739af548",
+   "sha256": "551131dcda67ab68890660945e986a178fa43db792bd25cb143d5b935c139651",
    "lines": 71,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: esbuild `analyzeMetafile`, Webpack `sideEffects`, and manifest-enforced performance budgets.",
-    "readable": "Full read of 71 lines (512 prose words). Active-recall Q&A companion covering why 170 KB is not a universal TCP congestion-window budget, esbuild `metafile: true` persistence, `sideEffects: false` pitfalls, dynamic-import export retention, and budget gates.",
-    "concise": "512 words across 71 lines. Active-recall Q&A companion covering why 170 KB is not a universal TCP congestion-window budget, esbuild `metafile: true` persistence, `sideEffects: false` pitfalls, dynamic-import export retention, and budget gates.",
+    "readable": "Full read of 71 lines (529 prose words). Active-recall Q&A companion covering why 170 KB is not a universal TCP congestion-window budget, esbuild `metafile: true` persistence, `sideEffects: false` pitfalls, dynamic-import export retention, and budget gates.",
+    "concise": "529 words across 71 lines. Active-recall Q&A companion covering why 170 KB is not a universal TCP congestion-window budget, esbuild `metafile: true` persistence, `sideEffects: false` pitfalls, dynamic-import export retention, and budget gates.",
     "focused": "Single canonical home with no duplicate code across chapters. Active-recall Q&A companion covering why 170 KB is not a universal TCP congestion-window budget, esbuild `metafile: true` persistence, `sideEffects: false` pitfalls, dynamic-import export retention, and budget gates.",
     "fast": "Measured 10.9 KB raw / 3.9 KB gzip. Active-recall Q&A companion covering why 170 KB is not a universal TCP congestion-window budget, esbuild `metafile: true` persistence, `sideEffects: false` pitfalls, dynamic-import export retention, and budget gates.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering why 170 KB is not a universal TCP congestion-window budget, esbuild `metafile: true` persistence, `sideEffects: false` pitfalls, dynamic-import export retention, and budget gates."
    },
-   "notes": "Active-recall Q&A companion covering why 170 KB is not a universal TCP congestion-window budget, esbuild `metafile: true` persistence, `sideEffects: false` pitfalls, dynamic-import export retention, and budget gates."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.3-performance-monitoring/04-interview-prep/50.3.4.01-interview-questions.md": {
-   "sha256": "5670da7ffbda0a5154652e0a2025222ff2c707d3f8c71786116b93b18e1fb40e",
+   "sha256": "9a9652bca9f104038e661bfb8e43a1b5a9becc6fd557aa8081ecded25412a6d3",
    "lines": 302,
    "genre": "interview",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Core Web Vitals (INP, LCP, CLS), PerformanceNavigationTiming, CrUX vs RUM, and HTTP/2 vs HTTP/3 QUIC.",
-    "readable": "Full read of 302 lines (2,558 prose words). Covers 30 senior performance monitoring interview questions with changed-condition probes across LCP/INP/CLS, lab vs field, SPA soft navigations, micro-frontend attribution, 1B-event/day RUM ingestion, SSR, and HTTP/3.",
-    "concise": "2,558 words across 302 lines. Covers 30 senior performance monitoring interview questions with changed-condition probes across LCP/INP/CLS, lab vs field, SPA soft navigations, micro-frontend attribution, 1B-event/day RUM ingestion, SSR, and HTTP/3.",
+    "readable": "Full read of 302 lines (2669 prose words). (2,558 prose words). Covers 30 senior performance monitoring interview questions with changed-condition probes across LCP/INP/CLS, lab vs field, SPA soft navigations, micro-frontend attribution, 1B-event/day RUM ingestion, SSR, and HTTP/3.",
+    "concise": "2669 words across 302 lines. 2,558 words across 302 lines. Covers 30 senior performance monitoring interview questions with changed-condition probes across LCP/INP/CLS, lab vs field, SPA soft navigations, micro-frontend attribution, 1B-event/day RUM ingestion, SSR, and HTTP/3.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers 30 senior performance monitoring interview questions with changed-condition probes across LCP/INP/CLS, lab vs field, SPA soft navigations, micro-frontend attribution, 1B-event/day RUM ingestion, SSR, and HTTP/3.",
     "fast": "Measured 29.1 KB raw / 9.6 KB gzip. Covers 30 senior performance monitoring interview questions with changed-condition probes across LCP/INP/CLS, lab vs field, SPA soft navigations, micro-frontend attribution, 1B-event/day RUM ingestion, SSR, and HTTP/3.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers 30 senior performance monitoring interview questions with changed-condition probes across LCP/INP/CLS, lab vs field, SPA soft navigations, micro-frontend attribution, 1B-event/day RUM ingestion, SSR, and HTTP/3."
    },
-   "notes": "Covers 30 senior performance monitoring interview questions with changed-condition probes across LCP/INP/CLS, lab vs field, SPA soft navigations, micro-frontend attribution, 1B-event/day RUM ingestion, SSR, and HTTP/3."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.3-performance-monitoring/04-interview-prep/INDEX.md": {
-   "sha256": "fac4c5237e61bee79142cfa1c0a6a5adb0e6c7f15e661971a7c1f1016a857bbc",
+   "sha256": "3acf3d1d60b2cdd480e5ae675f80d756f36bacdff51dd0d0204888cbc4e1f512",
    "lines": 62,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Core Web Vitals (LCP, INP, CLS), Navigation Timing Level 2, RUM, HTTP/3 QUIC, and performance budgets.",
-    "readable": "Full read of 62 lines (148 prose words). Learning-flow index for the 30-question web performance monitoring interview preparation bank.",
-    "concise": "148 words across 62 lines. Learning-flow index for the 30-question web performance monitoring interview preparation bank.",
+    "readable": "Full read of 62 lines (158 prose words). Learning-flow index for the 30-question web performance monitoring interview preparation bank.",
+    "concise": "158 words across 62 lines. Learning-flow index for the 30-question web performance monitoring interview preparation bank.",
     "focused": "Single canonical home with no duplicate code across chapters. Learning-flow index for the 30-question web performance monitoring interview preparation bank.",
     "fast": "Measured 9.6 KB raw / 3.3 KB gzip. Learning-flow index for the 30-question web performance monitoring interview preparation bank.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for the 30-question web performance monitoring interview preparation bank."
    },
-   "notes": "Learning-flow index for the 30-question web performance monitoring interview preparation bank."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.3-performance-monitoring/INDEX.md": {
-   "sha256": "0317a0f69400e141dd5e30576df788555ec2cff9570f4f2ff49c878ff36e3de8",
+   "sha256": "2bd5caac71160d932e1ba0e3f481e405bb5135cf88e36b5d991663b65ca728fd",
    "lines": 105,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Core Web Vitals (LCP <= 2.5s, INP <= 200ms, CLS <= 0.1 at p75), PerformanceObserver, web-vitals, and Lighthouse CI.",
-    "readable": "Full read of 105 lines (302 prose words). Learning-flow index for 50.3-performance-monitoring across Core Web Vitals (LCP, INP, CLS), PerformanceObserver APIs, profiling tools, Lighthouse CI, RUM, HTTP/2 & HTTP/3, and performance budgets.",
-    "concise": "302 words across 105 lines. Learning-flow index for 50.3-performance-monitoring across Core Web Vitals (LCP, INP, CLS), PerformanceObserver APIs, profiling tools, Lighthouse CI, RUM, HTTP/2 & HTTP/3, and performance budgets.",
+    "readable": "Full read of 105 lines (317 prose words). Learning-flow index for 50.3-performance-monitoring across Core Web Vitals (LCP, INP, CLS), PerformanceObserver APIs, profiling tools, Lighthouse CI, RUM, HTTP/2 & HTTP/3, and performance budgets.",
+    "concise": "317 words across 105 lines. Learning-flow index for 50.3-performance-monitoring across Core Web Vitals (LCP, INP, CLS), PerformanceObserver APIs, profiling tools, Lighthouse CI, RUM, HTTP/2 & HTTP/3, and performance budgets.",
     "focused": "Single canonical home with no duplicate code across chapters. Learning-flow index for 50.3-performance-monitoring across Core Web Vitals (LCP, INP, CLS), PerformanceObserver APIs, profiling tools, Lighthouse CI, RUM, HTTP/2 & HTTP/3, and performance budgets.",
     "fast": "Measured 15.4 KB raw / 4.4 KB gzip. Learning-flow index for 50.3-performance-monitoring across Core Web Vitals (LCP, INP, CLS), PerformanceObserver APIs, profiling tools, Lighthouse CI, RUM, HTTP/2 & HTTP/3, and performance budgets.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for 50.3-performance-monitoring across Core Web Vitals (LCP, INP, CLS), PerformanceObserver APIs, profiling tools, Lighthouse CI, RUM, HTTP/2 & HTTP/3, and performance budgets."
    },
-   "notes": "Learning-flow index for 50.3-performance-monitoring across Core Web Vitals (LCP, INP, CLS), PerformanceObserver APIs, profiling tools, Lighthouse CI, RUM, HTTP/2 & HTTP/3, and performance budgets."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.4-production-engineering/50.4.01-incident-response.md": {
-   "sha256": "9b253b0bbb0d5b13854759dd637b4c7fcc62d4ce5042439ca0766b8a9c6991f2",
-   "lines": 157,
+   "sha256": "85f93535751c0f469666a37f0e65835db904c5801c38b2deb67e757af30cc358",
+   "lines": 167,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Google SRE Incident Management and NIST SP 800-61 Rev. 3 (2025) CSF 2.0 cybersecurity incident response lifecycle.",
-    "readable": "Full read of 157 lines (1,177 prose words). Covers incident command roles (IC, Ops Lead, Comms Lead), bounded mitigation preconditions, read-only `pg_stat_activity` connection-exhaustion triage, stakeholder updates, and blameless postmortems.",
-    "concise": "1,177 words across 157 lines. Covers incident command roles (IC, Ops Lead, Comms Lead), bounded mitigation preconditions, read-only `pg_stat_activity` connection-exhaustion triage, stakeholder updates, and blameless postmortems.",
+    "readable": "Full read of 167 lines (1188 prose words). (1,177 prose words). Covers incident command roles (IC, Ops Lead, Comms Lead), bounded mitigation preconditions, read-only `pg_stat_activity` connection-exhaustion triage, stakeholder updates, and blameless postmortems.",
+    "concise": "1188 words across 167 lines. 1,177 words across 157 lines. Covers incident command roles (IC, Ops Lead, Comms Lead), bounded mitigation preconditions, read-only `pg_stat_activity` connection-exhaustion triage, stakeholder updates, and blameless postmortems.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers incident command roles (IC, Ops Lead, Comms Lead), bounded mitigation preconditions, read-only `pg_stat_activity` connection-exhaustion triage, stakeholder updates, and blameless postmortems.",
     "fast": "Measured 21.8 KB raw / 7.6 KB gzip. Covers incident command roles (IC, Ops Lead, Comms Lead), bounded mitigation preconditions, read-only `pg_stat_activity` connection-exhaustion triage, stakeholder updates, and blameless postmortems.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers incident command roles (IC, Ops Lead, Comms Lead), bounded mitigation preconditions, read-only `pg_stat_activity` connection-exhaustion triage, stakeholder updates, and blameless postmortems."
    },
-   "notes": "Covers incident command roles (IC, Ops Lead, Comms Lead), bounded mitigation preconditions, read-only `pg_stat_activity` connection-exhaustion triage, stakeholder updates, and blameless postmortems."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.4-production-engineering/50.4.02-sli-slo-error-budgets.md": {
-   "sha256": "727bf70250e2d4a1fd6c4838d7cf34a1e4d5e24db30ce870f375397c0b816f8f",
-   "lines": 164,
+   "sha256": "86ff5fafe46d1cf4c0188480f4390803f2295eb79dd6725cf274a5d0a2db69b6",
+   "lines": 174,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Google SRE Workbook multi-window burn-rate alerting and event-accounted request error budgets.",
-    "readable": "Full read of 164 lines (911 prose words). Covers request-based vs time-based SLI/SLO contracts, exact BigInt error-budget calculation, event-accounted vs constant-traffic burn rates, multi-window PromQL alerts (14.4x 1h/5m), and release policies.",
-    "concise": "911 words across 164 lines. Covers request-based vs time-based SLI/SLO contracts, exact BigInt error-budget calculation, event-accounted vs constant-traffic burn rates, multi-window PromQL alerts (14.4x 1h/5m), and release policies.",
+    "readable": "Full read of 174 lines (916 prose words). Covers request-based vs time-based SLI/SLO contracts, exact BigInt error-budget calculation, event-accounted vs constant-traffic burn rates, multi-window PromQL alerts (14.4x 1h/5m), and release policies.",
+    "concise": "916 words across 174 lines. Covers request-based vs time-based SLI/SLO contracts, exact BigInt error-budget calculation, event-accounted vs constant-traffic burn rates, multi-window PromQL alerts (14.4x 1h/5m), and release policies.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers request-based vs time-based SLI/SLO contracts, exact BigInt error-budget calculation, event-accounted vs constant-traffic burn rates, multi-window PromQL alerts (14.4x 1h/5m), and release policies.",
     "fast": "Measured 26.4 KB raw / 7.3 KB gzip. Covers request-based vs time-based SLI/SLO contracts, exact BigInt error-budget calculation, event-accounted vs constant-traffic burn rates, multi-window PromQL alerts (14.4x 1h/5m), and release policies.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers request-based vs time-based SLI/SLO contracts, exact BigInt error-budget calculation, event-accounted vs constant-traffic burn rates, multi-window PromQL alerts (14.4x 1h/5m), and release policies."
    },
-   "notes": "Covers request-based vs time-based SLI/SLO contracts, exact BigInt error-budget calculation, event-accounted vs constant-traffic burn rates, multi-window PromQL alerts (14.4x 1h/5m), and release policies."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.4-production-engineering/50.4.03-chaos-engineering.md": {
-   "sha256": "9c4704f003545ebadafa2887d0afcf82c746ce04d985c5e58af46f2af3484883",
-   "lines": 118,
+   "sha256": "c4052b475ff9023a0a3c96431f417aed32502f83320559be50bac1389aa6a075",
+   "lines": 132,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Principles of Chaos Engineering and Chaos Mesh Kubernetes fault duration/scheduling rules.",
-    "readable": "Full read of 118 lines (980 prose words). Covers operational chaos governance, game-day rehearsals, dependency blast-radius boundaries, controller stop thresholds, runner-independent fault expiry, and Chaos Mesh scheduling.",
-    "concise": "980 words across 118 lines. Covers operational chaos governance, game-day rehearsals, dependency blast-radius boundaries, controller stop thresholds, runner-independent fault expiry, and Chaos Mesh scheduling.",
+    "readable": "Full read of 132 lines (986 prose words). Covers operational chaos governance, game-day rehearsals, dependency blast-radius boundaries, controller stop thresholds, runner-independent fault expiry, and Chaos Mesh scheduling.",
+    "concise": "986 words across 132 lines. Covers operational chaos governance, game-day rehearsals, dependency blast-radius boundaries, controller stop thresholds, runner-independent fault expiry, and Chaos Mesh scheduling.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers operational chaos governance, game-day rehearsals, dependency blast-radius boundaries, controller stop thresholds, runner-independent fault expiry, and Chaos Mesh scheduling.",
     "fast": "Measured 19.5 KB raw / 6.9 KB gzip. Covers operational chaos governance, game-day rehearsals, dependency blast-radius boundaries, controller stop thresholds, runner-independent fault expiry, and Chaos Mesh scheduling.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers operational chaos governance, game-day rehearsals, dependency blast-radius boundaries, controller stop thresholds, runner-independent fault expiry, and Chaos Mesh scheduling."
    },
-   "notes": "Covers operational chaos governance, game-day rehearsals, dependency blast-radius boundaries, controller stop thresholds, runner-independent fault expiry, and Chaos Mesh scheduling."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.4-production-engineering/50.4.04-production-readiness-reviews.md": {
-   "sha256": "21744aca5ac540d2398f4c01124925ebea23157f5761e4e179a57aaa7d51f04b",
-   "lines": 135,
+   "sha256": "07acdbc1169d3a218921104e03e7db27d0de466e30e03a18d79310d4d427f440",
+   "lines": 147,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Google SRE Production Readiness Review model and AWS Well-Architected operational readiness criteria.",
-    "readable": "Full read of 135 lines (1,113 prose words). Covers Production Readiness Review (PRR) evidence across ownership, capacity, change safety, dependency failure, data restore, and security, plus a typed TypeScript release-gate verifier.",
-    "concise": "1,113 words across 135 lines. Covers Production Readiness Review (PRR) evidence across ownership, capacity, change safety, dependency failure, data restore, and security, plus a typed TypeScript release-gate verifier.",
+    "readable": "Full read of 147 lines (1129 prose words). (1,113 prose words). Covers Production Readiness Review (PRR) evidence across ownership, capacity, change safety, dependency failure, data restore, and security, plus a typed TypeScript release-gate verifier.",
+    "concise": "1129 words across 147 lines. 1,113 words across 135 lines. Covers Production Readiness Review (PRR) evidence across ownership, capacity, change safety, dependency failure, data restore, and security, plus a typed TypeScript release-gate verifier.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers Production Readiness Review (PRR) evidence across ownership, capacity, change safety, dependency failure, data restore, and security, plus a typed TypeScript release-gate verifier.",
     "fast": "Measured 26.0 KB raw / 7.1 KB gzip. Covers Production Readiness Review (PRR) evidence across ownership, capacity, change safety, dependency failure, data restore, and security, plus a typed TypeScript release-gate verifier.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers Production Readiness Review (PRR) evidence across ownership, capacity, change safety, dependency failure, data restore, and security, plus a typed TypeScript release-gate verifier."
    },
-   "notes": "Covers Production Readiness Review (PRR) evidence across ownership, capacity, change safety, dependency failure, data restore, and security, plus a typed TypeScript release-gate verifier."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.4-production-engineering/50.4.05-on-call-without-burnout.md": {
-   "sha256": "c9262604e4dd5519abc401534f9ad3249040983514af402b18e5c004342d4f8d",
-   "lines": 139,
+   "sha256": "8fd88440a8d6a9335ad190e5d0c092ab78f90d64080d3f9e699ae380a900c92e",
+   "lines": 157,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Google SRE Being On-Call, PagerDuty Incident Response, and Prometheus Alertmanager grouping/inhibition.",
-    "readable": "Full read of 139 lines (1,086 prose words). Covers workload-driven rotation design, follow-the-sun UTC handoffs, symptom/imminent-harm paging criteria, alert audits, and shift-level p90/p50 interruption and unacknowledged-page metrics.",
-    "concise": "1,086 words across 139 lines. Covers workload-driven rotation design, follow-the-sun UTC handoffs, symptom/imminent-harm paging criteria, alert audits, and shift-level p90/p50 interruption and unacknowledged-page metrics.",
+    "readable": "Full read of 157 lines (1098 prose words). (1,086 prose words). Covers workload-driven rotation design, follow-the-sun UTC handoffs, symptom/imminent-harm paging criteria, alert audits, and shift-level p90/p50 interruption and unacknowledged-page metrics.",
+    "concise": "1098 words across 157 lines. 1,086 words across 139 lines. Covers workload-driven rotation design, follow-the-sun UTC handoffs, symptom/imminent-harm paging criteria, alert audits, and shift-level p90/p50 interruption and unacknowledged-page metrics.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers workload-driven rotation design, follow-the-sun UTC handoffs, symptom/imminent-harm paging criteria, alert audits, and shift-level p90/p50 interruption and unacknowledged-page metrics.",
     "fast": "Measured 26.4 KB raw / 7.5 KB gzip. Covers workload-driven rotation design, follow-the-sun UTC handoffs, symptom/imminent-harm paging criteria, alert audits, and shift-level p90/p50 interruption and unacknowledged-page metrics.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers workload-driven rotation design, follow-the-sun UTC handoffs, symptom/imminent-harm paging criteria, alert audits, and shift-level p90/p50 interruption and unacknowledged-page metrics."
    },
-   "notes": "Covers workload-driven rotation design, follow-the-sun UTC handoffs, symptom/imminent-harm paging criteria, alert audits, and shift-level p90/p50 interruption and unacknowledged-page metrics."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.4-production-engineering/50.4.06-interview-questions.md": {
-   "sha256": "227e2554f4d1fad928e25fbe10866dbbf563cbde947f0ee9c113b9b23382ab6d",
+   "sha256": "679f561dfceb016da3d59972f7183b03970b79f630605b2f834f6a0fd111ae01",
    "lines": 176,
    "genre": "interview",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Google SRE Book/Workbook, NIST SP 800-61 Rev. 3 (2025), and production operational governance.",
-    "readable": "Full read of 176 lines (2,632 prose words). Covers 25 senior production-engineering interview questions with probes across 15-minute outage triage, blameless postmortems, SLO burn rates, chaos blast radius, PRR gates, toil, and multi-region failover.",
-    "concise": "2,632 words across 176 lines. Covers 25 senior production-engineering interview questions with probes across 15-minute outage triage, blameless postmortems, SLO burn rates, chaos blast radius, PRR gates, toil, and multi-region failover.",
+    "readable": "Full read of 176 lines (2651 prose words). (2,632 prose words). Covers 25 senior production-engineering interview questions with probes across 15-minute outage triage, blameless postmortems, SLO burn rates, chaos blast radius, PRR gates, toil, and multi-region failover.",
+    "concise": "2651 words across 176 lines. 2,632 words across 176 lines. Covers 25 senior production-engineering interview questions with probes across 15-minute outage triage, blameless postmortems, SLO burn rates, chaos blast radius, PRR gates, toil, and multi-region failover.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers 25 senior production-engineering interview questions with probes across 15-minute outage triage, blameless postmortems, SLO burn rates, chaos blast radius, PRR gates, toil, and multi-region failover.",
     "fast": "Measured 32.1 KB raw / 11.5 KB gzip. Covers 25 senior production-engineering interview questions with probes across 15-minute outage triage, blameless postmortems, SLO burn rates, chaos blast radius, PRR gates, toil, and multi-region failover.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers 25 senior production-engineering interview questions with probes across 15-minute outage triage, blameless postmortems, SLO burn rates, chaos blast radius, PRR gates, toil, and multi-region failover."
    },
-   "notes": "Covers 25 senior production-engineering interview questions with probes across 15-minute outage triage, blameless postmortems, SLO burn rates, chaos blast radius, PRR gates, toil, and multi-region failover."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.4-production-engineering/INDEX.md": {
-   "sha256": "4f05bf60b54186e6c4aa41f0e6949ca0ac6ce5046fbc2cb32edaecda7413635d",
+   "sha256": "1a51b3c8752275154b1fb77d2af12b217f18be662bc386b10471d1a91c322197",
    "lines": 49,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: NIST SP 800-61 Rev. 3 incident response, Google SRE multi-window burn-rate budgets, and production readiness gates.",
-    "readable": "Full read of 49 lines (251 prose words). Learning-flow index for 50.4-production-engineering covering SLIs/SLOs/error budgets, incident command and postmortems, production readiness reviews, operational chaos engineering, and sustainable on-call.",
-    "concise": "251 words across 49 lines. Learning-flow index for 50.4-production-engineering covering SLIs/SLOs/error budgets, incident command and postmortems, production readiness reviews, operational chaos engineering, and sustainable on-call.",
+    "readable": "Full read of 49 lines (250 prose words). Learning-flow index for 50.4-production-engineering covering SLIs/SLOs/error budgets, incident command and postmortems, production readiness reviews, operational chaos engineering, and sustainable on-call.",
+    "concise": "250 words across 49 lines. Learning-flow index for 50.4-production-engineering covering SLIs/SLOs/error budgets, incident command and postmortems, production readiness reviews, operational chaos engineering, and sustainable on-call.",
     "focused": "Single canonical home with no duplicate code across chapters. Learning-flow index for 50.4-production-engineering covering SLIs/SLOs/error budgets, incident command and postmortems, production readiness reviews, operational chaos engineering, and sustainable on-call.",
     "fast": "Measured 11.4 KB raw / 3.9 KB gzip. Learning-flow index for 50.4-production-engineering covering SLIs/SLOs/error budgets, incident command and postmortems, production readiness reviews, operational chaos engineering, and sustainable on-call.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for 50.4-production-engineering covering SLIs/SLOs/error budgets, incident command and postmortems, production readiness reviews, operational chaos engineering, and sustainable on-call."
    },
-   "notes": "Learning-flow index for 50.4-production-engineering covering SLIs/SLOs/error budgets, incident command and postmortems, production readiness reviews, operational chaos engineering, and sustainable on-call."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/50.4-production-engineering/REVISION.md": {
-   "sha256": "d7678a433b1930569c829a355a5e0aa58141c91d45f4ca1c6b29b9f92488ba8e",
+   "sha256": "cebd876266654ca4c16ae054bea12b01d6d9fd4dfa8f9ddfd4185befff240d4e",
    "lines": 135,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: NIST SP 800-61 Rev. 3, event-accounted vs time-based SLO budgets, and bounded production chaos experiments.",
-    "readable": "Full read of 135 lines (880 prose words). Active-recall Q&A companion covering incident command separation, NIST SP 800-61 Rev. 3 containment, request-based error budget math, bounded rollbacks, fault expiry, and shift page distributions.",
-    "concise": "880 words across 135 lines. Active-recall Q&A companion covering incident command separation, NIST SP 800-61 Rev. 3 containment, request-based error budget math, bounded rollbacks, fault expiry, and shift page distributions.",
+    "readable": "Full read of 135 lines (902 prose words). Active-recall Q&A companion covering incident command separation, NIST SP 800-61 Rev. 3 containment, request-based error budget math, bounded rollbacks, fault expiry, and shift page distributions.",
+    "concise": "902 words across 135 lines. Active-recall Q&A companion covering incident command separation, NIST SP 800-61 Rev. 3 containment, request-based error budget math, bounded rollbacks, fault expiry, and shift page distributions.",
     "focused": "Single canonical home with no duplicate code across chapters. Active-recall Q&A companion covering incident command separation, NIST SP 800-61 Rev. 3 containment, request-based error budget math, bounded rollbacks, fault expiry, and shift page distributions.",
     "fast": "Measured 15.5 KB raw / 5.3 KB gzip. Active-recall Q&A companion covering incident command separation, NIST SP 800-61 Rev. 3 containment, request-based error budget math, bounded rollbacks, fault expiry, and shift page distributions.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering incident command separation, NIST SP 800-61 Rev. 3 containment, request-based error budget math, bounded rollbacks, fault expiry, and shift page distributions."
    },
-   "notes": "Active-recall Q&A companion covering incident command separation, NIST SP 800-61 Rev. 3 containment, request-based error budget math, bounded rollbacks, fault expiry, and shift page distributions."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "50-quality/INDEX.md": {
-   "sha256": "694f9c1041de05b16df9f2368fe2f29e7595b90a65979e44267d474061a377e8",
+   "sha256": "c30d8650afdf9ba65e71685e05f43a092fce775e7bd19f1e14ef5b9d3bd1c4b3",
    "lines": 64,
    "genre": "index",
    "status": "read",
@@ -12209,7 +12209,7 @@
     "fast": "Measured 10.7 KB raw / 3.9 KB gzip. Section-level learning-flow index for 50-quality across testing (50.1), accessibility (50.2), performance monitoring (50.3), and production engineering (50.4).",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Section-level learning-flow index for 50-quality across testing (50.1), accessibility (50.2), performance monitoring (50.3), and production engineering (50.4)."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 5A 50-quality/INDEX.md and 50.1-testing)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 5B 50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "60-realtime/60.1-websockets/01-transports/60.1.1.01-websockets-overview.md": {
    "sha256": "f6f3fab1cf6010fdb837ec3bbd7e13588374967d0864d7b305580d61aea83539",
@@ -14281,7 +14281,7 @@
    }
   },
   "INDEX.md": {
-   "sha256": "33c602c3d6a52244d43f3724d45c42598a9e7c248d982db12b97a82f8a28c022",
+   "sha256": "eaaaaf10629dbd87c31bb10374b6e5ebc0d68be01fdb496e5773d48d1c6e6853",
    "lines": 206,
    "genre": "index",
    "status": "read",
@@ -14294,7 +14294,7 @@
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Maintains strict zero-broken-link boundary across 991 tracked markdown files."
    },
-   "notes": "Synced live read-time and counts after Wave 4D (40.7-serverless-edge through 40.12-iac)."
+   "notes": "Synced live read-time and counts after Wave 5B (50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "README.md": {
    "sha256": "d885528e428ea38f115bc62b8bac76e421c317edae2aeb312516f3f01fd17a5f",
@@ -14327,20 +14327,20 @@
    }
   },
   "contributing.md": {
-   "sha256": "121dfed7c0d9fe0593835f6f26fde6782474005267194a0a47c5eedfd70b8e24",
+   "sha256": "eeeeab96ada169df6b7a0a98ffac633c6f7073546087beedc9f7f469c7c74d42",
    "lines": 947,
    "genre": "meta",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current scripts/verify.sh gates and check_counts.py output.",
-    "readable": "Full read of 947 lines verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "readable": "Full read of 947 lines (3280 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "3280 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical contributor workflow guide; points at docs/verification-gates.md for full gate definitions.",
-    "fast": "not built as HTML; 53.1 KB Markdown source served raw on disk with verified backlinks, uniform headings, and concise prose structure.",
+    "fast": "Measured not built as HTML; 53.1 KB Markdown source served raw (not built as HTML; 53.1 KB Markdown source served raw on disk with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Remaining limit is contributor guidance must be re-checked whenever verification gates change."
    },
-   "notes": "Synced live counts/read-time after Wave 3C (30.2-system-design)."
+   "notes": "Synced live read-time and counts after Wave 5B (50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "design-qa.md": {
    "sha256": "e8da15c567bc813b3b61a4d54a8570220db77ad84aa5cb2300e19ed1356ba5ee",
@@ -14582,7 +14582,7 @@
    "notes": "Updated section-pass rule 3 to permit full comprehension rewrites while preserving metadata, anchors, and authored REVISION.md pairs."
   },
   "docs/api-contract.md": {
-   "sha256": "071dda9fb3e5418f22f9418c1313e1ad73c6103e6c2311aa9b2dd566261b54f0",
+   "sha256": "49c6f59f9e096fdb3bf647ca8056f488c436aa54bcb943eab536de3a076ffd81",
    "lines": 119,
    "genre": "doc",
    "status": "read",
@@ -14595,7 +14595,7 @@
     "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Wave 4D (40.7-serverless-edge through 40.12-iac)."
+   "notes": "Synced live read-time and counts after Wave 5B (50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "docs/deployment.md": {
    "sha256": "ea99a37f317c2a867f6f19756e78b15e15853b729507e8f02c3d9e64d00d59bb",
@@ -15126,20 +15126,20 @@
    "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
   },
   "docs/verification-gates.md": {
-   "sha256": "9370c5da09bde3a2d4bc3507c6a9a404d899a0dc70cb22db0210eb7ef6da421b",
+   "sha256": "a36593fa4a6a225afc8a6afb3ce9f40f84b56b9468a49fdc42456fd2ce3482f8",
    "lines": 125,
    "genre": "doc",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 repository governance/reference doc (verification-gates) verified against current 34-gate tooling.",
-    "readable": "Full read of 125 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "762 words. Clear operational documentation for verification-gates grounded in current scripts and contracts.",
+    "readable": "Full read of 125 lines (762 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "762 words across 125 lines. Clear operational documentation for verification-gates grounded in current scripts and contracts.",
     "focused": "Canonical docs/ home for verification-gates; avoids duplicating AGENTS.md or script logic.",
-    "fast": "78.9 KB raw / 23.7 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 78.9 KB raw / 23.7 KB gzip (fast scan via headings and direct links.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for verification-gates."
    },
-   "notes": "Synced live counts/read-time after Wave 3C (30.2-system-design)."
+   "notes": "Synced live read-time and counts after Wave 5B (50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
   },
   "lanes/INDEX.md": {
    "sha256": "1a748a0a73fb6ef546154b16c2bad86f94c365b99a7715460c2eabe6ef3ee8d9",

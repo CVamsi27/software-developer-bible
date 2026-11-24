@@ -2,7 +2,7 @@
 [![Section](https://img.shields.io/badge/section-Production%20Engineering-blue)](#)
 [![Category](https://img.shields.io/badge/category-Reference-lightgrey)](#)
 [![Tags](https://img.shields.io/badge/tags-revision%20%C2%B7%20practice-lightgrey)](#)
-[![Read time](https://img.shields.io/badge/read--time-2_min-informational)](#)
+[![Read time](https://img.shields.io/badge/read--time-3_min-informational)](#)
 [![Role priority](https://img.shields.io/badge/role--priority-Important-blue)](../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../docs/topic-importance.md)
 
@@ -20,7 +20,7 @@ Source: [Incident Response — Triage, Communication, Postmortems](50.4.01-incid
 
 **Q:** How does a cybersecurity incident response plan relate to service incident coordination?
 
-**A:** They share impact assessment, coordination and recovery needs, but a suspected security event may require containment and evidence preservation before destructive rollback or cleanup. Follow the organization's security authority and evidence process; NIST SP 800-61 Rev. 3 integrates cybersecurity response into CSF 2.0 risk management rather than replacing service runbooks.
+**A:** They share impact assessment, coordination, and recovery needs, but a suspected security event may require containment and evidence preservation before destructive rollback or cleanup. Follow the organization's security authority and evidence process; National Institute of Standards and Technology (NIST) Special Publication (SP) 800-61 Rev. 3 integrates cybersecurity response into Cybersecurity Framework (CSF) 2.0 risk management rather than replacing service runbooks.
 
 ## SLIs, SLOs, and Error Budgets
 
@@ -28,7 +28,7 @@ Source: [SLIs, SLOs, and Error Budgets](50.4.02-sli-slo-error-budgets.md)
 
 **Q:** Why must an error budget state its denominator?
 
-**A:** A failed-request budget differs from time-based downtime and may vary by route/population. The eligible events, objective, and window determine what is being spent.
+**A:** A failed-request budget differs from time-based downtime and may vary by route or population. The eligible events, objective, and window determine what is being spent.
 
 ## Chaos Engineering in Production — Game Days, Automation, Resilience Metrics
 
@@ -44,7 +44,7 @@ Source: [Production Readiness Reviews](50.4.04-production-readiness-reviews.md)
 
 **Q:** What evidence makes a readiness review more than a checklist?
 
-**A:** Demonstrated monitoring, load limits, access controls, recovery/rollback, runbooks, and named owners. Passing compilation cannot substitute for operational evidence.
+**A:** Demonstrated monitoring, load limits, access controls, recovery and rollback, runbooks, and named owners. Passing compilation cannot substitute for operational evidence.
 
 ## On-Call Without Burnout
 
@@ -60,15 +60,15 @@ Source: [Learning chapter](50.4.02-sli-slo-error-budgets.md)
 
 **Q:** What is the 99.9% budget for 100,000 eligible requests?
 
-**A:** 100 bad requests. It cannot be converted into downtime without a separate elapsed-time measurement contract.
+**A:** `100` bad requests. It cannot be converted into downtime without a separate elapsed-time measurement contract.
 
 **Q:** When does 14.4× burn for one hour correspond to about 2% of a 30-day request budget?
 
-**A:** When eligible-request volume is constant and comparable across the alert and SLO windows: `14.4 × 1/720 = 2%`. Actual event-accounted contribution is bad events in the alert window divided by `(1 − SLO) × eligible events in the SLO evaluation window`; a busy hour can spend much more. The [worked example](50.4.02-sli-slo-error-budgets.md#3-alert-on-the-pace-of-consumption) distinguishes this count from the traffic-based forecast.
+**A:** When eligible-request volume is constant and comparable across the alert and Service Level Objective (SLO) windows: `14.4 × 1/720 = 2%`. Actual event-accounted contribution is bad events in the alert window divided by `(1 − SLO) × eligible events in the SLO evaluation window`; a busy hour can spend much more. The [worked example](50.4.02-sli-slo-error-budgets.md#3-alert-on-the-pace-of-consumption) distinguishes this count from the traffic-based forecast.
 
 **Q:** Does exhausting a budget mathematically mandate every deployment be blocked?
 
-**A:** No. The budget is a measurement; a pre-agreed policy defines release restrictions, remediation/security exceptions and recovery criteria.
+**A:** No. The budget is a measurement; a pre-agreed policy defines release restrictions, remediation and security exceptions, and recovery criteria.
 
 **Q:** What does an empty request population tell you about compliance?
 
@@ -80,19 +80,19 @@ Source: [Incident Response](50.4.01-incident-response.md)
 
 **Q:** When does rolling back a binary become unsafe?
 
-**A:** When it cannot interpret the current schema, written data or changed ownership. Check those preconditions; use bounded exposure reduction or a forward repair when the old version cannot restore correct operation.
+**A:** When it cannot interpret the current schema, written data, or changed ownership. Check those preconditions; use bounded exposure reduction or a forward repair when the old version cannot restore correct operation.
 
 **Q:** Why can terminating every idle database connection worsen a pool incident?
 
-**A:** Idle connections may be healthy reusable capacity. Broad termination causes reconnection work and can interrupt unrelated clients. Inspect the fleet, waits and transactions, then choose a specific authorized action with a stop and recovery check.
+**A:** Idle connections may be healthy reusable capacity. Broad termination causes reconnection work and can interrupt unrelated clients. Inspect the fleet, waits, and transactions, then choose a specific authorized action with a stop and recovery check.
 
 ## Fault expiry and the verdict
 
 Source: [Operational Chaos Engineering](50.4.03-chaos-engineering.md)
 
-**Q:** Does a runner's finally block ensure recovery after it is killed?
+**Q:** Does a runner's `finally` block ensure recovery after it is killed?
 
-**A:** No. The process may never execute cleanup. Fault lifetime needs an independent bound, and service recovery must be checked after removal because retries, queues and written effects can remain.
+**A:** No. The process may never execute cleanup. Fault lifetime needs an independent bound, and service recovery must be checked after removal because retries, queues, and written effects can remain.
 
 **Q:** What if a game day ends before enough traffic was observed?
 
@@ -104,7 +104,7 @@ Source: [Production Readiness Reviews](50.4.04-production-readiness-reviews.md)
 
 **Q:** Which gaps can conditional approval cover?
 
-**A:** Specific nonblocking gaps with an accepted residual risk, owner, deadline and allowed scope. A blocking recovery or access gap cannot become safe merely by changing the decision label.
+**A:** Specific nonblocking gaps with an accepted residual risk, owner, deadline, and allowed scope. A blocking recovery or access gap cannot become safe merely by changing the decision label.
 
 **Q:** Why does the sample gate compare the deployment's change identifier with the reviewed change?
 
@@ -114,7 +114,7 @@ Source: [Production Readiness Reviews](50.4.04-production-readiness-reviews.md)
 
 Source: [On-Call Without Burnout](50.4.05-on-call-without-burnout.md)
 
-**Q:** What is wrong with estimating p90 pages per shift from one shift's total page count?
+**Q:** What is wrong with estimating the 90th percentile (`p90`) pages per shift from one shift's total page count?
 
 **A:** One shift total cannot estimate the distribution across shifts. Include quiet shifts and define the counting unit; otherwise the sample is too small or biased toward busy shifts.
 
@@ -128,7 +128,7 @@ Use the answers to check your reasoning, then revisit the source mechanism and r
 
 ## See Also
 
-- [Section learning flow](INDEX.md) — connect user-visible failure to budgeting, readiness and on-call recovery
+- [Section learning flow](INDEX.md) — connect user-visible failure to budgeting, readiness, and on-call recovery
 
 ## References & Learn More
 

@@ -6,42 +6,25 @@
 
 ## Reader and discovery pass (5 Nov)
 
-The [numbered audit report](docs/superpowers/specs/assets/2026-11-05-site-refinement/audit-report.json)
-records Home, Library, Roadmap, all seven stack entry pages, search, category
-learning flow, chapter listening, revision, interview practice, mobile controls
-and sign-in recovery. Its verification section records the checks performed for
-this pass. This is product-flow and rendered-link coverage, rather than a fresh
-semantic review of every teaching paragraph.
+The [numbered audit report](docs/superpowers/specs/assets/2026-11-05-site-refinement/audit-report.json) records Home, Library, Roadmap, all seven stack entry pages, search, category learning flow, chapter listening, revision, interview practice, mobile controls, and sign-in recovery.
 
-The up-arrow aligns with the compact audio controls on desktop and shares the
-context row on smaller screens. A warm word marker complements the softer
-paragraph tint; callouts keep one rail. The same reader tools now support
-interview banks without turning them into revision disclosures or learning
-resume records. Samantha stays first; observed legacy and character voices are
-removed from the local English list. The fixed Wide layout remains unchanged.
+Its verification section records the checks performed for this Quality Assurance (QA) pass. This is product-flow and rendered-link coverage rather than a fresh semantic review of every teaching paragraph.
 
-Repaired unpublished lane destinations, priority badge links, an obsolete
-fragment, and CI/CD landing-page links. Repository-only guides say where they
-open, and their twelve source URLs were verified against the public repository.
-The reader resolves image-wrapped Markdown badge links only when their HTML
-counterparts exist in the publication catalog. Search distinguishes revision
-categories and renders one clear action. Heading names no longer repeat their
-permalink labels. The count owner now also maintains Sub-stacks badges, and
-blank lines restore explanatory paragraphs that separators had promoted to
-headings. Authored explanations, examples, revision answers and study order are
-preserved.
+The up-arrow aligns with the compact audio controls on desktop and shares the context row on smaller screens. A warm word marker complements the softer paragraph tint, and callouts keep one rail. The same reader tools now support interview banks without turning them into revision disclosures or learning resume records.
 
-Evidence: [desktop listening](docs/superpowers/specs/assets/2026-11-05-site-refinement/10-reader-desktop-dark.png),
-[mobile dark](docs/superpowers/specs/assets/2026-11-05-site-refinement/11-reader-mobile-dark.png),
-[mobile light](docs/superpowers/specs/assets/2026-11-05-site-refinement/12-reader-mobile-light.png),
-[revision answers](docs/superpowers/specs/assets/2026-11-05-site-refinement/09-revision-answers.png),
-and [sign-in recovery](docs/superpowers/specs/assets/2026-11-05-site-refinement/18-sign-in-recovery.png).
-The report links the remaining screenshots and records native-speech, browser,
-authentication and corpus-review limits. Local Home and Library use separately
-rendered aliases because the filesystem is case-insensitive; Linux CI checks
-the native build. OAuth was not submitted in this walkthrough.
+Samantha stays first, while observed legacy and character voices are removed from the local English list. The fixed Wide layout remains unchanged.
 
-> **Dated local verification log:** the sections below retain their respective implementation checkpoints. Their gate counts, measurements, branches and deployment statements describe those checks, rather than current release status. Use the [current full-stack review](docs/2026-10-25-fullstack-coverage-review.md) for the active verification record.
+Repaired unpublished lane destinations, priority badge links, an obsolete fragment, and CI/CD landing-page links. Repository-only guides state where they open, and their twelve source URLs were verified against the public repository.
+
+The reader resolves image-wrapped Markdown badge links only when their HTML counterparts exist in the publication catalog. Search distinguishes revision categories and renders one clear action. Heading names no longer repeat their permalink labels.
+
+The count owner now also maintains Sub-stacks badges, and blank lines restore explanatory paragraphs that separators had promoted to headings. Authored explanations, examples, revision answers, and study order are preserved.
+
+Evidence: [desktop listening](docs/superpowers/specs/assets/2026-11-05-site-refinement/10-reader-desktop-dark.png), [mobile dark](docs/superpowers/specs/assets/2026-11-05-site-refinement/11-reader-mobile-dark.png), [mobile light](docs/superpowers/specs/assets/2026-11-05-site-refinement/12-reader-mobile-light.png), [revision answers](docs/superpowers/specs/assets/2026-11-05-site-refinement/09-revision-answers.png), and [sign-in recovery](docs/superpowers/specs/assets/2026-11-05-site-refinement/18-sign-in-recovery.png).
+
+The report links the remaining screenshots and records native-speech, browser, authentication, and corpus-review limits. Local Home and Library use separately rendered aliases because the filesystem is case-insensitive; Linux Continuous Integration (CI) checks the native build. OAuth was not submitted in this walkthrough.
+
+> **Dated local verification log:** the sections below retain their respective implementation checkpoints. Their gate counts, measurements, branches, and deployment statements describe those checks rather than current release status. Use the [current full-stack review](docs/2026-10-25-fullstack-coverage-review.md) for the active verification record.
 
 **Final result:** passed for the approved local study-flow design.
 
@@ -49,37 +32,43 @@ the native build. OAuth was not submitted in this walkthrough.
 
 **Source visual truth:** [Refined reader](docs/superpowers/specs/assets/2026-10-11-study-flow/focused-reader-final.png).
 
-**Implementation:** Existing Jekyll site built locally at `http://127.0.0.1:4340/`. The separately rendered home preview is `http://127.0.0.1:4340/home-preview.html` because the macOS filesystem cannot distinguish index.html from INDEX.html. The temporary local review server maps Home to that rendered preview and serves Library separately, so the complete local journey works. Production routes remain unchanged.
+**Implementation:** Existing Jekyll site built locally at `http://127.0.0.1:4340/`. The separately rendered home preview is `http://127.0.0.1:4340/home-preview.html` because the macOS filesystem cannot distinguish `index.html` from `INDEX.html`.
 
-**Comparison state:** Lexical Environment, chapter start, dark theme, Wide selected, desktop outline open. Requested CSS viewport: 1440 × 1024. Source raster: 1487 × 1058. In-app browser capture: 1432 × 1018. The source is resized proportionally to the capture dimensions for comparison only; original assets are retained. Browser chrome is excluded. This is a comparison of the approved structure and visual direction, not a claim of pixel-exact reproduction of an abbreviated generated lesson.
+The temporary local review server maps Home to that rendered preview and serves Library separately, so the complete local journey works. Production routes remain unchanged.
+
+**Comparison state:** Lexical Environment, chapter start, dark theme, Wide selected, desktop outline open. Requested CSS viewport: 1440 × 1024. Source raster: 1487 × 1058. In-app browser capture: 1432 × 1018.
+
+The source is resized proportionally to the capture dimensions for comparison only; original assets are retained, and browser chrome is excluded. This compares the approved structure and visual direction rather than claiming pixel-exact reproduction of an abbreviated generated lesson.
 
 ## Findings and refinement
 
-1. **[P2, fixed] Small section headings weakened the reading hierarchy.** The first combined comparison showed 24 px section headings against the target’s larger hierarchy. Desktop section headings now use 30 px, prose uses 18 px with the existing line spacing, and mobile retains 24 px headings. The chapter title remains 44 px at the desktop viewport.
+1. **[P2, fixed] Small section headings weakened the reading hierarchy.** The first combined comparison showed 24 px section headings against the target's larger hierarchy. Desktop section headings now use 30 px, prose uses 18 px with the existing line spacing, and mobile retains 24 px headings. The chapter title remains 44 px at the desktop viewport.
 2. **[P2, fixed] Copy controls were small and appeared only on hover.** Copy now has a visible 44 px target. Language labels come from the existing fence language class; code text and clipboard behavior are preserved.
-3. **[P2, fixed] The mobile outline preceded the chapter context.** Below 1200 px the outline now follows the title and metadata as a closed disclosure. Desktop retains the adjacent, sticky outline. Long breadcrumbs use their immediate stack/category links on narrow screens.
-4. **[P2, fixed] The mobile search input competed with Clear search.** The query now occupies a full mobile row, with its clear action below. Stack and Material remain directly available.
-5. **[P2, fixed] Returning-home actions competed with Resume.** Resume is now the primary action when a valid position exists. The generic intro becomes compact, search becomes secondary, and the inherited home heading is hidden. Clearing restores the first-visit state; Undo restores the returning state.
+3. **[P2, fixed] The mobile outline preceded the chapter context.** Below 1200 px the outline now follows the title and metadata as a closed disclosure, while desktop retains the adjacent sticky outline. Long breadcrumbs use their immediate stack or category links on narrow screens.
+4. **[P2, fixed] The mobile search input competed with Clear search.** The query now occupies a full mobile row, with its clear action below. Stack and Material filters remain directly available.
+5. **[P2, fixed] Returning-home actions competed with Resume.** Resume is now the primary action when a valid position exists: the generic intro becomes compact, search becomes secondary, and the inherited home heading is hidden. Clearing restores the first-visit state; Undo restores the returning state.
 6. **[P2, fixed] The desktop mobile-menu label remained a zero-sized keyboard target.** An explicit desktop display rule removes it; the mobile 44 px control remains available.
 7. **[Correctness, fixed] Lesson badges could be mistaken for header metadata.** Only badges before the authored title move into Chapter details. A failing regression test reproduced the issue; the fix preserves body-badge paragraphs in their original position.
 
-Full-view evidence: [combined reader comparison](docs/superpowers/specs/assets/2026-10-11-study-flow/reader-comparison.png). Focused evidence: [chapter header comparison](docs/superpowers/specs/assets/2026-10-11-study-flow/reader-header-comparison.png). The post-fix comparison was captured and reviewed after the fixes above; no actionable P0/P1/P2 differences remain within the approved scope. Post-fix implementation: [desktop reader](docs/superpowers/specs/assets/2026-10-11-study-flow/implemented-reader-desktop.png), [mobile light](docs/superpowers/specs/assets/2026-10-11-study-flow/implemented-reader-mobile-light.png), [mobile dark](docs/superpowers/specs/assets/2026-10-11-study-flow/implemented-reader-mobile-dark.png).
+Full-view evidence: [combined reader comparison](docs/superpowers/specs/assets/2026-10-11-study-flow/reader-comparison.png). Focused evidence: [chapter header comparison](docs/superpowers/specs/assets/2026-10-11-study-flow/reader-header-comparison.png). The post-fix comparison was captured and reviewed after the fixes above; no actionable P0, P1, or P2 differences remain within the approved scope.
+
+Post-fix implementation: [desktop reader](docs/superpowers/specs/assets/2026-10-11-study-flow/implemented-reader-desktop.png), [mobile light](docs/superpowers/specs/assets/2026-10-11-study-flow/implemented-reader-mobile-light.png), and [mobile dark](docs/superpowers/specs/assets/2026-10-11-study-flow/implemented-reader-mobile-dark.png).
 
 ## Fidelity surfaces
 
-- **Fonts and typography:** Existing system sans family and fallback are retained. Desktop title/section/body hierarchy is 44/30/18 px. Navigation, metadata and tools use smaller optical sizes. Mobile wraps without truncating chapter titles; navigation keeps its existing ellipsis behavior for the brand.
-- **Spacing and layout rhythm:** Title, restrained metadata, outline and onward actions follow the refined direction. Wide remains the existing default, so the article is broader than the generated reference; Comfortable constrains prose to 72ch while code and tables keep their own region. All lesson paragraphs remain present, so the example and continuation appear lower than in the abbreviated mockup.
-- **Colors and visual tokens:** Existing slate, blue, light/dark, border and syntax tokens remain the source of truth. Listening is a secondary surface. Active outline links have both a border and aria-current. Focus remains visibly outlined.
-- **Image quality and asset fidelity:** No new raster assets are required by the implemented UI. Existing theme/menu icons are reused. Source metadata badges are preserved under Chapter details. Generated references are design evidence, not substituted content.
-- **Copy and content:** Every authored lesson paragraph, example, source group, revision question and answer remains canonical. UI labels follow the specification. Header Search is a navigation link, consistent with the approved compact header, rather than the generated mockup’s embedded field. Resume represents a reading position, never completion or mastery.
+- **Fonts and typography:** Existing system sans family and fallback are retained, with a desktop title, section, and body hierarchy of 44, 30, and 18 px. Navigation, metadata, and tools use smaller optical sizes. Mobile wraps without truncating chapter titles; navigation keeps its existing ellipsis behavior for the brand.
+- **Spacing and layout rhythm:** Title, restrained metadata, outline, and onward actions follow the refined direction. Wide remains the existing default, so the article is broader than the generated reference; Comfortable constrains prose to `72ch` while code and tables keep their own region. All lesson paragraphs remain present, so the example and continuation appear lower than in the abbreviated mockup.
+- **Colors and visual tokens:** Existing slate, blue, light and dark, border, and syntax tokens remain the source of truth. Listening is a secondary surface. Active outline links have both a border and `aria-current`, and focus remains visibly outlined.
+- **Image quality and asset fidelity:** No new raster assets are required by the implemented UI. Existing theme and menu icons are reused, and source metadata badges are preserved under Chapter details. Generated references are design evidence, not substituted content.
+- **Copy and content:** Every authored lesson paragraph, example, source group, revision question, and answer remains canonical, and UI labels follow the specification. Header Search is a navigation link, consistent with the approved compact header, rather than the generated mockup's embedded field. Resume represents a reading position, never completion or mastery.
 
 ## Behavior evidence
 
-- Search: query + Revision returned the actual Execution & Scope companion; browser Back restored both query and material. Clear filters retained the query. No matches showed the recovery state. Native result links and filters remained usable at 320 px.
-- Reader: explicit outline navigation focused the destination and marked it current. Width persisted after reload. Next and revision actions used actual authored, published destinations. Listen entered reading, Pause entered paused, and Stop returned to idle.
-- Revision: the real companion created 30 disclosures. Show all opened all 30; Hide all closed them; individual reveal worked. Complete multi-paragraph/code/list answers are covered by DOM tests. Interview banks are untouched. Before/after print opens all answers then restores the disclosure state.
-- Resume: outline activity saved the selected section. Home displayed the saved chapter. Resume returned to its section; reload retained width and the explicit fragment. Clear hid the card; Undo restored it. Unit/DOM tests cover denied storage, corrupt records, unknown versions, removed paths/anchors, explicit fragment precedence, query exclusion, non-learning pages and pagehide flushing.
-- Accessibility: observed 44 × 44 mobile menu/theme controls with separate hit regions, visible labels, native details/selects/buttons, focus movement only on explicit navigation, and no whole-page overflow at 320 px in both themes. Reduced-motion rules are retained. This is not a screen-reader or WCAG certification.
+- Search: querying plus Revision returned the actual Execution & Scope companion, and browser Back restored both query and material. Clear filters retained the query, while no matches showed the recovery state. Native result links and filters remained usable at 320 px.
+- Reader: explicit outline navigation focused the destination and marked it current, and width persisted after reload. Next and revision actions used actual authored, published destinations. Listen entered reading, Pause entered paused, and Stop returned to idle.
+- Revision: the real companion created 30 disclosures; Show all opened all 30, Hide all closed them, and individual reveal worked. Complete multi-paragraph, code, and list answers are covered by Document Object Model (DOM) tests, while interview banks are untouched. Before and after print opens all answers and restores the disclosure state.
+- Resume: outline activity saved the selected section, Home displayed the saved chapter, and Resume returned to its section. Reload retained width and the explicit fragment; Clear hid the card, and Undo restored it. Unit and DOM tests cover denied storage, corrupt records, unknown versions, removed paths or anchors, explicit fragment precedence, query exclusion, non-learning pages, and `pagehide` flushing.
+- Accessibility: observed 44 × 44 mobile menu and theme controls with separate hit regions, visible labels, native details, selects, and buttons, focus movement only on explicit navigation, and no whole-page overflow at 320 px in both themes. Reduced-motion rules are retained. This is not a screen-reader or Web Content Accessibility Guidelines (WCAG) certification.
 - Browser console: no JavaScript errors observed during the inspected flow.
 
 ## Verification
@@ -91,243 +80,293 @@ npm install --prefix /tmp/bible-study-ui-test --no-audit --no-fund jsdom@26.1.0
 NODE_PATH=/tmp/bible-study-ui-test/node_modules node --test assets/study-ui.test.cjs assets/study-state.test.cjs assets/read-aloud.test.cjs scripts/roadmap-return.test.cjs
 ```
 
-All 24 focused tests pass. CI is configured to run the DOM tests with the same development-only jsdom version, and the repository verification gate includes dependency-free study-state tests. The pinned Jekyll build passes. Search and the API metadata contract regenerate deterministically; the API corpus digest includes the current unrelated authored edits without changing the schema.
+All 24 focused tests pass. CI runs the DOM tests with the same development-only `jsdom` version, and the repository verification gate includes dependency-free study-state tests.
 
-Final link validation reports zero broken links. The complete repository verification passes all 30 gates. Before committing, the NIST source added by the [auth interview edit](20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md) was verified live. Both dead CMU paper citations in the [probabilistic structures chapter](30-architecture/30.2-system-design/01-theory/30.2.1.17-probabilistic-data-structures.md) were replaced with the paper author’s live CMU copy; its title and PDF body were checked, and the repository probe returned HTTP 200. The citation baseline and API corpus digest were regenerated together with these edits. The QA report is explicitly excluded from chapter/template/read-time scope so it cannot become a study result or change reading estimates.
+The pinned Jekyll build passes. Search and the API metadata contract regenerate deterministically; the API corpus digest includes the current unrelated authored edits without changing the schema.
 
-Dark-reader DOM samples measured body text at 13.16:1, metadata at 8.37:1, outline links at 7.03:1 and the title at 17.08:1 against the body surface. These samples do not certify every state or token.
+Final link validation reports zero broken links, and the complete repository verification passes all 30 gates. Before committing, the NIST source added by the [auth interview edit](20-backend/20.5-security/01-auth/20.5.1.11-interview-questions.md) was verified live.
 
-Implementation checklist: search, reader, revision, resume, responsive inspection, combined comparison, focused tests and pinned build are complete. Production authentication and case-sensitive routing remain outside this local verification.
+Both dead Carnegie Mellon University (CMU) paper citations in the [probabilistic structures chapter](30-architecture/30.2-system-design/01-theory/30.2.1.17-probabilistic-data-structures.md) were replaced with the paper author's live CMU copy; its title and PDF body were checked, and the repository probe returned HTTP 200. The citation baseline and API corpus digest were regenerated together with these edits.
+
+The QA report is explicitly excluded from chapter, template, and read-time scope so it cannot become a study result or change reading estimates.
+
+Dark-reader DOM samples measured body text at 13.16:1, metadata at 8.37:1, outline links at 7.03:1, and the title at 17.08:1 against the body surface. These samples do not certify every state or token.
+
+Implementation checklist: search, reader, revision, resume, responsive inspection, combined comparison, focused tests, and pinned build are complete. Production authentication and case-sensitive routing remain outside this local verification.
 
 ## Remaining limits
 
-The authenticated production site was not inspected. Linux/case-sensitive root and Library routing still need the normal deployment check. No live deployment was performed. The user subsequently authorized committing and pushing the changes on the study-flow branch. Storage denied by the browser cannot provide cross-page or cross-session persistence; the controls remain usable in memory within the current page. No reading completion, cross-device sync, semantic search or analytics is implied.
+The authenticated production site was not inspected, and Linux case-sensitive root and Library routing still need the normal deployment check. No live deployment was performed; the user subsequently authorized committing and pushing the changes on the study-flow branch.
+
+Storage denied by the browser cannot provide cross-page or cross-session persistence, though controls remain usable in memory within the current page. No reading completion, cross-device sync, semantic search, or analytics is implied.
 
 
 ## October 14 reference implementation
 
 The user supplied an explicit visual reference, superseding the earlier approximate reader styling. [Reference](docs/superpowers/specs/assets/2026-10-14-reference-reader/reference.png), [desktop implementation](docs/superpowers/specs/assets/2026-10-14-reference-reader/desktop.png), and [mobile light implementation](docs/superpowers/specs/assets/2026-10-14-reference-reader/mobile-light.png) record the final comparison.
 
-Implemented the header search field, Library/Roadmap navigation, segmented Listen/speed controls, width separator, colored metadata, compact breadcrumb, persistent right outline, section rules, code caption and decorative line numbers. The authored chapter currently opens with a problem and code example before Definition; that content and its real five-minute estimate are preserved, so the section positions differ from the abbreviated reference. No lesson content was hidden to imitate the image.
+Implemented the header search field, Library and Roadmap navigation, segmented Listen and speed controls, width separator, colored metadata, compact breadcrumb, persistent right outline, section rules, code caption, and decorative line numbers.
 
-The real clean chapter URL renders the reader controls. Header search for closures returns one matching result with the query retained. Copy returns the original code without line numbers. At 390px, the outline is collapsed, navigation remains visible, and the document has no horizontal overflow in either theme. Desktop comparison uses the reference’s 1487 by 1058 viewport. All 28 focused tests pass, including metadata and code-preservation coverage. The pinned Ruby 3.4 Jekyll build and repository gates pass. This implementation remains isolated in the study-ui-restoration worktree for later merging; production has not been changed.
+The authored chapter currently opens with a problem and code example before Definition; that content and its real five-minute estimate are preserved, so the section positions differ from the abbreviated reference. No lesson content was hidden to imitate the image.
+
+The real clean chapter URL renders the reader controls, and header search for closures returns one matching result with the query retained. Copy returns the original code without line numbers.
+
+At 390px, the outline is collapsed, navigation remains visible, and the document has no horizontal overflow in either theme. Desktop comparison uses the reference's 1487 by 1058 viewport.
+
+All 28 focused tests pass, including metadata and code-preservation coverage, and the pinned Ruby 3.4 Jekyll build and repository gates pass. This implementation remains isolated in the `study-ui-restoration` worktree for later merging; production has not been changed.
 
 
 ### Full desktop and mobile refinement
 
-[Refined desktop](docs/superpowers/specs/assets/2026-10-14-reference-reader/refined-desktop.png), [mobile dark](docs/superpowers/specs/assets/2026-10-14-reference-reader/refined-mobile-dark.png), and [mobile light](docs/superpowers/specs/assets/2026-10-14-reference-reader/refined-mobile-light.png) supersede the first reference implementation captures. Consolidated the reference stylesheet; refined header gaps, tablet sizing, metadata wrapping, inline code, syntax, code caption/copy icons, section spacing, mobile outline, continuation targets and playback wrapping. Desktop keeps the reference’s two-column layout; mobile keeps the full lesson in one column.
+[Refined desktop](docs/superpowers/specs/assets/2026-10-14-reference-reader/refined-desktop.png), [mobile dark](docs/superpowers/specs/assets/2026-10-14-reference-reader/refined-mobile-dark.png), and [mobile light](docs/superpowers/specs/assets/2026-10-14-reference-reader/refined-mobile-light.png) supersede the first reference implementation captures.
 
-New behavior checks cover named keyboard-scrollable code panels and mobile outline closing after selection while retaining heading focus. A separate failing regression test reproduced desktop outline collapse; the heading now keeps the outline open and leaves keyboard disclosure behavior available on mobile. Ctrl/Cmd+K focuses the visible header search field on reading pages. Clipboard text excludes decorative line numbers and icons.
+Consolidated the reference stylesheet and refined header gaps, tablet sizing, metadata wrapping, inline code, syntax, code caption and copy icons, section spacing, mobile outline, continuation targets, and playback wrapping. Desktop keeps the reference's two-column layout; mobile keeps the full lesson in one column.
 
-Observed no whole-page overflow at 320, 390, 768, 1024 and 1487px. At 320px, playback with Pause and Stop wraps without overflow; all 31 revision answers reveal without widening the document. Metadata expands without overflow. Mobile section selection closes the disclosure, updates the fragment and focuses the destination. Both mobile themes were inspected. Header search for closures preserves the query and returns the matching result. Browser console contains no observed errors. All 30 focused tests, the pinned Jekyll build and repository gates pass. Production and the main checkout remain unchanged.
+New behavior checks cover named keyboard-scrollable code panels and mobile outline closing after selection while retaining heading focus. A separate failing regression test reproduced desktop outline collapse; the heading now keeps the outline open and leaves keyboard disclosure behavior available on mobile.
+
+Ctrl/Cmd+K focuses the visible header search field on reading pages. Clipboard text excludes decorative line numbers and icons.
+
+Observed no whole-page overflow at 320, 390, 768, 1024, and 1487px. At 320px, playback with Pause and Stop wraps without overflow, and all 31 revision answers reveal without widening the document. Metadata expands without overflow, and mobile section selection closes the disclosure, updates the fragment, and focuses the destination.
+
+Both mobile themes were inspected, header search for closures preserves the query and returns the matching result, and the browser console contains no observed errors. All 30 focused tests, the pinned Jekyll build, and repository gates pass. Production and the main checkout remain unchanged.
 
 
 ### Measured fidelity correction after user review
 
-The user explicitly chose to preserve the complete authored lesson and match its visual design. A temporary content-matched comparison fixture isolated geometry from chapter length; it was not committed as a lesson or delivered as the real chapter. The actual chapter retains its opening problem, all mechanisms/examples, definitions, Summary, See Also, References and real reading estimate.
+The user explicitly chose to preserve the complete authored lesson and match its visual design. A temporary content-matched comparison fixture isolated geometry from chapter length; it was not committed as a lesson or delivered as the real chapter. The actual chapter retains its opening problem, all mechanisms and examples, definitions, Summary, See Also, References, and real reading estimate.
 
-Bundled Inter locally with its OFL license, including both themes and a font preload. Removed Minima’s clearfix pseudo-element from the header flex layout: it had inserted an invisible extra search gap. Removed inherited heading bottom padding. Corrected title tracking, metadata baseline, article width, sidebar width, heading rhythm, toolbar position and background surface. At the 1487 by 1058 reference viewport, the real article starts at x=158, the outline border at x=1108, and the header search at x=613. These measured positions now match the supplied reference’s structural anchors. They are not a claim that different authored content has identical vertical section positions.
+Bundled Inter locally with its SIL Open Font License (OFL) license, including both themes and a font preload. Removed Minima's `clearfix` pseudo-element from the header flex layout, which had inserted an invisible extra search gap, and removed inherited heading bottom padding.
 
-Current real-page evidence: [desktop](docs/superpowers/specs/assets/2026-10-14-reference-reader/fidelity-desktop.png), [mobile dark](docs/superpowers/specs/assets/2026-10-14-reference-reader/fidelity-mobile-dark.png), and [mobile light](docs/superpowers/specs/assets/2026-10-14-reference-reader/fidelity-mobile-light.png). Inspected widths 320, 390, 768, 1024, 1200 and 1487 without whole-page overflow. Confirmed Inter in both themes, the complete chapter body, and no observed console errors. All 30 focused tests, the pinned Jekyll build and repository gates pass. The branch remains isolated and unmerged.
+Corrected title tracking, metadata baseline, article width, sidebar width, heading rhythm, toolbar position, and background surface. At the 1487 by 1058 reference viewport, the real article starts at `x=158`, the outline border at `x=1108`, and the header search at `x=613`.
+
+These measured positions now match the supplied reference's structural anchors. They are not a claim that different authored content has identical vertical section positions.
+
+Current real-page evidence: [desktop](docs/superpowers/specs/assets/2026-10-14-reference-reader/fidelity-desktop.png), [mobile dark](docs/superpowers/specs/assets/2026-10-14-reference-reader/fidelity-mobile-dark.png), and [mobile light](docs/superpowers/specs/assets/2026-10-14-reference-reader/fidelity-mobile-light.png). Inspected widths 320, 390, 768, 1024, 1200, and 1487 without whole-page overflow.
+
+Confirmed Inter in both themes, the complete chapter body, and no observed console errors. All 30 focused tests, the pinned Jekyll build, and repository gates pass. The branch remains isolated and unmerged.
 
 
 ### Final minute-detail pass
 
-Preserved the approved visual geometry and complete chapter. Fixed three observed interaction details: Copy now exposes a live success/failure message and updates its accessible label; theme-button DOM order follows the desktop/mobile visual order; the last outline section becomes current at the document bottom when its heading cannot reach the normal threshold. Copy feedback is excluded from narration; an additional check confirms decorative language captions are skipped while authored prose remains. Theme behavior remains owned by its original module/config, with a version parameter shared by Jekyll and generated search to avoid cached behavior mismatches.
+Preserved the approved visual geometry and complete chapter, and fixed three observed interaction details: Copy exposes a live status message and updates its accessible label, theme-button DOM order matches visual order, and the last outline section becomes current at the document bottom.
 
-Verified the real desktop tab sequence: brand, Library, Roadmap, Search, theme. Verified phone DOM order: brand, theme, navigation, Search. Long code is keyboard-scrollable: ArrowRight moved a 340px panel across its 832px content, retained focus and displayed the focus outline. References navigation leaves the References heading focused and its outline link current at the document bottom. Copy preserves the original code, reports success, retains focus, and provides recovery guidance for denied or absent clipboard access. Regression tests cover these details and narration exclusion.
+Copy feedback is excluded from narration; an additional check confirms decorative language captions are skipped while authored prose remains. Theme behavior remains owned by its original module and config, with a version parameter shared by Jekyll and generated search to prevent stale caches.
 
-Sampled contrast against the declared page surface: dark body 14.21:1, section/active outline 7.71:1, priority 10.23:1 and metadata 8.47:1; light body 14.68:1, section 5.17:1, priority 5.36:1 and metadata 7.56:1. These are selected-state samples, not a whole-product accessibility certification. Current evidence: [final desktop](docs/superpowers/specs/assets/2026-10-14-reference-reader/final-desktop.png) and [final mobile](docs/superpowers/specs/assets/2026-10-14-reference-reader/final-mobile.png). All 35 focused tests, the pinned Jekyll build and full repository gates pass. The work remains on the isolated branch, unmerged.
+Verified the real desktop tab sequence (`brand`, `Library`, `Roadmap`, `Search`, `theme`) and phone DOM order (`brand`, `theme`, `navigation`, `Search`). Long code is keyboard-scrollable: `ArrowRight` moved a 340px panel across its 832px content, retained focus, and displayed the focus outline.
+
+References navigation leaves the References heading focused and its outline link current at the document bottom. Copy preserves the original code, reports success, retains focus, and provides recovery guidance for denied or absent clipboard access. Regression tests cover these details and narration exclusion.
+
+Sampled contrast against the declared page surface: dark body 14.21:1, section and active outline 7.71:1, priority 10.23:1, and metadata 8.47:1; light body 14.68:1, section 5.17:1, priority 5.36:1, and metadata 7.56:1. These are selected-state samples, not a whole-product accessibility certification.
+
+Current evidence: [final desktop](docs/superpowers/specs/assets/2026-10-14-reference-reader/final-desktop.png) and [final mobile](docs/superpowers/specs/assets/2026-10-14-reference-reader/final-mobile.png). All 35 focused tests, the pinned Jekyll build, and full repository gates pass. The work remains on the isolated branch, unmerged.
 
 
 ### Listen and width toolbar refinement
 
-Refined playback into a consistent segmented group with matching Listen/Pause/Stop icons, borders, type and hover/focus states. Separated the width choice with a desktop divider and widened its native select to show Comfortable without truncation. Both groups retain independent wrapping on small phones; controls use 44px heights on mobile. Verified Listen, Pause, Stop, both themes, and persisted Comfortable after reload at 320px, without page overflow. Desktop controls align at 40px. Current evidence: [toolbar desktop](docs/superpowers/specs/assets/2026-10-14-reference-reader/toolbar-desktop.png) and [toolbar mobile](docs/superpowers/specs/assets/2026-10-14-reference-reader/toolbar-mobile.png). No playback/state logic or chapter content changed. All 35 focused tests, the pinned build and repository gates pass.
+Refined playback into a consistent segmented group with matching Listen, Pause, and Stop icons, borders, type, and hover or focus states. Separated the width choice with a desktop divider and widened its native select to show Comfortable without truncation.
+
+Both groups retain independent wrapping on small phones, and controls use 44px heights on mobile. Verified Listen, Pause, Stop, both themes, and persisted Comfortable after reload at 320px without page overflow; desktop controls align at 40px.
+
+Current evidence: [toolbar desktop](docs/superpowers/specs/assets/2026-10-14-reference-reader/toolbar-desktop.png) and [toolbar mobile](docs/superpowers/specs/assets/2026-10-14-reference-reader/toolbar-mobile.png). No playback logic, state logic, or chapter content changed. All 35 focused tests, the pinned Jekyll build, and repository gates pass.
 
 ### Reskin follow-up: token unification and straggler cleanup
 
-The slate reskin (commit 444e8a9f) declared one coherent token set across `head-custom`, `search-ui`, `reading-ui` and `reference-reader.css`, but several surfaces still carried pre-reskin values. One was visible: the same light-theme chapter rendered two different syntax palettes depending on whether the visitor had ever toggled the theme — `reading-ui.css`'s green-string set for the default state, `reference-reader.css`'s magenta/amber set once `sdb-theme` was stored. [Before: default](docs/superpowers/specs/assets/2026-10-17-reskin-followup/light-code-before-default.png) versus [before: stored preference](docs/superpowers/specs/assets/2026-10-17-reskin-followup/light-code-before-stored.png).
+The slate reskin (commit `444e8a9f`) declared one coherent token set across `head-custom`, `search-ui`, `reading-ui`, and `reference-reader.css`, yet several surfaces still carried pre-reskin values.
 
-The reference reader's set now owns light syntax in every state: its three values moved into the `reading-ui.css` light block as the single definition site and the duplicate override was removed. The after capture is byte-identical to the previous stored-preference rendering, so toggled readers see no change while the default state now matches it. [After: light syntax](docs/superpowers/specs/assets/2026-10-17-reskin-followup/light-code-after.png); dark syntax unchanged.
+One was visible: the same light-theme chapter rendered two different syntax palettes depending on whether the visitor had ever toggled the theme — `reading-ui.css`'s green-string set for the default state, and `reference-reader.css`'s magenta and amber set once `sdb-theme` was stored. [Before: default](docs/superpowers/specs/assets/2026-10-17-reskin-followup/light-code-before-default.png) versus [before: stored preference](docs/superpowers/specs/assets/2026-10-17-reskin-followup/light-code-before-stored.png).
+
+The reference reader's set now owns light syntax in every state: its three values moved into the `reading-ui.css` light block as the single definition site, and the duplicate override was removed. The after capture is byte-identical to the previous stored-preference rendering, so toggled readers see no change while the default state matches it. [After: light syntax](docs/superpowers/specs/assets/2026-10-17-reskin-followup/light-code-after.png); dark syntax is unchanged.
 
 The remaining drifts were invisible within any single theme view:
 
-- `reference-reader.css` (loaded on every page, last) shadowed the reskin's dark text/heading/muted/border tokens with 1–2-unit variants (`#dce5ee`, `#f6f8fb`, `#a5b4c3`, `#2b3d4c`); aligned to the reskin set.
+- `reference-reader.css` (loaded on every page, last) shadowed the reskin's dark text, heading, muted, and border tokens with 1–2-unit variants (`#dce5ee`, `#f6f8fb`, `#a5b4c3`, `#2b3d4c`); aligned to the reskin set.
 - Its dark `--header-bg` was fully opaque on every page while light keeps the frosted translucent header; aligned to `rgba(13, 23, 32, 0.96)`.
 - `theme.js` still reported the pre-reskin browser-chrome colors (`#111820` dark, `#ffffff` light); now `#0d1720` and `#f8fafc`, matching the initial meta tag.
-- `read-aloud.css` kept pre-reskin fallback greys (`#1f2937`, `#d1d5db`, `#fff`, `#f3f4f6`); aligned to the current tokens.
+- `read-aloud.css` kept pre-reskin fallback grays (`#1f2937`, `#d1d5db`, `#fff`, `#f3f4f6`); aligned to the current tokens.
 
-The emoji-removal pass removed literal emoji but missed entity-encoded ones: the home page kept the `&#128279;` HTML entity (a link symbol) before "Full index with every file". Removed, and no other emoji-range entities remain. [Home links row](docs/superpowers/specs/assets/2026-10-17-reskin-followup/home-links-after.png).
+The emoji-removal pass removed literal emoji but missed entity-encoded ones: the home page kept the `&#128279;` HTML entity (a link symbol) before "Full index with every file". It is removed, and no other emoji-range entities remain. [Home links row](docs/superpowers/specs/assets/2026-10-17-reskin-followup/home-links-after.png).
 
-The auth gate (`auth/login.html`) was the last page off the reskin palette: a standalone dark-only page with a lime/teal brand. It now uses the same slate tokens with light and dark variants, loads Inter and `theme.js` (the existing single preference owner) so a stored or system theme applies before first paint, gains a themed browser-chrome meta tag, and keeps its behavior identical — the `next` sanitizing, the embedded-mode note (now a themed class instead of an inline lime color) and the error state are unchanged. [Gate light](docs/superpowers/specs/assets/2026-10-17-reskin-followup/gate-light.png); [gate dark](docs/superpowers/specs/assets/2026-10-17-reskin-followup/gate-dark.png).
+The auth gate (`auth/login.html`) was the last page off the reskin palette: a standalone dark-only page with a lime and teal brand. It now uses the same slate tokens with light and dark variants, loads Inter and `theme.js` (the existing single preference owner) so a stored or system theme applies before first paint, and adds a themed browser-chrome meta tag.
 
-One page showed that claim short: the OAuth callback the middleware serves between Google and the study session (`CALLBACK_HTML` in `functions/_middleware.ts`, on screen while the session exchange runs) still carried the lime/teal brand. It now mirrors the gate's slate tokens with light and dark variants, loads the same theme script and Inter face, and keeps its behavior identical. [Callback light](docs/superpowers/specs/assets/2026-10-17-reskin-followup/callback-light.png); [callback dark](docs/superpowers/specs/assets/2026-10-17-reskin-followup/callback-dark.png); [stored dark on a light system](docs/superpowers/specs/assets/2026-10-17-reskin-followup/callback-stored-dark.png).
+Its behavior remains identical — the `next` sanitizing, the embedded-mode note (now a themed class instead of an inline lime color), and the error state are unchanged. [Gate light](docs/superpowers/specs/assets/2026-10-17-reskin-followup/gate-light.png); [gate dark](docs/superpowers/specs/assets/2026-10-17-reskin-followup/gate-dark.png).
 
-Verifying the gate on the deployed host rather than locally exposed why the reskin's stored-theme promise was hollow there: `/assets/theme.js` and `/assets/fonts/InterVariable.woff2` answered 302 for a signed-out visitor — the gate policy serves only its explicit public list — so the browser refused the redirected script and the font never loaded. Both files are now public paths (`PUBLIC_AUTH_PATHS` in `_lib/study-access.mjs`; exact paths, contentless chrome), which also arms the callback page's copy of the same wiring. Re-verified in `wrangler pages dev`: both assets 200 signed-out, the callback's palette follows the stored preference, while `/api/index.json` and chapter paths still answer the login redirect with `next` preserved.
+One page showed that claim short: the OAuth callback the middleware serves between Google and the study session (`CALLBACK_HTML` in `functions/_middleware.ts`, on screen while the session exchange runs) still carried the lime and teal brand. It now mirrors the gate's slate tokens with light and dark variants, loads the same theme script and Inter face, and keeps its behavior identical. [Callback light](docs/superpowers/specs/assets/2026-10-17-reskin-followup/callback-light.png); [callback dark](docs/superpowers/specs/assets/2026-10-17-reskin-followup/callback-dark.png); [stored dark on a light system](docs/superpowers/specs/assets/2026-10-17-reskin-followup/callback-stored-dark.png).
 
-Verified with the pinned Jekyll build in a Ruby 3.4 container and Playwright captures across both themes, with and without a stored preference, now covering the auth gate and the sign-in callback as well. `search.html` and `api/index.json` were regenerated and the shared cache parameters bumped (`study-flow-12`, `reference-11`, `reader-final-2`) in `_config.yml`, `_includes/head-custom.html`, `search.html` and `scripts/gen_master_index.py`. All repository gates pass.
+Verifying the gate on the deployed host exposed why the reskin's stored-theme promise was hollow there: `/assets/theme.js` and `/assets/fonts/InterVariable.woff2` answered 302 for a signed-out visitor because the gate policy served only its explicit public list, so the browser refused the redirected script and the font never loaded.
+
+Both files are now public paths (`PUBLIC_AUTH_PATHS` in `_lib/study-access.mjs`; exact paths, contentless chrome), which also arms the callback page's copy of the same wiring. Re-verified in `wrangler pages dev`: both assets return 200 signed-out and the callback palette follows the stored preference, while `/api/index.json` and chapter paths still redirect to login with `next` preserved.
+
+Verified with the pinned Jekyll build in a Ruby 3.4 container and Playwright captures across both themes, with and without a stored preference, covering the auth gate and the sign-in callback. `search.html` and `api/index.json` were regenerated and the shared cache parameters bumped (`study-flow-12`, `reference-11`, `reader-final-2`) in `_config.yml`, `_includes/head-custom.html`, `search.html`, and `scripts/gen_master_index.py`. All repository gates pass.
 
 ### Reference restyle: the dark reading view
 
 A supplied reference image set the direction this time: a near-black canvas, Google's type voice, code carried in elevated rounded cards with a quiet language label and circular icon actions, inline code as soft chips, and open-circle list markers. The whole surface now follows the reference instead of the earlier slate reskin.
 
-Palette: light `#ffffff` surface with `#1f1f1f` text and `#1a73e8` links; dark `#131314` canvas, `#1b1c1d` cards, `#e3e3e3` text, `#9aa0a6` muted and `#8ab4f8` links. The Google-neutral family replaces the blue-slate set in every token block (`head-custom`, `search-ui`, the reader's dark mirror), in `theme.js`'s browser-chrome colors, and in the auth gate and callback pages. Headings lost their rules and now separate by spacing alone; list markers are open circles in the muted tone.
+Palette: light `#ffffff` surface with `#1f1f1f` text and `#1a73e8` links; dark `#131314` canvas, `#1b1c1d` cards, `#e3e3e3` text, `#9aa0a6` muted, and `#8ab4f8` links. The Google-neutral family replaces the blue-slate set in every token block (`head-custom`, `search-ui`, the reader's dark mirror), in `theme.js`'s browser-chrome colors, and in the auth gate and callback pages. Headings lost their rules and separate by spacing alone; list markers are open circles in the muted tone.
 
-Type: self-hosted Roboto (latin plus the math subset so prose arrows stay in-family) and Google Sans Code replace Inter and JetBrains Mono — 107 KB total against 393 KB. Login, callback and the public-path list (`study-access.mjs`) follow the Roboto file.
+Type: self-hosted Roboto (latin plus the math subset so prose arrows stay in-family) and Google Sans Code replace Inter and JetBrains Mono — 107 KB total against 393 KB. Login, callback, and the public-path list (`study-access.mjs`) follow the Roboto file.
 
-Code cards: a 14px-radius card whose header row is the language caption in the mono face ("JavaScript:") beside a borderless circular copy action that swaps to a check. The caption gains the reference's colon while the region's accessible name stays plain ("JavaScript code"); the live region, focus retention and one-control-per-fence contract are unchanged. Inline code became a borderless chip. Dark syntax retuned to lavender keywords, blue names, green strings, warm calls and numbers, and gray comments; the light set keeps its canonical values with a neutralized comment tone.
+Code cards: a 14px-radius card whose header row is the language caption in the mono face ("JavaScript:") beside a borderless circular copy action that swaps to a check. The caption gains the reference's colon while the region's accessible name stays plain ("JavaScript code"); the live region, focus retention, and one-control-per-fence contract are unchanged.
 
-Evidence: [dark reading view](docs/superpowers/specs/assets/2026-10-18-reference-restyle/reading-dark-top.png), [dark code card](docs/superpowers/specs/assets/2026-10-18-reference-restyle/reading-dark-code.png), [dark summary and lists](docs/superpowers/specs/assets/2026-10-18-reference-restyle/reading-dark-list.png), [dark table](docs/superpowers/specs/assets/2026-10-18-reference-restyle/reading-dark-table.png), [light reading view](docs/superpowers/specs/assets/2026-10-18-reference-restyle/reading-light-top.png), [light code card](docs/superpowers/specs/assets/2026-10-18-reference-restyle/reading-light-code.png), [mobile code card](docs/superpowers/specs/assets/2026-10-18-reference-restyle/reading-mobile-dark.png), [search dark](docs/superpowers/specs/assets/2026-10-18-reference-restyle/search-dark.png), [auth gate dark](docs/superpowers/specs/assets/2026-10-18-reference-restyle/gate-login-dark.png), [callback dark](docs/superpowers/specs/assets/2026-10-18-reference-restyle/gate-callback-dark.png).
+Inline code became a borderless chip. Dark syntax retuned to lavender keywords, blue names, green strings, warm calls and numbers, and gray comments; the light set keeps its canonical values with a neutralized comment tone.
 
-Verification: computed contrast passes 4.5:1 in system, light and dark (body 14.47, titles 16.48–17.62, syntax 5.48–8.71); a real Chromium copy click copies the fence text, announces "Code copied to clipboard." through the live region and resets to "Copy code" after 2 seconds; mobile keeps a 44px action with a 56px caption inset. Node suites 91 pass; `gen_master_index.py` regenerated `search.html` with cache parameters bumped to `study-flow-13`, `reference-12`, `reader-final-3` across `_config.yml`, `_includes/head-custom.html`, `search.html` and `scripts/gen_master_index.py`. A follow-up polish pass swept the last off-palette literals: text selection is Google blue in both themes, the read-aloud toolbar's fallback colors and the gate and callback card shadows moved to the neutral set, and the shared parameter bumped to `study-flow-14` (`read-aloud.css` was the changed asset). Re-captured evidence is byte-identical to the committed PNGs.
+Evidence: [dark reading view](docs/superpowers/specs/assets/2026-10-18-reference-restyle/reading-dark-top.png), [dark code card](docs/superpowers/specs/assets/2026-10-18-reference-restyle/reading-dark-code.png), [dark summary and lists](docs/superpowers/specs/assets/2026-10-18-reference-restyle/reading-dark-list.png), [dark table](docs/superpowers/specs/assets/2026-10-18-reference-restyle/reading-dark-table.png), [light reading view](docs/superpowers/specs/assets/2026-10-18-reference-restyle/reading-light-top.png), [light code card](docs/superpowers/specs/assets/2026-10-18-reference-restyle/reading-light-code.png), [mobile code card](docs/superpowers/specs/assets/2026-10-18-reference-restyle/reading-mobile-dark.png), [search dark](docs/superpowers/specs/assets/2026-10-18-reference-restyle/search-dark.png), [auth gate dark](docs/superpowers/specs/assets/2026-10-18-reference-restyle/gate-login-dark.png), and [callback dark](docs/superpowers/specs/assets/2026-10-18-reference-restyle/gate-callback-dark.png).
+
+Verification: computed contrast passes 4.5:1 in system, light, and dark (body 14.47, titles 16.48–17.62, syntax 5.48–8.71). A real Chromium copy click copies the fence text, announces "Code copied to clipboard." through the live region, and resets to "Copy code" after 2 seconds; mobile keeps a 44px action with a 56px caption inset.
+
+Node suites pass 91 tests, and `gen_master_index.py` regenerated `search.html` with cache parameters bumped to `study-flow-13`, `reference-12`, and `reader-final-3` across `_config.yml`, `_includes/head-custom.html`, `search.html`, and `scripts/gen_master_index.py`.
+
+A follow-up polish pass swept the last off-palette literals: text selection is Google blue in both themes, the read-aloud toolbar's fallback colors and the gate and callback card shadows moved to the neutral set, and the shared parameter bumped to `study-flow-14` (`read-aloud.css` was the changed asset). Re-captured evidence is byte-identical to the committed PNGs.
 
 ### Reading pass: measure, rhythm and hierarchy
 
-The reader had been shaped for structure, but its prose was still set at one very wide measure — paragraphs ran the full 922px column, about 110 characters per line. This pass shapes the text itself for sustained reading; it is a default change, not a removal, since the width control keeps both densities.
+The reader had been shaped for structure, but its prose was still set at one very wide measure — paragraphs ran the full 922px column, about 110 characters per line. This pass shapes the text itself for sustained reading; it is a default change rather than a removal, since the width control keeps both densities.
 
-Measured before the change at 1280x900: body 18px on a 1.65 line-height, 12px between paragraphs, h3 at 19.2px against 18px body (barely a heading), h4 at 16.8px (smaller than the body), and Minima's 30px list margin with no item gaps.
+Measured before the change at `1280x900`: body 18px on a 1.65 line-height, 12px between paragraphs, `h3` at 19.2px against 18px body (barely a heading), `h4` at 16.8px (smaller than the body), and Minima's 30px list margin with no item gaps.
 
-- **Measure** — the default width is now Comfortable: a 62ch cap on paragraphs, lists, quotes and alerts, measured at 75 characters per line (was 110). Wide restores the 922px column and is remembered per browser; the article column, code cards and tables keep their width. The cap is the base state of every reader page, so revision drills — which do not carry the width control — read at the same measure.
-- **Rhythm** — body line-height 1.65 to 1.7, paragraph gaps from 12px to 1em, section h2 spacing to 44/16 (34px on phones), so blocks separate cleanly without loose drifting.
-- **Hierarchy** — h3 at 24px and h4 at 20px on the article's own scale with 36/12 and 28/10 spacing (22px h3 on phones); previously both sat at or below body size.
-- **Lists and quotes** — indentation is 1.45em padding in the text flow instead of a 30px margin, items gain 0.3em gaps, nested lists tighten to .16em, and quotes get 14x20 padding with the trailing gap removed; list and quote blocks subtract their own left inset from the measure, so their text ends on the same right edge as the paragraphs.
+- **Measure** — the default width is now Comfortable: a `62ch` cap on paragraphs, lists, quotes, and alerts, measured at 75 characters per line (was 110). Wide restores the 922px column and is remembered per browser; the article column, code cards, and tables keep their width. The cap is the base state of every reader page, so revision drills — which do not carry the width control — read at the same measure.
+- **Rhythm** — body line-height 1.65 to 1.7, paragraph gaps from 12px to `1em`, section `h2` spacing to 44 and 16px (34px on phones), so blocks separate cleanly without loose drifting.
+- **Hierarchy** — `h3` at 24px and `h4` at 20px on the article's own scale with 36 and 12px and 28 and 10px spacing (22px `h3` on phones); previously both sat at or below body size.
+- **Lists and quotes** — indentation is `1.45em` padding in the text flow instead of a 30px margin, items gain `0.3em` gaps, nested lists tighten to `0.16em`, and quotes get 14 × 20px padding with the trailing gap removed; list and quote blocks subtract their own left inset from the measure, so their text ends on the same right edge as the paragraphs.
 
-Evidence: [dark reading view](docs/superpowers/specs/assets/2026-10-18-reading-pass/reading-dark-top.png), [dark list rhythm](docs/superpowers/specs/assets/2026-10-18-reading-pass/reading-dark-list.png), [light reading view](docs/superpowers/specs/assets/2026-10-18-reading-pass/reading-light-top.png), [mobile dark](docs/superpowers/specs/assets/2026-10-18-reading-pass/reading-mobile-dark.png), [revision drill at the measure](docs/superpowers/specs/assets/2026-10-18-reading-pass/reading-revision-dark.png), [alert computed at the measure](docs/superpowers/specs/assets/2026-10-18-reading-pass/reading-alert-dark.png).
+Evidence: [dark reading view](docs/superpowers/specs/assets/2026-10-18-reading-pass/reading-dark-top.png), [dark list rhythm](docs/superpowers/specs/assets/2026-10-18-reading-pass/reading-dark-list.png), [light reading view](docs/superpowers/specs/assets/2026-10-18-reading-pass/reading-light-top.png), [mobile dark](docs/superpowers/specs/assets/2026-10-18-reading-pass/reading-mobile-dark.png), [revision drill at the measure](docs/superpowers/specs/assets/2026-10-18-reading-pass/reading-revision-dark.png), and [alert computed at the measure](docs/superpowers/specs/assets/2026-10-18-reading-pass/reading-alert-dark.png).
 
-Verification: a Chromium check confirms the control defaults to Comfortable (627px paragraph in a 922px article), Wide restores 922px, the choice persists across reload, and a fresh context returns to Comfortable. Computed metrics land on the targets (line-height 30.6px, 18px paragraph gaps, h3 24px, list indent 26px with 5.4px item gaps; mobile 22px h3 and 4.68px gaps; nested list margins .16em/.04em). Paragraph, list, quote and alert text all end on the same right edge (x=682 in the measured 1280px layout); the alert keeps its 14x20 padding and zero tail gap. The paragraph-measure pin in `scripts/test_reading_ui_browser.cjs` asserts the Comfortable cap and the Wide toggle. All three legacy Playwright fixture scripts stop only at their documented pre-existing failures — outline collapse, mobile nav-trigger visibility, and a read-aloud outline-adjacency assertion — each reproduced identically at parent commit `e869ba25`, so they were not used as gates for this pass; the checks they cover were run directly (contrast, copy interaction, widths at 320–1280) and pass. Cache parameters bumped to `study-flow-16` and `reference-13` (`reading-ui.css`/`reading-ui.js` and `reference-reader.css` were the changed assets), `search.html` regenerated, and all repository gates pass.
+Verification: a Chromium check confirms the control defaults to Comfortable (627px paragraph in a 922px article), Wide restores 922px, the choice persists across reload, and a fresh context returns to Comfortable.
+
+Computed metrics land on the targets (line-height 30.6px, 18px paragraph gaps, `h3` 24px, list indent 26px with 5.4px item gaps; mobile 22px `h3` and 4.68px gaps; nested list margins `0.16em` and `0.04em`). Paragraph, list, quote, and alert text all end on the same right edge (`x=682` in the measured 1280px layout); the alert keeps its 14 × 20px padding and zero tail gap.
+
+The paragraph-measure pin in `scripts/test_reading_ui_browser.cjs` asserts the Comfortable cap and the Wide toggle. All three legacy Playwright fixture scripts stop only at their documented pre-existing failures — outline collapse, mobile nav-trigger visibility, and a read-aloud outline-adjacency assertion — each reproduced identically at parent commit `e869ba25`, so they were not used as gates for this pass.
+
+The underlying checks they cover were run directly (contrast, copy interaction, widths at 320–1280px) and pass. Cache parameters bumped to `study-flow-16` and `reference-13` (`reading-ui.css`, `reading-ui.js`, and `reference-reader.css` were the changed assets), `search.html` regenerated, and all repository gates pass.
 
 ### Spacing and indentation follow-up (19 Oct)
 
-The reading pass tuned the prose column; this pass took the surfaces it left alone — tables, the revision drills and the See Also / References close — and, where the defect was authored, fixed it in the markdown instead of patching it in CSS.
+The reading pass tuned the prose column; this pass took the surfaces it left alone — tables, revision drills, and the See Also and References close — and, where the defect was authored, fixed it in Markdown instead of patching CSS.
 
-Auditing those surfaces exposed structural defects with rendering consequences. A `---` written directly under a list item parses as a setext underline, so in 286 files the last reference rendered as an `<h2>` and the separator disappeared; `## References & Learn More` written directly after a See Also list (66 files) was absorbed into the last item and dragged the whole references list in with it; a stray blank line inside an otherwise-tight list (104 places in 96 files) made exactly one item per list render loose; the revision answer box ran the full 922px because the Comfortable cap only targeted direct children; and 18 revision companions still wrote numbered list items, which the reveal UI cannot read, so those pages silently rendered without the Show answer drill.
+Auditing those surfaces exposed four structural defects with rendering consequences:
 
-- **Markdown** — every list-adjacent heading and `---` gained its blank line and every stray list separator was removed (352 instances in 304 files across the stacks; the gate run found 20 more in `docs/`, `projects/` and the governance files — 372 findings over 972 files). The two new `scripts/prose_hygiene.py` rules (5–6) now gate both classes. The 18 numbered companions were migrated to the top-level `**Q:**`/`**A:**` paragraph format the other 95 already use — 737 pairs moved with Q/A text verified identical — and their 429 bold section labels drop, because in the paragraph format the reveal UI would hide each inside the preceding answer and no other companion carries them. `scripts/check_template.py` rejects a numbered or indented revision pair.
+- A `---` written directly under a list item parses as a setext underline, so in 286 files the last reference rendered as an `<h2>` and the separator disappeared.
+- `## References & Learn More` written directly after a See Also list (66 files) was absorbed into the last item and dragged the whole references list inside it.
+- A stray blank line inside an otherwise-tight list (104 places in 96 files) made one item per list render loose, while the revision answer box ran the full 922px because the Comfortable cap only targeted direct children.
+- Eighteen revision companions still wrote numbered list items, which the reveal UI cannot read, so those pages silently rendered without the Show answer drill.
+
+Implemented changes across Markdown and CSS:
+
+- **Markdown** — every list-adjacent heading and `---` gained a blank line and every stray list separator was removed (352 instances in 304 files across the stacks; the gate run found 20 more in `docs/`, `projects/`, and governance files — 372 findings over 972 files). Two new `scripts/prose_hygiene.py` rules (5–6) now gate both classes.
+- **Revision migration** — the 18 numbered companions moved to the top-level `**Q:**` and `**A:**` paragraph format the other 95 already use (737 pairs moved with Q/A text verified identical). Their 429 bold section labels were dropped so the reveal UI would not hide each label inside the preceding answer, and `scripts/check_template.py` rejects numbered or indented revision pairs.
 - **Revision answers** — the box subtracts its own 18px inset (`calc(62ch - 18px)`) so an open answer ends on the same right edge as every other column, and Wide resets it like the rest of the article.
-- **Tables** — cells go from Minima's 10x15 to 12x16 padding (the roomier rule rides a higher-specificity selector, since Minima's `table th, table td` outranks bare `th`/`td`) and rows relax to a 1.55 line-height.
-- **Wrap** — headings balance and paragraphs and list items avoid one-word last lines (`text-wrap: balance` / `pretty`).
+- **Tables** — cells go from Minima's `10x15` to `12x16` padding (riding a higher-specificity selector because Minima's `table th, table td` outranks bare `th` and `td`) and rows relax to a 1.55 line-height.
+- **Wrap** — headings balance (`text-wrap: balance`) and paragraphs and list items avoid one-word last lines (`text-wrap: pretty`).
 
-Evidence: [table at 12x16](docs/superpowers/specs/assets/2026-10-19-reading-spacing/table-dark.png), [chapter close: uniform See Also, standalone References, restored rule](docs/superpowers/specs/assets/2026-10-19-reading-spacing/chapter-close-dark.png), [migrated drill](docs/superpowers/specs/assets/2026-10-19-reading-spacing/revision-drill-dark.png), [answer open at the measure](docs/superpowers/specs/assets/2026-10-19-reading-spacing/revision-answer-open-dark.png).
+Evidence: [table at 12x16](docs/superpowers/specs/assets/2026-10-19-reading-spacing/table-dark.png), [chapter close: uniform See Also, standalone References, restored rule](docs/superpowers/specs/assets/2026-10-19-reading-spacing/chapter-close-dark.png), [migrated drill](docs/superpowers/specs/assets/2026-10-19-reading-spacing/revision-drill-dark.png), and [answer open at the measure](docs/superpowers/specs/assets/2026-10-19-reading-spacing/revision-answer-open-dark.png).
 
-Verification: Chromium probes put the revision answer's right edge at 682px with the questions and paragraphs around it — and 977px under Wide, so the wide rule outranks the cap; table cells compute to `12px 16px` with 22.57px rows on 14.56px text; See Also items gap uniformly at 5.4px with zero loose items; `text-wrap` computes to `pretty` on paragraphs and list items, `balance` on headings. Three migrated pages report one `.revision-answer` per question (25, 59 and 50), all collapsed, with the controls bar present. `prose_hygiene` reports zero findings across 972 files and `check_template` passes 678 chapters with the new rule. The three legacy Playwright fixture scripts stop only at their documented pre-existing failures (outline collapse at `test_reading_ui_browser.cjs:65`, nav-trigger visibility at `test_reading_pages_browser.cjs:83`, the read-aloud assertion at `test_read_aloud_browser.cjs:32`). Cache parameters bumped to `study-flow-17` and `reference-14` (`reading-ui.css`, `reference-reader.css` and `_includes/head-custom.html` were the changed assets), `search.html` regenerated, and all repository gates pass.
+Verification: Chromium probes put the revision answer's right edge at 682px alongside the surrounding questions and paragraphs (and 977px under Wide, confirming the wide rule outranks the cap). Table cells compute to `12px 16px` with 22.57px rows on 14.56px text, See Also items gap uniformly at 5.4px with zero loose items, and `text-wrap` computes to `pretty` on paragraphs and list items and `balance` on headings.
+
+Three migrated pages report one `.revision-answer` per question (25, 59, and 50), all collapsed with the controls bar present. `prose_hygiene` reports zero findings across 972 files and `check_template` passes 678 chapters with the new rule.
+
+The three legacy Playwright fixture scripts stop only at their documented pre-existing failures (`test_reading_ui_browser.cjs:65`, `test_reading_pages_browser.cjs:83`, `test_read_aloud_browser.cjs:32`). Cache parameters bumped to `study-flow-17` and `reference-14` (`reading-ui.css`, `reference-reader.css`, and `_includes/head-custom.html` changed), `search.html` regenerated, and all repository gates pass.
 
 ### UI/UX pass: one search entry, dark surfaces, phone header (21 Oct)
 
-The audit found the generated search page shipped two visible search fields — the shared header form and the page's own form — and the header form's label rendered as plain text because that standalone page never loads `read-aloud.css`, the file that supplies the screen-reader-only class. On phones the page's nav then stacked `Library` and `Roadmap` on separate lines: `search-ui.css` set `flex-direction: column` for the collapsed menu, while the later `reference-reader.css` restored `display: flex` without restoring the row direction. Dark mode had no white surfaces on the audited pages, but two palette bugs sat one state away: the reader priority label used its dark green (`#81c995`) whenever the system was light without a stored preference, and the light accent blue (`#1a73e8`) fell to 4.4:1 on striped and hovered table rows. The sign-in and callback cards also had no theme control and kept the light action blue in dark mode.
+The audit found the generated search page shipped two visible search fields — the shared header form and the page's own form — and the header form's label rendered as plain text because that standalone page never loads `read-aloud.css` (the file supplying the screen-reader-only class).
 
-- **One search entry** — the generator no longer emits the header form; `#q` on the search page is the single field, and the native WebKit cancel affordance is suppressed so the labeled `Clear search` button is the only clear action. The visible `Search topics` label disappeared with its form. The home CTA keeps its count claim for the count gate, but as an `aria-hidden` visually-hidden span, so its accessible name is `Find a topic`.
-- **One header owner** — responsive header geometry and the collapsed menu now live in `reading-ui.css`; the duplicate header/nav overrides in `search-ui.css` and the two mobile header blocks in `reference-reader.css` are gone. At ≤700 px the header is brand, nav, theme, then the search field on its own row; at ≤600 px it is brand, theme and a 44 px menu button, and the menu drops below the whole header, aligned to the content edge.
-- **Dark and light surfaces** — `html` paints the theme canvas (overscroll no longer shows white), the priority label switches through a `prefers-color-scheme` rule plus the explicit dark attribute, the light link token moved to Blue 700 (`#1967d2`) so striped and hovered table cells stay above 4.5:1, and the sign-in/callback cards gained a theme slot with dark action tokens (`#8ab4f8` on `#202124`).
-- **Tap targets and disclosure** — the brand, nav links, breadcrumb links, menu, theme button and search page results are 44 px tall on phones; the menu exposes `aria-expanded`, closes on Escape (restoring focus), and closes when a pointer lands outside the navigation.
+On phones the page's navigation then stacked `Library` and `Roadmap` on separate lines: `search-ui.css` set `flex-direction: column` for the collapsed menu, while the later `reference-reader.css` restored `display: flex` without restoring the row direction. Dark mode had no white surfaces on the audited pages, yet two palette bugs sat one state away: the reader priority label used its dark green (`#81c995`) whenever the system was light without a stored preference, and the light accent blue (`#1a73e8`) fell to 4.4:1 on striped and hovered table rows.
 
-Evidence: [before: duplicate header and page search](docs/superpowers/specs/assets/2026-10-21-ui-ux-pass/before-search-desktop-duplicate.png), [before: visible header label at phone width](docs/superpowers/specs/assets/2026-10-21-ui-ux-pass/before-search-mobile-duplicate.png), [after: desktop search](docs/superpowers/specs/assets/2026-10-21-ui-ux-pass/search-desktop-light.png), [mobile dark](docs/superpowers/specs/assets/2026-10-21-ui-ux-pass/search-mobile-dark.png), [mobile light](docs/superpowers/specs/assets/2026-10-21-ui-ux-pass/search-mobile-light.png), [320 px](docs/superpowers/specs/assets/2026-10-21-ui-ux-pass/search-320-dark.png), [open phone menu](docs/superpowers/specs/assets/2026-10-21-ui-ux-pass/menu-mobile-dark.png), [chapter mobile dark](docs/superpowers/specs/assets/2026-10-21-ui-ux-pass/chapter-mobile-dark.png), [chapter mobile light](docs/superpowers/specs/assets/2026-10-21-ui-ux-pass/chapter-mobile-light.png), [sign-in dark](docs/superpowers/specs/assets/2026-10-21-ui-ux-pass/login-mobile-dark.png), [callback dark](docs/superpowers/specs/assets/2026-10-21-ui-ux-pass/callback-mobile-dark.png). The measured [audit report](docs/superpowers/specs/assets/2026-10-21-ui-ux-pass/audit-report.json) records each viewport.
+In addition, the sign-in and callback cards had no theme control and kept the light action blue in dark mode.
 
-Verification: Chromium at 320, 375, 390, 600, 601, 700, 768, 1024 and 1440 px in system light and dark reports `scrollWidth == clientWidth` on the index, search and chapter routes (tables and code scroll only inside their wrappers) and the sign-in card, exactly one visible search input, one visible `h1`, and — at phone widths — 44 px theme/menu targets that stay separate and clickable. The menu opens by click, Enter and Space, reports `aria-expanded`, closes on Escape and on an outside click. The sign-in and callback previews show a 44 px toggle and the dark action pair; the search page has no console errors. `node assets/study-ui.test.cjs` passes 22/22, the middleware, auth-route and version suites pass, `scripts/test_reading_pages_browser.cjs` passes every checked route and viewport when `STUDY_HOME_ROUTE` points at the separately rendered home preview (the test's documented case-insensitive-filesystem fixture), and `bash scripts/verify.sh` passes all 30 gates. Cache parameters are now `study-flow-18`, `reference-15` and `reader-final-4`, and `search.html` was regenerated. The browser suite also returns to the top before measuring header controls at each width; a table hover in the previous width had scrolled the relative header out of view, and the assertions themselves are unchanged.
+- **One search entry** — the generator no longer emits the header form; `#q` on the search page is the single field, and the native WebKit cancel affordance is suppressed so the labeled `Clear search` button is the only clear action. The visible `Search topics` label disappeared with its form. The home Call to Action (CTA) keeps its count claim for the count gate inside an `aria-hidden` visually hidden span, so its accessible name is `Find a topic`.
+- **One header owner** — responsive header geometry and the collapsed menu live in `reading-ui.css`; duplicate overrides in `search-ui.css` and two mobile header blocks in `reference-reader.css` are gone. At `<=700 px` the header renders brand, nav, theme, then the search field on its own row; at `<=600 px` it renders brand, theme, and a 44 px menu button, with the menu dropping below the header aligned to the content edge.
+- **Dark and light surfaces** — `html` paints the theme canvas so overscroll never shows white, the priority label switches via `prefers-color-scheme` plus the explicit dark attribute, the light link token moved to Blue 700 (`#1967d2`) so striped and hovered table cells stay above 4.5:1, and the sign-in and callback cards gained a theme slot with dark action tokens (`#8ab4f8` on `#202124`).
+- **Tap targets and disclosure** — the brand, navigation links, breadcrumb links, menu, theme button, and search page results are 44 px tall on phones; the menu exposes `aria-expanded`, closes on Escape (restoring focus), and closes when a pointer lands outside the navigation.
+
+Evidence: [before: duplicate header and page search](docs/superpowers/specs/assets/2026-10-21-ui-ux-pass/before-search-desktop-duplicate.png), [before: visible header label at phone width](docs/superpowers/specs/assets/2026-10-21-ui-ux-pass/before-search-mobile-duplicate.png), [after: desktop search](docs/superpowers/specs/assets/2026-10-21-ui-ux-pass/search-desktop-light.png), [mobile dark](docs/superpowers/specs/assets/2026-10-21-ui-ux-pass/search-mobile-dark.png), [mobile light](docs/superpowers/specs/assets/2026-10-21-ui-ux-pass/search-mobile-light.png), [320 px](docs/superpowers/specs/assets/2026-10-21-ui-ux-pass/search-320-dark.png), [open phone menu](docs/superpowers/specs/assets/2026-10-21-ui-ux-pass/menu-mobile-dark.png), [chapter mobile dark](docs/superpowers/specs/assets/2026-10-21-ui-ux-pass/chapter-mobile-dark.png), [chapter mobile light](docs/superpowers/specs/assets/2026-10-21-ui-ux-pass/chapter-mobile-light.png), [sign-in dark](docs/superpowers/specs/assets/2026-10-21-ui-ux-pass/login-mobile-dark.png), and [callback dark](docs/superpowers/specs/assets/2026-10-21-ui-ux-pass/callback-mobile-dark.png). The measured [audit report](docs/superpowers/specs/assets/2026-10-21-ui-ux-pass/audit-report.json) records each viewport.
+
+Verification: Chromium at 320, 375, 390, 600, 601, 700, 768, 1024, and 1440 px in system light and dark reports `scrollWidth == clientWidth` on the index, search, and chapter routes (tables and code scroll only inside their wrappers) and on the sign-in card. Each checked route has at most one visible search input, one visible `h1`, and — at phone widths — 44 px theme and menu targets that stay separate and clickable.
+
+The menu opens by click, Enter, and Space, reports `aria-expanded`, and closes on Escape or an outside click. The sign-in and callback previews show a 44 px toggle and the dark action pair; the search page has no console errors.
+
+`node assets/study-ui.test.cjs` passes 22/22, the middleware, auth-route, and version suites pass, and `scripts/test_reading_pages_browser.cjs` passes every checked route and viewport when `STUDY_HOME_ROUTE` points at the separately rendered home preview. `bash scripts/verify.sh` passes all 30 gates; cache parameters are `study-flow-18`, `reference-15`, and `reader-final-4`, and `search.html` was regenerated.
+
+The browser suite also returns to the top before measuring header controls at each width because a table hover in the previous width had scrolled the relative header out of view; the assertions themselves are unchanged.
 
 ### Follow-up: touch targets, dark states and one chapter navigation (22 Oct)
 
-A final audit of the production build found the dark palette itself clean, but five interaction gaps remained around it. Copy buttons stayed 34 × 34 on non-reader code blocks, chapter footer links were 40 px tall, back-to-top was 42 × 42, and the header nav, theme toggle and search field dropped to 16–40 px tall at tablet and desktop widths. On the narrowest route, the three-letter `IaC` breadcrumb was only 21 px wide despite its 44 px height. The 701–768 px header also still carried the phone menu's boxed nav treatment even though the links were inline.
+A final audit of the production build found the dark palette itself clean, though five interaction gaps remained around it. Copy buttons stayed 34 × 34 on non-reader code blocks, chapter footer links were 40 px tall, back-to-top was 42 × 42, and the header nav, theme toggle, and search field dropped to 16–40 px tall at tablet and desktop widths.
 
-- **Targets** — copy, footer, back-to-top, header nav, theme, header search and short breadcrumbs now meet 44 × 44 at the widths where they appear. The copy button keeps its compact 34 px desktop look and becomes 44 px at 768 px and below; the reader keeps its 36 px desktop icon at larger widths.
-- **Header geometry** — the boxed navigation is limited to the collapsed phone menu; the 701–768 px header is transparent like desktop. The longer 44 px search field and theme button still fit without wrapping.
-- **Dark interaction states** — the later reader rule had been overriding the copy button's hover and copied colors, leaving only the icon swap as feedback. Hover now uses the nav-pill surface and heading color; the copied check keeps the success green.
-- **One chapter navigation** — the generated `.study-continuation` after Summary mirrored the authored footer's `Next` and the See Also revision link. It is removed, so the authored footer is the single home for onward navigation and the See Also link remains the revision entry. The DOM test now asserts that no mirror is generated and that the authored `Next` and revision links each appear once.
+On the narrowest route, the three-letter Infrastructure as Code (`IaC`) breadcrumb was only 21 px wide despite its 44 px height, and the 701–768 px header still carried the phone menu's boxed navigation treatment even though the links were inline.
+
+- **Targets** — copy, footer, back-to-top, header nav, theme, header search, and short breadcrumbs meet 44 × 44 at the widths where they appear. The copy button keeps its compact 34 px desktop look and becomes 44 px at 768 px and below; the reader keeps its 36 px desktop icon at larger widths.
+- **Header geometry** — the boxed navigation is limited to the collapsed phone menu, and the 701–768 px header is transparent like desktop. The longer 44 px search field and theme button fit without wrapping.
+- **Dark interaction states** — the later reader rule had overridden the copy button's hover and copied colors, leaving only the icon swap as feedback. Hover now uses the nav-pill surface and heading color, while the copied check keeps success green.
+- **One chapter navigation** — the generated `.study-continuation` block after Summary mirrored the authored footer's `Next` and See Also revision links. It was removed so the authored footer is the single home for onward navigation, and the DOM test asserts that the authored `Next` and revision links each appear once.
 
 Evidence: [chapter at 390 px dark](docs/superpowers/specs/assets/2026-10-22-ui-ux-followup/chapter-mobile-dark.png), [single chapter footer](docs/superpowers/specs/assets/2026-10-22-ui-ux-followup/chapter-footer-mobile-dark.png), [code copy target](docs/superpowers/specs/assets/2026-10-22-ui-ux-followup/code-copy-mobile-dark.png), [transparent tablet header](docs/superpowers/specs/assets/2026-10-22-ui-ux-followup/roadmap-tablet-dark.png), [search at 390 px dark](docs/superpowers/specs/assets/2026-10-22-ui-ux-followup/search-mobile-dark.png), and the [audit report](docs/superpowers/specs/assets/2026-10-22-ui-ux-followup/audit-report.json).
 
-Verification: the dark scan covers all 949 HTML routes at 320, 390 and 1440 px. Every route has zero horizontal overflow, at most one visible search field, no duplicate ids and no light background surface of 700 px² or more; the only recorded console error is the callback preview's expected missing-token message. A separate 390 px target scan leaves only the visually hidden header label, static task-list checkboxes in archived plans and the search page's text label, none of which is an enabled control. Representative light and state checks (open revision answers, open filters, open phone menu, hover and focus) remain readable, and a contrast sample across chapter, revision, index, roadmap, search, home, sign-in and callback found no text or border failure. `node assets/study-ui.test.cjs` passes 22/22; the browser suite now covers 320, 375, 600, 768 and 1280 px and asserts 44 px header, copy and footer targets at 768 px and below; `bash scripts/verify.sh` passes all 31 gates. Cache parameters are now `study-flow-19` and `reference-16` (`reader-final-4` unchanged), and `search.html` was regenerated.
+Verification: the dark scan covers all 949 HTML routes at 320, 390, and 1440 px. Every route has zero horizontal overflow, at most one visible search field, no duplicate ids, and no light background surface of 700 px² or more; the only recorded console error is the callback preview's expected missing-token message.
+
+A separate 390 px target scan leaves only the visually hidden header label, static task-list checkboxes in archived plans, and the search page's text label, none of which is an enabled control. Representative light and state checks (open revision answers, open filters, open phone menu, hover, and focus) remain readable, and a contrast sample across chapter, revision, index, roadmap, search, home, sign-in, and callback found no text or border failure.
+
+`node assets/study-ui.test.cjs` passes 22/22, the browser suite covers 320, 375, 600, 768, and 1280 px and asserts 44 px header, copy, and footer targets at 768 px and below, and `bash scripts/verify.sh` passes all 31 gates. Cache parameters are `study-flow-19` and `reference-16` (`reader-final-4` unchanged), and `search.html` was regenerated.
 
 ### UI/UX consistency: one shell, one title scale, one disclosure (23 Oct)
 
-A fresh production build across 320–1440 px in both themes showed that the remaining inconsistencies were not isolated page bugs. The header, page content, footer and search each carried their own gutter; page titles changed size at different breakpoints; disclosure controls used a native triangle, a reader caret or no marker depending on the component; the phone theme control was a transparent circle beside a bordered menu square; and at 320 px the chapter footer's `·` could wrap alone. The reader also met the 1200 px breakpoint with no right gutter, putting its outline against the viewport edge.
+A fresh production build across 320–1440 px in both themes showed that the remaining inconsistencies were not isolated page bugs. Header, page content, footer, and search each carried their own gutter, and page titles changed size at different breakpoints.
 
-- **One page shell** — `reading-ui.css` now owns `.wrapper`: 16 px at ≤359, 18 px at 360–700, 24 px at 701–1199, and a 1171 px content column from 1200. At 1200 the shared left edge is 14.5 px, at 1440 it is 134.5 px; the header, page title, footer and search all sit on that edge. The reader keeps its two-column layout and now has a 24 px right gutter at 1200 (right edge 1176 px).
-- **One title scale** — standard pages and search use 32 px at ≤700 and 40 px from 701, weight 650; the home hero steps 32/40/44. Before, the library title sat at 28.8 px at phone width, 30.72 px at tablet and 36 px at 1024, while search ran its own 28→40 clamp and the header stayed on its own edges.
-- **One disclosure marker** — chapter details, the mobile/tablet outline, search filters and revision answers now share one trailing CSS chevron. Native `summary` markers are suppressed; the chevron rotates when open; the desktop outline remains static.
-- **One phone control surface** — at ≤600 the theme button and menu label share the same 44 px box, 8 px radius, 1 px border and nav-pill fill; the theme control no longer reads as a different kind of action.
-- **One narrow footer rule** — the inline `·` is now a `.chapter-nav-separator` element. At ≤359 the two onward links stack full width and the separator is hidden; at 360 and above they share one row with the dot between them.
+Disclosure controls also differed across components (native triangle, reader caret, or no marker), the phone theme control was a transparent circle beside a bordered menu square, and at 320 px the chapter footer's `·` could wrap alone. In addition, the reader met the 1200 px breakpoint with no right gutter, putting its outline against the viewport edge.
+
+- **One page shell** — `reading-ui.css` owns `.wrapper`: 16 px at `<=359`, 18 px at 360–700, 24 px at 701–1199, and a 1171 px content column from 1200. At 1200 the shared left edge is 14.5 px and at 1440 it is 134.5 px, putting header, page title, footer, and search on that edge. The reader keeps its two-column layout and has a 24 px right gutter at 1200 (right edge 1176 px).
+- **One title scale** — standard pages and search use 32 px at `<=700` and 40 px from 701 at weight 650, while the home hero steps across 32, 40, and 44 px. Previously, the library title sat at 28.8 px at phone width, 30.72 px at tablet, and 36 px at 1024, while search ran its own `28->40` clamp and the header kept separate edges.
+- **One disclosure marker** — chapter details, the mobile and tablet outline, search filters, and revision answers share one trailing CSS chevron. Native `summary` markers are suppressed, the chevron rotates when open, and the desktop outline remains static.
+- **One phone control surface** — at `<=600` the theme button and menu label share the same 44 px box, 8 px radius, 1 px border, and nav-pill fill, so the theme control no longer reads as a different kind of action.
+- **One narrow footer rule** — the inline `·` is a `.chapter-nav-separator` element. At `<=359` the two onward links stack full width and the separator is hidden; at 360 and above they share one row with the dot between them.
 - **One reader edge at 1200** — the reader wrapper is `min(1204px, calc(100% - (100vw - 1171px) / 2 - 24px))`, so the outline no longer touches the viewport and the article keeps its 28 px gap to the outline.
 
-Evidence: [before: chapter mobile dark](docs/superpowers/specs/assets/2026-10-23-ui-consistency/before-chapter-mobile-dark.png), [after: chapter mobile dark](docs/superpowers/specs/assets/2026-10-23-ui-consistency/chapter-mobile-dark.png), [after: chapter mobile light](docs/superpowers/specs/assets/2026-10-23-ui-consistency/chapter-mobile-light.png), [before: library mobile dark](docs/superpowers/specs/assets/2026-10-23-ui-consistency/before-library-mobile-dark.png), [after: library mobile dark](docs/superpowers/specs/assets/2026-10-23-ui-consistency/library-mobile-dark.png), [before: search mobile dark](docs/superpowers/specs/assets/2026-10-23-ui-consistency/before-search-mobile-dark.png), [after: search mobile dark](docs/superpowers/specs/assets/2026-10-23-ui-consistency/search-mobile-dark.png), [after: search mobile light](docs/superpowers/specs/assets/2026-10-23-ui-consistency/search-mobile-light.png), [home mobile light](docs/superpowers/specs/assets/2026-10-23-ui-consistency/home-mobile-light.png), [home tablet dark](docs/superpowers/specs/assets/2026-10-23-ui-consistency/home-tablet-dark.png), [before: orphaned footer dot](docs/superpowers/specs/assets/2026-10-23-ui-consistency/before-footer-320-dark.png), [after: stacked footer](docs/superpowers/specs/assets/2026-10-23-ui-consistency/footer-320-dark.png), [tablet library at 701](docs/superpowers/specs/assets/2026-10-23-ui-consistency/library-tablet-dark.png), [reader at 1200](docs/superpowers/specs/assets/2026-10-23-ui-consistency/chapter-1200-dark.png), [open chapter details](docs/superpowers/specs/assets/2026-10-23-ui-consistency/chapter-details-open-dark.png), [open revision answer](docs/superpowers/specs/assets/2026-10-23-ui-consistency/revision-answer-open-dark.png), and the [audit report](docs/superpowers/specs/assets/2026-10-23-ui-consistency/audit-report.json). The before captures are the 22 Oct follow-up state, so the comparison isolates this pass.
+Evidence: [before: chapter mobile dark](docs/superpowers/specs/assets/2026-10-23-ui-consistency/before-chapter-mobile-dark.png), [after: chapter mobile dark](docs/superpowers/specs/assets/2026-10-23-ui-consistency/chapter-mobile-dark.png), [after: chapter mobile light](docs/superpowers/specs/assets/2026-10-23-ui-consistency/chapter-mobile-light.png), [before: library mobile dark](docs/superpowers/specs/assets/2026-10-23-ui-consistency/before-library-mobile-dark.png), [after: library mobile dark](docs/superpowers/specs/assets/2026-10-23-ui-consistency/library-mobile-dark.png), [before: search mobile dark](docs/superpowers/specs/assets/2026-10-23-ui-consistency/before-search-mobile-dark.png), [after: search mobile dark](docs/superpowers/specs/assets/2026-10-23-ui-consistency/search-mobile-dark.png), [after: search mobile light](docs/superpowers/specs/assets/2026-10-23-ui-consistency/search-mobile-light.png), [home mobile light](docs/superpowers/specs/assets/2026-10-23-ui-consistency/home-mobile-light.png), [home tablet dark](docs/superpowers/specs/assets/2026-10-23-ui-consistency/home-tablet-dark.png), [before: orphaned footer dot](docs/superpowers/specs/assets/2026-10-23-ui-consistency/before-footer-320-dark.png), [after: stacked footer](docs/superpowers/specs/assets/2026-10-23-ui-consistency/footer-320-dark.png), [tablet library at 701](docs/superpowers/specs/assets/2026-10-23-ui-consistency/library-tablet-dark.png), [reader at 1200](docs/superpowers/specs/assets/2026-10-23-ui-consistency/chapter-1200-dark.png), [open chapter details](docs/superpowers/specs/assets/2026-10-23-ui-consistency/chapter-details-open-dark.png), [open revision answer](docs/superpowers/specs/assets/2026-10-23-ui-consistency/revision-answer-open-dark.png), and the [audit report](docs/superpowers/specs/assets/2026-10-23-ui-consistency/audit-report.json).
 
-Verification: the Chromium suite covers nine routes at 320, 375, 390, 600, 667, 701, 768, 1024, 1200 and 1440 px in light and dark. It asserts no whole-page horizontal overflow, one visible page title and one visible search field on search, header/title edges within 0.6 px, the 32/40/44 title sizes and 650 weight, no native disclosure marker with a visible trailing chevron, matching phone theme/menu surfaces, stacked footer links and a hidden separator at 320, and at least a 24 px reader right gutter from 701 px up. `STUDY_HOME_ROUTE=home-preview.html` is still required for the case-insensitive local filesystem. The four Node suites pass 36/36 (22 UI, 4 state, 8 read-aloud, 2 roadmap), and `bash scripts/verify.sh` passes every repository gate. Cache parameters are `study-flow-20` and `reference-17`; `search.html` was regenerated for 678 chapters and `api/index.json` stayed unchanged. No production deployment was performed.
+The before captures reflect the 22 Oct follow-up state, isolating this pass's changes.
+
+Verification: the Chromium suite covers nine routes at 320, 375, 390, 600, 667, 701, 768, 1024, 1200, and 1440 px in light and dark. It asserts zero whole-page horizontal overflow, one visible page title, one visible search field on search, and header and title edges within 0.6 px.
+
+The suite also asserts 32, 40, and 44 px title sizes at weight 650, no native disclosure marker alongside the visible trailing chevron, matching phone theme and menu surfaces, stacked footer links with a hidden separator at 320, and at least a 24 px reader right gutter from 701 px upward.
+
+`STUDY_HOME_ROUTE=home-preview.html` is still required for the case-insensitive local filesystem. The four Node suites pass 36/36 (22 UI, 4 state, 8 read-aloud, 2 roadmap), and `bash scripts/verify.sh` passes every repository gate. Cache parameters are `study-flow-20` and `reference-17`; `search.html` was regenerated for 678 chapters, `api/index.json` stayed unchanged, and no production deployment was performed.
 
 ### Listening controls and device voices (5 Nov)
 
-The player now shows the chapter title, visible playback state, passage count,
-and a slim progress line. Previous/next passage, pause/resume, and stop stay
-available while listening. Audio settings open before playback and contain
-voice preview, speed, continuous or one-passage playback, and a follow-text
-checkbox. Preferences persist locally. Speeds include every tenth from 0.2×
-through 2.0×, plus the existing 0.75× and 1.25× choices. Speed and voice changes
-restart at the latest reported word boundary; when the engine supplies no word
-events, only the current short chunk repeats. Preview pauses chapter speech
-and leaves it paused until the listener resumes.
+The player shows the chapter title, visible playback state, passage count, and a slim progress line, while previous and next passage, pause and resume, and stop stay available while listening.
 
-Voice selection now uses local English voices exposed by the browser, with
-Samantha first and premium/enhanced/natural/neural variants preferred next.
-Known novelty voices and network voices are filtered. Suggestions no longer
-fill empty slots with arbitrary basic voices; other installed English voices
-remain in a separate group. A saved manual choice is retained, asynchronous
-voice updates preserve it, and missing device voices produce actionable guidance.
-No external speech service or runtime package was added. The current Wide
-reader and absence of a Width selector are preserved. The first preview in this
-session used stale generated files; the evidence below uses a fresh production
-build of the current source.
+Audio settings open before playback and contain voice preview, speed, continuous or one-passage playback, and a follow-text checkbox; preferences persist locally. Speeds include every tenth from 0.2× through 2.0×, plus the existing 0.75× and 1.25× choices. Speed and voice changes restart at the latest reported word boundary; when the engine supplies no word events, only the current short chunk repeats.
 
-Evidence: [desktop compact player](docs/superpowers/specs/assets/2026-11-05-listening-experience/desktop-dark-compact.png),
-[desktop audio settings](docs/superpowers/specs/assets/2026-11-05-listening-experience/desktop-dark-settings.png),
-[mobile compact player](docs/superpowers/specs/assets/2026-11-05-listening-experience/mobile-light-compact.png),
-and [mobile audio settings](docs/superpowers/specs/assets/2026-11-05-listening-experience/mobile-light-settings.png).
-These captures use the actual device voice list with Samantha selected and do
-not start speech. The [design](docs/superpowers/specs/2026-11-05-listening-experience-design.md)
-and [implementation plan](docs/superpowers/plans/2026-11-05-listening-experience.md)
-record the interaction and verification boundaries.
+Preview pauses chapter speech and leaves it paused until the listener resumes.
 
-Verification: 52 related Node tests pass. Chromium integration checks pass for
-all speeds, immediate changes, word bookmarks, cancellation and late callbacks,
-voice previews, persistence, delayed/absent voices, storage refusal, continuous
-and manual playback, paragraph selection, start from view, and source-range
-follow. The rendered chapter checks preserve Wide, confirm no Width selector,
-and verify 44-pixel transport targets and no horizontal overflow at 320, 375,
-667, and 1280 pixels in both themes, including a 320-pixel-high landscape
-viewport. Light/dark control text meets 4.5:1 contrast in the controlled player
-fixture; Escape closes settings and restores focus. The production Jekyll build
-succeeds with Ruby 3.4. Browser behavior tests substitute speech output; audible
-quality and device-specific engine behavior are left to the built-in Preview.
+Voice selection uses local English voices exposed by the browser, with Samantha first and premium, enhanced, natural, or neural variants preferred next. Known novelty voices and network voices are filtered, and suggestions no longer fill empty slots with arbitrary basic voices; other installed English voices remain in a separate group.
 
-The repository verification also uses its pinned Node 24.22.2 and TypeScript
-5.9.3 example runtimes. An imported chat attachment initially triggered the
-theme-source ownership gate. Cloud attachments are now gitignored and excluded
-from that source scan; a paired regression still rejects real duplicate theme
-code while accepting quoted code inside attachments. Repository totals were
-restamped with `check_counts.py --write`, and scoped Markdown review records
-were refreshed for the final bytes. No commit or production deployment was
-performed.
+A saved manual choice is retained, asynchronous voice updates preserve it, and missing device voices produce actionable guidance. No external speech service or runtime package was added, and the current Wide reader and absence of a Width selector are preserved. The first preview in this session used stale generated files; the evidence below uses a fresh production build of the current source.
+
+Evidence: [desktop compact player](docs/superpowers/specs/assets/2026-11-05-listening-experience/desktop-dark-compact.png), [desktop audio settings](docs/superpowers/specs/assets/2026-11-05-listening-experience/desktop-dark-settings.png), [mobile compact player](docs/superpowers/specs/assets/2026-11-05-listening-experience/mobile-light-compact.png), and [mobile audio settings](docs/superpowers/specs/assets/2026-11-05-listening-experience/mobile-light-settings.png).
+
+These captures use the actual device voice list with Samantha selected and do not start speech. The [design](docs/superpowers/specs/2026-11-05-listening-experience-design.md) and [implementation plan](docs/superpowers/plans/2026-11-05-listening-experience.md) record the interaction and verification boundaries.
+
+Verification: 52 related Node tests pass. Chromium integration checks pass for all speeds, immediate changes, word bookmarks, cancellation and late callbacks, voice previews, persistence, delayed or absent voices, storage refusal, continuous and manual playback, paragraph selection, start from view, and source-range follow.
+
+The rendered chapter checks preserve Wide, confirm no Width selector, and verify 44-pixel transport targets and zero horizontal overflow at 320, 375, 667, and 1280 pixels in both themes, including a 320-pixel-high landscape viewport. Light and dark control text meets 4.5:1 contrast in the controlled player fixture, and Escape closes settings and restores focus.
+
+The production Jekyll build succeeds with Ruby 3.4. Browser behavior tests substitute speech output; audible quality and device-specific engine behavior are left to the built-in Preview.
+
+Repository verification also uses its pinned Node 24.22.2 and TypeScript 5.9.3 example runtimes. An imported chat attachment initially triggered the theme-source ownership gate; cloud attachments are now gitignored and excluded from that scan, while a paired regression rejects real duplicate theme code and accepts quoted code inside attachments.
+
+Repository totals were restamped with `check_counts.py --write`, scoped Markdown review records were refreshed for the final bytes, and no commit or production deployment was performed.
 
 ### Spoken word within the active paragraph (5 Nov)
 
-The current word now has a stronger accent highlight while the entire source
-paragraph keeps its softer background and gutter stripe. Browser word-boundary
-events drive the marker. Original chunk offsets survive pause/resume and live
-speed or voice changes; unknown word lengths use word segmentation. Normalized
-characters map back to the authored text, including inline code, emphasized
-fragments, whitespace-only nodes between formatted words, and later chunks in
-long paragraphs. The chapter markup and text selection remain intact.
+The current word has a stronger accent highlight while the entire source paragraph keeps its softer background and gutter stripe. Browser word-boundary events drive the marker; original chunk offsets survive pause, resume, and live speed or voice changes, and unknown word lengths use word segmentation.
 
-Pause keeps the word visible as a bookmark. Navigation, new chunks, completion,
-stop, errors, and departure clear stale word markers. Follow-text tracks the
-word when enabled. CSS Custom Highlight paints the range in current browsers;
-a non-interactive rectangle fallback follows scroll and resize on older ones.
-Voices that omit word-boundary events retain paragraph highlighting.
+Normalized characters map back to the authored text, including inline code, emphasized fragments, whitespace-only nodes between formatted words, and later chunks in long paragraphs. The chapter markup and text selection remain intact.
 
-Verification: 55 related Node tests pass. Browser integration checks cover word
-and paragraph emphasis together, normalized/inline/later-chunk source ranges,
-pause and resumed offsets, completion/stop cleanup, both-theme word contrast,
-and fallback rendering after resize. A muted run with the actual local Samantha
-voice confirmed a real word boundary highlighting “When” in the chapter's first
-paragraph, preserving it on pause, resuming, and clearing on Stop. Evidence:
-[desktop word and paragraph](docs/superpowers/specs/assets/2026-11-05-listening-experience/spoken-word-desktop-dark.png)
-and [mobile word and paragraph](docs/superpowers/specs/assets/2026-11-05-listening-experience/spoken-word-mobile-light.png).
-The reader's Wide layout and saved listening choices are preserved. The shared
-read-aloud assets use cache version `listen-29`.
+Pause keeps the word visible as a bookmark, while navigation, new chunks, completion, stop, errors, and departure clear stale word markers. Follow-text tracks the word when enabled. CSS Custom Highlight paints the range in current browsers, and a non-interactive rectangle fallback follows scroll and resize on older ones; voices that omit word-boundary events retain paragraph highlighting.
+
+Verification: 55 related Node tests pass. Browser integration checks cover word and paragraph emphasis together, normalized, inline, and later-chunk source ranges, pause and resumed offsets, completion and stop cleanup, both-theme word contrast, and fallback rendering after resize.
+
+A muted run with the actual local Samantha voice confirmed a real word boundary highlighting "When" in the chapter's first paragraph, preserving it on pause, resuming, and clearing on Stop.
+
+Evidence: [desktop word and paragraph](docs/superpowers/specs/assets/2026-11-05-listening-experience/spoken-word-desktop-dark.png) and [mobile word and paragraph](docs/superpowers/specs/assets/2026-11-05-listening-experience/spoken-word-mobile-light.png). The reader's Wide layout and saved listening choices are preserved, and the shared read-aloud assets use cache version `listen-29`.

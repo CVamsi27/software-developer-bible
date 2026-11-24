@@ -14341,96 +14341,100 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 9 81-lanes-indian-sde-faang and lanes)."
   },
   "AGENTS.md": {
-   "sha256": "d15f1a41eecdb5f517cee7c52e7b5b26e6526394e9a7b4bf641907848cda1649",
-   "lines": 33,
+   "sha256": "113f3a1d675019d3d427998b53b97cb6c8db4125204184abc5d1a9cf1b5e0912",
+   "lines": 37,
    "genre": "meta",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "No version-sensitive claim; the 34-gate command was checked against scripts/verify.sh and both named scripts resolve.",
-    "readable": "Full read of 33 lines; hard rules, workflow and conventions are ordered, and each term is defined before use.",
-    "concise": "826 words; the gate list is compressed to one workflow line and one conventions bullet rather than repeated.",
+    "readable": "Full read of 37 lines (848 prose words) hard rules, workflow and conventions are ordered, and each term is defined before use.",
+    "concise": "848 words across 37 lines. the gate list is compressed to one workflow line and one conventions bullet rather than repeated.",
     "focused": "Owns AI operating rules; gate mechanics are delegated to contributing.md and docs/verification-gates.md, not retold.",
-    "fast": "14.5 KB raw / 5.1 KB gzip built page; the shared Jekyll shell is included.",
+    "fast": "Measured 14.5 KB raw / 5.1 KB gzip (the shared Jekyll shell is included.)",
     "best": "The file governs assistants, not humans; it cannot enforce behavior and relies on the gate suite for verification."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "INDEX.md": {
-   "sha256": "faef29212137c928c71e8b4fbb1a14e3e186ab9d6282a6163b39da9c34b9a06c",
-   "lines": 206,
+   "sha256": "c27a097ebb0f5d94084d2198f04b043983bd89116ffa4dc2be9fc05dee4b3a23",
+   "lines": 207,
    "genre": "index",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 master navigation hub verified against check_counts.py and check_links.py after adding 20.9-message-brokers link and fixing 680/991 footer.",
-    "readable": "Full read of 206 lines (453 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "453 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 207 lines (465 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "465 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical root index; counts stamped strictly by check_counts.py.",
     "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Maintains strict zero-broken-link boundary across 991 tracked markdown files."
    },
-   "notes": "Synced live read-time and counts after Wave 7B (70.2.3-5 coding patterns and 70.3-cheatsheets)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "README.md": {
-   "sha256": "d885528e428ea38f115bc62b8bac76e421c317edae2aeb312516f3f01fd17a5f",
-   "lines": 110,
+   "sha256": "35fd7906c9f051882eea7b6d0c73a5d360e4bfe624f61d8c95990bf378102cb4",
+   "lines": 112,
    "genre": "meta",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "The 989-file badge and '680 chapters' claim were checked against gate 1 output; all stack links resolve.",
-    "readable": "Full read of 110 lines; the opening states audience and lane model, then the task table points to the next action.",
-    "concise": "477 words; the task table replaces long onboarding prose.",
+    "readable": "Full read of 112 lines (481 prose words) the opening states audience and lane model, then the task table points to the next action.",
+    "concise": "481 words across 112 lines. the task table replaces long onboarding prose.",
     "focused": "Entry-point positioning; stack facts are not duplicated, and the page points at INDEX, ROADMAP and docs.",
-    "fast": "17.0 KB raw / 5.6 KB gzip built page; the shared Jekyll shell is included.",
+    "fast": "Measured 17.0 KB raw / 5.6 KB gzip (the shared Jekyll shell is included.)",
     "best": "The repository records content review but does not demonstrate a learner's readiness; employer requirements still decide."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "ROADMAP.md": {
-   "sha256": "b3f3afa90a62b386ffa6aa720cfe75d94397bb7d3e5c02beacfed63103eae75c",
+   "sha256": "8b34611be83e4a6da4d3a25539c9bd63a993f373fb2ef595737a4d04252c62f3",
    "lines": 275,
    "genre": "meta",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "No version-specific claim; Phase 1 stack links resolve to existing indexes and the 8 checkpoints match the phase sections.",
-    "readable": "Full read of 275 lines; the path is ordered by phase, each phase has a concrete checkpoint, and the weekly plan follows.",
-    "concise": "635 words; tables carry the study order and the prose explains only scheduling choices.",
+    "readable": "Full read of 275 lines (643 prose words) the path is ordered by phase, each phase has a concrete checkpoint, and the weekly plan follows.",
+    "concise": "643 words across 275 lines. tables carry the study order and the prose explains only scheduling choices.",
     "focused": "Canonical study path; it points at the stack indexes and readiness rubric instead of restating chapter content.",
-    "fast": "35.7 KB raw / 10.7 KB gzip built page; the shared Jekyll shell is included.",
+    "fast": "Measured 35.7 KB raw / 10.7 KB gzip (the shared Jekyll shell is included.)",
     "best": "A plan cannot guarantee an offer; the text says depth must follow the confirmed format and a weak checkpoint needs revisiting."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "contributing.md": {
-   "sha256": "eeeeab96ada169df6b7a0a98ffac633c6f7073546087beedc9f7f469c7c74d42",
-   "lines": 947,
+   "sha256": "bf2d8d114717d0e2b617c163df784c197c27b25ca7b73927722e37c519a4991a",
+   "lines": 948,
    "genre": "meta",
    "status": "read",
    "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against current scripts/verify.sh gates and check_counts.py output.",
-    "readable": "Full read of 947 lines (3280 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
-    "concise": "3280 words of prose after genuine file-by-file C1-C8 editorial refinement.",
+    "readable": "Full read of 948 lines (3308 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
+    "concise": "3308 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical contributor workflow guide; points at docs/verification-gates.md for full gate definitions.",
-    "fast": "Measured not built as HTML; 53.1 KB Markdown source served raw (not built as HTML; 53.1 KB Markdown source served raw on disk with verified backlinks, uniform headings, and concise prose structure.)",
+    "fast": "Measured not built as HTML; 53.1 KB Markdown source served raw. Measured not built as HTML; 53.1 KB Markdown source served raw (not built as HTML; 53.1 KB Markdown source served raw on disk with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Remaining limit is contributor guidance must be re-checked whenever verification gates change."
    },
-   "notes": "Synced live read-time and counts after Wave 5B (50.2-accessibility, 50.3-performance-monitoring, and 50.4-production-engineering)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "design-qa.md": {
-   "sha256": "e8da15c567bc813b3b61a4d54a8570220db77ad84aa5cb2300e19ed1356ba5ee",
-   "lines": 333,
+   "sha256": "4c7ab6ba5a188dc76d474a829bc7e1c1808c7032d41f351806bb1d1cb815bd93",
+   "lines": 372,
    "genre": "meta",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Historical pass dates are explicit; the opening 'now 34' was checked against scripts/verify.sh, which runs 34 gates.",
-    "readable": "Full read of 333 lines; each dated pass states the reader flow it changed and the evidence it used.",
-    "concise": "6,807 words; long because it is an append-only QA log, with each pass kept separate by date.",
+    "readable": "Full read of 372 lines (6920 prose words) each dated pass states the reader flow it changed and the evidence it used.",
+    "concise": "6920 words across 372 lines. 6,807 words; long because it is an append-only QA log, with each pass kept separate by date.",
     "focused": "Owns the design-QA history; current gate ownership points at docs/verification-gates.md rather than duplicating the list.",
-    "fast": "73.5 KB raw / 21.6 KB gzip built page; the shared Jekyll shell is included.",
+    "fast": "Measured 73.5 KB raw / 21.6 KB gzip (the shared Jekyll shell is included.)",
     "best": "Records product-flow checks, not a fresh semantic review of every paragraph; the opening says so and the limit still holds."
-   }
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "docs/2026-09-10-modernization-changelog.md": {
    "sha256": "bd628d3933df151e32faa14faaeb804ad1390bfde12d41a71687cb201553bab7",

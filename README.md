@@ -6,7 +6,7 @@ permalink: /README.html
 
 # Senior Full Stack Interview Bible
 
-> **A lane-first, stack-deep reference for senior full-stack engineers (5+ YoE)** prepping for product-based companies, FAANG/Big Tech, and EU mid-stage startups. Pick your lane, drill the stacks — or [search all 680 chapters](search.html) by title, section, tag and read time.
+> **A lane-first, stack-deep reference for senior full-stack engineers (5+ years of experience (YoE))** prepping for product-based companies, FAANG (Meta, Apple, Amazon, Netflix, Google) and Big Tech, and European Union (EU) mid-stage startups. Pick your lane, drill the stacks — or [search all 680 chapters](search.html) by title, section, tag, and read time.
 
 [![Lanes](https://img.shields.io/badge/lanes-2-blue)](lanes/INDEX.md)
 [![Stacks](https://img.shields.io/badge/stacks-7-green)](INDEX.md)
@@ -23,11 +23,11 @@ permalink: /README.html
 Start with [interview strategy](00-strategy/INDEX.md) to prepare clear communication and supported experience claims. Then choose the lane matching the assessed work:
 
 | Preparation need | Start here |
-| ------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| Algorithmic coding and broader SDE preparation | [SDE / FAANG lane (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md) |
-| Practical full-stack work, take-homes and relocation research | [Abroad full-stack lane](80-lanes-abroad-full-stack/INDEX.md) |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| Algorithmic coding and broader Software Development Engineer (SDE) preparation | [SDE and FAANG lane (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md) |
+| Practical full-stack work, take-homes, and relocation research | [Abroad full-stack lane](80-lanes-abroad-full-stack/INDEX.md) |
 
-A vacancy may need both. Confirm its format, language, allowed tools and location requirements; a country or employer label does not establish a universal hiring loop, preparation period or compensation band.
+A vacancy may need both. Confirm its format, language, allowed tools, and location requirements; a country or employer label does not establish a universal hiring loop, preparation period, or compensation band.
 
 See the [lane decision](80-lanes-abroad-full-stack/INDEX.md#lane-decision--is-this-the-right-lane-for-you) for how the paths fit together.
 
@@ -35,16 +35,16 @@ See the [lane decision](80-lanes-abroad-full-stack/INDEX.md#lane-decision--is-th
 
 ## The 7 Study Stacks
 
-Both lanes use the same technical chapters. Follow a stack’s reading stages to learn a mechanism, use its category revision afterward, and select interview-bank prompts when practicing that format.
+Both lanes use the same technical chapters. Follow a stack's reading stages to learn a mechanism, use its category revision afterward, and select interview-bank prompts when practicing that format.
 
 | Stack | Folder | What's in it | Files |
-| --------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- | ----: |
-| **Frontend** | [10-frontend/](10-frontend/INDEX.md) | JavaScript, TypeScript, React, Next.js, Forms, Animation, HTML/CSS/PWA, Mobile | 127 |
-| **Backend** | [20-backend/](20-backend/INDEX.md) | Node.js, NestJS, REST, GraphQL, Database, **Auth track**, Security, Microservices, **AI Engineering**, Java | 149 |
-| **Architecture** | [30-architecture/](30-architecture/INDEX.md) | System design theory + 31 case studies, Design Patterns (categorized: Foundations/Creational/Structural/Behavioral/Architectural — all 23 GoF + modern) | 109 |
-| **Platform** | [40-platform/](40-platform/INDEX.md) | Docker, K8s, CI/CD, Observability, Build Tools, Git, Serverless, Monorepo, 12-Factor | 95 |
-| **Quality** | [50-quality/](50-quality/INDEX.md) | Testing (Jest/RTL/Playwright/Vitest), Accessibility, Performance | 39 |
-| **Real-Time** | [60-realtime/](60-realtime/INDEX.md) | WebSockets, SSE, Socket.IO, scaling patterns | 11 |
+| --------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----: |
+| **Frontend** | [10-frontend/](10-frontend/INDEX.md) | JavaScript, TypeScript, React, Next.js, Forms, Animation, HTML, CSS, Progressive Web Apps (PWAs), Mobile | 127 |
+| **Backend** | [20-backend/](20-backend/INDEX.md) | Node.js, NestJS, REST, GraphQL, Database, **Auth track**, Security, Microservices, Message Brokers, **AI Engineering**, Java | 149 |
+| **Architecture** | [30-architecture/](30-architecture/INDEX.md) | System design theory + 31 case studies, Design Patterns (Foundations, Creational, Structural, Behavioral, Architectural — all 23 Gang of Four (GoF) + modern) | 109 |
+| **Platform** | [40-platform/](40-platform/INDEX.md) | Docker, Kubernetes (K8s), CI/CD, Observability, Build Tools, Git, Serverless, Monorepo, 12-Factor | 95 |
+| **Quality** | [50-quality/](50-quality/INDEX.md) | Testing (Jest, React Testing Library (RTL), Playwright, Vitest), Accessibility, Performance | 39 |
+| **Real-Time** | [60-realtime/](60-realtime/INDEX.md) | WebSockets, Server-Sent Events (SSE), Socket.IO, scaling patterns | 11 |
 | **Interview Toolkit** | [70-interview-toolkit/](70-interview-toolkit/INDEX.md) | Behavioral, Coding Patterns (18 patterns), Cheat Sheets | 34 |
 
 Full breakdown with file counts per topic: [INDEX.md → The 7 Study Stacks](INDEX.md#the-7-study-stacks-numbered-for-study-order)
@@ -54,12 +54,12 @@ Full breakdown with file counts per topic: [INDEX.md → The 7 Study Stacks](IND
 ## Navigation
 
 | If you want to… | Go to |
-| --------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Follow the study path** | [ROADMAP.md](ROADMAP.md) — phases, checkpoints, weekly schedule |
 | See all files in one place | [INDEX.md](INDEX.md) |
 | Start with universal interview prep | [00-strategy/](00-strategy/INDEX.md) |
-| Prep for FAANG / Indian SDE roles | [81-lanes-indian-sde-faang/ (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md) |
-| Prep for EU mid-stage / remote-first US | [80-lanes-abroad-full-stack/](80-lanes-abroad-full-stack/INDEX.md) |
+| Prep for FAANG and Indian SDE roles | [81-lanes-indian-sde-faang/ (repository)](https://github.com/CVamsi27/software-developer-bible/blob/main/81-lanes-indian-sde-faang/INDEX.md) |
+| Prep for EU mid-stage or remote-first US | [80-lanes-abroad-full-stack/](80-lanes-abroad-full-stack/INDEX.md) |
 | Learn how to contribute | [contributing.md](contributing.md) |
 
 ---
@@ -68,18 +68,18 @@ Full breakdown with file counts per topic: [INDEX.md → The 7 Study Stacks](IND
 
 A chapter introduces the concept once, explains the constraint behind it, then traces a focused example before comparing decisions and failure boundaries. Headings state the relationship or problem being explained. A new component is connected to the whole before its variants are listed.
 
-Concept chapters open with a concrete problem, then give Definition and First Principles before the sections that advance understanding. They end with one Summary, See Also and References. TL;DR and duplicated in-chapter cheat sheets are retired.
+Concept chapters open with a concrete problem, then give Definition and First Principles before the sections that advance understanding. They end with one Summary, See Also, and References. `TL;DR` and duplicated in-chapter cheat sheets are retired.
 
 Questions and answers live in one separate `REVISION.md` per category, linked as the final learning stage in its index. Dedicated interview banks provide longer drills. The [contribution guide](contributing.md) defines the full contract.
 
 ## Use the resource for the task at hand
 
 | Task | Path |
-| ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
-| Learn a new mechanism | Follow the category’s staged `INDEX.md`, then trace its chapter examples |
+| ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- |
+| Learn a new mechanism | Follow the category's staged `INDEX.md`, then trace its chapter examples |
 | Check recall after a category | Use its separate `REVISION.md` before reopening the sources |
 | Repair an interview gap | Choose the relevant canonical chapter, then test a changed case |
-| Find a topic quickly | [Search](search.html), [master index](INDEX.md) or [reference guides](70-interview-toolkit/70.3-cheatsheets/INDEX.md) |
+| Find a topic quickly | [Search](search.html), [master index](INDEX.md), or [reference guides](70-interview-toolkit/70.3-cheatsheets/INDEX.md) |
 | Plan preparation | [Roadmap](ROADMAP.md) and the lane matching your confirmed format |
 | Check repository validation | [Verification gates](docs/verification-gates.md) and [scripts map](docs/scripts-map.md) |
 | Inspect the read-backed corpus review | [Corpus review ledger](docs/corpus-review/README.md) |
@@ -87,23 +87,25 @@ Questions and answers live in one separate `REVISION.md` per category, linked as
 | Track which frontend chapters a human read | [Frontend review ledger](docs/2026-11-frontend-review.md) |
 | Understand publishing and access | [Deployment](docs/deployment.md) |
 
-Use the [two-axis topic importance guide](docs/topic-importance.md) to choose what to study: prioritize core full-stack engineering and system design, keep HTML/CSS basics, and defer animation specialization.
+Use the [two-axis topic importance guide](docs/topic-importance.md) to choose what to study: prioritize core full-stack engineering and system design, keep HTML and CSS basics, and defer animation specialization.
 
 The [personal-site sync contract](docs/planner-site-sync.md) explains how to refresh the roadmap snapshot and preserve planner evidence when this corpus changes.
 
-Automated gates check defined structural, link, metadata and regression rules. Passing them does not prove every technical claim or teaching explanation correct. The [corpus readability review and per-page inventory](docs/2026-10-03-readability-review.md) distinguish automated screening, close reading and remaining rewrites. Dated [health reports](docs/2026-09-19-corpus-health-report.md) describe the snapshot they measured; rerun the gates for current evidence.
+Automated gates check defined structural, link, metadata, and regression rules, so passing them does not prove every technical claim or teaching explanation is accurate.
 
-The [reading and senior interview quality review](docs/2026-10-07-reading-quality-report.md) records formal definition coverage, reader fixes, resume validation and the limits of the technical review.
+The [corpus readability review and per-page inventory](docs/2026-10-03-readability-review.md) distinguish automated screening, close reading, and remaining rewrites. Dated [health reports](docs/2026-09-19-corpus-health-report.md) describe the snapshot they measured; rerun the gates for current evidence.
+
+The [reading and senior interview quality review](docs/2026-10-07-reading-quality-report.md) records formal definition coverage, reader fixes, resume validation, and the limits of the technical review.
 
 The [current full-stack review](docs/2026-10-25-fullstack-coverage-review.md) records exact-hash document coverage and what the executed examples establish. The [explanation-depth review](docs/2026-10-08-explanation-depth-progress.md) preserves its earlier checkpoint. Content review does not demonstrate a learner's readiness; use the practice evidence and rubric separately.
 
 The earlier [October 1 chapter-review continuation](docs/2026-10-01-chapter-review-continuation.md) is a historical snapshot; use the current review reports above for present coverage.
 
-The [book-informed technical precision pass](docs/2026-10-10-senior-precision-progress.md) records corrected guarantees, source editions, executed failure cases and the remaining fresh-review coverage.
+The [book-informed technical precision pass](docs/2026-10-10-senior-precision-progress.md) records corrected guarantees, source editions, executed failure cases, and the remaining fresh-review coverage.
 
 ## Private study host and personal records
 
-The study host uses the access controls described in [deployment](docs/deployment.md). Account configuration belongs in deployment environment variables. Personal CVs, contacts, application records and relocation details live in a separate private workspace repository (they left this repo on 2026-10-17); keep them out of general teaching pages.
+The study host uses the access controls described in [deployment](docs/deployment.md). Account configuration belongs in deployment environment variables. Personal CVs, contacts, application records, and relocation details live in a separate private workspace repository (they left this repo on 2026-10-17); keep them out of general teaching pages.
 
 ---
 

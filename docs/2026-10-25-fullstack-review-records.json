@@ -10046,62 +10046,62 @@
     },
     {
       "path": "AGENTS.md",
-      "sha256": "d15f1a41eecdb5f517cee7c52e7b5b26e6526394e9a7b4bf641907848cda1649",
+      "sha256": "113f3a1d675019d3d427998b53b97cb6c8db4125204184abc5d1a9cf1b5e0912",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-15",
+      "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "2026-11-15 pass: read in full (33 lines). Updated the two verification lines to name the 34-gate suite, including counts, structure, links, freshness and review ledger; career-ops and personal-data rules unchanged. Six-axis evidence is in docs/review-ledger.json.",
+      "notes": "Wave 11A C1-C8 refinement (2026-11-24): Full read of 37 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
       "path": "INDEX.md",
-      "sha256": "faef29212137c928c71e8b4fbb1a14e3e186ab9d6282a6163b39da9c34b9a06c",
+      "sha256": "c27a097ebb0f5d94084d2198f04b043983bd89116ffa4dc2be9fc05dee4b3a23",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 7B count/read-time sync (2026-11-24): Full read of 206 lines. Updated generated counts/read-time navigation after Wave 7B.",
+      "notes": "Wave 11A C1-C8 refinement (2026-11-24): Full read of 207 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
       "path": "README.md",
-      "sha256": "d885528e428ea38f115bc62b8bac76e421c317edae2aeb312516f3f01fd17a5f",
-      "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-18",
-      "fullContentRead": false,
-      "notes": "Diff-scoped review (2026-11-18): the repository count writer restamped the Files badge from the live 991-file total; the README navigation and descriptive content were not changed.",
-      "findings": []
-    },
-    {
-      "path": "ROADMAP.md",
-      "sha256": "b3f3afa90a62b386ffa6aa720cfe75d94397bb7d3e5c02beacfed63103eae75c",
-      "status": "reviewed",
-      "reviewer": "root",
-      "reviewDate": "2026-11-15",
-      "fullContentRead": true,
-      "notes": "2026-11-15 pass: read in full (275 lines). Renamed the Phase 1 Files column to Stack index and verified the phase links and checkpoints. Six-axis evidence is in docs/review-ledger.json.",
-      "findings": []
-    },
-    {
-      "path": "contributing.md",
-      "sha256": "eeeeab96ada169df6b7a0a98ffac633c6f7073546087beedc9f7f469c7c74d42",
+      "sha256": "35fd7906c9f051882eea7b6d0c73a5d360e4bfe624f61d8c95990bf378102cb4",
       "status": "reviewed",
       "reviewer": "root",
       "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Wave 5B count/read-time sync (2026-11-24): Full read of 947 lines. Updated generated counts/read-time navigation after Wave 5B.",
+      "notes": "Wave 11A C1-C8 refinement (2026-11-24): Full read of 112 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+      "findings": []
+    },
+    {
+      "path": "ROADMAP.md",
+      "sha256": "8b34611be83e4a6da4d3a25539c9bd63a993f373fb2ef595737a4d04252c62f3",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-11-24",
+      "fullContentRead": true,
+      "notes": "Wave 11A C1-C8 refinement (2026-11-24): Full read of 275 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
+      "findings": []
+    },
+    {
+      "path": "contributing.md",
+      "sha256": "bf2d8d114717d0e2b617c163df784c197c27b25ca7b73927722e37c519a4991a",
+      "status": "reviewed",
+      "reviewer": "root",
+      "reviewDate": "2026-11-24",
+      "fullContentRead": true,
+      "notes": "Wave 11A C1-C8 refinement (2026-11-24): Full read of 948 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
       "path": "design-qa.md",
-      "sha256": "e8da15c567bc813b3b61a4d54a8570220db77ad84aa5cb2300e19ed1356ba5ee",
+      "sha256": "4c7ab6ba5a188dc76d474a829bc7e1c1808c7032d41f351806bb1d1cb815bd93",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-14",
+      "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "2026-11-14 pass: read in full as the dated design record it is. Only the current gate count changed (33 to 34); the per-pass measurements, screenshots and historical counts retain their dates.",
+      "notes": "Wave 11A C1-C8 refinement (2026-11-24): Full read of 372 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {

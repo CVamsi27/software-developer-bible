@@ -1,6 +1,6 @@
 # Bundlers
 
-> **Study time:** ≈ 29 min of reading (5 files, ~6 min average).
+> **Study time:** ≈ 30 min of reading (5 files, ~6 min average).
 > **5 files.** Four widely used bundler paths: Webpack, Vite, Next.js-integrated Turbopack, and Webpack-oriented Rspack. Choose against framework support and required integrations.
 
 [![Files](https://img.shields.io/badge/files-5-blue)](#file-index)
@@ -26,16 +26,16 @@ Framework requirement -> supported default -> required extension inventory
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Webpack](40.5.1.01-webpack.md) | Dependency graph, transforms, Asset Modules, experimental native CSS/HTML, lazy chunks, HMR and deployment | Important | Specialized | 8 min |
-| 02 | [Vite](40.5.1.02-vite.md) | HTML-to-module requests, dependency pre-bundling, HMR, Rolldown/Oxc, mode, plugins and deployment | Important | Specialized | 7 min |
+| 01 | [Webpack](40.5.1.01-webpack.md) | Dependency graph, transforms, Asset Modules, experimental native CSS and HTML, lazy chunks, Hot Module Replacement (HMR), and deployment | Important | Specialized | 8 min |
+| 02 | [Vite](40.5.1.02-vite.md) | HTML-to-module requests, dependency pre-bundling, HMR, Rolldown and Oxc, mode, plugins, and deployment | Important | Specialized | 7 min |
 | 03 | [Turbopack](40.5.1.03-turbopack.md) | Fine-grained invalidation, cache lifetimes, loader compatibility, tracing | Important | Specialized | 6 min |
-| 04 | [Rspack](40.5.1.04-rspack.md) | Webpack-oriented migration, cache versus incremental work, plugin/runtime compatibility | Important | Specialized | 5 min |
+| 04 | [Rspack](40.5.1.04-rspack.md) | Webpack-oriented migration, cache versus incremental work, plugin and runtime compatibility | Important | Specialized | 6 min |
 
 ---
 
 ## Cross-References
 
-- [Compilers](../02-compilers/INDEX.md) — how TS/JSX reach the bundler
+- [Compilers](../02-compilers/INDEX.md) — how TypeScript (TS) and JSX reach the bundler
 - [Optimization & Comparison](../03-optimization-and-comparison/INDEX.md) — making any of them fast
 
 ---
@@ -48,7 +48,9 @@ Framework requirement -> supported default -> required extension inventory
 
 ## Docita Anchor
 
-The [Docita evidence walkthrough](../../../projects/docita/INDEX.md) distinguishes dated lab results from source configuration and deployed behavior. Vite/Astro, shared TypeScript settings and Turbo tasks provide related source examples. Inspect the actual task inputs, invoked gates and emitted outputs before claiming type safety, cache validity or runtime performance. No direct Rspack/Turbopack implementation or measured migration speedup is claimed here.
+The [Docita evidence walkthrough](../../../projects/docita/INDEX.md) distinguishes dated lab results from source configuration and deployed behavior. Vite and Astro, shared TypeScript settings, and Turbo tasks provide related source examples.
+
+Inspect the actual task inputs, invoked gates, and emitted outputs before claiming type safety, cache validity, or runtime performance. No direct Rspack or Turbopack implementation or measured migration speedup is claimed here.
 
 ## Finish This Section
 

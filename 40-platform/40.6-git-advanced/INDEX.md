@@ -1,26 +1,26 @@
 # Git Advanced — Index
 
-> **Study time:** ≈ 1 h 19 m of reading (11 files, ~7 min average).
+> **Study time:** ≈ 1 h 20 m of reading (11 files, ~7 min average).
 > **11 files** — Advanced Git operations from the object model, branching strategies, rebase, cherry-pick, hooks, bisect, reflog, format-patch, code archaeology, LFS/partial clones, and commit signing to interview questions.
 
 [![Files](https://img.shields.io/badge/files-11-blue)](../../INDEX.md)
 [![Category](https://img.shields.io/badge/category-Tooling-%2364748b)](#)
 [![Status](https://img.shields.io/badge/status-complete-brightgreen)](#)
 
-**Why Git:** Every senior engineer must be fluent. The object model explains every other command. Branching strategies affect team velocity. Rebase vs merge decisions affect history. Bisect, reflog, and code archaeology save hours when debugging "who broke this?". At scale, LFS and partial clones keep big repos usable; signed commits anchor supply-chain security. This section is short but high-value.
+**Why Git:** Every senior engineer must be fluent. The object model explains every other command. Branching strategies affect team velocity. Rebase versus merge decisions affect history. Bisect, reflog, and code archaeology save hours when debugging "who broke this?". At scale, Large File Storage (LFS) and partial clones keep large repositories usable; signed commits anchor supply-chain security. This section is short but high-value.
 
 ---
 
 ## Topic Categories
 
 | Category | Files | Why it matters |
-| ------------------------------------------ | ----: | ----------------------------------------------------------------------- |
+| ------------------------------------------ | ----: | ------------------------------------------------------------------------------ |
 | [Internals](#internals) | 1 | Objects, refs, packfiles — the mental model behind every command |
-| [Branching & History](#branching--history) | 2 | Choose an integration/release path, then move or port commits safely |
+| [Branching & History](#branching--history) | 2 | Choose an integration and release path, then move or port commits safely |
 | [Automation](#automation) | 1 | Git hooks, Husky, commitlint — enforce standards |
 | [Advanced Commands](#advanced-commands) | 2 | Bisect, reflog, worktree, patches — the power tools |
-| [Investigation](#investigation) | 1 | Code archaeology — finding who/when/why |
-| [Scale & Security](#scale--security) | 2 | LFS, partial clones, signed commits — repos that stay fast and provable |
+| [Investigation](#investigation) | 1 | Code archaeology — finding who, when, and why |
+| [Scale & Security](#scale--security) | 2 | LFS, partial clones, signed commits — repositories that stay fast and provable |
 | [Interview Prep](#interview-prep) | 1 | 40 source-linked questions |
 
 ---
@@ -31,7 +31,7 @@ Understand this once and `reset`, `rebase`, and recovery stop being scary.
 
 | # | File | Topics | When to read | Role priority | General importance | Read time |
 | --: | ------ | -------- | -------------- | --- | --- | ----------: |
-| 01 | [Git Internals: Objects, Refs & Packfiles](40.6.01-git-internals-objects-refs-packfiles.md) | file-to-commit trace, object identities, refs and HEAD, pack storage, reset/rebase effects, reflog recovery limits, linked worktrees | First — it unlocks everything else | Important | Foundational | 10 min |
+| 01 | [Git Internals: Objects, Refs & Packfiles](40.6.01-git-internals-objects-refs-packfiles.md) | file-to-commit trace, object identities, refs and `HEAD`, pack storage, reset and rebase effects, reflog recovery limits, linked worktrees | First — it unlocks everything else | Important | Foundational | 10 min |
 
 ---
 
@@ -51,7 +51,7 @@ GitHub Flow and trunk-based development can coexist: one describes a pull-reques
 ```text
 What does the product need?
 ├── One active release line, frequent integration → trunk-based development
-│   └── Use reviewed short-lived branches when the repository requires a PR
+│   └── Use reviewed short-lived branches when the repository requires a Pull Request (PR)
 ├── A clear PR loop, releases from the default branch → GitHub Flow
 ├── Planned version preparation plus a separate integration line → Git Flow
 └── Several older versions still supported → trunk + scoped release branches
@@ -64,7 +64,7 @@ What does the product need?
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 04 | [Git Hooks](40.6.04-git-hooks.md) | Staged/message checks, Husky/lint-staged, receiver policy, post-receive boundary—choose by event and authority | Important | Foundational | 7 min |
+| 04 | [Git Hooks](40.6.04-git-hooks.md) | Staged and message checks, Husky and lint-staged, receiver policy, post-receive boundary — choose by event and authority | Important | Foundational | 7 min |
 
 ---
 
@@ -74,8 +74,8 @@ The power tools.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 05 | [Advanced Commands](40.6.05-git-advanced-commands.md) | Bisect’s test contract, reflog recovery limits, stash vs worktree, pinned submodules, reset vs revert | Important | Foundational | 6 min |
-| 06 | [Patch, Bundle & Archive](40.6.06-patch-and-bundle.md) | Ordered mbox replay, sign-off vs signature, bundle prerequisites and limits, tracked-tree release archives | Important | Foundational | 7 min |
+| 05 | [Advanced Commands](40.6.05-git-advanced-commands.md) | Bisect's test contract, reflog recovery limits, stash versus worktree, pinned submodules, reset versus revert | Important | Foundational | 7 min |
+| 06 | [Patch, Bundle & Archive](40.6.06-patch-and-bundle.md) | Ordered mbox replay, sign-off versus signature, bundle prerequisites and limits, tracked-tree release archives | Important | Foundational | 7 min |
 
 ---
 
@@ -83,7 +83,7 @@ The power tools.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 07 | [Code Archaeology](40.6.07-code-archaeology.md) | Line attribution limits, moved-code detection, `-S` vs `-G`, path/function history, review evidence | Important | Foundational | 5 min |
+| 07 | [Code Archaeology](40.6.07-code-archaeology.md) | Line attribution limits, moved-code detection, `-S` versus `-G`, path and function history, review evidence | Important | Foundational | 5 min |
 
 ---
 
@@ -93,8 +93,8 @@ Keeping large repositories fast and history trustworthy.
 
 | # | File | Topics | Role priority | General importance | Read time |
 | --: | ------ | -------- | --- | --- | ----------: |
-| 08 | [Git at Scale: LFS & Partial Clones](40.6.08-git-at-scale-lfs-partial-clones.md) | LFS tracking, migration and payload recovery; partial clone, cone sparse checkout and promisor fetches; explicit shallow-history refs; Scalar maintenance and object-size audits | Important | Foundational | 9 min |
-| 09 | [Signed Commits & Repository Security](40.6.09-signed-commits-repository-security.md) | GPG vs SSH vs Sigstore signing, Verified badges, branch protection enforcement, mailmap identity hygiene, CI verify steps, supply-chain context | Important | Foundational | 8 min |
+| 08 | [Git at Scale: LFS & Partial Clones](40.6.08-git-at-scale-lfs-partial-clones.md) | LFS tracking, migration, and payload recovery; partial clone, cone sparse checkout, and promisor fetches; explicit shallow-history refs; Scalar maintenance and object-size audits | Important | Foundational | 9 min |
+| 09 | [Signed Commits & Repository Security](40.6.09-signed-commits-repository-security.md) | GNU Privacy Guard (GPG) versus Secure Shell (SSH) versus Sigstore signing, Verified badges, branch protection enforcement, mailmap identity hygiene, Continuous Integration (CI) verify steps, supply-chain context | Important | Foundational | 8 min |
 
 ---
 
@@ -115,7 +115,7 @@ Keeping large repositories fast and history trustworthy.
 5. **Advanced Commands** — for the "what would you do if…" questions
 6. **Code Archaeology** — for debugging questions
 7. **Patch, Bundle & Archive** — choose the right artifact for review, offline history transfer, or a source release
-8. **LFS & Partial Clones** — for platform/scale roles
+8. **LFS & Partial Clones** — for platform and scale roles
 9. **Signed Commits** — for security-minded teams
 10. **[Section revision](REVISION.md)** — explain each state transition without copying
 11. **Interview Questions** — test decisions with a failure scenario
@@ -125,14 +125,14 @@ Keeping large repositories fast and history trustworthy.
 ## Common interview topics
 
 - "What happens when you run `git commit`?" (object model)
-- "Rebase vs merge — when to use which?"
+- "Rebase versus merge — when to use which?"
 - "How do you find which commit introduced a bug?" (bisect)
 - "How do you undo a commit? What about an already-pushed commit?"
 - "How do you resolve a merge conflict?"
 - "What does `git reflog` do? How has it saved you?"
 - "Should this change move as a patch, bundle, or source archive?"
 - "Walk me through your team's branching strategy."
-- "How would you keep a multi-GB repository cloneable?" (LFS, partial clones, shallow CI)
+- "How would you keep a multi-gigabyte repository cloneable?" (LFS, partial clones, shallow CI)
 
 ---
 
@@ -146,13 +146,13 @@ Keeping large repositories fast and history trustworthy.
 
 ## Navigation
 
-[← Previous: Build Tools](../40.5-build-tools/INDEX.md) · [ Back to Index](../../INDEX.md) · [Next: Serverless & Edge →](../40.7-serverless-edge/INDEX.md)
+[← Previous: Build Tools](../40.5-build-tools/INDEX.md) · [Back to Index](../../INDEX.md) · [Next: Serverless & Edge →](../40.7-serverless-edge/INDEX.md)
 
 ---
 
 ## Docita Anchor
 
-Source walkthrough for [Docita](../../projects/docita/INDEX.md), checked against the local source on 10 October 2026. These files illustrate intended checks; their existence does not prove every gate currently passes or is deployed.
+Source walkthrough for [Docita](../../projects/docita/INDEX.md), checked against the local source on October 10, 2026. These files illustrate intended checks; their existence does not prove every gate currently passes or is deployed.
 
 | Topic | Source to inspect | Boundary |
 | -------------------- | ------------------------------------------- | --------------------------------------------------------------------------- |

@@ -30,33 +30,33 @@ Source: [Webpack](40.5.1.01-webpack.md)
 
 **A:** `asset/resource` emits a separately cacheable file and exports its URL; `asset/inline` puts a data URI into the referring output. The automatic `asset` type chooses between these forms by a size threshold. See [Webpack Asset Modules](40.5.1.01-webpack.md#follow-one-import-through-the-build) and the [official Asset Modules guide](https://webpack.js.org/guides/asset-modules/).
 
-**Q:** In Webpack 5.109 and later, does native CSS/HTML handling in `auto` mode mean existing loaders and plugins can always be removed?
+**Q:** In Webpack `5.109` and later, does native CSS and HTML handling in `auto` mode mean existing loaders and plugins can always be removed?
 
-**A:** No. A matching rule can keep the existing loader path, and the built-in CSS and HTML features remain experimental with gaps in loader and plugin behavior. Check the pinned release and migrate one rule or entry at a time. See [Webpack's native CSS and HTML boundary](40.5.1.01-webpack.md#follow-one-import-through-the-build), the [native CSS guide](https://webpack.js.org/guides/native-css/) and the [native HTML guide](https://webpack.js.org/guides/native-html/).
+**A:** No. A matching rule can keep the existing loader path, and the built-in CSS and HTML features remain experimental with gaps in loader and plugin behavior. Check the pinned release and migrate one rule or entry at a time. See [Webpack's native CSS and HTML boundary](40.5.1.01-webpack.md#follow-one-import-through-the-build), the [native CSS guide](https://webpack.js.org/guides/native-css/), and the [native HTML guide](https://webpack.js.org/guides/native-html/).
 
 ## Vite
 
 Source: [Vite](40.5.1.02-vite.md)
 
-**Q:** What changed in Vite 8 without removing the dev/build split?
+**Q:** What changed in Vite 8 without removing the development-and-build split?
 
-**A:** Rolldown now handles dependency optimization and production bundling; Oxc handles JavaScript/TypeScript transforms and JavaScript minification, while Lightning CSS handles CSS minification. The default development flow still serves application modules on demand. Vite 8.1's bundled-development mode is experimental and opt-in.
+**A:** Rolldown now handles dependency optimization and production bundling; Oxc handles JavaScript and TypeScript transforms and JavaScript minification, while Lightning CSS handles CSS minification. The default development flow still serves application modules on demand. Vite 8.1's bundled-development mode is experimental and opt-in.
 
 **Q:** Why does Vite pre-bundle packages when it still serves application source modules separately?
 
 **A:** Browsers cannot resolve bare package names and some dependencies ship as CommonJS or UMD, so Vite must rewrite them into browser-loadable ESM. Pre-bundling also reduces the request count for packages split into many ESM files. It optimizes dependencies, not the application source graph. See [Vite's dependency path](40.5.1.02-vite.md#from-the-html-entry-to-an-edit) and the [official guide](https://vite.dev/guide/dep-pre-bundling).
 
-**Q:** Why is a development proxy insufficient after deploying dist?
+**Q:** Why is a development proxy insufficient after deploying `dist`?
 
-**A:** It belongs to the dev server and is not copied into `dist`. Production needs its own API routing; configure CORS only if the deployed browser request is cross-origin, and configure the static host's SPA fallback for client routes. See [Vite's deployment boundaries](40.5.1.02-vite.md#configuration-and-deployment-boundaries).
+**A:** It belongs to the development server and is not copied into `dist`. Production needs its own API routing; configure Cross-Origin Resource Sharing (CORS) only if the deployed browser request is cross-origin, and configure the static host's Single-Page Application (SPA) fallback for client routes. See [Vite's deployment boundaries](40.5.1.02-vite.md#configuration-and-deployment-boundaries).
 
 **Q:** Why does a successful Vite build not prove that TypeScript types are correct?
 
-**A:** Vite's Oxc transform removes TypeScript syntax per file so the browser can execute the result; it does not analyze the whole TypeScript program. Run `tsc --noEmit` as a separate CI/build gate. See [Vite's transform boundary](40.5.1.02-vite.md#configuration-and-deployment-boundaries) and the [official feature guide](https://vite.dev/guide/features).
+**A:** Vite's Oxc transform removes TypeScript syntax per file so the browser can execute the result; it does not analyze the whole TypeScript program. Run `tsc --noEmit` as a separate CI or build gate. See [Vite's transform boundary](40.5.1.02-vite.md#configuration-and-deployment-boundaries) and the [official feature guide](https://vite.dev/guide/features).
 
 **Q:** Why is `vite build --mode staging` still normally an optimized production build?
 
-**A:** Vite mode selects `.env.[mode]` files, while `NODE_ENV` controls a separate set of production/development constants. `--mode staging` loads `.env.staging` without changing the build command's production behavior by itself. Any `VITE_` value used in browser code is public build output. See [Vite environment and deployment rules](40.5.1.02-vite.md#configuration-and-deployment-boundaries) and the [official modes guide](https://vite.dev/guide/env-and-mode).
+**A:** Vite mode selects `.env.[mode]` files, while `NODE_ENV` controls a separate set of production and development constants. `--mode staging` loads `.env.staging` without changing the build command's production behavior by itself. Any `VITE_` value used in browser code is public build output. See [Vite environment and deployment rules](40.5.1.02-vite.md#configuration-and-deployment-boundaries) and the [official modes guide](https://vite.dev/guide/env-and-mode).
 
 ## Turbopack
 
@@ -68,7 +68,7 @@ Source: [Turbopack](40.5.1.03-turbopack.md)
 
 **Q:** How should a team compare Turbopack build-cache results across local development and CI?
 
-**A:** Next.js 16.1 made development filesystem caching stable and enabled it by default. The 16.3 release notes say build filesystem caching works and is enabled by default, while the current API reference still calls the build option opt-in. Verify the version-matched behavior before changing CI configuration; when caching is enabled, CI must preserve `.next/cache` for warm builds. Compare cold and warm runs separately and key the cache to the lockfile, Next.js version and build configuration. See [Turbopack's cache lifetimes](40.5.1.03-turbopack.md#the-cache-has-two-lifetimes), the [official API reference](https://nextjs.org/docs/app/api-reference/turbopack), and the [Next.js 16.3 release](https://nextjs.org/blog/next-16-3).
+**A:** Next.js 16.1 made development filesystem caching stable and enabled it by default. The 16.3 release notes say build filesystem caching works and is enabled by default, while the current API reference still calls the build option opt-in. Verify the version-matched behavior before changing CI configuration; when caching is enabled, CI must preserve `.next/cache` for warm builds. Compare cold and warm runs separately and key the cache to the lockfile, Next.js version, and build configuration. See [Turbopack's cache lifetimes](40.5.1.03-turbopack.md#the-cache-has-two-lifetimes), the [official API reference](https://nextjs.org/docs/app/api-reference/turbopack), and the [Next.js 16.3 release](https://nextjs.org/blog/next-16-3).
 
 **Q:** What must be verified when a Next.js app depends on a Webpack loader or plugin?
 

@@ -1,7 +1,7 @@
 # Optimization & Comparison
 
 > **Study time:** ≈ 19 min of reading (4 files, ~5 min average).
-> **4 files.** Making builds fast and bundles small, shipping assets (CSS/images/fonts) through a real pipeline — then choosing tools with evidence instead of hype.
+> **4 files.** Making builds fast and bundles small, shipping assets (Cascading Style Sheets (CSS), images, and fonts) through a real pipeline — then choosing tools with evidence instead of hype.
 
 [![Files](https://img.shields.io/badge/files-4-blue)](#file-index)
 [![Category](https://img.shields.io/badge/category-Optimization-%2364748b)](../INDEX.md)
@@ -19,7 +19,7 @@ Tool choice gets debated endlessly; bundle size regressions ship silently. This 
 
 | Order | File | Topics | Role priority | General importance | Read time |
 | --   : | ------ | -------- | --- | --- | ----------: |
-| 01 | [Build Optimization](40.5.3.01-build-optimization.md) | Route graphs, tree shaking, async chunks, encoded budgets, cache identity and Web Vitals | Important | Specialized | 5 min |
+| 01 | [Build Optimization](40.5.3.01-build-optimization.md) | Route graphs, tree shaking, async chunks, encoded budgets, cache identity, and Web Vitals | Important | Specialized | 5 min |
 | 02 | [Asset Pipelines — CSS, Images & Fonts](40.5.3.02-asset-pipelines-css-images-fonts.md) | CSS transforms and Tailwind sources, responsive images, bounded processing, font coverage and layout, immutable release assets | Important | Specialized | 8 min |
 | 03 | [Build Tool Comparison](40.5.3.03-build-tool-comparison.md) | Tool layers, matched benchmarks, migration proof, compatibility, and framework-owned defaults | Important | Specialized | 4 min |
 
@@ -40,7 +40,9 @@ Tool choice gets debated endlessly; bundle size regressions ship silently. This 
 
 ## Docita Anchor
 
-The [Docita evidence walkthrough](../../../projects/docita/INDEX.md) distinguishes dated lab results from source configuration and deployed behavior. Vite/Astro, shared TypeScript settings and Turbo tasks provide related source examples. Inspect the actual task inputs, invoked gates and emitted outputs before claiming type safety, cache validity or runtime performance. No direct Rspack/Turbopack implementation or measured migration speedup is claimed here.
+The [Docita evidence walkthrough](../../../projects/docita/INDEX.md) distinguishes dated lab results from source configuration and deployed behavior. Vite and Astro, shared TypeScript settings, and Turbo tasks provide related source examples.
+
+Inspect the actual task inputs, invoked gates, and emitted outputs before claiming type safety, cache validity, or runtime performance. No direct Rspack or Turbopack implementation or measured migration speedup is claimed here.
 
 ## Finish This Section
 

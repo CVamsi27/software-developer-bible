@@ -14,13 +14,13 @@ Read the chapters in the [section learning flow](INDEX.md), then close them and 
 
 Source: [Babel](40.5.2.01-babel.md)
 
-**Q:** Why does syntax transformation not guarantee browser API support?
+**Q:** Why does syntax transformation not guarantee browser Application Programming Interface (API) support?
 
-**A:** A transform can rewrite language syntax while APIs such as fetch or Intl still need target-environment support or a deliberate polyfill strategy.
+**A:** A transform can rewrite language syntax while APIs such as `fetch` or `Intl` still need target-environment support or a deliberate polyfill strategy.
 
 **Q:** What do presets and plugins configure at different levels?
 
-**A:** A plugin performs a transform; a preset groups/configures transforms for a broader target or framework. Their ordering can change output.
+**A:** A plugin performs a transform; a preset groups and configures transforms for a broader target or framework. Their ordering can change output.
 
 **Q:** Why does a target list matter to emitted code size?
 
@@ -28,7 +28,7 @@ Source: [Babel](40.5.2.01-babel.md)
 
 **Q:** A Babel 7 project used `useBuiltIns` and `corejs` in `preset-env`. What must be checked before moving to Babel 8?
 
-**A:** Babel 8 removed those options from `preset-env` and removed `corejs` from `transform-runtime`; configure `babel-plugin-polyfill-corejs3` for Babel-managed `core-js` injection. Also check the new default targets/module output and Babel 8's Node.js minimum. See the [Babel 8 migration guide](https://babeljs.io/docs/v8-migration/).
+**A:** Babel 8 removed those options from `preset-env` and removed `corejs` from `transform-runtime`; configure `babel-plugin-polyfill-corejs3` for Babel-managed `core-js` injection. Also check the new default targets and module output and Babel 8's Node.js minimum. See the [Babel 8 migration guide](https://babeljs.io/docs/v8-migration/).
 
 ## ESBuild & SWC
 

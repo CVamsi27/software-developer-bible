@@ -1,6 +1,6 @@
 # Interview Prep — Build Tools
 
-> **Study time:** ≈ 8 min of reading (1 file, ~8 min average).
+> **Study time:** ≈ 9 min of reading (1 file, ~9 min average).
 > **1 file, 44 curated questions with answers.** Tree shaking internals, code-splitting strategy, and tool-selection judgment.
 
 [![Files](https://img.shields.io/badge/files-1-blue)](#file-index)
@@ -13,9 +13,9 @@
 
 Questions across all three content categories:
 
-- **Easy** — what is tree shaking, what does Babel do, Vite vs Webpack one-liner
-- **Medium** — route vs component code splitting, debugging a bundle regression, loaders vs plugins
-- **Hard** — migrating Webpack to Rspack, HMR implementation details, designing the build for a large monorepo
+- **Easy** — what is tree shaking, what does Babel do, Vite versus Webpack one-liner
+- **Medium** — route versus component code splitting, debugging a bundle regression, loaders versus plugins
+- **Hard** — migrating Webpack to Rspack, Hot Module Replacement (HMR) implementation details, designing the build for a large monorepo
 
 ---
 
@@ -35,4 +35,6 @@ Questions across all three content categories:
 
 ## Docita Anchor
 
-The [Docita evidence walkthrough](../../../projects/docita/INDEX.md) distinguishes dated lab results from source configuration and deployed behavior. Vite/Astro, shared TypeScript settings and Turbo tasks provide related source examples. Inspect the actual task inputs, invoked gates and emitted outputs before claiming type safety, cache validity or runtime performance. No direct Rspack/Turbopack implementation or measured migration speedup is claimed here.
+The [Docita evidence walkthrough](../../../projects/docita/INDEX.md) distinguishes dated lab results from source configuration and deployed behavior. Vite and Astro, shared TypeScript settings, and Turbo tasks provide related source examples.
+
+Inspect the actual task inputs, invoked gates, and emitted outputs before claiming type safety, cache validity, or runtime performance. No direct Rspack or Turbopack implementation or measured migration speedup is claimed here.

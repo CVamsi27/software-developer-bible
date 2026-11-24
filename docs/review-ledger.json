@@ -10302,484 +10302,484 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 4B 40.3-ci-cd and 40.4-observability)."
   },
   "40-platform/40.5-build-tools/01-bundlers/40.5.1.01-webpack.md": {
-   "sha256": "d305890254344c1ff0edb53f1b690c70c2d47d085071e314fecfe9d37cd6e313",
-   "lines": 138,
+   "sha256": "d3c3d9e31c3494c547780b4f93db9018804b88097c42b316d3353840bc0c92f8",
+   "lines": 152,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Webpack 5.109 native `experiments.css` and `html: 'auto'` asset handling alongside Module Federation 2.0.",
-    "readable": "Full read of 138 lines (1,175 prose words). Covers Webpack 5 module graph construction, loaders vs plugins, SplitChunksPlugin, persistent filesystem caching, and Module Federation.",
-    "concise": "1,175 words across 138 lines. Covers Webpack 5 module graph construction, loaders vs plugins, SplitChunksPlugin, persistent filesystem caching, and Module Federation.",
+    "readable": "Full read of 152 lines (1213 prose words). (1,175 prose words). Covers Webpack 5 module graph construction, loaders vs plugins, SplitChunksPlugin, persistent filesystem caching, and Module Federation.",
+    "concise": "1213 words across 152 lines. 1,175 words across 138 lines. Covers Webpack 5 module graph construction, loaders vs plugins, SplitChunksPlugin, persistent filesystem caching, and Module Federation.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers Webpack 5 module graph construction, loaders vs plugins, SplitChunksPlugin, persistent filesystem caching, and Module Federation.",
     "fast": "Measured 23.3 KB raw / 7.0 KB gzip. Covers Webpack 5 module graph construction, loaders vs plugins, SplitChunksPlugin, persistent filesystem caching, and Module Federation.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers Webpack 5 module graph construction, loaders vs plugins, SplitChunksPlugin, persistent filesystem caching, and Module Federation."
    },
-   "notes": "Covers Webpack 5 module graph construction, loaders vs plugins, SplitChunksPlugin, persistent filesystem caching, and Module Federation."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.5-build-tools/01-bundlers/40.5.1.02-vite.md": {
-   "sha256": "d2af5ac3fa68f5a88c207d10a1e2e3692152f3805314f1349e07fafbf11b83e1",
-   "lines": 117,
+   "sha256": "2168bbacdef2e365d388945d04115229ca0c28e392d0c794c19ab2ed8aa0b898",
+   "lines": 129,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Vite 8.3 (March/April 2026) replacing esbuild+Rollup with Rolldown and Oxc (`build.rolldownOptions`).",
-    "readable": "Full read of 117 lines (1,191 prose words). Covers Vite unbundled native ESM dev server, Vite 8.3 unified Rolldown + Oxc + Lightning CSS architecture, and `experimental.bundledDev`.",
-    "concise": "1,191 words across 117 lines. Covers Vite unbundled native ESM dev server, Vite 8.3 unified Rolldown + Oxc + Lightning CSS architecture, and `experimental.bundledDev`.",
+    "readable": "Full read of 129 lines (1223 prose words). (1,191 prose words). Covers Vite unbundled native ESM dev server, Vite 8.3 unified Rolldown + Oxc + Lightning CSS architecture, and `experimental.bundledDev`.",
+    "concise": "1223 words across 129 lines. 1,191 words across 117 lines. Covers Vite unbundled native ESM dev server, Vite 8.3 unified Rolldown + Oxc + Lightning CSS architecture, and `experimental.bundledDev`.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers Vite unbundled native ESM dev server, Vite 8.3 unified Rolldown + Oxc + Lightning CSS architecture, and `experimental.bundledDev`.",
     "fast": "Measured 21.2 KB raw / 6.7 KB gzip. Covers Vite unbundled native ESM dev server, Vite 8.3 unified Rolldown + Oxc + Lightning CSS architecture, and `experimental.bundledDev`.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers Vite unbundled native ESM dev server, Vite 8.3 unified Rolldown + Oxc + Lightning CSS architecture, and `experimental.bundledDev`."
    },
-   "notes": "Covers Vite unbundled native ESM dev server, Vite 8.3 unified Rolldown + Oxc + Lightning CSS architecture, and `experimental.bundledDev`."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.5-build-tools/01-bundlers/40.5.1.03-turbopack.md": {
-   "sha256": "f33050aff9cda6632481f773a7c2a976e8ba0760b1c6154fb7f9fdc86e447a4e",
-   "lines": 106,
+   "sha256": "cabbf98c5d1c086eba14db2b35670a12f7a1022dfb0b0c28e1263c8816a55436",
+   "lines": 114,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Next.js 16.4 default Turbopack pipeline (`next dev` and `next build`) with stable persistent disk cache.",
-    "readable": "Full read of 106 lines (923 prose words). Covers Turbopack Turbo Engine demand-driven incremental memoization, unified React Server/Client component graphs, and filesystem caching.",
-    "concise": "923 words across 106 lines. Covers Turbopack Turbo Engine demand-driven incremental memoization, unified React Server/Client component graphs, and filesystem caching.",
+    "readable": "Full read of 114 lines (940 prose words). Covers Turbopack Turbo Engine demand-driven incremental memoization, unified React Server/Client component graphs, and filesystem caching.",
+    "concise": "940 words across 114 lines. Covers Turbopack Turbo Engine demand-driven incremental memoization, unified React Server/Client component graphs, and filesystem caching.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers Turbopack Turbo Engine demand-driven incremental memoization, unified React Server/Client component graphs, and filesystem caching.",
     "fast": "Measured 18.0 KB raw / 5.8 KB gzip. Covers Turbopack Turbo Engine demand-driven incremental memoization, unified React Server/Client component graphs, and filesystem caching.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers Turbopack Turbo Engine demand-driven incremental memoization, unified React Server/Client component graphs, and filesystem caching."
    },
-   "notes": "Covers Turbopack Turbo Engine demand-driven incremental memoization, unified React Server/Client component graphs, and filesystem caching."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.5-build-tools/01-bundlers/40.5.1.04-rspack.md": {
-   "sha256": "30c10014d44906514a62719f99d456c64ddf8e2e83c18b3501394249a407298c",
-   "lines": 113,
+   "sha256": "db2d0c27ce14a483acaa2feaba11ba4a164a269529d334a63da3e3a309eaf905",
+   "lines": 119,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Rspack 2.2 (2026) native Rust bundler and Rsbuild ecosystem.",
-    "readable": "Full read of 113 lines (716 prose words). Covers Rspack Rust parallel module graph architecture, Webpack loader/plugin compatibility, builtin `swc-loader`, and Module Federation 2.0.",
-    "concise": "716 words across 113 lines. Covers Rspack Rust parallel module graph architecture, Webpack loader/plugin compatibility, builtin `swc-loader`, and Module Federation 2.0.",
+    "readable": "Full read of 119 lines (731 prose words). Covers Rspack Rust parallel module graph architecture, Webpack loader/plugin compatibility, builtin `swc-loader`, and Module Federation 2.0.",
+    "concise": "731 words across 119 lines. Covers Rspack Rust parallel module graph architecture, Webpack loader/plugin compatibility, builtin `swc-loader`, and Module Federation 2.0.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers Rspack Rust parallel module graph architecture, Webpack loader/plugin compatibility, builtin `swc-loader`, and Module Federation 2.0.",
     "fast": "Measured 19.9 KB raw / 5.6 KB gzip. Covers Rspack Rust parallel module graph architecture, Webpack loader/plugin compatibility, builtin `swc-loader`, and Module Federation 2.0.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers Rspack Rust parallel module graph architecture, Webpack loader/plugin compatibility, builtin `swc-loader`, and Module Federation 2.0."
    },
-   "notes": "Covers Rspack Rust parallel module graph architecture, Webpack loader/plugin compatibility, builtin `swc-loader`, and Module Federation 2.0."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.5-build-tools/01-bundlers/INDEX.md": {
-   "sha256": "ac0856a931f0a95682b1e1149a277ab400bd2a36870de654c5e7b516f5bdabc6",
-   "lines": 55,
+   "sha256": "387db5fba234f166652f863eccd2592c00eb32660b8d564093ff9f5bdca7bc37",
+   "lines": 57,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Vite 8.3 Rolldown/Oxc unified pipeline, Turbopack incremental computation, and Rspack 2.2 Module Federation.",
-    "readable": "Full read of 55 lines (141 prose words). Learning-flow index for module bundlers covering Webpack 5.109, Vite 8.3 (Rolldown), Turbopack, and Rspack 2.2.",
-    "concise": "141 words across 55 lines. Learning-flow index for module bundlers covering Webpack 5.109, Vite 8.3 (Rolldown), Turbopack, and Rspack 2.2.",
+    "readable": "Full read of 57 lines (148 prose words). Learning-flow index for module bundlers covering Webpack 5.109, Vite 8.3 (Rolldown), Turbopack, and Rspack 2.2.",
+    "concise": "148 words across 57 lines. Learning-flow index for module bundlers covering Webpack 5.109, Vite 8.3 (Rolldown), Turbopack, and Rspack 2.2.",
     "focused": "Single canonical home with no duplicate code across chapters. Learning-flow index for module bundlers covering Webpack 5.109, Vite 8.3 (Rolldown), Turbopack, and Rspack 2.2.",
     "fast": "Measured 9.6 KB raw / 3.4 KB gzip. Learning-flow index for module bundlers covering Webpack 5.109, Vite 8.3 (Rolldown), Turbopack, and Rspack 2.2.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for module bundlers covering Webpack 5.109, Vite 8.3 (Rolldown), Turbopack, and Rspack 2.2."
    },
-   "notes": "Learning-flow index for module bundlers covering Webpack 5.109, Vite 8.3 (Rolldown), Turbopack, and Rspack 2.2."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.5-build-tools/01-bundlers/REVISION.md": {
-   "sha256": "0c7975eb0b086fca9fa0563449c5742d25d0d87ca58a4b355898490a6fdd2224",
+   "sha256": "0c649ece8118e343aa908ffabca33bc6516aa8356f412a6e783c41eb896a3796",
    "lines": 111,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Vite 8.3 (`build.rolldownOptions`), Webpack 5.109, Turbopack (Next.js 16.4 default), and Rspack 2.2.",
-    "readable": "Full read of 111 lines (1,187 prose words). Active-recall Q&A companion covering ESM dev servers vs bundle-based HMR, Vite 8 Rolldown migration, Turbopack function-level caching, and Rspack.",
-    "concise": "1,187 words across 111 lines. Active-recall Q&A companion covering ESM dev servers vs bundle-based HMR, Vite 8 Rolldown migration, Turbopack function-level caching, and Rspack.",
+    "readable": "Full read of 111 lines (1200 prose words). (1,187 prose words). Active-recall Q&A companion covering ESM dev servers vs bundle-based HMR, Vite 8 Rolldown migration, Turbopack function-level caching, and Rspack.",
+    "concise": "1200 words across 111 lines. 1,187 words across 111 lines. Active-recall Q&A companion covering ESM dev servers vs bundle-based HMR, Vite 8 Rolldown migration, Turbopack function-level caching, and Rspack.",
     "focused": "Single canonical home with no duplicate code across chapters. Active-recall Q&A companion covering ESM dev servers vs bundle-based HMR, Vite 8 Rolldown migration, Turbopack function-level caching, and Rspack.",
     "fast": "Measured 19.6 KB raw / 6.0 KB gzip. Active-recall Q&A companion covering ESM dev servers vs bundle-based HMR, Vite 8 Rolldown migration, Turbopack function-level caching, and Rspack.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering ESM dev servers vs bundle-based HMR, Vite 8 Rolldown migration, Turbopack function-level caching, and Rspack."
    },
-   "notes": "Active-recall Q&A companion covering ESM dev servers vs bundle-based HMR, Vite 8 Rolldown migration, Turbopack function-level caching, and Rspack."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.5-build-tools/02-compilers/40.5.2.01-babel.md": {
-   "sha256": "e3b0162ce6ed9792acbe5429490064a11b84c3b1107777dca60850270c5275bc",
-   "lines": 96,
+   "sha256": "7ad66a3f35dd8b3691559406d4d664636491a71640ee94da9ad8b24f57b2962d",
+   "lines": 106,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Babel 8 (2026) ESM-only configuration and `babel-plugin-polyfill-corejs3` usage-based polyfill injection.",
-    "readable": "Full read of 96 lines (720 prose words). Covers Babel 3-stage AST pipeline (Parse, Traverse/Transform, Generate), `@babel/preset-env` Browserslist targeting, and `babel-plugin-polyfill-corejs3`.",
-    "concise": "720 words across 96 lines. Covers Babel 3-stage AST pipeline (Parse, Traverse/Transform, Generate), `@babel/preset-env` Browserslist targeting, and `babel-plugin-polyfill-corejs3`.",
+    "readable": "Full read of 106 lines (729 prose words). Covers Babel 3-stage AST pipeline (Parse, Traverse/Transform, Generate), `@babel/preset-env` Browserslist targeting, and `babel-plugin-polyfill-corejs3`.",
+    "concise": "729 words across 106 lines. Covers Babel 3-stage AST pipeline (Parse, Traverse/Transform, Generate), `@babel/preset-env` Browserslist targeting, and `babel-plugin-polyfill-corejs3`.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers Babel 3-stage AST pipeline (Parse, Traverse/Transform, Generate), `@babel/preset-env` Browserslist targeting, and `babel-plugin-polyfill-corejs3`.",
     "fast": "Measured 17.4 KB raw / 5.4 KB gzip. Covers Babel 3-stage AST pipeline (Parse, Traverse/Transform, Generate), `@babel/preset-env` Browserslist targeting, and `babel-plugin-polyfill-corejs3`.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers Babel 3-stage AST pipeline (Parse, Traverse/Transform, Generate), `@babel/preset-env` Browserslist targeting, and `babel-plugin-polyfill-corejs3`."
    },
-   "notes": "Covers Babel 3-stage AST pipeline (Parse, Traverse/Transform, Generate), `@babel/preset-env` Browserslist targeting, and `babel-plugin-polyfill-corejs3`."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.5-build-tools/02-compilers/40.5.2.02-esbuild-swc.md": {
-   "sha256": "f06de6fcda4bd7823c33fb34f6365493e31d69aa8db8ea12d5d7544bbce220a3",
-   "lines": 91,
+   "sha256": "dadad1b038dd359fd54c784cf2764e689147913d945e0318e94e5ffbd89b42ee",
+   "lines": 95,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: esbuild, SWC, and Oxc native compilation pipelines and TypeScript type-checking separation.",
-    "readable": "Full read of 91 lines (540 prose words). Covers why native Go (esbuild) and Rust (SWC/Oxc) compilers achieve 20x-100x speedups over JS AST tools and why single-file transpilation requires `isolatedModules`.",
-    "concise": "540 words across 91 lines. Covers why native Go (esbuild) and Rust (SWC/Oxc) compilers achieve 20x-100x speedups over JS AST tools and why single-file transpilation requires `isolatedModules`.",
+    "readable": "Full read of 95 lines (557 prose words). Covers why native Go (esbuild) and Rust (SWC/Oxc) compilers achieve 20x-100x speedups over JS AST tools and why single-file transpilation requires `isolatedModules`.",
+    "concise": "557 words across 95 lines. Covers why native Go (esbuild) and Rust (SWC/Oxc) compilers achieve 20x-100x speedups over JS AST tools and why single-file transpilation requires `isolatedModules`.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers why native Go (esbuild) and Rust (SWC/Oxc) compilers achieve 20x-100x speedups over JS AST tools and why single-file transpilation requires `isolatedModules`.",
     "fast": "Measured 16.9 KB raw / 5.1 KB gzip. Covers why native Go (esbuild) and Rust (SWC/Oxc) compilers achieve 20x-100x speedups over JS AST tools and why single-file transpilation requires `isolatedModules`.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers why native Go (esbuild) and Rust (SWC/Oxc) compilers achieve 20x-100x speedups over JS AST tools and why single-file transpilation requires `isolatedModules`."
    },
-   "notes": "Covers why native Go (esbuild) and Rust (SWC/Oxc) compilers achieve 20x-100x speedups over JS AST tools and why single-file transpilation requires `isolatedModules`."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.5-build-tools/02-compilers/INDEX.md": {
-   "sha256": "7a81e195c9d33256a5bfeef4c1ff74386d0e3cf639a706ddf3783c96d70e1bd3",
-   "lines": 46,
+   "sha256": "bcc189d4274d553a1bd3bf76aa5b1362c71fcbb1de08e0a66e29109b007b583b",
+   "lines": 48,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Babel 8 ESM-only release, esbuild Go bundler/minifier, SWC Rust compiler, and Oxc.",
-    "readable": "Full read of 46 lines (158 prose words). Learning-flow index for JavaScript and TypeScript compilers and transpilers: Babel 8, esbuild, SWC, and Oxc.",
-    "concise": "158 words across 46 lines. Learning-flow index for JavaScript and TypeScript compilers and transpilers: Babel 8, esbuild, SWC, and Oxc.",
+    "readable": "Full read of 48 lines (168 prose words). Learning-flow index for JavaScript and TypeScript compilers and transpilers: Babel 8, esbuild, SWC, and Oxc.",
+    "concise": "168 words across 48 lines. Learning-flow index for JavaScript and TypeScript compilers and transpilers: Babel 8, esbuild, SWC, and Oxc.",
     "focused": "Single canonical home with no duplicate code across chapters. Learning-flow index for JavaScript and TypeScript compilers and transpilers: Babel 8, esbuild, SWC, and Oxc.",
     "fast": "Measured 8.9 KB raw / 3.2 KB gzip. Learning-flow index for JavaScript and TypeScript compilers and transpilers: Babel 8, esbuild, SWC, and Oxc.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for JavaScript and TypeScript compilers and transpilers: Babel 8, esbuild, SWC, and Oxc."
    },
-   "notes": "Learning-flow index for JavaScript and TypeScript compilers and transpilers: Babel 8, esbuild, SWC, and Oxc."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.5-build-tools/02-compilers/REVISION.md": {
-   "sha256": "325c02ad7079ac1e888efc644c23f5ce5376b368119905341db4072aa8b79aa4",
+   "sha256": "8cc3a979fcf7a0fe1b2f0e32f0bf3ded47842bafe97bcb9ea96220ae94baf69f",
    "lines": 59,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Babel 8 (`babel-plugin-polyfill-corejs3`), SWC, esbuild, and TypeScript `isolatedDeclarations`.",
-    "readable": "Full read of 59 lines (376 prose words). Active-recall Q&A companion covering AST parse-transform-print pipelines, `isolatedModules` single-file transpilation constraints, and polyfill injection.",
-    "concise": "376 words across 59 lines. Active-recall Q&A companion covering AST parse-transform-print pipelines, `isolatedModules` single-file transpilation constraints, and polyfill injection.",
+    "readable": "Full read of 59 lines (383 prose words). Active-recall Q&A companion covering AST parse-transform-print pipelines, `isolatedModules` single-file transpilation constraints, and polyfill injection.",
+    "concise": "383 words across 59 lines. Active-recall Q&A companion covering AST parse-transform-print pipelines, `isolatedModules` single-file transpilation constraints, and polyfill injection.",
     "focused": "Single canonical home with no duplicate code across chapters. Active-recall Q&A companion covering AST parse-transform-print pipelines, `isolatedModules` single-file transpilation constraints, and polyfill injection.",
     "fast": "Measured 10.4 KB raw / 3.5 KB gzip. Active-recall Q&A companion covering AST parse-transform-print pipelines, `isolatedModules` single-file transpilation constraints, and polyfill injection.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering AST parse-transform-print pipelines, `isolatedModules` single-file transpilation constraints, and polyfill injection."
    },
-   "notes": "Active-recall Q&A companion covering AST parse-transform-print pipelines, `isolatedModules` single-file transpilation constraints, and polyfill injection."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.01-build-optimization.md": {
-   "sha256": "d9e101c78bb0223cf125f607c255bee6d6c3b5afa5a8c4603f8bfcea796a7805",
-   "lines": 89,
+   "sha256": "a0e60e2e044fe7c8da25d7eaf1d2a90c8d1d6dd14522e4d6cfed934da9eaae99",
+   "lines": 99,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Production bundle size budgets, Rollup/Rolldown manualChunks, and bundle analyzer diagnostics.",
-    "readable": "Full read of 89 lines (788 prose words). Covers ESM dead-code elimination, sideEffects package annotations, route vs vendor chunk splitting, and barrel-file de-optimization.",
-    "concise": "788 words across 89 lines. Covers ESM dead-code elimination, sideEffects package annotations, route vs vendor chunk splitting, and barrel-file de-optimization.",
+    "readable": "Full read of 99 lines (805 prose words). Covers ESM dead-code elimination, sideEffects package annotations, route vs vendor chunk splitting, and barrel-file de-optimization.",
+    "concise": "805 words across 99 lines. Covers ESM dead-code elimination, sideEffects package annotations, route vs vendor chunk splitting, and barrel-file de-optimization.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers ESM dead-code elimination, sideEffects package annotations, route vs vendor chunk splitting, and barrel-file de-optimization.",
     "fast": "Measured 17.0 KB raw / 5.6 KB gzip. Covers ESM dead-code elimination, sideEffects package annotations, route vs vendor chunk splitting, and barrel-file de-optimization.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers ESM dead-code elimination, sideEffects package annotations, route vs vendor chunk splitting, and barrel-file de-optimization."
    },
-   "notes": "Covers ESM dead-code elimination, sideEffects package annotations, route vs vendor chunk splitting, and barrel-file de-optimization."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.02-asset-pipelines-css-images-fonts.md": {
-   "sha256": "563db9a78b2635189d50da0556aebb07ec0d5ffcd9fdc2e93e8590915809e868",
-   "lines": 117,
+   "sha256": "2c80b5621f86c1eaed6c1060043169594fa2766d7c4f8d1a66c3c6227f4e83bb",
+   "lines": 133,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Lightning CSS, AVIF/WebP encoding trade-offs, and CLS-free web font loading.",
-    "readable": "Full read of 117 lines (1,174 prose words). Covers Lightning CSS / PostCSS pipelines, responsive `<picture>` AVIF/WebP generation, SVG sprite vs inline thresholds, and WOFF2 `font-display: swap` metric overrides.",
-    "concise": "1,174 words across 117 lines. Covers Lightning CSS / PostCSS pipelines, responsive `<picture>` AVIF/WebP generation, SVG sprite vs inline thresholds, and WOFF2 `font-display: swap` metric overrides.",
+    "readable": "Full read of 133 lines (1186 prose words). (1,174 prose words). Covers Lightning CSS / PostCSS pipelines, responsive `<picture>` AVIF/WebP generation, SVG sprite vs inline thresholds, and WOFF2 `font-display: swap` metric overrides.",
+    "concise": "1186 words across 133 lines. 1,174 words across 117 lines. Covers Lightning CSS / PostCSS pipelines, responsive `<picture>` AVIF/WebP generation, SVG sprite vs inline thresholds, and WOFF2 `font-display: swap` metric overrides.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers Lightning CSS / PostCSS pipelines, responsive `<picture>` AVIF/WebP generation, SVG sprite vs inline thresholds, and WOFF2 `font-display: swap` metric overrides.",
     "fast": "Measured 23.7 KB raw / 7.2 KB gzip. Covers Lightning CSS / PostCSS pipelines, responsive `<picture>` AVIF/WebP generation, SVG sprite vs inline thresholds, and WOFF2 `font-display: swap` metric overrides.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers Lightning CSS / PostCSS pipelines, responsive `<picture>` AVIF/WebP generation, SVG sprite vs inline thresholds, and WOFF2 `font-display: swap` metric overrides."
    },
-   "notes": "Covers Lightning CSS / PostCSS pipelines, responsive `<picture>` AVIF/WebP generation, SVG sprite vs inline thresholds, and WOFF2 `font-display: swap` metric overrides."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.5-build-tools/03-optimization-and-comparison/40.5.3.03-build-tool-comparison.md": {
-   "sha256": "163c6f8c1baa4e961029e33054f59d67af93f25eb6415c649437bd35d4b87e88",
-   "lines": 82,
+   "sha256": "33f9a7f420f275b1d2544da71ad8c9536c00f2a373309fd5238d7d5f475430f1",
+   "lines": 90,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: 2026 bundler selection matrix across greenfield SPAs, Next.js apps, and enterprise Webpack migrations.",
-    "readable": "Full read of 82 lines (706 prose words). Compares Vite 8.3 (Rolldown), Turbopack (Next.js 16.4), Rspack 2.2, esbuild, and Webpack 5.109 across HMR latency, plugin ecosystems, and migration costs.",
-    "concise": "706 words across 82 lines. Compares Vite 8.3 (Rolldown), Turbopack (Next.js 16.4), Rspack 2.2, esbuild, and Webpack 5.109 across HMR latency, plugin ecosystems, and migration costs.",
+    "readable": "Full read of 90 lines (714 prose words). Compares Vite 8.3 (Rolldown), Turbopack (Next.js 16.4), Rspack 2.2, esbuild, and Webpack 5.109 across HMR latency, plugin ecosystems, and migration costs.",
+    "concise": "714 words across 90 lines. Compares Vite 8.3 (Rolldown), Turbopack (Next.js 16.4), Rspack 2.2, esbuild, and Webpack 5.109 across HMR latency, plugin ecosystems, and migration costs.",
     "focused": "Single canonical home with no duplicate code across chapters. Compares Vite 8.3 (Rolldown), Turbopack (Next.js 16.4), Rspack 2.2, esbuild, and Webpack 5.109 across HMR latency, plugin ecosystems, and migration costs.",
     "fast": "Measured 16.5 KB raw / 5.6 KB gzip. Compares Vite 8.3 (Rolldown), Turbopack (Next.js 16.4), Rspack 2.2, esbuild, and Webpack 5.109 across HMR latency, plugin ecosystems, and migration costs.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Compares Vite 8.3 (Rolldown), Turbopack (Next.js 16.4), Rspack 2.2, esbuild, and Webpack 5.109 across HMR latency, plugin ecosystems, and migration costs."
    },
-   "notes": "Compares Vite 8.3 (Rolldown), Turbopack (Next.js 16.4), Rspack 2.2, esbuild, and Webpack 5.109 across HMR latency, plugin ecosystems, and migration costs."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.5-build-tools/03-optimization-and-comparison/INDEX.md": {
-   "sha256": "e370a23453f2fc5e1c985ce9b9cd561417a1c9ca8dc20ad249b3493daae1e27c",
-   "lines": 47,
+   "sha256": "211a85eae799117c5c3d78cfeacbefa6cf7b6541f872227867941bac8bde61c4",
+   "lines": 49,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: ESM static analysis, package.json sideEffects: false annotations, AVIF/WebP image pipelines, and WOFF2 font subsetting.",
-    "readable": "Full read of 47 lines (169 prose words). Learning-flow index for tree shaking, code splitting, CSS/image/font asset pipelines, and 2026 build-tool selection matrices.",
-    "concise": "169 words across 47 lines. Learning-flow index for tree shaking, code splitting, CSS/image/font asset pipelines, and 2026 build-tool selection matrices.",
+    "readable": "Full read of 49 lines (173 prose words). Learning-flow index for tree shaking, code splitting, CSS/image/font asset pipelines, and 2026 build-tool selection matrices.",
+    "concise": "173 words across 49 lines. Learning-flow index for tree shaking, code splitting, CSS/image/font asset pipelines, and 2026 build-tool selection matrices.",
     "focused": "Single canonical home with no duplicate code across chapters. Learning-flow index for tree shaking, code splitting, CSS/image/font asset pipelines, and 2026 build-tool selection matrices.",
     "fast": "Measured 9.6 KB raw / 3.4 KB gzip. Learning-flow index for tree shaking, code splitting, CSS/image/font asset pipelines, and 2026 build-tool selection matrices.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for tree shaking, code splitting, CSS/image/font asset pipelines, and 2026 build-tool selection matrices."
    },
-   "notes": "Learning-flow index for tree shaking, code splitting, CSS/image/font asset pipelines, and 2026 build-tool selection matrices."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.5-build-tools/03-optimization-and-comparison/REVISION.md": {
-   "sha256": "58ead0e5cd8bfb18d75e935e14cbc964035f4933a34d1afd0e171b64eb016a0a",
+   "sha256": "29edf26f7809c0ae11a1025beea6509e9a7ea3bbd55e12526d79fbc28f583405",
    "lines": 95,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Vite 8.3 Rolldown, Turbopack, Rspack 2.2, and Webpack 5.109 trade-off boundaries.",
-    "readable": "Full read of 95 lines (901 prose words). Active-recall Q&A companion covering why barrel files defeat tree shaking, content-hash cache busting, and bundler decision trade-offs.",
-    "concise": "901 words across 95 lines. Active-recall Q&A companion covering why barrel files defeat tree shaking, content-hash cache busting, and bundler decision trade-offs.",
+    "readable": "Full read of 95 lines (912 prose words). Active-recall Q&A companion covering why barrel files defeat tree shaking, content-hash cache busting, and bundler decision trade-offs.",
+    "concise": "912 words across 95 lines. Active-recall Q&A companion covering why barrel files defeat tree shaking, content-hash cache busting, and bundler decision trade-offs.",
     "focused": "Single canonical home with no duplicate code across chapters. Active-recall Q&A companion covering why barrel files defeat tree shaking, content-hash cache busting, and bundler decision trade-offs.",
     "fast": "Measured 16.4 KB raw / 5.4 KB gzip. Active-recall Q&A companion covering why barrel files defeat tree shaking, content-hash cache busting, and bundler decision trade-offs.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering why barrel files defeat tree shaking, content-hash cache busting, and bundler decision trade-offs."
    },
-   "notes": "Active-recall Q&A companion covering why barrel files defeat tree shaking, content-hash cache busting, and bundler decision trade-offs."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.5-build-tools/04-interview-prep/40.5.4.01-interview-questions.md": {
-   "sha256": "825c1b427eda5593323813aa4a0108e91b0e5d03678130eddbb93d3893d1ad8c",
-   "lines": 302,
+   "sha256": "439f267d9ab31e89390b50c8947b857317c293c99f65347c9ca1d526d1dee071",
+   "lines": 303,
    "genre": "interview",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Vite 8.3 Rolldown/Oxc, Next.js 16.4 Turbopack, Rspack 2.2, and Babel 8.",
-    "readable": "Full read of 302 lines (2,806 prose words). Covers senior interview questions on ESM vs bundle HMR, tree-shaking failures, Module Federation version skew, and long-term content-hash caching.",
-    "concise": "2,806 words across 302 lines. Covers senior interview questions on ESM vs bundle HMR, tree-shaking failures, Module Federation version skew, and long-term content-hash caching.",
+    "readable": "Full read of 303 lines (2956 prose words). (2,806 prose words). Covers senior interview questions on ESM vs bundle HMR, tree-shaking failures, Module Federation version skew, and long-term content-hash caching.",
+    "concise": "2956 words across 303 lines. 2,806 words across 302 lines. Covers senior interview questions on ESM vs bundle HMR, tree-shaking failures, Module Federation version skew, and long-term content-hash caching.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers senior interview questions on ESM vs bundle HMR, tree-shaking failures, Module Federation version skew, and long-term content-hash caching.",
     "fast": "Measured 39.9 KB raw / 12.1 KB gzip. Covers senior interview questions on ESM vs bundle HMR, tree-shaking failures, Module Federation version skew, and long-term content-hash caching.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers senior interview questions on ESM vs bundle HMR, tree-shaking failures, Module Federation version skew, and long-term content-hash caching."
    },
-   "notes": "Covers senior interview questions on ESM vs bundle HMR, tree-shaking failures, Module Federation version skew, and long-term content-hash caching."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.5-build-tools/04-interview-prep/INDEX.md": {
-   "sha256": "0b2441d9df19b97d9b8161ad10fa588293cae0c12a602e7632e95cdf2baa46ea",
-   "lines": 38,
+   "sha256": "3362248497cecb927321fc21b9adc03cee24548ff3b68eecb0789b4abc063cab",
+   "lines": 40,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: 2026 frontend build engineering standards (Vite 8.3, Rolldown, Turbopack, Rspack 2.2).",
-    "readable": "Full read of 38 lines (143 prose words). Index for senior build-tooling and asset-pipeline interview preparation.",
-    "concise": "143 words across 38 lines. Index for senior build-tooling and asset-pipeline interview preparation.",
+    "readable": "Full read of 40 lines (150 prose words). Index for senior build-tooling and asset-pipeline interview preparation.",
+    "concise": "150 words across 40 lines. Index for senior build-tooling and asset-pipeline interview preparation.",
     "focused": "Single canonical home with no duplicate code across chapters. Index for senior build-tooling and asset-pipeline interview preparation.",
     "fast": "Measured 7.7 KB raw / 2.8 KB gzip. Index for senior build-tooling and asset-pipeline interview preparation.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Index for senior build-tooling and asset-pipeline interview preparation."
    },
-   "notes": "Index for senior build-tooling and asset-pipeline interview preparation."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.5-build-tools/INDEX.md": {
-   "sha256": "719a508044c753e1040f7b2f855b4fc57722cb6a7e4604a7dc701518de041ade",
+   "sha256": "ae2aec04b9e9ef92a8fb367b9c18fd383df1eda4bdd4b0b70a7569044f86eb96",
    "lines": 108,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: 2026 bundler landscape: Vite 8.3 (Rolldown + Oxc), Next.js 16.4 (Turbopack default), Rspack 2.2, and Webpack 5.109.",
-    "readable": "Full read of 108 lines (205 prose words). Learning-flow index for frontend and full-stack build tools: bundlers (Webpack, Vite 8.3, Turbopack, Rspack), compilers (Babel 8, esbuild, SWC, Oxc), and asset pipelines.",
-    "concise": "205 words across 108 lines. Learning-flow index for frontend and full-stack build tools: bundlers (Webpack, Vite 8.3, Turbopack, Rspack), compilers (Babel 8, esbuild, SWC, Oxc), and asset pipelines.",
+    "readable": "Full read of 108 lines (211 prose words). Learning-flow index for frontend and full-stack build tools: bundlers (Webpack, Vite 8.3, Turbopack, Rspack), compilers (Babel 8, esbuild, SWC, Oxc), and asset pipelines.",
+    "concise": "211 words across 108 lines. Learning-flow index for frontend and full-stack build tools: bundlers (Webpack, Vite 8.3, Turbopack, Rspack), compilers (Babel 8, esbuild, SWC, Oxc), and asset pipelines.",
     "focused": "Single canonical home with no duplicate code across chapters. Learning-flow index for frontend and full-stack build tools: bundlers (Webpack, Vite 8.3, Turbopack, Rspack), compilers (Babel 8, esbuild, SWC, Oxc), and asset pipelines.",
     "fast": "Measured 15.4 KB raw / 4.3 KB gzip. Learning-flow index for frontend and full-stack build tools: bundlers (Webpack, Vite 8.3, Turbopack, Rspack), compilers (Babel 8, esbuild, SWC, Oxc), and asset pipelines.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for frontend and full-stack build tools: bundlers (Webpack, Vite 8.3, Turbopack, Rspack), compilers (Babel 8, esbuild, SWC, Oxc), and asset pipelines."
    },
-   "notes": "Learning-flow index for frontend and full-stack build tools: bundlers (Webpack, Vite 8.3, Turbopack, Rspack), compilers (Babel 8, esbuild, SWC, Oxc), and asset pipelines."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.md": {
-   "sha256": "32d47c98854b728dc34540d83756c0606e1a65ea734c92e262f0e312ff3254d4",
-   "lines": 178,
+   "sha256": "f2c4ad275f4741d1218f6be7b1e9e5c25b52298992af61d88b34c95dc4b4fb9e",
+   "lines": 192,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Git object model, `.git/objects/pack` idx/pack structure, and `git cat-file -p` inspection.",
-    "readable": "Full read of 178 lines (1,583 prose words). Covers Git content-addressable storage (blobs, trees, commits, annotated tags), the three trees (HEAD, Index, Working Directory), symbolic refs, and delta-compressed packfiles.",
-    "concise": "1,583 words across 178 lines. Covers Git content-addressable storage (blobs, trees, commits, annotated tags), the three trees (HEAD, Index, Working Directory), symbolic refs, and delta-compressed packfiles.",
+    "readable": "Full read of 192 lines (1603 prose words). (1,583 prose words). Covers Git content-addressable storage (blobs, trees, commits, annotated tags), the three trees (HEAD, Index, Working Directory), symbolic refs, and delta-compressed packfiles.",
+    "concise": "1603 words across 192 lines. 1,583 words across 178 lines. Covers Git content-addressable storage (blobs, trees, commits, annotated tags), the three trees (HEAD, Index, Working Directory), symbolic refs, and delta-compressed packfiles.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers Git content-addressable storage (blobs, trees, commits, annotated tags), the three trees (HEAD, Index, Working Directory), symbolic refs, and delta-compressed packfiles.",
     "fast": "Measured 27.4 KB raw / 8.4 KB gzip. Covers Git content-addressable storage (blobs, trees, commits, annotated tags), the three trees (HEAD, Index, Working Directory), symbolic refs, and delta-compressed packfiles.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers Git content-addressable storage (blobs, trees, commits, annotated tags), the three trees (HEAD, Index, Working Directory), symbolic refs, and delta-compressed packfiles."
    },
-   "notes": "Covers Git content-addressable storage (blobs, trees, commits, annotated tags), the three trees (HEAD, Index, Working Directory), symbolic refs, and delta-compressed packfiles."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.6-git-advanced/40.6.02-branching-strategies.md": {
-   "sha256": "13a5f3f1b5f05b643d0624215512d5402f4e9b6a5b7fa0ddf4ae2ba0accd832a",
-   "lines": 94,
+   "sha256": "2522557d0aa29e2b850247f95922cd7d3c5f801a0fdee84d0dbacb0eb9d44604",
+   "lines": 104,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Trunk-Based Development with short-lived branches, merge queues, and runtime feature flags.",
-    "readable": "Full read of 94 lines (927 prose words). Compares Trunk-Based Development, GitHub Flow, and GitFlow across integration frequency, merge conflict growth, feature flags, and DORA velocity.",
-    "concise": "927 words across 94 lines. Compares Trunk-Based Development, GitHub Flow, and GitFlow across integration frequency, merge conflict growth, feature flags, and DORA velocity.",
+    "readable": "Full read of 104 lines (930 prose words). Compares Trunk-Based Development, GitHub Flow, and GitFlow across integration frequency, merge conflict growth, feature flags, and DORA velocity.",
+    "concise": "930 words across 104 lines. Compares Trunk-Based Development, GitHub Flow, and GitFlow across integration frequency, merge conflict growth, feature flags, and DORA velocity.",
     "focused": "Single canonical home with no duplicate code across chapters. Compares Trunk-Based Development, GitHub Flow, and GitFlow across integration frequency, merge conflict growth, feature flags, and DORA velocity.",
     "fast": "Measured 16.4 KB raw / 5.7 KB gzip. Compares Trunk-Based Development, GitHub Flow, and GitFlow across integration frequency, merge conflict growth, feature flags, and DORA velocity.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Compares Trunk-Based Development, GitHub Flow, and GitFlow across integration frequency, merge conflict growth, feature flags, and DORA velocity."
    },
-   "notes": "Compares Trunk-Based Development, GitHub Flow, and GitFlow across integration frequency, merge conflict growth, feature flags, and DORA velocity."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.6-git-advanced/40.6.03-rebase-cherry-pick.md": {
-   "sha256": "91e7838e19edc20d953f43c53d645ee62cb8f6fb99aa6085ababb2a919f2d079",
-   "lines": 142,
+   "sha256": "9618b836813df1c5da91702b81f6faa8c4713acd341c1dddefa8904aa06f9ed3",
+   "lines": 150,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Git `rebase.updateRefs`, `rebase.autoSquash`, and `--force-with-lease` safety invariants.",
-    "readable": "Full read of 142 lines (1,204 prose words). Covers `git rebase` commit replay mechanics, interactive rebase (`--autosquash`), `rebase --onto` surgery, `--force-with-lease`, and `cherry-pick -x`.",
-    "concise": "1,204 words across 142 lines. Covers `git rebase` commit replay mechanics, interactive rebase (`--autosquash`), `rebase --onto` surgery, `--force-with-lease`, and `cherry-pick -x`.",
+    "readable": "Full read of 150 lines (1209 prose words). (1,204 prose words). Covers `git rebase` commit replay mechanics, interactive rebase (`--autosquash`), `rebase --onto` surgery, `--force-with-lease`, and `cherry-pick -x`.",
+    "concise": "1209 words across 150 lines. 1,204 words across 142 lines. Covers `git rebase` commit replay mechanics, interactive rebase (`--autosquash`), `rebase --onto` surgery, `--force-with-lease`, and `cherry-pick -x`.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers `git rebase` commit replay mechanics, interactive rebase (`--autosquash`), `rebase --onto` surgery, `--force-with-lease`, and `cherry-pick -x`.",
     "fast": "Measured 22.6 KB raw / 6.8 KB gzip. Covers `git rebase` commit replay mechanics, interactive rebase (`--autosquash`), `rebase --onto` surgery, `--force-with-lease`, and `cherry-pick -x`.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers `git rebase` commit replay mechanics, interactive rebase (`--autosquash`), `rebase --onto` surgery, `--force-with-lease`, and `cherry-pick -x`."
    },
-   "notes": "Covers `git rebase` commit replay mechanics, interactive rebase (`--autosquash`), `rebase --onto` surgery, `--force-with-lease`, and `cherry-pick -x`."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.6-git-advanced/40.6.04-git-hooks.md": {
-   "sha256": "d83e998230c5f5c912b3503497d5766345807bb90f069d67f36d6a6bc5202c05",
-   "lines": 125,
+   "sha256": "0e5316573a887fc113bf8a53e7e9ee49e3d7eccd024d53dd7e5fc6e5b9adeb14",
+   "lines": 139,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Husky v9 `.husky/` hook wiring, `lint-staged` staged-file filtering, and Conventional Commits validation.",
-    "readable": "Full read of 125 lines (969 prose words). Covers client-side (`pre-commit`, `commit-msg`, `pre-push`) and server-side (`pre-receive`) Git hooks, Husky + `lint-staged`, and CI enforcement.",
-    "concise": "969 words across 125 lines. Covers client-side (`pre-commit`, `commit-msg`, `pre-push`) and server-side (`pre-receive`) Git hooks, Husky + `lint-staged`, and CI enforcement.",
+    "readable": "Full read of 139 lines (978 prose words). Covers client-side (`pre-commit`, `commit-msg`, `pre-push`) and server-side (`pre-receive`) Git hooks, Husky + `lint-staged`, and CI enforcement.",
+    "concise": "978 words across 139 lines. Covers client-side (`pre-commit`, `commit-msg`, `pre-push`) and server-side (`pre-receive`) Git hooks, Husky + `lint-staged`, and CI enforcement.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers client-side (`pre-commit`, `commit-msg`, `pre-push`) and server-side (`pre-receive`) Git hooks, Husky + `lint-staged`, and CI enforcement.",
     "fast": "Measured 20.3 KB raw / 6.3 KB gzip. Covers client-side (`pre-commit`, `commit-msg`, `pre-push`) and server-side (`pre-receive`) Git hooks, Husky + `lint-staged`, and CI enforcement.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers client-side (`pre-commit`, `commit-msg`, `pre-push`) and server-side (`pre-receive`) Git hooks, Husky + `lint-staged`, and CI enforcement."
    },
-   "notes": "Covers client-side (`pre-commit`, `commit-msg`, `pre-push`) and server-side (`pre-receive`) Git hooks, Husky + `lint-staged`, and CI enforcement."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.6-git-advanced/40.6.05-git-advanced-commands.md": {
-   "sha256": "717685607863bb2ecf6e3b4b8fe9694c9a8da6f03eb5eb7afb132bf01c7efa87",
-   "lines": 118,
+   "sha256": "f165c748a6359373f8c2f175b4499cf93f230227c5f5c6decbc65beba2689eaa",
+   "lines": 134,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Git 2.51 `git stash export` and `git stash import` transferable stash refs alongside `git worktree` and `reflog`.",
-    "readable": "Full read of 118 lines (990 prose words). Covers `git reflog` recovery, `git worktree` parallel checkouts, `git stash export`/`import` (Git 2.51), and `git restore`/`git switch`.",
-    "concise": "990 words across 118 lines. Covers `git reflog` recovery, `git worktree` parallel checkouts, `git stash export`/`import` (Git 2.51), and `git restore`/`git switch`.",
+    "readable": "Full read of 134 lines (1009 prose words). Covers `git reflog` recovery, `git worktree` parallel checkouts, `git stash export`/`import` (Git 2.51), and `git restore`/`git switch`.",
+    "concise": "1009 words across 134 lines. Covers `git reflog` recovery, `git worktree` parallel checkouts, `git stash export`/`import` (Git 2.51), and `git restore`/`git switch`.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers `git reflog` recovery, `git worktree` parallel checkouts, `git stash export`/`import` (Git 2.51), and `git restore`/`git switch`.",
     "fast": "Measured 18.9 KB raw / 6.1 KB gzip. Covers `git reflog` recovery, `git worktree` parallel checkouts, `git stash export`/`import` (Git 2.51), and `git restore`/`git switch`.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers `git reflog` recovery, `git worktree` parallel checkouts, `git stash export`/`import` (Git 2.51), and `git restore`/`git switch`."
    },
-   "notes": "Covers `git reflog` recovery, `git worktree` parallel checkouts, `git stash export`/`import` (Git 2.51), and `git restore`/`git switch`."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.6-git-advanced/40.6.06-patch-and-bundle.md": {
-   "sha256": "e0b203837737ad6a009547db80b33044401f8da2d227e193f7314862080ca541",
-   "lines": 147,
+   "sha256": "4c2fce14699062b5178305997a0a76f89be97c59e091b4c6267fb3452cbdce37",
+   "lines": 161,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Git patch series workflows and incremental `git bundle` air-gapped synchronization.",
-    "readable": "Full read of 147 lines (1,036 prose words). Covers `git format-patch`, `git am --3way`, `git apply`, and offline air-gapped repository transport via `git bundle create`/`verify`.",
-    "concise": "1,036 words across 147 lines. Covers `git format-patch`, `git am --3way`, `git apply`, and offline air-gapped repository transport via `git bundle create`/`verify`.",
+    "readable": "Full read of 161 lines (1049 prose words). (1,036 prose words). Covers `git format-patch`, `git am --3way`, `git apply`, and offline air-gapped repository transport via `git bundle create`/`verify`.",
+    "concise": "1049 words across 161 lines. 1,036 words across 147 lines. Covers `git format-patch`, `git am --3way`, `git apply`, and offline air-gapped repository transport via `git bundle create`/`verify`.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers `git format-patch`, `git am --3way`, `git apply`, and offline air-gapped repository transport via `git bundle create`/`verify`.",
     "fast": "Measured 20.9 KB raw / 6.5 KB gzip. Covers `git format-patch`, `git am --3way`, `git apply`, and offline air-gapped repository transport via `git bundle create`/`verify`.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers `git format-patch`, `git am --3way`, `git apply`, and offline air-gapped repository transport via `git bundle create`/`verify`."
    },
-   "notes": "Covers `git format-patch`, `git am --3way`, `git apply`, and offline air-gapped repository transport via `git bundle create`/`verify`."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.6-git-advanced/40.6.07-code-archaeology.md": {
-   "sha256": "644007b3eb45e13c3557eef0c9a4dcf46d82422768bf32a32783c8032749f754",
-   "lines": 103,
+   "sha256": "b2d19c06bb41cc0c8cc17143ce87753ee8d15972c457d4533f1c2249b4444531",
+   "lines": 111,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Git archaeology tools (`bisect run`, `blame.ignoreRevsFile`, and `git log -L`).",
-    "readable": "Full read of 103 lines (771 prose words). Covers automated binary regression search with `git bisect run`, `git blame -w -C -C -C`, `.git-blame-ignore-revs`, and pickaxe history search (`log -S` / `-G`).",
-    "concise": "771 words across 103 lines. Covers automated binary regression search with `git bisect run`, `git blame -w -C -C -C`, `.git-blame-ignore-revs`, and pickaxe history search (`log -S` / `-G`).",
+    "readable": "Full read of 111 lines (775 prose words). Covers automated binary regression search with `git bisect run`, `git blame -w -C -C -C`, `.git-blame-ignore-revs`, and pickaxe history search (`log -S` / `-G`).",
+    "concise": "775 words across 111 lines. Covers automated binary regression search with `git bisect run`, `git blame -w -C -C -C`, `.git-blame-ignore-revs`, and pickaxe history search (`log -S` / `-G`).",
     "focused": "Single canonical home with no duplicate code across chapters. Covers automated binary regression search with `git bisect run`, `git blame -w -C -C -C`, `.git-blame-ignore-revs`, and pickaxe history search (`log -S` / `-G`).",
     "fast": "Measured 16.6 KB raw / 5.3 KB gzip. Covers automated binary regression search with `git bisect run`, `git blame -w -C -C -C`, `.git-blame-ignore-revs`, and pickaxe history search (`log -S` / `-G`).",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers automated binary regression search with `git bisect run`, `git blame -w -C -C -C`, `.git-blame-ignore-revs`, and pickaxe history search (`log -S` / `-G`)."
    },
-   "notes": "Covers automated binary regression search with `git bisect run`, `git blame -w -C -C -C`, `.git-blame-ignore-revs`, and pickaxe history search (`log -S` / `-G`)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.6-git-advanced/40.6.08-git-at-scale-lfs-partial-clones.md": {
-   "sha256": "d0be1a6fc3f17ea06b42049e8daee9c6ccca34d2439cd36722dfb03372ee7468",
-   "lines": 188,
+   "sha256": "dc6b3d2812f0c5d0b5392eb4d8e638cd2118be586e7e3c3ee2e95574cdc5f5d2",
+   "lines": 200,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Git partial clone filters, cone-mode `sparse-checkout`, commit-graph/MIDX background maintenance, and `scalar`.",
-    "readable": "Full read of 188 lines (1,099 prose words). Covers Git LFS pointer files, blobless (`--filter=blob:none`) and treeless partial clones, cone-mode `sparse-checkout`, `git maintenance`, and `scalar`.",
-    "concise": "1,099 words across 188 lines. Covers Git LFS pointer files, blobless (`--filter=blob:none`) and treeless partial clones, cone-mode `sparse-checkout`, `git maintenance`, and `scalar`.",
+    "readable": "Full read of 200 lines (1110 prose words). (1,099 prose words). Covers Git LFS pointer files, blobless (`--filter=blob:none`) and treeless partial clones, cone-mode `sparse-checkout`, `git maintenance`, and `scalar`.",
+    "concise": "1110 words across 200 lines. 1,099 words across 188 lines. Covers Git LFS pointer files, blobless (`--filter=blob:none`) and treeless partial clones, cone-mode `sparse-checkout`, `git maintenance`, and `scalar`.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers Git LFS pointer files, blobless (`--filter=blob:none`) and treeless partial clones, cone-mode `sparse-checkout`, `git maintenance`, and `scalar`.",
     "fast": "Measured 28.0 KB raw / 8.4 KB gzip. Covers Git LFS pointer files, blobless (`--filter=blob:none`) and treeless partial clones, cone-mode `sparse-checkout`, `git maintenance`, and `scalar`.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers Git LFS pointer files, blobless (`--filter=blob:none`) and treeless partial clones, cone-mode `sparse-checkout`, `git maintenance`, and `scalar`."
    },
-   "notes": "Covers Git LFS pointer files, blobless (`--filter=blob:none`) and treeless partial clones, cone-mode `sparse-checkout`, `git maintenance`, and `scalar`."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.6-git-advanced/40.6.09-signed-commits-repository-security.md": {
-   "sha256": "6c7e6f3e12f9a1d10e55abea8a883d66cb50c961eadc7f5f9131616165d3f003",
-   "lines": 158,
+   "sha256": "d130a22b4895002e3dfd14ae7c9b929d075897c1bb008ac64dc0badae636e85e",
+   "lines": 164,
    "genre": "chapter",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Git SSH commit signing, Sigstore `gitsign verify`, `git-filter-repo`, and Gitleaks pre-receive scanning.",
-    "readable": "Full read of 158 lines (1,249 prose words). Covers SSH (`gpg.format = ssh`), GPG, and Sigstore `gitsign` keyless OIDC commit signing, `allowed_signers` verification, and history secret scrubbing (`git-filter-repo`).",
-    "concise": "1,249 words across 158 lines. Covers SSH (`gpg.format = ssh`), GPG, and Sigstore `gitsign` keyless OIDC commit signing, `allowed_signers` verification, and history secret scrubbing (`git-filter-repo`).",
+    "readable": "Full read of 164 lines (1279 prose words). (1,249 prose words). Covers SSH (`gpg.format = ssh`), GPG, and Sigstore `gitsign` keyless OIDC commit signing, `allowed_signers` verification, and history secret scrubbing (`git-filter-repo`).",
+    "concise": "1279 words across 164 lines. 1,249 words across 158 lines. Covers SSH (`gpg.format = ssh`), GPG, and Sigstore `gitsign` keyless OIDC commit signing, `allowed_signers` verification, and history secret scrubbing (`git-filter-repo`).",
     "focused": "Single canonical home with no duplicate code across chapters. Covers SSH (`gpg.format = ssh`), GPG, and Sigstore `gitsign` keyless OIDC commit signing, `allowed_signers` verification, and history secret scrubbing (`git-filter-repo`).",
     "fast": "Measured 22.2 KB raw / 7.3 KB gzip. Covers SSH (`gpg.format = ssh`), GPG, and Sigstore `gitsign` keyless OIDC commit signing, `allowed_signers` verification, and history secret scrubbing (`git-filter-repo`).",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers SSH (`gpg.format = ssh`), GPG, and Sigstore `gitsign` keyless OIDC commit signing, `allowed_signers` verification, and history secret scrubbing (`git-filter-repo`)."
    },
-   "notes": "Covers SSH (`gpg.format = ssh`), GPG, and Sigstore `gitsign` keyless OIDC commit signing, `allowed_signers` verification, and history secret scrubbing (`git-filter-repo`)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.6-git-advanced/40.6.10-interview-questions.md": {
-   "sha256": "ea5e6dcce70c715598058358aa6b659666754de94810aa7dc82ff9289f711eb3",
-   "lines": 290,
+   "sha256": "502ad44756cbe5689ce3984fbeab8f2e19652120106c99c39525f3f1788ad578",
+   "lines": 291,
    "genre": "interview",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Git 2.51+ internals, reflog recovery, blobless partial clones, and SSH/Sigstore commit signing.",
-    "readable": "Full read of 290 lines (2,188 prose words). Covers senior Git interview scenarios on detached HEAD recovery, force-push overwrites, monorepo clone scaling, `rebase --onto`, and signed commit verification.",
-    "concise": "2,188 words across 290 lines. Covers senior Git interview scenarios on detached HEAD recovery, force-push overwrites, monorepo clone scaling, `rebase --onto`, and signed commit verification.",
+    "readable": "Full read of 291 lines (2289 prose words). (2,188 prose words). Covers senior Git interview scenarios on detached HEAD recovery, force-push overwrites, monorepo clone scaling, `rebase --onto`, and signed commit verification.",
+    "concise": "2289 words across 291 lines. 2,188 words across 290 lines. Covers senior Git interview scenarios on detached HEAD recovery, force-push overwrites, monorepo clone scaling, `rebase --onto`, and signed commit verification.",
     "focused": "Single canonical home with no duplicate code across chapters. Covers senior Git interview scenarios on detached HEAD recovery, force-push overwrites, monorepo clone scaling, `rebase --onto`, and signed commit verification.",
     "fast": "Measured 32.6 KB raw / 9.9 KB gzip. Covers senior Git interview scenarios on detached HEAD recovery, force-push overwrites, monorepo clone scaling, `rebase --onto`, and signed commit verification.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Covers senior Git interview scenarios on detached HEAD recovery, force-push overwrites, monorepo clone scaling, `rebase --onto`, and signed commit verification."
    },
-   "notes": "Covers senior Git interview scenarios on detached HEAD recovery, force-push overwrites, monorepo clone scaling, `rebase --onto`, and signed commit verification."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.6-git-advanced/INDEX.md": {
-   "sha256": "98716a2ba1c9de45fd7e58e13db4b00661922e391ccad8f9583dc997dd39d1cb",
+   "sha256": "d3933ea95c8116b379b1f508e76f873c015cf839dd0d51ccae6e9434a3a569fb",
    "lines": 165,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Git 2.51+ internals, SHA-256/SHA-1 object model, scalar/sparse-checkout, and SSH/Sigstore commit signing.",
-    "readable": "Full read of 165 lines (415 prose words). Learning-flow index for Git internals, branching models, history rewriting, hooks, bisect archaeology, monorepo scaling, and cryptographic commit signing.",
-    "concise": "415 words across 165 lines. Learning-flow index for Git internals, branching models, history rewriting, hooks, bisect archaeology, monorepo scaling, and cryptographic commit signing.",
+    "readable": "Full read of 165 lines (419 prose words). Learning-flow index for Git internals, branching models, history rewriting, hooks, bisect archaeology, monorepo scaling, and cryptographic commit signing.",
+    "concise": "419 words across 165 lines. Learning-flow index for Git internals, branching models, history rewriting, hooks, bisect archaeology, monorepo scaling, and cryptographic commit signing.",
     "focused": "Single canonical home with no duplicate code across chapters. Learning-flow index for Git internals, branching models, history rewriting, hooks, bisect archaeology, monorepo scaling, and cryptographic commit signing.",
     "fast": "Measured 20.0 KB raw / 5.6 KB gzip. Learning-flow index for Git internals, branching models, history rewriting, hooks, bisect archaeology, monorepo scaling, and cryptographic commit signing.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Learning-flow index for Git internals, branching models, history rewriting, hooks, bisect archaeology, monorepo scaling, and cryptographic commit signing."
    },
-   "notes": "Learning-flow index for Git internals, branching models, history rewriting, hooks, bisect archaeology, monorepo scaling, and cryptographic commit signing."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.6-git-advanced/REVISION.md": {
-   "sha256": "6c4c3763b8475c133110a0655eb9618975fe7b0de4854cb2d09532aa5213e25e",
+   "sha256": "92b55b7c43fca427efb9d0682282bde3163f2c201427c13824547ee96d5adb7b",
    "lines": 235,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Verified against current 2026 sources and standards: Git 2.51+ CLI commands (`git switch`, `git restore`, `git stash export`, `git sparse-checkout`, `gitsign`).",
-    "readable": "Full read of 235 lines (2,459 prose words). Active-recall Q&A companion covering Git object types (blob, tree, commit, tag), reflog recovery, `rebase --onto`, `bisect run`, and partial clones.",
-    "concise": "2,459 words across 235 lines. Active-recall Q&A companion covering Git object types (blob, tree, commit, tag), reflog recovery, `rebase --onto`, `bisect run`, and partial clones.",
+    "readable": "Full read of 235 lines (2490 prose words). (2,459 prose words). Active-recall Q&A companion covering Git object types (blob, tree, commit, tag), reflog recovery, `rebase --onto`, `bisect run`, and partial clones.",
+    "concise": "2490 words across 235 lines. 2,459 words across 235 lines. Active-recall Q&A companion covering Git object types (blob, tree, commit, tag), reflog recovery, `rebase --onto`, `bisect run`, and partial clones.",
     "focused": "Single canonical home with no duplicate code across chapters. Active-recall Q&A companion covering Git object types (blob, tree, commit, tag), reflog recovery, `rebase --onto`, `bisect run`, and partial clones.",
     "fast": "Measured 31.1 KB raw / 9.0 KB gzip. Active-recall Q&A companion covering Git object types (blob, tree, commit, tag), reflog recovery, `rebase --onto`, `bisect run`, and partial clones.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Active-recall Q&A companion covering Git object types (blob, tree, commit, tag), reflog recovery, `rebase --onto`, `bisect run`, and partial clones."
    },
-   "notes": "Active-recall Q&A companion covering Git object types (blob, tree, commit, tag), reflog recovery, `rebase --onto`, `bisect run`, and partial clones."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "40-platform/40.7-serverless-edge/40.7.01-serverless-overview.md": {
    "sha256": "935d7dd3cbf69db7e16e64cfe1d438185be38dfe50ac3b2fa8acee3f5cdf7f15",
@@ -11162,7 +11162,7 @@
    }
   },
   "40-platform/INDEX.md": {
-   "sha256": "8311aedf4a4e32e28a953c3b0be3be4d8f42063f335ff3a79b8aad78ae27899e",
+   "sha256": "a4fd76c634fb0d1bcdad8d924ff3108293af6873c27acf21dece57278892021e",
    "lines": 132,
    "genre": "index",
    "status": "read",
@@ -11175,7 +11175,7 @@
     "fast": "Measured 17.1 KB raw / 5.8 KB gzip. Pure markdown navigation table.",
     "best": "Makes operational boundaries, failure modes, and trade-off limits explicit. Frames platform engineering as a single end-to-end production boundary: build (40.5/40.8) -> containerize (40.1) -> CI/CD (40.3) -> provision & orchestrate (40.12/40.2) -> route & cache (40.11/40.10/40.7) -> observe (40.4)."
    },
-   "notes": "C1-C8 genuine file-by-file refinement (Wave 4B 40.3-ci-cd and 40.4-observability)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 4C 40.5-build-tools and 40.6-git-advanced)."
   },
   "50-quality/50.1-testing/01-foundations/50.1.1.01-testing-overview.md": {
    "sha256": "1798cc8d3a61d77811ec83a8a34670a900b2c8f2f51be703767585c8ad333748",
@@ -14271,7 +14271,7 @@
    }
   },
   "INDEX.md": {
-   "sha256": "16474e958742ef9d9eda2b0eea527a949ecd8c241d6ad17732028ce9db0280b3",
+   "sha256": "7dc260f9047c239ef4a6aa572644e5c9b2c7bfcf43fc34948de989d37d8ac588",
    "lines": 206,
    "genre": "index",
    "status": "read",
@@ -14281,10 +14281,10 @@
     "readable": "Full read of 206 lines (453 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "453 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical root index; counts stamped strictly by check_counts.py.",
-    "fast": "Measured 35.6 KB raw / 9.2 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
+    "fast": "Measured 35.6 KB raw / 9.2 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "Maintains strict zero-broken-link boundary across 991 tracked markdown files."
    },
-   "notes": "Synced live read-time and counts after Wave 4B (40.3-ci-cd and 40.4-observability)."
+   "notes": "Synced live read-time and counts after Wave 4C (40.5-build-tools and 40.6-git-advanced)."
   },
   "README.md": {
    "sha256": "d885528e428ea38f115bc62b8bac76e421c317edae2aeb312516f3f01fd17a5f",
@@ -14572,7 +14572,7 @@
    "notes": "Updated section-pass rule 3 to permit full comprehension rewrites while preserving metadata, anchors, and authored REVISION.md pairs."
   },
   "docs/api-contract.md": {
-   "sha256": "db75a493c97cfee8632707ceab77cdaed49ef35edbf1ae45c1dd2d5968c6fe90",
+   "sha256": "9c1691cac60abc2440d7be21c6f3d50dd83890d84a9afaec8f3dcad7eec69a6e",
    "lines": 119,
    "genre": "doc",
    "status": "read",
@@ -14582,10 +14582,10 @@
     "readable": "Full read of 119 lines (258 prose words) verified against C1-C8 criteria; prose, headings, and code blocks scannable.",
     "concise": "258 words of prose after genuine file-by-file C1-C8 editorial refinement.",
     "focused": "Canonical docs/ home for api-contract; avoids duplicating AGENTS.md or script logic.",
-    "fast": "Measured 23.5 KB raw / 5.5 KB gzip (with verified backlinks, uniform headings, and concise prose structure.)",
+    "fast": "Measured 23.5 KB raw / 5.5 KB gzip. (with verified backlinks, uniform headings, and concise prose structure.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for api-contract."
    },
-   "notes": "Synced live read-time and counts after Wave 4B (40.3-ci-cd and 40.4-observability)."
+   "notes": "Synced live read-time and counts after Wave 4C (40.5-build-tools and 40.6-git-advanced)."
   },
   "docs/deployment.md": {
    "sha256": "ea99a37f317c2a867f6f19756e78b15e15853b729507e8f02c3d9e64d00d59bb",

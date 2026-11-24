@@ -24,7 +24,7 @@ Source: [Git Internals: Objects, Refs & Packfiles](40.6.01-git-internals-objects
 
 **Q:** Why should a repository tool not assume every branch is a 41-byte file?
 
-**A:** That describes a loose SHA-1 ref in the traditional files backend. References can be packed or use another backend, and object-ID length depends on repository format. Use Git's ref and object APIs rather than assuming on-disk filenames or byte lengths.
+**A:** That describes a loose Secure Hash Algorithm 1 (SHA-1) ref in the traditional files backend. References can be packed or use another backend, and object-ID length depends on repository format. Use Git's ref and object Application Programming Interfaces (APIs) rather than assuming on-disk filenames or byte lengths.
 
 **Q:** Why can `git reflog` fail to recover work after `git reset --hard`?
 
@@ -36,7 +36,7 @@ Source: [Git Internals: Objects, Refs & Packfiles](40.6.01-git-internals-objects
 
 **Q:** Why might `.git` be a file in a linked worktree, and where are its objects?
 
-**A:** A linked worktree uses a gitfile that points to per-worktree metadata. Its HEAD and index are separate, while the common Git directory holds shared objects and most repository metadata. Ask Git for paths with `git rev-parse --git-dir --git-common-dir`; see [repository layout](https://git-scm.com/docs/gitrepository-layout) and [git-worktree](https://git-scm.com/docs/git-worktree).
+**A:** A linked worktree uses a gitfile that points to per-worktree metadata. Its `HEAD` and index are separate, while the common Git directory holds shared objects and most repository metadata. Ask Git for paths with `git rev-parse --git-dir --git-common-dir`; see [repository layout](https://git-scm.com/docs/gitrepository-layout) and [git-worktree](https://git-scm.com/docs/git-worktree).
 
 ## Branching Strategies
 
@@ -44,7 +44,7 @@ Source: [Branching Strategies](40.6.02-branching-strategies.md)
 
 **Q:** What should determine a branching strategy?
 
-**A:** Start with integration frequency, number of versions still supported, release timing, and required review/CI controls. GitHub Flow describes a pull-request loop; trunk-based development describes frequent integration, so short reviewed branches can satisfy both. See [GitHub Flow](https://docs.github.com/en/get-started/using-github/github-flow) and [short-lived trunk branches](https://trunkbaseddevelopment.com/short-lived-feature-branches/).
+**A:** Start with integration frequency, number of versions still supported, release timing, and required review and Continuous Integration (CI) controls. GitHub Flow describes a pull-request loop; trunk-based development describes frequent integration, so short reviewed branches can satisfy both. See [GitHub Flow](https://docs.github.com/en/get-started/using-github/github-flow) and [short-lived trunk branches](https://trunkbaseddevelopment.com/short-lived-feature-branches/).
 
 **Q:** A tested fix is on the trunk, but versions 2.4 and 2.5 are still supported. How should it reach them?
 
@@ -116,9 +116,9 @@ Source: [Git Advanced Commands](40.6.05-git-advanced-commands.md)
 
 **Q:** How does `git submodule update --remote` differ from the default update?
 
-**A:** The default restores the commit recorded by the superproject’s gitlink. `--remote` selects a configured remote-tracking tip, which can change the gitlink and therefore requires review and a parent-repository commit. See the [git-submodule manual](https://git-scm.com/docs/git-submodule).
+**A:** The default restores the commit recorded by the superproject's gitlink. `--remote` selects a configured remote-tracking tip, which can change the gitlink and therefore requires review and a parent-repository commit. See the [git-submodule manual](https://git-scm.com/docs/git-submodule).
 
-**Q:** Why does reset’s `--hard` mode require more care than revert on a published branch?
+**Q:** Why does reset's `--hard` mode require more care than revert on a published branch?
 
 **A:** `reset --hard` moves the current branch and replaces the index and tracked working files with the target, potentially overwriting untracked paths. Revert records a new inverse-change commit, so collaborators can keep using the published ancestry. A merge revert also needs an intentional mainline choice. See the [git-reset](https://git-scm.com/docs/git-reset) and [git-revert](https://git-scm.com/docs/git-revert) manuals.
 
@@ -128,7 +128,7 @@ Source: [Git Patch, Bundle & Archive](40.6.06-patch-and-bundle.md)
 
 **Q:** What does applying a `format-patch` series preserve, and why do the resulting commit IDs differ?
 
-**A:** Each mail carries a commit’s author/message and patch. `git am` replays it on the recipient’s base and creates a commit from the result. Its ID commonly changes when the parent or committer metadata changes; the original commit object and signature are not transferred. See the [git-format-patch](https://git-scm.com/docs/git-format-patch) and [git-am](https://git-scm.com/docs/git-am) manuals.
+**A:** Each mail carries a commit's author and message and patch. `git am` replays it on the recipient's base and creates a commit from the result. Its ID commonly changes when the parent or committer metadata changes; the original commit object and signature are not transferred. See the [git-format-patch](https://git-scm.com/docs/git-format-patch) and [git-am](https://git-scm.com/docs/git-am) manuals.
 
 **Q:** Why must an incremental bundle be verified in the receiving repository?
 
@@ -136,7 +136,7 @@ Source: [Git Patch, Bundle & Archive](40.6.06-patch-and-bundle.md)
 
 **Q:** What does a bundle created with `--all` fail to preserve?
 
-**A:** It carries selected refs and reachable commits, not the index, working tree, reflogs, hooks or repository configuration. A bundle clone does not reliably reconstruct the stash list. Git 2.51 added `stash export`/`import` for explicit transfer; confirm both ends run 2.51+ and test the restore. LFS payloads and submodule repositories need separate backups. See the [git-bundle](https://git-scm.com/docs/git-bundle) and [Git 2.51 release notes](https://github.blog/open-source/git/highlights-from-git-2-51/).
+**A:** It carries selected refs and reachable commits, not the index, working tree, reflogs, hooks, or repository configuration. A bundle clone does not reliably reconstruct the stash list. Git `2.51` added `stash export` and `stash import` for explicit transfer; confirm both ends run `2.51` or newer and test the restore. Large File Storage (LFS) payloads and submodule repositories need separate backups. See the [git-bundle](https://git-scm.com/docs/git-bundle) and [Git 2.51 release notes](https://github.blog/open-source/git/highlights-from-git-2-51/).
 
 **Q:** When should a release use `git archive` rather than a bundle?
 
@@ -144,7 +144,7 @@ Source: [Git Patch, Bundle & Archive](40.6.06-patch-and-bundle.md)
 
 **Q:** What does a `Signed-off-by` trailer establish, and how does it differ from a commit signature?
 
-**A:** A sign-off is a contributor’s textual declaration required by some project policies; it is not cryptographic proof. A verified commit signature depends on a trusted key and policy. `format-patch --signature` is only a message footer. See [git-format-patch](https://git-scm.com/docs/git-format-patch) and [signed commits](40.6.09-signed-commits-repository-security.md).
+**A:** A sign-off is a contributor's textual declaration required by some project policies; it is not cryptographic proof. A verified commit signature depends on a trusted key and policy. `format-patch --signature` is only a message footer. See [git-format-patch](https://git-scm.com/docs/git-format-patch) and [signed commits](40.6.09-signed-commits-repository-security.md).
 
 ## Git Code Archaeology
 
@@ -152,7 +152,7 @@ Source: [Git Code Archaeology](40.6.07-code-archaeology.md)
 
 **Q:** What does `git blame` establish, and what evidence is needed before you explain a behavior change?
 
-**A:** Blame attributes each current line to a recorded change. It does not identify the behavior-changing commit when a later refactor touched the line, and its author fields do not prove identity or intent. Inspect the candidate diff, tests and linked review/incident records. See the [git-blame](https://git-scm.com/docs/git-blame) and [git-show](https://git-scm.com/docs/git-show) manuals.
+**A:** Blame attributes each current line to a recorded change. It does not identify the behavior-changing commit when a later refactor touched the line, and its author fields do not prove identity or intent. Inspect the candidate diff, tests, and linked review and incident records. See the [git-blame](https://git-scm.com/docs/git-blame) and [git-show](https://git-scm.com/docs/git-show) manuals.
 
 **Q:** When should you use `git log -S` instead of `git log -G`?
 
@@ -168,7 +168,7 @@ Source: [Git Code Archaeology](40.6.07-code-archaeology.md)
 
 **Q:** Why can `git log --all` still miss the history you need?
 
-**A:** `--all` searches refs already present in the local repository. It cannot retrieve deleted or unfetched remote refs, and a shallow clone stops at its history boundary. Fetch relevant refs or deepen/unshallow the repository, then verify that the required objects are available. See the [git-log](https://git-scm.com/docs/git-log) and [partial-clone](https://git-scm.com/docs/partial-clone) manuals.
+**A:** `--all` searches refs already present in the local repository. It cannot retrieve deleted or unfetched remote refs, and a shallow clone stops at its history boundary. Fetch relevant refs or deepen or unshallow the repository, then verify that the required objects are available. See the [git-log](https://git-scm.com/docs/git-log) and [partial-clone](https://git-scm.com/docs/partial-clone) manuals.
 
 ## Git at Scale: LFS & Partial Clones
 
@@ -188,11 +188,11 @@ Source: [Signed Commits & Repository Security](40.6.09-signed-commits-repository
 
 **Q:** What does a valid commit signature establish about a person?
 
-**A:** It binds commit content to control of a trusted signing identity/key under a verification policy. It does not independently prove that the author field's human wrote or reviewed the code.
+**A:** It binds commit content to control of a trusted signing identity and key under a verification policy. It does not independently prove that the author field's human wrote or reviewed the code.
 
 **Q:** Why should a Gitsign policy call `gitsign verify` with an expected identity and issuer?
 
-**A:** `git verify-commit` can validate the signature and transparency entry without validating that the certificate claims match the intended signer. Pass the release workflow's exact certificate identity and OIDC issuer to `gitsign verify`. See the [Gitsign verification guide](https://github.com/sigstore/gitsign).
+**A:** `git verify-commit` can validate the signature and transparency entry without validating that the certificate claims match the intended signer. Pass the release workflow's exact certificate identity and OpenID Connect (OIDC) issuer to `gitsign verify`. See the [Gitsign verification guide](https://github.com/sigstore/gitsign).
 
 **Q:** Does revoking a signing key necessarily remove a host's earlier Verified badge?
 
@@ -216,7 +216,7 @@ Source: [Advanced commands](40.6.05-git-advanced-commands.md), [bundles](40.6.06
 
 **Q:** Does a signed LFS pointer prove the file bytes can be restored offline?
 
-**A:** No. It binds the content identity/size recorded in Git, but the binary bytes are stored separately. Back up and verify LFS content as well as Git objects and refs.
+**A:** No. It binds the content identity and size recorded in Git, but the binary bytes are stored separately. Back up and verify LFS content as well as Git objects and refs.
 
 **Q:** Can a contribution provide its own allowed-signers file for a required signature check?
 

@@ -4,12 +4,12 @@
   "repos/resume-generator",
   "repos/docita"
  ],
- "corpus_digest": "3c1778d77dae9b63ea7c6cee319ecb486b8572f20b972b8a4f9800ae235fc0ae",
+ "corpus_digest": "511f22806eefa0e0832ff040e343700433624b0cb37200defa3dc682b1512ef0",
  "totals": {
   "chapters": 680,
   "sections": 46,
   "categories": 13,
-  "read_minutes": 5395
+  "read_minutes": 5398
  },
  "chapters": [
   {
@@ -5643,7 +5643,7 @@
     "reference",
     "tool"
    ],
-   "m": 5
+   "m": 6
   },
   {
    "p": "40-platform/40.5-build-tools/01-bundlers/REVISION.html",
@@ -5750,7 +5750,7 @@
     "interview-questions",
     "practice"
    ],
-   "m": 8
+   "m": 9
   },
   {
    "p": "40-platform/40.6-git-advanced/40.6.01-git-internals-objects-refs-packfiles.html",
@@ -5808,7 +5808,7 @@
     "concept",
     "reference"
    ],
-   "m": 6
+   "m": 7
   },
   {
    "p": "40-platform/40.6-git-advanced/40.6.06-patch-and-bundle.html",

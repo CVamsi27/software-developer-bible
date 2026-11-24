@@ -4,7 +4,7 @@
 
 ## Reading Flow
 
-Start with [the four resume claims](01-product-engineering.md). Reconstruct a real workflow and personal contribution, then practice API profiling, React behavior, release judgment and mentoring. The candidate's recorded experience is the source; no employer repository or original measurement records were supplied.
+Start with [the four resume claims](01-product-engineering.md). Reconstruct a real workflow and personal contribution, then practice Application Programming Interface (API) profiling, React behavior, release judgment, and mentoring. The candidate's recorded experience is the source; no employer repository or original measurement records were supplied.
 
 After the learning chapter, use [category revision](REVISION.md). Finish with a mock interview based on your own story cards and a changed technical constraint. Keep exercises distinct from employer history. The [Docita cases](../docita/INDEX.md) provide a separate current repository for implementation study.
 

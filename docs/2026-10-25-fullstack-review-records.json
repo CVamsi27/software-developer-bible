@@ -10628,141 +10628,141 @@
     },
     {
       "path": "projects/INDEX.md",
-      "sha256": "6cf012cd00a68c50a719eedc7fa44a29e9b04472d592f3d6211f59663951f52e",
+      "sha256": "b368400e3dd171971a9f9def4cec0449faa10ab8db4b64b33bf74a4badb5f377",
       "status": "reviewed",
       "reviewer": "root",
-      "reviewDate": "2026-11-05",
-      "fullContentRead": false,
-      "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded lane destinations now use verified public repository URLs and explicit repository labels; publication exclusions and the linked guides are unchanged.",
+      "reviewDate": "2026-11-24",
+      "fullContentRead": true,
+      "notes": "Wave 10A C1-C8 refinement (2026-11-24): Full read of 41 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
       "path": "projects/docita/01-architecture-decisions.md",
-      "sha256": "1a107f08abcb8e24f0edd3187375af929203f9ecccc942a607942b916f1af32d",
+      "sha256": "365dc502fb70a3117f11cb4b7d2a20dd051fa1bd30dba8563844c180e819940a",
       "status": "reviewed",
       "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
+      "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Full read: Layer boundaries versus actual Nest/Prisma imports; runtime Zod parse versus inferred types; worker lifecycle, monorepo build and non-atomic rollout. Historical 2 October source observations kept separate from current operational evidence. Moved the existing concrete problem before the definitions to establish the reading trace; no mechanism removed."
+      "notes": "Wave 10A C1-C8 refinement (2026-11-24): Full read of 176 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness."
     },
     {
       "path": "projects/docita/02-multi-tenancy-rls.md",
-      "sha256": "f69c69ee392aa07649baa3494f948f10092691bc55838439bb63931ccb03b421",
+      "sha256": "7c971e2412c2c205ab045d5bb1105f979db6f3c577e86350186677acb46dd624",
       "status": "reviewed",
       "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
+      "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Full read: Trusted identity to same-transaction settings and gated RLS policy; current ALS child-scope correction versus historical shared-store race, fallback and actual non-owner-role integration boundary. Source-extracted overlap check remains local, not production isolation. Moved the existing concrete problem before the definitions to establish the reading trace; no mechanism removed."
+      "notes": "Wave 10A C1-C8 refinement (2026-11-24): Full read of 151 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness."
     },
     {
       "path": "projects/docita/03-async-processing.md",
-      "sha256": "46d9bde9192c662937df7f057cf4b0a77484cc67a10d67631455b8f8e42b9ee0",
+      "sha256": "644ffae8c9f6699f415bc3407a98063ebb948e3131ec9c2b21dec2c5850ebde8",
       "status": "reviewed",
       "reviewer": "root + full-content evidence reviewers",
-      "reviewDate": "2026-10-29",
+      "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Full-content review: published source6465632a7 now includes scoped worker and seed corrections; historical queue/outbox inspections and their limits preserved. Application tenant context remains distinct from SQL RLS. Source availability does not establish runtime activation or production delivery.",
+      "notes": "Wave 10A C1-C8 refinement (2026-11-24): Full read of 288 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
       "path": "projects/docita/04-payment-flows.md",
-      "sha256": "c1cf85f5899354324b04359da6d5f298f196f3c25d0d7dbcce75221d87c97cef",
+      "sha256": "6a4cf965d4af46863924e7c9b7dcd7bc8136044af0c420db414071eaf0606bca",
       "status": "reviewed",
       "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
+      "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Full read: Merchant tokens versus actual credential resolution, raw-body signatures versus contextual validation, same-transaction local state and intent, duplicate identifiers and 200-on-failure recovery ownership. Dated source claims are narrower than provider or production outcomes. Moved the existing concrete problem before the definitions to establish the reading trace; no mechanism removed."
+      "notes": "Wave 10A C1-C8 refinement (2026-11-24): Full read of 152 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness."
     },
     {
       "path": "projects/docita/05-clinic-workflows.md",
-      "sha256": "be9c0fd68e5c7cb23e563876e60550dddc811c7ac10d07c029f91449c33c8289",
+      "sha256": "9fbdff1e15dde2f40635a707629a328c719fd3f625d84a213759b340a9dd9f77",
       "status": "reviewed",
       "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
+      "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Full read: Appointment versus arrival/follow-up state; sequential token race, expected version versus increment, half-open overlap and scoped GiST exclusion, process/clinic timezone distinction and concurrency tests. No live migration or measured attendance improvement inferred. Moved the existing concrete problem before the definitions to establish the reading trace; no mechanism removed."
+      "notes": "Wave 10A C1-C8 refinement (2026-11-24): Full read of 170 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness."
     },
     {
       "path": "projects/docita/06-whatsapp-integration.md",
-      "sha256": "cec33dc17934661b2435070bb9aad2c10ef1b17ca7958cd82066fce8e7b8b191",
+      "sha256": "ed7e358d5c67333b784a19bcf12c7c30d964b712d2123c5fd05347b18bbf976e",
       "status": "reviewed",
       "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
+      "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Full read: Sender fallback, send-before-save ambiguity, template/service-window eligibility, two-step delay reply and negation/context failures, conditional appointment update, incomplete ingress processing identity and status telemetry versus provider reconciliation. Moved the existing concrete problem before the definitions to establish the reading trace; no mechanism removed."
+      "notes": "Wave 10A C1-C8 refinement (2026-11-24): Full read of 151 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness."
     },
     {
       "path": "projects/docita/07-prescription-safety.md",
-      "sha256": "11dcbc100ba014ff662ba728ca19ca3144e99b202e6e05338d755fdffe6b8e80",
+      "sha256": "ff38a65774cc286dcc855a38dd4f3935aabfb3a456cf9035bcba598993a5b772",
       "status": "reviewed",
       "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
+      "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Full read: Clinical rule inputs and uncovered cases, signature image versus proof, allergy versus drug interaction, unit/frequency limitations and authoritative consultation context, mutable PDF inputs/storage metadata gap. No prescribing guidance or clinical safety outcome inferred. Moved the existing concrete problem before the definitions to establish the reading trace; no mechanism removed."
+      "notes": "Wave 10A C1-C8 refinement (2026-11-24): Full read of 153 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness."
     },
     {
       "path": "projects/docita/08-billing-invoicing.md",
-      "sha256": "b6ae5ea2e01be33cfcb0d8ea2fa73998c92754bcf903a7898c5bdd37d776a400",
+      "sha256": "a8a466639b9df185db5412be30307d3cfd875a4e788d965b8607da4138970fc6",
       "status": "reviewed",
       "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
+      "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Full read: Financial snapshots versus finality, exact units/rounding/currency, divergent state paths, payment versus PAID, UTC-created-date daybook versus actual collection, late capture and mixed-currency failure. Code tax policy is not legal treatment. Moved the existing concrete problem before the definitions to establish the reading trace; no mechanism removed."
+      "notes": "Wave 10A C1-C8 refinement (2026-11-24): Full read of 145 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness."
     },
     {
       "path": "projects/docita/09-subscription-system.md",
-      "sha256": "626596b6d7c688db77307634b2a26a2971a80704d2bb4dea267ffa45c0150911",
+      "sha256": "1ad89d8e60a3fe179eab5e9219a951705f43e6905729850b37c2e97aa4ab307b",
       "status": "reviewed",
       "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
+      "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Full read: Permission versus entitlement versus usage, guard metadata/bypasses, lifecycle graph/direct writes, month-end dates, event identity, incremental aggregation rerun failure, hard reservation versus post-action accounting, referral continuity versus reconciliation. Moved the existing concrete problem before the definitions to establish the reading trace; no mechanism removed."
+      "notes": "Wave 10A C1-C8 refinement (2026-11-24): Full read of 155 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness."
     },
     {
       "path": "projects/docita/10-deployment-infrastructure.md",
-      "sha256": "ba4ced5d32cae5785712332da9a6848437dcd393f633d5793aab92de2a073cb5",
+      "sha256": "5bd8b2db5b201f95546dc267ceb578228f1112486faa89c4cd0d3f7706cbbf60",
       "status": "reviewed",
       "reviewer": "root + full-content evidence reviewers",
-      "reviewDate": "2026-10-29",
+      "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Full-content review: added verified compiled API/worker same-CWD recipe and exact flags, environment precedence, broader scheduler graph, wildcard-bind/isolation and local-disk/R2 boundaries. Recipe matches source guide and bash syntax passed. Published source availability and intentional maintenance guard reconciliation are distinct from required performance baseline and production restart.",
+      "notes": "Wave 10A C1-C8 refinement (2026-11-24): Full read of 466 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
       "path": "projects/docita/11-insurance-claims.md",
-      "sha256": "89b261ce93786cce8f30680acfee6ee1e6e7282689e0b2d7bfca66d464490834",
+      "sha256": "ab1ae6bd921ac1e4eae1c3e6c17266ebf00445ac5a03b63a82e7a68e4fbde75c",
       "status": "reviewed",
       "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
+      "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Full read: Transition graph versus expected-version write, amount invariants, event atomicity versus mutable/cascaded history, primary/replica return, resubmission readiness, reference scope and unique row versus retry response. Moved the existing concrete problem before the definitions to establish the reading trace; no mechanism removed."
+      "notes": "Wave 10A C1-C8 refinement (2026-11-24): Full read of 129 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness."
     },
     {
       "path": "projects/docita/12-ipd-inpatient.md",
-      "sha256": "a67ba51238aa9b57817ca48bc8ccd5b616ff387716f232190723c0e02166d46c",
+      "sha256": "0a86bb0a441d3d1b9bed6f63aa129cbf94445343e1843b9870ded00869885e01",
       "status": "reviewed",
       "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
+      "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Full read: Paired atomic writes versus missing concurrent allocation ownership, absent-row reads, conditional bed claim versus patient invariant, stale transfer/discharge and post-commit audit. Proposed protocol remains distinct from implementation. Moved the existing concrete problem before the definitions to establish the reading trace; no mechanism removed."
+      "notes": "Wave 10A C1-C8 refinement (2026-11-24): Full read of 126 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness."
     },
     {
       "path": "projects/docita/13-inventory.md",
-      "sha256": "088e70e6186dbee08c9c48f41b7b3b435853ba89b0918125a2bddbbc317f69d4",
+      "sha256": "404e9704552045c8595764626c2be8941dc86d07f2020eb2a79600a24669edc3",
       "status": "reviewed",
       "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
+      "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Full read: Guarded decrement and movement commit, diagnostic tenant scope, direct-edit bypass, reference identity versus idempotency, units/currency and mixed fresh/replica aggregates. No real database race executed in this review. Moved the existing concrete problem before the definitions to establish the reading trace; no mechanism removed."
+      "notes": "Wave 10A C1-C8 refinement (2026-11-24): Full read of 157 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness."
     },
     {
       "path": "projects/docita/14-analytics-and-dashboards.md",
-      "sha256": "6ee316f78b75f67b1272f15d7e9882b01a633ae2b9e1c25976e1ac9bc89f4e9b",
+      "sha256": "1062694a93d089ed65858b8b8718e5bf546e1baa3201780da9685bba6299e12c",
       "status": "reviewed",
       "reviewer": "root + full-content evidence reviewers",
-      "reviewDate": "2026-10-29",
+      "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Full-content review: preserved metric population, invalid durations, unknown values, clinic-level deduplication and timezone reasoning; refreshed only published source provenance for the reviewed operational dashboard continuation. No customer or production measurement inferred.",
+      "notes": "Wave 10A C1-C8 refinement (2026-11-24): Full read of 364 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
@@ -10889,12 +10889,12 @@
     },
     {
       "path": "projects/docita/INDEX.md",
-      "sha256": "453cd7e124f76fba675d64cd9660a37013799c6d1b1bc01be78f7e7704298343",
+      "sha256": "b6bff1ef8c06cb34a6c23d294da5507921bc3f5e40b4dd46a051753af89320c0",
       "status": "reviewed",
       "reviewer": "root + full-content evidence reviewers",
-      "reviewDate": "2026-10-29",
+      "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Full-content review: stage8 now identifies published capacity additions and required full-application fixtures; canonical setup/evidence/growth/cost/revision flow preserved without extra schedule or duplicate chapters.",
+      "notes": "Wave 10A C1-C8 refinement (2026-11-24): Full read of 94 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
@@ -10909,31 +10909,31 @@
     },
     {
       "path": "projects/maq/01-product-engineering.md",
-      "sha256": "dfb97b343a0e8ee5a3f90e51db1f6a3259b9ff9fa034d0b41fc76de26f2f71d9",
+      "sha256": "e9b172780f548dd3aae0d48ca7021b94991f8f29e2f4b50e1abdcf0a986fb4d7",
       "status": "reviewed",
       "reviewer": "bible_final_verification",
-      "reviewDate": "2026-10-27",
+      "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Full-content review: workflow ownership, request tracing, authorized batching, pagination/cache trade-offs, interaction boundaries and delivery/mentoring reconstruction. The 50-row/51-to-two-query example remains synthetic, without a latency claim. New evidence-to-wording progression distinguishes recalled contribution, authorized source, original measurements and new benchmarks; accomplishment wording remains conditional on substantiation. No invented employer metric, client or private path. Final full-content reread after table delimiter alignment; formatting only, with the hypothetical and historical-evidence boundaries preserved.",
+      "notes": "Wave 10A C1-C8 refinement (2026-11-24): Full read of 146 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {
       "path": "projects/maq/INDEX.md",
-      "sha256": "cd1a920d4e6a8b200a835544fd5b0867dc264f07a48a8bd1f53ece7c89a2c21c",
+      "sha256": "0216dc89cc8d8ff9a4188ecdf8fc9a4deae7b9e589464a1f665d0552c1dddc37",
       "status": "reviewed",
       "reviewer": "root-continuation",
-      "reviewDate": "2026-10-26",
+      "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Full read: four experience themes reconstruct real personal contribution from authored claims without substituting Docita source. Synthetic 51-to-2 query scenario, React state/accessibility and pipeline exercises are distinguished from unverified employer metrics; revision covers every theme. Removed unavailable private pointer; no employer verification or new historical outcome claimed."
+      "notes": "Wave 10A C1-C8 refinement (2026-11-24): Full read of 18 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness."
     },
     {
       "path": "projects/maq/REVISION.md",
-      "sha256": "7bdfe45636a979db61a26c10b2007f4f63c90287e9224015647ef4af6b27a1d9",
+      "sha256": "992835ef9609fe811442d04099814bbbf46d70229aaab8fec951e5c130c259a7",
       "status": "reviewed",
       "reviewer": "bible_metrics_evidence",
-      "reviewDate": "2026-10-27",
+      "reviewDate": "2026-11-24",
       "fullContentRead": true,
-      "notes": "Full-content review: workflow, performance, React and delivery questions preserve historical-evidence limits. Added source-linked qualitative accomplishment, provenance, failed-request inclusion and recreation-boundary questions; aligned to the canonical chapter and preserved authored drills. No fabricated measurement or private reference.",
+      "notes": "Wave 10A C1-C8 refinement (2026-11-24): Full read of 136 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
       "findings": []
     },
     {

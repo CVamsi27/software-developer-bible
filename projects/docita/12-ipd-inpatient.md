@@ -9,7 +9,7 @@ The difficult case is concurrent staff activity: two requests can both read AVAI
 
 ## Definition
 
-Inpatient management connects a patient's admission to a bed and tracks admission, transfer and discharge. Two rules must remain true: one bed must not be assigned to two active admissions, and one patient must not acquire conflicting active admissions within the defined clinic policy.
+Inpatient Department (IPD) management connects a patient's admission to a bed and tracks admission, transfer, and discharge. Two rules must remain true: one bed must not be assigned to two active admissions, and one patient must not acquire conflicting active admissions within the defined clinic policy.
 
 > **Textbook Definition:** Resource allocation assigns constrained resources to active requests while preserving capacity and exclusivity invariants under concurrent state transitions; inpatient bed assignment is one such allocation problem.
 
@@ -24,22 +24,22 @@ Bed status and admission assignment encode related facts. Maintaining both makes
 The service delegates to a repository and then writes a shared audit action. The repository keeps related admission and bed writes in one Prisma transaction.
 
 | Operation | Writes grouped in the transaction |
-| --------- | ------------------------------------------------------------------------------ |
+| --------- | ------------------------------------------------------------------------------- |
 | Admit | Create admission; mark selected bed OCCUPIED |
 | Transfer | Mark old bed AVAILABLE; target OCCUPIED; replace admission bed and append note |
-| Discharge | Mark admission DISCHARGED with time/notes; mark its bed AVAILABLE |
+| Discharge | Mark admission DISCHARGED with timestamps and notes; mark its bed AVAILABLE |
 
 Atomic grouping prevents a crash halfway through these writes from committing just one side. It is a useful existing safeguard, with concurrency and audit completion still requiring separate reasoning.
 
 ## How Admission Validation Works Today
 
-Before opening the admission transaction, the repository loads the bed through bed → room → ward → clinic, loads a non-deleted patient in the clinic, and checks clinical staff membership. DOCTOR, ADMIN_DOCTOR or NURSE can qualify through direct clinic membership or an active doctor-clinic link.
+Before opening the admission transaction, the repository loads the bed through bed → room → ward → clinic, loads a non-deleted patient in the clinic, and checks clinical staff membership. DOCTOR, ADMIN_DOCTOR, or NURSE can qualify through direct clinic membership or an active doctor-clinic link.
 
 It rejects a missing reference or a bed whose earlier status is not AVAILABLE. Inside the transaction, it looks for an ADMITTED record for the patient through the clinic's ward chain, then creates an admission and unconditionally updates the bed to OCCUPIED.
 
-This read-inside-transaction is not a concurrency lock on the absence of an admission. The inspected schema has ordinary indexes for patient, bed, clinic/status and status, rather than active-admission uniqueness. The repository does not request serializable isolation or lock a stable patient row for this check.
+This read-inside-transaction is not a concurrency lock on the absence of an admission. The inspected schema has ordinary indexes for patient, bed, clinic and status, and status, rather than active-admission uniqueness. The repository does not request serializable isolation or lock a stable patient row for this check.
 
-The create data also omits the schema's optional clinicId; queries derive clinic through the bed's ward. That compatibility path should be explicit, especially if RLS or future constraints rely on the direct field.
+The create data also omits the schema's optional clinicId; queries derive clinic through the bed's ward. That compatibility path should be explicit, especially if Row-Level Security (RLS) or future constraints rely on the direct field.
 
 ## Examples: Two Requests for One Bed
 
@@ -62,37 +62,37 @@ Require one affected row; otherwise roll back and return conflict.
 Create the admission only with the successfully claimed bed.
 ```
 
-This is recommended pseudocode, not the current implementation. It protects bed capacity; a separate patient/clinic active-admission constraint or serialization policy is needed when the same patient targets two different beds.
+This is recommended pseudocode, not the current implementation. It protects bed capacity; a separate patient and clinic active-admission constraint or serialization policy is needed when the same patient targets two different beds.
 
 ## Transfers and Discharges Also Need Current Ownership
 
 Transfer and discharge load the admission before their transactions. They check that the earlier status is ADMITTED. Transfer also checks the target bed's earlier availability and rejects transfer to the same bed.
 
-The subsequent writes use IDs without an expected admission version/status/bed predicate. Concurrent transfer, discharge or another bed claim can therefore invalidate the earlier decision. A stale discharge can free a bed that no longer represents that admission's current allocation; simply adding a transaction around the writes does not establish current ownership.
+The subsequent writes use IDs without an expected admission version, status, or bed predicate. Concurrent transfer, discharge, or another bed claim can therefore invalidate the earlier decision. A stale discharge can free a bed that no longer represents that admission's current allocation; simply adding a transaction around the writes does not establish current ownership.
 
 Transfers append a human-readable note using the earlier notes snapshot. Concurrent appends can overwrite each other. Discharge summary and instructions are optional and append in the same way. A stronger history model stores individual allocation and clinical-document events rather than treating a mutable note string as a complete timeline.
 
-A later admission creates another row; patient continuity across admissions is a separate episode/history policy. Room occupancy must be computed from bed/allocation state, because room grouping and charges are not an independent bed-availability authority.
+A later admission creates another row; patient continuity across admissions is a separate episode and history policy. Room occupancy must be computed from bed and allocation state, because room grouping and charges are not an independent bed-availability authority.
 
 ## Audit and Time Boundaries
 
 The service awaits audit logging after the repository operation commits. That keeps audit dependencies visible, but does not make audit and allocation one transaction. An audit failure may occur after successful allocation; trace the audit service's own handling before promising a successful response or eventual history completion.
 
-Admission and discharge dates can come from caller input. Define backfill permission, valid date parsing, admission ≤ discharge, timezone display and immutable event time separately. Legitimate historical entry does not require unrestricted date acceptance.
+Admission and discharge dates can come from caller input. Define backfill permission, valid date parsing, admission ≤ discharge, timezone display, and immutable event time separately. Legitimate historical entry does not require unrestricted date acceptance.
 
 The inspected ward listing returns nested rooms and beds without pagination, and admission listing is also unpaginated. This can become a response-size and query-cost issue; it is not evidence of a measured production slowdown.
 
 ## Current Assessment and Recommended Design
 
 | Assessment | Concrete implication |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Strengths | Tenant-qualified reference queries and transactional paired writes protect clear ownership and partial-commit boundaries. |
-| Limitations | Availability prechecks, absent-row admission checks and stale transfer/discharge snapshots can race; mutable notes and post-commit audit leave history gaps. |
+| Limitations | Availability prechecks, absent-row admission checks, and stale transfer and discharge snapshots can race; mutable notes and post-commit audit leave history gaps. |
 | Recommended design | Store canonical tenant ownership; enforce one active bed allocation and patient admission with database constraints; claim availability conditionally and serialize allocation changes against current admission ownership. |
-| History | Record allocation transitions and required audit work transactionally; retain original notes/documents with correction semantics rather than overwriting a single string. |
-| Acceptance evidence | Concurrent claims for one bed produce one winner; one patient cannot acquire two active admissions; transfer/discharge races preserve allocation consistency; audit failure remains recoverable. |
+| History | Record allocation transitions and required audit work transactionally; retain original notes and documents with correction semantics rather than overwriting a single string. |
+| Acceptance evidence | Concurrent claims for one bed produce one winner; one patient cannot acquire two active admissions; transfer and discharge races preserve allocation consistency; audit failure remains recoverable. |
 
-The recommended design is a proposal. Define uniqueness over active records, not every historical admission: patients and beds legitimately recur after discharge. Lock resources in a consistent order and use bounded retry for actual serialization/deadlock failures.
+The recommended design is a proposal. Define uniqueness over active records, not every historical admission: patients and beds legitimately recur after discharge. Lock resources in a consistent order and use bounded retry for actual serialization or deadlock failures.
 
 ## Mistakes and Best Practices
 
@@ -101,7 +101,7 @@ The recommended design is a proposal. Define uniqueness over active records, not
 - Calling a post-commit audit event atomic with allocation: record required work in the same commit boundary.
 - Claiming no stuck beds or perfect dispute history from source: prove invariants with concurrency tests and operational reconciliation.
 
-Add reconciliation that compares active allocations to bed states, reports conflicts and requires a deliberate repair policy. Do not silently free a bed merely because one read model temporarily lacks an admission.
+Add reconciliation that compares active allocations to bed states, reports conflicts, and requires a deliberate repair policy. Do not silently free a bed merely because one read model temporarily lacks an admission.
 
 ## Code Evidence
 

@@ -15233,244 +15233,244 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 9 81-lanes-indian-sde-faang and lanes)."
   },
   "projects/INDEX.md": {
-   "sha256": "6cf012cd00a68c50a719eedc7fa44a29e9b04472d592f3d6211f59663951f52e",
+   "sha256": "b368400e3dd171971a9f9def4cec0449faa10ab8db4b64b33bf74a4badb5f377",
    "lines": 41,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 projects portfolio index verified against Docita and MAQ case studies.",
-    "readable": "Full read of 41 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "226 words. Concise map from project chapters to interview-defense themes.",
+    "readable": "Full read of 41 lines (239 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "239 words across 41 lines. Concise map from project chapters to interview-defense themes.",
     "focused": "Canonical projects hub without duplicating case-study internals.",
-    "fast": "8.7 KB raw / 3.1 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 8.7 KB raw / 3.1 KB gzip (fast scan via headings and direct links.)",
     "best": "Marks public case-study boundary and keeps private career data out of repo."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 10A projects/maq and projects/docita 01-14)."
   },
   "projects/docita/01-architecture-decisions.md": {
-   "sha256": "1a107f08abcb8e24f0edd3187375af929203f9ecccc942a607942b916f1af32d",
+   "sha256": "365dc502fb70a3117f11cb4b7d2a20dd051fa1bd30dba8563844c180e819940a",
    "lines": 176,
    "genre": "project",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 Docita healthcare SaaS case study (01 architecture decisions) verified against current PostgreSQL/Node/Next.js patterns.",
-    "readable": "Full read of 176 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "1178 words. Concrete production architecture walkthrough for 01 architecture decisions with real schema and flow detail.",
+    "readable": "Full read of 176 lines (1191 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "1191 words across 176 lines. Concrete production architecture walkthrough for 01 architecture decisions with real schema and flow detail.",
     "focused": "Canonical home for Docita 01 architecture decisions; links to related chapters without duplication.",
-    "fast": "25.5 KB raw / 7.9 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 25.5 KB raw / 7.9 KB gzip (fast scan via headings and direct links.)",
     "best": "Documents concrete failure mode, tenant/security boundary, and operational trade-off for 01 architecture decisions."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 10A projects/maq and projects/docita 01-14)."
   },
   "projects/docita/02-multi-tenancy-rls.md": {
-   "sha256": "f69c69ee392aa07649baa3494f948f10092691bc55838439bb63931ccb03b421",
+   "sha256": "7c971e2412c2c205ab045d5bb1105f979db6f3c577e86350186677acb46dd624",
    "lines": 151,
    "genre": "project",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 Docita healthcare SaaS case study (02 multi tenancy rls) verified against current PostgreSQL/Node/Next.js patterns.",
-    "readable": "Full read of 151 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "1099 words. Concrete production architecture walkthrough for 02 multi tenancy rls with real schema and flow detail.",
+    "readable": "Full read of 151 lines (1111 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "1111 words across 151 lines. Concrete production architecture walkthrough for 02 multi tenancy rls with real schema and flow detail.",
     "focused": "Canonical home for Docita 02 multi tenancy rls; links to related chapters without duplication.",
-    "fast": "22.7 KB raw / 7.4 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 22.7 KB raw / 7.4 KB gzip (fast scan via headings and direct links.)",
     "best": "Documents concrete failure mode, tenant/security boundary, and operational trade-off for 02 multi tenancy rls."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 10A projects/maq and projects/docita 01-14)."
   },
   "projects/docita/03-async-processing.md": {
-   "sha256": "46d9bde9192c662937df7f057cf4b0a77484cc67a10d67631455b8f8e42b9ee0",
-   "lines": 262,
+   "sha256": "644ffae8c9f6699f415bc3407a98063ebb948e3131ec9c2b21dec2c5850ebde8",
+   "lines": 288,
    "genre": "project",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 Docita healthcare SaaS case study (03 async processing) verified against current PostgreSQL/Node/Next.js patterns.",
-    "readable": "Full read of 262 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "2657 words. Concrete production architecture walkthrough for 03 async processing with real schema and flow detail.",
+    "readable": "Full read of 288 lines (2692 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "2692 words across 288 lines. Concrete production architecture walkthrough for 03 async processing with real schema and flow detail.",
     "focused": "Canonical home for Docita 03 async processing; links to related chapters without duplication.",
-    "fast": "43.1 KB raw / 13.1 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 43.1 KB raw / 13.1 KB gzip (fast scan via headings and direct links.)",
     "best": "Documents concrete failure mode, tenant/security boundary, and operational trade-off for 03 async processing."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 10A projects/maq and projects/docita 01-14)."
   },
   "projects/docita/04-payment-flows.md": {
-   "sha256": "c1cf85f5899354324b04359da6d5f298f196f3c25d0d7dbcce75221d87c97cef",
+   "sha256": "6a4cf965d4af46863924e7c9b7dcd7bc8136044af0c420db414071eaf0606bca",
    "lines": 152,
    "genre": "project",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 Docita healthcare SaaS case study (04 payment flows) verified against current PostgreSQL/Node/Next.js patterns.",
-    "readable": "Full read of 152 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "1165 words. Concrete production architecture walkthrough for 04 payment flows with real schema and flow detail.",
+    "readable": "Full read of 152 lines (1189 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "1189 words across 152 lines. Concrete production architecture walkthrough for 04 payment flows with real schema and flow detail.",
     "focused": "Canonical home for Docita 04 payment flows; links to related chapters without duplication.",
-    "fast": "21.7 KB raw / 7.4 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 21.7 KB raw / 7.4 KB gzip (fast scan via headings and direct links.)",
     "best": "Documents concrete failure mode, tenant/security boundary, and operational trade-off for 04 payment flows."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 10A projects/maq and projects/docita 01-14)."
   },
   "projects/docita/05-clinic-workflows.md": {
-   "sha256": "be9c0fd68e5c7cb23e563876e60550dddc811c7ac10d07c029f91449c33c8289",
+   "sha256": "9fbdff1e15dde2f40635a707629a328c719fd3f625d84a213759b340a9dd9f77",
    "lines": 170,
    "genre": "project",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 Docita healthcare SaaS case study (05 clinic workflows) verified against current PostgreSQL/Node/Next.js patterns.",
-    "readable": "Full read of 170 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "1284 words. Concrete production architecture walkthrough for 05 clinic workflows with real schema and flow detail.",
+    "readable": "Full read of 170 lines (1305 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "1305 words across 170 lines. Concrete production architecture walkthrough for 05 clinic workflows with real schema and flow detail.",
     "focused": "Canonical home for Docita 05 clinic workflows; links to related chapters without duplication.",
-    "fast": "24.8 KB raw / 7.8 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 24.8 KB raw / 7.8 KB gzip (fast scan via headings and direct links.)",
     "best": "Documents concrete failure mode, tenant/security boundary, and operational trade-off for 05 clinic workflows."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 10A projects/maq and projects/docita 01-14)."
   },
   "projects/docita/06-whatsapp-integration.md": {
-   "sha256": "cec33dc17934661b2435070bb9aad2c10ef1b17ca7958cd82066fce8e7b8b191",
+   "sha256": "ed7e358d5c67333b784a19bcf12c7c30d964b712d2123c5fd05347b18bbf976e",
    "lines": 151,
    "genre": "project",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 Docita healthcare SaaS case study (06 whatsapp integration) verified against current PostgreSQL/Node/Next.js patterns.",
-    "readable": "Full read of 151 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "1381 words. Concrete production architecture walkthrough for 06 whatsapp integration with real schema and flow detail.",
+    "readable": "Full read of 151 lines (1388 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "1388 words across 151 lines. Concrete production architecture walkthrough for 06 whatsapp integration with real schema and flow detail.",
     "focused": "Canonical home for Docita 06 whatsapp integration; links to related chapters without duplication.",
-    "fast": "21.7 KB raw / 7.3 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 21.7 KB raw / 7.3 KB gzip (fast scan via headings and direct links.)",
     "best": "Documents concrete failure mode, tenant/security boundary, and operational trade-off for 06 whatsapp integration."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 10A projects/maq and projects/docita 01-14)."
   },
   "projects/docita/07-prescription-safety.md": {
-   "sha256": "11dcbc100ba014ff662ba728ca19ca3144e99b202e6e05338d755fdffe6b8e80",
+   "sha256": "ff38a65774cc286dcc855a38dd4f3935aabfb3a456cf9035bcba598993a5b772",
    "lines": 153,
    "genre": "project",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 Docita healthcare SaaS case study (07 prescription safety) verified against current PostgreSQL/Node/Next.js patterns.",
-    "readable": "Full read of 153 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "1183 words. Concrete production architecture walkthrough for 07 prescription safety with real schema and flow detail.",
+    "readable": "Full read of 153 lines (1197 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "1197 words across 153 lines. Concrete production architecture walkthrough for 07 prescription safety with real schema and flow detail.",
     "focused": "Canonical home for Docita 07 prescription safety; links to related chapters without duplication.",
-    "fast": "20.3 KB raw / 6.9 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 20.3 KB raw / 6.9 KB gzip (fast scan via headings and direct links.)",
     "best": "Documents concrete failure mode, tenant/security boundary, and operational trade-off for 07 prescription safety."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 10A projects/maq and projects/docita 01-14)."
   },
   "projects/docita/08-billing-invoicing.md": {
-   "sha256": "b6ae5ea2e01be33cfcb0d8ea2fa73998c92754bcf903a7898c5bdd37d776a400",
+   "sha256": "a8a466639b9df185db5412be30307d3cfd875a4e788d965b8607da4138970fc6",
    "lines": 145,
    "genre": "project",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 Docita healthcare SaaS case study (08 billing invoicing) verified against current PostgreSQL/Node/Next.js patterns.",
-    "readable": "Full read of 145 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "1102 words. Concrete production architecture walkthrough for 08 billing invoicing with real schema and flow detail.",
+    "readable": "Full read of 145 lines (1126 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "1126 words across 145 lines. Concrete production architecture walkthrough for 08 billing invoicing with real schema and flow detail.",
     "focused": "Canonical home for Docita 08 billing invoicing; links to related chapters without duplication.",
-    "fast": "20.1 KB raw / 6.8 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 20.1 KB raw / 6.8 KB gzip (fast scan via headings and direct links.)",
     "best": "Documents concrete failure mode, tenant/security boundary, and operational trade-off for 08 billing invoicing."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 10A projects/maq and projects/docita 01-14)."
   },
   "projects/docita/09-subscription-system.md": {
-   "sha256": "626596b6d7c688db77307634b2a26a2971a80704d2bb4dea267ffa45c0150911",
-   "lines": 153,
+   "sha256": "1ad89d8e60a3fe179eab5e9219a951705f43e6905729850b37c2e97aa4ab307b",
+   "lines": 155,
    "genre": "project",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 Docita healthcare SaaS case study (09 subscription system) verified against current PostgreSQL/Node/Next.js patterns.",
-    "readable": "Full read of 153 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "1319 words. Concrete production architecture walkthrough for 09 subscription system with real schema and flow detail.",
+    "readable": "Full read of 155 lines (1329 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "1329 words across 155 lines. Concrete production architecture walkthrough for 09 subscription system with real schema and flow detail.",
     "focused": "Canonical home for Docita 09 subscription system; links to related chapters without duplication.",
-    "fast": "21.8 KB raw / 7.5 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 21.8 KB raw / 7.5 KB gzip (fast scan via headings and direct links.)",
     "best": "Documents concrete failure mode, tenant/security boundary, and operational trade-off for 09 subscription system."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 10A projects/maq and projects/docita 01-14)."
   },
   "projects/docita/10-deployment-infrastructure.md": {
-   "sha256": "ba4ced5d32cae5785712332da9a6848437dcd393f633d5793aab92de2a073cb5",
-   "lines": 438,
+   "sha256": "5bd8b2db5b201f95546dc267ceb578228f1112486faa89c4cd0d3f7706cbbf60",
+   "lines": 466,
    "genre": "project",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 Docita healthcare SaaS case study (10 deployment infrastructure) verified against current PostgreSQL/Node/Next.js patterns.",
-    "readable": "Full read of 438 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "3314 words. Concrete production architecture walkthrough for 10 deployment infrastructure with real schema and flow detail.",
+    "readable": "Full read of 466 lines (3428 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "3428 words across 466 lines. Concrete production architecture walkthrough for 10 deployment infrastructure with real schema and flow detail.",
     "focused": "Canonical home for Docita 10 deployment infrastructure; links to related chapters without duplication.",
-    "fast": "54.6 KB raw / 17.1 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 54.6 KB raw / 17.1 KB gzip (fast scan via headings and direct links.)",
     "best": "Documents concrete failure mode, tenant/security boundary, and operational trade-off for 10 deployment infrastructure."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 10A projects/maq and projects/docita 01-14)."
   },
   "projects/docita/11-insurance-claims.md": {
-   "sha256": "89b261ce93786cce8f30680acfee6ee1e6e7282689e0b2d7bfca66d464490834",
+   "sha256": "ab1ae6bd921ac1e4eae1c3e6c17266ebf00445ac5a03b63a82e7a68e4fbde75c",
    "lines": 129,
    "genre": "project",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 Docita healthcare SaaS case study (11 insurance claims) verified against current PostgreSQL/Node/Next.js patterns.",
-    "readable": "Full read of 129 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "1100 words. Concrete production architecture walkthrough for 11 insurance claims with real schema and flow detail.",
+    "readable": "Full read of 129 lines (1128 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "1128 words across 129 lines. Concrete production architecture walkthrough for 11 insurance claims with real schema and flow detail.",
     "focused": "Canonical home for Docita 11 insurance claims; links to related chapters without duplication.",
-    "fast": "19.3 KB raw / 6.7 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 19.3 KB raw / 6.7 KB gzip (fast scan via headings and direct links.)",
     "best": "Documents concrete failure mode, tenant/security boundary, and operational trade-off for 11 insurance claims."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 10A projects/maq and projects/docita 01-14)."
   },
   "projects/docita/12-ipd-inpatient.md": {
-   "sha256": "a67ba51238aa9b57817ca48bc8ccd5b616ff387716f232190723c0e02166d46c",
+   "sha256": "0a86bb0a441d3d1b9bed6f63aa129cbf94445343e1843b9870ded00869885e01",
    "lines": 126,
    "genre": "project",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 Docita healthcare SaaS case study (12 ipd inpatient) verified against current PostgreSQL/Node/Next.js patterns.",
-    "readable": "Full read of 126 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "929 words. Concrete production architecture walkthrough for 12 ipd inpatient with real schema and flow detail.",
+    "readable": "Full read of 126 lines (946 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "946 words across 126 lines. Concrete production architecture walkthrough for 12 ipd inpatient with real schema and flow detail.",
     "focused": "Canonical home for Docita 12 ipd inpatient; links to related chapters without duplication.",
-    "fast": "17.0 KB raw / 6.0 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 17.0 KB raw / 6.0 KB gzip (fast scan via headings and direct links.)",
     "best": "Documents concrete failure mode, tenant/security boundary, and operational trade-off for 12 ipd inpatient."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 10A projects/maq and projects/docita 01-14)."
   },
   "projects/docita/13-inventory.md": {
-   "sha256": "088e70e6186dbee08c9c48f41b7b3b435853ba89b0918125a2bddbbc317f69d4",
+   "sha256": "404e9704552045c8595764626c2be8941dc86d07f2020eb2a79600a24669edc3",
    "lines": 157,
    "genre": "project",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 Docita healthcare SaaS case study (13 inventory) verified against current PostgreSQL/Node/Next.js patterns.",
-    "readable": "Full read of 157 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "1115 words. Concrete production architecture walkthrough for 13 inventory with real schema and flow detail.",
+    "readable": "Full read of 157 lines (1138 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "1138 words across 157 lines. Concrete production architecture walkthrough for 13 inventory with real schema and flow detail.",
     "focused": "Canonical home for Docita 13 inventory; links to related chapters without duplication.",
-    "fast": "21.2 KB raw / 7.3 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 21.2 KB raw / 7.3 KB gzip (fast scan via headings and direct links.)",
     "best": "Documents concrete failure mode, tenant/security boundary, and operational trade-off for 13 inventory."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 10A projects/maq and projects/docita 01-14)."
   },
   "projects/docita/14-analytics-and-dashboards.md": {
-   "sha256": "6ee316f78b75f67b1272f15d7e9882b01a633ae2b9e1c25976e1ac9bc89f4e9b",
-   "lines": 350,
+   "sha256": "1062694a93d089ed65858b8b8718e5bf546e1baa3201780da9685bba6299e12c",
+   "lines": 364,
    "genre": "project",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 Docita healthcare SaaS case study (14 analytics and dashboards) verified against current PostgreSQL/Node/Next.js patterns.",
-    "readable": "Full read of 350 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "3227 words. Concrete production architecture walkthrough for 14 analytics and dashboards with real schema and flow detail.",
+    "readable": "Full read of 364 lines (3290 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "3290 words across 364 lines. Concrete production architecture walkthrough for 14 analytics and dashboards with real schema and flow detail.",
     "focused": "Canonical home for Docita 14 analytics and dashboards; links to related chapters without duplication.",
-    "fast": "48.4 KB raw / 15.4 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 48.4 KB raw / 15.4 KB gzip (fast scan via headings and direct links.)",
     "best": "Documents concrete failure mode, tenant/security boundary, and operational trade-off for 14 analytics and dashboards."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 10A projects/maq and projects/docita 01-14)."
   },
   "projects/docita/15-doctors-verification-and-public-booking.md": {
    "sha256": "cf1bffbfa42c613de37948748a02a8f6983312af5ddb3396824eb7407afbb9cb",
@@ -15681,20 +15681,20 @@
    "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
   },
   "projects/docita/INDEX.md": {
-   "sha256": "453cd7e124f76fba675d64cd9660a37013799c6d1b1bc01be78f7e7704298343",
-   "lines": 84,
+   "sha256": "b6bff1ef8c06cb34a6c23d294da5507921bc3f5e40b4dd46a051753af89320c0",
+   "lines": 94,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 Docita case-study index verified against all 27 chapters and REVISION.md.",
-    "readable": "Full read of 84 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "741 words. Structured reading order across all 27 Docita chapters plus REVISION.md.",
+    "readable": "Full read of 94 lines (756 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "756 words across 94 lines. Structured reading order across all 27 Docita chapters plus REVISION.md.",
     "focused": "Canonical index for projects/docita without duplicating chapter prose.",
-    "fast": "15.3 KB raw / 5.5 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 15.3 KB raw / 5.5 KB gzip (fast scan via headings and direct links.)",
     "best": "Separates engineering architecture boundary from operating-evidence assumptions."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 10A projects/maq and projects/docita 01-14)."
   },
   "projects/docita/REVISION.md": {
    "sha256": "5a0c7544b106bb0d7c1fa5555ec3f8a4816890fefc6e25562094435e2e734478",
@@ -15713,52 +15713,52 @@
    "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
   },
   "projects/maq/01-product-engineering.md": {
-   "sha256": "dfb97b343a0e8ee5a3f90e51db1f6a3259b9ff9fa034d0b41fc76de26f2f71d9",
-   "lines": 142,
+   "sha256": "e9b172780f548dd3aae0d48ca7021b94991f8f29e2f4b50e1abdcf0a986fb4d7",
+   "lines": 146,
    "genre": "project",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 MAQ Software product-engineering case study (01-product-engineering) verified against public-repo compliance rules.",
-    "readable": "Full read of 142 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "1711 words. Focused senior-level narrative for 01-product-engineering without redundant framing.",
+    "readable": "Full read of 146 lines (1752 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "1752 words across 146 lines. Focused senior-level narrative for 01-product-engineering without redundant framing.",
     "focused": "Canonical home for projects/maq/01-product-engineering.",
-    "fast": "22.2 KB raw / 8.3 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 22.2 KB raw / 8.3 KB gzip (fast scan via headings and direct links.)",
     "best": "Captures delivery trade-off, cross-team dependency risk, and production boundary."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 10A projects/maq and projects/docita 01-14)."
   },
   "projects/maq/INDEX.md": {
-   "sha256": "cd1a920d4e6a8b200a835544fd5b0867dc264f07a48a8bd1f53ece7c89a2c21c",
+   "sha256": "0216dc89cc8d8ff9a4188ecdf8fc9a4deae7b9e589464a1f665d0552c1dddc37",
    "lines": 18,
    "genre": "index",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 MAQ Software product-engineering case study (INDEX) verified against public-repo compliance rules.",
-    "readable": "Full read of 18 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "111 words. Focused senior-level narrative for INDEX without redundant framing.",
+    "readable": "Full read of 18 lines (114 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "114 words across 18 lines. Focused senior-level narrative for INDEX without redundant framing.",
     "focused": "Canonical home for projects/maq/INDEX.",
-    "fast": "6.8 KB raw / 2.4 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 6.8 KB raw / 2.4 KB gzip (fast scan via headings and direct links.)",
     "best": "Captures delivery trade-off, cross-team dependency risk, and production boundary."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 10A projects/maq and projects/docita 01-14)."
   },
   "projects/maq/REVISION.md": {
-   "sha256": "7bdfe45636a979db61a26c10b2007f4f63c90287e9224015647ef4af6b27a1d9",
+   "sha256": "992835ef9609fe811442d04099814bbbf46d70229aaab8fec951e5c130c259a7",
    "lines": 136,
    "genre": "revision",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 MAQ Software product-engineering case study (REVISION) verified against public-repo compliance rules.",
-    "readable": "Full read of 136 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "1136 words. Focused senior-level narrative for REVISION without redundant framing.",
+    "readable": "Full read of 136 lines (1153 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "1153 words across 136 lines. Focused senior-level narrative for REVISION without redundant framing.",
     "focused": "Canonical home for projects/maq/REVISION.",
-    "fast": "15.4 KB raw / 5.6 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 15.4 KB raw / 5.6 KB gzip (fast scan via headings and direct links.)",
     "best": "Captures delivery trade-off, cross-team dependency risk, and production boundary."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 10A projects/maq and projects/docita 01-14)."
   },
   "search.md": {
    "sha256": "856da3faa35f15fcabb2720da7a75c107b811f32916406d4e2eb6afe0cf0ae83",

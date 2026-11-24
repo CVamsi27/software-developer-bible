@@ -1,19 +1,21 @@
-# 03 — Background Jobs: Commit Intent, Claim Work and Handle Repeated Effects
+# 03 — Background Jobs: Commit Intent, Claim Work, and Handle Repeated Effects
 
 [![Role priority](https://img.shields.io/badge/role--priority-Essential-brightgreen)](../../docs/topic-importance.md)
 [![General importance](https://img.shields.io/badge/general--importance-Important-blue)](../../docs/topic-importance.md)
 
 
 
-Suppose a prescription must produce a PDF. Saving the prescription and then scheduling its PDF in a separate operation creates a gap: the first write can commit and the second can fail. Writing durable intent in the same database transaction closes that particular gap. It does not make the PDF generation or notification occur exactly once.
+Suppose a prescription must produce a Portable Document Format (PDF) document. Saving the prescription and then scheduling its PDF in a separate operation creates a gap: the first write can commit and the second can fail. Writing durable intent in the same database transaction closes that particular gap. It does not make the PDF generation or notification occur exactly once.
 
 ## Definition
 
 A **job queue** stores work for a worker to execute. A **transactional outbox** stores an event alongside the business change that caused it, so a crash between database commit and notification does not erase the intent.
 
-> **Textbook Definition:** A durable job queue persists work for later execution; a transactional outbox atomically persists publication intent with a local business change. Both require explicit claim, retry and effect-recovery protocols.
+> **Textbook Definition:** A durable job queue persists work for later execution; a transactional outbox atomically persists publication intent with a local business change. Both require explicit claim, retry, and effect-recovery protocols.
 
-This case starts from source inspected on **2 October 2026**. A targeted **9 October 2026** recheck at local HEAD `dc5a97dc3` updated the relay acknowledgment; unrelated working-tree changes were present. A **15 October 2026** refresh inspected clean local HEAD `4e3032c2d0fd9d2ee74e7c74536fefef454d5a65` for queue claim fencing, outbox append and relay behavior, and ran the focused queue/outbox unit tests. The earlier dates remain historical inspections; this scoped refresh is not a production audit. Throughput, latency, cost and delivery outcomes were not measured.
+This case starts from source inspected on **2 October 2026**. A targeted **9 October 2026** recheck at local HEAD `dc5a97dc3` updated the relay acknowledgment; unrelated working-tree changes were present. A **15 October 2026** refresh inspected clean local HEAD `4e3032c2d0fd9d2ee74e7c74536fefef454d5a65` for queue claim fencing, outbox append, and relay behavior, and ran the focused queue and outbox unit tests.
+
+The earlier dates remain historical inspections; this scoped refresh is not a production audit. Throughput, latency, cost, and delivery outcomes were not measured.
 
 ## First Principles
 
@@ -31,13 +33,13 @@ consumer: apply the effect safely, including repeated attempts
 
 PostgreSQL can store business data and pending work in one transaction without introducing another queue service. That reduces a particular dual-write problem and reuses an existing operational system.
 
-It still adds database load, indexes, cleanup, recovery and monitoring work. Queue contention can affect interactive queries. A broker can improve specialized routing, buffering or throughput, but a broker alone also does not make a separate database write atomic: an outbox or another coordination protocol may still be required.
+It still adds database load, indexes, cleanup, recovery, and monitoring work. Queue contention can affect interactive queries. A broker can improve specialized routing, buffering, or throughput, but a broker alone also does not make a separate database write atomic: an outbox or another coordination protocol may still be required.
 
-Choose from measured workload, acceptable delay, failure recovery and operational capacity. Fixed comparisons such as “Postgres supports 1k jobs/sec” or “Kafka costs $100” are not portable design limits.
+Choose from measured workload, acceptable delay, failure recovery, and operational capacity. Fixed comparisons such as "PostgreSQL supports 1,000 jobs per second" or "Kafka costs $100" are not portable design limits.
 
 ## How the Queue Claims One Job
 
-The repository claims a due job, changes its state and records a fresh random `claimToken` in **one SQL statement**. This is the current source query structure; `${name}` and `${claimToken}` are bound Prisma tagged-template values, not string concatenation:
+The repository claims a due job, changes its state, and records a fresh random `claimToken` in **one Structured Query Language (SQL) statement**. This is the current source query structure; `${name}` and `${claimToken}` are bound Prisma tagged-template values, not string concatenation:
 
 ```sql
 UPDATE "QueueJob"
@@ -69,13 +71,13 @@ The lock protects the claim while the database transaction holds it. It does not
 | 4 | Conditionally write `COMPLETED` after handler success | A lost claim cannot acknowledge; a crash after the effect permits repetition |
 | 5 | Conditionally increment attempts and delay or dead-letter on failure | Retry does not undo an already-applied effect |
 
-The source polls every **2 seconds**, prevents overlapping polls for the same job name within one service instance and claims one job per poll. A slow handler stretches effective processing capacity; a two-second interval is not a guaranteed two-second completion latency.
+The source polls every **2 seconds**, prevents overlapping polls for the same job name within one service instance, and claims one job per poll. A slow handler stretches effective processing capacity; a two-second interval is not a guaranteed two-second completion latency.
 
 ### A Separate Worker Must Enter the Job's Clinic
 
-The API can enqueue the correct `clinicId`, yet a separate worker can fail with “No tenant context available.” The request's `AsyncLocalStorage` store lives in the API process; serializing a job does not carry that store into another process. Passing `clinicId` as a service argument also does not populate the context read by the application’s tenant-aware database extension.
+The Application Programming Interface (API) process can enqueue the correct `clinicId`, yet a separate worker can fail with "No tenant context available." The request's `AsyncLocalStorage` store lives in the API process; serializing a job does not carry that store into another process. Passing `clinicId` as a service argument also does not populate the context read by the application's tenant-aware database extension.
 
-The published source continuation at `6465632a7` includes the reviewed `BasePdfProcessor` correction. It enters `runWithTenant({ clinicId }, async () => …)` around the awaited document read, PDF rendering and upload/persist operation. Both invoice and prescription processors inherit that path:
+The published source continuation at `6465632a7` includes the reviewed `BasePdfProcessor` correction. It enters `runWithTenant({ clinicId }, async () => …)` around the awaited document read, PDF rendering, and upload-and-persist operation. Both invoice and prescription processors inherit that path:
 
 ```text
 durable job carries clinicId + documentId
@@ -84,17 +86,23 @@ durable job carries clinicId + documentId
   → leave that scope; restore the preceding context on success or failure
 ```
 
-Creating a fresh scope replaces any inherited caller clinic or bypass flag for that operation; it does not merge those privileges into the job context. The existing `runUnrestricted` calls remain narrowly around `PdfJob` status writes before or after domain work. They do not authorize a bypass around the document read, render or persistence. Focused processor tests inspect the context across awaited operations and verify restoration when work succeeds or throws.
+Creating a fresh scope replaces any inherited caller clinic or bypass flag for that operation; it does not merge those privileges into the job context.
 
-This is **application tenant context**, not a new PostgreSQL row-level-security transaction. The correction does not execute `SET LOCAL`, change the database role or establish enforcement under a non-owner role. Those connection/transaction and policy boundaries remain separate checks in [tenant isolation](02-multi-tenancy-rls.md). For the reproduced missing-context failure and corrected separate-worker artifact results, see the [operating-evidence workbook](27-operating-evidence-workbook.md).
+The existing `runUnrestricted` calls remain narrowly around `PdfJob` status writes before or after domain work. They do not authorize a bypass around the document read, render, or persistence. Focused processor tests inspect the context across awaited operations and verify restoration when work succeeds or throws.
+
+This is **application tenant context**, not a new PostgreSQL row-level-security transaction. The correction does not execute `SET LOCAL`, change the database role, or establish enforcement under a non-owner role. Those connection, transaction, and policy boundaries remain separate checks in [tenant isolation](02-multi-tenancy-rls.md). For the reproduced missing-context failure and corrected separate-worker artifact results, see the [operating-evidence workbook](27-operating-evidence-workbook.md).
 
 ### A Downloaded PDF Does Not Prove Worker Completion
 
-A **28 October 2026 source check** distinguishes three PDF paths. With the local provider's `supportsSignedUrls = false`, the protected staff invoice and prescription `getPdf` methods regenerate the document and return bytes, without using the record's stored `pdfUrl`. A `200` PDF response can therefore coexist with a broken stored reference or upload-directory mapping. It exercises the selected authorization/read/render path, not stored-object retrieval or a completed background job.
+A **28 October 2026 source check** distinguishes three PDF paths. With the local provider's `supportsSignedUrls = false`, the protected staff invoice and prescription `getPdf` methods regenerate the document and return bytes, without using the record's stored `pdfUrl`.
 
-A capability-authorized patient proxy verifies the signed document type/id, resolves the record's clinic and enters that tenant scope. When the record already has a stored key, this path calls `getObject(key)`. A record without a stored reference can select a generation fallback; a nonempty reference whose file is missing instead propagates an object-read error. Proving stored-artifact retrieval therefore requires an existing key and the actual object-read branch. By contrast, `async=true` enqueues a PDF job and returns `202 Accepted`: correlate job completion, the persisted reference and authorized access to its intended bytes before claiming the asynchronous effect completed.
+A `200` PDF response can therefore coexist with a broken stored reference or upload-directory mapping. It exercises the selected authorization, read, and render path, not stored-object retrieval or a completed background job.
 
-An **object key** such as `seed/invoices/<synthetic-id>.pdf` identifies a file within the provider's storage namespace. The browser-facing `/uploads/seed/invoices/<synthetic-id>.pdf` adds a serving prefix; it is not the same input to `getObject`. Local storage resolves keys under its upload root, so correct keys still need a coherent API/worker/seed directory mapping. See [document storage and authority](19-documents-and-uploads.md) for that mechanism.
+A capability-authorized patient proxy verifies the signed document type and identifier, resolves the record's clinic, and enters that tenant scope. When the record already has a stored key, this path calls `getObject(key)`. A record without a stored reference can select a generation fallback; a nonempty reference whose file is missing instead propagates an object-read error.
+
+By contrast, `async=true` enqueues a PDF job and returns `202 Accepted`: correlate job completion, the persisted reference, and authorized access to its intended bytes before claiming the asynchronous effect completed. Proving stored-artifact retrieval requires an existing key and the actual object-read branch.
+
+An **object key** such as `seed/invoices/<synthetic-id>.pdf` identifies a file within the provider's storage namespace. The browser-facing `/uploads/seed/invoices/<synthetic-id>.pdf` adds a serving prefix; it is not the same input to `getObject`. Local storage resolves keys under its upload root, so correct keys still need a coherent API, worker, and seed directory mapping. See [document storage and authority](19-documents-and-uploads.md) for that mechanism.
 
 The seed-only corrections published in the same source continuation persist bare seed keys and supply the required `doctorName`. They repair fixture inputs; they do not change these production download branches or establish worker completion.
 
@@ -108,19 +116,25 @@ Two jobs with the same logical key can both find no completed predecessor and ru
 
 The queue defaults to **5 attempts**. Its failure path uses a one-second exponential base with a sixty-second cap. Although the options interface accepts a backoff setting, this inspected failure path uses its own constants; do not assume every supplied delay is honored.
 
-Jobs `ACTIVE` for more than **10 minutes** are candidates for recovery. The repository moves eligible rows to `DELAYED`, increments attempts and uses a **30-second** recovery delay; exhausted stale rows become `FAILED`. Ordinary handler failures can instead reach `DEAD_LETTERED`.
+Jobs `ACTIVE` for more than **10 minutes** are candidates for recovery. The repository moves eligible rows to `DELAYED`, increments attempts, and uses a **30-second** recovery delay; exhausted stale rows become `FAILED`. Ordinary handler failures can instead reach `DEAD_LETTERED`.
 
-A long-running worker may still be alive when a timeout expires. Requeuing its job can permit another worker to begin while the first continues. The **15 October** source now fences acknowledgments: `QueueJobLifecycle.acknowledgeClaim` requires a token, and the repository updates only the matching `(id, claimToken)` row while its status is `ACTIVE`. Stale recovery clears the old token; a replacement claim receives a new one. Completion, retry, dead-letter and duplicate-skip acknowledgments use this same conditional path, so a late worker cannot overwrite its replacement's job state.
+A long-running worker may still be alive when a timeout expires. Requeuing its job can permit another worker to begin while the first continues. The **15 October** source now fences acknowledgments: `QueueJobLifecycle.acknowledgeClaim` requires a token, and the repository updates only the matching `(id, claimToken)` row while its status is `ACTIVE`.
 
-The focused queue unit tests passed for lost completion/retry acknowledgments, a missing token and the duplicate-skip path. These use repository mocks; they do not exercise competing PostgreSQL connections. Fencing a local acknowledgment also does not cancel the old handler or prevent it from repeating a provider effect. The inspected recovery protocol has a fixed stale threshold, not a renewable per-job lease.
+Stale recovery clears the old token; a replacement claim receives a new one. Completion, retry, dead-letter, and duplicate-skip acknowledgments use this same conditional path, so a late worker cannot overwrite its replacement's job state.
 
-`interval.unref()` lets a timer stop keeping the Node process alive. It does not cancel running handlers or drain them. A **28 October refresh at canonical source `f3fddffc0`** found a newer shutdown implementation: it marks the service as shutting down, clears polling timers and awaits the active poll promises before persistence closes. The focused `postgres-queue-shutdown.spec.ts` exercises those ownership/drain paths. The worker still applies an outer 15-second exit bound, so a long external effect can outlive that grace period; retain stale-claim recovery and effect idempotency rather than promising every shutdown completes every job.
+The focused queue unit tests passed for lost completion and retry acknowledgments, a missing token, and the duplicate-skip path. These use repository mocks; they do not exercise competing PostgreSQL connections. Fencing a local acknowledgment also does not cancel the old handler or prevent it from repeating a provider effect. The inspected recovery protocol has a fixed stale threshold, not a renewable per-job lease.
 
-## Separate a Default Retry Budget From the Caller’s Policy
+`interval.unref()` lets a timer stop keeping the Node process alive. It does not cancel running handlers or drain them. A **28 October refresh at canonical source `f3fddffc0`** found a newer shutdown implementation: it marks the service as shutting down, clears polling timers, and awaits the active poll promises before persistence closes.
 
-The generic PostgreSQL queue defaults to five attempts. PDF enqueue explicitly requests three; a five-attempt headline would therefore misdescribe the PDF path. The generic retry loop derives delay from its own one-second exponential base and caps it at 60 seconds. A caller's requested backoff option is not evidence that this backend honors that option. Record the actual persisted attempt limit and observed retry timestamps for the selected job type.
+The focused `postgres-queue-shutdown.spec.ts` exercises those ownership and drain paths. The worker still applies an outer 15-second exit bound, so a long external effect can outlive that grace period; retain stale-claim recovery and effect idempotency rather than promising every shutdown completes every job.
 
-The outbox has its own eight-attempt policy and five-second schedule. Its nominal batch cap is 200, but the enabled RLS path limits the batch to the production pool size minus two: 15 minus two gives 13. That reserves database slots; it does not guarantee that 13 slow subscribers finish within the dispatch timeout. See [connection and arrival budgets](23-hypothetical-clinic-metrics.md#put-a-connection-budget-around-autoscaling).
+## Separate a Default Retry Budget From the Caller's Policy
+
+The generic PostgreSQL queue defaults to five attempts. PDF enqueue explicitly requests three; a five-attempt headline would therefore misdescribe the PDF path. The generic retry loop derives delay from its own one-second exponential base and caps it at 60 seconds.
+
+A caller's requested backoff option is not evidence that this backend honors that option. Record the actual persisted attempt limit and observed retry timestamps for the selected job type.
+
+The outbox has its own eight-attempt policy and five-second schedule. Its nominal batch cap is 200, but when Row-Level Security (RLS) is enabled, the path limits the batch to the production pool size minus two: 15 minus two gives 13. That reserves database slots; it does not guarantee that 13 slow subscribers finish within the dispatch timeout. See [connection and arrival budgets](23-hypothetical-clinic-metrics.md#put-a-connection-budget-around-autoscaling).
 
 ```text
 business transaction -> durable outbox/queue row -> claimed by current owner
@@ -140,7 +154,7 @@ Graceful stop: stop new claims -> await active polls -> close persistence
 Forced exit: bounded grace ends -> later recovery; remote effect may be uncertain
 ```
 
-A claim token fences a stale worker's local acknowledgment. It cannot retract an email, payment-provider action or uploaded object that already happened. Define a stable logical-effect key and reconciliation behavior at that external boundary.
+A claim token fences a stale worker's local acknowledgment. It cannot retract an email, payment-provider action, or uploaded object that already happened. Define a stable logical-effect key and reconciliation behavior at that external boundary.
 
 ## How the Outbox Couples an Event to a Business Write
 
@@ -157,13 +171,19 @@ later: relay attempts dispatch → records result
 
 The inspected generic queue `enqueue` does not take a transaction client parameter. Likewise, `PdfJobService.enqueue` creates its PDF status row and subsequently calls the queue; those two calls are not explicitly enclosed in one transaction there. Do not claim every producer is transactional merely because the queue uses PostgreSQL. Trace the actual call path and ambient transaction routing when evaluating each producer.
 
-The outbox schema gives its optional idempotency key a unique constraint. The **15 October** append service uses `createMany` with `skipDuplicates: true` for keyed events; it no longer catches `P2002` inside the business transaction. A duplicate produces no new intent row without relying on recovery from an aborted PostgreSQL statement. This is producer-side deduplication, not effect-level idempotency. Verify the complete business transaction and actual database behavior for the chosen producer; the focused tests here did not exercise duplicate append against PostgreSQL.
+The outbox schema gives its optional idempotency key a unique constraint. The **15 October** append service uses `createMany` with `skipDuplicates: true` for keyed events; it no longer catches `P2002` inside the business transaction. A duplicate produces no new intent row without relying on recovery from an aborted PostgreSQL statement.
+
+This is producer-side deduplication, not effect-level idempotency. Verify the complete business transaction and actual database behavior for the chosen producer; the focused tests here did not exercise duplicate append against PostgreSQL.
 
 ## What the Current Relay Actually Acknowledges
 
-The relay schedule is **every 5 seconds** in `CRON_SCHEDULES.OUTBOX_RELAY`. It selects up to **200** eligible rows, with a lower pool-aware batch size when RLS is enabled, increments attempts and dispatches each through the process-local EventEmitter2. It rejects a payload clinic that differs from the persisted clinic, restores tenant context and, when enabled, opens a fresh RLS-scoped transaction for clinic subscribers. It adds outbox, aggregate and clinic identifiers to the payload, awaits `emitAsync` with a **30-second dispatch timeout**, then records `processedAt` after fulfillment. These mechanisms still need real subscriber and database-role integration checks.
+The relay schedule is **every 5 seconds** in `CRON_SCHEDULES.OUTBOX_RELAY`. It selects up to **200** eligible rows, with a lower pool-aware batch size when RLS is enabled, increments attempts, and dispatches each through the process-local EventEmitter2. It rejects a payload clinic that differs from the persisted clinic, restores tenant context, and, when enabled, opens a fresh RLS-scoped transaction for clinic subscribers.
 
-A local running flag avoids overlapping drains in one instance. A transaction-scoped PostgreSQL advisory lock coordinates instances that use the same lock convention. The helper holds that lock while awaiting its callback, but passes no transaction client to the callback; the relay uses the Prisma service. Do not assume the advisory lock proves all callback queries use the lock transaction or that external work becomes transactional.
+It adds outbox, aggregate, and clinic identifiers to the payload, awaits `emitAsync` with a **30-second dispatch timeout**, then records `processedAt` after fulfillment. These mechanisms still need real subscriber and database-role integration checks.
+
+A local running flag avoids overlapping drains in one instance. A transaction-scoped PostgreSQL advisory lock coordinates instances that use the same lock convention. The helper holds that lock while awaiting its callback, but passes no transaction client to the callback; the relay uses the Prisma service.
+
+Do not assume the advisory lock proves all callback queries use the lock transaction or that external work becomes transactional.
 
 ### Acknowledgment Depends on the Listener Contract
 
@@ -178,11 +198,15 @@ Trace one event whose listener returns a promise for PDF creation:
 | Dispatch reaches the timeout | Record failure and schedule retry | The original work keeps running unless separately cancelled |
 | No listener is registered | The current `hasListeners` guard throws; retain retryable intent | One registered listener does not prove every required consumer is present |
 
-Awaiting the emitter is an improvement, but the listener must return the promise for its required work and propagate its failure. [Nest's event listener options](https://docs.nestjs.com/techniques/events) default to `suppressErrors: true`: a listener error can be logged rather than rethrown. Required consumers therefore need an explicit error-propagation contract, verified through the actual Nest wiring. The extracted-source check did not exercise that wiring.
+Awaiting the emitter is an improvement, but the listener must return the promise for its required work and propagate its failure. [Nest's event listener options](https://docs.nestjs.com/techniques/events) default to `suppressErrors: true`: a listener error can be logged rather than rethrown.
+
+Required consumers therefore need an explicit error-propagation contract, verified through the actual Nest wiring. The extracted-source check did not exercise that wiring.
 
 EventEmitter2 combines listener promises with `Promise.all`, which rejects on the first rejection; it does not cancel or wait for all remaining work on that failure path. The relay's timeout also rejects without cancelling the underlying promise. A slow first attempt can still complete after a retry starts, so consumers need effect-level idempotency. An in-process emitter reaches listeners in that process; it does not broadcast to every replica.
 
-On a caught dispatch error, the relay records the error and schedules exponential retry with a **5-second base**, **5-minute cap** and **8-attempt ceiling**. The outer `Promise.allSettled` lets separate **row tasks** finish independently; it does not change a row's listener semantics. Exhausted retries, missing handlers, swallowed errors and replay still require operational recovery. A processed marker establishes only the completion promised by the listener contract, not automatically an external provider's durable receipt.
+On a caught dispatch error, the relay records the error and schedules exponential retry with a **5-second base**, **5-minute cap**, and **8-attempt ceiling**. The outer `Promise.allSettled` lets separate **row tasks** finish independently; it does not change a row's listener semantics.
+
+Exhausted retries, missing handlers, swallowed errors, and replay still require operational recovery. A processed marker establishes only the completion promised by the listener contract, not automatically an external provider's durable receipt.
 
 Manual queue dead-letter replay remains the recovery path in `DlqController` and `PostgresQueueService.replayDeadLettered`; the automatic replay policy helper is inert without worker wiring. Some appointment command events still have allowed direct emits. Do not generalize the outbox's durable intent to every application event or describe automatic dead-letter recovery as active.
 
@@ -193,7 +217,7 @@ Manual queue dead-letter replay remains the recovery path in `DlqController` and
 | Business change must retain work intent | Same-transaction enqueue or outbox append | Verify every producer uses the transaction |
 | Multiple workers should claim different rows | Atomic state transition with row locks | Recovery can still repeat work |
 | Repeated provider calls must not charge or send twice | Effect-level idempotency | Provider retention and ambiguous outcomes |
-| Long jobs must survive restarts safely | Lease/heartbeat and claim ownership protocol | An expired worker may still perform an effect |
+| Long jobs must survive restarts safely | Lease and heartbeat plus a claim ownership protocol | An expired worker may still perform an effect |
 | Relay completion must mean consumer completion | Awaited, failure-reporting handoff to a durable consumer | Successful handoff is not necessarily final effect completion |
 | Sensitive events need asynchronous processing | Store minimal identifiers; validate worker scope | IDs and metadata can still be sensitive |
 
@@ -206,26 +230,28 @@ Do not put plaintext health information into generic event payloads or error mes
 - Claiming every PostgreSQL enqueue shares the business transaction.
 - Treating a synchronous emitter return as an async consumer acknowledgment.
 - Describing a polling interval as an end-to-end latency guarantee.
-- Advertising zero operational cost, zero lost events or harmless duplicates without measured evidence.
+- Advertising zero operational cost, zero lost events, or harmless duplicates without measured evidence.
 
 ## Best Practices
 
-Test the crash boundaries: before commit, after commit, after claim, after the external effect and before completion. Include concurrent duplicate jobs, a long handler crossing the stale timeout, exhausted retries, shutdown and tenant scope. Observe backlog age, active duration, retry/dead-letter rates and recovery behavior. Before replaying a failed item, establish whether its effect already occurred.
+Test the crash boundaries: before commit, after commit, after claim, after the external effect, and before completion. Include concurrent duplicate jobs, a long handler crossing the stale timeout, exhausted retries, shutdown, and tenant scope.
+
+Observe backlog age, active duration, retry and dead-letter rates, and recovery behavior. Before replaying a failed item, establish whether its effect already occurred.
 
 ## Current Assessment and Recommended Design
 
 | Assessment | What it means here |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Current strengths | Atomic job claiming, token-fenced acknowledgments, delayed retries and an outbox provide useful building blocks. |
-| Current limitations | Fixed stale recovery, producer transaction boundaries, direct-emission exceptions, consumer completeness/error propagation and non-cancelled effects leave failure gaps; automatic DLQ replay is not wired. |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Current strengths | Atomic job claiming, token-fenced acknowledgments, delayed retries, and an outbox provide useful building blocks. |
+| Current limitations | Fixed stale recovery, producer transaction boundaries, direct-emission exceptions, consumer completeness and error propagation, and non-cancelled effects leave failure gaps; automatic dead-letter queue (DLQ) replay is not wired. |
 | Recommended design | Verify producer transactions and current fencing with real database concurrency; consider bounded lease renewal where needed; make consumer effects idempotent under stable operation keys. |
-| Evidence needed | Fault injection at claim/effect/ack boundaries preserves required work; duplicate delivery produces one business effect; competing database connections confirm an expired claimant cannot acknowledge a replacement claim. |
+| Evidence needed | Fault injection at claim, effect, and acknowledgment boundaries preserves required work; duplicate delivery produces one business effect; competing database connections confirm an expired claimant cannot acknowledge a replacement claim. |
 
 Token fencing above is implemented and covered by focused local unit tests. Further design changes remain proposals, and their production behavior is unverified. Apply them incrementally, beginning with a reproduced failure or explicit invariant; preserve working behavior and verify each migration boundary.
 
 ## Summary
 
-PostgreSQL can atomically retain work intent and coordinate claims. Reliable execution additionally needs verified producer transactions, explicit ownership and recovery, effect-level idempotency and meaningful consumer acknowledgments. The inspected implementation has useful building blocks and limitations that must remain visible when describing its guarantees.
+PostgreSQL can atomically retain work intent and coordinate claims. Reliable execution additionally needs verified producer transactions, explicit ownership and recovery, effect-level idempotency, and meaningful consumer acknowledgments. The inspected implementation has useful building blocks and limitations that must remain visible when describing its guarantees.
 
 ## See Also
 
@@ -237,7 +263,7 @@ PostgreSQL can atomically retain work intent and coordinate claims. Reliable exe
 
 ## References
 
-Source paths refer to the 2 October inspection, the 9 October relay recheck, the scoped 15 October refresh and the 28 October PDF-path, seed and worker-context checks described above:
+Source paths refer to the 2 October inspection, the 9 October relay recheck, the scoped 15 October refresh, and the 28 October PDF-path, seed, and worker-context checks described above:
 
 - `apps/api/src/shared/modules/queue/postgres-queue.service.ts`
 - `apps/api/src/shared/modules/queue/infrastructure/prisma-queue-job.repository.ts`
@@ -246,12 +272,12 @@ Source paths refer to the 2 October inspection, the 9 October relay recheck, the
 - `apps/api/src/shared/modules/queue/dlq-replay.scheduler.ts` — inert automatic replay policy.
 - `apps/api/src/shared/modules/queue/pdf-job.service.ts`
 - `apps/api/src/shared/modules/queue/base-pdf.processor.ts` — fresh job-clinic scope around awaited domain work; narrow PDF-status bypasses.
-- `apps/api/src/domains/billing/application/services/invoice-pdf.processor.spec.ts` — scope across awaits, inherited-bypass replacement and success/failure restoration in the shared processor path.
+- `apps/api/src/domains/billing/application/services/invoice-pdf.processor.spec.ts` — scope across awaits, inherited-bypass replacement, and success or failure restoration in the shared processor path.
 - `apps/api/src/shared/common/middleware/tenant.middleware.ts` — `AsyncLocalStorage` and `runWithTenant` scope behavior.
 - `apps/api/src/domains/billing/application/services/invoices-query.service.ts` and `apps/api/src/domains/billing/presentation/controllers/invoices.controller.ts` — staff PDF generation versus asynchronous enqueue.
 - `apps/api/src/domains/prescriptions/application/services/prescription-pdf-orchestrator.service.ts` and `apps/api/src/domains/prescriptions/presentation/controllers/prescription.controller.ts` — local byte-return branch and required doctor context.
 - `apps/api/src/shared/modules/public/public-patient-documents.service.ts` and `apps/api/src/shared/modules/public/public-document-token.service.ts` — verified-capability proxy and stored-object read versus fallback.
-- `apps/api/src/domains/documents/infrastructure/local-storage.provider.ts` and `apps/api/src/domains/documents/infrastructure/local-storage-path.helpers.ts` — provider keys, upload roots and browser URLs.
+- `apps/api/src/domains/documents/infrastructure/local-storage.provider.ts` and `apps/api/src/domains/documents/infrastructure/local-storage-path.helpers.ts` — provider keys, upload roots, and browser URLs.
 - `apps/api/src/seed/seed-pdfs.ts` and `apps/api/src/seed/seed-patients-encounters.ts` — fixture key/doctor-field corrections published at `6465632a7`.
 - `apps/api/src/shared/modules/outbox/outbox.service.ts`
 - `apps/api/src/shared/modules/outbox/outbox-relay.scheduler.ts`

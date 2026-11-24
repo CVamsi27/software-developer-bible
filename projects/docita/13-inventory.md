@@ -9,9 +9,9 @@ Suppose two operators each issue the last unit. Reading quantity 1 and later dec
 
 ## Definition
 
-Inventory maintains a current stock quantity and a history explaining how it changed. In Docita, the item holds the live balance while movement records identify receipts, consumption, expiry, waste and other adjustments.
+Inventory maintains a current stock quantity and a history explaining how it changed. In Docita, the item holds the live balance while movement records identify receipts, consumption, expiry, waste, and other adjustments.
 
-> **Textbook Definition:** An inventory ledger records quantity-changing events and the associated stock balance. Correct mutation preserves the relationship between the balance, authorized movement and concurrency constraints.
+> **Textbook Definition:** An inventory ledger records quantity-changing events and the associated stock balance. Correct mutation preserves the relationship between the balance, authorized movement, and concurrency constraints.
 
 This case describes source inspected on **2 October 2026**. It explains the guarded mutation path and the other paths that limit a whole-domain guarantee.
 
@@ -25,11 +25,11 @@ Atomicity within one path does not protect callers that bypass it or repeated de
 
 A stored quantity supports direct reads and conditional updates. A movement history supports explanations and reconciliation. Computing every balance from the history can simplify the source-of-truth rule but adds aggregation and concurrency-design work; retaining a projection trades that read cost for an obligation to keep it aligned.
 
-The current movement types include INITIAL, IN, OUT, ADJUSTMENT, EXPIRED and WASTE. The command treats OUT/EXPIRED/WASTE as negative deltas and the other types as positive. In particular, ADJUSTMENT currently means a positive movement here, not automatically “set balance to this value.”
+The current movement types include INITIAL, IN, OUT, ADJUSTMENT, EXPIRED, and WASTE. The command treats `OUT`, `EXPIRED`, or `WASTE` as negative deltas and the other types as positive. In particular, ADJUSTMENT currently means a positive movement here, not automatically "set balance to this value."
 
 ## How One Guarded Mutation Works
 
-The repository transaction constructs an item/clinic predicate. For a negative delta, it additionally requires quantity to be at least the amount removed. It atomically increments quantity and, on success, inserts the movement through the same transaction client.
+The repository transaction constructs an item and clinic predicate. For a negative delta, it additionally requires quantity to be at least the amount removed. It atomically increments quantity and, on success, inserts the movement through the same transaction client.
 
 ```text
 transaction
@@ -39,7 +39,7 @@ transaction
 commit both, or roll back both
 ```
 
-The SQL equivalent of the decisive predicate is:
+The Structured Query Language (SQL) equivalent of the decisive predicate is:
 
 ```sql
 UPDATE "InventoryItem"
@@ -56,29 +56,29 @@ This is a focused illustration of the Prisma conditional update, not the complet
 | Conditional update | Can accept one unit | Must wait or evaluate after the competing write |
 | After A commits | Balance 0, one movement | Its quantity predicate fails |
 
-If movement insertion fails, the transaction rolls the quantity update back. If the item cannot be updated, the repository attempts a diagnostic read; that read uses item ID without an explicit clinic predicate. Verify its tenant-routing context and avoid reporting another tenant's balance through an error. “No rows matched” does not always mean insufficient stock; it can also mean absent or unauthorized scope.
+If movement insertion fails, the transaction rolls the quantity update back. If the item cannot be updated, the repository attempts a diagnostic read; that read uses item ID without an explicit clinic predicate. Verify its tenant-routing context and avoid reporting another tenant's balance through an error. "No rows matched" does not always mean insufficient stock; it can also mean absent or unauthorized scope.
 
 ## Where the Balance and Ledger Can Still Diverge
 
-The item edit API and command still accept `quantity`. `updateItem` writes it directly without appending a movement. This bypass exists in current source, so the earlier claim that every quantity change is ledger-backed is inaccurate.
+The item edit Application Programming Interface (API) and command still accept `quantity`. `updateItem` writes it directly without appending a movement. This bypass exists in current source, so the earlier claim that every quantity change is ledger-backed is inaccurate.
 
-Creation uses a nested INITIAL movement when initial quantity is positive. That protects the current create path, not historical data, manual SQL, other bypasses or database immutability. Calling a movement log append-only describes the desired protocol; enforce update/delete restrictions if immutability is required.
+Creation uses a nested INITIAL movement when initial quantity is positive. That protects the current create path, not historical data, manual SQL, other bypasses, or database immutability. Calling a movement log append-only describes the desired protocol; enforce update and delete restrictions if immutability is required.
 
-A repair should route stock corrections through an authorized adjustment protocol that records the difference and reason, or prevent direct quantity edits. Reconciliation should derive signed deltas from movement types because the stored movement quantity is a positive magnitude at the validated HTTP boundary.
+A repair should route stock corrections through an authorized adjustment protocol that records the difference and reason, or prevent direct quantity edits. Reconciliation should derive signed deltas from movement types because the stored movement quantity is a positive magnitude at the validated Hypertext Transfer Protocol (HTTP) boundary.
 
 ### Repeated Business Operations Need Their Own Identity
 
-The guard prevents overselling available stock through that path. It does not prevent the same invoice line from consuming stock twice when enough quantity remains. The schema/interface's reference fields explain a movement; their mere presence does not establish a unique idempotency constraint.
+The guard prevents overselling available stock through that path. It does not prevent the same invoice line from consuming stock twice when enough quantity remains. The schema and interface reference fields explain a movement; their mere presence does not establish a unique idempotency constraint.
 
 Select a business operation key and enforce duplicate handling where the mutation commits. Retrying after an ambiguous response must recognize the existing accepted movement rather than blindly subtracting again.
 
-## How Input, Units and Money Affect the Invariant
+## How Input, Units, and Money Affect the Invariant
 
-The controller DTO validates nonnegative integer item quantities and positive integer movement quantities, and limits movement types to an enum. The command normalizes the direction. Verify that internal callers also satisfy those requirements and that values fit database integer and money ranges.
+The controller data transfer object (DTO) validates nonnegative integer item quantities and positive integer movement quantities, and limits movement types to an enum. The command normalizes the direction. Verify that internal callers also satisfy those requirements and that values fit database integer and money ranges.
 
-An inventory item carries a unit. Summing “quantity” across boxes, tablets and bottles yields a count with mixed units, not a physically meaningful stock volume. Report totals with their interpretation or group by compatible units.
+An inventory item carries a unit. Summing "quantity" across boxes, tablets, and bottles yields a count with mixed units, not a physically meaningful stock volume. Report totals with their interpretation or group by compatible units.
 
-The repository writes legacy floating-point prices and canonical `purchasePriceCents`/`sellingPriceCents` together through `toCents`, including price updates. Integer minor units support consistent calculations, but conversion still needs an agreed currency, scale, rounding and range. The name cents does not itself establish universal two-decimal currency behavior. Bypassing the centralized writer can leave the pairs inconsistent.
+The repository writes legacy floating-point prices and canonical `purchasePriceCents` and `sellingPriceCents` together through `toCents`, including price updates. Integer minor units support consistent calculations, but conversion still needs an agreed currency, scale, rounding, and range. The name cents does not itself establish universal two-decimal currency behavior. Bypassing the centralized writer can leave the pairs inconsistent.
 
 ## How Low-Stock and Expiry Views Are Derived
 
@@ -103,11 +103,11 @@ Zero-stock items can therefore appear in the list filter while being counted sep
 | Last unit cannot be issued twice | Guarded row update | Other writers must preserve nonnegative stock |
 | Balance matches movement history | Same-transaction update and movement | Direct edits and historical inconsistencies |
 | Retry cannot consume twice | Unique business-operation identity | Ambiguous response and replay behavior |
-| Multiple prescription lines succeed together | One multi-item transaction with stable lock ordering | Deadlocks, retries and transaction duration |
+| Multiple prescription lines succeed together | One multi-item transaction with stable lock ordering | Deadlocks, retries, and transaction duration |
 | Oldest-expiring batch issued first | Batch-level quantities and expiry policy | Item-level expiry cannot express multiple batches |
 | Low stock alerts are reliable | Defined threshold-crossing event and delivery | Duplicate alerts and notification failures |
 
-A bulk-consumption operation can express all-or-nothing issuance. It does not automatically halve contention: workload, lock ordering and transaction duration determine the result. Per-batch tracking and threshold alerts add distinct state and operational responsibilities rather than cosmetic UI improvements.
+A bulk-consumption operation can express all-or-nothing issuance. It does not automatically halve contention: workload, lock ordering, and transaction duration determine the result. Per-batch tracking and threshold alerts add distinct state and operational responsibilities rather than cosmetic UI improvements.
 
 ## Mistakes
 
@@ -120,15 +120,15 @@ A bulk-consumption operation can express all-or-nothing issuance. It does not au
 
 ## Best Practices
 
-Exercise concurrent last-unit decrements, failed movement insertion, duplicate business references, direct quantity edits and cross-tenant diagnostic paths. Reconcile the stored quantity with signed movement history and preserve an audit reason for repairs. Define bulk-operation atomicity, numerical bounds and read freshness before advertising the resulting guarantees.
+Exercise concurrent last-unit decrements, failed movement insertion, duplicate business references, direct quantity edits, and cross-tenant diagnostic paths. Reconcile the stored quantity with signed movement history and preserve an audit reason for repairs. Define bulk-operation atomicity, numerical bounds, and read freshness before advertising the resulting guarantees.
 
 ## Current Assessment and Recommended Design
 
 | Assessment | What it means here |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Current strengths | Guarded decrement with a transactional movement record prevents overselling through that path. |
-| Current limitations | Direct edits, non-unique references and mixed quantity units can bypass ledger or retry guarantees. |
-| Recommended design | Make all balance mutations go through a ledger-backed transaction; use unique operation keys, explicit stock units and batch-aware expiry allocation; reconcile balance against movements. |
+| Current limitations | Direct edits, non-unique references, and mixed quantity units can bypass ledger or retry guarantees. |
+| Recommended design | Make all balance mutations go through a ledger-backed transaction; use unique operation keys, explicit stock units, and batch-aware expiry allocation; reconcile balance against movements. |
 | Evidence needed | Repeated operations apply once, parallel decrements never exceed stock, direct balance mutation is rejected, and ledger reconstruction agrees with the reported balance. |
 
 The recommended design is a proposal, not an implemented or production-verified claim. Apply it incrementally, beginning with a reproduced failure or explicit invariant; preserve working behavior and verify each migration boundary.

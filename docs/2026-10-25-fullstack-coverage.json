@@ -31933,7 +31933,7 @@
     },
     {
       "path": "docs/superpowers/plans/2026-08-25-full-restructure.md",
-      "sha256": "a0b523ebd88d399de1b2810939c1e7594d3a6b10ce241c2f6a2bcccacf68166a",
+      "sha256": "d0cc7af7dadf23a7bbd363554de9f11c69ae4f1178014aab74ef478185d80c00",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31948,18 +31948,18 @@
       },
       "review": {
         "path": "docs/superpowers/plans/2026-08-25-full-restructure.md",
-        "sha256": "a0b523ebd88d399de1b2810939c1e7594d3a6b10ce241c2f6a2bcccacf68166a",
+        "sha256": "d0cc7af7dadf23a7bbd363554de9f11c69ae4f1178014aab74ef478185d80c00",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Historical 2026-08-25-full-restructure: full design/execution record read, including examples and all dated checkpoints. Preserve dates/paths/checkboxes as historical evidence, not current runtime behavior or authorization. Current AGENTS and exact-hash review supersede obsolete templates and private-location statements; no old test result promoted to current proof.",
+        "notes": "Wave 11D-2 historical implementation plans C1-C8 refinement (2026-11-24): Full read of 276 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/superpowers/plans/2026-09-10-dead-link-remediation.md",
-      "sha256": "6a975228ff012206cc97f9b10559612dc311a6b81653329582a6c7e09c68a505",
+      "sha256": "8b6baca886718ee4f4c704f1776f38bf6d353e71b579ef80c83cfbda83c05ba2",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31974,18 +31974,18 @@
       },
       "review": {
         "path": "docs/superpowers/plans/2026-09-10-dead-link-remediation.md",
-        "sha256": "6a975228ff012206cc97f9b10559612dc311a6b81653329582a6c7e09c68a505",
+        "sha256": "8b6baca886718ee4f4c704f1776f38bf6d353e71b579ef80c83cfbda83c05ba2",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Historical 2026-09-10-dead-link-remediation: full design/execution record read, including examples and all dated checkpoints. Preserve dates/paths/checkboxes as historical evidence, not current runtime behavior or authorization. Current AGENTS and exact-hash review supersede obsolete templates and private-location statements; no old test result promoted to current proof.",
+        "notes": "Wave 11D-2 historical implementation plans C1-C8 refinement (2026-11-24): Full read of 702 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/superpowers/plans/2026-10-01-reading-flow-and-corpus-review.md",
-      "sha256": "86d951fb6cba5af985de64d3ad3536fe704ddc976571e1d9885e2d4c4d11b793",
+      "sha256": "2f1150d050ad5932c3483a33a2671a80546f0ec41b06614bdfdf27e831b754ad",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32003,18 +32003,18 @@
       },
       "review": {
         "path": "docs/superpowers/plans/2026-10-01-reading-flow-and-corpus-review.md",
-        "sha256": "86d951fb6cba5af985de64d3ad3536fe704ddc976571e1d9885e2d4c4d11b793",
+        "sha256": "2f1150d050ad5932c3483a33a2671a80546f0ec41b06614bdfdf27e831b754ad",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Historical 2026-10-01-reading-flow-and-corpus-review: full design/execution record read, including examples and all dated checkpoints. Preserve dates/paths/checkboxes as historical evidence, not current runtime behavior or authorization. Current AGENTS and exact-hash review supersede obsolete templates and private-location statements; no old test result promoted to current proof.",
+        "notes": "Wave 11D-2 historical implementation plans C1-C8 refinement (2026-11-24): Full read of 51 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/superpowers/plans/2026-10-02-product-resume-defense.md",
-      "sha256": "53f03d210d81bb7c7dc909854cc4521193756675813580c3031ab48ec0ba21db",
+      "sha256": "1698f02ae3c170993e144cbfbe0e2eeb8aab8c0598e1e94ecebcbfb68ce34318",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32029,18 +32029,18 @@
       },
       "review": {
         "path": "docs/superpowers/plans/2026-10-02-product-resume-defense.md",
-        "sha256": "53f03d210d81bb7c7dc909854cc4521193756675813580c3031ab48ec0ba21db",
+        "sha256": "1698f02ae3c170993e144cbfbe0e2eeb8aab8c0598e1e94ecebcbfb68ce34318",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Historical 2026-10-02-product-resume-defense: full design/execution record read, including examples and all dated checkpoints. Preserve dates/paths/checkboxes as historical evidence, not current runtime behavior or authorization. Current AGENTS and exact-hash review supersede obsolete templates and private-location statements; no old test result promoted to current proof.",
+        "notes": "Wave 11D-2 historical implementation plans C1-C8 refinement (2026-11-24): Full read of 23 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/superpowers/plans/2026-10-02-resume-and-role-readiness.md",
-      "sha256": "c49329e0c00e75611bcee73f592bad26c8ebde5e9f6145e6400947da4caac136",
+      "sha256": "b439ce8c06f37344a85e14250772fa9afa8888dce83d377ad496a07ca989a5a3",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32055,18 +32055,18 @@
       },
       "review": {
         "path": "docs/superpowers/plans/2026-10-02-resume-and-role-readiness.md",
-        "sha256": "c49329e0c00e75611bcee73f592bad26c8ebde5e9f6145e6400947da4caac136",
+        "sha256": "b439ce8c06f37344a85e14250772fa9afa8888dce83d377ad496a07ca989a5a3",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Historical 2026-10-02-resume-and-role-readiness: full design/execution record read, including examples and all dated checkpoints. Preserve dates/paths/checkboxes as historical evidence, not current runtime behavior or authorization. Current AGENTS and exact-hash review supersede obsolete templates and private-location statements; no old test result promoted to current proof.",
+        "notes": "Wave 11D-2 historical implementation plans C1-C8 refinement (2026-11-24): Full read of 25 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/superpowers/plans/2026-10-04-read-aloud.md",
-      "sha256": "ef5b495c47e329a120d23a512685d35c4e8e7cc8276aa572928eac751eacdd88",
+      "sha256": "1adcd5978ef259127802d06c425d5062bdc08d6d88e1052781a2135d827686f2",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32082,18 +32082,18 @@
       },
       "review": {
         "path": "docs/superpowers/plans/2026-10-04-read-aloud.md",
-        "sha256": "ef5b495c47e329a120d23a512685d35c4e8e7cc8276aa572928eac751eacdd88",
+        "sha256": "1adcd5978ef259127802d06c425d5062bdc08d6d88e1052781a2135d827686f2",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Historical 2026-10-04-read-aloud: full design/execution record read, including examples and all dated checkpoints. Preserve dates/paths/checkboxes as historical evidence, not current runtime behavior or authorization. Current AGENTS and exact-hash review supersede obsolete templates and private-location statements; no old test result promoted to current proof.",
+        "notes": "Wave 11D-2 historical implementation plans C1-C8 refinement (2026-11-24): Full read of 28 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/superpowers/plans/2026-10-05-read-aloud-ui.md",
-      "sha256": "107ce0e7272e67e8853a282c00f7f80281d49c868237b6355ae26355d4b57968",
+      "sha256": "18578ebe33e56c85642c81694fa365fceff41ed9bde55cbe12850eb4c8f426cb",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32108,18 +32108,18 @@
       },
       "review": {
         "path": "docs/superpowers/plans/2026-10-05-read-aloud-ui.md",
-        "sha256": "107ce0e7272e67e8853a282c00f7f80281d49c868237b6355ae26355d4b57968",
+        "sha256": "18578ebe33e56c85642c81694fa365fceff41ed9bde55cbe12850eb4c8f426cb",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-14",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Historical 2026-10-05-read-aloud-ui: full design/execution record read, including examples and all dated checkpoints. Preserve dates/paths/checkboxes as historical evidence, not current runtime behavior or authorization. Current AGENTS and exact-hash review supersede obsolete templates and private-location statements; no old test result promoted to current proof. Exact bytes refreshed 2026-11-14 after the editorial/mechanical pass; prior full-content review retained.",
+        "notes": "Wave 11D-2 historical implementation plans C1-C8 refinement (2026-11-24): Full read of 142 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/superpowers/plans/2026-10-07-reading-and-interview-quality.md",
-      "sha256": "a1f991eeb32c1aadaad78cf20921e3d90246637218c1e036676aa2e1001c7844",
+      "sha256": "a7baff99a6fa555580c71812901f321f1356a6066bf319d4ed3b26447a4187ca",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32140,18 +32140,18 @@
       },
       "review": {
         "path": "docs/superpowers/plans/2026-10-07-reading-and-interview-quality.md",
-        "sha256": "a1f991eeb32c1aadaad78cf20921e3d90246637218c1e036676aa2e1001c7844",
+        "sha256": "a7baff99a6fa555580c71812901f321f1356a6066bf319d4ed3b26447a4187ca",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Historical 2026-10-07-reading-and-interview-quality: full design/execution record read, including examples and all dated checkpoints. Preserve dates/paths/checkboxes as historical evidence, not current runtime behavior or authorization. Current AGENTS and exact-hash review supersede obsolete templates and private-location statements; no old test result promoted to current proof.",
+        "notes": "Wave 11D-2 historical implementation plans C1-C8 refinement (2026-11-24): Full read of 71 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/superpowers/plans/2026-10-08-explanation-depth.md",
-      "sha256": "65cebadb70fe78ebc4d7c0ff4500d2a6f2c43d6ebcfb0ea1f6ad2bae0b75e1fb",
+      "sha256": "700f7480fd8c42e9a77e345e9a62fe5a743990fc24968f1ff7cd857b10871cc8",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32162,7 +32162,7 @@
           "Task 3: Review remaining frontend",
           "Task 4: Review backend",
           "Task 5: Review architecture and platform",
-          "Task 6: Review quality, realtime, interview and supporting genres",
+          "Task 6: Review quality, real-time, interview, and supporting genres",
           "Task 7: Consolidate and validate",
           "Test discipline",
           "Follow-up final pass — 10 October 2026",
@@ -32177,12 +32177,12 @@
       },
       "review": {
         "path": "docs/superpowers/plans/2026-10-08-explanation-depth.md",
-        "sha256": "65cebadb70fe78ebc4d7c0ff4500d2a6f2c43d6ebcfb0ea1f6ad2bae0b75e1fb",
+        "sha256": "700f7480fd8c42e9a77e345e9a62fe5a743990fc24968f1ff7cd857b10871cc8",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
-        "fullContentRead": false,
-        "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded audit-JSON links are described as repository artifacts; historical checkpoint claims are preserved.",
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true,
+        "notes": "Wave 11D-2 historical implementation plans C1-C8 refinement (2026-11-24): Full read of 200 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
@@ -32310,7 +32310,7 @@
     },
     {
       "path": "docs/superpowers/plans/2026-10-14-cross-stack-runtime-internals.md",
-      "sha256": "fb2fd19f3cc42d23decdf32fcd66509e0cd95eec3f53aeb520f2d7a9008f44be",
+      "sha256": "8d9d9d72f427f30dfb930a56d05c5d65c6be22f09fbb15f9994c52471fbeb6d5",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32328,18 +32328,18 @@
       },
       "review": {
         "path": "docs/superpowers/plans/2026-10-14-cross-stack-runtime-internals.md",
-        "sha256": "fb2fd19f3cc42d23decdf32fcd66509e0cd95eec3f53aeb520f2d7a9008f44be",
+        "sha256": "8d9d9d72f427f30dfb930a56d05c5d65c6be22f09fbb15f9994c52471fbeb6d5",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Historical 2026-10-14-cross-stack-runtime-internals: full design/execution record read, including examples and all dated checkpoints. Preserve dates/paths/checkboxes as historical evidence, not current runtime behavior or authorization. Current AGENTS and exact-hash review supersede obsolete templates and private-location statements; no old test result promoted to current proof.",
+        "notes": "Wave 11D-2 historical implementation plans C1-C8 refinement (2026-11-24): Full read of 39 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/superpowers/plans/2026-10-14-nodejs-production-runtime-architecture.md",
-      "sha256": "9bfd9f6eeb11c95972e133f8209703dc4c6f6466acb1c1c18efba5d37b432a89",
+      "sha256": "bb951bf1de5de8727a0a1f9b2a8c424f3116baf37cb4a273452d501e235fca12",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32354,18 +32354,18 @@
       },
       "review": {
         "path": "docs/superpowers/plans/2026-10-14-nodejs-production-runtime-architecture.md",
-        "sha256": "9bfd9f6eeb11c95972e133f8209703dc4c6f6466acb1c1c18efba5d37b432a89",
+        "sha256": "bb951bf1de5de8727a0a1f9b2a8c424f3116baf37cb4a273452d501e235fca12",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Historical 2026-10-14-nodejs-production-runtime-architecture: full design/execution record read, including examples and all dated checkpoints. Preserve dates/paths/checkboxes as historical evidence, not current runtime behavior or authorization. Current AGENTS and exact-hash review supersede obsolete templates and private-location statements; no old test result promoted to current proof.",
+        "notes": "Wave 11D-2 historical implementation plans C1-C8 refinement (2026-11-24): Full read of 121 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/superpowers/plans/2026-10-14-reference-reader.md",
-      "sha256": "1193e97983b25abb09e7e2466b872753b5fa6cb38c070dc148fb779427b71bbd",
+      "sha256": "5ae359985bc19a01b139313a6908d5b794d720b0fa82249ca4a7e15e962d8055",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32384,18 +32384,18 @@
       },
       "review": {
         "path": "docs/superpowers/plans/2026-10-14-reference-reader.md",
-        "sha256": "1193e97983b25abb09e7e2466b872753b5fa6cb38c070dc148fb779427b71bbd",
+        "sha256": "5ae359985bc19a01b139313a6908d5b794d720b0fa82249ca4a7e15e962d8055",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Historical 2026-10-14-reference-reader: full design/execution record read, including examples and all dated checkpoints. Preserve dates/paths/checkboxes as historical evidence, not current runtime behavior or authorization. Current AGENTS and exact-hash review supersede obsolete templates and private-location statements; no old test result promoted to current proof.",
+        "notes": "Wave 11D-2 historical implementation plans C1-C8 refinement (2026-11-24): Full read of 61 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/superpowers/plans/2026-11-02-read-aloud-controls.md",
-      "sha256": "9f8c2da0b2b98717c67da75f12f407a22e0fa02def5f2b1658a2620ca83b887a",
+      "sha256": "f23080abd0c841eaccad281d6b8fd2ccc7ca559d7ea407c4854a240f1d243337",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32414,18 +32414,18 @@
       },
       "review": {
         "path": "docs/superpowers/plans/2026-11-02-read-aloud-controls.md",
-        "sha256": "9f8c2da0b2b98717c67da75f12f407a22e0fa02def5f2b1658a2620ca83b887a",
+        "sha256": "f23080abd0c841eaccad281d6b8fd2ccc7ca559d7ea407c4854a240f1d243337",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-02",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review against the approved spec and current files: deterministic voice scoring, removal of the 62ch caps, action grouping, and stale dock override removal. Repo spelling conventions are followed; no new service or runtime dependency is planned.",
+        "notes": "Wave 11D-2 historical implementation plans C1-C8 refinement (2026-11-24): Full read of 92 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/superpowers/plans/2026-11-05-listening-experience.md",
-      "sha256": "4fc99ce9e8cac575a6ab5f22377dab277463a8cc7d5c3d55ad565c3efb2015f5",
+      "sha256": "f7140cd26539efd4b7329210dae243d9a15913512537cc43ce27d407635c4a18",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32444,18 +32444,18 @@
       },
       "review": {
         "path": "docs/superpowers/plans/2026-11-05-listening-experience.md",
-        "sha256": "4fc99ce9e8cac575a6ab5f22377dab277463a8cc7d5c3d55ad565c3efb2015f5",
+        "sha256": "f7140cd26539efd4b7329210dae243d9a15913512537cc43ce27d407635c4a18",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review of the completed plan and word-tracking follow-up: engine tests and browser checks were observed failing before their relevant implementation and then passing. Task 4 covers source normalization, inline/later-chunk offsets, lifecycle cleanup, fallback reflow, native Samantha smoke, screenshots and final verification. Existing local speech, speed, Wide and no-deploy boundaries remain intact. Final-pass review updates the initial local-only boundary to reflect the explicit later request to commit, push, and merge after verification; the implementation and test scope are unchanged.",
+        "notes": "Wave 11D-2 historical implementation plans C1-C8 refinement (2026-11-24): Full read of 51 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/superpowers/plans/2026-11-05-site-refinement.md",
-      "sha256": "430a9664fcf75782cd61380ff9901a45f5d2fc2a084712fcca12ab8fbfd71cc3",
+      "sha256": "ddc5a2a3519bcfc3768de0261071e6c35cda83180c2d9fce899d5d16df140d84",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32467,18 +32467,18 @@
       },
       "review": {
         "path": "docs/superpowers/plans/2026-11-05-site-refinement.md",
-        "sha256": "430a9664fcf75782cd61380ff9901a45f5d2fc2a084712fcca12ab8fbfd71cc3",
+        "sha256": "ddc5a2a3519bcfc3768de0261071e6c35cda83180c2d9fce899d5d16df140d84",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review of the current reader and discovery specification/plan: responsive Back to top ownership, word and paragraph emphasis, local voice filtering, interview tools, search category context, catalog-backed badge routing, rendered publication checks, scoped information repairs and evidence limits. The later user authorization to commit, push and merge is retained.",
+        "notes": "Wave 11D-2 historical implementation plans C1-C8 refinement (2026-11-24): Full read of 12 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/superpowers/plans/2026-11-18-performance-ui-implementation.md",
-      "sha256": "bc512bea867531945bbfb246287b85f2bc6480184b7d3f4b15f2ca948a3d255a",
+      "sha256": "3b3438490f19076aa0a01a6e4771ba92a4f48c1b0960256283df826e05c3011b",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -32500,12 +32500,12 @@
       },
       "review": {
         "path": "docs/superpowers/plans/2026-11-18-performance-ui-implementation.md",
-        "sha256": "bc512bea867531945bbfb246287b85f2bc6480184b7d3f4b15f2ca948a3d255a",
+        "sha256": "3b3438490f19076aa0a01a6e4771ba92a4f48c1b0960256283df826e05c3011b",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-18",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content review (2026-11-18): implementation tasks, interfaces, commands, generated-artifact boundaries, review-ledger restamp, rendered checks and branch delivery sequence read end to end. The plan keeps authored content/anchors stable, uses temporary DOM dependencies, records the macOS rendered-link limitation and requires the complete verification suite before push.",
+        "notes": "Wave 11D-2 historical implementation plans C1-C8 refinement (2026-11-24): Full read of 496 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },

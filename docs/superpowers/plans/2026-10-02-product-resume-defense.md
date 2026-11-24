@@ -1,23 +1,23 @@
 # Product Resume and Experience Defense Implementation Plan
 
-> **Historical design record:** requirements, example paths and checkboxes describe this dated plan, not current repository status or authorization to rerun it. Later [explanation-depth work](../plans/2026-10-08-explanation-depth.md), [AGENTS.md](../../../AGENTS.md) and [contributing.md](../../../contributing.md) govern current changes. Preserve stable chapter IDs; TL;DR and inline chapter cheat/revision sections are retired.
+> **Historical design record:** requirements, example paths, and checkboxes describe this dated plan, not current repository status or authorization to rerun it. Later [explanation-depth work](../plans/2026-10-08-explanation-depth.md), [AGENTS.md](../../../AGENTS.md), and [contributing.md](../../../contributing.md) govern current changes. Preserve stable chapter IDs; `TL;DR` and inline chapter cheat and revision sections are retired.
 
 > **For agentic workers:** Execute sequentially using the established canonical private resume source and approved one-page layout.
 
 **Goal:** Present relevant full-stack product engineering experience and provide a claim-by-claim preparation path for Docita and MAQ.
 
-**Architecture:** Keep the shared Python content source and two existing PDF variants. Teach Docita through its inspected repository; teach MAQ through recorded experience and explicit reconstruction exercises. Keep drills in category REVISION.md files.
+**Architecture:** Keep the shared Python content source and two existing PDF variants. Teach Docita through its inspected repository, teach MAQ through recorded experience and explicit reconstruction exercises, and keep drills in category `REVISION.md` files.
 
-**Tech Stack:** Markdown, Python, ReportLab, pypdf and repository verification scripts.
+**Tech Stack:** Markdown, Python, ReportLab, `pypdf`, and repository verification scripts.
 
 ## Constraints
 
-No invented adoption, performance outcomes, incidents, titles or work authorization. Remove unconfirmed MAQ percentages from application artifacts; preserve historical measurement discussion as historical. Do not repurpose Docita source as proof of MAQ history. Keep personal data canonical and commit only in the private bible repository. Java and Indian SDE preparation stay deferred.
+No invented adoption, performance outcomes, incidents, titles, or work authorization. Remove unconfirmed MAQ percentages from application artifacts while preserving historical measurement discussion as historical, and do not repurpose Docita source as proof of MAQ history. Keep personal data canonical, commit only in the private bible repository, and keep Java and Indian SDE preparation deferred.
 
 ## Tasks
 
-- [x] Revise shared resume, synchronize the private CV and regenerate both searchable one-page variants.
+- [x] Revise shared resume, synchronize the private curriculum vitae (CV), and regenerate both searchable one-page variants.
 - [x] Add a Docita claim walkthrough tied to implementation cases and source boundaries.
-- [x] Add MAQ learning and separate revision with reconstruction prompts, worked technical exercises and contribution boundaries.
-- [x] Link preparation from project/category indexes and canonical resume companions.
-- [x] Verify PDF rendering, generator regressions, source paths, counts and full repository gates before committing and pushing.
+- [x] Add MAQ learning and separate revision with reconstruction prompts, worked technical exercises, and contribution boundaries.
+- [x] Link preparation from project and category indexes and canonical resume companions.
+- [x] Verify PDF rendering, generator regressions, source paths, counts, and full repository gates before committing and pushing.

@@ -2,15 +2,15 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use `executing-plans` to implement this plan task-by-task with checkpoints.
 
-**Goal:** Reduce avoidable repeated page payload, make page-weight enforcement use gzip transport size, and improve search loading/error UX without changing authored study content or reader navigation contracts.
+**Goal:** Reduce avoidable repeated page payload, make page-weight enforcement use gzip transport size, and improve search loading and error user experience (UX) without changing authored study content or reader navigation contracts.
 
-**Architecture:** The existing inline reader shell will become two static, versioned assets loaded by the shared Jekyll head. The generated search page will load a relative generated JavaScript catalog from `api/`, preserving offline `file://` previews while removing the large inline metadata blob. Search will consume the explicit `window.__SDB_SEARCH_DATA__` interface and expose loading/failure status. Page-weight reporting will retain raw and gzip measurements while `--check` enforces the portable gzip budget.
+**Architecture:** The existing inline reader shell becomes two static, versioned assets loaded by the shared Jekyll head. The generated search page loads a relative generated JavaScript catalog from `api/`, preserving offline `file://` previews while removing the large inline metadata blob; search consumes the explicit `window.__SDB_SEARCH_DATA__` interface and exposes loading and failure status, while page-weight reporting retains raw and gzip measurements as `--check` enforces the portable gzip budget.
 
-**Tech Stack:** Jekyll 3.10.0, Ruby 3.4.11, Python 3.15, vanilla JavaScript, Node.js 26, Node test runner, optional jsdom 26.1.0, repository verification scripts.
+**Tech Stack:** Jekyll 3.10.0, Ruby 3.4.11, Python 3.15, vanilla JavaScript, Node.js 26, Node test runner, optional `jsdom` 26.1.0, and repository verification scripts.
 
 ## Global Constraints
 
-- Preserve all authored prose, Q/A pairs, code, heading IDs, anchors and file identities.
+- Preserve all authored prose, question-and-answer (Q&A) pairs, code, heading IDs, anchors, and file identities.
 - Do not split or renumber long pages merely to lower raw HTML bytes.
 - Do not expose private lane or personal data in generated search assets.
 - Do not claim browser coverage when the browser dependency is unavailable.
@@ -24,19 +24,19 @@
 
 | File | Responsibility in this pass |
 | ------------------------------------- | ------------------------------------------------------------------------------------------------------ |
-| `_includes/head-custom.html` | Load the extracted reader-shell CSS/JavaScript and retain the small Jekyll-owned configuration values. |
-| `assets/reader-shell.css` | Cacheable copy of the current shared inline reader stylesheet. |
-| `assets/reader-shell.js` | Cacheable copy of the current shared inline reader behavior. |
+| `_includes/head-custom.html` | Load the extracted reader-shell CSS and JavaScript and retain small Jekyll-owned configuration values. |
+| `assets/reader-shell.css` | Cacheable copy of the shared inline reader stylesheet. |
+| `assets/reader-shell.js` | Cacheable copy of the shared inline reader behavior. |
 | `scripts/gen_master_index.py` | Generate and validate `api/search-index.js`, `search.html`, and `api/index.json`. |
 | `api/search-index.js` | Generated browser-readable catalog assigned to `window.__SDB_SEARCH_DATA__`. |
-| `search.html` | Generated search page with external catalog loading and accessible status/error markup. |
-| `assets/search-ui.js` | Consume the external catalog and render loading/failure states without losing URL state. |
+| `search.html` | Generated search page with external catalog loading and accessible status and error markup. |
+| `assets/search-ui.js` | Consume the external catalog and render loading and failure states without losing URL state. |
 | `assets/search-ui.css` | Style the actionable search failure state without changing existing result layout. |
-| `assets/study-ui.test.cjs` | Regression tests for external catalog data, failure UX and the extracted reader shell. |
+| `assets/study-ui.test.cjs` | Regression tests for external catalog data, failure UX, and the extracted reader shell. |
 | `scripts/measure_page_weight.py` | Report raw diagnostics and enforce the gzip transport budget. |
 | `docs/corpus-review/README.md` | Document raw-versus-gzip measurement and the enforced budget. |
 | `docs/scripts-map.md` | Keep the measurement workflow description accurate. |
-| `docs/corpus-review/page-weight.json` | Generated post-build raw/gzip measurements. |
+| `docs/corpus-review/page-weight.json` | Generated post-build raw and gzip measurements. |
 | `docs/review-ledger.json` | Restamp `fast` evidence for reviewed files after rendered weights change. |
 
 ## Task 1: Add failing regression coverage
@@ -282,9 +282,7 @@ RAW_DIAGNOSTIC_BUDGET_BYTES = 120_000
 BUDGET_GZIP_BYTES = 64 * 1024
 ```
 
-Keep `--budget` as a backwards-compatible alias for the enforced gzip budget,
-but update its help text to say “gzip transport budget”. Add `--budget-gzip`
-with the same destination if the parser needs an explicit descriptive name.
+Keep `--budget` as a backwards-compatible alias for the enforced gzip budget, updating its help text to say "gzip transport budget", and add `--budget-gzip` with the same destination if the parser needs an explicit descriptive name.
 
 - [ ] **Step 2: Keep raw diagnostics and enforce gzip**
 
@@ -361,9 +359,7 @@ exceptions, if any, are printed as diagnostics rather than failures.
 
 - [ ] **Step 3: Restamp only fast evidence for reviewed files**
 
-Generate a temporary batch from the current `docs/review-ledger.json` that
-copies each read row’s `current`, `readable`, `concise`, `focused` and `best`
-values unchanged, replaces only `fast` with:
+Generate a temporary batch from `docs/review-ledger.json` that copies each read row's `current`, `readable`, `concise`, `focused`, and `best` values unchanged and replaces only `fast` with:
 
 ```text
 <raw KB> KB raw / <gzip KB> KB gzip built page; the shared Jekyll shell is included.
@@ -380,11 +376,11 @@ zero axis failures.
 - Test: `assets/study-ui.test.cjs`, `scripts/test_rendered_headings.py`, `scripts/check_rendered_links.py`
 
 **Interfaces:**
-- Consumes: the rebuilt `_site` and generated search/catalog assets.
-- Produces: evidence for search states, reader controls, responsive structure, links and accessibility behavior.
-- [ ] **Step 1: Run the DOM regression suite**
+- Consumes: the rebuilt `_site` and generated search and catalog assets.
+- Produces: evidence for search states, reader controls, responsive structure, links, and accessibility behavior.
+- [ ] **Step 1: Run the Document Object Model (DOM) regression suite**
 
-Run the pinned CI-compatible jsdom test using a temporary dependency prefix:
+Run the pinned Continuous Integration (CI)-compatible `jsdom` test using a temporary dependency prefix:
 
 ```bash
 UI_DEPS=$(mktemp -d)
@@ -392,10 +388,7 @@ npm install --prefix "$UI_DEPS" --no-audit --no-fund jsdom@26.1.0
 NODE_PATH="$UI_DEPS/node_modules" /opt/homebrew/bin/node --test assets/study-ui.test.cjs
 ```
 
-Expected: all existing reader/search/resume tests and the new external-catalog
-and failure-state tests pass. If the optional dependency cannot be installed,
-record that limitation and rely on the source/rendered checks below; do not
-claim DOM coverage.
+Expected: existing reader, search, and resume tests plus the external-catalog and failure-state tests pass. If the optional dependency cannot be installed, record that limitation and rely on the source and rendered checks below without claiming DOM coverage.
 
 - [ ] **Step 2: Run rendered heading and link checks**
 
@@ -406,13 +399,11 @@ python3 scripts/test_rendered_headings.py _site
 python3 scripts/check_rendered_links.py _site --json /private/var/folders/4l/696h29515gs3chrdfjzkqrq40000gn/T/rendered-links-final.json
 ```
 
-Expected: one article H1 per page, the authored JavaScript index title remains
-correct, and all published links/assets/fragments resolve.
+Expected: one article `<h1>` per page, the authored JavaScript index title stays correct, and all published links, assets, and fragments resolve.
 
 - [ ] **Step 3: Run focused generated-page assertions**
 
-Use a read-only Python assertion over `_site/search.html` and `api/search-index.js`
-to verify:
+Use a read-only Python assertion over `_site/search.html` and `api/search-index.js` to verify:
 
 ```python
 assert 'study-search-data' not in search_html
@@ -421,10 +412,7 @@ assert 'window.__SDB_SEARCH_DATA__' in search_index
 assert search_index.count('"p":') == 680
 ```
 
-Also verify every generated REST page still has exactly one H1 and no leaked
-Liquid markers. If Playwright is installed later, run
-`scripts/test_reading_ui_browser.cjs`; otherwise report it as unavailable rather
-than inferring browser behavior.
+Also verify every generated Representational State Transfer (REST) page has one `<h1>` and no leaked Liquid markers. If Playwright is installed later, run `scripts/test_reading_ui_browser.cjs`; otherwise report it as unavailable rather than inferring browser behavior.
 
 ## Task 7: Run the complete gates and prepare delivery
 
@@ -434,7 +422,7 @@ than inferring browser behavior.
 
 **Interfaces:**
 - Consumes: all phase outputs and verification reports.
-- Produces: one implementation commit on a feature branch, pushed branch, fast-forward merge into `main`, pushed `main`, and a verified remote commit.
+- Produces: one implementation commit on a feature branch, a pushed branch, a fast-forward merge into `main`, pushed `main`, and a verified remote commit.
 - [ ] **Step 1: Run repository-wide verification**
 
 Run:
@@ -445,8 +433,7 @@ python3 scripts/check_links.py
 bash scripts/verify.sh
 ```
 
-Expected: all 34 repository gates pass, including generated-index fixed point,
-senior coverage, review-ledger hashes and no external-link drift.
+Expected: all 34 repository gates pass, including the generated-index fixed point, senior coverage, review-ledger hashes, and no external-link drift.
 
 - [ ] **Step 2: Inspect the final diff**
 
@@ -459,10 +446,7 @@ git diff --check
 git diff --name-only
 ```
 
-Confirm that the diff contains only the approved asset extraction, generated
-search transport, search failure UX, gzip measurement semantics, generated
-metadata, ledger fast-evidence restamp, tests, docs and this plan. No personal
-data, secrets or unrelated chapter edits may be present.
+Confirm that the diff contains only the approved asset extraction, generated search transport, search failure UX, gzip measurement semantics, generated metadata, ledger fast-evidence restamp, tests, docs, and this plan, with no personal data, secrets, or unrelated chapter edits present.
 
 - [ ] **Step 3: Create the implementation branch and commit**
 

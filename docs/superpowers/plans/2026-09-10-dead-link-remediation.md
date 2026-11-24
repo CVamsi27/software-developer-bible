@@ -1,27 +1,29 @@
 # Dead-Link Remediation & Wayback Pass Implementation Plan
 
-> **Historical design record:** requirements, example paths and checkboxes describe this dated plan, not current repository status or authorization to rerun it. Later [explanation-depth work](../plans/2026-10-08-explanation-depth.md), [AGENTS.md](../../../AGENTS.md) and [contributing.md](../../../contributing.md) govern current changes. Preserve stable chapter IDs; TL;DR and inline chapter cheat/revision sections are retired.
+> **Historical design record:** requirements, example paths, and checkboxes describe this dated plan, not current repository status or authorization to rerun it. Later [explanation-depth work](../plans/2026-10-08-explanation-depth.md), [AGENTS.md](../../../AGENTS.md), and [contributing.md](../../../contributing.md) govern current changes. Preserve stable chapter IDs; `TL;DR` and inline chapter cheat and revision sections are retired.
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Eliminate every confirmed-dead external citation in the bible docs by probe-verified replacement (live URL or exact Wayback snapshot), closing the "~200 dead links remain open" item in `docs/2026-09-10-modernization-changelog.md` §5.
+**Goal:** Eliminate every confirmed-dead external citation in the documentation by probe-verified replacement (live URL or exact Wayback snapshot), closing the "~200 dead links remain open" item in `docs/2026-09-10-modernization-changelog.md` Section 5.
 
-**Architecture:** The freshness gate (`scripts/check_freshness.py --check-urls`) is the single source of truth for what is dead. Workflow per cluster: regenerate the authoritative dead list → re-probe each candidate with curl GET (sweep3 predates several fix batches, so its list over-counts) → find each dead URL's citing files with grep → for each, `web_search` a replacement candidate → verify the candidate returns HTTP 200 via curl GET with browser headers → `str_replace` in the citing file → gates → commit. URLs that are iconic-but-dead (High Scalability architectures, the LinkedIn log paper) get exact-timestamp Wayback citations instead of replacements.
+**Architecture:** The freshness gate (`scripts/check_freshness.py --check-urls`) is the single source of truth for dead URLs. For each cluster: regenerate the authoritative dead list, re-probe candidates with `curl` HTTP `GET` (because sweep3 predates several fix batches and over-counts), locate citing files with `grep`, find a replacement with `web_search`, verify HTTP 200 via `curl GET` with browser headers, update the citing file, run gates, and commit.
 
-**Tech Stack:** python3 (available at `/opt/homebrew/bin/python3`), `scripts/check_freshness.py` (7 rules + `--check-urls N` liveness mode), curl, `web_search` + `read_url` for candidate discovery/verification, `str_replace` for edits, `bash scripts/verify.sh` as the gate.
+Iconic-but-dead posts (High Scalability architectures and the LinkedIn log paper) receive exact-timestamp Wayback citations rather than stand-in articles.
+
+**Tech Stack:** Python 3 (available at `/opt/homebrew/bin/python3`), `scripts/check_freshness.py` (seven rules plus `--check-urls N` liveness mode), `curl`, `web_search` and `read_url` for candidate discovery and verification, `str_replace` for edits, and `bash scripts/verify.sh` as the gate.
 
 ## Global Constraints
 
-- **Never cite an unverified URL.** Every replacement must return HTTP 200 from `curl -s -o /dev/null -w "%{http_code}" -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36" "$URL"` (GET — never judge by HEAD; PortSwigger-class sites 404 on HEAD but serve GET).
-- **Never guess a URL from memory.** Discover candidates via `web_search`, then verify with the curl command above. If a candidate 404s, search again — do not "fix" a 404 with another 404.
-- **WARN is not DEAD.** `HTTP 403`/`429`/bot-blocks (LeetCode, LinkedIn, Cloudflare-challenged hosts) mean leave the URL alone.
-- **By-design exclusions (never replace):** `github.com/CVamsi27/docita` (private repo; 404 only for unauthenticated probes), any URL under `80-lanes-abroad-full-stack/personal/` (historical job-application records), badge hosts (`img.shields.io`).
-- **Wayback citations** must use the exact snapshot URL returned by `https://archive.org/wayback/available?url=<orig>` and be verified 200. Never fabricate or hand-write a snapshot timestamp. Cite format: `[Title (archived)](https://web.archive.org/web/<TIMESTAMP>/<original-url>)`.
-- **Citations only.** No content restructuring, no prose rewrites beyond the link line and, if needed, one clause noting the archived status. Follow existing file conventions.
-- **Never edit** `80-lanes-abroad-full-stack/personal/` contents (symlinks). Never commit/push in `~/repos/career-ops`. This repo only.
-- **Gates before every commit:** `bash scripts/verify.sh` must print 5/5 PASS (structure may print baseline lane-80.x GAPS — that is intentional). If the count guard fails after edits, recompute and restamp the scale string in all four sites together (root `INDEX.md`, `80-lanes-abroad-full-stack/INDEX.md`, `contributing.md`, `AGENTS.md`) using the exact string `check_counts.py` prints — never hand-invent it.
-- **Commit style** (matches repo history): `docs: <imperative summary>` — e.g. `docs: replace dead freecodecamp citations with verified live URLs`. Never push.
-- If a "dead" URL turns out LIVE on re-probe, drop it from the work list silently — sweep3 contains false deads (pre-hardening HEAD-probe results, pre-paren-repair Wikipedia truncations, one transient PortSwigger outage).
+- **Never cite an unverified URL.** Every replacement must return HTTP 200 from `curl -s -o /dev/null -w "%{http_code}" -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36" "$URL"` (`GET` — never judge by `HEAD`, since PortSwigger-class sites return 404 on `HEAD` while serving `GET`).
+- **Never guess a URL from memory.** Discover candidates via `web_search` and verify with the `curl` command above; if a candidate returns 404, search again instead of replacing a 404 with another 404.
+- **WARN is not DEAD.** `HTTP 403`, `429`, and bot-blocks (LeetCode, LinkedIn, and Cloudflare-challenged hosts) mean leaving the URL alone.
+- **By-design exclusions (never replace):** `github.com/CVamsi27/docita` (private repo returning 404 to unauthenticated probes), any URL under `80-lanes-abroad-full-stack/personal/` (historical job-application records), and badge hosts (`img.shields.io`).
+- **Wayback citations** must use the exact snapshot URL returned by `https://archive.org/wayback/available?url=<orig>` and verify HTTP 200. Never fabricate or hand-write a snapshot timestamp; format as `[Title (archived)](https://web.archive.org/web/<TIMESTAMP>/<original-url>)`.
+- **Citations only.** No content restructuring or prose rewrites beyond the link line and, where needed, one clause noting the archived status, following existing file conventions.
+- **Never edit** `80-lanes-abroad-full-stack/personal/` contents (symlinks), and never commit or push in `~/repos/career-ops` — work in this repo only.
+- **Gates before every commit:** `bash scripts/verify.sh` must print `5/5 PASS` (structure may print baseline `lane-80.x` gaps intentionally). If the count guard fails after edits, recompute and restamp the scale string in all four sites together (root `INDEX.md`, `80-lanes-abroad-full-stack/INDEX.md`, `contributing.md`, and `AGENTS.md`) using the exact string `check_counts.py` prints — never hand-invent it.
+- **Commit style** (matching repo history): `docs: <imperative summary>` (for example, `docs: replace dead freecodecamp citations with verified live URLs`). Never push.
+- If a "dead" URL returns LIVE on re-probe, drop it cleanly from the work list — sweep3 contains false deads from pre-hardening `HEAD` probes, pre-paren-repair Wikipedia truncations, and one transient PortSwigger outage.
 
 ---
 
@@ -350,13 +352,13 @@ for u in $(grep -E "owasp|nist|portswigger|auth0|workos|pingidentity" /tmp/dead_
 done
 ```
 
-Expected: OWASP cheat-sheet series 404s (filenames changed); the four `owasp.org/www-community/attacks/...` may 404 or 200 (they moved into the new OWASP site structure); NIST PDFs need the new `csrc.nist.gov/pubs/ir/YYYY/NN-...` path scheme. PortSwigger was transient-404 once before — trust the fresh probe.
+Expected: the OWASP cheat-sheet series returns 404 where filenames changed. The four `owasp.org/www-community/attacks/...` links may return 404 or 200 because they moved into the new OWASP site structure, and NIST PDFs need the updated `csrc.nist.gov/pubs/ir/YYYY/NN-...` path scheme. PortSwigger returned a transient 404 once before, so trust the fresh probe.
 
 - [ ] **Step 2: Search and verify replacements**
-- OWASP sheets: `web_search` `OWASP cheat sheet <subject>` — cite the current `cheatsheetseries.owasp.org/cheatsheets/<Real_Name>.html` (e.g. the JWT sheet's current name, the real de-identification sheet name). Verify each with curl.
-- `owasp.org/www-community/attacks/...` → the same attacks now live under `owasp.org/www-community/attacks/` reorganized paths or the cheat sheets; verify whatever the search returns.
-- NIST RBAC paper (Sandhu–Ferraiolo–Kuhn): search `NIST IR 1992 Sandhu Ferraiolo Kuhn RBAC` → current `csrc.nist.gov` pubs path; NIST IR 8053 likewise.
-- Auth0 blog posts → auth0's current blog/docs equivalents (auth0 reorganized docs into `auth0.com/docs` new IA); if the exact post is gone, cite auth0's current JWT article.
+- OWASP sheets: `web_search` for `OWASP cheat sheet <subject>` and cite the current `cheatsheetseries.owasp.org/cheatsheets/<Real_Name>.html` (for example, the JWT sheet's current name or the real de-identification sheet name), verifying each with `curl`.
+- `owasp.org/www-community/attacks/...`: cite the reorganized `owasp.org/www-community/attacks/` paths or the corresponding cheat sheets after verifying the search results.
+- NIST Role-Based Access Control (RBAC) paper (Sandhu, Ferraiolo, and Kuhn): search `NIST IR 1992 Sandhu Ferraiolo Kuhn RBAC` for the current `csrc.nist.gov` publication path, and update NIST IR 8053 likewise.
+- Auth0 blog posts: cite Auth0's current blog or `auth0.com/docs` equivalents under its reorganized Information Architecture (IA); if an exact post is gone, cite Auth0's current JWT article.
 - [ ] **Step 3: Apply, gate, commit**
 
 ```bash
@@ -556,7 +558,9 @@ Same grep + curl loop pattern as Task 4 Steps 1–2 (full Chrome header for kube
 
 - [ ] **Step 2: Replace with current canonical docs, verifying each**
 
-Vendor-specific notes: K8s blog post URLs moved to `kubernetes.io/blog/<new-slug>/` (search `Kubernetes blog introducing kustomize`); PodPreset is an **alpha feature removed in v1.26+** — replace the citation with the Kustomize docs or an archive note, and if the surrounding prose teaches PodPreset, add one sentence "(removed in Kubernetes 1.26; see Kustomize for the modern equivalent)". Istio dropped `latest` versioned paths → current version path via search. Rspack moved to `rspack.dev` new IA. Heroku devcenter reorganized → `devcenter.heroku.com` search for the same subjects.
+Vendor-specific notes: Kubernetes blog post URLs moved to `kubernetes.io/blog/<new-slug>/` (search `Kubernetes blog introducing kustomize`). PodPreset is an **alpha feature removed in v1.26+** — replace the citation with Kustomize docs or an archive note, and where surrounding prose teaches PodPreset, add one sentence: "(removed in Kubernetes 1.26; see Kustomize for the modern equivalent)".
+
+Istio dropped `latest` versioned paths, so find current version paths via search. Rspack moved to `rspack.dev` new IA, and Heroku Dev Center reorganized paths so search `devcenter.heroku.com` for the same subjects.
 
 - [ ] **Step 3: Apply, gate, commit**
 
@@ -611,13 +615,15 @@ v8.dev/{features/temporal,blog/hash-map}                                  # NEVE
 
 Same grep + curl pattern as Task 4. The last four groups have session fix-history — expect them absent from `/tmp/dead_final.txt`; if present, the fix didn't cover every citing file (grep finds stragglers).
 
-- [ ] **Step 2: Fix GitHub blob links by rebasing onto the repo default branch**
+- [ ] **Step 2: Fix GitHub blob links by rebasing onto the repository default branch**
 
-For each `github.com/<org>/<repo>/blob/...` 404: fetch `https://github.com/<org>/<repo>` (200 expected), find the file's current path via `web_search` or the repo's tree, verify the new blob URL 200s, then cite it. For deleted repos (`rafaykhattak/CountMinSketch`, `oxeye-nl/sre-checklist`, `davidyaha/graphql-rate-limit`, `nicktraz/node-error-handling`, `Shopify/graphql-tools-web`): search for the canonical successor (e.g. `graphql-depth-limit` moved to `graphql-compose/graphql-depth-limit`? — verify whatever search returns) or a maintained fork; if none, keep the citation only if a Wayback snapshot exists (same procedure as Task 6 Steps 1–3), else remove the citation line and note the removal in the task report.
+For each `github.com/<org>/<repo>/blob/...` 404: fetch `https://github.com/<org>/<repo>` (200 expected), find the file's current path via `web_search` or the repository tree, verify the new blob URL returns 200, and cite it.
 
-- [ ] **Step 3: Fix book/ASIN links**
+For deleted repositories (`rafaykhattak/CountMinSketch`, `oxeye-nl/sre-checklist`, `davidyaha/graphql-rate-limit`, `nicktraz/node-error-handling`, and `Shopify/graphql-tools-web`): search for the canonical successor (for example, `graphql-depth-limit` moved to `graphql-compose/graphql-depth-limit` — verify whatever search returns) or a maintained fork. If none exists, keep the citation only when a Wayback snapshot is available (same procedure as Task 6 Steps 1–3); otherwise remove the citation line and note the removal in the task report.
 
-Search each book by title + author; cite the publisher's page or a verified live store page (Amazon URLs verified by curl — Amazon bot-walls aggressively; if curl gets 503 but the search result is a plain `amazon.com/dp/<ASIN>` listing, prefer the publisher page instead).
+- [ ] **Step 3: Fix book and Amazon Standard Identification Number (ASIN) links**
+
+Search each book by title and author, citing the publisher's page or a verified live store page. Verify Amazon URLs with `curl`, since Amazon bot-walls aggressively; if `curl` receives 503 while search returns a plain `amazon.com/dp/<ASIN>` listing, prefer the publisher page instead.
 
 - [ ] **Step 4: Apply, gate, commit**
 

@@ -1,6 +1,6 @@
 # Dead-Link Remediation — Outcome Report (September 2026)
 
-> **Dated review record:** counts, test results and remaining-work statements below describe the recorded pass. Use the [current review progress](2026-10-25-fullstack-coverage-review.md) and [verification runbook](verification-gates.md) for present scope; chapter existence and passing scans do not establish complete reader review.
+> **Dated review record:** counts, test results, and remaining-work statements below describe the recorded pass. Use the [current review progress](2026-10-25-fullstack-coverage-review.md) and [verification runbook](verification-gates.md) for present scope; chapter existence and passing scans do not establish complete reader review.
 
 Closing report for the dead-link remediation executed from
 `docs/superpowers/plans/2026-09-10-dead-link-remediation.md`. It records
@@ -25,10 +25,10 @@ maintainer reads first.
 - **~180 distinct dead URLs replaced**, every single one with a replacement
   GET-verified live at citation time — no guessed URLs were written.
 - **5 exact-timestamp Wayback snapshots** cited (verified 200 at citation time).
-- **2 citations removed** rather than replaced (deleted repos / posts with no
+- **2 citations removed** rather than replaced (deleted repositories or posts with no
   snapshot and no successor; noted in the respective commit messages).
 - **1,707 of 2,230 baseline URLs** probe live; the 522 warnings are
-  bot-walls (403/429/202 mitigation), not rot — see §4.
+  bot-walls (`403`, `429`, or `202` mitigation), not rot — see §4.
 
 ## 2. How the links died — the four failure classes
 
@@ -37,95 +37,98 @@ one of these classes, and two of them were invisible to a naive link
 checker:
 
 1. **Genuine restructures** — the majority. Sites move content without
-   redirects (martinfowler.com, brendangregg.com, patterns.dev, OWASP's
-   site-wide `cheat-sheets/` → `cheatsheets/` rename, basarat gitbook,
-   High Scalability, GitHub `master`→`main` renames and blob-path rot).
+   redirects (`martinfowler.com`, `brendangregg.com`, `patterns.dev`, OWASP's
+   site-wide `cheat-sheets/` → `cheatsheets/` rename, `basarat` GitBook,
+   High Scalability, GitHub `master` → `main` renames, and blob-path rot).
 2. **Retired content** — pages deleted upstream with no successor
-   (substack/stream-handbook, DefinitelyTyped's `Contributors.md`,
-   changesets' intro doc, the Princeton COS 226 lecture PDF, EDB's vacuum
-   series). Fix: canonical doc page, maintained successor repo, or Wayback.
+   (`substack/stream-handbook`, DefinitelyTyped's `Contributors.md`,
+   Changesets' intro doc, the Princeton COS 226 lecture PDF, and EDB's vacuum
+   series). Fix: canonical doc page, maintained successor repo, or Wayback Machine.
 3. **Fabricated citations** — the alarming class. URLs that *look*
    plausible but never existed: a High Scalability "1-billion-views
    YouTube" slug (real post is the 2008 `youtube-architecture` article),
-   a never-archived "2011 Dropbox tech-talk" slug, a never-existed Google
-   monorepo paper title. AI-era citation rot: plausible-shaped, zero
-   ground truth. Detection: CDX prefix searches showing the slug was
-   **never archived, ever**.
-4. **Bot-wall false positives** — O'Reilly (403), JFrog (202 + empty body,
-   with sweep runs intermittently returning 404), W3C APG (403),
-   LinkedIn (404 even with browser headers → treated as dead and replaced
-   with levels.fyi). WARN ≠ DEAD; only repeated browser-header GET 404s
-   justify replacement.
+   a never-archived "2011 Dropbox tech-talk" slug, and a never-existed Google
+   monorepo paper title. AI-era citation rot has plausible-shaped URLs with zero
+   ground truth, caught via Capture Index (CDX) prefix searches showing the slug
+   was **never archived, ever**.
+4. **Bot-wall false positives** — O'Reilly (403), JFrog (202 plus empty body,
+   with sweep runs intermittently returning 404), World Wide Web Consortium
+   (W3C) ARIA Authoring Practices Guide (APG) (403), and LinkedIn (404 even with
+   browser headers, so treated as dead and replaced with `levels.fyi`).
+   `WARN != DEAD`; only repeated browser-header `GET` 404s justify replacement.
 
 ## 3. Deliberate exclusions
 
 | Target | Reason |
-| ---------------------------- | ------------------------------------------------------------------------------- |
-| `github.com/CVamsi27/docita` | Private repo; 404s only for unauthenticated probes. Documented in changelog §5. |
+| ---------------------------- | -------------------------------------------------------------------------------------- |
+| `github.com/CVamsi27/docita` | Private repo; returns 404 only for unauthenticated probes. Documented in changelog §5. |
 | O'Reilly library links | 403 bot-wall; page serves fine in browsers. |
-| JFrog help center | 202 + empty body on every path; the sweep 404 was transient. |
-| W3C APG pages | 403 bot-wall during audit; left per WARN≠DEAD. |
-| `personal/` lanes | Historical records (applications, targets); expired links there are expected. |
+| JFrog help center | 202 plus empty body on every path; the sweep 404 was transient. |
+| W3C APG pages | 403 bot-wall during audit; left per `WARN != DEAD`. |
+| `personal/` lanes | Historical records (applications and targets); expired links there are expected. |
 
 ## 4. Tooling added (the durable outcome)
 
 1. **`scripts/check_freshness.py` rule `RETIRED-OWASP-CHEATSHEET`** — now
    8 rules. Catches both retired OWASP URL forms; the short-host branch
-   needs a `(?<![\w.])` guard so it does not match inside the *good*
+   needs a `(?<![\w.])` guard so it does not match inside valid
    `cheatsheetseries.owasp.org/cheatsheets/` URLs (unit-tested 6/6).
-2. **`scripts/link_baseline.py` + `scripts/external-links-baseline.json`** —
+2. **`scripts/link_baseline.py` and `scripts/external-links-baseline.json`** —
    committed snapshot of all 2,230 cited URLs. Bare run diffs the tree
-   against it and fails on unverified ADDED URLs; `--probe` GET-probes
+   against it and fails on unverified `ADDED` URLs; `--probe` `GET`-probes
    everything. Its first run immediately caught one dead citation the
-   cluster sweeps had missed (the Princeton PDF misattributing Bloom's
-   1970 paper).
+   cluster sweeps missed (the Princeton PDF misattributing Bloom's 1970 paper).
 3. **`.github/workflows/link-rot-audit.yml`** — monthly (3rd, 06:00 UTC)
-   plus manual-run audit: full probe, tracking issue opened/updated only
-   when dead links exist, stale issue auto-closed on a clean run. Warns
-   never fail the job. First live run needs a manual **Run workflow**
-   click in the Actions tab (scheduled runs take over from the next month).
+   plus manual-run audit: full probe, tracking issue opened or updated only
+   when dead links exist, and stale issue auto-closed on a clean run. Warns
+   never fail the job; the first live run needs a manual **Run workflow**
+   click in the Actions tab before scheduled runs take over.
 
-Workflow after adding citations (contributing.md, maintenance contract):
+Workflow after adding citations (`contributing.md`, maintenance contract):
 probe-verify → edit docs → `link_baseline.py` (must show no unverified
-ADDED) → `--update` → commit baseline JSON with the doc change.
+`ADDED`) → `--update` → commit baseline JSON with the doc change.
 
 ## 5. Lessons for the next audit
 
 - **The committed baseline changes the audit's shape**: start from a diff,
   not a cold sweep. The ~200-link backlog existed because nothing recorded
   what *should* be live.
-- **Probe exactly like the checker probes** (urllib GET, browser UA,
-  2-retry). curl and urllib can disagree (JFrog); the gate's verdict is
+- **Probe exactly like the checker probes** (`urllib` `GET`, browser User-Agent (UA),
+  2-retry). `curl` and `urllib` can disagree (JFrog); the gate's verdict is
   the one that counts.
 - **Ground truth beats memory for famous URLs** — the "everyone knows"
-  High Scalability slugs were the fabricated ones. CDX + GET verification
-  all the way down.
-- **Wayback last, exact always**: live replacement preferred; when
-  archiving, cite the machine-found timestamp and GET-verify it — never a
-  hand-typed `web.archive.org/web/2024...` guess.
+  High Scalability slugs were the fabricated ones. Check CDX and `GET`
+  verification all the way down.
+- **Wayback last, exact always**: live replacement is preferred; when
+  archiving, cite the machine-found timestamp and `GET`-verify it rather than
+  typing a hand-guessed `web.archive.org/web/2024...` string.
 - **Site-wide renames are rule-worthy**: one rename broke N citations.
-  The OWASP rule now fails verify.sh on any regression. When the next
-  rename class appears, add its rule the same day (see also AGENTS.md).
+  The OWASP rule fails `verify.sh` on any regression; when the next
+  rename class appears, add its rule the same day (see also `AGENTS.md`).
 - **Status codes lie in both directions — vantage point matters** (learned
   from the first live CI run). GitHub runners' datacenter IPs get 404s
-  from IP-reputation WAFs on *live* pages (Topcoder 404'd runners twice
-  while 200ing laptops; Amazon dp/ URLs 404 runners and most bots), while
-  soft-404 shells serve HTTP 200 to residential clients — Topcoder served
-  a "Page not found" HTML body with status 200 to a reader proxy. So:
-  never act on a runner-side DEAD without a residential-vantage check,
-  verify at the *content* level (r.jina.ai fetch and read the body) when
-  statuses disagree, and for hosts that 404 datacenter IPs on live pages,
-  cite a different host rather than accept perpetual audit noise.
-  `link_baseline.py` quarantines known hosts of this class as SUSPECT:
-  reported, summarized in CI, but never failing the run.
+  from IP-reputation Web Application Firewalls (WAFs) on *live* pages (Topcoder
+  returned 404 to runners twice while returning 200 to laptops, and Amazon `dp/`
+  URLs return 404 to runners and most bots), while soft-404 shells serve HTTP 200
+  to residential clients (Topcoder served a "Page not found" HTML body with status
+  200 to a reader proxy).
+
+  Never act on a runner-side `DEAD` without a residential-vantage check:
+  verify at the *content* level (`r.jina.ai` fetch and read the body) when
+  statuses disagree, and for hosts that return 404 to datacenter IPs on live pages,
+  cite a different host rather than accept perpetual audit noise. `link_baseline.py`
+  quarantines known hosts of this class as `SUSPECT`: reported and summarized in CI,
+  never failing the run.
 
 ## Browser follow-up — 9 October 2026
 
-The continuation's primary reviewer opened the [Finnish Immigration Service article on the 8 January 2026 permanent-residence amendments](https://migri.fi/en/-/aliens-act-s-provisions-on-permanent-residence-permit-amended-as-of-8-january-2026?languageId=en_US) in a normal browser and read the intended official article. Its automatic Cloudflare challenge resolved without a CAPTCHA. The separate scripted probe returned no response and remains **WARN**; browser content verification is not recorded as an HTTP 200 from that probe. This checks that citation's article body, not an individual applicant's eligibility or the full external-link inventory.
+The continuation's primary reviewer opened the [Finnish Immigration Service article on the 8 January 2026 permanent-residence amendments](https://migri.fi/en/-/aliens-act-s-provisions-on-permanent-residence-permit-amended-as-of-8-january-2026?languageId=en_US) in a normal browser and read the intended official article. Its automatic Cloudflare challenge resolved without a CAPTCHA.
+
+The separate scripted probe returned no response and remains **WARN**; browser content verification is not recorded as an HTTP 200 from that probe. This checks that citation's article body rather than an individual applicant's eligibility or the full external-link inventory.
 
 ## 6. See also
 
 - `docs/superpowers/plans/2026-09-10-dead-link-remediation.md` — the plan
 - `docs/2026-09-10-modernization-changelog.md` — §5 open items, §6 maintenance contract
-- `contributing.md` — gate table incl. the link-baseline row
+- `contributing.md` — gate table including the link-baseline row
 - Commit series: `git log --oneline 1c193d93..HEAD`

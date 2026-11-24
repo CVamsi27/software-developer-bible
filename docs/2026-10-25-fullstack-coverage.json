@@ -31188,7 +31188,7 @@
     },
     {
       "path": "docs/2026-09-10-modernization-changelog.md",
-      "sha256": "bd628d3933df151e32faa14faaeb804ad1390bfde12d41a71687cb201553bab7",
+      "sha256": "7a2f7d31b5d4a667201af16b1fe4264455177591cd8106d4be9c146b76f19744",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31208,18 +31208,18 @@
       },
       "review": {
         "path": "docs/2026-09-10-modernization-changelog.md",
-        "sha256": "bd628d3933df151e32faa14faaeb804ad1390bfde12d41a71687cb201553bab7",
+        "sha256": "7a2f7d31b5d4a667201af16b1fe4264455177591cd8106d4be9c146b76f19744",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Historical 2026-09-10-modernization-changelog: full report read with its scoped findings and integration limits. Original results retained, current-review pointer added where needed. Old counts, hashes, pending states and environment checks remain dated evidence.",
+        "notes": "Wave 11C C1-C8 refinement (2026-11-24): Full read of 191 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/2026-09-11-dead-link-remediation-report.md",
-      "sha256": "5cb5e9da11703a328430d4533b5fa7a29bcbe624ef4def229037f3c8eb208e20",
+      "sha256": "fb244b828c9015023cb5586128c2bf8c1c3a2cdef35f3093c7604e7010149b26",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31239,18 +31239,18 @@
       },
       "review": {
         "path": "docs/2026-09-11-dead-link-remediation-report.md",
-        "sha256": "5cb5e9da11703a328430d4533b5fa7a29bcbe624ef4def229037f3c8eb208e20",
+        "sha256": "fb244b828c9015023cb5586128c2bf8c1c3a2cdef35f3093c7604e7010149b26",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Historical 2026-09-11-dead-link-remediation-report: full report read with its scoped findings and integration limits. Original results retained, current-review pointer added where needed. Old counts, hashes, pending states and environment checks remain dated evidence.",
+        "notes": "Wave 11C C1-C8 refinement (2026-11-24): Full read of 134 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/2026-09-14-modernization-changelog-2.md",
-      "sha256": "46ec321d06d35247a375d835fc5fd94464923f4570ebc52145cbdd038215dd7e",
+      "sha256": "6d5b28e0a1b903cbde866da8fdb13d9d8fbfaec9590a89dc9be84da6e34f8851",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31271,18 +31271,18 @@
       },
       "review": {
         "path": "docs/2026-09-14-modernization-changelog-2.md",
-        "sha256": "46ec321d06d35247a375d835fc5fd94464923f4570ebc52145cbdd038215dd7e",
+        "sha256": "6d5b28e0a1b903cbde866da8fdb13d9d8fbfaec9590a89dc9be84da6e34f8851",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Historical 2026-09-14-modernization-changelog-2: full report read with its scoped findings and integration limits. Original results retained, current-review pointer added where needed. Old counts, hashes, pending states and environment checks remain dated evidence.",
+        "notes": "Wave 11C C1-C8 refinement (2026-11-24): Full read of 134 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/2026-09-19-corpus-health-report.md",
-      "sha256": "0613028792528c31c43a0b9250935ae4b244781beebe8376c14d7610ef2f0b24",
+      "sha256": "3fd899a3e086d21676342e0b846b1aa76ffd98ebade3b3c8a9606a746db61743",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31305,12 +31305,12 @@
       },
       "review": {
         "path": "docs/2026-09-19-corpus-health-report.md",
-        "sha256": "0613028792528c31c43a0b9250935ae4b244781beebe8376c14d7610ef2f0b24",
+        "sha256": "3fd899a3e086d21676342e0b846b1aa76ffd98ebade3b3c8a9606a746db61743",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-14",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Full-content read (2026-11-14): Read end to end: definition, first principles, gate inventory, day-one catches, fix ledger, non-actions, summary. Ledger entries are one paragraph each; the summary points to the sweeps instead of retelling them.",
+        "notes": "Wave 11C C1-C8 refinement (2026-11-24): Full read of 256 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": [],
         "metadataReview": {
           "previousReviewedSha256": "1137da2030c2e0a930a4110f49ca5663581130bb487d998312196208d2191b0d",
@@ -31322,7 +31322,7 @@
     },
     {
       "path": "docs/2026-10-01-chapter-review-continuation.md",
-      "sha256": "ec0bd35286ccd6bfad6169265f73d19fa414ac8f590239d8b845701e828196ce",
+      "sha256": "3b89ef1137e1273fc60ad511d5968d7f89f0cd3e6b006d614f007aa8ad8ab5ae",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31338,18 +31338,18 @@
       },
       "review": {
         "path": "docs/2026-10-01-chapter-review-continuation.md",
-        "sha256": "ec0bd35286ccd6bfad6169265f73d19fa414ac8f590239d8b845701e828196ce",
+        "sha256": "3b89ef1137e1273fc60ad511d5968d7f89f0cd3e6b006d614f007aa8ad8ab5ae",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Historical 2026-10-01-chapter-review-continuation: full report read with its scoped findings and integration limits. Original results retained, current-review pointer added where needed. Old counts, hashes, pending states and environment checks remain dated evidence.",
+        "notes": "Wave 11C C1-C8 refinement (2026-11-24): Full read of 85 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/2026-10-03-readability-review.md",
-      "sha256": "260c88c5c49d5fea897df773335097c8bed8444a10820315cfb3594bc05400b3",
+      "sha256": "a45ba612c76349fc74580285a95189dfd0293df08806ed0e85ec846cfc8c1ba0",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31368,18 +31368,18 @@
       },
       "review": {
         "path": "docs/2026-10-03-readability-review.md",
-        "sha256": "260c88c5c49d5fea897df773335097c8bed8444a10820315cfb3594bc05400b3",
+        "sha256": "a45ba612c76349fc74580285a95189dfd0293df08806ed0e85ec846cfc8c1ba0",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Historical 2026-10-03-readability-review: full report read with its scoped findings and integration limits. Original results retained, current-review pointer added where needed. Old counts, hashes, pending states and environment checks remain dated evidence.",
+        "notes": "Wave 11C C1-C8 refinement (2026-11-24): Full read of 85 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/2026-10-05-fresh-reader-review.md",
-      "sha256": "14a02e67cbf08a69ca5d723de5a737173af8ed271939680f1d4051a35a3893fa",
+      "sha256": "d96e5b068e5ed21d11d4321ef7e59e76acc8d68a5b8818bd64dc88d4cb69dcf4",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31408,18 +31408,18 @@
       },
       "review": {
         "path": "docs/2026-10-05-fresh-reader-review.md",
-        "sha256": "14a02e67cbf08a69ca5d723de5a737173af8ed271939680f1d4051a35a3893fa",
+        "sha256": "d96e5b068e5ed21d11d4321ef7e59e76acc8d68a5b8818bd64dc88d4cb69dcf4",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Historical 2026-10-05-fresh-reader-review: full report read with its scoped findings and integration limits. Original results retained, current-review pointer added where needed. Old counts, hashes, pending states and environment checks remain dated evidence.",
+        "notes": "Wave 11C C1-C8 refinement (2026-11-24): Full read of 228 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/2026-10-07-reading-quality-report.md",
-      "sha256": "e52f7103dcd019261b08a90b4ae1a9e8d98132e2b122f1edf4ea766ce1abee9d",
+      "sha256": "c8bc7317eaae6f324c2a8686342e28d1a8fe42ad3782d325aaf6d68ec7cc1c1a",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31440,18 +31440,18 @@
       },
       "review": {
         "path": "docs/2026-10-07-reading-quality-report.md",
-        "sha256": "e52f7103dcd019261b08a90b4ae1a9e8d98132e2b122f1edf4ea766ce1abee9d",
+        "sha256": "c8bc7317eaae6f324c2a8686342e28d1a8fe42ad3782d325aaf6d68ec7cc1c1a",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-10-26",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Historical 2026-10-07-reading-quality-report: full report read with its scoped findings and integration limits. Original results retained, current-review pointer added where needed. Old counts, hashes, pending states and environment checks remain dated evidence.",
+        "notes": "Wave 11C C1-C8 refinement (2026-11-24): Full read of 107 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/2026-10-08-explanation-depth-progress.md",
-      "sha256": "0d37cc3f0f65a85cb473473414ff2dd53e52ca4b9657d5660f605b4987a28511",
+      "sha256": "5ef0ae7a0f3db37165de7f443101139c1df7d342cee815c8673779d176a4ecb5",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31471,18 +31471,18 @@
       },
       "review": {
         "path": "docs/2026-10-08-explanation-depth-progress.md",
-        "sha256": "0d37cc3f0f65a85cb473473414ff2dd53e52ca4b9657d5660f605b4987a28511",
+        "sha256": "5ef0ae7a0f3db37165de7f443101139c1df7d342cee815c8673779d176a4ecb5",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
-        "fullContentRead": false,
-        "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded audit-JSON links are described as repository artifacts; historical checkpoint claims are preserved.",
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true,
+        "notes": "Wave 11C C1-C8 refinement (2026-11-24): Full read of 82 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/2026-10-10-senior-precision-progress.md",
-      "sha256": "0e19f3558066c06408dd9c2c90a1cc0e9476b145dea54c8c98626b3cd29e70c0",
+      "sha256": "f210a0fc01feb586a22d6ba244c18826cd9d4b89eb5ade9fc4c9a5fa0cc22a69",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31501,18 +31501,18 @@
       },
       "review": {
         "path": "docs/2026-10-10-senior-precision-progress.md",
-        "sha256": "0e19f3558066c06408dd9c2c90a1cc0e9476b145dea54c8c98626b3cd29e70c0",
+        "sha256": "f210a0fc01feb586a22d6ba244c18826cd9d4b89eb5ade9fc4c9a5fa0cc22a69",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-05",
-        "fullContentRead": false,
-        "notes": "Diff-scoped review for the product-flow pass; this does not claim a fresh full-content semantic review. Prior review applies to unchanged material. Excluded audit-JSON links are described as repository artifacts; historical checkpoint claims are preserved.",
+        "reviewDate": "2026-11-24",
+        "fullContentRead": true,
+        "notes": "Wave 11C C1-C8 refinement (2026-11-24): Full read of 202 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/2026-10-22-density-pass.md",
-      "sha256": "917326439ca3cecd973870b68b15dfb77fd1564a46a318a976c075f08b2f91f4",
+      "sha256": "3e6a2d8b4e6b723de68691e487bb4e7fe508b690cc364127e2edb99d8d668d92",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31530,18 +31530,18 @@
       },
       "review": {
         "path": "docs/2026-10-22-density-pass.md",
-        "sha256": "917326439ca3cecd973870b68b15dfb77fd1564a46a318a976c075f08b2f91f4",
+        "sha256": "3e6a2d8b4e6b723de68691e487bb4e7fe508b690cc364127e2edb99d8d668d92",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-12",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "density pass: added the dated-record banner its sibling records carry, so its 31-gate checkpoint no longer reads as the current suite",
+        "notes": "Wave 11C C1-C8 refinement (2026-11-24): Full read of 108 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/2026-10-25-fullstack-coverage-review.md",
-      "sha256": "e54ebfa82a9eced3f5ce57d63547b2670014c4e3a677fa24e599568338523fc6",
+      "sha256": "7c4be823311a58ac12705279acb794c662229d96b9ec83cc7b7d0e2b21efe86f",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31560,17 +31560,17 @@
       },
       "review": {
         "path": "docs/2026-10-25-fullstack-coverage-review.md",
-        "sha256": "e54ebfa82a9eced3f5ce57d63547b2670014c4e3a677fa24e599568338523fc6",
+        "sha256": "7c4be823311a58ac12705279acb794c662229d96b9ec83cc7b7d0e2b21efe86f",
         "status": "reviewed",
         "reviewer": "root-continuation",
-        "reviewDate": "2026-10-27",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Authored and reread final 25–26 October report. Current inventory and review records are exact-byte evidence; scoped runtime checks and source inspection remain distinct. Content review coverage does not imply every snippet execution, candidate mastery, adoption or absolute absence of errors. Release gates and generated metadata must be checked separately. 2026-10-27 maintenance delta inspected: standing exact-byte enforcement and bounded durable replays extend historical evidence without claiming every example executed or learner mastery."
+        "notes": "Wave 11C C1-C8 refinement (2026-11-24): Full read of 72 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness."
       }
     },
     {
       "path": "docs/2026-11-frontend-review.md",
-      "sha256": "eab57361182b80c8587d8892408198b8743d1bce0de4459649fe758d466753ab",
+      "sha256": "0cca3f82cb4ec81ff1a58abfebab27414669acdf4c32252de7160abd93659081",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31584,18 +31584,18 @@
       },
       "review": {
         "path": "docs/2026-11-frontend-review.md",
-        "sha256": "eab57361182b80c8587d8892408198b8743d1bce0de4459649fe758d466753ab",
+        "sha256": "0cca3f82cb4ec81ff1a58abfebab27414669acdf4c32252de7160abd93659081",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 6 reconciliation (2026-11-23): Added canonical reconciliation note pointing to completed 991/991 docs/review-ledger.json.",
+        "notes": "Wave 11C C1-C8 refinement (2026-11-24): Full read of 219 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },
     {
       "path": "docs/2026-11-quality-rubric.md",
-      "sha256": "34032e27075292172e73563debf8ad18d9eab85ba32cc2f5632a7a1a2b602f47",
+      "sha256": "6a938396bc834dda9585645501a8e88f23c56b80bc62941d80ad824866cca58c",
       "genre": "operational-or-project",
       "status": "reviewed",
       "structure": {
@@ -31613,12 +31613,12 @@
       },
       "review": {
         "path": "docs/2026-11-quality-rubric.md",
-        "sha256": "34032e27075292172e73563debf8ad18d9eab85ba32cc2f5632a7a1a2b602f47",
+        "sha256": "6a938396bc834dda9585645501a8e88f23c56b80bc62941d80ad824866cca58c",
         "status": "reviewed",
         "reviewer": "root",
-        "reviewDate": "2026-11-23",
+        "reviewDate": "2026-11-24",
         "fullContentRead": true,
-        "notes": "Phase 0 standard update (2026-11-23): updated section-pass step 3 to authorize full comprehension rewrites when existing prose reads like dense audit text, preserving metadata, anchors, and authored REVISION.md pairs.",
+        "notes": "Wave 11C C1-C8 refinement (2026-11-24): Full read of 82 lines. Refined phrasing, acronym definitions, paragraph flow, formatting, and completeness.",
         "findings": []
       }
     },

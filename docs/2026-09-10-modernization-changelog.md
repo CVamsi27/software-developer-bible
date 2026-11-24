@@ -1,10 +1,10 @@
 # Docs Modernization Changelog — September 2026
 
-> **Dated review record:** counts, test results and remaining-work statements below describe the recorded pass. Use the [current review progress](2026-10-25-fullstack-coverage-review.md) and [verification runbook](verification-gates.md) for present scope; chapter existence and passing scans do not establish complete reader review.
+> **Dated review record:** counts, test results, and remaining-work statements below describe the recorded pass. Use the [current review progress](2026-10-25-fullstack-coverage-review.md) and [verification runbook](verification-gates.md) for present scope; chapter existence and passing scans do not establish complete reader review.
 
-> What changed in the software-developer-bible docs during the September 2026
-> modernization pass, why, and how the new verification gates prevent the same
-> classes of rot from shipping again.
+> What changed in the `software-developer-bible` docs during the September 2026
+> modernization pass, why it changed, and how the new verification gates
+> prevent the same classes of rot from shipping again.
 
 |  |  |
 | ----------- | ------------------------------------------------------------------------------------------------------------------------ |
@@ -15,21 +15,23 @@
 
 ---
 
-
 One user-flagged stale code sample turned into a repo-wide audit that found and
-fixed three classes of rot: **outdated APIs** (`setTimeout` chunking instead of
-`scheduler.yield()`, Pages Router examples, sync `params`, `url.parse()`,
-`new Buffer()`), **fabricated or rotted reference citations** (fake archive
-timestamps, never-existed URLs, dead site restructures), and **security
-anti-patterns taught uncritically** (JWT in `localStorage`, unsanitized
-`dangerouslySetInnerHTML`, interpolated SQL). The durable outcome is
-`scripts/check_freshness.py` — 8 staleness rules plus an opt-in link-liveness
-mode — wired into `scripts/verify.sh` as gate 5/6, so every class of rot this
-pass fixed now fails verification mechanically. The dead-link remediation
-(`docs/superpowers/plans/2026-09-10-dead-link-remediation.md`) added the
-RETIRED-OWASP-CHEATSHEET rule and `scripts/link_baseline.py`, which snapshots
-every cited external URL (`scripts/external-links-baseline.json`, ~2,230) so
-the next audit diffs against known-good state instead of starting cold.
+fixed three classes of rot: **outdated Application Programming Interfaces (APIs)**
+(`setTimeout` chunking instead of `scheduler.yield()`, Pages Router examples,
+synchronous `params`, `url.parse()`, and `new Buffer()`), **fabricated or rotted
+reference citations** (fake archive timestamps, never-existed URLs, and dead
+site restructures), and **security anti-patterns taught uncritically** (JSON Web
+Tokens (JWTs) in `localStorage`, unsanitized `dangerouslySetInnerHTML`, and
+interpolated SQL).
+
+The durable outcome is `scripts/check_freshness.py` — 8 staleness rules plus an
+opt-in link-liveness mode — wired into `scripts/verify.sh` as gate 5 of 6, so
+every class of rot this pass fixed fails verification mechanically. The
+dead-link remediation (`docs/superpowers/plans/2026-09-10-dead-link-remediation.md`)
+added the `RETIRED-OWASP-CHEATSHEET` rule and `scripts/link_baseline.py`,
+snapshotting every cited external URL (`scripts/external-links-baseline.json`,
+~2,230) so subsequent audits diff against a known-good state instead of
+starting cold.
 
 ## 1. Why This Pass Happened
 
@@ -46,13 +48,13 @@ precede dependent topics, and add missing modern topics.
 ### Modernized APIs
 
 | Was | Now | Where it mattered most |
-| ----------------------------------------------------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------ |
-| `setTimeout` chunking (with its ~4ms nested-timer clamping) | `scheduler.yield()` time-slicing, with RAF / Web Workers compared | execution-and-scope chapters |
+| ----------------------------------------------------------- | --------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `setTimeout` chunking (with its ~4ms nested-timer clamping) | `scheduler.yield()` time-slicing, with `requestAnimationFrame` (RAF) and Web Workers compared | execution-and-scope chapters |
 | Pages Router-only examples (`getStaticProps` era) | App Router | Next.js stack, CDN architecture chapter |
-| Sync `params: { id: string }` | `Promise<{ id: string }>` awaited (Next.js 15+) | data fetching, ISR, static exports, cheat sheets |
+| Sync `params: { id: string }` | `Promise<{ id: string }>` awaited (Next.js 15+) | data fetching, Incremental Static Regeneration (ISR), static exports, cheat sheets |
 | `url.parse()` | WHATWG `new URL()` + `searchParams` | Node chapters |
-| ES2024-era content | ES2025 (iterator helpers, `Object.groupBy` vs `Map.groupBy`, `Promise.withResolvers()`) | modern-and-interview chapters |
-| No `use cache` / PPR coverage | dedicated treatment | caching chapters |
+| ES2024-era content | ES2025 (iterator helpers, `Object.groupBy` versus `Map.groupBy`, `Promise.withResolvers()`) | modern-and-interview chapters |
+| No `use cache` or Partial Prerendering (PPR) coverage | dedicated treatment | caching chapters |
 
 ### Structure
 
@@ -60,22 +62,23 @@ precede dependent topics, and add missing modern topics.
 - **Removed** duplication: a repeated function definition, and an off-topic
   heap deep-dive that now points to the memory chapters instead of inlining.
 - **Added** `10-frontend/10.1-javascript/03-async-concurrency/10.1.3.05-abort-and-cancellation.md` —
-  `AbortController`, `AbortSignal.timeout()` / `AbortSignal.any()`,
+  `AbortController`, `AbortSignal.timeout()` and `AbortSignal.any()`,
   `throwIfAborted()` cooperative cancellation, the classic stale-request React
-  race, and `AbortError` handling — a core senior topic the JS stack lacked.
-- **Extended** the interview bank with Q51–Q55 covering exactly the APIs above,
+  race, and `AbortError` handling — a core senior topic the JavaScript (JS) stack lacked.
+- **Extended** the interview bank with Q51–Q55 covering the exact APIs above,
   so the bank tests what the docs now teach.
 
 ### Security anti-patterns taught uncritically
 
-- `context-api.md`'s flagship auth demo persisted a JWT in `localStorage` —
-  the docs' own auth chapters call this out as a mistake. Rewritten as an
-  httpOnly-cookie session flow; the Context-teaching value is unchanged.
-- `incremental-static-regeneration.md` piped raw CMS HTML into
-  `dangerouslySetInnerHTML` (the textbook stored-XSS vector). Now sanitized
-  (`DOMPurify`), with a note that ingestion-time sanitization is better.
-- A DI example in `decorators.md` interpolated an id into SQL; now
-  parameterized with the rule stated.
+- `context-api.md`'s flagship auth demo persisted a JWT in `localStorage`,
+  which the docs' own auth chapters flag as a mistake. Rewritten as an
+  `HttpOnly`-cookie session flow while keeping the Context-teaching value intact.
+- `incremental-static-regeneration.md` piped raw Content Management System (CMS)
+  HTML into `dangerouslySetInnerHTML` (the textbook stored cross-site scripting
+  (XSS) vector). Now sanitized (`DOMPurify`), with a note that ingestion-time
+  sanitization is better.
+- A dependency injection (DI) example in `decorators.md` interpolated an ID into
+  SQL; now parameterized with the rule stated.
 
 ## 3. Reference-Link Findings (the citation problem)
 
@@ -86,16 +89,16 @@ This was the most serious finding class, in three tiers:
    five different "archived" pages, at least one of which never existed.
    Separately, Google's index contains no trace of three "official" URLs the
    docs cited (`wiki.postgresql.org/wiki/VACUUM`, `v8.dev/features/temporal`,
-   an OWASP `Configuration_Cheat_Sheet`): they were generated, not observed.
-   The durable fix for never-existed citations is citing official docs that
-   certainly exist (e.g. postgresql.org's `routine-vacuuming` and
-   `explicit-locking` chapters).
+   and an OWASP `Configuration_Cheat_Sheet`): they were generated rather than
+   observed. The durable fix is citing official docs verified to exist (for
+   example, `postgresql.org`'s `routine-vacuuming` and `explicit-locking` chapters).
 2. **Genuine site restructures.** AWS retired old guide paths, OWASP renamed
-   cheat-sheet files, Node reorganized `/learn`, web.dev renumbered articles,
+   cheat-sheet files, Node reorganized `/learn`, `web.dev` renumbered articles,
    Stripe renamed the idempotency endpoint docs, Google retired its
-   `developers.google.com` web tree, sre.google and the Fowler EAA catalog
-   dropped per-chapter URLs. These were real pages that moved; replacements
-   were chosen from the new canonical locations.
+   `developers.google.com` web tree, and `sre.google` and Martin Fowler's
+   *Patterns of Enterprise Application Architecture* (`EAA`) catalog dropped
+   per-chapter URLs. All were real pages that moved; replacements come from the
+   new canonical locations.
 3. **A fabricated domain.** A hash-tables citation pointed at a domain that
    does not exist; the real article is on the author's actual blog
    (`probablydance.com`).
@@ -107,52 +110,52 @@ gate in one anecdote.
 
 ## 4. Verification Tooling Added or Hardened
 
-### `scripts/check_freshness.py` (new — verify.sh gate 5/6)
+### `scripts/check_freshness.py` (new — `verify.sh` gate 5 of 6)
 
 | Rule | Catches |
-| ---------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | `FAKE-ARCHIVE-TS` | The fabricated archive timestamp literal |
 | `STALE-GOOGLE-WEB-TREE` | The retired Google web-docs tree |
-| `LEGACY-PAGES-ROUTER-EXPORT` | `getStaticProps`/`getServerSideProps` outside the Next.js stack (which intentionally teaches both routers) |
+| `LEGACY-PAGES-ROUTER-EXPORT` | `getStaticProps` or `getServerSideProps` outside the Next.js stack (which intentionally teaches both routers) |
 | `SYNC-PARAMS` | Sync `params` signatures in Next.js contexts |
 | `DEPRECATED-URL-PARSE` | Legacy `url.parse()` |
 | `NEW-BUFFER` | Deprecated `new Buffer()` |
 | `SETTIMEOUT-CHUNKING` | The original flagged pattern |
 
-Scoping decisions that keep it false-positive-free: fence-aware (only
-`ts/tsx/js/jsx` blocks), line comments stripped (so "// url.parse() is
-deprecated" doesn't self-trigger), Next.js rules scoped to real Next.js
-context, `docs/superpowers/` historical plans skipped. In `--check-urls` mode,
-`personal/` job-link records are excluded from probing (expired listings are
-historical records, not doc rot).
+Scoping decisions that keep it false-positive-free: fence-aware (`ts`, `tsx`,
+`js`, and `jsx` blocks only), line comments stripped (so `// url.parse() is
+deprecated` does not self-trigger), Next.js rules scoped to real Next.js
+contexts, and `docs/superpowers/` historical plans skipped. In `--check-urls`
+mode, `personal/` job-link records are excluded from probing because expired
+listings are historical records rather than doc rot.
 
-### `--check-urls N` liveness mode (opt-in, network; not in verify.sh)
+### `--check-urls N` liveness mode (opt-in, network; not in `verify.sh`)
 
 Probes a deterministic sample of external links. Hardened through its first
-full-sweep run: **GET-first** (PortSwigger-class sites 404 on HEAD but serve
-GET — HEAD-first produced ~250 false DEADs), a 404 retry for transient
-outages, paren-rebalancing for Wikipedia-style URLs, and a `MALFORMED` report
-class for non-ASCII URLs. The first run immediately caught a dead citation —
-the one introduced during this pass.
+full-sweep run: **GET-first** (PortSwigger-class sites return 404 on `HEAD`
+but serve `GET` — `HEAD`-first produced ~250 false `DEAD`s), a 404 retry for
+transient outages, parenthesis rebalancing for Wikipedia-style URLs, and a
+`MALFORMED` report class for non-ASCII URLs. The first run immediately caught
+the dead citation introduced during this pass.
 
 ### Maintenance contract
 
-`AGENTS.md` now carries the rule: when a modernization pass fixes a class of
+`AGENTS.md` carries the rule: when a modernization pass fixes a class of
 staleness, add a gate rule so it cannot regress. The count guard's
 recompute-and-restamp rule (never hand-edit scale claims) continues to apply.
 
 ## 5. What Deliberately Remains Open
 
-- ~~Dead links in the blog/tutorial long tail~~ — resolved by the plan in
+- ~~Dead links in the blog and tutorial long tail~~ — resolved by the plan in
   `docs/superpowers/plans/2026-09-10-dead-link-remediation.md`: every cluster
   replaced with probe-verified live URLs or exact-timestamp Wayback snapshots
-  (see git log, `docs:` commits of 2026-09-10/11); bot-walled WARNs (O'Reilly,
-  JFrog) deliberately left as-is.
-- ~~Wayback snapshot pass~~ — done: the iconic dead posts now cite exact-
-  timestamp snapshots verified live at citation time; three fabricated
+  (see `git log`, `docs:` commits of 2026-09-10 and 2026-09-11); bot-walled
+  WARNs (O'Reilly, JFrog) deliberately left as-is.
+- ~~Wayback snapshot pass~~ — done: the iconic dead posts now cite
+  exact-timestamp snapshots verified live at citation time; three fabricated
   High Scalability slugs were corrected to the real articles in the process.
-- **The private `docita` GitHub repo links** (projects/docita docs cite them)
-  404 only for unauthenticated probes; left as-is deliberately.
+- **The private `docita` GitHub repo links** (`projects/docita` docs cite them)
+  return 404 only for unauthenticated probes; left as-is deliberately.
 - ~~Commit~~ — done: the pass and the dead-link remediation plan are committed
   as a `docs:` commit series on `main`.
 
@@ -160,16 +163,16 @@ recompute-and-restamp rule (never hand-edit scale claims) continues to apply.
 
 For future maintainers (human or agent):
 
-1. Never hand-edit the scale claims (the "NNN files, NNK lines" string in four
-   sites: root INDEX, 80-lane INDEX, contributing.md, AGENTS.md); recompute and
-   restamp all four together — `check_counts.py` prints the exact expected
-   string when they drift.
+1. Never hand-edit the scale claims (the `"NNN files, NNK lines"` string in
+   four sites: root `INDEX.md`, 80-lane `INDEX.md`, `contributing.md`, and
+   `AGENTS.md`); recompute and restamp all four together — `check_counts.py`
+   prints the exact expected string when they drift.
 2. When you fix a staleness class, add a `check_freshness.py` rule for it.
 3. Probe every URL before citing it; never cite an unverified URL, including
    "obviously fine" ones. After adding citations, run `python3 scripts/link_baseline.py`
-   — every ADDED url must be probe-verified live — then `--update` and commit
-   the baseline with the doc change.
-4. A HEAD 404 is not evidence of death; check GET before replacing anything.
+   — every `ADDED` URL must be probe-verified live — then `--update` and
+   commit the baseline with the doc change.
+4. A `HEAD` 404 is not evidence of death; check `GET` before replacing anything.
 5. Run `bash scripts/verify.sh` before every commit — the six gates encode
    everything above mechanically.
 

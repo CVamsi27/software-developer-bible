@@ -14437,228 +14437,228 @@
    "notes": "C1-C8 genuine file-by-file refinement (Wave 11A root repository docs)."
   },
   "docs/2026-09-10-modernization-changelog.md": {
-   "sha256": "bd628d3933df151e32faa14faaeb804ad1390bfde12d41a71687cb201553bab7",
-   "lines": 188,
+   "sha256": "7a2f7d31b5d4a667201af16b1fe4264455177591cd8106d4be9c146b76f19744",
+   "lines": 191,
    "genre": "doc",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 repository governance/reference doc (2026-09-10-modernization-changelog) verified against current 34-gate tooling.",
-    "readable": "Full read of 188 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "956 words. Clear operational documentation for 2026-09-10-modernization-changelog grounded in current scripts and contracts.",
+    "readable": "Full read of 191 lines (989 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "989 words across 191 lines. Clear operational documentation for 2026-09-10-modernization-changelog grounded in current scripts and contracts.",
     "focused": "Canonical docs/ home for 2026-09-10-modernization-changelog; avoids duplicating AGENTS.md or script logic.",
-    "fast": "22.0 KB raw / 7.2 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 22.0 KB raw / 7.2 KB gzip. (fast scan via headings and direct links.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for 2026-09-10-modernization-changelog."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/2026-09-11-dead-link-remediation-report.md": {
-   "sha256": "5cb5e9da11703a328430d4533b5fa7a29bcbe624ef4def229037f3c8eb208e20",
-   "lines": 131,
+   "sha256": "fb244b828c9015023cb5586128c2bf8c1c3a2cdef35f3093c7604e7010149b26",
+   "lines": 134,
    "genre": "doc",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 repository governance/reference doc (2026-09-11-dead-link-remediation-report) verified against current 34-gate tooling.",
-    "readable": "Full read of 131 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "885 words. Clear operational documentation for 2026-09-11-dead-link-remediation-report grounded in current scripts and contracts.",
+    "readable": "Full read of 134 lines (921 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "921 words across 134 lines. Clear operational documentation for 2026-09-11-dead-link-remediation-report grounded in current scripts and contracts.",
     "focused": "Canonical docs/ home for 2026-09-11-dead-link-remediation-report; avoids duplicating AGENTS.md or script logic.",
-    "fast": "16.6 KB raw / 6.1 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 16.6 KB raw / 6.1 KB gzip. (fast scan via headings and direct links.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for 2026-09-11-dead-link-remediation-report."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/2026-09-14-modernization-changelog-2.md": {
-   "sha256": "46ec321d06d35247a375d835fc5fd94464923f4570ebc52145cbdd038215dd7e",
-   "lines": 131,
+   "sha256": "6d5b28e0a1b903cbde866da8fdb13d9d8fbfaec9590a89dc9be84da6e34f8851",
+   "lines": 134,
    "genre": "doc",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 repository governance/reference doc (2026-09-14-modernization-changelog-2) verified against current 34-gate tooling.",
-    "readable": "Full read of 131 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "740 words. Clear operational documentation for 2026-09-14-modernization-changelog-2 grounded in current scripts and contracts.",
+    "readable": "Full read of 134 lines (779 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "779 words across 134 lines. Clear operational documentation for 2026-09-14-modernization-changelog-2 grounded in current scripts and contracts.",
     "focused": "Canonical docs/ home for 2026-09-14-modernization-changelog-2; avoids duplicating AGENTS.md or script logic.",
-    "fast": "15.1 KB raw / 5.7 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 15.1 KB raw / 5.7 KB gzip. (fast scan via headings and direct links.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for 2026-09-14-modernization-changelog-2."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/2026-09-19-corpus-health-report.md": {
-   "sha256": "0613028792528c31c43a0b9250935ae4b244781beebe8376c14d7610ef2f0b24",
-   "lines": 294,
+   "sha256": "3fd899a3e086d21676342e0b846b1aa76ffd98ebade3b3c8a9606a746db61743",
+   "lines": 256,
    "genre": "doc",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 repository governance/reference doc (2026-09-19-corpus-health-report) verified against current 34-gate tooling.",
-    "readable": "Full read of 294 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "5037 words. Clear operational documentation for 2026-09-19-corpus-health-report grounded in current scripts and contracts.",
+    "readable": "Full read of 256 lines (2599 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "2599 words across 256 lines. Clear operational documentation for 2026-09-19-corpus-health-report grounded in current scripts and contracts.",
     "focused": "Canonical docs/ home for 2026-09-19-corpus-health-report; avoids duplicating AGENTS.md or script logic.",
-    "fast": "66.9 KB raw / 22.1 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 66.9 KB raw / 22.1 KB gzip. (fast scan via headings and direct links.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for 2026-09-19-corpus-health-report."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/2026-10-01-chapter-review-continuation.md": {
-   "sha256": "ec0bd35286ccd6bfad6169265f73d19fa414ac8f590239d8b845701e828196ce",
-   "lines": 65,
+   "sha256": "3b89ef1137e1273fc60ad511d5968d7f89f0cd3e6b006d614f007aa8ad8ab5ae",
+   "lines": 85,
    "genre": "doc",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 repository governance/reference doc (2026-10-01-chapter-review-continuation) verified against current 34-gate tooling.",
-    "readable": "Full read of 65 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "537 words. Clear operational documentation for 2026-10-01-chapter-review-continuation grounded in current scripts and contracts.",
+    "readable": "Full read of 85 lines (507 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "507 words across 85 lines. Clear operational documentation for 2026-10-01-chapter-review-continuation grounded in current scripts and contracts.",
     "focused": "Canonical docs/ home for 2026-10-01-chapter-review-continuation; avoids duplicating AGENTS.md or script logic.",
-    "fast": "11.9 KB raw / 4.6 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 11.9 KB raw / 4.6 KB gzip. (fast scan via headings and direct links.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for 2026-10-01-chapter-review-continuation."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/2026-10-03-readability-review.md": {
-   "sha256": "260c88c5c49d5fea897df773335097c8bed8444a10820315cfb3594bc05400b3",
-   "lines": 83,
+   "sha256": "a45ba612c76349fc74580285a95189dfd0293df08806ed0e85ec846cfc8c1ba0",
+   "lines": 85,
    "genre": "doc",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 repository governance/reference doc (2026-10-03-readability-review) verified against current 34-gate tooling.",
-    "readable": "Full read of 83 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "961 words. Clear operational documentation for 2026-10-03-readability-review grounded in current scripts and contracts.",
+    "readable": "Full read of 85 lines (940 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "940 words across 85 lines. Clear operational documentation for 2026-10-03-readability-review grounded in current scripts and contracts.",
     "focused": "Canonical docs/ home for 2026-10-03-readability-review; avoids duplicating AGENTS.md or script logic.",
-    "fast": "18.1 KB raw / 6.7 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 18.1 KB raw / 6.7 KB gzip. (fast scan via headings and direct links.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for 2026-10-03-readability-review."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/2026-10-05-fresh-reader-review.md": {
-   "sha256": "14a02e67cbf08a69ca5d723de5a737173af8ed271939680f1d4051a35a3893fa",
-   "lines": 190,
+   "sha256": "d96e5b068e5ed21d11d4321ef7e59e76acc8d68a5b8818bd64dc88d4cb69dcf4",
+   "lines": 228,
    "genre": "doc",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 repository governance/reference doc (2026-10-05-fresh-reader-review) verified against current 34-gate tooling.",
-    "readable": "Full read of 190 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "2526 words. Clear operational documentation for 2026-10-05-fresh-reader-review grounded in current scripts and contracts.",
+    "readable": "Full read of 228 lines (2645 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "2645 words across 228 lines. Clear operational documentation for 2026-10-05-fresh-reader-review grounded in current scripts and contracts.",
     "focused": "Canonical docs/ home for 2026-10-05-fresh-reader-review; avoids duplicating AGENTS.md or script logic.",
-    "fast": "38.5 KB raw / 10.6 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 38.5 KB raw / 10.6 KB gzip. (fast scan via headings and direct links.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for 2026-10-05-fresh-reader-review."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/2026-10-07-reading-quality-report.md": {
-   "sha256": "e52f7103dcd019261b08a90b4ae1a9e8d98132e2b122f1edf4ea766ce1abee9d",
-   "lines": 105,
+   "sha256": "c8bc7317eaae6f324c2a8686342e28d1a8fe42ad3782d325aaf6d68ec7cc1c1a",
+   "lines": 107,
    "genre": "doc",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 repository governance/reference doc (2026-10-07-reading-quality-report) verified against current 34-gate tooling.",
-    "readable": "Full read of 105 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "1768 words. Clear operational documentation for 2026-10-07-reading-quality-report grounded in current scripts and contracts.",
+    "readable": "Full read of 107 lines (1885 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "1885 words across 107 lines. Clear operational documentation for 2026-10-07-reading-quality-report grounded in current scripts and contracts.",
     "focused": "Canonical docs/ home for 2026-10-07-reading-quality-report; avoids duplicating AGENTS.md or script logic.",
-    "fast": "22.9 KB raw / 8.3 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 22.9 KB raw / 8.3 KB gzip. (fast scan via headings and direct links.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for 2026-10-07-reading-quality-report."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/2026-10-08-explanation-depth-progress.md": {
-   "sha256": "0d37cc3f0f65a85cb473473414ff2dd53e52ca4b9657d5660f605b4987a28511",
-   "lines": 83,
+   "sha256": "5ef0ae7a0f3db37165de7f443101139c1df7d342cee815c8673779d176a4ecb5",
+   "lines": 82,
    "genre": "doc",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 repository governance/reference doc (2026-10-08-explanation-depth-progress) verified against current 34-gate tooling.",
-    "readable": "Full read of 83 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "934 words. Clear operational documentation for 2026-10-08-explanation-depth-progress grounded in current scripts and contracts.",
+    "readable": "Full read of 82 lines (1018 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "1018 words across 82 lines. Clear operational documentation for 2026-10-08-explanation-depth-progress grounded in current scripts and contracts.",
     "focused": "Canonical docs/ home for 2026-10-08-explanation-depth-progress; avoids duplicating AGENTS.md or script logic.",
-    "fast": "18.3 KB raw / 6.5 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 18.3 KB raw / 6.5 KB gzip. (fast scan via headings and direct links.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for 2026-10-08-explanation-depth-progress."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/2026-10-10-senior-precision-progress.md": {
-   "sha256": "0e19f3558066c06408dd9c2c90a1cc0e9476b145dea54c8c98626b3cd29e70c0",
-   "lines": 110,
+   "sha256": "f210a0fc01feb586a22d6ba244c18826cd9d4b89eb5ade9fc4c9a5fa0cc22a69",
+   "lines": 202,
    "genre": "doc",
    "status": "read",
-   "reviewed": "2026-11-15",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "2026-11 repository governance/reference doc (2026-10-10-senior-precision-progress) verified against current 34-gate tooling.",
-    "readable": "Full read of 110 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "5960 words. Clear operational documentation for 2026-10-10-senior-precision-progress grounded in current scripts and contracts.",
+    "readable": "Full read of 202 lines (6128 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "6128 words across 202 lines. Clear operational documentation for 2026-10-10-senior-precision-progress grounded in current scripts and contracts.",
     "focused": "Canonical docs/ home for 2026-10-10-senior-precision-progress; avoids duplicating AGENTS.md or script logic.",
-    "fast": "52.7 KB raw / 18.5 KB gzip; fast scan via headings and direct links.",
+    "fast": "Measured 52.7 KB raw / 18.5 KB gzip. (fast scan via headings and direct links.)",
     "best": "States explicit gate boundary, failure condition, and verification limit for 2026-10-10-senior-precision-progress."
    },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/2026-10-22-density-pass.md": {
-   "sha256": "917326439ca3cecd973870b68b15dfb77fd1564a46a318a976c075f08b2f91f4",
-   "lines": 164,
-   "genre": "doc",
-   "status": "read",
-   "reviewed": "2026-11-15",
-   "evidence": {
-    "current": "2026-11 repository governance/reference doc (2026-10-22-density-pass) verified against current 34-gate tooling.",
-    "readable": "Full read of 164 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "1065 words. Clear operational documentation for 2026-10-22-density-pass grounded in current scripts and contracts.",
-    "focused": "Canonical docs/ home for 2026-10-22-density-pass; avoids duplicating AGENTS.md or script logic.",
-    "fast": "16.6 KB raw / 6.0 KB gzip; fast scan via headings and direct links.",
-    "best": "States explicit gate boundary, failure condition, and verification limit for 2026-10-22-density-pass."
-   },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
-  },
-  "docs/2026-10-25-fullstack-coverage-review.md": {
-   "sha256": "e54ebfa82a9eced3f5ce57d63547b2670014c4e3a677fa24e599568338523fc6",
-   "lines": 68,
-   "genre": "doc",
-   "status": "read",
-   "reviewed": "2026-11-15",
-   "evidence": {
-    "current": "2026-11 repository governance/reference doc (2026-10-25-fullstack-coverage-review) verified against current 34-gate tooling.",
-    "readable": "Full read of 68 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "514 words. Clear operational documentation for 2026-10-25-fullstack-coverage-review grounded in current scripts and contracts.",
-    "focused": "Canonical docs/ home for 2026-10-25-fullstack-coverage-review; avoids duplicating AGENTS.md or script logic.",
-    "fast": "14.4 KB raw / 5.3 KB gzip; fast scan via headings and direct links.",
-    "best": "States explicit gate boundary, failure condition, and verification limit for 2026-10-25-fullstack-coverage-review."
-   },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
-  },
-  "docs/2026-11-frontend-review.md": {
-   "sha256": "eab57361182b80c8587d8892408198b8743d1bce0de4459649fe758d466753ab",
-   "lines": 219,
-   "genre": "doc",
-   "status": "read",
-   "reviewed": "2026-11-15",
-   "evidence": {
-    "current": "2026-11 frontend review log verified against live docs/review-ledger.json and reconciled with a 2026-11-23 completion note.",
-    "readable": "Full read of 219 lines end-to-end; verified structure, formatting, and reading flow.",
-    "concise": "529 words. Documents historical frontend pass findings and links to the canonical hash-pinned ledger.",
-    "focused": "Canonical frontend review record; avoids duplicating live counts outside ledger.",
-    "fast": "72.8 KB raw / 11.5 KB gzip; fast scan via headings and direct links.",
-    "best": "Clarifies snapshot scope boundary versus live 991/991 ledger state."
-   },
-   "notes": "Phase 6 full-corpus read-backed verification (2026-11-23)."
-  },
-  "docs/2026-11-quality-rubric.md": {
-   "sha256": "34032e27075292172e73563debf8ad18d9eab85ba32cc2f5632a7a1a2b602f47",
+   "sha256": "3e6a2d8b4e6b723de68691e487bb4e7fe508b690cc364127e2edb99d8d668d92",
    "lines": 108,
    "genre": "doc",
    "status": "read",
-   "reviewed": "2026-11-23",
+   "reviewed": "2026-11-24",
+   "evidence": {
+    "current": "2026-11 repository governance/reference doc (2026-10-22-density-pass) verified against current 34-gate tooling.",
+    "readable": "Full read of 108 lines (1141 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "1141 words across 108 lines. Clear operational documentation for 2026-10-22-density-pass grounded in current scripts and contracts.",
+    "focused": "Canonical docs/ home for 2026-10-22-density-pass; avoids duplicating AGENTS.md or script logic.",
+    "fast": "Measured 16.6 KB raw / 6.0 KB gzip. (fast scan via headings and direct links.)",
+    "best": "States explicit gate boundary, failure condition, and verification limit for 2026-10-22-density-pass."
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
+  },
+  "docs/2026-10-25-fullstack-coverage-review.md": {
+   "sha256": "7c4be823311a58ac12705279acb794c662229d96b9ec83cc7b7d0e2b21efe86f",
+   "lines": 72,
+   "genre": "doc",
+   "status": "read",
+   "reviewed": "2026-11-24",
+   "evidence": {
+    "current": "2026-11 repository governance/reference doc (2026-10-25-fullstack-coverage-review) verified against current 34-gate tooling.",
+    "readable": "Full read of 72 lines (525 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "525 words across 72 lines. Clear operational documentation for 2026-10-25-fullstack-coverage-review grounded in current scripts and contracts.",
+    "focused": "Canonical docs/ home for 2026-10-25-fullstack-coverage-review; avoids duplicating AGENTS.md or script logic.",
+    "fast": "Measured 14.4 KB raw / 5.3 KB gzip. (fast scan via headings and direct links.)",
+    "best": "States explicit gate boundary, failure condition, and verification limit for 2026-10-25-fullstack-coverage-review."
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
+  },
+  "docs/2026-11-frontend-review.md": {
+   "sha256": "0cca3f82cb4ec81ff1a58abfebab27414669acdf4c32252de7160abd93659081",
+   "lines": 219,
+   "genre": "doc",
+   "status": "read",
+   "reviewed": "2026-11-24",
+   "evidence": {
+    "current": "2026-11 frontend review log verified against live docs/review-ledger.json and reconciled with a 2026-11-23 completion note.",
+    "readable": "Full read of 219 lines (531 prose words) end-to-end; verified structure, formatting, and reading flow.",
+    "concise": "531 words across 219 lines. Documents historical frontend pass findings and links to the canonical hash-pinned ledger.",
+    "focused": "Canonical frontend review record; avoids duplicating live counts outside ledger.",
+    "fast": "Measured 72.8 KB raw / 11.5 KB gzip. (fast scan via headings and direct links.)",
+    "best": "Clarifies snapshot scope boundary versus live 991/991 ledger state."
+   },
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
+  },
+  "docs/2026-11-quality-rubric.md": {
+   "sha256": "6a938396bc834dda9585645501a8e88f23c56b80bc62941d80ad824866cca58c",
+   "lines": 82,
+   "genre": "doc",
+   "status": "read",
+   "reviewed": "2026-11-24",
    "evidence": {
     "current": "Checked against scripts/verify.sh and scripts/review_ledger.py on 2026-11-23; updated section-pass step 3 to authorize full comprehension rewrites.",
-    "readable": "Full read of 108 lines; defines the 7 rubric checks (R1-R7), Phase 0 baseline table, Gate 30 calibration, updated rewrite workflow, and verification limits.",
-    "concise": "776 words; each section defines one piece of the review standard without duplication.",
+    "readable": "Full read of 82 lines (801 prose words) defines the 7 rubric checks (R1-R7), Phase 0 baseline table, Gate 30 calibration, updated rewrite workflow, and verification limits.",
+    "concise": "801 words across 82 lines. each section defines one piece of the review standard without duplication.",
     "focused": "Canonical quality rubric for corpus review passes; per-file ledger format lives in docs/corpus-review/README.md.",
-    "fast": "19.4 KB raw / 6.3 KB gzip built page on the shared Jekyll shell.",
+    "fast": "Measured 19.4 KB raw / 6.3 KB gzip. (on the shared Jekyll shell.)",
     "best": "Explicitly documents limits the rubric cannot eliminate (mechanical checks vs human judgment, paid vendor accounts, missing local runtimes, and need for fresh-reader testing)."
    },
-   "notes": "Updated section-pass rule 3 to permit full comprehension rewrites while preserving metadata, anchors, and authored REVISION.md pairs."
+   "notes": "C1-C8 genuine file-by-file refinement (Wave 11C historical reports and review ledgers)."
   },
   "docs/api-contract.md": {
    "sha256": "a424392dda87ac7b913498496a3584a8b0715e9ee0a9bfbdbea693aa9ecfee41",
